@@ -35,15 +35,16 @@
    Second Acolyte's Missal return while the priest prepares the chalice.
 9. Pages 26--28, `Ending`: Postcommunion and dismissal, blessing and Last
    Gospel, then the final route and recessional.
-10. Page 28 also carries the six-stage quick route, scope and sources, and
-    generation provenance.
+10. Page 2 carries the six-stage quick route; page 1 carries the immediate
+    scope and use boundary. Page 28 closes with the final route, rehearsal
+    check, and rights notice.
 
 Numbered priest-to-server dialogue lanes stay in chronological order.
 The child sees the canonical response and a pronunciation aid when a response
 first occurs; repeats retain the complete cue and response. Meanings and
 correction detail remain in the page-aligned trainer layer instead of competing
 with the child's immediate speaking and movement task.
-Pages 9--10 give the servers' complete Confiteor as three full-width
+Pages 8--9 give the servers' complete Confiteor as three full-width
 phrase-ladder sections. Original front-view sanctuary diagrams appear only where
 positions, step levels, objects, or role traffic materially change.
 

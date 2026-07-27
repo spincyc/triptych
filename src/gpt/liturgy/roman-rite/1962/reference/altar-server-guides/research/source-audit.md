@@ -152,8 +152,9 @@ illustration was copied.
 Canonical Latin was independently collated from the identified Missal.
 Displayed ae and oe typography, syllable breaks, stress marks, capitalization
 used to show stress, broad IPA, young-server-readable sound lines, brief meanings,
-movement prose, original sanctuary diagrams, card design, and the selection of
-Libertinus typography are editorial layers. They are not represented as text
+movement prose, project-created AI pencil illustrations for Low and sung
+forms, TeX-owned diagram overlays, card design, and the selection of Libertinus
+typography are editorial layers. They are not represented as text
 printed in the Missal or Liber.
 
 Only response-sized Latin is reproduced. No third-party diagram, chant page,
@@ -176,15 +177,14 @@ field guide, page-aligned trainer manual, and twenty-two-card flash deck now hav
 source-built exact identities, clean build and text checks, a completed
 technical font audit, every-page screen review, and exact installed identities
 recorded there. The same production record separately identifies the later
-uninstalled Low-Mass illustration and choreography candidates and the
-uninstalled sung-form layout corrections; their successful internal checks do
-not turn them into installed replacements. After the remaining physical
+installed Low-Mass illustration and choreography snapshots and the installed
+sung-form layout corrections. After the remaining physical
 actual-size, duplex, paired-use, independent, rights, and
 ecclesiastical-review gates were disclosed, the maintainer expressly
-authorized only the recorded Low-Mass snapshots for evaluation. Those gates
-and a new exact-snapshot release decision remain pending. None is completed or
-independently asserted by this source audit, and these internal checks are not
-an independent approval.
+authorized the recorded snapshots for release. Those gates remain disclosed
+as maturity work rather than represented as completed. None is independently
+asserted by this source audit, and these internal checks are not an
+independent approval.
 
 Outstanding independent maturity review should check the complete response
 collation, the Roman-pronunciation details, all three ceremonial routes, the

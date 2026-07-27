@@ -14,8 +14,8 @@
 
 ## Page-matching contract
 
-The trainer manual has the same thirty-page physical sequence as the
-child field guide. Page 1 is an edition-specific cover; pages 2--30 preserve
+The trainer manual has the same twenty-eight-page physical sequence as the
+child field guide. Page 1 is an edition-specific cover; pages 2--28 preserve
 the same lesson order, action identity, diagrams, and hard page boundaries.
 The adult lane retains meanings and correction detail that are intentionally
 absent from the action-first child lane. A narrow trainer-only rail remains on
@@ -30,11 +30,11 @@ local-route fields and the stage-boundary pages mirror the short rehearsal
 checks used with the child.
 
 The physical sequence is identical to the child map: page 4 is `ARRIVE AND
-KNEEL`, page 5 is `BEGIN THE PRAYERS`, page 15 is `MOVE THE MISSAL`, page 16
-contains `ANSWER AT THE GOSPEL` and `AFTER THE GOSPEL`, page 17 is `ANSWER
-AND SERVE THE CRUETS`, page 18 is `SERVE THE LAVABO`, and page 19 is `ANSWER
-ORATE, FRATRES`. Every following unit remains aligned through the quick route
-on page 30. The page-30 rail also supplies the terse flash-card print and use
+KNEEL`, page 5 is `BEGIN THE PRAYERS`, page 14 is `MOVE THE MISSAL`, page 15
+contains `ANSWER AT THE GOSPEL` and `AFTER THE GOSPEL`, page 16 is `ANSWER
+AND SERVE THE CRUETS`, page 17 is `SERVE THE LAVABO`, and page 18 is `ANSWER
+ORATE, FRATRES`. Every following unit remains aligned through the final route
+on page 28. The page-28 rail also supplies the terse flash-card print and use
 key: letter paper, 100 percent scale, long-edge duplex, one-sheet verification
 before cutting, and Priest-cue/Both-response practice.
 
