@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 123
-source_surface_file_count = 1438
-snapshot = "sha256:c66886311faaee2dc4e235e751b264be66a7090d04e849322ae8df1480997b51"
+source_surface_file_count = 1480
+snapshot = "sha256:aed8a34c2d2cb1097dcda1a03242a26a874fe3b4cdcfdd665ad56a6102add39f"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -1682,7 +1682,7 @@ owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/scope.md"
-sha256 = "db714aa5bff9d9c14a5d3dc53aa2987363a68d200f790217d8777685f4998f99"
+sha256 = "414fafd42d628662bcb23c77a58051903423c97a35c9b3088ba28199f144035a"
 kind = "research-scope"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
@@ -1696,6 +1696,12 @@ owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-bindings.toml"
 sha256 = "7a3b1185ca86f248cd92a7802af09501e6ee302a4b919e38fd2af6dc799c0e65"
 kind = "source-binding"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/staleness-review-2026-07-27.md"
+sha256 = "24b7c37edac30b5b7cf100fb7ffd1d575b0e64597e3c576440d04c7f0884c23f"
+kind = "research-record"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
@@ -1834,6 +1840,12 @@ owners = ["articles/canon-law/natural-positive-divine-human-law"]
 path = "src/gpt/articles/canon-law/natural-positive-divine-human-law/research/source-bindings.toml"
 sha256 = "97d72ecf8e7911543039c68819b366bb9f320a2bbb67c24610b6bc73c4439176"
 kind = "source-binding"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/gpt/articles/canon-law/natural-positive-divine-human-law/research/staleness-review-2026-07-27.md"
+sha256 = "9ddce90271e423c074d5a00b46253162c382ff27ceccc5d215b07aea4776e75a"
+kind = "research-record"
 owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
@@ -2036,7 +2048,7 @@ owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/research/scope.md"
-sha256 = "4b7f41aadca30c88d7ca5254800c71d4e4a3fe92160ed4bd4ef06268bd3167dc"
+sha256 = "050518184ea77082cbdb49b528c9d9e489818f7baa7583ced794c79ddc45d8f0"
 kind = "research-scope"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
@@ -2138,7 +2150,7 @@ owners = ["articles/faith/catholic-doctrinal-authority"]
 
 [[files]]
 path = "src/gpt/articles/faith/catholic-doctrinal-authority/research/scope.md"
-sha256 = "1d138fbc84c2d080da154fd38376d2163b71e7b5cf2328f18322370f52a9050e"
+sha256 = "68cfea81a827f82a2a17043cee9c92f70a93e771b0d161a57c53e6e35a1d144a"
 kind = "research-scope"
 owners = ["articles/faith/catholic-doctrinal-authority"]
 
@@ -2186,7 +2198,7 @@ owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/gpt/articles/faith/council-missal-and-crisis/research/scope.md"
-sha256 = "5fef9fca60a16b7aa5ebad4e8c060a5c88f1873d578a0f2fe341b3ba4054fce5"
+sha256 = "125a09f3e4cc0a3b32632b2d23c7c2dbe9e06929949147d9ea8ae5127a24ab0d"
 kind = "research-scope"
 owners = ["articles/faith/council-missal-and-crisis"]
 
@@ -2330,7 +2342,7 @@ owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-01-death/research/scope.md"
-sha256 = "8e257a87040f5c9d4f2f9512262c50508577d76db27a1a91198f4e187a17dc3f"
+sha256 = "462edab962fde0e51f257e7a301131480519b44f5dacfdbb04dce5e93849c3bb"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -2366,7 +2378,7 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-02-judgment/research/scope.md"
-sha256 = "bf3a8b171be2393606773b553871b0b87c8370a71037f51bf865c6fd9f3d1158"
+sha256 = "e4af2eeb5e7df9543a1af36e5a7e1a835b8e87b7d0aae15a50d1e003b755d6d7"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -2402,7 +2414,7 @@ owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-03-hell/research/scope.md"
-sha256 = "af71838632dd261add61e427c098d0da8bf0b6612b45f598b3d718b05258f2b8"
+sha256 = "d4d2f29fe1a483bdb252541b135c62ec3651b9f86b7cb9921ad8fa0328f35ff9"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-03-hell"]
 
@@ -2438,7 +2450,7 @@ owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-04-heaven/research/scope.md"
-sha256 = "cc8f9aa699225f9bbe03777b7d77d7be3a7127a23525ba3e486939fcee71d827"
+sha256 = "901194785a59ff9095b8f6b20762c0f1a5187fcc8824f488a00317fec0ba52e1"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -2480,7 +2492,7 @@ owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
 path = "src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/scope.md"
-sha256 = "7e9a7e437db7416b45f2ad73ce31d9c8b6169002cb34c638300515d479c3417b"
+sha256 = "5763caa5207849cc50e7b4692618ff1b30e5c418306943cc95df2926180057ab"
 kind = "research-scope"
 owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
@@ -2672,25 +2684,37 @@ owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/main.tex"
-sha256 = "d9651381328d236ac64da5b66fe3c6d43e55099562ae637a05493e6e22246f4d"
+sha256 = "c5c7037f50df5d2ba6dc970a45abc54cb229a5079a9a2840e98a66489acfc0ae"
 kind = "publication-main"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
+path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/patristic-sacramental-review-2026-07-27.md"
+sha256 = "851325363dc40feae4999b626ccee0e4f78d1d5c251e61c393285ff797c53c2a"
+kind = "research-record"
+owners = ["articles/faith/last-supper-calvary-and-the-mass"]
+
+[[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/scope.md"
-sha256 = "dd7a725f029be539d369ba7a109bf2c6885e039f03f7d730d3cd121e4cf604a4"
+sha256 = "b4c94c9e592153641ca89c72dab6cd7fea09f18eb34683220c555c1d655f3501"
 kind = "research-scope"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/source-audit.md"
-sha256 = "420d3baf5c7e018d1828420a1af6b571cc6139830ef0cac9383dbd7481987192"
+sha256 = "e3d147c9e1051605fb4c425dc82f4a2b113e66c00eeb09d99715a91a6366ff47"
 kind = "legacy-source-audit"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
+path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/source-bindings.toml"
+sha256 = "d6c34500709cea0580761b2947e8712ba060bcfdb22445a2ee298c1e49c36804"
+kind = "source-binding"
+owners = ["articles/faith/last-supper-calvary-and-the-mass"]
+
+[[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/staleness-review-2026-07-26.md"
-sha256 = "bfe60122d529c9dbc6373840ce24834c2d98b1ad3b36879d2c667bad889855de"
+sha256 = "dffea79762ce083cd9b333c2b8e5d39990d684e299513fd90404f932a0bf8b27"
 kind = "research-record"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
@@ -2708,7 +2732,7 @@ owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/research/scope.md"
-sha256 = "d4286e47a742dc49efee8ad819fc8472659ddfea8e8e58b81f8504d07772630b"
+sha256 = "01288be0b57ade8eb64f68c3264408a356e333920b6e4a8fe83e1321282bf7d5"
 kind = "research-scope"
 owners = ["articles/faith/ontological-vertigo"]
 
@@ -2804,7 +2828,7 @@ owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/research/scope.md"
-sha256 = "e8f892cfa6112e8472497f6496721789c21a83b853bb57429853990ebfd916a5"
+sha256 = "7be93cf82db71ff5ecc37a1306ca1ee05748824085cc42c173dc8c36460cf5fc"
 kind = "research-scope"
 owners = ["articles/faith/the-due-return"]
 
@@ -2912,7 +2936,7 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/scope.md"
-sha256 = "279136e387ff48a6cb98f2567e00f97583fad197e697bc52104061152cc35798"
+sha256 = "fe7bd0a5393960bd788989d217369b94a9a4156a3bd2487f98d2729159abf7e4"
 kind = "research-scope"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
@@ -3014,13 +3038,13 @@ owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/source-audit.md"
-sha256 = "50f30d130de6f44cb5c31edbbdbb0b257d1ba960331e6402a165daf87b649913"
+sha256 = "0de211cfc1275d261a59a6c8d7252ebb93f5deff69afaa4a769cfd93c673f07e"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/source-bindings.toml"
-sha256 = "2cc5cd1096c6e4ffa11e49294af59e800baa1c6d6e59be0b2a1fa808b7dbfb59"
+sha256 = "5196e2fc3b007009a5df52f6f0568b2df9b0b58666716285b6c070a93ca5ce23"
 kind = "source-binding"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
@@ -3038,31 +3062,31 @@ owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/main.tex"
-sha256 = "e40269de97a7217e59bc2f5092300043f714b3bb19104b091320dabba8623fba"
+sha256 = "27a7ba33644c6ec994527286f868dac8776b2655b4d2958954e25c2f47c9b494"
 kind = "publication-main"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/evidence-map.md"
-sha256 = "43613a64999ea2703073b37371f43f42f149f699ef0da3bf5ca0a6894e094d1c"
+sha256 = "f27bad7adca740ef4ca48065440666fd0cbb07e4b61297940ac784582c4fae34"
 kind = "research-record"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/scope.md"
-sha256 = "dfa2a6dead90ba343cf0463ed6dabb387e0efefcf587557d4da495d0a3dde0a7"
+sha256 = "44a84393c9aaf1cc93fab4d7764f4390a624ccb52e39dcf55d3d33764a46e6f5"
 kind = "research-scope"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/source-audit.md"
-sha256 = "31064762b1893486f24da4425083d76c78c7b2f89aa0e1cb5bceb56a59ea983f"
+sha256 = "be19e73c1ed222016edd2a2b73d3e4a565366a5144c19cda0622174bc3057e0c"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/source-bindings.toml"
-sha256 = "a1c2fd1ee04ddaa6e157525bad14953db5b6987b08b3a3ea0344cc37ad31436b"
+sha256 = "8542f155d7c9467dce1c2929c54dc2cf58f4f7b65e398d2106377155bf4bb147"
 kind = "source-binding"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
@@ -3073,8 +3097,14 @@ kind = "research-record"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
+path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/staleness-review-2026-07-27.md"
+sha256 = "c6522b166d9d3c7c0996ae49e16508b539b5b615355202818492423d87bfa3c1"
+kind = "research-record"
+owners = ["articles/scripture/john-6-bread-from-heaven"]
+
+[[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/web-edition.toml"
-sha256 = "052ca18dfc945a2017706c80b994a4e71218b6d64fff96862ae7bfb84d462043"
+sha256 = "56fc37fa5349748a6243417713074641b1b03c7559228157476cf1550c2ff361"
 kind = "rendered-content"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
@@ -3104,7 +3134,7 @@ owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-bindings.toml"
-sha256 = "cd28e3e3b09dc7315303b1d110b68ba68afe577cf9d4a18ca3ca05e215eeb4c1"
+sha256 = "320cddbd46112daddc93dc50b982afb52762025a60f6dc97c4aad6356862bc22"
 kind = "source-binding"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
@@ -3134,7 +3164,7 @@ owners = ["biographies/origen"]
 
 [[files]]
 path = "src/gpt/biographies/origen/research/scope.md"
-sha256 = "40dff97860377ceccca02ea43158f9b355fafcfa60bbc99ff781e8f5db3bdb1d"
+sha256 = "cf114b5d3b274062a8dd160b38737dc82feb0223f3c2d9e1684589e1c6705d3f"
 kind = "research-scope"
 owners = ["biographies/origen"]
 
@@ -3482,7 +3512,7 @@ owners = ["biographies/saint-paul"]
 
 [[files]]
 path = "src/gpt/biographies/saint-paul/research/scope.md"
-sha256 = "d41ccb7ef1a4ad0037f24ec9a46a90f4f1554ce1407922c0628d469e85ce8156"
+sha256 = "6a916e60bcb888d76fb43e58fd85df291b8fbce8d7fbb99e35918d1763abb8f6"
 kind = "research-scope"
 owners = ["biographies/saint-paul"]
 
@@ -3614,7 +3644,7 @@ owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/gpt/biographies/saint-peter/research/scope.md"
-sha256 = "e43239476fd73943d805d2e7a6907bcaff6b8a1b9043d8a6097240990df0c639"
+sha256 = "b759d1a85c4a49b894afe3be693d267e2cb2b964be76f790ccaf097db82a78e7"
 kind = "research-scope"
 owners = ["biographies/saint-peter"]
 
@@ -3872,7 +3902,7 @@ owners = ["biographies/saint-thomas-aquinas"]
 
 [[files]]
 path = "src/gpt/biographies/saint-thomas-aquinas/research/scope.md"
-sha256 = "e94834ee301353d3965be538522b473cc158fa9fc22ded651558e52bd6c00398"
+sha256 = "1dd75d6f188f9e9244c46c1c4cd5005b1eb6a9b33e0438ead807eac02fec3df5"
 kind = "research-scope"
 owners = ["biographies/saint-thomas-aquinas"]
 
@@ -4010,7 +4040,7 @@ owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/gpt/biographies/tertullian/research/scope.md"
-sha256 = "1c7cb8c0e308f828ba7d94bebb5fdfad26f4e080bc8cfb3086e78fae18164cae"
+sha256 = "26315f1e5dc719d4acebb2cc831609da3c179f19ea5e9e81f68bfb258b4a3e59"
 kind = "research-scope"
 owners = ["biographies/tertullian"]
 
@@ -4658,7 +4688,7 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/module-map.md"
-sha256 = "3b9ed02908181827e29fd169bedda13b277956b9f28575e04a12e9ee248b2645"
+sha256 = "74440d9e2cb48c4de46ebab419af7fc51c4158bb075b31d15627698d792afbb3"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"]
 
@@ -4718,7 +4748,7 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/21-collation-and-control
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation/research/module-map.md"
-sha256 = "b15912f511e149d20f90168afedd8fc8b5a7024f79e04e06b13ffdf615d7df63"
+sha256 = "fe4f0a66fcf000d2eea24b175b915c6a3f4192eef69809c4c4199706cb4d4c4a"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"]
 
@@ -4748,7 +4778,7 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-an
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research/research/module-map.md"
-sha256 = "b5964e612fbb636168e741f672c6c48a78fa0d4e311de09d247564c2a0fd9e1c"
+sha256 = "625db44e56f9a2ecd1a6842af7e8129c43dcbe60a5ddcb7a740913d404366cc8"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"]
 
@@ -5048,7 +5078,7 @@ owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/companion-map.md"
-sha256 = "826b8cd823c3fd5ff520d75ba62acc30cb330819cb2a1b4096d7c720825d2a5a"
+sha256 = "27be76d0691c1cfdaea1261eddd0d8bd6c0d671aeb13d02a3912e5af1866b276"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
@@ -5534,7 +5564,7 @@ owners = ["devotions/novenas/00-ascension-to-pentecost"]
 
 [[files]]
 path = "src/gpt/devotions/novenas/00-ascension-to-pentecost/research/scope.md"
-sha256 = "7f69b556f1f21263b416a58683e1c3efe9d09f26032d6888b186386b00c1d56a"
+sha256 = "cd341f552f0fd1ab4e990868fd3531348d21b8aaed196cd2a35489f7ede98690"
 kind = "research-scope"
 owners = ["devotions/novenas/00-ascension-to-pentecost"]
 
@@ -5548,6 +5578,12 @@ owners = ["devotions/novenas/00-ascension-to-pentecost"]
 path = "src/gpt/devotions/novenas/00-ascension-to-pentecost/research/source-bindings.toml"
 sha256 = "6a0229d99914d1e87b88cbe5fd3a048d86821b60e08033958c04b008e46ccbd0"
 kind = "source-binding"
+owners = ["devotions/novenas/00-ascension-to-pentecost"]
+
+[[files]]
+path = "src/gpt/devotions/novenas/00-ascension-to-pentecost/research/staleness-review-2026-07-27.md"
+sha256 = "58b0397fa6165125ace6fb53d5df97ad0b03ab208ee29cdd2f25c94682c1d1de"
+kind = "research-record"
 owners = ["devotions/novenas/00-ascension-to-pentecost"]
 
 [[files]]
@@ -5786,7 +5822,7 @@ owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
 
 [[files]]
 path = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/scope.md"
-sha256 = "217b6e1bc348da987fe2dde67723c362a14e475d133bd04455aa0724cfc5c5b3"
+sha256 = "931c2eee78454e2313e1ff9dc117b15f59ad1f36a6e42f99e4468b3442de70b2"
 kind = "research-scope"
 owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
 
@@ -5800,6 +5836,12 @@ owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
 path = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/source-bindings.toml"
 sha256 = "3c24fd2960c18e734c6491460b4abad36e121387452d5529ceac077538554bdb"
 kind = "source-binding"
+owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
+
+[[files]]
+path = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/staleness-review-2026-07-27.md"
+sha256 = "e4d42c4189a790b1c18b0c59e69f760cdf3ebffbf7212145c3e76a438fae3410"
+kind = "research-record"
 owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
 
 [[files]]
@@ -6157,38 +6199,152 @@ kind = "publication-main"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/ancient-biblical-patristic-audit.md"
+sha256 = "b99cc66ff7c9615ba8bd9bb6718fb16819a506e6cab77185ae45e78c39b452f3"
+kind = "research-record"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/evidence-map.md"
-sha256 = "e4d9a0fce514efc6e112cb9332e0f887ad2202ccebf8feb5b3fc26669da205d5"
+sha256 = "960b1f146fef32489218485588694588d821d5d7c5cd82a2e751b9e114a69403"
+kind = "research-record"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/ritual-history-case-audit.md"
+sha256 = "23326c4db0e3c97ecef8fe468808dff6d40d0eadcd04e48e00fbbd9112fbf15d"
 kind = "research-record"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/scope.md"
-sha256 = "34c085e917ba56117337347a639bde109dc56edddc29cb66df602aa882ca7eae"
+sha256 = "b7fd1a2b5db31e9cbdbf6d32394abadea9d94aeed6d888c5783c685e17abd634"
 kind = "research-scope"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md"
-sha256 = "887dddda266cc399ed53148e360fa4236b1df079b26da1cf44e1a701b07ec801"
+sha256 = "9a25f830e55461558d6dc5268e297c60d9470d7933e1109591434a82c73931c9"
 kind = "legacy-source-audit"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-bindings.toml"
-sha256 = "1f49bbae076227d71c7246f9e64da3e349b7089804783d436ae601eac3b74ede"
+sha256 = "8dc657a99198a38a0a659699d33dbbffa35236a993c9f8f9b8f8332e0d0ffb33"
 kind = "source-binding"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/theology-law-reception-audit.md"
+sha256 = "beac94b16fc3c548cb270d9b1263a97a639a50a96652324376ce8b0555792ad5"
+kind = "research-record"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/00-opening.tex"
+sha256 = "fe812c898bc9b9efd9e70871e1e791c15973f2302bdf07ddfabcb848b69821d4"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/10-ancient-contexts.tex"
+sha256 = "c40e4a951a8895f81d4ab0309b328414063cf5ec33952c984a08f3f7744a98b3"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/100-discernment-safeguarding.tex"
+sha256 = "098ba702387bd136b4f563c7380161ca8341026e90d74b6b186c08014f79bd79"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/110-culture-objections.tex"
+sha256 = "d4ec5201d195b1ce00c5f4de1dda4475e53adee252f2599e11c77f882c8ae47b"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/120-pastoral-conclusion.tex"
+sha256 = "b03b23625fc2d64bc8d47fd91f0a09ce101b5255a59b5c2a2fb99a6cd4b8c09d"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/130-scope-method-coordinates.tex"
+sha256 = "c32cfd51721748fb33a8a3be2ee9465ddb29ec87ab3c6033b97f0e249073611f"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/140-dated-orientation.tex"
+sha256 = "874b3a9b7fb3625c8f6ddaf4d8a4d12f7b28bb4cec24a4f1147dea04e569f825"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/150-references.tex"
+sha256 = "d8f8341374e84bda80f91af45b16b379fe987935ae478636eacd8ba9bddea368"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/20-biblical-witness.tex"
+sha256 = "84aad6c6e978970eb305cc04c7ca85f296d66d87454f7ad52cdfc244ca380725"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/30-apostolic-patristic-initiation.tex"
+sha256 = "22bf098f47fc73ff15054afb017bc1365b12cdf232d224c67f3eadcde0b7c2c5"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/40-late-antique-medieval.tex"
+sha256 = "d82a78dde7cbbc4a89a29b8772469f06ff07f09915aeaf725700977654267954"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/50-early-modern-1614.tex"
+sha256 = "78b8920d2f1dab74acbf47811ebdcc1c7624a012654750f92c9f46b3d5abf288"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/60-modern-reform.tex"
+sha256 = "30715dffd685eca8c7562053b823a32c1fbf8840e7d06107305fc404e7453f8d"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/70-historical-cases.tex"
+sha256 = "e61f730234192072dbf42dec0dd112c5c7d93d8bc998f3ee09d3a30f7c4313ff"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/80-catholic-demonology.tex"
+sha256 = "8dcc0fc892b45a780ce9fba56506adefddc7048f6d1d078d85a58e52f7704069"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/90-east-west-law-rites.tex"
+sha256 = "d2bdf1eeca89f5872d0e4e77f1a5f028c55c42e1728f5cd0355c6575695b0966"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/all.tex"
-sha256 = "b0340a27c3eac7f7a38d2c0f0230fbe443f0b3153dc28a264742c6c5b560fc6c"
+sha256 = "d92d6a3d9f82135f82077764b28a352f91f0fca34c8d100ea81824cbbe45cbec"
 kind = "rendered-content"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/web-edition.toml"
-sha256 = "44517d4ebbd9700d621dcd1c59f031587456d7742d00ff4eaeb46e3ab18ddd47"
+sha256 = "8f8bfeb201c9c9f8af773962c5964e0c1d55552e98a05abcd763a82147d20965"
 kind = "rendered-content"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -6950,7 +7106,7 @@ owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/scope.md"
-sha256 = "247ab0210e2063169f9a24122f2144c93997e023064904dd47233dc1686c4d76"
+sha256 = "0415036bae7226f2f96bccab01b8320c37e3b43597cf77cf3778625fcf0ddc46"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
@@ -7070,7 +7226,7 @@ owners = ["liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"
-sha256 = "21a582dccf49897249ea74f37a630de6024475a3de3df488d34cace631515fdd"
+sha256 = "e6120b2b0c707c7176a53fd1f4ff70e71a2e7d1c296847f64abde21129d387c9"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"]
 
@@ -7358,7 +7514,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md"
-sha256 = "12f0ff3562d6ed6c27a091519dc236bc21dfedb49bd2b0fce8bfeff97fe90cfb"
+sha256 = "35b6d434497381902577b7ef60bc1d3c5441427bc90c9a432678d9cce7dcf620"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
@@ -7448,13 +7604,13 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/main.tex"
-sha256 = "d027e72844084dcf3d5b3e8538de1a2f636dd7df63757a0d0d0fa71d4f214b72"
+sha256 = "0a96208d5880dfa1435e929988aabed5180b82ffae10ec833f433adab55406d3"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/research/guide-map.md"
-sha256 = "16cfbeff8664829448ac1eb4917310aea1f6353257bf436e8bb0bec486c3f9b6"
+sha256 = "a9f5b233b5574dbd0339c8bdb1d83b72e544b7ffb8cf78d754956bee560ad033"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"]
 
@@ -7490,7 +7646,7 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass/research/guide-map.md"
-sha256 = "a28ee35b641315bc660ce84a9bea1f583d2dbdc74c5142fb1053972e26e93521"
+sha256 = "69dc8e63e824be600c0ecdd379677f029ad770f5dabecb5830132da32127afe2"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"]
 
@@ -7520,13 +7676,13 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantat
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/main.tex"
-sha256 = "3ee9eabaa9036018253b374ea2fc335900be8d3c0614327fd35c810f4d318b5c"
+sha256 = "1821dcbcb8fdaed7935f52dddcd022b59de5d14d2827d7a51e013fbce4ab9959"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/research/guide-map.md"
-sha256 = "9824c07a929fc8d81054f51e282a1e2cba6c7d29288e7f2924488fcc04bbb081"
+sha256 = "9df9614ac3cdb62def9f100515c0ae3bd735a798e320e2546b4a7d1eaedeef6e"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"]
 
@@ -7556,13 +7712,13 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/main.tex"
-sha256 = "643d1c820fb360cbc3b5361bf3016c43bcd7263d7e518382f1ee8f5fc7ea4511"
+sha256 = "c638c989f3aa27179f5fbee3b1dace2176e36efb322d1ff0e87faa3faa84999b"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/research/guide-map.md"
-sha256 = "e886013f92cea109e5e09fa4f113faa426b15b0f07daba1cb1ef4570c2ae64fb"
+sha256 = "39a0aea360354b82ba59eab6567b9f32d98da10bcdc76fb71c1685873321f892"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"]
 
@@ -7573,6 +7729,12 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"
+sha256 = "cbe22e4c04b62ffcec3ca4b50dc203c109c013357088672061dda8242984f85d"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/ceremonial-inventory.md"
 sha256 = "8dfe51abc91900b2c64b7c413139811a01538425754bae6db9bf0820903bd979"
 kind = "research-record"
@@ -7580,25 +7742,25 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/edition-manifest.md"
-sha256 = "a9b545efb33a89d8f9364a0ce5e2b7d9a52915e2badf2d93ac6f9ceb8978776c"
+sha256 = "4951caa80658dc875298e59e1b6e0093610af26421483ca084452cdc05558019"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/flash-card-manifest.md"
-sha256 = "56a1d6a857a34d192c6f2205cd059f498cdd8a751df25434c423d558acab413c"
+sha256 = "4180f17c640ade6b3a0bb6d875bea7e6091579deccf57e7eef3c91cff1ece8f3"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/presentation-research.md"
-sha256 = "985dd298b664bab1abc04ba5f1baa72063a994ba3c7ce448f46121531acc8ee1"
+sha256 = "095cc10c1570a65b33a503a574182a7bd34cdac795cfc0c5c1e06aa4d3c63d50"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"
-sha256 = "f82fa34375addad6ee7bc00327a7d8fcb1391a31864fd81e2c88f18aa1b2181e"
+sha256 = "6b7654e0a0338017f2cde7371c735c9cb1d9fdabd62f16aa933506d1d7654b6b"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -7616,31 +7778,31 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/scope.md"
-sha256 = "246ac15fbb0cb9bba3182a8ae45a7aa4be02ce97f8a6e7b1b173fcfd0462bd78"
+sha256 = "3819a29873e08a647b896b202ed1388586d22f4798c26ce4dbcade062b839846"
 kind = "research-scope"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md"
-sha256 = "d7f4fff2ea3618fc8d20a489b0d5e1336d8231a916848dada3d96badf6291244"
+sha256 = "e83d40ee61e7511c3b38c36e2e1375584ebb3ce545a67dbb04888ca2797693c1"
 kind = "legacy-source-audit"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-book-format.tex"
-sha256 = "a6c60c28b070ce85948496e6258bf1723d6c00ce2e9b9f7272799392beb94d0f"
+sha256 = "d186fd126600f8a2a732d300de09631f7535fdef46772b1edc8650404ab2b61b"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-ceremony.tex"
-sha256 = "61c7c71b65664e64f1f43901e30aa66b8a90cf1394b6e5a00976e85b7fc93e3f"
+sha256 = "8de44faaae6b1da077c89b7a18904a84024d6315a00c1b653b41bb07f2c73bd0"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-diagrams.tex"
-sha256 = "fa9e2d33a6bbe3573d6773a1adbd423193143abc84cb835a322498440e46f9a6"
+sha256 = "cc5a1d9c353d0daa049b154e601f549ce00e661ba11050014ce1637fbedbcff0"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -7652,43 +7814,49 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-ceremony.tex"
-sha256 = "3f7a13c711d4b547990da30dc26ffe34d7399cb244cc8dc734ba42f8d3afe680"
+sha256 = "6b94e5a017129e384303cf07d01139652dbca31d10ed63ffda277defdb917d1d"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-role-sheets.tex"
-sha256 = "615d1e3ef13d3d7f5d2bfbd5fcc3ed0b6e8e8c1f66bbf20b70cf4f0fb72bb836"
+sha256 = "ea494eeedeeee82dd17d41474a2ec8c91c57423e9be1742a5894e41d77d9dd05"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference.tex"
-sha256 = "9ed4df81b6419a17ba941060b21037c2a7de8bceeedeff2ba61a28a38e063bcc"
+sha256 = "8b86bfe1933d960d9f35e662d4194bfa39d620ddae9b374ce1b149f5f1aaaac6"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/server-guide-format.tex"
-sha256 = "ea6231111d7f7cdedf9d3914e8185c03476d1c6b4ba3493ea350fc4f9d18eeec"
+sha256 = "30021931b925b7c5ad1f63595caf967e70175bd6c0bd8d9c80619cdf0bb03d2d"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-action-cards.tex"
-sha256 = "ebb4c942020a22894807088469f2bc82b29e179c67796aa588a561565f9794e1"
+sha256 = "b2267a496fad2ff1233590f991c3d377a3fe6073f02b30b06201524a9eb4cc61"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-ceremony.tex"
-sha256 = "9f27158fcf41431db5bc1f12ff3eac8291377779be8040043af7b2080755cade"
+sha256 = "400e9ecb767269292a63a0b5a9ebc02ccf3c28592839688fd4a3bbeab3aba235"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-role-sheets.tex"
-sha256 = "d716ae5788b3f29337f43350c241058de2df9f603e0a621db9534c5e3fcf99c4"
+sha256 = "2b190b6263130e3308f32a39108cff9fed6f94abdd9f8ae6e0ecc10c20e95af3"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/sung-mass-diagrams.tex"
+sha256 = "5e48b81a09596f5e153d02f0068f7625f6bd834c8702700881fd6b993f75e7bf"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -7958,7 +8126,7 @@ owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/scope.md"
-sha256 = "fe4db3b418563b67e070474362934d451ca464ac2e3d740f4b6b066e3c53eb17"
+sha256 = "462a1e22414638430a207edfaa4696d97e22f960f2019cb475a3288defd5c4d8"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
@@ -8084,7 +8252,7 @@ owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/scope.md"
-sha256 = "3f8cfebf780cce86b5a9e5fe339e309fc57472f1a738ad1724b744d8a2d02bd4"
+sha256 = "9563ff05de36d119337c2f23f1be0f498b66d590771a9a2aaae75e2f9e238731"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
 
@@ -8240,7 +8408,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "9fb4fcbe8533886b3faa7e490714b4d2757efa7e45c58c79f44ef29ff72896f2"
+sha256 = "9e1def6160fdf0f45166dd67207ee6c9ebe0cde9f1d008348ff71eca74c7a571"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"]
 
@@ -8276,7 +8444,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "c3efe61693080f5f544a3802541b78c24997496ae30d294be6c94d0d59bddce5"
+sha256 = "b0d52a95100874f6cbb4d03c9378a034311406b10253919dcec6f0b166394274"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a"]
 
@@ -8312,7 +8480,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "ebea1cabb2839a2b58da23055eda48df6ea1ad4516ead151a3edcb1a874c7131"
+sha256 = "4d7411e1f5d98e28880e9c9d28db09263cfef18e8042b487cd021ab42a47356d"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"]
 
@@ -8348,7 +8516,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "039d2489ef4b5749159e4846212d8240593bd0dddcbd54b1856511e89dce2d6e"
+sha256 = "a69ae2380226e2ba0c0406b1a9811bd2a5abbcdb400ca2add7fbb4014a2ac187"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a"]
 
@@ -8384,7 +8552,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "0ceb959ff5edbfe04c6754ed606a8717c2b148ade0f64bb996172ee1e91b289d"
+sha256 = "3848766b570324ae6388ad85500d05ca827376c381c28ba6eed82bd7b85f097b"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a"]
 
@@ -8420,7 +8588,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "367d8eb0c4efc4f049bf055ff01d840702e426547e6e56fa905d3b81fa29bd8c"
+sha256 = "6c1addb35f725680af03ecc0c224a3e7f4fc37ad51e31d211e1bd76244056a51"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
 
@@ -8516,7 +8684,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/scope.md"
-sha256 = "5d573cba08e829476a3a3e53b316ef4bf773c129dde0584ee7174381edf374a1"
+sha256 = "e5b1cf0898cd612967e824628ee7ab4a11ac893cb1c61a8e819781c5188df1a6"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"]
 
@@ -8552,7 +8720,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/research/scope.md"
-sha256 = "9598406aedc2f165c3603bd673cf4f69abbdfdfdae3e8ccc0c5065e42e55e8d1"
+sha256 = "f03f52cb9d643f2ece13a25b35e3fe624dcad9c20690aa4c05da9a788dd40c02"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"]
 
@@ -8767,6 +8935,12 @@ kind = "source-binding"
 owners = ["theology/heresies/heresies-in-catholic-history"]
 
 [[files]]
+path = "src/gpt/theology/heresies/heresies-in-catholic-history/research/staleness-review-2026-07-27.md"
+sha256 = "02c85f9a114f00bf3730b9e1abcd3a34540342e56bf6e9d23c65c4c9b9560ab3"
+kind = "research-record"
+owners = ["theology/heresies/heresies-in-catholic-history"]
+
+[[files]]
 path = "src/gpt/theology/heresies/heresies-in-catholic-history/research/timeline-audit-ancient-medieval.md"
 sha256 = "17d58ddd7d72b2050143772436cdc28fa4075f8ad257c228331dbbf2b1e35d9a"
 kind = "research-record"
@@ -8905,6 +9079,12 @@ kind = "source-binding"
 owners = ["theology/mariology/angelus"]
 
 [[files]]
+path = "src/gpt/theology/mariology/angelus/research/staleness-review-2026-07-27.md"
+sha256 = "9821d5d604bde5ca1c6c196c1f7ce0ae339c0b5dc3c5f8c3a0716938ef36e38e"
+kind = "research-record"
+owners = ["theology/mariology/angelus"]
+
+[[files]]
 path = "src/gpt/theology/mariology/angelus/sections/00-prayer.tex"
 sha256 = "7159c458a556d8a7028f0afcf40e41b27d640b6d9407c66d72e2f7a5745d2a1c"
 kind = "rendered-content"
@@ -8980,6 +9160,12 @@ owners = ["theology/mariology/apparitions"]
 path = "src/gpt/theology/mariology/apparitions/research/source-bindings.toml"
 sha256 = "93bd626679c22dafd6064addad5658b23765a79cd441272dd0569f1a52873e05"
 kind = "source-binding"
+owners = ["theology/mariology/apparitions"]
+
+[[files]]
+path = "src/gpt/theology/mariology/apparitions/research/staleness-review-2026-07-27.md"
+sha256 = "7063309224c0774595c6626b186c6b9d64d79307675bcb39863cea73b62cf432"
+kind = "research-record"
 owners = ["theology/mariology/apparitions"]
 
 [[files]]
@@ -9103,6 +9289,12 @@ kind = "research-record"
 owners = ["theology/mariology/champion"]
 
 [[files]]
+path = "src/gpt/theology/mariology/champion/research/staleness-review-2026-07-27.md"
+sha256 = "ea1c8ab9c3ed892538ebec1583edd541b6a116bb2efaefe36778139ec59fcb25"
+kind = "research-record"
+owners = ["theology/mariology/champion"]
+
+[[files]]
 path = "src/gpt/theology/mariology/champion/sections/00-method-status.tex"
 sha256 = "6f2acdc9313fad5cdf82e5909b1bfc3405943021fde454b319f2769a00137953"
 kind = "rendered-content"
@@ -9194,7 +9386,7 @@ owners = ["theology/mariology/doctrinal-authority"]
 
 [[files]]
 path = "src/gpt/theology/mariology/doctrinal-authority/research/scope.md"
-sha256 = "5909531d9e3fd6412bb25e940a1637485f72604cae946c21de0e4dcb071bfd56"
+sha256 = "86b534f9e597fecac4ea6da9da1db50bb37fae4f39c234c6a2dbe94900bb9e73"
 kind = "research-scope"
 owners = ["theology/mariology/doctrinal-authority"]
 
@@ -9244,6 +9436,12 @@ owners = ["theology/mariology/fatima"]
 path = "src/gpt/theology/mariology/fatima/research/source-bindings.toml"
 sha256 = "ddec8ae66736b9bb11125b72386a37fd85a53c3cc42129696eebc588e672c850"
 kind = "source-binding"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/gpt/theology/mariology/fatima/research/staleness-review-2026-07-27.md"
+sha256 = "4b8e3b83285ff08d2a9b93c8d80232cd97237023b43a01ce274de3d99ab0d59a"
+kind = "research-record"
 owners = ["theology/mariology/fatima"]
 
 [[files]]
@@ -9367,6 +9565,12 @@ kind = "research-record"
 owners = ["theology/mariology/guadalupe"]
 
 [[files]]
+path = "src/gpt/theology/mariology/guadalupe/research/staleness-review-2026-07-27.md"
+sha256 = "56127f541f00911954b14aef8f48ee1f9e56cbefa04e632dd253a8892c93c2e3"
+kind = "research-record"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
 path = "src/gpt/theology/mariology/guadalupe/sections/00-method-status.tex"
 sha256 = "ca5044f510bf4084cefda69ebfea8c2d0319abe3df548a2e50971a36b4f6418a"
 kind = "rendered-content"
@@ -9478,6 +9682,12 @@ owners = ["theology/mariology/la-salette"]
 path = "src/gpt/theology/mariology/la-salette/research/source-bindings.toml"
 sha256 = "3eb42ad86dce173b7788761fb2b06aa5bd9bb8ce58a60ed16e9642da5439a38e"
 kind = "source-binding"
+owners = ["theology/mariology/la-salette"]
+
+[[files]]
+path = "src/gpt/theology/mariology/la-salette/research/staleness-review-2026-07-27.md"
+sha256 = "8cba5b6221bee15c0b54091c7476481f044cf37c094648cbf23904c8c703ee8d"
+kind = "research-record"
 owners = ["theology/mariology/la-salette"]
 
 [[files]]
@@ -9601,6 +9811,12 @@ kind = "source-binding"
 owners = ["theology/mariology/lourdes"]
 
 [[files]]
+path = "src/gpt/theology/mariology/lourdes/research/staleness-review-2026-07-27.md"
+sha256 = "90c16dee439380eb2aa62f4dae01030de0a1cd9a96493fcc1fb0e27f790fbb18"
+kind = "research-record"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
 path = "src/gpt/theology/mariology/lourdes/research/water-claim-audit.md"
 sha256 = "eee1c05d35c913c2351f973f2e5e7e5fa6b5c952ae6a08bf3682886d49f45b8d"
 kind = "research-record"
@@ -9715,6 +9931,12 @@ kind = "source-binding"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
+path = "src/gpt/theology/mariology/marian-dogmas/research/staleness-review-2026-07-27.md"
+sha256 = "bf06becd96500bba1a788203a9a04911ada79945d8de9706f08014f81085f787"
+kind = "research-record"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
 path = "src/gpt/theology/mariology/marian-dogmas/sections/00-method-dogma.tex"
 sha256 = "24c598281dfb00b0fb85e7ff18a66253851311a36550ea656fd858e53accd946"
 kind = "rendered-content"
@@ -9823,6 +10045,12 @@ kind = "source-binding"
 owners = ["theology/mariology/regina-coeli"]
 
 [[files]]
+path = "src/gpt/theology/mariology/regina-coeli/research/staleness-review-2026-07-27.md"
+sha256 = "547574028e8575d59acd838f284753a8bd6df2a7b02a663203879687c18c7ab0"
+kind = "research-record"
+owners = ["theology/mariology/regina-coeli"]
+
+[[files]]
 path = "src/gpt/theology/mariology/regina-coeli/sections/00-prayer.tex"
 sha256 = "20fcc1b27a738988d903931ff50123883ab388776591daebd1dcd86c8710b84e"
 kind = "rendered-content"
@@ -9886,6 +10114,12 @@ owners = ["theology/mariology/rosary"]
 path = "src/gpt/theology/mariology/rosary/research/source-bindings.toml"
 sha256 = "5faab6844450a92da2e11ba7a1fdb1fb411cf372ed1b8b5d2774c4aeaa6aab16"
 kind = "source-binding"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/gpt/theology/mariology/rosary/research/staleness-review-2026-07-27.md"
+sha256 = "95f8f31b19f6e808c5d799ad1885d8b2692c72713ac0bcf1463e8619dbacc015"
+kind = "research-record"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
@@ -9974,8 +10208,14 @@ owners = ["theology/sacraments-at-a-glance"]
 
 [[files]]
 path = "src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"
-sha256 = "11aa1b336bfb3d321e8eb3d6fd312a019b51f6d56e8f87e3d1a7f10d8ef77b3e"
+sha256 = "944bbfab8b016fccdf39e43ac43aea2e1470bec3907738068c0960c78e98ab59"
 kind = "source-binding"
+owners = ["theology/sacraments-at-a-glance"]
+
+[[files]]
+path = "src/gpt/theology/sacraments-at-a-glance/research/staleness-review-2026-07-27.md"
+sha256 = "9e1f96befc176be400ba53c446ce280982043c92cfaf6a10fc6e7533ad1817c9"
+kind = "research-record"
 owners = ["theology/sacraments-at-a-glance"]
 
 [[files]]
@@ -10010,8 +10250,14 @@ owners = ["theology/sacraments"]
 
 [[files]]
 path = "src/gpt/theology/sacraments/research/source-bindings.toml"
-sha256 = "d8aee75091a82c7686aeeeb4a98b526f2dbe861a31a4301b04f238eae9435077"
+sha256 = "04e3546c46c4cc9fbf19bfd2e8e674a7c2b422ed13d6a3850212e04fd99f27b4"
 kind = "source-binding"
+owners = ["theology/sacraments"]
+
+[[files]]
+path = "src/gpt/theology/sacraments/research/staleness-review-2026-07-27.md"
+sha256 = "ebb45ff65bebeeec581124bb13ff3fc1dded3a78273a982956d256a19d8bcfcf"
+kind = "research-record"
 owners = ["theology/sacraments"]
 
 [[files]]
@@ -10174,6 +10420,12 @@ owners = ["theology/virtues"]
 path = "src/gpt/theology/virtues/research/source-bindings.toml"
 sha256 = "f80e6dabbb7442b4a4c3e4d9e80da3ffcf0686d4761d09dc936798748e16df7b"
 kind = "source-binding"
+owners = ["theology/virtues"]
+
+[[files]]
+path = "src/gpt/theology/virtues/research/staleness-review-2026-07-27.md"
+sha256 = "b60d5f3e786330b1d57c1789c27d3bcb6ea7c9aeca629a510d861371b620c431"
+kind = "research-record"
 owners = ["theology/virtues"]
 
 [[files]]
