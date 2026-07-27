@@ -2,7 +2,7 @@
 
 **Owner:** Ordinary Time Week 17 of the U.S.-English postconciliar proper collection
 **Consumed on Sunday by:** `PC-S41` (Seventeenth Sunday in Ordinary Time)
-**Registry control:** `guidance/liturgy/postconciliar-propers-registry.md`; the edition's [formula dispositions](../../../../../registry/formula-dispositions.md)
+**Registry control:** `guidance/liturgy/postconciliar-propers-registry.md`; the edition's [formula dispositions](../../../../../../registry/formula-dispositions.md)
 **Collated:** 2026-07-25
 **Provider:** Anthropic Claude
 
