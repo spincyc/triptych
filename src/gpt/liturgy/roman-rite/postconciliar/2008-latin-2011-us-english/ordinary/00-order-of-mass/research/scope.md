@@ -90,3 +90,8 @@ This is internal production review only; it grants no independent editorial, spe
 ## Justin First Apology source-family production review — 2026-07-23
 
 The exact Dods--Reith Buffalo 1887 witnesses for *First Apology* 61 and 65--67 were normalized and rebound after claim-level review. Repeated settled and forced deterministic builds produced the current 77-page PDF, SHA-256 `6622f7fac4b364d1d8321d662f37524f73a06eea11e8c708cbf1716b1018580a`. The final log, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, nonempty text extraction, and build/install byte identity passed. Bounded review rasters were generated through `scripts/pdf-review`; every rendered page was inspected. An independent pass identified a short split in the “One Eucharistic Prayer” callout; a local page-space guard repaired it, and fresh rasters confirmed that the complete box now opens page 35 without a new reflow defect. No release clearance attaches to these changed bytes.
+
+## Research-staleness verdict — 2026-07-27
+
+The new Catechism 1322--1323 records add no edition-specific evidence and
+change no consequential claim. Both candidates support no material change.

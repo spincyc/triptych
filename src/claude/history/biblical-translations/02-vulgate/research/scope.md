@@ -155,6 +155,12 @@ treated as a reuse license.
 
 ## Outstanding review
 
+## Staleness review — 2026-07-27
+
+Central-source expansion was re-evaluated with both required candidates and a
+claim-by-claim comparison. **No material change.** See
+`research/staleness-review-2026-07-27.md`.
+
 ## Staleness review — 2026-07-26
 
 Both candidates found new Clementine artifacts and other new loci unrelated to

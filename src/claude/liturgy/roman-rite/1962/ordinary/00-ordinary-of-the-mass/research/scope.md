@@ -82,3 +82,9 @@ must not enter a public build or private preview.
 The complete unbaselined input set and both candidates were compared. No source
 correction was found. This does not satisfy the unperformed page review or the
 independent Ordinary-exposition review gate; the edition remains on `hold`.
+
+## Research-staleness verdict — 2026-07-27
+
+The new Trent Session XIII records do not alter this edition's operative
+Session XXII evidence or any consequential claim. Both candidates support no
+material change; the existing review hold remains.

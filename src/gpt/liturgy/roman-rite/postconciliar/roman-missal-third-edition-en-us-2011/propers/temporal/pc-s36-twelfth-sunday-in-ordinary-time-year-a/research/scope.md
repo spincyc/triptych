@@ -151,3 +151,8 @@ This is internal production review only; it grants no independent editorial, spe
 The current source and both candidates were compared claim by claim against
 the changed GIRM and Missal inputs. No material correction was found; this
 exact study edition is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The new Catechism 1322--1323 records add no proper-specific evidence and
+change no consequential claim. Both candidates support no material change.

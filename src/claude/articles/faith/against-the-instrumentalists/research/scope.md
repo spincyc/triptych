@@ -62,3 +62,10 @@ Completed (2026-07-24 edition): claim-driven source research with same-day verif
 Completed (2026-07-25 deepening): the deepening added the genealogy section, the three-formulation self-application analysis, the laboratory section's theory-ladenness passage, the praeambula fidei and I.2.3 subsections, the Dei Filius canons and ch. 4 expansions, the scientistic-residue section, the synopsis appendix, and expanded notes and references. All newly quoted witnesses were verified on 2026-07-25 as logged in `research/source-audit.md`; previously quoted Aquinas q. 2 and Dei Filius witnesses were re-fetched; the Quine citation was upgraded from bibliographic record to checked transcription wording; negative results (restricted Popper and Hempel holdings; unreachable Guardian/Atlantic/archive hosts) were logged rather than filled by inference. Internal argumentative, source-consistency, quotation, rights, and production review repeated for the deepened text; multipass build with clean fatal-error, undefined-reference, and layout scans; generation-metadata gate; and page-by-page raster review of the deepened rendering.
 
 Outstanding: independent philosophical, philosophy-of-science, Thomistic, theological, literary, and ecclesiastical review. No imprimatur, nihil obstat, ecclesiastical approval, or completion of independent review is claimed. Internal checking is not independent review.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against the new Catechism Eucharist and
+Aquinas sacramental loci. They do not bear on verificationism, natural reason,
+or the theological boundary. No consequential claim changes; no material
+change.

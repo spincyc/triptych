@@ -13,3 +13,13 @@
 
 ## Staleness review — 2026-07-26
 Both candidates preserved defined eternity, undetermined mode/population, and pastoral limits. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
+
+## Staleness review — 2026-07-27
+
+The old, minimal, and research-first treatments were compared after the bound
+Catechism and *Summa theologiae* works expanded. Catechism 1322–1323 concerns
+Eucharistic initiation; the new Aquinas records concern baptismal exorcism,
+Eucharistic doctrine and reception, and the rite of Mass. None adds, removes,
+strengthens, weakens, or contradicts the article's claims about hell's reality
+and eternity, loss, freedom, punishment, unrevealed population, hope, or
+pastoral restraint. **No material change.**

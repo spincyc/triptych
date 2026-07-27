@@ -82,3 +82,10 @@ Outstanding: independent theological, patristic, historical, textual-critical, a
 Both candidates and the changed Catechism, Denzinger, and Aquinas records were
 compared. They strengthen provenance without changing the doctrinal boundary,
 textual findings, or pastoral limits. This edition is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against the new Catechism Eucharist and
+Aquinas sacramental loci. They do not affect providence, secondary causality,
+the historical attributions, or the pastoral safeguards. No consequential
+claim changes; no material change.

@@ -15,3 +15,12 @@
 
 ## Staleness review — 2026-07-26
 Both candidates found exact patristic inputs strengthen auditability without changing the death synthesis. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
+
+## Staleness review — 2026-07-27
+
+The old, minimal, and research-first treatments were compared after the bound
+Catechism and Irenaeus works expanded. The added Catechism 1322–1323 and
+Irenaeus I.10.1–3, III.3.1–4, III.22.4, and V.2.2–3 records do not change the
+article's claims about death as enemy, soul and body, Christ's victory,
+intermediate state, resurrection, care, or grief. No claim is added, removed,
+strengthened, weakened, or contradicted. **No material change.**

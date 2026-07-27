@@ -177,3 +177,8 @@ Modified and independent-rewrite candidates were compared claim by claim
 against the exact Missal and paired-provider inputs. No material correction was
 found; the study edition may be exactly rebaselined. Full-text candidates were
 outside this review.
+
+## Research-staleness verdict — 2026-07-27
+
+The new Catechism 1322--1323 records add no leaf-specific evidence and change
+no consequential claim. Both candidates support no material change.

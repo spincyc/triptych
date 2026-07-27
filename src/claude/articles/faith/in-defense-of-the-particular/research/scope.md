@@ -73,3 +73,10 @@ Both candidates and the changed Catechism, Scripture, Irenaeus, Aquinas, and
 paired inputs were compared. They strengthen provenance but require no material
 correction. The retitled identity *In Defense of the Particular* remains exact.
 This edition is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against new Eucharistic loci in the
+Catechism and Aquinas and additional Irenaeus passages. They reinforce bounded
+themes without altering the incarnation, election, sacramental, or pluralism
+arguments. No consequential claim changes; no material change.

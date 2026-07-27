@@ -305,3 +305,20 @@ Both candidates preserved the edition's exact list of selective Catechism
 citations. New natural-law and chastity records neither add nor contradict a
 claim. **No material change.** See
 `src/sources/inventories/origen-tertullian-catechism-staleness-review-2026-07-26.md`.
+## Staleness review — 2026-07-27
+
+- **Changed input:** newly normalized Catechism 1322–1323 passage and its
+  inspected official artifact.
+- **Candidates:** both required treatments are under
+  `build/staleness/gpt/biographies/tertullian/`: `modified/` is an in-place
+  no-op candidate, and `rewritten/candidate.md` was drafted from the research
+  records and changed passage before comparison with the current prose.
+- **Three-way comparison:** the passage adds a general Catholic Eucharistic
+  synthesis but does not cite Tertullian or alter the Catechism's audited use of
+  him. It removes, weakens, and contradicts no claim about his life, work
+  chronology, Eucharistic evidence, New Prophecy allegiance, ecclesial
+  separation, death, transmission, or Catholic reception. Candidate
+  disagreement is only compression and arrangement.
+- **Verdict:** **no material change**. The changed passage is not Tertullian
+  biography or reception evidence. Rebaseline is intentionally left to the
+  ledger-owning task.

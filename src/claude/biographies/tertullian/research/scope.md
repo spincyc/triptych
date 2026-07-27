@@ -202,3 +202,23 @@ finalization on 2026-07-25.
 Both candidates confirmed that new chastity records do not affect CCC 2761's
 selective reception of *On Prayer*. **No material change.** See
 `src/sources/inventories/origen-tertullian-catechism-staleness-review-2026-07-26.md`.
+
+## Catechism staleness review — 2026-07-27
+
+Changed inputs: the new exact restricted artifact for the Catechism's
+Eucharist page and its verified CCC 1322–1323 passage record. The old paper
+uses the bound edition only at CCC 2761 for selective reception of
+Tertullian's *On Prayer*.
+
+Three-way comparison: the modified candidate leaves the old paper unchanged.
+The independent rewrite agrees with its consequential claims about the sparse
+life evidence, corpus chronology, Latin theological achievement, New Prophecy
+adherence, unresolved formal separation, unknown death, and selective
+reception without cult. The paper's Eucharistic-practice discussion rests on
+Tertullian's works, not CCC 1322–1323. The changed passage adds, removes,
+strengthens, weakens, and contradicts none of those claims; it does not alter
+CCC 2761. Candidate disagreement is compression and organization only, not
+substance. **No material change.**
+
+Candidates:
+`build/staleness/claude/biographies/tertullian/{modified,rewritten}/`.

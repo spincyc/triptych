@@ -103,3 +103,13 @@ The Lewis claim is a focused paraphrase of *Mere Christianity*, III.8; no Lewis 
 Both candidates and all paired and Catechism inputs were compared. They deepen
 context and provenance without changing the metaphysical thesis, natural-reason
 boundary, or authority classification. This edition is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The old article, minimal candidate, and research-first candidate were compared
+after the bound Catechism work gained paragraphs 1322–1323 and its acquisition
+record. That Eucharistic introduction neither adds to nor qualifies the
+article's claims about creation, participation, non-rival causality, humility,
+consent, divine freedom, analogy, or the natural-reason boundary. Both
+candidates preserve every consequential claim and attribution limit. **No
+material change.**

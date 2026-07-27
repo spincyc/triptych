@@ -63,3 +63,10 @@ Outstanding: independent philosophical, patristic, Thomistic, theological, liter
 Both candidates and the changed Catechism, Irenaeus, and Aquinas records were
 compared. No consequential metaphysical, theological, or moral claim changes.
 This edition is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against new Eucharistic loci in the
+Catechism and Aquinas and additional Irenaeus passages. They do not change the
+participation argument, its epistemic seam, or its moral conclusion. No
+consequential claim changes; no material change.

@@ -181,3 +181,22 @@ change.** See
   claim rests on them;
 - art-historical, cult, shrine, and relic review;
 - independent rights review; ecclesiastical approval (none claimed).
+
+## Catechism staleness review — 2026-07-27
+
+Changed inputs: the new exact restricted artifact for the Catechism's
+Eucharist page and its verified CCC 1322–1323 passage record. The old paper
+uses the bound edition only at CCC 133 for reception of Jerome's teaching on
+Scripture.
+
+Three-way comparison: the modified candidate leaves the old paper unchanged.
+The independent rewrite agrees with its consequential claims about Jerome's
+self-presenting sources, disputed chronology, ascetic and Roman circles,
+Bethlehem scholarship, the staged Latin biblical project, controversies,
+death, relic and iconographic traditions, and ecclesial reception. CCC
+1322–1323 adds, removes, strengthens, weakens, and contradicts none of those
+claims; it does not alter CCC 133. Candidate disagreement is compression and
+organization only, not substance. **No material change.**
+
+Candidates:
+`build/staleness/claude/biographies/saint-jerome/{modified,rewritten}/`.

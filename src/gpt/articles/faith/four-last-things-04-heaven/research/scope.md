@@ -13,3 +13,12 @@
 
 ## Staleness review — 2026-07-26
 Both candidates preserved beatific vision, bodily resurrection, communion, and epistemic limits. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
+
+## Staleness review — 2026-07-27
+
+The old, minimal, and research-first treatments were compared after the bound
+Catechism and Irenaeus works expanded. Catechism 1322–1323 and Irenaeus
+I.10.1–3, III.3.1–4, III.22.4, and V.2.2–3 do not alter the controlling claims
+about beatific vision, creaturely identity, communion, bodily resurrection,
+renewed creation, or speculative limits. The candidates agree in substance.
+**No material change.**

@@ -352,3 +352,20 @@ change.** See `src/sources/inventories/peter-paul-staleness-review-2026-07-26.md
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 27-page PDF with SHA-256 `96100e5742da5d40fd8a6b59a2eeb55c8b4042faf4ec7d421b32790a635ccfff`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
 This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; the exception supplies none of the missing review or approval just named and authorizes no changed bytes.
+## Staleness review — 2026-07-27
+
+- **Changed input:** newly normalized Catechism 1322–1323 passage and its
+  inspected official artifact.
+- **Candidates:** both required treatments are under
+  `build/staleness/gpt/biographies/saint-paul/`: `modified/` is an in-place
+  no-op candidate, and `rewritten/candidate.md` was drafted from the research
+  records and changed passage before comparison with the current prose.
+- **Three-way comparison:** the passage adds a general Catholic Eucharistic
+  synthesis. It removes, weakens, and contradicts no current claim. It is
+  consonant with Pauline Eucharistic themes but adds no event, chronology,
+  authorship judgment, itinerary, coworker relationship, martyrdom or burial
+  evidence, cult claim, or office claim. The rewritten candidate differs from
+  the old and modified versions in compression and arrangement, not substance.
+- **Verdict:** **no material change**. The changed passage is not new Pauline
+  biographical evidence. Rebaseline is intentionally left to the ledger-owning
+  task.

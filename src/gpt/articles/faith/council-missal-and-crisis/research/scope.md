@@ -173,6 +173,15 @@ independent specialist, theological, canonical, rights, or ecclesiastical
 review, and no prior exact-byte distribution clearance attaches to the
 changed render.
 
+## Research-staleness verdict — 2026-07-27
+
+The old article, minimal candidate, and research-first candidate were compared
+after the bound Catechism work gained paragraphs 1322–1323 and its acquisition
+record. That Eucharistic introduction supplies no evidence about conciliar
+authority, liturgical development, institutional contraction, demography,
+causal inference, or current canonical status. Neither candidate changes any
+consequential claim or qualification. **No material change.**
+
 ## *Perfectae caritatis* source-reuse audit — 2026-07-24
 
 The exact official English articles 2, 3--4, 5--6, 12--15, and 17 were

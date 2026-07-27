@@ -14,3 +14,16 @@ owner root's `research/` records.
 Comparison of the current companion and both candidates against changed inputs
 found strengthened Canon provenance but no material source, prompt, model, or
 answer correction. This exact assessment is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The only later inputs are new records elsewhere in the already-bound
+*Summa theologiae* work: English III, qq. 71 and 73–83 and Latin web
+artifacts for III, qq. 73–80. The assessment still binds the unchanged
+Leonine I, q. 1, a. 1 opening. A minimal candidate retained the companion; an
+independent rewrite reconstructed it from the companion map and the exact
+Missal, Gospel, and anthology controls. Claim-by-claim comparison found no
+change to a printed source, prompt, model, rubric, or answer. The new
+sacramental questions are outside the assessment. No material change is
+warranted; both candidates were discarded and this edition may be
+rebaselined.

@@ -188,3 +188,22 @@ Both candidates confirmed that new natural-law and chastity records do not
 affect CCC 2745 or 2847 and their selective reception of *On Prayer*. **No
 material change.** See
 `src/sources/inventories/origen-tertullian-catechism-staleness-review-2026-07-26.md`.
+
+## Catechism staleness review — 2026-07-27
+
+Changed inputs: the new exact restricted artifact for the Catechism's
+Eucharist page and its verified CCC 1322–1323 passage record. The old paper
+uses the bound edition only at CCC 2745 and 2847 for selective reception of
+Origen's *On Prayer*.
+
+Three-way comparison: the modified candidate leaves the old paper unchanged.
+The independent rewrite agrees with its consequential claims about the
+biographical witness problem, the contested self-mutilation report, Origen's
+scriptural scholarship, the Alexandrian rupture, Decian suffering, death, the
+543/553 distinctions, and selective modern reception. CCC 1322–1323 adds,
+removes, strengthens, weakens, and contradicts none of those claims; it does
+not alter either cited Catechism locus. Candidate disagreement is compression
+and organization only, not substance. **No material change.**
+
+Candidates:
+`build/staleness/claude/biographies/origen/{modified,rewritten}/`.

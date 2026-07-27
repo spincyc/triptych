@@ -117,3 +117,9 @@ The current source and both candidates were compared claim by claim against
 changed general and paired-provider inputs. No material correction was found;
 the outstanding altar-book and review limits remain open, and this exact study
 is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The newly cataloged *Summa* III records do not cover the bound II-II tares and
+Romans loci and change no consequential claim. Both candidates support no
+material change; the existing review limits remain.

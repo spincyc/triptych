@@ -15,3 +15,13 @@ Natural goods mean rational clarity, testimony, memory, fair disagreement, and p
 The work preserves Christ's unique mediation and the completeness of public Revelation. Marian cooperation is created, graced, maternal, subordinate, and participated. It neither recommends “Co-redemptrix” nor makes “Mediatrix” an independent causal office.
 
 Independent review in Mariology, dogmatics, patristics, ecumenism, history, and canon law remains outstanding. No ecclesiastical approval is claimed.
+
+## Initial research baseline — 2026-07-27
+
+The edition entered the library on 26 July with its scope, authority
+inventory, source audit, bindings, installed PDF, web edition, catalog entry,
+and exact release snapshot, but its first research-staleness ledger entry was
+omitted. The authoring-state records and current bound source graph were
+checked together; no post-authoring research change requires a candidate
+comparison. This record supplies the missing initial baseline only. The
+outstanding independent reviews above remain outstanding.

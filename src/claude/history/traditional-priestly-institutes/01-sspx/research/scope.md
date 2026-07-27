@@ -182,3 +182,12 @@ Comparison with both candidates found that newly registered Code and Acta
 records strengthen exact provenance without changing any consequential claim,
 source gap, or cutoff qualification. This exact edition is ready for
 rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The five newly reported inputs are the exact image and passage records for
+1917 Code cann. 1151--1153 and 1983 Code can. 1172, all governing exorcism.
+They have no bearing on this history or on its use of 1917 Code cann. 985,
+7°, and 2374. Both candidates were built and all 42 consequential claims
+were compared in `staleness-review-2026-07-27.md`. Verdict: no material
+change. No rebaseline or ledger change was made.

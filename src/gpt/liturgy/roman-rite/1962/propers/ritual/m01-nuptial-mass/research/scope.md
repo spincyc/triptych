@@ -185,3 +185,8 @@ The current source and both candidates were compared claim by claim against
 the changed Missal inputs, including the new general-rubric records. No
 material correction was found; this exact study edition is ready for
 rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The new Catechism 1322--1323 records add no leaf-specific evidence and change
+no consequential claim. Both candidates support no material change.
