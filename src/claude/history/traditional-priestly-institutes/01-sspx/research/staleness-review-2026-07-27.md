@@ -115,3 +115,31 @@ weakened, or contradicted. The installed edition should remain unchanged.
 
 This review does not authorize or perform rebaselining, ledger edits, or
 publication installation.
+
+## Second exact-trigger review — 2026-07-27
+
+The exact explanation subsequently reported four new inputs: CIC 1983 canon
+1166 and the edition, artifact, and passage records for AAS 49 (1957),
+pp. 91–95. Canon 1166 defines sacramentals. The AAS passage is the Sacred
+Congregation of Rites' 1 February 1957 provisions concerning the restored
+Holy Week order.
+
+The ignored modified candidate is an exact pre-note snapshot. The ignored
+research-first rewrite independently reconstructs the foundation, first
+rupture, 1988 consecrations, later governance and dialogue, Francis-era
+faculties, 2026 cutoff, and the four-record trigger from the research records.
+
+| Claim family | Old | Modified | Rewritten | Effect |
+|---|---|---|---|---|
+| 1970 erection and 1975–1976 suppression/ordination rupture | Retained | Identical | Retained | None. |
+| 1988 protocol, consecrations, *Ecclesia Dei*, and canonical consequences | Retained | Identical | Retained | None. |
+| Post-Lefebvre governance, dialogue, and unresolved canonical status | Retained | Identical | Retained | None. |
+| 2015–2017 confession and marriage provisions | Retained | Identical | Retained | None; neither sacramentals nor 1957 Holy Week provisions grant or revoke these faculties. |
+| Authority, evidence, currentness, and case-advice boundaries | Retained | Identical | Retained | None. |
+
+No changed input adds, removes, strengthens, weakens, or contradicts a
+consequential claim. Candidate differences are rhetorical and compressive.
+
+**Second-review verdict: no material change.** Both triggers are unrelated
+whole-work collateral. No publication, PDF, web edition, binding, catalog,
+release, currentness, or review-state revision is warranted.
