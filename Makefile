@@ -337,7 +337,12 @@ check-sources:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
 	@set -eu; for inventory in src/sources/inventories/*publications-v1.toml; do \
 		[ -e "$$inventory" ] || continue; \
-		$(PYTHON) $(SOURCE_INVENTORY_TOOL) check "$$inventory"; \
+		case "$$inventory" in \
+			*/claude-publications-v1.toml) \
+				review=src/sources/inventories/claude-classification-review-v1.toml ;; \
+			*) review=src/sources/inventories/classification-review-v1.toml ;; \
+		esac; \
+		$(PYTHON) $(SOURCE_INVENTORY_TOOL) check --review "$$review" "$$inventory"; \
 	done
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 

@@ -374,8 +374,10 @@ For an ordinary source-bearing change, refresh and review in this order:
 1. run `scripts/source-inventory refresh --audited-on YYYY-MM-DD` after the
    publication or its owned source surface changes;
 2. review any new or unresolved publication in
-   `classification-review-v1.toml`, then rerun `scripts/source-inventory
-   classify` when its broad source strata change;
+   the provider's classification review (`classification-review-v1.toml` for
+   GPT or `claude-classification-review-v1.toml` for Claude), then rerun
+   `scripts/source-inventory classify --review PATH` when its broad source
+   strata change;
 3. run `scripts/source-family-migration refresh --audited-on YYYY-MM-DD`, and
    manually review any new family presence rather than expecting refresh to
    infer it;
