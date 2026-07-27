@@ -9,18 +9,18 @@ Last reconciled: 2026-07-27.
 
 ## Current integration and publication state
 
-The repaired public-alpha snapshot is committed and pushed through commit
-`f6e9d2e2`. Pull request 1 is open and mergeable against `main`. The repair
-branch has not been integrated into `main`, and GitHub Pages has therefore not
-deployed these repairs. The stable review landing page for the exorcism paper is
-`library/catholic-exorcism.md`; its branch artifact links the PDF and web
-edition. Production discoverability remains blocked on integration and the
-Pages workflow.
+The repaired public-alpha snapshot is integrated on `main` through commit
+`b93e64b4`; pull request 1 is merged, and GitHub Pages workflow run
+`30296605957` successfully deployed that exact commit on 27 July 2026. The
+stable review landing page, PDF, and web-edition routes for the exorcism paper
+resolve in production. Exact production reconciliation remains open because
+`library/catholic-exorcism.md` still labels the installed and deployed 29-page
+PDF as a 20-page paper.
 
 ## Clean-agent restart
 
-After this work is merged, start a clean isolated agent from current `main` and
-give it this instruction:
+For the next clean isolated agent started from current `main`, use this
+instruction:
 
 > Read `AGENTS.md`, `PROJECT-WORK.md`, `promised-deliverables.toml`,
 > `guidance/promised-deliverables.md`, and the guidance and research records
@@ -44,8 +44,8 @@ The restarting agent must then:
    --deployment-target github-pages`; separately verify the live production
    routes after Pages completes.
 5. Resume in this order unless the maintainer gives a new priority:
-   `project-integrate-and-deploy`; `task-2-exorcism-100-pages`;
-   `project-recent-paper-hard-review`; `task-1-altar-server-guides`;
+   `task-2-exorcism-100-pages`; `project-recent-paper-hard-review`;
+   `task-1-altar-server-guides`;
    `task-4-missa-cantata`; `task-5-solemn-mass`;
    `task-3-sanctuary-dictionaries`; `task-6-linen-restoration`; then the
    repository-wide staleness, source-family, public-review, and artwork queues.
@@ -127,8 +127,9 @@ ecclesiastical review of the exact snapshot remain open.
 Repository policy now keeps produced PDFs discoverable while honestly labeling
 review state. Branch validation found 164 release publications, 14 review
 publications, and no held publication in the generated public-alpha artifact.
-Production-site route and visible-label validation remains open until the
-branch is integrated and Pages deploys.
+Production-site route and review-label validation passed for the deployed
+artifact. Exact catalog-text reconciliation remains open because the exorcism
+landing page understates the deployed PDF as 20 rather than 29 pages.
 
 ### Recently discussed paper hard review
 
@@ -146,9 +147,9 @@ The 2026-07-27 audit establishes the following actionable backlog:
 
 | Audit ID | Finding | Current measure | Completion evidence |
 | --- | --- | ---: | --- |
-| `AUD-INTEGRATE-001` | Pushed repairs are absent from production Pages | 1 open PR; branch not on `main` | integrated commit plus successful Pages artifact verification |
+| `AUD-INTEGRATE-001` | Repair integration and Pages deployment | Integrated through `b93e64b4`; Pages run `30296605957` succeeded | passed; exact catalog-text discrepancy retained under the affected work |
 | `AUD-STALE-001` | Rendered publications disagree with current inputs or records | 88 editions | `make check-staleness` passes |
-| `AUD-SOURCES-001` | Reusable-source family screening is incomplete | 140 of 227 review units pending | `make check-source-family-screening` passes |
+| `AUD-SOURCES-001` | Reusable-source family screening is incomplete | 140 of 140 review units pending across 227 source families | `make check-source-family-screening` passes |
 | `AUD-REVIEW-001` | Public review copies retain unclosed completion gates | 14 publications | each work-specific review record closes against its exact snapshot |
 | `AUD-ART-001` | Dictionary artwork has held identification/resolution notices | 15 notices | artwork validator and human review records close every notice |
 | `AUD-MEMORY-001` | Conversation outcomes were not exhaustively represented in tracked work records | prior ledger had 8 broad items | every known agreement is represented here and in the ledger when criteria are known |
@@ -180,6 +181,10 @@ the same substantive edit.
 - 2026-07-27: Added the clean-agent post-merge restart sequence, priority
   queue, exact verification commands, exorcism re-entry point, and authority
   boundary.
+- 2026-07-27: Confirmed that pull request 1 was merged, `main` contains the
+  repair series through `b93e64b4`, and Pages workflow run `30296605957`
+  successfully deployed that commit. Retained the exorcism landing page's
+  20-versus-29-page discrepancy as open exact-production reconciliation.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.

@@ -185,18 +185,18 @@ state = "in_progress"
 id = "project-integrate-and-deploy"
 owner = ".github/workflows/pages.yml"
 promise = "Integrate the pushed repair series and verify the resulting production Pages deployment."
-state = "blocked"
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "integrated"
   criterion = "The repair commits are contained by main through an authorized integration."
-  status = "blocked"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
 
   [[deliverables.requirements]]
   id = "production-verified"
   criterion = "The deployed production artifact resolves the repaired landing pages, web editions, and PDFs."
-  status = "blocked"
+  status = "open"
   evidence = ["PROJECT-WORK.md", "scripts/public-alpha"]
 
 [[deliverables]]
