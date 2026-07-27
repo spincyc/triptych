@@ -20,19 +20,19 @@ paraphrased use is not represented as an original-language collation.
 | John 6 moves from feeding sign and faith to flesh given, eating/drinking, abiding, and resurrection | John 6:1–71 | Registered Douay–Rheims and RP 2018 Greek John artifacts inspected and bound | From modern verse 51 onward the Douay–Rheims/Vulgate numbering used by the artifact is one higher; Latin and an independent modern critical Greek edition remain uncollated |
 | Luke twice makes the swaddled child in the manger the shepherds' sign | Luke 2:7, 12, 16 | Checked in registered Douay–Rheims Luke artifact | Luke supplies no explicit Eucharistic interpretation |
 | Ignatius identifies Eucharist and the flesh that suffered and rose | *Smyrnaeans* 7 | ANF public-domain translation located | Not a direct John 6 commentary; Greek not collated |
-| Created bread/wine and nourished flesh belong to Eucharist and resurrection | Irenaeus, *Against Heresies* IV.18.5; V.2.2–3 | ANF translation located; repository Irenaeus work exists | Greek/Latin fragments and exact printed pages not yet collated |
-| Cyprian directly uses John 6 inside an account of daily Eucharistic bread | *On the Lord's Prayer* 18 | Checked at New Advent's ANF text | Latin not collated |
-| Cyril directly cites John 6:53 while catechizing about Christ's Body and Blood | Cyril of Jerusalem, *Mystagogical Catechesis* IV.1–6 | Checked at New Advent's NPNF text | Greek not collated; later sacramental terminology not retrojected |
+| Created bread/wine and nourished flesh belong to Eucharist and resurrection | Irenaeus, *Against Heresies* IV.18.5; V.2.2–3 | Exact ANF I facsimile passages acquired, inspected, registered, and bound | Greek/Latin fragments not collated; not a direct John 6 commentary |
+| Cyprian directly uses John 6 inside an account of daily Eucharistic bread | *On the Lord's Prayer* 18 | Excluded research lead; identified web transcription only | Omitted from the article pending a normalized exact reusable witness and Latin collation |
+| Cyril directly cites John 6:53 while catechizing about Christ's Body and Blood | Cyril of Jerusalem, *Mystagogical Catechesis* IV.1–6 | Excluded research lead; identified web transcription only | Omitted from the article pending a normalized exact reusable witness; Greek not collated |
 | Chrysostom distinguishes senses of “bread,” then directly reads 6:51–58 eucharistically and 6:63 against carnal hearing | *Homilies on John* 45–47 | Exact NPNF I.14 facsimile acquired, hashed, inspected at printed pp. 159–170, and bound | Greek not collated |
 | Chrysostom joins the one Eucharistic Body to the body adored in the manger | *Homily 24 on First Corinthians*, on 1 Cor 10:17 | Exact NPNF I.12 facsimile acquired, hashed, inspected at printed pp. 138–143, and bound | Does not call the manger an altar or invoke Bethlehem's name |
 | Augustine joins believing, eating, sacrament, abiding, unity, and fruitful reception | *Tractates on John* 25–27 | Exact NPNF I.7 facsimile acquired, hashed, inspected at printed pp. 163–177, and bound | Latin not collated |
 | Cyril of Alexandria treats the flesh as life-giving through union with the Word | *Commentary on John*, book IV, ch. 2, on John 6:51–58 | Exact Pusey 1874 English web artifact hashed, passage inspected and bound | Greek not collated; paraphrase only |
 | Ambrose identifies the living Bread with Christ's Body | *On the Mysteries* 47–49 | Exact NPNF English web artifact hashed, passage inspected and bound | Latin not collated |
-| Paula's Bethlehem salutation explicitly joins “house of bread,” the infant in cloths/manger, and John 6:51 | Jerome, Letter 108.10 | Exact NPNF English web artifact hashed, passage inspected and bound | Jerome reports Paula's speech in a crafted memorial letter; Latin not collated |
+| Paula's Bethlehem salutation explicitly joins “house of bread,” the infant in cloths/manger, and John 6:51 | Jerome, Letter 108.10 | Exact NPNF English web artifact hashed, passage inspected and bound | Jerome reports Paula's speech in a crafted memorial letter; Latin not collated; the article presents “house of bread” as this reception gloss, not independent modern philology |
 | Ambrose joins Bethlehem as house of bread with Bread from heaven | Ambrose, Letter 70.9–14 in Walford's numbering | Exact 1881 English web artifact hashed, passage inspected and bound | Historical numbering is edition-specific; Latin and modern critical numbering not collated |
 | A homily explicitly calls the manger a feeding-board holding heavenly Bread and mentions the cloths | Anonymous first homily on the Annunciation, transmitted as the first of four under Gregory Thaumaturgus's name | Exact ANF VI English web artifact hashed, passage inspected and bound under anonymous work identity | ANF files it among dubious/spurious writings; no Gregory attribution or third-century date permitted |
 | John dates the feeding near Passover and repeatedly names the feeding a sign | John 6:4, 14, 26, 30 | Principal English and Greek loci directly read | Passover supplies a narrative horizon; it does not make the multiplied loaves consecrated species |
-| Murmuring frames resistance in the bread discourse and among disciples | John 6:41, 43, 61; LXX exodus murmuring as contextual control | Greek John loci directly read; Septuagint control not yet bound | The exodus echo is strong but does not establish identical motives in every hearer |
+| Murmuring frames distinct objections in the bread discourse and among disciples | John 6:41, 43, 61 | Greek John loci directly read | The article follows John's immediate sequence; the former unbound Septuagint inference was retired |
 | John shifts from ordinary *phagein* forms to repeated *trōgein* at 6:54–58 | Registered RP 2018 John artifact | Directly read in exact artifact | *Trōgein* also occurs for ordinary eating at 13:18; “gnaw” is not a self-sufficient doctrinal proof |
 | John 6:55 differs between Byzantine adverbs and NA adjectives | Registered RP inline apparatus | Directly read | The registered apparatus reports NA; a Nestle–Aland edition was not independently collated |
 | John 6:69 has a material confession variant | Registered RP inline apparatus | Directly read | Byzantine “Christ, Son of living God”; apparatus reports NA “Holy One of God” |
@@ -61,8 +61,12 @@ witnesses listed in this audit retain their separately disclosed limits.
 
 ## Consequential negative results
 
-- No controlled witness in this preliminary set makes the **swaddling cloths
-  themselves** Eucharistic linens.
+- None of the exact witnesses inspected for the Nativity/reception synthesis—
+  Luke 2:7, 12, 16; Jerome, Letter 108.10; Ambrose, Letter 70.9–14;
+  Chrysostom, *Homily 24 on First Corinthians*; and the anonymous first
+  Annunciation homily—makes the **swaddling cloths themselves** Eucharistic
+  linens. This is a bounded result for those named witnesses, not a claim
+  about all patristic literature.
 - Jerome and Ambrose establish a Bethlehem/Bread-from-heaven conjunction, but
   neither checked locus proves that the Hebrew place-name was historically
   coined as prophecy.

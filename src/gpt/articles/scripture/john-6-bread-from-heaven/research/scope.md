@@ -30,9 +30,13 @@
    Gregory Thaumaturgus's name, but its own received collection classifies the
    Four Homilies as doubtful or spurious. It cannot support a third-century
    attribution.
-5. No controlled early witness consulted so far turns the swaddling cloths
-   themselves into Eucharistic linens. Their role in the study is incarnational
-   and canonical; any further connection is labeled project synthesis.
+5. The exact Nativity/reception witnesses inspected—Luke 2:7, 12, 16;
+   Jerome, Letter 108.10; Ambrose, Letter 70.9–14; Chrysostom, *Homily 24 on
+   First Corinthians*; and the anonymous first Annunciation homily—do not turn
+   the swaddling cloths themselves into Eucharistic linens. This bounded
+   result is not a claim about all patristic literature. Their role in the
+   study is incarnational and canonical; any further connection is labeled
+   project synthesis.
 
 ## Included and excluded
 
