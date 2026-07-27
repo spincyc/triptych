@@ -7,6 +7,41 @@ document = "articles/scripture/john-6-bread-from-heaven"
 # another provider's interpretation, sufficiency judgment, or review event.
 
 [[bindings]]
+source_id = "passage.cyprian.de-dominica-oratione.english-wallis-anf5-newadvent-web-2026-07-27.18"
+loci = ["18"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the bounded account of Cyprian placing John 6 inside daily Eucharistic bread, communion, and discipline. The exact English witness is verified; Cyprian's Latin was not collated."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:9eb77d09e493fff348d0f83fbf0a15b6d4bd66e8026eca47cc32f942400eec45"
+
+[[bindings]]
+source_id = "passage.cyril-of-jerusalem.catechetical-lectures.english-gifford-npnf2-7-newadvent-web-2026-07-27.mystagogical-4.1-6"
+loci = ["Mystagogical-4.1-6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the Jerusalem catechesis's movement from the institution narrative through John 6:53 to instruction about receiving Christ's Body and Blood by faith rather than sensory judgment. Authorship of the mystagogical lectures remains disputed; the Greek was not collated."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:4659eb4a4ca6775108b83b132225e698bffb3535e3afc78d67699ac69daab283"
+
+[[bindings]]
+source_id = "passage.swete.old-testament-in-greek.cambridge-vol-1-1909.exod-16.2-12"
+loci = ["Exod.16.2-12"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Controls only the repeated Septuagintal gongyz- word-family in the manna narrative. The exact remote OCR was inspected but not collated against page images, so the publication states a bounded possible echo rather than demonstrable authorial intent."
+source_fingerprint = "sha256:ee0ef08aaa265d306ba3a101ebb992e096bc2129a2ed4e148148282a3d286a8b"
+
+[[bindings]]
+source_id = "passage.university-of-iowa.biblical-hebrew-lehem.web-2026-07-27.lehem"
+loci = ["lehem"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the bounded synchronic gloss: Hebrew lehem means bread and can mean food, and Bethlehem may ordinarily be glossed house of bread. It supplies no historical etymology or proof of providential encoding."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:c40f6fe7c9f5974ae3b1e4079d2b1a7e9e4b528d411305075a2ffd894b4e36d0"
+
+[[bindings]]
 source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.ia-facsimile-pdf-a09a5d18"
 loci = ["Chrysostom, Homilies on John 45-47; printed pp. 159-170"]
 role = "reception"

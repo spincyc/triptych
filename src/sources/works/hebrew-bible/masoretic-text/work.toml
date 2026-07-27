@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.hebrew-bible.masoretic-text"
+title = "Hebrew Bible, Masoretic Text"
+responsible = "Masoretic textual tradition"
+work_type = "biblical-edition"
+alternate_titles = ["Masoretic Text", "Hebrew Scriptures"]
+languages = ["he", "arc"]
+locus_pattern = '[1-3]?[A-Z][A-Za-z]*\.[1-9][0-9]*\.[1-9][0-9]*(?:-[1-9][0-9]*)?'
+description = "The consonantal, vocalized, and accentuated Hebrew and Aramaic textual tradition represented by identified manuscripts and print editions. Edition records distinguish their base text, editors, apparatus, and delivery artifacts; this identity does not collapse differences among the Bomberg tradition, Codex Leningradensis, Biblia Hebraica printings, or modern critical editions."
