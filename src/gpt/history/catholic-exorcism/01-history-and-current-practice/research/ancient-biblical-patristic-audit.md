@@ -53,8 +53,10 @@ patristic, biblical, liturgical, and theological review.
   its outcomes, frequency, formulary, or original Greek wording.
 
 Exact records remain necessary for Tobit's Greek recensions, Genesis
-Apocryphon 1Q20 XX, Qumran apotropaic texts, the *Apostolic Tradition*, and
-Laodicea 26. Exact dated English passage records now control the bounded
+Apocryphon 1Q20 XX, and Qumran apotropaic texts. Easton's exact 1934 English
+reconstruction now controls only its own *Apostolic Tradition* text state, and
+Percival's exact 1900 English edition now controls only its Laodicea 26
+translation; neither is a modern critical original-language control. Exact dated English passage records now control the bounded
 Tertullian, Origen, Jerusalem, and Eusebius claims; none supplies
 original-language verification.
 
@@ -74,7 +76,7 @@ original-language verification.
 | Latin apology | Tertullian, *Apology* 23 | A public forensic challenge in Christian rhetoric | A transcript of a Roman proceeding |
 | Church-order tradition | *Apostolic Tradition* 20–21 | Uncontrolled research lead concerning scrutiny and pre-baptismal commands | No publication claim until the consulted textual form and translation are registered |
 | Jerusalem catechesis | Cyril, *Procatechesis* 9; *Mystagogical Catecheses* 1.4–9 | Exorcism, renunciation, orientation, and confession within initiation | Identity with the later major exorcism |
-| Conciliar discipline | Laodicea 26 | Local/conciliar restriction of exorcistic action to episcopally appointed persons | A universal apostolic office or the date of every later ordination form |
+| Conciliar discipline | Laodicea 26, Percival 1900 English, exact CCEL PDF | The historical English witness gives a church/private-house restriction tied to episcopal promotion | Critical Greek wording, universal reception, a universal apostolic office, or the date of every later ordination form |
 
 ## Patristic reception matrix
 
@@ -91,7 +93,7 @@ support a quotation or a negative result.
 | third century, Alexandria / Caesarea | Origen, learned apologetic reply | *Against Celsus* 1.6, 1.25, 7.4 | theology / apologetic claim | 1.6 and 7.4 contrast Christian means with magical apparatus; 1.25 advances a broader theory of efficacious names and must not be compressed into the same claim | exact dated Crombie English passages inspected |
 | composite, eastern and western church-order transmission | church-order complex conventionally called *Apostolic Tradition* | 20–21 | initiation | Scrutiny and pre-baptismal commands; authorship, unity, date, and Roman provenance disputed | critical-edition control outstanding |
 | fourth century, Jerusalem | Cyril and the Jerusalem mystagogical tradition, catechetical lectures | *Procatechesis* 9; *Mystagogical Catecheses* 1.4–9 | initiation / theology | Exorcism, renunciation, west/east orientation, and confession belong to incorporation; authorship of the latter work is disputed | exact dated Gifford English passages inspected |
-| fourth century, Asia Minor conciliar reception | Laodicea, disciplinary canon | canon 26 | ministerial discipline | Restricts action by persons not promoted by the bishop in churches or private houses; local/conciliar scope and date require qualification | exact public-domain edition and locus identified |
+| fourth century, Asia Minor conciliar reception | Laodicea, disciplinary canon | canon 26 | ministerial discipline | Percival's English text restricts action by persons not promoted by the bishop in churches or private houses; local/conciliar scope, date, Greek wording, and reception require qualification | exact 1900 English witness visually verified; modern critical Greek control outstanding |
 | c. 251 letter preserved in fourth-century history | Cornelius of Rome quoted by Eusebius | *Church History* 6.43.11 | office / institutional reception | Lists exorcists with readers and door-keepers under one combined total of fifty-two; no separate exorcist count and no proof of functional identity with later major exorcism | exact dated McGiffert English passage inspected |
 | fourth century, Antioch / Constantinople | John Chrysostom, Gospel homilies | *Homilies on Matthew*, including homily 23 | biblical reception | Sustained Gospel exposition bears Christological and moral interpretation; a homily is not a ritual rubric | dated edition cataloged; exact relevant passages outstanding |
 | fourth century, Egypt | Athanasius, ascetical narrative and doctrinal works | relevant Antony and Incarnation loci | ascetic reception / theology | Candidate for testing how victory over demons functions in ascetical narrative rather than institutional law | lead only |

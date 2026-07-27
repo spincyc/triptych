@@ -8,8 +8,10 @@ claims.
 - **Laodicea canon 26:** Joannou's 1962 *Discipline générale antique* was
   authenticated bibliographically as the desired modern critical collection,
   but its canon text was not publicly inspectable. Percival's public 1900
-  translation is not a critical or official substitute. The exact-control gap
-  therefore remains open; no reader claim was promoted from it.
+  translation was subsequently acquired as an exact CCEL PDF, hashed, and
+  visually verified at artifact page 317. It closes the exact historical
+  English-witness gap but is not a critical or official substitute; the Greek
+  critical-control gap remains open.
 - **Apostolic Tradition 20–21:** the exact Project Gutenberg delivery of
   Burton Scott Easton's 1934 English reconstruction was acquired and hashed
   (`13014bd5…eb028`). Chapters 20–21 and Easton's own textual-witness warning
