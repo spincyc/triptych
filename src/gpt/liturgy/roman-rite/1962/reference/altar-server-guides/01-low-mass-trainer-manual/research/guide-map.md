@@ -87,3 +87,8 @@ removed from the mirrored main lane. Stage-level checks, physical tests,
 independent ceremonial and pedagogical review, rights, and ecclesiastical
 review remain open. This is a discoverable alpha review copy, not a completed
 release.
+
+The later actor-overlay pass applies the same corrected, collision-free TeX
+labels as the child edition on matched pages 10, 12, 14, 18, 19, 21, 22, and
+26. The page boundaries and shared main lane remain aligned at twenty-nine
+pages; no pencil raster was altered.

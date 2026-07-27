@@ -116,3 +116,11 @@ screen-reviewed. Physical print, photocopy, intended-reader, independent
 ceremonial and pedagogical, rights, and ecclesiastical review remain open; the
 public artifact is therefore a discoverable alpha review copy, not a completed
 release.
+
+The later actor-overlay pass checked every person in the pencil scenes used on
+pages 10, 12, 14, 18, 19, 21, 22, and 26. TeX now identifies the priest,
+First, Second, and the Communion-scene communicant without painting capsules
+or route arrows over a figure. It corrects the Gospel-station,
+Communion-plate, finger-washing, and recession actor order. The page-29
+provenance block and common rights notice are both wholly contained on the
+same physical terminal page. The artwork bytes remain unchanged.

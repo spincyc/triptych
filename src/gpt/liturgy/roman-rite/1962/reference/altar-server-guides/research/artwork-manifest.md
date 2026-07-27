@@ -690,3 +690,25 @@ placement audit, or full-size consumer-page comparison has yet been recorded
 for these replacement bytes. Those checks remain open together with the
 integrated, paired-use, print-size, photocopy, and independent ceremonial
 reviews stated above.
+
+## TeX-overlay audit — 2026-07-27
+
+The integrated Low-Mass pages were checked actor by actor against the visible
+figures in `ASG-ART-011`--`ASG-ART-018`, `ASG-ART-020`, and
+`ASG-ART-021`. TeX overlay corrections changed no artwork byte. In particular:
+
+- `ASG-ART-012` now maps picture-left priest, centre First, and picture-right
+  Second;
+- `ASG-ART-016` identifies the communicant separately from the priest, First
+  with the Communion plate, and Second waiting clear;
+- `ASG-ART-017` identifies the priest, First pouring wine, and Second waiting
+  with water;
+- `ASG-ART-018` maps picture-left Second with water, centre First with wine,
+  and picture-right priest; and
+- `ASG-ART-021` maps the two leading servers as Second then First,
+  picture-left to picture-right, with the priest following with the chalice.
+
+Labels on the audited scenes now occupy clear exterior rows or side lanes.
+The elevation sightline arrows and recession route arrows that crossed
+figures were removed. These are presentation corrections, not new ceremonial
+evidence or independent artwork review.

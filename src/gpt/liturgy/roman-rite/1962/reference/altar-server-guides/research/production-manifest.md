@@ -13,13 +13,13 @@ not control the current installed files.
 
 | Publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 | Current review state |
 |---|---|---:|---:|---:|---|---|
-| `01-low-mass` | `2026-07-27T22:48:48Z` | 29 | 0 | 7,852,561 | `1bfa2ac95ace57b06f0fd7b286206876cecb4ead0b38aa7a53eea244fca6e7e7` | public alpha review; every page now carries the provisional edge label; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
-| `01-low-mass-trainer-manual` | `2026-07-27T22:48:48Z` | 29 | 0 | 7,865,245 | `c82554be8f966900db30c5e86f1f781afada5f6f5be25251f05eaa1e6f2330d4` | public alpha review; page-aligned build with provisional edge label; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
+| `01-low-mass` | `2026-07-27T23:20:09Z` | 29 | 0 | 7,852,436 | `2bd4a3e100b414e525d523573ddbe7fabd30ec2f82b942c4c9223ca9a55ce6d0` | public alpha review; actor overlays and terminal colophon screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
+| `01-low-mass-trainer-manual` | `2026-07-27T23:20:09Z` | 29 | 0 | 7,865,170 | `5f4ded7508b55082b30ea75cf4f9973b92380d4752656b1fbfe2f4daab375014` | public alpha review; page-aligned actor overlays screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
 | `01-low-mass-flash-cards` | `2026-07-27T22:48:48Z` | 6 | 22 | 250,916 | `6a5d1363faab813ad51b0e2d0d68a601e3970e077ae9bf45c3cb78242b3cf460` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
 | `02-missa-cantata` | `2026-07-27T22:48:48Z` | 27 | 0 | 1,264,704 | `07a16ac90e30836c4c8aa8bebb3a788caad74ede3fd2985bcaa9b420917ed3cd` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
 | `02-missa-cantata-cue-cards` | `2026-07-27T22:48:48Z` | 12 | 36 | 624,375 | `172eadb08a796a64dcc990eb49157b3f69c0ae6e01c927c29b7cff141e6160ed` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
 | `03-solemn-mass` | `2026-07-27T22:48:48Z` | 28 | 0 | 1,311,099 | `ad4a45de902147495fc22a96c42b4010d14dc8611243accd6755831aa78cce19` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
-| `03-solemn-mass-cue-cards` | `2026-07-27T22:48:48Z` | 12 | 36 | 629,684 | `328005a08b9212eabaada8067c3c5dce999bc0e6b3f6b446efba0bfe114e79c6` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `03-solemn-mass-cue-cards` | `2026-07-27T23:20:09Z` | 12 | 36 | 629,477 | `4dd3d18d5aa98b3a1cff9a4bf4c5100e39860987c4663794f5547e137fc19c64` | public alpha review; response-card border/header clearance and electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
 
 The current family totals 143 pages: 113 guide or manual pages and 30 card
 pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata
@@ -41,6 +41,24 @@ page-raster inspection found the label present without clipping instructional
 matter, changing page order, or changing the declared card pairing. This
 screen review does not complete any deferred physical, human, specialist,
 rights, or ecclesiastical review gate.
+
+## Actor-overlay and response-card frame repair — 2026-07-27
+
+Two final pdfTeX passes rebuilt the Low-Mass child and trainer editions and
+the Solemn cue-card companion at unchanged extents of 29, 29, and 12 pages.
+The final logs contain no fatal error, undefined reference, LaTeX or package
+warning, overfull or underfull box, or unresolved rerun request.
+
+The bounded review tool rastered all 70 affected pages. Complete contact sheets
+were inspected for sequence, paired Low-Mass page boundaries, terminal fit,
+card parity, and accidental blanks. Full-size inspection covered Low-Mass
+pages 10, 12, 14, 18, 19, 21, 22, 26, and 29 in both editions and Solemn
+cue-card pages 1--8. The final pages show no actor-label collision, false actor
+assignment, route-line collision, clipped rights colophon, response-ID or
+`Answer`/`Cue` frame incursion, or overpainted card border. The pencil assets
+were not changed. Physical actual-size, duplex, photocopy, cut, paired-use,
+intended-reader, independent, rights, and ecclesiastical-suitability gates
+remain pending.
 
 ## Historical reviewed predecessor snapshot
 

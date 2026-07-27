@@ -921,8 +921,19 @@ Stephen, \emph{Serving Low Mass with 2 Servers (Ac1 \& Ac2)}; Charles
 J. Carmody, \emph{Learning to Serve} (1961); Laurence J. O'Connell,
 \emph{The Book of Ceremonies} (1943), pp.~170--174; and the 1961
 \emph{Liber Usualis} pronunciation rules.}
+\ifChildBookletGuide
+\vspace{4in}
+\else
 \vfill
+\fi
 \begingroup\hbadness=10000
+\ifChildBookletGuide
+  % The child lane is full width, so its five required provenance records
+  % need a compact terminal display to leave the common 7pt rights colophon
+  % wholly inside the physical page.
+  \fontsize{8.4}{9.7}\selectfont
+\fi
 \LMRenderGenerationMetadata
 \endgroup
+\TriptychRightsNotice
 \EndLMPage

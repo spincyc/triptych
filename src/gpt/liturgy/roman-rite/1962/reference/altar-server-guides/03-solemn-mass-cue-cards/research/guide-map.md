@@ -75,3 +75,9 @@ review confirmed the six-up sequence, odd-page fronts, mirrored backs, safe
 card borders, R08B containment, and final-notice fit. This technical screen
 review does not complete the pending actual-size, physical, reader, or
 independent checks.
+
+The later response-card frame repair increases the safe top and side insets on
+pages 1--8. Full-size screen inspection confirmed that every response ID and
+`Answer`/`Cue` label clears its cut border and that no opaque content block
+overpaints the frame. The six-up geometry, physical parity, response order,
+mirrored backs, and action-card pages 9--12 remain unchanged.
