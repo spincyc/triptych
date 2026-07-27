@@ -7,6 +7,33 @@ document = "articles/scripture/john-6-bread-from-heaven"
 # another provider's interpretation, sufficiency judgment, or review event.
 
 [[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.ia-facsimile-pdf-a09a5d18"
+loci = ["Chrysostom, Homilies on John 45-47; printed pp. 159-170"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Direct inspection of the printed NPNF facsimile controls the account of Chrysostom's progression from bread and faith to the mysteries, his explicit reading of John 6:53-58, and his explanation that John 6:63 rejects carnal hearing rather than Christ's flesh. The English translation is public domain; Chrysostom's Greek was not collated."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:4784dae0d3e984590308f0f8f40f0e1ddc0504e44795df7981732f499338184a"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-12.new-york-1889.ia-facsimile-pdf-40c052fb"
+loci = ["Chrysostom, Homily 24 on First Corinthians; printed pp. 138-143, especially p. 143"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Direct inspection controls the limited claim that Chrysostom compares the same Body revered by the Magi in the manger with the Body beheld on the altar. He does not call the manger an altar or mention Bethlehem's name."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:09c032d5081e7884489bda322b297e7eff3741575c6319e60dd5da637b2538d3"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.ia-facsimile-pdf-5d162561"
+loci = ["Augustine, Tractates on John 25-27; printed pp. 163-177"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Direct inspection controls Augustine's coordination of believing and eating, visible sacrament and sacramental virtue, ecclesial unity, abiding, and fruitful reception. The English translation is public domain; Augustine's Latin was not collated."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:782e685b939d9526a71c5d2a24e540f009b9319a3892ed14c4eac5efdd6b7179"
+
+[[bindings]]
 source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-joh-1e4f4305"
 loci = ["Jn.6.1-71", "Jn.13.18"]
 role = "direct-witness"
@@ -34,6 +61,49 @@ verified_on = "2026-07-26"
 source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
 
 [[bindings]]
+source_id = "passage.ignatius-of-antioch.letter-to-the-smyrnaeans.roberts-donaldson-anf1-1887.7.short-recension"
+loci = ["7"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Supports PAT-02's bounded claim that an early anti-docetic witness identifies the Eucharist with the flesh of Jesus that suffered and was raised. The shorter-recension English column controls; the locus is not represented as a direct commentary on John 6 or as a critical Greek text."
+source_fingerprint = "sha256:76aeb4138380b206d89106b8cb4ddea6887a536a233439414b3642b6e93f47d6"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.facsimile"
+loci = ["4.18.1-6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Supports PAT-02's bounded synthesis: Irenaeus joins the Eucharistic bread, the Lord's body and blood, nourished flesh, and hope of resurrection. The surrounding six-section passage and Coxe's editorial notes remain visible; this is not a direct commentary on John 6."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:03a2088250e024d9d78d0ab62c87296c4ccc8bdf2d393234842dac6a24f29787"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.5.2.2-3.ocr"
+loci = ["5.2.2-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Supports PAT-02's bounded synthesis that Irenaeus links the Eucharistic cup and bread, Christ's true blood and body, created flesh, and bodily resurrection. The exact 1887 English OCR controls, not a critical Greek or Latin text and not a direct commentary on John 6."
+source_fingerprint = "sha256:c5a2e8e8e0c008e603752947eb28b4d0f955daf9ebba44ec62b85d4da3b6c580"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-38-micheas-e8a1b3ce"
+loci = ["Mich.5.2-4"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls Micheas's Bethlehem Ephrata oracle and ruler/shepherd language. The passage supplies the prophetic Bethlehem horizon; it does not supply the later lexical play on Bethlehem as house of bread."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:407d6056d1dc3d50286de6c0418db0d7b581ea15842d43fbbe64db4d234c901f"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.10.16-17", "1Cor.11.23-29"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls Paul's communion in Christ's Body and Blood, the many made one body through one bread, the institution tradition, memorial proclamation of the Lord's death, and the warning concerning unworthy reception. These loci complement John 6; they do not establish the Bethlehem typology."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+
+[[bindings]]
 source_id = "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.47-48"
 loci = ["47-48"]
 role = "official-control"
@@ -46,17 +116,28 @@ source_fingerprint = "sha256:bec78a52c6e85b054a8fcf84eb15815f8880bf0ea87300aac9b
 source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-13-decretum-1-5"
 loci = ["sessio-13-decretum-1-5"]
 role = "official-control"
-states = ["cataloged", "acquired", "inspected"]
+states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Controls the bounded doctrinal-reception claim that Trent teaches true, real, and substantial presence, a sacramental mode of presence, and the conversion aptly called transubstantiation. It is not used to date patristic exegesis."
-source_fingerprint = "sha256:7f1fb9559c258dedd289b4a1976ca0132b8cb172e023fb18f695b495382030e4"
+source_fingerprint = "sha256:df42c610a92930d5c499ba839c2ca2c5f48cd394c60dd85e68caa7b086e072dc"
+verified_on = "2026-07-27"
 
 [[bindings]]
 source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-13-canon-1-11"
 loci = ["sessio-13-canon-1-11"]
 role = "official-control"
-states = ["cataloged", "acquired", "inspected"]
+states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Controls the corresponding canonical exclusions, especially canons I-II, while preserving the complete eleven-canon context. No Latin wording is quoted."
-source_fingerprint = "sha256:b027cd50297e32aca5a60b83128db8b30c2c0b59cd19c0f929b3471c8a2b8cea"
+source_fingerprint = "sha256:fedf72bd1810fb7c129d191654c0e6441fbecf8cca4f2ab827f50f68f5671232"
+verified_on = "2026-07-27"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1322-1323"
+loci = ["1322-1323"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the Catechism synthesis of the Last Supper, Cross, memorial, sacrifice, communion, unity, charity, Paschal banquet, grace, and eschatological pledge. It is exact support for the opening of the broader descriptive 1322-1419 overview, not a claim that the complete article was acquired in one artifact."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:87f17d4cf38f86912a9d8703583a3e5e996a6def6f666f1dfcaadfdc36556a31"
 
 [[bindings]]
 source_id = "passage.paul-vi.mysterium-fidei.english-vatican-web-2026-07-26.38-49"
@@ -93,3 +174,138 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Controls the statement that Eucharistic worship extends into the whole form of Christian life rather than ending with ritual reception."
 verified_on = "2026-07-26"
 source_fingerprint = "sha256:82eea9d8424bb5f26ee8a3654c56332c0ec05c93959cae62d9e52aabe8c8409e"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.corpusthomisticum-cih06-f285f01e"
+loci = ["6.4", "6.6", "6.7", "6.8"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls Aquinas's reading of the heavenly bread, flesh given for the world, sacramental and spiritual eating, abiding, and John 6:63. The electronic Latin is not a critical edition."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:d22ab63fe0b261c929b516db8af7756f598ea246edbdc133533311a4bfc3b717"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.latin-corpusthomisticum-web-tertia-73-80-2026-07-27.ct-sth4074-html"
+loci = ["III.75.1.corpus", "III.75.2.corpus", "III.75.4.corpus", "III.76.1.corpus", "III.76.5.corpus", "III.77.1.corpus"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin control for Aquinas's account of true presence, substantial conversion, the whole Christ, non-local sacramental mode, and remaining accidents."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:c11243cbf6dce025e801e19378effdeda3084047c1c96fdd2fa03f584b10afac"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.latin-corpusthomisticum-web-tertia-73-80-2026-07-27.ct-sth4079-html"
+loci = ["III.79.1.corpus", "III.79.2.corpus", "III.79.4.corpus"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin control for grace, glory, and the sacrament's effects."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:3ddad9241b9c6361ff4fcb80dc15b1df6455358ec644bd84754e5339880535c8"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.latin-corpusthomisticum-web-tertia-73-80-2026-07-27.ct-sth4080-html"
+loci = ["III.80.1.corpus", "III.80.2.corpus", "III.80.4.corpus"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin control for sacramental and spiritual reception and for the distinction between reception and fruit."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:213e4bf76e61bd7024725011e2e58ab36c97e91d6d39ad4be387ac5380b835fa"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-73-80-2026-07-27.iii-75-1-corpus"
+loci = ["III.75.1.corpus"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English control for the true-presence locus."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:3093f8ef85402a39546d99065bf795cdb3f7e931be6b9b576ac817bf7ccfa803"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-73-80-2026-07-27.iii-75-2-corpus"
+loci = ["III.75.2.corpus"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English control for the substantial-conversion locus."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:d379eea218ab3a6eb1ab69e1e0ff3b961c278c48ff0c05e1f471649804857e2b"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-73-80-2026-07-27.iii-76-5-corpus"
+loci = ["III.76.5.corpus"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English control for Aquinas's non-local sacramental mode."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:7c2b1674d71d493a6f7f89f1ed5251b53033d879db9bce27d0697cbd4b17467e"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-73-80-2026-07-27.iii-79-1-corpus"
+loci = ["III.79.1.corpus"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English control for the sacrament's principal effect."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:ff3f8703106f79e28d3636f10fa2f6d12a351422beb6b52ecba21334615ead8f"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-73-80-2026-07-27.iii-80-1-corpus"
+loci = ["III.80.1.corpus"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English control for sacramental and spiritual reception."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:13e5d3f1611837dffc640f16e96b965a705603adbfadd5cf505dc9c1ae365cb4"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-73-80-2026-07-27.iii-80-4-corpus"
+loci = ["III.80.4.corpus"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English control for the distinction between sacramental reception and fruitful reception."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:257f9496475ca9f3e98c3ac02885ff43024bbfd4c7aad2445790a00fe5f9c5a4"
+
+[[bindings]]
+source_id = "passage.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-4-jn-6.51-58"
+loci = ["4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the paraphrase of Cyril's life-giving-flesh argument: the flesh gives life through its personal union with the Word, and Eucharistic participation joins the recipient to Christ. Verification is of Pusey's 1874 English witness, not a Greek collation."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:273d8fd61dbf70e919349f7d0d35457802a83306c4d76804658fda1c062e13d8"
+
+[[bindings]]
+source_id = "passage.ambrose.de-mysteriis.english-npnf2-10-1896.47-49"
+loci = ["47-49"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls Ambrose's contrast between mortal manna and the living Bread received as Christ's Body. The exact English translation is verified; the Latin remains uncollated."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:5bcecfea8fd4594e34c4d62e98243bcb8f158c3f666b870f844e431337f75556"
+
+[[bindings]]
+source_id = "passage.ambrose.letter-70.english-walford-1881.9-14"
+loci = ["9-14"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the bounded late-fourth-century conjunction of Bethlehem as house of bread with the Bread come down from heaven. The binding follows Walford's historical Letter 70 numbering and does not promote Ambrose's further etymologies as modern philology."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:ec8d029819ad6af5c48322e07d2e9b49c7b873d343fe27e8be15467f815f0b26"
+
+[[bindings]]
+source_id = "passage.jerome.letter-108.english-npnf2-6-1893.10"
+loci = ["10"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls Jerome's report of Paula's Bethlehem salutation and vision of the swaddled infant in the manger. The words remain Paula's speech as represented by Jerome in a memorial letter, not an independently preserved Paula text."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:00377251b7a6377325b66365d09d00fe96ab1566c8aebbe3f53bac13a490f4c9"
+
+[[bindings]]
+source_id = "passage.anonymous.first-homily-on-the-annunciation.english-salmond-anf6-1886.manger-and-heavenly-bread"
+loci = ["1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls only the existence and wording of the manger/feeding-board/heavenly-Bread synthesis in Salmond's ANF English. ANF places the text among Gregory Thaumaturgus's dubious or spurious writings; this binding supplies no Gregory attribution or third-century date."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:200804e8c50b107c4ecdd1a8ea263f383fe933815c518b98cf078db1c940bfba"
