@@ -155,7 +155,47 @@ def selected(record: dict, edition: dict) -> bool:
     return by_relevance or by_category
 
 
-def record_tex(record: dict) -> str:
+def review_selected(record: dict, edition: dict, review_assets: set[str]) -> bool:
+    """Select research records suitable for an explicitly held review packet."""
+    if record["workflow_state"] not in {
+        "source-audited", "art-reviewed", "publication-ready"
+    }:
+        return False
+    if not record["artwork"] or any(
+        canonical_asset_path(artwork["asset"]) not in review_assets
+        for artwork in record["artwork"]
+    ):
+        return False
+    if record["id"] in edition.get("explicit_exclusions", []):
+        return False
+    if edition["kind"] == "comprehensive":
+        return True
+    field = edition["relevance_field"].split(".")[-1]
+    by_relevance = record["audience_relevance"][field] in edition["include_relevance"]
+    by_category = bool(set(record["categories"]) & set(edition.get("include_categories", [])))
+    return by_relevance or by_category
+
+
+def review_omission_reason(
+    record: dict, edition: dict, review_assets: set[str]
+) -> str:
+    if record["workflow_state"] in {"lead", "identified", "held"}:
+        return f"workflow state {record['workflow_state']}; not admitted to factual review"
+    if not record["artwork"]:
+        return "no artwork is registered for priestly review"
+    if any(
+        canonical_asset_path(artwork["asset"]) not in review_assets
+        for artwork in record["artwork"]
+    ):
+        return "artwork is rejected, unregistered, or not admitted for priestly review"
+    if record["id"] in edition.get("explicit_exclusions", []):
+        return "explicitly excluded by the edition selection"
+    if edition["kind"] != "comprehensive":
+        return "not selected for this use-derived audience"
+    return "not admitted by the current review selection"
+
+
+def record_tex(record: dict, review: bool = False) -> str:
     lines = [
         f"\\RSDObjectRecord{{{tex(record['id'])}}}"
         f"{{{tex(record['preferred_english_name'])}}}{{{tex(record['latin_headword'])}}}",
@@ -198,8 +238,55 @@ def record_tex(record: dict) -> str:
         lines.append("\\RSDAudienceNote"
                      f"{{{tex(note['audience'])}}}{{{tex(note['text'])}}}"
                      f"{{{tex(note['claim_ids'])}}}{{{tex(record['id'])}}}")
+    if review:
+        lines.append(
+            f"\\RSDReviewState{{{tex(record['workflow_state'])}}}"
+            f"{{{tex(record.get('editorial_note', ''))}}}"
+        )
     lines.append("\\RSDEndObjectRecord")
     return "\n".join(lines)
+
+
+def review_admissions(path: Path | None) -> dict[str, dict]:
+    if path is None:
+        return {}
+    data = load(path)
+    require(data.get("schema_version") == 1, f"{path}: unsupported review-admission schema")
+    require(set(data) <= {"schema_version", "admissions"}, f"{path}: unknown review-admission field")
+    result = {}
+    allowed = {"object_id", "artwork_ids", "editions", "priestly_review_ready"}
+    for index, entry in enumerate(data.get("admissions", [])):
+        require(set(entry) <= allowed, f"{path}: admissions[{index}] has unknown field")
+        require(entry.get("priestly_review_ready") is True,
+                f"{path}: admissions[{index}] is not explicitly priestly-review-ready")
+        object_id = entry.get("object_id")
+        require(isinstance(object_id, str) and object_id.startswith("obj-"),
+                f"{path}: admissions[{index}] has invalid object_id")
+        require(object_id not in result, f"{path}: duplicate admission for {object_id}")
+        require(bool(entry.get("artwork_ids")) and bool(entry.get("editions")),
+                f"{path}: {object_id} requires explicit artwork_ids and editions")
+        result[object_id] = entry
+    return result
+
+
+def review_eligible(record: dict, entry: dict, edition_id: str) -> bool:
+    if edition_id not in entry["editions"]:
+        return False
+    owned = {artwork["id"]: artwork for artwork in record["artwork"]}
+    if any(artwork_id not in owned for artwork_id in entry["artwork_ids"]):
+        return False
+    # Review admission is deliberately below publication approval, but it is
+    # never a route around source audit or initial identity checking.
+    if record["workflow_state"] not in {
+        "source-audited", "art-reviewed", "publication-ready"
+    }:
+        return False
+    return all(
+        owned[artwork_id]["review_state"] in {
+            "identity-checked", "liturgically-checked", "print-checked", "approved"
+        }
+        for artwork_id in entry["artwork_ids"]
+    )
 
 
 def main() -> int:
@@ -209,6 +296,11 @@ def main() -> int:
     parser.add_argument("--artwork-manifest", type=Path, required=True)
     parser.add_argument("--records", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--review-admissions",
+        type=Path,
+        help="explicit priestly-review admissions; emits separate review editions/registers",
+    )
     args = parser.parse_args()
     try:
         schema, selections, manifest = load(args.schema), load(args.selections), load(args.artwork_manifest)
@@ -218,6 +310,12 @@ def main() -> int:
             canonical_asset_path(item["path"])
             for table in ("asset_files", "asset")
             for item in manifest.get(table, [])
+        }
+        review_assets = {
+            canonical_asset_path(item["path"])
+            for table in ("asset_files", "asset")
+            for item in manifest.get(table, [])
+            if item.get("state") == "accepted-for-priestly-review"
         }
         canonical = load_canonical_validator()
         validator = canonical.Validator(schema, selections)
@@ -241,6 +339,15 @@ def main() -> int:
                     f"{object_id}: artwork[{index}] asset is absent from canonical artwork manifest: "
                     f"{artwork['asset']}",
                 )
+        admissions = review_admissions(args.review_admissions)
+        for object_id, entry in admissions.items():
+            require(object_id in records, f"review admission references unknown object {object_id}")
+            known_editions = {edition["id"] for edition in selections["editions"]}
+            require(set(entry["editions"]) <= known_editions,
+                    f"{object_id}: review admission references unknown edition")
+            owned_art = {artwork["id"] for artwork in records[object_id]["artwork"]}
+            require(set(entry["artwork_ids"]) <= owned_art,
+                    f"{object_id}: review admission references artwork not owned by object")
         args.output.mkdir(parents=True, exist_ok=True)
         for edition in selections["editions"]:
             # Preserve the canonical validator's exact selection and ordering
@@ -252,8 +359,124 @@ def main() -> int:
                 f"% edition: {edition['id']}",
             ]
             body.extend(record_tex(record) for record in chosen)
-            data = ("\n\n".join(body) + "\n").encode()
+            data = ("\n".join(body) + "\n").encode()
             (args.output / f"{edition['id']}.tex").write_bytes(data)
+
+            review_chosen = [
+                record for record in records.values()
+                if review_selected(record, edition, review_assets)
+            ]
+            review_chosen.sort(
+                key=lambda item: (
+                    item.get("sort_name", item["preferred_english_name"]).casefold(),
+                    item["id"],
+                )
+            )
+            review_body = [
+                "% Generated deterministically; do not edit.",
+                "% PRIESTLY REVIEW DATA: held, provisional, and not publication output.",
+                f"% edition: {edition['id']}",
+            ]
+            review_body.extend(record_tex(record, review=True) for record in review_chosen)
+            (args.output / f"{edition['id']}.review.tex").write_text(
+                "\n".join(review_body) + "\n", encoding="utf-8"
+            )
+
+            chosen_ids = {record["id"] for record in review_chosen}
+            omitted = [
+                record for record in records.values()
+                if record["id"] not in chosen_ids
+            ]
+            omitted.sort(
+                key=lambda item: (
+                    item.get("sort_name", item["preferred_english_name"]).casefold(),
+                    item["id"],
+                )
+            )
+            omission_body = [
+                "% Generated deterministically; do not edit.",
+                "% Explicit omission register for priestly review.",
+            ]
+            omission_body.extend(
+                "\\RSDReviewOmission"
+                f"{{{tex(record['id'])}}}"
+                f"{{{tex(record['preferred_english_name'])}}}"
+                f"{{{tex(review_omission_reason(record, edition, review_assets))}}}"
+                for record in omitted
+            )
+            if not omitted:
+                omission_body.append("\\RSDReviewNoOmissions")
+            (args.output / f"{edition['id']}.review-omissions.tex").write_text(
+                "\n".join(omission_body) + "\n", encoding="utf-8"
+            )
+            admitted_assets = sorted({
+                canonical_asset_path(artwork["asset"])
+                for record in review_chosen
+                for artwork in record["artwork"]
+            })
+            sidecar = [
+                "schema_version = 1",
+                f'edition_id = "{edition["id"]}"',
+                'status = "held-priestly-review"',
+                'admission_rule = "source-audited or later record; every artwork asset explicitly accepted-for-priestly-review"',
+                f"admitted_object_count = {len(review_chosen)}",
+                f"omitted_object_count = {len(omitted)}",
+                "admitted_object_ids = [",
+                *(f'  "{record["id"]}",' for record in review_chosen),
+                "]",
+                "admitted_artwork_paths = [",
+                *(f'  "{path}",' for path in admitted_assets),
+                "]",
+                "",
+            ]
+            (args.output / f"{edition['id']}.review-admissions.toml").write_text(
+                "\n".join(sidecar), encoding="utf-8"
+            )
+            if args.review_admissions is not None:
+                review_ids = [
+                    object_id
+                    for object_id in validator.records
+                    if object_id in admissions
+                    and review_eligible(records[object_id], admissions[object_id], edition["id"])
+                ]
+                review_ids.sort(
+                    key=lambda object_id: (
+                        records[object_id].get(
+                            "sort_name", records[object_id]["preferred_english_name"]
+                        ),
+                        object_id,
+                    )
+                )
+                review_body = [
+                    "% Generated deterministically; do not edit.",
+                    "% PRIESTLY REVIEW COPY: admission is not publication approval.",
+                    f"% edition: {edition['id']}",
+                ]
+                review_body.extend(record_tex(records[object_id]) for object_id in review_ids)
+                (args.output / f"{edition['id']}.review.tex").write_text(
+                    "\n\n".join(review_body) + "\n", encoding="utf-8"
+                )
+                register = [
+                    "edition\tobject_id\tworkflow_state\tartwork_ids\tclaim_ids\tsource_ids"
+                ]
+                for object_id in review_ids:
+                    record = records[object_id]
+                    entry = admissions[object_id]
+                    register.append(
+                        "\t".join(
+                            (
+                                edition["id"],
+                                object_id,
+                                record["workflow_state"],
+                                ",".join(entry["artwork_ids"]),
+                                ",".join(claim["id"] for claim in record["claims"]),
+                                ",".join(source["id"] for source in record["sources"]),
+                            )
+                        )
+                    )
+                (args.output / f"{edition['id']}.review-register.tsv").write_text(
+                    "\n".join(register) + "\n", encoding="utf-8"
+                )
         digest = hashlib.sha256(args.selections.read_bytes()).hexdigest()
         (args.output / "selection-input.sha256").write_text(digest + "\n", encoding="ascii")
     except (OSError, tomllib.TOMLDecodeError, ContractError, KeyError, TypeError) as error:

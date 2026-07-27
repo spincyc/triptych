@@ -432,7 +432,23 @@ Gate: approve the artwork grammar before producing the full asset set.
 Gate: content, source, rights, image-accuracy, log, and every-page visual review
 must pass before installing a PDF.
 
-### Phase 5: use-based editions
+### Phase 5: priestly and specialist review
+
+1. Build an expressly labelled priestly-review package only from entries and
+   artwork eligible under the future profile.
+2. Record its exact PDF hash, distribution boundary, selected IDs, open gates,
+   reviewer scope, and recall or supersession state.
+3. Reconcile feedback against the edition-specific source hierarchy,
+   preserving local preference, disagreement, rejected suggestions, and
+   unresolved questions accurately.
+4. Rebuild the candidate for authoritative release without review-only labels,
+   questions, or under-review artwork, and rerun every independent gate.
+
+Gate: neither a favorable review nor a priestly-review PDF hash authorizes the
+authoritative-release bytes. Release uses a new exact artifact identity and a
+separate approval.
+
+### Phase 6: use-based editions
 
 1. Derive selections and audience wording from canonical records.
 2. Preserve every handling and status qualification needed by that audience.
@@ -442,7 +458,7 @@ must pass before installing a PDF.
 Gate: compare every derived statement and plate against the comprehensive
 record; no independently drifting text or artwork.
 
-### Phase 6: web and release preparation
+### Phase 7: web and release preparation
 
 1. Declare web eligibility honestly. Image-dense plates and overlays may
    require a conditional or ineligible classification until accessible
@@ -458,6 +474,44 @@ Gate: release approval applies only to the exact reviewed source and installed
 artifact hashes. It does not erase unresolved completeness, rights,
 edition-locale, accessibility, or review limitations.
 
+## Mapping to the review-edition workflow
+
+The future postconciliar profile should adopt the two publication states and
+no-misrepresentation controls defined by the 1962 pictorial-dictionary
+profile, adapted only where postconciliar edition and jurisdiction evidence
+requires more specificity:
+
+- `priestly-review` remains a held consultation artifact visibly labelled
+  `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE`; it is not cataloged,
+  installed as an ordinary release, given a web edition, or distributed
+  without the recorded review boundary.
+- `authoritative-release` remains a separately built, source-audited project
+  reference visibly labelled `SOURCE-AUDITED REFERENCE EDITION`; the word
+  “authoritative” never asserts ecclesiastical approval.
+- Review-copy eligibility, candidate-artwork marking, page footers,
+  questionnaires, exact-snapshot hashes, reviewer-scope records, and the ban
+  on inferred approval carry forward. Tailor each review question to the named
+  typical edition, approved edition-locale, territory, competent authority,
+  option, and as-of date.
+- A postconciliar review manifest must additionally identify every
+  edition-locale disposition rendered in the copy and distinguish review of a
+  universal claim from review of a territorial, diocesan, institutional, or
+  customary example. A reviewer's local practice is evidence about that local
+  practice, not automatic evidence of a universal norm.
+- Keep `priestly_review_status`, `source_audit_status`,
+  `specialist_review_status`, `production_review_status`,
+  `ecclesiastical_approval_status`, and `release_status` independent.
+  `ecclesiastical_approval_status` remains `not-claimed` absent an exact
+  competent external act and permission to represent it.
+- Promotion never occurs in place. After consultation, reconcile every
+  response against the controlling source hierarchy, close or disclose the
+  edition-locale and artwork gates, require publication-ready records and
+  consumer-review-passed artwork, remove all review-only matter, and build and
+  approve a new exact release snapshot.
+
+When the postconciliar profile is written, restate this workflow there rather
+than making a publication leaf depend normatively on this handoff.
+
 ## Definition of a production-ready handoff
 
 Before a future agent calls this project ready to publish, the repository
@@ -468,6 +522,8 @@ should contain:
 - a source-corpus inventory and publication-local bindings;
 - a canonical object/composition inventory with edition dispositions;
 - an artwork manifest with rights and accuracy review;
+- an exact-snapshot priestly or specialist review record, when such review was
+  performed, with no status inherited from the 1962 family;
 - the comprehensive source leaf and any authorized derived leaves;
 - terminal indexes, notes, qualifications, rights notice, and metadata;
 - explicit build dependencies for shared records and artwork;

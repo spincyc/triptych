@@ -25,17 +25,37 @@ Records with unresolved status are excluded.
 Selection requires recorded sacristan relevance; an object's presence in the
 comprehensive volume alone does not place it in this leaf.
 
+## Priestly-review selection boundary
+
+The priestly-review edition may expose only explicitly manifested canonical
+records proposed for `ed-sacristan`, with workflow and evidence state visible.
+It may ask for review of preparation, assembly, placement, folding, storage,
+or changeover claims, but none becomes a public direction until its canonical
+record and artwork satisfy the publication gates. The review packet is not a
+conservation manual or a parish procedure sheet.
+
+## Visible omissions in the review edition
+
+The review edition must list omitted object families, ceremonies, seasonal or
+branch-dependent changes, and any preparation, fold, storage, cleaning, or
+disposition question not yet source-audited. Silence must not imply that a
+local method is universal or that an omitted care practice is safe.
+
 ## Reader order
 
-1. Compact title and status/handling key.
-2. Sanctuary and altar preparation compositions.
-3. Vessels, linens, and books, using multiple views where construction,
+1. Compact title with a conspicuous priestly-review/hold notice.
+2. Visible omissions and review-state key.
+3. Status and handling key.
+4. Sanctuary and altar preparation compositions.
+5. Vessels, linens, and books, using multiple views where construction,
    folding, or placement would otherwise be ambiguous.
-4. Vestments and insignia, including verified preparation relationships.
-5. Equipment for special Masses and related ceremonies, grouped by
+6. Vestments and insignia, including verified preparation relationships.
+7. Equipment for special Masses and related ceremonies, grouped by
    changeover need and retaining exact status labels.
-6. Terminal indexes, qualifications, keyed source notes, generation metadata,
-   and rights matter.
+8. Priestly-review questions and correction instructions.
+9. Selective pronunciation, English--Latin and Latin--English indexes, visual
+   index, variant and terminology notes, scope and qualifications, numbered
+   source notes and references, generation metadata, and rights colophon.
 
 The first section draws from sanctuary, altar, appointment, service, and
 composition records with preparation or placement relevance. Vessels,
@@ -44,6 +64,20 @@ preparation relationship rather than alphabetically. Wearables and insignia
 are grouped by minister. Ceremony-limited or changeover-dependent equipment
 follows by special Mass or ceremony. Canonical relationships and the plate
 manifest preserve intentional order within each section.
+
+## Questions for priestly review
+
+1. Are preparation and placement claims liturgically correct for the named
+   Mass or ceremony and clearly distinguished from local practice?
+2. Are clergy-only handling and disposition boundaries correctly stated?
+3. Do linen folds, vessel assembly, vestment preparation, and book setup avoid
+   unsupported prescription?
+4. Are special-Mass, Holy Week, pontifical, and related-ceremony changeovers
+   accurately separated?
+5. Does any storage or care wording exceed the evidence or stray into
+   conservation advice?
+6. Which omitted preparation relationships would make the review packet
+   misleading if not shown before the next review?
 
 ## Canonical dependency
 
@@ -57,8 +91,8 @@ into a universal prescription.
 
 ## Hold and nonpublication state
 
-There are currently zero publication-ready canonical records, and no
-preparation sequence, fold, storage direction, artwork, or plate has passed
-the required audits. The leaf remains on hold and must not be installed,
-published, or used operationally. A scaffold PDF, if built, proves only the
-rendering shell. Plate-manifest order remains a publication blocker.
+There are currently zero publication-ready canonical records, and no public
+preparation selection has passed the required gates. The leaf remains on hold
+and must not be installed, published, or used operationally. A priestly-review
+PDF solicits corrections only. Plate-manifest order remains a publication
+blocker.

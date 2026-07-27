@@ -39,7 +39,13 @@ recorded rights disposition, the final-page colophon is present without a
 spill page, and the installed PDF's local notices accurately distinguish
 project-created material from exclusions.
 
-The acquired 10-page 2008 introduction remains remote. Its availability on a
-publisher-associated site does not establish repository redistribution
+The acquired 10-page 2008 introduction remains remote. Its public availability
+does not establish repository redistribution
 permission. No bytes or images from it are tracked, and its comparative
 contents are used only as research evidence.
+
+The four-page 1963 *La Maison-Dieu* survey and official Vatican HTML of
+*Inter eximia* likewise remain remote. Their acquisition and hashing establish
+the exact inspected artifacts, not redistribution permission. No page image,
+bulk text, or source byte from either artifact is tracked or planned for the
+dictionary.

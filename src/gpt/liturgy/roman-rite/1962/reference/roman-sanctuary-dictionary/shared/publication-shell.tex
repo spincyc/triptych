@@ -1,17 +1,57 @@
 \input{common/preamble}
 \input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/dictionary-format}
 \input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated-record-renderer}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{7.5}{8.5}\selectfont\bfseries PRIESTLY REVIEW DRAFT}
+\fancyhead[R]{\fontsize{7.5}{8.5}\selectfont NOT APPROVED FOR INSTRUCTION OR PUBLICATION}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{11pt}
+\hypersetup{pdfsubject={1962 Roman Rite sanctuary pictorial dictionary, priestly review copy}}
 
 \newcommand{\RSDPublicationBody}{%
   \begin{document}
   \DictionaryTitle{\RSDTitle}{\RSDSubtitle}{\RSDEditionLine}
+  \begin{studybox}{Review status}
+  \textbf{Priestly review draft.} This packet deliberately includes
+  source-audited and art-reviewed records that have not passed the publication
+  gate. It is incomplete, provisional, and unsuitable for training,
+  installation, release, or a claim of Roman completeness.
+  \end{studybox}
   \section*{\RSDOpeningTitle}
-  \RSDOpeningText
+  \RSDOpeningText\par
+  Each entry prints its current workflow, artwork, and claim-evidence states.
+  Those labels are caveats, not approvals.
   \RSDRenderGeneratedEdition{\RSDGeneratedFile}
-  \ifnum\RSDRenderedRecordCount=0
-    \RSDHeldCoverageNotice
-  \fi
+  \clearpage
+  \section{Explicit Omission Register}
+  This generated register names records excluded from this review view.
+  It does not prove that the canonical inventory itself is exhaustive.
+  \begin{itemize}
+    \InputIfFileExists{\RSDOmissionFile}{}{%
+      \item Generated omission data are unavailable; review must stop.}
+  \end{itemize}
+  \section{Questions for Priestly Review}
+  Please annotate the object ID and page for every correction.
+  \begin{enumerate}
+    \item Are any names, Latin headwords, ritual uses, handlers, or handling
+      boundaries incorrect at the declared 1962 horizon?
+    \item Does any drawing contain an impossible construction, fold, wearing,
+      scale relationship, placement, or ceremonial arrangement?
+    \item Which pictured form is merely local, regional, privileged, or
+      historical rather than universal Roman use?
+    \item What object or substantive variant is missing from the edition's
+      declared scope?
+    \item Does any entry risk teaching a server or sacristan to touch, carry,
+      prepare, present, store, or avoid an object incorrectly?
+    \item Which caveat can be resolved from an exact official or
+      edition-identified source? Please supply the work, edition, and locus.
+    \item Are the omissions below candid and sufficient for a review packet,
+      and which omission should be researched first?
+    \item \RSDAudienceReviewQuestion
+  \end{enumerate}
   \DictionaryTerminalMatter
   \section{Generation Metadata}
-  {\scriptsize\input{\DictionaryLeafRoot/generation-metadata}}
+  {\scriptsize\RSDGenerationMetadata}
   \end{document}}

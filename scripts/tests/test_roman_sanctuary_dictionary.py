@@ -66,8 +66,18 @@ source_ids = ["src-chalice"]'''
             '''), encoding="utf-8")
             manifest = root / "art.toml"
             manifest.write_text('[[asset]]\nid="art-chalice"\npath="assets/chalice.png"\n', encoding="utf-8")
+            admissions = root / "review.toml"
+            admissions.write_text(textwrap.dedent('''
+                schema_version = 1
+                [[admissions]]
+                object_id = "obj-chalice"
+                artwork_ids = ["art-chalice"]
+                editions = ["ed-altar-server"]
+                priestly_review_ready = true
+            '''))
             command = [str(SCRIPT), "--schema", str(SCHEMA), "--selections", str(SELECTIONS),
-                       "--artwork-manifest", str(manifest), "--records", str(records), "--output", str(output)]
+                       "--artwork-manifest", str(manifest), "--records", str(records),
+                       "--review-admissions", str(admissions), "--output", str(output)]
             subprocess.run(command, check=True)
             first = (output / "ed-altar-server.tex").read_bytes()
             subprocess.run(command, check=True)
@@ -77,6 +87,12 @@ source_ids = ["src-chalice"]'''
             self.assertIn(r"Checked identity \& use.", text)
             self.assertIn("makes no inventory-completeness claim", text)
             self.assertIn("obj-chalice", (output / "ed-comprehensive.tex").read_text())
+            review = (output / "ed-altar-server.review.tex").read_text()
+            self.assertIn("PRIESTLY REVIEW COPY", review)
+            self.assertIn("obj-chalice", review)
+            register = (output / "ed-altar-server.review-register.tsv").read_text()
+            self.assertIn("ed-altar-server\tobj-chalice\tpublication-ready\tart-chalice", register)
+            self.assertNotIn("obj-chalice", (output / "ed-sacristan.review.tex").read_text())
 
     def test_unknown_record_field_fails_closed(self):
         with tempfile.TemporaryDirectory() as temporary:

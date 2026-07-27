@@ -150,6 +150,173 @@ edition emphasizes identity, purpose, brief symbolism, and history. The
 pontifical edition emphasizes vesture, insignia, furnishings, ministers, and
 relationships.
 
+## Priestly-review publication and authoritative release
+
+The family has two sharply distinct publication states. A priestly-review
+publication is a bounded consultation artifact used to obtain competent
+liturgical and ceremonial criticism. An authoritative release is the
+project's final, source-audited reference publication. “Authoritative” in
+this contract describes the repository's canonical released edition; it does
+not mean an official liturgical book, an act of ecclesiastical authority, or
+ecclesiastical approval.
+
+### Exact state and display labels
+
+Use these machine and visible labels exactly:
+
+| Machine state | Required visible label | Distribution state |
+| --- | --- | --- |
+| `priestly-review` | `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE` | private or explicitly held evaluation distribution only |
+| `authoritative-release` | `SOURCE-AUDITED REFERENCE EDITION` | eligible for ordinary catalog and exact-snapshot public release |
+
+A priestly-review copy prints its visible label on the title page, in the
+running footer of every body page, and beside the revision identity in the
+terminal apparatus. Its title-page caveat reads:
+
+> Prepared for priestly liturgical and ceremonial review. It contains
+> identified review questions and may contain unresolved terminology,
+> morphology, variants, or artwork. It is not an official liturgical book,
+> parish direction, evidence of authorization, or a public reference edition.
+
+The terminal review statement names the exact review scope, eligible records,
+unresolved gates, revision timestamp, and PDF SHA-256. It also says whether
+the named reviewer examined source claims, artwork, printed pages, or only a
+subset. Do not print a reviewer's name, office, quotation, or institution
+without permission.
+
+An authoritative release prints `SOURCE-AUDITED REFERENCE EDITION` once on
+the title or edition page and retains this subordinate caveat:
+
+> A Triptych study reference, not an official liturgical book or an act of
+> ecclesiastical authority. Status and local-use qualifications appear with
+> the affected entries and in Scope and Qualifications.
+
+Do not use `approved`, `official`, `authorized by`, `imprimatur`, `nihil
+obstat`, `ecclesiastically approved`, or an equivalent formula unless the
+exact external act, competent authority, scope, date, and permission to
+publish that representation are recorded. Priest, cleric, scholar, or
+reviewer feedback never becomes an ecclesiastical approval by implication.
+
+### Eligible evidence and artwork
+
+A priestly-review copy may render canonical records in
+`source-audited`, `art-reviewed`, or `publication-ready` workflow state.
+It may also render a candidate artwork linked to a `source-audited` record
+when the purpose is expressly to review that artwork. It must not render a
+`lead`, `identified`, or `held` record as an entry. Candidate artwork remains
+visibly marked `ARTWORK UNDER REVIEW`; unresolved factual fields render as
+short, specific review questions rather than plausible placeholder prose.
+Every selected claim has an exact source binding and every selection is listed
+in the review manifest.
+
+A priestly-review record may have unresolved:
+
+- morphology or substantive-variant classification being presented to the
+  reviewer;
+- practical handling where higher sources are silent and the question is
+  stated;
+- visual ambiguity, scale treatment, or contextual-inset adequacy; and
+- actual-size, photocopy, or intended-reader testing scheduled after factual
+  correction.
+
+It may not have unresolved:
+
+- identity of the object depicted;
+- governing rite, edition horizon, ceremony, or claimed status;
+- the source identity and locus supporting each printed factual claim;
+- rights to distribute the review copy and its artwork to the named audience;
+- generated-content provenance;
+- a known impossible construction, false label, contradictory view, or
+  misleading composition; or
+- a safety defect that could teach handling of a sacred, hot, sharp, fragile,
+  or lighted object incorrectly.
+
+An authoritative release selects only `publication-ready` records and
+`consumer-review-passed` artwork. Every claim, variant, plate, audience note,
+and exact consumer must satisfy the universal and profile gates. A favorable
+priestly review is evidence of that particular review event; it does not
+promote a record automatically or replace source, rights, production,
+intended-reader, or release review.
+
+### Review questionnaire
+
+Every priestly-review package supplies a response form keyed to stable object,
+variant, artwork, plate, and page IDs. It asks the reviewer to distinguish
+observed defects from local preference and to answer, for the assigned scope:
+
+1. Is each object correctly identified in English and Latin? Record any
+   ambiguous or period-dependent term.
+2. Does the stated status—universal, conditional, privileged, regional,
+   religious-community, practical/local, historical, or unresolved—match the
+   cited 1962-horizon source?
+3. Is the object placed in the correct Mass, rite, ministerial, and historical
+   context without importing pre-1962 or post-1962 practice?
+4. Does every drawing have physically possible construction, folds,
+   fastenings, parts, orientation, relative scale, and manner of wearing or
+   use?
+5. Are substantive variants represented and named correctly? Is any merely
+   decorative difference incorrectly promoted to a variant?
+6. Could a server, sacristan, MC, cleric, or general reader confuse this object
+   with another? What comparison or in-use inset would prevent the confusion?
+7. Are handler, handoff, preparation, disposition, and “do not handle”
+   statements accurate for the declared ceremony and audience?
+8. Does any composition imply an impossible simultaneous state, wrong
+   minister, unsafe route, or locally variable arrangement presented as
+   universal?
+9. Is the brief symbolism expressly supported, proportionate, and clearly
+   distinguished from rubric and function?
+10. Which pages were reviewed at full size and in print? Which questions were
+    outside the reviewer's competence or remain unresolved?
+
+The response record preserves disagreement. The editor reconciles each answer
+with the governing source hierarchy and records accepted corrections,
+rejected suggestions with a concise evidentiary reason, unresolved questions,
+and the exact snapshot reviewed. Do not silently convert a reviewer's memory
+or local custom into a universal claim.
+
+### No-misrepresentation gates
+
+Before producing a priestly-review PDF:
+
+1. validate that every selected entry and artwork meets the eligibility rules
+   above;
+2. generate the title, footer, terminal statement, and review questions from
+   the declared `priestly-review` state;
+3. verify every physical body page carries the required footer and no page
+   uses authoritative-release wording;
+4. keep the PDF out of ordinary catalog links, public release approval, web
+   editions, search indexes, and unrestricted distribution packages;
+5. record the exact intended reviewers or reviewer class, distribution
+   boundary, timestamp, hash, selected IDs, open gates, and recall or
+   supersession status in the production manifest; and
+6. verify extracted text contains the exact title-page and footer labels.
+
+Before authoritative release:
+
+1. require a fresh build that contains no priestly-review footer,
+   `ARTWORK UNDER REVIEW` mark, placeholder, open review question, held entry,
+   or review-only response form;
+2. require every rendered record to be `publication-ready`, every artwork to
+   be `consumer-review-passed`, and every completeness claim to agree with the
+   closed matrix;
+3. record priestly or specialist review accurately by scope and snapshot,
+   without converting it into ecclesiastical approval;
+4. run every source, rights, metadata, build, print, visual, catalog, and
+   exact-snapshot release gate independently;
+5. verify the title-page caveat and terminal qualifications remain present in
+   rendered and extracted text; and
+6. record a new exact PDF identity and approval. A priestly-review hash,
+   installation, or distribution decision never authorizes the released
+   bytes.
+
+The production manifest records these states separately:
+`priestly_review_status`, `source_audit_status`,
+`specialist_review_status`, `production_review_status`,
+`ecclesiastical_approval_status`, and `release_status`. The
+`ecclesiastical_approval_status` value is `not-claimed` unless an exact
+competent external act permits another value. No field may be inferred from
+another.
+
 ## Required records and gate
 
 The non-publishable owner keeps `research/scope.md`,

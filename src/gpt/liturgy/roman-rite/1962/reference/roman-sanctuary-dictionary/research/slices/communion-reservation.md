@@ -73,9 +73,9 @@ the object claims in this slice.
 - File:
   `shared/artwork/pencil/DIC-ART-CR-001-communion-vessels-tools.png`
 - SHA-256:
-  `b1cd7bb7e6795f11d0bb0e66c6020f8634d9c5eb9c70d27966797a741ef62674`
-- Dimensions and mode: 1024 by 1536 pixels; received 8-bit sRGB, visually
-  monochrome.
+  `e26fb645ebfcd30cbaff6b91bff7263e686379f27c4e3e993d8ebde0140dce3f`
+- Dimensions, mode, and bytes: 1024 by 1536 pixels; normalized 8-bit
+  grayscale; 625327 bytes.
 - Generator: built-in OpenAI image-generation interface; no model/version
   exposed.
 - Reference image: none.
@@ -90,16 +90,17 @@ the object claims in this slice.
 - Review limit: morphology and relative scale remain **unverified**. The
   hinged case-like pyx and handled Communion plate especially require
   source-based form review before publication.
-- Review state: `generated-lead`; not approved for a rendered edition.
+- Review state: `rejected-precursor`; not approved for a rendered edition.
+  Superseded for further review by `DIC-ART-CR-003`.
 
 ### `DIC-ART-CR-002`
 
 - File:
   `shared/artwork/pencil/DIC-ART-CR-002-reservation-exposition.png`
 - SHA-256:
-  `5fabdaec439eb9b9b3dd2428535abb08c25503f59e5fe86359abda1a6f4eb8ca`
-- Dimensions and mode: 1024 by 1536 pixels; received 8-bit sRGB, visually
-  monochrome.
+  `a557073cb5d4050a275a2ee00c2ad22480f8a29e976ba6a4841422c7ab206de9`
+- Dimensions, mode, and bytes: 1024 by 1536 pixels; normalized 8-bit
+  grayscale; 738647 bytes.
 - Generator: built-in OpenAI image-generation interface; no model/version
   exposed.
 - Reference image: none.
@@ -115,11 +116,77 @@ the object claims in this slice.
   center and gives the veil a generic fitted-cover form. Exact construction,
   scale, liturgical status, and the veil's period-appropriate form remain
   unverified.
-- Review state: `generated-lead`; not approved for a rendered edition.
+- Review state: `rejected-precursor`; not approved for a rendered edition.
+  Superseded for further review by `DIC-ART-CR-004`.
+
+### `DIC-ART-CR-003`
+
+- File:
+  `shared/artwork/pencil/DIC-ART-CR-003-communion-vessels-tools-corrected.png`
+- Corrects: `DIC-ART-CR-001`.
+- SHA-256:
+  `b3c72ca91d3b6848e4051c091cf40c1a3000781cac5811ba7d60b9bbb5cb15c4`
+- Dimensions, mode, and bytes: 1024 by 1536 pixels; normalized 8-bit
+  grayscale; 735595 bytes.
+- Generator: built-in OpenAI image-generation interface; no model/version
+  exposed.
+- Reference image: none. The rejected precursor informed the correction brief
+  but was not supplied to the generator.
+- Prompt summary: a corrected dense graphite plate with isolated ciborium,
+  circular portable pyx partly enclosed in a fabric burse with cord, Mass
+  paten, chalice, and handled Communion plate, plus a cropped context view of
+  the priest administering on the tongue while two server hands hold the plate
+  directly beneath the communicant's chin.
+- Personal review: the former hinged trinket-like case is absent; the portable
+  vessel is visibly circular and partly enclosed in a textile carrier; all
+  five specimens remain distinct; the context inset unmistakably places the
+  handled plate beneath the chin during administration; no baked-in text,
+  arrows, color, watermark, extra full figures, or duplicate vessel stems were
+  observed.
+- Qualification: the fabric carrier is represented as a simple drawstring
+  pouch and its historically correct construction and wearing arrangement
+  remain unverified. The context inset is pedagogically clear but hand and
+  plate morphology still require independent review. Relative scales are not
+  established.
+- Review state: `corrected-generated-lead`; visually improved but not approved
+  for a rendered edition pending source-based morphology and independent
+  review.
+
+### `DIC-ART-CR-004`
+
+- File:
+  `shared/artwork/pencil/DIC-ART-CR-004-reservation-exposition-corrected.png`
+- Corrects: `DIC-ART-CR-002`.
+- SHA-256:
+  `c42132799aaeeeff4f2a1a543d135708b158065eed4e16f9253893f47792eeda`
+- Dimensions, mode, and bytes: 1024 by 1536 pixels; normalized 8-bit
+  grayscale; 718041 bytes.
+- Generator: built-in OpenAI image-generation interface; no model/version
+  exposed.
+- Reference image: none. The rejected precursor informed the correction brief
+  but was not supplied to the generator.
+- Prompt summary: a corrected dense graphite plate with tabernacle, separate
+  veil, three-chain sanctuary lamp, one sunburst monstrance containing a
+  single Host supported by the lunette, and one enlarged empty lunette beside
+  it.
+- Personal review: the earlier redundant empty circular inset is absent; the
+  installed crescent visibly supports the single Host in the monstrance and
+  the isolated view shows the holder's upward tips and lower fitting; the
+  monstrance has one center, stem, and foot; the tabernacle has one door and
+  the lamp has three chains; no arrows, prose captions, color, watermark, or
+  duplicate vessel supports were observed.
+- Qualification: the generated tabernacle door contains a Chi-Rho-like
+  christogram and the veil a fleur-de-lis motif. These are decorative
+  religious devices rather than prose labels, but they are not evidence of a
+  universal form. The veil remains a generic fitted-cover depiction. The Host,
+  lunette construction, lamp, scale, and all object morphology require
+  source-based and independent review.
+- Review state: `corrected-generated-lead`; relationship is visibly clearer,
+  but the asset is not approved for a rendered edition.
 
 ## Merge gate
 
-Do not copy these leads into canonical TOML or select either artwork asset for
+Do not copy these leads into canonical TOML or select any artwork asset for
 publication until:
 
 - each reader-facing claim has an exact verified source binding;

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:5da0fdd32f73be02d8e2ba64bc571bcd5d5d1e464a79f8077d17fe226eaaaf59"
+inventory_snapshot = "sha256:194b10445f6ba94113683e11fe8b0f7e29625fa1334a352cdd278ba235b48b8a"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:96ce76990fd5fa8a2d709c14791d2c2d96e63ed25706124ef37e77208bec5ae1"
-canonical_catalog_snapshot = "sha256:9ab0387cc18ab47967a086fa57aedaadd57bfacddca96f3b512c44690f000b50"
+classification_snapshot = "sha256:168d6ba79848f1c86a34613a3495d9acc72945007e80f4fafad20477da686ed0"
+canonical_catalog_snapshot = "sha256:7dc2ac042393d40b5ec0e5bab5c7b3beb6caa39e1e55ae632ff20ce243ad8fbb"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:ff265299fc4c89285a9e58bd0e82cd6263c73351876ae9d4ea1d2ab5b0af4da6"
+snapshot = "sha256:267062777f48fa5d1406e4899818a6c2203497d0e236a5c41af0e0fa7ae7588a"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -45,7 +45,7 @@ freshness_rule = "Treat published volumes as fixed and review newly cited volume
 evidence_ceiling = "artifact-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-2.vatican-fascicle-pdf-3ce38fa1", "artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-4.vatican-fascicle-pdf-f0803576", "artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-8.vatican-fascicle-pdf-750d78f1", "artifact.holy-see.acta-apostolicae-sedis.volume-106-2014-fascicle-6.vatican-fascicle-pdf-2aa43a4a", "artifact.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-10.vatican-fascicle-pdf-d273e9b1", "artifact.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-3.vatican-fascicle-pdf-7cc2f1fb", "artifact.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-9.vatican-fascicle-pdf-7f21c25f", "artifact.holy-see.acta-apostolicae-sedis.volume-108-2016-fascicle-12.vatican-fascicle-pdf-aad43a02", "artifact.holy-see.acta-apostolicae-sedis.volume-109-2017-fascicle-4.vatican-fascicle-pdf-31d81a63", "artifact.holy-see.acta-apostolicae-sedis.volume-39-1947.vatican-ocr-pdf-4e1647f4", "artifact.holy-see.acta-apostolicae-sedis.volume-40-1948.vatican-ocr-pdf-a96d339e", "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d", "artifact.holy-see.acta-apostolicae-sedis.volume-54-1962.vatican-ocr-pdf-fb64f5f9", "artifact.holy-see.acta-apostolicae-sedis.volume-56-1964.vatican-ocr-pdf-e1f8b49d", "artifact.holy-see.acta-apostolicae-sedis.volume-57-1965.vatican-ocr-pdf-bd6d813d", "artifact.holy-see.acta-apostolicae-sedis.volume-58-1966.vatican-ocr-pdf-69c27224", "artifact.holy-see.acta-apostolicae-sedis.volume-59-1967.vatican-ocr-pdf-21502fa7", "artifact.holy-see.acta-apostolicae-sedis.volume-62-1970.vatican-ocr-pdf-35c99b4f", "artifact.holy-see.acta-apostolicae-sedis.volume-66-1974.vatican-ocr-pdf-5d388ad9", "artifact.holy-see.acta-apostolicae-sedis.volume-67-1975.vatican-ocr-pdf-5050bea5", "artifact.holy-see.acta-apostolicae-sedis.volume-68-1976.vatican-ocr-pdf-b0101e98", "artifact.holy-see.acta-apostolicae-sedis.volume-76-1984.vatican-ocr-pdf-2c0318ad", "artifact.holy-see.acta-apostolicae-sedis.volume-80-1988.vatican-ocr-pdf-796d9f2f", "artifact.holy-see.acta-apostolicae-sedis.volume-82-1990.vatican-ocr-pdf-629766ef", "artifact.holy-see.acta-sanctae-sedis.volume-6-1870-1871.vatican-ocr-pdf-7e480931", "edition.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-2", "edition.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-4", "edition.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-8", "edition.holy-see.acta-apostolicae-sedis.volume-106-2014-fascicle-6", "edition.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-10", "edition.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-3", "edition.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-9", "edition.holy-see.acta-apostolicae-sedis.volume-108-2016-fascicle-12", "edition.holy-see.acta-apostolicae-sedis.volume-109-2017-fascicle-4", "edition.holy-see.acta-apostolicae-sedis.volume-22-1930", "edition.holy-see.acta-apostolicae-sedis.volume-23-1931", "edition.holy-see.acta-apostolicae-sedis.volume-39-1947", "edition.holy-see.acta-apostolicae-sedis.volume-40-1948", "edition.holy-see.acta-apostolicae-sedis.volume-52-1960", "edition.holy-see.acta-apostolicae-sedis.volume-54-1962", "edition.holy-see.acta-apostolicae-sedis.volume-56-1964", "edition.holy-see.acta-apostolicae-sedis.volume-57-1965", "edition.holy-see.acta-apostolicae-sedis.volume-58-1966", "edition.holy-see.acta-apostolicae-sedis.volume-59-1967", "edition.holy-see.acta-apostolicae-sedis.volume-60-1968", "edition.holy-see.acta-apostolicae-sedis.volume-62-1970", "edition.holy-see.acta-apostolicae-sedis.volume-66-1974", "edition.holy-see.acta-apostolicae-sedis.volume-67-1975", "edition.holy-see.acta-apostolicae-sedis.volume-68-1976", "edition.holy-see.acta-apostolicae-sedis.volume-76-1984", "edition.holy-see.acta-apostolicae-sedis.volume-80-1988", "edition.holy-see.acta-apostolicae-sedis.volume-82-1990", "edition.holy-see.acta-sanctae-sedis.volume-6-1870-1871", "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.p-595-596", "passage.holy-see.acta-apostolicae-sedis.volume-54-1962.p-873", "work.holy-see.acta-apostolicae-sedis", "work.holy-see.acta-sanctae-sedis"]
+canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-2.vatican-fascicle-pdf-3ce38fa1", "artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-4.vatican-fascicle-pdf-f0803576", "artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-8.vatican-fascicle-pdf-750d78f1", "artifact.holy-see.acta-apostolicae-sedis.volume-106-2014-fascicle-6.vatican-fascicle-pdf-2aa43a4a", "artifact.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-10.vatican-fascicle-pdf-d273e9b1", "artifact.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-3.vatican-fascicle-pdf-7cc2f1fb", "artifact.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-9.vatican-fascicle-pdf-7f21c25f", "artifact.holy-see.acta-apostolicae-sedis.volume-108-2016-fascicle-12.vatican-fascicle-pdf-aad43a02", "artifact.holy-see.acta-apostolicae-sedis.volume-109-2017-fascicle-4.vatican-fascicle-pdf-31d81a63", "artifact.holy-see.acta-apostolicae-sedis.volume-39-1947.vatican-ocr-pdf-4e1647f4", "artifact.holy-see.acta-apostolicae-sedis.volume-40-1948.vatican-ocr-pdf-a96d339e", "artifact.holy-see.acta-apostolicae-sedis.volume-49-1957.vatican-ocr-pdf-6cfd31d7", "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d", "artifact.holy-see.acta-apostolicae-sedis.volume-54-1962.vatican-ocr-pdf-fb64f5f9", "artifact.holy-see.acta-apostolicae-sedis.volume-56-1964.vatican-ocr-pdf-e1f8b49d", "artifact.holy-see.acta-apostolicae-sedis.volume-57-1965.vatican-ocr-pdf-bd6d813d", "artifact.holy-see.acta-apostolicae-sedis.volume-58-1966.vatican-ocr-pdf-69c27224", "artifact.holy-see.acta-apostolicae-sedis.volume-59-1967.vatican-ocr-pdf-21502fa7", "artifact.holy-see.acta-apostolicae-sedis.volume-62-1970.vatican-ocr-pdf-35c99b4f", "artifact.holy-see.acta-apostolicae-sedis.volume-66-1974.vatican-ocr-pdf-5d388ad9", "artifact.holy-see.acta-apostolicae-sedis.volume-67-1975.vatican-ocr-pdf-5050bea5", "artifact.holy-see.acta-apostolicae-sedis.volume-68-1976.vatican-ocr-pdf-b0101e98", "artifact.holy-see.acta-apostolicae-sedis.volume-76-1984.vatican-ocr-pdf-2c0318ad", "artifact.holy-see.acta-apostolicae-sedis.volume-80-1988.vatican-ocr-pdf-796d9f2f", "artifact.holy-see.acta-apostolicae-sedis.volume-82-1990.vatican-ocr-pdf-629766ef", "artifact.holy-see.acta-sanctae-sedis.volume-6-1870-1871.vatican-ocr-pdf-7e480931", "edition.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-2", "edition.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-4", "edition.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-8", "edition.holy-see.acta-apostolicae-sedis.volume-106-2014-fascicle-6", "edition.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-10", "edition.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-3", "edition.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-9", "edition.holy-see.acta-apostolicae-sedis.volume-108-2016-fascicle-12", "edition.holy-see.acta-apostolicae-sedis.volume-109-2017-fascicle-4", "edition.holy-see.acta-apostolicae-sedis.volume-22-1930", "edition.holy-see.acta-apostolicae-sedis.volume-23-1931", "edition.holy-see.acta-apostolicae-sedis.volume-39-1947", "edition.holy-see.acta-apostolicae-sedis.volume-40-1948", "edition.holy-see.acta-apostolicae-sedis.volume-49-1957", "edition.holy-see.acta-apostolicae-sedis.volume-52-1960", "edition.holy-see.acta-apostolicae-sedis.volume-54-1962", "edition.holy-see.acta-apostolicae-sedis.volume-56-1964", "edition.holy-see.acta-apostolicae-sedis.volume-57-1965", "edition.holy-see.acta-apostolicae-sedis.volume-58-1966", "edition.holy-see.acta-apostolicae-sedis.volume-59-1967", "edition.holy-see.acta-apostolicae-sedis.volume-60-1968", "edition.holy-see.acta-apostolicae-sedis.volume-62-1970", "edition.holy-see.acta-apostolicae-sedis.volume-66-1974", "edition.holy-see.acta-apostolicae-sedis.volume-67-1975", "edition.holy-see.acta-apostolicae-sedis.volume-68-1976", "edition.holy-see.acta-apostolicae-sedis.volume-76-1984", "edition.holy-see.acta-apostolicae-sedis.volume-80-1988", "edition.holy-see.acta-apostolicae-sedis.volume-82-1990", "edition.holy-see.acta-sanctae-sedis.volume-6-1870-1871", "passage.holy-see.acta-apostolicae-sedis.volume-49-1957.p-91-95", "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.p-595-596", "passage.holy-see.acta-apostolicae-sedis.volume-54-1962.p-873", "work.holy-see.acta-apostolicae-sedis", "work.holy-see.acta-sanctae-sedis"]
 trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis", "italian-aas-106-2014", "latin-aas-107-2015", "latin-aas-56-1964", "latin-aas-57-1965", "latin-aas-58-1966", "latin-aas-59-1967", "latin-aas-82-1990", "latin-ass-6-1870-1871"]
 reviewed_on = "2026-07-27"
 notes = "Volumes 56 (1964), 57 (1965), and 58 (1966) now have canonical container editions and exact restricted Holy See PDF artifacts. The series now also owns the Acta Sanctae Sedis work and the volume 6 (1870-1871) container edition with its exact restricted 776-page Holy See OCR PDF artifact, whose Postquam Dei munere constituent is pinned by the separate Vatican I family without absorbing the container. Other cited volumes and acts remain only partially resolved; each promulgated act remains a distinct work, and OCR remains a finding aid until checked against the official pages. The wave-eight registrations add AAS volumes 22 (1930), 23 (1931), and 60 (1968) as catalog-level container editions without exact artifacts, per the volume-6 ASS container precedent: they map the Bellarmine canonization-miracle decree and Pius XI's decretal letter Lux illa, his apostolic letter Providentissimus Deus declaring Bellarmine a Doctor (distinct from Leo XIII's 1893 encyclical of the same incipit), and Paul VI's apostolic letter Roma altera, all of which remain distinct unregistered constituent works; consumers using the vatican.va OCR scans record their access routes and dates locally. The wave-ten registrations add five more container editions with exact restricted Holy See artifacts: the complete 1967 and 1990 volumes as OCR PDFs, carrying Sacerdotalis caelibatus at pp. 657-697 and the promulgation of the Eastern Code with Sacri canones at pp. 1033-1363, and three monthly fascicles, 106 (2014) fascicle 6, 107 (2015) fascicle 3, and 107 (2015) fascicle 10, which are born-digital text-layer PDFs rather than scans because from 2003 the Holy See's archive serves monthly fascicles instead of whole-volume scans. Their constituent acts keep their own families and reach these bytes through bounded segments, as the Pontificia Praecepta, In Erythraea nova constituitur, Sacri canones, Eastern Code, and Sacerdotalis caelibatus rows now do. The volume 82 rasters render and were read visually for the cited canons; the volume 59 rasters could not be rendered by the tools available, so readings from it are text-layer readings corroborated elsewhere, and its OCR layer remains a finding aid in either case. The wave-eleven registrations add fourteen further container editions with exact restricted Holy See artifacts, acquired for the Society of Saint Pius X history: eight whole-volume OCR scans, 39 (1947), 40 (1948), 54 (1962), 66 (1974), 67 (1975), 68 (1976), 76 (1984), and 80 (1988), and six born-digital monthly fascicles, 101 (2009) fascicles 2, 4, and 8, 107 (2015) fascicle 9, 108 (2016) fascicle 12, and 109 (2017) fascicle 4, the fascicle form again following the Holy See's practice from 2003. They carry the Propaganda Fide and consistorial provisions on Marcel Lefebvre's appointments, Paul VI's consistorial allocution of 24 May 1976, Quattuor abhinc annos, John Paul II's letter of 8 April 1988 and Ecclesia Dei, the 2009 note, remission decree, papal letter, and Ecclesiae unitatem, and the 2015-2017 concessions of confession and marriage faculties. Volumes 66 (1974) and 67 (1975) were acquired and read for a negative result and carry no cited act; that is a bounded absence in those volumes' text layers, not a claim about the Acta as a whole. As before, the constituent acts remain distinct unregistered works read at the cited pages through each volume's own text layer, which stays a finding aid; the separately registered acts on Lefebvre and the Society keep their own family. No container edition is registered for the volumes carrying the separately registered La Salette acts (ASS 11 (1878) and AAS 7 (1915), 8 (1916), 15 (1923), and 38 (1946)); if one is registered later it belongs here, and their act-level editions stay with family.la-salette.ecclesial-acts."
@@ -611,6 +611,26 @@ reviewed_on = "2026-07-27"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
 
 [[families]]
+id = "family.benziger-brothers.catalogue-of-vestments-banners-and-regalia"
+label = "Catalogue of Vestments, Banners and Regalia"
+kind = "work"
+source_categories = ["historical-primary", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.benziger-brothers.catalogue-of-vestments-banners-and-regalia.new-york-1893.ia-djvu-ocr", "artifact.benziger-brothers.catalogue-of-vestments-banners-and-regalia.new-york-1893.loc-ia-scan-pdf", "edition.benziger-brothers.catalogue-of-vestments-banners-and-regalia.new-york-1893", "work.benziger-brothers.catalogue-of-vestments-banners-and-regalia"]
+trace_patterns = ["benziger-brothers\\.catalogue-of-vestments-banners-and-regalia"]
+reviewed_on = "2026-07-27"
+notes = "The 1893 catalog supplies dated commercial morphology, not a universal or 1962 prescription; OCR is discovery-only and claims require page-image checking."
+
+[[families]]
 id = "family.bernard-of-clairvaux.letters"
 label = "Bernard of Clairvaux, Letters"
 kind = "work"
@@ -749,6 +769,26 @@ canonical_ids = ["artifact.catholic-church.rituale-romanum.latin-typical-1925.la
 trace_patterns = ["(?:Rituale Romanum|rituale-romanum)"]
 reviewed_on = "2026-07-27"
 notes = "The work owns the 1614 and 1952 editions; no exact artifact is registered, and later title numbering must not be retrojected into 1614."
+
+[[families]]
+id = "family.catholic-church.ritus-pontificalis-ordinis-hebdomadae-sanctae-instaurati"
+label = "Ritus Pontificalis Ordinis Hebdomadae Sanctae Instaurati"
+kind = "work"
+source_categories = ["historical-primary", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "locus"]
+artifact_availability = "candidate-partial"
+storage_plan = ["unknown"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["edition.catholic-church.ritus-pontificalis-ordinis-hebdomadae-sanctae-instaurati.vatican-typical-1957", "work.catholic-church.ritus-pontificalis-ordinis-hebdomadae-sanctae-instaurati"]
+trace_patterns = ["catholic-church\\.ritus-pontificalis-ordinis-hebdomadae-sanctae-instaurati"]
+reviewed_on = "2026-07-27"
+notes = "The 1957 typical edition is bibliographically identified, but no exact lawful online artifact has been located; object-level pontifical Holy Week claims remain held."
 
 [[families]]
 id = "family.catholic-church.rubricae-breviarii-et-missalis-romani"
@@ -2729,6 +2769,26 @@ canonical_ids = ["edition.john-xxiii.rubricarum-instructum.latin-aas-52-1960", "
 trace_patterns = ["john-xxiii\\.rubricarum-instructum"]
 reviewed_on = "2026-07-27"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
+
+[[families]]
+id = "family.joseph-braun.die-liturgische-gewandung"
+label = "Die liturgische Gewandung im Occident und Orient"
+kind = "work"
+source_categories = ["historical-primary", "liturgical", "secondary"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.joseph-braun.die-liturgische-gewandung.herder-1907.ia-djvu-ocr", "artifact.joseph-braun.die-liturgische-gewandung.herder-1907.smithsonian-scan-pdf", "edition.joseph-braun.die-liturgische-gewandung.herder-1907", "work.joseph-braun.die-liturgische-gewandung"]
+trace_patterns = ["joseph-braun\\.die-liturgische-gewandung"]
+reviewed_on = "2026-07-27"
+notes = "Braun supplies historical and material morphology rather than a 1962 prescription; OCR is discovery-only and claims require page-image checking."
 
 [[families]]
 id = "family.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament"
@@ -6315,6 +6375,36 @@ basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/10-construction-history.tex"]
 
 [[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
+surface_snapshot = "sha256:b9a8154c44e87cad72cdc70f94731306e0b49d2ab3e79c94c1d0a1abe7009194"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"
+surface_snapshot = "sha256:689cff22fb013deaea8785987baa9b8a33af008794452551adeba04499980942"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader"
+surface_snapshot = "sha256:f725b9e7914891dfb29e6cf2288983f7876333324cf755ef265816a6a8f732a0"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer"
+surface_snapshot = "sha256:3d1657fe6ca3f2342ebea8dce0a482d95370bdc4791675c5b3051cfe08f5975e"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies"
+surface_snapshot = "sha256:a8d290881ed598623c63d6d67c2b5cb1450210b9fefb709f7a603761438e51dc"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
+surface_snapshot = "sha256:260eeb4017a606891d7603f3d001a7e8b6528717cd8013f0a4ae5fbf13adb582"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
 surface_snapshot = "sha256:f35956b2e362886ad6a3be9d1a0ac4f5733656f5d0e2a13916dfa7661209d843"
 review_state = "pending"
@@ -6803,7 +6893,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:b43175d9498fdcb4bb1761fff3cc41e05acd22bd4de9d683652a309f64729108"
+surface_snapshot = "sha256:20fac96026e49419f15335046c96a18ef1b51dd61b1db7e2ca9a35993875df77"
 review_state = "pending"
 
 [[review_units]]

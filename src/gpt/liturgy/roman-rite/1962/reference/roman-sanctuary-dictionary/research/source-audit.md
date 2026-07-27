@@ -100,6 +100,41 @@ without the required direct check.
 - When an object belongs to Mass, an adjoining ceremony, or both.
 - Which handling and safety claims are liturgical, practical, or local.
 
+## Second Pontificale acquisition sweep, 2026-07-27
+
+The second pass tested exact 1961/1962 and broad-title searches in Internet
+Archive; Open Library and ecclesiastical library holdings; Google Books
+catalog/preview routes; the 1999 CLV reprint; contemporary liturgical
+periodicals; and official Vatican backward citations.
+
+Two exact remote artifacts were acquired and inspected:
+
+1. Pierre Jounel, “La nouvelle édition du Pontifical romain,” *La
+   Maison-Dieu* 75 (1963), pp. 155--158. It is a near-contemporary,
+   part-by-part survey of the newly issued book and directly distinguishes the
+   portable altar from the simple altar stone or *tabula*.
+2. Paul VI, *Inter eximia* (1978), official Vatican Latin HTML. Its opening
+   paragraph identifies the pallium among episcopal-office insignia and cites
+   Pars prima (1962), p. 92.
+
+Their exact hashes, byte counts, URLs, storage dispositions, and evidence
+ceilings are recorded in `edition-manifest.md`. No full typical-edition scan
+was found. The bounded negative result is repository- and access-route
+specific: it does not establish that no scan exists or that institutional
+digital access is unavailable.
+
+What the second pass changed:
+
+- confirmed a defensible substantial contemporary overview beyond the 2008
+  facsimile introduction;
+- added an exact official backward citation for the pallium;
+- added the portable-altar versus altar-stone distinction as a focused
+  confusable-object lead;
+- documented concrete full-volume access routes for future onsite or licensed
+  consultation; and
+- retained, rather than narrowed, the full Pontifical source gap because
+  object-level rubrics remain uninspected.
+
 ## Publication state
 
 Source-audited, independently reviewed, complete, approved, and release-ready

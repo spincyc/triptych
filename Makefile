@@ -161,6 +161,9 @@ ROMAN_SANCTUARY_DICTIONARY_SHARED := $(shell find $(ROMAN_SANCTUARY_DICTIONARY_R
 	-name '*.jpeg' -o -name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
 ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS := $(filter \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/%,$(BUILD_PDFS))
+ROMAN_SANCTUARY_DICTIONARY_GENERATED := \
+	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated
+ROMAN_SANCTUARY_DICTIONARY_GENERATOR := scripts/roman-sanctuary-dictionary
 # 1962 proper full-text editions: each imports its study edition's sections and
 # format from the sibling leaf at the same id without the -full-text suffix.
 ROMAN_1962_FULL_TEXT_DOCUMENTS := $(filter \
@@ -745,7 +748,17 @@ $(ECCLESIASTICAL_LATIN_BUILD_PDFS): \
 	$(ECCLESIASTICAL_LATIN_SHARED) \
 	$(CURRICULUM_STRUCTURE_CHECKER) | check-curriculum-sources
 $(ALTAR_SERVER_GUIDES_BUILD_PDFS): $(ALTAR_SERVER_GUIDES_SHARED)
-$(ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS): $(ROMAN_SANCTUARY_DICTIONARY_SHARED)
+.PHONY: generate-roman-sanctuary-dictionary
+generate-roman-sanctuary-dictionary:
+	@$(PYTHON) $(ROMAN_SANCTUARY_DICTIONARY_GENERATOR) \
+		--schema '$(ROMAN_SANCTUARY_DICTIONARY_ROOT)/shared/schema/inventory-schema.toml' \
+		--selections '$(ROMAN_SANCTUARY_DICTIONARY_ROOT)/shared/schema/edition-selections.toml' \
+		--artwork-manifest '$(ROMAN_SANCTUARY_DICTIONARY_ROOT)/research/artwork-manifest.toml' \
+		--records '$(ROMAN_SANCTUARY_DICTIONARY_ROOT)/shared/objects' \
+		--output '$(ROMAN_SANCTUARY_DICTIONARY_GENERATED)'
+
+$(ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS): \
+	$(ROMAN_SANCTUARY_DICTIONARY_SHARED) generate-roman-sanctuary-dictionary
 # A 1962 proper is published as a study edition at the bare leaf id and a
 # full-text edition at the same id with a -full-text suffix. The full-text leaf
 # owns only its own main.tex, format.tex, generation metadata and appointed-text

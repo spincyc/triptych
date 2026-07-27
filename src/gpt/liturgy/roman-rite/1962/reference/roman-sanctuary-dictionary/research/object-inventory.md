@@ -3,9 +3,9 @@
 Status: **initial canonical records populated; zero source-audited or publication-ready objects**
 Audit date: 2026-07-27
 
-The authoritative target format is the structured contract under
-`shared/schema/`. This Markdown file is the human audit index until populated
-TOML records and a validator exist. The names below are **candidate search
+The authoritative format is the structured contract under `shared/schema/`.
+This Markdown file is the human audit index for the populated TOML records and
+their validator. The names in the discovery queue below are **candidate search
 terms**, not verified identities, prescribed forms, exhaustive lists, or
 authorization to render an entry.
 
@@ -75,6 +75,22 @@ ordinary presence at Mass, handler, or the full contents of the rite.
 | Pars secunda; introduction p. X | blessings of a new cross, pectoral cross, images, reliquary cases, holy water, incense, and altar/church furnishings | altar/processional/other cross types unresolved; pectoral cross; images; reliquary cases; holy-water and incense equipment | Identified source leads; object boundaries unverified |
 | Pars tertia; introduction pp. X--XI | Holy Thursday office in which oils are blessed and chrism is confected | vessels for oils, balsam, and chrism; related episcopal composition | Identified source leads; actual vessel names and forms require the full rite |
 | Appendix; introduction p. XII | pontifical rites for Baptism and Matrimony and pontifical blessing within Solemn Mass | ceremony-specific vessels, books, furnishings, and insignia to test against full rubrics | Category lead only; no object inferred |
+
+Pierre Jounel's contemporary survey in *La Maison-Dieu* 75 (1963), pp.
+155--158, independently corroborates these three book-level inventories and
+adds one materially useful distinction: in his account of Book II, the
+portable altar is distinguished from the simple altar stone or *tabula*, with
+different rites. This creates two confusable-object leads; it does not yet
+support canonical dimensions, construction, placement, or handling claims.
+The same survey reports that the Book II formularies include cult objects,
+liturgical vestments, sacred images, holy water, Gregorian water, incense,
+altar cloths, and sacred vessels, while Book III includes the holy oils and
+chrism on Holy Thursday.
+
+Paul VI's official 1978 *Inter eximia* calls the pallium an insignia of
+episcopal office and cites the 1962 Pontifical, Pars prima, p. 92. This
+supports a focused identity-class lead and exact locus target; it does not
+make the later 1978 discipline the inventory's 1962 status rule.
 
 This evidence adds search targets but does not change the workflow counts
 above: there remain zero canonical source-audited or publication-ready object

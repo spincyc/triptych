@@ -17,10 +17,20 @@
   \def\RSDIdentityText{}%
   \def\RSDUseText{}%
   \def\RSDSymbolismText{}%
+  \def\RSDReviewWorkflowState{unclassified}%
+  \def\RSDReviewEditorialNote{}%
+  \def\RSDReviewEvidenceStates{}%
+  \def\RSDArtworkReviewState{}%
   \def\RSDArtworkPath{}%
   \RSDArtworkAvailablefalse}
 
 \renewcommand{\RSDClaim}[6]{%
+  \ifx\RSDReviewEvidenceStates\empty
+    \def\RSDReviewEvidenceStates{#2: #4}%
+  \else
+    \expandafter\def\expandafter\RSDReviewEvidenceStates\expandafter{%
+      \RSDReviewEvidenceStates; #2: #4}%
+  \fi
   \ifstrequal{#2}{identity}{\def\RSDIdentityText{#3}}{}%
   \ifstrequal{#2}{liturgical-use}{\def\RSDUseText{#3}}{}%
   \ifstrequal{#2}{symbolism}{\def\RSDSymbolismText{#3}}{}}
@@ -28,21 +38,45 @@
 \renewcommand{\RSDArtwork}[7]{%
   \ifRSDArtworkAvailable\else
     \def\RSDArtworkPath{#3}%
+    \def\RSDArtworkReviewState{#4}%
     \RSDArtworkAvailabletrue
   \fi}
 
+\providecommand{\RSDReviewState}[2]{%
+  \def\RSDReviewWorkflowState{#1}%
+  \def\RSDReviewEditorialNote{#2}}
+
 \renewcommand{\RSDEndObjectRecord}{%
   \global\advance\RSDRenderedRecordCount by 1
+  \ifnum\RSDRenderedRowCount=0\par\noindent\fi
   \global\advance\RSDRenderedRowCount by 1
-  \par\noindent
   \begin{minipage}[t]{0.31\textwidth}
+    \raggedright
+    \hbadness=10000
     \ifRSDArtworkAvailable
       \DictionaryCell{\RSDObjectID}{\RSDPreferredEnglishName}
         {\RSDLatinHeadword}
-        {\DictionaryGraphic{1.42in}{\RSDArtworkPath}}
+        {\DictionaryGraphic{1.42in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}}
         {\RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi}
-        {\RSDStatuses;\ \RSDServerRelation}
+        {REVIEW: \RSDReviewWorkflowState;\ art: \RSDArtworkReviewState}
         {\RSDSymbolismText}
+      {\raggedright\fontsize{6.5}{7.5}\selectfont
+       \textbf{Evidence caveat:} \RSDReviewEvidenceStates\par
+      \ifx\RSDReviewEditorialNote\empty\else
+         \textbf{Editorial caveat:} \RSDReviewEditorialNote\par
+       \fi}
+    \else
+      \DictionaryCell{\RSDObjectID}{\RSDPreferredEnglishName}
+        {\RSDLatinHeadword}
+        {\PlatePlaceholder{No review art admitted}{Artwork remains absent or outside this generated review selection.}}
+        {\RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi}
+        {REVIEW: \RSDReviewWorkflowState;\ art: none admitted}
+        {\RSDSymbolismText}
+      {\raggedright\fontsize{6.5}{7.5}\selectfont
+       \textbf{Evidence caveat:} \RSDReviewEvidenceStates\par
+       \ifx\RSDReviewEditorialNote\empty\else
+         \textbf{Editorial caveat:} \RSDReviewEditorialNote\par
+       \fi}
     \fi
   \end{minipage}\hfill
   \ifnum\RSDRenderedRowCount=3
@@ -65,3 +99,8 @@
   publication pipeline and page architecture only; it is not an object
   dictionary, a completeness claim, or a distribution approval.
   \end{studybox}}
+
+\newcommand{\RSDReviewOmission}[3]{%
+  \item \texttt{#1} --- \textbf{#2}: #3.}
+\newcommand{\RSDReviewNoOmissions}{%
+  \item No omission was generated for this edition selection.}

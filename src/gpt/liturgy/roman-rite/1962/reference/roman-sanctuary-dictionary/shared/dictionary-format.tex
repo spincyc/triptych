@@ -31,6 +31,12 @@
 \setlength{\DictionaryTwoCellWidth}{%
   \dimexpr(\textwidth-\DictionaryPlateGap)/2\relax}
 
+% Review editions add auditable marks around the ordinary visual plate without
+% baking review state into either artwork or canonical entry text. Publication
+% leaves leave this switch false and therefore render none of this apparatus.
+\newif\ifDictionaryReviewEdition
+\DictionaryReviewEditionfalse
+
 \newcommand{\DictionaryTitle}[3]{%
   \hypersetup{pageanchor=false}%
   \begin{titlepage}
@@ -42,6 +48,9 @@
     \vfill
     {\large #3\par}
     \vspace{0.35in}
+    {\large\bfseries PRIESTLY REVIEW DRAFT\par}
+    {\small NOT APPROVED FOR INSTRUCTION OR PUBLICATION\par}
+    \vspace{0.25in}
     {\small Monochrome portrait reference edition\par}
     \vfill
     {\footnotesize
@@ -158,6 +167,101 @@
   {\fontsize{7}{8}\selectfont\bfseries NOT TO COMMON SCALE}}
 \newcommand{\DictionarySameScaleNotice}{%
   {\fontsize{7}{8}\selectfont\bfseries SHOWN AT COMMON SCALE}}
+
+\newcommand{\DictionaryReviewStatusMark}[1]{%
+  \ifDictionaryReviewEdition
+    \begingroup
+    \setlength{\fboxsep}{2.2pt}%
+    \setlength{\fboxrule}{0.75pt}%
+    \fbox{\mbox{\fontsize{7.2}{8}\selectfont\bfseries
+      \MakeUppercase{#1}}}%
+    \endgroup
+  \fi}
+\newcommand{\DictionaryReviewHeld}{%
+  \ifDictionaryReviewEdition
+    \begingroup
+    \setlength{\fboxsep}{2.2pt}%
+    \colorbox{black}{\mbox{\color{white}\fontsize{7.2}{8}\selectfont
+      \bfseries HELD}}%
+    \endgroup
+  \fi}
+\newcommand{\DictionaryReviewUncertain}{%
+  \DictionaryReviewStatusMark{uncertain}}
+\newcommand{\DictionaryReviewVerified}{%
+  \DictionaryReviewStatusMark{reviewed}}
+
+% Status remains prominent at the art edge while consuming no caption space.
+% #1 fixed art height; #2 status-mark macro; #3 image or other art content.
+\newcommand{\DictionaryReviewArt}[3]{%
+  \ifDictionaryReviewEdition
+    \begin{minipage}[c][#1][c]{\linewidth}
+      \centering
+      \begin{tikzpicture}
+        \node[inner sep=0pt] (dictionary-review-art) {#3};
+        \node[anchor=north east,inner sep=2pt]
+          at (dictionary-review-art.north east) {#2};
+      \end{tikzpicture}
+    \end{minipage}%
+  \else
+    \DictionaryArt{#1}{#3}%
+  \fi}
+
+% Compact review questions and uncertainty statements sit between plate rows
+% or directly below the affected cell. They are deliberately unsuitable for
+% publication prose and disappear when the review switch is false.
+\newcommand{\DictionaryReviewerQuestion}[2]{%
+  \ifDictionaryReviewEdition
+    \par\vspace{3pt}
+    \noindent
+    \begin{tcolorbox}[
+      colback=white,
+      frame hidden,
+      boxrule=0pt,
+      sharp corners,
+      borderline west={1.2pt}{0pt}{black},
+      left=5pt,right=1pt,top=2pt,bottom=2pt,
+      before skip=0pt,after skip=0pt]
+      {\fontsize{7.2}{8.5}\selectfont
+       \textbf{REVIEWER QUESTION \texttt{#1}.}\enspace #2}
+    \end{tcolorbox}
+  \fi}
+\newcommand{\DictionaryUncertaintyCallout}[2]{%
+  \ifDictionaryReviewEdition
+    \begingroup
+    \hbadness=10000
+    \par\vspace{3pt}
+    \noindent
+    \begin{minipage}{\linewidth}
+      \setlength{\fboxsep}{4pt}%
+      \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+        \fontsize{7.2}{8.5}\selectfont
+        \textbf{UNCERTAINTY \texttt{#1}.}\enspace #2}}
+    \end{minipage}
+    \endgroup
+  \fi}
+
+% Hand-annotation space belongs at the foot of a review plate, not inside each
+% image cell. #1 identifies the plate/review question; #2 is the desired height.
+\newcommand{\DictionaryReviewAnnotationSpace}[2]{%
+  \ifDictionaryReviewEdition
+    \begingroup
+    \hbadness=10000
+    \par\vspace{5pt}
+    \noindent
+    \begin{minipage}[t][#2][t]{\linewidth}
+      \hrule height 0.7pt
+      \vspace{2pt}
+      {\fontsize{7.2}{8.2}\selectfont\bfseries
+        REVIEW NOTES \texttt{#1}\hfill
+        INITIALS:\ \rule{0.55in}{0.35pt}\quad
+        DATE:\ \rule{0.72in}{0.35pt}\par}
+      \vfill\hrule height 0.3pt
+      \vfill\hrule height 0.3pt
+      \vfill\hrule height 0.3pt
+    \end{minipage}
+    \par
+    \endgroup
+  \fi}
 
 % Compatibility placeholders used by the held publication scaffolds.
 \newcommand{\PlatePlaceholder}[2]{%

@@ -342,3 +342,18 @@ A change to a source-controlled feature invalidates the figure's factual gate
 and every downstream plate and consumer review. A caption-only, label-only, or
 selection-only change invalidates only the affected plate and consumers unless
 it reveals that the pixels themselves are wrong.
+
+## Review-edition feedback
+
+`artwork-review-workflow.md` owns reviewer roles, packet contents,
+standardized questions, issue classifications and severities, correction
+decisions, correction-brief wording, verification, closure, and permitted
+review-edition status language. Free-form comments may accompany its issue
+record, but they do not replace an asset or plate ID, exact reviewed PDF
+identity, observable location, violated invariant, evidence state, and
+requested disposition.
+
+All corrections preserve the lifecycle above: a changed raster receives a new
+artwork ID, names its precursor, and reruns the invalidated gates. A TeX-only
+correction preserves artwork bytes but reruns plate and consumer review. An
+evidence hold produces no image-generation instruction.

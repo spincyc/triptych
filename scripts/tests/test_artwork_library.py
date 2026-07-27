@@ -7,6 +7,7 @@ import tempfile
 import unittest
 import zlib
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "scripts" / "artwork-library"
@@ -112,6 +113,43 @@ mode = "grayscale"
             errors = "\n".join(ARTWORK.validate_manifest(manifest))
             self.assertIn("duplicate artwork ID", errors)
             self.assertIn("path must remain", errors)
+
+    def test_dictionary_manifest_validates_nested_technical_identity(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            research = root / "research"
+            asset = root / "shared" / "artwork" / "figure.png"
+            research.mkdir()
+            asset.parent.mkdir(parents=True)
+            asset.write_bytes(png(width=600, height=900))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = research / "artwork-manifest.toml"
+            manifest.write_text(
+                f"""[[asset_files]]
+id = "file-test"
+path = "shared/artwork/figure.png"
+state = "held"
+audit_record = "research/test.md"
+technical = {{ width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = {asset.stat().st_size}, sha256 = "{digest}" }}
+""",
+                encoding="utf-8",
+            )
+            self.assertEqual(ARTWORK.validate_manifest(manifest), [])
+
+    @mock.patch.object(ARTWORK.shutil, "which", return_value="/usr/bin/pdfimages")
+    @mock.patch.object(ARTWORK.subprocess, "run")
+    def test_pdf_audit_separates_failure_from_review_trigger(self, run, _which):
+        run.return_value = mock.Mock(
+            returncode=0,
+            stdout="""page num type width height color comp bpc enc interp object ID x-ppi y-ppi size ratio
+1 0 image 1000 1000 gray 1 8 image no 5 0 299 299 1K 1%
+2 1 image 1000 1000 gray 1 8 image no 6 0 451 451 1K 1%
+""",
+            stderr="",
+        )
+        failures, triggers = ARTWORK.audit_pdf(Path("proof.pdf"))
+        self.assertIn("below 300", failures[0])
+        self.assertIn("450 review trigger", triggers[0])
 
 
 if __name__ == "__main__":

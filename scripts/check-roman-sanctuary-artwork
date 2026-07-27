@@ -205,8 +205,12 @@ def validate_artwork(
         )
         problems.check(abs(normalized["effective_dpi"] - calculated_dpi) <= 0.1,
                        f"{label}.normalized.effective_dpi does not match dimensions and placement")
-        problems.check(calculated_dpi >= 300,
-                       f"{label}: normalized asset is below 300 effective dpi")
+        if calculated_dpi < 300:
+            message = f"{label}: normalized asset is below 300 effective dpi"
+            if state == "consumer-review-passed":
+                problems.add(message)
+            else:
+                problems.notice(message)
     normalized_path = safe_relative(normalized.get("path"), f"{label}.normalized.path", problems)
     if asset is not None and normalized_path is not None:
         problems.check(asset == normalized_path, f"{label}: asset and normalized.path must match")
@@ -227,8 +231,12 @@ def validate_artwork(
                 for key, value in actual.items():
                     problems.check(normalized.get(key) == value,
                                    f"{label}.normalized.{key} does not match asset")
-                problems.check(depth == 8 and mode == "grayscale",
-                               f"{label}: publication input must be 8-bit grayscale PNG")
+                if not (depth == 8 and mode == "grayscale"):
+                    message = f"{label}: publication input is not 8-bit grayscale PNG"
+                    if state == "consumer-review-passed":
+                        problems.add(message)
+                    else:
+                        problems.notice(message)
             except (OSError, ValueError) as exc:
                 problems.add(f"{label}: cannot inspect asset: {exc}")
     received = entry.get("received")
@@ -280,7 +288,9 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         registered_file_ids.add(file_id)
         path = safe_relative(row.get("path"), f"{file_id}.path", problems)
         audit = safe_relative(row.get("audit_record"), f"{file_id}.audit_record", problems)
-        problems.check(row.get("state") in {"held", "rejected", "consumer-eligible"},
+        problems.check(row.get("state") in {
+            "accepted-for-priestly-review", "held", "rejected", "consumer-eligible"
+        },
                        f"{file_id}: invalid state")
         if audit is not None:
             problems.check((owner / audit).is_file(), f"{file_id}: missing audit record {audit}")
@@ -398,7 +408,11 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
     for artwork_id, entry in artworks.items():
         for object_id in entry.get("object_ids", []):
             if object_id not in objects:
-                problems.add(f"{artwork_id}: unknown depicted object {object_id}")
+                message = f"{artwork_id}: unknown depicted object {object_id}"
+                if entry.get("workflow_state") == "consumer-review-passed":
+                    problems.add(message)
+                else:
+                    problems.notice(message)
         for linked_id in entry.get("precursor_ids", []):
             if linked_id not in artworks:
                 problems.add(f"{artwork_id}: unknown linked artwork {linked_id}")
