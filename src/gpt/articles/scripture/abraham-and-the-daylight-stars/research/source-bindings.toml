@@ -3,6 +3,33 @@ record_type = "bindings"
 document = "articles/scripture/abraham-and-the-daylight-stars"
 
 [[bindings]]
+source_id = "passage.hebrew-bible.masoretic-text.kittel-leipzig-vol-1-1909.gen-15.5"
+loci = ["Gen.15.5"]
+role = "textual-control"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:40fc17fc7380f4db22f3d7110443545792d7415116c99d4fa99546c43ecf8d2f"
+context = "The identified 1909 Kittel printing directly controls the pointed Hebrew and narrated wayyiqtol progression at the star command; it does not measure elapsed time."
+
+[[bindings]]
+source_id = "passage.hebrew-bible.masoretic-text.kittel-leipzig-vol-1-1909.gen-15.12"
+loci = ["Gen.15.12"]
+role = "textual-control"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:34575192678c5a15896e9475699d9c6a7595c0a324dc4d5aa10785831ade9f60"
+context = "The identified page verifies the Qal infinitive construct with prefixed lamed in the clause presenting the sun's approach to setting."
+
+[[bindings]]
+source_id = "passage.hebrew-bible.masoretic-text.kittel-leipzig-vol-1-1909.gen-15.17-18"
+loci = ["Gen.15.17-18"]
+role = "textual-control"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:37164f85af9447f0947f7e181fb31e4a3aa183a877f091e9bc41cd45bff9673a"
+context = "The identified page verifies the feminine singular Qal active participle agreeing with the sun, the thick darkness, and the in-that-day formula. The participle is not represented as a completed verbal form."
+
+[[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975"
 loci = ["Gen.15.1-21", "Gen.13.16", "Gen.22.17", "Gen.26.4"]
 role = "direct-witness"
@@ -84,6 +111,15 @@ role = "direct-witness"
 states = ["acquired", "inspected"]
 source_fingerprint = "sha256:1959e40f6d8d05511d556db682e44e69ca075eacec2e4617df539414d336452f"
 context = "GPT inspected the going-out, Chaldean astral-fatalism, and sunset-allegory loci; Philo's use of Genesis 15:7 remains distinct from later use of verse 5."
+
+[[bindings]]
+source_id = "passage.josephus.antiquitates-judaicae.whiston-1737-penelope-book-1-web-2026-07-27.book-1-chapter-10-section-3"
+loci = ["1.10.3"]
+role = "direct-witness"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:2b202836af666f816ebab2b51e6c0b4f55c6d116f7089a7507a2eba66bf84265"
+context = "Whiston I.10.3 retains the posterity-like-stars comparison and commanded sacrifice while omitting the outside/look command and every sunset, darkness, and concluding temporal marker."
 
 [[bindings]]
 source_id = "passage.peshitta-old-testament.genesis.syriac-peshitta-eu-web-2026-07-27.genesis-15-5-12-17-18"
