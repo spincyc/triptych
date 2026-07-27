@@ -24,7 +24,8 @@ Choose a section, open a PDF, and read.
 
 | Section | Focus |
 | --- | --- |
-| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, altar-server training, Mass assembly, calendar, and regularly updated proper expositions. |
+| **[Priestly Review: Sanctuary Pictorial Dictionaries](library/traditional-latin-mass.md#sanctuary-pictorial-dictionaries-priestly-review-copies)** | Direct access to all six explicitly provisional 1962 Roman Rite dictionary PDFs for priestly review. |
+| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, altar-server training, Mass assembly, calendar, pictorial dictionaries, and regularly updated proper expositions. |
 | **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and proper studies identified by edition, language, territory, cycle, and date. |
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
 | **[Curriculums](library/curriculums.md)** | Self-paced courses and printable study materials. |
