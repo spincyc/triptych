@@ -38,10 +38,13 @@ photocopy, consumer, or release approval.
   placements.
 - Missa Cantata and Solemn Mass review PDFs render their pencil scenes at 327
   and 326 effective dpi respectively, with no technical trigger.
-- The six ordinary dictionary edition builds currently contain no raster
-  artwork; they remain held two-page scaffolds. Their artwork cannot receive a
-  publication-level print-readiness finding until canonical selections render
-  in those consumers.
+- The six current dictionary priestly-review PDFs each contain six embedded
+  review images across six portrait pages. No image falls below 300 effective
+  dpi. Five portrait assets render at 1,082 effective dpi and the landscape
+  paten asset at 721 effective dpi in each consumer. Those high-resolution
+  investigation triggers arise from compact review-grid placement, not
+  inadequate source resolution. They do not replace full-size visual,
+  physical-print, or monochrome-photocopy inspection.
 
 ## Automation
 
@@ -67,5 +70,5 @@ its authority.
 - full-size factual and visual inspection of every figure;
 - independent liturgical and ceremonial review;
 - rights, consumer, and release review;
-- rendered reconciliation of the comprehensive and use-derived dictionary
-  editions once they cease to be scaffolds.
+- rendered reconciliation of the comprehensive and use-derived review copies
+  after every further source, selection, artwork, or typesetting change.

@@ -166,7 +166,7 @@ Use these machine and visible labels exactly:
 
 | Machine state | Required visible label | Distribution state |
 | --- | --- | --- |
-| `priestly-review` | `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE` | private or explicitly held evaluation distribution only |
+| `priestly-review` | `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE` | publicly discoverable alpha review distribution, conspicuously separated from authoritative releases |
 | `authoritative-release` | `SOURCE-AUDITED REFERENCE EDITION` | eligible for ordinary catalog and exact-snapshot public release |
 
 A priestly-review copy prints its visible label on the title page, in the
@@ -179,7 +179,10 @@ terminal apparatus. Its title-page caveat reads:
 > parish direction, evidence of authorization, or a public reference edition.
 
 The terminal review statement names the exact review scope, eligible records,
-unresolved gates, revision timestamp, and PDF SHA-256. It also says whether
+unresolved gates, and stable revision identity. The detached production and
+public-distribution records bind that revision identity to the exact PDF
+SHA-256; a PDF cannot reliably print its own digest because inserting the
+digest changes the file. The terminal statement also says whether
 the named reviewer examined source claims, artwork, printed pages, or only a
 subset. Do not print a reviewer's name, office, quotation, or institution
 without permission.
@@ -284,8 +287,10 @@ Before producing a priestly-review PDF:
    the declared `priestly-review` state;
 3. verify every physical body page carries the required footer and no page
    uses authoritative-release wording;
-4. keep the PDF out of ordinary catalog links, public release approval, web
-   editions, search indexes, and unrestricted distribution packages;
+4. include the PDF in the public alpha and owning landing-page catalog under a
+   conspicuous priestly-review heading, preserve the exact review label and
+   open gates in the generated artifact manifest, and keep it distinct from
+   authoritative-release approval and claims;
 5. record the exact intended reviewers or reviewer class, distribution
    boundary, timestamp, hash, selected IDs, open gates, and recall or
    supersession status in the production manifest; and

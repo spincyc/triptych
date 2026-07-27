@@ -1,6 +1,6 @@
 # Low-Mass core selection and omission register
 
-Status: **exact review selection; no records publication-ready**
+Status: **Low-Mass review queue reconciled to the current six-record review snapshot; no records publication-ready**
 Reconciled: 2026-07-27
 
 ## Selection rule
@@ -9,12 +9,14 @@ This register reconciles all 38 canonical object records presently under
 `shared/objects/` against the internally audited two-server Low-Mass chronology
 in `research/low-mass-chronology-audit.md`.
 
-`Select` means that the record should enter the altar-server edition's
-Low-Mass review set if it later satisfies the edition contract's
-`publication-ready` gate. Selection does not assert that the object is present
-in every church or that a server handles it. It includes objects directly
-handled, recognized during the route, or reasonably encountered in the
-sacristy and immediate altar setting covered by an existing record.
+`Select` means that the record belongs in the altar-server edition's Low-Mass
+queue. It enters a priestly-review snapshot only after explicit review
+admission, and it enters an authoritative release only after satisfying the
+edition contract's `publication-ready` gate. Selection does not assert that
+the object is present in every church or that a server handles it. It includes
+objects directly handled, recognized during the route, or reasonably
+encountered in the sacristy and immediate altar setting covered by an existing
+record.
 
 `Omit from Low-Mass set` means only that the current record belongs to a sung,
 pontifical, related-ceremony, or other use outside this slice. It may still
@@ -71,9 +73,17 @@ excluded from that edition by this register.
 | Selected for Low-Mass review | 21 |
 | Omitted from Low-Mass review | 17 |
 | Total reconciled canonical records | 38 |
+| Admitted to the current priestly-review snapshot | 6 |
 | Currently eligible to render under `ed-altar-server` | 0 |
 
-The zero render count follows from the edition contract's
+The six review admissions are `obj-altar-bells`, `obj-altar-candle`,
+`obj-altar-candlestick`, `obj-chalice`, `obj-paten`, and
+`obj-sanctuary-lamp`. All six belong to the 21-record Low-Mass queue. The
+review snapshot's generated omission register contains the other 32 canonical
+records; that is a different boundary from the 17 records omitted from the
+Low-Mass slice.
+
+The zero authoritative render count follows from the edition contract's
 `include_workflow_states = ["publication-ready"]`; none of the 38 records has
 that state.
 
@@ -109,8 +119,10 @@ records or captions.
 
 ## Review consequences
 
-1. The 21-record selection is an exact review queue, not a publishable
-   selection. Workflow and status filters still control rendering.
+1. The 21-record selection is the exact Low-Mass review queue, not the current
+   priestly-review snapshot and not a publishable selection. Explicit
+   admissions govern review rendering; workflow and status filters govern an
+   authoritative rendering.
 2. The seven sacristy records remain selected because the user-facing edition
    covers everything that may be present around the server, including before
    line-up and after recession.

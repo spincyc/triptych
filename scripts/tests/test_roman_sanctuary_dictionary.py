@@ -9,9 +9,57 @@ ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "scripts" / "roman-sanctuary-dictionary"
 SCHEMA = ROOT / "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/inventory-schema.toml"
 SELECTIONS = ROOT / "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/edition-selections.toml"
+DICTIONARY_ROOT = ROOT / "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+ARTWORK_MANIFEST = DICTIONARY_ROOT / "research/artwork-manifest.toml"
+RECORDS = DICTIONARY_ROOT / "shared/objects"
 
 
 class DictionaryGeneratorTests(unittest.TestCase):
+    def test_public_alpha_review_gate_excludes_unverified_records(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "out"
+            subprocess.run(
+                [
+                    str(SCRIPT),
+                    "--schema", str(SCHEMA),
+                    "--selections", str(SELECTIONS),
+                    "--artwork-manifest", str(ARTWORK_MANIFEST),
+                    "--records", str(RECORDS),
+                    "--output", str(output),
+                ],
+                check=True,
+            )
+            sidecar = (output / "ed-comprehensive.review-admissions.toml").read_text()
+            review = (output / "ed-comprehensive.review.tex").read_text()
+            omissions = (output / "ed-comprehensive.review-omissions.tex").read_text()
+            self.assertIn('status = "priestly-review"', sidecar)
+            self.assertIn('distribution_state = "public-alpha"', sidecar)
+            self.assertIn("admitted_object_count = 6", sidecar)
+            self.assertIn("omitted_object_count = 32", sidecar)
+            self.assertIn("obj-chalice", review)
+            self.assertNotIn("obj-altar-cruet", review)
+            self.assertIn(
+                r"\RSDReviewOmission{obj-altar-cruet}{Altar cruet}"
+                r"{a printed claim remains an unverified lead}",
+                omissions,
+            )
+            self.assertIn(
+                r"\RSDReviewOmission{obj-aspergillum}{Aspergillum}"
+                r"{object identity or governing status remains unresolved}",
+                omissions,
+            )
+
+    def test_shared_shell_uses_exact_review_label_and_terminal_control(self):
+        shell = (DICTIONARY_ROOT / "shared/publication-shell.tex").read_text()
+        format_source = (DICTIONARY_ROOT / "shared/dictionary-format.tex").read_text()
+        exact_tex_label = "PRIESTLY REVIEW COPY --- NOT FOR PUBLIC RELIANCE"
+        self.assertIn(exact_tex_label, shell)
+        self.assertIn(exact_tex_label, format_source)
+        self.assertIn(r"\section{Review Snapshot and Open Gates}", shell)
+        self.assertIn("public-distribution manifests bind this snapshot identity", shell)
+        self.assertNotIn("PRIESTLY REVIEW DRAFT", shell)
+        self.assertNotIn("NOT APPROVED FOR INSTRUCTION OR PUBLICATION", shell)
+
     def test_fixture_renders_canonical_and_derived_views_deterministically(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

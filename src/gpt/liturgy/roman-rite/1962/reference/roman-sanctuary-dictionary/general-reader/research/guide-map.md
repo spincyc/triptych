@@ -1,6 +1,6 @@
 # General-reader edition guide map
 
-Status: **held structural prototype; not approved for publication**
+Status: **bounded priestly-review source; held from public reliance**
 Audit date: 2026-07-27
 Edition selection: `ed-general-reader`
 
@@ -13,11 +13,18 @@ preserving distinctions of period and status.
 
 ## Current generated selection
 
-The present `main.tex` is a publication-capable shell that consumes only the
-generator-admitted `ed-general-reader` selection under `build/`. That
-generated selection is empty because there are no publication-ready
-canonical objects. It therefore renders a held notice, not verified captions,
-a representative selection, or evidence of completeness.
+The present `main.tex` consumes the generator-admitted priestly-review view of
+`ed-general-reader`. At this audit it contains six source-audited canonical
+records with artwork admitted for bounded review: altar bells, altar candle,
+altar candlestick, chalice, paten, and sanctuary lamp. The generated
+record-level omission register excludes every other structured record and
+states the blocking reason. The leaf-owned audience apparatus additionally
+discloses missing categories and general-reader functions.
+
+This is an eligibility sample, not yet a representative survey. In
+particular, it has no sanctuary orientation composition, linens, vestments,
+pontifical insignia, historical objects, symbolism entries, or substantive
+variant comparisons. It must not be described as a completed dictionary.
 
 When populated, `ed-general-reader` selects only `publication-ready` canonical
 records whose `audience_relevance.general_reader` value is `required`.
@@ -28,18 +35,22 @@ volume does not itself make an object representative enough for this leaf.
 
 ## Priestly-review selection boundary
 
-The priestly-review edition may expose only explicitly manifested canonical
-records proposed for the `required` general-reader selection, with workflow
-and evidence state visible. The review is of representativeness, clarity,
-status, and accuracy; it does not authorize a claim that the sample is
-complete or that an attractive form is normative.
+The priestly-review edition exposes only generator-admitted canonical records
+proposed for the `required` general-reader selection, with workflow, artwork,
+and evidence state visible. The leaf does not admit unresolved-status
+art-reviewed records merely because their drawings exist. The review is of
+recognition, representativeness, clarity, status, and accuracy; it does not
+authorize a claim that the sample is complete or that an attractive form is
+normative.
 
 ## Visible omissions in the review edition
 
-The review edition must list omitted categories, periods, ceremony-specific
-objects, substantive variants, and unresolved terminology. Because this is a
-concise survey, it must also say that deliberate curation is not evidence that
-unselected objects or forms are unimportant or non-Roman.
+The review edition lists both audience-level omissions and the generated
+record-level omissions. The former names absent categories, periods,
+comparisons, symbolism, and historical treatment; the latter names each
+excluded structured record and its current blocker. Because this is a concise
+survey, it also says that deliberate curation is not evidence that unselected
+objects or forms are unimportant or non-Roman.
 
 ## Reader order
 
@@ -87,10 +98,14 @@ audience relevance must come from canonical records conforming to
 only in canonical `audience_note` data and may not erase qualifications or
 change verified claims.
 
-## Hold and nonpublication state
+## Review distribution and authoritative-release hold
 
 There are currently zero publication-ready canonical records and no approved
-public curation. This leaf remains on hold and must not be installed or
-published. A priestly-review PDF solicits correction only and does not
-authorize a completeness claim.
-Plate-manifest order remains a publication blocker.
+authoritative-release curation. The source may produce a bounded
+priestly-review PDF for public-alpha expert evaluation. That PDF remains
+discoverable in its owning catalog with a conspicuous review label and the
+warning `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE`; discoverability does
+not convert it into an authoritative release, instructional publication, or
+completeness claim. Plate-manifest order, missing corpus categories,
+intended-reader testing, and the authoritative-release gates remain
+publication blockers.
