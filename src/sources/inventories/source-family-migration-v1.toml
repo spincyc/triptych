@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:01df8b750514406a1bc6c06d10a1ef3b02b812a27b0f06e3fef35f588d2a5068"
+inventory_snapshot = "sha256:202aa9a4078caa1675e1617a90a44932c3de2ada1e63686a9a7e28ad9b1beaaf"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:168d6ba79848f1c86a34613a3495d9acc72945007e80f4fafad20477da686ed0"
-canonical_catalog_snapshot = "sha256:31e4a89507772874096a78890c18fecdc696440ceb4799fac2efe3bfb20e850f"
+canonical_catalog_snapshot = "sha256:f1c9d07e4cc6f3bfc56e4b896232eabc412b88241597d64c867a2d95362aa806"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:3ee7ebf3beb0b3310fab36ce77aece4bd18b4123955b8a4c337d543ecb86420e"
+snapshot = "sha256:c2e933a7dccc8e56fa21626e622bebb53799ae6c3b7c8e5e7c7714a148137112"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -5494,7 +5494,7 @@ record_paths = ["src/gpt/articles/scripture/john-6-bread-from-heaven/main.tex", 
 
 [[review_units]]
 owner_id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
-surface_snapshot = "sha256:d87462db2f0fdc9697b63dd0d0fc4d952ea728ddc61e8399cce7557393592ba7"
+surface_snapshot = "sha256:be2d3455614ebcefe8c162e5b67925a7d2635125fc7fdd5f4f070155373d75e3"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -6390,7 +6390,7 @@ record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/sourc
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:0290580620605a2f18a52662f663ef0c9f75c670c07e60936011e30f73af3be6"
+surface_snapshot = "sha256:5eec57aac53cc1b8f5fd26dd3d4aae4cfabfabb5d3dbc5f2f6424c4f491b5623"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -6413,7 +6413,7 @@ record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practi
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
 basis = "reviewed"
-record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/ancient-biblical-patristic-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/patristic-ancient-context-review-2026-07-27.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-bindings.toml"]
+record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/ancient-biblical-patristic-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/patristic-ancient-context-review-2026-07-27.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "reviewed"
@@ -6421,7 +6421,7 @@ record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practi
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
-record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/ritual-history-case-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-bindings.toml", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/60-modern-reform.tex"]
+record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/ritual-history-case-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/60-modern-reform.tex"]
 [[review_units.family_presence]]
 family_id = "family.catholic-church.de-exorcismis-et-supplicationibus-quibusdam"
 basis = "reviewed"
@@ -6465,7 +6465,7 @@ record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practi
 [[review_units.family_presence]]
 family_id = "family.holy-see.cceo-1990"
 basis = "reviewed"
-record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/evidence-map.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/scope.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-bindings.toml", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/theological-canonical-ecclesial-review-2026-07-27.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/theology-law-reception-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/150-references.tex", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/90-east-west-law-rites.tex"]
+record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/evidence-map.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/scope.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/theological-canonical-ecclesial-review-2026-07-27.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/theology-law-reception-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/150-references.tex", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/90-east-west-law-rites.tex"]
 [[review_units.family_presence]]
 family_id = "family.holy-see.cic-1917"
 basis = "reviewed"
@@ -6521,7 +6521,7 @@ record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practi
 [[review_units.family_presence]]
 family_id = "family.thomas-aquinas.summa-theologiae"
 basis = "reviewed"
-record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/evidence-map.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/medieval-ritual-expansion-gaps-2026-07-27.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/ritual-history-case-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-bindings.toml", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/140-dated-orientation.tex", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/150-references.tex", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/40-late-antique-medieval.tex"]
+record_paths = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/evidence-map.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/medieval-ritual-expansion-gaps-2026-07-27.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/ritual-history-case-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/140-dated-orientation.tex", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/150-references.tex", "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/40-late-antique-medieval.tex"]
 [[review_units.family_presence]]
 family_id = "family.united-kingdom-department-for-education.national-action-plan-child-abuse-faith-belief"
 basis = "reviewed"
@@ -7239,7 +7239,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
-surface_snapshot = "sha256:66f35f4665645e861c5d2fa111d3ace11f92099f61352c087b4c9098216051b3"
+surface_snapshot = "sha256:c691ac38d918cd463d1956a30ca1ff8d75d9f62438b956c7fac0ffbae085ba36"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -7250,11 +7250,11 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual/main.tex", "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual/research/guide-map.md"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual/main.tex"]
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
-surface_snapshot = "sha256:7f0e28c6a08dd214c3d246f2b454423069f88172b60a7552a6fac8a6a436a300"
+surface_snapshot = "sha256:4f5dcbc299548ccdecfc67ff1daf06cb11993049a8750f2df6fc2c4597635fe5"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -7269,11 +7269,11 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/main.tex", "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/research/guide-map.md"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/main.tex"]
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
-surface_snapshot = "sha256:2f4c5aa2038966152273947d39c0447b855b3b4374f943d635f3bfd2f9ed8cc1"
+surface_snapshot = "sha256:f56955afbb70ee4bca9aa67498c135bc869e51d0708dca3cdf31a50c15c4682c"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -7292,7 +7292,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
-surface_snapshot = "sha256:a4cb82fb3a819d1708f395c84b08debbcf050cda1e35bf3e6b574a99920cc18f"
+surface_snapshot = "sha256:43fa18da0083622dd081c1d58a253897efce6ae59afd9a809838892c84046ba0"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -7307,11 +7307,11 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/main.tex", "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/research/guide-map.md"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/main.tex"]
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
-surface_snapshot = "sha256:738bc8d032a7dd7a91ee1ea714f1aa7c73a41be2d79c03e11d663add4a2d7914"
+surface_snapshot = "sha256:70d5cd18a1467183676e067cf9f09283dd91dc2eb12c46eea9f4c72da085d6f1"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -7330,7 +7330,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
-surface_snapshot = "sha256:a92fb721b975cbd560bdfd371a3495e770dafd7657a0eacac5971cc468b17e85"
+surface_snapshot = "sha256:0cf7f9c9392c2b678b6ea3cb1c5f4c48aa05e76da17a5ad86de4d4a37c939060"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -7341,15 +7341,15 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/r
 [[review_units.family_presence]]
 family_id = "family.catholic-church.rubricae-breviarii-et-missalis-romani"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.john-xxiii.rubricarum-instructum"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md"]
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/edition-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/scope.md", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-bindings.toml", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/00-scope.tex", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/95-checklist.tex"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/edition-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/scope.md", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/00-scope.tex", "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/95-checklist.tex"]
 [[review_units.family_presence]]
 family_id = "family.roman-missal.older-use-discipline-acts"
 basis = "reviewed"
@@ -7357,7 +7357,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/r
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
-surface_snapshot = "sha256:44ee1a6b62767a870efab7e620237b158421bed863958be5ac4596a20009cc34"
+surface_snapshot = "sha256:bc97893fbf7437b105d691aaa45fa6c956ac4b0b7a80c0dcfae122cad9d4cf88"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -7368,7 +7368,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/s
 [[review_units.family_presence]]
 family_id = "family.catholic-church.rubricae-breviarii-et-missalis-romani"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/edition-manifest.md"]
 [[review_units.family_presence]]
 family_id = "family.isidore.etymologiae"
 basis = "reviewed"
@@ -7376,11 +7376,11 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/r
 [[review_units.family_presence]]
 family_id = "family.john-xxiii.rubricarum-instructum"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/edition-manifest.md"]
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/edition-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/scope.md", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/source-bindings.toml", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/00-scope-method.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/10-construction-history.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/20-substantive-timeline.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/50-sanctorale-jan-jun.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/90-use-boundaries.tex"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/edition-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/scope.md", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/00-scope-method.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/10-construction-history.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/20-substantive-timeline.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/50-sanctorale-jan-jun.tex", "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/90-use-boundaries.tex"]
 [[review_units.family_presence]]
 family_id = "family.roman-missal.older-use-discipline-acts"
 basis = "reviewed"
@@ -7996,16 +7996,12 @@ family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab29
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:72fdb23c8eae1a134f46b7212766c44dd55a8a5ba5edbd836a330f9a0931a7f7"
+surface_snapshot = "sha256:9e2fb3abb9bdeb6700f3b635758ae867b6786f41e331985c0ffe67d874bdde10"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
-basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/edition-manifest.md"]
-[[review_units.family_presence]]
-family_id = "family.adrian-fortescue.ceremonies-of-the-roman-rite-described"
 basis = "reviewed"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md"]
 [[review_units.family_presence]]
@@ -8015,7 +8011,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/r
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:327416d473ce1ff68dcef3405dc8d622077b993194e0794ed2a25d832225365d"
+surface_snapshot = "sha256:cb538bfc02d8e3d6b6537b5730a5aeb169145dc173506d6d74de13b6015ade9d"
 review_state = "family-screened"
 reviewed_on = "2026-07-27"
 family_screening_snapshot = "sha256:129480534062957f7c91d9313e87a5f533a5762aab293afb8ca40537fa77e7f7"
@@ -8042,7 +8038,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dicti
 [[review_units.family_presence]]
 family_id = "family.catholic-church.rubricae-breviarii-et-missalis-romani"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/edition-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/linen-inventory-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/altar-sanctuary-composition.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/altar-bells.toml"]
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/edition-manifest.md"]
 [[review_units.family_presence]]
 family_id = "family.catholic-encyclopedia.new-york-1907-1912"
 basis = "reviewed"
