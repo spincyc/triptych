@@ -13,9 +13,11 @@ fail-closed after any bound byte changes.
 
 The six review entries are the 1962 Roman sanctuary pictorial-dictionary
 editions. Their installed PDFs are deliberately qualified priestly-review
-copies: they may be supplied to reviewers, but they remain excluded from the
-ordinary public-alpha build. Their inventory, source-collation, priestly-review,
-and artwork gates remain open, and their manifest approvals are null.
+copies and are included in the public alpha so that the in-progress papers are
+discoverable from their landing pages. Their inventory, source-collation,
+priestly-review, and artwork gates remain open, their completion approvals are
+null, and their public presence must never be represented as authoritative
+release.
 
 Immediately before that supplement, the manifest recorded 63 `release` and 48
 `hold` items. The 48 were the 37 redesigned Ecclesiastical Latin PDFs, five
@@ -87,16 +89,16 @@ exact current PDFs are distribution-cleared as working studies only.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
-- `hold` means the work must not enter either a public build or a private review preview;
-- `review` means the work may enter the clearly marked, no-index private preview, but not a public build; and
+- `hold` means the work must not enter either a public build or an ordinary review preview;
+- `review` means the installed paper enters the public alpha with conspicuous review-copy labeling, preserved open gates, and no completion approval; and
 - `release` means a work-specific record, or an exhaustive shared record that names the work, its effective authorization and duration, and the exact approved PDF SHA-256 have been recorded and verified.
 
 The public build copies rendered HTML, site CSS, license texts, PDFs marked
-`release`, and narrowly scoped generated policy, manifest, and checksum files.
+`release` or `review`, and narrowly scoped generated policy, manifest, and checksum files.
 It does not copy Markdown, TeX, research records, build intermediates, `.git`,
-or repository history. The private preview additionally copies `review` PDFs
-and is marked `noindex, nofollow`; it is for local or access-controlled review
-only.
+or repository history. The private preview is marked `noindex, nofollow`; it
+remains useful for local or access-controlled review of the same discoverable
+review set before deployment.
 
 The exact La Salette PDF directly analyzes and paraphrases the secret addressed
 by the Holy Office decree published at *AAS* 7 (1915) 594. The present force of

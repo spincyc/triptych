@@ -264,6 +264,16 @@ publication entries; do not repeat their PDF links on the landing page. Keep
 all `library/` pages at the same filesystem level so source and generated links
 remain predictable.
 
+A single unusually long or prominently requested work may likewise receive one
+narrowly scoped child landing when readers materially benefit from direct
+format links, a safety or reliance boundary, and section-level web navigation.
+That child owns the publication entry and stable publication marker. Its
+section landing links to the child without repeating the PDF or web links.
+README and LIBRARY may feature the child directly when the maintainer has
+expressly requested landing-page visibility. Keep a review edition's status
+and material completion shortfall conspicuous on the child page; navigation
+must never imply that an interim edition fulfills the promised final scope.
+
 A leaf ID keeps exactly one owning catalog page no matter how many provider
 editions exist. Each provider has its own named column — `ChatGPT` for the
 `gpt` edition, `Claude` for the `claude` edition — placed in that order
@@ -318,11 +328,30 @@ Repository visibility and reader-site deployment are separate decisions. A publi
 
 `release/public-alpha.json` must exhaustively account for every discovered source and installed PDF. Accounting is per provider edition: each provider's installed PDF is a distinct entry under its provider-qualified identity, and one provider edition's state never covers another's:
 
-- `hold` excludes the work from public and private-preview artifacts;
-- `review` permits it only in a clearly marked, no-index private preview; and
+- `hold` excludes the work from public artifacts and ordinary review previews;
+- `review` includes an installed paper in the public alpha so that it is
+  discoverable from the owning landing page. The catalog, PDF, and generated
+  artifact manifest must identify it conspicuously as a review copy and
+  preserve its open gates; and
 - `release` requires a current rights record, effective authorization, cleared distribution gates, and the exact approved PDF SHA-256.
 
-`release` means exact-snapshot distribution approval only. It never implies editorial maturity, complete collation, specialist review, an imprimatur, a nihil obstat, or ecclesiastical approval. A changed PDF is a new snapshot and loses its old approval until a new exact binding is recorded.
+`review` is a public-alpha distribution state, not release approval. Public
+discoverability never promotes its evidence, artwork, specialist-review,
+production, rights, or ecclesiastical state. Its exact installed hash and the
+maintainer decision permitting public review distribution must be recorded
+separately from completion or release approval. `release` means exact-snapshot
+distribution approval only. It never implies editorial maturity, complete
+collation, specialist review, an imprimatur, a nihil obstat, or ecclesiastical
+approval. A changed PDF is a new snapshot and loses its old approval until a
+new exact binding is recorded.
+
+An explicit user deliverable—such as promised scope, minimum extent, named
+sections, formats, or publication surfaces—must be recorded in the owning
+research scope before work is represented as complete. If the installed paper
+does not yet meet that deliverable, keep it discoverable as `review`, state the
+shortfall and open completion gate in its research and publication records,
+and never substitute successful build, review, installation, or distribution
+for fulfillment of the promised deliverable.
 
 The authorization inventory also binds every reader-facing Markdown file, template, stylesheet, copied license text, generator, and dependency lock capable of changing the artifact. The public generator may copy only authorized HTML, styles, licenses, PDFs, and narrowly scoped host-control or verification files. It must not copy authoring sources, research records, intermediates, repository metadata, history, or private-preview output.
 
@@ -334,7 +363,7 @@ Conditional authorization records its effective instant, timezone, duration, exc
 
 Preserve unrelated changes and stage only a coherent requested result. Editing, building, installing, committing, integrating, updating a local target, pushing a named ref, and deploying are distinct authorities. A worker's permission for one does not imply another.
 
-Before any push to a public ref, review the exact outgoing range and confirm that every newly reachable source, record, PDF, and historical object is authorized. A push to `main` may trigger Pages after the source is already public; a failed workflow does not retract it. Keep uncleared experiments and private-review material off public refs.
+Before any push to a public ref, review the exact outgoing range and confirm that every newly reachable source, record, PDF, and historical object is authorized. A push to `main` may trigger Pages after the source is already public; a failed workflow does not retract it. Keep uncleared experiments and `hold` material off public refs.
 
 Every AI-assisted commit has a concise result-oriented subject and a terse body headed `AI summary:` — one or two sentences naming the material change and the verification performed. Do not claim unperformed checks or include private reasoning, narration, or machine-local state. The same terseness governs code comments: state only what the code cannot say itself.
 

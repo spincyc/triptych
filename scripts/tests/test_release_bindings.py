@@ -149,6 +149,33 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertIn(sha(b"readme v2"), record_text)
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
 
+    def test_refresh_and_status_bind_public_review_snapshot(self):
+        manifest = self.read_manifest()
+        review = manifest["publications"][0]
+        review["status"] = "review"
+        review["gates"] = ["independent-review"]
+        review["approval"] = None
+        review["review_distribution"] = {
+            "authorization": "auth-1",
+            "pdf_sha256": sha(b"gpt pdf v1"),
+        }
+        manifest["expected_counts"].update({"release": 1, "review": 1})
+        self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+        self.tool.refresh(self.tool.load_manifest())
+
+        self.gpt_pdf.write_bytes(b"gpt review pdf v2")
+        self.assertEqual(1, self.tool.report_status(self.tool.load_manifest()))
+        changes = self.tool.refresh(self.tool.load_manifest())
+
+        self.assertIn("pdf articles/example", changes)
+        refreshed = self.read_manifest()["publications"][0]
+        self.assertEqual(
+            sha(b"gpt review pdf v2"),
+            refreshed["review_distribution"]["pdf_sha256"],
+        )
+        self.assertIsNone(refreshed["approval"])
+        self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
+
     def test_refresh_recomputes_expected_counts(self):
         manifest = self.read_manifest()
         manifest["expected_counts"]["publications"] = 99

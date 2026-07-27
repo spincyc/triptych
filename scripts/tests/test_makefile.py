@@ -450,6 +450,72 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertEqual(len(self.lines(self.check_log)), 2)  # global + changed PDF
         self.assertEqual(installed_pdf.read_bytes(), build_pdf.read_bytes())
 
+    def test_altar_server_single_install_routes_through_complete_series_gate(self) -> None:
+        owner = (
+            self.root
+            / "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
+        )
+        shared = owner / "shared"
+        shared.mkdir(parents=True)
+        (shared / "series-format.tex").write_text(
+            "% shared altar-server render source\n", encoding="utf-8"
+        )
+        documents = (
+            "01-low-mass",
+            "01-low-mass-trainer-manual",
+            "01-low-mass-flash-cards",
+            "02-missa-cantata",
+            "02-missa-cantata-cue-cards",
+            "03-solemn-mass",
+            "03-solemn-mass-cue-cards",
+        )
+        for document in documents:
+            leaf = owner / document
+            leaf.mkdir()
+            (leaf / "main.tex").write_text(
+                "\\input{series-format}\n", encoding="utf-8"
+            )
+            (leaf / "generation-metadata.tex").write_text(
+                "metadata\n", encoding="utf-8"
+            )
+
+        requested = (
+            "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
+        )
+        self.run_make("install-doc", f"DOC={requested}")
+
+        altar_jobs = [
+            line
+            for line in self.lines(self.latex_log)
+            if "altar-server-guides" in line
+        ]
+        self.assertEqual(len(altar_jobs), 14)
+        self.assertEqual(len(self.lines(self.review_log)), 1)
+        reviewed = self.lines(self.review_log)[0]
+        for document in documents:
+            relative = (
+                "liturgy/roman-rite/1962/reference/altar-server-guides/"
+                f"{document}.pdf"
+            )
+            self.assertIn(f"build/gpt/{relative}", reviewed)
+            self.assertEqual(
+                (self.root / f"doc/gpt/{relative}").read_bytes(),
+                (self.root / f"build/gpt/{relative}").read_bytes(),
+            )
+
+        self.clear_logs()
+        time.sleep(0.02)
+        (shared / "series-format.tex").write_text(
+            "% revised shared altar-server render source\n", encoding="utf-8"
+        )
+        self.run_make("altar-server-guides")
+        altar_jobs = [
+            line
+            for line in self.lines(self.latex_log)
+            if "altar-server-guides" in line
+        ]
+        self.assertEqual(len(altar_jobs), 14)
+
     def test_checker_refresh_does_not_reinstall_identical_pdf_bytes(self) -> None:
         self.run_make("-j4", "install")
         installed_pdfs = [

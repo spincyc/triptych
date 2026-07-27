@@ -154,6 +154,10 @@ ALTAR_SERVER_GUIDES_SHARED := $(shell find $(ALTAR_SERVER_GUIDES_ROOT)/shared -t
 	-name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
 ALTAR_SERVER_GUIDES_BUILD_PDFS := $(filter \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/altar-server-guides/%,$(BUILD_PDFS))
+ALTAR_SERVER_GUIDES_DOCUMENTS := $(filter \
+	liturgy/roman-rite/1962/reference/altar-server-guides/%,$(DOCUMENTS))
+ALTAR_SERVER_GUIDES_METADATA_VERIFICATIONS := $(addprefix \
+	$(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(ALTAR_SERVER_GUIDES_DOCUMENTS)))
 ROMAN_SANCTUARY_DICTIONARY_ROOT := $(SOURCE_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary
 ROMAN_SANCTUARY_DICTIONARY_SHARED := $(shell find $(ROMAN_SANCTUARY_DICTIONARY_ROOT)/shared -type f \( \
 	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
@@ -223,6 +227,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening \
+	check-promised-deliverables \
 	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-agent-isolation check-curriculum-sources \
 	check-curriculum-structure \
@@ -231,6 +236,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	verify-public-site verify-public-preview \
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
+	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness explain-staleness rebaseline-doc \
 	FORCE_METADATA_VERIFICATION
 .DELETE_ON_ERROR:
@@ -411,6 +417,9 @@ help:
 		'make doc DOC=<id>  Build one document below src/$$PROVIDER/' \
 		'make review-doc DOC=<id>  Build one document and raster it for page review' \
 		'make install-doc DOC=<id>  Build, gate, and install one document' \
+		'make altar-server-guides  Build the complete seven-publication altar-server series' \
+		'make review-altar-server-guides  Build and raster all seven altar-server publications' \
+		'make install-altar-server-guides  Review, validate, stage, and install the complete altar-server series' \
 		'make list     List discovered document IDs' \
 		'make dependencies-arch  List canonical Arch package dependencies' \
 		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
@@ -458,6 +467,9 @@ help:
 
 check-metadata: check-tools
 	@$(METADATA_CHECKER) --provider $(PROVIDER)
+
+check-promised-deliverables:
+	@$(PYTHON) scripts/check-promised-deliverables
 
 # Absence of a leaf's declaration is an error: nothing defaults to eligible.
 check-web-editions:
@@ -566,8 +578,66 @@ doc:
 review-doc: doc
 	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(BUILD_ROOT)/$(DOC).pdf'
 
-install-doc: doc
-	@$(MAKE) --no-print-directory '$(DOC_ROOT)/$(DOC).pdf'
+install-doc:
+	@if [ -z '$(DOC)' ]; then \
+		echo 'install-doc requires DOC=<document id below src/$(PROVIDER)/>' >&2; \
+		exit 1; \
+	fi
+	@case '$(DOC)' in \
+		liturgy/roman-rite/1962/reference/altar-server-guides/*) \
+			$(MAKE) --no-print-directory install-altar-server-guides ;; \
+		*) \
+			$(MAKE) --no-print-directory '$(DOC_ROOT)/$(DOC).pdf' ;; \
+	esac
+
+# The altar-server profile makes the seven leaves one review unit whenever a
+# shared render source changes. Keep an explicit series lifecycle so the
+# single-document convenience wrapper cannot silently install only one member.
+altar-server-guides: check-metadata $(ALTAR_SERVER_GUIDES_BUILD_PDFS)
+	@test '$(words $(ALTAR_SERVER_GUIDES_DOCUMENTS))' -eq 7 || { \
+		echo 'Expected exactly seven altar-server publications; found $(words $(ALTAR_SERVER_GUIDES_DOCUMENTS))' >&2; \
+		exit 1; \
+	}
+
+review-altar-server-guides: altar-server-guides
+	@$(PYTHON) $(PDF_REVIEW_TOOL) $(ALTAR_SERVER_GUIDES_BUILD_PDFS)
+
+# Validate the complete set before replacing any installed member, then stage
+# every exact build byte before the short same-filesystem move phase. This
+# prevents build or metadata failures from leaving a partially updated series.
+install-altar-server-guides: review-altar-server-guides \
+		$(ALTAR_SERVER_GUIDES_METADATA_VERIFICATIONS)
+	@set -eu; \
+		stage='$(BUILD_ROOT)/.install-stage/altar-server-guides.'$$$$; \
+		trap 'rm -rf -- "$$stage"' 0 1 2 15; \
+		for document in $(ALTAR_SERVER_GUIDES_DOCUMENTS); do \
+			pdf='$(BUILD_ROOT)/'$$document.pdf; \
+			stamp='$(BUILD_ROOT)/.metadata/'$$document.ok; \
+			pdf_line=$$($(SHA256) -- "$$pdf"); pdf_hash=$${pdf_line%% *}; \
+			validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+			validator_hash=$${validator_line%% *}; \
+			expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
+				'$(PROVIDER)' "$$document" "$$pdf_hash" "$$validator_hash"); \
+			actual=$$(cat "$$stamp"); \
+			[ "$$actual" = "$$expected" ] || { \
+				echo "Validation stamp does not match current PDF/checker: $$document" >&2; exit 1; }; \
+		done; \
+		for document in $(ALTAR_SERVER_GUIDES_DOCUMENTS); do \
+			source='$(BUILD_ROOT)/'$$document.pdf; \
+			staged="$$stage/$$document.pdf"; \
+			mkdir -p "$${staged%/*}"; \
+			$(INSTALL) -m 0644 "$$source" "$$staged"; \
+			cmp -s -- "$$source" "$$staged" || { \
+				echo "Staged PDF differs from reviewed build: $$document" >&2; exit 1; }; \
+		done; \
+		for document in $(ALTAR_SERVER_GUIDES_DOCUMENTS); do \
+			staged="$$stage/$$document.pdf"; \
+			destination='$(DOC_ROOT)/'$$document.pdf; \
+			mkdir -p "$${destination%/*}"; \
+			mv -f -- "$$staged" "$$destination"; \
+		done; \
+		rm -rf -- "$$stage"; \
+		trap - 0 1 2 15
 
 # Cross-provider research staleness (policy in guidance/staleness.md).
 check-staleness:
@@ -590,7 +660,8 @@ rebaseline-doc:
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
 check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components \
-	check-sources check-roman-sanctuary-artwork check-public-alpha check-release-bindings
+	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
+	check-public-alpha check-release-bindings
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s scripts/tests
