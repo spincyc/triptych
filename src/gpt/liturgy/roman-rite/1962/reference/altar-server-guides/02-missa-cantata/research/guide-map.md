@@ -104,13 +104,13 @@ and screen legibility. Physical actual-size, long-edge-duplex, photocopy, and
 cut review remain pending. Public-review visibility is not independent,
 rights, liturgical-text-permission, or ecclesiastical approval.
 
-The 2026-07-27 navigation repair produced an uninstalled twenty-seven-page
-full-guide review candidate with SHA-256
+The 2026-07-27 navigation repair produced the installed twenty-seven-page
+public-review full guide with SHA-256
 `bbaad39b0ab61b5348d259a37623aeccb10aec7b83bdd4420802b0a2fd960de7`.
 Its direct role-page pointers resolved after two builds, and its final log is
 free of fatal errors, warnings, undefined references, overfull or underfull
-boxes, and unresolved rerun requests. This candidate has not replaced the
-installed public-review identity.
+boxes, and unresolved rerun requests. This hash is the installed
+public-review identity.
 
 The action-card cross-view is anchored to the chronology: MC-A01 links the
 adult entrance handoff and MC's complete biretta exit lifecycle through the

@@ -98,7 +98,7 @@ R deck is physically repeated in both sung companions.
 - All seven logs contain no fatal error, undefined reference, LaTeX or package
   warning, overfull box, underfull box, or unresolved rerun notice.
 - `qpdf --check` reports no syntax or stream-encoding error in any PDF.
-  `pdfinfo` confirms page counts of 30/30/6/29/12/31/12 and 612 by 792 point
+  `pdfinfo` confirms page counts of 29/29/6/27/12/28/12 and 612 by 792 point
   US-letter geometry.
 - Every listed font is embedded and subsetted and has a ToUnicode map. UTF-8
   text extraction succeeds in all three Low-Mass PDFs with no replacement

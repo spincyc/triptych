@@ -121,15 +121,13 @@ companion is twelve. The full guide keeps the complete
 response fronts on pages 1, 3, 5, and 7, action fronts on pages 9 and 11,
 mirrored backs, border alignment, legibility, and safe containment of the
 R08B continuation note. The installed guide and companion remain at their
-recorded reviewed identities. The present source revision adds explicit
-standalone-role common-route and SO-063 continuation controls. It is an
-uninstalled candidate until rebuilt and reviewed; the preceding installed
-identities do not verify these changed pages. Actual-size role-packet and
-cue-card use, physical duplex and cut alignment, photocopy performance,
-intended-reader testing, and independent liturgical, ceremonial,
+recorded reviewed identities. The installed source revision adds explicit
+standalone-role common-route and SO-063 continuation controls. Actual-size
+role-packet and cue-card use, physical duplex and cut alignment, photocopy
+performance, intended-reader testing, and independent liturgical, ceremonial,
 pronunciation, pedagogical, rights, and ecclesiastical review remain pending.
 
-The candidate built on 27 July 2026 is 28 pages with SHA-256
+The installed public-review snapshot built on 27 July 2026 is 28 pages with SHA-256
 `8318be36fd284e7a57399ab9b3ee0e317d711c60158adb1e5565d457d41971c8`.
 Two pdfTeX passes settled its references, and the final log has no fatal error,
 undefined reference, box warning, or rerun request. A bounded every-page

@@ -480,12 +480,15 @@ to the ordinary pre-installation timing below. It may retain only pending
 actual-size, duplex or cut, photocopy, intended-reader or paired-use, and
 independent-review checks, together with unresolved work-specific rights review
 or liturgical-text permission; every other universal and profile installation
-gate must already pass. The catalog must label the exact snapshot as installed
-for evaluation and held, the production manifest must record its installed
-identity and every pending check, and the release inventory must keep it at
-`hold` with no approval and with the applicable unresolved gates. Evaluation
-installation neither satisfies nor waives a pending gate and grants no release,
-public distribution, push, or deployment authority.
+gate must already pass. The catalog must conspicuously label the exact snapshot
+as installed for evaluation, and the production manifest must record its
+installed identity and every pending check. The release inventory keeps it at
+`hold` unless a separate exact-snapshot public-review distribution decision
+places it at `review` under the repository convention. A `review` entry retains
+no completion approval and preserves every applicable unresolved gate.
+Evaluation installation and public-review discoverability neither satisfy nor
+waive a pending gate and grant no authoritative release, push, or deployment
+authority.
 
 Before installation or release, in addition to the universal gates:
 

@@ -40,11 +40,11 @@ revision timestamp and compact rights notice. All other card sheets use an
 empty page style: no running page numeral, header, instruction, or other
 apparatus appears outside the selected card faces.
 
-The 2026-07-27 uninstalled review candidate has SHA-256
+The installed 2026-07-27 public-review snapshot has SHA-256
 `b681d846c125e417f034f109f700ed34beb2e7179ead34aaa653644d3837318e`.
 Its final build log is clean, and PDF text extraction and full-page inspection
-confirm the footer correction. This candidate has not replaced the installed
-public-review identity recorded in the production manifest.
+confirm the footer correction. This hash is the installed public-review
+identity recorded in the release inventory.
 
 This leaf is not a self-contained trainer. Use it with the paired full guide's
 keys; conditions that affect an individual response or action remain on the

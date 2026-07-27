@@ -16,10 +16,10 @@ altar-server guide sizes are:
 
 | Publication | Bytes |
 |---|---:|
-| Low Mass child guide | 7,846,700 |
-| Low Mass trainer manual | 7,859,635 |
-| Missa Cantata | 1,258,453 |
-| Solemn Mass | 1,301,995 |
+| Low Mass child guide | 7,847,547 |
+| Low Mass trainer manual | 7,860,317 |
+| Missa Cantata | 1,258,883 |
+| Solemn Mass | 1,304,972 |
 
 The Low Mass trainer manual is therefore the largest installed repository PDF
 at this checkpoint, and both Low Mass guides exceed 3 MB. Their increased size

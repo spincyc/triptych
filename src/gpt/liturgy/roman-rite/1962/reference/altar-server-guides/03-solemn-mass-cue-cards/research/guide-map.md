@@ -25,17 +25,16 @@ back. The full guide owns the printing, actor, roster, branch, and safety keys
 and points to the paired downloads in the same catalog row; it does not embed
 these faces.
 
-The installed predecessor is twelve physical pages. Response fronts
+The installed public-review snapshot is twelve physical pages. Response fronts
 are pages 1, 3, 5, and 7; their mirrored backs are pages 2, 4, 6, and 8.
 Action fronts are pages 9 and 11; their mirrored backs are pages 10 and 12.
 Print US letter, portrait, two-sided, actual size, flipped on the long edge,
-and cut on the box borders. Its rendered-screen review confirmed page parity,
-border alignment, legibility, and safe containment of the R08B continuation
-note. The present source revision is an uninstalled candidate until it is
-rebuilt and receives the same complete screen checks. Actual-size reader
-legibility, physical long-edge duplex alignment, photocopy and cut safety,
-intended-reader use, and independent liturgical, ceremonial, pronunciation,
-pedagogical, rights, and ecclesiastical review remain pending.
+and cut on the box borders. Its rendered-screen review confirmed the six-up
+sequence, page parity, border alignment, legibility, safe containment of the
+R08B continuation note, and final-notice fit. Actual-size reader legibility,
+physical long-edge duplex alignment, photocopy and cut safety, intended-reader
+use, and independent liturgical, ceremonial, pronunciation, pedagogical,
+rights, and ecclesiastical review remain pending.
 
 This leaf is not a self-contained trainer. Use it with the paired full guide's
 keys; conditions that affect an individual response or action remain on the
@@ -68,7 +67,7 @@ SO-A12 deliberately cites the guide's governing recovery policy rather than
 misidentifying SO-070 as the source of a missed-cue rule. Every card remains
 subject to card-by-card rendered collation after a source change.
 
-The candidate built on 27 July 2026 remains 12 pages with SHA-256
+The installed public-review snapshot built on 27 July 2026 remains 12 pages with SHA-256
 `3c46449cd8125c0ac834bcf2d1b77c4ec2491184be1b3483bd1627a1f2dbab8a`.
 Two pdfTeX passes settled the build, and the final log has no fatal error,
 undefined reference, box warning, or rerun request. Bounded every-page screen
