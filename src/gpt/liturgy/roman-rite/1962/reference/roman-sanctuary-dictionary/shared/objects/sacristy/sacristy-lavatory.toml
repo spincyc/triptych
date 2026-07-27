@@ -1,6 +1,7 @@
 schema_version = 1
 id = "obj-sacristy-lavatory"
 workflow_state = "priestly-review-ready"
+editorial_note = "The checked Missal supports the pre-vesting handwashing action at a prepared place. It does not establish the proposed Latin headword, a fixed basin, plumbing, furniture form, or identity with a piscina."
 preferred_english_name = "Sacristy handwashing place"
 latin_headword = "locus ad lavandas manus"
 alternate_english_names = ["sacristy lavatory", "handwashing basin"]
@@ -84,7 +85,8 @@ scale_mode = "not-to-common-scale"
 qualification = "The Missal requires the preparatory handwashing action at a prepared place, not the modern wall-basin morphology shown in the review image."
 disclosed_gaps = [
   { id = "gap-sacristy-lavatory-form", kind = "artwork", target_ids = ["obj-sacristy-lavatory", "art-sacristy-preparation-plate"], summary = "The drawn fixed basin could be mistaken for a universally prescribed fixture or confused with the piscina." },
+  { id = "gap-sacristy-lavatory-terminology", kind = "terminology", target_ids = ["obj-sacristy-lavatory"], summary = "The descriptive Latin headword locus ad lavandas manus has not received a dedicated lexical check." },
 ]
 review_prompts = [
-  { id = "prq-sacristy-lavatory-form", question = "Does the proposed distinction between the priest's ordinary preparatory handwashing place and the piscina reflect sound sacristy practice, and what visual cue would prevent confusion without asserting hidden plumbing?", gap_ids = ["gap-sacristy-lavatory-form"], target_ids = ["obj-sacristy-lavatory", "art-sacristy-preparation-plate"] },
+  { id = "prq-sacristy-lavatory-form", question = "Does the proposed distinction between the priest's ordinary preparatory handwashing place and the piscina reflect sound sacristy practice, what visual cue would prevent confusion without asserting hidden plumbing, and should the Latin headword remain explicitly provisional?", gap_ids = ["gap-sacristy-lavatory-form", "gap-sacristy-lavatory-terminology"], target_ids = ["obj-sacristy-lavatory", "art-sacristy-preparation-plate"] },
 ]

@@ -1,6 +1,7 @@
 schema_version = 1
 id = "obj-sacristy-bell"
 workflow_state = "priestly-review-ready"
+editorial_note = "The checked witnesses support a customary departure signal in many churches, not a universal rubric. The Latin indexing phrase, mechanism, operator, placement, and representative wall-mounted form remain local or unresolved."
 preferred_english_name = "Sacristy door bell"
 latin_headword = "campanula sacristiae"
 alternate_english_names = ["procession signal bell"]
@@ -83,8 +84,9 @@ scale_mode = "not-to-common-scale"
 qualification = "The sources describe the departure bell as customary or usual in many churches, not as a universal 1962 requirement; mechanism and operator vary locally."
 disclosed_gaps = [
   { id = "gap-sacristy-bell-custom", kind = "scope", target_ids = ["obj-sacristy-bell", "art-sacristy-preparation-plate"], summary = "The proposed entry needs review of whether its local variability and handling language are sufficiently explicit." },
+  { id = "gap-sacristy-bell-terminology", kind = "terminology", target_ids = ["obj-sacristy-bell"], summary = "The Latin indexing phrase campanula sacristiae has not received a dedicated lexical check." },
   { id = "gap-sacristy-bell-art", kind = "artwork", target_ids = ["art-sacristy-preparation-plate"], summary = "The wall-mounted pull bell is only one generated representative form." },
 ]
 review_prompts = [
-  { id = "prq-sacristy-bell-custom", question = "Should a server-facing dictionary include this customary bell, does the generated wall form help recognition, and what concise qualification best prevents a local departure signal from being mistaken for a universal rubric?", gap_ids = ["gap-sacristy-bell-custom", "gap-sacristy-bell-art"], target_ids = ["obj-sacristy-bell", "art-sacristy-preparation-plate"] },
+  { id = "prq-sacristy-bell-custom", question = "Should a server-facing dictionary include this customary bell, does the generated wall form help recognition, is campanula sacristiae a sound Latin index phrase, and what concise qualification best prevents a local departure signal from being mistaken for a universal rubric?", gap_ids = ["gap-sacristy-bell-custom", "gap-sacristy-bell-terminology", "gap-sacristy-bell-art"], target_ids = ["obj-sacristy-bell", "art-sacristy-preparation-plate"] },
 ]

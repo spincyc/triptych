@@ -172,8 +172,8 @@ does not authorize any candidate for rendering.
 
 ## Narrow pass: sacristy and preparation furnishings
 
-This pass does not close the church-and-sanctuary category. It supports six
-bounded records under `shared/records/sacristy/` and deliberately leaves their
+This pass does not close the church-and-sanctuary category. It supports seven
+bounded records under `shared/objects/sacristy/` and deliberately leaves their
 art and publication gates open.
 
 | Binding ID | Witness and exact locus | Claim use and limit |
@@ -181,7 +181,7 @@ art and publication gates open.
 | `rsd-mr1962-rs-i-ii` | *Missale Romanum*, Vatican typical edition (1962), *Ritus servandus* I.1 and II.1; repository source record under `src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/` | Governing evidence that the priest washes at a place prepared for that purpose, vests, and bows to the sacristy cross or image. It does not prescribe furniture construction. |
 | `rsd-fortescue-oconnell-reid-1962-sacristy` | Fortescue, O'Connell, and Reid, *The Ceremonies of the Roman Rite Described*, 12th ed. (1962), ch. VI, sec. 1, scan pp. 67--68 | Contemporary ceremonial witness for a vesting table, the washing place, cross, and customary door bell. Shapes and dimensions remain local. |
 | `rsd-catholic-encyclopedia-sacristy` | J. F. G. Gilmartin, “Sacristy,” *Catholic Encyclopedia* 13 (1912), New Advent transcription, lines 68--71, <https://www.newadvent.org/cathen/13322b.htm>, inspected 2026-07-27 | Specialist synthesis for the room's function, labelled vestment cases, prominent cross or image, lavatory, and customary bell. It is not an official 1962 furnishing code. |
-| `rsd-catholic-encyclopedia-piscina` | Francis Mershman, “Piscina,” *Catholic Encyclopedia* 12 (1911), New Advent transcription, lines 12--17, <https://www.newadvent.org/cathen/12115a.htm>, inspected 2026-07-27 | Specialist historical synthesis for names, disposal function, variable location, and materially different forms. It does not prove that every 1962 sacristy had one. |
+| `rsd-catholic-encyclopedia-piscina` | Francis Mershman, “Piscina,” *Catholic Encyclopedia* 12 (1911), New Advent transcription, lines 12--14, <https://www.newadvent.org/cathen/12115a.htm>, inspected 2026-07-27 | Specialist historical synthesis for names, disposal function, variable location, and materially different forms. It does not prove that every 1962 sacristy had one. |
 
 The ordinary handwashing lavatory and the piscina or sacrarium remain separate
 records. Torch racks, processional-object racks, hot-thurible stations,
