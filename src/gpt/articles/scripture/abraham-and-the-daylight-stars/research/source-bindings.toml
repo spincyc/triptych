@@ -84,3 +84,19 @@ role = "direct-witness"
 states = ["acquired", "inspected"]
 source_fingerprint = "sha256:1959e40f6d8d05511d556db682e44e69ca075eacec2e4617df539414d336452f"
 context = "GPT inspected the going-out, Chaldean astral-fatalism, and sunset-allegory loci; Philo's use of Genesis 15:7 remains distinct from later use of verse 5."
+
+[[bindings]]
+source_id = "passage.peshitta-old-testament.genesis.syriac-peshitta-eu-web-2026-07-27.genesis-15-5-12-17-18"
+loci = ["15.5, 15.12, 15.17-18"]
+role = "textual-control"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:a6714b203d4e61fd877ede35964545e3c584784ffa289bd92d6a6fb9465b423e"
+context = "The exact dated Syriac web artifact preserves the outside/look/count command, the sun toward setting at verses 12 and 17, and 'on that day' at verse 18 without an explicit interval. The site's unidentified textual base prevents an edition-critical claim about the Peshitta tradition."
+
+[[bindings]]
+source_id = "passage.book-of-jubilees.english-charles-oxford-1913-ccel-web-2026-07-27.chapter-14-1-20"
+loci = ["14.1-20"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:f2ce9694341b2544aeaa30e9ec2bdc77773a7eedbc97405cc6a6d77e8528128a"
+context = "Charles's 1913 translation explicitly says Abram looked and beheld the stars, then locates the sacrifice in the middle of the month and reports sunset already completed later. It is a rewritten-scripture witness that reshapes the clock without identifying the hour of the star sight."
