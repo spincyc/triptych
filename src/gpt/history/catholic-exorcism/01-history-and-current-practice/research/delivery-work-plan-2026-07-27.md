@@ -10,7 +10,7 @@ in the named owning record for the exact snapshot.
 
 ## Baseline and finish line
 
-- The installed public-alpha PDF is 29 physical pages.
+- The installed public-alpha PDF is 32 physical pages.
 - The deliverable remains at least 100 substantive pages, excluding front
   matter, terminal audit apparatus, padding, sparse spill, and long quotations.
 - The architecture and planning ranges remain controlled by
@@ -21,14 +21,18 @@ in the named owning record for the exact snapshot.
 
 ## Work unit E1 — reconcile the present baseline
 
-- [ ] Reconcile every record that still describes the superseded 20-page
-  snapshot with the installed 29-page baseline, preserving dated historical
+- [x] Reconcile every present-tense record that still described the superseded
+  20- or 29-page snapshot with the installed 32-page baseline, preserving dated historical
   findings rather than rewriting them as current.
-- [ ] Make the child landing page, PDF extent, web extent, scope, source audit,
+- [x] Make the child landing page, PDF extent, web extent, scope, source audit,
   evidence map, and deliverable ledger agree without representing the interim
   edition as complete.
-- [ ] Record the exact current source, PDF, web, and installed identities in
+- [x] Record the exact current source, PDF, web, and installed identities in
   the appropriate audit records before using the baseline for expansion.
+
+Completed 2026-07-27. The current 32-page identities and production checks are
+owned by `final-exact-snapshot-review-2026-07-27.md`; dated earlier baseline
+findings remain historical evidence only.
 
 Evidence owners: `scope.md`, `source-audit.md`, `evidence-map.md`,
 `final-exact-snapshot-review-2026-07-27.md`, and the publication-control

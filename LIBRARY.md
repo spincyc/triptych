@@ -16,7 +16,7 @@ editions (GPT and Claude); each catalog row links every available edition.
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives. |
 | **[Heresies](library/heresies.md)** | Doctrinal errors, ecclesial responses, and reception. |
 | **[Historical Accounts](library/historical-accounts.md)** | Histories of texts, institutions, and events. |
-| **[Public-alpha review: Catholic Exorcism](library/catholic-exorcism.md)** | Direct reading links, safety boundaries, and navigation for the interim 29-page paper and planned 100+ page reference. |
+| **[Public-alpha review: Catholic Exorcism](library/catholic-exorcism.md)** | Direct reading links, safety boundaries, and navigation for the interim 32-page paper and planned 100+ page reference. |
 | **[Released study: The Linen Cloths at the Empty Tomb](library/scripture.md#linen-cloths-at-the-empty-tomb)** | Released GPT and Claude editions of the source-first study of John 20:6–7. |
 | **[Mariology](library/mariology.md)** | Doctrine, prayer, apparitions, and reception. |
 | **[Law and Church Discipline](library/law-and-church-discipline.md)** | Canon law and Church discipline. |

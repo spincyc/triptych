@@ -61,9 +61,10 @@ The repaired public-alpha snapshot is integrated on `main` through commit
 `b93e64b4`; pull request 1 is merged, and GitHub Pages workflow run
 `30296605957` successfully deployed that exact commit on 27 July 2026. The
 stable review landing page, PDF, and web-edition routes for the exorcism paper
-resolve in production. Exact production reconciliation remains open because
-`library/catholic-exorcism.md` still labels the installed and deployed 29-page
-PDF as a 20-page paper.
+resolved in that production check. The current repository catalog, installed
+PDF, web edition, and exact-snapshot audit agree on a 32-page interim paper.
+Live verification of this current repository snapshot remains reserved until
+maintainer integration, push, and deployment.
 
 ## Clean-agent restart
 
@@ -118,7 +119,7 @@ grant those authorities.
 <!-- promised-deliverable: task-2-exorcism-100-pages -->
 
 The requested result is a researched, substantive 100+ page Catholic exorcism
-reference, not a padded PDF. The current review edition is 29 physical pages.
+reference, not a padded PDF. The current review edition is 32 physical pages.
 Commit `bc479596` expanded and published that interim edition and added a
 dedicated landing page, but did not fulfill the extent or hard-review promise.
 The next source-grounded tranche expands the patristic chapter from 1,225 to
@@ -192,11 +193,12 @@ ecclesiastical review of the exact snapshot remain open.
 Repository policy now keeps produced PDFs discoverable while honestly labeling
 review state. Branch validation found 164 release publications, 14 review
 publications, and no held publication in the generated public-alpha artifact.
-Production-site route and review-label validation passed for the deployed
-artifact. Exact catalog-text reconciliation remains open because the exorcism
-landing page and 32-page snapshot are prepared and committed only in this
-worker; production remains on the preceding snapshot until the maintainer's
-reserved integration and push.
+Production-site route and review-label validation passed for the previously
+deployed artifact. The current repository release inventory contains 164
+release publications and 14 review publications, 178 total; the exorcism
+catalog, installed PDF, web edition, and audit records agree on 32 pages.
+Integration, push, deployment, and a new live-site check remain reserved to
+the maintainer.
 The standing 27 July 2026 public-alpha authority permits future exact-current
 review snapshots to be installed and deployed without repeated
 document-by-document approval while preserving every unresolved review gate.
@@ -218,10 +220,10 @@ The 2026-07-27 audit establishes the following actionable backlog:
 | Audit ID | Finding | Current measure | Completion evidence |
 | --- | --- | ---: | --- |
 | `AUD-INTEGRATE-001` | Repair integration and Pages deployment | Integrated through `b93e64b4`; Pages run `30296605957` succeeded | passed; exact catalog-text discrepancy retained under the affected work |
-| `AUD-STALE-001` | Rendered publications disagree with current inputs or records | 88 editions | `make check-staleness` passes |
-| `AUD-SOURCES-001` | Reusable-source family screening is incomplete | 140 of 140 review units pending across 227 source families | `make check-source-family-screening` passes |
+| `AUD-STALE-001` | Rendered publications disagree with current inputs or records | 92 recovered baseline editions; 93 in this checkpoint because the exorcism source audit and delivery plan now correctly make that edition stale pending its later rebuild | `make check-staleness` passes |
+| `AUD-SOURCES-001` | Reusable-source family screening is incomplete | 140 of 140 review units pending across 229 source families | `make check-source-family-screening` passes |
 | `AUD-REVIEW-001` | Public review copies retain unclosed completion gates | 14 publications | each work-specific review record closes against its exact snapshot |
-| `AUD-ART-001` | Dictionary artwork has held identification/resolution notices | 15 notices | artwork validator and human review records close every notice |
+| `AUD-ART-001` | Dictionary artwork has held identification/resolution notices | 10 notices | artwork validator and human review records close every notice |
 | `AUD-MEMORY-001` | Conversation outcomes were not exhaustively represented in tracked work records | prior ledger had 8 broad items | every known agreement is represented here and in the ledger when criteria are known |
 
 The audit findings promoted to acceptance-criterion work are tracked below.
@@ -232,10 +234,13 @@ The audit findings promoted to acceptance-criterion work are tracked below.
 <!-- promised-deliverable: project-public-review-gates -->
 <!-- promised-deliverable: project-dictionary-artwork-holds -->
 
-The 88 stale editions comprise 33 Claude and 55 GPT editions. They span
-articles, biographies, histories, liturgy, Mariology, theology, curricula, and
-devotions. The immediately discussed stale papers are named above; the
-authoritative reproducible inventory is the output of `make
+The recovered baseline had 92 stale editions spanning articles, biographies,
+histories, liturgy, Mariology, theology, curricula, and devotions. This
+checkpoint intentionally changes two exorcism research records, so the current
+working-tree audit reports 93 until that existing edition is rebuilt in its
+queued source/drafting or public-artifact work. The immediately discussed
+stale papers are named above; the authoritative reproducible inventory,
+including the current provider split, is the output of `make
 check-staleness`. Staleness is a work queue, not proof that every edition needs
 the same substantive edit.
 

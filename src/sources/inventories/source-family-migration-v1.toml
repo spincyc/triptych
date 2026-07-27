@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:61b4d72d9e044e86f98d45a73c5fb5bb337da33349ab3f5821046f3c6f295169"
+inventory_snapshot = "sha256:1113d2a1f0c8081c86479cfc05c5dcaa8fed949027edaa8a829f12d2b5e81a61"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:168d6ba79848f1c86a34613a3495d9acc72945007e80f4fafad20477da686ed0"
 canonical_catalog_snapshot = "sha256:31e4a89507772874096a78890c18fecdc696440ceb4799fac2efe3bfb20e850f"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:a2ff74f1917715096dcfb9c54b7aca2a25219adacf487bbd4553a1dac6e93ac9"
+snapshot = "sha256:bff3d0db60637af53533691675de3764b4c3ab6aa23bb62ee4fa34a9b6c9c480"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -5822,7 +5822,7 @@ record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/sourc
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:6858768e540f3ebdd415770dbc858635d2e3adb0f4375c361a416ec0ed581339"
+surface_snapshot = "sha256:0290580620605a2f18a52662f663ef0c9f75c670c07e60936011e30f73af3be6"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
