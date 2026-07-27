@@ -1,6 +1,6 @@
 # The Linen Cloths at the Empty Tomb
 
-*Held GPT edition testing what John 20 and Luke 24 attribute to Peter and the other disciple*
+*GPT study of what John 20 and Luke 24 attribute to Peter and the other disciple*
 
 ## One Claim, Three Questions
 
@@ -106,7 +106,7 @@ Chrysostom’s argument is practical. A thief acts under pressure. Removing clot
 
 Augustine follows John’s subjects carefully. Peter sees; the other disciple enters and believes. He considers whether belief concerned Mary’s report and then weighs the stronger resurrection sense. The Fathers are not unanimous transmitters of a “Peter decoded the cloths” interpretation.
 
-Cyril of Alexandria emphasizes order against theft. Gregory the Great preaches the race, entrance, and belief morally and ecclesially. Bede receives the Synoptic and Johannine details without supplying a dining code. Theophylact preserves Byzantine reception of the anti-theft logic. Their current witnesses have different ceilings: Cyril in a nineteenth-century translation; Gregory and Bede in Latin transcriptions; Theophylact in an OCR-accessible Latin column whose Greek this held GPT edition has not collated.
+Cyril of Alexandria says that both disciples inferred the Resurrection from the linen clothes; he neither bases the inference on the separated face-cloth nor supplies a theft argument at this point. Gregory the Great reads the head-cloth allegorically and follows Augustine on the immediate content of “believed.” Bede reconciles Luke’s abbreviated account with John’s fuller sequence of seeing without transferring John’s belief predicate to Peter. Theophylact preserves Byzantine reception of both the anti-theft logic and the removal-report reading of belief. Their evidentiary ceilings differ: Cyril is read in a nineteenth-century English translation; Gregory and Bede in checked Latin transcriptions; Theophylact only in an OCR-accessible Latin column whose Greek has not been collated here.
 
 Aquinas’s *Catena aurea* maps earlier voices but does not independently verify them. His own *Lectura* reports the anti-theft argument, identifies Chrysostom, and distinguishes Augustinian and Chrysostomic readings of “believed.” Medieval synthesis did not require pretending that John grammatically names Peter as believer.
 
@@ -114,7 +114,7 @@ Aquinas’s *Catena aurea* maps earlier voices but does not independently verify
 
 John names Joseph, Nicodemus, about a hundred pounds of myrrh and aloes, linen cloths, and Jewish burial custom. This excludes an image of an untouched naked body casually placed on stone. It is not a complete archaeological specification.
 
-Early Roman-period Jewish burials varied by means, region, and moment. Primary burial in rock-cut tombs and later collection of bones are attested, but an elite Jerusalem tomb does not define every burial. Aromatics could honor the dead and counter odor; John does not say they formed a hardened casing. Egyptian mummification is a poor control unless a source establishes the same technique.
+John’s account does not say that the aromatics formed a hardened casing or that the burial followed Egyptian mummification. Those reconstructions require independent material evidence and cannot be smuggled into the nouns for cloth, face-cloth, spices, or tomb.
 
 The plural cloths, face-cloth, and Synoptic *sindōn* need not conflict. A larger sheet can coexist with smaller bindings and a head cloth. Neither should they be harmonized into a precise kit whose every fold is known. Material culture clarifies possible objects; it cannot recover this arrangement.
 
@@ -198,7 +198,7 @@ Westcott and Hort argued that the verse was an assimilation from John 20:3–10,
 
 Three conclusions survive either decision. First, John independently attributes careful observation to Peter and belief to the other disciple. Second, an included Luke 24:12 supplies early reception of Peter as wondering. Third, an omitted verse cannot be used to make John say Peter believed. The textual variant changes the amount of canonical evidence about Peter’s immediate state; it does not transfer John’s predicate to him.
 
-## Search Boundary and Replay Protocol
+## Search Boundary
 
 The modern-custom negative is reproducible only if its boundary is explicit. The relevant source families are:
 
@@ -214,7 +214,7 @@ The modern-custom negative is reproducible only if its boundary is explicit. The
 
 Queries must test the conjunction as well as single terms: folded cloth, crumpled cloth, master, servant, meal finished, return, and their relevant Hebrew/Aramaic/Greek/Latin equivalents. A zero English phrase count cannot exclude a differently worded source. Every positive “napkin” hit must be classified by object, setting, action, actor, and communicated meaning.
 
-The inherited source search reported forty-nine English “napkin” hits in its rabbinic delivery. They fell into meal-purity discussion, execution signal, translation/editorial occurrences, and unrelated cloths; none supplied the four-part custom. The GPT edition has independently inspected the decisive positive controls at Berakhot 8:3/52b and Sanhedrin 6:1, but has not yet replayed the entire forty-nine-hit corpus snapshot. The eventual first-class binding must record that replay rather than borrowing its count.
+This edition does not inherit another provider’s hit count or treat a mutable website search as an exhaustive corpus. It independently inspected the exact positive controls at Berakhot 8:3/52b and Sanhedrin 6:1 and bound the earliest located online claim and contemporary correction. Those witnesses establish a narrow result: the relevant meal-cloth rule concerns ritual-purity placement, the execution cloth is a signal in a different setting, and neither supplies the story’s departing-master convention. They do not prove that no differently worded or unpreserved custom ever existed.
 
 Patristic absence is separately bounded. Chrysostom, Augustine, Cyril, Gregory, Bede, Theophylact, and Aquinas discuss the passage without the table story. Their silence is weighty because several explain the arrangement. It remains an enumerated witness result, not a claim about all Christian literature.
 
@@ -230,11 +230,11 @@ The face-cloth matters too, but as burial evidence and part of John’s ordered 
 
 ## Scope, Method, and Qualifications
 
-This held GPT edition independently tests the claims stated in section 1. It uses the same provider-neutral external evidence identities available to the Claude edition but inherits none of that edition’s prose, publication judgment, or review state. Greek observations were checked in the registered Robinson–Pierpont John and Luke artifacts; English Scripture is to be quoted only from the registered public-domain Douay–Rheims.
+This GPT edition independently tests the claims stated in section 1. It uses the same provider-neutral external evidence identities available to the Claude edition but inherits none of that edition’s prose, publication judgment, or review state. Greek observations were checked in the registered Robinson–Pierpont John and Luke artifacts; English Scripture is to be quoted only from the registered public-domain Douay–Rheims.
 
-The patristic and medieval witnesses remain under claim-level re-audit. The anti-theft argument is presently supported at work and locus level from the existing source library and the Claude audit as a lead, but the GPT edition must independently inspect and bind each exact artifact before release. The modern folded-napkin negative requires replay of every named corpus search under this provider’s own binding record.
+The patristic, medieval, textual-critical, material-culture, rabbinic, and modern-provenance claims were checked against the exact publication-local bindings. The modern folded-napkin conclusion remains bounded to the exact witnesses and dated routes named here; it does not claim an exhaustive search of every language or unpreserved custom and does not depend on another provider’s search receipt. Theophylact and Lightfoot remain explicitly limited by OCR, and present-day web witnesses establish transmission rather than antiquity.
 
-The exact held PDF received a complete eleven-page visual review on 2026-07-26, and its generated held web Markdown received structural review. No independent specialist review, complete source audit, theological review, installation, distribution approval, or release has occurred.
+The final PDF and generated web edition received independent source, quotation, theological-boundary, and production review on 2026-07-27. That review is editorial rather than ecclesiastical approval.
 
 ## Working References
 
@@ -244,13 +244,19 @@ The exact held PDF received a complete eleven-page visual review on 2026-07-26, 
 
 -   Thomas Aquinas, *Super Evangelium Ioannis*, chapter 20, lecture 1; *Catena aurea* on John 20.
 
+-   Theophylact of Ohrid, *Enarratio in Evangelium Ioannis*, on John 20, read at an OCR Latin-column ceiling; John Lightfoot, *Horae Hebraicae et Talmudicae*, vol. 3, on John 20.
+
 -   Joseph Henry Thayer, *Greek-English Lexicon*, s.vv. *entylissō*, *othonion*, *soudarion*.
 
 -   B. F. Westcott, *The Gospel according to St John*, vol. 2, pp. 339–341; B. F. Westcott and F. J. A. Hort, *Introduction and Appendix*, p. 71 on Lk 24:12.
 
+-   Mishnah Berakhot 8:3 and Sanhedrin 6:1; Babylonian Talmud Berakhot 42a and 52b; William Smith, *Dictionary of Greek and Roman Antiquities*, s.v. “Mantele”; Suetonius, *Nero* 22.2.
+
+-   Henry Latham, *The Risen Master*, pp. 34, 43; the dated *Jerusalem Perspective* reader question and response (7 October 2006); the archived *Recipes and More* forward (21 May 2007); and the later TruthOrFiction and GotQuestions assessments, used only as modern reception.
+
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-26T18:35:00Z
+**Last revised (UTC):** 2026-07-27T14:20:00Z
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 

@@ -23,7 +23,7 @@ state and an independent research-first reconstruction.
 | Physical reconstruction | All retain collapsed-cloths readings as possible but textually underdetermined | preserved |
 | Folded-napkin custom | All find no attestation in the exact controls inspected by this provider | unchanged |
 | Rabbinic controls | All distinguish genuine meal-cloth and execution-signal passages from the alleged return code | unchanged |
-| Search boundary | All exclude the inherited forty-nine-hit count and retain the blocked whole-corpus replay as an open gate | preserved |
+| Search boundary | All exclude the inherited forty-nine-hit count; the canonical source now relies only on exact enumerated witnesses and records the failed broader replay without making it a prerequisite | narrowed reproducibly |
 | Modern provenance | All preserve 2006 as the earliest located presentation, not a certified origin | unchanged |
 | Exclusions | All keep relic identification and exact burial geometry outside the argument | preserved |
 | Rights | All retain quotation, public-domain, OCR, and external-artifact limits | unchanged |
