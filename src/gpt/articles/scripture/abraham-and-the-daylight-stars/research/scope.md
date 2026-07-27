@@ -15,18 +15,19 @@
 Shared external identities may be reused. Claude's prose, source-sufficiency
 judgments, search receipts, and review events do not transfer.
 
-Completed 2026-07-26: independent restructuring and substantive expansion;
-inspection of the exact repository-held Scripture, Vulgate, Septuagint,
-Augustine, Abarbanel, a Lapide, Haydock, and Philo witnesses named in the local
-bindings; claim-level authority and rights audit; explicit astronomy and
-pastoral boundaries; witness register; source-library validation; and the
-production checks recorded below.
+Completed through 2026-07-27: independent restructuring and compression;
+inspection of the exact repository-held Scripture, Hebrew, Vulgate, Swete,
+Augustine, Abarbanel, a Lapide, Haydock, Philo, and Josephus witnesses named in
+the local bindings; required second passes across Jewish, patristic, and
+versional source families; claim-level authority and rights audit; explicit
+astronomy and pastoral boundaries; witness register; source-library validation;
+and the production checks recorded below.
 
-The catalog-only Jewish witnesses remain publication-local inspected leads
-whose reusable identity is shared but whose other provider's verification
-receipt is not inherited. Claims depending on them retain their named edition
-and evidence ceiling. The negative patristic result remains bounded to the
-enumerated witnesses; it is not a universal absence claim.
+Positive Jewish loci recovered in the second pass remain pending exact
+reusable normalization and are presented only as leads. Ambrose, Chrysostom,
+and Ephrem are exact-locus positive patristic witnesses pending reusable
+normalization; Theodoret supplies only a local negative, and Jerome remains
+unchecked. No tradition-wide silence or controversy claim is made.
 
 Outstanding: independent review by a Hebraist, Septuagint specialist, rabbinics
 scholar, patristics scholar, astronomer, philosopher of religion, pastoral
@@ -35,9 +36,11 @@ approval is claimed. The edition remains held.
 
 ## Production review
 
-On 2026-07-26, the independent GPT source rendered as a ten-page letter-size
-PDF. The final log contained no overfull or underfull boxes, undefined
-references, multiply defined labels, or package warnings. All ten rendered
+On 2026-07-27, the repaired GPT source rendered as an eight-page letter-size
+PDF with SHA-256
+`6e672cfc53afe412e8535f36f30574daee50aa175516734dfc2151b5f6a98b85`.
+The final log contained no overfull or underfull boxes, undefined
+references, multiply defined labels, or package warnings. All eight rendered
 pages were inspected at page resolution for clipping, collisions, broken
 tables, stranded headings, and malformed metadata. This production review does
 not satisfy the outstanding specialist gates or authorize release.
