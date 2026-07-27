@@ -190,9 +190,9 @@ historical evidence for their named PDFs. They must not be silently reused as
 verification of the redesigned Low-Mass companion or the corrected sung-form
 card candidates.
 
-The current uninstalled Missa Cantata companion retains the same twelve-page
+The current installed Missa Cantata companion retains the same twelve-page
 front/back map, card selection, form markers, and mirrored grid geometry. The
-review build has SHA-256
+installed public-alpha review snapshot has SHA-256
 `172eadb08a796a64dcc990eb49157b3f69c0ae6e01c927c29b7cff141e6160ed`.
 Rendered review confirms that the denser R08B answer preserves every verbal
 field while restoring a safe inset for the continuation note on page 8.

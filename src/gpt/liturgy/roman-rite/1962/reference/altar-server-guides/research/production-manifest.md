@@ -505,7 +505,8 @@ snapshot, so no page-count reduction is claimed for that pair. Missa Cantata
 remains at 27 pages; Solemn Mass falls from 28 to 27 pages. At that review
 checkpoint the four installed PDFs reproduced the exact hashes above. The
 later replacement of four Low-Mass scenes superseded the two Low-Mass
-identities; the Missa Cantata and Solemn Mass identities remain current. The
-previously recorded physical,
+identities; later source changes likewise superseded the Missa Cantata and
+Solemn Mass identities, as recorded in the current ledger. The previously
+recorded physical,
 duplex, intended-reader, independent, rights, and ecclesiastical-suitability
 maturity reviews remain pending.
