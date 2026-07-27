@@ -73,6 +73,11 @@ The requested result is a researched, substantive 100+ page Catholic exorcism
 reference, not a padded PDF. The current review edition is 29 physical pages.
 Commit `bc479596` expanded and published that interim edition and added a
 dedicated landing page, but did not fulfill the extent or hard-review promise.
+The next source-grounded tranche expands the patristic chapter from 1,225 to
+3,076 words using only seven already verified passage bindings in Tertullian,
+Origen, the Jerusalem catecheses, and Eusebius; its uninstalled build candidate
+is 32 physical pages. Justin, Irenaeus, Laodicea, and the church-order complex
+remain excluded from positive claims until their required controls are closed.
 Research acquisition, claim-level source work, safety and canon-law review,
 substantive expansion, and exact-snapshot every-page review remain open.
 
@@ -185,6 +190,10 @@ the same substantive edit.
   repair series through `b93e64b4`, and Pages workflow run `30296605957`
   successfully deployed that commit. Retained the exorcism landing page's
   20-versus-29-page discrepancy as open exact-production reconciliation.
+- 2026-07-27: Completed the first bounded exorcism expansion tranche from
+  already verified patristic bindings. The changed source builds to an
+  uninstalled 32-page candidate; web regeneration, every-page review,
+  installation, and all final completion gates remain open.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.

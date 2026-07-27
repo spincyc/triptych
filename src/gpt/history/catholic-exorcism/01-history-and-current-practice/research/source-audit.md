@@ -34,13 +34,23 @@ sources.
 - Mark 1:21–28; 3:22–27; 5:1–20; 9:14–29; Matthew 12:22–32; Luke 4:31–37; 10:17–20; 11:14–26; Acts 16:16–18; 19:11–20. Read in the exact Robinson–Pierpont Byzantine Greek and Douay–Rheims/Challoner English controls as canonical narratives with attention to each evangelist's theological purpose. At Mark 9:29 the Robinson–Pierpont inline note reports the Nestle–Aland omission of “and fasting”; no separately identified eclectic artifact or full critical apparatus is bound. The Douay witness numbers the corresponding prayer-and-fasting verse Mark 9:28. No Hebrew or Syriac wording supports a publication claim.
 - *Jubilees* 10.1–11, trans. R. H. Charles in *The Apocrypha and Pseudepigrapha of the Old Testament*, vol. 2 (Oxford, 1913), exact CCEL chapter state acquired and inspected 2026-07-27. English translation control for Noah's petition and the disposition of the spirits; no original-language collation.
 - Josephus, *Antiquities* VIII.2.5 in William Whiston's 1737 translation, corresponding to Niese 8.45–49; exact University of Chicago Penelope Book VIII state acquired and inspected 2026-07-27. Controls Josephus's literary report about Eleazar and its Solomonic framing, not the event's mechanism or Christian dependence.
-- Justin Martyr, *Second Apology* 6, Dods--Reith, *Ante-Nicene Fathers* 1 (Buffalo, 1887), p. 190; Tertullian, *Apology* 23.4--7, with 23.15--16 distinguished, public Latin and 1917 Mayor--Souter English witnesses; Origen, *Contra Celsum* 1.6, 1.25, 7.4, trans. Frederick Crombie, *Ante-Nicene Fathers* 4 (Buffalo, 1885). These are apologetic witnesses, not clinical reports. Origen 1.6 and 7.4 control the contrast with magical arts; 1.25 instead supplies a qualified ancient theory of efficacious names.
+- Tertullian, *Apology* 23, Thelwall English; Origen, *Contra Celsum*
+  1.6, 1.25, 7.4, trans. Frederick Crombie, *Ante-Nicene Fathers* 4
+  (Buffalo, 1885). These are apologetic witnesses, not clinical reports.
+  Origen 1.6 and 7.4 control the contrast with magical arts; 1.25 instead
+  supplies a qualified ancient theory of efficacious names. Justin Martyr,
+  *Second Apology* 6, Dods--Reith, *Ante-Nicene Fathers* 1 (Buffalo, 1887),
+  p. 190, remains an inspected lead rather than publication evidence because
+  its binding has not received verified state.
 - The church-order complex conventionally called *Apostolic Tradition* 20–21. Initiatory practice only; its unity, attribution to Hippolytus, date, and Roman provenance remain disputed.
 - Cyril of Jerusalem, *Procatechesis* 9, and the Jerusalem *Mystagogical Catecheses* 1.4–9, in Edwin Hamilton Gifford's translation, *Nicene and Post-Nicene Fathers*, second series, vol. 7 (1894). The latter is transmitted under Cyril's name, but its authorship, including attribution to John of Jerusalem, is disputed.
 - Council of Laodicea, canon 26, in Henry R. Percival, *The Seven Ecumenical Councils*, *NPNF* second series, vol. 14 (1900); Cornelius's clergy list as quoted by Eusebius, *Church History* 6.43.11, trans. Arthur Cushman McGiffert, *NPNF* second series, vol. 1 (1890). Laodicea is one conciliar disciplinary setting; Eusebius gives only a combined total for exorcists, readers, and door-keepers.
 
-Justin 6 is controlled by an inspected, bounded passage in the retained ANF
-volume 1 OCR. Exact dated English artifacts and passages also control the
+Justin 6 is controlled for research by an inspected, bounded passage in the
+retained ANF volume 1 OCR, but it does not control a reader-facing claim until
+its publication binding is verified. Irenaeus, *Against Heresies* 1.10.1--3,
+is held at the same inspected-but-unverified ceiling. Exact dated English
+artifacts and passages control the
 bounded Tertullian 23, Origen 1.6, 1.25, and 7.4, *Procatechesis* 9,
 *Mystagogical Catecheses* 1.4–9, and Eusebius 6.43.11 claims. These are
 translation controls, not original-language or critical-edition controls.
