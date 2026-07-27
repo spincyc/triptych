@@ -1269,6 +1269,7 @@ release attachment, announcement, or promotion.
 | `articles/canon-law/natural-positive-divine-human-law` | `553e1b1da65c44b2b6703045d91a509d101914ea8bd98d5766717ce21465031f` |
 | `articles/faith/against-the-instrumentalists` | `3bb2998cc1bc07d2e9e4d6358f9bb9470399fdf81f3a09294c3a2d47737e9d91` |
 | `articles/faith/at-the-end-of-every-why` | `d68868669c34685118474f74606de33403a215c4f53575d835670e97130508b3` |
+| `articles/faith/catholic-doctrinal-authority` | `7502424b292b90f0c6e933b57341866dc53a04d1f7a196d24145999443ec1c26` |
 | `articles/faith/council-missal-and-crisis` | `c19f3b6aa75c0ebd394f1e6e6b5d30c6ccbf28da6ac96a9251ea54c43e96aebd` |
 | `articles/faith/four-last-things-01-death` | `0e263589f268fd861c125ae70e7683aea41018b804bf04df4ae1273883e1dfbd` |
 | `articles/faith/four-last-things-02-judgment` | `4f12ceb0f07e27b3b3de0acbf1c9a759b5a4ef662a0b13cd0701bb330b4a0022` |
@@ -1316,8 +1317,8 @@ release attachment, announcement, or promotion.
 | `claude:history/traditional-priestly-institutes/01-sspx` | `6100ca3f30954e40f1ca03cba8ddc616ef06832fc272c4c87fb3f4c163335df5` |
 | `claude:history/traditional-priestly-institutes/02-fssp` | `8551f6268cef0ca369e042ab2007f7496d9c2e7f9621005abd2a3a5fa9eb0754` |
 | `claude:liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `3f7599051a759ba33c298b89e1bf06130bf58fc603cd2e2ba1dac20b532a2ea4` |
-| `claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `3c644a0a8e945019ffb5e16b2958a0d146457091c551e51411e8a457825742fd` |
-| `claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text` | `5bb109d68f8b69d3f548736f8f68ceae54fe46b5d1d59c0ad13a4c7204a2c235` |
+| `claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `8185211ec1c00f9c56a6071275b0876bfe7237966f5f157724c2999ca6cadbc1` |
+| `claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis` | `743acf246f54473a4c4225d1e47a843c0d386ae3ed4155452534954033b2b494` |
 | `claude:liturgy/roman-rite/1962/reference/assembling-the-mass` | `79359c27cba1345e9d3e401f0bb104c6f104d18637e2bf855314e0a4bc5f4e58` |
 | `claude:liturgy/roman-rite/1962/reference/liturgical-calendar` | `8308c88f48ed9d273edad8bc328ece13315ef2c93a473c5d6386eacb6e27baec` |
 | `claude:liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `1b493899b3238a823b8f267da53582543bd5f5a723fac6d235b23b4276d40bcc` |
@@ -1390,7 +1391,8 @@ release attachment, announcement, or promotion.
 | `liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost` | `0239c1823745a7160acb3cd810ad3e57877e746821d0a096f28f1da34450a37b` |
 | `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost` | `95c07efdbc902ccaef8275d4ae503a1d52151f3a732472237de0e2ffb799e014` |
 | `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `57946a3046ec1b0f624d7499395a36d3f3a31ad5a11b83a6902dce1f5ebb58a9` |
-| `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `e912d945ea1cdd3e6c50b9de3b626ab01f38563c1aaa1976a77df9404723da5e` |
+| `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `9178744a047a7eb27595b0fa152392f7892cf5fdfad89b28df5d7f64816bce46` |
+| `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis` | `226d98a637fc53f02a34981e8d955b3ab75786782790406a265a6c82705c767c` |
 | `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass` | `820b5aef1d1c39aa498955d87a9911c1a6f51f3d5db43611963340cc2e2914d4` |
 | `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards` | `d361503e0bd46c873d07411ce3cce2fe184fb690bb3c7cb66aaa48e45ab7dc35` |
 | `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual` | `5899cb40a25802c047cdae1593154f884cd1e0f521f10cf2f727ccce70bbc64a` |
@@ -1416,6 +1418,7 @@ release attachment, announcement, or promotion.
 | `theology/mariology/angelus` | `5416f7b4a6de668dcf07368887517b553cc0b28edfa88fc6dd5149f52473b13d` |
 | `theology/mariology/apparitions` | `0b0b6a2c1d8a1a0005992c6a844c26c84fa618350f5d701621d2209c4fe0349b` |
 | `theology/mariology/champion` | `e3c6c89fd3c5ba8f244a0313600e27f4f2a91f752ac0053160cc6957408a83be` |
+| `theology/mariology/doctrinal-authority` | `d4aeeb011d523eed3528a7a898b17202c262708fef9a6226686ca92dec8b04ee` |
 | `theology/mariology/fatima` | `e2c09b31356f82e85703038c991b4cbdce9b01783e50a209ddef325498c26ad3` |
 | `theology/mariology/guadalupe` | `4db68a27d4ce66c17d48329f6e8aef004c88e53cfcf0f9c97c32bc71a61b29f4` |
 | `theology/mariology/la-salette` | `1fdb552c80dc105013227dc31bcf5f1bdf31e4f5da54dd42b5bfa6bd16a7a17a` |
@@ -1441,20 +1444,20 @@ release attachment, announcement, or promotion.
 | `library/biographies.md` | `d4cfdf9ae2f1e55f2c4bc997cccce4d92a40a9b64b5189fc7e8217c45d415427` |
 | `library/curriculums.md` | `326b9f08c7274ffd4ba76fa3a475a839993323dff49e54517fe131cf05275916` |
 | `library/ecclesiastical-latin.md` | `02055f76bdd8ebd5618607194256ee6298947f30391bcafffacd4dbe1af319eb` |
-| `library/faith.md` | `d9b99e3112832a0100173b2f4a97e4ea145aae1ac66ede687299d17661b04272` |
+| `library/faith.md` | `8518158ceb64169fb10645b1d3c518daaa772913bba9e4ae266b082480f72e35` |
 | `library/heresies.md` | `2f8cbb8b910281e3d6ace3b232d724b6e08866a459344268fe611a6652229feb` |
 | `library/historical-accounts.md` | `5a9c6f94c6b322441046f29582fbcb2b2c494a3892a78396b34abe96312e3001` |
 | `library/law-and-church-discipline.md` | `2f909b26e55bb143ade3c326ffea0cc5ceed1d239f99036376f1a4eed98af240` |
-| `library/mariology.md` | `7debbf1348dc23564e1063edacd4dcd65f8901c9d9bcb834556e1d67af160f84` |
+| `library/mariology.md` | `e46b57edc3d906984fc669ccbdf2fdaab68a15a049d8d420c8f9885c5b2092a2` |
 | `library/novus-ordo-liturgy.md` | `c1f564543578b5405327b408fd871df6eec55af7206fd70919e9a0b9f88812fb` |
 | `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
 | `library/scripture.md` | `55c31d909f2270ba8943de5e2acdd882b9a2e9b0a98b481c37f17b395a35f02f` |
-| `library/traditional-latin-mass.md` | `9f314914a8e9e20c0a7195e06e05470b4ac0ff6a08befbbbc46de0f25d0d0375` |
+| `library/traditional-latin-mass.md` | `8c58bd86bb495d39089512b7e9eb9de4a2bec5ed2becb67bb6bdda37a74093f1` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `d173c27681f3742a64f99d7aab9cf1855935029dc035eca0699305a86ceeee62` |
 | `release/public-alpha/layout.html` | `2013d7f66dfb776b2c5df81656f7fe286bdbf60b016f88ea612f942af50249b9` |
 | `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
-| `scripts/public-alpha` | `2e5d41512bd25e0b2a587aaf63aee8ee42db3be1f562622c602a7ff92cc957ac` |
+| `scripts/public-alpha` | `c58a1279deed2e621277a1f2385a2de92bbf83e0c4340337638230cafc1361c1` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `b5778b78d02c884a5edc38a85cc9aef75e7f88bf9f412a482dd97f667bef4268` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `42681f72b3390e9191c9f927670d0b4961c6dde91eb3db08b1c9b70dd430b70e` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `fa5bc3e918f1c662f4b1dc5fcf1ae06ec9fff533eadadd80d69020136fc02ee4` |
@@ -1485,8 +1488,7 @@ release attachment, announcement, or promotion.
 | `web/claude/history/traditional-priestly-institutes/02-fssp.md` | `cb0913d4be0ede5355921f5ecd8aacb065ea5c8a7b0587ec5a637b81c1196c9f` |
 | `web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md` | `a5caf253d8a13c08b9c87768de907308a12afee4ec3c3d6ef26d4a092fc26a07` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md` | `0b308d6d56d32f982abac846e397f50563c969e331a88318393686d5e87f0d6a` |
-| `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text.md` | `a8034783e32e9fbf54a5b9e6949c9505f1018832e520925f33cebc437b6f59b8` |
-| `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `dbabf0bb6847ff26d4a32ebf5e1138bd01f6d3322a1e2125ea7ad092f864271f` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `7e70a3cb5aa7ef89485b47d18eb43eca2013f6cc42a4e219be4234dccf79082d` |
 | `web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `95dcefea93705a038a3d7949f094e5261fb5d24d2f62e2faa7ba37b19a6f0cc9` |
 | `web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `86bdb1aa9d16ec4c661700a3b4573a1f32b24dd3106a1d589ddabcdb82628ac0` |
 | `web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md` | `54670c29bbb9742f7bd4e224e5c4ea59e262e5c1658e4f7142c433f038c0d36f` |
@@ -1504,6 +1506,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/articles/canon-law/natural-positive-divine-human-law.md` | `f4a79f1edd4bc422a55131c6c608374d006ffa8acfe97e6723e7cf4d6b3553e5` |
 | `web/gpt/articles/faith/against-the-instrumentalists.md` | `5d5b3d561bd7b143f2cd70256647765f47d05b7f0bdec38f12f5aab2d07f9fca` |
 | `web/gpt/articles/faith/at-the-end-of-every-why.md` | `8d82bb12cae1f459d8b64cc5e4a7cb31ecf5b8acbc583f3e80b5c2be2df96117` |
+| `web/gpt/articles/faith/catholic-doctrinal-authority.md` | `667b171b4c46b98b4305e1734513c7231657611ce143a49972f6ec463613f8d3` |
 | `web/gpt/articles/faith/four-last-things-01-death.md` | `324ef1568274512b1b498a5e12b3700849450095fac6d1aca2ae8e7d639f0997` |
 | `web/gpt/articles/faith/four-last-things-02-judgment.md` | `609e342d1760fb5e3a03f9f6d71c0106685d25695895fe89ce811b58ad4c6636` |
 | `web/gpt/articles/faith/four-last-things-03-hell.md` | `fed75853aa9288b021d8e4f12442ac400e96415b43e163fd1a015dabfccd11bf` |
@@ -1532,6 +1535,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md` | `aa90719a3fce71c808ab452f5ed5021d16193c9596a90c0448a9feff9171e775` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.md` | `431e69f4173b70ecc4a6fbc2bf5285c1bbeff9d43dcb15af8a3c07e82679bb9b` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.md` | `71c4233e9e02a4911fb340117f6cb50bfb88e6e807755885d33b32ac524815fd` |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `2a884c999434f9e428c24582c09d7b9dcfac09bb42eb3249ce60a4c01c45abaf` |
 | `web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `382492cbd6f31fa69a500d14337b54099ec835c5cecf8336ec4c67baf2c821fc` |
 | `web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `854834793ddf8f0e64eb8e07be6b32161cf44289de6d5899bcd290822712f72d` |
 | `web/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md` | `eb5ccc438bf0b98c5130ca4f1c9feec1936bdd33bbb02a4a15b40236ee3e75b2` |
@@ -1547,6 +1551,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/theology/mariology/angelus.md` | `a7ff0e8cbf28fb5bf5290d0cb103b48cf2d753e45635f79e8d3459af592fc424` |
 | `web/gpt/theology/mariology/apparitions.md` | `0901a2d188c3f1c1dc9dfccccb7d4cabb6841d21041750994b2aeeb437de1d42` |
 | `web/gpt/theology/mariology/champion.md` | `767a130fe47c4446da575615c1c0e0a751447d1ce917445023a10d0b38dfa019` |
+| `web/gpt/theology/mariology/doctrinal-authority.md` | `7825eddb417fab4585fd62c2f8cb248c98eb9cdbd47bd2e0632449152f84c176` |
 | `web/gpt/theology/mariology/fatima.md` | `5c37e00b362495fc183e7a5ad863eb41a4b3cc6466d0875f21ec02476d2cf36f` |
 | `web/gpt/theology/mariology/guadalupe.md` | `6288f71fda973e78da4614b50504fa822aecd119f0d6156d5cc031386858b4dd` |
 | `web/gpt/theology/mariology/la-salette.md` | `4c012283b073143e2bd35e4519a0ed209a3736b67ae7314852300259c5fd80d8` |

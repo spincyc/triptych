@@ -1,24 +1,25 @@
 # Ninth Sunday after Pentecost — Research Scope
 
-## Paired editions
+## Componentized editions
 
-This record governs the GPT study publication and held full-text candidate at
-the same proper identity: the study edition at `23-ninth-after-pentecost` and
-the draft full-text edition at
-`23-ninth-after-pentecost-full-text`. The latter owns only its wrapper,
-presentation helpers, inherited generation record, and appointed-text sheet.
-Its `draft.tex` imports the study source as one body and keeps no duplicate
-retrieval, collation, scope, or binding records. It is intentionally not a
-publishable `main.tex` until its recorded gates close.
+This record governs both outputs from the canonical
+`23-ninth-after-pentecost` leaf. Its bare identity is the complete research
+edition and sole web edition. The mechanical `-synthesis` PDF is compiled from
+the same authored components and owns no separate prose or records. It omits
+the complete appointed texts and the element-by-element sweep while retaining
+pages 1 and 2, the exactly two-page brief synthesis, the complete
+source-grounded and exploratory syntheses, notable quotations, and terminal
+apparatus.
 
-The full-text sheet reproduces the complete facsimile-collated Latin from
-`propers/verified.md`, beside the registered public-domain
-Douay–Rheims/Challoner and 1861 Cummiskey witnesses. Every place where those
-English witnesses do not answer the appointed Latin is marked locally. The
-study edition was rebuilt after the conditional import refactor and reproduced
-its installed PDF byte for byte.
+The canonical appointed-text component reproduces the complete
+facsimile-collated Latin from `propers/verified.md` beside the registered
+public-domain Douay–Rheims/Challoner and 1861 Cummiskey witnesses. Every place
+where those English witnesses do not answer the appointed Latin is marked
+locally. The superseded `-full-text` sibling was folded into this canonical
+leaf on 2026-07-26; its dated audit history remains recoverable in repository
+history and is not a current publication identity.
 
-**Last updated:** 2026-07-21
+**Last updated:** 2026-07-26
 
 This record preserves research scope, source roles, material disagreements, negative results, and operational qualifications compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and collation results remain in [the verified propers](../propers/verified.md).
 
@@ -196,7 +197,7 @@ This is internal production review only; it grants no independent editorial, spe
 
 The official Latin web and *Acta Apostolicae Sedis* witnesses show that *Presbyterorum ordinis* 13 writes `opus nostrae redemptionis continuo exercetur`, not the Secret's clause without `continuo`. The publication and its research record now describe this as documented reuse with an inserted adverb rather than a verbatim repetition. The corresponding source attribution remains witness-specific: consolidated web note 105 and chapter-local *Acta* note 14 both identify the Ninth Sunday after Pentecost prayer over the offerings.
 
-The settled source was compiled twice under the deterministic build path and produced a 10-page PDF with SHA-256 `e912d945ea1cdd3e6c50b9de3b626ab01f38563c1aaa1976a77df9404723da5e`. The final log contains no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was inspected at full size for clipping, overlap, accidental blanks, bad breaks, table alignment, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
+The settled source was compiled twice under the deterministic build path and produced a 10-page PDF with SHA-256 `e912d945ea1cdd3e6c50b9de3b626ab01f38563c1aaa1976a77df9404723da5e`. The final log contains no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was inspected at full size for clipping, overlap, accidental blanks, bad breaks, table alignment, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical. This paragraph records the superseded pre-component publication review; it is retained as dated audit history rather than a description of the current outputs.
 
 This internal source and production review supersedes the artifact described in the preceding 21 July record. No earlier exact-byte authorization attaches to these changed bytes, so renewed exact-snapshot distribution clearance remains outstanding together with the existing `liturgical-text-permission`, independent specialist, theological, liturgical, rights, and ecclesiastical review limits.
 
@@ -204,6 +205,6 @@ This internal source and production review supersedes the artifact described in 
 
 Modified and independent-rewrite candidates were compared claim by claim
 against the exact Missal and paired-provider inputs. The existing `continuo`
-correction remains exact and no further material correction was found; the
-study edition may be exactly rebaselined. The held full-text candidate was
-outside this review.
+correction remains exact and no further material correction was found. The
+component migration preserved that reviewed substance while changing the
+publication packaging and adding the cross-proper synthesis.

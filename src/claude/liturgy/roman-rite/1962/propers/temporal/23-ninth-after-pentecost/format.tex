@@ -78,6 +78,20 @@ Latin with the same English and imports these sections unchanged. The two
 editions rest on one body of research, carry the same collation findings, and
 share one set of source records; nothing in either is a separate study.}
 
+% The canonical full edition also prints the complete appointed Latin.
+\newenvironment{appointedlatin}[1]{%
+  \begin{massbox}{#1}\itshape}{\end{massbox}}
+\newcommand{\appointedrubric}[2]{\par\textbf{Rubric as printed:} \latin{#1}
+\textperiodcentered{} #2\par}
+\renewcommand{\latinpolicynote}{The complete appointed Latin has already been
+printed above, in liturgical order and beside the same English; the commentary
+quotes it again only where an argument turns on the wording.}
+\renewcommand{\editionnote}{\textbf{Which edition this is.} This canonical full
+edition prints the complete appointed formulary --- the Latin of the 1962
+Vatican \latin{editio typica} with the English of the registered public-domain
+witnesses --- and then carries the map, dossiers, commentary, synthesis, and
+apparatus from the same source leaf.}
+
 % A witness dossier inside the detailed commentary: who, at what exact locus,
 % arguing what. The left rule keeps it distinct from surrounding synthesis
 % without implying doctrinal weight.

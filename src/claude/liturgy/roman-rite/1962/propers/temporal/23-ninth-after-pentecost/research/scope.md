@@ -12,31 +12,27 @@ and the edition-difference table live in
 source bindings, including the two English corpora, are in
 [`source-bindings.toml`](source-bindings.toml).
 
-## 0. Two publications, one study
+## 0. Two outputs, one canonical study
 
-This record covers both editions of the guide. The **study edition** is the
-leaf that owns these records; the **full-text edition** is the sibling leaf at
-the same id with a `-full-text` suffix. The full-text edition owns exactly four
-build files and one section file — its `main.tex`, `format.tex`,
-`generation-metadata.tex`, `web-edition.toml`, and the appointed-text sheet
-that prints the complete Latin beside its English — and imports every other
-section from the study edition rather than restating it. It keeps no research
-records of its own; these are its records.
+This record covers both outputs from the canonical leaf. The bare identity is
+the complete research edition and sole web edition. The mechanical
+`-synthesis` PDF owns no separate prose or records: it omits the complete
+appointed texts and the element-by-element sweep while retaining pages 1 and
+2, the exactly two-page brief synthesis, the complete source-grounded and
+exploratory syntheses, notable quotations, and terminal apparatus.
 
-The two editions differ in exactly three things: whether the appointed Latin is
-printed in full, and the wording of two passages (the scope appendix's
-"Which edition this is" and the commentary's note on where the full Latin
-lives), which are macros defined in each leaf's own format file so that the
-shared section files stay byte-identical.
+The superseded `-full-text` sibling was folded into the canonical leaf on
+2026-07-26. Its dated review below remains audit history of the prior packaging,
+not a current publication identity.
 
 **What changed at this revision, and what did not.** The revision is a change
 of presentation and of English sourcing, not of research. The collation against
 the CMAA facsimile and the Benziger second edition, the ten divergences from
 the Clementine, the reception matrix, the negative results, the
 notable-and-quotable gallery and the interpretive proposals all stand as
-recorded below and were carried forward unchanged. What changed: the appointed
-Latin was withdrawn from the study edition's page except where an argument
-turns on the wording; every English rendering of an appointed text was
+recorded below and were carried forward unchanged. In the earlier revision,
+the appointed Latin was withdrawn from the study edition's page except where
+an argument turns on the wording; every English rendering of an appointed text was
 re-sourced from the two registered corpora in §6, replacing Dom Laurence
 Shepherd's; the divergences from the Clementine and the corrected attributions
 were consolidated into two tables so that they survive the presentation change
@@ -472,3 +468,13 @@ was found; its exact source state is ready for a first baseline.
 This verdict neither clears nor weakens the open
 `liturgical-text-permission` question or any outstanding independent
 liturgical, theological, specialist, rights, or ecclesiastical review gate.
+
+## Component migration review — 2026-07-26
+
+The superseded study/full-text pair was migrated into one canonical full
+research edition and one derived synthesis PDF. The canonical edition retains
+the complete appointed text and every substantive component; the synthesis
+companion retains only the manifest-authorized bounded components. The old
+`-full-text` identity is no longer current. The paragraphs above preserve
+their dated claims about the earlier pair and do not redefine its historical
+rights or review state.

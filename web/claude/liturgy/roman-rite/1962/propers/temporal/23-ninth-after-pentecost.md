@@ -1,6 +1,6 @@
-# Ninth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Study Edition)
+# Ninth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)
 
-*The study edition of a source-first companion to the temporal formulary DOMINICA NONA post Pentecosten, II classis, in the 1962 editio typica of the Missale Romanum. Each appointed element is named by its Latin incipit, printed heading, reference and marginal number, and given in English from the Douay-Rheims (Challoner) for the scriptural propers and the 1861 Cummiskey hand missal for the orations; the appointed Latin is quoted only where an argument turns on the wording, and is printed in full in the companion full-text edition. Carries the collation against the Vatican typical facsimile and a second 1962 edition, the ten divergences from the Clementine Vulgate, the scriptural and historical coordinates of every directly appointed passage, the movement of the assembled formulary, patristic and Thomistic reception at exact loci with four corrected attributions, the cultural afterlife of the appointed wording, and bounded editorial proposals*
+*Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives*
 
 **Ninth Sunday after Pentecost**
 
@@ -55,57 +55,137 @@ Seven passages are directly appointed. Each has one dossier: a four-field summar
 | Epistle | 1 Cor. 10:6–13 | From Ephesus (1 Cor. 16:8), near present-day Selçuk, Türkiye, to Corinth in Greece | Third missionary journey, mid-AD 50s |
 | Pauline authorship is both traditional and the mainstream modern judgment, and *permanebo autem Ephesi* supplies the writing place. Paul writes into a church he had founded, mixed Jewish and Gentile, divided over food associated with idols. At 10:1 he calls the wilderness generation *patres nostri*: writer, recipients and narrated desert are three different places. |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Appointed Formulary in Full {#the-appointed-formulary-in-full .unnumbered}
 
-> **Governing thesis**
+Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prints it: the Latin of the Vatican *editio typica* exactly as the controlling facsimile has it, each element under its own printed heading, scriptural reference and marginal number, and beneath it the English of an identified public-domain witness. This is the canonical full research edition; a reader who came for the texts has them here.
+
+**Formulary.** *DOMINICA NONA post Pentecosten*, *II classis*, printed pp. 388–389, marginal nos. 1522–1531. Green follows the general rubrics for Sundays after Pentecost and is not printed on those pages. The formulary begins immediately after the Postcommunion of the Eighth Sunday (no. 1521) and ends immediately before the heading *DOMINICA DECIMA post Pentecosten* (no. 1532). Nothing between those boundaries is omitted here. It appoints no Tract, Sequence, second oration, blessing or ritual text, and no second Collect, Secret or Postcommunion.
+
+**The Latin.** Received liturgical text of the Roman Rite, in the public domain; the project claims no rights in it and has not composed, translated, modernised, conflated or adapted any of it. Every form below was visually collated at 300 and 600 dpi against the CMAA facsimile of the Vatican typical edition, and independently against page images of the 1962 Benziger *editio iuxta typicam*. Where the two editions differ, the Vatican typical reading is what appears here and the difference is tabulated in the detailed commentary.
+
+**The English.** Scriptural elements are the Douay–Rheims as revised by Bishop Challoner (1749–1752) — the English of the Clementine Vulgate the missal prints — in the Project Gutenberg e-text of that revision. The three orations are the anonymous English of *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), from the three lines that book supplies for this formulary, reproduced with its own nineteenth-century spelling and its abbreviated conclusion “Thro’.” Both are public domain in the United States. Neither is an official liturgical translation, and neither is the text of the 1962 books: this is a study companion, not an altar book or a hand missal. The project has translated nothing. Where the registered English does not answer the missal’s Latin — and it fails to at four points in this formulary — the gap is marked at the element and left open.
+
+### 1. Introit <span class="nodecor">(*Int.*)</span> {#introit-int. .unnumbered}
+
+> ***Ant. ad Introitum* — Ps. 53, 6-7 — marginal no. 1522**
 >
-> This formulary reads two catastrophes — a wilderness generation that fell, and a city that did not recognize its visitation — onto the people standing in the church now, and then hands those people the one thing that makes such a reading survivable: a memorial in which the work of redemption is carried on, and an eating that makes an abiding. The warning and the remedy are not two Sundays. They are one act.
+> *Ecce Deus ádiuvat me, et Dóminus suscéptor est ánimæ meæ: avérte mala inimícis meis, et in veritáte tua dispérde illos, protéctor meus, Dómine. <span class="nodecor">Ps. ibid., 3</span> Deus, in nómine tuo salvum me fac: et in virtúte tua líbera me. ℣. Glória Patri.*
 
-The order in which the book prints the ten texts is itself the argument. Read as four stages:
+> **English: Douay–Rheims (Challoner), Ps. 53:6–7 and 53:3**
+>
+> For behold God is my helper: and the Lord is the protector of my soul. Turn back the evils upon my enemies; and cut them off in thy truth. *Ps.* Save me, O God, by thy name, and judge me in thy strength. ℣. *Glória Patri.*
 
-1.  Help confessed, then desire re-formed. <span class="nodecor">(*Int.*)</span>, <span class="nodecor">(*Coll.*)</span>
+**Where the registered English does not answer the Latin.** Three clauses of the antiphon are not answered by that English, and none of them is filled in here. The antiphon’s closing vocative *protéctor meus, Dómine* has no counterpart anywhere in Psalm 53, so the Douay has none either. The psalm verse sings *líbera me* where the Clementine, and therefore the Douay, reads *judica me*: the English above says “judge me,” the missal does not. And the Douay’s opening “For” renders the *enim* that the antiphon drops at v. 6. The doxology cue *Glória Patri* belongs to the Ordinary rather than to this formulary and is a scriptureless liturgical formula; no English is supplied for it here.
 
-2.  A past disaster refused permission to stay past. <span class="nodecor">(*Ep.*)</span>, <span class="nodecor">(*Grad.*)</span>
+### 2. Collect <span class="nodecor">(*Coll.*)</span> {#collect-coll. .unnumbered}
 
-3.  A visitation not recognized, and a house cleared for prayer. <span class="nodecor">(*All.*)</span>, <span class="nodecor">(*Gosp.*)</span>
+> ***Oratio* — marginal no. 1523**
+>
+> *Páteant aures misericórdiæ tuæ, Dómine, précibus supplicántium: et, ut peténtibus desideráta concédas; fac eos, quæ tibi sunt plácita, postuláre. Per Dóminum nostrum.*
 
-4.  Judgment sung as sweetness, and the memorial that carries the redemption into a body. <span class="nodecor">(*Off.*)</span>, <span class="nodecor">(*Sec.*)</span>, <span class="nodecor">(*Comm.*)</span>, <span class="nodecor">(*Postcomm.*)</span>
+> **English: Cummiskey (Philadelphia, 1861), Collect of this formulary, printed p. 414**
+>
+> May the ears of thy mercy, O Lord, be open to the prayers of thy suppliants: and, that they may succeed in their desires, make them ask those things that are agreeable to thee. Thro’.
 
-English quoted in this section is the Douay–Rheims (Challoner) for scriptural propers and the 1861 Cummiskey hand missal for orations, as throughout; the sources are identified in the detailed commentary and in the references.
+**Where the registered English does not answer the Latin.** Not a missing clause but a shifted subject, and it matters enough to flag beside the text. *Ut peténtibus desideráta concédas* makes God the one who grants — that *thou* mayst grant to those who ask the things they desire. The 1861 English makes the petitioners the ones who succeed. The rendering is quoted because it is the registered public-domain witness for this formulary; the argument built on the prayer’s grammar is conducted on the Latin, in the detailed commentary.
 
-### 1. The formulary opens with help already given {#the-formulary-opens-with-help-already-given .unnumbered}
+### 3. Epistle <span class="nodecor">(*Ep.*)</span> {#epistle-ep. .unnumbered}
 
-The Introit does something the psalm it quotes does not do. Psalm 53 opens with a cry — “Save me, O God, by thy name” — and reaches “For behold God is my helper” only at v. 6. The missal inverts that: the antiphon takes vv. 6–7 and the psalm verse takes v. 3, so the assembly sings the confession of present help first and the plea for rescue second. What the psalm arrives at, the liturgy assumes.
+> ***Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios* — 1 Cor. 10, 6-13 — marginal no. 1524**
+>
+> *Fratres: Non simus concupiscéntes malórum, sicut et illi concupiérunt. Neque idolólatræ efficiámini, sicut quidam ex ipsis: quemádmodum scriptum est: Sedit pópulus manducáre et bíbere, et surrexérunt lúdere. Neque fornicémur, sicut quidam ex ipsis fornicáti sunt, et cecidérunt una die vigínti tria mília. Neque tentémus Christum, sicut quidam eórum tentavérunt, et a serpéntibus periérunt. Neque murmuravéritis, sicut quidam eórum murmuravérunt, et periérunt ab exterminatóre. Hæc autem ómnia in figúra contingébant illis: scripta sunt autem ad correptiónem nostram, in quos fines sæculórum devenérunt. Itaque qui se exístimat stare, vídeat ne cadat. Tentátio vos non apprehéndat, nisi humána: fidélis autem Deus est, qui non patiétur vos tentári supra id quod potéstis, sed fáciet étiam cum tentatióne provéntum, ut possítis sustinére.*
 
-The Collect then does something equally deliberate with the grammar of petition. It asks that God’s ears lie open to those who beg; but before it asks that the things desired be granted, it asks God to *make* the petitioners ask for what pleases him — *fac eos, quæ tibi sunt plácita, postuláre*. The printed semicolon after *concédas* carries that subordination, and the Latin is quoted here because no English of this prayer reproduces it: the 1861 rendering makes the petitioners, not God, the subject of the granting clause. The Church here prays about her own praying. Nothing in the day has yet said why that should be urgent. The Epistle says why.
+> **English: Douay–Rheims (Challoner), 1 Cor. 10:6–13, from the point at which the lesson begins**
+>
+> … that we should not covet evil things, as they also coveted. Neither become ye idolaters, as some of them, as it is written: The people sat down to eat and drink and rose up to play. Neither let us commit fornication, as some of them committed fornication: and there fell in one day three and twenty thousand. Neither let us tempt Christ, as some of them tempted and perished by the serpents. Neither do you murmur, as some of them murmured and were destroyed by the destroyer. Now all these things happened to them in figure: and they are written for our correction, upon whom the ends of the world are come. Wherefore, he that thinketh himself to stand, let him take heed lest he fall. Let no temptation take hold on you, but such as is human. And God is faithful, who will not suffer you to be tempted above that which you are able: but will make also with temptation issue, that you may be able to bear it.
 
-### 2. A disaster that will not stay in the past {#a-disaster-that-will-not-stay-in-the-past .unnumbered}
+**Where the registered English does not answer the Latin.** The lesson opens mid-verse. Where the missal prints its own liturgical address *Fratres:*, the Clementine has *Hæc autem in figúra facta sunt nostri* and the Douay has “Now these things were done in a figure of us” — the words displaced above by the ellipsis. *Fratres:* is the missal’s own and is not translated here.
 
-The Epistle is a list of ruins: craving; an idol feast quoted verbatim from Exodus 32:6; fornication with three and twenty thousand dead in one day; testing answered by serpents; murmuring answered by the destroyer. Then comes the hinge on which the whole Sunday turns. Paul will not let the list remain history: “Now all these things happened to them in figure: and they are written for our correction, upon whom the ends of the world are come.” These things were written for *our* correction — and therefore “Wherefore, he that thinketh himself to stand, let him take heed lest he fall.”
+### 4. Gradual <span class="nodecor">(*Grad.*)</span> {#gradual-grad. .unnumbered}
 
-This is the interpretive key the formulary supplies for itself. Whatever else the day’s Gospel does, the Church has already declared, in the lesson read immediately before it, that the catastrophes she reads out are aimed at the people hearing them. The lesson then closes on the promise that God is faithful and will not allow a testing beyond capacity but will make with the testing an *provéntum* — the Douay’s “issue,” an outcome, a way through — so that they can bear it.
+> ***Graduale* — Ps. 8, 2 — marginal no. 1525**
+>
+> *Dómine Dóminus noster, quam admirábile est nomen tuum in univérsa terra! ℣. Quóniam eleváta est magnificéntia tua super cælos.*
 
-The Gradual answers the sentence about self-estimate not with a rebuke but with a name: “O Lord, our Lord, how admirable is thy name in the whole earth!” Its verse completes the same biblical verse — “For thy magnificence is elevated above the heavens” — so that the whole chant is one verse divided at its own caesura, and that caesura is a *quóniam*: a reason. The man just told not to trust his own standing is handed something else to stand on.
+> **English: Douay–Rheims (Challoner), Ps. 8:2**
+>
+> O Lord, our Lord, how admirable is thy name in the whole earth! ℣. For thy magnificence is elevated above the heavens.
 
-### 3. A city that did not know the time {#a-city-that-did-not-know-the-time .unnumbered}
+### 5. Alleluia <span class="nodecor">(*All.*)</span> {#alleluia-all. .unnumbered}
 
-The Alleluia is the prayer of a man whose house is being watched by people sent to kill him. Placed here it goes into the mouth of the assembly immediately before a Gospel in which the one approaching the city is himself days away from arrest.
+> **Alleluia, no separate heading — Ps. 58, 2 — marginal no. 1526**
+>
+> *Allelúia, allelúia. ℣. <span class="nodecor">Ps. 58, 2</span> Eripe me de inimícis meis, Deus meus: et ab insurgéntibus in me líbera me. Allelúia.*
 
-That Gospel has four movements, and the pericope stops before a fifth. Christ draws near, sees the city, and weeps. He names what is hidden — and the naming breaks off: *quæ ad pacem tibi* is a clause with no verb, snapped exactly where the Vulgate snaps it, which is why St. Gregory had to supply *fleres*, “thou wouldst have wept.” No English can show the break, because the Douay’s “the things that are to thy peace” reads as a finished phrase. He foretells the rampart, the encirclement, the levelling, and gives the cause: “because thou hast not known the time of thy visitation.” He enters the Temple, drives out the sellers with two prophetic texts fused into one sentence, and then — this is where the reading ends — “And he was teaching daily in the temple.” The missal cuts before Luke 19:47b, where the chief priests and scribes begin seeking to destroy him. The last thing the assembly hears is not a plot against him. It is a teacher who has not stopped teaching.
+> **English: Douay–Rheims (Challoner), Ps. 58:2, between the chant’s own acclamations**
+>
+> Alleluia, alleluia. ℣. Deliver me from my enemies, O my God; and defend me from them that rise up against me. Alleluia.
 
-Two limits belong here rather than in the terminal appendix, because they change what this section claims. First, Luke’s form of the Temple saying is the short one, “My house is the house of prayer,” without the “for all nations” that Mark 11:17 keeps from Isaiah 56:7; the guide does not supply the missing words to the appointed text. Second, the Second Vatican Council cited this very verse. *Nostra aetate* 4 writes that “Jerusalem did not recognize the time of her visitation” and attaches note 9, *Cf. Lk. 19:44*; the same article states that “the Jews should not be presented as rejected or accursed by God, as if this followed from the Holy Scriptures.” The Council read the verse and refused the inference. So does this guide.
+### 6. Gospel <span class="nodecor">(*Gosp.*)</span> {#gospel-gosp. .unnumbered}
 
-### 4. Judgment sung as sweetness, and carried into a body {#judgment-sung-as-sweetness-and-carried-into-a-body .unnumbered}
+> ***✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 19, 41-47 — marginal no. 1527**
+>
+> *In illo témpore: Cum appropinquáret Iesus Ierúsalem, videns civitátem, flevit super illam, dicens: Quia si cognovísses et tu, et quidem in hac die tua, quæ ad pacem tibi, nunc autem abscóndita sunt ab óculis tuis. Quia vénient dies in te: et circúmdabunt te inimíci tui vallo, et circúmdabunt te: et coangustábunt te úndique: et ad terram prostérnent te, et fílios tuos, qui in te sunt, et non relínquent in te lápidem super lápidem: eo quod non cognóveris tempus visitatiónis tuæ. Et ingréssus in templum, cœpit eícere vendéntes in illo, et eméntes, dicens illis: Scriptum est: Quia domus mea domus oratiónis est. Vos autem fecístis illam spelúncam latrónum. Et erat docens cotídie in templo.*
 
-What the Church sings at the Offertory, directly after that Gospel, is a centonisation about judgments: the Lord’s justices are right, they gladden hearts, his judgments are sweeter than honey and the honeycomb, and his servant keeps them. It is the least obvious available response to a prophecy of siege. It is also the response the book prints.
+> **English: Douay–Rheims (Challoner), Lk. 19:41–47a**
+>
+> And when he drew near, seeing the city, he wept over it, saying: If thou also hadst known, and that in this thy day, the things that are to thy peace: but now they are hidden from thy eyes. For the days shall come upon thee: and thy enemies shall cast a trench about thee and compass thee round and straiten thee on every side, And beat thee flat to the ground, and thy children who are in thee. And they shall not leave in thee a stone upon a stone: because thou hast not known the time of thy visitation. And entering into the temple, he began to cast out them that sold therein and them that bought. Saying to them: It is written: My house is the house of prayer. But you have made it a den of thieves. And he was teaching daily in the temple.
 
-The Secret then states, in a causal clause, what is happening on the altar: *quia, quóties huius hóstiæ commemorátio celebrátur, opus nostræ redemptiónis exercétur* — “for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed.” That clause is not this formulary’s private opinion, and the Latin has to be quoted because the Latin is what was quoted. The Second Vatican Council took it into the second article of *Sacrosanctum Concilium* and identified its source in note 1 as *Missale romanum, oratio super oblata dominicae IX post Pentecosten*; *Presbyterorum ordinis* 13 reuses it with *continuo* inserted and names the same prayer in its own note. Of the ten texts on these two pages, this is the one the Church has since quoted back.
+**Where the registered English does not answer the Latin.** The missal’s *In illo témpore: Cum appropinquáret Iesus Ierúsalem* names a subject and a city that Luke does not name at v. 41; the Clementine reads *Et ut appropinquávit* and the Douay accordingly begins “And when he drew near.” The liturgical incipit is the missal’s own and is not translated here. The reading stops at v. 47a: the Douay’s v. 47 continues “And the chief priests and the scribes and the rulers of the people sought to destroy him,” and the missal cuts before it.
 
-The Communion says how that work reaches one person: by eating and drinking, in a clause whose halves run in opposite directions — “abideth in me: and I in him.” The Postcommunion asks that a single act bear two fruits, one personal and one corporate: that it “both purify us, and unite us.” The Sunday that began by asking God to form our desires ends by asking that what has been received make us clean and make us one. Neither is described as finished.
+**Rubric as printed:** *Credo.* Printed on its own line immediately after the Gospel. A direction, not a text: the Creed itself is in the Ordinary.
+
+### 7. Offertory <span class="nodecor">(*Off.*)</span> {#offertory-off. .unnumbered}
+
+> ***Antiphona ad Offertorium* — Ps. 18, 9, 10, 11 et 12 — marginal no. 1528**
+>
+> *Iustítiæ Dómini rectæ, lætificántes corda, et iudícia eius dulcióra super mel et favum: nam et servus tuus custódit ea.*
+
+> **English: Douay–Rheims (Challoner), Ps. 18:9–12 in full, with the four fragments the antiphon takes in bold**
+>
+> **v. 9** **The justices of the Lord are right, rejoicing hearts:** the commandment of the Lord is lightsome, enlightening the eyes. **v. 10** The fear of the Lord is holy, enduring for ever and ever: **the judgments of the Lord** are true, justified in themselves. **v. 11** More to be desired than gold and many precious stones: and **sweeter than honey and the honeycomb.** **v. 12** **For thy servant keepeth them,** and in keeping them there is a great reward.
+
+**Where the registered English does not answer the Latin.** This antiphon is not a quotation but a centonisation, which is why the missal prints four verse numbers instead of a range: it takes v. 9a, the subject *iudicia* from v. 10c, the honey comparison from v. 11b, and v. 12a. The four Douay verses are therefore printed whole with the fragments marked, rather than stitched into a seamless English paragraph that the project would itself have composed. Read in the antiphon’s own order the fragments say: the justices of the Lord are right, rejoicing hearts, and the judgments of the Lord sweeter than honey and the honeycomb; for thy servant keepeth them. One further difference is invisible in English: the missal writes *nam et* where the psalm has *Etenim*, and the Douay reads “For” either way.
+
+### 8. Secret <span class="nodecor">(*Sec.*)</span> {#secret-sec. .unnumbered}
+
+> ***Secreta* — marginal no. 1529**
+>
+> *Concéde nobis, quæsumus, Dómine, hæc digne frequentáre mystéria: quia, quóties huius hóstiæ commemorátio celebrátur, opus nostræ redemptiónis exercétur. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.*
+
+> **English: Cummiskey (Philadelphia, 1861), Secret of this formulary, printed p. 415**
+>
+> Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro’.
+
+The typical edition prints the long conclusion here, breaking off at *in unitáte* for the celebrant to complete from the Ordinary; Benziger prints only *Per Dóminum*, and the 1861 hand missal only “Thro’.” The 1861 rendering splits the single verb *frequentáre* and the adverb *digne* into “frequently and worthily to celebrate.”
+
+**Rubric as printed:** *Præfatio de Ssma Trinitate.* Printed immediately after the Secret, with *Ssma* under a tilde abbreviation for *Sanctissima*: the Preface of the Most Holy Trinity, which is in the Ordinary. Expanded here from the same book’s own abbreviation practice.
+
+### 9. Communion <span class="nodecor">(*Comm.*)</span> {#communion-comm. .unnumbered}
+
+> ***Ant. ad Communionem* — Io. 6, 57 — marginal no. 1530**
+>
+> *Qui mandúcat meam carnem, et bibit meum sánguinem, in me manet, et ego in eo, dicit Dóminus.*
+
+> **English: Douay–Rheims (Challoner), Jn. 6:57**
+>
+> He that eateth my flesh and drinketh my blood abideth in me: and I in him.
+
+**Where the registered English does not answer the Latin.** The antiphon’s closing *dicit Dóminus* is the liturgy’s own attribution formula, not part of John 6:57, and therefore not in the Douay. The antiphon also reads *et ego in eo* where the Clementine has *et ego in illo*; the English is “and I in him” either way. The reference *Io. 6, 57* is the Clementine’s verse number, which the Douay–Rheims shares; most current editions number the same clause 6:56.
+
+### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#postcommunion-postcomm. .unnumbered}
+
+> ***Postcommunio* — marginal no. 1531**
+>
+> *Tui nobis, quæsumus, Dómine, commúnio sacraménti, et purificatiónem cónferat, et tríbuat unitátem. Per Dóminum nostrum.*
+
+> **English: Cummiskey (Philadelphia, 1861), Postcommunion of this formulary, printed p. 415**
+>
+> May the participation of this thy sacrament, O Lord, we beseech thee, both purify us, and unite us. Thro’.
 
 ## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
 
-Each appointed element is named by its Latin incipit, its printed heading and reference, and the missal’s marginal number; its text is then given in English, quoted from an identified public-domain witness; and the evidence follows. Latin is quoted only where an argument turns on the wording. The complete appointed Latin, set beside the same English, is the business of the companion full-text edition of this guide, and the complete collated text is in `propers/verified.md` beside this document’s source.
+Each appointed element is named by its Latin incipit, its printed heading and reference, and the missal’s marginal number; its text is then given in English, quoted from an identified public-domain witness; and the evidence follows. Latin is quoted only where an argument turns on the wording. The complete appointed Latin has already been printed above, in liturgical order and beside the same English; the commentary quotes it again only where an argument turns on the wording.
 
 **Where the English comes from, and what it is not.** Scriptural elements — Introit, Gradual, Alleluia, Epistle, Gospel, Offertory, Communion — are given in the Douay–Rheims as revised by Bishop Challoner (1749–1752), which is the English of the Clementine Vulgate the missal prints, in the Project Gutenberg e-text of that revision. The orations — Collect, Secret, Postcommunion — are given in the anonymous English of *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), quoted from the three lines that book supplies for this formulary. Both are in the public domain in the United States. Neither is an official liturgical translation, and this guide has composed, translated, adapted and paraphrased nothing: where the registered English does not answer the missal’s Latin, the gap is stated and left open.
 
@@ -154,7 +234,7 @@ Each of these is a claim a reasonable guide could make from the standard deliver
 | “Augustine cites the one bread of 1 Cor. 10:17 in Tractates 26 and 27” | The citation is in Tractate 26 only. Tractate 27 turns the clause into a test of reception and does not quote it | Communion |
 | “Bede’s exposition of this pericope …” | Bede’s Lucan exposition of Lk. 19:41–47 is substantially Gregory’s Homily 39, close enough that whole clauses recur verbatim. What is Bede’s own is the Exodus 12 typology at the end | Gospel |
 
-### Introit <span class="nodecor">(*Int.*)</span> {#introit-int. .unnumbered}
+### Introit <span class="nodecor">(*Int.*)</span> {#introit-int.-1 .unnumbered}
 
 *Ecce Deus ádiuvat me* *Ant. ad Introitum* — Ps. 53, 6-7, with *Ps. ibid.,* 3 marginal no. 1522
 
@@ -178,7 +258,7 @@ That English is the English of the psalm, and at three points it is not the Engl
 
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 53 (PG 80, cols. 1265–1268) — Greek-tradition sample** Theodoret sets the psalm historically among the Ziphites who “feigned friendship” and betrayed David’s hiding place, then makes it deliberately general: David offered it as instruction so that anyone under unjust attack might pray it. He reads the opening clause as confidence in help coming before long. Alone among the four witnesses here he reads *in veritáte tua* — the Introit’s own text — and takes it, strikingly, as addressed to the Holy Spirit. *Source limit:* Theodoret was consulted in Robert Hill’s modern English translation, which is in copyright; he is therefore summarised and not quoted, and the PG column numbers above are those printed inline in that translation, not read off a Migne scan.
 
-### Collect <span class="nodecor">(*Coll.*)</span> {#collect-coll. .unnumbered}
+### Collect <span class="nodecor">(*Coll.*)</span> {#collect-coll.-1 .unnumbered}
 
 *Páteant aures misericórdiæ tuæ* *Oratio*, composed oration marginal no. 1523
 
@@ -196,7 +276,7 @@ That is why this Collect belongs in front of this Epistle. The wilderness genera
 
 *Source boundary.* No patristic or medieval commentary on this oration’s wording was located; composed Roman collects of this type carry no ancient commentary tradition comparable to that on the Scriptures. The analysis above rests on the printed Latin, its punctuation, and its juxtaposition, and is offered as source-grounded synthesis rather than documented reception.
 
-### Epistle <span class="nodecor">(*Ep.*)</span> {#epistle-ep. .unnumbered}
+### Epistle <span class="nodecor">(*Ep.*)</span> {#epistle-ep.-1 .unnumbered}
 
 *Fratres: Non simus concupiscéntes malórum* *Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios* — 1 Cor. 10, 6-13 marginal no. 1524
 
@@ -228,7 +308,7 @@ That is why this Collect belongs in front of this Epistle. The wilderness genera
 
 **The verse the twentieth century mislearned.** Verse 13 says four things, and popular usage keeps only a garbled third. It says that the testing which has taken hold of the Corinthians is *humána* — on human scale, the common lot. It says the ground of confidence is God’s fidelity, not the hearer’s capacity: *fidélis autem Deus est*. It says God will not permit a testing *supra id quod potéstis* — and *potéstis* is plural throughout, addressed to a community, not to an isolated sufferer, a fact the Douay’s “you” cannot show and the modern reader’s “you” actively hides. And it says that God *makes* something with the testing, a *provéntum*: an outcome, an issue, a way through, which is supplied rather than found. The Douay renders it “issue.” What the verse does not say is that every affliction has been measured to what one person can privately bear.
 
-### Gradual <span class="nodecor">(*Grad.*)</span> {#gradual-grad. .unnumbered}
+### Gradual <span class="nodecor">(*Grad.*)</span> {#gradual-grad.-1 .unnumbered}
 
 *Dómine Dóminus noster* *Graduale* — Ps. 8, 2 marginal no. 1525
 
@@ -246,7 +326,7 @@ Here the chant and the Vulgate agree exactly, and the Douay silently proves the 
 
 **Why this psalm answers this Epistle.** Psalm 8 is the psalm of human smallness under a sky, and its continuation — “What is man, that thou art mindful of him?” — is quoted verbatim in Hebrews 2:6–8, where the argument turns on the fact that we do not yet see all things subject to him. The Gradual quotes only v. 2 and this guide claims no more than v. 2 for the liturgy. But the appointed verse comes from a poem whose next move is exactly the move the Epistle has just demanded: stop estimating your own standing.
 
-### Alleluia <span class="nodecor">(*All.*)</span> {#alleluia-all. .unnumbered}
+### Alleluia <span class="nodecor">(*All.*)</span> {#alleluia-all.-1 .unnumbered}
 
 *Eripe me de inimícis meis* Alleluia, no separate heading — Ps. 58, 2 marginal no. 1526
 
@@ -268,7 +348,7 @@ Two things follow. The reading is not one author’s idiosyncrasy: a Greek Antio
 
 *Negative result.* Aquinas wrote no commentary on this psalm. His *Super Psalmos* breaks off at Psalm 54 with *Deo gratias*, and the appointed Alleluia therefore has no Thomistic exposition to compare. Bellarmine is the later Doctoral witness in its place.
 
-### Gospel <span class="nodecor">(*Gosp.*)</span> {#gospel-gosp. .unnumbered}
+### Gospel <span class="nodecor">(*Gosp.*)</span> {#gospel-gosp.-1 .unnumbered}
 
 *Cum appropinquáret Iesus Ierúsalem* *✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 19, 41-47 marginal no. 1527
 
@@ -351,7 +431,7 @@ The point is not that the Fathers must be edited. It is that the pericope’s ow
 
 *Et erat docens cotídie in templo*, “And he was teaching daily in the temple.” The imperfect periphrastic is durative: not “he taught” but “he was teaching, daily,” and the Douay’s English happens to preserve it exactly. Gregory reads it as grace following discipline, and glosses it in the moral pass as *quotidie Veritas in templo docet* — when Truth patiently instructs the mind of the faithful to avoid evil, Truth is teaching daily in the temple. The missal’s decision to end the reading here, rather than four words later where the plot begins, means the assembly’s last impression of the day’s Gospel is of a teacher who did not leave.
 
-### Offertory <span class="nodecor">(*Off.*)</span> {#offertory-off. .unnumbered}
+### Offertory <span class="nodecor">(*Off.*)</span> {#offertory-off.-1 .unnumbered}
 
 *Iustítiæ Dómini rectæ* *Antiphona ad Offertorium* — Ps. 18, 9, 10, 11 et 12 marginal no. 1528
 
@@ -377,7 +457,7 @@ Read in the antiphon’s order the four fragments say: the justices of the Lord 
 
 **A variant that changes the mood.** Dom Dominic Johner, comparing the Missal with Dom Pothier’s *Liber Gradualis* of 1883 and 1895, observes that the older chant books close this Offertory in the sixth mode and require *custodiet* — “he *will* keep them,” a resolve — whereas the Missal prints the indicative *custódit*. On the older reading, he says, the melody’s close on the half tone “is far removed from victorious certainty. It sounds like a fervent petition.” Of this Sunday specifically he writes only that, after the threatened destruction of the city in the Gospel, the piece is to be sung “in a somewhat more subdued fashion.” *Rights note:* Johner’s book was published in the United States in 1940; a search of the standard renewal record found no renewal, which points to but does not establish public-domain status, so he is paraphrased and quoted only in short compass.
 
-### Secret <span class="nodecor">(*Sec.*)</span> {#secret-sec. .unnumbered}
+### Secret <span class="nodecor">(*Sec.*)</span> {#secret-sec.-1 .unnumbered}
 
 *Concéde nobis, quæsumus, Dómine* *Secreta*, composed oration marginal no. 1529
 
@@ -393,7 +473,7 @@ The typical edition prints the long conclusion here — *Per Dóminum nostrum Ie
 
 The rubric *Præfatio de Ssma Trinitate* — the Preface of the Most Holy Trinity — is printed immediately after this prayer, with *Ssma* under a tilde abbreviation for *Sanctissima*.
 
-### Communion <span class="nodecor">(*Comm.*)</span> {#communion-comm. .unnumbered}
+### Communion <span class="nodecor">(*Comm.*)</span> {#communion-comm.-1 .unnumbered}
 
 *Qui mandúcat meam carnem* *Ant. ad Communionem* — Io. 6, 57 (Clementine; 6:56 in the modern critical numbering) marginal no. 1530
 
@@ -419,7 +499,7 @@ The antiphon also reads *et ego in eo* where the Clementine Vulgate reads *et eg
 
 Johner hears the same structure in the melody, and the observation is worth recording because it is arrived at independently of the exegesis: the descending fourth at *in me manet* is answered by a rising fourth at *ego in eo*, “thus both thoughts are placed in strong relief: Thou in me and I in Thee.”
 
-### Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#postcommunion-postcomm. .unnumbered}
+### Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#postcommunion-postcomm.-1 .unnumbered}
 
 *Tui nobis, quæsumus, Dómine* *Postcommunio*, composed oration marginal no. 1531
 
@@ -431,39 +511,67 @@ The Latin is a single sentence with one subject and two verbs, and the *et … 
 
 Two things about the pairing repay attention. First, the two objects match the two fruits the Sunday has been moving toward: purification answers the Epistle’s warning and the Gospel’s cleared Temple, and unity answers the Communion’s mutual abiding. Second, neither is described as accomplished. The formulary that opened by asking God to re-form our desires closes by asking for a cleansing and a unity that are still being asked for.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Themes and Movement {#triptych:brief-synthesis:start .unnumbered}
 
-Three verified afterlives of wording from the scriptural propers, each one a use that moves the phrase into a register its author did not occupy. Straight exegesis, devotional reuse, and bare quotation are excluded; they belong in the commentary above. Two of the three come from the same four words of the Gospel, and that concentration is itself the finding: of everything the appointed texts contain, *spelúncam latrónum* is what English took, kept, and turned loose.
+> **Governing thesis**
+>
+> This formulary reads two catastrophes — a wilderness generation that fell, and a city that did not recognize its visitation — onto the people standing in the church now, and then hands those people the one thing that makes such a reading survivable: a memorial in which the work of redemption is carried on, and an eating that makes an abiding. The warning and the remedy are not two Sundays. They are one act.
 
-> **Epistle, 1 Cor. 10:12 — a wordplay cut into a Norwich floor, 1704**
->
-> **Appointed phrase.** *Itaque qui se exístimat stare, vídeat ne cadat*, Douay–Rheims “Wherefore, he that thinketh himself to stand, let him take heed lest he fall.” The Latin is quoted because the epitaph below turns on the English idiom that renders it.
->
-> **Later use and locus.** A flat marble at the west end of the nave of St. George Colegate, Norwich, transcribed by Francis Blomefield, *An Essay towards a Topographical History of the County of Norfolk*, vol. 4 (*The History of the City and County of Norwich*, part II), printed p. 469. The stone commemorates Mr. Bryant Lewis, “barbarously murder’d upon the Heath near Thetford, Sept. 13, 1698,” and beneath him his elder son Jonathan, “who died by a Fall from an Horse, Apr. 7. A. D. 1704, Æt. Suæ 32.” The verse cut under Jonathan’s name reads: “Judge me not Reader, Christ is judge of all,  I fell, stand’st thou, take warning by my Fall” — and directly beneath it the mason set the biblical text: “Let him that thinketh he standeth, take Heed least he fall; 1 Cor. 10. 12.”
->
-> **The turn.** Paul’s standing and falling are metaphors for presumption and apostasy; the epitaph makes them literal, and does it deliberately. The son really did fall, off a horse, and the stone puns on it — “I fell, stand’st thou” — so that a warning against spiritual self-confidence is re-cut as a memento mori addressed to a reader who is, at that moment, physically standing on the floor of the church. The pun is the point: the verse becomes funerary wit, and the wit is what makes it stick.
->
-> **Rights and limit.** Blomefield’s *Essay* (Norwich, 1806 issue of the continued work) and the inscription itself are long out of copyright; the text was read in the British History Online edition. The witness is Blomefield’s transcription of a monument, not the monument; whether the stone survives was not investigated.
+The order in which the book prints the ten texts is itself the argument. Read as four stages:
 
-> **Gospel, Lk. 19:46 — Ambrose Bierce turns the accusation back on the accusers, 1911**
->
-> **Appointed phrase.** *Vos autem fecístis illam spelúncam latrónum*, Douay–Rheims “But you have made it a den of thieves.”
->
-> **Later use and locus.** Ambrose Bierce, *The Devil’s Dictionary* (1911), s.v. <span class="smallcaps">wall street</span>: “A symbol of sin for every devil to rebuke. That Wall Street is a den of thieves is a belief that serves every unsuccessful thief in place of a hope in Heaven.” Verified in the Project Gutenberg text of the 1911 edition, ebook 972.
->
-> **The turn.** This is a double reversal, which is why it qualifies where a hundred sermons on financial greed would not. Bierce first performs the expected secularisation — Christ’s charge against the Temple becomes the standard charge against the stock exchange, complete with a temple standing in for a market. Then he takes it back: the phrase, he says, is not a moral judgment at all but a consolation, and what it consoles is failed avarice. The accusation that once cleared a sanctuary is redescribed as the liturgy of people who wish they had got in. Bierce then extends the joke by citing Andrew Carnegie’s own denunciation of brokers as parasites.
->
-> **Rights and limit.** *The Devil’s Dictionary* was published in 1911 and is in the public domain in the United States. The verbal link is to the Douay–Rheims and King James wording “den of thieves”; Bierce does not cite Luke, and the dependence is on the naturalised English idiom rather than on this pericope specifically. Note also that the money-changers usually invoked alongside this phrase are *not* in the appointed Gospel: Luke names only sellers and buyers, and the tables belong to Mark, Matthew and John.
+1.  Help confessed, then desire re-formed. <span class="nodecor">(*Int.*)</span>, <span class="nodecor">(*Coll.*)</span>
 
-> **Gospel, Lk. 19:46 — a translator smuggles the Temple into Molière’s Paris, 1908**
->
-> **Appointed phrase.** As above, *spelúncam latrónum*, Douay–Rheims “a den of thieves.”
->
-> **Later use and locus.** Curtis Hidden Page’s English *Misanthrope* (1908), Alceste’s closing speech at the end of Act V: “Betrayed on all sides, overwhelmed with wrong,  I’ll leave this den of thieves vice reigns among,  And find some lonely corner, if I can,  Where one is free to be an honest man.”
->
-> **The turn.** Molière wrote no such phrase. His French reads *Trahi de toutes parts, accablé d’injustices,  Je vais sortir d’un gouffre où triomphent les vices* — an abyss where the vices triumph. The biblical wording is the translator’s, and that is exactly what makes the example worth having: by 1908 “den of thieves” had become so natural an English container for institutional corruption that a translator reached for it to render a word that means nothing of the kind. The phrase has migrated from a sanctuary full of traders to the salons of the *ancien régime*, and it arrives there through a translator’s ear rather than through any author’s intention.
->
-> **Rights and limit.** Page’s translation was first published in 1908 and is in the public domain in the United States; Molière’s French is of 1666. The dependence is a translator’s importation, verified by setting the two texts side by side; it is not evidence of any biblical allusion by Molière, and this entry does not claim one.
+2.  A past disaster refused permission to stay past. <span class="nodecor">(*Ep.*)</span>, <span class="nodecor">(*Grad.*)</span>
+
+3.  A visitation not recognized, and a house cleared for prayer. <span class="nodecor">(*All.*)</span>, <span class="nodecor">(*Gosp.*)</span>
+
+4.  Judgment sung as sweetness, and the memorial that carries the redemption into a body. <span class="nodecor">(*Off.*)</span>, <span class="nodecor">(*Sec.*)</span>, <span class="nodecor">(*Comm.*)</span>, <span class="nodecor">(*Postcomm.*)</span>
+
+English quoted in this section is the Douay–Rheims (Challoner) for scriptural propers and the 1861 Cummiskey hand missal for orations, as throughout; the sources are identified in the detailed commentary and in the references.
+
+### 1. The formulary opens with help already given {#the-formulary-opens-with-help-already-given .unnumbered}
+
+The Introit does something the psalm it quotes does not do. Psalm 53 opens with a cry — “Save me, O God, by thy name” — and reaches “For behold God is my helper” only at v. 6. The missal inverts that: the antiphon takes vv. 6–7 and the psalm verse takes v. 3, so the assembly sings the confession of present help first and the plea for rescue second. What the psalm arrives at, the liturgy assumes.
+
+The Collect then does something equally deliberate with the grammar of petition. It asks that God’s ears lie open to those who beg; but before it asks that the things desired be granted, it asks God to *make* the petitioners ask for what pleases him — *fac eos, quæ tibi sunt plácita, postuláre*. The printed semicolon after *concédas* carries that subordination, and the Latin is quoted here because no English of this prayer reproduces it: the 1861 rendering makes the petitioners, not God, the subject of the granting clause. The Church here prays about her own praying. Nothing in the day has yet said why that should be urgent. The Epistle says why.
+
+### 2. A disaster that will not stay in the past {#a-disaster-that-will-not-stay-in-the-past .unnumbered}
+
+The Epistle is a list of ruins: craving; an idol feast quoted verbatim from Exodus 32:6; fornication with three and twenty thousand dead in one day; testing answered by serpents; murmuring answered by the destroyer. Then comes the hinge on which the whole Sunday turns. Paul will not let the list remain history: “Now all these things happened to them in figure: and they are written for our correction, upon whom the ends of the world are come.” These things were written for *our* correction — and therefore “Wherefore, he that thinketh himself to stand, let him take heed lest he fall.”
+
+This is the interpretive key the formulary supplies for itself. Whatever else the day’s Gospel does, the Church has already declared, in the lesson read immediately before it, that the catastrophes she reads out are aimed at the people hearing them. The lesson then closes on the promise that God is faithful and will not allow a testing beyond capacity but will make with the testing an *provéntum* — the Douay’s “issue,” an outcome, a way through — so that they can bear it.
+
+The Gradual answers the sentence about self-estimate not with a rebuke but with a name: “O Lord, our Lord, how admirable is thy name in the whole earth!” Its verse completes the same biblical verse — “For thy magnificence is elevated above the heavens” — so that the whole chant is one verse divided at its own caesura, and that caesura is a *quóniam*: a reason. The man just told not to trust his own standing is handed something else to stand on.
+
+### 3. A city that did not know the time {#a-city-that-did-not-know-the-time .unnumbered}
+
+The Alleluia is the prayer of a man whose house is being watched by people sent to kill him. Placed here it goes into the mouth of the assembly immediately before a Gospel in which the one approaching the city is himself days away from arrest.
+
+That Gospel has four movements, and the pericope stops before a fifth. Christ draws near, sees the city, and weeps. He names what is hidden — and the naming breaks off: *quæ ad pacem tibi* is a clause with no verb, snapped exactly where the Vulgate snaps it, which is why St. Gregory had to supply *fleres*, “thou wouldst have wept.” No English can show the break, because the Douay’s “the things that are to thy peace” reads as a finished phrase. He foretells the rampart, the encirclement, the levelling, and gives the cause: “because thou hast not known the time of thy visitation.” He enters the Temple, drives out the sellers with two prophetic texts fused into one sentence, and then — this is where the reading ends — “And he was teaching daily in the temple.” The missal cuts before Luke 19:47b, where the chief priests and scribes begin seeking to destroy him. The last thing the assembly hears is not a plot against him. It is a teacher who has not stopped teaching.
+
+Two limits belong here rather than in the terminal appendix, because they change what this section claims. First, Luke’s form of the Temple saying is the short one, “My house is the house of prayer,” without the “for all nations” that Mark 11:17 keeps from Isaiah 56:7; the guide does not supply the missing words to the appointed text. Second, the Second Vatican Council cited this very verse. *Nostra aetate* 4 writes that “Jerusalem did not recognize the time of her visitation” and attaches note 9, *Cf. Lk. 19:44*; the same article states that “the Jews should not be presented as rejected or accursed by God, as if this followed from the Holy Scriptures.” The Council read the verse and refused the inference. So does this guide.
+
+### 4. Judgment sung as sweetness, and carried into a body {#judgment-sung-as-sweetness-and-carried-into-a-body .unnumbered}
+
+What the Church sings at the Offertory, directly after that Gospel, is a centonisation about judgments: the Lord’s justices are right, they gladden hearts, his judgments are sweeter than honey and the honeycomb, and his servant keeps them. It is the least obvious available response to a prophecy of siege. It is also the response the book prints.
+
+The Secret then states, in a causal clause, what is happening on the altar: *quia, quóties huius hóstiæ commemorátio celebrátur, opus nostræ redemptiónis exercétur* — “for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed.” That clause is not this formulary’s private opinion, and the Latin has to be quoted because the Latin is what was quoted. The Second Vatican Council took it into the second article of *Sacrosanctum Concilium* and identified its source in note 1 as *Missale romanum, oratio super oblata dominicae IX post Pentecosten*; *Presbyterorum ordinis* 13 reuses it with *continuo* inserted and names the same prayer in its own note. Of the ten texts on these two pages, this is the one the Church has since quoted back.
+
+The Communion says how that work reaches one person: by eating and drinking, in a clause whose halves run in opposite directions — “abideth in me: and I in him.” The Postcommunion asks that a single act bear two fruits, one personal and one corporate: that it “both purify us, and unite us.” The Sunday that began by asking God to form our desires ends by asking that what has been received make us clean and make us one. Neither is described as finished.
+
+<span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+
+<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+
+## Source-Grounded Synthesis Across the Propers {#source-grounded-synthesis-across-the-propers .unnumbered}
+
+The full formulary does not merely place danger beside consolation. It distinguishes three forms of security. The Introit confesses help that is already God’s gift; the Epistle attacks the imagined security of one who “thinketh himself to stand”; the Communion names an abiding that is received through Christ’s self-gift. The Collect supplies the conversion between them: mercy opens God’s ears by reforming what the petitioner asks. Confidence is therefore neither self-possession nor passivity. It is dependence made capable of truthful desire.
+
+The Epistle and Gospel make catastrophe present without making catastrophe the last word. Paul says Israel’s failures were written for the correction of the eschatological Church. Luke gives Jerusalem’s nonrecognition a human face in Christ’s tears and then ends the appointed passage with daily teaching. The Gradual and Offertory prevent judgment from becoming fascination with ruin: God’s name exceeds the heavens, and his judgments enlighten, warn, gladden, and are kept. The Christian appropriation is controlled by repentance, not by supersessionist triumph.
+
+The orations carry that public warning into worship without reducing worship to moral illustration. The Secret says that the sacrifice’s memorial enacts redemption’s work; the Communion names mutual abiding; the Postcommunion asks one sacramental participation to purify persons and unite the body. Thomas, Augustine, the Second Vatican Council, and the Sunday commentary do not supply one historical theory of compilation. They do converge on a theological grammar: the once-for-all Passion bears sacramental fruit, fruitful reception is ecclesial, and unity cannot be detached from conversion.
+
+The movement may therefore be stated without claiming a recovered compiler’s intention. Received help reforms desire; remembered failure chastens presumption; visitation comes through lament, correction, and teaching; the memorial gives what warning alone cannot produce—abiding in Christ as a purified and united body. The Trinity Preface directs this entire movement toward doxology. The synthesis is source-grounded in the appointed sequence and checked reception; it is not itself an additional proper or an act of the Magisterium.
 
 ## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
 
@@ -531,11 +639,45 @@ Three verified afterlives of wording from the scriptural propers, each one a use
 >
 > **Strongest limit:** The tomb reading is reception, not the psalm’s sense; Augustine was moreover expounding a different Latin text (*Erue me … redime me*). Nothing documents the missal’s assignment of this verse to this Sunday as motivated by that tradition, and Alleluia verses are commonly assigned on musical and cyclical grounds.
 
+## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+
+Three verified afterlives of wording from the scriptural propers, each one a use that moves the phrase into a register its author did not occupy. Straight exegesis, devotional reuse, and bare quotation are excluded; they belong in the commentary above. Two of the three come from the same four words of the Gospel, and that concentration is itself the finding: of everything the appointed texts contain, *spelúncam latrónum* is what English took, kept, and turned loose.
+
+> **Epistle, 1 Cor. 10:12 — a wordplay cut into a Norwich floor, 1704**
+>
+> **Appointed phrase.** *Itaque qui se exístimat stare, vídeat ne cadat*, Douay–Rheims “Wherefore, he that thinketh himself to stand, let him take heed lest he fall.” The Latin is quoted because the epitaph below turns on the English idiom that renders it.
+>
+> **Later use and locus.** A flat marble at the west end of the nave of St. George Colegate, Norwich, transcribed by Francis Blomefield, *An Essay towards a Topographical History of the County of Norfolk*, vol. 4 (*The History of the City and County of Norwich*, part II), printed p. 469. The stone commemorates Mr. Bryant Lewis, “barbarously murder’d upon the Heath near Thetford, Sept. 13, 1698,” and beneath him his elder son Jonathan, “who died by a Fall from an Horse, Apr. 7. A. D. 1704, Æt. Suæ 32.” The verse cut under Jonathan’s name reads: “Judge me not Reader, Christ is judge of all,  I fell, stand’st thou, take warning by my Fall” — and directly beneath it the mason set the biblical text: “Let him that thinketh he standeth, take Heed least he fall; 1 Cor. 10. 12.”
+>
+> **The turn.** Paul’s standing and falling are metaphors for presumption and apostasy; the epitaph makes them literal, and does it deliberately. The son really did fall, off a horse, and the stone puns on it — “I fell, stand’st thou” — so that a warning against spiritual self-confidence is re-cut as a memento mori addressed to a reader who is, at that moment, physically standing on the floor of the church. The pun is the point: the verse becomes funerary wit, and the wit is what makes it stick.
+>
+> **Rights and limit.** Blomefield’s *Essay* (Norwich, 1806 issue of the continued work) and the inscription itself are long out of copyright; the text was read in the British History Online edition. The witness is Blomefield’s transcription of a monument, not the monument; whether the stone survives was not investigated.
+
+> **Gospel, Lk. 19:46 — Ambrose Bierce turns the accusation back on the accusers, 1911**
+>
+> **Appointed phrase.** *Vos autem fecístis illam spelúncam latrónum*, Douay–Rheims “But you have made it a den of thieves.”
+>
+> **Later use and locus.** Ambrose Bierce, *The Devil’s Dictionary* (1911), s.v. <span class="smallcaps">wall street</span>: “A symbol of sin for every devil to rebuke. That Wall Street is a den of thieves is a belief that serves every unsuccessful thief in place of a hope in Heaven.” Verified in the Project Gutenberg text of the 1911 edition, ebook 972.
+>
+> **The turn.** This is a double reversal, which is why it qualifies where a hundred sermons on financial greed would not. Bierce first performs the expected secularisation — Christ’s charge against the Temple becomes the standard charge against the stock exchange, complete with a temple standing in for a market. Then he takes it back: the phrase, he says, is not a moral judgment at all but a consolation, and what it consoles is failed avarice. The accusation that once cleared a sanctuary is redescribed as the liturgy of people who wish they had got in. Bierce then extends the joke by citing Andrew Carnegie’s own denunciation of brokers as parasites.
+>
+> **Rights and limit.** *The Devil’s Dictionary* was published in 1911 and is in the public domain in the United States. The verbal link is to the Douay–Rheims and King James wording “den of thieves”; Bierce does not cite Luke, and the dependence is on the naturalised English idiom rather than on this pericope specifically. Note also that the money-changers usually invoked alongside this phrase are *not* in the appointed Gospel: Luke names only sellers and buyers, and the tables belong to Mark, Matthew and John.
+
+> **Gospel, Lk. 19:46 — a translator smuggles the Temple into Molière’s Paris, 1908**
+>
+> **Appointed phrase.** As above, *spelúncam latrónum*, Douay–Rheims “a den of thieves.”
+>
+> **Later use and locus.** Curtis Hidden Page’s English *Misanthrope* (1908), Alceste’s closing speech at the end of Act V: “Betrayed on all sides, overwhelmed with wrong,  I’ll leave this den of thieves vice reigns among,  And find some lonely corner, if I can,  Where one is free to be an honest man.”
+>
+> **The turn.** Molière wrote no such phrase. His French reads *Trahi de toutes parts, accablé d’injustices,  Je vais sortir d’un gouffre où triomphent les vices* — an abyss where the vices triumph. The biblical wording is the translator’s, and that is exactly what makes the example worth having: by 1908 “den of thieves” had become so natural an English container for institutional corruption that a translator reached for it to render a word that means nothing of the kind. The phrase has migrated from a sanctuary full of traders to the salons of the *ancien régime*, and it arrives there through a translator’s ear rather than through any author’s intention.
+>
+> **Rights and limit.** Page’s translation was first published in 1908 and is in the public domain in the United States; Molière’s French is of 1666. The dependence is a translator’s importation, verified by setting the two texts side by side; it is not evidence of any biblical allusion by Molière, and this entry does not claim one.
+
 ## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
 
 **As of 25 July 2026.** Everything below states the boundaries of this guide as at that date. Retrieval mechanics, checksums, query detail, discarded leads, and the full reception and proposal audits are in `propers/verified.md` and `research/scope.md` beside this document’s source; they are not repeated here.
 
-**Which edition this is.** This is the *study edition*. It names every appointed element by its Latin incipit, printed heading, reference and marginal number, gives its text in English from an identified public-domain witness, and quotes the appointed Latin only where an argument turns on the wording. It does not reproduce the appointed Latin in full. The companion *full-text edition* of this guide, published at the same identity with a `-full-text` suffix, prints the complete appointed Latin with the same English and imports these sections unchanged. The two editions rest on one body of research, carry the same collation findings, and share one set of source records; nothing in either is a separate study.
+**Which edition this is.** This canonical full edition prints the complete appointed formulary — the Latin of the 1962 Vatican *editio typica* with the English of the registered public-domain witnesses — and then carries the map, dossiers, commentary, synthesis, and apparatus from the same source leaf.
 
 **Edition and formulary identity.** The work is the temporal formulary printed *DOMINICA NONA post Pentecosten*, *II classis*, on pp. 388–389 of the 1962 *editio typica* of the *Missale Romanum* (Vatican City: Typis Polyglottis Vaticanis), with marginal numbers 1522–1531. Green follows the general rubrics for Sundays after Pentecost and is not printed on those pages. The formulary appoints the *Credo* and the Preface of the Most Holy Trinity, and appoints no Tract, Sequence, second oration, blessing or ritual text.
 
@@ -559,7 +701,7 @@ Three verified afterlives of wording from the scriptural propers, each one a use
 
 **Rights.** The 1962 Latin propers are received liturgical text of the Roman Rite and are in the public domain; the project claims no rights in them. Both digitisations used to verify them are third-party artifacts whose own rights status the repository’s source records list as unresolved; neither is redistributed here. Quotations from sources still in copyright are avoided or kept to short compass with attribution, as noted at each point of use. The common reuse notice on the final page states the outbound boundary and does not relicense any of this material. Nothing here is permission to extract and redistribute the incorporated liturgical text independently.
 
-**Review state.** This document has had internal production review only: source collation, build, and page-by-page visual inspection by the same agent that produced it. It has received no independent liturgical, theological, specialist, rights or ecclesiastical review, and carries no imprimatur, nihil obstat or ecclesiastical approval. The work-specific liturgical-text-permission question recorded in the repository’s audit records for this leaf remains open; nothing in this appendix weakens or redescribes it. Distribution approval, where it exists, attaches to an exact PDF snapshot and to nothing else.
+**Review state.** This document has had internal production review only: source collation, build, and page-by-page visual inspection by the same agent that produced it. It has received no independent liturgical, theological, specialist, rights or ecclesiastical review, and carries no imprimatur, nihil obstat or ecclesiastical approval. The exact published PDF snapshots have distribution authorization under the release record; that authorization does not relicense the incorporated liturgical text for independent extraction and does not constitute any of the outstanding reviews.
 
 ## References {#references .unnumbered}
 
@@ -641,7 +783,7 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 ## Generation Metadata {#generation-metadata .unnumbered}
 
-**Last revised (UTC):** 2026-07-26T02:48:29Z
+**Last revised (UTC):** 2026-07-26T20:01:14Z
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
@@ -650,5 +792,11 @@ Only sources actually used above, with loci sufficient to check the claims made 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Agent/runtime:** Anthropic Claude Code agent (rebuild under the published-text-and-English policy: English sourced from the registered Douay-Rheims and Cummiskey corpora, appointed Latin withdrawn from the page except where an argument turns on it, collation and attribution findings consolidated, typesetting; audit of every English quotation against the registered Douay-Rheims and Cummiskey records, psalm-numbering and American-edition corrections, cross-leaf build-dependency registration, and page-by-page review); Claude Code CLI 2.1.219; unexposed: server revision
+
+**Model:** `gpt-5.6-sol`; `effort=ultra`
+
+**Agent/runtime:** OpenAI Codex agent (component architecture, source-grounded synthesis, full and synthesis edition restructuring, and internal validation of the Claude-authored work); Codex CLI 0.144.6; API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex agent (canonical-identity migration, release and audit reconciliation, deterministic rebuild, web conversion, and page-by-page production review of the Claude-authored work); Codex CLI 0.144.6; API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -1,13 +1,13 @@
-# Bread from Heaven — Held Draft Scope
+# Bread from Heaven — Scope
 
 ## Identity and governing question
 
 - **Provider and collection:** OpenAI GPT; `articles/scripture/`.
 - **Genre and profile:** single-claim scriptural reception study governed by
   `guidance/articles.md`, especially “Scriptural studies.”
-- **Publication state:** `main.tex` is the canonical held source. It must not
-  enter catalogs, manifests, installed PDFs, or tracked web editions until its
-  independent specialist gates are closed and release is separately authorized.
+- **Publication state:** internally approved for publication on 2026-07-26
+  under express authorization to publish while accurately disclosing that
+  independent specialist review remains outstanding.
 - **Reader:** a Catholic reader testing the familiar conjunction of John 6 with
   Bethlehem, the manger, and the swaddled child.
 - **Question:** how early and how directly does Christian reception join John
@@ -30,7 +30,7 @@
    Four Homilies as doubtful or spurious. It cannot support a third-century
    attribution.
 5. No controlled early witness consulted so far turns the swaddling cloths
-   themselves into Eucharistic linens. Their role in the draft is incarnational
+   themselves into Eucharistic linens. Their role in the study is incarnational
    and canonical; any further connection is labeled project synthesis.
 
 ## Included and excluded
@@ -55,32 +55,30 @@ its exact witness; the final canonical conjunction remains project synthesis.
 Publication must quote English Scripture only from the registered public-domain
 Douay–Rheims. Patristic English now consulted is in public-domain ANF/NPNF or
 Library of Fathers translations, but exact editions and rights must be recorded
-before quotation. The draft mostly paraphrases.
+before quotation. The study mostly paraphrases.
 
-## Outstanding gates
+## Disclosed limitations and future improvements
 
-- Collate every English Scripture clause against the registered Douay–Rheims.
-- Complete a recorded collation of the registered Greek John artifact at every
-  cited locus and read the registered Greek Luke artifact at all used loci.
+- A future critical revision should collate the Vulgate and an independently
+  controlled modern critical Greek edition rather than relying on the
+  Robinson–Pierpont artifact's compact comparison apparatus.
 - Read Augustine's Latin Tractates 25–27 and Chrysostom's Greek or a critical
   edition at the exact loci.
 - Collate Cyril of Alexandria against Pusey's Greek edition.
 - Establish the modern critical attribution and date range of the
   pseudo-Gregorian Nativity homily.
-- Bind and verify Trent XIII, *Sacrosanctum Concilium* 47, the exact Catechism
-  paragraphs, and the precise loci in *Mysterium fidei*, *Ecclesia de
-  Eucharistia*, and *Sacramentum caritatis* used in the final version.
+- Bind the exact Catechism paragraphs if the Catechism synthesis is expanded
+  beyond the present descriptive overview.
 - Bind Aquinas's exact John 6 lectures and ST III articles rather than relying
   on work-level synthesis.
-- Complete reusable source records and publication-local bindings.
-- Obtain independent patristic and theological review.
-- Obtain independent patristic, exegetical, theological, and rights review;
-  complete exact source bindings and the outstanding collations; then consider
-  installation and catalog/manifest inclusion only under separate authority.
+- Complete reusable source records for the patristic witnesses now identified
+  by exact work and locus in the local audit.
+- Obtain independent patristic, exegetical, theological, and rights review.
+  Publication does not imply that those reviews occurred.
 
 ## Production and first-baseline verdict
 
-On 2026-07-26 the canonical held source rendered as an eleven-page,
+On 2026-07-26 the canonical source rendered as an eleven-page,
 warning-free Letter PDF. Every page was inspected at useful resolution for
 clipping, overlap, malformed text, bad breaks, and metadata placement. The
 generated Markdown was reviewed for heading, list, reference, metadata,
@@ -88,5 +86,5 @@ rights-colophon, and endnote fidelity.
 
 Both initial-baseline candidates and the consequential-claim comparison are
 recorded in `research/staleness-review-2026-07-26.md`. They agree in substance;
-the full `main.tex` is preferred. The shared ledger remains untouched for
-integrating-root review. These production results close no specialist gate.
+the full `main.tex` is preferred. The shared release ledger and catalogs remain
+for integrating-root publication work.

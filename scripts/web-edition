@@ -385,7 +385,14 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     main = SRC / provider / leaf / "main.tex"
     if not main.is_file():
         raise ConversionError(f"no such document: {main}")
-    head, tail = split_document(main.read_text(encoding="utf-8"))
+    source = main.read_text(encoding="utf-8")
+    if (main.parent / "proper-components.toml").is_file():
+        branch = re.compile(
+            r"\\ifdefined\\TriptychSynthesisEdition(.*?)\\else(.*?)\\fi",
+            re.DOTALL,
+        )
+        source = branch.sub(lambda match: match.group(2), source)
+    head, tail = split_document(source)
     # Preamble includes supply definitions but never content, so they are not
     # scanned; only what reaches the body can lose scholarship.
     preamble = assemble(head, provider, None)

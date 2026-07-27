@@ -1,9 +1,9 @@
 \input{common/preamble}
-\ifdefined\TriptychFullTextEdition
-  \input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/format}
-  \hypersetup{pdftitle={Ninth Sunday after Pentecost (Full-Text Edition)},pdfsubject={Full-text source-audited companion to the 1962 Roman Missal propers}}
+\input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/format}
+\ifdefined\TriptychSynthesisEdition
+  \hypersetup{pdftitle={Ninth Sunday after Pentecost (Synthesis Edition)},pdfsubject={Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted}}
 \else
-  \hypersetup{pdftitle={Ninth Sunday after Pentecost},pdfsubject={Source-audited preparation guide to the 1962 Roman Missal propers}}
+  \hypersetup{pdftitle={Ninth Sunday after Pentecost (Full Edition)},pdfsubject={Full source-audited guide to the 1962 Roman Missal propers}}
 \fi
 \begin{document}
 
@@ -80,27 +80,25 @@ Anagogical & Rescue from evil, the reckoning of visitation, redemption enacted i
 
 \clearpage
 
-\ifdefined\TriptychFullTextEdition
-\input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/sections/05-appointed-text}
+\ifdefined\TriptychSynthesisEdition\else
+\input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/05-appointed-text}
 \clearpage
 \fi
 
+\newcommand{\TriptychBriefSynthesis}{%
 \section*{The Propers: Themes and Movement}
+\label{triptych:brief-synthesis:start}
 
 \begin{massbox}{Governing thesis: presumed standing yields to received abiding}
 God helps the threatened and reforms desire; Paul turns sacramental privilege into a warning against self-reliance; Christ visits Jerusalem through tears and prophetic correction; the Eucharistic memorial gives the abiding, purification, and one-body unity that human standing cannot secure.
 \end{massbox}
 
-\begin{center}
-\begin{tikzpicture}[x=3.55cm]
-\node[guide node,text width=2.65cm] (ask) at (0,0) {\textbf{1. Receive help}\\Mercy --- desire};
-\node[guide node,text width=2.65cm] (heed) at (1,0) {\textbf{2. Relinquish presumption}\\Figure --- warning};
-\node[guide emphasis,text width=2.65cm] (visit) at (2,0) {\textbf{3. Receive visitation}\\Tears --- reform};
-\node[guide node,text width=2.65cm] (abide) at (3,0) {\textbf{4. Abide as one}\\Memorial --- body};
-\foreach \x/\y in {ask/heed,heed/visit,visit/abide}
-  \draw[guide arrow] (\x) -- (\y);
-\end{tikzpicture}
-\end{center}
+\begin{enumerate}[leftmargin=1.5em,itemsep=0.1em]
+\item \textbf{Receive help:} mercy reforms desire.
+\item \textbf{Relinquish presumption:} figure becomes warning.
+\item \textbf{Receive visitation:} tears issue in reform and teaching.
+\item \textbf{Abide as one:} memorial bears fruit in a body.
+\end{enumerate}
 
 \noindent\emph{Reading order.} The stages follow the appointed sequence. Their architecture is this guide's source-grounded synthesis; no cited author is presented as the designer of the complete formulary.
 
@@ -141,7 +139,13 @@ Origen ends the same Gospel homily by summoning hearers to the Savior's banquet,
 \textbf{Abiding embodied} & The memorial enacts redemption; received Communion is asked to bear purification and unity amid triune praise. & The Passion is not repeated, and sacramental fruit is not private possession.\\
 \end{threestable}
 
+\label{triptych:brief-synthesis:end}
 \clearpage
+}
+\ifdefined\TriptychSynthesisEdition
+\TriptychBriefSynthesis
+\fi
+\ifdefined\TriptychSynthesisEdition\else
 \section*{The Propers: Detailed Commentary}
 
 \subsection*{Help that reforms the one who asks\enspace\properrefs{Int., Coll., All.}}
@@ -228,20 +232,13 @@ Later Roman reception makes the Postcommunion's two petitions mutually interpret
 \textbf{Postcommunion} & Sacramental communion acts in the recipients. & Purification and unity. & Neither emotion nor sociology exhausts the fruit.\\
 \textbf{Trinity Preface} & The appointed preface directs praise to the triune God. & Doxological worship. & It is liturgical context, not an eleventh proper.\\
 \end{fourstable}
+\fi
 
-\sectionguard
-\section*{The Propers: Notable and Quotable}
+\ifdefined\TriptychSynthesisEdition\else
+\TriptychBriefSynthesis
+\fi
 
-{\small
-\begin{itemize}[itemsep=0.35em,topsep=0.2em,parsep=0pt]
-\item \textbf{Gospel, Luke~19:42 --- Constance Holme, \emph{The Things Which Belong---} (1925).} Holme's title lifts the unfinished cadence of ``the things which belong unto thy peace.'' Within the novel, domestic and marital conflict eventually turns the phrase toward what truly belongs to one woman's peace. The biblical lament becomes a literary test of costly recognition rather than a decorative title.
-
-\item \textbf{Gospel, Luke~19:44 --- Washburn ``A'' Mill memorial, Minneapolis.} Documentation for the mill records the 1878 flour-dust explosion and a memorial inscription adapting ``not one stone upon another.'' Siege language is redirected to industrial catastrophe and public remembrance.
-
-\item \textbf{Gospel, Luke~19:46 --- Harry Graham, \emph{The Mother of Parliaments} (1910).} Graham recounts Judge David Jenkins calling the House of Commons a ``den of thieves'' during seventeenth-century political conflict. A prophetic Temple accusation becomes a dangerous parliamentary insult; the anecdote is political afterlife, not an endorsement of Jenkins's cause.
-
-\end{itemize}
-}
+\input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/35-source-grounded-synthesis}
 
 \sectionguard
 \section*{The Propers: Interpretive Possibilities}
@@ -268,11 +265,13 @@ Later Roman reception makes the Postcommunion's two petitions mutually interpret
 \noindent\textbf{The way of escape can be ecclesial.\enspace\properrefs{Ep., Comm., Postcomm.}}
 \emph{Classification: near analogue located.} Paul promises endurance in the plural; John describes mutual abiding; the final prayer asks unity. Their liturgical relation resists the solitary slogan that a sufferer must handle everything alone: God may supply endurance through a body whose members bear one another. Its fruit is help-seeking and shared responsibility. The texts do not guarantee that every community responds faithfully, and unity never requires concealing abuse.
 
+\input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/40-notable}
+
 \Needspace{12\baselineskip}
 \section*{Appendix: Scope and Qualifications}
 
 \begin{studyframe}
-\textbf{Scope.} This companion studies the recurring \latin{Dominica Nona post Pentecosten}, II class, in the 1962 typical Missal. Its formulary and rubrics were facsimile-collated, and its appointed texts were read in canonical context against a bounded public corpus of ancient, medieval, and later reception. It is not a civil-date assembly sheet or exhaustive corpus survey. External liturgical wording retains its own rights status. The guide is internally source-audited; \texttt{liturgical-text-permission}, independent specialist or ecclesiastical review, and renewed exact-snapshot clearance remain outstanding. \textbf{Full records.} \nolinkurl{propers/verified.md}; \nolinkurl{research/scope.md}.
+\textbf{Scope.} This companion studies the recurring \latin{Dominica Nona post Pentecosten}, II class, in the 1962 typical Missal. Its formulary and rubrics were facsimile-collated, and its appointed texts were read in canonical context against a bounded public corpus of ancient, medieval, and later reception. It is not a civil-date assembly sheet or exhaustive corpus survey. External liturgical wording retains its own rights status. The guide is internally source-audited and its exact published snapshots have distribution authorization under the release record; independent specialist, liturgical, theological, rights, and ecclesiastical review remain outstanding, and no imprimatur or ecclesiastical approval is claimed. \textbf{Full records.} \nolinkurl{propers/verified.md}; \nolinkurl{research/scope.md}.
 \end{studyframe}
 
 \enlargethispage{2\baselineskip}
@@ -316,11 +315,7 @@ Later Roman reception makes the Postcommunion's two petitions mutually interpret
 \vspace{0pt}
 {\fontsize{6.9}{7.3}\selectfont
 \setlength{\parskip}{0pt}
-\ifdefined\TriptychFullTextEdition
-\FullTextGenerationMetadata
-\else
 \input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/generation-metadata}
-\fi
 }
 
 \end{deepstudy}
