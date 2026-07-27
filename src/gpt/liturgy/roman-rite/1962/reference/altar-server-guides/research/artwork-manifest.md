@@ -18,13 +18,17 @@ from the finished images or described as if they had been recorded. The
 composition, correction, generator, date, normalized identity, and known input
 relationships stated below are the complete surviving provenance.
 
-The Low-Mass composition references were project-created renders of the named
-TeX diagram macros. Those reproducible TeX sources, rather than transient
-build rasters, are the durable reference inputs. The sung compositions used
-project-created briefs; no third-party image was supplied as a style or
-composition reference. Corrected assets used their named rejected precursor
-and a project-created correction instruction, but the exact instruction text
-was not preserved.
+The original Low-Mass composition references were project-created renders of
+the named TeX diagram macros. Those reproducible TeX sources, rather than
+transient build rasters, are the durable reference inputs. The current
+`ASG-ART-001`, `ASG-ART-002`, `ASG-ART-005`, and `ASG-ART-006` replacements
+used the prior project-created scene for ceremonial continuity and
+project-created `ASG-ART-011` for visual style. The exact replacement prompts
+and rejected alternatives were not durably recorded and are not reconstructed
+here. The sung compositions used project-created briefs; no third-party image
+was supplied as a style or composition reference. The original corrected
+assets used their named rejected precursor and a project-created correction
+instruction, but the exact instruction text was not preserved.
 
 The files are AI-generated graphite-style illustrations, not drawings made by
 a human illustrator. No entry claims imitation of a named living artist.
@@ -40,26 +44,26 @@ a human illustrator. No entry claims imitation of a named living artist.
   Acolyte at picture-right; all standing with backs to the viewer and hands
   joined; Missal on the Epistle side (picture-right)
 - Setting: generic front-facing Roman altar, three liturgical levels,
-  two candles
-- Production: AI-generated monochrome graphite illustration from a
-  project-created, label-free TikZ composition reference
+  six candles
+- Production: AI-generated monochrome graphite replacement using the prior
+  project-created scene as the ceremonial reference and `ASG-ART-011` as the
+  project style reference
 - Generator: OpenAI image generation tool
 - Generated: 2026-07-27
-- Pixel dimensions: 1867 by 842
+- Pixel dimensions: 1774 by 887
 - Color mode as received: 8-bit sRGB; visually monochrome on white
-- Repository normalization: stripped 8-bit grayscale; PSNR approximately
-  53--55 dB against the received file
+- Repository normalization: received file retained
 - SHA-256:
-  `7d6b00c79e36544d6029583e307db664a913d832cb5cadc1276407f0d69a1090`
+  `3cf46a98da599b2a93e3118709fabce5a941e8cb6faa18ed190707dc3a02f153`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: role capsules for priest and both acolytes; numbered level
   markers
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source asset was
   incorporated; distributed under repository terms only to the extent applicable rights exist
-- Review state: integrated every-page and paired child/trainer screen review
-  passed 2026-07-27; print-size, photocopy, and independent ceremonial review
-  remain pending
+- Review state: generating-agent scene inspection passed 2026-07-27;
+  integrated every-page, paired child/trainer, print-size, photocopy, and
+  independent ceremonial review remain pending
 
 ## ASG-ART-002
 
@@ -74,25 +78,25 @@ a human illustrator. No entry claims imitation of a named living artist.
 - Setting: a consistent generic front-facing Roman altar and graphite grammar
   derived from
   `ASG-ART-001`
-- Production: AI-generated monochrome graphite illustration from a
-  project-created, label-free TikZ composition reference
+- Production: AI-generated monochrome graphite replacement using the prior
+  project-created scene as the ceremonial reference and `ASG-ART-011` as the
+  project style reference
 - Generator: OpenAI image generation tool
 - Generated: 2026-07-27
-- Pixel dimensions: 2058 by 764
+- Pixel dimensions: 1939 by 811
 - Color mode as received: 8-bit sRGB; visually monochrome on white
-- Repository normalization: stripped 8-bit grayscale; PSNR approximately
-  53--55 dB against the received file
+- Repository normalization: received file retained
 - SHA-256:
-  `1362deeeea0d446a014c23d560ae6ab299c45518d4e56cb9a6c63c4c0a926537`
+  `bb74017b83044c6decf0f3eac405f2d95098115bd039cd6f3d88bcc4d7502452`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: role capsules for priest and both acolytes; numbered level
   markers
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source asset was
   incorporated; distributed under repository terms only to the extent applicable rights exist
-- Review state: integrated every-page and paired child/trainer screen review
-  passed 2026-07-27; print-size, photocopy, and independent ceremonial review
-  remain pending
+- Review state: generating-agent scene inspection passed 2026-07-27;
+  integrated every-page, paired child/trainer, print-size, photocopy, and
+  independent ceremonial review remain pending
 
 ## ASG-ART-005
 
@@ -102,24 +106,24 @@ a human illustrator. No entry claims imitation of a named living artist.
 - Purpose: corrected First Acolyte Missal-and-stand transfer
 - Correction: the carried object is the Missal on its stand; Second remains
   clear; the generated art contains no route or label
-- Production: AI-generated monochrome graphite correction of `ASG-ART-003`
-  using the same project-created composition reference
+- Production: AI-generated monochrome graphite replacement using the prior
+  corrected scene as the ceremonial reference and `ASG-ART-011` as the
+  project style reference
 - Generator: OpenAI image generation tool
 - Generated: 2026-07-27
-- Pixel dimensions: 2002 by 786
+- Pixel dimensions: 1942 by 809
 - Color mode as received: 8-bit sRGB; visually monochrome on white
-- Repository normalization: stripped 8-bit grayscale; PSNR approximately
-  53--55 dB against the received file
+- Repository normalization: received file retained
 - SHA-256:
-  `48dca6c2740d9be21a43812b40e4537b7bcee98482cc233c19f62d113e8ffafe`
+  `c221df6d3c1c5b191555ccc90748d1c9ec47fa28ae82ad7f7f9d2dd496d0b2b6`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: role capsules and down-centre-up Gospel-side route
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source asset was
   incorporated; distributed under repository terms only to the extent applicable rights exist
-- Review state: integrated every-page and paired child/trainer screen review
-  passed 2026-07-27; print-size, photocopy, and independent ceremonial review
-  remain pending
+- Review state: generating-agent scene inspection passed 2026-07-27;
+  integrated every-page, paired child/trainer, print-size, photocopy, and
+  independent ceremonial review remain pending
 
 ## ASG-ART-006
 
@@ -128,24 +132,24 @@ a human illustrator. No entry claims imitation of a named living artist.
 - Purpose: corrected Low Mass Lavabo service
 - Correction: Second pours water over the priest's extended fingers into the
   bowl while First presents the towel
-- Production: AI-generated monochrome graphite correction of `ASG-ART-004`
-  using the same project-created composition reference
+- Production: AI-generated monochrome graphite replacement using the prior
+  corrected scene as the ceremonial reference and `ASG-ART-011` as the
+  project style reference
 - Generator: OpenAI image generation tool
 - Generated: 2026-07-27
-- Pixel dimensions: 2055 by 765
+- Pixel dimensions: 1832 by 859
 - Color mode as received: 8-bit sRGB; visually monochrome on white
-- Repository normalization: stripped 8-bit grayscale; PSNR approximately
-  53--55 dB against the received file
+- Repository normalization: received file retained
 - SHA-256:
-  `3e27fd84c32d3c6541e87ac9eefa1b37c96d3103fcd4558735ade660a7f0af75`
+  `29770604e7935e59b81100f52d78c6350c567970e64c4c39245141067742361a`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: priest and acolyte role and object capsules
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source asset was
   incorporated; distributed under repository terms only to the extent applicable rights exist
-- Review state: integrated every-page and paired child/trainer screen review
-  passed 2026-07-27; print-size, photocopy, and independent ceremonial review
-  remain pending
+- Review state: generating-agent scene inspection passed 2026-07-27;
+  integrated every-page, paired child/trainer, print-size, photocopy, and
+  independent ceremonial review remain pending
 
 ## ASG-ART-003
 
@@ -615,6 +619,24 @@ the larger received rasters.
   integrated every-page, paired-use, print-size, photocopy, and independent
   ceremonial review remain pending
 
+## Active-consumer and review audit
+
+The current Low-Mass child and trainer sources consume fifteen assets:
+`ASG-ART-001`, `ASG-ART-002`, `ASG-ART-005`, `ASG-ART-006`, and
+`ASG-ART-011`--`ASG-ART-021`. The Missa Cantata guide consumes
+`ASG-ART-009`; the Solemn Mass guide consumes `ASG-ART-010`. Assets
+`ASG-ART-003`, `ASG-ART-004`, `ASG-ART-007`, and `ASG-ART-008` are rejected
+precursors retained only for provenance and have no publication consumer.
+
+The four replacement files were inspected as standalone scenes on 2026-07-27
+for the recorded actor count, posture, object state, absence of embedded
+semantic text, and broad continuity with the later Low-Mass graphite grammar.
+That generating-agent inspection is not an integrated page review or an
+independent ceremonial review. All seventeen active publication assets still
+require the review state recorded in their individual rows; no aggregate
+build, catalog, installation, or release record may silently advance those
+asset-level states.
+
 ## Size audit
 
 The repository-wide 2026-07-27 screen found no installed PDF that required
@@ -625,9 +647,14 @@ JPEG evidence artifacts totalled 7.90 MiB; their exact acquired bytes remain
 unchanged because source records bind them.
 
 The altar illustrations were the only disproportionate publishing rasters.
-All received RGB files were visually monochrome. Normalization retained pixel
-dimensions, stripped nonessential metadata and color channels, and produced
-8-bit grayscale PNGs:
+The following table records the superseded 2026-07-27 normalization pass over
+the then-current `ASG-ART-001`--`ASG-ART-010` binaries. It remains provenance
+for the rejected precursors and unchanged `ASG-ART-003`, `ASG-ART-004`, and
+`ASG-ART-007`--`ASG-ART-010`; its rows for `ASG-ART-001`, `ASG-ART-002`,
+`ASG-ART-005`, and `ASG-ART-006` do not describe the current replacement
+files. All received RGB files in that historical pass were visually
+monochrome. Normalization retained pixel dimensions, stripped nonessential
+metadata and color channels, and produced 8-bit grayscale PNGs:
 
 | Asset | Received bytes | Normalized bytes | PSNR |
 |---|---:|---:|---:|
@@ -643,14 +670,23 @@ dimensions, stripped nonessential metadata and color channels, and produced
 | ASG-ART-010 | 1,708,567 | 633,943 | 54.0732 dB |
 
 Full-size visual comparison found no material line, tonal, or print-detail
-loss. Every consuming guide was then rebuilt and reviewed. The project-wide
-thresholds and preservation boundary are recorded in
-`guidance/repository.md`.
+loss in that historical normalization pass. The project-wide thresholds and
+preservation boundary are recorded in `guidance/repository.md`.
 
-The normalized identities were independently rechecked on 2026-07-27. All ten
-files are 8-bit grayscale PNGs, each is smaller than 1 MiB, and each is below
-two megapixels. The six publication-consumed assets are placed above the
-ordinary 300-effective-dpi floor and below the 450-effective-dpi review
-trigger at their largest declared placement. Thus the tracked files conform
-to the monochrome publishing-raster policy; this technical result does not
-complete the pending physical print and photocopy reviews.
+The four current replacements are the received 8-bit sRGB PNGs recorded in
+their rows:
+
+| Asset | Dimensions | Bytes | SHA-256 |
+|---|---:|---:|---|
+| ASG-ART-001 | 1774 by 887 | 1,395,072 | `3cf46a98da599b2a93e3118709fabce5a941e8cb6faa18ed190707dc3a02f153` |
+| ASG-ART-002 | 1939 by 811 | 1,293,432 | `bb74017b83044c6decf0f3eac405f2d95098115bd039cd6f3d88bcc4d7502452` |
+| ASG-ART-005 | 1942 by 809 | 1,231,511 | `c221df6d3c1c5b191555ccc90748d1c9ec47fa28ae82ad7f7f9d2dd496d0b2b6` |
+| ASG-ART-006 | 1832 by 859 | 1,368,663 | `29770604e7935e59b81100f52d78c6350c567970e64c4c39245141067742361a` |
+
+Each replacement is below two megapixels but exceeds the repository's
+1-MiB publishing-raster investigation threshold and remains RGB while the
+work declares monochrome. No normalization, comparison metric, effective-DPI
+placement audit, or full-size consumer-page comparison has yet been recorded
+for these replacement bytes. Those checks remain open together with the
+integrated, paired-use, print-size, photocopy, and independent ceremonial
+reviews stated above.

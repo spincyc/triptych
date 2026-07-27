@@ -87,7 +87,10 @@ four empty-handed torchbearers in two pairs; MC; and the sacred ministers. At
 SO-068 free-handed Th, torchbearers, and MC genuflect if the Sacrament is
 reserved and make a profound bow if it is not; boat, candle, and cross bearers
 remain upright and bow the head. Bb gives the boat to the adult at SO-070.
-Special rites require separate sheets.
+Special rites require separate sheets. When SO-063 sends the team to the
+parish's separate procession sheet, that sheet must carry every role through
+its object, route, final reverence, and sacristy return. The team then rejoins
+SO-070 for the common sacristy reverence and final person-and-object count.
 
 Sacred-minister and choir actions appear only as cues and handoff points. Lay
 servers do not add Deo gratias after the chanted Epistle or Laus tibi, Christe
@@ -112,13 +115,27 @@ run begins on the next odd page after four complete six-up response sheet
 pairs. Every US-letter portrait sheet places six cards on each face in a
 two-column by three-row grid; each back mirrors every row for long-edge
 printing and has no blank card. The full guide has no embedded card range.
-The installed full guide is twenty-eight physical pages; the installed
+The current installed full guide is twenty-seven physical pages; the installed
 companion is twelve. The full guide keeps the complete
 `Present; do not push` movement unit on one page. Production review confirmed
 response fronts on pages 1, 3, 5, and 7, action fronts on pages 9 and 11,
 mirrored backs, border alignment, legibility, and safe containment of the
-R08B continuation note. The current corrected guide and companion are
-installed at their reviewed exact identities.
+R08B continuation note. The installed guide and companion remain at their
+recorded reviewed identities. The present source revision adds explicit
+standalone-role common-route and SO-063 continuation controls. It is an
+uninstalled candidate until rebuilt and reviewed; the preceding installed
+identities do not verify these changed pages. Actual-size role-packet and
+cue-card use, physical duplex and cut alignment, photocopy performance,
+intended-reader testing, and independent liturgical, ceremonial,
+pronunciation, pedagogical, rights, and ecclesiastical review remain pending.
+
+The candidate built on 27 July 2026 is 28 pages with SHA-256
+`8318be36fd284e7a57399ab9b3ee0e317d711c60158adb1e5565d457d41971c8`.
+Two pdfTeX passes settled its references, and the final log has no fatal error,
+undefined reference, box warning, or rerun request. A bounded every-page
+contact-sheet review found no clipping, collision, accidental blank, broken
+sequence, or terminal-fit defect. This technical screen review does not
+complete any pending physical, reader, or independent review.
 
 The action-card cross-view is anchored to the chronology: SO-A02 fixes the
 boat and thurible endpoints at all four incense stations; SO-A06 records the

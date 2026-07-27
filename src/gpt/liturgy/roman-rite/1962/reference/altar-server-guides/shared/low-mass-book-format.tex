@@ -140,13 +140,6 @@
       \vspace{2pt}
       {\fontsize{11}{13.2}\selectfont\RaggedRight
         \ServerSoundData{#3}\par}
-      \ifLMSuppressTrainerMeaning\else
-        \vspace{5pt}
-        {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
-        \vspace{2pt}
-        {\fontsize{11}{13.2}\selectfont\RaggedRight
-          \ServerMeaningData{#3}\par}
-      \fi
     \end{minipage}
     \par\vspace{8pt}\hrule height 0.5pt
   \else
@@ -328,9 +321,6 @@
     \vspace{5pt}
     {\fontsize{9}{10.8}\selectfont\bfseries SAY IT\par}
     {\fontsize{11}{13.2}\selectfont\RaggedRight #4\par}
-    \vspace{4pt}
-    {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
-    {\fontsize{11}{13.2}\selectfont\RaggedRight #5\par}
   \else
     {\fontsize{12}{14.5}\selectfont\bfseries\RaggedRight #3\par}
     \vspace{6pt}

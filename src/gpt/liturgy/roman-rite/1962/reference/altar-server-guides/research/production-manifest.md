@@ -2,15 +2,36 @@
 
 Audit record updated through 2026-07-27 (America/Chicago).
 
-This record distinguishes the immutable six-PDF predecessor snapshot from the
-seven publications now installed. The redesigned Low-Mass child booklet, new
-trainer manual, and new flash cards are installed evaluation publications.
-Their installation was expressly authorized after the pending actual-size,
-physical-duplex, photocopy, paired-use, independent, rights, and
-ecclesiastical-review gates were disclosed. That evaluation override records
-installation only: it neither completes those gates nor release-authorizes the
-three PDFs. The four sung PDFs remain byte-for-byte identical to their
-installed and authorized artifacts.
+## Current installed public-review snapshot
+
+This table is the sole current identity ledger for the seven installed
+altar-server publications. Every row is a publicly discoverable alpha review
+copy. Public visibility does not represent actual-size, physical-duplex,
+photocopy, intended-reader, independent, rights, or ecclesiastical-suitability
+review as complete. Older tables below are dated historical snapshots and do
+not control the current installed files.
+
+| Publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 | Current review state |
+|---|---|---:|---:|---:|---|---|
+| `01-low-mass` | `2026-07-27T18:33:00Z` | 29 | 0 | 7,847,547 | `48eb5d740711637337a68fcb60d8d7848a8b58270f4cf3ebf677a74021a6e207` | public alpha review; four replacement scenes received generating-agent inspection; integrated every-page and paired-use review pending |
+| `01-low-mass-trainer-manual` | `2026-07-27T18:33:00Z` | 29 | 0 | 7,860,317 | `80972c0e8578950fadbb41aaa2f75bedf5ae26d0bbc15e6983f68df52ebbb9f8` | public alpha review; page-aligned replacement-art build; integrated every-page and paired-use review pending |
+| `01-low-mass-flash-cards` | `2026-07-27T18:33:00Z` | 6 | 22 | 250,568 | `c88594e4509ae98fac12429c3b23f6960ab0f89edae811e375b930d1a56332b4` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `02-missa-cantata` | `2026-07-27T18:30:38Z` | 27 | 0 | 1,258,883 | `bbaad39b0ab61b5348d259a37623aeccb10aec7b83bdd4420802b0a2fd960de7` | public alpha review; physical, intended-reader, independent, rights, and ecclesiastical review pending |
+| `02-missa-cantata-cue-cards` | `2026-07-27T18:30:38Z` | 12 | 36 | 621,559 | `b681d846c125e417f034f109f700ed34beb2e7179ead34aaa653644d3837318e` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `03-solemn-mass` | `2026-07-27T18:31:29Z` | 28 | 0 | 1,304,972 | `8318be36fd284e7a57399ab9b3ee0e317d711c60158adb1e5565d457d41971c8` | public alpha review; physical, intended-reader, independent, rights, and ecclesiastical review pending |
+| `03-solemn-mass-cue-cards` | `2026-07-27T18:31:29Z` | 12 | 36 | 627,446 | `3c46449cd8125c0ac834bcf2d1b77c4ec2491184be1b3483bd1627a1f2dbab8a` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+
+The current family totals 143 pages: 113 guide or manual pages and 30 card
+pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata
+cards, and 36 Solemn-Mass cards. The four changed Low-Mass replacement-art
+files make the two Low-Mass guide PDFs new byte identities. Their generation
+records and all five sibling records were advanced and rebuilt during the
+final metadata reconciliation; the table records those final installed
+identities.
+
+The sections below preserve the development and review history. A historical
+authorization or completed screen review applies only to the exact bytes named
+in its section.
 
 ## Historical reviewed predecessor snapshot
 
@@ -41,7 +62,7 @@ screen review, and correct six-up card pairing. Those results remain
 historical evidence for the exact PDFs named above. They are not reused as
 verification of the redesigned Low-Mass publications.
 
-## Current installed evaluation set
+## Historical installed evaluation set — 2026-07-26
 
 The Low-Mass child and trainer timestamps identify their final shared ceremony
 state. The flash-card timestamp is independent and also inherits the trainer
@@ -59,7 +80,7 @@ reproduced the exact flash-card and four sung-form hashes below.
 | `03-solemn-mass` | `2026-07-23T02:31:26Z` | 31 | 0 | 681,161 | `c00ddb2319aa14b703c24655f28d36de4e36434e6c98fde651d65c1e65e4ec63` | unchanged; installed exact match |
 | `03-solemn-mass-cue-cards` | `2026-07-23T02:31:26Z` | 12 | 36 | 479,127 | `725b02f8f11dbcc2dd350c95cea8ea82a2626f48d7249efd07786886fb26fed7` | unchanged; installed exact match |
 
-The current source set is 150 pages: 120 guide or manual pages and 30 card
+That historical source set was 150 pages: 120 guide or manual pages and 30 card
 pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata
 cards, and 36 Solemn-Mass cards. It has 70 distinct card IDs: 22 LM-F
 selections, 24 shared R responses, 12 MC actions, and 12 SO actions. The shared
@@ -407,12 +428,14 @@ owned by TeX. No clipping, collision, accidental blank, broken sequence,
 orphaned trainer rail, card-border incursion, or unsafe diagram claim was
 found.
 
-The installed PDFs reproduce these exact reviewed bytes. Physical actual-size,
+At that checkpoint the installed PDFs reproduced these exact reviewed bytes.
+Later source changes superseded the guide identities as recorded in the
+current ledger. Physical actual-size,
 duplex, photocopy, intended-reader, independent, rights, and
 ecclesiastical-suitability maturity reviews remain pending; the maintainer's
 release authorization does not represent those reviews as complete.
 
-## Reader-first and complete-pencil review — 2026-07-27
+## Historical reader-first and initial complete-pencil snapshot — 2026-07-27
 
 The four guide editions were rebuilt after moving qualifications, checklists,
 trainer matter, and source apparatus behind the serving routes. The Low Mass
@@ -435,7 +458,10 @@ placement, clipping, collisions, accidental blanks, broken routes, and
 terminal fit. The child and trainer editions remain page-aligned. Their
 29-page extent is one page greater than the immediately preceding 28-page
 snapshot, so no page-count reduction is claimed for that pair. Missa Cantata
-remains at 27 pages; Solemn Mass falls from 28 to 27 pages. The four installed
-PDFs reproduce the exact hashes above. The previously recorded physical,
+remains at 27 pages; Solemn Mass falls from 28 to 27 pages. At that review
+checkpoint the four installed PDFs reproduced the exact hashes above. The
+later replacement of four Low-Mass scenes superseded the two Low-Mass
+identities; the Missa Cantata and Solemn Mass identities remain current. The
+previously recorded physical,
 duplex, intended-reader, independent, rights, and ecclesiastical-suitability
 maturity reviews remain pending.

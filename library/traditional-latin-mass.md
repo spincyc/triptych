@@ -12,16 +12,19 @@ These studies concern the books and calendar in force in 1962. They do not estab
 | **Assembling the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | Calendar, precedence, Mass classes, formularies, and commemorations. |
 | **The 1962 Roman Calendar** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | Construction history and complete recurring universal and United States inventories. |
 
-## Altar Server Guides
+<a id="altar-server-guides"></a>
+## Altar Server Guides — Public-Alpha Review Copies
 
 Print-first training guides for young servers, their trainers, and repeated
-practice. Local custom and the celebrant's directions govern.
+practice. These seven PDFs are provisional public-alpha review copies, not
+final training editions or official liturgical books. Local custom and the
+celebrant's directions govern.
 
 | Form | ChatGPT | Claude | Best for |
 | --- | --- | --- | --- |
-| **Low Mass Child Booklet** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf) · [Manual](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf) · [Cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf) | — | Ages 8–10; a continuous two-server route, trainer notes, and a 22-card verbal deck. |
-| **Serving Missa Cantata** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf) · [Cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf) | — | Ages 8–14; role-first practice, an eight-scene map, and a complete trainer chronology. |
-| **Serving Solemn Mass** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf) · [Cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf) | — | Ages 8–14; role-first practice, a seven-scene map, and a complete trainer chronology. |
+| **Low Mass Child Booklet** | [Review booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf) · [Review trainer manual](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf) · [Review flash cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf) | — | **Status: public-alpha review.** Ages 8–10; a continuous two-server route, trainer notes, and a 22-card verbal deck. |
+| **Serving Missa Cantata** | [Review booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf) · [Review cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf) | — | **Status: public-alpha review.** Ages 8–14; role-first practice, an eight-scene map, and a complete trainer chronology. |
+| **Serving Solemn Mass** | [Review booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf) · [Review cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf) | — | **Status: public-alpha review.** Ages 8–14; role-first practice, a seven-scene map, and a complete trainer chronology. |
 
 ## Sanctuary Pictorial Dictionaries — Priestly Review Copies
 

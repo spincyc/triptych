@@ -15,20 +15,19 @@
 
 ## Reader order
 
-1. Title and contents.
-2. Trainer-and-server Start Here path, Today's Mass fill-in, and the server's
-   eight-scene whole-Mass map.
-3. Form boundary, model roster, source labels, movement vocabulary, and
-   incense safety.
-4. Standalone MC, A1, A2, TH, BB, torchbearer, CB, and L role routes, followed
-   by scene-sized rehearsal and mastery checks.
-5. MC-001--MC-057 complete chronological trainer reference and branch summary.
-6. Pronunciation key, six short response lessons, Missa-Cantata voice map and
+1. Title, minimum form and voice orientation, and a direct page pointer for
+   each declared role.
+2. Standalone MC, A1, A2, TH, BB, torchbearer, CB, and L role routes as the
+   learner's main guidance.
+3. Whole-team start sheet, Today's Mass fill-in, eight-scene rehearsal map,
+   roster orientation, movement vocabulary, and incense safety.
+4. MC-001--MC-057 complete chronological trainer reference and branch summary.
+5. Pronunciation key, six short response lessons, Missa-Cantata voice map and
    Mass-order consolidation, followed by cumulative verbal drills.
-7. A compact printing, actor, roster, branch, and safety key that points to the
+6. A compact printing, actor, roster, branch, and safety key that points to the
    paired downloads in the same catalog row. No card faces are embedded in
    this guide.
-8. Scope, edition, qualifications, references, and generation metadata.
+7. Scope, edition, qualifications, references, and generation metadata.
 
 ## Branches and rejoins
 
@@ -88,18 +87,30 @@ combine cue recall, canonical answer, learner syllables and stress, sound line,
 and meaning on one front/back pair. Response cards follow the six lesson groups
 rather than numerical order and carry an `MC` form marker with the visible ID.
 Every front gives the complete formula or verse selected for practice; a
-variable-reading example is complete, facsimile checked, and labeled as an
-example rather than a universal proper ending. The paired full guide's key
-states the form-specific actor and mode distinction once.
+variable-reading example is complete and facsimile checked. R15 visibly says
+`Example Epistle ending—Fifth Sunday after Pentecost`, and R17 visibly says
+`Example Gospel ending—Fifth Sunday after Pentecost`; neither face presents
+that example as a universal proper ending. The paired full guide's key states
+the form-specific actor and mode distinction once.
 
 MC-A01--MC-A12 follow the integrated response run in the companion. The
 companion begins with its first response front on physical page 1; the action
 run begins on the next odd page after four complete six-up response sheet
-pairs. The full guide has no embedded card range. The installed full guide is
-twenty-seven physical pages; the installed companion is twelve.
-Production review confirmed response fronts on pages 1, 3, 5, and 7, action
-fronts on pages 9 and 11, mirrored backs, border alignment, and legibility.
-Both reviewed publications are installed at their current exact identities.
+pairs. The full guide has no embedded card range. The current installed
+public-review full guide is twenty-seven physical pages; the installed
+companion is twelve. Electronic review confirmed response fronts on pages 1,
+3, 5, and 7, action fronts on pages 9 and 11, mirrored backs, border alignment,
+and screen legibility. Physical actual-size, long-edge-duplex, photocopy, and
+cut review remain pending. Public-review visibility is not independent,
+rights, liturgical-text-permission, or ecclesiastical approval.
+
+The 2026-07-27 navigation repair produced an uninstalled twenty-seven-page
+full-guide review candidate with SHA-256
+`bbaad39b0ab61b5348d259a37623aeccb10aec7b83bdd4420802b0a2fd960de7`.
+Its direct role-page pointers resolved after two builds, and its final log is
+free of fatal errors, warnings, undefined references, overfull or underfull
+boxes, and unresolved rerun requests. This candidate has not replaced the
+installed public-review identity.
 
 The action-card cross-view is anchored to the chronology: MC-A01 links the
 adult entrance handoff and MC's complete biretta exit lifecycle through the

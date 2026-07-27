@@ -17,27 +17,24 @@
 ## Reader order
 
 1. Page 1: title and immediate use boundary.
-2. Page 2: role and one-page-at-a-time practice key.
-3. Page 3: real-church mapping worksheet plus front-facing model-sanctuary
-   key; the trainer records the centre reverence, Communion side, and bell
-   pattern before rehearsal.
-4. Pages 4--11, `Foot/Altar`: arrive and kneel before beginning the prayers;
+2. Pages 2--9, `Foot/Altar`: arrive and kneel before beginning the prayers;
    Psalm 42; the priest's and servers' Confiteors; absolution prayers; and the
    final foot-prayer versicles.
-5. Pages 12--15, `Readings`: move to the normal places; Kyrie; Collect and
+3. Pages 10--13, `Readings`: move to the normal places; Kyrie; Collect and
    Epistle; move the Missal; answer at the Gospel; then the sermon and Creed
    states.
-6. Pages 16--18, `Offertory`: greeting and cruets; Lavabo and bell pickup;
+4. Pages 14--16, `Offertory`: greeting and cruets; Lavabo and bell pickup;
    then the complete *Orate, fratres* cue and *Suscipiat* response.
-7. Pages 19--21, `Canon`: Preface dialogue, bell plan, and elevations.
-8. Pages 22--25, `Communion`: responses, faithful-Communion branch,
+5. Pages 17--20, `Canon`: Preface dialogue, bell plan, elevations, and the
+   responses after the Canon.
+6. Pages 21--23, `Communion`: responses, faithful-Communion branch,
    Communion-plate purification and return, ablutions, and the
    Second Acolyte's Missal return while the priest prepares the chalice.
-9. Pages 26--28, `Ending`: Postcommunion and dismissal, blessing and Last
+7. Pages 24--26, `Ending`: Postcommunion and dismissal, blessing and Last
    Gospel, then the final route and recessional.
-10. Page 2 carries the six-stage quick route; page 1 carries the immediate
-    scope and use boundary. Page 28 closes with the final route, rehearsal
-    check, and rights notice.
+8. Page 27 carries the real-church mapping fields and role summary; page 28
+   carries the cumulative rehearsal checklist; page 29 carries scope,
+   qualifications, sources, generation metadata, and rights.
 
 Numbered priest-to-server dialogue lanes stay in chronological order.
 The child sees the canonical response and a pronunciation aid when a response
@@ -111,8 +108,11 @@ Series-wide source, response, pronunciation, presentation, ceremonial,
 flash-card, rights, and production records are owned by the non-publishable
 altar-server-guides research directory.
 
-## Research-staleness verdict — 2026-07-26
+## Repair review — 2026-07-27
 
-Both candidates were compared with the changed guide map and shared owner
-records. No rendered response, action, diagram, branch, dependency, page-match,
-or permission correction was found. This exact guide is ready for rebaselining.
+The map now records the actual twenty-nine-page sequence. The child-visible
+branch conditions and four replaced illustrations were repaired, rebuilt, and
+screen-reviewed. Physical print, photocopy, intended-reader, independent
+ceremonial and pedagogical, rights, and ecclesiastical review remain open; the
+public artifact is therefore a discoverable alpha review copy, not a completed
+release.
