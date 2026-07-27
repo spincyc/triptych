@@ -529,3 +529,20 @@ loci = ["8.7", "16.16-18", "19.11-20"]
 role = "textual-control"
 states = ["cataloged"]
 context = "Exact tracked Byzantine-textform Greek witness with inline divergence notes."
+[[bindings]]
+source_id = "passage.anonymous.apostolic-tradition.easton-english-1934-gutenberg-2024.reconstruction-warning"
+loci = ["Introduction: textual witnesses and reconstruction"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:6a507d5250f7053f526ad34c6f850b0b823c1a5598ae7f28229d6e19505f5b35"
+verified_on = "2026-07-27"
+context = "Exact control for Easton's own version map and warning that an accurate restoration is impossible; not an original-language or modern critical control."
+
+[[bindings]]
+source_id = "passage.anonymous.apostolic-tradition.easton-english-1934-gutenberg-2024.20-21"
+loci = ["20-21"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:2a237786998518ba7e6abb99ecf9bc27d75954ed4c808ec95b9daed76cb3e4b4"
+verified_on = "2026-07-27"
+context = "Exact control for what Easton's 1934 reconstruction prints in the initiatory sequence; no operational wording or authorship, provenance, universality, or ancient-text claim is derived from it."
