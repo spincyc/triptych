@@ -18,6 +18,7 @@ remains open.
 | Fortescue, *The Mass* | visual reading of the page images of pp. 172, 227, 232, 234-235, 288, 305, 387, 394. |
 | *AAS* 54 (1962) p. 873 | reading of the rendered text of the Vatican archive scan. |
 | *AAS* 52 (1960) pp. 593-596 | optical text layer only; identity and dates, not wording. Cited for the acts' existence and dates, which the 1962 Missal's front matter independently supplies. |
+| *Rituale Romanum*, 1925 typical edition, title IV, chapter 2 | displayed pages and embedded text of a modern electronic resetting, not a facsimile; bounded historical comparison only. |
 
 No claim in the publication rests on OCR alone for wording. The 1962 facsimile's
 embedded text layer was used as a finding aid throughout and every quoted block
@@ -47,6 +48,19 @@ against the facsimile page images. Results:
 - The Saint Joseph clause in both the ordinary `Communicantes` (n. 1090) and
   the shared continuation of the proper forms (printed p. 305), against its
   absence in the 1861 book.
+
+**Corrected in the canonical and historical review.**
+- *Saint Joseph insertion.* The clause `sed et beati Ioseph eiusdem Virginis
+  Sponsi` contains seven Latin words, not four. Claims that the facsimile
+  proved when its particular impression was produced, or that the change was
+  made while the edition was in press, exceeded the page-image evidence and
+  were removed. The source establishes the decree, effective date, and amended
+  wording; the facsimile establishes only that its text includes the amendment.
+- *Inference ceilings.* The Canon is prescribed `secreto`, not inaudibly: the
+  cited rubric expressly requires the priest to hear himself. Comparisons with
+  Eastern epicleses and claims that typography identifies the moment at which
+  the sacramental action is accomplished were reduced to what the printed text
+  and layout directly establish.
 
 **Corrected.**
 1. *`Infra Actionem` numbering.* The draft said the proper forms of `Hanc
@@ -84,6 +98,15 @@ against the facsimile page images. Results:
 8. *Presentation of the opening antiphon.* An `appointed` block carried an
    editorial `Ant.` label the missal does not print. Replaced by the book's own
    rubric cues.
+9. *The prayers after the `Confiteor`.* The draft incorrectly described the
+   ministers as absolving the priest and the priest as absolving the ministers.
+   The text instead gives two reciprocal petitions (`Misereatur ... perducat`)
+   and a further third-person petition (`Indulgentiam ... tribuat`) in which
+   the priest includes himself. The exposition now distinguishes these prayers
+   from the sacramental absolution of Penance and does not attribute absolving
+   power to the ministers. A nearby universal claim that every church altar
+   contains relics was also removed; the analysis now says only what the
+   received prayer itself says in its ritual setting.
 
 **Left open.**
 - The identity of the `sanctus Angelus tuus` of `Supplices`. The tradition has
@@ -93,18 +116,48 @@ against the facsimile page images. Results:
   consulted source explains it.
 - The internal disagreement in the 1962 volume about the date of *Rubricarum
   instructum* (23 versus 25 July 1960).
+- Exact collation of the Communion rite against the 1952 typical *Rituale
+  Romanum*. The registered 1925 witness establishes the earlier procedure, not
+  the exact 1952 state. The distinction between Missal nn. 502 and 503 is
+  resolved in `rituale-communion-resolution-2026-07-27.md`.
 
 ## 3. Rights
 
 | Material | Status |
 | --- | --- |
-| 1962 Latin liturgical text | old enough to be public domain in the United States; quoted as evidence in framed blocks, never offered for recitation |
+| 1962 Latin liturgical text | no public-domain conclusion is claimed merely from its date; short passages are quoted for source-first analysis under the repository's recorded publication authorization, never offered as a recitation substitute |
 | CMAA facsimile bytes | rights `unresolved`; recorded by hash, not retained, not redistributed |
 | 1861 English | public domain in the United States by publication date |
 | Cummiskey scan bytes | Google digitisation, rights `unresolved`; recorded by hash, not retained |
 | Douay-Rheims Challoner text | public domain; tracked artifacts already held in this repository |
 | Trent (Tauchnitz 1887, Waterworth 1848), *PL* XVI (1880), Fortescue (1922) | public domain in the United States by age of publication; page images recorded by hash, not retained |
 | *AAS* 52 and 54 | official acts; cited, not reproduced |
+| 1925 *Rituale Romanum* Latin text | public domain in the United States by publication date; the exact 2007 electronic resetting asserts copyright and is recorded by hash but not retained |
+
+The focused legal-source review in `rights-audit-2026-07-27.md` separates the
+ancient received prayers, the 1962 edition and its rubrics and arrangement, the
+1962 Saint Joseph insertion, and the 2007 digitization. It found no affirmative
+basis for bulk redistribution and leaves the edition and artifact status
+unresolved; its United States analysis is not legal advice and does not resolve
+other jurisdictions.
+
+Its operational disposition has been applied project-side to this publication:
+all 42 former full-text appointed panels are now source locators, while only
+focused incipits and phrases necessary to the analysis remain quoted.
+
+The second-pass records integrated into this snapshot are
+`kyrie-preface-creed-second-pass-2026-07-27.md`,
+`roman-canon-second-pass-2026-07-27.md`,
+`offertory-participation-second-pass-2026-07-27.md`,
+`second-pass-book-history-review-2026-07-27.md`,
+`rituale-communion-resolution-2026-07-27.md`, and
+`rights-audit-2026-07-27.md`. Their rejected claims, bounded negatives, and
+edition limits govern the corresponding revisions.
+
+The final exact-snapshot objections concerning n.~503 chronology, audibility
+and intention, the Lord's Prayer, the personal Communion prayers, and Eastern
+anaphoras are resolved claim by claim in
+`final-five-claims-second-pass-2026-07-27.md`.
 
 No English wording in the publication is a translation made by its author.
 Where an English wording of a prayer appears it is quoted from the 1861 book at
@@ -129,5 +182,7 @@ publication writes third-person analysis and says that it is doing so.
 ## 5. Review state
 
 Source-audited 26 July 2026 by the authoring agent against the records above.
-No independent specialist, historical, liturgical, theological or canonical
-review has taken place, and no such label is claimed.
+Independent liturgical, historical, theological, source and layout review on
+27 July identified material errors and overclaims. The resulting corrections
+are recorded above. The corrected snapshot remains held until a fresh
+independent review confirms that every blocker has been resolved.

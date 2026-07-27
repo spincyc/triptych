@@ -10,7 +10,7 @@ Roman Rite ⋅ *Missale Romanum*, Vatican typical edition of 1962 ⋅ Latin ⋅ 
 
 > **Governing thesis**
 >
-> The Roman Ordinary is not a frame around the propers but the sacrifice itself stated in words. Everything that changes from day to day — introit, collect, lesson, gospel, offertory, secret, communion, postcommunion — is applied to a single action whose text does not change: an approach made in penitence, a praise that is not the celebrant’s own composition, a confession of faith received from a council, an offering made in anticipation of what has not yet happened, a thanksgiving that opens into the Canon, and a Canon whose grammar is that of a Roman petition placed before the Father through the Son. The 1962 book makes this visible in its own typography: the Ordinary is printed once, in the middle of the volume, with its own continuous numbering, and the two sentences that consecrate are set in larger type than anything else in the missal.
+> The Roman Ordinary is not merely a frame around the propers but the stable textual and ritual sequence within which the Eucharistic sacrifice is celebrated. Everything that changes from day to day — introit, collect, lesson, gospel, offertory, secret, communion, postcommunion — is applied to a single action whose text does not change: an approach made in penitence, a praise that is not the celebrant’s own composition, a confession of faith received from a council, an offering made in anticipation of what has not yet happened, a thanksgiving that opens into the Canon, and a Canon whose grammar is that of a Roman petition placed before the Father through the Son. The 1962 book distinguishes this sequence typographically: the Ordinary is printed once, in the middle of the volume, with its own continuous numbering, and the forms over the bread and chalice are set in larger type than anything else in the missal.
 
 ## What the 1962 book actually prints, and where
 
@@ -31,9 +31,9 @@ Three features of this arrangement are worth naming at once, because they govern
 
 First, the **marginal numbers**. The 1962 edition carries a continuous arabic numbering in the outer margin, running through the whole volume. The Ordinary occupies numbers 1013 to 1139; the number immediately after the last Gospel is 1140, the introit of Easter Sunday, which begins on the next opening. These numbers are the edition’s own locators, and this study uses them throughout rather than inventing a scheme of its own. They are not a theological taxonomy: number 1102 is the consecration of the bread and number 1039 is the *Lavabo*, and nothing in the numbering says which matters more.
 
-Second, the **interruption**. The Canon is not printed inside the *Ordo Missae*; the prefaces stand between them. A priest using this book turns from the end of the secret to the preface proper to the day, then to the Canon, then back to the *Ordo Missae* for the Communion. The physical break is the reason older hand missals treat “the Canon of the Mass” as a separate heading, and it is the reason the Canon has its own printed running head. It is a bookbinder’s convenience with a long history, not a statement that the Canon is a different kind of text from what surrounds it.
+Second, the **interruption**. The Canon is not printed inside the *Ordo Missae*; the prefaces stand between them. A priest using this book turns from the end of the secret to the preface proper to the day, then to the Canon, then back to the *Ordo Missae* for the Communion. The physical break explains why a reader must move between distinct parts of the volume. This study records that arrangement without assigning the printer or bookbinder an unrecorded theological intention.
 
-Third, the **typographic hierarchy**. Prayer text is set in a roman face; rubrics are interleaved with it in italic, often mid-sentence, so that *Qui pridie quam pateretur* is broken by the direction to take the host into the hands. Two sentences alone are set larger, centred, and free of interleaved rubric: the form over the bread at number 1102 and the form over the chalice at number 1104. The book’s own layout thus makes a judgment about what the Canon is for, and it makes that judgment before a word of commentary is written.
+Third, the **typographic hierarchy**. Prayer text is set in a roman face; rubrics are interleaved with it in italic, often mid-sentence, so that *Qui pridie quam pateretur* is broken by the direction to take the host into the hands. Two sentences alone are set larger, centred, and free of interleaved rubric: the form over the bread at number 1102 and the form over the chalice at number 1104. The layout therefore distinguishes the two forms from the surrounding text. That is a direct observation about this printing, not a claim about the theological intention of its designers.
 
 ### How this study reads the Ordinary
 
@@ -67,13 +67,7 @@ The 1962 *Ordo Missae* opens with the priest already vested and already at the a
 
 > **1013–1014 ⋅ *In nomine Patris* and the antiphon**
 >
-> *In nomine Patris, et Filii, et Spiritus Sancti. Amen.*
->
-> (Deinde, iunctis manibus ante pectus, incipit antiphonam:)
->
-> Introibo ad altare Dei.
->
-> (Ministri respondent:)* Ad Deum qui laetificat iuventutem meam.*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 ### The psalm and its condition
 
@@ -81,21 +75,7 @@ What follows is Psalm 42, verses 1 to 5, said alternately with the ministers, wi
 
 > **1015 ⋅ *Iudica me, Deus* (Ps. 42, 1–5)**
 >
-> *S. Iudica me, Deus, et discerne causam meam de gente non sancta: ab homine iniquo, et doloso erue me.*
->
-> M. Quia tu es, Deus, fortitudo mea: quare me repulisti, et quare tristis incedo, dum affligit me inimicus?
->
-> S. Emitte lucem tuam, et veritatem tuam: ipsa me deduxerunt, et adduxerunt in montem sanctum tuum, et in tabernacula tua.
->
-> M. Et introibo ad altare Dei: ad Deum qui laetificat iuventutem meam.
->
-> S. Confitebor tibi in cithara, Deus, Deus meus: quare tristis es, anima mea, et quare conturbas me?
->
-> M. Spera in Deo, quoniam adhuc confitebor illi: salutare vultus mei, et Deus meus.
->
-> S. Gloria Patri, et Filio, et Spiritui Sancto.
->
-> M. Sicut erat in principio, et nunc, et semper: et in saecula saeculorum. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **Rubric printed at n. 1016, and *Rubricae generales Missalis romani* nn. 424–425**
 >
@@ -111,11 +91,7 @@ The omission of the psalm in Passiontide and at Requiems is the rite’s own com
 
 > **1016–1017 ⋅ *Adiutorium* and the *Confiteor***
 >
-> ***V.** *Adiutorium nostrum in nomine Domini.**
->
-> **R.** *Qui fecit caelum et terram.*
->
-> Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Ioanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis, et vobis, fratres: quia peccavi nimis cogitatione, verbo et opere: (percutit sibi pectus ter, dicens:)* mea culpa, mea culpa, mea maxima culpa. Ideo precor beatam Mariam semper Virginem, beatum Michaelem Archangelum, beatum Ioannem Baptistam, sanctos Apostolos Petrum et Paulum, omnes Sanctos, et vos, fratres, orare pro me ad Dominum Deum nostrum.*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xvi–xvii).**  “I confess to Almighty God, to blessed Mary, ever a Virgin, to blessed Michael the Archangel, to blessed John Baptist, to the holy Apostles Peter and Paul, to all the saints, and to you, Father, that I have sinned exceedingly in thought, word and deed, *through my fault, through my fault, through my most grievous fault*. Therefore I beseech the Blessed Mary, ever a virgin, Blessed Michael the Archangel, Blessed John Baptist, the holy Apostles Peter and Paul, and all the saints, and you, O Father, to pray to the Lord our God for me.” The 1861 book prints the servers’ form in full and abbreviates the priest’s to *Confiteor Deo omnipotenti, &c.*, because in a lay hand missal the form the reader hears twice is the one worth printing whole.
 
@@ -127,35 +103,19 @@ The threefold *mea culpa* with the striking of the breast is printed as a rubric
 
 > **1018–1021 ⋅ *Misereatur*, *Indulgentiam*, versicles**
 >
-> *M. Misereatur tui omnipotens Deus, et, dimissis peccatis tuis, perducat te ad vitam aeternam.*
->
-> (The ministers then repeat the confession, saying *tibi, pater* and *te, pater* where the priest said *vobis, fratres* and *vos, fratres*.)
->
-> S. Misereatur vestri omnipotens Deus, et, dimissis peccatis vestris, perducat vos ad vitam aeternam. **R.** *Amen.*
->
-> Indulgentiam, absolutionem et remissionem peccatorum nostrorum tribuat nobis omnipotens et misericors Dominus. **R.** *Amen.*
->
-> **V.** *Deus, tu conversus vivificabis nos. **R.** *Et plebs tua laetabitur in te.**
->
-> **V.** *Ostende nobis, Domine, misericordiam tuam. **R.** *Et salutare tuum da nobis.**
->
-> **V.** *Domine, exaudi orationem meam. **R.** *Et clamor meus ad te veniat.**
->
-> **V.** *Dominus vobiscum. **R.** *Et cum spiritu tuo.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
-Three things in this short stretch repay attention. The *Misereatur* is said twice with a changed pronoun, so that the priest is absolved by the ministers before he absolves them; the rite refuses to let the celebrant be the only one who forgives. The *Indulgentiam* moves to the first person plural — *peccatorum nostrorum* — and so gathers priest and ministers into one petition, and it is accompanied by a sign of the cross, which is why it reads as a blessing rather than a further confession. And the versicles are not a devotional filler: *Deus, tu conversus vivificabis nos* is a request that God turn first, and *Ostende nobis, Domine, misericordiam tuam. Et salutare tuum da nobis* asks for the mercy and the *salutare* — the saving thing, or the Saviour — that the Mass is about to give.
+Three things in this short stretch repay attention. The *Misereatur* is said twice with changed pronouns: the ministers pray for the priest, and the priest then prays for the ministers. Neither utterance is the sacramental absolution of Penance, and the ministers do not absolve the priest. The *Indulgentiam* likewise has the form of a petition: *tribuat* asks that the almighty and merciful Lord grant indulgence, absolution, and remission. Its first-person plural *peccatorum nostrorum* includes priest and ministers in the same prayer, while the priest’s sign of the cross gives the petition the ritual form of a blessing. These distinctions matter even though the general rubrics name the whole block the confession “with the absolution.” And the versicles are not a devotional filler: *Deus, tu conversus vivificabis nos* is a request that God turn first, and *Ostende nobis, Domine, misericordiam tuam. Et salutare tuum da nobis* asks for the mercy and the *salutare* — the saving thing, or the Saviour — that the Mass is about to give.
 
 The priest then says *Oremus* aloud, goes up to the altar, and says two prayers in a low voice.
 
 > **1022–1023 ⋅ *Aufer a nobis* and *Oramus te***
 >
-> *Aufer a nobis, quaesumus, Domine, iniquitates nostras: ut ad Sancta sanctorum puris mereamur mentibus introire. Per Christum Dominum nostrum. Amen.*
->
-> Oramus te, Domine, per merita Sanctorum tuorum, (osculatur altare in medio)* quorum reliquiae hic sunt, et omnium Sanctorum: ut indulgere digneris omnia peccata mea. Amen.*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xviii).**  “Take away from us our iniquities, we beseech thee, O Lord, that we may be worthy to enter with pure minds into the Holy of holies. Thro’. Amen.” And: “We beseech thee O Lord by the merits of thy saints, whose relics are here, and of all the saints: that thou wouldst vouchsafe to forgive me all my sins. Amen.”
 
-*Sancta sanctorum* is a deliberate double meaning, and the 1861 translator caught it by capitalising: it is the Holy of Holies of the temple, and it is also the Roman chapel of that name at the Lateran. Fortescue notes that these two prayers were said in the medieval rite of the papal chapel, and that the words *sancta sanctorum* and *quorum reliquiae hic sunt* had a particular local aptness there, where the relics really were underfoot.[^1] That is a historical observation, not an argument that the prayers mean less elsewhere: the altar of every church does contain relics, and the second prayer says so.
+*Sancta sanctorum* is a deliberate double meaning, and the 1861 translator caught it by capitalising: it is the Holy of Holies of the temple, and it is also the Roman chapel of that name at the Lateran. Fortescue notes that these two prayers were said in the medieval rite of the papal chapel, and that the words *sancta sanctorum* and *quorum reliquiae hic sunt* had a particular local aptness there, where the relics really were underfoot.[^1] That is a historical observation, not an argument that the prayers mean less elsewhere: in the rite’s received setting, the second prayer itself identifies the saints’ relics as present there.
 
 The kiss of the altar is printed inside the prayer, at the exact clause *quorum reliquiae hic sunt*. The gesture and the relative clause point at the same stone.
 
@@ -179,25 +139,21 @@ A reader who wants to know what the 1962 Mass is like on any given day should re
 
 > **1024 ⋅ *Kyrie, eleison***
 >
-> *Kyrie, eleison. Kyrie, eleison. Kyrie, eleison.*
->
-> Christe, eleison. Christe, eleison. Christe, eleison.
->
-> Kyrie, eleison. Kyrie, eleison. Kyrie, eleison.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 The 1962 book prints nine invocations, and n. 430 of the general rubrics states the number in words: *Kyrie, eleison dicitur novies post repetitam antiphonam ad Introitum*. In the *Ordo Missae* they are set out with the alternation between celebrant and ministers marked by the line breaks, and the missal notes that the priest says them at the middle of the altar with the ministers.
 
-Two facts about this text carry more weight than its length suggests. The first is that it is Greek, in a Latin book, unglossed. The missal offers no translation and no explanation; the 1861 hand missal, printing for readers who had no Greek, gives one English line under each group — “Lord, have mercy upon us” and “Christ, have mercy upon us” — and nothing else. The second is that the words are a response without a petition. In every Eastern liturgy where *Kyrie eleison* is at home it answers a deacon’s clause: the deacon names an intention, the people answer. At Rome the clauses fell away and the answer remained.
+Two facts about this text carry more weight than its length suggests. The first is that it is Greek, in a Latin book, unglossed. The missal offers no translation and no explanation; the 1861 hand missal, printing for readers who had no Greek, gives one English line under each group — “Lord, have mercy upon us” and “Christ, have mercy upon us” — and nothing else. The words themselves are a petition for mercy. Their ninefold Roman arrangement is printed without the longer intentions that accompany responses in some litanies; no universal claim about Eastern uses is needed here.
 
 Fortescue, quoting Gregory the Great’s letter to John of Syracuse, reconstructs that process. Gregory writes that at Rome, unlike among the Greeks, *Kyrie eleison* is said by clerks and answered by the people, that *Christe eleison* is said as many times, which the Greeks do not do at all, and that “in the daily Masses we leave out some things which are generally said; we only say Kyrie eleison and Christe eleison, that we should dwell rather longer on these words of prayer”. Fortescue adds that down to the ninth century a litany still stood at this place at Rome on days that had no *Gloria*, and that “on two days in the year, the eves of Easter and Whitsunday, our Mass still begins with a litany, in which the Kyrie fits naturally. The ordination Mass still has the litany, as in the Gelasian book.”[^2] The 1962 missal preserves both ends of that history: nine bare invocations at every Mass, and the full Litany of the Saints still sung at the Easter Vigil in the same volume.
 
-That is why the *Kyrie* sits where it does. It is not an act of contrition after the confession — the confession has already been made and absolved at the foot of the altar — but the surviving head of an intercession that once had a body. Read that way, the ninefold repetition is not insistence but abbreviation, and the fact that the Church has never translated it is a sign that it was received rather than composed.
+Fortescue reads the Roman form as the surviving response of a longer intercession. This study reports that reconstruction without turning it into the proved compositional history of the 1962 text. The direct facts are more limited: the book retains Greek invocations, orders them ninefold, and assigns their alternation to celebrant and ministers.
 
 ### The Gloria (n. 1025)
 
 > **1025 ⋅ *Gloria in excelsis Deo***
 >
-> *Gloria in excelsis Deo. Et in terra pax hominibus bonae voluntatis. Laudamus te. Benedicimus te. Adoramus te. Glorificamus te. Gratias agimus tibi propter magnam gloriam tuam. Domine Deus, Rex caelestis, Deus Pater omnipotens. Domine Fili unigenite, Iesu Christe. Domine Deus, Agnus Dei, Filius Patris. Qui tollis peccata mundi, miserere nobis. Qui tollis peccata mundi, suscipe deprecationem nostram. Qui sedes ad dexteram Patris, miserere nobis. Quoniam tu solus Sanctus. Tu solus Dominus. Tu solus Altissimus, Iesu Christe. Cum Sancto Spiritu, in gloria Dei Patris. Amen.*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xix).**  “Glory be to God on high, and on earth, peace to men of good will. We praise thee; we bless thee; we adore thee; we glorify thee. We give thee thanks for thy great glory, O Lord God, heavenly King, God the Father Almighty. O Lord Jesus Christ, the only begotten Son. O Lord God, Lamb of God, Son of the Father, who takest away the sins of the world have mercy on us. Who takest away the sins of the world receive our prayers. Who sittest at the right hand of the Father, have mercy on us. For thou only art holy. Thou only art the Lord. Thou only, O Jesus Christ, together with the H. Ghost, art most high in the glory of God the Father. Amen.”
 
@@ -235,15 +191,11 @@ The last of these is the most striking rubric in the 1960 code, and it is easy t
 
 > **1026–1027 ⋅ At solemn Mass**
 >
-> *Munda cor meum ac labia mea, omnipotens Deus, qui labia Isaiae prophetae calculo mundasti ignito: ita me tua grata miseratione dignare mundare, ut sanctum Evangelium tuum digne valeam nuntiare. Per Christum Dominum nostrum. Amen.*
->
-> (The deacon then asks: *Iube, domne, benedicere*. The priest answers:)
->
-> Dominus sit in corde tuo et in labiis tuis: ut digne et competenter annunties Evangelium suum: In nomine Patris, et Filii, **+** et Spiritus Sancti. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **1028 ⋅ At a Mass without sacred ministers**
 >
-> *Munda cor meum, as above, and* Iube, Domine, benedicere. Dominus sit in corde meo et in labiis meis: ut digne et competenter annuntiem Evangelium suum. Amen.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 The prayer is an exegesis of Isaias 6, 6–7 turned into a petition. In the prophet’s vision a seraph takes a live coal from the altar with tongs, touches his mouth, and says that his iniquity is taken away and his sin cleansed. The prayer names the episode (*qui labia Isaiae prophetae calculo mundasti ignito*), and then asks for the same thing by another means: not by a coal but *tua grata miseratione*. The reason the cleansing is asked for is stated exactly: *ut sanctum Evangelium tuum digne valeam nuntiare*, in order to be able to announce, worthily, the Gospel. The verb is *nuntiare*, to report or announce, not to explain.
 
@@ -255,7 +207,7 @@ After the Gospel the priest kisses the book and says *Per evangelica dicta delea
 
 > **1029 ⋅ *Credo in unum Deum***
 >
-> *Credo in unum Deum, Patrem omnipotentem, factorem caeli et terrae, visibilium omnium et invisibilium. Et in unum Dominum Iesum Christum, Filium Dei unigenitum. Et ex Patre natum ante omnia saecula. Deum de Deo, lumen de lumine, Deum verum de Deo vero. Genitum, non factum, consubstantialem Patri: per quem omnia facta sunt. Qui propter nos homines et propter nostram salutem descendit de caelis. (Hic genuflectitur)* Et incarnatus est de Spiritu Sancto ex Maria Virgine: et homo factus est. Crucifixus etiam pro nobis: sub Pontio Pilato passus, et sepultus est. Et resurrexit tertia die, secundum Scripturas. Et ascendit in caelum: sedet ad dexteram Patris. Et iterum venturus est cum gloria iudicare vivos et mortuos: cuius regni non erit finis. Et in Spiritum Sanctum, Dominum, et vivificantem: qui ex Patre Filioque procedit. Qui cum Patre et Filio simul adoratur et conglorificatur: qui locutus est per Prophetas. Et unam sanctam catholicam et apostolicam Ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Et exspecto resurrectionem mortuorum. Et vitam venturi saeculi. Amen.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **Gesture and occasion**
 >
@@ -263,9 +215,9 @@ After the Gospel the priest kisses the book and says *Per evangelica dicta delea
 
 > **English witness (Cummiskey 1861, p. xxi–xxii).**  “I believe in one God, the Father Almighty, Maker of heaven and earth, and of all things visible and invisible. And in one Lord Jesus Christ, the only begotten Son of God, and born of the Father before all ages. God of God; Light of Light; true God of true God; begotten not made; consubstantial to the Father, by whom all things were made … And in the Holy Ghost, the Lord and Giver of life, who proceedeth from the Father and the Son; who, together with the Father and the Son, is adored and glorified; who spoke by the prophets. And one holy Catholic and apostolic Church. I confess one baptism for the remission of sins. And I expect the resurrection of the dead, and the life of the world to come. Amen.” The 1861 book sets *ET HOMO FACTUS EST* and “AND WAS MADE MAN” in capitals and footnotes them: “At these words the assistants kneel down to adore God for the ineffable mystery of the incarnation.”
 
-This is the creed of Nicaea as completed at Constantinople, with *Filioque*, and it is the only text in the Ordinary that a general council composed. That fact governs how it should be read. Its clauses are not prayer but definition, and several of them are polemical in origin: *Deum verum de Deo vero*, *genitum, non factum*, *consubstantialem Patri* are not three ways of saying one thing but three successive closures against a denial. *Cuius regni non erit finis* closes another. The Creed’s presence at Mass is therefore an act of a different kind from the *Gloria*: the Church is not praising but professing, and the missal marks the change by having the priest bow to the cross at the divine names rather than to the altar.
+This is the Latin liturgical recension of the Nicene-Constantinopolitan Creed. It receives the conciliar professions of Nicaea and Constantinople and includes the later Latin *Filioque*; it is not a text composed in this complete form by one general council. Its clauses are profession rather than petition, and several are polemical in origin: *Deum verum de Deo vero*, *genitum, non factum*, *consubstantialem Patri* are not three ways of saying one thing but three successive closures against a denial. *Cuius regni non erit finis* closes another. The Creed’s presence at Mass is therefore an act of a different kind from the *Gloria*: the Church is not praising but professing, and the missal marks the change by having the priest bow to the cross at the divine names rather than to the altar.
 
-The two ceremonial marks are the deepest commentary the book offers. At *Et incarnatus est* the whole assembly kneels, and stays kneeling for one clause only — through *et homo factus est*. The rite thereby identifies the sentence at which the creed stops being an account of God and becomes an account of history. And at *Et vitam venturi saeculi* the priest signs himself with the cross, as he does at a blessing and as he does at the last line of the *Gloria*: the profession ends with a gesture asking that what has been professed be true of the man professing it.
+Two ceremonial marks accompany this profession. At *Et incarnatus est* the whole assembly kneels, and stays kneeling for one clause only — through *et homo factus est*. At *Et vitam venturi saeculi* the priest signs himself with the cross. The rubrics establish these gestures and their locations; the book does not state a further symbolic intention for them.
 
 > **Historical note: when the Creed entered the Roman Mass**
 >
@@ -281,7 +233,7 @@ After the Creed the priest kisses the altar, says *Dominus vobiscum* and *Oremus
 
 > **1030 ⋅ *Suscipe, sancte Pater***
 >
-> *Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam, quam ego indignus famulus tuus offero tibi Deo meo vivo et vero, pro innumerabilibus peccatis, et offensionibus, et neglegentiis meis, et pro omnibus circumstantibus, sed et pro omnibus fidelibus christianis vivis atque defunctis: ut mihi et illis proficiat ad salutem in vitam aeternam. Amen.*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xxiii).**  “Accept, O holy Father, almighty and eternal God, this unspotted Host, which I thy unworthy servant offer unto thee, my living and true God, for my innumerable sins, offences, and negligences, and for all here present; as also for all faithful Christians, both living and dead; that it may avail both me and them unto life everlasting. Amen.” Note that the 1861 translator renders *immaculatam Hostiam* “unspotted Host”: the English of that period reached for a sacrificial rather than a Marian word, and it is the better gloss on the Latin.
 
@@ -293,9 +245,7 @@ The second is the range of intentions. This is the widest single sentence in the
 
 > **1031–1032 ⋅ *Deus, qui humanae substantiae* and *Offerimus tibi***
 >
-> *Deus, qui humanae substantiae dignitatem mirabiliter condidisti, et mirabilius reformasti: da nobis, per huius aquae et vini mysterium, eius divinitatis esse consortes, qui humanitatis nostrae fieri dignatus est particeps, Iesus Christus, Filius tuus, Dominus noster: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: per omnia saecula saeculorum. Amen.*
->
-> Offerimus tibi, Domine, calicem salutaris, tuam deprecantes clementiam: ut in conspectu divinae maiestatis tuae, pro nostra et totius mundi salute, cum odore suavitatis ascendat. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **Where the water goes, and where it does not**
 >
@@ -309,13 +259,11 @@ The rubric that the water is not blessed at a Requiem is old and unexplained in 
 
 > **1033–1034**
 >
-> *In spiritu humilitatis et in animo contrito suscipiamur a te, Domine: et sic fiat sacrificium nostrum in conspectu tuo hodie, ut placeat tibi, Domine Deus.*
->
-> Veni, sanctificator omnipotens aeterne Deus: (benedicit oblata)* et bene**+**dic hoc sacrificium, tuo sancto nomini praeparatum.*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 *In spiritu humilitatis* is a quotation from the prayer of Azarias in the fiery furnace (Dan. 3, 39–40), and its grammar deserves notice: *suscipiamur a te* — may *we* be received — not “may this be received”. For one clause the persons offering become the thing offered. Then *et sic fiat sacrificium nostrum in conspectu tuo hodie*: the adverb *hodie* is doing real work, tying an ancient text to this particular morning.
 
-*Veni, sanctificator* is the shortest prayer in the offertory and the only one addressed to a person invoked as coming. The missal does not say who the *sanctificator* is; the Latin leaves it open between the Holy Spirit and God without qualification, and the prayer is not an epiclesis in the Eastern sense — it asks for a blessing on what has been prepared, not for a change in it.
+*Veni, sanctificator* is the shortest prayer in the offertory and the only one addressed to one invoked as coming. The missal does not identify the *sanctificator*; this study therefore neither assigns the title to one divine person nor classifies the prayer by comparison with an Eastern anaphora. Its express petition is that God bless the prepared sacrifice.
 
 ### Incense and the *Lavabo*
 
@@ -323,23 +271,7 @@ At a solemn celebration the priest blesses incense and incenses the oblations an
 
 > **1039 ⋅ *Lavabo* (Ps. 25, 6–12)**
 >
-> *Lavabo inter innocentes manus meas: et circumdabo altare tuum, Domine:*
->
-> Ut audiam vocem laudis, et enarrem universa mirabilia tua.
->
-> Domine, dilexi decorem domus tuae, et locum habitationis gloriae tuae.
->
-> Ne perdas cum impiis, Deus, animam meam, et cum viris sanguinum vitam meam:
->
-> In quorum manibus iniquitates sunt: dextera eorum repleta est muneribus.
->
-> Ego autem in innocentia mea ingressus sum: redime me, et miserere mei.
->
-> Pes meus stetit in directo: in ecclesiis benedicam te, Domine.
->
-> Gloria Patri, et Filio, et Spiritui Sancto.
->
-> Sicut erat in principio, et nunc, et semper: et in saecula saeculorum. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **The doxology again**
 >
@@ -351,29 +283,25 @@ The psalm is a hand-washing psalm and the ceremony is a hand-washing; the corres
 
 > **1040 ⋅ *Suscipe, sancta Trinitas***
 >
-> *Suscipe, sancta Trinitas, hanc oblationem, quam tibi offerimus ob memoriam passionis, resurrectionis et ascensionis Iesu Christi Domini nostri: et in honorem beatae Mariae semper Virginis, et beati Ioannis Baptistae, et sanctorum Apostolorum Petri et Pauli, et istorum, et omnium Sanctorum: ut illis proficiat ad honorem, nobis autem ad salutem: et illi pro nobis intercedere dignentur in caelis, quorum memoriam agimus in terris. Per eundem Christum Dominum nostrum. Amen.*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
-This prayer is the offertory’s summary, and the one place in it where the rite states a doctrine that a council later stated in the same words. Its closing clause — *illi pro nobis intercedere dignentur in caelis, quorum memoriam agimus in terris* — reappears almost verbatim in the Council of Trent, session XXII, chapter III, *De missa in honorem sanctorum*, which explains that the Church does not offer sacrifice to the saints but to God alone who crowned them — *unde nec sacerdos dicere solet: Offero tibi sacrificium, Petre, vel Paule* — and that giving thanks to God for their victories she implores their patronage, *ut ipsi pro nobis intercedere dignentur in coelis, quorum memoriam facimus in terris*. Only the verb differs: the missal says *agimus*, the council *facimus*. The council was reading the missal. That is worth stating plainly: on the one point where a Reformation-era objection bore directly on the offertory, the conciliar answer was a quotation of the rite’s own words.
+This prayer is the offertory’s summary, and the one place in it where the rite states a doctrine that a council later stated in the same words. Its closing clause — *illi pro nobis intercedere dignentur in caelis, quorum memoriam agimus in terris* — reappears almost verbatim in the Council of Trent, session XXII, chapter III, *De missa in honorem sanctorum*, which explains that the Church does not offer sacrifice to the saints but to God alone who crowned them — *unde nec sacerdos dicere solet: Offero tibi sacrificium, Petre, vel Paule* — and that giving thanks to God for their victories she implores their patronage, *ut ipsi pro nobis intercedere dignentur in coelis, quorum memoriam facimus in terris*. Only the verb differs: the missal says *agimus*, the council *facimus*. The verbal parallel illuminates the rite’s doctrine; the checked sources do not establish the direction of literary dependence or the council’s drafting history.
 
 The little demonstrative *et istorum* — “and of these” — refers to the relics in the altar, and it is the second time in the Mass that a prayer points at them.
 
 > **1041–1042 ⋅ *Orate fratres* and *Suscipiat***
 >
-> *Orate, fratres: ut meum ac vestrum sacrificium acceptabile fiat apud Deum Patrem omnipotentem.*
->
-> (The minister or the bystanders answer; otherwise the priest himself:)
->
-> Suscipiat Dominus sacrificium de manibus tuis (vel meis) ad laudem et gloriam nominis sui, ad utilitatem quoque nostram, totiusque Ecclesiae suae sanctae.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **Voice**
 >
 > The *Ritus servandus* directs that *Orate, fratres* be said with the voice somewhat raised and the rest continued secretly, so that in practice only the two words of the address are audible. After the response the priest says *Amen* in a low voice. He then subjoins the secret prayers with hands extended and without *Oremus*; general rubrics nn. 480–481 require as many secrets as there were collects, said secretly, the conclusion of the last being said secretly as far as *Per omnia saecula saeculorum*, which is sung or said aloud and leads straight into the preface.
 
-*Meum ac vestrum sacrificium* is the most disputed phrase in the Ordinary and the Latin will not resolve the dispute by itself. The possessives are distinguished — mine and yours — and the sacrifice is single. Whatever account one gives of the difference between the priest’s part and the people’s, the rite refuses both of the simple answers: it will not say “my sacrifice” and it will not say “our sacrifice”. The response is equally careful: it asks that the Lord receive the sacrifice *de manibus tuis*, from the hands that hold it, and then names three ends in ascending order of extension — the praise and glory of God’s name, our own profit, and that of all his holy Church.
+*Meum ac vestrum sacrificium* distinguishes the celebrant’s and the faithful’s relation to one sacrifice, but its grammar does not by itself define that theological relation. *Lumen gentium* 10 supplies the needed control: the common and ministerial priesthoods are ordered to one another but differ in essence and not only degree. The ordained priest offers sacramentally in his proper ministry; the faithful truly join their prayer and self-offering to the Church’s Eucharistic oblation. The response asks that the Lord receive the sacrifice *de manibus tuis*, from the hands that hold it, and then names three ends in ascending order of extension — the praise and glory of God’s name, our own profit, and that of all his holy Church.
 
 > **Historical note: the age of these prayers**
 >
-> Fortescue’s judgment is unambiguous and is here reported as his: “All our offertory prayers are mediaeval. In the old Roman rite the only ones were the Secrets.” He dates their appearance at Rome to the fourteenth century, notes that they seem to have been added to fill the gap left by the disappearance of the people’s own procession of gifts, and identifies the set adopted by the revisers of 1570 as that of the fourteenth Roman *Ordo*, “taken or adapted from various, mostly non-Roman sources”. *Suscipe sancte Pater* he traces, with slight variations, to the prayerbook of Charles the Bald (875–877).[^5] This is an identified early twentieth-century reconstruction resting on manuscript arguments this study has not itself examined; it is reported as such, and it does not follow that a fourteenth-century prayer is a less authentic part of the Roman Mass than a sixth-century one. What does follow is that the offertory is the youngest stratum of the Ordinary, and that the distance between it and the Canon it introduces is roughly eight hundred years.
+> Fortescue’s judgment is unambiguous and is here reported as his: “All our offertory prayers are mediaeval. In the old Roman rite the only ones were the Secrets.” He dates their appearance at Rome to the fourteenth century, notes that they seem to have been added to fill the gap left by the disappearance of the people’s own procession of gifts, and identifies the set adopted by the revisers of 1570 as that of the fourteenth Roman *Ordo*, “taken or adapted from various, mostly non-Roman sources”. *Suscipe sancte Pater* he traces, with slight variations, to the prayerbook of Charles the Bald. That manuscript is defensibly dated 846–869; Fortescue’s 875–877 gives Charles’s imperial years, not the manuscript’s date.[^5] This is an identified early twentieth-century reconstruction resting on manuscript arguments this study has not itself examined; it is reported as such, and it does not follow that a fourteenth-century prayer is a less authentic part of the Roman Mass than a sixth-century one. The exact 1570 witness confirms the received sequence there; this study has not independently established the manuscript and redaction chain behind Fortescue’s chronology.
 
 ## Preface and Sanctus (nn. 1043–1087)
 
@@ -383,19 +311,13 @@ The conclusion of the last secret is said silently as far as *Per omnia saecula 
 
 > **The preface dialogue, as printed at n. 1086**
 >
-> ***V.** *Per omnia saecula saeculorum. **R.** *Amen.***
->
-> **V.** *Dominus vobiscum. **R.** *Et cum spiritu tuo.**
->
-> **V.** *Sursum corda. **R.**  *Habemus ad Dominum.**
->
-> **V.** *Gratias agamus Domino Deo nostro. **R.** *Dignum et iustum est.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **Hands and voice, from the rubric at n. 1042**
 >
 > The priest begins the preface with both hands resting on the altar on either side; he raises them somewhat at *Sursum corda*; he joins them before his breast and bows his head at *Gratias agamus Domino Deo nostro*; then he separates them and keeps them separated to the end of the preface. At the end he joins them again and, bowing, says *Sanctus*; at *Benedictus qui venit* he signs himself from forehead to breast.
 
-The dialogue is the oldest continuously attested text in the Latin Mass, and it is worth saying exactly what kind of text it is. It is not a prayer. It is a negotiation of consent: the celebrant asks whether the assembly’s hearts are where they should be and whether it is willing to give thanks, and only when it has answered twice does he begin to give thanks in its name. *Habemus ad Dominum* has no verb — literally “we have \[them\] toward the Lord” — and *Dignum et iustum est* is a formula of assent borrowed from Roman public life. The rite will not begin the Eucharistic prayer until the people have said that it is right to.
+The dialogue prepares the preface through an exchange between celebrant and ministers or people. *Habemus ad Dominum* has no verb — literally “we have \[them\] toward the Lord” — and *Dignum et iustum est* is a formula of assent borrowed from Roman public life according to the historical account used here. In the printed sequence the assent immediately precedes the celebrant’s thanksgiving.
 
 ### Which preface, and why it matters
 
@@ -411,15 +333,11 @@ The book prints all of this twice over, first in chant notation — solemn tone 
 
 > **n. 1086 ⋅ *Praefatio communis***
 >
-> *Vere dignum et iustum est, aequum et salutare, nos tibi semper et ubique gratias agere: Domine, sancte Pater, omnipotens aeterne Deus: per Christum Dominum nostrum. Per quem maiestatem tuam laudant Angeli, adorant Dominationes, tremunt Potestates. Caeli caelorumque Virtutes, ac beata Seraphim, socia exsultatione concelebrant. Cum quibus et nostras voces ut admitti iubeas, deprecamur, supplici confessione dicentes:*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **The *Sanctus*, printed at the end of every preface**
 >
-> *Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth.*
->
-> Pleni sunt caeli et terra gloria tua. Hosanna in excelsis.
->
-> Benedictus qui venit in nomine Domini. Hosanna in excelsis.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xxviii).**  “It is truly meet and just, right and available to salvation, that we should always, and in all places, give thanks to thee, O holy Lord, Father Almighty, eternal God …” and, for the hymn: “Holy, holy, holy, Lord God of Sabaoth. Heaven and earth are full of thy glory. Hosanna in the highest. Blessed is he that cometh in the name of the Lord, Hosanna in the highest.”
 
@@ -437,7 +355,7 @@ The priest signs himself at *Benedictus qui venit*, which is the only place in t
 
 ### What kind of text this is
 
-The 1962 missal treats the Canon differently from everything else it contains. It gives it a separate title page, a separate running head, and a full-page colour plate of the Crucifixion on the leaf facing its first words, so that a priest who opens the book at *Te igitur* is looking at a crucifix whether or not one stands on the altar. It sets the two consecration forms in type larger than any other text in the volume. And it prescribes that the whole of it be said inaudibly.
+The 1962 missal treats the Canon differently from everything else it contains. It gives it a separate title page, a separate running head, and a full-page colour plate of the Crucifixion on the leaf facing its first words, so that a priest who opens the book at *Te igitur* is looking at a crucifix whether or not one stands on the altar. It sets the two consecration forms in type larger than any other text in the volume. And it prescribes that the whole of it be said secretly, with the exception noted below.
 
 > **Voice: *Rubricae generales Missalis romani* nn. 500, 511–512**
 >
@@ -455,13 +373,13 @@ The same session made the strongest statement any council has made about this te
 >
 > Read exactly, the chapter says three things and not a fourth. It says the Canon is free of error. It says it is composed of three kinds of material — the Lord’s own words, apostolic traditions, and the pious institutions of holy popes. And it dates its institution vaguely, *multis ante saeculis*. It does not say that any part of it is of apostolic composition, and it does not say that it has never been altered; the third of its three sources is by definition later than the first two.
 
-The historical claim usually attached to the Canon should be stated with the same care. Fortescue reports “a constant tradition that St Gregory was the last to touch the essential part of the Mass, namely the Canon”, and quotes Benedict XIV: “No Pope has added to or changed the Canon since St. Gregory.”[^6] That tradition is worth keeping, and it is worth noticing that the missal in front of us falsifies its strongest form. On 13 November 1962 the Sacred Congregation of Rites, executing a decision John XXIII had announced to the Council fathers that morning, decreed that after *Communicantes … Domini nostri Iesu Christi* the words *sed et beati Ioseph eiusdem Virginis Sponsi* be added, with effect from 8 December.[^7] The facsimile collated for this study prints those words. The 1861 hand missal does not. The Canon of the Roman Mass was therefore altered within living memory, by a pope, in the very edition this study describes — and the alteration is four words long.
+The historical claim usually attached to the Canon should be stated with the same care. Fortescue reports “a constant tradition that St Gregory was the last to touch the essential part of the Mass, namely the Canon”, and quotes Benedict XIV: “No Pope has added to or changed the Canon since St. Gregory.”[^6] That tradition is worth keeping, but its strongest form does not describe the text printed in the facsimile collated here. On 13 November 1962 the Sacred Congregation of Rites, executing a decision John XXIII had announced to the Council fathers that morning, decreed that after *Communicantes … Domini nostri Iesu Christi* the words *sed et beati Ioseph eiusdem Virginis Sponsi* be added, with effect from 8 December.[^7] The facsimile collated for this study prints those words. The 1861 hand missal does not. The Canon of the Roman Mass was therefore altered within living memory, by a pope, in the very edition this study describes — and the alteration is seven Latin words long.
 
 ### *Te igitur* (n. 1088)
 
 > **1088 ⋅ *Te igitur***
 >
-> *Te igitur, clementissime Pater, per Iesum Christum, Filium tuum, Dominum nostrum, supplices rogamus ac petimus, (osculatur altare et, iunctis manibus ante pectus, dicit:)* uti accepta habeas et benedicas (signat ter super hostiam et calicem simul, dicens:)* haec **+** dona, haec **+** munera, haec **+** sancta sacrificia illibata, (extensis manibus prosequitur:)* in primis, quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare et regere digneris toto orbe terrarum: una cum famulo tuo Papa nostro N. et Antistite nostro N. et omnibus orthodoxis, atque catholicae et apostolicae fidei cultoribus.****
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xxxiii).**  “We therefore, humbly pray and beseech thee most merciful Father, thro’ Jesus Christ thy Son, our Lord, that thou wouldst vouchsafe to accept and bless these gifts, these presents, these holy unspotted sacrifices, which in the first place we offer thee for thy holy Catholic Church, to which vouchsafe to grant peace; as also to preserve, unite, and govern it throughout the world: together with thy servant N. our pope, N. our Bishop, as also all orthodox believers and professors of the catholic and apostolic Faith.”
 
@@ -479,11 +397,11 @@ The intercession that follows is ordered outward from the Church as such (*pro E
 
 > **1089 ⋅ *Commemoratio pro vivis***
 >
-> *Memento, Domine, famulorum famularumque tuarum N. et N. (iungit manus, orat aliquantulum pro quibus orare intendit: deinde manibus extensis prosequitur:)* et omnium circumstantium, quorum tibi fides cognita est et nota devotio, pro quibus tibi offerimus: vel qui tibi offerunt hoc sacrificium laudis, pro se suisque omnibus: pro redemptione animarum suarum, pro spe salutis et incolumitatis suae: tibique reddunt vota sua aeterno Deo, vivo et vero.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 The rubric prints a pause inside the prayer: the priest joins his hands and prays a little while for those he intends. It is the one moment in the Canon where the book deliberately leaves a silence with no words in it at all.
 
-The Latin then does something that has occupied commentators for centuries. Having said *pro quibus tibi offerimus* — for whom we offer to you — it adds *vel qui tibi offerunt hoc sacrificium laudis*, or who offer to you this sacrifice of praise. The subject changes: first the ministers offer for the people, then the people offer. Whatever weight one puts on *vel* (it can mean “or” or “and also”), the sentence as printed will not let the offering be attributed exclusively to either party — exactly as *meum ac vestrum sacrificium* would not, an hour earlier in the same Mass.
+The Latin then does something that has occupied commentators for centuries. Having said *pro quibus tibi offerimus* — for whom we offer to you — it adds *vel qui tibi offerunt hoc sacrificium laudis*, or who offer to you this sacrifice of praise. The text juxtaposes the priest’s collective *offerimus* with the faithful’s *offerunt*; its grammar does not label the first subject “the ministers.” Whatever weight one puts on *vel* (it can mean “or” or “and also”), *Lumen gentium* 10–11 supplies the controlling distinction between the ministerial priesthood and the faithful’s participation in the Eucharistic offering.
 
 The ends named are three and they descend from eternity into the body: *pro redemptione animarum suarum*, for the redemption of their souls; *pro spe salutis*, for the hope of salvation; *et incolumitatis suae*, and of their safety, *incolumitas* being bodily soundness. The Roman Canon asks for health in the same breath as redemption and does not apologise for it.
 
@@ -491,15 +409,15 @@ The ends named are three and they descend from eternity into the body: *pro rede
 
 > **1090 ⋅ *Infra Actionem***
 >
-> *Communicantes, et memoriam venerantes, in primis gloriosae semper Virginis Mariae, Genetricis Dei et Domini nostri Iesu Christi: sed et beati Ioseph, eiusdem Virginis Sponsi, et beatorum Apostolorum ac Martyrum tuorum, Petri et Pauli, Andreae, Iacobi, Ioannis, Thomae, Iacobi, Philippi, Bartholomaei, Matthaei, Simonis et Thaddaei: Lini, Cleti, Clementis, Xysti, Cornelii, Cypriani, Laurentii, Chrysogoni, Ioannis et Pauli, Cosmae et Damiani: et omnium Sanctorum tuorum; quorum meritis precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio. (Iungit manus.)* Per eundem Christum Dominum nostrum. Amen.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 The heading the missal prints over this prayer is *Infra Actionem*, “within the Action”, and it is the technical name for the part of the Canon that varies. Five proper forms are printed at nn. 1093–1097, for Christmas and its octave, the Epiphany, the Mass of the Easter Vigil to Low Sunday, the Ascension, and the Vigil of Pentecost to the following Saturday. Each inserts a clause naming the day — *et diem sacratissimum celebrantes, quo …* — and then rejoins the common text at a shared continuation printed at p. 305. General rubric n. 501 adds that within the octaves of Christmas, Easter and Pentecost the proper *Communicantes* and *Hanc igitur* are said even in Masses that are not of the octave.
 
 The list of saints has a shape. Our Lady first, with the title *Genetricis Dei et Domini nostri Iesu Christi* — Mother of God, the Ephesine title, in the classicised spelling *Genetricis* that the twentieth-century Vatican editions restored. Then Joseph. Then twelve Apostles — Peter, Paul, Andrew, James, John, Thomas, James, Philip, Bartholomew, Matthew, Simon and Thaddaeus, a list that puts Paul in and leaves Matthias out. Then twelve martyrs: five popes (Linus, Cletus, Clement, Xystus, Cornelius), one bishop (Cyprian), a deacon (Lawrence), then Chrysogonus standing alone, and finally two pairs, John and Paul, Cosmas and Damian. The whole is a Roman list: these are the martyrs whose basilicas and cemeteries stood in and around the city.
 
-> **Collation: the four words added in 1962**
+> **Collation: the seven words added in 1962**
 >
-> The insertion of *sed et beati Ioseph, eiusdem Virginis Sponsi* is the one place where the two witnesses collated for this study disagree about substance rather than spelling. The 1861 Philadelphia hand missal, printed before the change, passes directly from *Domini nostri Jesu Christi* to *sed et beatorum Apostolorum ac Martyrum tuorum*, and its English reads: “communicating with, and honouring the memory in the first place of the glorious Virgin Mary, Mother of our Lord and God Jesus Christ; as also of thy blessed Apostles and Martyrs …” The facsimile of the 1962 typical edition prints the clause, in the common form and again in the shared continuation of the five proper forms. Since the volume’s own promulgating decree is dated 23 June 1962 and the insertion took effect on 8 December of the same year, the printing collated here embodies the Missal as amended by the November decree; a copy of the same typical edition impressed before that date would not carry the clause. This is a collation result, not an inference: both readings were read on identified page images.
+> The insertion of *sed et beati Ioseph, eiusdem Virginis Sponsi* is the one place where the two witnesses collated for this study disagree about substance rather than spelling. The 1861 Philadelphia hand missal, printed before the change, passes directly from *Domini nostri Jesu Christi* to *sed et beatorum Apostolorum ac Martyrum tuorum*, and its English reads: “communicating with, and honouring the memory in the first place of the glorious Virgin Mary, Mother of our Lord and God Jesus Christ; as also of thy blessed Apostles and Martyrs …” The facsimile of the 1962 typical edition prints the clause, in the common form and again in the shared continuation of the five proper forms. Since the volume’s own promulgating decree is dated 23 June 1962 and the insertion took effect on 8 December of the same year, the printing collated here embodies the text as amended by the November decree. The page images establish the clause’s presence in this facsimile; they do not establish when this particular impression was produced. The disagreement with the identified 1861 witness is a collation result, not an inference.
 
 The petition attached to the list — *quorum meritis precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio* — distinguishes carefully between the saints’ merits and their prayers, and asks for *auxilium protectionis*, the help of protection, not for their intercession as such. The conclusion is *Per eundem Christum Dominum nostrum*, with *eundem* because Christ has been named inside the prayer. That small grammatical scruple recurs throughout the Canon and is one of the surest signs that its clauses were composed as continuous Latin rather than assembled from independent pieces.
 
@@ -507,11 +425,7 @@ The petition attached to the list — *quorum meritis precibusque concedas, ut i
 
 > **1091–1092**
 >
-> *(Tenens manus expansas super oblata, dicit:)*
->
-> Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus, Domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi, et in electorum tuorum iubeas grege numerari. (Iungit manus.)* Per Christum Dominum nostrum. Amen.*
->
-> Quam oblationem tu, Deus, in omnibus, quaesumus, (signat ter super oblata,)* bene**+**dictam, adscrip**+**tam, ra**+** tam, rationabilem, acceptabilemque facere digneris: (signat semel super hostiam,)* ut nobis Cor**+**pus, (et semel super calicem,)* et San**+**guis fiat dilectissimi Filii tui, (iungit manus,)* Domini nostri Iesu Christi.****
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 The two prayers are printed as separate paragraphs but they are one sentence in two parts: *hanc … oblationem* is picked up by *Quam oblationem*, a relative pronoun agreeing with it. Nothing may be inserted between them, and the book’s own layout enforces the point. In the pages of proper forms it reprints the ordinary *Hanc igitur* at n. 1098 and prints the one proper form at n. 1099 — for the Mass of the Easter Vigil to Low Saturday and from the Vigil of Pentecost to the following Saturday, which inserts a clause for the newly baptised — and then reprints *Quam oblationem* entire at n. 1100, so that whichever *Hanc igitur* is used the next words on the page are still *Quam oblationem*.
 
@@ -529,30 +443,17 @@ That is a claim worth weighing rather than repeating. If it is true, the seam is
 
 The 1962 Canon has five adjectives where *De sacramentis* has four: it prefixes *benedictam*. Each of the first three carries a sign of the cross. Their sense is bureaucratic before it is mystical: *adscriptam* is “entered in the register”; *ratam* is “ratified”, a legal term for an act confirmed; *rationabilem* answers the *logike latreia* of Romans 12, 1, a reasonable service; *acceptabilem* is simply acceptable. What is being asked is that this offering be admitted, recorded, ratified and accepted — and then, in the final clause, that it *become* something: *ut nobis Corpus et Sanguis fiat dilectissimi Filii tui*. The verb is *fiat*, and the two nouns each take a sign of the cross, one over the host and one over the chalice.
 
-That is the closest thing in the Roman Canon to what Eastern anaphoras do with an explicit invocation of the Holy Spirit. It asks for the change; it does not name the agent of the change; and it is placed before the institution narrative rather than after it. A study of this kind can record that arrangement and its consequences without adjudicating the long theological argument about the Roman Canon’s want of a separate epiclesis.
+The petition asks that the offering become Christ’s Body and Blood, but it does not name the agent of the change. It stands before the institution narrative. Those textual observations do not decide how the prayer should be classified in debates about epiclesis.
 
 ### The institution narrative (nn. 1101–1105)
 
 > **1101–1102 ⋅ *Qui pridie***
 >
-> *Qui pridie quam pateretur, (accipit hostiam,)* accepit panem in sanctas ac venerabiles manus suas, (elevat oculos ad caelum,)* et elevatis oculis in caelum ad te Deum Patrem suum omnipotentem, (caput inclinat,)* tibi gratias agens, (signat super hostiam,)* bene**+**dixit, fregit, deditque discipulis suis, dicens: Accipite, et manducate ex hoc omnes.*****
->
-> **Hoc est enim Corpus meum.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **1103–1105 ⋅ *Simili modo***
 >
-> *Simili modo postquam cenatum est, (ambabus manibus accipit calicem,)* accipiens et hunc praeclarum calicem in sanctas ac venerabiles manus suas: (item caput inclinat,)* tibi gratias agens, (sinistra tenens calicem, dextera signat super eum,)* bene**+**dixit, deditque discipulis suis, dicens: Accipite, et bibite ex eo omnes.****
->
-> **Hic est enim Calix Sanguinis mei,  
-> novi et aeterni testamenti:  
-> mysterium fidei:  
-> qui pro vobis et pro multis effundetur  
-> in remissionem peccatorum.**
->
-> (Quibus verbis prolatis, deponit calicem super corporale, et dicens:)
->
-> **Haec quotiescumque feceritis,  
-> in mei memoriam facietis.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xxxvi).**  The 1861 book sets the two forms in small capitals in both columns. For the first it prints “TAKE AND EAT YE ALL OF THIS. FOR THIS IS MY BODY.” The words themselves are the Church’s, not the translator’s; this is quoted here as a historical witness to how an English lay book of that date presented them, not as a version for use.
 
@@ -566,15 +467,15 @@ Four features of this narrative should be recorded exactly.
 
 *The oldest Latin witness differs.* *De sacramentis* IV, 5, 21–22 gives a form recognisably the same and verbally different: *Accipite, et edite ex hoc omnes; hoc est enim corpus meum, quod pro multis confringetur* — “which shall be broken for many”. The Maurist editors note that where all editions and manuscripts read *pro multis confringetur*, the Roman edition alone corrected it to *pro vobis datur*, and that *et discipulis suis* is omitted in that same Roman edition. The Milanese homilist of about 390 already had *Qui pridie quam pateretur … accepit panem … respexit in coelum … gratias agens, benedixit, fregit*. What he did not have was the Roman Canon: he had a prayer with the same bones.
 
-> **Editorial reading: the typography as argument**
+> **Editorial observation: typographic emphasis**
 >
-> The 1962 book gives the two forms a treatment it gives nothing else: larger type, centred, no interleaved rubric, each followed by a rubric describing adoration, elevation and adoration again. Everywhere else in the Canon the missal breaks the prayer with directions; here it refuses to. The layout is therefore doing what a commentary would do — marking the sentences at which the action is accomplished — and doing it without a word of theology. That is an observation about this printing. Whether the same is true of every 1962 impression is a question about printings, not about the rite, and this study has collated one.
+> The 1962 book gives the two forms a treatment it gives nothing else: larger type, centred, no interleaved rubric, each followed by a rubric describing adoration, elevation and adoration again. Everywhere else in the Canon the missal breaks the prayer with directions; here it does not. The layout plainly emphasises these forms. No further theological intention can be established from typography alone. Whether the same treatment appears in every 1962 impression is a question about printings; this study has collated one.
 
 ### *Unde et memores*, *Supra quae*, *Supplices* (nn. 1106–1108)
 
 > **1106 ⋅ *Unde et memores***
 >
-> *Unde et memores, Domine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Filii tui, Domini nostri, tam beatae passionis, nec non et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis: offerimus praeclarae maiestati tuae de tuis donis ac datis (iungit manus, et signat ter super hostiam et calicem simul, dicens:)* hostiam **+** puram, hostiam **+** sanctam, hostiam **+** immaculatam, (signat semel super hostiam, dicens:)* Panem **+** sanctum vitae aeternae, (et semel super calicem, dicens:)* et Calicem **+** salutis perpetuae.****
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 This is the pivot of the Canon, and its Latin is arranged to make the pivot audible. *Unde* — whence, and therefore. *Memores*, an adjective with no verb of its own, governing three genitives: of the passion, of the resurrection from the dead, of the glorious ascension into heaven. Only after all three does the main verb arrive: *offerimus*. And the subject is doubled once more — *nos servi tui, sed et plebs tua sancta*, we your servants, but also your holy people.
 
@@ -588,11 +489,7 @@ Then *de tuis donis ac datis*: from your own gifts and grants. The Church offers
 
 > **1107–1108 ⋅ *Supra quae* and *Supplices***
 >
-> *Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium Patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam hostiam.*
->
-> (Profunde inclinatus, iunctis manibus et super altare positis, dicit:)
->
-> Supplices te rogamus, omnipotens Deus: iube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae maiestatis tuae: ut, quotquot (osculatur altare)* ex hac altaris participatione sacrosanctum Filii tui (iungit manus, et signat semel super hostiam, et semel super calicem,)* Cor**+**pus et San**+**guinem sumpserimus, (seipsum signat, dicens:)* omni benedictione caelesti et gratia repleamur. (Iungit manus.)* Per eundem Christum Dominum nostrum. Amen.****
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 *Supra quae* asks God to look on what has just been offered *propitio ac sereno vultu* — with a favourable and serene countenance — and to hold it accepted as he held accepted three earlier offerings. The three are chosen with care. Abel is called *puer tuus iustus*, your just servant, and what he offered were *munera*, gifts; Genesis 4, 4 says only that he offered of the firstlings of his flock and that the Lord had respect to him and to his offerings. Abraham is *Patriarcha noster*, our patriarch, and what he offered is a *sacrificium*. Melchisedech alone is called *summus sacerdos tuus*, your high priest, and what he offered is named twice over, *sanctum sacrificium, immaculatam hostiam*; Genesis 14, 18 says that he brought forth bread and wine, for he was the priest of the most high God. The ascent is deliberate: from a shepherd’s gift, to a patriarch’s sacrifice, to a priest’s offering of bread and wine.
 
@@ -602,21 +499,15 @@ The strangeness of *Supplices* is worth stating plainly, because smoothing it ov
 
 > **1109 ⋅ *Commemoratio pro defunctis***
 >
-> *Memento etiam, Domine, famulorum famularumque tuarum N. et N., qui nos praecesserunt cum signo fidei, et dormiunt in somno pacis.*
->
-> (Iungit manus, orat aliquantulum pro iis defunctis, pro quibus orare intendit, deinde extensis manibus prosequitur:)
->
-> Ipsis, Domine, et omnibus in Christo quiescentibus, locum refrigerii, lucis et pacis, ut indulgeas, deprecamur. (Iungit manus, et caput inclinat, dicens:)* Per eundem Christum Dominum nostrum. Amen.*
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 The phrase *cum signo fidei* means those who went before us marked with the sign of faith, that is, the baptised; *dormiunt in somno pacis* is the language of the Roman catacombs. What is asked for them is *locus refrigerii, lucis et pacis* — a place of refreshment, of light and of peace — three nouns in the same manner as the Canon’s other triples. *Refrigerium* is another word from the cemeteries: it means a cooling, and it had a fixed sense in Roman Christian usage for the condition of the faithful departed.
 
 > **1110 ⋅ *Nobis quoque peccatoribus***
 >
-> *(Manu dextera percutit sibi pectus, elata aliquantulum voce dicens:)*
->
-> Nobis quoque peccatoribus (extensis manibus ut prius, secrete prosequitur:)* famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis sanctis Apostolis et Martyribus: cum Ioanne, Stephano, Matthia, Barnaba, Ignatio, Alexandro, Marcellino, Petro, Felicitate, Perpetua, Agatha, Lucia, Agnete, Caecilia, Anastasia, et omnibus Sanctis tuis: intra quorum nos consortium, non aestimator meriti, sed veniae, quaesumus, largitor admitte. (Iungit manus.)* Per Christum Dominum nostrum.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
-These are the only words of the Canon a congregation is meant to hear. *Rubricae generales* n. 511 lists *verba Nobis quoque peccatoribus* among the things said in a clear voice, and the rubric printed with the prayer says the priest strikes his breast with his right hand and raises his voice somewhat — and then continues secretly. Three words are audible: *we too, sinners*. The rite chose, out of the whole Canon, the admission of sin as the one thing the people should hear from it.
+*Rubricae generales* n. 511 lists *verba Nobis quoque peccatoribus* among the parts said aloud. The rubric printed with the prayer says the priest strikes his breast with his right hand and raises his voice somewhat, then continues secretly. The text therefore gives these words distinct vocal prominence. It does not establish a congregation’s actual audibility or the editors’ reason for the distinction.
 
 The list here is the counterpart of the one in *Communicantes*, and it is arranged as its mirror. There, twenty-six names: Our Lady and Joseph, then twelve Apostles and twelve martyrs, in a list of intercessors. Here, fifteen names — eight men and seven women: John, Stephen, Matthias, Barnabas, Ignatius, Alexander, Marcellinus, Peter; Felicitas, Perpetua, Agatha, Lucy, Agnes, Cecilia, Anastasia — in a list of company hoped for. Matthias, absent from the earlier list, is present in this one. And the request is not for their prayers but for *partem aliquam et societatem*, some part and fellowship, with them.
 
@@ -626,11 +517,7 @@ The last clause is the finest sentence in the Canon and it depends entirely on w
 
 > **1111–1112 ⋅ *Per quem* and *Per ipsum***
 >
-> *Per quem haec omnia, Domine, semper bona creas, (signat ter super hostiam et calicem simul, dicens:)* sancti**+**ficas, vivi**+**ficas, bene**+**dicis et praestas nobis.**
->
-> (Discooperit calicem, genuflectit, accipit hostiam … cum hostia signat ter a labio ad labium calicis, dicens:)
->
-> Per ip**+**sum, et cum ip**+**so, et in ip**+**so, (cum ipsa hostia signat bis inter se et calicem, dicens:)* est tibi Deo Patri **+** omnipotenti, in unitate Spiritus **+** Sancti, (elevans parum calicem cum hostia, dicit:)* omnis honor, et gloria.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 *Per quem haec omnia … semper bona creas* has puzzled readers since the Middle Ages, because *haec omnia* after the consecration cannot be the offerings in the sense the verbs *creas* and *sanctificas* would require. The historical explanation usually given is that this clause is the surviving head of a blessing of other produce — oil, grapes, beans — which was once inserted at this point and of which the 1962 book still preserves an instance in the blessing of holy oils on Maundy Thursday. That explanation is a reconstruction; what is not in doubt is that the verbs form the Canon’s last quadruple: he creates, sanctifies, gives life to, blesses and bestows.
 
@@ -642,7 +529,7 @@ The rubric turns those words into a diagram. Holding the Host, the priest makes 
 
 Read as one text, the Roman Canon has a symmetry that its silence conceals. It opens with an intercession (Church, pope, bishop; the living; the saints) and closes with an intercession (the dead; ourselves; the saints again). Between those wings stand a request that the offering be made acceptable, the institution narrative, the memorial offering, an appeal to three ancient sacrifices, and a request that the offering be carried to the altar on high. The consecration is not at the centre by accident: it has two prayers of approach on one side and two prayers of ascent on the other.
 
-Its style is uniform throughout: doubled verbs, tripled nouns, adjectives in threes and fives, each series usually marked by a sign of the cross. Its address never changes; every conclusion is *Per Christum Dominum nostrum* or, where Christ has just been named, *Per eundem*. And its persons are consistently plural and consistently divided: *nos servi tui, sed et plebs tua sancta*; *pro quibus tibi offerimus: vel qui tibi offerunt*. Whatever else the Roman Canon is, it is a text that will not let one party in the Church offer without the other.
+Its style is uniform throughout: doubled verbs, tripled nouns, adjectives in threes and fives, each series usually marked by a sign of the cross. Its address never changes; every conclusion is *Per Christum Dominum nostrum* or, where Christ has just been named, *Per eundem*. And its persons are consistently plural and consistently divided: *nos servi tui, sed et plebs tua sancta*; *pro quibus tibi offerimus: vel qui tibi offerunt*. The wording joins celebrant, Church and faithful in one ecclesial offering; it does not make a present congregation necessary for the Mass’s validity or ecclesial character.
 
 ## The Communion (nn. 1113–1131)
 
@@ -652,11 +539,7 @@ With *Per omnia saecula saeculorum* at the end of the doxology the priest’s vo
 
 > **1113–1114 ⋅ *Praeceptis salutaribus* and *Pater noster***
 >
-> ***V.** *Per omnia saecula saeculorum. **R.** *Amen.***
->
-> (Iungit manus.)* Oremus: Praeceptis salutaribus moniti, et divina institutione formati, audemus dicere:*
->
-> (Extendit manus.)* Pater noster, qui es in caelis: Sanctificetur nomen tuum: Adveniat regnum tuum: Fiat voluntas tua, sicut in caelo, et in terra. Panem nostrum cotidianum da nobis hodie: Et dimitte nobis debita nostra, sicut et nos dimittimus debitoribus nostris. Et ne nos inducas in tentationem. **R.** *Sed libera nos a malo. (Sacerdos secrete dicit:)* Amen.***
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xxxix).**  “Being instructed by thy saving precepts, and following thy divine directions, we presume to say: Our Father, who art in heaven, hallowed be thy name: thy kingdom come: thy will be done on earth, as it is in heaven: give us this day our daily bread; and forgive us our trespasses, as we forgive them that trespass against us. And lead us not into temptation: **R.** But deliver us from evil. **P.** Amen.”
 
@@ -666,7 +549,7 @@ The first is that the Lord’s Prayer is *sung or said aloud, and by the priest 
 
 The second is the **introduction**, which the missal treats as part of the prayer and not as a rubrical cue: *Praeceptis salutaribus moniti, et divina institutione formati, audemus dicere*. Warned by saving precepts and formed by divine instruction, we *dare* to say. *Audemus* is a strong verb and it is the point of the sentence. The Church does not say the Our Father at this moment because it is a good prayer; it says it because it was commanded to, and it says so before saying it. The 1861 English caught the structure but softened the verb to “we presume to say”, which is the translator’s difficulty and not the Latin’s.
 
-The third is a word. The missal prints *Panem nostrum *cotidianum**; the 1861 hand missal prints *quotidianum*. That is the same orthographic restoration met at *exspecto* in the Creed. But underneath it lies a real textual choice that is not orthographic at all. The Vulgate has two forms of the petition: Matthew 6, 11 reads *panem nostrum supersubstantialem*, which the Douay-Rheims renders “Give us this day our supersubstantial bread”, while Luke 11, 3 reads *panem nostrum cotidianum*, “Give us this day our daily bread”. The Roman Mass says the Lucan form. It has never used the Matthaean one, and the older commentators who wanted the eucharistic reading had to argue for it against the text the rite actually says.
+The third is a word. The missal prints *Panem nostrum *cotidianum**; the 1861 hand missal prints *quotidianum*. That is the same orthographic restoration met at *exspecto* in the Creed. But underneath it lies a real textual choice that is not orthographic at all. The Vulgate has two forms of the petition: Matthew 6, 11 reads *panem nostrum supersubstantialem*, which the Douay-Rheims renders “Give us this day our supersubstantial bread”, while Luke 11, 3 reads *panem nostrum cotidianum*, “Give us this day our daily bread”. This 1962 edition prints the Lucan form. The checked witnesses do not establish a universal history of the Roman use.
 
 > **Two tones, and where they are used**
 >
@@ -678,13 +561,7 @@ Fortescue records the tradition, which he takes from Gregory the Great’s own l
 
 > **1117 ⋅ *Libera nos*, with the fraction**
 >
-> *(Deinde manu dextera accipit inter indicem et medium digitos patenam, quam tenens super altare erectam, dicit secrete:)*
->
-> Libera nos, quaesumus Domine, ab omnibus malis, praeteritis, praesentibus et futuris: et intercedente beata et gloriosa semper Virgine Dei Genetrice Maria, cum beatis Apostolis tuis Petro et Paulo, atque Andrea, et omnibus Sanctis, (signat se cum patena a fronte ad pectus,)* da propitius pacem in diebus nostris: (patenam osculatur,)* ut, ope misericordiae tuae adiuti, et a peccato simus semper liberi et ab omni perturbatione securi.**
->
-> (… accipit hostiam, et eam super calicem tenens utraque manu, frangit per medium, dicens:)* Per eundem Dominum nostrum Iesum Christum, Filium tuum. (… frangit particulam, dicens:)* Qui tecum vivit et regnat in unitate Spiritus Sancti Deus.**
->
-> **V.** *Per omnia saecula saeculorum. **R.** *Amen.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xxxix–xl).**  “Deliver us, we beseech thee, O Lord, from all evils, past, present, and to come; and by the intercession of the blessed and ever glorious Virgin Mary Mother of God, and of the holy apostles Peter and Paul, and of Andrew, and of all the saints, mercifully grant peace in our days: that thro’ the assistance of thy mercy, we may be always free from sin, and secure from all disturbance. Through the same Jesus Christ, thy Son our Lord, who with thee and the Holy Ghost liveth and reigneth, God. **P.** World without end. **R.** Amen.”
 
@@ -696,13 +573,7 @@ The fraction happens inside this prayer, at its conclusion. The priest breaks th
 
 > **1118–1119 ⋅ *Pax Domini* and *Haec commixtio***
 >
-> *(Cum ipsa particula signat ter super calicem, dicens:)*
->
-> Pax **+** Domini sit **+** semper vobis**+**cum. **R.** *Et cum spiritu tuo.*
->
-> (Particulam ipsam immittit in calicem, dicens secrete:)
->
-> Haec commixtio, et consecratio Corporis et Sanguinis Domini nostri Iesu Christi, fiat accipientibus nobis in vitam aeternam. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xl).**  “May the peace of the Lord be always with you. **R.** And with thy spirit.” And, at the commingling: “May this mixture, and consecration of the body and blood of our Lord Jesus Christ, be to us that receive it effectual to eternal life. Amen.”
 
@@ -714,11 +585,7 @@ The commingling is one of the harder things in the Roman rite to state accuratel
 
 > **1120 ⋅ *Agnus Dei***
 >
-> *Agnus Dei, qui tollis peccata mundi: miserere nobis.*
->
-> Agnus Dei, qui tollis peccata mundi: miserere nobis.
->
-> Agnus Dei, qui tollis peccata mundi: dona nobis pacem.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **Posture, and the Requiem form**
 >
@@ -736,9 +603,7 @@ The address has already been used once in the same Mass, in the *Gloria* at *Qui
 
 > **1121–1122 ⋅ *Domine Iesu Christe, qui dixisti* and the peace**
 >
-> *Domine Iesu Christe, qui dixisti Apostolis tuis: Pacem relinquo vobis, pacem meam do vobis: ne respicias peccata mea, sed fidem Ecclesiae tuae; eamque secundum voluntatem tuam pacificare et coadunare digneris: Qui vivis et regnas Deus per omnia saecula saeculorum. Amen.*
->
-> (Si danda est pax, osculatur altare et, dans pacem, dicit:)* Pax tecum. **R.** *Et cum spiritu tuo.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **The Requiem exception**
 >
@@ -748,13 +613,11 @@ The first prayer is about the Church and not about the priest, which is why it i
 
 > **1123–1124 ⋅ *Domine Iesu Christe, Fili Dei vivi* and *Perceptio***
 >
-> *Domine Iesu Christe, Fili Dei vivi, qui ex voluntate Patris, cooperante Spiritu Sancto, per mortem tuam mundum vivificasti: libera me per hoc sacrosanctum Corpus et Sanguinem tuum ab omnibus iniquitatibus meis et universis malis: et fac me tuis semper inhaerere mandatis, et a te numquam separari permittas: Qui cum eodem Deo Patre et Spiritu Sancto vivis et regnas Deus in saecula saeculorum. Amen.*
->
-> Perceptio Corporis tui, Domine Iesu Christe, quod ego indignus sumere praesumo, non mihi proveniat in iudicium et condemnationem: sed pro tua pietate prosit mihi ad tutamentum mentis et corporis, et ad medelam percipiendam: Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xli).**  “Lord Jesus Christ, Son of the living God, who, according to the will of thy Father, hast by thy death, thro’ the co-operation of the Holy Ghost, given life to the world, deliver me by this thy most sacred body and blood from all my iniquities, and from all evils; and make me always adhere to thy commandments, and never suffer me to be separated from thee …” And: “Let not the participation of thy body, O Lord Jesus Christ, which I, though unworthy, presume to receive, turn to my judgment and condemnation, but thro’ thy mercy, may it be a safeguard and remedy, both to soul and body …”
 
-These two are personal in a way nothing else in the Mass is. Every verb is singular and first person — *libera me*, *fac me*, *prosit mihi* — and their subject is the danger of the act about to be performed. *Perceptio* states it in the harshest available terms: that receiving may turn out *in iudicium et condemnationem*, into judgment and condemnation. That is 1 Corinthians 11, 29 turned into a prayer against itself. The Roman rite lets the priest name the possibility of eating to his own harm at the moment before he eats, and asks instead for *tutamentum mentis et corporis*, a safeguard of mind and body, and for *medela*, a cure.
+These two are markedly personal. Their operative verbs are singular and first person — *libera me*, *fac me*, *prosit mihi* — and their subject is the danger of the act about to be performed. *Perceptio* states it in the harshest available terms: that receiving may turn out *in iudicium et condemnationem*, into judgment and condemnation. That is 1 Corinthians 11, 29 turned into a prayer against itself. The Roman rite lets the priest name the possibility of eating to his own harm at the moment before he eats, and asks instead for *tutamentum mentis et corporis*, a safeguard of mind and body, and for *medela*, a cure.
 
 The trinitarian clauses at the end of the two prayers are worth a glance for what they show about how carefully this Latin was assembled. The first ends *Qui cum eodem Deo Patre et Spiritu Sancto vivis et regnas* — *eodem* because the Father has been named inside the prayer — and the second ends *Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti*, without *eodem*, because he has not. The same scruple runs through the Canon.
 
@@ -762,27 +625,17 @@ The trinitarian clauses at the end of the two prayers are worth a glance for wha
 
 > **1125–1127 ⋅ *Panem caelestem*, *Domine non sum dignus*, and the Body**
 >
-> *Panem caelestem accipiam, et nomen Domini invocabo.*
->
-> (… dextera tribus vicibus percutiens pectus, elata aliquantulum voce, ter dicit devote et humiliter:)
->
-> Domine, non sum dignus, (et secrete prosequitur:)* ut intres sub tectum meum: sed tantum dic verbo, et sanabitur anima mea.*
->
-> (Postea, dextera se signans cum hostia super patenam, dicit:)
->
-> Corpus Domini nostri Iesu Christi custodiat animam meam in vitam aeternam. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xlii).**  “Lord, I am not worthy that thou shouldst enter under my roof; say but the word, and my soul shall be healed.” And: “May the body of our Lord Jesus Christ preserve my soul to life everlasting. Amen.”
 
 *Domine, non sum dignus* is the centurion’s answer at Matthew 8, 8, and the alteration made to it is exact and small. The Douay-Rheims has the centurion say “Lord, I am not worthy that thou shouldst enter under my roof; but only say the word, and my servant shall be healed.” The Mass changes *puer meus*, my servant, to *anima mea*, my soul, and changes nothing else. The man who asked for a cure at a distance becomes the man asking for one within.
 
-The rubric divides the sentence between two voices, and the division is the same one used at *Nobis quoque peccatoribus* in the Canon: four words raised, the rest secret. In a rite where almost everything near the altar is inaudible, the two things the people are given to hear are an admission of sinfulness and an admission of unworthiness.
+The rubric divides the sentence between two voice levels, and the division is the same one used at *Nobis quoque peccatoribus* in the Canon: four words with the voice somewhat raised, the rest secret. The printed directions thus give special vocal prominence to admissions of sinfulness and unworthiness; they do not establish what every congregation actually heard.
 
 > **1128–1129 ⋅ *Quid retribuam* and the Blood**
 >
-> *Quid retribuam Domino pro omnibus quae retribuit mihi? Calicem salutaris accipiam, et nomen Domini invocabo. Laudans invocabo Dominum, et ab inimicis meis salvus ero.*
->
-> Sanguis Domini nostri Iesu Christi custodiat animam meam in vitam aeternam. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 The missal prints no scriptural reference here, though it prints one at the *Lavabo* and at *Dirigatur*. The reason is probably that the text is not one passage. *Quid retribuam Domino … et nomen Domini invocabo* is Psalm 115, 12–13 in the Vulgate numbering — “What shall I render to the Lord, for all the things that he hath rendered to me? I will take the chalice of salvation; and I will call upon the name of the Lord” — and *Laudans invocabo Dominum, et ab inimicis meis salvus ero* is Psalm 17, 4, “Praising, I will call upon the Lord: and I shall be saved from my enemies.” The rite has joined a verse about drinking a cup to a verse about being rescued, and the joint is invisible in the Latin.
 
@@ -796,17 +649,15 @@ This is the most consequential structural fact in the whole Communion rite, and 
 >
 > n. 502: the proper time for giving Holy Communion to the faithful is within Mass, after the Communion of the celebrant, who is himself to distribute it to those who ask, unless the number of communicants makes help from another priest appropriate; it is altogether unfitting that Communion be distributed at the same altar at which Mass is actually being celebrated by another priest outside the proper time; and for a reasonable cause Communion may also be given immediately before or after Mass, or outside Mass, in which cases the form prescribed in the *Rituale Romanum*, title V, chapter II, nn. 1–10, is used. n. 503: whenever Holy Communion is distributed within Mass, the celebrant, having consumed the Precious Blood, proceeds immediately to the distribution, *the confession and absolution being omitted*, but *Ecce Agnus Dei* and the threefold *Domine, non sum dignus* being said.
 
-The *Ordo Missae* prints, at the end of n. 1129, one clause about the people: *Quo sumpto, si qui sunt communicandi, eos communicet, antequam se purificet* — when the Precious Blood has been consumed, if there are any to be communicated, let him communicate them before he purifies himself. That is the whole of it. No formula is printed. *Ecce Agnus Dei*, *Domine, non sum dignus* said three times by or for the communicants, and *Corpus Domini nostri Iesu Christi custodiat animam tuam in vitam aeternam* are prescribed by the general rubrics and printed in another book.
+The *Ordo Missae* prints, at the end of n. 1129, one clause about the people: *Quo sumpto, si qui sunt communicandi, eos communicet, antequam se purificet* — when the Precious Blood has been consumed, if there are any to be communicated, let him communicate them before he purifies himself. That is the whole of it. No distribution formula is printed here. General rubric n. 503 expressly requires *Ecce Agnus Dei* and the threefold *Domine, non sum dignus* for distribution within Mass; n. 502 refers distribution immediately before or after Mass to the manner prescribed in the *Rituale Romanum*. A registered 1925 Ritual is used only as a historical control: title IV, chapter 2, nn. 1–13 distinguishes the outside-Mass and within-Mass procedures and retains the *Confiteor* and *Misereatur* in its older within-Mass procedure. No exact 1952 Ritual witness has been checked, so continuity of its wording into 1962 is not claimed.
 
-Two things follow and both should be said plainly. First, the Communion of the faithful in this Missal is legislated but not typeset: a reader who takes the *Ordo Missae* as the complete order of the rite will not find it. Second, n. 503 is a piece of recent legislation and not an ancient custom. The *Confiteor* before the people’s Communion — the servers’ confession repeated at the rail — is precisely what n. 503 suppresses, and its suppression is one of the visible marks of the 1960 code in a rite otherwise unchanged since 1570. What replaced it is nothing; the priest turns from the altar and says *Ecce Agnus Dei*.
+Two things follow and both should be said plainly. First, the Communion of the faithful in this Missal is legislated but not typeset: a reader who takes the *Ordo Missae* as the complete order of the rite will not find it. Second, n. 503 records a 1960 procedural change. The *Confiteor* before the people’s Communion — the servers’ confession repeated at the rail — is precisely what n. 503 suppresses, and its suppression is one visible mark of the 1960 code. The checked 1925 Ritual establishes the earlier procedure; it does not establish the age of every element or an otherwise-unchanged history since 1570. Under n. 503 the priest proceeds to *Ecce Agnus Dei* without that confession and absolution.
 
 ### The ablutions (nn. 1130–1131)
 
 > **1130–1131 ⋅ *Quod ore sumpsimus* and *Corpus tuum***
 >
-> *Quod ore sumpsimus, Domine, pura mente capiamus: et de munere temporali fiat nobis remedium sempiternum.*
->
-> Corpus tuum, Domine, quod sumpsi, et Sanguis, quem potavi, adhaereat visceribus meis: et praesta; ut in me non remaneat scelerum macula, quem pura et sancta refecerunt sacramenta: Qui vivis et regnas in saecula saeculorum. Amen.
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xliii).**  “May thy body, O Lord, which I have received, and thy blood which I have drank, cleave to my bowels; and grant that no stain of sin may remain in me, who have been fed with this pure and holy sacrament. Who livest and reignest, &c.”
 
@@ -824,13 +675,7 @@ The last eight numbers of the *Ordo Missae* are the shortest stretch of the book
 
 > **1132–1133 ⋅ *Ite, missa est***
 >
-> *(Dicto, post ultimam orationem, V. Dominus vobiscum. R. Et cum spiritu tuo, dicit:)*
->
-> Ite, missa est. **R.** *Deo gratias.*
->
-> (Vel, si qua liturgica processio sequatur:)* Benedicamus Domino. **R.** *Deo gratias.**
->
-> (In Missis defunctorum dicit:)*  **V.** *Requiescant in pace. **R.** *Amen.***
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xliv).**  “Ite missa est (vel) Benedicamus Domino. Go, you are dismissed, (or) let us bless the Lord. **R.** Deo gratias. **R.** Thanks be to God.” And, in Masses for the dead: “**P.** Requiescant in pace. **P.** May they rest in peace. **R.** Amen.”
 
@@ -848,13 +693,7 @@ The missal then prints eight chant settings of *Ite, missa est* under n. 1134, 
 
 > **1137–1138 ⋅ *Placeat tibi* and *Benedicat vos***
 >
-> *(Tunc celebrans inclinat se ante medium altaris, et, manibus iunctis super illud, dicit secreto:)*
->
-> Placeat tibi, sancta Trinitas, obsequium servitutis meae: et praesta; ut sacrificium, quod oculis tuae maiestatis indignus obtuli, tibi sit acceptabile, mihique et omnibus, pro quibus illud obtuli, sit, te miserante, propitiabile. Per Christum Dominum nostrum. Amen.
->
-> (Deinde osculatur altare: et elevatis oculis, extendens, elevans et iungens manus caputque Cruci inclinans, dicit:)
->
-> Benedicat vos omnipotens Deus, (et versus ad populum, semel tantum benedicens, etiam in Missis solemnibus, prosequitur:)* Pater, et Filius, **+** et Spiritus Sanctus. **R.** *Amen.**
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xliv).**  “Let the performance of my homage be pleasing to thee, O holy Trinity; and grant that the sacrifice which I, tho’ unworthy, have offered up in the sight of thy Majesty, may be acceptable to thee, and thro’ thy mercy be a propitiation for me, and all those for whom it has been offered. Thro’ …” And the blessing: “May Almighty God, the Father, Son, and Holy Ghost, bless you. Amen.”
 
@@ -866,9 +705,7 @@ The blessing is one blessing, and the missal makes a point of saying so: *semel 
 
 > **1139 ⋅ *Initium sancti Evangelii secundum Ioannem* (Ioann. 1, 1–14)**
 >
-> *(Et signans signo crucis primum altare vel librum, deinde se in fronte, ore et pectore, dicit:)* Initium sancti Evangelii secundum Ioannem. (Vel si aliud Evangelium legendum sit: Sequentia sancti Evangelii etc.)* **R.** *Gloria tibi, Domine.****
->
-> In principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum … (Genuflectit dicens:)* Et Verbum caro factum est, (et surgens prosequitur:)* et habitavit in nobis: et vidimus gloriam eius, gloriam quasi Unigeniti a Patre, plenum gratiae et veritatis. **R.** *Deo gratias.***
+> **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
 > **English witness (Cummiskey 1861, p. xlv–xlvi).**  “IN the beginning was the Word, and the Word was with God, and the Word was God … And THE WORD WAS MADE FLESH, and dwelt among us; and we saw his glory, as it were the glory of the only begotten of the Father, full of grace and truth. **R.** Thanks be to God.” The 1861 book sets *ET VERBUM CARO FACTUM EST* and “AND THE WORD WAS MADE FLESH” in capitals, as it had set *ET HOMO FACTUS EST* in the Creed, and closes the Ordinary with a printer’s rule immediately after *Deo gratias*.
 
@@ -884,7 +721,7 @@ That is a fact about its status, and the fact has a history.
 >
 > Fortescue’s account is that throughout the Middle Ages the last Gospel belonged to the priest’s thanksgiving and “was in no wise an element of the Mass”. The Sarum Missal has it said on the way back to the sacristy; Burchard’s ceremonial of 1502 allows it to be said at the altar; and “Pius V in his reformed missal (1570) for the first time admits it as part of the Mass”. Fortescue adds the observations that make the point stick: it is not sung by the deacon, it has no solemnities at High Mass, and a bishop says it on his way from the altar.[^10] This is an identified early twentieth-century reconstruction, reported as such. What can be checked in the 1962 book itself agrees with it: the last Gospel is the one reading in the Mass with no chant, no ministers’ part beyond two responses, and a list of six occasions on which it simply does not happen.
 
-The genuflection at *Et Verbum caro factum est* is the third and last of the Mass’s kneeling clauses, and it pairs exactly with the first. At *Et incarnatus est* in the Creed the assembly knelt for the same event stated as doctrine; here the priest genuflects for it stated as narrative. Between them stands the consecration, at which the same event is not stated at all but done. Whether the 1570 revisers arranged that sequence deliberately cannot be shown from the book, and this study does not claim it; what the book shows is that the sequence exists and that the reader of the *Ordo Missae* meets the Incarnation three times, in three grammars.
+The genuflection at *Et Verbum caro factum est* recalls the Creed’s kneeling clause. At *Et incarnatus est* the Incarnation is professed; here John narrates it. The consecration stands between those two textual moments, but it makes Christ sacramentally present and must not be described as a repetition of the Incarnation. Whether any compiler intended a three-part symbolic sequence cannot be shown from the book, and this study claims none.
 
 The Mass ends with *Deo gratias*, the answer given to the Epistle and to the dismissal. The 1962 *Ordo Missae* closes there, at n. 1139, and the next number in the volume is the introit of Easter Sunday.
 
@@ -898,21 +735,17 @@ The exposition has moved through the rite in order, and at each stage it has ask
 
 | **Received unit** | **No.** | **Voice, gesture, condition** |
 |:-----------------|:--------|:--------------------------------------|
-| Preface dialogue | 1043–1087 | The oldest continuously attested text in the Latin Mass, and the only one that is a negotiation rather than a prayer. Structurally unchanged. |
-| Roman Canon | 1088–1112 | Paralleled clause for clause at Milan about 390 in *De sacramentis* and verbally different there at every point of comparison. Trent, session XXII chapter IV, describes it as composed of the Lord’s words, apostolic traditions and papal institutions. |
-| *Kyrie*, *Gloria*, *Sanctus*, *Agnus Dei* | 1024–1025, 1086, 1120 | Received chants of Greek, scriptural or early-Latin origin, added at datable moments and never composed for this rite. The *Agnus Dei* is attributed to Sergius I (687–701). |
-| Creed | 1029 | The only text in the Ordinary composed by a general council, admitted at Rome probably in 1014. |
+| Preface dialogue | 1043–1087 | A fixed exchange that immediately prepares the proper or common preface; its exact wording and gestures are verified in this edition. |
+| Roman Canon | 1088–1112 | A Roman petition with selected late-fourth-century Milanese parallels in *De sacramentis*. Trent, session XXII chapter IV, describes the Canon as composed of the Lord’s words, apostolic traditions and papal institutions. |
+| *Kyrie*, *Gloria*, *Sanctus*, *Agnus Dei* | 1024–1025, 1086, 1120 | Unlike chants received into one sequence. Their historical notices are reported from the identified witnesses and are not a complete compositional history. |
+| Creed | 1029 | The Latin liturgical recension of the Nicene-Constantinopolitan profession, including the later Latin *Filioque*; Fortescue reports its Roman admission probably in 1014. |
 | Foot of the altar | 1013–1023 | Medieval private preparation, various by use until 1570, fixed thereafter, and still rubrically conditional in 1962. |
-| Offertory prayers | 1030–1042 | The youngest stratum: fourteenth century at Rome on Fortescue’s reconstruction, adopted from the fourteenth Roman *Ordo* by the revisers of 1570. |
-| Priest’s Communion prayers | 1121–1131 | Medieval private devotion, first person singular throughout, admitted with the rest in 1570. |
+| Offertory prayers | 1030–1042 | Fortescue reports the received set at Rome in the fourteenth century and its adoption by the revisers of 1570. The exact 1570 witness confirms the sequence; this study has not independently established his manuscript and redaction chain. |
+| Priest’s Communion prayers | 1121–1131 | A sequence containing both singular and plural prayers; Fortescue supplies the historical account used here. |
 | Last Gospel | 1139 | A priest’s thanksgiving until 1570, when it entered the Mass; six occasions on which it is still omitted entirely. |
 | Communion of the faithful | nn. 502–503 | Legislated in the general rubrics and not printed in the *Ordo Missae* at all. Its immediately preceding *Confiteor* was suppressed by the code of 1960. |
 
-Two patterns run across that table.
-
-The first is that *the oldest material is public and the newest is private*. The dialogue, the Canon and the chants are the Church’s; the prayers at the foot of the altar, the offertory prayers and the three prayers before Communion are the priest’s, said in the first person, and every one of them is medieval. The rite as printed in 1962 therefore has an old public spine with a medieval private casing at each end, and the casing is exactly the part a congregation cannot hear.
-
-The second is that *the rubrics are younger than any of it*. Nothing in the texts of the Ordinary was composed in the twentieth century; a great deal of the law governing them was. The numbers this study has quoted most often — 424, 425, 431–432, 475–476, 500–503, 507–510, 511–512 — are the code of 1960, promulgated two years before the book that prints them. A reader who asks what is new in the 1962 Ordinary will find the answer almost entirely in its rubrics, and in four words of the *Communicantes*.
+The table establishes diversity of genre, speaker, voice and historical witness; it does not establish a simple opposition between an old public core and later private additions. The code governing the received texts was revised in 1960. The numbers this study has quoted most often — 424, 425, 431–432, 475–476, 500–503, 507–510, 511–512 — are the code of 1960, promulgated two years before the book that prints them. A reader who asks what changed immediately before or during 1962 must therefore examine both the rubrics and the seven-word Saint Joseph clause in the *Communicantes*.
 
 ### How the book makes one thing of it
 
@@ -926,7 +759,7 @@ It **silences almost everything**. General rubric n. 511 lists what is said alo
 
 ### The 1962 alteration, and its size
 
-This edition contains one substantive change to the Canon, and it is the cleanest available test of everything above. On 13 November 1962 the Sacred Congregation of Rites decreed the insertion of *sed et beati Ioseph, eiusdem Virginis Sponsi* into the *Communicantes*, effective 8 December; the facsimile collated here prints it and the 1861 hand missal does not. Four words were added, by a pope and in the lifetime of the priests who used the book, to the one text of which Benedict XIV had written that no pope had added to it or changed it since Gregory the Great.
+This edition contains one substantive change to the Canon, and it is the cleanest available test of everything above. On 13 November 1962 the Sacred Congregation of Rites decreed the insertion of *sed et beati Ioseph, eiusdem Virginis Sponsi* into the *Communicantes*, effective 8 December; the facsimile collated here prints it and the 1861 hand missal does not. Seven Latin words were added, by papal decision and in the lifetime of the priests who used the book, to the one text of which Benedict XIV had written that no pope had added to it or changed it since Gregory the Great.
 
 Set beside that, the change the following decade made to the same prayer’s neighbourhood is of another order. The 1962 form over the chalice reads *Hic est enim Calix Sanguinis mei, novi et aeterni testamenti: mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum*, and is followed by *Haec quotiescumque feceritis, in mei memoriam facietis*. Both of those clauses were altered when the Order of Mass was reformed. The Claude study of the postconciliar Order of Mass reaches, from the other side of the same comparison and on its own evidence, the judgment that the alteration of the dominical words is the deepest textual change between the two books. Nothing in the present study contradicts that; the 1962 witness collated here is one half of the fact on which it rests, and the size of the 1962 insertion is the measure against which the later change should be read.
 
@@ -934,31 +767,31 @@ Set beside that, the change the following decade made to the same prayer’s nei
 
 > **Project synthesis — the judgment this study reaches**
 >
-> **The judgment.** The Ordinary of the 1962 *Missale Romanum* is a stratified text whose strata are separately datable and demonstrably unlike each other in age, authorship and register; its unity is not the unity of a single composition and never was. What the 1962 book supplies is not that unity but its *exhibition*: a continuous numbering, a rubric embedded inside every prayer, and a rule of silence that reduces the audible Mass to a few lines, together present the deposit as one ordered action directed to one end. The rite’s identity therefore rests on what it does and on the law that orders it, not on the homogeneity of its texts — and the 1962 books are candid about this, because their own promulgating council said the Canon was made of three different kinds of material and their own Congregation of Rites added four words to it while the edition was in the press.
+> **The judgment.** The Ordinary of the 1962 *Missale Romanum* joins texts of different genres and historical witnesses in one legally ordered celebration. This edition displays that order through continuous marginal numbering, interleaved rubrics, rules of voice and explicit conditions. These features establish the received sequence and manner of celebration; they do not prove a theory of compositional intention or make typography the cause of the rite’s unity. The Council of Trent describes the Canon’s received sources, and the Sacred Congregation of Rites later inserted the seven-word Saint Joseph clause. The collated facsimile prints that amended text; its page images do not date the production of the particular impression.
 >
 > **The reasons.**
 >
-> -   *The strata are visible in the sources, not inferred from a theory.* *De sacramentis* IV, 5–6, read at the page images, has *ascriptam, ratam, rationabilem, acceptabilem* and *memores* with the same three genitives, and differs from the Roman text at every point of comparison; Fortescue dates the offertory prayers to the fourteenth century at Rome and the last Gospel’s admission to 1570; Berno’s report dates the Creed at Rome to 1014; the *Liber Pontificalis* attributes the *Agnus Dei* to Sergius I. These are four independent kinds of evidence pointing the same way.
+> -   *The diversity is visible in the sources, not inferred from a theory.* *De sacramentis* IV, 5–6, read at the page images, has *ascriptam, ratam, rationabilem, acceptabilem* and *memores* with the same three genitives while differing at the compared loci; Fortescue dates the offertory prayers to the fourteenth century at Rome and the last Gospel’s admission to 1570; Berno’s report dates the Creed at Rome to 1014; the *Liber Pontificalis* attributes the *Agnus Dei* to Sergius I. These are four independent kinds of evidence pointing the same way.
 >
-> -   *The register changes with the stratum.* The old public material is plural and addressed to the Father; the medieval material is singular and addressed to Christ or to the Trinity. *Perceptio Corporis tui … non mihi proveniat in iudicium* and *Te igitur, clementissime Pater … supplices rogamus ac petimus* are not two moods of one voice.
+> -   *The register changes within the sequence.* Some prayers are plural, others singular; their addressees and ritual functions also differ. *Perceptio Corporis tui … non mihi proveniat in iudicium* and *Te igitur, clementissime Pater … supplices rogamus ac petimus* are not two moods of one voice.
 >
 > -   *The unifying devices are the book’s own and are checkable.* The numbering runs 1013–1139 unbroken; nn. 511–512 define the silence and its two exceptions; the interleaved rubric appears in every appointed block quoted in this study. None of these is an editorial construction.
 >
-> -   *The law is doing the work that a single authorship would otherwise have to do.* The rubrics decide when the psalm is said, when the *Gloria* and Creed are said, which preface is used, whether there is a last Gospel, and whether the people’s *Confiteor* is said before their Communion. Change the code and the celebration changes without a word of the Ordinary changing — which is exactly what happened in 1960.
+> -   *The law orders unlike texts in one celebration.* The rubrics decide when the psalm is said, when the *Gloria* and Creed are said, which preface is used, whether there is a last Gospel, and whether the people’s *Confiteor* is said before their Communion. Change the code and the celebration changes without a word of the Ordinary changing — which is exactly what happened in 1960.
 >
-> -   *The 1962 insertion is a controlled case.* Four words entered the Canon by decree, and the two witnesses collated for this study disagree about them and about nothing else of substance. That the rite was not thought to have changed is evidence about where its identity is located.
+> -   *The 1962 insertion is a controlled case.* Seven Latin words entered the Canon by decree. The 1861 witness lacks them and the amended facsimile prints them. This bounded comparison establishes that textual change, not a complete collation of every substantive difference between the books.
 >
-> **The strongest counterargument, at full strength.** The account above is an archaeologist’s, and a rite is not an archaeological object. Every serious liturgical text is stratified — so is the Divine Office, so is every Eastern anaphora, so is the Bible — and pointing this out establishes nothing about identity. The Church itself says the Canon is made of the Lord’s words, apostolic traditions and papal institutions, and says so in the act of declaring it free from error; on the Catholic account the composite origin is not a tension to be explained but the ordinary manner in which a living rite grows. Worse, by locating the unity in the 1962 book’s numbering, typography and rules of voice, this study has made an accident of one printing into the principle of the rite. Priests who used the typical editions of 1884 or 1920 had different pagination, no continuous marginal numbering of this kind and a different code of rubrics, and they celebrated the same Ordinary; a Dominican or a Carmelite of the same date, with a different *Confiteor*, a different offertory and different rubrics, was also offering the Roman Mass in the sense that matters. If the identity of the rite survives all that, then it cannot be constituted by the devices this study has named, and the real unity of the Ordinary is what the counterargument says it is: a single sacrificial act, whose texts are its instruments and whose printing is merely how one century handed it on. On that view the correct description is the simple one — the Ordinary is the Mass, stated in words — and the stratigraphy is a footnote.
+> **The strongest counterargument, at full strength.** The account above is an archaeologist’s, and a rite is not an archaeological object. Every serious liturgical text can be stratified — as can the Divine Office and the Bible — and pointing this out establishes nothing about identity. The Church itself says the Canon is made of the Lord’s words, apostolic traditions and papal institutions, and says so in the act of declaring it free from error; on the Catholic account the composite origin is not a tension to be explained but the ordinary manner in which a living rite grows. Worse, by locating the unity in the 1962 book’s numbering, typography and rules of voice, this study has made an accident of one printing into the principle of the rite. Priests who used the typical editions of 1884 or 1920 had different pagination, no continuous marginal numbering of this kind and a different code of rubrics, and they celebrated the same Ordinary; a Dominican or a Carmelite of the same date, with a different *Confiteor*, a different offertory and different rubrics, was also offering the Roman Mass in the sense that matters. If the identity of the rite survives all that, then it cannot be constituted by the devices this study has named, and the real unity of the Ordinary is what the counterargument says it is: a single sacrificial act, whose texts are its instruments and whose printing is merely how one century handed it on. On that view the Ordinary is the stable textual and rubrical form through which the sacrificial action is celebrated, and the stratigraphy is secondary.
 >
-> **Why the judgment is nevertheless retained.** Because the counterargument and the judgment are answering different questions, and the counterargument’s answer is not available to a study that has bound itself to one identified book. That the Roman Ordinary is one sacrificial act is a theological claim which this study neither doubts nor can establish from a facsimile; what a facsimile can establish is how this edition presents that act, and the answer is: by these three devices and by this code. The judgment above is deliberately about exhibition rather than constitution, and it says so. It also survives the counterargument’s best example in the one form in which this study can test it. The 1861 hand missal, printed from a typical edition three-quarters of a century older than this one, already sets its rubrics inside the prayers at the same places — inside the fraction, inside the last Gospel at *Et Verbum caro factum est* — and already prints the same conditional omissions at Requiems. The devices are therefore not an accident of this printing, even though their 1962 form is peculiar to it. And the medieval variants Fortescue records — Salisbury, Dominican, Carthusian, Carmelite, Lyons, all of them at the prayers at the foot of the altar — fall exactly in the stratum this study has identified as the youngest and most variable. The counterargument, pressed on its own examples, turns out to support the stratification it dismisses.
+> **The judgment’s limit.** The facsimile can establish how this edition orders the celebration; it cannot by itself establish the complete history or theological constitution of the Roman Rite. The 1861 witness confirms some earlier textual and rubrical arrangements, while Fortescue supplies identified historical reconstructions. Neither is treated as an exhaustive critical history. The synthesis is therefore limited to the received 1962 sequence, directly checked comparisons, and expressly attributed secondary conclusions.
 >
-> **What specific finding would change it.** One would be decisive: manuscript evidence that the private medieval strata are not later additions to a public Roman core but were present in Roman books contemporaneously with the Canon — concretely, a Roman *Ordo* or sacramentary earlier than the eleventh century containing *Suscipe, sancte Pater* or the sequence *Aufer a nobis*–*Oramus te* in the position the 1962 book gives them. Fortescue’s reconstruction, on which this study’s dating of the offertory depends, rests on manuscript arguments this study has not examined, and it is the load-bearing external claim in the whole account. If the offertory prayers proved coeval with the Canon, the “old public spine, young private casing” description would collapse, the register argument would lose its chronological force, and the judgment would have to be rewritten as a claim about literary genre rather than about strata. A second, weaker finding would also bite: evidence that the continuous marginal numbering of 1013–1139 was introduced for typesetting convenience with no editorial intention behind its continuity, which would remove one of the three devices named above without touching the other two.
+> **What specific finding would change it.** Better primary evidence could revise any date presently reported from Fortescue, especially the offertory’s Roman history. The judgment above would remain only at its narrower level: the 1962 book demonstrably orders texts of different grammar, speaker and ritual function. It makes no claim that marginal numbering or layout discloses an undocumented editorial intention.
 >
-> **Status.** This is a source-grounded editorial synthesis by an AI contributor, resting on one collated facsimile of the 1962 typical edition, one collated public-domain English hand missal of 1861, and the identified historical and conciliar witnesses named in the references. It is not magisterial teaching, a canonical opinion, a critical edition, or a specialist consensus, and it has received no independent liturgical, historical or theological review.
+> **Status.** This is a source-grounded editorial synthesis by an AI contributor, resting on one collated facsimile of the 1962 typical edition, one collated public-domain English hand missal of 1861, and the identified historical and conciliar witnesses named in the references. It is not magisterial teaching, a canonical opinion, a critical edition, or a specialist consensus. Independent review on 27 July 2026 identified errors and overclaims; the present revision narrows or corrects them and remains held pending final review of the corrected snapshot.
 
 ### What this study does not decide
 
-It does not date the sections of the Roman Canon severally, assign an author to any of them, or adjudicate the argument about the Roman Canon’s want of an explicit epiclesis. It does not identify the *sanctus Angelus tuus* of *Supplices*. It does not decide whether the medieval offertory prayers improved or damaged the rite. It offers no account of the present canonical discipline governing the use of the 1962 books, which is a dated question of current law and not a question about this edition. And it makes no comparison between this Ordinary and the reformed Order of Mass beyond the two textual points at which the collation of this edition supplies evidence: the four words added to the *Communicantes* in 1962, and the wording of the two dominical forms as this book prints them.
+It does not date the sections of the Roman Canon severally, assign an author to any of them, or adjudicate the argument about the Roman Canon’s want of an explicit epiclesis. It does not identify the *sanctus Angelus tuus* of *Supplices*. It does not decide whether the medieval offertory prayers improved or damaged the rite. It offers no account of the present canonical discipline governing the use of the 1962 books, which is a dated question of current law and not a question about this edition. And it makes no comparison between this Ordinary and the reformed Order of Mass beyond the two textual points at which the collation of this edition supplies evidence: the seven words added to the *Communicantes* in 1962, and the wording of the two dominical forms as this book prints them.
 
 ## Scope, Edition, and Qualifications
 
@@ -988,7 +821,7 @@ No English wording in this study is a translation made by its author. The rule i
 
 The Latin of the 1962 Missal is quoted as evidence. It is presented in framed blocks labelled with the edition’s own marginal numbers so that project-created prose and received liturgical wording cannot be confused. Two orthographic normalisations are made and are declared at first use: the missal’s *ae* and *oe* ligatures are printed as digraphs, and the tonic accents the missal prints as a pronunciation aid are omitted. No word, form or word order has been altered, and each block was collated against the facsimile page after being set.
 
-Rights: the underlying 1570–1962 liturgical text and the 1861 English are old enough to be public domain in the United States, but the digitisations through which both were read carry their own status, recorded per artifact in the source library. Neither scan’s bytes are redistributed here. Fortescue (1922), Migne’s *Patrologia Latina* 16 (1880), the Tauchnitz Trent (1887) and Waterworth’s English are public domain in the United States by age of publication.
+Rights: no public-domain conclusion is claimed for the 1962 liturgical text merely from its date. Short Latin passages are quoted for source-first analysis under the repository’s recorded publication authorization and are not offered as a recitation substitute. The 1861 English is public domain in the United States by publication date. The digitisations through which both were read carry their own status, recorded per artifact in the source library; neither scan’s bytes are redistributed here. Fortescue (1922), Migne’s *Patrologia Latina* 16 (1880), the Tauchnitz Trent (1887) and Waterworth’s English are public domain in the United States by age of publication.
 
 ### Evidence classes
 
@@ -1033,7 +866,7 @@ This table gathers the datable acts and witnesses on which the exposition draws,
 | 687–701 | Pontificate of Sergius I | The *Liber Pontificalis*, as Fortescue reports it, has Sergius order the *Agnus Dei* sung by clergy and people at the breaking of the Lord’s body. Reported. |
 | 1014 | Coronation of Henry II at Rome, 14 February | Berno of Reichenau reports that no creed was sung and that Benedict VIII afterwards ordered it sung after the Gospel at Rome. Fortescue records that most authors accept the account and names in a footnote those who do not. Probable, not secure. |
 | Twelfth century | John Beleth | Describes the threefold *Agnus Dei* ending *dona nobis pacem*; Innocent III notes churches, the Lateran among them, which kept *miserere nobis* three times — the shape the Requiem form still has. Reported. |
-| Fourteenth century | The fourteenth Roman *Ordo* | Fortescue identifies its offertory prayers as the set the revisers of 1570 adopted, “all taken or adapted from various, mostly non-Roman sources”, and traces *Suscipe sancte Pater* to the prayerbook of Charles the Bald (875–877). This is the load-bearing external dating in this study’s synthesis and it is reported as Fortescue’s. |
+| Fourteenth century | The fourteenth Roman *Ordo* | Fortescue identifies its offertory prayers as the set the revisers of 1570 adopted, “all taken or adapted from various, mostly non-Roman sources”, and traces *Suscipe sancte Pater* to the prayerbook of Charles the Bald. The manuscript is defensibly dated 846–869; Fortescue’s 875–877 are Charles’s imperial years. His broader reconstruction is reported rather than independently established here. |
 | 1502 | Burchard’s ceremonial | Allows the last Gospel, until then part of the priest’s thanksgiving on the way to the sacristy, to be said at the altar. Reported. |
 | 17 September 1562 | Council of Trent, session XXII | Chapter III on Masses in honour of the saints, whose closing clause is the closing clause of *Suscipe, sancta Trinitas*; chapter IV *De canone missae*, declaring the Canon free from error and composed of the Lord’s words, apostolic traditions and papal institutions; chapter V on the low and louder voice; chapter VII on the water in the chalice; canon VI against the assertion that the Canon contains errors; canon IX against the condemnation of the low-voiced Canon. Read at the page images of the Tauchnitz Latin and Waterworth’s English. |
 | 14 July 1570 | *Quo primum*, Pius V | Imposes the restored Missal, exempting rites approved from their first institution or continuously observed for more than two hundred years. Read at the facsimile’s own front matter. This is the edition in which the last Gospel first enters the Mass and in which the medieval offertory and Communion prayers are fixed. |
@@ -1063,7 +896,9 @@ Each entry names the edition actually used and the exact loci this study read. W
 
 ### Conciliar and papal acts
 
-**Canones et decreta sacrosancti oecumenici Concilii Tridentini**, editio stereotypa undecima (Lipsiae: ex officina Bernhardi Tauchnitz, 1887, reprinting the Roman edition of 1834). Read at the page images of printed pp. 118, 119 and 120: session XXII chapters III, IV, V and the end of VII, and canons I–II and III–IX.
+**Second Vatican Council, *Lumen gentium* 10–11**, official English dated web edition registered on 23 July 2026. The complete paragraphs control the ordered relation and essential distinction between common and ministerial priesthood and the faithful’s Eucharistic participation.
+
+**Canones et decreta sacrosancti oecumenici Concilii Tridentini**, editio stereotypa undecima (Lipsiae: ex officina Bernhardi Tauchnitz, 1887, reprinting the Roman edition of 1834). Read at the page images of printed pp. 118–121: session XXII chapters III, IV, V and the end of VII, and canons I–II and III–IX.
 
 **The Canons and Decrees of the Sacred and Oecumenical Council of Trent**, trans. J. Waterworth (London 1848; Burns and Oates reprint). Read at the page images of printed pp. 156 and 159: chapters IV and V, and canons III–IX.
 
@@ -1081,7 +916,7 @@ Adrian Fortescue, **The Mass: A Study of the Roman Liturgy** (London and New Yor
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-26T10:06:42Z
+**Last revised (UTC):** 2026-07-27T15:22:42Z
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 

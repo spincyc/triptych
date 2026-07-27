@@ -119,7 +119,7 @@ unit is proportionate to its significance rather than uniform.
 | 1127 | `Corpus Domini nostri` | priest, signing himself with the host | fixed | L T |
 | 1128 | `Quid retribuam` | priest, collecting fragments and wiping the paten | fixed | L T |
 | 1129 | `Sanguis Domini nostri` | priest, signing himself with the chalice | fixed | L T |
-| — | Communion of the faithful | celebrant; `Ecce Agnus Dei` and threefold `Domine non sum dignus` said, confession and absolution omitted | **not printed in the `Ordo Missae`**; cued at n. 1129 and legislated at nn. 502-503; formula in the *Rituale Romanum* | L H W |
+| — | Communion of the faithful | celebrant; `Ecce Agnus Dei` and threefold `Domine non sum dignus` said, confession and absolution omitted | **not printed in the `Ordo Missae`**; cued at n. 1129 and legislated at nn. 502-503; n. 502 refers immediately-before-or-after-Mass distribution to the Ritual's manner. The registered 1925 Ritual is a historical control, not an exact 1952 witness. | L H W |
 | 1130 | `Quod ore sumpsimus` | priest, plural, at the first ablution | fixed | L T |
 | 1131 | `Corpus tuum, Domine` | priest, singular, at the second ablution | fixed | L T |
 | — | Antiphona ad Communionem; postcommunion(s); `Oratio super populum` | priest | proper; nn. 504-506; the Prayer over the People on the ferias of Lent and Passiontide outside the Triduum | L |
