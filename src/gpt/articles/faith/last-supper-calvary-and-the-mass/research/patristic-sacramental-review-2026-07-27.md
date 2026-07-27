@@ -16,9 +16,13 @@ Eucharistia*, and *Sacramentum Caritatis*.
 
 Reviewed snapshot:
 
-- `main.tex`: `sha256:a92a70b033088e9dc884a8cc00814050dcb495e0c26e3a05067c1d7762ba5d79`
+- `main.tex`: `sha256:c5c7037f50df5d2ba6dc970a45abc54cb229a5079a9a2840e98a66489acfc0ae`
 - `research/source-bindings.toml`:
-  `sha256:ac859b551ffe737c73edd140e9ada79c3eafabd607c0d662e9d871ec46e4724c`
+  `sha256:d6c34500709cea0580761b2947e8712ba060bcfdb22445a2ee298c1e49c36804`
+
+The current snapshot was rechecked after the added exact GIRM, concomitance,
+and Aquinas bindings; those additions do not alter the reviewed argument and
+close the earlier reproducibility reservations.
 
 ## Findings
 
