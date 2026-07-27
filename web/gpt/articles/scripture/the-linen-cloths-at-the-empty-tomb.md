@@ -40,7 +40,7 @@ Matthew reports the stone, angel, empty place, guard, and later theft story. Mar
 
 The Fourth Gospel itself supplies the closest control in Lazarus. Lazarus comes from the tomb still bound in burial cloths, his face wrapped with a *soudarion*; Jesus orders others to unbind him (Jn 11:44). In chapter 20 the risen Jesus is absent and the cloths remain. The contrast belongs to John’s own narrative world: resuscitation returns Lazarus bound; resurrection does not present Jesus as a corpse needing release.
 
-## What the Greek Does and Does Not Say
+## What the Greek and Ancient Versions Do and Do Not Say
 
 ### *Othonia*: linen burial cloths
 
@@ -55,6 +55,12 @@ The *soudarion* is the smaller cloth associated with the head or face. The Latin
 The participle describing the face-cloth belongs to a verb used elsewhere of wrapping Jesus’s body in linen. Its lexical range supports “wrapped up” or “rolled up.” English “folded” is possible as a result description in some translations, but the Greek does not specify a deliberate set of parallel folds or a culturally coded shape.
 
 The verbal link to burial wrapping creates an important alternative to the image of Jesus tidying the tomb: the face-cloth may be described in the state produced by having been wrapped around the head. John tells where and how it lay relative to the other cloths; he does not narrate an act of post- Resurrection housekeeping.
+
+### The Vulgate and the Septuagint boundary
+
+The Clementine Vulgate preserves the same narrative distinctions without turning them into a diagram. At the burial it says that the body was bound with *lintea*; at the tomb it calls the cloths *linteamina* and the head-cloth a *sudarium*. The latter is *separatim involutum in unum locum*—apart, wrapped in one place. Luke likewise says that Peter saw the *linteamina* alone and departed *mirans*, wondering. This Latin witness therefore reinforces the subject sequence and the language of wrapping, separation, and wonder, but supplies no folded-table signal or precise cloth geometry.
+
+The Septuagint can bear here only as lexical background: this is a New Testament scene, not an Old Testament variant. The registered Thayer entry notes one Septuagint use of the *othonion* word family at Judges 14:13 for a linen garment. No direct checked Septuagint passage has been registered for this study, so that notice cannot be promoted into a broader claim about Jewish burial or dining custom.
 
 ### *Keimena*, *chōris*, and *eis hena topon*
 
@@ -118,7 +124,7 @@ John’s account does not say that the aromatics formed a hardened casing or tha
 
 The archaeological context is narrower than a generic “Jewish burial” picture. Magness’s Cambridge summary describes first-century Jerusalem’s rock-cut tombs as costly, multigenerational family tombs available to the upper classes, while poorer burials in trench or cist graves left fewer traces. It also distinguishes the initial individual inhumation—the body wrapped in a shroud and sometimes placed in a coffin—from later collection of bones in some tombs.[^1] Joseph’s rock-cut tomb therefore belongs to a particular Jerusalem setting and should not be made a template for every contemporary Jewish burial.
 
-Egyptian mummification is a poor positive control for this scene. Its reconstructed classic procedure includes organ removal and prolonged natron desiccation before final linen wrapping; John specifies none of those features.[^2] The myrrh and aloes establish aromatic care because John names them. They do not establish preservation, a hardened shell, or a bandage-by-bandage geometry. Specialist study of Jewish perfume evidence associates aromatics with several stages and purposes, including honor; later evidence also mentions odor control. That range is a warning against assigning John’s mixture one unspoken function.
+Egyptian mummification is a poor positive control for this scene. Its reconstructed classic procedure includes organ removal and prolonged natron desiccation before final linen wrapping; John specifies none of those features.[^2] The myrrh and aloes establish aromatic care because John names them. They do not establish preservation, a hardened shell, a bandage-by-bandage geometry, or any single purpose that the evangelist does not state.
 
 The plural cloths, face-cloth, and Synoptic *sindōn* need not conflict. A larger sheet can coexist with smaller bindings and a head cloth. Neither should they be harmonized into a precise kit whose every fold is known. Material culture clarifies possible objects; it cannot recover this arrangement.
 
@@ -234,11 +240,11 @@ The face-cloth matters too, but as burial evidence and part of John’s ordered 
 
 ## Scope, Method, and Qualifications
 
-This GPT edition independently tests the claims stated in section 1. It uses the same provider-neutral external evidence identities available to the Claude edition but inherits none of that edition’s prose, publication judgment, or review state. Greek observations were checked in the registered Robinson–Pierpont John and Luke artifacts; English Scripture is to be quoted only from the registered public-domain Douay–Rheims.
+This GPT edition independently tests the claims stated in section 1. It uses the same provider-neutral external evidence identities available to the Claude edition but inherits none of that edition’s prose, publication judgment, or review state. Greek observations were checked in the registered Robinson–Pierpont John and Luke artifacts. The exact Clementine Vulgate controls for John 11:44, 19:39–40, 20:3–10, Luke 23:53, and 24:12 were also checked; the Septuagint claim is limited to the registered lexicon’s identified lexical notice rather than an unregistered direct collation. English Scripture is quoted only from the registered public-domain Douay–Rheims.
 
 The patristic, medieval, textual-critical, material-culture, rabbinic, and modern-provenance claims were checked against the exact publication-local bindings. The modern folded-napkin conclusion remains bounded to the exact witnesses and dated routes named here; it does not claim an exhaustive search of every language or unpreserved custom and does not depend on another provider’s search receipt. Theophylact and Lightfoot remain explicitly limited by OCR, and present-day web witnesses establish transmission rather than antiquity.
 
-The final PDF and generated web edition received independent source, quotation, theological-boundary, and production review on 2026-07-27. That review is editorial rather than ecclesiastical approval.
+The final PDF and generated web edition received internal source, quotation, theological-boundary, and production review on 2026-07-27. That review is editorial rather than independent or ecclesiastical approval.
 
 ## Working References
 
@@ -254,7 +260,7 @@ The final PDF and generated web edition received independent source, quotation, 
 
 -   B. F. Westcott, *The Gospel according to St John*, vol. 2, pp. 339–341; B. F. Westcott and F. J. A. Hort, *Introduction and Appendix*, p. 71 on Lk 24:12.
 
--   Jodi Magness, “Ancient Jewish Tombs and Burial Customs (to 70 C.E.),” in *The Archaeology of the Holy Land* (Cambridge University Press, 2012), pp. 230–255; Deborah A. Green, “Sweet Spices in the Tomb,” in *Commemorating the Dead* (De Gruyter, 2008), pp. 145–176; Salima Ikram, “Mummification,” *UCLA Encyclopedia of Egyptology* (2010).
+-   Jodi Magness, “Ancient Jewish Tombs and Burial Customs (to 70 C.E.),” in *The Archaeology of the Holy Land* (Cambridge University Press, 2012), pp. 230–255; Salima Ikram, “Mummification,” *UCLA Encyclopedia of Egyptology* (2010).
 
 -   Mishnah Berakhot 8:3 and Sanhedrin 6:1; Babylonian Talmud Berakhot 42a and 52b; William Smith, *Dictionary of Greek and Roman Antiquities*, s.v. “Mantele”; Suetonius, *Nero* 22.2.
 
@@ -262,11 +268,13 @@ The final PDF and generated web edition received independent source, quotation, 
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-27T14:20:00Z
+**Last revised (UTC):** 2026-07-27T18:33:00Z
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
 **Agent/runtime:** OpenAI Codex agent (independent research synthesis, source audit, drafting, and production review); Codex CLI 0.145.0; API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex agents (material-culture restoration, source and inference-boundary reconciliation, reader-status correction, web regeneration, and renewed production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

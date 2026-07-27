@@ -23,12 +23,16 @@ lexical, patristic, medieval, textual-critical, rabbinic, Greco-Roman, and
 modern-provenance claims. Exact quotations were checked against registered
 public-domain witnesses. The review preserved the translation and OCR ceilings
 for Cyril, Theophylact, and Lightfoot and retained the unresolved range of John
-20:8 interpretations.
+20:8 interpretations. The canonical controls include the Greek, the
+Douay--Rheims, and five exact Clementine Vulgate passages. The Septuagint
+ceiling is explicit: only the registered lexicon's identified Judges 14:13 use
+bears, and no direct Septuagint passage is claimed as inspected.
 
 A focused archaeology pass on 2026-07-27 adds only Jerusalem-specific burial
 context supported by Magness's exact publisher summary and an exact
-Egyptological contrast from Ikram. Green's specialist perfume study is used at
-a remote, precisely located contextual ceiling. The study does not generalize
+Egyptological contrast from Ikram. An unbound remote presentation of Green's
+specialist perfume study remains a research lead and supplies no reader claim.
+The study does not generalize
 one elite rock-cut tomb into universal Jewish practice, assign the aromatics
 one unspoken purpose, import Egyptian mummification, or reconstruct exact
 wrapping geometry.
@@ -37,8 +41,8 @@ The failed mutable-site whole-corpus replay is not publication evidence or a
 release gate. The negative conclusion is intentionally narrowed to the exact
 enumerated witnesses and dated provenance routes bound here.
 
-The first-baseline comparison is recorded in
-`research/staleness-review-2026-07-26.md`. Both ignored candidate treatments
-agree with the complete authoring state on every consequential claim. The
-verdict is no material change and fit for a first baseline; the shared ledger
-was not edited.
+The historical first-baseline comparison is recorded in
+`research/staleness-review-2026-07-26.md`. Its held-state and open-gate
+statements describe the snapshot reviewed that day and were superseded by the
+documented 2026-07-27 completion pass; they are not current release-state
+claims.
