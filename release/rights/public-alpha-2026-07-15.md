@@ -1406,6 +1406,27 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 27 July 2026
+
+At `2026-07-27T13:06:57-05:00` in `America/Chicago`, the maintainer instructed:
+“Stop excluding papers from publishing: the project is alpha, installed review papers must remain discoverable from landing pages, and the repaired exact current snapshots and reader-site inputs are authorized for public-alpha distribution with their review labels and open gates preserved.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 165 exact installed release
+PDF snapshots, all 13 conspicuously labelled public-alpha
+review snapshots, and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1428,7 +1449,7 @@ release attachment, announcement, or promotion.
 | `articles/faith/trustful-surrender-to-divine-providence` | `01f09c1214d22efd5998fd65304c1356a8dfcb2f0f75894cfeb5e0d0da397fd6` |
 | `articles/scripture/abraham-and-the-daylight-stars` | `6e672cfc53afe412e8535f36f30574daee50aa175516734dfc2151b5f6a98b85` |
 | `articles/scripture/john-6-bread-from-heaven` | `df28e626e01d0acef08c3c39fa973979d7f3d5d8e8ec27171777436ff30296e4` |
-| `articles/scripture/the-linen-cloths-at-the-empty-tomb` | `1b936d3a7f621400085bab931ee52c8aa53fd4938e14ee7dc7848b6a1eeb99a8` |
+| `articles/scripture/the-linen-cloths-at-the-empty-tomb` | `df2ea733358c3b4e0733eaf0f52f2b7bcf3cca62101065fd7d5406bf7db596b9` |
 | `biographies/origen` | `505d059a4238cd83bb04717a561ef1e8bad929e6c098ec50fa42154b5e1c54ad` |
 | `biographies/saint-augustine-of-hippo` | `8d6f4a35bc4d23480008d518d4f91784fb554e5b41c1dc2aed70645f6059830f` |
 | `biographies/saint-jerome` | `8500ff6fa2ac9bf12d4b724a24e4a028e87d3b72f87bc5354418d766f1377a5e` |
@@ -1527,7 +1548,7 @@ release attachment, announcement, or promotion.
 | `devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer` | `d6eaf8220ff47fe26618c9dc4d3b0ae3e18e9770585514b9a55874f3c2d91c2c` |
 | `history/biblical-translations/01-septuagint` | `0fb0ff3415fcd85773dc69c0e266857476070cec85fc6f16f9783317d8f95299` |
 | `history/biblical-translations/02-vulgate` | `ed7bcba53f7ab9c60c426a95cfea1a82f42f42ca6d53ddeea8275dd03c4c4e51` |
-| `history/catholic-exorcism/01-history-and-current-practice` | `1840f2c3a3d559d186dbf688e67c6a63b23ecd5870062918034a86c90f088124` |
+| `history/catholic-exorcism/01-history-and-current-practice` | `67f5f2aae5acd48e0fde5579ae6c490383855471af1f87efa9185f2a2e480a61` |
 | `history/catholic-parish-histories/01-st-stanislaus-milwaukee` | `41f99d1acc1655f8a8e452f94230620daabf4e14b8a43435587da8f9d7e723d3` |
 | `history/catholic-parish-histories/02-st-anthony-willits` | `8cf0c0e1f758fa96862a4af9ed70ffd921a20a43b223b6a910f5d7f33585ae0e` |
 | `history/traditional-priestly-institutes/01-sspx` | `e8fde596cfcd3bd79e8392e81eaafebf59723a11a15b8c96773fabfe6f67713c` |
@@ -1545,15 +1566,21 @@ release attachment, announcement, or promotion.
 | `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `57946a3046ec1b0f624d7499395a36d3f3a31ad5a11b83a6902dce1f5ebb58a9` |
 | `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `9178744a047a7eb27595b0fa152392f7892cf5fdfad89b28df5d7f64816bce46` |
 | `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis` | `226d98a637fc53f02a34981e8d955b3ab75786782790406a265a6c82705c767c` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass` | `46e08968dae26a31379f92fdf513af40e1df041e607a990063d258133988cf1c` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards` | `d44edc7cabdac325fbccd6a31fd5c12e8d1d8293bea65023f8286f4cf219ba34` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual` | `abf1da8057a70097c8200fe8ad6ca5ac063b13ffa631aaf605e941b149e103ec` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata` | `a647c706bf56cc2c4b16209859e4d4dd1abc7013e2e7a82ca59556ff429a4475` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards` | `f04351517aff67db1fe56b7baff607850d658f5f3676cdf17089119a595cd862` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass` | `86188a4fe819c24ba8db997c35b3979dbea9138ce0eaa984712c685378d4dad7` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards` | `332f2cbb64ce3ea28dd468aab565447b5d890db26ef8563445cbe54d584109e5` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass` | `48eb5d740711637337a68fcb60d8d7848a8b58270f4cf3ebf677a74021a6e207` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards` | `c88594e4509ae98fac12429c3b23f6960ab0f89edae811e375b930d1a56332b4` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual` | `80972c0e8578950fadbb41aaa2f75bedf5ae26d0bbc15e6983f68df52ebbb9f8` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata` | `bbaad39b0ab61b5348d259a37623aeccb10aec7b83bdd4420802b0a2fd960de7` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards` | `b681d846c125e417f034f109f700ed34beb2e7179ead34aaa653644d3837318e` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass` | `8318be36fd284e7a57399ab9b3ee0e317d711c60158adb1e5565d457d41971c8` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards` | `3c46449cd8125c0ac834bcf2d1b77c4ec2491184be1b3483bd1627a1f2dbab8a` |
 | `liturgy/roman-rite/1962/reference/assembling-the-mass` | `792f76897a31cf9f4eb6d23eacee370c2078f3f9235c79831c7b03bf1dfd8727` |
 | `liturgy/roman-rite/1962/reference/liturgical-calendar` | `001efbe713c7fdaf696cf6f0e85fd5b100ab0bc97ca893b55b003caff6add0e1` |
+| `liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server` | `02be3ff41f7fffe88d023012473de6efc0fe38f64190dc7714239b944dd486cc` |
+| `liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive` | `517d5c3d517cbf9395fef165c817b8751bd879bae28f6a1b42bb932a1379b1d6` |
+| `liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader` | `c831b1e852b6378f0600f9366543ca046f8964db0a77c6bd393f69bbe18004c7` |
+| `liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer` | `7d1373a6cc522cddc5795fff10a63dd8454b86ee5924a2a10fcb2d88006f54f1` |
+| `liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies` | `aebfc52d1aec0b04cf761760f0a55f8db36806bd7c1c17eec1d1ed08a0445c1e` |
+| `liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan` | `b2dd757c495941dc82cdef981aac394ab746305777fd5c029a117e41957bb406` |
 | `liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `5ba86c4734a874fe0a7117bc0f350c667974895c1b63504a1bbfd0f5ed97ba05` |
 | `liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass` | `71fe67ded09165b272a37eeff4b46552757fbd1439bad0b157e66ead8fc2222a` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a` | `b09dc1ce9f7be47bf33702348f4a4bd3c5ff5e9897c268c3cade342d5429fbef` |
@@ -1588,29 +1615,30 @@ release attachment, announcement, or promotion.
 | Repository path | SHA-256 |
 | --- | --- |
 | `CONTRIBUTING.md` | `1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e` |
-| `LIBRARY.md` | `cae529c78f0b82aaf6d194b3627bbc5decad253e2fc0b4e82f5c764c55fa877d` |
+| `LIBRARY.md` | `288e1be6a9528f2c045aa8cb23b2ac261a26ebafa516c1eaf1d4e875cc7360f8` |
 | `LICENSE` | `5ac6501c8ad1ead4885d7691d97f2240e94934ba19ac548c259718e85f3e2cad` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
-| `README.md` | `10f1d0ab6a96dc3993f4f2adec9a49ded6fc0b10991b5c81c6376dab800084f1` |
+| `README.md` | `77fab129045b324ac8d21961cc766b763cf13a84458da457fbea5a6c769ff1d1` |
 | `THIRD_PARTY.md` | `9b0b1a2bd4034035688cecf50e9943556dea120fd349809a813d3c16d2870fa2` |
 | `library/biographies.md` | `d4cfdf9ae2f1e55f2c4bc997cccce4d92a40a9b64b5189fc7e8217c45d415427` |
+| `library/catholic-exorcism.md` | `b92c13bd882ec79645b4b214794d403e5164572d401b24d5f66a97417c94c8ac` |
 | `library/curriculums.md` | `326b9f08c7274ffd4ba76fa3a475a839993323dff49e54517fe131cf05275916` |
 | `library/ecclesiastical-latin.md` | `02055f76bdd8ebd5618607194256ee6298947f30391bcafffacd4dbe1af319eb` |
 | `library/faith.md` | `b1305daf1d9a824856fe9552542795037b0d835da1b4ca8109fb3842a8f0aa16` |
 | `library/heresies.md` | `2f8cbb8b910281e3d6ace3b232d724b6e08866a459344268fe611a6652229feb` |
-| `library/historical-accounts.md` | `410748895538ee2b892d75fa7c89d644f3108662aa87593d1cf6d19fcdaadaf6` |
+| `library/historical-accounts.md` | `8520d96e89b02e74a2c9ed114fec83a394cae412bf95c4cbd9b6c209fecbd16b` |
 | `library/law-and-church-discipline.md` | `2f909b26e55bb143ade3c326ffea0cc5ceed1d239f99036376f1a4eed98af240` |
 | `library/mariology.md` | `e46b57edc3d906984fc669ccbdf2fdaab68a15a049d8d420c8f9885c5b2092a2` |
 | `library/novus-ordo-liturgy.md` | `0682fa65c92fd183efb38c237f5eccd8785d10814fb92b17443a28a4c52b2017` |
 | `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
-| `library/scripture.md` | `926c3d13a1f2081b8cfa0f1e6a9d18a009c4b620fe67b535ef5e94804ea9fd04` |
-| `library/traditional-latin-mass.md` | `02ec18193cdf89b7a5ea1a908121225f51e09599c56c8ce959d83ec86a6e0a94` |
+| `library/scripture.md` | `de1ba64acc287bf24470f45131b9eddc8846d5b5861a83bd7e4df97931944ebd` |
+| `library/traditional-latin-mass.md` | `87c1253ab1a5565e61bf24e4d9bf1718b3902650695e66bae0f1d7ecfa8111dd` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `d173c27681f3742a64f99d7aab9cf1855935029dc035eca0699305a86ceeee62` |
 | `release/public-alpha/layout.html` | `2013d7f66dfb776b2c5df81656f7fe286bdbf60b016f88ea612f942af50249b9` |
 | `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
-| `scripts/public-alpha` | `c58a1279deed2e621277a1f2385a2de92bbf83e0c4340337638230cafc1361c1` |
+| `scripts/public-alpha` | `2c0b3f1a52d786082bac0999a7271daed7dae864e4e93ce6b9709532de5ba1b7` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `8dc32fd08198c306fd07290e719cd5cffcbba2a72788482222b9b0ccd36849f4` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `251149eb060fd3c2da5f7d1c478512f05a381b6742d98221e8ae808b72c2e1d7` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `9345b357b5fedca30856d2a409e42263c500ac87eaf8459a917e04355536628b` |
@@ -1670,7 +1698,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/articles/faith/the-due-return.md` | `5afa70a06ceb5857683ddccb55e031813b9e53303b077aec6a28637ace9c2aca` |
 | `web/gpt/articles/scripture/abraham-and-the-daylight-stars.md` | `8a809526e27285465a364fce454145cc1959029be0d276c14dbb7fdd7b74b3d6` |
 | `web/gpt/articles/scripture/john-6-bread-from-heaven.md` | `ad168907408b29acab928dd40c2393e6eb0d1ff723d54e86d48505612000fc1b` |
-| `web/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.md` | `fa4659afde107669eef24d6f3e688a06dd4b9c0e134ba6d1a76897add5cc5811` |
+| `web/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.md` | `3c17f912035d7d3ae7cb71f10aeb43e1370e0b56aef5f6d5a77a5594ddc11754` |
 | `web/gpt/biographies/origen.md` | `43a54fb1afe0ce68ea8fc419e33ebe466814f5d74e4ed939759afca5522ef22d` |
 | `web/gpt/biographies/saint-augustine-of-hippo.md` | `58b4725f8783455c2f50e84732baccb326762f3a63d6d5e0acdcb30e8a16eb79` |
 | `web/gpt/biographies/saint-jerome.md` | `082002eeba63699936e1b797ac299e847e41582087a8c5b62134687d260f7429` |
@@ -1680,7 +1708,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/biographies/saint-thomas-aquinas.md` | `8e16a32ed18b3fc4724946caddca58927ff4015015090a193522388cdb270061` |
 | `web/gpt/biographies/tertullian.md` | `1f4f75840fbc6e778f77acbe50228b43c1b951cbc97f2ae8fad294253050c8fd` |
 | `web/gpt/history/biblical-translations/02-vulgate.md` | `e82710833956922a92baba759b796d2182b89ab5a26e80e2b9eb87f7b3e683c1` |
-| `web/gpt/history/catholic-exorcism/01-history-and-current-practice.md` | `6010565a060ac96650aa4b0ab3c70121fd6aceeaae352a8536fa063330c3a77d` |
+| `web/gpt/history/catholic-exorcism/01-history-and-current-practice.md` | `c5a2cc0d42a3c0a185566862cd97ee9f7d42794b43c5246e7eec7e7b23d0f427` |
 | `web/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.md` | `19a23782bc342c595e1463dab25e81619892c4bad481e9768d1f9b7a756c5ecf` |
 | `web/gpt/history/catholic-parish-histories/02-st-anthony-willits.md` | `c79e484f5b78e882d3df09882c9948e578c9674f769d4f02f77ced258ed294bc` |
 | `web/gpt/history/traditional-priestly-institutes/02-fssp.md` | `0adb692a9e419ac8889fcf9e8a1f90d7417c4feff43f7e4d02478c20e7db89b8` |
