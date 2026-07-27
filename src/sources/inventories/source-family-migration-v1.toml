@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:aed8a34c2d2cb1097dcda1a03242a26a874fe3b4cdcfdd665ad56a6102add39f"
+inventory_snapshot = "sha256:3b5c85b1a66be8791bde689949b03c90bc72481b3e73c23d047fb861f63aa1f2"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:96ce76990fd5fa8a2d709c14791d2c2d96e63ed25706124ef37e77208bec5ae1"
 canonical_catalog_snapshot = "sha256:31b0946c1c2b47f41ff4ddcf586e019db9747196323498ef2b9faeab3b03225b"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:db7648faf452431315ee69b2c86b7765b02f7308fa4cf4a6790e0b978c898aa8"
+snapshot = "sha256:6257159f4a15c4e04a1f816acd9db3ff330b8786ba1ee0d880f1440879aa251b"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -4656,7 +4656,7 @@ record_paths = ["src/gpt/articles/faith/in-defense-of-the-particular/research/sc
 
 [[review_units]]
 owner_id = "articles/faith/last-supper-calvary-and-the-mass"
-surface_snapshot = "sha256:7cfe95f56f7a15d62246bb157e38e12b455d59701d1dd9c9e17ba04704be1d90"
+surface_snapshot = "sha256:e760ea6299d7b247d93d5bdbc670380738e4c1880d753cb7abea7168914f503f"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -4816,7 +4816,7 @@ record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/
 
 [[review_units]]
 owner_id = "articles/scripture/abraham-and-the-daylight-stars"
-surface_snapshot = "sha256:537c5e65dc947671a3010055463dbe99cad7f2c1839bd5929715f086aa2e2dbc"
+surface_snapshot = "sha256:87592bdc49c441d516c116d9166bdaac334e490bea6c0e8b8674a6520e7f497a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -4857,7 +4857,7 @@ record_paths = ["src/gpt/articles/scripture/abraham-and-the-daylight-stars/resea
 
 [[review_units]]
 owner_id = "articles/scripture/john-6-bread-from-heaven"
-surface_snapshot = "sha256:1d84fac7da0b942bd7d1d339953d1f8b61a07ddad767ee0b632fbdfbaaa417e7"
+surface_snapshot = "sha256:e7e71050db657c372dc692078235cb0bbaeefa3fe504282231cbf99fa19f1649"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -5462,7 +5462,7 @@ record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/sourc
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:4bf1768bd39f47d96513396d7d0525f39ad57dbb03fd1bf2bd9a060b2c885fa6"
+surface_snapshot = "sha256:9398bb175e08e0bdd5608221013f0787c049b31345a73e34cf4355615ccd2077"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -5971,7 +5971,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
-surface_snapshot = "sha256:c0da1cdf2a0ccd8a6beb993037a8f8c9946744dade7d86f91285ff8ba9b01349"
+surface_snapshot = "sha256:8771536a86cdf34b7d80a7a8db1c4d4474c12a119506eed10248c7c5ad5eb02f"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -5985,7 +5985,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
-surface_snapshot = "sha256:dbc1df1441372bcc58e43a140947da0180cd2a35d03bbe444b832edb6e82fd78"
+surface_snapshot = "sha256:144a32d5c8bcc9995938850b3913b023a6437ce8d10715b27b20992befe9e324"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -5994,22 +5994,22 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
-surface_snapshot = "sha256:a0e90a5bfca796d6ca98368045e1bf7be1ce823eaa7c12f2fa14fe82ff8d051a"
+surface_snapshot = "sha256:46d1fcdd7c8248938b0c8c3435ec1bee1f3d5ef72a5547b9cb19e2175ae0c6a2"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
-surface_snapshot = "sha256:854800465a8601d27191f99166f1e1b521de7eb4eab25c58c34a07b2134d940b"
+surface_snapshot = "sha256:370d0b3e93e71ec08b0442684a2a8974bc1ea173435bbf1c93c3f06e5827ec4d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
-surface_snapshot = "sha256:749e788dc310615b4398ba904250bc4cc534c0cd21067faecdeb2ddb1907d615"
+surface_snapshot = "sha256:e69ddc8eae7481cef873634c76ab320baca1d1bd7a64307ca68b649de56b60f0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
-surface_snapshot = "sha256:d67a885b293d190be4b1bccce496ff10f0757e140b51e97e25890e57bf76208b"
+surface_snapshot = "sha256:307e403025be42b69d726538bbb63b9888778211cd7dbab8917e74e9e10508a7"
 review_state = "pending"
 
 [[review_units]]
@@ -6538,7 +6538,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:af1592f9f8510aa08975719ec59b94bc5af1fdc1192d27c610b7c771ae179f7c"
+surface_snapshot = "sha256:4abe23380afad6b27d4d5805e7974a297dedd5b83d5fd2b1455a064c690882c4"
 review_state = "pending"
 
 [[review_units]]
