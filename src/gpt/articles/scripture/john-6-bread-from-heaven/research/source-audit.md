@@ -1,6 +1,7 @@
 # Bread from Heaven — Source Audit
 
-Checks were performed 2026-07-26. “Checked” below means the identified online
+Initial checks were performed 2026-07-26 and the exact-evidence normalization
+was completed 2026-07-27. “Checked” below means the identified online
 or repository witness was read at the stated locus; it does not imply critical
 edition collation.
 
@@ -9,9 +10,10 @@ John and Douay--Rheims John and Luke artifacts used for the controlling
 scriptural argument, Trent XIII, and *Sacrosanctum Concilium* 47--48. This pass
 also authenticated and normalized exact restricted Vatican delivery artifacts
 for *Mysterium fidei*, *Ecclesia de Eucharistia*, and *Sacramentum caritatis*.
-Patristic witnesses remain identified by exact work and locus in this audit;
-their mostly paraphrased use is not represented as a critical-language
-collation.
+The exact English witnesses for Cyril of Alexandria, Ambrose, Jerome, and the
+anonymous first homily transmitted among Gregory Thaumaturgus's dubious or
+spurious writings are now hashed, normalized, and bound. Their mostly
+paraphrased use is not represented as an original-language collation.
 
 | Claim | Witness and locus | State and route | Limit |
 | --- | --- | --- | --- |
@@ -21,22 +23,26 @@ collation.
 | Created bread/wine and nourished flesh belong to Eucharist and resurrection | Irenaeus, *Against Heresies* IV.18.5; V.2.2–3 | ANF translation located; repository Irenaeus work exists | Greek/Latin fragments and exact printed pages not yet collated |
 | Cyprian directly uses John 6 inside an account of daily Eucharistic bread | *On the Lord's Prayer* 18 | Checked at New Advent's ANF text | Latin not collated |
 | Cyril directly cites John 6:53 while catechizing about Christ's Body and Blood | Cyril of Jerusalem, *Mystagogical Catechesis* IV.1–6 | Checked at New Advent's NPNF text | Greek not collated; later sacramental terminology not retrojected |
-| Chrysostom distinguishes senses of “bread,” then directly reads 6:51–58 eucharistically and 6:63 against carnal hearing | *Homilies on John* 45–47 | Checked at New Advent's NPNF text | Greek and printed NPNF pages not collated |
-| Chrysostom joins the one Eucharistic Body to the body adored in the manger | *Homily 24 on First Corinthians*, on 1 Cor 10:17 | Checked at New Advent's NPNF text | Does not call the manger an altar or invoke Bethlehem's name |
-| Augustine joins believing, eating, sacrament, abiding, unity, and fruitful reception | *Tractates on John* 25–27 | Checked in New Advent's NPNF text; repository work/edition registered | Relevant passages are not yet registered exact passages; Latin not collated |
-| Cyril of Alexandria treats the flesh as life-giving through union with the Word | *Commentary on John*, book IV, on John 6 | Pusey–Randell edition identity registered; English text located | Exact Greek/English loci require collation before publication |
-| Ambrose identifies the living Bread with Christ's Body | *On the Mysteries* 47–49 | Checked at New Advent's NPNF text | Latin not collated |
-| Paula's Bethlehem salutation explicitly joins “house of bread,” the infant in cloths/manger, and John 6:51 | Jerome, Letter 108.10 | Checked at New Advent's NPNF text | Jerome reports Paula's speech in a crafted memorial letter; Latin not collated |
-| Ambrose joins Bethlehem as house of bread with Bread from heaven | Ambrose, Letter 70 | Checked in the public-domain 1881 English transcription at CCEL | Letter numbering/Latin edition not yet collated |
-| A homily explicitly calls the manger a feeding-board holding heavenly Bread and mentions the cloths | “Four Homilies,” Homily 1, attributed to Gregory Thaumaturgus | Checked in ANF VI | The edition itself files these as dubious/spurious; no third-century attribution permitted |
+| Chrysostom distinguishes senses of “bread,” then directly reads 6:51–58 eucharistically and 6:63 against carnal hearing | *Homilies on John* 45–47 | Exact NPNF I.14 facsimile acquired, hashed, inspected at printed pp. 159–170, and bound | Greek not collated |
+| Chrysostom joins the one Eucharistic Body to the body adored in the manger | *Homily 24 on First Corinthians*, on 1 Cor 10:17 | Exact NPNF I.12 facsimile acquired, hashed, inspected at printed pp. 138–143, and bound | Does not call the manger an altar or invoke Bethlehem's name |
+| Augustine joins believing, eating, sacrament, abiding, unity, and fruitful reception | *Tractates on John* 25–27 | Exact NPNF I.7 facsimile acquired, hashed, inspected at printed pp. 163–177, and bound | Latin not collated |
+| Cyril of Alexandria treats the flesh as life-giving through union with the Word | *Commentary on John*, book IV, ch. 2, on John 6:51–58 | Exact Pusey 1874 English web artifact hashed, passage inspected and bound | Greek not collated; paraphrase only |
+| Ambrose identifies the living Bread with Christ's Body | *On the Mysteries* 47–49 | Exact NPNF English web artifact hashed, passage inspected and bound | Latin not collated |
+| Paula's Bethlehem salutation explicitly joins “house of bread,” the infant in cloths/manger, and John 6:51 | Jerome, Letter 108.10 | Exact NPNF English web artifact hashed, passage inspected and bound | Jerome reports Paula's speech in a crafted memorial letter; Latin not collated |
+| Ambrose joins Bethlehem as house of bread with Bread from heaven | Ambrose, Letter 70.9–14 in Walford's numbering | Exact 1881 English web artifact hashed, passage inspected and bound | Historical numbering is edition-specific; Latin and modern critical numbering not collated |
+| A homily explicitly calls the manger a feeding-board holding heavenly Bread and mentions the cloths | Anonymous first homily on the Annunciation, transmitted as the first of four under Gregory Thaumaturgus's name | Exact ANF VI English web artifact hashed, passage inspected and bound under anonymous work identity | ANF files it among dubious/spurious writings; no Gregory attribution or third-century date permitted |
 | John dates the feeding near Passover and repeatedly names the feeding a sign | John 6:4, 14, 26, 30 | Principal English and Greek loci directly read | Passover supplies a narrative horizon; it does not make the multiplied loaves consecrated species |
 | Murmuring frames resistance in the bread discourse and among disciples | John 6:41, 43, 61; LXX exodus murmuring as contextual control | Greek John loci directly read; Septuagint control not yet bound | The exodus echo is strong but does not establish identical motives in every hearer |
 | John shifts from ordinary *phagein* forms to repeated *trōgein* at 6:54–58 | Registered RP 2018 John artifact | Directly read in exact artifact | *Trōgein* also occurs for ordinary eating at 13:18; “gnaw” is not a self-sufficient doctrinal proof |
 | John 6:55 differs between Byzantine adverbs and NA adjectives | Registered RP inline apparatus | Directly read | The registered apparatus reports NA; a Nestle–Aland edition was not independently collated |
 | John 6:69 has a material confession variant | Registered RP inline apparatus | Directly read | Byzantine “Christ, Son of living God”; apparatus reports NA “Holy One of God” |
-| Aquinas coordinates John 6 with sacramental presence and effect | *Super Evangelium Ioannis* 6; ST III qq. 73–83 | Work identities located; prior repository sacramental research inspected | Exact passages and critical text remain outstanding |
-| Trent teaches true, real, substantial presence and transubstantiation | Council of Trent, Session XIII, decree chs. I–V and canons I–XI | Exact hashed Tauchnitz 1887 Latin OCR artifact inspected and publication passages bound; the Latin is not quoted and remains a locating witness rather than a critical edition | Exact Latin doctrinal substance now bound; an identified English translation and critical Latin collation remain desirable, and Trent is not evidence about patristic chronology |
+| Aquinas coordinates John 6 with sacramental presence, conversion, mode, effect, and reception | *Super Evangelium Ioannis* 6.4, 6.6–8; ST III.75.1–2, 76.5, 79.1, 80.1, 4, with Latin contextual loci through III.77 and III.79–80 | Exact hashed Corpus Thomisticum Latin and New Advent public-domain English delivery artifacts inspected and bound; selected English passages registered | Electronic witnesses are not critical editions; the English translation controls accessibility, not Aquinas's Latin wording |
+| Calvin reads John 6 as real participation in Christ through faith, without making the discourse a direct treatment of the Supper | Calvin, *Commentary on John* at 6:47–58; *Institutes* IV.17.4–6 | Beveridge's public-domain English texts inspected at CCEL; excluded research lead, not bound publication evidence | This is not memorialism; normalize an exact edition before adding the treatment to the article |
+| A current nonsacramental critical reading treats 6:51c–58 as integral Christology rather than a Eucharistic interpolation | Meredith J. C. Warren, *My Flesh Is Meat Indeed* (Fortress, 2015), esp. pp. 19–44, 249–55 | Restricted author manuscript inspected; excluded research lead, not retained or bound | The argument depends on contested Greco-Roman literary analogues and does not establish that ancient Christians heard no Eucharistic echo |
+| The “ecclesiastical redactor” proposal accounts for the faith/eating tension by assigning 6:51c–58 to a later sacramental hand | Bultmann and subsequent proposals as surveyed by Warren, pp. 31–44 | Excluded research lead; no independent Bultmann edition or manuscript apparatus collated | A compositional hypothesis, not a manuscript variant |
+| Trent teaches true, real, substantial presence and transubstantiation | Council of Trent, Session XIII, decree chs. I–V and canons I–XI | Exact hashed Tauchnitz 1887 Latin OCR artifact inspected and publication passages verified and bound; the Latin is not quoted | The identified edition witnesses the Council's authoritative Latin text but is not a modern critical edition; no critical collation is claimed, and Trent is not evidence about patristic chronology |
 | Vatican II identifies memorial, sacrifice, sacrament of love, sign of unity, bond of charity, and paschal banquet | *Sacrosanctum Concilium* 47–48 | Official English passage inspected and bound | Doctrinal reception, not evidence about patristic chronology |
+| The Catechism gathers Last Supper, Cross, memorial, sacrifice, communion, unity, charity, Paschal banquet, grace, and eschatological pledge | *Catechism of the Catholic Church* 1322–1323 | Exact official English Vatican response acquired, hashed, inspected, verified, and bound | Exact control for the opening synthesis, not an acquisition claim for every paragraph in the broader 1322–1419 overview |
 | Modern magisterium integrates presence, communion, and eschatological pledge | *Mysterium fidei* 38–49; *Ecclesia de Eucharistia* 1–26; *Sacramentum caritatis* 6–11, 70–71 | Exact official English Vatican artifacts acquired, hashed, inspected, and normalized as restricted remote evidence | Official English translations control the bounded synthesis; promulgated Latin was not collated |
 
 ## Re-evaluation verdict
@@ -47,14 +53,11 @@ the manger and swaddling-cloth sign without making its own Eucharistic
 interpretation; and the lexical shift to *trogein* cannot alone bear the
 Catholic doctrinal conclusion. No correction to those claims is required.
 
-The reception claims remain dependent on patristic witnesses whose exact
-editions and loci are identified but have not all been normalized into reusable
-records or collated in their original languages. The published prose makes no
-wording-critical conclusion from them and states the principal attribution,
-lexical, and compositional limits. Under the user's express publication
-authorization, this is an accurately disclosed limitation rather than an
-undisclosed evidentiary promotion. External patristic, exegetical,
-theological, and rights review remains outstanding.
+The late-patristic reception claims treated above now have exact reusable
+English artifacts, passages, rights records, and publication bindings. Their
+original languages remain uncollated, so the prose continues to paraphrase and
+preserve the attribution, numbering, and compositional limits. Other patristic
+witnesses listed in this audit retain their separately disclosed limits.
 
 ## Consequential negative results
 
@@ -71,8 +74,10 @@ theological, and rights review remains outstanding.
   excluded.
 - No claim is made that the Greek verb *trōgein* exclusively means “gnaw.”
 - No manuscript evidence has yet been controlled for the modern hypothesis
-  that John 6:51c–58 is a later redactional insertion; the hypothesis is
-  reported only as a compositional proposal.
+  that John 6:51c–58 is a later redactional insertion. The inspected modern
+  survey confirms that this is a source-critical reconstruction rather than a
+  manuscript omission and presents a coherent nonsacramental alternative that
+  retains the verses as integral Christology.
 
 ## Stable routes checked
 
@@ -100,3 +105,10 @@ theological, and rights review remains outstanding.
   <https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html>
 - Benedict XVI, *Sacramentum caritatis*:
   <https://www.vatican.va/content/benedict-xvi/en/apost_exhortations/documents/hf_ben-xvi_exh_20070222_sacramentum-caritatis.html>
+- Calvin, *Commentary on John*, at 6:46–51 and following:
+  <https://ccel.org/ccel/calvin/calcom34/calcom34.xii.viii.html>
+- Calvin, *Institutes* IV.17:
+  <https://ccel.org/ccel/calvin/institutes.vi.xviii.html>
+- Meredith J. C. Warren, *My Flesh Is Meat Indeed* (restricted author
+  manuscript):
+  <https://eprints.whiterose.ac.uk/96065/>
