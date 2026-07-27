@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:0a8943d746f14ffe40ac57f49110e038f055940f3c7dbf22b528d5f844220b7a"
+inventory_snapshot = "sha256:cdfdf20c570296e186c6972ece1216de06c776b097e09ddd4e82b4ec66328809"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:96ce76990fd5fa8a2d709c14791d2c2d96e63ed25706124ef37e77208bec5ae1"
 canonical_catalog_snapshot = "sha256:ba3fe75f7a8f80c104f55e33cb20186648de7a3e8a41649ed0bce0084aa5d799"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:c1b1a5014b30bed351ffc909405ac58a1030fd8ce7b1253887ced31de4764d26"
+snapshot = "sha256:b4a2f0a39ef207b6bdbd8f15c8265443e4ec35e5ae0ddf05d33bbe06c19ae9b7"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -6758,7 +6758,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:f4f80347dc06256f075fb13f470c894d14fa2dd80533148ea6f3d9979413948c"
+surface_snapshot = "sha256:861dc7b211e770a3a679768ccc8ae1f3b9126aab8b6a3f08e9de2c058320a1bb"
 review_state = "pending"
 
 [[review_units]]
