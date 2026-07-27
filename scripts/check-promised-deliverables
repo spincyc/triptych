@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""Validate the tracked promised-deliverable ledger."""
+
+from __future__ import annotations
+
+import argparse
+import subprocess
+import sys
+import tomllib
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_LEDGER = ROOT / "promised-deliverables.toml"
+DELIVERABLE_STATES = {"planned", "in_progress", "blocked", "candidate", "complete"}
+REQUIREMENT_STATES = {"open", "blocked", "pass", "waived"}
+CHECKS = {"path_exists", "contains", "pdf_min_pages"}
+
+
+def relative_path(value: object, label: str, errors: list[str]) -> Path | None:
+    if not isinstance(value, str) or not value or value.startswith("/"):
+        errors.append(f"{label}: expected a nonempty repository-relative path")
+        return None
+    path = Path(value)
+    if ".." in path.parts:
+        errors.append(f"{label}: path may not contain '..'")
+        return None
+    return path
+
+
+def pdf_pages(path: Path) -> int:
+    result = subprocess.run(
+        ["pdfinfo", str(path)],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    for line in result.stdout.splitlines():
+        if line.startswith("Pages:"):
+            return int(line.split(":", 1)[1].strip())
+    raise ValueError("pdfinfo returned no page count")
+
+
+def validate(ledger: Path, required: set[str]) -> list[str]:
+    errors: list[str] = []
+    try:
+        data = tomllib.loads(ledger.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as exc:
+        return [f"{ledger}: {exc}"]
+    if data.get("schema_version") != 1:
+        errors.append("schema_version: expected 1")
+    deliverables = data.get("deliverables")
+    if not isinstance(deliverables, list):
+        return errors + ["deliverables: expected an array of tables"]
+
+    seen_deliverables: set[str] = set()
+    for number, deliverable in enumerate(deliverables, 1):
+        prefix = f"deliverables[{number}]"
+        if not isinstance(deliverable, dict):
+            errors.append(f"{prefix}: expected a table")
+            continue
+        deliverable_id = deliverable.get("id")
+        if not isinstance(deliverable_id, str) or not deliverable_id:
+            errors.append(f"{prefix}.id: expected a nonempty string")
+            deliverable_id = prefix
+        elif deliverable_id in seen_deliverables:
+            errors.append(f"{deliverable_id}: duplicate deliverable id")
+        seen_deliverables.add(deliverable_id)
+        owner = relative_path(deliverable.get("owner"), f"{deliverable_id}.owner", errors)
+        if owner is not None and not (ROOT / owner).exists():
+            errors.append(f"{deliverable_id}.owner: missing path {owner}")
+        if not isinstance(deliverable.get("promise"), str) or not deliverable["promise"].strip():
+            errors.append(f"{deliverable_id}.promise: expected a nonempty string")
+        state = deliverable.get("state")
+        if state not in DELIVERABLE_STATES:
+            errors.append(f"{deliverable_id}.state: unsupported value {state!r}")
+        requirements = deliverable.get("requirements")
+        if not isinstance(requirements, list) or not requirements:
+            errors.append(f"{deliverable_id}: requires at least one requirement")
+            continue
+        seen_requirements: set[str] = set()
+        incomplete = False
+        for requirement in requirements:
+            if not isinstance(requirement, dict):
+                errors.append(f"{deliverable_id}: requirement must be a table")
+                incomplete = True
+                continue
+            requirement_id = requirement.get("id")
+            label = f"{deliverable_id}/{requirement_id}"
+            if not isinstance(requirement_id, str) or not requirement_id:
+                errors.append(f"{deliverable_id}: requirement id must be nonempty")
+            elif requirement_id in seen_requirements:
+                errors.append(f"{label}: duplicate requirement id")
+            seen_requirements.add(requirement_id)
+            if not isinstance(requirement.get("criterion"), str) or not requirement["criterion"].strip():
+                errors.append(f"{label}: criterion must be nonempty")
+            status = requirement.get("status")
+            if status not in REQUIREMENT_STATES:
+                errors.append(f"{label}: unsupported status {status!r}")
+                incomplete = True
+            elif status in {"open", "blocked"}:
+                incomplete = True
+            if status == "waived":
+                if not all(
+                    isinstance(requirement.get(field), str) and requirement[field].strip()
+                    for field in ("waiver_reason", "waiver_authority")
+                ):
+                    errors.append(f"{label}: waiver requires reason and authority")
+            evidence = requirement.get("evidence")
+            if not isinstance(evidence, list) or not evidence:
+                errors.append(f"{label}: requires evidence paths")
+                evidence = []
+            evidence_paths: list[Path] = []
+            for index, value in enumerate(evidence):
+                path = relative_path(value, f"{label}.evidence[{index}]", errors)
+                if path is not None:
+                    evidence_paths.append(path)
+            check = requirement.get("check")
+            if check is not None and check not in CHECKS:
+                errors.append(f"{label}: unsupported check {check!r}")
+            if status != "pass":
+                continue
+            for path in evidence_paths:
+                if not (ROOT / path).exists():
+                    errors.append(f"{label}: missing evidence {path}")
+            try:
+                if check == "contains":
+                    path = relative_path(requirement.get("path"), f"{label}.path", errors)
+                    needle = requirement.get("needle")
+                    if path is not None and (
+                        not isinstance(needle, str)
+                        or needle not in (ROOT / path).read_text(encoding="utf-8")
+                    ):
+                        errors.append(f"{label}: required literal is absent from {path}")
+                elif check == "pdf_min_pages":
+                    path = relative_path(requirement.get("path"), f"{label}.path", errors)
+                    minimum = requirement.get("minimum")
+                    if path is not None and (
+                        not isinstance(minimum, int)
+                        or minimum < 1
+                        or pdf_pages(ROOT / path) < minimum
+                    ):
+                        errors.append(f"{label}: PDF does not meet minimum page count")
+                elif check == "path_exists":
+                    pass
+            except (OSError, UnicodeError, subprocess.SubprocessError, ValueError) as exc:
+                errors.append(f"{label}: mechanical check failed: {exc}")
+        if state == "complete" and incomplete:
+            errors.append(f"{deliverable_id}: complete state has unmet requirements")
+        if deliverable_id in required and state != "complete":
+            errors.append(f"{deliverable_id}: completion required but state is {state!r}")
+    for deliverable_id in sorted(required - seen_deliverables):
+        errors.append(f"{deliverable_id}: required deliverable is absent")
+    return errors
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--ledger", type=Path, default=DEFAULT_LEDGER)
+    parser.add_argument("--require-complete", action="append", default=[])
+    args = parser.parse_args()
+    errors = validate(args.ledger.resolve(), set(args.require_complete))
+    if errors:
+        for error in errors:
+            print(error, file=sys.stderr)
+        return 1
+    data = tomllib.loads(args.ledger.read_text(encoding="utf-8"))
+    complete = sum(item.get("state") == "complete" for item in data["deliverables"])
+    print(
+        f"Promised-deliverable ledger valid: {len(data['deliverables'])} tracked, "
+        f"{complete} complete."
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

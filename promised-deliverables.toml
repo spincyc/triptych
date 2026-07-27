@@ -1,0 +1,182 @@
+schema_version = 1
+
+[[deliverables]]
+id = "task-2-exorcism-100-pages"
+owner = "src/gpt/history/catholic-exorcism/01-history-and-current-practice"
+promise = "Produce and hard-review a substantive Catholic exorcism study of at least 100 pages."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "physical-pages"
+  criterion = "The installed Catholic exorcism PDF has at least 100 physical pages."
+  status = "open"
+  check = "pdf_min_pages"
+  path = "doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
+  minimum = 100
+  evidence = ["doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"]
+
+  [[deliverables.requirements]]
+  id = "substantive-pages"
+  criterion = "At least 100 pages are substantive, excluding front matter, terminal audit apparatus, and padding."
+  status = "open"
+  evidence = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/comprehensive-expansion-plan-2026-07-27.md"]
+
+  [[deliverables.requirements]]
+  id = "hard-review"
+  criterion = "Source, safety, law, PDF, web, and every-page review gates pass on one exact snapshot."
+  status = "open"
+  evidence = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/final-exact-snapshot-review-2026-07-27.md"]
+
+[[deliverables]]
+id = "task-6-linen-restoration"
+owner = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb"
+promise = "Restore and hard-review the dropped archaeological and funerary context."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "context-restored"
+  criterion = "The canonical study contains the bounded archaeological and funerary context."
+  status = "pass"
+  check = "contains"
+  path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
+  needle = "\\subsection{Burial practice and material limits}"
+  evidence = ["src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"]
+
+  [[deliverables.requirements]]
+  id = "hard-review"
+  criterion = "Current source, PDF, web, audit, and every-page review evidence agree."
+  status = "open"
+  evidence = ["src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-audit.md"]
+
+[[deliverables]]
+id = "task-1-altar-server-guides"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
+promise = "Repair and hard-review the seven altar-server guides and card companions, including the four retained old Low Mass images."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "four-assets"
+  criterion = "The four corrected Low Mass assets are tracked."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-001-lm-start.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-002-lm-foot-kneel.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-005-lm-missal-move-corrected.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-006-lm-lavabo-corrected.png",
+  ]
+
+  [[deliverables.requirements]]
+  id = "paired-review"
+  criterion = "Low Mass and trainer PDFs, maps, hashes, artwork review, and every-page review agree."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"]
+
+[[deliverables]]
+id = "task-3-sanctuary-dictionaries"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+promise = "Repair the six priestly-review dictionaries and make their qualified state accurate."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "six-pdfs"
+  criterion = "All six installed review PDFs exist."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+  ]
+
+  [[deliverables.requirements]]
+  id = "records-consistent"
+  criterion = "Inventory, omissions, page counts, source state, artwork state, and review records are mutually consistent."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"]
+
+[[deliverables]]
+id = "task-4-missa-cantata"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
+promise = "Repair and hard-review the Missa Cantata guide and cue cards."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "installed-pdfs"
+  criterion = "The rebuilt Missa Cantata guide and cue-card PDFs are installed."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+    "doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+  ]
+
+  [[deliverables.requirements]]
+  id = "remaining-specialist-review"
+  criterion = "Physical print, intended-reader, independent ceremonial, rights, and ecclesiastical review are recorded for the exact snapshot."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
+
+[[deliverables]]
+id = "task-5-solemn-mass"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
+promise = "Repair and hard-review the Solemn Mass guide and cue cards."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "installed-pdfs"
+  criterion = "The rebuilt Solemn Mass guide and cue-card PDFs are installed."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+    "doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+  ]
+
+  [[deliverables.requirements]]
+  id = "remaining-specialist-review"
+  criterion = "Physical print, intended-reader, independent ceremonial, rights, and ecclesiastical review are recorded for the exact snapshot."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
+
+[[deliverables]]
+id = "project-review-discoverability"
+owner = "scripts/public-alpha"
+promise = "Keep review publications ordinarily discoverable with conspicuous review labeling."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "policy"
+  criterion = "Repository guidance states that review status controls labeling rather than discoverability."
+  status = "pass"
+  check = "contains"
+  path = "guidance/repository.md"
+  needle = "`review` includes an installed paper in the public alpha"
+  evidence = ["guidance/repository.md"]
+
+  [[deliverables.requirements]]
+  id = "site-check"
+  criterion = "Production-site validation proves every review publication has a resolving catalog route and visible review label."
+  status = "open"
+  evidence = ["scripts/public-alpha"]
+
+[[deliverables]]
+id = "project-recent-paper-hard-review"
+owner = "src/gpt/articles"
+promise = "Hard-review every recently discussed paper against current universal and genre guidance."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "paper-set"
+  criterion = "The review covers Exorcism, Last Supper, Abraham, John 6, and Linen Cloths."
+  status = "open"
+  evidence = ["guidance/editorial.md", "guidance/articles.md", "guidance/history/historical-accounts.md"]
+
+  [[deliverables.requirements]]
+  id = "records-reconciled"
+  criterion = "Each paper's scope, audit, web artifact, installed PDF, catalog state, and completion claims agree."
+  status = "open"
+  evidence = ["promised-deliverables.toml"]

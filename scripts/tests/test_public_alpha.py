@@ -250,12 +250,20 @@ class PublicAlphaTest(unittest.TestCase):
         }
         publication_rows = []
         for publication in self.manifest["publications"]:
-            if publication["status"] != "release":
+            if publication["status"] not in {"release", "review"}:
                 continue
             provider, leaf = self.publication_provider_and_leaf(publication["id"])
             pdf_path = self.root / "doc" / provider / f"{leaf}.pdf"
+            if not pdf_path.is_file():
+                continue
             pdf_hash = digest(pdf_path.read_bytes())
-            publication["approval"]["pdf_sha256"] = pdf_hash
+            if publication["status"] == "release":
+                publication["approval"]["pdf_sha256"] = pdf_hash
+            else:
+                publication["review_distribution"] = {
+                    "authorization": "test-authorization",
+                    "pdf_sha256": pdf_hash,
+                }
             publication_rows.append((publication["id"], pdf_hash))
         record_lines = ["# Approval", "", "## Exact approved snapshots", ""]
         record_lines.extend(
@@ -716,6 +724,31 @@ class PublicAlphaTest(unittest.TestCase):
                 self.tool.require_locked_markdown_dependency()
         self.assertIn("does not match the bound dependency lock", str(failure.exception))
 
+    def test_long_form_contents_marker_renders_linked_unique_anchors(self) -> None:
+        headings = "\n\n".join(
+            f"## Part {number}\n\nText {number}."
+            for number in range(1, 121)
+        )
+        page = self.tool.render_page(
+            "web/gpt/work.md",
+            f"# Work\n\n[TOC]\n\n{headings}\n",
+            "web/gpt/work.html",
+            False,
+            self.manifest["authorizations"]["test-authorization"],
+        )
+        self.assertIn('<div class="toc">', page)
+        self.assertEqual(page.count("<h2 id="), 120)
+        self.assertEqual(page.count('<a href="#part-'), 120)
+        self.assertEqual(
+            len(
+                {
+                    fragment.split('"', 1)[0]
+                    for fragment in page.split('<h2 id="')[1:]
+                }
+            ),
+            120,
+        )
+
     def test_temporary_release_requires_request_time_controls(self) -> None:
         self.authorize_current_inputs()
         authorization = self.manifest["authorizations"]["test-authorization"]
@@ -769,13 +802,45 @@ class PublicAlphaTest(unittest.TestCase):
         workflow = (REPOSITORY_ROOT / ".github/workflows/pages.yml").read_text(
             encoding="utf-8"
         )
+        self.assertIn("run: make check-sources", workflow)
         self.assertIn(
             "python scripts/public-alpha verify --deployment-target github-pages",
             workflow,
         )
         self.assertLess(
+            workflow.index("run: make check-sources"),
+            workflow.index("run: make public-site"),
+        )
+        self.assertLess(
             workflow.index("--deployment-target github-pages"),
             workflow.index("actions/upload-pages-artifact"),
+        )
+
+    def test_root_landings_spotlight_exorcism_review_page(self) -> None:
+        spotlight = "(library/catholic-exorcism.md)"
+        for landing in ("README.md", "LIBRARY.md"):
+            text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
+            self.assertEqual(
+                text.count(spotlight),
+                1,
+                f"{landing} must contain one direct exorcism spotlight link",
+            )
+        catalog = (
+            REPOSITORY_ROOT / "library/catholic-exorcism.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("# Catholic Exorcism", catalog)
+        self.assertIn("not the promised", catalog)
+        self.assertIn("at least 100 typeset pages", catalog)
+        self.assertIn("Public-alpha review", catalog)
+        self.assertIn(
+            "../doc/gpt/history/catholic-exorcism/"
+            "01-history-and-current-practice.pdf",
+            catalog,
+        )
+        self.assertIn(
+            "../web/gpt/history/catholic-exorcism/"
+            "01-history-and-current-practice.html",
+            catalog,
         )
 
     def test_verify_cli_enforces_named_deployment_target(self) -> None:
@@ -798,7 +863,7 @@ class PublicAlphaTest(unittest.TestCase):
         validate_target.assert_called_once()
         self.assertEqual(validate_target.call_args.args[1], "github-pages")
 
-    def test_preview_records_and_verifies_review_snapshot_without_approval(self) -> None:
+    def test_public_site_records_and_reaches_authorized_review_snapshot(self) -> None:
         self.write("src/gpt/review-work/main.tex", b"review source\n")
         self.write("doc/gpt/review-work.pdf", b"review pdf bytes\n")
         self.write(
@@ -806,7 +871,7 @@ class PublicAlphaTest(unittest.TestCase):
             (
                 "# Test shelf\n\n"
                 "[Work](../doc/gpt/work.pdf)\n\n"
-                "[Review](../doc/gpt/review-work.pdf)\n"
+                "[Review copy](../doc/gpt/review-work.pdf)\n"
             ).encode(),
         )
         self.manifest["publications"].append(
@@ -832,15 +897,8 @@ class PublicAlphaTest(unittest.TestCase):
             self.manifest, require_active_release=False
         )
 
-        rendered_page = (
-            '<!doctype html><meta name="robots" content="noindex, nofollow, '
-            'noarchive, nosnippet, noimageindex"><title>test</title>\n'
-        )
-        with mock.patch.object(
-            self.tool, "render_source_page", return_value=rendered_page
-        ):
-            output = self.tool.build_site(self.manifest, publications, preview=True)
-            self.tool.verify_output(self.manifest, publications, output, preview=True)
+        output = self.tool.build_site(self.manifest, publications, preview=False)
+        self.tool.verify_output(self.manifest, publications, output, preview=False)
 
         artifact_manifest = json.loads(
             (output / "PUBLICATION-MANIFEST.json").read_text(encoding="utf-8")
@@ -850,9 +908,112 @@ class PublicAlphaTest(unittest.TestCase):
             for entry in artifact_manifest["publications"]
             if entry["id"] == "review-work"
         )
-        self.assertIsNone(review_entry["authorization"])
+        self.assertEqual(review_entry["authorization"], "test-authorization")
+        self.assertEqual(review_entry["gates"], ["rights"])
         self.assertEqual(
             review_entry["pdf_sha256"], digest(b"review pdf bytes\n")
+        )
+        self.assertTrue((output / "doc/gpt/review-work.pdf").is_file())
+        catalog = (output / "library/test.html").read_text(encoding="utf-8")
+        self.assertIn('href="../doc/gpt/review-work.pdf"', catalog)
+
+    def test_review_catalog_link_requires_conspicuous_review_label(self) -> None:
+        self.add_unapproved_publication(
+            "review-work",
+            "review",
+            install_pdf=True,
+            link_catalog="library/test.md",
+        )
+        catalog_path = self.root / "library/test.md"
+        catalog_path.write_text(
+            catalog_path.read_text(encoding="utf-8").replace(
+                "[review-work]", "[Draft]"
+            ),
+            encoding="utf-8",
+        )
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "every review PDF catalog link must be conspicuously labeled as review",
+            str(failure.exception),
+        )
+
+    def test_verifier_rejects_copied_pdf_without_owning_catalog_link(self) -> None:
+        self.authorize_current_inputs()
+        publications = self.tool.validate_manifest(self.manifest)
+        output = self.tool.build_site(self.manifest, publications, preview=False)
+        catalog_path = output / "library/test.html"
+        catalog_path.write_text(
+            catalog_path.read_text(encoding="utf-8").replace(
+                'href="../doc/gpt/work.pdf"', 'href="../library.html"'
+            ),
+            encoding="utf-8",
+        )
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+        self.assertIn(
+            "work: copied PDF is not reachable from library/test.html",
+            str(failure.exception),
+        )
+
+    def test_review_is_publicly_discoverable_but_hold_is_excluded(self) -> None:
+        self.add_unapproved_publication(
+            "review-work",
+            "review",
+            install_pdf=True,
+            link_catalog="library/test.md",
+        )
+        self.add_unapproved_publication("held-work", "hold")
+        self.authorize_current_inputs()
+
+        publications = self.tool.validate_manifest(self.manifest)
+        public = self.tool.included_publications(publications, False)
+        preview = self.tool.included_publications(publications, True)
+        expected = {("gpt", "work"), ("gpt", "review-work")}
+        self.assertEqual(set(public), expected)
+        self.assertEqual(set(preview), expected)
+
+        catalog = (self.root / "library/test.md").read_text(encoding="utf-8")
+        filtered = self.tool.filter_catalog(
+            "library/test.md", catalog, set(public)
+        )
+        self.assertIn("../doc/gpt/review-work.pdf", filtered)
+        self.assertNotIn("held-work", filtered)
+
+        artifact = self.tool.artifact_manifest_data(self.manifest, public, False)
+        entries = {entry["id"]: entry for entry in artifact["publications"]}
+        self.assertEqual(entries["review-work"]["status"], "review")
+        self.assertEqual(entries["review-work"]["gates"], ["rights"])
+        self.assertEqual(
+            entries["review-work"]["authorization"], "test-authorization"
+        )
+        self.assertEqual(
+            entries["review-work"]["pdf_sha256"],
+            digest(b"publication pdf bytes\n"),
+        )
+        self.assertNotIn("held-work", entries)
+
+    def test_review_cannot_silently_claim_completion(self) -> None:
+        self.add_unapproved_publication(
+            "review-work",
+            "review",
+            install_pdf=True,
+            link_catalog="library/test.md",
+        )
+        self.authorize_current_inputs()
+        self.manifest["publications"][-1]["gates"] = []
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "review-work: review entries must retain at least one unresolved gate",
+            str(failure.exception),
         )
 
     def test_url_path_segment_passes_but_a_local_home_path_fails(self) -> None:
@@ -863,16 +1024,22 @@ class PublicAlphaTest(unittest.TestCase):
             '<title>test</title><a href="https://example.invalid/home/records">x</a>\n'
         )
         with mock.patch.object(self.tool, "render_source_page", return_value=page):
-            output = self.tool.build_site(self.manifest, publications, preview=False)
-            self.tool.verify_output(self.manifest, publications, output, preview=False)
+            with mock.patch.object(
+                self.tool, "verify_catalog_reachability", return_value=[]
+            ):
+                output = self.tool.build_site(self.manifest, publications, preview=False)
+                self.tool.verify_output(self.manifest, publications, output, preview=False)
 
         leaked = page.replace("https://example.invalid", "file:///home/someone")
         with mock.patch.object(self.tool, "render_source_page", return_value=leaked):
-            output = self.tool.build_site(self.manifest, publications, preview=False)
-            with self.assertRaises(self.tool.ReleaseError) as failure:
-                self.tool.verify_output(
-                    self.manifest, publications, output, preview=False
-                )
+            with mock.patch.object(
+                self.tool, "verify_catalog_reachability", return_value=[]
+            ):
+                output = self.tool.build_site(self.manifest, publications, preview=False)
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.verify_output(
+                        self.manifest, publications, output, preview=False
+                    )
 
         self.assertIn("contains home-directory path", str(failure.exception))
 

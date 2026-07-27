@@ -96,7 +96,7 @@ def compute_publication_hashes(manifest: dict) -> dict[str, str]:
     hashes: dict[str, str] = {}
     for publication in manifest.get("publications", []):
         publication_id = publication.get("id")
-        if publication.get("status") != "release":
+        if publication.get("status") not in {"release", "review"}:
             continue
         path = pdf_path(manifest, publication_id)
         if not path.is_file():
@@ -157,11 +157,21 @@ def refresh(manifest: dict, adopt: bool = False) -> list[str]:
 
     publication_hashes = compute_publication_hashes(manifest)
     for publication in manifest.get("publications", []):
-        if publication.get("status") != "release":
+        status = publication.get("status")
+        if status not in {"release", "review"}:
             continue
-        approval = publication.get("approval")
+        binding_field = "approval" if status == "release" else "review_distribution"
+        approval = publication.get(binding_field)
         if not isinstance(approval, dict):
-            raise BindingError(f"release publication lacks approval: {publication.get('id')}")
+            if status == "review":
+                approval = {
+                    "authorization": next(iter(manifest["authorizations"])),
+                    "pdf_sha256": publication_hashes[publication["id"]],
+                }
+                publication[binding_field] = approval
+                changes.append(f"review distribution {publication['id']}")
+            else:
+                raise BindingError(f"release publication lacks approval: {publication.get('id')}")
         current = publication_hashes[publication["id"]]
         if approval.get("pdf_sha256") != current:
             approval["pdf_sha256"] = current
@@ -237,7 +247,8 @@ def approve(manifest: dict, note: str, timezone_name: str) -> None:
         "represented authority in this record. The sole condition remains\n"
         "`no-project-initiated-promotion`.\n\n"
         f"The approval binds all {counts['release']} exact installed release\n"
-        "PDF snapshots and every exact recognized artifact-affecting\n"
+        f"PDF snapshots, all {counts['review']} conspicuously labelled public-alpha\n"
+        "review snapshots, and every exact recognized artifact-affecting\n"
         "reader-site input inventoried below at their current bytes. It is an\n"
         "exact-byte distribution clearance only: it does not represent\n"
         "completion of any outstanding work-specific rights, source,\n"
@@ -300,14 +311,16 @@ def report_status(manifest: dict) -> int:
     stale = 0
     authorization = single_authorization(manifest)
     for publication in manifest.get("publications", []):
-        if publication.get("status") != "release":
+        status = publication.get("status")
+        if status not in {"release", "review"}:
             continue
         path = pdf_path(manifest, publication["id"])
         if not path.is_file():
             print(f"missing pdf {publication['id']}")
             stale += 1
             continue
-        if publication.get("approval", {}).get("pdf_sha256") != sha256_file(path):
+        binding_field = "approval" if status == "release" else "review_distribution"
+        if publication.get(binding_field, {}).get("pdf_sha256") != sha256_file(path):
             print(f"stale pdf {publication['id']}")
             stale += 1
     # Scope belongs to the renderer's policy check; this reports recorded bytes.

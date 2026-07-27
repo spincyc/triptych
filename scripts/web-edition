@@ -101,7 +101,10 @@ REGISTER_ASSIGNMENT_RE = re.compile(r"\\Urlmuskip\s*=[^\\\n]*(?:\\relax)?")
 LIST_OPTION_RE = re.compile(
     r"(\\begin\s*\{(?:itemize|enumerate|description)\})\s*\[[^\[\]]*\]"
 )
-FENCED_DIV_RE = re.compile(r"^:::", re.MULTILINE)
+# Pandoc can leave fenced-div syntax inside a block quote.  The site's
+# Python-Markdown renderer does not enable fenced divs, so either form would
+# become reader-visible punctuation.
+FENCED_DIV_RE = re.compile(r"^[ \t]*(?:>[ \t]*)?:::", re.MULTILINE)
 ANCHOR_DEFINITION_RE = re.compile(r"\{#([^\s{}]+)[^{}]*\}")
 ANCHOR_LINK_RE = re.compile(r"\[((?:[^\[\]\\]|\\.)*)\]\(#([^)\s]+)\)")
 LINK_ATTRIBUTE_RE = re.compile(r"(\]\([^()\s]+\))\{[^{}]*\}")
@@ -364,11 +367,44 @@ def audit_output(body: str, markdown: str, tables: int = 0) -> list[str]:
     )
     if blank:
         failures.append(f"{blank} table row(s) written with every cell empty")
-    divs = sorted(
-        set(re.findall(r"^::: *\{?\.?([A-Za-z@-]+)", markdown, re.MULTILINE))
-    )
+    divs = FENCED_DIV_RE.findall(markdown)
     if divs:
-        failures.append("unconverted block(s) left in output: " + " ".join(divs))
+        failures.append(f"{len(divs)} unconverted fenced-div delimiter(s) left in output")
+    source_headings = {
+        level: len(
+            re.findall(
+                rf"\\{name}\*?\s*\{{",
+                body,
+            )
+        )
+        for level, name in (
+            (2, "section"),
+            (3, "subsection"),
+            (4, "subsubsection"),
+            (5, "paragraph"),
+            (6, "subparagraph"),
+        )
+    }
+    output_headings = {
+        level: len(re.findall(rf"^{'#' * level}\s+", markdown, re.MULTILINE))
+        for level in source_headings
+    }
+    for level, expected in source_headings.items():
+        if output_headings[level] < expected:
+            failures.append(
+                f"{expected} level-{level} source heading(s) became "
+                f"{output_headings[level]} heading(s)"
+            )
+    anchors = ANCHOR_DEFINITION_RE.findall(markdown)
+    duplicate_anchors = sorted(
+        anchor for anchor in set(anchors) if anchors.count(anchor) > 1
+    )
+    if duplicate_anchors:
+        failures.append("duplicate heading anchor(s): " + " ".join(duplicate_anchors))
+    linked_targets = {target for _, target in ANCHOR_LINK_RE.findall(markdown)}
+    missing_targets = sorted(linked_targets - set(anchors))
+    if missing_targets:
+        failures.append("missing internal anchor target(s): " + " ".join(missing_targets))
     # Table cells and escapes reflow the text; flattening lets a payload be
     # searched for as the continuous run of words it is.
     flat = flatten(markdown.replace("|", " "))

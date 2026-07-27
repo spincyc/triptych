@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.machinery
 import importlib.util
+import re
 import shutil
 import sys
 import tempfile
@@ -167,6 +168,23 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn(r"unknown macro \dubiousclaim", message)
         self.assertIn("main.tex", message)
 
+    def test_long_form_heading_and_anchor_fidelity(self) -> None:
+        count = 120
+        body = "\n".join(
+            rf"\subsection{{Part {number}}}\label{{sec:part-{number}}}"
+            rf"See \ref{{sec:part-{number}}}."
+            for number in range(1, count + 1)
+        )
+        markdown = self.convert(body)
+        self.assertEqual(
+            len(re.findall(r"^### Part \d+ \{#sec:part-\d+\}$", markdown, re.MULTILINE)),
+            count,
+        )
+        self.assertEqual(
+            len(re.findall(r"\]\(#sec:part-\d+\)", markdown)),
+            count,
+        )
+
 
 class WebEditionAuditTests(unittest.TestCase):
     """The output audit is the last guard against silent scholarship loss."""
@@ -208,7 +226,37 @@ class WebEditionAuditTests(unittest.TestCase):
         failures = DRIVER.audit_output(
             "Prose.", self.minimal_markdown() + "\n::: dossierframe\nText\n:::\n"
         )
-        self.assertIn("unconverted block(s) left in output: dossierframe", failures)
+        self.assertIn("2 unconverted fenced-div delimiter(s) left in output", failures)
+
+    def test_blockquoted_fenced_div_is_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown()
+            + "\n> ::: flushright\n> Attribution\n> :::\n",
+        )
+        self.assertIn("2 unconverted fenced-div delimiter(s) left in output", failures)
+
+    def test_heading_shortfall_is_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            r"\section{One}\subsection{Two}",
+            self.minimal_markdown() + "\n## One\n",
+        )
+        self.assertIn("1 level-3 source heading(s) became 0 heading(s)", failures)
+
+    def test_duplicate_heading_anchor_is_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown()
+            + "\n## One {#sec:repeat}\n\n## Two {#sec:repeat}\n",
+        )
+        self.assertIn("duplicate heading anchor(s): sec:repeat", failures)
+
+    def test_missing_internal_anchor_target_is_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown() + "\n[Missing](#sec:missing)\n",
+        )
+        self.assertIn("missing internal anchor target(s): sec:missing", failures)
 
     def test_named_table_wrapper_counts_as_a_table(self) -> None:
         definitions = (

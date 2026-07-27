@@ -33,6 +33,7 @@ PAGE_MAP = {
     "LICENSE": "license.html",
     "THIRD_PARTY.md": "third-party.html",
     "library/biographies.md": "library/biographies.html",
+    "library/catholic-exorcism.md": "library/catholic-exorcism.html",
     "library/curriculums.md": "library/curriculums.html",
     "library/ecclesiastical-latin.md": "library/ecclesiastical-latin.html",
     "library/faith.md": "library/faith.html",
@@ -77,6 +78,7 @@ MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\n]+)\)")
 EXTERNAL_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 SAFE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9./-]*[a-z0-9]$")
+REVIEW_LABEL_RE = re.compile(r"\breview\b", flags=re.IGNORECASE)
 TEXT_SUFFIXES = {".html", ".css", ".txt", ".json", ".js"}
 SUPPORTED_CONDITIONS = {
     "no-project-initiated-promotion",
@@ -591,6 +593,22 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
     )
 
 
+def catalog_pdf_lines() -> dict[tuple[str, str], list[tuple[str, str]]]:
+    """Return each linked publication's exact reader-facing link labels."""
+    labels: dict[tuple[str, str], list[tuple[str, str]]] = defaultdict(list)
+    for path in sorted((ROOT / "library").glob("*.md")):
+        relative = path.relative_to(ROOT).as_posix()
+        for line in path.read_text(encoding="utf-8").splitlines():
+            for label, raw_target in MARKDOWN_LINK_RE.findall(line):
+                target = raw_target.strip().split(maxsplit=1)[0]
+                match = PDF_LINK_RE.search(target)
+                if match:
+                    labels[(match.group(1), match.group(2))].append(
+                        (relative, label)
+                    )
+    return labels
+
+
 def validate_manifest(
     manifest: dict,
     require_active_release: bool = True,
@@ -683,11 +701,50 @@ def validate_manifest(
             errors.append(f"{label}: unknown gates {unknown_gates!r}")
 
         approval = publication.get("approval")
-        if status in {"hold", "review"}:
+        if status == "hold":
             if not gates:
                 errors.append(f"{label}: {status} entries must retain at least one unresolved gate")
             if approval is not None:
                 errors.append(f"{label}: {status} entries must have null approval")
+            continue
+        if status == "review":
+            if not gates:
+                errors.append(f"{label}: review entries must retain at least one unresolved gate")
+            if approval is not None:
+                errors.append(f"{label}: review entries must have null completion approval")
+            distribution = publication.get("review_distribution")
+            if not isinstance(distribution, dict) or set(distribution) != {
+                "authorization", "pdf_sha256"
+            }:
+                errors.append(
+                    f"{label}: review entries require authorization-bound review_distribution"
+                )
+                continue
+            authorization_id = distribution.get("authorization")
+            if not isinstance(authorization_id, str) or authorization_id not in authorization_ids:
+                errors.append(
+                    f"{label}: review_distribution references unknown authorization "
+                    f"{authorization_id!r}"
+                )
+            else:
+                referenced_authorizations.add(authorization_id)
+            distributed_hash = distribution.get("pdf_sha256")
+            if not isinstance(distributed_hash, str) or not SHA256_RE.fullmatch(
+                distributed_hash
+            ):
+                errors.append(f"{label}: review pdf_sha256 must be a lowercase SHA-256")
+            else:
+                if (
+                    isinstance(authorization_id, str)
+                    and authorization_id in authorization_ids
+                ):
+                    approved_snapshots[authorization_id].append(
+                        (label, distributed_hash)
+                    )
+                if verify_approval_bindings and has_pdf:
+                    actual_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
+                    if distributed_hash != actual_hash:
+                        errors.append(f"{label}: review_distribution PDF hash is stale")
             continue
 
         if gates:
@@ -802,6 +859,7 @@ def validate_manifest(
         mismatched_identity_lines,
         undeclared_provider_references,
     ) = catalog_occurrences(primary, providers)
+    linked_catalog_lines = catalog_pdf_lines()
     for catalog, reference in undeclared_provider_references:
         errors.append(f"{catalog}: catalog references undeclared provider edition {reference}")
     for key, publication in publications.items():
@@ -829,6 +887,16 @@ def validate_manifest(
                     f"{label}: manifest catalog {publication.get('catalog')!r} "
                     f"does not match {homes[0]!r}"
                 )
+            if publication.get("status") == "review":
+                review_labels = linked_catalog_lines.get(key, [])
+                if not review_labels or any(
+                    not REVIEW_LABEL_RE.search(link_label)
+                    for _, link_label in review_labels
+                ):
+                    errors.append(
+                        f"{label}: every review PDF catalog link must be "
+                        "conspicuously labeled as review"
+                    )
         elif publication.get("status") == "hold" and homes:
             errors.append(
                 f"{label}: source-only hold entries "
@@ -895,7 +963,7 @@ def validate_manifest(
 def included_publications(
     publications: dict[tuple[str, str], dict], preview: bool
 ) -> dict[tuple[str, str], dict]:
-    statuses = {"release", "review"} if preview else {"release"}
+    statuses = {"release", "review"}
     return {
         key: publication
         for key, publication in publications.items()
@@ -980,9 +1048,13 @@ def prepare_candidate_inventory(manifest: dict) -> dict:
 def artifact_authorization(manifest: dict, included: dict[tuple[str, str], dict]) -> dict:
     authorization_ids = sorted(
         {
-            publication["approval"]["authorization"]
+            (
+                publication["approval"]
+                if publication["status"] == "release"
+                else publication["review_distribution"]
+            )["authorization"]
             for publication in included.values()
-            if publication["status"] == "release"
+            if publication["status"] in {"release", "review"}
         }
     )
     entries = []
@@ -1055,12 +1127,14 @@ def artifact_manifest_data(
             authorization_id = approval["authorization"]
             pdf_hash = approval["pdf_sha256"]
         else:
-            authorization_id = None
-            pdf_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
+            distribution = publication["review_distribution"]
+            authorization_id = distribution["authorization"]
+            pdf_hash = distribution["pdf_sha256"]
         publication_entries.append(
             {
                 "id": publication_label(key, primary),
                 "status": publication["status"],
+                "gates": list(publication["gates"]),
                 "pdf": f"doc/{provider}/{leaf}.pdf",
                 "authorization": authorization_id,
                 "pdf_sha256": pdf_hash,
@@ -1543,6 +1617,41 @@ def verify_links(output: Path) -> list[str]:
     return errors
 
 
+def verify_catalog_reachability(
+    manifest: dict,
+    included: dict[tuple[str, str], dict],
+    output: Path,
+) -> list[str]:
+    """Require every copied PDF to remain linked from its owning catalog."""
+    errors: list[str] = []
+    primary, _ = declared_providers(manifest)
+    for key, publication in sorted(included.items()):
+        provider, leaf = key
+        catalog_source = publication["catalog"]
+        catalog_output = PAGE_MAP.get(catalog_source)
+        if catalog_output is None:
+            errors.append(
+                f"{publication_label(key, primary)}: catalog has no rendered page"
+            )
+            continue
+        catalog_path = output / catalog_output
+        if not catalog_path.is_file():
+            continue
+        destination = f"doc/{provider}/{leaf}.pdf"
+        expected_href = relative_link(catalog_output, destination)
+        local_paths = {
+            unquote(urlsplit(href).path)
+            for href in parsed_html(catalog_path).links
+            if not urlsplit(href).scheme and not urlsplit(href).netloc
+        }
+        if expected_href not in local_paths:
+            errors.append(
+                f"{publication_label(key, primary)}: copied PDF is not reachable "
+                f"from {catalog_output}"
+            )
+    return errors
+
+
 def write_checksums(output: Path) -> None:
     checksum_path = output / "SHA256SUMS"
     lines = []
@@ -1747,6 +1856,7 @@ def verify_output(
                 errors.append(f"{html_path.relative_to(output)}: public indexing is enabled")
 
     errors.extend(verify_links(output))
+    errors.extend(verify_catalog_reachability(manifest, included, output))
     checksum_path = output / "SHA256SUMS"
     if not checksum_path.is_file():
         errors.append("artifact is missing SHA256SUMS")
@@ -1867,7 +1977,7 @@ def main() -> int:
     parser.add_argument(
         "--preview",
         action="store_true",
-        help="use the private, no-index review preview (includes status=review)",
+        help="use a private, no-index preview of the public-alpha publication set",
     )
     parser.add_argument(
         "--deployment-target",
