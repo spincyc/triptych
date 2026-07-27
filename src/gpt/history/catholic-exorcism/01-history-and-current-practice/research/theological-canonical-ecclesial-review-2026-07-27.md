@@ -20,19 +20,19 @@ Reviewed snapshot:
 
 - `main.tex`: `sha256:ca7b88ae33af1a47598173a8e379a5ed957de59bd51f2ae72142ae94bf79d073`
 - `research/source-bindings.toml`:
-  `sha256:8dc657a99198a38a0a659699d33dbbffa35236a993c9f8f9b8f8332e0d0ffb33`
+  `sha256:4a647a93932a5446938f1c3263eff1238a726986756e279820f20ecc28e2026d`
 - `research/source-audit.md`:
-  `sha256:9a25f830e55461558d6dc5268e297c60d9470d7933e1109591434a82c73931c9`
+  `sha256:508f705fac76d07ee75627c17aba31ac2ed3319d9a7854691057ee795e94360c`
 - `research/theology-law-reception-audit.md`:
-  `sha256:beac94b16fc3c548cb270d9b1263a97a639a50a96652324376ce8b0555792ad5`
+  `sha256:aab24622ef5882a215531cbb12dd5cdaf6c0c9f0619000d8a791d799287668dc`
 - sections 80, 90, 100, 110, 120, and 130:
-  `sha256:8dcc0fc892b45a780ce9fba56506adefddc7048f6d1d078d85a58e52f7704069`,
-  `sha256:d2bdf1eeca89f5872d0e4e77f1a5f028c55c42e1728f5cd0355c6575695b0966`,
-  `sha256:098ba702387bd136b4f563c7380161ca8341026e90d74b6b186c08014f79bd79`,
-  `sha256:d4ec5201d195b1ce00c5f4de1dda4475e53adee252f2599e11c77f882c8ae47b`,
+  `sha256:54eb12709e9ca6e1e3fa30ef1a74baf7bcd19137644b1f1dbeda0df56906aeef`,
+  `sha256:356b702b75e264e14300f323fb2f8052154abe66afbe4ab01d2cf4b1bd30ac74`,
+  `sha256:56d78e0ed1ce9075453f81dbec7351f1afa61454d0417d0ae1899fe157934cce`,
+  `sha256:64126450d727cbd17b852859f47d691fa18b154d927abfa65c5c4c3b32794404`,
   `sha256:b03b23625fc2d64bc8d47fd91f0a09ce101b5255a59b5c2a2fb99a6cd4b8c09d`,
   and
-  `sha256:c32cfd51721748fb33a8a3be2ee9465ddb29ec87ab3c6033b97f0e249073611f`.
+  `sha256:17251de7cf8785062abe2991f68ab879be98432f6161507ce5471424044e4da6`.
 
 ## Findings
 
@@ -60,55 +60,40 @@ self-test, confrontation, or unauthorized ministry. The discussion of consent,
 privacy, professional competence, and continuing care is congruent with the
 identified U.S. guidance and does not convert that guidance into universal law.
 
-## Reservations and exact fixes
+## Resolution and verdict
 
-The gate is **reviewed with reservations, not passed**. No identified issue
-requires abandoning the study, but the following corrections are required
-before this independent gate can pass:
+The gate is **passed for the reviewed theological, canonical, and ecclesial
+content**. The revised snapshot resolves the five reservations as follows:
 
-1. **Promote consequential exact sources from catalog-only bindings.**
-   `source-bindings.toml` binds the verified CIC 1172 passage as only
-   `cataloged`, and binds the Catechism, Lateran IV, CIC 1166, and Aquinas
-   I.57/I.111/I.114 only at broad work level or with normalization expressly
-   outstanding. Register or bind exact verified passages for the consequential
-   doctrinal and sacramental claims, then record their actual
-   acquired/inspected/verified states and current fingerprints. At minimum this
-   includes CIC 1166 and 1172; CCC 391–395, 550, 1667, 1670, 1673, 1700–1706,
-   1734–1735, 1857, 1859, 2111, 2116–2117, and 2846–2854; Lateran IV
-   constitution 1; and the cited Aquinas articles.
+1. Exact acquired, inspected, and verified reusable passages now control CIC
+   1166 and 1172; CCC 391–395, 550, 1667–1673, 1700–1706, 1734–1735,
+   1857–1859, 2111, 2116–2117, and 2846–2854; and Aquinas I.57.4,
+   I.111.2–4, and I.114.2–3. Each reviewed binding pins its current canonical
+   fingerprint. A second source pass acquired the exact Holy See delivery of
+   the CDF-commissioned *Christian Faith and Demonology*, which directly quotes
+   and attributes Lateran IV constitution 1 and identifies its DS 800 and
+   critical-edition loci. The direct conciliar attribution is therefore
+   restored with that exact official reception-and-quotation control, without
+   misdescribing it as a facsimile or critical edition of the 1215 act.
 
-2. **Remove an imputed motive from the 1985 CDF letter.** In section 90,
-   replace “meetings that attempted to evade the reservation under another
-   name” with a source-bounded description: the letter also governs assemblies
-   in which no exorcism strictly so called is performed but demons are directly
-   addressed and their identities are sought. The present wording attributes
-   an intention that the act itself need not establish.
+2. Section 90 now follows the 1985 CDF letter without imputing a motive: it
+   describes assemblies in which no exorcism strictly so called is performed
+   but demons are directly addressed and their identities sought.
 
-3. **Narrow the local-ordinary implementation sentence.** Canon 1172 establishes
-   permission and priestly qualification; it does not itself establish the
-   asserted menu of case appointment, term designation, or team organization.
-   Either bind the exact U.S. or particular-law source for those models and
-   label the territorial scope, or reduce the sentence to the canon's verified
-   rule and state that local administrative arrangements vary.
+3. The Latin-law discussion states only canon 1172's verified permission and
+   priestly-qualification rule, expressly notes that universal law creates no
+   universal office or intake system, and labels the USCCB material as an
+   identified U.S. implementation rather than universal law.
 
-4. **Use juridically exact terminology.** Where the study calls canon 1172's
-   permission a “faculty,” prefer “particular and express permission” or
-   “authorization” unless a separately identified juridical source establishes
-   the technical faculty claim. Likewise, the older ritual's present use should
-   remain explicitly dependent on current applicable law and the competent
-   authority; the draft presently avoids a universal authorization claim and
-   should continue to do so.
+4. The revised study uses “particular and express permission” or
+   “authorization,” and states that use of an older book depends on current
+   applicable law and the competent authority rather than private judgment.
 
-5. **Source or label the threefold terminology as editorial synthesis.** The
-   natural/preternatural/supernatural discussion is careful and materially
-   sound, but its audit calls it “Thomistic and common Catholic theological
-   synthesis” without an exact controlling locus. Add an exact theological
-   source or label the definitions locally as the study's bounded terminology
-   for distinguishing claims. Do not imply that the three-word scheme itself
-   is defined doctrine.
+5. Section 80 and its focused audit now label the
+   natural/preternatural/supernatural definitions as the study's bounded
+   editorial synthesis and expressly deny that the three-word scheme is itself
+   a definition of doctrine.
 
-After these fixes, refresh the source audit, evidence map where affected,
-scope/review state, generation timestamp, web edition, and this review's
-snapshot before requesting re-review. The separate historical, clinical,
-safeguarding, pastoral, rights, production, and actual ecclesiastical-approval
-questions remain outside this gate.
+This pass does not grant ecclesiastical approval and does not decide the
+separate historical, clinical, safeguarding, pastoral, rights, production, or
+exact installed-snapshot gates.

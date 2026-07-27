@@ -2,12 +2,6 @@
 
 *A source-first history and sober assessment of exorcism in the Latin Church, with United States practice through 26 July 2026*
 
-> *“And one other thing: no curses. Not within my hearing. I happen to credit the efficacy of the powers to whom they’re addressed even though I question the efficiency of what’s said.”*
->
-> ::: flushright
-> —The Abbé, *The Devil in a Forest* by Gene Wolfe
-> :::
->
 > *“The first rule of exorcist club is that you do not talk about exorcist club.”*
 >
 > ::: flushright
@@ -22,9 +16,9 @@
 
 Confidentiality is not theatrical mystique. A person seeking help is not evidence for someone else’s argument, material for a recording, or a character in a horror story. Curiosity becomes harmful when it invites imitation, fixes attention on lurid details, rewards confident amateurs, or turns illness and trauma into spectacle. A reader who fears immediate danger should use emergency services; one who is ill should continue medical and mental-health care; one seeking the Church’s pastoral help should begin with a parish or diocese, not an internet ritual.
 
-The Wolfe epigraph is a literary point of departure, not evidence that a curse works and not permission to experiment. Its distinction between a power and an operator’s words introduces the historical question: how did Christians move from biblical narratives and diverse early practices to rites whose use, minister, and interpretation the Church increasingly disciplined? The answer is not a single unbroken ceremony. Apologetic claims, baptismal preparation, clerical offices, prayers over afflicted persons, ritual books, canon law, and modern safeguarding overlap, but they are not interchangeable.
+The anonymous epigraph directs attention away from spectacle and toward the historical question: how did Christians move from biblical narratives and diverse early practices to rites whose use, minister, and interpretation the Church increasingly disciplined? The answer is not a single unbroken ceremony. Apologetic claims, baptismal preparation, clerical offices, prayers over afflicted persons, ritual books, canon law, and modern safeguarding overlap, but they are not interchangeable.
 
-Three distinctions matter from the outset. Ordinary Christian prayer for deliverance from evil is not the reserved major rite. Minor exorcisms belong especially to authorized Christian initiation and do not declare a catechumen possessed. Major exorcism is an ecclesial liturgical sacramental whose lawful use in the Latin Church requires the authority identified by canon 1172; it is neither a sacrament nor medical treatment.
+Three distinctions matter from the outset. Ordinary Christian prayer for deliverance from evil is not the reserved major rite. Minor exorcisms belong especially to authorized Christian initiation and do not declare a catechumen possessed. Major exorcism is an ecclesial liturgical sacramental, ordinarily celebrated with strict confidentiality, whose lawful use in the Latin Church requires the authority identified by canon 1172; it is neither a sacrament nor medical treatment.
 
 > **A safety boundary**
 >
@@ -80,40 +74,37 @@ The same boundary is moral as well as historical. Narrative details describe par
 
 This section does not settle later theological questions about natural and preternatural causation. Its narrower conclusion is that the Gospel narratives warrant neither dismissal of the evangelists’ theological claims nor a contemporary diagnosis by analogy.
 
-## Apostolic and Patristic Reception: Apology and Initiation
+## Patristic Reception: Apology and Evidentiary Limits
 
-Second- and third-century Christian writers present expulsion in two recurring settings: public apologetic and preparation for baptism. Justin, *Second Apology* 6, appeals to Christians who adjure demons in Jesus’ name. Tertullian, *Apology* 23.4–7, proposes a public tribunal test in which a spirit would be compelled to confess its identity. Origen, *Against Celsus* 1.6 and 7.4, contrasts Christian faith, prayer, and simple adjuration with magical arts. In 1.25, however, he argues more broadly that names can possess natural efficacy and claims expulsions through Jesus’ name. These partisan arguments attest what their authors claimed; they are not neutral transcripts, statistics, or one common theory of ritual speech.
+Justin’s *Second Apology* 6 appeals to what he presents as observable Christian expulsion of demons in Jesus Christ’s name and contrasts it with other exorcists, incantations, and drugs. The exact checked witness is the Dods–Reith English translation in the 1887 *Ante-Nicene Fathers* OCR, not an original-language control. Justin’s partisan argument attests what he claimed; it is not a neutral transcript, a success statistic, or authorization for later readers to seek spectacle.
+
+Tertullian, *Apology* 23, frames a proposed public test in forensic rhetoric. Origen, *Against Celsus* 1.6 and 7.4, contrasts prayer and simple Christian adjuration with magical apparatus; 1.25 instead advances a broader theory about the efficacy of names. These exact English witnesses control the authors’ arguments, not actual tribunal proceedings, outcomes, or one common theory of ritual speech.
 
 ### The apologetic proof and its limits
 
-The authors do not make an identical argument. Justin defends Christians before Roman power. Tertullian issues a forensic challenge whose proposed test would expose the beings called gods. Origen answers a learned critic and contrasts Christian simplicity with specialist apparatus. Their common center is Christological, but audience, rhetoric, and account of proof differ. Repetition across Greek and Latin apology shows that Christians publicly associated expulsion with Jesus’ name; it does not independently corroborate every event or authorize later readers to seek spectacle or interrogation.
+The checked passage shows that a second-century Christian apologist publicly associated expulsion with Jesus’ name. It does not by itself show how common the practice was, corroborate an event, establish a liturgical formulary, or identify a permanent office. Further apologetic, initiatory, conciliar, and institutional witnesses remain necessary before those distinct settings can be compared.
 
-### Initiation: renunciation before incorporation
+### Initiation and office: bounded witnesses
 
-The church-order commonly called the *Apostolic Tradition* describes scrutiny, breathing, signing, and commands against alien spirits before baptism. Its composite textual history, uncertain attribution to Hippolytus, and debated date forbid treating every clause as a Roman rule from about 215. It nevertheless witnesses practices transmitted through later church-order families.
+*Procatechesis* 9 addresses candidates undergoing exorcisms and uses refining imagery. The first Jerusalem *Mystagogical Catechesis*, 1.4–9, recalls westward renunciation of Satan and the eastward turn toward Christ. The latter work’s authorship remains disputed, so the exact Gifford witness controls a Jerusalem sequence rather than unqualified personal authorship by Cyril or a universal rite.
 
-Cyril of Jerusalem’s *Procatechesis* 9 addresses candidates undergoing exorcisms and compares their refining force to metal purified by fire. The Jerusalem *Mystagogical Catecheses*, transmitted under Cyril’s name but also attributed to his successor John in modern discussion, recall in 1.4–9 the renunciation of Satan facing west and the turn eastward toward Christ. Exorcistic language here belongs to conversion and incorporation, not only extraordinary possession. The disputed attribution does not erase the Jerusalem witness, but it forbids making Cyril personally the unqualified author. Latin, Syriac, and other Eastern sequences remain related but nonidentical.
-
-### A practice is not yet an office
-
-Ancient “exorcism” did not always mean the later solemn rite for a person judged possessed. Nor does a baptismal command prove one uniform order or permanent office. Laodicea canon 26 says that persons not promoted to the office by the bishop are not to adjure in churches or private houses, evidence of regulation in one fourth-century conciliar setting. Eusebius’s quotation of Cornelius’s mid-third-century Roman clergy list includes fifty-two exorcists, readers, and door-keepers as one combined total (*Church History* 6.43.11); it neither separates the number of exorcists nor equates that grade with every act later called exorcism. Later ordination texts and ministries must be dated and localized rather than projected backward.
+Eusebius’s quotation of Cornelius’s Roman clergy list gives fifty-two as one combined total for exorcists, readers, and door-keepers (*Church History* 6.43.11). It supplies no separate number of exorcists and does not equate that grade with every later act called exorcism.
 
 ### Patristic breadth without a vote count
 
 The Fathers do not supply one treatise entitled “the Catholic doctrine of exorcism.” Their evidence is distributed among rules of faith, apologetic challenges, baptismal catecheses, biblical homilies, church orders, letters, and narratives. Irenaeus is important first as a control on method. His *Against Heresies* 1.10 describes one received faith confessed throughout churches of different languages. That passage does not enumerate an exorcistic rite. It prevents a local practice or a later technical vocabulary from being promoted into the content of the rule of faith merely because a Father mentions demons elsewhere.
 
-A reception sweep therefore asks five different questions of every witness: what biblical text is being read; what claim about Christ or creation is being made; whether the setting is initiation or extraordinary affliction; who is represented as acting; and what authority the genre can bear. Justin, Tertullian, and Origen answer chiefly the apologetic question. The *Apostolic Tradition* complex and Cyril answer chiefly the initiatory question. Laodicea answers a local disciplinary question. None alone supplies all five answers.
+A reception sweep asks five different questions of every witness: what biblical text is being read; what claim about Christ or creation is being made; whether the setting is initiation or extraordinary affliction; who is represented as acting; and what authority the genre can bear. Justin answers chiefly the apologetic question; the Jerusalem witnesses the initiatory question; and Eusebius one institutional question. None supplies all five.
 
 The surviving record is also uneven. Greek and Latin corpora are more readily available in old printed translations than many Syriac, Coptic, Armenian, and Ethiopic church-order witnesses. Silence in the presently checked corpus cannot be advertised as patristic silence. A negative claim is warranted only when it names the exact artifact or bounded corpus searched, the terms and languages used, and the limitations of OCR or translation.
 
-The checked apologetic, church-order, Jerusalem, and conciliar witnesses do not preserve one apostolic script. They place related language in different genres and local settings, so later ritual organization cannot be inferred from verbal resemblance alone.
+The exact checked patristic passages do not preserve an apostolic script. Later ritual organization cannot be inferred from verbal resemblance alone. The additional conciliar and church-order loci identified in the research record do not support this account until their exact consulted passage states are registered and inspected.
 
 | **Witness family** | **Secure contribution** | **Evidentiary ceiling** |
 |:-------------|:------------------------|:----------------------------|
-| Second- and third-century apology | Public claims that Christians invoked Jesus’ name against demons | Partisan rhetoric, not measured outcomes or a liturgical book |
-| Church-order traditions | Scrutiny and commands within preparation for Baptism | Composite transmission, not one securely dated universal order |
-| Jerusalem catecheses | Renunciation, orientation, confession, and exorcism in initiation | One local catechetical sequence, not the later major rite |
-| Conciliar discipline | Episcopal appointment could delimit exorcistic action in a named setting | Neither a universal apostolic office nor proof of uniform reception |
+| Justin’s *Second Apology* | A public claim that Christians invoked Jesus’ name against demons | One partisan argument in a nineteenth-century English witness, not measured outcomes or a liturgical book |
+| Irenaeus’s rule of faith | A methodological boundary between received faith and local practice | No exorcistic formulary or practice inventory |
+| Uncontrolled church-order and conciliar leads | Questions for later comparison | No support for publication claims until exact passages are registered and inspected |
 
 ## Late-Antique Offices and Medieval Plurality
 
@@ -123,13 +114,13 @@ By the middle of the third century, the Roman church could count exorcists among
 
 The disciplinary witness is similarly local before it is general. Laodicea canon 26 forbids persons not appointed by bishops from exorcizing in churches or houses. Its importance lies less in reconstructing a ceremony than in the principle it makes visible: a claimed spiritual gift was being placed under ecclesial authorization. The canon does not identify one universal ordination form, say how often extraordinary cases arose, or equate every authorized exorcist with the priest who would later perform a major exorcism.
 
-Later Western ordination tradition counted the exorcist among the minor orders and represented the office by delivery of a book. That received symbolism identifies an ecclesial office; it does not establish how often any holder exercised exorcistic ministry or whether holders regularly cared for persons alleged to be possessed. A representative medieval ordinal has not yet been acquired and collated for this study. Stronger claims about medieval career paths, ordinary practice, or a transfer of extraordinary intervention to priests therefore remain open.
+A representative medieval ordinal has not yet been acquired and collated for this study. It therefore makes no positive claim from an ordination formulary about delivery of a book, the duties of officeholders, medieval career paths, ordinary practice, or a transfer of extraordinary intervention to priests.
 
 ### From scrutinies to ritual-book controls
 
 In H. A. Wilson’s 1894 edition of the book conventionally called the *Gelasian Sacramentary*, the heading *Exorcismi super electos* appears within a continuous sequence of scrutinies and other rites for the elect (pp. 45–50). The prayers on pp. 48–49 repeatedly order the action to baptismal grace. This exact edition witness establishes the placement of exorcistic formulas within baptismal preparation. It does not by itself attribute the extant compilation to Gelasius I, establish one pristine Roman use, collate the printed text against the manuscript, or date each textual stratum.
 
-The Vogel–Elze critical edition supplies bibliographic control for the tenth-century compilation conventionally called the *Pontificale Romano-Germanicum*. The present source record does not yet contain an exact artifact, identified ordines and pages, or manuscript-to-edition collation. The collection may therefore mark a tenth-century compilation within the wider history of medieval ritual books, but its precise contents, internal juxtapositions, routes of circulation, and evidence for actual local use require further collation. Neither a rubric nor the survival of a formula would by itself establish frequency of use or incidence of possession.
+The Vogel–Elze critical edition supplies bibliographic control for the tenth-century compilation conventionally called the *Pontificale Romano-Germanicum*. The present source record does not yet contain an exact artifact, identified ordines and pages, or manuscript-to-edition collation. The edition supplies only the bibliographic identity of a compilation assigned to the tenth century. Its precise contents, internal juxtapositions, routes of circulation, and evidence for actual local use require further collation. Neither a rubric nor the survival of a formula would by itself establish frequency of use or incidence of possession.
 
 ### Sacramental theology and differentiated effects
 
@@ -145,7 +136,7 @@ Narrative sources are not neutral medical files. Without an exact narrative witn
 
 Liturgical, theological, penitential, canonical, legal, and hagiographic records answer different questions. None may silently substitute for another. This study has not yet acquired the exact cross-genre witnesses needed to describe interactions among exorcism, magic, heresy, medicine, and learned demonology across the medieval period. It therefore makes no claim here about their chronology, prevalence, or institutional relationship.
 
-The exact controls retained here establish a baptismal formulary in Wilson’s Gelasian edition, a cataloged tenth-century pontifical compilation, and Aquinas’s theological distinction between baptismal preparations and the sacrament’s effect. They do not establish one unchanged medieval script or a uniform practice. The *Rituale Romanum* of 1614 belongs to a later, separately controlled stage of the history.
+The exact controls retained here establish a baptismal formulary in Wilson’s Gelasian edition and Aquinas’s theological distinction between baptismal preparations and the sacrament’s effect. The PRG remains only a bibliographic coordinate. These controls do not establish one unchanged medieval script or a uniform practice. The *Rituale Romanum* of 1614 belongs to a later, separately controlled stage of the history.
 
 ## Early Modern Consolidation and the Roman Ritual of 1614
 
@@ -189,7 +180,7 @@ The Congregation’s 1999 presentation begins from Christ’s ministry and descr
 
 Two doctrinal interventions close a common loophole. The Congregation for the Doctrine of the Faith’s letter of 29 September 1985 (the official page’s URL contains “19850924,” but the Latin heading and AAS citation give 29 September) required observance of canon 1172, prohibited the faithful’s use of the Leonine formula against Satan and the apostate angels, and directed ordinaries to prevent persons lacking the requisite power from conducting assemblies in which demons were directly addressed and their identity sought. The *Instruction on Prayers for Healing* (2000), article 8, again separates liturgical exorcism from healing services and places the matter under the diocesan bishop. Calling an event a prayer meeting, healing ministry, or deliverance session does not erase those boundaries.
 
-The *Catechism of the Catholic Church*, no. 1673, provides doctrinal and catechetical orientation rather than a second grant of canonical faculty: simple exorcism occurs in baptism; solemn or “major” exorcism may be performed only by a priest with episcopal permission; and illness, especially psychological illness, is a different matter whose treatment belongs to medical science. It says that before celebration it is important to ascertain that the matter concerns the presence of the Evil One rather than illness. That is an explicit differential warning, not a clinical test or a replacement for canon 1172 and the ritual norms.
+The *Catechism of the Catholic Church*, no. 1673, provides doctrinal and catechetical orientation rather than a second grant of the particular and express permission required by canon 1172: simple exorcism occurs in baptism; solemn or “major” exorcism may be performed only by a priest with episcopal permission; and illness, especially psychological illness, is a different matter whose treatment belongs to medical science. It says that before celebration it is important to ascertain that the matter concerns the presence of the Evil One rather than illness. That is an explicit differential warning, not a clinical test or a replacement for canon 1172 and the ritual norms.
 
 ### Territorial implementation and the United States
 
@@ -220,7 +211,7 @@ This is doctrine. Many details supplied by later demonologies are not. The exist
 
 ### Natural, preternatural, and supernatural
 
-These school-theological terms mark relations, not three kinds of being. *Natural* refers to a creature and to powers and effects proportioned to a created nature. Catholic writers may call an alleged effect *preternatural* when they attribute it to a created spiritual power beyond the ordinary capacities of embodied human agents. An angel or demon is nevertheless a creature with an angelic nature, not a “preternatural substance.” *Supernatural* refers to God and to the order exceeding every created nature: uncreated divine life and created gifts of grace by which creatures participate in it.
+For the bounded purposes of this study, these school-theological terms mark relations, not three kinds of being. The definitions that follow are an editorial synthesis used to keep kinds of claim distinct; the three-word scheme is not presented as a definition of doctrine. *Natural* refers to a creature and to powers and effects proportioned to a created nature. Catholic writers may call an alleged effect *preternatural* when they attribute it to a created spiritual power beyond the ordinary capacities of embodied human agents. An angel or demon is nevertheless a creature with an angelic nature, not a “preternatural substance.” *Supernatural* refers to God and to the order exceeding every created nature: uncreated divine life and created gifts of grace by which creatures participate in it.
 
 These are metaphysical classifications, not diagnostic test results. A surprising event does not become preternatural because its natural explanation is not yet known. “Unexplained” describes an epistemic state; it does not name a cause. Conversely, Catholic theology does not require that the preternatural be redefined as an unknown natural mechanism. It permits the question while refusing a shortcut from possibility to case judgment.
 
@@ -256,7 +247,7 @@ No universal sentence about “the Catholic rite of exorcism” is safe unless i
 
 In the Latin Church, canon 1172 makes particular and express permission of the local ordinary necessary for licit exorcism over the possessed. Permission may be given only to a priest marked by piety, knowledge, prudence, and integrity. The revised *De Exorcismis et Supplicationibus Quibusdam* supplies the liturgical discipline. The universal law identifies neither a permanent diocesan office nor a universal intake system; concrete diocesan arrangements therefore require their own territorial and local controls.
 
-The permission is not a declaration that possession has been proved. It is particular and express authorization for a reserved ecclesial act after discernment. Ordination alone does not supply it; a lay association cannot delegate it; and a family cannot create it by consent. The 1985 CDF instruction applies canon 1172 to meetings in which prayers of liberation were used outside the reserved rite. The 2000 instruction on healing prayers keeps exorcism distinct from healing services and under the diocesan bishop.
+The permission is not a declaration that possession has been proved. It is particular and express authorization for a reserved ecclesial act after discernment. Ordination alone does not supply it; a lay association cannot delegate it; and a family cannot create it by consent. The 1985 CDF instruction also governs assemblies in which no exorcism strictly so called is performed but demons are directly addressed and their identities are sought. The 2000 instruction on healing prayers keeps exorcism distinct from healing services and under the diocesan bishop.
 
 Territorial implementation remains subordinate. The USCCB’s public account identifies the confirmed English book and a responsible American pattern: medical and psychological assessment, moral certitude, consent where possible, privacy, limited participation, and fidelity to the rite. It is official conference guidance and an identified U.S. implementation, not universal law. A diocese elsewhere may use a different approved translation and protocol while remaining bound by canon 1172 and the typical book.
 
@@ -336,7 +327,7 @@ The objection usefully restores the baptismal, liturgical, and therapeutic horiz
 
 Some traditionalist criticism holds that the 1998/2004 rite weakened the 1614 tradition by reducing imperative formulas, adopting modern psychological caution, or expressing uncertainty where the older book spoke plainly. A related claim treats reported preference among exorcists as proof of the older rite’s superior efficacy.
 
-The historical questions deserve textual study, but memoir preference is not a controlled comparison and “more confrontational” is not a theological measure of efficacy. The current typical book has competent authority; older use depends on actual law and faculty, not private judgment. Psychological and medical consultation does not deny demons; it recognizes natural causes and the moral cost of error. Legitimate criticism may examine translation, pastoral prudence, and continuity without instructing unauthorized use or turning obedience into a referendum on anecdotes.
+The historical questions deserve textual study, but memoir preference is not a controlled comparison and “more confrontational” is not a theological measure of efficacy. The current typical book has competent authority; older use depends on current applicable law and the competent authority’s particular and express permission, not private judgment. Psychological and medical consultation does not deny demons; it recognizes natural causes and the moral cost of error. Legitimate criticism may examine translation, pastoral prudence, and continuity without instructing unauthorized use or turning obedience into a referendum on anecdotes.
 
 ### The feminist, disability, and trauma-informed objections
 
@@ -398,13 +389,11 @@ The controlling universal law is the 1983 *Codex Iuris Canonici* for the Latin C
 
 No auditable global dataset establishes the frequency or outcomes of major exorcism. Ancient and medieval reports usually cannot be retrospectively diagnosed, and several early liturgical corpora have disputed dates, attributions, or compositional histories. The proprietary current ritual is neither reproduced nor operationally summarized. Protected modern works are quoted only in focused excerpts or paraphrased.
 
-The opening Wolfe excerpt was transcribed by a reader from the Orb 1996 edition, page 207; the project did not independently collate that protected edition. The excerpt is used for criticism and discussion, remains third-party material, and is not offered under the project’s CC BY license.
-
-The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. The expanded draft has received internal source, structural, and production review, including every-page visual inspection. Independent historical, patristic, liturgical, theological, canonical, clinical, safeguarding, pastoral, rights, and ecclesiastical review remains outstanding. It is not an official Church publication or an approved ritual, diagnostic, pastoral, or legal guide.
+The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. The expanded draft has received internal source, structural, and production review, including every-page visual inspection. Independent theological, canonical, patristic, historical-liturgical, clinical-safeguarding, pastoral, rights, and production review records dated 27 July 2026 govern their stated and deliberately bounded lanes. These reviews are not clinical validation, professional medical advice, or ecclesiastical approval. Exact-snapshot installation and distribution authorization remain separate gates. It is not an official Church publication or an approved ritual, diagnostic, pastoral, or legal guide.
 
 ## Dated Orientation
 
-**Ancient witnesses.** *Jubilees* and Josephus preserve two unlike Second Temple or early Roman-period literary settings; their later English editions are evidence for the translations used here, not the dates of the underlying works. **First century.** Gospel and Acts narratives place expulsion of hostile spirits within Jesus’ kingdom ministry and apostolic mission. **Second–fourth centuries.** Apologetic and initiatory witnesses attest different Christian settings. Cornelius’s c. 251 Roman clergy list survives in fourth-century Eusebius; Laodicea canon 26 is a local disciplinary witness later received in canonical collections. **Early medieval witnesses.** The Gelasian Sacramentary survives through layered manuscripts; Wilson’s 1894 edition controls the passages used here. The Vogel–Elze 1963–1972 edition supplies bibliographic identification for the tenth-century *Pontificale Romano-Germanicum*; exact ordines and pages remain an open research gate. **Thirteenth century.** Aquinas, *Summa theologiae* III, q. 71, distinguishes baptismal exorcistic acts within sacramental theology. **1614.** Paul V issues the *Rituale Romanum*; the princeps witness prints *De exorcizandis obsessis a daemonio* as one section at pp. 198–219. **1917–1918.** The first Latin Code is promulgated in 1917; the 1918 Vatican Polyglot book witness controls the canons cited here. **1952.** A later Roman Ritual edition arranges the material in title XII; it does not authorize present use by its historical existence. **1972.** *Ministeria quaedam* changes the Latin minor-order discipline.
+**Ancient witnesses.** *Jubilees* and Josephus preserve two unlike Second Temple or early Roman-period literary settings; their later English editions are evidence for the translations used here, not the dates of the underlying works. **First century.** Gospel and Acts narratives place expulsion of hostile spirits within Jesus’ kingdom ministry and apostolic mission. **Second–fourth centuries.** Apologetic and initiatory witnesses attest different Christian settings. Cornelius’s c. 251 Roman clergy list survives in fourth-century Eusebius; Laodicea canon 26 is a local disciplinary witness later received in canonical collections. **Early medieval witnesses.** The Gelasian Sacramentary survives through layered manuscripts; Wilson’s 1894 edition controls the passages used here. The tenth-century *Pontificale Romano-Germanicum* is identified bibliographically through the Vogel–Elze 1963–1972 edition; no exact ordo or page supports a publication claim here. **Thirteenth century.** Aquinas, *Summa theologiae* III, q. 71, distinguishes baptismal exorcistic acts within sacramental theology. **1614.** Paul V issues the *Rituale Romanum*; the princeps witness prints *De exorcizandis obsessis a daemonio* as one section at pp. 198–219. **1917–1918.** The first Latin Code is promulgated in 1917; the 1918 Vatican Polyglot book witness controls the canons cited here. **1952.** A later Roman Ritual edition arranges the material in title XII; it does not authorize present use by its historical existence. **1972.** *Ministeria quaedam* changes the Latin minor-order discipline.
 
 **1983.** The revised Latin Code states the reservation and priestly qualifications in canon 1172. **29 September 1985.** The CDF restricts unauthorized use of exorcism formulas and direct interrogation in assemblies for liberation. **1998–2004.** A decree dated 22 November 1998 promulgates the revised book; the Latin typical edition appears in 1999, the dicastery presents it on 26 January 1999, and an emended reprint appears in 2004. **14 September 2000.** The CDF distinguishes exorcism from healing services and reaffirms dependence on the diocesan bishop. **2014–2017.** The USCCB approves the English edition in 2014, the Holy See confirms it in December 2016, and it takes effect in U.S. Latin dioceses on 29 June 2017. **22 October 2021.** The competent dicastery issues current implementation for amended canon 838, including the exorcism book’s preliminary norms. **26–27 July 2026.** The current-law check closes on 26 July; additional historical source acquisition and inspection is recorded on 27 July. The latter date does not silently extend the legal-currentness claim.
 
@@ -416,7 +405,7 @@ Selected loci in 1 Samuel 16; Tobit 6–8; Matthew 4, 8, 12, 17; Mark 1, 3, 5, 9
 
 ### Ancient Jewish and Christian witnesses
 
-*Jubilees* 10.1–11, trans. R. H. Charles (1913). Josephus, *Antiquities* 8.45–49, Whiston’s English. Justin Martyr, *Second Apology* 6. Tertullian, *Apology* 23. Origen, *Against Celsus* 1.6, 1.25, 7.4. The church-order complex conventionally called *Apostolic Tradition*, 20–21. Cyril of Jerusalem, *Procatechesis* 9; Jerusalem *Mystagogical Catecheses* 1.4–9. Eusebius, *Ecclesiastical History* 6.43.11. Council of Laodicea, canon 26.
+*Jubilees* 10.1–11, trans. R. H. Charles (1913). Josephus, *Antiquities* 8.45–49, Whiston’s English. Justin Martyr, *Second Apology* 6, Dods–Reith English in *Ante-Nicene Fathers* 1 (1887), exact bounded OCR passage. Irenaeus, *Against Heresies* 1.10.1–3, Roberts–Rambaut English in the same volume, exact bounded OCR passage. Tertullian, *Apology* 23, Thelwall English. Origen, *Against Celsus* 1.6, 1.25, and 7.4, Crombie English. Jerusalem *Procatechesis* 9 and *Mystagogical Catechesis* 1.4–9, Gifford English. Eusebius, *Church History* 6.43.11, McGiffert English. The last five are exact dated New Advent delivery states acquired and hashed 2026-07-27.
 
 ### Ritual and theological witnesses
 
@@ -430,19 +419,13 @@ Selected loci in 1 Samuel 16; Tobit 6–8; Matthew 4, 8, 12, 17; Mark 1, 3, 5, 9
 
 Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmillan, 2016), used critically as historical reconstruction. World Health Organization, *Clinical Descriptions and Diagnostic Requirements for ICD-11 Mental, Behavioural and Neurodevelopmental Disorders* (2024), used only within the bounded clinical discussion recorded in the source audit. United Kingdom Department for Education, *National action plan to tackle child abuse linked to faith or belief* (2012), used only for its England-specific safeguarding evidence.
 
-### Literary point of departure
-
-Gene Wolfe, *The Devil in a Forest* (Orb, 1996), 207. The brief protected passage spoken by the Abbé is a reader transcription used for criticism and discussion. It supplies neither doctrine nor empirical evidence about curses, and its wording remains excluded from the project’s license.
-
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-27T12:42:13Z
+**Last revised (UTC):** 2026-07-27T15:14:26Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Agent/runtime:** OpenAI Codex agent (historical research, current-source verification, drafting, and source-audit roles); API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (reader-supplied Gene Wolfe quotation integration, speaker and locus attribution, contextual distinction, epigraph presentation, rights-boundary audit, and research-record revision); Codex CLI 0.145.0; API workspace; unexposed: server revision
 
 **Agent/runtime:** OpenAI Codex agent (multi-agent primary-source acquisition, historical and legal correction, safeguarding revision, component integration, source-library normalization, and production review); API workspace; unexposed: server revision
 

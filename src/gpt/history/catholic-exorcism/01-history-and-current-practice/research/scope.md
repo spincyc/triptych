@@ -48,9 +48,9 @@ Orthodox law or practice, every local Western ritual, the frequency or outcomes
 of major exorcism, or every historical demonology. Latin canon 1172 is not
 projected onto Eastern Catholics. Remaining edition-level gaps include the
 composition and exact edition control of the church-order complex conventionally
-called *Apostolic Tradition*, some patristic loci, exact PRG ordines and pages,
-and a representative ordinal/formula comparison. These ceilings restrict the
-published claims.
+called *Apostolic Tradition*, exact PRG ordines and pages, and a representative
+ordinal/formula comparison. Unbound patristic and conciliar leads are not used
+as publication evidence. These ceilings restrict the published claims.
 
 ## Language, editions, and terminology
 
@@ -69,18 +69,11 @@ category nor permission. Doctrine, school theology, historical witness,
 universal law, territorial implementation, clinical judgment, and project
 synthesis remain distinct.
 
-## Voice, opening, and quotation control
+## Voice and opening
 
-The opening begins with two terse epigraphs before the governing thesis. The
-first is the Abbé's distinction between the efficacy of powers addressed by
-curses and the efficiency of the words spoken in Gene Wolfe's *The Devil in a
-Forest*. A reader supplied the exact wording, fictional speaker, Orb 1996
-edition, and page 207 from a personal copy on 26 July 2026. The project did not
-independently collate the protected edition. The focused passage is a literary
-point of departure used for criticism and discussion, not doctrinal,
-historical, or empirical evidence, and it remains excluded from the project's
-license. “The first rule of exorcist club” is an anonymous adaptation directing
-attention away from spectacle; it asserts no historical authorship.
+The opening begins with a terse anonymous adaptation directing attention away
+from spectacle; it asserts no historical authorship and supplies no doctrinal,
+historical, or empirical evidence.
 
 ## Evidence, rights, and method
 
@@ -111,7 +104,9 @@ web conversion, review rasters, every-page visual review, and PDF metadata,
 extracted-text, and embedded-font checks passed. Exact installed-snapshot
 review remains open.
 
-Independent historical, patristic, liturgical, theological, canonical,
-psychiatric, safeguarding, pastoral, rights, and ecclesiastical review remains
-outstanding. No PDF is authorized for installation, catalog listing, or
-distribution from this expanded source until the applicable gates close.
+Independent theological, canonical, patristic, historical-liturgical,
+clinical-safeguarding, pastoral, rights, and production reviews dated
+27 July 2026 govern their stated and deliberately bounded lanes. They do not
+constitute psychiatric validation, professional medical advice, or
+ecclesiastical approval. Exact-snapshot installation, catalog, and
+distribution authorization remain separate gates.

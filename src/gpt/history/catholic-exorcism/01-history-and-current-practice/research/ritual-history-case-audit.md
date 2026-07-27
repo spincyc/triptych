@@ -25,12 +25,14 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
   the date of each textual stratum.
 - *Pontificale Romano-Germanicum*, ed. Cyrille Vogel and Reinhard Elze,
   *Le Pontifical romano-germanique du dixième siècle*, 3 vols., Studi e Testi
-  226--227, 269 (Vatican City, 1963--1972). Bibliographic and ritual-family
-  control for tenth-century compilation and circulation; no formula is quoted.
+  226--227, 269 (Vatican City, 1963--1972). Bibliographic identification only;
+  no exact artifact, ordo, or page supports a publication claim, and no
+  circulation claim is inferred.
 - Western ordination witnesses, later represented in the *Pontificale
-  Romanum*, title *De ordinatione exorcistarum*. The delivery of a book belongs
-  to the office's ordination symbolism. It is not proof that every holder
-  routinely performed extraordinary exorcisms.
+  Romanum*, title *De ordinatione exorcistarum*, remain a bibliographic lead.
+  No representative medieval ordinal has been acquired and collated, so this
+  audit does not use delivery of a book, office symbolism, or asserted duties
+  to support a publication claim.
 - Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2--4. The
   Fathers of the English Dominican Province translation, New Advent question
   page `4071.htm`, was acquired, hashed, and inspected on 2026-07-26 and is
@@ -157,3 +159,56 @@ an evidence-map row for each retained claim.
   Ritual editions remain distinguished catalog identities; exact PRG
   artifacts, ordines and pages, a representative Western ordinal, and exact
   ritual-formula comparison remain open.
+
+## Second medieval-source pass, 2026-07-27
+
+This pass retested every PRG, medieval-ordinal, delivery-of-the-book,
+office-duty, circulation, and local-use proposition removed or narrowed in
+section 40. It searched the following expected families:
+
+- **critical editions and critical-edition finding aids:** Vogel--Elze,
+  *Pontificale Romano-Germanicum*, especially the contents and the minor-order
+  material reported as ordo XV; Munier, *Concilia Galliae*, CCSL 148,
+  pp. 166--185, for the reconstructed *Statuta ecclesiae antiqua*; and the
+  MGH *Clavis canonum* identity and transmission notice;
+- **contemporary critical and official synthesis:** Cyrille Vogel,
+  “Le pontifical romano-germanique du Xe siècle: Nature, date et importance
+  du document,” *Cahiers de civilisation médiévale* 6 (1963), 27--48; and the
+  International Theological Commission's historical study of the diaconate,
+  chapter III;
+- **specialist manuscript and ordination scholarship:** Roger E. Reynolds,
+  “A Florilegium on the Ecclesiastical Grades in CLM 19414,” *Harvard
+  Theological Review* 63 (1970), especially the reference to PRG XV.8 at
+  Vogel--Elze I, 14--15; Reynolds's “Clerical Orders in the Early Middle
+  Ages”; Henry Parkes's reassessment of the unity and authority attributed to
+  the PRG; Richard F. Gyug's studies of Beneventan pontificals; and
+  manuscript/index leads in Usuarium;
+- **later pontifical controls:** the pre-Tridentine and modern *Pontificale
+  Romanum* traditions were screened to distinguish later reception from a
+  medieval witness and from evidence of actual exercise.
+
+The pass located substantially better **leads**, but not a repository-ready
+exact control. Specialist references identify an exorcist-ordination unit in
+PRG ordo XV, with the relevant material reported at Vogel--Elze I, 17
+(XV.17--19); Reynolds independently cites the neighboring PRG XV.8 at I,
+14--15 when discussing the grades. Searchable specialist transcriptions also
+point to the *Statuta ecclesiae antiqua* formula in which an exorcist receives
+a booklet containing exorcisms. The MGH record, however, warns that the
+*Statuta* is not extant as a freestanding collection and is reconstructed from
+later compilers. The modern literature also cautions against treating
+Vogel--Elze's editorial PRG as one uncomplicated tenth-century exemplar.
+
+No exact Vogel--Elze page image or licensed critical-edition text was acquired
+and inspected in this pass, and no selected medieval manuscript folio was
+collated against the edition. Search-result snippets, modern transcriptions,
+later Roman pontificals, catalog descriptions, and specialist citations are
+therefore retained as leads rather than promoted to verified source text.
+They do not close the profile requirement for an exact edition-identified
+witness used in a positive publication claim.
+
+Accordingly, section 40 continues to omit delivery-of-the-book symbolism,
+specified duties, career-path practice, and transfer-to-priests claims. The PRG
+remains a bibliographic coordinate only; its contents, internal juxtaposition,
+circulation, local use, and incidence implications remain outside the
+publication claim. This is a bounded negative result about the exact controls
+acquired for this study, not a claim that the rites or witnesses do not exist.
