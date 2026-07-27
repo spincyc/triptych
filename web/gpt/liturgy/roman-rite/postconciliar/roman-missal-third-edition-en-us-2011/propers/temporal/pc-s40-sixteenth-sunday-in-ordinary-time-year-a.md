@@ -31,7 +31,7 @@ PC-S40-A
 | Moral | Practice patient discernment; admit weakness in prayer; correct without presuming to know hearts; grow in hope, faith, and charity; seek repentance under God’s clemency. |
 | Anagogical | The long Gospel reveals the angelic harvest and the righteous shining in the Father’s kingdom; the short form’s delayed harvest still directs hearers toward judgment. |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; composition and narrated-event rows remain distinct, and branches stay explicit. Matthew 13’s internal Psalm citation remains within the long Gospel, not a separate Lectionary unit.*
 
@@ -54,7 +54,7 @@ PC-S40-A
 | Communion B | Rev. 3:20 | Patmos and the seven churches of Roman Asia | Late first century, often c. AD 95 |
 | John writes from Patmos to seven churches in western Asia Minor; exact compositional stages remain debated. The risen Christ rebukes Laodicean self-satisfaction, calls for zeal and repentance, and promises table fellowship. Communion branch B appoints the invitation without canceling the admonition. |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Propers: Themes and Movement
 
 > **Governing account**
 >
@@ -70,23 +70,23 @@ PC-S40-A
 >
 > **4. One sacrifice, offered life — Prayer over Offerings; Communion; Prayer after Communion.** The appointed prayers and antiphons order persons toward common salvation and newness.
 
-### 1. Sustained servants ask for multiplied grace (*Entrance; Collect*) {#sustained-servants-ask-for-multiplied-grace-entrance-collect .unnumbered}
+### 1. Sustained servants ask for multiplied grace (*Entrance; Collect*)
 
 The Entrance does not deny the lament from which it comes. It selects trust from within fear and betrayal: God sustains, and praise follows. The Collect makes that dependence habitual by asking for growth in the theological virtues and vigilant fidelity. Neither text invites moral self-confidence; both locate perseverance in mercy received and grace increased.
 
-### 2. Patience belongs to the sovereign Judge (*First Reading; Responsorial Psalm; Gospel*) {#patience-belongs-to-the-sovereign-judge-first-reading-responsorial-psalm-gospel .unnumbered}
+### 2. Patience belongs to the sovereign Judge (*First Reading; Responsorial Psalm; Gospel*)
 
 Wisdom argues that God can judge leniently precisely because no rival threatens his rule. Psalm 86 responds by invoking goodness, forgiveness, and universal lordship. Matthew’s householder similarly delays separation, not from ignorance of the enemy or indifference to weeds, but to preserve wheat until harvest. The correlation supports patient hope while the long branch’s explanation preserves final judgment.
 
-### 3. The Spirit meets prayer before adequacy (*Second Reading; Acclamation*) {#the-spirit-meets-prayer-before-adequacy-second-reading-acclamation .unnumbered}
+### 3. The Spirit meets prayer before adequacy (*Second Reading; Acclamation*)
 
 Romans names a weakness more radical than poor technique: believers do not know how to pray as they ought. The Spirit does not abandon them or replace them with an external voice; he aids and intercedes within their groaning before the heart-searching God. The acclamation’s praise of revelation to little ones gives a fitting posture of receptivity, but the two texts remain distinct Lectionary strands.
 
-### 4. Patient governance moves toward communion and newness (*Prayer over Offerings; Communion; Prayer after Communion*) {#patient-governance-moves-toward-communion-and-newness-prayer-over-offerings-communion-prayer-after-communion .unnumbered}
+### 4. Patient governance moves toward communion and newness (*Prayer over Offerings; Communion; Prayer after Communion*)
 
 The Prayer over the Offerings locates diverse gifts within the perfection of one sacrifice and asks their fruit for common salvation. Communion A joins memorial to divine food; Communion B joins repentance to promised fellowship. The final prayer asks that heavenly mysteries move the people from oldness into new life.
 
-### Theological and Spiritual Synthesis {#theological-and-spiritual-synthesis .unnumbered}
+### Theological and Spiritual Synthesis
 
 Wisdom and the Gospel reveal patience as an expression of sovereign strength. God judges justly without anxious severity, and the householder protects the wheat by delaying final separation. The Son’s kingdom can endure a mixed field because neither the enemy nor hiddenness defeats the harvest.
 
@@ -99,9 +99,9 @@ Romans places this patience within prayer. Human weakness is acknowledged, and t
 | Ecclesial and sacramental | Prayer over Offerings; Communion A/B; Prayer after Communion | Diverse gifts are gathered into the one sacrifice for common salvation, and Communion leads through memorial or repentant fellowship toward new life. | The orations serve A/B/C, Communion alternatives are unresolved, and sacramental approach does not guarantee conversion mechanically. |
 | Moral and eschatological | Collect; long/short Gospel | Hope, faith, charity, patient discernment, and protection of the good remain ordered to harvest and judgment; the long form names final separation and the righteous shining. | The short form does not proclaim mustard, leaven, explanation, angels, fire, or the shining righteous, and the parable is not a safeguarding policy. |
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### Trust selected from inside lament (*Entrance; Collect*) {#trust-selected-from-inside-lament-entrance-collect .unnumbered}
+### Trust selected from inside lament (*Entrance; Collect*)
 
 Psalm 54’s confession of sustaining help is not cheerful detachment from danger. The full psalm knows terror, violent city life, and betrayed friendship. Appointed at the Entrance, its trust is costly: God upholds the speaker who cannot secure the world. The accompanying resolve to offer and praise makes worship response rather than leverage.
 
@@ -109,7 +109,7 @@ Augustine’s exposition follows the Vulgate/LXX Psalm 53 and locates the help �
 
 The Collect asks God to look favorably upon servants and multiply gifts of grace. Hope, faith, and charity are not interchangeable moods; they are theological virtues whose object and source are God. Vigilance over the commands therefore follows gift. The prayer avoids both self-generated virtue and grace imagined as exemption from obedience.
 
-### Clemency from strength, not from denial (*First Reading; Responsorial Psalm*) {#clemency-from-strength-not-from-denial-first-reading-responsorial-psalm .unnumbered}
+### Clemency from strength, not from denial (*First Reading; Responsorial Psalm*)
 
 Wisdom 12 addresses a classic temptation: to imagine mercy and power as competitors. The text reverses that assumption. Because God’s mastery is complete, he need not prove himself through anxious severity. His might is the source of justice, and his government can be lenient while remaining judgment. The result is pedagogical: the just learn kindness, and sinners receive grounds for hope in repentance.
 
@@ -127,7 +127,7 @@ Psalm 86 transforms teaching into prayer. The servant appeals to a God who is go
 
 Augustine’s exposition of the Vulgate/LXX Psalm 85 opens with a Christological account of prayer: Christ prays for us as priest, prays in us as head of the Body, and is prayed to as God. Later, when the psalm asks for an undivided heart, Augustine diagnoses the mind that wanders even while the mouth prays. That reception gives the responsorial action moral depth. Repeating that God is good and forgiving is not merely reporting an attribute; it asks that distracted desire be gathered into the mercy it invokes.
 
-### Weak prayer genuinely aided (*Second Reading*) {#weak-prayer-genuinely-aided-second-reading .unnumbered}
+### Weak prayer genuinely aided (*Second Reading*)
 
 Romans 8:26–27 continues a sequence of groaning: creation, believers, and now inexpressible prayer. Weakness does not mean that every desire is pure or that discernment is unnecessary. It means finite, suffering persons cannot fully know the fitting shape of petition within God’s whole design.
 
@@ -139,7 +139,7 @@ These witnesses converge without erasing a real exegetical difference. Chrysosto
 
 Aquinas’s account of created causes within Providence, read with the Catechism’s treatment of secondary causality, supplies a doctrinal boundary. Prayer can be a real secondary cause within Providence; the Spirit’s intercession keeps petition ordered toward the true good even when a requested temporal form is withheld. This does not make words, liturgy, prudent means, or persevering request unnecessary. Silent anguish and articulated prayer can both be taken into the Spirit’s aid.
 
-### The short and long Gospel paths (*Acclamation; long Gospel; short Gospel*) {#the-short-and-long-gospel-paths-acclamation-long-gospel-short-gospel .unnumbered}
+### The short and long Gospel paths (*Acclamation; long Gospel; short Gospel*)
 
 The acclamation adapts Matthew 11:25 and welcomes the Kingdom discourse through receptive littleness. It does not say that mature learning is evil; it blesses revelation as gift rather than possession. Its narrative source is earlier than Matthew 13 and should not be relocated to the house where Jesus later explains the weeds.
 
@@ -165,11 +165,11 @@ Those additions materially change what is heard. A short-form homily may use can
 
 Nor may “children of the evil one” become a label authorizing contempt. Jesus describes the eschatological meaning of the parable. Living persons remain objects of evangelization and possible repentance; Wisdom’s appointed conclusion explicitly gives sinners hope of turning back. God alone judges hearts without error.
 
-### One sacrifice and common salvation (*Prayer over Offerings*) {#one-sacrifice-and-common-salvation-prayer-over-offerings .unnumbered}
+### One sacrifice and common salvation (*Prayer over Offerings*)
 
 The Prayer over the Offerings makes a strong historical-theological claim in compressed Latin: the diversity of sacrifices under the Law is sanctioned in the perfection of one sacrifice. It then asks God to receive servants’ gifts and order them to the salvation of all. Individual offering is therefore neither private possession nor another sacrifice alongside Christ’s. It is gathered into the one sacramental action and directed toward common good.
 
-### Memorial food or a repentant opening (*Communion A; Communion B; Prayer after Communion*) {#memorial-food-or-a-repentant-opening-communion-a-communion-b-prayer-after-communion .unnumbered}
+### Memorial food or a repentant opening (*Communion A; Communion B; Prayer after Communion*)
 
 Psalm 111’s Communion alternative joins remembered wonders, mercy, and food. Its full acrostic praise also names covenant, redemption, justice, and reverence. Eucharistic memorial is more than mental recall, but the antiphon’s psalmic source rightly situates reception within grateful remembrance of God’s works.
 
@@ -183,7 +183,7 @@ Ambrose supplies direct reception in *Exposition of the Christian Faith* IV.19�
 
 The two antiphons remain distinct textual paths: one proceeds through remembered wonders and provision, the other through rebuke, repentance, and promised fellowship. The Prayer after Communion asks that the people imbued with heavenly mysteries pass from oldness into new life. “New” does not mean contempt for creation or memory; it names Paschal transformation of persons and conduct.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   **“You might uproot the wheat along with them” — a charter for unpersecuted consciences. (*both Gospel forms*)** Roger Williams’s *Bloudy Tenent of Persecution* (1644), chs. XVIII–XXVIII, expressly argues from Matthew 13:30, 38. In ch. XXVI the endangered wheat becomes a civil-peace argument: punish civil offenses, he says, but do not uproot worship and conscience. The harvest image has become political reasoning, not a farming illustration.
 
@@ -193,7 +193,7 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 -   **“I stand at the door and knock” — a door with no outside handle. (*Communion B*)** William Holman Hunt’s *The Light of the World* (1851–1853) paints Revelation 3:20 as Christ before an overgrown door that can be opened only from within. The visual addition shifts a rebuke addressed to a complacent church into an image of the individual heart or mind and its agency; the Museum of Oxford records that the picture became one of its age’s most widely reproduced images.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 *The following exploratory proposals were developed in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each states its anchors and limits.*
 
@@ -207,9 +207,9 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 **Divine power refuses a single tempo. (*First Reading; Second Reading; long Gospel*)** Wisdom locates mastery in leniency; the long Gospel spans delayed harvest, hidden growth, and leaven; Romans places aid within weakness and groaning. Together, power restrains, waits, grows, permeates, and intercedes. Separate reading may call patience inactive, growth merely gradual, or groaning deficient; the conjunction rejects speed and spectacle as measures. Its fruit is leadership distinguishing urgency from panic and quiet efficacy from passivity. Tertullian and official weeds preaching are near analogues, not this pattern. Mustard and leaven are long-form only; delay may be vicious, and charity may require immediate protection.
 
-## Appendix: Liturgical Resolution {#appendix-liturgical-resolution .unnumbered}
+## Appendix: Liturgical Resolution
 
-### Liturgical Instance {#liturgical-instance .unnumbered}
+### Liturgical Instance
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
@@ -220,7 +220,7 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 | Cycle | Sunday Year A. |
 | Textual branches | Long or short Gospel and two Communion Antiphons. |
 
-### Branch Resolution {#branch-resolution .unnumbered}
+### Branch Resolution
 
 | **Branch ID** | **Authority and trigger** | **Status** | **Units affected** | **Resolution** |
 |:---------|:---------------|:--------|:-----------------|:--------------|
@@ -229,11 +229,11 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 | `communion-antiphon-psalm-111` | Week XVI formulary | Appointed alternative | Communion Antiphon A | Documented, not selected |
 | `communion-antiphon-revelation-3` | Week XVI formulary | Appointed alternative | Communion Antiphon B | Documented, not selected |
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Formula.** Lectionary 106’s Psalm response, both Gospel forms, both Communion alternatives, and the Week XVI orations and antiphons were audited. **Branch limit.** The short form omits Matthew 13:31–43; the guide marks the growth parables, explanation, and final imagery as long-form material. **Reception.** The appointed units were checked across Greek and Latin patristic, early Apocalypse, and medieval corpora: Augustine and Chrysostom directly treat the Psalms, Romans, acclamation source, and Matthew; Origen directly treats the long-form explanation; Augustine and Gregory receive Wisdom’s tranquil judgment; Ambrose, Jerome, and Cassian directly receive Revelation 3:20, while Victorinus preserves its Laodicean context. **Pastoral limit.** The parable does not suspend safeguarding, correction, or just discipline. **Rights.** Only citations, short incipits, and original summaries appear. **Outstanding.** 2008 page-image typography and layout, full U.S. altar-book English-oration collation, and independent theological review; this working guide is not publication-final. **Audit trail.** `instance/manifest.md`; `propers/verified.md`; `../shared/ordinary-time/weeks/16/propers/verified.md`; `research/scope.md`.
 
-## References {#references .unnumbered}
+## References
 
 **Liturgical and scriptural sources**
 
@@ -283,7 +283,7 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 -   Museum of Oxford, [“The Light of the World”](https://moxdigiexhibits.omeka.net/exhibits/show/oxford-re-formed/item/1110), catalogue record for William Holman Hunt’s 1851–1853 painting, its Revelation 3:20 source, symbolic door, reception, and image rights.
 
-## Generation Metadata {#generation-metadata .unnumbered}
+## Generation Metadata
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

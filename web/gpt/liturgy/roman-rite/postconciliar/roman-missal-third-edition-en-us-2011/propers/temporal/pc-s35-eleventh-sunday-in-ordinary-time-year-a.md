@@ -31,7 +31,7 @@ PC-S35-A
 | Moral | Compassion must become prayer, obedient labor, gratuitous service, and action sustained by grace. Mission rejects both self-sufficiency and covetous possession of holy gifts. |
 | Anagogical | Reconciliation promises salvation through Christ’s risen life and perfected unity; unselected Communion A adds the image of lasting dwelling in God’s house. |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; composition and narrated event remain distinct, and inherited and modern judgments remain separate where the evidence is uncertain.*
 
@@ -56,7 +56,7 @@ PC-S35-A
 | Second Reading | Rom. 5:6–11 | Corinth, Achaia (present-day Greece), to churches at Rome | c. AD 56–58 |
 | Paul addresses unvisited mixed Jewish and Gentile house churches at Rome. Helplessness and enmity yield through Christ’s death and reconciliation to salvation through his life. The Romans sequence remains semi-continuous. |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Propers: Themes and Movement
 
 > **Governing account: a people received, reconciled, and sent**
 >
@@ -64,19 +64,19 @@ PC-S35-A
 
 **Called by grace → gathered as God’s people → sent from Christ’s compassion → renewed in Communion**
 
-### 1. Need becomes petition (*Entrance, Collect*) {#need-becomes-petition-entrance-collect .unnumbered}
+### 1. Need becomes petition (*Entrance, Collect*)
 
 The Entrance does not begin with institutional confidence but with a plea to be heard and helped. The Collect likewise acknowledges mortal frailty and asks grace for both willing and doing. Mission therefore begins as dependence: the Church cannot make herself the Lord’s harvest, manufacture vocation, or turn resolve into holy action apart from God.
 
-### 2. Election becomes vocation (*First Reading, Psalm, Gospel*) {#election-becomes-vocation-first-reading-psalm-gospel .unnumbered}
+### 2. Election becomes vocation (*First Reading, Psalm, Gospel*)
 
 Exodus first announces what God has done in bearing Israel from bondage; only then does it name covenant obedience and priestly vocation. Psalm 100 answers with belonging and grateful service. Matthew’s official correlation remains within Israel’s covenant history: Jesus sends the Twelve first to Israel, and the mission remains governed by the Messiah of Israel and Lord of the harvest.
 
-### 3. Compassion becomes gratuitous mission (*Acclamation, Gospel, Second Reading*) {#compassion-becomes-gratuitous-mission-acclamation-gospel-second-reading .unnumbered}
+### 3. Compassion becomes gratuitous mission (*Acclamation, Gospel, Second Reading*)
 
 Jesus’ compassion sees crowds as harassed and abandoned, then commands prayer and gives authority. Chrysostom stresses that the harvest was already prepared and remains Christ’s. “Without cost” disciplines pride and covetousness. Romans independently supplies the deepest prior gift: Christ acts for the weak, sinful, and hostile, so Christian service gives from reconciliation already received.
 
-### 4. Offering becomes renewal and unity (*Prayer over Offerings, Communion, Prayer after Communion*) {#offering-becomes-renewal-and-unity-prayer-over-offerings-communion-prayer-after-communion .unnumbered}
+### 4. Offering becomes renewal and unity (*Prayer over Offerings, Communion, Prayer after Communion*)
 
 The Prayer over the Offerings holds body and mind together: ordinary food sustains creaturely life and Sacrament renews it. Communion may voice desire for God’s house or Christ’s prayer for unity. The concluding prayer names unity as both sign and effect. These shared Week XI texts can frame Year A mission, but they were not proved historically designed for its readings.
 
@@ -84,7 +84,7 @@ The Prayer over the Offerings holds body and mind together: ordinary food sustai
 >
 > **Israel:** Covenant vocation and the initial mission remain within Israel’s salvation history. **Ministry:** gratuitous grace does not deny lawful material support, but it forbids treating divine gifts as personal property. **Relationship:** Romans remains an independent semi-continuous strand rather than evidence of a single compositional plan.
 
-### Theological and Spiritual Synthesis {#theological-and-spiritual-synthesis .unnumbered}
+### Theological and Spiritual Synthesis
 
 The variable texts move from divine initiative to a received vocation. God bears Israel and calls a priestly people; Christ sees the crowds, names the Twelve, and sends them from his own compassion; Paul proclaims reconciliation given while humanity was weak and hostile. The Church’s mission is therefore participation in grace already received, never possession of a gift she originated.
 
@@ -97,9 +97,9 @@ That gift calls for prayer, obedient labor, gratuitous service, and action susta
 | Sacramental | Prayer over Offerings; Communion A/B; Prayer after Communion | Created nourishment and sacramental renewal join, according to the Communion path, desire for God’s dwelling or Christ’s prayer for unity; the final prayer names unity as sign and effect. | Communion A and B are documented but unselected; the Week XI orations serve every Sunday cycle, and sacramental renewal promises no automatic bodily cure. |
 | Moral and eschatological | Entrance; Collect; Gospel; Romans; Communion A | Dependence becomes prayer, grace-enabled action, gratuitous service, and hope of salvation through Christ’s risen life and final dwelling with God. | Communion A is unselected; “without cost” rejects ownership and exploitation of grace, not lawful support for ministry, and present mission is not yet perfected communion. |
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### The petitioning assembly (*Entrance, Collect*) {#the-petitioning-assembly-entrance-collect .unnumbered}
+### The petitioning assembly (*Entrance, Collect*)
 
 Psalm 27 lets need and desire occupy the same prayer: the threatened speaker asks for God’s hearing and help while seeking one thing, life in God’s presence. At the Entrance only the plea is appointed; the house-of-God verse belongs to Communion option A. Their common psalm creates a genuine textual arc without proving that both branches were enacted.
 
@@ -107,7 +107,7 @@ Augustine’s *Exposition on Psalm 27* receives the prayer as the voice of Chris
 
 The Collect’s Latin identity places God himself as the strength of those who hope in him. Its anthropology is neither pessimistic nor voluntarist. Human willing and acting are real, but frail; grace enables the creature to intend and perform what pleases God.
 
-### A treasured people under the Lord of the harvest (*Exodus, Psalm, Matthew*) {#a-treasured-people-under-the-lord-of-the-harvest-exodus-psalm-matthew .unnumbered}
+### A treasured people under the Lord of the harvest (*Exodus, Psalm, Matthew*)
 
 Exodus 19 follows liberation and precedes ratification. Israel is not selected because it achieved holiness; God first carried and gathered the people. “Possession,” “kingdom of priests,” and “holy nation” therefore name gift and task together. Catholic reception applies this vocabulary to the Church in Christ, while Exodus continues to name Israel’s election within its own covenant history.
 
@@ -133,7 +133,7 @@ The Twelve are individually named before they are sent. Their mission is corpora
 
 Chrysostom makes the anti-mercenary point without denying support. The apostles must not commercialize healings or teaching because the capacity was itself received as gift; later instructions about food and lodging still recognize that workers may be sustained. The distinction matters wherever “without cost” is used either to excuse spiritual profiteering or to deny ministers ordinary justice. The mission’s initial destination likewise belongs to salvation history: Jesus attends first to the people among whom covenant promises have been given, and Matthew’s Gospel later narrates the universal commission.
 
-### The independent apostolic foundation (*Romans*) {#the-independent-apostolic-foundation-romans .unnumbered}
+### The independent apostolic foundation (*Romans*)
 
 Romans 5 does not function as a hidden allegory of Exodus or the Twelve. Paul intensifies humanity’s condition: weak, ungodly, sinful, and hostile. Christ’s death does not answer human worthiness but creates reconciliation. Chrysostom’s direct exposition emphasizes the sequence from enemies reconciled through death to a stronger hope of salvation through Christ’s living power.
 
@@ -145,13 +145,13 @@ Chrysostom and Aquinas also preserve the argument’s temporal force. Paul does 
 
 This strand changes the spiritual posture of mission without pretending to explain why the Lectionary paired every text. Workers are first beneficiaries. “Without cost” can therefore be heard under Romans’ priority of gift as a source-grounded synthesis: the Church gives what she did not originate, to persons she may not classify as deserving or undeserving.
 
-### Kingdom acclamation (*Acclamation*) {#kingdom-acclamation-acclamation .unnumbered}
+### Kingdom acclamation (*Acclamation*)
 
 Mark’s verse is acclamatory: it announces fulfilled time, nearness of the Kingdom, conversion, and faith in order to welcome Christ about to speak. It should not be expanded into another homily before the Gospel. Its Kingdom language nonetheless clarifies the mission’s object: the Twelve announce divine reign, not themselves.
 
 Tatian’s second-century *Diatessaron*, section 5, receives the opening proclamation in a Gospel harmony: the beginning of Jesus’ ministry is marked by fulfilled time, the nearness of God’s reign, repentance, and belief. That is early direct reception of the saying, although the harmony does not preserve Mark’s literary sequence as a modern commentary would. Its compactness suits the liturgical role. The acclamation does not supply a second account of the Twelve; it places their mission under the prior proclamation of Jesus, whose Kingdom calls hearers to conversion before it sends them to serve.
 
-### Gift and sacramental unity (*Prayer over Offerings, Communion, Prayer after Communion*) {#gift-and-sacramental-unity-prayer-over-offerings-communion-prayer-after-communion .unnumbered}
+### Gift and sacramental unity (*Prayer over Offerings, Communion, Prayer after Communion*)
 
 The Prayer over the Offerings compares the created nourishment of bodily nature with sacramental renewal, then asks aid for both body and mind. This refuses a spirituality that treats embodiment as disposable. It also prevents an automatic promise of present bodily cure: the prayer concerns God’s sustaining and sanctifying gift within the Church’s sacramental horizon.
 
@@ -161,7 +161,7 @@ For option A, Augustine’s psalm exposition makes the sought dwelling a stable 
 
 The appointed John verse asks preservation in the Father’s name before it states the purpose “that they may be one.” Unity is therefore received under divine keeping, not manufactured by minimizing difference or conflict. Chrysostom’s attention to disciples remaining in the world also excludes a merely inward unity detached from mission and danger. Augustine’s later-verse distinction supplies a doctrinal boundary: the analogy to Father and Son makes ecclesial communion demanding, but creatures do not become one substance. The Prayer after Communion can ask for unity as sacramental effect precisely because the Gospel branch has first located it in God’s action.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   **“I bore you up on eagle wings” — an airlift becomes the metaphor. (*First Reading*)** Israel’s 1949–1950 evacuation of Yemenite Jews was also called *Operation On Wings of Eagles*. The aircraft made Exodus’ remembered rescue startlingly concrete: a scriptural image supplied the public name for a modern journey to Israel.
 
@@ -169,7 +169,7 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 -   **“Without cost you have received; without cost you are to give” — a software-license epigraph. (*Gospel*)** The Bible SuperSearch client places the King James form, “freely ye have received, freely give,” beneath its GPL notice and immediately before detailed commercial-use restrictions. Missionary instruction becomes a slogan for distributable code; the adjacent price and licensing qualifications make “free” do unexpectedly technical—and faintly ironic—work.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 > **Editorial status**
 >
@@ -185,9 +185,9 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 **Unity can hold a mission that multiplies names and places. (*Gospel; Communion B; Prayer after Communion*)** Matthew names and sends distinct apostles; Communion B, if appointed, asks the Father to keep disciples in the divine name as one; the final prayer asks sacramental participation to bring unity. Divine keeping, not standardization, lets differentiated persons disperse without becoming rival proprietors because communion comes from their sender. Separate reading can reduce the Twelve to a list and unity to internal harmony, missing communion as the condition of noncompetitive plurality. Official teaching on apostolic collegiality and Augustine on John 17 provide precedent, though not for the whole chain. The fruit is accountable decentralization and truthful collaboration. Communion B is unresolved; unity is not divine consubstantiality and cannot suppress evidence, conflict, charisms, legitimate authority, or harmed persons’ voices.
 
-## Appendix: Liturgical Resolution {#appendix-liturgical-resolution .unnumbered}
+## Appendix: Liturgical Resolution
 
-### Liturgical Instance {#liturgical-instance .unnumbered}
+### Liturgical Instance
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
@@ -196,18 +196,18 @@ The appointed John verse asks preservation in the Father’s name before it stat
 | Calendar and cycle | General Roman Calendar as implemented in the United States; Sunday Year A. |
 | Formulary and textual scope | Ordinary Time Week XI. Its shared audit owns the Missal formulary; this leaf owns the dated Year A composition and its two Communion-antiphon alternatives. |
 
-### Branch Resolution {#branch-resolution .unnumbered}
+### Branch Resolution
 
 | **Branch ID** | **Authority and trigger** | **Status** | **Units affected** | **Resolution** |
 |:---------|:---------------|:--------|:-----------------|:--------------|
 | `communion-antiphon-psalm-27` | Week XI formulary | Appointed alternative | Psalm 27 option | Documented, not selected |
 | `communion-antiphon-john-17` | Week XI formulary | Appointed alternative | John 17 option | Documented, not selected |
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Instance:** `instance/manifest.md`. **Leaf composition audit:** `propers/verified.md`. **Canonical formulary owner:** `../shared/ordinary-time/weeks/11/propers/verified.md`. **Research audit:** `research/scope.md`. **Coverage:** the complete formula and branches, every appointed scriptural unit, immediate literary contexts, and a passage-by-passage reception search were studied. Direct witnesses retained include Chrysostom, Augustine, Aquinas, and Tatian; Augustine’s Sinai chronology and Aquinas’s harvest treatment are explicitly marked as illuminating reuse. **Negative result:** no sustained early exposition of the exact Exodus 19:2–6a unit was retained from the accessible Greek-, Latin-, and English-translation corpora checked. **Limits:** no exhaustive manuscript, untranslated-corpus, subscription-database, or proper-calendar survey is claimed. Complete U.S. English altar-book oration collation and independent theological review remain outstanding.
 
-## References {#references .unnumbered}
+## References
 
 -   USCCB, [Eleventh Sunday in Ordinary Time, 14 June 2026](https://bible.usccb.org/bible/readings/061426.cfm), U.S. Lectionary 91; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
 
@@ -237,7 +237,7 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 -   Bible SuperSearch, [*Universal Client*, repository readme at revision 041936](https://sourceforge.net/p/biblesuper/ui-standalone/ci/master/tree/), GPL and commercial-use notice, checked 2026-07-19.
 
-## Generation Metadata {#generation-metadata .unnumbered}
+## Generation Metadata
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

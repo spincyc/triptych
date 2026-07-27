@@ -246,11 +246,11 @@ Project prose is original; quotations of ancient authors follow the public-domai
 
 All web sources were accessed and checked on 2026-07-24. Ancient-work citations in the text use conventional English titles with the numbering of the translations listed here.
 
-### Primary sources: Origen {#primary-sources-origen .unnumbered}
+### Primary sources: Origen
 
 -   Origen, works in English translation: *The Ante-Nicene Fathers*, vol. 4, ed. A. Roberts, J. Donaldson, A. C. Coxe (Buffalo: Christian Literature Publishing Co., 1885), trans. F. Crombie. Quotations follow the transcriptions at New Advent: *On First Principles*, preface and book 1 (<https://www.newadvent.org/fathers/04120.htm>, <https://www.newadvent.org/fathers/04121.htm>), with Rufinus’s translator’s preface as printed in NPNF series 2, vol. 3 (<https://www.newadvent.org/fathers/2712.htm>); *Against Celsus*, preface and book 1 (<https://www.newadvent.org/fathers/04161.htm>); *Letter to Gregory* (<https://www.newadvent.org/fathers/0415.htm>). The translations are public domain; the underlying Greek and Latin are ancient and public domain.
 
-### Primary sources: other ancient witnesses {#primary-sources-other-ancient-witnesses .unnumbered}
+### Primary sources: other ancient witnesses
 
 -   Eusebius of Caesarea, *Church History*, books 6 and 7.1, NPNF series 2, vol. 1 (trans. A. C. McGiffert), at New Advent (<https://www.newadvent.org/fathers/250106.htm>, <https://www.newadvent.org/fathers/250107.htm>). Loci quoted: 6.1; 6.2–5; 6.8; 6.14–16; 6.18–19; 6.21; 6.23–24; 6.26–28; 6.30; 6.32–33; 6.36–37; 6.39; 7.1.
 
@@ -268,7 +268,7 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 -   N. Tanner (ed.), *Decrees of the Ecumenical Councils*, vol. 1, Constantinople II text and introduction, as presented at Papal Encyclicals Online (<https://www.papalencyclicals.net/councils/ecum05.htm>); editorial note on the fifteen anathemas quoted briefly with attribution.
 
-### Ecclesial reception {#ecclesial-reception .unnumbered}
+### Ecclesial reception
 
 -   *Catechism of the Catholic Church* 2745 and 2847, English text, Vatican website (<https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iv_perservering_in_love.html>; <https://www.vatican.va/archive/ENG0015/__PAC.HTM>); cited for their footnoted quotations of Origen, *De oratione* 12 and 29; paraphrased.
 
@@ -276,7 +276,7 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 -   F. Prat, “Origen and Origenism,” *The Catholic Encyclopedia*, vol. 11 (New York, 1911), at New Advent (<https://www.newadvent.org/cathen/11306b.htm>); public domain; quoted for the classic statement of the condemnation question and for the Tyre tomb tradition.
 
-### Modern scholarship {#modern-scholarship .unnumbered}
+### Modern scholarship
 
 -   M. J. Edwards, “Origen,” *The Stanford Encyclopedia of Philosophy* (entry as revised 21 July 2026) (<https://plato.stanford.edu/entries/origen/>); consulted for the current critical consensus on the self-mutilation report (with its references to C. Markschies and to Epiphanius, *Panarion* 64.2), the death, and the fate of the corpus; quoted in brief attributed snippets.
 

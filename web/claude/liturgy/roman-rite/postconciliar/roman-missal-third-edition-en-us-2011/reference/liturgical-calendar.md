@@ -930,7 +930,7 @@ Grouped by the role each source played. Loci cited in the body are to these edit
 
 -   No ecclesiastical statement of the ecclesiastical computation of Easter was located in the sources consulted; see the terminal appendix.
 
-## Generation Metadata {#generation-metadata .unnumbered}
+## Generation Metadata
 
 **Last revised (UTC):** 2026-07-26T09:45:30Z
 

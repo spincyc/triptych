@@ -161,7 +161,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 ## References
 
-### Papal acts {#papal-acts .unnumbered}
+### Papal acts
 
 -   Clement XII, apostolic constitution *In eminenti apostolatus specula* (28 April 1738, per Gasparri’s fontes); unattributed English translation, [papalencyclicals.net](https://www.papalencyclicals.net/clem12/c12inemengl.htm), fetched, hashed, and read 2026-07-25 (new source-library record; witness defects recorded). Latin not collated.
 
@@ -173,13 +173,13 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 -   Francis, apostolic constitution *Pascite gregem Dei* (23 May 2021), official English web text, [vatican.va](https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20210523_pascite-gregem-dei.html), checked 2026-07-25 (new source-library record).
 
-### Codes of canon law {#codes-of-canon-law .unnumbered}
+### Codes of canon law
 
 -   *Codex Iuris Canonici Pii X Pontificis Maximi iussu digestus, Benedicti Papae XV auctoritate promulgatus* (Rome: Typis Polyglottis Vaticanis, 1918); canon 2335 with Gasparri’s fontes verified at the page image of printed page 635 (scan leaf 693), Internet Archive item [codexiuriscanoni00cath](https://archive.org/details/codexiuriscanoni00cath) (University of Illinois exemplar), read 2026-07-25; page image retained in the source library under a recorded public-domain basis. Superseded law, cited as history.
 
 -   *Codex Iuris Canonici* (1983), Book VI as revised (in force 8 December 2021): Latin, [vatican.va (la)](https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberVI_la.html); English (cann. 1364–1399), [vatican.va (en)](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib6-cann1364-1399_en.html); both fetched, hashed, and read 2026-07-25 (new source-library records; canon-1374 passages registered). The Latin governs.
 
-### Dicasterial acts and explanations {#dicasterial-acts-and-explanations .unnumbered}
+### Dicasterial acts and explanations
 
 -   Sacred Congregation for the Doctrine of the Faith, Declaration concerning the canonical discipline forbidding Catholics to enrol in Masonic associations (17 February 1981), AAS 73 (1981) 240–241; official English web text, [vatican.va](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19810217_massoni_en.html), checked 2026-07-25 (new source-library record; Latin delivery hashed).
 
@@ -189,7 +189,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 -   Dicastery for the Doctrine of the Faith, note for the audience with the Holy Father on the request of Bishop Julito Cortes of Dumaguete (13 November 2023), signed by Cardinal Víctor Manuel Fernández, *Ex Audientia* Franciscus; official English web text, [vatican.va](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20231113_richiesta-cortes-massoneria_en.html), checked 2026-07-25 (new source-library record; official PDF hashed). Currentness checked against the DDF English documents index, [doctrinafidei.va](https://www.doctrinafidei.va/en/documenti.html), same day.
 
-### Episcopal and institutional witnesses {#episcopal-and-institutional-witnesses .unnumbered}
+### Episcopal and institutional witnesses
 
 -   German Bishops’ Conference, declaration on Catholic membership in Freemasonry (28 April 1980), issued at the close of the 1974–1980 official dialogue; published in the diocesan gazettes (e.g., *Amtsblatt des Erzbistums Köln*, June 1980, 102–111); Italian translation in G. Caprile, *La Civiltà Cattolica* 131 (1980/III) 485–502. Cited only as reported in the U.S. documentation below and in academic literature; not independently inspected.
 

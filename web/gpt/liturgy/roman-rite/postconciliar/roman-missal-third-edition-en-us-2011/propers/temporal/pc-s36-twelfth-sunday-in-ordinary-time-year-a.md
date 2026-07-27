@@ -31,7 +31,7 @@ PC-S36-A
 | Moral | Courage is truthful fidelity under providence, not emotional invulnerability or reckless exposure. Holy fear and love displace servile terror while preserving prudence and justice. |
 | Anagogical | What is concealed will be disclosed; God remembers the whole person, raises hope beyond bodily death, and brings Christ’s superabundant gift toward final redemption. |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; composition and narrated event remain distinct, and inherited and modern judgments remain separate where the evidence is uncertain.*
 
@@ -57,7 +57,7 @@ PC-S36-A
 | Second Reading | Rom. 5:12–15 | Corinth, Achaia (present-day Greece), to churches at Rome | c. AD 56–58 |
 | Paul addresses mixed Jewish and Gentile churches at Rome. The boundary opens the Adam–Christ comparison and stops before its elaboration. The gift is “not like” the trespass: grace exceeds, rather than balances, sin’s devastation. |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Propers: Themes and Movement
 
 > **Governing account: witness under providence, grace beyond trespass**
 >
@@ -65,19 +65,19 @@ PC-S36-A
 
 **Affliction named → fear reordered → witness confessed → life received**
 
-### 1. Affliction is spoken before courage (*Jeremiah, Psalm*) {#affliction-is-spoken-before-courage-jeremiah-psalm .unnumbered}
+### 1. Affliction is spoken before courage (*Jeremiah, Psalm*)
 
 Jeremiah’s confidence comes from within hostility, not above it. Psalm 69 likewise preserves reproach, petition, zeal, and praise of the poor. Their liturgical relation refuses two reductions: suffering is neither proof of abandonment nor an emotion to suppress. Trust can ask for deliverance while naming danger truthfully.
 
-### 2. Fear is reordered by knowledge and love (*Collect, Gospel*) {#fear-is-reordered-by-knowledge-and-love-collect-gospel .unnumbered}
+### 2. Fear is reordered by knowledge and love (*Collect, Gospel*)
 
 The Collect holds fear and love together around God’s holy name. Matthew distinguishes fear of persecutors from reverence for the One who judges and preserves the whole person. Chrysostom reads sparrows and numbered hairs as assurance of exhaustive divine knowledge, while denying that every creaturely fall is positively caused by God.
 
-### 3. Witness belongs to Spirit and disciple (*Acclamation, Gospel, Romans*) {#witness-belongs-to-spirit-and-disciple-acclamation-gospel-romans .unnumbered}
+### 3. Witness belongs to Spirit and disciple (*Acclamation, Gospel, Romans*)
 
 John’s acclamation gives priority to the Spirit’s testimony and then names the disciples’ witness. Jesus requires public acknowledgment without promising immunity. Romans independently declares a still deeper disproportion: humanity’s solidarity in Adam is answered not by an equal counterweight but by Christ’s abundant gift. Courage is therefore graced fidelity, not personality or bravado.
 
-### 4. The Shepherd feeds toward redemption (*Entrance, Prayer over Offerings, Communion, Prayer after Communion*) {#the-shepherd-feeds-toward-redemption-entrance-prayer-over-offerings-communion-prayer-after-communion .unnumbered}
+### 4. The Shepherd feeds toward redemption (*Entrance, Prayer over Offerings, Communion, Prayer after Communion*)
 
 The Entrance and Communion option B supply shepherd language; option A names creaturely dependence for food. The offering prayer joins reconciliation and praise, while the concluding prayer names renewal by Christ’s Body and Blood. These shared Week XII texts can frame fearless witness sacramentally, but their use across A/B/C prevents a claim that they were composed for Matthew 10.
 
@@ -85,7 +85,7 @@ The Entrance and Communion option B supply shepherd language; option A names cre
 >
 > “Do not be afraid” never commands concealment of abuse, refusal of lawful protection, medical neglect, or reckless self-exposure. Providence includes creaturely causes and prudent action. Christian witness may be costly, but suffering is not sought as an end and perpetrators are not excused as instruments of God.
 
-### Theological and Spiritual Synthesis {#theological-and-spiritual-synthesis .unnumbered}
+### Theological and Spiritual Synthesis
 
 These texts present courage as graced witness rather than emotional invulnerability. Jeremiah speaks trust from within affliction; Christ orders fear through divine judgment and providential care; the acclamation gives priority to the Spirit’s testimony before the disciple’s confession. Romans places every act of witness beneath Christ’s gift, whose abundance exceeds Adam’s trespass.
 
@@ -98,9 +98,9 @@ Holy fear and love therefore sustain truthful fidelity together with prudence an
 | Ecclesial and sacramental | John 15:26b, 27a; Prayer over Offerings; Prayer after Communion | The Spirit’s testimony precedes ecclesial witness, while reconciliation, praise, nourishment by Christ’s Body and Blood, and renewal order confession within received worship. | The acclamation welcomes the Gospel rather than becoming another reading; the Week XII orations serve A/B/C and do not prove one compositional design. |
 | Moral and eschatological | Collect; Jeremiah; Gospel; Romans; Prayer after Communion | Holy fear and love sustain truthful fidelity without servile terror, under the promise that truth will be disclosed and Christ’s greater gift tends toward final redemption. | Courage is not emotional invulnerability, reckless exposure, concealment of abuse, or contempt for bodily life and lawful protection. |
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### Strength, shepherding, and holy fear (*Entrance, Collect*) {#strength-shepherding-and-holy-fear-entrance-collect .unnumbered}
+### Strength, shepherding, and holy fear (*Entrance, Collect*)
 
 The Entrance adapts Psalm 28’s closing confession: the majestic Lord is also strength, refuge, savior, and shepherd. The image protects courage from self-reliance. The people facing witness are an inheritance carried by another, not a heroic elite sustained by temperament.
 
@@ -108,7 +108,7 @@ The full psalm moves through storm imagery and repeated attribution of glory bef
 
 The Collect’s paired fear and love rejects both servile terror and sentimental familiarity. Reverence recognizes God’s holiness and judgment; love cleaves to his name and trusts his governance.
 
-### Jeremiah’s lament and Matthew’s disclosure (*First Reading, Psalm, Gospel*) {#jeremiahs-lament-and-matthews-disclosure-first-reading-psalm-gospel .unnumbered}
+### Jeremiah’s lament and Matthew’s disclosure (*First Reading, Psalm, Gospel*)
 
 Jeremiah hears denunciation from every side, even from those watching for his fall. Yet he submits his cause to the One who tests the just and sees inward truth. The reading ends in praise, but the surrounding chapter proceeds into curse and anguish. Scripture therefore permits the persecuted believer to confess trust without pretending that trauma produces simple emotional serenity.
 
@@ -132,13 +132,13 @@ The official first-reading–Gospel correlation should be stated with equal care
 
 Chrysostom’s distinction is precise: nothing falls outside God’s knowledge and providential ordering, yet the text does not require saying that God positively effects every sparrow’s fall. Catholic doctrine likewise distinguishes divine first causality, creaturely causes, permission of evil, and God’s ability to bring good without making evil good. That distinction is decisive whenever this Gospel is preached to vulnerable persons.
 
-### The Spirit’s testimony and the disciple’s speech (*Acclamation*) {#the-spirits-testimony-and-the-disciples-speech-acclamation .unnumbered}
+### The Spirit’s testimony and the disciple’s speech (*Acclamation*)
 
 John 15 places witness amid hatred and expulsion. The Spirit of truth testifies to Christ; disciples also testify because they have been with him. The acclamation therefore protects Matthew 10 from individualism. Public confession is ecclesial and pneumatological before it is a test of private nerve. The verse welcomes Christ’s Gospel word; it is not another semi-continuous reading.
 
 Augustine’s *Tractate 92 on John* expounds John 15:26–27 directly. He does not set the Spirit’s testimony against the apostles’ speech: the Spirit bears witness and makes them capable of bearing witness. Peter’s passage from fearful denial to public confession provides Augustine’s concrete example. The reception sharpens the acclamation’s grammar. “You also testify” is not autonomous courage added alongside divine action; apostolic testimony is enabled from within by the promised Spirit and grounded in having been with Jesus. Since the acclamation quotes only parts of the two verses, its liturgical function remains a concise welcome to the Gospel rather than a substitute reading of the farewell discourse.
 
-### The gift is not like the trespass (*Second Reading*) {#the-gift-is-not-like-the-trespass-second-reading .unnumbered}
+### The gift is not like the trespass (*Second Reading*)
 
 Romans 5:12–15 begins a dense comparison whose grammar continues beyond the appointed boundary. Paul traces sin and death through Adam and then interrupts any expectation of equal symmetry: Christ’s gracious gift is not like the trespass. Chrysostom emphasizes this excess. One act’s devastation becomes the occasion for displaying a gift whose abundance cannot be represented as a mere zero-sum cancellation.
 
@@ -150,7 +150,7 @@ The appointed reading ends at verse 15, before Paul completes several contrasts.
 
 This apostolic strand remains semi-continuous. It should not be forced into an allegory in which Adam equals persecutor or Christ equals Jeremiah. Its liturgical contribution is plural: the same assembly hearing the demand for witness also hears that salvation originates in a gift exceeding inherited ruin.
 
-### Reconciliation, praise, and nourishment (*Prayer over Offerings, Communion, Prayer after Communion*) {#reconciliation-praise-and-nourishment-prayer-over-offerings-communion-prayer-after-communion .unnumbered}
+### Reconciliation, praise, and nourishment (*Prayer over Offerings, Communion, Prayer after Communion*)
 
 The Prayer over the Offerings identifies the sacrificial movement as reconciliation and praise while asking that those offering be purified. Worship is therefore not a bribe paid by the endangered, nor a reward for courage; it is God’s reconciling gift received and returned in praise.
 
@@ -164,7 +164,7 @@ For option B, Augustine’s *Tractate 46 on John* directly distinguishes the Goo
 
 Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same saying christologically: Christ is sheep according to the humanity in which he is offered and Shepherd according to divine loving-kindness. Gregory Nazianzen’s *Oration 18* uses the shepherd’s knowing, defending, and guiding of the flock as a pastoral measure. Augustine supplies direct exposition; Cyril and Gregory supply illuminating reuse. Together they make Communion B more than a generic picture of kindness: the Shepherd’s care is self-giving, discerning, and answerable for the flock. None of this identifies which alternative was enacted.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   **“Not one of them falls” — Hamlet walks into a fatal duel. (*Gospel*)** In *Hamlet* 5.2, the prince dismisses augury because “there is a special providence in the fall of a sparrow,” then accepts the fencing match that kills him. Shakespeare preserves Matthew’s tiny bird while moving the saying into tragic dramatic irony: confidence in providence does not mean escape from death.
 
@@ -172,7 +172,7 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 
 -   **“The hairs of your head are counted” — a quantified-self performance. (*Gospel*)** The 2017–2018 media-arts work *The Hairs of Your Head Are Numbered* measured bodies, turned audience data into live visualization, and questioned tracking and manipulation. The exact Gospel-like title becomes an uneasy cultural echo for bodies rendered measurable by sensors, platforms, and companies; no checked source records the naming decision.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 > **Editorial status**
 >
@@ -188,9 +188,9 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 
 **The Communion branches distinguish provision from recognition. (*Communion A; Communion B*)** Communion A, if chosen, shows Psalm 145’s eyes awaiting food; Communion B, if chosen, the Shepherd’s knowledge and self-gift. Without blending alternatives into one enacted antiphon, comparison reveals care’s two dimensions: dependable provision answers bodily dependence; personal knowledge and accountable presence resist reducing persons to need categories. Separate treatment notes Eucharistic aptitude but misses the branch structure’s critique of systems without relationship and relationships without provision. Augustine on the psalm and early Shepherd reception offer near analogues, not this exact comparison. The fruit is integrated pastoral design. Selection is unknown, neither branch is a complete social program, and sacramental gift cannot be reduced to either humanitarian supply or therapeutic recognition.
 
-## Appendix: Liturgical Resolution {#appendix-liturgical-resolution .unnumbered}
+## Appendix: Liturgical Resolution
 
-### Liturgical Instance {#liturgical-instance .unnumbered}
+### Liturgical Instance
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
@@ -199,18 +199,18 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 | Calendar and cycle | U.S. implementation of the General Roman Calendar; Sunday Year A. |
 | Formulary and textual scope | Ordinary Time Week XII. Its shared audit owns the Missal formulary; this leaf owns the dated Year A composition and its two Communion-antiphon alternatives. |
 
-### Branch Resolution {#branch-resolution .unnumbered}
+### Branch Resolution
 
 | **Branch ID** | **Authority and trigger** | **Status** | **Units affected** | **Resolution** |
 |:---------|:---------------|:--------|:-----------------|:--------------|
 | `communion-antiphon-psalm-145` | Week XII formulary | Appointed alternative | Psalm 145 option | Documented, not selected |
 | `communion-antiphon-john-10` | Week XII formulary | Appointed alternative | John 10 option | Documented, not selected |
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Instance:** `instance/manifest.md`. **Leaf composition audit:** `propers/verified.md`. **Canonical formulary owner:** `../shared/ordinary-time/weeks/12/propers/verified.md`. **Research audit:** `research/scope.md`. **Coverage:** the complete formula and branches, every appointed scriptural unit, immediate contexts, and a passage-by-passage reception search were studied. Retained direct witnesses include Jerome, Chrysostom, Augustine, and Aquinas; Cyprian, Cyril, and Gregory are marked where they furnish illuminating reuse rather than continuous exposition. **Negative result:** no early Greek continuous treatment of the exact Jeremiah 20:10–13 unit was retained from the accessible corpora checked; Jerome supplies a direct Latin witness. **Limits:** no exhaustive manuscript, untranslated-corpus, subscription-database, or proper-calendar survey is claimed. Complete U.S. English altar-book oration collation and independent theological review remain outstanding.
 
-## References {#references .unnumbered}
+## References
 
 -   USCCB, [Twelfth Sunday in Ordinary Time, 21 June 2026](https://bible.usccb.org/bible/readings/062126.cfm), U.S. Lectionary 94; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
 
@@ -238,7 +238,7 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 
 -   Kim Albrecht with Doublelucky Productions, [*The Hairs of Your Head Are Numbered*](https://www.kimalbrecht.com/item/hairs-of-your-head/), project and performances, 2017–2018; and Albrecht, [artist statement](https://www.kimalbrecht.com/about/), checked 2026-07-19.
 
-## Generation Metadata {#generation-metadata .unnumbered}
+## Generation Metadata
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

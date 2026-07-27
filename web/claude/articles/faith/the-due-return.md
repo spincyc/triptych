@@ -144,19 +144,19 @@ All online witnesses were checked on 2026-07-24; no mutable law or discipline is
 
 ## References
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   Psalms 114:8 and 115:12–17 (Vulgate/Douay numbering; Hebrew Psalm 116); Romans 1:21, 25; 12:1, 5; 13:8 and James 1:27 (the latter two through Aquinas’s citations). Quoted from the public-domain Douay–Rheims translation (Challoner revision), wording checked 2026-07-24 at the [online Douay–Rheims text](https://drbo.org/); the Latin of Psalm 115:12–13 (*quid retribuam… calicem salutaris accipiam*) checked 2026-07-24 at the same site’s [Clementine Vulgate text](https://drbo.org/lvb/chapter/21115.htm). The translation is an identified working witness, not a critical edition.
 
-### Patristic witness {#patristic-witness .unnumbered}
+### Patristic witness
 
 -   Augustine of Hippo, *De civitate Dei* X.5 (divine non-need; the fountain and the light; the visible sacrament or sacred sign of an invisible sacrifice) and X.6 (true sacrifice; mercy; the redeemed city offered through the great High Priest; the sacrifice of Christians); trans. Marcus Dods, *The City of God*, vol. I, in *The Works of Aurelius Augustine, A New Translation* (Edinburgh: T. & T. Clark, 1871); public domain; wording checked 2026-07-24 in the source library’s tracked transcription of the 1871 printing (registered passage for X.5–6) and against the [New Advent transcription](https://www.newadvent.org/fathers/120110.htm) of the same translation. X.3 and X.19 are cited within Aquinas’s texts, not independently.
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   Thomas Aquinas, *Summa theologiae* II-II, q. 58, a. 1 (the definition of justice); q. 80, a. 1 (the virtues annexed to justice; religion unable to render the equal due, citing Ps 115:12); q. 81, a. 1 with ad 1 (religion’s etymologies and relation to God; elicited and commanded acts), a. 2 (religion a virtue), a. 4 (a special virtue), a. 5 with ad 1 (a moral, not theological, virtue; commanded by faith, hope, and charity), a. 6 (chief of the moral virtues), a. 7 (worship profits the worshipper, not God; the air enlightened by the sun); q. 82, a. 1 (devotion); q. 83, a. 2 (prayer and providence); q. 84, a. 2 with ad 2 (twofold adoration; prostration professing that we are nothing of ourselves); q. 85, a. 1 with ad 1 (sacrifice of the natural law; positive determination) and a. 2 (the outward sign of the inward sacrifice); q. 106, a. 1 (the ranked causes of debt) and a. 6 with ad 2–3 (the exceeding return; the limitless debt flowing from charity; equality of wills). Inherited from Part I: I, q. 13, a. 7; q. 20, a. 2; q. 104, a. 1; II-II, q. 84, a. 1; qq. 129 and 161. English from the public-domain translation of the Fathers of the English Dominican Province via [New Advent](https://www.newadvent.org/summa/); Latin checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) online corpus for II-II.58.1, 80.1, 81.7, 82.1, 83.2, and 85.1. All loci checked 2026-07-24; work, question, article, and division govern over either site’s presentation.
 
-### Authoritative Catholic witnesses {#authoritative-catholic-witnesses .unnumbered}
+### Authoritative Catholic witnesses
 
 -   First Vatican Council, dogmatic constitution *Dei Filius* (24 April 1870), ch. 3 (*Quum homo a Deo tamquam Creatore et Domino suo totus dependeat…*); Holy See Latin text, [vatican.va](https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html), checked 2026-07-24. The English rendering in this essay is a labeled working gloss governed by the Latin. Ch. 1 (creation *ex nihilo*, *non ad augendam suam beatitudinem*) is inherited from Part I.
 

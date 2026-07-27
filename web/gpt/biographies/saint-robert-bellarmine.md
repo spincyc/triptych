@@ -2,7 +2,7 @@
 
 *A source-first historical and hagiographic biography of Saint Robert Bellarmine*
 
-## The Theologian Inside the Institution {#the-theologian-inside-the-institution .unnumbered}
+## The Theologian Inside the Institution
 
 Robert Bellarmine spent his adult life making Catholic teaching intelligible and defensible in an age of confessional fracture. He preached, learned languages, taught controversies, revised books, composed catechisms, advised popes, governed Jesuits, served in censorial and inquisitorial offices, became a cardinal and residential archbishop, and ended his life writing about prayer and death. The Church later canonized him and declared him a Doctor. That range cannot be reduced either to a shelf of polemical volumes or to the two names—Giordano Bruno and Galileo Galilei—that now most often summon him.
 

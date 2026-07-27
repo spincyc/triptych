@@ -165,7 +165,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 ## References
 
-### Conciliar and papal acts, 1959–1969 {#conciliar-and-papal-acts-19591969 .unnumbered}
+### Conciliar and papal acts, 1959–1969
 
 -   John XXIII, allocution announcing the Roman synod, ecumenical council, and revision of the Code of Canon Law (25 January 1959), official Italian text, [vatican.va](https://www.vatican.va/content/john-xxiii/it/speeches/1959/documents/hf_j-xxiii_spe_19590125_annuncio.html); registered web state, verified 2026-07-24.
 
@@ -181,7 +181,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 -   Paul VI, apostolic constitution *Missale Romanum* (3 April 1969), official English web text, [vatican.va](https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html), checked 2026-07-25 (new source-library record); Latin text as reprinted in the 2002 editio typica tertia, checked at the registered reproduction (below).
 
-### Missal editions and their instruments {#missal-editions-and-their-instruments .unnumbered}
+### Missal editions and their instruments
 
 -   *Missale Romanum*, editio typica tertia (Vatican City: Typis Vaticanis, 2002), consulted in the registered secondary digital reproduction (restricted; SHA-256 recorded; pages 1–7 inspected 2026-07-25: edition-history line, 1970 decree Prot. n. 166/70, 1975 act Prot. N. 1970/74, 2000 decree Prot. N. 143/00/L, and the Latin constitution). Not the printed altar book; claims bounded to the inspected pages.
 
@@ -191,7 +191,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 -   Sacred Congregation for Divine Worship, instruction *Memoriale Domini* (29 May 1969); identified by title and date only; not examined for this essay.
 
-### The discipline of the older Missal, 1984–2026 {#the-discipline-of-the-older-missal-19842026 .unnumbered}
+### The discipline of the older Missal, 1984–2026
 
 -   Congregation for Divine Worship, letter *Quattuor abhinc annos* (3 October 1984), AAS 76 (1984) 1088–1089; cited through *Ecclesia Dei* note 9; not independently examined.
 
@@ -211,7 +211,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 -   Benedict XVI, Address to the Roman Curia offering them his Christmas greetings (22 December 2005), official English text, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/speeches/2005/december/documents/hf_ben_xvi_spe_20051222_roman-curia.html); registered dated web state, verified 2026-07-24, re-fetched byte-identical 2026-07-25.
 
-### Statistical and survey sources {#statistical-and-survey-sources .unnumbered}
+### Statistical and survey sources
 
 -   Center for Applied Research in the Apostolate (CARA), *Frequently Requested Church Statistics*: United States workbook (1965–2025; *Official Catholic Directory* counts and survey estimates) and worldwide workbook (*Annuarium Statisticum Ecclesiae*, 1970–2023), downloaded 2026-07-25 from [cara.georgetown.edu/faqs](https://cara.georgetown.edu/faqs); values quoted exactly as stated, coverage and caveats in section 5.
 

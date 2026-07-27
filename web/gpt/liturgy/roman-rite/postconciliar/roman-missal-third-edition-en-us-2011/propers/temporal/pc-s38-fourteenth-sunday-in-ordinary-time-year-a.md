@@ -31,7 +31,7 @@ PC-S38-A
 | Moral | Become little enough to receive revelation; reject self-salvation and bodily contempt; put sinful deeds to death by the Spirit; take up Christ’s teachable obedience. |
 | Anagogical | Universal peace, resurrection through the indwelling Spirit, lasting joy, saving gifts, and promised rest disclose the kingdom’s consummation. |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; composition and narrated event remain distinct. Marked *Cf.* texts are adaptations, and dates orient rather than claim autograph precision.*
 
@@ -51,7 +51,7 @@ PC-S38-A
 | Second Reading | Rom. 8:9, 11–13 | Corinth, Achaia (present-day Greece) | c. AD 57 |
 | Paul addresses mixed Jewish and Gentile house churches at Rome near his eastern mission’s end. Spirit-governed life opposes disordered flesh and hopes for bodily resurrection. Lectionary 100 omits v. 10, then resumes with the Spirit who raised Jesus and the duty to mortify evil deeds. |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Propers: Themes and Movement
 
 > **Governing account**
 >
@@ -67,23 +67,23 @@ PC-S38-A
 >
 > **4. Purified, fed, praising — Prayer over Offerings; Communion; Prayer after Communion.** The appointed prayers and antiphons order disciples toward salvation and praise.
 
-### 1. Mercy gathers those who cannot raise themselves (*Entrance; Collect*) {#mercy-gathers-those-who-cannot-raise-themselves-entrance-collect .unnumbered}
+### 1. Mercy gathers those who cannot raise themselves (*Entrance; Collect*)
 
 The Entrance begins with received mercy rather than religious achievement. Its Temple setting makes the gathering ecclesial, while praise reaches beyond one sanctuary. The Collect then attributes the world’s raising to the Son’s humility. These texts establish dependence before the readings specify kingship, Spirit, and discipleship; because they belong to Week XIV in every cycle, the relation is liturgical juxtaposition, not proved historical design.
 
-### 2. Royal power takes the form of meekness (*First Reading; Psalm; Acclamation; Gospel*) {#royal-power-takes-the-form-of-meekness-first-reading-psalm-acclamation-gospel .unnumbered}
+### 2. Royal power takes the form of meekness (*First Reading; Psalm; Acclamation; Gospel*)
 
 Zechariah removes the normal machinery of conquest from the king’s arrival: humble riding, abolished weapons, peace proclaimed outward. Psalm 145 answers by praising the Lord whose kingdom is manifested through compassion, fidelity, and support. Matthew then gives the correlation its Christological center. Jesus does not merely recommend gentleness; as Son he reveals the Father, and as the meek teacher he summons disciples beneath his yoke.
 
-### 3. Rest and mortification are not rivals (*Second Reading; Gospel*) {#rest-and-mortification-are-not-rivals-second-reading-gospel .unnumbered}
+### 3. Rest and mortification are not rivals (*Second Reading; Gospel*)
 
 Romans remains a semi-continuous strand, yet it prevents sentimental readings of rest. The Spirit’s indwelling generates obligation: evil deeds are to be put to death. Chrysostom and Augustine insist that this mortification concerns disordered action rather than hatred of the created body. The Gospel’s light yoke likewise names obedient discipleship, not inactivity. Liturgical co-occurrence permits this qualified comparison without claiming that Paul was selected to explain Matthew.
 
-### 4. Gift becomes purified life and enduring praise (*Prayer over Offerings; Communion; Prayer after Communion*) {#gift-becomes-purified-life-and-enduring-praise-prayer-over-offerings-communion-prayer-after-communion .unnumbered}
+### 4. Gift becomes purified life and enduring praise (*Prayer over Offerings; Communion; Prayer after Communion*)
 
 The Prayer over the Offerings asks that worship purify and redirect conduct. Communion Antiphon A stresses tasting and refuge; alternative B repeats Christ’s invitation to the burdened. The final prayer asks that great gifts issue in salvation and unceasing praise, making reception a beginning of transformed life rather than a terminus.
 
-### Theological and Spiritual Synthesis {#theological-and-spiritual-synthesis .unnumbered}
+### Theological and Spiritual Synthesis
 
 The peaceful king promised to Zion and the meek Son who reveals the Father disclose a form of divine rule in which power serves peace and authority teaches the burdened. Psalm 145 answers with praise of the gracious sovereign, so meekness appears as the exercise of faithful strength rather than its absence.
 
@@ -96,9 +96,9 @@ Romans gives this discipleship an interior and bodily depth. The Spirit who rais
 | Ecclesial and sacramental | Entrance; Collect; Prayer over Offerings; Communion A/B; Prayer after Communion | A people gathered by mercy is raised through the Son’s humility, purified in offering, fed through a real alternative Communion path, and ordered toward salvation and praise. | The Week XIV orations serve A/B/C, the Communion choice is unresolved, and no whole-formulary historical design is claimed. |
 | Moral and eschatological | Gospel; Second Reading; Psalm; final prayer | Receptive littleness, meek strength, and Spirit-enabled obedience tend toward universal peace, bodily resurrection, salvation, and enduring praise. | Christ’s yoke does not commend passivity before abuse, and promised rest is not present exemption from duty or suffering. |
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### Received mercy and the humiliation that raises (*Entrance; Collect*) {#received-mercy-and-the-humiliation-that-raises-entrance-collect .unnumbered}
+### Received mercy and the humiliation that raises (*Entrance; Collect*)
 
 Psalm 48’s cultic geography is exacting: mercy is received *in the midst* of God’s Temple, while praise extends to earth’s ends. Gathering is neither private consolation nor possession of God by one place. The antiphon lets the Church enter as recipient and witness.
 
@@ -106,7 +106,7 @@ Augustine’s *Exposition on Psalm 48* receives Zion and the temple ecclesially,
 
 The Collect’s Latin axis joins the Son’s *humilitas*, a fallen world, release from sin’s servitude, and enduring joy. Humility is therefore neither self-contempt nor mere style. It is first Christological: the Son descends and raises. Only then is it moral, because the raised people may share holy gladness.
 
-### A king without the instruments of domination (*First Reading; Responsorial Psalm*) {#a-king-without-the-instruments-of-domination-first-reading-responsorial-psalm .unnumbered}
+### A king without the instruments of domination (*First Reading; Responsorial Psalm*)
 
 Zechariah 9:9–10 holds apparently contrary predicates together. The king is just and saving, yet humble; royal, yet riding the ordinary animal of peaceful entry; victorious, yet abolishing chariot, horse, and warrior’s bow. His dominion from sea to sea is not an unlimited version of coercive empire. The text interprets its scope through the peace he proclaims to the nations.
 
@@ -124,7 +124,7 @@ Psalm 145 responds with a vocabulary of divine kingship that is ethical rather t
 
 Augustine’s *Exposition on Psalm 145* emphasizes the difference between mortal rulers and the Creator who remains faithful, executes justice, feeds, frees, raises, and reigns forever. The appointed strophes do not include every one of those acts, but their full psalmic setting makes the refrain morally concrete. To call God king is to praise a rule known by compassion and fidelity. This direct psalm reception also prevents the Zecharian ruler from becoming an autonomous rival: Christian interpretation recognizes the Son’s kingship within the saving action of the one God, not as a second model of domination.
 
-### The Spirit’s dwelling and the body’s future (*Second Reading*) {#the-spirits-dwelling-and-the-bodys-future-second-reading .unnumbered}
+### The Spirit’s dwelling and the body’s future (*Second Reading*)
 
 Romans 8:9 locates Christian existence by indwelling: belonging to Christ is inseparable from the Spirit of Christ. After the appointed omission of verse 10, verse 11 grounds hope in the Spirit who raised Jesus and will give life to mortal bodies. The body is mortal and awaits vivification; it is not the evil that must be destroyed.
 
@@ -136,7 +136,7 @@ Augustine’s *Sermon 156*, sections 6–15, argues from the same command that h
 
 The Lectionary’s omission of verse 10 must remain visible. It creates a proclamation moving from Spirit-defined identity directly to resurrection and obligation. Commentary may consult the complete chapter, but it may not silently insert an unappointed verse or imply that worshippers heard it.
 
-### Revelation to the little and the yoke of the Son (*Acclamation; Gospel*) {#revelation-to-the-little-and-the-yoke-of-the-son-acclamation-gospel .unnumbered}
+### Revelation to the little and the yoke of the Son (*Acclamation; Gospel*)
 
 The acclamation adapts Matthew 11:25 and performs what it says: the assembly blesses the Father and receives the Gospel as gift rather than mastery. “Little ones” does not canonize ignorance or forbid disciplined study. In context it contrasts receptive dependence with the self-securing posture that refuses Jesus’ works and wisdom.
 
@@ -162,11 +162,11 @@ Ambrose’s *Exposition of the Christian Faith* V.167 receives the yoke as a glo
 >
 > The retained witnesses directly treat every principal scriptural strand: Augustine on Psalms 48, 145, and 34; Justin, Origen, Cyril, Clement, and Chrysostom on Zechariah’s king; Chrysostom, Augustine, and Aquinas on Romans 8; and Chrysostom and Augustine on Matthew 11. Ambrose, Leo, and Augustine’s *Confessions* are labeled illuminating reuse. Aquinas’s *Catena* is evidence only of medieval compilation practice; its untraced embedded fragments remain leads. None comments on the complete modern formulary or proves one historical compositional design.
 
-### Purification and heavenly conduct (*Prayer over Offerings*) {#purification-and-heavenly-conduct-prayer-over-offerings .unnumbered}
+### Purification and heavenly conduct (*Prayer over Offerings*)
 
 The Prayer over the Offerings moves from a dedicated oblation to purification and heavenly conduct. It does not identify the gifts with moral effort or make purification the congregation’s purchase. God receives the Church’s offering within Christ’s action and is asked to transform those who offer. Because the prayer is common to A/B/C, relating it to the meek yoke is a later synthesis rather than a Lectionary claim.
 
-### Two Communion paths and one final petition (*Communion A; Communion B; Prayer after Communion*) {#two-communion-paths-and-one-final-petition-communion-a-communion-b-prayer-after-communion .unnumbered}
+### Two Communion paths and one final petition (*Communion A; Communion B; Prayer after Communion*)
 
 Communion Antiphon A appoints Psalm 34’s invitation to taste and see within sacramental reception. Its full psalmic context joins tasting to blessing, seeking, deliverance, instruction, and refuge. It does not reduce Eucharistic truth to a pleasant feeling; objective gift and fitting disposition remain distinct.
 
@@ -176,7 +176,7 @@ Alternative B repeats Matthew 11:28 and gives this cycle a particularly transpar
 
 The Prayer after Communion asks that recipients filled with great gifts receive salvation and continue in praise. Its order matters: divine gift precedes enduring response. “Unceasing” praise cannot mean continuous speech; it names a life ordered toward God, including work, rest, service, repentance, and the next Eucharistic gathering.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   **“My yoke is easy and my burden light” — a spectacularly indecent burden. (*Gospel*)** In James Gillray’s 1782 satire of the Worsley scandal, Sir Richard physically supports his wife’s lover so the man can look through a bathhouse window. He announces Christ’s line while bearing the voyeur on his shoulders. The visual pun makes “yoke” bodily, and the sacred promise becomes savage ridicule of complaisance and humiliation.
 
@@ -184,7 +184,7 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 -   **“My yoke is easy and my burden is light” — a sweetheart supplies the weight. (*Gospel*)** An 1862 California newspaper prints the line as a young man’s joke while his sweetheart sits on his lap with her arm around his neck. “Yoke” becomes the embrace and “burden” the woman herself: a sacred paradox is compressed into a flirtatious physical pun.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 *The following exploratory proposals were developed in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each states its anchors and limits.*
 
@@ -198,9 +198,9 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 **Two Communion branches propose two ways of learning the good. (*Gospel; Communion A; Communion B; Prayer after Communion*)** The Gospel says “learn”; A, if chosen, answers by tasting and seeing; B, if chosen, repeats “come”; the final prayer tests knowledge in continuing praise. Comparison without blending reveals participation and reiterated call—branch architecture missed separately. Cyprian’s yoke–tasting juxtaposition is a near analogue, not this liturgical argument. The fruit is learning verified in durable life. Neither branch makes feeling grace’s measure, guarantees worthy reception, or licenses both antiphons for one undocumented celebration.
 
-## Appendix: Liturgical Resolution {#appendix-liturgical-resolution .unnumbered}
+## Appendix: Liturgical Resolution
 
-### Liturgical Instance {#liturgical-instance .unnumbered}
+### Liturgical Instance
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
@@ -211,7 +211,7 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 | Cycle | Sunday Year A. |
 | Textual branches | Two Responsorial Psalm responses and two Communion Antiphons. |
 
-### Branch Resolution {#branch-resolution .unnumbered}
+### Branch Resolution
 
 | **Branch ID** | **Authority and trigger** | **Status** | **Units affected** | **Resolution** |
 |:---------|:---------------|:--------|:-----------------|:--------------|
@@ -220,11 +220,11 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 | `communion-antiphon-psalm-34` | Week XIV formulary | Appointed alternative | Communion Antiphon A | Documented, not selected |
 | `communion-antiphon-matthew-11` | Week XIV formulary | Appointed alternative | Communion Antiphon B | Documented, not selected |
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Formula.** Lectionary 100, both Psalm responses, both Communion alternatives, and the Week XIV orations and antiphons were audited. **Historical study.** Every directly appointed scriptural passage and marked adaptation appears in canonical order, with Matthew’s composition separated from the narrated event. **Reception.** A passage-by-passage search retained direct Greek, Latin, and medieval witnesses for the appointed psalms, Zechariah 9, Romans 8, and Matthew 11, including Justin, Origen, Cyril, Clement, Chrysostom, Augustine, and Aquinas; Ambrose and Leo are explicitly marked as illuminating reuse. No witness is made commentator on the complete modern formulary. **Rights.** Only citations, short incipits, and original summaries appear. **Outstanding.** 2008 page-image typography and layout, full U.S. altar-book English-oration collation, and independent theological review; this working guide is not publication-final. **Audit trail.** `instance/manifest.md`; `propers/verified.md`; `../shared/ordinary-time/weeks/14/propers/verified.md`; `research/scope.md`.
 
-## References {#references .unnumbered}
+## References
 
 **Liturgical and scriptural sources**
 
@@ -266,7 +266,7 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 -   *Catechism of the Catholic Church* 541–550, [the Kingdom present in Christ and disclosed in his ministry](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal illumination, not direct commentary on the Week XIV formulary.
 
-## Generation Metadata {#generation-metadata .unnumbered}
+## Generation Metadata
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

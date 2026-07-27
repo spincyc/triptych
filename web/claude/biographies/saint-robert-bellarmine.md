@@ -435,7 +435,7 @@ Project prose is original. Quotations follow public-domain sources: the Latin an
 
 All web sources were accessed and checked on 2026-07-25. Citations in the text use the editions and page or document numbers listed here.
 
-### Subject-authored sources {#subject-authored-sources .unnumbered}
+### Subject-authored sources
 
 -   Robert Bellarmine, *Vita Roberti Cardinalis Bellarmini quam ipsemet scripsit* (1613), Latin text with German translation and commentary in I. von Döllinger and F. H. Reusch, *Die Selbstbiographie des Cardinals Bellarmin* (Bonn: Neusser, 1887); read in the public scan at the Internet Archive (<https://archive.org/details/dieselbstbiogra00reusgoog>). Cited by page of that edition. The same volume’s commentary is the study’s witness for the beatification-process history and for the Index bibliography of 1590.
 
@@ -443,17 +443,17 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 -   Bellarmine’s letters of 19 April 1611 (to the Roman College mathematicians), 23 June 1612 (to Galileo), and 12 April 1615 (to Foscarini), and the certificate of 26 May 1616, in Favaro’s edition below (vol. XI nos. 515, 709; vol. XII no. 1110; vol. XIX pp. 342, 348).
 
-### The Galileo dossier {#the-galileo-dossier .unnumbered}
+### The Galileo dossier
 
 -   Antonio Favaro (ed.), *Le Opere di Galileo Galilei, Edizione Nazionale* (Florence: Barbèra, 1890–1909). Vol. XI (correspondence 1611–13) and vol. XII (1614–19), read in the scans at (<https://archive.org/details/le-opere-di-galileo-galilei-edizione-nazionale-volume-11>; `...-volume-12`); vol. XIX (the trial documents), read in the scan at (<https://archive.org/details/agh6462.0019.001.umich.edu>). Documents used: the qualifiers’ propositions and censure (pp. 320–321); the minutes of 25 and 26 February 1616 (pp. 321–322); the Holy Office session of 3 March 1616 (p. 278); the Index decree of 5 March 1616 (pp. 322–323); Galileo’s depositions and defense of 1633 with the certificate (pp. 342, 348).
 
 -   Karl von Gebler, *Galileo Galilei and the Roman Curia*, trans. Mrs. George Sturge (London: Kegan Paul, 1879); read in the public scan at (<https://archive.org/details/galileogalileia02geblgoog>). Used for the English of the 5 March 1616 decree and for the authenticity debate over the 26 February minute (Appendix, including pp. 337–338).
 
-### The English controversy {#the-english-controversy .unnumbered}
+### The English controversy
 
 -   C. H. McIlwain (ed.), *The Political Works of James I* (Cambridge, Mass.: Harvard University Press, 1918), reprinting the 1616 *Workes*: *Triplici nodo, triplex cuneus* with the text of the Oath of Allegiance, the breves of Paul V (22 September 1606; 1607), and the *Premonition*; introduction for the Blackwell letters and the sequence of editions. Read in the public scan at (<https://archive.org/details/politicalworksj00mcilgoog>).
 
-### Official acts (Acta Apostolicae Sedis) {#official-acts-acta-apostolicae-sedis .unnumbered}
+### Official acts (Acta Apostolicae Sedis)
 
 -   *AAS* 22 (1930), read in the Vatican website scan (<https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf>): decree on the canonization miracles with the “impugned memory” preamble (pp. 278–279); the decretal letter *Lux illa* of 29 June 1930 with the canonization formula and the history of the cause (pp. 593–604).
 
@@ -465,7 +465,7 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 -   Benedict XVI, General Audience of 23 February 2011 (on St. Robert Bellarmine), English text, Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110223.html>).
 
-### Encyclopedic and critical literature {#encyclopedic-and-critical-literature .unnumbered}
+### Encyclopedic and critical literature
 
 -   Sydney Smith, “St. Robert Francis Romulus Bellarmine,” *The Catholic Encyclopedia*, vol. 2 (New York: Robert Appleton, 1907), at New Advent (<https://www.newadvent.org/cathen/02411d.htm>). A catalog-level source-library record of CE vol. 2 was created for this study and is bound in `research/source-bindings.toml`.
 

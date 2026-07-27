@@ -567,13 +567,13 @@ All online witnesses were checked on 2026-07-25. No mutable civil or canonical l
 
 ## References
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   English: Matthew 5:22, 29–30; 7:13–14; 10:28; 13:41–42, 49–50; 18:8–9; 25:31–46; 26:24. Mark 9:42–47 (Vulgate numbering). Luke 13:23–28; 16:19–31. John 17:12. Acts 1:25; 3:19–21. Romans 5:18–19; 11:32. 1 Corinthians 15:22–28. Colossians 1:19–20. 2 Thessalonians 1:6–10. 1 Timothy 2:1–6. Jude 6–7. Apocalypse 14:9–11; 20:9–15; 21:8. Isaias 66:24. Ezechiel 18:23, 32; 33:11. Wisdom 11:24–27. 2 Peter 3:9. 1 John 4:18. All quoted from the public-domain Douay–Rheims translation (Challoner revision) in Vulgate chapter and verse numbering, read at their own loci on 2026-07-25 in the source library’s tracked verse-text derivative of Project Gutenberg eBook 1581 (registered edition `challoner-gutenberg-1581`). That edition’s wording differs from the 1899/1914 American printing in a registered list of verses; none of the verses used here was checked against that list, and the translation is an identified working witness, not a critical edition.
 
 -   Greek: Matthew 7:13–14; 10:28; 25:41, 46. Mark 9:43–49 (Greek numbering). Luke 13:23–24; 16:23–26. 2 Thessalonians 1:8–9. Jude 6–7. Apocalypse 14:10–11; 20:10, 14–15. Read on 2026-07-25 in the source library’s tracked CSV form of the Robinson–Pierpont Byzantine Textform (edition `rp2018-byztxt-unicode-csv`); the artifacts for Mark, 2 Thessalonians, and the Apocalypse were registered for this essay from the same pinned repository state as the existing ones. Quoted only in transliteration. The inline `{NA}` and `{Byz}` braces record divergences and are a divergence note, not a critical apparatus.
 
-### Conciliar and papal acts {#conciliar-and-papal-acts .unnumbered}
+### Conciliar and papal acts
 
 -   *Quicumque* (Athanasian Creed), v. 41, DS 76; canons against Origen, Constantinople 543, DS 403–411, esp. 409 and 411; Second Council of Orange (529), conclusion, DS 397; Second Council of Constantinople (553), canon 11, DS 433; Fourth Lateran Council (1215), constitution 1 *Firmiter*, DS 801; Second Council of Lyons (1274), profession of Michael Palaeologus, DS 858; John XXII to the Armenians (1321), DS 926; Benedict XII, *Benedictus Deus* (1336), DS 1000–1002; Council of Florence, *Laetentur caeli* (1439), DS 1304–1306, and *Cantate Domino* (1442), DS 1351; Council of Trent, session 6 (1547), ch. 13 and canons 17 and 25, DS 1541, 1567, 1575, and session 14 (1551), canon 5, DS 1705; Paul V, formula ending the disputations *de auxiliis* (5 September 1607), DS 1997. Latin read 2026-07-25 in the patristica.net web transcription of the Latin *Enchiridion symbolorum*, which prints the revised and older numbering in parallel and does not identify its printed exemplar; the same site’s Deferrari English of the older numbering was used as a cross-check for DS 403–411 and DS 801. The compilation is a finding aid to its underlying documents and a convenient witness, not a substitute for them; no printed Denzinger and no conciliar critical edition was collated, and that is the stated ceiling of every claim resting on it.
 
@@ -587,7 +587,7 @@ All online witnesses were checked on 2026-07-25. No mutable civil or canonical l
 
 -   *Catechism of the Catholic Church* 1030–1037 (purgatory and hell, with note 615 to 1035), 1051–1060 (In Brief), 1261 (children who die without baptism), 1854–1864 (mortal and venial sin); official Vatican English web text at [vatican.va (hell)](https://www.vatican.va/archive/ENG0015/__P2O.HTM) and the adjacent archive pages, checked 2026-07-25. Quoted briefly with attribution; the Catechism remains the property of the Libreria Editrice Vaticana.
 
-### Patristic witnesses {#patristic-witnesses .unnumbered}
+### Patristic witnesses
 
 -   Justin Martyr, *Second Apology* 7–9 (eternal fire; eternal punishment not a mere threat); *Ante-Nicene Fathers*, vol. 1 (Buffalo, 1885/1887); public domain; read 2026-07-25 at [New Advent](https://www.newadvent.org/fathers/0127.htm) and cross-read in this library’s tracked OCR of the Buffalo printing. Chapter numbering varies between editions.
 
@@ -601,7 +601,7 @@ All online witnesses were checked on 2026-07-25. No mutable civil or canonical l
 
 -   Augustine of Hippo, *De civitate Dei* XXI.9 (the worm and the fire; “let each man choose which he will”), XXI.11 (duration of penalty not proportioned to duration of offence), XXI.12 (the greater part left under punishment), XXI.17 (the tender-hearted Christians; Origen more indulgent), XXI.23 (the correlativity of Matthew 25:46); trans. Marcus Dods, *The City of God*, vol. II (Edinburgh: T. & T. Clark, 1871); public domain; each chapter read whole on 2026-07-25 in this library’s tracked transcription of the 1871 printing, and each registered with this revision as a passage with exact artifact line ranges.
 
-### Thomistic and philosophical sources {#thomistic-and-philosophical-sources .unnumbered}
+### Thomistic and philosophical sources
 
 -   Thomas Aquinas, *Summa theologiae* I, q. 19, a. 6 with ad 1 (the will of God always fulfilled; three readings of 1 Tim 2:4; antecedent and consequent will); q. 23, a. 3 with ad 2–3 (reprobation and its causality); q. 64, a. 2 (the obstinacy of the demons); I-II, q. 87, a. 3 with ad 1–2 (irreparability; the medicinal reply) and a. 4 (pain of loss infinite, pain of sense finite); Supplementum, q. 94, aa. 1–3 (the saints and the damned); q. 97, aa. 1, 5–7 (not fire alone; the fire’s nature and place); q. 98, aa. 1–5 (the will of the damned); q. 99, aa. 1–2 with replies (eternity of punishment; mercy in hell; Anselm’s principle). English from the public-domain translation of the Fathers of the English Dominican Province at [New Advent](https://www.newadvent.org/summa/); every question listed was read whole on 2026-07-25. The Supplement is a posthumous compilation and is labelled as such wherever used.
 

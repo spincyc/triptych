@@ -31,7 +31,7 @@ PC-S39-A
 | Moral | Hear the word and trust grace for fruit; when the long Gospel is used, its interpretation calls hearers to understanding, rooted endurance, and freedom from anxiety and wealth’s deception. |
 | Anagogical | God’s effective word, creation’s liberation, bodily redemption, and harvest orient present groaning toward consummation; the unselected Communion alternatives add either heavenly dwelling (A) or enduring life (B). |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; composition and narrated-event rows remain distinct. Branch labels are retained; the uncited composed acclamation remains outside this direct-Scripture inventory.*
 
@@ -57,7 +57,7 @@ PC-S39-A
 | Second Reading | Rom. 8:18–23 | Corinth, Achaia (present-day Greece) | c. AD 57 |
 | Paul writes from Corinth to mixed Jewish and Gentile house churches at Rome near his eastern mission’s end. Present suffering yields to glory; creation labors, and believers with the Spirit’s firstfruits groan for adoption’s bodily completion. The course is semi-continuous. |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Propers: Themes and Movement
 
 > **Governing account**
 >
@@ -73,23 +73,23 @@ PC-S39-A
 >
 > **4. Gift becomes sanctification — Prayer over Offerings; Communion; Prayer after Communion.** The appointed prayers and antiphons nourish enduring fruit.
 
-### 1. Truth illuminates before the soil answers (*Entrance; Collect*) {#truth-illuminates-before-the-soil-answers-entrance-collect .unnumbered}
+### 1. Truth illuminates before the soil answers (*Entrance; Collect*)
 
 The Entrance’s hope to behold divine glory and the Collect’s light of truth begin with reception. The wandering are shown a path before being asked to walk it. The prayer then makes Christian identity morally serious: certain actions contradict the name, while others accord with it. This shared Week XV movement prepares hearers for the Gospel’s differentiated response without claiming that the oration was written for Matthew 13.
 
-### 2. The correlated strand: descent, watering, sowing, fruit (*First Reading; Psalm; Acclamation; Gospel*) {#the-correlated-strand-descent-watering-sowing-fruit-first-reading-psalm-acclamation-gospel .unnumbered}
+### 2. The correlated strand: descent, watering, sowing, fruit (*First Reading; Psalm; Acclamation; Gospel*)
 
 Isaiah’s word is effective because it is sent by God, not because the earth controls the sky. Psalm 65 answers with land visited, watered, softened, and crowned; its Luke-marked response names fruitful reception. The composed acclamation gives the Sunday’s explicit Christological identification: Christ is the sower of the word. Matthew then refuses a simplistic success story by displaying loss, shallowness, choking pressure, and abundant fruit.
 
-### 3. Firstfruits do not abolish groaning (*Second Reading*) {#firstfruits-do-not-abolish-groaning-second-reading .unnumbered}
+### 3. Firstfruits do not abolish groaning (*Second Reading*)
 
 Romans belongs to its own sequence. Paul does not say that present suffering is unreal or that believers already possess bodily consummation. Creation waits, labors, and hopes; Spirit-bearing Christians groan too. Chrysostom’s direct exposition preserves the passage’s personification and its movement toward incorruption. Any agricultural resonance with Isaiah and Matthew is secondary observation, not the Lectionary’s stated reason for appointing Romans here.
 
-### 4. Repetition serves rooted transformation (*Prayer over Offerings; Communion; Prayer after Communion*) {#repetition-serves-rooted-transformation-prayer-over-offerings-communion-prayer-after-communion .unnumbered}
+### 4. Repetition serves rooted transformation (*Prayer over Offerings; Communion; Prayer after Communion*)
 
 The Prayer over the Offerings asks that ecclesial gifts advance sanctification; Communion A names dwelling and praise, while Communion B names Johannine abiding. The final prayer asks that repeated participation deepen saving effect. Neither antiphon makes sacramental fruit automatic; each gives a distinct textual path into the same concluding petition.
 
-### Theological and Spiritual Synthesis {#theological-and-spiritual-synthesis .unnumbered}
+### Theological and Spiritual Synthesis
 
 Isaiah’s effective word and Matthew’s broadly scattered seed hold divine initiative and human reception together. Christ, named as sower by the acclamation, gives the word whose fruit is never self-produced; the soils nevertheless expose the real histories of distraction, rootlessness, pressure, perseverance, and understanding.
 
@@ -102,9 +102,9 @@ Romans widens the horizon beyond an interior account of discipleship. Creation i
 | Ecclesial and sacramental | Collect; Prayer over Offerings; Communion A/B; Prayer after Communion | Truth recalls a wandering people, ecclesial gifts are ordered toward sanctification, and Communion presents either sanctuary dwelling or Johannine abiding before repeated participation seeks saving fruit. | The orations serve A/B/C, the Communion branch is unresolved, and sacramental frequency is not a mechanical guarantee. |
 | Moral and pastoral | Long/short Gospel; Collect; final prayer | Hearing, understanding, perseverance, conversion, and patient cultivation describe a graced response capable of deeper rootedness and fruit. | Only the long form interprets the soils; the imagery may not assign fixed spiritual castes or blame trauma, disability, poverty, or limited education. |
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### Beholding, truth, and the Christian name (*Entrance; Collect*) {#beholding-truth-and-the-christian-name-entrance-collect .unnumbered}
+### Beholding, truth, and the Christian name (*Entrance; Collect*)
 
 Psalm 17’s entrance clause comes from a prayer that contrasts integrity of path with violent opposition. Its desire to behold and be satisfied is therefore not aesthetic curiosity. The worshipper seeks vindication and final communion before God. As an adapted Missal antiphon it gives a compact gathering horizon.
 
@@ -114,7 +114,7 @@ The Collect holds mercy and moral discernment together. God shows truth’s ligh
 
 The verbs also prevent truth and mercy from being separated into pastoral alternatives. Light is shown to persons who have wandered precisely so that return is possible; return then includes both renunciation and pursuit. The prayer neither humiliates wanderers as a permanent class nor treats recall as affirmation of every path. It asks the whole assembled Church, not an absent group, to submit its Christian name to continuing judgment and grace.
 
-### Rain, word, and an earth genuinely affected (*First Reading; Responsorial Psalm*) {#rain-word-and-an-earth-genuinely-affected-first-reading-responsorial-psalm .unnumbered}
+### Rain, word, and an earth genuinely affected (*First Reading; Responsorial Psalm*)
 
 Isaiah 55 compares two effective descents. Rain and snow do not return before watering, fertilizing, and providing seed and bread; God’s word likewise does not return empty but accomplishes the purpose for which it is sent. The analogy asserts divine efficacy without making hearers inert. In the chapter, the same voice commands thirsting people to come, the wicked to forsake their way, and the hearer to return for abundant pardon.
 
@@ -134,7 +134,7 @@ The liturgical transition is therefore cumulative without making the sources int
 
 The pairing can support ecological gratitude without reducing either text to environmental policy. Land, water, seed, bread, flocks, and human praise belong together under gift. Yet Romans’ groaning creation warns against pretending that present fertility is universal or that crop failure marks deficient faith.
 
-### Creation’s labor and the redemption of bodies (*Second Reading*) {#creations-labor-and-the-redemption-of-bodies-second-reading .unnumbered}
+### Creation’s labor and the redemption of bodies (*Second Reading*)
 
 Romans 8:18–23 begins with comparison, not denial. Present sufferings are real; coming glory exceeds them. Creation is personified as straining forward, subjected to futility not by its own choice and yet held in hope. Its promised freedom is not annihilation but release from corruption into the freedom associated with God’s children.
 
@@ -148,7 +148,7 @@ The difference also checks easy ecological appropriation. Chrysostom strongly su
 
 The passage’s semi-continuity is a theological guardrail. “Creation,” “earth,” and “fruit” may resonate with Isaiah, the Psalm, and Gospel, but Romans was not selected merely to complete an agricultural theme. Its fullest home is Pauline eschatology.
 
-### A composed acclamation and two genuinely different proclamation paths (*Acclamation; long Gospel; short Gospel*) {#a-composed-acclamation-and-two-genuinely-different-proclamation-paths-acclamation-long-gospel-short-gospel .unnumbered}
+### A composed acclamation and two genuinely different proclamation paths (*Acclamation; long Gospel; short Gospel*)
 
 The acclamation is a liturgical composition. The official U.S. page gives no biblical citation, so assigning one would create false precision. Its theological role is still clear: it welcomes Christ about to speak and names him as sower of the word. That identification belongs to the appointed liturgical text even though it is not presented as a verbatim Bible verse.
 
@@ -170,11 +170,11 @@ The short form stops at “Whoever has ears ought to hear.” A homily may consu
 >
 > The parable diagnoses response; it does not authorize fixed spiritual castes. A person can move from distraction to attention, from shallow enthusiasm to rooted fidelity, or from anxious attachment toward freedom. Trauma, disability, poverty, or limited education must not be labeled “bad soil.” The Gospel judges obstacles and calls for conversion while grace continues to sow.
 
-### Gifts ordered toward sanctification (*Prayer over Offerings*) {#gifts-ordered-toward-sanctification-prayer-over-offerings .unnumbered}
+### Gifts ordered toward sanctification (*Prayer over Offerings*)
 
 The Prayer over the Offerings addresses the gifts of the supplicating Church and asks that they advance sanctification. The petition avoids two reductions: gifts are not payment buying holiness, and interior holiness does not make the offered signs irrelevant. Ecclesial offering is taken into Christ’s sacrificial action and ordered toward the offerers’ transformation.
 
-### Dwelling or abiding at Communion (*Communion A; Communion B; Prayer after Communion*) {#dwelling-or-abiding-at-communion-communion-a-communion-b-prayer-after-communion .unnumbered}
+### Dwelling or abiding at Communion (*Communion A; Communion B; Prayer after Communion*)
 
 Communion Antiphon A takes the worshipper into Psalm 84’s sanctuary longing: even birds find a home near the altars, and those dwelling in God’s house continue in praise. At Communion the branch can signify Eucharistic approach as ecclesial homecoming. It does not imply static enclosure; the complete pilgrimage Psalm also knows journey, strength, petition, and trust.
 
@@ -188,7 +188,7 @@ Augustine and Aquinas converge on ecclesial and moral participation while using 
 
 The Prayer after Communion asks that receiving gifts and frequenting the mystery deepen saving effect. Frequency is ordered repetition, not mechanism. Worthy, attentive participation can root charity across time; repetition without conversion is no guarantee of fruit. Conversely, absence of felt consolation does not prove that grace is absent.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   **“A sower went out to sow” — Earthseed after social collapse. (*both Gospel forms*)** Octavia E. Butler’s 1993 *Parable of the Sower* turns the biblical title into dystopian science fiction: a young Black woman crosses a climate-ravaged California while cultivating a new community and the change-centered religion Earthseed. The seed is no longer only a preached word; it is a portable social experiment whose reception remains dangerously uncertain.
 
@@ -198,7 +198,7 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 
 -   **“Creation is groaning” — climate-policy pressure. (*Second Reading*)** The Lutheran World Federation’s climate-justice statement says creation groans under the weight of human action and inaction, then presses for a binding international climate agreement. Paul’s woman-in-labor image becomes institutional advocacy: the groan is treated not as passive doom but as evidence demanding political action.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 *The following exploratory proposals were developed in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each states its anchors and limits.*
 
@@ -212,9 +212,9 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 
 **The harvest’s deepest measure may be abiding rather than output. (*Gospel; Communion B; Prayer after Communion*)** Matthew quantifies yields; Communion B, if chosen, names abiding through eating; the final prayer asks participation to deepen saving effect. Conformity with the gift becomes fruit’s source. Separate reading misses this critique of metrics. Its fruit is ministry freed from numerical triumphalism without excusing sterility. Aquinas’s food transforming the worthy receiver is a near analogue. Communion B is unresolved; abiding does not erase fruit, and frequency is neither automatic nor separable from faith, charity, and conversion.
 
-## Appendix: Liturgical Resolution {#appendix-liturgical-resolution .unnumbered}
+## Appendix: Liturgical Resolution
 
-### Liturgical Instance {#liturgical-instance .unnumbered}
+### Liturgical Instance
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
@@ -225,7 +225,7 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 | Cycle | Sunday Year A. |
 | Textual branches | Long or short Gospel and two Communion Antiphons. |
 
-### Branch Resolution {#branch-resolution .unnumbered}
+### Branch Resolution
 
 | **Branch ID** | **Authority and trigger** | **Status** | **Units affected** | **Resolution** |
 |:---------|:---------------|:--------|:-----------------|:--------------|
@@ -234,11 +234,11 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 | `communion-antiphon-psalm-84` | Week XV formulary | Appointed alternative | Communion Antiphon A | Documented, not selected |
 | `communion-antiphon-john-6` | Week XV formulary | Appointed alternative | Communion Antiphon B | Documented, not selected |
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Formula.** Lectionary 103’s composed acclamation, both Gospel forms, both Communion alternatives, and the Week XV orations and antiphons were audited. **Branch limit.** The short form omits Matthew 13:10–23; the guide treats the dialogue and interpretation as long-form material. **Reception.** Greek, Latin, and Syriac witnesses were checked passage by passage: Chrysostom directly treats Matthew and Romans; Cyril directly treats the Lukan response source; Augustine directly treats all three appointed Psalms and the John 6 branch; Aphrahat reuses Isaiah’s effective-word oracle. Direct exposition, parallel-Gospel reception, and later illuminating reuse remain labeled separately in the research matrix. **Rights.** Only citations, a minimal acclamation incipit, and original summaries appear. **Outstanding.** 2008 page-image typography and layout, full U.S. altar-book English-oration collation, and independent theological review; this working guide is not publication-final. **Audit trail.** `instance/manifest.md`; `propers/verified.md`; `../shared/ordinary-time/weeks/15/propers/verified.md`; `research/scope.md`.
 
-## References {#references .unnumbered}
+## References
 
 **Liturgical and scriptural sources**
 
@@ -286,7 +286,7 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 
 -   *Catechism of the Catholic Church* 541–550, [the Kingdom and its parables](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal context, not direct formula commentary.
 
-## Generation Metadata {#generation-metadata .unnumbered}
+## Generation Metadata
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

@@ -158,13 +158,13 @@ The identified online witnesses were checked through 23 July 2026. No mutable ca
 
 ## References
 
-### Sacred Scripture and the Creed {#sacred-scripture-and-the-creed .unnumbered}
+### Sacred Scripture and the Creed
 
 -   Gen 12:1–3; Exod 19:3–6; Deut 7:6–8; Isa 49:1–6; Matt 16:13–17 and 25:31–46; John 1:1–18 and 4:19–24; Rom 9:4–5 and 11:16–29; 2 Cor 5:14–15; Gal 4:4–5; 1 Tim 2:1–6; Heb 9:23–28; and 1 John 4:19–21.
 
 -   Nicene-Constantinopolitan Creed: the eternal Son’s Incarnation and crucifixion under Pontius Pilate. The brief English phrases use the current official U.S. text published by the [United States Conference of Catholic Bishops](https://www.usccb.org/beliefs-and-teachings/what-we-believe); the creed, Scripture, and official English wording remain outside the project’s license.
 
-### Conciliar and authoritative Catholic witnesses {#conciliar-and-authoritative-catholic-witnesses .unnumbered}
+### Conciliar and authoritative Catholic witnesses
 
 -   Second Vatican Council, dogmatic constitution *Dei Verbum* (18 November 1965), nos. 2–4, on revelation through deeds and words, the Abrahamic preparation, and Christ as mediator and fullness; [official English](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html).
 
@@ -178,13 +178,13 @@ The identified online witnesses were checked through 23 July 2026. No mutable ca
 
 -   John Paul II, encyclical *Fides et ratio* (14 September 1998), nos. 7, 11–12, on revelation within time and history and the Incarnation’s union of eternal and temporal; [official English](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html).
 
-### Catechetical synthesis {#catechetical-synthesis .unnumbered}
+### Catechetical synthesis
 
 -   *Catechism of the Catholic Church* 39–43 (analogy and apophatic qualification); 54–64 (Abraham, Israel, and all nations); 301–308 (conservation, providence, and secondary causes); 422–426 (Jesus’s historical identity); and 839–845 (the Jewish people and non-Christian religions).
 
 -   CCC 1084–1085 and 1127–1129 (Christ acting through the sacraments and their efficacy); 1145–1155 (signs, words, actions, and embodied human nature); 1257 (the necessity of Baptism and the distinction between God’s institution and divine freedom); and 1374–1377 (Christ’s Eucharistic presence and transubstantiation). Exact official-English links are supplied in the Notes.
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   St. Thomas Aquinas, *Summa theologiae* I, q. 3, a. 5, on why God is not in a genus; q. 14, a. 11, on divine knowledge of singulars; q. 22, aa. 2–3, on providence and secondary causality; q. 44, a. 1, on the first cause of creaturely being; and q. 104, a. 1, on present conservation.
 

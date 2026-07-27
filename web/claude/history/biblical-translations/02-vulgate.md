@@ -203,7 +203,7 @@ Dates before print are approximate unless a witness supplies them; “convention
 
 All web sources were accessed and checked on 2026-07-24; the quoted witnesses were re-verified on 2026-07-25. Citations in the text use conventional English titles with the numbering of the translations listed here. Sources are grouped by function.
 
-### Jerome: prefaces, letters, and catalogue (participant documents) {#jerome-prefaces-letters-and-catalogue-participant-documents .unnumbered}
+### Jerome: prefaces, letters, and catalogue (participant documents)
 
 -   Jerome, prefaces to the Vulgate books, tr. Kevin P. Edgecomb (1999–2006; released by the translator into the public domain), at tertullian.org: Gospels (<https://www.tertullian.org/fathers/jerome_preface_gospels.htm>), Kings/*Prologus galeatus* (<https://www.tertullian.org/fathers/jerome_preface_kings.htm>), Psalms according to the Seventy (<https://www.tertullian.org/fathers/jerome_preface_psalms_lxx.htm>), Psalms according to the Hebrew (<https://www.tertullian.org/fathers/jerome_preface_psalms_hebrew.htm>), Books of Solomon (<https://www.tertullian.org/fathers/jerome_preface_solomon.htm>), Daniel (<https://www.tertullian.org/fathers/jerome_preface_daniel.htm>), Tobit (<https://www.tertullian.org/fathers/jerome_preface_tobit.htm>), Judith (<https://www.tertullian.org/fathers/jerome_preface_judith_e.htm>), and the anonymous *Primum quaeritur* preface to the Pauline Epistles (<https://www.tertullian.org/fathers/jerome_preface_pauls_letters.htm>).
 
@@ -211,7 +211,7 @@ All web sources were accessed and checked on 2026-07-24; the quoted witnesses we
 
 -   Jerome, *On Illustrious Men* 135, tr. E. C. Richardson, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/2708.htm>).
 
-### Augustine and Rufinus (contemporary reception) {#augustine-and-rufinus-contemporary-reception .unnumbered}
+### Augustine and Rufinus (contemporary reception)
 
 -   Augustine, *Letters* 71 and 82, tr. J. G. Cunningham, NPNF series 1, vol. 1 (Buffalo, 1887), at New Advent (<https://www.newadvent.org/fathers/1102071.htm>, <https://www.newadvent.org/fathers/1102082.htm>).
 
@@ -221,7 +221,7 @@ All web sources were accessed and checked on 2026-07-24; the quoted witnesses we
 
 -   Rufinus of Aquileia, *Apology against Jerome* 2.33–36, tr. W. H. Fremantle, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/27052.htm>).
 
-### Official ecclesial acts {#official-ecclesial-acts .unnumbered}
+### Official ecclesial acts
 
 -   Council of Trent, Session IV (8 April 1546), Decree concerning the canonical Scriptures and Decree concerning the edition and use of the sacred books, tr. J. Waterworth (1848), at papalencyclicals.net (<https://www.papalencyclicals.net/councils/trent/fourth-session.htm>).
 
@@ -237,7 +237,7 @@ All web sources were accessed and checked on 2026-07-24; the quoted witnesses we
 
 -   *Catechism of the Catholic Church* 131 (within the article on Sacred Scripture, 101–141), Vatican website English text (<https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/v_sacred_scripture_in_the_life_of_the_church.html>).
 
-### Editions and artifacts {#editions-and-artifacts .unnumbered}
+### Editions and artifacts
 
 -   *Biblia Sacra Vulgatæ Editionis* (Clementine Vulgate), ed. Michael Hetzenauer (Ratisbon and Rome: Pustet, 1914); Jonah 4:6 checked in the public-domain page-image edition at SacredBible (<https://www.sacredbible.org/hetzenauer1914/>, scan page 0875). Registered in this repository’s source library as `edition.catholic-church.vulgata-clementina.hetzenauer-1914`.
 
@@ -251,7 +251,7 @@ All web sources were accessed and checked on 2026-07-24; the quoted witnesses we
 
 -   *Vetus Latina: Die Reste der altlateinischen Bibel* (Beuron, 1949– ), Vetus Latina-Institut; project facts from Houghton’s guide.
 
-### Modern scholarship and finding aids {#modern-scholarship-and-finding-aids .unnumbered}
+### Modern scholarship and finding aids
 
 -   H. A. G. Houghton, *The Latin New Testament: A Guide to Its Early History, Texts, and Manuscripts* (Oxford: Oxford University Press, 2016), open access under CC BY-NC-ND 4.0, read in the Library of Congress PDF (<https://www.loc.gov/item/2019666835/>); the principal modern control used throughout, summarized and cited without reproduction.
 

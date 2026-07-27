@@ -118,7 +118,7 @@ This is an internally source-audited working study. Production and artifact evid
 
 ## References
 
-### Authoritative Catholic witnesses {#authoritative-catholic-witnesses .unnumbered}
+### Authoritative Catholic witnesses
 
 -   Second Vatican Council, pastoral constitution *Gaudium et spes* (7 December 1965), 36, 57, and 59, on the proper autonomy and methods of the sciences, the temptation to make observable data the rule of all truth, and the distinct orders of faith and reason; [official English](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html).
 
@@ -126,13 +126,13 @@ This is an internally source-audited working study. Production and artifact evid
 
 -   Benedict XVI, address at the University of Regensburg (12 September 2006), on the mathematical–empirical canon of modern science and the reduction of reason when that canon is made exhaustive; [official English](https://www.vatican.va/content/benedict-xvi/en/speeches/2006/september/documents/hf_ben-xvi_spe_20060912_university-regensburg.html).
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   St. Thomas Aquinas, *Summa theologiae* I, q. 2, a. 2, on demonstration from effects; q. 12, a. 12, on natural knowledge of God from sensible effects without vision of the divine essence; q. 84, aa. 6–7, and q. 85, a. 1, on sense, phantasms, and intellectual abstraction.
 
 -   Latin loci available through the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html); the [New Advent Summa](https://www.newadvent.org/summa/) supplied a working public English index. Work, question, article, and reply govern rather than either site’s wording.
 
-### Measurement and philosophy of science {#measurement-and-philosophy-of-science .unnumbered}
+### Measurement and philosophy of science
 
 -   Joint Committee for Guides in Metrology, *International Vocabulary of Metrology—Basic and General Concepts and Associated Terms*, 3rd ed., JCGM 200:2012, 2.9, 2.39, and 4.1; [BIPM-hosted official PDF](https://www.bipm.org/documents/20126/2071204/JCGM_200_2012.pdf).
 
@@ -142,7 +142,7 @@ This is an internally source-audited working study. Production and artifact evid
 
 -   Stanford Encyclopedia of Philosophy, “Scientific Realism,” sec. 4.1; [Spring 2017 archived edition](https://plato.stanford.edu/archives/spr2017/entries/scientific-realism/); “Operationalism,” especially sec. 2.3; [Spring 2022 archived edition](https://plato.stanford.edu/archives/spr2022/entries/operationalism/); and “Religious Language,” sec. 2.1; [current entry accessed 23 July 2026](https://plato.stanford.edu/entries/religious-language/).
 
-### Lewis and the argument from reason {#lewis-and-the-argument-from-reason .unnumbered}
+### Lewis and the argument from reason
 
 -   C. S. Lewis, *Miracles: A Preliminary Study*, rev. ed., ch. 3, identified primary work. A [HarperCollins 2009 bibliographic and limited-preview record](https://books.google.com/books/about/Miracles.html?id=tH8di3qQDhEC) identifies the revised work and chapter but was not used as a full-text witness. No Lewis wording is reproduced.
 

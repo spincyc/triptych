@@ -112,7 +112,7 @@ This simultaneity is not disorder. It prevents the book’s priest-centered prin
 
 *Missal locus:* *Ritus servandus* II–IV; *Ordo Missae*, p. 216
 
-#### The Church Takes the Road to the Altar {#the-church-takes-the-road-to-the-altar .unnumbered}
+#### The Church Takes the Road to the Altar
 
 Before the first common words, bodies, vesture, books, vessels, lights, and places have already begun to speak. At Low Mass the vested celebrant carries the prepared chalice to the altar. At Solemn Mass the open Missal, chalice, and other requisites wait on the covered credence while celebrant, deacon, subdeacon, and the other ministers enter according to their offices. The same Roman Order is present in both forms, but it becomes visible through two different architectures: one concentrates several ministries in the priest; the other distributes book, vessel, chant, incense, and service among an ordered company (*Ritus servandus* II.1–6; III.1–4).
 
@@ -132,7 +132,7 @@ The entrance can receive a devotional Passion reading, including contemplation o
 
 *Missal locus:* *Ordo Missae*, pp. 216–217; General Rubrics 425a–b
 
-#### Exile and Joy Before the Steps {#exile-and-joy-before-the-steps .unnumbered}
+#### Exile and Joy Before the Steps
 
 Before the lowest step the priest signs himself in the name of Father, Son, and Holy Spirit. The exchange beginning *Introibo ad altare Dei* names the destination, and the antiphon then encloses Psalm 42. The physical approach has reached the altar, but the psalm gives the worshipper a voice that has not yet arrived.
 
@@ -154,7 +154,7 @@ In Requiem Masses and in Masses of the season from the First Sunday of Passionti
 
 *Missal locus:* *Ordo Missae*, pp. 216–217; *Ritus servandus* III.7–10
 
-#### Confession in Two Voices {#confession-in-two-voices .unnumbered}
+#### Confession in Two Voices
 
 The *Confiteor* does not place a generalized penitential mood at the foot of the altar. It stages responsibility through grammar, posture, and answer. Bowed profoundly, the priest confesses before God, the Blessed Virgin, the named saints, and the brethren; at the threefold *mea culpa* his hand strikes his breast. The ministers answer with a deprecatory petition for him. They then confess with the form’s role-specific address, and the priest answers them and signs them at *Indulgentiam*. The forms mirror one another without becoming interchangeable.
 
@@ -180,7 +180,7 @@ Penitential preparation is ancient, and *Didache* 14 joins reconciliation to Euc
 
 *Missal locus:* *Ordo Missae*, p. 217; General Rubrics 424; *Ritus servandus* III.12
 
-#### The Ascent from the Lowest Step {#the-ascent-from-the-lowest-step .unnumbered}
+#### The Ascent from the Lowest Step
 
 The short versicles after the confessions gather conversion, divine help, salvation, and answered prayer into an exchange that ends by naming the Creator as the source of help. Then the priest moves. He ascends with *Aufer a nobis*, whose Holy-of-Holies vocabulary casts the movement as penitential entry.
 
@@ -196,7 +196,7 @@ General Rubric 424 reveals the action’s function by naming cases in which it g
 
 *Missal locus:* *Ordo Missae*, p. 217; General Rubrics 424; *Ritus servandus* III.12
 
-#### The Altar Kiss and the Saints Beneath It {#the-altar-kiss-and-the-saints-beneath-it .unnumbered}
+#### The Altar Kiss and the Saints Beneath It
 
 At the altar the priest says *Oramus te*, invokes the merits of the saints whose relics are present and of all the saints, and kisses the altar. The action is tactile and local. It does not address an abstraction called sacrifice; it venerates the altar on which the sacramental sacrifice will be offered.
 
@@ -212,7 +212,7 @@ Altar veneration and the association with martyrs have early Roman roots; the ex
 
 *Missal locus:* *Ordo Missae*, p. 217; *Ritus servandus* IV.1, 4–8; General Rubric 426
 
-#### The First Cloud of Incense {#the-first-cloud-of-incense .unnumbered}
+#### The First Cloud of Incense
 
 At Solemn Mass, and at any sung Mass where the permission of General Rubric 426 is used, the celebrant blesses incense and incenses the cross and altar. Psalm 140:2 gives incense its durable biblical analogy with prayer, but the whole psalm is a plea for guarded speech and deliverance from evil, not an aesthetic celebration of smoke. The cloud consequently belongs after confession and ascent: prayer rises from persons who still depend on divine protection.
 
@@ -224,7 +224,7 @@ The detailed route is a received ceremonial development rather than a concealed 
 
 *Missal locus:* *Ordo Missae*, p. 217
 
-#### The Day Gives the Church a Voice {#the-day-gives-the-church-a-voice .unnumbered}
+#### The Day Gives the Church a Voice
 
 There is no universal Introit to expound. The Missal appoints an antiphon, ordinarily a psalm verse, the doxology where prescribed, and the repeated antiphon; Requiem and seasonal rules alter the form. Every particular Introit therefore requires its own exegesis. A lament, royal psalm, imperative, promise, or sapiential sentence cannot be replaced by the generic statement that an entrance chant expresses joy.
 
@@ -242,7 +242,7 @@ Augustine’s account of the *totus Christus* permits the Church to hear Christ 
 
 *Missal locus:* *Ordo Missae*, p. 217; *Ritus servandus* IV.2
 
-#### A Gospel Cry in Greek {#a-gospel-cry-in-greek .unnumbered}
+#### A Gospel Cry in Greek
 
 Priest and server or choir alternate three *Kyrie, eleison*, three *Christe, eleison*, and three further *Kyrie, eleison*; if no one answers, the priest says all nine. The Greek acclamation remains intact within the Latin rite. Music can extend a few words across a large span of time, but the text remains one persevering appeal rather than nine miniature prayers.
 
@@ -262,7 +262,7 @@ Gregory the Great’s October 598 letter to John of Syracuse securely describes 
 
 *Missal locus:* *Ordo Missae*, pp. 217–219
 
-#### The Angelic Song Becomes the Church’s Praise {#the-angelic-song-becomes-the-churchs-praise .unnumbered}
+#### The Angelic Song Becomes the Church’s Praise
 
 When appointed, the priest intones *Gloria in excelsis Deo*; ministers, choir, and people take their parts according to the form of Mass. The hymn is omitted where rank, season, or Mass type directs, and the order then passes from Kyrie to greeting and Collect. Its presence gives the movement an extended hymn of praise; its omission changes the scale without making the celebration defective.
 
@@ -284,7 +284,7 @@ A Greek hymn of this family is witnessed among the prayers of the fourth-century
 
 *Missal locus:* *Ordo Missae*, p. 219
 
-#### A Greeting That Opens Common Prayer {#a-greeting-that-opens-common-prayer .unnumbered}
+#### A Greeting That Opens Common Prayer
 
 The celebrant kisses the altar, turns, and says *Dominus vobiscum*. The answer *Et cum spiritu tuo* is not an appraisal of his private fervor. It receives the greeting from the minister in his liturgical office and returns it to him before he voices the Church’s appointed prayer. The altar kiss, bodily turn, exchange, and return to the Missal make the greeting a hinge between praise and presidential petition.
 
@@ -296,7 +296,7 @@ Ruth 2:4 places this greeting within a field where covenant fidelity and provid
 
 *Missal locus:* *Ordo Missae*, p. 219
 
-#### The Many Needs Compressed into a Collect {#the-many-needs-compressed-into-a-collect .unnumbered}
+#### The Many Needs Compressed into a Collect
 
 After *Oremus*, the celebrant extends his hands and says the appointed Collect and any additional orations admitted by the 1962 rules; the conclusion is ordinarily through Christ, and the answer is Amen. There is no universal Collect text. The stable form is address, presidential prayer, conclusion, and ratification. The theological accent belongs to the actual day.
 
@@ -314,7 +314,7 @@ Roman sacramentaries preserve highly formed presidential orations from many text
 
 *Missal locus:* *Ordo Missae*, p. 219; *Ritus servandus* VI; General Rubrics 473
 
-#### A Voice Serves a Received Word {#a-voice-serves-a-received-word .unnumbered}
+#### A Voice Serves a Received Word
 
 The source-title of the appointed lesson may identify an Epistle, a prophetic or sapiential book, or another scriptural witness. At Low Mass the celebrant reads it at the Missal. At Solemn Mass the subdeacon chants the lesson from the appointed place while the celebrant listens seated; after it, the celebrant returns to the Missal and reads the interlection chants rather than duplicating the subdeacon’s proper reading (*Ritus servandus* VI.4; General Rubrics 473). The response *Deo gratias* receives what has been heard as gift before the Church has resolved every difficulty it may contain.
 
@@ -332,7 +332,7 @@ Augustine’s distinction between John the Baptist as a passing voice and Christ
 
 *Missal locus:* *Ordo Missae*, p. 219
 
-#### Hearing Held in Psalmody {#hearing-held-in-psalmody .unnumbered}
+#### Hearing Held in Psalmody
 
 The Gradual does not hurry from the lesson to the Gospel. Its selected scriptural verses hold the assembly within hearing by turning biblical speech into musically extended response. The complete psalm informs the excerpt: a line taken from lament, royal prayer, wisdom, or thanksgiving keeps its original covenantal conflict and hope even as liturgical placement gives it a new relation.
 
@@ -344,7 +344,7 @@ Responsorial psalmody between readings is ancient, and *Ordo Romanus I* securely
 
 *Missal locus:* *Ordo Missae*, p. 219
 
-#### Different Temporal Forms {#different-temporal-forms .unnumbered}
+#### Different Temporal Forms
 
 ##### Alleluia is an acclamation before it is a mood.
 
@@ -362,7 +362,7 @@ Neither form can be paraphrased as one generic “Gospel acclamation.” The app
 
 *Missal locus:* *Ordo Missae*, p. 219
 
-#### Doctrine Given Poetic Duration {#doctrine-given-poetic-duration .unnumbered}
+#### Doctrine Given Poetic Duration
 
 Only appointed Masses add a Sequence. Unlike the Gradual’s selected psalmody or the Alleluia’s acclamation, a Sequence can unfold a feast’s biblical types, doctrine, petition, and eschatological hope through an extended ecclesial poem. Its allusions must be traced individually; poetic synthesis is not permission to treat every resemblance as a direct biblical quotation.
 
@@ -374,7 +374,7 @@ Textual Sequences arise in the middle of the ninth century, with Notker a princi
 
 *Missal locus:* *Ordo Missae*, p. 219; *Ritus servandus* VI
 
-#### A Mouth Cleansed and a Herald Commissioned {#a-mouth-cleansed-and-a-herald-commissioned .unnumbered}
+#### A Mouth Cleansed and a Herald Commissioned
 
 The prayer *Munda cor meum* explicitly receives Isaiah 6:1–8. In the prophet’s vision, sight of divine holiness exposes unclean lips; fire from the altar purifies; only then can the question of sending be answered. The liturgical use is direct typological adaptation. It neither identifies every circumstance of the deacon with Isaiah nor turns the medieval prayer into an apostolic formula.
 
@@ -388,7 +388,7 @@ The solemn blessing is securely rooted in the early Roman ceremonial. The long r
 
 *Missal locus:* *Ordo Missae*, p. 219; *Ritus servandus* VI; General Rubric 426
 
-#### The Gospel Goes Forth with Lights and Incense {#the-gospel-goes-forth-with-lights-and-incense .unnumbered}
+#### The Gospel Goes Forth with Lights and Incense
 
 In Solemn Mass book, deacon, candles, incense, and ministers move to the place of proclamation. At another sung Mass, General Rubric 426 permits the Gospel incensation even though the movement lacks the Solemn form’s deacon and subdeacon. At Low Mass the celebrant transfers to the Gospel side and performs the reduced form himself. The contrast is architectural. The Solemn form distributes service around the Gospel; the simpler forms concentrate the same textual purpose without pretending to possess ministries they lack.
 
@@ -400,7 +400,7 @@ Lights readily receive the Johannine confession of the Word as light (John 1:4�
 
 *Missal locus:* *Ordo Missae*, p. 219; *Ritus servandus* VI.5–6, XIII.1–2
 
-#### Hearing Answered by Veneration {#hearing-answered-by-veneration .unnumbered}
+#### Hearing Answered by Veneration
 
 The greeting and Gospel title identify the appointed evangelist; forehead, lips, and breast are signed; the pericope is proclaimed and answered with praise of Christ. According to the form of Mass, incense and candles remain with the book, and afterward the celebrant kisses it with *Per evangelica dicta*. In Masses for the dead the 1962 order omits specified blessings, lights, incense, and kiss (*Ritus servandus* XIII.1–2). The Gospel’s authority does not vary with those ceremonial omissions, but its bodily reception does.
 
@@ -420,7 +420,7 @@ A sermon may follow under *Ritus servandus* VI.6. It is subordinate exposition o
 
 *Missal locus:* *Ordo Missae*, pp. 219–220; General Rubrics 518b, 519–524
 
-#### A Corporate Singular {#a-corporate-singular .unnumbered}
+#### A Corporate Singular
 
 On days appointed by the rubrics the celebrant intones *Credo in unum Deum*; ministers, choir, and people participate according to the form of Mass. The singular verb is not private possession. Many persons receive and speak the Church’s one baptismal and conciliar confession. When the Creed is not appointed, the order passes from Gospel or sermon to the Offertory without suggesting that the faith has ceased to govern the action.
 
@@ -450,7 +450,7 @@ The Offertory is a historical palimpsest. An ancient public presentation of crea
 
 *Missal locus:* *Ordo Missae*, p. 220
 
-#### The Day’s Offering and the Bread on the Paten {#the-days-offering-and-the-bread-on-the-paten .unnumbered}
+#### The Day’s Offering and the Bread on the Paten
 
 ##### Two histories heard together.
 
@@ -474,7 +474,7 @@ Irenaeus gives the created gift its larger grammar. Christians do not bring brea
 
 *Missal locus:* *Ordo Missae*, pp. 220–221
 
-#### One Drop in the Chalice {#one-drop-in-the-chalice .unnumbered}
+#### One Drop in the Chalice
 
 Wine is poured and a small quantity of water mingled with it. Three histories meet without becoming identical. The mixed cup itself is ancient: Justin attests wine and water, and Cyprian argues from Christ’s institution while reading wine as Christ’s Blood and water as the people inseparably joined to him (Justin, *First Apology* 65; Cyprian, *Epistle* 63.2, 9, 13). The prayer beginning *Deus, qui humanae substantiae* is also ancient, but as a Christmas oration in the Leonine, Gelasian, and Gregorian traditions. Its use at the mixture is medieval, witnessed about 1030 in the *Missa Illyrica*. The chalice-offering formula developed on a third track: a ninth- or tenth-century St Gall ancestor lacks the later universal-salvation clause, while the complete received pair stands in the 1474 Missal (Muratori I, 467; Martène I, pp. 510–511; Lippe, p. 200; Jungmann II, pp. 57–64).
 
@@ -490,7 +490,7 @@ The physical inequality is eloquent. The drop does not balance the wine as an in
 
 *Missal locus:* *Ordo Missae*, p. 221
 
-#### Poverty before Sanctification {#poverty-before-sanctification .unnumbered}
+#### Poverty before Sanctification
 
 The celebrant first bows deeply for *In spiritu humilitatis*; then he raises eyes and hands for *Veni, sanctificator* and signs the gifts. The bodily reversal supplies the exposition: poverty does not sanctify itself. Contrition descends into truth; petition rises because acceptance and blessing must come from God.
 
@@ -504,7 +504,7 @@ The early-ninth-century Stowe Missal has forms of *Veni* in three other position
 
 *Missal locus:* *Ordo Missae*, p. 221; *Ritus servandus* VII; General Rubric 426
 
-#### Incense Draws a Liturgical World {#incense-draws-a-liturgical-world .unnumbered}
+#### Incense Draws a Liturgical World
 
 Offertory incense is not merely an illustration of “prayer going up.” Its route draws a map. At Solemn Mass the celebrant blesses incense, crosses and circles the gifts, incenses cross and altar, and hands the thurible to the deacon; celebrant, ministers, clergy, and people are then honored according to office. General Rubric 426 permits the prescribed incensations at any sung Mass, with the ministries adjusted to the form actually celebrated. Agent and direction change as the thurible passes. Gifts and altar stand first, but the cloud expands until the ordered human body occupies one fragrant field. Hierarchy becomes relation rather than isolation.
 
@@ -518,7 +518,7 @@ Amalarius gives the first explicit notice of offertory incensation about 832 whi
 
 *Missal locus:* *Ordo Missae*, pp. 221–222
 
-#### Hands under Judgment {#hands-under-judgment .unnumbered}
+#### Hands under Judgment
 
 The priest washes thumb and forefinger while reciting Psalm 25:6–12. Practical cleansing, especially after gifts and incense, survives as a fixed act even when no incense has been handled. The psalm refuses to let it remain practical. It asks vindication amid deceit, bribery, bloodshed, and false company; it desires the altar, loves God’s dwelling, and ends in the assembly’s praise.
 
@@ -532,7 +532,7 @@ The wash is ancient; the expanded psalm and its received placement developed ove
 
 *Missal locus:* *Ordo Missae*, p. 222
 
-#### Distinct Pronouns, One Offering {#distinct-pronouns-one-offering .unnumbered}
+#### Distinct Pronouns, One Offering
 
 Direction, sound, and pronouns govern this movement. Bowed toward the altar, the priest privately commends the prepared oblation within a Trinitarian and Paschal frame. He kisses the altar, turns bodily toward the people, and asks their prayer. The appointed response broadens the horizon from celebrant to Church and from the immediate rite to divine glory. The turn makes visible what the Offertory’s plurals have implied: quiet priestly preparation is not private ownership.
 
@@ -546,7 +546,7 @@ The prayer family is witnessed in northern French books from the ninth century a
 
 *Missal locus:* *Ordo Missae*, p. 222
 
-#### A Quiet Public Hinge {#a-quiet-public-hinge .unnumbered}
+#### A Quiet Public Hinge
 
 The Secret is an acoustic paradox. An ancient public oration over the offerings is said quietly with extended hands; its final words become audible, the appointed Amen ratifies it, and the Preface dialogue begins. The prayer is neither a hidden consecration nor a barrier between priest and assembly. Quiet speech gathers the preparation at the altar; the voiced conclusion opens it into common thanksgiving.
 
@@ -566,7 +566,7 @@ No generic exposition can say what every Secret petitions. Its address, grammar,
 
 *Missal locus:* *Ordo Missae*, p. 222 and pp. 223–298
 
-#### Hearts Lifted into the Day’s Thanksgiving {#hearts-lifted-into-the-days-thanksgiving .unnumbered}
+#### Hearts Lifted into the Day’s Thanksgiving
 
 The audible conclusion of the Secret opens directly into *Dominus vobiscum*, *Sursum corda*, and the summons to thanksgiving. The minister or choir gives each appointed response. With hands extended, the celebrant then chants or recites the Preface appointed by the Mass; he joins his hands at its conclusion. The dialogue is fixed, but the Preface is not. Season, feast, or permitted common gives thanksgiving its concrete reason.
 
@@ -586,7 +586,7 @@ The stable opening *Vere dignum et iustum est* does not flatten the calendar. Ea
 
 *Missal locus:* *Ordo Missae*, p. 222
 
-#### Earth Joins the Thrice-Holy Song {#earth-joins-the-thrice-holy-song .unnumbered}
+#### Earth Joins the Thrice-Holy Song
 
 At the Preface’s conclusion the celebrant bows with hands joined and says the threefold Sanctus, together with the confession that heaven and earth are full of divine glory and the two Hosannas. At *Benedictus* he stands erect and signs himself. In sung Mass the choir’s musical division or continuation may overlap the celebrant’s quiet progress into the Canon; the celebrant nevertheless says the complete received text before beginning *Te igitur*.
 
@@ -604,7 +604,7 @@ Psalm 117:19–29 and Matthew 21:1–11 give *Benedictus qui venit* its temple
 
 *Missal locus:* *Canon Missae*, pp. 299–312; *Ritus servandus* VIII–IX
 
-#### One Prayer Gathered around Christ’s Words {#one-prayer-gathered-around-christs-words .unnumbered}
+#### One Prayer Gathered around Christ’s Words
 
 The Canon begins with *Te igitur* and reaches its grammatical and ritual crown only in *Per ipsum, et cum ipso, et in ipso*. It is one sustained prayer to the Father through the Son, not a necklace of independent devotions. Pauses for names, changes of posture, signs over the gifts, genuflections, elevations, and the brief raising of the voice articulate the prayer without replacing its addressee or breaking its syntax. Even the institution recital belongs inside this address: Christ’s words are pronounced in his person within the Church’s prayer to the Father.
 
@@ -716,7 +716,7 @@ The Canon has offered the immaculate Victim and returned all glory to the Father
 
 *Missal locus:* *Ordo Missae*, pp. 312–317; *Ritus servandus* X.1–2
 
-#### The Son’s Prayer in the Sacrificing Church {#the-sons-prayer-in-the-sacrificing-church .unnumbered}
+#### The Son’s Prayer in the Sacrificing Church
 
 The celebrant’s *Praeceptis salutaribus moniti, et divina institutione formati, audemus dicere* identifies the warrant for what follows before he begins the complete *Pater noster*. In the 1962 arrangement he continues through *Et ne nos inducas in tentationem*; the minister or choir answers *Sed libera nos a malo*, and he supplies *Amen* quietly. The dialogic ending is significant. The prayer belongs to the whole Church, yet the liturgical roles are not collapsed into an undifferentiated common recitation.
 
@@ -732,7 +732,7 @@ The celebrant then takes the paten and continues with *Libera nos, quaesumus Dom
 
 *Missal locus:* *Ordo Missae*, pp. 316–317; *Ritus servandus* X.2
 
-#### One Host Broken, Christ Undivided {#one-host-broken-christ-undivided .unnumbered}
+#### One Host Broken, Christ Undivided
 
 Near the end of *Libera nos*, the celebrant uncovers the chalice, genuflects, and breaks the Host over it. The larger parts are reunited on the paten while a small particle remains between his fingers. The action unfolds through the stable conclusion beginning *Per eundem Dominum nostrum Iesum Christum, Filium tuum*, continuing with *Qui tecum vivit et regnat in unitate Spiritus Sancti Deus*, and reaching the audible *Per omnia saecula saeculorum* and its response *Amen*. The break is thus enclosed within the prayer’s address to the Father; it is not a dramatic representation staged apart from the oration.
 
@@ -746,7 +746,7 @@ The sensible species are divided, not Christ. He remains wholly present under ei
 
 *Missal locus:* *Ordo Missae*, p. 317; *Ritus servandus* X.2
 
-#### Peace Proclaimed over the Chalice {#peace-proclaimed-over-the-chalice .unnumbered}
+#### Peace Proclaimed over the Chalice
 
 Holding the particle over the chalice, the celebrant signs from lip to lip three times while saying *Pax Domini sit semper vobiscum*; the minister or choir responds *Et cum spiritu tuo*. Only after this exchange does he place the particle in the chalice. The printed order matters: the dialogue of peace is neither the commingling formula nor the later transmission of the pax among ministers.
 
@@ -758,7 +758,7 @@ Christ gives peace in John 14:25–31 while going to the Father and confronting
 
 *Missal locus:* *Ordo Missae*, p. 317; *Ritus servandus* X.2
 
-#### The Particle Enters the Chalice {#the-particle-enters-the-chalice .unnumbered}
+#### The Particle Enters the Chalice
 
 After *Et cum spiritu tuo*, the celebrant places the particle in the Precious Blood with the received formula *Haec commixtio, et consecratio Corporis et Sanguinis Domini nostri Iesu Christi, fiat accipientibus nobis in vitam aeternam. Amen*. He then cleans and rejoins the consecrating fingers over the chalice, covers it, and genuflects. The ceremony is complete before the *Agnus Dei* begins.
 
@@ -770,7 +770,7 @@ Earlier Roman uses of a particle, including the *fermentum*, could manifest comm
 
 *Missal locus:* *Ordo Missae*, pp. 317–318; *Ritus servandus* X.2–4
 
-#### The Lamb’s Peace Received and Handed On {#the-lambs-peace-received-and-handed-on .unnumbered}
+#### The Lamb’s Peace Received and Handed On
 
 With the chalice covered, the celebrant says the threefold *Agnus Dei, qui tollis peccata mundi*, striking his breast at *miserere nobis*, *miserere nobis*, and *dona nobis pacem*. Requiem Masses use *dona eis requiem* twice and *dona eis requiem sempiternam* the third time, and omit the breast striking. John the Baptist’s testimony in John 1:29 identifies Jesus through sacrificial removal of sin; Revelation 5:6–14 places the slain Lamb within heavenly victory and worship. These contexts hold sacrifice, mercy, and peace together without reducing the chant to an interlude before reception.
 
@@ -784,7 +784,7 @@ The quiet prayer *Domine Iesu Christe, qui dixisti Apostolis tuis: Pacem relinqu
 
 *Missal locus:* *Ordo Missae*, pp. 318–319; *Ritus servandus* X.3–4
 
-#### Two Private Preparations, Two Different Accents {#two-private-preparations-two-different-accents .unnumbered}
+#### Two Private Preparations, Two Different Accents
 
 The priest remains bowed before the sacrament for *Domine Iesu Christe, Fili Dei vivi* and *Perceptio Corporis tui, Domine Iesu Christe*. Their juxtaposition should not disguise their distinct accents or histories. The first places approach within Christ’s saving action and the priest’s need for deliverance; the second confronts the possibility that reception may fail to bear its proper fruit. These are ministerial preparations in the singular voice, not substitutes for the Church’s public Canon or for the faithful’s own disposition.
 
@@ -796,7 +796,7 @@ The priest remains bowed before the sacrament for *Domine Iesu Christe, Fili Dei
 
 *Missal locus:* *Ordo Missae*, pp. 319–321; *Ritus servandus* X.4–5
 
-#### The Priest Receives under Both Species {#the-priest-receives-under-both-species .unnumbered}
+#### The Priest Receives under Both Species
 
 After genuflecting, the priest says *Panem caelestem accipiam, et nomen Domini invocabo*. Holding the two larger parts above the paten, he strikes his breast and says three times *Domine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanabitur anima mea*. He signs himself with the Host at *Corpus Domini nostri Iesu Christi custodiat animam meam in vitam aeternam. Amen*, receives, joins his hands, and pauses. The pause after reception is one of the few places where the rubric itself makes room for unfilled attention rather than further speech.
 
@@ -812,7 +812,7 @@ The priest’s Communion is not a private possession attached to a public sacrif
 
 *Missal locus:* *Ordo Missae*, pp. 321–322; *Ritus servandus* X.6–9
 
-#### The Sacrament Offered to the Faithful {#the-sacrament-offered-to-the-faithful .unnumbered}
+#### The Sacrament Offered to the Faithful
 
 If the faithful communicate, the chalice is set safely within the corporal after the priest has received the Precious Blood. The celebrant prepares the consecrated particles, turns with one held above the ciborium or paten, and says *Ecce Agnus Dei, ecce qui tollit peccata mundi*. He then says the complete *Domine, non sum dignus* three times and distributes with *Corpus Domini nostri Iesu Christi custodiat animam tuam in vitam aeternam. Amen*. The change from *meam* at the priest’s Communion to *tuam* at distribution marks a genuine change of addressee.
 
@@ -826,7 +826,7 @@ Distribution itself is ancient. Justin describes the Eucharist being given and c
 
 *Missal locus:* *Ordo Missae*, p. 322; *Ritus servandus* X.5, 7
 
-#### Reverence after Reception {#reverence-after-reception .unnumbered}
+#### Reverence after Reception
 
 After the last person has communicated, the celebrant returns any remaining particles, gathers fragments, and only then begins the ablutions. After priestly Communion without distribution, the same stable sequence follows immediately. He says *Quod ore sumpsimus, Domine, pura mente capiamus: et de munere temporali fiat nobis remedium sempiternum* as wine is poured into the chalice. Wine and water then wash the joined fingers over the chalice while he says *Corpus tuum, Domine, quod sumpsi, et Sanguis, quem potavi, adhaereat visceribus meis*. He consumes the ablutions, dries and arrays the vessels, and returns the veiled chalice to the altar.
 
@@ -840,7 +840,7 @@ The prayers’ ancestry differs from their received private placement. *Quod ore
 
 *Missal locus:* *Ordo Missae*, pp. 322–323; *Ritus servandus* XI
 
-#### The Day Interprets the Communion It Has Received {#the-day-interprets-the-communion-it-has-received .unnumbered}
+#### The Day Interprets the Communion It Has Received
 
 Once purified, the celebrant reads the appointed Communion antiphon. He returns to the center, kisses the altar, and exchanges *Dominus vobiscum* and *Et cum spiritu tuo*; at the Missal, *Oremus* opens the appointed Postcommunion prayer or prayers, to which the response is *Amen*. In sung Mass the antiphon belongs to the choir’s Communion action even while the complete-Missal presentation assigns its recitation to the celebrant. *Ordo Romanus I*, nos. 20–21, already witnesses Communion psalmody followed by prayer after Communion (Andrieu II, pp. 103–107; PL 78:947–948A).
 
@@ -854,7 +854,7 @@ The order from antiphon to oration prevents sacramental fruit from being reduced
 
 *Missal locus:* *Ordo Missae*, p. 323; *Ritus servandus* XII.1; General Rubric 507
 
-#### The Celebration Is Released {#the-celebration-is-released .unnumbered}
+#### The Celebration Is Released
 
 The celebrant returns to the center, kisses the altar, and exchanges the final *Dominus vobiscum* and *Et cum spiritu tuo*. The ordinary form is *Ite, missa est* with *Deo gratias*; in temporal Masses within the Easter octave, both receive a double *Alleluia*. General Rubric 507a appoints *Benedicamus Domino* when a procession follows; Maundy Thursday also uses it before the solemn reposition. Requiem Mass uses *Requiescant in pace* with the response *Amen*. These are true rubrical alternatives, not ornamental variations on one English slogan.
 
@@ -868,7 +868,7 @@ The celebrant returns to the center, kisses the altar, and exchanges the final *
 
 *Missal locus:* *Ordo Missae*, pp. 325–326; *Ritus servandus* XII.1
 
-#### The Priest’s Service Submitted to Judgment {#the-priests-service-submitted-to-judgment .unnumbered}
+#### The Priest’s Service Submitted to Judgment
 
 Facing the altar and deeply bowed, the priest says *Placeat tibi, sancta Trinitas, obsequium servitutis meae*. This private conclusion turns away from any assumption that exact performance certifies its own acceptance. The Mass’s sacramental efficacy rests on Christ, while the minister still submits his service to divine mercy. That distinction preserves both objective sacramental action and personal accountability without making the prayer a second offertory or Canon.
 
@@ -880,7 +880,7 @@ Exact *Placeat* witnesses occur in ninth-century Amiens and Le Mans books, follo
 
 *Missal locus:* *Ordo Missae*, p. 326; *Ritus servandus* XII.1; General Rubric 508
 
-#### Beneath the Returning Sign of the Cross {#beneath-the-returning-sign-of-the-cross .unnumbered}
+#### Beneath the Returning Sign of the Cross
 
 After *Placeat*, the priest kisses the altar, raises and joins his hands, and begins *Benedicat vos omnipotens Deus*. Turning to the people, he blesses them with *Pater, et Filius, et Spiritus Sanctus*; the response is *Amen*. General Rubric 508 omits the blessing after *Benedicamus Domino* or *Requiescant in pace*. Its normal presence must therefore not be made a condition for the validity or integrity of the Eucharistic sacrifice.
 
@@ -894,7 +894,7 @@ The opening Trinitarian sign now returns as an act bestowed on the people. This 
 
 *Missal locus:* *Ordo Missae*, pp. 326–328; *Ritus servandus* XII.2–8; General Rubrics 509–510
 
-#### Incarnation after Communion {#incarnation-after-communion .unnumbered}
+#### Incarnation after Communion
 
 At the Gospel side the celebrant again exchanges *Dominus vobiscum* and *Et cum spiritu tuo*. While announcing *Initium sancti Evangelii secundum Ioannem*, he signs the altar or book and then his forehead, lips, and breast; the response *Gloria tibi, Domine* follows, and the normal text begins *In principio erat Verbum*. He genuflects at *Et Verbum caro factum est*, and the response at the end is *Deo gratias*. General Rubric 509 appoints a proper Last Gospel for Palm Sunday Masses not following the blessing and procession of branches. General Rubric 510 omits the Last Gospel whenever *Benedicamus Domino* was said under General Rubric 507a—including the evening Mass of the Lord’s Supper before solemn reposition—and also at the third Mass of Christmas, the Palm Sunday procession Mass, the Easter Vigil, the specified Requiem Masses followed by absolution over the *tumulum*, and the specified consecration Masses.
 
@@ -1072,13 +1072,13 @@ The Leonine prayers illustrate why the history of a liturgical book and the hist
 >
 > The deepest continuity is neither numerical nor verbal identity at every stage. It is the Church gathered on the Lord’s Day; instructed by apostolic and prophetic word; interceding; offering bread and wine with thanksgiving; doing what Christ commanded in his memorial; receiving his Body and Blood; and being formed as one body for holiness and mission. The Roman tradition embodies that continuity through a particular, genuinely developed order.
 
-## After the Mass: The Leonine Prayers {#after-the-mass-the-leonine-prayers .unnumbered}
+## After the Mass: The Leonine Prayers
 
 > **Boundary before interpretation**
 >
 > The Leonine prayers are not a concluding movement of Mass. In its ordinary printed sequence the 1962 typical Missal’s *Ordo Missae* ends on page 328 with the Last Gospel, normally John 1:1–14, and *R. Deo gratias*; General Rubric 510 nevertheless omits the Last Gospel in several listed cases. The prayers below were imposed by external law *after* Masses within their scope. An 1887 response required them to follow immediately when the Last Gospel had been completed, but that wording must not be converted into proof that the annex applied identically to every 1962 Last-Gospel exception. They were historically adjacent and obligatory within their juridical scope without becoming part of the Eucharistic sacrifice or the Missal’s Order.
 
-### The received post-Mass sequence {#the-received-post-mass-sequence .unnumbered}
+### The received post-Mass sequence
 
 The form commonly encountered at the 1962 horizon began with three *Ave Maria*, continued with the *Salve Regina*, its versicle *Ora pro nobis, sancta Dei Genetrix* and response, and a collect beginning *Deus, refugium nostrum et virtus*. It then included the short prayer *Sancte Michael Archangele, defende nos in proelio*, asking the archangel’s defense against the devil’s wickedness and snares. The invocation *Cor Iesu Sacratissimum, miserere nobis* was also customarily appended three times under the discipline explained below.
 
@@ -1086,7 +1086,7 @@ This outline identifies the received sequence without pretending that every elem
 
 The prayer’s ordinary bodily grammar was kneeling. This posture did not extend the Canon’s sacrificial action or add another liturgical climax. It marked supplication after the dismissal: the Church that had received blessing remained conscious of conflict, sin, persecution, and the need for protection as she returned to the world.
 
-### From a threatened temporal order to universal supplication {#from-a-threatened-temporal-order-to-universal-supplication .unnumbered}
+### From a threatened temporal order to universal supplication
 
 The Sacred Congregation of Rites decree *Iam inde ab anno*, dated 6 January 1884, looked back to an 1859 prescription of Pius IX for churches in the Papal territory during grave circumstances. That retrospective report is secure evidence for the antecedent; it is not a warrant to reconstruct the exact 1859 formulary without the original act.
 
@@ -1096,7 +1096,7 @@ The 1884 sequence comprised three Hail Marys, the *Salve Regina*, versicle and r
 
 An 1887 response of the Sacred Congregation of Rites supplies an especially important boundary. Asked whether another rite could intervene, it answered that the prayers were to be recited *immediate expleto ultimo Evangelio*—immediately when the Last Gospel had been completed (*Acta Sanctae Sedis* 23 \[1890–91\], 128–129). “Completed” and “immediately” belong together: the Mass had ended, and the annex was nevertheless not to be casually displaced. The response states the normal Last-Gospel branch; it does not by itself resolve every later Mass in which General Rubric 510 omits that Gospel.
 
-### Mary, Michael, and the Sacred Heart {#mary-michael-and-the-sacred-heart .unnumbered}
+### Mary, Michael, and the Sacred Heart
 
 The Marian sequence is not a rival epilogue to Christ’s sacrifice. Gabriel’s greeting and Elizabeth’s blessing in Luke 1:26–45 confess what grace has done in Mary and name the fruit of her womb; the *Salve Regina* addresses the Mother of Mercy as an intercessor who shows exiles Jesus, the blessed fruit. Her mediation is maternal, participatory, and wholly subordinate to the one mediation of Christ (1 Tim. 2:5; *Lumen gentium* 60–62). Coming after Communion and mission, the prayer asks the foremost member of the redeemed Church to aid pilgrims in living from the Son they have received.
 
@@ -1104,7 +1104,7 @@ Saint Michael’s biblical setting is conflict under divine sovereignty. Daniel�
 
 On 17 June 1904 an act of the Sacred Congregation of Indulgences and Sacred Relics permitted the invocation *Cor Iesu Sacratissimum, miserere nobis* to be added three times to the prayers and attached an indulgence to its threefold recitation (*Acta Sanctae Sedis* 36 \[1903–04\], 750). The same dicastery’s declaration of 19 August stated that an obligation in the proper sense had not been imposed by Pius X; he desired uniformity and priests were to be encouraged to recite it (*Acta Sanctae Sedis* 37 \[1904–05\], 125–126). It is therefore inaccurate to flatten an indulgenced and strongly encouraged threefold practice, a local command, and universal precept into the assertion that Pius X universally made the invocation obligatory. The Sacred Heart turns the final plea to the incarnate charity symbolized by the pierced side (John 19:34–37): spiritual combat is governed by the love of the Lamb, not fascination with demonic power.
 
-### The intention for Russia {#the-intention-for-russia .unnumbered}
+### The intention for Russia
 
 On 30 June 1930 Pius XI’s allocution *Indictam ante* redirected the existing prayers to a named emergency. He asked that Christ restore tranquility and the freedom to profess the faith to the afflicted children of Russia, and directed Latin priests throughout the world to say the prayers after Mass *ad hanc ipsam mentem, scilicet pro Russia*—for this intention, namely for Russia (AAS 22 \[1930\], 301). On 11 July the Pontifical Commission for Russia exhorted the non-Latin priests under its authority to commend the same intention during the Divine Liturgy and prescribed additions to the Great Litany and the prayer after the ambo (AAS 22 \[1930\], 366). That was an analogous Eastern implementation, not the source of the already worldwide Latin direction.
 
@@ -1112,7 +1112,7 @@ Later speech often compresses this history into “for the conversion of Russia.
 
 This redirection also reveals the prayers’ catholic reach. A short devotion after local celebrations made the persecution of distant Christians an object of persevering common petition. First Timothy 2:1–6 places intercession for public order beneath God’s will to save and Christ’s unique mediation. The prayers did not claim a sacramental change in Russia; they exercised the Church’s real but dependent agency by asking omnipotent providence for conversion, liberty, endurance, and peace.
 
-### What was true in 1962 {#what-was-true-in-1962 .unnumbered}
+### What was true in 1962
 
 Three propositions must be held together. First, the typical Missal’s *Ordo Missae* did not print the Leonine prayers and ordinarily ended with the Last Gospel. Second, the external universal prescription had not yet been suppressed, so the prayers remained part of the discipline surrounding Masses within its scope in 1962. Third, the Sacred Congregation of Rites’ decree of 9 March 1960, approved by John XXIII, supplied controlling exceptions current at that horizon (AAS 52 \[1960\], 360).
 
@@ -1120,13 +1120,13 @@ That decree permitted omission after a Nuptial Mass or a Mass for First Communio
 
 This distinction between text and law is ordinary Catholic reasoning. A Missal governs the rite it prints; competent authority can also attach an observance before or after that rite and specify its exceptions. The attached act may be obligatory without becoming sacramental matter, Eucharistic prayer, or an intrinsic condition of a valid Mass. Conversely, absence from the printed *Ordo* did not make the 1962 obligation imaginary. Edition history and juridical history intersect without becoming identical.
 
-### Suppression: promulgation and effective date {#suppression-promulgation-and-effective-date .unnumbered}
+### Suppression: promulgation and effective date
 
 The instruction *Inter Oecumenici*, promulgated 26 September 1964, stated at no. 48(j): *Ultimum Evangelium omittitur; preces Leonianae supprimuntur*—the Last Gospel is omitted; the Leonine prayers are suppressed (AAS 56 \[1964\], 888). The same instruction’s concluding norm made its provisions effective on 7 March 1965, the First Sunday of Lent. The accurate chronology is therefore promulgation in 1964 and operative suppression in 1965.
 
 Suppression ended the juridical prescription; it did not condemn the Hail Mary, *Salve Regina*, Saint Michael prayer, Sacred Heart devotion, or prayer for persecuted Christians. Neither does the former obligation determine every present disciplinary question. Voluntary devotional use after Mass, where otherwise lawful and pastorally ordered, is a question distinct from claiming that the suppressed universal rule still binds.
 
-### Two historical safeguards {#two-historical-safeguards .unnumbered}
+### Two historical safeguards
 
 First, no contemporary primary evidence located in this audit supports the popular story that Leo XIII composed the short Saint Michael prayer after hearing a post-Mass dialogue between God and Satan or receiving a precisely dated vision. Versions of the story conflict about date and content and appear in much later testimony. The prayer’s sound doctrine does not need a legend to authenticate it, and historical piety is served by truth rather than an edifying invention.
 

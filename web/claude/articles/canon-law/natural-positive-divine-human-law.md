@@ -519,7 +519,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 All web sources were fetched over HTTPS, hashed (SHA-256), and read on 2026-07-25; the exact response hashes and the retained artifacts are recorded in the repository’s source library and this leaf’s `research/` records. Official texts remain under their own rights.
 
-### Law {#law .unnumbered}
+### Law
 
 -   *Codex Iuris Canonici* (1983), Latin: Holy See web deliveries, one page per book, <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberI_la.html> through `cic_liberVII_la.html`. English: Holy See web deliveries by canon range under <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/>. Canons quoted: 1, 6, 11, 17, 19, 22, 23–28, 85–93, 98, 113, 129, 145, 199, 207, 375, 748, 750, 751, 1008, 1059, 1075, 1084, 1163, 1165, 1249, 1290, 1315, 1399.
 
@@ -527,7 +527,7 @@ All web sources were fetched over HTTPS, hashed (SHA-256), and read on 2026-07-2
 
 -   Francis, apostolic constitution *Pascite gregem Dei* (23 May 2021), English: <https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20210523_pascite-gregem-dei.html>.
 
-### Classical sources {#classical-sources .unnumbered}
+### Classical sources
 
 -   Isidore of Seville, *Etymologiarum sive Originum libri XX*, ed. W. M. Lindsay, vol. 1 (Oxford: Clarendon Press, 1911); scan of the University of Toronto exemplar, Internet Archive item `isidori01isiduoft`; Book V chapters ii–vi and xxi read at retained page images (leaves 192, 193, 196), IIIF service <https://iiif.archive.org/iiif/>.
 
@@ -535,7 +535,7 @@ All web sources were fetched over HTTPS, hashed (SHA-256), and read on 2026-07-2
 
 -   Thomas Aquinas, *Summa theologiae* I-II qq. 90–97. Latin: Corpus Thomisticum (site presents the Leonine text), pages `sth2090`, `sth2093`, `sth2094`, and `sth2095` under <https://www.corpusthomisticum.org/>. English: Fathers of the English Dominican Province translation, New Advent, pages `2090.htm` through `2097.htm` under <https://www.newadvent.org/summa/>.
 
-### Magisterial teaching {#magisterial-teaching .unnumbered}
+### Magisterial teaching
 
 -   *Catechism of the Catholic Church* 1954–1960. English: <https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/i_the_natural_moral_law.html>; Latin (typical-edition text): <https://www.vatican.va/archive/catechism_lt/p3s1c3a1_lt.htm>.
 
@@ -544,7 +544,7 @@ All web sources were fetched over HTTPS, hashed (SHA-256), and read on 2026-07-2
 
 -   Second Vatican Council, declaration *Dignitatis humanae* (7 December 1965), n. 3, English: <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html>.
 
-### Reported literature (not consulted at source) {#reported-literature-not-consulted-at-source .unnumbered}
+### Reported literature (not consulted at source)
 
 -   G. Grisez, “The First Principle of Practical Reason: A Commentary on the *Summa theologiae*, 1-2, Question 94, Article 2,” *Natural Law Forum* 10 (1965) 168–201; J. Finnis, *Natural Law and Natural Rights* (Oxford: Clarendon Press, 1980); R. Hittinger, *A Critique of the New Natural Law Theory* (Notre Dame, 1987); R. McInerny, *Aquinas on Human Action* (Washington, 1992). Cited only as the named positions in the reported debate of section 12.
 

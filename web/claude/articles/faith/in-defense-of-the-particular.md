@@ -787,11 +787,11 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 ## References
 
-### Sacred Scripture {#sacred-scripture .unnumbered}
+### Sacred Scripture
 
 -   Genesis 12:1–3; 17:4–7; 25:23; 28:13–14; Deuteronomy 7:6–8; 10:14–19; Isaiah 49:1–7; Amos 9:7–8; Matthew 1:1–16; 13:54–57; Mark 6:1–6; Luke 2:1–2; 3:1–2, 23–38; John 1:14, 45–46; 21:9–15; Galatians 4:4–5; Ephesians 4:4–6; 1 Corinthians 1:22–25; Apocalypse 2:17. Quoted from the public-domain Douay–Rheims translation (Challoner revision). Wording was checked at the [online Douay–Rheims text](https://drbo.org/) on 24–25 July 2026 and re-verified on 26 July 2026 against the registered edition held in this repository’s provider-neutral source library—the Challoner revision in the Project Gutenberg electronic edition (ebook 1581), read in its tracked verse-per-line derivative. Every verse quoted in this article matched that registered text except Genesis 12:3, where the registered edition preserves an older Challoner reading (“all the kindreds of the earth”) against the settled reading of the 1899 and 1914 American edition that drbo.org reproduces (“all the kindred of the earth”); the article now prints the registered reading and reports the divergence at its own locus. Chapter and verse numbers are the Vulgate ones. The translation is an identified working witness, not a critical edition.
 
-### Conciliar, catechetical, and dicasterial texts {#conciliar-catechetical-and-dicasterial-texts .unnumbered}
+### Conciliar, catechetical, and dicasterial texts
 
 -   Second Vatican Council, pastoral constitution *Gaudium et spes* (7 December 1965), 22, on the Incarnation and the Son’s union “in some fashion with every man”; [official English translation, vatican.va](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html).
 
@@ -799,7 +799,7 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 -   Congregation for the Doctrine of the Faith, declaration *Dominus Iesus* on the unicity and salvific universality of Jesus Christ and the Church (6 August 2000), 2, 4, 6, 9–10, 13–15, 20–22; ratified and confirmed by John Paul II and ordered published; [official English text, vatican.va](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html).
 
-### Patristic witnesses {#patristic-witnesses .unnumbered}
+### Patristic witnesses
 
 -   Origen, *Contra Celsum* IV.3–7, 14, 23, 99; V.25–26, 41–42; VI.78–79, preserving Celsus’s mockery of particular providence, his doctrine of the whole, his superintendent theory of national cults, his attack on Jewish election, and his one-corner objection, with Origen’s replies; Frederick Crombie’s public-domain Ante-Nicene Fathers translation, [Book IV](https://www.newadvent.org/fathers/04164.htm), [Book V](https://www.newadvent.org/fathers/04165.htm), and [Book VI](https://www.newadvent.org/fathers/04166.htm) at the New Advent transcription.
 
@@ -809,7 +809,7 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 -   St. Leo the Great, *Sermo* 74 (De ascensione II), 2, on the visible Redeemer passing into sacramental presence; Charles Lett Feltoe’s public-domain NPNF translation, [online witness](https://www.newadvent.org/fathers/360374.htm).
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   St. Thomas Aquinas, *Summa theologiae* I, q. 3, aa. 5 and 8 (God in no genus, no composition); q. 8, a. 1 (God innermostly in all things as giver of being); q. 14, a. 11 (knowledge of singulars); q. 22, a. 2 (providence over individuals); q. 29, aa. 1 and 3 (the person; “what is most perfect in all nature,” with its analogical qualification); q. 50, a. 4 (individuation applied to the angels); q. 86, a. 1 (the finite intellect and the singular); III, q. 1, a. 1 (fittingness of the Incarnation); q. 4, aa. 4–5 (the assumption’s individual term); q. 60, aa. 2, 4–6 (sensible, divinely determined signs; words joined to elements in conformity with the Incarnation); q. 61, a. 1 (the necessity of sacraments); q. 75, a. 1 and q. 76, a. 3 (fittingness of the real presence; the whole under every part).
 
@@ -817,7 +817,7 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 -   English *Summa* loci checked in the public-domain English Dominican translation at the [New Advent Summa](https://www.newadvent.org/summa/); the Latin of III, q. 1, a. 1 checked at the [Corpus Thomisticum](https://www.corpusthomisticum.org/). Work, part, question, and article take precedence over either site’s typesetting.
 
-### Objection tradition {#objection-tradition .unnumbered}
+### Objection tradition
 
 -   Baruch Spinoza, *Tractatus theologico-politicus* (1670), ch. 3, on the vocation of the Hebrews; R. H. M. Elwes’s public-domain English translation (1883), [Project Gutenberg edition](https://www.gutenberg.org/ebooks/989).
 
@@ -827,7 +827,7 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 -   John Hick’s pluralist hypothesis and the surrounding debate, engaged at a stated reported ceiling via David Basinger, “Religious Diversity (Pluralism),” *Stanford Encyclopedia of Philosophy* (substantive revision 21 February 2025); [entry page](https://plato.stanford.edu/entries/religious-pluralism/). Hick’s works (as cited by that entry: 1983; 1984; 2004) identified bibliographically, not collated.
 
-### The metaphysical front {#the-metaphysical-front .unnumbered}
+### The metaphysical front
 
 -   Plato, *Phaedo* 74a–75b (sensible equals falling short of equality itself) and *Republic* V, 475d–480a (the lovers of sights and sounds; knowledge, opinion, and what lies between being and not-being); Benjamin Jowett’s public-domain English translation (3rd ed., Oxford, 1892), downloaded whole and read 26 July 2026 in the Project Gutenberg texts, [ebook 1658 (Phaedo)](https://www.gutenberg.org/cache/epub/1658/pg1658.txt) and [ebook 1497 (Republic)](https://www.gutenberg.org/files/1497/1497-0.txt). Stephanus numbers are supplied from the standard divisions and are not printed in the witness read.
 
@@ -837,7 +837,7 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 -   William of Ockham on universals and ontological parsimony: reported at a stated secondary-witness ceiling from the *Stanford Encyclopedia of Philosophy* entry “William of Ockham” (substantive revision 11 September 2024), [entry page](https://plato.stanford.edu/entries/ockham/), read 26 July 2026. No text of Ockham was collated.
 
-### The historical front {#the-historical-front .unnumbered}
+### The historical front
 
 -   David Friedrich Strauss, *The Life of Jesus Critically Examined*, trans. George Eliot, Concluding Dissertation § 151, pp. 779–780 (the Idea not lavishing its fulness on one exemplar; an idea in place of an individual); read 26 July 2026 in two public-domain scans of the Eliot translation at the Internet Archive, items `lifejesuscritic00pflegoog` (London, 1892) and `lifeofjesuscriti00straiala` (1902), which agree word for word. Strauss’s German original was not collated.
 
@@ -849,7 +849,7 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 -   Lessing’s essay is listed under the objection tradition above; the whole text was downloaded from the Lachmann–Muncker scan and read on 26 July 2026, and pp. 3, 4, 5, and 7 supply the quotations used in the historical front.
 
-### The cosmic front {#the-cosmic-front .unnumbered}
+### The cosmic front
 
 -   Thomas Paine, *The Age of Reason* (1794–95), part I, chs. XIII and XVI, on the plurality of worlds and its application to the Christian system; public-domain text in *The Writings of Thomas Paine*, [Project Gutenberg ebook 31270](https://www.gutenberg.org/cache/epub/31270/pg31270.txt), downloaded and read 26 July 2026.
 
@@ -859,13 +859,13 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 -   The contemporary evidential form of the scale objection is stated in this article’s own words as a reconstruction; no modern author is quoted or paraphrased for it, and none is cited.
 
-### Magisterial texts on religious pluralism {#magisterial-texts-on-religious-pluralism .unnumbered}
+### Magisterial texts on religious pluralism
 
 -   John Paul II, encyclical *Redemptoris missio* (7 December 1990), nos. 5–6 (Christ the one mediator; no separation between the Word and Jesus Christ; participated mediations neither parallel nor complementary), 28–29 (the Spirit’s universal presence and activity; the seeds of the Word), and 55–56 (dialogue within the Church’s evangelizing mission); [official English text, vatican.va](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_07121990_redemptoris-missio.html), downloaded whole and read 26 July 2026.
 
 -   Congregation for the Doctrine of the Faith, *Notification on the book* “Toward a Christian Theology of Religious Pluralism” *by Father Jacques Dupuis, S.J.* (24 January 2001), propositions 1–5; [official English text, vatican.va](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20010124_dupuis_en.html), downloaded whole and read 26 July 2026. The book itself was not read and no assessment of it is made.
 
-### Secondary witnesses at stated ceilings {#secondary-witnesses-at-stated-ceilings .unnumbered}
+### Secondary witnesses at stated ceilings
 
 -   Thomas Williams, “John Duns Scotus,” *Stanford Encyclopedia of Philosophy* (substantive revision 15 December 2025), for the reported account of the common nature and *haecceitas*, with *Ordinatio* II, d. 3, pars 1, qq. 1–6 as the primary locus it identifies; [entry page](https://plato.stanford.edu/entries/duns-scotus/). Scotus not collated.
 

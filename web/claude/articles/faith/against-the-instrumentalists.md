@@ -329,11 +329,11 @@ All online witnesses were checked on 2026-07-24 or 2026-07-25; no mutable law or
 
 ## References
 
-### Sacred Scripture {#sacred-scripture .unnumbered}
+### Sacred Scripture
 
 -   Wisdom 13:1–9 and Romans 1:19–20, quoted from the Douay–Rheims translation (Challoner revision; public domain); working web witness checked 2026-07-24 at [drbo.org (Wisdom 13)](https://drbo.org/chapter/25013.htm) and [drbo.org (Romans 1)](https://drbo.org/chapter/52001.htm).
 
-### Authoritative Catholic witnesses {#authoritative-catholic-witnesses .unnumbered}
+### Authoritative Catholic witnesses
 
 -   First Vatican Council, dogmatic constitution *Dei Filius* (24 April 1870), ch. 2 *De revelatione* with canon 1 on revelation; canons on God no. 2 (materialism); and ch. 4 *De fide et ratione* (the two orders, the mutual-aid sentence, the just liberty of the sciences); Holy See Latin text, [vatican.va](https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html), checked 2026-07-24 and 2026-07-25. English glosses of the canons and ch. 4 passages are labeled working glosses by this essay; the Latin governs.
 
@@ -341,11 +341,11 @@ All online witnesses were checked on 2026-07-24 or 2026-07-25; no mutable law or
 
 -   John Paul II, encyclical *Fides et ratio* (14 September 1998), nos. 67 (fundamental theology and the naturally knowable truths; “truly propaedeutic path to faith”), 83 (philosophy of genuinely metaphysical range), and 88 (scientism); [official English](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html), checked 2026-07-24 (nos. 83, 88) and 2026-07-25 (no. 67).
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   Thomas Aquinas, *Summa theologiae* I, q. 2, a. 2 (demonstration *quia* of God’s existence from effects; ad 1, the *praeambula fidei*); I, q. 2, a. 3 (objections 1–2 and the opening of the corpus, quoted for the tradition’s method; the five ways themselves outside scope); and I, q. 12, a. 12 (sense-origin, reach, and limits of natural knowledge of God). Latin checked 2026-07-24 and 2026-07-25 in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) online corpus; English from the public-domain translation of the Fathers of the English Dominican Province via [New Advent (q. 2)](https://www.newadvent.org/summa/1002.htm) and [New Advent (q. 12)](https://www.newadvent.org/summa/1012.htm). Work, question, article, and division govern over either site’s presentation.
 
-### Positivist and empiricist primary texts {#positivist-and-empiricist-primary-texts .unnumbered}
+### Positivist and empiricist primary texts
 
 -   David Hume, *An Enquiry Concerning Human Understanding* (1748), sect. IV (induction) and sect. XII, part III (the closing paragraph, E 12.34; SBN 165); public domain; critical web text checked 2026-07-24 at [davidhume.org](https://davidhume.org/texts/e/12).
 
@@ -357,7 +357,7 @@ All online witnesses were checked on 2026-07-24 or 2026-07-25; no mutable law or
 
 -   W. V. Quine, “Two Dogmas of Empiricism,” *Philosophical Review* 60 (1951): 20–43; revised in *From a Logical Point of View* (Cambridge, Mass.: Harvard University Press, 1953). In copyright; quoted minimally under fair-quotation practice. Wording checked 2026-07-25 at the web transcription edited by Andrew Chrucky, [ditext.com](https://www.ditext.com/quine/quine.html), which marks the 1951 and 1961 readings; the transcription is a wording-check witness only, and the printed text governs.
 
-### Demarcation and philosophy-of-science scholarship {#demarcation-and-philosophy-of-science-scholarship .unnumbered}
+### Demarcation and philosophy-of-science scholarship
 
 -   Karl R. Popper, *Logik der Forschung* (Vienna: Springer, imprinted 1935, issued 1934), translated as *The Logic of Scientific Discovery* (London: Hutchinson, 1959); cited bibliographically, not collated. “Science: Conjectures and Refutations” (1953 lecture), ch. 1 of *Conjectures and Refutations: The Growth of Scientific Knowledge* (London: Routledge & Kegan Paul, 1963); in copyright, quoted briefly; wording checked 2026-07-25 at an unofficial [web transcription](https://emilkirkegaard.dk/en/wp-content/uploads/Karl-Popper-SCIENCE-CONJECTURES-AND-REFUTATIONS.pdf) used as a wording-check witness only; no printed edition was collated, and the printed text governs.
 
@@ -373,7 +373,7 @@ All online witnesses were checked on 2026-07-24 or 2026-07-25; no mutable law or
 
 -   Stephen Thornton, “Karl Popper,” *Stanford Encyclopedia of Philosophy* (substantive revision 12 September 2022), [plato.stanford.edu](https://plato.stanford.edu/entries/popper/), checked 2026-07-25, for the publication history of *Logik der Forschung* and the standard account and criticisms of the demarcation criterion.
 
-### Contemporary scientism exhibits {#contemporary-scientism-exhibits .unnumbered}
+### Contemporary scientism exhibits
 
 -   Stephen Hawking and Leonard Mlodinow, *The Grand Design* (New York: Bantam, 2010), p. 5 (“philosophy is dead”); in copyright, not collated; the sentence and page locus checked 2026-07-25 at the named study-page witness of C. R. Nave, [HyperPhysics (Georgia State University)](http://hyperphysics.gsu.edu/Nave-html/Faithpathh/GrandDesign.html).
 

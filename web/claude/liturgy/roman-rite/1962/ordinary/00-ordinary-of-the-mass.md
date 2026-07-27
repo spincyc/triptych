@@ -35,7 +35,7 @@ Second, the **interruption**. The Canon is not printed inside the *Ordo Missae*;
 
 Third, the **typographic hierarchy**. Prayer text is set in a roman face; rubrics are interleaved with it in italic, often mid-sentence, so that *Qui pridie quam pateretur* is broken by the direction to take the host into the hands. Two sentences alone are set larger, centred, and free of interleaved rubric: the form over the bread at number 1102 and the form over the chalice at number 1104. The book’s own layout thus makes a judgment about what the Canon is for, and it makes that judgment before a word of commentary is written.
 
-### How this study reads the Ordinary {#how-this-study-reads-the-ordinary .unnumbered}
+### How this study reads the Ordinary
 
 The exposition follows the rite in order. For each received unit it asks four questions, in this order and with unequal weight according to what the unit deserves: what does the 1962 book print; what does its rubric require; where does the text come from; and what does it say. Where the fourth question can be answered only by a close reading of the Latin — most of all in the Canon — that reading is given at length. Where a unit is short, or where its history is better attested than its meaning is disputed, the treatment is short. Nothing here forces the *Lavabo* and the *Qui pridie* into the same dossier.
 
@@ -55,7 +55,7 @@ The exposition follows the rite in order. For each received unit it asks four qu
 
 8.  **Dismissal and last Gospel** (1132–1139): *Ite missa est*, *Placeat*, blessing, John 1.
 
-### A note on the Latin printed here, and on the English {#a-note-on-the-latin-printed-here-and-on-the-english .unnumbered}
+### A note on the Latin printed here, and on the English
 
 The missal prints *ae* and *oe* as ligatures and marks the tonic accent on longer words as a pronunciation aid. This study prints the digraphs and omits the accents. That is an orthographic normalisation of presentation only; no word, form or word order has been altered, and each block was collated against the facsimile page after being set. Where the 1962 spelling itself differs from an earlier printed usage — *Genetricis* for *Genitricis*, *neglegentiis* for *negligentiis*, *exspecto* for *expecto*, *cotidianum* for *quotidianum* — the difference is a fact about the edition and is reported where it occurs.
 
@@ -75,7 +75,7 @@ The 1962 *Ordo Missae* opens with the priest already vested and already at the a
 >
 > (Ministri respondent:)* Ad Deum qui laetificat iuventutem meam.*
 
-### The psalm and its condition {#the-psalm-and-its-condition .unnumbered}
+### The psalm and its condition
 
 What follows is Psalm 42, verses 1 to 5, said alternately with the ministers, with *Gloria Patri* and the antiphon repeated. The missal prints the alternation with the letters *S.* and *M.* — *sacerdos* and *minister* — and it prints the psalm reference in the margin, *Ps. 42, 1-5*, in the Vulgate numbering that the Douay-Rheims Bible also uses.
 
@@ -107,7 +107,7 @@ The psalm is the reason the rite has its shape. Its speaker is a man barred from
 
 The omission of the psalm in Passiontide and at Requiems is the rite’s own commentary on it. The psalm asks for light and truth to lead the speaker to the holy mountain; from Passion Sunday the Church has already begun to keep silence about that leading, and at a Requiem the light asked for is asked in the introit instead. The omission is not a shortening for convenience — the *Gloria Patri* disappears with the psalm at exactly the same seasons at which it disappears from the *Lavabo* later in the same Mass.
 
-### The confession {#the-confession .unnumbered}
+### The confession
 
 > **1016–1017 ⋅ *Adiutorium* and the *Confiteor***
 >
@@ -123,7 +123,7 @@ The *Confiteor* as the 1962 book prints it is a fixed list: God, then the Virgin
 
 The threefold *mea culpa* with the striking of the breast is printed as a rubric inside the prayer, not before it: the missal will not let the gesture float free of the words it accompanies. The same technique reappears throughout the Canon, and it is worth naming now, because it is the single most characteristic feature of how this book is set. A rubric interleaved mid-sentence is a rubric that cannot be performed at the wrong moment.
 
-### Absolution, versicles, ascent {#absolution-versicles-ascent .unnumbered}
+### Absolution, versicles, ascent
 
 > **1018–1021 ⋅ *Misereatur*, *Indulgentiam*, versicles**
 >
@@ -165,7 +165,7 @@ The kiss of the altar is printed inside the prayer, at the exact clause *quorum 
 
 ## Introit, Kyrie, Gloria (nn. 1024–1025)
 
-### The introit: a proper in an ordinary study {#the-introit-a-proper-in-an-ordinary-study .unnumbered}
+### The introit: a proper in an ordinary study
 
 The introit is proper and therefore has no text in the *Ordo Missae*; the book gives only the direction that the celebrant, signing himself, begins the antiphon. It belongs here nonetheless, because the general rubrics fix its *shape* for every Mass of the year, and that shape is part of the Ordinary even though the words are not.
 
@@ -175,7 +175,7 @@ The introit is proper and therefore has no text in the *Ordo Missae*; the book g
 
 A reader who wants to know what the 1962 Mass is like on any given day should read those three numbers first. They say that the variable chant is never merely a hymn slot: it is an antiphon-plus-psalm structure whose doxology is withdrawn at the two seasons of mourning, and whose alleluia is an index of the season rather than of the text’s own mood.
 
-### The Kyrie (n. 1024) {#the-kyrie-n.-1024 .unnumbered}
+### The Kyrie (n. 1024)
 
 > **1024 ⋅ *Kyrie, eleison***
 >
@@ -193,7 +193,7 @@ Fortescue, quoting Gregory the Great’s letter to John of Syracuse, reconstruct
 
 That is why the *Kyrie* sits where it does. It is not an act of contrition after the confession — the confession has already been made and absolved at the foot of the altar — but the surviving head of an intercession that once had a body. Read that way, the ninefold repetition is not insistence but abbreviation, and the fact that the Church has never translated it is a sign that it was received rather than composed.
 
-### The Gloria (n. 1025) {#the-gloria-n.-1025 .unnumbered}
+### The Gloria (n. 1025)
 
 > **1025 ⋅ *Gloria in excelsis Deo***
 >
@@ -219,7 +219,7 @@ That grammatical shape is the hymn’s argument. Praise of the Father passes, wi
 
 Between the *Gloria* and the offertory the missal prints almost no text, because almost everything here is proper. What it prints instead is a sequence of cues and two short prayers, and the cues are worth reading closely, because they tell a reader what the Roman rite thinks a lesson is.
 
-### The collect and the lessons {#the-collect-and-the-lessons .unnumbered}
+### The collect and the lessons
 
 The *Ordo Missae* says only this: the priest kisses the altar, turns and says *Dominus vobiscum*, then *Oremus* and the orations, one or more as the Office requires; then follow the Epistle, gradual, tract or Alleluia with its verse, or sequence, as the season or the character of the Mass demands.
 
@@ -231,7 +231,7 @@ Three features of that sentence are rubrically loaded. The plural *orationes, un
 
 The last of these is the most striking rubric in the 1960 code, and it is easy to pass over. It refuses to let preaching happen *during* Mass when another man is preaching: rather than have two liturgical actions running at once, the Mass stops. Whatever one makes of the practice, the rubric is evidence that the compilers of this code thought of the Mass as a single action with a single principal agent, and were willing to interrupt it rather than blur that.
 
-### *Munda cor meum* (nn. 1026–1028) {#munda-cor-meum-nn.-10261028 .unnumbered}
+### *Munda cor meum* (nn. 1026–1028)
 
 > **1026–1027 ⋅ At solemn Mass**
 >
@@ -251,7 +251,7 @@ The two forms at nn. 1027 and 1028 differ only in person, and the difference is
 
 After the Gospel the priest kisses the book and says *Per evangelica dicta deleantur nostra delicta*. It is not printed as a prayer of the people; the 1861 hand missal has the congregation join in it as a devotion, which is a useful reminder that a lay book of that period recorded custom as well as text.
 
-### The Creed (n. 1029) {#the-creed-n.-1029 .unnumbered}
+### The Creed (n. 1029)
 
 > **1029 ⋅ *Credo in unum Deum***
 >
@@ -277,7 +277,7 @@ One orthographic point belongs here rather than in the appendix. The 1962 editio
 
 After the Creed the priest kisses the altar, says *Dominus vobiscum* and *Oremus*, and reads the offertory antiphon, which is proper. Then, without any further announcement, he says a sequence of eight or nine short prayers in a low voice while handling bread, wine and water. This is the part of the 1962 Ordinary whose history is best documented and whose theology is most argued over, and it is worth taking the two questions separately.
 
-### The bread {#the-bread .unnumbered}
+### The bread
 
 > **1030 ⋅ *Suscipe, sancte Pater***
 >
@@ -289,7 +289,7 @@ Two things in the Latin ask for comment. The first is *immaculatam hostiam*, sai
 
 The second is the range of intentions. This is the widest single sentence in the Ordinary: it offers for the celebrant’s own sins, for everyone standing there, and for all the Christian faithful living and dead. The Canon will divide that range into three separate commemorations. Here it is undivided, and the reason is structural — at this point the Church has not yet begun the formal intercession, and the priest is stating in advance the whole scope of what he is about to do.
 
-### The chalice, and the water {#the-chalice-and-the-water .unnumbered}
+### The chalice, and the water
 
 > **1031–1032 ⋅ *Deus, qui humanae substantiae* and *Offerimus tibi***
 >
@@ -305,7 +305,7 @@ The second is the range of intentions. This is the widest single sentence in the
 
 The rubric that the water is not blessed at a Requiem is old and unexplained in the book. What can be said with certainty is that the mixed chalice itself is not medieval: Fortescue traces it to Justin Martyr, Irenaeus, the epitaph of Abercius and Cyprian, and observes that every rite except the Armenian mixes water with the wine. The Council of Trent, in the same session that dealt with the Canon, states the reason the Church gives. Session XXII, chapter VII, ends: *… tum etiam quia e latere eius aqua simul cum sanguine exierit; quod sacramentum hac mixtione recolitur, et, quum aquae in Apocalypsi beati Ioannis populi dicantur, ipsius populi fidelis cum capite Christo unio repraesentatur* — because water came from his side together with the blood, which mystery is recalled by this mixing, and because, since in the Apocalypse of blessed John peoples are called waters, the union of the faithful people with Christ their head is represented by it.
 
-### *In spiritu humilitatis* and *Veni sanctificator* {#in-spiritu-humilitatis-and-veni-sanctificator .unnumbered}
+### *In spiritu humilitatis* and *Veni sanctificator*
 
 > **1033–1034**
 >
@@ -317,7 +317,7 @@ The rubric that the water is not blessed at a Requiem is old and unexplained in 
 
 *Veni, sanctificator* is the shortest prayer in the offertory and the only one addressed to a person invoked as coming. The missal does not say who the *sanctificator* is; the Latin leaves it open between the Holy Spirit and God without qualification, and the prayer is not an epiclesis in the Eastern sense — it asks for a blessing on what has been prepared, not for a change in it.
 
-### Incense and the *Lavabo* {#incense-and-the-lavabo .unnumbered}
+### Incense and the *Lavabo*
 
 At a solemn celebration the priest blesses incense and incenses the oblations and the altar. The book prints four short texts (nn. 1035–1038): the blessing *Per intercessionem beati Michaelis Archangeli, stantis a dextris altaris incensi*, which borrows the description of the angel who appeared to Zachary at Luke 1, 11 — “standing on the right side of the altar of incense” — and gives it to Michael, a transfer the missal does not explain; *Incensum istud a te benedictum ascendat ad te, Domine: et descendat super nos misericordia tua*, with its exact reciprocity of ascent and descent; verses 2 to 4 of Psalm 140 said while incensing the altar; and *Accendat in nobis Dominus ignem sui amoris, et flammam aeternae caritatis. Amen.* as the thurible is handed back.
 
@@ -347,7 +347,7 @@ At a solemn celebration the priest blesses incense and incenses the oblations an
 
 The psalm is a hand-washing psalm and the ceremony is a hand-washing; the correspondence is exact and needs no allegory. But the verses chosen run past the washing into a plea not to be destroyed with the wicked, and the phrase *dextera eorum repleta est muneribus* — their right hand is filled with gifts — is bitter in its context, since the priest’s own right hand is at that moment full of gifts. The 1962 book prints the psalm without comment and lets the irony stand.
 
-### The last offertory prayer, and the *Orate fratres* {#the-last-offertory-prayer-and-the-orate-fratres .unnumbered}
+### The last offertory prayer, and the *Orate fratres*
 
 > **1040 ⋅ *Suscipe, sancta Trinitas***
 >
@@ -379,7 +379,7 @@ The little demonstrative *et istorum* — “and of these” — refers to the r
 
 The conclusion of the last secret is said silently as far as *Per omnia saecula saeculorum*; those words are sung or said aloud, and with them the Mass changes register. What follows is the only extended text in the Roman rite that is both proper and part of the Ordinary: proper because sixteen different prefaces are printed and the day chooses among them, ordinary because the dialogue that opens it and the hymn that closes it never change.
 
-### The dialogue {#the-dialogue .unnumbered}
+### The dialogue
 
 > **The preface dialogue, as printed at n. 1086**
 >
@@ -397,7 +397,7 @@ The conclusion of the last secret is said silently as far as *Per omnia saecula 
 
 The dialogue is the oldest continuously attested text in the Latin Mass, and it is worth saying exactly what kind of text it is. It is not a prayer. It is a negotiation of consent: the celebrant asks whether the assembly’s hearts are where they should be and whether it is willing to give thanks, and only when it has answered twice does he begin to give thanks in its name. *Habemus ad Dominum* has no verb — literally “we have \[them\] toward the Lord” — and *Dignum et iustum est* is a formula of assent borrowed from Roman public life. The rite will not begin the Eucharistic prayer until the people have said that it is right to.
 
-### Which preface, and why it matters {#which-preface-and-why-it-matters .unnumbered}
+### Which preface, and why it matters
 
 > ***Rubricae generales Missalis romani* nn. 482–499**
 >
@@ -407,7 +407,7 @@ That last rule is the reason the Trinity preface is the one most Catholics of th
 
 The book prints all of this twice over, first in chant notation — solemn tone and ferial tone — across printed pp. 223 to 283, then without music at pp. 284 to 298. The doubling is practical rather than theological, but it occupies seventy-six pages of the missal and is the physical reason the Canon and the *Ordo Missae* are separated.
 
-### The common preface and the Sanctus {#the-common-preface-and-the-sanctus .unnumbered}
+### The common preface and the Sanctus
 
 > **n. 1086 ⋅ *Praefatio communis***
 >
@@ -435,7 +435,7 @@ The priest signs himself at *Benedictus qui venit*, which is the only place in t
 
 ## The Canon of the Mass (nn. 1088–1112)
 
-### What kind of text this is {#what-kind-of-text-this-is .unnumbered}
+### What kind of text this is
 
 The 1962 missal treats the Canon differently from everything else it contains. It gives it a separate title page, a separate running head, and a full-page colour plate of the Crucifixion on the leaf facing its first words, so that a priest who opens the book at *Te igitur* is looking at a crucifix whether or not one stands on the altar. It sets the two consecration forms in type larger than any other text in the volume. And it prescribes that the whole of it be said inaudibly.
 
@@ -457,7 +457,7 @@ The same session made the strongest statement any council has made about this te
 
 The historical claim usually attached to the Canon should be stated with the same care. Fortescue reports “a constant tradition that St Gregory was the last to touch the essential part of the Mass, namely the Canon”, and quotes Benedict XIV: “No Pope has added to or changed the Canon since St. Gregory.”[^6] That tradition is worth keeping, and it is worth noticing that the missal in front of us falsifies its strongest form. On 13 November 1962 the Sacred Congregation of Rites, executing a decision John XXIII had announced to the Council fathers that morning, decreed that after *Communicantes … Domini nostri Iesu Christi* the words *sed et beati Ioseph eiusdem Virginis Sponsi* be added, with effect from 8 December.[^7] The facsimile collated for this study prints those words. The 1861 hand missal does not. The Canon of the Roman Mass was therefore altered within living memory, by a pope, in the very edition this study describes — and the alteration is four words long.
 
-### *Te igitur* (n. 1088) {#te-igitur-n.-1088 .unnumbered}
+### *Te igitur* (n. 1088)
 
 > **1088 ⋅ *Te igitur***
 >
@@ -475,7 +475,7 @@ The three signs of the cross over the gifts at *dona*, *munera* and *sacrificia*
 
 The intercession that follows is ordered outward from the Church as such (*pro Ecclesia tua sancta catholica*) to the pope by name, the local ordinary by name, and then *omnibus orthodoxis, atque catholicae et apostolicae fidei cultoribus* — all the orthodox and cultivators of the catholic and apostolic faith. *Cultor* is a farmer’s word; the phrase means those who till that faith, not merely those who hold it.
 
-### *Memento* of the living (n. 1089) {#memento-of-the-living-n.-1089 .unnumbered}
+### *Memento* of the living (n. 1089)
 
 > **1089 ⋅ *Commemoratio pro vivis***
 >
@@ -487,7 +487,7 @@ The Latin then does something that has occupied commentators for centuries. Havi
 
 The ends named are three and they descend from eternity into the body: *pro redemptione animarum suarum*, for the redemption of their souls; *pro spe salutis*, for the hope of salvation; *et incolumitatis suae*, and of their safety, *incolumitas* being bodily soundness. The Roman Canon asks for health in the same breath as redemption and does not apologise for it.
 
-### *Communicantes* (n. 1090) {#communicantes-n.-1090 .unnumbered}
+### *Communicantes* (n. 1090)
 
 > **1090 ⋅ *Infra Actionem***
 >
@@ -503,7 +503,7 @@ The list of saints has a shape. Our Lady first, with the title *Genetricis Dei e
 
 The petition attached to the list — *quorum meritis precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio* — distinguishes carefully between the saints’ merits and their prayers, and asks for *auxilium protectionis*, the help of protection, not for their intercession as such. The conclusion is *Per eundem Christum Dominum nostrum*, with *eundem* because Christ has been named inside the prayer. That small grammatical scruple recurs throughout the Canon and is one of the surest signs that its clauses were composed as continuous Latin rather than assembled from independent pieces.
 
-### *Hanc igitur* and *Quam oblationem* (nn. 1091–1092) {#hanc-igitur-and-quam-oblationem-nn.-10911092 .unnumbered}
+### *Hanc igitur* and *Quam oblationem* (nn. 1091–1092)
 
 > **1091–1092**
 >
@@ -531,7 +531,7 @@ The 1962 Canon has five adjectives where *De sacramentis* has four: it prefixes 
 
 That is the closest thing in the Roman Canon to what Eastern anaphoras do with an explicit invocation of the Holy Spirit. It asks for the change; it does not name the agent of the change; and it is placed before the institution narrative rather than after it. A study of this kind can record that arrangement and its consequences without adjudicating the long theological argument about the Roman Canon’s want of a separate epiclesis.
 
-### The institution narrative (nn. 1101–1105) {#the-institution-narrative-nn.-11011105 .unnumbered}
+### The institution narrative (nn. 1101–1105)
 
 > **1101–1102 ⋅ *Qui pridie***
 >
@@ -570,7 +570,7 @@ Four features of this narrative should be recorded exactly.
 >
 > The 1962 book gives the two forms a treatment it gives nothing else: larger type, centred, no interleaved rubric, each followed by a rubric describing adoration, elevation and adoration again. Everywhere else in the Canon the missal breaks the prayer with directions; here it refuses to. The layout is therefore doing what a commentary would do — marking the sentences at which the action is accomplished — and doing it without a word of theology. That is an observation about this printing. Whether the same is true of every 1962 impression is a question about printings, not about the rite, and this study has collated one.
 
-### *Unde et memores*, *Supra quae*, *Supplices* (nn. 1106–1108) {#unde-et-memores-supra-quae-supplices-nn.-11061108 .unnumbered}
+### *Unde et memores*, *Supra quae*, *Supplices* (nn. 1106–1108)
 
 > **1106 ⋅ *Unde et memores***
 >
@@ -598,7 +598,7 @@ Then *de tuis donis ac datis*: from your own gifts and grants. The Church offers
 
 The strangeness of *Supplices* is worth stating plainly, because smoothing it over would misrepresent the prayer. It asks that *haec* — these things, the consecrated gifts — be carried up by the hands of God’s holy angel to an altar on high, in the sight of the divine majesty, so that all who receive Christ’s Body and Blood from participation in *this* altar may be filled with heavenly blessing and grace. The movement is upward and the purpose is downward. The Canon does not explain who *sanctus Angelus tuus* is, and the tradition has never agreed; the Milanese parallel has angels in the plural, which is one datum and not a solution. What the Latin does say is that the two altars are related by a single participation: the sentence begins at the altar in heaven and ends at the altar the priest is at that moment kissing.
 
-### The dead, and the sinners (nn. 1109–1110) {#the-dead-and-the-sinners-nn.-11091110 .unnumbered}
+### The dead, and the sinners (nn. 1109–1110)
 
 > **1109 ⋅ *Commemoratio pro defunctis***
 >
@@ -622,7 +622,7 @@ The list here is the counterpart of the one in *Communicantes*, and it is arrang
 
 The last clause is the finest sentence in the Canon and it depends entirely on word order: *intra quorum nos consortium, non aestimator meriti, sed veniae, quaesumus, largitor admitte*. Admit us into their fellowship — not as an assessor of merit, but as a bestower of pardon. *Aestimator* is a valuer, one who prices a thing; *largitor* is a giver on a lavish scale. The two nouns are set against each other across the caesura, and the verb *admitte* is held back to the very end. The Roman Canon, having named forty-one saints in its two lists, asks not to be judged by comparison with them.
 
-### The doxology (nn. 1111–1112) {#the-doxology-nn.-11111112 .unnumbered}
+### The doxology (nn. 1111–1112)
 
 > **1111–1112 ⋅ *Per quem* and *Per ipsum***
 >
@@ -638,7 +638,7 @@ The last clause is the finest sentence in the Canon and it depends entirely on w
 
 The rubric turns those words into a diagram. Holding the Host, the priest makes three signs of the cross from lip to lip of the chalice at *Per ipsum, et cum ipso, et in ipso*; two more between the chalice and himself at *Deo Patri omnipotenti* and *in unitate Spiritus Sancti*; and then raises Host and chalice slightly together at *omnis honor, et gloria*. Five crosses and one elevation, made with the consecrated Body over the consecrated Blood. The Canon that began with three signs of the cross over bread and wine ends with five made by the Body itself.
 
-### The shape of the whole {#the-shape-of-the-whole .unnumbered}
+### The shape of the whole
 
 Read as one text, the Roman Canon has a symmetry that its silence conceals. It opens with an intercession (Church, pope, bishop; the living; the saints) and closes with an intercession (the dead; ourselves; the saints again). Between those wings stand a request that the offering be made acceptable, the institution narrative, the memorial offering, an appeal to three ancient sacrifices, and a request that the offering be carried to the altar on high. The consecration is not at the centre by accident: it has two prayers of approach on one side and two prayers of ascent on the other.
 
@@ -648,7 +648,7 @@ Its style is uniform throughout: doubled verbs, tripled nouns, adjectives in thr
 
 With *Per omnia saecula saeculorum* at the end of the doxology the priest’s voice returns, and the missal returns with it to the *Ordo Missae*. Nineteen numbers carry the rite from the Lord’s Prayer to the ablutions. They are not a single movement but four: a prayer said aloud, a rite of breaking and peace, a set of private preparations, and the reception itself. The 1962 book keeps those four visibly distinct, and the distinction is the best guide to what it thinks Communion is.
 
-### The Lord’s Prayer and its introduction (nn. 1113–1116) {#the-lords-prayer-and-its-introduction-nn.-11131116 .unnumbered}
+### The Lord’s Prayer and its introduction (nn. 1113–1116)
 
 > **1113–1114 ⋅ *Praeceptis salutaribus* and *Pater noster***
 >
@@ -674,7 +674,7 @@ The third is a word. The missal prints *Panem nostrum *cotidianum**; the 1861 ha
 
 Fortescue records the tradition, which he takes from Gregory the Great’s own letter, that Gregory moved the Lord’s Prayer to its present place immediately after the Canon and before the fraction; it is one of three changes he names as Gregory’s, and it is the reason the same page can say both that Gregory “was the last to touch the essential part of the Mass” and that he touched it.[^8]
 
-### The embolism, the fraction, and the peace (nn. 1117–1119) {#the-embolism-the-fraction-and-the-peace-nn.-11171119 .unnumbered}
+### The embolism, the fraction, and the peace (nn. 1117–1119)
 
 > **1117 ⋅ *Libera nos*, with the fraction**
 >
@@ -710,7 +710,7 @@ The greeting is not *Dominus vobiscum* but *Pax Domini sit semper vobiscum*, and
 
 The commingling is one of the harder things in the Roman rite to state accurately, and the safest course is to say what the book says and no more. The formula calls what is happening a *commixtio* and a *consecratio* — a mixing and a hallowing — and asks that it be *accipientibus nobis in vitam aeternam*, unto eternal life for us who receive. It offers no account of why the two species are recombined, and the 1962 books nowhere supply one. The medieval explanations are many and mutually inconsistent; none of them is in this missal, and a study of this missal should not import one.
 
-### *Agnus Dei* (n. 1120) {#agnus-dei-n.-1120 .unnumbered}
+### *Agnus Dei* (n. 1120)
 
 > **1120 ⋅ *Agnus Dei***
 >
@@ -732,7 +732,7 @@ The address has already been used once in the same Mass, in the *Gloria* at *Qui
 >
 > Fortescue’s account is that the chant “was added to fill up the time of the fraction”: the *Liber Pontificalis* says Sergius I (687–701) ordered it to be sung by clergy and people at the breaking of the Lord’s body; it was at first sung once, twice by the eleventh century, and John Beleth in the twelfth describes the present threefold form ending *dona nobis pacem*, while Innocent III notes churches, the Lateran among them, which kept *miserere nobis* three times.[^9] If that account is right, then the 1962 arrangement — the chant sung while the priest has already finished breaking — is a survival of a longer fraction, and the Requiem form, which keeps three identical endings, is the older shape of the piece.
 
-### The three prayers before Communion (nn. 1121–1124) {#the-three-prayers-before-communion-nn.-11211124 .unnumbered}
+### The three prayers before Communion (nn. 1121–1124)
 
 > **1121–1122 ⋅ *Domine Iesu Christe, qui dixisti* and the peace**
 >
@@ -758,7 +758,7 @@ These two are personal in a way nothing else in the Mass is. Every verb is singu
 
 The trinitarian clauses at the end of the two prayers are worth a glance for what they show about how carefully this Latin was assembled. The first ends *Qui cum eodem Deo Patre et Spiritu Sancto vivis et regnas* — *eodem* because the Father has been named inside the prayer — and the second ends *Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti*, without *eodem*, because he has not. The same scruple runs through the Canon.
 
-### The reception (nn. 1125–1129) {#the-reception-nn.-11251129 .unnumbered}
+### The reception (nn. 1125–1129)
 
 > **1125–1127 ⋅ *Panem caelestem*, *Domine non sum dignus*, and the Body**
 >
@@ -788,7 +788,7 @@ The missal prints no scriptural reference here, though it prints one at the *Lav
 
 The two reception formulas are identical but for one word, *Corpus* and *Sanguis*, and both ask the same thing: that what is received *custodiat animam meam in vitam aeternam*, keep my soul unto life everlasting. *Custodire* is to guard, not to bring; the petition is for preservation, and it matches the two preparatory prayers, which asked for a safeguard rather than for an increase.
 
-### The Communion of the people, which the *Ordo Missae* does not print {#the-communion-of-the-people-which-the-ordo-missae-does-not-print .unnumbered}
+### The Communion of the people, which the *Ordo Missae* does not print
 
 This is the most consequential structural fact in the whole Communion rite, and it is easy to miss because it consists of an absence.
 
@@ -800,7 +800,7 @@ The *Ordo Missae* prints, at the end of n. 1129, one clause about the people: *
 
 Two things follow and both should be said plainly. First, the Communion of the faithful in this Missal is legislated but not typeset: a reader who takes the *Ordo Missae* as the complete order of the rite will not find it. Second, n. 503 is a piece of recent legislation and not an ancient custom. The *Confiteor* before the people’s Communion — the servers’ confession repeated at the rail — is precisely what n. 503 suppresses, and its suppression is one of the visible marks of the 1960 code in a rite otherwise unchanged since 1570. What replaced it is nothing; the priest turns from the altar and says *Ecce Agnus Dei*.
 
-### The ablutions (nn. 1130–1131) {#the-ablutions-nn.-11301131 .unnumbered}
+### The ablutions (nn. 1130–1131)
 
 > **1130–1131 ⋅ *Quod ore sumpsimus* and *Corpus tuum***
 >
@@ -820,7 +820,7 @@ After this the priest wipes the chalice, folds the corporal, covers the chalice 
 
 The last eight numbers of the *Ordo Missae* are the shortest stretch of the book and the most legislated. Three of the four things they contain — the dismissal formula, the blessing, and the last Gospel — are conditional, and the conditions are spelled out both in the *Ordo* and in the general rubrics. A reader who wants to see how the 1960 code works can do worse than read these eight numbers against nn. 507–510.
 
-### The dismissal (nn. 1132–1136) {#the-dismissal-nn.-11321136 .unnumbered}
+### The dismissal (nn. 1132–1136)
 
 > **1132–1133 ⋅ *Ite, missa est***
 >
@@ -844,7 +844,7 @@ Three things about the choice among the three formulas deserve notice, because e
 
 The missal then prints eight chant settings of *Ite, missa est* under n. 1134, keyed to the rank and season of the day in the same way as the settings of the *Gloria*: one with a double *Alleluia* for Easter week, one for the rest of paschal time, and six more for first-, second- and third-class feasts, feasts of Our Lady, the Sundays of the year, and the plainest class of day. Two settings of *Benedicamus Domino* follow at n. 1135 and one of *Requiescant in pace* at n. 1136. The last and simplest of the eight carries a rubric permitting it *ad libitum* at any Mass in which *Ite, missa est* is sung without *Alleluia*.
 
-### *Placeat* and the blessing (nn. 1137–1138) {#placeat-and-the-blessing-nn.-11371138 .unnumbered}
+### *Placeat* and the blessing (nn. 1137–1138)
 
 > **1137–1138 ⋅ *Placeat tibi* and *Benedicat vos***
 >
@@ -862,7 +862,7 @@ The missal then prints eight chant settings of *Ite, missa est* under n. 1134, 
 
 The blessing is one blessing, and the missal makes a point of saying so: *semel tantum benedicens, etiam in Missis solemnibus* — blessing only once, even at solemn Masses. The single exception is printed immediately after: *In Missa pontificali ter benedicitur, ut in Pontificali habetur*, at a pontifical Mass the blessing is threefold, as the *Pontificale* has it. The formula is divided across the turn: the priest says *Benedicat vos omnipotens Deus* facing the altar, then turns to the people for the three names. The grammar is one sentence and the ceremony splits it in two, so that the naming of the Trinity is the part said to the congregation.
 
-### The last Gospel (n. 1139) {#the-last-gospel-n.-1139 .unnumbered}
+### The last Gospel (n. 1139)
 
 > **1139 ⋅ *Initium sancti Evangelii secundum Ioannem* (Ioann. 1, 1–14)**
 >
@@ -892,7 +892,7 @@ The Mass ends with *Deo gratias*, the answer given to the Epistle and to the dis
 
 Read end to end, the Ordinary of the 1962 Missal is not the smooth object the phrase “the unchanging texts” suggests. It is a deposit with visible seams, and the seams are where its meaning is most legible.
 
-### What the reading has actually shown {#what-the-reading-has-actually-shown .unnumbered}
+### What the reading has actually shown
 
 The exposition has moved through the rite in order, and at each stage it has asked where the text came from as well as what it says. Setting the answers side by side gives a result that no single movement discloses.
 
@@ -914,7 +914,7 @@ The first is that *the oldest material is public and the newest is private*. The
 
 The second is that *the rubrics are younger than any of it*. Nothing in the texts of the Ordinary was composed in the twentieth century; a great deal of the law governing them was. The numbers this study has quoted most often — 424, 425, 431–432, 475–476, 500–503, 507–510, 511–512 — are the code of 1960, promulgated two years before the book that prints them. A reader who asks what is new in the 1962 Ordinary will find the answer almost entirely in its rubrics, and in four words of the *Communicantes*.
 
-### How the book makes one thing of it {#how-the-book-makes-one-thing-of-it .unnumbered}
+### How the book makes one thing of it
 
 The 1962 volume does three things, none of them argumentative, that present this stratified deposit as a single action.
 
@@ -924,13 +924,13 @@ It **puts the rubric inside the prayer**. The threefold *mea culpa* is broken by
 
 It **silences almost everything**. General rubric n. 511 lists what is said aloud at a read Mass, and between the *Sanctus* and the end of the Canon the list contains one item. n. 512 defines the silence as audibility to the speaker alone. The two things the people are given to hear from the priest’s own voice near the altar are *Nobis quoque peccatoribus* and *Domine, non sum dignus*: an admission of sin and an admission of unworthiness, both accompanied by a striking of the breast.
 
-### The 1962 alteration, and its size {#the-1962-alteration-and-its-size .unnumbered}
+### The 1962 alteration, and its size
 
 This edition contains one substantive change to the Canon, and it is the cleanest available test of everything above. On 13 November 1962 the Sacred Congregation of Rites decreed the insertion of *sed et beati Ioseph, eiusdem Virginis Sponsi* into the *Communicantes*, effective 8 December; the facsimile collated here prints it and the 1861 hand missal does not. Four words were added, by a pope and in the lifetime of the priests who used the book, to the one text of which Benedict XIV had written that no pope had added to it or changed it since Gregory the Great.
 
 Set beside that, the change the following decade made to the same prayer’s neighbourhood is of another order. The 1962 form over the chalice reads *Hic est enim Calix Sanguinis mei, novi et aeterni testamenti: mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum*, and is followed by *Haec quotiescumque feceritis, in mei memoriam facietis*. Both of those clauses were altered when the Order of Mass was reformed. The Claude study of the postconciliar Order of Mass reaches, from the other side of the same comparison and on its own evidence, the judgment that the alteration of the dominical words is the deepest textual change between the two books. Nothing in the present study contradicts that; the 1962 witness collated here is one half of the fact on which it rests, and the size of the 1962 insertion is the measure against which the later change should be read.
 
-### Project synthesis {#project-synthesis .unnumbered}
+### Project synthesis
 
 > **Project synthesis — the judgment this study reaches**
 >
@@ -956,13 +956,13 @@ Set beside that, the change the following decade made to the same prayer’s nei
 >
 > **Status.** This is a source-grounded editorial synthesis by an AI contributor, resting on one collated facsimile of the 1962 typical edition, one collated public-domain English hand missal of 1861, and the identified historical and conciliar witnesses named in the references. It is not magisterial teaching, a canonical opinion, a critical edition, or a specialist consensus, and it has received no independent liturgical, historical or theological review.
 
-### What this study does not decide {#what-this-study-does-not-decide .unnumbered}
+### What this study does not decide
 
 It does not date the sections of the Roman Canon severally, assign an author to any of them, or adjudicate the argument about the Roman Canon’s want of an explicit epiclesis. It does not identify the *sanctus Angelus tuus* of *Supplices*. It does not decide whether the medieval offertory prayers improved or damaged the rite. It offers no account of the present canonical discipline governing the use of the 1962 books, which is a dated question of current law and not a question about this edition. And it makes no comparison between this Ordinary and the reformed Order of Mass beyond the two textual points at which the collation of this edition supplies evidence: the four words added to the *Communicantes* in 1962, and the wording of the two dominical forms as this book prints them.
 
 ## Scope, Edition, and Qualifications
 
-### The object {#the-object .unnumbered}
+### The object
 
 “The Ordinary” in this study means the *Ordo Missae* and *Canon Missae* as printed in one identified book, together with the rubrics of that book which govern them: marginal numbers 1013 to 1139, the *Praefationes* at 1043 to 1087, the *Rubricae generales Missalis romani* and the *Ritus servandus in celebratione Missae* in the front matter. It does not mean the sung Ordinary — *Kyrie*, *Gloria*, *Credo*, *Sanctus*, *Agnus Dei* — although those five texts are treated in their places, and it does not mean the Missal.
 
@@ -970,7 +970,7 @@ Stable does not mean invariant, and the study has kept four kinds of variability
 
 Excluded: the temporal and sanctoral propers except where quoted as context; the Holy Week ordo and its own *Ordo Missae* variations; ritual, votive and conventual Masses; the ceremonial of solemn and pontifical Mass beyond the points where the *Ordo Missae* itself prescribes it; the chant of the Ordinary as music; the entire question of the present canonical discipline governing the use of the 1962 books, which is a dated question of current law and not a question about this edition; and any comparison with the reformed Order of Mass beyond the two points named in the synthesis.
 
-### The editions and witnesses {#the-editions-and-witnesses .unnumbered}
+### The editions and witnesses
 
 -   **Controlling text:** *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, Vatican typical edition of 1962, read in the 1,088-page facsimile hosted by the Church Music Association of America and registered in this repository’s source library by its exact SHA-256. The facsimile’s exact bytes are recorded but not retained: the audit located no artifact-level statement establishing redistribution rights for that scan, so the record is remote and no payload is installed. Every Latin block printed in this study, and every rubric reported in it, was read on that facsimile’s page images or, where expressly noted, in its embedded text layer.
 
@@ -982,7 +982,7 @@ Excluded: the temporal and sanctoral propers except where quoted as context; the
 
 -   **Historical and doctrinal witnesses:** Ambrose or the author of *De sacramentis* in *Patrologia Latina* 16 (Paris, 1880); the *Canones et decreta* of the Council of Trent in the Tauchnitz stereotype of 1887 and in Waterworth’s English; Adrian Fortescue, *The Mass: A Study of the Roman Liturgy* (Longmans, 1922); *Acta Apostolicae Sedis* 54 (1962) for the decree inserting Saint Joseph’s name. Each is identified at its exact locus in the references.
 
-### Translation, quotation, and rights {#translation-quotation-and-rights .unnumbered}
+### Translation, quotation, and rights
 
 No English wording in this study is a translation made by its author. The rule is absolute and it has consequences that are stated where they bite rather than in a blanket disclaimer. Where an English wording of a prayer appears, it is quoted from the 1861 Cummiskey book at an identified page and is framed as a historical witness; it is never offered for recitation and it is never a substitute for the Latin beside it. Where no public-domain English witness exists for a text — the proper *Communicantes* and *Hanc igitur*, the *Munda cor meum*, the fifteen prefaces other than the common one, most of the rubrics — this study says what the Latin means in third-person analysis and does not render it. Such analysis is commentary and cannot function as a version.
 
@@ -990,7 +990,7 @@ The Latin of the 1962 Missal is quoted as evidence. It is presented in framed bl
 
 Rights: the underlying 1570–1962 liturgical text and the 1861 English are old enough to be public domain in the United States, but the digitisations through which both were read carry their own status, recorded per artifact in the source library. Neither scan’s bytes are redistributed here. Fortescue (1922), Migne’s *Patrologia Latina* 16 (1880), the Tauchnitz Trent (1887) and Waterworth’s English are public domain in the United States by age of publication.
 
-### Evidence classes {#evidence-classes .unnumbered}
+### Evidence classes
 
 Four classes are kept visibly distinct and can be told apart on the page.
 
@@ -1004,7 +1004,7 @@ Four classes are kept visibly distinct and can be told apart on the page.
 
 Reported historical reconstructions are attributed to the scholar who made them and are not converted into project claims. Fortescue’s datings of the offertory prayers, of the *Agnus Dei*, of the last Gospel and of the Creed’s arrival at Rome are the clearest cases: they rest on manuscript arguments this study has not itself examined, they are reported as his, and the synthesis names the offertory dating as the load-bearing external claim on which its own conclusion depends.
 
-### Known limits, and consequential negative results {#known-limits-and-consequential-negative-results .unnumbered}
+### Known limits, and consequential negative results
 
 -   Only one copy of one typical edition was collated. Where this study says that the 1962 book prints something, it means that this facsimile prints it. The insertion of Saint Joseph’s name took effect on 8 December 1962 and the volume’s own promulgating decree is dated 23 June 1962; an impression of the same typical edition made between those dates would not carry the clause, and this study says so at the place where it matters.
 
@@ -1018,7 +1018,7 @@ Reported historical reconstructions are attributed to the scholar who made them 
 
 -   Two questions were pursued and left open because the sources consulted do not settle them: the identity of the *sanctus Angelus tuus* of *Supplices*, on which the tradition has never agreed and on which the Milanese parallel’s plural is a datum and not a solution; and the reason for the presence of Andrew, alone beside Peter and Paul, in the embolism *Libera nos*. Both are reported as unresolved rather than filled by inference.
 
-### Review state {#review-state .unnumbered}
+### Review state
 
 Source-audited against the records named above on 26 July 2026. Generation provenance is recorded in the terminal metadata block. This study has received no independent specialist, historical, liturgical, theological or canonical review, and none of the labels reserved for those events is claimed. It is a study aid: it is not an altar book, a book for recitation, a critical edition, an official liturgical book, or a statement of current law.
 
@@ -1049,19 +1049,19 @@ This table gathers the datable acts and witnesses on which the exposition draws,
 
 Each entry names the edition actually used and the exact loci this study read. Where an artifact was acquired and hashed, its role and rights status are given in the repository’s source library rather than repeated here.
 
-### Controlling liturgical text {#controlling-liturgical-text .unnumbered}
+### Controlling liturgical text
 
 **Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum**, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962). Read in the 1,088-page facsimile hosted by the Church Music Association of America, acquired and hashed before use; exact bytes recorded, not retained. Loci read: *Rubricae generales Missalis romani* nn. 424–432 and 466–514 (printed pp. XXX–XXXV, artifact pp. 28–33); *Ritus servandus in celebratione Missae* V–VIII (printed pp. LVII–LX, artifact pp. 59–62); *De defectibus* V (printed p. LXVII, artifact p. 69); *Ordo Missae* nn. 1013–1042 (printed pp. 216–222, artifact pp. 297–303); *Praefationes* nn. 1043–1087 (printed pp. 223–298, artifact pp. 304–379); *Canon Missae* nn. 1088–1112 (printed pp. 299–311, artifact pp. 380–392); *Ordo Missae* nn. 1113–1139 (printed pp. 312–328, artifact pp. 393–409); and the front matter carrying *Quo primum* (14 July 1570), the breve of Clement VIII (7 July 1604), the breve of Urban VIII (2 September 1634), the general decree of the Sacred Congregation of Rites on the code of rubrics (26 July 1960) and the decree declaring this edition typical (23 June 1962).
 
-### English witness for the received prayers {#english-witness-for-the-received-prayers .unnumbered}
+### English witness for the received prayers
 
 **The Roman Missal translated into the English language for the use of the laity**, first revised edition (Philadelphia: Eugene Cummiskey, 1861). Read in the Internet Archive scan of item `romanmissaltran00churgoog`, acquired and hashed before use; exact bytes recorded, not retained. Loci read: printed pp. xv–xix (the preparation, *Kyrie* and *Gloria*); pp. xx–xxvi (lessons, Creed, offertory); p. xxviii (the common preface and *Sanctus*); pp. xxxiii–xlii (the Canon, the Lord’s Prayer, the fraction, the *Agnus Dei* and the priest’s Communion); pp. xliii–xlvi (the ablutions, the dismissal, *Placeat*, the blessing and the last Gospel). A pre-1955 lay hand missal, not an official or approved liturgical translation; quoted as a historical witness only.
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 **The Holy Bible, Douay-Rheims version**, Challoner revision, in the electronic text distributed as Project Gutenberg eBook 1581. Verses quoted: Genesis 4, 4 and 14, 18; Psalms 17, 4; 25, 6; 42, 4; 115, 12–13; 117, 26; Isaias 6, 3 and 6–7; Daniel 3, 39–40; Matthew 6, 11; 8, 8; 21, 9; 26, 26–28; Luke 1, 11; 2, 14; 11, 3; John 1, 14 and 1, 29; 14, 27; Romans 12, 1; 1 Corinthians 11, 25 and 11, 29; Apocalypse 8, 3. Psalm numbering is the Vulgate numbering the Missal prints.
 
-### Conciliar and papal acts {#conciliar-and-papal-acts .unnumbered}
+### Conciliar and papal acts
 
 **Canones et decreta sacrosancti oecumenici Concilii Tridentini**, editio stereotypa undecima (Lipsiae: ex officina Bernhardi Tauchnitz, 1887, reprinting the Roman edition of 1834). Read at the page images of printed pp. 118, 119 and 120: session XXII chapters III, IV, V and the end of VII, and canons I–II and III–IX.
 
@@ -1071,11 +1071,11 @@ Each entry names the edition actually used and the exact loci this study read. W
 
 **Acta Apostolicae Sedis** 52 (1960), pp. 593–596: John XXIII, motu proprio *Rubricarum instructum*, and the general decree of the Sacred Congregation of Rites promulgating the new code of rubrics. Read in the volume’s optical text layer; not collated at the page images, and cited here only for the acts’ identity and dates, which the 1962 Missal’s own front matter independently supplies.
 
-### Patristic witness {#patristic-witness .unnumbered}
+### Patristic witness
 
 **Patrologia Latina** tomus XVI, *S. Ambrosius* (Parisiis: apud Garnier Fratres et J.-P. Migne successores, 1880), coll. 462–464: *De sacramentis* IV, 5, 21–23 and IV, 6, 27, with the Maurist notes on the same columns. Read at the page images. The attribution of *De sacramentis* to Ambrose is disputed and this study takes no position on it; the text is used as a dated Milanese witness of about 390, which is all the argument requires.
 
-### Modern scholarship {#modern-scholarship .unnumbered}
+### Modern scholarship
 
 Adrian Fortescue, **The Mass: A Study of the Roman Liturgy** (London and New York: Longmans, Green and Co., 1922). Read at the page images of printed pp. 172 (Gregory the Great and the Canon; Benedict XIV’s dictum), 227 (the prayers at the foot of the altar; the medieval uses; the papal chapel and *sancta sanctorum*), 232 and 234 (the *Kyrie* and Gregory’s letter to John of Syracuse), 288 (the Creed at Rome in 1014, with the dissenting authorities), 305 (the offertory prayers, the mixed chalice, and *immaculatam hostiam* as “an anticipation of the consecration”), 387 (the *Agnus Dei* and Sergius I) and 394 (the last Gospel before and after 1570). Fortescue died in 1923 and this printing carries no revision by a later hand; his own footnotes preserve the disagreements among the authorities he cites, and those disagreements are reported here rather than resolved. His datings rest on manuscript arguments this study has not examined and are attributed to him throughout.
 

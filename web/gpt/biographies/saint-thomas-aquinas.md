@@ -2,7 +2,7 @@
 
 *A source-first historical and hagiographic biography of Saint Thomas Aquinas*
 
-## A Life Made Legible by Work {#a-life-made-legible-by-work .unnumbered}
+## A Life Made Legible by Work
 
 Thomas Aquinas left an immense intellectual record and almost no continuous account of himself. His questions, commentaries, sermons, disputed determinations, and unfinished syntheses show a Dominican friar thinking in public: receiving authorities, distinguishing meanings, meeting objections, and trying to lead created intelligence toward God. They do not disclose a modern private life. The scenes that have made him most familiar—the silent schoolboy called an ox, the captive resisting temptation, the crucifix praising his writing, and the scholar declaring his books straw—come principally from canonization testimony and early hagiography assembled decades after his death.
 

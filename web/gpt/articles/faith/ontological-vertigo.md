@@ -256,19 +256,19 @@ The core online witnesses were checked through 20 July 2026; the added Augustine
 
 ## References
 
-### Authoritative Catholic witnesses {#authoritative-catholic-witnesses .unnumbered}
+### Authoritative Catholic witnesses
 
 -   First Vatican Council, dogmatic constitution *Dei Filius* (24 April 1870), chs. 1 and 3 and canons 1.3–5: the simple God really distinct from the world, free creation from nothing, divine non-need, providence, and the creature’s total dependence; [official Latin](https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html).
 
 -   *Catechism of the Catholic Church* 301 and 306–308, on sustaining action and genuine secondary causality; [official English](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html).
 
-### Ancient philosophical antecedents {#ancient-philosophical-antecedents .unnumbered}
+### Ancient philosophical antecedents
 
 -   Plato, *Republic* VI, 508e–509b, on the Good as source of intelligibility and being; *Timaeus* 27d–29b, on becoming, cause, and the cosmic craftsman. Benjamin Jowett’s public-domain English was used as a working witness at the [Internet Classics Archive](https://classics.mit.edu/Plato/republic.7.vi.html) and [Timaeus text](https://classics.mit.edu/Plato/timaeus.html). The article does not identify these doctrines with Christian creation.
 
 -   Aristotle, *Metaphysics* XII.6–7, 1071b3–1072b30, on actuality, the unmoved mover, and the dependence of heaven and nature; W. D. Ross’s public-domain working English, [Internet Classics Archive](https://classics.mit.edu/Aristotle/metaphysics.12.xii.html). See also *Physics* VIII.5–6.
 
-### Patristic and late-patristic witnesses {#patristic-and-late-patristic-witnesses .unnumbered}
+### Patristic and late-patristic witnesses
 
 -   St. Irenaeus of Lyons, *Against Heresies* II.34.2–4, on God alone unbegun, created duration according to divine will, and life by participation; Alexander Roberts and William Rambaut’s 1885 ANF working English, [online witness](https://www.newadvent.org/fathers/0103234.htm).
 
@@ -280,7 +280,7 @@ The core online witnesses were checked through 20 July 2026; the added Augustine
 
 -   Pseudo-Dionysius, *Divine Names* V.1–8, on the superessential cause from whom beings receive existence; *Mystical Theology* I.1–3, on affirmation, negation, and unknowing. John Parker, trans., *The Works of Dionysius the Areopagite*, vol. 1 (London: James Parker, 1897), [public-domain working edition](https://ccel.org/ccel/dionysius/works/works.toc.html).
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   St. Thomas Aquinas, *Summa theologiae* I, q. 2, a. 3 (the First Way); q. 3, a. 4, q. 4, a. 2, q. 6, aa. 1–2, q. 13, a. 5, q. 14, aa. 1 and 8, and q. 19, aa. 1, 3–4 (subsistent being, goodness, analogy, intellect, free will, and willing creatures without need); q. 20, aa. 1–2 (divine love and its causation of created goodness); q. 21, a. 1, especially ad 2–3, and a. 4, ad 4 (divine justice, derivative created dues, and creation without an antecedent creaturely claim); q. 32, a. 1 (Trinity not demonstrable by natural reason).
 
@@ -290,7 +290,7 @@ The core online witnesses were checked through 20 July 2026; the added Augustine
 
 -   Latin loci checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) Leonine-text corpus; the [New Advent Summa](https://www.newadvent.org/summa/) was used as a working public English index. Work, question, article, chapter, and reply take precedence over either site’s wording.
 
-### Later witnesses {#later-witnesses .unnumbered}
+### Later witnesses
 
 -   René Descartes, *Meditations on First Philosophy*, Third Meditation, on present conservation and the conceptual distinction between preservation and creation in the respect argued; public-domain Elizabeth S. Haldane translation, [online witness](https://en.wikisource.org/wiki/Meditations_on_First_Philosophy/Meditation_III).
 

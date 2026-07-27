@@ -538,23 +538,23 @@ All online witnesses were checked on 2026-07-26, and the tracked source-library 
 
 ## References
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   Genesis 2:16–17; 3:17–19 (the prohibition and the sentence); Job 14:1–14 (the reticence); Psalm 6:6; 33:22; 89:9–12; 115:15 (Vulgate numbering); Ecclesiastes 7:2; 12:1–7; Wisdom 1:12–16; 2:23–24; 3:1–3; 4:7; Ecclesiasticus 7:37–40; 41:1–6; Matthew 10:28; 24:42–44; Luke 16:22–26; 23:42–46; John 11:21–36; Romans 5:12; 6:23; 1 Corinthians 15:21–26, 53–57; 2 Corinthians 5:1–10; Philippians 1:21–24; 1 Thessalonians 4:12–14 (Vulgate numbering); 2 Timothy 1:9–10; Hebrews 2:14–15; 9:27–28; James 5:14–16; Apocalypse 6:9–11; 14:13. Quoted from the public-domain Douay–Rheims translation (Challoner revision) in the electronic state registered in the source library as the Challoner Gutenberg witness, read 2026-07-26 in its tracked per-book verse text and checked against the registered table of divergences from the American 1899 edition. Chapter and verse numbering is that of the Clementine Vulgate throughout. Latin for Ecclesiasticus 7:40 and 41:1–6 from the Clementine text in SacredBible.org’s presentation of the Hetzenauer 1914 printing, read 2026-07-26.
 
-### Patristic witnesses {#patristic-witnesses .unnumbered}
+### Patristic witnesses
 
 -   Augustine of Hippo, *De civitate Dei* XIII.1–11 (mortality contracted; the death of the soul, of the body, and of the whole man; whether death is good to the good; why the regenerate still die; the good use of an evil; the evil of death as separation; the saints freed from the second death; the moment of death; life as a race toward death; whether one can be living and dead at once); trans. Marcus Dods, *The City of God*, vol. I, in *The Works of Aurelius Augustine, A New Translation* (Edinburgh: T. & T. Clark, 1871); public domain; wording verified 2026-07-26 in the source library’s tracked transcription of the 1871 printing of volume I.
 
 -   Cyprian of Carthage, *De mortalitate* 1–10 (the plague common to Christian and heathen; the Christian’s greater struggle); trans. Robert Ernest Wallis, *The Ante-Nicene Fathers*, vol. V (Buffalo: Christian Literature Publishing Company, 1886); public domain; read 2026-07-26 at [New Advent’s transcription of that volume](https://www.newadvent.org/fathers/050707.htm). Not collated against the Latin.
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   Thomas Aquinas, *Summa theologiae* I, q. 75, a. 4 (man is not a soul only) and a. 6 (the soul incorruptible); q. 89, a. 1 (the separated soul’s understanding; separation contrary to its nature); I-II, q. 85, a. 5 (sin the accidental cause of death, by removing an obstacle) and a. 6 (natural as regards the matter, not the form; the knife and the rust; the gift of original justice); II-II, q. 164, a. 1 with ad 1 (death both natural and penal); III, q. 50, aa. 2–3 (the Godhead not separated from Christ’s flesh or soul in death). English from the public-domain translation of the Fathers of the English Dominican Province via [New Advent](https://www.newadvent.org/summa/); Latin for I-II, q. 85, a. 6 checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/sth2085.html). All loci read 2026-07-26; work, question, article, and division govern over either site’s presentation.
 
 -   Thomas Aquinas, *Super I Epistolam B. Pauli ad Corinthios lectura*, cap. 15, lect. 2 (the soul separated is imperfect; *anima mea non est ego*; no meritorious works in the other life). Latin read 2026-07-26 in the [Corpus Thomisticum](https://www.corpusthomisticum.org/c1v.html), which transmits chapters 11–16 as the *reportatio vulgata*; the English renderings in this essay are labeled working glosses.
 
-### Definitive magisterium {#definitive-magisterium .unnumbered}
+### Definitive magisterium
 
 -   Council of Vienne (1311–1312), constitution *Fidei catholicae*, DS 902 (the rational soul the form of the human body *per se et essentialiter*).
 
@@ -568,7 +568,7 @@ All online witnesses were checked on 2026-07-26, and the tracked source-library 
 
 -   Council of Trent, session V (17 June 1546), decree concerning original sin, canons 1–2; session XIII (11 October 1551), ch. VI and canon 7 (reserving the Eucharist and carrying it to the sick); session XIV (25 November 1551), doctrine on the sacrament of extreme unction, chs. I–III, and canons 1–4. Latin from *Canones et decreta sacrosancti oecumenici Concilii Tridentini*, editio stereotypa undecima (Leipzig: Tauchnitz, 1887); English from the public-domain translation of J. Waterworth (London: Burns and Oates; reprint of the London 1848 translation). Both read 2026-07-26 in the Internet Archive digitizations of the printings registered for those editions in the source library.
 
-### Authoritative non-definitive teaching and current law {#authoritative-non-definitive-teaching-and-current-law .unnumbered}
+### Authoritative non-definitive teaching and current law
 
 -   Second Vatican Council, *Sacrosanctum concilium* (4 December 1963), 73–74; *Lumen gentium* (21 November 1964), 48–50; *Gaudium et spes* (7 December 1965), 14, 18. Holy See English web texts, read 2026-07-26.
 
@@ -578,7 +578,7 @@ All online witnesses were checked on 2026-07-26, and the tracked source-library 
 
 -   *Codex Iuris Canonici* (1983), cann. 921–923 (viaticum) and 998–1007 (the anointing of the sick), Holy See English web text, read 2026-07-26. Latin-Church law, in force since 27 November 1983; as-of date 2026-07-26.
 
-### Devotional and reference witnesses {#devotional-and-reference-witnesses .unnumbered}
+### Devotional and reference witnesses
 
 -   *The Book of the Craft of Dying, and Other Early English Tracts Concerning Death*, ed. Frances M. M. Comper (London: Longmans, Green, and Co., 1917), prologue and chs. 1–6, the editor’s “Note on the Book of the Craft of Dying” (pp. 48–51), and the Caxton abridgment (pp. 55–91). Public domain in the United States; read 2026-07-26 in the Internet Archive digitization of the 1917 printing, [item bookofcraftofdyi00caxtiala](https://archive.org/details/bookofcraftofdyi00caxtiala). The text is modernized in spelling by the editor from Bodleian MS 423 and is a translation of an anonymous Latin original.
 

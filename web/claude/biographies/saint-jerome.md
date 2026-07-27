@@ -245,7 +245,7 @@ Project prose is original; quotations of ancient authors follow the public-domai
 
 All web sources were accessed and checked on 2026-07-24. Ancient-work citations in the text use conventional titles with the numbering of the translations listed here.
 
-### Primary sources: Jerome {#primary-sources-jerome .unnumbered}
+### Primary sources: Jerome
 
 -   Jerome, letters and principal works in English translation: *A Select Library of Nicene and Post-Nicene Fathers*, series 2, vol. 6, ed. P. Schaff and H. Wace, trans. W. H. Fremantle, G. Lewis, and W. G. Martley (New York: Christian Literature Company, 1893). Quotations follow the transcriptions at New Advent (<https://www.newadvent.org/fathers/>): *Letters* 14 (<https://www.newadvent.org/fathers/3001014.htm>), 15, 22, 45, 48 (headnote), 70, 84, 102, 108, 112, 125, 127, 133, 136, 139 (same pattern, `3001NNN.htm`); Preface to the Four Gospels (<https://www.newadvent.org/fathers/3002.htm>); *The Perpetual Virginity of Blessed Mary (Against Helvidius)* (<https://www.newadvent.org/fathers/3007.htm>); *Against Jovinianus*, book 1 (<https://www.newadvent.org/fathers/30091.htm>); *Against Vigilantius* (<https://www.newadvent.org/fathers/3010.htm>); *To Pammachius Against John of Jerusalem* 41 (<https://www.newadvent.org/fathers/3004.htm>); and, at CCEL, the Preface to Samuel and Kings (<https://www.ccel.org/ccel/schaff/npnf206.vii.iii.iv.html>) and the prolegomena Life of Jerome by Fremantle (<https://ccel.org/ccel/schaff/npnf206.iv.iii.html>). The translation is public domain; the underlying Latin is ancient and public domain.
 
@@ -253,7 +253,7 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 -   Jerome, prologues to Tobit and Judith, public-domain translations at the Tertullian Project (<https://www.tertullian.org/fathers/jerome_preface_tobit.htm>; <https://www.tertullian.org/fathers/jerome_preface_judith.htm>).
 
-### Primary sources: other ancient witnesses {#primary-sources-other-ancient-witnesses .unnumbered}
+### Primary sources: other ancient witnesses
 
 -   Augustine, *Letters* 71 and 82, NPNF series 1, vol. 1, at New Advent (<https://www.newadvent.org/fathers/1102071.htm>; <https://www.newadvent.org/fathers/1102082.htm>); Jerome’s replies are cited as *Letters* 102 and 112 (= Augustine *Letters* 68 and 75, <https://www.newadvent.org/fathers/1102068.htm>; <https://www.newadvent.org/fathers/1102075.htm>).
 
@@ -267,7 +267,7 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 -   Prosper of Aquitaine, chronicle notices on Jerome’s birth and death: not inspected directly; used as reported in Fremantle’s prolegomena (above) and the ninth-edition Encyclopædia Britannica article “St Jerome” (1881), at 1902encyclopedia.com (<https://www.1902encyclopedia.com/J/JER/st-jerome.html>).
 
-### Later tradition {#later-tradition .unnumbered}
+### Later tradition
 
 -   *The Golden Legend* (Jacobus de Voragine, 13th c.), Life of S. Jerome, in Caxton’s English version, Temple Classics text at the Internet Medieval Sourcebook, Fordham University (<https://sourcebooks.fordham.edu/basis/goldenlegend/GoldenLegend-Volume5.asp>); source of the lion story, the cardinal-priest notice, and the retold dream.
 
@@ -275,7 +275,7 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 -   E. F. Rice, *Saint Jerome in the Renaissance* (Baltimore, 1985): the Gerasimus-transfer explanation of the lion legend, cited as reported in museum and reference literature. Not independently inspected.
 
-### Ecclesial reception {#ecclesial-reception .unnumbered}
+### Ecclesial reception
 
 -   *Catechism of the Catholic Church* 133, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/__PS.HTM>); quoting *Dei Verbum* 25 and Jerome’s Isaiah-commentary prologue.
 
@@ -289,7 +289,7 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 -   “St. Jerome,” *The Catholic Encyclopedia*, vol. 8 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/08341a.htm>); cited for its dating (c. 340–2) as reception history.
 
-### Modern scholarship and reference {#modern-scholarship-and-reference .unnumbered}
+### Modern scholarship and reference
 
 -   J. N. D. Kelly, *Jerome: His Life, Writings, and Controversies* (London: Duckworth, 1975). Cited for its standing as the standard English biography and its retention of the 331–420 frame, at the level of publisher and review records. Not independently inspected.
 

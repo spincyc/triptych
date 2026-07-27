@@ -402,31 +402,31 @@ The standing of Lourdes, stated in one sentence for the reader who needs only on
 
 ## Scope, Status, and Qualifications
 
-### Question and thesis boundary {#question-and-thesis-boundary .unnumbered}
+### Question and thesis boundary
 
 This study answers one question: what was reported at Lourdes in 1858 on the nearest genuinely accessible record; what exactly the competent ecclesiastical authority judged on 18 January 1862, in which words and with what object; how the reported cures are and have been examined and recognized; how Bernadette, the liturgy, and the popes received the event; and what all of that obliges and leaves open. It is a source-audited study instrument, ecclesial-judgment-first in method: not a devotional narrative, a critical edition, a magisterial act, a medical investigation, or a complete history of Lourdes. It proposes no judgment of its own on supernaturality and re-diagnoses no medical file.
 
-### Corpus and exclusions {#corpus-and-exclusions .unnumbered}
+### Corpus and exclusions
 
 Included: the eighteen reported apparitions of 11 February–16 July 1858, bounded to the witness strata named in §2.1; the civil interrogations at their documented existence; the 1858–1862 commission and the mandement, quoted from Lasserre’s 1870 reproduction collated with the Sanctuary’s transcriptions; the self-identification’s textual history at the accessible witnesses; the medical-recognition institutions and the Sanctuary’s published list of 72 recognized cures with the dossiers of the 70th–72nd; Bernadette’s later life through the 1933 canonization acts in AAS 26 (1934); liturgical reception (1890, 1907, 1969-era rank at ceiling, 1992); papal reception (Pius IX to Benedict XVI at the cited texts; the announced 2026 visit as announcement only); and current standing under the 2024 DDF norms. Excluded or bounded: any certification of physical or medical mechanism; any reconstruction of the personal prayer or secrets; the candle episode beyond received narrative; the contents of the police and judicial dossiers (not consulted); Estrade and the memoir literature (not consulted); the nineteenth-century controversies (named as reception history only); apparitions claimed elsewhere; and every claim of the comprehensive “all approved apparitions” type—this is a single-event study and asserts no registry.
 
-### Geography, chronology, and currentness {#geography-chronology-and-currentness .unnumbered}
+### Geography, chronology, and currentness
 
 Subject geography: Lourdes and the grotto of Massabielle; Bartrès; Tarbes; Nevers; Rome; the dioceses of the recognized cures. Subject range: 1844 (Bernadette’s birth) to the acts and announcements current at the as-of date. As-of date: all mutable claims—current controlling status, the DDF documents index, Sanctuary pages, the cure count of 72, the Bureau staffing, the announced papal visit—were checked on 2026-07-25. No later act superseding the 1862 judgment was located. Stable historical facts are not given artificial currentness. Negative results are bounded searches, correctable by better evidence, never guarantees. Two Sanctuary-site internal stalenesses found during research are recorded rather than harmonized: a general page still naming Dr de Franciscis as currently responsible after the dated announcement of Dr Monami’s appointment, and an older statistics page still counting 70 cures.
 
-### Taxonomy and terminology {#taxonomy-and-terminology .unnumbered}
+### Taxonomy and terminology
 
 Kept distinct throughout: *received custodial narrative* (Sanctuary chronology and pages); *period narrative literature* (Lasserre); *documentary reproduction* (the mandement as printed by Lasserre; the AAS/ASS acts); *competent judgment* (the 1862 act; each cure recognition; the canonization); *medical finding* (“unexplained in the present state of medical knowledge”—never more); *liturgical reception* (feast, World Day of the Sick); *papal teaching and act of piety* (encyclical, homilies, visits); *announcement* (the 2026 visit); and *editorial synthesis*. “Reported” is the default register for all words and phenomena attributed to the apparition. **Fondés à la croire certaine** is the 1862 act’s own formula and is not translated into the 2024 taxonomy. **Fides humana** names the prudent human assent invited by approved private revelation.
 
-### Source hierarchy and method {#source-hierarchy-and-method .unnumbered}
+### Source hierarchy and method
 
 Priority: the exact operative and documentary texts in identified witnesses (the mandement in the 1870 reproduction with page-image collation; AAS 26 (1934); ASS 40 (1907); the Holy See’s web texts for 1957–2024); then the Sanctuary’s and AMIL’s institutional pages for the custodial narrative, the medical institutions, and the cures list, always at institutional-self-description ceilings; then period narrative (Lasserre) for what only it witnesses, marked as such; then common public record, marked as such and used sparingly. Quotations are exact from the named witness; French, Latin, Italian, and Occitan sources are quoted in the original where wording is operative, with editorial translations visibly editorial. No project or AI rendering is offered as a received translation; no prayer text is printed for recitation in this study.
 
-### Qualifications and unresolved items {#qualifications-and-unresolved-items .unnumbered}
+### Qualifications and unresolved items
 
 (1) The 1862 mandement was read in Lasserre’s 1870 reproduction (pages collated as images) and the Sanctuary’s transcriptions, not in the diocesan original or 1862 imprint; Lasserre abridges the narrative portion and arts. 3–4. (2) The critical edition of the 1858 documents (Laurentin–Billet, *Documents authentiques*) and Bernadette’s autograph écrits were not accessible; the police and judicial records are asserted only as to documented existence, and officials’ forenames are not asserted. (3) Estrade’s memoir was not consulted. (4) The Gascon sentence’s orthography varies between the Sanctuary’s own pages; no autograph spelling is asserted. (5) The apparitions table rests on the Sanctuary’s chronology, a custodial harmonization; crowd figures are received round numbers. (6) AAS 26 (1934) and ASS 40 (1907) were read in the Holy See’s OCR scans; OCR defects are noted where material (the canonization formula’s **exaltationem**). (7) The current rank of the 11 February memorial and the French particular date for St Bernadette are reported at ceiling without typical-edition verification. (8) The cures list is the Sanctuary’s; its ordinals are its order anchored by its own 70th–72nd designations; cure dates are asserted only where a dedicated institutional article gives them; the aggregate statistics describe the 70-cure state. (9) The 1905 Roman act confirming the Bureau’s procedures and the pre-1890 privilege acts were not located as documents; the Sanctuary’s summaries are used at ceiling. (10) The 2026 papal visit is an announcement and may change. (11) No independent Mariological, historical, canonical, archival, Occitan or French philological, liturgical, medical, or scientific review has occurred; no ecclesiastical review or approval is claimed or implied.
 
-### Rights {#rights .unnumbered}
+### Rights
 
 Project prose is original and intended for CC BY 4.0. Quotations remain under their own status: the 1862 mandement and the other nineteenth-century French and Latin documents are public domain in text (Lasserre died in 1900; official acts), quoted with citation; *Acta Apostolicae Sedis* and *Acta Sanctae Sedis* material and Holy See web texts are quoted within ordinary scholarly limits with citation; Sanctuary of Lourdes and AMIL institutional pages are © their publishers and are quoted briefly with citation; the Papal Encyclicals Online rendering of *Ineffabilis Deus* has an unidentified translator and unresolved translation rights and is quoted once, briefly, with attribution. Online availability is not treated as a reuse license; no complete document is reproduced; scan images were consulted for collation and are not redistributed.
 
@@ -434,13 +434,13 @@ Project prose is original and intended for CC BY 4.0. Quotations remain under 
 
 Witnesses are listed with role and rights notes; access date for all web loci is 2026-07-25 unless stated. Stable source identities for the starred entries are registered in the repository source library; this publication’s bindings are in `research/source-bindings.toml`.
 
-### The 1862 judgment and its witnesses {#the-1862-judgment-and-its-witnesses .unnumbered}
+### The 1862 judgment and its witnesses
 
 -   \*Bertrand-Sévère Laurence, Bishop of Tarbes, *Mandement de Mgr l’Évêque de Tarbes, portant jugement sur l’Apparition qui a eu lieu à la Grotte de Lourdes*, 18 January 1862. Role: the operative approval act, quoted exactly in §1 and analyzed in §4. Witness: the reproduction in Lasserre (next entry), pp. 397–409, with the operative pages collated against page images; collated further against the Sanctuary’s French transcription of art. 1 (<https://www.lourdes-france.com/1862-2022-160-ans-de-la-reconnaissance-des-apparitions-de-lourdes/>) and English presentation (<https://www.lourdes-france.org/en/the-decree/>). Ceilings in §4.3 and Appendix A. The 1862 text is public domain.
 
 -   \*Henri Lasserre, *Notre-Dame de Lourdes* (Paris: Victor Palmé, 1870), read in the Internet Archive scan (<https://archive.org/details/notredamedelou00lass>; OCR text and IIIF page images, leaves collated for printed pp. 397–409 and the pp. 73–74 footnote). Role: period narrative witness and documentary carrier of the mandement, the officials’ identities, the refused-access footnote, and the Pius IX brief. Public domain (Lasserre d. 1900); apologetic narrative, used at that ceiling.
 
-### Holy See acts and documents {#holy-see-acts-and-documents .unnumbered}
+### Holy See acts and documents
 
 -   \*Sacred Congregation of Rites, **Urbis et Orbis** decree *quo festum Apparitionis B. M. V. Immaculatae extenditur ad universam Ecclesiam*, 13 November 1907, with the appended Office addition approved 27 November 1907: *Acta Sanctae Sedis* 40 (1907), pp. 747–749, read in the Holy See’s OCR scan (<https://www.vatican.va/archive/ass/documents/ASS-40-1907-ocr.pdf>). Role: the universal feast extension; the 11 July 1890 approval date of the proper Office and Mass.
 
@@ -462,7 +462,7 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 -   Vatican News, “France: le Pape nomme un évêque à Tarbes et Lourdes,” 30 March 2022: <https://www.vaticannews.va/fr/eglise/news/2022-03/pape-francois-nominations-france-eveques-tarbes-lourdes-micas.html>. Role: the current ordinary’s appointment (§5.2, §9.3).
 
-### Sanctuary of Lourdes and medical-institution pages {#sanctuary-of-lourdes-and-medical-institution-pages .unnumbered}
+### Sanctuary of Lourdes and medical-institution pages
 
 All are institutional self-description, cited as the custodian’s or association’s own account (ceilings in Appendix A); © Sanctuaire de Lourdes / AMIL, quoted briefly with citation.
 
@@ -480,7 +480,7 @@ All are institutional self-description, cited as the custodian’s or associatio
 
 -   AMIL, “70. Sr Bernadette Moriau”: <https://www.amilourdes.com/en/post/70-sr-bernadette-moriau-1>. Role: the 70th-cure dossier (§5.4).
 
-### Not consulted at first hand (recorded ceilings) {#not-consulted-at-first-hand-recorded-ceilings .unnumbered}
+### Not consulted at first hand (recorded ceilings)
 
 The 1862 diocesan imprint and the Tarbes archives; René Laurentin and Bernard Billet, *Lourdes: Documents authentiques* (7 vols., 1957–1966), and Bernadette’s autograph écrits; the 1858 police and judicial dossiers; J.-B. Estrade’s memoir; Benedict XIV, *De servorum Dei beatificatione*; Pius X, *Ad diem illum* (quoted via Pius XII); the 1905 Roman confirmation of the Bureau’s procedures; the pre-1890 privilege acts; the Sanctuary’s 2022 re-edition of the mandement; the typical editions fixing the current rank of the 11 February memorial and the French date for St Bernadette; the diocesan proclamation texts of the recognized cures.
 

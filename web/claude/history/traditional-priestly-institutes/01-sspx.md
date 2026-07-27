@@ -669,7 +669,7 @@ Dates marked “(S)” are supplied by the Society and were not verified in an o
 
 All sources were read on 2026-07-25. *Acta Apostolicae Sedis* volumes and fascicles were read in the Holy See’s own scanned archive at <https://www.vatican.va/archive/aas/index_sp.htm>; individual volume files follow the pattern `https://www.vatican.va/archive/aas/documents/AAS-`*`vol`*`-`*`year`*`-ocr.pdf`, and the 2009–2017 fascicles the pattern `https://www.vatican.va/archive/aas/documents/`*`year`*`/`. Sources are grouped by function.
 
-### Acts printed in *Acta Apostolicae Sedis* {#acts-printed-in-acta-apostolicae-sedis .unnumbered}
+### Acts printed in *Acta Apostolicae Sedis*
 
 -   Sacred Congregation de Propaganda Fide, *Provisio Ecclesiarum*: 12 June 1947 (Marcel Lefebvre, titular bishop of Anthedon, Vicar Apostolic of Dakar), AAS 39 (1947) 639; 22 September 1948 (titular archbishop of Arcadiopolis, Apostolic Delegate for Dakar), AAS 40 (1948) 560–561.
 
@@ -697,7 +697,7 @@ All sources were read on 2026-07-25. *Acta Apostolicae Sedis* volumes and fascic
 
 -   Pontifical Commission *Ecclesia Dei*, letter to the presidents of the episcopal conferences concerned on the licence for marriages of faithful of the Society, 27 March 2017, AAS 109 (2017) 426–427.
 
-### Official Holy See texts and press bulletins {#official-holy-see-texts-and-press-bulletins .unnumbered}
+### Official Holy See texts and press bulletins
 
 -   Paul VI, letter to Archbishop Marcel Lefebvre, 15 August 1976 (French), <https://www.vatican.va/content/paul-vi/fr/letters/1976/documents/hf_p-vi_let_19760815_mons-lefebvre.html>.
 
@@ -717,13 +717,13 @@ All sources were read on 2026-07-25. *Acta Apostolicae Sedis* volumes and fascic
 
 -   Dicastery for the Doctrine of the Faith, *Decreto*, Prot. N. 99/2009, 2 July 2026, bulletin B0568, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01077.html>; and *Nota Esplicativa*, same protocol and bulletin, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01078.html>.
 
-### Canonical texts {#canonical-texts .unnumbered}
+### Canonical texts
 
 -   *Codex Iuris Canonici* (1983), Book VI as revised by *Pascite gregem Dei* (23 May 2021, effective 8 December 2021), Latin: cann. 1353, 1364, 1387 at <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberVI_la.html>; Book VII, cann. 1734, 1737, 1739 at <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberVII_la.html>. Registered in this repository’s source library as `work.catholic-church.codex-iuris-canonici-1983`.
 
 -   *Codex Iuris Canonici* (1917), Typis Polyglottis Vaticanis 1918: cann. 985, 7 and 2374, located in the registered uncorrected optical transcription of that printing (page images of these canons not inspected). Registered as `work.catholic-church.codex-iuris-canonici-1917`.
 
-### Documents published by the Society of Saint Pius X (interested party) {#documents-published-by-the-society-of-saint-pius-x-interested-party .unnumbered}
+### Documents published by the Society of Saint Pius X (interested party)
 
 -   “Cardinal Wright’s letter of approval for the SSPX,” 18 February 1971 (English translation, translator unnamed), <https://sspx.org/en/cardinal-wrights-letter-approval-sspx-30125>; and the notice “Joyful consequence of November 1, 1970,” <https://sspx.org/en/news/joyful-consequence-november-1-1970-4816>.
 
@@ -739,7 +739,7 @@ All sources were read on 2026-07-25. *Acta Apostolicae Sedis* volumes and fascic
 
 -   “Letter to the Holy Father regarding the Decree of the Dicastery for the Doctrine of the Faith,” 3 July 2026, <https://fsspx.news/en/news/letter-holy-father-regarding-decree-dicastery-doctrine-faith-59956>; “General House Communiqué: The Society Files a Recourse Against the Decree of 2 July 2026,” 13 July 2026, <https://fsspx.news/en/news/general-house-communique-society-files-recourse-against-decree-2-july-2026-60112>; “Letter from the Superior General to all the faithful,” 19 July 2026, <https://fsspx.news/en/news/letter-superior-general-all-faithful-society-saint-pius-x-60210>; “A Timeline of the Society of Saint Pius X’s July 1, 2026, Episcopal Consecrations,” 14 July 2026, <https://sspx.org/en/news/timeline-society-saint-pius-xs-july-1-2026-episcopal-consecrations-60126>.
 
-### Consequential negative results {#consequential-negative-results .unnumbered}
+### Consequential negative results
 
 -   No decree of erection (1970), decree of suppression (1975), Cardinals’ Commission letter (1975), decree of suspension (1976), protocol (1988), information note of 16 June 1988, decree *Dominus Marcellus Lefebvre* (1988), Gagnon report, or Doctrinal Preamble (2011) was located in *Acta Apostolicae Sedis*, on vatican.va, or in the Holy See Press Office bulletin.
 

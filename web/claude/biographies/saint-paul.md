@@ -402,11 +402,11 @@ Project prose is original. Quotations follow public-domain translations: Challon
 
 All web sources were accessed and checked on 2026-07-25. Ancient-work citations in the text use conventional titles and loci with the translations listed here.
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   The Holy Bible, Douay–Rheims version, Challoner revision, as transcribed at drbo.org (public domain). Chapters retrieved and checked verbatim for this study: Acts 7–9, 11, 13–28; Rom 1, 11, 15, 16; 1 Cor 1, 9, 11, 15, 16; 2 Cor 2, 8, 10, 11, 12; Gal 1, 2, 6; Eph 3; Phil 1, 3; Col 4; 1 Thess 1, 2, 4; 2 Thess 2, 3; 1 Tim 1; 2 Tim 1, 4; Titus 3; Phlm; 2 Pet 3 (chapter pages under <https://drbo.org/chapter/51009.htm> and the same numbering pattern, e.g. `55001` for Galatians 1, `64001` for Philemon).
 
-### Ancient witnesses {#ancient-witnesses .unnumbered}
+### Ancient witnesses
 
 -   Clement of Rome (attributed), *First Epistle to the Corinthians* 5–6, 36, 47, in the translation presented at New Advent and there attributed to John Keith, *Ante-Nicene Fathers*, vol. 9 (<https://www.newadvent.org/fathers/1010.htm>). Conventional dating c. 95–96 as reported in the 1912 Catholic Encyclopedia, “Pope St. Clement I” (<https://www.newadvent.org/cathen/04012c.htm>).
 
@@ -430,7 +430,7 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   Suetonius, *Claudius* 25, trans. J. C. Rolfe (1914), at Wikisource (<https://en.wikisource.org/wiki/The_Lives_of_the_Twelve_Caesars/Claudius>).
 
-### Apocrypha and later tradition {#apocrypha-and-later-tradition .unnumbered}
+### Apocrypha and later tradition
 
 -   *The Acts of Paul* (apocryphal; per the translator’s headnote, composed by a presbyter of Asia and datable c. A.D. 160 from Tertullian’s notice), including the *Acts of Paul and Thecla* and the *Martyrdom*, in M. R. James, *The Apocryphal New Testament* (Oxford: Clarendon, 1924), as transcribed at Early Christian Writings (<https://www.earlychristianwritings.com/text/actspaul.html>).
 
@@ -438,13 +438,13 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   Pseudo-Marcellus, *Acts of Peter and Paul* (fifth century), and Pseudo-Abdias, *Passion of Paul* (fourth century): cited only at the reported level from Benedict XVI’s General Audience of 4 February 2009 (below); not independently inspected.
 
-### The Gallio anchor {#the-gallio-anchor .unnumbered}
+### The Gallio anchor
 
 -   Adolf Deissmann, *St. Paul: A Study in Social and Religious History*, trans. L. R. M. Strachan (London: Hodder and Stoughton, 1912), Appendix I, “The Proconsulate of L. Junius Gallio,” pp. 235–260, with phototype facsimile of the Delphi inscription; read in full in the public scan at the Internet Archive (<https://archive.org/details/stpaulstudyinsoc00deis>, plain text at `stpaulstudyinsoc00deis_djvu.txt`). Basis for the dating of Claudius’s 26th imperatorial acclamation (with Dessau’s collation) and of Gallio’s proconsulship from the summer of 51.
 
 -   Benedict XVI, General Audience of 27 August 2008 (English), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080827.html>); the modern official statement of the anchor (“Gallio was Proconsul in Corinth between the years 51 and 53”) and of the c. AD 8 birth convention.
 
-### Tomb, basilica, and ecclesial reception {#tomb-basilica-and-ecclesial-reception .unnumbered}
+### Tomb, basilica, and ecclesial reception
 
 -   “The Tomb of the Apostle,” “The Constantine Building,” and “The Fire in July 1823,” official presentation of the Papal Basilica of St. Paul Outside-the-Walls, English pages hosted at vatican.va (<https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm>; `costantino.htm`; `incendio.htm`); source for the <span class="smallcaps">Paulo Apostolo Mart</span> slab, sarcophagus dimensions and position, Lucina and Aquae Salviae traditions as officially stated, and the 324/395/1823/1854 building history.
 
