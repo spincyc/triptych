@@ -3,7 +3,202 @@ manifest_id = "roman-sanctuary-dictionary-artwork"
 owner = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
 asset_root = "shared/artwork"
 status = "held-generated-assets"
-artwork_links = []
+
+# Compact canonical links for generated figures whose full role-specific
+# review packets preserve the generation and visual-screen details. These
+# links reconcile the object-local identities without asserting factual,
+# print, rights, consumer, or release approval.
+[[artwork_links]]
+id = "art-altar-appointments-0101-iso-candle"
+asset_file_id = "file-rpd-altar-candlestick"
+object_ids = ["obj-altar-candle"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-altar-appointments-0101-iso-candlestick"
+asset_file_id = "file-rpd-altar-candlestick"
+object_ids = ["obj-altar-candlestick"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-altar-appointments-0102-iso-sanctuary-lamp"
+asset_file_id = "file-rpd-sanctuary-lamp"
+object_ids = ["obj-sanctuary-lamp"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-altar-cruet-isolated"
+asset_file_id = "file-rpd-altar-cruet"
+object_ids = ["obj-altar-cruet"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-chalice-isolated"
+asset_file_id = "file-rpd-chalice"
+object_ids = ["obj-chalice"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-paten-isolated"
+asset_file_id = "file-rpd-paten"
+object_ids = ["obj-paten"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-service-objects-0101-iso-altar-bells"
+asset_file_id = "file-rpd-altar-bells"
+object_ids = ["obj-altar-bells"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-processional-objects-0001-iso-processional-cross"
+asset_file_id = "file-rpd-processional-cross"
+object_ids = ["obj-processional-cross"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-processional-objects-0002-iso-torch"
+asset_file_id = "file-rpd-processional-torch"
+object_ids = ["obj-processional-torch"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-incense-0001-closed-thurible"
+asset_file_id = "file-rpd-thurible"
+object_ids = ["obj-thurible"]
+variant_ids = []
+view = "closed"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-incense-0002-open-boat-spoon"
+asset_file_id = "file-rpd-boat-spoon"
+object_ids = ["obj-incense-boat-set"]
+variant_ids = []
+view = "open"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-related-ceremonies-0001-iso-holy-water-vessel"
+asset_file_id = "file-rpd-holy-water-vessel"
+object_ids = ["obj-holy-water-vessel"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-related-ceremonies-0002-iso-aspergillum"
+asset_file_id = "file-rpd-aspergillum"
+object_ids = ["obj-aspergillum"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-related-ceremonies-0003-open-ombrellino"
+asset_file_id = "file-rpd-ombrellino"
+object_ids = ["obj-ombrellino"]
+variant_ids = []
+view = "open"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-bishops-chair-comparison"
+asset_file_id = "file-rsd-pontifical-seating"
+object_ids = ["obj-bishops-chair"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-communion-rail-comparison"
+asset_file_id = "file-rsd-sanctuary-furnishings"
+object_ids = ["obj-communion-rail"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-credence-table-comparison"
+asset_file_id = "file-rsd-sanctuary-furnishings"
+object_ids = ["obj-credence-table"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-episcopal-kneeler-comparison"
+asset_file_id = "file-rsd-pontifical-seating"
+object_ids = ["obj-episcopal-kneeler"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-episcopal-throne-comparison"
+asset_file_id = "file-rsd-pontifical-seating"
+object_ids = ["obj-episcopal-throne"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-faldstool-comparison"
+asset_file_id = "file-rsd-pontifical-seating"
+object_ids = ["obj-faldstool"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-prie-dieu-comparison"
+asset_file_id = "file-rsd-sanctuary-furnishings"
+object_ids = ["obj-prie-dieu"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-sanctuary-stool-comparison"
+asset_file_id = "file-rsd-sanctuary-furnishings"
+object_ids = ["obj-sanctuary-stool"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-sedilia-comparison"
+asset_file_id = "file-rsd-sanctuary-furnishings"
+object_ids = ["obj-sedilia"]
+variant_ids = []
+view = "comparison"
+workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-service-objects-0102-iso-candle-tool"
+asset_file_id = "file-rpd-candle-tool"
+object_ids = ["obj-candle-lighter-extinguisher"]
+variant_ids = []
+view = "isolated"
+workflow_state = "generated"
 
 [[asset_files]]
 id = "file-dic-art-cr-001"
@@ -232,49 +427,49 @@ technical = { width_px = 1122, height_px = 1402, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-thurible"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 172739, sha256 = "cea528df31237132e55f6bec2b9e0355084ad8979a03f558f6efa16a781f7e2c" }
 
 [[asset_files]]
 id = "file-rpd-boat-spoon"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0002-open-boat-spoon.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1050, height_px = 700, bit_depth = 8, color_mode = "grayscale", bytes = 266221, sha256 = "98af7c63f0930855a8d65ca32fd5cb9d064b79c5abd2853882290d8870e6c421" }
 
 [[asset_files]]
 id = "file-rpd-processional-cross"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 142187, sha256 = "f8df999e284149ba6fdee6c8a54b66e8243fcd419cac9d675de0061cabee523a" }
 
 [[asset_files]]
 id = "file-rpd-processional-torch"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 141482, sha256 = "a78c9c0f78b959a12078729f0a42bbde604c12146faf27b2d2157ba33799b404" }
 
 [[asset_files]]
 id = "file-rpd-holy-water-vessel"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 467, height_px = 700, bit_depth = 8, color_mode = "grayscale", bytes = 126823, sha256 = "f79cc2acb9cbbb09958849acf42a94e6506250c631f9afc71da5fc0610f739e6" }
 
 [[asset_files]]
 id = "file-rpd-aspergillum"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 750, height_px = 500, bit_depth = 8, color_mode = "grayscale", bytes = 102449, sha256 = "2507fb409c3abf977b6ba4a24c791499eab91b7166ea62696e3cfdbfa7ea39c5" }
 
 [[asset_files]]
 id = "file-rpd-ombrellino"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-open-ombrellino.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 185710, sha256 = "2f35848f3bd9e96aec5999a8cf515e467b2b5c9be210a1ad9aa98692662a55e2" }
 

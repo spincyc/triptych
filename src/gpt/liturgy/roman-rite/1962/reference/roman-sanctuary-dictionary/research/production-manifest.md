@@ -1,22 +1,22 @@
 # Production manifest
 
-Status: **scaffold only; not approved for full publication**
+Status: **public-alpha priestly-review copies; not authoritative releases**
 Audit date: 2026-07-27
 
 ## Leaves
 
-| Leaf | Source exists | Canonical records rendered | PDF built/reviewed/installed | Web edition reviewed | Release state |
+| Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes, prototype | No | No recorded completed gate | No | Hold |
-| Altar server | Yes, prototype | No | No recorded completed gate | No | Hold |
-| Sacristan | Yes, prototype | No | No recorded completed gate | No | Hold |
-| MC/trainer | Yes, prototype | No | No recorded completed gate | No | Hold |
-| General reader | Yes, prototype | No | No recorded completed gate | No | Hold |
-| Pontifical ceremonies | Yes, prototype | No | No recorded completed gate | No | Hold |
+| Comprehensive | Yes | Six review-eligible records | Built and installed; production review remains open | No | Public-alpha priestly review |
+| Altar server | Yes | Six review-eligible records | Built and installed; production review remains open | No | Public-alpha priestly review |
+| Sacristan | Yes | Six review-eligible records | Built and installed; production review remains open | No | Public-alpha priestly review |
+| MC/trainer | Yes | Six review-eligible records | Built and installed; production review remains open | No | Public-alpha priestly review |
+| General reader | Yes | Six review-eligible records | Built and installed; production review remains open | No | Public-alpha priestly review |
+| Pontifical ceremonies | Yes | Six review-eligible records | Built and installed; production review remains open | No | Public-alpha priestly review |
 
-Each leaf still requires its own `research/guide-map.md` and any required
-source bindings. Presence of `main.tex`, generation metadata, or
-`web-edition.toml` is not publication approval.
+Each leaf has its own `research/guide-map.md`. Presence of `main.tex`,
+generation metadata, an installed review PDF, or `web-edition.toml` is not
+authoritative-release approval.
 
 ## Required pipeline
 
@@ -45,30 +45,31 @@ source bindings. Presence of `main.tex`, generation metadata, or
 
 ## Artifact ledger
 
-The six installed priestly-review snapshots were rebuilt for two passes,
-metadata-checked, rasterized, and visually inspected on every page on
-2026-07-27. Build and installed bytes are identical. Each is seven portrait
-pages:
+The six installed priestly-review snapshots were regenerated and rebuilt
+after the review-admission gate was tightened. Each is six portrait pages and
+renders six admitted records with candidate artwork conspicuously marked
+`ARTWORK UNDER REVIEW`. Automated PDF inspection finds six embedded images in
+each copy and no image below 300 effective dpi. Full-size visual, physical
+print, and monochrome-photocopy review of these exact snapshots remains open.
 
 | Leaf | Installed PDF SHA-256 |
 | --- | --- |
-| comprehensive | `54af355b7ea622cff00f8fc702c8b031a8a7a7f80d4edc889cb8f101dbba22dd` |
-| altar-server | `7ed33097ef754b004c46d953d1822fecfb7aa065ae31824bb9eb097b915fa365` |
-| sacristan | `5a0a58a910f2e0cb169c18f0f9663bb8bc4360df4bf218750bd4f944cdf65dcb` |
-| mc-trainer | `dee24bc6d4b357345151ec474b30b59ef684406df83307e87e50659530b9d4c5` |
-| general-reader | `50900f6b50973e693a58575acd6397523c838d9863ea1d392f8564d00cb7fd14` |
-| pontifical-ceremonies | `140e9f0c915c2d26f64380bfbe53bcf31a8897306e8ab5e26fd9d75acecd699d` |
+| comprehensive | `517d5c3d517cbf9395fef165c817b8751bd879bae28f6a1b42bb932a1379b1d6` |
+| altar-server | `02be3ff41f7fffe88d023012473de6efc0fe38f64190dc7714239b944dd486cc` |
+| sacristan | `b2dd757c495941dc82cdef981aac394ab746305777fd5c029a117e41957bb406` |
+| mc-trainer | `7d1373a6cc522cddc5795fff10a63dd8454b86ee5924a2a10fcb2d88006f54f1` |
+| general-reader | `c831b1e852b6378f0600f9366543ca046f8964db0a77c6bd393f69bbe18004c7` |
+| pontifical-ceremonies | `aebfc52d1aec0b04cf761760f0a55f8db36806bd7c1c17eec1d1ed08a0445c1e` |
 
-All six snapshots admit the same 14 records presently capable of the bounded
-review gate and print a 24-record omission register. This is an honest
+All six snapshots admit the same six records presently capable of the bounded
+review gate and print a 32-record omission register. This is an honest
 review corpus, not the promised complete dictionary or a claim that the
 audience editions have reached their final differentiated scope.
 
-User authorization for this review distribution is the exact session
-instruction: “yes”, answering the question whether all six should be prepared
-as explicitly labeled priestly-review editions, publishable for expert
-evaluation but incomplete and not authoritative. This authorization is
-snapshot-specific and does not authorize an authoritative release.
+The project convention now makes every installed review paper publicly
+discoverable in the public alpha. That distribution rule does not promote a
+record, close an open gate, authorize operational reliance, or authorize an
+authoritative release.
 
 ## Full-publish readiness
 
@@ -94,7 +95,7 @@ liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader
 liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies
 ```
 
-Each `web-edition.plan.toml` remains ineligible because this distribution is
+Each `web-edition.toml` remains ineligible because this distribution is
 PDF-only review. A future final web record must describe the actual reviewed
 publication and must not inherit the review snapshot's status.
 
@@ -157,11 +158,12 @@ new source-family presence rather than mechanically marking it screened.
 
 ### Release manifest and exact-byte approval
 
-The six stable IDs are registered at `status = review`, retain four unresolved
-dictionary gates, and have `approval = null`. They are eligible only for the
-private no-index review preview and direct reviewer distribution. Promotion to
-ordinary release and exact-PDF authorization require fresh non-review builds
-after the gates close; no review hash or authorization carries forward.
+The six stable IDs are registered at `status = review`, retain their
+unresolved dictionary gates, and have no authoritative-release approval. They
+are eligible for conspicuously labelled public-alpha review distribution.
+Promotion to authoritative release and exact-PDF authorization require fresh
+non-review builds after the gates close; no review hash or distribution
+decision carries forward.
 
 The terminal public gates are:
 

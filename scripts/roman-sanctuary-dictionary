@@ -155,16 +155,48 @@ def selected(record: dict, edition: dict) -> bool:
     return by_relevance or by_category
 
 
-def review_selected(record: dict, edition: dict, review_assets: set[str]) -> bool:
-    """Select research records suitable for an explicitly held review packet."""
+def review_gate_failure(record: dict, review_assets: set[str]) -> str | None:
+    """Return the first factual or artwork defect that bars review rendering."""
     if record["workflow_state"] not in {
         "source-audited", "art-reviewed", "publication-ready"
     }:
-        return False
-    if not record["artwork"] or any(
+        return f"workflow state {record['workflow_state']}; not admitted to factual review"
+    if "unresolved" in record["statuses"]:
+        return "object identity or governing status remains unresolved"
+    if any(
+        claim["evidence_state"] == "unverified-lead"
+        for claim in record["claims"]
+    ):
+        return "a printed claim remains an unverified lead"
+    sources = {source["id"]: source for source in record["sources"]}
+    if any(
+        source_id not in sources
+        or sources[source_id]["verification_state"] != "claim-verified"
+        for claim in record["claims"]
+        if claim["evidence_state"] != "editorial-proposal"
+        for source_id in claim["source_ids"]
+    ):
+        return "a printed factual claim lacks a claim-verified source binding"
+    if not record["artwork"]:
+        return "no artwork is registered for priestly review"
+    if any(
         canonical_asset_path(artwork["asset"]) not in review_assets
         for artwork in record["artwork"]
     ):
+        return "artwork is rejected, unregistered, or not admitted for priestly review"
+    if any(
+        artwork["review_state"] not in {
+            "identity-checked", "liturgically-checked", "print-checked", "approved"
+        }
+        for artwork in record["artwork"]
+    ):
+        return "artwork has not passed identity review"
+    return None
+
+
+def review_selected(record: dict, edition: dict, review_assets: set[str]) -> bool:
+    """Select records suitable for a conspicuously public alpha review packet."""
+    if review_gate_failure(record, review_assets) is not None:
         return False
     if record["id"] in edition.get("explicit_exclusions", []):
         return False
@@ -179,15 +211,9 @@ def review_selected(record: dict, edition: dict, review_assets: set[str]) -> boo
 def review_omission_reason(
     record: dict, edition: dict, review_assets: set[str]
 ) -> str:
-    if record["workflow_state"] in {"lead", "identified", "held"}:
-        return f"workflow state {record['workflow_state']}; not admitted to factual review"
-    if not record["artwork"]:
-        return "no artwork is registered for priestly review"
-    if any(
-        canonical_asset_path(artwork["asset"]) not in review_assets
-        for artwork in record["artwork"]
-    ):
-        return "artwork is rejected, unregistered, or not admitted for priestly review"
+    gate_failure = review_gate_failure(record, review_assets)
+    if gate_failure is not None:
+        return gate_failure
     if record["id"] in edition.get("explicit_exclusions", []):
         return "explicitly excluded by the edition selection"
     if edition["kind"] != "comprehensive":
@@ -280,6 +306,20 @@ def review_eligible(record: dict, entry: dict, edition_id: str) -> bool:
     if record["workflow_state"] not in {
         "source-audited", "art-reviewed", "publication-ready"
     }:
+        return False
+    if "unresolved" in record["statuses"]:
+        return False
+    sources = {source["id"]: source for source in record["sources"]}
+    if any(
+        claim["evidence_state"] == "unverified-lead"
+        or any(
+            source_id not in sources
+            or sources[source_id]["verification_state"] != "claim-verified"
+            for source_id in claim["source_ids"]
+        )
+        for claim in record["claims"]
+        if claim["evidence_state"] != "editorial-proposal"
+    ):
         return False
     return all(
         owned[artwork_id]["review_state"] in {
@@ -374,7 +414,7 @@ def main() -> int:
             )
             review_body = [
                 "% Generated deterministically; do not edit.",
-                "% PRIESTLY REVIEW DATA: held, provisional, and not publication output.",
+                "% PRIESTLY REVIEW COPY DATA: public-alpha review, not authoritative-release output.",
                 f"% edition: {edition['id']}",
             ]
             review_body.extend(record_tex(record, review=True) for record in review_chosen)
@@ -417,8 +457,9 @@ def main() -> int:
             sidecar = [
                 "schema_version = 1",
                 f'edition_id = "{edition["id"]}"',
-                'status = "held-priestly-review"',
-                'admission_rule = "source-audited or later record; every artwork asset explicitly accepted-for-priestly-review"',
+                'status = "priestly-review"',
+                'distribution_state = "public-alpha"',
+                'admission_rule = "source-audited or later record; every factual claim has a claim-verified source binding; every artwork asset is explicitly accepted-for-priestly-review and identity-checked or later"',
                 f"admitted_object_count = {len(review_chosen)}",
                 f"omitted_object_count = {len(omitted)}",
                 "admitted_object_ids = [",

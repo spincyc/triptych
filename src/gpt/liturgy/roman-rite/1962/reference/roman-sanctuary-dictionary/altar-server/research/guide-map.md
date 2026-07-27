@@ -1,64 +1,96 @@
 # Altar-server edition guide map
 
-Status: **held structural prototype; not approved for publication**
+Status: **bounded priestly-review leaf; held from public reliance**
 Audit date: 2026-07-27
 Edition selection: `ed-altar-server`
 
 ## Reader and purpose
 
-This use-derived edition is for altar servers. It is designed to show
-everything documented as possibly present around a server, including objects
-the server merely recognizes or must not handle. Its eventual audience layer
-emphasizes location, ordinary handler, the server's handling boundary,
-handoffs, common confusions, and immediate safety.
+This use-derived edition is for altar servers and the priests or trainers who
+supervise them. Its final scope is everything documented as possibly present
+around a server, including objects the server merely recognizes or must not
+handle. Its audience layer follows the server's route from sacristy to
+sanctuary and back. For every selected object it emphasizes:
+
+- encounter location and ceremony;
+- ordinary handler;
+- touch, carry, present, receive, prepare, recognize-only, and
+  must-not-handle boundaries;
+- giver, receiver, destination, and local-direction qualifications where a
+  handoff is involved;
+- likely visual or terminological confusions; and
+- immediate safety around sacred, hot, sharp, fragile, or lighted objects.
+
+Appearance never grants handling permission. A practical or local assignment
+must remain visibly distinct from a universal Roman provision.
 
 ## Current generated selection
 
-The present `main.tex` is a publication-capable shell that consumes only the
-generator-admitted `ed-altar-server` selection under `build/`. That generated
-selection is empty because there are no publication-ready canonical objects.
-It therefore renders a held notice, not verified object presence or a claim
-that coverage is complete.
+The present `main.tex` is a priestly-review shell that consumes only the
+explicitly admitted `ed-altar-server` review selection under `build/`. The
+current generated review manifest admits six records and omits 32:
+`obj-altar-bells`, `obj-altar-candle`, `obj-altar-candlestick`, `obj-chalice`,
+`obj-paten`, and `obj-sanctuary-lamp`. These records form a bounded review
+sample, not a complete server dictionary. Their admission exposes exact
+source, artwork, handling, and audience questions to review; it does not make
+them publication-ready or authorize reliance on the packet for training.
 
-When populated, `ed-altar-server` selects only `publication-ready` canonical
-records whose `audience_relevance.altar_server` value is `required` or
-`useful`. The presence rule deliberately includes an object documented as
-possibly near a server even when `handling.server_relation` is
-`recognizes-only` or `must-not-handle`. Unresolved records are excluded.
-Neither familiarity nor appearance is enough: possible presence must be a
-verified canonical claim, and the relevance field must be assigned in that
-same record.
+The authoritative `ed-altar-server` selection admits only
+`publication-ready` canonical records whose
+`audience_relevance.altar_server` value is `required` or `useful`. The
+presence rule deliberately includes an object documented as possibly near a
+server even when `handling.server_relation` is `recognizes-only` or
+`must-not-handle`. Unresolved records are excluded. Neither familiarity nor
+appearance is enough: possible presence must be a verified canonical claim,
+and the relevance field must be assigned in that same record.
 
 ## Priestly-review selection boundary
 
 The priestly-review edition may expose only explicitly manifested canonical
-records proposed for `ed-altar-server`, with workflow and evidence state
-visible. It may include a proposed presence or handling relationship so the
-reviewer can correct it, but it must not convert that proposal into handling
-permission. The public selection remains limited to `publication-ready`
-records with `required` or `useful` altar-server relevance and verified
-possible presence around a server.
+records proposed for `ed-altar-server`, with workflow, evidence, artwork, and
+handling state visible. Object identity, governing rite and horizon, claimed
+status, source identity and locus, distribution rights, generated provenance,
+physical possibility, and safety must already satisfy the profile's
+priestly-review gate. A proposed morphology, variant, contextual inset, or
+local handling question must be printed as a specific question, not plausible
+instruction. Review admission never converts a proposal into handling
+permission.
+
+The six-record sample is audience-specific only to the extent that its
+canonical records contain verified server relationships and altar-server
+notes. It currently tests direct handling of altar bells, recognition of
+altar lights, and must-not-handle distinctions for chalice and paten. It does
+not yet test the full sacristy route, Missal transfer, cruet and Lavabo
+handoffs, Communion plate, server vesture, or the branches of sung, solemn,
+ritual, Holy Week, pontifical, and related ceremonies.
 
 ## Visible omissions in the review edition
 
-The review edition must name omitted Mass forms, special ceremonies,
-sanctuary regions, ministers, object families, and unreviewed handling
-relationships. An omitted object must not appear to be absent from the rite or
-safe to ignore. Gaps in “must not handle,” safety, handoff, and local-variation
-coverage require conspicuous review notes.
+The generated 32-record omission register accounts only for existing
+canonical records excluded from this review snapshot. It is not the
+completeness register. The review edition must also name omitted Mass forms,
+special ceremonies, sanctuary regions, ministers, object families, and
+unreviewed handling relationships. In particular, the Low-Mass candidate
+register below identifies essential objects that have no canonical record and
+therefore cannot appear in the generated omission register. An omitted object
+must not appear to be absent from the rite or safe to ignore. Gaps in
+must-not-handle, safety, handoff, and local-variation coverage require
+conspicuous review notes.
 
 ## Reader order
 
-1. Compact title with a conspicuous priestly-review/hold notice.
-2. Visible omissions and review-state key.
-3. Recognition and handling key.
-4. Sanctuary orientation from the server's working places.
-5. Objects around the server, arranged by where and when they are encountered.
+1. Compact title with the exact priestly-review label and caveat.
+2. Review-state, artwork-under-review, recognition, handling, and safety key.
+3. Sanctuary orientation from the server's working places.
+4. Low-Mass core route from sacristy preparation through return.
+5. Objects around the server, arranged by encounter location and ceremony.
 6. Vestments, ministers, and insignia the server must recognize.
-7. Objects particular to special Masses and related ceremonies within the
+7. Sung and solemn branches.
+8. Objects particular to special Masses and related ceremonies within the
    comprehensive volume's declared boundary.
-8. Priestly-review questions and correction instructions.
-9. Selective pronunciation, English--Latin and Latin--English indexes, visual
+9. Explicit canonical-record omissions and missing-corpus disclosures.
+10. Priestly-review questions and correction instructions.
+11. Selective pronunciation, English--Latin and Latin--English indexes, visual
    index, variant and terminology notes, scope and qualifications, numbered
    source notes and references, generation metadata, and rights colophon.
 
@@ -96,9 +128,14 @@ the verified base claims.
 ## Hold and nonpublication state
 
 There are currently zero publication-ready canonical records and no approved
-public server selection. The generated held or review notice must not be
-treated as instructions, handling permission, or evidence that an object may
-be present.
-This leaf remains on hold and must not be installed or published. A scaffold
-PDF, if built, is a production test only. Plate-manifest order remains a
-publication blocker.
+public server selection. The six admitted records belong only to the exact
+priestly-review snapshot and must not be treated as instructions, handling
+permission, or evidence of complete object presence.
+
+The priestly-review leaf remains held from ordinary catalog, search, web
+edition, unrestricted distribution, instruction, and public reliance. Its
+web-edition declaration remains ineligible. An authoritative release remains
+blocked by the owner completeness matrix, the missing Low-Mass candidates,
+audience-specific plate order, source and artwork gates, priestly and
+intended-reader review, actual-size print and monochrome-copy review, and a
+fresh exact-snapshot release decision.

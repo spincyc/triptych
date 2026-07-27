@@ -481,10 +481,11 @@ no-misrepresentation controls defined by the 1962 pictorial-dictionary
 profile, adapted only where postconciliar edition and jurisdiction evidence
 requires more specificity:
 
-- `priestly-review` remains a held consultation artifact visibly labelled
-  `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE`; it is not cataloged,
-  installed as an ordinary release, given a web edition, or distributed
-  without the recorded review boundary.
+- `priestly-review` remains a provisional consultation artifact visibly
+  labelled `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE`; it is publicly
+  discoverable from its owning alpha landing page under a conspicuous review
+  heading, is not presented as an ordinary release or given a web edition,
+  and is not distributed without the recorded review boundary.
 - `authoritative-release` remains a separately built, source-audited project
   reference visibly labelled `SOURCE-AUDITED REFERENCE EDITION`; the word
   “authoritative” never asserts ecclesiastical approval.

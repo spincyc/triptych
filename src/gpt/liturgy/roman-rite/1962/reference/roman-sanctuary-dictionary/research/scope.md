@@ -62,9 +62,29 @@ canonical records but may not copy or enlarge them independently.
 
 No completeness claim is authorized. The official source corpus has not been
 closed; the material-culture corpus has not been defined; the canonical
-inventory contains no source-audited records; and the completeness matrix has
-open rows in every category. Reader-facing leaves must retain prototype/hold
-language until those conditions change.
+inventory contains 38 records but no publication-ready record; and the
+completeness matrix has open rows in every category. Seven records are
+labelled `source-audited`, seven `art-reviewed`, and seven
+`priestly-review-ready`, but those intermediate workflow labels neither close
+a category nor establish eligibility for an authoritative edition.
+Reader-facing leaves must retain prototype/hold language until the source,
+inventory, variant, artwork, rights, review, and release conditions close.
+
+## Status vocabulary boundary
+
+Canonical `workflow_state` describes editorial progress: `lead`,
+`identified`, `source-audited`, `art-reviewed`,
+`priestly-review-ready`, `publication-ready`, or `held`. It must not be
+confused with an object's liturgical status.
+
+The governing profile requires object status to distinguish universal Roman,
+conditional or privileged, authorized or regional, religious-community,
+practical or local furnishing, historical, and unresolved use. The current
+structured schema does not yet represent that vocabulary exactly: it lacks
+dedicated conditional-or-privileged and practical-or-local values and uses
+`religious-order` and `institutional` instead of the profile's broader
+classes. Until the schema and existing records are reconciled, no structured
+status count is evidence that the corresponding corpus boundary is complete.
 
 ## Evidence boundary
 

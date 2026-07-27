@@ -1,6 +1,6 @@
 # Object inventory
 
-Status: **initial canonical records populated; zero source-audited or publication-ready objects**
+Status: **38 canonical records populated; zero publication-ready objects**
 Audit date: 2026-07-27
 
 The authoritative format is the structured contract under `shared/schema/`.
@@ -13,15 +13,25 @@ authorization to render an entry.
 
 | State | Count |
 | --- | ---: |
-| Lead | 2 canonical records |
-| Identified | 7 |
-| Source-audited | 0 |
-| Art-reviewed | 0 |
+| Lead | 3 canonical records |
+| Identified | 14 |
+| Source-audited | 7 |
+| Art-reviewed | 7 |
+| Priestly-review-ready | 7 |
 | Publication-ready | 0 |
 | Held | 0 canonical records |
 
 `shared/schema/object.example.toml` is a syntax fixture and is excluded from
-all counts.
+all counts. These counts describe canonical workflow labels, not publication
+eligibility. In particular, `source-audited`, `art-reviewed`, and
+`priestly-review-ready` do not mean that a record may enter an authoritative
+edition, and a priestly-review packet must still satisfy the profile's
+claim-level evidence and disclosure rules.
+
+The structured inventory validator accepts all 38 records as conforming to
+the current TOML contract. That is a structural result only: it does not close
+the source corpus, the completeness matrix, variants, artwork review, rights,
+or any publication gate.
 
 ## Candidate discovery queue
 
@@ -92,9 +102,9 @@ episcopal office and cites the 1962 Pontifical, Pars prima, p. 92. This
 supports a focused identity-class lead and exact locus target; it does not
 make the later 1978 discipline the inventory's 1962 status rule.
 
-This evidence adds search targets but does not change the workflow counts
-above: there remain zero canonical source-audited or publication-ready object
-records.
+This evidence adds search targets but does not itself advance any record.
+The workflow counts above include seven source-audited records from other
+bounded source passes; there remain zero publication-ready object records.
 
 ## Publication prohibition
 
