@@ -114,7 +114,40 @@ mental-health input; it is not itself a professional clinical protocol.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
 - Popular exorcist memoirs, films, podcasts, alleged recordings, and named case narratives were excluded: they are not needed to establish doctrine, law, ritual history, or safe practice.
-- The familiar “first rule” sentence is displayed as an anonymous epigraphic adaptation, not as a historical claim or as wording attributed to a known author.
+- The earlier pop-culture-derived epigraph was removed in the 27 July repair;
+  no adapted third-party wording remains in the opening.
+
+## Quotation, ritual-content, and rights audit — 2026-07-27
+
+The expanded source was searched after the section revisions settled for
+display quotations, prayer or ritual text, imperative formulas, operational
+sequence, diagnostic checklists, modern case material, and reproduced
+third-party tables or images. It contains no display quotation, prayer offered
+for recitation, exorcistic formula, ritual command, operational sequence,
+diagnostic criteria, case transcript, recording, table, scan, or third-party
+image.
+
+The body quotes only short biblical phrases needed for textual or narrative
+analysis: the designations “unclean spirit,” “possessed,” and “demonized”;
+the Mark 9 variants “and fasting” and “prayer and fasting”; Luke's “finger of
+God”; and the Acts phrase “in the name of Jesus Christ.” These use the
+identified public-domain Douay--Rheims/Challoner English control where English
+source wording is reproduced. The Robinson--Pierpont Greek is discussed but
+not reproduced in bulk. Quotation marks elsewhere identify contested labels,
+titles, hypothetical questions, or the publication's own analytic
+terminology, not uncredited source excerpts.
+
+The current proprietary ritual is neither reproduced, translated, nor reduced
+to a usable sequence. The 1614 and 1952 ritual witnesses are treated through
+edition-identified historical description and paraphrase; no hosted page image
+or formula is reproduced. Official and canonical texts, ancient and medieval
+translations, modern scholarship, clinical material, and safeguarding sources
+are paraphrased at identified loci. This treatment does not place their
+underlying wording under the repository license. A later expansion that adds
+any quotation, prayer, formula, facsimile, table, diagnostic criterion, case
+material, or image must reopen this audit for the exact new snapshot and record
+the source, locus, translation or artifact, rights basis, necessity, and
+cumulative extent before publication.
 
 ## Publication audit
 
@@ -126,8 +159,11 @@ binding validation must be rerun after all source lanes settle.
 The expanded source received internal source-role, currentness, architecture,
 and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
 web conversion, review rasters, every-page visual inspection, and PDF
-structure, font, metadata, and extracted-text checks passed. Exact
-installed-snapshot review remains open. Independent historical, patristic,
-liturgical, canonical, psychiatric,
-safeguarding, pastoral, theological, rights, and ecclesiastical review also
-remain open. Release, installation, and catalog listing are prohibited.
+structure, font, metadata, and extracted-text checks passed for the bounded
+twenty-page snapshot. That snapshot is installed and publicly discoverable
+only as an interim public-alpha review paper. It does not satisfy the promised
+100+ page comprehensive deliverable. The expansion's incomplete source
+families and renewed historical, patristic, liturgical, canonical,
+clinical-safeguarding, pastoral, theological, rights, production, and
+ecclesiastical review remain open. Public review distribution is not completion,
+release approval, or ecclesiastical approval.

@@ -21,6 +21,13 @@ unchanged rite. Authorization and safeguards are internal to this history.
 
 ## Included
 
+The promised completed deliverable is a comprehensive study of at least 100
+typeset pages. The currently installed twenty-page paper is an interim
+public-alpha review edition, not fulfillment of that extent or completeness
+commitment. Expansion must remain evidence-controlled; page count does not
+authorize padding, unsupported cases, operational ritual instruction, or
+relaxation of the exclusions below.
+
 Selected Israelite and Second Temple contexts; New Testament narrative;
 early-Christian apology and initiation; the distinction between initiatory
 exorcism, offices, blessings, and prayer over afflicted persons; representative
@@ -71,9 +78,8 @@ synthesis remain distinct.
 
 ## Voice and opening
 
-The opening begins with a terse anonymous adaptation directing attention away
-from spectacle; it asserts no historical authorship and supplies no doctrinal,
-historical, or empirical evidence.
+The opening begins directly with the dignity, confidentiality, and
+anti-sensational boundary governing the study.
 
 ## Evidence, rights, and method
 
@@ -93,20 +99,26 @@ then `Scope, Method, and Historical Coordinates`, a dated orientation that
 distinguishes events from surviving witnesses and later editions, references by
 source function, and generation metadata.
 
-## Review and hold state
+## Review and publication state
 
 The earlier fifteen-page candidate and its 26 July production review are
 superseded for publication-review purposes by this expanded modular draft.
-Those historical review events do not validate the new render. The expanded
-source received internal source-role, currentness, architecture, and
-claim-level reconciliation. On 27 July 2026 its two-pass build, warning audit,
-web conversion, review rasters, every-page visual review, and PDF metadata,
-extracted-text, and embedded-font checks passed. Exact installed-snapshot
-review remains open.
+Those historical review events do not validate later changed bytes. The
+expanded source received internal source-role, currentness, architecture, and
+claim-level reconciliation. Its prior exact snapshot was installed and
+release-bound on 27 July 2026 after the recorded build, web, visual, metadata,
+text, and font checks. This revision reopens those exact-byte build, visual,
+web, installation, and distribution bindings until they are rerun.
 
 Independent theological, canonical, patristic, historical-liturgical,
 clinical-safeguarding, pastoral, rights, and production reviews dated
 27 July 2026 govern their stated and deliberately bounded lanes. They do not
 constitute psychiatric validation, professional medical advice, or
 ecclesiastical approval. Exact-snapshot installation, catalog, and
-distribution authorization remain separate gates.
+distribution authorization remain separate recorded operations.
+
+The current twenty-page snapshot remains publicly discoverable for alpha
+review, with the 100-page minimum and the incomplete source families above
+recorded as open completion work. It must not be described as the promised
+comprehensive final paper until that requirement and the resulting review gates
+are satisfied.
