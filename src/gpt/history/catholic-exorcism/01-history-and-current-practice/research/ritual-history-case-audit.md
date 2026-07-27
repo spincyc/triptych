@@ -1,0 +1,159 @@
+# Ritual-history and historical-case audit
+
+Checked through 2026-07-26. This focused audit governs sections 40--70. It
+separates normative books, records of authorization or adjudication, narrative
+case witnesses, later ecclesiastical memory, and modern reconstruction. It does
+not treat reported phenomena as verified causes and does not reproduce a rite.
+
+## Late antique and medieval development
+
+- Eusebius of Caesarea, *Historia ecclesiastica* 6.43, preserving Cornelius of
+  Rome's letter to Fabius of Antioch. The Roman personnel list groups
+  fifty-two exorcists, readers, and doorkeepers. It establishes an identifiable
+  ministerial category in the mid-third-century Roman church, not fifty-two
+  specialists exercising the later major rite.
+- Council of Laodicea, canon 26, in the transmitted conciliar collections.
+  Establishes a rule against unauthorised exorcistic ministry in that
+  conciliar setting. Neither the council's exact date nor its later reception
+  warrants projecting one universal late-antique office backward.
+- H. A. Wilson, ed., *The Gelasian Sacramentary* (Clarendon Press, 1894),
+  pp. 45–50. The complete Internet Archive PDF was acquired, hashed, and
+  visually checked on 2026-07-27. Printed page 48 is headed *Exorcismi super
+  Electos*; pages 48–49 repeatedly order the prayers to baptismal grace. This
+  exact edition witness establishes baptismal placement, not attribution to
+  Gelasius I, one pristine Roman use, manuscript-to-edition correspondence, or
+  the date of each textual stratum.
+- *Pontificale Romano-Germanicum*, ed. Cyrille Vogel and Reinhard Elze,
+  *Le Pontifical romano-germanique du dixième siècle*, 3 vols., Studi e Testi
+  226--227, 269 (Vatican City, 1963--1972). Bibliographic and ritual-family
+  control for tenth-century compilation and circulation; no formula is quoted.
+- Western ordination witnesses, later represented in the *Pontificale
+  Romanum*, title *De ordinatione exorcistarum*. The delivery of a book belongs
+  to the office's ordination symbolism. It is not proof that every holder
+  routinely performed extraordinary exorcisms.
+- Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2--4. The
+  Fathers of the English Dominican Province translation, New Advent question
+  page `4071.htm`, was acquired, hashed, and inspected on 2026-07-26 and is
+  registered as an exact dated remote artifact. It establishes Aquinas's
+  distinction between baptismal preparations, their subordinate effect, the
+  sacrament's effect, and ministerial office; it is not evidence of parish
+  frequency or a manual for major exorcism.
+- No exact cross-genre medieval witnesses presently support a synthesis about
+  the chronology, prevalence, or institutional relationship of exorcism,
+  medicine, magic, heresy, trials, and learned demonology. Section 40 states
+  that negative result instead of supplying an unbound synthesis.
+- Francis Young, *A History of Exorcism in Catholic Christianity*
+  (Palgrave Macmillan, 2016), especially the chapters on medieval plurality
+  and early-modern Roman consolidation. Modern reconstruction and
+  bibliographic control only; protected prose is paraphrased.
+
+## The Roman Ritual and codification
+
+- *Rituale Romanum Pauli V Pontificis Maximi iussu editum* (Rome: Camera
+  Apostolica, 1614), *De exorcizandis obsessis a daemonio*, printed
+  pp. 198--219 (digital sequence pp. 206--227). The exact editio-princeps
+  witness is the Biblioteca Universitaria Alessandrina copy, shelfmark
+  Y c 49, at Google Books (`TBNNeaiGbc0C`), independently identified by
+  USUARIUM record 1195. It has one exorcism section, not the later title XI,
+  chapters 1--3 architecture. The earlier Library of Congress lead, control
+  no. 34021365, is an 1873 Baltimore edition and is withdrawn as evidence for
+  the princeps. The section paraphrases preliminary cautions but supplies
+  neither the prayers nor a procedural sequence. The exact hosted scan remains
+  remote; no redistribution basis for its bytes is asserted.
+- *Rituale Romanum* (1952), title XII. Edition-specific historical
+  predecessor. It is not identified as the ordinary current ritual book and
+  is not used to make a present older-book authorization claim.
+- *Codex Iuris Canonici* (1917), cc. 1151--1153, Vatican Polyglot Press 1918
+  witness registered in the shared source library. The section paraphrases the
+  reservation and qualification rules.
+- *Codex Iuris Canonici* (1983), c. 1172, Holy See Latin and English
+  presentations registered in the shared source library. Controlling
+  universal Latin law through the audit date. No material amendment or
+  authentic interpretation was located in the checked Holy See register.
+
+## Modern official controls
+
+- Congregation for the Doctrine of the Faith, *Inde ab aliquot annis*, letter
+  to ordinaries concerning exorcism, 29 September 1985. The official Latin
+  Holy See delivery was acquired, hashed, inspected, and registered as a dated
+  remote artifact on 2026-07-26. Nos. 1--3 control unauthorized assemblies,
+  use of formulas, and direct questioning.
+- Congregation for the Doctrine of the Faith, *Instruction on Prayers for
+  Healing* (*Ardens felicitatis*), 14 September 2000, art. 8. The official
+  English Holy See delivery was acquired, hashed, inspected, and registered
+  as a dated remote artifact on 2026-07-26. It controls the distinction
+  between healing services and liturgical exorcism and the prohibition on
+  inserting exorcistic prayers into Mass, the sacraments, or the Liturgy of
+  the Hours.
+- Congregation for Divine Worship and the Discipline of the Sacraments,
+  *De Exorcismis et Supplicationibus Quibusdam*, promulgation decree dated
+  22 November 1998, Latin typical edition issued 1999, and emended reprint
+  2004. Consulted only through official descriptions
+  and identified public loci; proprietary ritual text is not retained or
+  reproduced.
+- Congregation for Divine Worship and the Discipline of the Sacraments,
+  presentation of the revised rite, 26 January 1999. The Holy See Spanish
+  delivery was acquired, hashed, inspected, and registered as a dated remote
+  artifact on 2026-07-26. It establishes the dicastery's public account of the
+  rite's Christological basis and prudential discernment, not prevalence or
+  outcome and not the proprietary ritual's text.
+- *Catechism of the Catholic Church*, no. 1673, with nos. 391--395, 550,
+  1237, and 2850--2854 as context; official Holy See English presentation.
+- United States Conference of Catholic Bishops, Secretariat of Divine
+  Worship, “Exorcism.” The exact page state was acquired, hashed, inspected,
+  and registered as a dated remote artifact on 2026-07-26. It establishes
+  U.S. confirmation and implementation dates and conference guidance on moral
+  certitude, professional consultation, consent, and privacy. It is not
+  universal law or a professional clinical protocol.
+
+## Historical-case exclusion audit
+
+Four proposed cases were tested for inclusion and removed: Loudun, Illfurth,
+Earling, and Klingenberg. The available leads did not provide a
+publication-ready, case-specific chain of exact loci for every proposed date,
+person, authorization, diagnosis, proceeding, outcome, and ecclesiastical
+judgment.
+
+- **Loudun:** mediated narrative editions and modern reconstruction are useful
+  leads, but the proposed account had not collated each retained assertion to
+  an exact contemporary pamphlet, proceeding, or judgment.
+- **Illfurth:** clerical retellings and later local or diocesan memory had not
+  been traced to a controlled contemporary medical, civil, and authorization
+  record.
+- **Earling:** the retrospective devotional pamphlet is neither a transcript,
+  clinical file, episcopal decree, nor complete contemporary dossier. Its
+  reception history was not needed for the governing argument.
+- **Klingenberg:** no complete criminal file, authoritative published
+  judgment, medical record, or diocesan authorization file was acquired and
+  checked. Press and secondary accounts cannot carry the proposed precise
+  chronology or legal and medical claims.
+
+The removal also excludes alleged recordings, session counts, speech,
+phenomena, diagnoses, motives, demon names, and supernatural adjudications.
+No case-specific work, edition, artifact, passage, or corpus is bound in the
+publication source bindings. Restoration requires new source acquisition,
+exact loci, dependency analysis among later accounts, conflict reporting, and
+an evidence-map row for each retained claim.
+
+## Consequential negative results and release controls
+
+- No case supplies a controlled empirical proof of possession or ritual
+  efficacy.
+- No official global case count, success rate, or prevalence estimate was
+  located.
+- No historical authorization is treated as a diagnosis or as permission for
+  present use.
+- No inherited sign is printed as a checklist, and no command, adjuration,
+  sequence, or practical instruction from either ritual book is reproduced.
+- Loudun, Illfurth, Earling, and Klingenberg remain excluded unless
+  case-specific archival review closes the gates stated above.
+- The 1985 CDF letter, 1999 dicastery presentation, 2000 healing instruction,
+  USCCB page, and Aquinas III q. 71 now have exact shared work, edition, and
+  dated remote-artifact identities. Focused passage records remain desirable
+  if later consumers quote rather than paraphrase them.
+- The Wilson 1894 Gelasian scan now has an exact acquired and inspected
+  artifact identity. Manuscript-to-edition collation remains open. The
+  Vogel--Elze *Pontificale Romano-Germanicum* and the 1614 and 1952 Roman
+  Ritual editions remain distinguished catalog identities; exact PRG
+  artifacts, ordines and pages, a representative Western ordinal, and exact
+  ritual-formula comparison remain open.

@@ -1,27 +1,101 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "history/catholic-exorcism/01-history-and-current-practice"
 
 [[bindings]]
-source_id = "work.catholic-church.codex-iuris-canonici-1983"
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1172"
 loci = ["canon-1172"]
 role = "official-control"
 states = ["cataloged"]
-context = "Universal Latin law governing sacramentals and major exorcism; canon 1172 was checked in the Holy See Latin and English presentations through 2026-07-26."
+context = "Exact authentic-Latin witness for universal Latin law governing exorcisms over the possessed. The Holy See English page is used only as a translation aid."
 
 [[bindings]]
-source_id = "work.catholic-church.codex-iuris-canonici-1917"
-loci = ["canon-1151", "canon-1152", "canon-1153"]
+source_id = "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1151"
+loci = ["canon-1151"]
 role = "official-control"
 states = ["cataloged"]
-context = "Historical Latin canonical discipline used only for comparison with the 1983 code."
+context = "Exact historical Latin witness for permission, priestly qualifications, and the independent diligent-and-prudent investigation required before proceeding."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1152"
+loci = ["canon-1152"]
+role = "official-control"
+states = ["cataloged"]
+context = "Exact historical Latin witness for the persons over whom legitimate ministers could use exorcisms."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1153"
+loci = ["canon-1153"]
+role = "official-control"
+states = ["cataloged"]
+context = "Exact historical Latin witness identifying ministers of exorcisms embedded in baptism, consecrations, and blessings by reference to those rites."
+
+[[bindings]]
+source_id = "passage.holy-see.interpretationes-authenticae-codicis-iuris-canonici.vatican-web-2026-07-25.collection"
+loci = ["collection"]
+role = "context"
+states = ["cataloged"]
+context = "The exact official collection's complete enumerated canon list was checked for current-law control; canon 1172 does not appear. This bounded result does not exclude later acts outside the delivered collection."
+
+[[bindings]]
+source_id = "work.catholic-church.de-exorcismis-et-supplicationibus-quibusdam"
+loci = ["decree", "praenotanda"]
+role = "official-control"
+states = ["cataloged"]
+context = "Proprietary liturgical book identified at work and edition-history level only: decree dated 22 November 1998, 1999 Latin typical edition, and 2004 emended reprint. Formulas are not reproduced."
+
+[[bindings]]
+source_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021"
+loci = ["in-de-exorcismis-praenotanda-37"]
+role = "official-control"
+states = ["cataloged"]
+context = "Official 22 October 2021 currentness control for the revised translation and adaptation norm in the exorcism book's praenotanda."
 
 [[bindings]]
 source_id = "work.catholic-church.catechism"
-loci = ["391-395", "550", "1237", "1673", "2850-2854"]
+loci = ["391-395", "550", "1237", "1667", "1670", "1673", "1700-1706", "1734-1735", "1857", "1859", "2111", "2116-2117", "2846-2854"]
 role = "official-control"
 states = ["cataloged"]
 context = "Doctrinal and liturgical distinctions checked in the Holy See English edition; no long translated passage is reproduced."
+
+[[bindings]]
+source_id = "work.fourth-lateran-council.firmiter-credimus"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged"]
+context = "Conciliar control for the anti-dualist confession that the devil and other demons were created good by God and became evil by their own doing."
+
+[[bindings]]
+source_id = "work.catholic-church.codex-iuris-canonici-1983"
+loci = ["canon-1166"]
+role = "official-control"
+states = ["cataloged"]
+context = "Universal Latin definition of sacramentals. Exact reusable passage normalization remains outstanding."
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = ["I.57.4.corpus", "I.111.2.corpus", "I.111.3.corpus", "I.111.4.corpus", "I.114.2.corpus", "I.114.3.corpus"]
+role = "context"
+states = ["cataloged"]
+context = "Exact scholastic loci identifying limits on angelic knowledge and action. The publication presents this as Thomistic analysis, not defined doctrine, clinical mechanism, or case attribution; exact reusable artifacts remain to be normalized."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.canon-1"
+loci = ["canon-1"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:efb14e3ce9d0cd5205bbe701714fee4a143154f11873a6ca76b2ef309dacde7e"
+verified_on = "2026-07-25"
+context = "Authentic Latin canon 1 controls the code's Eastern Catholic scope. Canon 2 is separately bound below. Neither passage supports an inference about a universal Eastern exorcism procedure."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.canon-2"
+loci = ["canon-2"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:c18518bf1bb33ac743e4499f45b06e4ed4c7b711f1163964e7ae63f75124a7d8"
+verified_on = "2026-07-25"
+context = "Authentic Latin canon 2 controls the interpretive priority of the ancient law of the Eastern Churches. It supplies no major-exorcism procedure."
 
 [[bindings]]
 source_id = "work.justin-martyr.second-apology"
@@ -29,3 +103,200 @@ loci = ["6"]
 role = "direct-witness"
 states = ["cataloged"]
 context = "Second-century apologetic testimony used as evidence of Christian claims and rhetoric, not as a clinical case report."
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.1.10.1-3.ocr"
+loci = ["1.10.1-3"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3b853b0099ba292a67a9c8e05a178d9f34a6a230689c24a59576d7cfb23a96da"
+context = "Exact bounded OCR passage inspected for Irenaeus's account of one received faith confessed across churches and languages. It controls the methodological distinction between the rule of faith and local practice; it supplies no exorcistic formulary."
+
+[[bindings]]
+source_id = "edition.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25"
+loci = ["23"]
+role = "lead"
+states = ["cataloged"]
+context = "Dated public-domain English edition identity retained to distinguish Gospel homily from ritual evidence. No quotation, negative search, or exact exorcism claim depends on it until a bounded passage is registered."
+
+[[bindings]]
+source_id = "edition.justin-martyr.second-apology.dods-reith-anf1-newadvent-web-2026-07-25"
+loci = ["6"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Identified public-domain ANF translation in a dated host delivery state; chapter 6 awaits a bounded exact passage record."
+
+[[bindings]]
+source_id = "passage.book-of-jubilees.english-charles-oxford-1913-ccel-web-2026-07-27.chapter-10-1-11"
+loci = ["10.1-11"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:420f300af5970a2660b0afccfc77ffa7a62833c2f5e29632116374dfd47fa92a"
+context = "Exact bounded Charles English passage inspected for Noah's petition, Mastema's request, and God's disposition of the spirits. Translation control only; no original-language collation or Gospel dependence claim."
+
+[[bindings]]
+source_id = "passage.josephus.antiquitates-judaicae.whiston-1737-penelope-web-2026-07-27.book-8-chapter-2-section-5"
+loci = ["8.2.5"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:bd0d76210c1df30fbcf3628da43bb5e52c24fefe25cb2e2879e56d778ab3b673"
+context = "Exact Whiston VIII.2.5 inspected for Josephus's first-person Eleazar report. Modern Niese 8.45-49 is stated only as a cross-reference; the claim is bounded to Josephus's literary testimony and framing."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-09-1-kings-7f8a0c63"
+loci = ["1Kgs.16.1-23"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Exact tracked Catholic English witness; it controls reception wording, not Hebrew."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-17-tobias-565b04e8"
+loci = ["Tob.6.1-8.21"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Exact tracked Clementine/Douay witness; materially different Greek recensions remain distinct."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Mt.4.24", "Mt.12.22-45"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Exact tracked public-domain Catholic English witness."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mk.1.21-28", "Mk.1.32-34", "Mk.3.22-27", "Mk.5.1-20", "Mk.9.14-28"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Exact tracked Catholic English witness. Its Mark 9.28 corresponds to Mark 9.29 in the tracked Greek and includes prayer and fasting; its numbering and reading are not projected into every Greek or Syriac tradition."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Lk.4.31-37", "Lk.10.17-20", "Lk.11.14-26"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Exact tracked public-domain Catholic English witness."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-51-acts-73f7a420"
+loci = ["Acts.8.7", "Acts.16.16-18", "Acts.19.11-20"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Exact tracked public-domain Catholic English witness."
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-mat-1f31b338"
+loci = ["4.24", "12.22-45"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Exact tracked Byzantine-textform Greek witness with inline divergence notes; not a full critical apparatus."
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-mar-b58af87a"
+loci = ["1.21-28", "1.32-34", "3.22-27", "5.1-20", "9.14-29"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Exact tracked Byzantine-textform witness; this edition reads prayer and fasting at Mark 9.29."
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-luk-82225821"
+loci = ["4.31-37", "10.17-20", "11.14-26"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Exact tracked Byzantine-textform Greek witness with inline divergence notes."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-71-2026-07-26.iii-71-2-corpus"
+loci = ["III.71.2.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:070aa0545e03589460416d860b6e7d8483d4bfa029e24dacf28378c5e9d1ba1d"
+verified_on = "2026-07-26"
+context = "Exact dated English witness for Aquinas's account of exorcistic preparation as removing impediments before Baptism."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-71-2026-07-26.iii-71-3-corpus"
+loci = ["III.71.3.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:c497f19be549d4e3e0e5c011e005415eb4a54d2d0bee6992b3bbf39c6f27179d"
+verified_on = "2026-07-26"
+context = "Exact dated English witness for Aquinas's distinction between preparatory removal of impediments and Baptism's grace and remission."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-tertia-71-2026-07-26.iii-71-4-corpus"
+loci = ["III.71.4.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:122186421243e376f55d27dd12c79a70bfca8fca5e7631b5075fe389203b76d8"
+verified_on = "2026-07-26"
+context = "Exact dated English witness for Aquinas's placement of exorcists among ministers assisting the priest; it does not establish habitual major-exorcism practice."
+
+[[bindings]]
+source_id = "artifact.congregation-for-the-doctrine-of-the-faith.inde-ab-aliquot-annis.latin-vatican-web-2026-07-26.vatican-html"
+loci = ["1", "2", "3"]
+role = "official-control"
+states = ["cataloged"]
+context = "Exact official Latin delivery controls the 1985 directive concerning canon 1172, unauthorized assemblies, exorcistic formulas, and direct interrogation."
+
+[[bindings]]
+source_id = "artifact.congregation-for-the-doctrine-of-the-faith.ardens-felicitatis.english-vatican-web-2026-07-26.vatican-html"
+loci = ["article-8"]
+role = "official-control"
+states = ["cataloged"]
+context = "Exact official English delivery controls the distinction between healing services and liturgical exorcism, including the prohibition on inserting exorcistic prayers into Mass, the sacraments, or the Liturgy of the Hours."
+
+[[bindings]]
+source_id = "artifact.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.presentation-rite-of-exorcism-1999.spanish-vatican-web-2026-07-26.vatican-html"
+loci = ["complete-text"]
+role = "context"
+states = ["cataloged"]
+context = "Exact official Spanish delivery controls the public presentation date and the dicastery's stated Christological, ecclesial, and prudential rationale; it does not substitute for the proprietary ritual book."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-26.usccb-html"
+loci = ["introduction", "minister", "discernment", "preparation", "celebration", "follow-up"]
+role = "official-control"
+states = ["cataloged"]
+context = "Exact dated USCCB page state controls United States approval, confirmation, implementation, and public pastoral guidance. It is not universal law or a professional clinical protocol."
+
+[[bindings]]
+source_id = "artifact.united-kingdom-department-for-education.national-action-plan-child-abuse-faith-belief.english-govuk-web-2026-07-26.govuk-html"
+loci = ["overview", "details"]
+role = "context"
+states = ["cataloged"]
+context = "England-specific official safeguarding control for the existence and forms of child abuse linked to accusations of witchcraft or spirit possession. It is not evidence about Catholic prevalence, historical named cases, or universal law."
+
+[[bindings]]
+source_id = "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.internet-archive-google-books-pdf"
+loci = ["wilson-page-45", "wilson-page-46", "wilson-page-47", "wilson-page-48", "wilson-page-49", "wilson-page-50"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:002d26c80eec5c700410a20dc31606e2791342979e80ba0176852662ca384e85"
+context = "Exact complete scan acquired and visually checked for the sequence of scrutinies and rites for the elect on printed pages 45–50, including the heading Exorcismi super Electos on page 48. This edition witness does not by itself establish manuscript correspondence or date each textual stratum."
+
+[[bindings]]
+source_id = "edition.anonymous.pontificale-romano-germanicum.vogel-elze-studi-e-testi-1963-1972"
+role = "bibliographic"
+states = ["cataloged"]
+context = "Catalog identity for the governing critical edition; exact ordines and pages remain a research gate."
+
+[[bindings]]
+source_id = "edition.catholic-church.rituale-romanum.latin-rome-1614"
+role = "bibliographic"
+states = ["cataloged"]
+context = "Edition record for the Alessandrina editio-princeps witness at Google Books TBNNeaiGbc0C, independently identified by USUARIUM record 1195. Page-image inspection supports the bounded account of the single exorcism section at printed pp. 198-219, but the remote hosted bytes have not been acquired and hashed for an inspected-state binding. The edition does not support the title XI, chapters 1-3 architecture of later editions; no formula, procedural digest, frequency claim, or present authorization is inferred."
+
+[[bindings]]
+source_id = "edition.catholic-church.rituale-romanum.latin-typical-1952"
+loci = ["title-12.chapter-1", "title-12.chapter-2", "title-12.chapter-3"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Edition-specific historical predecessor. No exact artifact or current older-book authorization claim is supplied."
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-act-4f355f70"
+loci = ["8.7", "16.16-18", "19.11-20"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Exact tracked Byzantine-textform Greek witness with inline divergence notes."

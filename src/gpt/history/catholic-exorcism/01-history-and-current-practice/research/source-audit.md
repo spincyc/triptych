@@ -1,54 +1,108 @@
 # Source audit: Catholic Exorcism
 
-Checked through 2026-07-26. Stable links below are access routes; the identified works, editions, and loci remain the sources.
+Current official sources were checked through 2026-07-26. Additional
+historical-source acquisition and inspection is dated 2026-07-27. Stable links
+below are access routes; the identified works, editions, and loci remain the
+sources.
 
 ## Current official sources
 
-- Catholic Church, *Codex Iuris Canonici* (1983), cc. 1166–1172, especially c. 1172; Holy See Latin and English code pages. Controlling universal Latin law. The Holy See authentic-interpretations register was checked; no material interpretation or amendment to c. 1172 was located.
-- Catholic Church, *Codex Iuris Canonici* (1917), cc. 1151–1153. Historical comparison only.
-- Congregation for the Doctrine of the Faith, letter to ordinaries on exorcism, 29 September 1985, official Italian/French Holy See text. Controls unauthorized prayer assemblies and formulas.
+- Catholic Church, *Codex Iuris Canonici* (1983), cc. 1166, 1172; official Holy See Latin controls, with the official English page used only as a translation aid. Controlling universal Latin law. The Dicastery for Legislative Texts' published authentic-interpretations compilation was checked through 2026-07-26; it contains no entry for c. 1172, and no material amendment to the canon was located in the official legal sources checked.
+- Catholic Church, *Codex Canonum Ecclesiarum Orientalium* (1990), cc. 1–2, authentic Latin in *AAS* 82 (1990), p. 1061. Used only to establish the Code's Eastern Catholic scope and its ancient-law interpretive context. No Eastern particular law or liturgical book was inspected for this publication, so the study states no Eastern major-exorcism rule and makes no whole-Code negative claim.
+- Catholic Church, *Codex Iuris Canonici* (1917), cc. 1151–1153, Vatican Polyglot 1918 edition, p. 328. Historical comparison only. Canon 1151 contains the particular-permission, priestly-qualification, and prudent-investigation rules; c. 1152 concerns the persons over whom legitimate ministers could use exorcisms; c. 1153 identifies the ministers of exorcisms embedded in baptism, consecrations, and blessings by reference to those rites. The separately paginated official promulgation witness is *AAS* 9, part II (1917), p. 225; that page number must not be assigned to the 1918 book edition.
+- Congregation for the Doctrine of the Faith, letter to ordinaries on exorcism, 29 September 1985, *AAS* 77 (1985), 1169–1170, official Latin Holy See text. The delivery URL contains `19850924`, and some vernacular presentation metadata gives 24 September; the official Latin heading and *AAS* citation control the date used here. The letter requires observance of c. 1172, forbids the faithful's use of the Leonine formula against Satan and the apostate angels, and governs unauthorized assemblies that directly address demons and seek their identities.
 - Congregation for the Doctrine of the Faith, *Instruction on Prayers for Healing*, 14 September 2000, art. 8. Distinguishes healing services from exorcism and requires dependence on the diocesan bishop.
-- Congregation for Divine Worship and the Discipline of the Sacraments, *De Exorcismis et Supplicationibus Quibusdam*, 1998; revised typical edition 2004. The proprietary rite was consulted through official descriptions and quoted loci in official conference guidance; its formulas are not reproduced.
-- John Paul II, approval/promulgation connected with the revised Roman Ritual; Congregation presentation of the rite, 26 January 1999. Used for promulgation history.
-- *Catechism of the Catholic Church*, 391–395, 550, 1237, 1673, 2850–2854. Holy See English text. Doctrinal and sacramental distinctions.
+- Congregation for Divine Worship and the Discipline of the Sacraments, *De Exorcismis et Supplicationibus Quibusdam*: promulgation decree dated 22 November 1998; Latin typical edition issued 1999; emended reprint 2004. The 2004 state is an amended or emended version, not a second typical edition. The proprietary rite was consulted only through official descriptions and exact loci quoted in official conference guidance; its formulas are not reproduced.
+- Congregation for Divine Worship and the Discipline of the Sacraments, official presentation of the new rite, 26 January 1999. Used for the public-presentation date and the dicastery's stated theological and prudential rationale, not as the act of promulgation.
+- Congregation for Divine Worship and the Discipline of the Sacraments, decree implementing amended CIC c. 838, 22 October 2021, section *In De Exorcismis et Supplicationibus Quibusdam*, praenotanda 37. Current official control for episcopal-conference translations and adaptations.
+- *Catechism of the Catholic Church*, 391–395, 550, 1237, 1667, 1670, 1673, 1700–1706, 1734–1735, 1857, 1859, 2111, 2116–2117, 2846–2854. Holy See English text. Doctrinal, anthropological, moral, and sacramental distinctions. No. 1673 does not itself grant canonical faculty; its ascertainment warning is not rewritten as a clinical test or as the technical procedural formula “moral certitude.”
+- Fourth Lateran Council, constitution 1, *Firmiter credimus* (1215), DS 800. Controls the created-good and self-made-evil propositions. The reusable source record remains catalog-level rather than an exact retained artifact.
+- Thomas Aquinas, *Summa theologiae* I, q. 57, a. 4; q. 111, aa. 2–4; q. 114, aa. 2–3. Controls only the explicitly Thomistic account of secret thoughts, will, persuasion, passion, imagination, and sense. Exact reusable artifacts for these loci remain to be normalized.
 - United States Conference of Catholic Bishops, “Exorcism,” Secretariat of Divine Worship FAQ, <https://www.usccb.org/prayer-and-worship/sacraments-and-sacramentals/sacramentals-blessings/exorcism>, accessed 2026-07-26. Establishes U.S. English approval/confirmation/implementation, moral-certitude framing, medical and psychiatric consultation, consent, privacy, and ritual distinctions. It is not generalized into universal law.
+- Fourth Lateran Council, constitution 1, *Firmiter credimus*, official Latin
+  locus for the claim that the devil and other demons were created good and
+  became evil by their own act. Used with CCC 391–395; later demonological
+  taxonomies are not promoted to doctrine.
+- 1983 CIC c. 1166 and CCC 1667–1673 control the bounded definition and
+  ecclesial character of sacramentals. Neither source turns a sacramental into
+  an automatic mechanism or grants the faculty reserved by c. 1172.
 
 ## Scripture and early witnesses
 
-- Mark 1:21–28; 3:22–27; 5:1–20; 9:14–29; Matthew 12:22–32; Luke 4:31–37; 10:17–20; 11:14–26; Acts 16:16–18; 19:11–20. Read as canonical narratives with attention to each evangelist's theological purpose.
-- Justin Martyr, *Second Apology* 6; Tertullian, *Apology* 23; Origen, *Contra Celsum* 1.6, 1.25, 7.4. Apologetic witnesses, not clinical reports.
-- *Apostolic Tradition* 20–21; Cyril of Jerusalem, *Procatechesis* 9 and *Mystagogical Catechesis* 2.3. Initiatory practice; the composite text, attribution, and date of *Apostolic Tradition* are kept qualified.
-- Council of Laodicea, canon 26, and later ordination/office witnesses. Used cautiously because conciliar collections and later reception do not by themselves reconstruct one universal office.
+- Mark 1:21–28; 3:22–27; 5:1–20; 9:14–29; Matthew 12:22–32; Luke 4:31–37; 10:17–20; 11:14–26; Acts 16:16–18; 19:11–20. Read in the exact Robinson–Pierpont Byzantine Greek and Douay–Rheims/Challoner English controls as canonical narratives with attention to each evangelist's theological purpose. At Mark 9:29 the Robinson–Pierpont inline note reports the Nestle–Aland omission of “and fasting”; no separately identified eclectic artifact or full critical apparatus is bound. The Douay witness numbers the corresponding prayer-and-fasting verse Mark 9:28. No Hebrew or Syriac wording supports a publication claim.
+- *Jubilees* 10.1–11, trans. R. H. Charles in *The Apocrypha and Pseudepigrapha of the Old Testament*, vol. 2 (Oxford, 1913), exact CCEL chapter state acquired and inspected 2026-07-27. English translation control for Noah's petition and the disposition of the spirits; no original-language collation.
+- Josephus, *Antiquities* VIII.2.5 in William Whiston's 1737 translation, corresponding to Niese 8.45–49; exact University of Chicago Penelope Book VIII state acquired and inspected 2026-07-27. Controls Josephus's literary report about Eleazar and its Solomonic framing, not the event's mechanism or Christian dependence.
+- Justin Martyr, *Second Apology* 6, Dods--Reith, *Ante-Nicene Fathers* 1 (Buffalo, 1887), p. 190; Tertullian, *Apology* 23.4--7, with 23.15--16 distinguished, public Latin and 1917 Mayor--Souter English witnesses; Origen, *Contra Celsum* 1.6, 1.25, 7.4, trans. Frederick Crombie, *Ante-Nicene Fathers* 4 (Buffalo, 1885). These are apologetic witnesses, not clinical reports. Origen 1.6 and 7.4 control the contrast with magical arts; 1.25 instead supplies a qualified ancient theory of efficacious names.
+- The church-order complex conventionally called *Apostolic Tradition* 20–21. Initiatory practice only; its unity, attribution to Hippolytus, date, and Roman provenance remain disputed.
+- Cyril of Jerusalem, *Procatechesis* 9, and the Jerusalem *Mystagogical Catecheses* 2.3, in Edwin Hamilton Gifford's translation, *Nicene and Post-Nicene Fathers*, second series, vol. 7 (1894). The latter is transmitted under Cyril's name, but its authorship, including attribution to John of Jerusalem, is disputed.
+- Council of Laodicea, canon 26, in Henry R. Percival, *The Seven Ecumenical Councils*, *NPNF* second series, vol. 14 (1900); Cornelius's clergy list as quoted by Eusebius, *Church History* 6.43.11, trans. Arthur Cushman McGiffert, *NPNF* second series, vol. 1 (1890). Laodicea is one conciliar disciplinary setting; Eusebius gives only a combined total for exorcists, readers, and door-keepers.
 
 ## Ritual and historical controls
 
-- *Gelasian Sacramentary* and early Roman baptismal scrutinies; *Pontificale Romano-Germanicum*; medieval diocesan manuals. Used for broad development only where editions identify the rite.
-- *Rituale Romanum Pauli V* (1614), title XI, chapters 1–3; later standard editions, title XII. Establishes the Roman consolidation, ministerial cautions, and formulary history.
+- H. A. Wilson, ed., *The Gelasian Sacramentary* (1894), pp. 45–50, exact
+  complete scan acquired, hashed, and visually inspected 2026-07-27. The
+  printed sequence supports baptismal placement of *Exorcismi super electos*;
+  it does not supply manuscript collation or the date of each stratum.
+- Vogel–Elze, eds., *Pontificale Romano-Germanicum*. Catalog control only:
+  exact ordines, pages, and manuscript correspondence remain open. No
+  representative medieval ordinal or cross-genre corpus presently supports
+  stronger claims about officeholders' practice, medicine, magic, trials, or
+  learned demonology.
+- Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2–4, Fathers of
+  the English Dominican Province translation, exact New Advent page state
+  acquired, hashed, and inspected 2026-07-26. Controls Aquinas's distinction
+  between preparatory exorcistic acts, Baptism's effect, and the assisting
+  office; not a frequency claim or major-exorcism manual.
+- *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*, printed pp. 198–219 in the Alessandrina editio-princeps witness; later standard editions use title/chapter structures that must not be retrojected. Establishes the Roman consolidation, ministerial cautions, and formulary history.
 - *Rituale Romanum* (1952), title XII. Historical predecessor, not presented as the ordinary current ritual book.
 - Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmillan, 2016), used as modern historical reconstruction and bibliography, paraphrased only.
 
 ## Clinical and safeguarding controls
 
-The study makes no clinical claim that ecclesiastical discernment can diagnose a psychiatric condition or that psychiatry can adjudicate a theological claim. Official U.S. guidance supplies the operative requirement to seek medical and mental-health input. DSM and ICD categories were used only as reminders that hallucinations, dissociation, trauma, neurological illness, substance effects, sleep disorders, and culturally mediated distress have differential explanations; none is mapped onto a ritual category.
+- World Health Organization, *Clinical Descriptions and Diagnostic Requirements
+  for ICD-11 Mental, Behavioural and Neurodevelopmental Disorders* (2024),
+  exact PDF acquired and inspected at the possession-trance-disorder
+  differential-diagnosis locus on 2026-07-27. It supports only the bounded
+  clinical differential stated in the publication; it neither proves nor
+  disproves a preternatural cause.
+- United Kingdom Department for Education, *National action plan to tackle
+  child abuse linked to faith or belief* (2012), exact GOV.UK publication-page
+  state acquired, hashed, normalized, and inspected 2026-07-26. It establishes
+  an England-specific safeguarding concern; it does not establish Catholic
+  prevalence, a worldwide rate, or universal law.
+- The American Psychiatric Association's public DSM-5-TR assessment-measures
+  page remains an authenticated web lead because exact acquisition failed. It
+  supports no quotation or publication claim. The Cultural Formulation
+  Interview paragraph requires exact control or removal before publication.
+
+The study makes no clinical claim that ecclesiastical discernment can diagnose
+a psychiatric condition or that psychiatry can adjudicate a theological claim.
+Official U.S. guidance supplies the ecclesial requirement to seek medical and
+mental-health input; it is not itself a professional clinical protocol.
 
 ## Negative results and unused leads
 
+- Genesis Apocryphon 1Q20 XX.14–17, 21–29; Songs of the Sage (4Q510/511); the 4Q Magical Booklet (4Q560); and 11Q11 were edition- and locus-audited as leads. They remain outside the publication claim because no exact translation artifact was acquired and inspected. The authoritative 4Q560 edition is Puech, *DJD* XXXVII (2009), pp. 291–302, not the frequently repeated *DJD* XXXVI citation.
+- Broad Mesopotamian, Egyptian, and Greco-Roman comparisons were removed. Plato, *Symposium* 202d–203a; Hippocratic *On the Sacred Disease* 1; PGM IV.3007–3086; Lucian, *Philopseudes* 16; and Philostratus, *Life of Apollonius* 4.20 remain genre-specific leads, not a composite ancient rite.
 - No official global count of exorcists, cases, or successful major exorcisms was found; numerical claims in press reports are omitted.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
+- No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
 - Popular exorcist memoirs, films, podcasts, alleged recordings, and named case narratives were excluded: they are not needed to establish doctrine, law, ritual history, or safe practice.
 - Gene Wolfe, *The Devil in a Forest* (Orb, 1996), p. 207. On 26 July 2026 a reader transcribed the exact wording from a personal copy and identified the Abbé as speaker. Earlier repository and indexed-web searches had not located the passage. The project did not independently collate the protected edition; the publication identifies the reader-transcription boundary. The focused excerpt is used for criticism and theological discussion, not as evidence that curses work or as a source of Catholic teaching.
 - The familiar “first rule” sentence is displayed as an anonymous epigraphic adaptation, not as a historical claim or as wording attributed to a known author.
 
 ## Publication audit
 
-Source-role and binding validation completed. The settled fifteen-page build
-had no fatal error, undefined reference, overflow, underflow, or layout warning.
-Repository review rasters were generated on 2026-07-26 and every page was
-inspected at full useful resolution; no clipping, overlap, accidental blank,
-unreadable table, or rights-colophon defect was found. The eligible held web
-edition also converted successfully. The PDF and web output remain build
-artifacts and were not installed.
+The earlier fifteen-page candidate, build, web conversion, and page review are
+superseded for publication-review purposes by the expanded modular draft. They
+do not establish the current render's production quality. Source-library and
+binding validation must be rerun after all source lanes settle.
 
-Independent historical, patristic, liturgical, canonical, psychiatric,
-safeguarding, pastoral, theological, and ecclesiastical review remain open;
-therefore release is prohibited.
+The expanded source received internal source-role, currentness, architecture,
+and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
+web conversion, review rasters, every-page visual inspection, and PDF
+structure, font, metadata, and extracted-text checks passed. Exact
+installed-snapshot review remains open. Independent historical, patristic,
+liturgical, canonical, psychiatric,
+safeguarding, pastoral, theological, rights, and ecclesiastical review also
+remain open. Release, installation, and catalog listing are prohibited.
