@@ -929,3 +929,53 @@ overfull box, or rerun warning. Build and installed bytes are identical:
 | MC and trainer | 32 | 11,974,406 | `9a5035e8eedd4def20c3e0f056e8756a4d4bbe77a188d4cac69179af73dedcf3` |
 | General reader | 29 | 11,191,025 | `ba5db053bcb2498c68b8f65e2931a01e7e5b1a5946b8d41eb49fd138e0d09c4b` |
 | Pontifical ceremonies | 29 | 10,854,101 | `5d6612a6629161fc777ccff38cdbf313d488ade15b27aacbff832611f79c5525` |
+
+## Ordinary priestly vestments cross-edition checkpoint — 2026-07-28
+
+Six canonical records now render in exact ordinary-priest vesting order:
+amice, alb, cincture, maniple, priest's stole, and chasuble. Five generated
+editions receive the ordinary dense comparison plate through their existing
+canonical selection. The bespoke altar-server leaf imports a deterministic
+priestly-vestment slice from the same selection, so it gains the six records
+without duplicating its established full-page object treatments.
+
+The 1962 Missal controls sequence, left-arm maniple, crossed and
+cincture-secured priest's stole, final chasuble, vestment condition, color,
+cope branch, and the discontinuance of folded chasubles and the broad stole.
+The checked 1943 ceremonial controls only gross recognition morphology and a
+practical/custom reverse-stack and assistance model. Each sacristan note now
+states the concrete layer position; each server note keeps assistance
+conditional and directed. The ordinary-priest arrangement is not transferred
+to the bishop, deacon, or subdeacon.
+
+The six new project-generated pencil assets passed exact prompt, received and
+normalized identity, source-ceiling, rights, factual, visual, print, and
+consumer checks. The rejected legacy composite remains unchanged and has no
+consumer. A renderer correction also removed a redundant explanatory block
+from the TeX-native Epistle/Gospel book symbols; this resolved the previously
+overlapping book cells without changing their canonical claims.
+
+All six PDFs were built for two settled passes, rastered with the repository
+review helper, and visually inspected page by page: 91 pages total. The six
+vestment plates and repaired book cells were additionally checked at full
+rendered size. The exact vesting order, figures, headwords, audience notes,
+and branch limits are legible, with no clipping or overlap on the affected
+pages. Logs have no fatal error, undefined reference, overfull box, or rerun
+warning; fonts are embedded and text is extractable. Build and installed
+bytes are identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 13 | 18,558,255 | `c15351e62586f6f35a36eba6fe26000c6fe225af24bfc38c15be2f386c403841` |
+| Altar server | 32 | 16,414,149 | `4ee334e51709b45fe2e74e15051791b40e219d300ee09f302b415c592f5cdfa4` |
+| Sacristan | 12 | 18,597,227 | `e1c8fbad4c032d3e0142408855ea36605beccf95248bda30d57e4dac5b4efbbd` |
+| MC and trainer | 12 | 18,598,573 | `bb5a8be491c512fe83322163ebdeffa419e6254121956f74b4ddc843ae986f05` |
+| General reader | 11 | 17,812,571 | `b8ce2e9cc2856eab0dff5c0f254ae0a35dbc18af945d6ddacfbc70730656b1f5` |
+| Pontifical ceremonies | 11 | 17,477,512 | `e5921850e75a81ed7dbd0281e89e0e41ce8484f3f88c37e2f2db0b6e0745fc97` |
+
+The ordinary `make` path was temporarily blocked at this checkpoint by
+concurrent, unrelated postconciliar-propers leaves whose new `main.tex` files
+did not yet import structured provenance. The six dictionary leaves were
+therefore compiled directly through the same repository TeX invocation for
+two passes; that unrelated metadata failure did not affect their inputs,
+logs, raster review, or installed-byte verification.

@@ -1,0 +1,129 @@
+schema_version = 1
+id = "obj-cincture"
+workflow_state = "publication-ready"
+preferred_english_name = "Cincture"
+latin_headword = "cingulum"
+sort_name = "03 Cincture"
+categories = ["priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+related_objects = ["obj-amice", "obj-alb", "obj-maniple", "obj-priest-stole", "obj-chasuble"]
+
+[presence]
+locations = ["Fastened at the waist over the alb."]
+contexts = ["The third item in the ordinary priest's six-vestment sequence; it also secures the crossed stole ends."]
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "other-server"]
+presents = ["other-server"]
+warnings = ["The Missal's minister presents it from behind while raising and arranging the alb; do not infer a universal server, knot, or handoff method."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-cincture-identity"
+kind = "identity"
+text = "The cincture is the girdle fastened over the alb at the waist."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-cincture-missal-1962", "src-cincture-fortescue-1943"]
+
+[[claims]]
+id = "clm-cincture-appearance"
+kind = "appearance"
+text = "The plate shows one plain smooth cord; no fiber, braid, twist, knot, tassel, length, color, end treatment, or decorative scheme is prescribed."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-cincture-fortescue-1943", "src-cincture-fortescue-1917", "src-cincture-casanowicz"]
+
+[[claims]]
+id = "clm-cincture-use"
+kind = "liturgical-use"
+text = "The priest fastens the cincture after the alb; later it secures the crossed ends of the priest's stole."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-cincture-missal-1962"]
+
+[[claims]]
+id = "clm-cincture-presence"
+kind = "ceremonial-presence"
+text = "It belongs to the ordinary priestly vesture for Mass at the 1962 horizon."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-cincture-missal-1962"]
+
+[[claims]]
+id = "clm-cincture-assistance"
+kind = "handling-boundary"
+text = "The Missal describes a minister presenting the cincture from behind while raising and arranging the alb; the checked manual's wider preparation and assistance model remains practical/custom rather than universal."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-cincture-missal-1962", "src-cincture-fortescue-1943"]
+
+[[sources]]
+id = "src-cincture-missal-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.2-3, printed p. LII, artifact PDF p. 56."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-cincture-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 10, artifact PDF p. 31; practical preparation and assistance at pp. 38-39, artifact PDF pp. 59-60."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-cincture-fortescue-1917"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917"
+locus = "Printed pp. 9-10; Wikisource scan leaves 43-44."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-cincture-casanowicz"
+binding = "work.immanuel-moses-casanowicz.ecclesiastical-vestments-usnm-bulletin-148-1929"
+locus = "Printed p. 30."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-vestments-0003-cincture"
+view = "isolated"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v2.png"
+review_state = "approved"
+depicts = ["obj-cincture"]
+review_note = "One plain smooth cord in a loose coil with both ends visible. Coil, length, thickness, fiber, and ends are representative only."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the cincture and the exact minister-assisted branch; present or arrange it only under direction."
+claim_ids = ["clm-cincture-use", "clm-cincture-assistance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "In the checked reverse-order table arrangement, ready the cincture immediately beneath the alb; no knot, coil, fold, or storage method is prescribed."
+claim_ids = ["clm-cincture-use", "clm-cincture-appearance", "clm-cincture-assistance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the waist layer, the exact minister presentation, and its later stole-securing relation without inventing a universal handoff."
+claim_ids = ["clm-cincture-use", "clm-cincture-assistance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The cincture girds the alb and secures the priest's crossed stole ends."
+claim_ids = ["clm-cincture-identity", "clm-cincture-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use this only as a relational layer; the ordinary priest's stole arrangement is not the bishop's arrangement."
+claim_ids = ["clm-cincture-use"]

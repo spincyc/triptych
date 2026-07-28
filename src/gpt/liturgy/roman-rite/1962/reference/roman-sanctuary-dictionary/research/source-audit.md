@@ -343,3 +343,20 @@ the prepared relationship, and the distinction from the under-chin
 Communion plate. Neither source supplies a universal vessel morphology or a
 handling prescription. The bespoke altar-server leaf retains its stronger
 combined treatment and is not regenerated.
+
+## Ordinary priestly vestments reconciliation — 2026-07-28
+
+Six canonical records now preserve the exact 1962 ordinary-priest vesting
+sequence and its handling boundaries: amice, alb, cincture, left-arm maniple,
+crossed and cincture-secured priest's stole, and chasuble. The governing
+controls are *Ritus servandus* I.2--4, printed p. LII / artifact PDF p. 56,
+and General Rubrics 117 and 133--137, printed pp. XIX--XX / PDF pp. 17--18.
+
+Fortescue--O'Connell 1943 p. 10 / PDF p. 31 controls only contemporary gross
+recognition forms; pp. 38--39 / PDF pp. 59--60 control a practical/custom
+preparation and assistance model. Fortescue 1917 pp. 9--10, Casanowicz 1929
+p. 30, and the exact Met records are dated morphology witnesses only. No
+source universalizes dimensions, tassels, crosses, fringe, ornament, exact
+cut, folding, storage, or a general server assignment. The full evidence,
+routing, artwork, and exclusion boundary is recorded in
+`priestly-vestments-alpha-audit-2026-07-28.md`.

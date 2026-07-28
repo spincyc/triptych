@@ -1,0 +1,139 @@
+schema_version = 1
+id = "obj-priest-stole"
+workflow_state = "publication-ready"
+preferred_english_name = "Priest's stole"
+latin_headword = "stola"
+sort_name = "05 Priest stole"
+categories = ["priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-maniple"]
+related_objects = ["obj-cincture", "obj-chasuble"]
+
+[presence]
+locations = ["Placed around the priest's neck, crossed over the breast, and secured by the cincture."]
+contexts = ["Put on after the maniple and before the chasuble in the ordinary priest's sequence."]
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "other-server"]
+presents = ["other-server"]
+warnings = ["The crossed arrangement is the ordinary priest's arrangement in this exact 1962 locus; it is not the bishop's or deacon's arrangement."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-priest-stole-identity"
+kind = "identity"
+text = "The priest's stole is the long narrow neck-worn vestment put on after the maniple."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-priest-stole-missal-1962", "src-priest-stole-fortescue-1943"]
+
+[[claims]]
+id = "clm-priest-stole-appearance"
+kind = "appearance"
+text = "The plate pairs one plain long narrow band with the checked ordinary priestly crossed-front arrangement; fringe, end shape, crosses, dimensions, textile, and ornament are representative only."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-priest-stole-missal-1962", "src-priest-stole-fortescue-1943", "src-priest-stole-fortescue-1917", "src-priest-stole-casanowicz", "src-priest-stole-met"]
+
+[[claims]]
+id = "clm-priest-stole-use"
+kind = "liturgical-use"
+text = "The ordinary priest places it around his neck, crosses it over the breast, and secures both ends with the cincture."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-priest-stole-missal-1962"]
+
+[[claims]]
+id = "clm-priest-stole-presence"
+kind = "ceremonial-presence"
+text = "It belongs to the ordinary priestly vesture for Mass at the 1962 horizon."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-priest-stole-missal-1962"]
+
+[[claims]]
+id = "clm-priest-stole-assistance"
+kind = "handling-boundary"
+text = "A checked contemporary ceremonial permits preparation by the sacristan or partly by the server according to custom and describes handing or arranging the stole; this is not a universal server assignment."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-priest-stole-fortescue-1943"]
+
+[[sources]]
+id = "src-priest-stole-missal-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.2-4, printed p. LII, artifact PDF p. 56."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "I.4 distinguishes the bishop or blessed abbot, whose stole hangs rather than being crossed."
+
+[[sources]]
+id = "src-priest-stole-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 10, artifact PDF p. 31; practical preparation and assistance at pp. 38-39, artifact PDF pp. 59-60."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-priest-stole-fortescue-1917"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917"
+locus = "Printed pp. 9-10; Wikisource scan leaves 43-44."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-priest-stole-casanowicz"
+binding = "work.immanuel-moses-casanowicz.ecclesiastical-vestments-usnm-bulletin-148-1929"
+locus = "Printed p. 30."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-priest-stole-met"
+binding = "museum.metropolitan-museum-of-art.43.22.4a-d"
+locus = "Object 43.22.4a-d, French, nineteenth century, public-domain object record."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-vestments-0005-priest-stole"
+view = "comparison"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v2.png"
+review_state = "approved"
+depicts = ["obj-priest-stole"]
+review_note = "One complete isolated stole and one anonymous torso inset show only the ordinary priest's crossed, cincture-secured arrangement. No episcopal or diaconal arrangement is implied."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the priest's long stole and crossed-front arrangement; offer or arrange it only under direction."
+claim_ids = ["clm-priest-stole-identity", "clm-priest-stole-use", "clm-priest-stole-assistance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "In the checked reverse-order table arrangement, ready it beneath the maniple and above the chasuble; this record gives no folding or storage prescription."
+claim_ids = ["clm-priest-stole-use", "clm-priest-stole-assistance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach sequence and the priest's crossed arrangement while distinguishing the bishop's hanging and deacon's diagonal arrangements."
+claim_ids = ["clm-priest-stole-use", "clm-priest-stole-assistance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The priest wears this long band around the neck, crossed and secured by the cincture."
+claim_ids = ["clm-priest-stole-identity", "clm-priest-stole-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use this to contrast the ordinary priest's crossed arrangement with the bishop's hanging stole."
+claim_ids = ["clm-priest-stole-use"]

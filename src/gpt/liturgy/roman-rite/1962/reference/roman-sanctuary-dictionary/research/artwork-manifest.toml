@@ -646,6 +646,398 @@ rights = "passed"
 consumer = "passed"
 release = "passed"
 
+[[asset_files]]
+id = "file-rpd-vestments-amice-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/priestly-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 574117, sha256 = "3215b44d265c2a2452a46285989c75c043837b2806912287bb037882199ac902" }
+
+[[asset_files]]
+id = "file-rpd-vestments-alb-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/priestly-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 584299, sha256 = "0017169f71808e6108b7a3ff8d36d1654d3b90036b306174a1559884c7086bdf" }
+
+[[asset_files]]
+id = "file-rpd-vestments-cincture-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/priestly-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 547292, sha256 = "7c429d9cf7effa8e31a7e9f65e4a2944341e864bfe8c2557694e709f2ab51b75" }
+
+[[asset_files]]
+id = "file-rpd-vestments-maniple-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/priestly-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 532115, sha256 = "d7cd099e4ab1ccb38b3b7d5e19451178e6bb900fe04303eef70c091b0b816286" }
+
+[[asset_files]]
+id = "file-rpd-vestments-priest-stole-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/priestly-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 612216, sha256 = "191d0cb33b7a54dceb9bff71265805bfec843bb24cd5adeebe3d34b945df500a" }
+
+[[asset_files]]
+id = "file-rpd-vestments-chasuble-comparison-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/priestly-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 1350, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 627378, sha256 = "b2dea2cca53cd0f20bfed32b88ca5f762a9216fa5cc0f5250da600d85b82f6a9" }
+
+[[artworks]]
+id = "art-vestments-0001-amice"
+object_ids = ["obj-amice"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach recognition of one source-bounded amice without turning illustrative folds or tie placement into a universal prescription."
+depicted_state = "One complete plain rectangular cloth with two complete long ties, isolated on warm-white paper."
+source_controlled_features = ["The checked 1943 ceremonial controls the rectangular linen cloth and long-tie recognition class.", "The 1962 Missal controls identity and first place in the priestly vesting sequence."]
+deliberate_omissions = ["No neck cutout, person, other vestment, text, fixed cross, apparel, lace, ornament, dimensions, prescribed fold, or tying method."]
+brief = "Isolated graphite recognition study of one plain amice."
+exact_prompt = """Use case: scientific-educational
+Asset type: source-controlled pictorial-dictionary recognition plate for Roman Catholic priestly vestments
+Primary request: Create a high-resolution museum-catalog recognition study of one amice as a strictly isolated object.
+Scene/backdrop: plain warm-white drawing paper only, no environment, floor plane, or setting.
+Subject: exactly one simple rectangular linen cloth with two long narrow ties extending from its upper corners, no neck cutout; show the complete object laid nearly flat with gentle natural cloth folds.
+Style/medium: meticulous monochrome graphite pencil drawing with restrained tonal hatching, subtle warm-white paper grain, clean historical museum-catalog object study, not photorealistic; coherent with a scholarly vestment-dictionary plate.
+Composition/framing: portrait plate, entire rectangular cloth and full uninterrupted lengths of both ties visible, centered with generous margins, no crop; one object and one view only.
+Lighting/mood: neutral, even illumination; scholarly and quiet.
+Materials/textures: fine plain linen conveyed through delicate graphite folds and restrained weave suggestion.
+Constraints: isolated object only; no inset, worn view, person, torso, silhouette, mannequin, body part, face, neck, collar, hands, underlying garment, text, labels, letters, numbers, captions, watermark, border, dimensions, color, church interior, altar, other vestments, fixed cross placement, apparels, lace, embroidery, decorative motifs, neck opening, universalized tying method, or universalized folds.
+Avoid: bib, collar, shawl, hood, apron, corporal, purificator, neck cutout, ornate textile, extra object, dramatic shadows, black fill, gradient background, photographic rendering."""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v2.png"
+reference_ids = ["src-amice-missal-1962", "src-amice-fortescue-1943", "src-amice-fortescue-1917", "src-amice-casanowicz"]
+precursor_ids = []
+corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate isolated plate replaces reliance on the rejected legacy composite without overwriting it."]
+baked_content_audit = ["One complete rectangular cloth and two uninterrupted ties are visible.", "No neck cutout, cross, lace, apparel, embroidery, text, person, other object, crop, color, or watermark is visible.", "Folds, proportions, weave, and tie placement remain illustrative."]
+tex_overlays = ["English and Latin headwords, stable ID, sequence, handling boundary, source keys, and morphology ceiling remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image; exact prompt, built-in mode, received and normalized hashes, transformation, controls, and checks are recorded."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2436404
+sha256 = "123aa3707237e5b963dfa124d74d1a2b07f17e5a6d34b0667e061ed3e68ff138"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 574117
+sha256 = "3215b44d265c2a2452a46285989c75c043837b2806912287bb037882199ac902"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0002-alb"
+object_ids = ["obj-alb"]
+variant_ids = []
+view = "front"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the alb's long, loose, sleeved linen-garment recognition class without making lace or construction universal."
+depicted_state = "One complete plain unworn long-sleeved alb in frontal view."
+source_controlled_features = ["The checked 1943 ceremonial controls the long linen garment reaching to the feet.", "The 1962 Missal controls identity and second place in the priestly sequence."]
+deliberate_omissions = ["No person, other vestment, mandatory lace, apparel, cross, embroidery, dimensions, prescribed fold, or construction."]
+brief = "Isolated graphite frontal study of one plain alb."
+exact_prompt = """Use case: scientific-educational
+Asset type: source-controlled pictorial-dictionary recognition plate for Roman Catholic priestly vestments
+Primary request: Create a high-resolution museum-catalog recognition study of one alb.
+Scene/backdrop: plain warm-white drawing paper only, no environment, floor plane, or setting.
+Subject: one loose, ankle-length, long-sleeved linen garment, shown alone from the front as a complete unworn object; a simple gathered neckline, broad body, full sleeves, and plain lower hem should make its basic form legible. The hem may be entirely plain. Do not add lace as a required feature.
+Style/medium: meticulous monochrome graphite pencil drawing with restrained tonal hatching, subtle warm-white paper grain, clean historical museum-catalog object study, not photorealistic.
+Composition/framing: portrait plate, full garment from neckline through both sleeves to ankle-length hem visible, centered with generous margins, no crop; natural but non-prescriptive folds.
+Lighting/mood: neutral, even illumination; scholarly and quiet.
+Materials/textures: lightweight plain linen conveyed through delicate graphite folds and a restrained weave suggestion.
+Constraints: object recognition only; no text, labels, letters, numbers, captions, watermark, border, dimensions, color, person, face, hands, body silhouette, church interior, altar, cincture, stole, amice, chasuble, cassock, surplice, other vestments, mandatory lace, apparels, fixed cross placement, embroidery, decorative motifs, or universalized folds and construction details.
+Avoid: modern shirt dress, cassock, tunic with short sleeves, fitted waist, belt, hood, pockets, buttons, zipper, ornate textile, dramatic shadows, black fill, gradient background, photographic rendering."""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v2.png"
+reference_ids = ["src-alb-missal-1962", "src-alb-fortescue-1943", "src-alb-fortescue-1917", "src-alb-casanowicz"]
+precursor_ids = []
+corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate isolated plate replaces reliance on the rejected legacy composite without overwriting it."]
+baked_content_audit = ["One complete unworn long-sleeved garment is visible.", "No person, belt, stole, lace, apparel, cross, text, other object, crop, color, or watermark is visible.", "Neckline, fullness, hem, texture, and folds remain illustrative."]
+tex_overlays = ["English and Latin headwords, stable ID, sequence, handling boundary, source keys, and morphology ceiling remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image; exact prompt, built-in mode, received and normalized hashes, transformation, controls, and checks are recorded."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2418376
+sha256 = "afc96087cedabf74671fa269da2d9bd1933383896852569b0c59ba3dd0c87451"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 584299
+sha256 = "0017169f71808e6108b7a3ff8d36d1654d3b90036b306174a1559884c7086bdf"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0003-cincture"
+object_ids = ["obj-cincture"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach recognition of a cincture as a plain cord without prescribing fiber, braid, knot, tassels, or length."
+depicted_state = "One continuous smooth plain cord arranged as a loose coil with both ends visible."
+source_controlled_features = ["The checked 1943 ceremonial controls the waist-girdle identity.", "The 1962 Missal controls sequence and the stole-securing relation."]
+deliberate_omissions = ["No worn view, person, knot, tassel, braid, twist, fiber, length, color, decorative end, or other object."]
+brief = "Isolated graphite recognition study of one plain cincture."
+exact_prompt = """Use case: scientific-educational
+Asset type: source-controlled pictorial-dictionary recognition plate for Roman Catholic priest vestments
+Primary request: Create a high-resolution monochrome graphite recognition study of one cincture represented only as a single smooth, plain cord arranged in a relaxed loose coil.
+Scene/backdrop: plain warm-white drawing paper; no environment, floor plane, inset, or decorative setting
+Subject: one continuous cord-like liturgical girdle, visually simple and generic, with both plain-cut ends fully visible
+Style/medium: careful monochrome graphite pencil drawing, subtle warm-white paper grain, restrained museum-catalog object study, clean and not photorealistic
+Composition/framing: portrait plate, loose coil centered and entirely visible with generous margins; no secondary view
+Lighting/mood: neutral even illumination; scholarly and quiet
+Constraints: the cord surface must be smooth and visually single-strand; depict no particular fiber, color, knot, tassel, length, or end treatment as prescribed; no inset, person, alb, waist, labels, captions, letters, numbers, text, church interior, other objects, watermark, border, or color
+Avoid: visible braiding, twisting, plaiting, multiple strands, woven surface, knots, tassels, fringe, fraying, decorative end caps, rosary, belt buckle, sash, cropped ends, cast shadow, black-filled background, gradients"""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v2.png"
+reference_ids = ["src-cincture-missal-1962", "src-cincture-fortescue-1943", "src-cincture-fortescue-1917", "src-cincture-casanowicz"]
+precursor_ids = []
+corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate isolated plate replaces reliance on the rejected legacy composite without overwriting it."]
+baked_content_audit = ["One smooth continuous plain cord in a loose coil with both ends visible.", "No person, knot, tassel, braid, twist, fringe, decorative end, text, other object, crop, color, or watermark is visible.", "Coil, length, thickness, and end cut remain illustrative."]
+tex_overlays = ["English and Latin headwords, stable ID, sequence, handling boundary, source keys, and morphology ceiling remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image; exact prompt, built-in mode, received and normalized hashes, transformation, controls, and checks are recorded."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2327166
+sha256 = "f479226f3c38bb28c5cc568249ada9448255a95693c28a65476cb4f68448defe"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 547292
+sha256 = "7c429d9cf7effa8e31a7e9f65e4a2944341e864bfe8c2557694e709f2ab51b75"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0004-maniple"
+object_ids = ["obj-maniple"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the maniple as a short narrow band distinct from the longer stole."
+depicted_state = "One short plain narrow flexible band in a shallow fold with both ends visible."
+source_controlled_features = ["The checked 1943 ceremonial controls the short silk-band recognition class.", "The 1962 Missal controls left-arm placement and sequence."]
+deliberate_omissions = ["No worn view, person, cross, fringe, end shape, dimensions, lining, fastening, textile, ornament, or other object."]
+brief = "Isolated graphite recognition study of one plain maniple."
+exact_prompt = """Use case: scientific-educational
+Asset type: source-controlled pictorial-dictionary recognition plate for Roman Catholic priest vestments
+Primary request: Create a high-resolution monochrome graphite recognition study of one maniple represented only as an isolated short, plain, narrow flexible vestment band.
+Scene/backdrop: plain warm-white drawing paper; no environment, floor plane, inset, or decorative setting
+Subject: one generic short narrow fabric band, arranged in a restrained shallow fold that demonstrates flexibility while keeping both plain rectangular ends entirely visible; it must read as a short object rather than a long stole
+Style/medium: careful monochrome graphite pencil drawing, subtle warm-white paper grain, restrained museum-catalog object study, clean and not photorealistic
+Composition/framing: portrait plate, object centered and fully visible with generous margins; no secondary view
+Lighting/mood: neutral even illumination; scholarly and quiet
+Constraints: keep the band plain and undecorated; depict no prescribed end shape, fringe, cross, dimensions, lining, fastening method, or decorative scheme; no inset, person, arm, hand, labels, captions, letters, numbers, text, church interior, other objects, watermark, border, or color
+Avoid: stole, long neck-worn band, broad sash, scarf, wrist cuff, trapezoidal or pointed ends, fringe, crosses, embroidery, brocade, clasps, pins, ribbons, severe twisting, cropped ends, cast shadow, black-filled background, gradients"""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v2.png"
+reference_ids = ["src-maniple-missal-1962", "src-maniple-rubrics-1962", "src-maniple-fortescue-1943", "src-maniple-fortescue-1917", "src-maniple-casanowicz", "src-maniple-met"]
+precursor_ids = []
+corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate isolated plate replaces reliance on the rejected legacy composite without overwriting it."]
+baked_content_audit = ["One complete short plain narrow band in a shallow fold with both ends visible.", "No person, arm, cross, fringe, pointed end, embroidery, clasp, text, other object, crop, color, or watermark is visible.", "Length, width, fold, fabric, and end shape remain illustrative."]
+tex_overlays = ["English and Latin headwords, stable ID, left-arm use, sequence, cope branch, source keys, and morphology ceiling remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image; exact prompt, built-in mode, received and normalized hashes, transformation, controls, and checks are recorded."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2213414
+sha256 = "0264ee08041ff220eaba0bb1d9060af29325649b4d46b084a3cc1e91430e4b67"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 532115
+sha256 = "d7cd099e4ab1ccb38b3b7d5e19451178e6bb900fe04303eef70c091b0b816286"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0005-priest-stole"
+object_ids = ["obj-priest-stole"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Teach both the isolated stole and the ordinary priest's crossed, cincture-secured arrangement without conflating episcopal or diaconal use."
+depicted_state = "One complete plain long narrow stole and one smaller anonymous torso inset with crossed ends beneath a cincture."
+source_controlled_features = ["The 1962 Missal controls the priest's neck, crossed-breast, cincture-secured arrangement.", "The checked 1943 ceremonial controls the long narrow recognition class."]
+deliberate_omissions = ["No bishop's hanging or deacon's diagonal arrangement, face, hands, universal fringe, spade ends, crosses, ornament, dimensions, color, or environment."]
+brief = "Graphite comparison of one isolated priest's stole and its checked ordinary priestly arrangement."
+exact_prompt = """Use case: scientific-educational
+Asset type: source-controlled pictorial-dictionary recognition plate for Roman Catholic priest vestments
+Primary request: Create a high-resolution monochrome graphite pencil study of a priest's stole, showing both the isolated vestment and its priestly wearing arrangement.
+Scene/backdrop: plain warm-white drawing paper only, with subtle natural paper grain; no environment or floor plane
+Subject: one long, narrow priest stole displayed flat in a graceful vertical arrangement, plus one smaller anonymous priest-torso inset showing the two ends crossed over the chest and secured beneath a simple cincture at the waist. The inset exists only to make the priest arrangement legible.
+Style/medium: restrained, precise graphite pencil; museum-catalog object study; delicate contour and controlled hatching; historically plausible without asserting one universal design
+Composition/framing: portrait orientation, full isolated stole and full torso inset visible with generous margins; clean visual separation; no crop
+Lighting/mood: neutral, even, scholarly
+Constraints: the torso is anonymous and schematic, cropped from neck to below waist; no face, head, hands, skin detail, or environment. Clearly depict a priest's crossed-front, cincture-secured arrangement only. Keep the stole plain and representative. No text, labels, letters, dimensions, watermark, frame, color, or decorative background. Do not imply that fringe, spade-shaped ends, crosses, ornament, exact proportions, or any textile detail are universal.
+Avoid: deacon's diagonal stole, bishop's uncrossed arrangement, scarf, sash, pallium, universalized fringe, spade ends, crosses, embroidery, brocade, photorealism, black fill, gradient background, theatrical pose"""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v2.png"
+reference_ids = ["src-priest-stole-missal-1962", "src-priest-stole-fortescue-1943", "src-priest-stole-fortescue-1917", "src-priest-stole-casanowicz", "src-priest-stole-met"]
+precursor_ids = []
+corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate plate replaces reliance on the rejected legacy composite without overwriting it."]
+baked_content_audit = ["One complete isolated long narrow band and one anonymous neck-to-below-waist torso inset are visible.", "The inset shows crossed ends beneath a cincture and no face, head, hands, diagonal or hanging arrangement.", "No cross, fringe, spade end, text, environment, crop, color, or watermark is visible; proportions remain illustrative."]
+tex_overlays = ["English and Latin headwords, stable ID, sequence, priest/bishop/deacon distinction, source keys, and morphology ceiling remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image; exact prompt, built-in mode, received and normalized hashes, transformation, controls, and checks are recorded."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2571548
+sha256 = "b50a62e42306e0acc451564937a7fdbfdac3e8931c77a33d8149f0048726bbb4"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 612216
+sha256 = "191d0cb33b7a54dceb9bff71265805bfec843bb24cd5adeebe3d34b945df500a"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0006-chasuble-comparison"
+object_ids = ["obj-chasuble"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Distinguish representative narrower Roman-cut and fuller Gothic chasuble silhouettes without making either normative or exhaustive."
+depicted_state = "Four isolated garment views: front and back of one narrower cut and front and back of one fuller cut on subordinate supports."
+source_controlled_features = ["The 1962 Missal and General Rubrics control chasuble identity, outer-layer use, and Mass presence.", "Checked dated manuals and museum records control only representative material variation."]
+deliberate_omissions = ["No claim that cut, neckline, orphrey, length, textile, ornament, ties, proportions, or precedence is universal.", "No folded chasuble, broad stole, cope, dalmatic, person, text, color, or environment."]
+brief = "Graphite four-view comparison of representative narrow and full chasuble silhouettes."
+exact_prompt = """Use case: scientific-educational
+Asset type: source-controlled pictorial-dictionary comparison plate for Roman Catholic priest vestments
+Primary request: Create one coherent high-resolution monochrome graphite pencil comparison study of two clearly distinguishable representative chasuble silhouettes: at left, a narrower Roman-cut form with substantially reduced side fabric and open arms; at right, a much fuller Gothic form draping broadly over shoulders and upper arms.
+Scene/backdrop: plain warm-white drawing paper only, subtle natural paper grain, no environment or floor plane
+Subject: four isolated garment views in one plate. LEFT PAIR: representative Roman-cut chasuble, front and back, narrow stiff panel-like body, markedly cut-away sides, arms fully open and silhouette ending near the sides of the torso rather than forming sleeves. RIGHT PAIR: representative Gothic chasuble, front and back, ample soft fabric, broad rounded shoulder drape and wide flowing sides. Each garment is on a simple faceless, armless museum-display torso support. Central head openings must be legible.
+Style/medium: restrained precise graphite pencil, museum-catalog object study, delicate contour and controlled hatching, historically plausible comparative recognition art; neither form normative nor exhaustive
+Composition/framing: landscape orientation, left pair visibly narrow and right pair visibly full, all four complete garments visible with generous margins, no crop, no dividers or labels
+Lighting/mood: neutral, even, scholarly
+Constraints: Strong silhouette contrast is essential. No faces, heads, hands, skin detail, arms, people, church interior, or environment. Display supports visually subordinate. Plain fabric only. No text, labels, letters, dimensions, watermark, frame, color, decorative background, or ornament. Do not imply a universal orphrey, neckline, length, fringe, textile, decoration, exact proportion, or precedence.
+Avoid: four similar poncho silhouettes; sleeves on the Roman-cut form; the word or cliché 'fiddleback'; text labels; crosses; embroidery; brocade; heavy orphreys; fringe; dalmatic sleeves; cope clasp or hood; alb; stole; photorealism; black fill; gradient background; theatrical mannequins; fashion poses"""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v2.png"
+reference_ids = ["src-chasuble-missal-1962", "src-chasuble-rubrics-1962", "src-chasuble-color-1962", "src-chasuble-fortescue-1943", "src-chasuble-fortescue-1917", "src-chasuble-casanowicz", "src-chasuble-met-french", "src-chasuble-met-spanish"]
+precursor_ids = []
+corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 1350 by 900 pixels without a content edit.", "A separate comparison plate replaces reliance on the rejected legacy composite without overwriting it."]
+baked_content_audit = ["Four complete garment views are visible: narrower front/back at left and fuller front/back at right.", "Narrow and full silhouettes are clearly distinct; each head opening is visible and supports are subordinate.", "No cross, orphrey, embroidery, fringe, other vestment, text, person, crop, color, or watermark is visible.", "Cuts, supports, folds, proportions, and construction remain representative."]
+tex_overlays = ["English and Latin headwords, stable ID, final-layer use, Mass presence, color rule, variant ceiling, source keys, and not-to-common-scale notice remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image; exact prompt, built-in mode, received and normalized hashes, transformation, controls, and checks are recorded."
+[artworks.received]
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2645634
+sha256 = "052e590d8969524436495d83ac68a58d7ed69a4179d0ae3e0c8952fe06c24452"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v2.png"
+width_px = 1350
+height_px = 900
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 627378
+sha256 = "b2dea2cca53cd0f20bfed32b88ca5f762a9216fa5cc0f5250da600d85b82f6a9"
+max_placement_width_in = 4.5
+max_placement_height_in = 3.0
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
 [[artworks]]
 id = "art-altar-appointments-0102-iso-candle"
 object_ids = ["obj-altar-candle"]

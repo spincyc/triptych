@@ -1,0 +1,171 @@
+schema_version = 1
+id = "obj-chasuble"
+workflow_state = "publication-ready"
+preferred_english_name = "Chasuble"
+latin_headword = "planeta seu casula"
+alternate_english_names = ["planeta"]
+sort_name = "06 Chasuble"
+categories = ["priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+related_objects = ["obj-priest-stole", "obj-maniple"]
+
+[presence]
+locations = ["Outermost ordinary priestly vestment for Mass."]
+contexts = ["Put on last over the stole."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "other-server"]
+presents = ["other-server"]
+warnings = ["A checked practical manual's preparation or assistance is conditional/custom; no universal tie, fold, storage, or server handoff is prescribed."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-chasuble-identity"
+kind = "identity"
+text = "The chasuble is the outer priestly vestment put on last for Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-chasuble-missal-1962", "src-chasuble-rubrics-1962"]
+
+[[claims]]
+id = "clm-chasuble-appearance"
+kind = "appearance"
+text = "The comparison plate shows representative narrower Roman-cut and fuller Gothic silhouettes as material-culture variation; neither form is normative or exhaustive, and no orphrey, neckline, length, textile, ornament, tie, or exact proportion is prescribed."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-chasuble-fortescue-1943", "src-chasuble-fortescue-1917", "src-chasuble-casanowicz", "src-chasuble-met-french", "src-chasuble-met-spanish"]
+
+[[claims]]
+id = "clm-chasuble-use"
+kind = "liturgical-use"
+text = "The priest puts the chasuble on after the stole as the final layer."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-chasuble-missal-1962"]
+
+[[claims]]
+id = "clm-chasuble-presence"
+kind = "ceremonial-presence"
+text = "The 1962 General Rubrics direct the priest always to use the planeta or casula at Mass; they separately abolish folded chasubles and the broad stole."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-chasuble-rubrics-1962"]
+
+[[claims]]
+id = "clm-chasuble-color"
+kind = "variation"
+text = "The vestment color follows the Mass or Office under the 1962 General Rubrics, with legitimate indults and customs preserved; the monochrome plate does not encode color."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-chasuble-color-1962"]
+
+[[claims]]
+id = "clm-chasuble-assistance"
+kind = "handling-boundary"
+text = "The Missal requires the vestments to be intact, clean, beautiful, and blessed where blessing applies; a checked contemporary ceremonial's reverse-stack preparation and handing model remains practical/custom rather than a universal assignment."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-chasuble-missal-1962", "src-chasuble-fortescue-1943"]
+
+[[sources]]
+id = "src-chasuble-missal-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.2, printed p. LII, artifact PDF p. 56."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-chasuble-rubrics-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 133-137, printed p. XX, artifact PDF p. 18."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-chasuble-color-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 117, printed p. XIX, artifact PDF p. 17."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-chasuble-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 10, artifact PDF p. 31; practical preparation and assistance at pp. 38-39, artifact PDF pp. 59-60."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-chasuble-fortescue-1917"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917"
+locus = "Printed pp. 9-10; Wikisource scan leaves 43-44."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-chasuble-casanowicz"
+binding = "work.immanuel-moses-casanowicz.ecclesiastical-vestments-usnm-bulletin-148-1929"
+locus = "Printed p. 30."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-chasuble-met-french"
+binding = "museum.metropolitan-museum-of-art.43.22.4a-d"
+locus = "Object 43.22.4a-d, French, nineteenth century, public-domain object record."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-chasuble-met-spanish"
+binding = "museum.metropolitan-museum-of-art.2009.300.2952a-c"
+locus = "Object 2009.300.2952a-c, Spanish, public-domain object record; altered set."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-vestments-0006-chasuble-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v2.png"
+review_state = "approved"
+depicts = ["obj-chasuble"]
+scale_mode = "not-to-common-scale"
+review_note = "Four complete garment views compare one narrower Roman-cut and one fuller Gothic representative silhouette, each front and back. Supports are illustrative; no form is normative or exhaustive."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the chasuble as the final outer layer; present or arrange it only under direction."
+claim_ids = ["clm-chasuble-identity", "clm-chasuble-use", "clm-chasuble-assistance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "In the checked reverse-order table arrangement, ready it lowest so it is taken last, checking condition and the applicable color; no folding, storage, or tie method is prescribed."
+claim_ids = ["clm-chasuble-use", "clm-chasuble-color", "clm-chasuble-assistance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach it as the final layer and keep ordinary priest, bishop, deacon, cope, and abolished folded-chasuble branches distinct."
+claim_ids = ["clm-chasuble-use", "clm-chasuble-presence", "clm-chasuble-assistance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The chasuble is the priest's outer Mass vestment; the two pictured cuts are representative variations."
+claim_ids = ["clm-chasuble-identity", "clm-chasuble-appearance"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use this as the ordinary outer-vestment baseline while keeping episcopal layering and assistance distinct."
+claim_ids = ["clm-chasuble-presence"]

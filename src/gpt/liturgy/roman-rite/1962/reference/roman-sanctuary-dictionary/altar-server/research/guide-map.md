@@ -59,6 +59,13 @@ Solemn-Mass book records are rendered only as a TeX-native relational diagram:
 generic graphite-style book symbols carry no artwork or binding claim, while
 TeX owns the exact minister and use labels.
 
+The bespoke leaf now also imports one deterministic category slice from that
+canonical selection: the six ordinary priestly vestments. It renders amice,
+alb, cincture, maniple, priest's stole, and chasuble in exact vesting order,
+with audience notes generated from their canonical records. The slice adds no
+other generated record and does not duplicate the existing bespoke object
+pages. The leaf therefore contains thirty-nine objects.
+
 The canonical generated selection now admits seventeen records, including the
 credence table and sedilia. Those two records were already present in this
 bespoke thirty-three-record teaching leaf, so the cross-edition promotion
@@ -305,7 +312,7 @@ consumers are preserved.
 ## Known omissions
 
 The alpha does not cover the complete server route, altar composition,
-Communion plate, vesture, the remaining
+the remaining vesture beyond the six ordinary priestly records, the remaining
 sung and solemn branches, the remaining Holy Week inventory, pontifical ceremonies, or related
 ceremonies. The detailed Low-Mass queue and missing-candidate accounting remain
 in `low-mass-core-selection-register.md`.

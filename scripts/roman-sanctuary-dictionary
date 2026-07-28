@@ -302,6 +302,17 @@ def section_for(record: dict, edition: dict) -> str:
     edition_id = edition["id"]
     if edition_id == "ed-comprehensive":
         return category
+    if edition_id == "ed-altar-server":
+        if category in {"priestly-vestments", "deacon-and-subdeacon",
+                        "pontifical-and-prelatial",
+                        "servers-ministers-and-choir"}:
+            return "vestments-ministers-and-insignia"
+        if category in {"related-ceremonies", "requiem", "nuptial-and-ritual",
+                        "holy-week", "pontifical-mass-compositions"}:
+            return "special-masses-and-related-ceremonies"
+        if category in {"church-and-sanctuary", "altar-and-appointments"}:
+            return "sanctuary-orientation"
+        return "objects-around-the-server"
     if edition_id == "ed-sacristan":
         if category in {"church-and-sanctuary", "altar-and-appointments",
                         "service-objects"}:
@@ -471,6 +482,20 @@ def main() -> int:
                 body.extend(dense_edition_tex(chosen, edition))
             data = ("\n".join(body) + "\n").encode()
             (args.output / f"{edition['id']}.tex").write_bytes(data)
+            if edition["id"] == "ed-altar-server":
+                vestments = [
+                    record for record in chosen
+                    if primary_category(record) == "priestly-vestments"
+                ]
+                vestment_body = [
+                    "% Generated deterministically; do not edit.",
+                    "% Canonical altar-server priestly-vestment alpha slice.",
+                    "% edition: ed-altar-server",
+                    *dense_edition_tex(vestments, edition),
+                ]
+                (args.output / "ed-altar-server-vestments.tex").write_text(
+                    "\n".join(vestment_body) + "\n", encoding="utf-8"
+                )
 
             chosen_ids = {record["id"] for record in chosen}
             omitted = [

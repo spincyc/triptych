@@ -1,0 +1,129 @@
+schema_version = 1
+id = "obj-alb"
+workflow_state = "publication-ready"
+preferred_english_name = "Alb"
+latin_headword = "alba"
+sort_name = "02 Alb"
+categories = ["priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+related_objects = ["obj-amice", "obj-cincture", "obj-maniple", "obj-priest-stole", "obj-chasuble"]
+
+[presence]
+locations = ["Put on over the amice and under the cincture."]
+contexts = ["The second layer in the ordinary priest's six-vestment sequence."]
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "other-server"]
+presents = ["other-server"]
+warnings = ["The Missal expressly describes a minister raising and arranging the alb when presenting the cincture from behind; this does not authorize a universal handling rule for every server."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-alb-identity"
+kind = "identity"
+text = "The alb is the long linen vestment put on after the amice."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-alb-missal-1962", "src-alb-fortescue-1943"]
+
+[[claims]]
+id = "clm-alb-appearance"
+kind = "appearance"
+text = "A checked contemporary ceremonial describes a loose, long-sleeved linen garment reaching to the feet; the plate does not prescribe lace, apparels, crosses, construction, ornament, or exact folds."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-alb-fortescue-1943", "src-alb-fortescue-1917", "src-alb-casanowicz"]
+
+[[claims]]
+id = "clm-alb-use"
+kind = "liturgical-use"
+text = "The priest puts on the alb after the amice and before the cincture."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-alb-missal-1962"]
+
+[[claims]]
+id = "clm-alb-presence"
+kind = "ceremonial-presence"
+text = "It belongs to the ordinary priestly vesture for Mass at the 1962 horizon."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-alb-missal-1962"]
+
+[[claims]]
+id = "clm-alb-assistance"
+kind = "handling-boundary"
+text = "In the exact Missal branch a minister presents the cincture from behind while raising and arranging the alb; a checked contemporary ceremonial also gives a practical/custom preparation and assistance model, not a universal assignment."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-alb-missal-1962", "src-alb-fortescue-1943"]
+
+[[sources]]
+id = "src-alb-missal-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.2-3, printed p. LII, artifact PDF p. 56."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-alb-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 10, artifact PDF p. 31; practical preparation and assistance at pp. 38-39, artifact PDF pp. 59-60."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-alb-fortescue-1917"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917"
+locus = "Printed pp. 9-10; Wikisource scan leaves 43-44."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-alb-casanowicz"
+binding = "work.immanuel-moses-casanowicz.ecclesiastical-vestments-usnm-bulletin-148-1929"
+locus = "Printed p. 30."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-vestments-0002-alb"
+view = "front"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v2.png"
+review_state = "approved"
+depicts = ["obj-alb"]
+review_note = "One complete plain unworn alb. Neckline, fullness, hem, weave, and folds are representative; lace and apparels are not required features."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the alb as the second layer. In the exact Missal branch a minister raises and arranges it while presenting the cincture from behind; do not generalize that action beyond direction."
+claim_ids = ["clm-alb-use", "clm-alb-assistance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "In the checked reverse-order table arrangement, ready the alb immediately beneath the amice; this record prescribes no fold or storage method."
+claim_ids = ["clm-alb-use", "clm-alb-assistance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach alb after amice and before cincture, and keep the Missal's exact minister action distinct from local assignments."
+claim_ids = ["clm-alb-use", "clm-alb-assistance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The alb is the long linen layer worn over the amice."
+claim_ids = ["clm-alb-identity"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use this as a relational base layer only; ordinary-priest arrangement does not establish episcopal timing or assistance."
+claim_ids = ["clm-alb-presence"]

@@ -101,6 +101,16 @@ corrected crucifix-bearing asset passes the factual, visual, print, rights,
 safety, and consumer gates and is distributed under the repository's
 project-content terms.
 
+The six ordinary-priest vestment plates are project-generated without
+supplied reference images. Their exact prompts, built-in mode, received and
+normalized hashes, grayscale-and-resize transformations, morphology ceilings,
+consumer checks, and rights disposition are recorded in
+`artwork-manifest.toml` and
+`priestly-vestments-alpha-audit-2026-07-28.md`. The public-domain historical
+and museum witnesses supply evidence only; no third-party pixel or extended
+text is reproduced. The rejected legacy priestly-vestment composite remains
+at its prior path and hash with no consumer.
+
 ## Open rights classes
 
 | Material | Present disposition | Required action |

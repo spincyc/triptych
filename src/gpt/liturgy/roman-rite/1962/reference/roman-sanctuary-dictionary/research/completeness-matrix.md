@@ -19,7 +19,7 @@ recorded here. None of these open states is evidence of completeness.
 | Books and printed objects | No | No | No | No | No | No | No | Records populated; row open |
 | Service objects | No | No | No | No | No | No | No | Records populated; row open |
 | Incense | No | No | No | No | No | No | No | Records populated; row open |
-| Priestly vestments | No | No | No | No | No | No | No | Targeted research recorded; row open |
+| Priestly vestments | No | No | No | No | No | No | No | Six ordinary-priest records populated; row open |
 | Deacon and subdeacon | No | No | No | No | No | No | No | Targeted research recorded; row open |
 | Pontifical and prelatial | No | No | No | No | No | No | No | Records populated; row open |
 | Servers, ministers, and choir | No | No | No | No | No | No | No | Targeted research recorded; row open |

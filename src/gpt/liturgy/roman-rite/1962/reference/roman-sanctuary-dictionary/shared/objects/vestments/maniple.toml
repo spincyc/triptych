@@ -1,0 +1,146 @@
+schema_version = 1
+id = "obj-maniple"
+workflow_state = "publication-ready"
+preferred_english_name = "Maniple"
+latin_headword = "manipulus"
+sort_name = "04 Maniple"
+categories = ["priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-priest-stole"]
+related_objects = ["obj-amice", "obj-alb", "obj-cincture", "obj-chasuble"]
+
+[presence]
+locations = ["Worn on the priest's left arm for Mass."]
+contexts = ["Put on after the cincture and before the stole in the ordinary priest's sequence."]
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "other-server"]
+presents = ["other-server"]
+warnings = ["The checked practical manual's assistance model is conditional/custom; no fastening method or universal server handoff is prescribed."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-maniple-identity"
+kind = "identity"
+text = "The maniple is the short vestment band worn on the priest's left arm."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-maniple-missal-1962", "src-maniple-fortescue-1943"]
+
+[[claims]]
+id = "clm-maniple-appearance"
+kind = "appearance"
+text = "The plate shows one short, narrow, flexible plain band; end shape, fringe, crosses, dimensions, lining, fastening, textile, and ornament are not prescribed."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-maniple-fortescue-1943", "src-maniple-fortescue-1917", "src-maniple-casanowicz", "src-maniple-met"]
+
+[[claims]]
+id = "clm-maniple-use"
+kind = "liturgical-use"
+text = "The ordinary priest puts it on the left arm after the cincture and before the stole."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-maniple-missal-1962"]
+
+[[claims]]
+id = "clm-maniple-presence"
+kind = "ceremonial-presence"
+text = "It is part of ordinary priestly Mass vesture; the 1962 General Rubrics distinguish the cope branch, in which the maniple is not worn."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-maniple-missal-1962", "src-maniple-rubrics-1962"]
+
+[[claims]]
+id = "clm-maniple-assistance"
+kind = "handling-boundary"
+text = "A checked contemporary ceremonial permits preparation by the sacristan or partly by the server according to custom and describes handing vestments; it does not prescribe a universal server handoff or fastening method."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-maniple-fortescue-1943"]
+
+[[sources]]
+id = "src-maniple-missal-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.2, printed p. LII, artifact PDF p. 56."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-maniple-rubrics-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 133-137, printed p. XX, artifact PDF p. 18."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-maniple-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 10, artifact PDF p. 31; practical preparation and assistance at pp. 38-39, artifact PDF pp. 59-60."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-maniple-fortescue-1917"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917"
+locus = "Printed pp. 9-10; Wikisource scan leaves 43-44."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-maniple-casanowicz"
+binding = "work.immanuel-moses-casanowicz.ecclesiastical-vestments-usnm-bulletin-148-1929"
+locus = "Printed p. 30."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-maniple-met"
+binding = "museum.metropolitan-museum-of-art.43.22.4a-d"
+locus = "Object 43.22.4a-d, French, nineteenth century, public-domain object record."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-vestments-0004-maniple"
+view = "isolated"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v2.png"
+review_state = "approved"
+depicts = ["obj-maniple"]
+review_note = "One complete short plain narrow band with a shallow fold and both ends visible. Exact proportions and construction are representative only."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the short left-arm band and keep it distinct from the longer stole; assist only under direction."
+claim_ids = ["clm-maniple-identity", "clm-maniple-use", "clm-maniple-assistance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "In the checked reverse-order table arrangement, ready it beneath the cincture and above the stole; the cope branch excludes it."
+claim_ids = ["clm-maniple-use", "clm-maniple-presence", "clm-maniple-assistance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach left-arm placement, sequence, and the cope branch; keep priest, bishop, deacon, and subdeacon timing distinct."
+claim_ids = ["clm-maniple-use", "clm-maniple-presence", "clm-maniple-assistance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The maniple is the short band worn on the left arm, not the longer neck-worn stole."
+claim_ids = ["clm-maniple-identity"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This is the ordinary priestly baseline only; episcopal maniple timing differs."
+claim_ids = ["clm-maniple-use"]
