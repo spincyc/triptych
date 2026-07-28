@@ -8,7 +8,7 @@
 - **Primary profile:** `guidance/history/historical-accounts.md`
 - **Additional profile:** `guidance/articles.md` applies only to the bounded theological-authority and current-law claims
 - **Legal center:** universal law of the Latin Church, with U.S. territorial implementation distinguished and a bounded Eastern jurisdictional comparison
-- **Current-law as-of date:** 2026-07-27
+- **Current-law as-of date:** 2026-07-28
 - **Governing Code:** the 1983 *Codex Iuris Canonici*, promulgated by John Paul II on 1983-01-25 and in force from 1983-11-27; canon 1 limits its scope to the Latin Church
 - **Additional historical-source inspection:** 2026-07-27
 
@@ -23,7 +23,8 @@ unchanged rite. Authorization and safeguards are internal to this history.
 ## Included
 
 The promised completed deliverable is a comprehensive study of at least 100
-substantive pages. The current 84-page paper is a public alpha, not fulfillment
+substantive pages. The current 107-page paper contains 94 substantive narrative
+pages and is a public alpha, not fulfillment
 of that extent or completeness
 commitment. Expansion must remain evidence-controlled; page count does not
 authorize padding, unsupported cases, operational ritual instruction, or
@@ -51,8 +52,10 @@ canonist. Named cases remain excluded because the case audit did not recover a
 sufficient chain of contemporary, official, medical, and reception evidence;
 this is not a claim that no adequate archive exists.
 
-The study does not survey Eastern Catholic particular law or ritual books,
-Orthodox law or practice, every local Western ritual, the frequency or outcomes
+The study surveys a bounded Eastern common-law and historical-transmission
+module, including identified Ruthenian and Melkite initiatory sources. It does
+not survey Church-specific Eastern Catholic particular law, current stand-alone
+ritual books, Orthodox law or practice, every local Western ritual, the frequency or outcomes
 of major exorcism, or every historical demonology. Latin canon 1172 is not
 projected onto Eastern Catholics. Remaining edition-level gaps include the
 composition and exact edition control of the church-order complex conventionally
@@ -108,8 +111,9 @@ source function, and generation metadata.
 
 The earlier fifteen-page candidate and its 26 July production record are
 superseded by this expanded modular draft. Those dated records remain
-historical evidence for their exact snapshots. The current 84-page snapshot
-passed the recorded source-role, currentness, architecture, claim, build, web,
+historical evidence for their exact snapshots. The current 107-page candidate,
+including 94 substantive narrative pages, must pass the recorded source-role,
+currentness, architecture, claim, build, web,
 visual, metadata, text, font, identity, rights, and safety checks on 27 July
 2026.
 

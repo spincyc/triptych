@@ -100,10 +100,11 @@ The Alessandrina copy remains readable through Google Books volume
 imprint and 224 printed pages. USUARIUM record 1195 independently identifies
 the item as the editio princeps and supplies its structural index. Exact
 signed page-specific JPEG renditions are now registered for every printed
-page from 198 through 219. The p. 198 and p. 219 artifacts were visually
-inspected and promoted through verified passage records. The intermediate
-artifacts establish exact remote availability and identity but have not been
-promoted to claim-level passage controls.
+page from 198 through 219. Every page was visually inspected and promoted
+through a verified passage record for category-level architecture. These
+controls distinguish preliminary prose, the transition into laid-out
+liturgical material, differentiated prayer, lection, creed, and psalmic
+blocks, and the visible ending without reproducing formulas or actions.
 
 The page-specific route did not yield an authenticated full-volume file, and
 no Google scan bytes are retained because their artifact-level redistribution
@@ -113,10 +114,10 @@ PDF of Petar Bašić's 2014 article (401,068 bytes; SHA-256
 `e1c1040a…be83`) remains the independent secondary control for the title and
 terminal sequence, including the p. 220 next-unit boundary.
 
-Further promotion requires claim-level visual review of pp. 199--218 and
-direct control of p. 220; full-volume collation would still require an
-authenticated complete artifact. No quotation, exact formula comparison,
-complete procedural digest, comprehensive typographical claim,
+Further promotion requires direct control of p. 220 and, for textual claims,
+an authenticated complete artifact and lawful claim-local collation. No
+quotation, exact formula comparison, complete procedural digest,
+comprehensive typographical claim,
 frequency/outcome inference, operational instruction, or present
 authorization may be derived from the current controls.
 - *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg

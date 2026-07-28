@@ -3,6 +3,24 @@ record_type = "bindings"
 document = "history/catholic-exorcism/01-history-and-current-practice"
 
 [[bindings]]
+source_id = "passage.anonymous.pontificale-cracoviense-bj-ms-2057.manuscript-bj-ms-2057.folios-68v-77v-energumen-catechumen-dossier"
+loci = ["folio-68v-77v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:5a38191fb831be8eb3f289a17f9d79f13069753768f0092877f237e82ba83978"
+verified_on = "2026-07-28"
+context = "Exact official manuscript-image control for category headings, sequence, and boundary only; no formula, operational action, performance, frequency, efficacy, local normativity, PRG relationship, descent, or modern-practice claim."
+
+[[bindings]]
+source_id = "passage.anonymous.pontificale-cracoviense-bj-ms-2057.manuscript-bj-ms-2057.folios-125r-126r-oil-unit"
+loci = ["folio-125r-126r"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:027383bc1c711e1a96fb63168040d76bb0dae6ce0e00041b6a863953fb11cd86"
+verified_on = "2026-07-28"
+context = "Exact official manuscript-image control for the oil unit's category, coordinates, and adjacent book environment only; no formula, operational action, performance, frequency, efficacy, local normativity, PRG relationship, descent, or modern-practice claim."
+
+[[bindings]]
 source_id = "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-9.38-41"
 loci = ["Mark 9:38-41"]
 role = "textual-control"
@@ -794,6 +812,87 @@ verified_on = "2026-07-25"
 context = "Authentic Latin canon 2 controls the interpretive priority of the ancient law of the Eastern Churches. It supplies no major-exorcism procedure."
 
 [[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-3"
+loci = ["canon-3"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:7d96a5877479d1ff4378702e85b06574e4af427858d7a9ef12f99a10569ecf08"
+verified_on = "2026-07-28"
+context = "Official Latin control for the CCEO's ordinary deferral of liturgical matters to liturgical books. It supplies no exorcism procedure."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-part2-2026-07-28.canon-668"
+loci = ["canon-668"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:de5ddbbcc16c2c54486675e73b8ff76e6cd78a1a025cd37ab99a63e9e3f25db4"
+verified_on = "2026-07-28"
+context = "Official Latin control for the definition of public divine worship; not a minister, faculty, or permission rule."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-part2-2026-07-28.canon-867"
+loci = ["canon-867"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:6c65972d0b8f94f838dc6aedeff50a3aea70ef942658a2f0fa33b6ad14530928"
+verified_on = "2026-07-28"
+context = "Official Latin control for sacramentals and the remittal to each Church sui iuris's particular law; no uniform Eastern exorcism rule is inferred."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-110"
+loci = ["canon-110"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:992985dab72b9ba62af3439cd3469e3c81c3efc9a7392a293a10e31ca1341987"
+verified_on = "2026-07-28"
+context = "Patriarchal synod legislative competence only; no exorcism norm or authorization is inferred."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-150"
+loci = ["canon-150"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:d15a65a22cb28dfc21aa051057864bc6a95be595a9466db1c482e315c642370a"
+verified_on = "2026-07-28"
+context = "Territorial and extra-territorial reach of patriarchal synodal acts only; no exorcism enactment is inferred."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-152"
+loci = ["canon-152"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b38ab34befae15cbbc199ea08a689d1ec7566593d33b5351a81979e42961bff8"
+verified_on = "2026-07-28"
+context = "Major-archiepiscopal authority-structure bridge only; no exorcism rule is inferred."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-167"
+loci = ["canon-167"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:8fec3a6d34139034a84cd7710a0123192017048e9797819238dbe4c0624d3c7a"
+verified_on = "2026-07-28"
+context = "Metropolitan Church sui iuris legislative route where common law remits to particular law; no exorcism enactment is inferred."
+
+[[bindings]]
+source_id = "passage.john-paul-ii.sacri-canones.latin-aas-82-1990.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b5d976c71fa8e8860364b5ff87d12fb0b635b7a161ceb3009eb2fc0a8c1a37e5"
+verified_on = "2026-07-25"
+context = "Authentic promulgation and 1 October 1991 entry-into-force control for the CCEO."
+
+[[bindings]]
+source_id = "passage.holy-see.codes-of-canon-law-web-index.english-press-office-web-2026-07-28.cceo-amendment-list"
+loci = ["cceo-amendment-list"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b195c2f1b5c64a13ed03af6db737065f3116a28ceb83c911c019eb1806d6b4ae"
+verified_on = "2026-07-28"
+context = "Dated official amendment-index control. It is not a consolidated code or exhaustive proof of absence; none of the indexed acts is presented as amending canon 867."
+
+[[bindings]]
 source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.1.10.1-3.facsimile"
 loci = ["1.10.1-3"]
 role = "context"
@@ -1066,14 +1165,14 @@ context = "Exact volume-I page-image control for the bounded Ordo XV ordinal arc
 source_id = "edition.catholic-church.rituale-romanum.latin-rome-1614"
 role = "bibliographic"
 states = ["cataloged"]
-context = "Edition record for the Alessandrina editio-princeps witness at Google Books TBNNeaiGbc0C, independently identified by USUARIUM record 1195. Exact remote artifacts are registered and hashed for printed pp. 198-219; the opening and terminal pages have separate verified passage bindings, while intermediate pages remain artifact-level availability rather than claim-level controls. Bašić independently controls the p. 220 next-unit boundary. No complete wording, formula, procedural digest, frequency claim, operational use, or present authorization is inferred."
+context = "Edition record for the Alessandrina editio-princeps witness at Google Books TBNNeaiGbc0C, independently identified by USUARIUM record 1195. Exact remote artifacts are registered and hashed for printed pp. 198-219, and every page now has claim-level visual control for category-level architecture. Bašić independently controls the p. 220 next-unit boundary. No complete wording, formula or action transcription, procedural digest, diagnostic checklist, frequency claim, operational use, efficacy, or present authorization is inferred."
 
 [[bindings]]
 source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-opening"
 loci = ["de-exorcizandis-opening"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:9142962406db475069a9c7f74abbad7fa2195f2c5787f2744651a93f228f1c58"
+source_fingerprint = "sha256:0d77eaa159c5dd7a6a15db5067eea4046e89938355fcb7ed5e86f45ef9f9b256"
 verified_on = "2026-07-28"
 context = "Exact remote page-image control for the heading and opening on printed p. 198. It supplies no complete interior, formula transcription, operational sequence, practice, efficacy, diagnosis, or present authorization."
 
@@ -1082,9 +1181,189 @@ source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorciza
 loci = ["de-exorcizandis-terminal-page"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:87e2843b794210739912f99be6e15ff8a10d15eb3e6b25fe5c10281b054a776a"
+source_fingerprint = "sha256:b069bae7495ad4fe4c638f5dd4a85d1ad1c05d93cc2cd45e43e1fad68b775328"
 verified_on = "2026-07-28"
 context = "Exact remote page-image control for the retained running heading, final prayer heading, and terminal ornament on printed p. 219. Bašić remains the secondary control for the next unit beginning at p. 220. No prayer text is reproduced and no procedure, use, efficacy, or present authorization is inferred."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-199-architecture"
+loci = ["printed-page-199-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b67cf3b20eca14ed9c01a9c7e72c7d34a412dc05f92fb90d462aeb1f05dcdc70"
+verified_on = "2026-07-28"
+context = "Exact page-image control for continued preliminary prose directions on printed p. 199, at category-level architecture only. No formula, action, operational sequence, diagnosis, use, frequency, efficacy, or present authorization is inferred."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-200-architecture"
+loci = ["printed-page-200-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:2ec65ffc028d5c6d1859c20f54f4e2b3c9d77cdacfa45688add472f638b22dd1"
+verified_on = "2026-07-28"
+context = "Exact page-image control for continued preliminary prose directions on printed p. 200, at category-level architecture only. No formula, action, operational sequence, diagnosis, use, frequency, efficacy, or present authorization is inferred."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-201-architecture"
+loci = ["printed-page-201-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:c01c3e31e9e29f013b577657ebf3ddecde110b98945c87fa8bfa4608b193b72d"
+verified_on = "2026-07-28"
+context = "Exact page-image control for the visible transition from preliminary prose into laid-out liturgical material on printed p. 201, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-202-architecture"
+loci = ["printed-page-202-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:6794ed8811f8f7eec0d4b10022190fd4b376100ee7f10c54a5822b331f2915c8"
+verified_on = "2026-07-28"
+context = "Exact page-image control for a prayer-unit completion followed by separately rubricated formula and Gospel-lection units on printed p. 202, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-203-architecture"
+loci = ["printed-page-203-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:bda9f7e0639f3b039686b9f9af9b180195da104ebf1ffd4735dce5d8e86745fa"
+verified_on = "2026-07-28"
+context = "Exact page-image control for completion of the preceding lection, dialogue, and prayer complex and an onward rubric on printed p. 203, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-204-architecture"
+loci = ["printed-page-204-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:436be0a4b8a0b754acb51edeae3f6300ea018da92953541724ae4f52687dd363"
+verified_on = "2026-07-28"
+context = "Exact page-image control for separately headed prayer and exorcism units within page-spanning material on printed p. 204, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-205-architecture"
+loci = ["printed-page-205-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:73ae1140c7d07320f6cbb8c2da859143bd90f34012ec3657f0c1b5dc3c7c3988"
+verified_on = "2026-07-28"
+context = "Exact page-image control for separately headed prayer and exorcism units within page-spanning material on printed p. 205, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-206-architecture"
+loci = ["printed-page-206-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:31c723139feebe93ae7b355bfe0a8f252d169bb7648911355cc8b838688898e3"
+verified_on = "2026-07-28"
+context = "Exact page-image control for separately headed prayer and exorcism units within page-spanning material on printed p. 206, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-207-architecture"
+loci = ["printed-page-207-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:256b82c15494c1fc0ed6ecc2ecfee4f758abc7703483717ece9c34c01325a321"
+verified_on = "2026-07-28"
+context = "Exact page-image control for separately headed prayer and exorcism units within page-spanning material on printed p. 207, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-208-architecture"
+loci = ["printed-page-208-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:663a6b101221e20a9eb22f253ca5b6043540e87495418248462a731c13eda021"
+verified_on = "2026-07-28"
+context = "Exact page-image control for closure of the preceding unit and the start of separately headed canticle and creed material on printed p. 208, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-209-architecture"
+loci = ["printed-page-209-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:8edc1302a8228564a52626b3b8f3092722203ed808732f63ff0dba0db0415a10"
+verified_on = "2026-07-28"
+context = "Exact page-image control for closure of the prior creed and the start of the Athanasian Creed on printed p. 209, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-210-architecture"
+loci = ["printed-page-210-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:a79318a8adf32c095ffcc71b0cf3f0f8d8fef3deb381ce68e93b958b6fa92a48"
+verified_on = "2026-07-28"
+context = "Exact page-image control for continuation of the Athanasian Creed on printed p. 210, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-211-architecture"
+loci = ["printed-page-211-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:7515c601c0db8c18733a13cf1e8aee94466d67f9dcedb40fe0ec897927d572fa"
+verified_on = "2026-07-28"
+context = "Exact page-image control for closure of the Athanasian Creed, a cross-reference, and the start of Psalm 67 on printed p. 211, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-212-architecture"
+loci = ["printed-page-212-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b8420ea97489f7d155859704fbd8c4d7a47253032d0ac65dd191fd6b5a06b473"
+verified_on = "2026-07-28"
+context = "Exact page-image control for continuation of Psalm 67 on printed p. 212, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-213-architecture"
+loci = ["printed-page-213-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:14eb5d9da1232bae88c0e5bae28b4ffc2bc70d56cb255a98667b16f33c42cacc"
+verified_on = "2026-07-28"
+context = "Exact page-image control for a doxology, three psalm cross-references, and the start of Psalm 34 on printed p. 213, at category-level architecture only. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-214-architecture"
+loci = ["printed-page-214-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:05759b93e4b2ce48e9cae476d9b1ff7edecff78d376bd45d5a6857a6cc2fdd26"
+verified_on = "2026-07-28"
+context = "Exact page-image control for the Psalm 34-to-30 transition within continuous psalmody on printed p. 214; no new chapter boundary is visible. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-215-architecture"
+loci = ["printed-page-215-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:8b392eef1aae753606798e30f4ff9ae37b13c23755f19812fd9624c74662a8a6"
+verified_on = "2026-07-28"
+context = "Exact page-image control for the Psalm 30-to-21 transition within continuous psalmody on printed p. 215; no new chapter boundary is visible. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-216-architecture"
+loci = ["printed-page-216-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:9aaf64b80464f538016e4968a8ae9b6eceeed520599db73b0eda423d563f1dc9"
+verified_on = "2026-07-28"
+context = "Exact page-image control for the Psalm 21-to-3 transition within continuous psalmody on printed p. 216; no new chapter boundary is visible. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-217-architecture"
+loci = ["printed-page-217-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:7621a93c940917ea2dadd3f2ab2c21bdd25d3d144669b068756d42db6460a6f4"
+verified_on = "2026-07-28"
+context = "Exact page-image control for the Psalm 3-to-10 transition within continuous psalmody on printed p. 217; no new chapter boundary is visible. The standard non-operational ceiling applies."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-page-218-architecture"
+loci = ["printed-page-218-architecture"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:1a9cd9afcaaa31fafa968ed6d9c2fbace6b43d8ef429f0606dc3046e5cbeb586"
+verified_on = "2026-07-28"
+context = "Exact page-image control for the Psalm 10-to-12 transition within continuous psalmody on printed p. 218; no new chapter boundary is visible. The standard non-operational ceiling applies."
 
 [[bindings]]
 source_id = "passage.petar-basic.latin-model-of-kasics-roman-ritual.croatian-bogoslovska-smotra-2014.1614-title-and-terminal-sequence"
@@ -1099,7 +1378,7 @@ context = "Exact modern scholarly article control for the princeps title transcr
 source_id = "artifact.catholic-church.rituale-romanum.latin-ratisbon-1872.internet-archive-pdf-b21a0f45"
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:58caec5e397961858d5926bc9821c4c4716299fccb06a562fbfc2c229cf1d386"
+source_fingerprint = "sha256:7d3a606a9f1e42eebafbc9b7b8fe1e625eb9133a210ccde6b067c84f30274bb3"
 verified_on = "2026-07-27"
 context = "Exact facsimile control for the identity and approval statements of the 1872 Pustet first Regensburg edition and for its continuous unnumbered exorcism unit's heading, placement, and boundaries. The approval language is the edition's own statement, not independent proof of textual identity; this is not a 1752 printing or an 1884 typical state. Comparison with the exact 1925 reset is limited to continuous-unit versus three-chapter architecture. No formula, operational use, prevalence, efficacy, universal reception, or present authorization is inferred."
 
@@ -1149,7 +1428,7 @@ source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11
 loci = ["title-11.chapter-1"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:20893d29c100ae8d332e0a01891c317cb1bad2cdfa3e349b1775cdc8f847339c"
+source_fingerprint = "sha256:ba4739877420d1cd7ab31a4433fb5f87363306f752e5087a63a64f8e23f9d6f6"
 verified_on = "2026-07-27"
 context = "Exact electronic-reset control for the 1925 edition's preliminary chapter and cautionary placement; not a Vatican-print facsimile, diagnostic checklist, actual-use record, or current authorization."
 
@@ -1158,7 +1437,7 @@ source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11
 loci = ["title-11.chapter-2"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:db53538d0456bddf1f230707a9f123de4a751b67d2f9da500de61a63fd352c3b"
+source_fingerprint = "sha256:df8f3e705c8d07c1192f8c060583ce5a94e9cdc2e98098112b45fce1e1856672"
 verified_on = "2026-07-27"
 context = "Exact electronic-reset control for the separate 1925 rite chapter's boundaries; formula wording and operational sequence are not reproduced."
 
@@ -1167,7 +1446,7 @@ source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11
 loci = ["title-11.chapter-3"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:3a93e4bcb85eae9d6d2659fddd79e23cceb049d710e393fce221f055ec21f5dc"
+source_fingerprint = "sha256:2791cb43e2ce9ee896b2f563d7485284467c29e37ba0210e5837988a722033a6"
 verified_on = "2026-07-27"
 context = "Exact electronic-reset control for the distinct third chapter's existence, location, and bounded authorization sentence; not a general or current permission or operational guide."
 
@@ -1545,3 +1824,107 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:42b65d17a5bdb4843260fc6728b6d3afd5e4480abba74c1661c20da4564f8bac"
 verified_on = "2026-07-28"
 context = "Bounded synthesis of the exact manifest and inspected folio for this named manuscript's ordinal architecture. Compared with Vogel-Elze and other ordinal witnesses only as a selected architectural control, never as evidence of source-family membership, archetypal status, direct descent, continuity, or use."
+
+[[bindings]]
+source_id = "passage.jacques-goar.euchologion-graecorum.paris-1647.eastern-prayer-group"
+loci = ["printed pages 719 onward; artifact pages 764-772 inspected"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:ab6f3a526c07e162187c17a2d32839ae4001f8d0e5aef433ff13c364d4c2a6ed"
+verified_on = "2026-07-28"
+context = "Exact public-domain 1647 facsimile control for Goar's grouped prayer-book architecture only; no formula, action, patristic authorship, performance, frequency, efficacy, continuity, or present law."
+
+[[bindings]]
+source_id = "passage.armenian-church.rituale-armenorum.clarendon-1905.armenian-baptism-pages-86-93"
+loci = ["printed pages 86-93"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:a1df44630a77d6ee2333750c5f4d3695c03f3524c688b99f20a5db4ae0096ec4"
+verified_on = "2026-07-28"
+context = "Exact public-domain edition control for manuscript-aware Armenian catechumenal and baptismal architecture. No formula, action, composite Armenian rite, frequency, efficacy, or present Armenian Apostolic or Catholic law."
+
+[[bindings]]
+source_id = "passage.heinrich-denzinger.ritus-orientalium.wurzburg-1863-volume-1.coptic-baptism-pages-215-219"
+loci = ["printed pages 215-219"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:a0409ca5854572586f450c8166800dad0ff9b6ca2cff927a045d3b5d3297b052"
+verified_on = "2026-07-28"
+context = "Exact public-domain Latin editorial control for one Coptic initiatory order's architecture; no original Coptic wording, formula, action, complete corpus, practice, frequency, efficacy, or present law."
+
+[[bindings]]
+source_id = "passage.heinrich-denzinger.ritus-orientalium.wurzburg-1863-volume-1.west-syriac-baptism-pages-266-273"
+loci = ["printed pages 266-273"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:15629f83df0c97a43bdafcf43b7e33ee71f159553f8ba495ef25df1ae060c6e6"
+verified_on = "2026-07-28"
+context = "Exact public-domain Latin editorial control for one West-Syriac baptismal order's architecture; no exact Syriac wording, formula, action, authorship, representative practice, frequency, efficacy, or present law."
+
+[[bindings]]
+source_id = "passage.heinrich-denzinger.ritus-orientalium.wurzburg-1863-volume-1.jacob-sarug-baptism-pages-334-340"
+loci = ["printed pages 334-340"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:38e0ad0db4526950e5124992fe8ff68f903708af4be6f8cb7bd47b4fa95c63e8"
+verified_on = "2026-07-28"
+context = "Exact public-domain Latin editorial control for the order printed under Jacob of Sarug's name; attribution and architecture only, with no authenticated authorship, exact Syriac wording, formula, action, frequency, efficacy, or present law."
+
+[[bindings]]
+source_id = "artifact.andre-jacob.les-euchologes-barberini.didaskalia-1974.core-remote"
+loci = ["printed pages 154-157"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Restricted modern scholarship used only for Barberini gr. 336 folio coordinates, sequence boundaries, anonymity, and attribution status. No protected wording or bytes retained."
+
+[[bindings]]
+source_id = "artifact.dionysios-stathakopoulos.boundaries-possession-disease.accepted-manuscript-2019.kcl-remote"
+loci = ["manuscript-history discussion and notes 22-30"]
+role = "context"
+states = ["cataloged"]
+context = "Restricted modern scholarship used only for manuscript chronology, plurality, and the terminus-ante-quem authorship ceiling. No protected wording or bytes retained."
+
+[[bindings]]
+source_id = "passage.metropolitan-cantor-institute.the-mystery-of-baptism.english-pdf-2012.edition-history"
+loci = ["pdf-page-3"]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:82d95ae89398ed14dfb3d9c8e3d53128443bf1a46ea709ab677bbbd59fdf26e7"
+verified_on = "2026-07-28"
+context = "Exact restricted PDF control for the Ruthenian 1952 Malyj Trebnyk locus and the distinct approval and reported-use states of the 1952 English, 1994 Parma, and 1997 Passaic books. No formula, universal promulgation, or current stand-alone faculty rule is inferred."
+
+[[bindings]]
+source_id = "passage.metropolitan-cantor-institute.the-mystery-of-baptism.english-pdf-2012.catechumenate-placement"
+loci = ["pdf-pages-4-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:7d92e4cf4d98eb3e238d5f1e13627d2a281e0522ad0bd8a413552251887f20f0"
+verified_on = "2026-07-28"
+context = "Exact restricted PDF control for the adult Ruthenian catechumenal and Great-Fast placement. Used only through structural paraphrase, without formulas, performative directions, pan-Byzantine generalization, or a stand-alone exorcism claim."
+
+[[bindings]]
+source_id = "passage.metropolitan-cantor-institute.the-mystery-of-baptism.english-pdf-2012.infant-initiation-placement"
+loci = ["pdf-pages-10-11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b2e2bcfbae0de5e8b4c64a6464cc0d6b61baaf323e598c75809ca7843c536fa8"
+verified_on = "2026-07-28"
+context = "Exact restricted PDF control that the described infant order incorporates two catechumenal prayers immediately before baptism. No diagnostic, operational, or stand-alone faculty claim is made."
+
+[[bindings]]
+source_id = "passage.metropolitan-cantor-institute.exorcisms-before-baptism.english-web-2026-07-28.status-and-placement"
+loci = ["complete-page"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:46058ba74a746f3025504735677d6c1f6c510b7631044f8be1d228a3f730147a"
+verified_on = "2026-07-28"
+context = "Exact restricted page control for the 1952 source attribution, Inter-Eparchial Commission basis, unofficial and provisional status, private-study restriction, and the three-week Great-Fast sequence. Formula text is excluded."
+
+[[bindings]]
+source_id = "passage.melkite-eparchy-of-newton.explanation-ceremonies-christian-initiation.english-pdf-2013.catechumen-rites"
+loci = ["pdf-page-1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:049f9cf2151f27b01d8ce5b47b5985ad3fb8ff3988a4988c1ce3e28ed1195c3c"
+verified_on = "2026-07-28"
+context = "Exact restricted Melkite eparchial catechetical control for placement in opening catechumen rites. It is not represented as a promulgated euchologion and supports no formula, pan-Byzantine uniformity, Orthodox transfer, or stand-alone faculty rule."

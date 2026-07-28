@@ -28,7 +28,12 @@ This focused audit controls sections 80–120. It supplements, and does not repl
   ministries named there. The current official Latin Code prints that amended
   text. Neither witness creates an exorcist ministry or changes c. 1172.
 - **United States:** USCCB, “Exorcism,” Secretariat of Divine Worship, exact official web state acquired and inspected 2026-07-27 with seven claim-level passage controls. It controls only the identified U.S. English-edition history and conference pastoral explanation. The separately registered 2026-07-26 restricted remote bytes were not retained and cannot now be asserted byte-identical to the current response.
-- **Eastern Catholic boundary:** CCEO cc. 1–2 control scope and interpretive context. They establish that the Eastern Code governs all and only the Eastern Catholic Churches unless it expressly provides otherwise concerning relations with the Latin Church; they do not transplant CIC c. 1172. No Eastern particular law or liturgical book was surveyed, and no Eastern major-exorcism rule is stated.
+- **Eastern Catholic boundary:** CCEO cc. 1–3, 668 §1, and 867 §§1–2
+  control scope, interpretive context, liturgical authority, and the common-law
+  sacramental boundary. They do not transplant CIC c. 1172 or state a uniform
+  Eastern major-exorcism faculty. Bounded Ruthenian and Melkite sources
+  establish initiatory placement only; Church-specific particular law and
+  current stand-alone ritual books remain unsurveyed.
 - **Orthodox boundary:** no Orthodox law or liturgical book controls a retained publication claim. The study makes no statement about present Orthodox authorization or practice.
 
 No current canon, conference page, or liturgical book is represented as universal beyond its jurisdiction. The sections provide no formulas, signs, sequence, commands, names, or instructions.
@@ -81,7 +86,9 @@ Named traditions are internally diverse. The matrix groups arguments rather than
 
 1. No universal Catholic operational taxonomy of “oppression,” “obsession,” and “infestation” was identified as dogma.
 2. No laboratory or clinical test is represented as proving or disproving possession.
-3. The study did not determine an Eastern common- or particular-law major-exorcism rule; no conclusion is drawn from that unexamined field.
+3. The study did not determine a uniform Eastern major-exorcism faculty or a
+   Church-specific particular-law rule; no such conclusion is drawn from the
+   bounded common-law and initiatory sources examined.
 4. Orthodox law and practice remain outside the publication's evidentiary scope.
 5. No memoir, film, podcast, recording, or sensational named case is used as evidence of prevalence or efficacy.
 6. No historical rite is treated as currently authorized merely because it is old.

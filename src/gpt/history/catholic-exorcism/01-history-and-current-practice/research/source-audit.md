@@ -1,6 +1,6 @@
 # Source audit: Catholic Exorcism
 
-Current official sources were checked through 2026-07-27. Additional
+Current official sources were checked through 2026-07-28. Additional
 historical-source acquisition and inspection is dated 2026-07-27. Stable links
 below are access routes; the identified works, editions, and loci remain the
 sources.
@@ -22,14 +22,56 @@ claim already published.
 | Gellone sequence | Partial | Exact manuscript folios 194v–199v and catalog anchors control the visible sequence; Dumas–Deshusses and full textual collation remain open. |
 | PRG ordinal | Partial | Vogel–Elze I, p. 14 (XV.7) and p. 17 (XV.17–19), and Vendôme BM MS 14, fol. 3v, are exact edited and named-manuscript controls; broader collation remains open. |
 | Western ordination comparison | Partial | Ballerini’s *Statuta*, Maassen, the MGH notice, Vendôme MS 14, Parker MS 79, and the 1895 Pontifical support bounded typology; Munier and broader representative comparison remain open. |
-| Roman ritual edition matrix | Partial | Bounded 1614, 1872, 1925, 1952, and 1998–2004 controls exist at differing levels; exact remote 1614 artifacts cover pp. 198–219 and its endpoints are verified, while intermediate-page review, direct p. 220 control, and a complete claim-level collation remain open. |
+| Roman ritual edition matrix | Partial | Bounded 1614, 1872, 1925, 1952, and 1998–2004 controls exist at differing levels; exact remote 1614 artifacts and page-specific passage records now control category-level architecture throughout pp. 198–219, while direct p. 220 control and complete textual collation remain open. |
 | Current Latin discipline and U.S. implementation | Partial | Exact governing canons, competence controls, official ritual acts, and USCCB implementation are bound through 2026-07-27; final-as-of revalidation and fact-specific particular law remain open. |
-| Eastern ritual/particular law and named cases | Open and excluded | No qualifying source module or case dossier supports expansion. |
+| Eastern common-law and initiation boundary | Partial and published | CCEO cc. 1–3, 668 §1, 867 §§1–2, bounded legislative-structure loci, *Sacri canones*, CCC 1673, and the dated official amendment index support a common-law boundary. A bounded Ruthenian/Melkite module supports initiatory placement and the Ruthenian 1952–1997 edition chain; current Church-specific stand-alone ritual books, particular-law faculty rules, broader Byzantine comparison, Orthodox law, and named cases remain open and excluded. |
 
 ## Current official sources
 
 - Catholic Church, *Codex Iuris Canonici* (1983), cc. 1, 134 §§1–3, 230, 1166, 1172; official Holy See Latin controls, with official English pages used only as translation aids. Canon 1 establishes the Code's Latin-Church scope. Canon 134 §§1–2 includes vicars general and episcopal vicars in the generic term *local ordinary*; §3 separately excludes them, absent special mandate, where a canon attributes executive power by name to the diocesan bishop. Canon 1172 uses the generic term. The current c. 230 §1 names the instituted ministries of lector and acolyte. John Paul II, *Sacrae disciplinae leges* (25 January 1983), promulgated the Code and ordered it to have force of law from the first day of Advent 1983 (27 November). Fresh retrieval on 2026-07-27 was byte-identical to the exact registered official Latin and English artifacts for cc. 134 and 230. The official Latin web text retains c. 1172's quoted wording, and the Dicastery for Legislative Texts' published authentic-interpretations compilation contains no entry for cc. 134 or 1172. These are bounded text-and-register checks, not a comprehensive amendment-or-repeal inventory; territorial and personal competence, a grant's scope, duration, or revocation, and applicable particular law remain fact-specific.
-- Catholic Church, *Codex Canonum Ecclesiarum Orientalium* (1990), cc. 1–2, authentic Latin in *AAS* 82 (1990), p. 1061. Used only to establish the Code's Eastern Catholic scope and its ancient-law interpretive context. No Eastern particular law or liturgical book was inspected for this publication, so the study states no Eastern major-exorcism rule and makes no whole-Code negative claim.
+- Catholic Church, *Codex Canonum Ecclesiarum Orientalium* (1990),
+  cc. 1–3, 668 §1, and 867 §§1–2, with cc. 110 §1, 150 §§2–3, 152,
+  and 167 used only for bounded legislative structure. Canons 1–2 are
+  controlled in the authentic Latin *AAS* text at p. 1061. The exact official
+  Latin web deliveries, part 1 refetched byte-identically on 2026-07-28 and
+  part 2 acquired and hashed that day, control the additional passages.
+  Canons 1–3 establish the Eastern Catholic scope, ancient-law interpretive
+  direction, and the Code's ordinary deference to liturgical books. Canon
+  668 §1 defines public divine worship without identifying an exorcism
+  minister or permission. Canon 867 defines sacramentals and directs their
+  regulation to the particular law of the proper Church *sui iuris*; it
+  supplies no uniform exorcism faculty or procedure. The legislative canons
+  identify possible Church-level lawmaking routes and territorial effects,
+  not an enacted exorcism norm. John Paul II's *Sacri canones*, authentic
+  *AAS* pp. 1043–1044, controls promulgation on 18 October 1990 and entry
+  into force on 1 October 1991.
+- Metropolitan Cantor Institute, *The Mystery of Baptism* (English study PDF,
+  file metadata dated 10 December 2012), pp. 3–6 and 10–11. The publication
+  describes initiation in the Byzantine (Ruthenian) Catholic Metropolia of
+  Pittsburgh, identifies the official Slavonic order in the Roman 1952
+  *Malyj Trebnyk* at pp. 25–71, and records the approval status and reported
+  use of the 1952 English, 1994 Parma, and 1997 Passaic books. It controls
+  edition history and initiatory placement only. Metropolitan Cantor
+  Institute, “The Exorcisms Before Baptism,” exact dated web state 28 July
+  2026, controls the 1952 source attribution, Inter-Eparchial Commission
+  basis, unofficial/provisional status, private-study restriction, and
+  three-week Great-Fast placement; no formulas are reproduced. Melkite Greek
+  Catholic Eparchy of Newton, *An Explanation of the Ceremonies of Christian
+  Initiation* (English pastoral PDF, file metadata dated 16 December 2013),
+  p. 1, supplies limited jurisdiction-identified catechetical corroboration
+  for placement in the opening catechumen rites. It is not treated as a
+  promulgated ritual edition. These restricted modern English artifacts are
+  cited through narrow paraphrase and establish neither a stand-alone Eastern
+  exorcism procedure or faculty rule nor pan-Byzantine or Orthodox practice.
+- Holy See Press Office, “Codes of Canon Law,” exact English archive-index
+  state acquired and hashed 2026-07-28. Its CCEO portion presents
+  *Ad tuendam fidem* (1998), *Mitis et misericors Iesus* (2015),
+  *Ab initio* (2020), and *Competentias quasdam decernere* (2022); none is
+  presented as an amendment to c. 867. No official authentic interpretation
+  of c. 867 was located in the official materials checked. This is a bounded
+  currentness and negative-result control, not a consolidated code, an
+  exhaustive interpretations register, or a substitute for Church-specific
+  particular law.
 - Catholic Church, *Codex Iuris Canonici* (1917), cc. 1151–1153, Vatican Polyglot 1918 edition, p. 328. Historical comparison only. Canon 1151 contains the particular-permission, priestly-qualification, and prudent-investigation rules; c. 1152 concerns the persons over whom legitimate ministers could use exorcisms; c. 1153 identifies the ministers of exorcisms embedded in baptism, consecrations, and blessings by reference to those rites. The separately paginated official promulgation witness is *AAS* 9, part II (1917), p. 225; that page number must not be assigned to the 1918 book edition.
 - Paul VI, *Ministeria quaedam*, apostolic letter issued motu proprio on
   15 August 1972, introduction and norms I–IV, effective 1 January 1973,
@@ -312,12 +354,13 @@ routes, findings, and limits are recorded in
   `e1c1040a…be83`), independently transcribes the title and reports the
   terminal starts at pp. 198, 220, 225, and 227. Exact remote Google Books
   artifacts are now registered and hashed for every printed page from 198
-  through 219. Verified passage records bind p. 198's heading and opening and
-  p. 219's running heading, final prayer heading, and terminal ornament.
-  Bašić remains the control for the next unit's start at p. 220. The
-  intermediate artifacts have not received claim-level passage review, and no
-  complete wording, formula, typography, operational sequence, use, efficacy,
-  present authorization, or full-volume collation is inferred.
+  through 219. Verified page-specific passages control category-level
+  architecture throughout the run: preliminary prose, its transition into
+  laid-out liturgical material, differentiated prayer, lection, creed, and
+  psalmic blocks, and the visible ending. Bašić remains the control for the
+  next unit's start at p. 220. No complete wording, formula or action
+  transcription, operational sequence, use, efficacy, present authorization,
+  or full-volume collation is inferred.
 - *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg
   edition, exact Internet Archive facsimile
   `ritualeromanumpa00cath_0`, 46,078,608 bytes, SHA-256
@@ -385,12 +428,20 @@ mental-health input; it is not itself a professional clinical protocol.
 
 ## Negative results and unused leads
 
-- Kraków, Biblioteka Jagiellońska, MS 2057 remains an external lead. The
-  official Jagiellonian Digital Library record identifies a public-domain
-  eleventh- to twelfth-century Latin pontifical, and Usuarium indexes
-  energumen and exorcised-oil units in the associated edition. Exact manuscript
-  folio coordinates were not established in this pass, so no formula,
-  placement, PRG relationship, local use, or practice claim is made from it.
+- Kraków, Biblioteka Jagiellońska, MS 2057 is now controlled by the official
+  public-domain Jagiellonian Digital Library scan (160 PDF pages,
+  110,899,733 bytes; SHA-256
+  `c0c5b7029f5bad04839211e2b2354efb8317fe7bfd47097ce37162a7af6de169`).
+  Exact page-image inspection places a differentiated energumen/catechumen
+  dossier at fols. 68v--77v (artifact pp. 72--81) and a separately headed oil
+  unit with its immediately associated blessing at fols. 125r--126r (artifact
+  pp. 128--129). Usuarium's Obertyński-based index supplied edition-page
+  finding aids (pp. 80--82 and 113), then the coordinates and categories were
+  checked against the manuscript images. The 1977 Obertyński edition remains
+  copyrighted; no edition bytes or formula wording were retained. The control
+  supports category, sequence, and book-placement claims only, not performance,
+  frequency, efficacy, local normativity, PRG-family membership, textual
+  descent, or modern practice.
 
 ### SBLGNT v1.2 biblical-breadth control — 2026-07-27
 
@@ -504,6 +555,44 @@ material, or image must reopen this audit for the exact new snapshot and record
 the source, locus, translation or artifact, rights basis, necessity, and
 cumulative extent before publication.
 
+## Eastern Christian transmission module
+
+- Jacques Goar, ed., *Euchologion sive rituale Graecorum* (Paris, 1647),
+  grouped prayer units from printed p. 719 onward, exact Wikimedia Commons
+  facsimile artifact pp. 764–772 inspected, SHA-256
+  `c1b14ed613672a241239d3b5d0d6e1e22e1c03d2dbf9767470f41069a1971a63`.
+  The 402 MB public-domain scan is registered remote rather than retained.
+  Goar controls early-modern printed architecture, not manuscript priority,
+  patristic authorship, use, frequency, efficacy, or present law. The commonly
+  cited pp. 578–584 belong to the distinct expanded 1730 edition.
+- F. C. Conybeare, ed. and trans., *Rituale Armenorum* (Oxford, 1905),
+  pp. 86–93, public-domain Internet Archive OCR SHA-256
+  `209ee7c847c6861953ee0e7702f53980c25a68c712c51b7d5586785f54d0526b`.
+  The pages identify principal Armenian manuscripts and expose variants and
+  omissions. They control initiatory architecture only, not one composite
+  Armenian rite or present Armenian Apostolic or Catholic discipline.
+- Heinrich Denzinger, ed., *Ritus Orientalium*, vol. I (Würzburg, 1863),
+  Coptic baptismal order pp. 215–219 and West-Syriac orders pp. 266–273 and
+  334–340, public-domain Internet Archive OCR SHA-256
+  `ed9d2213d400d75bb5b449307b4686f9095e7cd51ac8e9e3292fe164dcf73702`.
+  This is a Latin comparative edition derived through earlier editors. It
+  controls order boundaries, initiatory placement, and received attributions,
+  not original-language wording, eponymous authorship, generic practice,
+  frequency, efficacy, or current law.
+- André Jacob, “Les euchologes du fonds Barberini grec,” *Didaskalia* 4
+  (1974), 131–222, especially 154–157, controls folios 84r–95r, the lacuna,
+  unit boundaries, anonymity, and attribution status in Barberini gr. 336.
+  Dionysios Stathakopoulos, “The Boundaries between Possession and Disease”
+  (accepted manuscript, 2019), manuscript-history discussion and notes 22–30,
+  controls the wider chronology and terminus-ante-quem ceiling. Both are
+  protected modern scholarship registered as restricted remote artifacts;
+  no bytes or wording are retained.
+
+The module remains non-operational and historical. No formula or action is
+reproduced. Original-language critical collation, recension history, reception
+in named communities, and the common, particular, and liturgical law of
+identified Eastern Catholic and Orthodox Churches remain open.
+
 ## Publication audit
 
 The earlier fifteen-page candidate, build, web conversion, and page review are
@@ -515,7 +604,7 @@ and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
 web conversion, review rasters, every-page visual inspection, and PDF
 structure, font, metadata, and extracted-text checks passed for the dated
 32-page predecessor snapshot; source-library and binding validation also
-passed. The current 84-page snapshot preserves those source and safety
+passed. The superseded 84-page snapshot preserves those source and safety
 boundaries and has a fresh settled build, log audit, every-page visual
 inspection, PDF structure, font, metadata, and extracted-text check. The
 snapshot is installed and bound for public alpha in this worker but
