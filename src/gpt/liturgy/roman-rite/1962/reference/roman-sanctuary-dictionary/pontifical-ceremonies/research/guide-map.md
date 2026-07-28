@@ -20,4 +20,8 @@ materials or forms. The edition uses the one canonical alpha gate and has no
 external-review admission path. The credence table and sedilia enter as
 ordinary supporting furnishings, not as pontifical insignia or proof of a
 particular throne arrangement. Their addition brings this bounded selection
-to fourteen records.
+to fourteen records. The Lavabo basin and towel enter as ordinary supporting
+objects rather than pontifical insignia or distinct pontifical forms. Their
+paired source-minimal plate makes no claim about common scale, material,
+ornament, dimensions, or a universal handwashing arrangement, and brings the
+selection to sixteen records.

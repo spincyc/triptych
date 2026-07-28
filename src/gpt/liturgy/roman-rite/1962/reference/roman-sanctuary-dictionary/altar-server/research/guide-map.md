@@ -66,6 +66,14 @@ changes neither its object count nor its pagination. Their pages retain the
 verified service-station and sacred-ministers' seating distinctions, local
 placement qualifications, and handling boundaries.
 
+The canonical generated selection now also admits the Lavabo basin and towel,
+bringing that selection to nineteen records. Both were already present in
+this bespoke thirty-three-record teaching leaf, so this promotion likewise
+changes neither its object count nor its pagination. Its paired page retains
+the checked Offertory relationship, confusable-object distinctions, and
+handling and spill boundaries without universalizing morphology, fold,
+material, or local assignment.
+
 The incense family uses source-bounded generated artwork. The thurible view
 shows a neutral footed bowl, removable pierced lid, three support chains, and
 a separate central lid-lifting chain without asserting material, ornament, or

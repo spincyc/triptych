@@ -434,7 +434,7 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-lavabo-basin-manuterge"
 path = "shared/artwork/pencil/RPD-FIG-service-objects-0106-lavabo-basin-manuterge.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/lavabo-basin-manuterge-source-audit-2026-07-28.md"
 technical = { width_px = 1690, height_px = 931, bit_depth = 8, color_mode = "grayscale", bytes = 553355, sha256 = "7c2d900d482e447af273440acadd02f90dca8b9cfbf0613800464c1923997357" }
 
@@ -626,7 +626,7 @@ baked_content_audit = [
 ]
 tex_overlays = ["English and Latin names, handling boundary, safety warning, object ID, source keys, and scale qualification remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-general-reader", "ed-sacristan", "ed-mc-trainer", "ed-pontifical"]
 rights = "Project-generated raster. No third-party reference input was transferred or identified to the integrating agent; this record does not claim that no unseen interface input existed. Project rights boundary remains governed by LICENSE and THIRD_PARTY.md."
 
 [artworks.received]

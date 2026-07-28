@@ -17,5 +17,8 @@ prepared-chalice linen records teach their verified relationships and
 confusables without inventing a server handoff, cue, fold, or recovery
 procedure. The credence table and sedilia add a verified service station and
 sacred-ministers' seating distinction without converting local placement or
-furniture handling into a universal assignment. The seventeen-record
-canonical alpha gate requires no external review.
+furniture handling into a universal assignment. The canonical alpha now also
+admits the Lavabo basin and towel as a paired
+identity-and-role comparison. It does not invent a universal handoff, cue,
+server assignment, vessel form, towel fold, or disposal practice. The
+nineteen-record canonical alpha gate requires no external review.

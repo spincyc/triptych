@@ -7,12 +7,38 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Seventeen alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Seventeen alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Seventeen alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Sixteen alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Fourteen alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Eighteen alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Sixteen alpha records | Built, inspected, and installed | No | Alpha |
+
+The Offertory Lavabo promotion admits the already source-audited basin and
+towel through every canonical alpha edition. The existing project-generated
+pencil plate, object claims, and audience notes are unchanged. The manifest
+change records the six completed consumers and recognizes the existing
+rights, provenance, asset-identity, factual, visual, print, and release
+checks under the canonical alpha gate. It creates no external-review
+dependency and makes no new claim about common scale, material, ornament,
+dimensions, vessel form, towel fold, handoff, cue, or local practice.
+
+All 132 pages across the six leaves were rastered through the repository PDF
+review pipeline and visually inspected, including the new basin and towel
+pages, the unchanged bespoke altar-server Lavabo spread, and every terminal
+page. The figures and audience notes are legible and unclipped; no overlap,
+spill page, or unsafe visual instruction was found. Settled logs contain no
+fatal error, undefined reference, or overfull box. Build and installed bytes
+are identical:
+
+| Leaf | Records | Pages | Installed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 19 | 21 | `9fdcdbe73c6c45b0e856e0b32634a582a5255cc7b88b30ee62a7c2db72ef78f0` |
+| Altar server | 33 | 31 | `cc6e6574ffe1beaf3e7295959c391a05dbd445fff85ff66476b6cc4a8137867e` |
+| Sacristan | 19 | 21 | `005259211d5e89d5d15e01b4f8e42e8f4d4ddc9bd0792cb74c5461b0606bdb4a` |
+| MC/trainer | 19 | 21 | `9addf19db81b1570a40eb5f1baf687dd8a97cd5a5d321eb85b70a3e73c671b66` |
+| General reader | 18 | 20 | `7b2f6d1fa75e8e8df42f5a5b725f27005d9bac2d25c813fc16bbe191201d8303` |
+| Pontifical ceremonies | 16 | 18 | `9ed68565086931e1a69c1b53f097e9da473d947083a3b84bf5f641a975e5e0b2` |
 
 The furnishings checkpoint promotes the already source-audited credence table
 and sedilia through the canonical alpha renderer. No object claim or pixel

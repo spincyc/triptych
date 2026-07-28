@@ -38,7 +38,10 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertIn('status = "alpha"', sidecar)
             self.assertIn('distribution_state = "public-alpha"', sidecar)
             self.assertIn("obj-altar-missal", alpha)
-            self.assertNotIn("obj-altar-cruet", alpha)
+            self.assertNotIn(
+                r"\RSDObjectRecord{obj-altar-cruet}",
+                alpha,
+            )
             self.assertIn(
                 r"\RSDAlphaOmission{obj-altar-cruet}{Altar cruet}"
                 r"{a printed claim remains an unverified lead}",
