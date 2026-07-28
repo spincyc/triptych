@@ -210,6 +210,34 @@ mental-health input; it is not itself a professional clinical protocol.
 
 ## Negative results and unused leads
 
+### SBLGNT v1.2 biblical-breadth control — 2026-07-27
+
+The Faithlife/LogosBible SBLGNT repository archive was independently acquired
+at exact commit `736fdc76158950c3d04b949b7e013ca14305145a`; its SHA-256 is
+`fc5fdd93d771c73921b9c5efeeaa2a945428cab5e5130585486bd68d5c3da7ed`.
+Exact main-text and apparatus files were hashed and registered separately for
+Mark, Matthew, Luke, 1 Corinthians, 2 Corinthians, and Ephesians. The bounded
+passages inspected were Mark 9:38–41, Matthew 7:22–23, Luke 9:49–50 and
+13:10–17, 1 Corinthians 10:20–21, 2 Corinthians 6:14–16, and Ephesians
+6:10–17, each with its immediate literary context and corresponding apparatus
+file. The corrected exact Matthew apparatus hash is
+`927dbf272cb8da87b431d7239e459998a3b7730764edd8c31c840805b7be40c2`.
+
+The SBLGNT and its apparatus are copyright 2010 Society of Biblical Literature
+and Logos Bible Software, edited by Michael W. Holmes, and licensed CC BY 4.0.
+Publication attribution names the edition and editor and identifies the
+license. No SBLGNT wording is modified or reproduced in bulk here; the project
+synthesis is separately authored. Any later shared adaptation must indicate
+changes and retain the license link and attribution. The apparatus is a concise
+comparison among editions, not a manuscript apparatus. It neither supplies
+exhaustive variation nor warrants treating an absent entry as unanimity.
+
+The pass added canonical breadth without harmonization: Mark and Luke retain
+their own formulations; Matthew's judgment scene is not used to authenticate
+reported works; Luke's theological narrative is not converted into diagnosis;
+and Pauline cultic, moral, ecclesial, and armor imagery is not converted into
+rite, authorization, taxonomy, efficacy, or private-confrontation instruction.
+
 - Genesis Apocryphon 1Q20 XX.14–29 and 4Q560 now have exact dated CAL
   Aramaic transcription controls. For 4Q560, CAL identifies photograph PAM
   43.602, Naveh 1998, and Puech's *DJD* XXXVII editio princeps as its bases;

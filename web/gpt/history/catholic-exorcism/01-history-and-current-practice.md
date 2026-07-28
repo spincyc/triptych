@@ -84,7 +84,7 @@ The Greek vocabulary does not itself settle the phenomenon behind a scene. The G
 
 The same expression can do different work in different scenes. An “unclean spirit” speaks in the synagogue at Mark 1, is associated with a man’s destructive isolation in Mark 5, and departs from many persons in the mission summary of Acts 8. Forms commonly rendered “demonized” identify persons within Gospel narration, while Acts 19 calls certain itinerants “exorcists.” That last noun identifies the actors who attempt an adjuration; it does not retroactively turn every Gospel healing or command into an example of their trade.
 
-Verbs likewise require their sentences. Jesus rebukes and commands; the evangelists speak of spirits departing or being cast out; Paul commands in the name of Jesus Christ; the sons of Sceva attempt to adjure by the Jesus whom Paul preaches. A concordance can locate those expressions, but it cannot erase the difference between Christ’s own authority, delegated mission, prayerful dependence, and attempted appropriation. The present Greek control is one identified Byzantine textform. It supports these local observations, not a claim that later ecclesiastical terminology was already a fixed New Testament system.
+Verbs likewise require their sentences. Jesus rebukes and commands; the evangelists speak of spirits departing or being cast out; Paul commands in the name of Jesus Christ; the sons of Sceva attempt to adjure by the Jesus whom Paul preaches. A concordance can locate those expressions, but it cannot erase the difference between Christ’s own authority, delegated mission, prayerful dependence, and attempted appropriation. The Greek controls now include one identified Byzantine textform and Holmes’s SBLGNT v1.2 eclectic text with its edition-comparison apparatus. Neither is a manuscript collation. Together they support local observations and expose selected variants, not a claim that later ecclesiastical terminology was already a fixed New Testament system.
 
 ### Mark: authority, conflict, restoration
 
@@ -104,6 +104,14 @@ The Matthew–Luke variation also locates the controversy within each Evangelist
 
 Luke 10 adds a second restraint. The disciples rejoice that spirits are subject to them in Jesus’ name, but Jesus redirects joy toward their names being written in heaven. Authority is real within the narrative, yet success over spirits is not made the disciples’ identity or spiritual status. That redirection stands in tension with later cultures of celebrity, expertise, or curiosity built around extraordinary ministry.
 
+### Name, allegiance, and judgment
+
+Mark 9:38–41 and Luke 9:49–50 preserve parallel reports about an unnamed person casting out demons in Jesus’ name whom the disciples try to stop. Their wording and pronouns differ, and the SBLGNT comparison apparatus records several local variants; the accounts should not be silently harmonized. Neither scene makes possession of a name a self-authenticating technique or settles the later Church’s offices and permissions.
+
+Matthew 7:22–23 supplies the sharper boundary. Within the Sermon on the Mount, persons appeal to prophecy, expulsions, and mighty works performed in Jesus’ name, yet the scene turns on obedience and final judgment. A reported extraordinary work is therefore not, by itself, proof of communion, authorization, holiness, or divine approval. This is the narrative claim, not an adjudication of any modern case.
+
+Luke 13:10–17 refuses a different reduction. The evangelist holds together a spirit of weakness, bodily incapacity, healing, praise of God, Sabbath controversy, and Jesus’ description of Satanic binding. The theological causation belongs to Luke’s narrated judgment. It does not furnish a modern diagnostic sign, a retrospective clinical label, or a ritual sequence.
+
 ### Acts: mission is not a manipulable name
 
 Acts preserves both continuity and boundary. Philip’s mission includes unclean spirits departing (Acts 8:7); Paul commands the divining spirit “in the name of Jesus Christ” (16:18). Acts 19:11–20 then contrasts apostolic mission with the sons of Sceva’s attempted use of Jesus’ name as a transferable technique. The failure is not evidence that a longer formula was needed. It marks the difference between belonging to Christ’s mission and manipulating a powerful name.
@@ -111,6 +119,12 @@ Acts preserves both continuity and boundary. Philip’s mission includes unclean
 The three Acts settings should not be collapsed. Philip’s preaching and the departure of unclean spirits belong to a city receiving the Gospel. Paul’s command in Acts 16 interrupts the repeated speech of a divining spirit in a mission conflict. At Ephesus, extraordinary deeds associated with Paul’s ministry are set beside itinerant exorcists who try to use the preached name secondhand; the episode ends not with a better incantation but with fear, confession, and the destruction of costly magical books. The narrative judges the means by their relation to apostolic mission and conversion.
 
 Acts 19 is therefore evidence both of continuity and discontinuity with the ancient context. It knows actors identified as exorcists and an adjuratory use of a powerful name, features that make comparison with Josephus intelligible. But Luke’s arrangement refuses to treat every use of Jesus’ name as Christian ministry. Similar outward speech does not establish common authority, theology, or efficacy.
+
+### Pauline conflict is ecclesial and moral
+
+Paul’s demonological language occurs inside arguments about worship, allegiance, and Christian life. First Corinthians 10:20–21 contrasts participation at the Lord’s table with participation in sacrifices and a table associated with demons. Second Corinthians 6:14–16 builds a series of antitheses—righteousness and lawlessness, light and darkness, Christ and Beliar, believer and unbeliever, God’s temple and idols. Neither passage describes an afflicted person or supplies a rite; both locate conflict in divided communion and fidelity.
+
+Ephesians 6:10–17 names powers and spiritual wickedness, but its controlling image is God’s armor: truth, righteousness, the Gospel of peace, faith, salvation, and God’s word, followed immediately by persevering prayer. The SBLGNT apparatus records local wording differences at several verses without changing that architecture. The passage is communal exhortation, not a rank chart of hostile beings, a diagnostic instrument, or permission for private confrontation.
 
 ### What the canon does and does not give
 
@@ -676,7 +690,7 @@ This 32-page snapshot is an interim public-alpha review paper. It does not fulfi
 
 ### Scripture and received teaching
 
-Selected loci in 1 Samuel 16; Tobit 6–8; Matthew 4, 8, 12, 17; Mark 1, 3, 5, 9; Luke 4, 8, 10, 11, 13; Acts 16 and 19. Exact biblical editions and textual limits are recorded in the source audit. *Catechism of the Catholic Church*, 391–395, 550, 1237, 1667, 1670, 1673, 1700–1706, 1734–1735, 1857, 1859, 2111, 2116–2117, 2846–2854. Fourth Lateran Council, *Firmiter credimus*.
+Selected loci in 1 Samuel 16; Tobit 6–8; Matthew 4, 7, 8, 12, 17; Mark 1, 3, 5, 9; Luke 4, 8, 9, 10, 11, 13; Acts 16 and 19; 1 Corinthians 10; 2 Corinthians 6; and Ephesians 6. Greek controls include Robinson–Pierpont’s 2018 Byzantine textform and Michael W. Holmes, ed., *The Greek New Testament: SBL Edition*, v1.2 electronic text and comparison apparatus (2023), CC BY 4.0. Exact biblical editions, artifacts, and textual limits are recorded in the source audit. *Catechism of the Catholic Church*, 391–395, 550, 1237, 1667, 1670, 1673, 1700–1706, 1734–1735, 1857, 1859, 2111, 2116–2117, 2846–2854. Fourth Lateran Council, *Firmiter credimus*.
 
 ### Ancient Jewish and Christian witnesses
 
@@ -696,7 +710,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-28T03:30:00Z
+**Last revised (UTC):** 2026-07-28T03:36:00Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 

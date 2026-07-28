@@ -38,6 +38,18 @@ patristic, biblical, liturgical, and theological review.
 - Exact Robinson–Pierpont 2018 Byzantine-textform artifacts control the Greek
   wording in Matthew, Mark, Luke, and Acts. They represent one textform and
   include inline divergence notes; they are not a full critical apparatus.
+- Holmes's SBLGNT v1.2 running-text and comparison-apparatus files at exact
+  commit `736fdc76158950c3d04b949b7e013ca14305145a` now supply a second
+  Greek control for Mark 9:38–41, Matthew 7:22–23, Luke 9:49–50 and
+  13:10–17, 1 Corinthians 10:20–21, 2 Corinthians 6:14–16, and Ephesians
+  6:10–17. The independently acquired archive matched SHA-256
+  `fc5fdd93d771c73921b9c5efeeaa2a945428cab5e5130585486bd68d5c3da7ed`;
+  each book file is separately hashed and registered, including corrected
+  Matthew apparatus SHA-256
+  `927dbf272cb8da87b431d7239e459998a3b7730764edd8c31c840805b7be40c2`.
+  The apparatus compares editions rather than manuscripts, so its silence at
+  a locus is not evidence of textual unanimity and its entries are not a full
+  textual history.
 - Swete's 1896 volume now supplies exact, page-verified Greek controls for
   Tobit 6–8 in both forms that it prints: the Vatican text above and the
   materially different Sinaitic text in full beneath it. This closes the
@@ -70,6 +82,20 @@ patristic, biblical, liturgical, and theological review.
   its numbering. No separately identified eclectic artifact or full critical
   apparatus is bound, so the draft states the variant but does not reconstruct
   its manuscript history or weight.
+- Mark 9:38–41 and Luke 9:49–50 are retained as distinct parallel accounts:
+  the SBLGNT apparatus records wording and pronoun differences, which prevents
+  harmonizing their immediate formulations. Matthew 7:22–23 places claimed
+  works in Jesus' name under an obedience-and-judgment warning; it does not
+  authenticate the speakers' authorization, efficacy, or holiness.
+- Luke 13:10–17 is controlled as one narrative joining weakness, bodily
+  incapacity, healing, praise, Sabbath controversy, and Satanic binding. The
+  narrative classification is neither a modern diagnosis nor a later ritual
+  protocol.
+- First Corinthians 10:20–21, 2 Corinthians 6:14–16, and Ephesians 6:10–17
+  broaden the Pauline control from episodic expulsion to worship, allegiance,
+  ecclesial identity, moral conflict, divine armor, and prayer. They support no
+  rite, authorization, diagnosis, private confrontation, efficacy, or
+  exhaustive taxonomy claim.
 - Josephus's exact Whiston VIII.2.5 web witness is normalized, acquired, and
   inspected. Niese 8.45–49 now has a separate exact Perseus canonical Greek
   XML control. It supplies Greek wording and section boundaries, but not
