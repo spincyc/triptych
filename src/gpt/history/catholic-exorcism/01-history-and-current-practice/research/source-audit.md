@@ -165,7 +165,15 @@ mental-health input; it is not itself a professional clinical protocol.
 ## Negative results and unused leads
 
 - Genesis Apocryphon 1Q20 XX.14–17, 21–29; Songs of the Sage (4Q510/511); the 4Q Magical Booklet (4Q560); and 11Q11 were edition- and locus-audited as leads. They remain outside the publication claim because no exact translation artifact was acquired and inspected. The authoritative 4Q560 edition is Puech, *DJD* XXXVII (2009), pp. 291–302, not the frequently repeated *DJD* XXXVI citation.
-- Broad Mesopotamian, Egyptian, and Greco-Roman comparisons were removed. Plato, *Symposium* 202d–203a; Hippocratic *On the Sacred Disease* 1; PGM IV.3007–3086; Lucian, *Philopseudes* 16; and Philostratus, *Life of Apollonius* 4.20 remain genre-specific leads, not a composite ancient rite.
+- Broad Mesopotamian, Egyptian, and Greco-Roman comparisons were removed.
+  Hippocratic *On the Sacred Disease* 1 is now controlled in the exact Adams
+  1849 English edition at printed pp. 843–845: it supplies an ancient medical
+  polemic against a uniquely divine cause and against claims for purifications
+  and incantations, not a Christian witness, neutral practice report, modern
+  clinical account, or evidence that medicine displaced exorcism. Plato,
+  *Symposium* 202d–203a; PGM IV.3007–3086; Lucian, *Philopseudes* 16; and
+  Philostratus, *Life of Apollonius* 4.20 remain genre-specific leads, not a
+  composite ancient rite.
 - No official global count of exorcists, cases, or successful major exorcisms was found; numerical claims in press reports are omitted.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
