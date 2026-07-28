@@ -210,7 +210,7 @@ workflow_state = "generated"
 
 [[artwork_links]]
 id = "art-service-objects-0102-iso-candle-tool"
-asset_file_id = "file-rpd-candle-tool"
+asset_file_id = "file-rpd-candle-tool-v2"
 object_ids = ["obj-candle-lighter-extinguisher"]
 variant_ids = []
 view = "isolated"
@@ -352,9 +352,16 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-candle-tool"
 path = "shared/artwork/pencil/RPD-FIG-service-objects-0102-iso-candle-tool.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/reviews/lighting-bells-priestly-review-2026-07-27.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 328822, sha256 = "04647573625ad3ede421a523a585754c8aa9dd4699751a248d6332b741a61f1e" }
+
+[[asset_files]]
+id = "file-rpd-candle-tool-v2"
+path = "shared/artwork/pencil/RPD-FIG-service-objects-0102-iso-candle-tool-v2.png"
+state = "consumer-eligible"
+audit_record = "research/candle-tool-source-audit-2026-07-28.md"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 327149, sha256 = "0c2b6837ca7f647cc38d21d34af76cbd64dd9d25ce356acec25db30e0f66f41e" }
 
 [[asset_files]]
 id = "file-rsd-sacristy-preparation"

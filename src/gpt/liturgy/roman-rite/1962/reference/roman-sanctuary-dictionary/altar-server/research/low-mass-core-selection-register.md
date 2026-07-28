@@ -66,7 +66,7 @@ excluded from that edition by this register.
 | `obj-vesting-table` | source-audited | Select: sacristy recognition | May be present around the server before line-up; move only by direction |
 | `obj-vestment-case` | source-audited | Select: sacristy recognition | May be present around the server; recognition only |
 | `obj-altar-bells` | source-audited | Select: direct handling | First carries and rings them at LM-023 and LM-026--LM-033 |
-| `obj-candle-lighter-extinguisher` | lead | Select: conditional preparation recognition | May be present during adult-controlled preparation; the Mass chronology assigns no use |
+| `obj-candle-lighter-extinguisher` | source-audited | Select: conditional preparation recognition | Practical/local equipment may be present during adult-controlled preparation; the Mass chronology and checked Roman books assign no use |
 
 ### Count check
 

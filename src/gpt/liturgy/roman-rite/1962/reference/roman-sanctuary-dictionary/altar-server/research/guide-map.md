@@ -28,6 +28,7 @@ The image-dominant alpha contains:
 | `obj-altar-candle` | varies by ceremony | distinguish wax light from support; flame safety |
 | `obj-altar-candlestick` | carries when appointed | checked carried grip; do not universalize processional use |
 | `obj-sanctuary-lamp` | recognizes only | report problems; trained handling only |
+| `obj-candle-lighter-extinguisher` | recognizes unless an adult assigns otherwise | practical/local preparation equipment; no Roman prescription or flame procedure |
 | `obj-chalice` | must not handle | distinguish the sacred vessel from a cruet |
 | `obj-paten` | must not handle | distinguish the priest's paten from the Communion plate |
 | `obj-altar-missal` | moves only by assignment | identify the altar book; protect and balance it |
@@ -62,6 +63,14 @@ Unsupported granular contents were removed; decorative morphology remains
 illustrative, and loose incense is classified as a consumable material rather
 than a third vessel.
 
+The candle lighter and extinguisher uses one exact 1902 United States patent
+only as a secular material-culture control for the combined long-shaft,
+taper-tube, and separate extinguisher-bell family. The generated graphite
+plate omits the patented pneumatic mechanism and every exact ornament and
+dimension. The page keeps Catholic prevalence, Catholic terminology, local
+form, and local assignment unresolved and gives only non-operational flame and
+hot-metal cautions.
+
 The carrying family reuses the empty footed-candlestick drawing only as a
 representative support form. The processional-cross drawing shows the
 source-controlled crucifix-and-long-staff identity; TeX supplies its required
@@ -78,6 +87,8 @@ The alpha uses identity-checked or consumer-reviewed pencil assets including:
 - a generic paired-cruet plate at common hand scale;
 - sanctuary lamp;
 - separate candle-only and empty-candlestick views; and
+- a combined candle lighter and modest extinguisher-bell tool, shown without
+  flame, mechanism, labels, or contextual size cues; and
 - chalice;
 - an altar Missal open on a low stand;
 - an isolated Missal cushion;

@@ -1,15 +1,15 @@
 schema_version = 1
 id = "obj-candle-lighter-extinguisher"
-workflow_state = "lead"
+workflow_state = "source-audited"
 preferred_english_name = "Candle lighter and extinguisher"
 latin_headword = "instrumentum ad candelas accendendas et exstinguendas"
 alternate_english_names = ["candle lighter", "candle snuffer"]
 alternate_latin_names = []
 categories = ["service-objects"]
 periods = ["roman-1962-horizon"]
-statuses = ["unresolved"]
+statuses = ["institutional"]
 ceremonies = ["ceremony-surrounding-mass"]
-confusable_with = []
+confusable_with = ["obj-altar-candle", "obj-elevation-torch"]
 related_objects = ["obj-altar-candle", "obj-altar-candlestick"]
 component_objects = []
 
@@ -26,7 +26,7 @@ prepares = ["sacristan"]
 presents = []
 receives = []
 stores = ["sacristan"]
-warnings = ["Use only under local training; confirm the taper is extinguished before storage and keep the hot snuffer clear of people and textiles."]
+warnings = ["Flame work is an adult-controlled, locally trained assignment. Keep flame and hot metal clear of people and textiles, and confirm the taper is extinguished before storage."]
 
 [audience_relevance]
 altar_server = "useful"
@@ -38,23 +38,23 @@ pontifical = "useful"
 [[claims]]
 id = "clm-candle-tool-identity"
 kind = "identity"
-text = "A long-handled practical tool may combine a taper holder for lighting elevated candles with a conical snuffer for extinguishing them."
-evidence_state = "unverified-lead"
-source_ids = ["src-candle-tool-lead"]
-publication_note = "Requires a lawful period catalog, museum record, or specialist source before publication."
+text = "A long-shaft practical tool may combine a taper tube for lighting elevated candles with a separate branch ending in an extinguisher bell."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-candle-tool-patent-717186"]
+publication_note = "Dated material-culture morphology only: the source is not Catholic evidence, a Roman prescription, or proof of prevalence, name, dimensions, or universal combined form."
 
 [[sources]]
-id = "src-candle-tool-lead"
-binding = "lead.dictionary.material-culture.candle-lighting-tools"
-locus = "Source not yet acquired"
-role = "lead-only"
-verification_state = "unlocated"
+id = "src-candle-tool-patent-717186"
+binding = "artifact.united-states-patent-office.patent-717186.letters-patent-1902.google-patents-facsimile-pdf-25efc608"
+locus = "Figure 1 and specification, artifact pp. 1-2"
+role = "historical-primary"
+verification_state = "claim-verified"
 
 [[artwork]]
 id = "art-service-objects-0102-iso-candle-tool"
 view = "isolated"
-asset = "shared/artwork/pencil/RPD-FIG-service-objects-0102-iso-candle-tool.png"
-review_state = "identity-checked"
+asset = "shared/artwork/pencil/RPD-FIG-service-objects-0102-iso-candle-tool-v2.png"
+review_state = "print-checked"
 depicts = ["obj-candle-lighter-extinguisher"]
 scale_mode = "not-applicable"
-review_note = "Generated lead candidate; visually checked for one shaft, taper holder, taper, conical snuffer, plausible joins, grayscale, complete crop, and no lettering. Not source-approved."
+review_note = "Source-bounded original graphite synthesis: long shaft, narrow taper tube with thin projecting taper, and separate modest extinguisher-bell branch. Patent-specific pneumatic mechanism, ornament, dimensions, text, context, and universal-size cues are omitted."
