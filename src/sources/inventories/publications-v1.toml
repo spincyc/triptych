@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-28"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 133
-source_surface_file_count = 1761
-snapshot = "sha256:81b19c1d67559154bed417f1eb4d6bd6ec96e025d06f5d182b7ca528f887a6e3"
+source_surface_file_count = 1762
+snapshot = "sha256:645d3f47f4edcbc15cc69f365127c2b6aa8f6604d9d1d5e637a6219a7f6df533"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -8772,7 +8772,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml"
-sha256 = "62235a5e1bcbc4ea3eda16275594ce11ced4900469dbcefe2d778eb84d780e24"
+sha256 = "2122fd22471641b47b369b4c177431e002596704d9c6fd7a99b49a1d3c354b6f"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -8903,6 +8903,12 @@ kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/lavabo-isolated-artwork-audit-2026-07-28.md"
+sha256 = "4944ecb7f24a3fe0983fb5a88d4c29559e5469e0598125d3c5f643629fa2831b"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/linen-inventory-audit.md"
 sha256 = "e94cf938902c6f8c96d3e3369b6167d24f90f176c96d0bba9055f53f27ff87c8"
 kind = "research-record"
@@ -8976,7 +8982,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/production-manifest.md"
-sha256 = "61f01ac41a08416ca09c604caf4e6598306f92769fb74b7b5dd1518a666ca39a"
+sha256 = "43bf498d0dfc0d1fee3cd86e6e8313501a04e611e4a975f4615e2d6e6b51bf1b"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -9168,7 +9174,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated-record-renderer.tex"
-sha256 = "673c52cde7f6189f6dba1c4e76ef553d2c0b6b6b5f6a001ea2a0e35143f0ccc1"
+sha256 = "7e3befffc6091f1045abf0438f3ccbbcac4b5e96379fcee244499ffe096d325a"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -9360,7 +9366,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/lavabo-towel.toml"
-sha256 = "0d97f28d2c209deccdaf27afebc19d24c1c474c4e1547a013ad0d6bf6244521c"
+sha256 = "f0297c0ae9653b013699f12f5c743b69ce2d5cdeaf14153a99544018ab521d94"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -9504,7 +9510,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/lavabo-basin.toml"
-sha256 = "c868cb7c9b63965170b32e9550879bd84fca3b858b5d790ba0ac6cb75ad279a1"
+sha256 = "f3cd85c0485ee85daffa3844e1e2a2fc0d62414a453bcbd9fa83eb061f8fc2a9"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 

@@ -233,7 +233,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
         ).read_text()
         self.assertNotIn("obj-chalice", renderer)
         self.assertNotIn("art-paten-catalog-exemplar-comparison", renderer)
-        self.assertIn(r"\ifstrequal{\RSDObjectID}{#8}", renderer)
+        self.assertIn(r"\ifdefstring{\RSDObjectID}{#8}", renderer)
 
     def test_unknown_record_field_fails_closed(self):
         with tempfile.TemporaryDirectory() as temporary:

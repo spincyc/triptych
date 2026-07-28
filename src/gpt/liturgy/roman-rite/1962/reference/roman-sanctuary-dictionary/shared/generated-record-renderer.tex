@@ -86,7 +86,7 @@
 \renewcommand{\RSDArtwork}[8]{%
   % Shared comparisons and compositions retain every canonical evidence link,
   % but the generator assigns their visible rendering to exactly one record.
-  \ifstrequal{\RSDObjectID}{#8}{\RSDRegisterGeneratedArtwork{#3}}{}}
+  \ifdefstring{\RSDObjectID}{#8}{\RSDRegisterGeneratedArtwork{#3}}{}}
 
 \providecommand{\RSDSelectedAudienceNote}[1]{\def\RSDAudienceText{#1}}
 

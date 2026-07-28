@@ -930,6 +930,39 @@ fonts and extractable text. Build and installed bytes are identical:
 | General reader | 12 | 20,484,811 | `4cf134cad9534eea1f27165832c5bdc44f490306200c4e160117f09d2c05c21d` |
 | Pontifical ceremonies | 11 | 20,148,956 | `7ce4b37951435fdd2ec24051d36199196ffc3223c712855f022a3b9ba60b7b6b` |
 
+## Isolated Lavabo-basin-and-Manuterge checkpoint — 2026-07-28
+
+The Lavabo basin and Manuterge now lead their canonical generated entries
+with genuinely isolated, source-minimal drawings. Both are stripped 8-bit
+grayscale-plus-alpha PNGs with declared transparent boundaries. The prior
+paired recognition plate remains once as a labeled relationship detail with
+the Manuterge rather than repeating as both objects' lead art. The bespoke
+altar-server spread retains its established combined teaching view.
+
+The first generalized shared-artwork build exposed an expansion error in the
+new render-owner comparison: generated art was suppressed because the object
+ID macro was compared without expansion. The renderer now uses its
+macro-aware string comparison, and a complete rebuild confirmed that all
+canonical art—including the earlier chalice and paten replacements—renders
+again.
+
+All six PDFs were built to settled output, rastered with the repository
+review helper, and visually inspected on every page: 96 pages total. Full-size
+inspection of the changed cells found complete contours, immediate object
+recognition, one combined relationship detail, no clipping, green fringe,
+floating rectangle, overlap, or duplicate paired view. Logs have no fatal
+error, undefined reference, overfull box, or rerun warning; every PDF has
+embedded fonts and extractable text. Build and installed bytes are identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 14 | 22,218,279 | `cf9b57ebc5c22435f6bad77bb6167055105b771ba51d093f084bb9419c535f86` |
+| Altar server | 33 | 18,207,132 | `66d3daa3705b7cbf0be60cb462c71ed77443d94d4b2a29ac9169226330cf60a1` |
+| Sacristan | 13 | 22,256,470 | `4f58ef4bc3886cac5fac1111de49b8ed0ff197b555098e696cf9354be4ec1685` |
+| MC and trainer | 13 | 22,258,757 | `1cc60ba9a17d40aab0922336137cd8d90e4c014c34a07d17a45d4d778084d6af` |
+| General reader | 12 | 21,472,744 | `3cc5b936f5fe6161cc09ca24942cf0728ee4cc63372ae2a9645b9a10508d2993` |
+| Pontifical ceremonies | 11 | 20,484,165 | `0ae60e664c9c3b8b9842d50ef4704371671f593a548db86677eb550fcaa0440f` |
+
 ## Sacristy recognition cross-edition checkpoint — 2026-07-28
 
 The five generated editions now admit the already source-audited sacristy

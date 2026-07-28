@@ -93,12 +93,22 @@ checked_on = 2026-07-28
 note = "Terminology and the distinction between the Mass and sacristy towels only. Customary dimensions, lace, embroidery, circular sacristy-towel form, and pontifical or historical statements are excluded."
 
 [[artwork]]
+id = "art-manuterge-isolated-v2"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0007-iso-manuterge-v2.png"
+review_state = "liturgically-checked"
+depicts = ["obj-lavabo-towel"]
+scale_mode = "not-to-common-scale"
+review_note = "Source-minimal isolated study: one complete broad plain once-folded rectangular towel without the basin or another object. TeX owns identity, pairing, use, location, role model, confusables, and the scale qualification."
+
+[[artwork]]
 id = "art-service-objects-0106-lavabo-basin-manuterge"
 view = "comparison"
 asset = "shared/artwork/pencil/RPD-FIG-service-objects-0106-lavabo-basin-manuterge.png"
 review_state = "identity-checked"
 depicts = ["obj-lavabo-basin", "obj-lavabo-towel"]
 scale_mode = "not-to-common-scale"
+render_owner = "obj-lavabo-towel"
 review_note = "Source-minimal paired plate: one shallow empty bowl and one broad plain once-folded towel. No cross, lace, embroidery, dimensions, pitcher, person, water, text, or scale cue is baked into the asset."
 
 [[audience_note]]
