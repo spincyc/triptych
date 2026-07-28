@@ -62,6 +62,31 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
   the princeps. The section paraphrases preliminary cautions but supplies
   neither the prayers nor a procedural sequence. The exact hosted scan remains
   remote; no redistribution basis for its bytes is asserted.
+
+### 1614 hosted-byte access probe, 2026-07-27
+
+The Alessandrina copy remains readable through Google Books volume
+`TBNNeaiGbc0C`, and Google Books' public description identifies the 1614 Roman
+imprint and 224 printed pages. USUARIUM record 1195 independently identifies
+the item as the editio princeps and supplies its structural index. The
+previously inspected page images continue to support only the bounded
+printed-page and single-section observations above.
+
+This pass did not obtain stable exact hosted bytes suitable for artifact
+registration. Direct volume-page access remained an interactive hosted view,
+and the official Google Books metadata API request for the volume returned
+HTTP 429 rather than a reproducible download identity. No alternate public
+facsimile was found whose copy identity could be tied to the Alessandrina
+shelfmark and page sequence. Accordingly, a browser-visible page is not
+misrepresented as an acquired and hashed artifact.
+
+Promotion requires either an authenticated downloadable file for the
+Alessandrina copy or another exact 1614 copy with title-page and collation
+control, plus a hash, byte extent, rights disposition, and visual inspection
+of printed pp. 198--219. Until then the edition binding remains bibliographic;
+no quotation, exact formula comparison, complete procedural digest,
+typographical claim, or frequency/outcome inference may depend on the hosted
+view.
 - *Rituale Romanum* (1952), title XII. Edition-specific historical
   predecessor. It is not identified as the ordinary current ritual book and
   is not used to make a present older-book authorization claim.

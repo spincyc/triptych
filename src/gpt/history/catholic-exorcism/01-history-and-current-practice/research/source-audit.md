@@ -104,7 +104,14 @@ routes, findings, and limits are recorded in
   acquired, hashed, and inspected 2026-07-26. Controls Aquinas's distinction
   between preparatory exorcistic acts, Baptism's effect, and the assisting
   office; not a frequency claim or major-exorcism manual.
-- *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*, printed pp. 198–219 in the Alessandrina editio-princeps witness; later standard editions use title/chapter structures that must not be retrojected. Establishes the Roman consolidation, ministerial cautions, and formulary history.
+- *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*,
+  printed pp. 198–219 in the browser-visible Alessandrina editio-princeps
+  witness; later standard editions use title/chapter structures that must not
+  be retrojected. Google Books and USUARIUM independently control identity and
+  structure, but a 2026-07-27 hosted-byte probe obtained no stable downloadable
+  file (the metadata API returned HTTP 429). The edition therefore remains a
+  bibliographic/page-image control, not a hashed artifact or basis for exact
+  quotation, formula comparison, or complete procedural synthesis.
 - *Rituale Romanum* (1952), title XII. Historical predecessor, not presented
   as the ordinary current ritual book. A 2026-07-27 exact-access probe found
   catalogs, secondary excerpts, modern samples, and an 1873 Baltimore scan,
