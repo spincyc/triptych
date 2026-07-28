@@ -12,6 +12,7 @@ branch, or recovery procedure.
 
 The appointments-and-books family uses image-dominant full-page plates.
 Altar and carried candlesticks remain distinct; stand and cushion remain
-alternatives; Holy Week lectern states remain rite-specific. The canonical
-alpha gate replaces the obsolete detached review-admissions path and requires
-no external review.
+alternatives; Holy Week lectern states remain rite-specific. The five
+prepared-chalice linen records teach their verified relationships and
+confusables without inventing a server handoff, cue, fold, or recovery
+procedure. The canonical alpha gate requires no external review.

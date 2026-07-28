@@ -23,7 +23,7 @@ required = [
 [asset_file]
 required = ["id", "path", "state", "audit_record", "technical"]
 id_pattern = "^file-[a-z0-9]+(?:-[a-z0-9]+)*$"
-states = ["accepted-for-priestly-review", "held", "rejected", "consumer-eligible"]
+states = ["accepted-for-priestly-review", "canonical-alpha-eligible", "held", "rejected", "consumer-eligible"]
 description = "One row for every tracked dictionary PNG, including held and rejected research leads."
 
 [asset_file.technical]

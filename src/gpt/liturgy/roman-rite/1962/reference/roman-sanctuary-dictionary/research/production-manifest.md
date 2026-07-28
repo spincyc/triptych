@@ -7,12 +7,37 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Seven alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Twelve alpha records | Built, inspected, and installed | No | Alpha |
+
+The prepared-chalice linens checkpoint promotes the corporal, purificator,
+chalice pall, chalice veil, and burse from their already reviewed altar-server
+consumer into every appropriate canonical alpha edition. Each record now owns
+audience-specific notes derived from the same checked 1962 Missal claims; no
+note invents a fold, dimension, marking, ornament, construction, exact drape,
+handoff, cue, or distinct pontifical form. The five project-generated pencil
+assets retain their exact hashes and provenance. Their manifest change is
+limited to recognizing the five completed generic-edition consumers; no
+unrelated asset identity was recalculated or incorporated.
+
+All 82 pages across the five changed leaves were inspected through the
+repository PDF review pipeline, including every contact-sheet page and the
+five linen plates at full size. No clipping, overlap, spill page, illegible
+label, or unsafe visual instruction was found. Settled logs contain no fatal
+error, undefined reference, or overfull box. Build and installed bytes are
+identical:
+
+| Leaf | Records | Pages | Installed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 15 | 17 | `f0e46eece6b4f2d3610763d0366c4972dc960e89fe82e02a80a82877ea8b6dcf` |
+| Sacristan | 15 | 17 | `74fbeee2b5eb1e52f30d49b308b6024e8c67e983fe6a68bfe15f7eb7182c458a` |
+| MC/trainer | 15 | 17 | `2dc5bd3748dd2ba00aaf9121e96ce0cf570e8b55d9ec61acc3f0ed28829cae7c` |
+| General reader | 15 | 17 | `4d026a52268454655a3f44a3d32b9016af7d6dc3a9396b51a1ce5ad95c577043` |
+| Pontifical ceremonies | 12 | 14 | `0eedf54646282ff7930a2e22f548341e8cb3eeb347556da9ac92dc821a9fa525` |
 
 The 2026-07-28 cross-edition checkpoint replaced the detached
 review-admissions output with one canonical alpha view. The generator now

@@ -67,3 +67,23 @@ review_note = "Simple continuous closed drape; no false front opening, ornament,
 audience = "altar-server"
 text = "Recognize the draped cover over the prepared chalice; do not confuse it with the stiff square burse above it."
 claim_ids = ["clm-chalice-veil-identity-relation"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the silk veil over the chalice while treating the illustrated drape, dimensions, ornament, and construction as non-prescriptive."
+claim_ids = ["clm-chalice-veil-identity-relation"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the veil's removal and replacement relationship without inferring an exact drape or unsupported handling assignment."
+claim_ids = ["clm-chalice-veil-identity-relation"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The chalice veil is the textile draped over the prepared chalice, distinct from the stiff burse placed above it."
+claim_ids = ["clm-chalice-veil-identity-relation"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This ordinary prepared-chalice veil remains a supporting object in pontifical Mass; this record does not supply a pontifical color or form rule."
+claim_ids = ["clm-chalice-veil-identity-relation"]

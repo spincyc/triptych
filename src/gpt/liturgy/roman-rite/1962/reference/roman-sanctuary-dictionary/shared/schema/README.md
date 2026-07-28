@@ -111,6 +111,13 @@ visual review. Editorial proposals remain in research data but are not
 rendered as facts. This is the only active admission path; external review is
 not a release gate.
 
+An artwork custody row uses `canonical-alpha-eligible` when that exact asset
+has completed the source, rights, identity, safety, and basic visual-usability
+checks required by this path. `consumer-eligible` remains a narrower
+consumer-specific state and does not admit an asset into another edition.
+`accepted-for-priestly-review` is retained only as historical vocabulary for
+older reconciled records; it creates no current review dependency.
+
 Artwork IDs are shared identities, not object-local IDs. A comparison or
 composition may therefore repeat the same artwork ID in each object record
 listed by its `depicts` field. The validator requires the core artwork

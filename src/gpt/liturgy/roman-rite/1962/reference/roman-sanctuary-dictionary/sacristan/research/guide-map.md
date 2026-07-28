@@ -13,4 +13,7 @@ The bounded appointments-and-books family is rendered as readable
 image-dominant full-page plates. Candle and lamp pages retain flame and
 training boundaries; the Missal support pages preserve stand/cushion
 alternatives; the Holy Week lectern page keeps bare and cloth-covered states
-limited to their named rites. The edition creates no external-review gate.
+limited to their named rites. Five prepared-chalice linen pages now preserve
+the verified folded-in-burse, over-chalice, and altar relationships while
+refusing to prescribe unsupported folds, dimensions, markings, ornament,
+construction, or exact drape. The edition creates no external-review gate.

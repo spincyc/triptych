@@ -10,7 +10,9 @@ reader. It owns no copied facts. Each plate emphasizes identity and purpose;
 its canonical audience note explains a useful distinction without enlarging
 the verified claims.
 
-The appointments-and-books family uses one image-dominant page per object,
-with a registered second view permitted as a detail inset. Representative
-shape, material, ornament, dimensions, and marker count are not universalized.
-All alpha qualifications appear on the first page only.
+The fifteen-record alpha adds the corporal, purificator, chalice pall, chalice
+veil, and burse to the appointments-and-books family. One image-dominant page
+per object preserves the principal visual distinctions: square corporal,
+narrow purificator, small pall, draped veil, and stiff burse. Representative
+shape, folds, construction, ornament, dimensions, and marker count are not
+universalized. All alpha qualifications appear on the first page only.

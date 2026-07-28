@@ -1554,35 +1554,35 @@ release = "passed"
 [[asset_files]]
 id = "file-rpd-linens-corporal"
 path = "shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1315, height_px = 1196, bit_depth = 8, color_mode = "grayscale", bytes = 519408, sha256 = "791c7deba1af79769116a7f89d832da7670f0e13f9ce61fe93d4aadfd452104b" }
 
 [[asset_files]]
 id = "file-rpd-linens-purificator"
 path = "shared/artwork/pencil/RPD-FIG-linens-0002-iso-purificator.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 258310, sha256 = "ac4809fc7841adfb0c1c5640bc53883fb4877ed49d18b4736901500ffb48b3c5" }
 
 [[asset_files]]
 id = "file-rpd-linens-chalice-pall"
 path = "shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1339, height_px = 1175, bit_depth = 8, color_mode = "grayscale", bytes = 268840, sha256 = "9143511846bb616ecf4132318891b844896796ddeb5a0e9034628a9a977e335e" }
 
 [[asset_files]]
 id = "file-rpd-linens-chalice-veil"
 path = "shared/artwork/pencil/RPD-FIG-linens-0004-iso-chalice-veil.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1254, height_px = 1254, bit_depth = 8, color_mode = "grayscale", bytes = 438023, sha256 = "b1230b776c72e52602328e29534f1013cd2b98096e104bb0f8f18f7e48fcd7f6" }
 
 [[asset_files]]
 id = "file-rpd-linens-burse"
 path = "shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1254, height_px = 1254, bit_depth = 8, color_mode = "grayscale", bytes = 354795, sha256 = "4fd1876c0d8eb112c53084f0294444c9d0566f88b3a6f4a4e026c5915b9ebfc7" }
 
@@ -1614,7 +1614,7 @@ corrections = ["Generated separately rather than reusing the held combined white
 baked_content_audit = ["One plain square unfolded textile is fully visible.", "No forbidden marking, fold diagram, ornament, other object, text, watermark, or color is visible."]
 tex_overlays = ["Headword, stable ID, relationship, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-general-reader", "ed-sacristan", "ed-mc-trainer", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 1315
@@ -1670,7 +1670,7 @@ corrections = ["Generated separately to replace the held tent-like combined-plat
 baked_content_audit = ["One plain narrow open textile is fully visible.", "No tent fold, marking, ornament, other object, text, watermark, or color is visible."]
 tex_overlays = ["Headword, stable ID, relationship, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-general-reader", "ed-sacristan", "ed-mc-trainer", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 1536
@@ -1726,7 +1726,7 @@ corrections = ["Generated separately and excluded the earlier combined plate's c
 baked_content_audit = ["One plain low-profile stiff square is fully visible.", "No forbidden ornament, construction detail, alternate form, other object, text, watermark, or color is visible."]
 tex_overlays = ["Headword, stable ID, relationship, morphology limit, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-general-reader", "ed-sacristan", "ed-mc-trainer", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 1339
@@ -1782,7 +1782,7 @@ corrections = ["Generated separately to replace the combined plate's false front
 baked_content_audit = ["One continuous closed drape is fully visible.", "No opening, closure, strap, ornament, human figure, other object, text, watermark, or color is visible."]
 tex_overlays = ["Headword, stable ID, prepared relationship, exact-drape limit, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-general-reader", "ed-sacristan", "ed-mc-trainer", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 1254
@@ -1838,7 +1838,7 @@ corrections = ["Generated separately to replace the combined plate's invented op
 baked_content_audit = ["One plain closed stiff square case is fully visible.", "No opening, closure hardware, straps, interior, ornament, human figure, other object, text, watermark, or color is visible."]
 tex_overlays = ["Headword, stable ID, contained-corporal relationship, construction limit, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-general-reader", "ed-sacristan", "ed-mc-trainer", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 1254

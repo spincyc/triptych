@@ -12,7 +12,9 @@ For the bounded appointments-and-books family, altar and carried lights,
 the reservation lamp, altar Missal, and its stand/cushion alternatives remain
 relevant supporting objects. Altar bells, the Holy Week lectern, and book
 markers are excluded because their present records do not establish a
-pontifical-specific relationship. Audience notes distinguish ordinary
-supporting objects from insignia and do not universalize context-specific
+pontifical-specific relationship. The corporal, purificator, chalice pall,
+chalice veil, and burse enter as ordinary supporting objects in the
+pontifical-Mass preparation, not as distinct pontifical forms. Audience notes
+distinguish these from insignia and do not universalize context-specific
 materials or forms. The edition uses the one canonical alpha gate and has no
 external-review admission path.

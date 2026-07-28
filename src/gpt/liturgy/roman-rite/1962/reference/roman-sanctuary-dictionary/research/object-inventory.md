@@ -1,7 +1,7 @@
 # Object inventory
 
-Status: **43 canonical records populated; zero publication-ready objects**
-Audit date: 2026-07-27
+Status: **54 canonical records populated; 15 records in the current comprehensive alpha**
+Audit date: 2026-07-28
 
 The authoritative format is the structured contract under `shared/schema/`.
 This Markdown file is the human audit index for the populated TOML records and
@@ -13,22 +13,23 @@ authorization to render an entry.
 
 | State | Count |
 | --- | ---: |
-| Lead | 3 canonical records |
-| Identified | 19 |
-| Source-audited | 7 |
-| Art-reviewed | 7 |
-| Priestly-review-ready | 7 |
-| Publication-ready | 0 |
+| Lead | 2 canonical records |
+| Identified | 10 |
+| Source-audited | 33 |
+| Art-reviewed | 3 |
+| Priestly-review-ready | 4 |
+| Publication-ready | 2 |
 | Held | 0 canonical records |
 
 `shared/schema/object.example.toml` is a syntax fixture and is excluded from
-all counts. These counts describe canonical workflow labels, not publication
-eligibility. In particular, `source-audited`, `art-reviewed`, and
-`priestly-review-ready` do not mean that a record may enter an authoritative
-edition, and a priestly-review packet must still satisfy the profile's
-claim-level evidence and disclosure rules.
+all counts. These counts describe canonical workflow labels. The canonical
+alpha path separately admits a source-audited or later record only when
+identity and status are resolved, every rendered factual claim has a
+claim-verified binding, artwork rights/provenance and exact asset identity are
+recorded, and the visual has passed identity and basic usability review. There
+is no external-review admission path.
 
-The structured inventory validator accepts all 43 records as conforming to
+The structured inventory validator accepts all 54 records as conforming to
 the current TOML contract. That is a structural result only: it does not close
 the source corpus, the completeness matrix, variants, artwork review, rights,
 or any publication gate.
@@ -106,9 +107,10 @@ This evidence adds search targets but does not itself advance any record.
 The workflow counts above include seven source-audited records from other
 bounded source passes; there remain zero publication-ready object records.
 
-## Publication prohibition
+## Alpha boundary
 
-Do not convert the discovery queue into prose or captions. No object may enter
-an edition selection until its canonical record is `publication-ready`; no
-record may reach that state merely because its name is familiar or its image
-looks plausible.
+Do not convert the discovery queue into prose or captions. A record enters the
+bounded public alpha only through the canonical source, rights, identity,
+safety, and visual-usability gate described above. A familiar name or
+plausible image never establishes eligibility, and alpha admission does not
+claim that a category or the comprehensive corpus is complete.

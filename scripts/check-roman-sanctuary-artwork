@@ -289,7 +289,7 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         path = safe_relative(row.get("path"), f"{file_id}.path", problems)
         audit = safe_relative(row.get("audit_record"), f"{file_id}.audit_record", problems)
         problems.check(row.get("state") in {
-            "accepted-for-priestly-review", "held", "rejected", "consumer-eligible"
+            "accepted-for-priestly-review", "canonical-alpha-eligible", "held", "rejected", "consumer-eligible"
         },
                        f"{file_id}: invalid state")
         if audit is not None:
@@ -320,7 +320,7 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
                     for key, value in actual.items():
                         problems.check(technical.get(key) == value,
                                        f"{file_id}.technical.{key} does not match asset")
-                    if row.get("state") == "consumer-eligible":
+                    if row.get("state") in {"consumer-eligible", "canonical-alpha-eligible"}:
                         problems.check(depth == 8 and mode == "grayscale",
                                        f"{file_id}: consumer-eligible file must be 8-bit grayscale")
                 except (OSError, ValueError) as exc:

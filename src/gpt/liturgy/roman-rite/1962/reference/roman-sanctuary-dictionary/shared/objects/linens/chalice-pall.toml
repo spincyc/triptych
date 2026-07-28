@@ -67,3 +67,23 @@ review_note = "One plain stiff-square recognition model without cross, decoratio
 audience = "altar-server"
 text = "Recognize the small square cover in the prepared chalice composition; leave it to the priest or appointed sacristan."
 claim_ids = ["clm-chalice-pall-identity-relation"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the small linen pall above the paten; the stiff square shown is a recognition model, not a prescribed construction or universal form."
+claim_ids = ["clm-chalice-pall-identity-relation"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach its position above the paten and its use over the chalice without turning the illustrated stiff form into a universal rule."
+claim_ids = ["clm-chalice-pall-identity-relation"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The chalice pall is the small square cover used over the chalice, not the larger corporal or closed burse."
+claim_ids = ["clm-chalice-pall-identity-relation"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "The ordinary chalice pall retains the same prepared relationship in pontifical Mass; no special pontifical construction is asserted."
+claim_ids = ["clm-chalice-pall-identity-relation"]

@@ -293,7 +293,9 @@ def main() -> int:
             canonical_asset_path(item["path"])
             for table in ("asset_files", "asset")
             for item in manifest.get(table, [])
-            if item.get("state") in {"accepted-for-priestly-review", "release-passed"}
+            if item.get("state") in {
+                "accepted-for-priestly-review", "canonical-alpha-eligible"
+            }
         }
         canonical = load_canonical_validator()
         validator = canonical.Validator(schema, selections)
