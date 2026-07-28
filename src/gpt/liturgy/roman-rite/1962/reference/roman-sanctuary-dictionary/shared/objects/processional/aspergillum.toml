@@ -1,26 +1,24 @@
 schema_version = 1
 id = "obj-aspergillum"
-workflow_state = "art-reviewed"
+workflow_state = "source-audited"
 preferred_english_name = "Aspergillum"
 latin_headword = "aspergillum"
 alternate_english_names = ["holy-water sprinkler"]
 categories = ["related-ceremonies"]
 periods = ["roman-1962-horizon"]
-statuses = ["unresolved"]
+statuses = ["universal-roman"]
 ceremonies = ["asperges", "ceremony-surrounding-mass", "procession"]
 related_objects = ["obj-holy-water-vessel"]
 
 [presence]
-locations = ["Prepared with the portable holy-water vessel."]
-contexts = ["Candidate record for the implement used to sprinkle holy water."]
+locations = ["Used with the portable holy-water vessel in the named Asperges ceremony."]
+contexts = ["Sprinkler dipped into holy water and used by the priest."]
 local_variability = "common"
 
 [handling]
-ordinary_handlers = ["priest", "deacon", "cleric", "other-server"]
-server_relation = "varies-by-ceremony"
-prepares = ["sacristan"]
-stores = ["sacristan"]
-warnings = ["Present the handle securely and keep the wet head controlled."]
+ordinary_handlers = ["priest", "deacon"]
+server_relation = "recognizes-only"
+warnings = ["Keep the wet head controlled and away from faces, books, textiles, and electrical fittings. This record gives no server handoff beyond the named Asperges evidence."]
 
 [audience_relevance]
 altar_server = "required"
@@ -30,31 +28,96 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
-id = "clm-aspergillum-candidate"
+id = "clm-aspergillum-identity"
 kind = "identity"
-text = "Candidate inventory identity and representative sprinkler morphology; governing source loci remain to be audited."
-evidence_state = "editorial-proposal"
-source_ids = []
+text = "An aspergillum is a holy-water sprinkler; checked sources document brush-ended and perforated hollow-globe forms, and the plate shows the latter."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-aspergillum-fortescue-1917", "src-aspergillum-fortescue-1943-morphology"]
+
+[[claims]]
+id = "clm-aspergillum-use"
+kind = "liturgical-use"
+text = "In the named Asperges ceremony, the sprinkler is dipped into holy water, handed by the deacon to the priest, and used by the priest for the sprinkling."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-aspergillum-fortescue-1943", "src-aspergillum-missal-1962"]
 
 [[claims]]
 id = "clm-aspergillum-appearance"
 kind = "appearance"
 text = "The candidate artwork shows a straight metal handle and perforated spherical sprinkler head as one representative form."
-evidence_state = "editorial-proposal"
-source_ids = []
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-aspergillum-fortescue-1917", "src-aspergillum-fortescue-1943-morphology"]
 
 [[sources]]
-id = "src-aspergillum-fortescue-lead"
-binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
-locus = "Relevant aspergillum passages not yet located."
-role = "lead-only"
-verification_state = "unlocated"
+id = "src-aspergillum-fortescue-1917"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-16"
+locus = "Printed p. 16; artifact PDF p. 44."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-aspergillum-fortescue-1943-morphology"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-17"
+locus = "Printed p. 17; artifact PDF p. 38."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-aspergillum-fortescue-1943"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-79-81"
+locus = "Printed pp. 79-81; artifact PDF pp. 100-102."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-aspergillum-missal-1962"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-ad-aspergendam-aquam-benedictam"
+locus = "Bracketed printed pp. [231]-[233]; artifact PDF pp. 1039-1041."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
 
 [[artwork]]
 id = "art-related-ceremonies-0002-iso-aspergillum"
 view = "isolated"
-asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum.png"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v2.png"
 review_state = "identity-checked"
 depicts = ["obj-aspergillum"]
 scale_mode = "not-applicable"
-review_note = "Screen-checked for one handle and perforated head, coherent connection, grayscale ground, crop safety, absent lettering, and no droplets; source, variant, and print review remain pending."
+review_note = "Full-size screen and print-consumer checks passed for one representative perforated hollow-globe form. Fortescue also documents a brush-ended form; the drawing does not make the globe form universal or prescribe dimensions, ornament, handle profile, or perforation pattern."
+
+[[variants]]
+id = "var-aspergillum-brush"
+preferred_name = "Brush-ended sprinkler"
+distinguishing_features = "Brush at the end of the sprinkler."
+status = "universal-roman"
+source_ids = ["src-aspergillum-fortescue-1917", "src-aspergillum-fortescue-1943-morphology"]
+artwork_ids = []
+note = "Documented form; the sources do not make it exclusive or prescribe brush material, size, or construction."
+
+[[variants]]
+id = "var-aspergillum-hollow-globe"
+preferred_name = "Perforated hollow-globe sprinkler"
+distinguishing_features = "Hollow globe with perforations at the sprinkler end."
+status = "universal-roman"
+source_ids = ["src-aspergillum-fortescue-1917", "src-aspergillum-fortescue-1943-morphology"]
+artwork_ids = ["art-related-ceremonies-0002-iso-aspergillum"]
+note = "Documented form represented by the current plate; perforation pattern, handle profile, dimensions, and ornament remain illustrative."
+
+[[audience_note]]
+audience = "sacristan"
+text = "No preparation, storage, drying, cleaning, or local placement procedure is supplied."
+claim_ids = ["clm-aspergillum-identity", "clm-aspergillum-appearance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Do not infer a universal server route from the checked deacon-to-priest relation."
+claim_ids = ["clm-aspergillum-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This is an ordinary related-ceremony implement, not pontifical insignia or a distinct pontifical form."
+claim_ids = ["clm-aspergillum-identity"]

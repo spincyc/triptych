@@ -137,28 +137,28 @@ view = "open"
 workflow_state = "consumer-review-passed"
 
 [[artwork_links]]
-id = "art-related-ceremonies-0001-iso-holy-water-vessel"
-asset_file_id = "file-rpd-holy-water-vessel"
-object_ids = ["obj-holy-water-vessel"]
-variant_ids = []
-view = "isolated"
-workflow_state = "generated"
-
-[[artwork_links]]
-id = "art-related-ceremonies-0002-iso-aspergillum"
-asset_file_id = "file-rpd-aspergillum"
-object_ids = ["obj-aspergillum"]
-variant_ids = []
-view = "isolated"
-workflow_state = "generated"
-
-[[artwork_links]]
 id = "art-related-ceremonies-0003-open-ombrellino"
 asset_file_id = "file-rpd-ombrellino"
-object_ids = ["obj-ombrellino"]
+object_ids = ["obj-basilical-conopaeum", "obj-ombrellino"]
 variant_ids = []
 view = "open"
-workflow_state = "generated"
+workflow_state = "rejected"
+
+[[artwork_links]]
+id = "art-related-ceremonies-0003-basilical-conopaeum"
+asset_file_id = "file-rpd-basilical-conopaeum-v2"
+object_ids = ["obj-basilical-conopaeum"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+
+[[artwork_links]]
+id = "art-related-ceremonies-0004-eucharistic-ombrellino"
+asset_file_id = "file-rpd-eucharistic-ombrellino-v2"
+object_ids = ["obj-ombrellino"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
 
 [[artwork_links]]
 id = "art-bishops-chair-comparison"
@@ -548,18 +548,32 @@ audit_record = "research/carried-lights-and-cross-source-audit-2026-07-28.md"
 technical = { width_px = 887, height_px = 1774, bit_depth = 8, color_mode = "grayscale", bytes = 308632, sha256 = "42515401346587f2daddc33d6ab6dc7d478483fda55817d69e1dae20ec3913f2" }
 
 [[asset_files]]
-id = "file-rpd-holy-water-vessel"
+id = "file-rpd-holy-water-vessel-v1"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel.png"
 state = "held"
-audit_record = "research/artwork-manifest.md"
+audit_record = "research/holy-water-pair-source-audit-2026-07-28.md"
 technical = { width_px = 467, height_px = 700, bit_depth = 8, color_mode = "grayscale", bytes = 126823, sha256 = "f79cc2acb9cbbb09958849acf42a94e6506250c631f9afc71da5fc0610f739e6" }
 
 [[asset_files]]
-id = "file-rpd-aspergillum"
+id = "file-rpd-holy-water-vessel"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/holy-water-pair-source-audit-2026-07-28.md"
+technical = { width_px = 1024, height_px = 1535, bit_depth = 8, color_mode = "grayscale", bytes = 539650, sha256 = "0beb2cc255d667231beae30a3f0d1eaf0147964685e571e21a952792045770ef" }
+
+[[asset_files]]
+id = "file-rpd-aspergillum-v1"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum.png"
 state = "held"
-audit_record = "research/artwork-manifest.md"
+audit_record = "research/holy-water-pair-source-audit-2026-07-28.md"
 technical = { width_px = 750, height_px = 500, bit_depth = 8, color_mode = "grayscale", bytes = 102449, sha256 = "2507fb409c3abf977b6ba4a24c791499eab91b7166ea62696e3cfdbfa7ea39c5" }
+
+[[asset_files]]
+id = "file-rpd-aspergillum"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/holy-water-pair-source-audit-2026-07-28.md"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 367659, sha256 = "c8453019c107c7b0b85ab4847577867bf56463353ea4aacfc2e97c390dc8e9f1" }
 
 [[asset_files]]
 id = "file-rpd-ombrellino"
@@ -601,7 +615,7 @@ baked_content_audit = [
 ]
 tex_overlays = ["English identity, the deliberately unresolved Latin-term line, wine-and-water use, stable ID, local-variation boundary, handling note, source keys, and audience-specific guidance remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
 rights = "Project-generated raster made without image inputs; contemporaneous prompt bounds, received and normalized hashes, transformation, evidence references, and consumer limits are recorded. Distributed under the repository's project-content terms."
 
 [artworks.received]
@@ -866,7 +880,7 @@ baked_content_audit = [
 tex_overlays = ["English and Latin names, practical/local status, stable ID, source key, representative-form boundary, handling warning, and audience-specific guidance remain TeX-owned."]
 consumer_plate_ids = []
 consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-pontifical"]
-rights = "Project-generated raster made without supplied reference-image input. The exact prompt is unavailable and is not reconstructed; the contemporaneous prompt bounds, received and normalized hashes, transformation, source-control boundary, and consumers are recorded. Distributed under the repository's project-content terms."
+rights = "Project-generated raster edited from the registered held predecessor as an identity and composition reference. The exact prompt, received and normalized hashes, transformation, source-control boundary, and consumers are recorded. Distributed under the repository's project-content terms."
 
 [artworks.received]
 width_px = 1024
@@ -886,7 +900,149 @@ bytes = 327149
 sha256 = "0c2b6837ca7f647cc38d21d34af76cbd64dd9d25ce356acec25db30e0f66f41e"
 max_placement_width_in = 3.0
 max_placement_height_in = 4.5
-effective_dpi = 341.3
+effective_dpi = 341.1
+
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-related-ceremonies-0001-iso-holy-water-vessel"
+object_ids = ["obj-holy-water-vessel"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach recognition of the portable metal holy-water vessel paired with the aspergillum while keeping the depicted vessel morphology illustrative."
+depicted_state = "One open portable metal vessel with an arched bail, tapered body, stable foot, and visible waterline, isolated on white."
+source_controlled_features = [
+  "Fortescue's first-edition and 1943 morphology passages identify a portable metal holy-water vessel used with the sprinkler.",
+  "The checked Asperges passages control the paired holy-water use, not the vessel's depicted bail, taper, foot, waterline, dimensions, or ornament.",
+]
+deliberate_omissions = [
+  "No claim that the bail, pivot form, tapered body, foot, waterline, dimensions, proportions, material finish, or ornament is universal.",
+  "No server carrier, sacristan preparation or storage, local placement, filling, cleaning, or handoff procedure.",
+  "No person, hand, church setting, altar, text, lettering, numeral, arrow, label, border, splashing, pouring, or action.",
+]
+brief = "One representative open portable metal holy-water vessel rendered as restrained monochrome graphite on white; the identity is source-controlled and the detailed silhouette is illustrative."
+exact_prompt = """Use case: scientific-educational
+Asset type: full-page pictorial-dictionary object plate
+Primary request: create a new high-resolution restrained graphite pencil study of one portable metal holy-water vessel, using the supplied image only as a composition and identity reference.
+Scene/backdrop: pure white page ground, isolated object, no scene.
+Subject: exactly one open portable metal vessel suitable for holding holy water. Keep it unmistakably portable and metallic. A simple bail, modest stable base, and subtle water surface may appear only as representative illustrative details, never as ornate or definitive design features.
+Style/medium: historically attentive monochrome graphite and pencil, fine cross-hatching, publication-quality, softly modeled but high edge clarity.
+Composition/framing: centered portrait composition, full object visible, generous white margins, no cropping.
+Constraints: mechanically coherent rim, vessel body, handle pivots, and base; image must remain readable in grayscale at US Letter print size; no semantic marks.
+Avoid: words, letters, numbers, arrows, captions, labels, watermark, border, color, people, hands, church interior, altar, other objects, pouring, splashing, action, impossible handle connection, household-cleaning cues, excessive ornament, engraved symbols, heraldry, crosses, exact scale marks."""
+generator = "OpenAI built-in image-generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel-v2.png"
+reference_ids = ["src-holy-water-vessel-fortescue-1917", "src-holy-water-vessel-fortescue-1943"]
+precursor_ids = []
+corrections = ["The held low-resolution predecessor was used only as an identity and composition reference for a new high-resolution sibling.", "The selected 1024 by 1535 output was converted to 8-bit grayscale, stripped of metadata, and assigned 300-pixel-per-inch density without changing its pixel geometry."]
+baked_content_audit = [
+  "Exactly one open portable vessel is shown with coherent rim, body, base, bail, and pivots.",
+  "The bail, taper, foot, and visible waterline remain obvious enough to qualify in TeX as illustrative details rather than universal morphology.",
+  "No text, lettering, numeral, arrow, label, border, watermark, color, person, hand, altar, church setting, splashing, pouring, or unsafe action is visible.",
+]
+tex_overlays = ["English and Latin identity, related-ceremony status, stable ID, representative-form boundary, spill warning, source keys, and audience-specific guidance remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without supplied reference-image input. The exact prompt is unavailable and is not reconstructed; the contemporaneous prompt bounds, received and normalized hashes, transformation, source-control boundary, and consumers are recorded. Distributed under the repository's project-content terms."
+
+[artworks.received]
+width_px = 1024
+height_px = 1535
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1339350
+sha256 = "852915d66ccdb62a78de2b706b7f8c498c8eac5f889a84f17e790f83c4127154"
+
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel-v2.png"
+width_px = 1024
+height_px = 1535
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 539650
+sha256 = "0beb2cc255d667231beae30a3f0d1eaf0147964685e571e21a952792045770ef"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 341.1
+
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-related-ceremonies-0002-iso-aspergillum"
+object_ids = ["obj-aspergillum"]
+variant_ids = ["var-aspergillum-hollow-globe"]
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach recognition of the documented perforated hollow-globe aspergillum while preserving the documented brush-ended alternative."
+depicted_state = "One straight-handled sprinkler with a compact perforated spherical head, isolated on white."
+source_controlled_features = [
+  "Fortescue's first-edition and 1943 morphology passages document both brush-ended and perforated hollow-globe sprinkler forms.",
+  "The checked Asperges passages control dipping, deacon-to-priest transfer, and priestly use in that named ceremony.",
+]
+deliberate_omissions = [
+  "No claim that the hollow-globe form is exclusive or that the depicted handle profile, perforation pattern, dimensions, proportions, metal finish, or ornament is universal.",
+  "No server handoff, sacristan preparation or storage, local placement, cleaning, drying, or other ceremonial route.",
+  "No vessel, water droplets, person, hand, church setting, altar, text, lettering, numeral, arrow, label, border, or action.",
+]
+brief = "One representative perforated hollow-globe aspergillum rendered as restrained monochrome graphite on white; TeX identifies the unpictured brush-ended variant."
+exact_prompt = """Use case: scientific-educational
+Asset type: full-page pictorial-dictionary object plate
+Primary request: create a new high-resolution restrained graphite pencil study of one aspergillum in the documented perforated hollow-globe form, using the supplied image only as a composition and identity reference.
+Scene/backdrop: pure white page ground, isolated object, no scene.
+Subject: exactly one straight-handled sprinkler with a coherent shaft and compact hollow spherical head pierced by many small holes. The globe form is one documented variant; do not suggest it is the only form.
+Style/medium: historically attentive monochrome graphite and pencil, fine cross-hatching, publication-quality, softly modeled but high edge clarity.
+Composition/framing: centered landscape-diagonal composition, entire object visible, generous white margins, no cropping.
+Constraints: mechanically coherent handle-to-shaft-to-head connection; clear perforations; image must remain readable in grayscale at US Letter print size; no semantic marks.
+Avoid: words, letters, numbers, arrows, captions, labels, watermark, border, color, people, hands, holy-water vessel, water droplets, church interior, altar, other objects, action, brush head, impossible joints, excessive ornament, engraved symbols, heraldry, crosses, exact scale marks."""
+generator = "OpenAI built-in image-generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v2.png"
+reference_ids = ["src-aspergillum-fortescue-1917", "src-aspergillum-fortescue-1943-morphology", "src-aspergillum-fortescue-1943", "src-aspergillum-missal-1962"]
+precursor_ids = []
+corrections = ["The held low-resolution predecessor was used only as an identity and composition reference for a new high-resolution sibling.", "The selected 1536 by 1024 output was converted to 8-bit grayscale, stripped of metadata, and assigned 300-pixel-per-inch density without changing its pixel geometry."]
+baked_content_audit = [
+  "Exactly one straight handle, coherent shaft, and compact perforated spherical sprinkler head are shown.",
+  "The hollow globe remains clearly distinguishable from the separately documented but unpictured brush-ended form.",
+  "No text, lettering, numeral, arrow, label, border, watermark, color, water droplet, person, hand, vessel, altar, church setting, or action is visible.",
+]
+tex_overlays = ["English and Latin identity, named Asperges relationship, stable ID, two-form variant note, source keys, handling warning, and audience-specific guidance remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster edited from the registered held predecessor as an identity and composition reference. The exact prompt, received and normalized hashes, transformation, source-control boundary, and consumers are recorded. Distributed under the repository's project-content terms."
+
+[artworks.received]
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1299229
+sha256 = "1f3e236128ca3c59cf71229a69d24370d35cbf44342d48f2945b586ce5a9c230"
+
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v2.png"
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 367659
+sha256 = "c8453019c107c7b0b85ab4847577867bf56463353ea4aacfc2e97c390dc8e9f1"
+max_placement_width_in = 4.55
+max_placement_height_in = 3.04
+effective_dpi = 336.8
 
 [artworks.reviews]
 factual = "passed"
@@ -2252,6 +2408,185 @@ bit_depth = 8
 color_mode = "grayscale"
 bytes = 494461
 sha256 = "5e19f4e826e3f138433d1a692ce398f5420c6cf1491e13785e48a0f74258302b"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[asset_files]]
+id = "file-rpd-basilical-conopaeum-v2"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/ombrellino-taxonomy-and-artwork-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 544491, sha256 = "2bc2433289c6fc6d119354c61c53ae800f10405a3dd711fa262d5ff8d5db51bc" }
+
+[[asset_files]]
+id = "file-rpd-eucharistic-ombrellino-v2"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/ombrellino-taxonomy-and-artwork-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 517708, sha256 = "bcdffc7d0ae4677ab7490fc2a25e727df8fbc0b2947c50bccd57bff8f6d4ceca" }
+
+[[artworks]]
+id = "art-open-ombrellino-legacy-rejected"
+object_ids = ["obj-basilical-conopaeum", "obj-ombrellino"]
+variant_ids = []
+view = "open"
+workflow_state = "rejected"
+purpose = "Preserve the former generic ombrellino plate as evidence of the corrected taxonomy without assigning its ambiguous fully opened canopy to either distinct object."
+depicted_state = "One generic fully open fringed umbrella-like canopy with alternating graphite panels on a central staff."
+source_controlled_features = ["The plate predates the source audit and conflates the institutional basilical conopaeum with the small Eucharistic ombrellino recognition class.", "Its open generic silhouette cannot prove which object is depicted."]
+deliberate_omissions = ["No consumer use after the taxonomy split.", "No inference of institutional privilege, Eucharistic use, color, material, dimensions, construction, bearer, or ceremonial assignment."]
+brief = "Held historical generic canopy retained non-destructively after the basilical and Eucharistic objects were separated."
+exact_prompt = "Unavailable: the retained legacy asset predates the current exact-prompt custody record; no prompt has been reconstructed."
+generator = "Earlier project generation; exact model identifier, runtime, and prompt were not retained."
+generated_on = "2026-07-27"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-open-ombrellino.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Rejected for consumer use after direct source audit established two distinct objects.", "Preserved at its original versioned path and hash; no pixel was overwritten or reclassified as evidence."]
+baked_content_audit = ["One coherent generic fully open canopy, central staff, ribs, fringe, and alternating graphite panels are visible.", "No text, label, person, Eucharist, institutional arms, dimensions, or color appears.", "The silhouette is too ambiguous to establish either the basilical or Eucharistic identity."]
+tex_overlays = []
+consumer_plate_ids = []
+consumer_edition_ids = []
+rights = "Retained project-generated raster under the repository's project-content terms. Its missing exact prompt and exposed runtime are disclosed; it has no current consumer."
+[artworks.received]
+width_px = 600
+height_px = 900
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 185710
+sha256 = "2f35848f3bd9e96aec5999a8cf515e467b2b5c9be210a1ad9aa98692662a55e2"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-open-ombrellino.png"
+width_px = 600
+height_px = 900
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 185710
+sha256 = "2f35848f3bd9e96aec5999a8cf515e467b2b5c9be210a1ad9aa98692662a55e2"
+max_placement_width_in = 2.0
+max_placement_height_in = 3.0
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "failed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "failed"
+release = "failed"
+
+[[artworks]]
+id = "art-basilical-conopaeum-v2-generated"
+object_ids = ["obj-basilical-conopaeum"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the basilical conopaeum as a distinct institutional insigne through one representative partially opened conical form."
+depicted_state = "One partially opened conical alternating-panel canopy on a long single staff with a modest ball-and-cross finial."
+source_controlled_features = ["Official basilica grants control the institutional conopaeum identity and its distinction from a generic Mass implement or Eucharistic canopy.", "The checked historical secondary source controls only the representative partially opened conical recognition class."]
+deliberate_omissions = ["No claim that color, fabric, panel count, fringe, finial, ornament, arms, dimensions, construction, opening state, or staff form is universal.", "No tintinnabulum, person, procession, church, Eucharist, text, label, dimensions, carrying posture, or gold or silver ornament."]
+brief = "Restrained graphite recognition study of one representative basilical conopaeum, partially opened and isolated."
+exact_prompt = """Use case: scientific-educational
+Asset type: source-controlled pictorial-dictionary plate for a Roman Catholic basilical-insignia reference
+Primary request: Create a restrained graphite pencil recognition study of one basilical conopaeum (umbraculum), shown as a partially opened conical canopy on a single long carrying pole.
+Scene/backdrop: plain warm-white paper, no environment or floor plane
+Subject: one institutional basilical conopaeum only; half-open/partially opened conical canopy with alternating fabric panels conveyed by differing graphite hatch densities, single pole, modest ball-and-cross finial; historically plausible traditional Roman Catholic form
+Style/medium: careful monochrome graphite pencil, subtle paper grain, clean museum-catalog object study, not photorealistic
+Composition/framing: portrait orientation, entire canopy, finial, pole, and foot visible, centered, generous margins, no crop
+Lighting/mood: neutral even illumination
+Constraints: no people, Eucharist, procession, church interior, text, labels, letters, coat of arms, ribbons, gold/silver ornament, dimensions, carrying posture, watermark, frame, or claim of universal morphology; object recognition only; one object
+Avoid: ordinary rain umbrella, fully open beach parasol, flat Eucharistic ombrellino, papal tiara, decorative fantasy, color, black fill, gradient background"""
+generator = "OpenAI built-in image generation tool used through the image-generation skill; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v2.png"
+reference_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi", "src-basilical-conopaeum-aas-1962", "src-basilical-conopaeum-macalisang"]
+precursor_ids = ["art-open-ombrellino-legacy-rejected"]
+corrections = ["Separated the institutional basilical conopaeum from the Eucharistic ombrellino instead of relabeling the ambiguous generic legacy plate.", "Copied the generated original before processing; stripped ancillary metadata, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit."]
+baked_content_audit = ["One complete partially opened conical canopy, alternating graphite panels, single staff, foot, and ball-and-cross finial are visible.", "No person, Eucharist, procession, church, text, label, letter, coat of arms, ribbon, gold or silver ornament, dimensions, carrying posture, other object, crop, duplication, color, watermark, frame, or gradient background appears.", "The plate remains representative; its morphology supplies no source evidence."]
+tex_overlays = ["English and Latin headwords, stable object ID, institutional status, basilica-only scope, conopaeum/tintinnabulum relation, morphology ceiling, source keys, audience qualifications, and no-common-scale boundary remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image. The exact prompt, built-in mode, received and normalized identities, transformation, source ceiling, consumers, and checks are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2269487
+sha256 = "95c75923f04fb5c278b8f83633105bad11f6694b1a5ee4b7fb1f9b0ba5c58409"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 544491
+sha256 = "2bc2433289c6fc6d119354c61c53ae800f10405a3dd711fa262d5ff8d5db51bc"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-eucharistic-ombrellino-v2-generated"
+object_ids = ["obj-ombrellino"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the small Eucharistic ombrellino as distinct from both the larger baldachin and the institutional basilical conopaeum."
+depicted_state = "One compact shallow, nearly flat circular canopy with modest fringe on a long single staff."
+source_controlled_features = ["The Roman Ritual controls the where-available umbrella-or-baldachin branch for public Communion or Viaticum and the priest's position beneath it.", "The checked historical secondary source controls only the small flat single-staff recognition class."]
+deliberate_omissions = ["No claim that fabric, color, panel pattern, fringe, dimensions, staff, foot, ornament, or construction is universal.", "No person, Eucharist, monstrance, pyx, procession, church, text, label, arms, cross finial, dimensions, carrying posture, or institutional basilical form."]
+brief = "Restrained graphite recognition study of one representative small, shallow Eucharistic ombrellino on a single long staff."
+exact_prompt = """Use case: scientific-educational
+Asset type: source-controlled pictorial-dictionary plate for a Roman Catholic liturgical-object reference
+Primary request: Create a restrained graphite pencil recognition study of one Eucharistic ombrellino (small processional umbrella or umbella), shown as a compact, shallow, nearly flat circular canopy on one long single carrying staff.
+Scene/backdrop: plain warm-white paper, no environment or floor plane
+Subject: one Eucharistic ombrellino only; small shallow flat canopy, modest fringe, long central single pole and simple foot; alternating very light graphite hatch values may suggest traditional white or cloth-of-gold fabric without asserting color
+Style/medium: careful monochrome graphite pencil, subtle paper grain, clean museum-catalog object study, not photorealistic
+Composition/framing: portrait orientation, entire canopy, staff, and foot visible, centered, generous margins, no crop
+Lighting/mood: neutral even illumination
+Constraints: no people, Eucharist, monstrance, pyx, procession, church interior, text, labels, letters, coat of arms, cross finial, red-yellow alternating panels, dimensions, carrying posture, watermark, frame, or claim of universal morphology; object recognition only; one object
+Avoid: tall conical basilical conopaeum, half-open basilical insignia, ordinary rain umbrella, beach parasol, fully domed canopy, papal tiara, decorative fantasy, color, black fill, gradient background"""
+generator = "OpenAI built-in image generation tool used through the image-generation skill; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v2.png"
+reference_ids = ["src-eucharistic-ombrellino-ritual", "src-eucharistic-ombrellino-ce"]
+precursor_ids = ["art-open-ombrellino-legacy-rejected"]
+corrections = ["Separated the small Eucharistic ombrellino from the institutional basilical conopaeum instead of relabeling the ambiguous generic legacy plate.", "Copied the generated original before processing; stripped ancillary metadata, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit."]
+baked_content_audit = ["One complete shallow, nearly flat circular canopy, modest fringe, central long staff, and foot are visible.", "No person, Eucharist, monstrance, pyx, procession, church, text, label, letter, arms, cross finial, dimensions, carrying posture, other object, crop, duplication, color, watermark, frame, or gradient background appears.", "The plate remains representative; its morphology supplies no source evidence."]
+tex_overlays = ["English and Latin headwords, stable object ID, where-available ritual branch, public Communion or Viaticum scope, confusable distinctions, morphology ceiling, source keys, audience qualifications, and no-common-scale boundary remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image. The exact prompt, built-in mode, received and normalized identities, transformation, source ceiling, consumers, and checks are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2160847
+sha256 = "68ece54fb10b6553a1edf017377a028024176026cbfa5a0a3dd3c31f6acef9d8"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 517708
+sha256 = "bcdffc7d0ae4677ab7490fc2a25e727df8fbc0b2947c50bccd57bff8f6d4ceca"
 max_placement_width_in = 3.0
 max_placement_height_in = 4.5
 effective_dpi = 300.0

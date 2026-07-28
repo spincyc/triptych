@@ -80,3 +80,15 @@ The pre-Mass handwashing place enters text only as an ordinary supporting
 preparation record, not pontifical insignia or a distinct pontifical form.
 Its local form, location, plumbing, outlet, and disposal practice are not
 asserted.
+
+The portable holy-water vessel and aspergillum enter as ordinary
+related-ceremony support, not pontifical
+insignia or distinct pontifical forms. Their claims remain limited to the
+checked Asperges relationship and documented brush/globe sprinkler variants;
+the representative vessel silhouette is not universalized.
+
+The basilical conopaeum and Eucharistic ombrellino enter only as
+cross-referenced related-ceremony objects. Neither is pontifical insignia or a
+distinct pontifical form: the first belongs to a basilica's institutional
+privilege, and the second belongs only to the appointed Eucharistic route.
+Their separate graphite plates create no pontifical assignment.

@@ -3,6 +3,12 @@
 Status: **provisional queue; no variant admitted or verified**
 Audit date: 2026-07-27
 
+The aspergillum now has two source-audited morphological variants:
+`var-aspergillum-brush` and `var-aspergillum-hollow-globe`. Fortescue's 1917
+and 1943 editions document both forms. Only the hollow-globe form has a
+consumer plate; brush material, globe perforation pattern, handle profile,
+dimensions, proportions, and ornament remain unasserted.
+
 ## Admission test
 
 A variant receives a stable `var-...` ID only when a checked source shows a

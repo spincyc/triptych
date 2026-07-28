@@ -3,6 +3,39 @@
 Status: **bounded public alphas**
 Audit date: 2026-07-28
 
+## Holy-water vessel and aspergillum checkpoint — 2026-07-28
+
+The portable holy-water vessel and aspergillum now enter the comprehensive,
+sacristan, MC/trainer, general-reader, and pontifical generated alphas as a
+paired related-ceremony family. Exact Fortescue witnesses control the portable
+metal vessel and the brush/perforated-globe sprinkler forms. The 1962 Missal
+and contemporary ceremonial control only the named Asperges dipping and
+deacon-to-priest relation.
+
+The held low-resolution pencil figures were replaced by new high-resolution
+siblings made through the image-generation skill and normalized to stripped
+8-bit grayscale. The vessel's bail, taper, foot, water surface, dimensions,
+and ornament remain illustrative. No sacristan procedure, acolyte carrier,
+universal server route, or role beyond the checked Asperges is asserted. The
+bespoke altar-server dictionary remains unchanged.
+
+The five PDFs were rebuilt with the concurrent conopaeum/ombrellino taxonomy
+split. All 205 pages were rastered through `scripts/pdf-review` and visually
+inspected. The holy-water pages were also checked at full size. The documented
+brush/globe distinction, images, labels, source-bounded prose, and
+audience-specific boundaries are legible, with no clipping, overlap, spill
+page, impossible construction, or misleading morphology. Settled logs have no
+fatal error, undefined reference, overfull box, or rerun warning. Fonts are
+embedded, text is extractable, and installed bytes match the reviewed builds:
+
+| Edition | Records | Pages | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 39 | 42 | `a12be9638588b5e26655dd735290fc8b337f946bb275c7981fb45be34492fb67` |
+| Sacristan | 39 | 42 | `660ec9a6ff6b3937d840b78f247c8e8b403eca693d91f122897cd78d91ecbed3` |
+| MC and trainer | 39 | 42 | `7732fa566d2a5d116000d00a6b5bf75dd52a7438ee1b148fe85298b8b3987179` |
+| General reader | 37 | 40 | `5d2887748f34dc45abc595bc46de5a6e46a8bb9f0e431b20d8e9565fa7c46d15` |
+| Pontifical ceremonies | 36 | 39 | `1c8a5c54e5e2077b82b4523de9332124a3d1e1e4c3a2d6faf42be6fd6ca02713` |
+
 ## Sacristy handwashing-place text-only checkpoint — 2026-07-28
 
 The comprehensive, sacristan, MC/trainer, general-reader, and pontifical

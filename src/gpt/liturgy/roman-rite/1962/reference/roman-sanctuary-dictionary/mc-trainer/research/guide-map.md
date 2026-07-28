@@ -63,3 +63,16 @@ The pre-Mass handwashing place is a text-only recognition boundary. Training
 may identify the local arrangement but must not invent a server assignment,
 visual form, plumbing, outlet, disposal rule, or equivalence with either
 Offertory lavabo articles or the piscina.
+
+The portable holy-water vessel and aspergillum add two paired records.
+Training is limited to the named Asperges relation:
+the sprinkler is dipped in holy water and handed by the deacon to the priest.
+No universal server carrier, preparation route, or ceremony beyond that
+checked locus is inferred. Both documented sprinkler forms are named; only
+the perforated hollow-globe form is pictured.
+
+The basilical conopaeum enters only as a basilical institutional branch, while
+the Eucharistic ombrellino enters only in an appointed public Communion,
+Viaticum, or transfer route. Training keeps both distinct from each other and
+from the larger baldachin; the plates create no ordinary Mass assignment,
+bearer, handoff, route, opening method, or operating procedure.

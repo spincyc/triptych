@@ -3,6 +3,13 @@
 Status: **project-generated alpha artwork reconciled; external materials remain artifact-specific**
 Audit date: 2026-07-28
 
+The holy-water pair uses project-generated pencil assets. Two newly generated
+high-resolution siblings replace held low-resolution predecessors for
+publication. Exact prompts, received and normalized hashes, transformations,
+consumers, and review results are recorded in the artwork manifest; no source
+page image or source text is embedded. The remote Fortescue and Missal
+witnesses supply evidence only and are not redistributed.
+
 The Epistle- and Gospel-book pages reproduce no raster or third-party image.
 Their generic closed/open book figures are repository-authored TeX paths,
 lines, and neutral shading; all words and relationships are separately

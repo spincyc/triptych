@@ -65,3 +65,17 @@ freestanding lectern.
 The pre-Mass handwashing place is included text only. Prepare and identify the
 local arrangement without inferring its form, plumbing, outlet, or disposal
 use from appearance; keep it distinct from the Offertory lavabo and piscina.
+
+The portable holy-water vessel and aspergillum add recognition of the paired
+Asperges objects
+and the documented brush/globe sprinkler distinction, but no preparation,
+filling, storage, cleaning, drying, placement, or local carrier procedure.
+The vessel plate's bail, taper, foot, waterline, dimensions, and ornament are
+illustrative rather than prescribed.
+
+The basilical conopaeum and Eucharistic ombrellino now form distinct
+conditional preparation branches. The first is institutional basilical
+insignia; the second is the small one-staff canopy used only in the appointed
+where-available public Communion or Viaticum route. The plates prescribe no
+fabric, color, dimensions, construction, opening, storage, placement, or
+carrying method.

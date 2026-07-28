@@ -1,0 +1,122 @@
+schema_version = 1
+id = "obj-basilical-conopaeum"
+workflow_state = "publication-ready"
+preferred_english_name = "Basilical conopaeum"
+latin_headword = "conopaeum"
+alternate_english_names = ["basilical umbraculum", "basilical ombrellino", "basilical umbrella"]
+alternate_latin_names = ["conopeum", "canopaeum", "umbraculum"]
+categories = ["related-ceremonies"]
+periods = ["roman-1962-horizon"]
+statuses = ["institutional"]
+ceremonies = ["procession", "ceremony-surrounding-mass"]
+confusable_with = ["obj-ombrellino"]
+
+[presence]
+locations = ["A basilica holding the privilege, with the institution's basilical insignia."]
+contexts = ["Institutional basilical insigne associated in official grants with the tintinnabulum; not a generic Mass implement or Eucharistic canopy."]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["other-server", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+warnings = ["Do not infer a processional assignment from the object's presence; follow the basilica's exact privilege and ceremonial direction."]
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "useful"
+mc_trainer = "useful"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-basilical-conopaeum-identity"
+kind = "identity"
+text = "Official twentieth-century basilica grants identify the conopaeum and tintinnabulum as institutional basilical insignia; they do not make the conopaeum a generic Mass implement or Eucharistic canopy."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi", "src-basilical-conopaeum-aas-1962"]
+
+[[claims]]
+id = "clm-basilical-conopaeum-presence"
+kind = "ceremonial-presence"
+text = "The checked grants authorize the conopaeum and tintinnabulum to be carried before the basilical chapter in solemn processions under the granted institutional privilege."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi"]
+
+[[claims]]
+id = "clm-basilical-conopaeum-use"
+kind = "liturgical-use"
+text = "Its use belongs to the basilica's institutional privilege and exact ceremonial context; the official acts do not establish it as an ordinary altar, Mass, pontifical, or Eucharistic implement."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi", "src-basilical-conopaeum-aas-1962"]
+
+[[claims]]
+id = "clm-basilical-conopaeum-ornament"
+kind = "variation"
+text = "The checked grants permit the basilica's arms on the conopaeum and exclude gold or silver ornament in the granted Roman minor-basilica form; the present unheralded graphite plate does not universalize those act-specific particulars."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi"]
+
+[[claims]]
+id = "clm-basilical-conopaeum-appearance"
+kind = "appearance"
+text = "The plate shows one representative partially opened, conical, alternating-panel form on a single staff. That morphology is a historical secondary control and does not establish universal color, fabric, panel count, finial, dimensions, ornament, opening state, or construction."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-basilical-conopaeum-macalisang"]
+
+[[sources]]
+id = "src-basilical-conopaeum-benedict-xv"
+binding = "act.benedict-xv.molis-amplitudine.1918"
+locus = "AAS 10 (1918), pp. 475-477; Vatican HTML, privilege paragraph."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-basilical-conopaeum-pius-xi"
+binding = "act.pius-xi.marija-bistrica-minor-basilica.1924"
+locus = "AAS 16 (1924), pp. 33-34."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-basilical-conopaeum-aas-1962"
+binding = "act.catholic-church.minor-basilica-grants.1962"
+locus = "AAS 54 (1962), pp. 844-846."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-basilical-conopaeum-macalisang"
+binding = "thesis.macalisang.papal-symbols-of-the-minor-basilica"
+locus = "Pp. 43-44; secondary morphology discussion citing an 1836 decree."
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-related-ceremonies-0003-basilical-conopaeum"
+view = "isolated"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v2.png"
+review_state = "approved"
+depicts = ["obj-basilical-conopaeum"]
+scale_mode = "not-applicable"
+review_note = "Project-generated graphite recognition view of one partially opened conical form. Alternating hatching, finial, panel count, opening state, staff details, dimensions, material, color, and ornament are representative rather than universal."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Treat this as conditional institutional insignia. Prepare, place, or store it only under the basilica's actual privilege and local assignment; the plate prescribes no construction or method."
+claim_ids = ["clm-basilical-conopaeum-identity", "clm-basilical-conopaeum-appearance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach this only in a basilical or institutional branch, paired conceptually with the tintinnabulum and kept distinct from every Eucharistic canopy."
+claim_ids = ["clm-basilical-conopaeum-identity"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Cross-reference this as basilical institutional insignia only; it is not pontifical insignia and creates no pontifical ceremonial assignment."
+claim_ids = ["clm-basilical-conopaeum-identity"]

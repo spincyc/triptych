@@ -3,6 +3,17 @@
 Status: **initial gap audit with one narrow sacristy-furnishings pass**
 Audit date: 2026-07-27
 
+## Holy-water pair, 2026-07-28
+
+The portable holy-water vessel and aspergillum were checked against
+Fortescue's 1917 first edition at printed p. 16, the 1943 seventh revised
+edition at printed pp. 17 and 79--81, and the 1962 Missal's bracketed
+pp. [231]--[233]. The records assert only the portable metal vessel, the
+brush and perforated hollow-globe sprinkler forms, and the named Asperges
+dipping and deacon-to-priest relationship. The detailed audit records three
+corrected preliminary locators and excludes unsupported morphology,
+preparation, storage, server-carrier, and broader-role claims.
+
 ## Epistle and Gospel books, 2026-07-28
 
 The exact 1962 *Missale Romanum*, *Ritus servandus* VI.4--5, directly controls

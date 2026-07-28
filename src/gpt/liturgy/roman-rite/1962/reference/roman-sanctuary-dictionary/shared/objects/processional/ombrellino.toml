@@ -1,25 +1,27 @@
 schema_version = 1
 id = "obj-ombrellino"
-workflow_state = "art-reviewed"
-preferred_english_name = "Ombrellino"
-latin_headword = "umbraculum"
-alternate_english_names = ["ceremonial umbrella"]
+workflow_state = "publication-ready"
+preferred_english_name = "Eucharistic ombrellino"
+latin_headword = "umbella"
+alternate_english_names = ["Eucharistic umbrella", "small Eucharistic canopy"]
+alternate_latin_names = ["ombrellino"]
 categories = ["related-ceremonies"]
 periods = ["roman-1962-horizon"]
-statuses = ["unresolved"]
+statuses = ["institutional"]
 ceremonies = ["procession", "ceremony-surrounding-mass"]
+confusable_with = ["obj-basilical-conopaeum"]
 
 [presence]
-locations = ["Institutional or processional staging area when legitimately used."]
-contexts = ["Candidate related-ceremony record; scope and status are deliberately unresolved."]
+locations = ["Prepared with the articles for public Communion or Viaticum only where this small canopy is available and appointed."]
+contexts = ["A small single-staff canopy used over the priest carrying the Blessed Sacrament in the public Communion or Viaticum rite; it is not the basilical conopaeum."]
 local_variability = "defining"
 
 [handling]
 ordinary_handlers = ["other-server", "cleric"]
-server_relation = "recognizes-only"
+server_relation = "varies-by-ceremony"
 prepares = ["sacristan"]
 stores = ["sacristan"]
-warnings = ["Confirm ceremonial authority and overhead clearance before use."]
+warnings = ["Use only by exact ceremonial assignment and maintain overhead and doorway clearance."]
 
 [audience_relevance]
 altar_server = "useful"
@@ -29,31 +31,74 @@ general_reader = "required"
 pontifical = "useful"
 
 [[claims]]
-id = "clm-ombrellino-candidate"
-kind = "identity"
-text = "Candidate inventory identity only; Roman 1962 scope, institutional status, terminology, and ceremonies require a dedicated source audit before publication."
-evidence_state = "editorial-proposal"
-source_ids = []
+id = "clm-eucharistic-ombrellino-use"
+kind = "ceremonial-presence"
+text = "The Roman Ritual directs that, where it can be had, an umbrella or baldachin accompany public Communion or Viaticum and that the priest carrying the Blessed Sacrament walk beneath it."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-eucharistic-ombrellino-ritual"]
 
 [[claims]]
-id = "clm-ombrellino-appearance"
+id = "clm-eucharistic-ombrellino-position"
+kind = "liturgical-use"
+text = "In that appointed public route, this canopy serves over the priest who carries the Blessed Sacrament; its availability clause does not make it a required ordinary Mass object."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-eucharistic-ombrellino-ritual"]
+
+[[claims]]
+id = "clm-eucharistic-ombrellino-distinction"
+kind = "identity"
+text = "The Eucharistic ombrellino is the small one-staff umbrella form, distinct both from the larger processional baldachin and from the institutional basilical conopaeum."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-eucharistic-ombrellino-ritual", "src-eucharistic-ombrellino-ce"]
+
+[[claims]]
+id = "clm-eucharistic-ombrellino-appearance"
 kind = "appearance"
-text = "The candidate artwork shows one open textile canopy with alternating graphite panels, fringe, ribs, central pole, and grip; it makes no color, heraldic, or universal-use claim."
-evidence_state = "editorial-proposal"
-source_ids = []
+text = "The plate shows one representative shallow, nearly flat canopy on a single long staff. The historical secondary witness supports that recognition class, not a universal material, color, fringe, panel pattern, dimensions, foot, or ornament."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-eucharistic-ombrellino-ce"]
 
 [[sources]]
-id = "src-ombrellino-fortescue-lead"
-binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
-locus = "Relevant ombrellino or umbraculum passages not yet located."
-role = "lead-only"
-verification_state = "unlocated"
+id = "src-eucharistic-ombrellino-ritual"
+binding = "edition.catholic-church.rituale-romanum.typical-1952"
+locus = "Titulus IV, caput IV, nn. 10-13; remote PDF pp. 70-71."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-eucharistic-ombrellino-ce"
+binding = "article.catholic-encyclopedia.baldachinum-of-the-altar.1908"
+locus = "Distinction between the small single-staff ombrellino and the larger rectangular processional baldachin."
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
 
 [[artwork]]
-id = "art-related-ceremonies-0003-open-ombrellino"
-view = "open"
-asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-open-ombrellino.png"
-review_state = "identity-checked"
+id = "art-related-ceremonies-0004-eucharistic-ombrellino"
+view = "isolated"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v2.png"
+review_state = "approved"
 depicts = ["obj-ombrellino"]
 scale_mode = "not-applicable"
-review_note = "Screen-checked for one coherent canopy, ribs, pole, and grip, grayscale ground, crop safety, absent lettering/heraldry/color, and no duplicated structure; source, scope, and print review remain pending."
+review_note = "Project-generated graphite recognition view. Its shallow canopy and one long staff distinguish this representative form from the conical basilical conopaeum; material, color, fringe, panels, dimensions, foot, ornament, bearer, and use remain TeX- and source-controlled."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize this object only in a specifically appointed public Communion, Viaticum, or transfer route; the plate creates no ordinary Mass assignment."
+claim_ids = ["clm-eucharistic-ombrellino-use", "clm-eucharistic-ombrellino-distinction"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare this small canopy only when the exact public Communion or Viaticum rite and local assignment call for it; the plate prescribes no fabric, color, dimensions, fringe, construction, or storage method."
+claim_ids = ["clm-eucharistic-ombrellino-use", "clm-eucharistic-ombrellino-appearance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Keep the optional where-available branch and the distinction from both the larger baldachin and basilical conopaeum explicit; assign carrying only from the governing ceremonial plan."
+claim_ids = ["clm-eucharistic-ombrellino-use", "clm-eucharistic-ombrellino-distinction"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Include this only in Eucharistic processional contexts; it is neither pontifical insignia nor the basilical conopaeum."
+claim_ids = ["clm-eucharistic-ombrellino-distinction"]

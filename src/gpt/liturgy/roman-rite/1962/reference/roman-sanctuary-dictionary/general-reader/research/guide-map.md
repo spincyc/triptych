@@ -61,3 +61,16 @@ subdeacon and does not introduce a lectern.
 The pre-Mass handwashing place is text only: the governing rubric establishes
 the action, not a universal visible form. It is distinct from the portable
 Offertory lavabo and cannot be identified as a piscina from appearance.
+
+The portable holy-water vessel and aspergillum are presented as one
+related-ceremony pair.
+Fortescue documents brush-ended and perforated hollow-globe sprinklers; the
+plate depicts only the globe form, while the vessel's bail, taper, foot,
+waterline, dimensions, and ornament remain one illustrative design.
+
+The basilical conopaeum and Eucharistic ombrellino now appear as separate
+objects. The first is institutional basilical insignia associated with the
+tintinnabulum; the second is the small one-staff canopy in the
+where-available public Communion or Viaticum route. Their distinct graphite
+silhouettes clarify identity without making one material or ornamental form
+universal.

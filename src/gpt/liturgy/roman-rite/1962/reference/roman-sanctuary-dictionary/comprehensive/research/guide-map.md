@@ -72,3 +72,20 @@ The pre-Mass handwashing place appears as a deliberately text-only record.
 The Missal controls the action, while its form, location, plumbing, outlet,
 and disposal practice remain local and unasserted. It is not the portable
 Offertory lavabo or the piscina.
+
+The portable holy-water vessel and aspergillum add a paired related-ceremony
+family to the generated selection: the
+vessel is source-bounded only as portable and metal, while the sprinkler has
+documented brush-ended and perforated hollow-globe forms. The plate shows the
+globe form only. The vessel's depicted bail, taper, foot, waterline,
+dimensions, and ornament remain illustrative, and the ministerial claim is
+limited to the checked Asperges deacon-to-priest relation.
+
+The former generic ombrellino candidate is now split into two checked
+related-ceremony records. The basilical conopaeum is institutional basilical
+insignia associated with the tintinnabulum, not a Eucharistic or generic Mass
+canopy. The Eucharistic ombrellino is the small one-staff, where-available
+canopy in the public Communion or Viaticum route. Separate graphite plates
+teach the source-bounded recognition distinction without universalizing
+color, material, panel pattern, finial, fringe, dimensions, construction, or
+ceremonial assignment.
