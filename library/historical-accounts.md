@@ -4,8 +4,9 @@
 
 ## Catholic Exorcism
 
-**[Open the Catholic Exorcism study](catholic-exorcism.md)** for PDF, web, and
-section links.
+| Child study | Study page | Coverage |
+| --- | --- | --- |
+| **Catholic Exorcism: History, Discipline, and Pastoral Practice** | [Open study](catholic-exorcism.md) | History, theology, discipline, discernment, safeguarding, and subject-by-subject web links. |
 
 ## Biblical Translation Histories
 

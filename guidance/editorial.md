@@ -41,6 +41,25 @@ A thesis or governing question is substantive and may open the body. Operational
 
 The appendix never absorbs a qualification that changes a particular claim. Keep disputed attribution, material uncertainty, branch dependence, jurisdictional difference, source status, and other local limits beside the affected claim.
 
+## Illustration and page composition
+
+When a publication uses illustrations, compose each page or spread as one
+designed visual field rather than a sequence of repeated image cards. Vary
+scale, crop, placement, grouping, and the relationship of image to text
+according to the subject while preserving a clear reading order, accurate
+identification, accessible labels, and legibility at the intended print size.
+An asymmetric, overlapping, inset, marginal, or other heterodox layout is
+welcome when it strengthens discovery or comparison; visual novelty never
+excuses ambiguity, clipping, crowding, or decorative padding.
+
+Integrate unframed artwork into the page ground. Use transparency or a
+background matched to the publication stock, and remove crop rectangles,
+mismatched whites, scanning halos, corner discoloration, and hard tonal edges.
+Retain a visible image boundary only as an intentional frame, facsimile, or
+full-bleed treatment with a clear editorial purpose. Review illustrated pages
+at full size and under enough contrast to expose seams and floating
+rectangles.
+
 ## Evidence and claims
 
 Keep these states distinct in research and publication:

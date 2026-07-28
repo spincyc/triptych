@@ -766,13 +766,13 @@ class PublicAlphaTest(unittest.TestCase):
         workflow = (REPOSITORY_ROOT / ".github/workflows/pages.yml").read_text(
             encoding="utf-8"
         )
-        self.assertIn("run: make check-sources", workflow)
+        self.assertIn("run: make check-deployment-sources", workflow)
         self.assertIn(
             "python scripts/public-alpha verify --deployment-target github-pages",
             workflow,
         )
         self.assertLess(
-            workflow.index("run: make check-sources"),
+            workflow.index("run: make check-deployment-sources"),
             workflow.index("run: make public-site"),
         )
         self.assertLess(
@@ -780,29 +780,65 @@ class PublicAlphaTest(unittest.TestCase):
             workflow.index("actions/upload-pages-artifact"),
         )
 
-    def test_root_landings_spotlight_exorcism_page(self) -> None:
-        spotlight = "(library/catholic-exorcism.md)"
+    def test_root_landings_use_the_exact_section_hierarchy(self) -> None:
+        expected = [
+            ("Traditional Latin Mass (1962 Roman Rite)", "library/traditional-latin-mass.md"),
+            ("Novus Ordo (Postconciliar Roman Rite)", "library/novus-ordo-liturgy.md"),
+            ("Prayer", "library/prayer.md"),
+            ("Curriculums", "library/curriculums.md"),
+            ("Faith", "library/faith.md"),
+            ("Scripture", "library/scripture.md"),
+            ("Biographies", "library/biographies.md"),
+            ("Heresies", "library/heresies.md"),
+            ("Historical Accounts", "library/historical-accounts.md"),
+            ("Mariology", "library/mariology.md"),
+            ("Law and Church Discipline", "library/law-and-church-discipline.md"),
+        ]
         for landing in ("README.md", "LIBRARY.md"):
             text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
+            if landing == "README.md":
+                text = text.split("## Library", 1)[1].split("## Reuse", 1)[0]
+            section_links = [
+                (label, target)
+                for label, target in self.tool.MARKDOWN_LINK_RE.findall(text)
+                if target.startswith("library/")
+            ]
             self.assertEqual(
-                text.count(spotlight),
-                1,
-                f"{landing} must contain one direct exorcism spotlight link",
+                section_links,
+                expected,
+                f"{landing} must expose only the ordered top-level sections",
             )
-        catalog = (
-            REPOSITORY_ROOT / "library/catholic-exorcism.md"
-        ).read_text(encoding="utf-8")
-        self.assertIn("# Catholic Exorcism", catalog)
-        self.assertIn(
-            "../doc/gpt/history/catholic-exorcism/"
-            "01-history-and-current-practice.pdf",
-            catalog,
+            self.assertFalse(
+                any("#" in target for _, target in section_links),
+                f"{landing} must not promote a child section through a fragment link",
+            )
+
+    def test_child_catalogs_link_only_through_their_parent_sections(self) -> None:
+        relationships = (
+            (
+                "library/historical-accounts.md",
+                "catholic-exorcism.md",
+                "library/catholic-exorcism.md",
+                "historical-accounts.md",
+            ),
+            (
+                "library/curriculums.md",
+                "ecclesiastical-latin.md#chatgpt-edition",
+                "library/ecclesiastical-latin.md",
+                "curriculums.md",
+            ),
         )
-        self.assertIn(
-            "../web/gpt/history/catholic-exorcism/"
-            "01-history-and-current-practice.html",
-            catalog,
-        )
+        for parent_path, child_target, child_path, return_target in relationships:
+            parent = (REPOSITORY_ROOT / parent_path).read_text(encoding="utf-8")
+            child = (REPOSITORY_ROOT / child_path).read_text(encoding="utf-8")
+            parent_targets = [
+                target for _, target in self.tool.MARKDOWN_LINK_RE.findall(parent)
+            ]
+            child_targets = [
+                target for _, target in self.tool.MARKDOWN_LINK_RE.findall(child)
+            ]
+            self.assertEqual(parent_targets.count(child_target), 1)
+            self.assertEqual(child_targets.count(return_target), 1)
 
     def test_verify_cli_enforces_named_deployment_target(self) -> None:
         publications = self.tool.publication_map(self.manifest)

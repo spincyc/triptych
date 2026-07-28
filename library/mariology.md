@@ -2,13 +2,18 @@
 
 [Return to the Library](../LIBRARY.md)
 
-## Doctrine and Prayer
+## Doctrine
+
+| Publication | ChatGPT | Claude | Focus |
+| --- | --- | --- | --- |
+| **The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed** | [PDF](../doc/gpt/theology/mariology/marian-dogmas.pdf) · [Read](../web/gpt/theology/mariology/marian-dogmas.html) | [PDF](../doc/claude/theology/mariology/marian-dogmas.pdf) · [Read](../web/claude/theology/mariology/marian-dogmas.html) | The four dogmas and their biblical, patristic, Thomistic, historical, liturgical, and magisterial boundaries. |
+| **Dogma, Doctrine, and Devotion in Mariology** | [PDF](../doc/gpt/theology/mariology/doctrinal-authority.pdf) · [Read](../web/gpt/theology/mariology/doctrinal-authority.html) | — | Catholic authority and assent applied to Marian dogmas, doctrines, titles, devotion, and private revelation. |
+
+## Prayer and Devotion
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
 | **The Angelus: Incarnation Remembered Through the Day** | [PDF](../doc/gpt/theology/mariology/angelus.pdf) · [Read](../web/gpt/theology/mariology/angelus.html) | — | The received Latin and historical English prayer, its scriptural and doctrinal structure, composite history, daily rhythm, and current discipline. |
-| **The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed** | [PDF](../doc/gpt/theology/mariology/marian-dogmas.pdf) · [Read](../web/gpt/theology/mariology/marian-dogmas.html) | [PDF](../doc/claude/theology/mariology/marian-dogmas.pdf) · [Read](../web/claude/theology/mariology/marian-dogmas.html) | The four dogmas and their biblical, patristic, Thomistic, historical, liturgical, and magisterial boundaries. |
-| **Dogma, Doctrine, and Devotion in Mariology** | [PDF](../doc/gpt/theology/mariology/doctrinal-authority.pdf) · [Read](../web/gpt/theology/mariology/doctrinal-authority.html) | — | Catholic authority and assent applied to Marian dogmas, doctrines, titles, devotion, and private revelation. |
 | **The Regina Coeli: Easter Joy with the Mother of the Risen Lord** | [PDF](../doc/gpt/theology/mariology/regina-coeli.pdf) · [Read](../web/gpt/theology/mariology/regina-coeli.html) | — | The received Latin and historical English prayer, medieval antiphon, Easter theology, seasonal practice, and current discipline. |
 | **The Holy Rosary: The Gospel Contemplated with Mary** | [PDF](../doc/gpt/theology/mariology/rosary.pdf) · [Read](../web/gpt/theology/mariology/rosary.html) | [PDF](../doc/claude/theology/mariology/rosary.pdf) · [Read](../web/claude/theology/mariology/rosary.html) | Biblical, doctrinal, patristic, historical, and spiritual exposition of the Rosary's twenty mysteries. |
 

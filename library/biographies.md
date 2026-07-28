@@ -26,7 +26,7 @@ contemporary evidence from later tradition.
 | **Saint Thomas Aquinas: Friar, Teacher, and the Work of Wisdom** | [PDF](../doc/gpt/biographies/saint-thomas-aquinas.pdf) · [Read](../web/gpt/biographies/saint-thomas-aquinas.html) | [PDF](../doc/claude/biographies/saint-thomas-aquinas.pdf) · [Read](../web/claude/biographies/saint-thomas-aquinas.html) | Dominican vocation, schools, writings, disputed legacy, canonization, relics, and Thomistic reception. |
 | **Saint Robert Bellarmine: Controversy, Office, Pastoral Rule, and Reception** | [PDF](../doc/gpt/biographies/saint-robert-bellarmine.pdf) · [Read](../web/gpt/biographies/saint-robert-bellarmine.html) | [PDF](../doc/claude/biographies/saint-robert-bellarmine.pdf) · [Read](../web/claude/biographies/saint-robert-bellarmine.html) | Jesuit formation, controversies, catechesis, curial and episcopal office, coercion, Galileo, spiritual writing, and reception. |
 
-## Other Biographies
+## Early Christian Writers
 
 | Biography | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |

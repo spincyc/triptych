@@ -271,6 +271,13 @@ owning catalog under `library/`. The section landing pages are:
 - `library/mariology.md`
 - `library/law-and-church-discipline.md`
 
+The root landing tables expose only this durable section hierarchy, in the
+order above. They do not promote a subsection already contained by a section,
+a child catalog, or an individual publication to a peer row. A direct
+child-catalog or publication spotlight is an explicit maintainer exception
+and belongs outside the section table under a clear featured-work label; it is
+not a precedent for cross-listing.
+
 When one course or repeatable collection would dominate its section landing,
 give it one narrowly scoped child catalog such as
 `library/ecclesiastical-latin.md`. Link that child from the section landing and
@@ -284,10 +291,11 @@ narrowly scoped child landing when readers materially benefit from direct
 format links, a safety or reliance boundary, and section-level web navigation.
 That child owns the publication entry and stable publication marker. Its
 section landing links to the child without repeating the PDF or web links.
-README and LIBRARY may feature the child directly when the maintainer has
-expressly requested landing-page visibility. Keep a review edition's status
-and material completion shortfall conspicuous on the child page; navigation
-must never imply that an interim edition fulfills the promised final scope.
+README and LIBRARY may feature the child outside their section tables when the
+maintainer has expressly requested landing-page visibility. Keep a review
+edition's status and material completion shortfall conspicuous on the child
+page; navigation must never imply that an interim edition fulfills the
+promised final scope.
 
 A leaf ID keeps exactly one owning catalog page no matter how many provider
 editions exist. Ordinary catalogs use named `ChatGPT` and `Claude` columns.

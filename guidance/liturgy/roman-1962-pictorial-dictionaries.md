@@ -92,11 +92,19 @@ without evidence appropriate to that claim.
 
 ## Artwork and plates
 
-The publications are US Letter portrait, monochrome, and image-dominant.
-Ordinary plates devote approximately 65--75 percent of their area to artwork.
-They normally show six to ten distinctive objects, four to six confusable
+The publications are US Letter portrait, monochrome, image-dominant
+illustrated field guides. Design pages and facing-page sequences for visual
+discovery rather than rendering the object inventory as uniform cards. Use a
+deliberate rhythm of hero drawings, grouped scenes, isolated studies,
+comparisons, cutaways, and detail insets; vary scale and placement, and reduce
+or move prose before shrinking diagnostic artwork into thumbnails. Dense or
+heterodox compositions are encouraged when labels and object identity remain
+immediate.
+
+Ordinary plates devote approximately 65--75 percent of their area to artwork
+and normally show six to ten distinctive objects, four to six confusable
 objects, two or three multi-view vestments, or one major composition with
-detail insets.
+detail insets. These are density targets, not a repeated page template.
 
 Every publication-facing illustration is a restrained graphite or pencil
 drawing on white. Generated artwork contains no words, letters, arrows,
@@ -115,6 +123,15 @@ An ambiguous object receives an isolated view and a compact folded,
 unfolded, worn, placed, or in-use inset. Use common scale where diagnostic.
 Otherwise provide sourced dimensions, a scale bar, or a clear `not to common
 scale` notice.
+
+Give an object its own isolated drawing when it can be clearly understood as a
+distinct object. When objects are customarily encountered together, also show
+and label the combined formation in the relevant plate and text. Keep a
+subordinate functional set together when separation would not improve
+recognition or use; the incense boat and spoon are one such set. Audit the
+whole artwork corpus for accidental duplication, especially images that
+purport to isolate one object while depicting its companion without
+identifying the combination.
 
 Each asset has a stable artwork ID and a manifest record naming its brief,
 generator or creator, date, dimensions, mode, hash, references, corrections,

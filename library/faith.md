@@ -4,12 +4,6 @@
 
 [Return to the Library](../LIBRARY.md)
 
-## Trustful Surrender
-
-| Publication | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Trustful Surrender to Divine Providence** | [PDF](../doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf) | [PDF](../doc/claude/articles/faith/trustful-surrender-to-divine-providence.pdf) · [Read](../web/claude/articles/faith/trustful-surrender-to-divine-providence.html) | How confidence in providence differs from passivity, fatalism, presumption, and indifference to evil. |
-
 ## The Creature Before God
 
 ### Trilogy
@@ -36,12 +30,13 @@
 | **The Four Last Things: The Refusal That Becomes Final** | [PDF](../doc/gpt/articles/faith/four-last-things-03-hell.pdf) · [Read](../web/gpt/articles/faith/four-last-things-03-hell.html) | [PDF](../doc/claude/articles/faith/four-last-things-03-hell.pdf) · [Read](../web/claude/articles/faith/four-last-things-03-hell.html) | Hell: definitive self-exclusion from communion with God, the gravity of freedom, and the limits of what may be claimed about any person. |
 | **The Four Last Things: The End for Which We Were Made** | [PDF](../doc/gpt/articles/faith/four-last-things-04-heaven.pdf) · [Read](../web/gpt/articles/faith/four-last-things-04-heaven.html) | [PDF](../doc/claude/articles/faith/four-last-things-04-heaven.pdf) · [Read](../web/claude/articles/faith/four-last-things-04-heaven.html) | Heaven: the beatific vision, communion of saints, resurrection of the body, and the renewal of creation. |
 
-## Sacraments and the Moral Life
+## Sacraments, Virtue, and Spiritual Life
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
 | **The Seven Sacraments** | [Treatise](../doc/gpt/theology/sacraments.pdf) · [At a Glance](../doc/gpt/theology/sacraments-at-a-glance.pdf) | — | Patristic and Thomistic account of the sacraments, with a compact companion. |
 | **The Virtues** | [PDF](../doc/gpt/theology/virtues.pdf) | — | Theological, cardinal, intellectual, and allied virtues in Aristotelian, Augustinian, and Thomistic thought. |
+| **Trustful Surrender to Divine Providence** | [PDF](../doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf) | [PDF](../doc/claude/articles/faith/trustful-surrender-to-divine-providence.pdf) · [Read](../web/claude/articles/faith/trustful-surrender-to-divine-providence.html) | How confidence in providence differs from passivity, fatalism, presumption, and indifference to evil. |
 
 ## Doctrine and Authority
 
