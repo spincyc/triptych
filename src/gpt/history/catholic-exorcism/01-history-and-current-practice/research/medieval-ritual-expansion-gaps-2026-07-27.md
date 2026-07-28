@@ -47,13 +47,12 @@ publication:
 
 ### Pontificale Romano-Germanicum
 
-Acquire an exact lawful artifact of Vogel--Elze volume I and inspect the
-reported exorcist-ordination material in ordo XV, especially XV.17--19 at
-volume I, p. 17, together with the neighboring material reported at XV.8,
-pp. 14--15. Use the edition's tables and indexes to locate any separate
-energumen material. No positive claim may rest on a search snippet,
-bibliographic description, later pontifical, or uninspected specialist
-citation.
+The exact Vogel--Elze volume-I scan was acquired and hashed on 2026-07-27.
+Printed p. 14 (XV.7) and p. 17 (XV.17--19) were inspected in the page images,
+closing the bounded critical-edition page gate for the invitation by grades
+and the separately titled exorcist-ordination unit. No formula is reproduced.
+The scan is remotely registered and not retained because the modern critical
+edition is rights-restricted.
 
 Before making a transmission or local-use claim, identify at least one named
 manuscript witness for each selected unit and collate its exact folios with the

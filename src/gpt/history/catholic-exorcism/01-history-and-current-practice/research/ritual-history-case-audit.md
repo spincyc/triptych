@@ -254,28 +254,27 @@ section 40. It searched the following expected families:
   Romanum* traditions were screened to distinguish later reception from a
   medieval witness and from evidence of actual exercise.
 
-The pass located substantially better **leads**, but not a repository-ready
-exact control. Specialist references identify an exorcist-ordination unit in
-PRG ordo XV, with the relevant material reported at Vogel--Elze I, 17
-(XV.17--19); Reynolds independently cites the neighboring PRG XV.8 at I,
-14--15 when discussing the grades. Searchable specialist transcriptions also
-point to the *Statuta ecclesiae antiqua* formula in which an exorcist receives
-a booklet containing exorcisms. The MGH record, however, warns that the
-*Statuta* is not extant as a freestanding collection and is reconstructed from
-later compilers. The modern literature also cautions against treating
-Vogel--Elze's editorial PRG as one uncomplicated tenth-century exemplar.
+The pass initially located substantially better leads. A subsequent exact-
+source tranche acquired and hashed the complete Vogel--Elze volume-I scan and
+inspected printed p. 14 (XV.7) and p. 17 (XV.17--19) directly in the page
+images. This closes the critical-edition page gate for the invitation by grades
+and the separately titled exorcist unit, but not the manuscript-transmission
+gate. Searchable specialist transcriptions also point to the *Statuta
+ecclesiae antiqua* formula in which an exorcist receives a booklet containing
+exorcisms. The MGH record, however, warns that the *Statuta* is not extant as
+a freestanding collection and is reconstructed from later compilers. The
+modern literature also cautions against treating Vogel--Elze's editorial PRG
+as one uncomplicated tenth-century exemplar.
 
-No exact Vogel--Elze page image or licensed critical-edition text was acquired
-and inspected in this pass, and no selected medieval manuscript folio was
-collated against the edition. Search-result snippets, modern transcriptions,
-later Roman pontificals, catalog descriptions, and specialist citations are
-therefore retained as leads rather than promoted to verified source text.
-They do not close the profile requirement for an exact edition-identified
-witness used in a positive publication claim.
+No selected medieval manuscript folio was collated against the edition.
+Search-result snippets, modern transcriptions, later Roman pontificals,
+catalog descriptions, and specialist citations therefore remain leads for
+transmission and local-use claims even though the bounded critical-edition
+architecture is now directly controlled.
 
-Accordingly, section 40 continues to omit delivery-of-the-book symbolism,
-specified duties, career-path practice, and transfer-to-priests claims. The PRG
-remains a bibliographic coordinate only; its contents, internal juxtaposition,
-circulation, local use, and incidence implications remain outside the
-publication claim. This is a bounded negative result about the exact controls
-acquired for this study, not a claim that the rites or witnesses do not exist.
+Accordingly, section 40 continues to omit formulas, specified duties,
+career-path practice, transfer-to-priests claims, circulation, local use, and
+incidence implications. The PRG now controls only the bounded critical-edition
+ordinal architecture recorded above. This is a bounded result about the exact
+controls acquired for this study, not a claim that other rites or witnesses do
+not exist.

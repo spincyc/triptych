@@ -116,26 +116,28 @@ routes, findings, and limits are recorded in
   *Impositio manuum in energumenum*. It does not control the complete item,
   the Dumas–Deshusses critical text, performance, frequency, continuity, or a
   general medieval practice.
-- Vogel–Elze, eds., *Pontificale Romano-Germanicum*. Catalog control only:
-  exact ordines, pages, and manuscript correspondence remain open. No
-  representative medieval ordinal or cross-genre corpus presently supports
-  stronger claims about officeholders' practice, medicine, magic, trials, or
-  learned demonology. A second pass on 2026-07-27 located specialist references
-  to exorcist-ordination material in PRG ordo XV (reported at Vogel–Elze I,
-  17, XV.17–19), the reconstructed *Statuta ecclesiae antiqua* in Munier,
-  CCSL 148, pp. 166–185, and related manuscript families. No exact critical
-  PRG page or selected PRG-family manuscript folio was acquired and collated,
-  so these remain
-  leads and the publication continues to make no positive formulary, duty,
-  circulation, or local-practice claim from them.
+- Vogel–Elze, eds., *Pontificale Romano-Germanicum*, volume I, exact complete
+  remote scan acquired and hashed. Printed p. 14 (XV.7) and p. 17
+  (XV.17–19) were inspected directly in the page images. The former invites
+  candidates by named grades; the latter is a separately titled exorcist unit,
+  associates the office with a book containing exorcisms, distinguishes
+  baptized persons from catechumens, and contains a preface and blessing.
+  This closes the exact critical-edition page gate for that bounded ordinal
+  architecture. No wording is reproduced. The visible apparatus was not
+  collated to a selected manuscript, so the witness does not establish one
+  uncomplicated tenth-century local book, actual performance, ordinary duties,
+  frequency, efficacy, later continuity, current ministry or law, identity
+  with modern major exorcism, or operational use. Munier's reconstructed
+  *Statuta ecclesiae antiqua*, a named PRG-family manuscript, and the
+  representative cross-genre comparison remain open.
 - *Pontificale Romanum*, Leonine-recognized Latin edition (1895), *De
   Ordinatione Exorcistarum*, exact electronic-reset PDF pp. 38–39. The bounded
   title architecture places the section between lector and acolyte ordination
   and includes candidate summons, admonition, book delivery and touch, and two
   concluding prayers. No wording is reproduced. This closes the later Western
   ordination-witness lead only; it does not substitute for the 1595 editio
-  princeps, PRG ordo XV, a representative medieval ordinal, or manuscript
-  comparison, and it supports no claim about actual practice, frequency,
+  princeps, a representative medieval ordinal, or manuscript comparison, and
+  it supports no claim about actual practice, frequency,
   current ministry, major-exorcism identity, or continuity.
 - Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2–4, Fathers of
   the English Dominican Province translation, exact New Advent page state
