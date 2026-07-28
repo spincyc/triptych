@@ -4,14 +4,11 @@ Status: active plan for `task-3-sanctuary-dictionaries` and
 `project-dictionary-artwork-holds`
 
 This plan sequences work under
-`guidance/liturgy/roman-1962-pictorial-dictionaries.md`. It does not supersede
-that profile or record priestly, specialist, intended-reader, physical-print,
-or ecclesiastical review.
+`guidance/liturgy/roman-1962-pictorial-dictionaries.md`.
 
 ## Baseline and finish line
 
-- Six six-page PDFs are installed as conspicuously labelled priestly-review
-  copies.
+- Six bounded dictionary PDFs form the current alpha baseline.
 - Each installed snapshot renders the same six admitted records and a
   32-record omission register from the then-current 38-record inventory. The
   canonical structured inventory now contains 43 records; a fresh render with
@@ -21,9 +18,9 @@ or ecclesiastical review.
 - The artwork validator reports 10 held notices: two effective-resolution
   notices, one unresolved broad-stole identity, and seven unsupported
   Communion/reservation depicted-object links.
-- Authoritative release requires closed corpus, inventory, source, variant,
-  artwork, rights, derived-selection, physical, production, and exact-snapshot
-  gates. Review-copy distribution closes none of them.
+- Alpha publication requires source integrity, rights, safety, reproducibility
+  and identity, mechanical validity, and basic visual usability. Corpus and
+  variant closure remain completeness work.
 
 ## Work unit D1 — freeze and reconcile the review baseline
 
@@ -95,19 +92,15 @@ current six-record packet define the corpus.
   settle references, indexes, logs, PDF metadata, fonts, and extracted text.
 - [ ] Raster and inspect every page with repository review tooling.
 
-## Work unit D6 — review and release states
+## Work unit D6 — alpha states
 
-- [ ] Prepare stable-ID review questions for any external priestly or
-  specialist consultation; record only answers actually received and their
-  exact scope.
-- [ ] Keep source, factual-artwork, priestly/specialist, production, rights,
-  intended-reader, physical-print, distribution, and ecclesiastical states
-  independent.
-- [ ] Produce a fresh non-review candidate only after every authoritative
-  eligibility gate closes; no review PDF hash or review distribution decision
-  carries forward.
-- [ ] Verify exact PDF/web/catalog/publication-control identities before any
-  state promotion.
+- [ ] Record source, rights, safety, reproducibility and identity, mechanical
+  validity, basic visual usability, alpha status, and deployment separately.
+- [ ] Verify exact PDF/web/catalog identities before publication.
+
+Historical priestly-review packets and recorded review snapshots remain
+immutable evidence of the earlier workflow. They are non-operative and confer
+no current publication status.
 
 ## Stop conditions
 

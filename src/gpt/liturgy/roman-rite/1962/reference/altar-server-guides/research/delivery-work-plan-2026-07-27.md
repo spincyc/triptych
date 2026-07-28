@@ -4,9 +4,7 @@ Status: active plan for `task-1-altar-server-guides`,
 `task-4-missa-cantata`, and `task-5-solemn-mass`
 
 This plan sequences work under
-`guidance/liturgy/roman-1962-server-training.md`. It does not duplicate that
-profile or claim physical, intended-reader, liturgical, ceremonial,
-pronunciation, pedagogical, rights, or ecclesiastical review.
+`guidance/liturgy/roman-1962-server-training.md`.
 
 ## Baseline and finish line
 
@@ -105,13 +103,10 @@ Electronic parity or raster inspection does not check these physical items.
 
 ## Work unit A7 — honest final state
 
-- [ ] Record source, liturgical, ceremonial, pronunciation, pedagogical,
-  artwork, rights, physical-print, intended-reader, production, independent,
-  distribution, and ecclesiastical states separately for each exact snapshot.
-- [ ] Retain unavailable external review as deferred; do not relabel internal
-  or AI-assisted work as independent or human.
-- [ ] Update the three deliverable requirements only when the applicable
-  exact-snapshot gates actually pass.
+- [ ] Record source, rights, safety, reproducibility and identity, mechanical
+  validity, basic visual usability, alpha status, and deployment separately
+  for each exact snapshot.
+- [ ] Update each deliverable only when the applicable alpha checks pass.
 
 ## Stop conditions
 

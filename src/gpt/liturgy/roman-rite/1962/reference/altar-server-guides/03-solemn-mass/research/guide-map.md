@@ -130,10 +130,9 @@ response fronts on pages 1, 3, 5, and 7, action fronts on pages 9 and 11,
 mirrored backs, border alignment, legibility, and safe containment of the
 R08B continuation note. The installed guide and companion remain at their
 recorded reviewed identities. The installed source revision adds explicit
-standalone-role common-route and SO-063 continuation controls. Actual-size
-role-packet and cue-card use, physical duplex and cut alignment, photocopy
-performance, intended-reader testing, and independent liturgical, ceremonial,
-pronunciation, pedagogical, rights, and ecclesiastical review remain pending.
+standalone-role common-route and SO-063 continuation controls. Mechanical
+duplex and cut alignment, rights, and full-size visual usability remain the
+active alpha checks for the cards.
 
 The installed alpha snapshot built on 28 July 2026 is 28 pages and 1,524,250
 bytes with SHA-256

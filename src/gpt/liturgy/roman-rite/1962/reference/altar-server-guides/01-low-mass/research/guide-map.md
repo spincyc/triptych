@@ -112,10 +112,8 @@ altar-server-guides research directory.
 
 The map now records the actual twenty-nine-page sequence. The child-visible
 branch conditions and four replaced illustrations were repaired, rebuilt, and
-screen-reviewed. Physical print, photocopy, intended-reader, independent
-ceremonial and pedagogical, rights, and ecclesiastical review remain open; the
-public artifact is therefore a discoverable alpha review copy, not a completed
-release.
+screen-reviewed. The artifact is a bounded Alpha; completeness and deployment
+are recorded separately.
 
 The later actor-overlay pass checked every person in the pencil scenes used on
 pages 10, 12, 14, 18, 19, 21, 22, and 26. TeX now identifies the priest,
@@ -128,5 +126,4 @@ same physical terminal page. The artwork bytes remain unchanged.
 The 2026-07-28 exact snapshot vertically separates the `PRIEST`, `FIRST`, and
 `SECOND STANDS CLEAR` capsules over the lower page-12 Gospel-station scene.
 Full-size and every-page screen inspection passed without changing the
-underlying pencil asset. All declared physical and human review gates remain
-open.
+underlying pencil asset.

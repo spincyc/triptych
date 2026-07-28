@@ -3,7 +3,7 @@ record_type = "web-edition"
 document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
 
 eligibility = "ineligible"
-basis = "priestly-review-pdf-only"
-blocking_constructs = ["review-only-status", "incomplete-inventory", "incomplete-source-collation", "incomplete-artwork-review"]
-rationale = "The installed PDF is a conspicuously labeled priestly-review copy; no web edition may be published until the inventory, source collation, priestly review, artwork review, and fresh authoritative-release gates pass."
-reviewed = "2026-07-27"
+basis = "bounded-pdf-alpha-only"
+blocking_constructs = ["no-reviewed-web-rendering"]
+rationale = "The PDF alpha is bounded to admitted records. A web edition remains ineligible until the same content has a mechanically valid, visually checked web rendering."
+reviewed = "2026-07-28"

@@ -13,13 +13,13 @@ not control the current installed files.
 
 | Publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 | Current review state |
 |---|---|---:|---:|---:|---|---|
-| `01-low-mass` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,861,791 | `1bb29420e2d4962c0bf2cebe7e80e06d6421ca65c6f6b9058ee78ef4309e426a` | public alpha review; Gospel-station actor overlays and terminal colophon screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
-| `01-low-mass-trainer-manual` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,874,334 | `4230843bbccea40e2967fe6670b9113ffe355902f88b587b00f2a15a0a8bd9d3` | public alpha review; page-aligned Gospel-station actor overlays screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
-| `01-low-mass-flash-cards` | `2026-07-27T22:48:48Z` | 6 | 22 | 250,916 | `6a5d1363faab813ad51b0e2d0d68a601e3970e077ae9bf45c3cb78242b3cf460` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
-| `02-missa-cantata` | `2026-07-27T22:48:48Z` | 27 | 0 | 1,264,704 | `07a16ac90e30836c4c8aa8bebb3a788caad74ede3fd2985bcaa9b420917ed3cd` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
-| `02-missa-cantata-cue-cards` | `2026-07-28T02:30:54Z` | 12 | 36 | 626,302 | `0c9d6045117b8f285a97a3f623c9f85ed1d07431028ef1a3680f24f3a3da1425` | public alpha review; action-back body enlarged by 0.5 point and full-size screen-reviewed; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
-| `03-solemn-mass` | `2026-07-27T22:48:48Z` | 28 | 0 | 1,311,099 | `ad4a45de902147495fc22a96c42b4010d14dc8611243accd6755831aa78cce19` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
-| `03-solemn-mass-cue-cards` | `2026-07-28T02:30:54Z` | 12 | 36 | 631,592 | `e44ece58ffa0b7bac2c412d0366608ddae4aa96f75bd1229545b14296d459b6a` | public alpha review; response-card clearance retained, action-back body enlarged by 0.5 point and full-size screen-reviewed; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `01-low-mass` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,861,791 | `1bb29420e2d4962c0bf2cebe7e80e06d6421ca65c6f6b9058ee78ef4309e426a` | Alpha; Gospel-station actor overlays and terminal colophon screen-checked |
+| `01-low-mass-trainer-manual` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,874,334 | `4230843bbccea40e2967fe6670b9113ffe355902f88b587b00f2a15a0a8bd9d3` | Alpha; page-aligned Gospel-station actor overlays screen-checked |
+| `01-low-mass-flash-cards` | `2026-07-27T22:48:48Z` | 6 | 22 | 250,916 | `6a5d1363faab813ad51b0e2d0d68a601e3970e077ae9bf45c3cb78242b3cf460` | Alpha; electronic pairing and duplex geometry checked |
+| `02-missa-cantata` | `2026-07-28T03:20:00Z` | 28 | 0 | 1,479,808 | `c0bded80fd73cd845200b86f6f9d4a8ae14ca31940b6101a4a2093d6bce95c51` | Alpha; every page inspected |
+| `02-missa-cantata-cue-cards` | `2026-07-28T02:30:54Z` | 12 | 36 | 626,302 | `0c9d6045117b8f285a97a3f623c9f85ed1d07431028ef1a3680f24f3a3da1425` | Alpha; enlarged action backs and electronic pairing checked |
+| `03-solemn-mass` | `2026-07-28T03:20:00Z` | 28 | 0 | 1,524,157 | `6ffcf3bc13078702c0ffba94a532e6da8269954c2953a21a04553672faff222d` | Alpha; every page inspected |
+| `03-solemn-mass-cue-cards` | `2026-07-28T02:30:54Z` | 12 | 36 | 631,592 | `e44ece58ffa0b7bac2c412d0366608ddae4aa96f75bd1229545b14296d459b6a` | Alpha; enlarged action backs and electronic pairing checked |
 
 The current family totals 143 pages: 113 guide or manual pages and 30 card
 pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata

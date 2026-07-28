@@ -31,10 +31,9 @@ Action fronts are pages 9 and 11; their mirrored backs are pages 10 and 12.
 Print US letter, portrait, two-sided, actual size, flipped on the long edge,
 and cut on the box borders. Its rendered-screen review confirmed the six-up
 sequence, page parity, border alignment, legibility, safe containment of the
-R08B continuation note, and final-notice fit. Actual-size reader legibility,
-physical long-edge duplex alignment, photocopy and cut safety, intended-reader
-use, and independent liturgical, ceremonial, pronunciation, pedagogical,
-rights, and ecclesiastical review remain pending.
+R08B continuation note, and final-notice fit. Electronic long-edge duplex
+geometry, cut safety, rights, and full-size visual usability remain the active
+alpha checks.
 
 This leaf is not a self-contained trainer. Use it with the paired full guide's
 keys; conditions that affect an individual response or action remain on the

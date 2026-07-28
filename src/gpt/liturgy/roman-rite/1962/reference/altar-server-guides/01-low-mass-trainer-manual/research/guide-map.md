@@ -96,5 +96,4 @@ pages; no pencil raster was altered.
 The 2026-07-28 exact snapshot vertically separates the `PRIEST`, `FIRST`, and
 `SECOND STANDS CLEAR` capsules over the lower page-12 Gospel-station scene.
 Full-size and every-page screen inspection passed in the page-aligned trainer
-rendering without changing the underlying pencil asset. All declared physical
-and human review gates remain open.
+rendering without changing the underlying pencil asset.
