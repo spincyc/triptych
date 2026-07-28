@@ -1,7 +1,7 @@
 # Scope
 
-Status: **held prototype**
-Audit date: 2026-07-27
+Status: **open completeness corpus with bounded public-alpha leaves**
+Audit date: 2026-07-28
 
 ## Governing question
 
@@ -62,13 +62,13 @@ canonical records but may not copy or enlarge them independently.
 
 No completeness claim is authorized. The official source corpus has not been
 closed; the material-culture corpus has not been defined; the canonical
-inventory contains 43 records but no publication-ready record; and the
-completeness matrix has open rows in every category. Seven records are
-labelled `source-audited`, seven `art-reviewed`, and seven
-`priestly-review-ready`, but those intermediate workflow labels neither close
-a category nor establish eligibility for an authoritative edition.
-Reader-facing leaves must retain prototype/hold language until the source,
-inventory, variant, artwork, rights, review, and release conditions close.
+inventory contains 55 records; and the completeness matrix has open rows in
+every category. The current workflow labels are 2 `lead`, 10 `identified`, 34
+`source-audited`, 4 `priestly-review-ready`, and 5 `publication-ready`.
+Those labels neither close a category nor establish an authoritative edition.
+The five generated leaves may publish the checked subset as bounded alphas;
+their first pages identify that alpha boundary. The unclosed owner corpus
+must not be described as complete.
 
 ## Status vocabulary boundary
 
@@ -103,4 +103,4 @@ Edition horizon: 1962, with earlier Roman practice segregated historically.
 Language of publication: English, with Latin headwords.
 Jurisdiction: universal Roman provision unless a record explicitly declares a
 documented narrower status.
-As-of date for this scope record: 2026-07-27.
+As-of date for this scope record: 2026-07-28.

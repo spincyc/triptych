@@ -281,6 +281,128 @@ def record_tex(record: dict, edition: dict) -> str:
     return "\n".join(lines)
 
 
+def primary_category(record: dict) -> str:
+    """Choose one stable display category without changing canonical identity."""
+    precedence = (
+        "church-and-sanctuary", "altar-and-appointments", "sacred-vessels",
+        "linens-and-textiles", "books-and-printed-objects", "service-objects",
+        "incense", "priestly-vestments", "deacon-and-subdeacon",
+        "pontifical-and-prelatial", "servers-ministers-and-choir", "requiem",
+        "nuptial-and-ritual", "holy-week", "pontifical-mass-compositions",
+        "related-ceremonies", "historical",
+    )
+    categories = set(record["categories"])
+    return next((category for category in precedence if category in categories),
+                record["categories"][0])
+
+
+def section_for(record: dict, edition: dict) -> str:
+    """Route an admitted record through the edition's declared reader order."""
+    category = primary_category(record)
+    edition_id = edition["id"]
+    if edition_id == "ed-comprehensive":
+        return category
+    if edition_id == "ed-sacristan":
+        if category in {"church-and-sanctuary", "altar-and-appointments",
+                        "service-objects"}:
+            return "sanctuary-and-altar-preparation"
+        if category in {"sacred-vessels", "linens-and-textiles",
+                        "books-and-printed-objects", "incense"}:
+            return "vessels-linens-and-books"
+        if category in {"priestly-vestments", "deacon-and-subdeacon",
+                        "pontifical-and-prelatial"}:
+            return "vestments-and-insignia"
+        return "special-ceremony-equipment"
+    if edition_id == "ed-mc-trainer":
+        if category in {"priestly-vestments", "deacon-and-subdeacon",
+                        "pontifical-and-prelatial", "servers-ministers-and-choir",
+                        "church-and-sanctuary"}:
+            return "people-roles-and-stations"
+        if category in {"related-ceremonies", "requiem", "nuptial-and-ritual",
+                        "holy-week", "pontifical-mass-compositions"}:
+            return "branches-and-special-ceremonies"
+        if record.get("confusable_with"):
+            return "training-comparisons"
+        return "objects-and-handoffs"
+    if edition_id == "ed-general-reader":
+        if category in {"church-and-sanctuary", "altar-and-appointments"}:
+            return "sanctuary"
+        if category in {"priestly-vestments", "deacon-and-subdeacon",
+                        "pontifical-and-prelatial"}:
+            return "vestments-and-insignia"
+        if category == "historical":
+            return "historical-perspective"
+        return "objects-and-linens"
+    if edition_id == "ed-pontifical":
+        if category in {"priestly-vestments", "deacon-and-subdeacon"}:
+            return "pontifical-vesture"
+        if category == "pontifical-and-prelatial":
+            return "insignia"
+        if category in {"church-and-sanctuary", "altar-and-appointments",
+                        "books-and-printed-objects"}:
+            return "furnishings-and-books"
+        return "ministers-and-object-transfers"
+    raise ContractError(f"{edition_id}: no dense-layout section router")
+
+
+def section_label(section: str) -> str:
+    return section.replace("-", " ").title()
+
+
+def dense_edition_tex(chosen: list[dict], edition: dict) -> list[str]:
+    """Render section-ordered six-object comparison plates.
+
+    Records remain canonical and audience notes remain edition-selected; this
+    function changes only their comparison grouping and page architecture.
+    """
+    section_order = [
+        section for section in edition["section_order"]
+        if section not in {
+            "recognition-and-handling-key", "status-and-handling-key",
+            "relational-symbol-key", "visual-and-status-key",
+            "status-and-relationship-key", "terminal-apparatus",
+        }
+    ]
+    grouped = {section: [] for section in section_order}
+    for record in chosen:
+        section = section_for(record, edition)
+        require(section in grouped,
+                f"{edition['id']}: record {record['id']} routed outside section_order: {section}")
+        grouped[section].append(record)
+    category_rank = {
+        name: index for index, name in enumerate((
+            "church-and-sanctuary", "altar-and-appointments", "sacred-vessels",
+            "linens-and-textiles", "books-and-printed-objects", "service-objects",
+            "incense", "priestly-vestments", "deacon-and-subdeacon",
+            "pontifical-and-prelatial", "servers-ministers-and-choir", "requiem",
+            "nuptial-and-ritual", "holy-week", "pontifical-mass-compositions",
+            "related-ceremonies", "historical",
+        ))
+    }
+    lines: list[str] = []
+    for section in section_order:
+        records = grouped[section]
+        records.sort(key=lambda record: (
+            category_rank.get(primary_category(record), 999),
+            record.get("sort_name", record["preferred_english_name"]).casefold(),
+            record["id"],
+        ))
+        for offset in range(0, len(records), 6):
+            plate = records[offset:offset + 6]
+            lines.append(
+                f"\\RSDDensePlateStart{{{tex(section_label(section))}}}"
+                f"{{{offset // 6 + 1}}}"
+            )
+            for index, record in enumerate(plate):
+                if index == 3:
+                    lines.append("\\RSDDensePlateRowBreak")
+                elif index in {1, 2, 4, 5}:
+                    lines.append("\\RSDDensePlateCellBreak")
+                lines.append(record_tex(record, edition))
+            lines.append("\\RSDDensePlateEnd")
+    return lines
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--schema", type=Path, required=True)
@@ -334,18 +456,19 @@ def main() -> int:
                 record for record in records.values()
                 if alpha_selected(record, edition, alpha_assets)
             ]
-            chosen.sort(
-                key=lambda item: (
-                    item.get("sort_name", item["preferred_english_name"]).casefold(),
-                    item["id"],
-                )
-            )
+            chosen.sort(key=lambda item: (
+                item.get("sort_name", item["preferred_english_name"]).casefold(),
+                item["id"],
+            ))
             body = [
                 "% Generated deterministically; do not edit.",
                 "% Canonical source-bounded alpha view.",
                 f"% edition: {edition['id']}",
             ]
-            body.extend(record_tex(record, edition) for record in chosen)
+            if edition["id"] == "ed-altar-server":
+                body.extend(record_tex(record, edition) for record in chosen)
+            else:
+                body.extend(dense_edition_tex(chosen, edition))
             data = ("\n".join(body) + "\n").encode()
             (args.output / f"{edition['id']}.tex").write_bytes(data)
 

@@ -3,6 +3,36 @@
 Status: **bounded public alphas**
 Audit date: 2026-07-28
 
+## Dense comparison-plate architecture checkpoint — 2026-07-28
+
+The five generated editions now render admitted canonical records through
+their declared `section_order` instead of one global English-name sort and one
+full page per object. Each record is assigned one display section by a
+deterministic, edition-specific router. Within a section, canonical category
+order precedes the stable record sort name. The renderer uses a three-column,
+two-row comparison grid, normally six objects per plate; a final partial plate
+is retained when a section does not contain a multiple of six. Stable IDs,
+claim text, source bindings, artwork, audience selection, and audience notes
+remain canonical and unchanged. The bespoke altar-server leaf is deliberately
+outside this renderer.
+
+All 55 canonical records validate, generator tests pass, and all five PDFs
+were rebuilt for settled passes. Every one of the 54 affected pages was
+rastered through `scripts/pdf-review` and visually inspected. Section order,
+six-object plates, final partial plates, images, headwords, stable IDs,
+source-bounded prose, and audience notes are legible and unclipped, with no
+overlap or spill page. Settled logs have no fatal error, undefined reference,
+overfull box, or rerun warning. Fonts are embedded, text is extractable, and
+installed bytes match the reviewed builds.
+
+| Edition | Records | Pages | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 39 | 12 | `213f7cb329c3e2e665c3db08014feeaebc1317b9bfdb7a6198f6731678a74fe4` |
+| Sacristan | 39 | 11 | `c97c9d3c6764712b953e91594440ae213dff8e5a5bfb240d0a1ce93b5ab7ec4c` |
+| MC and trainer | 39 | 11 | `a449170a9ce780450d6343dd8b496dd94953568f8ac7c8f71c1f3e1e7488e56a` |
+| General reader | 37 | 10 | `cba3ee31b8996f8995b6c65ab140424a99a2f1961d15c893d29d134ae5ab5113` |
+| Pontifical ceremonies | 36 | 10 | `1ffa31761ea511cff3726830473735c32901f15f8522113eb41c491b37b6caff` |
+
 ## Holy-water vessel and aspergillum checkpoint — 2026-07-28
 
 The portable holy-water vessel and aspergillum now enter the comprehensive,
@@ -103,12 +133,12 @@ installed bytes are identical:
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Thirty-two alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Thirty-nine alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Thirty-two alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Thirty-two alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Thirty alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Twenty-nine alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Thirty-nine alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Thirty-nine alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Thirty-seven alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Thirty-six alpha records | Built, inspected, and installed | No | Alpha |
 
 The processional-cross promotion admits the existing source-audited
 institutional/local record to the five generated editions while preserving

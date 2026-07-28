@@ -90,15 +90,13 @@
 
 \renewcommand{\RSDEndObjectRecord}{%
   \global\advance\RSDRenderedRecordCount by 1
-  \clearpage
+  \begin{minipage}[t][3.18in][t]{\linewidth}
   \DictionaryEntryAnchor{\RSDObjectID}%
-  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Visual dictionary plate}
+  {\fontsize{9.2}{10.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
+  {\fontsize{7.1}{8}\selectfont\itshape\RSDLatinHeadword
     \hfill\DictionaryNoteKey{\RSDObjectID}\par}
-  \vspace{2pt}\hrule height 0.65pt\vspace{7pt}
-  {\fontsize{22}{25}\selectfont\bfseries\RSDPreferredEnglishName\par}
-  {\fontsize{12}{14}\selectfont\itshape\RSDLatinHeadword\par}
-  \vspace{7pt}
-  \begin{minipage}[t][4.72in][c]{\textwidth}
+  \vspace{2pt}\hrule height 0.35pt\vspace{3pt}
+  \begin{minipage}[t][1.30in][c]{\linewidth}
     \centering
     \ifdefstring{\RSDObjectID}{obj-epistle-book}{%
       \RSDTeXNativeBookArtwork
@@ -107,28 +105,41 @@
     }{%
     \ifRSDArtworkAvailable
       \ifRSDSecondArtworkAvailable
-        \begin{minipage}[c]{0.72\textwidth}\centering
-          \DictionaryGraphic{4.45in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+        \begin{minipage}[c]{0.68\linewidth}\centering
+          \DictionaryGraphic{1.22in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
         \end{minipage}\hfill
-        \begin{minipage}[c]{0.24\textwidth}\centering
-          {\fontsize{7}{8}\selectfont\bfseries DETAIL\par}\vspace{3pt}
-          \DictionaryGraphic{1.75in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDSecondArtworkPath}
+        \begin{minipage}[c]{0.28\linewidth}\centering
+          {\fontsize{5.5}{6}\selectfont\bfseries DETAIL\par}\vspace{1pt}
+          \DictionaryGraphic{0.82in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDSecondArtworkPath}
         \end{minipage}
       \else
-        \DictionaryGraphic{4.55in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+        \DictionaryGraphic{1.26in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
       \fi
     \fi}}%
   \end{minipage}
-  \vspace{5pt}
-  {\fontsize{10.5}{13}\selectfont
+  \vspace{3pt}
+  {\fontsize{6.6}{7.6}\selectfont
     \RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi\par}
   \ifx\RSDAudienceText\empty\else
-    \vspace{4pt}{\fontsize{9.2}{11.3}\selectfont
-      \textbf{For this reader.}\enspace\RSDAudienceText\par}
+    \vspace{2pt}{\fontsize{6.2}{7.1}\selectfont
+      \textbf{Reader note.}\enspace\RSDAudienceText\par}
   \fi
   \ifx\RSDSymbolismText\empty\else
-    \vspace{3pt}{\fontsize{9}{11}\selectfont\itshape\RSDSymbolismText\par}
-  \fi}
+    \vspace{2pt}{\fontsize{6.1}{7}\selectfont\itshape\RSDSymbolismText\par}
+  \fi
+  \end{minipage}}
+
+\newcommand{\RSDDensePlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Comparison plate}
+    \hfill #1\enspace\textperiodcentered\enspace #2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{6pt}
+  \noindent\begin{tabular}{@{}p{0.31\textwidth}@{\hspace{0.035\textwidth}}%
+    p{0.31\textwidth}@{\hspace{0.035\textwidth}}p{0.31\textwidth}@{}}}
+\newcommand{\RSDDensePlateCellBreak}{&}
+\newcommand{\RSDDensePlateRowBreak}{%
+  \\[5pt]}
+\newcommand{\RSDDensePlateEnd}{\end{tabular}\par}
 
 \newcommand{\RSDRenderGeneratedEdition}[1]{%
   \InputIfFileExists{#1}{}{%

@@ -120,6 +120,41 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 text,
             )
 
+    def test_five_generic_editions_use_declared_dense_section_order(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "out"
+            self.generate(output)
+            expectations = {
+                "ed-comprehensive": (
+                    r"\RSDDensePlateStart{Church And Sanctuary}{1}",
+                    r"\RSDDensePlateStart{Related Ceremonies}{1}",
+                ),
+                "ed-sacristan": (
+                    r"\RSDDensePlateStart{Sanctuary And Altar Preparation}{1}",
+                    r"\RSDDensePlateStart{Vessels Linens And Books}{1}",
+                ),
+                "ed-mc-trainer": (
+                    r"\RSDDensePlateStart{People Roles And Stations}{1}",
+                    r"\RSDDensePlateStart{Objects And Handoffs}{1}",
+                ),
+                "ed-general-reader": (
+                    r"\RSDDensePlateStart{Sanctuary}{1}",
+                    r"\RSDDensePlateStart{Objects And Linens}{1}",
+                ),
+                "ed-pontifical": (
+                    r"\RSDDensePlateStart{Furnishings And Books}{1}",
+                    r"\RSDDensePlateStart{Ministers And Object Transfers}{1}",
+                ),
+            }
+            for edition, markers in expectations.items():
+                text = (output / f"{edition}.tex").read_text()
+                positions = [text.index(marker) for marker in markers]
+                self.assertEqual(positions, sorted(positions), edition)
+                self.assertIn(r"\RSDDensePlateRowBreak", text)
+                self.assertIn(r"\RSDDensePlateCellBreak", text)
+            altar_server = (output / "ed-altar-server.tex").read_text()
+            self.assertNotIn(r"\RSDDensePlateStart", altar_server)
+
     def test_text_only_lavatory_is_in_five_generated_editions_only(self):
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "out"
