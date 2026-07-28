@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders nineteen source-audited records already present in the
+smaller: it renders twenty source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -36,6 +36,7 @@ The image-dominant alpha contains:
 | `obj-book-marker` | recognizes only | protect prepared markers; do not rearrange |
 | `obj-epistle-book` | recognizes only | identify by the subdeacon's Solemn-Mass use, not the cover |
 | `obj-gospel-book` | recognizes only | distinguish the held-book Gospel sequence from a freestanding lectern |
+| `obj-lectern` | recognizes; handles only if assigned | distinguish a freestanding Holy Week support from the low altar Missal stand; preserve exact bare and white-covered rite states |
 | `obj-acolyte-candlestick` | carries when appointed | footed carried light distinct from altar candlestick and footless elevation torch |
 | `obj-elevation-torch` | carries only when trained and assigned | footless non-self-standing Elevation light, distinct from entrance candlestick |
 | `obj-processional-cross` | optional local use | portable staff crucifix requires a stand; not universal or Missal-required for a priest's High Mass |
@@ -98,8 +99,11 @@ marker construction, ribbon count, and tones are illustrative.
 The stand and cushion never appear as simultaneous supports. The open-Missal
 figure demonstrates the book/stand relationship; the cushion appears empty and
 is explicitly labelled as the alternative. The freestanding lectern is
-visually and verbally separated from the altar stand and appears only as a
-confusable comparison, not as an eleventh Low-Mass record.
+visually and verbally separated from the altar stand. It is omitted from the
+Low-Mass core and rendered as its own Holy Week recognition record: Palm
+Sunday and Good Friday supply the exact bare states, and the Easter Vigil
+supplies the exact white-cloth-covered state. Its representative pedestal
+morphology is explicitly non-normative.
 
 The earlier single stoppered cruet asset also remains held: its round body and
 tall stopper can read as a household decanter, and one empty vessel cannot
@@ -127,7 +131,7 @@ remains unproved. See
 
 ## Reader order
 
-1. Compact Alpha title and exact nineteen-object boundary.
+1. Compact Alpha title and exact twenty-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels
@@ -135,26 +139,27 @@ remains unproved. See
 5. Image-dominant sanctuary-lamp spread.
 6. Candle-and-candlestick comparison spread with two distinct figures.
 7. Altar-Missal and low-stand spread.
-8. Mutually alternative cushion/stand spread with freestanding-lectern
-   comparison.
-9. Prepared book-marker spread.
-10. Chalice-and-paten boundary spread with one dimensioned Met catalog
+8. Mutually alternative cushion/stand spread.
+9. Freestanding Holy Week lectern spread: low-altar-stand distinction,
+   exact bare and white-covered ritual states, and illustrative morphology.
+10. Prepared book-marker spread.
+11. Chalice-and-paten boundary spread with one dimensioned Met catalog
    exemplar and a Missal-controlled prepared inset; Communion-plate
    morphology remains text-only and unresolved.
-11. Epistle/Gospel relational spread: generic unornamented book symbols,
+12. Epistle/Gospel relational spread: generic unornamented book symbols,
     subdeacon/deacon labels, and the ordinary held-book Gospel sequence.
-12. Acolyte-candlestick spread: footed carrying light and elevation-torch
+13. Acolyte-candlestick spread: footed carrying light and elevation-torch
     distinction.
-13. Elevation-torch spread: footless non-self-standing recognition,
+14. Elevation-torch spread: footless non-self-standing recognition,
     Fortescue-bounded Elevation timing, local-variation ceiling, and
     non-operational safety.
-14. Optional processional-cross spread: local/customary status and required
+15. Optional processional-cross spread: local/customary status and required
     stand.
-15. Thurible spread: component recognition, trained-thurifer boundary, cold
+16. Thurible spread: component recognition, trained-thurifer boundary, cold
     rehearsal, appointed resting place, and non-operational hot-object safety.
-16. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
+17. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
     relationship, local lay-server boundary, and non-operational heat safety.
-17. Source notes, scope and qualifications, generation metadata, and rights
+18. Source notes, scope and qualifications, generation metadata, and rights
    colophon.
 
 ## Source control
@@ -188,7 +193,9 @@ All printed claims come from these canonical source keys:
 - `src-met-236950-boat-spoon`.
 
 The source loci and verification states remain owned by the corresponding
-canonical object records. The Epistle/Gospel consumer binding points to the
+canonical object records. The altar-server leaf now binds the exact 1962
+facsimile loci for the lectern's Palm Sunday, Good Friday, and Easter Vigil
+states. The Epistle/Gospel consumer binding points to the
 exact 1962 Missal passage record for *Ritus servandus* VI.4--5. This tranche
 promotes those two canonical records from `identified` to `source-audited`;
 their morphology claim remains explicitly unresolved.
@@ -197,7 +204,7 @@ their morphology claim remains explicitly unresolved.
 
 The alpha does not cover the complete server route, altar composition, the
 remaining Lavabo objects, Communion plate, vesture, the remaining
-sung and solemn branches, special Masses, Holy Week, pontifical ceremonies, or related
+sung and solemn branches, the remaining Holy Week inventory, pontifical ceremonies, or related
 ceremonies. The detailed Low-Mass queue and missing-candidate accounting remain
 in `low-mass-core-selection-register.md`.
 

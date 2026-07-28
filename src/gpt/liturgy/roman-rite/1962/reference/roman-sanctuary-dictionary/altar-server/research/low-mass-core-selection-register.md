@@ -47,7 +47,7 @@ excluded from that edition by this register.
 | `obj-sanctuary-stool` | identified | Omit from Low-Mass set | Current record is pontifical/ceremony-surrounding-Mass; not identified with server seating in LM-018 |
 | `obj-sedilia` | identified | Omit from Low-Mass set | LM-018 expressly distinguishes the servers' local seats from sedilia |
 | `obj-gospel-book` | identified | Omit from Low-Mass set | The Gospel is read from the altar Missal in this route |
-| `obj-lectern` | identified | Omit from Low-Mass set | No separate lesson or Gospel lectern occurs in the selected route |
+| `obj-lectern` | source-audited | Omit from Low-Mass set | No separate lesson or Gospel lectern occurs in the selected route; it enters the broader altar-server edition only in the exact Holy Week branches |
 | `obj-missal-cushion` | source-audited | Select: alternative support | Mutually alternative support that a server must recognize if used instead of a stand |
 | `obj-missal-stand` | source-audited | Select: direct handling | Carried securely with the Missal at LM-016 and LM-037 |
 | `obj-paten` | source-audited | Select: must not handle/confusable | Component of the prepared chalice; must be distinguished from the Communion plate |

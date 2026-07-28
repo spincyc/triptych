@@ -205,6 +205,28 @@ the log has no fatal error, undefined reference, or overfull box. Build and
 installed bytes are identical at 7,630,753 bytes. Installed SHA-256:
 `206e14d0508feeb2d5cb64e80eca1ab17f2c16d25266d5450ab5e1abd094d137`.
 
+The Holy Week lectern tranche promotes `obj-lectern` to `source-audited` and
+adds it as the twentieth rendered record without importing it into the
+Low-Mass core. The altar-server binding identifies Palm Sunday n. 8, Good
+Friday nn. 7, 9--10, and Easter Vigil nn. 13 and 13a in the exact 1962 Missal
+facsimile. The standalone page distinguishes the freestanding support from
+the low altar Missal stand and teaches only the rites' checked bare and
+white-cloth-covered states. The retained pencil figure is project-generated
+and rights-cleared; its pedestal construction, material, height, ornament,
+and silhouette are labelled illustrative, and no universal position or
+server setup method is inferred.
+
+The resulting 19-page, twenty-object bounded alpha was built for settled
+passes, rastered through the repository review helper, and visually inspected
+on every page. The standalone lectern page and both terminal pages were also
+inspected at full rendered size. The object silhouette, low-stand distinction,
+ritual-state labels, handling boundary, source key, and illustrative-morphology
+notice are legible and unambiguous; no content is clipped or overlapped. The
+PDF has embedded fonts and extractable text, and the log has no fatal error,
+undefined reference, overfull box, or unresolved LaTeX warning. Build and
+installed bytes are identical at 7,633,995 bytes. Installed SHA-256:
+`d85fc4cbfdeee6428d5e88d1b043f7ffab98c4a8832a693380460c53e199699c`.
+
 ## Alpha readiness
 
 Each rebuilt leaf is alpha-eligible when the six current concerns pass. The

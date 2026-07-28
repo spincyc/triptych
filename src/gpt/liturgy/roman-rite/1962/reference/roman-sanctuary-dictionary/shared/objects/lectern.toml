@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-lectern"
-workflow_state = "identified"
+workflow_state = "source-audited"
 preferred_english_name = "Lectern"
 latin_headword = "legile"
 alternate_english_names = ["reading stand", "book lectern"]
@@ -76,7 +76,7 @@ checked_on = 2026-07-27
 id = "art-lectern-isolated"
 view = "isolated"
 asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0003-iso-lectern.png"
-review_state = "identity-checked"
+review_state = "print-checked"
 depicts = ["obj-lectern"]
 scale_mode = "not-to-common-scale"
-review_note = "Checked one freestanding support, full silhouette, grayscale mode, crop, and absence of text. Morphology remains held."
+review_note = "Checked at altar-server rendered size as one freestanding support with complete silhouette, grayscale mode, safe crop, and no text. The pedestal morphology remains illustrative and does not depict the ceremony-specific cloth."

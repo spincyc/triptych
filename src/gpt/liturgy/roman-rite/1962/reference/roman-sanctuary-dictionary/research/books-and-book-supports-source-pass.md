@@ -149,3 +149,11 @@ teaches the exact VI.4--5 sequence stated above and expressly prevents cover
 ornament from becoming an identity cue or a freestanding lectern from entering
 the ordinary held-book Gospel formation. The unresolved terminology-alias and
 material-morphology work remains unresolved.
+
+On 2026-07-28, `obj-lectern` likewise advanced to `source-audited` for this
+consumer. Its altar-server leaf binds the checked Palm Sunday n. 8, Good
+Friday nn. 7, 9--10, and Easter Vigil nn. 13 and 13a loci. The standalone
+plate teaches the exact bare and white-cloth-covered rite states while
+identifying its wooden pedestal construction, material, height, ornament, and
+silhouette as illustrative. It does not generalize a ceremony-specific
+position or infer a universal server setup or carrying method.
