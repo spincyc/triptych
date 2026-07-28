@@ -1198,7 +1198,11 @@ def filter_catalog(
 
     title = next((line for line in markdown_text.splitlines() if line.startswith("# ")), "# Library")
     back = next(
-        (line for line in markdown_text.splitlines() if line.startswith("[Return to the Library]")),
+        (
+            line
+            for line in markdown_text.splitlines()
+            if re.match(r"^\[Return to [^\]]+\]\([^)]+\)\s*$", line)
+        ),
         "[Return to the Library](../LIBRARY.md)",
     )
     return (
@@ -1355,6 +1359,76 @@ def page_classes(source_relative: str, output_relative: str) -> str:
     return f"page-shell page-{kind}" + (" reading" if kind == "reader" else "")
 
 
+def document_title(title: str) -> str:
+    """Avoid the redundant ``Triptych · Triptych`` browser title."""
+    return "Triptych" if title.casefold() == "triptych" else f"{title} · Triptych"
+
+
+def navigation_state(source_relative: str) -> tuple[str, str, str]:
+    """Return aria-current attributes for the stable primary navigation."""
+    if source_relative == "README.md":
+        return (' aria-current="page"', "", "")
+    if source_relative == "CONTRIBUTING.md":
+        return ("", "", ' aria-current="page"')
+    if source_relative == "LIBRARY.md" or source_relative.startswith(("library/", "web/")):
+        return ("", ' aria-current="page"', "")
+    return ("", "", "")
+
+
+def reader_shelf(source_relative: str) -> tuple[str, str] | None:
+    """Resolve a web edition to the reader-facing shelf that owns its subject."""
+    if not source_relative.startswith("web/"):
+        return None
+    routes = (
+        ("/liturgy/roman-rite/1962/", "Traditional Latin Mass", "library/traditional-latin-mass.html"),
+        ("/liturgy/roman-rite/postconciliar/", "Novus Ordo", "library/novus-ordo-liturgy.html"),
+        ("/history/catholic-exorcism/", "Catholic Exorcism", "library/catholic-exorcism.html"),
+        ("/curriculums/ecclesiastical-latin/", "Ecclesiastical Latin", "library/ecclesiastical-latin.html"),
+        ("/biographies/", "Biographies", "library/biographies.html"),
+        ("/theology/heresies/", "Heresies", "library/heresies.html"),
+        ("/theology/mariology/", "Mariology", "library/mariology.html"),
+        ("/theology/", "Faith", "library/faith.html"),
+        ("/history/", "Historical Accounts", "library/historical-accounts.html"),
+        ("/canon-law/", "Law and Church Discipline", "library/law-and-church-discipline.html"),
+        ("/devotions/", "Prayer", "library/prayer.html"),
+        ("/scripture/", "Scripture", "library/scripture.html"),
+        ("/articles/", "Faith", "library/faith.html"),
+    )
+    normalized = "/" + source_relative.removeprefix("web/").split("/", 1)[-1] + "/"
+    for marker, label, destination in routes:
+        if marker in normalized:
+            return label, destination
+    return "Library", "library.html"
+
+
+def breadcrumb(source_relative: str, output_relative: str) -> str:
+    shelf = reader_shelf(source_relative)
+    if shelf is None:
+        return ""
+    label, destination = shelf
+    library_href = html.escape(relative_link(output_relative, "library.html"), quote=True)
+    shelf_href = html.escape(relative_link(output_relative, destination), quote=True)
+    if destination == "library.html":
+        return (
+            '<nav class="breadcrumb" aria-label="Breadcrumb">'
+            f'<a href="{library_href}">Library</a></nav>'
+        )
+    return (
+        '<nav class="breadcrumb" aria-label="Breadcrumb">'
+        f'<a href="{library_href}">Library</a><span aria-hidden="true">›</span>'
+        f'<a href="{shelf_href}">{html.escape(label)}</a></nav>'
+    )
+
+
+def add_table_header_scopes(rendered_html: str) -> str:
+    """Identify Markdown table headers as column headers for assistive tech."""
+    return re.sub(
+        r"<th(?=\s|>)(?![^>]*\bscope=)",
+        '<th scope="col"',
+        rendered_html,
+    )
+
+
 def reject_internal_reader_labels(source_relative: str, rendered_html: str) -> None:
     """Keep implementation identities out of navigation and catalog prose."""
     if source_relative == "LIBRARY.md" or source_relative.startswith("library/"):
@@ -1384,14 +1458,14 @@ def render_page(
         ) from exc
     require_locked_markdown_dependency()
 
-    content = markdown.markdown(
+    content = add_table_header_scopes(markdown.markdown(
         markdown_text,
         # Web editions are endnote-heavy and carry their own section anchors,
         # so footnotes and heading attributes must become real markup rather
         # than literal [^n] and {#id} text.
         extensions=["tables", "sane_lists", "toc", "footnotes", "attr_list"],
         output_format="html5",
-    )
+    ))
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
     if preview:
         robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
@@ -1426,9 +1500,11 @@ def render_page(
             "<strong>Study edition.</strong>"
             " Read critically and follow the cited sources.</aside>"
         )
+    title = page_title(markdown_text)
+    home_current, library_current, feedback_current = navigation_state(source_relative)
     replacements = {
         "{{PAGE_CLASS}}": page_classes(source_relative, output_relative),
-        "{{TITLE}}": html.escape(page_title(markdown_text)),
+        "{{DOCUMENT_TITLE}}": html.escape(document_title(title)),
         "{{ROBOTS}}": robots,
         "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
         "{{HOME_PATH}}": relative_link(output_relative, "index.html"),
@@ -1437,6 +1513,10 @@ def render_page(
         "{{LICENSE_PATH}}": relative_link(output_relative, "license.html"),
         "{{THIRD_PARTY_PATH}}": relative_link(output_relative, "third-party.html"),
         "{{MODE_BANNER}}": banner,
+        "{{HOME_CURRENT}}": home_current,
+        "{{LIBRARY_CURRENT}}": library_current,
+        "{{FEEDBACK_CURRENT}}": feedback_current,
+        "{{BREADCRUMB}}": breadcrumb(source_relative, output_relative),
         "{{CONTENT}}": content,
     }
     for marker, replacement in replacements.items():

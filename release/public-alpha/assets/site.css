@@ -156,6 +156,17 @@ pre code { padding: 0; background: transparent; }
 blockquote { margin-left: 0; padding-left: 1rem; border-left: 0.25rem solid var(--gold); color: var(--muted); }
 
 .empty-shelf { padding: 1rem 1.2rem; border-left: 0.3rem solid var(--gold); background: #f5efe6; }
+.breadcrumb {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  margin: -0.2rem 0 1.5rem;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.88rem;
+}
+.breadcrumb a { color: inherit; text-decoration-color: var(--gold); }
+nav [aria-current="page"] { text-decoration-thickness: 0.16rem; text-underline-offset: 0.35rem; }
 
 /* Endnotes carry much of a document's scholarship: the marker stays small and
    unobtrusive, the apparatus reads as a closing section, and a followed

@@ -7,6 +7,7 @@ import importlib.util
 import io
 import json
 from pathlib import Path
+import re
 import sys
 import tempfile
 import unittest
@@ -132,6 +133,45 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn(">Feedback</a>", layout)
         self.assertNotIn("Browse the library", layout)
         self.assertNotIn("Give feedback", layout)
+        self.assertIn("{{HOME_CURRENT}}", layout)
+        self.assertIn("{{BREADCRUMB}}", layout)
+
+    def test_home_browser_title_is_not_duplicated(self) -> None:
+        self.assertEqual(self.tool.document_title("Triptych"), "Triptych")
+        self.assertEqual(self.tool.document_title("Library"), "Library · Triptych")
+
+    def test_primary_navigation_marks_the_contextual_destination(self) -> None:
+        self.assertEqual(
+            self.tool.navigation_state("README.md"),
+            (' aria-current="page"', "", ""),
+        )
+        self.assertEqual(
+            self.tool.navigation_state("library/test.md"),
+            ("", ' aria-current="page"', ""),
+        )
+        self.assertEqual(
+            self.tool.navigation_state("web/gpt/work.md"),
+            ("", ' aria-current="page"', ""),
+        )
+
+    def test_reader_breadcrumb_uses_owning_subject_shelf(self) -> None:
+        crumb = self.tool.breadcrumb(
+            "web/gpt/history/catholic-exorcism/01-history-and-current-practice.md",
+            "web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+        )
+        self.assertIn('aria-label="Breadcrumb"', crumb)
+        self.assertIn(">Library</a>", crumb)
+        self.assertIn(">Catholic Exorcism</a>", crumb)
+        self.assertIn("../../../../library/catholic-exorcism.html", crumb)
+
+    def test_markdown_table_headers_receive_column_scope(self) -> None:
+        self.assertEqual(
+            self.tool.add_table_header_scopes(
+                "<table><thead><tr><th>Name</th><th>Focus</th></tr></thead></table>"
+            ),
+            '<table><thead><tr><th scope="col">Name</th>'
+            '<th scope="col">Focus</th></tr></thead></table>',
+        )
 
     def make_manifest(self) -> dict:
         stale_hash = "0" * 64
@@ -554,6 +594,30 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn("[Ecclesiastical Latin](ecclesiastical-latin.html)", landing)
         self.assertIn("[Return to Curriculums](curriculums.html)", child)
 
+    def test_empty_child_catalog_preserves_its_parent_backlink(self) -> None:
+        self.write(
+            "library/ecclesiastical-latin.md",
+            (
+                "# Ecclesiastical Latin\n\n"
+                "[Return to Curriculums](curriculums.md)\n\n"
+                "[Held](../doc/gpt/held.pdf)\n"
+            ).encode(),
+        )
+        with mock.patch.object(
+            self.tool,
+            "render_page",
+            side_effect=lambda source, markdown, output, preview, authorization: markdown,
+        ):
+            child = self.tool.render_source_page(
+                "library/ecclesiastical-latin.md",
+                "library/ecclesiastical-latin.html",
+                set(),
+                False,
+                {},
+            )
+        self.assertIn("[Return to Curriculums](curriculums.html)", child)
+        self.assertNotIn("Return to the Library", child)
+
     def test_repository_page_map_includes_curriculum_child_catalog(self) -> None:
         repository_tool = load_tool()
 
@@ -862,6 +926,32 @@ class PublicAlphaTest(unittest.TestCase):
                 any("#" in target for _, target in section_links),
                 f"{landing} must not promote a child section through a fragment link",
             )
+
+    def test_root_landings_do_not_promote_pictorial_dictionary_child_anchor(self) -> None:
+        for landing in ("README.md", "LIBRARY.md"):
+            text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
+            self.assertNotIn("sanctuary-pictorial-dictionaries", text)
+
+    def test_landing_page_headings_do_not_skip_levels(self) -> None:
+        for relative in sorted(self.tool.PAGE_MAP):
+            if relative.startswith("release/") or relative in {"LICENSE", "THIRD_PARTY.md"}:
+                continue
+            path = REPOSITORY_ROOT / relative
+            if not path.is_file():
+                continue
+            previous = None
+            for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+                match = re.match(r"^(#{1,6})\s", line)
+                if match is None:
+                    continue
+                level = len(match.group(1))
+                if previous is not None:
+                    self.assertLessEqual(
+                        level,
+                        previous + 1,
+                        f"{relative}:{number} skips from h{previous} to h{level}",
+                    )
+                previous = level
 
     def test_child_catalogs_link_only_through_their_parent_sections(self) -> None:
         relationships = (

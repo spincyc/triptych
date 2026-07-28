@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {{ROBOTS}}
-  <title>{{TITLE}} · Triptych</title>
+  <title>{{DOCUMENT_TITLE}}</title>
   <link rel="stylesheet" href="{{ASSET_PATH}}">
 </head>
 <body>
@@ -18,13 +18,14 @@
       <span>Faith · Worship · Law</span>
     </div>
     <nav aria-label="Primary navigation">
-      <a href="{{HOME_PATH}}">Home</a>
-      <a href="{{LIBRARY_PATH}}">Library</a>
-      <a href="{{CONTRIBUTING_PATH}}">Feedback</a>
+      <a href="{{HOME_PATH}}"{{HOME_CURRENT}}>Home</a>
+      <a href="{{LIBRARY_PATH}}"{{LIBRARY_CURRENT}}>Library</a>
+      <a href="{{CONTRIBUTING_PATH}}"{{FEEDBACK_CURRENT}}>Feedback</a>
     </nav>
   </header>
   {{MODE_BANNER}}
   <main id="main-content" class="{{PAGE_CLASS}}">
+    {{BREADCRUMB}}
     {{CONTENT}}
   </main>
   <footer class="site-footer">
