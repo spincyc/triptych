@@ -7,12 +7,41 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Twenty-three alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Twenty-one alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Twenty-three alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Twenty-three alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Twenty alpha records | Built, inspected, and installed | No | Alpha |
+
+The thurible promotion admits the existing source-audited canonical record
+through all six alpha selections. Its project-generated graphite asset now
+has exact prompt references, received and normalized identities, correction
+history, rights, source-control, consumer, print, and release checks recorded.
+The image visibly separates three bowl-support chains from one central
+lid-lifting chain and contains no text, flame, smoke, charcoal, incense,
+person, or action. Audience notes remain evidence-bounded and non-operational.
+The bespoke altar-server leaf deliberately retains its stronger existing
+full-page thurible treatment rather than importing a duplicate generated page,
+so it remains at thirty-three records and 31 pages.
+
+All 152 pages across the six leaves were rastered through the repository PDF
+review pipeline and visually inspected on the contact sheets. The five new
+generated thurible pages and the existing altar-server page are legible and
+unclipped; the four chains remain distinguishable at rendered size. No
+overlap, spill page, impossible construction, or unsafe operational
+instruction was found. Settled logs contain no fatal error, undefined
+reference, or overfull box. Fonts are embedded, text is extractable, and
+build and installed bytes are identical:
+
+| Leaf | Records | Pages | Installed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 23 | 25 | `83d1999caca08b75a884f1808f7b29072a4502c474f9b50afdffe7c8c228cb8d` |
+| Altar server | 33 | 31 | `110f4693294ebff9d3262fc249519f77491f0104ae3f942acee8f705a2b2f5b2` |
+| Sacristan | 23 | 25 | `ff4288d7e50e387aa55070ad79a7c70d9ac0b4e9cf2f9d12698488d4adef6a67` |
+| MC/trainer | 23 | 25 | `a3ed1642ce753db25faf20ae6011d5968c6c68e392e3bd7320521f96fa2eef1c` |
+| General reader | 22 | 24 | `ba80327d4f75f1149e12e668baeee7d7ea626faad396b2ad8078a638675d2d04` |
+| Pontifical ceremonies | 20 | 22 | `bb2edb2492126fb79e18986923ab3804932f64654672ec722250b63a0ac34585` |
 
 The incense boat-and-spoon promotion admits the two already source-audited
 canonical records through all six alpha selections. It uses the existing

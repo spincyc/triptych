@@ -86,6 +86,14 @@ one combined page in this bespoke thirty-three-record teaching leaf, so the
 promotion deliberately preserves the distinct teaching spread and changes
 neither its object count nor its pagination.
 
+The canonical generated selection now also admits the thurible, bringing that
+selection to twenty-three records. This bespoke leaf deliberately retains its
+existing full-page thurible treatment instead of importing a duplicate
+generated page. Its thirty-three-record count and pagination remain unchanged.
+The retained page already exposes the three support chains, central lid chain,
+trained-thurifer boundary, cold-empty rehearsal limit, and non-operational
+hot-object warning.
+
 The incense family uses source-bounded generated artwork. The thurible view
 shows a neutral footed bowl, removable pierced lid, three support chains, and
 a separate central lid-lifting chain without asserting material, ornament, or

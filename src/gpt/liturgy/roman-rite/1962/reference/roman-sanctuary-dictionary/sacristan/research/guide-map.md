@@ -25,4 +25,8 @@ The Lavabo basin and towel add the checked Epistle-side preparation relationship
 without prescribing vessel morphology, material, towel fold, or local care
 practice. The incense boat and spoon add a checked paired preparation and
 storage relationship without prescribing material, dimensions, ornament, or
-contents. The twenty-two-record edition creates no external-review gate.
+contents. The thurible adds a distinct hot-vessel recognition page whose
+preparation note defers fire handling and resting arrangements to the church's
+trained practice; it prescribes no material, dimensions, ornament, charcoal
+procedure, or storage geometry. The twenty-three-record edition creates no
+external-review gate.

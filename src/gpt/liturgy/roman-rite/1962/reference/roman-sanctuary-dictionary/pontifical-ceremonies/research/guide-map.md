@@ -33,3 +33,8 @@ objects rather than pontifical insignia or distinct pontifical forms. Their
 paired plate and notes preserve the checked clerical relationship and make no
 claim for a universal material, dimension, ornament, or local lay handoff,
 bringing the selection to nineteen records.
+The thurible enters as another ordinary supporting object used in pontifical
+Mass, not as pontifical insignia or a distinct pontifical form. Its
+source-bounded four-chain figure and non-operational safety note bring the
+selection to twenty records without prescribing material, ornament, handoff,
+swinging, or charcoal procedure.

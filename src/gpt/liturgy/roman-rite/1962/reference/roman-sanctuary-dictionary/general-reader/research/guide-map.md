@@ -10,7 +10,7 @@ reader. It owns no copied facts. Each plate emphasizes identity and purpose;
 its canonical audience note explains a useful distinction without enlarging
 the verified claims.
 
-The twenty-one-record alpha adds the corporal, purificator, chalice pall,
+The twenty-two-record alpha adds the corporal, purificator, chalice pall,
 chalice veil, burse, three altar cloths, credence table, Lavabo basin, and
 Lavabo towel to the appointments-and-books family, together with the incense
 boat and spoon. One image-dominant page per object preserves the principal
@@ -21,7 +21,9 @@ the threefold altar covering from the corporal without prescribing folds or
 extents. The paired Lavabo view distinguishes the washing vessel and hand
 towel without claiming a common scale or universal form. The incense pair
 distinguishes the loose-incense container from its separate transfer tool
-without universalizing the pictured form. Sedilia
+without universalizing the pictured form. The thurible plate distinguishes
+three bowl-support chains from the separate central lid chain while presenting
+that construction only as one source-bounded representative form. Sedilia
 remain outside this concise edition because their canonical general-reader
 relevance is useful rather than required. All alpha qualifications appear on
 the first page only.

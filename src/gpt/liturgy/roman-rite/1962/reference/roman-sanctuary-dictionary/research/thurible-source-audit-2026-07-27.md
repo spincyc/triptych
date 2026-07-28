@@ -122,7 +122,7 @@ Second correction:
 > chains or rings. No text, labels, arrows, numbers, smoke, flame, charcoal,
 > hands, background, watermark, or ornament.
 
-Received source image: 1024 × 1536, 8-bit sRGB PNG, SHA-256
+Received source image: 1,889,482-byte, 1024 × 1536, 8-bit sRGB PNG, SHA-256
 `f2ef0eec76e73f0767718670ec85a160124772e749473eb38a775a4f96fb8e42`.
 It was stripped, converted to 8-bit grayscale, and reduced to 900 × 1350.
 Normalized publication asset

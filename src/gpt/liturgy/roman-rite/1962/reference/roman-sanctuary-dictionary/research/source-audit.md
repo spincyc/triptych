@@ -224,3 +224,19 @@ from the already controlled thin priest's paten, and carries an explicit
 not-to-common-scale notice. The exact source identities, page-image check,
 rights metadata, evidence ceilings, handling model, and artwork limits are
 recorded in `communion-plate-source-audit-2026-07-28.md`.
+
+## Thurible alpha reconciliation — 2026-07-28
+
+The existing `obj-thurible` claims remain bounded to the exact 1962 Missal
+loci and the inspected 1927 Benziger catalog pages recorded in
+`thurible-source-audit-2026-07-27.md`. The Met object remains a variation
+control only. Cross-edition promotion adds no new factual claim: it records
+the existing project-generated graphite asset's provenance, rights, identity,
+print, safety, and consumer checks and supplies audience notes derived from
+the already checked identity and appearance claims.
+
+The figure is one representative closed construction, not a universal
+silhouette or material prescription. Reader-facing text does not provide
+charcoal-lighting, loading, extinguishing, swinging, handoff, route, or hot
+resting instructions. The bespoke altar-server leaf retains its stronger
+existing full-page treatment and does not render a duplicate generated entry.

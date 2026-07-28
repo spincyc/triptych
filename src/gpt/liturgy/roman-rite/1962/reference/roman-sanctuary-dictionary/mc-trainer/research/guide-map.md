@@ -25,4 +25,7 @@ altar cloths add a distinct altar-covering relationship without turning
 illustrative folds, extents, or spacing into ceremonial instruction. The
 incense boat and spoon add the checked deacon-to-celebrant relationship while
 leaving any lay boat-bearer assignment, cue, and handoff to local training.
-The twenty-two-record canonical alpha gate requires no external review.
+The thurible adds the named thurifer relationship and a source-bounded
+four-chain recognition view without supplying a handoff, route, swinging, or
+charcoal procedure. The twenty-three-record canonical alpha gate requires no
+external review.

@@ -41,6 +41,16 @@ cloths covering the altar; the generated image supplies no evidence for
 material, dimensions, markings, ornament, folds, edge drop, relative extent,
 arrangement method, or altar construction.
 
+The closed-thurible raster is also project-generated without a supplied
+reference image. Its exact initial prompt and two correction prompts, received
+and normalized hashes, grayscale transformation, source-controlled features,
+and exclusions are preserved in
+`research/thurible-source-audit-2026-07-27.md` and the canonical artwork
+manifest. It is distributed under the repository's project-content terms.
+The 1927 catalog and Met record control evidence only; no third-party image
+pixel is reproduced. The alpha figure contains no text, smoke, flame,
+charcoal, incense, person, or operational action.
+
 ## Open rights classes
 
 | Material | Present disposition | Required action |

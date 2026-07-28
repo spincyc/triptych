@@ -129,14 +129,6 @@ view = "isolated"
 workflow_state = "source-audited"
 
 [[artwork_links]]
-id = "art-incense-0001-closed-thurible"
-asset_file_id = "file-rpd-thurible"
-object_ids = ["obj-thurible"]
-variant_ids = []
-view = "closed-component-recognition"
-workflow_state = "source-audited"
-
-[[artwork_links]]
 id = "art-incense-0002-open-boat-spoon"
 asset_file_id = "file-rpd-boat-spoon"
 object_ids = ["obj-incense-boat", "obj-incense-spoon"]
@@ -539,7 +531,7 @@ technical = { width_px = 1122, height_px = 1402, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-thurible"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible.png"
-state = "source-audited"
+state = "canonical-alpha-eligible"
 audit_record = "research/thurible-source-audit-2026-07-27.md"
 technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 416912, sha256 = "ea611ce0b2e539483a39d2fe803f901dd0f83be4db931d4639364ce37f6769dc" }
 
@@ -721,6 +713,74 @@ print = "not-applicable"
 rights = "passed"
 consumer = "passed"
 release = "pending"
+
+[[artworks]]
+id = "art-incense-0001-closed-thurible"
+object_ids = ["obj-thurible"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach recognition of a source-bounded thurible construction while keeping hot-object handling non-operational."
+depicted_state = "One closed, vertically suspended representative thurible, cold and empty, isolated on white."
+source_controlled_features = [
+  "The checked 1927 Benziger catalog supports a footed bowl, removable pierced lid, three bowl-support chains, and a separate central lid-lifting chain through an upper control.",
+  "The checked 1962 Missal controls the thurible identity and named thurifer relationships, not the depicted morphology.",
+]
+deliberate_omissions = [
+  "No claim that the selected silhouette, proportions, material, ornament, piercing pattern, foot, disc, ring, or chain-link form is universal or prescribed.",
+  "No text, labels, arrows, numbers, borders, smoke, flame, charcoal, incense, boat, spoon, stand, actor, hand, church setting, or operational action.",
+  "No charcoal-lighting, loading, extinguishing, swinging, handoff, or hot-resting procedure.",
+]
+brief = "One unmistakable closed Roman thurible as a restrained graphite drawing on white: footed bowl, removable pierced lid, exactly three separately traceable bowl-support chains, and one separate central lid-lifting chain through the upper disc and ring."
+exact_prompt = "The exact initial generation prompt and both exact mechanical-correction prompts are transcribed verbatim in research/thurible-source-audit-2026-07-27.md; they are incorporated here by that stable audit reference rather than silently reconstructed."
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-27"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible.png"
+reference_ids = ["src-thurible-missal-1962", "src-benziger-1927-thuribles", "src-met-464340-thurible-variation"]
+precursor_ids = []
+corrections = [
+  "First generated output was corrected to separate exactly three bowl-support chains from the central lid chain and to simplify unsupported ornament.",
+  "A second targeted correction restored the missing third support chain as a separately traceable rear-right chain.",
+  "The selected 1024 by 1536 sRGB output was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels.",
+]
+baked_content_audit = [
+  "Three separate bowl-support chains are traceable from bowl-rim rings to distinct upper-disc points; one separate central chain runs from the lid finial through the disc center.",
+  "The bowl, removable pierced lid, foot, upper disc, and control ring remain distinct and mechanically coherent in the closed hanging state.",
+  "No text, lettering, numeral, arrow, label, border, watermark, color, smoke, flame, charcoal, incense, person, hand, boat, spoon, stand, church setting, or ritual action is visible.",
+  "The visible polished-metal effect and decorative piercing are illustrative and are not asserted as material or universal ornament.",
+]
+tex_overlays = ["English and Latin names, stable ID, representative-form boundary, handling and safety notes, source keys, and audience-specific guidance remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image; the exact prompts, received and normalized hashes, transformation, corrections, factual references, and consumer boundary are recorded. Distributed under the repository's project-content terms."
+
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1889482
+sha256 = "f2ef0eec76e73f0767718670ec85a160124772e749473eb38a775a4f96fb8e42"
+
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 416912
+sha256 = "ea611ce0b2e539483a39d2fe803f901dd0f83be4db931d4639364ce37f6769dc"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
 
 [[artworks]]
 id = "art-sacristy-preparation-plate"
