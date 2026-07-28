@@ -25,12 +25,12 @@ PC-S42-C
 | Communion Antiphon B | John 6:35. |
 | Prayer after Communion | *Quos caelesti recreas munere*. |
 
-| **Sense** | **Synthesis** | **L** | **i** |
-|:-----------|:----------------|:-----------------|:-------------------|
-| teral | Toil cannot secure its fruit or its possessor; the rich man’s stored abundance cannot preserve his life. |  |  |
-| Allegorical | Those raised with Christ receive their life from him, not from accumulated goods; Communion directs desire toward the giver. |  |  |
-| Moral | Numbered days, poverty of spirit, and the putting away of greed train a responsible freedom for stewardship and mercy. |  |  |
-| Anagogical | The hidden life will appear with Christ in glory, while goods stored only for oneself end at death. |  |  |
+| **Sense** | **Synthesis** |
+|:-----------|:------------------------------------------------------|
+| Literal | Toil cannot secure its fruit or its possessor; the rich man’s stored abundance cannot preserve his life. |
+| Allegorical | Those raised with Christ receive their life from him, not from accumulated goods; Communion directs desire toward the giver. |
+| Moral | Numbered days, poverty of spirit, and the putting away of greed train a responsible freedom for stewardship and mercy. |
+| Anagogical | The hidden life will appear with Christ in glory, while goods stored only for oneself end at death. |
 
 ## Scriptural Date and Location
 

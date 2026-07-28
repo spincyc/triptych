@@ -45,6 +45,13 @@ evidence_state = "source-grounded-synthesis"
 source_ids = ["src-dalmatic-fortescue-1943"]
 
 [[claims]]
+id = "clm-dalmatic-use"
+kind = "liturgical-use"
+text = "The checked ceremonial baseline places the dalmatic on the deacon over the alb, cincture, maniple, and diagonal stole."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-dalmatic-fortescue-1943"]
+
+[[claims]]
 id = "clm-dalmatic-presence"
 kind = "ceremonial-presence"
 text = "The 1962 General Rubrics retain the deacon's dalmatic while expressly discontinuing folded chasubles and the broad stole."

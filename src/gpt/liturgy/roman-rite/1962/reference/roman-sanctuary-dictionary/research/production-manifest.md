@@ -979,3 +979,35 @@ did not yet import structured provenance. The six dictionary leaves were
 therefore compiled directly through the same repository TeX invocation for
 two passes; that unrelated metadata failure did not affect their inputs,
 logs, raster review, or installed-byte verification.
+
+## Sacred-minister vestments cross-edition checkpoint — 2026-07-28
+
+Three canonical records now add the deacon's stole, dalmatic, and tunicle to
+the dictionary's sacred-minister vestment coverage. The five generated
+editions receive them through their canonical selection, and the bespoke
+altar-server leaf receives the same bounded slice without duplicating the
+underlying object records.
+
+The records distinguish the deacon's diagonal stole from the priest's stole
+and distinguish the dalmatic from the subdeacon's tunicle without extending
+the ordinary-priest vesting sequence to either minister. The retained artwork
+manifest records the surviving generation brief, normalized identity,
+dimensions, byte count, rights basis, and the unavailable exact prompt and
+original-generator-byte evidence.
+
+All six PDFs were built for settled passes, rastered with the repository
+review helper, and visually inspected page by page: 97 pages total. The new
+vestment plates were additionally checked at rendered size. Their images,
+headwords, distinctions, and audience notes are legible, with no clipping,
+overlap, or spill page. Logs have no fatal error, undefined reference,
+overfull box, or rerun warning; fonts are embedded and text is extractable.
+Build and installed bytes are identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 14 | 20,350,422 | `d63235bbb4fd5ad5a27fb69d88609cc94c30369e3bc422d41707897cba7279cb` |
+| Altar server | 33 | 18,207,029 | `21a8efb9acced17f4d4a016cf8a1e6ff2b4af18c68edc052b9a3ba3fe79f63bb` |
+| Sacristan | 13 | 20,389,639 | `f5af2e3fcfd5e2c01c117b1e6a7038b5c5b3a96190d4586b5cc6e8df485ca51b` |
+| MC and trainer | 13 | 20,391,080 | `a28ba25ea69d9a5c5bdf82bfd4b1b5253f4c01f9a842b14bce8f8884e7faab5f` |
+| General reader | 12 | 19,605,155 | `9fe9f88180b0949ddb2e08f22065e5e7ce64c4238338d8ea6c530242f6f0cea5` |
+| Pontifical ceremonies | 12 | 19,270,098 | `4048cfa4c3be5f26f9b5928d41ffe3bed188da0469e829d359b8fb0342dbdd32` |

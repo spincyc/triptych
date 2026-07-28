@@ -44,6 +44,13 @@ evidence_state = "checked-paraphrase"
 source_ids = ["src-deacon-stole-fortescue-1943"]
 
 [[claims]]
+id = "clm-deacon-stole-appearance"
+kind = "appearance"
+text = "The plate shows one representative complete diagonal arrangement on an anonymous front-and-back torso study; proportions, fastening, hanging lengths, textile, and ornament are illustrative rather than prescribed."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-deacon-stole-fortescue-1943"]
+
+[[claims]]
 id = "clm-deacon-stole-presence"
 kind = "ceremonial-presence"
 text = "At the 1962 horizon the deacon retains the stole and dalmatic; the folded chasuble and broad stole are expressly no longer used."

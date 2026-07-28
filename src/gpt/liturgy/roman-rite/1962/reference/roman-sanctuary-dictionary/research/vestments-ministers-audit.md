@@ -2,8 +2,8 @@
 
 Audit date: 2026-07-27
 
-Status: **inventory leads established; three study plates generated; no plate
-approved for publication**
+Status: **ordinary priestly and three sacred-minister records admitted;
+remaining vestment, server, minister, and choir corpus open**
 
 This pass owns the vesture slice for priests, deacons, subdeacons, servers,
 other ministers, and choir in Roman ceremonies at the 1962 horizon. It does
@@ -22,12 +22,12 @@ artwork satisfy the schema gates.
 | `obj-cincture` | Cincture | *cingulum* | priestly vestments | coiled, tied, worn | Identified lead; verify terminology, material, and use |
 | `obj-maniple` | Maniple | *manipulus* | priestly vestments; deacon and subdeacon | isolated, worn on left arm | Identified lead; verify use by order and ceremony at the 1962 horizon |
 | `obj-priest-stole` | Priest's stole | *stola* | priestly vestments | isolated, worn crossed/uncrossed where applicable | Identified lead; verify arrangement by wearer and ceremony |
-| `obj-deacon-stole` | Deacon's stole | *stola* | deacon and subdeacon | isolated, diagonal worn view, fastening detail | Identified lead; verify exact ceremonial arrangement |
+| `obj-deacon-stole` | Deacon's stole | *stola* | deacon and subdeacon | isolated, diagonal worn view, fastening detail | Publication-ready bounded record and pencil comparison; fastening and proportions remain non-universal |
 | `obj-chasuble` | Chasuble | *casula; planeta* | priestly vestments | Roman and Gothic front/back/worn comparisons | Identified lead; lexical and substantive-variant audit required |
 | `obj-cope` | Cope | *pluviale* | priestly vestments; related ceremonies | front, back, open, clasp and hood details | Identified lead; verify Mass-adjacent and processional uses |
 | `obj-biretta` | Biretta | *biretum* | priestly vestments; servers, ministers, and choir | front, top, worn | Identified lead; rank, region, tuft, and peak variants require audit |
-| `obj-dalmatic` | Dalmatic | *dalmatica* | deacon and subdeacon | front, back, worn | Identified lead; distinguish stable construction from ornament |
-| `obj-tunicle` | Tunicle | *tunicella* | deacon and subdeacon | front, back, worn | Identified lead; direct comparison with dalmatic required |
+| `obj-dalmatic` | Dalmatic | *dalmatica* | deacon and subdeacon | front, back, worn | Publication-ready bounded record and pencil comparison; construction and ornament remain non-universal |
+| `obj-tunicle` | Tunicle | *tunicella* | deacon and subdeacon | front, back, worn | Publication-ready bounded record and pencil comparison; dalmatic distinction remains modest and non-universal |
 | `obj-folded-chasuble` | Folded chasuble | *planeta plicata* | deacon and subdeacon; historical | front, back, worn | Held pending exact 1962 reform-horizon chronology and ceremonial loci |
 | `obj-broad-stole` | Broad stole | *stola latior* | deacon and subdeacon; historical | isolated, worn | Held pending the same chronology audit |
 | `obj-cassock` | Cassock | *vestis talaris* | servers, ministers, and choir | front, back, worn | Identified lead; distinguish clerical and server use without universalizing local color |

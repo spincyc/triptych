@@ -143,7 +143,7 @@ quotations, or third-party scholarship.
 
 The settled source was built for two passes in both modes. The full edition is
 12 pages with SHA-256
-`43484d03c4d3621a7eacc060f83dd7d5ca151f50d9de39c52b465c48cf3560ba`;
+`80620a19da0992a42e1f85b287918708d882e6f21dcec7694f06b175095735bd`;
 the seven-page synthesis edition is
 `7bd1f48a82431d0479d4e42c40565f9af297427f47b2e9b7ce4c75175d61340c`.
 Both logs contain no fatal error, undefined reference, overfull or underfull
@@ -166,7 +166,7 @@ The reviewed bytes were installed at their mirrored `doc/` paths and verified
 byte-identical. The canonical web edition was generated from the same research
 source, checked for every expected heading and terminal disclosure, installed
 with SHA-256
-`8dd8a99c247831f74812f5118d3ff8e1f255d459ce16b4d3a662adb6546888b2`,
+`c4b4c9afb6880c12fdc8f5b651c70272d928b7a5741ae0057e56e5f68bc91eb1`,
 and verified byte-identical to its reviewed build output. This is internal
 source and production review, not official liturgical or ecclesiastical
 approval.

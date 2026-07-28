@@ -58,9 +58,9 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***Psalmus 54:17, 18, 20, 23; 54:2***
 >
-> *Cum clamarem ad Dominum, exaudivit vocem meam, ab his qui appropinquant mihi: et humiliavit eos qui est ante saecula, et manet in aeternum: iacta cogitatum tuum in Domino, et ipse te enutriet.*
+> *Cum clamárem ad Dóminum, exaudívit vocem meam, ab his qui appropínquant mihi: et humiliávit eos qui est ante sǽcula, et manet in ætérnum: iacta cogitátum tuum in Dómino, et ipse te enútriet.*
 >
-> *Psalmus.* Exaudi, Deus, orationem meam, et ne despexeris deprecationem meam: intende mihi, et exaudi me.
+> *Psalmus.* Exáudi, Deus, oratiónem meam, et ne despéxeris deprecatiónem meam: inténde mihi, et exáudi me.
 
 > **Douay–Rheims/Challoner, Ps. 54:17–18, 20, 23, 2**
 >
@@ -70,7 +70,7 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***Oratio***
 >
-> *Deus, qui omnipotentiam tuam parcendo maxime et miserando manifestas: multiplica super nos misericordiam tuam; ut, ad tua promissa currentes, caelestium bonorum facias esse consortes. Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum.*
+> *Deus, qui omnipoténtiam tuam parcéndo máxime et miserándo maniféstas: multíplica super nos misericórdiam tuam; ut, ad tua promíssa curréntes, cæléstium bonórum fácias esse consórtes. Per Dóminum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum.*
 
 > **Cummiskey hand missal (1861), Collect, p. 416**
 >
@@ -80,7 +80,7 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***1 ad Corinthios 12:2–11***
 >
-> *Fratres: Scitis quoniam cum gentes essetis, ad simulacra muta prout ducebamini euntes. Ideo notum vobis facio, quod nemo in Spiritu Dei loquens, dicit anathema Iesu. Et nemo potest dicere, Dominus Iesus, nisi in Spiritu Sancto. Divisiones vero gratiarum sunt, idem autem Spiritus. Et divisiones ministrationum sunt, idem autem Dominus. Et divisiones operationum sunt, idem vero Deus, qui operatur omnia in omnibus. Unicuique autem datur manifestatio Spiritus ad utilitatem. Alii quidem per Spiritum datur sermo sapientiae: alii autem sermo scientiae secundum eundem Spiritum: alteri fides in eodem Spiritu: alii gratia sanitatum in uno Spiritu: alii operatio virtutum, alii prophetia, alii discretio spirituum, alii genera linguarum, alii interpretatio sermonum. Haec autem omnia operatur unus atque idem Spiritus, dividens singulis prout vult.*
+> *Fratres: Scitis quóniam cum gentes essétis, ad simulácra muta prout ducebámini eúntes. Ideo notum vobis fácio, quod nemo in Spíritu Dei loquens, dicit anáthema Iesu. Et nemo potest dícere, Dóminus Iesus, nisi in Spíritu Sancto. Divisiónes vero gratiárum sunt, idem autem Spíritus. Et divisiónes ministratiónum sunt, idem autem Dóminus. Et divisiónes operatiónum sunt, idem vero Deus, qui operátur ómnia in ómnibus. Unicuíque autem datur manifestátio Spíritus ad utilitátem. Alii quidem per Spíritum datur sermo sapiéntiæ: álii autem sermo sciéntiæ secúndum eúndem Spíritum: álteri fides in eódem Spíritu: álii grátia sanitátum in uno Spíritu: álii operátio virtútum, álii prophétia, álii discrétio spirítuum, álii génera linguárum, álii interpretátio sermónum. Hæc autem ómnia operátur unus atque idem Spíritus, dívidens síngulis prout vult.*
 
 > **Douay–Rheims/Challoner, 1 Cor. 12:2–11**
 >
@@ -90,9 +90,9 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***Psalmi 16:8, 2; 64:2***
 >
-> *Custodi me, Domine, ut pupillam oculi: sub umbra alarum tuarum protege me. *℣.* De vultu tuo iudicium meum prodeat: oculi tui videant aequitatem.*
+> *Custódi me, Dómine, ut pupíllam óculi: sub umbra alárum tuárum prótege me. *℣.* De vultu tuo iudícium meum pródeat: óculi tui vídeant æquitátem.*
 >
-> Alleluia, alleluia. *℣.* Te decet hymnus, Deus, in Sion: et tibi reddetur votum in Ierusalem. Alleluia.
+> Allelúia, allelúia. *℣.* Te decet hymnus, Deus, in Sion: et tibi reddétur votum in Ierúsalem. Allelúia.
 
 > **Douay–Rheims/Challoner, Ps. 16:8, 2; 64:2**
 >
@@ -102,7 +102,7 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***Lucas 18:9–14***
 >
-> *In illo tempore: Dixit Iesus ad quosdam, qui in se confidebant tamquam iusti, et aspernabantur ceteros, parabolam istam: Duo homines ascenderunt in templum ut orarent: unus pharisaeus, et alter publicanus. Pharisaeus stans, haec apud se orabat: Deus, gratias ago tibi, quia non sum sicut ceteri hominum: raptores, iniusti, adulteri: velut etiam hic publicanus. Ieiuno bis in sabbato: decimas do omnium, quae possideo. Et publicanus a longe stans nolebat nec oculos ad caelum levare: sed percutiebat pectus suum, dicens: Deus, propitius esto mihi peccatori. Dico vobis: descendit hic iustificatus in domum suam ab illo: quia omnis qui se exaltat, humiliabitur: et qui se humiliat, exaltabitur.*
+> *In illo témpore: Dixit Iesus ad quosdam, qui in se confidébant tamquam iusti, et aspernabántur céteros, parábolam istam: Duo hómines ascendérunt in templum ut orárent: unus pharisǽus, et alter publicánus. Pharisǽus stans, hæc apud se orábat: Deus, grátias ago tibi, quia non sum sicut céteri hóminum: raptóres, iniústi, adúlteri: velut étiam hic publicánus. Ieiúno bis in sábbato: décimas do ómnium, quæ possídeo. Et publicánus a longe stans nolébat nec óculos ad cælum leváre: sed percutiébat pectus suum, dicens: Deus, propítius esto mihi peccatóri. Dico vobis: descéndit hic iustificátus in domum suam ab illo: quia omnis qui se exáltat, humiliábitur: et qui se humíliat, exaltábitur.*
 
 > **Douay–Rheims/Challoner, Luke 18:9–14**
 >
@@ -112,7 +112,7 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***Psalmus 24:1–3***
 >
-> *Ad te, Domine, levavi animam meam: Deus meus, in te confido, non erubescam: neque irrideant me inimici mei: etenim universi, qui te exspectant, non confundentur.*
+> *Ad te, Dómine, levávi ánimam meam: Deus meus, in te confído, non erubéscam: neque irrídeant me inimíci mei: étenim univérsi, qui te exspéctant, non confundéntur.*
 
 > **Douay–Rheims/Challoner, Ps. 24:1–3**
 >
@@ -122,7 +122,7 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***Secreta; Praefatio de Sanctissima Trinitate***
 >
-> *Tibi, Domine, sacrificia dicata reddantur: quae sic ad honorem nominis tui deferenda tribuisti, ut eadem remedia fieri nostra praestares. Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.*
+> *Tibi, Dómine, sacrifícia dicáta reddántur: quæ sic ad honórem nóminis tui deferénda tribuísti, ut eádem remédia fíeri nostra præstáres. Per Dóminum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.*
 
 > **Cummiskey hand missal (1861), Secret, p. 417**
 >
@@ -132,7 +132,7 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***Psalmus 50:21***
 >
-> *Acceptabis sacrificium iustitiae, oblationes et holocausta, super altare tuum, Domine.*
+> *Acceptábis sacrifícium iustítiæ, oblatiónes et holocáusta, super altáre tuum, Dómine.*
 
 > **Douay–Rheims/Challoner, Ps. 50:21**
 >
@@ -142,7 +142,7 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > ***Postcommunio***
 >
-> *Quaesumus, Domine Deus noster: ut, quos divinis reparare non desinis sacramentis, tuis non destituas benignus auxiliis. Per Dominum nostrum.*
+> *Quǽsumus, Dómine Deus noster: ut, quos divínis reparáre non désinis sacraméntis, tuis non destítuas benígnus auxíliis. Per Dóminum nostrum.*
 
 > **Cummiskey hand missal (1861), Postcommunion, p. 418**
 >

@@ -360,3 +360,19 @@ source universalizes dimensions, tassels, crosses, fringe, ornament, exact
 cut, folding, storage, or a general server assignment. The full evidence,
 routing, artwork, and exclusion boundary is recorded in
 `priestly-vestments-alpha-audit-2026-07-28.md`.
+
+## Sacred-minister vestments reconciliation — 2026-07-28
+
+Three canonical records now preserve the ordinary 1962 recognition and
+layering boundary for the deacon's stole and dalmatic and the subdeacon's
+tunicle. General Rubrics 117 and 133--137 control color and the retained
+stole, dalmatic, and tunicle while discontinuing folded chasubles and the
+broad stole. Fortescue--O'Connell 1943 p. 11 / PDF p. 32 controls the
+diagonal stole arrangement, dalmatic and tunicle identities, layering, and
+one modest non-universal sleeve distinction; pp. 86 and 95 / PDFs 107 and
+116 control only conditional assistance in the cited preparations.
+
+No source universalizes dimensions, textile, ornament, exact cut, fastening,
+folding, storage, or an exhaustive visual dalmatic/tunicle distinction. The
+full evidence and artwork boundary is recorded in
+`sacred-minister-vestments-alpha-audit-2026-07-28.md`.

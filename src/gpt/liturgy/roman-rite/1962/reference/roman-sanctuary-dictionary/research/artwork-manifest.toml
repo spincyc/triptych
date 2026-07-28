@@ -1038,6 +1038,174 @@ rights = "passed"
 consumer = "passed"
 release = "passed"
 
+[[asset_files]]
+id = "file-rpd-vestments-deacon-stole-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/sacred-minister-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 644633, sha256 = "2732ebb2b606bd6c29356f41f2fdcf202a19eb67619a51ee24bb25e4c22abc33" }
+
+[[asset_files]]
+id = "file-rpd-vestments-dalmatic-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/sacred-minister-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 566760, sha256 = "3fd85257e901c93f25e0b723d351498d04743d2f65a8b4f4bdd9861f0612e5a8" }
+
+[[asset_files]]
+id = "file-rpd-vestments-tunicle-v2"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/sacred-minister-vestments-alpha-audit-2026-07-28.md"
+technical = { width_px = 1350, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 578690, sha256 = "c2566fdc0460d058d04640be5ae17deef3a4638607fcffc1dda457b6dfcf3932" }
+
+[[artworks]]
+id = "art-vestments-0007-deacon-stole"
+object_ids = ["obj-deacon-stole"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the deacon's diagonal stole arrangement without making illustrative fastening, proportion, or ornament universal."
+depicted_state = "Anonymous front-and-back torso studies show one complete plain stole arranged from the left shoulder to the right side."
+source_controlled_features = ["The checked 1943 ceremonial controls the left-shoulder diagonal route and placement beneath the dalmatic.", "The 1962 Missal controls the retained stole-and-dalmatic horizon."]
+deliberate_omissions = ["No face, hands, dalmatic, maniple, color, text, prescribed fastening, dimensions, textile, ornament, or universal hanging length."]
+brief = "Restrained monochrome graphite front-and-back recognition comparison of one plain deacon's stole on an anonymous alb-clad torso."
+exact_prompt = "Exact generation prompt was not durably transferred with this checkpointed asset; the surviving bounded brief is recorded here and no verbatim reconstruction is claimed."
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v2.png"
+reference_ids = ["src-deacon-stole-rubrics-1962", "src-deacon-stole-fortescue-1943"]
+precursor_ids = []
+corrections = ["A dedicated bounded comparison replaces reliance on the rejected multi-object sacred-ministers study.", "Only the normalized stripped grayscale asset survived the checkpoint; original generator bytes were not transferred."]
+baked_content_audit = ["One complete diagonal band is visible in front and back views on one anonymous torso.", "No face, hands, dalmatic, maniple, color, text, labels, arrows, watermark, or environment is visible.", "Fastening, proportions, hanging lengths, alb and cincture details remain illustrative."]
+tex_overlays = ["English and Latin headwords, stable ID, source keys, use and morphology ceilings remain TeX-owned."]
+consumer_plate_ids = ["plt-assisting-clergy"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Checkpointed project-generated raster with no supplied reference image recorded. Missing exact prompt and original generator bytes are disclosed; surviving brief, normalized identity, factual controls, and consumers are recorded."
+[artworks.received]
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 644633
+sha256 = "2732ebb2b606bd6c29356f41f2fdcf202a19eb67619a51ee24bb25e4c22abc33"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 644633
+sha256 = "2732ebb2b606bd6c29356f41f2fdcf202a19eb67619a51ee24bb25e4c22abc33"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0008-dalmatic"
+object_ids = ["obj-dalmatic"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Teach recognition of the deacon's outer Mass vestment without prescribing one construction or decorative form."
+depicted_state = "One complete plain representative dalmatic is shown from the front and back."
+source_controlled_features = ["The checked 1943 ceremonial controls the dalmatic identity, place over the diagonal stole, and loose short-sleeved recognition class.", "The 1962 Missal controls the retained dalmatic horizon."]
+deliberate_omissions = ["No person, alb, stole, maniple, color, text, prescribed cut, dimensions, textile, ornament, or universal sleeve and opening proportions."]
+brief = "Restrained monochrome graphite front-and-back comparison of one plain representative dalmatic."
+exact_prompt = "Exact generation prompt was not durably transferred with this checkpointed asset; the surviving bounded brief is recorded here and no verbatim reconstruction is claimed."
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v2.png"
+reference_ids = ["src-dalmatic-rubrics-1962", "src-dalmatic-fortescue-1943"]
+precursor_ids = []
+corrections = ["A dedicated bounded comparison replaces reliance on the rejected multi-object sacred-ministers study.", "Only the normalized stripped grayscale asset survived the checkpoint; original generator bytes were not transferred."]
+baked_content_audit = ["One complete loose T-shaped outer vestment is visible in front and back views.", "No person, alb, stole, maniple, color, text, labels, arrows, watermark, or environment is visible.", "Neck opening, sleeve and side opening proportions, length, textile and ornament remain illustrative."]
+tex_overlays = ["English and Latin headwords, stable ID, source keys, use and morphology ceilings remain TeX-owned."]
+consumer_plate_ids = ["plt-assisting-clergy"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Checkpointed project-generated raster with no supplied reference image recorded. Missing exact prompt and original generator bytes are disclosed; surviving brief, normalized identity, factual controls, and consumers are recorded."
+[artworks.received]
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 566760
+sha256 = "3fd85257e901c93f25e0b723d351498d04743d2f65a8b4f4bdd9861f0612e5a8"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 566760
+sha256 = "3fd85257e901c93f25e0b723d351498d04743d2f65a8b4f4bdd9861f0612e5a8"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0009-tunicle"
+object_ids = ["obj-tunicle"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Teach recognition of the subdeacon's outer Mass vestment while treating its visual distinction from the dalmatic as modest and non-universal."
+depicted_state = "One complete plain representative tunicle is shown from the front and back."
+source_controlled_features = ["The checked 1943 ceremonial controls the tunicle identity and one documented longer-and-narrower sleeve relation to the dalmatic.", "The 1962 Missal controls the retained tunicle horizon."]
+deliberate_omissions = ["No person, alb, maniple, color, text, prescribed cut, dimensions, textile, ornament, or claim that sleeve form always distinguishes it from the dalmatic."]
+brief = "Restrained monochrome graphite front-and-back comparison of one plain representative tunicle."
+exact_prompt = "Exact generation prompt was not durably transferred with this checkpointed asset; the surviving bounded brief is recorded here and no verbatim reconstruction is claimed."
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v2.png"
+reference_ids = ["src-tunicle-rubrics-1962", "src-tunicle-fortescue-1943"]
+precursor_ids = []
+corrections = ["A dedicated bounded comparison replaces reliance on the rejected multi-object sacred-ministers study.", "Only the normalized stripped grayscale asset survived the checkpoint; original generator bytes were not transferred."]
+baked_content_audit = ["One complete loose outer vestment is visible in front and back views.", "No person, alb, maniple, color, text, labels, arrows, watermark, or environment is visible.", "The modest longer-and-narrower sleeve relation, neckline, openings, length, textile and ornament remain illustrative."]
+tex_overlays = ["English and Latin headwords, stable ID, source keys, dalmatic comparison and morphology ceilings remain TeX-owned."]
+consumer_plate_ids = ["plt-assisting-clergy"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Checkpointed project-generated raster with no supplied reference image recorded. Missing exact prompt and original generator bytes are disclosed; surviving brief, normalized identity, factual controls, and consumers are recorded."
+[artworks.received]
+width_px = 1350
+height_px = 900
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 578690
+sha256 = "c2566fdc0460d058d04640be5ae17deef3a4638607fcffc1dda457b6dfcf3932"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v2.png"
+width_px = 1350
+height_px = 900
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 578690
+sha256 = "c2566fdc0460d058d04640be5ae17deef3a4638607fcffc1dda457b6dfcf3932"
+max_placement_width_in = 4.5
+max_placement_height_in = 3.0
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
 [[artworks]]
 id = "art-altar-appointments-0102-iso-candle"
 object_ids = ["obj-altar-candle"]

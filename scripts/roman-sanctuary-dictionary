@@ -485,11 +485,12 @@ def main() -> int:
             if edition["id"] == "ed-altar-server":
                 vestments = [
                     record for record in chosen
-                    if primary_category(record) == "priestly-vestments"
+                    if primary_category(record)
+                    in {"priestly-vestments", "deacon-and-subdeacon"}
                 ]
                 vestment_body = [
                     "% Generated deterministically; do not edit.",
-                    "% Canonical altar-server priestly-vestment alpha slice.",
+                    "% Canonical altar-server sacred-minister vestment alpha slice.",
                     "% edition: ed-altar-server",
                     *dense_edition_tex(vestments, edition),
                 ]

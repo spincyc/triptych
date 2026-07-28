@@ -45,6 +45,13 @@ evidence_state = "checked-paraphrase"
 source_ids = ["src-tunicle-fortescue-1943"]
 
 [[claims]]
+id = "clm-tunicle-use"
+kind = "liturgical-use"
+text = "The checked ceremonial baseline places the tunicle on the subdeacon over the alb, cincture, and maniple."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tunicle-fortescue-1943"]
+
+[[claims]]
 id = "clm-tunicle-presence"
 kind = "ceremonial-presence"
 text = "The 1962 General Rubrics retain the subdeacon's tunicle while expressly discontinuing folded chasubles and the broad stole."

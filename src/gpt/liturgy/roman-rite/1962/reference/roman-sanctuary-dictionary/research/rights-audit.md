@@ -111,6 +111,14 @@ and museum witnesses supply evidence only; no third-party pixel or extended
 text is reproduced. The rejected legacy priestly-vestment composite remains
 at its prior path and hash with no consumer.
 
+The three sacred-minister vestment plates are checkpointed project-generated
+rasters. Their exact prompts and original generator bytes were not durably
+transferred; the canonical manifest discloses that loss, records the surviving
+bounded briefs without reconstructing prompt text, and preserves each exact
+normalized file identity, source ceiling, consumer set, and review result.
+No third-party pixels or extended source text are reproduced. The rejected
+legacy sacred-ministers composite remains unchanged and has no consumer.
+
 ## Open rights classes
 
 | Material | Present disposition | Required action |

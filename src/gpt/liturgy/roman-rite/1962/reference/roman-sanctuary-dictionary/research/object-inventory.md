@@ -1,6 +1,6 @@
 # Object inventory
 
-Status: **61 canonical records populated; 45 records in the current comprehensive alpha**
+Status: **64 canonical records populated; 48 records in the current comprehensive alpha**
 Audit date: 2026-07-28
 
 The authoritative format is the structured contract under `shared/schema/`.
@@ -18,7 +18,7 @@ authorization to render an entry.
 | Source-audited | 34 |
 | Art-reviewed | 0 |
 | Priestly-review-ready | 4 |
-| Publication-ready | 11 |
+| Publication-ready | 14 |
 | Held | 0 canonical records |
 
 `shared/schema/object.example.toml` is a syntax fixture and is excluded from
@@ -30,7 +30,7 @@ artwork rights, provenance, exact asset identity, and passed identity and
 basic-usability checks. A validated text-only record registers no artwork.
 There is no external-review admission path.
 
-The structured inventory validator accepts all 61 records as conforming to
+The structured inventory validator accepts all 64 records as conforming to
 the current TOML contract. That is a structural result only: it does not close
 the source corpus, the completeness matrix, variants, artwork review, rights,
 or any publication gate.
@@ -107,7 +107,7 @@ make the later 1978 discipline the inventory's 1962 status rule.
 This evidence adds search targets but does not itself advance any record.
 The workflow counts above supersede earlier tranche snapshots. Canonical alpha
 admission is evaluated separately from the workflow label and presently
-admits forty-five records to the comprehensive bounded edition.
+admits forty-eight records to the comprehensive bounded edition.
 
 ## Alpha boundary
 

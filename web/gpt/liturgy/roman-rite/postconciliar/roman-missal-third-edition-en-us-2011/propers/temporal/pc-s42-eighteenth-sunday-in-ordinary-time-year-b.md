@@ -95,7 +95,7 @@ Augustine’s *Tractate on John* 25, especially sections 8–14, likewise distin
 
 ### Acclamation and eucharistic conclusion
 
-Matthew 4:4b is an acclamatory adaptation from the temptation narrative. It supports the distinction between bread alone and life from God’s word, but does not relocate John’s crowd to Matthew’s wilderness. At the altar, the offerings prayer confesses divine bounty before human return. Ambrose’s *On the Mysteries* 8.44–49 illuminates the Church’s sacramental reading of Christ’s word and the heavenly gift, without serving as direct exegesis of every appointed verse. Communion B repeats the Gospel’s climax; Communion A turns to grateful memory. The final prayer names the Passion memorial and asks for fruit, keeping reception, remembrance, and transformation together.
+Matthew 4:4b is an acclamatory adaptation from the temptation narrative. It supports the distinction between bread alone and life from God’s word, but does not relocate John’s crowd to Matthew’s wilderness. At the altar, the offerings prayer confesses divine bounty before human return. Ambrose’s *On the Mysteries* 8.44–49 illuminates sacramental reception without directly exegeting every appointed verse. Communion B repeats the Gospel’s climax, while Communion A turns to grateful memory. The final prayer names the Passion memorial and asks for fruitful reception, joining remembrance and transformation.
 
 <span id="triptych:brief-synthesis:start" label="triptych:brief-synthesis:start"></span>
 
@@ -238,9 +238,11 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-28T14:20:00Z
+**Last revised (UTC):** 2026-07-28T13:39:59Z
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
+
+**Agent/runtime:** OpenAI Codex agent (bounded pagination repair, deterministic rebuild, exact component validation, web-currentness check, and full-page production review); Codex CLI 0.145.0; API workspace; unexposed: server revision
 
 **Agent/runtime:** OpenAI Codex agent (complete Year B rewrite, rights-safe appointed-text sheet, direct patristic reception synthesis, component records, and compile verification); Codex CLI 0.145.0; API workspace; unexposed: server revision
 
