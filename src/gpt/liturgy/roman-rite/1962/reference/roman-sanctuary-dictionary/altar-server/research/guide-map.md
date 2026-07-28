@@ -74,6 +74,12 @@ the checked Offertory relationship, confusable-object distinctions, and
 handling and spill boundaries without universalizing morphology, fold,
 material, or local assignment.
 
+The generated selection now admits the three altar cloths as its twentieth
+record. They were already present in this bespoke thirty-three-record teaching
+leaf, so this promotion changes neither its object count nor its pagination.
+The existing page retains the recognition-only handling boundary and states
+that folds, extents, spacing, material, and arrangement are illustrative.
+
 The incense family uses source-bounded generated artwork. The thurible view
 shows a neutral footed bowl, removable pierced lid, three support chains, and
 a separate central lid-lifting chain without asserting material, ornament, or

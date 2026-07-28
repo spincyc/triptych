@@ -19,6 +19,8 @@ refusing to prescribe unsupported folds, dimensions, markings, ornament,
 construction, or exact drape. The credence table and sedilia add verified
 preparation and placement relationships while keeping construction,
 covering, contents, decoration, and exact local position variable. The
-Lavabo basin and towel add the checked Epistle-side preparation relationship
+three altar cloths add the checked three-cloth covering relationship without
+prescribing material, dimensions, markings, folds, edge drop, or arrangement.
+The Lavabo basin and towel add the checked Epistle-side preparation relationship
 without prescribing vessel morphology, material, towel fold, or local care
-practice. The nineteen-record edition creates no external-review gate.
+practice. The twenty-record edition creates no external-review gate.

@@ -448,7 +448,7 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-linens-three-altar-cloths"
 path = "shared/artwork/pencil/RPD-FIG-linens-0006-three-altar-cloths.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/altar-cloths-source-audit-2026-07-28.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 105168, sha256 = "f5faaff351887cf14b64cf40fbca4d71e5cb7205b8cfd290943a7f58ac42b894" }
 
@@ -1949,7 +1949,7 @@ corrections = ["Generated as a non-destructive source-minimal successor to the h
 baked_content_audit = ["Exactly three separately visible plain cloth sheets and one neutral thin support silhouette are fully visible.", "No masonry course, frontal, dust cover, corporal, mark, dimensions, person, action, ritual object, text, watermark, or color is visible.", "The image does show illustrative hanging edges and folds; TeX expressly denies that these are normative extents, edge drops, or fold instructions."]
 tex_overlays = ["English and Latin headwords, stable object ID, exact three-cloth relationship, clean and blessed state, illustrative-view limit, handling boundary, confusables, source key, and exploded-view notice remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, corrections, and consumer boundary are recorded. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 1024

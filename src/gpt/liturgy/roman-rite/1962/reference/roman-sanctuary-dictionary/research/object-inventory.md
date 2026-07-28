@@ -1,6 +1,6 @@
 # Object inventory
 
-Status: **54 canonical records populated; 19 records in the current comprehensive alpha**
+Status: **54 canonical records populated; 20 records in the current comprehensive alpha**
 Audit date: 2026-07-28
 
 The authoritative format is the structured contract under `shared/schema/`.

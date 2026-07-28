@@ -7,12 +7,40 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Twenty alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Eighteen alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Sixteen alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Twenty alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Twenty alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Seventeen alpha records | Built, inspected, and installed | No | Alpha |
+
+The three-altar-cloths promotion admits the already source-audited
+`obj-altar-cloths` record through every canonical alpha edition. Its existing
+project-generated pencil relationship drawing now has all six consumers
+recorded, and each use-derived edition receives a truthful audience note. The
+view teaches only the Missal-controlled three-cloth altar covering and does
+not prescribe material, dimensions, markings, ornament, folds, edge drop,
+relative extent, spacing, preparation method, or arrangement. The bespoke
+altar-server leaf already contained the record and remains at thirty-three
+objects.
+
+All 137 pages across the six leaves were rastered through the repository PDF
+review pipeline and visually inspected, including every new generic-edition
+altar-cloths page, the unchanged bespoke altar-server page, and all terminal
+pages. The three cloths, source-bounded audience notes, and illustrative-view
+limits are legible and unclipped; no overlap, spill page, or unsafe visual
+instruction was found. Settled logs contain no fatal error, undefined
+reference, or overfull box. Fonts are embedded and text is extractable. Build
+and installed bytes are identical:
+
+| Leaf | Records | Pages | Installed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 20 | 22 | `9dea0d9948386d21a7b0e06e65dc372fadbfa0aa00ef6ed83244af71787e990f` |
+| Altar server | 33 | 31 | `41d3248209d4a4107b9113d213478ae32845fb5f3742009e95c5ef710beeeacc` |
+| Sacristan | 20 | 22 | `4b654a1781dda605653322598c8a8d02f23732a671d6547a8a3386b5940f63fa` |
+| MC/trainer | 20 | 22 | `16f5a2319302a193ab22d883a8c582002ff6eac5189f4c9f85b116cc5e6eae92` |
+| General reader | 19 | 21 | `3b233aea1bf95d53b133a0474eb694c5743dd1fc1da7ad2c776fb32793bdc104` |
+| Pontifical ceremonies | 17 | 19 | `4577e225d10bb05de1dfe49551d15aa09d1de3b031edbb26c7057061ba66da0a` |
 
 The Offertory Lavabo promotion admits the already source-audited basin and
 towel through every canonical alpha edition. The existing project-generated

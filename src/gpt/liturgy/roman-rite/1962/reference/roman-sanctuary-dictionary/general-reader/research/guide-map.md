@@ -10,13 +10,15 @@ reader. It owns no copied facts. Each plate emphasizes identity and purpose;
 its canonical audience note explains a useful distinction without enlarging
 the verified claims.
 
-The eighteen-record alpha adds the corporal, purificator, chalice pall,
-chalice veil, burse, credence table, Lavabo basin, and Lavabo towel to the
-appointments-and-books family. One image-dominant page per object preserves
-the principal visual distinctions. Representative shape, folds, construction,
-ornament, dimensions, marker count, table covering, and exact placement are
-not universalized. The paired Lavabo view distinguishes the washing vessel
-and hand towel without claiming a common scale or universal form. Sedilia
+The nineteen-record alpha adds the corporal, purificator, chalice pall,
+chalice veil, burse, three altar cloths, credence table, Lavabo basin, and
+Lavabo towel to the appointments-and-books family. One image-dominant page per
+object preserves the principal visual distinctions. Representative shape,
+folds, construction, ornament, dimensions, marker count, table covering, and
+exact placement are not universalized. The altar-cloths view distinguishes
+the threefold altar covering from the corporal without prescribing folds or
+extents. The paired Lavabo view distinguishes the washing vessel and hand
+towel without claiming a common scale or universal form. Sedilia
 remain outside this concise edition because their canonical general-reader
 relevance is useful rather than required. All alpha qualifications appear on
 the first page only.

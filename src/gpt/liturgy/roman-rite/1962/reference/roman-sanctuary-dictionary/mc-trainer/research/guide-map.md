@@ -20,5 +20,7 @@ sacred-ministers' seating distinction without converting local placement or
 furniture handling into a universal assignment. The canonical alpha now also
 admits the Lavabo basin and towel as a paired
 identity-and-role comparison. It does not invent a universal handoff, cue,
-server assignment, vessel form, towel fold, or disposal practice. The
-nineteen-record canonical alpha gate requires no external review.
+server assignment, vessel form, towel fold, or disposal practice. The three
+altar cloths add a distinct altar-covering relationship without turning
+illustrative folds, extents, or spacing into ceremonial instruction. The
+twenty-record canonical alpha gate requires no external review.

@@ -38,6 +38,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertIn('status = "alpha"', sidecar)
             self.assertIn('distribution_state = "public-alpha"', sidecar)
             self.assertIn("obj-altar-missal", alpha)
+            self.assertIn(r"\RSDObjectRecord{obj-altar-cloths}", alpha)
             self.assertNotIn(
                 r"\RSDObjectRecord{obj-altar-cruet}",
                 alpha,
@@ -69,6 +70,11 @@ class DictionaryGeneratorTests(unittest.TestCase):
             text = first.decode()
             self.assertIn(r"\RSDObjectRecord{obj-altar-missal}", text)
             self.assertIn(r"\RSDSelectedAudienceNote{Prepare the Missal", text)
+            self.assertIn(r"\RSDObjectRecord{obj-altar-cloths}", text)
+            self.assertIn(
+                r"\RSDSelectedAudienceNote{Prepare three clean blessed cloths",
+                text,
+            )
             self.assertNotIn("editorial-proposal", text)
 
     def test_unknown_record_field_fails_closed(self):

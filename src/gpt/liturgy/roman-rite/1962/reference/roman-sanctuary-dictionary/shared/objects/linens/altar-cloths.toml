@@ -75,3 +75,23 @@ review_note = "Exactly three plain cloth sheets are separated above one neutral 
 audience = "altar-server"
 text = "Recognize the three-cloth covering relationship, but do not lift, smooth, shift, fold, remove, or replace an altar cloth."
 claim_ids = ["clm-altar-cloths-presence"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare three clean blessed cloths to cover the altar; this record does not prescribe their material, dimensions, markings, folds, edge drop, or arrangement method."
+claim_ids = ["clm-altar-cloths-presence", "clm-altar-cloths-visual-limit"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the required three-cloth altar covering without turning its illustrative folds, extents, or spacing into a ceremonial instruction or server assignment."
+claim_ids = ["clm-altar-cloths-presence", "clm-altar-cloths-visual-limit"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "These are the three cloths that cover the altar, distinct from the corporal spread beneath the sacred vessels."
+claim_ids = ["clm-altar-cloths-presence"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "These are ordinary supporting altar linens in the pontifical Mass composition, not distinct pontifical insignia or a special pontifical form."
+claim_ids = ["clm-altar-cloths-presence"]

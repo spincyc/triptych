@@ -24,4 +24,8 @@ to fourteen records. The Lavabo basin and towel enter as ordinary supporting
 objects rather than pontifical insignia or distinct pontifical forms. Their
 paired source-minimal plate makes no claim about common scale, material,
 ornament, dimensions, or a universal handwashing arrangement, and brings the
-selection to sixteen records.
+selection to sixteen records. The three altar cloths enter as ordinary altar
+linens rather than pontifical insignia or a distinct pontifical form. Their
+source-minimal relationship plate makes no claim about material, dimensions,
+markings, folds, edge drop, or arrangement, and brings the selection to
+seventeen records.
