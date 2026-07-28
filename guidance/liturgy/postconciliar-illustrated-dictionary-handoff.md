@@ -210,7 +210,7 @@ recording:
 - artwork and figure IDs;
 - publication and audience selections;
 - rights and provenance state for every visual reference;
-- research, artwork, liturgical, copy, and page-review status; and
+- research, artwork, liturgical, copy, and page-validation status; and
 - unresolved questions that prevent a completeness or currentness claim.
 
 Use controlled, edition-scoped dispositions rather than a single timeless
@@ -241,8 +241,8 @@ Give every approved asset a stable figure ID and record:
 - prompt or creation provenance required by repository guidance;
 - edition-specific claims encoded by placement or dress;
 - permitted consumers and crops;
-- accuracy-review state; and
-- the exact source and PDF versions in which the asset was reviewed.
+- accuracy-validation state; and
+- the exact source and PDF versions in which the asset was validated.
 
 Keep generated lettering, labels, arrows, color names, minister names, and
 movement paths out of raster artwork. Add them as typeset overlays so they
@@ -356,7 +356,7 @@ Terminal apparatus should include:
 - edition, territory, jurisdiction, and as-of statement;
 - completeness boundary and unresolved inventory gaps;
 - rights and visual-provenance statement;
-- review status; and
+- alpha status; and
 - generation metadata.
 
 ## Postconciliar-specific safeguards
@@ -432,21 +432,20 @@ Gate: approve the artwork grammar before producing the full asset set.
 Gate: content, source, rights, image-accuracy, log, and every-page visual review
 must pass before installing a PDF.
 
-### Phase 5: priestly and specialist review
+### Phase 5: alpha validation
 
-1. Build an expressly labelled priestly-review package only from entries and
-   artwork eligible under the future profile.
-2. Record its exact PDF hash, distribution boundary, selected IDs, open gates,
-   reviewer scope, and recall or supersession state.
-3. Reconcile feedback against the edition-specific source hierarchy,
-   preserving local preference, disagreement, rejected suggestions, and
-   unresolved questions accurately.
-4. Rebuild the candidate for authoritative release without review-only labels,
-   questions, or under-review artwork, and rerun every independent gate.
+1. Verify source integrity and edition-locale dispositions for every rendered
+   claim and object.
+2. Verify rights and lawful distribution for text and artwork.
+3. Reject unsafe handling instruction, misleading identity, impossible
+   construction, and unresolved factual placeholder prose.
+4. Run reproducibility, artifact-identity, mechanical-validity, and basic
+   visual-usability checks.
+5. Put the actual scope and one short alpha reliance boundary on the first
+   page, then record the exact installed artifact identity.
 
-Gate: neither a favorable review nor a priestly-review PDF hash authorizes the
-authoritative-release bytes. Release uses a new exact artifact identity and a
-separate approval.
+Gate: alpha eligibility requires those six concerns and no external-review,
+intended-reader, or physical-human-review process.
 
 ### Phase 6: use-based editions
 
@@ -467,48 +466,31 @@ record; no independently drifting text or artwork.
    reading order, captions, and textual equivalents without creating a second
    authoritative edition.
 3. Run source, metadata, build, log, link, catalog, and profile checks.
-4. Use repository review tooling, inspect every rendered page, and install
-   only exact reviewed artifacts.
+4. Use repository review tooling, inspect every rendered page for basic visual
+   usability, and install only exact validated artifacts.
 
-Gate: release approval applies only to the exact reviewed source and installed
-artifact hashes. It does not erase unresolved completeness, rights,
-edition-locale, accessibility, or review limitations.
+Gate: published records deployment of the verified alpha artifact. It does not
+erase unresolved completeness, rights, edition-locale, or accessibility
+limitations.
 
-## Mapping to the review-edition workflow
+## Mapping to the alpha workflow
 
-The future postconciliar profile should adopt the two publication states and
+The future postconciliar profile should adopt the alpha concerns and
 no-misrepresentation controls defined by the 1962 pictorial-dictionary
 profile, adapted only where postconciliar edition and jurisdiction evidence
 requires more specificity:
 
-- `priestly-review` remains a provisional consultation artifact visibly
-  labelled `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE`; it is publicly
-  discoverable from its owning alpha landing page under a conspicuous review
-  heading, is not presented as an ordinary release or given a web edition,
-  and is not distributed without the recorded review boundary.
-- `authoritative-release` remains a separately built, source-audited project
-  reference visibly labelled `SOURCE-AUDITED REFERENCE EDITION`; the word
-  “authoritative” never asserts ecclesiastical approval.
-- Review-copy eligibility, candidate-artwork marking, page footers,
-  questionnaires, exact-snapshot hashes, reviewer-scope records, and the ban
-  on inferred approval carry forward. Tailor each review question to the named
-  typical edition, approved edition-locale, territory, competent authority,
-  option, and as-of date.
-- A postconciliar review manifest must additionally identify every
-  edition-locale disposition rendered in the copy and distinguish review of a
-  universal claim from review of a territorial, diocesan, institutional, or
-  customary example. A reviewer's local practice is evidence about that local
-  practice, not automatic evidence of a universal norm.
-- Keep `priestly_review_status`, `source_audit_status`,
-  `specialist_review_status`, `production_review_status`,
-  `ecclesiastical_approval_status`, and `release_status` independent.
-  `ecclesiastical_approval_status` remains `not-claimed` absent an exact
-  competent external act and permission to represent it.
-- Promotion never occurs in place. After consultation, reconcile every
-  response against the controlling source hierarchy, close or disclose the
-  edition-locale and artwork gates, require publication-ready records and
-  consumer-review-passed artwork, remove all review-only matter, and build and
-  approve a new exact release snapshot.
+- `alpha` identifies a publication that passes source, rights, safety,
+  reproducibility, mechanical, and basic visual checks.
+- The first page, not the catalog or running footer, states alpha status,
+  edition-locale scope, and any material reliance boundary once.
+- The production record identifies every edition-locale disposition rendered
+  and keeps universal, territorial, diocesan, institutional, and customary
+  examples distinct.
+- Keep `source_audit_status`, `rights_status`, `safety_status`,
+  `production_status`, `alpha_status`, and deployment state distinct.
+- `published` records deployment only; it does not promote the work to a higher
+  editorial or external-approval state.
 
 When the postconciliar profile is written, restate this workflow there rather
 than making a publication leaf depend normatively on this handoff.
@@ -523,12 +505,10 @@ should contain:
 - a source-corpus inventory and publication-local bindings;
 - a canonical object/composition inventory with edition dispositions;
 - an artwork manifest with rights and accuracy review;
-- an exact-snapshot priestly or specialist review record, when such review was
-  performed, with no status inherited from the 1962 family;
 - the comprehensive source leaf and any authorized derived leaves;
 - terminal indexes, notes, qualifications, rights notice, and metadata;
 - explicit build dependencies for shared records and artwork;
-- reviewed installed PDFs and, where eligible, reviewed web editions;
+- validated installed PDFs and, where eligible, validated web editions;
 - catalog entries only for publications actually installed and approved; and
 - a remaining-gaps record that prevents “complete” from outrunning the checked
   corpus.

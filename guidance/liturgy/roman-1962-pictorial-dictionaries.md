@@ -84,7 +84,7 @@ Each canonical record includes:
 - related and easily confused objects;
 - brief sourced symbolism where appropriate;
 - source loci, evidence state, rights status, artwork IDs, audience
-  selections, and review state.
+  selections, and validation state.
 
 Decorative variation alone does not create a new substantive form. Do not
 prescribe material, fold, cross placement, ornament, dimension, or color
@@ -109,7 +109,7 @@ identity, morphology, scale, arrangement, ceremonial use, and historical state
 must remain controlled by publicly reachable checked sources and the canonical
 object record. Do not prompt a model to fill an unresolved factual field or
 treat visual plausibility as identification. Generated output supplies no
-human artwork, priestly, liturgical, ceremonial, or ecclesiastical review.
+source evidence; the checked object record controls the depicted facts.
 
 An ambiguous object receives an isolated view and a compact folded,
 unfolded, worn, placed, or in-use inset. Use common scale where diagnostic.
@@ -118,7 +118,7 @@ scale` notice.
 
 Each asset has a stable artwork ID and a manifest record naming its brief,
 generator or creator, date, dimensions, mode, hash, references, corrections,
-consumers, rights, and review state. Audit invented or missing parts,
+consumers, rights, and validation state. Audit invented or missing parts,
 impossible folds or wearing, false ornament, incorrect scale, duplicate
 figures, impossible placement, and ambiguous monochrome identification.
 
@@ -158,177 +158,39 @@ edition emphasizes identity, purpose, brief symbolism, and history. The
 pontifical edition emphasizes vesture, insignia, furnishings, ministers, and
 relationships.
 
-## Priestly-review publication and authoritative release
+## Alpha publication
 
-The family has two sharply distinct publication states. A priestly-review
-publication is a bounded consultation artifact used to obtain competent
-liturgical and ceremonial criticism. An authoritative release is the
-project's final, source-audited reference publication. “Authoritative” in
-this contract describes the repository's canonical released edition; it does
-not mean an official liturgical book, an act of ecclesiastical authority, or
-ecclesiastical approval.
+The family uses the repository-wide alpha model. A dictionary may publish the
+checked portion of its inventory when source integrity, rights and lawful
+distribution, safety, reproducibility and artifact identity, mechanical
+validity, and basic visual usability pass. It does not wait for or record
+specialist, priestly, intended-reader, physical-use, or ecclesiastical review.
 
-### Exact state and display labels
+The first page states `Alpha` and identifies the actual inventory and edition
+horizon represented. It also gives one short reliance boundary: the work is a
+Triptych study reference, not an official liturgical book or local direction.
+Do not repeat that status in running footers, catalog labels, questionnaires,
+or terminal pending-review lists.
 
-Use these machine and visible labels exactly:
+Every rendered record must have a stable identity, governing rite and edition
+horizon, exact source support for printed factual claims, distributable text
+and artwork, generated-content provenance, and no known contradictory or
+misleading view. A source-bounded unresolved morphology, variant, or practical
+detail may be identified locally; plausible placeholder prose may not replace
+it. No image may teach unsafe handling of a sacred, hot, sharp, fragile, or
+lighted object.
 
-| Machine state | Required visible label | Distribution state |
-| --- | --- | --- |
-| `priestly-review` | `PRIESTLY REVIEW COPY — NOT FOR PUBLIC RELIANCE` | publicly discoverable alpha review distribution, conspicuously separated from authoritative releases |
-| `authoritative-release` | `SOURCE-AUDITED REFERENCE EDITION` | eligible for ordinary catalog and exact-snapshot public release |
+Basic visual usability requires legible images and labels at rendered size,
+unambiguous object identity, no clipping or overlap, mechanically consistent
+scale notices and consumers, and no impossible construction, folds, wearing,
+placement, or simultaneous composition. Publication does not require a human
+print trial, photocopy trial, intended-reader test, or external artwork review.
 
-A priestly-review copy prints its visible label on the title page, in the
-running footer of every body page, and beside the revision identity in the
-terminal apparatus. Its title-page caveat reads:
-
-> Prepared for priestly liturgical and ceremonial review. It contains
-> identified review questions and may contain unresolved terminology,
-> morphology, variants, or artwork. It is not an official liturgical book,
-> parish direction, evidence of authorization, or a public reference edition.
-
-The terminal review statement names the exact review scope, eligible records,
-unresolved gates, and stable revision identity. The detached production and
-public-distribution records bind that revision identity to the exact PDF
-SHA-256; a PDF cannot reliably print its own digest because inserting the
-digest changes the file. The terminal statement also says whether
-the named reviewer examined source claims, artwork, printed pages, or only a
-subset. Do not print a reviewer's name, office, quotation, or institution
-without permission.
-
-An authoritative release prints `SOURCE-AUDITED REFERENCE EDITION` once on
-the title or edition page and retains this subordinate caveat:
-
-> A Triptych study reference, not an official liturgical book or an act of
-> ecclesiastical authority. Status and local-use qualifications appear with
-> the affected entries and in Scope and Qualifications.
-
-Do not use `approved`, `official`, `authorized by`, `imprimatur`, `nihil
-obstat`, `ecclesiastically approved`, or an equivalent formula unless the
-exact external act, competent authority, scope, date, and permission to
-publish that representation are recorded. Priest, cleric, scholar, or
-reviewer feedback never becomes an ecclesiastical approval by implication.
-
-### Eligible evidence and artwork
-
-A priestly-review copy may render canonical records in
-`source-audited`, `art-reviewed`, or `publication-ready` workflow state.
-It may also render a candidate artwork linked to a `source-audited` record
-when the purpose is expressly to review that artwork. It must not render a
-`lead`, `identified`, or `held` record as an entry. Candidate artwork remains
-visibly marked `ARTWORK UNDER REVIEW`; unresolved factual fields render as
-short, specific review questions rather than plausible placeholder prose.
-Every selected claim has an exact source binding and every selection is listed
-in the review manifest.
-
-A priestly-review record may have unresolved:
-
-- morphology or substantive-variant classification being presented to the
-  reviewer;
-- practical handling where higher sources are silent and the question is
-  stated;
-- visual ambiguity, scale treatment, or contextual-inset adequacy; and
-- actual-size, photocopy, or intended-reader testing scheduled after factual
-  correction.
-
-It may not have unresolved:
-
-- identity of the object depicted;
-- governing rite, edition horizon, ceremony, or claimed status;
-- the source identity and locus supporting each printed factual claim;
-- rights to distribute the review copy and its artwork to the named audience;
-- generated-content provenance;
-- a known impossible construction, false label, contradictory view, or
-  misleading composition; or
-- a safety defect that could teach handling of a sacred, hot, sharp, fragile,
-  or lighted object incorrectly.
-
-An authoritative release selects only `publication-ready` records and
-`consumer-review-passed` artwork. Every claim, variant, plate, audience note,
-and exact consumer must satisfy the universal and profile gates. A favorable
-priestly review is evidence of that particular review event; it does not
-promote a record automatically or replace source, rights, production,
-intended-reader, or release review.
-
-### Review questionnaire
-
-Every priestly-review package supplies a response form keyed to stable object,
-variant, artwork, plate, and page IDs. It asks the reviewer to distinguish
-observed defects from local preference and to answer, for the assigned scope:
-
-1. Is each object correctly identified in English and Latin? Record any
-   ambiguous or period-dependent term.
-2. Does the stated status—universal, conditional, privileged, regional,
-   religious-community, practical/local, historical, or unresolved—match the
-   cited 1962-horizon source?
-3. Is the object placed in the correct Mass, rite, ministerial, and historical
-   context without importing pre-1962 or post-1962 practice?
-4. Does every drawing have physically possible construction, folds,
-   fastenings, parts, orientation, relative scale, and manner of wearing or
-   use?
-5. Are substantive variants represented and named correctly? Is any merely
-   decorative difference incorrectly promoted to a variant?
-6. Could a server, sacristan, MC, cleric, or general reader confuse this object
-   with another? What comparison or in-use inset would prevent the confusion?
-7. Are handler, handoff, preparation, disposition, and “do not handle”
-   statements accurate for the declared ceremony and audience?
-8. Does any composition imply an impossible simultaneous state, wrong
-   minister, unsafe route, or locally variable arrangement presented as
-   universal?
-9. Is the brief symbolism expressly supported, proportionate, and clearly
-   distinguished from rubric and function?
-10. Which pages were reviewed at full size and in print? Which questions were
-    outside the reviewer's competence or remain unresolved?
-
-The response record preserves disagreement. The editor reconciles each answer
-with the governing source hierarchy and records accepted corrections,
-rejected suggestions with a concise evidentiary reason, unresolved questions,
-and the exact snapshot reviewed. Do not silently convert a reviewer's memory
-or local custom into a universal claim.
-
-### No-misrepresentation gates
-
-Before producing a priestly-review PDF:
-
-1. validate that every selected entry and artwork meets the eligibility rules
-   above;
-2. generate the title, footer, terminal statement, and review questions from
-   the declared `priestly-review` state;
-3. verify every physical body page carries the required footer and no page
-   uses authoritative-release wording;
-4. include the PDF in the public alpha and owning landing-page catalog under a
-   conspicuous priestly-review heading, preserve the exact review label and
-   open gates in the generated artifact manifest, and keep it distinct from
-   authoritative-release approval and claims;
-5. record the exact intended reviewers or reviewer class, distribution
-   boundary, timestamp, hash, selected IDs, open gates, and recall or
-   supersession status in the production manifest; and
-6. verify extracted text contains the exact title-page and footer labels.
-
-Before authoritative release:
-
-1. require a fresh build that contains no priestly-review footer,
-   `ARTWORK UNDER REVIEW` mark, placeholder, open review question, held entry,
-   or review-only response form;
-2. require every rendered record to be `publication-ready`, every artwork to
-   be `consumer-review-passed`, and every completeness claim to agree with the
-   closed matrix;
-3. record priestly or specialist review accurately by scope and snapshot,
-   without converting it into ecclesiastical approval;
-4. run every source, rights, metadata, build, print, visual, catalog, and
-   exact-snapshot release gate independently;
-5. verify the title-page caveat and terminal qualifications remain present in
-   rendered and extracted text; and
-6. record a new exact PDF identity and approval. A priestly-review hash,
-   installation, or distribution decision never authorizes the released
-   bytes.
-
-The production manifest records these states separately:
-`priestly_review_status`, `source_audit_status`,
-`specialist_review_status`, `production_review_status`,
-`ecclesiastical_approval_status`, and `release_status`. The
-`ecclesiastical_approval_status` value is `not-claimed` unless an exact
-competent external act permits another value. No field may be inferred from
-another.
+The production manifest records `source_audit_status`,
+`rights_status`, `safety_status`, `production_status`,
+`alpha_status`, and the exact installed artifact identity. `published` records
+deployment of that verified alpha artifact and does not imply a higher
+editorial or external-approval state.
 
 ## Required records and gate
 
@@ -346,10 +208,10 @@ Before installation or release:
 2. reconcile every rendered name, status, use, handler, variant, and source
    key with the inventory;
 3. reconcile all plate and artwork IDs with their manifests;
-4. inspect every page and ambiguous figure at full size;
-5. print representative dense, linen, vestment, and composition plates at
-   actual size and inspect a monochrome photocopy;
+4. inspect every page and ambiguous figure at rendered full size;
+5. verify mechanically that representative dense, linen, vestment, and
+   composition plates remain legible in monochrome at their declared size;
 6. verify that front apparatus does not delay visual content;
 7. verify that smaller editions contain no drifting fact or artwork; and
 8. record exact PDF identities, page counts, font and text checks, installed
-   byte identity, independent review, and release state.
+   byte identity, alpha eligibility, and deployment state.

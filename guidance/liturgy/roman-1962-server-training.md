@@ -348,7 +348,7 @@ The non-publishable series owner keeps:
 
 - `research/scope.md`: reader, three form boundaries, model horizon, language,
   pronunciation standard, jurisdiction, inclusions, exclusions, pedagogical
-  progression, current-authorization boundary, rights, and review state;
+  progression, current-authorization boundary, rights, and alpha state;
 - `research/edition-manifest.md`: exact Missal, rubrical code, official acts,
   ceremonial and chant books, pronunciation authorities, particular
   directives, manuals, and non-controlling aids actually used, with edition,
@@ -357,24 +357,23 @@ The non-publishable series owner keeps:
   speaker, mode, condition, form, exact locus, checked Latin, normalization,
   meaning status, and rendered uses;
 - `research/pronunciation-audit.md`: syllabification, stress, IPA, respelling,
-  governing rule or checked lexical decision, variants, completed oral or
-  specialist checks, and unresolved items;
+  governing rule or checked lexical decision, variants, and unresolved source
+  questions;
 - `research/ceremonial-inventory.md`: the Low Mass two-server model, the two
   sung-form model rosters, and every action ID, route, handoff, source class,
   locus, option, custom, reassignment, and unresolved discrepancy;
 - `research/flash-card-manifest.md`: every card ID, front/back data source,
   companion selection, ordering, duplex pairing, and either the completed
   alignment check or an explicit pre-build status;
-- `research/presentation-research.md`: intended-reader presentation evidence,
-  observed feedback, evaluated formats, resulting layout decisions, and
-  unresolved physical or user-testing questions;
+- `research/presentation-research.md`: evaluated formats, resulting layout
+  decisions, and mechanically measured legibility or layout constraints;
 - `research/source-audit.md`: facsimile checks, official-source and manual
   comparisons, consequential negative results, rejected edition mixing,
-  rights, and completed liturgical, Latin, pedagogical, and production review;
+  rights, and completed liturgical, Latin, pedagogical, and production checks;
   and
-- `research/production-manifest.md`: the exact seven reviewed builds, page and
-  card counts, log and PDF checks, every-page review, duplex verification,
-  installed identity, and outstanding release state.
+- `research/production-manifest.md`: the exact seven validated builds, page and
+  card counts, log and PDF checks, every-page visual inspection, duplex
+  verification, installed identity, and alpha state.
 
 Each publishable leaf keeps `research/guide-map.md`, naming its form, stable
 guide identity, imported data selections, model roster where applicable,
@@ -438,9 +437,9 @@ scenes. Generation is a production method, not ceremonial evidence: every
 actor, object, posture, route, destination, handoff, and finish state must be
 controlled by the applicable publicly reachable source and canonical
 inventory. Do not ask a model to resolve an open liturgical or ceremonial
-question through visual plausibility. Generated output supplies no human
-artwork, intended-reader, liturgical, ceremonial, pedagogical, or
-ecclesiastical review.
+question through visual plausibility. Generated output supplies no source
+evidence; the checked inventories and mechanical production tests control what
+may be rendered.
 
 Each sung guide begins after its title with the minimum actionable roster and
 sanctuary orientation and a direct `Choose your role` path. Standalone
@@ -465,7 +464,7 @@ block. In the page-matched Low Mass pair these may share the final authored
 page when they remain legible and in the required order. The terminal material
 owns the form boundary, edition, model roster status, excluded ceremonies,
 pronunciation convention, current-authorization boundary, global custom and
-manual limits, rights, and review state. A condition that changes what a
+  manual limits, rights, and alpha state. A condition that changes what a
 server says or does remains local as well.
 
 Each cards-only companion follows the source selection and form boundary of its
@@ -484,20 +483,11 @@ and deployment are separate operations.
 
 ## Profile gate
 
-An explicitly authorized installed evaluation snapshot is a narrow exception
-to the ordinary pre-installation timing below. It may retain only pending
-actual-size, duplex or cut, photocopy, intended-reader or paired-use, and
-independent-review checks, together with unresolved work-specific rights review
-or liturgical-text permission; every other universal and profile installation
-gate must already pass. The catalog must conspicuously label the exact snapshot
-as installed for evaluation, and the production manifest must record its
-installed identity and every pending check. The release inventory keeps it at
-`hold` unless a separate exact-snapshot public-review distribution decision
-places it at `review` under the repository convention. A `review` entry retains
-no completion approval and preserves every applicable unresolved gate.
-Evaluation installation and public-review discoverability neither satisfy nor
-waive a pending gate and grant no authoritative release, push, or deployment
-authority.
+An alpha snapshot may be installed when source integrity, rights and lawful
+distribution, safety, reproducibility and identity, mechanical validity, and
+basic visual usability pass. Its first page states `Alpha` and any material
+form or use boundary once. Catalogs need only identify the work and available
+formats. Installation and deployment remain separate operations.
 
 Before installation or release, in addition to the universal gates:
 
@@ -525,14 +515,13 @@ Before installation or release, in addition to the universal gates:
 - inspect every page for age-appropriate type size, density, navigation,
   monochrome legibility, writable space, split action units, unsafe diagram
   ambiguity, clipping, accidental blanks, and final-colophon fit;
-- inspect flash-card faces at full size and verify that the first integrated
+- inspect flash-card faces at rendered full size and verify mechanically that
+  the first integrated
   response front and each later sheet front are on odd physical PDF pages,
   then verify duplex edge, front/back alignment, cut safety, the Low Mass
   eight-up grid and fixed 11.5-point text, the sung-form six-up grids,
   Mass-order or lesson-group order as applicable, form markers, and the absence
   of an inserted cover or parity page; and
-- state liturgical, ceremonial, Latin-pronunciation, pedagogical, rights, and
-  independent-review status accurately. Received Latin and other third-party
-  material require a local rights statement and recorded distribution basis;
-  technical completion or installation does not clear a release gate or grant
-  ecclesiastical approval.
+- state liturgical, ceremonial, Latin-pronunciation, pedagogical, and rights
+  bounds accurately. Received Latin and other third-party material require a
+  local rights statement and recorded distribution basis.

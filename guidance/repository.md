@@ -326,50 +326,39 @@ On the 1962 page list the Ordinary first, assembly and calendar references secon
 
 Repository visibility and reader-site deployment are separate decisions. A public repository exposes tracked content and reachable history; a reader site is a generated, history-free artifact under ignored `build/`. Neither follows automatically from a successful build or commit.
 
-`release/public-alpha.json` must exhaustively account for every discovered source and installed PDF. Accounting is per provider edition: each provider's installed PDF is a distinct entry under its provider-qualified identity, and one provider edition's state never covers another's:
+The public-alpha inventory must account for every discovered source and
+installed PDF. Accounting is per provider edition: each provider's installed
+PDF is a distinct entry under its provider-qualified identity, and one provider
+edition's state never covers another's:
 
 - `hold` excludes the work from public artifacts and ordinary review previews;
-- `review` includes an installed paper in the public alpha so that it is
-  discoverable from the owning landing page. The catalog, PDF, and generated
-  artifact manifest must identify it conspicuously as a review copy and
-  preserve its open gates; and
-- `release` requires a current rights record, effective authorization, cleared distribution gates, and the exact approved PDF SHA-256.
+- `alpha` includes an installed paper when its source, rights, safety,
+  reproducibility, mechanical-validity, and basic-visual-usability checks pass;
+  and
+- `published` records deployment of a verified alpha artifact.
 
-`review` is a public-alpha distribution state, not release approval. Public
-discoverability never promotes its evidence, artwork, specialist-review,
-production, rights, or ecclesiastical state. Its exact installed hash and the
-maintainer decision permitting public review distribution must be recorded
-separately from completion or release approval. `release` means exact-snapshot
-distribution approval only. It never implies editorial maturity, complete
-collation, specialist review, an imprimatur, a nihil obstat, or ecclesiastical
-approval. A changed PDF is a new snapshot and loses its old approval until a
-new exact binding is recorded.
+Alpha and published are distribution states, not editorial promotions. Neither
+asserts completeness, finality, official status, an imprimatur, a nihil obstat,
+or approval by an external authority. The owning document states its actual
+scope and any material reliance boundary once on its first page; catalogs use
+terse reader-facing labels and do not repeat release apparatus.
 
 The maintainer's standing public-alpha decision of 27 July 2026 authorizes
-every current and later exact document snapshot to enter `review` without a
-new document-by-document approval request, provided that the snapshot is
-conspicuously labeled provisional, its exact installed PDF and web inputs are
-bound in the release records, and every unresolved work-specific gate remains
-visible. This standing decision authorizes the ordinary build, installation,
-binding, validation, and isolated-worker commit steps needed to prepare current
-public-review links. It does not authorize the worker to merge or integrate
+every current and later document snapshot to enter `alpha` without a new
+document-by-document approval request, provided that the six alpha concerns
+pass and the installed PDF and generated artifact identities are reproducible.
+This standing decision authorizes the ordinary build, installation, validation,
+and isolated-worker commit steps needed to prepare current public links. It
+does not authorize the worker to merge or integrate
 into `main`, push any ref, or claim deployment; the maintainer retains those
-final actions. It does not authorize a `release` promotion and must never be
-recorded as human, priestly, specialist, ecclesiastical, rights,
-physical-print, intended-reader, or final editorial review.
-
-An unavailable external human-review cycle does not force an otherwise
-qualified alpha snapshot into `hold` and does not pause later alpha revisions.
-Keep each unavailable human or ecclesiastical gate explicit and deferred on
-the `review` entry and in the owning records while continuing the authorized
-publication workflow. Never promote deferred review to passed, independent,
-human-reviewed, authoritative, or final status.
+final actions. It must never be recorded as external approval or final
+editorial judgment.
 
 An explicit user deliverable—such as promised scope, minimum extent, named
 sections, formats, or publication surfaces—must be recorded in the owning
 research scope before work is represented as complete. If the installed paper
-does not yet meet that deliverable, keep it discoverable as `review`, state the
-shortfall and open completion gate in its research and publication records,
+does not yet meet that deliverable, it may remain discoverable as `alpha` if it
+states its actual present scope on the first page and in its owning record,
 and never substitute successful build, review, installation, or distribution
 for fulfillment of the promised deliverable.
 

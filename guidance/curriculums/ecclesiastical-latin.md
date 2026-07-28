@@ -277,11 +277,11 @@ The non-publishable course owner keeps:
   productive/receptive, recurrence, source, and coverage decisions;
 - `research/answer-key-audit.md`: exercise, memory, composition, and review
   family; answer-source identity; closed or open status; ambiguity policy;
-  completed checks; corrections; and outstanding review; and
+  completed checks; corrections; and outstanding mechanical checks; and
 - `research/source-audit.md`: grammar, lexicography, diachronic, rhetorical,
   poetic, textual, and source-attribution claims; checked loci; material
   disagreements and negative results; rights; and completed content and
-  production review.
+  production validation.
 
 Each substantial packet keeps `research/module-map.md`, naming its packet ID,
 stable lesson IDs, internal teaching sequence, assumed abilities, memory and
@@ -374,5 +374,6 @@ Run `make check-curriculum-structure` whenever a curriculum publication or
 shared source changes; it must reconcile the source registry, multi-unit
 selection, all-variant practice contract, qualitative readiness language,
 stable-ID coverage, and rendered hierarchy for the complete discovered
-publication set. Independent Latin, liturgical, pedagogical, or ecclesiastical
-review is claimed only when a named event is recorded.
+publication set. Alpha publication requires these source, rights, safety,
+reproducibility, mechanical-validity, and basic-visual-usability checks; it
+does not carry external-review gates or placeholders.

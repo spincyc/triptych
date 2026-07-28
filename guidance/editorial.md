@@ -14,13 +14,15 @@ A genre profile may add stricter requirements but may not weaken this standard. 
 
 These publications aid study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice.
 
-When an external human-review cycle is not presently available, retain every
-applicable human, clerical, specialist, intended-reader, physical-use, and
-ecclesiastical gate as deferred and conspicuous, but do not suspend otherwise
-authorized public-alpha work merely to wait for that review. Continue all
-source, content, internal audit, production, installation, and publication
-steps that can be completed honestly. Internal, agent, or AI-assisted review
-never becomes human or independent review by relabeling.
+Public-alpha publication has six concerns: source integrity, rights and lawful
+distribution, safety, reproducibility and artifact identity, mechanical
+validity, and basic visual usability. A publication that satisfies those
+concerns may enter the alpha without a specialist, clerical, intended-reader,
+physical-use, or ecclesiastical review process. Do not create deferred gates,
+pending-review placeholders, or repeated qualifications for reviews that are
+not part of the current workflow. Any future external-review system is a
+separate project and confers no status until that system is deliberately
+defined and a completed event is recorded.
 
 ## Reader-first structure
 
@@ -99,9 +101,15 @@ The timestamp is the whole-second UTC time when the publishable render source wa
 
 The metadata gate rejects missing, duplicate, noninitial, malformed, or non-UTC timestamps; exact duplicate contribution declarations; generic family-only model labels; missing exposed qualifiers; invalid inheritance; handwritten display substitutes; missing PDF title/subject; PDF dates inconsistent with the tracked revision; automatic creation dates or trailer IDs; and omitted, duplicated, or reordered visible fields. It also requires one visible model/configuration line for each adjacent group sharing that identity, rather than repeating it for every contribution.
 
-## Review and publication gate
+## Alpha publication gate
 
-Generation provenance, source audit, specialist review, theological or canonical review, production review, and exact-snapshot distribution approval are separate states. Use labels such as `source-audited` or `theologically reviewed` only when the corresponding event is recorded. Internal checking is not independent review; production quality is not ecclesiastical approval.
+Generation provenance, source audit, production validation, alpha eligibility,
+and deployment are separate states. Use `source-audited` only when the
+corresponding source event is recorded. `Alpha` means that the six public-alpha
+concerns above pass for the current artifact; it does not mean complete, final,
+official, or approved by an external authority. `Published` describes
+deployment of a verified alpha artifact, not promotion to a higher editorial or
+ecclesiastical state.
 
 Typography serves navigation and meaning. Remove wrapper labels already supplied by the surrounding heading, but retain labels that convey authority, attribution, safety, contrast, accessibility, or stable semantic fields. Give repeated multi-field forms consistent visible field names. Do not use typography to imply doctrinal or juridical force.
 
