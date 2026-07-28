@@ -1,7 +1,7 @@
 schema_version = 1
 id = "obj-paten"
 workflow_state = "source-audited"
-editorial_note = "The checked Missal binding supports the celebrant's paten and its distinction from the Communion plate. It does not establish the candidate morphology, relative scale, material treatment, dimensions, or detailed handling."
+editorial_note = "The checked Missal establishes the prepared on-chalice relationship and distinguishes the celebrant's patena from the under-chin patina. The Met binding establishes one catalog exemplar's morphology and dimensions, not a universal Roman form."
 preferred_english_name = "Paten"
 latin_headword = "patena"
 alternate_english_names = []
@@ -45,6 +45,22 @@ evidence_state = "checked-paraphrase"
 source_ids = ["src-missale-1962-ritus-vii-x"]
 as_of = 1962-01-01
 
+[[claims]]
+id = "clm-paten-prepared-stack"
+kind = "liturgical-use"
+text = "In the prepared chalice stack, a clean purificator lies over the chalice mouth and the paten with host lies over the purificator."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-paten-preparation"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-paten-met-exemplar"
+kind = "appearance"
+text = "Met object 463080 is one shallow circular paten cataloged at 1.2 by 16.3 cm with its paired chalice."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-met-463080-metadata", "src-met-463080-image"]
+as_of = 2026-07-27
+
 [[sources]]
 id = "src-missale-1962-ritus-vii-x"
 binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium"
@@ -54,6 +70,42 @@ verification_state = "claim-verified"
 checked_on = 2026-07-27
 note = "This binding verifies identity, distinction, and liturgical use, not the generated figure's exact dimensions."
 
+[[sources]]
+id = "src-missale-1962-paten-preparation"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-chalice-and-paten-preparation"
+locus = "Ritus servandus I.1, printed p. LII, artifact PDF p. 56"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "Controls the prepared stack, not the exemplar's decorative morphology or dimensions."
+
+[[sources]]
+id = "src-missale-1962-communion-plate"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-communion-plate"
+locus = "Ritus servandus X.7, printed p. LXIII, artifact PDF p. 65"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "Establishes the separate under-chin patina and its function, not handled or raised-edge morphology."
+
+[[sources]]
+id = "src-met-463080-metadata"
+binding = "artifact.metropolitan-museum-of-art.chalice-and-paten-463080.met-collection-record-2026-05-20.met-api-json-d123735a"
+locus = "object 463080; accession 08.105.12a, b; dimensions"
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "One French early-twentieth-century exemplar after a 1555 original; not a universal Roman specification."
+
+[[sources]]
+id = "src-met-463080-image"
+binding = "artifact.metropolitan-museum-of-art.chalice-and-paten-463080.met-collection-record-2026-05-20.met-open-access-image-99c045a1"
+locus = "complete Open Access object photograph"
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "Controls the depicted exemplar's visible morphology; the Missal separately controls the prepared stack."
+
 [[artwork]]
 id = "art-paten-isolated"
 view = "isolated"
@@ -62,6 +114,15 @@ review_state = "identity-checked"
 depicts = ["obj-paten"]
 scale_mode = "not-to-common-scale"
 review_note = "Presumptively reject for publication pending priestly review: the broad rim and pronounced central well can read as a domestic saucer, and no on-chalice view establishes the defining relationship. See research/reviews/vessels-cruets-priestly-review-2026-07-27.md."
+
+[[artwork]]
+id = "art-paten-catalog-exemplar-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png"
+review_state = "liturgically-checked"
+depicts = ["obj-paten", "obj-chalice"]
+scale_mode = "not-to-common-scale"
+review_note = "Top and side views use the Met catalog dimensions; the prepared inset follows Missal I.1. The attempted common-scale inset was removed because generated proportions were not exact. Communion-plate morphology is explicitly unresolved."
 
 [[audience_note]]
 audience = "altar-server"

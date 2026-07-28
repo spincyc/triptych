@@ -306,6 +306,13 @@ audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 549864, sha256 = "6cabd1ee6894e64c495569ab12b624f649a7cd495004d8500a1776e1dd3247d1" }
 
 [[asset_files]]
+id = "file-rpd-paten-catalog-exemplar-comparison"
+path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png"
+state = "consumer-eligible"
+audit_record = "research/reviews/paten-catalog-exemplar-artwork-review-2026-07-27.md"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 628594, sha256 = "7c344a7fe84a1995303f82559e4e7447cee468a4c35466267edd7e9e1ac9c85f" }
+
+[[asset_files]]
 id = "file-rpd-altar-cruet"
 path = "shared/artwork/pencil/RPD-FIG-service-objects-0001-iso-cruet.png"
 state = "accepted-for-priestly-review"
@@ -994,6 +1001,76 @@ visual = "passed"
 print = "pending"
 rights = "pending"
 consumer = "pending"
+release = "pending"
+
+[[artworks]]
+id = "art-paten-catalog-exemplar-comparison"
+object_ids = ["obj-paten", "obj-chalice"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Teach one source-bounded priest-paten exemplar in top, side, and prepared on-chalice views while refusing to invent Communion-plate morphology."
+depicted_state = "One empty catalog-exemplar paten in dimensioned top and side views, plus the same form over a purificator on its cataloged paired chalice."
+source_controlled_features = [
+  "Met object 463080 controls the exemplar's shallow circular form and 1.2 by 16.3 cm paten dimensions.",
+  "Missale Romanum 1962, Ritus servandus I.1 controls the paten-over-purificator-over-chalice-mouth relationship.",
+  "Ritus servandus X.7 controls the textual distinction between the celebrant's patena and the under-chin patina.",
+]
+deliberate_omissions = [
+  "No host is shown.",
+  "No Communion plate is drawn; handled and raised-edge morphology remains unresolved.",
+  "The generated common-scale inset was removed because its proportional rendering was not exact.",
+  "No claim that the exemplar's ornament or silhouette is universal.",
+]
+brief = "Landscape graphite catalog-exemplar plate with dimensioned paten top and side views and a Missal-controlled prepared-chalice inset."
+exact_prompt = """Initial generation prompt:
+Use case: scientific-educational
+Asset type: Roman sanctuary dictionary comparison plate
+Primary request: Create a restrained graphite pencil study plate of the PRIEST'S PATEN, based only on the cataloged paten and paired chalice in the reference photograph. This is one exact Metropolitan Museum of Art catalog exemplar, not a universal type.
+Input image: reference image; use it only for the cataloged paten's shallow circular footless form, broad rim/depressed field, and the paired chalice's overall proportions.
+Style/medium: monochrome hand-drawn graphite and pencil on clean warm-white paper, fine museum-catalog draftsmanship, visible light construction lines, subtle cross-hatching, no color, no photorealism.
+Composition/framing: one landscape educational plate with three clearly separated views: (A) near-orthographic TOP VIEW of the empty paten; (B) low SIDE PROFILE of the empty paten showing its shallow 1.2 cm height; (C) PREPARED CHALICE inset showing a plain purificator laid over the chalice mouth and the paten resting flat above the purificator, following the 1962 Missal stack. Include a small common-scale silhouette comparison of the cataloged empty paten beside the complete paired chalice, using catalog dimensions paten 16.3 cm diameter x 1.2 cm high; chalice 23.6 cm high x 17.8 cm maximum overall width. Do not imply that 17.8 cm is the chalice mouth diameter.
+Text, verbatim and legible: "PRIEST'S PATEN — CATALOG EXEMPLAR"; "A  TOP VIEW"; "B  SIDE PROFILE"; "16.3 cm"; "1.2 cm"; "C  PREPARED CHALICE"; "PATEN"; "PURIFICATOR"; "COMMON OVERALL SCALE"; "MORPHOLOGY IS EXEMPLAR, NOT UNIVERSAL"; "COMMUNION PLATE: DISTINCT UNDER-CHIN OBJECT; VISUAL FORM UNRESOLVED".
+Constraints: no host anywhere; no hands or people; no Communion plate drawing; no handled plate; no raised-edge plate; no decorative invention beyond restrained simplification of the reference exemplar; no exploded impossible stack; paten must be directly above the purificator, which is directly over the chalice mouth; generous margins; every object fully contained.
+Avoid: watermark, signature, logo, border ornament, color wash, ink, charcoal black fills, glossy rendering, domestic saucer appearance, extra vessels, duplicate objects, illegible labels.
+
+Targeted correction prompt:
+Correct only the COMMON OVERALL SCALE inset in the existing graphite plate. Preserve the title, A top view, B side profile, C prepared chalice stack, all other labels, graphite style, margins, and the explicit Communion-plate unresolved note. In the common-scale inset, redraw the paten and complete chalice so the paten's 16.3 cm diameter is exactly about 91.6% of the chalice's 17.8 cm maximum overall width. Their overall widths must therefore look nearly equal, while the chalice remains 23.6 cm high and the paten remains 1.2 cm high. Do not imply the 17.8 cm value is the chalice mouth diameter. Edit only the scale inset and its dimension labels; no host; no hands; no Communion plate drawing; no handled plate; no raised-edge plate; no added vessels; no watermark."""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-27"
+asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png"
+reference_ids = ["src-met-463080-image", "src-met-463080-metadata", "src-missale-1962-paten-preparation", "src-missale-1962-communion-plate"]
+precursor_ids = ["art-paten-isolated"]
+corrections = ["Requested one targeted scale correction.", "Removed the still-inexact generated common-scale inset by flat-background content correction.", "Converted the surviving source-bounded plate to stripped 8-bit grayscale PNG."]
+baked_content_audit = ["Top, side, and prepared views are legible.", "No host, hands, people, Communion-plate drawing, handle, or raised-edge comparison is present.", "The plate explicitly labels morphology as exemplar rather than universal and states that Communion-plate visual form is unresolved."]
+tex_overlays = ["TeX repeats the catalog-exemplar qualification, exact source notes, server handling boundary, and the unresolved Communion-plate morphology statement."]
+consumer_plate_ids = ["plt-vessels-paten-exemplar"]
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster derived with the Met's Public Domain Open Access image as a visual reference; exact source artifact and rights basis are recorded in the source library. Release remains pending."
+[artworks.received]
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2198320
+sha256 = "95f3d1e2339413577f13ca6ea846da1cc1b6d58e9c039da0c362644604faa60c"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png"
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 628594
+sha256 = "7c344a7fe84a1995303f82559e4e7447cee468a4c35466267edd7e9e1ac9c85f"
+max_placement_width_in = 4.35
+max_placement_height_in = 2.9
+effective_dpi = 353.1
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "pending"
+rights = "passed"
+consumer = "passed"
 release = "pending"
 
 [coverage]

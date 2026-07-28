@@ -67,7 +67,9 @@ remains unproved. See
 3. Image-dominant altar-bells spread.
 4. Image-dominant sanctuary-lamp spread.
 5. Candle-and-candlestick comparison spread with two distinct figures.
-6. Chalice-and-paten boundary spread, with the ambiguous paten art withheld.
+6. Chalice-and-paten boundary spread with one dimensioned Met catalog
+   exemplar and a Missal-controlled prepared inset; Communion-plate
+   morphology remains text-only and unresolved.
 7. Source notes, scope and qualifications, generation metadata, and rights
    colophon.
 
@@ -81,6 +83,10 @@ All printed claims come from these canonical source keys:
 - `src-candlestick-ceremonial`;
 - `src-missale-1962-ritus-vii-xii`; and
 - `src-missale-1962-ritus-vii-x`.
+- `src-missale-1962-paten-preparation`;
+- `src-missale-1962-communion-plate`;
+- `src-met-463080-metadata`; and
+- `src-met-463080-image`.
 
 The source loci and verification states remain owned by the corresponding
 canonical object records. The leaf neither creates new evidence nor promotes a

@@ -57,7 +57,7 @@ monochrome-photocopy review of these exact snapshots remains open.
 | Leaf | Installed PDF SHA-256 |
 | --- | --- |
 | comprehensive | `d57f6297b85aa1097752c97a0d8061fe34aab47afbc7e3d1004ef345afa2e902` |
-| altar-server | `e1c3f17a610e75bfa7e3d58b9a50e1cc7c5f9aa748497281bc06c5c3c6270804` |
+| altar-server | `56e3660b43bac59022da925eee3200b0bab9558b62909843a326504959b202f6` |
 | sacristan | `3bb8c5670e84e81c4b57ffcf59fc286f7bf514191762bd1cfb3bdb3d962d046e` |
 | mc-trainer | `ebc1b408a7065564018240a95d60de430651d4f28fd3fc5b7fc8e5323964f94d` |
 | general-reader | `8a88485e6920195f8327c35a9d658808ef5ab277e0f2611ca98413c81612cd78` |
@@ -68,6 +68,11 @@ review gate and print a 37-record omission register from the current 43-record
 inventory. This is an honest
 review corpus, not the promised complete dictionary or a claim that the
 audience editions have reached their final differentiated scope.
+
+The altar-server snapshot now uses the consumer-reviewed, dimensioned Met
+catalog-exemplar paten plate with a Missal-controlled prepared inset. It
+textually distinguishes the Communion plate while preserving the unresolved
+period-morphology boundary; it does not admit a Communion-plate drawing.
 
 The project convention now makes every installed review paper publicly
 discoverable in the public alpha. That distribution rule does not promote a

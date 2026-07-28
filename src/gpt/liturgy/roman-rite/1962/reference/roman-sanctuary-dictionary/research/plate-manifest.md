@@ -9,6 +9,7 @@ Audit date: 2026-07-27
 | `plt-sacristy-preparation` | Church and sanctuary | Distinguish sacristy work, storage, handwashing, disposal, devotional, and signal furnishings without implying one universal room plan | Seven narrow source-audited records; generated comparison asset failed visual review because of unsupported piscina ornament and remains held | Held |
 | `plt-altar-composition` | Altar | Relationship of altar and appointments | Audited object presence/status | Held |
 | `plt-vessels-comparison` | Vessels | Silhouette, components, and relative scale | Vessel inventory and dimensions | Held |
+| `plt-vessels-paten-exemplar` | Vessels / altar-server alpha | One catalog-exemplar priest's paten in dimensioned top and side views plus its Missal-controlled prepared relationship; distinguish the Communion plate textually without inventing morphology | `art-paten-catalog-exemplar-comparison`; `obj-paten`; `obj-chalice`; exact Met dimensions; *Ritus servandus* I.1 and X.7; consumer `ed-altar-server` | Consumer-reviewed; print/release pending |
 | `plt-white-linens` | Linens | Folded/unfolded/in-use distinction among confusable textiles | Linen records and source-bound fold/mark claims | Held |
 | `plt-books` | Books | Distinguish official book identities from stands, covers, and generic forms | Exact edition and object records | Held |
 | `plt-service-objects` | Service | Dense identification and handling comparison | Object and handler records | Held |

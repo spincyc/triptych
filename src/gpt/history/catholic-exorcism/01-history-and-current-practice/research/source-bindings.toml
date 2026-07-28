@@ -227,11 +227,22 @@ states = ["cataloged"]
 context = "Proprietary liturgical book identified at work and edition-history level only: decree dated 22 November 1998, 1999 Latin typical edition, and 2004 emended reprint. Formulas are not reproduced."
 
 [[bindings]]
-source_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021"
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.latin-vatican-web-2026-07-27.in-de-exorcismis-praenotanda-37"
 loci = ["in-de-exorcismis-praenotanda-37"]
 role = "official-control"
-states = ["cataloged"]
-context = "Official 22 October 2021 currentness control for the revised translation and adaptation norm in the exorcism book's praenotanda."
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:bccc5085516c52a048ff0ad3ef5e441a44196dd558390dab5e5caac08ed1caab"
+verified_on = "2026-07-27"
+context = "Exact official Latin currentness control for the revised translation and adaptation norm in the exorcism book's praenotanda. It neither creates a new typical edition nor changes CIC c. 1172 minister authorization."
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-vatican-web-2026-07-27.in-de-exorcismis-praenotanda-37"
+loci = ["in-de-exorcismis-praenotanda-37"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:0c6a08d95aa389f5a0019e38a8a2101812911dc0592a0244b5521bba8b396d3c"
+verified_on = "2026-07-27"
+context = "Official Holy See English aid checked against the exact Latin control; it does not enlarge the decree's scope."
 
 [[bindings]]
 source_id = "passage.catholic-church.catechism.english-usccb-second-2019.391-395"
