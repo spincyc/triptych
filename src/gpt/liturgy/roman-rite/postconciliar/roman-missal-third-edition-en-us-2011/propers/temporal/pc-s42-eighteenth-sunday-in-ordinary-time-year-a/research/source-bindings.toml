@@ -1,0 +1,19 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xviii-per-annum"
+loci = ["Dominica XVIII per annum, printed pp. 467-468"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The shared Week XVIII owner controls the complete Latin formulary, element order, incipits, and antiphon locators from the exact registered 2002 witness."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+loci = ["edition identity"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "The 2008 emended reprint is the governing Latin edition base; exact Week XVIII pages were not inspected."

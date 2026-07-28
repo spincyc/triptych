@@ -123,7 +123,7 @@ The 60 permanent Proper-of-Time identities in canonical registry order, with the
 | PC-S39 | Fifteenth Sunday in Ordinary Time | `pc-s39-fifteenth-sunday-in-ordinary-time` | `temporal/shared/ordinary-time/weeks/15/` | 3 | 1/3 | 0/3 |
 | PC-S40 | Sixteenth Sunday in Ordinary Time | `pc-s40-sixteenth-sunday-in-ordinary-time` | `temporal/shared/ordinary-time/weeks/16/` | 3 | 1/3 | 0/3 |
 | PC-S41 | Seventeenth Sunday in Ordinary Time | `pc-s41-seventeenth-sunday-in-ordinary-time` | `temporal/shared/ordinary-time/weeks/17/` | 3 | 1/3 | 0/3 |
-| PC-S42 | Eighteenth Sunday in Ordinary Time | `pc-s42-eighteenth-sunday-in-ordinary-time` | `temporal/shared/ordinary-time/weeks/18/` | 3 | 0/3 | 0/3 |
+| PC-S42 | Eighteenth Sunday in Ordinary Time | `pc-s42-eighteenth-sunday-in-ordinary-time` | `temporal/shared/ordinary-time/weeks/18/` | 3 | 3/3 | 3/3 |
 | PC-S43 | Nineteenth Sunday in Ordinary Time | `pc-s43-nineteenth-sunday-in-ordinary-time` | `temporal/shared/ordinary-time/weeks/19/` | 3 | 0/3 | 0/3 |
 | PC-S44 | Twentieth Sunday in Ordinary Time | `pc-s44-twentieth-sunday-in-ordinary-time` | `temporal/shared/ordinary-time/weeks/20/` | 3 | 0/3 | 0/3 |
 | PC-S45 | Twenty-first Sunday in Ordinary Time | `pc-s45-twenty-first-sunday-in-ordinary-time` | `temporal/shared/ordinary-time/weeks/21/` | 3 | 0/3 | 0/3 |
@@ -280,9 +280,9 @@ The registry's canonical creation queue, 184 rows, in registry order: parent ord
 | 125 | PC-S41 | Seventeenth Sunday in Ordinary Time | `PC-S41-A` | A | 109 | `temporal/shared/ordinary-time/weeks/17/` | published | not started |
 | 126 | PC-S41 | Seventeenth Sunday in Ordinary Time | `PC-S41-B` | B | 110 | `temporal/shared/ordinary-time/weeks/17/` | not started | not started |
 | 127 | PC-S41 | Seventeenth Sunday in Ordinary Time | `PC-S41-C` | C | 111 | `temporal/shared/ordinary-time/weeks/17/` | not started | not started |
-| 128 | PC-S42 | Eighteenth Sunday in Ordinary Time | `PC-S42-A` | A | 112 | `temporal/shared/ordinary-time/weeks/18/` | not started | not started |
-| 129 | PC-S42 | Eighteenth Sunday in Ordinary Time | `PC-S42-B` | B | 113 | `temporal/shared/ordinary-time/weeks/18/` | not started | not started |
-| 130 | PC-S42 | Eighteenth Sunday in Ordinary Time | `PC-S42-C` | C | 114 | `temporal/shared/ordinary-time/weeks/18/` | not started | not started |
+| 128 | PC-S42 | Eighteenth Sunday in Ordinary Time | `PC-S42-A` | A | 112 | `temporal/shared/ordinary-time/weeks/18/` | source-audited | synthesis published |
+| 129 | PC-S42 | Eighteenth Sunday in Ordinary Time | `PC-S42-B` | B | 113 | `temporal/shared/ordinary-time/weeks/18/` | source-audited | synthesis published |
+| 130 | PC-S42 | Eighteenth Sunday in Ordinary Time | `PC-S42-C` | C | 114 | `temporal/shared/ordinary-time/weeks/18/` | source-audited | synthesis published |
 | 131 | PC-S43 | Nineteenth Sunday in Ordinary Time | `PC-S43-A` | A | 115 | `temporal/shared/ordinary-time/weeks/19/` | not started | not started |
 | 132 | PC-S43 | Nineteenth Sunday in Ordinary Time | `PC-S43-B` | B | 116 | `temporal/shared/ordinary-time/weeks/19/` | not started | not started |
 | 133 | PC-S43 | Nineteenth Sunday in Ordinary Time | `PC-S43-C` | C | 117 | `temporal/shared/ordinary-time/weeks/19/` | not started | not started |

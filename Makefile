@@ -868,6 +868,13 @@ $(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-
 	$(POSTCONCILIAR_US_ROOT)/temporal/shared/ordinary-time/weeks/16/propers/verified.md
 $(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.pdf: \
 	$(POSTCONCILIAR_US_ROOT)/temporal/shared/ordinary-time/weeks/17/propers/verified.md
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a.pdf \
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a-synthesis.pdf \
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b.pdf \
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b-synthesis.pdf \
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c.pdf \
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c-synthesis.pdf: \
+	$(POSTCONCILIAR_US_ROOT)/temporal/shared/ordinary-time/weeks/18/propers/verified.md
 $(NOVENA_BUILD_PDFS): $(NOVENA_SHARED)
 $(BIOGRAPHY_BUILD_PDFS): $(BIOGRAPHY_SHARED)
 $(HISTORICAL_TRANSLATION_BUILD_PDFS): $(HISTORICAL_TRANSLATION_SHARED)

@@ -24,6 +24,9 @@ The stable Proper-of-Time series. Each cycle cell links an installed synthesis o
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a -->
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a -->
+<!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a -->
+<!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b -->
+<!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c -->
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a -->
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a -->
 
@@ -70,7 +73,7 @@ The stable Proper-of-Time series. Each cycle cell links an installed synthesis o
 | **PC-S39 · Fifteenth Sunday in Ordinary Time** | Planned | Planned | Planned |
 | **PC-S40 · Sixteenth Sunday in Ordinary Time** | Planned | Planned | Planned |
 | **PC-S41 · Seventeenth Sunday in Ordinary Time** | [GPT](../doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf) · [Claude](../doc/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf) | Planned | Planned |
-| **PC-S42 · Eighteenth Sunday in Ordinary Time** | Planned | Planned | Planned |
+| **PC-S42 · Eighteenth Sunday in Ordinary Time** | [GPT](../doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a-synthesis.pdf) | [GPT](../doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b-synthesis.pdf) | [GPT](../doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c-synthesis.pdf) |
 | **PC-S43 · Nineteenth Sunday in Ordinary Time** | Planned | Planned | Planned |
 | **PC-S44 · Twentieth Sunday in Ordinary Time** | Planned | Planned | Planned |
 | **PC-S45 · Twenty-first Sunday in Ordinary Time** | Planned | Planned | Planned |
