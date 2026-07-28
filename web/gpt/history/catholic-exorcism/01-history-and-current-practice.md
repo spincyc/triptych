@@ -788,104 +788,279 @@ The exact cross-genre corpora needed for claims about interactions among exorcis
 
 That boundary does not reduce the medieval section to a gap report. The controlled witnesses already establish a substantial historical pattern: offices, ordinal objects, baptismal preparations, differentiated recipients, and theological explanation occupy related but distinct documentary worlds. The point of further research is not to replace that pattern with a smoother story. It is to test where, when, and through which manuscripts or communities the worlds actually met.
 
-## Early Modern Consolidation and the Roman Ritual of 1614
+## Roman Consolidation and the History of the Book
 
 ### A Roman book did not create a Roman monopoly
 
-The *Rituale Romanum* issued under Paul V in 1614 belongs to the post-Tridentine effort to provide dependable Roman books where local manuals remained diverse. Its appearance is therefore a history of consolidation, not an origin story for Christian exorcism. Baptismal exorcisms, prayers over the afflicted, episcopal regulation, and regional formularies all preceded it. Nor did publication instantly abolish diocesan custom: the title page presents a Roman norm commended to pastors, while reception depended on local authority, printing, clerical formation, and the continuing use of approved books.
+The *Rituale Romanum* issued under Paul V in 1614 belongs to the post-Tridentine effort to provide a dependable Roman pastoral book amid continuing local diversity. Its appearance is therefore a history of consolidation, not an origin story for Christian exorcism. Baptismal exorcisms, prayers over afflicted persons, episcopal regulation, ordination traditions, and regional formularies all preceded it. Nor did publication instantly abolish diocesan custom. Reception depended upon local authority, printing, clerical formation, possession of books, and decisions about approved usages. A Roman book and a Roman monopoly are not the same historical claim.
 
-The controlled outer sequence does not present this material as the later title XI or title XII with three numbered chapters. It reports one section, *De exorcizandis obsessis a daemonio*, beginning on printed p. 198, with the next unit beginning on p. 220. References to “the Roman exorcism” must consequently identify an edition and locus rather than treating every book from 1614 to the twentieth century as textually identical.
+That distinction also changes what “the rite of 1614” can mean. It may denote the section printed in one identified first-edition witness, a textual family descended from that book, a later typical edition carrying inherited material, or—too loosely—every older Roman form before the postconciliar revision. These senses are not interchangeable. A sentence about a page in 1614 does not automatically describe a 1925 title; a twentieth-century chapter division does not prove the architecture of the princeps; and the existence of a historical edition does not answer the current legal question whether anyone may use it.
 
-### The surviving book fixes a narrow historical claim
+### Edition history begins by naming the state
 
-The edition identified here is the Rome printing of 1614 from the press of the Apostolic Camera, represented by the Biblioteca Universitaria Alessandrina copy. Petar Bašić’s independently acquired 2014 article transcribes the title and reports the terminal starting pages: *De exorcizandis* at 198, *Formulae* at 220, the index at 225, and the errata at 227. The first two coordinates bound the section to printed pp. 198–219. This is a secondary collation, not inspection of the presently unacquired Alessandrina page-image bytes. It establishes neither the section’s internal order, headings, rubrics, and Latin wording nor which earlier sources supplied each phrase, how rapidly the book circulated, or what a priest in a particular diocese actually did.
+This study treats each controlled book as an edition-state: an identified artifact or bounded bibliographic witness at a date, with a stated authority, architecture, and evidentiary ceiling. Four states presently permit a useful comparison.
 
-This distinction prevents a bibliographic shortcut. A later printing that calls the material a numbered title or divides it into chapters is evidence for that later editorial state, not a transparent window onto the architecture of 1614. Conversely, the absence of later supplementary material from the first edition does not make that material unofficial in a period when competent authority subsequently approved it. Textual descent, book structure, juridical status, and practical reception require separate evidence.
-
-### The boundary control is deliberately narrow
-
-The present source state does not support a fresh account of the princeps section’s internal wording or sequence. Later exact editions can guide the search, but their cautions, formulas, chapter divisions, and typography may not be projected backward into 1614. The next evidentiary step is therefore facsimile acquisition and collation, not reconstruction from later books or from a modern summary.
-
-That limit matters historically. The title and outer extent establish that an exorcism section stood inside the Roman pastoral book and identify its place near the book’s end. They do not establish what every internal rubric said, what a minister did in practice, or how the section related line by line to later editions. Those questions remain open until authenticated princeps page images are acquired and inspected.
-
-> **What may and may not be inferred from the book**
->
-> The printed title proves what Roman authority prescribed and what a priest using that edition could read. It does not prove how frequently the rite was used, that every local exorcist followed it, that a reported case was possession, or that an attributed outcome occurred. Normative text, local practice, case narration, and theological judgment remain four different evidence classes.
-
-### Prescription, permission, and reception are not synonyms
-
-Four questions must remain separate when the 1614 book is used as historical evidence. What did the printed Roman text prescribe to its intended minister? What authority did the book claim and how was it commended for use? Which local churches or communities received it, and on what timescale? What happened in a reported individual case? The present title and boundary controls identify the book but do not fully answer either of the first two questions at the internal textual level. Reception requires diocesan books, statutes, visitation records, library evidence, or comparable local controls. A case requires its own contemporary documentary chain.
-
-This four-part distinction blocks opposite shortcuts. Printing an official formulary does not prove universal compliance or an alleged cure. Evidence that a local ritual remained in use does not make the Roman book irrelevant. A reported abuse does not establish the meaning of the normative text, while a cautious norm does not prove that every minister obeyed it. Books, authorities, ministers, communities, and reported events are related evidence without being interchangeable.
-
-### Standardization, revision, and expansion
-
-Successive Roman editions changed rubrics, arrangement, and supplementary material. The blessing of persons or places and the exorcism associated with Leo XIII belong to their own textual and juridical histories; later arrangements may not be folded backward into the 1614 formulary. The exact 1925 reset used here has three chapters in title XI. The separately identified 1952 *Rituale Romanum* is the sixth typical edition after the 1614 princeps and distributes the book across twelve titles. Its final title, *De exorcizandis obsessis a daemonio*, occupies pages 847–886 and marginal item numbers 2115–2174 in the protected 2008 anastatic edition. Those outer coordinates do not establish its internal chapter divisions or wording. The book is important evidence for the period immediately before the postconciliar revision, but its historical existence does not settle whether, where, or under what authorization an older book may be used today.
-
-The edition history should therefore be read as a sequence of controlled states, not as one frozen “1614 rite.” For each state the questions are bibliographic before they are interpretive: who authorized it, what decree or title page identifies it, how is the material divided, what changed at the relevant locus, and what evidence establishes the change? Until those controls are present, a date in a later bibliography remains a research lead rather than proof of a textual revision. This study therefore uses the 1614 evidence only for identity and outer boundary. A Pustet printing approved at Regensburg in 1872 still presents *De exorcizandis obsessis a daemonio* as one continuous, unnumbered unit on printed pages 281–301; the next unit begins on page 302. The separately controlled 1925 reset instead divides title XI into three chapters. This comparison establishes a change in book architecture, not a formula-level stemma, a record of actual use, or proof of universal reception. For 1952, the editors of the anastatic edition describe the Sacred Congregation of Rites decree *Cum denuo*, signed by its pro-prefect on 25 January 1952, as declaring the edition typical and requiring future editions to conform to it. This study has not inspected the protected facsimile or the decree’s complete official witness. It therefore stops at the edition identity, reported authority and date, twelve-title architecture, and title-XII outer extent. It does not claim a 1952 internal three-chapter division, exact wording, or a complete line-by-line stemma among these states.
-
-The Leonine material especially requires this discipline. Its documentary questions include the authority and wording of the original act, later revision, placement in particular editions, and subsequent restrictions on use. A devotional origin story, however familiar, cannot answer those questions. Nor can a formula directed against Satan and the apostate angels be silently equated with the 1614 section concerning an allegedly possessed person. Their objects, textual histories, and disciplinary reception must be narrated separately.
-
-The durable achievement visible at the present evidence ceiling is narrower than folklore suggests. The edition placed a section on this extraordinary ministry inside a Roman pastoral book and supplied a dated textual point against which later editions can be compared. Its internal contribution must await direct princeps control rather than being supplied from those later states.
-
-## Codification and Modern Liturgical Reform
-
-### From ritual-book discipline to codified reservation
-
-The 1917 *Codex Iuris Canonici* made the jurisdictional boundary explicit. Canon 1151 required one exercising exorcistic power received through ordination never to proceed against the possessed without the ordinary’s express and particular permission; the ordinary was to grant it only to a priest distinguished by piety, prudence, and integrity of life. Canon 1152 extended the lawful use of exorcisms by legitimate ministers beyond Catholics and catechumens, while canon 1153 left the minister of exorcisms within baptism, consecrations, and blessings to the relevant approved rites. These are three related rules, not one undifferentiated reservation. Canon 1151 also required a diligent and prudent investigation establishing that the person was truly possessed before the authorized priest proceeded. Permission regulated licit ministry and did not itself adjudicate the alleged cause.
-
-Codification also changed the kind of evidence a historian must use. A ritual book supplies liturgical text and rubrics; a code supplies universal juridical norms. The code did not make every exorcistic text in every ritual book interchangeable, and a ritual book did not replace the code’s rule about authorization. After 1917, an account must therefore identify both the edition of the rite and the law governing its minister. A later ritual edition adapted to codified law belongs to this interaction of books; ritual text and canon law did not become one document.
-
-The 1983 code, promulgated by John Paul II on 25 January 1983 and in force from 27 November 1983, states the core rule more concisely. Canon 1 limits the code’s scope to the Latin Church. Canon 1172 forbids anyone to perform exorcisms legitimately over the possessed without particular and express permission from the local ordinary, and says that permission is to be given only to a priest distinguished by piety, knowledge, prudence, and integrity of life. This is universal law for the Latin Church as of 27 July 2026. The official Latin web text checked on that date retains this wording, and the Holy See’s published compilation of authentic interpretations contains no entry for canon 1172. That bounded check is not a comprehensive amendment-or-repeal inventory. The canon neither licenses lay major exorcism nor converts the grant of permission into a finding that every presented phenomenon has a preternatural cause.
-
-### The former minor order and the 1972 ministries
-
-The same word *exorcist* crosses a decisive disciplinary boundary. Paul VI’s *Ministeria quaedam*, issued on 15 August 1972 and effective from 1 January 1973, recalled that porter, lector, exorcist, and acolyte had been called minor orders in the Latin Church. It directed that the grades formerly called minor orders should thereafter be called ministries and connected entry into the clerical state with the diaconate. Of these ministries, only lector and acolyte were retained throughout the Latin Church.
-
-The act also allowed an episcopal conference to ask the Apostolic See to institute other ministries where regional need warranted them; porter, exorcist, and catechist were examples. That provision neither established a universal exorcist ministry nor itself records that a particular conference request was approved. More importantly for this history, it is not an authorization under canon 1172. A former minor order, an instituted ministry, and the current priestly authorization for major exorcism are different juridical categories. Historical evidence that someone bore the title *exorcist* therefore cannot, without further evidence, establish what that person did or supply present permission.
-
-Francis’s *Spiritus Domini* changed canon 230 §1 on 10 January 2021. Its sex-neutral text still names only the instituted ministries of lector and acolyte. It did not create a universal exorcist ministry or alter canon 1172.
-
-### Revision of the ritual book
-
-The postconciliar revision did not begin from a claim that evil or exorcism had ceased to be Catholic subjects. It revised a sacramental within the principles governing the Roman Ritual, with renewed scriptural proclamation, distinct forms of prayer, and revised preliminary norms. The decree dated 22 November 1998 promulgated *De Exorcismis et Supplicationibus Quibusdam*; the Latin typical edition was issued in 1999 and publicly presented on 26 January. An emended reprint followed in 2004; it should not be mislabeled a second typical edition. Edition, emendation, translation, confirmation, and territorial implementation are separate acts. The dicastery’s general executory decree of 22 October 2021 adjusted preliminary norm 37: an episcopal conference prepares and approves a complete faithful translation for submission to the Apostolic See for confirmation; adaptation of signs and gestures requires Holy See consent and recognition. This was an adjustment to the preliminary norm, not a new typical edition or a change to canon 1172’s rule about the authorized minister. The proprietary formularies are not reproduced here.
-
-The dates identify different documentary events. The decree of 22 November 1998 is the act of promulgation. The 1999 volume is the Latin typical edition in which the revised rite was issued, and 26 January 1999 is the date of its public presentation. The 2004 volume is an emended reprint of that typical edition. Treating all four references as a single publication date hides the difference between juridical act, material edition, public explanation, and corrected textual state. Calling the 2004 state a second typical edition would create an authority claim the identified sources do not make.
-
-The revised volume also marks a different editorial situation from the comprehensive 1952 *Rituale Romanum*. It is a distinct postconciliar ritual volume, not simply a new chapter silently inserted into title XII. Continuity must therefore be demonstrated at the level claimed. Continuity of ecclesial purpose, episcopal governance, prayer, Scripture, and prudent discernment does not prove verbal identity. Changed structure, preliminary norms, and formularies do not prove theological repudiation of everything that preceded them.
-
-The Congregation’s 1999 presentation begins from Christ’s ministry and describes discernment in terms of prudential certainty. It also situates the rite among prayer, Scripture, and ecclesial authority rather than popular spectacle. That official presentation establishes the reform’s stated theological and pastoral rationale. It does not supply prevalence data or validate retrospective case claims.
-
-> **How this study compares ritual books**
->
-> The comparison is limited to promulgation, edition identity, book structure, the authority and conduct of the minister, categories of discernment, and the official rationale for revision. It does not reproduce prayers, adjurations, lists of alleged signs, or the order of actions. Those omissions preserve the difference between historical analysis and an operational rite.
-
-### Discipline against unauthorized imitation
-
-Two dicastery interventions close a common loophole. The Congregation for the Doctrine of the Faith’s letter of 29 September 1985 (the official page’s URL contains “19850924,” but the Latin heading and AAS citation give 29 September) required observance of canon 1172, prohibited the faithful’s use of the Leonine formula against Satan and the apostate angels, and directed ordinaries to prevent persons lacking the requisite power from conducting assemblies in which demons were directly addressed and their identity sought. The *Instruction on Prayers for Healing* (2000), article 8, again separates liturgical exorcism from healing services and places the matter under the diocesan bishop. Calling an event a prayer meeting, healing ministry, or deliverance session does not erase those boundaries.
-
-The 1985 letter also prevents a false inference from textual availability. Possessing, copying, translating, or finding an older formula does not confer the power or permission whose absence the letter addresses. The document is not merely a warning about poor technique; it protects a boundary between the Church’s authorized liturgical act and unauthorized assemblies that imitate some of its speech. A historical appendix of formulas would therefore be pastorally misleading even if rights permitted it.
-
-The *Catechism of the Catholic Church*, no. 1673, provides doctrinal and catechetical orientation rather than a second grant of the particular and express permission required by canon 1172: simple exorcism occurs in baptism; solemn or “major” exorcism may be performed only by a priest with episcopal permission; and illness, especially psychological illness, is a different matter whose treatment belongs to medical science. It says that before celebration it is important to ascertain that the matter concerns the presence of the Evil One rather than illness. That is an explicit differential warning, not a clinical test or a replacement for canon 1172 and the ritual norms.
-
-### Territorial implementation and the United States
-
-For the Latin dioceses of the United States, the bishops’ conference reports that its Latin Church bishops approved the English translation of *Exorcisms and Related Supplications* in November 2014, that the final text received Holy See confirmation in December 2016, and that it was implemented on 29 June 2017. Its public guidance describes consultation with medical and mental-health professionals, the search for moral certitude, consent, privacy, and the distinction between minor and major exorcism. These are authoritative facts about U.S. implementation and official pastoral guidance. They should not be rewritten as universal procedural law or as a clinical protocol.
-
-### Universal law, typical edition, and territorial book
-
-Three levels operate together without collapsing into one another. Canon 1172 supplies universal Latin law concerning the authorized minister. The Latin typical edition supplies the controlling liturgical edition for its own text and structure. An approved and confirmed vernacular edition supplies a territorial liturgical book under the applicable law. Conference guidance may then explain implementation in that territory. A statement true at one level does not automatically acquire the scope of another.
-
-This layered structure matters for translation history. Translation is not merely the substitution of vernacular words for Latin words: competent approval, Holy See confirmation under the governing discipline, and a stated implementation date identify the ecclesial edition. Likewise, the 2021 adjustment to the preliminary norm concerning conference translations belongs to the book’s current juridical-liturgical setting. It cannot be retrojected into the circumstances of either 1614 or 1952.
-
-| **Historical layer** | **What changed** | **What remained** |
+| **Edition-state** | **What the control establishes** | **What remains beyond it** |
 |:-------------|:------------------------|:----------------------------|
-| **1917 code** | Particular permission and the minister’s qualifications were codified. | Authorization remained episcopally governed and did not prove the alleged cause. |
-| **1983 code** | The universal rule was restated more concisely in canon 1172. | Major exorcism remained reserved to an expressly authorized priest. |
-| **1998/2004 ritual** | A 1998 decree promulgated the rite; the 1999 typical edition received an emended reprint in 2004. | Scripture, ecclesial prayer, discernment, and episcopal authority continued to frame the ministry. |
-| **U.S. 2017 implementation** | An approved English edition entered use territorially. | Universal law and territorial implementation remained distinct. |
+| **Rome 1614** | The title of one exorcism section and its outer span, printed pp. 198–219. | Page images, internal headings, wording, typography, and a formula-level comparison remain unacquired. |
+| **Regensburg 1872** | An exact facsimile shows one continuous, unnumbered unit on pp. 281–301 and the next unit at p. 302. | The edition’s approval claims are not an independent collation; use and reception are not proved. |
+| **1925 typical state** | An exact electronic reset shows title XI divided into three chapters, including a preliminary chapter, the rite proper, and a distinct third chapter. | It is not a Vatican-print facsimile or a record of practice; formulas and procedure are not reproduced here. |
+| **1952 typical state** | Exact scholarly controls identify the sixth typical edition, twelve-title architecture, title XII at pp. 847–886, and marginal items 2115–2174. | The complete book and decree were not inspected; internal divisions and wording remain uncontrolled. |
 
-Modern reform is thus neither abolition nor a simple survival of 1614. It is a rearticulation in which concise canon law, a revised ritual book, doctrinal instructions, and local implementation act together. Any present claim about an older book requires a separate legal and liturgical showing; historical continuity alone supplies no permission.
+The matrix is intentionally asymmetrical. A direct facsimile can establish what is visible in that copy. An electronic reset can establish its encoded headings and boundaries while leaving typography and physical collation outside the claim. A scholarly introduction can establish only what was checked in that introduction. Edition history is not improved by pretending that all four controls reach the same depth.
+
+This method also separates four questions often compressed into a single claim of “change.” First, did the material occupy a different place or receive a different division in the book? Second, did its wording or rubrics change? Third, did competent authority alter its juridical or liturgical status? Fourth, did communities and ministers alter their practice? The present controls answer the first question in part and the third only at specified points. They do not yet supply a line-by-line textual stemma or a reception history.
+
+### The 1614 state: a secure boundary and an open interior
+
+The edition identified here is the Rome printing of 1614 from the press of the Apostolic Camera, represented in current catalog records by the Biblioteca Universitaria Alessandrina copy Y c 49. Petar Bašić’s independently acquired 2014 article transcribes the title and reports the terminal starting pages: *De exorcizandis* at 198, *Formulae* at 220, the index at 225, and the errata at 227. The first two coordinates bound the exorcism section to printed pp. 198–219.
+
+That is a real result, but a narrow one. It establishes that the princeps contains one section called *De exorcizandis obsessis a daemonio* near the book’s end. It also corrects a common anachronism: the controlled outer sequence does not present the material as the later title XI or title XII with three numbered chapters. The current record does not, however, contain authenticated Alessandrina page-image bytes. The internal order, headings, rubrics, Latin wording, and typography therefore remain unverified from the princeps itself.
+
+This is not a merely technical reservation. Without the images, a historian cannot determine which features visible in a later book were already present in precisely that arrangement in 1614. Nor can the later book safely fill the gap. Even where wording eventually proves stable, its placement under a new title, division into chapters, surrounding material, or revised rubric may change how a reader encounters it. The proper next step is acquisition and collation of the princeps pages, not reconstruction from a twentieth-century reset.
+
+The book’s existence also has a limited relation to practice. A printed norm shows what an authorized book offered its intended ministers. It does not measure how many copies circulated, identify every diocese that adopted it, show whether a particular priest possessed it, or verify a narrated outcome. Those questions require other records: diocesan rituals and statutes, library and visitation evidence, clerical manuals, correspondence, or case-specific documents. The normative artifact and its reception are connected, but one is not a substitute for the other.
+
+### The 1872 state: continuity without later chaptering
+
+The first Regensburg edition printed by Friedrich Pustet in 1872 supplies the strongest direct physical comparison presently available. Its title and approval leaves and the relevant page run were inspected in an exact Internet Archive facsimile. In this copy, *De exorcizandis obsessis a daemonio* remains one continuous, unnumbered unit on printed pp. 281–301; the next unit begins on printed p. 302.
+
+The result matters because it prevents a false binary in which the 1614 princeps is imagined to have acquired the fully visible 1925 architecture immediately. At least in the controlled 1872 state, the unit remained continuous. The finding does not prove that no intermediate printing divided the material differently, and it does not establish textual identity with 1614. It establishes one dated architectural state between the princeps and the twentieth-century three-chapter reset.
+
+The approval leaf must be read with the same care. Its statements about concordance and submission to the Sacred Congregation of Rites identify the represented approval state of this printing. They do not provide an independent modern collation of every line, convert the book into a 1752 printing, or make it the later 1884 typical state sometimes confused with the Pustet sequence. Bibliographic identity precedes theological or liturgical interpretation.
+
+### The 1925 state: architecture becomes explicit
+
+The exact 1925 electronic reset presents title XI in three chapters. The bindings separately control the preliminary chapter, the chapter containing the rite, and a distinct third chapter with its own bounded authorization sentence. This permits a structural observation that neither the 1614 boundary control nor the 1872 facsimile supports: by this state, editorial division makes different kinds of material visibly distinct.
+
+The importance of that division is methodological rather than operational. A preliminary chapter can state norms and cautions without being confused with a formulary; a separately bounded rite can be identified without being reproduced; and a third chapter can be treated as a distinct textual and juridical object. The study therefore does not flatten all three into a single “formula,” nor does it turn the preliminary material into a public diagnostic checklist. It reports architecture while withholding proprietary or readily imitable content.
+
+The reset is exact for the encoded chapter boundaries used here, but it is not a Vatican-print facsimile. It cannot establish the typography, paper state, or every feature that a physical copy would permit a bibliographer to inspect. It is also normative textual evidence, not an observation of actual use. Nothing in the reset reports prevalence, compliance, or efficacy. Those limits need not be repeated after every sentence once the source class has been made clear.
+
+### The 1952 state: a typical edition at a lower control depth
+
+The 1952 *Rituale Romanum* is identified by Sodi and Toniolo’s introduction to the protected 2008 anastatic edition as the sixth typical edition after the 1614 princeps. Their account reports the Sacred Congregation of Rites decree *Cum denuo*, signed by its pro-prefect on 25 January 1952, and describes a book distributed across twelve titles. Sodi’s separate course notes locate the final title, *De exorcizandis obsessis a daemonio*, at pp. 847–886 and marginal items 2115–2174.
+
+These controls place the exorcism material inside the last comprehensive typical *Rituale Romanum* state before the postconciliar revision. They also show a changed top-level label: the unit appears as title XII, not as the one unnumbered end-section presently controlled for 1614, nor as title XI in the 1925 reset. But the complete 1952 facsimile and the complete official decree have not been inspected. It would therefore be false precision to assert an internal three-chapter division or exact wording on the strength of outer coordinates and a modern introduction.
+
+This lower control depth is not repaired by appealing to copyright or availability. The official principles governing typical editions explain why protected liturgical text is not casually copied into a public study; they do not authenticate the unseen internal pages. The correct result is a conservative one: edition identity, reported decree, twelve-title architecture, and title-XII extent are secure at the stated level; internal collation remains open.
+
+### Authority, architecture, text, and reception form separate ledgers
+
+A comprehensive edition history needs four parallel ledgers. The authority ledger identifies the issuing or approving act and the claim made for the edition. The architecture ledger records titles, chapters, page boundaries, and neighboring units. The textual ledger collates wording and rubrics at identified loci. The reception ledger records where a book was obtained, adopted, taught, cited, or used. The present evidence fills different cells in each ledger; it does not justify a single undifferentiated line called “development of the rite.”
+
+| **Ledger** | **Question answered** | **Present Part IV result** |
+|:-------------|:------------------------|:----------------------------|
+| **Authority** | What act or edition statement identifies the book’s normative status? | The 1872 approval leaves and the reported 1952 *Cum denuo* state are bounded controls; the complete 1952 decree remains uninspected. |
+| **Architecture** | Where is the unit and how is it divided? | Outer structure is controlled for all four states, at different depths; the 1925 three-chapter state is the fullest internal control. |
+| **Text** | What wording or rubric changed between states? | A complete line-by-line collation has not been made and is not inferred from chapter boundaries. |
+| **Reception** | Where, when, and by whom was the book actually used? | No universal reception or frequency claim follows from the controlled edition artifacts. |
+
+The ledgers prevent several familiar errors. A title change can be recorded without claiming a formula changed. An approval statement can be reported without claiming universal adoption. A textual continuity, once collated, would not prove unchanged interpretation or practice. Conversely, evidence of local use could not by itself establish what an official edition prescribed. These are the different historical objects from which a defensible account is built.
+
+The distinction is especially valuable for the long interval between 1614 and 1952. A short narrative can make three and a half centuries look like the unchanged repetition of one book. The controlled 1872 and 1925 states already show why that picture is inadequate. They supply two actual intermediate forms: a continuous unit in one and a three-chapter title in the other. The gaps between them are invitations to further collation, not blank spaces in which an editor may assume either total stability or continuous innovation.
+
+### Normative reach is not practical saturation
+
+The Roman Ritual’s consolidation had consequences even where direct local-use evidence has not yet been assembled. It established a Roman textual reference point that later printers, authorities, and editors could reproduce, divide, supplement, or revise. That is an institutional fact about the history of the book. It does not mean that every parish possessed the same edition or that every reported intervention followed its rubrics.
+
+A reception history would need to work at several scales. At the Roman level, decrees, typical-edition statements, and official revision records establish normative action. At the regional and diocesan levels, approved rituals, synodal legislation, seminary teaching, and episcopal directives could show how the Roman material entered local governance. At the ministerial level, inventories, correspondence, faculties, and contemporaneous records could show access and authorization. At the case level, a dated dossier would be needed before one could describe what was done or attribute an outcome.
+
+No level can be supplied by a more convenient neighbor. A decree does not prove the contents of a priest’s library. Ownership of a book does not prove permission. Permission does not prove that an event occurred as narrated. A case account does not rewrite the normative book. This hierarchy of evidence is why famous stories and memoir-derived claims are unnecessary to the present edition history: they cannot close the bibliographic and juridical questions that Part IV is asking.
+
+The approach also explains why comprehensiveness does not mean reproducing the rite. A complete historical account can identify every relevant edition, authority transition, structural state, translation act, and jurisdictional boundary while omitting operative words and actions. Indeed, that omission forces attention toward the institutional history that formula-centered accounts often neglect.
+
+### What the four states actually show
+
+Read together, the four controls establish differentiation in the history of the book. The 1614 princeps has one bounded section. The 1872 facsimile still shows one continuous unit. The 1925 reset has three chapters within title XI. The 1952 scholarly controls identify title XII within a twelve-title typical edition but do not reach its internal divisions. That is enough to refute the image of one motionless “1614 rite” copied without editorial history until 1998. It is not enough to describe every textual alteration.
+
+The sequence also clarifies the relation between structure and authority. Chaptering can organize material without itself creating new law. A decree can establish a typical edition without proving how a particular local minister used it. A later supplement can possess its own authority without belonging to the princeps. Conversely, age does not confer current authorization. Each claim must be attached to the right object: book, act, office, translation, or local permission.
+
+> **One statement of the recurring limits**
+>
+> An identified formulary establishes available normative text, not frequency, diagnosis, or efficacy. A ritual book does not confer its own current authorization upon a reader. This study compares titles, boundaries, authority states, and official rationales; it does not reproduce formulas, alleged signs, or a usable procedure.
+
+### The Leonine material is a separate documentary history
+
+The blessing of persons or places and the text associated with Leo XIII cannot be folded backward into the 1614 section merely because later books placed material near one another or because popular accounts call both “exorcism.” The documentary questions are separate: the authority and wording of the original act, subsequent revision, placement in identified editions, and later restriction of use. A formula directed against Satan and the apostate angels is not silently identical with the section concerning an allegedly possessed person.
+
+That distinction becomes juridically consequential in 1985, when the Congregation for the Doctrine of the Faith addressed unauthorized use of the Leonine formula and assemblies that directly addressed demons. The later act does not rewrite the nineteenth-century textual history; it governs a disciplinary problem in its own time. Documentary sequence thus matters at both ends: a later restriction cannot be projected into 1614, and an older text’s availability cannot be projected into present permission.
+
+The durable historical result is therefore more substantial than a title notice but more modest than a textual genealogy. Roman consolidation placed a distinct section within an official pastoral book. Later controlled states show changes in placement and architecture. Their wording, reception, and current use require their own sources. The history moves forward not by calling everything “the old rite,” but by identifying which book, which act, which structure, and which authority is actually under discussion.
+
+## Codification, Ministry, and Modern Reform
+
+### Three kinds of norm after codification
+
+The twentieth-century history cannot be told from the ritual book alone. A code governs juridical authorization; a liturgical book supplies an edition and its norms; an act concerning offices or instituted ministries determines who holds those categories. These documents may refer to related activity without answering the same question.
+
+The distinction matters because the word *exorcist* survives across all three settings. It can name a former minor order, a person entrusted with a regionally approved instituted ministry, or a priest given particular and express permission to perform major exorcism. Similar vocabulary does not make the offices legally identical. The historical task is to ask what the identified act did, for whom, and at what date.
+
+### The 1917 Code: an expanded cluster of controls
+
+The 1917 *Codex Iuris Canonici* brought several related matters into universal Latin codification. Canon 1151 required a person exercising exorcistic power received through ordination not to proceed against the possessed without the ordinary’s express and particular permission. The ordinary was to grant it only to a priest distinguished by piety, prudence, and integrity of life. The canon also required diligent and prudent investigation before proceeding.
+
+Two adjacent canons prevent canon 1151 from being mistaken for the entire law of exorcism. Canon 1152 concerned the persons over whom legitimate ministers could lawfully use exorcisms, extending beyond Catholics and catechumens. Canon 1153 treated exorcisms embedded in baptism, consecrations, and blessings by referring their ministers to the governing approved rites. The code thus distinguished the extraordinary case governed by particular permission from exorcistic elements already situated within other liturgical acts.
+
+The codified investigation requirement did not turn permission into a diagnosis. It placed a duty of prudent inquiry before the authorized act. Nor did ordination alone satisfy the rule. Canon 1151’s reference to a power received through ordination and its separate requirement of particular permission belong together: capacity attached to an ecclesiastical state did not eliminate the ordinary’s governance of its licit exercise in this case.
+
+Codification consequently changed the historian’s source burden. A ritual edition could no longer be read as though its text exhausted the legal setting. The relevant account needed both the governing code and the identified ritual book. A formula could be present in a book while its use was restricted by law; a canon could reserve an act without supplying its liturgical words. Law and rite interacted without becoming one document.
+
+### From 1917 to 1983: continuity is specific, not total
+
+The 1983 Code, promulgated by John Paul II on 25 January and in force from 27 November 1983, restates the central authorization rule more concisely. Canon 1 limits this code to the Latin Church. Canon 1172 provides that no one may legitimately perform exorcisms over the possessed without particular and express permission from the local ordinary; that permission is to be given only to a priest distinguished by piety, knowledge, prudence, and integrity of life.
+
+| **Question** | **1917 controls** | **1983 control** |
+|:-------------|:------------------------|:----------------------------|
+| **Permission** | Canon 1151 requires express and particular permission from the ordinary. | Canon 1172 requires particular and express permission from the local ordinary. |
+| **Qualified recipient** | Canon 1151 limits the grant to a priest distinguished by piety, prudence, and integrity of life. | Canon 1172 retains those qualities and expressly adds knowledge. |
+| **Investigation** | Canon 1151 expressly requires diligent and prudent investigation before proceeding. | Canon 1172 does not reproduce that sentence; discernment is addressed through the ritual and official pastoral controls. |
+| **Other subjects and embedded exorcisms** | Canons 1152–1153 separately address eligible subjects and exorcisms within other rites. | Canon 1172 is more compressed; other sacramental and liturgical distinctions must be read in their own current sources. |
+
+The continuity is therefore real but bounded. Both codes reserve legitimate major exorcism to a suitably qualified priest with a particular grant from competent local authority. They do not use identical verbal architecture or carry every adjacent 1917 provision into canon 1172. It would be as misleading to claim complete identity as to claim that the reservation disappeared.
+
+The 1983 wording also requires attention to canon 134. Paragraphs 1 and 2 define the generic categories “ordinary” and “local ordinary” and include, within their proper competence, vicars general and episcopal vicars. Paragraph 3 establishes a different rule where a canon expressly assigns executive power to the diocesan bishop: in that case those vicars do not exercise it without a special mandate. Canon 1172 uses the generic term *local ordinary*; it does not name the diocesan bishop in the manner addressed by canon 134 §3.
+
+That is a category-level conclusion, not a decision about an individual case. Territorial or personal competence, the terms, duration, and revocation of a particular grant, and any applicable particular or proper law remain fact-specific. The distinction matters because popular summaries often say “the bishop” as a safe pastoral shorthand. The authentic legal text is more precise about the category of competent authority, while a concrete person should still proceed only through accountable diocesan channels.
+
+As of 27 July 2026, the official Latin web text retained canon 1172’s wording, and the Holy See’s published compilation of authentic interpretations contained no entry for canons 134 or 1172. This is a bounded text-and-register check, not proof that every possible amendment, special law, delegation, or local act has been exhaustively inventoried. It supports the universal rule stated here and no broader fact-specific opinion.
+
+### The two codes compared by legal function
+
+The comparison becomes clearer when organized by function rather than by isolated phrases. Both codes answer who may proceed and whose permission is needed. The 1917 cluster additionally states an investigation duty, treats eligible subjects, and distinguishes exorcisms embedded in other rites. The 1983 canon concentrates the reservation in one provision and leaves the broader liturgical and pastoral framework to the code’s law of sacramentals, the revised ritual, and subsequent official guidance.
+
+This is a change in legal economy. It does not follow that every element not repeated in canon 1172 was repudiated, nor that an older canonical sentence remains independently operative after the new code took force. Historical continuity must instead be traced through the current sources that now bear the relevant function. The current ritual and catechetical guidance preserve careful discernment; canon 1166 situates sacramentals in the Church’s intercession; canon 1172 governs the reserved minister and permission. The functions remain related while their documentary distribution changes.
+
+The difference between validity, liceity, suitability, and diagnosis is also important. Canon 1172 expressly governs legitimate performance and the qualities of the priest to whom permission is given. It is not a medical classification and does not define a test for possession. Nor does the historical comparison in this study adjudicate what would happen in a hypothetical irregular celebration. The source supports the positive legal rule; speculative edge cases would require facts and authorities not present here.
+
+The word “permission” likewise should not be inflated into an office. A particular grant may authorize a qualified priest without creating a permanent ecclesiastical office called diocesan exorcist in every case. The code does not state a universal tenure, job description, territorial title, or public roster. Where a diocese establishes an office, appoints a person, or defines procedures, that is an additional local act whose terms must be checked. Universal law supplies the baseline, not every administrative detail.
+
+> **Four legal propositions, kept distinct**
+>
+> Canon 1172 identifies a reserved act, a qualified priest, a competent category of local authority, and a particular express grant. It does not by itself create a universal office, prescribe the rite’s words, diagnose a person, or publish the terms of any concrete permission.
+
+### The 1972 break in office history
+
+Paul VI’s *Ministeria quaedam*, issued on 15 August 1972 and effective 1 January 1973, marks a decisive break in the institutional history of the Latin minor orders. Its introduction recalls porter, lector, exorcist, and acolyte among the grades formerly called minor orders. Its norms then connect entry into the clerical state with the diaconate, direct that the former minor orders be called ministries, permit ministries to be entrusted to lay faithful, and retain lector and acolyte throughout the Latin Church.
+
+The act separately permits an episcopal conference to request from the Apostolic See other ministries judged necessary or useful in its region, giving porter, exorcist, and catechist as examples. The grammar is important. It provides a route for a conference request; it does not establish all three ministries everywhere, record that any named conference made the request, or show that the Apostolic See approved one. A possibility in universal law is not a completed local act.
+
+The office history and the major-exorcism rule therefore diverge. A person historically ordained to the minor order of exorcist cannot be presumed to have exercised major exorcism. A person entrusted with a hypothetical or approved regional ministry called exorcist would not, by that title alone, receive the priesthood or the particular permission required by canon 1172. And a priest authorized under canon 1172 need not hold a separate instituted ministry by that name. The categories answer different questions.
+
+Francis’s *Spiritus Domini* confirms rather than erases this break. The apostolic letter took effect on 10 January 2021 and replaced canon 230 §1 with sex-neutral wording. It retained lector and acolyte as the only instituted ministries named in that paragraph. It did not restore exorcist to the universal list, create a new ministry, or amend canon 1172.
+
+> **The same title across different institutions**
+>
+> “Exorcist” in an ancient clergy list, a medieval ordinal, the former Latin minor orders, a possible regional instituted ministry, and current major exorcism does not denote one unchanged office. Office-title, ritual function, ordination or institution, and particular authorization must each be proved from the act governing that period.
+
+### The 1998, 1999, and 2004 sequence
+
+The postconciliar revision produced a new documentary sequence rather than a single undifferentiated “1999 event.” The decree dated 22 November 1998 promulgated *De Exorcismis et Supplicationibus Quibusdam*. The Latin typical edition was issued in 1999. The dicastery publicly presented the new rite on 26 January 1999. An emended reprint followed in 2004.
+
+Each date belongs to a different claim. The 1998 date identifies the promulgating decree. The 1999 date identifies the material typical edition. The January presentation supplies the dicastery’s public theological and pastoral explanation. The 2004 date identifies a corrected textual state. The sources call it an emended reprint, not a second typical edition. Combining the sequence into “the 1999 rite” may be convenient in casual speech, but it conceals the difference between juridical act, issued volume, public explanation, and textual correction.
+
+The revised volume also differs bibliographically from the comprehensive 1952 *Rituale Romanum*. It is a distinct postconciliar ritual book, not simply a replacement chapter inserted into title XII. That fact makes two opposite claims unsafe. Structural revision does not prove theological rejection of all earlier teaching, while continuity of ecclesial purpose does not prove verbal or rubrical identity.
+
+The exact official presentation situates the revision in Christ’s ministry, Scripture, ecclesial prayer, episcopal governance, and prudent discernment. It can establish the dicastery’s stated rationale and public description. It cannot establish how often major exorcism occurred, validate a retrospective case narrative, or serve as the promulgating decree. Documentary genre limits the inference.
+
+The present study does not reproduce the proprietary formularies, list alleged signs, or reduce the book to a sequence that could be imitated. Historical comparison does not require operational disclosure. Promulgation, edition identity, structure, ministerial authority, and stated rationale are enough to explain the institutional transition.
+
+### Reform changed the documentary center of gravity
+
+Before the postconciliar revision, an account could point to the exorcism material within a comprehensive Roman Ritual and then add the governing code. After reform, the documentary center of gravity is distributed across a distinct ritual volume, the 1983 Code, acts governing translation and adaptation, curial competence, territorial editions, and local permissions. The history becomes confused only if those documents are expected to perform one another’s work.
+
+This distribution reveals several kinds of continuity. Juridical continuity appears in the reservation to a qualified priest under local authority. Liturgical continuity appears in the Church’s continued provision of an official rite. Theological continuity appears in the Christological and scriptural account supplied by the official presentation. Pastoral continuity appears in prudent discernment and care for the afflicted person. None of these requires a claim that the 1999 volume reproduces the 1952 title word for word.
+
+Reform also creates several kinds of change. The postconciliar work is a distinct volume rather than the final title of the comprehensive 1952 book. The public documentary sequence distinguishes promulgation, issue, presentation, and emendation. Later universal acts clarify how conferences prepare translations and propose adaptations and which dicastery exercises the Apostolic See’s competence. Territorial implementation produces approved vernacular books with their own dates.
+
+These changes should be described at their own level. “The Church changed the rite” is too coarse if it leaves the reader unable to distinguish a new typical volume from a corrected reprint or a revised preliminary norm. “Nothing changed” is equally inaccurate because continuity of purpose does not erase new architecture, governance, or textual states. Historical accounting improves when the verb names its object: promulgated, issued, presented, emended, translated, approved, confirmed, implemented, or authorized.
+
+### Current governance is a ladder, not one permission
+
+The post-reform framework is easiest to understand as a ladder of actors and acts. At the upper levels, universal law and the Apostolic See govern the rite’s general juridical and liturgical setting. Episcopal conferences prepare and approve territorial translations and proposed adaptations within the applicable norms. Local authority grants the particular permission required for a priest to act. These levels cooperate; none is a substitute for the others.
+
+| **Actor or instrument** | **Relevant act** | **What it does not do** |
+|:-------------|:------------------------|:----------------------------|
+| **Universal law: CIC 1172, read with 134** | Identifies the qualified priest and the local ordinary’s particular and express permission. | It does not publish a formulary, approve a translation, or decide a presented case. |
+| **Latin typical book and praenotanda** | Supplies the normative liturgical edition and preliminary norms for the Roman Rite. | Possession of the book does not authorize its use or establish a diagnosis. |
+| **Apostolic See / competent dicastery** | Regulates matters reserved to the Apostolic See, prepares or revises typical books, confirms translations, recognizes legitimate adaptations, and oversees sacramental discipline. | It does not replace the conference’s approval or issue the local canon 1172 grant merely by exercising institutional competence. |
+| **Episcopal conference** | Prepares and approves a complete faithful translation; proposes culturally warranted adaptations under the governing norm. | A conference edition or pastoral FAQ is not universal law and does not appoint an exorcist for a diocese. |
+| **Local ordinary** | Gives the particular and express permission to a suitably qualified priest under canon 1172. | The grant does not authenticate every alleged cause or supersede clinical and safeguarding duties. |
+| **Authorized priest and local collaborators** | Act only within the book, law, grant, competence, and safeguarding framework applicable to the case. | Office, reputation, possession of a text, or informal request is not the required permission. |
+
+Canon 838 belongs to the general law of liturgical competence. The exact 2021 general executory decree implementing its amended form changes the exorcism book’s preliminary norm 37. Under the controlled text, an episcopal conference prepares and approves a complete translation faithful to the authentic original and submits it to the Apostolic See for confirmation. If the conference judges adaptations of signs and gestures necessary or useful for the culture and character of the people, those adaptations require the consent and recognition of the Apostolic See.
+
+This norm distinguishes translation from adaptation. It also distinguishes conference approval from Apostolic-See confirmation or recognition. The 2021 decree adjusted the preliminary norm; it did not promulgate a new typical edition, create a new minister, or amend canon 1172. Those negative boundaries follow from the different objects of the acts, not from a claim that the acts are unrelated.
+
+Francis’s *Praedicate Evangelium*, effective 5 June 2022, identifies the present institutional competence of the Dicastery for Divine Worship and the Discipline of the Sacraments. Articles 88–90 encompass matters reserved to the Apostolic See in regulating and promoting the liturgy, preparing or revising typical books, confirming conference-approved translations, granting recognition to legitimate adaptations, and overseeing sacramental and sacramental discipline.
+
+That curial competence occupies a different rung from local authorization. The dicastery’s work on a typical book or translation does not itself appoint a priest in a diocese. Conversely, a local ordinary’s permission does not create a typical edition, approve a national translation, or exercise the conference’s function. Keeping these acts separate prevents “Church approval” from becoming an imprecise label for legally distinct decisions.
+
+### How a territorial edition comes into view
+
+The governance ladder has both a textual path and a ministerial path. On the textual path, the Apostolic See issues the Latin typical book. A conference prepares and approves a complete translation faithful to the authentic original. The translation is submitted for confirmation. Proposed adaptations of signs and gestures follow the distinct consent-and-recognition route specified in preliminary norm 37. After the requisite acts, a territorial implementation date identifies when the approved edition enters use.
+
+On the ministerial path, universal law identifies the qualified recipient of permission and the competent category of local authority. The local authority then makes a particular act. The authorized priest acts within the terms of that grant, the governing liturgical book, and the applicable pastoral, safeguarding, civil, and professional boundaries. The two paths converge in practice, but neither produces the other.
+
+| **Path** | Sequence of acts | Historical question answered |
+|:---|:---|:---|
+| **Text and edition** | Latin typical book → conference preparation and approval → Apostolic-See confirmation; adaptations follow consent and recognition → territorial implementation | Which ecclesial edition governs in this territory, and from when? |
+| **Minister and act** | Universal reservation → competent local authority → particular express permission to a qualified priest | Who may perform the reserved act in the relevant jurisdiction? |
+| **Discernment and care** | Diocesan protocol and referral → competent medical, mental-health, pastoral, and safeguarding work → accountable decision and continuing care | How are the person’s welfare and the distinct professional and ecclesial questions responsibly addressed? |
+
+This schema is explanatory, not procedural. It identifies authorities and documentary relations without giving a reader actions by which to imitate the rite or test a person. It also shows why the phrase “approved exorcism” can mislead. The adjective may refer to the Latin book, a translation, an adaptation, a local minister, or a particular act. Historical prose should say which approval occurred.
+
+### Territorial implementation: the United States example
+
+The United States supplies one controlled example of how the ladder reaches a territorial book. The USCCB reports that the Latin Church bishops approved the English translation of *Exorcisms and Related Supplications* in November 2014, the final text received Holy See confirmation in December 2016, and the edition was implemented on 29 June 2017.
+
+The chronology matters. Conference approval, Holy See confirmation, and territorial implementation are separate acts at separate dates. None is the 1998 promulgation of the Latin rite, and none is the 2004 emended reprint. Together they identify the U.S. English edition’s path into use. They do not establish when another territory approved or implemented its own book.
+
+The same USCCB page supplies official U.S. pastoral guidance about diocesan protocol, referral, medical and mental-health consultation, moral-certitude framing, consent where possible, confidentiality, non-solitary ministry, and bounded lay participation. It is authoritative conference guidance for the identified territory. It is not universal legislation, a clinical diagnostic instrument, or a public version of the proprietary rite.
+
+Conference guidance also cannot supply the local permission. A national edition may be duly approved, confirmed, and implemented while canon 1172 still requires a particular decision by competent local authority concerning the priest who may act. The book answers “which territorial liturgical text?”; the local grant answers “which qualified priest may perform the reserved act?”; neither answers the medical question “what condition does this person have?”
+
+The U.S. example makes the division of labor concrete. The bishops’ November 2014 vote belongs to conference approval of a translation. The December 2016 act belongs to Holy See confirmation. The June 2017 date belongs to territorial implementation. The FAQ’s account of diocesan protocol belongs to pastoral explanation. None of those dates should be substituted for the date of a local permission, and the public page does not disclose the terms of any such grant.
+
+It also illustrates the proper use of conference evidence in a universal history. One territory can show how the general architecture operates without being treated as the template for every country. Its medical consultation, consent, confidentiality, and participation statements are valuable safeguarding controls in their own setting. They do not prove that every conference uses identical language or that conference guidance has the same juridical character as the code.
+
+### Unauthorized imitation remains outside the ladder
+
+Two doctrinal interventions close a recurrent attempt to bypass these distinctions. The Congregation for the Doctrine of the Faith’s letter of 29 September 1985 required observance of canon 1172, prohibited the faithful’s use of the Leonine formula against Satan and the apostate angels, and directed ordinaries to prevent assemblies in which persons lacking the requisite power directly addressed demons and sought their identity. The official page URL contains “19850924,” but the Latin heading and *Acta Apostolicae Sedis* citation control the date used here.
+
+The *Instruction on Prayers for Healing* of 2000, article 8, again distinguishes liturgical exorcism from healing services and places the matter under the diocesan bishop. Renaming an event a prayer meeting, deliverance session, or healing ministry does not erase the nature of what participants do. The governing boundary concerns the reserved liturgical act and direct imitation, not the promotional label attached to an assembly.
+
+The 1985 letter also explains why textual access is not authority. A person may possess, translate, copy, or find an old formula without acquiring the power and permission whose absence the letter addresses. Publication history and authorization history meet here but remain distinct: the survival of words explains availability; competent law governs use.
+
+The *Catechism of the Catholic Church*, no. 1673, supplies doctrinal and catechetical orientation, not another grant. It distinguishes simple exorcism in baptism from solemn or major exorcism, identifies the authorized priest and episcopal permission, and insists that illness—especially psychological illness—belongs to medical science. Its warning to ascertain that the matter concerns the Evil One rather than illness is a differential caution. It is not a clinical test, an alleged-sign checklist, or a substitute for the ritual norms and canon 1172.
+
+### Synthesis: five objects that must not collapse
+
+The Roman history becomes coherent when five objects remain differentiated. The **book** supplies an edition, text, structure, and preliminary norms. The **law** establishes jurisdiction, competence, and conditions for legitimate action. The **office or ministry** identifies an ecclesial status but does not by itself prove a particular function across centuries. The **translation** is an ecclesially authorized territorial edition produced through its own approval and confirmation path. The **local act** gives a qualified priest the particular permission required in the concrete jurisdiction.
+
+These five objects provide a test for every historical sentence in this part. If the subject is an edition, the evidence should identify the book-state and its controlled structure. If the subject is legitimacy, the evidence should identify the governing law and jurisdiction. If the subject is an office, the evidence should identify the act that created, retained, transformed, or suppressed that category. If the subject is vernacular text, the evidence should identify approval, confirmation, and implementation. If the subject is a named minister, the evidence should identify the competent local act rather than infer authority from reputation or title.
+
+| **Object** | **Stable historical identifier** | **Typical category error** |
+|:-------------|:------------------------|:----------------------------|
+| **Book** | Edition, decree, printing or reprint state, title and controlled locus. | Treating every older Roman book as “the 1614 rite.” |
+| **Law** | Code, canon, jurisdiction, effective date, and relevant currentness control. | Treating a ritual rubric or conference summary as the whole universal law. |
+| **Office or ministry** | Instituting, ordaining, retaining, or transforming act in its period. | Assuming that the title *exorcist* always denotes present major-exorcism authority. |
+| **Translation** | Conference approval, Apostolic-See confirmation or recognition as applicable, and implementation date. | Treating a vernacular rendering as authorized because it is accurate or publicly available. |
+| **Local act** | Competent authority, qualified recipient, particular grant, and applicable terms. | Treating possession of a book or a general policy as personal permission. |
+
+The matrix also marks where the present public evidence stops. It identifies universal categories and one U.S. territorial chronology, but it does not publish any concrete grant or conclude that one applies to a hypothetical person. It identifies the current dicastery’s institutional competence, but does not infer an unrecorded confirmation or recognition. It identifies the possibility of a conference-requested ministry under *Ministeria quaedam*, but records no request or approval. The gaps remain attached to the specific object rather than becoming a repetitive disclaimer about the whole subject.
+
+This object-by-object approach makes historical accounting cumulative. Acquiring the 1614 page images would deepen the book ledger without altering canon 1172. Locating a particular-law act could deepen one jurisdiction’s law or office ledger without changing the Latin typical edition. A new translation act could change a territorial book’s chronology without rewriting the 1998 decree. Research can therefore expand precisely, preserving what is already controlled while avoiding a wholesale narrative reset.
+
+It also yields a compact rule for current claims: identify the act closest to the proposition. The typical edition controls its own text and structure. Canon law controls universal juridical reservation. The curial constitution controls institutional competence. Conference and Apostolic-See acts control the territorial edition. The local grant controls the named priest’s permission. Official pastoral guidance controls only the process and territory it addresses. Moving outward to a more general document usually loses the precision needed for the claim; moving sideways to a different kind of act changes the question.
+
+That rule keeps the history broad without becoming vague. It accommodates Roman publication, codification, ministerial reform, liturgical revision, translation governance, territorial reception, and local authorization in one account. At the same time, it prevents a reader from mistaking institutional complexity for contradiction. Different authorities appear because different objects are being governed.
+
+This differentiation explains both continuity and reform. The 1917 and 1983 codes preserve an episcopally governed reservation while differing in their verbal and systematic detail. *Ministeria quaedam* ends the old universal minor-order arrangement without denying the reserved major rite. *Spiritus Domini* changes access to lector and acolyte without creating an exorcist ministry. The 1998 decree, 1999 edition, 2004 emended reprint, and 2021 preliminary-norm adjustment form a documentary sequence without becoming one event. Current curial, conference, and local competencies cooperate without merging.
+
+It follows that no single artifact can answer every modern question. An old book does not establish current permission. A current canon does not reproduce the rite. A ministry title does not authorize major exorcism. A confirmed translation does not appoint its user. A local grant does not diagnose the person or validate an alleged outcome. Historical and present claims become more precise, not less Catholic, when each is assigned to the authority that can actually support it.
+
+Modern reform is therefore neither abolition nor simple survival. It is a rearticulation through differentiated books, laws, offices, translations, and local acts. The enduring elements—ecclesial prayer, scriptural orientation, prudent discernment, a qualified priest, and accountable authority—are visible only when continuity is stated at the right level. Verbal identity, frequency, diagnosis, efficacy, and present authority each require separate proof.
 
 ## Historical Cases: What a Dossier Could Establish
 
@@ -1183,7 +1358,7 @@ No auditable global dataset establishes the frequency or outcomes of major exorc
 
 The repository’s CC BY 4.0 terms apply only to project-created synthesis, organization, and other contributions that the project may license. Scripture, liturgical and official texts, received translations, historical source wording, and modern scholarship retain their own status. The few biblical phrases quoted in the body use the identified public-domain Douay–Rheims/Challoner witness; ancient and medieval witnesses, official acts, modern scholarship, and clinical or safeguarding sources are otherwise paraphrased at identified loci. No scan, ritual formulary, modern-source table, diagnostic criteria, case transcript, recording, or third-party image is reproduced.
 
-The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. This 47-page public alpha does not fulfil the promised comprehensive study of at least 100 substantive pages. Its remaining work is source coverage, evidence-grounded expansion, and exact-snapshot production verification.
+The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. This 64-page public alpha does not fulfil the promised comprehensive study of at least 100 substantive pages. Its remaining work is source coverage, evidence-grounded expansion, and exact-snapshot production verification.
 
 ## Dated Orientation
 
@@ -1219,7 +1394,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-28T06:22:56Z
+**Last revised (UTC):** 2026-07-28T06:47:29Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
@@ -1260,5 +1435,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 **Agent/runtime:** OpenAI Codex agent (biblical-witness synthesis, textual-reception comparison, Synoptic and Pauline genre analysis, and production review); API workspace; unexposed: server revision
 
 **Agent/runtime:** OpenAI Codex agent (early-Christian regional and genre differentiation, initiation and office synthesis, reconstruction-limit analysis, and production review); API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex agent (Roman Ritual edition-state method, parallel-code and ministry analysis, post-reform governance synthesis, and production review); API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
