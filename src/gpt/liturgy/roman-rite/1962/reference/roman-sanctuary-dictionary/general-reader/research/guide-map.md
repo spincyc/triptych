@@ -10,7 +10,7 @@ reader. It owns no copied facts. Each plate emphasizes identity and purpose;
 its canonical audience note explains a useful distinction without enlarging
 the verified claims.
 
-The twenty-nine-record alpha adds the corporal, purificator, chalice pall,
+The thirty-two-record alpha adds the corporal, purificator, chalice pall,
 chalice veil, burse, three altar cloths, credence table, Lavabo basin, and
 Lavabo towel to the appointments-and-books family, together with the incense
 boat, spoon, chalice, and paten. The two sacred-vessel pages reuse one
@@ -51,3 +51,9 @@ The sacristy cross-or-suitable-image focus and local signal bell add concise
 recognition pages. The figures preserve the suitable-image alternative and
 the bell's local-practice status rather than presenting either drawing as a
 universal form.
+
+The Epistle and Gospel books are distinguished by their separate Solemn-Mass
+minister/use relationships. Their TeX-native generic closed/open book symbols
+deliberately assert no binding morphology, material, ornament, dimensions, or
+unresolved alias; the ordinary Gospel formation retains the holding
+subdeacon and does not introduce a lectern.

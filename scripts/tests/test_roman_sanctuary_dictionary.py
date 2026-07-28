@@ -55,6 +55,8 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             self.assertIn(r"\RSDObjectRecord{obj-chalice}", alpha)
             self.assertIn(r"\RSDObjectRecord{obj-paten}", alpha)
+            self.assertIn(r"\RSDObjectRecord{obj-epistle-book}", alpha)
+            self.assertIn(r"\RSDObjectRecord{obj-gospel-book}", alpha)
             self.assertNotIn(r"\RSDAlphaOmission{obj-chalice}", omissions)
             self.assertNotIn(r"\RSDAlphaOmission{obj-paten}", omissions)
             self.assertFalse((output / "ed-comprehensive.review.tex").exists())
@@ -105,6 +107,26 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 text,
             )
             self.assertNotIn("editorial-proposal", text)
+            self.assertIn(r"\RSDObjectRecord{obj-epistle-book}", text)
+            self.assertIn(r"\RSDObjectRecord{obj-gospel-book}", text)
+            self.assertIn(
+                r"\RSDSelectedAudienceNote{Prepare the lesson book",
+                text,
+            )
+            self.assertIn(
+                r"\RSDSelectedAudienceNote{Prepare the Gospel book",
+                text,
+            )
+
+    def test_exact_lesson_books_use_the_tex_native_artwork_exception(self):
+        generator = SCRIPT.read_text()
+        renderer = (
+            DICTIONARY_ROOT / "shared/generated-record-renderer.tex"
+        ).read_text()
+        self.assertIn('"obj-epistle-book"', generator)
+        self.assertIn('"obj-gospel-book"', generator)
+        self.assertIn(r"\RSDTeXNativeBookArtwork", renderer)
+        self.assertIn("no binding, material, ornament", renderer)
 
     def test_unknown_record_field_fails_closed(self):
         with tempfile.TemporaryDirectory() as temporary:

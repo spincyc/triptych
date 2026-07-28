@@ -3,6 +3,35 @@
 Status: **bounded public alphas**
 Audit date: 2026-07-28
 
+## Epistle and Gospel books cross-edition checkpoint — 2026-07-28
+
+The five generated editions now admit `obj-epistle-book` and
+`obj-gospel-book`, while the altar-server edition preserves its stronger
+bespoke combined lesson. Their only illustration is the audited
+repository-authored TeX-native graphite contract: neutral closed/open book
+symbols with separately typeset identity and evidence limits. The exact 1962
+*Ritus servandus* VI.4--5 controls the two identities and minister/use
+relationships. No binding morphology, material, ornament, dimensions,
+unresolved Latin alias, combined-book practice, or ordinary Gospel lectern is
+asserted.
+
+All 180 affected pages were rastered through the repository review helper and
+visually inspected. The ten new pages and all terminal pages were also checked
+at full size. The generic book lines, labels, audience notes, source-bounded
+claims, and evidence limits are legible and unclipped, with no overlap, spill
+page, false binding distinction, or lectern inserted into the ordinary Gospel
+formation. Settled logs have no fatal error, undefined reference, overfull
+box, or rerun warning. Fonts are embedded, text is extractable, and build and
+installed bytes are identical:
+
+| Edition | Records | Pages | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 34 | 37 | `10e2f98bff98b765e65f3ce872d38828c277cf0684a263423345021f686041eb` |
+| Sacristan | 34 | 37 | `a9ce30e189b68b0c368c6d5da25ebcab022ef6daf0c96c5c0c95c0625e817efa` |
+| MC and trainer | 34 | 37 | `261f87fa976f94a321f714c729152028c647076dd04f86dc1a7f4fadf79a5144` |
+| General reader | 32 | 35 | `7df9864f56cfc07641e0eeb23a21927e6272cdfbe93e46093e2d413bee2e4f48` |
+| Pontifical ceremonies | 31 | 34 | `cebf25f0cc6f72b934b307069f43b86966456667679074e60e1e36c362b9554e` |
+
 ## Leaves
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |

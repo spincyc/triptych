@@ -11,7 +11,7 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
-The present bounded family covers thirty-one records: the appointments-and-books
+The present bounded family covers thirty-four records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel; and the thurible, incense boat,
@@ -60,3 +60,10 @@ one dated commercial exemplar and the comparison is not to common scale.
 The complete reader order remains the order declared in
 `shared/schema/edition-selections.toml`. This alpha does not claim that the
 whole declared corpus or completeness matrix is closed.
+
+The Epistle and Gospel books use the same audited TeX-native generic closed-
+and open-book symbols as the bespoke altar-server lesson. Their separate
+identities come from *Ritus servandus* VI.4--5 and their minister/use
+relationships, not from binding morphology, material, ornament, dimensions,
+or unresolved terminology aliases. The ordinary Gospel formation retains the
+subdeacon holding the book; no freestanding lectern is inserted.

@@ -3,6 +3,19 @@
 Status: **initial gap audit with one narrow sacristy-furnishings pass**
 Audit date: 2026-07-27
 
+## Epistle and Gospel books, 2026-07-28
+
+The exact 1962 *Missale Romanum*, *Ritus servandus* VI.4--5, directly controls
+the two separate lesson-book identities and their printed relationships. VI.4
+places the *liber Epistolarum* in both hands of the subdeacon against his
+breast and has him sing the Epistle from it. VI.5 places the *liber
+Evangeliorum* at the middle of the altar through the deacon, then has the
+subdeacon hold it while the Gospel is sung. These exact loci support promotion
+through the five generated editions. They do not support binding morphology,
+material, ornament, dimensions, a one-to-one audit of every Latin alias,
+combined-book practice, or a freestanding lectern in the ordinary Gospel
+formation.
+
 ## What was audited
 
 The initial pass audited the project contract, the pictorial-dictionary

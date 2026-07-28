@@ -69,3 +69,9 @@ Mass, not as insignia or distinct pontifical forms. Their shared plate shows
 one catalog exemplar and one Missal-controlled prepared relationship without
 creating a morphology, transfer, or handling prescription, bringing the
 selection to twenty-eight records.
+
+The Epistle and Gospel books enter as ordinary supporting books, not
+pontifical insignia or distinct pontifical forms, bringing this selection to
+thirty-one records. Their exact-source TeX-native graphite symbols teach only
+the VI.4--5 minister/use relationships. They assert no binding morphology,
+material, ornament, dimensions, unresolved alias, or ordinary Gospel lectern.

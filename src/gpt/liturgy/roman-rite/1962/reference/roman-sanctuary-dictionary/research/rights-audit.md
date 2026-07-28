@@ -3,6 +3,14 @@
 Status: **project-generated alpha artwork reconciled; external materials remain artifact-specific**
 Audit date: 2026-07-28
 
+The Epistle- and Gospel-book pages reproduce no raster or third-party image.
+Their generic closed/open book figures are repository-authored TeX paths,
+lines, and neutral shading; all words and relationships are separately
+typeset. The exact 1962 Missal is used as narrowly paraphrased evidence, not
+reproduced as a page image or extended text. The generated-edition exception
+is limited to these two stable object IDs and carries no external-artwork
+rights dependency.
+
 ## Current owned material
 
 Project-created organization, schema text, research scaffolds, captions once

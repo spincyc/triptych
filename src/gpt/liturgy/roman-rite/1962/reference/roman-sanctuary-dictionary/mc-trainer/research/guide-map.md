@@ -44,10 +44,17 @@ and morphology local or source-bounded; its smaller priest's paten also has a
 separate source-bounded record. The chalice and paten reuse one controlled
 catalog exemplar to teach identity and the prepared relationship, not a
 universal morphology, handoff, transfer, touching, or recovery procedure. The
-thirty-one-record canonical alpha gate requires
+thirty-four-record canonical alpha gate requires
 no external review. The footless elevation-torch page teaches the
 Elevation-service timing and distinction from
 the acolytes' footed candlesticks without inventing a route, grip, height,
 number, arrangement, or flame-handling procedure. The processional cross now
 enters with a corrected crucifix-bearing pencil asset while its optional/local
 status, stand relation, and representative-form ceiling remain explicit.
+
+The Epistle- and Gospel-book pages teach only the exact VI.4--5 minister/use
+relationships through TeX-native generic book symbols. They assert no binding
+morphology, material, ornament, dimensions, unresolved alias, or ordinary
+Gospel lectern. The MC/trainer note preserves the subdeacon's Epistle carrying
+and the deacon/subdeacon Gospel relationships without inventing a server
+handoff or local assignment.

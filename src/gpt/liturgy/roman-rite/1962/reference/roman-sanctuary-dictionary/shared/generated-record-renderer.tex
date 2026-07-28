@@ -7,6 +7,53 @@
 \RSDRenderedRecordCount=0
 \newif\ifRSDArtworkAvailable
 \newif\ifRSDSecondArtworkAvailable
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{
+  rsd pencil line/.style={
+    draw=black!82,
+    line width=0.65pt,
+    line cap=round,
+    line join=round,
+    decorate,
+    decoration={random steps,segment length=4pt,amplitude=0.28pt}
+  }
+}
+\newcommand{\RSDGenericClosedBook}{%
+  \pgfmathsetseed{1962}%
+  \begin{tikzpicture}[baseline=-0.6ex,x=1cm,y=1cm]
+    \fill[black!6] (0,0) rectangle (2.5,1.64);
+    \draw[rsd pencil line] (0,0) rectangle (2.5,1.64);
+    \draw[rsd pencil line] (0.26,0.08) -- (0.26,1.56);
+    \foreach \y in {0.26,0.40,0.54}
+      \draw[black!52,line width=0.5pt] (0.36,\y) -- (2.36,\y);
+  \end{tikzpicture}}
+\newcommand{\RSDGenericOpenBook}{%
+  \pgfmathsetseed{1963}%
+  \begin{tikzpicture}[baseline=-0.6ex,x=1cm,y=1cm]
+    \fill[black!4] (0,0.20) -- (1.56,0) -- (1.56,1.56) --
+      (0,1.76) -- cycle;
+    \fill[black!4] (1.56,0) -- (3.12,0.20) -- (3.12,1.76) --
+      (1.56,1.56) -- cycle;
+    \draw[rsd pencil line] (0,0.20) -- (1.56,0) -- (1.56,1.56) --
+      (0,1.76) -- cycle;
+    \draw[rsd pencil line] (1.56,0) -- (3.12,0.20) -- (3.12,1.76) --
+      (1.56,1.56);
+    \foreach \y in {0.46,0.68,0.90,1.12}
+      \draw[black!45,line width=0.45pt] (0.28,\y) -- (1.28,\y);
+    \foreach \y in {0.46,0.68,0.90,1.12}
+      \draw[black!45,line width=0.45pt] (1.84,\y) -- (2.84,\y);
+  \end{tikzpicture}}
+\newcommand{\RSDTeXNativeBookArtwork}{%
+  \begin{center}
+    \RSDGenericClosedBook\hspace{0.48in}\RSDGenericOpenBook\par
+    \vspace{0.16in}
+    {\fontsize{9}{11}\selectfont\bfseries
+      Identify this book by its minister and liturgical use, not its cover.\par}
+    \vspace{0.08in}
+    {\fontsize{8.2}{10}\selectfont
+      Generic closed and open book symbols; no binding, material, ornament,
+      dimensions, or local combined-book practice is asserted.\par}
+  \end{center}}
 
 \renewcommand{\RSDObjectRecord}[3]{%
   \RSDClearObjectRecord
@@ -53,6 +100,11 @@
   \vspace{7pt}
   \begin{minipage}[t][4.72in][c]{\textwidth}
     \centering
+    \ifdefstring{\RSDObjectID}{obj-epistle-book}{%
+      \RSDTeXNativeBookArtwork
+    }{\ifdefstring{\RSDObjectID}{obj-gospel-book}{%
+      \RSDTeXNativeBookArtwork
+    }{%
     \ifRSDArtworkAvailable
       \ifRSDSecondArtworkAvailable
         \begin{minipage}[c]{0.72\textwidth}\centering
@@ -65,7 +117,7 @@
       \else
         \DictionaryGraphic{4.55in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
       \fi
-    \fi
+    \fi}}%
   \end{minipage}
   \vspace{5pt}
   {\fontsize{10.5}{13}\selectfont

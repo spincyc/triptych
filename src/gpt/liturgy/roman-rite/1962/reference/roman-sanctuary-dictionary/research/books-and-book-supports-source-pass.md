@@ -150,6 +150,15 @@ ornament from becoming an identity cue or a freestanding lectern from entering
 the ordinary held-book Gospel formation. The unresolved terminology-alias and
 material-morphology work remains unresolved.
 
+The same two records now enter the five generated editions under one narrow
+TeX-native illustration exception. The generator admits no other artwork-free
+record. Each page reuses the generic graphite-style closed/open book contract,
+typesets every semantic label, and identifies the object only through the
+exact VI.4--5 minister/use relationship. This is not evidence for binding
+morphology, material, ornament, dimensions, unresolved Latin aliases, or
+local combined-book practice. The Gospel page retains the ordinary held-book
+formation and does not introduce a freestanding lectern.
+
 On 2026-07-28, `obj-lectern` likewise advanced to `source-audited` for this
 consumer. Its altar-server leaf binds the checked Palm Sunday n. 8, Good
 Friday nn. 7, 9--10, and Easter Vigil nn. 13 and 13a loci. The standalone

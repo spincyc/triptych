@@ -72,3 +72,23 @@ locus = "Ritus servandus VI.5, printed LVIII/artifact PDF 60"
 role = "governing-liturgical-book"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the Gospel book appointed for the Solemn Mass; identify it by contents and use rather than representative cover ornament."
+claim_ids = ["clm-gospel-book-identity", "clm-gospel-book-use"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the checked route: the deacon places and takes the book at the altar, and the subdeacon holds it open while the Gospel is sung."
+claim_ids = ["clm-gospel-book-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "This distinct Gospel book is identified by its Solemn-Mass use; the ordinary checked formation has the subdeacon hold it open."
+claim_ids = ["clm-gospel-book-identity", "clm-gospel-book-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Recognize this ordinary supporting book by its checked altar and minister relationships; no distinct pontifical form is asserted."
+claim_ids = ["clm-gospel-book-identity", "clm-gospel-book-use"]

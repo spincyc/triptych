@@ -38,6 +38,10 @@ NESTED_KEYS = {
     "audience_note": {"audience", "text", "claim_ids"},
 }
 ID = re.compile(r"^(obj|var|clm|src|art|plt|ed)-[a-z0-9]+(?:-[a-z0-9]+)*$")
+TEX_NATIVE_ARTWORK_IDS = {
+    "obj-epistle-book",
+    "obj-gospel-book",
+}
 TEX_ESCAPE = str.maketrans({
     "\\": r"\textbackslash{}", "{": r"\{", "}": r"\}", "#": r"\#",
     "$": r"\$", "%": r"\%", "&": r"\&", "_": r"\_", "^": r"\^{}",
@@ -177,7 +181,7 @@ def alpha_gate_failure(record: dict, alpha_assets: set[str]) -> str | None:
         for source_id in claim["source_ids"]
     ):
         return "a printed factual claim lacks a claim-verified source binding"
-    if not record["artwork"]:
+    if not record["artwork"] and record["id"] not in TEX_NATIVE_ARTWORK_IDS:
         return "no artwork is registered"
     if any(
         canonical_asset_path(artwork["asset"]) not in alpha_assets
@@ -377,7 +381,7 @@ def main() -> int:
                 f'edition_id = "{edition["id"]}"',
                 'status = "alpha"',
                 'distribution_state = "public-alpha"',
-                'admission_rule = "identity and governing status resolved; source-audited or later; every rendered factual claim has a claim-verified binding; artwork has manifest identity, rights/provenance, and identity-checked or later visual state; unresolved and unverified-lead records excluded"',
+                'admission_rule = "identity and governing status resolved; source-audited or later; every rendered factual claim has a claim-verified binding; raster artwork has manifest identity, rights/provenance, and identity-checked or later visual state; the two exact-source lesson-book records use the audited TeX-native generic-book contract; unresolved and unverified-lead records excluded"',
                 f"admitted_object_count = {len(chosen)}",
                 f"omitted_object_count = {len(omitted)}",
                 "admitted_object_ids = [",

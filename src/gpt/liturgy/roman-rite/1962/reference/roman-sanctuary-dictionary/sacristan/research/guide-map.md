@@ -47,7 +47,7 @@ smaller priest's paten also has its own source-bounded record. The chalice and
 paten reuse one catalog-exemplar plate and the Missal-controlled prepared
 relationship without prescribing a universal design, setup tolerance,
 transfer, touching, care, or purification method. The edition also admits the
-footless elevation torch and now contains thirty-one records. It
+footless elevation torch and now contains thirty-four records. It
 distinguishes rack storage from the acolyte
 candlestick's self-standing relation and leaves dimensions, material,
 ornament, number, arrangement, flame handling, and local storage geometry to
@@ -55,3 +55,9 @@ the checked source or trained local practice. The processional cross now
 enters with a corrected crucifix-bearing pencil asset, its appointed-stand
 relation, and explicit optional/local and representative-form limits. The
 edition creates no external-review gate.
+
+The Epistle and Gospel books use TeX-native graphite symbols that assert no
+binding morphology, material, ornament, dimensions, or unresolved alias.
+Preparation follows the appointed book's contents and use; the checked
+ordinary Gospel formation has the subdeacon hold the book rather than a
+freestanding lectern.
