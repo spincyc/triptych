@@ -73,6 +73,28 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
   chapter. It is not a facsimile of the Vatican printing and supplies no
   actual-use, frequency, outcome, operational, present-authorization, or
   typographical claim.
+
+### 1952 exact-access probe, 2026-07-27
+
+A focused public-access search for the 1952 Vatican typical edition did not
+locate an exact, publicly downloadable facsimile or authenticated electronic
+text suitable for passage registration. The search checked Internet Archive
+and Open Library edition discovery, Library of Congress and library-catalog
+records, exact-title and publisher/year queries, and public liturgical-book
+hosts. Results resolved to an 1873 Baltimore edition, bibliographic records,
+modern reprints or samples, secondary excerpts, or unattributed files whose
+edition identity and rights could not be authenticated.
+
+The 1952 edition therefore remains cataloged only. In particular, the 1925
+electronic reset must not be relabeled as 1952, and secondary statements about
+changes between the two editions cannot establish the exact 1952 wording or
+pagination. Promotion requires an exact artifact whose title page and
+publication data identify the 1952 Vatican typical edition, a cryptographic
+hash and rights disposition, visual collation of the relevant title XII
+chapter boundaries, and claim-level comparison with the separately controlled
+1925 text. Until then, no 1952 formula, wording change, architecture detail,
+operational sequence, actual-use claim, or present-authorization inference is
+supported.
 - *Codex Iuris Canonici* (1917), cc. 1151--1153, Vatican Polyglot Press 1918
   witness registered in the shared source library. The section paraphrases the
   reservation and qualification rules.

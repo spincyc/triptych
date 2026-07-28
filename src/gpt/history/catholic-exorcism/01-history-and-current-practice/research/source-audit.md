@@ -105,7 +105,12 @@ routes, findings, and limits are recorded in
   between preparatory exorcistic acts, Baptism's effect, and the assisting
   office; not a frequency claim or major-exorcism manual.
 - *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*, printed pp. 198–219 in the Alessandrina editio-princeps witness; later standard editions use title/chapter structures that must not be retrojected. Establishes the Roman consolidation, ministerial cautions, and formulary history.
-- *Rituale Romanum* (1952), title XII. Historical predecessor, not presented as the ordinary current ritual book.
+- *Rituale Romanum* (1952), title XII. Historical predecessor, not presented
+  as the ordinary current ritual book. A 2026-07-27 exact-access probe found
+  catalogs, secondary excerpts, modern samples, and an 1873 Baltimore scan,
+  but no authenticated public 1952 Vatican facsimile or electronic text.
+  Exact wording, pages, chapter comparison, and any present-authorization
+  inference therefore remain outside the evidence.
 - Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmillan, 2016), used as modern historical reconstruction and bibliography, paraphrased only.
 
 ## Clinical and safeguarding controls
