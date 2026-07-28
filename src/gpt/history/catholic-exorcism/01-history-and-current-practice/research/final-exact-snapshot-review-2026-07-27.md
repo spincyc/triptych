@@ -243,8 +243,51 @@ verdict: pass for the exact installed PDF and tracked web edition above.
 Public-alpha distribution verdict: authorized and bound as a provisional
 review snapshot.**
 
-The promised 100 substantive pages, remaining source families, and every
-unperformed external human, professional, rights, specialist, priestly, and
-ecclesiastical review remain open and deferred. This checkpoint is neither the
-promised completed reference nor evidence that any human or ecclesiastical
-authority reviewed or approved it.
+The promised 100 substantive pages and remaining source families remain open.
+This checkpoint is neither the promised completed reference nor evidence of
+ecclesiastical authority.
+
+## Current 36-page reconciliation checkpoint
+
+This 2026-07-28 checkpoint supersedes only the current-byte and present-state
+claims above. Earlier dated findings remain evidence for the snapshots they
+identify. The umbrella completion task remains open.
+
+The current exact controls are:
+
+- `main.tex`:
+  `sha256:9f1ce8e6fd38da5cd940a6d26260db4cbfdb71e99675647c88fba216fd797561`
+- patristic chapter:
+  `sha256:031e27650bbc53966d0be66f1a8556be866ecd9f006030e18448184a3eb21217`
+- medieval chapter:
+  `sha256:6fee65d4d4c77b08e5b1b9f56ff284569ffa9fe89fdf5b9d455b611763c4a5d1`
+- dated orientation:
+  `sha256:40b2860ab0620ea8eb346147b16ae16d3f6ac77a4a424c9737714936cc642334`
+- source audit:
+  `sha256:9d4d26e8d6f1ca2486d8269ad8aa30087e439b2529370fd41e8f8b5adcdeee52`
+- source bindings:
+  `sha256:d2b91cb6b9d64ef7e01d7b8b5eebb7362c0e61954ca659966d7e8b5e8ad1b112`
+- installed PDF:
+  `sha256:27dbbf0566e0ac24c1ac66cf3561114034f2d3ba4a04004de917cc765df2626f`
+- tracked web edition:
+  `sha256:da24c39450f0c21b978426abd40223e70dc9acfcb0694aab909ce8716b9cb362`
+
+Two pdfTeX passes produced a 36-page US-letter PDF. The installed and built
+PDFs are byte-identical; the generated and tracked web editions are likewise
+byte-identical. Repository review tooling rasterized all 36 pages, and review
+of both contact sheets found no clipping, collision, broken table, isolated
+heading, unintended blank page, or illegible terminal material.
+
+The plans, scope, and source audit now distinguish the exact controls already
+closed for present wording from broader E2 modules that remain partial or open.
+The patristic chapter no longer denies the old-edition Latin and Greek controls
+it now uses. The medieval chapter no longer says its local witnesses lack exact
+bindings, and the dated orientation identifies the exact Vogel--Elze pages.
+Repeated typological, non-linear, and non-operational ceilings were
+consolidated where the claim-local distinction remained intact.
+
+**Internal source verdict: pass for the bounded current claims. Production
+verdict: pass for this exact installed PDF and tracked web edition. Completion
+verdict: open.** The 100-page deliverable, incomplete E2 dependencies, remaining
+draft modules, final-as-of checks, and exact-snapshot completion gates remain
+unfinished.

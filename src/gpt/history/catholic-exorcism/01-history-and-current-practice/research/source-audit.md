@@ -5,6 +5,27 @@ historical-source acquisition and inspection is dated 2026-07-27. Stable links
 below are access routes; the identified works, editions, and loci remain the
 sources.
 
+## E2 dependency reconciliation
+
+These states govern the planned modules, not the sufficiency of every narrower
+claim already published.
+
+| Dependency | State | Evidence boundary |
+| --- | --- | --- |
+| 1 Samuel 16 Hebrew/Greek/Latin | Closed for present wording | Exact page images in Kittel, Swete, and Hetzenauer; no modern critical collation or textual-priority claim. |
+| Tobit/Tobias 6–8 recensions | Closed for present wording | Both Swete Greek forms and the Clementine Latin sequence were inspected separately; no Semitic reconstruction or recension priority. |
+| Mark 9:29 edition comparison | Partial | Robinson–Pierpont and Douay controls are exact; a separately identified modern eclectic text and full apparatus remain unbound. |
+| Josephus 8.45–49 | Closed for present wording | Exact Niese Greek digital text and Whiston English reception witness; no printed apparatus or event verification. |
+| Selected Second Temple witnesses | Partial | Exact bounded controls exist for 1Q20, 4Q560, 4Q510/511, and 11Q11; manuscript-image and translation coverage is uneven, and the selected corpus is not exhaustive. |
+| Laodicea 26 | Partial | Percival’s exact historical English witness is bound; modern critical Greek control remains open. |
+| *Apostolic Tradition* complex | Partial | Easton’s exact identified English reconstruction is bound; a current critical reconstruction, versional evidence, and specialist commentary remain open. |
+| Gellone sequence | Partial | Exact manuscript folios 194v–199v and catalog anchors control the visible sequence; Dumas–Deshusses and full textual collation remain open. |
+| PRG ordinal | Partial | Vogel–Elze I, p. 14 (XV.7) and p. 17 (XV.17–19), are exact page controls; a named-manuscript collation remains open. |
+| Western ordination comparison | Partial | Ballerini’s *Statuta*, Maassen, the MGH notice, Parker MS 79, and the 1895 Pontifical support bounded typology; Munier and broader representative comparison remain open. |
+| Roman ritual edition matrix | Partial | Bounded 1614, 1872, 1925, 1952, and 1998–2004 controls exist at differing levels; direct 1614 images and a complete claim-level collation remain open. |
+| Current Latin discipline and U.S. implementation | Partial | Exact governing canons, competence controls, official ritual acts, and USCCB implementation are bound through 2026-07-27; final-as-of revalidation and fact-specific particular law remain open. |
+| Eastern ritual/particular law and named cases | Open and excluded | No qualifying source module or case dossier supports expansion. |
+
 ## Current official sources
 
 - Catholic Church, *Codex Iuris Canonici* (1983), cc. 1, 134 §§1–3, 230, 1166, 1172; official Holy See Latin controls, with official English pages used only as translation aids. Canon 1 establishes the Code's Latin-Church scope. Canon 134 §§1–2 includes vicars general and episcopal vicars in the generic term *local ordinary*; §3 separately excludes them, absent special mandate, where a canon attributes executive power by name to the diocesan bishop. Canon 1172 uses the generic term. The current c. 230 §1 names the instituted ministries of lector and acolyte. John Paul II, *Sacrae disciplinae leges* (25 January 1983), promulgated the Code and ordered it to have force of law from the first day of Advent 1983 (27 November). Fresh retrieval on 2026-07-27 was byte-identical to the exact registered official Latin and English artifacts for cc. 134 and 230. The official Latin web text retains c. 1172's quoted wording, and the Dicastery for Legislative Texts' published authentic-interpretations compilation contains no entry for cc. 134 or 1172. These are bounded text-and-register checks, not a comprehensive amendment-or-repeal inventory; territorial and personal competence, a grant's scope, duration, or revocation, and applicable particular law remain fact-specific.
@@ -466,9 +487,9 @@ do not establish the current render's production quality.
 The expanded source received internal source-role, currentness, architecture,
 and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
 web conversion, review rasters, every-page visual inspection, and PDF
-structure, font, metadata, and extracted-text checks passed for the current
+structure, font, metadata, and extracted-text checks passed for the dated
 32-page predecessor snapshot; source-library and binding validation also
-passed. The current 34-page snapshot preserves those source and safety
+passed. The current 36-page snapshot preserves those source and safety
 boundaries and has a fresh settled build, log audit, every-page visual
 inspection, PDF structure, font, metadata, and extracted-text check. The
 snapshot is installed and bound for public alpha in this worker but

@@ -10,7 +10,7 @@ exact snapshot.
 
 ## Baseline and finish line
 
-- The installed public-alpha PDF is 33 physical pages.
+- The installed public-alpha PDF is 36 physical pages.
 - The deliverable remains at least 100 substantive pages, excluding front
   matter, terminal audit apparatus, padding, sparse spill, and long quotations.
 - The architecture and planning ranges remain controlled by
@@ -21,8 +21,9 @@ exact snapshot.
 
 ## Work unit E1 — reconcile the present baseline
 
-- [x] Reconcile every present-tense record that still described the superseded
-  20- or 29-page snapshot with the installed 32-page baseline, preserving dated historical
+- [x] Reconcile every present-tense record that still described a superseded
+  20-, 29-, 32-, 33-, 34-, or 35-page snapshot with the installed 36-page
+  checkpoint, preserving dated historical
   findings rather than rewriting them as current.
 - [x] Make the child landing page, PDF extent, web extent, scope, source audit,
   evidence map, and deliverable ledger agree without representing the interim
@@ -30,7 +31,7 @@ exact snapshot.
 - [x] Record the exact current source, PDF, web, and installed identities in
   the appropriate audit records before using the baseline for expansion.
 
-Completed 2026-07-27. The current 32-page identities and production checks are
+Reconciled again 2026-07-28. The current 36-page identities and production checks are
 owned by `final-exact-snapshot-review-2026-07-27.md`; dated earlier baseline
 findings remain historical evidence only.
 
@@ -43,25 +44,17 @@ records.
 Work proceeds claim-first. Acquisition, registration, passage inspection, and
 claim verification remain distinct.
 
-- [ ] Ancient and biblical: close or expressly bound the Hebrew, Septuagint,
-  Vulgate, Tobit-recension, Mark 9:29, Josephus, and selected Second Temple
-  dependencies.
-- [ ] Patristic and early discipline: control Laodicea canon 26 and the exact
-  critical reconstruction used for the work conventionally called
-  *Apostolic Tradition*; retain unresolved boundaries if either remains
-  unavailable.
-- [ ] Medieval: acquire and collate the Gellone energumen material,
-  Vogel–Elze PRG ordines, relevant ordination traditions, and selected local
-  witnesses before expanding claims beyond the current ceiling.
-- [ ] Roman editions: construct a claim-level matrix for the 1614,
-  intermediate, 1925, 1952, and 1998/1999/2004 states without reproducing
-  operational formulas.
-- [ ] Current discipline: reverify the 1917-to-1983 transition, canon 1172,
-  competent authority, amendments or authentic interpretations, current
-  ritual governance, and identified territorial implementation at the final
-  as-of date.
-- [ ] Eastern material and named cases remain excluded unless separately
-  controlled records meet the boundaries in the comprehensive expansion plan.
+| Module | State | Next dependency |
+| --- | --- | --- |
+| Ancient and biblical | Partial | Bind a modern eclectic Mark 9:29 apparatus; extend Qumran image/translation collation and the selected Second Temple comparison. |
+| Patristic and early discipline | Partial | Add modern critical Greek control for Laodicea 26 and a current critical reconstruction with versional evidence for the *Apostolic Tradition* complex. |
+| Medieval | Partial | Collate PRG against a named manuscript and acquire lawful critical controls for Gellone and the *Statuta* where possible; extend representative local and cross-genre comparison. |
+| Roman editions | Partial | Obtain direct 1614 page images and finish the claim-level 1614/intermediate/1925/1952/1998–2004 matrix. |
+| Current discipline | Partial | Revalidate law, competence, interpretations, ritual governance, and territorial implementation at the final as-of date. |
+| Eastern material and named cases | Open and excluded | Require a separate controlled Eastern-law/ritual module or named-case dossier before reader-facing use. |
+
+Exact controls already acquired for each partial module are itemized in
+`source-audit.md`; partial does not reopen claims already bounded and verified.
 
 For each module, update `source-bindings.toml`, `source-audit.md`, and
 `evidence-map.md` together. Register a reusable source under `src/sources/`
