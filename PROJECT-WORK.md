@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-07-27.
+Last reconciled: 2026-07-28.
 
 ## Standing public-alpha authority
 
@@ -14,14 +14,20 @@ conspicuously labeled public-alpha distribution so that priests and other
 qualified readers can review it from stable public links. This is a standing
 workflow authorization: changed source may be researched, built, inspected,
 installed, bound as an exact current public-review snapshot, validated, and
-committed in the isolated worker without requesting a new
+committed without requesting a new
 document-by-document alpha approval.
 
-The worker must not merge or integrate into `main`, push any ref, or represent
-an undeployed worker snapshot as live. The maintainer retains the final
-integration into `main` and push. Complete every safe predecessor step and
-leave a clean, coherent committed worker result ready for that final action;
-do not pause earlier work merely because integration and push remain reserved.
+A clean direct Codex session on `main` has standing authority to make ordinary
+coherent commits for authorized work and regularly push validated checkpoints
+to `origin/main` after each independently reviewable unit. Before each push,
+run the checks required by the affected guidance, inspect the exact outgoing
+range, and confirm that every newly reachable object is intended for public
+disclosure. Because each `origin/main` push triggers GitHub Pages, this
+authority includes the resulting automatic deployment attempt. It does not
+authorize force-pushing, amending or otherwise rewriting published history,
+changing remotes, integrating a retained worker, or triggering another
+deployment mechanism. Never represent a snapshot as live until its Pages run
+has succeeded and the affected production routes have been verified.
 
 Public-alpha approval is distribution authority only. It never records or
 implies human, priestly, specialist, ecclesiastical, rights, intended-reader,
@@ -63,12 +69,13 @@ The repaired public-alpha snapshot is integrated on `main` through commit
 stable review landing page, PDF, and web-edition routes for the exorcism paper
 resolved in that production check. The current repository catalog, installed
 PDF, web edition, and exact-snapshot audit agree on a 32-page interim paper.
-Live verification of this current repository snapshot remains reserved until
-maintainer integration, push, and deployment.
+Each later `origin/main` checkpoint requires its own successful Pages run and
+verification of the affected production routes before it is represented as
+live.
 
-## Clean-agent restart
+## Clean direct-main workflow
 
-For the next clean isolated agent started from current `main`, use this
+For a clean direct Codex session started from current `main`, use this
 instruction:
 
 > Read `AGENTS.md`, `PROJECT-WORK.md`, `promised-deliverables.toml`,
@@ -77,11 +84,14 @@ instruction:
 > current `main` and production Pages before editing. Continue the highest
 > actionable open requirement; do not infer completion from a commit, PDF,
 > catalog link, push, or deployment. Update the register and ledger before each
-> checkpoint commit.
+> checkpoint commit. After validating each independently reviewable unit,
+> inspect its exact outgoing range and push it to `origin/main`; then verify the
+> resulting Pages run and affected production routes.
 
 The restarting agent must then:
 
-1. Run `git status`, confirm isolation, and preserve unrelated changes.
+1. Run `git status`, confirm the current branch is `main`, reconcile it with
+   `origin/main`, and preserve unrelated changes.
 2. Confirm that `f6e9d2e2` is contained by `main`. If it is not, stop content
    work and report that integration remains open.
 3. Run `scripts/check-promised-deliverables`, `make check`, `make
@@ -104,13 +114,15 @@ The restarting agent must then:
    requirement and the source, safety, law, PDF, web, and every-page gates.
 7. Reconcile this file after each independently reviewable work unit. Keep
    completed facts, current evidence, open criteria, blockers, and superseded
-   decisions distinct. Commit and push coherent checkpoints when authority
-   remains current, but never call the underlying deliverable complete unless
+   decisions distinct. Commit the coherent unit, run its required validation,
+   inspect the exact outgoing range and public-exposure consequences, and push
+   the checkpoint to `origin/main`. Verify the Pages result before calling that
+   snapshot live, but never call the underlying deliverable complete unless
    its ledger gate passes.
 
-Integration, target-branch updates, deployment, and any history rewriting
-remain separately authorized operations. The restart instructions do not
-grant those authorities.
+Retained-worker integration, non-Pages deployment, remote changes,
+force-pushing, and all other history rewriting remain separately authorized
+operations.
 
 ## Promised work
 
@@ -211,8 +223,6 @@ Production-site route and review-label validation passed for the previously
 deployed artifact. The current repository release inventory contains 164
 release publications and 14 review publications, 178 total; the exorcism
 catalog, installed PDF, web edition, and audit records agree on 32 pages.
-Integration, push, deployment, and a new live-site check remain reserved to
-the maintainer.
 The standing 27 July 2026 public-alpha authority permits future exact-current
 review snapshots to be installed and deployed without repeated
 document-by-document approval while preserving every unresolved review gate.
@@ -271,6 +281,12 @@ leads remain outside the ledger until their own family records are justified.
 
 ## Reconciliation history
 
+- 2026-07-28: Superseded the isolated-worker/final-maintainer-push boundary
+  with the clean direct-`main` workflow. Authorized ordinary coherent commits
+  and regular validated checkpoint pushes to `origin/main`, including their
+  automatic Pages deployment attempts, while retaining exact outgoing-range
+  review, public-disclosure checks, live-route verification, and the
+  prohibition on force-pushing or rewriting published history.
 - 2026-07-27: Reconstructed the altar-server, dictionary, exorcism, linen,
   discoverability, and recent-paper commitments from tracked evidence and
   current user direction. Confirmed five repair commits and the public-alpha

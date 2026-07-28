@@ -21,25 +21,45 @@ Name the document and page or section if you can, but a high-level concern is en
 
 Git keeps the project’s files and history. An AI coding agent can edit, check, and rebuild them.
 
-1. Clone the repository using the address shown by its hosting site. If you already have a copy, run `git pull` to update it.
-2. From the repository’s top-level folder, start Codex with `make codex` (or use `scripts/triptych-codex` when passing supported agent options). You may start several sessions; each receives an isolated task checkout automatically. Do not create, move, delete, or reuse those task directories yourself.
+1. Clone the repository using the address shown by its hosting site. If you already have a copy, update it and begin from a clean `main`.
+2. From the repository’s top-level folder, start Codex directly. The current checkout is the ordinary workspace; do not create, move, delete, or administer worktrees yourself.
 3. Give the agent an ordinary request, including any sources, concerns, emphases, or limits that matter.
    The agent must first read `PROJECT-WORK.md` and
    `promised-deliverables.toml`, record any new promised outcome there, and
    reconcile both records before reporting completion.
-4. Ask it to show the changes and verification results before authorizing a commit or integration. A local commit or merge does not authorize a push.
+4. Review the changes and verification results. Direct Codex sessions have
+   standing authority to make coherent ordinary commits and regularly push
+   validated checkpoints to `origin/main`.
 5. Read the revised PDF as well as the line-by-line view of what changed.
-6. After reviewing the committed result, expressly authorize its integration and any resulting update to its recorded local target, including local `main` when `main` was the dispatch branch. Return to that target’s clean primary checkout and run `make integrate RUN=<run-id>` (or `scripts/triptych-codex --triptych-integrate <run-id>` directly). A result already contained by the target is confirmed and cleaned; one already based on the current target is landed without rewriting its commits. If target and worker both advanced, the launcher rebases the audited linear worker commits onto the captured target. A conflict-free rebase remains a one-step integration. Landing uses an exact expected-old ref transaction rather than a merge commit, never rewrites existing target history, and leaves a raced unrelated checked-out ref unchanged.
+6. Before each push, the agent must inspect the exact outgoing range, confirm
+   that every newly reachable object is intended for public disclosure, and
+   run the checks required by the affected guidance. Pushing `origin/main`
+   starts the GitHub Pages workflow and authorizes that automatic deployment
+   attempt; it does not authorize force-pushing, rewriting history, changing
+   remotes, or deploying elsewhere.
+7. Continue with another coherent work unit rather than accumulating a large,
+   unpushed session branch.
 
-   If that launcher-owned rebase reaches a genuine conflict, it remains active as a managed conflict instead of being aborted. Open the fixed staging-only resolver with `make resolve RUN=<run-id>`, reconcile and stage the source-aware result, and then run `make continue RUN=<run-id>`; repeat if a later commit conflicts. The resolver never administers the rebase. Successful continuation stops at a clean review-pending candidate without updating the target. Review its complete object-to-object patch with `make final-diff RUN=<run-id>`, then give fresh integration authorization and run `make integrate RUN=<run-id>` again. That later landing accepts only the exact candidate while its captured target is unchanged; target movement retains the candidate for review without reset, silent rebase, merge, or cleanup. To abandon a provable managed conflict, a clean review-pending candidate, or a clean manually resolved candidate retained after a pre-landing verification failure with no recorded landing result or checkpoint, explicitly run `make abort RUN=<run-id>`; the launcher proves the retained rebase or candidate and the private source anchor, restores the exact audited source, and leaves the live target unchanged.
+### Optional isolated and retained workers
 
-   These Make targets take the exact launcher-produced run ID as `RUN=<run-id>`. The former positional spelling remains accepted for local compatibility, but new instructions and automation use `RUN=`. GNU Make interprets command-line variable assignments before the project Makefile can validate them, so automation must not forward arbitrary or external input to these convenience wrappers; use the corresponding direct launcher form, such as `scripts/triptych-codex --triptych-resolve <run-id>`, whose lifecycle parser requires one syntactically valid run ID without GNU Make's assignment reinterpretation. The launcher refuses uncommitted or unaudited worker state and a fresh integration from a dirty or wrong primary checkout. Durable landing and cleanup checkpoints remain safely retryable. All launcher-owned Git operations disable hooks, signing, and editors as applicable; no target-side merge hook runs because landing does not invoke a merge. After exact landing verification, the launcher attempts to remove the retained task checkout, worker branch, and private source anchor. It never invokes `git push`.
+The Worktree Marshal launcher remains available for optional isolated work and
+for runs that it already retains. Start a new isolated session with `make
+codex`, or use `scripts/triptych-codex` when passing supported agent options.
+Launcher-managed workers never push. Do not create, move, delete, or reuse
+their task directories yourself.
 
-   An initial rebase that could not create its first replay commit—for example, because Git lacked committer identity—can also be explicitly aborted when the launcher proves that HEAD is still the captured target and the staged index is exactly the independently reproduced first replay. Any changed rebase, index, worktree, or untracked state is retained without reset.
+After reviewing a committed launcher-managed result, expressly authorize its integration and any resulting update to its recorded local target, including local `main` when `main` was the dispatch branch. Return to that target’s clean primary checkout and run `make integrate RUN=<run-id>` (or `scripts/triptych-codex --triptych-integrate <run-id>` directly). A result already contained by the target is confirmed and cleaned; one already based on the current target is landed without rewriting its commits. If target and worker both advanced, the launcher rebases the audited linear worker commits onto the captured target. A conflict-free rebase remains a one-step integration. Landing uses an exact expected-old ref transaction rather than a merge commit, never rewrites existing target history, and leaves a raced unrelated checked-out ref unchanged.
 
-7. Submit the change for review through the hosting site when ready.
+If that launcher-owned rebase reaches a genuine conflict, it remains active as a managed conflict instead of being aborted. Open the fixed staging-only resolver with `make resolve RUN=<run-id>`, reconcile and stage the source-aware result, and then run `make continue RUN=<run-id>`; repeat if a later commit conflicts. The resolver never administers the rebase. Successful continuation stops at a clean review-pending candidate without updating the target. Review its complete object-to-object patch with `make final-diff RUN=<run-id>`, then give fresh integration authorization and run `make integrate RUN=<run-id>` again. That later landing accepts only the exact candidate while its captured target is unchanged; target movement retains the candidate for review without reset, silent rebase, merge, or cleanup. To abandon a provable managed conflict, a clean review-pending candidate, or a clean manually resolved candidate retained after a pre-landing verification failure with no recorded landing result or checkpoint, explicitly run `make abort RUN=<run-id>`; the launcher proves the retained rebase or candidate and the private source anchor, restores the exact audited source, and leaves the live target unchanged.
 
-Agent results remain local until deliberately integrated and pushed. Pushing any branch to the public repository exposes its tracked files and reachable history. Pushing `main` also starts the reader-site publication workflow. Do not ask an agent to push unless the remote and ref, public-exposure review, and publication consequences have been expressly approved.
+These Make targets take the exact launcher-produced run ID as `RUN=<run-id>`. The former positional spelling remains accepted for local compatibility, but new instructions and automation use `RUN=`. GNU Make interprets command-line variable assignments before the project Makefile can validate them, so automation must not forward arbitrary or external input to these convenience wrappers; use the corresponding direct launcher form, such as `scripts/triptych-codex --triptych-resolve <run-id>`, whose lifecycle parser requires one syntactically valid run ID without GNU Make's assignment reinterpretation. The launcher refuses uncommitted or unaudited worker state and a fresh integration from a dirty or wrong primary checkout. Durable landing and cleanup checkpoints remain safely retryable. All launcher-owned Git operations disable hooks, signing, and editors as applicable; no target-side merge hook runs because landing does not invoke a merge. After exact landing verification, the launcher attempts to remove the retained task checkout, worker branch, and private source anchor. It never invokes `git push`.
+
+An initial rebase that could not create its first replay commit—for example, because Git lacked committer identity—can also be explicitly aborted when the launcher proves that HEAD is still the captured target and the staged index is exactly the independently reproduced first replay. Any changed rebase, index, worktree, or untracked state is retained without reset.
+
+Launcher-managed results remain local until deliberately integrated. Pushing
+any branch to the public repository exposes its tracked files and reachable
+history. Only direct sessions receive the standing validated
+`origin/main`-push authority described above.
 
 ### Exceptional rewritten-quarantine retirement
 
@@ -54,7 +74,7 @@ There is deliberately no Make wrapper. `--discard-head` is the full commit ID of
 A useful starting prompt is:
 
 ```text
-Read AGENTS.md and the applicable guidance completely. Revise [document] to [describe the concern or desired result]. Check the governing sources, preserve material uncertainty, update the research records, and rebuild and inspect every affected PDF. Do not commit, integrate, or push until I have reviewed the result and expressly authorized that separate action.
+Read AGENTS.md and the applicable guidance completely. Revise [document] to [describe the concern or desired result]. Check the governing sources, preserve material uncertainty, update the research records, and rebuild and inspect every affected PDF. Commit coherent validated checkpoints and push them regularly to origin/main under the standing authority.
 ```
 
 The agent should do the technical work. The contributor remains responsible for judging whether the result is faithful, clear, and worth proposing.

@@ -49,11 +49,20 @@ commit messages, catalogs, release notes, or handoffs are permitted only when
 `scripts/check-promised-deliverables --require-complete <id>` passes.
 
 Keep coherent commits small enough that completed work is durably checkpointed
-without waiting for an unrelated workstream. When commit and push authority
-has been granted, prefer prompt checkpoint commits and named-ref pushes after
-each independently reviewable unit. A commit, push, installed artifact,
-catalog link, or deployed page remains evidence of that state only; none
-substitutes for an unmet acceptance criterion.
+without waiting for an unrelated workstream. A clean direct Codex session on
+`main` has standing authority to make ordinary coherent commits for authorized
+work and regularly push validated checkpoints to `origin/main` after each
+independently reviewable unit. Before each push, run the checks required by the
+affected guidance, inspect the exact outgoing range, and confirm that every
+newly reachable object is intended for public disclosure. An `origin/main`
+push authorizes the automatic GitHub Pages deployment attempt that it triggers;
+verify the workflow and affected production routes before representing the
+snapshot as live. This standing authority does not permit force-pushing,
+amending or otherwise rewriting published history, changing remotes,
+integrating a retained worker, or triggering another deployment mechanism. A
+commit, push, installed artifact, catalog link, or deployed page remains
+evidence of that state only; none substitutes for an unmet acceptance
+criterion.
 
 Each ledger ID must have exactly one
 `<!-- promised-deliverable: ID -->` marker in `PROJECT-WORK.md`. The register

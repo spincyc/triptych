@@ -178,11 +178,26 @@ completion audit. These research gates are deliberately not prerequisites of `al
 `pdf`, or an individual PDF build. Rendered source changes still require every
 profile-specific build, page review, and installation gate above.
 
-## Isolated Codex workers
+## Direct Codex sessions and retained workers
 
-Mutating Codex sessions follow the isolation and authority contract in `AGENTS.md`. Start them through `make codex` or `scripts/triptych-codex`; a session already in its assigned linked worktree must not invoke the launcher again or administer worktrees.
+The ordinary Codex workflow runs directly in the current checkout. A direct
+session may edit, build, inspect, create coherent commits, and push validated
+checkpoints regularly to `origin/main` within the standing authority in
+`AGENTS.md`. Before a push, inspect the exact outgoing range, confirm that
+every newly reachable object is intended for public disclosure, and complete
+the checks required by the affected guidance. Pushing `origin/main` starts the
+GitHub Pages workflow and therefore authorizes that automatic deployment
+attempt. It does not authorize another deployment, a force-push, or history
+rewriting.
 
-Workers may edit, build, inspect, and commit only when authorized. They never switch branches, merge, rebase, amend, push, use the shared stash, change shared Git configuration or remotes, administer worktrees, or leave background processes running. Runtime paths, run IDs, locks, manifests, prompts, logs, and private launcher state are never tracked.
+The launcher remains available for retained runs and optional isolated work.
+A session already in its assigned linked worktree must not invoke the launcher
+again or administer worktrees. Launcher-managed workers may edit, build,
+inspect, and commit only when authorized. They never switch branches, merge,
+rebase, amend, push, use the shared stash, change shared Git configuration or
+remotes, administer worktrees, or leave background processes running.
+Runtime paths, run IDs, locks, manifests, prompts, logs, and private launcher
+state are never tracked.
 
 The launcher exports the same exact run-owned directory as `TMPDIR`, `TMP`, and `TEMP`. Every off-worktree transient produced by a worker or resolver—downloads, OCR and text extracts, generated helper scripts, screenshots, review rasters, and ad hoc caches—must be created below that directory rather than in an arbitrary shared `/tmp` path. Stable shared IPC locks are the narrow exception. Reproducible repository intermediates belong in the ignored `build/` tree while a worker is retained; material that must survive completed integration must be incorporated into the authorized tracked paths. No process may keep using the run-owned temporary tree after its worker or resolver exits; the inherited lifecycle lock and prohibition on background processes establish cleanup exclusivity. Ordinary managed cleanup authenticates and removes only the exact temporary path recorded for that run before deleting its private lifecycle refs; failure leaves a retryable retained state, and a cleaned run must have no such path. The separately authorized rewritten-quarantine retirement retains its stricter receipt transaction and removes the same authenticated temporary path only during finalization.
 
@@ -337,6 +352,10 @@ edition's state never covers another's:
   and
 - `published` records deployment of a verified alpha artifact.
 
+The editorial status `review` includes an installed paper in the public alpha
+when the alpha concerns pass; it controls conspicuous labeling, not ordinary
+discoverability.
+
 Alpha and published are distribution states, not editorial promotions. Neither
 asserts completeness, finality, official status, an imprimatur, a nihil obstat,
 or approval by an external authority. The owning document states its actual
@@ -358,12 +377,14 @@ The maintainer's standing public-alpha decision of 27 July 2026 authorizes
 every current and later document snapshot to enter `alpha` without a new
 document-by-document approval request, provided that the six alpha concerns
 pass and the installed PDF and generated artifact identities are reproducible.
-This standing decision authorizes the ordinary build, installation, validation,
-and isolated-worker commit steps needed to prepare current public links. It
-does not authorize the worker to merge or integrate
-into `main`, push any ref, or claim deployment; the maintainer retains those
-final actions. It must never be recorded as external approval or final
-editorial judgment.
+This standing decision authorizes ordinary research, build, installation,
+validation, and coherent commit steps needed to prepare current public links.
+For a direct session on `main`, it also authorizes regular validated pushes to
+`origin/main` after review of the exact outgoing range and its public
+disclosure. Such a push starts the GitHub Pages workflow and authorizes that
+automatic deployment attempt. Launcher-managed workers remain non-pushing and
+must use their retained-run integration boundary. No part of this authority
+may be recorded as external approval or final editorial judgment.
 
 An explicit user deliverable—such as promised scope, minimum extent, named
 sections, formats, or publication surfaces—must be recorded in the owning
@@ -381,9 +402,20 @@ Conditional authorization records its effective instant, timezone, duration, exc
 
 ## Version control and authority
 
-Preserve unrelated changes and stage only a coherent requested result. Editing, building, installing, committing, integrating, updating a local target, pushing a named ref, and deploying are distinct authorities. A worker's permission for one does not imply another.
+Preserve unrelated changes and stage only a coherent requested result.
+Editing, building, installing, committing, integrating a retained worker,
+updating another local target, pushing another ref, and deploying outside the
+automatic Pages workflow remain distinct authorities. Direct sessions have
+standing authority for coherent ordinary commits on `main` and validated
+regular pushes to `origin/main`; launcher-managed workers do not.
 
-Before any push to a public ref, review the exact outgoing range and confirm that every newly reachable source, record, PDF, and historical object is authorized. A push to `main` may trigger Pages after the source is already public; a failed workflow does not retract it. Keep uncleared experiments and `hold` material off public refs.
+Before any push to a public ref, review the exact outgoing range and confirm
+that every newly reachable source, record, PDF, and historical object is
+authorized. Run the checks required by every affected profile and publication
+surface before pushing. A push to `origin/main` triggers Pages after the
+source is already public; a failed workflow does not retract it and must be
+diagnosed and corrected in a later coherent checkpoint. Keep uncleared
+experiments and `hold` material off public refs.
 
 Every AI-assisted commit has a concise result-oriented subject and a terse body headed `AI summary:` — one or two sentences naming the material change and the verification performed. Do not claim unperformed checks or include private reasoning, narration, or machine-local state. The same terseness governs code comments: state only what the code cannot say itself.
 
