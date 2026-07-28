@@ -40,9 +40,9 @@ The carried-light pages distinguish the footed, self-standing acolyte
 candlestick from the footless elevation torch. The candlestick reuses an
 empty-support drawing only as representative morphology; the torch drawing is
 unlit and supplies no grip, route, height, number, arrangement, or
-flame-handling procedure. The processional-cross record remains excluded
-because its held raster lacks a complete surviving custody and provenance
-account.
+flame-handling procedure. The processional-cross record now uses a
+fully-provenanced corrected crucifix-bearing pencil asset; its optional/local
+status, required stand, and representative-morphology ceiling remain explicit.
 
 The sacristy cross-or-suitable-image focus and local signal bell add two
 recognition records. Their isolated figures are representative only: the

@@ -288,6 +288,25 @@ establish a server handling claim. The later chalice-and-paten checkpoint
 admits the canonical paten record through a different, separately controlled
 plate and leaves this figure's not-to-common-scale boundary unchanged.
 
+## Processional-cross artwork reconciliation — 2026-07-28
+
+The canonical identity and optional/local status remain controlled by the
+already checked Fortescue--O'Connell 1943 loci recorded in
+`carried-lights-and-cross-source-audit-2026-07-28.md`. The first newly
+generated candidate is retained but rejected because its prompt excluded a
+corpus and therefore yielded a bare cross rather than the source-controlled
+crucifix. The corrected candidate depicts one restrained corpus on one long
+non-self-standing staff and adds no source claim.
+
+The exact prompts, built-in mode, received and normalized identities,
+transformations, rights, factual, visual, print, safety, consumer checks, and
+representative-morphology ceiling are recorded in
+`processional-cross-replacement-audit-2026-07-28.md`. Promotion through the
+five generated editions does not establish a universal material, dimension,
+ornament, proportion, corpus style, privilege, bearer, route, grip, stand
+design, or ceremonial procedure. The bespoke altar-server treatment remains
+unchanged.
+
 ## Chalice-and-paten cross-edition reconciliation — 2026-07-28
 
 The exact Missal and Met evidence chain recorded in

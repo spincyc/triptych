@@ -43,8 +43,9 @@ form.
 The carried-light pages distinguish the footed, self-standing acolyte
 candlestick from the footless elevation torch. Their drawings are
 representative and establish no universal material, ornament, dimensions, or
-proportions. The processional cross remains excluded because its held raster
-lacks a complete surviving custody and provenance account.
+proportions. The processional cross now enters with a corrected
+crucifix-bearing pencil asset and an explicit optional/local,
+representative-form boundary.
 
 The sacristy cross-or-suitable-image focus and local signal bell add concise
 recognition pages. The figures preserve the suitable-image alternative and

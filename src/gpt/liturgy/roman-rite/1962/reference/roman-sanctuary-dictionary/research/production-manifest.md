@@ -7,12 +7,39 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Twenty-four alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Thirty-two alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Twenty-four alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Twenty-four alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Twenty-one alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Thirty-two alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Thirty-two alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Thirty alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Twenty-nine alpha records | Built, inspected, and installed | No | Alpha |
+
+The processional-cross promotion admits the existing source-audited
+institutional/local record to the five generated editions while preserving
+the altar-server leaf's bespoke treatment. The first fully provenanced
+replacement attempt remains a versioned rejected asset because its prompt
+excluded a corpus. The corrected built-in-generation asset shows one
+restrained crucifix on one long non-self-standing staff and passes the
+source, rights, safety, reproducibility, mechanical, visual, print, and
+consumer gates. It establishes no universal material, dimensions, ornament,
+proportions, corpus style, privilege, bearer, route, grip, stand design, or
+ceremonial procedure.
+
+All 170 affected pages were rastered through the repository review helper and
+visually inspected. The new full-page figures, captions, representative-form
+limits, source keys, handler notes, optional/local status, stand relation, and
+terminal pages are legible and unclipped. No overlap, spill page, impossible
+construction, or unsafe operational instruction was found. Settled logs
+contain no fatal error, undefined reference, or overfull box. Fonts are
+embedded, text is extractable, and build and installed bytes are identical:
+
+| Leaf | Records | Pages | Installed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 32 | 35 | `f33a7579ac692e05ec81e97e72a15d141acdf6695eaa5d5989504fb7a6061189` |
+| Sacristan | 32 | 35 | `69ac7aa2d56dd3a7a41b38f0c1707828076739c784206ffd4b63032ce9145cb5` |
+| MC/trainer | 32 | 35 | `31715ac8163a8c58bf1ce71b2e766ebc5785d87e28033fa4d6eb3042a4667dc2` |
+| General reader | 30 | 33 | `64e195413a833c454b0cf6f926ae5137813e7782f24ea281015f047ff618aa25` |
+| Pontifical ceremonies | 29 | 32 | `040020a76696a0ca3111e33b068d9ced36e84b3fdd08ad3f98f3aa92158ff926` |
 
 The candle lighter and extinguisher promotion admits the existing
 source-audited record to the comprehensive, sacristan, MC/trainer, and

@@ -111,10 +111,13 @@ reviews are recorded in the canonical artwork manifest. The bespoke
 altar-server treatment remains its training-oriented consumer.
 
 The processional-cross record remains excluded from generated alpha editions.
-Its current raster has an exact file identity and a screen-level morphology
+Its legacy raster has an exact file identity and a screen-level morphology
 check, but the surviving records do not contain a full generation or custody
-account comparable to the torch record. The asset therefore remains
-`held`; no rights, provenance, or approval state is inferred from visual
-plausibility or from its earlier bespoke altar-server use. A later replacement
-or evidence recovery may reopen that one record without blocking the two
-eligible carried-light records.
+account comparable to the torch record. The first separately retained
+2026-07-28 built-in-generation candidate closes its own provenance and rights
+record but depicts a bare cross because its prompt expressly excluded a
+corpus; it therefore remains rejected. A second, separately versioned output
+corrects that defect with a restrained corpus on one long non-self-standing
+staff and passes the factual, rights, safety, visual, print, and consumer
+gates. It may enter the five generated editions, while the bespoke
+altar-server use and held legacy raster remain unchanged.

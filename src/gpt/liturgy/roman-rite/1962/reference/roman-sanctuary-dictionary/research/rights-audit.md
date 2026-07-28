@@ -75,6 +75,17 @@ is distributed under the repository's project-content terms. The public-domain
 drawing pixel is reproduced, and no Catholic prevalence or Roman prescription
 is inferred from it.
 
+The two 2026-07-28 processional-cross replacement candidates are
+project-generated without supplied reference images. Their prompt intents,
+built-in generation mode, received and normalized identities,
+grayscale-and-resize transformations, visual and print checks,
+representative-morphology ceiling, and dispositions are recorded in
+`research/processional-cross-replacement-audit-2026-07-28.md`. The first bare
+cross remains rejected because it omits the source-controlled corpus. The
+corrected crucifix-bearing asset passes the factual, visual, print, rights,
+safety, and consumer gates and is distributed under the repository's
+project-content terms.
+
 ## Open rights classes
 
 | Material | Present disposition | Required action |

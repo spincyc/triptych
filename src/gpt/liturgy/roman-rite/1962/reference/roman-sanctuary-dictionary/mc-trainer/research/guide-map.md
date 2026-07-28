@@ -48,6 +48,6 @@ thirty-one-record canonical alpha gate requires
 no external review. The footless elevation-torch page teaches the
 Elevation-service timing and distinction from
 the acolytes' footed candlesticks without inventing a route, grip, height,
-number, arrangement, or flame-handling procedure. The processional cross
-remains excluded because its held raster lacks a complete surviving custody
-and provenance account.
+number, arrangement, or flame-handling procedure. The processional cross now
+enters with a corrected crucifix-bearing pencil asset while its optional/local
+status, stand relation, and representative-form ceiling remain explicit.

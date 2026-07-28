@@ -55,8 +55,10 @@ comparison context only, bringing the selection to twenty-three records.
 The elevation torch enters as another ordinary supporting object used by
 torchbearers, not as pontifical insignia or a distinct pontifical form. Its
 unlit, footless figure and non-operational safety boundary bring the selection
-to twenty-four records. The processional cross remains excluded because its
-held raster lacks a complete surviving custody and provenance account.
+to twenty-four records. The processional cross now enters only as an ordinary
+supporting object, not as pontifical insignia or a distinct pontifical form;
+its corrected crucifix-bearing figure remains representative and its use
+optional/local.
 The sacristy cross-or-suitable-image focus and local signal bell enter as
 ordinary supporting records for pontifical Mass, not as pontifical insignia
 or distinct pontifical forms. Their representative figures preserve the

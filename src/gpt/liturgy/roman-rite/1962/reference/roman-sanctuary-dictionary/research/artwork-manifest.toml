@@ -106,11 +106,11 @@ workflow_state = "generated"
 
 [[artwork_links]]
 id = "art-processional-objects-0001-iso-processional-cross"
-asset_file_id = "file-rpd-processional-cross"
+asset_file_id = "file-rpd-processional-crucifix-v3"
 object_ids = ["obj-processional-cross"]
 variant_ids = []
 view = "isolated"
-workflow_state = "generated"
+workflow_state = "consumer-review-passed"
 
 [[artwork_links]]
 id = "art-acolyte-candlestick-0103-reuse"
@@ -2143,6 +2143,118 @@ sha256 = "f5faaff351887cf14b64cf40fbca4d71e5cb7205b8cfd290943a7f58ac42b894"
 max_placement_width_in = 3.3
 max_placement_height_in = 4.95
 effective_dpi = 310.3
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[asset_files]]
+id = "file-rpd-processional-cross-v2-bare"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v2.png"
+state = "rejected"
+audit_record = "research/processional-cross-replacement-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 502015, sha256 = "9e62bc3462a773391e6f3a908edb1c174cf2d556c292d97523c5e254ae21d258" }
+
+[[asset_files]]
+id = "file-rpd-processional-crucifix-v3"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v3.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/processional-cross-replacement-audit-2026-07-28.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 494461, sha256 = "5e19f4e826e3f138433d1a692ce398f5420c6cf1491e13785e48a0f74258302b" }
+
+[[artworks]]
+id = "art-processional-cross-v2-bare-rejected"
+object_ids = ["obj-processional-cross"]
+variant_ids = []
+view = "isolated"
+workflow_state = "rejected"
+purpose = "Preserve the first fully provenanced replacement attempt without treating a bare cross as the checked processional crucifix."
+depicted_state = "One bare cross on a long non-self-standing staff, isolated on warm-white paper."
+source_controlled_features = ["The checked Fortescue source requires a crucifix on a long staff that cannot stand alone; the generated asset omits the corpus and therefore does not satisfy that identity."]
+deliberate_omissions = ["No corpus, bearer, action, text, dimensions, heraldry, architecture, stand, or other object.", "No consumer use: the absent corpus is a factual identity failure, not a representative morphology choice."]
+brief = "Held graphite bare-cross candidate retained only as a non-destructive provenance record."
+exact_prompt = "one traditional Roman processional cross upright fully visible, plain warm-white paper, graphite pencil monochrome museum-catalog study, portrait centered no crop, one object/no corpus/no text/no people/no action/no dimensions/no heraldry/no ornate fantasy, recognition not ceremonial instruction, representative not universal."
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v2.png"
+reference_ids = ["src-processional-cross-fortescue-form"]
+precursor_ids = ["art-processional-objects-0001-iso-processional-cross"]
+corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "Rejected for consumer use because the prompt's no-corpus constraint produced a bare cross contrary to the checked crucifix identity."]
+baked_content_audit = ["One complete staff cross with one lower endpoint is visible.", "No corpus, text, person, action, dimensions, heraldry, ornate fantasy, crop, duplication, color, or watermark is visible.", "The absent corpus is the decisive factual defect."]
+tex_overlays = []
+consumer_plate_ids = []
+consumer_edition_ids = []
+rights = "Project-generated raster made without a supplied reference image. Exact prompt intent, built-in mode, received and normalized hashes, transformation, factual rejection, and no-consumer disposition are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2086679
+sha256 = "c51202ba8c2d47cc8562fc1497cd1de307fcbc25bbc48e54b6652219a88fc52b"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v2.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 502015
+sha256 = "9e62bc3462a773391e6f3a908edb1c174cf2d556c292d97523c5e254ae21d258"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "failed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "failed"
+release = "failed"
+
+[[artworks]]
+id = "art-processional-cross-v3-crucifix"
+object_ids = ["obj-processional-cross"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach recognition of one source-bounded processional crucifix on a long non-self-standing staff without presenting one morphology as universal."
+depicted_state = "One complete restrained crucifix on one long staff, isolated, frontal, and not in use."
+source_controlled_features = ["The checked Fortescue source controls the crucifix identity, long carrying staff, and non-self-standing relation.", "The corrected asset visibly includes a restrained corpus and one complete staff with no foot or self-standing base."]
+deliberate_omissions = ["No claim that the depicted corpus style, crossbar ends, material, dimensions, proportions, ornament, mounting transition, or shaft profile is universal or prescribed.", "No INRI, text, labels, arrows, numerals, dimensions, heraldry, bearer, hand, action, architecture, stand, route, grip, or graphic suffering.", "No claim of universal or Missal-required use at a priest's High Mass."]
+brief = "One complete traditional Roman processional crucifix on a long staff as a restrained frontal graphite museum-catalog study."
+exact_prompt = "single traditional Roman processional crucifix on long staff, entire cross/corpus/mount/staff visible, graphite monochrome warm-white paper, centered portrait frontal-neutral, no bearer/action/text/INRI/dimensions/heraldry/ornate fantasy, representative morphology not universal, avoid bare cross and graphic suffering."
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v3.png"
+reference_ids = ["src-processional-cross-fortescue-form", "src-processional-cross-fortescue-use"]
+precursor_ids = ["art-processional-cross-v2-bare-rejected", "art-processional-objects-0001-iso-processional-cross"]
+corrections = ["Regenerated with an explicit restrained corpus after rejecting the bare-cross candidate.", "The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "Preserved the legacy raster and rejected first candidate as distinct versioned assets."]
+baked_content_audit = ["One complete crucifix, restrained corpus, cross, mounting transition, shaft, and lower endpoint are visible.", "The endpoint has no foot or self-standing support.", "No bearer, hand, action, text, INRI, dimensions, heraldry, other object, architecture, stand, graphic suffering, crop, duplication, color, or watermark is visible.", "The corpus style and ornament are representative and do not establish one universal morphology."]
+tex_overlays = ["English and Latin headwords, stable object ID, optional/local status, required-stand relation, representative-form boundary, handler and safety notes, source keys, and scale qualification remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image. Exact prompt intent, built-in mode, received and normalized hashes, transformation, corrections, source ceiling, consumers, and checks are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 2113633
+sha256 = "6102ede4d34a31ba39253ad203173a992e7ead3097a16088a62ceea635b647ac"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v3.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 494461
+sha256 = "5e19f4e826e3f138433d1a692ce398f5420c6cf1491e13785e48a0f74258302b"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
 [artworks.reviews]
 factual = "passed"
 visual = "passed"

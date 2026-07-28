@@ -51,6 +51,7 @@ footless elevation torch and now contains thirty-one records. It
 distinguishes rack storage from the acolyte
 candlestick's self-standing relation and leaves dimensions, material,
 ornament, number, arrangement, flame handling, and local storage geometry to
-the checked source or trained local practice. The processional cross remains
-excluded because its held raster lacks a complete surviving custody and
-provenance account. The edition creates no external-review gate.
+the checked source or trained local practice. The processional cross now
+enters with a corrected crucifix-bearing pencil asset, its appointed-stand
+relation, and explicit optional/local and representative-form limits. The
+edition creates no external-review gate.
