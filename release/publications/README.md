@@ -23,7 +23,6 @@ authorization; a hold record uses `null`. PDF hashes and aggregate counts are
 not tracked here. The public artifact generates its current PDF hashes,
 publication inventory, counts, and checksums from the installed files.
 
-During migration, a local record overrides the matching legacy row in
-`release/public-alpha.json`. Publications without a local record continue to
-use the legacy row. This permits one publication to migrate without rewriting
-another publication's release data or the shared historical rights tables.
+The active inventory consists of these local records. The loader remains
+compatible with an unmigrated legacy row, but migration does not rewrite
+another publication's record or the shared historical rights tables.

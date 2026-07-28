@@ -522,8 +522,10 @@ def publication_map(
     if primary is None or providers is None:
         primary, providers = declared_providers(manifest)
     publications = manifest.get("publications")
+    if publications is None:
+        publications = []
     if not isinstance(publications, list):
-        raise ReleaseError("manifest publications must be a list")
+        raise ReleaseError("manifest publications must be a list when present")
     result: dict[tuple[str, str], dict] = {}
     for number, publication in enumerate(publications, start=1):
         if not isinstance(publication, dict):
@@ -698,8 +700,10 @@ def validate_manifest(
         )
 
     gate_definitions = manifest.get("gates")
-    if not isinstance(gate_definitions, dict) or not gate_definitions:
-        errors.append("manifest gates must be a nonempty object")
+    if gate_definitions is None:
+        gate_definitions = {}
+    elif not isinstance(gate_definitions, dict):
+        errors.append("manifest gates must be an object when present")
         gate_definitions = {}
 
     counts: Counter[str] = Counter()
@@ -1803,12 +1807,13 @@ def build_site(
 
 def print_policy_summary(manifest: dict, publications: dict[tuple[str, str], dict]) -> None:
     counts = Counter(publication["status"] for publication in publications.values())
+    alpha_count = counts["release"] + counts["review"]
     print(
         "public-alpha policy valid: "
         f"{len(publications)} publications "
-        f"({counts['release']} release, {counts['review']} review, {counts['hold']} hold)"
+        f"({alpha_count} alpha, {counts['hold']} hold)"
     )
-    if counts["release"] == 0:
+    if alpha_count == 0:
         print("public build is fail-closed: no PDFs are currently cleared for distribution")
     else:
         authorization = artifact_authorization(manifest, included_publications(publications, False))

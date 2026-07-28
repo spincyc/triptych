@@ -259,6 +259,39 @@ def add_publication(
     return publication_id
 
 
+def migrate_publications(manifest: dict) -> int:
+    """Move legacy rows to independent records without touching hash tables."""
+    authorizations = list(manifest.get("authorizations", {}))
+    if len(authorizations) != 1:
+        raise BindingError("expected exactly one manifest authorization")
+    migrated = 0
+    for publication in manifest.get("publications", []):
+        publication_id = publication.get("id")
+        provider, leaf = split_id(manifest, publication_id)
+        legacy_status = publication.get("status")
+        status = "hold" if legacy_status == "hold" else "alpha"
+        record = {
+            "schema_version": 1,
+            "id": leaf,
+            "catalog": publication.get("catalog"),
+            "status": status,
+            "authorization": authorizations[0] if status == "alpha" else None,
+        }
+        destination = ROOT / PUBLICATION_RECORD_ROOT / provider / f"{leaf}.json"
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        encoded = json.dumps(record, indent=2) + "\n"
+        if destination.exists() and destination.read_text(encoding="utf-8") != encoded:
+            raise BindingError(f"conflicting publication record: {destination.relative_to(ROOT)}")
+        if not destination.exists():
+            destination.write_text(encoded, encoding="utf-8")
+            migrated += 1
+    manifest.pop("publications", None)
+    manifest.pop("expected_counts", None)
+    manifest.pop("gates", None)
+    save_manifest(manifest)
+    return migrated
+
+
 def report_status(manifest: dict) -> int:
     stale = 0
     authorization = single_authorization(manifest)
@@ -283,6 +316,7 @@ def main(argv: list[str]) -> int:
         help="reconcile the recorded inputs with the renderer's recognized set",
     )
     subparsers.add_parser("status")
+    subparsers.add_parser("migrate-publications")
     approve_parser = subparsers.add_parser("approve")
     approve_parser.add_argument("--note", required=True)
     approve_parser.add_argument("--timezone", default="America/Chicago")
@@ -301,6 +335,9 @@ def main(argv: list[str]) -> int:
             print(f"release bindings exact: {len(changes)} change(s)")
         elif args.command == "status":
             return report_status(manifest)
+        elif args.command == "migrate-publications":
+            migrated = migrate_publications(manifest)
+            print(f"migrated {migrated} publication record(s)")
         elif args.command == "approve":
             approve(manifest, args.note, args.timezone)
             print("supplement recorded and bindings refreshed")

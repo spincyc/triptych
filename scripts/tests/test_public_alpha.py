@@ -107,7 +107,6 @@ class PublicAlphaTest(unittest.TestCase):
                     "conditions": ["no-project-initiated-promotion"],
                 }
             },
-            "gates": {"rights": "Rights review is required."},
             "publications": [
                 {
                     "id": "work",
@@ -120,13 +119,6 @@ class PublicAlphaTest(unittest.TestCase):
                     },
                 }
             ],
-            "expected_counts": {
-                "publications": 1,
-                "release": 1,
-                "review": 0,
-                "hold": 0,
-                "providers": {"gpt": 1},
-            },
         }
 
     def write_manifest(self) -> None:
@@ -174,34 +166,16 @@ class PublicAlphaTest(unittest.TestCase):
                 "id": publication_id,
                 "status": status,
                 "catalog": catalog,
-                "gates": ["rights"],
+                "gates": [],
                 "approval": None,
             }
         )
-        self.refresh_expected_counts()
 
     def publication_provider_and_leaf(self, publication_id: str) -> tuple[str, str]:
         if ":" in publication_id:
             provider, leaf = publication_id.split(":", 1)
             return provider, leaf
         return self.manifest["provider"], publication_id
-
-    def refresh_expected_counts(self) -> None:
-        statuses = [
-            publication["status"] for publication in self.manifest["publications"]
-        ]
-        providers = self.manifest.get("providers", [self.manifest["provider"]])
-        provider_counts = {provider: 0 for provider in providers}
-        for publication in self.manifest["publications"]:
-            provider, _ = self.publication_provider_and_leaf(publication["id"])
-            provider_counts[provider] += 1
-        self.manifest["expected_counts"] = {
-            "publications": len(statuses),
-            "release": statuses.count("release"),
-            "review": statuses.count("review"),
-            "hold": statuses.count("hold"),
-            "providers": provider_counts,
-        }
 
     def add_claude_publication(
         self,
@@ -228,7 +202,7 @@ class PublicAlphaTest(unittest.TestCase):
                 "pdf_sha256": "0" * 64,
             }
         else:
-            gates = ["rights"]
+            gates = []
             approval = None
         self.manifest["publications"].append(
             {
@@ -239,7 +213,6 @@ class PublicAlphaTest(unittest.TestCase):
                 "approval": approval,
             }
         )
-        self.refresh_expected_counts()
 
     def authorize_current_inputs(self) -> None:
         """Make the synthetic authorization exactly match the fixture files."""
@@ -853,17 +826,8 @@ class PublicAlphaTest(unittest.TestCase):
                 "id": "review-work",
                 "status": "review",
                 "catalog": "library/test.md",
-                "gates": ["rights"],
+                "gates": [],
                 "approval": None,
-            }
-        )
-        self.manifest["expected_counts"].update(
-            {
-                "publications": 2,
-                "release": 1,
-                "review": 1,
-                "hold": 0,
-                "providers": {"gpt": 2},
             }
         )
         self.authorize_current_inputs()
@@ -1252,7 +1216,7 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_legacy_expected_counts_do_not_gate_discovered_publications(self) -> None:
         self.authorize_current_inputs()
-        self.manifest["expected_counts"]["providers"] = {"gpt": 5}
+        self.manifest["expected_counts"] = {"providers": {"gpt": 5}}
 
         publications = self.tool.validate_manifest(self.manifest)
 
@@ -1264,7 +1228,7 @@ class PublicAlphaTest(unittest.TestCase):
                 "id": "other:work",
                 "status": "hold",
                 "catalog": "library/test.md",
-                "gates": ["rights"],
+                "gates": [],
                 "approval": None,
             }
         )

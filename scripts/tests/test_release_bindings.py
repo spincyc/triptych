@@ -78,13 +78,6 @@ class ReleaseBindingsTests(unittest.TestCase):
             "release_id": "public-alpha",
             "provider": "gpt",
             "providers": ["gpt", "claude"],
-            "expected_counts": {
-                "publications": 2,
-                "release": 2,
-                "review": 0,
-                "hold": 0,
-                "providers": {"claude": 1, "gpt": 1},
-            },
             "authorizations": {
                 "auth-1": {
                     "rights_record": "release/rights/record.md",
@@ -155,13 +148,12 @@ class ReleaseBindingsTests(unittest.TestCase):
         manifest = self.read_manifest()
         review = manifest["publications"][0]
         review["status"] = "review"
-        review["gates"] = ["independent-review"]
+        review["gates"] = []
         review["approval"] = None
         review["review_distribution"] = {
             "authorization": "auth-1",
             "pdf_sha256": sha(b"gpt pdf v1"),
         }
-        manifest["expected_counts"].update({"release": 1, "review": 1})
         self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
         self.tool.refresh(self.tool.load_manifest())
 
@@ -180,7 +172,7 @@ class ReleaseBindingsTests(unittest.TestCase):
 
     def test_refresh_leaves_legacy_expected_counts_untouched(self):
         manifest = self.read_manifest()
-        manifest["expected_counts"]["publications"] = 99
+        manifest["expected_counts"] = {"publications": 99}
         self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
         changes = self.tool.refresh(self.tool.load_manifest())
         self.assertNotIn("expected_counts", changes)
@@ -258,6 +250,26 @@ class ReleaseBindingsTests(unittest.TestCase):
                 "library/faith.md",
                 "hold",
             )
+
+    def test_migrate_publications_creates_local_records_and_prunes_aggregates(self):
+        manifest = self.read_manifest()
+        manifest["expected_counts"] = {"publications": 2}
+        self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+        migrated = self.tool.migrate_publications(self.tool.load_manifest())
+
+        self.assertEqual(2, migrated)
+        manifest = self.read_manifest()
+        self.assertNotIn("publications", manifest)
+        self.assertNotIn("expected_counts", manifest)
+        gpt_record = json.loads(
+            (
+                self.root
+                / "release/publications/gpt/articles/example.json"
+            ).read_text()
+        )
+        self.assertEqual("alpha", gpt_record["status"])
+        self.assertEqual("auth-1", gpt_record["authorization"])
+        self.assertNotIn("pdf_sha256", gpt_record)
 
     def test_approve_records_note_and_refreshes(self):
         self.claude_pdf.write_bytes(b"claude pdf v3")
