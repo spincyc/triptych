@@ -84,6 +84,39 @@ class DictionaryGeneratorTests(unittest.TestCase):
         self.assertNotIn("Evidence caveat", renderer)
         self.assertNotIn(r"\section{Coverage}", shell)
 
+    def test_communion_plate_split_keeps_generic_and_bespoke_consumers_distinct(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "out"
+            self.generate(output)
+            isolated = (
+                "shared/artwork/pencil/"
+                "RPD-FIG-sacred-vessels-0007-iso-communion-plate.png"
+            )
+            comparison = (
+                "shared/artwork/pencil/"
+                "RPD-FIG-sacred-vessels-0004-communion-plate-paten-comparison.png"
+            )
+            for edition in (
+                "ed-comprehensive",
+                "ed-general-reader",
+                "ed-sacristan",
+                "ed-mc-trainer",
+                "ed-pontifical",
+            ):
+                text = (output / f"{edition}.tex").read_text()
+                record = text.split(
+                    r"\RSDObjectRecord{obj-communion-plate}", 1
+                )[1].split(r"\RSDEndObjectRecord", 1)[0]
+                self.assertIn(isolated, record, edition)
+                self.assertNotIn(comparison, record, edition)
+                self.assertNotIn("{obj-paten}", record, edition)
+
+            altar_main = (
+                DICTIONARY_ROOT / "altar-server/main.tex"
+            ).read_text()
+            self.assertIn(comparison, altar_main)
+            self.assertNotIn(isolated, altar_main)
+
     def test_compact_renderer_fits_a_long_latin_and_key_line(self):
         renderer = (
             DICTIONARY_ROOT / "shared/generated-record-renderer.tex"

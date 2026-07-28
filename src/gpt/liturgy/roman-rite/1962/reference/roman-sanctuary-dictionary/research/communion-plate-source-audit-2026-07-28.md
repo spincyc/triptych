@@ -57,3 +57,19 @@ received and normalized hashes, exact prompt, source controls, omissions,
 corrections, rights, and consumer are recorded in `artwork-manifest.toml`.
 The 30-page PDF was built to settled references, visually inspected on every
 page and at full size on the new entry, and installed byte-identically.
+
+## Isolated generic-edition derivative
+
+The five generated canonical-alpha editions use a versioned isolated
+derivative rather than repeating the priest's paten on the Communion-plate
+page. The bespoke altar-server page remains the sole consumer of the original
+comparison raster and retains its explicit not-to-common-scale teaching.
+
+The derivative crops the reviewed comparison at `1050x680+20+120`, excluding
+the paten, then gives the crop a soft transparent perimeter. Its exact
+deterministic ImageMagick command is recorded in `artwork-manifest.toml`.
+Grayscale sample absolute error against the exact source crop is zero: only
+alpha changes. The resulting 1050-by-680 8-bit grayscale-alpha PNG is 453,342
+bytes with SHA-256
+`062e1473023a680d3f54b53af6efa55bf3ac6a4cd6812ee5b5b1b78f048bdb53`.
+This separation adds no morphological or liturgical claim.

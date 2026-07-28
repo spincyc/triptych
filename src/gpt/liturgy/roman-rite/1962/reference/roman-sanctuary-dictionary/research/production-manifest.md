@@ -518,6 +518,40 @@ catalog-exemplar paten plate with a Missal-controlled prepared inset. It
 textually distinguishes the Communion plate while preserving the unresolved
 period-morphology boundary; it does not admit a Communion-plate drawing.
 
+A later object-separation checkpoint leaves the bespoke altar-server
+Communion-plate/paten comparison intact while routing the five generated
+canonical-alpha editions to an isolated Communion-plate derivative. The crop
+preserves the precursor's grayscale samples exactly and changes only its
+perimeter alpha, preventing both duplicated paten imagery and a floating
+rectangular edge. The resulting
+`RPD-FIG-sacred-vessels-0007-iso-communion-plate.png` is a 1050-by-680
+8-bit grayscale-plus-alpha PNG of 453,342 bytes with SHA-256
+`062e1473023a680d3f54b53af6efa55bf3ac6a4cd6812ee5b5b1b78f048bdb53`.
+Its exact crop, precursor identity, alpha transformation, zero-error grayscale
+comparison, rights basis, and object-content audit are recorded under
+`art-communion-plate-isolated` in `artwork-manifest.toml`.
+
+Every page of the comprehensive, General Reader, sacristan, MC/trainer, and
+pontifical generated editions was inspected, with each isolated
+Communion-plate card checked at rendered size for identity, legibility,
+clipping, duplication, and page-edge blending. Every page of the bespoke
+altar-server edition was also inspected, with its retained
+Communion-plate/paten comparison checked at rendered size. The five generated
+cards show only the handled plate, with no paten residue or floating
+rectangle; the bespoke caption still identifies both comparison objects and
+their non-common scale. Logs have no fatal error, undefined reference,
+overfull box, or unresolved rerun request. Build and installed bytes are
+identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 14 | 23,467,153 | `7f21cbcc894019cbe3624c339299d829bfc099ebf6bc376ce0ed080045708c0b` |
+| Altar server | 33 | 18,749,975 | `8e7dfa772b7751a5043a739305aebecd97d4ef28acd09f6563df54e9c220f648` |
+| Sacristan | 13 | 23,505,779 | `cc1ec94b427cbe9aa482932616df931362429df6eaea539baae2a8dadba479f9` |
+| MC and trainer | 13 | 23,507,979 | `3bf5272e074c38e59157627e81032fb406d772da16d55b6fdb6bbfe8cf706e89` |
+| General reader | 12 | 22,733,441 | `d77d99b93fed332d3e47d050d4ee742019833fe5877438821a56c5ba80552945` |
+| Pontifical ceremonies | 11 | 21,733,310 | `76e04b6284622a8211e1971a11c6decdc1812b1de126a5174b76b19a83335c68` |
+
 The next altar-server tranche adds the source-audited Epistle and Gospel books
 as the first Solemn-Mass recognition pair. Its TeX-native relational plate uses
 generic unornamented graphite-style book symbols rather than representative

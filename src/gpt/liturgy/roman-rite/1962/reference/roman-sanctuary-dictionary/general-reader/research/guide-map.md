@@ -35,10 +35,10 @@ The paired altar-cruets page identifies the wine-and-water service pair while
 showing only one representative handled form. It does not assert a fixed
 material, marking, closure, tray, order, or Latin headword.
 
-The Communion-plate page identifies the distinct under-chin object beside the
-smaller priest's paten. The paten also has its own record; the two are not
-shown to common scale, and the dated one-handle exemplar is not a universal
-form.
+The Communion-plate page isolates the distinct under-chin object so its
+separate paten record is not duplicated on the same generated page. The
+dated one-handle exemplar is not a universal form; the bespoke altar-server
+lesson retains the explicit not-to-common-scale comparison.
 
 The carried-light pages distinguish the footed, self-standing acolyte
 candlestick from the footless elevation torch. Their drawings are

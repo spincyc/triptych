@@ -314,6 +314,14 @@ establish a server handling claim. The later chalice-and-paten checkpoint
 admits the canonical paten record through a different, separately controlled
 plate and leaves this figure's not-to-common-scale boundary unchanged.
 
+The later object-separation pass restricts that comparison figure to the
+bespoke altar-server edition. The five generated editions instead consume an
+isolated crop whose grayscale samples are identical to the Communion-plate
+region of the reviewed comparison and whose only added treatment is a soft
+transparent perimeter. This consumer split adds no source claim and prevents
+the separately admitted paten from being duplicated on a generic
+Communion-plate page.
+
 ## Processional-cross artwork reconciliation — 2026-07-28
 
 The canonical identity and optional/local status remain controlled by the

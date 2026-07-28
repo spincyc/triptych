@@ -53,9 +53,10 @@ The paired altar-cruets plate teaches a small wine-and-water service pair at
 common hand scale while leaving material, markings, closure, handle, tray,
 left-right order, and Latin terminology unasserted.
 
-The Communion-plate page distinguishes the Missal's under-chin
-*patina* from the priest's separately admitted paten. The one-handle form is
-one dated commercial exemplar and the comparison is not to common scale.
+The Communion-plate page isolates the Missal's under-chin *patina* rather
+than duplicating the priest's separately admitted paten. The one-handle form
+is one dated commercial exemplar; the bespoke altar-server lesson retains
+the explicit not-to-common-scale comparison.
 
 The complete reader order remains the order declared in
 `shared/schema/edition-selections.toml`. This alpha does not claim that the

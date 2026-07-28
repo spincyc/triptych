@@ -368,6 +368,14 @@ audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1693, height_px = 929, bit_depth = 8, color_mode = "grayscale", bytes = 446570, sha256 = "54b95d36083a0af26a2aa1134288a0ba5ac6cf2abb6a6734dc6cb7041b8e5946" }
 
 [[asset_files]]
+id = "file-rpd-communion-plate-isolated"
+path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0007-iso-communion-plate.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/communion-plate-source-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1050, height_px = 680, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 453342, sha256 = "062e1473023a680d3f54b53af6efa55bf3ac6a4cd6812ee5b5b1b78f048bdb53" }
+
+[[asset_files]]
 id = "file-rpd-altar-cruet"
 path = "shared/artwork/pencil/RPD-FIG-service-objects-0001-iso-cruet.png"
 state = "accepted-for-priestly-review"
@@ -2638,6 +2646,72 @@ print = "passed"
 rights = "passed"
 consumer = "passed"
 release = "passed"
+
+[[artworks]]
+id = "art-communion-plate-isolated"
+object_ids = ["obj-communion-plate"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Give the five generated canonical-alpha editions a single-object Communion-plate figure while preserving the bespoke altar-server comparison as a separate consumer."
+depicted_state = "One plain shallow round catching surface with exactly one projecting wood handle, isolated on a transparent soft boundary."
+source_controlled_features = [
+  "The 1962 Missal, Ritus servandus X.7, controls the distinct under-chin patina and fragment-catching function.",
+  "Hirten Church Goods 1952, No. 7701, controls one dated round 7 3/4-inch commercial form with a wood handle.",
+  "The pixels depicting the Communion plate derive unchanged from the reviewed project-generated comparison raster.",
+]
+deliberate_omissions = [
+  "The smaller priest's paten from the precursor comparison is omitted.",
+  "No communicant, hand, chin, chalice, host, fragment, ritual action, lavabo article, domestic tray context, text, or frame.",
+  "No exact rim height, exact depth, metal, color, ornament, universal silhouette, or two-handle No. 7702 form.",
+]
+brief = "Deterministic isolated crop of the Communion plate from the reviewed project-generated comparison."
+exact_prompt = '''No generative prompt was used. Exact deterministic derivation command:
+magick SRC -crop 1050x680+20+120 +repage \( +clone -colorspace gray -fx 'min(max(0,(1-u)/(1-220/255)),min(1,min(min(i,j),min(w-1-i,h-1-j))/48))' \) -alpha off -compose CopyOpacity -composite -define png:color-type=4 -depth 8 DEST'''
+generator = "ImageMagick deterministic crop and alpha-boundary transformation; no generative model."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0007-iso-communion-plate.png"
+reference_ids = ["src-missale-1962-communion-plate", "src-hirten-1952-communion-patens"]
+precursor_ids = ["art-communion-plate-paten-comparison"]
+corrections = [
+  "Cropped the Communion-plate region at 1050x680+20+120, excluding the priest's paten.",
+  "Derived a soft perimeter alpha mask from near-white luma and a 48-pixel edge ramp.",
+  "Grayscale sample absolute error against the exact source crop is zero; the transformation changes only alpha.",
+]
+baked_content_audit = [
+  "Exactly one plain shallow round handled catching surface is visible.",
+  "No priest's paten, second object, text, arrow, label, watermark, border, person, hand, host, fragment, lavabo equipment, cross, engraving, or ornament is visible.",
+  "The transparent soft boundary prevents a floating rectangular page edge.",
+]
+tex_overlays = ["Names, stable ID, under-chin function, handling boundaries, catalog dimensions, two-handle dated variant, confusables, safety, and sources are TeX-owned."]
+consumer_plate_ids = ["plt-service-objects-communion-plate-isolated"]
+consumer_edition_ids = ["ed-comprehensive", "ed-general-reader", "ed-sacristan", "ed-mc-trainer", "ed-pontifical"]
+rights = "Deterministic crop and alpha-boundary derivative of a project-generated raster made without a reference image. Its exact command, unchanged grayscale-content check, source ceiling, normalized identity, and consumers are recorded here. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1050
+height_px = 680
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 260336
+sha256 = "463c4d7e08acac65c30062bba59042594a3addb072253227e9b9e4e557c3058d"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0007-iso-communion-plate.png"
+width_px = 1050
+height_px = 680
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 453342
+sha256 = "062e1473023a680d3f54b53af6efa55bf3ac6a4cd6812ee5b5b1b78f048bdb53"
+max_placement_width_in = 3.50
+max_placement_height_in = 2.26
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "pending"
+rights = "passed"
+consumer = "passed"
+release = "pending"
 
 [[artworks]]
 id = "art-sacristy-0001-representative-cross"

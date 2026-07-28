@@ -45,9 +45,12 @@ hashes, grayscale-only transformation, corrections, exclusions, and consumer
 checks are recorded in the canonical artwork manifest and
 `communion-plate-source-audit-2026-07-28.md`. It is distributed under the
 repository's project-content terms. The 1952 Hirten catalog and Met records
-supply evidence only; no third-party image pixel is reproduced. Promotion to
-the five generic editions reuses the exact installed raster and does not
-change this disposition.
+supply evidence only; no third-party image pixel is reproduced. The bespoke
+altar-server edition retains that comparison. The five generic editions use
+a deterministic crop of its Communion-plate region with a soft alpha
+perimeter; exact command, source-crop identity, zero grayscale sample error,
+and derived hash are recorded in the same manifest. The derivative therefore
+does not change the project-content disposition.
 
 The four books-and-supports pencil rasters
 `art-altar-missal-on-stand`, `art-missal-cushion-isolated`,

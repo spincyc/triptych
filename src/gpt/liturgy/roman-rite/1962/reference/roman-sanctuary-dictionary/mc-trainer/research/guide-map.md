@@ -40,8 +40,9 @@ relationship without converting the selected server model, one representative
 handled form, local markings, tray, or left-right order into a universal
 assignment. The Communion-plate page preserves the under-chin function,
 level-handling boundary, and fragment safety while leaving server assignment
-and morphology local or source-bounded; its smaller priest's paten also has a
-separate source-bounded record. The chalice and paten reuse one controlled
+and morphology local or source-bounded. Its isolated figure avoids duplicating
+the separately admitted priest's paten; the bespoke altar-server lesson keeps
+the explicit comparison. The chalice and paten reuse one controlled
 catalog exemplar to teach identity and the prepared relationship, not a
 universal morphology, handoff, transfer, touching, or recovery procedure. The
 thirty-four-record canonical alpha gate requires

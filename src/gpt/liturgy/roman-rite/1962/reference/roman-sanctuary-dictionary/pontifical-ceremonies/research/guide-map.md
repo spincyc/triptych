@@ -50,8 +50,9 @@ handle, left-right arrangement, or Latin headword and brings the selection to
 twenty-two records.
 The Communion plate enters as an ordinary supporting object used when
 Communion is distributed, not as insignia or a distinct pontifical form. The
-one-handle morphology is a dated exemplar and the smaller priest's paten is
-comparison context only, bringing the selection to twenty-three records.
+one-handle morphology is a dated exemplar, and its isolated figure avoids
+duplicating the separately admitted priest's paten, bringing the selection
+to twenty-three records.
 The elevation torch enters as another ordinary supporting object used by
 torchbearers, not as pontifical insignia or a distinct pontifical form. Its
 unlit, footless figure and non-operational safety boundary bring the selection

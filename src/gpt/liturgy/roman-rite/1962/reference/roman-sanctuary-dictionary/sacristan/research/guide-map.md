@@ -40,10 +40,10 @@ prevalence, Roman prescription, a universal form, or an operating method;
 trained local fire-safety practice controls its use and storage. The paired
 altar cruets add the checked wine-and-water preparation relationship while
 leaving vessel material, closure, markings, tray, left-right order, and Latin
-terminology to source or local direction. The Communion-plate page adds the
-Missal-controlled under-chin identity while leaving storage, material,
+terminology to source or local direction. The Communion-plate page isolates
+the Missal-controlled under-chin object while leaving storage, material,
 dimensions, and handle count to local direction or the dated exemplar. The
-smaller priest's paten also has its own source-bounded record. The chalice and
+separately admitted priest's paten is not duplicated there; the chalice and
 paten reuse one catalog-exemplar plate and the Missal-controlled prepared
 relationship without prescribing a universal design, setup tolerance,
 transfer, touching, care, or purification method. The edition also admits the
