@@ -184,6 +184,27 @@ the accumulated reviewed grayscale artwork in this image-dominant alpha; no
 source artifact is embedded. Installed SHA-256:
 `9d333dab8fef9b860f1fa90fccc44156f3427e1ba116cd944c968ece1d1b7aed`.
 
+The elevation-torch follow-up replaces the held footed candidate with a fresh
+project-generated graphite figure whose narrow lower shaft has no foot, base,
+stand, rack, actor, flame, or handling pose. Fortescue's exact 1917 printed
+pp. 17 and 89--90 control the non-self-standing morphology, Elevation-service
+identity, and distinction from the acolytes' candlesticks. The exact 1962
+Missal, *Ritus servandus* VIII.8, is recorded as a negative control: it names
+the thurifer at the elevations but does not name torchbearers or torches. The
+entry therefore gives no universal number, arrangement, height, grip, or
+handling method and confines safety text to a non-operational supervision and
+clearance boundary.
+
+The resulting 18-page, nineteen-object bounded alpha was built for settled
+passes, rastered through the repository review helper, and visually inspected
+on every page. The elevation-torch page and both terminal pages were also
+inspected at full rendered size. The footless lower endpoint, unlit state,
+object identity, labels, and safety boundary are unambiguous; no content is
+clipped or overlapped. The PDF has embedded fonts and extractable text, and
+the log has no fatal error, undefined reference, or overfull box. Build and
+installed bytes are identical at 7,630,753 bytes. Installed SHA-256:
+`206e14d0508feeb2d5cb64e80eca1ab17f2c16d25266d5450ab5e1abd094d137`.
+
 ## Alpha readiness
 
 Each rebuilt leaf is alpha-eligible when the six current concerns pass. The

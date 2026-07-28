@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders eighteen source-audited records already present in the
+smaller: it renders nineteen source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -37,6 +37,7 @@ The image-dominant alpha contains:
 | `obj-epistle-book` | recognizes only | identify by the subdeacon's Solemn-Mass use, not the cover |
 | `obj-gospel-book` | recognizes only | distinguish the held-book Gospel sequence from a freestanding lectern |
 | `obj-acolyte-candlestick` | carries when appointed | footed carried light distinct from altar candlestick and footless elevation torch |
+| `obj-elevation-torch` | carries only when trained and assigned | footless non-self-standing Elevation light, distinct from entrance candlestick |
 | `obj-processional-cross` | optional local use | portable staff crucifix requires a stand; not universal or Missal-required for a priest's High Mass |
 | `obj-thurible` | trained thurifer only | distinguish three bowl-support chains from the separate central lid-lifting chain; cold rehearsal and hot-object boundary |
 | `obj-incense-boat` | handles only in an appointed route | container distinct from spoon, incense, and thurible |
@@ -63,9 +64,10 @@ than a third vessel.
 The carrying family reuses the empty footed-candlestick drawing only as a
 representative support form. The processional-cross drawing shows the
 source-controlled crucifix-and-long-staff identity; TeX supplies its required
-stand and optional/local status. The existing torch drawing remains held
-because its generated foot contradicts the verified feature that an elevation
-torch cannot stand alone.
+stand and optional/local status. The replaced elevation-torch drawing has a
+narrow footless shaft and cannot imply self-standing use. It remains an unlit
+representative form: TeX owns the Elevation-service timing, local-variation
+ceiling, safety boundary, and distinction from the acolytes' candlesticks.
 
 ## Artwork disposition
 
@@ -81,6 +83,7 @@ The alpha uses identity-checked or consumer-reviewed pencil assets including:
 - a freestanding lectern comparison; and
 - a marker-ribbon detail; and
 - the empty footed candlestick reused for the acolyte carrying family;
+- a footless, non-self-standing elevation torch shown unlit; and
 - a portable processional cross on a long non-self-standing staff; and
 - a neutral thurible component-recognition view.
 
@@ -124,7 +127,7 @@ remains unproved. See
 
 ## Reader order
 
-1. Compact Alpha title and exact eighteen-object boundary.
+1. Compact Alpha title and exact nineteen-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels
@@ -142,13 +145,16 @@ remains unproved. See
     subdeacon/deacon labels, and the ordinary held-book Gospel sequence.
 12. Acolyte-candlestick spread: footed carrying light and elevation-torch
     distinction.
-13. Optional processional-cross spread: local/customary status and required
+13. Elevation-torch spread: footless non-self-standing recognition,
+    Fortescue-bounded Elevation timing, local-variation ceiling, and
+    non-operational safety.
+14. Optional processional-cross spread: local/customary status and required
     stand.
-14. Thurible spread: component recognition, trained-thurifer boundary, cold
+15. Thurible spread: component recognition, trained-thurifer boundary, cold
     rehearsal, appointed resting place, and non-operational hot-object safety.
-15. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
+16. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
     relationship, local lay-server boundary, and non-operational heat safety.
-16. Source notes, scope and qualifications, generation metadata, and rights
+17. Source notes, scope and qualifications, generation metadata, and rights
    colophon.
 
 ## Source control

@@ -89,14 +89,6 @@ view = "isolated"
 workflow_state = "source-audited"
 
 [[artwork_links]]
-id = "art-processional-objects-0002-iso-torch"
-asset_file_id = "file-rpd-processional-torch"
-object_ids = ["obj-elevation-torch"]
-variant_ids = []
-view = "isolated"
-workflow_state = "held"
-
-[[artwork_links]]
 id = "art-incense-0001-closed-thurible"
 asset_file_id = "file-rpd-thurible"
 object_ids = ["obj-thurible"]
@@ -507,9 +499,9 @@ technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "gray
 [[asset_files]]
 id = "file-rpd-processional-torch"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png"
-state = "held"
-audit_record = "research/artwork-manifest.md"
-technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 141482, sha256 = "a78c9c0f78b959a12078729f0a42bbde604c12146faf27b2d2157ba33799b404" }
+state = "consumer-eligible"
+audit_record = "research/carried-lights-and-cross-source-audit-2026-07-28.md"
+technical = { width_px = 887, height_px = 1774, bit_depth = 8, color_mode = "grayscale", bytes = 308632, sha256 = "42515401346587f2daddc33d6ab6dc7d478483fda55817d69e1dae20ec3913f2" }
 
 [[asset_files]]
 id = "file-rpd-holy-water-vessel"
@@ -984,6 +976,69 @@ sha256 = "02c8142705916a8ce9c9dd55f75d37009bbcb54951bc7d931456e14b8e9c53d4"
 max_placement_width_in = 3.5
 max_placement_height_in = 4.375
 effective_dpi = 320.5
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-processional-objects-0002-iso-torch"
+object_ids = ["obj-elevation-torch"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Distinguish a footless, non-self-standing elevation torch from footed acolyte and altar candlesticks."
+depicted_state = "One isolated unlit elevation torch with a narrow lower shaft and no foot, base, stand, actor, or rack."
+source_controlled_features = [
+  "Fortescue, printed p. 17, controls the absence of a foot and the resulting inability to stand alone.",
+  "Fortescue, printed pp. 89-90, controls the elevation-service identity rather than an entrance use.",
+]
+deliberate_omissions = [
+  "No flame, actor, grip, rack, procession, number, arrangement, or handling technique.",
+  "No claim for material, dimensions, ornament, proportions, or one universal silhouette.",
+  "The 1962 Missal's Ritus servandus VIII.8 names the thurifer at the elevations but not torchbearers or elevation torches.",
+]
+brief = "Text-free monochrome graphite isolated elevation torch with a plain narrow non-self-standing lower shaft."
+exact_prompt = """Use case: scientific-educational
+Asset type: monochrome altar-server pictorial-dictionary object figure
+Primary request: Create one isolated elevation torch for the 1962 Roman Rite, shown unlit and not in use. It is a long, slender, hand-carried candle support whose lower end is a plain narrow shaft with absolutely no foot, base, pedestal, legs, flare, stand, or self-standing support; it cannot stand alone and would require rack storage. At the top, show a simple wax candle in a restrained socket with only a small practical wax catcher. Keep the form neutral and representative, without asserting a specific material, dimension, ornament, or universal silhouette.
+Scene/backdrop: pure white page background, no floor plane, no cast shadow, no rack, no hand, no person, no architecture
+Style/medium: restrained graphite pencil drawing, grayscale, fine controlled linework and light hatching, matching a scholarly hand-drawn object dictionary
+Composition/framing: full object visible vertically, centered, generous white margins; lower shaft endpoint clearly visible and narrow, making non-self-standing morphology unmistakable
+Constraints: exactly one object; text-free; unlit; no labels, letters, numerals, arrows, borders, measurements, watermark, or semantic marks
+Avoid: any foot or base of any kind; any self-standing implication; altar candlestick; acolyte candlestick; processional cross; rack; multiple torches; flame; smoke; hand grip or handling demonstration; ornate invented details; photorealism; sepia or colored tones"""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Replaced the rejected footed candidate with a fresh generation.", "Converted selected output to stripped 8-bit grayscale PNG; no content edit."]
+baked_content_audit = ["No text, arrows, labels, watermark, border, color, flame, actor, rack, floor, or cast shadow.", "The lower shaft ends narrowly with no foot, base, flare, pedestal, legs, or self-standing support.", "The small wax catcher is illustrative and does not establish one required form."]
+tex_overlays = ["Names, non-self-standing distinction, service timing, local-variation ceiling, handling boundary, safety notice, and source notes remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer are recorded here. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 887
+height_px = 1774
+bit_depth = 8
+color_mode = "rgb"
+bytes = 757197
+sha256 = "f5e86045e340a5e57087f9180dc4ce46656c935034cd193074bbcd7f86483c5b"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png"
+width_px = 887
+height_px = 1774
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 308632
+sha256 = "42515401346587f2daddc33d6ab6dc7d478483fda55817d69e1dae20ec3913f2"
+max_placement_width_in = 1.71
+max_placement_height_in = 3.42
+effective_dpi = 518.7
 [artworks.reviews]
 factual = "passed"
 visual = "passed"
