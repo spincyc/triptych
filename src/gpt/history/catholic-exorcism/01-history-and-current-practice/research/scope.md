@@ -56,9 +56,13 @@ Orthodox law or practice, every local Western ritual, the frequency or outcomes
 of major exorcism, or every historical demonology. Latin canon 1172 is not
 projected onto Eastern Catholics. Remaining edition-level gaps include the
 composition and exact edition control of the church-order complex conventionally
-called *Apostolic Tradition*, exact PRG ordines and pages, and a representative
-ordinal/formula comparison. Unbound patristic and conciliar leads are not used
-as publication evidence. These ceilings restrict the published claims.
+called *Apostolic Tradition*, manuscript collation for the PRG, and a
+representative formula comparison. The older Ballerini *Statuta* witness is
+exact-controlled only for book delivery and ordinal sequence; Munier's
+protected CCSL 148 reconstruction remains unacquired, so its exact text,
+apparatus, numbering, versional choices, stemma, and Gennadius attribution are
+not audited. Unbound patristic and conciliar leads are not used as publication
+evidence. These ceilings restrict the published claims.
 
 ## Language, editions, and terminology
 

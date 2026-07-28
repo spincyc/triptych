@@ -208,6 +208,32 @@ routes, findings, and limits are recorded in
   with modern major exorcism, or operational use. Munier's reconstructed
   *Statuta ecclesiae antiqua*, a named PRG-family manuscript, and the
   representative cross-genre comparison remain open.
+- *Statuta ecclesiae antiqua*, Ballerini editorial text as reprinted in
+  Migne, *Patrologia Latina* 56 (Paris, 1850), cols. 887–888, item 7/XCV,
+  artifact PDF p. 450. The exact 612-page Wikimedia Commons scan was acquired
+  and hashed (`fb4196b0…04c`); the page image was inspected directly. The
+  bounded item places episcopal delivery of a booklet containing exorcisms
+  inside a recapitulation of ordination offices. This controls only
+  book-delivery and sequence architecture in this older edited witness; no
+  operative wording is reproduced, and its apparatus was not collated.
+- Friedrich Maassen, *Geschichte der Quellen und der Literatur des
+  canonischen Rechts im Abendlande*, vol. 1 (Graz, 1870), printed
+  pp. 382–394/PDF pp. 460–472. The exact Internet Archive PDF was acquired,
+  hashed (`ae41fc70…a27`), and inspected. Maassen documents materially
+  different titles, orderings, and collection settings in the Hispana and
+  multiple Gallic, systematic, and Italian collections and rejects the
+  Carthage 398/418 attribution. This is a dated transmission study, not the
+  present critical text or a stemma.
+- MGH *Clavis canonum*, “Statuta ecclesiae antiqua,” exact English web state
+  acquired, hashed, and inspected 2026-07-28. The notice identifies a small
+  mid-fifth-century Gallic collection not extant independently and
+  reconstructable only from later compilers; it reports, rather than proves
+  here, Munier's attribution to Gennadius. Charles Munier's CCSL 148,
+  pp. 166–185, is protected and was not lawfully acquired. Its exact text,
+  apparatus, numbering, versional choices, stemma, and Gennadius attribution
+  remain unaudited. The checked *Statuta*, PRG, Parker, and 1895 witnesses are
+  compared typologically only: no formula, textual identity, direct descent,
+  practice, frequency, efficacy, or operational use is inferred.
 - Cambridge, Corpus Christi College, Parker Library MS 79, exact Stanford
   IIIF manifest and width-2000 images of fols. 43r–43v acquired, hashed, and
   visually inspected 2026-07-28. The manifest identifies a pontifical made in

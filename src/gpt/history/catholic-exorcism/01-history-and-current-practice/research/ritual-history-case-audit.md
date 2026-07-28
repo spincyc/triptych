@@ -321,6 +321,17 @@ a freestanding collection and is reconstructed from later compilers. The
 modern literature also cautions against treating Vogel--Elze's editorial PRG
 as one uncomplicated tenth-century exemplar.
 
+The older Ballerini text of the *Statuta ecclesiae antiqua*, as reprinted in
+PL 56, cols. 887–888, item 7/XCV, is now exact-controlled from artifact PDF
+p. 450. It supports only a sequence of ordination offices and episcopal
+delivery of a booklet containing exorcisms. Maassen's exact 1870
+pp. 382–394 and the current MGH *Clavis canonum* notice control the
+multi-collection transmission ceiling: the *Statuta* is not extant as an
+independent collection and is reconstructed from later compilers. Munier's
+protected CCSL 148 edition remains unacquired, leaving its exact text,
+apparatus, numbering, versional choices, stemma, and Gennadius attribution
+unaudited.
+
 Parker Library MS 79, fols. 43r–43v, is now an exact selected local
 manuscript witness. It supplies a later, geographically distinct English
 comparison for ordinal position and episcopal book delivery. It was not
@@ -333,7 +344,8 @@ local-use claims.
 Accordingly, section 40 may name this manuscript's bounded architecture but
 continues to omit formulas, specified duties,
 career-path practice, transfer-to-priests claims, circulation, local use, and
-incidence implications. The PRG now controls only the bounded critical-edition
-ordinal architecture recorded above. This is a bounded result about the exact
-controls acquired for this study, not a claim that other rites or witnesses do
-not exist.
+incidence implications. The *Statuta*, PRG, Parker, and 1895 witnesses are
+compared typologically only. They do not establish textual identity, direct
+descent, practice, frequency, efficacy, or operational use. This is a bounded
+result about the exact controls acquired for this study, not a claim that
+other rites or witnesses do not exist.
