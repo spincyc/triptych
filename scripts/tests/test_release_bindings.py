@@ -131,25 +131,27 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertEqual([], self.tool.refresh(self.tool.load_manifest()))
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
 
-    def test_refresh_rebinds_changed_pdf_and_site_source(self):
+    def test_refresh_updates_site_without_rebinding_changed_pdf(self):
         self.tool.refresh(self.tool.load_manifest())
+        original_manifest = self.read_manifest()
+        original_record = self.record.read_text()
         self.claude_pdf.write_bytes(b"claude pdf v2")
         self.readme.write_bytes(b"readme v2")
-        self.assertEqual(1, self.tool.report_status(self.tool.load_manifest()))
+        self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
         changes = self.tool.refresh(self.tool.load_manifest())
-        self.assertIn("pdf claude:articles/example", changes)
         self.assertIn("site README.md", changes)
         manifest = self.read_manifest()
         self.assertEqual(
-            sha(b"claude pdf v2"),
+            original_manifest["publications"][1]["approval"]["pdf_sha256"],
             manifest["publications"][1]["approval"]["pdf_sha256"],
         )
         record_text = self.record.read_text()
-        self.assertIn(sha(b"claude pdf v2"), record_text)
+        self.assertNotIn(sha(b"claude pdf v2"), record_text)
+        self.assertIn("## Exact approved snapshots", original_record)
         self.assertIn(sha(b"readme v2"), record_text)
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
 
-    def test_refresh_and_status_bind_public_review_snapshot(self):
+    def test_changed_legacy_review_pdf_needs_no_shared_refresh(self):
         manifest = self.read_manifest()
         review = manifest["publications"][0]
         review["status"] = "review"
@@ -164,27 +166,26 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.tool.refresh(self.tool.load_manifest())
 
         self.gpt_pdf.write_bytes(b"gpt review pdf v2")
-        self.assertEqual(1, self.tool.report_status(self.tool.load_manifest()))
+        self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
         changes = self.tool.refresh(self.tool.load_manifest())
 
-        self.assertIn("pdf articles/example", changes)
+        self.assertNotIn("pdf articles/example", changes)
         refreshed = self.read_manifest()["publications"][0]
         self.assertEqual(
-            sha(b"gpt review pdf v2"),
+            sha(b"gpt pdf v1"),
             refreshed["review_distribution"]["pdf_sha256"],
         )
         self.assertIsNone(refreshed["approval"])
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
 
-    def test_refresh_recomputes_expected_counts(self):
+    def test_refresh_leaves_legacy_expected_counts_untouched(self):
         manifest = self.read_manifest()
         manifest["expected_counts"]["publications"] = 99
         self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
         changes = self.tool.refresh(self.tool.load_manifest())
-        self.assertIn("expected_counts", changes)
+        self.assertNotIn("expected_counts", changes)
         expected = self.read_manifest()["expected_counts"]
-        self.assertEqual(2, expected["publications"])
-        self.assertEqual({"claude": 1, "gpt": 1}, expected["providers"])
+        self.assertEqual(99, expected["publications"])
 
     def test_refresh_adopts_and_retires_recognized_site_sources(self):
         page = self.root / "web/gpt/articles/example.md"
@@ -209,10 +210,9 @@ class ReleaseBindingsTests(unittest.TestCase):
         recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]
         self.assertEqual({"README.md"}, set(recorded))
 
-    def test_refresh_fails_closed_on_missing_pdf(self):
+    def test_site_refresh_does_not_scan_publication_pdfs(self):
         self.gpt_pdf.unlink()
-        with self.assertRaises(self.tool.BindingError):
-            self.tool.refresh(self.tool.load_manifest())
+        self.tool.refresh(self.tool.load_manifest())
 
     def test_add_publication_qualifies_and_rejects_duplicates(self):
         new_pdf = self.root / "doc/claude/articles/second.pdf"
@@ -225,10 +225,13 @@ class ReleaseBindingsTests(unittest.TestCase):
             "hold",
         )
         self.assertEqual("claude:articles/second", publication_id)
-        manifest = self.read_manifest()
-        entry = manifest["publications"][-1]
+        record_path = (
+            self.root / "release/publications/claude/articles/second.json"
+        )
+        entry = json.loads(record_path.read_text())
         self.assertEqual("hold", entry["status"])
-        self.assertEqual(sha(b"second"), entry["approval"]["pdf_sha256"])
+        self.assertIsNone(entry["authorization"])
+        self.assertNotIn("pdf_sha256", entry)
         with self.assertRaises(self.tool.BindingError):
             self.tool.add_publication(
                 self.tool.load_manifest(),
@@ -238,14 +241,14 @@ class ReleaseBindingsTests(unittest.TestCase):
                 "hold",
             )
 
-    def test_add_publication_requires_installed_pdf_and_known_provider(self):
+    def test_add_alpha_requires_installed_pdf_and_known_provider(self):
         with self.assertRaises(self.tool.BindingError):
             self.tool.add_publication(
                 self.tool.load_manifest(),
                 "claude",
                 "articles/missing",
                 "library/faith.md",
-                "hold",
+                "alpha",
             )
         with self.assertRaises(self.tool.BindingError):
             self.tool.add_publication(
@@ -268,7 +271,7 @@ class ReleaseBindingsTests(unittest.TestCase):
         record_text = self.record.read_text()
         self.assertIn("Approve the exact current snapshot.", record_text)
         self.assertIn("Supplemental exact-current-snapshot clearance", record_text)
-        self.assertIn(sha(b"claude pdf v3"), record_text)
+        self.assertNotIn(sha(b"claude pdf v3"), record_text)
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
 
 

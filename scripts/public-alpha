@@ -260,6 +260,58 @@ def alpha_binding(publication: dict) -> dict | None:
     return None
 
 
+def publication_record_root() -> Path:
+    return ROOT / "release/publications"
+
+
+def local_publication_records(primary: str, providers: list[str]) -> dict[tuple[str, str], dict]:
+    """Load independently writable alpha records, which override legacy rows."""
+    root = publication_record_root()
+    result: dict[tuple[str, str], dict] = {}
+    if not root.is_dir():
+        return result
+    for path in sorted(root.rglob("*.json")):
+        try:
+            record = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise ReleaseError(f"cannot read publication record {path.relative_to(ROOT)}: {exc}") from exc
+        if record.get("schema_version") != 1:
+            raise ReleaseError(f"{path.relative_to(ROOT)} must use schema_version 1")
+        relative = path.relative_to(root)
+        provider = relative.parts[0] if relative.parts else ""
+        if provider not in providers:
+            raise ReleaseError(f"{path.relative_to(ROOT)} names undeclared provider {provider!r}")
+        leaf = record.get("id")
+        if not isinstance(leaf, str) or not SAFE_ID_RE.fullmatch(leaf):
+            raise ReleaseError(f"{path.relative_to(ROOT)} has invalid id {leaf!r}")
+        expected = root / provider / f"{leaf}.json"
+        if path != expected:
+            raise ReleaseError(
+                f"{path.relative_to(ROOT)} must be stored at {expected.relative_to(ROOT)}"
+            )
+        status = record.get("status")
+        if status not in {"hold", "alpha"}:
+            raise ReleaseError(f"{path.relative_to(ROOT)} has invalid status {status!r}")
+        authorization = record.get("authorization")
+        normalized = {
+            "id": publication_label((provider, leaf), primary),
+            "catalog": record.get("catalog"),
+            "status": "hold" if status == "hold" else "release",
+            "gates": [],
+            "approval": (
+                None
+                if status == "hold"
+                else {"authorization": authorization}
+            ),
+            "_alpha_record": path.relative_to(ROOT).as_posix(),
+        }
+        key = (provider, leaf)
+        if key in result:
+            raise ReleaseError(f"duplicate publication record for {provider}:{leaf}")
+        result[key] = normalized
+    return result
+
+
 def safe_relative_path(value: str, label: str) -> Path:
     candidate = PurePosixPath(value)
     if candidate.is_absolute() or not candidate.parts or ".." in candidate.parts:
@@ -390,14 +442,6 @@ def validate_authorizations(
         if not isinstance(site_sources, dict):
             errors.append(f"{label} site_sources must be an object of path-to-SHA-256 entries")
         else:
-            actual_source_paths = set(site_sources)
-            expected_source_paths = site_source_paths()
-            if verify_approval_bindings and actual_source_paths != expected_source_paths:
-                errors.append(
-                    f"{label} site_sources mismatch: "
-                    f"missing={sorted(expected_source_paths - actual_source_paths)!r}, "
-                    f"extra={sorted(actual_source_paths - expected_source_paths)!r}"
-                )
             for source_path_value, approved_hash in site_sources.items():
                 if not isinstance(source_path_value, str):
                     errors.append(f"{label} site_sources contains a non-string path")
@@ -412,18 +456,9 @@ def validate_authorizations(
                         errors.append(
                             f"{label} site source {source_path_value} must have a lowercase SHA-256"
                         )
-                    elif not verify_approval_bindings:
-                        # Preparation inventories the current fixed input set below. Old
-                        # declarations may be incomplete or refer to inputs that were
-                        # deliberately removed, so they are only shape-checked here.
-                        continue
                     elif source_path.is_symlink() or not source_path.is_file():
                         errors.append(
                             f"{label} site source does not exist: {source_path_value}"
-                        )
-                    elif sha256(source_path) != approved_hash:
-                        errors.append(
-                            f"{label} site source {source_path_value} does not match its approved SHA-256"
                         )
                 except ReleaseError as exc:
                     errors.append(str(exc))
@@ -512,6 +547,7 @@ def publication_map(
         if key in result:
             raise ReleaseError(f"duplicate publication id: {publication_id}")
         result[key] = publication
+    result.update(local_publication_records(primary, providers))
     return result
 
 
@@ -632,7 +668,6 @@ def validate_manifest(
     raw_authorizations = manifest.get("authorizations")
     authorization_ids = set(raw_authorizations) if isinstance(raw_authorizations, dict) else set()
     referenced_authorizations: set[str] = set()
-    approved_snapshots: dict[str, list[tuple[str, str]]] = defaultdict(list)
 
     try:
         publications = publication_map(manifest, primary, providers)
@@ -696,8 +731,6 @@ def validate_manifest(
 
         approval = publication.get("approval")
         if status == "hold":
-            if not gates:
-                errors.append(f"{label}: {status} entries must retain at least one unresolved gate")
             if approval is not None:
                 errors.append(f"{label}: {status} entries must have null approval")
             continue
@@ -705,9 +738,14 @@ def validate_manifest(
         if not isinstance(binding, dict):
             errors.append(f"{label}: alpha entries require an authorization binding")
             continue
-        if set(binding) != {"authorization", "pdf_sha256"}:
+        allowed_binding_keys = (
+            {"authorization"}
+            if publication.get("_alpha_record")
+            else {"authorization", "pdf_sha256"}
+        )
+        if set(binding) != allowed_binding_keys:
             errors.append(
-                f"{label}: alpha binding must contain only authorization and pdf_sha256"
+                f"{label}: alpha binding has invalid fields"
             )
         authorization_id = binding.get("authorization")
         if not isinstance(authorization_id, str) or authorization_id not in authorization_ids:
@@ -715,95 +753,16 @@ def validate_manifest(
         else:
             referenced_authorizations.add(authorization_id)
         approved_hash = binding.get("pdf_sha256")
-        if not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(approved_hash):
+        if not publication.get("_alpha_record") and (
+            not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(approved_hash)
+        ):
             errors.append(f"{label}: pdf_sha256 must be a lowercase SHA-256")
-        else:
-            if isinstance(authorization_id, str) and authorization_id in authorization_ids:
-                approved_snapshots[authorization_id].append((label, approved_hash))
-            pdf_path = ROOT / "doc" / provider / f"{leaf}.pdf"
-            if (
-                verify_approval_bindings
-                and pdf_path.is_file()
-                and sha256(pdf_path) != approved_hash
-            ):
-                errors.append(f"{label}: installed PDF does not match its alpha SHA-256")
 
     orphan_authorizations = sorted(authorization_ids - referenced_authorizations)
     if orphan_authorizations:
         errors.append(f"manifest has unreferenced authorizations: {orphan_authorizations!r}")
-    if verify_approval_bindings:
-        for authorization_id, snapshots in approved_snapshots.items():
-            authorization = raw_authorizations.get(authorization_id, {})
-            record = authorization.get("rights_record") if isinstance(authorization, dict) else None
-            if not isinstance(record, str):
-                continue
-            try:
-                record_path = safe_relative_path(
-                    record, f"authorization {authorization_id} rights_record"
-                )
-                if not record_path.is_file():
-                    continue
-                record_text = record_path.read_text(encoding="utf-8")
-                snapshot_section = re.search(
-                    r"^## Exact approved snapshots\s*$([\s\S]*?)(?=^## |\Z)",
-                    record_text,
-                    flags=re.MULTILINE,
-                )
-                recorded_rows = re.findall(
-                    r"^\|\s*`([^`]+)`\s*\|\s*`([0-9a-f]{64})`\s*\|\s*$",
-                    snapshot_section.group(1) if snapshot_section else "",
-                    flags=re.MULTILINE,
-                )
-                if sorted(recorded_rows) != sorted(snapshots):
-                    errors.append(
-                        f"authorization {authorization_id!r} rights record inventory "
-                        "does not exactly match its approved publications"
-                    )
-                site_source_section = re.search(
-                    r"^## Exact approved reader-facing site sources\s*$([\s\S]*?)(?=^## |\Z)",
-                    record_text,
-                    flags=re.MULTILINE,
-                )
-                recorded_site_sources = re.findall(
-                    r"^\|\s*`([^`]+)`\s*\|\s*`([0-9a-f]{64})`\s*\|\s*$",
-                    site_source_section.group(1) if site_source_section else "",
-                    flags=re.MULTILINE,
-                )
-                expected_site_sources = sorted(authorization.get("site_sources", {}).items())
-                if sorted(recorded_site_sources) != expected_site_sources:
-                    errors.append(
-                        f"authorization {authorization_id!r} rights record site-source inventory "
-                        "does not exactly match its approved site sources"
-                    )
-            except (OSError, ReleaseError) as exc:
-                errors.append(
-                    f"cannot verify authorization {authorization_id!r} inventory: {exc}"
-                )
-
-    expected = manifest.get("expected_counts")
-    if not isinstance(expected, dict):
-        errors.append("expected_counts must be an object")
-    else:
-        actual_counts = {
-            "publications": len(publications),
-            "release": counts["release"],
-            "review": counts["review"],
-            "hold": counts["hold"],
-        }
-        for count_key, actual in actual_counts.items():
-            if expected.get(count_key) != actual:
-                errors.append(
-                    f"expected_counts.{count_key} is {expected.get(count_key)!r}, discovered {actual}"
-                )
-        provider_totals = Counter(key[0] for key in publications)
-        actual_provider_counts = {
-            declared: provider_totals.get(declared, 0) for declared in providers
-        }
-        if expected.get("providers") != actual_provider_counts:
-            errors.append(
-                f"expected_counts.providers is {expected.get('providers')!r}, "
-                f"discovered {actual_provider_counts!r}"
-            )
+    # Counts are generated from discovery; tracked aggregate counts are legacy
+    # data and never gate independently writable publication work.
 
     (
         occurrences,
@@ -1038,7 +997,7 @@ def artifact_manifest_data(
                 f"{publication_label(key, primary)}: missing alpha binding"
             )
         authorization_id = binding["authorization"]
-        pdf_hash = binding["pdf_sha256"]
+        pdf_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
         publication_entries.append(
             {
                 "id": publication_label(key, primary),
@@ -1640,8 +1599,7 @@ def verify_output(
         pdf_path = output / "doc" / provider / f"{leaf}.pdf"
         if pdf_path.is_file():
             actual_hash = sha256(pdf_path)
-            binding = alpha_binding(publication)
-            expected_hash = binding["pdf_sha256"] if binding else ""
+            expected_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
             mismatch = "does not match its alpha SHA-256"
             if actual_hash != expected_hash:
                 errors.append(

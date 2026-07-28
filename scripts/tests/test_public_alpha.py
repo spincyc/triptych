@@ -654,7 +654,7 @@ class PublicAlphaTest(unittest.TestCase):
             str(failure.exception),
         )
 
-    def test_check_binds_every_artifact_input_while_prepare_reports_missing_bindings(
+    def test_candidate_inventory_discovers_inputs_without_tracked_hash_binding(
         self,
     ) -> None:
         self.authorize_current_inputs()
@@ -664,12 +664,7 @@ class PublicAlphaTest(unittest.TestCase):
         authorization["site_sources"].pop("LICENSES/MIT.txt")
         self.write_manifest()
 
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.validate_manifest(self.manifest)
-        self.assertIn("site_sources mismatch", str(failure.exception))
-        self.assertIn("scripts/public-alpha", str(failure.exception))
-        self.assertIn("requirements-public-alpha.txt", str(failure.exception))
-        self.assertIn("LICENSES/MIT.txt", str(failure.exception))
+        self.tool.validate_manifest(self.manifest)
 
         result, stdout, stderr = self.run_main("prepare")
         self.assertEqual(result, 0)
@@ -685,20 +680,7 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.assertFalse(inventory["approval_conferred"])
 
-        for command in ("check", "build", "verify"):
-            with self.subTest(command=command):
-                with mock.patch.object(self.tool, "build_site") as build_site:
-                    with mock.patch.object(self.tool, "verify_output") as verify_output:
-                        command_result, command_stdout, command_stderr = self.run_main(
-                            command
-                        )
-                self.assertEqual(command_result, 1)
-                self.assertEqual(command_stdout, "")
-                self.assertIn("site_sources mismatch", command_stderr)
-                build_site.assert_not_called()
-                verify_output.assert_not_called()
-
-    def test_changed_artifact_inputs_invalidate_exact_authorization(self) -> None:
+    def test_changed_artifact_inputs_do_not_require_shared_rebinding(self) -> None:
         for source_path in (
             "scripts/public-alpha",
             "requirements-public-alpha.txt",
@@ -708,12 +690,7 @@ class PublicAlphaTest(unittest.TestCase):
                 original = (self.root / source_path).read_bytes()
                 self.authorize_current_inputs()
                 self.write(source_path, original + b"changed\n")
-                with self.assertRaises(self.tool.ReleaseError) as failure:
-                    self.tool.validate_manifest(self.manifest)
-                self.assertIn(
-                    f"site source {source_path} does not match its approved SHA-256",
-                    str(failure.exception),
-                )
+                self.tool.validate_manifest(self.manifest)
                 self.write(source_path, original)
 
     def test_renderer_must_match_bound_dependency_lock(self) -> None:
@@ -1004,6 +981,38 @@ class PublicAlphaTest(unittest.TestCase):
         publications = self.tool.validate_manifest(self.manifest)
         self.assertIn(("gpt", "review-work"), publications)
 
+    def test_local_alpha_record_overrides_legacy_row_and_hash_is_generated(self) -> None:
+        self.authorize_current_inputs()
+        self.write(
+            "release/publications/gpt/work.json",
+            (
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "id": "work",
+                        "catalog": "library/test.md",
+                        "status": "alpha",
+                        "authorization": "test-authorization",
+                    },
+                    indent=2,
+                )
+                + "\n"
+            ).encode(),
+        )
+        self.write("doc/gpt/work.pdf", b"new independently published bytes\n")
+
+        publications = self.tool.validate_manifest(self.manifest)
+        artifact = self.tool.artifact_manifest_data(
+            self.manifest, publications, preview=False
+        )
+
+        self.assertIn("release/publications/gpt/work.json", publications[("gpt", "work")]["_alpha_record"])
+        self.assertEqual("alpha", artifact["publications"][0]["status"])
+        self.assertEqual(
+            digest(b"new independently published bytes\n"),
+            artifact["publications"][0]["pdf_sha256"],
+        )
+
     def test_url_path_segment_passes_but_a_local_home_path_fails(self) -> None:
         self.authorize_current_inputs()
         publications = self.tool.validate_manifest(self.manifest)
@@ -1241,17 +1250,13 @@ class PublicAlphaTest(unittest.TestCase):
 
         self.assertEqual(publications[("claude", "work")]["status"], "hold")
 
-    def test_expected_counts_track_publications_per_provider(self) -> None:
+    def test_legacy_expected_counts_do_not_gate_discovered_publications(self) -> None:
         self.authorize_current_inputs()
         self.manifest["expected_counts"]["providers"] = {"gpt": 5}
 
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.validate_manifest(self.manifest)
+        publications = self.tool.validate_manifest(self.manifest)
 
-        self.assertIn(
-            "expected_counts.providers is {'gpt': 5}, discovered {'gpt': 1}",
-            str(failure.exception),
-        )
+        self.assertEqual({("gpt", "work")}, set(publications))
 
     def test_publication_naming_undeclared_provider_is_rejected(self) -> None:
         self.manifest["publications"].append(

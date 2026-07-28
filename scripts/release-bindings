@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-"""Deterministic release-binding bookkeeping for the public-alpha manifest.
+"""Deterministic site-authorization and per-publication alpha bookkeeping.
 
-refresh: re-derive every PDF/site-source/rights-record hash from current
-bytes; --adopt-new-site-sources also reconciles the recorded inputs with the
-renderer's recognized set. approve --note TEXT: append a dated supplement
-recording the operator's instruction verbatim, then refresh; never invents
-approval.
-add-publication: insert a provider-qualified manifest entry. status:
-report stale bindings without changing anything.
+Publication PDF hashes are generated into the built artifact and checksums;
+ordinary publication work never rewrites the shared manifest or rights table.
+``refresh`` maintains only site-wide authorization inputs and their record.
+``add-publication`` creates one independently writable alpha record.
 """
 
 from __future__ import annotations
@@ -29,6 +26,7 @@ PUBLIC_ALPHA = ROOT / "scripts" / "public-alpha"
 
 SNAPSHOT_HEADER = "## Exact approved snapshots"
 SITE_HEADER = "## Exact approved reader-facing site sources"
+PUBLICATION_RECORD_ROOT = "release/publications"
 
 
 class BindingError(Exception):
@@ -155,28 +153,6 @@ def refresh(manifest: dict, adopt: bool = False) -> list[str]:
     authorization = single_authorization(manifest)
     record_path = rights_record_path(authorization)
 
-    publication_hashes = compute_publication_hashes(manifest)
-    for publication in manifest.get("publications", []):
-        status = publication.get("status")
-        if status not in {"release", "review"}:
-            continue
-        binding_field = "approval" if status == "release" else "review_distribution"
-        approval = publication.get(binding_field)
-        if not isinstance(approval, dict):
-            if status == "review":
-                approval = {
-                    "authorization": next(iter(manifest["authorizations"])),
-                    "pdf_sha256": publication_hashes[publication["id"]],
-                }
-                publication[binding_field] = approval
-                changes.append(f"review distribution {publication['id']}")
-            else:
-                raise BindingError(f"release publication lacks approval: {publication.get('id')}")
-        current = publication_hashes[publication["id"]]
-        if approval.get("pdf_sha256") != current:
-            approval["pdf_sha256"] = current
-            changes.append(f"pdf {publication['id']}")
-
     site_hashes = compute_site_hashes(authorization, adopt)
     recorded = authorization["site_sources"]
     for source in sorted(set(site_hashes) - set(recorded)):
@@ -188,30 +164,9 @@ def refresh(manifest: dict, adopt: bool = False) -> list[str]:
             changes.append(f"site {source}")
     authorization["site_sources"] = dict(sorted(site_hashes.items()))
 
-    counts = {"release": 0, "review": 0, "hold": 0}
-    provider_counts: dict[str, int] = {}
-    for publication in manifest.get("publications", []):
-        status = publication.get("status")
-        if status in counts:
-            counts[status] += 1
-        provider, _ = split_id(manifest, publication.get("id", ""))
-        provider_counts[provider] = provider_counts.get(provider, 0) + 1
-    for provider in manifest.get("providers", [primary_provider(manifest)]):
-        provider_counts.setdefault(provider, 0)
-    expected = {
-        "publications": len(manifest.get("publications", [])),
-        **counts,
-        "providers": dict(sorted(provider_counts.items())),
-    }
-    if manifest.get("expected_counts") != expected:
-        manifest["expected_counts"] = expected
-        changes.append("expected_counts")
-
     text = record_path.read_text(encoding="utf-8")
-    snapshot_rows = sorted(publication_hashes.items())
     site_rows = sorted(site_hashes.items())
-    new_text = rewrite_table(text, SNAPSHOT_HEADER, "Publication ID", snapshot_rows)
-    new_text = rewrite_table(new_text, SITE_HEADER, "Repository path", site_rows)
+    new_text = rewrite_table(text, SITE_HEADER, "Repository path", site_rows)
     if new_text != text:
         record_path.write_text(new_text, encoding="utf-8")
         changes.append(f"rights tables {record_path.relative_to(ROOT)}")
@@ -277,61 +232,38 @@ def approve(manifest: dict, note: str, timezone_name: str) -> None:
 def add_publication(
     manifest: dict, provider: str, leaf: str, catalog: str, status: str
 ) -> str:
-    if status not in {"hold", "review", "release"}:
-        raise BindingError("status must be hold, review, or release")
+    if status not in {"hold", "alpha"}:
+        raise BindingError("status must be hold or alpha")
     providers = manifest.get("providers") or [primary_provider(manifest)]
     if provider not in providers:
         raise BindingError(f"provider {provider!r} is not declared in the manifest")
     publication_id = leaf if provider == primary_provider(manifest) else f"{provider}:{leaf}"
-    for publication in manifest.get("publications", []):
-        if publication.get("id") == publication_id:
-            raise BindingError(f"publication already exists: {publication_id}")
     path = ROOT / "doc" / provider / f"{leaf}.pdf"
-    if not path.is_file():
+    if status == "alpha" and not path.is_file():
         raise BindingError(f"installed PDF missing: {path.relative_to(ROOT)}")
     authorizations = list(manifest.get("authorizations", {}))
     if len(authorizations) != 1:
         raise BindingError("expected exactly one manifest authorization")
     entry = {
-        "id": publication_id,
+        "schema_version": 1,
+        "id": leaf,
         "catalog": catalog,
         "status": status,
-        "gates": [],
-        "approval": {
-            "authorization": authorizations[0],
-            "pdf_sha256": sha256_file(path),
-        },
+        "authorization": authorizations[0] if status == "alpha" else None,
     }
-    manifest["publications"].append(entry)
-    save_manifest(manifest)
+    destination = ROOT / PUBLICATION_RECORD_ROOT / provider / f"{leaf}.json"
+    if destination.exists():
+        raise BindingError(f"publication record already exists: {destination.relative_to(ROOT)}")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps(entry, indent=2) + "\n", encoding="utf-8")
     return publication_id
 
 
 def report_status(manifest: dict) -> int:
     stale = 0
     authorization = single_authorization(manifest)
-    for publication in manifest.get("publications", []):
-        status = publication.get("status")
-        if status not in {"release", "review"}:
-            continue
-        path = pdf_path(manifest, publication["id"])
-        if not path.is_file():
-            print(f"missing pdf {publication['id']}")
-            stale += 1
-            continue
-        binding_field = "approval" if status == "release" else "review_distribution"
-        if publication.get(binding_field, {}).get("pdf_sha256") != sha256_file(path):
-            print(f"stale pdf {publication['id']}")
-            stale += 1
-    # Scope belongs to the renderer's policy check; this reports recorded bytes.
-    for source, recorded in authorization.get("site_sources", {}).items():
-        path = ROOT / source
-        if not path.is_file():
-            print(f"missing site source {source}")
-            stale += 1
-        elif sha256_file(path) != recorded:
-            print(f"stale site source {source}")
-            stale += 1
+    # Publication and site identities are generated and verified by
+    # ``public-alpha``. Legacy source hashes remain historical migration data.
     record_path = rights_record_path(authorization)
     if authorization.get("rights_record_sha256") != sha256_file(record_path):
         print("stale rights_record_sha256")

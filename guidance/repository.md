@@ -343,6 +343,17 @@ or approval by an external authority. The owning document states its actual
 scope and any material reliance boundary once on its first page; catalogs use
 terse reader-facing labels and do not repeat release apparatus.
 
+Each migrated publication owns
+`release/publications/<provider>/<leaf-id>.json`; the path below the provider
+mirrors the leaf ID. That independently writable record contains its catalog,
+alpha or hold state, and standing authorization reference. Current PDF hashes,
+provider and status counts, and the aggregate publication manifest are
+generated during artifact construction and are not tracked publication inputs.
+During migration, a local record overrides its matching legacy row in
+`release/public-alpha.json`; an unmigrated publication continues to use its
+legacy row. Ordinary publication work never rewrites a shared rights-table
+snapshot inventory.
+
 The maintainer's standing public-alpha decision of 27 July 2026 authorizes
 every current and later document snapshot to enter `alpha` without a new
 document-by-document approval request, provided that the six alpha concerns

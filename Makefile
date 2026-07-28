@@ -454,10 +454,10 @@ help:
 		'make public-site  Build the fail-closed, history-free public artifact' \
 		'make verify-public-preview  Recheck the existing private preview artifact' \
 		'make verify-public-site  Recheck the existing public artifact' \
-		'make check-release-bindings  Report stale exact PDF, site-source, and rights-record bindings' \
-		'make refresh-release-bindings [ADOPT=1]  Mechanically re-derive every exact release binding from current bytes' \
+		'make check-release-bindings  Report stale shared site and authorization-record bindings' \
+		'make refresh-release-bindings [ADOPT=1]  Refresh shared site-authorization inputs; publication hashes are generated' \
 		'make approve-release NOTE="..."  Record a dated supplement with the operator instruction, then refresh' \
-		'make add-publication ID=<leaf> CATALOG=<page> [PROVIDER=<p>] [STATUS=hold]  Add a manifest entry' \
+		'make add-publication ID=<leaf> CATALOG=<page> [PROVIDER=<p>] [STATUS=hold]  Add an independent alpha record' \
 		'make check    Run every repository policy check' \
 		'make check-tests  Run the complete script unit-test suite' \
 		'make check-staleness  Report editions whose research inputs changed (any provider)' \
