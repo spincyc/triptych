@@ -33,7 +33,7 @@ warnings = ["Keep the book and support stable when moving them together."]
 altar_server = "required"
 sacristan = "required"
 mc_trainer = "required"
-general_reader = "useful"
+general_reader = "required"
 pontifical = "useful"
 
 [[claims]]
@@ -80,3 +80,23 @@ review_state = "print-checked"
 depicts = ["obj-altar-missal", "obj-missal-stand", "obj-book-marker"]
 scale_mode = "not-applicable"
 review_note = "Consumer-reviewed only within the printed illustrative-morphology qualification; no universal construction is asserted."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare a stable stand when this alternative is used; the source prescribes neither folding construction nor material."
+claim_ids = ["clm-missal-stand-use", "clm-missal-stand-presence"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Treat stand and cushion as alternatives and keep the Missal secure during any assigned movement."
+claim_ids = ["clm-missal-stand-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "This low stand is one of two named supports beneath the altar Missal; its construction varies."
+claim_ids = ["clm-missal-stand-identity", "clm-missal-stand-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This is an ordinary supporting object in a pontifical composition, not an insignium."
+claim_ids = ["clm-missal-stand-use"]

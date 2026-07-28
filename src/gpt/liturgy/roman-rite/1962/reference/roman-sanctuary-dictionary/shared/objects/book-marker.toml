@@ -34,8 +34,8 @@ warnings = ["Do not rearrange a prepared book's markers without direction."]
 altar_server = "useful"
 sacristan = "required"
 mc_trainer = "required"
-general_reader = "useful"
-pontifical = "required"
+general_reader = "required"
+pontifical = "exclude"
 
 [[claims]]
 id = "clm-book-marker-identity"
@@ -90,3 +90,18 @@ review_state = "print-checked"
 depicts = ["obj-altar-missal", "obj-missal-stand", "obj-book-marker"]
 scale_mode = "not-applicable"
 review_note = "The marker ribbons appear in practical relation to the open Missal; count and construction are illustrative."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Arrange the Missal's markers as assigned; this detail does not prescribe ribbon count, color, or construction."
+claim_ids = ["clm-book-marker-use", "clm-book-marker-presence"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Check that the required places are marked without altering a prepared arrangement unless assigned."
+claim_ids = ["clm-book-marker-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "Markers locate the texts needed for the Mass; the six ribbons shown are illustrative, not a prescribed count."
+claim_ids = ["clm-book-marker-identity", "clm-book-marker-use"]

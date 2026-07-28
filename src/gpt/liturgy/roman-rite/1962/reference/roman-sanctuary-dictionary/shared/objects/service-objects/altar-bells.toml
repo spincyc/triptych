@@ -34,7 +34,14 @@ altar_server = "required"
 sacristan = "required"
 mc_trainer = "required"
 general_reader = "required"
-pontifical = "useful"
+pontifical = "exclude"
+
+[[claims]]
+id = "clm-altar-bells-identity"
+kind = "identity"
+text = "The altar bell is the small bell prepared for the appointed Mass signals."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-bells-missal"]
 
 [[claims]]
 id = "clm-altar-bells-presence"
@@ -78,4 +85,19 @@ review_note = "Generated four-cup candidate; visually checked for one handle, fo
 [[audience_note]]
 audience = "altar-server"
 text = "Recognize the prepared bell and learn its assigned cues; avoid accidental ringing while carrying or replacing it."
+claim_ids = ["clm-altar-bells-presence", "clm-altar-bells-use"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the small bell with the credence-side service objects; the Missal prescribes no cup count or mechanism."
+claim_ids = ["clm-altar-bells-presence"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the appointed signals without making this four-cup cluster a universal form."
+claim_ids = ["clm-altar-bells-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The governing text requires a small bell and names its signals, but not this cluster form."
 claim_ids = ["clm-altar-bells-presence", "clm-altar-bells-use"]

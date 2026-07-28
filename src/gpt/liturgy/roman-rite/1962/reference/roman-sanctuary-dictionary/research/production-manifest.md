@@ -7,12 +7,41 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Seven alpha records | Built, inspected, and installed | No | Alpha |
+
+The 2026-07-28 cross-edition checkpoint replaced the detached
+review-admissions output with one canonical alpha view. The generator now
+admits only resolved source-audited records whose rendered factual claims use
+claim-verified bindings and whose registered artwork has rights/provenance,
+stable asset identity, and identity-checked visual status. Editorial proposals
+remain in research data but do not render as facts.
+
+The comprehensive, sacristan, MC/trainer, general-reader, and pontifical
+leaves now use one image-dominant page per object rather than three-column
+review cards. Audience notes come from canonical records. Altar bells, the
+Holy Week lectern, and book markers no longer enter the pontifical edition
+without a verified pontifical relationship. The altar-server prose remains
+its bespoke consumer.
+
+All 87 pages across the six leaves were inspected through the repository PDF
+review pipeline, including every full-page plate and both altar-server contact
+sheets. No clipping, overlap, spill page, illegible label, or unsafe visual
+instruction was found. Settled logs contain no fatal error, undefined
+reference, or overfull box. Build and installed bytes are identical:
+
+| Leaf | Pages | Installed PDF SHA-256 |
+| --- | ---: | --- |
+| Comprehensive | 12 | `6b635aae0882436dfd8619de62f0b06b6c75a4eeed6cfe62ad9db285f6c0cc26` |
+| Altar server | 30 | `8b3bfa8f6f7a5649ef5f325d45064c2942794914ccbf466b0d8d00ca629fef27` |
+| Sacristan | 12 | `517da248ca0c162fc79ca29bce5f59e6ffcbd866aa856042d12c3e0b4cd4ddfe` |
+| MC/trainer | 12 | `8140db3fee413e29f9bcd9a615aa97310c4d2a4f1aa18d4568c981299e750f93` |
+| General reader | 12 | `827097626e06773fabcd21616cf99ba8d18f3f8d47f5acbdd6a38d76fa45737c` |
+| Pontifical ceremonies | 9 | `160b7bf579f4e03257ad62bcb1984463acdd06655b9a837fa32c7939b8103094` |
 
 The 2026-07-28 Lavabo checkpoint expanded the altar-server alpha to 28 pages
 and thirty-one records. All pages and the new paired basin/manuterge figure

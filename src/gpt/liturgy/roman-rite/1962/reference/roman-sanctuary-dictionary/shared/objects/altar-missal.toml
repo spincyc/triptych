@@ -95,3 +95,23 @@ review_note = "The book fragment supplies context for the separately represented
 audience = "altar-server"
 text = "Recognize the Missal and move it with its support only when assigned."
 claim_ids = ["clm-altar-missal-presence"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the Missal, its assigned places, and a stable support; binding and marker count are not universal identifiers."
+claim_ids = ["clm-altar-missal-identity", "clm-altar-missal-presence"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Keep the book, support, placement, and assigned movement together; this plate is recognition, not a full transfer sequence."
+claim_ids = ["clm-altar-missal-use", "clm-altar-missal-presence"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "This is the celebrant's Mass book; the substantial binding and ribbons are representative."
+claim_ids = ["clm-altar-missal-identity", "clm-altar-missal-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "The Missal appears here as an ordinary supporting book in the pontifical composition, not as insignia."
+claim_ids = ["clm-altar-missal-identity", "clm-altar-missal-use"]

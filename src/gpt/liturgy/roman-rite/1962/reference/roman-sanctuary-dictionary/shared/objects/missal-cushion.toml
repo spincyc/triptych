@@ -33,7 +33,7 @@ warnings = ["Keep the Missal centered and stable; follow the rehearsed local han
 altar_server = "required"
 sacristan = "required"
 mc_trainer = "required"
-general_reader = "useful"
+general_reader = "required"
 pontifical = "useful"
 
 [[claims]]
@@ -80,3 +80,23 @@ review_state = "print-checked"
 depicts = ["obj-missal-cushion"]
 scale_mode = "not-to-common-scale"
 review_note = "Consumer-reviewed as an illustrative cushion silhouette with every unsourced morphological feature qualified on-page."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the cushion when this support alternative is used; slope, fabric, fringe, and dimensions are not prescribed here."
+claim_ids = ["clm-missal-cushion-use", "clm-missal-cushion-presence"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Treat cushion and stand as alternatives and preserve the assigned book-support relationship."
+claim_ids = ["clm-missal-cushion-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The cushion is the soft alternative to the stand beneath the altar Missal; this silhouette is illustrative."
+claim_ids = ["clm-missal-cushion-identity", "clm-missal-cushion-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This movable support belongs to the book relationship; context-specific silk and color directions are not universalized."
+claim_ids = ["clm-missal-cushion-use"]

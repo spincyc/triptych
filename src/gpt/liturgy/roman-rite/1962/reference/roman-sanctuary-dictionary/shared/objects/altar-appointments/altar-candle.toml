@@ -37,6 +37,20 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-altar-candle-identity"
+kind = "identity"
+text = "The candle is the wax light set in a candlestick; the ceremonial distinguishes the light from its support."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-candle-ceremonial"]
+
+[[claims]]
+id = "clm-altar-candle-use"
+kind = "liturgical-use"
+text = "It supplies an appointed altar or carried light."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-candle-ceremonial"]
+
+[[claims]]
 id = "clm-altar-candle-presence"
 kind = "ceremonial-presence"
 text = "The Ceremonial repeatedly distinguishes candlesticks from the wax candles they support and appoints both altar and carried lights."
@@ -66,3 +80,23 @@ review_state = "identity-checked"
 depicts = ["obj-altar-candle"]
 scale_mode = "not-applicable"
 review_note = "Separate candle-only candidate visually checked in the altar-server alpha for one straight unlit wax body, one wick, no support, grayscale pencil treatment, clear crop, and absent lettering. Material, dimensions, and exclusive morphology remain unasserted."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the appointed lights and maintain the flame-watch boundary; this plate prescribes no candle dimensions or exclusive form."
+claim_ids = ["clm-altar-candle-presence", "clm-altar-candle-safety"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Distinguish the candle from its support and assign flame work only within the named ceremony and local safety practice."
+claim_ids = ["clm-altar-candle-identity", "clm-altar-candle-safety"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "Read the candle as the light itself, not the candlestick beneath it; the drawing is representative."
+claim_ids = ["clm-altar-candle-identity"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "The ceremonial appoints altar and carried lights and requires attendants to watch them; it does not make this silhouette or a candle count universal."
+claim_ids = ["clm-altar-candle-presence", "clm-altar-candle-safety"]

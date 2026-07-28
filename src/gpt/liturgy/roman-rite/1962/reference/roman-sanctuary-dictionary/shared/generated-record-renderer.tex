@@ -1,13 +1,12 @@
-% Render only generator-admitted canonical records. The generator has already
-% enforced evidence, artwork, and edition-selection gates before these calls
-% reach TeX.
+% Render only generator-admitted canonical alpha records. The generator has
+% already enforced identity, evidence, artwork, rights/provenance, and
+% edition-selection gates before these calls reach TeX.
 \input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/object-record-api}
 
 \newcount\RSDRenderedRecordCount
 \RSDRenderedRecordCount=0
-\newcount\RSDRenderedRowCount
-\RSDRenderedRowCount=0
 \newif\ifRSDArtworkAvailable
+\newif\ifRSDSecondArtworkAvailable
 
 \renewcommand{\RSDObjectRecord}[3]{%
   \RSDClearObjectRecord
@@ -17,77 +16,70 @@
   \def\RSDIdentityText{}%
   \def\RSDUseText{}%
   \def\RSDSymbolismText{}%
-  \def\RSDReviewWorkflowState{unclassified}%
-  \def\RSDReviewEditorialNote{}%
-  \def\RSDReviewEvidenceStates{}%
-  \def\RSDArtworkReviewState{}%
   \def\RSDArtworkPath{}%
-  \RSDArtworkAvailablefalse}
+  \def\RSDSecondArtworkPath{}%
+  \def\RSDAudienceText{}%
+  \RSDArtworkAvailablefalse
+  \RSDSecondArtworkAvailablefalse}
 
 \renewcommand{\RSDClaim}[6]{%
-  \ifx\RSDReviewEvidenceStates\empty
-    \def\RSDReviewEvidenceStates{#2: #4}%
-  \else
-    \expandafter\def\expandafter\RSDReviewEvidenceStates\expandafter{%
-      \RSDReviewEvidenceStates; #2: #4}%
-  \fi
   \ifstrequal{#2}{identity}{\def\RSDIdentityText{#3}}{}%
   \ifstrequal{#2}{liturgical-use}{\def\RSDUseText{#3}}{}%
   \ifstrequal{#2}{symbolism}{\def\RSDSymbolismText{#3}}{}}
 
 \renewcommand{\RSDArtwork}[7]{%
-  \ifRSDArtworkAvailable\else
+  \ifRSDArtworkAvailable
+    \ifRSDSecondArtworkAvailable\else
+      \ifstrequal{\RSDArtworkPath}{#3}{}{%
+        \def\RSDSecondArtworkPath{#3}%
+        \RSDSecondArtworkAvailabletrue}%
+    \fi
+  \else
     \def\RSDArtworkPath{#3}%
-    \def\RSDArtworkReviewState{#4}%
     \RSDArtworkAvailabletrue
   \fi}
 
-\providecommand{\RSDReviewState}[2]{%
-  \def\RSDReviewWorkflowState{#1}%
-  \def\RSDReviewEditorialNote{#2}}
+\providecommand{\RSDSelectedAudienceNote}[1]{\def\RSDAudienceText{#1}}
 
 \renewcommand{\RSDEndObjectRecord}{%
   \global\advance\RSDRenderedRecordCount by 1
-  \ifnum\RSDRenderedRowCount=0\par\noindent\fi
-  \global\advance\RSDRenderedRowCount by 1
-  \begin{minipage}[t]{0.31\textwidth}
-    \raggedright
-    \hbadness=10000
+  \clearpage
+  \DictionaryEntryAnchor{\RSDObjectID}%
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Visual dictionary plate}
+    \hfill\DictionaryNoteKey{\RSDObjectID}\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{7pt}
+  {\fontsize{22}{25}\selectfont\bfseries\RSDPreferredEnglishName\par}
+  {\fontsize{12}{14}\selectfont\itshape\RSDLatinHeadword\par}
+  \vspace{7pt}
+  \begin{minipage}[t][4.72in][c]{\textwidth}
+    \centering
     \ifRSDArtworkAvailable
-      \DictionaryCell{\RSDObjectID}{\RSDPreferredEnglishName}
-        {\RSDLatinHeadword}
-        {\DictionaryGraphic{1.42in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}}
-        {\RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi}
-        {ALPHA RECORD: \RSDReviewWorkflowState}
-        {\RSDSymbolismText}
-      {\raggedright\fontsize{6.5}{7.5}\selectfont
-       \textbf{Evidence caveat:} \RSDReviewEvidenceStates\par
-      \ifx\RSDReviewEditorialNote\empty\else
-         \textbf{Editorial caveat:} \RSDReviewEditorialNote\par
-       \fi}
-    \else
-      \DictionaryCell{\RSDObjectID}{\RSDPreferredEnglishName}
-        {\RSDLatinHeadword}
-        {\PlatePlaceholder{No review art admitted}{Artwork remains absent or outside this generated review selection.}}
-        {\RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi}
-        {ALPHA RECORD: \RSDReviewWorkflowState;\ no admitted art}
-        {\RSDSymbolismText}
-      {\raggedright\fontsize{6.5}{7.5}\selectfont
-       \textbf{Evidence caveat:} \RSDReviewEvidenceStates\par
-       \ifx\RSDReviewEditorialNote\empty\else
-         \textbf{Editorial caveat:} \RSDReviewEditorialNote\par
-       \fi}
+      \ifRSDSecondArtworkAvailable
+        \begin{minipage}[c]{0.72\textwidth}\centering
+          \DictionaryGraphic{4.45in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+        \end{minipage}\hfill
+        \begin{minipage}[c]{0.24\textwidth}\centering
+          {\fontsize{7}{8}\selectfont\bfseries DETAIL\par}\vspace{3pt}
+          \DictionaryGraphic{1.75in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDSecondArtworkPath}
+        \end{minipage}
+      \else
+        \DictionaryGraphic{4.55in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+      \fi
     \fi
-  \end{minipage}\hfill
-  \ifnum\RSDRenderedRowCount=3
-    \par\DictionaryGridGap
-    \global\RSDRenderedRowCount=0
+  \end{minipage}
+  \vspace{5pt}
+  {\fontsize{10.5}{13}\selectfont
+    \RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi\par}
+  \ifx\RSDAudienceText\empty\else
+    \vspace{4pt}{\fontsize{9.2}{11.3}\selectfont
+      \textbf{For this reader.}\enspace\RSDAudienceText\par}
+  \fi
+  \ifx\RSDSymbolismText\empty\else
+    \vspace{3pt}{\fontsize{9}{11}\selectfont\itshape\RSDSymbolismText\par}
   \fi}
 
 \newcommand{\RSDRenderGeneratedEdition}[1]{%
-  \InputIfFileExists{#1}{%
-    \ifnum\RSDRenderedRowCount>0\par\fi
-  }{%
+  \InputIfFileExists{#1}{}{%
     \PackageError{roman-sanctuary-dictionary}
       {Generated edition data not found: #1}
       {Run scripts/roman-sanctuary-dictionary before compiling this leaf.}}}
@@ -98,7 +90,7 @@
   edition. The generated selection is empty.
   \end{studybox}}
 
-\newcommand{\RSDReviewOmission}[3]{%
+\newcommand{\RSDAlphaOmission}[3]{%
   \item \texttt{#1} --- \textbf{#2}: #3.}
-\newcommand{\RSDReviewNoOmissions}{%
+\newcommand{\RSDAlphaNoOmissions}{%
   \item No omission was generated for this edition selection.}

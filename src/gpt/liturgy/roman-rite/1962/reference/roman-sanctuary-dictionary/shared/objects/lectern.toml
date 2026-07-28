@@ -34,7 +34,7 @@ altar_server = "required"
 sacristan = "required"
 mc_trainer = "required"
 general_reader = "required"
-pontifical = "required"
+pontifical = "exclude"
 
 [[claims]]
 id = "clm-lectern-identity"
@@ -80,3 +80,18 @@ review_state = "print-checked"
 depicts = ["obj-lectern"]
 scale_mode = "not-to-common-scale"
 review_note = "Checked at altar-server rendered size as one freestanding support with complete silhouette, grayscale mode, safe crop, and no text. The pedestal morphology remains illustrative and does not depict the ceremony-specific cloth."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the bare or white-cloth-covered state only for the named Holy Week rite; the drawing prescribes no construction."
+claim_ids = ["clm-lectern-presence"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Keep the Passion and reading placements distinct from the covered Easter Vigil proclamation arrangement."
+claim_ids = ["clm-lectern-presence"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The Holy Week rites distinguish bare lecterns from a lectern covered with white cloth; the pedestal form is illustrative."
+claim_ids = ["clm-lectern-presence"]

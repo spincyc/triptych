@@ -37,6 +37,13 @@ general_reader = "required"
 pontifical = "useful"
 
 [[claims]]
+id = "clm-sanctuary-lamp-identity"
+kind = "identity"
+text = "The sanctuary lamp is the reservation light burning before the altar or place where the Blessed Sacrament is reserved."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sanctuary-lamp-ceremonial"]
+
+[[claims]]
 id = "clm-sanctuary-lamp-placement"
 kind = "placement"
 text = "The Ceremonial places burning lamps especially before the altar or place where the Blessed Sacrament is reserved and describes hanging lamp stands that may support several lamps."
@@ -74,3 +81,23 @@ review_state = "identity-checked"
 depicts = ["obj-sanctuary-lamp"]
 scale_mode = "not-applicable"
 review_note = "Visually checked for one vessel, one visible flame, three plausible suspension chains converging to one ring, balanced structure, grayscale, and absent lettering."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Maintain the reservation light at its appointed place; lowering, refilling, and relighting require training and direction."
+claim_ids = ["clm-sanctuary-lamp-placement", "clm-sanctuary-lamp-burning"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Treat this as a reservation-place furnishing, not as an ordinary object transfer."
+claim_ids = ["clm-sanctuary-lamp-placement"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The single suspended vessel is one recognizable form; the ceremonial also describes arrangements with several lamps."
+claim_ids = ["clm-sanctuary-lamp-placement"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This is an ordinary reservation furnishing in a pontifical setting, not pontifical insignia."
+claim_ids = ["clm-sanctuary-lamp-placement", "clm-sanctuary-lamp-burning"]

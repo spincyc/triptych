@@ -103,12 +103,13 @@ publication-ready record. Every reader-facing factual field is represented by
 one or more claim records with exact source bindings. A source-wide citation
 does not make every field verified.
 
-`priestly-review-ready` is a separate, nonpublication workflow state. It may
-contain expressly unresolved claims and artwork so that a priest can review
-them, but the record must include a `review_readiness` table with a visible
-qualification, a targeted disclosure for every unresolved claim or artwork
-state, and at least one concrete review prompt linked to every disclosed gap.
-It neither satisfies nor weakens `publication-ready`.
+The canonical alpha generator admits a source-audited or later record only
+when identity and governing status are resolved, every rendered factual claim
+uses a claim-verified binding, artwork has canonical manifest identity and
+rights/provenance, and each rendered asset has passed identity and basic
+visual review. Editorial proposals remain in research data but are not
+rendered as facts. This is the only active admission path; external review is
+not a release gate.
 
 Artwork IDs are shared identities, not object-local IDs. A comparison or
 composition may therefore repeat the same artwork ID in each object record
@@ -118,7 +119,7 @@ to appear in `depicts`; an object-local review note may differ. An empty
 `artwork` array is valid while a record is not publication-ready.
 Publication-ready records still require approved artwork.
 
-The comprehensive edition selects every publication-ready object within the
+The comprehensive edition selects every alpha-admitted object within the
 declared universal Roman 1962 corpus plus reviewed regional, religious-order,
 and historical supplements. The historical section is ordered first by
 period, then by functional type. Postconciliar status is intentionally absent:

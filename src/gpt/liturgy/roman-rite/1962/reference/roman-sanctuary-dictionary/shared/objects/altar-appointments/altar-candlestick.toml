@@ -10,8 +10,8 @@ categories = ["altar-and-appointments", "service-objects"]
 periods = ["roman-1962-horizon"]
 statuses = ["universal-roman"]
 ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "procession"]
-confusable_with = []
-related_objects = ["obj-altar-candle"]
+confusable_with = ["obj-acolyte-candlestick"]
+related_objects = ["obj-altar-candle", "obj-acolyte-candlestick"]
 component_objects = []
 
 [presence]
@@ -21,8 +21,8 @@ composition_ids = []
 local_variability = "common"
 
 [handling]
-ordinary_handlers = ["acolyte", "sacristan"]
-server_relation = "carries"
+ordinary_handlers = ["sacristan"]
+server_relation = "recognizes-only"
 prepares = ["sacristan"]
 presents = []
 receives = []
@@ -35,6 +35,20 @@ sacristan = "required"
 mc_trainer = "required"
 general_reader = "required"
 pontifical = "required"
+
+[[claims]]
+id = "clm-altar-candlestick-identity"
+kind = "identity"
+text = "A candlestick is the support that holds the candle; it is distinct from the wax light."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-candlestick-ceremonial"]
+
+[[claims]]
+id = "clm-altar-candlestick-use"
+kind = "liturgical-use"
+text = "At the altar it supports an appointed candle."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-candlestick-ceremonial"]
 
 [[claims]]
 id = "clm-altar-candlestick-presence"
@@ -74,3 +88,23 @@ review_state = "identity-checked"
 depicts = ["obj-altar-candlestick"]
 scale_mode = "not-applicable"
 review_note = "Separate empty-candlestick candidate visually checked in the altar-server alpha for one stable foot, centered stem, principal knop, wax plate, open socket, no candle, grayscale pencil treatment, clear crop, and absent lettering. The representative turned form is not asserted as universal."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the altar support and candle as distinct objects; material, ornament, and proportions vary."
+claim_ids = ["clm-altar-candlestick-identity", "clm-altar-candlestick-presence"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Do not transfer the carried-candlestick grip rule to this altar-support record; carried lights have their own entry."
+claim_ids = ["clm-altar-candlestick-identity"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "This is the support beneath an altar candle, shown empty so that support and light remain distinct."
+claim_ids = ["clm-altar-candlestick-identity"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Distinguish altar candlesticks from the candlesticks carried by candle-bearing acolytes."
+claim_ids = ["clm-altar-candlestick-presence"]
