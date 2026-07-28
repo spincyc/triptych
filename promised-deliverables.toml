@@ -4,12 +4,12 @@ schema_version = 1
 id = "task-2-exorcism-100-pages"
 owner = "src/gpt/history/catholic-exorcism/01-history-and-current-practice"
 promise = "Produce and hard-review a substantive Catholic exorcism study of at least 100 pages."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "physical-pages"
   criterion = "The installed Catholic exorcism PDF has at least 100 physical pages."
-  status = "open"
+  status = "pass"
   check = "pdf_min_pages"
   path = "doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
   minimum = 100
@@ -18,13 +18,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "substantive-pages"
   criterion = "At least 100 pages are substantive, excluding front matter, terminal audit apparatus, and padding."
-  status = "open"
+  status = "pass"
   evidence = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/comprehensive-expansion-plan-2026-07-27.md"]
 
   [[deliverables.requirements]]
   id = "hard-review"
   criterion = "Source, safety, law, PDF, web, and every-page review gates pass on one exact snapshot."
-  status = "open"
+  status = "pass"
   evidence = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/final-exact-snapshot-review-2026-07-27.md"]
 
 [[deliverables]]

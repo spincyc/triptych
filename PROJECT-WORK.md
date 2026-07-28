@@ -63,15 +63,15 @@ convert internal or AI checking into a claim that human review occurred.
 
 ## Current integration and publication state
 
-The repaired public-alpha snapshot is integrated on `main` through commit
-`b93e64b4`; pull request 1 is merged, and GitHub Pages workflow run
-`30296605957` successfully deployed that exact commit on 27 July 2026. The
-stable review landing page, PDF, and web-edition routes for the exorcism paper
-resolved in that production check. The current repository catalog, installed
-PDF, web edition, and exact-snapshot audit agree on a 32-page interim paper.
-Each later `origin/main` checkpoint requires its own successful Pages run and
-verification of the affected production routes before it is represented as
-live.
+The repaired public-alpha snapshot is integrated on `main`; pull request 1 was
+merged, and subsequent validated checkpoints have continued through the direct
+`main` workflow. The stable review landing page, PDF, and web-edition routes
+for the exorcism paper have resolved in production checks. The current
+repository source, installed PDF, web edition, comprehensive plan, and exact-
+snapshot audit agree on a completed bounded study of 116 physical pages,
+including 103 substantive narrative pages. Each later `origin/main` checkpoint
+requires its own successful Pages run and verification of the affected
+production routes before it is represented as live.
 
 ## Clean direct-main workflow
 
@@ -131,19 +131,20 @@ operations.
 <!-- promised-deliverable: task-2-exorcism-100-pages -->
 
 The requested result is a researched, substantive 100+ page Catholic exorcism
-reference, not a padded PDF. The current review edition is 32 physical pages.
-Commit `bc479596` expanded and published that interim edition and added a
-dedicated landing page, but did not fulfill the extent or hard-review promise.
-The next source-grounded tranche expands the patristic chapter from 1,225 to
-3,076 words using only seven already verified passage bindings in Tertullian,
-Origen, the Jerusalem catecheses, and Eusebius. The combined patristic,
-current-law, and safeguarding revision is installed and alpha-bound at 32
-physical pages. Justin, Irenaeus, Laodicea, and the church-order complex
-remain excluded from positive claims until their required controls are closed.
-The sequenced implementation and exact-snapshot checklist is
-`research/delivery-work-plan-2026-07-27.md` beside the publication.
-Research acquisition, claim-level source work, safety and canon-law review,
-substantive expansion, and exact-snapshot every-page review remain open.
+reference, not a padded PDF. The current public-alpha edition is 116 physical
+pages, of which the first 103 numbered pages are substantive narrative under
+the tracked exclusion rule. The comprehensive plan, delivery plan, source
+audit, evidence map, scope record, and final exact-snapshot review agree that
+the bounded representative study meets the promised extent and that its
+source, evidence, rights, safety, jurisdiction, currentness, PDF/web anti-
+drift, and every-page visual gates pass on one exact snapshot. The installed
+PDF and reviewed build are byte-identical, as are the freshly generated and
+tracked web editions. Protected critical editions, direct control of 1614
+p. 220, exhaustive manuscript collation, additional local rites and cases,
+and Eastern particular law remain explicit future-research ceilings; they do
+not reopen the bounded completion verdict or imply ecclesiastical approval.
+The controlling evidence is
+`research/final-exact-snapshot-review-2026-07-27.md` beside the publication.
 
 ### Linen-cloths restoration
 
@@ -222,7 +223,8 @@ publications, and no held publication in the generated public-alpha artifact.
 Production-site route and review-label validation passed for the previously
 deployed artifact. The current repository release inventory contains 164
 release publications and 14 review publications, 178 total; the exorcism
-catalog, installed PDF, web edition, and audit records agree on 32 pages.
+source, installed PDF, web edition, and audit records agree on 116 physical
+pages, including 103 substantive narrative pages.
 The standing 27 July 2026 public-alpha authority permits future exact-current
 review snapshots to be installed and deployed without repeated
 document-by-document approval while preserving every unresolved review gate.
@@ -281,6 +283,11 @@ leads remain outside the ledger until their own family records are justified.
 
 ## Reconciliation history
 
+- 2026-07-28: Reconciled the exorcism promise ledger and work register to the
+  exact bounded-completion evidence: 116 physical pages, 103 substantive
+  narrative pages, and passing source, safety, rights, law/currentness,
+  PDF/web anti-drift, and every-page review gates. Retained explicit future-
+  research ceilings and the public-alpha non-approval boundary.
 - 2026-07-28: Superseded the isolated-worker/final-maintainer-push boundary
   with the clean direct-`main` workflow. Authorized ordinary coherent commits
   and regular validated checkpoint pushes to `origin/main`, including their
