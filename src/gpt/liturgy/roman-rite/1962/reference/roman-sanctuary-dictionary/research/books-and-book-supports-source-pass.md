@@ -138,3 +138,14 @@ No candidate should be classified as “previous version” from this pass.
    pulpits, and architectural ambos.
 6. Perform a separate chronological source pass before placing any book or
    support in the historical section.
+
+## Altar-server alpha disposition
+
+On 2026-07-28, `obj-epistle-book` and `obj-gospel-book` advanced to
+`source-audited` for the bounded altar-server alpha. The consumer renders no
+representative binding. A TeX-native relational plate uses only generic
+graphite-style closed/open book symbols and typeset minister/use labels. It
+teaches the exact VI.4--5 sequence stated above and expressly prevents cover
+ornament from becoming an identity cue or a freestanding lectern from entering
+the ordinary held-book Gospel formation. The unresolved terminology-alias and
+material-morphology work remains unresolved.

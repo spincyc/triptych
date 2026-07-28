@@ -1,6 +1,7 @@
 \input{common/preamble}
 \input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/dictionary-format}
 \usepackage{fancyhdr}
+\usetikzlibrary{decorations.pathmorphing}
 
 \newcommand{\LeafRoot}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server}
 \newcommand{\ArtRoot}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary}
@@ -30,6 +31,50 @@
   {\fontsize{10.2}{13}\selectfont #2\par}}
 \newcommand{\SourceKey}[1]{%
   {\fontsize{7.2}{8.5}\selectfont\texttt{#1}}}
+\tikzset{
+  pencil line/.style={
+    draw=black!82,
+    line width=0.65pt,
+    line cap=round,
+    line join=round,
+    decorate,
+    decoration={random steps,segment length=4pt,amplitude=0.28pt}
+  },
+  relation arrow/.style={
+    -{Latex[length=5pt,width=4pt]},
+    pencil line
+  },
+  relation label/.style={
+    align=center,
+    text width=1.38in,
+    inner sep=4pt,
+    font=\fontsize{8.2}{9.8}\selectfont
+  }
+}
+\newcommand{\GenericClosedBook}{%
+  \pgfmathsetseed{1962}%
+  \begin{tikzpicture}[baseline=-0.6ex,x=1cm,y=1cm]
+    \fill[black!6] (0,0) rectangle (1.25,0.82);
+    \draw[pencil line] (0,0) rectangle (1.25,0.82);
+    \draw[pencil line] (0.13,0.04) -- (0.13,0.78);
+    \foreach \y in {0.13,0.20,0.27}
+      \draw[black!52,line width=0.35pt] (0.18,\y) -- (1.18,\y);
+  \end{tikzpicture}}
+\newcommand{\GenericOpenBook}{%
+  \pgfmathsetseed{1963}%
+  \begin{tikzpicture}[baseline=-0.6ex,x=1cm,y=1cm]
+    \fill[black!4] (0,0.10) -- (0.78,0) -- (0.78,0.78) -- (0,0.88) -- cycle;
+    \fill[black!4] (0.78,0) -- (1.56,0.10) -- (1.56,0.88) --
+      (0.78,0.78) -- cycle;
+    \draw[pencil line] (0,0.10) -- (0.78,0) -- (0.78,0.78) --
+      (0,0.88) -- cycle;
+    \draw[pencil line] (0.78,0) -- (1.56,0.10) -- (1.56,0.88) --
+      (0.78,0.78);
+    \foreach \y in {0.23,0.34,0.45,0.56}
+      \draw[black!45,line width=0.3pt] (0.14,\y) -- (0.64,\y);
+    \foreach \y in {0.23,0.34,0.45,0.56}
+      \draw[black!45,line width=0.3pt] (0.92,\y) -- (1.42,\y);
+  \end{tikzpicture}}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -38,7 +83,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{11pt}
 \hypersetup{
-  pdftitle={The Altar Server's Visual Dictionary — Low-Mass Core Alpha},
+  pdftitle={The Altar Server's Visual Dictionary — Bounded Core Alpha},
   pdfsubject={A source-bounded visual recognition and handling guide at the 1962 Roman Rite horizon}
 }
 
@@ -53,13 +98,13 @@
   \vspace{0.22in}
   {\large Recognition, handling boundaries, and confusables\par}
   \vfill
-  {\fontsize{17}{20}\selectfont\LitDisplay{Low-Mass Core Alpha}\par}
+  {\fontsize{17}{20}\selectfont\LitDisplay{Bounded Core Alpha}\par}
   \vspace{0.12in}
-  {\large Ten source-audited objects at the 1962 Roman Rite horizon\par}
+  {\large Twelve source-audited objects at the 1962 Roman Rite horizon\par}
   \vfill
   \begin{minipage}{0.82\textwidth}
     \small
-    This bounded alpha teaches ten objects already supported by checked
+    This bounded alpha teaches twelve objects already supported by checked
     source records. It is not the complete altar-server dictionary. Appearance
     never grants permission to touch an object; follow the priest, MC, sacristan,
     and the church's established directions.
@@ -83,11 +128,12 @@
 \end{minipage}
 
 \vspace{0.28in}
-\begin{studybox}{The ten objects in this alpha}
+\begin{studybox}{The twelve objects in this alpha}
 \textbf{Handles:} altar bells; altar Missal and its support when assigned. \quad
 \textbf{Varies by ceremony:} altar candle and candlestick. \quad
 \textbf{Recognizes only:} sanctuary lamp and prepared book markers. \quad
-\textbf{Must not handle in this Low-Mass model:} chalice and paten.
+\textbf{Must not handle in this Low-Mass model:} chalice and paten. \quad
+\textbf{Solemn-Mass recognition:} Epistle book and Gospel book.
 \end{studybox}
 
 \section*{\LitDisplay{Three confusions to prevent}}
@@ -295,6 +341,69 @@ local direction. Exact source keys appear on the final page.\par}
 \end{minipage}
 \clearpage
 
+\ObjectHeading{Epistle book and Gospel book}
+  {liber Epistolarum \textperiodcentered\ liber Evangeliorum}
+  {obj-epistle-book / obj-gospel-book}
+\begin{center}
+{\fontsize{9}{10.5}\selectfont\bfseries
+GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\par}
+\vspace{0.14in}
+\begin{tikzpicture}[node distance=0.22in and 0.34in]
+  \pgfmathsetseed{1964}
+  \node[relation label] (epbook) {\GenericClosedBook\\[-1pt]
+    \LitDisplay{Epistle book}};
+  \node[relation label,right=of epbook] (epcarry)
+    {\textbf{Subdeacon}\\both hands\\against his breast};
+  \node[relation label,right=of epcarry] (epsing)
+    {\GenericOpenBook\\[-1pt]\textbf{Subdeacon sings the Epistle}};
+  \draw[relation arrow] (epbook) -- (epcarry);
+  \draw[relation arrow] (epcarry) -- (epsing);
+
+  \node[relation label,below=0.72in of epbook] (gbook)
+    {\GenericClosedBook\\[-1pt]\LitDisplay{Gospel book}};
+  \node[relation label,right=of gbook] (galtar)
+    {\textbf{Deacon}\\places it at the middle of the altar};
+  \node[relation label,right=of galtar] (gtakes)
+    {\textbf{Deacon}\\takes it after the blessing};
+  \node[relation label,below=0.35in of gtakes] (ghold)
+    {\GenericOpenBook\\[-1pt]\textbf{Subdeacon holds it open}\\
+      between the candle-bearing acolytes};
+  \node[relation label,left=of ghold] (gsing)
+    {\textbf{Deacon}\\sings the Gospel};
+  \draw[relation arrow] (gbook) -- (galtar);
+  \draw[relation arrow] (galtar) -- (gtakes);
+  \draw[relation arrow] (gtakes) -- (ghold);
+  \draw[relation arrow] (ghold) -- (gsing);
+\end{tikzpicture}
+\end{center}
+\vspace{0.12in}
+
+\begin{minipage}[t]{0.47\linewidth}
+  \Field{Epistle book}{The distinct \emph{liber Epistolarum} used by the
+  subdeacon in the Solemn-Mass Epistle ceremonial.}
+  \Field{Purpose}{It contains the Epistle text from which the subdeacon sings.}
+  \Field{Handling boundary}{The checked rite assigns the book to the
+  subdeacon. An altar server recognizes the book and its route; this entry
+  grants no server handling role.}
+  \Boundary{RECOGNIZES ONLY}
+  \Field{Source}{\SourceKey{src-epistle-book-1962}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
+  \Field{Gospel book}{The distinct \emph{liber Evangeliorum} used by the
+  deacon and subdeacon in the Solemn-Mass Gospel ceremonial.}
+  \Field{Purpose}{It contains the Gospel text sung by the deacon while the
+  subdeacon holds the open book.}
+  \Field{Handling boundary}{The checked rite assigns the book to the sacred
+  ministers. At ordinary Solemn Mass, do not replace the holding subdeacon
+  with a freestanding lectern in this diagram.}
+  \Boundary{RECOGNIZES ONLY}
+  \Field{Do not confuse}{Neither book is identifiable by cover ornament. The
+  plain symbols intentionally assert no binding, decoration, size, or
+  combined-book practice.}
+  \Field{Source}{\SourceKey{src-gospel-book-1962}}
+\end{minipage}
+\clearpage
+
 \section*{\LitDisplay{Source notes and scope}}
 \small
 \SourceNote{src-altar-bells-missal}{1962 \emph{Missale Romanum},
@@ -337,13 +446,25 @@ communicants' chins; no morphology is specified.}
 width is an overall catalog dimension, not a proved mouth diameter.}
 \SourceNote{src-met-463080-image}{Metropolitan Museum of Art Open Access
 image for object 463080, used as one catalog exemplar rather than a norm.}
+\SourceNote{src-epistle-book-1962}{1962 \emph{Missale Romanum},
+\emph{Ritus servandus} VI.4, printed pp. LVII--LVIII / artifact PDF
+pp. 59--60: the subdeacon takes the \emph{liber Epistolarum} in both hands,
+carries it against his breast, and sings the Epistle from it.}
+\SourceNote{src-gospel-book-1962}{1962 \emph{Missale Romanum},
+\emph{Ritus servandus} VI.5, printed p. LVIII / artifact PDF p. 60: the
+deacon places and later takes the \emph{liber Evangeliorum}; the subdeacon
+holds it while the deacon sings, between the candle-bearing acolytes.}
 
 \section*{\LitDisplay{Scope and qualifications}}
-This alpha renders ten source-audited canonical records from the Low-Mass
-altar-server queue: altar bells, altar candle, altar candlestick, sanctuary
-lamp, altar Missal, Missal stand, Missal cushion, book markers, chalice, and
-paten. The lectern appears only as a source-qualified comparison. This alpha
-does not yet cover the server's complete route, the complete altar
+This alpha renders twelve source-audited canonical records from the
+altar-server queue. Ten belong to the bounded Low-Mass core:
+altar bells, altar candle, altar candlestick, sanctuary lamp, altar Missal,
+Missal stand, Missal cushion, book markers, chalice, and paten. The Epistle
+and Gospel books begin the Solemn-Mass recognition branch;
+their generic diagram teaches only the exact minister/use relationships
+established by \emph{Ritus servandus} VI.4--5. The lectern appears only as a
+source-qualified comparison. This alpha does not yet cover the server's
+complete route, the complete altar
 composition, cruets and Lavabo objects, Communion plate, vesture, sung or
 solemn branches, the full Holy Week inventory, pontifical ceremonies, or
 related ceremonies. It therefore makes no claim of dictionary completeness.

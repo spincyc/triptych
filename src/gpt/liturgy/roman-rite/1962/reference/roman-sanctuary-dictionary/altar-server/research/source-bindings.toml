@@ -3,6 +3,15 @@ record_type = "bindings"
 document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
 
 [[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium"
+loci = ["Ritus servandus in celebratione Missae VI.4-5, printed pp. LVII-LVIII, artifact PDF pp. 59-60"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the separate liber Epistolarum and liber Evangeliorum identities and the printed Solemn-Mass minister/use sequence. The rendered plate stays below its evidence ceiling by using generic book symbols and TeX labels; it asserts no binding morphology."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+
+[[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-chalice-and-paten-preparation"
 loci = ["Ritus servandus in celebratione Missae I.1, printed p. LII, artifact PDF p. 56"]
 role = "official-control"
