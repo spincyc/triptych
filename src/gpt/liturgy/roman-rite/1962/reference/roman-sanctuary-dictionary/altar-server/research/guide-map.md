@@ -59,6 +59,13 @@ Solemn-Mass book records are rendered only as a TeX-native relational diagram:
 generic graphite-style book symbols carry no artwork or binding claim, while
 TeX owns the exact minister and use labels.
 
+The canonical generated selection now admits seventeen records, including the
+credence table and sedilia. Those two records were already present in this
+bespoke thirty-three-record teaching leaf, so the cross-edition promotion
+changes neither its object count nor its pagination. Their pages retain the
+verified service-station and sacred-ministers' seating distinctions, local
+placement qualifications, and handling boundaries.
+
 The incense family uses source-bounded generated artwork. The thurible view
 shows a neutral footed bowl, removable pierced lid, three support chains, and
 a separate central lid-lifting chain without asserting material, ornament, or

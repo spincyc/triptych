@@ -4,6 +4,11 @@ Status: **terminology and ceremonial-use review requested; no publication
 approval implied**
 Prepared: 2026-07-27
 
+Historical note (2026-07-28): this packet is preserved as non-operative
+research history. Specialist or priestly review is not an alpha admission,
+release, or completion gate. The later exact-source credence-table and sedilia
+audit and canonical records control those two entries.
+
 ## Boundary
 
 This packet covers `obj-sedilia`, `obj-sanctuary-stool`,
@@ -109,12 +114,13 @@ kneeler. The contrast is pedagogical.
 11. Are any of the illustrated furnishings likely to be mistaken for clergy-
     only objects that a server may move? If so, what concise handling boundary
     should appear in the server edition?
-12. Before release, which claims require comparison with an edition-specific
-    ceremonial manual in addition to the *Caeremoniale Episcoporum*?
+12. For a future refinement, which claims would benefit from comparison with
+    an edition-specific ceremonial manual in addition to the
+    *Caeremoniale Episcoporum*?
 
 ## Requested disposition
 
-For each question, record **accept**, **revise**, **merge**, **split**, or
-**hold**, with the source or customary basis when known. Artwork remains at
-identity-review state; monochrome print, full plate, consumer, rights, and
-release approval remain separate gates.
+If this historical packet is ever revisited, record **accept**, **revise**,
+**merge**, **split**, or **hold**, with the source or customary basis when
+known. Such review may inform later refinement but does not control alpha
+admission or release.

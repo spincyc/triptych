@@ -15,4 +15,7 @@ Altar and carried candlesticks remain distinct; stand and cushion remain
 alternatives; Holy Week lectern states remain rite-specific. The five
 prepared-chalice linen records teach their verified relationships and
 confusables without inventing a server handoff, cue, fold, or recovery
-procedure. The canonical alpha gate requires no external review.
+procedure. The credence table and sedilia add a verified service station and
+sacred-ministers' seating distinction without converting local placement or
+furniture handling into a universal assignment. The seventeen-record
+canonical alpha gate requires no external review.

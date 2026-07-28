@@ -39,13 +39,13 @@ excluded from that edition by this register.
 | `obj-epistle-book` | identified | Omit from Low-Mass set | Separate lesson book belongs to sung or alternate lesson arrangements, not this altar-Missal Low-Mass route |
 | `obj-bishops-chair` | lead | Omit from Low-Mass set | Pontifical furnishing; no Low-Mass chronology relation |
 | `obj-communion-rail` | lead | Select: conditional orientation | LM-034--LM-035 require a locally marked Communion lane; a rail may define it but is not universalized by the guide |
-| `obj-credence-table` | identified | Select: direct working station | Named pickup and return station from LM-001 through LM-036 |
+| `obj-credence-table` | source-audited | Select: direct working station | Named pickup and return station from LM-001 through LM-036 |
 | `obj-episcopal-kneeler` | identified | Omit from Low-Mass set | Pontifical furnishing; no Low-Mass chronology relation |
 | `obj-episcopal-throne` | identified | Omit from Low-Mass set | Pontifical furnishing; no Low-Mass chronology relation |
 | `obj-faldstool` | identified | Omit from Low-Mass set | Pontifical furnishing; no Low-Mass chronology relation |
 | `obj-prie-dieu` | identified | Omit from Low-Mass set | Current record is pontifical/ceremony-surrounding-Mass, not the servers' locally chosen sermon seats |
 | `obj-sanctuary-stool` | identified | Omit from Low-Mass set | Current record is pontifical/ceremony-surrounding-Mass; not identified with server seating in LM-018 |
-| `obj-sedilia` | identified | Omit from Low-Mass set | LM-018 expressly distinguishes the servers' local seats from sedilia |
+| `obj-sedilia` | source-audited | Omit from Low-Mass set | LM-018 expressly distinguishes the servers' local seats from sedilia |
 | `obj-gospel-book` | identified | Omit from Low-Mass set | The Gospel is read from the altar Missal in this route |
 | `obj-lectern` | source-audited | Omit from Low-Mass set | No separate lesson or Gospel lectern occurs in the selected route; it enters the broader altar-server edition only in the exact Holy Week branches |
 | `obj-missal-cushion` | source-audited | Select: alternative support | Mutually alternative support that a server must recognize if used instead of a stand |

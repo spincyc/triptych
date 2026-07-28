@@ -17,4 +17,7 @@ chalice veil, and burse enter as ordinary supporting objects in the
 pontifical-Mass preparation, not as distinct pontifical forms. Audience notes
 distinguish these from insignia and do not universalize context-specific
 materials or forms. The edition uses the one canonical alpha gate and has no
-external-review admission path.
+external-review admission path. The credence table and sedilia enter as
+ordinary supporting furnishings, not as pontifical insignia or proof of a
+particular throne arrangement. Their addition brings this bounded selection
+to fourteen records.

@@ -7,12 +7,35 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Seventeen alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Twelve alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Seventeen alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Seventeen alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Sixteen alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Fourteen alpha records | Built, inspected, and installed | No | Alpha |
+
+The furnishings checkpoint promotes the already source-audited credence table
+and sedilia through the canonical alpha renderer. No object claim or pixel
+changed. The general-reader edition receives only the credence because
+sedilia are marked useful rather than required for that audience; the other
+generic editions receive both. The bespoke altar-server leaf already
+contained both records and remains at thirty-three objects.
+
+All 122 pages across the six leaves were rastered through the repository
+review helper and visually inspected. The two new generic-edition furnishings
+plates are legible and unclipped; the installed altar-server bytes were
+separately rastered and reinspected after installation. Settled logs contain
+no fatal error, undefined reference, or overfull box. Build and installed
+bytes are identical:
+
+| Leaf | Records | Pages | Installed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 17 | 19 | `54872f323f210a473ba1ea2984ba1c6a5edae1129b12e5d12772fb290299d961` |
+| Altar server | 33 | 31 | `37ccc6f0edb4a5db219142891ea5ae4479d245312a4cf81578325721ce5a499e` |
+| Sacristan | 17 | 19 | `a3e54597e0678c696c0a214a2ec1ace60fcff5888eb8a9a6482b102d06dfcc74` |
+| MC/trainer | 17 | 19 | `55287c6260f68a2cb83a0d50e10729fb11d22ea389c72f72ab6bff54664fdd3b` |
+| General reader | 16 | 18 | `c02d605df5f698005dc700c1dc032a3a3c176aa9b1c1a8085de3b5ab65a8a141` |
+| Pontifical ceremonies | 14 | 16 | `7ceabb54777f7659409683cfe0e41be6974366b162c997183f21ba7988952b9c` |
 
 The prepared-chalice linens checkpoint promotes the corporal, purificator,
 chalice pall, chalice veil, and burse from their already reviewed altar-server
@@ -263,7 +286,8 @@ safety, reproducibility and identity, mechanical validity, and basic visual
 usability pass.
 
 The current altar-server furnishings tranche adds the credence table and
-sedilia. Fortescue's exact 1917 facsimile at printed pp. 8–9 controls the
+sedilia. Fortescue--O'Connell's exact 1943 seventh revised facsimile at
+printed pp. 8–9 / artifact pp. 29–30 controls the
 selected Epistle-side teaching model, the credence's service relationship, the
 three sacred ministers' seating relationship, and the distinction from server
 seating; pp. 78–79 were rechecked as ceremonial context. Exact restricted
