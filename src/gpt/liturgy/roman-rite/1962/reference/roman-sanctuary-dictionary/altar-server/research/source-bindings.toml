@@ -1,0 +1,39 @@
+schema = 1
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-chalice-and-paten-preparation"
+loci = ["Ritus servandus in celebratione Missae I.1, printed p. LII, artifact PDF p. 56"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the prepared chalice stack: purificator over the chalice mouth, then the paten with host. It does not establish dimensions or decorative morphology."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:8f2cc60faa06224006b7c8f3210e23b47b74eed1242210de0730ea865bcaf629"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-communion-plate"
+loci = ["Ritus servandus in celebratione Missae X.7, printed p. LXIII, artifact PDF p. 65"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the distinct identity and under-chin function of the Communion plate, patina, as opposed to the celebrant's patena. It does not establish a handled or raised-edge morphology."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:76c17c17509713a092bfab2e63d758f45af0497ac5cc05acd11a7145826824be"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.chalice-and-paten-463080.met-collection-record-2026-05-20.met-api-json-d123735a"
+loci = ["object 463080; accession 08.105.12a, b; dimensions and object metadata"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Supplies exact catalog dimensions and identification for one French early-twentieth-century chalice-and-paten pair made after an original dated 1555. It is an exemplar rather than a universal or normative Roman specification."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:46c4c256b17a4ad596219d1bfed0780cc892c16ef272f2e5ef098592dbbc24ca"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.chalice-and-paten-463080.met-collection-record-2026-05-20.met-open-access-image-99c045a1"
+loci = ["complete object photograph for object 463080"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Shows the cataloged shallow circular paten and chalice side by side at one photographic scale. It does not show the paten on the chalice; that relationship is controlled separately by the Missal."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:39271386b0b9fcbe241022ac228e0665f5be12c07e4d2f54a21a07ea5124371c"

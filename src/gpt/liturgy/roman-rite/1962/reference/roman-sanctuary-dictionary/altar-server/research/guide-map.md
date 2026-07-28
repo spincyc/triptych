@@ -50,9 +50,15 @@ support cannot be mistaken for one object. The paten candidate is not rendered
 because its canonical review note says its silhouette may read as
 a domestic saucer and lacks the defining on-chalice relationship. Omitting
 that image is safer than allowing an attractive but ambiguous pictograph to
-teach the wrong identity. The prerequisite for new paten art is source
-acquisition that establishes representative morphology, relative scale, and
-the on-chalice relationship; image generation alone cannot close that gap.
+teach the wrong identity. The 2026-07-27 source tranche now supports a new
+plate only when it is labeled as one exact museum catalog exemplar: it
+supplies that paten's morphology and dimensions, its paired chalice at common
+overall-object scale, and the Missal-controlled on-chalice preparation
+relationship. It does not establish a universal or representative Roman
+silhouette. The Communion plate can be distinguished by its Missal term,
+location, and function, but its 1962-horizon handled or raised-edge morphology
+remains unproved. See
+`../../research/paten-comparison-source-audit-2026-07-27.md`.
 
 ## Reader order
 
