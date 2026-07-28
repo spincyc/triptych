@@ -62,7 +62,8 @@ Preparation follows the appointed book's contents and use; the checked
 ordinary Gospel formation has the subdeacon hold the book rather than a
 freestanding lectern.
 
-The pre-Mass handwashing place is included text only. Prepare and identify the
+The sacristy lavatory is withheld from pictorial publication until a checked
+material exemplar controls its drawing. Prepare and identify the
 local arrangement without inferring its form, plumbing, outlet, or disposal
 use from appearance; keep it distinct from the Offertory lavabo and piscina.
 

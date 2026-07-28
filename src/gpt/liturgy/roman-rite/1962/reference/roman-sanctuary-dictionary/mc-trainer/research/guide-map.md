@@ -59,7 +59,8 @@ Gospel lectern. The MC/trainer note preserves the subdeacon's Epistle carrying
 and the deacon/subdeacon Gospel relationships without inventing a server
 handoff or local assignment.
 
-The pre-Mass handwashing place is a text-only recognition boundary. Training
+The sacristy lavatory is a canonical recognition boundary withheld from the
+pictorial edition pending a checked material exemplar. Training
 may identify the local arrangement but must not invent a server assignment,
 visual form, plumbing, outlet, disposal rule, or equivalence with either
 Offertory lavabo articles or the piscina.

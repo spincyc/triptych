@@ -68,10 +68,11 @@ relationships, not from binding morphology, material, ornament, dimensions,
 or unresolved terminology aliases. The ordinary Gospel formation retains the
 subdeacon holding the book; no freestanding lectern is inserted.
 
-The pre-Mass handwashing place appears as a deliberately text-only record.
-The Missal controls the action, while its form, location, plumbing, outlet,
-and disposal practice remain local and unasserted. It is not the portable
-Offertory lavabo or the piscina.
+The canonical sacristy-lavatory record is withheld from this pictorial
+edition. The Missal controls the preparatory handwashing action, but no
+checked material exemplar yet controls a visible furnishing form. The
+ordinary clergy handwashing fitting remains distinct in purpose from both the
+portable Offertory Lavabo articles and the piscina or sacrarium.
 
 The portable holy-water vessel and aspergillum add a paired related-ceremony
 family to the generated selection: the

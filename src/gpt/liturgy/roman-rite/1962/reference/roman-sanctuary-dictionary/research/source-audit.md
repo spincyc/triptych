@@ -210,19 +210,21 @@ does not authorize any candidate for rendering.
 
 This pass does not close the church-and-sanctuary category. The 2026-07-28
 correction admits the cross-or-suitable-image and local signal bell as bounded
-publication records, retains the preparatory handwashing place as a
-source-audited text-only record, and leaves the other sacristy candidates held.
+publication records, retains the sacristy lavatory as a source-audited
+canonical terminology record excluded from pictorial publication pending a
+checked material exemplar, and leaves the other sacristy candidates held.
 
 | Binding ID | Witness and exact locus | Claim use and limit |
 | --- | --- | --- |
-| `passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-sacristy-preparation-and-reverence` | *Missale Romanum*, Vatican typical edition (1962), *Ritus servandus* I.1 and II.1, printed pp. LII and LIV / artifact PDF pp. 56 and 58 | Governing evidence for the pre-Mass handwashing action and departure bow toward the sacristy cross or image. It prescribes neither lavatory morphology nor a crucifix-only form. |
+| `passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-sacristy-preparation-and-reverence` | *Missale Romanum*, Vatican typical edition (1962), *Ritus servandus* I.1 and II.1, printed pp. LII and LIV / artifact PDF pp. 56 and 58 | Governing evidence for the priest's preparatory handwashing action and departure bow toward the sacristy cross or image. It prescribes neither a lavatory object name or morphology nor a crucifix-only form. |
 | `passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-37-40` and `.p-59` | Fortescue, revised by J. B. O'Connell, *The Ceremonies of the Roman Rite Described*, seventh ed. (1943), printed pp. 37--40 and 59 | Contemporary ceremonial witness for the return bow and for a departure bell as practice in many churches. It does not make the bell universal or prescribe its mechanism, placement, operator, or morphology. |
 | `passage.catholic-encyclopedia.volume-13.new-york-1912.sacristy` | Andrew Meehan, “Sacristy,” *Catholic Encyclopedia* 13 (1912), exact New Advent HTML artifact, furnishing paragraph | Dated specialist evidence for the room's function, cross-or-suitable-image focus, lavatory, and customary bell. It is not an official 1962 furnishing code. |
 | `rsd-catholic-encyclopedia-piscina` | Francis Mershman, “Piscina,” *Catholic Encyclopedia* 12 (1911), New Advent transcription, lines 12--14, <https://www.newadvent.org/cathen/12115a.htm>, inspected 2026-07-27 | Specialist historical synthesis for names, disposal function, variable location, and materially different forms. It does not prove that every 1962 sacristy had one. |
 
-The ordinary handwashing place and the piscina or sacrarium remain separate
-records. No lavatory or piscina artwork is admitted: purpose, outlet, and
-disposal practice must be learned locally and never inferred from appearance.
+The practical sacristy lavatory and the piscina or sacrarium remain separate
+records, while the portable Offertory Lavabo remains a third object family.
+No lavatory or piscina artwork is admitted: purpose, outlet, and disposal
+practice must be learned locally and never inferred from appearance.
 Torch racks, processional-object racks, hot-thurible stations,
 generic sacristy kneelers, safes, and utility furniture remain practical/local
 discovery leads until a material-culture source supports a representative

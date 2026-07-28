@@ -1,4 +1,4 @@
-# Sacristy handwashing-place alpha audit
+# Sacristy-lavatory terminology and publication audit
 
 Date: 2026-07-28
 
@@ -9,23 +9,22 @@ Andrew Meehan's 1912 “Sacristy” article supplies the dated English term
 source establishes a basin or sink form, plumbing, outlet, disposal route,
 material, dimensions, furniture, or fixed location.
 
-`obj-sacristy-lavatory` is therefore admitted as an explicitly `text-only`
-alpha record in the comprehensive, sacristan, MC/trainer, general-reader, and
-pontifical generated editions. It teaches recognition of the locally
-designated pre-Mass handwashing place and its distinction from both the
-portable Offertory lavabo articles and the piscina or sacrarium. It directs
-readers never to infer a fitting's purpose, outlet, or disposal use from
-appearance. No raster, TeX-native illustration, pictograph, or visual form is
-registered or implied.
+`obj-sacristy-lavatory` therefore uses the period English headword
+**sacristy lavatory**, immediately glossed as the clergy handwashing sink,
+basin, or other locally appointed place. “Sacristy sink” remains a
+plain-language alias. The former editorial Latin phrase
+`locus ad lavandas manus` is withdrawn: the checked witnesses establish the
+action but not that phrase as an official object name.
 
-The bespoke altar-server edition remains unchanged. Its existing selection
-register already names this local recognition need, while a generated
-text-only page would weaken that leaf's deliberately visual lesson format
-without adding a verified server action. This is an audience-format
-disposition, not an evidentiary omission.
+The record distinguishes three things: the practical local sacristy
+lavatory, the universal preparatory handwashing action, and the portable
+Offertory Lavabo articles. It also keeps ordinary washing distinct from the
+piscina or sacrarium's special disposal purpose. No outlet or disposal use may
+be inferred from appearance.
 
-The generator now validates `presentation_mode = "text-only"` as a reusable
-record contract: it permits a source-audited record with no artwork to pass
-the alpha gate, rejects artwork attached to a text-only record, and continues
-to require artwork identity, provenance, rights, and visual review for every
-illustrated record.
+Because neither checked witness controls a visible lavatory form, the record
+remains canonical but is explicitly excluded from every pictorial edition.
+It may return only after a dated, rights-cleared material exemplar controls an
+honest representative drawing. This replaces the earlier text-only
+publication disposition; a pictorial dictionary should neither invent a sink
+nor devote a picture page to an unpictured object.

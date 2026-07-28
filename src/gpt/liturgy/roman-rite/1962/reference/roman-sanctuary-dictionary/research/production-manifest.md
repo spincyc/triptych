@@ -66,39 +66,36 @@ embedded, text is extractable, and installed bytes match the reviewed builds:
 | General reader | 37 | 40 | `5d2887748f34dc45abc595bc46de5a6e46a8bb9f0e431b20d8e9565fa7c46d15` |
 | Pontifical ceremonies | 36 | 39 | `1c8a5c54e5e2077b82b4523de9332124a3d1e1e4c3a2d6faf42be6fd6ca02713` |
 
-## Sacristy handwashing-place text-only checkpoint — 2026-07-28
+## Sacristy-lavatory publication correction — 2026-07-28
 
-The comprehensive, sacristan, MC/trainer, general-reader, and pontifical
-generated editions now admit `obj-sacristy-lavatory` as an explicitly
-text-only record. The exact 1962 Missal controls the pre-Mass handwashing
-action; the dated Catholic Encyclopedia witness supplies terminology only.
-No basin or sink form, location, plumbing, outlet, disposal route, material,
-dimensions, or furniture is asserted. The record is distinguished from the
-portable Offertory lavabo articles and the piscina, and readers are told never
-to infer purpose or disposal use from appearance.
+The canonical record now bears the period English name “sacristy lavatory”
+with the child-friendly gloss “clergy handwashing sink or basin.” It separates
+the Missal's universal preparatory handwashing action from the practical local
+furnishing, withdraws the unsupported editorial Latin object phrase, and
+distinguishes both the portable Offertory Lavabo and the piscina or sacrarium.
 
-The generator's reusable text-only contract requires an empty artwork array
-and all ordinary identity, status, claim-verification, safety, rights, and
-mechanical gates. The bespoke altar-server edition remains unchanged because
-its existing selection register already covers local recognition and a sparse
-text-only page would weaken that leaf's visual lesson format without adding a
-verified server action.
+No checked source controls a visible lavatory form, location, plumbing,
+outlet, disposal route, material, dimensions, or furniture. Every pictorial
+edition therefore excludes this record pending a dated, rights-cleared
+material exemplar. The former text-only pages are withdrawn rather than
+allowing an unpictured object entry or an invented generic sink to occupy a
+pictorial dictionary.
 
-All 185 affected pages were rastered through the repository review helper and
-visually inspected. The five new text-only pages and terminal apparatus were
-also checked at rendered size. Headwords, claims, source boundaries, and
-audience notes are legible, with no clipping, overlap, spill page, or implied
-image. Settled logs have no fatal error, undefined reference, overfull box, or
-rerun warning. Fonts are embedded, text is extractable, and build and
-installed bytes are identical:
+The five affected PDFs were rebuilt for settled references. All 63 pages were
+rastered through `scripts/pdf-review` and visually inspected at contact-sheet
+and rendered-page scale. The former text-only entry is absent, the surrounding
+comparison plates reflow without clipping or misleading gaps, and the terminal
+apparatus remains legible. Settled logs contain no fatal error, undefined
+reference, overfull box, or rerun warning. Build and installed bytes are
+identical:
 
-| Edition | Records | Pages | Installed SHA-256 |
-| --- | ---: | ---: | --- |
-| Comprehensive | 35 | 38 | `66cecbfe3d4ef9ac4c31cf3845c55633b511bd82856633aff4f302920d77948e` |
-| Sacristan | 35 | 38 | `edaafee5d2f79f8bcda93df5807c27e89d0d2994fc9326d5912b03514cd4820d` |
-| MC and trainer | 35 | 38 | `4ba4e2657f7325870f7de9998f76f04eb582fc357dffb371ae842133cc13c599` |
-| General reader | 33 | 36 | `8e852d57ffb3ca6ff56107fac16a1c2b00e0dbe0dd0ca73eb026bb41a44d32dc` |
-| Pontifical ceremonies | 32 | 35 | `b96ea849524d3dea95698e6fe2a0f4216c9c66daf0f2bf9ad249f4fe3e4aaa72` |
+| Edition | Pages | Installed SHA-256 |
+| --- | ---: | --- |
+| Comprehensive | 14 | `2e4e7c1b501bd3d2d345537fecb6f4da1eb76bc07dc393fa156ead6195d96f7a` |
+| Sacristan | 13 | `1deaf59e0343c5d4c6c5f4807b6b52414de7429f6074602a589c3548e5e901eb` |
+| MC and trainer | 13 | `07d97e6f0f25205e205947131a6e05128b05eba0b6abea54eb114111b892e2de` |
+| General reader | 12 | `0032744629e71b93031f2bb4357b07537b1f1d88f23ad77739ff3ee66aab8ac2` |
+| Pontifical ceremonies | 11 | `3b6d6220829f488ccfde109a96b6a10902b1e81a142d2650970b5b6b26f0211f` |
 
 ## Epistle and Gospel books cross-edition checkpoint — 2026-07-28
 

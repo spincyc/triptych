@@ -175,6 +175,18 @@ class ValidatorTests(unittest.TestCase):
         edition = next(e for e in check.editions["editions"] if e["id"] == "ed-altar-server")
         self.assertEqual(check.selected(edition), [])
 
+    def test_practical_local_furnishing_is_valid_but_not_selected(self) -> None:
+        record = {
+            **VALID_RECORD,
+            "workflow_state": "source-audited",
+            "statuses": ["practical-local-furnishing"],
+            "presentation_mode": "text-only",
+            "artwork": [],
+        }
+        check = self.validate(record)
+        self.assertEqual(check.problems, [])
+        self.assertTrue(all(check.selected(edition) == [] for edition in check.editions["editions"]))
+
     def test_historical_record_requires_chronology(self) -> None:
         record = {
             **VALID_RECORD,

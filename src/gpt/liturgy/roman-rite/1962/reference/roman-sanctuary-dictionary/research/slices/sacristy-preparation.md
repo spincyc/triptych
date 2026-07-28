@@ -8,7 +8,7 @@ The original seven-record packet below is retained as audit history. The
 current disposition is recorded in
 `../sacristy-recognition-source-audit-2026-07-28.md`: the cross-or-suitable
 image and local signal bell now have separate source-bounded figures; the
-pre-Mass handwashing place is a text-only source-audited record with artwork
+the sacristy lavatory is a source-audited terminology record with artwork
 and morphology held; the rejected composite has no current consumer; and the
 remaining sacristy candidates retain their individual held states. No
 external-review process is a current publication gate.
@@ -47,7 +47,7 @@ plumbing, or the representative morphology of the generated plate.
 | `obj-vesting-table` | Vesting table | Work surface used in vesting; construction local | Is the English category natural, and should the provisional Latin indexing phrase be retained? |
 | `obj-vestment-case` | Vestment case | Common storage class | Should flat press/drawers and hanging wardrobe become substantive variants or separate entries? |
 | `obj-sacristy-cross` | Sacristy cross or image | Rubric permits cross or suitable image | Must the plate show both alternatives to avoid narrowing the rubric visually? |
-| `obj-sacristy-lavatory` | Preparatory handwashing place | Ordinary pre-Mass handwashing, not Offertory lavabo and not automatically a piscina | What simple visible distinction is pastorally accurate without making a plumbing claim? |
+| `obj-sacristy-lavatory` | Sacristy lavatory (clergy handwashing sink or basin) | Practical local furnishing serving the universal preparatory handwashing action; not the portable Offertory Lavabo and not automatically a piscina | Held from pictorial publication until a checked material exemplar supports a representative drawing |
 | `obj-piscina-sacrarium` | Piscina or sacrarium | Special-purpose disposal fitting with variable place and form | Is the proposed 1962 functional description and server handling boundary sound? |
 | `obj-sacristy-bell` | Sacristy door bell | Customary local signal, not universal requirement | Is it important enough for the server edition, and how should local operation be qualified? |
 
