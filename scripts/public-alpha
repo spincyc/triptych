@@ -1342,6 +1342,33 @@ def relative_link(output_relative: str, destination: str) -> str:
     return posixpath.relpath(destination, parent if parent != "." else ".")
 
 
+def page_classes(source_relative: str, output_relative: str) -> str:
+    """Return stable semantic classes for the page's reader-facing purpose."""
+    if output_relative.startswith("web/"):
+        kind = "reader"
+    elif source_relative == "README.md":
+        kind = "home"
+    elif source_relative == "LIBRARY.md" or source_relative.startswith("library/"):
+        kind = "catalog"
+    else:
+        kind = "utility"
+    return f"page-shell page-{kind}" + (" reading" if kind == "reader" else "")
+
+
+def reject_internal_reader_labels(source_relative: str, rendered_html: str) -> None:
+    """Keep implementation identities out of navigation and catalog prose."""
+    if source_relative == "LIBRARY.md" or source_relative.startswith("library/"):
+        forbidden = {
+            "PC-ANN": "internal postconciliar registry identifier",
+            "triptych-publication-id": "internal publication marker",
+        }
+        for token, description in forbidden.items():
+            if re.search(re.escape(token), rendered_html, flags=re.IGNORECASE):
+                raise ReleaseError(
+                    f"{source_relative}: {description} leaked into rendered HTML: {token}"
+                )
+
+
 def render_page(
     source_relative: str,
     markdown_text: str,
@@ -1369,8 +1396,8 @@ def render_page(
     if preview:
         robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
         banner = (
-            '<aside class="release-banner preview"><strong>Private build preview.</strong>'
-            " Do not share or deploy this preview artifact.</aside>"
+            '<aside class="release-banner preview" aria-label="Edition status">'
+            "<strong>Preview.</strong> Local review copy; not for distribution.</aside>"
         )
     elif requires_unadvertised_controls(authorization):
         robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
@@ -1382,26 +1409,25 @@ def render_page(
                 f'  <meta name="triptych-authorization-expires" content="{expires_at}">'
             )
             banner = (
-                '<div class="release-banner conditional"><strong>Temporary public alpha.</strong>'
-                f" Unadvertised hosting is authorized through {through}.</div>"
+                '<aside class="release-banner conditional" aria-label="Edition status">'
+                "<strong>Review edition.</strong>"
+                f" Available through {through}.</aside>"
             )
         else:
             banner = (
-                '<div class="release-banner conditional"><strong>Unadvertised public alpha.</strong>'
-                " Working studies; follow citations and verify important claims.</div>"
+                '<aside class="release-banner conditional" aria-label="Edition status">'
+                "<strong>Review edition.</strong>"
+                " Read critically and follow the cited sources.</aside>"
             )
     else:
         robots = '<meta name="robots" content="index, follow">'
         banner = (
-            '<div class="release-banner"><strong>Public alpha.</strong>'
-            " Working studies; follow citations and verify important claims.</div>"
+            '<aside class="release-banner" aria-label="Edition status">'
+            "<strong>Study edition.</strong>"
+            " Read critically and follow the cited sources.</aside>"
         )
     replacements = {
-        # A document page is read start to finish and takes a reading measure;
-        # every other page keeps the catalog shell.
-        "{{PAGE_CLASS}}": "page-shell reading"
-        if output_relative.startswith("web/")
-        else "page-shell",
+        "{{PAGE_CLASS}}": page_classes(source_relative, output_relative),
         "{{TITLE}}": html.escape(page_title(markdown_text)),
         "{{ROBOTS}}": robots,
         "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
@@ -1418,6 +1444,7 @@ def render_page(
     unresolved = re.findall(r"\{\{[A-Z_]+\}\}", template)
     if unresolved:
         raise ReleaseError(f"unresolved layout markers: {sorted(set(unresolved))!r}")
+    reject_internal_reader_labels(source_relative, template)
     return template
 
 

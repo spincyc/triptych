@@ -83,6 +83,56 @@ class PublicAlphaTest(unittest.TestCase):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
 
+    def test_page_classes_are_semantic_and_stable(self) -> None:
+        self.assertEqual(
+            self.tool.page_classes("README.md", "index.html"),
+            "page-shell page-home",
+        )
+        self.assertEqual(
+            self.tool.page_classes("LIBRARY.md", "library.html"),
+            "page-shell page-catalog",
+        )
+        self.assertEqual(
+            self.tool.page_classes("library/test.md", "library/test.html"),
+            "page-shell page-catalog",
+        )
+        self.assertEqual(
+            self.tool.page_classes("web/gpt/work.md", "web/gpt/work.html"),
+            "page-shell page-reader reading",
+        )
+        self.assertEqual(
+            self.tool.page_classes("CONTRIBUTING.md", "contributing.html"),
+            "page-shell page-utility",
+        )
+
+    def test_catalog_render_rejects_internal_reader_labels(self) -> None:
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.reject_internal_reader_labels(
+                "library/test.md", "<p>PC-ANN-001</p>"
+            )
+        self.assertIn(
+            "internal postconciliar registry identifier", str(failure.exception)
+        )
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.reject_internal_reader_labels(
+                "library/test.md", "<!-- triptych-publication-id: work -->"
+            )
+        self.assertIn("internal publication marker", str(failure.exception))
+
+    def test_public_layout_uses_accessible_restrained_ornament_and_stable_nav(
+        self,
+    ) -> None:
+        layout = (
+            REPOSITORY_ROOT / "release/public-alpha/layout.html"
+        ).read_text(encoding="utf-8")
+        self.assertIn('class="responsory-mark" aria-hidden="true"', layout)
+        self.assertIn('class="responsory-divider" aria-hidden="true"', layout)
+        self.assertIn(">Library</a>", layout)
+        self.assertIn(">Feedback</a>", layout)
+        self.assertNotIn("Browse the library", layout)
+        self.assertNotIn("Give feedback", layout)
+
     def make_manifest(self) -> dict:
         stale_hash = "0" * 64
         return {
