@@ -311,7 +311,7 @@ This four-part distinction blocks opposite shortcuts. Printing an official formu
 
 Successive Roman editions preserved the basic material while changing rubrics, arrangement, and supplementary material. The blessing of persons or places and the exorcism associated with Leo XIII belong to their own textual and juridical histories; neither the later three-chapter architecture nor its third chapter may be folded backward into the 1614 formulary. By the twentieth century the commonly cited predecessor is title XII of the 1952 *Rituale Romanum*. That book is important evidence for the discipline immediately before the postconciliar revision, but its existence does not settle whether, where, or under what authorization an older book may be used today.
 
-The edition history should therefore be read as a sequence of controlled states, not as one frozen “1614 rite.” For each state the questions are bibliographic before they are interpretive: who authorized it, what decree or title page identifies it, how is the material divided, what changed at the relevant locus, and what evidence establishes the change? Until those controls are present, a date in a later bibliography remains a research lead rather than proof of a textual revision. This study uses the 1614 witness for its own section and the 1952 edition only as the identified title-XII predecessor to the postconciliar reform; it does not claim a complete line-by-line stemma between them.
+The edition history should therefore be read as a sequence of controlled states, not as one frozen “1614 rite.” For each state the questions are bibliographic before they are interpretive: who authorized it, what decree or title page identifies it, how is the material divided, what changed at the relevant locus, and what evidence establishes the change? Until those controls are present, a date in a later bibliography remains a research lead rather than proof of a textual revision. This study uses the 1614 witness for its own section. A Pustet printing approved at Regensburg in 1872 still presents *De exorcizandis obsessis a daemonio* as one continuous, unnumbered unit on printed pages 281–301; the next unit begins on page 302. The separately controlled 1925 reset instead divides title XI into three chapters. This comparison establishes a change in book architecture, not a formula-level stemma, a record of actual use, or proof of universal reception. The 1952 edition remains only the identified title-XII predecessor to the postconciliar reform; this study does not claim a complete line-by-line stemma among these states.
 
 The Leonine material especially requires this discipline. Its documentary questions include the authority and wording of the original act, later revision, placement in particular editions, and subsequent restrictions on use. A devotional origin story, however familiar, cannot answer those questions. Nor can a formula directed against Satan and the apostate angels be silently equated with the 1614 section concerning an allegedly possessed person. Their objects, textual histories, and disciplinary reception must be narrated separately.
 
@@ -684,7 +684,7 @@ Selected loci in 1 Samuel 16; Tobit 6–8; Matthew 4, 8, 12, 17; Mark 1, 3, 5, 9
 
 ### Ritual and theological witnesses
 
-*Gelasian Sacramentary*, selected scrutinies and exorcisms. *Pontificale Romano-Germanicum*, Vogel–Elze edition, catalog control only; exact ordines and pages remain an open research gate. Thomas Aquinas, *Summa theologiae*, first part, question 57, article 4; question 111, articles 2–4; question 114, articles 2–3; and third part, question 71, articles 2–4. *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*, printed pp. 198–219. *Rituale Romanum* (1952), title XII. Paul VI, *Ministeria quaedam* (1972).
+*Gelasian Sacramentary*, selected scrutinies and exorcisms. *Pontificale Romano-Germanicum*, Vogel–Elze edition, catalog control only; exact ordines and pages remain an open research gate. Thomas Aquinas, *Summa theologiae*, first part, question 57, article 4; question 111, articles 2–4; question 114, articles 2–3; and third part, question 71, articles 2–4. *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*, printed pp. 198–219. *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg edition, title and approval leaves, and *De exorcizandis obsessis a daemonio*, printed pp. 281–301. *Rituale Romanum* (1925), title XI, chapters 1–3, electronic reset used only for chapter architecture. *Rituale Romanum* (1952), title XII. Paul VI, *Ministeria quaedam* (1972).
 
 ### Law and current official practice
 
@@ -696,7 +696,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-28T03:02:08Z
+**Last revised (UTC):** 2026-07-28T03:30:00Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
@@ -707,5 +707,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 **Agent/runtime:** OpenAI Codex agent (public-alpha review labeling, promised-deliverable recovery, expansion planning, and publication-state reconciliation); API workspace; unexposed: server revision
 
 **Agent/runtime:** OpenAI Codex agent (ancient-context and early-Christian publication synchronization, bounded historical synthesis, and production review); API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex agent (1872 Roman Ritual facsimile acquisition, edition-boundary verification, bounded historical comparison, and production review); API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

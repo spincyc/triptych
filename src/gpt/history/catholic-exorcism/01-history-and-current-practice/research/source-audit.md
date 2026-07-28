@@ -152,6 +152,19 @@ routes, findings, and limits are recorded in
   file (the metadata API returned HTTP 429). The edition therefore remains a
   bibliographic/page-image control, not a hashed artifact or basis for exact
   quotation, formula comparison, or complete procedural synthesis.
+- *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg
+  edition, exact Internet Archive facsimile
+  `ritualeromanumpa00cath_0`, 46,078,608 bytes, SHA-256
+  `b21a0f45…2299`. Title page PDF 7 and approval leaf PDF 14 were visually
+  checked. The latter's concordance and Sacred Congregation of Rites
+  submission statements identify this printing's represented approval state;
+  they are not an independent collation and do not turn the witness into a
+  1752 printing or an 1884 typical state. The continuous, unnumbered
+  *De exorcizandis obsessis a daemonio* unit occupies printed pp. 281--301/
+  PDF 295--315; the next unit opens at printed p. 302/PDF 316. This supports
+  only an edition-specific boundary and placement comparison with the exact
+  1925 three-chapter reset. No formula, use, prevalence, efficacy, universal
+  reception, or present authorization is inferred.
 - *Rituale Romanum* (1952), title XII. Historical predecessor, not presented
   as the ordinary current ritual book. A 2026-07-27 exact-access probe found
   catalogs, secondary excerpts, modern samples, and an 1873 Baltimore scan,
@@ -270,9 +283,9 @@ titles, hypothetical questions, or the publication's own analytic
 terminology, not uncredited source excerpts.
 
 The current proprietary ritual is neither reproduced, translated, nor reduced
-to a usable sequence. The 1614 and 1952 ritual witnesses are treated through
-edition-identified historical description and paraphrase; no hosted page image
-or formula is reproduced. Official and canonical texts, ancient and medieval
+to a usable sequence. The 1614, 1872, and 1952 ritual witnesses are treated
+through edition-identified historical description and paraphrase; no hosted
+page image or formula is reproduced. Official and canonical texts, ancient and medieval
 translations, modern scholarship, clinical material, and safeguarding sources
 are paraphrased at identified loci. This treatment does not place their
 underlying wording under the repository license. A later expansion that adds

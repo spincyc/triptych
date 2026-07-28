@@ -99,6 +99,23 @@ of printed pp. 198--219. Until then the edition binding remains bibliographic;
 no quotation, exact formula comparison, complete procedural digest,
 typographical claim, or frequency/outcome inference may depend on the hosted
 view.
+- *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg
+  edition, exact Internet Archive facsimile
+  `ritualeromanumpa00cath_0` (46,078,608 bytes; SHA-256
+  `b21a0f45…2299`). The title page at PDF 7 and diocesan approval at PDF 14
+  identify the printing and its claimed approval state. The approval says that
+  the edition accords with the exemplar approved under Benedict XIV in 1752
+  and a later Propaganda Fide printing, and that its sheets were submitted to
+  the Sacred Congregation of Rites' secretariat. These are the edition's own
+  identity and approval statements, not an independent collation; this witness
+  is neither a 1752 printing nor evidence for an 1884 typical state.
+  The unit *De exorcizandis obsessis a daemonio* runs continuously, without
+  numbered chapter divisions, from printed pp. 281--301/PDF 295--315. The
+  next unit begins at printed p. 302/PDF 316. Compared with the separately
+  controlled 1925 reset, this establishes only a structural change from one
+  continuous unit to a three-chapter architecture. It supplies no formula,
+  operational-use, prevalence, efficacy, universal-reception, or present-
+  authorization claim.
 - *Rituale Romanum* (1952), title XII. Edition-specific historical
   predecessor. It is not identified as the ordinary current ritual book and
   is not used to make a present older-book authorization claim.

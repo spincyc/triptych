@@ -633,6 +633,14 @@ states = ["cataloged"]
 context = "Edition record for the Alessandrina editio-princeps witness at Google Books TBNNeaiGbc0C, independently identified by USUARIUM record 1195. Page-image inspection supports the bounded account of the single exorcism section at printed pp. 198-219, but the remote hosted bytes have not been acquired and hashed for an inspected-state binding. The edition does not support the title XI, chapters 1-3 architecture of later editions; no formula, procedural digest, frequency claim, or present authorization is inferred."
 
 [[bindings]]
+source_id = "artifact.catholic-church.rituale-romanum.latin-ratisbon-1872.internet-archive-pdf-b21a0f45"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:478a76a6bd81f6ee9b49df41ae47472587433f33672f7f0eb5faaebf195eff13"
+verified_on = "2026-07-27"
+context = "Exact facsimile control for the identity and approval statements of the 1872 Pustet first Regensburg edition and for its continuous unnumbered exorcism unit's heading, placement, and boundaries. The approval language is the edition's own statement, not independent proof of textual identity; this is not a 1752 printing or an 1884 typical state. Comparison with the exact 1925 reset is limited to continuous-unit versus three-chapter architecture. No formula, operational use, prevalence, efficacy, universal reception, or present authorization is inferred."
+
+[[bindings]]
 source_id = "edition.catholic-church.rituale-romanum.latin-typical-1952"
 loci = ["title-12.chapter-1", "title-12.chapter-2", "title-12.chapter-3"]
 role = "bibliographic"
