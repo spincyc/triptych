@@ -88,6 +88,12 @@ routes, findings, and limits are recorded in
   complete scan acquired, hashed, and visually inspected 2026-07-27. The
   printed sequence supports baptismal placement of *Exorcismi super electos*;
   it does not supply manuscript collation or the date of each stratum.
+- *Sacramentarium Gellonense*, Paris, BnF, Latin 12048, fol. 194v, exact
+  Gallica IIIF image acquired, hashed, and visually inspected 2026-07-27.
+  The folio verifies the red-rubric opening of the item cataloged as
+  *Impositio manuum in energumenum*. It does not control the complete item,
+  the Dumas–Deshusses critical text, performance, frequency, continuity, or a
+  general medieval practice.
 - Vogel–Elze, eds., *Pontificale Romano-Germanicum*. Catalog control only:
   exact ordines, pages, and manuscript correspondence remain open. No
   representative medieval ordinal or cross-genre corpus presently supports
@@ -96,7 +102,8 @@ routes, findings, and limits are recorded in
   to exorcist-ordination material in PRG ordo XV (reported at Vogel–Elze I,
   17, XV.17–19), the reconstructed *Statuta ecclesiae antiqua* in Munier,
   CCSL 148, pp. 166–185, and related manuscript families. No exact critical
-  page or selected manuscript folio was acquired and collated, so these remain
+  PRG page or selected PRG-family manuscript folio was acquired and collated,
+  so these remain
   leads and the publication continues to make no positive formulary, duty,
   circulation, or local-practice claim from them.
 - Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2–4, Fathers of
