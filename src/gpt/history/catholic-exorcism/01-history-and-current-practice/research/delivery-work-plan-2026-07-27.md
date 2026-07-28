@@ -22,8 +22,8 @@ exact snapshot.
 ## Work unit E1 — reconcile the present baseline
 
 - [x] Reconcile every present-tense record that still described a superseded
-  20-, 29-, 32-, 33-, 34-, 35-, 36-, 47-, or 57-page snapshot with the
-  installed 64-page checkpoint, preserving dated historical
+  20-, 29-, 32-, 33-, 34-, 35-, 36-, 47-, 57-, or 64-page snapshot with the
+  installed 75-page checkpoint, preserving dated historical
   findings rather than rewriting them as current.
 - [x] Make the child landing page, PDF extent, web extent, scope, source audit,
   evidence map, and deliverable ledger agree without representing the interim
@@ -31,7 +31,7 @@ exact snapshot.
 - [x] Record the exact current source, PDF, web, and installed identities in
   the appropriate audit records before using the baseline for expansion.
 
-Reconciled again 2026-07-28. The current 64-page identities and production checks are
+Reconciled again 2026-07-28. The current 75-page identities and production checks are
 owned by `final-exact-snapshot-review-2026-07-27.md`; dated earlier baseline
 findings remain historical evidence only.
 

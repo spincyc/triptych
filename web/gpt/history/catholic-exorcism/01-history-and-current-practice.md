@@ -1114,6 +1114,45 @@ The Church’s discipline makes sense only within a sharply asymmetrical theolog
 
 This is doctrine. Many details supplied by later demonologies are not. The existence and fall of personal evil spirits, their opposition to God’s reign, their temptation of human beings, Christ’s victory, and the final defeat of evil belong to the Church’s received confession (CCC 391–395, 550, 2850–2854). This study’s authority audit found no defined status for elaborate ranks or territorial assignments, non-scriptural names, causal explanations of a particular misfortune, or pastoral taxonomies of “infestation,” “oppression,” and “obsession.” Such terms may distinguish questions in a particular school or pastoral setting; repetition does not make them dogma.
 
+### Four source functions
+
+An account can repeat only true propositions and still mislead if it suppresses their different functions and kinds of authority. The following four-part map is not a rank order within the magisterium. The first is the conciliar confession received in Lateran IV: the devil and the other demons are creatures, good in their created nature and evil through their own act. The second is authoritative catechetical synthesis. The Catechism gathers the fall of the angels, their irrevocable choice, their finite creaturely power, providence, Christ’s victory, temptation, sacramentals, human dignity, and Christian prayer into one account (CCC 391–395, 550, 1667–1673, 1700–1706, 2850–2854). The synthesis is more extensive than the one conciliar sentence; its propositions should not all be attributed to that sentence as though one locus contained the whole later account.
+
+The third level is school theology. Aquinas offers a disciplined analysis of angelic knowledge, influence, temptation, and baptismal preparation. His arguments clarify what a created intellect and will can and cannot do, but this study does not turn every conclusion of that school into a defined proposition. The fourth level is editorial synthesis. Terms such as natural, preternatural, and supernatural, or a comparison among doctrine, authorization, and diagnosis, can help prevent category mistakes. Their usefulness does not give the editor authority to create a Catholic taxonomy.
+
+These levels are related without being interchangeable. Doctrine supplies boundaries within which theology reasons. Catechesis orders many doctrines for teaching and Christian life. School theology asks further questions and proposes arguments. Editorial synthesis explains why the distinctions matter for this history. A claim does not become dogma because a theological school is venerable, a pastoral term is widespread, or a contemporary author places it beside a conciliar citation.
+
+| **Level** | **What it contributes here** | **What it cannot establish** |
+|:-------------|:------------------------|:----------------------------|
+| **Conciliar confession** | The created goodness and creaturely fall of the devil and demons. | A complete demonology, pastoral taxonomy, diagnosis, or ritual procedure. |
+| **Catechetical synthesis** | The fall, finite creaturely power, providence, Christ’s victory, sacramentals, dignity, and prayer. | A finding about a particular person or the permission required by law. |
+| **School theology** | Reasoned distinctions concerning angelic knowledge, influence, temptation, and a scholastic interpretation of inherited ministry. | Defined doctrine merely by being traditional, or a clinical account of symptoms. |
+| **Editorial synthesis** | A transparent map of categories and evidentiary limits. | A new doctrine, universal Catholic terminology, or authority over a case. |
+
+### Creation, fall, and the asymmetry of evil
+
+The created-good and self-made-evil clauses do more work than deny a rival god. They separate nature from moral defection. Demons are not evil because creaturehood, spirit, intelligence, or power is evil. Their evil is not a substance added by a second creator. The doctrinal grammar therefore blocks both dualism and a fearful sacralization of evil. Whatever power a creature has remains received, finite, and subject to providence (CCC 391–395).
+
+This asymmetry also governs historical interpretation. A source may devote many lines to hostile spirits because its literary subject requires it; that verbal prominence cannot make evil metaphysically coordinate with God. Conversely, a sparse treatment does not prove that an author or community denied personal evil. Genre, purpose, and authority must be asked before the length or drama of a passage is treated as theological weight.
+
+The limit of the conciliar control is equally important. The exact witness used here is the Holy See’s later reception and quotation of *Firmiter credimus*, with its DS and conciliar locus, not a new collation of the 1215 act. It controls the attributed proposition. It does not by itself control the complete medieval context, the constitution’s manuscript history, or every later interpretation. The Catechism supplies a separately identified authoritative synthesis; it is not silently substituted for the conciliar artifact.
+
+### The Christological center
+
+The Gospel controversies about expulsion are arguments about Christ and the kingdom before they are material for a later theory of cases. In the Synoptic stronger-man sayings, the decisive question is the source and meaning of Jesus’ authority (Mk 3:22–27; Mt 12:22–32; Lk 11:14–22). The Catechism’s summary makes the same center explicit: Christ’s expulsions manifest the arrival of God’s reign and his victory over the ruler of this world (CCC 550). The theological subject is not an autonomous map of demonic capacities but the identity and mission of Christ.
+
+That center disciplines later reception in two directions. It prevents a naturalistic historical method from deciding in advance that the narratives can have no theological referent; the texts must first be heard as the canonical witnesses they are. It also prevents a Christian reader from treating them as a portable diagnostic or procedural manual. Narrative action, controversy, proclamation, and later ecclesial discipline are distinct genres. The Church’s confession of Christ’s victory does not supply a checklist by which a reader can assign an unseen cause to another person’s suffering.
+
+The petitions concerning deliverance from evil in Christian prayer likewise place spiritual conflict within dependence on the Father, forgiveness, temptation, perseverance, and final hope (CCC 2846–2854). This broad horizon corrects a reception that makes extraordinary affliction the normal measure of Christian seriousness. Ordinary temptation and the struggle for faithful consent concern every Christian; a reserved rite does not.
+
+### Dogma does not function as a case archive
+
+The doctrinal propositions and the history of alleged cases answer different questions. Lateran IV identifies the created status and moral fall of demons. The Catechism orders that confession within creation, providence, Christology, moral life, sacramentals, and prayer. Neither source supplies a census of affliction, a dossier of verified events, or an empirical rate. A dogmatic proposition can be true without making every narrative offered under its vocabulary historically reliable.
+
+The converse also follows. Failure to verify a particular report does not disprove the doctrinal proposition to which its narrator appeals. Historical criticism may find dependence, literary shaping, missing records, or contradiction in a case tradition. Those findings govern that tradition. They do not become a laboratory judgment about angels. This separation protects both inquiries: theology is not made hostage to sensational accounts, and history is not required to certify an event because the metaphysical category is Catholic.
+
+Reception often obscures the separation by moving authority sideways. A catechetical statement is cited as though it authenticated a memoir; the memoir is then cited as though it supplied empirical confirmation of the catechesis. The two references appear mutually supporting while neither performs the task assigned to it. A disciplined account instead asks of each claim whether its support is doctrinal, juridical, historical, pastoral, or clinical, and then stops at that source class’s limit.
+
 ### Natural, preternatural, and supernatural
 
 For the bounded purposes of this study, these school-theological terms mark relations, not three kinds of being. The definitions that follow are an editorial synthesis used to keep kinds of claim distinct; the three-word scheme is not presented as a definition of doctrine. *Natural* refers to a creature and to powers and effects proportioned to a created nature. Catholic writers may call an alleged effect *preternatural* when they attribute it to a created spiritual power beyond the ordinary capacities of embodied human agents. An angel or demon is nevertheless a creature with an angelic nature, not a “preternatural substance.” *Supernatural* refers to God and to the order exceeding every created nature: uncreated divine life and created gifts of grace by which creatures participate in it.
@@ -1128,9 +1167,15 @@ The ordinary Christian doctrine of temptation is broader and more important than
 
 In Aquinas’s scholastic analysis, demons neither know secret thoughts as they exist in intellect and will nor move the will inwardly or by necessity. They may infer dispositions from outward effects, persuade through an apparent good, rouse passions, and affect imagination or sense through bounded bodily causality; the will remains able to consent or resist (ST I, q. 57, a. 4; q. 111, aa. 2–4; q. 114, aa. 2–3). Aquinas also denies that every sin comes from direct demonic instigation. This metaphysical account is neither defined clinical mechanism nor a warrant for attributing a particular symptom.
 
+### A school account and its limits
+
+Those distinctions restrain opposite errors. One error makes a demon the author of everything a distressed or sinful person does, dissolving human agency and the responsibility of other human actors. The other treats every theological claim about creaturely spiritual agency as though it were a primitive rival to medicine. Aquinas is answering metaphysical and moral questions, not supplying a differential diagnosis. His account cannot identify the cause of speech, movement, memory, fear, intrusive thought, or altered behavior in a living person.
+
+Nor should the limits be hidden beneath the authority of his name. This study does not claim that his psychology is a clinical mechanism, that every Catholic school uses identical terminology, or that his thirteenth-century discussion describes a present diocesan process. In the history of offices, his treatment of the exorcist within baptismal preparation witnesses one scholastic interpretation of inherited ministry (ST III, q. 71, aa. 2–4). It cannot collapse baptismal exorcism, a former minor order, and the current reserved act into one timeless office.
+
 ### Possession and the integrity of the person
 
-In Catholic pastoral usage, alleged possession concerns extraordinary affliction attributed to demonic power; it never means that a human being has become a demon. The person remains the subject of human dignity and care (CCC 1700–1706). An allegation does not authorize treating every utterance during distress as a spirit’s speech, ignoring disclosures of pain or abuse, or relabeling refusal as demonic resistance. Capacity must be assessed, consent sought wherever possible, and ordinary legal and safeguarding protections preserved (CCC 1673; USCCB, “Exorcism”).
+In Catholic pastoral usage, alleged possession concerns extraordinary affliction attributed to demonic power; it never means that a human being has become a demon. The person remains the subject of human dignity and care (CCC 1700–1706). An allegation does not authorize treating every utterance during distress as a spirit’s speech, ignoring disclosures of pain or abuse, or relabeling refusal as demonic resistance. Capacity must be assessed, consent sought wherever possible, and applicable safeguarding and legal protections remain operative (CCC 1673; USCCB, “Exorcism”).
 
 The rite is directed toward liberation through Christ and the prayer of the Church. It is not punishment, interrogation, evidence extraction, or an ordeal designed to force a reaction. The person seeking or referred for care is never the enemy. This Christological boundary is more fundamental than any proposed sign: Christ has no equal rival, and the Church’s ministry seeks liberation rather than spectacle or domination (CCC 550, 1673).
 
@@ -1141,6 +1186,8 @@ Three affirmations that often appear together answer different questions. First,
 The word *exorcist* consequently requires a dated context. It may denote a holder of an ancient or medieval ecclesial grade, the minor order discussed in scholastic and later Latin sources, or a priest permitted to undertake the reserved ministry under current Latin law. Those are not interchangeable offices. Aquinas’s placement of exorcists among ministers assisting the priest in baptismal preparation (ST III, q. 71, a. 4) does not confer the permission required by canon 1172, describe a current diocesan post, or prove habitual practice of major exorcism.
 
 Nor does permission settle the factual judgment that precedes ritual action. The Catechism’s statement that major exorcism may be performed only by a priest with episcopal permission gives catechetical orientation (CCC 1673); canon 1172 states the legal requirement as particular and express permission from the local ordinary. Neither proposition turns authorization into proof that a person is possessed. The office or administrative arrangement by which a diocese receives referrals, the authority competent to give permission, and the discernment of a particular presentation remain distinct.
+
+The resulting category controls are concise: belief does not establish a finding in a case; permission does not establish the alleged cause; clinical diagnosis does not adjudicate every metaphysical proposition; and possession of a book does not confer office.
 
 ### Angels, saints, sacramentals, and magic
 
@@ -1184,6 +1231,64 @@ This study did not verify the common, particular, and liturgical law needed to s
 
 The same caution applies to apparent parallels in vocabulary. A named Eastern office, a prayer called an exorcism, episcopal supervision, and authority to use a particular book would remain four claims requiring their own sources. Similarity to a Latin title or formula cannot establish the identity of the office, the reservation of the act, or the jurisdiction of the minister. Until those sources are bound, the responsible conclusion is a boundary, not a synthetic “Catholic procedure.”
 
+### An actor-and-act ladder
+
+The present discipline becomes clearer when its authorities are arranged by the acts for which the sources make them responsible. The universal legislator promulgates the law governing the Latin Church. Canon 1172 states the reservation and the qualifications of the priest to whom permission may be given. Canon 134 identifies the juridical category denoted by “local ordinary.” The Apostolic See regulates the typical liturgical book and the discipline reserved to it. An episcopal conference prepares and approves a complete territorial translation for submission for confirmation and may propose the adaptations contemplated by the implementing norms. The competent local ordinary gives a particular and express permission. These are related acts, but none substitutes for another.
+
+This ladder prevents several common category errors. Confirmation of an English translation does not appoint a priest. Appointment to a diocesan role does not prove the truth of an allegation. The availability of an approved book does not create permission to use its reserved rite. Conversely, a particular permission does not authorize a minister to improvise another book, bypass the discipline governing the rite, or treat authorization as a clinical finding. Each documentary question must be answered by the source competent for that question.
+
+Canon 1172’s two paragraphs should not be compressed into the proposition that any priest may act whenever he personally thinks a case warrants it. Paragraph 1 makes permission a condition of legitimate performance and describes it as both particular and express. Paragraph 2 limits the person to whom the local ordinary may give that permission: a priest distinguished by piety, knowledge, prudence, and integrity of life. Priesthood is therefore a necessary qualification in the canon, not a self-executing grant. The canon joins personal suitability to accountable authorization rather than offering either one as a replacement for the other.
+
+The adjective “particular” also resists an unlimited inference. The checked universal text does not by itself settle the territorial or personal facts of a concrete matter, the scope or duration of a grant, whether it was revoked, or what applicable particular law requires. Nor does this study possess a specific decree from which such details could be inferred. It can describe the universal category and insist upon an actual competent act; it cannot convert that description into an opinion about an unidentified minister or case.
+
+### Office, ministry, and permission
+
+Historical vocabulary makes this separation especially important. Earlier Western sources can name an order or office of exorcist, and modern diocesan usage can call a priest “the exorcist.” Neither use answers canon 1172’s permission question without evidence of the competent local ordinary’s particular and express permission and its demonstrated scope. The 1972 reform of former minor orders retained lector and acolyte as instituted ministries throughout the Latin Church and mentioned other possible ministries in connection with a conference request to the Apostolic See. It did not establish a universal instituted exorcist ministry. The 2021 amendment to canon 230 §1 altered who may be stably instituted as lector or acolyte; it did not add exorcist to that canon or revise canon 1172.
+
+A practical diocesan arrangement remains distinct again. A diocese may identify a contact, receive referrals, designate advisers, or assign a priest. Those arrangements can matter greatly for accountability, but the universal canon does not prescribe one permanent organizational chart. A public title therefore proves neither that every request has been accepted nor that every act associated with the title falls within a standing permission. On the other hand, the absence of a public office page does not prove that a diocese lacks an authorized means of responding. Public administrative visibility, canonical competence, and the facts of a particular authorization are three different evidentiary questions.
+
+The same distinction protects the afflicted person. Authorization decides who may perform a reserved act under the Church’s discipline; it neither decides a clinical diagnosis nor displaces continuing medical, psychological, social, safeguarding, or pastoral care. An office does not enlarge the minister’s competence into every domain that may bear upon the person’s distress.
+
+### Boundaries against relabeling
+
+The 1985 CDF letter supplies a precise example of discipline extending beyond a merely verbal label. It recalls canon 1172, forbids the faithful to use the Leonine formula against Satan and the apostate angels, and addresses assemblies in which, although no exorcism strictly so called is performed, demons are directly addressed and their identities are sought. The source therefore cannot be reduced to a rule that only an event advertised as “major exorcism” is accountable. At the same time, its exact scope should not be inflated into a prohibition of every ordinary petition to God for protection or deliverance.
+
+The 2000 instruction on prayers for healing supplies a related but distinct boundary. Article 8 keeps liturgical exorcism under the diocesan bishop and forbids inserting its prayers into the celebration of Mass, the sacraments, or the Liturgy of the Hours. The instruction distinguishes healing assemblies from exorcism; it does not make a healing service an alternative route around the reservation. Read together, the two acts show why ecclesial discipline attends to what participants actually do and claim, not only to an organizer’s chosen title.
+
+Several categories consequently must remain visible. Ordinary Christian prayer addressed to God is not identical with direct address to a demon. Minor exorcisms situated in Christian initiation are not declarations that a catechumen is possessed. A celebration does not become the reserved liturgical act merely because it is called a prayer for healing, nor may that label be used to insert exorcism prayers or evade the reservation. A major exorcism is not made available to an unauthorized assembly by removing its name from a flyer. These distinctions do not publish the content or sequence of any rite. They identify the lines that prevent devotional language, pastoral care, and a reserved ecclesial act from being collapsed into one undifferentiated practice.
+
+### One territorial implementation, not a universal template
+
+The United States chronology illustrates the difference between universal law and territorial implementation. The bishops approved the English translation in November 2014, the Holy See confirmed the final text in December 2016, and the edition took effect in the United States on 29 June 2017. Those dates establish the history of the identified U.S. English book. They are not the promulgation date of canon 1172, the date of the Latin typical edition, or a universal date on which every local Church adopted the same translation.
+
+The USCCB account also describes diocesan protocol, referral, professional evaluation, and the relation between the authorized minister and assistants. It is strong official evidence for the public U.S. pastoral pattern it describes. It does not establish that every diocese uses identical internal forms, that a conference page grants permission in a particular case, or that its administrative description is legislation for another territory. A responsible comparison would identify the other conference’s approved book, the relevant implementation act, and any applicable particular law rather than treating the U.S. account as a universal handbook.
+
+This territorial boundary is substantive, not ceremonial. Translation governance concerns the faithful rendering of an authentic book and legitimate adaptation for a people. Canonical authorization concerns a minister and a reserved act. Pastoral protocol concerns how requests are received, assessed, and cared for. Civil and professional rules govern additional responsibilities within their own jurisdictions. A single word such as “approval” can obscure all four unless the approving authority, object, territory, and date are named.
+
+### The Eastern limit as a positive research rule
+
+The absence of a verified Eastern procedure is not merely a disclaimer. It identifies what evidence a responsible account would need: the particular Church *sui iuris*; its common and particular law; the competent hierarch; an approved liturgical book and language; the type of prayer under discussion; and the date and territory in which the claim is made. Without those coordinates, a statement about “the Eastern rite” has no stable juridical or liturgical object.
+
+This means that an Eastern Catholic should not be told that the Latin local-ordinary rule is necessarily the rule of that person’s Church merely because both Churches are Catholic. Nor can silence in this study establish authority to use any unverified text. Referral to the competent authority of the person’s own Church is more accurate than a confident but source-less synthesis.
+
+The boundary also keeps historical comparison honest. Shared biblical language, patristic inheritance, or the word “exorcism” may illuminate relationships among traditions, but none alone establishes that two present acts have the same minister, juridical reservation, liturgical form, or pastoral process. Catholic unity does not erase the legal and liturgical identity of the Eastern Churches, and historical resemblance does not supply missing present law.
+
+### Authorization does not decide the allegation
+
+The actor-and-act ladder ends in a distinction that should govern the whole current-practice account. A competent authority can decide that a qualified priest may perform an ecclesial act; that decision is not identical with a historian’s judgment about past events, a clinician’s diagnosis, or a claim that possession has been demonstrated as an observable fact. Permission answers a juridical question. Discernment remains an accountable pastoral and ecclesial process, and professional assessment retains its own objects.
+
+This prevents circular reasoning in both directions. The existence of an authorized exorcist does not prove that a diocese has found possession in every person referred to him. A decision not to authorize the reserved rite does not prove that the person’s suffering is unreal or unworthy of care. Likewise, a clinician’s inability to explain every reported feature does not generate canonical permission, while a clinical diagnosis does not itself determine what ordinary pastoral support the Church may offer.
+
+Documentary language should therefore name the proposition actually established. An appointment establishes an appointment. A grant establishes permission within its demonstrated scope. A conference account establishes the public territorial guidance it states. A typical book establishes an approved liturgical text and discipline within its authority. None should be made to carry the unrecorded factual conclusions of a particular case.
+
+### Accountability after a grant
+
+Particular and express permission is not the end of responsibility. The USCCB’s account joins authorization to prudence, professional input, confidentiality, limited participation, and fidelity to the rite. These features show that accountability continues after a minister is selected. They do not create a universal administrative code, but they prevent the grant from being imagined as an exemption from continuing discernment and care.
+
+The same point explains why private confidence cannot replace ecclesial oversight. A minister may possess experience, learning, or a strong personal conviction and still remain bound by the authority, book, territorial discipline, and safeguards applicable to the act. Charisma asserted by an individual is not the juridical act described by canon 1172. Apparent success, popular demand, or testimony from participants does not retrospectively manufacture permission.
+
+Accountability also includes restraint in public claims. Confidential cases cannot responsibly be converted into statistics when the underlying records, definitions, and denominators are unavailable. A diocesan title does not establish frequency, and an edition’s publication does not establish use. Current law can be described firmly while empirical claims about prevalence, outcomes, or ordinary diocesan practice remain unmade. This is the evidentiary discipline required when law, pastoral care, and vulnerable persons meet.
+
 ## Discernment, consent, and safeguarding
 
 Discernment is not a hunt for confirming signs. It is an accountable process that protects a person while several hypotheses remain open. The Church’s theological permission to consider a preternatural cause never removes the duty to investigate natural danger, illness, coercion, fraud, trauma, and social context. The USCCB’s official account therefore places medical and psychological or psychiatric evaluation within the inquiry and urges great circumspection.
@@ -1226,6 +1331,68 @@ Ordinary pastoral care continues whether or not major exorcism is considered: sa
 >
 > Any claimed ministry fails before its extraordinary hypothesis is reached if it bypasses emergency care, suppresses medical treatment, coerces consent, isolates the person, uses violence or humiliation, conceals abuse, monetizes fear, publishes the case, or lacks accountable ecclesial authority.
 
+### Discernment is not proof by exclusion
+
+The USCCB’s public account uses the language of moral certitude and calls for medical and psychological or psychiatric evaluation. Those propositions belong together only if their competences remain distinct. Professional assessment can identify diagnoses, risks, treatment needs, and plausible differentials within the clinician’s field. It cannot certify that every natural explanation has been exhausted or that a preternatural cause remains as the only possible answer. Ecclesial discernment likewise cannot turn an unexplained symptom into a medical diagnosis.
+
+An assessment may be incomplete because information is unavailable, symptoms change, several conditions coexist, or no current diagnosis explains every reported experience. Uncertainty is not a positive test for possession. Neither is prior treatment failure: a medicine may be inappropriate, insufficient, poorly tolerated, or taken inconsistently; access to care may be limited; diagnosis may change; trauma, disability, sleep, substance use, social pressure, and physical illness may interact. A pastoral team that treats every unresolved feature as supernatural evidence converts ordinary limits of knowledge into a one-way confirmation system.
+
+The reverse reduction is also outside the sources. The WHO classification organizes clinical descriptions and differential diagnoses; it does not adjudicate Catholic doctrine. A clinician can conclude that a presentation fits a clinical condition or requires further assessment without issuing a theological judgment. The disciplined position is asymmetrical in a useful way: clinical danger and treatable illness demand competent attention, while the existence of such attention neither authorizes a rite nor requires a clinician to affirm the Church’s theological explanation.
+
+### A differential field, not a checklist
+
+The ICD-11 clinical descriptions place possession-trance presentations within a bounded differential field. Relevant distinctions include whether an experience occurs within a collectively accepted cultural or religious practice; whether it is involuntary and unwanted; whether substances, medicines, sleep-transition states, neurological disease, delirium, trauma, dissociation, or psychotic disorders better account for the presentation; and whether it causes clinically significant distress or impairment. These are domains for individual clinical assessment, not a sequence that a pastoral worker can administer from a book.
+
+The difference between a differential field and a checklist is crucial. A checklist invites an unqualified observer to count dramatic features and announce a result. Differential assessment instead asks how symptoms began, vary over time, relate to health and context, and affect functioning; it considers competing and coexisting explanations and remains revisable as evidence changes. The publication therefore names broad domains only to show why competent assessment matters. It does not give threshold scores, alleged signs of possession, tests with sacred objects, or instructions for provoking a response.
+
+Cultural attention belongs inside that assessment rather than at its margins. A practice accepted within a community is not for that reason immune from questions about coercion, impairment, or harm. Conversely, unfamiliar religious language is not for that reason evidence of disorder. Interpretation requires attention to the person’s own account, the norms of the relevant community, the voluntariness of participation, changes from prior functioning, and the consequences of the experience. No single observer is presumed to possess clinical, cultural, theological, and canonical competence at once.
+
+### Communication without forced agreement
+
+Collaboration is most useful when each participant states what was actually assessed and the limits of the conclusion. A clinician can describe symptoms, functioning, risk, capacity, relevant diagnoses, and recommended care without endorsing or ridiculing a religious interpretation. A priest can explain the pastoral question and the Church’s discipline without asking the clinician to certify a spiritual cause. The person can report religious meaning without having every experience either medicalized or ratified.
+
+This division of labor also protects confidential information. The fact that a diocese seeks professional input does not make the clinician an agent of every ecclesial decision, and the fact that a person seeks pastoral care does not erase ordinary professional duties. Information sharing should have a defined purpose and follow the person’s authorized choices, applicable law, emergency exceptions, and professional or ecclesial duties. Broad circulation of a dossier “for discernment” can itself become a privacy harm.
+
+### Consent as an ongoing boundary
+
+Seeking consent “if at all possible,” as the U.S. guidance states, should not be reduced to obtaining one signature at intake. A person’s understanding, willingness, and ability to stop participation remain relevant as the inquiry continues. New participants, recording, disclosure of information, changes in the character of prayer, and proposed contact with outside professionals can raise new consent questions. This publication does not prescribe a legal form; it identifies why consent must remain connected to the actual activity.
+
+Capacity is decision- and jurisdiction-specific. Confusion, disability, a psychiatric diagnosis, intense religious language, or disagreement with a minister does not by itself establish incapacity. Where capacity is genuinely in question, the answer belongs to qualified persons applying the law and policy governing that decision. A pastoral team may need support to communicate accessibly, allow time, include an authorized supporter, or defer an extraordinary process while urgent health needs are addressed.
+
+Withdrawal must remain meaningful. A person who asks to pause, leave, decline questions, or refuse a non-emergency religious act should not be told that the request proves malign influence. That response makes the minister’s interpretation impossible to challenge and turns consent into a trap. It also obscures the separate question whether emergency or protective intervention is required for a reason recognized by applicable civil law. Religious refusal and emergency incapacity are not interchangeable.
+
+### A team does not erase accountability
+
+The USCCB’s advice that the exorcist not work alone and its limits on lay participation support accountability, but the mere presence of several people does not make a process safe. Roles should be intelligible: who holds ecclesial responsibility, who provides professional care, who is present for support, who keeps any necessary record, and who can halt the activity when a safety concern arises. A participant’s professional title should not be used to imply approval outside that person’s actual role.
+
+Limited participation also protects against diffusion of responsibility. A prayer group cannot collectively manufacture the authorization that none of its members possesses. Assistants do not acquire permission to reproduce the minister’s reserved role. Observers should not become an audience, and recording should not become a substitute for accountable documentation. Numbers, enthusiasm, and secrecy can intensify group confidence while making it harder for the afflicted person to dissent.
+
+Confidentiality protects dignity and reputation, but “confidential” must not mean unreviewable. Applicable reporting duties, emergency disclosures, supervision, and safeguarding escalation remain operative. Conversely, accountability does not require publication of a person’s story. Internal review can identify decisions, authorization, participants, consent, referrals, and safety actions without creating promotional media or a sensational case archive.
+
+### What territorial safeguarding sources establish
+
+The official Department for Education material for England and the Crown Prosecution Service and Home Office materials for England and Wales answer a bounded question: can accusations of witchcraft, spirit possession, or alleged evil become a setting for recognizable abuse? The Department for Education records child abuse linked to faith or belief as a safeguarding concern. The Crown Prosecution Service identifies spiritual or ritual abuse affecting children, adults, and vulnerable adults and names physical, emotional, sexual, financial, neglectful, and fatal harms in its prosecution context. The Home Office statutory guidance describes religious manipulation, coercion, secrecy, isolation, neglect, and attempts to remove an alleged evil force within its domestic-abuse framework.
+
+These records support recognition and protection, not an epidemiology of Catholic exorcism. They do not show how often abuse occurs worldwide, how often Catholic authorities receive a report, or what proportion of allegations arise in any religious community. They also do not decide a theological claim. Their importance lies in the more limited proposition that a spiritual explanation does not remove conduct from ordinary categories of harm and does not suspend the territorial systems responsible for protection and prosecution.
+
+That distinction should govern the use of examples. A safeguarding document may name forms of coercion so that professionals can recognize them; it should not be converted into lurid narrative or evidence that every unconventional prayer setting is abusive. The inquiry remains conduct-centered: what was done, to whom, under what pressure, with what injury or risk, and what protective response is required? Sincerity of belief may explain a perpetrator’s stated motive, but it does not make violence, neglect, exploitation, or coercive control pastoral care.
+
+### The one-way safety rule
+
+Where immediate danger is plausible, safety action should not wait for the extraordinary hypothesis to be resolved. Sudden altered consciousness may require medical assessment; threats or attempts of self-harm may require an emergency mental-health response; suspected poisoning, injury, or medication complication may require urgent physical care; disclosure of abuse may trigger protective or reporting duties. The appropriate action depends on the jurisdiction and facts, but none depends on first deciding whether a preternatural cause exists.
+
+This rule is one-way because emergency care can proceed without deciding the theological question, whereas a theological theory cannot safely cancel an emergency response. Prayer and pastoral presence may accompany care when appropriate and desired. They do not authorize delay, restraint by an unqualified group, withdrawal of prescribed treatment, or concealment of the danger. If that belief is used to delay, obstruct, or conceal indicated care, the resulting conduct creates a safeguarding concern rather than an exemption.
+
+Continuing care follows the same logic. A completed evaluation does not end the need to monitor symptoms, risk, treatment, consent, and social conditions. An authorized religious act, if one occurs, does not prove that medical or psychological care is no longer indicated. A decision against the reserved rite likewise should not leave the person without pastoral attention. The ordinary goods of stable relationships, housing, sleep, nutrition, treatment, therapy, prayer, and sacramental life retain their value across uncertainty.
+
+### A process can fail before its theory is tested
+
+Safeguarding provides an important asymmetry. The truth or falsity of an extraordinary causal claim may remain disputed, but some conduct is already disqualifying. A process that strikes, restrains, starves, deprives sleep, withholds medicine, humiliates, sexually exploits, isolates, extorts, threatens, or conceals abuse has failed as care before anyone settles the underlying theory. A process that publishes distress for entertainment or fundraising likewise makes the person’s vulnerability serve the ministry.
+
+Accountable authority is necessary but does not turn harmful conduct into a legitimate technique. Consent requirements remain activity- and jurisdiction-specific; consent cannot legalize assault or exploitation. Professional participation is valuable but does not bless conduct outside professional competence. Privacy is protective but cannot be invoked to suppress required reporting. These boundaries are mutually reinforcing: each prevents one good word from being used to excuse a different form of harm.
+
+The resulting discernment is sober rather than spectacular. It asks whether the person is safe, whether competent assessments continue, whether authorization is real, whether consent and withdrawal are respected, whether information is protected and appropriately shared, whether cultural meaning is understood, and whether ordinary care remains available. None of those questions diagnoses possession. Together they describe the minimum accountability without which an extraordinary claim should not command a vulnerable person’s life.
+
 ## Culture, reception, and the strongest objections
 
 Film, memoir, podcast, viral testimony, and exposé are mediated accounts, not clinical records or prevalence data. This study therefore does not use them to establish diagnosis, efficacy, or frequency. The Church’s public discipline instead emphasizes authorization, circumspection, professional consultation, consent where possible, and confidentiality.
@@ -1235,6 +1402,22 @@ Film, memoir, podcast, viral testimony, and exposé are mediated accounts, not c
 Reception is historically important even when it cannot authenticate the event being retold. A private pastoral encounter may become a clerical narrative, devotional example, newspaper controversy, entertainment property, or online testimony. At each stage, selection and genre change what the audience receives. A memoir organizes memory around an author’s later understanding. Journalism compresses a dossier into reportable conflict. Film supplies scenes, dialogue, causal sequence, and resolution whether or not the archive does. A short online extract can detach a voice or gesture from the circumstances in which it was recorded.
 
 The historical question must therefore follow the artifact. A film can show how an era imagined exorcism; it cannot prove the event it dramatizes. A memoir can establish what its author later asserted; it cannot become an independent clinical or diocesan record. A recording can preserve sounds made at a particular session only after provenance and context are controlled; it does not identify their cause. Audience size, repetition, and emotional force measure reception, not prevalence or efficacy.
+
+### A chain of reception is not a chain of corroboration
+
+The stages can be mapped without pretending that each later artifact is a new witness to the underlying event. An encounter may first be represented in pastoral notes or an administrative record. A participant may later narrate it from memory. A journalist may select that narration and add interviews. A film may dramatize the article or memoir. Online commentary may then quote the film as though it reproduced the initial record. The number of artifacts has grown, but their dependence may still lead back to one assertion.
+
+Each stage can nevertheless support a different historical claim. A dated ecclesial record may establish what an office received or decided, within the record’s competence and completeness. A memoir may establish the author’s later recollection and interpretation. Journalism may establish the public controversy it documents. Film may establish a cultural image. Online circulation may establish popularity or transformation of a motif. None of these modest claims requires treating the artifact as clinical proof or a measure of efficacy.
+
+Reception analysis therefore uses two ledgers. The dependency ledger asks which later accounts derive from which earlier representation. The transformation ledger asks what was selected, omitted, renamed, dramatized, or given a new audience. A disagreement among dependent accounts can reveal changing reception without giving the historian an independent route to the event. Agreement can show copying or shared dependence rather than corroboration.
+
+### The burden created by ambiguity
+
+Ambiguity does not require equal probability for every proposed explanation. It requires that the strength of a conclusion answer to the evidence actually available. A naturally unexplained observation may justify further medical, pastoral, or historical inquiry. It does not by itself shift the burden so that a preternatural cause stands unless someone disproves it. Nor does a plausible natural account prove that every theological question has been answered.
+
+Institutions carry an additional burden because their classifications change what happens to a person. A private metaphor may become an intake label; an intake label may shape questioning; repeated questioning may shape memory and conduct; and an official-seeming narrative may escape into public culture. Authority therefore increases the duty to distinguish observation, interpretation, decision, and later retelling. The greater the foreseeable effect on treatment, liberty, reputation, family life, or public exposure, the less defensible it is to hide uncertainty behind inherited vocabulary.
+
+The same rule applies to skeptical reception. A natural explanation proposed without access to records remains a proposal, not a retrospective diagnosis. Public ridicule can harm a vulnerable person even while criticizing harmful ministry. Evidentiary discipline is not reserved for believers: every interpreter must identify what the artifact can bear and whose dignity is at stake.
 
 This distinction also applies to hostile reception. An exposé may document a real institutional failure when it supplies controlled records, but the label “exposé” does not itself establish its allegations. A skeptical retelling and a devotional retelling remain dependent witnesses if both ultimately derive their chronology from the same unexamined narrative.
 
@@ -1268,7 +1451,7 @@ The objection usefully restores the baptismal, liturgical, and therapeutic horiz
 
 Some traditionalist criticism holds that the 1998/2004 rite weakened the 1614 tradition by reducing imperative formulas, adopting modern psychological caution, or expressing uncertainty where the older book spoke plainly. A related claim treats reported preference among exorcists as proof of the older rite’s superior efficacy.
 
-The historical questions deserve textual study, but memoir preference is not a controlled comparison and “more confrontational” is not a theological measure of efficacy. The current typical book has competent authority; older use depends on current applicable law and the competent authority’s particular and express permission, not private judgment. Psychological and medical consultation does not deny demons; it recognizes natural causes and the moral cost of error. Legitimate criticism may examine translation, pastoral prudence, and continuity without instructing unauthorized use or turning obedience into a referendum on anecdotes.
+The historical questions deserve textual study, but memoir preference is not a controlled comparison and “more confrontational” is not a theological measure of efficacy. The current typical book has competent authority. A priest requires canon 1172 permission for the act; use of an older book additionally depends on the distinct applicable liturgical-law authorization, not private judgment. Psychological and medical consultation does not deny demons; it recognizes natural causes and the moral cost of error. Legitimate criticism may examine translation, pastoral prudence, and continuity without instructing unauthorized use or turning obedience into a referendum on anecdotes.
 
 ### The feminist, disability, and trauma-informed objections
 
@@ -1282,6 +1465,26 @@ A different critic says institutional caution is unbelief disguised as safety: t
 
 The grouped objections converge on one demand: a Catholic account must be falsifiable at the level of conduct. Whatever cannot be settled about an extraordinary cause, violence, exploitation, concealment, unauthorized ritual, and medical neglect can be rejected now.
 
+### Concession, answer, and unresolved question
+
+The objections become clearer when three kinds of response are not compressed into apologetic victory. A *concession* identifies what the criticism correctly exposes. An *answer* states what the Catholic sources actually permit the study to maintain. An *unresolved question* records what the present evidence cannot settle.
+
+To the secular-clinical objection, the required concession is substantial: observable behavior is naturally and culturally ambiguous; harm follows from misdiagnosis, coercion, and delayed care; and no validated clinical test in the controlled corpus identifies a preternatural cause. The Catholic answer is limited but real: clinical method does not by itself decide the whole metaphysics of created spiritual agency, while the Church’s own discipline refuses the inference from metaphysical possibility to a particular case. The unresolved field includes the cause of any unexamined presentation and any empirical claim of prevalence or comparative efficacy.
+
+To Protestant criticisms, the concession is that a later Catholic discipline must not be smuggled into every biblical narrative as though canon 1172 were written there. Nor does reservation mean that ordinary petition for divine help belongs only to a priest. The Catholic answer is that public worship and reserved ecclesial acts can be ordered by ecclesial authority without claiming that the discipline is a second revelation or an unchanged apostolic manual. The unresolved questions are the larger ecclesiological disagreements and the diversity within Protestant traditions, neither of which this source corpus adjudicates.
+
+To the Orthodox criticism, the concession is that a narrowly juridical account can obscure baptismal, ascetical, sacramental, and therapeutic horizons. The Latin answer can receive that correction while still naming the exact law and book that govern a Latin act. The unresolved field is decisive: because this study surveyed neither an identified Orthodox law or liturgical book nor Eastern Catholic particular law, it makes no claim about their present authorization or practice. Respect here takes the form of refusing synthetic comparison.
+
+To Catholic traditionalist criticism, the concession is that edition history, formula architecture, translation, and stated rationale are legitimate historical questions. The answer is that an older book’s antiquity and a minister’s preference do not establish present authority or comparative efficacy. The unresolved questions include complete textual collation and controlled reception across the selected editions. Anecdotes cannot be made to close them.
+
+To feminist, disability, and trauma-informed criticism, the concession cannot be merely verbal. Religious language has the capacity to intensify stigma, relocate blame, and clothe control with sacred authority. The Catholic answer rests on the dignity and agency of the person, moral responsibility, consent where possible, continuing care, and safeguarding. The unresolved cause of extraordinary distress never suspends those duties. The test is not whether the institution can repeat an anthropological proposition, but whether its conduct protects the person whom the proposition describes.
+
+This three-part pattern keeps the argument symmetrical. Critics do not acquire authority over theology merely by identifying natural ambiguity; Catholic belief does not acquire authority over a case merely by preserving metaphysical possibility. Historical evidence can establish what a source said, an authority enacted, or a reception transformed. It cannot be forced to answer a different question because the answer would satisfy one side.
+
+> **A reception rule**
+>
+> Later repetition increases cultural reach, not evidentiary independence. Receive a criticism at its strongest supported point; state the Catholic answer at its actual authority level; and leave the remainder unresolved when the controlled sources do not decide it.
+
 ## Pastoral conclusion: authority without spectacle
 
 The history does not end with a recovered ancient technique. It ends with a more disciplined account of Christian responsibility. Exorcistic prayer grew within proclamation, initiation, ascetic struggle, care of afflicted persons, and the ordering of public worship. The modern Latin reservation is one historical and juridical form of a durable insight: extraordinary claims require accountable authority because the person can be harmed by credulity, disbelief, and curiosity alike.
@@ -1293,6 +1496,37 @@ The sources do not yield a single ritual transmitted without change from the apo
 Continuity therefore belongs first to the Christian confession and the Church’s responsibility, not to an imagined invariant script. The history is continuous in its proclamation that evil is creaturely rather than divine, that Christ is victor, that prayer is not an occult mechanism, and that ministry belongs within ecclesial accountability. It is discontinuous in terminology, books, offices, jurisdiction, and pastoral setting. These changes are not embarrassments to be hidden. They are the evidence by which a later practice can be located honestly rather than projected backward.
 
 The negative findings matter as well. The checked evidence does not provide a global prevalence rate, a reliable success count, a universal medieval practice, a complete taxonomy of demonic activity, or a documentary basis for using famous cases as representative proof. It does not permit a biblical expression to become a modern diagnostic category or a clinical differential to decide a metaphysical question. Restraint at those boundaries is a historical conclusion, not merely an editorial disclaimer.
+
+### A ledger of continuity and change
+
+The word *continuity* is too imprecise unless its object is named. There is continuity of confession: evil is creaturely, Christ is victorious, prayer depends on God, and the afflicted person remains a neighbor rather than an enemy. There is continuity of ecclesial responsibility: public ministry is ordered, ministers are not self-authorizing, and extraordinary claims do not cancel ordinary duties of care. These continuities can persist through substantial changes in vocabulary, office, book, and law.
+
+There is not evidence for continuity of one complete script. Biblical narratives, initiatory exorcisms, apologetic claims, ordination texts, medieval service books, the Roman Ritual, and current discipline are not successive copies of a single recoverable manual. Nor does recurrence of the word *exorcist* establish continuity of one office. The recipient, purpose, minister, ecclesial setting, and juridical effect must be compared before a shared title is treated as shared identity.
+
+Change likewise needs a named object. A revised book can change textual architecture without changing the Church’s confession about Christ. A legal act can alter an office or authorization while leaving ancient source evidence exactly what it was. A territorially approved and confirmed translation, once implemented, can change the authorized textual form in that territory without creating new universal law. Historical candor does not choose between “everything continued” and “everything was invented.” It keeps several ledgers and reports what changed in each.
+
+| **Historical result** | **What the controlled sources support** | **What remains outside it** |
+|:-------------|:------------------------|:----------------------------|
+| **Confession** | Creaturely evil, Christ’s victory, dependence on God, and human dignity. | Later taxonomies, case attribution, prevalence, and efficacy. |
+| **Practice history** | Diverse narrative, initiatory, ministerial, liturgical, and juridical witnesses. | One invariant apostolic procedure or a global census of use. |
+| **Present Latin discipline** | For exorcism over the possessed, legitimate performance is reserved to a qualified priest with the local ordinary’s particular and express permission. | Eastern or Orthodox rules, a concrete grant, or a factual judgment in a presented case. |
+| **Pastoral synthesis** | Ordinary care, professional competence, safeguarding, and accountable ecclesial authority remain necessary. | A diagnosis, ritual instruction, or advice for an individual case. |
+
+### Three kinds of historical answer
+
+A comprehensive history should say positively what it establishes. It establishes that hostile-spirit language belonged to several ancient environments; that the canonical narratives have their own literary and theological purposes; that early Christians situated expulsion claims, renunciation, initiation, charisma, office, and discipline in distinguishable genres; that medieval evidence differentiates offices and ritual purposes; and that Roman consolidation, later edition states, codification, ministerial reform, and revised ritual discipline are acts with identifiable dates and authorities. The result is richer than a pedigree for one current practice.
+
+It should also say what the evidence disproves as a method. A later title cannot be projected backward without checking the earlier witness. An office list cannot disclose the unrecorded frequency or content of practice. An official act proves its own enactment, not universal reception. A memoir or film cannot become independent outcome evidence by repetition. A canon of the Latin Code cannot be projected onto an Eastern Catholic or Orthodox Church. An unexplained symptom cannot be renamed a cause.
+
+Finally, it should name questions that remain open rather than filling them with inherited confidence. The controlled corpus does not yield worldwide rates, comparative efficacy, a complete medieval synthesis, a universal pastoral taxonomy, a named-case dossier adequate for publication, or a verified Eastern and Orthodox legal comparison. Several important historical dependencies remain partial at the level of critical editions, manuscript collation, and reception. These limits define the bounded sense in which the present study is comprehensive; they do not erase the conclusions already secured.
+
+### Authority read through historical accountability
+
+The historical record does not make authority unnecessary; it shows why authority must be specified. “The Church teaches,” “the ritual provides,” “the law requires,” “the conference advises,” and “a minister reports” name different speakers and acts. Their claims may be compatible, but they are not interchangeable. Responsible reception names the promulgating or teaching authority, the jurisdiction, the date, the kind of text, and the question that text is competent to answer.
+
+Accountability also runs backward from present use to historical claim. A current minister cannot authorize an ancient reconstruction merely by adopting it, and a historian cannot confer present permission by showing that a practice is old. The present law does not erase earlier diversity; earlier diversity does not suspend the present law. This two-way boundary permits genuine historical comparison without turning scholarship into a ritual license or current discipline into an origin story.
+
+Finally, authority remains answerable to the person affected. A valid category of office or permission does not excuse coercion, humiliation, concealment, or neglect. Authorization remains distinct from factual judgment; Catholic anthropology and the safeguarding controls used in this study preserve dignity through distress. Historical accountability therefore culminates in moral accountability: identifying who may act never removes the obligation to ask whether the person is being protected, heard, and kept within competent care.
 
 ### Different responsibilities around one person
 
@@ -1308,21 +1542,31 @@ The same accountability limits confidence as well as action. A minister may reco
 
 For clinicians, collaboration need not require theological agreement. The Church needs honest natural assessment, not a certificate of metaphysical approval. A clinician can respectfully elicit a patient’s religious framework, assess health and safety within clinical competence, and identify harmful practices without adjudicating doctrine. Pastoral teams should be equally willing to hear when their own language or procedure is worsening symptoms.
 
+The division of competence is not a claim that truth has been divided into unrelated compartments. It is a discipline of truthful speech. A clinician may know much about a person’s health without authority to decide a theological question. A cleric may know the Church’s doctrine and law without competence to diagnose a medical condition. An ecclesiastical authority may regulate an act without thereby proving the alleged cause. A historian may reconstruct an edition or decision without access to the intimate truth of a case. Cooperation is strongest when each contribution is both welcomed and bounded.
+
 Good collaboration preserves the difference between the questions being asked. The clinician assesses symptoms, functioning, capacity, risk, and relevant differentials within professional competence. Ecclesial authority judges what the Church may authorize under its own law and ritual discipline. Neither party serves the person by asking the other to certify a conclusion outside that party’s competence. Both remain answerable to consent, privacy, applicable law, and the need for continuing care.
 
 For researchers and media, official caution and confidentiality limit what can be known. Absence of public data does not justify invented prevalence; a recording does not by itself establish provenance, diagnosis, or cause. This study therefore privileges identified law, ritual texts, institutional records, and safeguarding evidence over exposure of a person’s case.
 
 ### Authority is a form of restraint
 
-The history explains why authorization cannot be reduced to possession of a text or confidence in a private gift. In the Latin Church, canon 1172 governs who may act and under what permission. The ritual book governs a liturgical act; official instructions close attempts to evade its reservation by changing the label of an event. Territorial implementation, diocesan policy, civil law, and professional duties add their own applicable controls. None of these sources proves the alleged cause merely by regulating the response.
+The history explains why authorization cannot be reduced to possession of a text or confidence in a private gift. In the Latin Church, canon 1172 governs who may act and under what permission. The ritual book governs a liturgical act; labels do not change whether conduct falls under the applicable canonical and ritual controls. Territorial implementation, diocesan policy, civil law, and professional duties add their own applicable controls. None of these sources proves the alleged cause merely by regulating the response.
 
 Authority is therefore visible partly in what a responsible minister declines to do: no amateur experiment, no public performance, no coercion dressed as persistence, no displacement of treatment, and no promise of certainty the evidence cannot bear. Confidentiality protects the person, but it does not conceal abuse or override duties of emergency and protective disclosure. Consent protects freedom, but it does not authorize harmful conduct. Clinical consultation protects competent judgment, but it does not transfer a religious decision to a clinician.
 
 Latin and Eastern Catholic differences matter, and this study does not project Latin law onto an Eastern Church. Catholics should seek the competent authority of their own Church; comparison does not license borrowed rites. The Catholic center remains Christological: evil is not God, Christ is victor, prayer is not magic, and the afflicted person remains neighbor.
 
+### Why restraint is a substantive conclusion
+
+Restraint can sound like the absence of an answer, especially in a field shaped by dramatic claims. Here it is part of the answer. The source history shows that words, offices, and rites have changed; theology distinguishes creaturely possibility from factual attribution; law distinguishes priesthood from permission; clinical and safeguarding competence distinguish care from metaphysical judgment. Refusing to collapse those distinctions is the constructive synthesis of the study.
+
+This restraint is not a compromise between belief and unbelief. It follows from the positive claims on each side of the boundary. Because evil is creaturely rather than divine, fear need not grant it limitless knowledge or power. Because the human person retains dignity, distress does not make that person an object of spectacle or experiment. Because this sacramental is an ecclesial act whose effects are sought through the Church’s intercession rather than a controllable mechanism, a text cannot be used as private technique. Because authority is accountable, confidence in a personal gift cannot replace a lawful act. Because natural causes and dangers are real, care cannot wait for metaphysical agreement.
+
+The same logic protects historical inquiry. A bounded conclusion is not weak because it refuses a larger inherited story. It is stronger because the reader can identify the witness, authority, genre, date, and limit that support it. The resulting history does not offer an ancient secret recovered for modern use. It offers a more demanding form of continuity: fidelity to Christ joined to fidelity about what the sources can actually bear.
+
 ### The measure of a Christian response
 
-The final measure is not how much attention a ministry gives the devil. It is whether the Church’s action makes Christ’s lordship credible through truth, freedom, mercy, prudence, and protection of the weak. An authorized major exorcism may be a real form of that care in a case judged according to the Church’s discipline. Most readers will never encounter one. Every reader can refuse superstition, protect a suffering person, use ordinary prayer, receive the sacraments, seek competent help, and resist the glamour by which evil asks to become the center of the story.
+The final measure is not how much attention a ministry gives the devil. It is whether the Church’s action makes Christ’s lordship credible through truth, freedom, mercy, prudence, and protection of the weak. An authorized major exorcism may form part of ecclesial care when competent authority authorizes it under the Church’s discipline; that authorization is not proof of cause. Most readers will never encounter one. Every reader can refuse superstition, protect a suffering person, use ordinary prayer, receive the sacraments, seek competent help, and resist the glamour by which evil asks to become the center of the story.
 
 This conclusion is deliberately less dramatic than the cultural image of the subject. It leaves unresolved what the evidence does not resolve and refuses to make a suffering person carry the burden of proving a worldview. It also refuses the opposite reduction by which the historical and theological claims of the Church are dismissed without being heard in their own terms. Sober Catholic practice requires neither credulity nor contempt. It requires confidence in Christ joined to truthful evidence, competent care, lawful authority, and patience with uncertainty.
 
@@ -1358,7 +1602,7 @@ No auditable global dataset establishes the frequency or outcomes of major exorc
 
 The repository’s CC BY 4.0 terms apply only to project-created synthesis, organization, and other contributions that the project may license. Scripture, liturgical and official texts, received translations, historical source wording, and modern scholarship retain their own status. The few biblical phrases quoted in the body use the identified public-domain Douay–Rheims/Challoner witness; ancient and medieval witnesses, official acts, modern scholarship, and clinical or safeguarding sources are otherwise paraphrased at identified loci. No scan, ritual formulary, modern-source table, diagnostic criteria, case transcript, recording, or third-party image is reproduced.
 
-The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. This 64-page public alpha does not fulfil the promised comprehensive study of at least 100 substantive pages. Its remaining work is source coverage, evidence-grounded expansion, and exact-snapshot production verification.
+The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. This 75-page public alpha does not fulfil the promised comprehensive study of at least 100 substantive pages. Its remaining work is source coverage, evidence-grounded expansion, and exact-snapshot production verification.
 
 ## Dated Orientation
 
@@ -1394,7 +1638,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-28T06:47:29Z
+**Last revised (UTC):** 2026-07-28T07:03:20Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
@@ -1437,5 +1681,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 **Agent/runtime:** OpenAI Codex agent (early-Christian regional and genre differentiation, initiation and office synthesis, reconstruction-limit analysis, and production review); API workspace; unexposed: server revision
 
 **Agent/runtime:** OpenAI Codex agent (Roman Ritual edition-state method, parallel-code and ministry analysis, post-reform governance synthesis, and production review); API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex agent (demonology, jurisdiction, safeguarding, reception, and pastoral-conclusion expansion; source-boundary integration and production review); API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
