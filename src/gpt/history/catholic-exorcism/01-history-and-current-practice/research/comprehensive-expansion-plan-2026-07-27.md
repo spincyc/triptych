@@ -3,8 +3,9 @@
 ## Deliverable
 
 The promised completed work is an evidence-controlled Catholic Exorcism study
-of at least 100 substantive pages. The current 107-page paper contains 94
-substantive narrative pages and is a public alpha checkpoint, not completion.
+of at least 100 substantive pages. The current 116-page paper contains 103
+substantive narrative pages and meets that extent. It remains a public alpha
+checkpoint, not comprehensive completion.
 A reasonable planning range is 54,000–58,000
 reader-facing words, producing approximately 108–116 substantive pages at the
 current design density. Title matter, references, metadata, sparse spill,
@@ -30,12 +31,12 @@ present published wording, not exhaustive control of the source family.
 
 | Dependency | State | Current control and remaining ceiling |
 | --- | --- | --- |
-| Hebrew, Septuagint, Vulgate, Tobit recensions, Mark 9:29, Josephus, and selected Second Temple witnesses | Partial | Exact edition-and-locus controls now cover 1 Samuel 16 in Hebrew, Greek, and Latin; both Swete Tobit forms and the Clementine Tobias; Robinson–Pierpont and Douay Mark; Niese Greek and Whiston Josephus; and bounded 1Q20, 4Q560, 4Q510/511, and 11Q11 witnesses. A separately bound modern eclectic apparatus for Mark 9:29, fuller Qumran translation/image collation, and broader Second Temple coverage remain open. |
+| Hebrew, Septuagint, Vulgate, Tobit recensions, Mark 9:29, Josephus, and selected Second Temple witnesses | Partial | Exact edition-and-locus controls now cover 1 Samuel 16 in Hebrew, Greek, and Latin; both Swete Tobit forms and the Clementine Tobias; Robinson–Pierpont, Douay, and SBLGNT Mark; the official ECM Mark 9:29 split line and corrected commentary; Niese Greek and Whiston Josephus; and bounded 1Q20, 4Q560, 4Q510/511, and 11Q11 witnesses. Official catalog records now control the separate 4Q510, 4Q511, and 11Q11 manuscript identities; exact image-to-edition concordance, lawful modern-translation collation, and broader Second Temple coverage remain open. |
 | Laodicea 26 and the *Apostolic Tradition* complex | Partial | Percival’s exact historical English Laodicea witness and Easton’s identified English reconstruction are bound. A modern critical Greek Laodicea control and a current critical reconstruction with versional evidence and commentary for the church-order complex remain open. |
 | Gellone, PRG, ordination traditions, and local manuscripts | Partial | The Gellone folio run, Vogel–Elze PRG I pp. 14 and 17, Ballerini’s *Statuta* item, the 1895 Roman Pontifical, and Parker MS 79 fols. 43r–43v now support bounded typological comparison. Dumas–Deshusses, Munier, PRG manuscript collation, and broader representative local and cross-genre comparison remain open. |
 | Roman ritual edition matrix | Partial | Exact remote artifacts and verified page-specific passages now control the 1614 unit’s category-level architecture throughout pp. 198–219; an exact 1872 facsimile, the bounded 1925 and 1952 edition states, and official 1998/1999/2004 evidence are controlled at their stated levels. Direct p. 220 control and complete internal textual collation across the selected editions remain open. |
 | 1917-to-current Latin discipline and territorial implementation | Partial | Exact 1917 and 1983 canons, canon 1172, current competent-authority controls, official ritual acts, and U.S. implementation are bound through 2026-07-27. Final currentness revalidation, fact-specific particular law, and any material later amendment or authentic interpretation remain snapshot dependencies. |
-| Eastern material and named cases | Partial | CCEO common-law boundaries, several historical Eastern transmission streams, and bounded Ruthenian/Melkite initiatory placement are now controlled. Church-specific particular law, current stand-alone ritual books, broader Byzantine and Orthodox comparison, and a sufficient named-case dossier remain open. Latin canon 1172 is not transplanted, and named cases remain outside the reader account. |
+| Eastern material and named cases | Partial | CCEO common-law boundaries, several historical Eastern transmission streams, bounded Ruthenian/Melkite initiatory placement, and one source-controlled Loudun documentary dossier are now reader-facing. Church-specific particular law, current stand-alone ritual books, broader Byzantine and Orthodox comparison, and additional named cases remain open. Latin canon 1172 is not transplanted, and Loudun is not used to adjudicate possession, diagnosis, guilt, or efficacy. |
 
 Prose may expand only within the corresponding evidence ceiling.
 

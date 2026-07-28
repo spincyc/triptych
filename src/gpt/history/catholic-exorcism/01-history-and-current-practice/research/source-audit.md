@@ -14,7 +14,7 @@ claim already published.
 | --- | --- | --- |
 | 1 Samuel 16 Hebrew/Greek/Latin | Closed for present wording | Exact page images in Kittel, Swete, and Hetzenauer; no modern critical collation or textual-priority claim. |
 | Tobit/Tobias 6–8 recensions | Closed for present wording | Both Swete Greek forms and the Clementine Latin sequence were inspected separately; no Semitic reconstruction or recension priority. |
-| Mark 9:29 edition comparison | Partial | Robinson–Pierpont and Douay controls are exact; a separately identified modern eclectic text and full apparatus remain unbound. |
+| Mark 9:29 edition and manuscript comparison | Closed for present wording | Exact Robinson–Pierpont, Douay, and SBLGNT edition controls are joined to the official ECM Mark split guiding line and corrected text-critical commentary. The controls preserve divided editorial judgment and the GA 706 correction; no autograph, variant date, exhaustive versional history, or efficacy claim. |
 | Josephus 8.45–49 | Closed for present wording | Exact Niese Greek digital text and Whiston English reception witness; no printed apparatus or event verification. |
 | Selected Second Temple witnesses | Partial | Exact bounded controls exist for 1Q20, 4Q560, 4Q510/511, and 11Q11; manuscript-image and translation coverage is uneven, and the selected corpus is not exhaustive. |
 | Laodicea 26 | Closed for present wording | Percival’s historical English and Joannou’s 1962 Greek/Latin/French printed p. 141 are exact restricted controls; Joannou pp. 127–129 bound the collection as local Phrygian summary tradition. Wider reception and manuscript collation remain open. |
@@ -130,7 +130,7 @@ claim already published.
   a modern critical Vulgate. No witness is harmonized or used to infer a
   diagnosis, exorcistic office, rite, ordinary practice, mechanism, efficacy,
   or textual priority.
-- Mark 1:21–28; 3:22–27; 5:1–20; 9:14–29; Matthew 12:22–32; Luke 4:31–37; 10:17–20; 11:14–26; Acts 16:16–18; 19:11–20. Read in the exact Robinson–Pierpont Byzantine Greek and Douay–Rheims/Challoner English controls as canonical narratives with attention to each evangelist's theological purpose. At Mark 9:29 the Robinson–Pierpont inline note reports the Nestle–Aland omission of “and fasting”; no separately identified eclectic artifact or full critical apparatus is bound. The Douay witness numbers the corresponding prayer-and-fasting verse Mark 9:28. No Hebrew or Syriac wording supports a publication claim.
+- Mark 1:21–28; 3:22–27; 5:1–20; 9:14–29; Matthew 12:22–32; Luke 4:31–37; 10:17–20; 11:14–26; Acts 16:16–18; 19:11–20. Read in the exact Robinson–Pierpont Byzantine Greek and Douay–Rheims/Challoner English controls as canonical narratives with attention to each evangelist's theological purpose. For Mark 9:29, the exact SBLGNT v1.2 running text and edition-comparison apparatus were additionally inspected: SBLGNT, Westcott–Hort, and NA28 omit “and fasting,” while Tregelles and Robinson–Pierpont include it. The official INTF ECM Mark split-guiding-line control at 9:29/29 gives *a* as omission and *b* as *kai nesteia*, marked Byzantine. Its corrected commentary names GA 01, 03, and 0274 for omission and describes the longer reading as coherent and supported by the rest of the collated Greek witnesses. An initial miscoding of GA 706 under omission was corrected after its image showed the addition. The commentary records a majority editorial preference for omission and a Strutwolf–Wachtel minority preference for the longer reading, while the published split line preserves both as equal-weight initial-text candidates. The Douay witness receives “prayer and fasting” at Mark 9:28 in its numbering. These controls establish edition readings, bounded Greek attestation, correction history, and divided editorial judgment—not autograph wording, a date or certain mechanism for the variation, an exhaustive versional history, doctrine, ritual instruction, or efficacy. No Hebrew or Syriac wording supports a publication claim.
 - Tobit 6–8 in Henry Barclay Swete's 1896 Greek volume, printed pp. 828–835
   (PDF pages 844–851), with the edition's recension note on preface p. vii
   (PDF page 9). The larger upper text is the Vatican form; the materially
@@ -251,6 +251,48 @@ routes, findings, and limits are recorded in
   complete scan acquired, hashed, and visually inspected 2026-07-27. The
   printed sequence supports baptismal placement of *Exorcismi super electos*;
   it does not supply manuscript collation or the date of each stratum.
+- Hildegard of Bingen, *Causae et curae*, ed. Paul Kaiser (Leipzig:
+  Teubner, 1903), book II, printed pp. 90–92, especially *De amentia* at
+  p. 91. The exact 267-page Internet Archive PDF was acquired and hashed
+  (`660bbf3b…08d7`), and p. 91 was inspected directly in the page image.
+  The paragraph gives a bodily-humoral account, says that many wrongly take
+  the described condition for possession, and separately retains a
+  theological category of possession. It establishes that distinction in
+  this one medical work, not a modern diagnosis, accepted physiology,
+  universal medieval consensus, prevalence, or validation of a residual
+  supernatural category. The 1903 artifact carries a Public Domain Mark.
+- Caesarius of Heisterbach, *Dialogus miraculorum*, ed. Joseph Strange,
+  vol. II (1851), Distinctio VII, chapter 24, printed pp. 52–53. The exact
+  442-page Internet Archive PDF was acquired and hashed
+  (`72eb239a…1351`), and both pages were directly inspected. The chapter
+  narrates monastic reception, prior unsuccessful efforts, Marian devotional
+  actions, reported recovery, thanksgiving, and an expressly stated
+  informant chain. It is controlled as constructed miracle testimony within
+  an exemplum collection, not a ritual formulary, authorization dossier,
+  neutral case file, diagnosis, prevalence survey, ordinary-practice report,
+  or proof of efficacy.
+- Hermann Joseph Wasserschleben, ed., *Die Bussordnungen der
+  abendländischen Kirche* (Halle, 1851), *Capitula Dacheriana* c. 151,
+  printed pp. 158–159, and the related Anglo-Saxon penitential unit X,
+  *De vexatis a diabulo*, §§1–5, printed pp. 211–212. The exact 756-page
+  Internet Archive PDF was acquired and hashed (`17e29bfa…d252`); all four
+  pages and the visible apparatus were directly inspected. The unit
+  differentiates circumstances bearing on prayer and commemoration and
+  separates permitted stones or herbs from incantation. The apparatus
+  reports title, numbering, and omission variants, including limited
+  manuscript presence for §5. These are transmitted penitential
+  classifications, not one uniform code, prevalence, diagnosis, enforcement,
+  ritual instruction, or evidence of actual local practice.
+- Regino of Prüm, *Libri duo de synodalibus causis*, ed. F. W. H.
+  Wasserschleben (Leipzig, 1840), book I, *Notitia*, questions 76–95,
+  printed pp. 51–52, especially qq. 87 and 91. The exact 557-page Internet
+  Archive PDF was acquired and hashed (`ae4fe0c8…9ba0`); the corresponding
+  page images were directly inspected. Catechumenal and font exorcisms and
+  exorcisms or blessings of water and salt appear within a much broader
+  episcopal or vicarial examination of priestly competence. The inventory
+  establishes its administrative classification, not a personal
+  major-exorcism chapter, exorcist-office duties, caseload, actual
+  performance, frequency, or efficacy.
 - *Sacramentarium Gellonense*, Paris, BnF, Latin 12048, exact Gallica IIIF
   manifest and complete folio-image run from 194v through 199v acquired,
   hashed, and visually inspected 2026-07-27. The run verifies the red-rubric
@@ -471,6 +513,32 @@ reported works; Luke's theological narrative is not converted into diagnosis;
 and Pauline cultic, moral, ecclesial, and armor imagery is not converted into
 rite, authorization, taxonomy, efficacy, or private-confrontation instruction.
 
+### ECM Mark 9:29 textual-history control — 2026-07-28
+
+The official INTF digital materials accompanying the 2021
+*Editio Critica Maior* I.2 were acquired and inspected at Mark 9:29,
+word address 29. The exact dated HTML response containing the text-critical
+commentary and correction thread has SHA-256
+`4192de67553502c7980abfa2aac10e2b44226e6e780ec5df973a80cab0556722`.
+The official split-guiding-line PDF has SHA-256
+`9e4c68135cee072079336d6a6810b25eae750f76c6e355304546ac57d1c33503`;
+its PDF p. 2 gives the two readings. Both contemporary artifacts are public
+but unlicensed for repository redistribution, so only their metadata and
+narrow factual paraphrase are retained.
+
+The ECM commentary's original assignment of GA 706 to omission is
+superseded by the correction preserved in the same dated response: the
+manuscript image contains the addition, INTF acknowledged and corrected the
+transcription, and a later contributor reconfirmed the result. The reader
+account therefore names 01, 03, and 0274 as the bounded ECM support for
+omission and does not repeat the superseded 706 assignment. The majority
+preference for omission, the recorded minority preference for the addition,
+and the published equal-weight split line are all preserved. This closes the
+former apparatus dependency for the present
+wording without claiming an autograph, a date or certain transmission
+mechanism, exhaustive versions, doctrinal settlement, ritual instruction, or
+efficacy.
+
 - Genesis Apocryphon 1Q20 XX.14–29 and 4Q560 now have exact dated CAL
   Aramaic transcription controls. For 4Q560, CAL identifies photograph PAM
   43.602, Naveh 1998, and Puech's *DJD* XXXVII editio princeps as its bases;
@@ -481,12 +549,18 @@ rite, authorization, taxonomy, efficacy, or private-confrontation instruction.
   and the broken 4Q511 fragment-10 parallel, with lacunae, uncertainty, and
   alternate readings preserved. These establish only the fragmentary
   praise-and-protection architecture, not a complete ritual, translation,
-  manuscript adjudication, or performance setting. 11Q11 V.4–14 now has its
+  manuscript adjudication, or performance setting. Restricted official IAA
+  catalog records separately control the Cave 4 parchment identities as
+  copies a and b, their broad Herodian assignment, plate groups, and distinct
+  *DJD* VII ranges. Plate-local image labels are not equated to *DJD* textual
+  fragments, and no IAA image is retained or reproduced. 11Q11 V.4–14 has its
   own exact CC-BY-SA Qumran-Digital Hebrew control, preserving the bounded
   Davidic, protective, direct-address psalmic architecture and its textual
   uncertainty. It does not supply an English translation, manuscript-image
   collation, *DJD* XXIII apparatus, complete formula, or certain performance
-  setting.
+  setting. Its separate IAA record controls the Cave 11 Hebrew parchment
+  identity, broad Herodian assignment, four plate groups, and *DJD* XXIII
+  range, but not an exact line-to-image concordance.
 - Broad Mesopotamian, Egyptian, and Greco-Roman comparisons were removed.
   Hippocratic *On the Sacred Disease* 1 is now controlled in the exact Adams
   1849 English edition at printed pp. 843–845: it supplies an ancient medical
@@ -594,6 +668,36 @@ in named communities, and the common, particular, and liturgical law of
 identified Eastern Catholic and Orthodox Churches remain open.
 
 ## Publication audit
+
+## Loudun documentary case module
+
+The reader-facing Loudun module is controlled as documentary and institutional
+history, not as a supernatural, diagnostic, or efficacy case narrative.
+
+- The commissioners' seven-page *Arest de condemnation de mort* (Paris:
+  Hébert and Poullard, 1634), BnF `bpt6k1429593v`, is bound through its exact
+  hashed IIIF manifest. It establishes the royal commissioners' act and
+  sentence dated 18 August 1634, not the truth of every allegation, an
+  ecclesiastical judgment, or a complete transcript.
+- The twenty-five-page royal commission register extract, BnF
+  `bpt6k848343`, and the twelve-page defense *Factum*, BnF `bpt6k84838g`,
+  are bound at whole-document identity and genre only because repeated
+  delivery resets prevented honest internal-page inspection.
+- Tranquille de Saint-Remi's 1634 *Véritable relation* is exact-controlled by
+  the Internet Archive PDF SHA-256
+  `ee74abada29d42afdf2af3e4e416c7189283a2463723cc69aef76da551ca6fa2`.
+  PDF pp. 10, 13, 21, 23, and 29–31 establish prosecution-aligned advocacy,
+  allegations, legitimation rhetoric, and the author's explicit refusal at
+  p. 23 to reproduce the complete trial. They do not verify the allegations.
+- The anonymous 1635 *Relation de la sortie du demon Balam*, exact PDF
+  SHA-256 `d625b734fd26be7527f4da0718e6d2cfe5b3f382f081cc353158bd008c3c1fd5`,
+  is used only as evidence of post-judgment pamphlet reception.
+
+BnF marks the Gallica items *libre de droits*; repository records separately
+preserve Gallica scan-reuse conditions. Barbier (1886), Legué (1880), the BnF
+Dupuy 641 catalogue, and protected modern scholarship remain dependency and
+locator guides. Direct diocesan and convent registers, the full trial file,
+and complete manuscript-to-print collation remain open.
 
 The earlier fifteen-page candidate, build, web conversion, and page review are
 superseded for publication purposes by the expanded modular draft. They

@@ -111,14 +111,22 @@ A local baptismal manual establishes extraordinary exorcism only if an exact
 separate post-baptismal rite is actually present. Survival in a book does not
 prove performance, prevalence, or efficacy.
 
-## Cross-genre work deferred
+## Cross-genre work: first bounded tranche closed
 
-No expansion should presently connect medieval exorcism with medicine, magic,
-heresy, trials, demonological taxonomy, or retrospective diagnosis. Each
-topic requires its own representative primary corpus and modern specialist
-control. Hagiography, miracle collections, sermons, canon law, penitentials,
-medical writing, and liturgical books answer different questions and must not
-be made to corroborate one another merely because they share vocabulary.
+Four exact public-domain controls now support a deliberately non-representative
+adjacent-genre comparison: Hildegard's medical distinction at *Causae et
+curae* II, p. 91; Caesarius's constructed miracle testimony at *Dialogus
+miraculorum* VII.24; the penitential classifications and manuscript-variation
+apparatus at Wasserschleben pp. 158–159 and 211–212; and Regino's synodal
+competence inventory at book I, *Notitia* qq. 76–95. Each has a source-library
+record, publication binding, source-audit entry, and evidence-map row.
+
+This closes only a 1.8–2.2k genre-differentiation synthesis. It does not close
+representative work on hagiography, sermons, canon-law commentary, medicine,
+magic, heresy, trials, learned demonology, reception, or retrospective
+diagnosis. Those topics still require their own representative primary corpora
+and modern specialist controls. The four genres must not be made to corroborate
+one another merely because they share vocabulary.
 
 ## Closure test
 

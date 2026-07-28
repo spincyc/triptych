@@ -23,10 +23,10 @@ unchanged rite. Authorization and safeguards are internal to this history.
 ## Included
 
 The promised completed deliverable is a comprehensive study of at least 100
-substantive pages. The current 107-page paper contains 94 substantive narrative
-pages and is a public alpha, not fulfillment
-of that extent or completeness
-commitment. Expansion must remain evidence-controlled; page count does not
+substantive pages. The current 116-page paper contains 103 substantive narrative
+pages and therefore fulfills the extent commitment. It remains a public alpha,
+not fulfillment of the separate completeness commitment. Expansion must remain
+evidence-controlled; page count does not
 authorize padding, unsupported cases, operational ritual instruction, or
 relaxation of the exclusions below.
 
@@ -111,15 +111,15 @@ source function, and generation metadata.
 
 The earlier fifteen-page candidate and its 26 July production record are
 superseded by this expanded modular draft. Those dated records remain
-historical evidence for their exact snapshots. The current 107-page candidate,
-including 94 substantive narrative pages, must pass the recorded source-role,
+historical evidence for their exact snapshots. The current 116-page candidate,
+including 103 substantive narrative pages, must pass the recorded source-role,
 currentness, architecture, claim, build, web,
 visual, metadata, text, font, identity, rights, and safety checks on 27 July
 2026.
 
 The current public-alpha snapshot is prepared for publication but will not
-be live until maintainer integration and push. The 100-page minimum and the
-incomplete source families above remain open completion work. It must not be
-described as the promised comprehensive final paper until the substantive-page,
+be live until maintainer integration and push. The 100-page minimum is met;
+the incomplete source families above remain open completion work. It must not
+be described as the promised comprehensive final paper until the
 source, evidence, safety, rights, identity, mechanical, web/PDF anti-drift, and
 every-page visual gates pass for the completed snapshot.

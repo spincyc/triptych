@@ -3,6 +3,54 @@ record_type = "bindings"
 document = "history/catholic-exorcism/01-history-and-current-practice"
 
 [[bindings]]
+source_id = "passage.parlement-of-paris.arest-grandier-1634.hebert-poullard-paris-1634.judgment-pp-1-7"
+loci = ["pp.1-7"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:fd229d6b6b0e1efb13b4091d3ebcfb273554266d7b2593e9e4dc20cf6432228a"
+verified_on = "2026-07-28"
+context = "Exact control for the commissioners' printed adjudicative act and sentence only; not proof of allegations, an ecclesiastical judgment, a complete transcript, diagnosis, possession, or efficacy."
+
+[[bindings]]
+source_id = "artifact.royal-commission-for-grandier-proceeding.extraict-des-registres-1634.thoreau-mesnier-paris-1634.gallica-bpt6k848343"
+loci = ["whole twenty-five-page item"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Whole-document identity, royal-commission register-extract genre, Nozay signature attribution, and extent only; internal wording and a complete-trial claim are excluded."
+
+[[bindings]]
+source_id = "artifact.urbain-grandier.factum-1634.anonymous-1634.gallica-bpt6k84838g"
+loci = ["whole twelve-page item"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Whole-document identity and defense-pleading genre only; no internal defense proposition or inference of innocence is bound."
+
+[[bindings]]
+source_id = "passage.tranquille-de-saint-remi.veritable-relation-1634.french-1634.advocacy-and-internal-limit"
+loci = ["PDF pp.10,13,21,23,29-31"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:5961421b8196f8e4c3913947e55a49f052cfe65e50cc3ffac04da77ad897ae2b"
+verified_on = "2026-07-28"
+context = "Exact control for prosecution-aligned advocacy, allegations, procedural legitimation, the p.23 incomplete-trial admission, and hostile execution rhetoric; not proof of possession, guilt, phenomena, languages, fairness, diagnosis, or efficacy."
+
+[[bindings]]
+source_id = "artifact.anonymous.relation-sortie-balam-1635.french-1635.ia-pdf-d625b734"
+loci = ["whole twenty-three-scan-page pamphlet"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:a623bd7a2e6ad5df9c455d4035ca18bea117febf2e368275e71abe4d637125b3"
+verified_on = "2026-07-28"
+context = "Whole-artifact evidence for continued post-judgment pamphlet narration only; no reported phenomenon, guilt, possession, cause, or efficacy is adopted."
+
+[[bindings]]
+source_id = "artifact.anonymous.recit-veritable-loudun-1634.targa-paris-1634.gallica-bpt6k84848s"
+loci = ["whole fifteen-page item"]
+role = "reception"
+states = ["cataloged"]
+context = "Whole-document identity, publication date, publisher, extent, and prosecution-side news-pamphlet genre only; no internal allegation is adopted."
+
+[[bindings]]
 source_id = "passage.anonymous.pontificale-cracoviense-bj-ms-2057.manuscript-bj-ms-2057.folios-68v-77v-energumen-catechumen-dossier"
 loci = ["folio-68v-77v"]
 role = "direct-witness"
@@ -992,6 +1040,42 @@ states = ["cataloged"]
 context = "Exact tracked Byzantine-textform witness; this edition reads prayer and fasting at Mark 9.29."
 
 [[bindings]]
+source_id = "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-9.29"
+loci = ["Mark 9:29"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:cf885bd0a5929e3aee55d2993e27d2d0dc227f6a2ad3baa9d0564cf038635cc6"
+verified_on = "2026-07-28"
+context = "Exact SBLGNT running-text control for prayer alone, inspected with its immediate context. The companion apparatus binding compares named editions but not manuscripts."
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-app-1c398496"
+loci = ["Mark 9:29, apparatus lines 1063-1064"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:37baa3c30689ebf9814f1ae2aa90635ac0cb00ed4f3f49ddaa75a5029f64e1bd"
+verified_on = "2026-07-28"
+context = "Exact CC-BY-4.0 edition-comparison apparatus: SBLGNT, WH, and NA28 omit the addition, while Treg and RP include it. This artifact is not a manuscript apparatus."
+
+[[bindings]]
+source_id = "passage.institute-for-new-testament-textual-research.editio-critica-maior-mark.intf-2021-digital-2026-07-28.mark-9-29-split-line"
+loci = ["PDF page 2, Mark 9:29/29"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:5b6c7161aa8a110339a09cf73be3239a9bd2cff7f61feb1af1a24bc954061c28"
+verified_on = "2026-07-28"
+context = "Official ECM Mark split-guiding-line control: reading a omits and reading b adds kai nesteia, marked Byzantine. It does not establish autograph wording or unanimity."
+
+[[bindings]]
+source_id = "passage.institute-for-new-testament-textual-research.editio-critica-maior-mark.intf-2021-digital-2026-07-28.mark-9-29-commentary"
+loci = ["Mark 9:29, word address 29"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b64aaeaac1b01f8573ab5ee052c245ab3a4d27ed1c2bab6482aa854448cf06cb"
+verified_on = "2026-07-28"
+context = "Corrected official commentary for the named Greek attestation, coherent longer reading, GA 706 correction, majority preference for omission, recorded minority preference for the addition, and published equal-weight split line. No autograph, date, certain transmission mechanism, doctrine, ritual instruction, or efficacy claim."
+
+[[bindings]]
 source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-luk-82225821"
 loci = ["4.31-37", "10.17-20", "11.14-26"]
 role = "textual-control"
@@ -1610,6 +1694,15 @@ verified_on = "2026-07-27"
 context = "Exact Qumran-Digital Hebrew control for 4Q510 fragment 1, with lacunae, uncertainty, alternate reading, and 4Q511 parallels retained. Not a complete formula, translation, image collation, reconstruction, performance setting, community ownership, efficacy, ordinary practice, diagnosis, influence, continuity, Christian equivalence, or operational instruction."
 
 [[bindings]]
+source_id = "artifact.anonymous.songs-of-the-sage.iaa-leon-levy-catalog-2026-07-28.4q510-manuscript-record-html"
+loci = ["4Q510.1.1-9"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:418187293606ec6c5c1fac9510f300db82ebacaf48f32b9d83615926b3148eac"
+verified_on = "2026-07-28"
+context = "Official IAA control for 4Q510's identity as Cave 4 Hebrew parchment copy a, its broad Herodian assignment, plate group 280, and DJD 7 coordinates. Restricted link-only finding aid; not a reading, translation, image-to-DJD-fragment concordance, reconstruction, sequence, or permission to reproduce images."
+
+[[bindings]]
 source_id = "passage.anonymous.songs-of-the-sage.hebrew-qumran-digital-2025-03-11.4q511.10.1-8"
 loci = ["4Q511.10.1-8"]
 role = "textual-control"
@@ -1619,6 +1712,15 @@ verified_on = "2026-07-27"
 context = "Exact Qumran-Digital Hebrew control for the broken 4Q511 fragment-10 parallel, independently bound rather than silently conflated with 4Q510. Not a complete formula, translation, image collation, reconstruction, performance setting, community ownership, efficacy, ordinary practice, diagnosis, influence, continuity, Christian equivalence, or operational instruction."
 
 [[bindings]]
+source_id = "artifact.anonymous.songs-of-the-sage.iaa-leon-levy-catalog-2026-07-28.4q511-manuscript-record-html"
+loci = ["4Q511.10.1-8"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:aef544de2280d828f3c8ff900f13f25fd3c5a16d944f46c93b709c31fd9dacf5"
+verified_on = "2026-07-28"
+context = "Official IAA control for 4Q511's identity as Cave 4 Hebrew parchment copy b, its broad Herodian assignment, plate groups, and DJD 7 coordinates. Restricted link-only finding aid; plate-local labels are not equated to DJD fragment 10, and no translation, reconstruction, sequence, or image reproduction is authorized."
+
+[[bindings]]
 source_id = "passage.anonymous.11q11-apocryphal-psalms.hebrew-qumran-digital-2024-07-30.5.4-14"
 loci = ["5.4-14"]
 role = "textual-control"
@@ -1626,6 +1728,15 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:428285ea67ee7c6ca246c9b5440403f2f73a19600d7a7dff23077b1050232a17"
 verified_on = "2026-07-27"
 context = "Exact Qumran-Digital Hebrew control for the bounded 11Q11 column-5 protective psalmic architecture with breaks, corrections, and alternate readings preserved. Not a complete formula, translation, image or DJD collation, restored wording, performance setting, community ownership, efficacy, ordinary practice, diagnosis, influence, continuity, Christian equivalence, or operational instruction."
+
+[[bindings]]
+source_id = "artifact.anonymous.11q11-apocryphal-psalms.iaa-leon-levy-catalog-2026-07-28.manuscript-record-html"
+loci = ["5.4-14"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:654fa1f4c31f0be2ee826ed3355ec4da435175b72ac9af67a13f8cda59c18b55"
+verified_on = "2026-07-28"
+context = "Official IAA control for 11Q11's separate Cave 11 Hebrew parchment identity, broad Herodian assignment, plate groups, and DJD 23 coordinates. Restricted link-only finding aid; not a reading, translation, exact line-to-image concordance, reconstruction, setting, or permission to reproduce images."
 
 [[bindings]]
 source_id = "passage.catholic-church.pontificale-romanum.latin-leo-xiii-1895.de-ordinatione-exorcistarum"
@@ -1928,3 +2039,39 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:049f9cf2151f27b01d8ce5b47b5985ad3fb8ff3988a4988c1ce3e28ed1195c3c"
 verified_on = "2026-07-28"
 context = "Exact restricted Melkite eparchial catechetical control for placement in opening catechumen rites. It is not represented as a promulgated euchologion and supports no formula, pan-Byzantine uniformity, Orthodox transfer, or stand-alone faculty rule."
+
+[[bindings]]
+source_id = "passage.hildegard-of-bingen.causae-et-curae.kaiser-teubner-1903.lib-ii-de-amentia-p91"
+loci = ["lib-2-p-91"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:c853f4b05ef8e6a9798e2ab455c1f0379947308d29a962610d94bf9b7411ccb1"
+verified_on = "2026-07-28"
+context = "Exact page-image control for one medieval medical work's explicit distinction between its bodily account of amentia and observers' possession attribution. No modern diagnosis, accepted physiology, prevalence, universal consensus, or validation of a residual category is inferred."
+
+[[bindings]]
+source_id = "passage.caesarius-of-heisterbach.dialogus-miraculorum.strange-1851-vol-2.dist-vii-cap-xxiv-pp52-53"
+loci = ["dist-7-cap-24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b4085fcd69523bacf1c52f11faea399731d357742da4535a29094c402481cb24"
+verified_on = "2026-07-28"
+context = "Exact page-image control for constructed miracle testimony, selected devotional actions, narrative framing, and an express informant chain. It is not a formulary, authorization record, neutral case file, diagnosis, ordinary-practice report, prevalence survey, or proof of efficacy."
+
+[[bindings]]
+source_id = "passage.anonymous.early-medieval-penitential-collections.wasserschleben-1851.dacheriana-151-and-anglo-saxon-x"
+loci = ["dacheriana-c-151"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:7179ed96a16772a24702f623d3bbbb2960bcbfea879febdd68da647b1e5417b0"
+verified_on = "2026-07-28"
+context = "Exact page-image and apparatus control for penitential classifications concerning agency, mental state, prayer or commemoration, and incantation, with material manuscript variation. No uniform-code, diagnosis, prevalence, enforcement, ritual-instruction, or actual-practice claim."
+
+[[bindings]]
+source_id = "passage.regino-of-prum.de-synodalibus-causis.wasserschleben-1840.lib-i-notitia-qq76-95"
+loci = ["lib-1-notitia-q-87"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:2aec31743c75dea654a1cd678ef28ec13d073bac078e62d63f5513cf37ef3bf7"
+verified_on = "2026-07-28"
+context = "Exact page-image control for a synodal priest-competence inventory that places catechumenal, font, water, and salt exorcisms among broad parochial knowledge. No personal major-exorcism, office-duty, caseload, performance, frequency, or efficacy claim."

@@ -76,12 +76,22 @@ rights verification, and exact-snapshot production checks.
   establishes a fragmentary Davidic, protective, direct-address psalmic
   architecture, not a complete formula, performance setting, or continuous
   ritual assembled from adjacent columns.
-- At Mark 9:29 the Robinson–Pierpont artifact includes fasting with prayer and
-  its inline divergence note reports omission in the Nestle–Aland text. The
-  exact Douay–Rheims/Challoner artifact also includes fasting, at Mark 9:28 in
-  its numbering. No separately identified eclectic artifact or full critical
-  apparatus is bound, so the draft states the variant but does not reconstruct
-  its manuscript history or weight.
+- At Mark 9:29 the exact SBLGNT running text and comparison apparatus place
+  SBLGNT, Westcott–Hort, and NA28 with prayer alone and Tregelles and
+  Robinson–Pierpont with prayer and fasting. The official ECM Mark control at
+  9:29/29 supplies the manuscript-apparatus layer: its split guiding line
+  preserves omission and *kai nesteia*, its corrected commentary names 01,
+  03, and 0274 for omission, and it describes the longer reading as coherent
+  and supported by the rest of the collated Greek witnesses. GA 706 was
+  corrected from the former omission assignment to the addition after image
+  inspection. The majority preference for omission and the
+  Strutwolf–Wachtel minority preference for the addition remain distinct
+  editorial judgments, while the published split line preserves both as
+  equal-weight initial-text candidates. The exact
+  Douay–Rheims/Challoner artifact includes fasting at Mark 9:28 in its
+  numbering. These controls do not establish autograph wording, date the
+  variant, prove a transmission mechanism, exhaust versions, or support
+  doctrine, ritual instruction, or efficacy.
 - Mark 9:38–41 and Luke 9:49–50 are retained as distinct parallel accounts:
   the SBLGNT apparatus records wording and pronoun differences, which prevents
   harmonizing their immediate formulations. Matthew 7:22–23 places claimed

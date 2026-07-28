@@ -10,7 +10,7 @@ exact snapshot.
 
 ## Baseline and finish line
 
-- The current public-alpha candidate is 107 physical pages, of which 94 are
+- The current public-alpha candidate is 116 physical pages, of which 103 are
   substantive narrative pages under this plan's exclusion rule.
 - The deliverable remains at least 100 substantive pages, excluding front
   matter, terminal audit apparatus, padding, sparse spill, and long quotations.
@@ -24,7 +24,7 @@ exact snapshot.
 
 - [x] Reconcile every present-tense record that still described a superseded
   20-, 29-, 32-, 33-, 34-, 35-, 36-, 47-, 57-, 64-, 75-, or 80-page snapshot with the
-  installed 84-page checkpoint and current 107-page candidate, preserving dated historical
+  installed 84-page checkpoint and current 116-page candidate, preserving dated historical
   findings rather than rewriting them as current.
 - [x] Make the child landing page, PDF extent, web extent, scope, source audit,
   evidence map, and deliverable ledger agree without representing the interim
@@ -33,7 +33,7 @@ exact snapshot.
   the appropriate audit records before using the baseline for expansion.
 
 Reconciled again 2026-07-28. The 84-page identities and production checks are
-owned by `final-exact-snapshot-review-2026-07-27.md`; the current 107-page
+owned by `final-exact-snapshot-review-2026-07-27.md`; the current 116-page
 candidate requires its own exact-snapshot checks. Dated earlier baseline
 findings remain historical evidence only.
 
@@ -48,12 +48,12 @@ claim verification remain distinct.
 
 | Module | State | Next dependency |
 | --- | --- | --- |
-| Ancient and biblical | Partial | Bind a modern eclectic Mark 9:29 apparatus; extend Qumran image/translation collation and the selected Second Temple comparison. |
+| Ancient and biblical | Partial | The modern eclectic Mark 9:29 apparatus is bound; Qumran manuscript identity is now controlled, while exact image-to-edition concordance, lawful modern-translation collation, and broader Second Temple comparison remain open. |
 | Patristic and early discipline | Partial | Add modern critical Greek control for Laodicea 26 and a current critical reconstruction with versional evidence for the *Apostolic Tradition* complex. |
 | Medieval | Partial | Collate PRG against a named manuscript and acquire lawful critical controls for Gellone and the *Statuta* where possible; extend representative local and cross-genre comparison. |
 | Roman editions | Partial | The 1614 intermediate-page artifacts now have category-level architectural controls; obtain direct p. 220 control and finish the formula-withholding 1614/intermediate/1925/1952/1998–2004 textual collation matrix. |
 | Current discipline | Partial | Revalidate law, competence, interpretations, ritual governance, and territorial implementation at the final as-of date. |
-| Eastern material and named cases | Partial | The bounded CCEO, historical-transmission, and Ruthenian/Melkite initiation modules are reader-facing. Church-specific particular law, current stand-alone ritual books, broader Byzantine/Orthodox comparison, and named cases remain open. |
+| Eastern material and named cases | Partial | The bounded CCEO, historical-transmission, Ruthenian/Melkite initiation, and one Loudun documentary-case module are reader-facing. Church-specific particular law, current stand-alone ritual books, broader Byzantine/Orthodox comparison, and additional named cases remain open. |
 
 Exact controls already acquired for each partial module are itemized in
 `source-audit.md`; partial does not reopen claims already bounded and verified.
@@ -93,7 +93,7 @@ extent-only prose.
 
 ## Work unit E5 — exact-snapshot completion
 
-- [ ] Count physical pages and separately document at least 100 substantive
+- [x] Count physical pages and separately document at least 100 substantive
   pages against the exclusion rule above.
 - [ ] Build to settled references and contents; close fatal, reference,
   overflow, and layout warnings.

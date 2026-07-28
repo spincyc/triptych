@@ -233,17 +233,22 @@ sequence, actual-use claim, or present-authorization inference is supported.
   certitude, professional consultation, consent, and privacy. It is not
   universal law or a professional clinical protocol.
 
-## Historical-case exclusion audit
+## Historical-case audit
 
-Four proposed cases were tested for inclusion and removed: Loudun, Illfurth,
-Earling, and Klingenberg. The available leads did not provide a
+Four proposed cases were tested. Illfurth, Earling, and Klingenberg remain
+excluded. Loudun is now admitted only as a bounded documentary and
+institutional case after exact acquisition closed a minimum corpus. The other
+available leads did not provide a
 publication-ready, case-specific chain of exact loci for every proposed date,
 person, authorization, diagnosis, proceeding, outcome, and ecclesiastical
 judgment.
 
-- **Loudun:** mediated narrative editions and modern reconstruction are useful
-  leads, but the proposed account had not collated each retained assertion to
-  an exact contemporary pamphlet, proceeding, or judgment.
+- **Loudun:** the exact 1634 printed judgment, commission-extract identity,
+  defense-*Factum* identity, inspected Tranquille passages, and exact 1635
+  reception pamphlet now support a case about documentary genres, institutional
+  acts, advocacy, dependency, and reception. They do not support a complete
+  trial reconstruction or conclusions about possession, diagnosis, guilt,
+  fairness, phenomena, or efficacy.
 - **Illfurth:** clerical retellings and later local or diocesan memory had not
   been traced to a controlled contemporary medical, civil, and authorization
   record.
@@ -272,8 +277,9 @@ an evidence-map row for each retained claim.
   present use.
 - No inherited sign is printed as a checklist, and no command, adjuration,
   sequence, or practical instruction from either ritual book is reproduced.
-- Loudun, Illfurth, Earling, and Klingenberg remain excluded unless
-  case-specific archival review closes the gates stated above.
+- Illfurth, Earling, and Klingenberg remain excluded unless case-specific
+  archival review closes the gates stated above. Loudun's admission is limited
+  to the exact documentary ceiling recorded here.
 - The 1985 CDF letter, 1999 dicastery presentation, 2000 healing instruction,
   USCCB page, and Aquinas III q. 71 now have exact shared work, edition, and
   dated remote-artifact identities. Focused passage records remain desirable
