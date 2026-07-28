@@ -38,6 +38,12 @@ patristic, biblical, liturgical, and theological review.
 - Exact Robinson–Pierpont 2018 Byzantine-textform artifacts control the Greek
   wording in Matthew, Mark, Luke, and Acts. They represent one textform and
   include inline divergence notes; they are not a full critical apparatus.
+- Swete's 1896 volume now supplies exact, page-verified Greek controls for
+  Tobit 6–8 in both forms that it prints: the Vatican text above and the
+  materially different Sinaitic text in full beneath it. This closes the
+  former recension-identity gap for this bounded narrative, but Swete's
+  editorial hierarchy is not adopted and no modern critical adjudication,
+  manuscript collation, or Semitic-text comparison is inferred.
 - At Mark 9:29 the Robinson–Pierpont artifact includes fasting with prayer and
   its inline divergence note reports omission in the Nestle–Aland text. The
   exact Douay–Rheims/Challoner artifact also includes fasting, at Mark 9:28 in
@@ -53,8 +59,8 @@ patristic, biblical, liturgical, and theological review.
   facsimile at printed page 190. It establishes Justin's apologetic claim, not
   its outcomes, frequency, formulary, or original Greek wording.
 
-Exact records remain necessary for Tobit's Greek recensions, Genesis
-Apocryphon 1Q20 XX, and Qumran apotropaic texts. Easton's exact 1934 English
+Exact records remain necessary for Genesis Apocryphon 1Q20 XX and Qumran
+apotropaic texts. Easton's exact 1934 English
 reconstruction now controls only its own *Apostolic Tradition* text state, and
 Percival's exact 1900 English edition now controls only its Laodicea 26
 translation; neither is a modern critical original-language control. Exact dated English passage records now control the bounded
@@ -66,7 +72,7 @@ original-language verification.
 | Stratum | Witness | What it establishes | What it cannot establish |
 | --- | --- | --- | --- |
 | Israelite narrative in exact Catholic English reception | 1 Samuel 16 (1 Kings 16 in the tracked Douay witness) | Saul's harmful spirit and relief through David's music inside the kingship narrative | Exact Hebrew wording, an adjuration, a later exorcistic office, or a clinical diagnosis |
-| Deuterocanonical narrative | Tobit 6–8 | Angelic direction, prayer, marriage, healing, and expulsion in one providential narrative | A normal Israelite or Christian formulary |
+| Deuterocanonical narrative | Tobit 6–8, Swete 1896 Vatican and Sinaitic Greek forms | Both printed Greek forms place angelic direction, prayer, marriage, healing, and expulsion in one providential narrative | A normal Israelite or Christian formulary, recension priority, manuscript adjudication, a Semitic-text claim, efficacy, or operational instruction |
 | Second Temple rewriting | *Jubilees* 10.1–11, Charles 1913 English | Noah petitions God after spirits afflict his descendants; God permits one tenth to remain after Mastema's request | Original-language wording or direct dependence by a Gospel evangelist |
 | Second Temple Aramaic | Genesis Apocryphon 1Q20 XX.14–17, 21–29 | Edition-identified lead concerning Abram, Pharaoh, prayer, and laying on of hands | Publication support until an exact translation witness is acquired and inspected |
 | Greek medical polemic | Hippocratic *On the Sacred Disease* 1, Adams 1849 English, printed pp. 843–845 | Rejects a uniquely divine cause and criticizes claims for purifications and incantations in one exact dated translation | A Christian witness, neutral practice report, modern clinical diagnosis, or a simple medicine-replaced-exorcism narrative |

@@ -32,6 +32,14 @@ sources.
 ## Scripture and early witnesses
 
 - Mark 1:21–28; 3:22–27; 5:1–20; 9:14–29; Matthew 12:22–32; Luke 4:31–37; 10:17–20; 11:14–26; Acts 16:16–18; 19:11–20. Read in the exact Robinson–Pierpont Byzantine Greek and Douay–Rheims/Challoner English controls as canonical narratives with attention to each evangelist's theological purpose. At Mark 9:29 the Robinson–Pierpont inline note reports the Nestle–Aland omission of “and fasting”; no separately identified eclectic artifact or full critical apparatus is bound. The Douay witness numbers the corresponding prayer-and-fasting verse Mark 9:28. No Hebrew or Syriac wording supports a publication claim.
+- Tobit 6–8 in Henry Barclay Swete's 1896 Greek volume, printed pp. 828–835
+  (PDF pages 844–851), with the edition's recension note on preface p. vii
+  (PDF page 9). The larger upper text is the Vatican form; the materially
+  different Sinaitic form is printed in full beneath it. Both exact forms were
+  visually checked for the bounded narrative architecture. Swete's dated
+  editorial hierarchy is not adopted, and the control does not establish
+  manuscript priority, modern critical adjudication, Semitic wording,
+  efficacy, ordinary practice, a Christian rite, or operational instruction.
 - *Jubilees* 10.1–11, trans. R. H. Charles in *The Apocrypha and Pseudepigrapha of the Old Testament*, vol. 2 (Oxford, 1913), exact CCEL chapter state acquired and inspected 2026-07-27. English translation control for Noah's petition and the disposition of the spirits; no original-language collation.
 - Josephus, *Antiquities* VIII.2.5 in William Whiston's 1737 translation, corresponding to Niese 8.45–49; exact University of Chicago Penelope Book VIII state acquired and inspected 2026-07-27. Controls Josephus's literary report about Eleazar and its Solomonic framing, not the event's mechanism or Christian dependence.
 - Tertullian, *Apology* 23, Thelwall English; Origen, *Contra Celsum*
