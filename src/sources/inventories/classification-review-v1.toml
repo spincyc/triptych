@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-07-27"
-publication_snapshot = "sha256:3c02118112a16551b38c7ff072811c655b923cc8184c59a1ca39f026cebd1f8f"
-classification_snapshot = "sha256:168d6ba79848f1c86a34613a3495d9acc72945007e80f4fafad20477da686ed0"
+publication_snapshot = "sha256:a2e536a99bca958dd103812148c416d8a9b84e2ee6adb2ee016addf658440f54"
+classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -353,6 +353,10 @@ document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"
+source_categories = ["historical-primary", "liturgical", "scripture"]
+
+[[classifications]]
 document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
 
@@ -447,6 +451,18 @@ source_categories = ["canon-law", "finding-aid", "historical-primary", "institut
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"
+source_categories = ["historical-primary", "liturgical"]
+
+[[classifications]]
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"
+source_categories = ["historical-primary", "liturgical", "scripture"]
+
+[[classifications]]
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"
+source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial"]
 
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"
