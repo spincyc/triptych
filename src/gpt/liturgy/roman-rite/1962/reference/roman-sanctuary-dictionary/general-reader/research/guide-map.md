@@ -57,3 +57,7 @@ minister/use relationships. Their TeX-native generic closed/open book symbols
 deliberately assert no binding morphology, material, ornament, dimensions, or
 unresolved alias; the ordinary Gospel formation retains the holding
 subdeacon and does not introduce a lectern.
+
+The pre-Mass handwashing place is text only: the governing rubric establishes
+the action, not a universal visible form. It is distinct from the portable
+Offertory lavabo and cannot be identified as a piscina from appearance.

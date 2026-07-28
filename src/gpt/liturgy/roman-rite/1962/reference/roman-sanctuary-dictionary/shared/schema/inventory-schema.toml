@@ -34,6 +34,7 @@ optional = [
   "audience_note",
   "pronunciation_key",
   "editorial_note",
+  "presentation_mode",
   "review_readiness",
 ]
 
@@ -49,6 +50,11 @@ unique = true
 [fields.workflow_state]
 type = "enum"
 values = ["lead", "identified", "source-audited", "art-reviewed", "priestly-review-ready", "publication-ready", "held"]
+
+[fields.presentation_mode]
+type = "enum"
+values = ["illustrated", "text-only"]
+default = "illustrated"
 
 [fields.preferred_english_name]
 type = "string"

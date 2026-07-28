@@ -132,3 +132,8 @@ The four-page 1963 *La Maison-Dieu* survey and official Vatican HTML of
 the exact inspected artifacts, not redistribution permission. No page image,
 bulk text, or source byte from either artifact is tracked or planned for the
 dictionary.
+
+The sacristy handwashing-place record is deliberately text-only. It contains
+project-authored source-bounded paraphrase and no artwork, visual extract, or
+third-party quotation; there is consequently no image right to clear or
+implied visual morphology.

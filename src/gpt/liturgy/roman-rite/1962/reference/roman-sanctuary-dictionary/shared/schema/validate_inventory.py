@@ -152,7 +152,7 @@ class Validator:
             if field in data:
                 self.string_array(path, field, data[field])
 
-        for field in ("workflow_state",):
+        for field in ("workflow_state", "presentation_mode"):
             if field in data:
                 self.enum(path, field, data[field], self.schema["fields"][field]["values"])
         for field in ("categories", "periods", "statuses", "ceremonies"):
@@ -180,6 +180,12 @@ class Validator:
         self.validate_artwork(
             path, object_id, data.get("artwork"), data.get("workflow_state")
         )
+        if data.get("presentation_mode") == "text-only" and data.get("artwork"):
+            self.error(
+                path,
+                "artwork",
+                "text-only object must not register publication artwork",
+            )
         self.validate_audience_notes(path, data)
         self.validate_review_readiness(path, object_id, data)
 

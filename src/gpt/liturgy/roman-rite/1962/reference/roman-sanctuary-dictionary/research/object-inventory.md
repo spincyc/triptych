@@ -1,6 +1,6 @@
 # Object inventory
 
-Status: **54 canonical records populated; 31 records in the current comprehensive alpha**
+Status: **54 canonical records populated; 35 records in the current comprehensive alpha**
 Audit date: 2026-07-28
 
 The authoritative format is the structured contract under `shared/schema/`.
@@ -24,10 +24,11 @@ authorization to render an entry.
 `shared/schema/object.example.toml` is a syntax fixture and is excluded from
 all counts. These counts describe canonical workflow labels. The canonical
 alpha path separately admits a source-audited or later record only when
-identity and status are resolved, every rendered factual claim has a
-claim-verified binding, artwork rights/provenance and exact asset identity are
-recorded, and the visual has passed identity and basic usability review. There
-is no external-review admission path.
+identity and status are resolved and every rendered factual claim has a
+claim-verified binding. Illustrated records additionally require recorded
+artwork rights, provenance, exact asset identity, and passed identity and
+basic-usability checks. A validated text-only record registers no artwork.
+There is no external-review admission path.
 
 The structured inventory validator accepts all 54 records as conforming to
 the current TOML contract. That is a structural result only: it does not close

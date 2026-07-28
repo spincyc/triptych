@@ -138,6 +138,20 @@ class ValidatorTests(unittest.TestCase):
         record = {**VALID_RECORD, "workflow_state": "source-audited", "artwork": []}
         self.assertEqual(self.validate(record).problems, [])
 
+    def test_text_only_mode_accepts_empty_artwork(self) -> None:
+        record = {
+            **VALID_RECORD,
+            "workflow_state": "source-audited",
+            "presentation_mode": "text-only",
+            "artwork": [],
+        }
+        self.assertEqual(self.validate(record).problems, [])
+
+    def test_text_only_mode_rejects_artwork(self) -> None:
+        record = {**VALID_RECORD, "presentation_mode": "text-only"}
+        problems = self.validate(record).problems
+        self.assertTrue(any("must not register publication artwork" in p.message for p in problems))
+
     def test_empty_artwork_blocks_publication_ready(self) -> None:
         record = {**VALID_RECORD, "artwork": []}
         problems = self.validate(record).problems

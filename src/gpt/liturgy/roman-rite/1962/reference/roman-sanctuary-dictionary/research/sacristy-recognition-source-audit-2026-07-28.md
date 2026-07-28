@@ -50,9 +50,10 @@ evidence. “Canonical custom” is not claimed.
 - `obj-sacristy-bell` is admitted as a local signal separate from altar bells.
   Mechanism, placement, operator, dimensions, material, ornament, and cue
   remain local.
-- `obj-sacristy-lavatory` is source-audited text only. It distinguishes the
-  pre-Mass handwashing place from the portable Offertory lavabo articles and
-  from a piscina or sacrarium. No artwork or material morphology is admitted.
+- `obj-sacristy-lavatory` is source-audited and admitted through the validated
+  text-only alpha mode. It distinguishes the pre-Mass handwashing place from
+  the portable Offertory lavabo articles and from a piscina or sacrarium. No
+  artwork or material morphology is admitted.
 - `obj-piscina-sacrarium` remains held. No fitting's outlet or disposal use may
   be inferred from its appearance.
 

@@ -75,3 +75,8 @@ pontifical insignia or distinct pontifical forms, bringing this selection to
 thirty-one records. Their exact-source TeX-native graphite symbols teach only
 the VI.4--5 minister/use relationships. They assert no binding morphology,
 material, ornament, dimensions, unresolved alias, or ordinary Gospel lectern.
+
+The pre-Mass handwashing place enters text only as an ordinary supporting
+preparation record, not pontifical insignia or a distinct pontifical form.
+Its local form, location, plumbing, outlet, and disposal practice are not
+asserted.

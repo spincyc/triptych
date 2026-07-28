@@ -67,3 +67,8 @@ identities come from *Ritus servandus* VI.4--5 and their minister/use
 relationships, not from binding morphology, material, ornament, dimensions,
 or unresolved terminology aliases. The ordinary Gospel formation retains the
 subdeacon holding the book; no freestanding lectern is inserted.
+
+The pre-Mass handwashing place appears as a deliberately text-only record.
+The Missal controls the action, while its form, location, plumbing, outlet,
+and disposal practice remain local and unasserted. It is not the portable
+Offertory lavabo or the piscina.

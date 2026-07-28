@@ -22,6 +22,7 @@ OBJECT_KEYS = {
     "parent_object", "component_objects", "confusable_with", "related_objects",
     "presence", "handling", "claims", "sources", "artwork", "variants",
     "audience_relevance", "audience_note", "pronunciation_key", "editorial_note",
+    "presentation_mode",
 }
 NESTED_KEYS = {
     "presence": {"locations", "contexts", "composition_ids", "local_variability"},
@@ -181,7 +182,11 @@ def alpha_gate_failure(record: dict, alpha_assets: set[str]) -> str | None:
         for source_id in claim["source_ids"]
     ):
         return "a printed factual claim lacks a claim-verified source binding"
-    if not record["artwork"] and record["id"] not in TEX_NATIVE_ARTWORK_IDS:
+    if (
+        not record["artwork"]
+        and record["id"] not in TEX_NATIVE_ARTWORK_IDS
+        and record.get("presentation_mode") != "text-only"
+    ):
         return "no artwork is registered"
     if any(
         canonical_asset_path(artwork["asset"]) not in alpha_assets
@@ -381,7 +386,7 @@ def main() -> int:
                 f'edition_id = "{edition["id"]}"',
                 'status = "alpha"',
                 'distribution_state = "public-alpha"',
-                'admission_rule = "identity and governing status resolved; source-audited or later; every rendered factual claim has a claim-verified binding; raster artwork has manifest identity, rights/provenance, and identity-checked or later visual state; the two exact-source lesson-book records use the audited TeX-native generic-book contract; unresolved and unverified-lead records excluded"',
+                'admission_rule = "identity and governing status resolved; source-audited or later; every rendered factual claim has a claim-verified binding; illustrated records have manifest identity, rights/provenance, and identity-checked or later visual state; explicitly text-only records have no publication artwork; the two exact-source lesson-book records use the audited TeX-native generic-book contract; unresolved and unverified-lead records excluded"',
                 f"admitted_object_count = {len(chosen)}",
                 f"omitted_object_count = {len(omitted)}",
                 "admitted_object_ids = [",

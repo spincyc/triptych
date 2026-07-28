@@ -1,6 +1,7 @@
 schema_version = 1
 id = "obj-sacristy-lavatory"
 workflow_state = "source-audited"
+presentation_mode = "text-only"
 editorial_note = "The 1962 Missal prescribes the priest's pre-Mass handwashing but no lavatory morphology, plumbing, basin, furniture, or fixed location. This record is admitted for textual recognition and distinction only; artwork remains withheld pending an appropriate material source."
 preferred_english_name = "Pre-Mass handwashing place"
 latin_headword = "locus ad lavandas manus"
@@ -27,7 +28,7 @@ warnings = ["Learn locally which fitting or arrangement serves ordinary handwash
 altar_server = "required"
 sacristan = "required"
 mc_trainer = "required"
-general_reader = "useful"
+general_reader = "required"
 pontifical = "useful"
 
 [[claims]]

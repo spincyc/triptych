@@ -49,6 +49,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             self.assertIn(r"\RSDObjectRecord{obj-sacristy-cross}", alpha)
             self.assertIn(r"\RSDObjectRecord{obj-sacristy-bell}", alpha)
+            self.assertIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", alpha)
             self.assertIn(
                 r"{Latin term not asserted}",
                 alpha,
@@ -102,6 +103,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 text,
             )
             self.assertIn(r"\RSDObjectRecord{obj-sacristy-bell}", text)
+            self.assertIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", text)
             self.assertIn(
                 r"\RSDSelectedAudienceNote{Identify the local bell",
                 text,
@@ -117,6 +119,22 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 r"\RSDSelectedAudienceNote{Prepare the Gospel book",
                 text,
             )
+
+    def test_text_only_lavatory_is_in_five_generated_editions_only(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "out"
+            self.generate(output)
+            for edition in (
+                "ed-comprehensive",
+                "ed-sacristan",
+                "ed-mc-trainer",
+                "ed-general-reader",
+                "ed-pontifical",
+            ):
+                text = (output / f"{edition}.tex").read_text()
+                self.assertIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", text)
+            altar_server = (output / "ed-altar-server.tex").read_text()
+            self.assertNotIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", altar_server)
 
     def test_exact_lesson_books_use_the_tex_native_artwork_exception(self):
         generator = SCRIPT.read_text()
