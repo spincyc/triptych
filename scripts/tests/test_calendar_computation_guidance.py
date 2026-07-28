@@ -92,23 +92,68 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     self.assertEqual(rows, parents)
     self.assertEqual(sum(counts), 184)
     self.assertIn(
-      "| **PC-S05 · Nativity of the Lord** | 4 planned | 4 planned | 4 planned |",
+      "| **PC-S05 · Nativity of the Lord** | Planned | Planned | Planned |",
       landing,
     )
+    self.assertNotRegex(landing, r"\b\d+ planned\b")
     self.assertIn(
       "| PC-R08 | **Commemoration of All the Faithful Departed** | "
       "Unresolved | Unresolved | Unresolved |",
       landing,
     )
 
-  def test_sunday_catalog_links_only_installed_syntheses(self):
+  def test_sunday_catalog_links_only_installed_publications(self):
+    permitted_full_guides = {
+      *(f"{number:02d}-{slug}.pdf" for number, slug in (
+        (15, "trinity-sunday"),
+        (16, "second-after-pentecost"),
+        (17, "third-after-pentecost"),
+        (18, "fourth-after-pentecost"),
+        (19, "fifth-after-pentecost"),
+        (20, "sixth-after-pentecost"),
+        (21, "seventh-after-pentecost"),
+      )),
+      *(f"pc-s{number}-{slug}-year-a.pdf" for number, slug in (
+        (35, "eleventh-sunday-in-ordinary-time"),
+        (36, "twelfth-sunday-in-ordinary-time"),
+        (37, "thirteenth-sunday-in-ordinary-time"),
+        (38, "fourteenth-sunday-in-ordinary-time"),
+        (39, "fifteenth-sunday-in-ordinary-time"),
+        (40, "sixteenth-sunday-in-ordinary-time"),
+        (58, "most-holy-trinity"),
+        (59, "most-holy-body-and-blood-of-christ"),
+      )),
+    }
     for name in ("traditional-latin-mass.md", "novus-ordo-liturgy.md"):
       text = (ROOT / "library" / name).read_text()
       calendar = text.split("## Sunday Propers Calendar", 1)[1]
       for target in re.findall(r"\]\((\.\./doc/[^)]+\.pdf)\)", calendar):
         if "m01-nuptial-mass.pdf" not in target:
-          self.assertTrue(target.endswith("-synthesis.pdf"), target)
+          self.assertTrue(
+            target.endswith("-synthesis.pdf")
+            or target.rsplit("/", 1)[-1] in permitted_full_guides,
+            target,
+          )
         self.assertTrue((ROOT / "library" / target).resolve().exists(), target)
+
+  def test_approved_alpha_propers_do_not_regress_to_planned(self):
+    traditional = (ROOT / "library/traditional-latin-mass.md").read_text()
+    for proper_id in range(15, 22):
+      row = re.search(rf"^\| {proper_id} \|.*$", traditional, re.MULTILINE)
+      self.assertIsNotNone(row)
+      self.assertIn("../doc/gpt/", row.group())
+      self.assertTrue(row.group().endswith("| Planned |"))
+    self.assertIn("| 14 | **Pentecost Sunday** | Planned | Planned |", traditional)
+
+    postconciliar = (ROOT / "library/novus-ordo-liturgy.md").read_text()
+    for proper_id in (35, 36, 37, 38, 39, 40, 58, 59):
+      row = re.search(
+        rf"^\| \*\*PC-S{proper_id} ·.*$", postconciliar, re.MULTILINE
+      )
+      self.assertIsNotNone(row)
+      self.assertIn("../doc/gpt/", row.group())
+      if proper_id == 40:
+        self.assertIn("../doc/claude/", row.group())
 
 
 if __name__ == "__main__":

@@ -45,7 +45,8 @@ Monochrome-pencil visual references organized for six audiences.
 
 ## Sunday Propers Calendar
 
-The stable 1962 temporal series. Missing syntheses are shown as plain text.
+The stable 1962 temporal series. Each approved installed guide is linked;
+unavailable editions are shown as `Planned`.
 
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost -->
@@ -76,13 +77,13 @@ The stable 1962 temporal series. Missing syntheses are shown as plain text.
 | 12 | **Fifth Sunday after Easter** | Planned | Planned |
 | 13 | **Sunday after the Ascension** | Planned | Planned |
 | 14 | **Pentecost Sunday** | Planned | Planned |
-| 15 | **Trinity Sunday** | Planned | Planned |
-| 16 | **Second Sunday after Pentecost** | Planned | Planned |
-| 17 | **Third Sunday after Pentecost** | Planned | Planned |
-| 18 | **Fourth Sunday after Pentecost** | Planned | Planned |
-| 19 | **Fifth Sunday after Pentecost** | Planned | Planned |
-| 20 | **Sixth Sunday after Pentecost** | Planned | Planned |
-| 21 | **Seventh Sunday after Pentecost** | Planned | Planned |
+| 15 | **Trinity Sunday** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday.pdf) | Planned |
+| 16 | **Second Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost.pdf) | Planned |
+| 17 | **Third Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.html) | Planned |
+| 18 | **Fourth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.html) | Planned |
+| 19 | **Fifth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost.pdf) | Planned |
+| 20 | **Sixth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf) | Planned |
+| 21 | **Seventh Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | Planned |
 | 22 | **Eighth Sunday after Pentecost** | Planned | Planned |
 | 23 | **Ninth Sunday after Pentecost** | [Synthesis](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) | [Synthesis](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) |
 | 24 | **Tenth Sunday after Pentecost** | [Synthesis](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost-synthesis.pdf) | Planned |
