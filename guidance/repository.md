@@ -21,6 +21,13 @@ Apply these rules in order:
 
 Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Reader-facing `doc/` and `web/` outputs may summarize tracked generation and production metadata; they must not reproduce internal agent/runtime or process ledgers merely because those records remain auditable under `src/`. Neither `doc/` nor `web/` is a build directory. Cleaning may remove `build/` but never `src/`, `doc/`, or `web/`.
 
+Installed PDFs under `doc/` are tracked release artifacts retained through
+ordinary Git history. Their reproducibility does not make them disposable
+intermediates or authorize rewriting history to remove prior releases. Moving
+release artifacts to external storage requires a separately designed and
+authorized migration of publication, catalog, verification, and deployment
+contracts.
+
 External source identities and lawful reusable artifacts live under
 `src/sources/`, not under a generated provider branch. Provider publications
 remain under `src/<provider>/`. Generated source indexes and reports live under
@@ -366,9 +373,14 @@ discoverability.
 
 Alpha and published are distribution states, not editorial promotions. Neither
 asserts completeness, finality, official status, an imprimatur, a nihil obstat,
-or approval by an external authority. The owning document states its actual
-scope and any material reliance boundary once on its first page; catalogs use
-terse reader-facing labels and do not repeat release apparatus.
+or approval by an external authority. The owning document explains its alpha
+state, actual scope, completion limits, review state, and any work-wide
+reliance boundary once in its terminal scope-and-qualifications appendix. Its
+first page may carry a terse status-only `Alpha` footer. Catalogs use terse
+reader-facing labels and do not repeat release apparatus. Immediate safety
+warnings, claim-local legal qualifications, and legally necessary notices
+remain where readers need them and are not deferred merely because the work is
+an alpha.
 
 Each migrated publication owns
 `release/publications/<provider>/<leaf-id>.json`; the path below the provider
@@ -398,9 +410,10 @@ An explicit user deliverable—such as promised scope, minimum extent, named
 sections, formats, or publication surfaces—must be recorded in the owning
 research scope before work is represented as complete. If the installed paper
 does not yet meet that deliverable, it may remain discoverable as `alpha` if it
-states its actual present scope on the first page and in its owning record,
-and never substitute successful build, review, installation, or distribution
-for fulfillment of the promised deliverable.
+states its actual present scope in the terminal scope-and-qualifications
+appendix and in its owning record, and never substitutes successful build,
+review, installation, or distribution for fulfillment of the promised
+deliverable.
 
 The authorization inventory also binds every reader-facing Markdown file, template, stylesheet, copied license text, generator, and dependency lock capable of changing the artifact. The public generator may copy only authorized HTML, styles, licenses, PDFs, and narrowly scoped host-control or verification files. It must not copy authoring sources, research records, intermediates, repository metadata, history, or private-preview output.
 

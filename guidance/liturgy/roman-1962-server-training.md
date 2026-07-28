@@ -485,9 +485,12 @@ and deployment are separate operations.
 
 An alpha snapshot may be installed when source integrity, rights and lawful
 distribution, safety, reproducibility and identity, mechanical validity, and
-basic visual usability pass. Its first page states `Alpha` and any material
-form or use boundary once. Catalogs need only identify the work and available
-formats. Installation and deployment remain separate operations.
+basic visual usability pass. Its first page may carry a terse status-only
+`Alpha` footer. The terminal `Scope, Edition, and Qualifications` appendix
+explains the alpha state and any work-wide form or use boundary once; immediate
+safety instructions and conditions that change an action remain at their
+points of use. Catalogs need only identify the work and available formats.
+Installation and deployment remain separate operations.
 
 Before installation or release, in addition to the universal gates:
 

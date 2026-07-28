@@ -192,11 +192,13 @@ distribution, safety, reproducibility and artifact identity, mechanical
 validity, and basic visual usability pass. It does not wait for or record
 specialist, priestly, intended-reader, physical-use, or ecclesiastical review.
 
-The first page states `Alpha` and identifies the actual inventory and edition
-horizon represented. It also gives one short reliance boundary: the work is a
-Triptych study reference, not an official liturgical book or local direction.
-Do not repeat that status in running footers, catalog labels, questionnaires,
-or terminal pending-review lists.
+The first page may carry a terse status-only `Alpha` footer. The terminal
+scope-and-qualifications appendix identifies the actual inventory and edition
+horizon represented and gives the reliance boundary: the work is a Triptych
+study reference, not an official liturgical book or local direction. Do not
+repeat alpha status in running footers, catalog labels, questionnaires, or
+pending-review lists. Keep immediate handling and safety warnings beside the
+affected object or action.
 
 Every rendered record must have a stable identity, governing rite and edition
 horizon, exact source support for printed factual claims, distributable text
