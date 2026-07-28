@@ -1,0 +1,69 @@
+schema_version = 1
+id = "obj-corporal"
+workflow_state = "source-audited"
+editorial_note = "The checked Missal controls identity, white-linen character, folded-in-burse and spread-on-altar relationships. Fold pattern, dimensions, markings, ornament, and construction remain unasserted."
+preferred_english_name = "Corporal"
+latin_headword = "corporale"
+alternate_english_names = []
+alternate_latin_names = []
+sort_name = "Corporal"
+categories = ["linens-and-textiles"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "holy-thursday"]
+confusable_with = ["obj-purificator", "obj-chalice-pall"]
+related_objects = ["obj-burse", "obj-chalice"]
+component_objects = []
+
+[presence]
+locations = ["Folded in the burse during preparation; spread in the middle of the altar for Mass."]
+contexts = ["Supports the chalice and paten at the altar."]
+composition_ids = []
+local_variability = "none-recorded"
+
+[handling]
+ordinary_handlers = ["bishop", "priest", "deacon", "subdeacon", "sacristan"]
+server_relation = "must-not-handle"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Recognition does not authorize a server to unfold, refold, move, or arrange it."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-corporal-identity-relation"
+kind = "liturgical-use"
+text = "The 1962 Missal requires a wholly white linen corporal, folded in the burse during preparation and spread in the middle of the altar."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-prepared-chalice-linens"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-missale-1962-prepared-chalice-linens"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.1-II.2, printed pp. LII-LIV, artifact PDF pp. 56-57"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "Controls identity and relationships, not fold pattern, dimensions, markings, ornament, or construction."
+
+[[artwork]]
+id = "art-corporal-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal.png"
+review_state = "identity-checked"
+depicts = ["obj-corporal"]
+scale_mode = "not-to-common-scale"
+review_note = "Plain unfolded square linen; TeX states that no fold pattern, marking, dimension, or ornament is asserted."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the square altar linen beneath the sacred vessels; leave its handling to the appointed minister or sacristan."
+claim_ids = ["clm-corporal-identity-relation"]

@@ -1,0 +1,69 @@
+schema_version = 1
+id = "obj-chalice-pall"
+workflow_state = "source-audited"
+editorial_note = "The checked Missal controls the small square linen pall and its place above the paten in the prepared stack. Stiffness is shown only as a recognition model; construction, dimensions, markings, ornament, and a soft variant remain outside this record."
+preferred_english_name = "Chalice pall"
+latin_headword = "palla"
+alternate_english_names = ["Pall"]
+alternate_latin_names = ["parva palla linea"]
+sort_name = "Chalice pall"
+categories = ["linens-and-textiles"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "holy-thursday"]
+confusable_with = ["obj-corporal", "obj-purificator", "obj-burse"]
+related_objects = ["obj-chalice", "obj-paten"]
+component_objects = []
+
+[presence]
+locations = ["Above the paten in the prepared chalice stack; used over the chalice during Mass."]
+contexts = ["Covers the prepared chalice composition and the chalice at named stages."]
+composition_ids = []
+local_variability = "none-recorded"
+
+[handling]
+ordinary_handlers = ["bishop", "priest", "deacon", "subdeacon", "sacristan"]
+server_relation = "must-not-handle"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Do not mistake this small square cover for the corporal or burse."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-chalice-pall-identity-relation"
+kind = "liturgical-use"
+text = "The 1962 Missal names a small linen pall placed above the paten in the prepared chalice stack and used over the chalice during Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-prepared-chalice-linens"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-missale-1962-prepared-chalice-linens"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.1 and VII-X, printed pp. LII-LXIII, artifact PDF pp. 56, 60-65"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "Controls identity and use; not construction, exact rigidity, dimensions, markings, ornament, or a soft-pall variant."
+
+[[artwork]]
+id = "art-chalice-pall-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall.png"
+review_state = "identity-checked"
+depicts = ["obj-chalice-pall"]
+scale_mode = "not-to-common-scale"
+review_note = "One plain stiff-square recognition model without cross, decoration, construction detail, dimensions, or alternate soft form."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the small square cover in the prepared chalice composition; leave it to the priest or appointed sacristan."
+claim_ids = ["clm-chalice-pall-identity-relation"]

@@ -8,11 +8,17 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
+| Altar server | Yes | Twenty-nine alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | Pontifical ceremonies | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
+
+The 2026-07-28 prepared-chalice linen checkpoint expanded the altar-server
+alpha to 27 pages and twenty-nine records. All pages and the five ambiguous
+linen figures were inspected at rendered size; the final-page colophon
+remains legible. The build and installed PDF are byte-identical at SHA-256
+`7b03339f4bd75dd5790e1772b9ac0c314755685cc04a14a52a3fe1d3d0e65c6d`.
 
 Each leaf has its own `research/guide-map.md`. Presence of `main.tex`,
 generation metadata, an installed PDF, or `web-edition.toml` does not imply

@@ -100,11 +100,11 @@
   \vfill
   {\fontsize{17}{20}\selectfont\LitDisplay{Bounded Core Alpha}\par}
   \vspace{0.12in}
-  {\large Twenty-four source-audited objects at the 1962 Roman Rite horizon\par}
+  {\large Twenty-nine source-audited objects at the 1962 Roman Rite horizon\par}
   \vfill
   \begin{minipage}{0.82\textwidth}
     \small
-    This bounded alpha teaches twenty-four objects already supported by checked
+    This bounded alpha teaches twenty-nine objects already supported by checked
     source records. It is not the complete altar-server dictionary. Appearance
     never grants permission to touch an object; follow the priest, MC, sacristan,
     and the church's established directions.
@@ -128,11 +128,14 @@
 \end{minipage}
 
 \vspace{0.28in}
-\begin{studybox}{The twenty-four objects in this alpha}
+\begin{studybox}{The twenty-nine objects in this alpha}
 \textbf{Handles:} altar bells; paired altar cruets; altar Missal and its support when assigned. \quad
 \textbf{Varies by ceremony:} altar candle and candlestick. \quad
 \textbf{Recognizes only:} sanctuary lamp and prepared book markers. \quad
 \textbf{Must not handle in this Low-Mass model:} chalice and paten. \quad
+\textbf{Prepared-chalice linens and covers:} corporal, purificator, chalice
+pall, chalice veil, and burse; recognize their relationships but leave them
+to the priest or appointed sacristan. \quad
 \textbf{Solemn-Mass recognition:} Epistle book and Gospel book.
 \textbf{Solemn-Mass carrying:} acolyte candlestick, elevation torch, and the
 optional local processional cross. \quad
@@ -427,6 +430,97 @@ local direction. Exact source keys appear on the final page.\par}
   \SourceKey{src-missale-1962-communion-plate};
   \SourceKey{src-met-463080-metadata};
   \SourceKey{src-met-463080-image}}
+\end{minipage}
+\clearpage
+
+\ObjectHeading{Three white linens}{corporale \textperiodcentered\
+purificatorium \textperiodcentered\ palla}
+  {obj-corporal / obj-purificator / obj-chalice-pall}
+\begin{center}
+\begin{minipage}[t]{0.31\linewidth}
+  \centering
+  \includegraphics[width=\linewidth,height=2.15in,keepaspectratio]
+    {\ArtRoot/shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal.png}
+  \par\smallskip\LitDisplay{Corporal}\par
+  \scriptsize Square linen spread beneath the sacred vessels. No fold pattern
+  or marking is asserted.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\linewidth}
+  \centering
+  \includegraphics[width=\linewidth,height=2.15in,keepaspectratio]
+    {\ArtRoot/shared/artwork/pencil/RPD-FIG-linens-0002-iso-purificator.png}
+  \par\smallskip\LitDisplay{Purificator}\par
+  \scriptsize Narrow open linen used at the chalice. The drawing is not a
+  fold instruction.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\linewidth}
+  \centering
+  \includegraphics[width=\linewidth,height=2.15in,keepaspectratio]
+    {\ArtRoot/shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall.png}
+  \par\smallskip\LitDisplay{Chalice pall}\par
+  \scriptsize Small stiff square recognition model; no cross, construction,
+  dimension, or soft alternative is asserted.
+\end{minipage}
+\end{center}
+\vspace{0.18in}
+\begin{minipage}[t]{0.47\linewidth}
+  \Field{Corporal}{The Missal requires a wholly white linen corporal, folded
+  in the burse for preparation and spread in the middle of the altar.}
+  \Field{Purificator}{A clean purificator lies over the chalice mouth in the
+  prepared stack and is used by the celebrant at the chalice and fingers.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
+  \Field{Chalice pall}{The small linen pall lies above the paten in the
+  prepared stack and covers the chalice at named stages.}
+  \Boundary{MUST NOT HANDLE}
+  \Field{Do not confuse}{Square and flexible: corporal. Narrow and flexible:
+  purificator. Small and stiff in this recognition model: chalice pall. These
+  pictures are not at common scale.}
+  \Field{Source}{\SourceKey{src-missale-1962-prepared-chalice-linens}}
+\end{minipage}
+\clearpage
+
+\ObjectHeading{Chalice veil and burse}{velum sericum \textperiodcentered\
+bursa}{obj-chalice-veil / obj-burse}
+\begin{minipage}[t]{0.55\linewidth}
+  \begin{center}
+  \includegraphics[width=0.62\linewidth,height=2.75in,keepaspectratio]
+    {\ArtRoot/shared/artwork/pencil/RPD-FIG-linens-0004-iso-chalice-veil.png}
+  \hfill
+  \includegraphics[width=0.34\linewidth,height=2.40in,keepaspectratio]
+    {\ArtRoot/shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse.png}
+  \end{center}
+  \vspace{0.12in}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.11in]
+    \node[relation label] (burse) {\LitDisplay{Burse}\\contains folded corporal};
+    \node[relation label,below=of burse] (veil) {\LitDisplay{Chalice veil}\\draped over prepared chalice};
+    \node[relation label,below=of veil] (pall) {\LitDisplay{Pall}};
+    \node[relation label,below=of pall] (paten) {\LitDisplay{Paten with host}};
+    \node[relation label,below=of paten] (purif) {\LitDisplay{Purificator}};
+    \node[relation label,below=of purif] (chalice) {\LitDisplay{Chalice mouth}};
+    \draw[relation arrow] (burse) -- (veil);
+    \draw[relation arrow] (veil) -- (pall);
+    \draw[relation arrow] (pall) -- (paten);
+    \draw[relation arrow] (paten) -- (purif);
+    \draw[relation arrow] (purif) -- (chalice);
+  \end{tikzpicture}
+  \par\smallskip{\scriptsize Relationship key only; not an exploded assembly,
+  fold guide, dimensioned drawing, or common-scale view.\par}
+  \end{center}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.40\linewidth}
+  \Field{Chalice veil}{The silk veil is draped over the prepared chalice. In
+  the selected Low-Mass model the priest removes and replaces it.}
+  \Field{Burse}{The stiff square case contains the folded corporal and rests
+  above the veil in the prepared composition. The illustration deliberately
+  shows no opening, button, straps, or interior.}
+  \Boundary{MUST NOT HANDLE}
+  \Field{Do not confuse}{The veil is a draped textile. The burse is the stiff
+  square case. The small pall belongs lower in the prepared relationship.}
+  \Field{Limit}{Color, dimensions, ornament, construction, exact drape, and
+  folding method are outside these source-minimal figures.}
+  \Field{Source}{\SourceKey{src-missale-1962-prepared-chalice-linens}}
 \end{minipage}
 \clearpage
 
@@ -808,6 +902,13 @@ communicants' chins; no morphology is specified.}
 width is an overall catalog dimension, not a proved mouth diameter.}
 \SourceNote{src-met-463080-image}{Metropolitan Museum of Art Open Access
 image for object 463080, used as one catalog exemplar rather than a norm.}
+\SourceNote{src-missale-1962-prepared-chalice-linens}{1962
+\emph{Missale Romanum}, \emph{Ritus servandus} I.1--II.2 and the named-use
+loci in VII--XII, printed pp. LII--LXIV / artifact PDF pp. 56--66: the
+prepared relationships and use of the corporal, purificator, small linen
+pall, silk chalice veil, and burse. The figures make no unsupported claim for
+fold pattern, dimensions, markings, ornament, construction, exact drape, or
+soft-pall alternative.}
 \SourceNote{src-epistle-book-1962}{1962 \emph{Missale Romanum},
 \emph{Ritus servandus} VI.4, printed pp. LVII--LVIII / artifact PDF
 pp. 59--60: the subdeacon takes the \emph{liber Epistolarum} in both hands,
@@ -905,7 +1006,7 @@ New Advent artifact: a customary bell at the door leading toward the
 sanctuary admonishes the congregation of the clergy's advent.}
 
 \section*{\LitDisplay{Scope and qualifications}}
-This alpha renders twenty-five source-audited canonical records from the
+This alpha renders twenty-nine source-audited canonical records from the
 altar-server queue. Ten belong to the bounded Low-Mass core:
 altar bells, altar candle, altar candlestick, sanctuary lamp, altar Missal,
 Missal stand, Missal cushion, book markers, chalice, and paten. The paired

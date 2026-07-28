@@ -9,6 +9,46 @@ status = "held-generated-assets"
 # links reconcile the object-local identities without asserting factual,
 # print, rights, consumer, or release approval.
 [[artwork_links]]
+id = "art-corporal-isolated"
+asset_file_id = "file-rpd-linens-corporal"
+object_ids = ["obj-corporal"]
+variant_ids = []
+view = "isolated"
+workflow_state = "factual-review-passed"
+
+[[artwork_links]]
+id = "art-purificator-isolated"
+asset_file_id = "file-rpd-linens-purificator"
+object_ids = ["obj-purificator"]
+variant_ids = []
+view = "isolated"
+workflow_state = "factual-review-passed"
+
+[[artwork_links]]
+id = "art-chalice-pall-isolated"
+asset_file_id = "file-rpd-linens-chalice-pall"
+object_ids = ["obj-chalice-pall"]
+variant_ids = []
+view = "isolated"
+workflow_state = "factual-review-passed"
+
+[[artwork_links]]
+id = "art-chalice-veil-isolated"
+asset_file_id = "file-rpd-linens-chalice-veil"
+object_ids = ["obj-chalice-veil"]
+variant_ids = []
+view = "isolated"
+workflow_state = "factual-review-passed"
+
+[[artwork_links]]
+id = "art-burse-isolated"
+asset_file_id = "file-rpd-linens-burse"
+object_ids = ["obj-burse"]
+variant_ids = []
+view = "isolated"
+workflow_state = "factual-review-passed"
+
+[[artwork_links]]
 id = "art-altar-appointments-0102-iso-candle"
 asset_file_id = "file-rpd-altar-candle-separate"
 object_ids = ["obj-altar-candle"]
@@ -1420,6 +1460,321 @@ sha256 = "96fea3fa35e785d0b3431752d8cf576ca71dcc06c2d84c2207ab1bbc408aa369"
 max_placement_width_in = 2.10
 max_placement_height_in = 3.15
 effective_dpi = 487.6
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[asset_files]]
+id = "file-rpd-linens-corporal"
+path = "shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal.png"
+state = "consumer-eligible"
+audit_record = "research/artwork-manifest.toml"
+technical = { width_px = 1315, height_px = 1196, bit_depth = 8, color_mode = "grayscale", bytes = 519408, sha256 = "791c7deba1af79769116a7f89d832da7670f0e13f9ce61fe93d4aadfd452104b" }
+
+[[asset_files]]
+id = "file-rpd-linens-purificator"
+path = "shared/artwork/pencil/RPD-FIG-linens-0002-iso-purificator.png"
+state = "consumer-eligible"
+audit_record = "research/artwork-manifest.toml"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 258310, sha256 = "ac4809fc7841adfb0c1c5640bc53883fb4877ed49d18b4736901500ffb48b3c5" }
+
+[[asset_files]]
+id = "file-rpd-linens-chalice-pall"
+path = "shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall.png"
+state = "consumer-eligible"
+audit_record = "research/artwork-manifest.toml"
+technical = { width_px = 1339, height_px = 1175, bit_depth = 8, color_mode = "grayscale", bytes = 268840, sha256 = "9143511846bb616ecf4132318891b844896796ddeb5a0e9034628a9a977e335e" }
+
+[[asset_files]]
+id = "file-rpd-linens-chalice-veil"
+path = "shared/artwork/pencil/RPD-FIG-linens-0004-iso-chalice-veil.png"
+state = "consumer-eligible"
+audit_record = "research/artwork-manifest.toml"
+technical = { width_px = 1254, height_px = 1254, bit_depth = 8, color_mode = "grayscale", bytes = 438023, sha256 = "b1230b776c72e52602328e29534f1013cd2b98096e104bb0f8f18f7e48fcd7f6" }
+
+[[asset_files]]
+id = "file-rpd-linens-burse"
+path = "shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse.png"
+state = "consumer-eligible"
+audit_record = "research/artwork-manifest.toml"
+technical = { width_px = 1254, height_px = 1254, bit_depth = 8, color_mode = "grayscale", bytes = 354795, sha256 = "4fd1876c0d8eb112c53084f0294444c9d0566f88b3a6f4a4e026c5915b9ebfc7" }
+
+[[artworks]]
+id = "art-linens-0001-corporal"
+object_ids = ["obj-corporal"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the corporal's square unfolded identity without inventing a fold system, marking, dimension, ornament, or construction."
+depicted_state = "One plain unfolded square linen, isolated on white."
+source_controlled_features = ["The 1962 Missal requires a wholly white linen corporal and names its folded-in-burse and spread-on-altar relationships."]
+deliberate_omissions = ["No fold grid, crease, cross, embroidery, lace, dimensions, vessel, hand, label, or scale cue."]
+brief = "Text-free grayscale graphite isolated view of one plain unfolded corporal."
+exact_prompt = """Use case: scientific-educational
+Asset type: Roman sanctuary visual dictionary isolated object figure
+Primary request: Create one restrained graphite-pencil drawing of a plain corporal linen, fully unfolded and lying flat.
+Scene/backdrop: pure white blank background.
+Subject: one plain square white linen shown in slight three-quarter top view so its square outline and thin textile character are legible.
+Style/medium: delicate monochrome graphite pencil, clean museum-catalog study, sparse soft shading, realistic but source-minimal.
+Composition/framing: centered single object, fully contained, generous margins.
+Constraints: no fold marks, no grid, no cross, no embroidery, no lace, no ornament, no hem construction claims, no dimensions, no hands, no vessels, no other objects, no text, letters, numbers, arrows, labels, border, watermark, or color."""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal.png"
+reference_ids = ["src-missale-1962-prepared-chalice-linens"]
+precursor_ids = []
+corrections = ["Generated separately rather than reusing the held combined white-linens plate.", "Converted the selected RGB output to stripped 8-bit grayscale PNG; no content edit."]
+baked_content_audit = ["One plain square unfolded textile is fully visible.", "No forbidden marking, fold diagram, ornament, other object, text, watermark, or color is visible."]
+tex_overlays = ["Headword, stable ID, relationship, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1315
+height_px = 1196
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1873910
+sha256 = "ad74e0426cc8fced1444a3d2e9cf49f8befbdf92ef3a8cde2e6d1887465efa3b"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal.png"
+width_px = 1315
+height_px = 1196
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 519408
+sha256 = "791c7deba1af79769116a7f89d832da7670f0e13f9ce61fe93d4aadfd452104b"
+max_placement_width_in = 2.0
+max_placement_height_in = 2.15
+effective_dpi = 556.3
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-linens-0002-purificator"
+object_ids = ["obj-purificator"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the purificator's open narrow-rectangular identity without a tent fold or invented detail."
+depicted_state = "One plain open narrow rectangular linen, isolated on white."
+source_controlled_features = ["The 1962 Missal names a clean purificator over the chalice mouth and its use at the chalice and fingers."]
+deliberate_omissions = ["No tent fold, crease, cross, embroidery, lace, dimensions, vessel, hand, label, or scale cue."]
+brief = "Text-free grayscale graphite isolated view of one plain open purificator."
+exact_prompt = """Use case: scientific-educational
+Asset type: Roman sanctuary visual dictionary isolated object figure
+Primary request: Create one restrained graphite-pencil drawing of a plain purificator linen, fully opened and laid flat.
+Scene/backdrop: pure white blank background.
+Subject: one plain narrow rectangular white linen shown in slight three-quarter top view; visibly much longer than wide; open and flat, never tented or folded.
+Style/medium: delicate monochrome graphite pencil, clean museum-catalog study, sparse soft shading, realistic but source-minimal.
+Composition/framing: centered single object, fully contained, generous margins.
+Constraints: no fold marks, no center crease, no cross, no embroidery, no lace, no ornament, no hem construction claims, no dimensions, no hands, no vessels, no other objects, no text, letters, numbers, arrows, labels, border, watermark, or color."""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0002-iso-purificator.png"
+reference_ids = ["src-missale-1962-prepared-chalice-linens"]
+precursor_ids = []
+corrections = ["Generated separately to replace the held tent-like combined-plate view.", "Converted the selected RGB output to stripped 8-bit grayscale PNG; no content edit."]
+baked_content_audit = ["One plain narrow open textile is fully visible.", "No tent fold, marking, ornament, other object, text, watermark, or color is visible."]
+tex_overlays = ["Headword, stable ID, relationship, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1608060
+sha256 = "2a8dd78e5c91745d74c152284d39c84ddc42aefdae5a2c6fa998c910968c8012"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-linens-0002-iso-purificator.png"
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 258310
+sha256 = "ac4809fc7841adfb0c1c5640bc53883fb4877ed49d18b4736901500ffb48b3c5"
+max_placement_width_in = 2.0
+max_placement_height_in = 2.15
+effective_dpi = 476.3
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-linens-0003-chalice-pall"
+object_ids = ["obj-chalice-pall"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach one plain stiff-square chalice-pall recognition model without ornament or unsupported construction."
+depicted_state = "One plain low-profile stiff square cover, isolated on white."
+source_controlled_features = ["The 1962 Missal names a small linen pall above the paten in the prepared chalice stack."]
+deliberate_omissions = ["No cross, embroidery, lace, removable underside, seams, layers, soft alternative, dimensions, vessel, hand, label, or scale cue."]
+brief = "Text-free grayscale graphite isolated view of one plain stiff-square chalice pall."
+exact_prompt = """Use case: scientific-educational
+Asset type: Roman sanctuary visual dictionary isolated object figure
+Primary request: Create one restrained graphite-pencil drawing of a simple stiff square chalice pall.
+Scene/backdrop: pure white blank background.
+Subject: one plain low-profile rigid square cover shown in slight three-quarter top view; its stiffness and thin square form are legible, with no construction detail.
+Style/medium: delicate monochrome graphite pencil, clean museum-catalog study, sparse soft shading, realistic but source-minimal.
+Composition/framing: centered single object, fully contained, generous margins.
+Constraints: no cross, no embroidery, no lace, no ornament, no removable underside, no seams, no layers, no soft or folded alternative, no dimensions, no scale cue, no hands, no chalice, no other objects, no text, letters, numbers, arrows, labels, border, watermark, or color."""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall.png"
+reference_ids = ["src-missale-1962-prepared-chalice-linens"]
+precursor_ids = []
+corrections = ["Generated separately and excluded the earlier combined plate's cross, underside, and soft-pall alternative.", "Converted the selected RGB output to stripped 8-bit grayscale PNG; no content edit."]
+baked_content_audit = ["One plain low-profile stiff square is fully visible.", "No forbidden ornament, construction detail, alternate form, other object, text, watermark, or color is visible."]
+tex_overlays = ["Headword, stable ID, relationship, morphology limit, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1339
+height_px = 1175
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1294681
+sha256 = "74dddc509a5e741b69e4ecebda24e49bffd92c840d0e0fb10b44dd4ba85a0448"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall.png"
+width_px = 1339
+height_px = 1175
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 268840
+sha256 = "9143511846bb616ecf4132318891b844896796ddeb5a0e9034628a9a977e335e"
+max_placement_width_in = 2.0
+max_placement_height_in = 2.15
+effective_dpi = 546.5
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-linens-0004-chalice-veil"
+object_ids = ["obj-chalice-veil"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the veil as a simple continuous drape without a false opening or humeral figure."
+depicted_state = "One plain continuous textile drape over a concealed abstract support, isolated on white."
+source_controlled_features = ["The 1962 Missal names a silk veil over the prepared chalice."]
+deliberate_omissions = ["No front opening, button, straps, ornament, exact chalice morphology, dimensions, human figure, label, or scale cue."]
+brief = "Text-free grayscale graphite isolated view of one plain chalice-veil drape."
+exact_prompt = """Use case: scientific-educational
+Asset type: Roman sanctuary visual dictionary isolated object figure
+Primary request: Create one restrained graphite-pencil drawing showing a simple chalice veil as a plain square fabric draped over an abstract low support.
+Scene/backdrop: pure white blank background.
+Subject: one undecorated square veil falling as a continuous drape on four sides over a simple concealed support; the support itself must not be visible or identifiable, and there must be no opening in the front.
+Style/medium: delicate monochrome graphite pencil, clean museum-catalog study, sparse soft shading, realistic but source-minimal.
+Composition/framing: centered single draped textile, fully contained, generous margins.
+Constraints: continuous closed front drape; no slit, doorway, opening, button, straps, cross, embroidery, lace, fringe, ornament, fold diagram, dimensions, scale cue, chalice details, human or humeral figure, hands, other objects, text, letters, numbers, arrows, labels, border, watermark, or color."""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0004-iso-chalice-veil.png"
+reference_ids = ["src-missale-1962-prepared-chalice-linens"]
+precursor_ids = []
+corrections = ["Generated separately to replace the combined plate's false front opening and unrelated humeral figures.", "Converted the selected RGB output to stripped 8-bit grayscale PNG; no content edit."]
+baked_content_audit = ["One continuous closed drape is fully visible.", "No opening, closure, strap, ornament, human figure, other object, text, watermark, or color is visible."]
+tex_overlays = ["Headword, stable ID, prepared relationship, exact-drape limit, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1254
+height_px = 1254
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1665602
+sha256 = "ff1f092c2d55e2290a7e72c42f0b5fe295aea60e126114968bb649acd8ccc755"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-linens-0004-iso-chalice-veil.png"
+width_px = 1254
+height_px = 1254
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 438023
+sha256 = "b1230b776c72e52602328e29534f1013cd2b98096e104bb0f8f18f7e48fcd7f6"
+max_placement_width_in = 3.4
+max_placement_height_in = 2.75
+effective_dpi = 368.8
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-linens-0005-burse"
+object_ids = ["obj-burse"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the burse as a plain closed stiff square case without invented opening, closure, straps, ornament, or construction."
+depicted_state = "One plain closed stiff square case, isolated on white."
+source_controlled_features = ["The 1962 Missal names the burse as containing the folded corporal and places it above the chalice veil."]
+deliberate_omissions = ["No opening, flap, button, clasp, strap, cord, hinge, interior, cross, ornament, layers, dimensions, hand, label, or scale cue."]
+brief = "Text-free grayscale graphite isolated view of one plain closed burse."
+exact_prompt = """Use case: scientific-educational
+Asset type: Roman sanctuary visual dictionary isolated object figure
+Primary request: Create one restrained graphite-pencil drawing of a simple closed burse, the stiff square case used with the prepared chalice.
+Scene/backdrop: pure white blank background.
+Subject: one plain closed rigid square case, upright at a slight three-quarter angle so its thin closed profile is legible; no interior is visible.
+Style/medium: delicate monochrome graphite pencil, clean museum-catalog study, sparse soft shading, realistic but source-minimal.
+Composition/framing: centered single object, fully contained, generous margins.
+Constraints: closed case only; no opening, flap, button, clasp, strap, cord, hinge, interior, cross, embroidery, lace, ornament, visible construction layers, dimensions, scale cue, human or humeral figure, hands, other objects, text, letters, numbers, arrows, labels, border, watermark, or color."""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse.png"
+reference_ids = ["src-missale-1962-prepared-chalice-linens"]
+precursor_ids = []
+corrections = ["Generated separately to replace the combined plate's invented opening, button-like closure, and straps.", "Converted the selected RGB output to stripped 8-bit grayscale PNG; no content edit."]
+baked_content_audit = ["One plain closed stiff square case is fully visible.", "No opening, closure hardware, straps, interior, ornament, human figure, other object, text, watermark, or color is visible."]
+tex_overlays = ["Headword, stable ID, contained-corporal relationship, construction limit, handling boundary, confusables, source, and not-common-scale notice remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1254
+height_px = 1254
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1440835
+sha256 = "fa19fc81a239e41cc62e2f46764dbd2dea40c42a234be8377daeb7bc1f4b5ff8"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse.png"
+width_px = 1254
+height_px = 1254
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 354795
+sha256 = "4fd1876c0d8eb112c53084f0294444c9d0566f88b3a6f4a4e026c5915b9ebfc7"
+max_placement_width_in = 1.9
+max_placement_height_in = 2.4
+effective_dpi = 522.5
 [artworks.reviews]
 factual = "passed"
 visual = "passed"

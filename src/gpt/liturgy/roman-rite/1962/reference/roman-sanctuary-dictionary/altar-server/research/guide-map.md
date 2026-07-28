@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders twenty source-audited records already present in the
+smaller: it renders twenty-nine source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -142,7 +142,7 @@ remains unproved. See
 
 ## Reader order
 
-1. Compact Alpha title and exact twenty-object boundary.
+1. Compact Alpha title and exact twenty-nine-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels

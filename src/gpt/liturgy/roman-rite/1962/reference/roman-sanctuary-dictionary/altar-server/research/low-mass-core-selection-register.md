@@ -91,9 +91,12 @@ this snapshot has that state. The five later records are also not
 `publication-ready`.
 
 The current bounded alpha is no longer the historical six-record review
-snapshot described by those counts. It now renders eleven Low-Mass records,
-including the source- and artwork-closed `obj-altar-cruet`, plus the first two
-Solemn-Mass recognition records.
+snapshot described by those counts. The prepared-chalice linen tranche now
+adds canonical, source-audited `obj-corporal`, `obj-purificator`,
+`obj-chalice-pall`, `obj-chalice-veil`, and `obj-burse` records. All five are
+rendered for recognition with a `must-not-handle` boundary in the selected
+Low-Mass model; their new figures assert no fold pattern, dimensions,
+markings, ornament, unsupported construction, or soft-pall alternative.
 
 ## Chronology candidates absent from the installed-snapshot 38-record core
 

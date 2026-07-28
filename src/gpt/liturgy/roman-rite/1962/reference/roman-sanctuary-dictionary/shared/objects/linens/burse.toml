@@ -1,0 +1,69 @@
+schema_version = 1
+id = "obj-burse"
+workflow_state = "source-audited"
+editorial_note = "The checked Missal controls the burse as the case containing the folded corporal and its place above the veil. Opening, closure, straps, dimensions, ornament, construction, and fold method remain unasserted."
+preferred_english_name = "Burse"
+latin_headword = "bursa"
+alternate_english_names = []
+alternate_latin_names = []
+sort_name = "Burse"
+categories = ["linens-and-textiles"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "holy-thursday"]
+confusable_with = ["obj-chalice-pall", "obj-chalice-veil"]
+related_objects = ["obj-corporal", "obj-chalice"]
+component_objects = []
+
+[presence]
+locations = ["Above the chalice veil in the prepared composition."]
+contexts = ["Contains the folded corporal during preparation and transport to the altar."]
+composition_ids = []
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "priest", "deacon", "subdeacon", "sacristan"]
+server_relation = "must-not-handle"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Recognition does not authorize opening it or removing the corporal."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-burse-identity-relation"
+kind = "liturgical-use"
+text = "The 1962 Missal places the folded corporal in the burse and the burse above the chalice veil in the prepared composition."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-prepared-chalice-linens"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-missale-1962-prepared-chalice-linens"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.1-II.2, printed pp. LII-LIV, artifact PDF pp. 56-57"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "Controls contained corporal and prepared placement, not opening, closure, straps, dimensions, ornament, construction, or fold method."
+
+[[artwork]]
+id = "art-burse-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse.png"
+review_state = "identity-checked"
+depicts = ["obj-burse"]
+scale_mode = "not-to-common-scale"
+review_note = "Plain closed stiff square case; no opening, button, strap, interior, ornament, construction detail, or exact scale claim."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the stiff square case above the veil; it contains the folded corporal but is not the small chalice pall."
+claim_ids = ["clm-burse-identity-relation"]
