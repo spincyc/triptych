@@ -43,6 +43,29 @@ TEX_NATIVE_ARTWORK_IDS = {
     "obj-epistle-book",
     "obj-gospel-book",
 }
+SECTION_PLATE_PLANS = {
+    ("ed-general-reader", "vestments-and-insignia"): (
+        (
+            "story-spread-v1",
+            (
+                "obj-chasuble",
+                "obj-amice",
+                "obj-alb",
+                "obj-cincture",
+                "obj-maniple",
+            ),
+        ),
+        (
+            "dense-six-v1",
+            (
+                "obj-priest-stole",
+                "obj-deacon-stole",
+                "obj-dalmatic",
+                "obj-tunicle",
+            ),
+        ),
+    ),
+}
 TEX_ESCAPE = str.maketrans({
     "\\": r"\textbackslash{}", "{": r"\{", "}": r"\}", "#": r"\#",
     "$": r"\$", "%": r"\%", "&": r"\&", "_": r"\_", "^": r"\^{}",
@@ -366,14 +389,11 @@ def section_label(section: str) -> str:
 def dense_edition_tex(
     chosen: list[dict], edition: dict, artwork_render_owners: dict[str, str]
 ) -> list[str]:
-    """Render section-ordered comparison plates in the edition's layout mode.
+    """Render section-ordered comparison plates with bounded plan overrides.
 
     Records remain canonical and audience notes remain edition-selected; this
     function changes only their comparison grouping and page architecture.
     """
-    layout_mode = edition.get("layout_mode", "dense-six-v1")
-    require(layout_mode in {"dense-six-v1", "story-spread-v1"},
-            f"{edition['id']}: unsupported layout_mode: {layout_mode}")
     section_order = [
         section for section in edition["section_order"]
         if section not in {
@@ -406,13 +426,40 @@ def dense_edition_tex(
             record.get("sort_name", record["preferred_english_name"]).casefold(),
             record["id"],
         ))
-        plate_size = 5 if layout_mode == "story-spread-v1" else 6
-        for offset in range(0, len(records), plate_size):
-            plate = records[offset:offset + plate_size]
-            if layout_mode == "story-spread-v1":
+        plan = SECTION_PLATE_PLANS.get((edition["id"], section))
+        if plan is None:
+            plan = tuple(
+                ("dense-six-v1", tuple(record["id"] for record in records[offset:offset + 6]))
+                for offset in range(0, len(records), 6)
+            )
+        else:
+            planned_ids = [
+                object_id
+                for _, object_ids in plan
+                for object_id in object_ids
+            ]
+            actual_ids = [record["id"] for record in records]
+            require(
+                len(planned_ids) == len(set(planned_ids)),
+                f"{edition['id']} {section}: plate plan repeats an object",
+            )
+            require(
+                set(planned_ids) == set(actual_ids),
+                f"{edition['id']} {section}: plate plan must cover the selected "
+                "section exactly",
+            )
+        records_by_id = {record["id"]: record for record in records}
+        for plate_number, (layout, object_ids) in enumerate(plan, start=1):
+            plate = [records_by_id[object_id] for object_id in object_ids]
+            if layout == "story-spread-v1":
+                require(
+                    1 <= len(plate) <= 5,
+                    f"{edition['id']} {section}: story plate must contain one "
+                    "hero and at most four companions",
+                )
                 lines.append(
                     f"\\RSDStoryPlateStart{{{tex(section_label(section))}}}"
-                    f"{{{offset // plate_size + 1}}}"
+                    f"{{{plate_number}}}"
                 )
                 for index, record in enumerate(plate):
                     if index == 0:
@@ -426,9 +473,13 @@ def dense_edition_tex(
                     lines.append("\\RSDStoryCompanionsEnd")
                 lines.append("\\RSDStoryPlateEnd")
                 continue
+            require(
+                layout == "dense-six-v1" and 1 <= len(plate) <= 6,
+                f"{edition['id']} {section}: invalid plate layout {layout}",
+            )
             lines.append(
                 f"\\RSDDensePlateStart{{{tex(section_label(section))}}}"
-                f"{{{offset // plate_size + 1}}}"
+                f"{{{plate_number}}}"
             )
             for index, record in enumerate(plate):
                 if index == 3:

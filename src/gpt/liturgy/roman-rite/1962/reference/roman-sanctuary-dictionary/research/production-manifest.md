@@ -963,6 +963,30 @@ embedded fonts and extractable text. Build and installed bytes are identical:
 | General reader | 12 | 21,472,744 | `3cc5b936f5fe6161cc09ca24942cf0728ee4cc63372ae2a9645b9a10508d2993` |
 | Pontifical ceremonies | 11 | 20,484,165 | `0ae60e664c9c3b8b9842d50ef4704371671f593a548db86677eb550fcaa0440f` |
 
+## General-reader vestment visual-hierarchy checkpoint — 2026-07-28
+
+The General Reader now gives its vestment section a deliberately composed
+two-plate rhythm instead of repeating the ordinary six-card grid. The first
+plate treats the chasuble as a large visual anchor and places the amice, alb,
+cincture, and maniple beneath it in vesting order. The second keeps the
+priest's stole, deacon's stole, dalmatic, and tunicle together for compact
+comparison. All other sections and editions retain their existing dense
+layout.
+
+The generator's edition-and-section plan is deterministic and fails closed
+unless it covers every selected object exactly once, contains no duplicate,
+and uses a supported plate archetype. The built twelve-page PDF was rastered
+with the repository review helper and inspected on every page; both vestment
+pages were additionally checked at full rendered size. The varied scale reads
+as one composed page, the transparent or paper-toned artwork boundaries blend
+with the page, and labels, images, and explanatory text remain legible without
+clipping, overlap, spill pages, or floating rectangular frames. The log has no
+fatal error, undefined reference, overfull box, or rerun warning.
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| General reader | 12 | 21,484,449 | `e237c3152354c3dc9f7faeafa0a83c34e01bd66d8984264cffeb584d3a4d2843` |
+
 ## Sacristy recognition cross-edition checkpoint — 2026-07-28
 
 The five generated editions now admit the already source-audited sacristy

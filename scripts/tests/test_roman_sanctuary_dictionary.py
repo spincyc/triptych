@@ -168,37 +168,68 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertNotIn(r"\RSDDensePlateStart", altar_server)
             for edition in (
                 "ed-comprehensive", "ed-sacristan", "ed-mc-trainer",
-                "ed-general-reader", "ed-pontifical", "ed-altar-server",
+                "ed-pontifical", "ed-altar-server",
             ):
                 text = (output / f"{edition}.tex").read_text()
                 self.assertNotIn(r"\RSDStoryPlateStart", text)
 
-    def test_synthetic_story_spreads_are_deterministic_and_exact_once(self):
+    def test_general_reader_vestments_use_bounded_story_plate_plan(self):
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
-            output = root / "out"
-            selections = root / "edition-selections.toml"
-            selections.write_text(SELECTIONS.read_text().replace(
-                'audience = "general-reader"',
-                'audience = "general-reader"\nlayout_mode = "story-spread-v1"',
-                1,
-            ))
-            self.generate(output, selections)
+            output = Path(temporary) / "out"
+            self.generate(output)
             first = (output / "ed-general-reader.tex").read_bytes()
-            self.generate(output, selections)
+            self.generate(output)
             self.assertEqual(first, (output / "ed-general-reader.tex").read_bytes())
             text = first.decode()
-            self.assertIn(r"\RSDStoryPlateStart{Sanctuary}{1}", text)
-            self.assertIn(r"\RSDStoryPlateStart{Objects And Linens}{1}", text)
-            self.assertIn(r"\RSDStoryHeroNext", text)
-            self.assertIn(r"\RSDStoryCompanionsStart", text)
-            self.assertNotIn(r"\RSDDensePlateStart", text)
-            object_ids = [
+            self.assertEqual(
+                text.count(r"\RSDStoryPlateStart{Vestments And Insignia}{1}"), 1
+            )
+            self.assertEqual(
+                text.count(r"\RSDDensePlateStart{Vestments And Insignia}{2}"), 1
+            )
+            self.assertNotIn(r"\RSDStoryPlateStart{Sanctuary}", text)
+            self.assertNotIn(r"\RSDStoryPlateStart{Objects And Linens}", text)
+            story = text.split(
+                r"\RSDStoryPlateStart{Vestments And Insignia}{1}", 1
+            )[1].split(r"\RSDStoryPlateEnd", 1)[0]
+            dense = text.split(
+                r"\RSDDensePlateStart{Vestments And Insignia}{2}", 1
+            )[1].split(r"\RSDDensePlateEnd", 1)[0]
+            story_ids = [
                 line.split("{", 1)[1].split("}", 1)[0]
-                for line in text.splitlines()
+                for line in story.splitlines()
                 if line.startswith(r"\RSDObjectRecord{")
             ]
-            self.assertEqual(len(object_ids), len(set(object_ids)))
+            dense_ids = [
+                line.split("{", 1)[1].split("}", 1)[0]
+                for line in dense.splitlines()
+                if line.startswith(r"\RSDObjectRecord{")
+            ]
+            self.assertEqual(
+                story_ids,
+                [
+                    "obj-chasuble",
+                    "obj-amice",
+                    "obj-alb",
+                    "obj-cincture",
+                    "obj-maniple",
+                ],
+            )
+            self.assertEqual(
+                dense_ids,
+                [
+                    "obj-priest-stole",
+                    "obj-deacon-stole",
+                    "obj-dalmatic",
+                    "obj-tunicle",
+                ],
+            )
+            self.assertEqual(text.count(r"\RSDStoryHeroNext"), 1)
+            self.assertEqual(text.count(r"\RSDStoryCompanionsStart"), 1)
+            for object_id in story_ids + dense_ids:
+                self.assertEqual(
+                    text.count(f"\\RSDObjectRecord{{{object_id}}}"), 1, object_id
+                )
             for edition in (
                 "ed-comprehensive", "ed-sacristan",
                 "ed-mc-trainer", "ed-pontifical", "ed-altar-server",
