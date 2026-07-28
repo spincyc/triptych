@@ -17,15 +17,34 @@
 \newif\ifLMSuppressTrainerMeaning
 \LMSuppressTrainerMeaningfalse
 
+\newcommand{\LMStageBand}[1]{%
+  \noindent
+  \colorbox{black}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+      \color{white}\fontsize{8.5}{10}\selectfont\bfseries
+      \MakeUppercase{#1}\hfill
+      \ifTrainerManualGuide COACHING EDITION\else FIELD GUIDE\fi}}%
+  \par}
+
+\newcommand{\LMBeatBadge}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{3pt}%
+  \setlength{\fboxrule}{0.9pt}%
+  \fbox{\strut\bfseries #1}%
+  \endgroup}
+
 \newcommand{\LMStageHeader}[2]{%
+  \LMStageBand{#1}%
+  \vspace{6pt}
   \noindent\makebox[\textwidth][s]{%
-    \fontsize{8.5}{10}\selectfont\bfseries
-    SERVING LOW MASS \textperiodcentered\ FIRST AND SECOND ACOLYTE
-    \hfill #1}%
+    \parbox[b]{0.70\textwidth}{%
+      \fontsize{18}{21}\selectfont\bfseries\MissalDisplay{#2}}%
+    \hfill
+    \parbox[b]{0.27\textwidth}{%
+      \raggedleft\fontsize{7.8}{9.4}\selectfont\bfseries
+      FIRST + SECOND ACOLYTE}}%
   \par
-  \vspace{3pt}\hrule height 1.2pt
-  \vspace{8pt}
-  {\fontsize{18}{21}\selectfont\bfseries\MissalDisplay{#2}\par}}
+  \vspace{5pt}\hrule height 1.2pt}
 
 \newcommand{\LMTrainerRailTitle}{%
   {\fontsize{7.8}{9.3}\selectfont\bfseries
@@ -81,6 +100,15 @@
       \vspace{0pt}
   \fi}
 
+% Page-architecture aliases.  A single scene always starts on a fresh
+% physical page.  A paired scene is deliberately composed below the preceding
+% scene and must be used only where both scenes have been reviewed together.
+\newcommand{\BeginLMSingleScenePage}[3]{%
+  \BeginLMPage{#1}{#2}{#3}}
+
+\newcommand{\ContinueLMPairedScene}[3]{%
+  \ContinueLMPage{#1}{#2}{#3}}
+
 \newcommand{\EndLMPage}{%
   \ifTrainerManualGuide
     \end{minipage}
@@ -99,7 +127,9 @@
   \vspace{8pt}
   \noindent
   \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
-    {\fontsize{9}{10.8}\selectfont\bfseries REHEARSAL CHECK\par}
+    {\fontsize{9}{10.8}\selectfont\bfseries
+      REHEARSAL CHECK\hfill
+      \(\square\) RESET\quad\(\square\) READY\par}
     \vspace{2pt}
     {\fontsize{10.5}{12.8}\selectfont\RaggedRight #1\par}}}}
 
@@ -109,11 +139,11 @@
 \newcommand{\LMLaneHeadings}{%
   \noindent
   \begin{minipage}[t]{0.47\linewidth}
-    \LMLaneLabel{Trainer / Priest}
+    \LMLaneLabel{\(\mathcal{V}\) \textperiodcentered\ Priest's cue}
   \end{minipage}
   \hfill
   \begin{minipage}[t]{0.455\linewidth}
-    \LMLaneLabel{Server}
+    \LMLaneLabel{\(\mathcal{R}\) \textperiodcentered\ Both answer}
   \end{minipage}
   \vspace{3pt}\hrule height 1pt}
 
@@ -122,17 +152,17 @@
     \vspace{7pt}
     \noindent
     \begin{minipage}[t]{0.065\linewidth}
-      {\fontsize{11.5}{13}\selectfont\bfseries #1\par}
+      {\fontsize{10.5}{13}\selectfont\LMBeatBadge{#1}\par}
     \end{minipage}%
     \begin{minipage}[t]{0.39\linewidth}
-      \LMLaneLabel{Priest}
+      \LMLaneLabel{\(\mathcal{V}\) \textperiodcentered\ Priest}
       \vspace{4pt}
       {\fontsize{11}{13.5}\selectfont\RaggedRight
         \SpokenCue{#2}\par}
     \end{minipage}%
     \hfill\vrule width 0.6pt\hfill
     \begin{minipage}[t]{0.46\linewidth}
-      \LMLaneLabel{Both}
+      \LMLaneLabel{\(\mathcal{R}\) \textperiodcentered\ Both}
       \vspace{4pt}
       {\fontsize{12}{14.5}\selectfont\bfseries\RaggedRight
         \SpokenResponse{\ServerLatinData{#3}}\par}
@@ -147,17 +177,17 @@
     \vspace{9pt}
     \noindent
     \begin{minipage}[t]{0.065\linewidth}
-      {\fontsize{13}{15}\selectfont\bfseries #1\par}
+      {\fontsize{11.5}{14}\selectfont\LMBeatBadge{#1}\par}
     \end{minipage}%
     \begin{minipage}[t]{0.405\linewidth}
-      \LMLaneLabel{Priest}
+      \LMLaneLabel{\(\mathcal{V}\) \textperiodcentered\ Priest}
       \vspace{5pt}
       {\fontsize{11.5}{14}\selectfont\RaggedRight
         \SpokenCue{#2}\par}
     \end{minipage}%
     \hfill\vrule width 0.65pt\hfill
     \begin{minipage}[t]{0.455\linewidth}
-      \LMLaneLabel{Both}
+      \LMLaneLabel{\(\mathcal{R}\) \textperiodcentered\ Both}
       \vspace{5pt}
       {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight
         \SpokenResponse{\ServerLatinData{#3}}\par}
@@ -178,14 +208,14 @@
       \LMRepeatTag{#1}
     \end{minipage}%
     \begin{minipage}[t]{0.39\linewidth}
-      \LMLaneLabel{Priest}
+      \LMLaneLabel{\(\mathcal{V}\) \textperiodcentered\ Priest}
       \vspace{4pt}
       {\fontsize{11}{13.5}\selectfont\RaggedRight
         \SpokenCue{#2}\par}
     \end{minipage}%
     \hfill\vrule width 0.6pt\hfill
     \begin{minipage}[t]{0.46\linewidth}
-      \LMLaneLabel{Both}
+      \LMLaneLabel{\(\mathcal{R}\) \textperiodcentered\ Both}
       \vspace{4pt}
       {\fontsize{12}{14.5}\selectfont\bfseries\RaggedRight
         \SpokenResponse{\ServerLatinData{#3}}\par}
@@ -198,14 +228,14 @@
       \LMRepeatTag{#1}
     \end{minipage}%
     \begin{minipage}[t]{0.405\linewidth}
-      \LMLaneLabel{Priest}
+      \LMLaneLabel{\(\mathcal{V}\) \textperiodcentered\ Priest}
       \vspace{5pt}
       {\fontsize{11.5}{14}\selectfont\RaggedRight
         \SpokenCue{#2}\par}
     \end{minipage}%
     \hfill\vrule width 0.65pt\hfill
     \begin{minipage}[t]{0.455\linewidth}
-      \LMLaneLabel{Both}
+      \LMLaneLabel{\(\mathcal{R}\) \textperiodcentered\ Both}
       \vspace{5pt}
       {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight
         \SpokenResponse{\ServerLatinData{#3}}\par}
@@ -218,17 +248,17 @@
     \vspace{7pt}
     \noindent
     \begin{minipage}[t]{0.065\linewidth}
-      {\fontsize{11.5}{13}\selectfont\bfseries #1\par}
+      {\fontsize{10.5}{13}\selectfont\LMBeatBadge{#1}\par}
     \end{minipage}%
     \begin{minipage}[t]{0.39\linewidth}
-      \LMLaneLabel{#2}
+      \LMLaneLabel{\(\mathcal{V}\) \textperiodcentered\ #2}
       \vspace{4pt}
       {\fontsize{11}{13.5}\selectfont\RaggedRight
         \SpokenCue{#3}\par}
     \end{minipage}%
     \hfill\vrule width 0.6pt\hfill
     \begin{minipage}[t]{0.46\linewidth}
-      \LMLaneLabel{Both}
+      \LMLaneLabel{\(\mathcal{R}\) \textperiodcentered\ Both}
       \vspace{4pt}
       {\fontsize{12}{14.5}\selectfont\bfseries\RaggedRight
         \SpokenResponse{#4}\par}
@@ -238,17 +268,17 @@
     \vspace{9pt}
     \noindent
     \begin{minipage}[t]{0.065\linewidth}
-      {\fontsize{13}{15}\selectfont\bfseries #1\par}
+      {\fontsize{11.5}{14}\selectfont\LMBeatBadge{#1}\par}
     \end{minipage}%
     \begin{minipage}[t]{0.405\linewidth}
-      \LMLaneLabel{#2}
+      \LMLaneLabel{\(\mathcal{V}\) \textperiodcentered\ #2}
       \vspace{5pt}
       {\fontsize{11.5}{14}\selectfont\RaggedRight
         \SpokenCue{#3}\par}
     \end{minipage}%
     \hfill\vrule width 0.65pt\hfill
     \begin{minipage}[t]{0.455\linewidth}
-      \LMLaneLabel{Both}
+      \LMLaneLabel{\(\mathcal{R}\) \textperiodcentered\ Both}
       \vspace{5pt}
       {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight
         \SpokenResponse{#4}\par}
@@ -322,8 +352,15 @@
 
 \newcommand{\LMPhraseBlock}[5]{%
   \vspace{8pt}
-  {\fontsize{9}{10.8}\selectfont\bfseries #1 \textperiodcentered\ #2\par}
-  \vspace{4pt}
+  \noindent
+  \makebox[\linewidth][s]{%
+    \LMBeatBadge{#1}\hspace{6pt}%
+    \parbox[b]{0.54\linewidth}{%
+      \fontsize{9}{10.8}\selectfont\bfseries\MakeUppercase{#2}}%
+    \hfill{\fontsize{7}{8.5}\selectfont\bfseries PRAYER BEAT}}%
+  \par
+  \vspace{5pt}\hrule height 0.6pt
+  \vspace{5pt}
   \ifTrainerManualGuide
     {\fontsize{11.5}{13.8}\selectfont\bfseries\RaggedRight #3\par}
     \vspace{5pt}

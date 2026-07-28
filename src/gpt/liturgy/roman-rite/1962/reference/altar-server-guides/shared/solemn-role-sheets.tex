@@ -10,6 +10,7 @@ If your trainer prints a role packet, use the printed page range on the
 preparation sheet. A shared boundary page is intentional when two roles meet
 on the same page.
 
+\Needspace{0.16\textheight}
 \begin{learnerbox}{Practise your role in four passes}
 \textbf{Pass 1 --- point:} name every place and partner. \quad
 \textbf{Pass 2 --- walk:} move with empty hands. \quad
@@ -19,14 +20,50 @@ giver, receiver, and final place. \quad
 object, face the altar, and look to the MC.
 \end{learnerbox}
 
-% Keep the common checkpoints inside every independently printed role packet.
-% Role-specific lists already name the movements and objects; this keyed strip
-% therefore records only the common posture/ending track instead of repeating
-% a second prose walk-through.
-\newcommand{\SolemnEveryRoleTrack}{%
-\par\smallskip\noindent
-\begingroup
-\small
+\subsection*{Your seven-scene map}
+
+\noindent
+The same seven stops appear on every role sheet. Find the large scene number,
+then read across: \textbf{where you are}, \textbf{which SO actions control the
+stop}, and \textbf{the question you must answer}.
+
+\newcommand{\SolemnMapStop}[4]{%
+  \noindent
+  \begin{minipage}[c]{0.105\linewidth}
+    \centering
+    \colorbox{black}{%
+      \parbox[c][3.3em][c]{2.8em}{%
+        \centering\color{white}\fontsize{22}{22}\selectfont\bfseries #1}}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.865\linewidth}
+    {\large\bfseries #2}\hfill
+    {\small\bfseries #3}\par
+    \smallskip
+    {\normalsize #4}
+  \end{minipage}\par
+  \vspace{0.28em}\hrule height 0.45pt\vspace{0.28em}}
+
+\begin{samepage}
+\SolemnMapStop{1}{Ready and enter}{SO-001--009}%
+  {What do I carry, where do I finish, and where is my base?}
+\SolemnMapStop{2}{First incense and lessons}{SO-010--017}%
+  {When do I move, sit, stand, or wait?}
+\SolemnMapStop{3}{Gospel and Creed}{SO-018--029}%
+  {Do I join the Gospel group, and what gesture follows the sung cue?}
+\SolemnMapStop{4}{Offertory}{SO-030--040}%
+  {What object or lane is mine, and who receives each handoff?}
+\SolemnMapStop{5}{Canon and elevations}{SO-041--049}%
+  {When do torches, incense, and bells begin and finish?}
+\SolemnMapStop{6}{Pax, Communion, ablutions}{SO-050--060}%
+  {Does my role handle the veil, pax, plate, cruets, or reset?}
+\SolemnMapStop{7}{Ending and recession}{SO-061--070}%
+  {Which ending is appointed, what do I carry out, and where does it finish?}
+\end{samepage}
+
+\Needspace{0.34\textheight}
+\phantomsection
+\label{solemn-common-track}
+\begin{learnerbox}{The common track for every role}
 \textbf{EVERY SERVER --- common track.}
 At the foot prayers, kneel on both knees and make only the gestures named in
 SO-009; on the Passiontide branch keep \emph{Introibo}, omit Psalm 42 and its
@@ -43,14 +80,30 @@ use the parish's separate procession sheet. That sheet must name this role's
 object, place, route, final reverence, and sacristy return. When the procession
 has ended in the sacristy, rejoin SO-070 for the common reverence and final
 person-and-object count.
+\end{learnerbox}
+
+% The complete common text is printed once, immediately before the role
+% routes. Each role retains a compact packet reminder and exact page pointer.
+\newcommand{\SolemnEveryRoleTrack}{%
+\par\smallskip\noindent
+\begingroup
+\small
+\noindent\colorbox{black!8}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+    \textbf{EVERY SERVER --- common track:}
+    use the complete posture, Gospel-gesture, response, ending, procession,
+    and final-count directions on page~\pageref{solemn-common-track}.}}
 \endgroup}
 
 \begingroup
 % The role routes are a continuous printable section, so a ruled heading is
 % sufficient; seven full coach boxes added almost a page of frame padding.
 \renewcommand{\rolecard}[2]{%
-  \par\medskip
-  \noindent\textbf{#1}\par
+  \par\medskip\Needspace{0.27\textheight}
+  \noindent\colorbox{black}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \color{white}\large\bfseries\strut #1}}\par
+  \smallskip
   #2\par}
 
 \phantomsection
@@ -97,7 +150,8 @@ enough. Never send two servers to repair the same missed action.}
 \rolecard{Thurifer --- Th}{%
 \begin{enumerate}[leftmargin=5.1em,labelwidth=4.4em,labelsep=0.5em,align=left,label=\textbf{Scene \arabic*:}]
 \item \textbf{Ready and enter --- SO-002, 005--007.} With the trained adult,
-prepare the thurible and safe station. Enter beside Bb, make the rehearsed
+prepare the thurible and safe station. Enter single file through the nave
+immediately before Bb, make the rehearsed
 reverence, and go to the incense station.
 \item \textbf{First incense and lessons --- SO-010--018.} Serve the blessed
 first incense at SO-010--011, return the thurible safely, follow the common
@@ -120,7 +174,8 @@ complete team track, keep the pax and Communion lanes clear, and return to the
 assigned base after the credence reset.
 \item \textbf{Ending --- SO-061--070.} Follow the ending marked on
 \emph{Today's Mass}. At SO-067--070 lead the normal or third-Christmas recession
-empty-handed beside Bb with the boat; use the free-handed final-reverence
+empty-handed in single file immediately before Bb with the boat; use the
+free-handed final-reverence
 branch and check the thurible only in the sacristy.
 \end{enumerate}
 
@@ -136,7 +191,8 @@ This model always has a separate Th and Bb; it has no combined-role route.}
 \rolecard{Boat bearer --- Bb}{%
 \begin{enumerate}[leftmargin=5.1em,labelwidth=4.4em,labelsep=0.5em,align=left,label=\textbf{Scene \arabic*:}]
 \item \textbf{Ready and enter --- SO-002, 005--007.} Take the boat, enter
-beside Th, make the rehearsed reverence, and go to the incense station.
+single file through the nave immediately after Th, make the rehearsed
+reverence, and go to the incense station.
 \item \textbf{First incense --- SO-010--011.} Give boat and spoon to the
 deacon, receive them back, and return the boat to its marked station.
 \item \textbf{Gospel --- SO-019.} Give boat and spoon to the deacon, receive
@@ -153,7 +209,8 @@ the pax, Communion, ablutions, and vessel reset. Retrieve nothing until the
 marked ending pickup.
 \item[\textbf{Scene 7:}] \textbf{Ending --- SO-061--070.} Follow the marked
 ending until exit pickup. On the normal or third-Christmas route, take the
-boat, lead beside empty-handed Th, remain upright and bow the head at
+boat, recess single file through the nave immediately after empty-handed Th,
+remain upright and bow the head at
 SO-068, then give the boat to the adult at the sacristy metal-safe station.
 \end{enumerate}
 
@@ -170,7 +227,8 @@ next station before moving.}
 \rolecard{First acolyte --- A1}{%
 \begin{enumerate}[leftmargin=5.1em,labelwidth=4.4em,labelsep=0.5em,align=left,label=\textbf{Scene \arabic*:}]
 \item \textbf{Ready and enter --- SO-003, 005--009.} Take the right-hand
-candle from the adult, enter paired with A2, place it at the credence at
+candle from the adult, enter single file through the nave immediately before
+A2, form beside A2 only at the stationary arrival, place it at the credence at
 SO-008, and go to base for the foot prayers.
 \item \textbf{First incense and lessons --- SO-013--017.} Serve the
 celebrant's and deacon's birettas in the printed order and help with the seat
@@ -195,13 +253,16 @@ receive both after the second ablution at SO-058 and return them.
 \item \textbf{Ending --- SO-066--070.} On the normal route genuflect
 empty-handed at SO-066 and take the candle; on the third-Christmas route take
 it at SO-067 after the blessing. Use the object-bearer's head bow at SO-068,
-recess with A2, and place the candle in its stand.
+recess single file through the nave immediately before A2, and place the
+candle in its stand.
 \end{enumerate}
 
 \SolemnEveryRoleTrack
 
 \smallskip
-Never leave the Communion plate or a cruet without its named receiver.}
+Never leave the Communion plate or a cruet without its named receiver.
+\par\smallskip\noindent\textbf{A1 Communion-paten safety.}\par
+\CommunionPatenSafetyDiagram}
 \label{solemn-role:a1:last}
 
 \phantomsection
@@ -210,7 +271,8 @@ Never leave the Communion plate or a cruet without its named receiver.}
 \rolecard{Second acolyte --- A2}{%
 \begin{enumerate}[leftmargin=5.1em,labelwidth=4.4em,labelsep=0.5em,align=left,label=\textbf{Scene \arabic*:}]
 \item \textbf{Ready and enter --- SO-003, 005--009.} Take the left-hand
-candle from the adult, enter paired with A1, place it at the credence at
+candle from the adult, enter single file through the nave immediately after
+A1, form beside A1 only at the stationary arrival, place it at the credence at
 SO-008, and go to base for the foot prayers.
 \item \textbf{First incense and lessons --- SO-013--017.} Serve only the
 subdeacon's biretta and help with the seat route; A1 serves the celebrant's and
@@ -233,14 +295,15 @@ then help A1 reset the other objects.
 \item \textbf{Ending --- SO-066--070.} On the normal route genuflect
 empty-handed at SO-066 and take the candle; on the third-Christmas route take
 it at SO-067 after the blessing. Use the object-bearer's head bow at SO-068,
-recess with A1, and place the candle in its stand.
+recess single file through the nave immediately after A1, and place the
+candle in its stand.
 \end{enumerate}
 
 \SolemnEveryRoleTrack
 
 \smallskip
-Stay paired with A1 for every candle movement and check the path before
-carrying the folded veil.}
+Match A1 at stationary candle formations; travel single file and check the
+path before carrying the folded veil.}
 \label{solemn-role:a2:last}
 
 \phantomsection
@@ -248,8 +311,10 @@ carrying the folded veil.}
 \addcontentsline{toc}{subsection}{Tb1--Tb4 --- torchbearers}
 \rolecard{Torchbearers --- Tb1--Tb4}{%
 \begin{enumerate}[leftmargin=6.4em,labelwidth=5.7em,labelsep=0.5em,align=left]
-\item[\textbf{Scene 1:}] \textbf{Ready and enter --- SO-004--009.} Enter in two pairs with hands
-joined; the torches remain at their prepared station. Go to base for the foot
+\item[\textbf{Scene 1:}] \textbf{Ready and enter --- SO-004--009.} Enter
+single file through the nave in order Tb1--Tb4 with hands joined; the torches
+remain at their prepared station. Form the stationary pairs only after
+arrival. Go to base for the foot
 prayers.
 \item[\textbf{Scenes 2--4:}] \textbf{Lessons through Offertory --- SO-012--040.} Follow the complete
 team track. When Th incenses the servers, bow with the named recipient group.
@@ -265,7 +330,7 @@ wine ablution and leave at SO-057. Put the torches on the four named stands for
 the adult to receive and extinguish; return empty-handed to base. Th's return
 is separate.
 \item[\textbf{Scene 7:}] \textbf{Ending --- SO-061--070.} Follow the marked ending, join the
-normal or third-Christmas recession empty-handed in two pairs, make the
+normal or third-Christmas recession empty-handed in single-file order, make the
 free-handed final reverence, and confirm all four torches at SO-070.
 \end{enumerate}
 
@@ -299,9 +364,11 @@ securely in the sacristy.
 
 \smallskip
 Never genuflect or try to bow the processional cross while carrying it. When
-Cb is absent, A1 and A2 remain a candle pair.}
+Cb is absent, A1 and A2 form a candle pair only while stationary and retain
+their successive single-file places whenever travelling.}
 \label{solemn-role:cb:last}
 
+\Needspace{0.14\textheight}
 \begin{learnerbox}{Partner check before the team chronology}
 Name the giver, receiver, and final place for every object in your route. If
 any answer is \textit{someone} or \textit{somewhere}, return to that scene with

@@ -83,29 +83,53 @@ Use this map to learn where you are in the Mass. Your role sheet tells you what
 you do inside each scene; the action IDs lead your trainer to the complete team
 reference when a handoff or branch needs more detail.
 
-\begin{description}[style=multiline,leftmargin=0.19\linewidth,labelwidth=0.16\linewidth]
-  \item[1. Get ready.] Check the roster and objects, line up, process, land at
-  the named places, and account for the priest's biretta (MC-001--007).
-  \item[2. Begin.] The quiet response team serves the prayers at the foot; the
-  team then follows the Introit, Kyrie, Gloria when appointed, and Collect
-  posture (MC-008--018).
-  \item[3. Listen.] Follow the Epistle route, prepare and serve the Gospel, sit
-  for the sermon if one is given, and take the appointed Credo gestures
-  (MC-019--029).
-  \item[4. Prepare.] Serve wine and water, the selected incense route and
-  Lavabo, and the quiet \textit{Suscipiat} (MC-030--035).
-  \item[5. Adore.] Follow the Preface, bring torches, kneel for the Canon, and
-  use the exact bell and elevation-incense cues (MC-036--042).
-  \item[6. Receive.] Follow the Lord's Prayer and Agnus Dei; when the faithful
-  receive, use the bell and plate route; then complete both ablutions and the
-  book transfer (MC-043--050).
-  \item[7. Finish.] Take the day's Postcommunion posture, dismissal branch,
-  blessing when it belongs, and Last-Gospel route when it is said
-  (MC-051--054).
-  \item[8. Return.] Collect only the named exit objects, make the assigned
-  final reverence, recess, and account for every person and object in the
-  sacristy (MC-055--057).
-\end{description}
+\newcommand{\MCSceneTile}[3]{%
+  \begin{minipage}[t]{0.48\linewidth}
+  \begin{tcolorbox}[
+    enhanced,
+    colback=black!3,
+    colframe=black!38,
+    boxrule=0.45pt,
+    arc=0pt,
+    left=6pt,
+    right=6pt,
+    top=4pt,
+    bottom=4pt,
+    height=0.145\textheight,
+    valign=top]
+    \textbf{\large #1}\enspace\textbf{#2}\par\smallskip
+    {\small #3}
+  \end{tcolorbox}
+  \end{minipage}}
+
+\noindent
+\MCSceneTile{1}{Get ready}{Check the roster and objects, line up, process, land at
+the named places, and account for the priest's biretta (MC-001--007).}\hfill
+\MCSceneTile{2}{Begin}{The quiet response team serves the prayers at the foot; the
+team then follows the Introit, Kyrie, Gloria when appointed, and Collect
+posture (MC-008--018).}
+
+\noindent
+\MCSceneTile{3}{Listen}{Follow the Epistle route, prepare and serve the Gospel, sit
+for the sermon if one is given, and take the appointed Credo gestures
+(MC-019--029).}\hfill
+\MCSceneTile{4}{Prepare}{Serve wine and water, the selected incense route and
+Lavabo, and the quiet \textit{Suscipiat} (MC-030--035).}
+
+\noindent
+\MCSceneTile{5}{Adore}{Follow the Preface, bring torches, kneel for the Canon, and
+use the exact bell and elevation-incense cues (MC-036--042).}\hfill
+\MCSceneTile{6}{Receive}{Follow the Lord's Prayer and Agnus Dei; when the faithful
+receive, use the bell and plate route; then complete both ablutions and the
+book transfer (MC-043--050).}
+
+\noindent
+\MCSceneTile{7}{Finish}{Take the day's Postcommunion posture and dismissal
+branch; add the blessing when it belongs and the Last-Gospel route when it is said
+(MC-051--054).}\hfill
+\MCSceneTile{8}{Return}{Collect only the named exit objects, make the assigned
+final reverence, recess, and account for every person and object in the
+sacristy (MC-055--057).}
 
 \MCEntranceHandoffsDiagram
 
@@ -189,8 +213,9 @@ plate only after the required hands-on training.
   object; they do not improvise a genuflection while carrying a tall cross,
   lighted candle, or full thurible.
   \item[Turn and walk.] Turn toward the direction of travel. Walk forward,
-  shoulder to shoulder with a partner, at a prayerful pace. Never walk
-  backward down steps.
+  at a prayerful pace. In the entrance and recession, travel single file
+  through the nave; partner positions apply only after the group forms at a
+  station. Never walk backward down steps.
   \item[Give and receive.] Present an object at a usable height with its handle
   ready. Look at the receiver's hands. Release only when the receiver has it.
 \end{description}
@@ -226,6 +251,41 @@ The following chart preserves the complete model route. A server may use an
 action ID to check one detail, but the chart is chiefly for the MC and trainer,
 who must coordinate every person, object, branch, and waiting state.
 
+\begingroup
+% This local treatment leaves the shared action-table contract untouched. The
+% stronger stage banners and separate finish line make the long chronology
+% usable as a dispatch sheet instead of a wall of equally weighted prose.
+\renewcommand{\actionsection}[1]{%
+  \needspace{7\baselineskip}%
+  \par\medskip
+  \noindent\colorbox{black!78}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \color{white}\bfseries\strut #1}}\par\smallskip}
+\renewenvironment{actiontable}{%
+  \footnotesize
+  \setlength{\LTpre}{0.08em}
+  \setlength{\LTpost}{0.45em}
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.13}
+  \begin{longtable}{@{}>{\RaggedRight\arraybackslash}p{0.18\linewidth}>{\RaggedRight\arraybackslash}p{0.14\linewidth}>{\RaggedRight\arraybackslash}p{0.62\linewidth}@{}}
+  \toprule
+  \textbf{Cue / action ID} & \textbf{Who moves} & \textbf{Action and finish state}\\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Cue / action ID} & \textbf{Who moves} & \textbf{Action and finish state}\\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+}{%
+  \end{longtable}
+}
+\renewcommand{\actionrowid}[5]{%
+  \rule{0pt}{2.7ex}\textbf{\textsc{#1}}\par\smallskip #2 &
+  \textbf{#3} &
+  #4\par\smallskip\textbf{Finish / next:} #5\\[0.55em]}
+
 \actionsection{Before the entrance}
 
 \begin{actiontable}
@@ -249,19 +309,21 @@ changes in the procession, and no invented recovery route.}
 \actionrowid{MC-004}{Objects and line-up}{Adult sacristan; all lay servers}{The
 adult lights the two processional candles and gives one to A1 and one to A2;
 the pair checks equal height. If CB is used, CB takes the cross from its named
-stand. Then take this model order: TH with BB on the incense branch; CB between
-A1 and A2, or A1 and A2 as a candle pair when there is no cross; T1 with T2;
-T3 with T4; L on the alternate lesson branch; MC; priest. Omitted roles close
-the gap without changing partners.}{The adult owns every flame handoff.
-\LocalChoice: the church and sacristy route can change spacing.}
+stand. Then take this single-file model order: TH, BB on the incense branch;
+CB, A1, A2 when the cross is used, or A1, A2 when it is not; T1, T2, T3, T4;
+L on the alternate lesson branch; MC; priest. Omitted roles close the gap.
+Partners form side by side only at their stationary stations.}{The adult owns
+every flame handoff. \LocalChoice: the church doorway, nave route, and
+stationary formation can change spacing.}
 \end{actiontable}
 
 \actionsection{Entrance and prayers at the foot}
 
 \begin{actiontable}
 \actionrowid{MC-005}{Sacristy signal}{All lay servers}{Bow to the cross with the priest as directed,
-turn together, and begin the procession without a gap.}{Hands joined unless
-carrying an object.}
+turn together, pass through the doorway one behind another, and begin the
+procession through the nave without a gap.}{Hands joined unless carrying an
+object; travel single file.}
 \actionrowid{MC-006}{At the sanctuary}{Object-bearers}{Stop on the marked
 arrival line. At the MC's signal make the reverence assigned to the carried
 object; then A1/A2 set candles at the credence, CB sets the cross in its stand,
@@ -508,6 +570,8 @@ if assigned. The Canon posture begun at MC-038 has now reached the
 
 \actionsection{Communion}
 
+\MCAblutionsDiagram
+
 \begin{actiontable}
 \actionrowid{MC-043}{Lord's Prayer}{Choir / people; all lay servers}{The public
 response is \textit{Sed libera nos a malo}; the later conclusion receives
@@ -535,7 +599,7 @@ to \textit{Ecce Agnus Dei}.}{\MissalRule: \textit{Ritus servandus} X.6. Skip
 the whole row when no one else receives.}
 \actionrowid{MC-047}{Faithful Communion}{A1}{At the MC's cue, take the
 Communion plate from its prepared place. Accompany the priest on the rehearsed
-side, keep the plate level beneath each communicant, and watch the Host rather
+side, keep the plate level under each communicant's chin, and watch the Host rather
 than the line. After the last communicant, carry it level to the altar and give
 it to the priest for the required fragment check and transfer; receive the
 cleared plate only when he releases it, then return it upright to its marked
@@ -611,8 +675,9 @@ T1--T4 / L}{After the Last Gospel, or at the omission cue, MC checks the center
 and takes the priest's biretta from its marked sedilia place, holding it flat
 with both hands. On the incense branch TH takes the closed thurible and BB the
 boat; CB takes the cross when used; A1 and A2 take the two candles; T1--T4 and
-L remain empty-handed with hands joined. Form the same pair order used at
-MC-004.}{The priest's biretta and every entrance object have now rejoined the
+L remain empty-handed with hands joined. Form the same single-file order used
+at MC-004; use the locally marked paired formation only for the stationary
+reverence.}{The priest's biretta and every entrance object have now rejoined the
 exit chain. The adult sacristan has confirmed whether charcoal remains live.}
 \actionrowid{MC-056}{Final reverence and recession}{All lay servers}{At MC's
 signal, free-handed T1--T4 and L genuflect if the Blessed Sacrament is reserved
@@ -620,7 +685,7 @@ at this altar and make a profound bow if it is not. This model keeps MC, TH,
 BB, CB, A1, and A2 upright with their objects and assigns them a head bow. MC
 then gives the biretta to the priest with both hands. Turn in the rehearsed
 direction without crossing, then recess in the same order and spacing as the
-entrance.}{\MissalRule: \emph{Ritus servandus} XII.6 supplies the reserved/
+entrance, one behind another through the nave and sacristy doorway.}{\MissalRule: \emph{Ritus servandus} XII.6 supplies the reserved/
 unreserved branch. \ModelRule: the exact object-safe bows and biretta handoff.}
 \actionrowid{MC-057}{In the sacristy}{All lay servers / adult sacristan}{Form
 the same straight line and make the customary concluding reverence with the
@@ -633,6 +698,7 @@ for. The adult handles live charcoal and extinguishes flames. Report any
 damage or mistake honestly.}{Serving
 ends when every person and object is accounted for.}
 \end{actiontable}
+\endgroup
 
 \section{Branch card: know what changes}
 

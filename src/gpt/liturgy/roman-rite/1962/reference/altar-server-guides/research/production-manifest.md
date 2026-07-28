@@ -2,6 +2,36 @@
 
 Audit record updated through 2026-07-28 (America/Chicago).
 
+## Settled metadata-bearing candidate — 2026-07-28
+
+The frozen seven-publication source family was rebuilt for two forced pdfTeX
+passes after the final metadata reconciliation. These are build identities,
+not installed identities:
+
+| Publication | Revision UTC | Pages | Physical cards | Bytes | Build SHA-256 |
+|---|---|---:|---:|---:|---|
+| `01-low-mass` | `2026-07-28T20:26:00Z` | 26 | 0 | 6,548,755 | `9f1b859cc33530a18120a23f86ea332534262f9f882a549c8fdcbc44504f5690` |
+| `01-low-mass-trainer-manual` | `2026-07-28T20:26:00Z` | 26 | 0 | 6,560,985 | `74fb900733d09c6430b0ee5e0da3ff98ec67f08d51d6e9d4b33bc0676504518c` |
+| `01-low-mass-flash-cards` | `2026-07-28T20:26:00Z` | 6 | 22 | 252,799 | `0c7337f3aefe701eda17586175992f48aa8ca77f8d9a85a54ba7fa06d82b3739` |
+| `02-missa-cantata` | `2026-07-28T20:26:00Z` | 34 | 0 | 2,371,330 | `7f9fa812000340c241edcc93984260d506a773ff393442e15c818eeb74ac78f5` |
+| `02-missa-cantata-cue-cards` | `2026-07-28T20:26:00Z` | 12 | 36 | 627,502 | `25a555daee0bd4eb1e06bfb5d5a7c6592d738bee4f10e8d3953776942d263904` |
+| `03-solemn-mass` | `2026-07-28T20:26:00Z` | 31 | 0 | 2,714,554 | `8992be913a3d8402b395d7106bb1122504fa564830374cafb705aeb5933a2a4f` |
+| `03-solemn-mass-cue-cards` | `2026-07-28T20:26:00Z` | 12 | 36 | 632,779 | `5dcc631d32cb1e47c245ab855c25d8781753c88b9f9b19926fdf6c65302d71e2` |
+
+The family totals 147 pages: 117 guide or manual pages and 30 card pages,
+with 94 physical cards. All final logs are free of fatal errors, undefined
+references, warnings, overfull or underfull boxes, and unresolved rerun
+requests. `pdfinfo` and nonempty `pdftotext` extraction pass; every listed font
+is embedded and subsetted. The environment does not provide `qpdf`, so this
+snapshot makes no new `qpdf --check` claim.
+
+The bounded review helper rastered all 147 pages. All full-size page rasters
+and eleven contact sheets were inspected for sequence, clipping, collision,
+accidental blanks, card pairing, monochrome legibility, and terminal fit.
+This is a screen review of the exact build hashes above. The PDFs were not
+installed in this task, and no external, intended-reader, physical-use,
+rights, priestly, or ecclesiastical approval is claimed.
+
 ## Current installed public-review snapshot
 
 This table is the sole current identity ledger for the seven installed
@@ -818,3 +848,105 @@ This alpha record establishes the current source, rights, safety, identity,
 mechanical, and basic visual concerns; physical print, photocopy, human
 artwork, independent ceremonial, rights, and ecclesiastical-suitability
 reviews remain pending.
+
+## Direct sacristy recession and six-person Gospel line — 2026-07-28
+
+The active `ASG-ART-021` replacement now shows the Low-Mass recession moving
+directly from the altar to the open sacristy door. First leads Second in one
+file, and the priest follows with the covered chalice. The active
+`ASG-ART-025` replacement shows exactly the SO-020--021 Gospel line:
+empty-handed MC; Th with one closed, still thurible; A1 and A2 with two
+lighted candles; D empty-handed; and SD with the closed Gospel book. Bb, a
+boat, cross-bearer, celebrant, extra actor, and extra candle are absent.
+
+Both received rasters were proportionally reduced to 500 pixels high,
+converted to grayscale-alpha with the recorded deterministic inverse-luma
+rule, and stripped of metadata. TeX-owned role capsules were aligned to the
+new figures. The first Low-Mass overlay pass incorrectly assigned the leading
+figure to Second and crowded all three labels below the small shared scene;
+review corrected the order to First then Second and staggered the labels on
+their corresponding figures.
+
+The three direct consumers rebuilt for settled passes and were rastered with
+the bounded review helper. Their complete contact sheets and the affected
+Low-Mass page 23 and Solemn-Mass page 13 were inspected at full rendered size.
+The direct route, one-behind-another order, six-person Gospel inventory,
+labels, transparency, captions, and page fit are clear. Final logs contain no
+fatal errors, LaTeX or package warnings, undefined references, overfull or
+underfull boxes, or unresolved rerun requests.
+
+| Publication | Pages | Bytes | Build SHA-256 |
+| --- | ---: | ---: | --- |
+| Low Mass child field guide | 26 | 6,369,389 | `b66cde47748518094fc8a0971f6bfec76b16af83bb4bb46fbaff35cd54bc639d` |
+| Low Mass trainer manual | 26 | 6,381,524 | `fe4ce3ed175a6089ba8d5ff5e94b66629c80e24a531928651391865facad7d66` |
+| Solemn Mass guide | 31 | 2,714,230 | `859ca295f9fd08eb5878cf3c8130840993ee8a7196f4d8dac5525f61c2e13bd3` |
+
+No installed PDF, generation metadata, or publication-status claim changed.
+Physical print, photocopy, human artwork, independent ceremonial, rights, and
+ecclesiastical-suitability review remain pending.
+
+## Overhead Lavabo and ablution artwork integration — 2026-07-28
+
+Four source-bounded overhead states were integrated into the direct teaching
+consumers. The Low Mass water-only Lavabo panel was enlarged within its
+existing lesson rather than left as a small decorative thumbnail. The first
+wine and finger-ablution panels are shared by Low Mass and Missa Cantata, with
+form-specific actor labels supplied by TeX. Missa Cantata places both states
+side by side in one compact chronology block. Solemn Mass uses a distinct
+two-state panel in which TeX identifies the subdeacon as the pourer and A1 as
+the cruet supplier. Every caption retains MODEL and LOCAL qualifications;
+no semantic label or arrow is baked into the rasters.
+
+The four direct consumers rebuilt for settled passes. Final logs contain no
+fatal error, undefined reference, overfull box, or unresolved rerun request.
+The Missa Cantata log retains the previously present underfull paragraph at
+role-sheet line 129; it is outside the new diagram block. Bounded review
+rasters and contact sheets were generated with `scripts/pdf-review`. The
+Lavabo and Low Mass ablution pages, the compact Missa Cantata paired panel,
+and the Solemn subdeacon panel were inspected at full size; contact-sheet
+review found no clipping, floating raster rectangle, obscured role tag,
+ambiguous form assignment, or artwork-created sparse spill page.
+
+| Direct consumer | Pages | Bytes | Build SHA-256 | Installation |
+|---|---:|---:|---|---|
+| Low Mass child field guide | 26 | 6,369,369 | `4077bcd23bd3a5dcfcb06cf5addc4c5caa83f65352de8b8c9d8c8afd75297c86` | not installed in this task |
+| Low Mass trainer manual | 26 | 6,381,504 | `197fcb5fc8a285ed45d6788eae471dc346eb07698d904c97d7559eb77d24b8d6` | not installed in this task |
+| Missa Cantata guide | 34 | 2,371,331 | `d730c19278025bcd967d0d3d239298b3054099f641deea236366f15140f81014` | not installed in this task |
+| Solemn Mass guide | 31 | 2,714,230 | `859ca295f9fd08eb5878cf3c8130840993ee8a7196f4d8dac5525f61c2e13bd3` | not installed in this task |
+
+This advances standalone artwork inspection and integrated screen review only.
+Physical print, photocopy, human artwork, independent ceremonial, rights, and
+ecclesiastical-suitability reviews remain pending.
+
+## Low-Mass cruet-kiss demonstration — 2026-07-28
+
+The Low Mass page-matched pair now uses a four-part Offertory demonstration:
+kiss and present wine, then after the priest's blessing kiss and present
+water. TeX owns all four numbered captions. The adjacent teaching text
+distinguishes the 1962 Missal's official wine-cruet kiss and exclusion of a
+kiss on the priest's hand from the selected Carmody `MODEL`: kiss at the base
+of the handle and receive both returned cruets without another kiss. Missa
+Cantata was not given this Low-Mass sequence, and the Solemn lay-server
+handoff remains to the subdeacon.
+
+The supplied 1774-by-887 RGB sheet was critically inspected, converted to a
+1796-by-912 grayscale-alpha derivative after removal of the baked checkerboard
+and empty perimeter, and inspected again on white. Both direct consumers
+rebuilt for settled passes. Final logs contain no fatal error, warning,
+undefined reference, overfull or underfull box, or unresolved rerun request.
+The bounded review helper produced every-page rasters and contact sheets. Page
+12 was inspected at full rendered size in both guides; all other pages were
+inspected on the contact sheets. A first child build exposed an empty spill
+page because the full-width sequence exceeded that layout's page budget; the
+child sequence was proportionally reduced to 88 percent while the trainer
+retained 98 percent. The settled pair is again page-matched at 26 pages, with
+legible captions, no clipping, no checkerboard residue, and no blank page.
+
+| Direct consumer | Pages | Bytes | Build SHA-256 | Installation |
+|---|---:|---:|---|---|
+| Low Mass child field guide | 26 | 6,548,752 | `4b08a5d6e7c6f95dd922463ec0cdeb7e160deff8bdfa2152b1c29e329e030920` | not installed in this task |
+| Low Mass trainer manual | 26 | 6,560,986 | `1193a9e894907bda9577628f521cfd532ed0b288f1192930d45561074cefb19d` | not installed in this task |
+
+This records source and integrated screen review only. Physical print,
+photocopy, human artwork, independent ceremonial, rights, and
+ecclesiastical-suitability reviews remain pending.

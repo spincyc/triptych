@@ -37,7 +37,9 @@ a human illustrator. No entry claims imitation of a named living artist.
 
 - Logical ID: `ASG-ART-001`
 - File:
-  `shared/artwork/pencil/ASG-ART-001-lm-start.png`
+  `shared/artwork/pencil/ASG-ART-001-lm-start-v2-alpha.png`
+- Boundary-safe successor: deterministic inverse-luma opacity with alpha at or below 20/255 set to zero, 20/255--40/255 tapered by cubic smoothstep, and alpha at or above 40/255 unchanged; no crop, resize, geometry, or semantic-content change
+- Retained precursor: `ASG-ART-001-lm-start.png`; 1,395,072 bytes; SHA-256 `3cf46a98da599b2a93e3118709fabce5a941e8cb6faa18ed190707dc3a02f153`
 - Purpose: opening Low Mass station, shared by the child booklet and trainer
   manual
 - Depicted state: priest centered; Second Acolyte at picture-left; First
@@ -54,7 +56,7 @@ a human illustrator. No entry claims imitation of a named living artist.
 - Color mode as received: 8-bit sRGB; visually monochrome on white
 - Repository normalization: received file retained
 - SHA-256:
-  `3cf46a98da599b2a93e3118709fabce5a941e8cb6faa18ed190707dc3a02f153`
+  `59f6e810b170b78f7b2036d14d4d84f88dc972d9bab23c54228620d77d7f34ce`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: role capsules for priest and both acolytes; numbered level
   markers
@@ -69,7 +71,9 @@ a human illustrator. No entry claims imitation of a named living artist.
 
 - Logical ID: `ASG-ART-002`
 - File:
-  `shared/artwork/pencil/ASG-ART-002-lm-foot-kneel.png`
+  `shared/artwork/pencil/ASG-ART-002-lm-foot-kneel-v2-alpha.png`
+- Boundary-safe successor: deterministic inverse-luma opacity with alpha at or below 20/255 set to zero, 20/255--40/255 tapered by cubic smoothstep, and alpha at or above 40/255 unchanged; no crop, resize, geometry, or semantic-content change
+- Retained precursor: `ASG-ART-002-lm-foot-kneel.png`; 1,293,432 bytes; SHA-256 `bb74017b83044c6decf0f3eac405f2d95098115bd039cd6f3d88bcc4d7502452`
 - Purpose: Low Mass prayers-at-the-foot posture, shared by the child booklet
   and trainer manual
 - Depicted state: priest centered and standing; Second Acolyte at picture-left
@@ -87,7 +91,7 @@ a human illustrator. No entry claims imitation of a named living artist.
 - Color mode as received: 8-bit sRGB; visually monochrome on white
 - Repository normalization: received file retained
 - SHA-256:
-  `bb74017b83044c6decf0f3eac405f2d95098115bd039cd6f3d88bcc4d7502452`
+  `0477b22280621e488c4330b4e03788301cf9b8caf3489551f498f8aaeb171416`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: role capsules for priest and both acolytes; numbered level
   markers
@@ -102,7 +106,9 @@ a human illustrator. No entry claims imitation of a named living artist.
 
 - Logical ID: `ASG-ART-005`
 - File:
-  `shared/artwork/pencil/ASG-ART-005-lm-missal-move-corrected.png`
+  `shared/artwork/pencil/ASG-ART-005-lm-missal-move-corrected-v2-alpha.png`
+- Boundary-safe successor: deterministic inverse-luma opacity with alpha at or below 20/255 set to zero, 20/255--40/255 tapered by cubic smoothstep, and alpha at or above 40/255 unchanged; no crop, resize, geometry, or semantic-content change
+- Retained precursor: `ASG-ART-005-lm-missal-move-corrected.png`; 1,231,511 bytes; SHA-256 `c221df6d3c1c5b191555ccc90748d1c9ec47fa28ae82ad7f7f9d2dd496d0b2b6`
 - Purpose: corrected First Acolyte Missal-and-stand transfer
 - Correction: the carried object is the Missal on its stand; Second remains
   clear; the generated art contains no route or label
@@ -115,7 +121,7 @@ a human illustrator. No entry claims imitation of a named living artist.
 - Color mode as received: 8-bit sRGB; visually monochrome on white
 - Repository normalization: received file retained
 - SHA-256:
-  `c221df6d3c1c5b191555ccc90748d1c9ec47fa28ae82ad7f7f9d2dd496d0b2b6`
+  `ffa29eab880d128422f2a9a717da495e0396b17c761a97d0df0d2bb06c0308c0`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: role capsules and down-centre-up Gospel-side route
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
@@ -128,7 +134,9 @@ a human illustrator. No entry claims imitation of a named living artist.
 ## ASG-ART-006
 
 - Logical ID: `ASG-ART-006`
-- File: `shared/artwork/pencil/ASG-ART-006-lm-lavabo-corrected.png`
+- File: `shared/artwork/pencil/ASG-ART-006-lm-lavabo-corrected-v2-alpha.png`
+- Boundary-safe successor: deterministic inverse-luma opacity with alpha at or below 20/255 set to zero, 20/255--40/255 tapered by cubic smoothstep, and alpha at or above 40/255 unchanged; no crop, resize, geometry, or semantic-content change
+- Retained precursor: `ASG-ART-006-lm-lavabo-corrected.png`; 1,368,663 bytes; SHA-256 `29770604e7935e59b81100f52d78c6350c567970e64c4c39245141067742361a`
 - Purpose: corrected Low Mass Lavabo service
 - Correction: Second pours water over the priest's extended fingers into the
   bowl while First presents the towel
@@ -141,7 +149,7 @@ a human illustrator. No entry claims imitation of a named living artist.
 - Color mode as received: 8-bit sRGB; visually monochrome on white
 - Repository normalization: received file retained
 - SHA-256:
-  `29770604e7935e59b81100f52d78c6350c567970e64c4c39245141067742361a`
+  `319783d74051ffe832605cc17a902b43cc6fba548092b82d37a8ee2688a7e5ec`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: priest and acolyte role and object capsules
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
@@ -262,19 +270,29 @@ than page numbers because pagination may change.
 
 - Logical ID: `ASG-ART-009`
 - File:
-  `shared/artwork/pencil/ASG-ART-009-mc-gospel-formation-corrected.png`
-- Purpose: corrected Missa Cantata Gospel-side formation for MC-023--025
-- Correction: the priest now stands at the Gospel-side altar book and the
-  thurifer is placed outward from the central ministers
-- Production: AI-generated monochrome graphite correction of `ASG-ART-007`
-- Generator: OpenAI image generation tool
-- Generated: 2026-07-27
-- Pixel dimensions: 1875 by 839
-- Repository normalization: stripped 8-bit grayscale
+  `shared/artwork/pencil/ASG-ART-009-mc-gospel-formation-corrected-v3-alpha.png`
+- Purpose: Missa Cantata incense-omitted Gospel-side formation for
+  MC-023--025
+- Depicted state: priest at the Gospel-side altar book with A1 and A2
+  stationary at their flanking candle stations. MC and conditional TH remain
+  textually accounted for but are intentionally outside this `INC-` panel.
+- Production: middle panel cropped from a project-created AI-generated
+  monochrome graphite sheet. The tracked derivative converts the received RGB
+  checkerboard field to true grayscale alpha by inverse luma, crops the
+  transparent perimeter, adds an 18-pixel transparent inset, and strips
+  metadata without changing the interior drawing.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-28
+- Received source: untracked 1024-by-1536 three-panel generation output
+  supplied for this correction; source bytes are not retained in the
+  repository
+- Normalized dimensions, mode, and size: 1060 by 548; 8-bit grayscale-alpha
+  PNG; 267,012 bytes
 - SHA-256:
-  `74d68f75a07bbb5e67077460f3b8c6f300e78604d72b21fd48a78148deba09b3`
+  `145577d05482c080baee34cd41503ad387369cb713f6d60d9b462d089da46c04`
 - Baked-in text, arrows, or numerals: none
-- TeX overlays: A1, priest, MC, A2, and TH role capsules
+- TeX overlays: A1, priest, and A2 role capsules; adjacent prose restores MC
+  and TH for the incense route rather than inventing unseen figures
 - Consumers: `02-missa-cantata`
 - Rights state: project-created AI illustration; no known third-party source asset was
   incorporated; distributed under repository terms only to the extent applicable rights exist
@@ -285,7 +303,9 @@ than page numbers because pagination may change.
 
 - Logical ID: `ASG-ART-010`
 - File:
-  `shared/artwork/pencil/ASG-ART-010-so-gospel-station-corrected.png`
+  `shared/artwork/pencil/ASG-ART-010-so-gospel-station-corrected-v2-alpha.png`
+- Boundary-safe successor: deterministic inverse-luma opacity with alpha at or below 20/255 set to zero, 20/255--40/255 tapered by cubic smoothstep, and alpha at or above 40/255 unchanged; no crop, resize, geometry, or semantic-content change
+- Retained precursor: `ASG-ART-010-so-gospel-station-corrected.png`; 633,943 bytes; SHA-256 `e89027d23c4c0b616dfff758f279906e83d40485a2c029c4aac5875f640ae8c5`
 - Purpose: corrected Solemn Mass Gospel station for SO-021--023
 - Correction: SD visibly supports the Gospel book by hand for D; the
   erroneous lectern shown in the rejected precursor is absent
@@ -295,7 +315,7 @@ than page numbers because pagination may change.
 - Pixel dimensions: 1870 by 841
 - Repository normalization: stripped 8-bit grayscale
 - SHA-256:
-  `e89027d23c4c0b616dfff758f279906e83d40485a2c029c4aac5875f640ae8c5`
+  `5dc6af9a05469d252bf1238c6f77888bce5c73742e5d39d9c2c0db8ba1b6e649`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: A1, SD, D, MC, A2, and TH role capsules
 - Consumers: `03-solemn-mass`
@@ -316,7 +336,7 @@ the larger received rasters.
 ## ASG-ART-011
 
 - Logical ID: `ASG-ART-011`
-- File: `shared/artwork/pencil/ASG-ART-011-lm-normal-places.png`
+- File: `shared/artwork/pencil/ASG-ART-011-lm-normal-places-v2-alpha.png`
 - Purpose and depicted state: Low Mass normal places; priest centered at the
   altar, with First and Second Acolytes kneeling at the outer stations
 - Production: AI-generated monochrome graphite illustration from a
@@ -327,10 +347,10 @@ the larger received rasters.
   generation request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 1200 by 500; 8-bit grayscale PNG;
-  208,624 bytes
+- Normalized dimensions, mode, and size: 1200 by 500; 8-bit grayscale-alpha PNG;
+  131,712 bytes
 - SHA-256:
-  `3890ce1db72703c0a9efaaa4cfc59a78417b977a13694554f251c1ea30da4e47`
+  `2ef92d6d1238a22b5231c59f58f31bc7dddc65c612be235172cbc8cefbdd759c`
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
@@ -343,66 +363,77 @@ the larger received rasters.
 ## ASG-ART-012
 
 - Logical ID: `ASG-ART-012`
-- File: `shared/artwork/pencil/ASG-ART-012-lm-gospel-stations.png`
-- Purpose and depicted state: Low Mass Gospel stations; priest at the
-  picture-left Gospel-side Missal, First kneeling near the book, and Second
-  kneeling farther outward at picture-right
-- Production: AI-generated monochrome graphite illustration using
-  project-created `ASG-ART-001` as the style reference
-- Known prompt summary: retain the established frontal altar and graphite
-  grammar; put the priest at the picture-left Gospel-side book, First kneeling
-  near him, and Second at the outer right station; include no text. This is a
-  summary of the generation request, not a preserved verbatim prompt.
+- File: `shared/artwork/pencil/ASG-ART-012-lm-gospel-stations-v3-alpha.png`
+- Purpose and depicted state: Low Mass principal Gospel after the title
+  response and triple sign; priest remains at the picture-left Gospel-side
+  Missal, Second stands picture-left, and First has returned to the
+  picture-right normal place
+- Production: top panel cropped from a project-created AI-generated monochrome
+  graphite sheet. The tracked derivative converts the received RGB
+  checkerboard field to true grayscale alpha by inverse luma, crops the
+  transparent perimeter, adds an 18-pixel transparent inset, and strips
+  metadata without changing the interior drawing.
 - Generator and date: built-in OpenAI image generation (model and version not
-  exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 1110 by 500; 8-bit grayscale PNG;
-  187,056 bytes
+  exposed), 2026-07-28
+- Received source: untracked 1024-by-1536 three-panel generation output
+  supplied for this correction; source bytes are not retained in the
+  repository
+- Normalized dimensions, mode, and size: 1060 by 548; 8-bit grayscale-alpha
+  PNG; 262,893 bytes
 - SHA-256:
-  `0696513f5ad8349f00c65ef2faafd18debb5b24bd51bb209311e812f1f309941`
+  `ee54e8e710458c265dff8a51480bde53846acfc89c8810831dc4771fd200b66e`
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
-- Rights state: project-created AI illustration; the only supplied reference
-  was project-created `ASG-ART-001`; distributed under repository terms only
-  to the extent applicable rights exist
-- Review state: generating-agent and integrated every-page screen inspection
-  completed through the exact installed child/trainer PDFs of 2026-07-28;
-  page-12 TeX actor overlays were corrected and inspected at full size without
-  changing this raster; paired-use, print-size, photocopy, human artwork,
-  independent ceremonial, rights, priestly, and ecclesiastical review remain
-  pending
+- Rights state: project-created AI illustration; no third-party reference
+  image was supplied or is known to have been incorporated; distributed under
+  repository terms only to the extent applicable rights exist
+- Review state: source-sheet and normalized-asset inspection completed
+  2026-07-28; paired rendered review remains pending
 
 ## ASG-ART-013
 
 - Logical ID: `ASG-ART-013`
-- File: `shared/artwork/pencil/ASG-ART-013-lm-offertory-cruets.png`
-- Purpose and depicted state: Low Mass Offertory cruets; priest at the
-  Epistle side, First presenting upright wine and Second presenting distinct
-  upright water, with neither server pouring
-- Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief
-- Known prompt summary: show exactly two servers presenting visibly distinct
-  wine and water cruets to the priest at the Epistle side, both upright and
-  with no pouring, text, or extraneous object. This is a summary of the
+- File: `shared/artwork/pencil/ASG-ART-013-lm-offertory-cruets-v3-alpha.png`
+- Retained precursor:
+  `shared/artwork/pencil/ASG-ART-013-lm-offertory-cruets-v2-alpha.png`;
+  1250 by 500; 238,167 bytes; SHA-256
+  `1381b0c8b09c198a1bdab06eb1f19a911c69402c2e478e177788db045fe30a14`
+- Purpose and depicted state: four-part Low Mass Offertory demonstration:
+  kiss the wine-cruet handle, present wine, kiss the water-cruet handle after
+  the blessing, and present water. The drawing contains no return-kiss panel.
+- Production: four-panel AI-generated monochrome graphite sheet from a
+  project-created structured scene brief. The received RGB checkerboard was
+  converted deterministically to true grayscale alpha by inverse luma, with
+  opacity at or below 20/255 set to zero; the transparent perimeter was
+  cropped, an 18-pixel transparent inset added, and metadata stripped.
+- Known prompt summary: show the Low Mass wine and water cruet sequence as
+  four clear actions, including kisses at the base of the handles and safe
+  handle-first presentations, without baked text. This is a summary of the
   generation request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
-  exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 1250 by 500; 8-bit grayscale PNG;
-  266,684 bytes
+  exposed), 2026-07-28
+- Received source: untracked 1774-by-887 RGB generation sheet supplied for
+  this correction; source bytes are not retained in the repository
+- Normalized dimensions, mode, and size: 1796 by 912; 8-bit grayscale-alpha
+  PNG; 471,300 bytes
 - SHA-256:
-  `d0fce5b72f305d3628146fc839fdad9361d9d8f43fcf4ac90055c05c7d8012a0`
+  `8cb36a1f4f6167b959cc60ed6ba58d14d6e0e7e9dbd626eced3b0b81e73a6019`
 - Baked-in text, arrows, or numerals: none observed
+- TeX overlays: four numbered action captions; source meaning and `MODEL`
+  qualification remain in adjacent prose
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating agent's visual inspection completed 2026-07-27;
-  integrated every-page, paired-use, print-size, photocopy, and independent
-  ceremonial review remain pending
+- Review state: source-sheet, normalized-asset, and paired every-page rendered
+  inspection completed 2026-07-28; physical print, photocopy, human artwork,
+  independent ceremonial, rights, and ecclesiastical-suitability reviews
+  remain pending
 
 ## ASG-ART-014
 
 - Logical ID: `ASG-ART-014`
-- File: `shared/artwork/pencil/ASG-ART-014-lm-bell-station.png`
+- File: `shared/artwork/pencil/ASG-ART-014-lm-bell-station-v2-alpha.png`
 - Purpose and depicted state: Low Mass bell station; priest centered at the
   altar, both acolytes kneeling at their normal places, and one bell cluster
   before First at picture-right
@@ -417,9 +448,9 @@ the larger received rasters.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
 - Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha
-  PNG; 182,362 bytes
+  PNG; 112,739 bytes
 - SHA-256:
-  `040842670a2f09bd98dcc76d77c8c5d5b7d4315b571912ad31373cec12afb0d8`
+  `1c5f904587cecadea10e26f9ebbc63e2152ce717f21ef1619d0cc1b7f5a8850a`
 - Boundary treatment: transparent feather at the outer image perimeter; the
   complete altar, figures, bell, and interior scene remain opaque and
   unchanged
@@ -438,7 +469,7 @@ the larger received rasters.
 ## ASG-ART-015
 
 - Logical ID: `ASG-ART-015`
-- File: `shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png`
+- File: `shared/artwork/pencil/ASG-ART-015-lm-elevation-stations-v2-alpha.png`
 - Purpose and depicted state: Low Mass elevation; priest elevating the Host,
   both kneeling acolytes holding the lower chasuble edges, and First's bell
   accessible
@@ -453,9 +484,9 @@ the larger received rasters.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
 - Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha
-  PNG; 252,393 bytes
+  PNG; 181,784 bytes
 - SHA-256:
-  `3e7bc1bd6be0daee995952adb90bfcaf9ab7df8701800283a1e85263ff733759`
+  `1980896767276a933ab70df323acaf6e8a18125faea806cebeee0ffde3a2f158`
 - Boundary treatment: transparent feather at the outer image perimeter; the
   complete architectural frame, altar, figures, and interior scene remain
   opaque and unchanged
@@ -472,7 +503,7 @@ the larger received rasters.
 ## ASG-ART-016
 
 - Logical ID: `ASG-ART-016`
-- File: `shared/artwork/pencil/ASG-ART-016-lm-communion-plate.png`
+- File: `shared/artwork/pencil/ASG-ART-016-lm-communion-plate-v2-alpha.png`
 - Purpose and depicted state: Low Mass faithful-Communion route; First
   follows the priest at the rail with the Communion plate while Second remains
   at his altar station
@@ -487,9 +518,9 @@ the larger received rasters.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
 - Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha
-  PNG; 264,990 bytes
+  PNG; 231,807 bytes
 - SHA-256:
-  `dbb33c03eb3fcbc6b694aef10cbc858079aab11835913f8e5a33487ea64b9af5`
+  `0206df1fbff089e3f8d796211a60e80f788cc178caaad4d1a3dd70f4b5b5eb08`
 - Boundary treatment: transparent feather at the outer image perimeter; all
   figures, rail, altar, and interior scene pixels remain unchanged
 - Baked-in text, arrows, or numerals: none observed
@@ -501,6 +532,54 @@ the larger received rasters.
   transparent-perimeter and integrated every-page screen review completed
   through both exact child/trainer PDFs on 2026-07-28; physical print,
   photocopy, human artwork, and independent ceremonial review remain pending
+
+## ASG-ART-026
+
+- Logical ID: `ASG-ART-026`
+- File:
+  `shared/artwork/pencil/ASG-ART-026-communion-paten-overhead-v1-alpha.png`
+- Purpose and depicted state: close study of the Communion-paten relationship
+  beneath a communicant, with a large frontal detail and a subordinate
+  side-profile safety inset. TeX supplies every instructional label.
+- Production: AI-generated monochrome pencil illustration from a
+  project-created brief. The tracked derivative converts the received RGB
+  checkerboard field to true grayscale alpha by inverse luma: opacity at or
+  below 20/255 is zero, 20/255--40/255 is tapered by cubic smoothstep, and
+  opacity at or above 40/255 is retained. It then crops transparent perimeter
+  material, adds an 18-pixel transparent feather-safe inset, strips metadata,
+  and preserves the generated interior drawing.
+- Known prompt summary: provide a close instructional view of a priest's hand,
+  communicant, server-held Communion paten, and a separate side-profile inset
+  showing the paten's position beneath the communicant; use restrained
+  monochrome pencil and include no text, arrows, numerals, or diagram labels.
+  This is a summary of the generation request, not a preserved verbatim
+  prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-28
+- Received source: untracked generation output supplied for this asset; 1536
+  by 1024; 8-bit RGB PNG; source bytes are not retained in the repository
+- Normalized dimensions, mode, and size: 1389 by 1028; 8-bit
+  grayscale-alpha PNG; 499,734 bytes
+- SHA-256:
+  `88002142064859b5a605b8a7bedcdc50b24a3059979e55c4f30288f2de73acc6`
+- Baked-in text, arrows, or numerals: none observed
+- TeX overlays: priest's-hand and communicant labels, level-plate label, and
+  a side-profile safety label stating that the plate is positioned to receive
+  the Host or fragments if they fall
+- Source and claim limits: generated morphology is not ceremonial evidence;
+  the image teaches relative position only. It does not guarantee interception
+  of the Host or fragments, prescribe a universal hand or grip, fix a side of
+  approach, or replace supervised rehearsal and local direction.
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`,
+  `02-missa-cantata`, `03-solemn-mass`
+- Rights state: project-created AI illustration; no third-party reference
+  image was supplied or is known to have been incorporated; distributed under
+  repository terms only to the extent applicable rights exist
+- Review state: generating-agent source and normalized-asset inspection
+  completed 2026-07-28; integrated full-page and bounded every-page screen
+  review completed through all four direct consumers on 2026-07-28; physical
+  print, photocopy, human artwork, and independent ceremonial review remain
+  pending
 
 ## ASG-ART-017
 
@@ -588,7 +667,7 @@ the larger received rasters.
 ## ASG-ART-019
 
 - Logical ID: `ASG-ART-019`
-- File: `shared/artwork/pencil/ASG-ART-019-lm-missal-return.png`
+- File: `shared/artwork/pencil/ASG-ART-019-lm-missal-return-v2-alpha.png`
 - Purpose and depicted state: Low Mass Missal return; Second carries the
   Missal and stand from picture-left toward picture-right, First remains
   kneeling clear, and the priest faces the altar
@@ -600,10 +679,10 @@ the larger received rasters.
   the generation request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
-  157,709 bytes
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha PNG;
+  126,056 bytes
 - SHA-256:
-  `73ce5ee7b6cc94ad0b77ae61e58be00ad7695c566b117b3fb6c8f2044fe5e046`
+  `f1e3670c3ef015c7b4d80f096f2cd6c276ad94b165c3be5a0a9ab39d7cc5d65d`
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
@@ -616,7 +695,7 @@ the larger received rasters.
 ## ASG-ART-020
 
 - Logical ID: `ASG-ART-020`
-- File: `shared/artwork/pencil/ASG-ART-020-lm-last-gospel.png`
+- File: `shared/artwork/pencil/ASG-ART-020-lm-last-gospel-v2-alpha.png`
 - Purpose and depicted state: Low Mass Last Gospel; priest and Missal at
   picture-left, First facing the priest, Second facing the altar, and the
   covered chalice centered
@@ -628,58 +707,77 @@ the larger received rasters.
   summary of the generation request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
-  169,803 bytes
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha PNG;
+  158,591 bytes
 - SHA-256:
-  `956fb1cddbade9b3cbea321c2db23e5313b09b6085e900c99d3760ddb8d55a8d`
+  `a460827392f175400f3d0671f370cf9a08e20754cbac9c9dfbc6ea837ab300e5`
 - Baked-in text, arrows, or numerals: none observed
-- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Consumers: none; replaced in both Low-Mass consumers by a TeX-native scene
+  that keeps the Missal visibly at the Epistle side
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating agent's visual inspection completed 2026-07-27;
-  integrated every-page, paired-use, print-size, photocopy, and independent
-  ceremonial review remain pending
+- Review state: rejected for continued publication use on 2026-07-28 because
+  the raster visibly places the Missal at picture-left during the ordinary
+  Last Gospel, inventing a move not present in LM-039--LM-042
+
+### Rejected 2026-07-28 Last-Gospel panel
+
+The bottom panel of the supplied three-panel Gospel correction sheet was
+rejected and is not retained as an asset. Although its two servers have the
+required picture-right/picture-left orientations and the covered chalice is
+centered, it visibly supplies an open book at the picture-left Gospel side.
+That would invent a second post-ablution Missal transfer in the ordinary
+branch: LM-039 has already returned the Missal to the Epistle side, and LM-042
+keeps it there unless a separately checked proper-Gospel sheet directs a move.
 
 ## ASG-ART-021
 
 - Logical ID: `ASG-ART-021`
-- File: `shared/artwork/pencil/ASG-ART-021-lm-recession.png`
-- Purpose and depicted state: Low Mass recessional; two acolytes lead down
-  the nave while the priest follows carrying the covered chalice
-- Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief; the tracked derivative adds a
-  deterministic 12-pixel inset, 10-pixel Gaussian edge-alpha feather while
-  preserving every grayscale scene pixel
+- File: `shared/artwork/pencil/ASG-ART-021-lm-recession-v3-alpha.png`
+- Superseded file:
+  `shared/artwork/pencil/ASG-ART-021-lm-recession-v2-alpha.png`; 750 by 500;
+  SHA-256 `7520da0c129366789a6c87e301bdc8100e5ab98befa437db4939c3aaafb6611e`
+- Purpose and depicted state: Low Mass recessional by the direct sacristy
+  route; First leads Second in a single file toward the open sacristy door
+  while the priest follows carrying the covered chalice; the altar remains
+  behind the procession
+- Production: AI-generated monochrome graphite replacement from a
+  project-created structured scene brief
 - Known prompt summary: show exactly two servers leading the recession down
   the nave with the priest behind them carrying the covered chalice, in
   monochrome graphite and without text. This is a summary of the generation
   request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
-  exposed), 2026-07-27
+  exposed), 2026-07-28
+- Received output: 1536 by 1024, 8-bit sRGB PNG; 2,691,722 bytes; SHA-256
+  `2b930e12cb1bae17dc14e75df5f15e18a199ac8f8dd0fcfb41d6d3477405a85d`
+- Repository normalization: proportional resize to 500 pixels high,
+  conversion to grayscale, metadata stripping, and deterministic
+  inverse-luma opacity: alpha at or below 20/255 is zero, 20/255--40/255 is
+  tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged
 - Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha
-  PNG; 297,248 bytes
+  PNG; 534,056 bytes
 - SHA-256:
-  `0cb1f6a95d345668eb31c7b9d3f662172a4fd9f078d355a54092dbded07b8ba0`
-- Boundary treatment: transparent feather at the outer image perimeter; all
-  figures, covered chalice, nave path, and interior scene pixels remain
-  unchanged
+  `3bb9edd0bc350fac17aeb90d44ffe23e2c71a7cc62dc52f3a57f3c11b328bd28`
+- Boundary treatment: inverse-luma transparency removes the generated
+  checker-pattern ground while preserving the grayscale drawing
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating-agent inspection completed 2026-07-27;
-  transparent-perimeter and integrated every-page screen review completed
-  through both exact child/trainer PDFs on 2026-07-28; physical print,
-  photocopy, human artwork, and independent ceremonial review remain pending
+- Review state: standalone ceremonial and normalized-raster inspection passed
+  2026-07-28 for the exact actor and object count, direct altar-to-sacristy
+  direction, single-file order, covered chalice, and prohibited-content
+  absence; integrated review is recorded in the production manifest
 
 ## Active-consumer and review audit
 
 The current Low-Mass child and trainer sources consume fifteen assets:
 `ASG-ART-001`, `ASG-ART-002`, `ASG-ART-005`, `ASG-ART-006`, and
 `ASG-ART-011`--`ASG-ART-021`. The Missa Cantata guide consumes
-`ASG-ART-009`; the Solemn Mass guide consumes `ASG-ART-010`. Assets
+`ASG-ART-009`, `ASG-ART-022`, and `ASG-ART-024`; the Solemn Mass guide consumes `ASG-ART-010`, `ASG-ART-023`, and `ASG-ART-025`. Assets
 `ASG-ART-003`, `ASG-ART-004`, `ASG-ART-007`, and `ASG-ART-008` are rejected
 precursors retained only for provenance and have no publication consumer.
 
@@ -687,7 +785,7 @@ The four replacement files were inspected as standalone scenes on 2026-07-27
 for the recorded actor count, posture, object state, absence of embedded
 semantic text, and broad continuity with the later Low-Mass graphite grammar.
 That generating-agent inspection is not an integrated page review or an
-independent ceremonial review. All seventeen active publication assets still
+independent ceremonial review. All twenty-one active publication assets still
 require the review state recorded in their individual rows; no aggregate
 build, catalog, installation, or release record may silently advance those
 asset-level states.
@@ -772,7 +870,7 @@ evidence or independent artwork review.
 
 - Logical ID: `ASG-ART-022`
 - File:
-  `shared/artwork/pencil/ASG-ART-022-mc-entrance-handoffs.png`
+  `shared/artwork/pencil/ASG-ART-022-mc-entrance-handoffs-v2-alpha.png`
 - Purpose and depicted state: two Missa Cantata entrance moments controlled
   by MC-004 and MC-006--007: the adult gives one lighted candle to each of A1
   and A2 while MC remains free-handed and the priest retains the biretta; after
@@ -797,10 +895,10 @@ evidence or independent artwork review.
 - Received corrected output: 1692 by 930, 8-bit sRGB PNG
 - Repository normalization: proportional resize to 500 pixels high,
   conversion to 8-bit grayscale, and metadata stripping with ImageMagick
-- Normalized dimensions, mode, and size: 910 by 500; 8-bit grayscale PNG;
-  205,274 bytes
+- Normalized dimensions, mode, and size: 910 by 500; 8-bit grayscale-alpha PNG;
+  144,428 bytes
 - SHA-256:
-  `b73ffc916ec2e512e29019f37a53e00bebf74ef72b0a923d5045f711b5b05101`
+  `3a508d0f54514cd3a244f022e495fefb282fde84d586e98ff6382f1a709f474a`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: ADULT, P, MC, A1, and A2 role capsules; source-bound caption
   distinguishes the two handoffs and preserves local procession, reverence,
@@ -818,7 +916,7 @@ evidence or independent artwork review.
 
 - Logical ID: `ASG-ART-023`
 - File:
-  `shared/artwork/pencil/ASG-ART-023-so-entrance-handoffs.png`
+  `shared/artwork/pencil/ASG-ART-023-so-entrance-handoffs-v2-alpha.png`
 - Purpose and depicted state: two Solemn-Mass entrance moments controlled by
   SO-003 and SO-007: the adult gives one lighted candle to each of A1 and A2;
   after the sacred ministers uncover, bareheaded C, D, and SD each give one
@@ -847,10 +945,10 @@ evidence or independent artwork review.
   `63e7fd70e2389477edf0958487ebe7f342af168cec7e9189a91c6fb13a1fd8e6`
 - Repository normalization: proportional resize to 500 pixels high,
   conversion to 8-bit grayscale, and metadata stripping with ImageMagick
-- Normalized dimensions, mode, and size: 1000 by 500; 8-bit grayscale PNG;
-  204,600 bytes
+- Normalized dimensions, mode, and size: 1000 by 500; 8-bit grayscale-alpha PNG;
+  165,516 bytes
 - SHA-256:
-  `f21d91073fbfbb2684b475338af256f4b9122210828342ab67c1883d0dd893c8`
+  `f3d1c80eefa28d1f94408d4689a6ca134650641bdd7a19563f43526c32a53e2e`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: ADULT, A1, A2, C, D, SD, and MC role capsules; source-bound
   caption distinguishes the two handoffs and preserves local procession,
@@ -868,7 +966,7 @@ evidence or independent artwork review.
 
 - Logical ID: `ASG-ART-024`
 - File:
-  `shared/artwork/pencil/ASG-ART-024-mc-elevation-tableau.png`
+  `shared/artwork/pencil/ASG-ART-024-mc-elevation-tableau-v2-alpha.png`
 - Purpose and depicted state: the stable Missa Cantata elevation-service
   state controlled by MC-037--MC-041: T1--T4 kneel with four upright lighted
   torches while A1 kneels separately with the low handbell and its pad
@@ -889,10 +987,10 @@ evidence or independent artwork review.
   `4f75af0938b32ca5089dc74979673cc04b020c8b982a0dd714441794e77c6fb0`
 - Repository normalization: proportional resize to 500 pixels high,
   conversion to 8-bit grayscale, and metadata stripping with ImageMagick
-- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
-  152,161 bytes
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha PNG;
+  102,218 bytes
 - SHA-256:
-  `e1396b6260537eac6dbf95fc459a941fbd2d39c406829abc00991ab1acfc1ccf`
+  `fb98a1128d5c2be03263e9969599a8d887aaa266f48635bf86908ecf8a4a6d48`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: T1--T4 and A1 role capsules; source-bound caption limits the
   scene to MC-037--MC-041, controls the bell's return to its pad, omits the
@@ -912,15 +1010,18 @@ evidence or independent artwork review.
 
 - Logical ID: `ASG-ART-025`
 - File:
-  `shared/artwork/pencil/ASG-ART-025-so-gospel-departure.png`
+  `shared/artwork/pencil/ASG-ART-025-so-gospel-departure-v3-alpha.png`
+- Superseded file:
+  `shared/artwork/pencil/ASG-ART-025-so-gospel-departure-v2-alpha.png`; 859 by
+  500; SHA-256
+  `21e8348b603750270da352d602573158a0554a2682c5738b79465a1ef901343c`
 - Purpose and depicted state: the Solemn-Mass Gospel departure controlled by
   SO-020--021: MC leads; Th follows with the closed, still thurible; A1 and A2
   follow together with two upright lighted candles; D and SD follow with the
   closed Gospel book. Bb is absent after returning the boat and remaining at
   base.
-- Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief; no source image was supplied and no
-  correction pass was required.
+- Production: AI-generated monochrome graphite replacement from a
+  project-created structured scene brief; no source image was supplied.
 - Prompt record: the request specified exactly six figures in the SO-021
   model order, exactly one closed and still thurible, exactly two lighted
   candlesticks, and exactly one closed Gospel book. It required MC and SD to
@@ -930,15 +1031,17 @@ evidence or independent artwork review.
   measurements, labels, symbols, borders, color, and additional people or
   objects.
 - Generator and date: built-in OpenAI image generation (model and version not
-  exposed), 2026-07-27
-- Received output: 1750 by 1024, 8-bit sRGB PNG; SHA-256
-  `c591c8c331eedf40200cffb4e9c4a9a41b3d2c3d5a964f86f22385e50a571062`
+  exposed), 2026-07-28
+- Received output: 1823 by 863, 8-bit sRGB PNG; 1,738,949 bytes; SHA-256
+  `24919acff49681a62fc77b57ab1ea7170aca8a3d661791442d1c8d5af40b5bb0`
 - Repository normalization: proportional resize to 500 pixels high,
-  conversion to 8-bit grayscale, and metadata stripping with ImageMagick
-- Normalized dimensions, mode, and size: 859 by 500; 8-bit grayscale PNG;
-  194,390 bytes
+  conversion to grayscale, metadata stripping, and deterministic inverse-luma
+  opacity: alpha at or below 20/255 is zero, 20/255--40/255 is tapered by
+  cubic smoothstep, and alpha at or above 40/255 is unchanged
+- Normalized dimensions, mode, and size: 1056 by 500; 8-bit grayscale-alpha
+  PNG; 580,093 bytes
 - SHA-256:
-  `e3c13f4b2f594e7de777d0eb5286f386b41089a9688653b6b18403c0c21b9bfd`
+  `db7a6b72c3a0be123ea695a6bb050971e4cf1b1ac8cdf1dec40a0eda3a16f1be`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: MC, TH, A1, A2, D, and SD role capsules; source-bound caption
   states Bb's base state and leaves route, distances, architecture, and the
@@ -947,8 +1050,120 @@ evidence or independent artwork review.
 - Rights state: project-created AI illustration; no third-party source asset
   was incorporated; distributed under repository terms only to the extent
   applicable rights exist
-- Review state: standalone scene inspection passed 2026-07-27 for exact actor
+- Review state: standalone scene inspection passed 2026-07-28 for exact actor
   and object counts, formation order, closed still thurible, upright candles,
   closed book, white-page pencil treatment, and prohibited-content absence.
   Integrated full-size and every-page screen review passed 2026-07-27; no
   physical print or external approval status is claimed.
+
+## Boundary-safe active-asset audit — 2026-07-28
+
+The exact active universe is twenty-two logical assets. Nineteen received new
+boundary-safe successors; `ASG-ART-017` and `ASG-ART-018` already had true
+transparent backgrounds and retain their checked files; new `ASG-ART-026`
+entered already normalized as grayscale alpha. The four rejected
+logical precursors (`ASG-ART-003`, `ASG-ART-004`, `ASG-ART-007`, and
+`ASG-ART-008`) were not transformed, rebound, or otherwise altered.
+
+Every successor below uses the deterministic inverse-luma opacity rule stated
+in its logical record: alpha at or below 20/255 is zero, 20/255--40/255 is
+tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged. The
+predecessor canvas and geometry are retained exactly. No image-generation call
+or prompt was used for these derivatives.
+
+| Logical asset | Retained precursor | Active successor | Geometry | Bytes | SHA-256 |
+|---|---|---|---:|---:|---|
+| `ASG-ART-001` | `ASG-ART-001-lm-start.png` | `ASG-ART-001-lm-start-v2-alpha.png` | 1774 x 887 | 302,365 | `59f6e810b170b78f7b2036d14d4d84f88dc972d9bab23c54228620d77d7f34ce` |
+| `ASG-ART-002` | `ASG-ART-002-lm-foot-kneel.png` | `ASG-ART-002-lm-foot-kneel-v2-alpha.png` | 1939 x 811 | 271,249 | `0477b22280621e488c4330b4e03788301cf9b8caf3489551f498f8aaeb171416` |
+| `ASG-ART-005` | `ASG-ART-005-lm-missal-move-corrected.png` | `ASG-ART-005-lm-missal-move-corrected-v2-alpha.png` | 1942 x 809 | 220,095 | `ffa29eab880d128422f2a9a717da495e0396b17c761a97d0df0d2bb06c0308c0` |
+| `ASG-ART-006` | `ASG-ART-006-lm-lavabo-corrected.png` | `ASG-ART-006-lm-lavabo-corrected-v2-alpha.png` | 1832 x 859 | 315,375 | `319783d74051ffe832605cc17a902b43cc6fba548092b82d37a8ee2688a7e5ec` |
+| `ASG-ART-009` | `ASG-ART-009-mc-gospel-formation-corrected.png` | `ASG-ART-009-mc-gospel-formation-corrected-v2-alpha.png` | 1875 x 839 | 296,281 | `c2e88733b262e885927a83d0ac341921f5ad2d42fff8a24f20eecc3c9a499bb0` |
+| `ASG-ART-010` | `ASG-ART-010-so-gospel-station-corrected.png` | `ASG-ART-010-so-gospel-station-corrected-v2-alpha.png` | 1870 x 841 | 372,173 | `5dc6af9a05469d252bf1238c6f77888bce5c73742e5d39d9c2c0db8ba1b6e649` |
+| `ASG-ART-011` | `ASG-ART-011-lm-normal-places.png` | `ASG-ART-011-lm-normal-places-v2-alpha.png` | 1200 x 500 | 131,712 | `2ef92d6d1238a22b5231c59f58f31bc7dddc65c612be235172cbc8cefbdd759c` |
+| `ASG-ART-012` | `ASG-ART-012-lm-gospel-stations.png` | `ASG-ART-012-lm-gospel-stations-v2-alpha.png` | 1110 x 500 | 120,765 | `d3610c53237a2ac71dbbb0ed2ed73904f8c2367ab521e7540d13064e06e0dbd1` |
+| `ASG-ART-014` | `ASG-ART-014-lm-bell-station.png` | `ASG-ART-014-lm-bell-station-v2-alpha.png` | 750 x 500 | 112,739 | `1c5f904587cecadea10e26f9ebbc63e2152ce717f21ef1619d0cc1b7f5a8850a` |
+| `ASG-ART-015` | `ASG-ART-015-lm-elevation-stations.png` | `ASG-ART-015-lm-elevation-stations-v2-alpha.png` | 750 x 500 | 181,784 | `1980896767276a933ab70df323acaf6e8a18125faea806cebeee0ffde3a2f158` |
+| `ASG-ART-016` | `ASG-ART-016-lm-communion-plate.png` | `ASG-ART-016-lm-communion-plate-v2-alpha.png` | 750 x 500 | 231,807 | `0206df1fbff089e3f8d796211a60e80f788cc178caaad4d1a3dd70f4b5b5eb08` |
+| `ASG-ART-019` | `ASG-ART-019-lm-missal-return.png` | `ASG-ART-019-lm-missal-return-v2-alpha.png` | 750 x 500 | 126,056 | `f1e3670c3ef015c7b4d80f096f2cd6c276ad94b165c3be5a0a9ab39d7cc5d65d` |
+| `ASG-ART-020` | `ASG-ART-020-lm-last-gospel.png` | `ASG-ART-020-lm-last-gospel-v2-alpha.png` | 750 x 500 | 158,591 | `a460827392f175400f3d0671f370cf9a08e20754cbac9c9dfbc6ea837ab300e5` |
+| `ASG-ART-021` | `ASG-ART-021-lm-recession.png` | `ASG-ART-021-lm-recession-v2-alpha.png` | 750 x 500 | 286,996 | `7520da0c129366789a6c87e301bdc8100e5ab98befa437db4939c3aaafb6611e` |
+| `ASG-ART-022` | `ASG-ART-022-mc-entrance-handoffs.png` | `ASG-ART-022-mc-entrance-handoffs-v2-alpha.png` | 910 x 500 | 144,428 | `3a508d0f54514cd3a244f022e495fefb282fde84d586e98ff6382f1a709f474a` |
+| `ASG-ART-023` | `ASG-ART-023-so-entrance-handoffs.png` | `ASG-ART-023-so-entrance-handoffs-v2-alpha.png` | 1000 x 500 | 165,516 | `f3d1c80eefa28d1f94408d4689a6ca134650641bdd7a19563f43526c32a53e2e` |
+| `ASG-ART-024` | `ASG-ART-024-mc-elevation-tableau.png` | `ASG-ART-024-mc-elevation-tableau-v2-alpha.png` | 750 x 500 | 102,218 | `fb98a1128d5c2be03263e9969599a8d887aaa266f48635bf86908ecf8a4a6d48` |
+| `ASG-ART-025` | `ASG-ART-025-so-gospel-departure.png` | `ASG-ART-025-so-gospel-departure-v2-alpha.png` | 859 x 500 | 147,033 | `21e8348b603750270da352d602573158a0554a2682c5738b79465a1ef901343c` |
+| `ASG-ART-026` | untracked generated source | `ASG-ART-026-communion-paten-overhead-v1-alpha.png` | 1389 x 1028 | 499,734 | `88002142064859b5a605b8a7bedcdc50b24a3059979e55c4f30288f2de73acc6` |
+
+`ASG-ART-017-lm-ablution-wine.png` and
+`ASG-ART-018-lm-ablution-fingers-v2.png` remain the other two active files.
+Together with the nineteen boundary-safe successors and new `ASG-ART-026`
+they reconcile the manifest to exactly twenty-two active pencil assets.
+
+### Boundary and consumer review
+
+All nineteen successors were composited at full canvas size over `#f5ecd8`.
+The review found no pale rectangular field, solid-black interior, color
+fringe, newly clipped edge, lost actor, lost object, or lost substantive
+graphite. All 76 successor corners are fully transparent. The conversion of
+the four earlier perimeter-alpha files (`ASG-ART-014`, `ASG-ART-015`,
+`ASG-ART-016`, and `ASG-ART-021`) used their white-flattened visible result as
+the luma controller, preventing transparent-corner RGB residue from becoming
+opaque.
+
+The Low Mass child and trainer guides, Missa Cantata guide, and Solemn Mass
+guide were rebuilt successfully. Bounded full-document review rasters were
+inspected for every affected consumer; the successor scenes retain their TeX
+overlays, actor and object visibility, page placement, and instructional
+legibility without a paper-matte rectangle. This advances only the
+deterministic boundary and integrated screen-review state. Physical print,
+photocopy, human artwork, and independent ceremonial reviews remain as stated
+in the logical records.
+
+## Overhead Lavabo and ablution set — 2026-07-28
+
+The built-in OpenAI image-generation interface produced one 1536 by 1024,
+8-bit RGB graphite composition sheet (received SHA-256
+`b91c264c7f963c82db905f876a82101899d842791ed80ec0e612d55cea7c95fc`).
+No third-party source image was supplied. Four semantically separate panels
+were inspected and cropped. Each crop was converted to 8-bit grayscale-alpha
+by mapping inverse luma to opacity, setting opacity at or below 20/255 to
+zero, tapering 20/255--40/255 by cubic smoothstep, and retaining opacity above
+that threshold. Generated art contains no labels or arrows; TeX owns all
+MODEL and LOCAL qualifications.
+
+The received water-only Lavabo panel was rejected because its water cruet was
+not visually distinct. A targeted built-in image-generation edit corrected
+only that instructional state: one priest, one server holding the basin and
+pouring from one small water cruet, and one server presenting the towel.
+The exact repair prompt was: "Use case: precise-object-edit. Asset type:
+overhead instructional Low Mass ceremonial artwork. Primary request: Correct
+only the picture-left server's service so he visibly holds the basin under the
+priest's extended fingers and pours a small controlled stream of water from
+one small liturgical cruet over those fingers into the basin. Keep the
+picture-right server presenting the open towel. Preserve exactly one priest,
+exactly two servers, the overhead composition, graphite realism, altar and
+steps, vestments, poses, and all other content. Make the cruet, stream,
+priest's fingers, basin, and towel visually distinct and unambiguous. The
+action is water-only: no wine, no chalice, no second cruet. No text, labels,
+arrows, numerals, watermark, extra people, extra vessels, pitcher, or domestic
+glassware. Scene/backdrop: white page with softly feathered pencil boundaries.
+Style/medium: refined monochrome graphite instructional illustration."
+Received repair bytes were 1345 by 1170, 8-bit RGB PNG, 2,597,085 bytes,
+SHA-256 `6d7afb50ed7a72ef8fa78f9c1f9ec627a81f528eeed4a6b3d9879d161b95fda7`.
+The other three accepted units were deterministic crops of the received
+sheet.
+
+| Logical asset | Active file | Depicted and bounded state | Geometry | Bytes | SHA-256 | Consumers |
+|---|---|---|---:|---:|---|---|
+| `ASG-ART-006` | `shared/artwork/pencil/ASG-ART-006-lm-lavabo-corrected-v3-alpha.png` | Low Mass water-only Lavabo: Second pours water over the priest's fingers into the basin; First presents the towel | 1345 x 1170 | 2,379,050 | `3d2f91c14741d4778925addd07727b8ccde956a9bd1dcf71365e429a902d2aae` | `01-low-mass`; `01-low-mass-trainer-manual` |
+| `ASG-ART-017` | `shared/artwork/pencil/ASG-ART-017-lm-mc-first-ablution-wine-v2-alpha.png` | Low Mass and Missa Cantata first ablution: First/A1 pours wine into the priest-held chalice; Second/A2 waits with water | 700 x 470 | 488,691 | `647c56ac60215c7c2aa64617cac342ff8ec3d073f27e01dc08206527a5cd099e` | `01-low-mass`; `01-low-mass-trainer-manual`; `02-missa-cantata` |
+| `ASG-ART-018` | `shared/artwork/pencil/ASG-ART-018-lm-mc-ablution-fingers-v3-alpha.png` | Low Mass and Missa Cantata finger ablution: First/A1 pours wine and Second/A2 pours water over the priest's fingers into the chalice | 650 x 524 | 463,057 | `1f882b00e791d8494b4def2803caa93abf6ad4263e4ce2686f3405e9076c3dc6` | `01-low-mass`; `01-low-mass-trainer-manual`; `02-missa-cantata` |
+| `ASG-ART-030` | `shared/artwork/pencil/ASG-ART-030-so-subdeacon-ablutions-v1-alpha.png` | Solemn Mass two-state sequence: A1 supplies both cruets; the subdeacon pours the first wine, then wine and water over the celebrant's fingers | 825 x 524 | 699,610 | `1f8ecb82b09a52e341737b6cdc1b1c64a4033da83bb1d20008fd7bfbd083a7d8` | `03-solemn-mass` |
+
+Standalone inspection passed for actor and vessel counts, the accepted
+pouring states, the distinct subdeacon formulation, absence of baked-in text
+and arrows, transparent corners, and feathered subject boundaries. Rights
+state for all four is project-created AI illustration with no known
+third-party source asset incorporated, distributed under repository terms
+only to the extent applicable rights exist. Physical print, photocopy, human
+artwork, independent ceremonial, rights, and ecclesiastical-suitability
+reviews remain pending.

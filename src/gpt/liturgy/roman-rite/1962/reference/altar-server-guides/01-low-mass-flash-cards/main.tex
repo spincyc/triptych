@@ -43,7 +43,10 @@
     {{\fontsize{11.5}{13.5}\selectfont\SpokenCue{#5}}};}
 
 \newcommand{\LowMassQualifiedCue}[2]{%
-  {\bfseries\MakeUppercase{#1}}\par\medskip #2}
+  \parbox[t][1.48in][t]{3.35in}{%
+    #2\par\vfill
+    \rule{\linewidth}{0.35pt}\par\vspace{0.12em}%
+    {\bfseries\MakeUppercase{#1}}}}
 
 \newcommand{\LowMassBackCard}[5]{%
   \LowMassFlashFrame{#1}{#2}{#3 \textperiodcentered\ BOTH}{#4}%

@@ -2,20 +2,30 @@
 \usepackage{titlesec}
 \usepackage{tipa}
 \usepackage{libertinus}
+\usepackage{accsupp}
 
 % The training series keeps Libertinus as its readable working face.  A
 % restrained missal-inflected hierarchy is supplied semantically so headings
 % may use traditional small capitals without turning instructions, IPA, or
 % card-control text into ornament.  The received versicle and response signs
-% are composed because U+2123/U+211F are outside the T1 text encoding.
+% are composed because U+2123/U+211F are outside the T1 text encoding. Keep
+% the marks upright and medium-weight even inside italic or bold dialogue,
+% while ActualText preserves the proper Unicode signs for extraction and
+% assistive technology.
 \newcommand{\MissalDisplay}[1]{{\rmfamily\mdseries\scshape #1}}
 \newcommand{\MissalSeparator}{{\normalfont\textperiodcentered}}
 \newcommand{\VersicleMark}{%
-  \leavevmode\hbox{\rlap{\kern0.16em\raisebox{0.12ex}{%
-    \scalebox{0.85}[1.0]{/}}}V}}
+  \leavevmode\BeginAccSupp{method=hex,unicode,ActualText=2123}%
+  \hbox{{\normalfont\rmfamily\mdseries\upshape
+    \rlap{\kern0.16em\raisebox{0.12ex}{%
+      \scalebox{0.85}[1.0]{/}}}V}}%
+  \EndAccSupp{}}
 \newcommand{\ResponseMark}{%
-  \leavevmode\hbox{\rlap{\kern0.16em\raisebox{0.12ex}{%
-    \scalebox{0.85}[1.0]{/}}}R}}
+  \leavevmode\BeginAccSupp{method=hex,unicode,ActualText=211F}%
+  \hbox{{\normalfont\rmfamily\mdseries\upshape
+    \rlap{\kern0.16em\raisebox{0.12ex}{%
+      \scalebox{0.85}[1.0]{/}}}R}}%
+  \EndAccSupp{}}
 \newcommand{\SpokenCue}[1]{\VersicleMark.\nobreak\enspace #1}
 \newcommand{\SpokenResponse}[1]{\ResponseMark.\nobreak\enspace #1}
 \DeclareUnicodeCharacter{2123}{\VersicleMark}
@@ -280,9 +290,10 @@
 
 \newcommand{\flashfront}[2]{%
   \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,sharp corners,boxrule=0.5pt,left=7pt,right=7pt,top=5pt,bottom=5pt]
-  \flashheader{#1}{Cue}\vfill
+  \flashheader{#1}{Cue}\vspace{0.55em}
   \centering
-  {\normalsize #2\par}\vfill
+  {\normalsize #2\par}
+  \vfill
   \end{tcolorbox}%
 }
 
@@ -302,10 +313,12 @@
 % card frame, headings, references, or response-card typography.
 \newcommand{\actionflashback}[4]{%
   \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,sharp corners,boxrule=0.5pt,left=7pt,right=7pt,top=5pt,bottom=5pt]
-  \flashheader{#1}{Answer}\vfill
+  \flashheader{#1}{Answer}\vspace{0.45em}
   \centering
   {\normalsize\itshape #2\par}\vspace{0.35em}
-  {\fontsize{10.5}{12.5}\selectfont #3\par}\vfill
+  {\fontsize{10.5}{12.5}\selectfont #3\par}
+  \vfill
+  \rule{\linewidth}{0.35pt}\par\vspace{0.18em}
   {\scriptsize #4\par}
   \end{tcolorbox}%
 }

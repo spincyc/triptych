@@ -1033,7 +1033,7 @@ glosses, staging, and card design are teaching aids.\par}
 \newcommand{\integratedresponsefront}[3]{%
   \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,sharp corners,
   boxrule=0.5pt,left=9pt,right=9pt,top=8pt,bottom=5pt]
-  \flashheader{\ResponseCardID{#1}}{Cue}
+  \flashheader{\ResponseCardID{#1}}{Cue}\vspace{0.55em}
   \centering
   {\normalsize\SpokenCue{#3}\par}\vfill
   \end{tcolorbox}%
@@ -1042,7 +1042,7 @@ glosses, staging, and card design are teaching aids.\par}
 \newcommand{\integratedresponseback}[6]{%
   \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,sharp corners,
   boxrule=0.5pt,left=9pt,right=9pt,top=8pt,bottom=5pt]
-  \flashheader{\ResponseCardID{#1}}{Answer}
+  \flashheader{\ResponseCardID{#1}}{Answer}\vspace{0.45em}
   \centering
   {\scriptsize\bfseries RESPONSE}\par
   {\small\itshape\SpokenResponse{#2}\par}\vspace{0.18em}
@@ -1052,13 +1052,14 @@ glosses, staging, and card design are teaching aids.\par}
   {\small\SoundLine{#4}\par}\vspace{0.18em}
   {\scriptsize\bfseries MEANING}\par
   {\scriptsize #5\par}\vfill
+  \rule{\linewidth}{0.35pt}\par\vspace{0.18em}
   {\tiny #6\par}
   \end{tcolorbox}%
 }
 \newcommand{\denseintegratedresponseback}[6]{%
   \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,sharp corners,
   boxrule=0.5pt,left=9pt,right=9pt,top=8pt,bottom=5pt]
-  \flashheader{\ResponseCardID{#1}}{Answer}
+  \flashheader{\ResponseCardID{#1}}{Answer}\vspace{0.35em}
   \centering
   {\scriptsize\itshape\SpokenResponse{#2}\par}\vspace{0.12em}
   {\scriptsize\bfseries LATIN CHUNKS}\par
@@ -1066,6 +1067,7 @@ glosses, staging, and card design are teaching aids.\par}
   {\scriptsize\bfseries SAY IT LIKE}\par
   {\scriptsize\SoundLine{#4}\par}\vspace{0.12em}
   {\scriptsize #5\par}\vfill
+  \rule{\linewidth}{0.35pt}\par\vspace{0.18em}
   {\tiny #6\par}
   \end{tcolorbox}%
 }

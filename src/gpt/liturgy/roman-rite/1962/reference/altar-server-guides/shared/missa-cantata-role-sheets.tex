@@ -22,35 +22,47 @@ The action IDs take your trainer to the complete team reference when a handoff
 or branch needs more detail.
 \end{watchbox}
 
-% Role routes are server sheets, not the dense complete inventory. The table
-% removes list indentation and repeated vertical gaps while retaining a
-% readable 10-point setting, full prose, and page breaks only between scenes.
+% Role routes are server sheets, not the dense complete inventory. The shaded
+% scene rail and generous row rhythm let a learner relocate a scene without
+% turning the route into a stack of visually identical paragraphs.
 \newenvironment{mcroleroute}[1]{%
   \begingroup
   \small
-  \setlength{\LTpre}{0.15em}%
-  \setlength{\LTpost}{0.65em}%
-  \renewcommand{\arraystretch}{1.06}%
-  \begin{longtable}{@{}>{\RaggedRight\arraybackslash\bfseries}p{0.20\linewidth}>{\RaggedRight\arraybackslash}p{0.75\linewidth}@{}}
+  \setlength{\LTpre}{0.25em}%
+  \setlength{\LTpost}{0.8em}%
+  \setlength{\tabcolsep}{6pt}%
+  \renewcommand{\arraystretch}{1.16}%
+  \begin{longtable}{@{}>{\RaggedRight\arraybackslash\bfseries}p{0.18\linewidth}>{\RaggedRight\arraybackslash}p{0.75\linewidth}@{}}
+  \multicolumn{2}{@{}l}{%
+    \colorbox{black!7}{%
+      \parbox{\dimexpr\linewidth-2\fboxsep-6pt\relax}{%
+        \strut{\scriptsize\bfseries\textls[100]{ROLE ROUTE}}\par
+        {\large\bfseries\MCRoleHeading}}}}\\[0.25em]
   \toprule
-  Scene & \textbf{Your route}\\
+  \textsc{Scene} & \textbf{Your route}\\
   \midrule
   \endfirsthead
-  \multicolumn{2}{@{}l}{\textbf{#1 role route, continued}}\\[0.12em]
+  \multicolumn{2}{@{}l}{\strut\textbf{\textsc{#1 route} \(\cdot\) continued}}\\
   \toprule
-  Scene & \textbf{Your route}\\
+  \textsc{Scene} & \textbf{Your route}\\
   \midrule
   \endhead
-  \textbf{Every scene} & \MCRoleAlways\\[0.18em]
+  \textbf{Every scene} & \MCRoleAlways\\[0.35em]
 }{%
   \bottomrule
   \end{longtable}
   \endgroup
 }
-\newcommand{\mcrolerow}[2]{#1 & #2\\[0.18em]}
+\newcommand{\mcrolerow}[2]{\rule{0pt}{2.6ex}#1 & #2\\[0.42em]}
+\newcommand{\MCRoleHeading}{}
 \newcommand{\mcroleheading}[1]{%
-  \subsection{#1}}
+  \needspace{0.28\textheight}%
+  \renewcommand{\MCRoleHeading}{#1}}
 
+% Start the first detachable route on a fresh page. Otherwise longtable can
+% place only its repeated continuation head in the small remainder below the
+% orientation material.
+\newpage
 \mcroleheading{MC --- master of ceremonies}
 \label{mc-role:mc:first}
 
@@ -99,7 +111,8 @@ or branch needs more detail.
 \begin{mcroleroute}{A1}
   \mcrolerow{1. Get ready}{Check the wine cruet, towel, bell and pad, Communion
   plate when needed, your candle stand, and your partner's lane. Receive a
-  lighted candle from the adult, process level with A2, set it at the credence,
+  lighted candle from the adult, enter single file through the nave immediately
+  before A2, form level only at the stationary arrival, set it at the credence,
   and go to the foot-prayer place (MC-001, 003--008).
   }
   \mcrolerow{2. Begin}{With MC and A2, make every quiet foot-prayer answer and its
@@ -122,16 +135,18 @@ or branch needs more detail.
   between signals; kneel at the assigned step (MC-038--042).
   }
   \mcrolerow{6. Receive}{If the faithful receive, give the one warning signal, then
-  carry the plate level beneath each communicant and complete its handoff and
+  carry the plate level under each communicant's chin and complete its handoff and
   return. At the ablutions pour the first wine at MC-048; at MC-049 pour wine
   while A2 pours water (MC-043--049).
   }
   \mcrolerow{7--8. Finish / return}{With MC and A2 make the three quiet Last-Gospel
   answers when it is said. Take the exit candle with A2, use the assigned
-  object-bearer's final reverence, process level, and set the candle in its
-  sacristy stand for the adult to extinguish (MC-051--057).
+  object-bearer's final reverence, recess single file through the nave
+  immediately before A2, and set the candle in its sacristy stand for the
+  adult to extinguish (MC-051--057).
   }
 \end{mcroleroute}
+\CommunionPatenSafetyDiagram
 \label{mc-role:a1:last}
 
 \mcroleheading{A2 --- second acolyte, water, and basin}
@@ -139,8 +154,9 @@ or branch needs more detail.
 
 \begin{mcroleroute}{A2}
   \mcrolerow{1. Get ready}{Check the water cruet, Lavabo basin, your candle stand,
-  and your partner's lane. Receive a lighted candle from the adult, process
-  level with A1, set it at the credence, and go to the foot-prayer place
+  and your partner's lane. Receive a lighted candle from the adult, enter
+  single file through the nave immediately after A1, form level only at the
+  stationary arrival, set it at the credence, and go to the foot-prayer place
   (MC-001, 003--008).
   }
   \mcrolerow{2. Begin}{With MC and A1, make every quiet foot-prayer answer and its
@@ -168,8 +184,9 @@ or branch needs more detail.
   }
   \mcrolerow{7--8. Finish / return}{With MC and A1 make the three quiet Last-Gospel
   answers when it is said. Take the exit candle with A1, use the assigned
-  object-bearer's final reverence, process level, and set the candle in its
-  sacristy stand for the adult to extinguish (MC-051--057).
+  object-bearer's final reverence, recess single file through the nave
+  immediately after A1, and set the candle in its sacristy stand for the adult
+  to extinguish (MC-051--057).
   }
 \end{mcroleroute}
 \label{mc-role:a2:last}
@@ -208,8 +225,9 @@ or branch needs more detail.
   all-server posture; do not invent another incense visit (MC-041--050).
   }
   \mcrolerow{7--8. Finish / return}{After the Last Gospel, take the closed
-  thurible, use the assigned object-bearer's final reverence, recess with BB,
-  and give it to the adult at the metal-safe station (MC-051--057).
+  thurible, use the assigned object-bearer's final reverence, recess single
+  file through the nave immediately before BB, and give it to the adult at
+  the metal-safe station (MC-051--057).
   }
 \end{mcroleroute}
 \label{mc-role:th:last}
@@ -219,7 +237,7 @@ or branch needs more detail.
 
 \begin{mcroleroute}{BB}
   \mcrolerow{1. Get ready}{Check the boat, spoon, route, and safe station with TH.
-  Process beside TH in the chosen lead position, then land at the safe station
+  Process single file through the nave immediately after TH, then land at the safe station
   with the boat (MC-002, 004--006).
   }
   \mcrolerow{2. Begin}{At the first incense cue, give the boat to the priest and
@@ -243,7 +261,8 @@ or branch needs more detail.
   all-server posture; do not invent another boat handoff (MC-041--050).
   }
   \mcrolerow{7--8. Finish / return}{After the Last Gospel, take the boat, use the
-  assigned object-bearer's final reverence, recess beside TH, and give it to the
+  assigned object-bearer's final reverence, recess single file through the
+  nave immediately after TH, and give it to the
   adult at the metal-safe station (MC-051--057).
   }
 \end{mcroleroute}
@@ -276,57 +295,75 @@ or branch needs more detail.
   }
   \mcrolerow{7--8. Finish / return}{Remain empty-handed. At the final reverence,
   genuflect if the Blessed Sacrament is reserved at this altar and make a
-  profound bow if it is not; then recess in your pair and report to the adult
+  profound bow if it is not; then recess single file through the nave in your
+  assigned order and report to the adult
   only for the tasks named before Mass (MC-051--057).
   }
 \end{mcroleroute}
 \label{mc-role:t:last}
 
-\mcroleheading{CB --- cross-bearer, when assigned}
+\needspace{0.55\textheight}
 \label{mc-role:cb:first}
-
-\begin{mcroleroute}{CB}
-  \mcrolerow{1. Get ready}{Take the cross from its named stand, carry it upright in
-  the assigned entrance place, use the reverence taught for this object, and
-  set it in its sanctuary stand before going to base (MC-003--006).
-  }
-  \mcrolerow{2--6. Begin through receive}{Follow every free-handed all-server cue
-  from base. If incense is used, face TH and make the bows assigned to you as
-  an individual recipient at MC-032 (MC-008--050).
-  }
-  \mcrolerow{7--8. Finish / return}{Take the cross only at MC's exit cue. Keep it
-  upright, use the model's object-bearer head bow at the final reverence, form
-  with A1/A2, recess, and replace it in the named sacristy stand
-  (MC-051--057).
-  }
-\end{mcroleroute}
-\label{mc-role:cb:last}
-
-\mcroleheading{L --- lesson singer, on the alternate branch}
 \label{mc-role:l:first}
-
-\begin{mcroleroute}{L}
-  \mcrolerow{1. Get ready}{Confirm that the marked Epistle book is already on its
-  lectern and that an adult is assigned to recover it after Mass. Process and
-  reach base empty-handed (MC-001, 004--006).
-  }
-  \mcrolerow{2. Begin}{Follow the applicable all-server cues at base (MC-008--018).
-  }
-  \mcrolerow{3. Listen}{At MC's cue, go empty-handed to the prepared lectern, make
-  the site's prescribed reverence on the route, chant the Epistle, make the
-  same reverence, and return empty-handed. Add no \textit{Deo gratias}; leave
-  the book on its lectern for the assigned adult (MC-020).
-  }
-  \mcrolerow{4--6. Prepare through receive}{Follow every free-handed all-server cue
-  from base. If incense is used, face TH and make the bows assigned to you as
-  an individual recipient at MC-032 (MC-030--050).
-  }
-  \mcrolerow{7--8. Finish / return}{At the final reverence, genuflect if the
-  Blessed Sacrament is reserved at this altar and make a profound bow if it is
-  not. Recess empty-handed, then report that the adult-recovered Epistle book is
-  accounted for (MC-051--057).
-  }
-\end{mcroleroute}
+\begingroup
+\footnotesize
+\setlength{\LTpre}{0.2em}
+\setlength{\LTpost}{0.8em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.13}
+\begin{longtable}{@{}>{\RaggedRight\arraybackslash\bfseries}p{0.14\linewidth}>{\RaggedRight\arraybackslash}p{0.40\linewidth}>{\RaggedRight\arraybackslash}p{0.40\linewidth}@{}}
+\multicolumn{3}{@{}l}{%
+  \colorbox{black!7}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-6pt\relax}{%
+      \strut{\scriptsize\bfseries\textls[100]{OPTIONAL ROLE ROUTES}}\par
+      {\large\bfseries CB --- cross-bearer \quad\(\cdot\)\quad L --- lesson singer}}}}\\[0.25em]
+\toprule
+\textsc{Scene} & \textbf{CB --- when assigned} &
+\textbf{L --- alternate lesson branch}\\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textbf{\textsc{Optional role routes} \(\cdot\) continued}}\\
+\toprule
+\textsc{Scene} & \textbf{CB --- when assigned} &
+\textbf{L --- alternate lesson branch}\\
+\midrule
+\endhead
+\textbf{Every scene} &
+\MCRoleAlways &
+\MCRoleAlways\\[0.4em]
+\textbf{1. Get ready} &
+Take the cross from its named stand, carry it upright in the assigned entrance
+place, use the reverence taught for this object, and set it in its sanctuary
+stand before going to base (MC-003--006). &
+Confirm that the marked Epistle book is already on its lectern and that an
+adult is assigned to recover it after Mass. Process and reach base empty-handed
+(MC-001, 004--006).\\[0.4em]
+\textbf{2--6} &
+Follow every free-handed all-server cue from base. If incense is used, face TH
+and make the bows assigned to you as an individual recipient at MC-032
+(MC-008--050). &
+\textbf{2. Begin}\quad
+Follow the applicable all-server cues at base (MC-008--018).\par\smallskip
+\textbf{3. Listen}\quad
+At MC's cue, go empty-handed to the prepared lectern, make the site's
+prescribed reverence on the route, chant the Epistle, make the same reverence,
+and return empty-handed. Add no \textit{Deo gratias}; leave the book on its
+lectern for the assigned adult (MC-020).\par\smallskip
+\textbf{4--6. Prepare through receive}\quad
+Follow every free-handed all-server cue from base. If incense is used, face TH
+and make the bows assigned to you as an individual recipient at MC-032
+(MC-030--050).\\[0.4em]
+\textbf{7--8. Finish / return} &
+Take the cross only at MC's exit cue. Keep it upright, use the model's
+object-bearer head bow at the final reverence, form with A1/A2, recess, and
+replace it in the named sacristy stand (MC-051--057). &
+At the final reverence, genuflect if the Blessed Sacrament is reserved at this
+altar and make a profound bow if it is not. Recess empty-handed, then report
+that the adult-recovered Epistle book is accounted for (MC-051--057).\\
+\bottomrule
+\end{longtable}
+\endgroup
+\label{mc-role:cb:last}
 \label{mc-role:l:last}
 
 \begin{learnerbox}{One-minute role check}

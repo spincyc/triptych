@@ -57,10 +57,18 @@ every other free-handed server face the altar and genuflect with the priest;
 TH also genuflects while holding the closed thurible, while A1/A2 remain
 upright with the candles.
 
+Entrance and recession travel is single file from the sacristy through the
+nave to the sanctuary and back. The listed TH/BB, A1/A2, and torchbearer
+partnerships govern stationary service, arrival, and reverence formations;
+they do not mean walking abreast. Exact doorways, turns, distances, stopping
+lines, and stationary partner geometry remain local rehearsal data.
+
 The Gospel-side formation drawing uses corrected pencil asset `ASG-ART-009`
-for MC-023--MC-025. Its TeX-owned labels identify A1 and A2 flanking the altar
-book, the priest at the book, MC attending, and TH waiting outward with the
-closed thurible. It is a schematic role-and-formation aid, not a scale plan:
+for the incense-omitted state of MC-023--MC-025. Its TeX-owned labels identify
+A1 and A2 flanking the altar book and remaining stationary with their candles
+through the Gospel, with the priest at the book. Adjacent prose accounts for
+MC and conditional TH on the incense route rather than inventing figures not
+present in the raster. It is a schematic role-and-formation aid, not a scale plan:
 the parish's marked distances, exact stations, and traffic route remain local
 rehearsal data. The series artwork manifest owns the asset's provenance,
 identity, rights, consumers, and review state.
@@ -115,21 +123,21 @@ the form-specific actor and mode distinction once.
 MC-A01--MC-A12 follow the integrated response run in the companion. The
 companion begins with its first response front on physical page 1; the action
 run begins on the next odd page after four complete six-up response sheet
-pairs. The full guide has no embedded card range. The current installed alpha
-full guide is twenty-eight physical pages; the installed
-companion is twelve. Electronic review confirmed response fronts on pages 1,
+pairs. The full guide has no embedded card range. A historical alpha full
+guide was twenty-eight physical pages; its companion was twelve. Electronic
+review of that card companion confirmed response fronts on pages 1,
 3, 5, and 7, action fronts on pages 9 and 11, mirrored backs, border alignment,
 and screen legibility. Physical actual-size, long-edge-duplex, photocopy, and
 cut review remain pending. Public-review visibility is not independent,
 rights, liturgical-text-permission, or ecclesiastical approval.
 
-The 2026-07-28 entrance-handoff diagram tranche produced the installed
+The 2026-07-28 entrance-handoff diagram tranche produced a historical
 twenty-eight-page alpha full guide with SHA-256
 `653055e1f5e036cbec9848eb07902e5733086bdc400f48d7a9cd214a4fcb9b48`.
 Its direct role-page pointers resolved after two builds, and its final log is
 free of fatal errors, warnings, undefined references, overfull or underfull
-boxes, and unresolved rerun requests. This hash is the installed
-alpha identity.
+boxes, and unresolved rerun requests. This hash identifies that historical
+alpha build.
 
 The action-card cross-view is anchored to the chronology: MC-A01 links the
 adult entrance handoff and MC's complete biretta exit lifecycle through the
@@ -144,12 +152,12 @@ elevation at MC-041; Communion and fast-day extensions remain through the
 first wine ablution at MC-048. The cards add no handoff absent from
 MC-001--MC-057, and every action-card face names Missa Cantata.
 
-The 2026-07-28 elevation-tableau tranche produced the installed
+The 2026-07-28 elevation-tableau tranche produced a historical
 twenty-eight-page alpha full guide with SHA-256
 `4939a59db2a626331d665b5abf99e64604b80394e9b8c7cb3ccabfe41f405687`.
 The final log is free of fatal errors, warnings, undefined references,
-overfull or underfull boxes, and unresolved rerun requests. This hash is the
-current installed alpha identity.
+overfull or underfull boxes, and unresolved rerun requests. This hash
+identifies that historical alpha build.
 
 ## Mastery evidence
 
@@ -164,3 +172,9 @@ the bank ID and returns the cue after three unrelated cards.
 Series-wide source, response, pronunciation, ceremonial, card, rights, and
 production records are owned by the non-publishable altar-server-guides
 research directory.
+
+The 2026-07-28 settled candidate is thirty-four pages; its companion remains
+twelve pages. Exact identities and review claims for the final
+metadata-bearing rebuild belong in the series production manifest. No
+source-built candidate is described here as externally, physically, or
+ecclesiastically approved.

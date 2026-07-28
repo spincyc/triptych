@@ -11,6 +11,17 @@
 
 \begin{document}
 \input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/sung-mass-diagrams}
+\AddToHookNext{shipout/foreground}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=center,text width=0.72\paperwidth,align=center,
+      draw=black,line width=0.8pt,inner xsep=12pt,inner ysep=9pt]
+      at ([yshift=-0.06\paperheight]current page.center)
+      {\large\bfseries START HERE\par\smallskip
+       \normalsize
+       1.\ Find your assigned role.\quad
+       2.\ Learn its seven scenes.\quad
+       3.\ Rehearse every handoff with cold, empty practice objects.};
+  \end{tikzpicture}}
 \serverguidetitle
   {Serving Solemn Mass}
   {Know your part. Move with the team.}
@@ -24,6 +35,7 @@ route on the next page. Practise one scene at a time: first point out every
 place and partner, then walk empty-handed, then rehearse each handoff with
 cold, empty practice objects.
 
+\Needspace{0.14\textheight}
 \begin{learnerbox}{If you lose your place}
 Stop, face the altar, hold your object safely, and look to the MC. Do not hurry
 across the sanctuary to repair a small mistake. The MC will give one quiet

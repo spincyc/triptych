@@ -17,23 +17,23 @@
 ## Reader order
 
 1. Page 1: title and immediate use boundary.
-2. Pages 2--9, `Foot/Altar`: arrive and kneel before beginning the prayers;
+2. Pages 2--7, `Foot/Altar`: arrive and kneel before beginning the prayers;
    Psalm 42; the priest's and servers' Confiteors; absolution prayers; and the
    final foot-prayer versicles.
-3. Pages 10--13, `Readings`: move to the normal places; Kyrie; Collect and
+3. Pages 8--11, `Readings`: move to the normal places; Kyrie; Collect and
    Epistle; move the Missal; answer at the Gospel; then the sermon and Creed
    states.
-4. Pages 14--16, `Offertory`: greeting and cruets; Lavabo and bell pickup;
+4. Pages 12--14, `Offertory`: greeting and cruets; Lavabo and bell pickup;
    then the complete *Orate, fratres* cue and *Suscipiat* response.
-5. Pages 17--20, `Canon`: Preface dialogue, bell plan, elevations, and the
+5. Pages 15--16, `Canon`: Preface dialogue, bell plan, elevations, and the
    responses after the Canon.
-6. Pages 21--23, `Communion`: responses, faithful-Communion branch,
+6. Pages 17--20, `Communion`: responses, faithful-Communion branch,
    Communion-plate purification and return, ablutions, and the
    Second Acolyte's Missal return while the priest prepares the chalice.
-7. Pages 24--26, `Ending`: Postcommunion and dismissal, blessing and Last
+7. Pages 21--23, `Ending`: Postcommunion and dismissal, blessing and Last
    Gospel, then the final route and recessional.
-8. Page 27 carries the real-church mapping fields and role summary; page 28
-   carries the cumulative rehearsal checklist; page 29 carries scope,
+8. Page 24 carries the real-church mapping fields and role summary; page 25
+   carries the cumulative rehearsal checklist; page 26 carries scope,
    qualifications, sources, generation metadata, and rights.
 
 Numbered priest-to-server dialogue lanes stay in chronological order.
@@ -49,7 +49,10 @@ The continuous route consumes pencil assets `ASG-ART-001`, `ASG-ART-002`,
 `ASG-ART-005`, `ASG-ART-006`, and `ASG-ART-011`--`ASG-ART-021`. The latter
 eleven scenes cover the normal places, Gospel stations, Offertory cruets, bell
 station, elevations, Communion-plate route, two ablution states, Missal
-return, Last Gospel, and recession. TeX retains all semantic role, object,
+return, Last Gospel, and recession. The principal-Gospel asset
+`ASG-ART-012` shows the selected LM-017 finish state: after the title response
+and triple sign, First has returned to picture-right while Second remains
+picture-left. TeX retains all semantic role, object,
 level, and route overlays. The series artwork manifest owns the assets'
 provenance, normalized identities, rights, consumers, and review state.
 
@@ -82,6 +85,13 @@ The tested prototype did not distinguish that pose reliably from standing or
 kneeling. Stable kneeling figures instead show both knees, tucked feet, and a
 markedly lower head position.
 
+Entrance and recession travel is single file and uses the direct route between
+the local sacristy doorway and the foot of the altar; it does not travel
+through the nave. First leads and Second follows. Their picture-right and
+picture-left pairing governs the stationary formation at the foot, not
+side-by-side travel. The actual doorway, turn, stopping point, and reverence
+remain local rehearsal decisions.
+
 ## Branch boundary
 
 The booklet locates the Psalm 42 omission, multiple-lesson caution, faithful-
@@ -110,7 +120,8 @@ altar-server-guides research directory.
 
 ## Repair review — 2026-07-27
 
-The map now records the actual twenty-nine-page sequence. The child-visible
+The historical repair map recorded a twenty-nine-page sequence. The current
+settled source compacts that reader order to twenty-six pages. The child-visible
 branch conditions and four replaced illustrations were repaired, rebuilt, and
 screen-reviewed. The artifact is a bounded Alpha; completeness and deployment
 are recorded separately.
@@ -119,11 +130,18 @@ The later actor-overlay pass checked every person in the pencil scenes used on
 pages 10, 12, 14, 18, 19, 21, 22, and 26. TeX now identifies the priest,
 First, Second, and the Communion-scene communicant without painting capsules
 or route arrows over a figure. It corrects the Gospel-station,
-Communion-plate, finger-washing, and recession actor order. The page-29
-provenance block and common rights notice are both wholly contained on the
-same physical terminal page. The artwork bytes remain unchanged.
+Communion-plate, finger-washing, and recession actor order. In that historical
+snapshot, the page-29 provenance block and common rights notice were wholly
+contained on the same physical terminal page. The artwork bytes remained
+unchanged.
 
 The 2026-07-28 exact snapshot vertically separates the `PRIEST`, `FIRST`, and
 `SECOND STANDS CLEAR` capsules over the lower page-12 Gospel-station scene.
 Full-size and every-page screen inspection passed without changing the
 underlying pencil asset.
+
+The 2026-07-28 settled candidate remains twenty-six pages. Its current source
+map is the controlling page sequence above. Exact build identity and any
+review claim for that identity belong in the series production manifest after
+the final metadata-bearing rebuild; this map does not infer external,
+physical-use, or ecclesiastical review.

@@ -53,6 +53,12 @@ A1/A2 with each named recipient's bows; after the people he completes the
 turning genuflection, closes the thurible, and leads the torch party to its
 reset while the boat stays at its sanctuary station.
 
+Entrance and recession travel is single file from the sacristy through the
+nave to the sanctuary and back. Listed partners and candle or torch groups
+form side by side only at their stationary service, arrival, or reverence
+stations; they do not walk abreast. Exact doorways, turns, distances, stopping
+lines, and stationary group geometry remain local rehearsal data.
+
 The Gospel-station drawing uses corrected pencil asset `ASG-ART-010` for
 SO-021--SO-023. Its TeX-owned labels identify A1 and A2 flanking the book, SD
 supporting it for D, MC attending, and Th waiting outward with the closed
@@ -96,10 +102,10 @@ People, whose audible conclusion receives A9; the double alleluia at Masses
 of the season within the Easter octave; the Benedicamus replacement of
 SO-064--SO-067 by a separately rehearsed procession sheet; and the
 third-Christmas omission of the Last Gospel after the blessing. At SO-067 Bb
-takes the boat for the normal or third-Christmas exit: the formation is
-empty-handed Th beside Bb with
-the boat; optional Cb between the candle acolytes, or the acolytes as a pair;
-four empty-handed torchbearers in two pairs; MC; and the sacred ministers. At
+takes the boat for the normal or third-Christmas exit. The single-file order
+is empty-handed Th, Bb with the boat, optional Cb, A1, A2, Tb1--Tb4, MC, and
+the sacred ministers; locally marked paired formations apply only while
+stationary for the final reverence. At
 SO-068 free-handed Th, torchbearers, and MC genuflect if the Sacrament is
 reserved and make a profound bow if it is not; boat, candle, and cross bearers
 remain upright and bow the head. Bb gives the boat to the adult at SO-070.
@@ -131,18 +137,18 @@ run begins on the next odd page after four complete six-up response sheet
 pairs. Every US-letter portrait sheet places six cards on each face in a
 two-column by three-row grid; each back mirrors every row for long-edge
 printing and has no blank card. The full guide has no embedded card range.
-The current installed full guide is twenty-nine physical pages; the installed
-companion is twelve. The full guide keeps the complete
+The historical screen-reviewed full guide described here was twenty-nine
+physical pages; its companion was twelve. The full guide kept the complete
 `Present; do not push` movement unit on one page. Production review confirmed
 response fronts on pages 1, 3, 5, and 7, action fronts on pages 9 and 11,
 mirrored backs, border alignment, legibility, and safe containment of the
-R08B continuation note. The installed guide and companion remain at their
-recorded reviewed identities. The installed source revision adds explicit
+R08B continuation note. Those guide and companion identities remain
+historical review records. The settled source revision adds explicit
 standalone-role common-route and SO-063 continuation controls. Mechanical
 duplex and cut alignment, rights, and full-size visual usability remain the
 active alpha checks for the cards.
 
-The installed alpha snapshot built on 28 July 2026 is 29 pages and 1,719,892
+That alpha snapshot built on 28 July 2026 is 29 pages and 1,719,892
 bytes with SHA-256
 `d06c1ee90fc2d318d332bb7caa1b13058df30ab0829d28737f1979427a4b4544`.
 Settled pdfTeX passes left no fatal error, undefined reference, box warning, or
@@ -176,3 +182,9 @@ requires a competent human listener.
 Series-wide source, response, pronunciation, ceremonial, card, rights, and
 production records are owned by the non-publishable altar-server-guides
 research directory.
+
+The 2026-07-28 settled candidate is thirty-one pages; its companion remains
+twelve pages. Exact identities and review claims for the final
+metadata-bearing rebuild belong in the series production manifest. No
+source-built candidate is described here as externally, physically, or
+ecclesiastically approved.

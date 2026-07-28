@@ -20,6 +20,7 @@ was checked against the displayed page image.
 | 58 | Ritus servandus IV, including IV.8 | Missa Cantata execution and its incense provision | Controls the one-celebrant sung route |
 | 60--61 | Ritus servandus VI.5--8 and VII.7--11 | Solemn and Missa-Cantata Gospel differences; Offertory response and incense; Sanctus bell; Solemn credence and paten sequence | Fixes sung-reading replies, complete incense handoffs, and the prescribed Sanctus signal |
 | 60 | Ritus servandus VII.2 | At Low Mass the celebrant uncovers the chalice and shifts it to the Epistle side; the text assigns no lay server and does not fix the loose veil's resting place | The selected model keeps the veil under the priest's control at an altar place rehearsed with him, rather than silently importing a manual's server-carried veil leg |
+| 60 | Ritus servandus VII.4 | For Low Mass the minister kisses the wine cruet before presenting it and does not kiss the celebrant's hand | Controls the wine-cruet kiss and the explicit prohibition on transferring the kiss to the priest's hand; it does not by itself establish every practical hand position or a return kiss |
 | 62--63 | Ritus servandus VIII.6--8 and IX.4 | Warning and elevation bell options; at least two torches and their ordinary, communicant, and fast-day timing; unblessed elevation incense; post-elevation posture | Selects one warning plus three distinct elevation strokes, four-torch routes, and the independent thurifer return |
 | 64 | Ritus servandus X.5 | The celebrant receives the two ablutions, dries and reassembles the chalice with his paten, pall, corporal, burse, and veil, and places it at the altar's center | Keeps the priest's paten, chalice, and veil outside the lay-server Communion-plate route |
 | 65 | Ritus servandus X.6--7 and XI.1 | Communion of the faithful proceeds directly to Ecce Agnus Dei; the celebrant clears fragments from the plate held under communicants' chins; after purification an unnamed minister returns the Missal to the Epistle side while the celebrant places the chalice | Excludes a second Communion Confiteor, distinguishes the Communion plate from the priest's paten, and establishes the post-ablution object sequence without assigning First or Second |
@@ -91,12 +92,18 @@ servers and later adds a First-carried chalice veil. Neither feature is
 selected.
 
 Charles J. Carmody's 1961 *Learning to Serve* supplied a period comparison.
-Selected page images were checked at printed pp. 80--81 (paired elevations and
+Selected page images were checked at printed pp. 70--72 (the practical
+Low-Mass sequence: kiss at the base of the handle before presenting wine,
+wait for the water blessing, then kiss the water-cruet handle before
+presenting it, with no return kisses), pp. 80--81 (paired elevations and
 the first server's bell), p. 87 (the cleared Communion plate remains at the
 altar until the second wine and water are finished and is removed before the
 Missal return), pp. 91--94 (ablutions and paired Missal-and-veil traffic), and
 within 124--137, especially pp. 128--134 and 137 (Order excerpts, object
-checklist, and bell customs). Carmody fixes the plate-removal sequence but
+checklist, and bell customs). The Low Mass pair selects the cruet sequence as
+`MODEL`, subordinate to the Missal's official wine-cruet direction; it is not
+imported into Missa Cantata, and the Solemn lay-server handoff remains to the
+subdeacon. Carmody fixes the plate-removal sequence but
 does not number the two servers in that return movement. Searchable extraction
 was only a navigation aid.
 
@@ -120,6 +127,14 @@ not a conclusion that the Missal fixes every sanctuary's step count or
 dimensions. Genuflections remain written instructions but are not drawn
 because local testing did not reliably distinguish that pose. No manual
 illustration was copied.
+
+The project model distinguishes travel from a stationary paired formation.
+Entrance and recession travel is single file in all three guides; partner
+labels govern formation at the altar, Gospel, reverence, or service station
+and do not authorize walking abreast. Low Mass uses the direct route between
+the sacristy doorway and the foot of the altar. Missa Cantata and Solemn Mass
+use the nave between sacristy and sanctuary. The actual doorway, turns,
+stopping line, and stationary geometry remain local rehearsal decisions.
 
 ## Resolved discrepancies
 
@@ -146,6 +161,7 @@ illustration was copied.
 | Lay MC assigned the quiet Solemn Last-Gospel responses | The selected Fortescue baseline, printed p. 89, has the subdeacon assist and make the responses | SO-065 and shared A13/A15/A16 voice data retain this as a sacred-minister office; no lay server duplicates it |
 | Pax reduced to an undefined handoff or handshake warning | Ritus servandus X.8 and Fortescue 1917, p. 24, supply the personal transmission and its bows, arm position, formula, and response | SO-053 teaches the complete model gesture without handshake or face contact and keeps the fixed subdeacon--A1--A2 chain |
 | Last Gospel assumed after every blessing | General Rubrics 509--510 prescribe proper and omitted cases, including omission at the third Christmas Mass | The ordinary guides teach the normal Gospel and the third-Christmas omission; special proper or omitted cases require their own checked sheet |
+| Ordinary Last-Gospel art invents a moved Missal | LM-039 returns the Missal to the Epistle side after the ablutions; MR-RS XII.1 appoints the priest at the Gospel side but does not supply another ordinary Missal move | The 2026-07-28 generated Last-Gospel panel was rejected because it visibly placed an open book at picture-left. The ordinary scene must keep the Missal at picture-right unless a separately checked proper-Gospel sheet appoints a move |
 
 ## Text, normalization, and rights
 
