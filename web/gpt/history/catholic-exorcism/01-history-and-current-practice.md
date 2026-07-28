@@ -234,6 +234,10 @@ Two further exact English witnesses clarify the relation between common faith an
 
 Percival’s 1900 English text of Laodicea 26 supplies a different kind of evidence: one conciliar disciplinary witness restricts action in churches or private houses to persons promoted by the bishop. This is positive evidence for a local ministerial boundary in the transmitted canon. It is not a modern critical Greek control, evidence of universal reception, proof of a universal minor order, or identity with modern major exorcism.
 
+The late-fourth-century Syrian church-order compilation called the *Apostolic Constitutions* makes a different distinction. Funk’s Greek text gives an ordination prayer for a reader in VIII.22. In VIII.23–26, however, confessors, virgins, widows, and exorcists are not ordained merely because they belong to those categories. VIII.26 treats the exorcist in terms of a manifested healing charism; if such a person is needed as a bishop, presbyter, or deacon, the person may be ordained to that other office. This is the pseudapostolic compiler’s prescription, not a first-century apostolic act. It supplies no exorcistic formula, frequency, claim of uninterrupted office continuity, or direct line to a later ordinal.
+
+That difference must remain visible beside the other exact controls. Laodicea 26 transmits a conciliar episcopal restriction in its own disciplinary setting; the *Apostolic Constitutions* VIII.26 does not itself make episcopal permission the rule it states. The much later *Pontificale Romano-Germanicum* preserves an exorcist-ordination unit in a western ordinal. These witnesses cannot be fused into one universal practice or a single continuously transmitted institution.
+
 The church-order complex conventionally called the *Apostolic Tradition* is controlled more cautiously still. Easton’s exact 1934 English reconstruction prints an initiatory sequence in chapters 20–21, while his own introduction maps its versional basis and states that accurate restoration is impossible. The witness can therefore show what that identified reconstruction presents; it cannot settle the work’s unity, attribution to Hippolytus, date, Roman provenance, ancient wording, universality, or chapter correspondences in another edition. No operational wording is reproduced here.
 
 These controlled distinctions prevent the gaps from being filled by reputation. A familiar attribution to Hippolytus cannot substitute for a critical reconstruction and its versional evidence. A verified historical translation of a conciliar canon does not make the canon universal. A facsimile controls what its passage says, not a larger institutional history. The resulting narrative remains shorter than the complete early-Christian history still to be researched, but every positive step rests on an identified witness and stays within its genre.
@@ -246,6 +250,7 @@ The bounded conclusion is therefore firm. By the third and fourth centuries, the
 | Jerusalem catecheses | Exorcism and renunciation situated within baptismal preparation and allegiance to Christ | A qualified Jerusalem sequence, not universal fourth-century practice or a major-exorcism case |
 | Cornelius through Eusebius | Exorcists named among third-century Roman church personnel | One combined count for three groups, no separate exorcist total, and no complete duty description |
 | Irenaeus, Laodicea, and Easton’s church-order reconstruction | One-faith confession distinguished from local practice; one conciliar episcopal boundary; one identified reconstruction of an initiatory sequence | No exorcistic formulary from Irenaeus, universal discipline from Laodicea, or settled ancient text, attribution, provenance, or operational sequence from Easton |
+| *Apostolic Constitutions* VIII.22–26 | Reader ordained; adjacent confessor, virgin, widow, and exorcist categories distinguished from ordination qua category; exorcist related to healing charism | One late-fourth-century pseudapostolic compiler, not universal practice, an exorcistic formula, office continuity, direct descent, or a permission rule supplied by VIII.26 |
 
 ## Late-Antique Offices and Medieval Plurality
 
@@ -704,7 +709,7 @@ Selected loci in 1 Samuel 16 (Kittel’s 1909 Hebrew, Swete’s 1909 Greek *1 Ki
 
 ### Ancient Jewish and Christian witnesses
 
-*Jubilees* 10.1–11, trans. R. H. Charles (1913). Josephus, *Antiquities* 8.45–49, Whiston’s English. Justin, *Second Apology* 6, Dods–Reith English. Tertullian, *Apology* 23, Thelwall English. Origen, *Against Celsus* 1.6, 1.25, and 7.4, Crombie English. Jerusalem *Procatechesis* 9 and *Mystagogical Catechesis* 1.4–9, Gifford English. Eusebius, *Church History* 6.43.11, McGiffert English. The last five are exact dated New Advent delivery states acquired and hashed 2026-07-27.
+*Jubilees* 10.1–11, trans. R. H. Charles (1913). Josephus, *Antiquities* 8.45–49, Whiston’s English. Justin, *Second Apology* 6, Dods–Reith English. Tertullian, *Apology* 23, Thelwall English. Origen, *Against Celsus* 1.6, 1.25, and 7.4, Crombie English. Jerusalem *Procatechesis* 9 and *Mystagogical Catechesis* 1.4–9, Gifford English. Eusebius, *Church History* 6.43.11, McGiffert English. The last five are exact dated New Advent delivery states acquired and hashed 2026-07-27. *Apostolic Constitutions* VIII.22–26, in Franz Xaver von Funk, ed., *Didascalia et Constitutiones Apostolorum*, vol. I (Paderborn, 1905), pp. 528–529, Greek with facing Latin and apparatus; James Donaldson’s *Ante-Nicene Fathers* 7 (Buffalo, 1886), p. 493, as a historical English aid. Funk was inspected from page images rather than Greek OCR; Marcel Metzger’s later critical edition in *Sources Chrétiennes* 336 was not publicly acquired.
 
 ### Ritual and theological witnesses
 
@@ -720,7 +725,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-28T04:27:34Z
+**Last revised (UTC):** 2026-07-28T04:40:14Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
@@ -743,5 +748,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 **Agent/runtime:** OpenAI Codex agent (Gellone manuscript-image acquisition, BnF catalog control, bounded medieval synthesis, source-audit integration, and production review); API workspace; unexposed: server revision
 
 **Agent/runtime:** OpenAI Codex agent (1952 Roman Ritual edition-state ceiling, restricted-source verification, bounded historical correction, and production review); API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex agent (Apostolic Constitutions VIII.22-26 page-image verification, late-antique office distinction, source-audit integration, and production review); API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

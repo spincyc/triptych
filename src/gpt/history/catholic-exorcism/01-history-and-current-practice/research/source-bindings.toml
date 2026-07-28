@@ -1133,11 +1133,29 @@ context = "Exact dated English witness that one letter to Cyprian was written in
 [[bindings]]
 source_id = "passage.anonymous.apostolic-constitutions.english-donaldson-anf7-newadvent-web-2026-07-27.8.26"
 loci = ["8.26"]
-role = "direct-witness"
+role = "translation-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:943dfd453f7496fb27386d28135cf425d1bca37c5885c4f83c544a7cdaae8ca4"
 verified_on = "2026-07-27"
-context = "Exact dated English witness to one late-antique church-order distinction between an unordained exorcistic gift and ordination to other offices. Not apostolic authorship, universal Eastern discipline, actual practice frequency, or modern Roman law."
+context = "Exact dated web delivery retained as a supplemental English aid only. It does not replace the Funk Greek page-image control or establish apostolic authorship, universal discipline, practice, frequency, office continuity, or modern law."
+
+[[bindings]]
+source_id = "passage.anonymous.apostolic-constitutions.funk-greek-latin-1905-volume-1.8.22-26"
+loci = ["8.26"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:4250ff6c62826c2b34da817e9b65c90730feec67df9cf10252d8bb97a3470224"
+verified_on = "2026-07-27"
+context = "Exact page-image control for Funk's Greek, facing Latin, and local notes. It supports the bounded reader/exorcist contrast and the compiler's category distinction. Funk is superseded by Metzger SC 336, which was not acquired. No Greek OCR, apostolic authorship, universal practice, formula, frequency, office continuity, direct descent, or episcopal-permission rule from VIII.26 is claimed."
+
+[[bindings]]
+source_id = "passage.anonymous.apostolic-constitutions.english-donaldson-anf7-1886.8.22-26"
+loci = ["8.26"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:980986300aecacd473bf22a21a96cb6aa0d1448ad9223b03e1fd1c530da15956"
+verified_on = "2026-07-27"
+context = "Exact historical English print witness used only to aid reading of Funk's Greek control. It does not establish original wording, universal discipline or practice, formula, frequency, office continuity, direct descent, or current law."
 
 [[bindings]]
 source_id = "passage.anonymous.book-of-tobit.greek-swete-cambridge-1896-volume-2.6-8"

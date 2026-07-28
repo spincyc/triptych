@@ -131,6 +131,20 @@ verified historical English witnesses. They remain edition-bounded context,
 not modern critical original-language controls or authority for operational
 practice.
 
+The *Apostolic Constitutions* office comparison now has an exact
+original-language control: Funk's 1905 volume I, printed pp. 528–529 (PDF
+pp. 598–599), inspected directly from page images rather than Greek OCR.
+VIII.22 ordains the reader; VIII.23–26 distinguish confessors, virgins,
+widows, and exorcists from ordination qua category; VIII.26 relates the
+exorcist to a healing charism and permits ordination to bishop, presbyter, or
+deacon if needed. Donaldson's ANF 7 (1886), printed p. 493 (PDF p. 505), was
+inspected separately as a historical English aid. Funk's edition is public
+domain but critical-age limited: Metzger's SC 336 supersedes it and was not
+publicly acquired. The evidence does not establish universal practice, a
+formula, frequency, office continuity, direct descent, or an
+episcopal-permission rule in VIII.26. Laodicea 26 and the later PRG ordinal
+remain separate disciplinary and ordinal witnesses.
+
 A second pass on 2026-07-27 searched public-domain primary translations,
 original-language or critical-edition controls, and specialist
 textual-historical studies for every one of those loci. It acquired and bound
