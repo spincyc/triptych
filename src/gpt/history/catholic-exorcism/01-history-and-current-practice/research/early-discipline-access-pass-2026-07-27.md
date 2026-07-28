@@ -27,3 +27,34 @@ an ancient critical control. The reader text remains unchanged: operational
 wording is excluded, and the existing authorship/provenance cautions remain
 necessary. A modern publicly inspectable critical edition would be required
 before stronger textual synthesis.
+
+## Coptic composite probe: Tattam 1848
+
+The public Internet Archive OCR of Henry Tattam's *The Apostolical
+Constitutions, or Canons of the Apostles, in Coptic* (1848) was acquired on
+2026-07-27 as an access probe:
+
+- exact OCR SHA-256:
+  `51b90da3957a748ee76bad9f40454d813b773d1aa99f2cb312b1cdee12b62595`;
+- extent: 333,652 bytes and 8,916 raw lines;
+- relevant hits: raw lines 2734–2810 for pre-baptismal examination and
+  exorcistic preparation, with further baptismal material beginning at
+  2884; and
+- delivery route:
+  `https://archive.org/download/apostolicalconst00tattrich/apostolicalconst00tattrich_djvu.txt`.
+
+No source record or publication binding was created. Tattam's volume is a
+composite Coptic/Arabic church-order collection, and the hit material overlaps
+the Egyptian Church Order / *Apostolic Tradition* complex already represented
+by Easton's distinct reconstruction. The raw OCR does not by itself establish
+the constituent boundary, recension, controlling Coptic-versus-Arabic witness,
+printed-page map, or textual relationship to Easton. Treating it as an
+independent witness to generic “Coptic practice” would therefore risk both
+version collapse and double counting.
+
+Promotion requires visual collation to the exact facsimile pages, a
+machine-checkable constituent segment, an explicit account of the controlling
+language/version and Tattam's translation basis, and comparison with the
+already registered Easton text state. Until those controls exist, the OCR is a
+finding aid only and supports no reader claim, quotation, negative search, or
+cross-family synthesis.
