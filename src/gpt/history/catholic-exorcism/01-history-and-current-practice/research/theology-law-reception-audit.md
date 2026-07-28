@@ -27,7 +27,7 @@ This focused audit controls sections 80–120. It supplements, and does not repl
   made c. 230 §1 sex-neutral while retaining lector and acolyte as the
   ministries named there. The current official Latin Code prints that amended
   text. Neither witness creates an exorcist ministry or changes c. 1172.
-- **United States:** USCCB, “Exorcism,” Secretariat of Divine Worship, exact official web state accessed 2026-07-26. It controls only the identified U.S. implementation and public explanation.
+- **United States:** USCCB, “Exorcism,” Secretariat of Divine Worship, exact official web state acquired and inspected 2026-07-27 with seven claim-level passage controls. It controls only the identified U.S. English-edition history and conference pastoral explanation. The separately registered 2026-07-26 restricted remote bytes were not retained and cannot now be asserted byte-identical to the current response.
 - **Eastern Catholic boundary:** CCEO cc. 1–2 control scope and interpretive context. They establish that the Eastern Code governs all and only the Eastern Catholic Churches unless it expressly provides otherwise concerning relations with the Latin Church; they do not transplant CIC c. 1172. No Eastern particular law or liturgical book was surveyed, and no Eastern major-exorcism rule is stated.
 - **Orthodox boundary:** no Orthodox law or liturgical book controls a retained publication claim. The study makes no statement about present Orthodox authorization or practice.
 
@@ -37,10 +37,13 @@ No current canon, conference page, or liturgical book is represented as universa
 
 Medical facts appear only where natural/preternatural classification intersects a living person's safety and differential assessment. The sections make no prevalence claim, no diagnostic mapping, and no assertion that clinical exclusion proves a preternatural cause.
 
-The operative ecclesial source is the exact dated USCCB page state: it calls
-for thorough medical and psychological or psychiatric evaluation and consent
-if possible. It is conference guidance for the United States, not a clinical
-standard and not universal legislation. The American Psychiatric Association's
+The operative ecclesial source is the exact dated USCCB page state: it advises
+a diocesan response protocol, referral after thorough medical and
+psychological or psychiatric examination, professional input in seeking moral
+certitude, consent if possible, confidentiality, avoidance of solitary
+ministry, and bounded lay participation. It is conference guidance for the
+United States, not a clinical standard, diagnostic instrument, universal
+legislation, or ritual manual. The American Psychiatric Association's
 public DSM-5-TR assessment-measures page was inspected for the limited
 professional proposition that its Cultural Formulation Interview explores
 culture's effect on clinical presentation and care and that assessment

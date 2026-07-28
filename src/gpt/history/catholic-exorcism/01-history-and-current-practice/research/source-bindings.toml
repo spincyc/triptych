@@ -759,11 +759,67 @@ states = ["cataloged"]
 context = "Exact official Spanish delivery controls the public presentation date and the dicastery's stated Christological, ecclesial, and prudential rationale; it does not substitute for the proprietary ritual book."
 
 [[bindings]]
-source_id = "artifact.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-26.usccb-html"
-loci = ["introduction", "minister", "discernment", "preparation", "celebration", "follow-up"]
+source_id = "passage.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-27.us-english-edition-dates"
+loci = ["introduction"]
 role = "official-control"
-states = ["cataloged"]
-context = "Exact dated USCCB page state controls United States approval, confirmation, implementation, and public pastoral guidance. It is not universal law or a professional clinical protocol."
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:ee2d9c65180e6893c3fa554cd505e525d1aeb5fe62d0eb0435882981397bd562"
+verified_on = "2026-07-27"
+context = "Exact dated USCCB passage controls November 2014 approval, December 2016 Holy See confirmation, and 29 June 2017 United States implementation. It is territorial history, not a universal implementation date."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-27.major-minor-distinction"
+loci = ["types-of-exorcisms"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:f54298ca807c7faf98c32a25a5da85e2556ea94d913912c53f902a7625c340f0"
+verified_on = "2026-07-27"
+context = "Exact conference FAQ control for the public minor/major distinction. Canon 1172 and the ritual remain the universal-law and liturgical controls."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-27.diocesan-protocol-referral-evaluation"
+loci = ["discernment"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:7e06102178278733094ca5dbceb04081fd09ec722e01e445c19c477fb77332f4"
+verified_on = "2026-07-27"
+context = "Exact United States conference pastoral control for diocesan protocol, assessment, and referral after thorough medical, psychological, and psychiatric examination. It is not a universal intake office or clinical algorithm."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-27.moral-certitude-professional-input"
+loci = ["discernment"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:5d39aedba29243288ba239efbf4971e1b8ea4024d582e69bec4435d90fcccb94"
+verified_on = "2026-07-27"
+context = "Exact conference pastoral control for moral-certitude framing and professional input. It is neither proof by clinical exclusion nor a universal procedural formula."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-27.medical-mental-health-evaluation"
+loci = ["preparation"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:eb4f55a1051cbbf638ed10267d55f4b4ae06564fdd3a650646284f7f6ff54ea0"
+verified_on = "2026-07-27"
+context = "Exact United States pastoral control for thorough medical and psychological or psychiatric evaluation. It supplies no diagnosis, signs checklist, or inference that unexplained means preternatural."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-27.confidentiality-participation"
+loci = ["celebration"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:f0f785123faa704cea077cd24afb15a5d1a8def0b785a66e4c0ceb38920e3364"
+verified_on = "2026-07-27"
+context = "Exact conference pastoral control for confidentiality, avoidance of solitary ministry, and bounded lay participation. It supplies no ritual directions and does not displace reporting or safeguarding duties."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-27.consent-if-possible"
+loci = ["follow-up"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:1f1a844058daa2daf634b1bcac21f53081e58a067d21b9b1809af9da628dd0bd"
+verified_on = "2026-07-27"
+context = "Exact conference pastoral control for seeking the person's consent if possible. Capacity and jurisdiction-specific legal questions remain outside the FAQ's resolution."
 
 [[bindings]]
 source_id = "artifact.world-health-organization.icd-11-clinical-descriptions-and-diagnostic-requirements.english-who-2024.who-iris-pdf"
