@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders fifteen source-audited records already present in the
+smaller: it renders sixteen source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -36,6 +36,7 @@ The image-dominant alpha contains:
 | `obj-book-marker` | recognizes only | protect prepared markers; do not rearrange |
 | `obj-epistle-book` | recognizes only | identify by the subdeacon's Solemn-Mass use, not the cover |
 | `obj-gospel-book` | recognizes only | distinguish the held-book Gospel sequence from a freestanding lectern |
+| `obj-thurible` | trained thurifer only | distinguish three bowl-support chains from the separate central lid-lifting chain; cold rehearsal and hot-object boundary |
 | `obj-incense-boat` | handles only in an appointed route | container distinct from spoon, incense, and thurible |
 | `obj-incense-spoon` | handles only in an appointed route | separate transfer tool; checked deacon-to-celebrant relationship |
 
@@ -49,14 +50,17 @@ Solemn-Mass book records are rendered only as a TeX-native relational diagram:
 generic graphite-style book symbols carry no artwork or binding claim, while
 TeX owns the exact minister and use labels.
 
-The incense pair uses a source-bounded generated edit of the earlier drawing.
+The incense family uses source-bounded generated artwork. The thurible view
+shows a neutral footed bowl, removable pierced lid, three support chains, and
+a separate central lid-lifting chain without asserting material, ornament, or
+a universal silhouette. The boat-and-spoon pair uses a generated edit of the earlier drawing.
 Unsupported granular contents were removed; decorative morphology remains
 illustrative, and loose incense is classified as a consumable material rather
 than a third vessel.
 
 ## Artwork disposition
 
-The alpha uses ten identity-checked or consumer-reviewed pencil assets:
+The alpha uses eleven identity-checked or consumer-reviewed pencil assets:
 
 - altar bells;
 - a generic paired-cruet plate at common hand scale;
@@ -66,7 +70,8 @@ The alpha uses ten identity-checked or consumer-reviewed pencil assets:
 - an altar Missal open on a low stand;
 - an isolated Missal cushion;
 - a freestanding lectern comparison; and
-- a marker-ribbon detail.
+- a marker-ribbon detail; and
+- a neutral thurible component-recognition view.
 
 The four books-and-supports assets are project-generated rasters made without
 reference images. Their normalized file hashes match the canonical artwork
@@ -108,7 +113,7 @@ remains unproved. See
 
 ## Reader order
 
-1. Compact Alpha title and exact fifteen-object boundary.
+1. Compact Alpha title and exact sixteen-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels
@@ -124,9 +129,11 @@ remains unproved. See
    morphology remains text-only and unresolved.
 11. Epistle/Gospel relational spread: generic unornamented book symbols,
     subdeacon/deacon labels, and the ordinary held-book Gospel sequence.
-12. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
+12. Thurible spread: component recognition, trained-thurifer boundary, cold
+    rehearsal, appointed resting place, and non-operational hot-object safety.
+13. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
     relationship, local lay-server boundary, and non-operational heat safety.
-13. Source notes, scope and qualifications, generation metadata, and rights
+14. Source notes, scope and qualifications, generation metadata, and rights
    colophon.
 
 ## Source control
@@ -153,6 +160,9 @@ All printed claims come from these canonical source keys:
 - `src-met-463080-image`;
 - `src-epistle-book-1962`; and
 - `src-gospel-book-1962`.
+- `src-thurible-missal-1962`;
+- `src-benziger-1927-thuribles`;
+- `src-met-464340-thurible-variation`;
 - `src-missale-incense-boat-spoon`; and
 - `src-met-236950-boat-spoon`.
 
@@ -165,7 +175,7 @@ their morphology claim remains explicitly unresolved.
 ## Known omissions
 
 The alpha does not cover the complete server route, altar composition, the
-remaining Lavabo objects, Communion plate, vesture, thurible, the remaining
+remaining Lavabo objects, Communion plate, vesture, the remaining
 sung and solemn branches, special Masses, Holy Week, pontifical ceremonies, or related
 ceremonies. The detailed Low-Mass queue and missing-candidate accounting remain
 in `low-mass-core-selection-register.md`.

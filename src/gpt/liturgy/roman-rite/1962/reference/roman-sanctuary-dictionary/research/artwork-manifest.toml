@@ -93,8 +93,8 @@ id = "art-incense-0001-closed-thurible"
 asset_file_id = "file-rpd-thurible"
 object_ids = ["obj-thurible"]
 variant_ids = []
-view = "closed"
-workflow_state = "generated"
+view = "closed-component-recognition"
+workflow_state = "source-audited"
 
 [[artwork_links]]
 id = "art-incense-0002-open-boat-spoon"
@@ -471,9 +471,9 @@ technical = { width_px = 1122, height_px = 1402, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-thurible"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible.png"
-state = "held"
-audit_record = "research/artwork-manifest.md"
-technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 172739, sha256 = "cea528df31237132e55f6bec2b9e0355084ad8979a03f558f6efa16a781f7e2c" }
+state = "source-audited"
+audit_record = "research/thurible-source-audit-2026-07-27.md"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 416912, sha256 = "ea611ce0b2e539483a39d2fe803f901dd0f83be4db931d4639364ce37f6769dc" }
 
 [[asset_files]]
 id = "file-rpd-boat-spoon"

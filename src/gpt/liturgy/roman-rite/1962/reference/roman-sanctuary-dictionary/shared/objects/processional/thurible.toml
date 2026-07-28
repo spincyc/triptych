@@ -1,18 +1,18 @@
 schema_version = 1
 id = "obj-thurible"
-workflow_state = "art-reviewed"
+workflow_state = "source-audited"
 preferred_english_name = "Thurible"
 latin_headword = "thuribulum"
 alternate_english_names = ["censer"]
 categories = ["incense"]
 periods = ["roman-1962-horizon"]
-statuses = ["unresolved"]
+statuses = ["universal-roman"]
 ceremonies = ["missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "asperges", "benediction", "procession"]
 related_objects = ["obj-incense-boat", "obj-incense-spoon"]
 
 [presence]
-locations = ["Prepared at the credence or other appointed service place."]
-contexts = ["Candidate record for the vessel in which incense is burned."]
+locations = ["Presented at the altar or Gospel station and carried by the thurifer in the checked Mass loci."]
+contexts = ["Vessel in which incense is placed and from which the checked incensations are made."]
 local_variability = "common"
 
 [handling]
@@ -20,7 +20,7 @@ ordinary_handlers = ["thurifer"]
 server_relation = "carries"
 prepares = ["thurifer", "sacristan"]
 stores = ["sacristan"]
-warnings = ["Treat the bowl, lid, charcoal, and chains as hot; keep the vessel controlled and ventilated."]
+warnings = ["Treat the bowl, removable pierced lid, and chains as hot. A trained thurifer maintains control by the upper ring and chains, rehearses only with a cold empty vessel, and uses an appointed safe resting place. This record gives no charcoal-lighting, loading, extinguishing, or swinging instructions."]
 
 [audience_relevance]
 altar_server = "required"
@@ -30,25 +30,39 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
-id = "clm-thurible-candidate"
+id = "clm-thurible-identity"
 kind = "identity"
-text = "Candidate inventory identity and representative thurible morphology; governing source loci remain to be audited."
-evidence_state = "editorial-proposal"
-source_ids = []
+text = "The 1962 Missal names the thuribulum and thuriferarius in the checked Solemn-Mass and sung-Mass incense loci."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-thurible-missal-1962"]
 
 [[claims]]
 id = "clm-thurible-appearance"
 kind = "appearance"
-text = "The candidate artwork shows a pierced lidded fire bowl, foot, suspension chains, lifting chain, and upper ring as one representative construction."
-evidence_state = "editorial-proposal"
-source_ids = []
+text = "The artwork shows a pierced removable lid over a footed bowl, three support chains, a separate central lid-lifting chain, and an upper disc and ring as one source-bounded representative construction."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-benziger-1927-thuribles"]
 
 [[sources]]
-id = "src-thurible-fortescue-lead"
-binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
-locus = "Relevant thurible passages not yet located."
-role = "lead-only"
-verification_state = "unlocated"
+id = "src-thurible-missal-1962"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-thurible-service"
+locus = "Ritus servandus IV.4, VI.5, VII.10, and VIII.8."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+
+[[sources]]
+id = "src-benziger-1927-thuribles"
+binding = "artifact.benziger-brothers.church-goods-catalogue.benziger-1927.internet-archive-pdf-b09d9bf5"
+locus = "Printed pp. 116-117; artifact PDF pp. 154-155."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+
+[[sources]]
+id = "src-met-464340-thurible-variation"
+binding = "artifact.metropolitan-museum-of-art.censer-464340.met-collection-record-2026-07-23.met-api-json-cd91d278"
+locus = "Object 464340; accession 17.190.360; component dimensions."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
 
 [[artwork]]
 id = "art-incense-0001-closed-thurible"
@@ -57,4 +71,4 @@ asset = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-
 review_state = "identity-checked"
 depicts = ["obj-thurible"]
 scale_mode = "not-applicable"
-review_note = "Screen-checked for one bowl and lid, connected chains, grayscale ground, crop safety, absent lettering, smoke, and duplicated parts; source, hot-state, and print review remain pending."
+review_note = "Source-bounded neutral catalog morphology: footed bowl, removable pierced lid, three visibly separate support chains, one central lid-lifting chain through the upper disc/ring, and no material or ornament claim. The isolated cold-state figure contains no text, smoke, flame, charcoal, or action."

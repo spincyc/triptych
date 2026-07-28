@@ -142,6 +142,29 @@ The current convention permits a bounded alpha when source integrity, rights,
 safety, reproducibility and identity, mechanical validity, and basic visual
 usability pass.
 
+The next altar-server incense tranche adds the thurible as a sixteenth
+source-audited record. Exact 1962 Missal loci control the object identity and
+named thurifer relationships. Benziger Brothers' 1927 catalog, exact PDF
+SHA-256
+`b09d9bf5920d3a0e137519e53e8064fb42a6e0702aa26779edf2178200df8ab0`,
+controls the neutral component-recognition drawing and bounded scale;
+Metropolitan Museum of Art object 464340 remains a variation control only.
+The project-generated graphite figure visibly separates three bowl-support
+chains from the central lid-lifting chain, contains no text or operational
+action, and makes no material, ornament, or universal-silhouette claim.
+The entry limits instruction to a trained thurifer, cold empty rehearsal,
+upper-ring and chain control, and an appointed safe resting place. It gives no
+charcoal-lighting, loading, extinguishing, or swinging procedure.
+
+The resulting 15-page bounded alpha was rebuilt for settled passes, rastered
+through the repository review helper, and visually inspected on every page
+and at full size on the new thurible page and dense terminal pages. The
+thurible's three support chains and separate central lid chain remain
+unambiguous at rendered size. The PDF has embedded fonts, extractable text, no
+fatal error, undefined reference, overfull box, clipping, overlap, or spill
+page, and exact build/installed byte identity. Installed SHA-256:
+`b8de0ef1588aabe26390e781b20a81460205f3ad3262d1b35d30a66270e411b3`.
+
 ## Alpha readiness
 
 Each rebuilt leaf is alpha-eligible when the six current concerns pass. The

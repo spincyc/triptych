@@ -118,3 +118,30 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Shows one closed lidded boat and separate spoon at common photographic scale. Material, ornament, and exact silhouette are not generalized."
 verified_on = "2026-07-27"
 source_fingerprint = "sha256:a9f637308cfe3c70bfc51a64f6124097154bbe6c1f100962c0a9e52f791898f3"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-thurible-service"
+loci = ["Ritus servandus in celebratione Missae IV.4, VI.5, VII.10, and VIII.8, printed pp. LVI, LVIII, LX, and LXI; artifact PDF pp. 58, 60, 62, and 63"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the thurible identity and named thurifer/deacon/celebrant relationships at checked Mass incense stations. It does not establish morphology, material, chain-control technique, charcoal procedure, or swinging instruction."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:a1357ace4ec42895d814f3b5da70fac8aa609381787368f8af4c1ddc0e242b86"
+
+[[bindings]]
+source_id = "artifact.benziger-brothers.church-goods-catalogue.benziger-1927.internet-archive-pdf-b09d9bf5"
+loci = ["printed pp. 116-117; artifact PDF pp. 154-155"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Shows multiple 1927 commercial censer forms with footed bowls, removable pierced lids, three support chains, and separate central lid-lifting chains. Model 4145 lists a 10.5-inch total height and 4.5-inch bowl diameter; the plate uses a neutral synthesis, not catalog ornament, material, or a universal silhouette."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:2b3c0443b02d39686e2de3b96547ea4b0e3bb8278993821fbaac0b908bf28bf2"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.censer-464340.met-collection-record-2026-07-23.met-api-json-cd91d278"
+loci = ["object 464340; accession 17.190.360; body, lid, base, and chain dimensions"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Supplies one historical censer variation with separately cataloged body, lid, base, and chain dimensions. It demonstrates variation only and does not control the generic teaching drawing."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:4721876162d9207ec62de37a527defdc7f63a821447f15ee65bef2039510ff82"
