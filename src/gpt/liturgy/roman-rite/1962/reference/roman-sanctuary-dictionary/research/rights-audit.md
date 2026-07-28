@@ -24,6 +24,16 @@ not retained, preserves the contemporaneous prompt bounds rather than
 reconstructing them, and binds the five generic editions plus the existing
 bespoke altar-server consumer to the same normalized raster identity.
 
+The Communion-plate comparison raster is project-generated without a
+reference image. Its exact prompt, source controls, received and normalized
+hashes, grayscale-only transformation, corrections, exclusions, and consumer
+checks are recorded in the canonical artwork manifest and
+`communion-plate-source-audit-2026-07-28.md`. It is distributed under the
+repository's project-content terms. The 1952 Hirten catalog and Met records
+supply evidence only; no third-party image pixel is reproduced. Promotion to
+the five generic editions reuses the exact installed raster and does not
+change this disposition.
+
 The four books-and-supports pencil rasters
 `art-altar-missal-on-stand`, `art-missal-cushion-isolated`,
 `art-lectern-isolated`, and `art-book-marker-ribbons-detail` are

@@ -78,9 +78,29 @@ asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0004-communion-plate-paten
 review_state = "liturgically-checked"
 depicts = ["obj-communion-plate", "obj-paten"]
 scale_mode = "not-to-common-scale"
-review_note = "The larger plain round one-handle form is source-bounded to Hirten No. 7701; the smaller thin priest paten is controlled by the existing Met exemplar evidence. No exact rim height, depth, color, ornament, shared scale, or on-chalice relationship is depicted."
+review_note = "The larger plain round one-handle form is source-bounded to Hirten No. 7701; the smaller thin priest paten is only a comparison reference controlled by the existing Met exemplar evidence and does not admit obj-paten into an edition. No exact rim height, depth, color, ornament, shared scale, or on-chalice relationship is depicted."
 
 [[audience_note]]
 audience = "altar-server"
 text = "When assigned, hold the Communion plate level beneath the communicant's chin; never substitute or handle the priest's paten."
 claim_ids = ["clm-communion-plate-identity-use"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the Communion plate where local direction assigns it; the pictured one-handle form is one dated exemplar, while the Missal controls the under-chin function rather than material, dimensions, or handle count."
+claim_ids = ["clm-communion-plate-identity-use", "clm-communion-plate-hirten-exemplars"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the plate's under-chin function, level handling, and fragment boundary without turning one server assignment or the pictured one-handle form into a universal rule."
+claim_ids = ["clm-communion-plate-identity-use", "clm-communion-plate-hirten-exemplars"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "This is the distinct under-chin Communion plate, not the priest's smaller paten; the pictured handle belongs to one dated commercial exemplar rather than a prescribed universal form."
+claim_ids = ["clm-communion-plate-identity-use", "clm-communion-plate-hirten-exemplars"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This is an ordinary supporting object used when Communion is distributed, not pontifical insignia or a distinct pontifical form; the smaller paten in the figure is comparison context only."
+claim_ids = ["clm-communion-plate-identity-use", "clm-communion-plate-hirten-exemplars"]

@@ -347,7 +347,7 @@ technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-communion-plate-paten-comparison"
 path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0004-communion-plate-paten-comparison.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1693, height_px = 929, bit_depth = 8, color_mode = "grayscale", bytes = 446570, sha256 = "54b95d36083a0af26a2aa1134288a0ba5ac6cf2abb6a6734dc6cb7041b8e5946" }
 
@@ -730,7 +730,7 @@ baked_content_audit = [
 ]
 tex_overlays = ["English and Latin names, handling boundary, safety warning, object ID, source keys, and scale qualification remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
 rights = "Project-generated raster. No third-party reference input was transferred or identified to the integrating agent; this record does not claim that no unseen interface input existed. Project rights boundary remains governed by LICENSE and THIRD_PARTY.md."
 
 [artworks.received]

@@ -667,3 +667,11 @@ make check-public-alpha
 make public-site
 make verify-public-site
 ```
+
+## Communion-plate cross-edition checkpoint — 2026-07-28
+
+The exact checked comparison raster is reused without pixel changes across
+the five generated editions. Each consumer prints the not-to-common-scale
+state and confines the smaller priest's paten to comparison context; no
+generated selection admits `obj-paten` merely because it appears in the
+figure. The bespoke altar-server leaf keeps its existing full-page treatment.

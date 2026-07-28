@@ -11,7 +11,7 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
-The present bounded family covers twenty-five records: the appointments-and-books
+The present bounded family covers twenty-six records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel; and the thurible, incense boat,
@@ -35,6 +35,11 @@ covering, decoration, or exact placement.
 The paired altar-cruets plate teaches a small wine-and-water service pair at
 common hand scale while leaving material, markings, closure, handle, tray,
 left-right order, and Latin terminology unasserted.
+
+The Communion-plate page distinguishes the Missal's under-chin
+*patina* from the priest's paten. The one-handle form is one dated commercial
+exemplar, the comparison is not to common scale, and the paten is comparison
+context rather than a separately admitted record.
 
 The complete reader order remains the order declared in
 `shared/schema/edition-selections.toml`. This alpha does not claim that the

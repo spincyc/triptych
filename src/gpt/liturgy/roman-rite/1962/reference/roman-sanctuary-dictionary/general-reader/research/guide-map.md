@@ -10,7 +10,7 @@ reader. It owns no copied facts. Each plate emphasizes identity and purpose;
 its canonical audience note explains a useful distinction without enlarging
 the verified claims.
 
-The twenty-three-record alpha adds the corporal, purificator, chalice pall,
+The twenty-four-record alpha adds the corporal, purificator, chalice pall,
 chalice veil, burse, three altar cloths, credence table, Lavabo basin, and
 Lavabo towel to the appointments-and-books family, together with the incense
 boat and spoon. One image-dominant page per object preserves the principal
@@ -31,3 +31,7 @@ the first page only.
 The paired altar-cruets page identifies the wine-and-water service pair while
 showing only one representative handled form. It does not assert a fixed
 material, marking, closure, tray, order, or Latin headword.
+
+The Communion-plate page identifies the distinct under-chin object and uses
+the smaller priest's paten only as comparison context. The two are not shown
+to common scale, and the dated one-handle exemplar is not a universal form.

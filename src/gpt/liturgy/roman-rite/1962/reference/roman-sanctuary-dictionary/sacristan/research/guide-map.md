@@ -34,5 +34,8 @@ prevalence, Roman prescription, a universal form, or an operating method;
 trained local fire-safety practice controls its use and storage. The paired
 altar cruets add the checked wine-and-water preparation relationship while
 leaving vessel material, closure, markings, tray, left-right order, and Latin
-terminology to source or local direction. The twenty-five-record edition
-creates no external-review gate.
+terminology to source or local direction. The Communion-plate page adds the
+Missal-controlled under-chin identity while leaving storage, material,
+dimensions, and handle count to local direction or the dated exemplar. The
+smaller priest's paten is comparison context only. The twenty-six-record
+edition creates no external-review gate.

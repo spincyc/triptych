@@ -271,3 +271,20 @@ headword for this canonical record, the generic alpha pages print `Latin term
 not asserted` rather than presenting either lead as verified. The bespoke
 altar-server edition retains its stronger full-page paired treatment and is
 not given a duplicate generated entry.
+
+## Communion-plate alpha reconciliation — 2026-07-28
+
+The exact Missal, 1952 Hirten catalog, Met catalog-exemplar comparison
+control, and completed artwork audit recorded in
+`communion-plate-source-audit-2026-07-28.md` support promotion of the
+Communion plate through the five generic canonical-alpha editions. The
+promotion adds no source claim. It preserves the Missal-controlled under-chin
+function and fragment boundary while presenting the one-wood-handle form only
+as one dated commercial exemplar.
+
+The smaller priest's paten remains visible only as comparison context. Its
+presence in this figure does not admit `obj-paten` into any generated edition
+or establish a server handling claim. The figure is not to common scale and
+does not depict a prepared-chalice relationship. The bespoke altar-server
+edition retains its stronger full-page treatment and is not given a duplicate
+generated entry.

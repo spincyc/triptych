@@ -48,3 +48,7 @@ pontifical Mass, not as insignia or a distinct pontifical form. Their
 source-bounded plate asserts no material, marking, closure, tray, universal
 handle, left-right arrangement, or Latin headword and brings the selection to
 twenty-two records.
+The Communion plate enters as an ordinary supporting object used when
+Communion is distributed, not as insignia or a distinct pontifical form. The
+one-handle morphology is a dated exemplar and the smaller priest's paten is
+comparison context only, bringing the selection to twenty-three records.

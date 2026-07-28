@@ -33,5 +33,8 @@ Roman office, universal server task, ceremonial cue, handoff, or operating
 method. The paired altar cruets add the checked wine-and-water service
 relationship without converting the selected server model, one representative
 handled form, local markings, tray, or left-right order into a universal
-assignment. The twenty-five-record canonical alpha gate requires no external
+assignment. The Communion-plate page preserves the under-chin function,
+level-handling boundary, and fragment safety while leaving server assignment
+and morphology local or source-bounded; its smaller priest's paten is
+comparison context only. The twenty-six-record canonical alpha gate requires no external
 review.

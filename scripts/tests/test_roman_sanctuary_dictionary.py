@@ -44,6 +44,10 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 alpha,
             )
             self.assertIn(
+                r"\RSDObjectRecord{obj-communion-plate}",
+                alpha,
+            )
+            self.assertIn(
                 r"{Latin term not asserted}",
                 alpha,
             )
@@ -81,6 +85,11 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertIn(r"\RSDObjectRecord{obj-altar-cruet}", text)
             self.assertIn(
                 r"\RSDSelectedAudienceNote{Prepare the wine and water vessels",
+                text,
+            )
+            self.assertIn(r"\RSDObjectRecord{obj-communion-plate}", text)
+            self.assertIn(
+                r"\RSDSelectedAudienceNote{Prepare the Communion plate",
                 text,
             )
             self.assertNotIn("editorial-proposal", text)
