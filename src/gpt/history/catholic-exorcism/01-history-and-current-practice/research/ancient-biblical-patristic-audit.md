@@ -45,8 +45,9 @@ patristic, biblical, liturgical, and theological review.
   apparatus is bound, so the draft states the variant but does not reconstruct
   its manuscript history or weight.
 - Josephus's exact Whiston VIII.2.5 web witness is normalized, acquired, and
-  inspected. Niese 8.45–49 is retained only as a cross-reference; no Niese
-  Greek witness has been registered.
+  inspected. Niese 8.45–49 now has a separate exact Perseus canonical Greek
+  XML control. It supplies Greek wording and section boundaries, but not
+  Niese's printed apparatus or a fresh manuscript collation.
 - Justin's *Second Apology* 6 is now controlled by a bounded exact passage in
   the retained public-domain ANF volume 1 OCR, collated against the exact
   facsimile at printed page 190. It establishes Justin's apologetic claim, not
@@ -73,7 +74,7 @@ original-language verification.
 | Greek satirical dialogue | Lucian, *Philopseudes* 16, Fowler 1905 English, printed pp. 238–239 | A character narrates claims about a Syrian from Palestine and alleged relief of possession; the skeptical interlocutor replies within the same frame | The event, practitioner, diagnosis, efficacy, payment pattern, standard rite, Christian identity, historical Jesus, or continuity into Christian ritual |
 | Greek literary biography | Philostratus, *Life of Apollonius* 4.20, Conybeare 1912 English, printed pp. 390–392 | Philostratus narrates Apollonius identifying and addressing a demon, demanding departure and a sign, and the youth's changed behavior | The event, diagnosis, causation, efficacy, historicity of the sign, standard practice, dependence on or influence upon Christian texts, or ritual continuity |
 | Late-antique technical magical text | PGM IV.3007–3086, Preisendanz 1928 Greek/German, printed pp. 170–173 | A distinct item directed toward persons described with *daimon*-language and combining material, written, spoken, and adjuratory elements | Manuscript accuracy, date of composition, Jewish or Christian authorship, ordinary practice, efficacy, diagnosis, influence, continuity, equivalence with Christian exorcism, or operational use |
-| Jewish historiography | Josephus, *Antiquities* VIII.2.5 in Whiston (Niese 8.45–49) | Josephus presents himself as seeing Eleazar's performance and frames it through Solomon | The mechanism, actual Solomonic authorship, or historical continuity into Christian ritual |
+| Jewish historiography | Josephus, *Antiquities* Niese 8.45–49 exact Greek; Whiston VIII.2.5 exact English reception | Josephus presents himself as seeing Eleazar's performance and frames it through Solomon | Printed critical apparatus, underlying manuscript adjudication, mechanism, actual Solomonic authorship, diagnosis, efficacy, representative Jewish practice, or historical continuity into Christian ritual |
 | Mark | 1:21–28; 3:22–27; 5:1–20; 9:14–29 | Authority, strong-man architecture, restoration, prayer, and discipleship | A modern diagnostic protocol; an uncontested “and fasting” at 9:29 |
 | Matthew and Luke | Mt 12:22–45; Lk 10:17–20; 11:14–26 | Kingdom/Spirit or finger-of-God interpretation and moral warning | One harmonized chronology or later ministerial reservation |
 | Acts | 8:7; 16:16–18; 19:11–20 | Mission in Jesus' name and rejection of magical appropriation | A claim that the name works as a technique |

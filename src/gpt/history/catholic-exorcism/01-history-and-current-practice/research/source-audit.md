@@ -84,6 +84,13 @@ routes, findings, and limits are recorded in
 
 ## Ritual and historical controls
 
+- Josephus, *Antiquities* 8.45–49 now has an exact Niese Greek control in the
+  dated Perseus canonical XML state, inspected with sections 44 and 50 as
+  boundaries. It controls Greek wording and sectioning separately from the
+  exact Whiston VIII.2.5 English reception witness. It does not supply Niese's
+  printed apparatus, adjudicate manuscripts, or verify Solomonic authorship,
+  the narrated event, diagnosis, efficacy, representative Jewish practice,
+  operational use, or continuity into Christian ritual.
 - H. A. Wilson, ed., *The Gelasian Sacramentary* (1894), pp. 45–50, exact
   complete scan acquired, hashed, and visually inspected 2026-07-27. The
   printed sequence supports baptismal placement of *Exorcismi super electos*;

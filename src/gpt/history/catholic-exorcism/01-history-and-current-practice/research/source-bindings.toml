@@ -3,6 +3,15 @@ record_type = "bindings"
 document = "history/catholic-exorcism/01-history-and-current-practice"
 
 [[bindings]]
+source_id = "passage.josephus.antiquitates-judaicae.niese-greek-perseus-grc2-github-2026-07-27.8.45-49"
+loci = ["8.45-49"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b92ba9091818b26bfa8dffb3acd6da2bb2e65738a91b0598d6d9e9e66a217e30"
+verified_on = "2026-07-27"
+context = "Exact Perseus Niese Greek digital-text control for wording and section boundaries. It does not supply the printed apparatus or verify Solomonic authorship, historical accuracy, diagnosis, efficacy, representative practice, operational use, or Christian continuity."
+
+[[bindings]]
 source_id = "passage.anonymous.great-magical-papyrus-of-paris.preisendanz-teubner-1928-volume-1.3007-3086"
 loci = ["3007-3086"]
 role = "analogue"
