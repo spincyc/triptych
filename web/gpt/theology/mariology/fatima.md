@@ -348,7 +348,7 @@ This account does three jobs at once. It respects a possible divine initiative. 
 
 ### Part one: hell read through the Gospel
 
-Hell is not a Fátima novelty. Jesus warns of definitive loss; the Church teaches that mortal sin freely persisted in to death can result in eternal separation from God (CCC 1033–1037). The imaginative fire signifies the terrible reality of that separation and the creature’s disordered self-enclosure. The image should be neither demythologized into “nothing serious” nor materialized beyond what doctrine establishes.
+Hell is not a Fátima novelty. Jesus warns of definitive loss; the Church teaches that mortal sin requires grave matter, full knowledge, and deliberate consent (CCC 1857–1859), and that dying without repenting of mortal sin means remaining separated from God by one’s own free choice (CCC 1033–1037). The imaginative fire signifies the terrible reality of that separation and the creature’s disordered self-enclosure. The image should be neither demythologized into “nothing serious” nor materialized beyond what doctrine establishes.
 
 The vision’s purpose is salvation of souls. Christian fear is medicinal when it exposes danger and moves toward contrition; it is deformed when it produces despair, obsessive calculation, or delight in others’ punishment. The children look from horror to Mary’s sad kindness and then to intercession. The correct fruit is compassion for sinners because every Christian is a sinner rescued by grace.
 
@@ -590,7 +590,7 @@ Daily prayer for peace is also moral formation. Repetition slowly exposes resent
 
 Penance begins with *metanoia*, a grace-enabled turning of mind and life. It includes contrition, confession where required, restitution, forgiveness, reform of habits, fasting, almsgiving, and works of mercy. It is not reducible to bodily discomfort.
 
-Fátima’s strong concern for sexual sin must be kept within the whole moral law. Sexual exploitation, adultery, pornography, abuse, and contempt for embodiment are grave because persons belong to God. So are murder, torture, racism, theft, lying, corruption, neglect of the poor, sacrilege, and ideological persecution. A devotion that scrutinizes private modesty while ignoring war crimes or abused children has not heard the ruined city.
+Fátima’s strong concern for sexual sin must be kept within the whole moral law. Sexual exploitation, adultery, pornography, abuse, and contempt for embodiment can involve grave matter because persons belong to God. Grave matter is also found in serious offenses against life, justice, truth, worship, and the poor, including murder, torture, racism, theft, lying, corruption, neglect, sacrilege, and ideological persecution according to their object and circumstances. Personal mortal sin additionally requires full knowledge and deliberate consent (CCC 1857–1859). A devotion that scrutinizes private modesty while ignoring war crimes or abused children has not heard the ruined city.
 
 Reparation has three related directions:
 
@@ -1096,7 +1096,7 @@ This appendix distinguishes event dates, writing dates, judgments, and later rec
 
 3.  Second Vatican Council, *Lumen gentium*, 52–69, especially 56 and 60–62 on Mary’s graced cooperation and Christ’s unique mediation: [official text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html).
 
-4.  *Catechism of the Catholic Church*, 65–67, 668–682, 963–975, 1033–1037, 1362–1372, 2006–2011, and 2683–2684: [official text](https://www.vatican.va/archive/ENG0015/_INDEX.HTM).
+4.  *Catechism of the Catholic Church*, archived Holy See English presentation, 65–67, 668–682, 963–975, 1033–1037, 1362–1372, 2006–2011, and 2683–2684: [official text](https://www.vatican.va/archive/ENG0015/_INDEX.HTM). Exact USCCB Second Edition passage records were separately verified for 1700–1706, 1734–1735, 1857–1859, 2111, and 2116–2117.
 
 5.  Dicastery for the Doctrine of the Faith, *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (17 May 2024; effective 19 May): [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html).
 
@@ -1152,11 +1152,13 @@ This appendix distinguishes event dates, writing dates, judgments, and later rec
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-21T15:25:48Z
+**Last revised (UTC):** 2026-07-28T00:38:03Z
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
 **Agent/runtime:** OpenAI Codex (primary research, drafting, doctrinal, source-audit, and layout roles); Codex CLI 0.144.1; API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex (Catechism source audit, doctrinal correction, source binding, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: interface; unexposed: server revision
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
