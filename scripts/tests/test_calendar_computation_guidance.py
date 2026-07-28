@@ -112,6 +112,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (19, "fifth-after-pentecost"),
         (20, "sixth-after-pentecost"),
         (21, "seventh-after-pentecost"),
+        (22, "eighth-after-pentecost"),
       )),
       *(f"pc-s{number}-{slug}-year-a.pdf" for number, slug in (
         (35, "eleventh-sunday-in-ordinary-time"),
@@ -138,11 +139,15 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
 
   def test_approved_alpha_propers_do_not_regress_to_planned(self):
     traditional = (ROOT / "library/traditional-latin-mass.md").read_text()
-    for proper_id in range(15, 22):
+    for proper_id in range(15, 23):
       row = re.search(rf"^\| {proper_id} \|.*$", traditional, re.MULTILINE)
       self.assertIsNotNone(row)
       self.assertIn("../doc/gpt/", row.group())
-      self.assertTrue(row.group().endswith("| Planned |"))
+      if proper_id == 22:
+        self.assertIn("../doc/claude/", row.group())
+        self.assertIn("../web/claude/", row.group())
+      else:
+        self.assertTrue(row.group().endswith("| Planned |"))
     self.assertIn("| 14 | **Pentecost Sunday** | Planned | Planned |", traditional)
 
     postconciliar = (ROOT / "library/novus-ordo-liturgy.md").read_text()
