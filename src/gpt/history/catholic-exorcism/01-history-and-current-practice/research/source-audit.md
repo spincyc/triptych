@@ -171,9 +171,13 @@ mental-health input; it is not itself a professional clinical protocol.
   polemic against a uniquely divine cause and against claims for purifications
   and incantations, not a Christian witness, neutral practice report, modern
   clinical account, or evidence that medicine displaced exorcism. Plato,
-  *Symposium* 202d–203a; PGM IV.3007–3086; Lucian, *Philopseudes* 16; and
-  Philostratus, *Life of Apollonius* 4.20 remain genre-specific leads, not a
-  composite ancient rite.
+  *Symposium* 202d–203a is now controlled in Fowler's exact 1925 English
+  translation: Diotima's speech presents a *daimon* as intermediate and
+  associates mediation with several religious and divinatory activities. It
+  is a philosophical-literary analogue, not Christian demonology, a census of
+  beings, an exorcism, or a composite ancient rite. PGM IV.3007–3086; Lucian,
+  *Philopseudes* 16; and Philostratus, *Life of Apollonius* 4.20 remain
+  genre-specific leads.
 - No official global count of exorcists, cases, or successful major exorcisms was found; numerical claims in press reports are omitted.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
