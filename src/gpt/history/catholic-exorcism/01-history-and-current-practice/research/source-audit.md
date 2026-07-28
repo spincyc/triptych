@@ -196,8 +196,12 @@ mental-health input; it is not itself a professional clinical protocol.
   and the broken 4Q511 fragment-10 parallel, with lacunae, uncertainty, and
   alternate readings preserved. These establish only the fragmentary
   praise-and-protection architecture, not a complete ritual, translation,
-  manuscript adjudication, or performance setting. 11Q11 remains an
-  edition- and locus-audited lead without an acquired exact text witness.
+  manuscript adjudication, or performance setting. 11Q11 V.4–14 now has its
+  own exact CC-BY-SA Qumran-Digital Hebrew control, preserving the bounded
+  Davidic, protective, direct-address psalmic architecture and its textual
+  uncertainty. It does not supply an English translation, manuscript-image
+  collation, *DJD* XXIII apparatus, complete formula, or certain performance
+  setting.
 - Broad Mesopotamian, Egyptian, and Greco-Roman comparisons were removed.
   Hippocratic *On the Sacred Disease* 1 is now controlled in the exact Adams
   1849 English edition at printed pp. 843–845: it supplies an ancient medical
