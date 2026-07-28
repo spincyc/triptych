@@ -312,7 +312,7 @@ The Church appears here in Marian form: receiving the Word before proclaiming hi
 
 Catholics do not adore the image, Mary, Juan Diego, or Mexico. Adoration belongs to the triune God alone. The honor shown to a sacred image passes to the person represented; Marian veneration is higher than honor given other saints because of her singular relation to Christ, but remains infinitely below worship of the Creator.
 
-This distinction is not a technical escape from idolatry. It governs practice. Kneeling, candles, touch, procession, flowers, songs, and copies can be embodied acts of remembrance and petition when directed within Catholic faith. They become corrupt when the object is treated as a power to manipulate, when money purchases guaranteed protection, or when access to the cloth displaces Christ’s sacraments and moral conversion.
+This distinction is not a technical escape from idolatry. It governs practice. Kneeling, candles, touch, procession, flowers, songs, and copies can be embodied acts of remembrance and petition when directed within Catholic faith. They become corrupt when the object is treated as a power to manipulate, when money purchases guaranteed protection, or when access to the cloth displaces Christ’s sacraments and moral conversion (CCC 2111).
 
 Historical Franciscan anxiety over the Tepeyac cult should be understood inside this real pastoral problem. Missionaries had to distinguish Christian veneration from continuity of worship incompatible with the faith. The task of purification applies across cultures.
 
@@ -769,7 +769,7 @@ Limited photography and examinations generate disputed claims about eyes, fibers
 
 ### Papal, liturgical, and official ecclesial sources
 
-1.  Second Council of Nicaea as received in the *Catechism of the Catholic Church*, nos. 1159–1162 and 2131–2132, on sacred images; Vatican II, *Dei Verbum*, nos. 2–4, and the *Catechism*, nos. 65–67, on the fullness of Revelation in Christ. [Catechism: sacred images](https://www.vatican.va/content/catechism/en/part_two/section_one/chapter_two/article_1/iv_sacred_images.html); [*Dei Verbum*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html).
+1.  Second Council of Nicaea as received in the *Catechism of the Catholic Church*, nos. 1159–1162 and 2131–2132, on sacred images; Vatican II, *Dei Verbum*, nos. 2–4, and the *Catechism*, nos. 65–67, on the fullness of Revelation in Christ. [Catechism: sacred images](https://www.vatican.va/content/catechism/en/part_two/section_one/chapter_two/article_1/iv_sacred_images.html); [*Dei Verbum*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html). Exact USCCB Second Edition passage records were separately verified for nos. 1700–1706 on dignity and freedom and no. 2111 on superstition and merely external performance.
 
 2.  Vatican II, [*Lumen gentium*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html), nos. 56 and 60–62; *Catechism of the Catholic Church*, no. 970; and DDF, [*Mater Populi Fidelis*](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html) (4 November 2025), especially nos. 24–28 and 35–38, on Christ’s unique mediation and Mary’s wholly received, subordinate, maternal cooperation and intercession.
 
@@ -831,7 +831,11 @@ Limited photography and examinations generate disputed claims about eyes, fibers
 
 5.  The material object, its dated reproductions, and published conservation and art-historical descriptions. No direct access, sampling, imaging, or new experiment was performed for this monograph. Technical claims therefore remain bounded by the methods and access of their actual reports.
 
-**Last revised (UTC):** 2026-07-21T15:25:48Z
+**Last revised (UTC):** 2026-07-28T00:46:54Z
+
+**Model:** `gpt-5.6-sol`; `effort=ultra`
+
+**Agent/runtime:** OpenAI Codex (Catechism source audit, doctrinal source binding, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: interface; unexposed: server revision
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 

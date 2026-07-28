@@ -57,3 +57,29 @@ deferred independent-review gates do not change.
 This is an internal current-guidance and staleness determination, not a human
 historical, theological, moral, Indigenous-community, or ecclesiastical
 review.
+
+## Publication checkpoint
+
+At `2026-07-28T00:46:54Z`, the committed source was built through two pdfTeX
+passes to a settled 30-page PDF. The final log contained no fatal error,
+undefined reference, overflow, underfull-box warning, package warning, or
+rerun request. All 30 rendered pages were visually inspected through the
+repository review contact sheets; physical page 14, containing the new CCC
+2111 binding, and physical page 30, containing the final references,
+generation metadata, and rights notice, were additionally inspected at full
+size. No clipping, collision, accidental blank page, broken table, malformed
+heading, footer conflict, or final-apparatus defect was observed.
+
+The reviewed installed artifacts are exact copies of their build outputs:
+
+- PDF SHA-256:
+  `5814c91bf22402f0c100c24d317d57596c0a620bf49960abff7500eb51fc0853`
+- web-edition SHA-256:
+  `37e01fc4e3771f98d74c8bbdab695d038acc5e0e580688ac74d4256f102cebea`
+
+Generation metadata, embedded-font status, and extracted text were checked.
+`qpdf` was unavailable in the review environment, so no `qpdf` structural
+claim is made. The exact Guadalupe PDF and web hashes were refreshed in the
+existing release and rights bindings under the repository's recorded
+perpetual authorization. That mechanical refresh adds no human, Indigenous-
+community, historical, theological, moral, or ecclesiastical approval.
