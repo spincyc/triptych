@@ -83,6 +83,8 @@ the canonical `artwork-manifest.toml`.
 | Artwork ID | File | What it may demonstrate | What it may not demonstrate |
 | --- | --- | --- | --- |
 | `art-altar-missal-on-stand` | `shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand.png` | readable relationship among one open Missal, support, and markers | prescribed binding, dimensions, stand construction, ornament, or marker count |
+| `art-altar-missal-on-stand-v2` | `shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand-v2.png` | the same checked relationship with a transparent, feathered publication boundary | any new morphology or source claim beyond the unchanged predecessor |
+| `art-missal-stand-isolated-v2` | `shared/artwork/pencil/books/RPD-FIG-books-0005-iso-missal-stand-v2.png` | isolated recognition of the empty low support and distinction from the cushion and freestanding lectern | prescribed folding construction, wood, hinge arrangement, proportions, dimensions, or surface treatment |
 | `art-missal-cushion-isolated` | `shared/artwork/pencil/books/RPD-FIG-books-0002-iso-missal-cushion.png` | visual distinction between a soft support and a rigid stand | prescribed wedge, fabric, fringe, color, stuffing, or size |
 | `art-lectern-isolated` | `shared/artwork/pencil/books/RPD-FIG-books-0003-iso-lectern.png` | distinction between a freestanding support and the low altar stand | universal pedestal construction or the bare/covered ceremonial state by itself |
 | `art-book-marker-ribbons-detail` | `shared/artwork/pencil/books/RPD-FIG-books-0004-detail-marker-ribbons.png` | one familiar physical realization of book markers | that *signacula* must be ribbons, that six are required, or that alternating tones encode liturgical colors |
@@ -99,6 +101,15 @@ This was an internal visual/technical check, not priestly, independent,
 material-culture, print, consumer, rights, or release approval. The figures
 remain at `generated`; the canonical object links remain
 `identity-checked`.
+
+The 2026-07-28 duplication pass adds a versioned, strictly isolated Missal
+stand drawing with a transparent publication boundary. It is the canonical
+recognition view for `obj-missal-stand`. The combined drawing remains the
+contextual formation for `obj-altar-missal`, `obj-missal-stand`, and
+`obj-book-marker`, including its bespoke altar-server use. Its versioned
+boundary successor changes only the perimeter alpha; the original file and
+record remain as generation and review provenance. Neither boundary successor
+adds evidence for construction or material.
 
 ## Morphology qualifications to retain
 

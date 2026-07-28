@@ -1144,3 +1144,59 @@ and installed bytes are identical:
 | MC and trainer | 13 | 22,684,248 | `72230953c84513abeab90d1c99277852b2a233e1a168bcb21b1694f708de2a86` |
 | General reader | 12 | 21,909,772 | `b13d90c0c02e6aafedd73bdcf5b80ed57d2523aee90c5d3bd59f7b1b280a9523` |
 | Pontifical ceremonies | 11 | 20,909,634 | `12c2732ae939f38c84bb6977a4b3def3cdf4f2a41ded7bd5bae4d6daad9428c2` |
+
+## Isolated Missal stand and combined-formation boundary checkpoint — 2026-07-28
+
+The Missal stand now has its own isolated recognition drawing while the
+combined altar Missal, marker ribbons, and low stand remains available for
+relational teaching. The governing source ceiling is deliberately narrow:
+General Rubric 527 identifies the `legile` as an alternative support beneath
+the Missal. It does not prescribe folding wood, hinge arrangement, material,
+dimensions, proportions, surface treatment, or the exact representative
+silhouette. The combined view likewise asserts no prescribed binding,
+construction, dimensions, ornament, or ribbon count.
+
+The new isolated consumer asset,
+`RPD-FIG-books-0005-iso-missal-stand-v2.png`, is a 1536-by-1024 8-bit
+grayscale-plus-alpha PNG of 836,924 bytes with SHA-256
+`d0888c36ce240256b191aba3d5b253675108c5ac796692505fe8cf87cbb9b497`.
+Its received project-generated RGB raster was 1536 by 1024 pixels,
+2,293,983 bytes, with SHA-256
+`f41799b8a27adec066d5654ddc1a772f47a8d109456db0c5bb361b2bb3f2d8fa`.
+The exact prompt, transparent-boundary transformation, rights basis, and
+review assertions are recorded under `art-missal-stand-isolated-v2` in
+`artwork-manifest.toml`.
+
+The combined formation's boundary-safe successor,
+`RPD-FIG-books-0001-in-use-missal-on-stand-v2.png`, is a 1122-by-1402
+8-bit grayscale-plus-alpha PNG of 762,142 bytes with SHA-256
+`30227d4df112ec1d2715425186d3b5ccc01a9d1708f806c35d5682a56ce02c35`.
+It is a deterministic perimeter-alpha derivative of the checked 597,021-byte
+grayscale predecessor whose SHA-256 is
+`da4e27db347fc260b2b11b4805b29b54f4749434c68d7ccb54c2c48be08ee045`;
+the interior grayscale figure and object relationships are unchanged.
+
+All six editions are consumers of the canonical isolated Missal-stand record
+and the combined formation. The five generated editions receive the isolated
+view through their shared selection and retain the combined view as relational
+artwork; the bespoke altar-server edition keeps the combined successor on its
+Missal-and-stand page while its canonical record and guide map distinguish the
+isolated recognition view.
+
+All six editions rebuilt for settled passes and were rastered with the bounded
+review helper. Every page was inspected, with the isolated stand cards and
+combined formation pages checked at full size. The former blank Missal-stand
+cards now show exactly one empty low support, while the combined page retains
+the open Missal, markers, and stand. Both assets blend into the page without a
+hard rectangle, clipping, or label collision. Logs have no fatal error,
+undefined reference, overfull box, or unresolved rerun request. Build and
+installed bytes are identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 14 | 23,448,006 | `1eb27dabaa20b73b314705c63ec7c97ec8fc749365240273565f182d2fa16270` |
+| Altar server | 33 | 18,749,777 | `b1def433272c24e1f57465872460baf2c5da077ae563e527ce83601848bef7d9` |
+| Sacristan | 13 | 23,486,312 | `4c53fff41a766503781f291cca94dc26a1b18517ef6fd61d3cb6c05c8b1bd5ef` |
+| MC and trainer | 13 | 23,488,486 | `082e5fba20f82eda0dd87c4772b8e51940e313037051508ece853479a7a12031` |
+| General reader | 12 | 22,713,992 | `ca8741c03bda7e7f2ac6e84f0f49e6d22ececd7ad2b73958d105229079fe3954` |
+| Pontifical ceremonies | 11 | 21,713,884 | `20b2e9867aab93506b30a156e36c932cfbf9b4cdab2221781596d4fba7a9b16d` |

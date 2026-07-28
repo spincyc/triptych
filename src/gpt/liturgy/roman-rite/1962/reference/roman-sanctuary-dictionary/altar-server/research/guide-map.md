@@ -144,7 +144,8 @@ The alpha uses identity-checked or consumer-reviewed pencil assets including:
 - a combined candle lighter and modest extinguisher-bell tool, shown without
   flame, mechanism, labels, or contextual size cues; and
 - chalice;
-- an altar Missal open on a low stand;
+- an isolated empty low Missal stand for object recognition, while the
+  combined altar-Missal-on-stand scene remains on the bespoke relational page;
 - an isolated Missal cushion;
 - a freestanding lectern comparison; and
 - a marker-ribbon detail; and
