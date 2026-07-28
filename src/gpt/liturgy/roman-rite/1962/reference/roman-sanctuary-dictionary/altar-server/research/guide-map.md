@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders thirty-two source-audited records already present in the
+smaller: it renders thirty-three source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -34,6 +34,7 @@ The image-dominant alpha contains:
 | `obj-candle-lighter-extinguisher` | recognizes unless an adult assigns otherwise | practical/local preparation equipment; no Roman prescription or flame procedure |
 | `obj-chalice` | must not handle | distinguish the sacred vessel from a cruet |
 | `obj-paten` | must not handle | distinguish the priest's paten from the Communion plate |
+| `obj-communion-plate` | handles when assigned | keep level beneath the communicant's chin; fragments remain for the priest |
 | `obj-altar-missal` | moves only by assignment | identify the altar book; protect and balance it |
 | `obj-missal-stand` | moves only by assignment | low altar support; never combine with cushion |
 | `obj-missal-cushion` | alternative support | cushion replaces stand beneath the Missal |
@@ -158,14 +159,17 @@ plate only when it is labeled as one exact museum catalog exemplar: it
 supplies that paten's morphology and dimensions, its paired chalice at common
 overall-object scale, and the Missal-controlled on-chalice preparation
 relationship. It does not establish a universal or representative Roman
-silhouette. The Communion plate can be distinguished by its Missal term,
-location, and function, but its 1962-horizon handled or raised-edge morphology
-remains unproved. See
-`../../research/paten-comparison-source-audit-2026-07-27.md`.
+silhouette. The new comparison plate uses the Missal for the Communion
+plate's distinct under-chin identity and fragment-catching function, and the
+exact 1952 Hirten catalog only for one dated plain round one-wood-handle
+exemplar. The catalog's separate two-handle exemplar remains TeX-only. No
+exact rim height, depth, required material, color, ornament, universal
+silhouette, shared scale, or Communion-plate-on-chalice relationship is
+asserted.
 
 ## Reader order
 
-1. Compact Alpha title and exact thirty-two-object boundary.
+1. Compact Alpha title and exact thirty-three-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels
@@ -178,31 +182,33 @@ remains unproved. See
    exact bare and white-covered ritual states, and illustrative morphology.
 10. Prepared book-marker spread.
 11. Chalice-and-paten boundary spread with one dimensioned Met catalog
-   exemplar and a Missal-controlled prepared inset; Communion-plate
-   morphology remains text-only and unresolved.
-12. Epistle/Gospel relational spread: generic unornamented book symbols,
+   exemplar and a Missal-controlled prepared inset.
+12. Communion-plate/paten comparison: Missal-controlled under-chin function,
+   one dated one-handle Hirten exemplar, two-handle variant noted in TeX,
+   conditional handling, confusables, and fragment safety.
+13. Epistle/Gospel relational spread: generic unornamented book symbols,
     subdeacon/deacon labels, and the ordinary held-book Gospel sequence.
-13. Acolyte-candlestick spread: footed carrying light and elevation-torch
+14. Acolyte-candlestick spread: footed carrying light and elevation-torch
     distinction.
-14. Elevation-torch spread: footless non-self-standing recognition,
+15. Elevation-torch spread: footless non-self-standing recognition,
     Fortescue-bounded Elevation timing, local-variation ceiling, and
     non-operational safety.
-15. Optional processional-cross spread: local/customary status and required
+16. Optional processional-cross spread: local/customary status and required
     stand.
-16. Thurible spread: component recognition, trained-thurifer boundary, cold
+17. Thurible spread: component recognition, trained-thurifer boundary, cold
     rehearsal, appointed resting place, and non-operational hot-object safety.
-17. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
+18. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
     relationship, local lay-server boundary, and non-operational heat safety.
-18. Credence-table spread: empty service-station recognition, selected
+19. Credence-table spread: empty service-station recognition, selected
     Epistle-side teaching model, local form and placement variability, and no
     inferred permission for objects placed upon it.
-19. Sedilia spread: three movable chairs versus one three-place bench,
+20. Sedilia spread: three movable chairs versus one three-place bench,
     sacred-minister/server-seat/pontifical confusables, and fixed-furniture
     handling boundary.
-20. Lavabo basin/manuterge spread: Missal-controlled pairing and use,
+21. Lavabo basin/manuterge spread: Missal-controlled pairing and use,
     selected Low-Mass role model, confusables, safety, and no disposal
     improvisation.
-21. Source notes, scope and qualifications, generation metadata, and rights
+22. Source notes, scope and qualifications, generation metadata, and rights
     colophon.
 
 ## Source control

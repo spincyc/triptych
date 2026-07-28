@@ -101,6 +101,10 @@ The Lavabo tranche now also adds canonical, source-audited
 `obj-lavabo-basin` and `obj-lavabo-towel`. Their paired plate and TeX entry
 close those two formerly absent chronology candidates while keeping the
 two-server Low-Mass division explicitly model-specific.
+The Communion tranche adds canonical, source-audited
+`obj-communion-plate`. Its Missal-controlled under-chin function and exact
+1952 one-handle catalog exemplar close that missing candidate while preserving
+conditional direct handling and the priest-only fragment boundary.
 
 ## Chronology candidates absent from the installed-snapshot 38-record core
 
@@ -113,7 +117,6 @@ not fill these Low-Mass gaps.
 | Altar composition, altar steps, and predella/footpace | Working-place and lane orientation from LM-001 onward | Recognition and safe-route only |
 | Tabernacle | Closure supplies the Communion-to-ablutions cue in LM-036 | Must not handle in this model |
 | Ciborium and any applicable ciborium veil | Conditional Communion distribution may place them near the server | Recognition only unless a separately sourced model assigns more |
-| Communion plate | First carries it at LM-034--LM-036 and must distinguish it from the paten | Conditional direct handling; fragments remain priest-only |
 | Chalice pall | Named component during priestly reassembly at LM-037 | Must not handle |
 | Corporal | Named altar linen at LM-037 | Must not handle |
 | Burse | Named component at LM-037 | Must not handle |

@@ -8,7 +8,7 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Thirty-two alpha records | Built, inspected, and installed | No | Alpha |
+| Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
@@ -52,6 +52,33 @@ reference, overfull box, or unresolved LaTeX warning. Fonts are embedded and
 text is extractable. Build and installed bytes are identical at 12,403,720
 bytes, SHA-256
 `37beab5cc0f769596f2b21265d1cdef847fc5f41dd4177818cda98b53f8688ef`.
+
+The 2026-07-28 Communion-plate checkpoint expanded the altar-server alpha to
+30 pages and thirty-three records. The exact 1962 *Missale Romanum*,
+*Ritus servandus* X.7 controls the distinct *patina* held beneath
+communicants' chins and the priest's disposition of any fragments. The exact
+1952 Hirten catalog page controls only two dated commercial exemplars:
+No. 7701, a round \(7\frac{3}{4}\)-inch one-wood-handle form, and No. 7702,
+a round 7-inch two-handle form measuring \(9\frac{1}{2}\) inches across its
+handles. The latter remains prose-only.
+
+The project-generated comparison plate contains one plain shallow round
+one-wood-handle catching surface and a separate smaller thin handleless
+priest's paten. It contains no text, person, hand, chin, chalice, host,
+fragment, ritual action, lavabo article, domestic tray setting, ornament, or
+color cue. TeX owns the not-to-common-scale notice, conditional handling,
+under-chin direction, dated dimensions and variant, paten/basin/tray
+confusables, fragment safety, and the refusal to prescribe exact rim height,
+depth, material, color, ornament, or a universal silhouette.
+
+Both contact sheets, all 30 rendered pages, and the new comparison page at
+full size were inspected. The two objects remain distinct and legible; the
+new page has no clipping, overlap, spill, or unsafe ambiguity. The settled log
+has no fatal error, undefined reference, overfull box, or unresolved LaTeX
+warning; pre-existing narrow-source-key underfull notices remain. Fonts are
+embedded and text is extractable. Build and installed bytes are identical at
+12,876,542 bytes, SHA-256
+`199a868b04216372a6f52654a84f94796275cd5f98e2d25f92384cb531f14e0a`.
 
 Each leaf has its own `research/guide-map.md`. Presence of `main.tex`,
 generation metadata, an installed PDF, or `web-edition.toml` does not imply

@@ -1,0 +1,86 @@
+schema_version = 1
+id = "obj-communion-plate"
+workflow_state = "source-audited"
+editorial_note = "The 1962 Missal controls the distinct under-chin patina and its fragment-catching function. The 1952 Hirten catalog controls only two dated commercial morphologies and dimensions, not a universal Roman form."
+preferred_english_name = "Communion plate"
+latin_headword = "patina"
+alternate_english_names = ["Communion paten"]
+alternate_latin_names = []
+sort_name = "Communion plate"
+categories = ["service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-paten", "obj-lavabo-basin"]
+related_objects = ["obj-chalice"]
+component_objects = []
+
+[presence]
+locations = ["Prepared on the Epistle-side service table and held beneath communicants' chins when Communion is distributed."]
+contexts = ["Used to catch fragments during the distribution of Communion."]
+composition_ids = []
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["other-server", "acolyte", "priest"]
+server_relation = "handles"
+prepares = []
+presents = ["other-server", "acolyte"]
+receives = []
+stores = []
+warnings = ["Keep the plate level beneath the communicant's chin without touching the communicant.", "Do not treat it as the priest's paten, a lavabo basin, or a general tray.", "Fragments remain for the priest; do not brush, wipe, discard, or attempt to remove them."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-communion-plate-identity-use"
+kind = "liturgical-use"
+text = "The 1962 Missal names a distinct patina placed beneath communicants' chins and directs the celebrant to put any fragments found on it into the chalice."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-communion-plate"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-communion-plate-hirten-exemplars"
+kind = "appearance"
+text = "A 1952 Hirten catalog offers one round 7 3/4-inch Communion paten with a wood handle and a separate round 7-inch two-handle form measuring 9 1/2 inches across its handles."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hirten-1952-communion-patens"]
+as_of = 1952-01-01
+
+[[sources]]
+id = "src-missale-1962-communion-plate"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-communion-plate"
+locus = "Ritus servandus X.7, printed p. LXIII, artifact PDF p. 65"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "Controls distinct identity, under-chin placement, and fragment-catching function, not morphology or server assignment."
+
+[[sources]]
+id = "src-hirten-1952-communion-patens"
+binding = "passage.william-j-hirten-company.hirten-church-goods.hirten-1952.communion-patens-7701-7702"
+locus = "Nos. 7701 and 7702, printed p. 111, artifact PDF p. 113"
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "Two dated commercial exemplars, not a norm. The drawing selects the plain round one-wood-handle morphology of No. 7701 and does not encode gold color, exact rim height, or depth."
+
+[[artwork]]
+id = "art-communion-plate-paten-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0004-communion-plate-paten-comparison.png"
+review_state = "liturgically-checked"
+depicts = ["obj-communion-plate", "obj-paten"]
+scale_mode = "not-to-common-scale"
+review_note = "The larger plain round one-handle form is source-bounded to Hirten No. 7701; the smaller thin priest paten is controlled by the existing Met exemplar evidence. No exact rim height, depth, color, ornament, shared scale, or on-chalice relationship is depicted."
+
+[[audience_note]]
+audience = "altar-server"
+text = "When assigned, hold the Communion plate level beneath the communicant's chin; never substitute or handle the priest's paten."
+claim_ids = ["clm-communion-plate-identity-use"]

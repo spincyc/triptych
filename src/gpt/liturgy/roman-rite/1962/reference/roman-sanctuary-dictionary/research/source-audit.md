@@ -209,3 +209,18 @@ earlier single stoppered asset remains held because it can read as a household
 decanter. Exact artifact identities, hashes, acquisition correction, rights,
 and synthesis ceilings are recorded in
 `cruet-pair-source-audit-2026-07-27.md`.
+
+## Communion-plate morphology pass — 2026-07-28
+
+The 1962 *Missale Romanum*, *Ritus servandus* X.7 continues to control the
+distinct under-chin *patina* and fragment-catching function. One exact 1952
+Hirten catalog page now supplies dated material-culture evidence for a round
+one-wood-handle commercial exemplar and a separate two-handle variant. It
+does not establish a universal Roman morphology, exact rim height or depth,
+required material, color, ornament, server assignment, or ritual norm.
+
+The comparison plate selects only the one-handle morphology, separates it
+from the already controlled thin priest's paten, and carries an explicit
+not-to-common-scale notice. The exact source identities, page-image check,
+rights metadata, evidence ceilings, handling model, and artwork limits are
+recorded in `communion-plate-source-audit-2026-07-28.md`.
