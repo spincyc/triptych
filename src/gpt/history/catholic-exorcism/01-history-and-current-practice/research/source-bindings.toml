@@ -738,3 +738,21 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:e6084e55557fb8fae7398d0d08385793b0e9d2035fa75b4e20db5ef5e20e543b"
 verified_on = "2026-07-27"
 context = "Exact CAL Aramaic control for two heavily lacunose fragment sequences and their readable lexical categories. Not a continuous reconstruction, translation, manuscript-image collation, complete formula, intended use, community ownership, date, efficacy, ordinary practice, diagnosis, authorship, influence, continuity, Christian equivalence, or operational instruction."
+
+[[bindings]]
+source_id = "passage.anonymous.songs-of-the-sage.hebrew-qumran-digital-2025-03-11.4q510.1.1-9"
+loci = ["4Q510.1.1-9"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:341b5926a22155b381ec71da555a04594d0e646298f036c78b43b4c2fdae5596"
+verified_on = "2026-07-27"
+context = "Exact Qumran-Digital Hebrew control for 4Q510 fragment 1, with lacunae, uncertainty, alternate reading, and 4Q511 parallels retained. Not a complete formula, translation, image collation, reconstruction, performance setting, community ownership, efficacy, ordinary practice, diagnosis, influence, continuity, Christian equivalence, or operational instruction."
+
+[[bindings]]
+source_id = "passage.anonymous.songs-of-the-sage.hebrew-qumran-digital-2025-03-11.4q511.10.1-8"
+loci = ["4Q511.10.1-8"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:55b97ab029cf4dc6f6403e9e737514a54a5de63ffb6c83dc3719e41896829e13"
+verified_on = "2026-07-27"
+context = "Exact Qumran-Digital Hebrew control for the broken 4Q511 fragment-10 parallel, independently bound rather than silently conflated with 4Q510. Not a complete formula, translation, image collation, reconstruction, performance setting, community ownership, efficacy, ordinary practice, diagnosis, influence, continuity, Christian equivalence, or operational instruction."

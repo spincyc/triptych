@@ -192,8 +192,12 @@ mental-health input; it is not itself a professional clinical protocol.
   the frequently repeated *DJD* XXXVI citation is incorrect. Neither CAL
   delivery supplies a manuscript-image collation or English translation, so
   no quotation or translation-dependent nuance is promoted. Songs of the Sage
-  (4Q510/511) and 11Q11 remain edition- and locus-audited leads without an
-  acquired exact text witness.
+  now has exact CC-BY-SA Qumran-Digital Hebrew controls for 4Q510 fragment 1
+  and the broken 4Q511 fragment-10 parallel, with lacunae, uncertainty, and
+  alternate readings preserved. These establish only the fragmentary
+  praise-and-protection architecture, not a complete ritual, translation,
+  manuscript adjudication, or performance setting. 11Q11 remains an
+  edition- and locus-audited lead without an acquired exact text witness.
 - Broad Mesopotamian, Egyptian, and Greco-Roman comparisons were removed.
   Hippocratic *On the Sacred Disease* 1 is now controlled in the exact Adams
   1849 English edition at printed pp. 843–845: it supplies an ancient medical
