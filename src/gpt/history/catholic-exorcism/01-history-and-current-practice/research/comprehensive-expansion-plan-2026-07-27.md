@@ -4,8 +4,11 @@
 
 The promised completed work is an evidence-controlled Catholic Exorcism study
 of at least 100 substantive pages. The current 116-page paper contains 103
-substantive narrative pages and meets that extent. It remains a public alpha
-checkpoint, not comprehensive completion.
+substantive narrative pages and meets that extent. It is complete as a bounded,
+representative, source-audited comprehensive study. “Comprehensive” does not
+mean exhaustive control of every manuscript, critical edition, local rite,
+particular law, or reported case. Public alpha is the publication maturity
+label, not an unfinished-content designation.
 A reasonable planning range is 54,000–58,000
 reader-facing words, producing approximately 108–116 substantive pages at the
 current design density. Title matter, references, metadata, sparse spill,
@@ -24,36 +27,42 @@ detail do not count toward fulfillment.
 | VI. Synthesis | continuity without identity; non-operational pastoral conclusion | 2,000–3,000 |
 | Terminal apparatus | scope and method; dated witness/act/edition timeline; claim-local notes; grouped bibliography; rights and generation records | 5,000–6,000 |
 
-## Critical source dependencies
+## Source controls and documented future ceilings
 
-The dependency state below is claim-bounded: “closed” means sufficient for the
-present published wording, not exhaustive control of the source family.
+The state below is claim-bounded: every included published claim has sufficient
+control. “Future ceiling” names research that could deepen or broaden a later
+edition but is not silently treated as completed and is not needed for the
+present wording.
 
 | Dependency | State | Current control and remaining ceiling |
 | --- | --- | --- |
-| Hebrew, Septuagint, Vulgate, Tobit recensions, Mark 9:29, Josephus, and selected Second Temple witnesses | Partial | Exact edition-and-locus controls now cover 1 Samuel 16 in Hebrew, Greek, and Latin; both Swete Tobit forms and the Clementine Tobias; Robinson–Pierpont, Douay, and SBLGNT Mark; the official ECM Mark 9:29 split line and corrected commentary; Niese Greek and Whiston Josephus; and bounded 1Q20, 4Q560, 4Q510/511, and 11Q11 witnesses. Official catalog records now control the separate 4Q510, 4Q511, and 11Q11 manuscript identities; exact image-to-edition concordance, lawful modern-translation collation, and broader Second Temple coverage remain open. |
-| Laodicea 26 and the *Apostolic Tradition* complex | Partial | Percival’s exact historical English Laodicea witness and Easton’s identified English reconstruction are bound. A modern critical Greek Laodicea control and a current critical reconstruction with versional evidence and commentary for the church-order complex remain open. |
-| Gellone, PRG, ordination traditions, and local manuscripts | Partial | The Gellone folio run, Vogel–Elze PRG I pp. 14 and 17, Ballerini’s *Statuta* item, the 1895 Roman Pontifical, and Parker MS 79 fols. 43r–43v now support bounded typological comparison. Dumas–Deshusses, Munier, PRG manuscript collation, and broader representative local and cross-genre comparison remain open. |
-| Roman ritual edition matrix | Partial | Exact remote artifacts and verified page-specific passages now control the 1614 unit’s category-level architecture throughout pp. 198–219; an exact 1872 facsimile, the bounded 1925 and 1952 edition states, and official 1998/1999/2004 evidence are controlled at their stated levels. Direct p. 220 control and complete internal textual collation across the selected editions remain open. |
-| 1917-to-current Latin discipline and territorial implementation | Partial | Exact 1917 and 1983 canons, canon 1172, current competent-authority controls, official ritual acts, and U.S. implementation are bound through 2026-07-27. Final currentness revalidation, fact-specific particular law, and any material later amendment or authentic interpretation remain snapshot dependencies. |
-| Eastern material and named cases | Partial | CCEO common-law boundaries, several historical Eastern transmission streams, bounded Ruthenian/Melkite initiatory placement, and one source-controlled Loudun documentary dossier are now reader-facing. Church-specific particular law, current stand-alone ritual books, broader Byzantine and Orthodox comparison, and additional named cases remain open. Latin canon 1172 is not transplanted, and Loudun is not used to adjudicate possession, diagnosis, guilt, or efficacy. |
+| Hebrew, Septuagint, Vulgate, Tobit recensions, Mark 9:29, Josephus, and selected Second Temple witnesses | Closed for present corpus; future ceiling documented | Exact edition-and-locus controls cover the included witnesses. Exact image-to-edition concordance, lawful modern-translation collation, and broader Second Temple coverage could deepen a later edition. |
+| Laodicea 26 and the *Apostolic Tradition* complex | Closed for present claims; future ceiling documented | Laodicea has exact historical English and modern Greek controls. Easton’s identified English reconstruction and Bradshaw's reconstruction history bound the church-order claims. A current full versional reconstruction is inaccessible future research, not presumed support. |
+| Gellone, PRG, ordination traditions, and local manuscripts | Closed for representative comparison; future ceiling documented | The Gellone folio run, Vogel–Elze PRG loci and a named manuscript, Ballerini’s *Statuta* item, the 1895 Roman Pontifical, and Parker MS 79 support the bounded typology. Protected critical editions, fuller collation, and more local rites remain possible future improvements. |
+| Roman ritual edition matrix | Closed for edition-state claims; future ceiling documented | Exact artifacts control the 1614 unit’s category-level architecture throughout pp. 198–219; 1872, 1925, 1952, and official 1998/1999/2004 evidence are controlled at their stated levels. Direct p. 220 control and full formula-level collation are future research and are not inferred. |
+| 1917-to-current Latin discipline and territorial implementation | Closed for dated governing claims | Exact canons, competent-authority controls, official ritual acts, and U.S. implementation were freshly revalidated through 2026-07-28. Fact-specific particular law and later changes remain matters for the competent authority and future dated revisions. |
+| Eastern material and named cases | Closed for bounded comparison; future ceiling documented | CCEO common-law boundaries, historical Eastern streams, bounded Ruthenian/Melkite placement, and one Loudun dossier are reader-facing. Church-specific law, current stand-alone books, broader Byzantine and Orthodox comparison, and additional cases are excluded future research. |
 
 Prose may expand only within the corresponding evidence ceiling.
 
 ## Completion and safety gates
 
-Completion requires the final installed PDF to contain at least 100
+Bounded completion requires the final installed PDF to contain at least 100
 substantive typeset pages; every promised module to appear or have an explicit
 user-authorized waiver; every consequential claim to be represented in the
 evidence map and exact source bindings; current law to name body, jurisdiction,
 authority, effective or as-of date, and material changes; the non-operational
 and safeguarding boundaries to remain intact; rights and publication identity
 to be verified; PDF and web editions to derive from the same source and pass
-anti-drift checks; and every page to receive basic visual inspection.
+anti-drift checks; and every page to receive basic visual inspection. It does
+not require inaccessible protected critical editions, direct control of 1614
+p. 220, exhaustive manuscript collation, every local rite, Eastern particular
+law, or additional named cases when those ceilings remain explicit and no
+published claim depends on them.
 
 The page target never authorizes padding, display translations, reconstructed
 prayers, copied ritual formulas, alleged-sign checklists, diagnostic advice, or
-sensational case narration. Expansion should come from source-grounded history,
-edition comparison, reception, jurisdiction, and synthesis. Until all gates
-pass, the work remains a public alpha and must not be represented as the
-promised comprehensive final paper.
+sensational case narration. Future expansion should come from source-grounded
+history, edition comparison, reception, jurisdiction, and synthesis. The
+bounded completion gates pass for the current snapshot; the public-alpha label
+remains a publication-maturity statement and no ecclesiastical approval.

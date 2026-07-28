@@ -291,3 +291,86 @@ verdict: pass for this exact installed PDF and tracked web edition. Completion
 verdict: open.** The 100-page deliverable, incomplete E2 dependencies, remaining
 draft modules, final-as-of checks, and exact-snapshot completion gates remain
 unfinished.
+
+## Current 116-page bounded-completion snapshot — 2026-07-28
+
+This addendum supersedes the preceding present-state and completion verdicts
+without rewriting their dated findings. It records the exact public-alpha
+snapshot after the bounded-completion reconciliation.
+
+“Comprehensive” is bounded and representative: every included period, module,
+and consequential claim is source-audited, while inaccessible protected
+critical editions, direct control of 1614 p. 220, exhaustive manuscript
+collation, additional local rites and cases, and Eastern particular law remain
+explicit future ceilings. They are neither silently closed nor presumed
+evidence.
+
+Exact identities:
+
+- publication-source aggregate:
+  `sha256:5f185ed607b000205bd211f0378c3c567a01ae342dd1d0646be93fb54271a447`
+- research-control aggregate, excluding filenames containing `review`:
+  `sha256:23227a0ebfaf05ff43562051cb011e8e713d0ba8c4c9c3168c873702189ceb39`
+- `main.tex`:
+  `sha256:4e8d13403b055f4c7384abfdc0397aaed988751480821a3908c418394b610362`
+- generation metadata:
+  `sha256:158d0d000c66c9fb409da9dab1b46f0372d1875af433ec6411e305a7a9b02d4c`
+- source bindings:
+  `sha256:ca226b9ee982b00c2105191c54c51bff7980171c05d889bc5b24448a61b18f43`
+- source audit:
+  `sha256:d2699cd6b621b50502be52fb9e696ade95b2d20782c0c089f6eb57e4e14315a9`
+- evidence map:
+  `sha256:354246118cb2abb70d1d8cf0fac6e9dcbe28339bbfbd6dc2385bd26025a0b3b7`
+- scope:
+  `sha256:814ecb6539b568891532fff94c7b8bf681f6001b3a85e43658b88897a03e9468`
+- delivery plan:
+  `sha256:4cf922f41db315632902f89c5111a856d19144de6ce7706459abc16ee109398f`
+- comprehensive plan:
+  `sha256:4b30bb0bb7f21ae80e1f2398dec4c776a9d68861d59e418c1fd9100b64dbb3d8`
+- built and installed PDF:
+  `sha256:3df98f535a1aa2d7cb57480da74669c097aaf7e3382c8c0ddf8b84ef14586a87`
+- generated and tracked web edition:
+  `sha256:49f6f99656b789c6eb06dc19ed4e1615d36efba1ace93332f4f3f4dbd5dfb707`
+
+A fresh official-only currentness pass on 2026-07-28 found no substantive
+correction to the governing claims. The official Code pages retain canons 1,
+134, 230, 1166, and 1172 as described; the published
+authentic-interpretations compilation has no entry for canons 134 or 1172,
+which remains a bounded register check. The DDWDS catalog calls the book
+*Editio typica, 1998* and *Editio typica emendata, 2004*. It distinguishes the
+DESQ *Variationes* of 21 October 2021 from the related general executory decree
+of 22 October 2021. The current USCCB page retains the published U.S.
+implementation and pastoral statements; no visible update date is inferred.
+
+Two pdfTeX passes produced a 116-page, 739,419-byte US-letter PDF. The first
+103 numbered pages remain substantive narrative under the plan's exclusion
+rule. The log contains no fatal error, undefined reference, overfull box, or
+unresolved rerun request; a few pre-existing underfull boxes remain. All fonts
+are embedded and subsetted with Unicode maps. The PDF is unencrypted and has
+no forms or JavaScript.
+
+Repository review tooling rasterized all 116 pages. All six contact sheets were
+inspected, with the title, changed scope/currentness pages, and final metadata
+pages checked full-size. No clipping, collision, broken table, unintended blank
+page, sparse spill, or illegible terminal material was found. The reviewed
+build and installed PDF are byte-identical. A fresh web conversion and tracked
+web edition are byte-identical.
+
+The source, evidence, rights, safety, jurisdiction, currentness, identity,
+mechanical, PDF/web anti-drift, and every-page visual gates pass for this exact
+bounded snapshot. It remains non-operational: no ritual formula, alleged-sign
+checklist, diagnostic advice, self-test, sensational case adjudication, or
+unauthorized ministry is introduced. Consent, withdrawal, continuing care,
+emergency and protective action, privacy, professional competence,
+safeguarding, territorial law, and accountable ecclesial authority remain
+explicit.
+
+The canonical source library remains blocked at repository scope only by a
+preserved unrelated Claude publication fingerprint mismatch. The public-alpha
+policy passes with 178 alpha and zero hold entries, release bindings report zero
+stale entries, and journal validation passes. The unrelated repository mismatch
+does not alter this publication's exact source graph or bounded verdict.
+
+**Internal source verdict: pass. Safety and rights verdict: pass. Production
+verdict: pass. Bounded completion verdict: pass.** Public alpha remains a
+publication-maturity label and conveys no ecclesiastical approval.

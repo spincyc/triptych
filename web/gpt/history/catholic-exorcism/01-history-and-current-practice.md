@@ -1,6 +1,6 @@
 # Catholic Exorcism: History, Discipline, and Pastoral Practice
 
-*Public-alpha historical study toward a comprehensive 100-page work*
+*Public-alpha bounded comprehensive historical study*
 
 ## The first rule is about the person
 
@@ -1981,7 +1981,7 @@ The method separates contemporary or near-contemporary evidence, later narrative
 
 ### Legal scope and currentness
 
-The controlling universal law is the 1983 *Codex Iuris Canonici* for the Latin Church, promulgated by John Paul II on 25 January 1983 and in force from 27 November 1983, in its official Latin text, especially canons 1, 134 §§1–3, and 1172. Pertinent dicastery acts and the current Roman ritual discipline are distinguished from the USCCB’s account of the English edition implemented for the Latin dioceses of the United States. The published authentic-interpretations compilation and the official Latin web text were checked through 27 July 2026: the compilation contains no entry for canons 134 or 1172, and fresh official Latin and English deliveries of canons 134 and 230 were byte-identical to the registered artifacts. This was not a comprehensive amendment-or-repeal inventory. Particular law and diocesan processes may add applicable controls and must be obtained from the competent authority. This work gives no opinion on an individual case.
+The controlling universal law is the 1983 *Codex Iuris Canonici* for the Latin Church, promulgated by John Paul II on 25 January 1983 and in force from 27 November 1983, in its official Latin text, especially canons 1, 134 §§1–3, and 1172. Pertinent dicastery acts and the current Roman ritual discipline are distinguished from the USCCB’s account of the English edition implemented for the Latin dioceses of the United States. The published authentic-interpretations compilation and the official Code and liturgical pages were checked through 28 July 2026: the compilation contains no entry for canons 134 or 1172, and the governing Code text remains as recorded. This was not a comprehensive amendment-or-repeal inventory. Particular law and diocesan processes may add applicable controls and must be obtained from the competent authority. This work gives no opinion on an individual case.
 
 ### Global uncertainties and rights
 
@@ -1989,7 +1989,7 @@ No auditable global dataset establishes the frequency or outcomes of major exorc
 
 The repository’s CC BY 4.0 terms apply only to project-created synthesis, organization, and other contributions that the project may license. Scripture, liturgical and official texts, received translations, historical source wording, and modern scholarship retain their own status. The few biblical phrases quoted in the body use the identified public-domain Douay–Rheims/Challoner witness; ancient and medieval witnesses, official acts, modern scholarship, and clinical or safeguarding sources are otherwise paraphrased at identified loci. No scan, ritual formulary, modern-source table, diagnostic criteria, case transcript, recording, or third-party image is reproduced.
 
-The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. This 116-page public alpha contains 103 substantive narrative pages and therefore meets the promised extent of at least 100 substantive pages. It is not yet a comprehensive final study. Its remaining work is source coverage, evidence-grounded expansion, and exact-snapshot production verification.
+The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. This 116-page public alpha contains 103 substantive narrative pages and therefore meets the promised extent of at least 100 substantive pages. It is a bounded comprehensive study of the representative, source-audited corpus named above, not an exhaustive catalog of every witness, local rite, particular law, or reported case. Inaccessible or deliberately excluded source families remain documented ceilings and future research rather than unstated support for this study’s claims.
 
 ## Dated Witness, Act, and Edition Orientation
 
@@ -2103,7 +2103,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-28T08:32:33Z
+**Last revised (UTC):** 2026-07-28T08:44:16Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
@@ -2156,5 +2156,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 **Agent/runtime:** OpenAI Codex agent (Eastern transmission, CCEO and Ruthenian/Melkite boundary, 1614 architecture, Kraków manuscript, readability, source-graph reconciliation, and production review); API workspace; unexposed: server revision
 
 **Agent/runtime:** OpenAI Codex agent (ECM and SBL Mark 9 textual history, Qumran manuscript identity, medieval adjacent genres, Loudun documentary dossier, exact-snapshot reconciliation, and production review); API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex agent (bounded-completion reconciliation, fresh official-law currentness verification, source-ceiling classification, and final exact-snapshot production review); API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

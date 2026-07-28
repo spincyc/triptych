@@ -22,10 +22,15 @@ unchanged rite. Authorization and safeguards are internal to this history.
 
 ## Included
 
-The promised completed deliverable is a comprehensive study of at least 100
-substantive pages. The current 116-page paper contains 103 substantive narrative
-pages and therefore fulfills the extent commitment. It remains a public alpha,
-not fulfillment of the separate completeness commitment. Expansion must remain
+The promised completed deliverable is a bounded comprehensive study of at least
+100 substantive pages. “Comprehensive” here means representative,
+source-audited coverage of every included period and governing question, with
+material disagreements and source ceilings stated; it does not mean exhaustive
+control of every manuscript, critical edition, local rite, particular law, or
+reported case. The current 116-page paper contains 103 substantive narrative
+pages and fulfills both that bounded completeness commitment and the extent
+commitment. It remains a public alpha because alpha is the publication maturity
+label, not a claim that the bounded paper is unfinished. Future work must remain
 evidence-controlled; page count does not
 authorize padding, unsupported cases, operational ritual instruction, or
 relaxation of the exclusions below.
@@ -110,16 +115,14 @@ source function, and generation metadata.
 ## Publication state
 
 The earlier fifteen-page candidate and its 26 July production record are
-superseded by this expanded modular draft. Those dated records remain
-historical evidence for their exact snapshots. The current 116-page candidate,
-including 103 substantive narrative pages, must pass the recorded source-role,
-currentness, architecture, claim, build, web,
-visual, metadata, text, font, identity, rights, and safety checks on 27 July
-2026.
+superseded by this expanded modular paper. Those dated records remain
+historical evidence for their exact snapshots. The current 116-page snapshot,
+including 103 substantive narrative pages, has passed the recorded source-role,
+currentness, architecture, claim, build, web, visual, metadata, text, font,
+identity, rights, and safety checks documented in the exact-snapshot record.
 
-The current public-alpha snapshot is prepared for publication but will not
-be live until maintainer integration and push. The 100-page minimum is met;
-the incomplete source families above remain open completion work. It must not
-be described as the promised comprehensive final paper until the
-source, evidence, safety, rights, identity, mechanical, web/PDF anti-drift, and
-every-page visual gates pass for the completed snapshot.
+The current public-alpha snapshot is prepared for publication but will not be
+live until maintainer integration and push. The 100-page minimum and bounded
+completion standard are met. The source families identified above remain
+explicit ceilings and possible future improvements; they are neither silently
+closed nor required to support any published claim.

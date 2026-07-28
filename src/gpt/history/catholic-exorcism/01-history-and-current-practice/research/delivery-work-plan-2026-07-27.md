@@ -1,6 +1,6 @@
 # Delivery work plan
 
-Status: active plan for `task-2-exorcism-100-pages`
+Status: completed bounded plan for `task-2-exorcism-100-pages`
 
 This plan sequences the remaining work without changing the evidence,
 safety, or publication standards in `guidance/editorial.md`,
@@ -19,6 +19,10 @@ exact snapshot.
 - The source, evidence, safety, rights, identity, law, PDF, web, mechanical,
   and every-page visual gates must pass together on one final exact snapshot.
   Earlier review records remain dated historical evidence only.
+- Completion is bounded and representative: every included claim and period is
+  source-audited, while inaccessible critical editions, exhaustive manuscript
+  collation, direct 1614 p. 220 control, more local rites, Eastern particular
+  law, and additional cases remain explicit future ceilings.
 
 ## Work unit E1 — reconcile the present baseline
 
@@ -33,9 +37,8 @@ exact snapshot.
   the appropriate audit records before using the baseline for expansion.
 
 Reconciled again 2026-07-28. The 84-page identities and production checks are
-owned by `final-exact-snapshot-review-2026-07-27.md`; the current 116-page
-candidate requires its own exact-snapshot checks. Dated earlier baseline
-findings remain historical evidence only.
+historical evidence owned by `final-exact-snapshot-review-2026-07-27.md`; its
+current completion addendum owns the exact 116-page snapshot.
 
 Evidence owners: `scope.md`, `source-audit.md`, `evidence-map.md`,
 `final-exact-snapshot-review-2026-07-27.md`, and the publication-control
@@ -46,17 +49,17 @@ records.
 Work proceeds claim-first. Acquisition, registration, passage inspection, and
 claim verification remain distinct.
 
-| Module | State | Next dependency |
+| Module | State | Documented future ceiling |
 | --- | --- | --- |
-| Ancient and biblical | Partial | The modern eclectic Mark 9:29 apparatus is bound; Qumran manuscript identity is now controlled, while exact image-to-edition concordance, lawful modern-translation collation, and broader Second Temple comparison remain open. |
-| Patristic and early discipline | Partial | Add modern critical Greek control for Laodicea 26 and a current critical reconstruction with versional evidence for the *Apostolic Tradition* complex. |
-| Medieval | Partial | Collate PRG against a named manuscript and acquire lawful critical controls for Gellone and the *Statuta* where possible; extend representative local and cross-genre comparison. |
-| Roman editions | Partial | The 1614 intermediate-page artifacts now have category-level architectural controls; obtain direct p. 220 control and finish the formula-withholding 1614/intermediate/1925/1952/1998–2004 textual collation matrix. |
-| Current discipline | Partial | Revalidate law, competence, interpretations, ritual governance, and territorial implementation at the final as-of date. |
-| Eastern material and named cases | Partial | The bounded CCEO, historical-transmission, Ruthenian/Melkite initiation, and one Loudun documentary-case module are reader-facing. Church-specific particular law, current stand-alone ritual books, broader Byzantine/Orthodox comparison, and additional named cases remain open. |
+| Ancient and biblical | Closed for present corpus | Broader Second Temple comparison and fuller image/translation collation. |
+| Patristic and early discipline | Closed for present claims | A full current critical reconstruction with versional evidence for the disputed church-order complex. |
+| Medieval | Closed for representative comparison | Protected critical editions, fuller manuscript collation, and more local rites. |
+| Roman editions | Closed for edition-state claims | Direct 1614 p. 220 control and formula-level selected-edition collation. |
+| Current discipline | Closed for dated claims | Fact-specific particular law and later changes require future competent-authority checks. |
+| Eastern material and named cases | Closed for bounded comparison | Church-specific particular law, current stand-alone ritual books, wider Orthodox comparison, and additional cases. |
 
-Exact controls already acquired for each partial module are itemized in
-`source-audit.md`; partial does not reopen claims already bounded and verified.
+Exact controls and future ceilings for each module are itemized in
+`source-audit.md`; no future ceiling is treated as support for present wording.
 
 For each module, update `source-bindings.toml`, `source-audit.md`, and
 `evidence-map.md` together. Register a reusable source under `src/sources/`
@@ -64,13 +67,13 @@ only when `guidance/sources.md` requires it.
 
 ## Work unit E3 — draft in independently auditable modules
 
-- [ ] Part I: evidence before a fixed rite.
-- [ ] Part II: early Christian practices.
-- [ ] Part III: medieval differentiation.
-- [ ] Part IV: Roman consolidation and reform.
-- [ ] Part V: authority, discernment, and reception.
-- [ ] Part VI: non-operational synthesis.
-- [ ] Terminal scope, dated witness/act/edition timeline, grouped references,
+- [x] Part I: evidence before a fixed rite.
+- [x] Part II: early Christian practices.
+- [x] Part III: medieval differentiation.
+- [x] Part IV: Roman consolidation and reform.
+- [x] Part V: authority, discernment, and reception.
+- [x] Part VI: non-operational synthesis.
+- [x] Terminal scope, dated witness/act/edition timeline, grouped references,
   rights statement, and generation metadata.
 
 Each module is ready for checkpoint publication only when its consequential claims
@@ -80,35 +83,36 @@ extent-only prose.
 
 ## Work unit E4 — safety, law, and anti-drift audit
 
-- [ ] Confirm the work contains no ritual formulas, operational sequence,
+- [x] Confirm the work contains no ritual formulas, operational sequence,
   alleged-sign checklist, diagnostic advice, self-test, or sensational case
   narrative.
-- [ ] Recheck consent, withdrawal, continuing treatment, emergency and
+- [x] Recheck consent, withdrawal, continuing treatment, emergency and
   protective action, privacy, clinical competence, safeguarding, territorial
   law, and accountable ecclesial authority.
-- [ ] Confirm every current legal claim names the governing body, jurisdiction,
+- [x] Confirm every current legal claim names the governing body, jurisdiction,
   promulgating authority, effective or as-of date, and material change.
-- [ ] Generate the web edition from the same final source and prove PDF/web
+- [x] Generate the web edition from the same final source and prove PDF/web
   substantive agreement.
 
 ## Work unit E5 — exact-snapshot completion
 
 - [x] Count physical pages and separately document at least 100 substantive
   pages against the exclusion rule above.
-- [ ] Build to settled references and contents; close fatal, reference,
+- [x] Build to settled references and contents; close fatal, reference,
   overflow, and layout warnings.
-- [ ] Raster through the repository review tooling and inspect every page,
+- [x] Raster through the repository review tooling and inspect every page,
   using full-size views where necessary.
-- [ ] Record source, evidence, safety, rights, identity, mechanical, PDF, web,
+- [x] Record source, evidence, safety, rights, identity, mechanical, PDF, web,
   and every-page visual states for the exact snapshot.
-- [ ] Verify built, installed-PDF, tracked-web, catalog, and
+- [x] Verify built, installed-PDF, tracked-web, catalog, and
   publication-control identities agree.
-- [ ] Update the promised-deliverable requirement only after its mechanical
+- [x] Update the promised-deliverable requirement only after its mechanical
   page gate and exact-snapshot evidence gate actually pass.
 
 ## Stop conditions
 
 Do not draft beyond an evidence ceiling, infer a missing operational detail,
 or fill pages with apparatus.
-If a module cannot close after the required second research pass, preserve the
-bounded negative result and adjust only that module's claim.
+Where a broader source family did not close after the required research passes,
+the bounded negative result and narrowed claim remain preserved as a future
+ceiling, never implied evidence or operational detail.

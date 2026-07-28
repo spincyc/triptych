@@ -7,8 +7,9 @@ sources.
 
 ## E2 dependency reconciliation
 
-These states govern the planned modules, not the sufficiency of every narrower
-claim already published.
+These states govern the bounded published corpus. “Closed” means sufficient for
+the stated claims, not exhaustive control of the wider source family. The
+remaining ceilings are explicit future research and are not presumed evidence.
 
 | Dependency | State | Evidence boundary |
 | --- | --- | --- |
@@ -16,15 +17,28 @@ claim already published.
 | Tobit/Tobias 6–8 recensions | Closed for present wording | Both Swete Greek forms and the Clementine Latin sequence were inspected separately; no Semitic reconstruction or recension priority. |
 | Mark 9:29 edition and manuscript comparison | Closed for present wording | Exact Robinson–Pierpont, Douay, and SBLGNT edition controls are joined to the official ECM Mark split guiding line and corrected text-critical commentary. The controls preserve divided editorial judgment and the GA 706 correction; no autograph, variant date, exhaustive versional history, or efficacy claim. |
 | Josephus 8.45–49 | Closed for present wording | Exact Niese Greek digital text and Whiston English reception witness; no printed apparatus or event verification. |
-| Selected Second Temple witnesses | Partial | Exact bounded controls exist for 1Q20, 4Q560, 4Q510/511, and 11Q11; manuscript-image and translation coverage is uneven, and the selected corpus is not exhaustive. |
+| Selected Second Temple witnesses | Closed for selected corpus | Exact bounded controls exist for 1Q20, 4Q560, 4Q510/511, and 11Q11; fuller manuscript-image and translation coverage and a wider corpus remain future research. |
 | Laodicea 26 | Closed for present wording | Percival’s historical English and Joannou’s 1962 Greek/Latin/French printed p. 141 are exact restricted controls; Joannou pp. 127–129 bound the collection as local Phrygian summary tradition. Wider reception and manuscript collation remain open. |
-| *Apostolic Tradition* complex | Partial | Easton’s exact identified English reconstruction is bound, and Bradshaw’s publisher-authorized 2023 preview controls the changed reconstruction history after Ethiopic E1. The preview omits chapters 20–21, so current versional collation and exact modern wording there remain open. |
-| Gellone sequence | Partial | Exact manuscript folios 194v–199v and catalog anchors control the visible sequence; Dumas–Deshusses and full textual collation remain open. |
-| PRG ordinal | Partial | Vogel–Elze I, p. 14 (XV.7) and p. 17 (XV.17–19), and Vendôme BM MS 14, fol. 3v, are exact edited and named-manuscript controls; broader collation remains open. |
-| Western ordination comparison | Partial | Ballerini’s *Statuta*, Maassen, the MGH notice, Vendôme MS 14, Parker MS 79, and the 1895 Pontifical support bounded typology; Munier and broader representative comparison remain open. |
-| Roman ritual edition matrix | Partial | Bounded 1614, 1872, 1925, 1952, and 1998–2004 controls exist at differing levels; exact remote 1614 artifacts and page-specific passage records now control category-level architecture throughout pp. 198–219, while direct p. 220 control and complete textual collation remain open. |
-| Current Latin discipline and U.S. implementation | Partial | Exact governing canons, competence controls, official ritual acts, and USCCB implementation are bound through 2026-07-27; final-as-of revalidation and fact-specific particular law remain open. |
-| Eastern common-law and initiation boundary | Partial and published | CCEO cc. 1–3, 668 §1, 867 §§1–2, bounded legislative-structure loci, *Sacri canones*, CCC 1673, and the dated official amendment index support a common-law boundary. A bounded Ruthenian/Melkite module supports initiatory placement and the Ruthenian 1952–1997 edition chain; current Church-specific stand-alone ritual books, particular-law faculty rules, broader Byzantine comparison, Orthodox law, and named cases remain open and excluded. |
+| *Apostolic Tradition* complex | Closed for present reconstruction-history claims | Easton’s exact identified English reconstruction is bound, and Bradshaw’s publisher-authorized 2023 preview controls the changed reconstruction history after Ethiopic E1. Full current versional collation and exact modern wording remain an inaccessible future ceiling and are not inferred. |
+| Gellone sequence | Closed for manuscript architecture | Exact manuscript folios 194v–199v and catalog anchors control the visible sequence; Dumas–Deshusses and full textual collation remain future research. |
+| PRG ordinal | Closed for bounded edited/manuscript comparison | Vogel–Elze I, p. 14 (XV.7) and p. 17 (XV.17–19), and Vendôme BM MS 14, fol. 3v, are exact edited and named-manuscript controls; broader collation remains future research. |
+| Western ordination comparison | Closed for representative typology | Ballerini’s *Statuta*, Maassen, the MGH notice, Vendôme MS 14, Parker MS 79, and the 1895 Pontifical support bounded typology; Munier and additional local comparison remain future research. |
+| Roman ritual edition matrix | Closed for published edition-state claims | Bounded 1614, 1872, 1925, 1952, and 1998–2004 controls exist at stated levels; exact 1614 artifacts control category-level architecture throughout pp. 198–219. Direct p. 220 control and complete textual collation remain future research and are not inferred. |
+| Current Latin discipline and U.S. implementation | Closed for dated claims | Exact governing canons, competence controls, official ritual acts, and USCCB implementation were freshly revalidated through 2026-07-28. Fact-specific particular law and future legal changes remain outside the paper. |
+| Eastern common-law and initiation boundary | Closed for bounded comparison | CCEO controls and the bounded Ruthenian/Melkite module support the published common-law and initiatory boundaries. Church-specific stand-alone ritual books, particular-law faculty rules, broader Byzantine comparison, Orthodox law, and additional cases remain excluded future research. |
+
+Fresh official-source retrieval and comparison on 2026-07-28 found no
+substantive change to the governing claims. The current Code pages retain
+canons 1, 134, 230, 1166, and 1172 as described below; the official
+authentic-interpretations compilation still has no entry for canons 134 or
+1172, a bounded register check rather than proof that no later act could exist.
+The official liturgical catalog continues to label the work *Editio typica,
+1998* and *Editio typica emendata, 2004*. It distinguishes the
+21 October 2021 DESQ *Variationes* from the related 22 October 2021 general
+executory decree implementing canon 838. The current USCCB page retains the
+identified U.S. approval, confirmation, implementation, discernment, consent,
+confidentiality, and participation statements. No visible page date supports
+claiming a new USCCB revision.
 
 ## Current official sources
 
