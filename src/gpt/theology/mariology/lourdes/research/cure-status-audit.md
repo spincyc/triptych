@@ -63,4 +63,4 @@ The general Sanctuary page “The miracles of Lourdes” still states 70 and giv
 - Sanctuary, Dr Giada Monami appointment: <https://www.lourdes-france.com/en/nomination-du-docteur-giada-monami-a-lourdes/>
 - Stale general count page: <https://www.lourdes-france.org/en/the-miracles-of-lourdes/>
 
-Independent review of the underlying clinical files was not performed and is not claimed.
+The underlying clinical files were not inspected for this publication.

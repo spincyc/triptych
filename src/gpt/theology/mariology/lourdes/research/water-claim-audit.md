@@ -34,4 +34,4 @@ The 25 February gestures are penitential and bodily. Mud becoming clear water ca
 - Current schedule: <https://www.lourdes-france.org/en/schedule/>
 - Water-gesture/baths page: <https://www.lourdes-france.org/en/going-baths/>
 
-No independent chemical assay, hydrological survey, water-quality certificate, or public-health inspection was reviewed. The monograph therefore repeats only the Sanctuary's ordinary-water and karstic-site claims and adds general safety boundaries, not local technical certification.
+No chemical assay, hydrological survey, water-quality certificate, or public-health inspection was reviewed. The monograph therefore repeats only the Sanctuary's ordinary-water and karstic-site claims and adds general safety boundaries, not local technical certification.

@@ -462,9 +462,9 @@ This restraint does not empty the event of significance. Providence ordinarily w
 
 The water is not Baptism simply because it evokes Baptism. Baptism requires the Church’s sacramental act with water and the Trinitarian formula according to her discipline. Lourdes water does not forgive sin automatically, imprint a character, or supply a new sacramental species.
 
-Nor is it a sacramental merely by flowing from the grotto. A sacramental is instituted by the Church and used with her prayer. Water may be blessed according to an approved rite; unblessed spring water is not holy water by geography. A pilgrim’s devotional gesture can still be prayerful without confusing categories.
+Nor is it a sacramental merely by flowing from the grotto. A sacramental is instituted by the Church and used with her prayer (CCC 1667–1673). Water may be blessed according to an approved rite; unblessed spring water is not holy water by geography. A pilgrim’s devotional gesture can still be prayerful without confusing categories.
 
-Magic imagines a controllable technique: the right quantity, place, formula, or intensity compels an effect. Christian petition asks a personal God whose wisdom is not captured by a mechanism. Faith is trust and obedient communion, not the psychological force that activates molecules.
+Magic imagines a controllable technique: the right quantity, place, formula, or intensity compels an effect (CCC 2111, 2116–2117). Christian petition asks a personal God whose wisdom is not captured by a mechanism. Faith is trust and obedient communion, not the psychological force that activates molecules.
 
 ### Biblical depth without proof-texting
 
@@ -510,7 +510,7 @@ Lourdes is internationally recognizable because visibly sick and disabled pilgri
 
 That reversal is more fundamental than the miracle count. Seventy-two recognized cures across more than a century are deliberately exceptional. Millions of other pilgrims have remained ill. Their presence is not the unsuccessful remainder after apologetics takes its examples. They are members of Christ and protagonists of the Church’s life.
 
-Care must preserve agency. A person may decline immersion, touch, public prayer, photography, testimony, or medical disclosure. Volunteers do not own a pilgrim’s body. Hope does not cancel informed consent. Accessibility is not charity bestowed upon an outsider but justice within one Body.
+Care must preserve agency. A person may decline immersion, touch, public prayer, photography, testimony, or medical disclosure. Volunteers do not own a pilgrim’s body. Hope does not cancel informed consent. Accessibility is not charity bestowed upon an outsider but justice within one Body (CCC 1700–1706, 1734–1735).
 
 Disability theology adds a needed warning. Not every disability is experienced as an enemy to be erased; many persons understand it as part of identity while still desiring relief from pain or barriers. Resurrection hope cannot be reduced to conformity with a present social ideal of normal function. The ministry of Lourdes must listen before naming what healing means.
 
@@ -740,7 +740,7 @@ Fasting and offered suffering require prudence. One may offer unavoidable pain i
 | **Question** | **Competent evidence** | **Sound conclusion** |
 |:-------------|:------------------------|:----------------------------|
 | Did the reported apparition receive a positive judgment? | Bernadette corpus, commission, Bishop Laurence’s 1862 act | Yes, in the exact strong legacy formula and bounded object stated. |
-| Is the spring water physically extraordinary? | Sanctuary’s pastoral statement about the water and its description of the limestone grotto and karstic extension | The water is ordinary and the site karstic; no intrinsic curative or *ex nihilo* claim is warranted. No independent chemical or hydrogeological analysis was reviewed. |
+| Is the spring water physically extraordinary? | Sanctuary’s pastoral statement about the water and its description of the limestone grotto and karstic extension | The water is ordinary and the site karstic; no intrinsic curative or *ex nihilo* claim is warranted. No chemical or hydrogeological analysis was reviewed. |
 | Is a particular recovery a recognized miracle? | Individual clinical file, Bureau/CMIL review, competent bishop’s act | Only a named act supports that claim; the current running total is 72 through the as-of date. |
 
 One “yes” cannot be transferred sideways. The apparition decree does not make every water claim true. Ordinary water does not disprove providential healing. An unexplained cure does not automatically authenticate a message. A cure proclamation does not increase the apparition count.
@@ -825,9 +825,9 @@ The distinction is also pastoral. A person may make a fruitful pilgrimage withou
 
 ### Research limits
 
-No uncited popular miracle list, anonymous “Lourdes secret,” commercial water claim, flowering-rosebush image, or asserted medical mechanism supports a published claim. René Laurentin’s documentary studies, the Henri Lasserre and Henri Petitot traditions, Ruth Harris’s cultural history, and modern critical medical literature are valuable leads for a future independent review, but no claim in this revision is attributed to a book or clinical file not directly consulted.
+No uncited popular miracle list, anonymous “Lourdes secret,” commercial water claim, flowering-rosebush image, or asserted medical mechanism supports a published claim. No claim in this revision is attributed to a book or clinical file not directly consulted.
 
-Independent collation of the full Tarbes archive, surviving 1858 civil and ecclesiastical depositions, complete critical documentary edition, original cure files, and hydrogeological or water-quality data remains outstanding. So do independent Gascon, French, historical, canonical, medical, disability-theology, and diocesan reviews. Those absences are recorded as limits rather than filled by conjecture.
+This revision did not collate the full Tarbes archive, surviving 1858 civil and ecclesiastical depositions, complete critical documentary edition, original cure files, or hydrogeological and water-quality data. Those source and coverage limits are recorded rather than filled by conjecture.
 
 ### Use and date boundary
 
@@ -1191,13 +1191,15 @@ This appendix keeps distinct five kinds of date: the event reported by Bernadett
 
 4.  *Catechism of the Catholic Church*, 65–67, 490–493, 547–550, 963–975, 1213–1284, and 1500–1525, on private revelation, the Immaculate Conception, signs of the Kingdom, Marian intercession, Baptism, illness, and care: [official text](https://www.vatican.va/archive/ENG0015/_INDEX.HTM).
 
-5.  Pius IX, apostolic constitution *Ineffabilis Deus* (8 December 1854), especially the solemn definition near the conclusion: [official text](https://www.vatican.va/content/pius-ix/en/documents/18541208-costituzione-apostolica-ineffabilis-deus.html).
+5.  *Catechism of the Catholic Church*, Second Edition, 1667–1673, 1700–1706, 1734–1735, 2111, and 2116–2117, exact USCCB English passage records verified 27 July 2026: [official edition](https://www.usccb.org/sites/default/files/flipbooks/catechism/).
 
-6.  Dicastery for the Doctrine of the Faith, *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (17 May 2024; effective 19 May), especially the Presentation, Introduction 1–6, and I.13–23: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html).
+6.  Pius IX, apostolic constitution *Ineffabilis Deus* (8 December 1854), especially the solemn definition near the conclusion: [official text](https://www.vatican.va/content/pius-ix/en/documents/18541208-costituzione-apostolica-ineffabilis-deus.html).
 
-7.  DDF, *Mater Populi Fidelis*: Doctrinal Note on Some Marian Titles Regarding Mary’s Cooperation in the Work of Salvation (4 November 2025), especially 17–29, 45–55, and 62–70: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html).
+7.  Dicastery for the Doctrine of the Faith, *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (17 May 2024; effective 19 May), especially the Presentation, Introduction 1–6, and I.13–23: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html).
 
-8.  DDF complete document index, checked for a later Lourdes intervention through 16 July 2026: [official index](https://www.vatican.va/roman_curia/congregations/cfaith/doc_doc_index.htm). The negative search is dated and was supplemented by targeted official checks.
+8.  DDF, *Mater Populi Fidelis*: Doctrinal Note on Some Marian Titles Regarding Mary’s Cooperation in the Work of Salvation (4 November 2025), especially 17–29, 45–55, and 62–70: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html).
+
+9.  DDF complete document index, checked for a later Lourdes intervention through 16 July 2026: [official index](https://www.vatican.va/roman_curia/congregations/cfaith/doc_doc_index.htm). The negative search is dated and was supplemented by targeted official checks.
 
 ### The 1862 judgment, witness, and event chronology
 
@@ -1257,7 +1259,11 @@ This appendix keeps distinct five kinds of date: the event reported by Bernadett
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-21T15:25:48Z
+**Last revised (UTC):** 2026-07-28T01:38:56Z
+
+**Model:** `gpt-5.6-sol`; `effort=ultra`
+
+**Agent/runtime:** OpenAI Codex (Catechism audit, alpha-policy cleanup, and production review); Codex CLI 0.145.0; API workspace; unexposed: interface; unexposed: server revision
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 

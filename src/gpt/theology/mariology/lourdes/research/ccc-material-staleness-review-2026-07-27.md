@@ -59,8 +59,24 @@ three bounded claim-level audit controls; identify the exact edition in the
 references; and place citations at the controlling sacramental,
 mechanical-magic, and agency-and-consent distinctions. The apparition and cure
 corpora, 1862 judgment, chronology, miracle count, dogmatic exposition, rights
-boundary, and deferred independent-review gates do not change.
+boundary, and source limitations do not change.
 
-This is an internal current-guidance and staleness determination, not a human
-historical, theological, moral, safeguarding, medical, disability-theology, or
-ecclesiastical review.
+## Publication checkpoint
+
+The resulting source was rebuilt in two pdfTeX passes at
+`2026-07-28T01:38:56Z`. The settled PDF has 31 pages; its final log contains
+no fatal errors, undefined references, overfull or underfull boxes, package
+warnings, or rerun requests. All 31 rendered pages were inspected through the
+review contact sheets, and physical pages 14, 16, 24, 27, and 31 were also
+inspected at full size because they contain the changed Catechism controls,
+alpha-policy wording, or final metadata and rights matter.
+
+The installed PDF is byte-identical to the reviewed build at SHA-256
+`7250eacaf50ddb3389462290b47716dc83e2e6328fac48758c7b0149d1284d06`.
+The installed web edition is byte-identical to its generated source at
+SHA-256
+`ce481689adfa1cc46b55e70ea0f0e5b21033a3e62811eed7e341d9c166e658ab`.
+PDF metadata, embedded fonts, Unicode text extraction, canonical generation
+metadata, and the Lourdes-specific PDF, web-source, and rights-record
+bindings were checked. `qpdf` was unavailable, so this checkpoint makes no
+`qpdf` validation claim.
