@@ -1,24 +1,232 @@
-\newcommand{\DictionaryLeafRoot}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server}
-\newcommand{\RSDGenerationMetadata}{\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/generation-metadata}}
-\newcommand{\RSDTitle}{The Altar Server's Visual Dictionary}
-\newcommand{\RSDSubtitle}{Recognition, Handling Boundaries, and Safety}
-\newcommand{\RSDEditionLine}{Altar-server priestly-review edition}
-\newcommand{\RSDOpeningTitle}{Review through the server's route}
-\newcommand{\RSDOpeningText}{Review each admitted object from the perspective
-of a server moving from sacristy to sanctuary and back. Check what the server
-must recognize; where the object may be encountered; who ordinarily handles
-it; whether the server touches, carries, presents, receives, prepares, or only
-recognizes it; what must not be handled; and what immediate safety or
-confusion warning is required. A depicted object does not by itself authorize
-a server to handle it, and a locally assigned action must not be presented as
-a universal Roman rule.}
-\newcommand{\RSDGeneratedFile}{../../build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated/ed-altar-server.review}
-\newcommand{\RSDOmissionFile}{../../build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated/ed-altar-server.review-omissions}
-\newcommand{\RSDAudienceReviewQuestion}{For a server moving from sacristy to
-sanctuary and back, is each touch, carry, present, receive, prepare,
-recognize-only, and must-not-handle boundary explicit and safe, and does this
-view omit any nearby object or likely confusion that the server must
-recognize?}
-\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/publication-shell}
-\hypersetup{pdftitle={The Altar Server's Visual Dictionary -- Priestly Review Copy}}
-\RSDPublicationBody
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/dictionary-format}
+\usepackage{fancyhdr}
+
+\newcommand{\LeafRoot}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server}
+\newcommand{\ArtRoot}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary}
+\newcommand{\LitDisplay}[1]{{\rmfamily\mdseries\scshape #1}}
+\newcommand{\Boundary}[1]{%
+  \par\smallskip
+  \noindent\begingroup
+  \setlength{\fboxsep}{4pt}%
+  \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \fontsize{9}{11}\selectfont\bfseries #1}}%
+  \endgroup}
+\newcommand{\ObjectHeading}[3]{%
+  \noindent{\fontsize{18}{20}\selectfont\LitDisplay{#1}\par}
+  \noindent{\fontsize{10}{12}\selectfont\itshape #2\hfill
+    \texttt{\fontsize{7}{8}\selectfont #3}\par}
+  \vspace{3pt}\hrule height 0.6pt\vspace{5pt}}
+\newcommand{\SourceNote}[2]{%
+  \par\noindent
+  {\fontsize{7.4}{8.5}\selectfont\bfseries\texttt{#1}}\enspace
+  {\fontsize{8}{9.5}\selectfont #2\par}}
+\newcommand{\ObjectArt}[1]{%
+  \begin{center}
+    \includegraphics[width=0.92\linewidth,height=3.42in,keepaspectratio]{\ArtRoot/#1}
+  \end{center}}
+\newcommand{\Field}[2]{%
+  \par\noindent{\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{#1}}\enspace
+  {\fontsize{10.2}{13}\selectfont #2\par}}
+\newcommand{\SourceKey}[1]{%
+  {\fontsize{7.2}{8.5}\selectfont\texttt{#1}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\fontsize{7.5}{9}\selectfont
+  \LitDisplay{Altar Server's Visual Dictionary}\quad\textperiodcentered\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{11pt}
+\hypersetup{
+  pdftitle={The Altar Server's Visual Dictionary — Low-Mass Core Alpha},
+  pdfsubject={A source-bounded visual recognition and handling guide at the 1962 Roman Rite horizon}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \centering
+  \vspace*{0.55in}
+  {\fontsize{30}{34}\selectfont\LitDisplay{The Altar Server's}\par}
+  \vspace{0.08in}
+  {\fontsize{34}{38}\selectfont\LitDisplay{Visual Dictionary}\par}
+  \vspace{0.22in}
+  {\large Recognition, handling boundaries, and confusables\par}
+  \vfill
+  {\fontsize{17}{20}\selectfont\LitDisplay{Low-Mass Core Alpha}\par}
+  \vspace{0.12in}
+  {\large Six source-audited objects at the 1962 Roman Rite horizon\par}
+  \vfill
+  \begin{minipage}{0.82\textwidth}
+    \small
+    This bounded first slice teaches six objects already supported by checked
+    source records. It is not the complete altar-server dictionary. Appearance
+    never grants permission to touch an object; follow the priest, MC, sacristan,
+    and the church's established directions.
+  \end{minipage}
+  \vspace{0.42in}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\section*{\LitDisplay{Read the boundary first}}
+\begin{minipage}[t]{0.47\linewidth}
+  \ObjectHeading{Handles}{What the server may handle}{KEY-H}
+  The checked record assigns a server action. Learn the appointed cue and local
+  method before acting.
+  \Boundary{HANDLE ONLY AT THE APPOINTED CUE}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
+  \ObjectHeading{Recognizes only}{What the server identifies but leaves alone}{KEY-R}
+  Recognition is part of serving. It does not turn a clergy or sacristan action
+  into a server action.
+  \Boundary{DO NOT TOUCH UNLESS TRAINED AND DIRECTED}
+\end{minipage}
+
+\vspace{0.28in}
+\begin{studybox}{The six objects in this alpha}
+\textbf{Handles:} altar bells. \quad
+\textbf{Varies by ceremony:} altar candle and candlestick. \quad
+\textbf{Recognizes only:} sanctuary lamp. \quad
+\textbf{Must not handle in this Low-Mass model:} chalice and paten.
+\end{studybox}
+
+\section*{\LitDisplay{Three confusions to prevent}}
+\begin{enumerate}
+  \item The \textbf{candle} is the wax light; the \textbf{candlestick} is its
+    support. An assembled drawing contains both.
+  \item The \textbf{chalice} is the priest's sacred vessel; it is not an altar
+    cruet.
+  \item The priest's \textbf{paten} is not the Communion plate held beneath a
+    communicant's chin.
+\end{enumerate}
+\vfill
+{\small This is a Triptych study reference, not an official liturgical book or
+local direction. Exact source keys appear on the final page.\par}
+\clearpage
+
+\ObjectHeading{Altar bells}{campanula; campanulae}{obj-altar-bells}
+\begin{minipage}[t]{0.58\linewidth}
+  \ObjectArt{shared/artwork/pencil/RPD-FIG-service-objects-0101-iso-altar-bells.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}
+  \Field{Identity}{A small bell or bell set prepared with the credence-side
+  service objects. The four-cup cluster shown is one practical form, not a
+  universal component count.}
+  \Field{Use}{The minister warns shortly before the Consecration, sounds the
+  appointed signals at each elevation, and may warn when the faithful are to
+  communicate.}
+  \Field{Server boundary}{Carry, ring, and replace only at the learned cue.
+  Keep the bell quiet between intentional signals.}
+  \Boundary{HANDLES}
+  \Field{Do not confuse}{A sacristy entrance bell has a different place and
+  purpose.}
+  \Field{Source}{\SourceKey{src-altar-bells-missal}}
+\end{minipage}
+\clearpage
+
+\ObjectHeading{Sanctuary lamp}{lampas; lampas sanctuarii}{obj-sanctuary-lamp}
+\begin{minipage}[t]{0.58\linewidth}
+  \ObjectArt{shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}
+  \Field{Identity}{A reservation light before the altar or place where the
+  Blessed Sacrament is reserved. The source also describes arrangements with
+  several hanging lamps; the single vessel shown is not the only form.}
+  \Field{Use}{The Ceremonial directs that lamps around the place of reservation
+  burn perpetually.}
+  \Field{Server boundary}{Recognize its location and report a problem. Do not
+  lower, refill, relight, or otherwise handle a hanging lamp unless specifically
+  trained and directed.}
+  \Boundary{RECOGNIZES ONLY}
+  \Field{Safety}{Flame, hot fittings, oil, glass, chains, and height make this a
+  trained sacristan or cleric task.}
+  \Field{Source}{\SourceKey{src-sanctuary-lamp-ceremonial}}
+\end{minipage}
+\clearpage
+
+\ObjectHeading{Candle and candlestick}{candela \textperiodcentered\ candelabrum}
+  {obj-altar-candle / obj-altar-candlestick}
+\begin{minipage}[t]{0.54\linewidth}
+  \ObjectArt{shared/artwork/pencil/RPD-FIG-altar-appointments-0101-iso-candlestick.png}
+  \centering\DictionaryScaleNotice
+\end{minipage}\hfill
+\begin{minipage}[t]{0.41\linewidth}
+  \Field{Candle}{The wax light. The Ceremonial distinguishes candles from the
+  supports that hold them and appoints altar and carried lights.}
+  \Boundary{VARIES BY CEREMONY}
+  \Field{Candlestick}{The support beneath the candle. In the checked carried
+  use, a candle-bearing acolyte keeps one hand at the foot and the other at the
+  central knop. That source locus does not make every altar candlestick a
+  processional object.}
+  \Boundary{CARRIES WHEN APPOINTED}
+  \Field{Do not confuse}{Wax light and metal support are two objects even when
+  they appear assembled. This alpha deliberately keeps them together until
+  separate source-controlled figures replace this shared view.}
+  \Field{Safety}{Keep flame and hot wax away from hair, sleeves, veils, and
+  other textiles. Follow the appointed lighting and carrying method.}
+  \Field{Sources}{\SourceKey{src-altar-candle-ceremonial};
+  \SourceKey{src-candlestick-ceremonial}}
+\end{minipage}
+\clearpage
+
+\ObjectHeading{Chalice and paten}{calix \textperiodcentered\ patena}
+  {obj-chalice / obj-paten}
+\begin{minipage}[t]{0.54\linewidth}
+  \ObjectArt{shared/artwork/pencil/RPD-FIG-sacred-vessels-0001-iso-chalice.png}
+  \centering\DictionaryScaleNotice
+\end{minipage}\hfill
+\begin{minipage}[t]{0.41\linewidth}
+  \Field{Chalice}{The sacred vessel named throughout the Offertory, Canon,
+  Communion, ablutions, and concluding removal from the altar. The drawing
+  shows one decorative form; its proportions are not a universal pattern.}
+  \Boundary{MUST NOT HANDLE}
+  \Field{Paten}{The shallow sacred vessel used by the celebrant. Its isolated
+  candidate drawing is withheld here because it can read as a domestic saucer
+  and does not yet show the defining on-chalice relationship.}
+  \Boundary{MUST NOT HANDLE}
+  \Field{Do not confuse}{The chalice is not an altar cruet. The priest's paten
+  is not the Communion plate used beneath a communicant's chin.}
+  \Field{Server boundary}{Recognize both objects and their names. In this
+  Low-Mass model the server pours only at the priest's signal and does not take
+  either sacred vessel into his hands.}
+  \Field{Sources}{\SourceKey{src-missale-1962-ritus-vii-xii};
+  \SourceKey{src-missale-1962-ritus-vii-x}}
+\end{minipage}
+\clearpage
+
+\section*{\LitDisplay{Source notes and scope}}
+\small
+\SourceNote{src-altar-bells-missal}{1962 \emph{Missale Romanum},
+\emph{Rubricae generales} 528; \emph{Ritus servandus} VIII.6 and X.6.}
+\SourceNote{src-sanctuary-lamp-ceremonial}{\emph{Caeremoniale
+Episcoporum}, Marietti third edition after the 1948 typical edition, I.VI.2
+and I.XII.17.}
+\SourceNote{src-altar-candle-ceremonial}{The same
+\emph{Caeremoniale Episcoporum}, I.V.6 and I.XI.1, 8.}
+\SourceNote{src-candlestick-ceremonial}{The same
+\emph{Caeremoniale Episcoporum}, I.XI.1, 8.}
+\SourceNote{src-missale-1962-ritus-vii-xii}{1962 \emph{Missale
+Romanum}, \emph{Ritus servandus} VII--XII.}
+\SourceNote{src-missale-1962-ritus-vii-x}{1962 \emph{Missale Romanum},
+\emph{Ritus servandus} VII and X.}
+
+\section*{\LitDisplay{Scope and qualifications}}
+This alpha renders six source-audited canonical records from the Low-Mass
+altar-server queue: altar bells, altar candle, altar candlestick, sanctuary
+lamp, chalice, and paten. It does not yet cover the server's complete route,
+the complete altar composition, cruets and Lavabo objects, Missal and support,
+Communion plate, vesture, sung or solemn branches, special Masses, Holy Week,
+pontifical ceremonies, or related ceremonies. It therefore makes no claim of
+dictionary completeness.
+
+The official books control the printed liturgical claims. The generated
+drawings are project-produced teaching aids, not evidence. Where an image's
+particular morphology is not established by the cited locus, the page says so.
+The paten candidate is omitted rather than teaching an ambiguous silhouette.
+
+\section*{\LitDisplay{Generation metadata}}
+{\scriptsize
+\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/generation-metadata}}
+
+\TriptychRightsNotice
+\end{document}

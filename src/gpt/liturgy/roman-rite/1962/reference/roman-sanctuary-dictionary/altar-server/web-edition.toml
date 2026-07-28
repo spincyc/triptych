@@ -3,7 +3,7 @@ record_type = "web-edition"
 document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
 
 eligibility = "ineligible"
-basis = "priestly-review-pdf-only"
-blocking_constructs = ["review-only-status", "incomplete-inventory", "incomplete-source-collation", "incomplete-artwork-review"]
-rationale = "The installed PDF is a conspicuously labeled priestly-review copy; no web edition may be published until the inventory, source collation, priestly review, artwork review, and fresh authoritative-release gates pass."
-reviewed = "2026-07-27"
+basis = "bounded-pdf-alpha-only"
+blocking_constructs = ["no-reviewed-web-rendering", "incomplete-alpha-slice"]
+rationale = "The PDF is a checked six-object Low-Mass core alpha. A web edition remains ineligible until the same bounded content and handling hierarchy have a reviewed web rendering; completeness or external review is not asserted as a prerequisite."
+reviewed = "2026-07-28"
