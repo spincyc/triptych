@@ -687,7 +687,7 @@
   \ifTrainerManualGuide\def\LMFingerArtWidth{.52\linewidth}\else\def\LMFingerArtWidth{.80\linewidth}\fi
   \begin{center}\begin{tikzpicture}
     \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilPairHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-018-lm-ablution-fingers.png}};
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-018-lm-ablution-fingers-v2.png}};
     \node[lm role tag,anchor=east] at
       ($(art.south west)!.30!(art.north west)+(-1mm,0)$) {SECOND\\WATER};
     \node[lm role tag,anchor=east] at
@@ -759,9 +759,9 @@
   \begin{center}\begin{tikzpicture}
     \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
       liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-021-lm-recession.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.10!(art.south east)+(0,-1mm)$) {SECOND};
+    \node[lm role tag,anchor=north east] at ($(art.south west)+(-1mm,-1mm)$) {SECOND};
     \node[lm role tag,anchor=north] at ($(art.south west)!.43!(art.south east)+(0,-1mm)$) {FIRST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.80!(art.south east)+(0,-1mm)$) {PRIEST\\WITH CHALICE};
+    \node[lm role tag,anchor=north west] at ($(art.south east)+(1mm,-1mm)$) {PRIEST\\WITH CHALICE};
   \end{tikzpicture}\end{center}%
   % The shared ceremony historically inserts a trainer-only null page before
   % the appendices.  With compact matched plates that spacer is no longer

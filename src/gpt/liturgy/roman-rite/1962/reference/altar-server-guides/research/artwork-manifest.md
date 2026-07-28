@@ -477,25 +477,30 @@ the larger received rasters.
   follows the priest at the rail with the Communion plate while Second remains
   at his altar station
 - Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief
+  project-created structured scene brief; the tracked derivative adds a
+  deterministic 12-pixel inset, 10-pixel Gaussian edge-alpha feather while
+  preserving every grayscale scene pixel
 - Known prompt summary: show First following the priest at the rail with the
   Communion plate while Second remains in place; keep the scene monochrome and
   free of text and diagram overlays. This is a summary of the generation
   request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
-  202,026 bytes
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha
+  PNG; 264,990 bytes
 - SHA-256:
-  `2874dc9b3b671ecbeb1c2d058a9c1f3f1d905713818271f400e647ef7a8ef852`
+  `dbb33c03eb3fcbc6b694aef10cbc858079aab11835913f8e5a33487ea64b9af5`
+- Boundary treatment: transparent feather at the outer image perimeter; all
+  figures, rail, altar, and interior scene pixels remain unchanged
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating agent's visual inspection completed 2026-07-27;
-  integrated every-page, paired-use, print-size, photocopy, and independent
-  ceremonial review remain pending
+- Review state: generating-agent inspection completed 2026-07-27;
+  transparent-perimeter and integrated every-page screen review completed
+  through both exact child/trainer PDFs on 2026-07-28; physical print,
+  photocopy, human artwork, and independent ceremonial review remain pending
 
 ## ASG-ART-017
 
@@ -504,53 +509,81 @@ the larger received rasters.
 - Purpose and depicted state: first Low Mass ablution; First pours wine into
   the priest-held chalice while Second waits with the separate water cruet
 - Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief
+  project-created structured scene brief; the tracked derivative adds a
+  deterministic 24-pixel linear perimeter-alpha ramp while preserving every
+  grayscale scene pixel
 - Known prompt summary: show First pouring wine into the chalice held by the
   priest while Second waits with a visibly separate water cruet; include
   exactly two servers and no text or overlays. This is a summary of the
   generation request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 870 by 500; 8-bit grayscale PNG;
-  235,308 bytes
+- Normalized dimensions, mode, and size: 870 by 500; 8-bit grayscale-alpha
+  PNG; 302,469 bytes
 - SHA-256:
-  `913096628a7947bffc2d94ed6b789909a3bc449aa8cd40f47309298f6753a509`
+  `69ab688860b9a6401f836155f6b7e218027e875495219552dc95191cb5559488`
+- Boundary treatment: transparent ramp at the outer image perimeter; the
+  figures, vessels, chalice, altar, and interior scene pixels remain unchanged
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating agent's visual inspection completed 2026-07-27;
-  integrated every-page, paired-use, print-size, photocopy, and independent
-  ceremonial review remain pending
+- Review state: generating-agent inspection completed 2026-07-27;
+  transparent-perimeter and integrated every-page screen review completed
+  through both exact child/trainer PDFs on 2026-07-28; physical print,
+  photocopy, human artwork, and independent ceremonial review remain pending
 
 ## ASG-ART-018
 
 - Logical ID: `ASG-ART-018`
-- File: `shared/artwork/pencil/ASG-ART-018-lm-ablution-fingers.png`
+- File: `shared/artwork/pencil/ASG-ART-018-lm-ablution-fingers-v2.png`
 - Purpose and depicted state: Low Mass finger ablution; First and Second
   provide the distinct wine and water service while the priest holds his
   fingers over the chalice
-- Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief
-- Known prompt summary: distinguish the successive wine and water finger
-  service at the chalice, with the priest's fingers placed for the ablution,
-  exactly two servers, and no embedded text or overlays. This is a summary of
-  the generation request, not a preserved verbatim prompt.
+- Production: AI-generated monochrome graphite replacement edited from the
+  earlier project-created scene through the built-in image-generation tool,
+  then chroma-keyed to grayscale alpha
+- Exact prompt: "Use case: precise-object-edit. Asset type: instructional Low
+  Mass ceremonial scene for child and trainer guides. Correct the supplied
+  graphite scene while preserving its composition: remove the folded towel
+  entirely from the picture-left server; replace the large open
+  domestic-looking pitcher held by the center server with a small upright
+  liturgical cruet matching the scale and general vessel family of the
+  distinct cruet held by the picture-left server. The center server pours a
+  small controlled stream from his cruet over the priest's joined thumb and
+  forefinger into the chalice. The picture-left server waits holding only the
+  second distinct small cruet. Keep exactly the priest and two servers, the
+  chalice, and exactly two cruets total. Preserve refined monochrome graphite
+  pencil realism and the existing figures, vestments, postures, viewpoint,
+  altar fragment, chalice, and instructional clarity. Replace the background
+  outside the figures and necessary altar/chalice support with perfectly flat
+  solid #00ff00 chroma-key green for later removal. Exactly three people;
+  exactly two small distinct liturgical cruets; no towel, manuterge, basin,
+  third vessel, large pitcher, domestic glassware, text, labels, arrows,
+  watermark, border, flame, smoke, or extra object."
 - Generator and date: built-in OpenAI image generation (model and version not
-  exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 816 by 500; 8-bit grayscale PNG;
-  214,225 bytes
+  exposed), 2026-07-28
+- Received generator bytes: 1603 by 981; 8-bit RGB PNG; 2,154,790 bytes;
+  SHA-256 `74e6beb20f97ef5bcbe0c8f374fff8a7ed0f4f14e05146cdcd30ff076f32c42e`
+- Normalization: image-generation skill chroma-key helper, border auto-key
+  `#0ced0f`, soft matte, thresholds 12/220, despill; stripped to 8-bit
+  grayscale-alpha without resizing
+- Normalized dimensions, mode, and size: 1603 by 981; 8-bit grayscale-alpha
+  PNG; 802,078 bytes
 - SHA-256:
-  `160db548de52216c03c719c809087f0b3ca087cc1646c8d7d71d18391dd8d58e`
+  `e1f191d9283387f5053714aabdef8de31ea6d9bedb5d22cc4fc19bd2696f70d8`
+- Boundary treatment: transparent background with soft antialiased subject
+  edges; the necessary altar support remains part of the instructional scene
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating agent's visual inspection completed 2026-07-27;
-  integrated every-page, paired-use, print-size, photocopy, and independent
-  ceremonial review remain pending
+- Review state: replacement generation and standalone factual/visual checks
+  completed 2026-07-28; integrated every-page screen review completed through
+  both exact child/trainer PDFs on 2026-07-28; physical print, photocopy,
+  human artwork, and independent ceremonial review remain pending
 
 ## ASG-ART-019
 
@@ -615,25 +648,31 @@ the larger received rasters.
 - Purpose and depicted state: Low Mass recessional; two acolytes lead down
   the nave while the priest follows carrying the covered chalice
 - Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief
+  project-created structured scene brief; the tracked derivative adds a
+  deterministic 12-pixel inset, 10-pixel Gaussian edge-alpha feather while
+  preserving every grayscale scene pixel
 - Known prompt summary: show exactly two servers leading the recession down
   the nave with the priest behind them carrying the covered chalice, in
   monochrome graphite and without text. This is a summary of the generation
   request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
-  224,521 bytes
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha
+  PNG; 297,248 bytes
 - SHA-256:
-  `57575d059c58231cac93af2478f4ebdfc494878c3156298400fa10f2dbeb26c5`
+  `0cb1f6a95d345668eb31c7b9d3f662172a4fd9f078d355a54092dbded07b8ba0`
+- Boundary treatment: transparent feather at the outer image perimeter; all
+  figures, covered chalice, nave path, and interior scene pixels remain
+  unchanged
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating agent's visual inspection completed 2026-07-27;
-  integrated every-page, paired-use, print-size, photocopy, and independent
-  ceremonial review remain pending
+- Review state: generating-agent inspection completed 2026-07-27;
+  transparent-perimeter and integrated every-page screen review completed
+  through both exact child/trainer PDFs on 2026-07-28; physical print,
+  photocopy, human artwork, and independent ceremonial review remain pending
 
 ## Active-consumer and review audit
 

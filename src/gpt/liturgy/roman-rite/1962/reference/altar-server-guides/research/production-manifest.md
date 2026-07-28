@@ -779,3 +779,42 @@ of the figures.
 | --- | ---: | ---: | --- |
 | Low Mass child field guide | 29 | 7,960,514 | `0a9e8644cb068871cc3ddeb27b6d9c348fb5a29810ec983f46127a701ac564e5` |
 | Low Mass trainer manual | 29 | 7,973,083 | `dab3d0719c6f887e0502ea2eb3b7dad13912cbbaefad07a9d9e6d632742ea087` |
+
+## Low Mass Communion, ablution, and recession artwork correction — 2026-07-28
+
+Four later Low Mass scenes now blend into the page without floating raster
+rectangles. `ASG-ART-016`, `ASG-ART-017`, and `ASG-ART-021` retain every
+grayscale interior scene pixel while deterministic transparent perimeter
+feathers replace their opaque outer edges. `ASG-ART-018` is a corrected
+project-created replacement: it shows exactly the priest and two servers, the
+chalice, and two distinct small cruets; the unsupported towel and
+domestic-looking pitcher in the superseded image are absent. Its exact
+correction prompt, received bytes, normalization, dimensions, and hashes are
+recorded in the artwork manifest.
+
+TeX continues to own every role label. Full-size review found the recession
+labels too crowded in the trainer composition, so Second, First, and Priest
+with chalice were moved to distinct exterior anchors without changing the
+artwork or ceremonial claim. The Communion, first-ablution, finger-ablution,
+and recession tableaux now remain legible in both child and trainer
+compositions.
+
+Because the artwork and diagram macro files are shared, all seven altar-server
+publications rebuilt for settled passes and were rastered through the bounded
+review helper. All final logs are free of fatal errors, undefined references,
+overfull or underfull boxes, and unresolved rerun requests. The five
+unaffected publications reproduce their prior installed bytes exactly. Every
+page of both 29-page Low Mass consumers was inspected, with pages 21, 22, and
+26 checked at full size. No floating rectangle, clipping, accidental blank,
+unsupported actor or object, obscured label, broken sequence, or terminal-fit
+defect was found.
+
+| Publication | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Low Mass child field guide | 29 | 8,853,986 | `1044a20e898415496f9768c3ad4f60be7aa6d3e07e2e5250c1ade543e2c60c3d` |
+| Low Mass trainer manual | 29 | 8,866,504 | `8cf8f0b0068c1c501300b9eef1b3ce7e9e69720f7fe35129365cf26cb50e8503` |
+
+This alpha record establishes the current source, rights, safety, identity,
+mechanical, and basic visual concerns; physical print, photocopy, human
+artwork, independent ceremonial, rights, and ecclesiastical-suitability
+reviews remain pending.
