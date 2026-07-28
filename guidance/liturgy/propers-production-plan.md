@@ -424,7 +424,9 @@ The 1962 books appoint one annual set of propers with no A/B/C Lectionary cycle 
 
 ### Temporal Sunday series `01`–`52`
 
-Stable Lent-first repository order. These are catalog identities, not the occurrence schedule of a civil year.
+This status table mirrors the canonical registry in
+`roman-1962-propers.md`. It tracks production only and does not own or derive
+the identities.
 
 | ID | Occurrence | Enumeration source | Leaf slug | gpt | claude |
 | ---: | --- | --- | --- | --- | --- |
@@ -481,9 +483,9 @@ Stable Lent-first repository order. These are catalog identities, not the occurr
 | 51 | Sexagesima Sunday | derived | — | not started | not started |
 | 52 | Quinquagesima Sunday | profile | — | not started | not started |
 
-**Enumeration is reconstructed, not quoted.** The profile prints only three anchors — `01` is the First Sunday of Lent, `52` is Quinquagesima, and `46R`–`49R` are the resumed Third through Sixth Sundays after the Epiphany — and never prints the 52-item list. Rows marked `profile` are those anchors, which also fix `46`–`49` as the Third through Sixth Sundays after the Epiphany. Rows marked `existing leaf` are read from leaf directory names and the release manifest, which fix `15` as Trinity Sunday and `16`–`23` as the Second through Ninth Sundays after Pentecost. Rows marked `derived` are filled by the 1962 Temporale's own printed order between fixed anchors, which leaves no free choice: `02`–`14` is exactly the thirteen Sundays the missal prints between the First Sunday of Lent and Trinity Sunday, `24`–`38` is exactly the fifteen Sundays from the Tenth to the Twenty-fourth and Last after Pentecost, `45` is forced by `46`, and `50`–`51` are forced by `52`. Verify each identity against the controlling facsimile before creating its leaf.
-
-The two least-constrained slots are `43` and `44`, the only two positions between the fourth Sunday of Advent and the Second Sunday after the Epiphany. The 1962 Temporale prints exactly two Sunday formularies there — the Sunday within the Octave of the Nativity and the First Sunday after the Epiphany, on which the Feast of the Holy Family is kept — and the Most Holy Name of Jesus, kept on the Sunday from January 2 through January 5, stands in the Proper of Saints rather than the Temporale and so falls to the `F` series. If the registry-owning profile later prints its own enumeration and it differs, the profile controls and this table is corrected, not the reverse.
+Verify the exact printed formulary against the controlling facsimile before
+creating a leaf. If this table differs from the profile registry, the profile
+controls and this status table must be corrected.
 
 ### Resumed Epiphany variants `46R`–`49R`
 

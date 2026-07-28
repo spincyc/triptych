@@ -103,18 +103,8 @@ Mark the brief synthesis with
 N+1, and N+2. Page breaks without that validation do not meet the exact
 two-page requirement.
 
-Each proper is published as two editions from one body of research: a
-**study edition** at the leaf's bare id, and a **full-text edition** at
-the same id with a `-full-text` suffix, in its own leaf directory,
-importing the study edition's sections rather than restating them. Both
-are separate publications with their own manifest entry, catalog link,
-and web edition, and a catalog row links both from the one provider
-cell. The study edition identifies each element by incipit and locus and
-does not print the formulary in full; the full-text edition prints what
-the rights position permits and no more.
-
-The rights position here is narrower than it is for the 1962 books, and
-it governs both editions. The ICEL English of the Roman Missal and the
+The rights position here is narrower than it is for the 1962 books. The ICEL
+English of the Roman Missal and the
 Lectionary text are under copyright and are never reproduced. Neither is
 any Bible translation under copyright — the Knox, Jerusalem and New
 Jerusalem, RSV and NRSV, NABRE, and the Grail psalms are all excluded.

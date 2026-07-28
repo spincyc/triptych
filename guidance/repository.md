@@ -275,20 +275,19 @@ and material completion shortfall conspicuous on the child page; navigation
 must never imply that an interim edition fulfills the promised final scope.
 
 A leaf ID keeps exactly one owning catalog page no matter how many provider
-editions exist. Each provider has its own named column — `ChatGPT` for the
-`gpt` edition, `Claude` for the `claude` edition — placed in that order
-immediately after the title column. Title cells are unlinked bold text; the
-per-provider cells carry the PDF links, with a canonical work's derived
-companions `·`-joined in the same cell under short distinguishing labels. A
-provider edition that does not yet exist or is not released renders as an em
-dash placeholder. Per-provider links within the one owning row are not
-cross-listing; listing a leaf on more than one page is.
+editions exist. Ordinary catalogs use named `ChatGPT` and `Claude` columns.
+The complete Sunday-propers calendars instead use the cycles needed to scan
+the series: the 1962 calendar keeps provider columns, while the postconciliar
+calendar uses `A`, `B`, and `C`. A hidden stable-publication marker may own an
+installed canonical proper whose reader cell is deliberately plain text.
+Title cells remain unlinked bold text.
 
-A componentized proper guide remains one catalog identity. Its provider cell
-links `Full PDF`, `Synthesis PDF`, and `Read` in that order when the canonical
-edition lawfully gives every appointed text in full. Where rights prevent
-that completeness, it truthfully links `Research PDF`, `Synthesis PDF`, and
-`Read`. The companion receives no separate row or HTML link.
+A componentized proper guide remains one catalog identity. In the complete
+Sunday calendars, link only an installed `Synthesis PDF`; show `Planned` when
+that synthesis is absent. The canonical research/full PDF and web edition
+remain owned by the same row through its stable-publication marker but are not
+repeated on this scan-first landing page. The companion receives no separate
+row.
 The component manifest records `appointed_text_completeness` as `complete` or
 `rights-limited`; its canonical label must correspond, and its synthesis label
 is always `Synthesis PDF`.
@@ -302,7 +301,8 @@ its single owning catalog link, and a later provider edition receives its own
 parallel section rather than being mixed packet by packet.
 
 Do not cross-list. Keep derived companions in their canonical work's entry.
-Link installed PDFs from the provider columns and describe each work in terse,
+Outside the Sunday calendars, link installed PDFs from the provider columns
+and describe each work in terse,
 reader-useful language. Do not link TeX files, research records, audits,
 manifests, provenance, review state, production state, release bookkeeping, or
 other repository-facing apparatus from reader landing pages. That apparatus

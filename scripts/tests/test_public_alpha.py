@@ -592,6 +592,20 @@ class PublicAlphaTest(unittest.TestCase):
             str(failure.exception),
         )
 
+    def test_installed_pdf_may_be_owned_by_stable_catalog_marker(self) -> None:
+        self.add_unapproved_publication("held-work", "hold", install_pdf=True)
+        catalog = self.root / "library/test.md"
+        catalog.write_bytes(
+            catalog.read_bytes()
+            + b"\n<!-- triptych-publication-id: held-work -->\n"
+            + b"\n| Other work |\n| --- |\n| Planned |\n"
+        )
+        self.authorize_current_inputs()
+
+        publications = self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(("gpt", "held-work"), publications)
+
     def test_installed_pdf_link_must_match_manifest_catalog(self) -> None:
         self.write("library/other.md", b"# Other shelf\n")
         self.add_unapproved_publication(

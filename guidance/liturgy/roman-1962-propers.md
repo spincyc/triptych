@@ -12,6 +12,27 @@ Each guide is a hand-missal companion, not an official liturgical text, critical
 - `M` identifies a ritual, votive, or other non-Sunday guide. The prefix does not state rank, permission, or authority to replace an occurring Mass.
 - Identify every work by the 1962 edition, printed formulary heading and rank, place in the book, and governing occurrence or use rule—not by filename or a modern civil date. Do not merge distinct formularies. Record seasonal substitutions, ritual additions, blessings, or alternate conclusions wherever they govern the guide.
 
+### Canonical temporal registry
+
+This profile owns the stable series. The reader catalog and production plan
+must reproduce this order exactly; neither may infer, rename, or renumber it.
+
+| IDs | Formularies, in order |
+| --- | --- |
+| 01–06 | First, Second, Third, and Fourth Sundays of Lent; First Sunday of the Passion; Second Sunday of the Passion (Palm Sunday) |
+| 07–14 | Easter Sunday; Low Sunday; Second, Third, Fourth, and Fifth Sundays after Easter; Sunday after the Ascension; Pentecost Sunday |
+| 15–23 | Trinity Sunday; Second through Ninth Sundays after Pentecost |
+| 24–38 | Tenth through Twenty-third Sundays after Pentecost; Twenty-fourth and Last Sunday after Pentecost |
+| 39–45 | First through Fourth Sundays of Advent; Sunday within the Octave of the Nativity; First Sunday after the Epiphany (Holy Family); Second Sunday after the Epiphany |
+| 46–52 | Third through Sixth Sundays after the Epiphany; Septuagesima; Sexagesima; Quinquagesima |
+
+The separately sourced resumed variants are `46R`, `47R`, `48R`, and `49R`,
+the Third through Sixth Sundays after the Epiphany resumed after Pentecost.
+They are subordinate variants of the shared ordinal, not four additional
+members of the 52-item spine. Fixed or movable universal feasts that can
+replace a temporal Sunday remain in the `F` series and never renumber this
+registry. `M01` and later `M` identities remain a separate non-Sunday series.
+
 ## Source Records and Text Control
 
 Each guide leaf keeps its source and audit records beside `main.tex`:
@@ -44,9 +65,7 @@ For every new or substantially revised guide, maintain a passage-by-passage rece
 
 ### Component architecture
 
-The component architecture in this subsection supersedes the older
-study-leaf/full-text-leaf packaging language below while that first pilot is
-migrated. New and substantially revised guides are authored once in a
+New and substantially revised guides are authored once in a
 canonical leaf with `proper-components.toml`. The bare ID produces the
 complete research PDF and the sole complete HTML edition. A mechanical
 `-synthesis` PDF companion is compiled from the same source; it is not another
@@ -80,49 +99,6 @@ page with `triptych:brief-synthesis:start`,
 After references settle, `scripts/check-proper-components --aux` must prove
 that these occupy pages N, N+1, and N+2. Forced breaks alone do not satisfy the
 exact-two-page gate.
-
-Each proper is published as two editions from one body of research. The
-**study edition** carries the leaf's bare id and is the default a reader
-meets. The **full-text edition** carries the same id with a `-full-text`
-suffix, lives in its own leaf directory, and imports the study edition's
-sections rather than restating them; it exists to give the complete
-appointed text to a reader who wants it. Both are separate publications
-with their own manifest entry, catalog link, and web edition, and both
-carry the same collation findings. A catalog row links both from the one
-provider cell.
-
-The study edition does not reproduce the appointed Latin in full. Each
-element is identified by its Latin incipit and reference, its text is
-given in English, and Latin is quoted only where an argument turns on
-the wording — a collation divergence from the Clementine, a Father's
-lemma differing from the missal's, a grammatical claim. This is a
-presentation rule, not a research rule: every published form is still
-collated against the controlling facsimile exactly as before, and the
-divergences found are still published. The full-text edition prints the
-complete Latin with its English.
-
-The full-text edition's appointed-text sheet comes early, immediately
-after the page-2 date-and-location sheet, so that a reader who came for
-the texts reaches them before the exposition. It is the one place where
-the two editions' pagination diverges: the fixed page anchors below —
-thematic movement on page 3, detailed commentary on page 5 — govern the
-study edition, and in the full-text edition both shift by the length of
-that sheet. Everything after it stays in the same fixed order.
-
-The full-text edition inherits rather than duplicates. It keeps no
-`propers/retrieved.txt`, `propers/verified.md`, or `research/scope.md`
-of its own — those live once, in the study edition, and cover both. The
-Source Records requirements above and the profile gate below are
-satisfied for the pair by the study edition's records; a full-text leaf
-that carries its own copies is a defect, because two copies of an audit
-record drift. Its generation metadata is inherited by
-`\AIInheritedGenerationMetadata` for the same reason: the research it
-would otherwise narrate was done in the study leaf.
-
-Neither may the full-text edition restate the study edition's prose. It
-imports the shared body and adds the appointed-text sheet; a `main.tex`
-that lists its twin's sections by hand will silently fall out of step
-the first time a section is added or renamed, with nothing to catch it.
 
 English is never composed, translated, adapted, or paraphrased by the
 guide. It is quoted from a registered public-domain witness and

@@ -786,6 +786,15 @@ def validate_manifest(
             secondary_hold = publication.get("status") == "hold" and provider != primary
             if secondary_hold and len(homes) > 1:
                 errors.append(f"{label}: expected at most one catalog link, found {len(homes)}")
+            elif (
+                not secondary_hold
+                and len(homes) == 0
+                and len(marked_homes) == 1
+            ):
+                # A scan-first catalog may deliberately expose only a derived
+                # synthesis while the canonical installed edition keeps its
+                # unique catalog ownership through an invisible stable marker.
+                pass
             elif not secondary_hold and len(homes) != 1:
                 errors.append(f"{label}: expected one catalog link, found {len(homes)}")
             elif homes and homes[0] != publication.get("catalog"):
@@ -1493,7 +1502,7 @@ def verify_catalog_reachability(
     included: dict[tuple[str, str], dict],
     output: Path,
 ) -> list[str]:
-    """Require every copied PDF to remain linked from its owning catalog."""
+    """Require every copied PDF to remain linked or marker-owned by its catalog."""
     errors: list[str] = []
     primary, _ = declared_providers(manifest)
     for key, publication in sorted(included.items()):
@@ -1516,10 +1525,17 @@ def verify_catalog_reachability(
             if not urlsplit(href).scheme and not urlsplit(href).netloc
         }
         if expected_href not in local_paths:
-            errors.append(
-                f"{publication_label(key, primary)}: copied PDF is not reachable "
-                f"from {catalog_output}"
-            )
+            catalog_markers = {
+                (marked_provider or primary, marked_leaf)
+                for marked_provider, marked_leaf in CATALOG_PUBLICATION_ID_RE.findall(
+                    (ROOT / catalog_source).read_text(encoding="utf-8")
+                )
+            }
+            if key not in catalog_markers:
+                errors.append(
+                    f"{publication_label(key, primary)}: copied PDF is not reachable "
+                    f"from {catalog_output}"
+                )
     return errors
 
 

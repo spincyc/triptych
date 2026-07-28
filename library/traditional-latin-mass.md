@@ -38,20 +38,111 @@ Monochrome-pencil visual references organized for six audiences.
 | **General reader** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf) | Identity, symbolism, status, and period. |
 | **Pontifical ceremonies** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf) | Vesture, insignia, furnishings, and ministers. |
 
-## Mass Propers
+## Sunday Propers Calendar
 
-Appointed texts, biblical context, doctrine, and spiritual interpretation for
-each Mass.
+The stable 1962 temporal series. Missing syntheses are shown as plain text.
+
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost -->
+<!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost -->
+<!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost -->
+
+| ID | Sunday | ChatGPT | Claude |
+| ---: | --- | --- | --- |
+| 01 | **First Sunday of Lent** | Planned | Planned |
+| 02 | **Second Sunday of Lent** | Planned | Planned |
+| 03 | **Third Sunday of Lent** | Planned | Planned |
+| 04 | **Fourth Sunday of Lent** | Planned | Planned |
+| 05 | **First Sunday of the Passion (Passion Sunday)** | Planned | Planned |
+| 06 | **Second Sunday of the Passion (Palm Sunday)** | Planned | Planned |
+| 07 | **Easter Sunday** | Planned | Planned |
+| 08 | **Low Sunday (First Sunday after Easter)** | Planned | Planned |
+| 09 | **Second Sunday after Easter** | Planned | Planned |
+| 10 | **Third Sunday after Easter** | Planned | Planned |
+| 11 | **Fourth Sunday after Easter** | Planned | Planned |
+| 12 | **Fifth Sunday after Easter** | Planned | Planned |
+| 13 | **Sunday after the Ascension** | Planned | Planned |
+| 14 | **Pentecost Sunday** | Planned | Planned |
+| 15 | **Trinity Sunday** | Planned | Planned |
+| 16 | **Second Sunday after Pentecost** | Planned | Planned |
+| 17 | **Third Sunday after Pentecost** | Planned | Planned |
+| 18 | **Fourth Sunday after Pentecost** | Planned | Planned |
+| 19 | **Fifth Sunday after Pentecost** | Planned | Planned |
+| 20 | **Sixth Sunday after Pentecost** | Planned | Planned |
+| 21 | **Seventh Sunday after Pentecost** | Planned | Planned |
+| 22 | **Eighth Sunday after Pentecost** | Planned | Planned |
+| 23 | **Ninth Sunday after Pentecost** | [Synthesis](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) | [Synthesis](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) |
+| 24 | **Tenth Sunday after Pentecost** | Planned | Planned |
+| 25 | **Eleventh Sunday after Pentecost** | Planned | Planned |
+| 26 | **Twelfth Sunday after Pentecost** | Planned | Planned |
+| 27 | **Thirteenth Sunday after Pentecost** | Planned | Planned |
+| 28 | **Fourteenth Sunday after Pentecost** | Planned | Planned |
+| 29 | **Fifteenth Sunday after Pentecost** | Planned | Planned |
+| 30 | **Sixteenth Sunday after Pentecost** | Planned | Planned |
+| 31 | **Seventeenth Sunday after Pentecost** | Planned | Planned |
+| 32 | **Eighteenth Sunday after Pentecost** | Planned | Planned |
+| 33 | **Nineteenth Sunday after Pentecost** | Planned | Planned |
+| 34 | **Twentieth Sunday after Pentecost** | Planned | Planned |
+| 35 | **Twenty-first Sunday after Pentecost** | Planned | Planned |
+| 36 | **Twenty-second Sunday after Pentecost** | Planned | Planned |
+| 37 | **Twenty-third Sunday after Pentecost** | Planned | Planned |
+| 38 | **Twenty-fourth and Last Sunday after Pentecost** | Planned | Planned |
+| 39 | **First Sunday of Advent** | Planned | Planned |
+| 40 | **Second Sunday of Advent** | Planned | Planned |
+| 41 | **Third Sunday of Advent** | Planned | Planned |
+| 42 | **Fourth Sunday of Advent** | Planned | Planned |
+| 43 | **Sunday within the Octave of the Nativity** | Planned | Planned |
+| 44 | **First Sunday after the Epiphany (Holy Family)** | Planned | Planned |
+| 45 | **Second Sunday after the Epiphany** | Planned | Planned |
+| 46 | **Third Sunday after the Epiphany** | Planned | Planned |
+| 47 | **Fourth Sunday after the Epiphany** | Planned | Planned |
+| 48 | **Fifth Sunday after the Epiphany** | Planned | Planned |
+| 49 | **Sixth Sunday after the Epiphany** | Planned | Planned |
+| 50 | **Septuagesima Sunday** | Planned | Planned |
+| 51 | **Sexagesima Sunday** | Planned | Planned |
+| 52 | **Quinquagesima Sunday** | Planned | Planned |
+
+### Resumed after Epiphany
+
+| ID | Sunday | ChatGPT | Claude |
+| ---: | --- | --- | --- |
+| 46R | **Third Sunday after the Epiphany, resumed after Pentecost** | Planned | Planned |
+| 47R | **Fourth Sunday after the Epiphany, resumed after Pentecost** | Planned | Planned |
+| 48R | **Fifth Sunday after the Epiphany, resumed after Pentecost** | Planned | Planned |
+| 49R | **Sixth Sunday after the Epiphany, resumed after Pentecost** | Planned | Planned |
+
+### Sunday replacements
+
+| Celebration | ChatGPT | Claude |
+| --- | --- | --- |
+| **Most Holy Name of Jesus** | Planned | Planned |
+| **Nativity of the Lord** | Planned | Planned |
+| **Circumcision of the Lord** | Planned | Planned |
+| **Epiphany of the Lord** | Planned | Planned |
+| **Purification of the Blessed Virgin Mary** | Planned | Planned |
+| **Saint Joseph, Spouse of the Blessed Virgin Mary** | Planned | Planned |
+| **Annunciation of the Blessed Virgin Mary** | Planned | Planned |
+| **Saint Joseph the Worker** | Planned | Planned |
+| **Nativity of Saint John the Baptist** | Planned | Planned |
+| **Saints Peter and Paul, Apostles** | Planned | Planned |
+| **Most Precious Blood of Our Lord Jesus Christ** | Planned | Planned |
+| **Transfiguration of the Lord** | Planned | Planned |
+| **Assumption of the Blessed Virgin Mary** | Planned | Planned |
+| **Exaltation of the Holy Cross** | Planned | Planned |
+| **All Saints** | Planned | Planned |
+| **Dedication of the Archbasilica of the Most Holy Savior** | Planned | Planned |
+| **Immaculate Conception of the Blessed Virgin Mary** | Planned | Planned |
+| **Christ the King** | Planned | Planned |
+
+### Other Masses
 
 | ID | Guide | ChatGPT | Claude |
 | --- | --- | --- | --- |
-| 15 | **Trinity Sunday** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday.pdf) | — |
-| 16 | **Second Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost.pdf) | — |
-| 17 | **Third Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.html) | — |
-| 18 | **Fourth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.html) | — |
-| 19 | **Fifth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost.pdf) | — |
-| 20 | **Sixth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf) | — |
-| 21 | **Seventh Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | — |
-| 22 | **Eighth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.html) |
-| 23 | **Ninth Sunday after Pentecost** | [Full PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) · [Synthesis PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) | [Full PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) · [Synthesis PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) |
 | M01 | **The Nuptial Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf) | — |
