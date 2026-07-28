@@ -44,6 +44,11 @@ patristic, biblical, liturgical, and theological review.
   former recension-identity gap for this bounded narrative, but Swete's
   editorial hierarchy is not adopted and no modern critical adjudication,
   manuscript collation, or Semitic-text comparison is inferred.
+- CAL's exact dated Aramaic column-20 delivery now controls the line sequence
+  and readable lexical architecture of Genesis Apocryphon 1Q20 XX.14–29,
+  including its inline uncertainty and alternate readings. It is not a
+  manuscript-image collation or translation, so no quotation or
+  translation-dependent nuance is promoted from it.
 - At Mark 9:29 the Robinson–Pierpont artifact includes fasting with prayer and
   its inline divergence note reports omission in the Nestle–Aland text. The
   exact Douay–Rheims/Challoner artifact also includes fasting, at Mark 9:28 in
@@ -59,8 +64,9 @@ patristic, biblical, liturgical, and theological review.
   facsimile at printed page 190. It establishes Justin's apologetic claim, not
   its outcomes, frequency, formulary, or original Greek wording.
 
-Exact records remain necessary for Genesis Apocryphon 1Q20 XX and Qumran
-apotropaic texts. Easton's exact 1934 English
+An exact modern translation and manuscript-image collation remain necessary
+for translation-dependent claims about Genesis Apocryphon 1Q20 XX; exact
+records also remain necessary for Qumran apotropaic texts. Easton's exact 1934 English
 reconstruction now controls only its own *Apostolic Tradition* text state, and
 Percival's exact 1900 English edition now controls only its Laodicea 26
 translation; neither is a modern critical original-language control. Exact dated English passage records now control the bounded
@@ -74,7 +80,7 @@ original-language verification.
 | Israelite narrative in exact Catholic English reception | 1 Samuel 16 (1 Kings 16 in the tracked Douay witness) | Saul's harmful spirit and relief through David's music inside the kingship narrative | Exact Hebrew wording, an adjuration, a later exorcistic office, or a clinical diagnosis |
 | Deuterocanonical narrative | Tobit 6–8, Swete 1896 Vatican and Sinaitic Greek forms | Both printed Greek forms place angelic direction, prayer, marriage, healing, and expulsion in one providential narrative | A normal Israelite or Christian formulary, recension priority, manuscript adjudication, a Semitic-text claim, efficacy, or operational instruction |
 | Second Temple rewriting | *Jubilees* 10.1–11, Charles 1913 English | Noah petitions God after spirits afflict his descendants; God permits one tenth to remain after Mastema's request | Original-language wording or direct dependence by a Gospel evangelist |
-| Second Temple Aramaic | Genesis Apocryphon 1Q20 XX.14–17, 21–29 | Edition-identified lead concerning Abram, Pharaoh, prayer, and laying on of hands | Publication support until an exact translation witness is acquired and inspected |
+| Second Temple Aramaic | Genesis Apocryphon 1Q20 XX.14–29, exact CAL Aramaic transcription | One continuous retelling places Abram's petition, affliction, failed healers, a request for prayer, restoration of Sarai, prayer, laying on of a hand, rebuke of an evil spirit, and recovery in the same line sequence | An English quotation, translation-dependent nuance, manuscript adjudication, efficacy, representative practice, direct Gospel dependence, Christian ritual, diagnosis, or operational instruction |
 | Greek medical polemic | Hippocratic *On the Sacred Disease* 1, Adams 1849 English, printed pp. 843–845 | Rejects a uniquely divine cause and criticizes claims for purifications and incantations in one exact dated translation | A Christian witness, neutral practice report, modern clinical diagnosis, or a simple medicine-replaced-exorcism narrative |
 | Greek philosophical dialogue | Plato, *Symposium* 202d–203a, Fowler 1925 English | Diotima's speech classifies a *daimon* as intermediate and places several religious and divinatory activities within that literary account | Christian demonology, a census of beings, an exorcistic formulary, actual practice, or one composite ancient rite |
 | Greek satirical dialogue | Lucian, *Philopseudes* 16, Fowler 1905 English, printed pp. 238–239 | A character narrates claims about a Syrian from Palestine and alleged relief of possession; the skeptical interlocutor replies within the same frame | The event, practitioner, diagnosis, efficacy, payment pattern, standard rite, Christian identity, historical Jesus, or continuity into Christian ritual |

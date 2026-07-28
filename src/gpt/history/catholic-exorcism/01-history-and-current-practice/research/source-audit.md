@@ -40,6 +40,13 @@ sources.
   editorial hierarchy is not adopted, and the control does not establish
   manuscript priority, modern critical adjudication, Semitic wording,
   efficacy, ordinary practice, a Christian rite, or operational instruction.
+- Genesis Apocryphon 1Q20 XX.14–29 in the exact dated Comprehensive Aramaic
+  Lexicon column-20 delivery. The Aramaic line sequence and its inline
+  uncertain and alternate readings were inspected in full-column context.
+  This is an exact transcription control, not a manuscript-image collation or
+  English translation; it supports no quotation, reconstructed lacuna,
+  efficacy, representative-practice, dependence, Christian-ritual,
+  diagnostic, or operational claim.
 - *Jubilees* 10.1–11, trans. R. H. Charles in *The Apocrypha and Pseudepigrapha of the Old Testament*, vol. 2 (Oxford, 1913), exact CCEL chapter state acquired and inspected 2026-07-27. English translation control for Noah's petition and the disposition of the spirits; no original-language collation.
 - Josephus, *Antiquities* VIII.2.5 in William Whiston's 1737 translation, corresponding to Niese 8.45–49; exact University of Chicago Penelope Book VIII state acquired and inspected 2026-07-27. Controls Josephus's literary report about Eleazar and its Solomonic framing, not the event's mechanism or Christian dependence.
 - Tertullian, *Apology* 23, Thelwall English; Origen, *Contra Celsum*
