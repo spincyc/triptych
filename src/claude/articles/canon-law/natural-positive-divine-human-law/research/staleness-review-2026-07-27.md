@@ -102,3 +102,31 @@ conclusions. The differences are rhetorical, not substantive.
 collateral from new records outside the exact editions and loci that govern
 this article. No publication, PDF, web edition, source binding, catalog,
 release, jurisdiction, currentness, or review-state revision is warranted.
+
+## Third exact-trigger review — 2026-07-27
+
+Immediately before this comparison, the exact explanation reported one new
+input:
+
+- the GPT sibling edition's
+  `research/staleness-review-2026-07-27-second.md`.
+
+That input is an editorial staleness assessment, not a canon, authentic
+interpretation, magisterial text, philosophical authority, or historical
+witness. It records the GPT edition's independent conclusion that its sibling
+review, nine Catechism passages, and Augustine's *City of God* IX.2 do not
+alter its consequential claims.
+
+The ignored modified candidate is an exact pre-note snapshot of the current
+Claude source. The ignored research-first treatment was independently checked
+against this edition's scope, audits, bindings, and authorities. Its crossed
+taxonomy of law, Aquinas corpus at I–II qq. 90–97, historical transmission,
+canonical treatment of custom and dispensation, modern doctrinal controls,
+and authority-sensitive case limits remain unchanged. The GPT editorial
+record adds, removes, strengthens, weakens, or contradicts none of these
+claims.
+
+**Third-review verdict: no material change.** The sole trigger is
+provider-sibling editorial collateral. No publication, source binding, PDF,
+web edition, catalog, currentness, or review-state revision is warranted.
+Rebaseline and ledger mutation remain for the coordinating agent.
