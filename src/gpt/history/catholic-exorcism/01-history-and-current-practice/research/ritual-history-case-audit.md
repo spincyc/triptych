@@ -85,38 +85,40 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
   *De exorcizandis* p. 198, *Formulae* p. 220, *Index* p. 225, and
   *Errata* p. 227. This secondary collation bounds the exorcism unit to
   pp. 198--219 and supports one section rather than the later title XI,
-  chapters 1--3 architecture. It is not inspection of the Alessandrina page
-  images. The earlier Library of Congress lead, control
+  chapters 1--3 architecture. Exact remote artifacts now cover printed
+  pp. 198--219; verified passage records control the p. 198 opening and the
+  visible p. 219 ending. The p. 220 next-unit start remains Bašić's secondary
+  control. The earlier Library of Congress lead, control
   no. 34021365, is an 1873 Baltimore edition and is withdrawn as evidence for
-  the princeps. No internal wording, formula, typography, procedural sequence,
-  frequency, efficacy, or present authorization is inferred.
+  the princeps. No complete internal wording, formula, typography, procedural
+  sequence, frequency, efficacy, or present authorization is inferred.
 
 ### 1614 hosted-byte access probe, 2026-07-27
 
 The Alessandrina copy remains readable through Google Books volume
 `TBNNeaiGbc0C`, and Google Books' public description identifies the 1614 Roman
 imprint and 224 printed pages. USUARIUM record 1195 independently identifies
-the item as the editio princeps and supplies its structural index. The
-previously inspected page images continue to support only the bounded
-printed-page and single-section observations above.
+the item as the editio princeps and supplies its structural index. Exact
+signed page-specific JPEG renditions are now registered for every printed
+page from 198 through 219. The p. 198 and p. 219 artifacts were visually
+inspected and promoted through verified passage records. The intermediate
+artifacts establish exact remote availability and identity but have not been
+promoted to claim-level passage controls.
 
-This pass did not obtain stable exact hosted Alessandrina bytes suitable for
-artifact registration. Direct volume-page access remained an interactive
-hosted view; the official Google Books metadata API request for the volume
-returned HTTP 429; and the public Books download route exposed no authenticated
-full-volume file. The exact Hrčak PDF of Petar Bašić's 2014 article was acquired
-instead (401,068 bytes; SHA-256 `e1c1040a…be83`). Its printed p. 788 supplies
-the independent secondary title and boundary collation above, but it is not a
-facsimile or a warrant to promote the Alessandrina edition binding to acquired.
+The page-specific route did not yield an authenticated full-volume file, and
+no Google scan bytes are retained because their artifact-level redistribution
+license remains unresolved. Each remote artifact nevertheless has an exact
+URL, byte extent, hash, provenance, and rights disposition. The exact Hrčak
+PDF of Petar Bašić's 2014 article (401,068 bytes; SHA-256
+`e1c1040a…be83`) remains the independent secondary control for the title and
+terminal sequence, including the p. 220 next-unit boundary.
 
-Promotion requires an archive request for authenticated Alessandrina Y c 49
-page images or full-volume bytes, or an authenticated public USUARIUM record
-1195 original-file route tied to its displayed copy identity. Either route
-must yield a hash, byte extent, rights disposition, title-page and collation
-control, and visual inspection of printed pp. 198--219. Until then the edition
-binding remains bibliographic; no quotation, exact formula comparison,
-complete procedural digest, typographical claim, or frequency/outcome
-inference may depend on the hosted view or Bašić's secondary collation.
+Further promotion requires claim-level visual review of pp. 199--218 and
+direct control of p. 220; full-volume collation would still require an
+authenticated complete artifact. No quotation, exact formula comparison,
+complete procedural digest, comprehensive typographical claim,
+frequency/outcome inference, operational instruction, or present
+authorization may be derived from the current controls.
 - *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg
   edition, exact Internet Archive facsimile
   `ritualeromanumpa00cath_0` (46,078,608 bytes; SHA-256

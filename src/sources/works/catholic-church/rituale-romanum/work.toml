@@ -6,5 +6,5 @@ responsible = "Catholic Church"
 work_type = "liturgical-book"
 alternate_titles = ["Roman Ritual"]
 languages = ["la"]
-locus_pattern = '(?:title-(?:[1-9]|1[0-2])\.chapter-(?:[1-9]|[1-9][0-9])|apostolicae-sedi)'
+locus_pattern = '(?:title-(?:[1-9]|1[0-2])\.chapter-(?:[1-9]|[1-9][0-9])|apostolicae-sedi|de-exorcizandis-(?:opening|terminal-page))'
 description = "The Roman Ritual promulgated under Paul V in 1614 and subsequently revised in edition-specific states."

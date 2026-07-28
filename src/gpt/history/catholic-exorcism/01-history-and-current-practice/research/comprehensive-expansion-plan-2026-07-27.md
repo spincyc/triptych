@@ -3,7 +3,7 @@
 ## Deliverable
 
 The promised completed work is an evidence-controlled Catholic Exorcism study
-of at least 100 typeset pages. The installed 80-page paper is the current public
+of at least 100 typeset pages. The installed 84-page paper is the current public
 alpha checkpoint, not completion. A reasonable planning range is 54,000–58,000
 reader-facing words, producing approximately 108–116 substantive pages at the
 current design density. Title matter, references, metadata, sparse spill,
@@ -32,7 +32,7 @@ present published wording, not exhaustive control of the source family.
 | Hebrew, Septuagint, Vulgate, Tobit recensions, Mark 9:29, Josephus, and selected Second Temple witnesses | Partial | Exact edition-and-locus controls now cover 1 Samuel 16 in Hebrew, Greek, and Latin; both Swete Tobit forms and the Clementine Tobias; Robinson–Pierpont and Douay Mark; Niese Greek and Whiston Josephus; and bounded 1Q20, 4Q560, 4Q510/511, and 11Q11 witnesses. A separately bound modern eclectic apparatus for Mark 9:29, fuller Qumran translation/image collation, and broader Second Temple coverage remain open. |
 | Laodicea 26 and the *Apostolic Tradition* complex | Partial | Percival’s exact historical English Laodicea witness and Easton’s identified English reconstruction are bound. A modern critical Greek Laodicea control and a current critical reconstruction with versional evidence and commentary for the church-order complex remain open. |
 | Gellone, PRG, ordination traditions, and local manuscripts | Partial | The Gellone folio run, Vogel–Elze PRG I pp. 14 and 17, Ballerini’s *Statuta* item, the 1895 Roman Pontifical, and Parker MS 79 fols. 43r–43v now support bounded typological comparison. Dumas–Deshusses, Munier, PRG manuscript collation, and broader representative local and cross-genre comparison remain open. |
-| Roman ritual edition matrix | Partial | The 1614 unit’s outer boundary, an exact 1872 facsimile, the bounded 1925 and 1952 edition states, and official 1998/1999/2004 evidence are controlled at their stated levels. Direct 1614 page images, complete internal collation across the selected editions, and a claim-level synthesis matrix remain open. |
+| Roman ritual edition matrix | Partial | Exact remote artifacts now cover the 1614 unit’s pp. 198–219 and its endpoints are verified; an exact 1872 facsimile, the bounded 1925 and 1952 edition states, and official 1998/1999/2004 evidence are controlled at their stated levels. Claim-level review of the 1614 intermediate pages, direct p. 220 control, complete internal collation across the selected editions, and a claim-level synthesis matrix remain open. |
 | 1917-to-current Latin discipline and territorial implementation | Partial | Exact 1917 and 1983 canons, canon 1172, current competent-authority controls, official ritual acts, and U.S. implementation are bound through 2026-07-27. Final currentness revalidation, fact-specific particular law, and any material later amendment or authentic interpretation remain snapshot dependencies. |
 | Eastern material and named cases | Open and excluded | No Eastern ritual or particular-law survey and no sufficient named-case dossier has been completed. Latin canon 1172 is not transplanted, and named cases remain outside the reader account. |
 

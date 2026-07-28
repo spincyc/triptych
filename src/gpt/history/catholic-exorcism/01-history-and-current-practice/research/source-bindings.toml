@@ -566,7 +566,43 @@ source_id = "work.catholic-church.de-exorcismis-et-supplicationibus-quibusdam"
 loci = ["decree", "praenotanda"]
 role = "official-control"
 states = ["cataloged"]
-context = "Proprietary liturgical book identified at work and edition-history level only: decree dated 22 November 1998, 1999 Latin typical edition, and 2004 emended reprint. Formulas are not reproduced."
+context = "Proprietary liturgical book retained as a catalog-level identity. Exact decree, edition-heading, issue-date, and emended-reprint claims are controlled by the separate verified passage bindings below. Formulas are not reproduced."
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decretum-de-exorcismis-1998.latin-notitiae-392-393.approval-and-promulgation"
+loci = ["approval-and-promulgation"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:044bda2e136f122fec46bb05a440f897fc89b748cafafc6194ca025c32237e1a"
+verified_on = "2026-07-28"
+context = "Exact official Latin control for papal approval on 1 October 1998, promulgation by decree on 22 November 1998, and the decree's publication-dependent use clause. Chronology and authority only; no formula is reproduced."
+
+[[bindings]]
+source_id = "passage.catholic-church.de-exorcismis-et-supplicationibus-quibusdam.latin-typical-1998-issued-1999.typical-edition-heading"
+loci = ["typical-edition-heading"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:cdff8ad2811a4f1a5308634c5ad8096fbd9f80155900c256c22c127651ebc04a"
+verified_on = "2026-07-28"
+context = "Exact official periodical control for the restored Roman Ritual title and its designation as the editio typica. The bounded passage controls edition identity, not the complete book or its formulas."
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-ritu-exorcismi-1999.latin-notitiae-392-393.issue-date-and-transitional-use"
+loci = ["issue-date-and-transitional-use"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:373c7ce74a75216d83decf79765aee428d036123c95037d3ae09e179e1b314e3"
+verified_on = "2026-07-28"
+context = "Exact official Latin control for physical issue of the Latin edition on 26 January 1999 and the notification's historical petition route for continued use of the former title XII. It does not establish current authorization or a general permission."
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-exorcismis-emended-reprint-report-2005.italian-notitiae-463-464.edition-status"
+loci = ["edition-status"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:257e49d0ea4b764bdb2d8f1ca2697d0659813588a557b35a69a235e9e7e1ab40"
+verified_on = "2026-07-28"
+context = "Exact official retrospective control for publication of the first typical edition in 1999 and the 2004 editio typica emendata as a reprint with technical-typographical corrections after exhaustion of the first printing. It is not a line-by-line collation."
 
 [[bindings]]
 source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.latin-vatican-web-2026-07-27.in-de-exorcismis-praenotanda-37"
@@ -908,8 +944,10 @@ context = "Exact official English delivery controls the distinction between heal
 source_id = "artifact.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.presentation-rite-of-exorcism-1999.spanish-vatican-web-2026-07-26.vatican-html"
 loci = ["complete-text"]
 role = "context"
-states = ["cataloged"]
-context = "Exact official Spanish delivery controls the public presentation date and the dicastery's stated Christological, ecclesial, and prudential rationale; it does not substitute for the proprietary ritual book."
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:547e2c6bb6ca83423fc4306a9f04cc549b9ebc8ac6bf7d2093235fd6dbcdc411"
+verified_on = "2026-07-26"
+context = "Exact official Spanish delivery controls the public presentation date and the dicastery's stated Christological, ecclesial, and prudential rationale; it does not substitute for the promulgating decree or proprietary ritual book."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.exorcism-faq.english-usccb-web-2026-07-27.us-english-edition-dates"
@@ -1028,7 +1066,25 @@ context = "Exact volume-I page-image control for the bounded Ordo XV ordinal arc
 source_id = "edition.catholic-church.rituale-romanum.latin-rome-1614"
 role = "bibliographic"
 states = ["cataloged"]
-context = "Edition record for the Alessandrina editio-princeps witness at Google Books TBNNeaiGbc0C, independently identified by USUARIUM record 1195. Its exact page-image bytes remain unacquired. The separately registered Bašić article supplies an independent secondary title and terminal-boundary collation, not a facsimile substitute. The edition does not support the title XI, chapters 1-3 architecture of later editions; no internal wording, formula, procedural digest, frequency claim, or present authorization is inferred."
+context = "Edition record for the Alessandrina editio-princeps witness at Google Books TBNNeaiGbc0C, independently identified by USUARIUM record 1195. Exact remote artifacts are registered and hashed for printed pp. 198-219; the opening and terminal pages have separate verified passage bindings, while intermediate pages remain artifact-level availability rather than claim-level controls. Bašić independently controls the p. 220 next-unit boundary. No complete wording, formula, procedural digest, frequency claim, operational use, or present authorization is inferred."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-opening"
+loci = ["de-exorcizandis-opening"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:9142962406db475069a9c7f74abbad7fa2195f2c5787f2744651a93f228f1c58"
+verified_on = "2026-07-28"
+context = "Exact remote page-image control for the heading and opening on printed p. 198. It supplies no complete interior, formula transcription, operational sequence, practice, efficacy, diagnosis, or present authorization."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-rome-1614.de-exorcizandis-terminal-page"
+loci = ["de-exorcizandis-terminal-page"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:87e2843b794210739912f99be6e15ff8a10d15eb3e6b25fe5c10281b054a776a"
+verified_on = "2026-07-28"
+context = "Exact remote page-image control for the retained running heading, final prayer heading, and terminal ornament on printed p. 219. Bašić remains the secondary control for the next unit beginning at p. 220. No prayer text is reproduced and no procedure, use, efficacy, or present authorization is inferred."
 
 [[bindings]]
 source_id = "passage.petar-basic.latin-model-of-kasics-roman-ritual.croatian-bogoslovska-smotra-2014.1614-title-and-terminal-sequence"
@@ -1043,7 +1099,7 @@ context = "Exact modern scholarly article control for the princeps title transcr
 source_id = "artifact.catholic-church.rituale-romanum.latin-ratisbon-1872.internet-archive-pdf-b21a0f45"
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:478a76a6bd81f6ee9b49df41ae47472587433f33672f7f0eb5faaebf195eff13"
+source_fingerprint = "sha256:58caec5e397961858d5926bc9821c4c4716299fccb06a562fbfc2c229cf1d386"
 verified_on = "2026-07-27"
 context = "Exact facsimile control for the identity and approval statements of the 1872 Pustet first Regensburg edition and for its continuous unnumbered exorcism unit's heading, placement, and boundaries. The approval language is the edition's own statement, not independent proof of textual identity; this is not a 1752 printing or an 1884 typical state. Comparison with the exact 1925 reset is limited to continuous-unit versus three-chapter architecture. No formula, operational use, prevalence, efficacy, universal reception, or present authorization is inferred."
 
@@ -1093,7 +1149,7 @@ source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11
 loci = ["title-11.chapter-1"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:752dfcc239e59dcc690a5c835b789aea51f10bd76f7957313258365784b49232"
+source_fingerprint = "sha256:20893d29c100ae8d332e0a01891c317cb1bad2cdfa3e349b1775cdc8f847339c"
 verified_on = "2026-07-27"
 context = "Exact electronic-reset control for the 1925 edition's preliminary chapter and cautionary placement; not a Vatican-print facsimile, diagnostic checklist, actual-use record, or current authorization."
 
@@ -1102,7 +1158,7 @@ source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11
 loci = ["title-11.chapter-2"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:f4b29445c14387ceb4549eac1a7ea09c01e179151bbbdf03b302387b99709b66"
+source_fingerprint = "sha256:db53538d0456bddf1f230707a9f123de4a751b67d2f9da500de61a63fd352c3b"
 verified_on = "2026-07-27"
 context = "Exact electronic-reset control for the separate 1925 rite chapter's boundaries; formula wording and operational sequence are not reproduced."
 
@@ -1111,7 +1167,7 @@ source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11
 loci = ["title-11.chapter-3"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:261fc50dc101d8bfd83805b3cfeef636821d46700e3eca0b9195a1e00970bcef"
+source_fingerprint = "sha256:3a93e4bcb85eae9d6d2659fddd79e23cceb049d710e393fce221f055ec21f5dc"
 verified_on = "2026-07-27"
 context = "Exact electronic-reset control for the distinct third chapter's existence, location, and bounded authorization sentence; not a general or current permission or operational guide."
 
@@ -1192,6 +1248,33 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:943dfd453f7496fb27386d28135cf425d1bca37c5885c4f83c544a7cdaae8ca4"
 verified_on = "2026-07-27"
 context = "Exact dated web delivery retained as a supplemental English aid only. It does not replace the Funk Greek page-image control or establish apostolic authorship, universal discipline, practice, frequency, office continuity, or modern law."
+
+[[bindings]]
+source_id = "passage.council-of-laodicea.canons.joannou-greek-latin-french-1962.26"
+loci = ["26"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:d336c6d3387c37e1c9fd95947cbabde3d487d3415471f502865335aa8601ba23"
+verified_on = "2026-07-28"
+context = "Restricted exact page-image control for the Greek wording at Joannou 1962, printed p. 141. No source bytes or extended transcription are retained. The passage does not establish universal reception, a complete office, an ordination rite, exclusive clerical exercise, continuity, or modern law."
+
+[[bindings]]
+source_id = "passage.pericles-pierre-joannou.discipline-generale-antique-volume-1-2.rome-1962.laodicea-introduction-printed-pages-127-129"
+loci = ["Laodicea introduction, printed pp. 127-129"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:0a77785a82dcedeb621017fd9d90998f4999b0cdca9f206971b59d4f92f1542c"
+verified_on = "2026-07-28"
+context = "Restricted page-image control for Joannou's edition-local framing of the Laodicean material as local Phrygian summary tradition, with a possible two-stage codification. It does not establish universal reception or a complete manuscript history."
+
+[[bindings]]
+source_id = "passage.anonymous.apostolic-tradition.bradshaw-new-commentary-2023.introduction-textual-witnesses-and-reconstruction"
+loci = ["Introduction: textual witnesses and reconstruction"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:3bdcedd29d94e5a0e3b0cd69c93f23ad5a117a34de2cda6776302cad6977a6f7"
+verified_on = "2026-07-28"
+context = "Publisher-authorized restricted preview used only for the changed reconstruction history after publication of Ethiopic E1. The preview omits chapters 20-21 and does not control their wording, a single archetype, Hippolytan authorship, unity, date, or Roman provenance."
 
 [[bindings]]
 source_id = "passage.anonymous.apostolic-constitutions.funk-greek-latin-1905-volume-1.8.22-26"
@@ -1435,3 +1518,30 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:da9936d7b159e57a1e416a487d4adfc3e47c3316646a2ecd0011cc967d7da0cf"
 verified_on = "2026-07-28"
 context = "Bounded synthesis of the exact manifest and both inspected folios for this English pontifical's unit architecture. Compared with PRG and 1895 only as a distinct witness, never as direct descent or continuity."
+
+[[bindings]]
+source_id = "artifact.anonymous.pontificale-salisburgense-vendome-ms-14.manuscript-vendome-bm-ms-14.irht-iiif-manifest"
+loci = ["folio-3v"]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:2265e2f9f995aebec33a2598dda3f8a9a3a912748e2e860775da4c8332ab8684"
+verified_on = "2026-07-28"
+context = "Exact IRHT-CNRS ARCA manifest control for manuscript identity, cataloged title, material, first-half-eleventh-century date, 144-folio extent, canvas mapping, attribution, and CC BY-NC 3.0 license. The title is not evidence of production place, relationship to the edited PRG, documented performance, archetypal status, or direct descent."
+
+[[bindings]]
+source_id = "artifact.anonymous.pontificale-salisburgense-vendome-ms-14.manuscript-vendome-bm-ms-14.irht-iiif-folio-3v-width1800"
+loci = ["folio-3v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:cd36c5366169cfd5eba57ac69c6eb38e581a9a6a6baf0aaadfc84ed190a75c18"
+verified_on = "2026-07-28"
+context = "Exact manuscript-image control for the exorcist unit between reader and acolyte ordinations, episcopal delivery of a booklet containing exorcisms, spoken commission, and prayer. No formula, archetypal status, exhaustive collation, direct descent, documented local use, actual performance, ordinary duties, frequency, efficacy, continuity, current law, modern major-exorcism identity, or operational use."
+
+[[bindings]]
+source_id = "passage.anonymous.pontificale-salisburgense-vendome-ms-14.manuscript-vendome-bm-ms-14.folio-3v-ordination-of-exorcists"
+loci = ["folio-3v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:42b65d17a5bdb4843260fc6728b6d3afd5e4480abba74c1661c20da4564f8bac"
+verified_on = "2026-07-28"
+context = "Bounded synthesis of the exact manifest and inspected folio for this named manuscript's ordinal architecture. Compared with Vogel-Elze and other ordinal witnesses only as a selected architectural control, never as evidence of source-family membership, archetypal status, direct descent, continuity, or use."

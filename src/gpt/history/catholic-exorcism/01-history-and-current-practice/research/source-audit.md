@@ -17,12 +17,12 @@ claim already published.
 | Mark 9:29 edition comparison | Partial | Robinson–Pierpont and Douay controls are exact; a separately identified modern eclectic text and full apparatus remain unbound. |
 | Josephus 8.45–49 | Closed for present wording | Exact Niese Greek digital text and Whiston English reception witness; no printed apparatus or event verification. |
 | Selected Second Temple witnesses | Partial | Exact bounded controls exist for 1Q20, 4Q560, 4Q510/511, and 11Q11; manuscript-image and translation coverage is uneven, and the selected corpus is not exhaustive. |
-| Laodicea 26 | Partial | Percival’s exact historical English witness is bound; modern critical Greek control remains open. |
-| *Apostolic Tradition* complex | Partial | Easton’s exact identified English reconstruction is bound; a current critical reconstruction, versional evidence, and specialist commentary remain open. |
+| Laodicea 26 | Closed for present wording | Percival’s historical English and Joannou’s 1962 Greek/Latin/French printed p. 141 are exact restricted controls; Joannou pp. 127–129 bound the collection as local Phrygian summary tradition. Wider reception and manuscript collation remain open. |
+| *Apostolic Tradition* complex | Partial | Easton’s exact identified English reconstruction is bound, and Bradshaw’s publisher-authorized 2023 preview controls the changed reconstruction history after Ethiopic E1. The preview omits chapters 20–21, so current versional collation and exact modern wording there remain open. |
 | Gellone sequence | Partial | Exact manuscript folios 194v–199v and catalog anchors control the visible sequence; Dumas–Deshusses and full textual collation remain open. |
-| PRG ordinal | Partial | Vogel–Elze I, p. 14 (XV.7) and p. 17 (XV.17–19), are exact page controls; a named-manuscript collation remains open. |
-| Western ordination comparison | Partial | Ballerini’s *Statuta*, Maassen, the MGH notice, Parker MS 79, and the 1895 Pontifical support bounded typology; Munier and broader representative comparison remain open. |
-| Roman ritual edition matrix | Partial | Bounded 1614, 1872, 1925, 1952, and 1998–2004 controls exist at differing levels; direct 1614 images and a complete claim-level collation remain open. |
+| PRG ordinal | Partial | Vogel–Elze I, p. 14 (XV.7) and p. 17 (XV.17–19), and Vendôme BM MS 14, fol. 3v, are exact edited and named-manuscript controls; broader collation remains open. |
+| Western ordination comparison | Partial | Ballerini’s *Statuta*, Maassen, the MGH notice, Vendôme MS 14, Parker MS 79, and the 1895 Pontifical support bounded typology; Munier and broader representative comparison remain open. |
+| Roman ritual edition matrix | Partial | Bounded 1614, 1872, 1925, 1952, and 1998–2004 controls exist at differing levels; exact remote 1614 artifacts cover pp. 198–219 and its endpoints are verified, while intermediate-page review, direct p. 220 control, and a complete claim-level collation remain open. |
 | Current Latin discipline and U.S. implementation | Partial | Exact governing canons, competence controls, official ritual acts, and USCCB implementation are bound through 2026-07-27; final-as-of revalidation and fact-specific particular law remain open. |
 | Eastern ritual/particular law and named cases | Open and excluded | No qualifying source module or case dossier supports expansion. |
 
@@ -53,7 +53,7 @@ claim already published.
   or supplies the permission required by c. 1172.
 - Congregation for the Doctrine of the Faith, letter to ordinaries on exorcism, 29 September 1985, *AAS* 77 (1985), 1169–1170, official Latin Holy See text. The delivery URL contains `19850924`, and some vernacular presentation metadata gives 24 September; the official Latin heading and *AAS* citation control the date used here. The letter requires observance of c. 1172, forbids the faithful's use of the Leonine formula against Satan and the apostate angels, and governs unauthorized assemblies that directly address demons and seek their identities.
 - Congregation for the Doctrine of the Faith, *Instruction on Prayers for Healing*, 14 September 2000, art. 8. Distinguishes healing services from exorcism and requires dependence on the diocesan bishop.
-- Congregation for Divine Worship and the Discipline of the Sacraments, *De Exorcismis et Supplicationibus Quibusdam*: promulgation decree dated 22 November 1998; Latin typical edition issued 1999; emended reprint 2004. The 2004 state is an amended or emended version, not a second typical edition. The proprietary rite was consulted only through official descriptions and exact loci quoted in official conference guidance; its formulas are not reproduced.
+- Congregation for Divine Worship and the Discipline of the Sacraments, *De Exorcismis et Supplicationibus Quibusdam*: exact official *Notitiae* controls establish the promulgation decree dated 22 November 1998, the Latin typical-edition heading and physical issue on 26 January 1999, and the 2004 *editio typica emendata* as a reprint with technical-typographical corrections rather than a second typical edition. The bounded official witnesses reproduce the decree, proemium and praenotanda, notification, and later edition-status report, not the complete proprietary ritual book; its formulas are not reproduced.
 - Congregation for Divine Worship and the Discipline of the Sacraments, official presentation of the new rite, 26 January 1999. Used for the public-presentation date and the dicastery's stated theological and prudential rationale, not as the act of promulgation.
 - Congregation for Divine Worship and the Discipline of the Sacraments, general executory decree implementing amended CIC c. 838, 22 October 2021, section *In De Exorcismis et Supplicationibus Quibusdam*, praenotanda 37(a)–(b), exact official Latin HTML and official English aid acquired and inspected 27 July 2026. It assigns the episcopal conference preparation and approval of complete translations faithful to the authentic original for submission to the Apostolic See for *confirmatio*, and adaptation of the rite's signs and gestures, when judged necessary or useful for the people's culture and character, with Holy See consent and *recognitio*. The decree records papal approval and an order for publication but states no separate effective date; the Holy See continued to publish it as the operative implementation control at the cutoff. It adjusts a preliminary norm rather than issuing a new DESQ typical edition and does not alter the minister-authorization rule in CIC c. 1172.
 - Francis, *Praedicate Evangelium*, apostolic constitution of 19 March 2022, arts. 88–90 and effective-date clause; exact official Latin Holy See HTML and official English translation aid acquired, hashed, and inspected on 2026-07-27. Effective 5 June 2022, these articles assign the Dicastery for Divine Worship and the Discipline of the Sacraments its present Roman Curia competence for matters that law reserves to the Apostolic See in regulating and promoting the liturgy, preparing or revising typical liturgical books, confirming conference-approved translations, granting *recognitio* to legitimate adaptations, and overseeing sacramental and sacramental discipline. This institutional competence is not the particular and express local permission required by c. 1172, does not replace an episcopal conference's own approval of a translation or adaptation, and does not institute, appoint, or authorize an exorcist.
@@ -142,9 +142,13 @@ claim already published.
   exact CCEL PDF at artifact page 317; Cornelius's clergy list as quoted by
   Eusebius, *Church History* 6.43.11, trans. Arthur Cushman McGiffert,
   *NPNF* second series, vol. 1 (1890), checked against Schwartz--Mommsen's
-  exact 1908 GCS Greek at printed p. 618. Percival is a historical English
-  witness, not a modern critical Greek control. Laodicea is one conciliar
-  disciplinary setting; Eusebius gives only a combined total of fifty-two
+  exact 1908 GCS Greek at printed p. 618. Joannou's 1962 collection,
+  printed p. 141 / restricted artifact p. 84, supplies the exact Greek,
+  Latin, and French control for Laodicea 26; its introduction at pp. 127--129
+  treats the canons as local Phrygian summary tradition and allows a
+  two-stage codification. Laodicea is one conciliar disciplinary setting;
+  neither universal reception nor a complete office follows. Eusebius gives
+  only a combined total of fifty-two
   for exorcists, readers, and door-keepers. The old GCS control supplies
   neither a separate count nor proof of role continuity.
 
@@ -158,10 +162,12 @@ Eusebius 6.43.11 claims. The Tertullian, Origen, and Eusebius loci now also
 have exact old-edition Latin or Greek controls, each expressly bounded against
 claims of present critical status, event verification, frequency, efficacy,
 formula, prescription, or office continuity.
-Easton's *Apostolic Tradition* 20–21 and Percival's Laodicea 26 are now exact,
-verified historical English witnesses. They remain edition-bounded context,
-not modern critical original-language controls or authority for operational
-practice.
+Easton's *Apostolic Tradition* 20–21 and Percival's Laodicea 26 are exact,
+verified historical English witnesses. Joannou now supplies Laodicea's
+modern Greek control. Bradshaw's 2023 publisher preview establishes that the
+Ethiopic E1 witness published in 2011 materially changed the reconstruction
+base, but the preview omits chapters 20–21 and therefore does not control
+their modern wording. None is authority for operational practice.
 
 The *Apostolic Constitutions* office comparison now has an exact
 original-language control: Funk's 1905 volume I, printed pp. 528–529 (PDF
@@ -223,12 +229,26 @@ routes, findings, and limits are recorded in
   baptized persons from catechumens, and contains a preface and blessing.
   This closes the exact critical-edition page gate for that bounded ordinal
   architecture. No wording is reproduced. The visible apparatus was not
-  collated to a selected manuscript, so the witness does not establish one
-  uncomplicated tenth-century local book, actual performance, ordinary duties,
-  frequency, efficacy, later continuity, current ministry or law, identity
-  with modern major exorcism, or operational use. Munier's reconstructed
-  *Statuta ecclesiae antiqua*, a named PRG-family manuscript, and the
-  representative cross-genre comparison remain open.
+  exhaustively collated. Vendôme BM MS 14, fol. 3v, now supplies the bounded
+  named-manuscript comparison described below, but neither source establishes
+  one uncomplicated tenth-century local book, actual performance, ordinary
+  duties, frequency, efficacy, later continuity, current ministry or law,
+  identity with modern major exorcism, or operational use. Munier's
+  reconstructed *Statuta ecclesiae antiqua* and representative cross-genre
+  comparison remain open.
+- *Pontificale Salisburgense*, Vendôme, Bibliothèque municipale, MS 14,
+  fol. 3v. The exact IRHT-CNRS ARCA manifest and width-1800 image were
+  acquired, hashed, and visually inspected 2026-07-28. The institutional
+  catalog identifies a southern-German, Salzburg-associated pontifical of the
+  first half of the eleventh century. The folio visibly places the rubricated
+  exorcist-ordination unit after the reader blessing and before acolyte
+  ordination, with episcopal delivery of a booklet containing exorcisms,
+  spoken commission, and prayer. The manifest licenses the digitization CC
+  BY-NC 3.0 with attribution to the Bibliothèque municipale de Vendôme; no
+  bytes are retained. This closes a bounded named-manuscript control, not the
+  broader collation: the witness is not treated as an archetype, proof of
+  direct descent, evidence of performance or frequency, current law, or
+  modern major-exorcism practice.
 - *Statuta ecclesiae antiqua*, Ballerini editorial text as reprinted in
   Migne, *Patrologia Latina* 56 (Paris, 1850), cols. 887–888, item 7/XCV,
   artifact PDF p. 450. The exact 612-page Wikimedia Commons scan was acquired
@@ -290,15 +310,14 @@ routes, findings, and limits are recorded in
   browser-visible Alessandrina Y c 49 editio-princeps witness. Petar Bašić's
   exact 2014 article PDF, printed p. 788 (401,068 bytes; SHA-256
   `e1c1040a…be83`), independently transcribes the title and reports the
-  terminal starts at pp. 198, 220, 225, and 227. That secondary collation
-  controls the outer boundary and one-section architecture only; it does not
-  replace the unacquired princeps page images. Direct Google volume access
-  remained interactive, its metadata API returned HTTP 429, and no
-  authenticated full-volume download resulted. Next acquisition paths are an
-  archive request for Alessandrina Y c 49 images or an authenticated USUARIUM
-  record 1195 original-file route. Until then no exact wording, formula,
-  typography, internal procedure, or complete synthesis may be attributed to
-  direct inspection of the 1614 witness.
+  terminal starts at pp. 198, 220, 225, and 227. Exact remote Google Books
+  artifacts are now registered and hashed for every printed page from 198
+  through 219. Verified passage records bind p. 198's heading and opening and
+  p. 219's running heading, final prayer heading, and terminal ornament.
+  Bašić remains the control for the next unit's start at p. 220. The
+  intermediate artifacts have not received claim-level passage review, and no
+  complete wording, formula, typography, operational sequence, use, efficacy,
+  present authorization, or full-volume collation is inferred.
 - *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg
   edition, exact Internet Archive facsimile
   `ritualeromanumpa00cath_0`, 46,078,608 bytes, SHA-256
@@ -365,6 +384,13 @@ Official U.S. guidance supplies the ecclesial requirement to seek medical and
 mental-health input; it is not itself a professional clinical protocol.
 
 ## Negative results and unused leads
+
+- Kraków, Biblioteka Jagiellońska, MS 2057 remains an external lead. The
+  official Jagiellonian Digital Library record identifies a public-domain
+  eleventh- to twelfth-century Latin pontifical, and Usuarium indexes
+  energumen and exorcised-oil units in the associated edition. Exact manuscript
+  folio coordinates were not established in this pass, so no formula,
+  placement, PRG relationship, local use, or practice claim is made from it.
 
 ### SBLGNT v1.2 biblical-breadth control — 2026-07-27
 
@@ -489,7 +515,7 @@ and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
 web conversion, review rasters, every-page visual inspection, and PDF
 structure, font, metadata, and extracted-text checks passed for the dated
 32-page predecessor snapshot; source-library and binding validation also
-passed. The current 80-page snapshot preserves those source and safety
+passed. The current 84-page snapshot preserves those source and safety
 boundaries and has a fresh settled build, log audit, every-page visual
 inspection, PDF structure, font, metadata, and extracted-text check. The
 snapshot is installed and bound for public alpha in this worker but
