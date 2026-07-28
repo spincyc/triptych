@@ -13,15 +13,18 @@ cloth color or drop, decorative form, or local sanctuary planning.
 
 ## Exact controls checked
 
-- Adrian Fortescue, *The Ceremonies of the Roman Rite Described*, first
-  edition (1917), exact Digital Library of India facsimile delivered through
+- Adrian Fortescue, revised by J. B. O'Connell, *The Ceremonies of the Roman
+  Rite Described*, seventh edition (1943), exact Digital Library of India
+  facsimile delivered through
   Internet Archive, SHA-256
   `10acb8de9b161ed2c08be7ce767515418bca5d1ed7ddfff2de902179e1b62c7a`.
   Printed pp. 8–9 / artifact PDF pp. 29–30 were read visually after OCR
   location. Page 8 places the credence and the sacred ministers' three-place
   seat on the Epistle side in Fortescue's teaching model; page 9 separately
   locates servers' seats. The passage supports function and distinction, not a
-  universal construction or exact sanctuary geometry.
+  universal construction or exact sanctuary geometry. The title and edition
+  pages correct the artifact's earlier 1917 misidentification; the separate
+  1917 first-edition record is not used for these claims.
 - The same exact facsimile, printed pp. 78–79 / artifact PDF pp. 99–100,
   was rechecked as contextual evidence: the Asperges preparation names
   vestments at the sedilia and later has acolytes carry candles to the

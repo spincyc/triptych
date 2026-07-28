@@ -197,10 +197,10 @@ All printed claims come from these canonical source keys:
 - `src-met-464340-thurible-variation`;
 - `src-missale-incense-boat-spoon`; and
 - `src-met-236950-boat-spoon`;
-- `src-credence-fortescue-1917`;
+- `src-credence-fortescue-1943`;
 - `src-credence-ce`;
 - `src-credence-missal-use`;
-- `src-sedilia-fortescue-1917`; and
+- `src-sedilia-fortescue-1943`; and
 - `src-sedilia-history`.
 
 The source loci and verification states remain owned by the corresponding

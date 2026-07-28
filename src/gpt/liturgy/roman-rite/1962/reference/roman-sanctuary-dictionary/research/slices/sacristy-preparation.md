@@ -2,7 +2,16 @@
 
 Audit date: 2026-07-27 (America/Chicago).
 
-Review state: **priestly-review-ready, not publication-ready**.
+Historical review state: **superseded in part on 2026-07-28**.
+
+The original seven-record packet below is retained as audit history. The
+current disposition is recorded in
+`../sacristy-recognition-source-audit-2026-07-28.md`: the cross-or-suitable
+image and local signal bell now have separate source-bounded figures; the
+pre-Mass handwashing place is a text-only source-audited record with artwork
+and morphology held; the rejected composite has no current consumer; and the
+remaining sacristy candidates retain their individual held states. No
+external-review process is a current publication gate.
 
 Owner boundary: the sacristy as the ministers' immediate preparation and
 return space; the furnishings that materially support vesting, prayer,

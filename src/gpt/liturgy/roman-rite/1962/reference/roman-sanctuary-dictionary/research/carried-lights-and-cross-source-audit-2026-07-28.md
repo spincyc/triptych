@@ -7,8 +7,9 @@ Audit date: 2026-07-28
 - The 1962 *Missale Romanum*, *Ritus servandus* II.5 and VI.5, names two
   candle-bearing acolytes in the solemn entrance and Gospel formation. It
   controls their role, not candlestick morphology.
-- Adrian Fortescue, *The Ceremonies of the Roman Rite Described* (1917),
-  printed p. 17, distinguishes the acolytes' tall, footed candlesticks that can
+- Adrian Fortescue, revised by J. B. O'Connell, *The Ceremonies of the Roman
+  Rite Described*, seventh edition (1943), printed p. 17, distinguishes the
+  acolytes' tall, footed candlesticks that can
   stand on the credence from footless elevation torches kept in a rack. The
   same page identifies the processional cross as a crucifix on a long staff
   that cannot stand alone.
@@ -26,10 +27,12 @@ Audit date: 2026-07-28
   torchbearers or elevation torches and therefore does not independently
   establish their presence, number, or arrangement.
 
-The exact remote 1917 PDF is 60,347,644 bytes, 454 pages, and SHA-256
+The exact remote 1943 seventh-edition PDF is 60,347,644 bytes, 454 pages, and SHA-256
 `10acb8de9b161ed2c08be7ce767515418bca5d1ed7ddfff2de902179e1b62c7a`.
-The publication is public domain in the United States by date; no scan payload
-is retained.
+Its title and edition pages were rechecked after the earlier 1917
+misidentification. No redistribution basis is assumed for the 1943 facsimile,
+and no scan payload is retained. The 1917 first edition remains a separate
+edition with its own exact modern-typeset remote artifact.
 
 ## Canonical consequences
 

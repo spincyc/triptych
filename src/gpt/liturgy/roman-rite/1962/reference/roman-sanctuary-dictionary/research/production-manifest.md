@@ -194,7 +194,7 @@ page, and exact build/installed byte identity. Installed SHA-256:
 The next altar-server carrying tranche adds the source-audited acolyte
 candlestick and optional processional cross while correcting the retained
 torch record. The exact 1962 Missal controls the two candle-bearing acolytes;
-Fortescue's exact 1917 first edition controls the footed/self-standing
+Fortescue--O'Connell's exact 1943 seventh revised edition controls the footed/self-standing
 candlestick distinction, the footless elevation torch, the non-self-standing
 processional-cross staff, and the cross's optional local status at a priest's
 High Mass. The existing empty-candlestick drawing is reused only as

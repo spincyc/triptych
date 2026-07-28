@@ -1,26 +1,27 @@
 schema_version = 1
 id = "obj-sacristy-lavatory"
-workflow_state = "priestly-review-ready"
-editorial_note = "The checked Missal supports the pre-vesting handwashing action at a prepared place. It does not establish the proposed Latin headword, a fixed basin, plumbing, furniture form, or identity with a piscina."
-preferred_english_name = "Sacristy handwashing place"
+workflow_state = "source-audited"
+editorial_note = "The 1962 Missal prescribes the priest's pre-Mass handwashing but no lavatory morphology, plumbing, basin, furniture, or fixed location. This record is admitted for textual recognition and distinction only; artwork remains withheld pending an appropriate material source."
+preferred_english_name = "Pre-Mass handwashing place"
 latin_headword = "locus ad lavandas manus"
-alternate_english_names = ["sacristy lavatory", "handwashing basin"]
+alternate_english_names = ["sacristy lavatory", "handwashing place"]
 categories = ["church-and-sanctuary"]
 periods = ["roman-1962-horizon"]
 statuses = ["universal-roman"]
 ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
 confusable_with = ["obj-piscina-sacrarium"]
+artwork = []
 
 [presence]
-locations = ["Sacristy or another place prepared for the celebrant's pre-Mass handwashing."]
-contexts = ["Used before vesting or departure for Mass."]
-composition_ids = ["plt-sacristy-preparation"]
-local_variability = "common"
+locations = ["A place locally prepared for the celebrant's pre-Mass handwashing."]
+contexts = ["The priest washes his hands during preparation before arranging the chalice and vesting."]
+composition_ids = []
+local_variability = "defining"
 
 [handling]
 ordinary_handlers = ["priest", "bishop", "cleric", "sacristan"]
 server_relation = "recognizes-only"
-warnings = ["Do not confuse the ordinary handwashing fixture with a piscina or sacrarium merely because both have a basin or drain."]
+warnings = ["Learn locally which fitting or arrangement serves ordinary handwashing and which, if any, is the piscina or sacrarium.", "Never infer a fitting's purpose, outlet, or disposal use from appearance; follow local direction."]
 
 [audience_relevance]
 altar_server = "required"
@@ -32,61 +33,53 @@ pontifical = "useful"
 [[claims]]
 id = "clm-sacristy-lavatory-identity"
 kind = "identity"
-text = "The handwashing place is the facility prepared for the celebrant to wash his hands before vesting."
+text = "The pre-Mass handwashing place is the locally prepared place at which the priest washes his hands during preparation."
 evidence_state = "checked-paraphrase"
+source_ids = ["src-sacristy-lavatory-missal", "src-sacristy-lavatory-ce"]
+
+[[claims]]
+id = "clm-sacristy-lavatory-form"
+kind = "appearance"
+text = "The governing rubric prescribes the handwashing action but not a basin, sink, plumbing arrangement, furniture form, material, dimension, or fixed location."
+evidence_state = "source-grounded-synthesis"
 source_ids = ["src-sacristy-lavatory-missal"]
 
 [[claims]]
-id = "clm-sacristy-lavatory-appearance"
-kind = "appearance"
-text = "The governing rubric fixes the action, not the basin, plumbing, or furniture form."
+id = "clm-sacristy-lavatory-distinction"
+kind = "identity"
+text = "The ordinary handwashing place is not identified as a piscina or sacrarium merely because a fitting has a basin or drain; purpose and disposal practice must be learned locally."
 evidence_state = "source-grounded-synthesis"
 source_ids = ["src-sacristy-lavatory-missal", "src-sacristy-lavatory-ce"]
 
 [[claims]]
-id = "clm-sacristy-lavatory-use"
+id = "clm-sacristy-lavatory-offertory"
 kind = "liturgical-use"
-text = "It serves the priest's handwashing before he arranges the chalice and vests."
-evidence_state = "checked-paraphrase"
-source_ids = ["src-sacristy-lavatory-missal"]
-
-[[claims]]
-id = "clm-sacristy-lavatory-presence"
-kind = "ceremonial-presence"
-text = "It belongs to pre-Mass preparation and is not the portable lavabo set used during the Offertory."
+text = "This preparatory handwashing place is distinct from the portable lavabo articles used during the Offertory."
 evidence_state = "source-grounded-synthesis"
 source_ids = ["src-sacristy-lavatory-missal"]
 
 [[sources]]
 id = "src-sacristy-lavatory-missal"
-binding = "rsd-mr1962-rs-i-ii"
-locus = "Ritus servandus I.1"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-sacristy-preparation-and-reverence"
+locus = "Ritus servandus I.1, printed p. LII, artifact PDF p. 56"
 role = "governing-liturgical-book"
 verification_state = "claim-verified"
-checked_on = 2026-07-27
+checked_on = 2026-07-28
 
 [[sources]]
 id = "src-sacristy-lavatory-ce"
-binding = "rsd-catholic-encyclopedia-sacristy"
-locus = "line 69"
+binding = "passage.catholic-encyclopedia.volume-13.new-york-1912.sacristy"
+locus = "article 'Sacristy,' furnishing paragraph"
 role = "specialist-secondary"
 verification_state = "claim-verified"
-checked_on = 2026-07-27
+checked_on = 2026-07-28
 
-[[artwork]]
-id = "art-sacristy-preparation-plate"
-view = "comparison"
-asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
-review_state = "generated"
-depicts = ["obj-sacristy", "obj-vesting-table", "obj-vestment-case", "obj-sacristy-cross", "obj-sacristy-lavatory", "obj-piscina-sacrarium", "obj-sacristy-bell"]
-scale_mode = "not-to-common-scale"
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the locally designated handwashing place, but never guess whether a basin or drain is a piscina or where anything may be poured."
+claim_ids = ["clm-sacristy-lavatory-identity", "clm-sacristy-lavatory-form", "clm-sacristy-lavatory-distinction"]
 
-[review_readiness]
-qualification = "The Missal requires the preparatory handwashing action at a prepared place, not the modern wall-basin morphology shown in the review image."
-disclosed_gaps = [
-  { id = "gap-sacristy-lavatory-form", kind = "artwork", target_ids = ["obj-sacristy-lavatory", "art-sacristy-preparation-plate"], summary = "The drawn fixed basin could be mistaken for a universally prescribed fixture or confused with the piscina." },
-  { id = "gap-sacristy-lavatory-terminology", kind = "terminology", target_ids = ["obj-sacristy-lavatory"], summary = "The descriptive Latin headword locus ad lavandas manus has not received a dedicated lexical check." },
-]
-review_prompts = [
-  { id = "prq-sacristy-lavatory-form", question = "Does the proposed distinction between the priest's ordinary preparatory handwashing place and the piscina reflect sound sacristy practice, what visual cue would prevent confusion without asserting hidden plumbing, and should the Latin headword remain explicitly provisional?", gap_ids = ["gap-sacristy-lavatory-form", "gap-sacristy-lavatory-terminology"], target_ids = ["obj-sacristy-lavatory", "art-sacristy-preparation-plate"] },
-]
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare and use the locally designated handwashing arrangement; purpose, outlet, and disposal practice require local direction, not visual inference."
+claim_ids = ["clm-sacristy-lavatory-identity", "clm-sacristy-lavatory-form", "clm-sacristy-lavatory-distinction"]

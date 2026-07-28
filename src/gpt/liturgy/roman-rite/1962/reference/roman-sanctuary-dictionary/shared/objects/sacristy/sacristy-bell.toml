@@ -1,92 +1,92 @@
 schema_version = 1
 id = "obj-sacristy-bell"
-workflow_state = "priestly-review-ready"
-editorial_note = "The checked witnesses support a customary departure signal in many churches, not a universal rubric. The Latin indexing phrase, mechanism, operator, placement, and representative wall-mounted form remain local or unresolved."
-preferred_english_name = "Sacristy door bell"
-latin_headword = "campanula sacristiae"
-alternate_english_names = ["procession signal bell"]
+workflow_state = "publication-ready"
+editorial_note = "The 1943 ceremonial calls the departure bell a practice in many churches, and the 1912 specialist article calls it customary. Neither witness establishes a universal rubric, one mechanism, fixed placement, operator, or visual form."
+preferred_english_name = "Local sacristy signal bell"
+latin_headword = "campanula"
+alternate_english_names = ["sacristy door bell", "departure signal bell"]
 categories = ["service-objects"]
 periods = ["roman-1962-horizon"]
 statuses = ["institutional"]
 ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-altar-bells"]
 
 [presence]
-locations = ["Customarily near the sacristy door leading toward the sanctuary."]
-contexts = ["Signals the congregation that the clergy and ministers are about to enter."]
-composition_ids = ["plt-sacristy-preparation"]
+locations = ["At a locally appointed sacristy or departure point; the checked witnesses mention the sacristy door."]
+contexts = ["Where locally used, signals that the clergy and ministers are about to enter."]
+composition_ids = []
 local_variability = "defining"
 
 [handling]
-ordinary_handlers = ["sacristan", "other-server"]
+ordinary_handlers = ["sacristan", "other-server", "cleric"]
 server_relation = "varies-by-ceremony"
-warnings = ["Use only according to local direction; the custom is not universal."]
+warnings = ["Ring only when and as locally directed; mechanism, placement, operator, and cue vary.", "Do not confuse this departure signal with the altar bells used at Mass."]
 
 [audience_relevance]
 altar_server = "required"
 sacristan = "required"
 mc_trainer = "required"
-general_reader = "useful"
+general_reader = "required"
 pontifical = "useful"
 
 [[claims]]
 id = "clm-sacristy-bell-identity"
 kind = "identity"
-text = "The sacristy door bell is a small signal bell associated with the ministers' departure."
-evidence_state = "checked-paraphrase"
-source_ids = ["src-sacristy-bell-ce", "src-sacristy-bell-fortescue"]
-
-[[claims]]
-id = "clm-sacristy-bell-appearance"
-kind = "appearance"
-text = "The witnesses establish a bell but not one mechanism or visual form."
+text = "A local sacristy signal bell is a small bell used in some churches at the ministers' departure."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-sacristy-bell-ce", "src-sacristy-bell-fortescue"]
+source_ids = ["src-sacristy-bell-fortescue-1943", "src-sacristy-bell-ce"]
 
 [[claims]]
 id = "clm-sacristy-bell-use"
 kind = "liturgical-use"
-text = "It warns the congregation of the clergy's approach from the sacristy."
+text = "Where this practice is used, the bell warns or notifies the congregation that Mass or the clergy's entrance is about to begin."
 evidence_state = "checked-paraphrase"
-source_ids = ["src-sacristy-bell-ce"]
+source_ids = ["src-sacristy-bell-fortescue-1943", "src-sacristy-bell-ce"]
 
 [[claims]]
-id = "clm-sacristy-bell-presence"
+id = "clm-sacristy-bell-scope"
 kind = "ceremonial-presence"
-text = "It is customary in many churches, not a universal requirement established by these sources."
+text = "The checked sources describe local or usual practice in many churches, not a universal 1962 requirement."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-sacristy-bell-ce", "src-sacristy-bell-fortescue"]
+source_ids = ["src-sacristy-bell-fortescue-1943", "src-sacristy-bell-ce"]
+
+[[claims]]
+id = "clm-sacristy-bell-form"
+kind = "appearance"
+text = "The witnesses establish a bell but not its mechanism, mount, placement, operator, material, dimensions, ornament, or one visual form."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sacristy-bell-fortescue-1943", "src-sacristy-bell-ce"]
+
+[[sources]]
+id = "src-sacristy-bell-fortescue-1943"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-37-40"
+locus = "printed p. 40; artifact PDF p. 61"
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
 
 [[sources]]
 id = "src-sacristy-bell-ce"
-binding = "rsd-catholic-encyclopedia-sacristy"
-locus = "line 70"
+binding = "passage.catholic-encyclopedia.volume-13.new-york-1912.sacristy"
+locus = "article 'Sacristy,' furnishing paragraph"
 role = "specialist-secondary"
 verification_state = "claim-verified"
-checked_on = 2026-07-27
-
-[[sources]]
-id = "src-sacristy-bell-fortescue"
-binding = "rsd-fortescue-oconnell-reid-1962-sacristy"
-locus = "chapter VI, section 1; scan p. 68"
-role = "ceremonial-book"
-verification_state = "claim-verified"
-checked_on = 2026-07-27
+checked_on = 2026-07-28
 
 [[artwork]]
-id = "art-sacristy-preparation-plate"
-view = "comparison"
-asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
-review_state = "generated"
-depicts = ["obj-sacristy", "obj-vesting-table", "obj-vestment-case", "obj-sacristy-cross", "obj-sacristy-lavatory", "obj-piscina-sacrarium", "obj-sacristy-bell"]
+id = "art-sacristy-0002-local-signal-bell"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-sacristy-0002-local-signal-bell.png"
+review_state = "approved"
+depicts = ["obj-sacristy-bell"]
 scale_mode = "not-to-common-scale"
 
-[review_readiness]
-qualification = "The sources describe the departure bell as customary or usual in many churches, not as a universal 1962 requirement; mechanism and operator vary locally."
-disclosed_gaps = [
-  { id = "gap-sacristy-bell-custom", kind = "scope", target_ids = ["obj-sacristy-bell", "art-sacristy-preparation-plate"], summary = "The proposed entry needs review of whether its local variability and handling language are sufficiently explicit." },
-  { id = "gap-sacristy-bell-terminology", kind = "terminology", target_ids = ["obj-sacristy-bell"], summary = "The Latin indexing phrase campanula sacristiae has not received a dedicated lexical check." },
-  { id = "gap-sacristy-bell-art", kind = "artwork", target_ids = ["art-sacristy-preparation-plate"], summary = "The wall-mounted pull bell is only one generated representative form." },
-]
-review_prompts = [
-  { id = "prq-sacristy-bell-custom", question = "Should a server-facing dictionary include this customary bell, does the generated wall form help recognition, is campanula sacristiae a sound Latin index phrase, and what concise qualification best prevents a local departure signal from being mistaken for a universal rubric?", gap_ids = ["gap-sacristy-bell-custom", "gap-sacristy-bell-terminology", "gap-sacristy-bell-art"], target_ids = ["obj-sacristy-bell", "art-sacristy-preparation-plate"] },
-]
+[[audience_note]]
+audience = "altar-server"
+text = "This is a local departure signal, not the altar bells: use it only at the cue and by the method assigned in this church."
+claim_ids = ["clm-sacristy-bell-identity", "clm-sacristy-bell-scope", "clm-sacristy-bell-form"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Identify the local bell, cue, mechanism, and operator before preparation; do not infer any of them from the representative isolated figure."
+claim_ids = ["clm-sacristy-bell-use", "clm-sacristy-bell-scope", "clm-sacristy-bell-form"]
