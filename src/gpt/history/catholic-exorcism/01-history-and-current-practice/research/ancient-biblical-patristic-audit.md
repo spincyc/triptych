@@ -3,7 +3,7 @@
 This workstream distinguishes comparative context, canonical witness,
 apologetic claim, initiatory practice, and later institutional reception.
 
-Primary loci requiring final edition-level binding are: 1 Samuel 16; Tobit
+Primary loci requiring final edition-level binding were: 1 Samuel 16; Tobit
 6–8; Jubilees 10; Genesis Apocryphon 20; Josephus, *Antiquities* 8.45–49;
 Matthew 4:24 and 12:22–45; Mark 1:21–28, 3:22–27, 5:1–20, and 9:14–29; Luke
 4:31–37, 10:17–20, and 11:14–26; Acts 8:7, 16:16–18, and 19:11–20; Justin,
@@ -50,7 +50,7 @@ rights verification, and exact-snapshot production checks.
   The apparatus compares editions rather than manuscripts, so its silence at
   a locus is not evidence of textual unanimity and its entries are not a full
   textual history.
-- Swete's 1896 volume now supplies exact, page-verified Greek controls for
+- Swete's 1896 volume supplies exact, page-verified Greek controls for
   Tobit 6–8 in both forms that it prints: the Vatican text above and the
   materially different Sinaitic text in full beneath it. This closes the
   former recension-identity gap for this bounded narrative, but Swete's
@@ -120,8 +120,8 @@ original-language verification.
 
 | Stratum | Witness | What it establishes | What it cannot establish |
 | --- | --- | --- | --- |
-| Israelite narrative in exact Catholic English reception | 1 Samuel 16 (1 Kings 16 in the tracked Douay witness) | Saul's harmful spirit and relief through David's music inside the kingship narrative | Exact Hebrew wording, an adjuration, a later exorcistic office, or a clinical diagnosis |
-| Deuterocanonical narrative | Tobit 6–8, Swete 1896 Vatican and Sinaitic Greek forms | Both printed Greek forms place angelic direction, prayer, marriage, healing, and expulsion in one providential narrative | A normal Israelite or Christian formulary, recension priority, manuscript adjudication, a Semitic-text claim, efficacy, or operational instruction |
+| Israelite narrative in exact Hebrew, Greek, Latin, and Catholic English reception | 1 Samuel 16 in Kittel 1909 Hebrew; 1 Kingdoms 16 in Swete 1909 Greek; 1 Regum 16 in Hetzenauer 1914 Clementine Latin; 1 Kings 16 in the tracked Douay witness | Saul's affliction and relief through David's music remain inside the kingship narrative, while wording and edition identities remain distinct | Harmonization, an adjuration, a later exorcistic office, clinical diagnosis, rite, practice, mechanism, efficacy, or textual priority |
+| Deuterocanonical narrative and reception | Tobit 6–8, Swete 1896 Vatican and Sinaitic Greek forms; Hetzenauer 1914 Clementine Latin Tobias | All three controlled forms place angelic direction, prayer, marriage, material action, healing, and expulsion inside a providential narrative, but the Clementine sequence differs materially in wording and arrangement | A normal Israelite or Christian formulary, Jerome attribution, recension priority, manuscript adjudication, a Semitic-text claim, diagnosis, rite, ordinary practice, mechanism, efficacy, or operational instruction |
 | Second Temple rewriting | *Jubilees* 10.1–11, Charles 1913 English | Noah petitions God after spirits afflict his descendants; God permits one tenth to remain after Mastema's request | Original-language wording or direct dependence by a Gospel evangelist |
 | Second Temple Aramaic | Genesis Apocryphon 1Q20 XX.14–29, exact CAL Aramaic transcription | One continuous retelling places Abram's petition, affliction, failed healers, a request for prayer, restoration of Sarai, prayer, laying on of a hand, rebuke of an evil spirit, and recovery in the same line sequence | An English quotation, translation-dependent nuance, manuscript adjudication, efficacy, representative practice, direct Gospel dependence, Christian ritual, diagnosis, or operational instruction |
 | Second Temple Aramaic fragment | 4Q560 fragments 1–2, exact CAL Aramaic transcription | Two heavily lacunose sequences preserve harmful-being, bodily-affliction, spirit, and adjuratory lexical categories | A continuous reconstruction, translation, manuscript adjudication, complete formula, intended use, community ownership, date, efficacy, ordinary practice, diagnosis, authorship, influence, continuity, equivalence with Christian exorcism, or operational instruction |
@@ -198,7 +198,9 @@ prove lexical meaning. The publication therefore makes no claim that
 clinical labels.
 
 No exact Hebrew or Syriac artifact is bound in this tranche. The tracked
-Douay–Rheims/Challoner artifact controls the English reception of 1 Samuel 16,
+Kittel 1909, Swete 1909, and Hetzenauer 1914 now control the Hebrew, Greek,
+and Clementine Latin edition states of 1 Samuel 16, while the
+Douay–Rheims/Challoner artifact controls its English reception,
 not the Masoretic wording. No claim about Hebrew morphology or a Syriac
 textual tradition supports the publication. Syriac witnesses to Mark 9:29
 remain a future edition-specific research question rather than evidence

@@ -31,6 +31,21 @@ sources.
 
 ## Scripture and early witnesses
 
+- 1 Samuel 16 now has exact page-image controls in three edition-local
+  languages: Rudolf Kittel and Georg Beer's *Biblia Hebraica*, part I
+  (Leipzig, 1909), printed pp. 391–392; Henry Barclay Swete's
+  *Old Testament in Greek*, vol. I, fourth edition (Cambridge, 1909),
+  *1 Kingdoms* 16, printed pp. 576–578; and Michael Hetzenauer's
+  Clementine Vulgate (1914), *1 Regum* 16, numbered scans 0238–0239.
+  The directly inspected Hebrew, Greek, and Latin sequences are kept
+  distinct from the tracked Douay–Rheims/Challoner English reception.
+  Kittel's first-edition base follows the second Rabbinic Bible, not Codex
+  Leningradensis; Swete's diplomatic manual edition prints a Vaticanus base
+  and foot apparatus, not a reconstructed modern critical Septuagint; and
+  Hetzenauer controls received Clementine Latin, not Jerome's autograph or
+  a modern critical Vulgate. No witness is harmonized or used to infer a
+  diagnosis, exorcistic office, rite, ordinary practice, mechanism, efficacy,
+  or textual priority.
 - Mark 1:21–28; 3:22–27; 5:1–20; 9:14–29; Matthew 12:22–32; Luke 4:31–37; 10:17–20; 11:14–26; Acts 16:16–18; 19:11–20. Read in the exact Robinson–Pierpont Byzantine Greek and Douay–Rheims/Challoner English controls as canonical narratives with attention to each evangelist's theological purpose. At Mark 9:29 the Robinson–Pierpont inline note reports the Nestle–Aland omission of “and fasting”; no separately identified eclectic artifact or full critical apparatus is bound. The Douay witness numbers the corresponding prayer-and-fasting verse Mark 9:28. No Hebrew or Syriac wording supports a publication claim.
 - Tobit 6–8 in Henry Barclay Swete's 1896 Greek volume, printed pp. 828–835
   (PDF pages 844–851), with the edition's recension note on preface p. vii
@@ -40,6 +55,14 @@ sources.
   editorial hierarchy is not adopted, and the control does not establish
   manuscript priority, modern critical adjudication, Semitic wording,
   efficacy, ordinary practice, a Christian rite, or operational instruction.
+- Tobias 6–8 in Hetzenauer's 1914 Clementine Vulgate, numbered scans
+  0428–0429, was separately inspected as received Latin. Its extended
+  angelic instruction, three-night arrangement, marriage setting, prayer,
+  material action, and Raphael's binding action differ materially in wording
+  and arrangement from both Greek forms printed by Swete. The Latin is not
+  attributed to Jerome, harmonized to either Greek recension, or used to
+  decide Greek or Semitic priority, diagnosis, rite, ordinary practice,
+  mechanism, efficacy, or operational procedure.
 - Genesis Apocryphon 1Q20 XX.14–29 in the exact dated Comprehensive Aramaic
   Lexicon column-20 delivery. The Aramaic line sequence and its inline
   uncertain and alternate readings were inspected in full-column context.

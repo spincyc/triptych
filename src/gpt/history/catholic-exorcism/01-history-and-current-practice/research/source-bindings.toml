@@ -931,3 +931,75 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:fa098d69c21a7088c6366f1dcf0c654249ccbf65ad76fde504a0af9d1b2c71bb"
 verified_on = "2026-07-27"
 context = "Exact late nineteenth-century Latin control for the ordinal section's bounded architecture. No formula is reproduced; not medieval or PRG evidence, manuscript collation, actual practice, frequency, continuity, current ministry or law, major-exorcism identity, efficacy, or operational instruction."
+
+[[bindings]]
+source_id = "passage.hebrew-bible.masoretic-text.kittel-leipzig-vol-1-1909.1sam-16.14-17"
+loci = ["1Sam.16.14-17"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:706503ba1c5c23b077910821a6fab66badace27a03a79d6fafa494996a1c46e1"
+verified_on = "2026-07-27"
+context = "Exact page-image control for the first half of the Hebrew Saul-and-David sequence in Kittel's 1909 first edition. Its second-Rabbinic-Bible base and apparatus are edition-local; not BHS, BHQ, a manuscript collation, translation, diagnosis, rite, practice, mechanism, efficacy, or textual-priority evidence."
+
+[[bindings]]
+source_id = "passage.hebrew-bible.masoretic-text.kittel-leipzig-vol-1-1909.1sam-16.18-23"
+loci = ["1Sam.16.18-23"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:6f568b4e90065b50dc923f172daa4ec18c3544c7edb9f51bb9f43d718a557289"
+verified_on = "2026-07-27"
+context = "Exact page-image control for the conclusion of the Hebrew Saul-and-David sequence in Kittel's 1909 first edition. No Greek or Latin wording is retroverted into it and its apparatus is not adjudicated."
+
+[[bindings]]
+source_id = "passage.swete.old-testament-in-greek.cambridge-vol-1-1909.1kingdoms-16.14-18"
+loci = ["1Kingdoms.16.14-18"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:ddc659d6f8d2fa4e2c350c480606208a9c2b139a95ba86cfe90079841b844209"
+verified_on = "2026-07-27"
+context = "Exact page-image control for the first half of Swete's Greek 1 Kingdoms sequence. The Vaticanus base and foot apparatus remain features of this diplomatic manual edition, not a reconstructed modern critical Septuagint or a judgment of priority."
+
+[[bindings]]
+source_id = "passage.swete.old-testament-in-greek.cambridge-vol-1-1909.1kingdoms-16.19-23"
+loci = ["1Kingdoms.16.19-23"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:66b4ae906a20d14558cdcbb65892a363c1ba251fce719f1115ee42e0cbef9006"
+verified_on = "2026-07-27"
+context = "Exact page-image control for the conclusion of Swete's Greek 1 Kingdoms sequence. It is not harmonized to Hebrew or Latin and supports no diagnosis, rite, practice, mechanism, efficacy, or textual-priority claim."
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.1reg-16.14-23"
+loci = ["1Reg.16.14-23"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:d3dd434aef815e14222f36ec9bd844b1eff0ad5b1ec6beb9b8e70fd1eaddcb86"
+verified_on = "2026-07-27"
+context = "Exact page-image control for the received Clementine Latin sequence in Hetzenauer's 1914 printing. It is neither Jerome's autograph nor a modern critical Vulgate and is not harmonized to Hebrew, Greek, or English."
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.tobias-6.1-22"
+loci = ["Tobias.6.1-22"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:9925dc8784e5c72156c894c97bb2b93972eeadf325c920d39ee973956f98bd4c"
+verified_on = "2026-07-27"
+context = "Exact page-image control for Clementine Tobias 6 in Hetzenauer's 1914 printing. The extended received-Latin sequence remains distinct from both Greek forms already controlled; no priority, diagnosis, rite, ordinary-practice, mechanism, efficacy, or operational claim follows."
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.tobias-7.1-12"
+loci = ["Tobias.7.1-12"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:4b87f95f9c9d61ed510b6470912b45dfa68f6d40c1827692c7dcaec1741eba55"
+verified_on = "2026-07-27"
+context = "Exact page-image control for Clementine Tobias 7:1-12, preserving the edition-local marriage setting and versification without harmonization to either Greek recension."
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.tobias-8.1-24"
+loci = ["Tobias.8.1-24"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:d2150ecf5922224378e8b21063fbda0062b24c4389cc3027e2ccf0352e587eca"
+verified_on = "2026-07-27"
+context = "Exact page-image control for Clementine Tobias 8 in Hetzenauer's 1914 printing, kept distinct from both Greek forms and from claims about Jerome, Semitic priority, modern critical adjudication, diagnosis, rite, ordinary practice, mechanism, efficacy, or operational instruction."
