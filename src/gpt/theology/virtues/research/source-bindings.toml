@@ -1,4 +1,4 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "theology/virtues"
 
@@ -59,3 +59,111 @@ loci = ["1716-1729", "1803-1811", "1812-1829", "1830-1845", "2337"]
 role = "official-control"
 states = ["cataloged"]
 context = "The legacy audit uses modern Holy See English pages as the present Catholic catechetical synopsis and exclusion control, with a recorded 2026-07-16 review. That review predates and does not fingerprint the exact 2026-07-23 central artifacts, so the new binding remains catalog-only."
+
+[[bindings]]
+source_id = "passage.aristotle.ethica-nicomachea.greek-bywater-1894-perseus-web-2026-07-27.vii-7-1150a9-1150b28"
+loci = ["VII.7, 1150a9–1150b28"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b62bdce6b7ec594646b487a1a1abe98be426e127ffe2568a7f900ca6646d8fd0"
+verified_on = "2026-07-27"
+context = "Controls malakia, ordinary endurance, extraordinary intensity, nature, and illness. It is an analogical antecedent, not Aquinas's complete perseverance taxonomy."
+
+[[bindings]]
+source_id = "passage.aristotle.ethica-nicomachea.greek-bywater-1894-perseus-web-2026-07-27.vii-9-1151b17-1152a6"
+loci = ["VII.9, 1151b17–1152a6"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:432921a26f580dc71783954117f79e0a282a06808d1f2f53799042eb3a5d232b"
+verified_on = "2026-07-27"
+context = "Controls the right-reason boundary on persistence. This passage contains no malakia occurrence."
+
+[[bindings]]
+source_id = "passage.aristotle.ethica-nicomachea.english-ross-1925-mit-web-2026-07-27.vii-7"
+loci = ["VII.7"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:460f7e657e260a5aee3efdc713767cd42a05afb3168a8e2800dfbcbee5c8b8cc"
+verified_on = "2026-07-27"
+context = "Historical English control only; the Greek governs and inherited sexed vocabulary is not adopted as a person-label."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.latin-corpusthomisticum-web-secunda-secundae-123-154-2026-07-27.ii-ii-138-1-corpus"
+loci = ["II-II.138.1.corpus"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:154aa223494c69c31f15cc49c0e5aa766b4b9051dff00ad14ebbaab68ac4551d"
+verified_on = "2026-07-27"
+context = "Controls mollities as deficient perseverance and the overwhelming-pressure limit; historical anthropology in the replies is not generalized."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.latin-corpusthomisticum-web-secunda-secundae-123-154-2026-07-27.ii-ii-138-2-corpus"
+loci = ["II-II.138.2.corpus"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:89edf65aeca1fcb0a24b0d6643cbf8f2568dee7316f1e0b87f00c63eab5f8496"
+verified_on = "2026-07-27"
+context = "Controls perseverance as due persistence, pertinacity as excess, and mollities as defect."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.latin-corpusthomisticum-web-secunda-secundae-123-154-2026-07-27.ii-ii-154-11-corpus"
+loci = ["II-II.154.11.corpus"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:c83a000a3f5a422d223bb14019bba583a8b55290ef01cb26dd2ff0ca332b6d44"
+verified_on = "2026-07-27"
+context = "Controls the distinct sexual-classification homonym: an alternative name for one enumerated noncopulatory act, not q.138's vice or an identity category."
+
+[[bindings]]
+source_id = "passage.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.1cor-6.9-11"
+loci = ["1Cor.6.9-11"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:9682f124f71eb6286460a2972250c31af3c543db54e02939101fa73152a286ed"
+verified_on = "2026-07-27"
+context = "Controls the adjacent Greek terms and verse 11; does not settle one exhaustive modern translation."
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.latin-sacredbible-web-2026-07-26.1cor-6.9-11"
+loci = ["1Cor.6.9-11"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:03ff82671ae0e0621f31659f3e932974238ad159cd8103b1ba9df3068a592901"
+verified_on = "2026-07-27"
+context = "Controls molles and Latin versification in an identified mutable Clementine transcription, not a facsimile collation."
+
+[[bindings]]
+source_id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.1cor-6.9-11"
+loci = ["1Cor.6.9-11"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:eeccbcf0029b002940c6223b9a99822d35258887f9174c9cc3681d04d267a4f0"
+verified_on = "2026-07-27"
+context = "Historical English wording and versification only; inherited labels are not adopted as comprehensive modern glosses."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26.c6-l2-1cor-6.9-11"
+loci = ["6.l2"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b3975714b18b2910163e5c93b936995b0a218add6c8c272f8316d7d1d4f6af09"
+verified_on = "2026-07-27"
+context = "Controls Aquinas's medieval sexual exegesis and restorative reading of verse 11; distinct from ST II-II q.138."
+
+[[bindings]]
+source_id = "passage.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.theodorus-ii-de-fornicatione-6"
+loci = ["printed-page-185"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:e828ffa04b6904fa001301c9b2dd2bd531f2a5a587ca55aa1283aeae94e8d63e"
+verified_on = "2026-07-27"
+context = "One sexual tariff in a heterogeneous penitential collection; not a universal code or modern identity category."
+
+[[bindings]]
+source_id = "passage.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.anglo-saxon-compilation-c-60"
+loci = ["printed-page-340"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:022a403703037156a771b888d5c883b2452eebe381adafbe04259ebf32749a8c"
+verified_on = "2026-07-27"
+context = "Contrasting endurance use paired with infirmity in inability to bear fasting; not harmonized with the sexual tariff."

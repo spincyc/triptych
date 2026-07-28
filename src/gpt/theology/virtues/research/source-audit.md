@@ -139,6 +139,39 @@ The study cites Wisdom 8:7; Matthew 5–7; Romans 5:1–5; 1 Corinthians 13, esp
 
 ## Review status and limitations
 
+## Mollities reception control
+
+Exact Greek and Ross witnesses for Aristotle, exact Latin and historical
+English witnesses for ST II--II, qq.138 and 154, four identified witnesses to
+1 Corinthians 6:9--11 and its Thomistic commentary, and two contrasting
+penitential passages were checked for the bounded
+`mollities-reception-audit.md`. They establish distinct lexical and
+classificatory uses, not a single transhistorical category.
+
+Aristotle, *NE* VII.7, 1150a9--1150b28 controls ordinary endurance and its
+extraordinary-pressure, nature, and illness limits. VII.9,
+1151b17--1152a6 contains no *malakia* occurrence; it instead controls the
+right-reason boundary between steadfastness and stubbornness. ST II--II,
+q.138, aa.1--2 controls Aquinas's perseverance classification, while q.154,
+a.11 uses the same Latin noun as an alternative name within a distinct
+sexual-act taxonomy.
+
+The Greek text places *malakoi* beside *arsenokoitai* in 1 Corinthians 6:9;
+the Clementine and Douay witnesses place their inherited renderings in verse
+10, and all witnesses retain verse 11's restorative turn. Aquinas,
+*Super I ad Corinthios* 6, lectio 2 gives a medieval sexual exegesis. These
+are identified translation and reception decisions, not exhaustive modern
+lexical definitions.
+
+Wasserschleben's 1851 collection supplies one sexual penitential tariff and
+one use paired with infirmity in inability to bear fasting. The collection is
+heterogeneous and is not represented as one universal code. Bounded literal
+searches of the official Latin 1917 CIC, current 1983 CIC, and CCEO digital
+corpora found no `moll*` occurrence on 2026-07-27. That is a lexical negative
+only; it says nothing by itself about source collections, schemata,
+interpretations, commentaries, particular law, or the substance of Catholic
+sexual teaching.
+
 The stated loci, source roles, public-domain translations, and official *Catechism* paragraphs were internally checked during generation. This is a source audit, not a critical edition: manuscripts were not collated, the full history of Greek and Latin technical terms was not reconstructed, and no claim is made that the working historical translations settle every lexical question. Web availability may change without changing the cited work and locus.
 
 Independent Aristotelian, patristic, Thomistic, moral-theological, pastoral, or clinical review has not occurred and is not claimed. Before installation, the final prose and appendix must be checked against the completed inventory and terminology audit so that no late dossier, vice label, quotation, or source claim escapes this ledger.

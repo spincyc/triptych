@@ -39,6 +39,11 @@ The official *Catechism of the Catholic Church* 1803--1845 supplies the present 
 
 “Comprehensive” means that every candidate found in this corpus's governing taxonomic loci is accounted for in `virtue-inventory.md` as a counted virtue, nested species or application, qualified cognate state, integral condition or act, alias, or reasoned exclusion. It does not mean every praiseworthy biblical noun, every later spiritual-school vocabulary, every virtue named once in a sermon, every modern character strength, or every act and gift that Aquinas treats alongside a virtue.
 
+The bounded `mollities-reception-audit.md` is a terminology history needed to
+prevent a false equivalence around perseverance. Its philosophical, Pauline,
+scholastic, penitential, and modern-Code controls do not enlarge the governing
+corpus or the fifty-two-entry census.
+
 ## Authority and provenance classes
 
 - **Revealed and authoritative Catholic teaching:** Scripture and the official catechetical synthesis are identified as such; no scholastic taxonomy is presented as though every detail were dogma.
@@ -96,6 +101,11 @@ The work does not:
 - claim that marriage is a defect of virginity, abstention from alcohol a defect of sobriety, suffering injustice a vice, or maximal love of God an excess; or
 - derive moral diagnoses from a reader's score, temperament, illness, disability, sex, social station, or isolated action.
 
+Historical forms such as *malakia*, *malakoi*, *molles*, and *mollities* are
+therefore interpreted only at their exact loci. They are not person-labels and
+are not mapped directly to modern orientation, gender, disability,
+temperament, passivity, or diagnosis.
+
 ## Translation and rights boundary
 
 The publication uses project-created paraphrase and only short source phrases. Aristotle was checked by Bekker locus against the Greek/English Perseus witness and the 1925 W. D. Ross translation; Augustine against the identified works in the public-domain *Nicene and Post-Nicene Fathers* translations; and Aquinas against the Latin locus and the English Dominican Fathers' 1920 translation. These historical translations are public domain in the United States by publication date, but the typography, page wrappers, annotations, and later online editions retain their own status.
@@ -120,4 +130,15 @@ Final-typography production review completed on 2026-07-19: a settled two-pass b
 
 ## Compact-rights-colophon production review — 2026-07-19
 
-The settled 48-page PDF, SHA-256 `48a40f508d6aa3e9ad72029f32e50fc5a0fe228f67435613a8db6228230b2cfe`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+The settled 48-page PDF, SHA-256 `48a40f508d6aa3e9ad72029f32e50fc5a0fe228f67435613a8db6228230b2cfe`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build.
+
+## Mollities reception production review — 2026-07-27
+
+The source-first revision incorporates the bounded *mollities* reception
+audit while retaining exactly fifty-two strict entries. The settled 49-page
+PDF, SHA-256
+`d763d833bce83b20c3e43ce29831c64e6e5b4bca400466a9260d88bebe715a55`,
+was built without fatal, undefined-reference, overflow, or layout warnings.
+All pages were rastered and visually inspected, with the new two-page
+fortitude treatment and terminal references checked at full scale. The
+installed PDF is byte-identical to the reviewed build.
