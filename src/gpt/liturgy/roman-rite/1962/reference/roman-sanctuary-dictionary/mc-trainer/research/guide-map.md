@@ -27,5 +27,8 @@ incense boat and spoon add the checked deacon-to-celebrant relationship while
 leaving any lay boat-bearer assignment, cue, and handoff to local training.
 The thurible adds the named thurifer relationship and a source-bounded
 four-chain recognition view without supplying a handoff, route, swinging, or
-charcoal procedure. The twenty-three-record canonical alpha gate requires no
+charcoal procedure. The practical candle tool adds recognition of one dated
+combined morphology only where local training assigns it; it establishes no
+Roman office, universal server task, ceremonial cue, handoff, or operating
+method. The twenty-four-record canonical alpha gate requires no
 external review.

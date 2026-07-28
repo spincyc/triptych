@@ -11,11 +11,11 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
-The present bounded family covers twenty-three records: the appointments-and-books
+The present bounded family covers twenty-four records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel; and the thurible, incense boat,
-and spoon. Each object receives an
+spoon, and practical candle lighter and extinguisher. Each object receives an
 image-dominant full-page plate. A second registered view may appear as a
 detail inset. The linen figures are source-minimal pencil studies; fold
 pattern, dimensions, markings, ornament, construction, and exact drape remain
@@ -25,7 +25,9 @@ material, ornament, dimensions, or a universal vessel form. The thurible
 plate teaches one source-bounded four-chain construction while excluding
 material, ornament, universal-form, and operational claims. The incense boat
 and spoon preserve the checked container-and-transfer-tool distinction while
-treating the pictured form and dimensions as one exemplar. The furnishings
+treating the pictured form and dimensions as one exemplar. The candle tool
+is one secular 1902 material-culture form, not a Roman prescription or proof
+of Catholic prevalence; its plate supplies no flame-handling procedure. The furnishings
 figures teach a service table and two
 representative movable seating forms without universalizing construction,
 covering, decoration, or exact placement.

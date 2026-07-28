@@ -28,6 +28,18 @@ not acquire or inspect the three full liturgical volumes.
   derived editions, but no populated canonical records or validator presently
   demonstrate enforcement.
 
+## Candle-tool material-culture control, 2026-07-28
+
+The exact two-page facsimile of United States Letters Patent No. 717,186
+(1902) was acquired, hashed, and checked at Figure 1 and the specification.
+It establishes one dated combined family: a long supporting rod, taper tube,
+and separate branch ending in an extinguisher bell. It is secular
+material-culture evidence, not Catholic evidence or a ritual source. The
+canonical record therefore makes no claim for Catholic prevalence, Roman
+prescription, universal combined form, official terminology, dimensions,
+ornament, handler, or operating method; the patented pneumatic mechanism is
+excluded from the generic graphite synthesis.
+
 ## Focused Pontificale audit, 2026-07-27
 
 Source inspected: Manlio Sodi and Alessandro Toniolo, introduction to

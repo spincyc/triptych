@@ -38,3 +38,8 @@ Mass, not as pontifical insignia or a distinct pontifical form. Its
 source-bounded four-chain figure and non-operational safety note bring the
 selection to twenty records without prescribing material, ornament, handoff,
 swinging, or charcoal procedure.
+The practical candle lighter and extinguisher enters only as local equipment
+that may support the same elevated lights. Its secular 1902 morphology witness
+does not establish Catholic prevalence, Roman prescription, a pontifical
+insigne, a distinct pontifical form, or an operating method. This brings the
+selection to twenty-one records.

@@ -51,6 +51,16 @@ The 1927 catalog and Met record control evidence only; no third-party image
 pixel is reproduced. The alpha figure contains no text, smoke, flame,
 charcoal, incense, person, or operational action.
 
+The candle lighter and extinguisher raster is project-generated without
+reference-image input. Its exact prompt was not retained and is not
+reconstructed; the contemporaneous prompt bounds, received and normalized
+hashes, grayscale transformation, source-control ceiling, and exact alpha
+consumers are preserved in the candle-tool audit and canonical manifest. It
+is distributed under the repository's project-content terms. The public-domain
+1902 United States patent supplies dated morphology evidence only; no patent
+drawing pixel is reproduced, and no Catholic prevalence or Roman prescription
+is inferred from it.
+
 ## Open rights classes
 
 | Material | Present disposition | Required action |

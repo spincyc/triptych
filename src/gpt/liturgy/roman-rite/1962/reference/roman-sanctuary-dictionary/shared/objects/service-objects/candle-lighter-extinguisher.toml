@@ -32,13 +32,13 @@ warnings = ["Flame work is an adult-controlled, locally trained assignment. Keep
 altar_server = "useful"
 sacristan = "required"
 mc_trainer = "useful"
-general_reader = "useful"
+general_reader = "exclude"
 pontifical = "useful"
 
 [[claims]]
 id = "clm-candle-tool-identity"
 kind = "identity"
-text = "A long-shaft practical tool may combine a taper tube for lighting elevated candles with a separate branch ending in an extinguisher bell."
+text = "One secular 1902 patent shows a long-shaft practical tool combining a taper tube for lighting elevated candles with a separate branch ending in an extinguisher bell; it is material-culture evidence, not a Roman prescription or proof of Catholic prevalence."
 evidence_state = "source-grounded-synthesis"
 source_ids = ["src-candle-tool-patent-717186"]
 publication_note = "Dated material-culture morphology only: the source is not Catholic evidence, a Roman prescription, or proof of prevalence, name, dimensions, or universal combined form."
@@ -58,3 +58,23 @@ review_state = "print-checked"
 depicts = ["obj-candle-lighter-extinguisher"]
 scale_mode = "not-applicable"
 review_note = "Source-bounded original graphite synthesis: long shaft, narrow taper tube with thin projecting taper, and separate modest extinguisher-bell branch. Patent-specific pneumatic mechanism, ornament, dimensions, text, context, and universal-size cues are omitted."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize this as practical/local equipment only when an adult assigns it; the plate supplies no ignition, approach, wick-treatment, or extinguishing procedure."
+claim_ids = ["clm-candle-tool-identity"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Treat the combined lighter-and-bell form as one dated practical-tool family, not prescribed Catholic equipment; preparation, use, cooling, and storage follow trained local fire-safety practice."
+claim_ids = ["clm-candle-tool-identity"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Use the plate only to recognize and assign locally present practical equipment; it establishes no Roman office, universal server task, ceremonial cue, handoff, or operating method."
+claim_ids = ["clm-candle-tool-identity"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Recognize this only as practical/local candle equipment that may support the same elevated lights, not as pontifical insignia, a distinct pontifical form, or prescribed equipment."
+claim_ids = ["clm-candle-tool-identity"]

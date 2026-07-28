@@ -7,12 +7,46 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Twenty-three alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Twenty-four alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Twenty-three alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Twenty-three alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Twenty-four alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Twenty-four alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Twenty alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Twenty-one alpha records | Built, inspected, and installed | No | Alpha |
+
+The candle lighter and extinguisher promotion admits the existing
+source-audited record to the comprehensive, sacristan, MC/trainer, and
+pontifical canonical selections. The altar-server leaf retains its stronger
+existing manual page and remains at thirty-three records; the general-reader
+edition deliberately excludes this narrowly practical tool. The checked 1902
+United States patent controls one dated long-shaft, taper-tube, and separate
+extinguisher-bell morphology only. Reader-facing text calls it secular
+material-culture evidence and makes no claim for Catholic prevalence, Roman
+prescription, universal form, official terminology, pontifical character, or
+an operating method.
+
+The project-generated graphite asset now has a strict provenance and rights
+contract: the exact prompt is truthfully recorded as unavailable rather than
+reconstructed; the contemporaneous prompt bounds, received and normalized
+hashes, transformation, source ceiling, consumers, exclusions, and review
+states are explicit. All 132 pages across the five consumers, including the
+unchanged 31-page altar-server leaf, were reviewed through the repository PDF
+pipeline. Every changed page and terminal page was inspected at full size,
+and all remaining pages were inspected on the contact sheets. The figure,
+labels, local/practical qualifications, and safety boundaries are legible and
+unclipped; no overlap, spill page, impossible construction, or operational
+flame instruction was found. Settled logs contain no fatal error, undefined
+reference, underfull box, or overfull box. Fonts are embedded, text is
+extractable, and build and installed bytes are identical:
+
+| Leaf | Records | Pages | Installed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 24 | 26 | `1ec13d3b80ac8097e4225cb64a35d7a825592b1372cb7cc40d3a635e935e503d` |
+| Altar server | 33 | 31 | `110f4693294ebff9d3262fc249519f77491f0104ae3f942acee8f705a2b2f5b2` |
+| Sacristan | 24 | 26 | `bb6e700b430c0755f02e46105728955fccc04de12347404c93dc2ccea6eb0b2c` |
+| MC/trainer | 24 | 26 | `ada882b18a0918d83fd886f8b2e681f56857d7d92b436947b084839f948f5728` |
+| General reader | 22 | 24 | `ba80327d4f75f1149e12e668baeee7d7ea626faad396b2ad8078a638675d2d04` |
+| Pontifical ceremonies | 21 | 23 | `19d6d7117c659a90afd2d0182846e876f015f23142fcc61226ceaadb6bb4889f` |
 
 The thurible promotion admits the existing source-audited canonical record
 through all six alpha selections. Its project-generated graphite asset now
