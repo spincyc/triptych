@@ -223,7 +223,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	distclean check-tools check-metadata check-web-editions \
 	check-proper-components \
 	web-editions install-web-editions check-web-editions-current \
-	check-sources check-source-library \
+	check-sources check-deployment-sources check-source-library \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening \
@@ -349,7 +349,7 @@ check-agent-isolation:
 check-pdf-review:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_pdf_review.py' -v
 
-check-sources:
+check-deployment-sources:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
 	@set -eu; for inventory in src/sources/inventories/*publications-v1.toml; do \
 		[ -e "$$inventory" ] || continue; \
@@ -360,6 +360,8 @@ check-sources:
 		esac; \
 		$(PYTHON) $(SOURCE_INVENTORY_TOOL) check --review "$$review" "$$inventory"; \
 	done
+
+check-sources: check-deployment-sources
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 check-source-library:
@@ -436,6 +438,7 @@ help:
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-sources  Validate the source library, inventory, and migration ledger' \
+		'make check-deployment-sources  Validate deployable sources and publication inventories' \
 		'make check-source-library  Test reusable source-library tooling' \
 		'make check-source-inventory  Replay the exhaustive legacy-source inventory' \
 		'make check-source-inventory-tool  Test legacy-source inventory tooling' \

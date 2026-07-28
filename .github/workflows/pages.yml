@@ -36,8 +36,8 @@ jobs:
       - name: Install site dependency
         run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt
 
-      - name: Verify source inventory
-        run: make check-sources
+      - name: Verify deployable sources and inventories
+        run: make check-deployment-sources
 
       - name: Build public artifact
         run: make public-site
