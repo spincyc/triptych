@@ -57,3 +57,8 @@ torchbearers, not as pontifical insignia or a distinct pontifical form. Its
 unlit, footless figure and non-operational safety boundary bring the selection
 to twenty-four records. The processional cross remains excluded because its
 held raster lacks a complete surviving custody and provenance account.
+The sacristy cross-or-suitable-image focus and local signal bell enter as
+ordinary supporting records for pontifical Mass, not as pontifical insignia
+or distinct pontifical forms. Their representative figures preserve the
+cross-or-image alternative and the bell's local-practice boundary, bringing
+the selection to twenty-six records.

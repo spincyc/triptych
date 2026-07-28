@@ -1536,14 +1536,14 @@ release = "passed"
 [[asset_files]]
 id = "file-rpd-sacristy-cross"
 path = "shared/artwork/pencil/RPD-FIG-sacristy-0001-representative-cross.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/sacristy-recognition-source-audit-2026-07-28.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 443058, sha256 = "c28affcab66a3cfd629258811225c02daec4d6c746dc819482bdd2dffe5a8b8c" }
 
 [[asset_files]]
 id = "file-rpd-sacristy-signal-bell"
 path = "shared/artwork/pencil/RPD-FIG-sacristy-0002-local-signal-bell.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/sacristy-recognition-source-audit-2026-07-28.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 501390, sha256 = "96fea3fa35e785d0b3431752d8cf576ca71dcc06c2d84c2207ab1bbc408aa369" }
 
@@ -1639,7 +1639,7 @@ corrections = ["Converted the selected 1024 x 1536 RGB output to stripped 8-bit 
 baked_content_audit = ["One plain cross with no corpus is fully visible on white.", "No sacred-image alternative, frame, wall, room, architecture, labels, people, watermark, or color is visible.", "The base and wood treatment remain explicitly representative and do not establish prescribed morphology."]
 tex_overlays = ["Headword, cross-or-suitable-image alternative, local handling direction, return-source distinction, stable ID, sources, and scale qualification remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader"]
+consumer_edition_ids = ["ed-altar-server", "ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 1024
@@ -1697,7 +1697,7 @@ corrections = ["Converted the selected 1024 x 1536 RGB output to stripped 8-bit 
 baked_content_audit = ["One single generic bell with top grip and clapper is fully visible on white.", "No wall bracket, pull cord, mount, architecture, altar-bell cluster, multiple bells, label, watermark, or color is visible.", "The silhouette remains explicitly representative and does not establish a prescribed form."]
 tex_overlays = ["Headword, local-practice status, altar-bell distinction, handling direction, stable ID, sources, and scale qualification remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader"]
+consumer_edition_ids = ["ed-altar-server", "ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer boundary are recorded. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 1024

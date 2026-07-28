@@ -712,3 +712,34 @@ publications, 1,683 source-surface files, and 11 owners. The broader
 source-family ledger remains outside this checkpoint because its existing
 repository-wide migration defects include unrelated canonical-family gaps and
 the known Claude Ordinary binding mismatch.
+
+## Sacristy recognition cross-edition checkpoint — 2026-07-28
+
+The five generated editions now admit the already source-audited sacristy
+cross-or-suitable-image focus and local sacristy signal bell. Their unchanged
+approved pencil rasters were moved from the stale `consumer-eligible` custody
+label to the canonical alpha asset set using their existing exact prompts,
+provenance, normalized hashes, rights statements, and passed checks. The
+bespoke altar-server pages remain unchanged.
+
+The cross page explicitly preserves the governing suitable-image alternative.
+The bell page remains a local-practice recognition record and establishes no
+universal rubric, mechanism, placement, operator, cue, or altar-bell form.
+Audience notes for the sacristan and generated reference editions preserve
+those boundaries.
+
+All five PDFs were built for settled passes, rastered with the repository
+review helper, and visually inspected on every page: 154 pages total. The two
+new pages in each edition were also checked at rendered size. The images,
+headwords, local-status text, cross-or-image distinction, and audience notes
+are legible, with no clipping, overlap, or spill page. Every PDF has embedded
+fonts and extractable text; logs have no fatal error, undefined reference,
+overfull box, or rerun warning. Build and installed bytes are identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 32 | 11,945,246 | `818e06f9e8d7964ec99274677e12c3070335ab8bd905683a137cc58dac2072ec` |
+| Sacristan | 32 | 11,974,506 | `45e8690ec5fd4220ed6910b0b7bfe5e9360e529f2a9fdabba3d4595cfde4fde5` |
+| MC and trainer | 32 | 11,974,406 | `9a5035e8eedd4def20c3e0f056e8756a4d4bbe77a188d4cac69179af73dedcf3` |
+| General reader | 29 | 11,191,025 | `ba5db053bcb2498c68b8f65e2931a01e7e5b1a5946b8d41eb49fd138e0d09c4b` |
+| Pontifical ceremonies | 29 | 10,854,101 | `5d6612a6629161fc777ccff38cdbf313d488ade15b27aacbff832611f79c5525` |

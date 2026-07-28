@@ -47,6 +47,8 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 r"\RSDObjectRecord{obj-communion-plate}",
                 alpha,
             )
+            self.assertIn(r"\RSDObjectRecord{obj-sacristy-cross}", alpha)
+            self.assertIn(r"\RSDObjectRecord{obj-sacristy-bell}", alpha)
             self.assertIn(
                 r"{Latin term not asserted}",
                 alpha,
@@ -90,6 +92,16 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertIn(r"\RSDObjectRecord{obj-communion-plate}", text)
             self.assertIn(
                 r"\RSDSelectedAudienceNote{Prepare the Communion plate",
+                text,
+            )
+            self.assertIn(r"\RSDObjectRecord{obj-sacristy-cross}", text)
+            self.assertIn(
+                r"\RSDSelectedAudienceNote{Confirm the locally appointed focus",
+                text,
+            )
+            self.assertIn(r"\RSDObjectRecord{obj-sacristy-bell}", text)
+            self.assertIn(
+                r"\RSDSelectedAudienceNote{Identify the local bell",
                 text,
             )
             self.assertNotIn("editorial-proposal", text)

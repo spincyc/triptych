@@ -11,7 +11,7 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
-The present bounded family covers twenty-seven records: the appointments-and-books
+The present bounded family covers twenty-nine records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel; and the thurible, incense boat,
@@ -40,6 +40,11 @@ unlit and supplies no grip, route, height, number, arrangement, or
 flame-handling procedure. The processional-cross record remains excluded
 because its held raster lacks a complete surviving custody and provenance
 account.
+
+The sacristy cross-or-suitable-image focus and local signal bell add two
+recognition records. Their isolated figures are representative only: the
+cross does not narrow the Missal's suitable-image alternative, and the bell
+does not prescribe a mechanism, placement, operator, or universal practice.
 
 The paired altar-cruets plate teaches a small wine-and-water service pair at
 common hand scale while leaving material, markings, closure, handle, tray,

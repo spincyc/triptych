@@ -10,7 +10,7 @@ reader. It owns no copied facts. Each plate emphasizes identity and purpose;
 its canonical audience note explains a useful distinction without enlarging
 the verified claims.
 
-The twenty-five-record alpha adds the corporal, purificator, chalice pall,
+The twenty-seven-record alpha adds the corporal, purificator, chalice pall,
 chalice veil, burse, three altar cloths, credence table, Lavabo basin, and
 Lavabo towel to the appointments-and-books family, together with the incense
 boat and spoon. One image-dominant page per object preserves the principal
@@ -41,3 +41,8 @@ candlestick from the footless elevation torch. Their drawings are
 representative and establish no universal material, ornament, dimensions, or
 proportions. The processional cross remains excluded because its held raster
 lacks a complete surviving custody and provenance account.
+
+The sacristy cross-or-suitable-image focus and local signal bell add concise
+recognition pages. The figures preserve the suitable-image alternative and
+the bell's local-practice status rather than presenting either drawing as a
+universal form.

@@ -9,6 +9,12 @@ useful for sacristans. Audience notes emphasize verified preparation,
 placement, stability, and safety while avoiding unsupported construction,
 care, cleaning, or local-practice prescriptions.
 
+The sacristy cross-or-suitable-image focus and local signal bell add two
+recognition records. The sacristan note preserves local custody and visibility
+without treating the drawn cross as the only permitted form; the bell note
+requires identification of the local cue, mechanism, and operator rather than
+inferring them from the representative figure.
+
 The bounded appointments-and-books family is rendered as readable
 image-dominant full-page plates. Candle and lamp pages retain flame and
 training boundaries; the Missal support pages preserve stand/cushion
@@ -37,9 +43,9 @@ leaving vessel material, closure, markings, tray, left-right order, and Latin
 terminology to source or local direction. The Communion-plate page adds the
 Missal-controlled under-chin identity while leaving storage, material,
 dimensions, and handle count to local direction or the dated exemplar. The
-smaller priest's paten is comparison context only. The twenty-six-record
-edition now also admits the footless elevation torch, bringing the selection
-to twenty-seven records. It distinguishes rack storage from the acolyte
+smaller priest's paten is comparison context only. The edition also admits
+the footless elevation torch and now contains twenty-nine records. It
+distinguishes rack storage from the acolyte
 candlestick's self-standing relation and leaves dimensions, material,
 ornament, number, arrangement, flame handling, and local storage geometry to
 the checked source or trained local practice. The processional cross remains

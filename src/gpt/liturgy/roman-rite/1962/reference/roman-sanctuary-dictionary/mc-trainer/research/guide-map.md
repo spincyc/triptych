@@ -10,6 +10,11 @@ verified distinctions, assignments, placement relationships, and safety.
 Object recognition does not create an unverified handoff, station, cue,
 branch, or recovery procedure.
 
+The sacristy cross-or-suitable-image focus and local signal bell add two
+recognition records. Their notes preserve the locally appointed reverence
+focus and the bell's local-practice status without inventing a universal cue,
+operator, mechanism, route, or assignment.
+
 The appointments-and-books family uses image-dominant full-page plates.
 Altar and carried candlesticks remain distinct; stand and cushion remain
 alternatives; Holy Week lectern states remain rite-specific. The five
@@ -36,9 +41,9 @@ handled form, local markings, tray, or left-right order into a universal
 assignment. The Communion-plate page preserves the under-chin function,
 level-handling boundary, and fragment safety while leaving server assignment
 and morphology local or source-bounded; its smaller priest's paten is
-comparison context only. The twenty-six-record canonical alpha gate requires no external
-review. The footless elevation torch now brings that selection to twenty-seven
-records. Its page teaches the Elevation-service timing and distinction from
+comparison context only. The twenty-nine-record canonical alpha gate requires
+no external review. The footless elevation-torch page teaches the
+Elevation-service timing and distinction from
 the acolytes' footed candlesticks without inventing a route, grip, height,
 number, arrangement, or flame-handling procedure. The processional cross
 remains excluded because its held raster lacks a complete surviving custody
