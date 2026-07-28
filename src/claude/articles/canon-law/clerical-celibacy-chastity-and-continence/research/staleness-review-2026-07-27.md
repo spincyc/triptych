@@ -117,3 +117,30 @@ editions and loci and other loci in the same CIC edition. None is an exact
 bound locus used by the publication. No prose, source binding, PDF, web
 edition, catalog, release, jurisdiction, currentness, or review-state change
 is warranted.
+
+## Third exact-trigger review — 2026-07-27
+
+Immediately before this comparison, the exact explanation reported one new
+input:
+
+- the GPT sibling edition's
+  `research/staleness-review-2026-07-27-second.md`.
+
+That file is an editorial audit record. It reports the GPT edition's
+independent no-material assessment of its own sibling-review and Catechism
+triggers; it is not a new canon, authentic interpretation, magisterial text,
+historical witness, or factual source for this Claude edition.
+
+The ignored modified candidate is an exact pre-note snapshot of the current
+Claude source. The ignored research-first treatment was checked independently
+against the Claude scope, audit, bindings, and controlling authorities. The
+three-term distinction, Latin and Eastern legal regimes, permanent-diaconate
+question, historical development, convert-clergy exceptions, theological
+arguments, and case limits remain unchanged. The GPT editorial record adds,
+removes, strengthens, weakens, or contradicts none of those consequential
+claims.
+
+**Third-review verdict: no material change.** The sole trigger is
+provider-sibling editorial collateral. No publication, source binding, PDF,
+web edition, catalog, currentness, or review-state revision is warranted.
+Rebaseline and ledger mutation remain for the coordinating agent.
