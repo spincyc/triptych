@@ -37,19 +37,22 @@ source keys, and states every material morphology limitation locally.
 
 ## Artwork disposition
 
-The alpha reuses four existing identity-checked pencil assets:
+The alpha uses five identity-checked or consumer-reviewed pencil assets:
 
 - altar bells;
 - sanctuary lamp;
-- the assembled candle-and-candlestick view; and
+- separate candle-only and empty-candlestick views; and
 - chalice.
 
-The candle and candlestick remain together and are explicitly identified as
-two objects. Their separate artwork is a later tranche. The paten candidate is
-not rendered because its canonical review note says its silhouette may read as
+The earlier combined candle-and-candlestick asset remains preserved for other
+consumers, but this leaf now uses distinct figures so the wax light and empty
+support cannot be mistaken for one object. The paten candidate is not rendered
+because its canonical review note says its silhouette may read as
 a domestic saucer and lacks the defining on-chalice relationship. Omitting
 that image is safer than allowing an attractive but ambiguous pictograph to
-teach the wrong identity.
+teach the wrong identity. The prerequisite for new paten art is source
+acquisition that establishes representative morphology, relative scale, and
+the on-chalice relationship; image generation alone cannot close that gap.
 
 ## Reader order
 
@@ -57,7 +60,7 @@ teach the wrong identity.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Image-dominant sanctuary-lamp spread.
-5. Combined candle-and-candlestick spread.
+5. Candle-and-candlestick comparison spread with two distinct figures.
 6. Chalice-and-paten boundary spread, with the ambiguous paten art withheld.
 7. Source notes, scope and qualifications, generation metadata, and rights
    colophon.

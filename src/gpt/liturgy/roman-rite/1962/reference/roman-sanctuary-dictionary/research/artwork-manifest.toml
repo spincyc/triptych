@@ -9,16 +9,16 @@ status = "held-generated-assets"
 # links reconcile the object-local identities without asserting factual,
 # print, rights, consumer, or release approval.
 [[artwork_links]]
-id = "art-altar-appointments-0101-iso-candle"
-asset_file_id = "file-rpd-altar-candlestick"
+id = "art-altar-appointments-0102-iso-candle"
+asset_file_id = "file-rpd-altar-candle-separate"
 object_ids = ["obj-altar-candle"]
 variant_ids = []
 view = "isolated"
 workflow_state = "generated"
 
 [[artwork_links]]
-id = "art-altar-appointments-0101-iso-candlestick"
-asset_file_id = "file-rpd-altar-candlestick"
+id = "art-altar-appointments-0103-iso-candlestick"
+asset_file_id = "file-rpd-altar-candlestick-empty"
 object_ids = ["obj-altar-candlestick"]
 variant_ids = []
 view = "isolated"
@@ -271,6 +271,20 @@ audit_record = "research/reviews/lighting-bells-priestly-review-2026-07-27.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 407293, sha256 = "6199609efaa18d02cd86b78db7fb079b3a1fd3b925db69a433118d407af87f6e" }
 
 [[asset_files]]
+id = "file-rpd-altar-candle-separate"
+path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle.png"
+state = "accepted-for-priestly-review"
+audit_record = "research/artwork-manifest.toml"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 485696, sha256 = "1105b24c3425d2a6b51c8811ba98513af3fe27db227b50c0fdb30eb6aa466766" }
+
+[[asset_files]]
+id = "file-rpd-altar-candlestick-empty"
+path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick.png"
+state = "accepted-for-priestly-review"
+audit_record = "research/artwork-manifest.toml"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 550746, sha256 = "6960b0b15ee2388e419b7e171541ddfaee4b5f3d8967c71ed07851445ec9945a" }
+
+[[asset_files]]
 id = "file-rpd-sanctuary-lamp"
 path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp.png"
 state = "accepted-for-priestly-review"
@@ -473,6 +487,135 @@ state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 185710, sha256 = "2f35848f3bd9e96aec5999a8cf515e467b2b5c9be210a1ad9aa98692662a55e2" }
 
+
+[[artworks]]
+id = "art-altar-appointments-0102-iso-candle"
+object_ids = ["obj-altar-candle"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Distinguish the wax altar candle from the candlestick that supports it."
+depicted_state = "One straight, unlit, freestanding wax candle with visible wick and no support."
+source_controlled_features = [
+  "The candle is a distinct object from the candlestick that supports it.",
+  "The figure is unlit so it teaches identity without depicting unsafe handling.",
+]
+deliberate_omissions = [
+  "No claim about prescribed wax material, dimensions, proportions, ornament, or exclusive Roman form.",
+  "No candlestick, flame, holder, labels, arrows, scale, altar, actor, or handling scene.",
+]
+brief = "A separate candle-only graphite figure for the altar-server alpha: one straight unlit wax candle, visible wick, no candlestick or other object, white ground, no semantic marks."
+exact_prompt = "Exact generation prompt was not durably transferred with this skill-generated asset; the surviving brief is recorded here and no verbatim reconstruction is claimed."
+generator = "OpenAI built-in image generation tool used through the image-generation skill; exact model identifier and runtime not exposed."
+generated_on = "2026-07-27"
+asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle.png"
+reference_ids = []
+precursor_ids = ["art-altar-appointments-0101-iso-candle"]
+corrections = [
+  "Separated the candle from the formerly shared candle-and-candlestick composition.",
+  "The selected asset was transferred to the integrating agent as a normalized stripped 8-bit grayscale PNG; original generator bytes were not durably transferred.",
+]
+baked_content_audit = [
+  "One candle, one wick, no flame, support, extra object, lettering, numeral, arrow, label, border, watermark, or color is visible.",
+  "The straight cylindrical morphology is representative; material, dimensions, and proportions are not asserted by the figure.",
+]
+tex_overlays = ["English and Latin names, handling boundary, safety warning, object ID, source keys, and scale qualification remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster. No third-party reference input was transferred or identified to the integrating agent; this record does not claim that no unseen interface input existed. Project rights boundary remains governed by LICENSE and THIRD_PARTY.md."
+
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 485696
+sha256 = "1105b24c3425d2a6b51c8811ba98513af3fe27db227b50c0fdb30eb6aa466766"
+
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle.png"
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 485696
+sha256 = "1105b24c3425d2a6b51c8811ba98513af3fe27db227b50c0fdb30eb6aa466766"
+max_placement_width_in = 2.1
+max_placement_height_in = 3.15
+effective_dpi = 487.6
+
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "not-applicable"
+rights = "passed"
+consumer = "passed"
+release = "pending"
+
+[[artworks]]
+id = "art-altar-appointments-0103-iso-candlestick"
+object_ids = ["obj-altar-candlestick"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Distinguish the empty candlestick support from the wax candle placed in it."
+depicted_state = "One empty representative metal candlestick with stable foot, stem, central knop, wax plate, and open socket."
+source_controlled_features = [
+  "The candlestick is a support distinct from the candle.",
+  "The empty socket makes that supporting relation visually explicit.",
+]
+deliberate_omissions = [
+  "No claim that the representative turned-metal morphology, ornament, material, dimensions, or proportions are prescribed.",
+  "No candle, flame, labels, arrows, scale, altar, actor, or carried-hand position.",
+]
+brief = "A separate empty-candlestick graphite figure for the altar-server alpha: one stable foot, stem, central knop, wax plate, and visibly empty socket, no candle or other object, white ground, no semantic marks."
+exact_prompt = "Exact generation prompt was not durably transferred with this skill-generated asset; the surviving brief is recorded here and no verbatim reconstruction is claimed."
+generator = "OpenAI built-in image generation tool used through the image-generation skill; exact model identifier and runtime not exposed."
+generated_on = "2026-07-27"
+asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick.png"
+reference_ids = []
+precursor_ids = ["art-altar-appointments-0101-iso-candlestick"]
+corrections = [
+  "Separated the empty candlestick from the formerly shared candle-and-candlestick composition.",
+  "The selected asset was transferred to the integrating agent as a normalized stripped 8-bit grayscale PNG; original generator bytes were not durably transferred.",
+]
+baked_content_audit = [
+  "One empty candlestick, one foot, one stem, one principal knop, one wax plate, and one open socket are visible.",
+  "No candle, flame, extra object, lettering, numeral, arrow, label, border, watermark, or color is visible.",
+  "The turned-metal morphology is representative and does not establish a universal form.",
+]
+tex_overlays = ["English and Latin names, handling boundary, safety warning, object ID, source keys, and scale qualification remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster. No third-party reference input was transferred or identified to the integrating agent; this record does not claim that no unseen interface input existed. Project rights boundary remains governed by LICENSE and THIRD_PARTY.md."
+
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 550746
+sha256 = "6960b0b15ee2388e419b7e171541ddfaee4b5f3d8967c71ed07851445ec9945a"
+
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick.png"
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 550746
+sha256 = "6960b0b15ee2388e419b7e171541ddfaee4b5f3d8967c71ed07851445ec9945a"
+max_placement_width_in = 2.1
+max_placement_height_in = 3.15
+effective_dpi = 487.6
+
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "not-applicable"
+rights = "passed"
+consumer = "passed"
+release = "pending"
 
 [[artworks]]
 id = "art-sacristy-preparation-plate"
