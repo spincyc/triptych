@@ -49,14 +49,21 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 omissions,
             )
 
-    def test_shared_shell_uses_exact_review_label_and_terminal_control(self):
+    def test_shared_format_owns_review_label_without_repeated_shell_apparatus(self):
         shell = (DICTIONARY_ROOT / "shared/publication-shell.tex").read_text()
         format_source = (DICTIONARY_ROOT / "shared/dictionary-format.tex").read_text()
         exact_tex_label = "PRIESTLY REVIEW COPY --- NOT FOR PUBLIC RELIANCE"
-        self.assertIn(exact_tex_label, shell)
         self.assertIn(exact_tex_label, format_source)
-        self.assertIn(r"\section{Review Snapshot and Open Gates}", shell)
-        self.assertIn("public-distribution manifests bind this snapshot identity", shell)
+        self.assertIn(
+            r"\DictionaryTitle{\RSDTitle}{\RSDSubtitle}{\RSDEditionLine}",
+            shell,
+        )
+        self.assertNotIn(exact_tex_label, shell)
+        self.assertNotIn(r"\section{Review Snapshot and Open Gates}", shell)
+        self.assertNotIn(
+            "public-distribution manifests bind this snapshot identity",
+            shell,
+        )
         self.assertNotIn("PRIESTLY REVIEW DRAFT", shell)
         self.assertNotIn("NOT APPROVED FOR INSTRUCTION OR PUBLICATION", shell)
 
