@@ -27,8 +27,11 @@ claim-level evidence and artwork review states permit that use.
 
 ## Validation
 
-Keep canonical records one object per file under `shared/objects/`. From this
-directory, validate them with:
+Keep canonical records one independently taught object per file under
+`shared/objects/`. A subordinate functional set that is always prepared,
+stored, presented, and understood together may use one record while retaining
+the distinct names and functions of its components; the incense boat and
+spoon are the controlling example. From this directory, validate them with:
 
 ```sh
 python3 validate_inventory.py ../objects

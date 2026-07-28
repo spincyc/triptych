@@ -555,11 +555,13 @@ text, no fatal error, undefined reference, overfull box, clipping, overlap, or
 spill page, and exact build/installed byte identity. Installed SHA-256:
 `8732e866bcf195372ce59d4401cf7d5f43ed2b615e7494da7df248bec1166efe`.
 
-The next altar-server tranche splits the former grouped incense candidate into
-stable `obj-incense-boat` and `obj-incense-spoon` records. Exact 1962 Missal
-controls at *Ritus servandus* IV.4 and VII.10 establish the distinct
-*navicula* and *cochlear* and the named deacon-to-celebrant relationship;
-VII.10 repeats the boat service without repeating the spoon term.
+The next altar-server tranche promotes the former grouped incense candidate as
+the stable functional-set record `obj-incense-boat-and-spoon`. Exact 1962
+Missal controls at *Ritus servandus* IV.4 and VII.10 preserve the distinct
+terms *navicula* and *cochlear* and the named deacon-to-celebrant relationship;
+VII.10 repeats the boat service without repeating the spoon term. The single
+dictionary entry reflects their customary preparation, storage, presentation,
+and use together without confusing their distinct functions.
 Met Open Access object 236950 supplies one dated boat-and-spoon exemplar and
 their catalog lengths without being generalized into a ritual norm. Loose
 incense remains consumable material, not a peer vessel.

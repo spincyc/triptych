@@ -1,5 +1,12 @@
 # Incense boat and spoon source audit
 
+## Dictionary identity
+
+The boat and spoon retain their distinct source terms and functions but form
+one subordinate functional-set entry for publication. They are prepared,
+stored, presented, and understood together; separate dictionary cells would
+repeat the same combined artwork without improving recognition.
+
 ## Evidence boundary
 
 The exact 1962 *Missale Romanum*, *Ritus servandus* IV.4 and VII.10,

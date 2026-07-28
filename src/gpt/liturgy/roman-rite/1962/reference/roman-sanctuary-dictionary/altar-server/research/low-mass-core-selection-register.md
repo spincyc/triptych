@@ -53,7 +53,7 @@ excluded from that edition by this register.
 | `obj-paten` | source-audited | Select: must not handle/confusable | Component of the prepared chalice; must be distinguished from the Communion plate |
 | `obj-aspergillum` | art-reviewed | Omit from Low-Mass set | Asperges and related-ceremony object, not part of the ordinary Low-Mass chronology |
 | `obj-holy-water-vessel` | art-reviewed | Omit from Low-Mass set | Asperges and related-ceremony object, not part of the ordinary Low-Mass chronology |
-| `obj-incense-boat`, `obj-incense-spoon` | source-audited | Omit from Low-Mass set | The selected Low Mass has no incense route; the pair enters the Solemn-Mass branch separately |
+| `obj-incense-boat-and-spoon` | source-audited | Omit from Low-Mass set | The selected Low Mass has no incense route; the functional set enters the Solemn-Mass branch |
 | `obj-ombrellino` | art-reviewed | Omit from Low-Mass set | Procession/related-ceremony object outside this route |
 | `obj-processional-cross` | art-reviewed | Omit from Low-Mass set | No cross-bearer or carried cross occurs in the ordinary entrance/recession model |
 | `obj-thurible` | art-reviewed | Omit from Low-Mass set | The selected Low Mass has no incense route |
