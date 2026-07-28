@@ -1,6 +1,6 @@
 # Medieval ritual-history expansion gaps
 
-Audit date: 2026-07-27.
+Audit date: 2026-07-28.
 
 This record defines the evidence still required to expand section 40 beyond
 its controlled claims. It is a source-acquisition specification, not evidence
@@ -16,15 +16,24 @@ The publication may presently use:
   date;
 - H. A. Wilson's 1894 *Gelasian Sacramentary*, pp. 45--50, for the placement
   of exorcistic formulas within the printed preparation-of-the-elect sequence;
-  and
+- the exact Gellone manuscript images and BnF catalog anchors for the visible
+  differentiated-recipient sequence and its book boundary;
+- the Ballerini *Statuta* witness, Maassen's collection history, and the MGH
+  *Clavis canonum* notice for bounded ordination architecture and the varied
+  transmission ceiling;
+- Vogel--Elze, *Pontificale Romano-Germanicum* I, Ordo XV.7 and XV.17--19,
+  Parker MS 79, fols. 43r--43v, and the 1895 *Pontificale Romanum*,
+  *De Ordinatione Exorcistarum*, for a typological comparison of ordinal
+  position, episcopal minister, candidate, and book-delivery architecture; and
 - Aquinas, *Summa theologiae* III, q. 71, aa. 2--4, for a thirteenth-century
   theological account of baptismal preparations and the exorcist's assisting
   office.
 
-These controls support a differentiated history of office, baptismal
-preparation, and theological reception. They do not establish a single
-medieval rite, the regular work of officeholders, the frequency of alleged
-possession, or a universal transfer of extraordinary intervention to priests.
+These controls now support a reader-facing differentiated history organized
+by source genre, date, book position, minister, recipient, and object. The
+comparison is typological and nonlinear. It does not establish direct textual
+descent, a single medieval rite, the regular work of officeholders, frequency,
+efficacy, or a universal transfer of extraordinary intervention to priests.
 
 ## Priority source closures
 
