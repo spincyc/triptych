@@ -35,11 +35,15 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
   226--227, 269 (Vatican City, 1963--1972). Bibliographic identification only;
   no exact artifact, ordo, or page supports a publication claim, and no
   circulation claim is inferred.
-- Western ordination witnesses, later represented in the *Pontificale
-  Romanum*, title *De ordinatione exorcistarum*, remain a bibliographic lead.
-  No representative medieval ordinal has been acquired and collated, so this
-  audit does not use delivery of a book, office symbolism, or asserted duties
-  to support a publication claim.
+- A later Western ordination witness is now exactly controlled in the
+  Leonine-recognized 1895 *Pontificale Romanum*, *De ordinatione
+  exorcistarum*, PDF pp. 38–39. Its bounded architecture includes candidate
+  summons, admonition, book delivery and touch, and two concluding prayers;
+  no formula is reproduced. This late printed witness does not close the
+  medieval gap: no representative medieval ordinal, PRG ordo XV page, or
+  manuscript family has been acquired and collated, and no actual-practice,
+  frequency, continuity, current-ministry, or major-exorcism identity claim is
+  inferred.
 - Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2--4. The
   Fathers of the English Dominican Province translation, New Advent question
   page `4071.htm`, was acquired, hashed, and inspected on 2026-07-26 and is

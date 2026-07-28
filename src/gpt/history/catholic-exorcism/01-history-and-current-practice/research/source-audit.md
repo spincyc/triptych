@@ -128,6 +128,15 @@ routes, findings, and limits are recorded in
   so these remain
   leads and the publication continues to make no positive formulary, duty,
   circulation, or local-practice claim from them.
+- *Pontificale Romanum*, Leonine-recognized Latin edition (1895), *De
+  Ordinatione Exorcistarum*, exact electronic-reset PDF pp. 38–39. The bounded
+  title architecture places the section between lector and acolyte ordination
+  and includes candidate summons, admonition, book delivery and touch, and two
+  concluding prayers. No wording is reproduced. This closes the later Western
+  ordination-witness lead only; it does not substitute for the 1595 editio
+  princeps, PRG ordo XV, a representative medieval ordinal, or manuscript
+  comparison, and it supports no claim about actual practice, frequency,
+  current ministry, major-exorcism identity, or continuity.
 - Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2–4, Fathers of
   the English Dominican Province translation, exact New Advent page state
   acquired, hashed, and inspected 2026-07-26. Controls Aquinas's distinction

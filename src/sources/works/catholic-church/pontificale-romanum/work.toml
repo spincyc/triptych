@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.catholic-church.pontificale-romanum"
+title = "Pontificale Romanum"
+responsible = "Catholic Church"
+work_type = "liturgical-book"
+alternate_titles = ["Roman Pontifical"]
+languages = ["la"]
+locus_pattern = '[a-z0-9]+(?:-[a-z0-9]+)*'
+description = "The Roman liturgical book for rites ordinarily celebrated by a bishop, transmitted through materially different editions and reforms. Edition records must identify the promulgating authority, date, title architecture, and textual state; one edition cannot be projected backward onto medieval pontificals or forward into current discipline."
