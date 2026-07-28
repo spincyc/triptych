@@ -590,8 +590,6 @@ All online witnesses were checked on 2026-07-26, and the tracked source-library 
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Ecclesiasticus 7:40, Douay–Rheims (Challoner), read 2026-07-26 in the source library’s tracked verse text of the Challoner Gutenberg witness (*verse-text-26-ecclesiasticus*). Latin from the Clementine Vulgate as transcribed at SacredBible.org’s Hetzenauer 1914 presentation, read the same day; the Clementine numbers the verse 7:40, modern critical editions of Sirach 7:36. The Douay’s “thy last end” renders the plural *novissima tua*; the singular in English is the translator’s, not the text’s. Throughout this essay Scripture is quoted from the public-domain Douay–Rheims (Challoner) and cited in Vulgate chapter and verse numbering, which is the numbering the Latin tradition’s own citations assume.

@@ -408,22 +408,6 @@ The legal currentness audit was refreshed through 23 July 2026. The added script
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
-**Agent/runtime:** OpenAI Codex agents (theological, Thomistic, patristic, canonical, source-audit, drafting, and editorial roles); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (series-wide grammatical, semantic, theological-weight, literary, source-consistency, drafting, typesetting, and production-review roles); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide literary audit, question-led redrafting, theological and canonical source-consistency review, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide dramatic-architecture revision, earned-statement redrafting, literary and source-consistency review, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide equal-altitude tonal revision, epistemic-order and argumentative-seam editing, philosophical, theological, canonical, literary, source-consistency, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (satisfaction, merit, suffering, scrupulosity, source-audit, and endnote-architecture remediation role); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (series architecture, sacramental, suffering, scrupulosity, Gethsemane, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (source-family normalization, patristic artifact review, claim calibration, build, and production-review roles); API workspace; unexposed: client version, interface, and server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: St. Irenaeus, *Against Heresies* IV.14.1–3; IV.17.1; IV.18.1–6. The article preserves the claims’ anti-heretical and salvation-historical setting: command and sacrifice form a people for life, obedience, justice, and communion; they neither supply a divine need nor reduce worship to subjective therapy.

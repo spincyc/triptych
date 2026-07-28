@@ -101,3 +101,31 @@ pass. The corrected asset may replace the object record's artwork link and
 enter the five generated editions. The bespoke altar-server page deliberately
 keeps its existing teaching treatment and legacy raster. The representative
 morphology ceiling above remains operative.
+
+## Boundary-safe alpha successor
+
+For enlarged and heterodox page placements, the canonical v3 drawing was
+converted non-destructively to a grayscale-plus-alpha PNG. No generative
+redrawing, crop, geometric transformation, or alteration of the depicted
+crucifix was made. A soft opacity matte was derived from the v3 grayscale field and then refined
+deterministically: opacity at or below 20/255 becomes zero, opacity from
+20/255 to 40/255 is multiplied by a cubic smoothstep, and opacity at or above
+40/255 remains unchanged. This removes the residual paper field while
+retaining the substantive graphite and its stronger edge transitions.
+
+The successor is 900 x 1350 pixels, 8-bit grayscale plus alpha, 631,322 bytes,
+with SHA-256
+`7d19ca898ea49ea5a142a20788dfbc16c826d6f92069d49939e12fef84c41b7b`.
+It is retained as
+`shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v4-alpha.png`.
+Its four corners are fully transparent. Review composites against both white
+and warm page stock show no rectangular boundary or color fringe, while the
+complete crucifix, corpus, mounting transition, shaft, and lower endpoint
+remain isolated and legible. At the existing maximum 3 x 4.5 inch placement
+it retains 300 effective pixels per inch; enlargement beyond that remains
+subject to ordinary print review.
+
+The v3 grayscale drawing remains the provenance-bearing precursor. The v4
+file inherits its project-generated, no-reference-image rights disposition
+and its factual and representative-morphology ceiling. The alpha derivation
+adds no evidence and changes no claim.

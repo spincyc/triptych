@@ -1129,8 +1129,6 @@ No manual, commentary, Ordo or rubrical handbook is cited, and none was used to 
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, source acquisition and verification, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: *Acta Apostolicae Sedis* 52 (1960) 593–595 (motu proprio) and 596 (decree). The decree “promulgat et promulgatum esse declarat, in novas Breviarii et Missalis romani editiones inserendum, et ab omnibus ad quos spectat, inde a die 1 ianuarii proximi anni 1961, servandum.”

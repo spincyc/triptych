@@ -147,14 +147,15 @@
 
 % ----------------------------------------------------------- generation metadata
 % The preamble renders the tracked timestamp once, inside the first model
-% contribution.  Rendering it where it is declared reaches the same visible line
-% without the conditional state pandoc cannot evaluate; scripts/web-edition
-% applies the repeat rule by choosing \AIModelContributionRepeat instead.
+% contribution. Rendering it where it is declared reaches the same visible line
+% without the conditional state pandoc cannot evaluate. Complete contribution
+% and runtime history remains in the tracked metadata file; scripts/web-edition
+% applies the compact repeat rule by choosing \AIModelContributionRepeat.
 \newcommand{\AIDocumentRevisionTimestamp}[1]{\par\textbf{Last revised (UTC):} #1\par}
 \newcommand{\AIDisplayDocumentRevisionTimestamp}{}
 \newcommand{\AIModelContribution}[3]{%
-  \par\textbf{Model:} \texttt{#1}; \texttt{#2}\par\textbf{Agent/runtime:} #3\par}
-\newcommand{\AIModelContributionRepeat}[3]{\par\textbf{Agent/runtime:} #3\par}
+  \par\textbf{Model:} \texttt{#1}; \texttt{#2}\par}
+\newcommand{\AIModelContributionRepeat}[3]{}
 
 % ------------------------------------------------------------------ rights notice
 % Verbatim content of the final-page colophon in src/common/preamble.tex.

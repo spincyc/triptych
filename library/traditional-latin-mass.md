@@ -6,7 +6,6 @@ Studies of the books and calendar in force in 1962.
 
 On this page: [Core and reference works](#core-and-reference-works) ·
 [Altar server guides](#altar-server-guides) ·
-[Sanctuary pictorial dictionaries](#sanctuary-pictorial-dictionaries) ·
 [Sunday propers calendar](#sunday-propers-calendar) ·
 [Other Masses](#other-masses)
 
@@ -148,7 +147,7 @@ The stable 1962 temporal series. Missing syntheses are shown as plain text.
 | **Immaculate Conception of the Blessed Virgin Mary** | Planned | Planned |
 | **Christ the King** | Planned | Planned |
 
-### Other Masses
+## Other Masses
 
 | ID | Guide | ChatGPT | Claude |
 | --- | --- | --- | --- |

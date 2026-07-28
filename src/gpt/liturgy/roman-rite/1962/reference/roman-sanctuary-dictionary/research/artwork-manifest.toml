@@ -49,19 +49,11 @@ view = "isolated"
 workflow_state = "factual-review-passed"
 
 [[artwork_links]]
-id = "art-altar-appointments-0102-iso-candle"
-asset_file_id = "file-rpd-altar-candle-separate"
-object_ids = ["obj-altar-candle"]
+id = "art-altar-appointments-0101-candle-and-candlestick"
+asset_file_id = "file-rpd-altar-candlestick"
+object_ids = ["obj-altar-candle", "obj-altar-candlestick"]
 variant_ids = []
-view = "isolated"
-workflow_state = "generated"
-
-[[artwork_links]]
-id = "art-altar-appointments-0103-iso-candlestick"
-asset_file_id = "file-rpd-altar-candlestick-empty"
-object_ids = ["obj-altar-candlestick"]
-variant_ids = []
-view = "isolated"
+view = "composition"
 workflow_state = "generated"
 
 [[artwork_links]]
@@ -286,6 +278,14 @@ path = "shared/artwork/pencil/DIC-ART-SA-003-altar-baldachin-exemplars.png"
 state = "held"
 audit_record = "research/slices/altar-sanctuary-composition.md"
 technical = { width_px = 1643, height_px = 957, bit_depth = 8, color_mode = "grayscale", bytes = 543826, sha256 = "b51e4c987c1cde3eefcd75de91669dd86a8ec3b4b5a528d849a7e01c9cd382d9" }
+
+[[asset_files]]
+id = "file-rpd-sanctuary-relationships-alpha"
+path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0104-sanctuary-relationships-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/slices/altar-sanctuary-composition.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1693, height_px = 929, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 377358, sha256 = "e460073553b1bb4435dbf2f6c313e8012d3121a079fb3af462da68267163a9d5" }
 
 [[asset_files]]
 id = "file-rpd-altar-candlestick"
@@ -527,7 +527,7 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-book-missal-stand"
 path = "shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand.png"
-state = "superseded-provenance"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1122, height_px = 1402, bit_depth = 8, color_mode = "grayscale", bytes = 597021, sha256 = "da4e27db347fc260b2b11b4805b29b54f4749434c68d7ccb54c2c48be08ee045" }
 
@@ -536,6 +536,7 @@ id = "file-rpd-book-missal-stand-boundary-v2"
 path = "shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand-v2.png"
 state = "canonical-alpha-eligible"
 audit_record = "research/books-and-supports-priestly-review.md"
+boundary_treatment = "transparent"
 technical = { width_px = 1122, height_px = 1402, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 762142, sha256 = "30227d4df112ec1d2715425186d3b5ccc01a9d1708f806c35d5682a56ce02c35" }
 
 [[asset_files]]
@@ -543,6 +544,7 @@ id = "file-rpd-book-missal-stand-v2"
 path = "shared/artwork/pencil/books/RPD-FIG-books-0005-iso-missal-stand-v2.png"
 state = "canonical-alpha-eligible"
 audit_record = "research/books-and-supports-priestly-review.md"
+boundary_treatment = "transparent"
 technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 836924, sha256 = "d0888c36ce240256b191aba3d5b253675108c5ac796692505fe8cf87cbb9b497" }
 
 [[asset_files]]
@@ -636,6 +638,51 @@ state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 185710, sha256 = "2f35848f3bd9e96aec5999a8cf515e467b2b5c9be210a1ad9aa98692662a55e2" }
 
+
+[[artworks]]
+id = "art-altar-appointments-0104-sanctuary-relationships"
+object_ids = ["obj-altar-candlestick"]
+variant_ids = []
+view = "composition"
+workflow_state = "consumer-review-passed"
+purpose = "Teach only the checked altar-top relationship of a central cross with crucifix, variable-count flanking candles and candlesticks, and three altar cards during Mass."
+depicted_state = "One frontal relationship diagram with a thin neutral altar-top plane, central crucifix, two deliberately cropped generic candle placeholders, and three blank card placeholders."
+source_controlled_features = [
+  "Rubricae generales Missalis Romani 527 places a sufficiently large cross with a crucifix in the middle, with the candlesticks required by the class of Mass and lighted candles on either side.",
+  "The same locus places the three tabellae secretarum there only for the time of Mass.",
+]
+deliberate_omissions = [
+  "No tabernacle, gradine, reliquary, saint image, sanctuary lamp, steps, predella, canopy, flowers, cloth, architectural background, material cue, dimension, or ornament.",
+  "No exact candle count beyond the two cropped relationship placeholders and no assignment of an individual card to a side.",
+  "No words, letters, numerals, labels, arrows, pseudo-writing, border, or watermark.",
+]
+brief = "Source-controlled diagrammatic altar-top relationship plate specified in research/slices/altar-sanctuary-composition.md."
+exact_prompt = "Built-in generation requested a high-resolution landscape diagram with one neutral altar-top plane, one central cross visibly bearing a crucifix, exactly two deliberately cropped silhouette-neutral candle-and-candlestick placeholders, and exactly three blank altar-card placeholders on a flat #00ff00 chroma field, with compact TeX label lanes and every unsupported architectural, material, ornamental, dimensional, textual, and additional-object claim prohibited. A targeted edit then replaced both decorative side bases with plain cropped rectangular stems and replaced the perspective surface with one thin horizontal plane while preserving the central crucifix and three blank cards."
+generator = "OpenAI built-in image-generation tool; exact image-model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0104-sanctuary-relationships-alpha.png"
+reference_ids = ["src-missal-1962-altar-preparation"]
+precursor_ids = []
+corrections = [
+  "Superseded the 1102 by 950 candidate because its honest 183.7-DPI placement did not meet the 300-DPI publication floor.",
+  "Regenerated the same checked relationship at 1693 by 929 pixels and targeted only decorative side bases and the perspective plane for neutralization.",
+  "ImageMagick 7 removed the chroma field at 24 percent fuzz and converted retained pixels to grayscale; no depicted geometry or semantic content changed after the targeted edit.",
+]
+baked_content_audit = [
+  "Exactly one central cross visibly bearing a crucifix, exactly two edge-cropped candle placeholders, and exactly three blank card placeholders are visible.",
+  "No prohibited additional object, architecture, ornament, text, pseudo-writing, border, or watermark is visible.",
+  "All non-subject surrounding pixels are transparent; the lower corners contain only the deliberately edge-cropped candle stems. White and warm off-white page compositing show no floating rectangle, residual background panel, or green fringe.",
+]
+tex_overlays = [
+  "TeX states that the number of candles and candlesticks varies with the Mass.",
+  "TeX identifies the checked relationships and states that the diagram is not a universal altar design.",
+]
+consumer_plate_ids = ["plt-sanctuary-orientation"]
+consumer_edition_ids = ["ed-comprehensive"]
+rights = "Project-generated raster made without image inputs; prompt contract, correction, hashes, deterministic boundary treatment, source ceiling, and consumer limit are recorded. Distributed under the repository's project-content terms."
+received = { width_px = 1693, height_px = 929, bit_depth = 8, color_mode = "rgb", bytes = 992720, sha256 = "ecbe1de2603e780c7588a845739a66a37afdc53c80119143f6300ba0729d8e88" }
+normalized = { path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0104-sanctuary-relationships-alpha.png", width_px = 1693, height_px = 929, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 377358, sha256 = "e460073553b1bb4435dbf2f6c313e8012d3121a079fb3af462da68267163a9d5", max_placement_width_in = 5.5, max_placement_height_in = 3.02, effective_dpi = 307.6 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
 
 [[artworks]]
 id = "art-altar-cruet-paired-generic"
@@ -1282,7 +1329,7 @@ generator = "OpenAI built-in image generation tool used through the image-genera
 generated_on = "2026-07-27"
 asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle.png"
 reference_ids = []
-precursor_ids = ["art-altar-appointments-0101-iso-candle"]
+precursor_ids = ["art-altar-appointments-0101-candle-and-candlestick"]
 corrections = [
   "Separated the candle from the formerly shared candle-and-candlestick composition.",
   "The selected asset was transferred to the integrating agent as a normalized stripped 8-bit grayscale PNG; original generator bytes were not durably transferred.",
@@ -1346,7 +1393,7 @@ generator = "OpenAI built-in image generation tool used through the image-genera
 generated_on = "2026-07-27"
 asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick.png"
 reference_ids = []
-precursor_ids = ["art-altar-appointments-0101-iso-candlestick"]
+precursor_ids = ["art-altar-appointments-0101-candle-and-candlestick"]
 corrections = [
   "Separated the empty candlestick from the formerly shared candle-and-candlestick composition.",
   "The selected asset was transferred to the integrating agent as a normalized stripped 8-bit grayscale PNG; original generator bytes were not durably transferred.",
@@ -1514,7 +1561,7 @@ bytes = 327149
 sha256 = "0c2b6837ca7f647cc38d21d34af76cbd64dd9d25ce356acec25db30e0f66f41e"
 max_placement_width_in = 3.0
 max_placement_height_in = 4.5
-effective_dpi = 341.1
+effective_dpi = 341.3
 
 [artworks.reviews]
 factual = "passed"
@@ -1812,7 +1859,7 @@ id = "art-altar-missal-on-stand-v2"
 object_ids = ["obj-altar-missal", "obj-missal-stand", "obj-book-marker"]
 variant_ids = []
 view = "in-use"
-workflow_state = "publication-ready"
+workflow_state = "consumer-review-passed"
 purpose = "Retain the checked combined Missal, stand, and marker formation while blending its image boundary into heterogeneous publication grounds."
 depicted_state = "The unchanged predecessor drawing of one open altar Missal with six marker ribbons on one low folding wooden stand, now with a transparent feathered perimeter."
 source_controlled_features = [
@@ -1824,6 +1871,7 @@ deliberate_omissions = [
   "No claim that the representative binding, wooden construction, dimensions, ornament, or ribbon count is prescribed.",
 ]
 brief = "Boundary-safe successor to the combined altar Missal, marker ribbons, and low stand formation."
+exact_prompt = """No image-generation prompt was used for this deterministic boundary derivative. The predecessor's exact generation prompt remains recorded under art-altar-missal-on-stand, and the exact perimeter-alpha transformation is recorded in corrections."""
 generator = "Deterministic ImageMagick perimeter-alpha transformation of the project-generated predecessor; no new image generation."
 generated_on = "2026-07-28"
 asset = "shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand-v2.png"
@@ -1872,7 +1920,7 @@ id = "art-missal-stand-isolated-v2"
 object_ids = ["obj-missal-stand"]
 variant_ids = []
 view = "isolated"
-workflow_state = "publication-ready"
+workflow_state = "consumer-review-passed"
 purpose = "Give the Missal stand its own isolated recognition drawing while retaining the combined Missal, stand, and marker formation for relational teaching."
 depicted_state = "Exactly one empty low folding wooden altar Missal stand in three-quarter view."
 source_controlled_features = [
@@ -2415,8 +2463,8 @@ corrections = ["Requested one targeted scale correction.", "Removed the still-in
 baked_content_audit = ["Top, side, and prepared views are legible.", "No host, hands, people, Communion-plate drawing, handle, or raised-edge comparison is present.", "The plate explicitly labels morphology as exemplar rather than universal and states that Communion-plate visual form is unresolved."]
 tex_overlays = ["TeX repeats the catalog-exemplar qualification, exact source notes, server handling boundary, and the unresolved Communion-plate morphology statement."]
 consumer_plate_ids = ["plt-vessels-paten-exemplar"]
-consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
-rights = "Project-generated raster derived with the Met's Public Domain Open Access image as a visual reference; exact source artifact, public-domain rights basis, prompts, corrections, and normalized identity are recorded. It is eligible for the six bounded alpha consumers."
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster derived with the Met's Public Domain Open Access image as a visual reference; exact source artifact, public-domain rights basis, prompts, corrections, and normalized identity are recorded. It is eligible for the explicitly labelled bespoke altar-server consumer."
 [artworks.received]
 width_px = 1536
 height_px = 1024
@@ -2505,7 +2553,7 @@ bytes = 505744
 sha256 = "30d8b2595769d96149ae6d6bf737085a07e6874c9b5ed457bc075bcc3b5d30d5"
 max_placement_width_in = 4.35
 max_placement_height_in = 3.30
-effective_dpi = 331.3
+effective_dpi = 330.9
 [artworks.reviews]
 factual = "passed"
 visual = "passed"
@@ -2562,7 +2610,7 @@ bytes = 452135
 sha256 = "e98e59798ae1e9f2233e9f135ba7ec1d00a44da663198cfc7f98397927b7b856"
 max_placement_width_in = 4.35
 max_placement_height_in = 2.39
-effective_dpi = 389.2
+effective_dpi = 388.7
 [artworks.reviews]
 factual = "passed"
 visual = "passed"
@@ -3415,6 +3463,14 @@ state = "canonical-alpha-eligible"
 audit_record = "research/processional-cross-replacement-audit-2026-07-28.md"
 technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 494461, sha256 = "5e19f4e826e3f138433d1a692ce398f5420c6cf1491e13785e48a0f74258302b" }
 
+[[asset_files]]
+id = "file-rpd-processional-crucifix-v4-alpha"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v4-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/processional-cross-replacement-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 631322, sha256 = "7d19ca898ea49ea5a142a20788dfbc16c826d6f92069d49939e12fef84c41b7b" }
+
 [[artworks]]
 id = "art-processional-cross-v2-bare-rejected"
 object_ids = ["obj-processional-cross"]
@@ -3502,6 +3558,55 @@ bit_depth = 8
 color_mode = "grayscale"
 bytes = 494461
 sha256 = "5e19f4e826e3f138433d1a692ce398f5420c6cf1491e13785e48a0f74258302b"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-processional-cross-v4-alpha"
+object_ids = ["obj-processional-cross"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the source-audited processional crucifix while removing its rectangular paper boundary for enlarged and heterodox page layouts."
+depicted_state = "The complete v3 crucifix and long non-self-standing staff, isolated with a soft transparent boundary."
+source_controlled_features = ["The depicted crucifix, long carrying staff, and non-self-standing relation are unchanged from the source-audited v3 precursor.", "Only the near-white paper field was converted into a graduated opacity matte."]
+deliberate_omissions = ["No generative redrawing, crop, geometry change, added object, label, bearer, action, stand, or ceremonial instruction.", "No claim that the representative corpus style, ornament, proportions, material, or mounting detail is universal."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical v3 processional crucifix."
+exact_prompt = "Not applicable: deterministic alpha extraction from the canonical v3 raster; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v4-alpha.png"
+reference_ids = ["src-processional-cross-fortescue-form", "src-processional-cross-fortescue-use"]
+precursor_ids = ["art-processional-cross-v3-crucifix"]
+corrections = ["Mapped the v3 near-white field to transparency, then set alpha values at or below 20/255 to zero and tapered values between 20/255 and 40/255 with a cubic smoothstep; alpha at or above 40/255 is unchanged.", "Preserved the 900 by 1350 canvas and the complete depicted object without crop or geometric transformation."]
+baked_content_audit = ["One complete crucifix, restrained corpus, cross, mounting transition, shaft, and lower endpoint remain visible.", "All four image corners are fully transparent and review composites show no floating rectangle or color fringe.", "No bearer, hand, action, text, INRI, dimensions, heraldry, other object, architecture, stand, crop, duplication, color, or watermark was introduced."]
+tex_overlays = ["English and Latin headwords, stable object ID, optional/local status, required-stand relation, representative-form boundary, handler and safety notes, source keys, and scale qualification remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated v3 raster. The precursor's exact prompt intent, built-in mode, received and normalized hashes, source ceiling, and rights disposition remain recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 494461
+sha256 = "5e19f4e826e3f138433d1a692ce398f5420c6cf1491e13785e48a0f74258302b"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v4-alpha.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 631322
+sha256 = "7d19ca898ea49ea5a142a20788dfbc16c826d6f92069d49939e12fef84c41b7b"
 max_placement_width_in = 3.0
 max_placement_height_in = 4.5
 effective_dpi = 300.0
@@ -3743,6 +3848,711 @@ rights = "passed"
 consumer = "passed"
 release = "pending"
 
+[[asset_files]]
+id = "file-rpd-thurible-v2-alpha"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/thurible-source-audit-2026-07-27.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 587956, sha256 = "4b9fc048431f172c0dc9a3dc62e944c33404a21dae2ae0f6ab8de7eb6a239036" }
+
+[[asset_files]]
+id = "file-rpd-empty-boat-spoon-v2-alpha"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/incense-boat-and-spoon-source-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 932863, sha256 = "4ab621886229f88044a53950491be555f29cf11bc6d9f4f2acdb0a2d49899bbe" }
+
+[[asset_files]]
+id = "file-rpd-vestments-deacon-stole-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v3-alpha.png"
+state = "held"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 823892, sha256 = "62e151cc03ae7dc17ba0ff00224a02ad8885d6004c0318a07d6729174a42cbc5" }
+
+[[asset_files]]
+id = "file-rpd-vestments-deacon-stole-v4-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v4-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 451967, sha256 = "eac7199f1433160269ec6c8daaca913ec89088b96fc569271c6e9e528b3d9b1c" }
+
+[[asset_files]]
+id = "file-rpd-vestments-dalmatic-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 401764, sha256 = "9d2f860c6cc99204277e0deb721daac25f907cd652cc379098e98b9050aeb45c" }
+
+[[asset_files]]
+id = "file-rpd-vestments-tunicle-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1350, height_px = 900, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 297104, sha256 = "df5e01c1a8ef2810723cb287060bc4a5e2d8f97829c4b3a59432365c918a854c" }
+
+[[artworks]]
+id = "art-incense-0001-closed-thurible-v2-alpha"
+object_ids = ["obj-thurible"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the source-audited thurible while removing its rectangular paper boundary for enlarged and heterodox page layouts."
+depicted_state = "The complete closed, cold, empty thurible from the reviewed predecessor, isolated with a soft transparent boundary."
+source_controlled_features = ["The predecessor's three bowl-support chains, separate central lid chain, upper disc and ring, pierced lid, bowl, and foot are unchanged.", "Only the near-white paper field was converted into a graduated opacity matte."]
+deliberate_omissions = ["No generative redrawing, crop, geometry change, added object, label, smoke, flame, charcoal, incense, actor, or operational instruction.", "No claim that the representative morphology, material, ornament, proportions, or chain construction is universal."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical thurible drawing."
+exact_prompt = "Not applicable: deterministic alpha extraction from the canonical grayscale raster; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible-v2-alpha.png"
+reference_ids = ["src-thurible-missal-1962", "src-benziger-1927-thuribles", "src-met-464340-thurible-variation"]
+precursor_ids = ["art-incense-0001-closed-thurible"]
+corrections = ["Mapped the predecessor's near-white field to transparency, then set alpha values at or below 20/255 to zero and tapered values between 20/255 and 40/255 with a cubic smoothstep; alpha at or above 40/255 is unchanged.", "Preserved the 900 by 1350 canvas and complete depicted object without crop or geometric transformation."]
+baked_content_audit = ["All four image corners are fully transparent and review composites show no floating rectangle or color fringe.", "The predecessor's grayscale drawing pixels and complete mechanical relationships remain unchanged."]
+tex_overlays = ["English and Latin names, stable ID, representative-form boundary, handling and safety notes, source keys, and audience-specific guidance remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor. Its exact prompts, source ceiling, corrections, normalized identity, and rights disposition remain recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 416912
+sha256 = "ea611ce0b2e539483a39d2fe803f901dd0f83be4db931d4639364ce37f6769dc"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible-v2-alpha.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 587956
+sha256 = "4b9fc048431f172c0dc9a3dc62e944c33404a21dae2ae0f6ab8de7eb6a239036"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-incense-0003-empty-boat-spoon-v2-alpha"
+object_ids = ["obj-incense-boat-and-spoon"]
+variant_ids = []
+view = "open"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the source-audited incense boat-and-spoon set while removing its rectangular paper boundary for flexible page layouts."
+depicted_state = "The complete open, empty boat and separate spoon from the reviewed predecessor, isolated together with a soft transparent boundary."
+source_controlled_features = ["The predecessor's open boat, hinged lid, foot, empty interior, and separate spoon remain unchanged as one functional set.", "Only the near-white paper field was converted into a graduated opacity matte."]
+deliberate_omissions = ["No generative redrawing, crop, geometry change, separation of the functional set, added incense, label, actor, or operational instruction.", "No claim that the representative morphology, material, ornament, proportions, or hinge construction is universal."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical empty incense boat-and-spoon drawing."
+exact_prompt = "Not applicable: deterministic alpha extraction from the canonical grayscale raster; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon-v2-alpha.png"
+reference_ids = ["src-missale-incense-boat-spoon", "src-met-236950-metadata", "src-met-236950-image"]
+precursor_ids = ["art-incense-0003-empty-boat-spoon"]
+corrections = ["Mapped the predecessor's near-white field to transparency, then set alpha values at or below 20/255 to zero and tapered values between 20/255 and 40/255 with a cubic smoothstep; alpha at or above 40/255 is unchanged.", "Preserved the 1536 by 1024 canvas and complete functional set without crop or geometric transformation."]
+baked_content_audit = ["All four image corners are fully transparent and review composites show no floating rectangle or color fringe.", "The predecessor's grayscale drawing pixels, empty state, and boat-and-spoon relationship remain unchanged."]
+tex_overlays = ["English and Latin names, stable ID, functional-set treatment, source keys, morphology ceiling, and handling notes remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor. Its exact prompt, source ceiling, normalized identity, and rights disposition remain recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 666272
+sha256 = "af98d030c708eccefb623e37d5e8c4602e67ec0811ef2b2b6865f9ad3e206c3a"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon-v2-alpha.png"
+width_px = 1536
+height_px = 1024
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 932863
+sha256 = "4ab621886229f88044a53950491be555f29cf11bc6d9f4f2acdb0a2d49899bbe"
+max_placement_width_in = 4.5
+max_placement_height_in = 3.0
+effective_dpi = 341.3
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0007-deacon-stole-v3-alpha"
+object_ids = ["obj-deacon-stole"]
+variant_ids = []
+view = "comparison"
+workflow_state = "rejected"
+purpose = "Preserve the reviewed front-and-back deacon's stole comparison while removing its rectangular paper boundary."
+depicted_state = "The complete predecessor comparison, represented as black graphite values with proportional transparency."
+source_controlled_features = ["The checked diagonal stole route and complete front-and-back comparison are unchanged.", "Only grayscale values were deterministically represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, added vestment, person, label, color, or morphology claim."]
+brief = "Superseded first grayscale-alpha derivative of the canonical deacon's stole comparison."
+exact_prompt = "Not applicable: deterministic alpha extraction from the canonical grayscale raster; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v3-alpha.png"
+reference_ids = ["src-deacon-stole-rubrics-1962", "src-deacon-stole-fortescue-1943"]
+precursor_ids = ["art-vestments-0007-deacon-stole"]
+corrections = ["Converted black to the color channel and the exact inverse of predecessor grayscale to opacity.", "Preserved the 900 by 1350 canvas; compositing over white reproduces the predecessor exactly.", "Superseded because faint final-row opacity disclosed a straight lower cutoff on a warm ground."]
+baked_content_audit = ["The complete diagonal band remains visible in both views.", "No new pictorial content, text, crop, or floating rectangle was introduced."]
+tex_overlays = ["All names, stable ID, source keys, use, and morphology ceilings remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = []
+rights = "Deterministic alpha derivative of the checkpointed project-generated predecessor; retained only for exact provenance continuity."
+received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 644633, sha256 = "2732ebb2b606bd6c29356f41f2fdcf202a19eb67619a51ee24bb25e4c22abc33" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 823892, sha256 = "62e151cc03ae7dc17ba0ff00224a02ad8885d6004c0318a07d6729174a42cbc5", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "failed", print = "failed", rights = "passed", consumer = "not-applicable", release = "not-applicable" }
+
+[[artworks]]
+id = "art-vestments-0007-deacon-stole-v4-alpha"
+object_ids = ["obj-deacon-stole"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed front-and-back deacon's stole comparison while removing its rectangular paper boundary and letting its existing lower fade end naturally inside the canvas."
+depicted_state = "The complete predecessor comparison, represented as black graphite values with proportional transparency."
+source_controlled_features = ["The checked diagonal stole route and complete front-and-back comparison are unchanged.", "The v3 grayscale-to-opacity representation is unchanged above the lower 200-pixel fade zone; only that existing fade is tapered to zero opacity at the canvas edge."]
+deliberate_omissions = ["No redrawing, crop, geometry change, added vestment, person, label, color, or morphology claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical deacon's stole comparison."
+exact_prompt = "Not applicable: deterministic alpha extraction from the canonical grayscale raster; no image-generation call."
+generator = "ImageMagick 7 local deterministic alpha taper of the v3 boundary derivative."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v4-alpha.png"
+reference_ids = ["src-deacon-stole-rubrics-1962", "src-deacon-stole-fortescue-1943"]
+precursor_ids = ["art-vestments-0007-deacon-stole-v3-alpha"]
+corrections = ["Multiplied only the v3 alpha channel by a vertical white-to-black ramp over rows 1150 through 1349.", "Preserved the 900 by 1350 canvas, every color-channel pixel, and exact white-composite fidelity above the lower fade zone while making the final row fully transparent.", "Then refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["The complete diagonal band remains visible in both views.", "White-composite comparison over the retained upper 900 by 1150 pixels has zero differing pixels; warm-ground review shows a continuous lower fade with no straight cutoff.", "No new pictorial content, text, crop, geometry change, or floating rectangle was introduced."]
+tex_overlays = ["All names, stable ID, source keys, use, and morphology ceilings remain TeX-owned."]
+consumer_plate_ids = ["plt-assisting-clergy"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the checkpointed project-generated predecessor; its custody limitations and rights disposition remain recorded."
+[artworks.received]
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 644633
+sha256 = "2732ebb2b606bd6c29356f41f2fdcf202a19eb67619a51ee24bb25e4c22abc33"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v4-alpha.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 451967
+sha256 = "eac7199f1433160269ec6c8daaca913ec89088b96fc569271c6e9e528b3d9b1c"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0008-dalmatic-v3-alpha"
+object_ids = ["obj-dalmatic"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed front-and-back dalmatic comparison while removing its rectangular paper boundary."
+depicted_state = "The complete predecessor comparison, represented as black graphite values with proportional transparency."
+source_controlled_features = ["The source-bounded dalmatic recognition class and complete front-and-back comparison are unchanged.", "Only grayscale values were deterministically represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, added vestment, person, label, color, or morphology claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical dalmatic comparison."
+exact_prompt = "Not applicable: deterministic alpha extraction from the canonical grayscale raster; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v3-alpha.png"
+reference_ids = ["src-dalmatic-rubrics-1962", "src-dalmatic-fortescue-1943"]
+precursor_ids = ["art-vestments-0008-dalmatic"]
+corrections = ["Converted black to the color channel and the exact inverse of predecessor grayscale to opacity.", "Preserved the 900 by 1350 canvas.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["The complete loose T-shaped outer vestment remains visible in both views.", "No new pictorial content, text, crop, or floating rectangle was introduced."]
+tex_overlays = ["All names, stable ID, source keys, use, and morphology ceilings remain TeX-owned."]
+consumer_plate_ids = ["plt-assisting-clergy"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the checkpointed project-generated predecessor; its custody limitations and rights disposition remain recorded."
+[artworks.received]
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 566760
+sha256 = "3fd85257e901c93f25e0b723d351498d04743d2f65a8b4f4bdd9861f0612e5a8"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v3-alpha.png"
+width_px = 900
+height_px = 1350
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 401764
+sha256 = "9d2f860c6cc99204277e0deb721daac25f907cd652cc379098e98b9050aeb45c"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-vestments-0009-tunicle-v3-alpha"
+object_ids = ["obj-tunicle"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed front-and-back tunicle comparison while removing its rectangular paper boundary."
+depicted_state = "The complete predecessor comparison, represented as black graphite values with proportional transparency."
+source_controlled_features = ["The source-bounded tunicle recognition class and complete front-and-back comparison are unchanged.", "Only grayscale values were deterministically represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, added vestment, person, label, color, or morphology claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical tunicle comparison."
+exact_prompt = "Not applicable: deterministic alpha extraction from the canonical grayscale raster; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v3-alpha.png"
+reference_ids = ["src-tunicle-rubrics-1962", "src-tunicle-fortescue-1943"]
+precursor_ids = ["art-vestments-0009-tunicle"]
+corrections = ["Converted black to the color channel and the exact inverse of predecessor grayscale to opacity.", "Preserved the 1350 by 900 canvas.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["The complete outer vestment remains visible in both views.", "No new pictorial content, text, crop, or floating rectangle was introduced."]
+tex_overlays = ["All names, stable ID, source keys, dalmatic comparison, and morphology ceilings remain TeX-owned."]
+consumer_plate_ids = ["plt-assisting-clergy"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the checkpointed project-generated predecessor; its custody limitations and rights disposition remain recorded."
+[artworks.received]
+width_px = 1350
+height_px = 900
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 578690
+sha256 = "c2566fdc0460d058d04640be5ae17deef3a4638607fcffc1dda457b6dfcf3932"
+[artworks.normalized]
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v3-alpha.png"
+width_px = 1350
+height_px = 900
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 297104
+sha256 = "df5e01c1a8ef2810723cb287060bc4a5e2d8f97829c4b3a59432365c918a854c"
+max_placement_width_in = 4.5
+max_placement_height_in = 3.0
+effective_dpi = 300.0
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-altar-cruet-paired-generic-v2-alpha"
+object_ids = ["obj-altar-cruet"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed paired altar-cruets drawing without a rectangular paper boundary."
+depicted_state = "The complete predecessor pair, represented as black graphite values with proportional transparency."
+source_controlled_features = ["The paired-object relationship and checked recognition boundaries are unchanged.", "Only predecessor grayscale values were deterministically represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, separation, label, liquid, color, or new morphology claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical paired altar cruets."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets-v2-alpha.png"
+reference_ids = ["src-gorham-1914-cruets", "src-met-467483-cruet", "src-met-200141-cruet-pair"]
+precursor_ids = ["art-altar-cruet-paired-generic"]
+corrections = ["Converted black to the color channel and inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["The complete pair remains visible; white compositing reproduces the predecessor exactly and no floating rectangle was introduced."]
+tex_overlays = ["Names, stable ID, use, source keys, and morphology ceiling remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance, source ceiling, and rights disposition remain recorded."
+received = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 612750, sha256 = "54af058e1504b3b919d7ff3fcf4e5895a1d77510c6a97e488dfc5a71a34efc7b" }
+normalized = { path = "shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets-v2-alpha.png", width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 384668, sha256 = "a485b88c70b29cffd130663619c1e15a86aac362de8336a10f3779b7b0517adc", max_placement_width_in = 4.55, max_placement_height_in = 3.04, effective_dpi = 336.8 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-vestments-0001-amice-v3-alpha"
+object_ids = ["obj-amice"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed amice drawing without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's checked identity and morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical amice."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png"
+reference_ids = ["src-amice-missal-1962", "src-amice-fortescue-1943", "src-amice-fortescue-1917", "src-amice-casanowicz"]
+precursor_ids = ["art-vestments-0001-amice"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["All names, source keys, and qualifications remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 574117, sha256 = "3215b44d265c2a2452a46285989c75c043837b2806912287bb037882199ac902" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 454193, sha256 = "e83d557d9c5d755f675d7cb4997d10adf44e0a8061742825e260928062f13dd9", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-vestments-0002-alb-v3-alpha"
+object_ids = ["obj-alb"]
+variant_ids = []
+view = "front"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed alb drawing without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's checked identity and morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical alb."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v3-alpha.png"
+reference_ids = ["src-alb-missal-1962", "src-alb-fortescue-1943", "src-alb-fortescue-1917", "src-alb-casanowicz"]
+precursor_ids = ["art-vestments-0002-alb"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["All names, source keys, and qualifications remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 584299, sha256 = "0017169f71808e6108b7a3ff8d36d1654d3b90036b306174a1559884c7086bdf" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 391228, sha256 = "8303523bf3c106e3f8c7f75e8d4950e8b39d5cd59ca4af6df1fc33755ee5d959", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-vestments-0003-cincture-v3-alpha"
+object_ids = ["obj-cincture"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed cincture drawing without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's checked identity and morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical cincture."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v3-alpha.png"
+reference_ids = ["src-cincture-missal-1962", "src-cincture-fortescue-1943", "src-cincture-fortescue-1917", "src-cincture-casanowicz"]
+precursor_ids = ["art-vestments-0003-cincture"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["All names, source keys, and qualifications remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 547292, sha256 = "7c429d9cf7effa8e31a7e9f65e4a2944341e864bfe8c2557694e709f2ab51b75" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 140414, sha256 = "370c3b4942d805345dbcaefea85dd18dc4f7cdbf592244e0f8391d11d09018ce", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-vestments-0004-maniple-v3-alpha"
+object_ids = ["obj-maniple"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed maniple drawing without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's checked identity and morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical maniple."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v3-alpha.png"
+reference_ids = ["src-maniple-missal-1962", "src-maniple-rubrics-1962", "src-maniple-fortescue-1943", "src-maniple-fortescue-1917", "src-maniple-casanowicz", "src-maniple-met"]
+precursor_ids = ["art-vestments-0004-maniple"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["All names, source keys, and qualifications remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 532115, sha256 = "d7cd099e4ab1ccb38b3b7d5e19451178e6bb900fe04303eef70c091b0b816286" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 244212, sha256 = "47cf77323f3a1548f2b5556894fbdb7834c42cfbce5f8c7b018d629ed4b87724", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-vestments-0005-priest-stole-v3-alpha"
+object_ids = ["obj-priest-stole"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed priest's stole drawing without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's checked identity and morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical priest's stole."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v3-alpha.png"
+reference_ids = ["src-priest-stole-missal-1962", "src-priest-stole-fortescue-1943", "src-priest-stole-fortescue-1917", "src-priest-stole-casanowicz", "src-priest-stole-met"]
+precursor_ids = ["art-vestments-0005-priest-stole"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["All names, source keys, and qualifications remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 612216, sha256 = "191d0cb33b7a54dceb9bff71265805bfec843bb24cd5adeebe3d34b945df500a" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 474516, sha256 = "a7746371bc7efc66d44bcf3bdae30cbb4f0494070ebfeaa7795a3d979a3de467", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-vestments-0006-chasuble-comparison-v3-alpha"
+object_ids = ["obj-chasuble"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed chasuble comparison without a rectangular paper boundary."
+depicted_state = "The complete predecessor comparison with proportional transparency."
+source_controlled_features = ["The predecessor's checked identity and morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical chasuble comparison."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v3-alpha.png"
+reference_ids = ["src-chasuble-missal-1962", "src-chasuble-rubrics-1962", "src-chasuble-color-1962", "src-chasuble-fortescue-1943", "src-chasuble-fortescue-1917", "src-chasuble-casanowicz", "src-chasuble-met-french", "src-chasuble-met-spanish"]
+precursor_ids = ["art-vestments-0006-chasuble-comparison"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["All names, source keys, and qualifications remain TeX-owned."]
+consumer_plate_ids = ["plt-priestly-vesture"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 1350, height_px = 900, bit_depth = 8, color_mode = "grayscale", bytes = 627378, sha256 = "b2dea2cca53cd0f20bfed32b88ca5f762a9216fa5cc0f5250da600d85b82f6a9" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v3-alpha.png", width_px = 1350, height_px = 900, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 474377, sha256 = "8fe0eaf6ac691cf4177aa886040ac33d0463540ba57f8c91c04d8ef03c98e3c3", max_placement_width_in = 4.5, max_placement_height_in = 3.0, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[asset_files]]
+id = "file-rpd-altar-cruet-paired-generic-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/paired-cruets-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 384668, sha256 = "a485b88c70b29cffd130663619c1e15a86aac362de8336a10f3779b7b0517adc" }
+
+[[asset_files]]
+id = "file-rpd-vestments-amice-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 454193, sha256 = "e83d557d9c5d755f675d7cb4997d10adf44e0a8061742825e260928062f13dd9" }
+
+[[asset_files]]
+id = "file-rpd-vestments-alb-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 391228, sha256 = "8303523bf3c106e3f8c7f75e8d4950e8b39d5cd59ca4af6df1fc33755ee5d959" }
+
+[[asset_files]]
+id = "file-rpd-vestments-cincture-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 140414, sha256 = "370c3b4942d805345dbcaefea85dd18dc4f7cdbf592244e0f8391d11d09018ce" }
+
+[[asset_files]]
+id = "file-rpd-vestments-maniple-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 244212, sha256 = "47cf77323f3a1548f2b5556894fbdb7834c42cfbce5f8c7b018d629ed4b87724" }
+
+[[asset_files]]
+id = "file-rpd-vestments-priest-stole-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 474516, sha256 = "a7746371bc7efc66d44bcf3bdae30cbb4f0494070ebfeaa7795a3d979a3de467" }
+
+[[asset_files]]
+id = "file-rpd-vestments-chasuble-v3-alpha"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1350, height_px = 900, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 474377, sha256 = "8fe0eaf6ac691cf4177aa886040ac33d0463540ba57f8c91c04d8ef03c98e3c3" }
+
+[[artworks]]
+id = "art-related-ceremonies-0001-iso-holy-water-vessel-v3-alpha"
+object_ids = ["obj-holy-water-vessel"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed portable holy-water vessel without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's identity and representative-morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, added object, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical portable holy-water vessel."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel-v3-alpha.png"
+reference_ids = ["src-holy-water-vessel-fortescue-1917", "src-holy-water-vessel-fortescue-1943"]
+precursor_ids = ["art-related-ceremonies-0001-iso-holy-water-vessel"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["Names, stable ID, use, sources, and qualifications remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 1024, height_px = 1535, bit_depth = 8, color_mode = "grayscale", bytes = 539650, sha256 = "0beb2cc255d667231beae30a3f0d1eaf0147964685e571e21a952792045770ef" }
+normalized = { path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel-v3-alpha.png", width_px = 1024, height_px = 1535, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 396718, sha256 = "41dd7753545e01d72d430de9d833e0d2ef7dcd28c36b31cefa602f0b1e6ec899", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 341.1 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-related-ceremonies-0002-iso-aspergillum-v3-alpha"
+object_ids = ["obj-aspergillum"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed aspergillum without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's identity and representative-morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, added object, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical aspergillum."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v3-alpha.png"
+reference_ids = ["src-aspergillum-fortescue-1917", "src-aspergillum-fortescue-1943-morphology", "src-aspergillum-fortescue-1943", "src-aspergillum-missal-1962"]
+precursor_ids = ["art-related-ceremonies-0002-iso-aspergillum"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["Names, stable ID, use, sources, and qualifications remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 367659, sha256 = "c8453019c107c7b0b85ab4847577867bf56463353ea4aacfc2e97c390dc8e9f1" }
+normalized = { path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v3-alpha.png", width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 147612, sha256 = "6a8d03bd409aad6abab6cbeb03e96606d317faf59d20f4b31cbf5cc121494b70", max_placement_width_in = 4.55, max_placement_height_in = 3.04, effective_dpi = 336.8 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-basilical-conopaeum-v3-alpha"
+object_ids = ["obj-basilical-conopaeum"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed basilical conopaeum without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's identity and representative-morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, added object, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical basilical conopaeum."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v3-alpha.png"
+reference_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi", "src-basilical-conopaeum-aas-1962", "src-basilical-conopaeum-macalisang"]
+precursor_ids = ["art-basilical-conopaeum-v2-generated"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["Names, stable ID, use, sources, and qualifications remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 544491, sha256 = "2bc2433289c6fc6d119354c61c53ae800f10405a3dd711fa262d5ff8d5db51bc" }
+normalized = { path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 203547, sha256 = "31402c7c3c0891b8d28f1cb05df7bda34a053e77c2dc99d72ac7bcabececac0e", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[artworks]]
+id = "art-eucharistic-ombrellino-v3-alpha"
+object_ids = ["obj-ombrellino"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Preserve the reviewed Eucharistic ombrellino without a rectangular paper boundary."
+depicted_state = "The complete predecessor drawing with proportional transparency."
+source_controlled_features = ["The predecessor's identity and representative-morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
+deliberate_omissions = ["No redrawing, crop, geometry change, added object, label, color, or new claim."]
+brief = "Boundary-safe grayscale-alpha derivative of the canonical Eucharistic ombrellino."
+exact_prompt = "Not applicable: deterministic alpha extraction; no image-generation call."
+generator = "ImageMagick 7 local deterministic grayscale-to-opacity conversion."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v3-alpha.png"
+reference_ids = ["src-eucharistic-ombrellino-ritual", "src-eucharistic-ombrellino-ce"]
+precursor_ids = ["art-eucharistic-ombrellino-v2-generated"]
+corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
+tex_overlays = ["Names, stable ID, use, sources, and qualifications remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
+received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 517708, sha256 = "bcdffc7d0ae4677ab7490fc2a25e727df8fbc0b2947c50bccd57bff8f6d4ceca" }
+normalized = { path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 105526, sha256 = "b831e0ef96e8b845498749f3a812b17ef90c9f45972550be9f79304677081a40", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+[[asset_files]]
+id = "file-rpd-holy-water-vessel-v3-alpha"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/special-equipment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1535, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 396718, sha256 = "41dd7753545e01d72d430de9d833e0d2ef7dcd28c36b31cefa602f0b1e6ec899" }
+
+[[asset_files]]
+id = "file-rpd-aspergillum-v3-alpha"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/special-equipment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 147612, sha256 = "6a8d03bd409aad6abab6cbeb03e96606d317faf59d20f4b31cbf5cc121494b70" }
+
+[[asset_files]]
+id = "file-rpd-basilical-conopaeum-v3-alpha"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/special-equipment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 203547, sha256 = "31402c7c3c0891b8d28f1cb05df7bda34a053e77c2dc99d72ac7bcabececac0e" }
+
+[[asset_files]]
+id = "file-rpd-eucharistic-ombrellino-v3-alpha"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/special-equipment-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 105526, sha256 = "b831e0ef96e8b845498749f3a812b17ef90c9f45972550be9f79304677081a40" }
+
 [coverage]
 object_record_glob = "shared/objects/**/*.toml"
 exclude_paths = ["shared/schema/object.example.toml"]
@@ -3750,3 +4560,171 @@ publication_ready_workflow_state = "publication-ready"
 required_artwork_workflow_state = "consumer-review-passed"
 require_bidirectional_links = true
 require_variant_coverage = true
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-altar-appointments-0102-iso-candle-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 329990, sha256 = "973f7cc89692ff07b3dd598d5c148eadcd72a1fe2e7f7206599f6953bee3088a" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-altar-appointments-0102-iso-sanctuary-lamp-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 173430, sha256 = "c30ac4b8b384ff1816043b48ddaea78cfb255a3791a3b7c13c55c7ce3ba191d4" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-altar-appointments-0103-iso-candlestick-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 402166, sha256 = "ddac26f56dac1d02eec78c0ce7c1103dbba89586e23f93d6370e7d2dc2d06250" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-linens-0001-iso-corporal-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1315, height_px = 1196, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 394534, sha256 = "9e1d8a4848c297600042751579b7e8d5da74a5145ecc703c82cbb1fa1e2a3a2f" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-linens-0002-iso-purificator-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-linens-0002-iso-purificator-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 237980, sha256 = "baa62a67b222da585488c1662de08937762c2cf787d04ba4e799d4f24cff7266" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-linens-0003-iso-chalice-pall-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1339, height_px = 1175, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 275152, sha256 = "39bddf4605a6cf80937c5c9e4a82eb6ba5091efb8c2ea9cd18eb777560a71543" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-linens-0004-iso-chalice-veil-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-linens-0004-iso-chalice-veil-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1254, height_px = 1254, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 467056, sha256 = "c65d507707df7e0c9fb4abf79773920b890f9d7f1e794061ea59f6b45394ccb7" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-linens-0005-iso-burse-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1254, height_px = 1254, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 508482, sha256 = "ff164e6d8da53cb94e3432f5f01c271f6977b5c93af67ee0b9bb12bef03ca22e" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-linens-0006-three-altar-cloths-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-linens-0006-three-altar-cloths-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 49019, sha256 = "09b27e7df36332beec30fbfd3bc2eec479824a847ee9553545bbb11bfd0bbef6" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-sacristy-0001-representative-cross-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-sacristy-0001-representative-cross-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 257496, sha256 = "1497411b3a949bd7f00a97f0529a8239e01882d4cfdd98ad33d67aa6dff4d5db" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-sacristy-0002-local-signal-bell-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-sacristy-0002-local-signal-bell-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 345029, sha256 = "380c623989480c1a73960e415460948345fbd0704220ac5b7621d02ccd102f40" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-service-objects-0101-iso-altar-bells-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-service-objects-0101-iso-altar-bells-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 375173, sha256 = "1c6bebd11a26dd569890dc1393b08461ed5c99e07d291af8d8d6d8cdb1240ec7" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-service-objects-0102-iso-candle-tool-v3-alpha"
+path = "shared/artwork/pencil/RPD-FIG-service-objects-0102-iso-candle-tool-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 79941, sha256 = "c8ab566e586cbcff67d3054d10b5757e75faee20588e5e211b4c37d3b18641d0" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-service-objects-0106-lavabo-basin-manuterge-v2-alpha"
+path = "shared/artwork/pencil/RPD-FIG-service-objects-0106-lavabo-basin-manuterge-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1690, height_px = 931, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 371842, sha256 = "409eaed5816081bcaac77ec498cce12f6780fc944fe937ac07a0fb25056f77e2" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-books-0001-in-use-missal-on-stand-v3-alpha"
+path = "shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand-v3-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1122, height_px = 1402, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 398618, sha256 = "5ec8ef31b37bcfb1f973a487150a61c17f4e6da6595e18b0d6cedd075e66f846" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-books-0002-iso-missal-cushion-v2-alpha"
+path = "shared/artwork/pencil/books/RPD-FIG-books-0002-iso-missal-cushion-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1199, height_px = 1312, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 587556, sha256 = "970f9fdc9867a4388dddef993a7d785e4ab8d3e2e40f3fe76b94492792ade2df" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-books-0003-iso-lectern-v2-alpha"
+path = "shared/artwork/pencil/books/RPD-FIG-books-0003-iso-lectern-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 505031, sha256 = "f1d9801c756ea5317a3424bf083871b8f286a21474951ea13f1018c6663e3895" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-books-0004-detail-marker-ribbons-v2-alpha"
+path = "shared/artwork/pencil/books/RPD-FIG-books-0004-detail-marker-ribbons-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1122, height_px = 1402, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 582515, sha256 = "d29c7ea30a771bcc914f583071059318b3bf0575f3bbabd0e10154e206fcd968" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-furnishings-0001-credence-table-v2-alpha"
+path = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1441, height_px = 1092, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 309731, sha256 = "842a1bfa769aa31d530c003ba5acefed62ba6d2a43ac0e56b716a37c07184bc2" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-furnishings-0002-sedilia-variants-v2-alpha"
+path = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0002-sedilia-variants-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1693, height_px = 929, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 336803, sha256 = "71460673336fa3a55d7951d499a153474476f2ce55550d4fad065d2f8a912bd4" }
+
+[[asset_files]]
+id = "file-boundary-20260728-rpd-fig-processional-objects-0002-iso-torch-v2-alpha"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch-v2-alpha.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/selected-artwork-boundary-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 887, height_px = 1774, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 69386, sha256 = "386e8954420cb9d9b351ccfe8b5071f2e79c0fd3911df834bf981bf895b71bcf" }

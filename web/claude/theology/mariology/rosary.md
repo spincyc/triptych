@@ -610,8 +610,6 @@ The prayer texts reproduced from these two witnesses are received prayers of the
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: *Enchiridion Indulgentiarum. Normae et concessiones*, 4th ed. (decree of 16 July 1999), concession 17 §1, note: “Est Rosarium certa precandi formula, qua quindecim angelicarum salutationum decades, oratione dominica interiecta, distinguimus et ad earum singulas totidem nostrae reparationis mysteria pia meditatione recolimus,” checked in the Holy See’s Latin web presentation, <https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html>, 2026-07-25. The prose sentence above is an editorial paraphrase of that Latin, not a translation offered for recitation. All web loci cited in these notes were read on 2026-07-25 unless another date is stated; full bibliographic detail and witness identifications are in the References.

@@ -47,7 +47,8 @@ separately admitted priest's paten is not duplicated there; the chalice and
 paten reuse one catalog-exemplar plate and the Missal-controlled prepared
 relationship without prescribing a universal design, setup tolerance,
 transfer, touching, care, or purification method. The edition also admits the
-footless elevation torch and now contains thirty-four records. It
+footless elevation torch; its current canonical selection contains forty-six
+records. It
 distinguishes rack storage from the acolyte
 candlestick's self-standing relation and leaves dimensions, material,
 ornament, number, arrangement, flame handling, and local storage geometry to

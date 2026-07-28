@@ -951,8 +951,6 @@ All sources were read on 2026-07-25; the exact bytes registered in this reposito
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: John Paul II, motu proprio *Ecclesia Dei*, 2 July 1988, n. 6 a): the new commission is to work for full ecclesial communion “iuxta Protocollum superiore die 5 mensis Maii obsignatum a Cardinali Ratzinger et ab Archiepiscopo Lefebvre” (*Acta Apostolicae Sedis* 80 \[1988\] 1498); Benedict XVI, motu proprio *Ecclesiae unitatem*, 2 July 2009, n. 2, quoting the same clause (*Acta Apostolicae Sedis* 101 \[2009\] 710). Read on 2026-07-25 in the Holy See’s English text of *Ecclesia Dei* and, for the Latin and the *Acta* pagination, as cited in the companion volume of this series.

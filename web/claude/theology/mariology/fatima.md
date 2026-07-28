@@ -671,8 +671,6 @@ The 1930 União Gráfica imprint; the Leiria diocesan archive; the fifteen-volum
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Carta Pastoral de D. José Alves Correia da Silva, Bispo de Leiria, sobre o culto de Nossa Senhora de Fátima, 13 October 1930, closing clauses, quoted from *Documentação Crítica de Fátima: Seleção de documentos (1917–1930)* (Fátima: Santuário de Fátima, 2013), Doc. 133 (there recorded as published in DCF II, Doc. 11), at the volume’s printed pages 550–551; read 2026-07-25 in the Sanctuary’s freely downloaded PDF of the volume (References). All web loci cited in these notes were read on 2026-07-25 unless another date is stated. The English renderings of Portuguese sources in this study are editorial working translations, visibly commentary, not received translation witnesses.

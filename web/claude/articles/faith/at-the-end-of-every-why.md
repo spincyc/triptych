@@ -174,8 +174,6 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Thomas Aquinas, *Summa theologiae* I-II, q. 1, a. 4, corpus; wording checked 2026-07-25, English at New Advent, Latin at Corpus Thomisticum. English quotations from the *Summa* throughout this essay are from the public-domain translation of the Fathers of the English Dominican Province; the Latin is checked in the Corpus Thomisticum web corpus at the loci identified in the Notes. The regress denied is in the order of intention (what is wanted for the sake of what), the same essentially ordered structure whose refusal of infinite deferral Part I used in the order of being; a chain of for-the-sake-ofs, like a chain of borrowers, never adds up to a reason unless something in it is wanted on its own account.

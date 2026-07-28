@@ -615,8 +615,6 @@ All online witnesses were checked on 2026-07-25. No mutable civil or canonical l
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: *Catechism of the Catholic Church* 1035 with note 615, official Vatican English web text, [vatican.va](https://www.vatican.va/archive/ENG0015/__P2O.HTM), checked 2026-07-25. “DS” is the Denzinger–Schönmetzer numbering of the *Enchiridion symbolorum*; “CPG” is Paul VI’s *Credo of the People of God* (*Solemni hac liturgia*, 30 June 1968). The paragraph numbers of the Catechism are stable across its editions; the footnote numbering in the Vatican web presentation is the one used here.

@@ -695,8 +695,6 @@ All online witnesses were checked on 2026-07-26; no mutable law or discipline is
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Apocalypse 21:15–16, Douay–Rheims (Challoner revision), read 2026-07-26 in the source library’s tracked verse text of this edition at the registered artifact for the Apocalypse (lines 373–374 of the per-verse file). Scripture throughout this article is quoted from that tracked witness and cited in the Vulgate chapter-and-verse numbering the edition preserves; where that numbering differs from a modern Bible’s, the note says so. The conversion of twelve thousand *stadia* to a modern distance is the article’s own arithmetic at the conventional 185-metre *stadion*, and is offered only to make the figure imaginable; the text gives no metric equivalent and the number is plainly symbolic (twelve, the tribes and the apostles, multiplied by a thousand).

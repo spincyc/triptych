@@ -8,31 +8,38 @@ steps, predella, and the relationships among them. This is a research slice
 for later merger into the canonical object inventory; it does not amend the
 aggregate manifests or make any entry publication-ready.
 
-## Evidence checked in this pass
+## Canonical evidence binding
 
-The 1962 *Missale Romanum* artifact acquired in the run-owned temporary tree
-was inspected directly. The following narrow claims are supported at the
-printed loci stated:
+The exact 1962 *Missale Romanum* facsimile is now registered as
+`artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf`
+with SHA-256
+`648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
+The following checked loci now have canonical passage records:
 
-- *Rubricae generales Missalis Romani* XI.526 says that the altar is covered
+- `passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-altar-preparation`:
+  *Rubricae generales Missalis Romani* 526 says that the altar is covered
   with three duly blessed cloths, one long enough to reach the ground at the
   sides.
-- *Rubricae generales* XI.527 says that a sufficiently large cross with a
+- The same passage record binds *Rubricae generales* 527: a sufficiently
+  large cross with a
   crucifix is in the middle of the altar, with the candlesticks required by
   the class of Mass and lighted candles on either side; the three objects
   called *tabellae secretarum* are put there only for the time of Mass.
-- *Ritus servandus* II.2 distinguishes the reverence made when the altar has a
+- `passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-altar-tabernacle-and-images`:
+  *Ritus servandus* II.2 distinguishes the reverence made when the altar has a
   tabernacle of the Blessed Sacrament and describes ascending to the middle of
   the altar.
-- *Ritus servandus* IV.5 provides for relics or images of saints on the altar
+- The same passage record binds *Ritus servandus* IV.5, which provides for
+  relics or images of saints on the altar
   and their incensation after the cross, while expressly accommodating their
   absence.
 
 These loci establish presence or ceremonial relationships only. They do not
 establish the morphology, dimensions, materials, architectural taxonomy, or
-English and Latin headwords proposed below. The acquired PDF and text extract
-remain transient leads until the dictionary owner creates a lawful canonical
-source binding under `src/sources/` in accordance with `guidance/sources.md`.
+English and Latin headwords proposed below. The remote artifact's exact bytes
+are not retained because its artifact-level redistribution rights remain
+unresolved; this does not prevent the canonical remote record and verified
+passages from controlling bounded project-created prose or artwork.
 
 ## Proposed canonical records
 
@@ -175,15 +182,115 @@ source binding under `src/sources/` in accordance with `guidance/sources.md`.
 - Print, rights, consumer, and release review: **pending**. Not approved for
   publication.
 
-## Next source work
+## Publication decision and replacement brief
 
-1. Create the exact repository-wide source binding for the inspected 1962
-   Missal artifact and record its identity, rights status, and checked loci.
-2. Inspect the governing reservation law and contemporary ceremonial sources
+No existing candidate is approved.
+
+- `DIC-ART-SA-001` visibly asserts six candlesticks, gradines, reliquary-like
+  ornaments, a sanctuary lamp, three steps, a predella, and a fixed
+  four-column canopy as one simultaneous composition. The checked sources do
+  not establish that composition or those forms.
+- `DIC-ART-SA-002` is narrower, but still makes one tabernacle design, one
+  gradine arrangement, frame morphology, candlestick morphology, and their
+  exact proportions and alignment part of a single apparently normative
+  frontal view.
+- `DIC-ART-SA-003` depends almost entirely on the still-unverified morphology
+  of an altar, predella, steps, and fixed baldachin. Its generic styling does
+  not supply evidence.
+
+The narrowest source-controlled opening composition currently supportable is
+an explicitly diagrammatic relationship plate, not an architectural sanctuary
+scene. Commission one new text-free graphite asset with:
+
+1. one neutral altar-top plane shown only far enough to locate objects;
+2. one central cross visibly bearing a crucifix;
+3. two deliberately cropped, silhouette-neutral candle-and-candlestick
+   placeholders, one on each side, accompanied in TeX by “number varies with
+   the Mass”;
+4. three unmistakably blank altar-card placeholders, with their exact
+   contents, frame designs, and individual side assignments left unasserted;
+5. no tabernacle, gradine, reliquary, saint image, sanctuary lamp, steps,
+   predella, canopy, flowers, architectural background, material cue,
+   dimensions, ornament, readable marks, or pseudo-writing; and
+6. generous TeX label lanes and a local caption stating that the plate teaches
+   only the checked relationships during Mass, not a universal altar design.
+
+The asset may use the already accepted isolated altar-candlestick identity as
+a bounded style reference, but must not reuse its decorative morphology as a
+universal claim. If a later tabernacle or architectural composition is wanted,
+it remains blocked on reservation law and a dated, provenanced
+material-culture corpus.
+
+## Remaining source work
+
+1. Inspect the governing reservation law and contemporary ceremonial sources
    for the tabernacle and sanctuary arrangement.
-3. Acquire a provenanced architectural and material-culture corpus for altar,
+2. Acquire a provenanced architectural and material-culture corpus for altar,
    gradine, reliquary, candlestick, tabernacle, and canopy forms.
-4. Resolve the overloaded term “ciborium” before any index or cross-reference
+3. Resolve the overloaded term “ciborium” before any index or cross-reference
    is rendered.
-5. Generate separate isolated/comparison views only after morphology and
+4. Generate separate isolated/comparison views only after morphology and
    substantive variants are source controlled.
+
+## Source-controlled opening composition
+
+### `art-altar-appointments-0104-sanctuary-relationships`
+
+- File:
+  `shared/artwork/pencil/RPD-FIG-altar-appointments-0104-sanctuary-relationships-alpha.png`.
+- Received generator output: 1693 by 929 pixels, 8-bit sRGB PNG,
+  992,720 bytes; SHA-256
+  `ecbe1de2603e780c7588a845739a66a37afdc53c80119143f6300ba0729d8e88`.
+- Repository normalization: 8-bit grayscale-alpha PNG, 1693 by 929 pixels,
+  377,358 bytes; SHA-256
+  `e460073553b1bb4435dbf2f6c313e8012d3121a079fb3af462da68267163a9d5`.
+- Generator: built-in OpenAI image-generation interface; no image-model
+  identifier or version was exposed. Generated and corrected 2026-07-28. No
+  reference image was supplied.
+- Prompt contract: a frontal diagram on a removable chroma background with
+  one thin neutral altar-top plane, one central cross visibly bearing a
+  crucifix, exactly two deliberately edge-cropped generic candle-and-
+  candlestick placeholders, and exactly three blank card placeholders.
+  Tabernacle, gradine, reliquary, saint image, sanctuary lamp, steps,
+  predella, canopy, flowers, cloth, architecture, dimensions, ornament,
+  labels, readable marks, and pseudo-writing were prohibited.
+- Correction: the first candidate's wood-like grain and decorative
+  candlestick modeling exceeded the neutral morphology ceiling. Its corrected
+  1102-pixel successor was visually sound but could supply only 183.7 DPI at
+  the six-inch placement, so it was superseded rather than upscaled. A new
+  1693-pixel landscape generation preserved the exact relationship, and a
+  targeted edit replaced only its decorative side bases and perspective
+  surface with neutral cropped stems and a thin horizontal plane.
+- Boundary treatment: because the installed skill helper's Pillow dependency
+  was unavailable, ImageMagick 7 deterministically removed the flat chroma
+  field at 24 percent fuzz and converted retained pixels to grayscale. The
+  non-subject field is transparent; only the deliberately cropped candle
+  stems meet the lower corners. White and warm off-white page composites
+  preserve the complete drawing without a floating rectangle, residual
+  background panel, or visible green fringe.
+- Factual-pixel audit: passed. The raster asserts only the object count and
+  central/flanking relationship supported by *Rubricae generales* 527. Both
+  candle placeholders are intentionally cropped; the three cards are
+  featureless and blank. No prohibited object or semantic mark is visible.
+- TeX owns the variable-count statement (“number varies with the Mass”), the
+  identification labels, and the qualification that the image teaches
+  checked relationships during Mass rather than a universal altar design.
+- Consumer decision: approved only for
+  `plt-sanctuary-orientation` in `ed-comprehensive`. No smaller edition or
+  object record consumes it.
+- Manifest identity boundary: only the already canonical
+  `obj-altar-candlestick` is linked as an object ID. The central crucifix and
+  three blank-card semantics remain source-controlled composition features
+  in this brief until their proposed canonical records are admitted; no
+  unregistered object ID is asserted.
+- Rights: new project-generated raster made without image inputs. The prompt
+  contract, correction, received and normalized hashes, transformation,
+  evidence binding, and consumer limit are recorded here. It is distributed
+  under the repository's project-content terms.
+- Review result: factual, visual, boundary, rights, Comprehensive consumer,
+  and print review passed. The rebuilt 15-page Comprehensive PDF and its
+  full-size opening-page raster show legible art and TeX qualifications,
+  transparent page-blended boundaries, no clipping or overlap, and no new
+  fatal, undefined-reference, or overflow warning. One pre-existing underfull
+  line remains on a later generated object page and does not involve this
+  plate.

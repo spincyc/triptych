@@ -8,7 +8,28 @@
 \newif\ifRSDArtworkAvailable
 \newif\ifRSDSecondArtworkAvailable
 \newif\ifRSDStoryHero
+\newif\ifRSDStoryTallHero
+\newif\ifRSDTallCard
+\newif\ifRSDSpacedCard
+\newif\ifRSDFieldCard
+\newif\ifRSDQuadCard
+\newif\ifRSDRelationshipCard
+\newif\ifRSDSevenCard
+\newif\ifRSDDiagnosticCard
+\newif\ifRSDWideCard
+\newdimen\RSDCardHeight
+\newdimen\RSDCardArtworkFieldHeight
+\newdimen\RSDCardGraphicHeight
 \RSDStoryHerofalse
+\RSDStoryTallHerofalse
+\RSDTallCardfalse
+\RSDSpacedCardfalse
+\RSDFieldCardfalse
+\RSDQuadCardfalse
+\RSDRelationshipCardfalse
+\RSDSevenCardfalse
+\RSDDiagnosticCardfalse
+\RSDWideCardfalse
 \usetikzlibrary{decorations.pathmorphing}
 \tikzset{
   rsd pencil line/.style={
@@ -69,6 +90,7 @@
 \renewcommand{\RSDClaim}[6]{%
   \ifstrequal{#2}{identity}{\def\RSDIdentityText{#3}}{}%
   \ifstrequal{#2}{liturgical-use}{\def\RSDUseText{#3}}{}%
+  \ifstrequal{#2}{ceremonial-presence}{\def\RSDUseText{#3}}{}%
   \ifstrequal{#2}{symbolism}{\def\RSDSymbolismText{#3}}{}}
 
 \newcommand{\RSDRegisterGeneratedArtwork}[1]{%
@@ -91,17 +113,56 @@
 \providecommand{\RSDSelectedAudienceNote}[1]{\def\RSDAudienceText{#1}}
 
 \newsavebox{\RSDLatinKeyLineBox}
-\newcommand{\RSDLatinAndKeyLine}[2]{%
-  \sbox{\RSDLatinKeyLineBox}{#1\quad\DictionaryNoteKey{#2}}%
-  \ifdim\wd\RSDLatinKeyLineBox>0.98\linewidth
-    \resizebox{0.98\linewidth}{!}{\usebox{\RSDLatinKeyLineBox}}\par
+\newsavebox{\RSDCardTitleBox}
+\newcommand{\RSDCardTitle}[1]{%
+  \sbox{\RSDCardTitleBox}{\fontsize{9.2}{10.2}\selectfont\bfseries #1}%
+  \ifdim\wd\RSDCardTitleBox>0.90\linewidth
+    \resizebox{0.90\linewidth}{!}{\usebox{\RSDCardTitleBox}}\par
   \else
-    #1\hfill\DictionaryNoteKey{#2}\par
+    {\fontsize{9.2}{10.2}\selectfont\bfseries #1\par}%
+  \fi}
+\newcommand{\RSDLatinAndKeyLine}[2]{%
+  \ifRSDSpacedCard
+    #1\par
+    \vspace{1pt}\hfill\DictionaryNoteKey{#2}\par
+  \else
+    \sbox{\RSDLatinKeyLineBox}{#1\quad\DictionaryNoteKey{#2}}%
+    \ifdim\wd\RSDLatinKeyLineBox>0.98\linewidth
+      \resizebox{0.98\linewidth}{!}{\usebox{\RSDLatinKeyLineBox}}\par
+    \else
+      #1\hfill\DictionaryNoteKey{#2}\par
+    \fi
   \fi}
 
 \renewcommand{\RSDEndObjectRecord}{%
   \global\advance\RSDRenderedRecordCount by 1
-  \ifRSDStoryHero
+  \ifRSDStoryTallHero
+  \begin{minipage}[t][4.34in][t]{\linewidth}
+  \DictionaryEntryAnchor{\RSDObjectID}%
+  {\fontsize{14}{15.4}\selectfont\bfseries\RSDPreferredEnglishName\par}
+  {\fontsize{8.5}{9.5}\selectfont\itshape
+    \RSDLatinAndKeyLine{\RSDLatinHeadword}{\RSDObjectID}}
+  \vspace{2pt}\hrule height 0.45pt\vspace{5pt}
+  \begin{minipage}[t][3.60in][c]{0.58\linewidth}
+    \centering
+    \ifRSDArtworkAvailable
+      \DictionaryGraphic{3.48in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+    \fi
+  \end{minipage}\hfill
+  \begin{minipage}[t][3.60in][t]{0.38\linewidth}
+    {\fontsize{8.5}{10}\selectfont
+      \RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi\par}
+    \ifx\RSDAudienceText\empty\else
+      \vspace{5pt}{\fontsize{7.8}{9.2}\selectfont
+        \textbf{Look for.}\enspace\RSDAudienceText\par}
+    \fi
+    \ifx\RSDSymbolismText\empty\else
+      \vspace{5pt}{\fontsize{7.6}{9}\selectfont\itshape\RSDSymbolismText\par}
+    \fi
+  \end{minipage}
+  \end{minipage}%
+  \global\RSDStoryTallHerofalse
+  \else\ifRSDStoryHero
   \begin{minipage}[t][2.48in][t]{\linewidth}
   \DictionaryEntryAnchor{\RSDObjectID}%
   {\fontsize{13}{14.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
@@ -127,14 +188,73 @@
   \end{minipage}
   \end{minipage}%
   \global\RSDStoryHerofalse
-  \else
-  \begin{minipage}[t][3.18in][t]{\linewidth}
+  \else\ifRSDTallCard
+  \begin{minipage}[t][6.72in][t]{\linewidth}
   \DictionaryEntryAnchor{\RSDObjectID}%
-  {\fontsize{9.2}{10.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
+  {\fontsize{11}{12.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
+  {\fontsize{7.7}{8.7}\selectfont\itshape
+    \RSDLatinAndKeyLine{\RSDLatinHeadword}{\RSDObjectID}}
+  \vspace{2pt}\hrule height 0.4pt\vspace{4pt}
+  \begin{minipage}[t][4.12in][c]{\linewidth}
+    \centering
+    \ifdefstring{\RSDObjectID}{obj-epistle-book}{%
+      \RSDTeXNativeBookArtwork
+    }{\ifdefstring{\RSDObjectID}{obj-gospel-book}{%
+      \RSDTeXNativeBookArtwork
+    }{%
+    \ifRSDArtworkAvailable
+      \DictionaryGraphic{4.00in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+    \fi}}%
+  \end{minipage}\par
+  \vspace{0.30in}
+  {\fontsize{7.4}{8.7}\selectfont\raggedright
+    \RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi\par}
+  \ifx\RSDAudienceText\empty\else
+    \vspace{4pt}{\fontsize{7}{8.2}\selectfont
+      \textbf{Reader note.}\enspace\RSDAudienceText\par}
+  \fi
+  \ifx\RSDSymbolismText\empty\else
+    \vspace{4pt}{\fontsize{6.8}{8}\selectfont\itshape\RSDSymbolismText\par}
+  \fi
+  \end{minipage}%
+  \global\RSDTallCardfalse
+  \else
+  \ifRSDSevenCard
+    \RSDCardHeight=4.02in
+    \RSDCardArtworkFieldHeight=1.72in
+    \RSDCardGraphicHeight=1.66in
+  \else\ifRSDDiagnosticCard
+    \RSDCardHeight=3.62in
+    \RSDCardArtworkFieldHeight=1.82in
+    \RSDCardGraphicHeight=1.76in
+  \else\ifRSDWideCard
+    \RSDCardHeight=3.40in
+    \RSDCardArtworkFieldHeight=1.78in
+    \RSDCardGraphicHeight=1.72in
+  \else\ifRSDRelationshipCard
+    \RSDCardHeight=3.18in
+    \RSDCardArtworkFieldHeight=1.66in
+    \RSDCardGraphicHeight=1.60in
+  \else\ifRSDQuadCard
+    \RSDCardHeight=3.40in
+    \RSDCardArtworkFieldHeight=1.49in
+    \RSDCardGraphicHeight=1.43in
+  \else\ifRSDFieldCard
+    \RSDCardHeight=3.62in
+    \RSDCardArtworkFieldHeight=1.56in
+    \RSDCardGraphicHeight=1.50in
+  \else
+    \RSDCardHeight=3.18in
+    \RSDCardArtworkFieldHeight=1.30in
+    \RSDCardGraphicHeight=1.26in
+  \fi\fi\fi\fi\fi\fi
+  \begin{minipage}[t][\RSDCardHeight][t]{\linewidth}
+  \DictionaryEntryAnchor{\RSDObjectID}%
+  \RSDCardTitle{\RSDPreferredEnglishName}
   {\fontsize{7.1}{8}\selectfont\itshape
     \RSDLatinAndKeyLine{\RSDLatinHeadword}{\RSDObjectID}}
   \vspace{2pt}\hrule height 0.35pt\vspace{3pt}
-  \begin{minipage}[t][1.30in][c]{\linewidth}
+  \begin{minipage}[t][\RSDCardArtworkFieldHeight][c]{\linewidth}
     \centering
     \ifdefstring{\RSDObjectID}{obj-epistle-book}{%
       \RSDTeXNativeBookArtwork
@@ -143,19 +263,23 @@
     }{%
     \ifRSDArtworkAvailable
       \ifRSDSecondArtworkAvailable
-        \begin{minipage}[c]{0.68\linewidth}\centering
-          \DictionaryGraphic{1.22in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+        \begin{minipage}[c]{0.48\linewidth}\centering
+          \DictionaryGraphic{1.08in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
         \end{minipage}\hfill
-        \begin{minipage}[c]{0.28\linewidth}\centering
-          {\fontsize{5.5}{6}\selectfont\bfseries DETAIL\par}\vspace{1pt}
-          \DictionaryGraphic{0.82in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDSecondArtworkPath}
+        \begin{minipage}[c]{0.48\linewidth}\centering
+          \DictionaryGraphic{1.08in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDSecondArtworkPath}
         \end{minipage}
       \else
-        \DictionaryGraphic{1.26in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+        \ifdefstring{\RSDObjectID}{obj-processional-cross}{%
+          \includegraphics[height=1.45in,keepaspectratio]{%
+            liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}%
+        }{%
+          \DictionaryGraphic{\RSDCardGraphicHeight}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}%
+        }%
       \fi
     \fi}}%
-  \end{minipage}
-  \vspace{3pt}
+  \end{minipage}\par
+  \ifRSDSpacedCard\vfill\else\vspace{3pt}\fi
   {\fontsize{6.6}{7.6}\selectfont
     \RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi\par}
   \ifx\RSDAudienceText\empty\else
@@ -166,34 +290,195 @@
     \vspace{2pt}{\fontsize{6.1}{7}\selectfont\itshape\RSDSymbolismText\par}
   \fi
   \end{minipage}%
-  \fi}
+  \global\RSDSpacedCardfalse
+  \global\RSDFieldCardfalse
+  \global\RSDQuadCardfalse
+  \global\RSDRelationshipCardfalse
+  \global\RSDSevenCardfalse
+  \global\RSDDiagnosticCardfalse
+  \global\RSDWideCardfalse
+  \fi\fi\fi}
 
 \newcommand{\RSDDensePlateStart}[2]{%
   \clearpage
   {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Comparison plate}
     \hfill #1\enspace\textperiodcentered\enspace #2\par}
   \vspace{2pt}\hrule height 0.65pt\vspace{6pt}
-  \noindent\begin{tabular}{@{}p{0.31\textwidth}@{\hspace{0.035\textwidth}}%
-    p{0.31\textwidth}@{\hspace{0.035\textwidth}}p{0.31\textwidth}@{}}}
+  % The asymmetric widths create a stable visual lead and supporting pair.
+  % The second row mirrors that hierarchy instead of repeating a card grid.
+  \noindent\begin{tabular}{@{}p{0.37\textwidth}@{\hspace{0.025\textwidth}}%
+    p{0.275\textwidth}@{\hspace{0.025\textwidth}}p{0.305\textwidth}@{}}}
 \newcommand{\RSDDensePlateCellBreak}{&}
 \newcommand{\RSDDensePlateRowBreak}{%
-  \\[5pt]}
-\newcommand{\RSDDensePlateEnd}{\end{tabular}\par}
+  \end{tabular}\par\vspace{0.30in}
+  \noindent\begin{tabular}{@{}p{0.305\textwidth}@{\hspace{0.025\textwidth}}%
+    p{0.275\textwidth}@{\hspace{0.025\textwidth}}p{0.37\textwidth}@{}}}
+\newcommand{\RSDDensePlateEnd}{%
+  \end{tabular}\par\vfill
+  \noindent\hrule height 0.35pt\vspace{4pt}
+  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Scan the silhouettes}
+    \hfill Name each object before reading\par}}
+
+% Five-object fields use a three-over-two rhythm. The wider lower pair fills
+% the page without suggesting a missing sixth object.
+\newcommand{\RSDHeterodoxFivePlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Visual field}
+    \hfill #1\enspace\textperiodcentered\enspace #2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{6pt}
+  \noindent\begin{tabular}{@{}p{0.37\textwidth}@{\hspace{0.025\textwidth}}%
+    p{0.275\textwidth}@{\hspace{0.025\textwidth}}p{0.305\textwidth}@{}}}
+\newcommand{\RSDHeterodoxFivePlateCellBreak}{&}
+\newcommand{\RSDHeterodoxFivePlateRowBreak}{%
+  \end{tabular}\par\vspace{0.20in}
+  \noindent\begin{tabular}{@{}p{0.475\textwidth}@{\hspace{0.05\textwidth}}%
+    p{0.475\textwidth}@{}}}
+\newcommand{\RSDHeterodoxFivePlateEnd}{%
+  \end{tabular}\par\vfill
+  \noindent\hrule height 0.35pt\vspace{4pt}
+  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Read the relationships}
+    \hfill Compare placement, form, and use\par}}
+
+% Seven-object fields use a four-plus-three rhythm. The centered second row
+% keeps the last three studies prominent without duplicating an empty cell.
+\newcommand{\RSDDenseSevenPlateStart}[2]{%
+  \clearpage
+  \noindent
+  \begin{minipage}[t]{0.28\textwidth}
+    {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Working set}\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.68\textwidth}
+    \raggedleft
+    {\fontsize{8}{9}\selectfont\bfseries
+      #1\enspace\textperiodcentered\enspace PLATE~#2\par}
+  \end{minipage}
+  \par\vspace{3pt}\hrule height 0.65pt\vspace{8pt}
+  \noindent\begin{tabular}{@{}p{0.235\textwidth}@{\hspace{0.02\textwidth}}%
+    p{0.235\textwidth}@{\hspace{0.02\textwidth}}%
+    p{0.235\textwidth}@{\hspace{0.02\textwidth}}p{0.235\textwidth}@{}}}
+\newcommand{\RSDDenseSevenPlateCellBreak}{&}
+\newcommand{\RSDDenseSevenPlateRowBreak}{%
+  \end{tabular}\par\vspace{0.18in}
+  \noindent\hfill\begin{tabular}{@{}p{0.29\textwidth}@{\hspace{0.025\textwidth}}%
+    p{0.29\textwidth}@{\hspace{0.025\textwidth}}p{0.29\textwidth}@{}}}
+\newcommand{\RSDDenseSevenPlateEnd}{%
+  \end{tabular}\hfill\null\par\vfill
+  \noindent\hrule height 0.35pt\vspace{4pt}
+  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Trace the sequence}
+    \hfill Identify giver, receiver, and destination\par}}
 
 % Four-object comparisons use a balanced two-by-two field. The wider cards
 % provide longer labels and reader notes with more breathing room than the
 % three-column dense grid while retaining a full visual page.
 \newcommand{\RSDBalancedFourPlateStart}[2]{%
   \clearpage
-  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Comparison plate}
-    \hfill #1\enspace\textperiodcentered\enspace #2\par}
-  \vspace{2pt}\hrule height 0.65pt\vspace{7pt}
+  \noindent
+  \begin{minipage}[t]{0.32\textwidth}
+    {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Comparison plate}\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.64\textwidth}
+    \raggedleft
+    {\fontsize{8}{9}\selectfont\bfseries
+      #1\enspace\textperiodcentered\enspace #2\par}
+  \end{minipage}
+  \par\vspace{3pt}\hrule height 0.65pt\vspace{7pt}
   \noindent\begin{tabular}{@{}p{0.475\textwidth}@{\hspace{0.05\textwidth}}%
     p{0.475\textwidth}@{}}}
 \newcommand{\RSDBalancedFourPlateCellBreak}{&}
 \newcommand{\RSDBalancedFourPlateRowBreak}{%
   \\[10pt]}
-\newcommand{\RSDBalancedFourPlateEnd}{\end{tabular}\par}
+\newcommand{\RSDBalancedFourFilledPlateRowBreak}{%
+  \\[0.25in]}
+\newcommand{\RSDBalancedFourPlateEnd}{%
+  \end{tabular}\par\vfill
+  \noindent\hrule height 0.35pt\vspace{4pt}
+  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Look across the pairs}
+    \hfill Compare form, handling, and use\par}}
+\newcommand{\RSDBalancedFourFilledPlateEnd}{%
+  \end{tabular}\par\vfill
+  \noindent\hrule height 0.35pt\vspace{4pt}
+  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Look across the pairs}
+    \hfill Compare form, handling, and use\par}}
+
+% Three-object comparisons use two paired studies followed by one centered
+% study. This preserves generous diagnostic scale without leaving an accidental
+% empty fourth-card hole in a two-by-two field.
+\newcommand{\RSDBalancedThreePlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Comparison plate}
+    \hfill #1\enspace\textperiodcentered\enspace #2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{7pt}
+  \noindent\begin{tabular}{@{}p{0.475\textwidth}@{\hspace{0.05\textwidth}}%
+    p{0.475\textwidth}@{}}}
+\newcommand{\RSDBalancedThreePlateCellBreak}{&}
+\newcommand{\RSDBalancedThreePlateLastStart}{%
+  \end{tabular}\par\vspace{10pt}\noindent\hfill
+  \begin{minipage}[t]{0.475\textwidth}}
+\newcommand{\RSDBalancedThreePlateEnd}{%
+  \end{minipage}\hfill\null\par}
+
+% Tall two- and three-object fields use the page height for large recognition
+% studies instead of leaving the unused cells of a dense grid visible.
+\newcommand{\RSDTallCardNext}{\global\RSDTallCardtrue}
+\newcommand{\RSDSpacedCardNext}{\global\RSDSpacedCardtrue}
+\newcommand{\RSDFieldCardNext}{%
+  \global\RSDFieldCardtrue
+  \global\RSDSpacedCardtrue}
+\newcommand{\RSDQuadCardNext}{%
+  \global\RSDQuadCardtrue
+  \global\RSDSpacedCardtrue}
+\newcommand{\RSDRelationshipCardNext}{%
+  \global\RSDRelationshipCardtrue
+  \global\RSDSpacedCardtrue}
+\newcommand{\RSDSevenCardNext}{\global\RSDSevenCardtrue}
+\newcommand{\RSDDiagnosticCardNext}{%
+  \global\RSDDiagnosticCardtrue
+  \global\RSDSpacedCardtrue}
+\newcommand{\RSDWideCardNext}{%
+  \global\RSDWideCardtrue
+  \global\RSDSpacedCardtrue}
+\newcommand{\RSDBalancedTwoTallPlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Relationship study}
+    \hfill #1\enspace\textperiodcentered\enspace PLATE~#2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{7pt}
+  \noindent\begin{tabular}{@{}p{0.475\textwidth}@{\hspace{0.05\textwidth}}%
+    p{0.475\textwidth}@{}}}
+\newcommand{\RSDBalancedTwoTallPlateCellBreak}{&}
+\newcommand{\RSDBalancedTwoTallPlateEnd}{%
+  \end{tabular}\par\vfill
+  \noindent\hrule height 0.35pt\vspace{4pt}
+  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Read the relationship}
+    \hfill Compare form, handling, and use\par}}
+\newcommand{\RSDBalancedThreeTallPlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Relationship study}
+    \hfill #1\enspace\textperiodcentered\enspace PLATE~#2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{7pt}
+  \noindent\begin{tabular}{@{}p{0.31\textwidth}@{\hspace{0.035\textwidth}}%
+    p{0.31\textwidth}@{\hspace{0.035\textwidth}}p{0.31\textwidth}@{}}}
+\newcommand{\RSDBalancedThreeTallPlateCellBreak}{&}
+\newcommand{\RSDBalancedThreeTallPlateEnd}{%
+  \end{tabular}\par\vfill
+  \noindent\hrule height 0.35pt\vspace{4pt}
+  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Read the relationship}
+    \hfill Compare form, handling, and use\par}}
+\newcommand{\RSDRelationshipThreePlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Relationship study}
+    \hfill #1\enspace\textperiodcentered\enspace PLATE~#2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{7pt}
+  \noindent\begin{tabular}{@{}p{0.31\textwidth}@{\hspace{0.035\textwidth}}%
+    p{0.655\textwidth}@{}}}
+\newcommand{\RSDRelationshipThreePlateCellBreak}{%
+  &\begin{minipage}[t]{\linewidth}}
+\newcommand{\RSDRelationshipThreePlateRightBreak}{%
+  \par\vspace{8pt}}
+\newcommand{\RSDRelationshipThreePlateEnd}{%
+  \end{minipage}\end{tabular}\par\vfill
+  \noindent\hrule height 0.35pt\vspace{4pt}
+  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Read the relationship}
+    \hfill Compare form, handling, and use\par}}
 
 % A story spread varies scale without changing canonical records. One hero
 % introduces the group; up to four compact comparison cards follow below.
@@ -211,6 +496,22 @@
 \newcommand{\RSDStoryCompanionBreak}{&}
 \newcommand{\RSDStoryCompanionsEnd}{\end{tabular}\par}
 \newcommand{\RSDStoryPlateEnd}{\par}
+
+% The tall story archetype gives one vertically distinctive object a full
+% field, then closes with three related recognition cards across the foot.
+\newcommand{\RSDStoryTallPlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Visual field guide}
+    \hfill #1\enspace\textperiodcentered\enspace #2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{6pt}}
+\newcommand{\RSDStoryTallHeroNext}{\global\RSDStoryTallHerotrue}
+\newcommand{\RSDStoryTallCompanionsStart}{%
+  \par\vspace{4pt}\noindent
+  \begin{tabular}{@{}p{0.31\textwidth}@{\hspace{0.035\textwidth}}%
+    p{0.31\textwidth}@{\hspace{0.035\textwidth}}p{0.31\textwidth}@{}}}
+\newcommand{\RSDStoryTallCompanionBreak}{&}
+\newcommand{\RSDStoryTallCompanionsEnd}{\end{tabular}\par}
+\newcommand{\RSDStoryTallPlateEnd}{\par}
 
 \newcommand{\RSDRenderGeneratedEdition}[1]{%
   \InputIfFileExists{#1}{}{%

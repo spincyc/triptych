@@ -10,8 +10,7 @@ candidates:
 | Object record | Artwork record | File |
 | --- | --- | --- |
 | `obj-altar-bells` | `art-service-objects-0101-iso-altar-bells` | `shared/artwork/pencil/RPD-FIG-service-objects-0101-iso-altar-bells.png` |
-| `obj-altar-candle` | `art-altar-appointments-0101-iso-candle` | `shared/artwork/pencil/RPD-FIG-altar-appointments-0101-iso-candlestick.png` |
-| `obj-altar-candlestick` | `art-altar-appointments-0101-iso-candlestick` | `shared/artwork/pencil/RPD-FIG-altar-appointments-0101-iso-candlestick.png` |
+| `obj-altar-candle`, `obj-altar-candlestick` | `art-altar-appointments-0101-candle-and-candlestick` | `shared/artwork/pencil/RPD-FIG-altar-appointments-0101-iso-candlestick.png` |
 | `obj-sanctuary-lamp` | `art-altar-appointments-0102-iso-sanctuary-lamp` | `shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp.png` |
 | `obj-candle-lighter-extinguisher` | `art-service-objects-0102-iso-candle-tool` | `shared/artwork/pencil/RPD-FIG-service-objects-0102-iso-candle-tool.png` |
 

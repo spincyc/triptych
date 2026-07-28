@@ -429,7 +429,7 @@ def audit_output(body: str, markdown: str, tables: int = 0) -> list[str]:
         failures.append("rights colophon missing from output")
     if "Last revised (UTC):" not in markdown:
         failures.append("revision timestamp missing from output")
-    if r"\AIModelContribution" in body and "Agent/runtime:" not in markdown:
+    if r"\AIModelContribution" in body and "Model:" not in markdown:
         failures.append("model contribution missing from output")
     return failures
 

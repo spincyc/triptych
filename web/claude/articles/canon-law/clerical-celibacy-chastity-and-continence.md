@@ -827,8 +827,6 @@ Every web source below was fetched over HTTPS, hashed (SHA-256), and read on 202
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: CIC c. 277 §1, quoted from the Holy See’s Latin web delivery of Book II, fetched, hashed, and read 2026-07-25 (see References; the exact response was byte-identical to the state already registered in this repository’s source library). The delivery prints *coelorum* and *coelibatum* with the *oe* digraph where the *Acta Apostolicae Sedis* promulgation text of the Eastern Code prints *caelibatus*; orthographic variation between and within official Latin texts is normal and carries no juridical weight. Where this article quotes an English rendering of a Latin canon inside quotation marks, the rendering is the Holy See’s own English web delivery, identified in the References; where no quotation marks appear, the English is the article’s own working gloss and the Latin governs.

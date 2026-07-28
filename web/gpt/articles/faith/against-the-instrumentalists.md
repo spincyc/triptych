@@ -156,10 +156,6 @@ This is an internally source-audited working study. Production and artifact evid
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
-**Agent/runtime:** OpenAI Codex agents (philosophy-of-science research, Catholic philosophical and theological source audit, drafting, and source-consistency review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (Lewis-source qualification, final editorial, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Second Vatican Council, *Gaudium et spes* 36 and 59, defends the sciences’ proper methods; section 57 denies that those methods are the supreme rule for the whole truth.

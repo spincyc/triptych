@@ -5,8 +5,7 @@
 Edition-specific studies of the postconciliar Roman Rite, distinct from the 1962 books. Each entry identifies its books, language, territory, cycle, and date where applicable.
 
 On this page: [Core and reference works](#core-and-reference-works) ·
-[Sunday propers calendar](#sunday-propers-calendar) ·
-[Sunday replacements](#sunday-replacements)
+[Sunday propers calendar](#sunday-propers-calendar)
 
 ## Core and Reference Works
 

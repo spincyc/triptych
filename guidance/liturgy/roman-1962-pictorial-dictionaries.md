@@ -150,11 +150,20 @@ Requiem; Nuptial and ritual Masses; Holy Week; pontifical compositions; and
 related Roman ceremonies.
 
 The historical section follows, ordered chronologically and then by the same
-object types within each period. Terminal apparatus contains the selective
-pronunciation appendix, English--Latin and Latin--English indexes, visual
-index, variant and terminology notes, scope and qualifications, numbered
-source notes and references, generation metadata, and rights colophon in the
-universally required order.
+object types within each period. Terminal apparatus includes only finished,
+populated reader aids supported by the rendered edition. A selective
+pronunciation appendix, English--Latin or Latin--English index, visual index,
+variant or terminology notes, and numbered source notes may be included when
+they contain useful entries; omit an inapplicable or unpopulated aid rather
+than printing a placeholder or fabricating entries. Retain concise scope and
+qualifications and references actually used, followed by the compact
+generation summary and rights colophon in the universal order. Full scope and
+source-audit evidence remains in the required tracked records.
+
+The tracked generation metadata remains complete under the universal standard,
+but dictionary PDFs must not print per-agent/runtime entries, contribution
+histories, or other internal production ledgers. Render each distinct
+model/configuration identity once in the compact terminal summary.
 
 Main entries give English and Latin headwords, one-line identity and use,
 compact handling status, and at most one brief sourced symbolic association.

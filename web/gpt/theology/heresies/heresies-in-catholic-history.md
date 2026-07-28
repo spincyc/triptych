@@ -2337,14 +2337,6 @@ Specialized modern histories were used to test dates, terminology, social settin
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
-**Agent/runtime:** OpenAI Codex agents (historical, theological, canonical, ecumenical, source-audit, attribution, drafting, and layout roles); Codex CLI 0.144.4 and 0.145.0; API workspace; unexposed: server revision
-
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
-
-**Agent/runtime:** OpenAI Codex agent (signed-decree verification, canonical correction, census and timeline audit, editorial, release-control, and production-review roles); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex subagent (terminal-apparatus structural conformance and audit-record reconciliation roles); API workspace; unexposed: client/runtime version and server revision
-
-**Agent/runtime:** OpenAI Codex agents (corpus-wide editorial and conciliar source audits, reference correction, build, and review); API workspace; unexposed: client and server revisions
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

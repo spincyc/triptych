@@ -269,8 +269,6 @@ All web sources were accessed and checked on 2026-07-24; the quoted witnesses we
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: The fourth-century sense of *editio vulgata* and the observation that Jerome’s revised text “was not called the Vulgate until much later,” with Trent as the apparent first such use, are reported from H. A. G. Houghton, *The Latin New Testament* (Oxford, 2016), ch. 2 (with Sutcliffe 1948 and Bogaert 2012 cited there), read in the Library of Congress open-access PDF, 2026-07-24. All web loci cited in these notes were read on 2026-07-24, and the quoted witnesses were re-verified on 2026-07-25; full bibliographic detail is in the References.

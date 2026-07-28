@@ -686,6 +686,4 @@ Gilles Wach. [Public message to Vincent Mongaillard.](https://www.icrsp.org/conf
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
-**Agent/runtime:** OpenAI Codex agents (primary-source research, institutional and canonical history, source verification, drafting, source-audit, editorial, and production-review roles); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

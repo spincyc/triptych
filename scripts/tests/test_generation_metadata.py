@@ -189,7 +189,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
     def test_handwritten_revision_label_is_rejected_as_legacy(self) -> None:
         self.assertRegex(r"\textbf{Last revised (UTC):}", CHECKER.LEGACY_LABEL_RE)
 
-    def test_rendered_record_deduplicates_model_for_distinct_runtimes(self) -> None:
+    def test_rendered_record_compacts_distinct_runtimes_to_one_identity(self) -> None:
         first = CHECKER.Contribution(
             "same-model", "effort=high", "OpenAI Codex CLI 1.2.3; first role"
         )
@@ -200,8 +200,6 @@ class GenerationMetadataParserTests(unittest.TestCase):
         rendered = CHECKER.normalize(
             f"Last revised (UTC): {TIMESTAMP}\n"
             "Model: same-model; effort=high\n"
-            f"Agent/runtime: {first.runtime}\n"
-            f"Agent/runtime: {second.runtime}\n"
         )
         with (
             mock.patch.object(CHECKER, "validate_pdf_info"),
@@ -212,9 +210,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
         duplicated = CHECKER.normalize(
             f"Last revised (UTC): {TIMESTAMP}\n"
             "Model: same-model; effort=high\n"
-            f"Agent/runtime: {first.runtime}\n"
             "Model: same-model; effort=high\n"
-            f"Agent/runtime: {second.runtime}\n"
         )
         with (
             mock.patch.object(CHECKER, "validate_pdf_info"),
@@ -222,6 +218,69 @@ class GenerationMetadataParserTests(unittest.TestCase):
             self.assertRaisesRegex(ValueError, "duplicates metadata field"),
         ):
             CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+
+    def test_rendered_record_rejects_runtime_and_process_ledger_fields(self) -> None:
+        contribution = CHECKER.Contribution(
+            "test-model", "effort=high", "OpenAI Codex CLI 1.2.3; first role"
+        )
+        record = CHECKER.Record(TIMESTAMP, (contribution,), None)
+        cases = (
+            f"Agent/runtime: {contribution.runtime}",
+            f"Client/runtime: {contribution.runtime}",
+            "Agent instance: reviewer",
+            "Contribution count: 1",
+            "Process ledger: drafting and review",
+            contribution.runtime,
+        )
+        for ledger in cases:
+            rendered = CHECKER.normalize(
+                f"Last revised (UTC): {TIMESTAMP}\n"
+                "Model: test-model; effort=high\n"
+                f"{ledger}\n"
+            )
+            with (
+                self.subTest(ledger=ledger),
+                mock.patch.object(CHECKER, "validate_pdf_info"),
+                mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
+                self.assertRaisesRegex(
+                    ValueError, "production-ledger|agent/runtime record"
+                ),
+            ):
+                CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+
+    def test_rendered_record_requires_each_distinct_identity_once_in_order(self) -> None:
+        first = CHECKER.Contribution(
+            "first-model", "effort=high", "OpenAI Codex CLI 1.2.3; first role"
+        )
+        second = CHECKER.Contribution(
+            "second-model", "effort=low", "OpenAI Codex CLI 1.2.4; second role"
+        )
+        record = CHECKER.Record(TIMESTAMP, (first, second), None)
+        reversed_render = CHECKER.normalize(
+            f"Last revised (UTC): {TIMESTAMP}\n"
+            "Model: second-model; effort=low\n"
+            "Model: first-model; effort=high\n"
+        )
+        with (
+            mock.patch.object(CHECKER, "validate_pdf_info"),
+            mock.patch.object(CHECKER, "pdf_text", return_value=reversed_render),
+            self.assertRaisesRegex(ValueError, "omits ordered metadata field"),
+        ):
+            CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+
+    def test_inherited_render_rejects_duplicated_model_or_ledger(self) -> None:
+        record = CHECKER.Record(TIMESTAMP, (), "theology/sacraments")
+        for field in ("Model: test-model; effort=high", "Agent/runtime: hidden"):
+            rendered = CHECKER.normalize(
+                f"Last revised (UTC): {TIMESTAMP}\n{field}\n"
+            )
+            with (
+                self.subTest(field=field),
+                mock.patch.object(CHECKER, "validate_pdf_info"),
+                mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
+                self.assertRaises(ValueError),
+            ):
+                CHECKER.validate_rendered_record(Path("unused.pdf"), record)
 
 
 @unittest.skipUnless(
@@ -303,12 +362,31 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
                 hashlib.sha256(second.read_bytes()).digest(),
             )
             CHECKER.validate_pdf_info(first, TIMESTAMP)
+            CHECKER.validate_rendered_record(
+                first,
+                CHECKER.Record(
+                    TIMESTAMP,
+                    (
+                        CHECKER.Contribution(
+                            "test-model",
+                            "effort=high",
+                            "OpenAI Codex CLI 1.2.3; API workspace",
+                        ),
+                        CHECKER.Contribution(
+                            "test-model",
+                            "effort=high",
+                            "OpenAI Codex CLI 1.2.4; API workspace; review role",
+                        ),
+                    ),
+                    None,
+                ),
+            )
             rendered = CHECKER.pdf_text(first)
             self.assertEqual(rendered.count(f"Last revised (UTC): {TIMESTAMP}"), 1)
             self.assertEqual(rendered.count("Model: test-model; effort=high"), 1)
-            self.assertEqual(rendered.count("Agent/runtime:"), 2)
-            self.assertIn("OpenAI Codex CLI 1.2.3; API workspace", rendered)
-            self.assertIn(
+            self.assertNotIn("Agent/runtime:", rendered)
+            self.assertNotIn("OpenAI Codex CLI 1.2.3; API workspace", rendered)
+            self.assertNotIn(
                 "OpenAI Codex CLI 1.2.4; API workspace; review role", rendered
             )
             self.assertIsNone(re.search(rb"/ID\s*\[", first_bytes))

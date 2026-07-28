@@ -60,9 +60,11 @@
 
 % Generation provenance and the document revision timestamp are stored in each
 % document leaf and rendered through these shared commands.  The first model
-% contribution renders the timestamp in a canonical provenance block.  A
-% mechanically derived companion has no local contribution, so its timestamp
-% is rendered once by the universal final-page colophon instead.
+% contribution renders the timestamp in a compact provenance block.  Complete
+% contribution and runtime history remains in the tracked metadata file rather
+% than being reproduced as a reader-facing process ledger.  A mechanically
+% derived companion has no local contribution, so its timestamp is rendered
+% once by the universal final-page colophon instead.
 \newif\ifAIDocumentRevisionRendered
 \def\AIDocumentRevisionTimestampValue{}
 \makeatletter
@@ -103,9 +105,8 @@
   \exhyphenpenalty=10000
   \AIDisplayDocumentRevisionTimestamp
   \ifAI@rendermodel
-    \textbf{Model:} \texttt{#1}; \texttt{#2}\\
+    \textbf{Model:} \texttt{#1}; \texttt{#2}\par
   \fi
-  \textbf{Agent/runtime:} #3\par
   \end{minipage}\par
   \endgroup}
 \makeatother

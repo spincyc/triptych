@@ -196,12 +196,6 @@ The identified online witnesses were checked through 23 July 2026. No mutable ca
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
-**Agent/runtime:** OpenAI Codex agents (apologetic research, metaphysical, interreligious, theological, source-audit, and article-architecture roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (article drafting, endnote apparatus, research records, and editorial-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (final doctrinal precision, Eucharistic source-audit, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: The historical specificity belongs to the Church’s confession, not merely to later apologetic embellishment. The short phrases use the current official U.S.-English Nicene Creed published by the [United States Conference of Catholic Bishops](https://www.usccb.org/beliefs-and-teachings/what-we-believe). See also *Catechism of the Catholic Church* (CCC) 422–426, especially 423, which identifies Jesus of Nazareth as a Jew born of a daughter of Israel, locates his birth under Herod and Augustus, and his crucifixion under Pontius Pilate during the reign of Tiberius; [official English](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two.html).

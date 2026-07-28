@@ -880,8 +880,6 @@ These four are cited as dated evidence of what the claim says and when it circul
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Westcott and Hort, *The New Testament in the Original Greek: Introduction, Appendix* (Cambridge and London: Macmillan, 1882), Appendix, “Notes on Select Readings,” p. 71. The bracketed Greek is given here in transliteration; the sigla are the editors’ own. Their *Marcion* and *Eusebius* citations are reported, not independently checked.

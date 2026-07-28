@@ -10,7 +10,7 @@ reader. It owns no copied facts. Each plate emphasizes identity and purpose;
 its canonical audience note explains a useful distinction without enlarging
 the verified claims.
 
-The thirty-two-record alpha adds the corporal, purificator, chalice pall,
+The current forty-four-record alpha includes the corporal, purificator, chalice pall,
 chalice veil, burse, three altar cloths, credence table, Lavabo basin, and
 Lavabo towel to the appointments-and-books family, together with the incense
 boat, spoon, chalice, and paten. The two sacred-vessel pages reuse one

@@ -31,6 +31,35 @@
   {\fontsize{10.2}{13}\selectfont #2\par}}
 \newcommand{\SourceKey}[1]{%
   {\fontsize{7.2}{8.5}\selectfont\texttt{#1}}}
+\newcommand{\BeginCompactSpread}[1]{%
+  \clearpage
+  \begingroup
+  \section*{\LitDisplay{#1}}
+  \renewcommand{\ObjectHeading}[3]{%
+    \noindent{\fontsize{13}{14}\selectfont\LitDisplay{##1}\hfill
+      {\fontsize{7}{8}\selectfont\itshape ##2}\par}
+    \noindent{\fontsize{6.4}{7.2}\selectfont\texttt{##3}\par}
+    \vspace{1pt}\hrule height 0.45pt\vspace{3pt}}%
+  \renewcommand{\ObjectArt}[1]{%
+    \begin{center}
+      \includegraphics[width=0.90\linewidth,height=1.62in,keepaspectratio]{\ArtRoot/##1}
+    \end{center}}%
+  \renewcommand{\Field}[2]{%
+    \par\noindent{\fontsize{6.5}{7.4}\selectfont\bfseries\MakeUppercase{##1}}\enspace
+    {\fontsize{7.3}{8.4}\selectfont ##2\par}}%
+  \renewcommand{\Boundary}[1]{%
+    \par\smallskip\noindent\begingroup
+    \setlength{\fboxsep}{2pt}%
+    \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+      \fontsize{6.5}{7.4}\selectfont\bfseries ##1}}%
+    \endgroup}%
+  \renewcommand{\SourceKey}[1]{%
+    {\fontsize{5.8}{6.6}\selectfont\texttt{##1}}}}
+\newcommand{\SpreadDivider}{%
+  \par\Needspace{5.10in}\vspace{0.10in}\hrule height 1pt\vspace{0.10in}}
+\newcommand{\CompactDivider}{%
+  \par\Needspace{3.25in}\vspace{0.08in}\hrule height 1pt\vspace{0.08in}}
+\newcommand{\EndCompactSpread}{\par\endgroup\clearpage}
 \tikzset{
   pencil line/.style={
     draw=black!82,
@@ -156,7 +185,7 @@ recognition does not create an assignment to handle them. \quad
 \textbf{Holy Week recognition:} freestanding lectern.
 \end{studybox}
 
-\section*{\LitDisplay{Three confusions to prevent}}
+\section*{\LitDisplay{Five confusions to prevent}}
 \begin{enumerate}
   \item The \textbf{candle} is the wax light; the \textbf{candlestick} is its
     support. An assembled drawing contains both.
@@ -197,7 +226,7 @@ local direction. Exact source keys appear on the final page.\par}
 
 \ObjectHeading{Paired altar cruets}{altar service vessels}{obj-altar-cruet}
 \begin{minipage}[t]{0.58\linewidth}
-  \ObjectArt{shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets.png}
+  \ObjectArt{shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets-v2-alpha.png}
   \begin{center}
     {\fontsize{9}{11}\selectfont\LitDisplay{Wine}\qquad
       \LitDisplay{Water}\par}
@@ -306,8 +335,7 @@ local direction. Exact source keys appear on the final page.\par}
   elevation torch. The bell-shaped end is a snuffer, not a signal bell.}
   \Field{Source}{\SourceKey{src-candle-tool-patent-717186}}
 \end{minipage}
-\clearpage
-
+\BeginCompactSpread{Book, support, and route}
 \ObjectHeading{Altar Missal on its stand}{Missale Romanum \textperiodcentered\
   legile}{obj-altar-missal / obj-missal-stand}
 \begin{minipage}[t]{0.58\linewidth}
@@ -331,7 +359,7 @@ local direction. Exact source keys appear on the final page.\par}
   \Field{Sources}{\SourceKey{src-altar-missal-1962};
   \SourceKey{src-missal-stand-1962}}
 \end{minipage}
-\clearpage
+\SpreadDivider
 
 \ObjectHeading{Cushion or stand---never both}{cussinus \textperiodcentered\
   legile}{obj-missal-cushion / obj-missal-stand}
@@ -358,11 +386,12 @@ local direction. Exact source keys appear on the final page.\par}
   the separate floor-standing Holy Week lectern is taught on the next page.}
   \Field{Source}{\SourceKey{src-missal-cushion-1962}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
+\BeginCompactSpread{The other two book supports}
 
 \ObjectHeading{Freestanding lectern}{legile; legilia}{obj-lectern}
 \begin{minipage}[t]{0.57\linewidth}
-  \includegraphics[width=0.92\linewidth,height=5.15in,keepaspectratio]
+  \includegraphics[width=0.92\linewidth,height=1.90in,keepaspectratio]
     {\ArtRoot/shared/artwork/pencil/books/RPD-FIG-books-0003-iso-lectern.png}
   \par\smallskip\centering
   {\fontsize{8.5}{10}\selectfont\LitDisplay{Representative floor-standing
@@ -386,7 +415,7 @@ local direction. Exact source keys appear on the final page.\par}
   construction, material, height, pedestal, or silhouette is universal.}
   \Field{Source}{\SourceKey{src-holy-week-lecterns-1962}}
 \end{minipage}
-\clearpage
+\SpreadDivider
 
 \ObjectHeading{Book markers}{signaculum; signacula}{obj-book-marker}
 \begin{minipage}[t]{0.58\linewidth}
@@ -410,12 +439,13 @@ local direction. Exact source keys appear on the final page.\par}
   scheme.}
   \Field{Source}{\SourceKey{src-book-marker-1962}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
+\BeginCompactSpread{Sacred vessels: compare before serving}
 
 \ObjectHeading{Chalice and paten}{calix \textperiodcentered\ patena}
   {obj-chalice / obj-paten}
 \begin{minipage}[t]{0.57\linewidth}
-  \includegraphics[width=\linewidth,height=5.65in,keepaspectratio]
+  \includegraphics[width=\linewidth,height=1.92in,keepaspectratio]
     {\ArtRoot/shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png}
   \par\smallskip\centering{\scriptsize One catalog exemplar; not a universal
   morphology and not shown at common scale.\par}
@@ -440,11 +470,11 @@ local direction. Exact source keys appear on the final page.\par}
   \SourceKey{src-met-463080-metadata};
   \SourceKey{src-met-463080-image}}
 \end{minipage}
-\clearpage
+\SpreadDivider
 
 \ObjectHeading{Communion plate}{patina}{obj-communion-plate}
 \begin{minipage}[t]{0.58\linewidth}
-  \includegraphics[width=\linewidth,height=4.55in,keepaspectratio]
+  \includegraphics[width=\linewidth,height=1.85in,keepaspectratio]
     {\ArtRoot/shared/artwork/pencil/RPD-FIG-sacred-vessels-0004-communion-plate-paten-comparison.png}
   \par\smallskip\centering{\scriptsize Handled Communion plate at left;
   priest's paten at right. Not to common scale.\par}
@@ -472,7 +502,8 @@ local direction. Exact source keys appear on the final page.\par}
   \Field{Sources}{\SourceKey{src-missale-1962-communion-plate};
   \SourceKey{src-hirten-1952-communion-patens}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
+\BeginCompactSpread{White linens: recognize their different jobs}
 
 \ObjectHeading{Three white linens}{corporale \textperiodcentered\
 purificatorium \textperiodcentered\ palla}
@@ -519,12 +550,12 @@ purificatorium \textperiodcentered\ palla}
   pictures are not at common scale.}
   \Field{Source}{\SourceKey{src-missale-1962-prepared-chalice-linens}}
 \end{minipage}
-\clearpage
+\SpreadDivider
 
 \ObjectHeading{Three altar cloths}{tobaleae}{obj-altar-cloths}
 \begin{minipage}[t]{0.52\linewidth}
   \centering
-  \includegraphics[width=\linewidth,height=5.05in,keepaspectratio]
+  \includegraphics[width=\linewidth,height=1.72in,keepaspectratio]
     {\ArtRoot/shared/artwork/pencil/RPD-FIG-linens-0006-three-altar-cloths.png}
   \par\smallskip{\scriptsize Exploded relationship view. Extents, hanging
   edges, folds, spacing, and the thin support silhouette are illustrative;
@@ -545,7 +576,7 @@ purificatorium \textperiodcentered\ palla}
   edge drop, relative extent, or arrangement method is asserted.}
   \Field{Source}{\SourceKey{src-missale-1962-altar-cloths}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
 
 \ObjectHeading{Chalice veil and burse}{velum sericum \textperiodcentered\
 bursa}{obj-chalice-veil / obj-burse}
@@ -589,7 +620,7 @@ bursa}{obj-chalice-veil / obj-burse}
   folding method are outside these source-minimal figures.}
   \Field{Source}{\SourceKey{src-missale-1962-prepared-chalice-linens}}
 \end{minipage}
-\clearpage
+\BeginCompactSpread{Carried lights: footed and footless}
 
 \ObjectHeading{Epistle book and Gospel book}
   {liber Epistolarum \textperiodcentered\ liber Evangeliorum}
@@ -652,7 +683,11 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   combined-book practice.}
   \Field{Source}{\SourceKey{src-gospel-book-1962}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
+\BeginCompactSpread{Carried lights: footed and footless}
+\renewcommand{\Field}[2]{%
+  \par\noindent{\fontsize{6.1}{6.9}\selectfont\bfseries\MakeUppercase{#1}}\enspace
+  {\fontsize{6.7}{7.5}\selectfont #2\par}}
 
 \ObjectHeading{Acolyte candlestick}{candelabrum acolythi}
   {obj-acolyte-candlestick}
@@ -680,11 +715,14 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   \Field{Sources}{\SourceKey{src-acolyte-candlestick-missal};
   \SourceKey{src-acolyte-candlestick-fortescue}}
 \end{minipage}
-\clearpage
+\CompactDivider
 
 \ObjectHeading{Elevation torch}{intortitium; fax}{obj-elevation-torch}
 \begin{minipage}[t]{0.57\linewidth}
-  \ObjectArt{shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png}
+  \begin{center}
+    \includegraphics[width=0.88\linewidth,height=2.45in,keepaspectratio]
+      {\ArtRoot/shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png}
+  \end{center}
   \vspace{-8pt}
   \centering{\scriptsize Representative unlit footless form; it cannot stand
   alone. Material, dimensions, ornament, number, and arrangement vary.\par}
@@ -710,15 +748,35 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   \Field{Sources}{\SourceKey{src-elevation-torch-fortescue-form};
   \SourceKey{src-elevation-torch-fortescue-use}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
+\BeginCompactSpread{The processional cross}
 
 \ObjectHeading{Processional cross}{crux processionalis}
   {obj-processional-cross}
 \begin{minipage}[t]{0.57\linewidth}
-  \ObjectArt{shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross.png}
+  \begin{center}
+    \includegraphics[width=0.90\linewidth,height=3.20in,keepaspectratio]
+      {\ArtRoot/shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v4-alpha.png}
+  \end{center}
   \vspace{-8pt}
   \centering{\scriptsize Representative crucifix on a carrying staff; it
   requires an appointed stand and is not self-standing.\par}
+  \vspace{5pt}
+  \begin{minipage}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth,height=1.10in,keepaspectratio]
+      {\ArtRoot/shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0003-iso-acolyte-candlestick-v2.png}
+    \par{\fontsize{6.5}{7.5}\selectfont\LitDisplay{Footed acolyte light}\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth,height=1.10in,keepaspectratio]
+      {\ArtRoot/shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png}
+    \par{\fontsize{6.5}{7.5}\selectfont\LitDisplay{Footless elevation torch}\par}
+  \end{minipage}
+  \par\smallskip{\fontsize{6.2}{7.2}\selectfont Recognition strip: these
+  distinct carried objects share a route only when the selected ceremony or
+  local custom appoints them; not to common scale.\par}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.38\linewidth}
   \Field{Recognize it}{A crucifix fixed to a long carrying staff. The staff
@@ -738,11 +796,12 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   \Field{Sources}{\SourceKey{src-processional-cross-fortescue-form};
   \SourceKey{src-processional-cross-fortescue-use}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
+\BeginCompactSpread{Incense: burner and supply set}
 
 \ObjectHeading{Thurible}{thuribulum}{obj-thurible}
 \begin{minipage}[t]{0.57\linewidth}
-  \ObjectArt{shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible.png}
+  \ObjectArt{shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible-v2-alpha.png}
   \vspace{-8pt}
   \centering{\scriptsize Neutral catalog-bounded teaching view; cold and empty.
   Ornament and material vary, and the figure is not a universal silhouette.\par}
@@ -768,12 +827,12 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   \SourceKey{src-benziger-1927-thuribles};
   \SourceKey{src-met-464340-thurible-variation}}
 \end{minipage}
-\clearpage
+\CompactDivider
 
 \ObjectHeading{Incense boat and spoon}{navicula \textperiodcentered\ cochlear}
   {obj-incense-boat-and-spoon}
 \begin{minipage}[t]{0.57\linewidth}
-  \ObjectArt{shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon.png}
+  \ObjectArt{shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon-v2-alpha.png}
   \vspace{-8pt}
   \centering{\scriptsize One source-bounded teaching view; decorative
   morphology is illustrative and the objects are not shown at a declared
@@ -801,7 +860,8 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   \Field{Sources}{\SourceKey{src-missale-incense-boat-spoon};
   \SourceKey{src-met-236950-boat-spoon}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
+\BeginCompactSpread{Sanctuary stations}
 
 \ObjectHeading{Credence table}{abacus; credentia}{obj-credence-table}
 \begin{minipage}[t]{0.58\linewidth}
@@ -828,7 +888,7 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   \Field{Source}{\SourceKey{src-credence-fortescue-1943};
     \SourceKey{src-credence-ce}; \SourceKey{src-credence-missal-use}}
 \end{minipage}
-\clearpage
+\SpreadDivider
 
 \ObjectHeading{Sedilia}{sedile; sedilia}{obj-sedilia}
 \begin{minipage}[t]{0.58\linewidth}
@@ -856,7 +916,8 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   \Field{Source}{\SourceKey{src-sedilia-fortescue-1943};
     \SourceKey{src-sedilia-history}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
+\BeginCompactSpread{Sacristy departure signs}
 
 \ObjectHeading{Sacristy cross or suitable image}{crux vel imago}
   {obj-sacristy-cross}
@@ -882,7 +943,7 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
     \SourceKey{src-sacristy-cross-fortescue-1943};
     \SourceKey{src-sacristy-cross-ce}}
 \end{minipage}
-\clearpage
+\SpreadDivider
 
 \ObjectHeading{Local sacristy signal bell}{campanula}
   {obj-sacristy-bell}
@@ -908,7 +969,7 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
   \Field{Sources}{\SourceKey{src-sacristy-bell-fortescue-1943};
     \SourceKey{src-sacristy-bell-ce}}
 \end{minipage}
-\clearpage
+\EndCompactSpread
 
 \ObjectHeading{Lavabo basin and manuterge}{pelvicula \textperiodcentered\
   manutergium}{obj-lavabo-basin \textperiodcentered\ obj-lavabo-towel}
@@ -953,6 +1014,12 @@ GENERIC BOOK SYMBOLS: IDENTITY COMES FROM MINISTER AND USE, NOT COVER ORNAMENT\p
 \clearpage
 
 \input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated-record-renderer}
+\let\AltarServerDensePlateStart\RSDDensePlateStart
+\renewcommand{\RSDDensePlateStart}[2]{%
+  \AltarServerDensePlateStart{Vesture and insignia}{#2}}
+\let\AltarServerRelationshipPlateStart\RSDRelationshipThreePlateStart
+\renewcommand{\RSDRelationshipThreePlateStart}[2]{%
+  \AltarServerRelationshipPlateStart{Vesture and insignia}{#2}}
 \RSDRenderGeneratedEdition{../../build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated/ed-altar-server-vestments}
 \clearpage
 

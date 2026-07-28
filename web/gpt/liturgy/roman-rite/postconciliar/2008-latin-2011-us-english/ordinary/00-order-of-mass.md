@@ -2127,16 +2127,4 @@ The edition boundary is the final historical discipline. A local musical custom,
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
-**Agent/runtime:** OpenAI Codex agents (liturgical, historical, biblical, patristic, theological, source-audit, drafting, editorial, and layout-review roles); Codex CLI 0.144.4; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (reader-order audit, structural reorganization, and research-record update roles); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (corpus-wide editorial audit, source and research-record revision, build, and production review); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (source-family normalization, patristic artifact review, claim calibration, build, and production-review roles); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agent (Sacrosanctum Concilium source-trace and reference-calibration role); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (Dei Verbum source-trace normalization, reference correction, build, and production-review roles); API workspace; unexposed: client and server revisions
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -787,16 +787,8 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (rebuild under the published-text-and-English policy: English sourced from the registered Douay-Rheims and Cummiskey corpora, appointed Latin withdrawn from the page except where an argument turns on it, collation and attribution findings consolidated, typesetting; audit of every English quotation against the registered Douay-Rheims and Cummiskey records, psalm-numbering and American-edition corrections, cross-leaf build-dependency registration, and page-by-page review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Model:** `gpt-5.6-sol`; `effort=ultra`
-
-**Agent/runtime:** OpenAI Codex agent (component architecture, source-grounded synthesis, full and synthesis edition restructuring, and internal validation of the Claude-authored work); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (canonical-identity migration, release and audit reconciliation, deterministic rebuild, web conversion, and page-by-page production review of the Claude-authored work); Codex CLI 0.144.6; API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -471,8 +471,6 @@ Online witnesses were checked on 2026-07-24 (first edition) and on 2026-07-25 (t
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Both illustrations belong to the tradition before they belong to this essay, and the reader should know it in advance rather than discover it later. The builder who causes the house’s *becoming* but not its *being*, and the air lit by the sun “as long as the air remains illuminated,” are Aquinas’s own examples in the two articles worked in section 5 below: *Summa theologiae* I, q. 104, a. 1, corpus, and I, q. 8, a. 1, corpus; both checked 2026-07-25, English at New Advent, Latin at Corpus Thomisticum. The song and the singer, the spring, and the development of all three are this essay’s. The images are introduced here without their conclusions; the arguments that earn them are given in their places.

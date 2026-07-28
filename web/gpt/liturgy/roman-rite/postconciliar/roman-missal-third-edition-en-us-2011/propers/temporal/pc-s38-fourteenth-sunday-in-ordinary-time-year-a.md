@@ -272,20 +272,4 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
-**Agent/runtime:** OpenAI Codex agent (non-obvious cultural, humorous, ironic, idiomatic, literary, visual, and institutional scriptural-afterlife research, source verification, rights audit, and drafting); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agent (notable-and-quotable primary-source verification, wording, rights, and locus audit, and compact reader-facing insertion); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (structural audit, document-revision, and production roles); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (reader-order structural revision: moved and retitled the unchanged scriptural chronology and location sheet and set its page boundaries); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (one-page scriptural dossier compaction and source-level fit-audit role); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agent (passage-level reception research, commentary expansion, and source audit); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (interpretive proposals, precedent searches, novelty audit, disclosure repair, compression, and page-fit review); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (corpus-wide editorial audit, source and research-record revision, build, and production review); API workspace; unexposed: client version, interface, and server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

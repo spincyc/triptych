@@ -170,8 +170,6 @@ All online witnesses were checked on 2026-07-24; no mutable law or discipline is
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Part I, *Ontological Vertigo: On Being Held in Being*, establishes the claims this essay inherits and does not re-argue: existence in creatures is received and presently conserved (Thomas Aquinas, *Summa theologiae* I, q. 104, a. 1); the dependence is asymmetric, God having no real relation to creatures (I, q. 13, a. 7); and the asymmetry, rightly read, is the signature of gift (I, q. 20, a. 2). The coined terms *ontological vertigo*, *recoil*, and *consent* are defined there and used here in the same senses. English quotations from the *Summa* throughout this essay are from the public-domain translation of the Fathers of the English Dominican Province; Latin is checked in the Corpus Thomisticum web corpus. Both witnesses checked 2026-07-24.

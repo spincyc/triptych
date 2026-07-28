@@ -103,9 +103,9 @@ class WebEditionConversionTests(unittest.TestCase):
             metadata="\n".join([CONTRIBUTION, REPEAT_CONTRIBUTION, OTHER_CONTRIBUTION]),
         )
         self.assertEqual(markdown.count("**Model:**"), 2)
-        self.assertEqual(markdown.count("**Agent/runtime:**"), 3)
+        self.assertNotIn("**Agent/runtime:**", markdown)
         self.assertIn(f"**Last revised (UTC):** {TIMESTAMP}", markdown)
-        self.assertIn("Test CLI 1.0; review role", markdown)
+        self.assertNotIn("Test CLI 1.0; review role", markdown)
 
     def test_rights_colophon_is_appended_when_the_leaf_omits_it(self) -> None:
         markdown = self.convert("Prose.")

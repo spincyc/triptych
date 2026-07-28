@@ -225,8 +225,6 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Paul VI, apostolic constitution *Missale Romanum* (3 April 1969), opening paragraph, official English text on the Holy See portal, checked 2026-07-25; the promulgated Latin is authoritative and was checked the same day as reprinted in the registered reproduction of the 2002 third typical edition (see References). Here and throughout, “the 1962 Missal” means the *Missale Romanum* in the typical edition promulgated by John XXIII in 1962, and “the Missal of Paul VI” means the postconciliar *Missale Romanum* in its typical editions of 1970, 1975, and 2002 (with the 2008 emended reprint of the third edition); the edition identifications are documented in section 4.

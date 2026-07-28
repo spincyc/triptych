@@ -875,13 +875,7 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
-
-**Agent/runtime:** Anthropic Claude Code agent (four-front expansion: defensive framing, metaphysical, historical, pluralist, and cosmic fronts, project-synthesis blocks, scripture re-verification, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
-**Agent/runtime:** Anthropic Claude Code subagent (historical-front source retrieval and verification: Troeltsch, Kierkegaard, Strauss); Claude Code CLI 2.1.219; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

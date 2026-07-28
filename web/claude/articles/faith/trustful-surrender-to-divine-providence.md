@@ -487,8 +487,6 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: *Catechism of the Catholic Church* 314: “We firmly believe that God is master of the world and of its history. But the ways of his providence are often unknown to us. Only at the end, when our partial knowledge ceases, when we see God ‘face to face,’ will we fully know the ways by which—even through the dramas of evil and sin—God has guided his creation to that definitive sabbath rest for which he created heaven and earth.” Official English text checked 2026-07-25 at the Holy See’s web presentation of the Catechism (`vatican.va`, *Paragraph 4. The Creator*, section V); paragraph numbering follows the typical edition.

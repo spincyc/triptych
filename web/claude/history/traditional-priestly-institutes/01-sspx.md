@@ -755,8 +755,6 @@ All sources were read on 2026-07-25. *Acta Apostolicae Sedis* volumes and fascic
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: *Acta Apostolicae Sedis* 39 (1947) 639, Sacra Congregatio de Propaganda Fide, *Provisio Ecclesiarum*: to the titular see of Anthedon “R. P. Marcellum Lefebvre, Congregationis S. Spiritus sodalem, quem constituit Vicarium Apostolicum de Dakar,” under the date 12 June 1947. Read in the Holy See’s scanned *Acta* fascicle for 1947 (see the References for the archive URL); all *Acta* volumes cited in this account were read in the Vatican web archive on 2026-07-25.

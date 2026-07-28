@@ -3,6 +3,45 @@
 Status: **bounded public alphas**
 Audit date: 2026-07-28
 
+## Six-edition dense pictorial tranche — final reviewed builds — 2026-07-28
+
+The settled six-edition tranche replaces repeated card-like pagination with
+dense, audience-specific, heterodox plates. Hero images, asymmetric story
+plates, balanced comparison grids, object families, and deliberately varied
+partial plates establish a page rhythm suited to children browsing visually
+as well as readers consulting by name. Related objects are shown together
+where the formation itself teaches the relationship; objects that remain
+clearly intelligible alone retain separate canonical identities and labels.
+The altar-server edition therefore contains 38 teaching entries covering 39
+canonical objects, while its equivalent generated selection contains 45
+records. The source-uncontrolled sacristy lavatory remains excluded from every
+pictorial edition.
+
+The artwork pass corrected the boundaries of 21 existing alpha-sensitive
+figures and introduced 17 canonical soft-alpha successors so pencil marks fade
+into the warm page rather than sitting in visible rectangles. The
+Comprehensive edition also opens with a source-bounded sanctuary-composition
+diagram: a central crucifix, neutral candle placeholders, and blank card
+positions, without unsupported architecture or furnishings.
+
+Every page of all six settled PDFs was rastered through `scripts/pdf-review`
+and visually inspected. The final review covered image boundaries, pair and
+family semantics, plate hierarchy, labels, stable IDs, evidence limits,
+terminal matter, clipping, overlap, and spill pages. Settled logs have no
+fatal error, undefined reference, overfull box, or rerun warning; fonts are
+embedded and text is extractable. These identities name the final reviewed
+builds and installed publication snapshots. Exact build-to-installed byte
+comparison passed for all six editions.
+
+| Edition | Records or teaching entries | Pages | Reviewed bytes | Reviewed SHA-256 |
+| --- | ---: | ---: | ---: | --- |
+| Comprehensive | 46 records | 15 | 15,030,651 | `1570e98fdcfda85553da0bdfe83028c42a7a98ad674b9ae12429a37cea4b9cfd` |
+| Altar server | 38 entries / 39 canonical objects | 27 | 16,246,201 | `1ac4cf30aaefd41c1c650184fd889ec146465f9d794ba1d9b4ddb014331f86ad` |
+| Sacristan | 46 records | 12 | 14,769,766 | `4b74d55e59e68ace7454f08b6cabc31dc0918a912f3dfbe706d671bc8712eaa9` |
+| MC and trainer | 46 records | 11 | 14,755,857 | `91a88460bb45db235db395bc8b2a3d68630254658bd690a25e53ac08e9fd7b07` |
+| General reader | 44 records | 11 | 14,397,269 | `be51205e8b1b3229a37130043bf9b24092b00e04ba76a33ad51afeaf0a5d68b2` |
+| Pontifical ceremonies | 43 records | 12 | 13,431,269 | `d0af7bcb578a531c38ee9dfdec812affc9ed2922d93f0c1319a6600fe1e0b73a` |
+
 ## Dense comparison-plate architecture checkpoint — 2026-07-28
 
 The five generated editions now render admitted canonical records through
@@ -130,12 +169,12 @@ installed bytes are identical:
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Thirty-nine alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Thirty-nine alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Thirty-nine alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Thirty-seven alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Thirty-six alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Forty-six alpha records | Built, inspected, and installed byte-exactly | No | Alpha |
+| Altar server | Yes | Thirty-eight teaching entries covering thirty-nine canonical objects | Built, inspected, and installed byte-exactly | No | Alpha |
+| Sacristan | Yes | Forty-six alpha records | Built, inspected, and installed byte-exactly | No | Alpha |
+| MC/trainer | Yes | Forty-six alpha records | Built, inspected, and installed byte-exactly | No | Alpha |
+| General reader | Yes | Forty-four alpha records | Built, inspected, and installed byte-exactly | No | Alpha |
+| Pontifical ceremonies | Yes | Forty-three alpha records | Built, inspected, and installed byte-exactly | No | Alpha |
 
 The processional-cross promotion admits the existing source-audited
 institutional/local record to the five generated editions while preserving
@@ -1234,3 +1273,19 @@ installed bytes are identical:
 | MC and trainer | 13 | 23,488,486 | `082e5fba20f82eda0dd87c4772b8e51940e313037051508ece853479a7a12031` |
 | General reader | 12 | 22,713,992 | `ca8741c03bda7e7f2ac6e84f0f49e6d22ececd7ad2b73958d105229079fe3954` |
 | Pontifical ceremonies | 11 | 21,713,884 | `20b2e9867aab93506b30a156e36c932cfbf9b4cdab2221781596d4fba7a9b16d` |
+
+## Sacristan exact-density layout preparation checkpoint — 2026-07-28
+
+The Sacristan edition's nineteen-object pictorial sequence is composed as an
+exact 6/6/4/3 cover. The two dense six-object plates establish the preparation
+inventory, the balanced four-object plate groups the processional cross,
+elevation torch, candle lighter and extinguisher, and local signal bell, and
+the final three-object plate groups the Lavabo basin, paired altar cruets, and
+Communion plate. This varied 6/6/4/3 rhythm increases pictorial density without
+turning the edition into repeated copy-and-paste cards.
+
+The source and generation-metadata preparation is complete. Settled PDF build,
+every-page raster inspection, log review, build-to-installed byte comparison,
+and the exact installed page count, byte count, and SHA-256 identity remain
+pending the coordinating production pass; no new artifact identity is claimed
+at this checkpoint.

@@ -19,7 +19,7 @@ Apply these rules in order:
 - `web/` contains tracked reader-facing web editions installed from reviewed conversions of the same sources, governed by `guidance/web-editions.md`.
 - `build/` contains only ignored, reproducible intermediates, logs, caches, review rasters, and generated release artifacts.
 
-Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Neither `doc/` nor `web/` is a build directory. Cleaning may remove `build/` but never `src/`, `doc/`, or `web/`.
+Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Reader-facing `doc/` and `web/` outputs may summarize tracked generation and production metadata; they must not reproduce internal agent/runtime or process ledgers merely because those records remain auditable under `src/`. Neither `doc/` nor `web/` is a build directory. Cleaning may remove `build/` but never `src/`, `doc/`, or `web/`.
 
 External source identities and lawful reusable artifacts live under
 `src/sources/`, not under a generated provider branch. Provider publications

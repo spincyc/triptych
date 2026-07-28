@@ -302,20 +302,6 @@ The core online witnesses were checked through 20 July 2026; the added Augustine
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
-**Agent/runtime:** OpenAI Codex agents (philosophical, patristic, Thomistic, mystical, theological, literary, drafting, typesetting, and visual QA roles); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (series-wide grammatical, semantic, theological-weight, literary, source-consistency, drafting, typesetting, and production-review roles); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide literary audit, question-led redrafting, theological and canonical source-consistency review, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide dramatic-architecture revision, earned-statement redrafting, literary and source-consistency review, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide equal-altitude tonal revision, epistemic-order and argumentative-seam editing, philosophical, theological, canonical, literary, source-consistency, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (endnote architecture, source apparatus, research records, and static-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (series architecture, present-conservation conclusion, companion integration, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: For the sequence of sources, see Plato, *Republic* VI, 508e–509b and *Timaeus* 27d–29b; Aristotle, *Metaphysics* XII.6–7, 1071b3–1072b30, with *Physics* VIII.5–6; and Aquinas, *Summa theologiae* (ST) I, q. 2, a. 3 and q. 46, a. 2, with *Summa contra Gentiles* I.13. Jowett and Ross supplied the public-domain working English. The ancient texts are antecedents, not accounts of Christian creation from nothing; the First Way is not made to carry Aquinas’s later conclusions by itself.

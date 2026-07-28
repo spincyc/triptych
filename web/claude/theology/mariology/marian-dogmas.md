@@ -661,8 +661,6 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: *Dei Filius*, ch. 3 (DS 3011), checked in the English presentation of the First Vatican Council’s decrees at <https://www.papalencyclicals.net/councils/ecum20.htm>, 2026-07-25. All web loci cited in these notes were read on 2026-07-25 unless another date is stated; full bibliographic detail and witness identifications are in the References. Denzinger numbers are cited as DS in the revised numbering; where a claim depends on an online Denzinger witness, the References identify it.

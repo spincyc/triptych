@@ -401,26 +401,6 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
-**Agent/runtime:** OpenAI Codex agent (primary source collation, document drafting, occurrence and rights control, repository revision, build, and production-review roles); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (1962 schema audit, patristic and medieval reception research, cultural-afterlife verification, proposal audit, and research-scope drafting); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (internal profile-conformance, source-role, occurrence, reference, rights, and page-architecture QA roles); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (final deterministic build and production review); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (Presbyterorum ordinis witness verification, source-reuse audit, exact textual correction, deterministic build, and production review); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (component architecture, source-grounded synthesis, full and synthesis edition restructuring, and internal validation); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (canonical-identity migration, release and audit reconciliation, deterministic rebuild, web conversion, and page-by-page production review); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
-
-**Agent/runtime:** OpenAI Codex agents (research, revision, and QA); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (expanded Greek and Latin patristic, liturgical, and official-source research; thematic revision; scope compression; build and production review); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (corpus-wide editorial and Lumen gentium source audits, build, and review); API workspace; unexposed: client and server revisions
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

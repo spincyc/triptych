@@ -242,28 +242,6 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
-**Agent/runtime:** OpenAI Codex agent (bounded pagination repair, deterministic rebuild, exact component validation, web-currentness check, and full-page production review); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (complete Year B rewrite, rights-safe appointed-text sheet, direct patristic reception synthesis, component records, and compile verification); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (primary document drafting, source and occurrence control, rights-safe synthesis, repository revision, build, and production-review roles); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (postconciliar schema audit, Week XVIII owner, instance and composition records, reception synthesis, and research-scope drafting); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (reception, afterlife, proposal, rights, release, and catalog audit roles); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (internal profile-conformance, source-role, branch, reference, rights, and page-architecture QA roles); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (final render-affecting terminal-layout correction, timestamp refresh, deterministic build, and production review); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
-
-**Agent/runtime:** OpenAI Codex agents (1962-structure comparison, source and record audit, primary and official research expansion, reader-facing structural revision, pagination repair, production review, and release-state reconciliation); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (corpus-wide editorial audit, source and research-record revision, build, and production review); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agent (managed rebase conflict analysis, source-aware reconciliation, deterministic rebuild, and production review); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agent (component architecture, rights-limited appointed-text sheet, cross-proper synthesis, provider-parity migration, build, and publication review); API workspace; unexposed: client version, interface, and server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

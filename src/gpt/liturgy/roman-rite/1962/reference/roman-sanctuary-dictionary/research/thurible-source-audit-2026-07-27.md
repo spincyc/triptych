@@ -132,3 +132,28 @@ Normalized publication asset
 The normalized asset is project-created content distributed under CC BY 4.0
 subject to the repository license boundary. It contains no third-party image
 pixels, text, smoke, flame, charcoal, incense, person, or operational action.
+
+## Boundary-safe alpha successor
+
+For enlarged and heterodox page placements, the normalized drawing was
+converted non-destructively to an 8-bit grayscale-plus-alpha PNG. No
+generative redrawing, crop, geometric transformation, or alteration of the
+depicted thurible was made. A soft opacity matte was derived from the
+grayscale field and then refined deterministically: opacity at or below
+20/255 becomes zero, opacity from 20/255 to 40/255 is multiplied by a cubic
+smoothstep, and opacity at or above 40/255 remains unchanged.
+
+The successor is 900 × 1350 pixels and 587,956 bytes, with SHA-256
+`4b9fc048431f172c0dc9a3dc62e944c33404a21dae2ae0f6ab8de7eb6a239036`.
+It is retained as
+`RPD-FIG-incense-0001-closed-thurible-v2-alpha.png`. All four corners are
+fully transparent. A zero-error color-channel comparison confirms that
+the predecessor.s drawing channel is unchanged; only opacity was refined. Review composites against
+white and warm page stock show no rectangular boundary or color fringe; the
+three support chains, separate central lid chain, upper disc and ring,
+pierced lid, bowl, and foot remain complete and legible.
+
+The grayscale predecessor remains the provenance-bearing source. The alpha
+successor inherits its project-created rights disposition, evidence boundary,
+representative-morphology ceiling, and safety constraints. The matte
+derivation adds no evidence and changes no claim.

@@ -920,10 +920,6 @@ Adrian Fortescue, **The Mass: A Study of the Roman Liturgy** (London and New Yor
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (source acquisition and page-image verification, research, drafting of the exposition through the Canon, typesetting); Claude Code CLI 2.1.219; unexposed: server revision
-
-**Agent/runtime:** Anthropic Claude Code agent (audit of every rubric and numbering claim against the 1962 facsimile page images, correction of the saint counts and the Infra Actionem numbering, Communion rite, conclusion, synthesis and terminal apparatus, source-record registration, research records, build and page-by-page review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Adrian Fortescue, *The Mass: A Study of the Roman Liturgy* (London and New York: Longmans, Green and Co., 1922), p. 227 and its first footnote, read at the page image.

@@ -1181,6 +1181,4 @@ These sources assist historical interpretation; they do not establish present ca
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
-**Agent/runtime:** OpenAI Codex agents (substantive revision and synthesis; interdisciplinary field survey; Greek, Roman, scriptural, patristic, canonistic, scholastic, modern, and institutional historical research; current Latin and Eastern canon-law research; analysis of concurrent obligations, titles, effects, and conflicts; source audit; structural and language review; and layout review); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

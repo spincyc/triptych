@@ -338,22 +338,6 @@ The online witnesses and claim-to-source record were checked through 23 July 202
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
-**Agent/runtime:** OpenAI Codex agents (patristic, Thomistic, mystical-theological, source-audit, drafting, and literary-review roles); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (series-wide grammatical, semantic, theological-weight, literary, source-consistency, drafting, typesetting, and production-review roles); Codex CLI 0.144.6; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide literary audit, question-led redrafting, theological and canonical source-consistency review, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide dramatic-architecture revision, earned-statement redrafting, literary and source-consistency review, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (trilogy-wide equal-altitude tonal revision, epistemic-order and argumentative-seam editing, philosophical, theological, canonical, literary, source-consistency, typesetting, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (apologetic-rhetoric research, doctrinal and primary-source audit, moral- and spiritual-theological redrafting, endnote and metadata revision, and textual-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (suffering-merit and ascetical-boundary apparatus reconciliation and static-review role); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (prayer, Eucharistic, suffering, merit, ascetical-boundary, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Deut 6:4–5; Matt 22:37–40; ST II–II, q. 44, aa. 1–5. Short working-English scriptural phrases are governed by these exact loci.

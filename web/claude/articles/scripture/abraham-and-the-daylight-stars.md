@@ -899,8 +899,6 @@ Several of the Jewish sources above were read through Sefaria’s digital librar
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Gen 15:5, Douay–Rheims (Challoner), from the registered public-domain witness. Every English scriptural quotation in this study is taken from that witness and is cited by the Vulgate book, chapter, and verse numbering it uses. The verse is not among those where the vendored text and the 1899 American edition diverge, so a reader checking a printed Douay–Rheims will find the same wording.

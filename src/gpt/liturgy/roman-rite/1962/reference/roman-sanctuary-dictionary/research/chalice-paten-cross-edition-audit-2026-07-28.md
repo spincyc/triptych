@@ -4,14 +4,12 @@ Audit date: 2026-07-28
 
 ## Result
 
-The existing `RPD-FIG-sacred-vessels-0003` comparison plate is eligible for
-the five generated audience editions in addition to its established bespoke
-altar-server spread. The canonical chalice and paten records retain this
-controlled plate as the one prepared-chalice formation. The generator shows
-it once with the paten entry and suppresses its duplicate placement on the
-chalice entry. Versioned, source-controlled isolated chalice and paten
-drawings now lead the respective entries; the weaker legacy isolated assets
-remain retained with their historical audit states.
+The existing `RPD-FIG-sacred-vessels-0003` comparison plate is retained only
+for its established, explicitly labelled bespoke altar-server spread. The
+five generated audience editions select the versioned, source-controlled
+isolated chalice and paten drawings for their respective entries, avoiding a
+second paten thumbnail. The weaker legacy isolated assets remain retained
+with their historical audit states.
 
 The promotion does not claim a universal chalice or paten morphology. The
 Metropolitan Museum of Art record and Open Access image control one paired
@@ -35,8 +33,8 @@ the celebrant's *patena* and the under-chin *patina*.
   mouth diameter. Neither the exemplar's material, ornament, proportions, nor
   silhouette is prescribed or generalized.
 - The altar-server leaf keeps its existing combined chalice-and-paten spread
-  and explicit `MUST NOT HANDLE` boundaries. The generator continues to own
-  only the other five editions.
+  and explicit `MUST NOT HANDLE` boundaries. The comparison artwork's
+  canonical consumer declaration names only that bespoke edition.
 
 ## Alpha concerns
 

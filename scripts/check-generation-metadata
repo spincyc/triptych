@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-from collections import Counter
 import datetime as dt
 import os
 import re
@@ -27,6 +26,11 @@ INHERITANCE_RE = re.compile(
 )
 LEGACY_LABEL_RE = re.compile(
     r"\\textbf\{(?:Generated|Last revised(?: \(UTC\))?|Model|Agent/runtime):\}",
+    re.IGNORECASE,
+)
+RENDERED_LEDGER_LABEL_RE = re.compile(
+    r"\b(?:Agent/runtime|Client/runtime|Agent instance|Contribution count|"
+    r"Process (?:history|ledger))\s*:",
     re.IGNORECASE,
 )
 GENERIC_MODEL_RE = re.compile(
@@ -242,26 +246,38 @@ def validate_rendered_record(path: Path, record: Record) -> None:
             f"rendered PDF must contain exactly one tracked revision field "
             f"{revision_field!r}"
         )
+    forbidden_label = RENDERED_LEDGER_LABEL_RE.search(rendered)
+    if forbidden_label:
+        raise ValueError(
+            "rendered PDF contains an internal production-ledger field "
+            f"{forbidden_label.group(0)!r}"
+        )
     if record.inheritance:
-        if "Agent/runtime:" in rendered or "AI generation metadata" in rendered:
+        if re.search(r"\bModel\s*:", rendered, re.IGNORECASE):
             raise ValueError("inherited provenance was duplicated visibly in the companion")
         return
 
     expected = [revision_field]
-    previous_identity: tuple[str, str] | None = None
+    seen_identities: set[tuple[str, str]] = set()
     for contribution in record.contributions:
         identity = (contribution.model, contribution.qualifiers)
-        if identity != previous_identity:
+        if identity not in seen_identities:
             expected.append(f"Model: {contribution.model}; {contribution.qualifiers}")
-            previous_identity = identity
-        expected.append(f"Agent/runtime: {contribution.runtime}")
+            seen_identities.add(identity)
+        normalized_runtime = normalize(contribution.runtime)
+        if normalized_runtime and normalized_runtime in rendered:
+            raise ValueError(
+                "rendered PDF contains a tracked agent/runtime record "
+                f"{normalized_runtime!r}"
+            )
     normalized_expected = [normalize(value) for value in expected]
-    for value, count in Counter(normalized_expected).items():
-        if rendered.count(value) != count:
-            action = "omits" if rendered.count(value) < count else "duplicates"
+    for value in normalized_expected:
+        count = rendered.count(value)
+        if count != 1:
+            action = "omits" if count < 1 else "duplicates"
             raise ValueError(
                 f"rendered PDF {action} metadata field {value!r}: "
-                f"expected {count}, found {rendered.count(value)}"
+                f"expected 1, found {count}"
             )
 
     cursor = 0

@@ -600,8 +600,6 @@ Nothing here is pastoral counsel. A reader troubled about his own state or anoth
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Thomas Aquinas, *Summa theologiae* III, q. 59, a. 5, objection 1, in the translation of the Fathers of the English Dominican Province; read at the New Advent presentation of that translation, 25 July 2026, and registered as an exact artifact of that dated web state. The Latin of the same objection, read the same day at the Corpus Thomisticum presentation of the Leonine text, runs: “Post ultimam enim retributionem praemiorum et poenarum, frustra adhiberetur iudicium.” The objection continues by citing Luke 23:43 and Luke 16:22, which are examined at their own places below. Both witnesses are dated electronic states of texts whose printed editions were not collated for this article, except where a Leonine page image is separately identified.

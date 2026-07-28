@@ -554,8 +554,6 @@ All web sources were fetched over HTTPS, hashed (SHA-256), and read on 2026-07-2
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: CIC c. 11, quoted from the Holy See’s Latin web delivery of Book I, fetched, hashed, and read 2026-07-25 (see References). English working renderings of the canons throughout this article follow the Vatican web English delivery where quoted as such; where no quotation marks appear the rendering is the article’s own working gloss, and the Latin governs. The Vatican English delivery of c. 11 reads “possess the *efficient* use of reason” against the Latin *sufficienti rationis usu*; the discrepancy is an apparent defect of the translation delivery, recorded here and in the research records rather than silently corrected.

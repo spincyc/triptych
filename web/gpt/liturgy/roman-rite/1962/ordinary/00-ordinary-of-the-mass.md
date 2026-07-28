@@ -1248,16 +1248,6 @@ Second, the short *Sancte Michael Archangele* attached to the Leonine sequence m
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
-**Agent/runtime:** OpenAI Codex agents (liturgical, historical, biblical-context, patristic, Thomistic, theological, juridical-source, prayer-provenance, source-audit, drafting, and layout-review roles); Codex CLI 0.144.1; API workspace; unexposed: server revision
-
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
-
-**Agent/runtime:** OpenAI Codex agents (interpretive and heading audit, source audit, drafting, editorial, release-control, and layout review roles); Codex CLI 0.144.4; unexposed: interface and server revision
-
-**Agent/runtime:** OpenAI Codex agent (reader-order audit, structural reorganization, and research-record update roles); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (corpus-wide editorial audit, source and research-record revision, build, and production review); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agents (source-family normalization, patristic artifact review, claim calibration, build, and production-review roles; Sacrosanctum Concilium trace and reference correction); API workspace; unexposed: client version, interface, and server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

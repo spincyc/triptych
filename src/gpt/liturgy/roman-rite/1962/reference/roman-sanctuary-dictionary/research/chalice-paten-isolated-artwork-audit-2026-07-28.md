@@ -20,9 +20,10 @@ another object, a host, cloth, person, hand, semantic mark, border, floor,
 cast shadow, or rectangular background.
 
 The existing catalog-exemplar comparison remains the one combined
-prepared-chalice formation. The renderer suppresses that shared comparison
-on the chalice entry and shows it once with the paten entry; it is not
-duplicated across both generated entries.
+prepared-chalice formation in the explicitly labelled bespoke altar-server
+spread. The five generated editions select only the isolated chalice and
+isolated paten drawings, so the paten entry does not repeat a second paten
+thumbnail.
 
 ## Source and generation control
 

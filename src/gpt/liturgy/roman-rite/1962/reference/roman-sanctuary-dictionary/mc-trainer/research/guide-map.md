@@ -45,7 +45,7 @@ the separately admitted priest's paten; the bespoke altar-server lesson keeps
 the explicit comparison. The chalice and paten reuse one controlled
 catalog exemplar to teach identity and the prepared relationship, not a
 universal morphology, handoff, transfer, touching, or recovery procedure. The
-thirty-four-record canonical alpha gate requires
+current forty-six-record canonical alpha gate requires
 no external review. The footless elevation-torch page teaches the
 Elevation-service timing and distinction from
 the acolytes' footed candlesticks without inventing a route, grip, height,

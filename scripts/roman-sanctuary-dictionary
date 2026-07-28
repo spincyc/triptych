@@ -44,6 +44,287 @@ TEX_NATIVE_ARTWORK_IDS = {
     "obj-gospel-book",
 }
 SECTION_PLATE_PLANS = {
+    ("ed-comprehensive", "church-and-sanctuary"): (
+        ("heterodox-five-v1", (
+            "obj-credence-table", "obj-lectern", "obj-sacristy-cross",
+            "obj-sanctuary-lamp", "obj-sedilia",
+        )),
+    ),
+    ("ed-comprehensive", "altar-and-appointments"): (
+        ("heterodox-five-v1", (
+            "obj-altar-candle", "obj-altar-candlestick", "obj-altar-cloths",
+            "obj-missal-cushion", "obj-missal-stand",
+        )),
+    ),
+    ("ed-comprehensive", "linens-and-textiles"): (
+        ("dense-six-diagnostic-v1", (
+            "obj-burse", "obj-chalice-pall", "obj-chalice-veil",
+            "obj-corporal", "obj-purificator", "obj-lavabo-towel",
+        )),
+    ),
+    ("ed-comprehensive", "books-and-printed-objects"): (
+        ("balanced-four-filled-v1", (
+            "obj-epistle-book", "obj-gospel-book", "obj-book-marker",
+            "obj-altar-missal",
+        )),
+    ),
+    ("ed-comprehensive", "service-objects"): (
+        ("dense-six-diagnostic-v1", (
+            "obj-acolyte-candlestick", "obj-altar-bells", "obj-lavabo-basin",
+            "obj-candle-lighter-extinguisher", "obj-communion-plate",
+            "obj-altar-cruet",
+        )),
+        ("relationship-three-feature-v1", (
+            "obj-elevation-torch", "obj-sacristy-bell",
+            "obj-processional-cross",
+        )),
+    ),
+    ("ed-comprehensive", "priestly-vestments"): (
+        ("dense-six-diagnostic-v1", (
+            "obj-amice", "obj-alb", "obj-cincture", "obj-maniple",
+            "obj-priest-stole", "obj-chasuble",
+        )),
+    ),
+    ("ed-comprehensive", "related-ceremonies"): (
+        ("balanced-four-v1", (
+            "obj-aspergillum", "obj-basilical-conopaeum", "obj-ombrellino",
+            "obj-holy-water-vessel",
+        )),
+    ),
+    ("ed-mc-trainer", "vesting-sequence"): (
+        (
+            "dense-six-v1",
+            (
+                "obj-amice",
+                "obj-alb",
+                "obj-cincture",
+                "obj-maniple",
+                "obj-priest-stole",
+                "obj-chasuble",
+            ),
+        ),
+    ),
+    ("ed-mc-trainer", "sacred-ministers"): (
+        (
+            "relationship-three-feature-v1",
+            (
+                "obj-deacon-stole",
+                "obj-dalmatic",
+                "obj-tunicle",
+            ),
+        ),
+    ),
+    ("ed-mc-trainer", "stations-and-furnishings"): (
+        (
+            "story-spread-v1",
+            (
+                "obj-credence-table",
+                "obj-lectern",
+                "obj-sacristy-cross",
+                "obj-sanctuary-lamp",
+                "obj-sedilia",
+            ),
+        ),
+    ),
+    ("ed-mc-trainer", "books-and-supports"): (
+        (
+            "dense-seven-v1",
+            (
+                "obj-altar-missal",
+                "obj-missal-stand",
+                "obj-missal-cushion",
+                "obj-book-marker",
+                "obj-altar-cloths",
+                "obj-epistle-book",
+                "obj-gospel-book",
+            ),
+        ),
+    ),
+    ("ed-mc-trainer", "lights-and-signals"): (
+        (
+            "dense-seven-v1",
+            (
+                "obj-altar-candle",
+                "obj-altar-candlestick",
+                "obj-acolyte-candlestick",
+                "obj-elevation-torch",
+                "obj-candle-lighter-extinguisher",
+                "obj-altar-bells",
+                "obj-sacristy-bell",
+            ),
+        ),
+    ),
+    ("ed-mc-trainer", "prepared-chalice"): (
+        (
+            "dense-seven-v1",
+            (
+                "obj-chalice",
+                "obj-paten",
+                "obj-corporal",
+                "obj-purificator",
+                "obj-chalice-pall",
+                "obj-chalice-veil",
+                "obj-burse",
+            ),
+        ),
+    ),
+    ("ed-mc-trainer", "water-and-ablutions"): (
+        (
+            "balanced-four-filled-v1",
+            (
+                "obj-altar-cruet",
+                "obj-lavabo-basin",
+                "obj-lavabo-towel",
+                "obj-communion-plate",
+            ),
+        ),
+    ),
+    ("ed-mc-trainer", "procession-and-incense"): (
+        (
+            "relationship-three-feature-v1",
+            (
+                "obj-processional-cross",
+                "obj-incense-boat-and-spoon",
+                "obj-thurible",
+            ),
+        ),
+    ),
+    ("ed-mc-trainer", "branches-and-special-ceremonies"): (
+        (
+            "balanced-four-filled-v1",
+            (
+                "obj-aspergillum",
+                "obj-holy-water-vessel",
+                "obj-basilical-conopaeum",
+                "obj-ombrellino",
+            ),
+        ),
+    ),
+    ("ed-general-reader", "sanctuary"): (
+        (
+            "dense-six-v1",
+            (
+                "obj-credence-table",
+                "obj-lectern",
+                "obj-sacristy-cross",
+                "obj-sanctuary-lamp",
+                "obj-altar-candle",
+                "obj-altar-candlestick",
+            ),
+        ),
+        (
+            "relationship-three-feature-v1",
+            (
+                "obj-altar-cloths",
+                "obj-missal-cushion",
+                "obj-missal-stand",
+            ),
+        ),
+    ),
+    ("ed-sacristan", "sanctuary-and-altar-preparation"): (
+        (
+            "dense-six-v1",
+            (
+                "obj-credence-table",
+                "obj-lectern",
+                "obj-sacristy-cross",
+                "obj-sanctuary-lamp",
+                "obj-sedilia",
+                "obj-altar-candle",
+            ),
+        ),
+        (
+            "dense-six-v1",
+            (
+                "obj-altar-candlestick",
+                "obj-altar-cloths",
+                "obj-missal-cushion",
+                "obj-missal-stand",
+                "obj-acolyte-candlestick",
+                "obj-altar-bells",
+            ),
+        ),
+        (
+            "story-tall-v1",
+            (
+                "obj-processional-cross",
+                "obj-elevation-torch",
+                "obj-candle-lighter-extinguisher",
+                "obj-sacristy-bell",
+            ),
+        ),
+        (
+            "relationship-three-feature-v1",
+            (
+                "obj-lavabo-basin",
+                "obj-altar-cruet",
+                "obj-communion-plate",
+            ),
+        ),
+    ),
+    ("ed-sacristan", "vessels-linens-and-books"): (
+        (
+            "dense-six-v1",
+            (
+                "obj-chalice",
+                "obj-paten",
+                "obj-burse",
+                "obj-chalice-pall",
+                "obj-chalice-veil",
+                "obj-corporal",
+            ),
+        ),
+        (
+            "dense-six-v1",
+            (
+                "obj-purificator",
+                "obj-lavabo-towel",
+                "obj-epistle-book",
+                "obj-gospel-book",
+                "obj-book-marker",
+                "obj-altar-missal",
+            ),
+        ),
+        (
+            "balanced-two-tall-v1",
+            (
+                "obj-incense-boat-and-spoon",
+                "obj-thurible",
+            ),
+        ),
+    ),
+    ("ed-sacristan", "vestments-and-insignia"): (
+        (
+            "dense-six-v1",
+            (
+                "obj-amice",
+                "obj-alb",
+                "obj-cincture",
+                "obj-maniple",
+                "obj-priest-stole",
+                "obj-chasuble",
+            ),
+        ),
+        (
+            "relationship-three-feature-v1",
+            (
+                "obj-deacon-stole",
+                "obj-dalmatic",
+                "obj-tunicle",
+            ),
+        ),
+    ),
+    ("ed-sacristan", "special-ceremony-equipment"): (
+        (
+            "balanced-four-filled-v1",
+            (
+                "obj-aspergillum",
+                "obj-holy-water-vessel",
+                "obj-basilical-conopaeum",
+                "obj-ombrellino",
+            ),
+        ),
+    ),
     ("ed-general-reader", "objects-and-linens"): (
         (
             "dense-six-v1",
@@ -79,7 +360,7 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "balanced-four-v1",
+            "story-tall-v1",
             (
                 "obj-processional-cross",
                 "obj-sacristy-bell",
@@ -88,7 +369,7 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "balanced-four-v1",
+            "balanced-four-filled-v1",
             (
                 "obj-aspergillum",
                 "obj-holy-water-vessel",
@@ -109,12 +390,111 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "balanced-four-v1",
+            "story-spread-v1",
             (
+                "obj-dalmatic",
                 "obj-priest-stole",
                 "obj-deacon-stole",
-                "obj-dalmatic",
                 "obj-tunicle",
+            ),
+        ),
+    ),
+    ("ed-pontifical", "pontifical-vesture"): (
+        (
+            "story-spread-v1",
+            (
+                "obj-chasuble",
+                "obj-amice",
+                "obj-alb",
+                "obj-cincture",
+                "obj-maniple",
+            ),
+        ),
+        (
+            "story-spread-v1",
+            (
+                "obj-dalmatic",
+                "obj-priest-stole",
+                "obj-deacon-stole",
+                "obj-tunicle",
+            ),
+        ),
+    ),
+    ("ed-pontifical", "furnishings-and-books"): (
+        (
+            "dense-six-v1",
+            (
+                "obj-credence-table",
+                "obj-sacristy-cross",
+                "obj-sanctuary-lamp",
+                "obj-sedilia",
+                "obj-altar-candle",
+                "obj-altar-candlestick",
+            ),
+        ),
+        (
+            "relationship-three-feature-v1",
+            (
+                "obj-altar-cloths",
+                "obj-missal-cushion",
+                "obj-missal-stand",
+            ),
+        ),
+        (
+            "relationship-three-feature-v1",
+            (
+                "obj-altar-missal",
+                "obj-epistle-book",
+                "obj-gospel-book",
+            ),
+        ),
+    ),
+    ("ed-pontifical", "ministers-and-object-transfers"): (
+        (
+            "dense-six-v1",
+            (
+                "obj-chalice",
+                "obj-paten",
+                "obj-burse",
+                "obj-chalice-pall",
+                "obj-chalice-veil",
+                "obj-corporal",
+            ),
+        ),
+        (
+            "dense-six-v1",
+            (
+                "obj-acolyte-candlestick",
+                "obj-purificator",
+                "obj-lavabo-towel",
+                "obj-lavabo-basin",
+                "obj-communion-plate",
+                "obj-candle-lighter-extinguisher",
+            ),
+        ),
+        (
+            "dense-six-v1",
+            (
+                "obj-altar-cruet",
+                "obj-elevation-torch",
+                "obj-sacristy-bell",
+                "obj-processional-cross",
+                "obj-incense-boat-and-spoon",
+                "obj-thurible",
+            ),
+        ),
+        (
+            "balanced-two-tall-v1",
+            (
+                "obj-aspergillum",
+                "obj-holy-water-vessel",
+            ),
+        ),
+        (
+            "balanced-two-tall-v1",
+            (
+                "obj-basilical-conopaeum",
+                "obj-ombrellino",
             ),
         ),
     ),
@@ -404,16 +784,15 @@ def section_for(record: dict, edition: dict) -> str:
             return "vestments-and-insignia"
         return "special-ceremony-equipment"
     if edition_id == "ed-mc-trainer":
-        if category in {"priestly-vestments", "deacon-and-subdeacon",
-                        "pontifical-and-prelatial", "servers-ministers-and-choir",
-                        "church-and-sanctuary"}:
-            return "people-roles-and-stations"
-        if category in {"related-ceremonies", "requiem", "nuptial-and-ritual",
-                        "holy-week", "pontifical-mass-compositions"}:
-            return "branches-and-special-ceremonies"
-        if record.get("confusable_with"):
-            return "training-comparisons"
-        return "objects-and-handoffs"
+        for (plan_edition, section), plates in SECTION_PLATE_PLANS.items():
+            if plan_edition != edition_id:
+                continue
+            if any(record["id"] in object_ids for _, object_ids in plates):
+                return section
+        raise ContractError(
+            f"{edition_id}: selected record {record['id']} is absent from "
+            "the edition-wide plate plan"
+        )
     if edition_id == "ed-general-reader":
         if category in {"church-and-sanctuary", "altar-and-appointments"}:
             return "sanctuary"
@@ -447,14 +826,21 @@ def dense_edition_tex(
     Records remain canonical and audience notes remain edition-selected; this
     function changes only their comparison grouping and page architecture.
     """
-    section_order = [
-        section for section in edition["section_order"]
-        if section not in {
-            "recognition-and-handling-key", "status-and-handling-key",
-            "relational-symbol-key", "visual-and-status-key",
-            "status-and-relationship-key", "terminal-apparatus",
-        }
-    ]
+    if edition["id"] == "ed-mc-trainer":
+        section_order = [
+            section
+            for plan_edition, section in SECTION_PLATE_PLANS
+            if plan_edition == edition["id"]
+        ]
+    else:
+        section_order = [
+            section for section in edition["section_order"]
+            if section not in {
+                "recognition-and-handling-key", "status-and-handling-key",
+                "relational-symbol-key", "visual-and-status-key",
+                "status-and-relationship-key", "terminal-apparatus",
+            }
+        ]
     grouped = {section: [] for section in section_order}
     for record in chosen:
         section = section_for(record, edition)
@@ -481,10 +867,18 @@ def dense_edition_tex(
         ))
         plan = SECTION_PLATE_PLANS.get((edition["id"], section))
         if plan is None:
-            plan = tuple(
-                ("dense-six-v1", tuple(record["id"] for record in records[offset:offset + 6]))
-                for offset in range(0, len(records), 6)
-            )
+            plan_parts = []
+            for offset in range(0, len(records), 6):
+                chunk = records[offset:offset + 6]
+                layout = {
+                    2: "balanced-two-tall-v1",
+                    3: "relationship-three-feature-v1",
+                    4: "balanced-four-v1",
+                }.get(len(chunk), "dense-six-v1")
+                plan_parts.append(
+                    (layout, tuple(record["id"] for record in chunk))
+                )
+            plan = tuple(plan_parts)
         else:
             planned_ids = [
                 object_id
@@ -499,37 +893,69 @@ def dense_edition_tex(
             require(
                 set(planned_ids) == set(actual_ids),
                 f"{edition['id']} {section}: plate plan must cover the selected "
-                "section exactly",
+                "section exactly; missing="
+                f"{sorted(set(actual_ids) - set(planned_ids))}, extra="
+                f"{sorted(set(planned_ids) - set(actual_ids))}",
             )
         records_by_id = {record["id"]: record for record in records}
         for plate_number, (layout, object_ids) in enumerate(plan, start=1):
             plate = [records_by_id[object_id] for object_id in object_ids]
-            if layout == "story-spread-v1":
+            if layout in {"story-spread-v1", "story-tall-v1"}:
                 require(
-                    1 <= len(plate) <= 5,
-                    f"{edition['id']} {section}: story plate must contain one "
-                    "hero and at most four companions",
+                    (
+                        len(plate) == 4
+                        if layout == "story-tall-v1"
+                        else 1 <= len(plate) <= 5
+                    ),
+                    f"{edition['id']} {section}: {layout} has invalid arity",
                 )
                 lines.append(
-                    f"\\RSDStoryPlateStart{{{tex(section_label(section))}}}"
+                    (
+                        "\\RSDStoryTallPlateStart"
+                        if layout == "story-tall-v1"
+                        else "\\RSDStoryPlateStart"
+                    )
+                    + f"{{{tex(section_label(section))}}}"
                     f"{{{plate_number}}}"
                 )
                 for index, record in enumerate(plate):
                     if index == 0:
-                        lines.append("\\RSDStoryHeroNext")
+                        lines.append(
+                            "\\RSDStoryTallHeroNext"
+                            if layout == "story-tall-v1"
+                            else "\\RSDStoryHeroNext"
+                        )
                     elif index == 1:
-                        lines.append("\\RSDStoryCompanionsStart")
+                        lines.append(
+                            "\\RSDStoryTallCompanionsStart"
+                            if layout == "story-tall-v1"
+                            else "\\RSDStoryCompanionsStart"
+                        )
                     else:
-                        lines.append("\\RSDStoryCompanionBreak")
+                        lines.append(
+                            "\\RSDStoryTallCompanionBreak"
+                            if layout == "story-tall-v1"
+                            else "\\RSDStoryCompanionBreak"
+                        )
+                    if layout == "story-tall-v1" and index > 0:
+                        lines.append("\\RSDSpacedCardNext")
                     lines.append(record_tex(record, edition, artwork_render_owners))
                 if len(plate) > 1:
-                    lines.append("\\RSDStoryCompanionsEnd")
-                lines.append("\\RSDStoryPlateEnd")
+                    lines.append(
+                        "\\RSDStoryTallCompanionsEnd"
+                        if layout == "story-tall-v1"
+                        else "\\RSDStoryCompanionsEnd"
+                    )
+                lines.append(
+                    "\\RSDStoryTallPlateEnd"
+                    if layout == "story-tall-v1"
+                    else "\\RSDStoryPlateEnd"
+                )
                 continue
-            if layout == "balanced-four-v1":
+            if layout in {"balanced-four-v1", "balanced-four-filled-v1"}:
                 require(
                     len(plate) == 4,
-                    f"{edition['id']} {section}: balanced-four plate must "
+                    f"{edition['id']} {section}: {layout} must "
                     "contain exactly four objects",
                 )
                 lines.append(
@@ -538,11 +964,150 @@ def dense_edition_tex(
                 )
                 for index, record in enumerate(plate):
                     if index == 2:
-                        lines.append("\\RSDBalancedFourPlateRowBreak")
+                        lines.append(
+                            "\\RSDBalancedFourFilledPlateRowBreak"
+                            if layout == "balanced-four-filled-v1"
+                            else "\\RSDBalancedFourPlateRowBreak"
+                        )
                     elif index in {1, 3}:
                         lines.append("\\RSDBalancedFourPlateCellBreak")
+                    if layout == "balanced-four-filled-v1":
+                        lines.append("\\RSDQuadCardNext")
                     lines.append(record_tex(record, edition, artwork_render_owners))
-                lines.append("\\RSDBalancedFourPlateEnd")
+                lines.append(
+                    "\\RSDBalancedFourFilledPlateEnd"
+                    if layout == "balanced-four-filled-v1"
+                    else "\\RSDBalancedFourPlateEnd"
+                )
+                continue
+            if layout in {"balanced-three-v1", "balanced-three-tall-v1"}:
+                require(
+                    len(plate) == 3,
+                    f"{edition['id']} {section}: {layout} must contain "
+                    "exactly three objects",
+                )
+                lines.append(
+                    (
+                        "\\RSDBalancedThreeTallPlateStart"
+                        if layout == "balanced-three-tall-v1"
+                        else "\\RSDBalancedThreePlateStart"
+                    )
+                    + f"{{{tex(section_label(section))}}}{{{plate_number}}}"
+                )
+                for index, record in enumerate(plate):
+                    if layout == "balanced-three-tall-v1":
+                        if index:
+                            lines.append("\\RSDBalancedThreeTallPlateCellBreak")
+                        lines.append("\\RSDTallCardNext")
+                    elif index == 1:
+                            lines.append("\\RSDBalancedThreePlateCellBreak")
+                    elif index == 2:
+                            lines.append("\\RSDBalancedThreePlateLastStart")
+                    lines.append(record_tex(record, edition, artwork_render_owners))
+                lines.append(
+                    "\\RSDBalancedThreeTallPlateEnd"
+                    if layout == "balanced-three-tall-v1"
+                    else "\\RSDBalancedThreePlateEnd"
+                )
+                continue
+            if layout == "balanced-two-tall-v1":
+                require(
+                    len(plate) == 2,
+                    f"{edition['id']} {section}: balanced-two-tall-v1 must "
+                    "contain exactly two objects",
+                )
+                lines.append(
+                    f"\\RSDBalancedTwoTallPlateStart"
+                    f"{{{tex(section_label(section))}}}{{{plate_number}}}"
+                )
+                for index, record in enumerate(plate):
+                    if index:
+                        lines.append("\\RSDBalancedTwoTallPlateCellBreak")
+                    lines.append("\\RSDTallCardNext")
+                    lines.append(record_tex(record, edition, artwork_render_owners))
+                lines.append("\\RSDBalancedTwoTallPlateEnd")
+                continue
+            if layout == "relationship-three-feature-v1":
+                require(
+                    len(plate) == 3,
+                    f"{edition['id']} {section}: "
+                    "relationship-three-feature-v1 must contain exactly "
+                    "three objects",
+                )
+                lines.append(
+                    f"\\RSDRelationshipThreePlateStart"
+                    f"{{{tex(section_label(section))}}}{{{plate_number}}}"
+                )
+                lines.append("\\RSDTallCardNext")
+                lines.append(record_tex(plate[0], edition, artwork_render_owners))
+                lines.append("\\RSDRelationshipThreePlateCellBreak")
+                lines.append("\\RSDRelationshipCardNext")
+                lines.append(record_tex(plate[1], edition, artwork_render_owners))
+                lines.append("\\RSDRelationshipThreePlateRightBreak")
+                lines.append("\\RSDRelationshipCardNext")
+                lines.append(record_tex(plate[2], edition, artwork_render_owners))
+                lines.append("\\RSDRelationshipThreePlateEnd")
+                continue
+            if layout == "dense-seven-v1":
+                require(
+                    len(plate) == 7,
+                    f"{edition['id']} {section}: dense-seven-v1 must "
+                    "contain exactly seven objects",
+                )
+                lines.append(
+                    f"\\RSDDenseSevenPlateStart"
+                    f"{{{tex(section_label(section))}}}{{{plate_number}}}"
+                )
+                for index, record in enumerate(plate):
+                    if index == 4:
+                        lines.append("\\RSDDenseSevenPlateRowBreak")
+                    elif index in {1, 2, 3, 5, 6}:
+                        lines.append("\\RSDDenseSevenPlateCellBreak")
+                    lines.append("\\RSDSevenCardNext")
+                    lines.append(record_tex(record, edition, artwork_render_owners))
+                lines.append("\\RSDDenseSevenPlateEnd")
+                continue
+            if layout == "heterodox-five-v1":
+                require(
+                    len(plate) == 5,
+                    f"{edition['id']} {section}: heterodox-five-v1 must "
+                    "contain exactly five objects",
+                )
+                lines.append(
+                    f"\\RSDHeterodoxFivePlateStart"
+                    f"{{{tex(section_label(section))}}}{{{plate_number}}}"
+                )
+                for index, record in enumerate(plate):
+                    if index == 3:
+                        lines.append("\\RSDHeterodoxFivePlateRowBreak")
+                    elif index in {1, 2, 4}:
+                        lines.append("\\RSDHeterodoxFivePlateCellBreak")
+                    lines.append(
+                        "\\RSDWideCardNext"
+                        if index >= 3
+                        else "\\RSDDiagnosticCardNext"
+                    )
+                    lines.append(record_tex(record, edition, artwork_render_owners))
+                lines.append("\\RSDHeterodoxFivePlateEnd")
+                continue
+            if layout == "dense-six-diagnostic-v1":
+                require(
+                    len(plate) == 6,
+                    f"{edition['id']} {section}: dense-six-diagnostic-v1 "
+                    "must contain exactly six objects",
+                )
+                lines.append(
+                    f"\\RSDDensePlateStart{{{tex(section_label(section))}}}"
+                    f"{{{plate_number}}}"
+                )
+                for index, record in enumerate(plate):
+                    if index == 3:
+                        lines.append("\\RSDDensePlateRowBreak")
+                    elif index in {1, 2, 4, 5}:
+                        lines.append("\\RSDDensePlateCellBreak")
+                    lines.append("\\RSDDiagnosticCardNext")
+                    lines.append(record_tex(record, edition, artwork_render_owners))
+                lines.append("\\RSDDensePlateEnd")
                 continue
             require(
                 layout == "dense-six-v1" and 1 <= len(plate) <= 6,
@@ -557,6 +1122,7 @@ def dense_edition_tex(
                     lines.append("\\RSDDensePlateRowBreak")
                 elif index in {1, 2, 4, 5}:
                     lines.append("\\RSDDensePlateCellBreak")
+                lines.append("\\RSDFieldCardNext")
                 lines.append(record_tex(record, edition, artwork_render_owners))
             lines.append("\\RSDDensePlateEnd")
     return lines

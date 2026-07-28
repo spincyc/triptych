@@ -330,6 +330,4 @@ The result is ecclesial as well as personal. Paul’s *ad utilitatem* prevents g
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
-**Agent/runtime:** OpenAI Codex agents (Missal and hand-missal collation, historical and reception research, document architecture and drafting, source audit, web conversion, build, and production review); Codex CLI 0.145.0; API workspace; unexposed: interface; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

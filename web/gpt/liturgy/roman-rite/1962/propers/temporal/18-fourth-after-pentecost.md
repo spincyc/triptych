@@ -265,22 +265,6 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
-**Agent/runtime:** OpenAI Codex agents (primary, research, reevaluation, and layout roles); Codex CLI 0.144.1; API workspace; unexposed: server revision
-
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
-
-**Agent/runtime:** OpenAI Codex agent (guidance refactor and editorial cleanup role); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (page-two scriptural-date-and-location relocation and structural audit role); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (passage-level reception research, commentary expansion, and source audit); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (interpretive-discovery development, targeted novelty audit, and provenance-precision review); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (notable-and-quotable source verification, editorial selection, and research-audit role); Codex CLI 0.144.5; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agent (independent notable-and-quotable source, locus, rights-jurisdiction, reference, metadata audit, and layout correction); API workspace; unexposed: client version, interface, and server revision
-
-**Agent/runtime:** OpenAI Codex agent (cultural-afterlife notable-and-quotable research, semantic-turn verification, rights/context audit, and source-record revision); API workspace; unexposed: client version, interface, and server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

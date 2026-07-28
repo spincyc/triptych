@@ -272,10 +272,6 @@ The final PDF and generated web edition received internal source, quotation, the
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 
-**Agent/runtime:** OpenAI Codex agent (independent research synthesis, source audit, drafting, and production review); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
-**Agent/runtime:** OpenAI Codex agents (material-culture restoration, source and inference-boundary reconciliation, reader-status correction, web regeneration, and renewed production-review roles); Codex CLI 0.145.0; API workspace; unexposed: server revision
-
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Jodi Magness, “Ancient Jewish Tombs and Burial Customs (to 70 C.E.),” in *The Archaeology of the Holy Land* (Cambridge: Cambridge University Press, 2012), pp. 230–255, publisher summary, items 1–6.
