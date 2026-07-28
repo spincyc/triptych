@@ -159,8 +159,14 @@ remains unproved. See
     rehearsal, appointed resting place, and non-operational hot-object safety.
 17. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
     relationship, local lay-server boundary, and non-operational heat safety.
-18. Source notes, scope and qualifications, generation metadata, and rights
-   colophon.
+18. Credence-table spread: empty service-station recognition, selected
+    Epistle-side teaching model, local form and placement variability, and no
+    inferred permission for objects placed upon it.
+19. Sedilia spread: three movable chairs versus one three-place bench,
+    sacred-minister/server-seat/pontifical confusables, and fixed-furniture
+    handling boundary.
+20. Source notes, scope and qualifications, generation metadata, and rights
+    colophon.
 
 ## Source control
 
@@ -190,7 +196,12 @@ All printed claims come from these canonical source keys:
 - `src-benziger-1927-thuribles`;
 - `src-met-464340-thurible-variation`;
 - `src-missale-incense-boat-spoon`; and
-- `src-met-236950-boat-spoon`.
+- `src-met-236950-boat-spoon`;
+- `src-credence-fortescue-1917`;
+- `src-credence-ce`;
+- `src-credence-missal-use`;
+- `src-sedilia-fortescue-1917`; and
+- `src-sedilia-history`.
 
 The source loci and verification states remain owned by the corresponding
 canonical object records. The altar-server leaf now binds the exact 1962
@@ -199,6 +210,15 @@ states. The Epistle/Gospel consumer binding points to the
 exact 1962 Missal passage record for *Ritus servandus* VI.4--5. This tranche
 promotes those two canonical records from `identified` to `source-audited`;
 their morphology claim remains explicitly unresolved.
+
+The furnishings tranche binds Fortescue's exact 1917 pp. 8--9 passage,
+rechecks pp. 78--79 as ceremonial context, and binds the exact New Advent
+delivery artifacts for the signed 1908 “Credence” and 1912 “Sedilia”
+encyclopedia articles. The encyclopedia records are historical and morphology
+aids only. The 1962 Missal remains the use control. The legacy grouped
+sanctuary-furnishings raster is not consumed for these entries because its
+exact provenance and rights chain are incomplete; its file and other held
+consumers are preserved.
 
 ## Known omissions
 

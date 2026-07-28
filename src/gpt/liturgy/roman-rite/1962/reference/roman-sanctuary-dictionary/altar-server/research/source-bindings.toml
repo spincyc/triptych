@@ -190,3 +190,30 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Controls the processional cross's optional/local status at a priest's High Mass, its place between the acolytes when carried, and the need for an appointed sanctuary stand. It does not make the cross universal or Missal-required."
 verified_on = "2026-07-28"
 source_fingerprint = "sha256:c34b145d733957779c6e9fee0e5e28a32c4135c9508012f1aa4b0248593b8d5e"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-8-9"
+loci = ["printed pp. 8-9; Internet Archive leaves n28-n29"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the selected Epistle-side teaching model, credence service-table relationship, one three-place sedilia form, and the distinction between sacred-ministers' sedilia and separately located server seating. It does not establish universal construction, covering, contents, color, material, exact placement, or one mandatory furniture form."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:aeb1aa24fb5676949bea0438088ab3b3229d26f5ad8a595f939214e752d67561"
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.credence"
+loci = ["article 'Credence,' complete article body"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Supplies dated terminology and material-form variation for the credence. Its measurements, material list, cloth prescriptions, and exact location are not generalized and it is not treated as a governing 1962 norm."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:b6250d3ccbd4969eb22fcedd64f2777c4bb013f106df8d771a94cd74d4d35514"
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-13.new-york-1912.sedilia"
+loci = ["article 'Sedilia,' complete article body"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the historical existence of movable chairs, movable benches, and architectural sedilia as materially different recognition forms. Chronology, region, decoration, number, levels, and exact position are not generalized."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:7bc608ed65c1fdb6ff00f71bfbf3b32e664cb298e6084790b0d0b24ea3e0248c"

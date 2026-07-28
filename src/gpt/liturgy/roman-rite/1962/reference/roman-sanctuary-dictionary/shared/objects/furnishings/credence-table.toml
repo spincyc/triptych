@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-credence-table"
-workflow_state = "identified"
+workflow_state = "source-audited"
 preferred_english_name = "Credence table"
 latin_headword = "abacus"
 alternate_english_names = ["credence"]
@@ -11,7 +11,7 @@ statuses = ["universal-roman"]
 ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass"]
 
 [presence]
-locations = ["Sanctuary, at a locally appointed side position."]
+locations = ["Sanctuary, ordinarily at a locally appointed side position; the Epistle side belongs to the selected teaching model."]
 contexts = ["Preparation and temporary placement of vessels, books, linens, and service objects required by the selected ceremony."]
 composition_ids = ["plt-sanctuary-seating", "plt-altar-composition"]
 local_variability = "common"
@@ -32,29 +32,38 @@ pontifical = "required"
 [[claims]]
 id = "clm-credence-table-identity"
 kind = "liturgical-use"
-text = "The credence is the appointed sanctuary furnishing on which objects needed for the ceremony are prepared or temporarily placed; its construction and exact location are not fixed by this representative drawing."
+text = "The credence is a sanctuary service table on which objects needed for the selected ceremony are prepared or temporarily placed; construction, covering, contents, and exact location vary."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-credence-ce", "src-credence-guide-audit"]
+source_ids = ["src-credence-fortescue-1917", "src-credence-ce", "src-credence-missal-use"]
+
+[[sources]]
+id = "src-credence-fortescue-1917"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-8-9"
+locus = "printed pp. 8-9; artifact PDF pp. 29-30"
+role = "manual"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
 
 [[sources]]
 id = "src-credence-ce"
-binding = "artifact.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.libri-nostri-scan-pdf-af65e16a"
-locus = "Caeremoniale Episcoporum (1948), lib. I, cap. V and cap. VIII; inspected OCR lines 938-943 and 1632-1638."
-role = "ceremonial-book"
-verification_state = "inspected"
-checked_on = 2026-07-27
+binding = "passage.catholic-encyclopedia.volume-4.new-york-1908.credence"
+locus = "Patrick Morrisroe, 'Credence' (1908), complete article"
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
 
 [[sources]]
-id = "src-credence-guide-audit"
-binding = "altar-server-guides-source-audit"
-locus = "research/source-audit.md, Missale Romanum General Rubrics 528 and Ritus servandus XI.3 bindings."
+id = "src-credence-missal-use"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus VI.4 and related checked use loci; printed p. LVII and following."
 role = "governing-liturgical-book"
-verification_state = "located"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
 
 [[artwork]]
-id = "art-credence-table-comparison"
-view = "comparison"
-asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
-review_state = "identity-checked"
-depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
+id = "art-credence-table-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table.png"
+review_state = "approved"
+depicts = ["obj-credence-table"]
 scale_mode = "not-to-common-scale"

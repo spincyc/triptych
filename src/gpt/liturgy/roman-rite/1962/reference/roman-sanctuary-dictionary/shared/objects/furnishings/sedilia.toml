@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-sedilia"
-workflow_state = "identified"
+workflow_state = "source-audited"
 preferred_english_name = "Sedilia"
 latin_headword = "sedilia"
 alternate_english_names = ["seats for the sacred ministers"]
@@ -10,7 +10,7 @@ statuses = ["universal-roman"]
 ceremonies = ["solemn-mass", "pontifical-mass"]
 
 [presence]
-locations = ["Sanctuary, customarily on the Epistle side in the selected teaching model."]
+locations = ["Sanctuary, on the Epistle side in the selected teaching model; exact placement varies locally."]
 contexts = ["Seating for the celebrant and sacred ministers when the ceremony calls for them to sit."]
 composition_ids = ["plt-sanctuary-seating"]
 local_variability = "common"
@@ -31,22 +31,30 @@ pontifical = "useful"
 [[claims]]
 id = "clm-sedilia-identity"
 kind = "identity"
-text = "Sedilia are the sanctuary seats assigned to the celebrant and sacred ministers; their construction and exact placement vary."
+text = "Sedilia are sanctuary seats for the celebrant, deacon, and subdeacon in the ceremonies that appoint them; separate movable chairs and a movable three-place bench are representative forms, while construction and placement vary."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-sedilia-ce"]
+source_ids = ["src-sedilia-fortescue-1917", "src-sedilia-history"]
 
 [[sources]]
-id = "src-sedilia-ce"
-binding = "artifact.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.libri-nostri-scan-pdf-af65e16a"
-locus = "Caeremoniale Episcoporum (1948), lib. I, cap. V and cap. VIII; inspected OCR lines 938-943 and 1343-1353."
-role = "ceremonial-book"
-verification_state = "inspected"
-checked_on = 2026-07-27
+id = "src-sedilia-fortescue-1917"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-8-9"
+locus = "printed pp. 8-9; artifact PDF pp. 29-30"
+role = "manual"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-sedilia-history"
+binding = "passage.catholic-encyclopedia.volume-13.new-york-1912.sedilia"
+locus = "George Cyprian Alston, 'Sedilia' (1912), complete article"
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
 
 [[artwork]]
-id = "art-sedilia-comparison"
+id = "art-sedilia-movable-variants"
 view = "comparison"
-asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
-review_state = "identity-checked"
-depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
+asset = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0002-sedilia-variants.png"
+review_state = "approved"
+depicts = ["obj-sedilia"]
 scale_mode = "not-to-common-scale"

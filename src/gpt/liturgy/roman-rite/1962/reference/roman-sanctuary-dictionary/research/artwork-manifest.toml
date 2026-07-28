@@ -154,7 +154,7 @@ workflow_state = "generated"
 
 [[artwork_links]]
 id = "art-credence-table-comparison"
-asset_file_id = "file-rsd-sanctuary-furnishings"
+asset_file_id = "file-rpd-credence-table"
 object_ids = ["obj-credence-table"]
 variant_ids = []
 view = "comparison"
@@ -202,7 +202,7 @@ workflow_state = "generated"
 
 [[artwork_links]]
 id = "art-sedilia-comparison"
-asset_file_id = "file-rsd-sanctuary-furnishings"
+asset_file_id = "file-rpd-sedilia-variants"
 object_ids = ["obj-sedilia"]
 variant_ids = []
 view = "comparison"
@@ -1161,10 +1161,138 @@ effective_dpi = 353.1
 [artworks.reviews]
 factual = "passed"
 visual = "passed"
-print = "pending"
+print = "passed"
 rights = "passed"
 consumer = "passed"
-release = "pending"
+release = "passed"
+
+[[asset_files]]
+id = "file-rpd-credence-table"
+path = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table.png"
+state = "consumer-review-passed"
+audit_record = "research/credence-sedilia-source-audit-2026-07-28.md"
+technical = { width_px = 1441, height_px = 1092, bit_depth = 8, color_mode = "grayscale", bytes = 505744, sha256 = "30d8b2595769d96149ae6d6bf737085a07e6874c9b5ed457bc075bcc3b5d30d5" }
+
+[[asset_files]]
+id = "file-rpd-sedilia-variants"
+path = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0002-sedilia-variants.png"
+state = "consumer-review-passed"
+audit_record = "research/credence-sedilia-source-audit-2026-07-28.md"
+technical = { width_px = 1693, height_px = 929, bit_depth = 8, color_mode = "grayscale", bytes = 452135, sha256 = "e98e59798ae1e9f2233e9f135ba7ec1d00a44da663198cfc7f98397927b7b856" }
+
+[[artworks]]
+id = "art-credence-table-isolated"
+object_ids = ["obj-credence-table"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the credence as ordinary sanctuary service furniture without baking the selected side, contents, handling permission, or a universal design into the raster."
+depicted_state = "One plain empty rectangular four-legged table with an optional lower shelf and a representative plain white linen; isolated on white."
+source_controlled_features = ["Fortescue 1917 printed pp. 8-9 controls the service-table relationship.", "Morrisroe's 1908 encyclopedia article is retained only as dated evidence that table form, material, size, covering, and use varied."]
+deliberate_omissions = ["No altar frontal, cross, tabernacle, reredos, wall niche, vessels, books, candles, people, semantic marks, or fixed side geometry.", "No material, dimension, ornament, cloth-drop, or exact-placement claim.", "No object placed on the table and no handling permission."]
+brief = "Text-free grayscale graphite isolated view of a plain empty covered credence table on white."
+exact_prompt = """Use case: scientific-educational
+Asset type: monochrome pictorial-dictionary figure for print
+Primary request: Draw one plain, stable, empty rectangular credence table as a restrained graphite pencil study.
+Scene/backdrop: pure white background with no floor plane or surrounding architecture
+Subject: a simple freestanding rectangular table with four straight legs and one optional plain lower shelf; a representative plain white linen lies flat over the top with a modest, unornamented drop
+Style/medium: careful hand-drawn graphite pencil, grayscale only, clean educational object study, realistic stable construction
+Composition/framing: isolated three-quarter view, centered, generous white margin, entire object visible
+Constraints: text-free; no labels, letters, arrows, numbers, borders, semantic marks, people, vessels, books, candles, or other objects; the table must remain visibly ordinary service furniture
+Avoid: altar-like frontal, cross, tabernacle, reredos, religious emblem, decorative carving, ornate fabric, lace, patterned linen, fixed wall niche, material or scale claims, dramatic shadows, color, watermark"""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table.png"
+reference_ids = ["src-credence-fortescue-1917", "src-credence-ce"]
+precursor_ids = ["art-credence-table-comparison"]
+corrections = ["Converted selected output to stripped 8-bit grayscale PNG; no content edit.", "Rejected the legacy shared sanctuary-furnishings plate for this consumer because its exact generation provenance and rights record are incomplete."]
+baked_content_audit = ["Plain stable four-legged table, lower shelf, modest unornamented white linen, and white background are legible.", "No altar-like frontal, cross, tabernacle, reredos, niche, vessels, books, candles, people, labels, borders, watermark, or color."]
+tex_overlays = ["Headword, stable ID, Epistle-side teaching model, local variability, representative-form limit, server boundary, confusables, sources, and scale status are TeX-owned."]
+consumer_plate_ids = ["plt-furnishings-credence-sedilia"]
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer are recorded here. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1441
+height_px = 1092
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1322885
+sha256 = "cf2263a1e520cd6ea8874e85f4a7fb92f08cd5733f2b84d7efb8257dc5783c36"
+[artworks.normalized]
+path = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table.png"
+width_px = 1441
+height_px = 1092
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 505744
+sha256 = "30d8b2595769d96149ae6d6bf737085a07e6874c9b5ed457bc075bcc3b5d30d5"
+max_placement_width_in = 4.35
+max_placement_height_in = 3.30
+effective_dpi = 331.3
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-sedilia-movable-variants"
+object_ids = ["obj-sedilia"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-review-passed"
+purpose = "Teach two representative movable sedilia forms while keeping side, architecture, material, decoration, hierarchy, and local furniture variation outside the raster."
+depicted_state = "Three matching separate plain chairs and one plain three-place bench, separated on white and not to common scale."
+source_controlled_features = ["Fortescue 1917 printed pp. 8-9 controls the three sacred-minister relationship and its distinction from server seating.", "Alston's 1912 encyclopedia article controls the historical existence of movable chairs, movable benches, and architectural variants."]
+deliberate_omissions = ["No throne, canopy, heraldry, cross, niche, wall recess, architectural sedilia, altar, tabernacle, people, cushions, vestments, labels, or shared scale.", "No universal claim for construction, material, covering, ornament, exact position, or hierarchy."]
+brief = "Text-free grayscale graphite comparison of three matching movable chairs and one plain three-place bench on white."
+exact_prompt = """Use case: scientific-educational
+Asset type: monochrome pictorial-dictionary comparison figure for print
+Primary request: Draw two separate representative forms of movable sedilia: at left, three matching plain movable chairs; at right, one plain movable three-place bench.
+Scene/backdrop: pure white background with no floor plane or surrounding architecture
+Subject: three identical modest straight-backed chairs grouped together, clearly separate pieces; and a distinct simple three-person bench with one continuous seat and back
+Style/medium: careful hand-drawn graphite pencil, grayscale only, clean educational furniture study, realistic stable construction
+Composition/framing: two isolated groups separated by generous blank white space, both fully visible, no shared scale implication
+Constraints: text-free; no labels, letters, arrows, numbers, borders, semantic marks, people, cushions, vestments, or other objects; plain movable furniture only
+Avoid: throne, canopy, heraldry, cross, niche, wall recess, architectural sedilia, altar, tabernacle, carved religious emblems, elaborate upholstery, decorative material claims, scale comparison, dramatic shadows, color, watermark"""
+generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0002-sedilia-variants.png"
+reference_ids = ["src-sedilia-fortescue-1917", "src-sedilia-history"]
+precursor_ids = ["art-sedilia-comparison"]
+corrections = ["Converted selected output to stripped 8-bit grayscale PNG; no content edit.", "Rejected the legacy shared sanctuary-furnishings plate for this consumer because its exact generation provenance and rights record are incomplete."]
+baked_content_audit = ["Three visibly separate matching chairs and one distinct three-place bench remain legible.", "No throne, canopy, heraldry, cross, niche, wall recess, altar, tabernacle, people, cushions, vestments, labels, borders, watermark, or color."]
+tex_overlays = ["Headword, stable ID, Epistle-side teaching model, alternative labels, not-to-common-scale notice, local variability, server-seat and pontifical confusables, handling boundary, and sources are TeX-owned."]
+consumer_plate_ids = ["plt-furnishings-credence-sedilia"]
+consumer_edition_ids = ["ed-altar-server"]
+rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer are recorded here. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1693
+height_px = 929
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1259474
+sha256 = "98b19b06be9b77fa636975efee3722f76d49f14359c9b619d09cc74a92f0e5de"
+[artworks.normalized]
+path = "shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0002-sedilia-variants.png"
+width_px = 1693
+height_px = 929
+bit_depth = 8
+color_mode = "grayscale"
+bytes = 452135
+sha256 = "e98e59798ae1e9f2233e9f135ba7ec1d00a44da663198cfc7f98397927b7b856"
+max_placement_width_in = 4.35
+max_placement_height_in = 2.39
+effective_dpi = 389.2
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
 
 [coverage]
 object_record_glob = "shared/objects/**/*.toml"

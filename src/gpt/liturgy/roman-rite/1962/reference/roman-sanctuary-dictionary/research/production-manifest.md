@@ -8,7 +8,7 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Eighteen alpha records | Built, inspected, and installed | No | Alpha |
+| Altar server | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
@@ -141,6 +141,32 @@ page, and exact build/installed byte identity. Installed SHA-256:
 The current convention permits a bounded alpha when source integrity, rights,
 safety, reproducibility and identity, mechanical validity, and basic visual
 usability pass.
+
+The current altar-server furnishings tranche adds the credence table and
+sedilia. Fortescue's exact 1917 facsimile at printed pp. 8–9 controls the
+selected Epistle-side teaching model, the credence's service relationship, the
+three sacred ministers' seating relationship, and the distinction from server
+seating; pp. 78–79 were rechecked as ceremonial context. Exact restricted
+New Advent artifacts for Morrisroe's 1908 “Credence” and Alston's 1912
+“Sedilia” articles supply dated historical and morphology-variation aids only.
+The 1962 Missal remains the edition-specific use control.
+
+The legacy grouped sanctuary-furnishings raster was not consumed for these
+entries because its exact generation provenance and rights chain are
+incomplete; it remains preserved for other held consumers. Two new
+project-generated, text-free grayscale graphite figures show one plain empty
+covered service table and, separately, three matching movable chairs versus
+one movable three-place bench. TeX owns the Epistle-side model, alternatives,
+local variability, handling boundaries, confusables, and not-to-common-scale
+notice.
+
+The resulting 22-page bounded alpha was rebuilt for settled passes, rastered
+through the repository review helper, inspected on both contact sheets and on
+all pages, and checked at full size on the two new furnishing pages. It has
+embedded fonts, extractable text, no fatal error, undefined reference,
+overfull box, clipping, overlap, or spill page, and exact build/installed byte
+identity. Installed SHA-256:
+`6d175bf51e5425db65ab619cedb44a2efceecbe314d0c9e9a5e86b512bcae712`.
 
 The next altar-server incense tranche adds the thurible as a sixteenth
 source-audited record. Exact 1962 Missal loci control the object identity and
