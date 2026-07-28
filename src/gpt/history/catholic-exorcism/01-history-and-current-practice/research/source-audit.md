@@ -93,11 +93,18 @@ sources.
   diagnostic, or operational claim.
 - *Jubilees* 10.1–11, trans. R. H. Charles in *The Apocrypha and Pseudepigrapha of the Old Testament*, vol. 2 (Oxford, 1913), exact CCEL chapter state acquired and inspected 2026-07-27. English translation control for Noah's petition and the disposition of the spirits; no original-language collation.
 - Josephus, *Antiquities* VIII.2.5 in William Whiston's 1737 translation, corresponding to Niese 8.45–49; exact University of Chicago Penelope Book VIII state acquired and inspected 2026-07-27. Controls Josephus's literary report about Eleazar and its Solomonic framing, not the event's mechanism or Christian dependence.
-- Tertullian, *Apology* 23, Thelwall English; Origen, *Contra Celsum*
-  1.6, 1.25, 7.4, trans. Frederick Crombie, *Ante-Nicene Fathers* 4
-  (Buffalo, 1885). These are apologetic witnesses, not clinical reports.
+- Tertullian, *Apology* 23, Thelwall English, with the Oehler--Mayor--Souter
+  Cambridge edition (1917), printed pp. 79--83, as an exact Latin historical
+  textual control; Origen, *Contra Celsum* 1.6, 1.25, 7.4, trans. Frederick
+  Crombie, *Ante-Nicene Fathers* 4 (Buffalo, 1885), with Koetschau's GCS
+  volumes 1--2 (1899), printed pp. 59--60, 75--77, and 156--157, as exact
+  Greek historical textual controls. The supplied 91--92 lead for Origen
+  1.25 is the Philokalia cross-reference printed in Koetschau's margin, not
+  his pagination. These are apologetic witnesses, not clinical reports.
   Origen 1.6 and 7.4 control the contrast with magical arts; 1.25 instead
-  supplies a qualified ancient theory of efficacious names. Justin Martyr,
+  supplies a qualified ancient theory of names. Oehler and Koetschau are old
+  editions, not substitutes for CCSL 1, later Sources Chrétiennes work, or
+  fresh manuscript collation. Justin Martyr,
   *Second Apology* 6, Dods--Reith, *Ante-Nicene Fathers* 1 (Buffalo, 1887),
   printed p. 190, is controlled by the exact bounded OCR passage collated on
   2026-07-27 against the exact 628-page facsimile
@@ -113,19 +120,23 @@ sources.
   Councils*, *NPNF* second series, vol. 14 (1900), visually verified in the
   exact CCEL PDF at artifact page 317; Cornelius's clergy list as quoted by
   Eusebius, *Church History* 6.43.11, trans. Arthur Cushman McGiffert,
-  *NPNF* second series, vol. 1 (1890). Percival is a historical English
+  *NPNF* second series, vol. 1 (1890), checked against Schwartz--Mommsen's
+  exact 1908 GCS Greek at printed p. 618. Percival is a historical English
   witness, not a modern critical Greek control. Laodicea is one conciliar
-  disciplinary setting; Eusebius gives only a combined total for exorcists,
-  readers, and door-keepers.
+  disciplinary setting; Eusebius gives only a combined total of fifty-two
+  for exorcists, readers, and door-keepers. The old GCS control supplies
+  neither a separate count nor proof of role continuity.
 
 Justin 6 now controls its bounded reader-facing apologetic claim through a
 verified passage and facsimile collation. Irenaeus, *Against Heresies*
 1.10.1--3, is likewise verified in the exact ANF English facsimile at printed
 pp. 330--332 for its bounded methodological claim. Exact dated English
-artifacts and passages control the
-bounded Tertullian 23, Origen 1.6, 1.25, and 7.4, *Procatechesis* 9,
-*Mystagogical Catecheses* 1.4–9, and Eusebius 6.43.11 claims. These are
-translation controls, not original-language or critical-edition controls.
+artifacts and passages control the bounded English Tertullian 23, Origen 1.6,
+1.25, and 7.4, *Procatechesis* 9, *Mystagogical Catecheses* 1.4–9, and
+Eusebius 6.43.11 claims. The Tertullian, Origen, and Eusebius loci now also
+have exact old-edition Latin or Greek controls, each expressly bounded against
+claims of present critical status, event verification, frequency, efficacy,
+formula, prescription, or office continuity.
 Easton's *Apostolic Tradition* 20–21 and Percival's Laodicea 26 are now exact,
 verified historical English witnesses. They remain edition-bounded context,
 not modern critical original-language controls or authority for operational
@@ -149,7 +160,10 @@ A second pass on 2026-07-27 searched public-domain primary translations,
 original-language or critical-edition controls, and specialist
 textual-historical studies for every one of those loci. It acquired and bound
 the exact dated English witnesses used for the narrow Tertullian, Origen,
-Jerusalem, and Eusebius descriptions. The *Apostolic Tradition* search instead
+Jerusalem, and Eusebius descriptions. A later bounded pass acquired, hashed,
+visually inspected, and bound the 1917 Oehler--Mayor--Souter Tertullian,
+Koetschau's 1899 two-volume Origen, and the 1908 Schwartz--Mommsen Eusebius
+controls. The *Apostolic Tradition* search instead
 reinforced the need to name the reconstruction, versional basis, and chapter
 numbering; Laodicea remained unnecessary to the bounded reader thesis. Exact
 routes, findings, and limits are recorded in
