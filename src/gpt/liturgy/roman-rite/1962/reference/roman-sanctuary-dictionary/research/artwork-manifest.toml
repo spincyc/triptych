@@ -149,8 +149,8 @@ id = "art-incense-0003-empty-boat-spoon"
 asset_file_id = "file-rpd-empty-boat-spoon"
 object_ids = ["obj-incense-boat", "obj-incense-spoon"]
 variant_ids = []
-view = "open-with-separate-spoon"
-workflow_state = "source-audited"
+view = "open"
+workflow_state = "consumer-review-passed"
 
 [[artwork_links]]
 id = "art-related-ceremonies-0001-iso-holy-water-vessel"
@@ -553,7 +553,7 @@ technical = { width_px = 1050, height_px = 700, bit_depth = 8, color_mode = "gra
 [[asset_files]]
 id = "file-rpd-empty-boat-spoon"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon.png"
-state = "source-audited-alpha"
+state = "canonical-alpha-eligible"
 audit_record = "research/incense-boat-and-spoon-source-audit-2026-07-28.md"
 technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 666272, sha256 = "af98d030c708eccefb623e37d5e8c4602e67ec0811ef2b2b6865f9ad3e206c3a" }
 

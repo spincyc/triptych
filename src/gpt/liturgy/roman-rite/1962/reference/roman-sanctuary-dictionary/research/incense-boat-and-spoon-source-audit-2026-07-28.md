@@ -35,6 +35,16 @@ Generation prompt, built-in image edit, 2026-07-28:
 > perspective, separate spoon, white background, framing, and monochrome
 > graphite treatment; add no text, smoke, charcoal, fire, or watermark.
 
+The exact prompt for the precursor generation was not durably preserved and
+is not reconstructed here. The edit was made with OpenAI's built-in image
+generation tool; the exact model identifier and runtime were not exposed.
+No third-party reference image was supplied or identified for this edit. The
+project-generated precursor is retained as a held asset at SHA-256
+`98af7c63f0930855a8d65ca32fd5cb9d064b79c5abd2853882290d8870e6c421`.
+The edited raster is distributed under the repository's project-content
+terms; this record does not claim rights in the independently cited Met
+catalog image, which served as evidence rather than transferred image input.
+
 Normalized publication asset:
 `RPD-FIG-incense-0003-empty-boat-spoon.png`, 1536 × 1024, 8-bit grayscale,
 SHA-256 `af98d030c708eccefb623e37d5e8c4602e67ec0811ef2b2b6865f9ad3e206c3a`.

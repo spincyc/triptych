@@ -71,3 +71,28 @@ review_state = "approved"
 depicts = ["obj-incense-boat", "obj-incense-spoon"]
 scale_mode = "not-to-common-scale"
 review_note = "Project-owned generated edit removed unsupported granular contents. The boat-form body, lid, foot, and separate spoon are bounded by the checked Missal identity and Met exemplar; decorative morphology is illustrative."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the boat as the loose-incense container; a lay holder or handoff is local training, because the checked Solemn-Mass rubric names the deacon ministering it to the celebrant."
+claim_ids = ["clm-incense-boat-identity"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the boat with its separate spoon; do not treat the exemplar's silver, size, foot, hinge, or ornament as a universal specification."
+claim_ids = ["clm-incense-boat-identity", "clm-incense-boat-exemplar"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the checked deacon-to-celebrant relationship separately from any local lay boat-bearer assignment, and keep the boat distinct from the hot thurible."
+claim_ids = ["clm-incense-boat-identity"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The boat is the container from which incense is taken; the pictured hinged, footed form is illustrative rather than prescribed."
+claim_ids = ["clm-incense-boat-identity", "clm-incense-boat-exemplar"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Treat the boat as an ordinary incense-service object, not as pontifical insignia or a distinct pontifical form."
+claim_ids = ["clm-incense-boat-identity"]

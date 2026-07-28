@@ -7,12 +7,39 @@ Audit date: 2026-07-28
 
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
-| Comprehensive | Yes | Twenty alpha records | Built, inspected, and installed | No | Alpha |
+| Comprehensive | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
 | Altar server | Yes | Thirty-three alpha records | Built, inspected, and installed | No | Alpha |
-| Sacristan | Yes | Twenty alpha records | Built, inspected, and installed | No | Alpha |
-| MC/trainer | Yes | Twenty alpha records | Built, inspected, and installed | No | Alpha |
-| General reader | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
-| Pontifical ceremonies | Yes | Seventeen alpha records | Built, inspected, and installed | No | Alpha |
+| Sacristan | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
+| MC/trainer | Yes | Twenty-two alpha records | Built, inspected, and installed | No | Alpha |
+| General reader | Yes | Twenty-one alpha records | Built, inspected, and installed | No | Alpha |
+| Pontifical ceremonies | Yes | Nineteen alpha records | Built, inspected, and installed | No | Alpha |
+
+The incense boat-and-spoon promotion admits the two already source-audited
+canonical records through all six alpha selections. It uses the existing
+project-generated empty-boat graphite edit; the audit preserves the exact edit
+prompt, identifies the unavailable precursor prompt and unexposed model, and
+keeps the independently cited Met image outside the project-artwork rights
+claim. Audience notes distinguish the container from its separate transfer
+tool, preserve the checked deacon-to-celebrant relationship, and do not invent
+a universal lay holder, handoff, cue, material, dimension, ornament, contents,
+or fire-tending procedure. The bespoke altar-server leaf deliberately retains
+its existing combined teaching page and remains at thirty-three records.
+
+All 147 pages across the six leaves were rastered through the repository PDF
+review pipeline and visually inspected. The two new canonical pages and the
+unchanged combined altar-server page are legible and unclipped; no overlap,
+spill page, or unsafe visual instruction was found. Settled logs contain no
+fatal error, undefined reference, or overfull box. Build and installed bytes
+are identical:
+
+| Leaf | Records | Pages | Installed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 22 | 24 | `136910f410003795780ee2d126057a60206338a36f43614451b50bfb97588a2c` |
+| Altar server | 33 | 31 | `43920aada7cb1471c269d8941f9f0b1c4e40ee9702c0eeba27b10552601137c2` |
+| Sacristan | 22 | 24 | `fd5aa6dfaa0960e8c9589e97d63c0a5499198fc553357dce71f916956a982747` |
+| MC/trainer | 22 | 24 | `a1ade263a0cc81a842521be1bb0b4c615628842718b176ccd4f8f670bd3bce1e` |
+| General reader | 21 | 23 | `7948272ea909093e020b2969cff181059d22eeb7287f53df2d965dcf9a59e7f1` |
+| Pontifical ceremonies | 19 | 21 | `e7073ac1106cd966a320d3b525727280064a3718b25a57d668cf8d46e459b041` |
 
 The three-altar-cloths promotion admits the already source-audited
 `obj-altar-cloths` record through every canonical alpha edition. Its existing

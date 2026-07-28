@@ -23,4 +23,6 @@ identity-and-role comparison. It does not invent a universal handoff, cue,
 server assignment, vessel form, towel fold, or disposal practice. The three
 altar cloths add a distinct altar-covering relationship without turning
 illustrative folds, extents, or spacing into ceremonial instruction. The
-twenty-record canonical alpha gate requires no external review.
+incense boat and spoon add the checked deacon-to-celebrant relationship while
+leaving any lay boat-bearer assignment, cue, and handoff to local training.
+The twenty-two-record canonical alpha gate requires no external review.

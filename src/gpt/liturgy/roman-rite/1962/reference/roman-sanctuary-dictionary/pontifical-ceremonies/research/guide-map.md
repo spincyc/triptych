@@ -28,4 +28,8 @@ selection to sixteen records. The three altar cloths enter as ordinary altar
 linens rather than pontifical insignia or a distinct pontifical form. Their
 source-minimal relationship plate makes no claim about material, dimensions,
 markings, folds, edge drop, or arrangement, and brings the selection to
-seventeen records.
+seventeen records. The incense boat and spoon enter as ordinary supporting
+objects rather than pontifical insignia or distinct pontifical forms. Their
+paired plate and notes preserve the checked clerical relationship and make no
+claim for a universal material, dimension, ornament, or local lay handoff,
+bringing the selection to nineteen records.

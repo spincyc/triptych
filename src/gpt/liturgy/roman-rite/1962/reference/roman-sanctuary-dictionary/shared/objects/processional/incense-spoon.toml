@@ -71,3 +71,28 @@ review_state = "approved"
 depicts = ["obj-incense-boat", "obj-incense-spoon"]
 scale_mode = "not-to-common-scale"
 review_note = "Project-owned generated edit removed unsupported granular contents. The boat-form body, lid, foot, and separate spoon are bounded by the checked Missal identity and Met exemplar; decorative morphology is illustrative."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Keep the spoon with the boat and recognize it as a separate transfer tool; the checked rubric does not create a universal lay-server action."
+claim_ids = ["clm-incense-spoon-identity"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare and store the spoon with the boat; the pictured exemplar's 8.9 cm length is descriptive, not a required size."
+claim_ids = ["clm-incense-spoon-identity", "clm-incense-spoon-exemplar"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Name the spoon separately when teaching incense service, but do not infer an unverified server cue, transfer, or fire-tending procedure."
+claim_ids = ["clm-incense-spoon-identity"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The spoon is the small transfer tool paired with the incense boat, not part of the thurible."
+claim_ids = ["clm-incense-spoon-identity"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Treat the spoon as an ordinary supporting incense tool, not as pontifical insignia or a special pontifical form."
+claim_ids = ["clm-incense-spoon-identity"]

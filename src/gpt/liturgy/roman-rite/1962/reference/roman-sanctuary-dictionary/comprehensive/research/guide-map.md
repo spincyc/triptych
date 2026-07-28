@@ -11,7 +11,7 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
-The present bounded family covers twenty records: the appointments-and-books
+The present bounded family covers twenty-two records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel. Each object receives an
@@ -20,7 +20,9 @@ detail inset. The linen figures are source-minimal pencil studies; fold
 pattern, dimensions, markings, ornament, construction, and exact drape remain
 unasserted. The altar-cloths view teaches only the required three-cloth
 covering relationship. The Lavabo plate does not assert common scale,
-material, ornament, dimensions, or a universal vessel form. The furnishings
+material, ornament, dimensions, or a universal vessel form. The incense boat
+and spoon preserve the checked container-and-transfer-tool distinction while
+treating the pictured form and dimensions as one exemplar. The furnishings
 figures teach a service table and two
 representative movable seating forms without universalizing construction,
 covering, decoration, or exact placement.

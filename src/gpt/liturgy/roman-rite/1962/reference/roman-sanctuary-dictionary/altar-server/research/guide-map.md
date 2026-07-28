@@ -80,6 +80,12 @@ leaf, so this promotion changes neither its object count nor its pagination.
 The existing page retains the recognition-only handling boundary and states
 that folds, extents, spacing, material, and arrangement are illustrative.
 
+The canonical generated selection now admits the incense boat and spoon,
+bringing that selection to twenty-two records. Both were already present on
+one combined page in this bespoke thirty-three-record teaching leaf, so the
+promotion deliberately preserves the distinct teaching spread and changes
+neither its object count nor its pagination.
+
 The incense family uses source-bounded generated artwork. The thurible view
 shows a neutral footed bowl, removable pierced lid, three support chains, and
 a separate central lid-lifting chain without asserting material, ornament, or
