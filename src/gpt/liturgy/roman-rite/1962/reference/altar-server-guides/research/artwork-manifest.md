@@ -811,3 +811,47 @@ evidence or independent artwork review.
   birettas in the right frame. Corrected standalone scene inspection passed
   2026-07-27. Integrated full-size page and every-page screen review passed
   2026-07-27; no print-size or external approval status is claimed.
+
+## ASG-ART-024
+
+- Logical ID: `ASG-ART-024`
+- File:
+  `shared/artwork/pencil/ASG-ART-024-mc-elevation-tableau.png`
+- Purpose and depicted state: the stable Missa Cantata elevation-service
+  state controlled by MC-037--MC-041: T1--T4 kneel with four upright lighted
+  torches while A1 kneels separately with the low handbell and its pad
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief; no source image was supplied
+- Prompt record: the request specified exactly four young servers kneeling in
+  one calm line, each holding one tall lighted processional torch upright with
+  both hands, and one separately kneeling server with a small handbell held
+  low near a bell pad, all facing an implied altar outside the frame. It
+  required a wide, text-free graphite scene on white with only a faint floor
+  line and prohibited a priest, clergy, thurible, incense, boat, cruets,
+  Communion plate, altar, rail, steps, architecture, dimensions, routes,
+  invented gestures, labels, arrows, numerals, symbols, borders, color, and
+  watermark.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Received output: 1536 by 1024, 8-bit sRGB PNG; SHA-256
+  `4f75af0938b32ca5089dc74979673cc04b020c8b982a0dd714441794e77c6fb0`
+- Repository normalization: proportional resize to 500 pixels high,
+  conversion to 8-bit grayscale, and metadata stripping with ImageMagick
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
+  152,161 bytes
+- SHA-256:
+  `e1396b6260537eac6dbf95fc459a941fbd2d39c406829abc00991ab1acfc1ccf`
+- Baked-in text, arrows, or numerals: none
+- TeX overlays: T1--T4 and A1 role capsules; source-bound caption limits the
+  scene to MC-037--MC-041, controls the bell's return to its pad, omits the
+  optional incense branch, and leaves architecture, spacing, and stations
+  local
+- Consumers: `02-missa-cantata`
+- Rights state: project-created AI illustration; no third-party source asset
+  was incorporated; distributed under repository terms only to the extent
+  applicable rights exist
+- Review state: standalone scene inspection passed 2026-07-27 for exact actor
+  and object count, kneeling silhouettes, upright torches, low bell and pad,
+  white-page pencil treatment, and prohibited-content absence. Integrated
+  full-size page and every-page screen review passed 2026-07-27; no physical
+  print or external approval status is claimed.

@@ -76,6 +76,14 @@ distances, or church geometry; those remain written local rehearsal choices.
 The series artwork manifest owns the asset's generation and correction
 history, identity, rights, consumer, and review state.
 
+The Canon-and-elevations drawing uses pencil asset `ASG-ART-024` for the
+stable MC-037--MC-041 state. TeX-owned labels identify T1--T4 kneeling with
+four upright torches and A1 kneeling separately with the bell; the adjacent
+caption controls A1's signals and the bell's final return to its pad. The
+asset deliberately omits the optional incense branch and does not fix
+architecture, spacing, or local stations. The series artwork manifest owns
+the prompt, normalization, identity, rights, consumer, and review state.
+
 On the alternate lesson branch, L chants from the pre-positioned book and
 returns empty-handed. The book remains on its lectern until the named adult
 recovers it after the concluding sacristy reverence and L confirms it is
@@ -135,6 +143,13 @@ Ordinary torches return after the chalice
 elevation at MC-041; Communion and fast-day extensions remain through the
 first wine ablution at MC-048. The cards add no handoff absent from
 MC-001--MC-057, and every action-card face names Missa Cantata.
+
+The 2026-07-28 elevation-tableau tranche produced the installed
+twenty-eight-page alpha full guide with SHA-256
+`4939a59db2a626331d665b5abf99e64604b80394e9b8c7cb3ccabfe41f405687`.
+The final log is free of fatal errors, warnings, undefined references,
+overfull or underfull boxes, and unresolved rerun requests. This hash is the
+current installed alpha identity.
 
 ## Mastery evidence
 

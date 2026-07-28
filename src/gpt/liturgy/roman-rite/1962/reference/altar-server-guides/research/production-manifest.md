@@ -678,3 +678,39 @@ embedded, subsetted, and Unicode-mapped. The installed mirror reproduces the
 reviewed candidate exactly. This alpha record establishes the current source,
 rights, safety, identity, mechanical, and basic visual concerns; it claims no
 later or external approval status.
+
+## Missa Cantata elevation-service pencil scene — 2026-07-28
+
+The Missa Cantata guide now gives MC-037--MC-041 a stable pencil tableau.
+`ASG-ART-024` shows exactly T1--T4 kneeling with four upright torches and A1
+kneeling separately with the low bell and pad. TeX-owned capsules identify
+the roles; the caption controls A1's signal and final bell state, leaves
+spacing and stations local, and expressly omits the optional incense branch.
+The raster contains no architecture, clergy, incense equipment, route,
+semantic mark, or extra object.
+
+The project-created image was inspected before normalization for exact actor
+and object count, kneeling silhouettes, upright torches, low bell handling,
+white-page pencil treatment, and prohibited-content absence. The complete
+seven-publication family then rebuilt for settled passes because the diagram
+macro file is shared. All final logs are free of fatal errors, LaTeX or
+package warnings, undefined references, overfull or underfull boxes, and
+unresolved rerun requests. The six unaffected publications reproduce their
+installed PDF bytes exactly.
+
+The bounded review tool rastered all seven PDFs. Both Missa Cantata contact
+sheets and every Missa Cantata page were inspected, with the new page also
+inspected at full size. No collision, accidental blank, unsupported role or
+object, clipped torch, obscured label, unsafe diagram ambiguity, or terminal
+fit problem was found.
+
+The reviewed Missa Cantata candidate is 28 pages and 1,633,964 bytes at
+SHA-256
+`4939a59db2a626331d665b5abf99e64604b80394e9b8c7cb3ccabfe41f405687`.
+Its PDF title and subject are present, its revision timestamp is
+`2026-07-28T04:12:00Z`, and its active text and diagram font families remain
+embedded, subsetted, and Unicode-mapped. Installation must reproduce the
+reviewed candidate exactly. The installed mirror reproduces it. This alpha
+record establishes the current source,
+rights, safety, identity, mechanical, and basic visual concerns; it claims no
+physical print or external approval status.
