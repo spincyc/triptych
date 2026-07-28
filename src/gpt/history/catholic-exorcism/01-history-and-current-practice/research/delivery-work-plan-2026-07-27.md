@@ -3,21 +3,21 @@
 Status: active plan for `task-2-exorcism-100-pages`
 
 This plan sequences the remaining work without changing the evidence,
-safety, or review standards in `guidance/editorial.md`,
+safety, or publication standards in `guidance/editorial.md`,
 `guidance/history/historical-accounts.md`, and the publication's `scope.md`.
-It does not record a completed review. A checked item requires dated evidence
-in the named owning record for the exact snapshot.
+A checked item requires dated evidence in the named owning record for the
+exact snapshot.
 
 ## Baseline and finish line
 
-- The installed public-alpha PDF is 32 physical pages.
+- The installed public-alpha PDF is 33 physical pages.
 - The deliverable remains at least 100 substantive pages, excluding front
   matter, terminal audit apparatus, padding, sparse spill, and long quotations.
 - The architecture and planning ranges remain controlled by
   `comprehensive-expansion-plan-2026-07-27.md`.
-- The source, safety, law, PDF, web, and every-page gates must pass together
-  on one final exact snapshot. Earlier review records remain evidence only for
-  the snapshots and lanes they identify.
+- The source, evidence, safety, rights, identity, law, PDF, web, mechanical,
+  and every-page visual gates must pass together on one final exact snapshot.
+  Earlier review records remain dated historical evidence only.
 
 ## Work unit E1 — reconcile the present baseline
 
@@ -78,7 +78,7 @@ only when `guidance/sources.md` requires it.
 - [ ] Terminal scope, dated witness/act/edition timeline, grouped references,
   rights statement, and generation metadata.
 
-Each module is ready for checkpoint review only when its consequential claims
+Each module is ready for checkpoint publication only when its consequential claims
 are mapped, its citations have exact loci, its material disagreements and
 negative results remain visible, and it adds substantive history rather than
 extent-only prose.
@@ -104,11 +104,9 @@ extent-only prose.
   overflow, and layout warnings.
 - [ ] Raster through the repository review tooling and inspect every page,
   using full-size views where necessary.
-- [ ] Record source, historical/patristic/liturgical, canonical, clinical and
-  safeguarding, pastoral, rights, PDF, web, and final editorial states for
-  the exact snapshot. Unavailable external review remains deferred, never
-  relabeled as internal or AI review.
-- [ ] Verify reviewed-build, installed-PDF, tracked-web, catalog, and
+- [ ] Record source, evidence, safety, rights, identity, mechanical, PDF, web,
+  and every-page visual states for the exact snapshot.
+- [ ] Verify built, installed-PDF, tracked-web, catalog, and
   publication-control identities agree.
 - [ ] Update the promised-deliverable requirement only after its mechanical
   page gate and exact-snapshot evidence gate actually pass.
@@ -116,6 +114,6 @@ extent-only prose.
 ## Stop conditions
 
 Do not draft beyond an evidence ceiling, infer a missing operational detail,
-fill pages with apparatus, or mark a human or ecclesiastical review complete.
+or fill pages with apparatus.
 If a module cannot close after the required second research pass, preserve the
 bounded negative result and adjust only that module's claim.

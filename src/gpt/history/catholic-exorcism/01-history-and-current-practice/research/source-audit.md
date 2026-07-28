@@ -325,18 +325,20 @@ cumulative extent before publication.
 ## Publication audit
 
 The earlier fifteen-page candidate, build, web conversion, and page review are
-superseded for publication-review purposes by the expanded modular draft. They
+superseded for publication purposes by the expanded modular draft. They
 do not establish the current render's production quality.
 
 The expanded source received internal source-role, currentness, architecture,
 and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
 web conversion, review rasters, every-page visual inspection, and PDF
 structure, font, metadata, and extracted-text checks passed for the current
-32-page snapshot; source-library and binding validation also passed. The
-snapshot is installed and bound for public-alpha review in this worker but
+32-page predecessor snapshot; source-library and binding validation also
+passed. The current 33-page snapshot preserves those source and safety
+boundaries and has a fresh settled build, log audit, every-page visual
+inspection, PDF structure, font, metadata, and extracted-text check. The
+snapshot is installed and bound for public alpha in this worker but
 will not be live until maintainer integration and push. It does not satisfy
 the promised 100+ page comprehensive deliverable. The expansion's incomplete
-source families and deferred independent human, professional, specialist,
-physical-use, and ecclesiastical reviews remain open. Public review
-distribution is not completion, final release approval, or ecclesiastical
-approval.
+source families remain open. Completion requires the substantive-page, source,
+evidence, safety, rights, identity, mechanical, web/PDF anti-drift, and
+every-page visual gates to pass for one exact snapshot.

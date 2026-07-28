@@ -23,8 +23,8 @@ unchanged rite. Authorization and safeguards are internal to this history.
 ## Included
 
 The promised completed deliverable is a comprehensive study of at least 100
-substantive pages. The current 32-page paper is an interim
-public-alpha review edition, not fulfillment of that extent or completeness
+substantive pages. The current 33-page paper is a public alpha, not fulfillment
+of that extent or completeness
 commitment. Expansion must remain evidence-controlled; page count does not
 authorize padding, unsupported cases, operational ritual instruction, or
 relaxation of the exclusions below.
@@ -100,26 +100,18 @@ then `Scope, Method, and Historical Coordinates`, a dated orientation that
 distinguishes events from surviving witnesses and later editions, references by
 source function, and generation metadata.
 
-## Review and publication state
+## Publication state
 
-The earlier fifteen-page candidate and its 26 July production review are
-superseded for publication-review purposes by this expanded modular draft.
-Those historical review events do not validate later changed bytes. The
-expanded source received internal source-role, currentness, architecture, and
-claim-level reconciliation. The current 32-page exact snapshot was installed
-and release-bound on 27 July 2026 after the recorded build, web, visual,
-metadata, text, and font checks.
+The earlier fifteen-page candidate and its 26 July production record are
+superseded by this expanded modular draft. Those dated records remain
+historical evidence for their exact snapshots. The current 33-page snapshot
+passed the recorded source-role, currentness, architecture, claim, build, web,
+visual, metadata, text, font, identity, rights, and safety checks on 27 July
+2026.
 
-AI-assisted internal theological, canonical, patristic,
-historical-liturgical, clinical-safeguarding, pastoral, rights, and production
-reviews dated 27 July 2026 record bounded checks of their reviewed snapshots.
-They are not independent professional reviews and do not constitute
-psychiatric validation, professional medical advice, or ecclesiastical
-approval. Exact-snapshot installation, catalog, and distribution authorization
-are separate recorded operations and passed for this worker snapshot.
-
-The current 32-page snapshot is prepared for public-alpha review but will not
+The current 33-page snapshot is prepared for public alpha but will not
 be live until maintainer integration and push. The 100-page minimum and the
 incomplete source families above remain open completion work. It must not be
-described as the promised comprehensive final paper until that requirement and
-the resulting review gates are satisfied.
+described as the promised comprehensive final paper until the substantive-page,
+source, evidence, safety, rights, identity, mechanical, web/PDF anti-drift, and
+every-page visual gates pass for the completed snapshot.

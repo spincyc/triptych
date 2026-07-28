@@ -26,8 +26,8 @@ Material qualifications:
 
 No display translation has been created. Final publication requires exact
 public-domain or licensed translation control, original-language collation for
-consequential lexical claims, reusable bindings, and independent historical,
-patristic, biblical, liturgical, and theological review.
+consequential lexical claims, reusable bindings, claim-level evidence mapping,
+rights verification, and exact-snapshot production checks.
 
 ## Exact repository controls added in this tranche
 

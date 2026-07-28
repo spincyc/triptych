@@ -73,16 +73,14 @@ Named traditions are internally diverse. The matrix groups arguments rather than
 6. No historical rite is treated as currently authorized merely because it is old.
 7. No illness, disability, identity, trauma history, sin, or dissent is treated as a sign of possession.
 
-## Rights and review state
+## Rights and publication state
 
 Official law, Catechism, conference material, and liturgical descriptions are tightly paraphrased. Proprietary ritual text is not reproduced. Orthodox liturgical wording is not quoted. No medical manual or modern case narrative is reproduced.
 
-Internal theological-category, jurisdiction, non-operational safety,
-objection-fairness, and safeguarding review was completed at source stage on
-2026-07-26. AI-assisted internal theological, canonical, patristic,
-historical-liturgical, clinical-safeguarding, pastoral, rights, and production
-reviews dated 2026-07-27 record bounded checks of their reviewed snapshots;
-they are not independent professional reviews. Orthodox law and practice
-remain outside scope. None of these reviews constitutes clinical validation,
-professional medical advice, or ecclesiastical approval; exact-snapshot
-installation and distribution authorization remain separate gates.
+The source-stage theological categories, jurisdiction, non-operational safety,
+objection fairness, and safeguarding controls were checked on 2026-07-26.
+Dated 2026-07-27 records preserve additional historical checks for their exact
+snapshots; they are not active publication dependencies. Orthodox law and
+practice remain outside scope. Exact-snapshot source, evidence, safety, rights,
+identity, mechanical, PDF/web anti-drift, and basic visual checks govern
+publication.

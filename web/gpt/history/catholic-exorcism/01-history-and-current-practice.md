@@ -1,6 +1,6 @@
 # Catholic Exorcism: History, Discipline, and Pastoral Practice
 
-*Interim public-alpha review paper toward a comprehensive 100-page study; not a completed or operational guide*
+*Public-alpha historical study toward a comprehensive 100-page work*
 
 ## The first rule is about the person
 
@@ -670,15 +670,13 @@ The method separates contemporary or near-contemporary evidence, later narrative
 
 The controlling universal law is the 1983 *Codex Iuris Canonici* for the Latin Church, promulgated by John Paul II on 25 January 1983 and in force from 27 November 1983, in its official Latin text, especially canons 1, 134 §§1–3, and 1172. Pertinent dicastery acts and the current Roman ritual discipline are distinguished from the USCCB’s account of the English edition implemented for the Latin dioceses of the United States. The published authentic-interpretations compilation and the official Latin web text were checked through 27 July 2026: the compilation contains no entry for canons 134 or 1172, and fresh official Latin and English deliveries of canon 134 were byte-identical to the registered artifacts. This was not a comprehensive amendment-or-repeal inventory. Particular law and diocesan processes may add applicable controls and must be obtained from the competent authority. This work gives no opinion on an individual case.
 
-### Global uncertainties, rights, and review
+### Global uncertainties and rights
 
 No auditable global dataset establishes the frequency or outcomes of major exorcism. Ancient and medieval reports usually cannot be retrospectively diagnosed, and several early liturgical corpora have disputed dates, attributions, or compositional histories. The proprietary current ritual is neither reproduced nor operationally summarized. Protected modern works are quoted only in focused excerpts or paraphrased.
 
 The repository’s CC BY 4.0 terms apply only to project-created synthesis, organization, and other contributions that the project may license. Scripture, liturgical and official texts, received translations, historical source wording, and modern scholarship retain their own status. The few biblical phrases quoted in the body use the identified public-domain Douay–Rheims/Challoner witness; ancient and medieval witnesses, official acts, modern scholarship, and clinical or safeguarding sources are otherwise paraphrased at identified loci. No scan, ritual formulary, modern-source table, diagnostic criteria, case transcript, recording, or third-party image is reproduced.
 
-The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. The expanded draft has received internal source, structural, and production review, including every-page visual inspection. AI-assisted internal theological, canonical, patristic, historical-liturgical, clinical-safeguarding, pastoral, rights, and production review records dated 27 July 2026 govern their stated and deliberately bounded lanes. These are not independent professional reviews, clinical validation, professional medical advice, or ecclesiastical approval. Exact-snapshot installation and distribution authorization remain separate gates.
-
-This 32-page snapshot is an interim public-alpha review paper. It does not fulfil the promised comprehensive study of at least 100 substantive pages; that expansion and its resulting source and specialist reviews remain open. Discoverability permits review and does not make this an official Church publication or an approved ritual, diagnostic, pastoral, or legal guide.
+The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. This 33-page public alpha does not fulfil the promised comprehensive study of at least 100 substantive pages. Its remaining work is source coverage, evidence-grounded expansion, and exact-snapshot production verification.
 
 ## Dated Orientation
 

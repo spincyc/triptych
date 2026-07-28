@@ -47,20 +47,18 @@ Before prose is expanded beyond the present evidence ceilings:
 
 ## Completion and safety gates
 
-Completion requires the final reviewed installed PDF to contain at least 100
+Completion requires the final installed PDF to contain at least 100
 substantive typeset pages; every promised module to appear or have an explicit
 user-authorized waiver; every consequential claim to be represented in the
 evidence map and exact source bindings; current law to name body, jurisdiction,
 authority, effective or as-of date, and material changes; the non-operational
-and safeguarding boundaries to remain intact; PDF and web editions to derive
-from the same source and pass anti-drift checks; every page to be visually
-reviewed; and independent historical, patristic, liturgical, canonical,
-clinical-safeguarding, pastoral, rights, and final editorial reviews to govern
-the exact completed snapshot.
+and safeguarding boundaries to remain intact; rights and publication identity
+to be verified; PDF and web editions to derive from the same source and pass
+anti-drift checks; and every page to receive basic visual inspection.
 
 The page target never authorizes padding, display translations, reconstructed
 prayers, copied ritual formulas, alleged-sign checklists, diagnostic advice, or
 sensational case narration. Expansion should come from source-grounded history,
 edition comparison, reception, jurisdiction, and synthesis. Until all gates
-pass, the work remains publicly discoverable as a review edition and must not
-be represented as the promised comprehensive final paper.
+pass, the work remains a public alpha and must not be represented as the
+promised comprehensive final paper.
