@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.paul-vi.ministeria-quaedam"
+title = "Ministeria quaedam"
+responsible = "Pope Paul VI"
+work_type = "apostolic-letter-motu-proprio"
+alternate_titles = ["Disciplina circa Primam Tonsuram, Ordines Minores et Subdiaconatus in Ecclesia Latina innovatur"]
+languages = ["la"]
+locus_pattern = '(?:intro|[IVX]+(?:-[IVX]+)?|effective-date)'
+description = "Paul VI's apostolic letter issued motu proprio on 15 August 1972 reforming the discipline of first tonsure, minor orders, and the subdiaconate in the Latin Church."
+relations = ["work.holy-see.acta-apostolicae-sedis"]

@@ -10,6 +10,19 @@ sources.
 - Catholic Church, *Codex Iuris Canonici* (1983), cc. 1, 134 §§1–3, 1166, 1172; official Holy See Latin controls, with official English pages used only as translation aids. Canon 1 establishes the Code's Latin-Church scope. Canon 134 §§1–2 includes vicars general and episcopal vicars in the generic term *local ordinary*; §3 separately excludes them, absent special mandate, where a canon attributes executive power by name to the diocesan bishop. Canon 1172 uses the generic term. John Paul II, *Sacrae disciplinae leges* (25 January 1983), promulgated the Code and ordered it to have force of law from the first day of Advent 1983 (27 November). Fresh retrieval on 2026-07-27 was byte-identical to the exact registered official Latin and English artifacts for c. 134. The official Latin web text retains c. 1172's quoted wording, and the Dicastery for Legislative Texts' published authentic-interpretations compilation contains no entry for cc. 134 or 1172. These are bounded text-and-register checks, not a comprehensive amendment-or-repeal inventory; territorial and personal competence, a grant's scope, duration, or revocation, and applicable particular law remain fact-specific.
 - Catholic Church, *Codex Canonum Ecclesiarum Orientalium* (1990), cc. 1–2, authentic Latin in *AAS* 82 (1990), p. 1061. Used only to establish the Code's Eastern Catholic scope and its ancient-law interpretive context. No Eastern particular law or liturgical book was inspected for this publication, so the study states no Eastern major-exorcism rule and makes no whole-Code negative claim.
 - Catholic Church, *Codex Iuris Canonici* (1917), cc. 1151–1153, Vatican Polyglot 1918 edition, p. 328. Historical comparison only. Canon 1151 contains the particular-permission, priestly-qualification, and prudent-investigation rules; c. 1152 concerns the persons over whom legitimate ministers could use exorcisms; c. 1153 identifies the ministers of exorcisms embedded in baptism, consecrations, and blessings by reference to those rites. The separately paginated official promulgation witness is *AAS* 9, part II (1917), p. 225; that page number must not be assigned to the 1918 book edition.
+- Paul VI, *Ministeria quaedam*, apostolic letter issued motu proprio on
+  15 August 1972, introduction and norms I–IV, effective 1 January 1973,
+  *AAS* 64 (1972), 529–534. The exact official Latin Holy See HTML response
+  was acquired, hashed, and inspected on 2026-07-27. The introduction names
+  porter, lector, exorcist, and acolyte among the grades formerly called minor
+  orders; norms I–IV connect the clerical state with the diaconate, rename the
+  former minor orders ministries, permit ministries to be entrusted to lay
+  faithful, and retain lector and acolyte throughout the Latin Church. The
+  introduction separately permits episcopal conferences to ask the Apostolic
+  See for other regionally needed ministries and gives porter, exorcist, and
+  catechist as examples. This is neither evidence that a particular request
+  was made or approved nor a universal exorcist ministry, and it does not
+  confer canon 1172 authorization.
 - Congregation for the Doctrine of the Faith, letter to ordinaries on exorcism, 29 September 1985, *AAS* 77 (1985), 1169–1170, official Latin Holy See text. The delivery URL contains `19850924`, and some vernacular presentation metadata gives 24 September; the official Latin heading and *AAS* citation control the date used here. The letter requires observance of c. 1172, forbids the faithful's use of the Leonine formula against Satan and the apostate angels, and governs unauthorized assemblies that directly address demons and seek their identities.
 - Congregation for the Doctrine of the Faith, *Instruction on Prayers for Healing*, 14 September 2000, art. 8. Distinguishes healing services from exorcism and requires dependence on the diocesan bishop.
 - Congregation for Divine Worship and the Discipline of the Sacraments, *De Exorcismis et Supplicationibus Quibusdam*: promulgation decree dated 22 November 1998; Latin typical edition issued 1999; emended reprint 2004. The 2004 state is an amended or emended version, not a second typical edition. The proprietary rite was consulted only through official descriptions and exact loci quoted in official conference guidance; its formulas are not reproduced.
@@ -356,7 +369,7 @@ and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
 web conversion, review rasters, every-page visual inspection, and PDF
 structure, font, metadata, and extracted-text checks passed for the current
 32-page predecessor snapshot; source-library and binding validation also
-passed. The current 33-page snapshot preserves those source and safety
+passed. The current 34-page snapshot preserves those source and safety
 boundaries and has a fresh settled build, log audit, every-page visual
 inspection, PDF structure, font, metadata, and extracted-text check. The
 snapshot is installed and bound for public alpha in this worker but

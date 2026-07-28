@@ -8,7 +8,7 @@
 - **Primary profile:** `guidance/history/historical-accounts.md`
 - **Additional profile:** `guidance/articles.md` applies only to the bounded theological-authority and current-law claims
 - **Legal center:** universal law of the Latin Church, with U.S. territorial implementation distinguished and a bounded Eastern jurisdictional comparison
-- **Current-law as-of date:** 2026-07-26
+- **Current-law as-of date:** 2026-07-27
 - **Governing Code:** the 1983 *Codex Iuris Canonici*, promulgated by John Paul II on 1983-01-25 and in force from 1983-11-27; canon 1 limits its scope to the Latin Church
 - **Additional historical-source inspection:** 2026-07-27
 
@@ -23,7 +23,7 @@ unchanged rite. Authorization and safeguards are internal to this history.
 ## Included
 
 The promised completed deliverable is a comprehensive study of at least 100
-substantive pages. The current 33-page paper is a public alpha, not fulfillment
+substantive pages. The current 34-page paper is a public alpha, not fulfillment
 of that extent or completeness
 commitment. Expansion must remain evidence-controlled; page count does not
 authorize padding, unsupported cases, operational ritual instruction, or
@@ -104,12 +104,12 @@ source function, and generation metadata.
 
 The earlier fifteen-page candidate and its 26 July production record are
 superseded by this expanded modular draft. Those dated records remain
-historical evidence for their exact snapshots. The current 33-page snapshot
+historical evidence for their exact snapshots. The current 34-page snapshot
 passed the recorded source-role, currentness, architecture, claim, build, web,
 visual, metadata, text, font, identity, rights, and safety checks on 27 July
 2026.
 
-The current 33-page snapshot is prepared for public alpha but will not
+The current public-alpha snapshot is prepared for publication but will not
 be live until maintainer integration and push. The 100-page minimum and the
 incomplete source families above remain open completion work. It must not be
 described as the promised comprehensive final paper until the substantive-page,

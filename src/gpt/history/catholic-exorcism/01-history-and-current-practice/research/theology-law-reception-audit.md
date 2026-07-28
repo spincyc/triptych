@@ -16,6 +16,13 @@ This focused audit controls sections 80–120. It supplements, and does not repl
 ## Latin and Eastern law
 
 - **Latin Church:** 1983 CIC cc. 1, 134 §§1–3, and 1166–1172, especially c. 1172, authentic Latin, governing the Latin Church as of 2026-07-27. Canon 134 §§1–2 includes vicars general and episcopal vicars in the generic term *local ordinary* used by c. 1172; §3 separately governs canons that name the diocesan bishop, excluding those vicars absent a special mandate. This category-level conclusion does not decide territorial or personal competence, the scope, duration, or revocation of a concrete grant, or particular law. The exact official Latin and English c. 134 deliveries were re-fetched byte-identically on 2026-07-27; the published authentic-interpretations compilation has no entry for cc. 134 or 1172, a bounded register result rather than a comprehensive amendment inventory. *De Exorcismis et Supplicationibus Quibusdam*, decree dated 22 November 1998, Latin typical edition issued 1999, and emended reprint 2004. The exact Latin of the 22 October 2021 c. 838 implementing decree, DESQ praenotanda 37(a)–(b), controls conference competence for translations and adaptations; it does not create a new DESQ edition or alter c. 1172. CDF letter to ordinaries on exorcism (29 September 1985), official Latin and *AAS* locus controlling; CDF, *Instruction on Prayers for Healing* (14 September 2000), art. 8.
+- **1972 office boundary:** Paul VI's *Ministeria quaedam* (15 August 1972;
+  effective 1 January 1973), introduction and I–IV, controls the transition
+  from former minor orders to ministries. Lector and acolyte were retained
+  throughout the Latin Church; porter, exorcist, and catechist were examples
+  of other ministries an episcopal conference could ask the Apostolic See to
+  institute. The act neither establishes a universal current exorcist
+  ministry nor confers c. 1172 authorization.
 - **United States:** USCCB, “Exorcism,” Secretariat of Divine Worship, exact official web state accessed 2026-07-26. It controls only the identified U.S. implementation and public explanation.
 - **Eastern Catholic boundary:** CCEO cc. 1–2 control scope and interpretive context. They establish that the Eastern Code governs all and only the Eastern Catholic Churches unless it expressly provides otherwise concerning relations with the Latin Church; they do not transplant CIC c. 1172. No Eastern particular law or liturgical book was surveyed, and no Eastern major-exorcism rule is stated.
 - **Orthodox boundary:** no Orthodox law or liturgical book controls a retained publication claim. The study makes no statement about present Orthodox authorization or practice.
