@@ -180,8 +180,13 @@ mental-health input; it is not itself a professional clinical protocol.
   translation at printed pp. 238–239. It verifies a character's marvelous
   narrative within a satirical dialogue and the interlocutor's skeptical
   reply, not the event, practitioner, diagnosis, efficacy, standard rite,
-  Christian identity, or ritual continuity. PGM IV.3007–3086 and Philostratus,
-  *Life of Apollonius* 4.20 remain genre-specific leads.
+  Christian identity, or ritual continuity. Philostratus, *Life of
+  Apollonius* 4.20 is now controlled in the exact Conybeare 1912 facing-text
+  edition at printed pp. 390–392. It verifies Philostratus's
+  literary-biographical narration, not the event, diagnosis, causation,
+  efficacy, historicity of the sign, standard practice, dependence on or
+  influence upon Christian texts, or ritual continuity. PGM IV.3007–3086
+  remains a genre-specific lead.
 - No official global count of exorcists, cases, or successful major exorcisms was found; numerical claims in press reports are omitted.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
