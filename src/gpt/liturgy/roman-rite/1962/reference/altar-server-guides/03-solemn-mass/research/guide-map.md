@@ -62,6 +62,14 @@ stations, and traffic route remain local rehearsal data. The series artwork
 manifest owns the asset's provenance, identity, rights, consumers, and review
 state.
 
+The Gospel-departure drawing uses pencil asset `ASG-ART-025` for SO-020--021.
+Its TeX-owned labels identify the model order: MC; Th with the closed
+thurible; A1/A2 together with the two lighted candles; then D and SD with the
+Gospel book. Bb is expressly absent after returning the boat and remaining at
+base. The scene does not prescribe the local route, distances, architecture,
+or common-reverence place. The series artwork manifest owns its generation,
+normalization, identity, rights, consumer, and review record.
+
 The entrance-handoff drawing uses pencil asset `ASG-ART-023` for SO-003 and
 SO-007. Its TeX-owned labels distinguish the adult's two-candle handoff to A1
 and A2 from the later three-biretta handoff by C, D, and SD to MC. It does not
@@ -123,7 +131,7 @@ run begins on the next odd page after four complete six-up response sheet
 pairs. Every US-letter portrait sheet places six cards on each face in a
 two-column by three-row grid; each back mirrors every row for long-edge
 printing and has no blank card. The full guide has no embedded card range.
-The current installed full guide is twenty-eight physical pages; the installed
+The current installed full guide is twenty-nine physical pages; the installed
 companion is twelve. The full guide keeps the complete
 `Present; do not push` movement unit on one page. Production review confirmed
 response fronts on pages 1, 3, 5, and 7, action fronts on pages 9 and 11,
@@ -134,14 +142,15 @@ standalone-role common-route and SO-063 continuation controls. Mechanical
 duplex and cut alignment, rights, and full-size visual usability remain the
 active alpha checks for the cards.
 
-The installed alpha snapshot built on 28 July 2026 is 28 pages and 1,524,250
+The installed alpha snapshot built on 28 July 2026 is 29 pages and 1,719,892
 bytes with SHA-256
-`2676cfbd6713b238a852cb7bd1ba4f02ab201dcab633cf7271fbaf7ffe199dd7`.
+`d06c1ee90fc2d318d332bb7caa1b13058df30ab0829d28737f1979427a4b4544`.
 Settled pdfTeX passes left no fatal error, undefined reference, box warning, or
-rerun request. Every rendered page and the new entrance-handoff page at full
-size passed screen review for clipping, collision, accidental blanks,
-sequence, label placement, object count, monochrome legibility, and terminal
-fit. This alpha screen review claims no later or external approval status.
+rerun request. Every rendered page, both contact sheets, and the new
+Gospel-departure and following station pages at full size passed screen review
+for clipping, collision, accidental blanks, sequence, label placement, object
+count, monochrome legibility, and terminal fit. This alpha screen review
+claims no later or external approval status.
 
 The action-card cross-view is anchored to the chronology: SO-A02 fixes the
 boat and thurible endpoints at all four incense stations; SO-A06 records the

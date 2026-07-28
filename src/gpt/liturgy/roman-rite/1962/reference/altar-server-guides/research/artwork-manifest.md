@@ -855,3 +855,48 @@ evidence or independent artwork review.
   white-page pencil treatment, and prohibited-content absence. Integrated
   full-size page and every-page screen review passed 2026-07-27; no physical
   print or external approval status is claimed.
+
+## ASG-ART-025
+
+- Logical ID: `ASG-ART-025`
+- File:
+  `shared/artwork/pencil/ASG-ART-025-so-gospel-departure.png`
+- Purpose and depicted state: the Solemn-Mass Gospel departure controlled by
+  SO-020--021: MC leads; Th follows with the closed, still thurible; A1 and A2
+  follow together with two upright lighted candles; D and SD follow with the
+  closed Gospel book. Bb is absent after returning the boat and remaining at
+  base.
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief; no source image was supplied and no
+  correction pass was required.
+- Prompt record: the request specified exactly six figures in the SO-021
+  model order, exactly one closed and still thurible, exactly two lighted
+  candlesticks, and exactly one closed Gospel book. It required MC and SD to
+  remain empty-handed, omitted Bb, the boat, celebrant, and optional
+  cross-bearer, and prohibited smoke, swinging, reverence gestures, altar,
+  rail, steps, sedilia, furniture, doorway, architecture, route line, arrows,
+  measurements, labels, symbols, borders, color, and additional people or
+  objects.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Received output: 1750 by 1024, 8-bit sRGB PNG; SHA-256
+  `c591c8c331eedf40200cffb4e9c4a9a41b3d2c3d5a964f86f22385e50a571062`
+- Repository normalization: proportional resize to 500 pixels high,
+  conversion to 8-bit grayscale, and metadata stripping with ImageMagick
+- Normalized dimensions, mode, and size: 859 by 500; 8-bit grayscale PNG;
+  194,390 bytes
+- SHA-256:
+  `e3c13f4b2f594e7de777d0eb5286f386b41089a9688653b6b18403c0c21b9bfd`
+- Baked-in text, arrows, or numerals: none
+- TeX overlays: MC, TH, A1, A2, D, and SD role capsules; source-bound caption
+  states Bb's base state and leaves route, distances, architecture, and the
+  common-reverence place local
+- Consumers: `03-solemn-mass`
+- Rights state: project-created AI illustration; no third-party source asset
+  was incorporated; distributed under repository terms only to the extent
+  applicable rights exist
+- Review state: standalone scene inspection passed 2026-07-27 for exact actor
+  and object counts, formation order, closed still thurible, upright candles,
+  closed book, white-page pencil treatment, and prohibited-content absence.
+  Integrated full-size and every-page screen review passed 2026-07-27; no
+  physical print or external approval status is claimed.

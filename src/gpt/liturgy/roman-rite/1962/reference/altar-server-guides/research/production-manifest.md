@@ -714,3 +714,38 @@ reviewed candidate exactly. The installed mirror reproduces it. This alpha
 record establishes the current source,
 rights, safety, identity, mechanical, and basic visual concerns; it claims no
 physical print or external approval status.
+
+## Solemn Mass Gospel-departure pencil scene — 2026-07-28
+
+The Solemn Mass guide now gives SO-020--021 a distinct departure-formation
+scene before its existing Gospel-station tableau. `ASG-ART-025` shows the
+exact model order: empty-handed MC; Th with the closed, still thurible; A1/A2
+together with the two lighted candles; and D/SD with the Gospel book. Bb is
+absent after returning the boat and remaining at base. TeX owns all role
+capsules and states that route, distances, architecture, and the
+common-reverence place remain local.
+
+The single generated base passed standalone inspection before normalization
+for exact actor and object counts, model order, closed still thurible, upright
+candles, closed book, white-page pencil treatment, and absence of every
+prohibited person, object, gesture, route mark, and architectural claim.
+The complete seven-publication family rebuilt for settled passes because the
+diagram macro file is shared. Final logs are free of fatal errors, LaTeX or
+package warnings, undefined references, overfull or underfull boxes, and
+unresolved rerun requests. The six unaffected publications reproduce their
+installed SHA-256 identities exactly.
+
+The bounded review tool rastered all seven PDFs. Both Solemn contact sheets
+and all twenty-nine full-size pages were inspected, with the new departure
+scene and following station page also checked individually. No collision,
+clipping, accidental blank, unsupported role or object, obscured label, unsafe
+diagram ambiguity, sequence break, or terminal-fit defect was found.
+
+The reviewed and installed Solemn Mass candidate is 29 pages and 1,719,892
+bytes at SHA-256
+`d06c1ee90fc2d318d332bb7caa1b13058df30ab0829d28737f1979427a4b4544`.
+Its title and subject metadata are present, its revision timestamp is
+`2026-07-28T03:35:00Z`, and its active text and diagram fonts are embedded,
+subsetted, and Unicode-mapped. This alpha record establishes source, rights,
+safety, identity, mechanical, and basic visual concerns; it claims no
+physical print or external approval status.
