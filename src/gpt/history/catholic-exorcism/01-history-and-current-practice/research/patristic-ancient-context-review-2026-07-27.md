@@ -132,3 +132,34 @@ The latter still lacks an acceptable edition-specific resolution of its
 versional basis, unity, attribution, date, provenance, and chapter
 equivalences. They remain comparison questions, not steps in a continuous
 apostolic-to-1614 narrative.
+
+## Regional and genre expansion, 2026-07-28
+
+Section 30 was expanded again from 3,647 to more than 7,100 words using only
+the exact-bound sources already represented in the publication audit and
+bindings. The revision adds no source acquisition and no operational wording.
+It organizes the early-Christian record by date, region, genre, and source
+status:
+
+- Justin, Tertullian, and Origen are treated as three differently situated
+  apologetic arguments rather than independent outcome observations;
+- Jerusalem and Gregory Nazianzen are compared as distinct catechetical and
+  oratorical witnesses to baptismal preparation, without constructing a
+  composite eastern rite;
+- Easton's *Apostolic Tradition* remains evidence for an identified modern
+  reconstruction and its limits, not transparent ancient Roman or Hippolytan
+  text;
+- Cornelius/Eusebius and the Carthaginian confessors establish occurrence of
+  personnel titles in two Latin regions without supplying common duties; and
+- Laodicea 26 and *Apostolic Constitutions* VIII.26 are used to distinguish
+  episcopal promotion, manifested charism, title, and ordination rather than
+  to harmonize them.
+
+One common ceiling now governs the comparisons: local does not establish
+universal, title does not establish duty, resemblance does not establish
+descent, and ancient description does not confer present authorization.
+Repeated versions of that ceiling were removed from the latter half of the
+section. Laodicea's modern Greek control, Easton's versional and reconstruction
+limits, Funk's superseded critical status, Gregory's uncollated Greek and print
+forms, and the Carthaginian letter's uncollated Latin and print forms remain
+claim-local.
