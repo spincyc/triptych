@@ -1,0 +1,131 @@
+schema_version = 1
+id = "obj-dalmatic"
+workflow_state = "publication-ready"
+preferred_english_name = "Dalmatic"
+latin_headword = "dalmatica"
+sort_name = "02 Dalmatic"
+categories = ["deacon-and-subdeacon"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-tunicle"]
+related_objects = ["obj-amice", "obj-alb", "obj-cincture", "obj-maniple", "obj-deacon-stole"]
+
+[presence]
+locations = ["Worn as the deacon's outer Mass vestment."]
+contexts = ["Part of the deacon's ordinary Mass vesture in ceremonies that appoint a deacon."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["deacon"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "other-server"]
+presents = ["acolyte", "other-server"]
+warnings = ["The pictured plain T-shaped form is representative, not a prescribed or universal cut.", "Checked ceremonial assistance is conditional and does not create a universal acolyte assignment."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-dalmatic-identity"
+kind = "identity"
+text = "The dalmatic is the deacon's outer Mass vestment, worn over the alb and diagonal stole."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-dalmatic-fortescue-1943"]
+
+[[claims]]
+id = "clm-dalmatic-appearance"
+kind = "appearance"
+text = "The plate shows one representative loose T-shaped form with a round head opening, broad short sleeves, and modest lower side openings; cut, length, opening, textile, ornament, and proportion are not prescribed here."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-dalmatic-fortescue-1943"]
+
+[[claims]]
+id = "clm-dalmatic-presence"
+kind = "ceremonial-presence"
+text = "The 1962 General Rubrics retain the deacon's dalmatic while expressly discontinuing folded chasubles and the broad stole."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-dalmatic-rubrics-1962"]
+
+[[claims]]
+id = "clm-dalmatic-color"
+kind = "variation"
+text = "The vestment color follows the Mass or Office under the 1962 General Rubrics, with legitimate indults and customs preserved; the monochrome plate does not encode color."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-dalmatic-color-1962"]
+
+[[claims]]
+id = "clm-dalmatic-assistance"
+kind = "handling-boundary"
+text = "A checked contemporary ceremonial describes an acolyte assisting the deacon to vest in particular Solemn-Mass preparations; that practical branch is conditional, not a universal server assignment."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-dalmatic-fortescue-assistance-1943"]
+
+[[sources]]
+id = "src-dalmatic-rubrics-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 133-137, printed p. XX, artifact PDF p. 18."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-dalmatic-color-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 117, printed p. XIX, artifact PDF p. 17."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-dalmatic-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 11, artifact PDF p. 32."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-dalmatic-fortescue-assistance-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Conditional Solemn-Mass preparation at printed p. 86, artifact PDF p. 107, and printed p. 95, artifact PDF p. 116."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-vestments-0008-dalmatic"
+view = "comparison"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v2.png"
+review_state = "approved"
+depicts = ["obj-dalmatic"]
+review_note = "One complete plain representative dalmatic is shown front and back. Construction details, proportions, sleeve length, side openings, and all omitted ornament remain non-normative."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the dalmatic as the deacon's outer Mass vestment; present or arrange it only under direction."
+claim_ids = ["clm-dalmatic-identity", "clm-dalmatic-assistance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Ready it with the deacon's vestments and applicable color; no fold, storage, fastening, or decorative form is prescribed."
+claim_ids = ["clm-dalmatic-presence", "clm-dalmatic-color", "clm-dalmatic-assistance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach it as the deacon's outer layer over the diagonal stole, while separating conditional assistance from universal rules."
+claim_ids = ["clm-dalmatic-identity", "clm-dalmatic-presence", "clm-dalmatic-assistance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The dalmatic is the deacon's outer Mass vestment; the pictured cut is representative."
+claim_ids = ["clm-dalmatic-identity", "clm-dalmatic-appearance"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use this as the ordinary diaconal recognition baseline within pontifical compositions; no pontifical layering sequence is inferred."
+claim_ids = ["clm-dalmatic-presence"]

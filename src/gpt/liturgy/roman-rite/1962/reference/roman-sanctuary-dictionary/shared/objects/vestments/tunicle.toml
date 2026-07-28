@@ -1,0 +1,131 @@
+schema_version = 1
+id = "obj-tunicle"
+workflow_state = "publication-ready"
+preferred_english_name = "Tunicle"
+latin_headword = "tunicella"
+sort_name = "03 Tunicle"
+categories = ["deacon-and-subdeacon"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-dalmatic"]
+related_objects = ["obj-amice", "obj-alb", "obj-cincture", "obj-maniple"]
+
+[presence]
+locations = ["Worn as the subdeacon's outer Mass vestment."]
+contexts = ["Part of the subdeacon's ordinary Mass vesture in ceremonies that appoint a subdeacon."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["subdeacon"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "other-server"]
+presents = ["acolyte", "other-server"]
+warnings = ["Its distinction from the dalmatic can be modest and contextual; the pictured sleeve relation is representative, not universal.", "Checked ceremonial assistance is conditional and does not create a universal acolyte assignment."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-tunicle-identity"
+kind = "identity"
+text = "The tunicle is the subdeacon's outer Mass vestment."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tunicle-fortescue-1943"]
+
+[[claims]]
+id = "clm-tunicle-appearance"
+kind = "appearance"
+text = "A checked ceremonial places the tunicle in the same vestment family as the dalmatic and notes a form with sleeves somewhat longer and narrower; the plate presents that distinction as representative, modest, and non-universal."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tunicle-fortescue-1943"]
+
+[[claims]]
+id = "clm-tunicle-presence"
+kind = "ceremonial-presence"
+text = "The 1962 General Rubrics retain the subdeacon's tunicle while expressly discontinuing folded chasubles and the broad stole."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tunicle-rubrics-1962"]
+
+[[claims]]
+id = "clm-tunicle-color"
+kind = "variation"
+text = "The vestment color follows the Mass or Office under the 1962 General Rubrics, with legitimate indults and customs preserved; the monochrome plate does not encode color."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tunicle-color-1962"]
+
+[[claims]]
+id = "clm-tunicle-assistance"
+kind = "handling-boundary"
+text = "A checked contemporary ceremonial describes an acolyte assisting the subdeacon to vest in particular Solemn-Mass preparations; that practical branch is conditional, not a universal server assignment."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tunicle-fortescue-assistance-1943"]
+
+[[sources]]
+id = "src-tunicle-rubrics-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 133-137, printed p. XX, artifact PDF p. 18."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-tunicle-color-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 117, printed p. XIX, artifact PDF p. 17."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-tunicle-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 11, artifact PDF p. 32."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-tunicle-fortescue-assistance-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Conditional Solemn-Mass preparation at printed p. 86, artifact PDF p. 107, and printed p. 95, artifact PDF p. 116."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-vestments-0009-tunicle"
+view = "comparison"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v2.png"
+review_state = "approved"
+depicts = ["obj-tunicle"]
+review_note = "One complete plain representative tunicle is shown front and back. The modest longer-and-narrower sleeve relation is one documented form, not a universal distinction."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the tunicle as the subdeacon's outer Mass vestment; present or arrange it only under direction."
+claim_ids = ["clm-tunicle-identity", "clm-tunicle-assistance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Ready it with the subdeacon's vestments and applicable color; no fold, storage, fastening, or decorative form is prescribed."
+claim_ids = ["clm-tunicle-presence", "clm-tunicle-color", "clm-tunicle-assistance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach it as the subdeacon's outer layer, with dalmatic comparison kept contextual and assistance kept conditional."
+claim_ids = ["clm-tunicle-identity", "clm-tunicle-appearance", "clm-tunicle-assistance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The tunicle is the subdeacon's outer Mass vestment; its visual distinction from the dalmatic may be modest."
+claim_ids = ["clm-tunicle-identity", "clm-tunicle-appearance"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use this as the ordinary subdiaconal recognition baseline within pontifical compositions; no pontifical layering sequence is inferred."
+claim_ids = ["clm-tunicle-presence"]

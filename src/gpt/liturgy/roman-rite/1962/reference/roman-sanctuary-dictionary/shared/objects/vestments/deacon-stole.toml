@@ -1,0 +1,130 @@
+schema_version = 1
+id = "obj-deacon-stole"
+workflow_state = "publication-ready"
+preferred_english_name = "Deacon's stole"
+latin_headword = "stola"
+sort_name = "01 Deacon stole"
+categories = ["deacon-and-subdeacon"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-priest-stole", "obj-maniple"]
+related_objects = ["obj-amice", "obj-alb", "obj-cincture", "obj-maniple", "obj-dalmatic"]
+
+[presence]
+locations = ["Worn by the deacon over the alb and beneath the dalmatic."]
+contexts = ["Part of the deacon's ordinary Mass vesture in ceremonies that appoint a deacon."]
+
+[handling]
+ordinary_handlers = ["deacon"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "other-server"]
+presents = ["acolyte", "other-server"]
+warnings = ["The diagonal arrangement belongs to the deacon, not the priest.", "Checked ceremonial assistance is conditional and does not create a universal acolyte assignment."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-deacon-stole-identity"
+kind = "identity"
+text = "The deacon's stole is the long narrow vestment worn diagonally from the left shoulder under the right arm."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-deacon-stole-fortescue-1943"]
+
+[[claims]]
+id = "clm-deacon-stole-use"
+kind = "liturgical-use"
+text = "The checked ceremonial baseline places it over the alb and beneath the dalmatic, with the two ends secured at the right side."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-deacon-stole-fortescue-1943"]
+
+[[claims]]
+id = "clm-deacon-stole-presence"
+kind = "ceremonial-presence"
+text = "At the 1962 horizon the deacon retains the stole and dalmatic; the folded chasuble and broad stole are expressly no longer used."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-deacon-stole-rubrics-1962"]
+
+[[claims]]
+id = "clm-deacon-stole-color"
+kind = "variation"
+text = "The vestment color follows the Mass or Office under the 1962 General Rubrics, with legitimate indults and customs preserved; the monochrome plate does not encode color."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-deacon-stole-color-1962"]
+
+[[claims]]
+id = "clm-deacon-stole-assistance"
+kind = "handling-boundary"
+text = "A checked contemporary ceremonial describes an acolyte assisting the deacon to vest in particular Solemn-Mass preparations; that practical branch is conditional, not a universal server assignment."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-deacon-stole-fortescue-assistance-1943"]
+
+[[sources]]
+id = "src-deacon-stole-rubrics-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 133-137, printed p. XX, artifact PDF p. 18."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-deacon-stole-color-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 117, printed p. XIX, artifact PDF p. 17."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-deacon-stole-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 11, artifact PDF p. 32."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-deacon-stole-fortescue-assistance-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Conditional Solemn-Mass preparation at printed p. 86, artifact PDF p. 107, and printed p. 95, artifact PDF p. 116."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-vestments-0007-deacon-stole"
+view = "comparison"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v2.png"
+review_state = "approved"
+depicts = ["obj-deacon-stole"]
+review_note = "Anonymous front and back torso studies show one representative complete diagonal route. Alb, cincture, proportions, fastening, and hanging lengths are illustrative; no decoration or universal fastening method is implied."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the deacon by the stole running from left shoulder to right side; assist with it only under direction."
+claim_ids = ["clm-deacon-stole-identity", "clm-deacon-stole-assistance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Ready it with the deacon's Mass vestments and applicable color; this record prescribes no fold, storage, or fastening method."
+claim_ids = ["clm-deacon-stole-use", "clm-deacon-stole-color", "clm-deacon-stole-assistance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the left-shoulder diagonal route beneath the dalmatic, while keeping conditional assistance and the abolished broad-stole branch distinct."
+claim_ids = ["clm-deacon-stole-use", "clm-deacon-stole-presence", "clm-deacon-stole-assistance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The deacon's stole crosses diagonally from the left shoulder instead of hanging like the priest's stole."
+claim_ids = ["clm-deacon-stole-identity"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use this as the ordinary diaconal recognition baseline within pontifical compositions; it does not establish a pontifical vesting sequence."
+claim_ids = ["clm-deacon-stole-presence"]
