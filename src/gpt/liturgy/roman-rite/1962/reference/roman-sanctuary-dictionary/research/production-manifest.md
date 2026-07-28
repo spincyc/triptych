@@ -713,6 +713,39 @@ source-family ledger remains outside this checkpoint because its existing
 repository-wide migration defects include unrelated canonical-family gaps and
 the known Claude Ordinary binding mismatch.
 
+## Chalice-and-paten cross-edition checkpoint — 2026-07-28
+
+The five generated editions now admit `obj-chalice` and `obj-paten` as
+separate canonical records using the same exact controlled comparison plate.
+The weaker isolated chalice and paten assets remain retained with their
+historical states but are no longer linked from either canonical record. The
+altar-server leaf keeps its existing bespoke combined spread and explicit
+must-not-handle boundaries.
+
+The shared plate remains one Met catalog exemplar with a Missal-controlled
+prepared inset. It establishes no universal morphology, material, ornament,
+preparation tolerance, transfer, touching, care, purification, or handling
+method. Its exact prompt, correction history, public-domain visual reference,
+generation provenance, rights basis, dimensions, byte count, and normalized
+SHA-256 remain recorded in `artwork-manifest.toml`.
+
+All five PDFs were rebuilt, rastered with the repository review helper, and
+visually inspected on every page: 165 pages total. The new chalice and paten
+pages were additionally checked at full rendered size. The illustration,
+headwords, dimensions, prepared relationship, exemplar boundary, audience
+notes, and Communion-plate distinction are legible, with no clipping,
+overlap, or spill page. Every PDF has embedded fonts and extractable text;
+logs have no fatal error, undefined reference, overfull box, or rerun
+warning. Build and installed bytes are identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 34 | 12,575,264 | `94d5396894c413a17c80447e408de48402ec8a0dcb082a40adeab4510e7e3612` |
+| Sacristan | 34 | 12,604,941 | `607288a3978dc83385a2e88d6596af344e25e80582562c8ed554a4dea37888ac` |
+| MC and trainer | 34 | 12,604,795 | `2c12a154aab9b7a3939127fef407de65e85dc426fa94862f5ba367b095bcdf40` |
+| General reader | 32 | 11,821,785 | `22650574bcc25a1ff9ae8971fbd8bedb6e5f293d789f6f4e517b93dabdeb43c8` |
+| Pontifical ceremonies | 31 | 11,484,333 | `8e5c76334262c69417790087734b9151789dcaf239991610aa2e53cbf3170684` |
+
 ## Sacristy recognition cross-edition checkpoint — 2026-07-28
 
 The five generated editions now admit the already source-audited sacristy

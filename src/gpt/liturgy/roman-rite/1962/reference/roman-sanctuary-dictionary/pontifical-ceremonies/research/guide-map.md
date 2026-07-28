@@ -62,3 +62,8 @@ ordinary supporting records for pontifical Mass, not as pontifical insignia
 or distinct pontifical forms. Their representative figures preserve the
 cross-or-image alternative and the bell's local-practice boundary, bringing
 the selection to twenty-six records.
+The chalice and paten enter as ordinary sacred vessels used in pontifical
+Mass, not as insignia or distinct pontifical forms. Their shared plate shows
+one catalog exemplar and one Missal-controlled prepared relationship without
+creating a morphology, transfer, or handling prescription, bringing the
+selection to twenty-eight records.

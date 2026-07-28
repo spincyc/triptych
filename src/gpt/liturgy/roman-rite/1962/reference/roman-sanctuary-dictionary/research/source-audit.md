@@ -282,9 +282,21 @@ promotion adds no source claim. It preserves the Missal-controlled under-chin
 function and fragment boundary while presenting the one-wood-handle form only
 as one dated commercial exemplar.
 
-The smaller priest's paten remains visible only as comparison context. Its
-presence in this figure does not admit `obj-paten` into any generated edition
-or establish a server handling claim. The figure is not to common scale and
-does not depict a prepared-chalice relationship. The bespoke altar-server
-edition retains its stronger full-page treatment and is not given a duplicate
-generated entry.
+The smaller priest's paten was comparison context at this checkpoint. Its
+presence in this Communion-plate figure alone did not admit `obj-paten` or
+establish a server handling claim. The later chalice-and-paten checkpoint
+admits the canonical paten record through a different, separately controlled
+plate and leaves this figure's not-to-common-scale boundary unchanged.
+
+## Chalice-and-paten cross-edition reconciliation — 2026-07-28
+
+The exact Missal and Met evidence chain recorded in
+`paten-comparison-source-audit-2026-07-27.md` and the consumer reconciliation
+in `chalice-paten-cross-edition-audit-2026-07-28.md` support canonical
+admission of `obj-chalice` and `obj-paten` through the five generated
+editions. The Met record controls one paired catalog exemplar and its
+dimensions; the 1962 Missal independently controls identity, liturgical use,
+the prepared relationship, and the distinction from the under-chin
+Communion plate. Neither source supplies a universal vessel morphology or a
+handling prescription. The bespoke altar-server leaf retains its stronger
+combined treatment and is not regenerated.

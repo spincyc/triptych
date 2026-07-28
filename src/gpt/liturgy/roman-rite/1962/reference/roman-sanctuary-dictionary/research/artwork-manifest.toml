@@ -340,8 +340,8 @@ technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-paten-catalog-exemplar-comparison"
 path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png"
-state = "consumer-eligible"
-audit_record = "research/reviews/paten-catalog-exemplar-artwork-review-2026-07-27.md"
+state = "canonical-alpha-eligible"
+audit_record = "research/chalice-paten-cross-edition-audit-2026-07-28.md"
 technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 628594, sha256 = "7c344a7fe84a1995303f82559e4e7447cee468a4c35466267edd7e9e1ac9c85f" }
 
 [[asset_files]]
@@ -1377,8 +1377,8 @@ corrections = ["Requested one targeted scale correction.", "Removed the still-in
 baked_content_audit = ["Top, side, and prepared views are legible.", "No host, hands, people, Communion-plate drawing, handle, or raised-edge comparison is present.", "The plate explicitly labels morphology as exemplar rather than universal and states that Communion-plate visual form is unresolved."]
 tex_overlays = ["TeX repeats the catalog-exemplar qualification, exact source notes, server handling boundary, and the unresolved Communion-plate morphology statement."]
 consumer_plate_ids = ["plt-vessels-paten-exemplar"]
-consumer_edition_ids = ["ed-altar-server"]
-rights = "Project-generated raster derived with the Met's Public Domain Open Access image as a visual reference; exact source artifact and rights basis are recorded in the source library. Release remains pending."
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster derived with the Met's Public Domain Open Access image as a visual reference; exact source artifact, public-domain rights basis, prompts, corrections, and normalized identity are recorded. It is eligible for the six bounded alpha consumers."
 [artworks.received]
 width_px = 1536
 height_px = 1024

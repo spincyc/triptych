@@ -107,15 +107,6 @@ checked_on = 2026-07-27
 note = "Controls the depicted exemplar's visible morphology; the Missal separately controls the prepared stack."
 
 [[artwork]]
-id = "art-paten-isolated"
-view = "isolated"
-asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0002-iso-paten.png"
-review_state = "identity-checked"
-depicts = ["obj-paten"]
-scale_mode = "not-to-common-scale"
-review_note = "Held because the broad rim and pronounced central well can read as a domestic saucer, and the asset lacks a source-controlled on-chalice view establishing the defining relationship. See research/reviews/vessels-cruets-priestly-review-2026-07-27.md for non-operative historical review context."
-
-[[artwork]]
 id = "art-paten-catalog-exemplar-comparison"
 view = "comparison"
 asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png"
@@ -127,4 +118,24 @@ review_note = "Top and side views use the Met catalog dimensions; the prepared i
 [[audience_note]]
 audience = "altar-server"
 text = "Recognize the priest's shallow sacred vessel and keep it distinct from the Communion plate."
+claim_ids = ["clm-paten-identity-use"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Recognize the paten in the prepared chalice relationship; the pictured exemplar supplies no universal preparation or handling method."
+claim_ids = ["clm-paten-prepared-stack", "clm-paten-met-exemplar"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the paten's identity and prepared relationship without turning the exemplar's morphology into a transfer prescription."
+claim_ids = ["clm-paten-identity-use", "clm-paten-prepared-stack"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The drawing shows one cataloged paten and its Missal-controlled prepared relationship, not a universal Roman design."
+claim_ids = ["clm-paten-prepared-stack", "clm-paten-met-exemplar"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This ordinary sacred vessel remains supporting equipment in pontifical Mass; the plate establishes no distinct pontifical form."
 claim_ids = ["clm-paten-identity-use"]

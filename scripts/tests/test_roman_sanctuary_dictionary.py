@@ -53,10 +53,10 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 r"{Latin term not asserted}",
                 alpha,
             )
-            self.assertIn(
-                r"\RSDAlphaOmission{obj-chalice}",
-                omissions,
-            )
+            self.assertIn(r"\RSDObjectRecord{obj-chalice}", alpha)
+            self.assertIn(r"\RSDObjectRecord{obj-paten}", alpha)
+            self.assertNotIn(r"\RSDAlphaOmission{obj-chalice}", omissions)
+            self.assertNotIn(r"\RSDAlphaOmission{obj-paten}", omissions)
             self.assertFalse((output / "ed-comprehensive.review.tex").exists())
             self.assertFalse((output / "ed-comprehensive.review-admissions.toml").exists())
 

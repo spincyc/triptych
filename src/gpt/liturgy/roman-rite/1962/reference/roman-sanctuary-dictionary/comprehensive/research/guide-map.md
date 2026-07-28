@@ -11,12 +11,15 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
-The present bounded family covers twenty-nine records: the appointments-and-books
+The present bounded family covers thirty-one records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel; and the thurible, incense boat,
 spoon, practical candle lighter and extinguisher, acolyte candlestick, and
-elevation torch. Each object receives an
+elevation torch. The chalice and paten now enter as separate canonical records
+using the same controlled comparison plate: one Met catalog exemplar plus the
+Missal-controlled prepared relationship, never a universal morphology or
+handling prescription. Each object receives an
 image-dominant full-page plate. A second registered view may appear as a
 detail inset. The linen figures are source-minimal pencil studies; fold
 pattern, dimensions, markings, ornament, construction, and exact drape remain
@@ -51,9 +54,8 @@ common hand scale while leaving material, markings, closure, handle, tray,
 left-right order, and Latin terminology unasserted.
 
 The Communion-plate page distinguishes the Missal's under-chin
-*patina* from the priest's paten. The one-handle form is one dated commercial
-exemplar, the comparison is not to common scale, and the paten is comparison
-context rather than a separately admitted record.
+*patina* from the priest's separately admitted paten. The one-handle form is
+one dated commercial exemplar and the comparison is not to common scale.
 
 The complete reader order remains the order declared in
 `shared/schema/edition-selections.toml`. This alpha does not claim that the
