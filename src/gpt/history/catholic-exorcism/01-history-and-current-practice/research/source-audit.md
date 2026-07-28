@@ -185,8 +185,15 @@ mental-health input; it is not itself a professional clinical protocol.
   edition at printed pp. 390–392. It verifies Philostratus's
   literary-biographical narration, not the event, diagnosis, causation,
   efficacy, historicity of the sign, standard practice, dependence on or
-  influence upon Christian texts, or ritual continuity. PGM IV.3007–3086
-  remains a genre-specific lead.
+  influence upon Christian texts, or ritual continuity. PGM IV.3007–3086 is
+  now controlled in Preisendanz's exact 1928 first-edition Greek text and
+  German translation at printed pp. 170–173. It establishes a distinct
+  technical magical-text item's architecture and *daimon*-vocabulary, without
+  reproducing its operative content; it does not establish manuscript
+  accuracy, date of composition, Jewish or Christian authorship, ordinary
+  practice, efficacy, diagnosis, influence, continuity, or equivalence with
+  Christian exorcism. The revised edition, manuscript facsimile, and a modern
+  translation remain separate controls.
 - No official global count of exorcists, cases, or successful major exorcisms was found; numerical claims in press reports are omitted.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
