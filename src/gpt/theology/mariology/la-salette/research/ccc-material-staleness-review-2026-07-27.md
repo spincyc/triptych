@@ -60,3 +60,30 @@ independent-review gates do not change.
 
 This is an internal current-guidance and staleness determination, not a human
 historical, theological, moral, safeguarding, or ecclesiastical review.
+
+## Publication checkpoint
+
+At `2026-07-28T00:57:41Z`, the committed source was built through two pdfTeX
+passes to a settled 33-page PDF. The final log contained no fatal error,
+undefined reference, overflow, underfull-box warning, package warning, or
+rerun request. All 33 rendered pages were visually inspected through the
+repository review contact sheets; physical pages 13 and 26, containing the new
+CCC 2111 and CCC 2116–2117 citations, and physical page 33, containing the
+final references, generation metadata, and rights notice, were additionally
+inspected at full size. No clipping, collision, accidental blank page, broken
+table, malformed heading, footer conflict, or final-apparatus defect was
+observed.
+
+The reviewed installed artifacts are exact copies of their build outputs:
+
+- PDF SHA-256:
+  `2b22de0187cccbe6e2d0acebfdba983eca30f351cbe3601c2f66c6007ad04a0b`
+- web-edition SHA-256:
+  `d6e7e82a1a9672904aa09a9f08c129f095c79609ed570a2fed877143b41d61c2`
+
+Generation metadata, embedded-font status, and extracted text were checked.
+`qpdf` was unavailable in the review environment, so no `qpdf` structural
+claim is made. The exact La Salette PDF and web hashes were refreshed in the
+existing release and rights bindings under the repository's recorded
+perpetual authorization. That mechanical refresh adds no human, safeguarding,
+historical, theological, moral, or ecclesiastical approval.

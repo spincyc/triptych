@@ -262,7 +262,7 @@ The message’s “if converted” turn also places prophecy in the biblical fie
 
 When asked whether they pray, the chosen witnesses admit that they scarcely do. The prescribed minimum—an Our Father and Hail Mary morning and evening when they cannot do better—is pastorally gentle. The message does not require immediate spiritual virtuosity. It gives a beginning that a child can remember.
 
-The Our Father orders desire to God’s Name, Kingdom, will, daily bread, forgiveness, and deliverance from evil. In the context of La Salette, “daily bread” is not metaphor only. The Hail Mary joins Scripture’s greeting to a request for intercession now and at death. More prayer is encouraged when possible, but quantity is not a currency that purchases immunity from suffering. Prayer opens the person to grace, truth, endurance, and love.
+The Our Father orders desire to God’s Name, Kingdom, will, daily bread, forgiveness, and deliverance from evil. In the context of La Salette, “daily bread” is not metaphor only. The Hail Mary joins Scripture’s greeting to a request for intercession now and at death. More prayer is encouraged when possible, but quantity is not a currency that purchases immunity from suffering (CCC 2111). Prayer opens the person to grace, truth, endurance, and love.
 
 ### Reconciliation as the mature synthesis
 
@@ -650,7 +650,7 @@ When a La Salette prediction appears in a sermon, video, or post, use five quest
 
 5.  **Which fruit?** Does the use lead to Christ, conversion, peace, sacrament, and charity, or to panic, contempt, political absolutism, and secret superiority?
 
-Apocalyptic imagery in Scripture unveils God’s sovereignty and sustains fidelity; it is not a cipher for private control. A private apocalypse has even less warrant to dominate conscience. Claims that a current pope is illegitimate, Rome has definitively defected, a party is divinely chosen, or the end can be scheduled cannot derive Catholic authority from the 1879 sentence.
+Apocalyptic imagery in Scripture unveils God’s sovereignty and sustains fidelity; it is not a cipher for private control (CCC 2116–2117). A private apocalypse has even less warrant to dominate conscience. Claims that a current pope is illegitimate, Rome has definitively defected, a party is divinely chosen, or the end can be scheduled cannot derive Catholic authority from the 1879 sentence.
 
 ### Teaching children and vulnerable readers
 
@@ -878,13 +878,15 @@ DDF index, Holy See acts, Diocese, Shrine, public-message sources, and current r
 
 4.  *Catechism of the Catholic Church*, 65–67, 970, 2168–2195, and 2683–2684: [official edition](https://www.vatican.va/content/catechism/en.html).
 
-5.  Dicastery for the Doctrine of the Faith, *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (17 May 2024; effective 19 May), including the presentation’s explicit citation of the 1851 La Salette formula: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html).
+5.  *Catechism of the Catholic Church*, Second Edition, 1700–1706, 1734–1735, 2111, and 2116–2117, exact USCCB English passage records verified 27 July 2026: [official edition](https://www.usccb.org/sites/default/files/flipbooks/catechism/).
 
-6.  DDF, *Mater Populi Fidelis*: Doctrinal Note on Some Marian Titles Regarding Mary’s Cooperation in the Work of Salvation (4 November 2025), especially the safeguards concerning Christ’s unique mediation and Marian intercession: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html).
+6.  Dicastery for the Doctrine of the Faith, *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (17 May 2024; effective 19 May), including the presentation’s explicit citation of the 1851 La Salette formula: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html).
 
-7.  DDF complete document index, searched for later La Salette action through 16 July 2026: [official index](https://www.vatican.va/roman_curia/congregations/cfaith/doc_doc_index.htm).
+7.  DDF, *Mater Populi Fidelis*: Doctrinal Note on Some Marian Titles Regarding Mary’s Cooperation in the Work of Salvation (4 November 2025), especially the safeguards concerning Christ’s unique mediation and Marian intercession: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html).
 
-8.  Code of Canon Law (1983), canon 6 §1, especially 3^∘^ on earlier Apostolic See penal laws: [official text](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html).
+8.  DDF complete document index, searched for later La Salette action through 16 July 2026: [official index](https://www.vatican.va/roman_curia/congregations/cfaith/doc_doc_index.htm).
+
+9.  Code of Canon Law (1983), canon 6 §1, especially 3^∘^ on earlier Apostolic See penal laws: [official text](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html).
 
 ### The event, early documents, and Grenoble acts
 
@@ -952,7 +954,11 @@ DDF index, Holy See acts, Diocese, Shrine, public-message sources, and current r
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-19T03:44:17Z
+**Last revised (UTC):** 2026-07-28T00:57:41Z
+
+**Model:** `gpt-5.6-sol`; `effort=ultra`
+
+**Agent/runtime:** OpenAI Codex (Catechism source audit, doctrinal source binding, and production-review roles); Codex CLI 0.145.0; API workspace; unexposed: interface; unexposed: server revision
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
