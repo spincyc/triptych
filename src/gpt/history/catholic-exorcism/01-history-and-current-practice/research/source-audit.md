@@ -209,13 +209,19 @@ routes, findings, and limits are recorded in
   between preparatory exorcistic acts, Baptism's effect, and the assisting
   office; not a frequency claim or major-exorcism manual.
 - *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*,
-  printed pp. 198–219 in the browser-visible Alessandrina editio-princeps
-  witness; later standard editions use title/chapter structures that must not
-  be retrojected. Google Books and USUARIUM independently control identity and
-  structure, but a 2026-07-27 hosted-byte probe obtained no stable downloadable
-  file (the metadata API returned HTTP 429). The edition therefore remains a
-  bibliographic/page-image control, not a hashed artifact or basis for exact
-  quotation, formula comparison, or complete procedural synthesis.
+  printed pp. 198–219. Google Books and USUARIUM record 1195 identify the
+  browser-visible Alessandrina Y c 49 editio-princeps witness. Petar Bašić's
+  exact 2014 article PDF, printed p. 788 (401,068 bytes; SHA-256
+  `e1c1040a…be83`), independently transcribes the title and reports the
+  terminal starts at pp. 198, 220, 225, and 227. That secondary collation
+  controls the outer boundary and one-section architecture only; it does not
+  replace the unacquired princeps page images. Direct Google volume access
+  remained interactive, its metadata API returned HTTP 429, and no
+  authenticated full-volume download resulted. Next acquisition paths are an
+  archive request for Alessandrina Y c 49 images or an authenticated USUARIUM
+  record 1195 original-file route. Until then no exact wording, formula,
+  typography, internal procedure, or complete synthesis may be attributed to
+  direct inspection of the 1614 witness.
 - *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg
   edition, exact Internet Archive facsimile
   `ritualeromanumpa00cath_0`, 46,078,608 bytes, SHA-256

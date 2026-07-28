@@ -70,15 +70,19 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
 
 - *Rituale Romanum Pauli V Pontificis Maximi iussu editum* (Rome: Camera
   Apostolica, 1614), *De exorcizandis obsessis a daemonio*, printed
-  pp. 198--219 (digital sequence pp. 206--227). The exact editio-princeps
+  pp. 198--219. The exact editio-princeps
   witness is the Biblioteca Universitaria Alessandrina copy, shelfmark
   Y c 49, at Google Books (`TBNNeaiGbc0C`), independently identified by
-  USUARIUM record 1195. It has one exorcism section, not the later title XI,
-  chapters 1--3 architecture. The earlier Library of Congress lead, control
+  USUARIUM record 1195. Bašić's exact 2014 article PDF, printed p. 788,
+  independently transcribes the 1614 title and reports the terminal starts:
+  *De exorcizandis* p. 198, *Formulae* p. 220, *Index* p. 225, and
+  *Errata* p. 227. This secondary collation bounds the exorcism unit to
+  pp. 198--219 and supports one section rather than the later title XI,
+  chapters 1--3 architecture. It is not inspection of the Alessandrina page
+  images. The earlier Library of Congress lead, control
   no. 34021365, is an 1873 Baltimore edition and is withdrawn as evidence for
-  the princeps. The section paraphrases preliminary cautions but supplies
-  neither the prayers nor a procedural sequence. The exact hosted scan remains
-  remote; no redistribution basis for its bytes is asserted.
+  the princeps. No internal wording, formula, typography, procedural sequence,
+  frequency, efficacy, or present authorization is inferred.
 
 ### 1614 hosted-byte access probe, 2026-07-27
 
@@ -89,21 +93,23 @@ the item as the editio princeps and supplies its structural index. The
 previously inspected page images continue to support only the bounded
 printed-page and single-section observations above.
 
-This pass did not obtain stable exact hosted bytes suitable for artifact
-registration. Direct volume-page access remained an interactive hosted view,
-and the official Google Books metadata API request for the volume returned
-HTTP 429 rather than a reproducible download identity. No alternate public
-facsimile was found whose copy identity could be tied to the Alessandrina
-shelfmark and page sequence. Accordingly, a browser-visible page is not
-misrepresented as an acquired and hashed artifact.
+This pass did not obtain stable exact hosted Alessandrina bytes suitable for
+artifact registration. Direct volume-page access remained an interactive
+hosted view; the official Google Books metadata API request for the volume
+returned HTTP 429; and the public Books download route exposed no authenticated
+full-volume file. The exact Hrčak PDF of Petar Bašić's 2014 article was acquired
+instead (401,068 bytes; SHA-256 `e1c1040a…be83`). Its printed p. 788 supplies
+the independent secondary title and boundary collation above, but it is not a
+facsimile or a warrant to promote the Alessandrina edition binding to acquired.
 
-Promotion requires either an authenticated downloadable file for the
-Alessandrina copy or another exact 1614 copy with title-page and collation
-control, plus a hash, byte extent, rights disposition, and visual inspection
-of printed pp. 198--219. Until then the edition binding remains bibliographic;
-no quotation, exact formula comparison, complete procedural digest,
-typographical claim, or frequency/outcome inference may depend on the hosted
-view.
+Promotion requires an archive request for authenticated Alessandrina Y c 49
+page images or full-volume bytes, or an authenticated public USUARIUM record
+1195 original-file route tied to its displayed copy identity. Either route
+must yield a hash, byte extent, rights disposition, title-page and collation
+control, and visual inspection of printed pp. 198--219. Until then the edition
+binding remains bibliographic; no quotation, exact formula comparison,
+complete procedural digest, typographical claim, or frequency/outcome
+inference may depend on the hosted view or Bašić's secondary collation.
 - *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg
   edition, exact Internet Archive facsimile
   `ritualeromanumpa00cath_0` (46,078,608 bytes; SHA-256
