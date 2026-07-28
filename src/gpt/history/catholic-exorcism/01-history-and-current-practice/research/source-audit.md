@@ -186,7 +186,14 @@ mental-health input; it is not itself a professional clinical protocol.
 
 ## Negative results and unused leads
 
-- Genesis Apocryphon 1Q20 XX.14–17, 21–29; Songs of the Sage (4Q510/511); the 4Q Magical Booklet (4Q560); and 11Q11 were edition- and locus-audited as leads. They remain outside the publication claim because no exact translation artifact was acquired and inspected. The authoritative 4Q560 edition is Puech, *DJD* XXXVII (2009), pp. 291–302, not the frequently repeated *DJD* XXXVI citation.
+- Genesis Apocryphon 1Q20 XX.14–29 and 4Q560 now have exact dated CAL
+  Aramaic transcription controls. For 4Q560, CAL identifies photograph PAM
+  43.602, Naveh 1998, and Puech's *DJD* XXXVII editio princeps as its bases;
+  the frequently repeated *DJD* XXXVI citation is incorrect. Neither CAL
+  delivery supplies a manuscript-image collation or English translation, so
+  no quotation or translation-dependent nuance is promoted. Songs of the Sage
+  (4Q510/511) and 11Q11 remain edition- and locus-audited leads without an
+  acquired exact text witness.
 - Broad Mesopotamian, Egyptian, and Greco-Roman comparisons were removed.
   Hippocratic *On the Sacred Disease* 1 is now controlled in the exact Adams
   1849 English edition at printed pp. 843–845: it supplies an ancient medical

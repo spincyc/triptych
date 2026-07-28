@@ -49,6 +49,11 @@ patristic, biblical, liturgical, and theological review.
   including its inline uncertainty and alternate readings. It is not a
   manuscript-image collation or translation, so no quotation or
   translation-dependent nuance is promoted from it.
+- CAL's exact dated 4Q560 delivery now controls the surviving two-fragment
+  architecture and readable Aramaic lexical categories, with lacunae intact.
+  Its file record identifies photograph PAM 43.602, Naveh 1998, and Puech's
+  *DJD* 37 editio princeps as its bases. It does not supply the photograph,
+  full apparatus, or a translation.
 - At Mark 9:29 the Robinson–Pierpont artifact includes fasting with prayer and
   its inline divergence note reports omission in the Nestle–Aland text. The
   exact Douay–Rheims/Challoner artifact also includes fasting, at Mark 9:28 in
@@ -64,9 +69,10 @@ patristic, biblical, liturgical, and theological review.
   facsimile at printed page 190. It establishes Justin's apologetic claim, not
   its outcomes, frequency, formulary, or original Greek wording.
 
-An exact modern translation and manuscript-image collation remain necessary
-for translation-dependent claims about Genesis Apocryphon 1Q20 XX; exact
-records also remain necessary for Qumran apotropaic texts. Easton's exact 1934 English
+Exact modern translations and manuscript-image collations remain necessary
+for translation-dependent claims about Genesis Apocryphon 1Q20 XX and 4Q560;
+the broader Qumran apotropaic corpus, including 4Q510/511 and 11Q11, also
+remains uncontrolled. Easton's exact 1934 English
 reconstruction now controls only its own *Apostolic Tradition* text state, and
 Percival's exact 1900 English edition now controls only its Laodicea 26
 translation; neither is a modern critical original-language control. Exact dated English passage records now control the bounded
@@ -81,6 +87,7 @@ original-language verification.
 | Deuterocanonical narrative | Tobit 6–8, Swete 1896 Vatican and Sinaitic Greek forms | Both printed Greek forms place angelic direction, prayer, marriage, healing, and expulsion in one providential narrative | A normal Israelite or Christian formulary, recension priority, manuscript adjudication, a Semitic-text claim, efficacy, or operational instruction |
 | Second Temple rewriting | *Jubilees* 10.1–11, Charles 1913 English | Noah petitions God after spirits afflict his descendants; God permits one tenth to remain after Mastema's request | Original-language wording or direct dependence by a Gospel evangelist |
 | Second Temple Aramaic | Genesis Apocryphon 1Q20 XX.14–29, exact CAL Aramaic transcription | One continuous retelling places Abram's petition, affliction, failed healers, a request for prayer, restoration of Sarai, prayer, laying on of a hand, rebuke of an evil spirit, and recovery in the same line sequence | An English quotation, translation-dependent nuance, manuscript adjudication, efficacy, representative practice, direct Gospel dependence, Christian ritual, diagnosis, or operational instruction |
+| Second Temple Aramaic fragment | 4Q560 fragments 1–2, exact CAL Aramaic transcription | Two heavily lacunose sequences preserve harmful-being, bodily-affliction, spirit, and adjuratory lexical categories | A continuous reconstruction, translation, manuscript adjudication, complete formula, intended use, community ownership, date, efficacy, ordinary practice, diagnosis, authorship, influence, continuity, equivalence with Christian exorcism, or operational instruction |
 | Greek medical polemic | Hippocratic *On the Sacred Disease* 1, Adams 1849 English, printed pp. 843–845 | Rejects a uniquely divine cause and criticizes claims for purifications and incantations in one exact dated translation | A Christian witness, neutral practice report, modern clinical diagnosis, or a simple medicine-replaced-exorcism narrative |
 | Greek philosophical dialogue | Plato, *Symposium* 202d–203a, Fowler 1925 English | Diotima's speech classifies a *daimon* as intermediate and places several religious and divinatory activities within that literary account | Christian demonology, a census of beings, an exorcistic formulary, actual practice, or one composite ancient rite |
 | Greek satirical dialogue | Lucian, *Philopseudes* 16, Fowler 1905 English, printed pp. 238–239 | A character narrates claims about a Syrian from Palestine and alleged relief of possession; the skeptical interlocutor replies within the same frame | The event, practitioner, diagnosis, efficacy, payment pattern, standard rite, Christian identity, historical Jesus, or continuity into Christian ritual |
