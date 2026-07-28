@@ -816,7 +816,7 @@ class PublicAlphaTest(unittest.TestCase):
             workflow.index("actions/upload-pages-artifact"),
         )
 
-    def test_root_landings_spotlight_exorcism_review_page(self) -> None:
+    def test_root_landings_spotlight_exorcism_page(self) -> None:
         spotlight = "(library/catholic-exorcism.md)"
         for landing in ("README.md", "LIBRARY.md"):
             text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
@@ -829,9 +829,6 @@ class PublicAlphaTest(unittest.TestCase):
             REPOSITORY_ROOT / "library/catholic-exorcism.md"
         ).read_text(encoding="utf-8")
         self.assertIn("# Catholic Exorcism", catalog)
-        self.assertIn("not the promised", catalog)
-        self.assertIn("at least 100 substantive pages", catalog)
-        self.assertIn("Public-alpha review", catalog)
         self.assertIn(
             "../doc/gpt/history/catholic-exorcism/"
             "01-history-and-current-practice.pdf",
@@ -863,7 +860,7 @@ class PublicAlphaTest(unittest.TestCase):
         validate_target.assert_called_once()
         self.assertEqual(validate_target.call_args.args[1], "github-pages")
 
-    def test_public_site_records_and_reaches_authorized_review_snapshot(self) -> None:
+    def test_public_site_records_and_reaches_legacy_review_as_alpha(self) -> None:
         self.write("src/gpt/review-work/main.tex", b"review source\n")
         self.write("doc/gpt/review-work.pdf", b"review pdf bytes\n")
         self.write(
@@ -909,7 +906,8 @@ class PublicAlphaTest(unittest.TestCase):
             if entry["id"] == "review-work"
         )
         self.assertEqual(review_entry["authorization"], "test-authorization")
-        self.assertEqual(review_entry["gates"], ["rights"])
+        self.assertEqual(review_entry["status"], "alpha")
+        self.assertNotIn("gates", review_entry)
         self.assertEqual(
             review_entry["pdf_sha256"], digest(b"review pdf bytes\n")
         )
@@ -917,7 +915,7 @@ class PublicAlphaTest(unittest.TestCase):
         catalog = (output / "library/test.html").read_text(encoding="utf-8")
         self.assertIn('href="../doc/gpt/review-work.pdf"', catalog)
 
-    def test_review_catalog_link_requires_conspicuous_review_label(self) -> None:
+    def test_alpha_catalog_link_may_use_terse_reader_label(self) -> None:
         self.add_unapproved_publication(
             "review-work",
             "review",
@@ -933,13 +931,8 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.authorize_current_inputs()
 
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.validate_manifest(self.manifest)
-
-        self.assertIn(
-            "every review PDF catalog link must be conspicuously labeled as review",
-            str(failure.exception),
-        )
+        publications = self.tool.validate_manifest(self.manifest)
+        self.assertIn(("gpt", "review-work"), publications)
 
     def test_verifier_rejects_copied_pdf_without_owning_catalog_link(self) -> None:
         self.authorize_current_inputs()
@@ -961,7 +954,7 @@ class PublicAlphaTest(unittest.TestCase):
             str(failure.exception),
         )
 
-    def test_review_is_publicly_discoverable_but_hold_is_excluded(self) -> None:
+    def test_legacy_review_is_alpha_included_but_hold_is_excluded(self) -> None:
         self.add_unapproved_publication(
             "review-work",
             "review",
@@ -987,8 +980,8 @@ class PublicAlphaTest(unittest.TestCase):
 
         artifact = self.tool.artifact_manifest_data(self.manifest, public, False)
         entries = {entry["id"]: entry for entry in artifact["publications"]}
-        self.assertEqual(entries["review-work"]["status"], "review")
-        self.assertEqual(entries["review-work"]["gates"], ["rights"])
+        self.assertEqual(entries["review-work"]["status"], "alpha")
+        self.assertNotIn("gates", entries["review-work"])
         self.assertEqual(
             entries["review-work"]["authorization"], "test-authorization"
         )
@@ -998,7 +991,7 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.assertNotIn("held-work", entries)
 
-    def test_review_cannot_silently_claim_completion(self) -> None:
+    def test_alpha_does_not_require_unresolved_maturity_gate(self) -> None:
         self.add_unapproved_publication(
             "review-work",
             "review",
@@ -1008,13 +1001,8 @@ class PublicAlphaTest(unittest.TestCase):
         self.authorize_current_inputs()
         self.manifest["publications"][-1]["gates"] = []
 
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.validate_manifest(self.manifest)
-
-        self.assertIn(
-            "review-work: review entries must retain at least one unresolved gate",
-            str(failure.exception),
-        )
+        publications = self.tool.validate_manifest(self.manifest)
+        self.assertIn(("gpt", "review-work"), publications)
 
     def test_url_path_segment_passes_but_a_local_home_path_fails(self) -> None:
         self.authorize_current_inputs()

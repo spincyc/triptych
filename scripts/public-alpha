@@ -78,7 +78,6 @@ MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\n]+)\)")
 EXTERNAL_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 SAFE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9./-]*[a-z0-9]$")
-REVIEW_LABEL_RE = re.compile(r"\breview\b", flags=re.IGNORECASE)
 TEXT_SUFFIXES = {".html", ".css", ".txt", ".json", ".js"}
 SUPPORTED_CONDITIONS = {
     "no-project-initiated-promotion",
@@ -96,9 +95,9 @@ ROBOTS_DIRECTIVES = "noindex, nofollow, noarchive, nosnippet, noimageindex"
 CANDIDATE_INVENTORY_NOTICE = (
     "PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report "
     "current files and do not attest rights, approve snapshots or artifact inputs, "
-    "clear release gates, confer publication authority, or modify the manifest or "
-    "rights records. Explicit review and separately recorded authorization are "
-    "required before release."
+    "establish alpha eligibility, confer publication authority, or modify the manifest or "
+    "rights records. Required source, rights, safety, reproducibility, mechanical, "
+    "and visual checks plus recorded authorization remain separate."
 )
 
 
@@ -248,6 +247,17 @@ def publication_label(key: tuple[str, str], primary: str) -> str:
     """Serialize a (provider, leaf) key; bare ids belong to the primary provider."""
     provider, leaf = key
     return leaf if provider == primary else f"{provider}:{leaf}"
+
+
+def alpha_binding(publication: dict) -> dict | None:
+    """Return the standing-authorization binding from either legacy state."""
+    approval = publication.get("approval")
+    if isinstance(approval, dict):
+        return approval
+    distribution = publication.get("review_distribution")
+    if isinstance(distribution, dict):
+        return distribution
+    return None
 
 
 def safe_relative_path(value: str, label: str) -> Path:
@@ -593,22 +603,6 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
     )
 
 
-def catalog_pdf_lines() -> dict[tuple[str, str], list[tuple[str, str]]]:
-    """Return each linked publication's exact reader-facing link labels."""
-    labels: dict[tuple[str, str], list[tuple[str, str]]] = defaultdict(list)
-    for path in sorted((ROOT / "library").glob("*.md")):
-        relative = path.relative_to(ROOT).as_posix()
-        for line in path.read_text(encoding="utf-8").splitlines():
-            for label, raw_target in MARKDOWN_LINK_RE.findall(line):
-                target = raw_target.strip().split(maxsplit=1)[0]
-                match = PDF_LINK_RE.search(target)
-                if match:
-                    labels[(match.group(1), match.group(2))].append(
-                        (relative, label)
-                    )
-    return labels
-
-
 def validate_manifest(
     manifest: dict,
     require_active_release: bool = True,
@@ -707,61 +701,20 @@ def validate_manifest(
             if approval is not None:
                 errors.append(f"{label}: {status} entries must have null approval")
             continue
-        if status == "review":
-            if not gates:
-                errors.append(f"{label}: review entries must retain at least one unresolved gate")
-            if approval is not None:
-                errors.append(f"{label}: review entries must have null completion approval")
-            distribution = publication.get("review_distribution")
-            if not isinstance(distribution, dict) or set(distribution) != {
-                "authorization", "pdf_sha256"
-            }:
-                errors.append(
-                    f"{label}: review entries require authorization-bound review_distribution"
-                )
-                continue
-            authorization_id = distribution.get("authorization")
-            if not isinstance(authorization_id, str) or authorization_id not in authorization_ids:
-                errors.append(
-                    f"{label}: review_distribution references unknown authorization "
-                    f"{authorization_id!r}"
-                )
-            else:
-                referenced_authorizations.add(authorization_id)
-            distributed_hash = distribution.get("pdf_sha256")
-            if not isinstance(distributed_hash, str) or not SHA256_RE.fullmatch(
-                distributed_hash
-            ):
-                errors.append(f"{label}: review pdf_sha256 must be a lowercase SHA-256")
-            else:
-                if (
-                    isinstance(authorization_id, str)
-                    and authorization_id in authorization_ids
-                ):
-                    approved_snapshots[authorization_id].append(
-                        (label, distributed_hash)
-                    )
-                if verify_approval_bindings and has_pdf:
-                    actual_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
-                    if distributed_hash != actual_hash:
-                        errors.append(f"{label}: review_distribution PDF hash is stale")
+        binding = alpha_binding(publication)
+        if not isinstance(binding, dict):
+            errors.append(f"{label}: alpha entries require an authorization binding")
             continue
-
-        if gates:
-            errors.append(f"{label}: release entries must have no unresolved gates")
-        if not isinstance(approval, dict):
-            errors.append(f"{label}: release entries require an approval object")
-            continue
-        if set(approval) != {"authorization", "pdf_sha256"}:
+        if set(binding) != {"authorization", "pdf_sha256"}:
             errors.append(
-                f"{label}: release approval must contain only authorization and pdf_sha256"
+                f"{label}: alpha binding must contain only authorization and pdf_sha256"
             )
-        authorization_id = approval.get("authorization")
+        authorization_id = binding.get("authorization")
         if not isinstance(authorization_id, str) or authorization_id not in authorization_ids:
-            errors.append(f"{label}: approval references unknown authorization {authorization_id!r}")
+            errors.append(f"{label}: alpha binding references unknown authorization {authorization_id!r}")
         else:
             referenced_authorizations.add(authorization_id)
-        approved_hash = approval.get("pdf_sha256")
+        approved_hash = binding.get("pdf_sha256")
         if not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(approved_hash):
             errors.append(f"{label}: pdf_sha256 must be a lowercase SHA-256")
         else:
@@ -773,7 +726,7 @@ def validate_manifest(
                 and pdf_path.is_file()
                 and sha256(pdf_path) != approved_hash
             ):
-                errors.append(f"{label}: installed PDF does not match its approved SHA-256")
+                errors.append(f"{label}: installed PDF does not match its alpha SHA-256")
 
     orphan_authorizations = sorted(authorization_ids - referenced_authorizations)
     if orphan_authorizations:
@@ -854,12 +807,11 @@ def validate_manifest(
 
     (
         occurrences,
-        multi_pdf_lines,
+        _multi_pdf_lines,
         marked_occurrences,
         mismatched_identity_lines,
         undeclared_provider_references,
     ) = catalog_occurrences(primary, providers)
-    linked_catalog_lines = catalog_pdf_lines()
     for catalog, reference in undeclared_provider_references:
         errors.append(f"{catalog}: catalog references undeclared provider edition {reference}")
     for key, publication in publications.items():
@@ -868,35 +820,16 @@ def validate_manifest(
         homes = occurrences.get(key, [])
         marked_homes = marked_occurrences.get(key, [])
         if key in pdf_ids:
-            # The primary provider's editions keep the exactly-once catalog
-            # requirement, as does any released edition; an installed but
-            # unreleased edition of a secondary provider may stay unlinked
-            # while catalog coverage grows.
-            if provider == primary or publication.get("status") == "release":
-                if len(homes) != 1:
-                    errors.append(f"{label}: expected one catalog link, found {len(homes)}")
-                elif homes[0] != publication.get("catalog"):
-                    errors.append(
-                        f"{label}: manifest catalog {publication.get('catalog')!r} "
-                        f"does not match {homes[0]!r}"
-                    )
-            elif len(homes) > 1:
+            secondary_hold = publication.get("status") == "hold" and provider != primary
+            if secondary_hold and len(homes) > 1:
                 errors.append(f"{label}: expected at most one catalog link, found {len(homes)}")
+            elif not secondary_hold and len(homes) != 1:
+                errors.append(f"{label}: expected one catalog link, found {len(homes)}")
             elif homes and homes[0] != publication.get("catalog"):
                 errors.append(
                     f"{label}: manifest catalog {publication.get('catalog')!r} "
                     f"does not match {homes[0]!r}"
                 )
-            if publication.get("status") == "review":
-                review_labels = linked_catalog_lines.get(key, [])
-                if not review_labels or any(
-                    not REVIEW_LABEL_RE.search(link_label)
-                    for _, link_label in review_labels
-                ):
-                    errors.append(
-                        f"{label}: every review PDF catalog link must be "
-                        "conspicuously labeled as review"
-                    )
         elif publication.get("status") == "hold" and homes:
             errors.append(
                 f"{label}: source-only hold entries "
@@ -928,26 +861,6 @@ def validate_manifest(
             "marked catalog identities absent from manifest: "
             f"{unowned_markers!r}"
         )
-    for catalog, line_keys in multi_pdf_lines:
-        # Editions from different providers may share a row with differing
-        # statuses (an unreleased edition degrades to an em dash), but PDFs of
-        # one provider on one row must still share a status so a row is never
-        # partially hidden within a provider.
-        statuses_by_provider: dict[str, set[str]] = defaultdict(set)
-        for line_key in line_keys:
-            if line_key in publications:
-                statuses_by_provider[line_key[0]].add(publications[line_key]["status"])
-        for line_provider, statuses in sorted(statuses_by_provider.items()):
-            if len(statuses) > 1:
-                provider_labels = [
-                    publication_label(line_key, primary)
-                    for line_key in line_keys
-                    if line_key[0] == line_provider
-                ]
-                errors.append(
-                    f"{catalog}: {line_provider} PDFs sharing one catalog row "
-                    f"must share a status: {provider_labels!r}"
-                )
     for catalog, pdf_ids_on_line, source_ids_on_line in mismatched_identity_lines:
         errors.append(
             f"{catalog}: catalog row PDF identities "
@@ -963,6 +876,7 @@ def validate_manifest(
 def included_publications(
     publications: dict[tuple[str, str], dict], preview: bool
 ) -> dict[tuple[str, str], dict]:
+    # Both legacy values mean alpha inclusion. They carry no maturity ordering.
     statuses = {"release", "review"}
     return {
         key: publication
@@ -1048,11 +962,7 @@ def prepare_candidate_inventory(manifest: dict) -> dict:
 def artifact_authorization(manifest: dict, included: dict[tuple[str, str], dict]) -> dict:
     authorization_ids = sorted(
         {
-            (
-                publication["approval"]
-                if publication["status"] == "release"
-                else publication["review_distribution"]
-            )["authorization"]
+            alpha_binding(publication)["authorization"]
             for publication in included.values()
             if publication["status"] in {"release", "review"}
         }
@@ -1122,19 +1032,17 @@ def artifact_manifest_data(
     publication_entries = []
     for key, publication in sorted(included.items()):
         provider, leaf = key
-        approval = publication.get("approval")
-        if publication["status"] == "release":
-            authorization_id = approval["authorization"]
-            pdf_hash = approval["pdf_sha256"]
-        else:
-            distribution = publication["review_distribution"]
-            authorization_id = distribution["authorization"]
-            pdf_hash = distribution["pdf_sha256"]
+        binding = alpha_binding(publication)
+        if binding is None:
+            raise ReleaseError(
+                f"{publication_label(key, primary)}: missing alpha binding"
+            )
+        authorization_id = binding["authorization"]
+        pdf_hash = binding["pdf_sha256"]
         publication_entries.append(
             {
                 "id": publication_label(key, primary),
-                "status": publication["status"],
-                "gates": list(publication["gates"]),
+                "status": "alpha",
                 "pdf": f"doc/{provider}/{leaf}.pdf",
                 "authorization": authorization_id,
                 "pdf_sha256": pdf_hash,
@@ -1143,7 +1051,7 @@ def artifact_manifest_data(
     return {
         "schema_version": 2,
         "release_id": manifest["release_id"],
-        "mode": "private-preview" if preview else "public-release",
+        "mode": "private-preview" if preview else "published-alpha",
         "history_included": False,
         "source_included": False,
         "authorization": artifact_authorization(manifest, included),
@@ -1732,12 +1640,9 @@ def verify_output(
         pdf_path = output / "doc" / provider / f"{leaf}.pdf"
         if pdf_path.is_file():
             actual_hash = sha256(pdf_path)
-            if publication["status"] == "release":
-                expected_hash = publication["approval"]["pdf_sha256"]
-                mismatch = "does not match its approved SHA-256"
-            else:
-                expected_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
-                mismatch = "does not match its private-preview source snapshot"
+            binding = alpha_binding(publication)
+            expected_hash = binding["pdf_sha256"] if binding else ""
+            mismatch = "does not match its alpha SHA-256"
             if actual_hash != expected_hash:
                 errors.append(
                     f"{publication_label(key, primary)}: artifact PDF {mismatch}"
