@@ -37,4 +37,9 @@ assignment. The Communion-plate page preserves the under-chin function,
 level-handling boundary, and fragment safety while leaving server assignment
 and morphology local or source-bounded; its smaller priest's paten is
 comparison context only. The twenty-six-record canonical alpha gate requires no external
-review.
+review. The footless elevation torch now brings that selection to twenty-seven
+records. Its page teaches the Elevation-service timing and distinction from
+the acolytes' footed candlesticks without inventing a route, grip, height,
+number, arrangement, or flame-handling procedure. The processional cross
+remains excluded because its held raster lacks a complete surviving custody
+and provenance account.

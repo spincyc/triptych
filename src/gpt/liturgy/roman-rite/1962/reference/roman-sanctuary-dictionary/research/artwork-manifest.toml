@@ -543,7 +543,7 @@ technical = { width_px = 600, height_px = 900, bit_depth = 8, color_mode = "gray
 [[asset_files]]
 id = "file-rpd-processional-torch"
 path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png"
-state = "consumer-eligible"
+state = "canonical-alpha-eligible"
 audit_record = "research/carried-lights-and-cross-source-audit-2026-07-28.md"
 technical = { width_px = 887, height_px = 1774, bit_depth = 8, color_mode = "grayscale", bytes = 308632, sha256 = "42515401346587f2daddc33d6ab6dc7d478483fda55817d69e1dae20ec3913f2" }
 
@@ -1258,7 +1258,7 @@ corrections = ["Replaced the rejected footed candidate with a fresh generation."
 baked_content_audit = ["No text, arrows, labels, watermark, border, color, flame, actor, rack, floor, or cast shadow.", "The lower shaft ends narrowly with no foot, base, flare, pedestal, legs, or self-standing support.", "The small wax catcher is illustrative and does not establish one required form."]
 tex_overlays = ["Names, non-self-standing distinction, service timing, local-variation ceiling, handling boundary, safety notice, and source notes remain TeX-owned."]
 consumer_plate_ids = []
-consumer_edition_ids = ["ed-altar-server"]
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
 rights = "Project-generated raster made without a reference image; exact prompt, received and normalized hashes, transformation, and consumer are recorded here. Distributed under the repository's project-content terms."
 [artworks.received]
 width_px = 887

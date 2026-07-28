@@ -38,4 +38,10 @@ terminology to source or local direction. The Communion-plate page adds the
 Missal-controlled under-chin identity while leaving storage, material,
 dimensions, and handle count to local direction or the dated exemplar. The
 smaller priest's paten is comparison context only. The twenty-six-record
-edition creates no external-review gate.
+edition now also admits the footless elevation torch, bringing the selection
+to twenty-seven records. It distinguishes rack storage from the acolyte
+candlestick's self-standing relation and leaves dimensions, material,
+ornament, number, arrangement, flame handling, and local storage geometry to
+the checked source or trained local practice. The processional cross remains
+excluded because its held raster lacks a complete surviving custody and
+provenance account. The edition creates no external-review gate.

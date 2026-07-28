@@ -11,11 +11,12 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
-The present bounded family covers twenty-six records: the appointments-and-books
+The present bounded family covers twenty-seven records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel; and the thurible, incense boat,
-spoon, and practical candle lighter and extinguisher. Each object receives an
+spoon, practical candle lighter and extinguisher, acolyte candlestick, and
+elevation torch. Each object receives an
 image-dominant full-page plate. A second registered view may appear as a
 detail inset. The linen figures are source-minimal pencil studies; fold
 pattern, dimensions, markings, ornament, construction, and exact drape remain
@@ -31,6 +32,14 @@ of Catholic prevalence; its plate supplies no flame-handling procedure. The furn
 figures teach a service table and two
 representative movable seating forms without universalizing construction,
 covering, decoration, or exact placement.
+
+The carried-light pages distinguish the footed, self-standing acolyte
+candlestick from the footless elevation torch. The candlestick reuses an
+empty-support drawing only as representative morphology; the torch drawing is
+unlit and supplies no grip, route, height, number, arrangement, or
+flame-handling procedure. The processional-cross record remains excluded
+because its held raster lacks a complete surviving custody and provenance
+account.
 
 The paired altar-cruets plate teaches a small wine-and-water service pair at
 common hand scale while leaving material, markings, closure, handle, tray,

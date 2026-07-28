@@ -675,3 +675,40 @@ the five generated editions. Each consumer prints the not-to-common-scale
 state and confines the smaller priest's paten to comparison context; no
 generated selection admits `obj-paten` merely because it appears in the
 figure. The bespoke altar-server leaf keeps its existing full-page treatment.
+
+## Carried-lights cross-edition checkpoint — 2026-07-28
+
+The five generated editions now admit the elevation torch alongside the
+already admitted acolyte candlestick. The shared records distinguish the
+footed, self-standing candlestick from the footless, rack-stored torch; the
+reused candlestick figure is explicitly representative, and the torch figure
+is unlit and non-operational. The bespoke altar-server treatment remains
+unchanged.
+
+The processional-cross record is the only family member excluded from this
+generated checkpoint. Its held raster has exact file identity and a
+screen-level morphology check, but no complete surviving generation, custody,
+and provenance account. The checkpoint does not invent rights or approval
+from its earlier bespoke use.
+
+All five PDFs were built for settled passes, rastered with the repository
+review helper, and visually inspected on every page: 143 pages total. The new
+torch page was also inspected at full rendered size. The footless lower end,
+unlit state, text, and audience distinctions are unambiguous, with no
+clipping, overlap, or spill page. Every PDF has embedded fonts and extractable
+text; logs have no fatal error, undefined reference, overfull box, or rerun
+warning. Build and installed bytes are identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 30 | 10,999,078 | `df6cef9f48462248e4bbc2cfa60c1226284b3f7f78d2a46fe0898314b6b608d8` |
+| Sacristan | 29 | 11,027,517 | `dcea61d943903195c0a357fd99a6974c653d29edc589d954a9b395b102288c06` |
+| MC and trainer | 30 | 11,028,059 | `b7fdbace70181c12eb3df544ae61238c3dfe0994451af7214f06a73e43149c20` |
+| General reader | 27 | 10,244,715 | `25a43c1f432a9d338514e286289ab36a8dc491293718a622cb620c9eb39ee4fd` |
+| Pontifical ceremonies | 27 | 9,907,345 | `ad564ce756dd9065016203af9a46463020f570d58e80135ddd5300032f340ff8` |
+
+The source inventory was refreshed on 2026-07-28 and validates 129
+publications, 1,683 source-surface files, and 11 owners. The broader
+source-family ledger remains outside this checkpoint because its existing
+repository-wide migration defects include unrelated canonical-family gaps and
+the known Claude Ordinary binding mismatch.

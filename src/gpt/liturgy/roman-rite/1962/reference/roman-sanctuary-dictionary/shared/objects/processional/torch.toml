@@ -65,3 +65,23 @@ review_state = "print-checked"
 depicts = ["obj-elevation-torch"]
 scale_mode = "not-applicable"
 review_note = "Project-generated unlit representative view. The narrow lower shaft has no foot, base, or self-standing support. Material, dimensions, ornament, number, arrangement, and handling technique are not asserted."
+
+[[audience_note]]
+audience = "sacristan"
+text = "Keep the footless torch in its appointed rack and follow trained local fire-safety practice; this plate prescribes no material, dimensions, ornament, number, arrangement, or operating method."
+claim_ids = ["clm-elevation-torch-identity", "clm-elevation-torch-use"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the Elevation-service timing and the footless, rack-stored distinction without turning this recognition plate into a route, grip, height, number, or flame-handling procedure."
+claim_ids = ["clm-elevation-torch-identity", "clm-elevation-torch-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The elevation torch is a footless carried light used for the Elevation service, not the footed candlestick carried by an acolyte in the entrance."
+claim_ids = ["clm-elevation-torch-identity", "clm-elevation-torch-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Treat the elevation torch as an ordinary supporting object used by torchbearers, not as pontifical insignia or a distinct pontifical form."
+claim_ids = ["clm-elevation-torch-identity", "clm-elevation-torch-use"]

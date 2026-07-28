@@ -95,3 +95,26 @@ procedure. The single drawn wax catcher is illustrative and does not establish
 one required form. The fixed sacristy cross or image used for the ministers'
 reverence remains a different object from the portable processional staff
 crucifix.
+
+## Cross-edition alpha disposition
+
+The footed acolyte-candlestick record may enter the generated editions because
+its reused project-owned raster already has exact asset identity, recorded
+custody and rights, and a passed visual review. Reuse is limited to the
+source-controlled foot and self-standing relationship; the turned morphology
+is not a universal model.
+
+The project-generated elevation-torch raster may likewise enter the generated
+editions. Its exact prompt, received and normalized hashes, transformation,
+rights boundary, source-controlled features, deliberate omissions, and passed
+reviews are recorded in the canonical artwork manifest. The bespoke
+altar-server treatment remains its training-oriented consumer.
+
+The processional-cross record remains excluded from generated alpha editions.
+Its current raster has an exact file identity and a screen-level morphology
+check, but the surviving records do not contain a full generation or custody
+account comparable to the torch record. The asset therefore remains
+`held`; no rights, provenance, or approval state is inferred from visual
+plausibility or from its earlier bespoke altar-server use. A later replacement
+or evidence recovery may reopen that one record without blocking the two
+eligible carried-light records.

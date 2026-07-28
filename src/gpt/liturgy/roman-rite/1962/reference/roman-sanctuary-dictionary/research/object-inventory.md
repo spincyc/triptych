@@ -1,6 +1,6 @@
 # Object inventory
 
-Status: **54 canonical records populated; 20 records in the current comprehensive alpha**
+Status: **54 canonical records populated; 27 records in the current comprehensive alpha**
 Audit date: 2026-07-28
 
 The authoritative format is the structured contract under `shared/schema/`.
@@ -104,8 +104,9 @@ supports a focused identity-class lead and exact locus target; it does not
 make the later 1978 discipline the inventory's 1962 status rule.
 
 This evidence adds search targets but does not itself advance any record.
-The workflow counts above include seven source-audited records from other
-bounded source passes; there remain zero publication-ready object records.
+The workflow counts above supersede earlier tranche snapshots. Canonical alpha
+admission is evaluated separately from the workflow label and presently
+admits twenty-seven records to the comprehensive bounded edition.
 
 ## Alpha boundary
 
