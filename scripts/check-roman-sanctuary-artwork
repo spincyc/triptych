@@ -35,6 +35,9 @@ WORKFLOW = {
     "plate-review-passed", "consumer-review-passed", "rejected",
 }
 REVIEWS = {"pending", "passed", "failed", "not-applicable"}
+BOUNDARY_TREATMENTS = {
+    "transparent", "page-ground", "intentional-frame", "full-bleed",
+}
 ART_FIELDS = {
     "id", "object_ids", "variant_ids", "view", "workflow_state", "purpose",
     "depicted_state", "source_controlled_features", "deliberate_omissions",
@@ -43,6 +46,11 @@ ART_FIELDS = {
     "baked_content_audit", "tex_overlays",
     "consumer_plate_ids", "consumer_edition_ids", "rights", "reviews",
 }
+ASSET_FILE_REQUIRED_FIELDS = {"id", "path", "state", "audit_record", "technical"}
+ASSET_FILE_OPTIONAL_FIELDS = {
+    "boundary_treatment", "boundary_treatment_rationale",
+}
+ASSET_FILE_FIELDS = ASSET_FILE_REQUIRED_FIELDS | ASSET_FILE_OPTIONAL_FIELDS
 ROOT_FIELDS = {
     "schema_version", "manifest_id", "owner", "asset_root", "status",
     "asset_files", "artwork_links", "artworks", "coverage",
@@ -124,6 +132,33 @@ def object_records(owner: Path, glob: str, excluded: set[str], problems: Problem
     return records
 
 
+def validate_boundary_treatment(entry: dict, label: str, problems: Problems) -> None:
+    treatment_present = "boundary_treatment" in entry
+    rationale_present = "boundary_treatment_rationale" in entry
+    if not treatment_present:
+        if rationale_present:
+            problems.add(
+                f"{label}.boundary_treatment_rationale requires boundary_treatment"
+            )
+        return
+
+    treatment = entry.get("boundary_treatment")
+    if treatment not in BOUNDARY_TREATMENTS:
+        problems.add(f"{label}.boundary_treatment has invalid state")
+        return
+
+    if treatment in {"intentional-frame", "full-bleed"}:
+        rationale = entry.get("boundary_treatment_rationale")
+        problems.check(
+            isinstance(rationale, str) and bool(rationale.strip()),
+            f"{label}.boundary_treatment_rationale must be nonempty for {treatment}",
+        )
+    elif rationale_present:
+        problems.add(
+            f"{label}.boundary_treatment_rationale is not allowed for {treatment}"
+        )
+
+
 def validate_artwork(
     owner: Path, asset_root: Path, entry: object, problems: Problems
 ) -> tuple[str | None, dict]:
@@ -141,7 +176,6 @@ def validate_artwork(
     if not isinstance(artwork_id, str) or not ID["art"].fullmatch(artwork_id):
         problems.add(f"{label}: invalid artwork ID")
         return None, entry
-
     objects = string_list(entry.get("object_ids"), f"{label}.object_ids", problems)
     problems.check(bool(objects), f"{label}.object_ids must not be empty")
     for object_id in objects:
@@ -276,9 +310,19 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
     registered_paths: set[str] = set()
     registered_file_ids: set[str] = set()
     for row in asset_files:
-        if not isinstance(row, dict) or set(row) != {"id", "path", "state", "audit_record", "technical"}:
-            problems.add("each asset_files row must contain exactly id, path, state, audit_record, technical")
+        if not isinstance(row, dict):
+            problems.add("each asset_files row must be a table")
             continue
+        unknown = set(row) - ASSET_FILE_FIELDS
+        missing = ASSET_FILE_REQUIRED_FIELDS - set(row)
+        if unknown:
+            problems.add(
+                f"asset_files row has unknown fields: {', '.join(sorted(unknown))}"
+            )
+        if missing:
+            problems.add(
+                f"asset_files row is missing fields: {', '.join(sorted(missing))}"
+            )
         file_id = row.get("id")
         if not isinstance(file_id, str) or not re.fullmatch(r"file-[a-z0-9]+(?:-[a-z0-9]+)*", file_id):
             problems.add(f"invalid asset file ID: {file_id}")
@@ -286,6 +330,7 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         if file_id in registered_file_ids:
             problems.add(f"duplicate asset file ID: {file_id}")
         registered_file_ids.add(file_id)
+        validate_boundary_treatment(row, file_id, problems)
         path = safe_relative(row.get("path"), f"{file_id}.path", problems)
         audit = safe_relative(row.get("audit_record"), f"{file_id}.audit_record", problems)
         problems.check(row.get("state") in {

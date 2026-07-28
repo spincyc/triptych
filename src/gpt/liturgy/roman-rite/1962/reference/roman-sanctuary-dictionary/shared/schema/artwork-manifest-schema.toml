@@ -22,9 +22,16 @@ required = [
 
 [asset_file]
 required = ["id", "path", "state", "audit_record", "technical"]
+optional = ["boundary_treatment", "boundary_treatment_rationale"]
 id_pattern = "^file-[a-z0-9]+(?:-[a-z0-9]+)*$"
 states = ["accepted-for-priestly-review", "canonical-alpha-eligible", "held", "rejected", "consumer-eligible"]
 description = "One row for every tracked dictionary PNG, including held and rejected research leads."
+
+[asset_file.boundary]
+treatments = ["transparent", "page-ground", "intentional-frame", "full-bleed"]
+rationale_required = ["intentional-frame", "full-bleed"]
+rationale_forbidden = ["transparent", "page-ground"]
+description = "Physical edge treatment of the registered raster; absent metadata preserves the legacy unaudited state."
 
 [asset_file.technical]
 required = ["width_px", "height_px", "bit_depth", "color_mode", "bytes", "sha256"]

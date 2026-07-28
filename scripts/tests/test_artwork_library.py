@@ -72,6 +72,133 @@ largest_placement_inches = 3.0
             )
             self.assertEqual(ARTWORK.validate_manifest(manifest), [])
 
+    def test_legacy_manifest_does_not_run_page_ground_edge_audit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            asset = root / "figure.png"
+            asset.write_bytes(png(width=4, height=4))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = root / "artwork.toml"
+            manifest.write_text(
+                f"""[[asset]]
+id = "legacy"
+path = "figure.png"
+sha256 = "{digest}"
+width = 4
+height = 4
+depth = 8
+mode = "grayscale"
+""",
+                encoding="utf-8",
+            )
+            with mock.patch.object(
+                ARTWORK, "audit_page_ground_perimeter"
+            ) as perimeter_audit:
+                self.assertEqual(ARTWORK.validate_manifest(manifest), [])
+                perimeter_audit.assert_not_called()
+
+    def test_page_ground_treatment_accepts_clean_white_perimeter(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            asset = root / "figure.png"
+            asset.write_bytes(png(width=8, height=8))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = root / "artwork.toml"
+            manifest.write_text(
+                f"""[[asset]]
+id = "blended"
+path = "figure.png"
+sha256 = "{digest}"
+width = 8
+height = 8
+depth = 8
+mode = "grayscale"
+boundary_treatment = "page-ground"
+""",
+                encoding="utf-8",
+            )
+            self.assertEqual(ARTWORK.validate_manifest(manifest), [])
+
+    def test_page_ground_treatment_rejects_dark_perimeter(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            asset = root / "figure.png"
+            # Rebuild the tiny fixture with a black outer scanline.
+            rows = b"\0" + bytes(8)
+            rows += b"".join(b"\0" + bytes([255]) * 8 for _ in range(7))
+            ihdr = struct.pack(">IIBBBBB", 8, 8, 8, 0, 0, 0, 0)
+            image = (
+                ARTWORK.PNG_SIGNATURE
+                + chunk(b"IHDR", ihdr)
+                + chunk(b"IDAT", zlib.compress(rows))
+                + chunk(b"IEND", b"")
+            )
+            asset.write_bytes(image)
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = root / "artwork.toml"
+            manifest.write_text(
+                f"""[[asset]]
+id = "boxed"
+path = "figure.png"
+sha256 = "{digest}"
+width = 8
+height = 8
+depth = 8
+mode = "grayscale"
+boundary_treatment = "page-ground"
+""",
+                encoding="utf-8",
+            )
+            errors = "\n".join(ARTWORK.validate_manifest(manifest))
+            self.assertIn("materially dark edge pixel", errors)
+            self.assertIn("below the near-white threshold", errors)
+
+    def test_manifest_rejects_unknown_boundary_treatment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            asset = root / "figure.png"
+            asset.write_bytes(png(width=4, height=4))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = root / "artwork.toml"
+            manifest.write_text(
+                f"""[[asset]]
+id = "unknown"
+path = "figure.png"
+sha256 = "{digest}"
+width = 4
+height = 4
+depth = 8
+mode = "grayscale"
+boundary_treatment = "drop-shadow"
+""",
+                encoding="utf-8",
+            )
+            errors = "\n".join(ARTWORK.validate_manifest(manifest))
+            self.assertIn("boundary_treatment must be one of", errors)
+
+    def test_framed_boundary_requires_rationale(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            asset = root / "figure.png"
+            asset.write_bytes(png(width=4, height=4))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = root / "artwork.toml"
+            manifest.write_text(
+                f"""[[asset]]
+id = "framed"
+path = "figure.png"
+sha256 = "{digest}"
+width = 4
+height = 4
+depth = 8
+mode = "grayscale"
+boundary_treatment = "intentional-frame"
+""",
+                encoding="utf-8",
+            )
+            errors = "\n".join(ARTWORK.validate_manifest(manifest))
+            self.assertIn("requires a nonempty boundary_treatment_rationale", errors)
+
     def test_manifest_rejects_hash_rgb_profile_and_low_dpi(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -135,6 +262,33 @@ technical = {{ width_px = 600, height_px = 900, bit_depth = 8, color_mode = "gra
                 encoding="utf-8",
             )
             self.assertEqual(ARTWORK.validate_manifest(manifest), [])
+
+    def test_dictionary_page_ground_treatment_runs_perimeter_audit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            research = root / "research"
+            asset = root / "shared" / "artwork" / "figure.png"
+            research.mkdir()
+            asset.parent.mkdir(parents=True)
+            asset.write_bytes(png(width=8, height=8))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = research / "artwork-manifest.toml"
+            manifest.write_text(
+                f"""[[asset_files]]
+id = "file-test"
+path = "shared/artwork/figure.png"
+state = "held"
+boundary_treatment = "page-ground"
+audit_record = "research/test.md"
+technical = {{ width_px = 8, height_px = 8, bit_depth = 8, color_mode = "grayscale", bytes = {asset.stat().st_size}, sha256 = "{digest}" }}
+""",
+                encoding="utf-8",
+            )
+            with mock.patch.object(
+                ARTWORK, "audit_page_ground_perimeter", return_value=[]
+            ) as perimeter_audit:
+                self.assertEqual(ARTWORK.validate_manifest(manifest), [])
+                perimeter_audit.assert_called_once()
 
     @mock.patch.object(ARTWORK.shutil, "which", return_value="/usr/bin/pdfimages")
     @mock.patch.object(ARTWORK.subprocess, "run")

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import importlib.machinery
+import importlib.util
 import subprocess
 import tempfile
 import unittest
@@ -10,6 +12,18 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 CHECKER = REPO / "scripts/check-roman-sanctuary-artwork"
+
+
+def load_checker():
+    loader = importlib.machinery.SourceFileLoader("artwork_checker", str(CHECKER))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    assert spec is not None
+    module = importlib.util.module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+ARTWORK_CHECKER = load_checker()
 
 
 EMPTY_MANIFEST = """\
@@ -91,6 +105,53 @@ id = "art-chalice-front"
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("NOTICE:", result.stderr)
         self.assertIn("absent from canonical manifest", result.stderr)
+
+    def boundary_problems(self, **fields: str) -> list[str]:
+        problems = ARTWORK_CHECKER.Problems()
+        ARTWORK_CHECKER.validate_boundary_treatment(
+            fields, "art-test", problems
+        )
+        return problems.items
+
+    def test_boundary_treatment_is_optional_for_existing_records(self) -> None:
+        self.assertEqual(self.boundary_problems(), [])
+
+    def test_boundary_treatment_accepts_unframed_forms_without_rationale(self) -> None:
+        for treatment in ("transparent", "page-ground"):
+            with self.subTest(treatment=treatment):
+                self.assertEqual(
+                    self.boundary_problems(boundary_treatment=treatment), []
+                )
+
+    def test_boundary_treatment_requires_rationale_for_deliberate_edges(self) -> None:
+        for treatment in ("intentional-frame", "full-bleed"):
+            with self.subTest(treatment=treatment):
+                problems = self.boundary_problems(boundary_treatment=treatment)
+                self.assertTrue(
+                    any("must be nonempty" in problem for problem in problems)
+                )
+                self.assertEqual(
+                    self.boundary_problems(
+                        boundary_treatment=treatment,
+                        boundary_treatment_rationale="The visible edge is intentional.",
+                    ),
+                    [],
+                )
+
+    def test_boundary_treatment_rejects_inconsistent_rationale(self) -> None:
+        problems = self.boundary_problems(
+            boundary_treatment="transparent",
+            boundary_treatment_rationale="Unneeded explanation.",
+        )
+        self.assertTrue(any("is not allowed" in problem for problem in problems))
+        orphan = self.boundary_problems(
+            boundary_treatment_rationale="Missing treatment."
+        )
+        self.assertTrue(any("requires boundary_treatment" in problem for problem in orphan))
+
+    def test_boundary_treatment_rejects_unknown_value(self) -> None:
+        problems = self.boundary_problems(boundary_treatment="feathered")
+        self.assertTrue(any("has invalid state" in problem for problem in problems))
 
 
 if __name__ == "__main__":

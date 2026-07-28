@@ -17,6 +17,12 @@ from pathlib import Path
 
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 ALLOWED_COLOR_TYPES = {0: "grayscale"}
+ALLOWED_BOUNDARY_TREATMENTS = {
+    "transparent",
+    "page-ground",
+    "intentional-frame",
+    "full-bleed",
+}
 
 
 class ArtworkError(ValueError):
@@ -35,6 +41,143 @@ class PngInfo:
     @property
     def mode(self) -> str:
         return ALLOWED_COLOR_TYPES.get(self.color_type, "non-grayscale")
+
+
+def _paeth(left: int, above: int, upper_left: int) -> int:
+    estimate = left + above - upper_left
+    left_distance = abs(estimate - left)
+    above_distance = abs(estimate - above)
+    upper_left_distance = abs(estimate - upper_left)
+    if left_distance <= above_distance and left_distance <= upper_left_distance:
+        return left
+    if above_distance <= upper_left_distance:
+        return above
+    return upper_left
+
+
+def grayscale_rows(path: Path, info: PngInfo) -> list[bytes]:
+    """Decode the narrow PNG subset used by the page-ground edge audit."""
+    if info.depth != 8 or info.color_type != 0 or info.has_alpha:
+        raise ArtworkError(
+            f"{path}: page-ground edge audit requires opaque 8-bit grayscale PNG"
+        )
+    data = path.read_bytes()
+    offset = len(PNG_SIGNATURE)
+    interlace = None
+    compressed = bytearray()
+    while offset + 12 <= len(data):
+        length = struct.unpack(">I", data[offset : offset + 4])[0]
+        kind = data[offset + 4 : offset + 8]
+        payload = data[offset + 8 : offset + 8 + length]
+        if kind == b"IHDR":
+            interlace = payload[12]
+        elif kind == b"IDAT":
+            compressed.extend(payload)
+        elif kind == b"IEND":
+            break
+        offset += 12 + length
+    if interlace != 0:
+        raise ArtworkError(
+            f"{path}: page-ground edge audit does not support interlaced PNG"
+        )
+    try:
+        encoded = zlib.decompress(bytes(compressed))
+    except zlib.error as exc:
+        raise ArtworkError(f"{path}: cannot decode PNG pixels: {exc}") from exc
+    stride = info.width
+    expected = info.height * (stride + 1)
+    if len(encoded) != expected:
+        raise ArtworkError(f"{path}: unexpected grayscale PNG scanline size")
+    rows: list[bytes] = []
+    previous = bytes(stride)
+    cursor = 0
+    for _ in range(info.height):
+        filter_type = encoded[cursor]
+        raw = encoded[cursor + 1 : cursor + 1 + stride]
+        cursor += stride + 1
+        reconstructed = bytearray(stride)
+        for column, value in enumerate(raw):
+            left = reconstructed[column - 1] if column else 0
+            above = previous[column]
+            upper_left = previous[column - 1] if column else 0
+            if filter_type == 0:
+                predictor = 0
+            elif filter_type == 1:
+                predictor = left
+            elif filter_type == 2:
+                predictor = above
+            elif filter_type == 3:
+                predictor = (left + above) // 2
+            elif filter_type == 4:
+                predictor = _paeth(left, above, upper_left)
+            else:
+                raise ArtworkError(f"{path}: unsupported PNG filter {filter_type}")
+            reconstructed[column] = (value + predictor) & 0xFF
+        row = bytes(reconstructed)
+        rows.append(row)
+        previous = row
+    return rows
+
+
+def audit_page_ground_perimeter(path: Path, info: PngInfo) -> list[str]:
+    """Conservatively reject dark or extensive non-white marks at asset edges."""
+    rows = grayscale_rows(path, info)
+    if not rows or not rows[0]:
+        return [f"{path}: page-ground edge audit found an empty image"]
+    perimeter = list(rows[0])
+    if len(rows) > 1:
+        perimeter.extend(rows[-1])
+    if len(rows[0]) > 1:
+        perimeter.extend(row[0] for row in rows[1:-1])
+        perimeter.extend(row[-1] for row in rows[1:-1])
+    dark = sum(pixel < 224 for pixel in perimeter)
+    unmatched = sum(pixel < 248 for pixel in perimeter)
+    allowed_unmatched = max(1, len(perimeter) // 100)
+    errors: list[str] = []
+    if dark:
+        errors.append(
+            f"{path}: page-ground perimeter has {dark} materially dark edge pixel(s)"
+        )
+    if unmatched > allowed_unmatched:
+        errors.append(
+            f"{path}: page-ground perimeter has {unmatched}/{len(perimeter)} "
+            "edge pixels below the near-white threshold"
+        )
+    return errors
+
+
+def validate_boundary_treatment(
+    label: str, artwork: Path, info: PngInfo, asset: dict
+) -> list[str]:
+    treatment = asset.get("boundary_treatment")
+    rationale = asset.get("boundary_treatment_rationale")
+    if treatment is None:
+        if rationale is not None:
+            return [
+                f"{label}: boundary_treatment_rationale requires boundary_treatment"
+            ]
+        return []
+    if treatment not in ALLOWED_BOUNDARY_TREATMENTS:
+        allowed = ", ".join(sorted(ALLOWED_BOUNDARY_TREATMENTS))
+        return [f"{label}: boundary_treatment must be one of: {allowed}"]
+    errors: list[str] = []
+    if treatment in {"intentional-frame", "full-bleed"}:
+        if not isinstance(rationale, str) or not rationale.strip():
+            errors.append(
+                f"{label}: {treatment} boundary_treatment requires a nonempty "
+                "boundary_treatment_rationale"
+            )
+    elif rationale is not None:
+        errors.append(
+            f"{label}: boundary_treatment_rationale is not allowed for {treatment}"
+        )
+    if treatment != "page-ground":
+        return errors
+    try:
+        errors.extend(audit_page_ground_perimeter(artwork, info))
+    except ArtworkError as exc:
+        errors.append(f"{label}: {exc}")
+    return errors
 
 
 def sha256(path: Path) -> str:
@@ -157,6 +300,7 @@ def validate_manifest(path: Path) -> list[str]:
             errors.append(f"{label}: publishing PNG must not have alpha/transparency")
         if info.has_color_profile:
             errors.append(f"{label}: publishing PNG must not embed a color profile")
+        errors.extend(validate_boundary_treatment(label, artwork, info, asset))
         placement = asset.get("largest_placement_inches")
         if placement is not None:
             if not isinstance(placement, (int, float)) or placement <= 0:
@@ -230,6 +374,7 @@ def validate_dictionary_manifest(path: Path, document: dict) -> list[str]:
                 errors.append(f"{label}: publishing PNG must not have alpha/transparency")
             if info.has_color_profile:
                 errors.append(f"{label}: publishing PNG must not embed a color profile")
+            errors.extend(validate_boundary_treatment(label, artwork, info, asset))
     return errors
 
 
