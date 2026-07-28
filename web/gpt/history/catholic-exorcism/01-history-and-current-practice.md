@@ -120,9 +120,9 @@ This section does not settle later theological questions about natural and prete
 
 The early Christian evidence does not disclose one undifferentiated practice waiting to be given a fixed Roman form. The verified passages considered here belong to three different settings: apologetic claims about extraordinary affliction, catechesis for Christian initiation, and a list of ecclesiastical personnel. Each setting gives the word “exorcism” a different historical work to do. A shared word cannot establish that the same subject, minister, action, authority, or expected result is present in all three.
 
-That distinction is more than a safeguard against anachronism. It is the substance of the history. Tertullian and Origen argue with non-Christian critics. The Jerusalem catecheses address or recall candidates passing into the Church. Eusebius preserves a third-century Roman bishop’s personnel list inside a later ecclesiastical history. These sources differ in author, audience, region, date, genre, and purpose. They can be placed beside one another to show the range of early Christian reception, but they cannot be stacked into a reconstructed ceremony.
+That distinction is more than a safeguard against anachronism. It is the substance of the history. Justin, Tertullian, and Origen argue before non-Christian audiences. The Jerusalem catecheses address or recall candidates passing into the Church. Eusebius preserves a third-century Roman bishop’s personnel list inside a later ecclesiastical history. These sources differ in author, audience, region, date, genre, and purpose. They can be placed beside one another to show the range of early Christian reception, but they cannot be stacked into a reconstructed ceremony.
 
-The controls are deliberately narrow. The passages are verified in identified public-domain English translations delivered in exact dated artifacts. They support checked paraphrase of the arguments and sequences visible in those witnesses. They do not supply original-language collation, author-wide concordances, neutral case records, measured outcomes, or a universal survey of early Christianity. This section therefore asks what each witness can establish before asking how the witnesses relate.
+The controls are deliberately narrow. The passages are verified in identified public-domain English translations controlled by exact artifacts. They support checked paraphrase of the arguments and sequences visible in those witnesses. They do not supply original-language collation, author-wide concordances, neutral case records, measured outcomes, or a universal survey of early Christianity. This section therefore asks what each witness can establish before asking how the witnesses relate.
 
 ### Apology is public argument, not a case dossier
 
@@ -130,7 +130,13 @@ Christian apologetic writing addresses accusation, disbelief, rivalry, and the p
 
 For the history of exorcism, this genre boundary prevents two opposite errors. The first dismisses apology as useless because it is partisan. The second treats its rhetoric as if it were a clinical chart, judicial transcript, or statistical report. Neither approach reads the source according to its kind. Apology supplies evidence for the public claim, its theological framing, and the contrast its author wanted an audience to recognize. It normally does not supply the afflicted person’s identity, a controlled observation, a modern differential assessment, or an outcome independently recorded by another witness.
 
-Tertullian and Origen are especially useful together because their arguments are related without being interchangeable. Both represent Christian action as different from arts they reject. Tertullian presents a dramatic forensic challenge. Origen answers a learned critic and makes distinctions within his own account of names, prayer, and adjuration. Their convergence is therefore bounded: Christians could argue publicly that deliverance associated with Christ was real and that it was not simply another instance of magic. The passages do not yield one technique, one formula, or one institutional office.
+Justin, Tertullian, and Origen are especially useful together because their arguments are related without being interchangeable. All three represent Christian action as different from arts they reject. Tertullian presents a dramatic forensic challenge. Origen answers a learned critic and makes distinctions within his own account of names, prayer, and adjuration. Justin appeals to expulsions performed in Jesus Christ’s name and contrasts them with other exorcists, incantations, and drugs. Their convergence is therefore bounded: Christians could argue publicly that deliverance associated with Christ was real and that it was not simply another instance of magic. The passages do not yield one technique, one formula, or one institutional office.
+
+#### Justin’s appeal to public observation
+
+In *Second Apology* 6, Justin places the claim inside a larger account of Christ, demons, and Christian witness. He addresses his readers as though the matter could be learned from what lay under their observation, then appeals to Christians acting in the name of Jesus Christ and contrasts their claimed results with other exorcists and with incantations and drugs. The comparison is part of his apology’s argument about Christ’s power; it is not a surviving record made by a disinterested observer.
+
+The exact repository passage was checked first in the bounded OCR and then collated against printed page 190 of the exact 1887 facsimile. That check establishes the edition, locus, chapter boundary, and direction of Justin’s claim. It does not independently identify the persons concerned, measure frequency or outcomes, establish the original Greek wording, or disclose a repeatable formulary. The source can therefore enlarge the history of public Christian advocacy without becoming a case file or an operational guide.
 
 #### Tertullian’s forensic challenge
 
@@ -206,7 +212,7 @@ But continuity does not erase the differences required by the sources. Apologeti
 
 This distinction also guards against a reverse anachronism. Modern categories cannot simply be imposed upon the ancient material. The apologetic authors do not write psychiatric case reports. The Jerusalem catecheses do not present a modern diagnostic screen. Cornelius’s list does not use the categories of the 1983 Latin code. Historical description should neither force the sources into modern clinical language nor use their ancient language to evade competent modern care.
 
-The unverified leads remain outside the positive chain. Justin’s *Second Apology* 6 and Irenaeus’s *Against Heresies* 1.10 have inspected repository passages, but their publication bindings do not yet record verification; they therefore supply no additional claim here. Laodicea 26 may bear on persons acting in churches or private houses, but no verified publication binding presently controls it. The church-order complex conventionally called the *Apostolic Tradition* contains important initiatory material in reconstructions numbered 20–21, but its unity, attribution, date, Roman provenance, versional basis, and chapter correspondences require exact critical control.
+The unverified leads remain outside the positive chain. Irenaeus’s *Against Heresies* 1.10 has an inspected repository passage, but its publication binding does not yet record verification; it therefore supplies no additional claim here. Laodicea 26 may bear on persons acting in churches or private houses, but no verified publication binding presently controls it. The church-order complex conventionally called the *Apostolic Tradition* contains important initiatory material in reconstructions numbered 20–21, but its unity, attribution, date, Roman provenance, versional basis, and chapter correspondences require exact critical control.
 
 Those exclusions prevent the gaps from being filled by reputation. A familiar attribution to Hippolytus cannot substitute for identifying the reconstructed text and its versional evidence. A conciliar canon cannot be generalized before its wording, date, and scope are controlled. An inspected OCR passage cannot be promoted to verified publication evidence merely because its prospective claim would fit the argument. The resulting narrative is shorter than the complete early-Christian history still to be researched, but every positive step rests on the verified evidence actually available.
 
@@ -214,10 +220,10 @@ The bounded conclusion is therefore firm. By the third and fourth centuries, the
 
 | **Witness family** | **Secure contribution** | **Evidentiary ceiling** |
 |:-------------|:------------------------|:----------------------------|
-| Tertullian and Origen | Distinct public arguments about Christian deliverance, Christ, prayer, and rejected magical alternatives | Literary claims in identified English witnesses, not case verification, measured outcomes, or one formulary |
+| Justin, Tertullian, and Origen | Distinct public arguments about Christian deliverance, Christ, prayer, and rejected magical alternatives | Literary claims in identified English witnesses, not case verification, measured outcomes, or one formulary |
 | Jerusalem catecheses | Exorcism and renunciation situated within baptismal preparation and allegiance to Christ | A qualified Jerusalem sequence, not universal fourth-century practice or a major-exorcism case |
 | Cornelius through Eusebius | Exorcists named among third-century Roman church personnel | One combined count for three groups, no separate exorcist total, and no complete duty description |
-| Justin, Irenaeus, Laodicea, and church-order leads | Defined questions for later apologetic, doctrinal, disciplinary, and initiatory comparison | No positive claim until the publication records carry the required exact verification and critical controls |
+| Irenaeus, Laodicea, and church-order leads | Defined questions for later apologetic, doctrinal, disciplinary, and initiatory comparison | No positive claim until the publication records carry the required exact verification and critical controls |
 
 ## Late-Antique Offices and Medieval Plurality
 
@@ -666,7 +672,7 @@ Selected loci in 1 Samuel 16; Tobit 6–8; Matthew 4, 8, 12, 17; Mark 1, 3, 5, 9
 
 ### Ancient Jewish and Christian witnesses
 
-*Jubilees* 10.1–11, trans. R. H. Charles (1913). Josephus, *Antiquities* 8.45–49, Whiston’s English. Tertullian, *Apology* 23, Thelwall English. Origen, *Against Celsus* 1.6, 1.25, and 7.4, Crombie English. Jerusalem *Procatechesis* 9 and *Mystagogical Catechesis* 1.4–9, Gifford English. Eusebius, *Church History* 6.43.11, McGiffert English. The last five are exact dated New Advent delivery states acquired and hashed 2026-07-27.
+*Jubilees* 10.1–11, trans. R. H. Charles (1913). Josephus, *Antiquities* 8.45–49, Whiston’s English. Justin, *Second Apology* 6, Dods–Reith English. Tertullian, *Apology* 23, Thelwall English. Origen, *Against Celsus* 1.6, 1.25, and 7.4, Crombie English. Jerusalem *Procatechesis* 9 and *Mystagogical Catechesis* 1.4–9, Gifford English. Eusebius, *Church History* 6.43.11, McGiffert English. The last five are exact dated New Advent delivery states acquired and hashed 2026-07-27.
 
 ### Ritual and theological witnesses
 
@@ -682,7 +688,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-27T19:27:08Z
+**Last revised (UTC):** 2026-07-28T01:56:18Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
