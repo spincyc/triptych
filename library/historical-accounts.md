@@ -2,11 +2,10 @@
 
 [Return to the Library](../LIBRARY.md)
 
-## Catholic Exorcism — Public-Alpha Review
+## Catholic Exorcism
 
-**[Open the Catholic Exorcism study](catholic-exorcism.md)** for direct review
-PDF and web links, the safety boundary, completion status, and
-section-by-section navigation.
+**[Open the Catholic Exorcism study](catholic-exorcism.md)** for PDF, web, and
+section links.
 
 ## Biblical Translation Histories
 
@@ -26,7 +25,7 @@ Local histories distinguish the building, juridic parish, and worshipping commun
 
 ## Traditional Priestly Institutes
 
-This is a bibliographic series, not a common canonical classification; each volume states its subject's actual status at its cutoff.
+Histories of traditional priestly institutes.
 
 | Publication | ChatGPT | Claude | Coverage |
 | --- | --- | --- | --- |

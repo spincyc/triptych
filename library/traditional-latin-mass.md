@@ -2,7 +2,7 @@
 
 [Return to the Library](../LIBRARY.md)
 
-These studies concern the books and calendar in force in 1962. They do not establish present authorization or replace a competent local Ordo.
+Studies of the books and calendar in force in 1962.
 
 ## Core and Reference Works
 
@@ -13,37 +13,30 @@ These studies concern the books and calendar in force in 1962. They do not estab
 | **The 1962 Roman Calendar** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | Construction history and complete recurring universal and United States inventories. |
 
 <a id="altar-server-guides"></a>
-## Altar Server Guides — Public-Alpha Review Copies
+## Altar Server Guides
 
 Print-first training guides for young servers, their trainers, and repeated
-practice. These seven PDFs are provisional public-alpha review copies, not
-final training editions or official liturgical books. Local custom and the
-celebrant's directions govern.
+practice.
 
 | Form | ChatGPT | Claude | Best for |
 | --- | --- | --- | --- |
-| **Low Mass Child Booklet** | [Review booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf) · [Review trainer manual](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf) · [Review flash cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf) | — | **Status: public-alpha review.** Ages 8–10; a continuous two-server route, trainer notes, and a 22-card verbal deck. |
-| **Serving Missa Cantata** | [Review booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf) · [Review cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf) | — | **Status: public-alpha review.** Ages 8–14; role-first practice, an eight-scene map, and a complete trainer chronology. |
-| **Serving Solemn Mass** | [Review booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf) · [Review cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf) | — | **Status: public-alpha review.** Ages 8–14; role-first practice, a seven-scene map, and a complete trainer chronology. |
+| **Low Mass Child Booklet** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf) · [Trainer manual](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf) · [Flash cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf) | — | Ages 8–10; a two-server route, trainer notes, and response cards. |
+| **Serving Missa Cantata** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf) · [Cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf) | — | Ages 8–14; role practice and a trainer chronology. |
+| **Serving Solemn Mass** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf) · [Cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf) | — | Ages 8–14; role practice and a trainer chronology. |
 
-## Sanctuary Pictorial Dictionaries — Priestly Review Copies
+<a id="sanctuary-pictorial-dictionaries"></a>
+## Sanctuary Pictorial Dictionaries
 
-These compact monochrome-pencil editions are intentionally incomplete review
-packets, not authoritative dictionaries or training manuals. Each installed
-snapshot shows six admitted object records and identifies 32 records omitted
-from the 38-record inventory current when it was built. The canonical
-structured inventory now contains 43 records, but these PDFs have not been
-rebuilt; they remain exact earlier review snapshots through which a priest can
-correct the project's factual, ceremonial, visual, and scope deficiencies.
+Monochrome-pencil visual references organized for six audiences.
 
-| Edition | Review PDF | Review focus |
+| Edition | PDF | Focus |
 | --- | --- | --- |
-| **Comprehensive dictionary** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf) | The shared 1962 Roman Rite inventory and its historical boundary. |
-| **Altar server** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf) | Recognition, proximity, and handling boundaries. |
-| **Sacristan** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf) | Preparation, placement, storage, and local variation. |
-| **MC and trainer** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf) | Roles, handoffs, branches, and ceremonial relationships. |
-| **General reader** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf) | Clear identity, brief symbolism, status, and period. |
-| **Pontifical ceremonies** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf) | Vesture, insignia, furnishings, ministers, and privileges. |
+| **Comprehensive dictionary** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf) | Shared inventory and historical boundary. |
+| **Altar server** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf) | Recognition, proximity, and handling. |
+| **Sacristan** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf) | Preparation, placement, and storage. |
+| **MC and trainer** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf) | Roles, handoffs, and ceremonial relationships. |
+| **General reader** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf) | Identity, symbolism, status, and period. |
+| **Pontifical ceremonies** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf) | Vesture, insignia, furnishings, and ministers. |
 
 ## Mass Propers
 

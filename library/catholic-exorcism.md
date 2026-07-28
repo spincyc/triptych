@@ -4,24 +4,9 @@
 
 [Return to Historical Accounts](historical-accounts.md)
 
-## Public-alpha review edition
-
-The available 32-page paper is an interim review edition, not the promised
-final reference of at least 100 substantive pages. It is published so readers can
-examine its evidence, scope, safeguarding boundaries, and direction while the
-remaining source and specialist-review work continues.
-
-| Publication | ChatGPT | Claude | Status |
+| Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| CE-01 · **Catholic Exorcism: History, Discipline, and Pastoral Practice** | [Review PDF — 32 pages](../doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf) · [Read review edition](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html) | — | Public-alpha review; current Latin discipline and identified U.S. practice checked through 26 July 2026. |
-
-This is a historical, theological, canonical, clinical-boundary, and
-safeguarding study. It is not a diagnostic guide or ritual manual. It does not
-provide formulas, alleged signs, interview prompts, commands, or a sequence for
-major exorcism. Immediate danger belongs with the appropriate emergency or
-protective service; medical and mental-health treatment should continue under
-competent care; Catholic pastoral help begins with a parish or the competent
-diocesan or eparchial authority.
+| CE-01 · **Catholic Exorcism: History, Discipline, and Pastoral Practice** | [PDF](../doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf) · [Read](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html) | — | History, theology, discipline, discernment, and safeguarding. |
 
 ## Read by subject
 
@@ -39,7 +24,3 @@ The web edition can be read continuously or entered at a major section:
 - [Pastoral conclusion](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html#pastoral-conclusion-authority-without-spectacle)
 - [Scope, method, and historical coordinates](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html#scope-method-and-historical-coordinates)
 - [References by source function](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html#references-by-source-function)
-
-The longer edition will retain this landing-page address and publication ID.
-Its section navigation will expand with the work rather than creating a second
-catalog identity.

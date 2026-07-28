@@ -24,8 +24,8 @@ Choose a section, open a PDF, and read.
 
 | Section | Focus |
 | --- | --- |
-| **[Public-alpha review: 1962 Altar Server Guides](library/traditional-latin-mass.md#altar-server-guides)** | Direct access to all seven provisional Low Mass, Missa Cantata, and Solemn Mass training PDFs. |
-| **[Priestly Review: Sanctuary Pictorial Dictionaries](library/traditional-latin-mass.md#sanctuary-pictorial-dictionaries-priestly-review-copies)** | Direct access to all six explicitly provisional 1962 Roman Rite dictionary PDFs for priestly review. |
+| **[1962 Altar Server Guides](library/traditional-latin-mass.md#altar-server-guides)** | Low Mass, Missa Cantata, and Solemn Mass training. |
+| **[Sanctuary Pictorial Dictionaries](library/traditional-latin-mass.md#sanctuary-pictorial-dictionaries)** | Six visual references for the 1962 Roman Rite. |
 | **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, altar-server training, Mass assembly, calendar, pictorial dictionaries, and regularly updated proper expositions. |
 | **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and proper studies identified by edition, language, territory, cycle, and date. |
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
@@ -35,8 +35,8 @@ Choose a section, open a PDF, and read.
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives. |
 | **[Heresies](library/heresies.md)** | Historical studies of condemned propositions, ecclesial responses, and their aftermaths. |
 | **[Historical Accounts](library/historical-accounts.md)** | Histories of texts, institutions, and events. |
-| **[Public-alpha review: Catholic Exorcism](library/catholic-exorcism.md)** | Direct reading links, safety boundaries, and navigation for the interim 32-page paper and planned 100+ page reference. |
-| **[Released study: The Linen Cloths at the Empty Tomb](library/scripture.md#linen-cloths-at-the-empty-tomb)** | Released GPT and Claude editions of the source-first study of John 20:6–7. |
+| **[Catholic Exorcism](library/catholic-exorcism.md)** | History, discipline, safeguarding, and pastoral practice. |
+| **[The Linen Cloths at the Empty Tomb](library/scripture.md#linen-cloths-at-the-empty-tomb)** | A study of John 20:6–7. |
 | **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
 | **[Law](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
 
