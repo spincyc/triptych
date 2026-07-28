@@ -749,3 +749,33 @@ Its title and subject metadata are present, its revision timestamp is
 subsetted, and Unicode-mapped. This alpha record establishes source, rights,
 safety, identity, mechanical, and basic visual concerns; it claims no
 physical print or external approval status.
+
+## Low Mass Canon-scene boundary correction — 2026-07-28
+
+The bell-station and elevation scenes now retain their exact interior
+ceremonial tableaux while a narrow transparent alpha feather replaces the
+opaque outer raster perimeter. This removes the pale floating-image rectangle
+without extracting, redrawing, or suppressing the altar, figures, bell,
+architectural frame, or other scene content. TeX-owned Second, Priest, and
+First labels were spread farther apart so they remain distinct in both the
+child and narrower trainer compositions.
+
+The same review exposed and corrected a pre-existing Last Gospel overlay
+error: First, who faces the priest and Missal, is now labeled on picture-left;
+Second, who faces the altar, is labeled on picture-right. The underlying
+tableau was already correct and was not redrawn.
+
+Because the artwork and diagram macro files are shared, all seven
+altar-server publications rebuilt for settled passes and were rastered through
+the bounded review helper. All final logs are free of fatal errors, undefined
+references, overfull or underfull boxes, and unresolved rerun requests. The
+five unaffected publications reproduce their prior installed bytes exactly.
+Every page of both 29-page Low Mass consumers was inspected, with Canon pages
+18 and 19 checked at full size. The artwork blends into the white page without
+a floating rectangle; role and bell tags remain distinct, legible, and clear
+of the figures.
+
+| Publication | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Low Mass child field guide | 29 | 7,960,514 | `0a9e8644cb068871cc3ddeb27b6d9c348fb5a29810ec983f46127a701ac564e5` |
+| Low Mass trainer manual | 29 | 7,973,083 | `dab3d0719c6f887e0502ea2eb3b7dad13912cbbaefad07a9d9e6d632742ea087` |

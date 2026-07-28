@@ -407,26 +407,33 @@ the larger received rasters.
   altar, both acolytes kneeling at their normal places, and one bell cluster
   before First at picture-right
 - Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief
+  project-created structured scene brief; the tracked derivative adds a
+  deterministic 12-pixel inset, 10-pixel Gaussian edge-alpha feather while
+  preserving every interior scene pixel
 - Known prompt summary: show the priest at the altar and two servers kneeling
   at their normal places, with a single accessible bell before First on
   picture-right; omit lettering, arrows, watermarks, and extra figures. This
   is a summary of the generation request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
-  142,195 bytes
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha
+  PNG; 182,362 bytes
 - SHA-256:
-  `4ebd18bc3d0e8dc39cca0219013c5d840fa733b6b5956262d26c4f883361c1b5`
+  `040842670a2f09bd98dcc76d77c8c5d5b7d4315b571912ad31373cec12afb0d8`
+- Boundary treatment: transparent feather at the outer image perimeter; the
+  complete altar, figures, bell, and interior scene remain opaque and
+  unchanged
 - Baked-in text, arrows, or numerals: generated lettering was removed before
   the tracked file; none remains
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating agent's visual inspection and text-removal check
-  completed 2026-07-27; integrated every-page, paired-use, print-size,
-  photocopy, and independent ceremonial review remain pending
+- Review state: generating-agent inspection and text-removal check completed
+  2026-07-27; transparent-perimeter and integrated every-page screen review
+  completed through both exact child/trainer PDFs on 2026-07-28; physical
+  print, photocopy, human artwork, and independent ceremonial review remain
+  pending
 
 ## ASG-ART-015
 
@@ -436,25 +443,31 @@ the larger received rasters.
   both kneeling acolytes holding the lower chasuble edges, and First's bell
   accessible
 - Production: AI-generated monochrome graphite illustration from a
-  project-created structured scene brief
+  project-created structured scene brief; the tracked derivative adds a
+  deterministic 12-pixel inset, 10-pixel Gaussian edge-alpha feather while
+  preserving every interior scene pixel
 - Known prompt summary: show the priest elevating the Host while exactly two
   kneeling servers support the lower chasuble edges, with First's bell visible
   and accessible; leave all labels out of the raster. This is a summary of the
   generation request, not a preserved verbatim prompt.
 - Generator and date: built-in OpenAI image generation (model and version not
   exposed), 2026-07-27
-- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
-  193,200 bytes
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale-alpha
+  PNG; 252,393 bytes
 - SHA-256:
-  `09e63eece56ca8a0959e2b29fc717f777223cb1cf3f616f1b7d9834186423dc7`
+  `3e7bc1bd6be0daee995952adb90bfcaf9ab7df8701800283a1e85263ff733759`
+- Boundary treatment: transparent feather at the outer image perimeter; the
+  complete architectural frame, altar, figures, and interior scene remain
+  opaque and unchanged
 - Baked-in text, arrows, or numerals: none observed
 - Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
 - Rights state: project-created AI illustration; no known third-party source
   asset was incorporated; distributed under repository terms only to the
   extent applicable rights exist
-- Review state: generating agent's visual inspection completed 2026-07-27;
-  integrated every-page, paired-use, print-size, photocopy, and independent
-  ceremonial review remain pending
+- Review state: generating-agent inspection completed 2026-07-27;
+  transparent-perimeter and integrated every-page screen review completed
+  through both exact child/trainer PDFs on 2026-07-28; physical print,
+  photocopy, human artwork, and independent ceremonial review remain pending
 
 ## ASG-ART-016
 
