@@ -429,6 +429,38 @@ The current convention permits a bounded alpha when source integrity, rights,
 safety, reproducibility and identity, mechanical validity, and basic visual
 usability pass.
 
+## Paired altar-cruets cross-edition alpha — 2026-07-28
+
+The already reviewed paired-cruets raster and closed morphology audit now
+serve the five generic generated editions while the bespoke altar-server
+edition keeps its existing richer page unchanged. The generic renderer
+admits `obj-altar-cruet` only after the unverified terminology claim was
+removed from publication data and replaced with the truthful visible line
+`Latin term not asserted`. No source, artwork, or reader-facing text claims a
+fixed material, marking, closure, handle, tray, left-right order, dimensions,
+ornament, or universal server split.
+
+All five generated PDFs were built to settled output, rastered with
+`scripts/pdf-review`, inspected on all 130 pages through the bounded contact
+sheets, and inspected at full size on each new paired-cruets page. The pages
+have no clipping, overlap, spill, unsafe operational instruction, or ambiguous
+semantic mark. Logs contain no fatal error, undefined reference, overfull or
+underfull box, or unresolved rerun warning. Fonts are embedded, text is
+extractable, and each installed PDF is byte-identical to its reviewed build.
+
+| Edition | Pages | Installed SHA-256 |
+| --- | ---: | --- |
+| comprehensive | 27 | `b3bc1fd81fba82427d432a135a1df48192b1d37212569a0bef8f95b38b8c3a03` |
+| general reader | 25 | `d9ed19577db134b091924e2328fa28677be509c7985e31b29c1d7be0be80ad64` |
+| MC and trainer | 27 | `fb716cf4c0fc90691e24ee189602665669b6152a0971c977d92c1972212a3dab` |
+| pontifical ceremonies | 24 | `ce87fd9f0da87ddbe5b9e64f6dacef6cecddea1074bdc41f6ed9b7cd5b3be1d9` |
+| sacristan | 27 | `7b6cfff871a9dba9964a2c09b5cadbfee7d7f72cc25aa4c65ddfe47b9f5b5110` |
+
+`source_audit_status`: passed for the bounded claims and explicit lexical
+ceiling. `rights_status`: passed. `safety_status`: passed.
+`production_status`: passed. `alpha_status`: eligible.
+`published`: false; deployment remains a separate operation.
+
 The current altar-server furnishings tranche adds the credence table and
 sedilia. Fortescue--O'Connell's exact 1943 seventh revised facsimile at
 printed pp. 8–9 / artifact pp. 29–30 controls the

@@ -11,7 +11,7 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
-The present bounded family covers twenty-four records: the appointments-and-books
+The present bounded family covers twenty-five records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel; and the thurible, incense boat,
@@ -31,6 +31,10 @@ of Catholic prevalence; its plate supplies no flame-handling procedure. The furn
 figures teach a service table and two
 representative movable seating forms without universalizing construction,
 covering, decoration, or exact placement.
+
+The paired altar-cruets plate teaches a small wine-and-water service pair at
+common hand scale while leaving material, markings, closure, handle, tray,
+left-right order, and Latin terminology unasserted.
 
 The complete reader order remains the order declared in
 `shared/schema/edition-selections.toml`. This alpha does not claim that the

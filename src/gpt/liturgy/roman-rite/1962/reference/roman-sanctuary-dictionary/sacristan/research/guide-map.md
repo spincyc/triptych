@@ -31,6 +31,8 @@ trained practice; it prescribes no material, dimensions, ornament, charcoal
 procedure, or storage geometry. The practical candle tool adds one dated
 combined lighter-and-extinguisher morphology without claiming Catholic
 prevalence, Roman prescription, a universal form, or an operating method;
-trained local fire-safety practice controls its use and storage. The
-twenty-four-record edition creates no
-external-review gate.
+trained local fire-safety practice controls its use and storage. The paired
+altar cruets add the checked wine-and-water preparation relationship while
+leaving vessel material, closure, markings, tray, left-right order, and Latin
+terminology to source or local direction. The twenty-five-record edition
+creates no external-review gate.

@@ -19,6 +19,10 @@ consumer are recorded in
 under the repository's project-content terms. Exact Met Open Access metadata
 and images used in the audit are retained under artifact-level public-domain
 records; the 1914 Gorham scan remains a hashed remote public-domain artifact.
+Its canonical manifest now truthfully records that the exact prompt text was
+not retained, preserves the contemporaneous prompt bounds rather than
+reconstructing them, and binds the five generic editions plus the existing
+bespoke altar-server consumer to the same normalized raster identity.
 
 The four books-and-supports pencil rasters
 `art-altar-missal-on-stand`, `art-missal-cushion-isolated`,

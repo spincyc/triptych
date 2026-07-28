@@ -30,5 +30,8 @@ four-chain recognition view without supplying a handoff, route, swinging, or
 charcoal procedure. The practical candle tool adds recognition of one dated
 combined morphology only where local training assigns it; it establishes no
 Roman office, universal server task, ceremonial cue, handoff, or operating
-method. The twenty-four-record canonical alpha gate requires no
-external review.
+method. The paired altar cruets add the checked wine-and-water service
+relationship without converting the selected server model, one representative
+handled form, local markings, tray, or left-right order into a universal
+assignment. The twenty-five-record canonical alpha gate requires no external
+review.

@@ -39,13 +39,16 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertIn('distribution_state = "public-alpha"', sidecar)
             self.assertIn("obj-altar-missal", alpha)
             self.assertIn(r"\RSDObjectRecord{obj-altar-cloths}", alpha)
-            self.assertNotIn(
+            self.assertIn(
                 r"\RSDObjectRecord{obj-altar-cruet}",
                 alpha,
             )
             self.assertIn(
-                r"\RSDAlphaOmission{obj-altar-cruet}{Altar cruet}"
-                r"{a printed claim remains an unverified lead}",
+                r"{Latin term not asserted}",
+                alpha,
+            )
+            self.assertIn(
+                r"\RSDAlphaOmission{obj-chalice}",
                 omissions,
             )
             self.assertFalse((output / "ed-comprehensive.review.tex").exists())
@@ -73,6 +76,11 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertIn(r"\RSDObjectRecord{obj-altar-cloths}", text)
             self.assertIn(
                 r"\RSDSelectedAudienceNote{Prepare three clean blessed cloths",
+                text,
+            )
+            self.assertIn(r"\RSDObjectRecord{obj-altar-cruet}", text)
+            self.assertIn(
+                r"\RSDSelectedAudienceNote{Prepare the wine and water vessels",
                 text,
             )
             self.assertNotIn("editorial-proposal", text)

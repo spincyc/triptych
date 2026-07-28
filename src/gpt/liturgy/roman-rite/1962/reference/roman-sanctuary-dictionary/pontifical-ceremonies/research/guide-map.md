@@ -43,3 +43,8 @@ that may support the same elevated lights. Its secular 1902 morphology witness
 does not establish Catholic prevalence, Roman prescription, a pontifical
 insigne, a distinct pontifical form, or an operating method. This brings the
 selection to twenty-one records.
+The paired altar cruets enter as ordinary supporting vessels used in
+pontifical Mass, not as insignia or a distinct pontifical form. Their
+source-bounded plate asserts no material, marking, closure, tray, universal
+handle, left-right arrangement, or Latin headword and brings the selection to
+twenty-two records.

@@ -252,3 +252,22 @@ silhouette or material prescription. Reader-facing text does not provide
 charcoal-lighting, loading, extinguishing, swinging, handoff, route, or hot
 resting instructions. The bespoke altar-server leaf retains its stronger
 existing full-page treatment and does not render a duplicate generated entry.
+
+## Paired altar-cruets alpha reconciliation — 2026-07-28
+
+The closed morphology tranche in
+`cruet-pair-source-audit-2026-07-27.md` supports promotion of the paired
+altar cruets through the five generic canonical-alpha editions. The exact
+1962 Missal and checked server model control the wine-and-water service; the
+1914 Gorham catalog and exact Met objects 467483 and 200141 control only the
+small paired service identity, hand scale, stable bases, pouring edges, and
+demonstrated variation. Promotion adds no fixed material, marking, closure,
+handle, tray, left-right order, dimensions, ornament, or universal server
+split.
+
+The lexical question remains deliberately unresolved. Because the current
+audit does not establish `ampulla` or `urceolus` as the preferred 1962
+headword for this canonical record, the generic alpha pages print `Latin term
+not asserted` rather than presenting either lead as verified. The bespoke
+altar-server edition retains its stronger full-page paired treatment and is
+not given a duplicate generated entry.

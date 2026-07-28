@@ -1,11 +1,11 @@
 schema_version = 1
 id = "obj-altar-cruet"
-workflow_state = "source-audited"
-editorial_note = "The checked Missal and disclosed server-manual synthesis support the wine-and-water service. A dated manufacturer catalog and two cataloged museum witnesses support a small paired-cruet teaching plate while demonstrating substantial variation in material, body, ornament, marking, closure, and handle. Latin terminology and any universal arrangement remain open."
-preferred_english_name = "Altar cruet"
-latin_headword = "ampulla"
+workflow_state = "publication-ready"
+editorial_note = "The checked Missal and disclosed server-manual synthesis support the wine-and-water service. A dated manufacturer catalog and two cataloged museum witnesses support a small paired-cruet teaching plate while demonstrating substantial variation in material, body, ornament, marking, closure, and handle. A Latin headword is deliberately not asserted because the present audit did not close the lexical question; any universal arrangement remains open."
+preferred_english_name = "Paired altar cruets"
+latin_headword = "Latin term not asserted"
 alternate_english_names = ["Cruet"]
-alternate_latin_names = ["urceolus"]
+alternate_latin_names = []
 sort_name = "Cruet, altar"
 categories = ["service-objects"]
 periods = ["roman-1962-horizon"]
@@ -38,19 +38,36 @@ general_reader = "required"
 pontifical = "useful"
 
 [[claims]]
+id = "clm-altar-cruet-identity"
+kind = "identity"
+text = "Paired altar cruets are small pouring vessels prepared to supply wine and water for the Mass."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-missale-1962-ritus-vii-x", "src-asg-source-audit-cruets", "src-gorham-1914-cruets", "src-met-200141-cruet-pair"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-altar-cruet-presence-use"
 kind = "liturgical-use"
-text = "The 1962 Offertory and ablution rites require wine and water to be supplied to the celebrant; contemporary server arrangements use two altar cruets for that service."
+text = "The 1962 Offertory and ablution rites require wine and water to be supplied to the celebrant; the checked server model uses two altar cruets for that service."
 evidence_state = "source-grounded-synthesis"
 source_ids = ["src-missale-1962-ritus-vii-x", "src-asg-source-audit-cruets"]
 as_of = 1962-01-01
 
 [[claims]]
-id = "clm-altar-cruet-terminology-hold"
-kind = "terminology"
-text = "Ampulla and urceolus remain terminology leads pending a dedicated lexical source audit."
-evidence_state = "unverified-lead"
-source_ids = ["src-asg-source-audit-cruets"]
+id = "clm-altar-cruet-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "The pair is prepared near the altar for the Offertory and later ablutions."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-missale-1962-ritus-vii-x", "src-asg-source-audit-cruets"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-altar-cruet-appearance"
+kind = "appearance"
+text = "Checked witnesses support small pouring vessels used as a pair, with stable bases and pouring lips; body, material, ornament, marking, closure, and handle vary."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-gorham-1914-cruets", "src-met-467483-cruet", "src-met-200141-cruet-pair"]
+as_of = 1962-01-01
 
 [[claims]]
 id = "clm-altar-cruet-morphology-bounds"
@@ -108,7 +125,7 @@ note = "Cataloged as a pair of altar cruets, each 14 cm high. Its material, orna
 id = "art-altar-cruet-paired-generic"
 view = "comparison"
 asset = "shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets.png"
-review_state = "print-checked"
+review_state = "approved"
 depicts = ["obj-altar-cruet"]
 scale_mode = "common-scale"
 review_note = "Two generic open cruets at common hand scale. The plate teaches only pair, stable base, pouring lip, and graspable handle. TeX owns wine/water labels and the local-variability qualification. The earlier household-decanter-like single asset remains held and is not a primary consumer."
@@ -116,4 +133,24 @@ review_note = "Two generic open cruets at common hand scale. The plate teaches o
 [[audience_note]]
 audience = "altar-server"
 text = "The same basic vessel form may contain wine or water; identify the contents from the church's rehearsed markings and arrangement."
-claim_ids = ["clm-altar-cruet-presence-use"]
+claim_ids = ["clm-altar-cruet-presence-use", "clm-altar-cruet-appearance"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the wine and water vessels as the church directs; material, closure, markings, tray, and left-right arrangement vary and are not prescribed by this plate."
+claim_ids = ["clm-altar-cruet-ceremonial-presence", "clm-altar-cruet-appearance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the verified wine-and-water service and local content-identification method without turning one vessel form, bearer split, handoff, or left-right order into a universal rule."
+claim_ids = ["clm-altar-cruet-presence-use", "clm-altar-cruet-appearance"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The pictured handled pair is a clear representative teaching form; checked examples also vary in material, ornament, closure, and whether a handle is present."
+claim_ids = ["clm-altar-cruet-identity", "clm-altar-cruet-appearance"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "These are ordinary supporting vessels used in pontifical Mass, not pontifical insignia or a distinct pontifical form."
+claim_ids = ["clm-altar-cruet-identity", "clm-altar-cruet-presence-use"]
