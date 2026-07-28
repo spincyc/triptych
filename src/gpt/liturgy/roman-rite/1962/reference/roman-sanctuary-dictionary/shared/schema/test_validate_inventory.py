@@ -134,6 +134,17 @@ class ValidatorTests(unittest.TestCase):
         problems = self.validate(record).problems
         self.assertTrue(any("not allowed for publication-ready" in p.message for p in problems))
 
+    def test_artwork_render_owner_must_be_depicted(self) -> None:
+        record = {**VALID_RECORD, "artwork": [dict(VALID_RECORD["artwork"][0])]}
+        record["artwork"][0]["render_owner"] = "obj-other"
+        problems = self.validate(record).problems
+        self.assertTrue(any("render owner must appear in depicts" in p.message for p in problems))
+
+    def test_artwork_render_owner_accepts_a_depicted_object(self) -> None:
+        record = {**VALID_RECORD, "artwork": [dict(VALID_RECORD["artwork"][0])]}
+        record["artwork"][0]["render_owner"] = "obj-test"
+        self.assertEqual(self.validate(record).problems, [])
+
     def test_empty_artwork_allowed_before_publication_ready(self) -> None:
         record = {**VALID_RECORD, "workflow_state": "source-audited", "artwork": []}
         self.assertEqual(self.validate(record).problems, [])

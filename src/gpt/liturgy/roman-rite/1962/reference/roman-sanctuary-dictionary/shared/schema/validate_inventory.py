@@ -436,6 +436,7 @@ class Validator:
                     "variant_id",
                     "scale_mode",
                     "context_object_ids",
+                    "render_owner",
                 )
                 identity = {key: art.get(key) for key in canonical_fields}
                 existing = self.artwork.get(art_id)
@@ -467,6 +468,16 @@ class Validator:
                     f"{field}.depicts",
                     f"shared artwork must depict its owning record {owner}",
                 )
+            if "render_owner" in art:
+                self.id_value(
+                    path, f"{field}.render_owner", art["render_owner"], "obj-"
+                )
+                if art["render_owner"] not in art.get("depicts", []):
+                    self.error(
+                        path,
+                        f"{field}.render_owner",
+                        "render owner must appear in depicts",
+                    )
             if "variant_id" in art:
                 self.id_value(path, f"{field}.variant_id", art["variant_id"], "var-")
             if "context_object_ids" in art:

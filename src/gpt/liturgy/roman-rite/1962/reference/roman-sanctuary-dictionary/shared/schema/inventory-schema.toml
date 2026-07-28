@@ -356,13 +356,13 @@ values = ["unlocated", "located", "inspected", "claim-verified", "rejected"]
 table = "artwork"
 array = true
 required = ["id", "view", "asset", "review_state", "depicts"]
-optional = ["variant_id", "scale_mode", "context_object_ids", "review_note"]
+optional = ["variant_id", "scale_mode", "context_object_ids", "review_note", "render_owner"]
 
 [artwork.id]
 type = "id"
 prefix = "art-"
 shared_identity = true
-repeat_rule = "The same ID may appear in every depicted object's record; view, asset, review state, depicted IDs, variant, scale mode, and context IDs must agree."
+repeat_rule = "The same ID may appear in every depicted object's record; view, asset, review state, depicted IDs, variant, scale mode, context IDs, and render owner must agree."
 
 [artwork.view]
 type = "enum"
@@ -396,6 +396,11 @@ values = ["prompted", "generated", "identity-checked", "liturgically-checked", "
 type = "array[id]"
 prefix = "obj-"
 min_items = 1
+
+[artwork.render_owner]
+type = "id"
+prefix = "obj-"
+description = "Optional linking object that owns the artwork's one generated rendering; absent values resolve to the first depicted object that links the artwork."
 
 [artwork.scale_mode]
 type = "enum"

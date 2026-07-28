@@ -32,7 +32,7 @@ NESTED_KEYS = {
                "jurisdiction", "as_of", "rights_note", "publication_note"},
     "sources": {"id", "binding", "locus", "role", "verification_state", "checked_on", "note"},
     "artwork": {"id", "view", "asset", "review_state", "depicts", "variant_id",
-                "scale_mode", "context_object_ids", "review_note"},
+                "scale_mode", "context_object_ids", "review_note", "render_owner"},
     "variants": {"id", "preferred_name", "distinguishing_features", "status", "source_ids",
                  "artwork_ids", "latin_name", "periods", "regions", "communities",
                  "ceremonies", "dimensions", "note"},
@@ -230,7 +230,7 @@ def alpha_omission_reason(
     return "not admitted by the canonical alpha selection"
 
 
-def record_tex(record: dict, edition: dict) -> str:
+def record_tex(record: dict, edition: dict, artwork_render_owners: dict[str, str]) -> str:
     lines = [
         f"\\RSDObjectRecord{{{tex(record['id'])}}}"
         f"{{{tex(record['preferred_english_name'])}}}{{{tex(record['latin_headword'])}}}",
@@ -266,11 +266,14 @@ def record_tex(record: dict, edition: dict) -> str:
                      f"{{{tex(source['role'])}}}{{{tex(source['verification_state'])}}}"
                      f"{{{tex(source.get('checked_on', ''))}}}")
     for artwork in record["artwork"]:
+        render_owner = artwork_render_owners[artwork["id"]]
         lines.append("\\RSDArtwork"
                      f"{{{tex(artwork['id'])}}}{{{tex(artwork['view'])}}}"
                      f"{{{tex(canonical_asset_path(artwork['asset']))}}}"
                      f"{{{tex(artwork['review_state'])}}}{{{tex(artwork['depicts'])}}}"
-                     f"{{{tex(artwork.get('variant_id', ''))}}}{{{tex(artwork.get('scale_mode', 'not-applicable'))}}}")
+                     f"{{{tex(artwork.get('variant_id', ''))}}}"
+                     f"{{{tex(artwork.get('scale_mode', 'not-applicable'))}}}"
+                     f"{{{tex(render_owner)}}}")
     for note in record.get("audience_note", []):
         lines.append("\\RSDAudienceNote"
                      f"{{{tex(note['audience'])}}}{{{tex(note['text'])}}}"
@@ -360,7 +363,9 @@ def section_label(section: str) -> str:
     return section.replace("-", " ").title()
 
 
-def dense_edition_tex(chosen: list[dict], edition: dict) -> list[str]:
+def dense_edition_tex(
+    chosen: list[dict], edition: dict, artwork_render_owners: dict[str, str]
+) -> list[str]:
     """Render section-ordered comparison plates in the edition's layout mode.
 
     Records remain canonical and audience notes remain edition-selected; this
@@ -416,7 +421,7 @@ def dense_edition_tex(chosen: list[dict], edition: dict) -> list[str]:
                         lines.append("\\RSDStoryCompanionsStart")
                     else:
                         lines.append("\\RSDStoryCompanionBreak")
-                    lines.append(record_tex(record, edition))
+                    lines.append(record_tex(record, edition, artwork_render_owners))
                 if len(plate) > 1:
                     lines.append("\\RSDStoryCompanionsEnd")
                 lines.append("\\RSDStoryPlateEnd")
@@ -430,9 +435,41 @@ def dense_edition_tex(chosen: list[dict], edition: dict) -> list[str]:
                     lines.append("\\RSDDensePlateRowBreak")
                 elif index in {1, 2, 4, 5}:
                     lines.append("\\RSDDensePlateCellBreak")
-                lines.append(record_tex(record, edition))
+                lines.append(record_tex(record, edition, artwork_render_owners))
             lines.append("\\RSDDensePlateEnd")
     return lines
+
+
+def resolve_artwork_render_owners(records: dict[str, dict]) -> dict[str, str]:
+    """Assign each shared asset to one canonical linking object.
+
+    An explicit render_owner wins. Otherwise the first depicted object that
+    actually links the artwork owns its generated rendering. This makes the
+    declared depicts order a deterministic default without suppressing an
+    artwork whose contextual depicted objects do not link it.
+    """
+    links: dict[str, set[str]] = {}
+    definitions: dict[str, dict] = {}
+    for object_id, record in records.items():
+        for artwork in record["artwork"]:
+            links.setdefault(artwork["id"], set()).add(object_id)
+            definitions.setdefault(artwork["id"], artwork)
+    owners: dict[str, str] = {}
+    for artwork_id, artwork in definitions.items():
+        linked = links[artwork_id]
+        explicit = artwork.get("render_owner")
+        if explicit is not None:
+            require(
+                explicit in linked,
+                f"{artwork_id}: render_owner {explicit} must link the shared artwork",
+            )
+            owners[artwork_id] = explicit
+            continue
+        owners[artwork_id] = next(
+            (object_id for object_id in artwork["depicts"] if object_id in linked),
+            sorted(linked)[0],
+        )
+    return owners
 
 
 def main() -> int:
@@ -475,6 +512,7 @@ def main() -> int:
             )
             raise ContractError("canonical inventory validation failed:\n" + detail)
         records = {object_id: data for object_id, (_, data) in validator.records.items()}
+        artwork_render_owners = resolve_artwork_render_owners(records)
         for object_id, record in records.items():
             for index, artwork in enumerate(record["artwork"]):
                 require(
@@ -498,9 +536,12 @@ def main() -> int:
                 f"% edition: {edition['id']}",
             ]
             if edition["id"] == "ed-altar-server":
-                body.extend(record_tex(record, edition) for record in chosen)
+                body.extend(
+                    record_tex(record, edition, artwork_render_owners)
+                    for record in chosen
+                )
             else:
-                body.extend(dense_edition_tex(chosen, edition))
+                body.extend(dense_edition_tex(chosen, edition, artwork_render_owners))
             data = ("\n".join(body) + "\n").encode()
             (args.output / f"{edition['id']}.tex").write_bytes(data)
             if edition["id"] == "ed-altar-server":
@@ -513,7 +554,9 @@ def main() -> int:
                     "% Generated deterministically; do not edit.",
                     "% Canonical altar-server sacred-minister vestment alpha slice.",
                     "% edition: ed-altar-server",
-                    *dense_edition_tex(vestments, edition),
+                    *dense_edition_tex(
+                        vestments, edition, artwork_render_owners
+                    ),
                 ]
                 (args.output / "ed-altar-server-vestments.tex").write_text(
                     "\n".join(vestment_body) + "\n", encoding="utf-8"

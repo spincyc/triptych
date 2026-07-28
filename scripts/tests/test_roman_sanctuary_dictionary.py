@@ -60,6 +60,18 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertIn(r"\RSDObjectRecord{obj-gospel-book}", alpha)
             self.assertNotIn(r"\RSDAlphaOmission{obj-chalice}", omissions)
             self.assertNotIn(r"\RSDAlphaOmission{obj-paten}", omissions)
+            shared = "art-paten-catalog-exemplar-comparison"
+            self.assertEqual(alpha.count(shared), 2)
+            paten_record = alpha.split(r"\RSDObjectRecord{obj-paten}", 1)[1].split(
+                r"\RSDEndObjectRecord", 1
+            )[0]
+            chalice_record = alpha.split(r"\RSDObjectRecord{obj-chalice}", 1)[1].split(
+                r"\RSDEndObjectRecord", 1
+            )[0]
+            self.assertIn(f"{{{shared}}}", paten_record)
+            self.assertIn("{obj-paten}", paten_record)
+            self.assertIn(f"{{{shared}}}", chalice_record)
+            self.assertIn("{obj-paten}", chalice_record)
             self.assertFalse((output / "ed-comprehensive.review.tex").exists())
             self.assertFalse((output / "ed-comprehensive.review-admissions.toml").exists())
 
@@ -214,6 +226,14 @@ class DictionaryGeneratorTests(unittest.TestCase):
         self.assertIn('"obj-gospel-book"', generator)
         self.assertIn(r"\RSDTeXNativeBookArtwork", renderer)
         self.assertIn("no binding, material, ornament", renderer)
+
+    def test_shared_artwork_uses_data_driven_render_owner(self):
+        renderer = (
+            DICTIONARY_ROOT / "shared/generated-record-renderer.tex"
+        ).read_text()
+        self.assertNotIn("obj-chalice", renderer)
+        self.assertNotIn("art-paten-catalog-exemplar-comparison", renderer)
+        self.assertIn(r"\ifstrequal{\RSDObjectID}{#8}", renderer)
 
     def test_unknown_record_field_fails_closed(self):
         with tempfile.TemporaryDirectory() as temporary:

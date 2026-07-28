@@ -129,7 +129,10 @@ Artwork IDs are shared identities, not object-local IDs. A comparison or
 composition may therefore repeat the same artwork ID in each object record
 listed by its `depicts` field. The validator requires the core artwork
 definition to agree across those repetitions and requires each linking object
-to appear in `depicts`; an object-local review note may differ. An empty
+to appear in `depicts`; an object-local review note may differ. Generated
+editions render a shared artwork with exactly one linking object. The optional
+`render_owner` names that object explicitly; otherwise the first object in
+`depicts` that links the artwork is the deterministic owner. An empty
 `artwork` array is valid while a record is not publication-ready.
 Publication-ready records still require approved artwork.
 
