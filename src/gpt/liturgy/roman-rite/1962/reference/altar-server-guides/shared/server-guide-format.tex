@@ -296,6 +296,20 @@
   \end{tcolorbox}%
 }
 
+% Detached ceremonial action cards carry short functional checklists rather
+% than the denser pronunciation apparatus on response cards. Give those
+% checklists a restrained half-point size increase without changing the shared
+% card frame, headings, references, or response-card typography.
+\newcommand{\actionflashback}[4]{%
+  \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,sharp corners,boxrule=0.5pt,left=7pt,right=7pt,top=5pt,bottom=5pt]
+  \flashheader{#1}{Answer}\vfill
+  \centering
+  {\normalsize\itshape #2\par}\vspace{0.35em}
+  {\fontsize{10.5}{12.5}\selectfont #3\par}\vfill
+  {\scriptsize #4\par}
+  \end{tcolorbox}%
+}
+
 \newcommand{\flashblank}{%
   \begin{tcolorbox}[height=2.96in,colback=white,colframe=black!35,sharp corners,boxrule=0.3pt]
   \mbox{}

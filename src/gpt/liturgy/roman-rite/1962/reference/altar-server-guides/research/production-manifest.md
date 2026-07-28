@@ -17,9 +17,9 @@ not control the current installed files.
 | `01-low-mass-trainer-manual` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,874,334 | `4230843bbccea40e2967fe6670b9113ffe355902f88b587b00f2a15a0a8bd9d3` | public alpha review; page-aligned Gospel-station actor overlays screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
 | `01-low-mass-flash-cards` | `2026-07-27T22:48:48Z` | 6 | 22 | 250,916 | `6a5d1363faab813ad51b0e2d0d68a601e3970e077ae9bf45c3cb78242b3cf460` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
 | `02-missa-cantata` | `2026-07-27T22:48:48Z` | 27 | 0 | 1,264,704 | `07a16ac90e30836c4c8aa8bebb3a788caad74ede3fd2985bcaa9b420917ed3cd` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
-| `02-missa-cantata-cue-cards` | `2026-07-27T22:48:48Z` | 12 | 36 | 624,375 | `172eadb08a796a64dcc990eb49157b3f69c0ae6e01c927c29b7cff141e6160ed` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `02-missa-cantata-cue-cards` | `2026-07-28T02:30:54Z` | 12 | 36 | 626,302 | `0c9d6045117b8f285a97a3f623c9f85ed1d07431028ef1a3680f24f3a3da1425` | public alpha review; action-back body enlarged by 0.5 point and full-size screen-reviewed; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
 | `03-solemn-mass` | `2026-07-27T22:48:48Z` | 28 | 0 | 1,311,099 | `ad4a45de902147495fc22a96c42b4010d14dc8611243accd6755831aa78cce19` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
-| `03-solemn-mass-cue-cards` | `2026-07-27T23:20:09Z` | 12 | 36 | 629,477 | `4dd3d18d5aa98b3a1cff9a4bf4c5100e39860987c4663794f5547e137fc19c64` | public alpha review; response-card border/header clearance and electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `03-solemn-mass-cue-cards` | `2026-07-28T02:30:54Z` | 12 | 36 | 631,592 | `e44ece58ffa0b7bac2c412d0366608ddae4aa96f75bd1229545b14296d459b6a` | public alpha review; response-card clearance retained, action-back body enlarged by 0.5 point and full-size screen-reviewed; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
 
 The current family totals 143 pages: 113 guide or manual pages and 30 card
 pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata
@@ -582,3 +582,29 @@ was found.
 This exact-snapshot review does not satisfy the pending actual-size physical
 duplex, photocopy, intended-reader, paired-use, independent, rights, or
 ecclesiastical-suitability gates.
+
+## Detached action-card functional type — 2026-07-28
+
+The Missa Cantata and Solemn Mass detached action-card backs now use a
+dedicated 10.5/12.5-point checklist body, a restrained half-point increase
+over the shared 10/12-point card body. Response-card backs, action-card
+fronts, frame geometry, card identifiers, `Cue` and `Answer` labels, semantic
+verse and response marks, trainer references, and mirrored duplex order are
+unchanged.
+
+Both twelve-page PDFs were built for two final passes and rastered in full.
+All twenty-four pages were inspected at full rendered size, with additional
+density checks on action-back pages 10 and 12. The initially tested full
+`\normalsize` step was rejected because MC-A03 left inadequate clearance at
+the lower frame; the installed half-point step keeps every checklist and
+trainer reference clear of its frame and the terminal rights notice.
+
+The installed reviewed identities are:
+
+| Publication | Pages | Bytes | SHA-256 |
+|---|---:|---:|---|
+| `02-missa-cantata-cue-cards` | 12 | 626,302 | `0c9d6045117b8f285a97a3f623c9f85ed1d07431028ef1a3680f24f3a3da1425` |
+| `03-solemn-mass-cue-cards` | 12 | 631,592 | `e44ece58ffa0b7bac2c412d0366608ddae4aa96f75bd1229545b14296d459b6a` |
+
+Actual-size physical duplex, photocopy, cut, intended-reader, independent,
+rights, and ecclesiastical-suitability review remain pending.
