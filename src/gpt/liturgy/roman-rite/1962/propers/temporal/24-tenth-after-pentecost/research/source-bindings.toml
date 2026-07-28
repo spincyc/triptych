@@ -1,0 +1,45 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Tenth Sunday after Pentecost, printed pages 389-390, PDF pages 470-471"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact remote facsimile controls the complete Latin formulary, headings, references, rank, boundaries, Credo, and Trinity Preface."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-10"
+loci = ["post-pentecosten-10"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The public-domain historical English orations were checked against the registered transcription and the 1861 page images. They are not represented as official 1962 English."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:0d4e3a8887bbf0436d2632c26298fbee6f6ecf4052378c56e1b597045b9b65ea"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.16.2", "Ps.16.8", "Ps.24.1-3", "Ps.50.21", "Ps.54.2", "Ps.54.17-18", "Ps.54.20", "Ps.54.23", "Ps.64.2"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered public-domain Douay-Rheims/Challoner verse rows control English for the scriptural chants."
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.18.9-14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered public-domain Douay-Rheims/Challoner verse rows control Gospel English."
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.12.2-11"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered public-domain Douay-Rheims/Challoner verse rows control Epistle English."
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"

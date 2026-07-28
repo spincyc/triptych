@@ -53,6 +53,7 @@ The stable 1962 temporal series. Missing syntheses are shown as plain text.
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
@@ -79,7 +80,7 @@ The stable 1962 temporal series. Missing syntheses are shown as plain text.
 | 21 | **Seventh Sunday after Pentecost** | Planned | Planned |
 | 22 | **Eighth Sunday after Pentecost** | Planned | Planned |
 | 23 | **Ninth Sunday after Pentecost** | [Synthesis](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) | [Synthesis](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) |
-| 24 | **Tenth Sunday after Pentecost** | Planned | Planned |
+| 24 | **Tenth Sunday after Pentecost** | [Synthesis](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost-synthesis.pdf) | Planned |
 | 25 | **Eleventh Sunday after Pentecost** | Planned | Planned |
 | 26 | **Twelfth Sunday after Pentecost** | Planned | Planned |
 | 27 | **Thirteenth Sunday after Pentecost** | Planned | Planned |
