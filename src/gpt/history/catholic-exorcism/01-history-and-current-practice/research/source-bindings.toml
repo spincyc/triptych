@@ -196,9 +196,117 @@ source_id = "passage.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12
 loci = ["folio-194v"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
-source_fingerprint = "sha256:bb68db11bb043ed24d30383a9e320a0a6bf1700217395a4e9bb4e6178e00e1a0"
+source_fingerprint = "sha256:f148fd1eeb5433f955ce70631c7d55eeaf4184cae9661f63cee3cb7527832f05"
 verified_on = "2026-07-27"
 context = "Exact manuscript-image witness for the presence, rubric, and opening location of the item cataloged as Impositio manuum in energumenum. It does not control the complete item, a critical edition, performance, frequency, continuity, or an operational sequence."
+
+[[bindings]]
+source_id = "artifact.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.gallica-iiif-manifest"
+loci = ["folio-194v", "folio-195r", "folio-195v", "folio-196r", "folio-196v", "folio-197r", "folio-197v", "folio-198r", "folio-198v", "folio-199r", "folio-199v"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:eabdc270ba79bfa6473a61ce8458dea4ef55b0af9cecfab60f12463da2b3bd20"
+verified_on = "2026-07-27"
+context = "Exact BnF manifest controls manuscript identity, folio-to-canvas mapping, institutional attribution, and the Gallica terms link. It is not a transcription, critical edition, or practice witness."
+
+[[bindings]]
+source_id = "artifact.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.bnf-catalog-cc130152"
+loci = ["folio-197r", "folio-198r", "folio-199v"]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:ff36249bc8e9992314a528394f18e3e6036485a7def1c9b64b4ddd73eb58d0b0"
+verified_on = "2026-07-27"
+context = "Exact BnF catalog state controls only its Dumas-derived coordinates and book outline. The CCSL edition remains inaccessible and uncollated, and no intervening numbering is inferred."
+
+[[bindings]]
+source_id = "passage.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.folio-195r-recipient-rubrics"
+loci = ["folio-195r"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:058dea0a96be01e488a173a0e8e21ef7b6a35a572b5bae46956312fcbf06d487"
+verified_on = "2026-07-27"
+context = "Exact manuscript image controls differentiated recipient rubrics in the sequence. It does not supply a modern diagnosis, practice, frequency, norm, geography, or operational use."
+
+[[bindings]]
+source_id = "artifact.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.gallica-iiif-folio-195v"
+loci = ["folio-195v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b2ca804e81c299be9788cc95095a47b472157a969f3265d7ee667b18e98edfa6"
+verified_on = "2026-07-27"
+context = "Exact manuscript image supplies continuity of the visible folio run only. No formula, practice, frequency, norm, geography, or operational use is inferred."
+
+[[bindings]]
+source_id = "artifact.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.gallica-iiif-folio-196r"
+loci = ["folio-196r"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:f754b5a09f106fb60a57d917e909dfd80f449463df28cad92f61debae6607e44"
+verified_on = "2026-07-27"
+context = "Exact manuscript image supplies continuity of the visible folio run only. No formula, practice, frequency, norm, geography, or operational use is inferred."
+
+[[bindings]]
+source_id = "artifact.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.gallica-iiif-folio-196v"
+loci = ["folio-196v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:7d4f3d28da14ee07b399dfa17df612c6d0e7023b30db20680701e000c3f4101f"
+verified_on = "2026-07-27"
+context = "Exact manuscript image supplies continuity of the visible folio run only. No formula, practice, frequency, norm, geography, or operational use is inferred."
+
+[[bindings]]
+source_id = "passage.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.folio-197r-dumas-catalog-number-2406"
+loci = ["folio-197r"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:43ed02ddd10fbd346cf253cb372fc10704ef593a6e13660270b4140e7c6e7bf9"
+verified_on = "2026-07-27"
+context = "Exact image controls the visible rubric at the folio; the number is a BnF catalog coordinate derived from Dumas, not an independently checked CCSL reading."
+
+[[bindings]]
+source_id = "artifact.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.gallica-iiif-folio-197v"
+loci = ["folio-197v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:29557505372424dfeb6c3988773996af398482010cc07228844b31f857b4eb04"
+verified_on = "2026-07-27"
+context = "Exact manuscript image shows successive rubricated items. No unsupported item number, formula, practice, frequency, norm, geography, or operational use is inferred."
+
+[[bindings]]
+source_id = "passage.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.folio-198r-dumas-catalog-number-2412"
+loci = ["folio-198r"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:e58e3786883fd2278037aa32ea756541030d10b94c23a815e17642607ca4a370"
+verified_on = "2026-07-27"
+context = "Exact image controls the visible rubric at the folio; the number is a BnF catalog coordinate derived from Dumas, not an independently checked CCSL reading."
+
+[[bindings]]
+source_id = "artifact.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.gallica-iiif-folio-198v"
+loci = ["folio-198v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:8822f90e3db5081245c42fefbc192574657835ce88e1d9686ff42fc6b6b2bd1d"
+verified_on = "2026-07-27"
+context = "Exact manuscript image supplies continuity of the visible folio run only. No formula, practice, frequency, norm, geography, or operational use is inferred."
+
+[[bindings]]
+source_id = "artifact.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.gallica-iiif-folio-199r"
+loci = ["folio-199r"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:cf72609ffa579ccfed2e4897c39755bcf618d8050c4283f95154917d59580712"
+verified_on = "2026-07-27"
+context = "Exact manuscript image supplies continuity of the visible folio run only. No formula, practice, frequency, norm, geography, or operational use is inferred."
+
+[[bindings]]
+source_id = "passage.anonymous.sacramentarium-gellonense.manuscript-bnf-latin-12048.folio-199v-section-355-boundary"
+loci = ["folio-199v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:16acdc7a4a2ecb2efe6bcb52070c06157978551ad449806a5464949ef07b99a4"
+verified_on = "2026-07-27"
+context = "Exact image controls the transition to relic deposition and church dedication; section 355 is a BnF catalog coordinate derived from Dumas. No formula or broader use claim."
 
 [[bindings]]
 source_id = "passage.tertullian.apologeticum.english-thelwall-anf3-newadvent-web-2026-07-27.23"

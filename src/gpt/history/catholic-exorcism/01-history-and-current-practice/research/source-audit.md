@@ -154,12 +154,18 @@ routes, findings, and limits are recorded in
   complete scan acquired, hashed, and visually inspected 2026-07-27. The
   printed sequence supports baptismal placement of *Exorcismi super electos*;
   it does not supply manuscript collation or the date of each stratum.
-- *Sacramentarium Gellonense*, Paris, BnF, Latin 12048, fol. 194v, exact
-  Gallica IIIF image acquired, hashed, and visually inspected 2026-07-27.
-  The folio verifies the red-rubric opening of the item cataloged as
-  *Impositio manuum in energumenum*. It does not control the complete item,
-  the Dumas–Deshusses critical text, performance, frequency, continuity, or a
-  general medieval practice.
+- *Sacramentarium Gellonense*, Paris, BnF, Latin 12048, exact Gallica IIIF
+  manifest and complete folio-image run from 194v through 199v acquired,
+  hashed, and visually inspected 2026-07-27. The run verifies the red-rubric
+  opening of *Impositio manuum in energumenum* at 194v, differentiated
+  recipient rubrics at 195r, successive items, and the transition on 199v to
+  relic deposition and church dedication. The exact BnF catalog says its
+  numbering follows Dumas and anchors no. 2406 at 197r, no. 2412 at 198r, and
+  section 355 at 199v; no intervening numbers are inferred. The
+  Dumas–Deshusses CCSL edition remains inaccessible and uncollated. These
+  controls establish rubric, recipient language, book placement, and visible
+  sequence, not a critical text, earliest witness, performance, frequency,
+  normativity, geography, general medieval practice, or linear descent.
 - Vogel–Elze, eds., *Pontificale Romano-Germanicum*, volume I, exact complete
   remote scan acquired and hashed. Printed p. 14 (XV.7) and p. 17
   (XV.17–19) were inspected directly in the page images. The former invites

@@ -23,13 +23,18 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
   exact edition witness establishes baptismal placement, not attribution to
   Gelasius I, one pristine Roman use, manuscript-to-edition correspondence, or
   the date of each textual stratum.
-- *Sacramentarium Gellonense*, Paris, BnF, Latin 12048, fol. 194v. An exact
-  Gallica IIIF folio image was acquired, hashed, and visually inspected on
-  2026-07-27. A red rubric near the foot of the folio opens the item cataloged
-  by USUARIUM as *Impositio manuum in energumenum*. This controls the item's
-  presence and opening location in this late-eighth-century manuscript, not
-  its complete text, the Dumas--Deshusses critical reading, performance,
-  frequency, continuity, or a general medieval practice.
+- *Sacramentarium Gellonense*, Paris, BnF, Latin 12048, fols. 194v--199v.
+  The exact Gallica IIIF manifest and all eleven images in this continuous run
+  were acquired, hashed, and visually inspected on 2026-07-27. They show the
+  *Impositio manuum in energumenum* opening at 194v, differentiated recipient
+  rubrics at 195r, successive rubricated items, and the 199v transition to
+  relic deposition and church dedication. The BnF catalog says its numbering
+  follows Dumas and anchors no. 2406 at 197r, no. 2412 at 198r, and section
+  355 at 199v; no intervening numbers are inferred. The inaccessible
+  Dumas--Deshusses CCSL edition was not inspected or collated. The run
+  establishes rubric, recipient language, book placement, and visible
+  sequence, not a critical text, earliest witness, performance, frequency,
+  normativity, geography, general medieval practice, or linear descent.
 - *Pontificale Romano-Germanicum*, ed. Cyrille Vogel and Reinhard Elze,
   *Le Pontifical romano-germanique du dixième siècle*, 3 vols., Studi e Testi
   226--227, 269 (Vatican City, 1963--1972). Bibliographic identification only;
@@ -51,7 +56,7 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
   distinction between baptismal preparations, their subordinate effect, the
   sacrament's effect, and ministerial office; it is not evidence of parish
   frequency or a manual for major exorcism.
-- This exact manuscript folio adds one sacramentary witness but no exact
+- This exact manuscript sequence adds one sacramentary witness but no exact
   cross-genre medieval corpus presently supports a synthesis about
   the chronology, prevalence, or institutional relationship of exorcism,
   medicine, magic, heresy, trials, and learned demonology. Section 40 states

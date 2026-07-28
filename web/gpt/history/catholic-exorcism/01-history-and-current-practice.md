@@ -255,15 +255,17 @@ By the middle of the third century, the Roman church could count exorcists among
 
 Other local disciplinary witnesses remain part of the research horizon, but this edition does not use them positively because no exact retained and bound text controls their wording. They therefore cannot establish a universal ordination form, the frequency of extraordinary cases, or identity between an early office and the priest who would later perform a major exorcism.
 
-A representative medieval ordinal has not yet been acquired and collated for this study. It therefore makes no positive claim from an ordination formulary about delivery of a book, the duties of officeholders, medieval career paths, ordinary practice, or a transfer of extraordinary intervention to priests. This is not a claim that the office lacked a formulary. It is a limit on what this edition can say about the wording, transmission, and use of any such formulary without an edition-identified text and a selected manuscript witness.
+A representative medieval ordinal manuscript has not yet been acquired and collated against an edition for this study. It therefore makes no positive claim from an ordination formulary about delivery of a book, the duties of officeholders, medieval career paths, ordinary practice, or a transfer of extraordinary intervention to priests. This is not a claim that the office lacked a formulary. It is a limit on what this edition can say about the wording, transmission, and use of any such formulary without an edition-identified text and a selected manuscript witness.
 
 ### From scrutinies to ritual-book controls
 
 In H. A. Wilson’s 1894 edition of the book conventionally called the *Gelasian Sacramentary*, the heading *Exorcismi super electos* appears within a continuous sequence of scrutinies and other rites for the elect (pp. 45–50). The prayers on pp. 48–49 repeatedly order the action to baptismal grace. This exact edition witness establishes the placement of exorcistic formulas within baptismal preparation. It does not by itself attribute the extant compilation to Gelasius I, establish one pristine Roman use, collate the printed text against the manuscript, or date each textual stratum.
 
-The Vogel–Elze critical edition supplies bibliographic control for the tenth-century compilation conventionally called the *Pontificale Romano-Germanicum*. The present source record does not yet contain an exact artifact, identified ordines and pages, or manuscript-to-edition collation. The edition supplies only the bibliographic identity of a compilation assigned to the tenth century. Its precise contents, internal juxtapositions, routes of circulation, and evidence for actual local use require further collation. Neither a rubric nor the survival of a formula would by itself establish frequency of use or incidence of possession.
+Paris, BnF, Latin 12048, the late-eighth-century manuscript conventionally called the Gellone Sacramentary, supplies a different exact book-level control. Its Gallica images place *Impositio manuum in energumenum* at fol. 194v, then distinguish further items by recipient language on fol. 195r. Successive rubricated items continue through fol. 199v, where relic deposition and church dedication begin. The BnF catalog, whose numbering follows Dumas, anchors no. 2406 at fol. 197r, no. 2412 at fol. 198r, and section 355 at fol. 199v; no intervening numbering is supplied here. This establishes rubrics, recipient distinctions, book placement, and visible sequence in one manuscript. It does not establish an earliest witness, actual performance, frequency, a geographic norm, or linear descent. The protected Dumas–Deshusses CCSL edition remains inaccessible and was not collated.
 
-These two controlled points belong to different histories. Wilson’s printed sequence concerns people preparing for Baptism. The PRG is presently only the identity of a later compilation whose relevant contents have not been checked for this publication. Similar vocabulary across those settings cannot bridge the evidentiary gap. A history of a formula asks where text appears and how it changes; a history of a rite also asks who acts, over whom, in what setting, and under what authority; a history of practice requires evidence that a community actually used it. This edition has the first kind of evidence for Wilson’s bounded baptismal sequence, not the latter two kinds for medieval extraordinary exorcism.
+The exact Vogel–Elze critical-edition pages for the tenth-century compilation conventionally called the *Pontificale Romano-Germanicum* add an ordinal control. Ordo XV first invites candidates by grades (p. 14, XV.7), then gives a separately titled exorcist unit (p. 17, XV.17–19) that associates the office with a book containing exorcisms and distinguishes baptized persons from catechumens. No selected manuscript was collated, so the edition cannot by itself establish one uncomplicated local book, actual use, ordinary duties, or routes of transmission.
+
+These controls belong to related but non-identical histories. Wilson’s printed sequence concerns people preparing for Baptism; Gellone preserves a manuscript sequence with differentiated recipients; the PRG supplies a later critical-edition ordinal unit. Similar vocabulary does not collapse them into one rite. A history of a formula asks where text appears and how it changes; a history of a rite also asks who acts, over whom, in what setting, and under what authority; a history of practice requires evidence that a community actually used it. The checked books answer parts of the first two questions, not the third.
 
 ### Sacramental theology and differentiated effects
 
@@ -271,13 +273,13 @@ Thomas Aquinas treats the preparations accompanying Baptism in *Summa theologiae
 
 The same distinction prevents anachronism about the minor order. Aquinas locates exorcists among ministers assisting the priest (III, q. 71, a. 4); he does not thereby prove that every holder regularly confronted alleged possession. Office, ordination, delegated exercise, baptismal preparation, and extraordinary care remain separate historical questions.
 
-Medieval sources use exorcistic language in more than one ritual setting. Until representative rites are identified by book, locus, recipient, and minister, this study does not treat those settings as one rite or infer practice from shared vocabulary.
+Medieval sources use exorcistic language in more than one ritual setting. Gellone and the PRG now identify bounded settings by book, locus, and recipient or office, but neither proves who actually performed each item or how often. This study therefore does not treat the settings as one rite or infer practice from shared vocabulary.
 
-### Continuity without a single medieval script
+### Related witnesses without linear descent
 
-The checked witnesses permit a limited continuity claim. A named Roman ministerial category is visible in Cornelius’s third-century list; a late-antique sacramentary tradition, as printed by Wilson, places exorcistic prayers in preparation for Baptism; and Aquinas later explains the effects of such baptismal preparations while locating the exorcist in an assisting ministerial order. The witnesses are separated by centuries and genres. They show that office, initiatory prayer, and scholastic explanation all belong to the Western history, but they do not show that one text, ministerial duty, or ceremonial route passed unchanged through that interval.
+The checked witnesses permit a bounded historical comparison, not a claim of linear descent. A named Roman ministerial category is visible in Cornelius’s third-century list; a late-antique sacramentary tradition, as printed by Wilson, places exorcistic prayers in preparation for Baptism; Gellone preserves a differentiated manuscript sequence; the PRG preserves a later ordinal unit; and Aquinas explains baptismal preparations while locating the exorcist in an assisting ministerial order. The witnesses are separated by centuries and genres. They show that office, initiatory prayer, other recipient-specific items, ordinal architecture, and scholastic explanation all belong to the Western history, but they do not show that one text, ministerial duty, or ceremonial route passed unchanged through that interval.
 
-That distinction also keeps two recipients apart. A catechumen undergoing preparation for Baptism is not thereby a baptized person presented for an extraordinary intervention. Conversely, later language about an afflicted or possessed Christian cannot be read back into every initiatory exorcism. The history needs exact book-level controls before it can describe when and where those ritual paths were placed beside one another, separated, or recombined.
+That distinction also keeps two recipients apart. A catechumen undergoing preparation for Baptism is not thereby a baptized person presented for an extraordinary intervention. Conversely, later language about an afflicted or possessed Christian cannot be read back into every initiatory exorcism. The Gellone manuscript shows such recipient language within one manuscript run, but does not identify the recipients by modern categories or prove a local performance. Broader claims about when and where those ritual paths were separated or recombined require comparison with other books and evidence of use.
 
 The same caution applies to authority. Cornelius’s list establishes an ecclesial category at one place and date; Wilson establishes the arrangement of one printed edition; Aquinas supplies a theological account. None of those witnesses independently establishes a universal medieval reservation, a local delegation rule, or the practical relation between minor-order exorcists and priests. Present Latin law and the modern major rite therefore cannot be used to fill the medieval silence.
 
@@ -287,7 +289,7 @@ Narrative sources are not neutral medical files. Without an exact narrative witn
 
 Liturgical, theological, penitential, canonical, legal, and hagiographic records answer different questions. None may silently substitute for another. This study has not yet acquired the exact cross-genre witnesses needed to describe interactions among exorcism, magic, heresy, medicine, and learned demonology across the medieval period. It therefore makes no claim here about their chronology, prevalence, or institutional relationship.
 
-The exact controls retained here establish a baptismal formulary in Wilson’s Gelasian edition and Aquinas’s theological distinction between baptismal preparations and the sacrament’s effect. The PRG remains only a bibliographic coordinate. These controls do not establish one unchanged medieval script or a uniform practice. The *Rituale Romanum* of 1614 belongs to a later, separately controlled stage of the history.
+The exact controls retained here establish a baptismal formulary in Wilson’s Gelasian edition, a bounded Gellone manuscript sequence, the architecture of the PRG exorcist-ordination unit, and Aquinas’s theological distinction between baptismal preparations and the sacrament’s effect. They do not establish one unchanged medieval script or a uniform practice. The *Rituale Romanum* of 1614 belongs to a later, separately controlled stage of the history.
 
 ## Early Modern Consolidation and the Roman Ritual of 1614
 
@@ -373,7 +375,7 @@ The *Catechism of the Catholic Church*, no. 1673, provides doctrinal and catech
 
 ### Territorial implementation and the United States
 
-For the Latin dioceses of the United States, the bishops’ conference reports that the English *Exorcisms and Related Supplications* received Holy See confirmation in December 2016 and was implemented on 29 June 2017. Its public guidance describes consultation with medical and mental-health professionals, the search for moral certitude, consent, privacy, and the distinction between minor and major exorcism. These are authoritative facts about U.S. implementation and official pastoral guidance. They should not be rewritten as universal procedural law or as a clinical protocol.
+For the Latin dioceses of the United States, the bishops’ conference reports that its Latin Church bishops approved the English translation of *Exorcisms and Related Supplications* in November 2014, that the final text received Holy See confirmation in December 2016, and that it was implemented on 29 June 2017. Its public guidance describes consultation with medical and mental-health professionals, the search for moral certitude, consent, privacy, and the distinction between minor and major exorcism. These are authoritative facts about U.S. implementation and official pastoral guidance. They should not be rewritten as universal procedural law or as a clinical protocol.
 
 ### Universal law, typical edition, and territorial book
 
@@ -534,7 +536,7 @@ Family fear does not itself confer authority over an adult. For a minor, parenta
 
 The USCCB’s United States guidance says confidentiality is important for the reputation of the afflicted person and assistants. Case records, recordings, and disclosures should follow applicable law, diocesan safeguarding policy, and the professional duties of those involved. They are not evidence of cause merely because they are dramatic.
 
-The USCCB also discourages an exorcist from working alone and places the authorized minister under episcopal direction. Confidentiality does not displace reporting, emergency, or protective-disclosure duties where applicable law requires them.
+The USCCB also discourages an exorcist from working alone and places the authorized minister under episcopal direction. Its public guidance limits lay participants to supporting prayer and reserves the minister’s prayers to the authorized minister; it is a boundary on participation, not a public ritual manual. Confidentiality does not displace reporting, emergency, or protective-disclosure duties where applicable law requires them.
 
 ### Abuse patterns
 
@@ -706,7 +708,7 @@ Selected loci in 1 Samuel 16 (Kittel’s 1909 Hebrew, Swete’s 1909 Greek *1 Ki
 
 ### Ritual and theological witnesses
 
-*Gelasian Sacramentary*, selected scrutinies and exorcisms. *Pontificale Romano-Germanicum*, Vogel–Elze edition, catalog control only; exact ordines and pages remain an open research gate. Thomas Aquinas, *Summa theologiae*, first part, question 57, article 4; question 111, articles 2–4; question 114, articles 2–3; and third part, question 71, articles 2–4. *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*, printed pp. 198–219. *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg edition, title and approval leaves, and *De exorcizandis obsessis a daemonio*, printed pp. 281–301. *Rituale Romanum* (1925), title XI, chapters 1–3, electronic reset used only for chapter architecture. *Rituale Romanum* (1952), title XII. Paul VI, *Ministeria quaedam* (15 August 1972), introduction, I–IV, effective 1 January 1973; *AAS* 64 (1972), 529–534, exact official Latin web state inspected 27 July 2026. Francis, *Spiritus Domini* (10 January 2021), amendment of CIC canon 230 §1 and immediate-effective-date clause; exact official Latin, with the official English page used only as a translation aid.
+*Gelasian Sacramentary*, selected scrutinies and exorcisms. *Sacramentarium Gellonense*, Paris, BnF, Latin 12048, fols. 194v–199v, exact Gallica IIIF manifest and images; BnF manuscript catalog for the Dumas-derived coordinates no. 2406, no. 2412, and section 355. The Dumas–Deshusses CCSL edition was not inspected. *Pontificale Romano-Germanicum*, Vogel–Elze edition, volume I, pp. 14 and 17 (XV.7, 17–19); no manuscript collation. Thomas Aquinas, *Summa theologiae*, first part, question 57, article 4; question 111, articles 2–4; question 114, articles 2–3; and third part, question 71, articles 2–4. *Rituale Romanum Pauli V* (1614), *De exorcizandis obsessis a daemonio*, printed pp. 198–219. *Rituale Romanum* (Regensburg: Friedrich Pustet, 1872), first Regensburg edition, title and approval leaves, and *De exorcizandis obsessis a daemonio*, printed pp. 281–301. *Rituale Romanum* (1925), title XI, chapters 1–3, electronic reset used only for chapter architecture. *Rituale Romanum* (1952), title XII. Paul VI, *Ministeria quaedam* (15 August 1972), introduction, I–IV, effective 1 January 1973; *AAS* 64 (1972), 529–534, exact official Latin web state inspected 27 July 2026. Francis, *Spiritus Domini* (10 January 2021), amendment of CIC canon 230 §1 and immediate-effective-date clause; exact official Latin, with the official English page used only as a translation aid.
 
 ### Law and current official practice
 
@@ -718,7 +720,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-28T03:58:30Z
+**Last revised (UTC):** 2026-07-28T04:12:56Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
@@ -737,5 +739,7 @@ Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmil
 **Agent/runtime:** OpenAI Codex agent (Praedicate Evangelium current-law acquisition, institutional-competence distinction, source-audit integration, and production review); API workspace; unexposed: server revision
 
 **Agent/runtime:** OpenAI Codex agent (Spiritus Domini and canon 230 current-law acquisition, instituted-ministry distinction, source-audit integration, and production review); API workspace; unexposed: server revision
+
+**Agent/runtime:** OpenAI Codex agent (Gellone manuscript-image acquisition, BnF catalog control, bounded medieval synthesis, source-audit integration, and production review); API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

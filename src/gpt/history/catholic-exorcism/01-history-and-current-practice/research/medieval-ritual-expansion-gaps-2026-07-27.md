@@ -28,22 +28,24 @@ possession, or a universal transfer of extraordinary intervention to priests.
 
 ## Priority source closures
 
-### Post-baptismal late-antique or Carolingian witness
+### Gellone manuscript sequence: image gate closed, edition gate open
 
-Acquire and inspect the exact manuscript images and critical-edition loci for
-the Gellone Sacramentary, Paris, BnF, Latin 12048. Catalog and specialist
-finding aids point to *Impositio manuum in energumenum* at fol. 194v and
-*Oratio super hominem Christianum qui a daemonio vexatur* at fol. 195r.
-Before either title or its relationship to the surrounding rites enters the
-publication:
+The exact BnF Gallica manifest and every manuscript image from fol. 194v
+through fol. 199v were acquired, hashed, and visually inspected. They establish
+one continuous manuscript run within the book's pontifical portion: the
+*Impositio manuum in energumenum* opening at fol. 194v; differentiated
+recipient rubrics on fol. 195r; successive rubricated items through fol. 199v;
+and then the relic-deposition and church-dedication boundary. The exact BnF
+catalog states that its numbering follows Dumas and anchors no. 2406 at fol.
+197r, no. 2412 at fol. 198r, and section 355 at fol. 199v. No unsupported
+numbering is supplied between those anchors.
 
-- inspect the identified folios in the BnF facsimile;
-- collate them with Antoine Dumas and Jean Deshusses, *Liber sacramentorum
-  Gellonensis*, CCSL 159--159A;
-- record the edition's item numbers, apparatus, date and provenance limits;
-  and
-- distinguish the manuscript's rubric and recipient from modern categories
-  and from a claim that this was the earliest surviving witness.
+The image gate is closed, but the critical-edition gate is not. Antoine Dumas
+and Jean Deshusses, *Liber sacramentorum Gellonensis*, CCSL 159--159A, remains
+publicly inaccessible and was not inspected or collated. The manuscript run
+therefore establishes rubric, recipient language, book placement, and visible
+sequence only. It does not establish a critical text, earliest witness,
+performance, frequency, normativity, geography, or linear descent.
 
 ### Pontificale Romano-Germanicum
 
