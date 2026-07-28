@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-28"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 133
-source_surface_file_count = 1760
-snapshot = "sha256:accbe99d138096b168d41128e244c1b933ca7360bde9b0e7bb3187e89fb7301f"
+source_surface_file_count = 1761
+snapshot = "sha256:a3c1c748b328efc1de60fdb8b7362dd485a9b2c81570c70cd4c135f9b67fc77a"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -8772,7 +8772,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml"
-sha256 = "308fe54b08bccbaecf8c01750c92823c0256263b6c470dfff34c4905b02ad414"
+sha256 = "62235a5e1bcbc4ea3eda16275594ce11ced4900469dbcefe2d778eb84d780e24"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -8820,7 +8820,13 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/chalice-paten-cross-edition-audit-2026-07-28.md"
-sha256 = "cc8374b8f6781964ab17fef3ffd0ce1623d4e0b7a41d992d68f705a2fdab45f2"
+sha256 = "f17bca598cc4a40033de326bea7941cb98730062a1ac278665810156773f1a42"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/chalice-paten-isolated-artwork-audit-2026-07-28.md"
+sha256 = "f0aa3edd10c2ae7087f42162799692e3940231a0391017077141114a36d438ed"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -8970,7 +8976,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/production-manifest.md"
-sha256 = "7ded7afc55b6de33646aac8d61774107b7f7e5b7fb97de4ae9ffa20c7721724e"
+sha256 = "61f01ac41a08416ca09c604caf4e6598306f92769fb74b7b5dd1518a666ca39a"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -9162,7 +9168,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated-record-renderer.tex"
-sha256 = "29cb12a97ea20d37fbf0991d2c3f14bed06b49a50e946ccafccb1c8e8bf42fa4"
+sha256 = "6d878dd506d2054636be636939a8813cc6d6e67f8330f6b2d718bfb5eaa45f8b"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -9216,7 +9222,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/chalice.toml"
-sha256 = "57f9499d47d68b26bbb369f1c5444d44e0055ec8bfce4d4ee53667c0256a7781"
+sha256 = "4ac9c8a04eb8c46d92493e4d436e215f9d38617674c00fac471354d1859c2b3c"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -9378,7 +9384,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/paten.toml"
-sha256 = "33e3bc3b8611d2c188fef8c627c1074c2da00d814f186b2af08f4da609454330"
+sha256 = "2959a113715ef2db402a146f2912cb319cffb0d6c493270fe2e47cfc61ac0c1f"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -9564,13 +9570,13 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/README.md"
-sha256 = "d18baefdd641e193b8ca437d453bc6f02cb64dba649b57d902be789be5086380"
+sha256 = "4eeb0800e97dca58751755e0f9a40397666366e875bc00c37030e508730131a1"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/artwork-manifest-schema.toml"
-sha256 = "c98639640c41e4a9cad3c466b7b6d5bbbec4d78a23ee6ebc7201f79ecf0d81aa"
+sha256 = "4aa03ed16fbbb102cdb402ec2611d6049d63d44f2fa050a5728b7628826018b2"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 

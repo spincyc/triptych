@@ -6,10 +6,12 @@ Audit date: 2026-07-28
 
 The existing `RPD-FIG-sacred-vessels-0003` comparison plate is eligible for
 the five generated audience editions in addition to its established bespoke
-altar-server spread. The canonical chalice and paten records now link only
-this controlled plate. Their weaker isolated drawings remain retained assets
-with their historical audit states but are not canonical object-record
-illustrations and cannot enter a generated selection.
+altar-server spread. The canonical chalice and paten records retain this
+controlled plate as the one prepared-chalice formation. The generator shows
+it once with the paten entry and suppresses its duplicate placement on the
+chalice entry. Versioned, source-controlled isolated chalice and paten
+drawings now lead the respective entries; the weaker legacy isolated assets
+remain retained with their historical audit states.
 
 The promotion does not claim a universal chalice or paten morphology. The
 Metropolitan Museum of Art record and Open Access image control one paired

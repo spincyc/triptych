@@ -159,8 +159,18 @@ def validate_boundary_treatment(entry: dict, label: str, problems: Problems) -> 
         )
 
 
+def publication_mode_allowed(mode: str, boundary_treatment: str | None) -> bool:
+    if boundary_treatment == "transparent":
+        return mode == "grayscale-alpha"
+    return mode == "grayscale"
+
+
 def validate_artwork(
-    owner: Path, asset_root: Path, entry: object, problems: Problems
+    owner: Path,
+    asset_root: Path,
+    asset_boundaries: dict[str, str | None],
+    entry: object,
+    problems: Problems,
 ) -> tuple[str | None, dict]:
     if not isinstance(entry, dict):
         problems.add("each artworks item must be a table")
@@ -265,8 +275,15 @@ def validate_artwork(
                 for key, value in actual.items():
                     problems.check(normalized.get(key) == value,
                                    f"{label}.normalized.{key} does not match asset")
-                if not (depth == 8 and mode == "grayscale"):
-                    message = f"{label}: publication input is not 8-bit grayscale PNG"
+                boundary_treatment = asset_boundaries.get(asset.as_posix())
+                if not (
+                    depth == 8
+                    and publication_mode_allowed(mode, boundary_treatment)
+                ):
+                    message = (
+                        f"{label}: publication input must be 8-bit grayscale, "
+                        "or grayscale-alpha with boundary_treatment='transparent'"
+                    )
                     if state == "consumer-review-passed":
                         problems.add(message)
                     else:
@@ -309,6 +326,7 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         asset_files = []
     registered_paths: set[str] = set()
     registered_file_ids: set[str] = set()
+    asset_boundaries: dict[str, str | None] = {}
     for row in asset_files:
         if not isinstance(row, dict):
             problems.add("each asset_files row must be a table")
@@ -348,6 +366,10 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
             if relative in registered_paths:
                 problems.add(f"duplicate registered asset path: {relative}")
             registered_paths.add(relative)
+            treatment = row.get("boundary_treatment")
+            asset_boundaries[relative] = (
+                treatment if isinstance(treatment, str) else None
+            )
             absolute = owner / path
             if not absolute.is_file():
                 problems.add(f"{file_id}: missing asset {relative}")
@@ -366,8 +388,15 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
                         problems.check(technical.get(key) == value,
                                        f"{file_id}.technical.{key} does not match asset")
                     if row.get("state") in {"consumer-eligible", "canonical-alpha-eligible"}:
-                        problems.check(depth == 8 and mode == "grayscale",
-                                       f"{file_id}: consumer-eligible file must be 8-bit grayscale")
+                        problems.check(
+                            depth == 8
+                            and publication_mode_allowed(
+                                mode, asset_boundaries[relative]
+                            ),
+                            f"{file_id}: consumer-eligible file must be 8-bit "
+                            "grayscale, or grayscale-alpha with "
+                            "boundary_treatment='transparent'",
+                        )
                 except (OSError, ValueError) as exc:
                     problems.add(f"{file_id}: cannot inspect asset: {exc}")
     physical_paths = {
@@ -412,7 +441,9 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         problems.add("artworks must be an array")
         entries = []
     for entry in entries:
-        artwork_id, parsed = validate_artwork(owner, asset_root, entry, problems)
+        artwork_id, parsed = validate_artwork(
+            owner, asset_root, asset_boundaries, entry, problems
+        )
         if artwork_id:
             if artwork_id in artworks:
                 problems.add(f"duplicate artwork ID: {artwork_id}")

@@ -71,17 +71,28 @@
   \ifstrequal{#2}{liturgical-use}{\def\RSDUseText{#3}}{}%
   \ifstrequal{#2}{symbolism}{\def\RSDSymbolismText{#3}}{}}
 
-\renewcommand{\RSDArtwork}[7]{%
+\newcommand{\RSDRegisterGeneratedArtwork}[1]{%
   \ifRSDArtworkAvailable
     \ifRSDSecondArtworkAvailable\else
-      \ifstrequal{\RSDArtworkPath}{#3}{}{%
-        \def\RSDSecondArtworkPath{#3}%
+      \ifstrequal{\RSDArtworkPath}{#1}{}{%
+        \def\RSDSecondArtworkPath{#1}%
         \RSDSecondArtworkAvailabletrue}%
     \fi
   \else
-    \def\RSDArtworkPath{#3}%
+    \def\RSDArtworkPath{#1}%
     \RSDArtworkAvailabletrue
   \fi}
+
+\renewcommand{\RSDArtwork}[7]{%
+  % The shared catalog plate contains the one prepared-chalice formation.
+  % Both canonical object records retain its evidence link, but generated
+  % pages show that formation only with the paten entry rather than repeating
+  % it on both adjacent entries.
+  \ifdefstring{\RSDObjectID}{obj-chalice}{%
+    \ifstrequal{#1}{art-paten-catalog-exemplar-comparison}{}{%
+      \RSDRegisterGeneratedArtwork{#3}}%
+  }{%
+    \RSDRegisterGeneratedArtwork{#3}}}
 
 \providecommand{\RSDSelectedAudienceNote}[1]{\def\RSDAudienceText{#1}}
 

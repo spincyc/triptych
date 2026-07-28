@@ -119,6 +119,79 @@ boundary_treatment = "page-ground"
             )
             self.assertEqual(ARTWORK.validate_manifest(manifest), [])
 
+    def test_manifest_accepts_grayscale_alpha_with_transparent_treatment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            asset = root / "figure.png"
+            asset.write_bytes(png(width=8, height=8, color_type=4))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = root / "artwork.toml"
+            manifest.write_text(
+                f"""[[asset]]
+id = "transparent"
+path = "figure.png"
+sha256 = "{digest}"
+width = 8
+height = 8
+depth = 8
+mode = "grayscale-alpha"
+boundary_treatment = "transparent"
+""",
+                encoding="utf-8",
+            )
+            self.assertEqual(ARTWORK.validate_manifest(manifest), [])
+
+    def test_manifest_rejects_alpha_without_transparent_treatment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            asset = root / "figure.png"
+            asset.write_bytes(png(width=8, height=8, color_type=4))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = root / "artwork.toml"
+            manifest.write_text(
+                f"""[[asset]]
+id = "unmarked-alpha"
+path = "figure.png"
+sha256 = "{digest}"
+width = 8
+height = 8
+depth = 8
+mode = "grayscale-alpha"
+""",
+                encoding="utf-8",
+            )
+            errors = "\n".join(ARTWORK.validate_manifest(manifest))
+            self.assertIn(
+                "alpha/transparency requires boundary_treatment='transparent'",
+                errors,
+            )
+
+    def test_manifest_rejects_transparent_treatment_without_alpha(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            asset = root / "figure.png"
+            asset.write_bytes(png(width=8, height=8))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = root / "artwork.toml"
+            manifest.write_text(
+                f"""[[asset]]
+id = "false-transparent"
+path = "figure.png"
+sha256 = "{digest}"
+width = 8
+height = 8
+depth = 8
+mode = "grayscale"
+boundary_treatment = "transparent"
+""",
+                encoding="utf-8",
+            )
+            errors = "\n".join(ARTWORK.validate_manifest(manifest))
+            self.assertIn(
+                "transparent boundary_treatment requires alpha/transparency",
+                errors,
+            )
+
     def test_page_ground_treatment_rejects_dark_perimeter(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -289,6 +362,82 @@ technical = {{ width_px = 8, height_px = 8, bit_depth = 8, color_mode = "graysca
             ) as perimeter_audit:
                 self.assertEqual(ARTWORK.validate_manifest(manifest), [])
                 perimeter_audit.assert_called_once()
+
+    def test_dictionary_manifest_accepts_declared_grayscale_alpha(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            research = root / "research"
+            asset = root / "shared" / "artwork" / "figure.png"
+            research.mkdir()
+            asset.parent.mkdir(parents=True)
+            asset.write_bytes(png(width=8, height=8, color_type=4))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = research / "artwork-manifest.toml"
+            manifest.write_text(
+                f"""[[asset_files]]
+id = "file-transparent"
+path = "shared/artwork/figure.png"
+state = "held"
+boundary_treatment = "transparent"
+audit_record = "research/test.md"
+technical = {{ width_px = 8, height_px = 8, bit_depth = 8, color_mode = "grayscale-alpha", bytes = {asset.stat().st_size}, sha256 = "{digest}" }}
+""",
+                encoding="utf-8",
+            )
+            self.assertEqual(ARTWORK.validate_manifest(manifest), [])
+
+    def test_dictionary_manifest_rejects_alpha_without_transparent_treatment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            research = root / "research"
+            asset = root / "shared" / "artwork" / "figure.png"
+            research.mkdir()
+            asset.parent.mkdir(parents=True)
+            asset.write_bytes(png(width=8, height=8, color_type=4))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = research / "artwork-manifest.toml"
+            manifest.write_text(
+                f"""[[asset_files]]
+id = "file-unmarked-alpha"
+path = "shared/artwork/figure.png"
+state = "held"
+audit_record = "research/test.md"
+technical = {{ width_px = 8, height_px = 8, bit_depth = 8, color_mode = "grayscale-alpha", bytes = {asset.stat().st_size}, sha256 = "{digest}" }}
+""",
+                encoding="utf-8",
+            )
+            errors = "\n".join(ARTWORK.validate_manifest(manifest))
+            self.assertIn(
+                "alpha/transparency requires boundary_treatment='transparent'",
+                errors,
+            )
+
+    def test_dictionary_manifest_rejects_transparent_treatment_without_alpha(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            research = root / "research"
+            asset = root / "shared" / "artwork" / "figure.png"
+            research.mkdir()
+            asset.parent.mkdir(parents=True)
+            asset.write_bytes(png(width=8, height=8))
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            manifest = research / "artwork-manifest.toml"
+            manifest.write_text(
+                f"""[[asset_files]]
+id = "file-false-transparent"
+path = "shared/artwork/figure.png"
+state = "held"
+boundary_treatment = "transparent"
+audit_record = "research/test.md"
+technical = {{ width_px = 8, height_px = 8, bit_depth = 8, color_mode = "grayscale", bytes = {asset.stat().st_size}, sha256 = "{digest}" }}
+""",
+                encoding="utf-8",
+            )
+            errors = "\n".join(ARTWORK.validate_manifest(manifest))
+            self.assertIn(
+                "transparent boundary_treatment requires alpha/transparency",
+                errors,
+            )
 
     @mock.patch.object(ARTWORK.shutil, "which", return_value="/usr/bin/pdfimages")
     @mock.patch.object(ARTWORK.subprocess, "run")

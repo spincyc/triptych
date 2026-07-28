@@ -338,6 +338,22 @@ audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 549864, sha256 = "6cabd1ee6894e64c495569ab12b624f649a7cd495004d8500a1776e1dd3247d1" }
 
 [[asset_files]]
+id = "file-rpd-chalice-v2-transparent"
+path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/chalice-paten-isolated-artwork-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1055, height_px = 1491, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 454004, sha256 = "b491ba8fb6192c3357f0f4ff7e17d054404f3f20032fbc1d414980b1bdedffb5" }
+
+[[asset_files]]
+id = "file-rpd-paten-v2-transparent"
+path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0006-iso-paten-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/chalice-paten-isolated-artwork-audit-2026-07-28.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1486, height_px = 1058, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 527684, sha256 = "1a48e746b3b7faaed41b2ea328801f73c43ead8b52e4218f45f582e993e0fa57" }
+
+[[asset_files]]
 id = "file-rpd-paten-catalog-exemplar-comparison"
 path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png"
 state = "canonical-alpha-eligible"
@@ -2050,6 +2066,150 @@ print = "pending"
 rights = "pending"
 consumer = "pending"
 release = "pending"
+
+[[artworks]]
+id = "art-chalice-isolated-v2"
+object_ids = ["obj-chalice"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the chalice as a clearly separate object through one source-bounded catalog exemplar without repeating the paired paten."
+depicted_state = "One complete empty chalice from Metropolitan Museum of Art object 463080, isolated upright with a transparent boundary."
+source_controlled_features = [
+  "The Met Open Access image for object 463080 controls the exemplar's broad cup, ornamented spherical knop, architectural stem, and lobed foot.",
+  "The checked Missal controls the chalice's liturgical identity and use, not this exemplar's ornament or proportions.",
+]
+deliberate_omissions = [
+  "No paten, host, cloth, lid, cross, jewel, handle, inscription, person, hand, action, text, semantic mark, floor, cast shadow, reflection, or frame.",
+  "No claim that the exemplar's material, ornament, dimensions, proportions, or silhouette is universal or prescribed.",
+]
+brief = "One complete source-bounded catalog-exemplar chalice alone as a restrained graphite object study with a transparent page-blending boundary."
+exact_prompt = """Use case: scientific-educational
+Asset type: isolated object study for a monochrome Catholic sanctuary pictorial dictionary
+Input images: Image 1 is the exact Metropolitan Museum of Art material reference for object 463080; use it only to control the chalice morphology.
+Primary request: create one isolated graphite pencil drawing of the chalice alone. Do not include the paten or any other object.
+Subject: preserve the reference chalice's broad plain cup, narrow neck, ornamented spherical knop, tall pierced architectural stem, and distinctive broad lobed foot. Do not invent a lid, cross, jewels, handles, inscription, host, cloth, or extra ornament.
+Style/medium: restrained museum-catalog graphite pencil study, monochrome, accurate outline and diagnostic detail, delicate controlled shading, consistent with an illustrated field guide for children and adults.
+Composition/framing: centered upright chalice, complete object fully visible, generous padding on every side, straight-on three-quarter-neutral study view, no crop.
+Scene/backdrop: perfectly flat solid #00ff00 chroma-key background for local background removal. The background must be one uniform color with no shadows, gradients, texture, reflections, floor plane, or lighting variation.
+Constraints: crisp subject edges; no cast shadow, no contact shadow, no reflection, no text, no letters, no numbers, no arrows, no border, no watermark; do not use #00ff00 anywhere in the subject; depict only the chalice."""
+generator = "OpenAI built-in image generation tool used through the image-generation skill; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png"
+reference_ids = ["src-met-463080-image"]
+precursor_ids = ["art-chalice-isolated"]
+corrections = [
+  "Removed the generated chroma-key background locally without changing the depicted chalice.",
+  "Converted the selected alpha input to a stripped 8-bit grayscale-plus-alpha PNG and preserved the former isolated asset under its existing filename and custody row.",
+]
+baked_content_audit = [
+  "One complete chalice appears with its cup, knop, stem, foot, and all outer contours visible.",
+  "No paten, host, cloth, other object, person, hand, action, text, letter, number, arrow, border, watermark, floor, cast shadow, reflection, green fringe, crop, or duplication is visible.",
+  "The diagnostic morphology agrees with the checked catalog reference while remaining explicitly exemplar-specific.",
+]
+tex_overlays = [
+  "English and Latin headwords, stable object ID, liturgical identity, catalog-exemplar boundary, handler warning, source keys, and scale qualification remain TeX-owned.",
+]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster derived with the Met's Public Domain Open Access image as a visual reference; the exact prompt, received chroma output, local background removal, normalized identity, source ceiling, consumers, and checks are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1055
+height_px = 1491
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1748905
+sha256 = "b8ec5228cc85c6b4ec2c2274d01dd0c493925d8558603aa7695a82d40cf81cf9"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png"
+width_px = 1055
+height_px = 1491
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 454004
+sha256 = "b491ba8fb6192c3357f0f4ff7e17d054404f3f20032fbc1d414980b1bdedffb5"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 331.3
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
+
+[[artworks]]
+id = "art-paten-isolated-v2"
+object_ids = ["obj-paten"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Teach the priest's paten as a clearly separate object through one source-bounded catalog exemplar without repeating the paired chalice."
+depicted_state = "One complete empty paten from Metropolitan Museum of Art object 463080, isolated in a slightly elevated view with a transparent boundary."
+source_controlled_features = [
+  "The Met Open Access image for object 463080 controls the exemplar's shallow circular dish, broad plain rim, gently recessed center, thin edge, and unornamented surface.",
+  "The checked Missal controls the paten's liturgical identity, use, and prepared-chalice relationship, not this exemplar's exact morphology.",
+]
+deliberate_omissions = [
+  "No chalice, host, cloth, foot, handle, cross, inscription, jewel, ornament, person, hand, action, text, semantic mark, floor, cast shadow, reflection, or frame.",
+  "No claim that the exemplar's material, dimensions, proportions, rim width, recess, or silhouette is universal or prescribed.",
+]
+brief = "One complete source-bounded catalog-exemplar paten alone as a restrained graphite object study with a transparent page-blending boundary."
+exact_prompt = """Use case: scientific-educational
+Asset type: isolated object study for a monochrome Catholic sanctuary pictorial dictionary
+Input images: Image 1 is the exact Metropolitan Museum of Art material reference for object 463080; use it only to control the paten morphology.
+Primary request: create one isolated graphite pencil drawing of the paten alone. Do not include the chalice or any other object.
+Subject: preserve the reference paten's shallow circular dish, broad plain rim, gently recessed center, thin edge, and unornamented metal surface. Show enough slight perspective to make its shallow dish form unmistakable. Do not invent a foot, handle, cross, inscription, host, cloth, jewels, or ornament.
+Style/medium: restrained museum-catalog graphite pencil study, monochrome, accurate outline and diagnostic detail, delicate controlled shading, consistent with an illustrated field guide for children and adults.
+Composition/framing: centered paten, complete object fully visible, generous padding on every side, slightly elevated three-quarter view showing the interior and thin profile, no crop.
+Scene/backdrop: perfectly flat solid #00ff00 chroma-key background for local background removal. The background must be one uniform color with no shadows, gradients, texture, reflections, floor plane, or lighting variation.
+Constraints: crisp subject edges; no cast shadow, no contact shadow, no reflection, no text, no letters, no numbers, no arrows, no border, no watermark; do not use #00ff00 anywhere in the subject; depict only the paten."""
+generator = "OpenAI built-in image generation tool used through the image-generation skill; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0006-iso-paten-v2.png"
+reference_ids = ["src-met-463080-image"]
+precursor_ids = ["art-paten-isolated"]
+corrections = [
+  "Removed the generated chroma-key background locally without changing the depicted paten.",
+  "Converted the selected alpha input to a stripped 8-bit grayscale-plus-alpha PNG and preserved the former isolated asset under its existing filename and custody row.",
+]
+baked_content_audit = [
+  "One complete shallow paten appears with the broad rim, recessed center, thin profile, and all outer contours visible.",
+  "No chalice, host, cloth, other object, person, hand, action, text, letter, number, arrow, border, watermark, floor, cast shadow, reflection, green fringe, crop, or duplication is visible.",
+  "The diagnostic morphology agrees with the checked catalog reference while remaining explicitly exemplar-specific.",
+]
+tex_overlays = [
+  "English and Latin headwords, stable object ID, distinction from the Communion plate, catalog-exemplar boundary, handler warning, prepared-chalice relationship, source keys, and scale qualification remain TeX-owned.",
+]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster derived with the Met's Public Domain Open Access image as a visual reference; the exact prompt, received chroma output, local background removal, normalized identity, source ceiling, consumers, and checks are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1486
+height_px = 1058
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1806951
+sha256 = "15e1076bf3c095533b9528627dec68ae4fb17a25f57f3e61594b5737c70308f8"
+[artworks.normalized]
+path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0006-iso-paten-v2.png"
+width_px = 1486
+height_px = 1058
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 527684
+sha256 = "1a48e746b3b7faaed41b2ea328801f73c43ead8b52e4218f45f582e993e0fa57"
+max_placement_width_in = 4.5
+max_placement_height_in = 3.0
+effective_dpi = 330.2
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "passed"
+rights = "passed"
+consumer = "passed"
+release = "passed"
 
 [[artworks]]
 id = "art-paten-catalog-exemplar-comparison"

@@ -75,6 +75,10 @@ object or substantive-variant coverage.
 The manifest's `asset_files` table is exhaustive technical custody: every
 tracked dictionary PNG, including a rejected or otherwise held lead, must
 appear exactly once with its current byte identity and audit record.
+Canonical publishing assets remain stripped 8-bit grayscale PNGs. An
+8-bit grayscale-plus-alpha PNG is also eligible only when its custody row
+declares `boundary_treatment = "transparent"`; the validator rejects alpha
+under every opaque, framed, full-bleed, or legacy-undeclared boundary state.
 Unreconciled artwork links on non-publication-ready object records are printed
 as held notices so prototype development remains checkable; the same gap on a
 publication-ready object is a validation error.

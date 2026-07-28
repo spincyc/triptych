@@ -112,7 +112,8 @@ required = [
   "max_placement_height_in",
   "effective_dpi",
 ]
-publication_color_mode = "grayscale"
+publication_color_modes = ["grayscale", "grayscale-alpha"]
+publication_alpha_rule = "grayscale-alpha is permitted only when the matching asset_file row declares boundary_treatment = 'transparent'; opaque grayscale remains valid with or without legacy boundary metadata"
 publication_bit_depth = 8
 publication_format = "PNG"
 minimum_effective_dpi = 300

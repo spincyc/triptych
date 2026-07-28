@@ -153,6 +153,40 @@ id = "art-chalice-front"
         problems = self.boundary_problems(boundary_treatment="feathered")
         self.assertTrue(any("has invalid state" in problem for problem in problems))
 
+    def test_publication_mode_keeps_legacy_opaque_grayscale(self) -> None:
+        self.assertTrue(
+            ARTWORK_CHECKER.publication_mode_allowed("grayscale", None)
+        )
+        self.assertTrue(
+            ARTWORK_CHECKER.publication_mode_allowed("grayscale", "page-ground")
+        )
+
+    def test_publication_mode_allows_alpha_only_for_transparent_boundary(self) -> None:
+        self.assertTrue(
+            ARTWORK_CHECKER.publication_mode_allowed(
+                "grayscale-alpha", "transparent"
+            )
+        )
+        self.assertFalse(
+            ARTWORK_CHECKER.publication_mode_allowed("grayscale", "transparent")
+        )
+        for treatment in (None, "page-ground", "intentional-frame", "full-bleed"):
+            with self.subTest(treatment=treatment):
+                self.assertFalse(
+                    ARTWORK_CHECKER.publication_mode_allowed(
+                        "grayscale-alpha", treatment
+                    )
+                )
+
+    def test_publication_mode_rejects_other_png_modes(self) -> None:
+        for mode in ("rgb", "rgba", "indexed"):
+            with self.subTest(mode=mode):
+                self.assertFalse(
+                    ARTWORK_CHECKER.publication_mode_allowed(
+                        mode, "transparent"
+                    )
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
