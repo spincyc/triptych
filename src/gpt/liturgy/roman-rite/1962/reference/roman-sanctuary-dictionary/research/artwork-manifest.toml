@@ -113,14 +113,6 @@ view = "isolated"
 workflow_state = "consumer-review-passed"
 
 [[artwork_links]]
-id = "art-acolyte-candlestick-0103-reuse"
-asset_file_id = "file-rpd-altar-candlestick-empty"
-object_ids = ["obj-acolyte-candlestick"]
-variant_ids = []
-view = "isolated"
-workflow_state = "source-audited"
-
-[[artwork_links]]
 id = "art-incense-0002-open-boat-spoon"
 asset_file_id = "file-rpd-boat-spoon"
 object_ids = ["obj-incense-boat-and-spoon"]
@@ -315,6 +307,14 @@ path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick.pn
 state = "accepted-for-priestly-review"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 550746, sha256 = "6960b0b15ee2388e419b7e171541ddfaee4b5f3d8967c71ed07851445ec9945a" }
+
+[[asset_files]]
+id = "file-rpd-acolyte-candlestick-v2"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0003-iso-acolyte-candlestick-v2.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/artwork-manifest.toml"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 499541, sha256 = "b706c55ee5d89514918248820e3c3f5e3c259425fd70d2c1ff534faec8a1b9ec" }
 
 [[asset_files]]
 id = "file-rpd-sanctuary-lamp"
@@ -3479,6 +3479,57 @@ print = "passed"
 rights = "passed"
 consumer = "passed"
 release = "passed"
+
+[[artworks]]
+id = "art-processional-objects-0003-iso-acolyte-candlestick"
+object_ids = ["obj-acolyte-candlestick"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Give the acolytes' tall, footed, self-standing candlestick its own recognition drawing, distinct from both an altar candlestick and a footless elevation torch."
+depicted_state = "One empty representative tall footed candlestick, upright and self-standing, with no candle or other object."
+source_controlled_features = ["The candlestick is tall.", "The candlestick has a foot and can stand by itself on the credence.", "It is distinguished from a footless elevation torch."]
+deliberate_omissions = ["No claim that the depicted material, ornament, dimensions, proportions, or exact silhouette are universal.", "No candle, flame, smoke, altar, rack, carrier, handling pose, route, labels, arrows, scale, or ceremonial action."]
+brief = "A separate graphite recognition figure of exactly one empty tall, footed, self-standing acolyte candlestick, isolated without a candle or any other object."
+exact_prompt = """Create a single isolated graphite pencil illustration for a traditional Roman-rite pictorial dictionary. Show exactly one tall, footed, self-standing acolyte candlestick, empty and without a candle or flame. It should be clearly recognizable as a carried processional/service candlestick but standing upright by itself for object identification. Use restrained ecclesiastical craftsmanship, a stable broad foot, a long slender stem, and a small candle socket at the top. No people, hands, altar, furniture, architecture, text, labels, symbols, emblems, border, frame, cast shadow, reflection, or any other object. Center the complete object with generous breathing room. Fine hand-drawn graphite linework with subtle gray shading, suitable for children and adults. Portrait orientation.
+
+Place the object on a perfectly flat solid #00ff00 chroma-key background for background removal. The background must be one uniform color with no shadows, gradients, texture, checkerboard, reflections, floor plane, or lighting variation. Keep the object fully separated from the background with crisp edges and generous padding. Do not use #00ff00 anywhere in the object. No cast shadow, no contact shadow, no reflection, no watermark, and no text."""
+generator = "OpenAI built-in image generation tool used through the image-generation skill; exact model identifier and runtime not exposed."
+generated_on = "2026-07-28"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0003-iso-acolyte-candlestick-v2.png"
+reference_ids = ["src-acolyte-candlestick-fortescue"]
+precursor_ids = ["art-altar-appointments-0103-iso-candlestick"]
+corrections = ["Generated a separate acolyte-candlestick figure instead of reusing the altar-candlestick support.", "Removed the generated green field with ImageMagick 7 using `-alpha on -fuzz 30% -transparent '#00ff00'`, converted the retained object to grayscale, and wrote a stripped 8-bit grayscale-alpha PNG; no geometry or object-content edit was made."]
+baked_content_audit = ["Exactly one empty, tall, footed, self-standing candlestick is visible.", "No candle, flame, smoke, altar, rack, person, hand, extra object, lettering, numeral, arrow, label, border, watermark, or checkerboard is visible.", "The representative silhouette does not establish universal material, ornament, dimensions, or proportions."]
+tex_overlays = ["English and Latin names, source qualification, handling boundary, safety warning, object ID, and distinction from altar candlestick and elevation torch remain TeX-owned."]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated raster made without a supplied reference image. The exact prompt, received and normalized identities, source ceiling, consumer boundary, and local background-removal transformation are recorded. Distributed under the repository's project-content terms."
+[artworks.received]
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "rgb"
+bytes = 1491020
+sha256 = "4293cf059ccdd197bdc26f9a678267748551e8f4ea3931f1bc3ea3e7c584ab95"
+[artworks.normalized]
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0003-iso-acolyte-candlestick-v2.png"
+width_px = 1024
+height_px = 1536
+bit_depth = 8
+color_mode = "grayscale-alpha"
+bytes = 499541
+sha256 = "b706c55ee5d89514918248820e3c3f5e3c259425fd70d2c1ff534faec8a1b9ec"
+max_placement_width_in = 3.0
+max_placement_height_in = 4.5
+effective_dpi = 341.3
+[artworks.reviews]
+factual = "passed"
+visual = "passed"
+print = "pending"
+rights = "passed"
+consumer = "passed"
+release = "pending"
 
 [coverage]
 object_record_glob = "shared/objects/**/*.toml"

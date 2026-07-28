@@ -44,6 +44,59 @@ TEX_NATIVE_ARTWORK_IDS = {
     "obj-gospel-book",
 }
 SECTION_PLATE_PLANS = {
+    ("ed-general-reader", "objects-and-linens"): (
+        (
+            "dense-six-v1",
+            (
+                "obj-chalice",
+                "obj-paten",
+                "obj-burse",
+                "obj-chalice-pall",
+                "obj-chalice-veil",
+                "obj-corporal",
+            ),
+        ),
+        (
+            "dense-six-v1",
+            (
+                "obj-purificator",
+                "obj-lavabo-towel",
+                "obj-epistle-book",
+                "obj-gospel-book",
+                "obj-book-marker",
+                "obj-altar-missal",
+            ),
+        ),
+        (
+            "dense-six-v1",
+            (
+                "obj-altar-bells",
+                "obj-lavabo-basin",
+                "obj-communion-plate",
+                "obj-altar-cruet",
+                "obj-acolyte-candlestick",
+                "obj-elevation-torch",
+            ),
+        ),
+        (
+            "balanced-four-v1",
+            (
+                "obj-processional-cross",
+                "obj-sacristy-bell",
+                "obj-incense-boat-and-spoon",
+                "obj-thurible",
+            ),
+        ),
+        (
+            "balanced-four-v1",
+            (
+                "obj-aspergillum",
+                "obj-holy-water-vessel",
+                "obj-basilical-conopaeum",
+                "obj-ombrellino",
+            ),
+        ),
+    ),
     ("ed-general-reader", "vestments-and-insignia"): (
         (
             "story-spread-v1",
@@ -56,7 +109,7 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "dense-six-v1",
+            "balanced-four-v1",
             (
                 "obj-priest-stole",
                 "obj-deacon-stole",
@@ -472,6 +525,24 @@ def dense_edition_tex(
                 if len(plate) > 1:
                     lines.append("\\RSDStoryCompanionsEnd")
                 lines.append("\\RSDStoryPlateEnd")
+                continue
+            if layout == "balanced-four-v1":
+                require(
+                    len(plate) == 4,
+                    f"{edition['id']} {section}: balanced-four plate must "
+                    "contain exactly four objects",
+                )
+                lines.append(
+                    f"\\RSDBalancedFourPlateStart"
+                    f"{{{tex(section_label(section))}}}{{{plate_number}}}"
+                )
+                for index, record in enumerate(plate):
+                    if index == 2:
+                        lines.append("\\RSDBalancedFourPlateRowBreak")
+                    elif index in {1, 3}:
+                        lines.append("\\RSDBalancedFourPlateCellBreak")
+                    lines.append(record_tex(record, edition, artwork_render_owners))
+                lines.append("\\RSDBalancedFourPlateEnd")
                 continue
             require(
                 layout == "dense-six-v1" and 1 <= len(plate) <= 6,

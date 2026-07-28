@@ -90,14 +90,23 @@
 
 \providecommand{\RSDSelectedAudienceNote}[1]{\def\RSDAudienceText{#1}}
 
+\newsavebox{\RSDLatinKeyLineBox}
+\newcommand{\RSDLatinAndKeyLine}[2]{%
+  \sbox{\RSDLatinKeyLineBox}{#1\quad\DictionaryNoteKey{#2}}%
+  \ifdim\wd\RSDLatinKeyLineBox>0.98\linewidth
+    \resizebox{0.98\linewidth}{!}{\usebox{\RSDLatinKeyLineBox}}\par
+  \else
+    #1\hfill\DictionaryNoteKey{#2}\par
+  \fi}
+
 \renewcommand{\RSDEndObjectRecord}{%
   \global\advance\RSDRenderedRecordCount by 1
   \ifRSDStoryHero
   \begin{minipage}[t][2.48in][t]{\linewidth}
   \DictionaryEntryAnchor{\RSDObjectID}%
   {\fontsize{13}{14.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
-  {\fontsize{8.2}{9.2}\selectfont\itshape\RSDLatinHeadword
-    \hfill\DictionaryNoteKey{\RSDObjectID}\par}
+  {\fontsize{8.2}{9.2}\selectfont\itshape
+    \RSDLatinAndKeyLine{\RSDLatinHeadword}{\RSDObjectID}}
   \vspace{2pt}\hrule height 0.45pt\vspace{4pt}
   \begin{minipage}[t][1.82in][c]{0.49\linewidth}
     \centering
@@ -122,8 +131,8 @@
   \begin{minipage}[t][3.18in][t]{\linewidth}
   \DictionaryEntryAnchor{\RSDObjectID}%
   {\fontsize{9.2}{10.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
-  {\fontsize{7.1}{8}\selectfont\itshape\RSDLatinHeadword
-    \hfill\DictionaryNoteKey{\RSDObjectID}\par}
+  {\fontsize{7.1}{8}\selectfont\itshape
+    \RSDLatinAndKeyLine{\RSDLatinHeadword}{\RSDObjectID}}
   \vspace{2pt}\hrule height 0.35pt\vspace{3pt}
   \begin{minipage}[t][1.30in][c]{\linewidth}
     \centering
@@ -170,6 +179,21 @@
 \newcommand{\RSDDensePlateRowBreak}{%
   \\[5pt]}
 \newcommand{\RSDDensePlateEnd}{\end{tabular}\par}
+
+% Four-object comparisons use a balanced two-by-two field. The wider cards
+% provide longer labels and reader notes with more breathing room than the
+% three-column dense grid while retaining a full visual page.
+\newcommand{\RSDBalancedFourPlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Comparison plate}
+    \hfill #1\enspace\textperiodcentered\enspace #2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{7pt}
+  \noindent\begin{tabular}{@{}p{0.475\textwidth}@{\hspace{0.05\textwidth}}%
+    p{0.475\textwidth}@{}}}
+\newcommand{\RSDBalancedFourPlateCellBreak}{&}
+\newcommand{\RSDBalancedFourPlateRowBreak}{%
+  \\[10pt]}
+\newcommand{\RSDBalancedFourPlateEnd}{\end{tabular}\par}
 
 % A story spread varies scale without changing canonical records. One hero
 % introduces the group; up to four compact comparison cards follow below.

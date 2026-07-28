@@ -37,8 +37,8 @@ representative movable seating forms without universalizing construction,
 covering, decoration, or exact placement.
 
 The carried-light pages distinguish the footed, self-standing acolyte
-candlestick from the footless elevation torch. The candlestick reuses an
-empty-support drawing only as representative morphology; the torch drawing is
+candlestick from the footless elevation torch. The candlestick has its own
+empty tall footed drawing only as representative morphology; the torch drawing is
 unlit and supplies no grip, route, height, number, arrangement, or
 flame-handling procedure. The processional-cross record now uses a
 fully-provenanced corrected crucifix-bearing pencil asset; its optional/local

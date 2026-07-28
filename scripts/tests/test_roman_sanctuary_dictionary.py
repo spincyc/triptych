@@ -84,6 +84,26 @@ class DictionaryGeneratorTests(unittest.TestCase):
         self.assertNotIn("Evidence caveat", renderer)
         self.assertNotIn(r"\section{Coverage}", shell)
 
+    def test_compact_renderer_fits_a_long_latin_and_key_line(self):
+        renderer = (
+            DICTIONARY_ROOT / "shared/generated-record-renderer.tex"
+        ).read_text()
+        self.assertIn(r"\newcommand{\RSDLatinAndKeyLine}[2]", renderer)
+        self.assertIn(
+            r"\ifdim\wd\RSDLatinKeyLineBox>0.98\linewidth",
+            renderer,
+        )
+        self.assertIn(
+            r"\resizebox{0.98\linewidth}{!}{\usebox{\RSDLatinKeyLineBox}}",
+            renderer,
+        )
+        self.assertEqual(
+            renderer.count(
+                r"\RSDLatinAndKeyLine{\RSDLatinHeadword}{\RSDObjectID}"
+            ),
+            2,
+        )
+
     def test_canonical_output_is_deterministic_and_audience_specific(self):
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "out"
@@ -185,7 +205,9 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 text.count(r"\RSDStoryPlateStart{Vestments And Insignia}{1}"), 1
             )
             self.assertEqual(
-                text.count(r"\RSDDensePlateStart{Vestments And Insignia}{2}"), 1
+                text.count(
+                    r"\RSDBalancedFourPlateStart{Vestments And Insignia}{2}"
+                ), 1
             )
             self.assertNotIn(r"\RSDStoryPlateStart{Sanctuary}", text)
             self.assertNotIn(r"\RSDStoryPlateStart{Objects And Linens}", text)
@@ -193,8 +215,8 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 r"\RSDStoryPlateStart{Vestments And Insignia}{1}", 1
             )[1].split(r"\RSDStoryPlateEnd", 1)[0]
             dense = text.split(
-                r"\RSDDensePlateStart{Vestments And Insignia}{2}", 1
-            )[1].split(r"\RSDDensePlateEnd", 1)[0]
+                r"\RSDBalancedFourPlateStart{Vestments And Insignia}{2}", 1
+            )[1].split(r"\RSDBalancedFourPlateEnd", 1)[0]
             story_ids = [
                 line.split("{", 1)[1].split("}", 1)[0]
                 for line in story.splitlines()
@@ -226,6 +248,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             self.assertEqual(text.count(r"\RSDStoryHeroNext"), 1)
             self.assertEqual(text.count(r"\RSDStoryCompanionsStart"), 1)
+            self.assertEqual(text.count(r"\RSDBalancedFourPlateRowBreak"), 3)
             for object_id in story_ids + dense_ids:
                 self.assertEqual(
                     text.count(f"\\RSDObjectRecord{{{object_id}}}"), 1, object_id
@@ -236,6 +259,94 @@ class DictionaryGeneratorTests(unittest.TestCase):
             ):
                 other = (output / f"{edition}.tex").read_text()
                 self.assertNotIn(r"\RSDStoryPlateStart", other)
+
+    def test_general_reader_objects_and_linens_use_exact_dense_plate_plan(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "out"
+            self.generate(output)
+            text = (output / "ed-general-reader.tex").read_text()
+            first_marker = r"\RSDDensePlateStart{Objects And Linens}{1}"
+            section = first_marker + text.split(first_marker, 1)[1].split(
+                r"\RSDStoryPlateStart{Vestments And Insignia}{1}", 1
+            )[0]
+            expected_plates = (
+                (
+                    "obj-chalice",
+                    "obj-paten",
+                    "obj-burse",
+                    "obj-chalice-pall",
+                    "obj-chalice-veil",
+                    "obj-corporal",
+                ),
+                (
+                    "obj-purificator",
+                    "obj-lavabo-towel",
+                    "obj-epistle-book",
+                    "obj-gospel-book",
+                    "obj-book-marker",
+                    "obj-altar-missal",
+                ),
+                (
+                    "obj-altar-bells",
+                    "obj-lavabo-basin",
+                    "obj-communion-plate",
+                    "obj-altar-cruet",
+                    "obj-acolyte-candlestick",
+                    "obj-elevation-torch",
+                ),
+                (
+                    "obj-processional-cross",
+                    "obj-sacristy-bell",
+                    "obj-incense-boat-and-spoon",
+                    "obj-thurible",
+                ),
+                (
+                    "obj-aspergillum",
+                    "obj-holy-water-vessel",
+                    "obj-basilical-conopaeum",
+                    "obj-ombrellino",
+                ),
+            )
+            actual_plates = []
+            for plate_number in range(1, 6):
+                if plate_number <= 3:
+                    marker = (
+                        rf"\RSDDensePlateStart{{Objects And Linens}}"
+                        rf"{{{plate_number}}}"
+                    )
+                    end_marker = r"\RSDDensePlateEnd"
+                else:
+                    marker = (
+                        rf"\RSDBalancedFourPlateStart{{Objects And Linens}}"
+                        rf"{{{plate_number}}}"
+                    )
+                    end_marker = r"\RSDBalancedFourPlateEnd"
+                plate = section.split(marker, 1)[1].split(end_marker, 1)[0]
+                actual_plates.append(
+                    tuple(
+                        line.split("{", 1)[1].split("}", 1)[0]
+                        for line in plate.splitlines()
+                        if line.startswith(r"\RSDObjectRecord{")
+                    )
+                )
+            self.assertEqual(tuple(actual_plates), expected_plates)
+            planned_ids = [
+                object_id for plate in actual_plates for object_id in plate
+            ]
+            self.assertEqual([len(plate) for plate in actual_plates], [6, 6, 6, 4, 4])
+            self.assertEqual(len(planned_ids), 26)
+            self.assertEqual(len(set(planned_ids)), 26)
+            self.assertEqual(
+                section.count(r"\RSDBalancedFourPlateStart{Objects And Linens}"),
+                2,
+            )
+            self.assertEqual(
+                section.count(r"\RSDBalancedFourPlateRowBreak"), 2
+            )
+            for object_id in planned_ids:
+                self.assertEqual(
+                    text.count(f"\\RSDObjectRecord{{{object_id}}}"), 1, object_id
+                )
 
     def test_text_only_lavatory_is_held_from_every_generated_edition(self):
         with tempfile.TemporaryDirectory() as temporary:

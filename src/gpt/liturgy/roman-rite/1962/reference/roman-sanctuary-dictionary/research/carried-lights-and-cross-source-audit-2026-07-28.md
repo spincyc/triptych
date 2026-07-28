@@ -98,11 +98,11 @@ crucifix.
 
 ## Cross-edition alpha disposition
 
-The footed acolyte-candlestick record may enter the generated editions because
-its reused project-owned raster already has exact asset identity, recorded
-custody and rights, and a passed visual review. Reuse is limited to the
-source-controlled foot and self-standing relationship; the turned morphology
-is not a universal model.
+The footed acolyte-candlestick record may enter the generated editions with
+its separate project-owned raster once exact prompt custody and consumer
+review are recorded. Its depiction is limited to the source-controlled tall,
+footed, and self-standing relationship; the representative morphology is not
+a universal model.
 
 The project-generated elevation-torch raster may likewise enter the generated
 editions. Its exact prompt, received and normalized hashes, transformation,

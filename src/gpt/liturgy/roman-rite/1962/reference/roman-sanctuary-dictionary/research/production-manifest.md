@@ -1099,3 +1099,48 @@ Build and installed bytes are identical:
 | MC and trainer | 13 | 20,391,080 | `a28ba25ea69d9a5c5bdf82bfd4b1b5253f4c01f9a842b14bce8f8884e7faab5f` |
 | General reader | 12 | 19,605,155 | `9fe9f88180b0949ddb2e08f22065e5e7ce64c4238338d8ea6c530242f6f0cea5` |
 | Pontifical ceremonies | 12 | 19,270,098 | `4048cfa4c3be5f26f9b5928d41ffe3bed188da0469e829d359b8fb0342dbdd32` |
+
+## Distinct acolyte-candlestick artwork checkpoint — 2026-07-28
+
+The acolyte candlestick now has its own isolated recognition drawing instead
+of reusing the altar-candlestick asset. The separate figure depicts exactly
+one empty, tall, footed, self-standing candlestick, with no candle or other
+object. Its source-controlled recognition features stop at height, the
+footed self-standing relation, and distinction from the altar candlestick and
+footless elevation torch. Its separation from the altar candlestick is an
+editorial dictionary classification; material, ornament, dimensions,
+proportions, and exact silhouette remain representative.
+
+The project-generated received raster is a 1024-by-1536 8-bit RGB PNG of
+1,491,020 bytes with SHA-256
+`4293cf059ccdd197bdc26f9a678267748551e8f4ea3931f1bc3ea3e7c584ab95`.
+Its consumer asset,
+`RPD-FIG-processional-objects-0003-iso-acolyte-candlestick-v2.png`, is a
+stripped 1024-by-1536 8-bit grayscale-plus-alpha PNG of 499,541 bytes with
+SHA-256
+`b706c55ee5d89514918248820e3c3f5e3c259425fd70d2c1ff534faec8a1b9ec`.
+The exact prompt, transparent boundary treatment, local background-removal
+transformation, rights basis, source ceiling, and consumer checks remain
+recorded under
+`art-processional-objects-0003-iso-acolyte-candlestick` in
+`artwork-manifest.toml`.
+
+All six editions rebuilt for settled passes and were rastered with the bounded
+review helper. Every one of the 96 pages was inspected. The new object remains
+legible at both bespoke and dense-plate scales; its transparent boundary
+blends into the page without a floating rectangle, halo, or clipping.
+General Reader Objects and Linens now uses an exact 6/6/6/4/4 cover with
+balanced two-by-two final plates, and its four-item vestment comparison uses
+the same balanced treatment. A shared fitted key line preserves complete
+stable IDs in narrow cards without adding vertical spill. Logs have no fatal
+error, undefined reference, overfull box, or unresolved rerun request. Build
+and installed bytes are identical:
+
+| Edition | Pages | Bytes | Installed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 14 | 22,643,766 | `21014d69a7886f82e24ac1655efe92ffd2064ca56391dc10015a41fa58efb0bd` |
+| Altar server | 33 | 18,632,116 | `21fe6cde9becb26fd4911eb7c874efc8845e6c43d94ed10995a65b77344f75f7` |
+| Sacristan | 13 | 22,682,004 | `cd4d55598f89f8d8660ff7cc70e64510da28ce282bc6ce5a7faa4747a376573b` |
+| MC and trainer | 13 | 22,684,248 | `72230953c84513abeab90d1c99277852b2a233e1a168bcb21b1694f708de2a86` |
+| General reader | 12 | 21,909,772 | `b13d90c0c02e6aafedd73bdcf5b80ed57d2523aee90c5d3bd59f7b1b280a9523` |
+| Pontifical ceremonies | 11 | 20,909,634 | `12c2732ae939f38c84bb6977a4b3def3cdf4f2a41ded7bd5bae4d6daad9428c2` |

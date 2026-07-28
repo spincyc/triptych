@@ -125,8 +125,8 @@ materially different historical basin form and is used only to exclude its
 projecting lip, backplate, material, dimensions, and silhouette from the Mass
 teaching plate.
 
-The carrying family reuses the empty footed-candlestick drawing only as a
-representative support form. The processional-cross drawing shows the
+The carrying family uses a separate empty tall footed-candlestick drawing only
+as a representative support form. The processional-cross drawing shows the
 source-controlled crucifix-and-long-staff identity; TeX supplies its required
 stand and optional/local status. The replaced elevation-torch drawing has a
 narrow footless shaft and cannot imply self-standing use. It remains an unlit
@@ -148,7 +148,7 @@ The alpha uses identity-checked or consumer-reviewed pencil assets including:
 - an isolated Missal cushion;
 - a freestanding lectern comparison; and
 - a marker-ribbon detail; and
-- the empty footed candlestick reused for the acolyte carrying family;
+- the separate empty tall footed candlestick for the acolyte carrying family;
 - a footless, non-self-standing elevation torch shown unlit; and
 - a portable processional cross on a long non-self-standing staff; and
 - a neutral thurible component-recognition view.

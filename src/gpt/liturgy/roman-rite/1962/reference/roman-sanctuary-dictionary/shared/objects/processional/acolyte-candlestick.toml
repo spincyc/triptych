@@ -1,7 +1,7 @@
 schema_version = 1
 id = "obj-acolyte-candlestick"
-workflow_state = "source-audited"
-editorial_note = "The Missal establishes candle-bearing acolytes; Fortescue distinguishes their tall, footed, self-standing candlesticks from footless elevation torches. The reused drawing teaches only representative support morphology."
+workflow_state = "publication-ready"
+editorial_note = "The Missal establishes candle-bearing acolytes; Fortescue distinguishes their tall, footed, self-standing candlesticks from footless elevation torches. The separate drawing teaches only representative support morphology."
 preferred_english_name = "Acolyte candlestick"
 latin_headword = "candelabrum acolythi"
 alternate_english_names = ["carried candlestick", "acolyte candle"]
@@ -51,9 +51,23 @@ evidence_state = "checked-paraphrase"
 source_ids = ["src-acolyte-candlestick-fortescue"]
 
 [[claims]]
+id = "clm-acolyte-candlestick-identity"
+kind = "identity"
+text = "An acolyte candlestick is the tall, footed, self-standing candle support distinguished from a footless elevation torch."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-acolyte-candlestick-fortescue"]
+
+[[claims]]
+id = "clm-acolyte-candlestick-use"
+kind = "liturgical-use"
+text = "At solemn Mass, two candle-bearing acolytes carry their lights in the entrance and flank the subdeacon holding the Gospel book."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-acolyte-candlestick-missal"]
+
+[[claims]]
 id = "clm-acolyte-candlestick-representative-form"
 kind = "appearance"
-text = "The reused empty-candlestick drawing is a representative support form; it does not assert universal material, ornament, dimensions, or proportions."
+text = "The separate empty acolyte-candlestick drawing is a representative support form; it does not assert universal material, ornament, dimensions, proportions, or exact silhouette."
 evidence_state = "source-grounded-synthesis"
 source_ids = ["src-acolyte-candlestick-fortescue"]
 
@@ -72,17 +86,17 @@ role = "manual"
 verification_state = "claim-verified"
 
 [[artwork]]
-id = "art-acolyte-candlestick-0103-reuse"
+id = "art-processional-objects-0003-iso-acolyte-candlestick"
 view = "isolated"
-asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick.png"
-review_state = "identity-checked"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0003-iso-acolyte-candlestick-v2.png"
+review_state = "approved"
 depicts = ["obj-acolyte-candlestick"]
 scale_mode = "not-applicable"
-review_note = "Existing empty footed candlestick reused only as representative morphology. The source controls the functional foot and self-standing relation, not this exact turned form."
+review_note = "Separate empty tall footed candlestick checked for the source-controlled foot and self-standing relation. Its material, ornament, dimensions, proportions, and exact silhouette remain representative."
 
 [[audience_note]]
 audience = "sacristan"
-text = "Prepare a stable footed candlestick that can stand on the credence; this reused drawing does not prescribe material, ornament, dimensions, proportions, or one universal form."
+text = "Prepare a stable footed candlestick that can stand on the credence; this representative drawing does not prescribe material, ornament, dimensions, proportions, exact silhouette, or one universal form."
 claim_ids = ["clm-acolyte-candlestick-distinction", "clm-acolyte-candlestick-representative-form"]
 
 [[audience_note]]
