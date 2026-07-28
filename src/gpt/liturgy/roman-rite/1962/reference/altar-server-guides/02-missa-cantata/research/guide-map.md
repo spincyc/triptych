@@ -65,6 +65,17 @@ the parish's marked distances, exact stations, and traffic route remain local
 rehearsal data. The series artwork manifest owns the asset's provenance,
 identity, rights, consumers, and review state.
 
+The entrance preparation and arrival drawing uses pencil asset `ASG-ART-022`
+for MC-004 and MC-006--007. Its two source-bounded moments distinguish the
+adult-to-acolyte candle handoff from the later priest-to-MC biretta handoff:
+the candles have already reached their named local stations before MC receives
+the biretta, A1/A2 wait empty-handed, and the centre remains clear. TeX-owned
+labels and the adjacent caption bind the figures to those action IDs. The
+drawing deliberately does not fix the procession order, arrival reverence,
+distances, or church geometry; those remain written local rehearsal choices.
+The series artwork manifest owns the asset's generation and correction
+history, identity, rights, consumer, and review state.
+
 On the alternate lesson branch, L chants from the pre-positioned book and
 returns empty-handed. The book remains on its lectern until the named adult
 recovers it after the concluding sacristy reverence and L confirms it is
@@ -96,21 +107,21 @@ the form-specific actor and mode distinction once.
 MC-A01--MC-A12 follow the integrated response run in the companion. The
 companion begins with its first response front on physical page 1; the action
 run begins on the next odd page after four complete six-up response sheet
-pairs. The full guide has no embedded card range. The current installed
-public-review full guide is twenty-seven physical pages; the installed
+pairs. The full guide has no embedded card range. The current installed alpha
+full guide is twenty-eight physical pages; the installed
 companion is twelve. Electronic review confirmed response fronts on pages 1,
 3, 5, and 7, action fronts on pages 9 and 11, mirrored backs, border alignment,
 and screen legibility. Physical actual-size, long-edge-duplex, photocopy, and
 cut review remain pending. Public-review visibility is not independent,
 rights, liturgical-text-permission, or ecclesiastical approval.
 
-The 2026-07-27 navigation repair produced the installed twenty-seven-page
-public-review full guide with SHA-256
-`07a16ac90e30836c4c8aa8bebb3a788caad74ede3fd2985bcaa9b420917ed3cd`.
+The 2026-07-28 entrance-handoff diagram tranche produced the installed
+twenty-eight-page alpha full guide with SHA-256
+`653055e1f5e036cbec9848eb07902e5733086bdc400f48d7a9cd214a4fcb9b48`.
 Its direct role-page pointers resolved after two builds, and its final log is
 free of fatal errors, warnings, undefined references, overfull or underfull
 boxes, and unresolved rerun requests. This hash is the installed
-public-review identity.
+alpha identity.
 
 The action-card cross-view is anchored to the chronology: MC-A01 links the
 adult entrance handoff and MC's complete biretta exit lifecycle through the

@@ -715,3 +715,49 @@ Labels on the audited scenes now occupy clear exterior rows or side lanes.
 The elevation sightline arrows and recession route arrows that crossed
 figures were removed. These are presentation corrections, not new ceremonial
 evidence or independent artwork review.
+
+## ASG-ART-022
+
+- Logical ID: `ASG-ART-022`
+- File:
+  `shared/artwork/pencil/ASG-ART-022-mc-entrance-handoffs.png`
+- Purpose and depicted state: two Missa Cantata entrance moments controlled
+  by MC-004 and MC-006--007: the adult gives one lighted candle to each of A1
+  and A2 while MC remains free-handed and the priest retains the biretta; after
+  the objects reach their named local stations, the bareheaded priest gives
+  the single biretta to MC two-handed while A1/A2 wait empty-handed and leave
+  the centre clear
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief, followed by one precise correction
+  that removed an unsupported second biretta from the priest's head in the
+  arrival frame
+- Prompt record: the initial request specified a wide, text-free, two-moment
+  graphite base with only a faint generic doorway and floor line; exactly the
+  adult sacristan, priest, MC, and two acolytes in the first moment; exactly
+  the priest, MC, and two empty-handed acolytes in the second; the named
+  candle and biretta handoffs; upright postures; no altar, numbered steps,
+  furniture, route, reverence, architecture, exact distances, optional roster
+  objects, extra people, text, arrows, or symbols. The correction request
+  changed only the right-hand priest's head to bareheaded and required exactly
+  one biretta in that frame.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Received corrected output: 1692 by 930, 8-bit sRGB PNG
+- Repository normalization: proportional resize to 500 pixels high,
+  conversion to 8-bit grayscale, and metadata stripping with ImageMagick
+- Normalized dimensions, mode, and size: 910 by 500; 8-bit grayscale PNG;
+  205,274 bytes
+- SHA-256:
+  `b73ffc916ec2e512e29019f37a53e00bebf74ef72b0a923d5045f711b5b05101`
+- Baked-in text, arrows, or numerals: none
+- TeX overlays: ADULT, P, MC, A1, and A2 role capsules; source-bound caption
+  distinguishes the two handoffs and preserves local procession, reverence,
+  distance, and layout choices
+- Consumers: `02-missa-cantata`
+- Rights state: project-created AI illustration; no third-party source asset
+  was incorporated; distributed under repository terms only to the extent
+  applicable rights exist
+- Review state: the first generated output was rejected because the right-hand
+  priest both wore and handed over a biretta; corrected standalone scene
+  inspection passed 2026-07-27. Integrated every-page screen review,
+  print-size review, and independent ceremonial review remain to be recorded.

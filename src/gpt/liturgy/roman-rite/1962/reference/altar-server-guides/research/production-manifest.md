@@ -608,3 +608,39 @@ The installed reviewed identities are:
 
 Actual-size physical duplex, photocopy, cut, intended-reader, independent,
 rights, and ecclesiastical-suitability review remain pending.
+
+## Missa Cantata entrance-handoff pencil scene — 2026-07-28
+
+The Missa Cantata guide now gives MC-004 and MC-006--007 a two-moment pencil
+scene. `ASG-ART-022` distinguishes the adult's pre-entrance candle handoff
+from the later biretta handoff after the objects have reached their named
+local stations. TeX-owned capsules identify the adult, priest, MC, A1, and A2;
+the caption leaves procession order, arrival reverence, distances, and church
+geometry to the locally marked rehearsal route.
+
+The first generated base was rejected because its right-hand priest both wore
+and handed over a biretta. The corrected image shows one biretta in that
+moment and passed standalone inspection before normalization. The integrated
+page was inspected at full size for actor identity, candle and biretta state,
+two-handed handling, empty-handed waiting acolytes, clear central lane, label
+placement, monochrome legibility, caption fit, and absence of clipping or
+unsupported architecture.
+
+The complete seven-publication family rebuilt for settled passes because the
+diagram macro is shared. All final logs are free of fatal errors, LaTeX or
+package warnings, undefined references, overfull or underfull boxes, and
+unresolved rerun requests. The bounded review tool rastered all seven PDFs.
+The six publications outside the Missa Cantata full guide reproduced their
+already installed SHA-256 identities exactly. Both Missa Cantata contact
+sheets and every full-size page were inspected; no collision, accidental
+blank, broken role pointer, sparse spill page, unsafe diagram ambiguity, or
+final-colophon problem was found.
+
+The reviewed Missa Cantata candidate is 28 pages and 1,479,904 bytes at
+SHA-256
+`653055e1f5e036cbec9848eb07902e5733086bdc400f48d7a9cd214a4fcb9b48`.
+Its PDF title and subject are present, its revision timestamp is
+`2026-07-28T03:02:16Z`, and its active text and diagram font families remain
+embedded, subsetted, and Unicode-mapped. The installed mirror reproduces the
+reviewed candidate exactly. This alpha record establishes the six current
+publication concerns; it claims no later or external approval status.
