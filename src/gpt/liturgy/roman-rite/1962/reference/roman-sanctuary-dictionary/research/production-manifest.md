@@ -8,17 +8,29 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Twenty-nine alpha records | Built, inspected, and installed | No | Alpha |
+| Altar server | Yes | Thirty-one alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | Pontifical ceremonies | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 
-The 2026-07-28 prepared-chalice linen checkpoint expanded the altar-server
-alpha to 27 pages and twenty-nine records. All pages and the five ambiguous
-linen figures were inspected at rendered size; the final-page colophon
-remains legible. The build and installed PDF are byte-identical at SHA-256
-`7b03339f4bd75dd5790e1772b9ac0c314755685cc04a14a52a3fe1d3d0e65c6d`.
+The 2026-07-28 Lavabo checkpoint expanded the altar-server alpha to 28 pages
+and thirty-one records. All pages and the new paired basin/manuterge figure
+were inspected at rendered size; the final-page colophon remains legible. The
+build and installed PDF are byte-identical at SHA-256
+`9c11dd7480d90346841e2b0cb16e9d753de7f34febaad9b535f86d12477b55ee`.
+
+The new family binds the exact 1962 *Missale Romanum*, *Rubricae generales*
+528 at printed p. XXXVI / artifact p. 34 and *Ritus servandus* VII.6--7 and
+VII.10 at printed pp. LVIII--LIX / artifact pp. 60--61. Joseph Braun's 1910
+“Manuterge” article is retained only as a terminology and historical aid.
+Metropolitan Museum of Art object 188520 is a variation and exclusion witness,
+not a Mass exemplar. The project-generated plate contains one shallow empty
+bowl and one broad plain once-folded towel, without ornament, pitcher, person,
+water, furniture, text, or scale cue. TeX owns the explicit not-to-common-scale
+notice, selected Low-Mass role model, Solemn-Mass acolyte relation,
+confusables, and direct-handling, spill, flame, and no-disposal-improvisation
+boundaries.
 
 Each leaf has its own `research/guide-map.md`. Presence of `main.tex`,
 generation metadata, an installed PDF, or `web-edition.toml` does not imply

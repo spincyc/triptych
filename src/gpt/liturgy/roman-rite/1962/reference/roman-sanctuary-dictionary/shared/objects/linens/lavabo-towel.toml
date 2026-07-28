@@ -1,0 +1,107 @@
+schema_version = 1
+id = "obj-lavabo-towel"
+workflow_state = "source-audited"
+editorial_note = "The 1962 Missal names the manutergium prepared with the cruets and basin and used to dry the celebrant's hands. Joseph Braun's 1910 Catholic Encyclopedia article is used only for the manuterge terminology and distinction from the sacristy towel. Its customary dimensions, lace, embroidery, and historical claims are not generalized."
+preferred_english_name = "Lavabo towel"
+latin_headword = "manutergium"
+alternate_english_names = ["Manuterge", "finger towel"]
+alternate_latin_names = []
+sort_name = "Towel, Lavabo"
+categories = ["linens-and-textiles"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-purificator", "obj-sacristy-lavatory"]
+related_objects = ["obj-lavabo-basin", "obj-altar-cruet"]
+component_objects = []
+
+[presence]
+locations = ["Prepared with the cruets and small basin on the Epistle-side service table; presented at the appointed washing station."]
+contexts = ["Used by the celebrant to dry his hands after the Offertory Lavabo."]
+composition_ids = []
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["acolyte", "other-server", "sacristan", "priest"]
+server_relation = "presents"
+prepares = ["sacristan"]
+presents = ["acolyte", "other-server"]
+receives = ["acolyte", "other-server"]
+stores = ["sacristan"]
+warnings = ["Present and receive only by the rehearsed method; keep the towel clear of the water basin, lighted candles, hot fittings, and the floor.", "Return it to its prepared place; do not substitute a purificator or an ordinary sacristy towel by appearance."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-lavabo-towel-presence"
+kind = "ceremonial-presence"
+text = "The 1962 Missal requires the manuterge to be prepared with the cruets and small basin on the Epistle-side service table."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-lavabo-rg528"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-lavabo-towel-use"
+kind = "liturgical-use"
+text = "After the celebrant washes his fingertips at the Offertory Lavabo, he dries his hands; at Solemn Mass the acolytes minister the hand towel with the water cruet and small basin."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-lavabo-rs"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-lavabo-towel-terminology"
+kind = "terminology"
+text = "Manuterge is a historical English name for this liturgical hand towel; it must be distinguished from the separate sacristy towel."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-ce-1910-manuterge"]
+
+[[claims]]
+id = "clm-lavabo-towel-form-limit"
+kind = "variation"
+text = "The governing Missal prescribes no towel material, ornament, dimensions, or fold; the teaching drawing therefore shows a plain broad once-folded rectangle."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-missale-1962-lavabo-rg528", "src-ce-1910-manuterge"]
+
+[[sources]]
+id = "src-missale-1962-lavabo-rg528"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-offertory-lavabo-articles"
+locus = "Rubricae generales 528, printed p. XXXVI, artifact PDF p. 34"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-missale-1962-lavabo-rs"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-offertory-lavabo"
+locus = "Ritus servandus VII.6-7 and VII.10, printed pp. LVIII-LIX, artifact PDF pp. 60-61"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-ce-1910-manuterge"
+binding = "passage.catholic-encyclopedia.volume-9.new-york-1910.manuterge"
+locus = "Joseph Braun, 'Manuterge,' complete article body"
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "Terminology and the distinction between the Mass and sacristy towels only. Customary dimensions, lace, embroidery, circular sacristy-towel form, and pontifical or historical statements are excluded."
+
+[[artwork]]
+id = "art-service-objects-0106-lavabo-basin-manuterge"
+view = "comparison"
+asset = "shared/artwork/pencil/RPD-FIG-service-objects-0106-lavabo-basin-manuterge.png"
+review_state = "identity-checked"
+depicts = ["obj-lavabo-basin", "obj-lavabo-towel"]
+scale_mode = "not-to-common-scale"
+review_note = "Source-minimal paired plate: one shallow empty bowl and one broad plain once-folded towel. No cross, lace, embroidery, dimensions, pitcher, person, water, text, or scale cue is baked into the asset."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Present and receive the towel at the appointed cue, keeping it clear of water, flame, hot fittings, and the floor."
+claim_ids = ["clm-lavabo-towel-presence", "clm-lavabo-towel-use"]

@@ -235,3 +235,47 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Controls the historical existence of movable chairs, movable benches, and architectural sedilia as materially different recognition forms. Chronology, region, decoration, number, levels, and exact position are not generalized."
 verified_on = "2026-07-28"
 source_fingerprint = "sha256:7bc608ed65c1fdb6ff00f71bfbf3b32e664cb298e6084790b0d0b24ea3e0248c"
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-offertory-lavabo-articles"
+loci = ["Rubricae generales Missalis romani 528, printed p. XXXVI, artifact PDF p. 34"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the small basin and manuterge as articles prepared with the cruets on the Epistle-side service table. It does not prescribe morphology, material, ornament, dimensions, towel fold, disposal, or a server division."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:cc47b431cbce890c728f2e0a4fab5e3bd3b0a9b1921fdbbe2eb7aebdfc63e5cb"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-offertory-lavabo"
+loci = ["Ritus servandus in celebratione Missae VII.6-7 and VII.10, printed pp. LVIII-LIX, artifact PDF pp. 60-61"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the fingertip washing, hand drying, and Solemn-Mass acolyte service of water cruet, small basin, and manuterge. It does not prescribe morphology, material, ornament, dimensions, towel fold, disposal, or the selected two-server Low-Mass division."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:d43f2977c795abd4a6488e21eba2a49f01b1c9c07ff2175cff9bd0ebcd3a8908"
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-9.new-york-1910.manuterge"
+loci = ["article 'Manuterge,' complete article body"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Supplies dated manuterge terminology and the distinction between the Mass hand towel and sacristy towel. Its customary dimensions, lace, embroidery, circular sacristy-towel form, pontifical statements, and historical claims are excluded from the 1962 teaching entry."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:4da2600329fc8c342a3320c818447ee310d9a26d85417c9daa0b0b16f78b3ac1"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.lavabo-basin-188520.met-collection-record-2022-02-09.met-api-json-62793121"
+loci = ["Object 188520; accession 01.23.117; catalog identity, date, material, and dimensions"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Identifies and dimensions one late-sixteenth- or early-seventeenth-century pewter lavabo basin. It is a historical variation and exclusion witness only, never a Roman Mass exemplar or source for the generic teaching bowl."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:3779ba9d04e3102a1c7e500d4fedbaac826fafef460ee33537c6219ec5fffccc"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.lavabo-basin-188520.met-collection-record-2022-02-09.met-open-access-image-1cf78dc7"
+loci = ["Complete primary Open Access image for object 188520"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Shows the cataloged object's projecting lip and architectural backplate. Those distinctive features, together with its material, dimensions, and silhouette, are expressly excluded from the source-minimal Mass teaching plate."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:365d65d45173a748b70b2b6534736be93d8fe5bbe27f110aee0e4d33ece03137"

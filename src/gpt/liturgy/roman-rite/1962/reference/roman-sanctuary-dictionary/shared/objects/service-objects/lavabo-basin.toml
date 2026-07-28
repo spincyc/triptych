@@ -1,0 +1,100 @@
+schema_version = 1
+id = "obj-lavabo-basin"
+workflow_state = "source-audited"
+editorial_note = "The 1962 Missal establishes a small basin prepared with the cruets and manuterge and names its acolyte service at Solemn Mass. It prescribes no material, ornament, dimensions, silhouette, Low-Mass server split, or disposal method. Met object 188520 is retained only as a historical variation and exclusion witness, never as a Mass exemplar."
+preferred_english_name = "Lavabo basin"
+latin_headword = "pelvicula"
+alternate_english_names = ["Lavabo bowl", "finger-bowl"]
+alternate_latin_names = []
+sort_name = "Basin, Lavabo"
+categories = ["service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-sacristy-lavatory", "obj-piscina-sacrarium"]
+related_objects = ["obj-lavabo-towel", "obj-altar-cruet"]
+component_objects = []
+
+[presence]
+locations = ["Prepared with the cruets and manuterge on the Epistle-side service table; brought to the appointed washing station."]
+contexts = ["Receives the water used when the celebrant washes his fingertips at the Offertory Lavabo."]
+composition_ids = []
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["acolyte", "other-server", "sacristan"]
+server_relation = "handles"
+prepares = ["sacristan"]
+presents = ["acolyte", "other-server"]
+receives = ["acolyte", "other-server"]
+stores = ["sacristan"]
+warnings = ["Carry level with both hands when the local method requires; if water spills or the route is obstructed, stop safely and follow the appointed direction.", "Return it to its prepared place and do not improvise where its contents are poured or disposed."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-lavabo-basin-presence"
+kind = "ceremonial-presence"
+text = "The 1962 Missal requires a small basin to be prepared with the wine and water cruets and manuterge on the Epistle-side service table."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-lavabo-rg528"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-lavabo-basin-use"
+kind = "liturgical-use"
+text = "At the Offertory Lavabo the basin receives the water used when the celebrant washes his fingertips; at Solemn Mass the acolytes minister it with the water cruet and manuterge."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-lavabo-rs"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-lavabo-basin-morphology-limit"
+kind = "variation"
+text = "The governing Missal prescribes no basin material, ornament, dimensions, or silhouette; the teaching drawing is deliberately source-minimal."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-missale-1962-lavabo-rg528", "src-met-188520-lavabo-variation"]
+
+[[sources]]
+id = "src-missale-1962-lavabo-rg528"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-offertory-lavabo-articles"
+locus = "Rubricae generales 528, printed p. XXXVI, artifact PDF p. 34"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-missale-1962-lavabo-rs"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-offertory-lavabo"
+locus = "Ritus servandus VII.6-7 and VII.10, printed pp. LVIII-LIX, artifact PDF pp. 60-61"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-met-188520-lavabo-variation"
+binding = "artifact.metropolitan-museum-of-art.lavabo-basin-188520.met-collection-record-2022-02-09.met-api-json-62793121"
+locus = "Object 188520; accession 01.23.117; catalog identity and dimensions"
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "One late-sixteenth- or early-seventeenth-century pewter lavabo basin. It proves variation only; its projecting lip, backplate, material, dimensions, and silhouette are excluded from the Mass teaching plate."
+
+[[artwork]]
+id = "art-service-objects-0106-lavabo-basin-manuterge"
+view = "comparison"
+asset = "shared/artwork/pencil/RPD-FIG-service-objects-0106-lavabo-basin-manuterge.png"
+review_state = "identity-checked"
+depicts = ["obj-lavabo-basin", "obj-lavabo-towel"]
+scale_mode = "not-to-common-scale"
+review_note = "Source-minimal paired plate: one shallow empty bowl and one broad plain once-folded towel. TeX owns identity, pairing, use, location, role model, confusables, and the explicit not-to-common-scale notice."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Carry the bowl level at the appointed cue, keep it under the washing fingers, and return it without improvising disposal."
+claim_ids = ["clm-lavabo-basin-presence", "clm-lavabo-basin-use"]

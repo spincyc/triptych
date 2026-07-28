@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders twenty-nine source-audited records already present in the
+smaller: it renders thirty-one source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -25,6 +25,8 @@ The image-dominant alpha contains:
 | --- | --- | --- |
 | `obj-altar-bells` | handles | intentional signals; avoid accidental ringing |
 | `obj-altar-cruet` | handles | paired wine/water service; form and arrangement vary locally |
+| `obj-lavabo-basin` | handles | receives washing water; portable bowl, not lavatory or piscina |
+| `obj-lavabo-towel` | presents and receives | broad hand towel, not purificator or sacristy towel |
 | `obj-altar-candle` | varies by ceremony | distinguish wax light from support; flame safety |
 | `obj-altar-candlestick` | carries when appointed | checked carried grip; do not universalize processional use |
 | `obj-sanctuary-lamp` | recognizes only | report problems; trained handling only |
@@ -71,6 +73,16 @@ dimension. The page keeps Catholic prevalence, Catholic terminology, local
 form, and local assignment unresolved and gives only non-operational flame and
 hot-metal cautions.
 
+The Offertory Lavabo family uses one source-minimal paired graphite plate.
+The exact Missal controls the articles' presence, preparation-table
+relationship, washing and drying functions, and Solemn-Mass acolyte relation.
+TeX owns the selected two-server Low-Mass division, confusables, safety, and
+the not-to-common-scale notice. Joseph Braun's 1910 encyclopedia article is a
+terminology and historical aid only. Met object 188520 demonstrates a
+materially different historical basin form and is used only to exclude its
+projecting lip, backplate, material, dimensions, and silhouette from the Mass
+teaching plate.
+
 The carrying family reuses the empty footed-candlestick drawing only as a
 representative support form. The processional-cross drawing shows the
 source-controlled crucifix-and-long-staff identity; TeX supplies its required
@@ -98,6 +110,8 @@ The alpha uses identity-checked or consumer-reviewed pencil assets including:
 - a footless, non-self-standing elevation torch shown unlit; and
 - a portable processional cross on a long non-self-standing staff; and
 - a neutral thurible component-recognition view.
+- a source-minimal paired Lavabo plate with one shallow empty basin and one
+  plain broad once-folded manuterge.
 
 The four books-and-supports assets are project-generated rasters made without
 reference images. Their normalized file hashes match the canonical artwork
@@ -142,7 +156,7 @@ remains unproved. See
 
 ## Reader order
 
-1. Compact Alpha title and exact twenty-nine-object boundary.
+1. Compact Alpha title and exact thirty-one-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels
@@ -176,7 +190,10 @@ remains unproved. See
 19. Sedilia spread: three movable chairs versus one three-place bench,
     sacred-minister/server-seat/pontifical confusables, and fixed-furniture
     handling boundary.
-20. Source notes, scope and qualifications, generation metadata, and rights
+20. Lavabo basin/manuterge spread: Missal-controlled pairing and use,
+    selected Low-Mass role model, confusables, safety, and no disposal
+    improvisation.
+21. Source notes, scope and qualifications, generation metadata, and rights
     colophon.
 
 ## Source control
@@ -187,6 +204,10 @@ All printed claims come from these canonical source keys:
 - `src-gorham-1914-cruets`;
 - `src-met-467483-cruet`;
 - `src-met-200141-cruet-pair`;
+- `src-missale-1962-lavabo-rg528`;
+- `src-missale-1962-lavabo-rs`;
+- `src-ce-1910-manuterge`;
+- `src-met-188520-lavabo-variation`;
 - `src-sanctuary-lamp-ceremonial`;
 - `src-altar-candle-ceremonial`;
 - `src-candlestick-ceremonial`;
@@ -233,8 +254,8 @@ consumers are preserved.
 
 ## Known omissions
 
-The alpha does not cover the complete server route, altar composition, the
-remaining Lavabo objects, Communion plate, vesture, the remaining
+The alpha does not cover the complete server route, altar composition,
+Communion plate, vesture, the remaining
 sung and solemn branches, the remaining Holy Week inventory, pontifical ceremonies, or related
 ceremonies. The detailed Low-Mass queue and missing-candidate accounting remain
 in `low-mass-core-selection-register.md`.

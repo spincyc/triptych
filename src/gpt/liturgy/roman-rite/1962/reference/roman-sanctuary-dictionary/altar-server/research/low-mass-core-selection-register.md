@@ -1,6 +1,6 @@
 # Low-Mass core selection and omission register
 
-Status: **Low-Mass queue reconciled through the eleven-record bounded Low-Mass altar-server alpha**
+Status: **Low-Mass queue reconciled through the Lavabo basin and manuterge tranche**
 Reconciled: 2026-07-28
 
 ## Selection rule
@@ -97,6 +97,10 @@ adds canonical, source-audited `obj-corporal`, `obj-purificator`,
 rendered for recognition with a `must-not-handle` boundary in the selected
 Low-Mass model; their new figures assert no fold pattern, dimensions,
 markings, ornament, unsupported construction, or soft-pall alternative.
+The Lavabo tranche now also adds canonical, source-audited
+`obj-lavabo-basin` and `obj-lavabo-towel`. Their paired plate and TeX entry
+close those two formerly absent chronology candidates while keeping the
+two-server Low-Mass division explicitly model-specific.
 
 ## Chronology candidates absent from the installed-snapshot 38-record core
 
@@ -110,8 +114,6 @@ not fill these Low-Mass gaps.
 | Tabernacle | Closure supplies the Communion-to-ablutions cue in LM-036 | Must not handle in this model |
 | Ciborium and any applicable ciborium veil | Conditional Communion distribution may place them near the server | Recognition only unless a separately sourced model assigns more |
 | Communion plate | First carries it at LM-034--LM-036 and must distinguish it from the paten | Conditional direct handling; fragments remain priest-only |
-| Lavabo basin/bowl | Second carries and retains it at LM-022 | Direct handling |
-| Lavabo towel | First presents and receives it at LM-022 | Direct handling |
 | Chalice pall | Named component during priestly reassembly at LM-037 | Must not handle |
 | Corporal | Named altar linen at LM-037 | Must not handle |
 | Burse | Named component at LM-037 | Must not handle |
