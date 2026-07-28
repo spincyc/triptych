@@ -8,7 +8,7 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Thirteen alpha records | Built, inspected, and installed | No | Alpha |
+| Altar server | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
@@ -114,6 +114,29 @@ at full size on the new paired-cruets page. It has embedded fonts, extractable
 text, no fatal error, undefined reference, overfull box, clipping, overlap, or
 spill page, and exact build/installed byte identity. Installed SHA-256:
 `8732e866bcf195372ce59d4401cf7d5f43ed2b615e7494da7df248bec1166efe`.
+
+The next altar-server tranche splits the former grouped incense candidate into
+stable `obj-incense-boat` and `obj-incense-spoon` records. Exact 1962 Missal
+controls at *Ritus servandus* IV.4 and VII.10 establish the distinct
+*navicula* and *cochlear* and the named deacon-to-celebrant relationship;
+VII.10 repeats the boat service without repeating the spoon term.
+Met Open Access object 236950 supplies one dated boat-and-spoon exemplar and
+their catalog lengths without being generalized into a ritual norm. Loose
+incense remains consumable material, not a peer vessel.
+
+The generated pencil plate is a non-destructive successor to the held
+candidate: unsupported granular contents were removed, while the supportable
+open boat and separate spoon remain. Its material and decorative morphology
+are explicitly illustrative. The page teaches the local/model boundary for a
+lay boat-bearer and gives hot-thurible safety without charcoal-lighting,
+loading, or fire-tending instructions.
+
+The resulting 14-page bounded alpha was rebuilt, rastered through the
+repository review helper, and visually inspected on every page and at full
+size on the new incense spread. It has embedded fonts, extractable text, no
+fatal error, undefined reference, overfull box, clipping, overlap, or spill
+page, and exact build/installed byte identity. Installed SHA-256:
+`1605612c27b5b854d1809bac432dfa8b89345e1a1d7ba95e29a5f9149861b229`.
 
 The current convention permits a bounded alpha when source integrity, rights,
 safety, reproducibility and identity, mechanical validity, and basic visual

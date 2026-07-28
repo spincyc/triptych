@@ -91,3 +91,30 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Shows the cataloged shallow circular paten and chalice side by side at one photographic scale. It does not show the paten on the chalice; that relationship is controlled separately by the Missal."
 verified_on = "2026-07-27"
 source_fingerprint = "sha256:39271386b0b9fcbe241022ac228e0665f5be12c07e4d2f54a21a07ea5124371c"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-incense-boat-and-spoon"
+loci = ["Ritus servandus in celebratione Missae IV.4 and VII.10, printed pp. LVI and LX, artifact PDF pp. 58 and 62"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the distinct navicula and cochlear identities and the deacon-to-celebrant service relationship at the checked Solemn-Mass incense stations. It does not establish material, morphology, dimensions, or a universal lay-server handoff."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:df149268b85372bc6e47a7448f7bf6caa06d3a8ee7d3c2ebffbfdd47385c81c9"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.incense-boat-and-spoon-236950.met-collection-record-2025-01-31.met-api-json-86f80e8e"
+loci = ["object 236950; accession 68.141.260a, b; identity, date, and dimensions"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Identifies one dated incense boat-and-spoon pair and supplies lengths of 10.2 cm and 8.9 cm. It bounds exemplar scale but does not prescribe a universal liturgical form."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:0a3a147e9ce31ae1f852186e5b39ddff2ab657f3e16572fdc9514b308be7c45e"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.incense-boat-and-spoon-236950.met-collection-record-2025-01-31.met-open-access-image-f756c9c2"
+loci = ["complete primary image for object 236950"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Shows one closed lidded boat and separate spoon at common photographic scale. Material, ornament, and exact silhouette are not generalized."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:a9f637308cfe3c70bfc51a64f6124097154bbe6c1f100962c0a9e52f791898f3"

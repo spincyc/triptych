@@ -1,0 +1,73 @@
+schema_version = 1
+id = "obj-incense-spoon"
+workflow_state = "source-audited"
+preferred_english_name = "Incense spoon"
+latin_headword = "cochlear"
+categories = ["incense"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["solemn-mass"]
+related_objects = ["obj-incense-boat", "obj-thurible"]
+
+[presence]
+locations = ["Presented with the incense boat in the checked Solemn-Mass loci."]
+contexts = ["Small spoon with which the celebrant takes incense from the boat."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["cleric"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+warnings = ["Keep the spoon secure with the boat and away from the hot thurible; do not improvise loading or fire-tending procedures."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-incense-spoon-identity"
+kind = "identity"
+text = "The 1962 Missal names a cochlear ministered with the incense boat when incense is imposed at the checked Solemn-Mass stations."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-incense-boat-spoon"]
+
+[[claims]]
+id = "clm-incense-spoon-exemplar"
+kind = "appearance"
+text = "The cataloged 1708-9 boat-and-spoon exemplar includes a separate spoon 8.9 cm long; this is one material-culture witness, not a universal specification."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-met-236950-metadata", "src-met-236950-image"]
+
+[[sources]]
+id = "src-missale-incense-boat-spoon"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-incense-boat-and-spoon"
+locus = "Ritus servandus IV.4 and VII.10."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+
+[[sources]]
+id = "src-met-236950-metadata"
+binding = "artifact.metropolitan-museum-of-art.incense-boat-and-spoon-236950.met-collection-record-2025-01-31.met-api-json-86f80e8e"
+locus = "Object 236950 identity and dimensions."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+
+[[sources]]
+id = "src-met-236950-image"
+binding = "artifact.metropolitan-museum-of-art.incense-boat-and-spoon-236950.met-collection-record-2025-01-31.met-open-access-image-f756c9c2"
+locus = "Complete primary image."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+
+[[artwork]]
+id = "art-incense-0003-empty-boat-spoon"
+view = "open"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon.png"
+review_state = "approved"
+depicts = ["obj-incense-boat", "obj-incense-spoon"]
+scale_mode = "not-to-common-scale"
+review_note = "Project-owned generated edit removed unsupported granular contents. The boat-form body, lid, foot, and separate spoon are bounded by the checked Missal identity and Met exemplar; decorative morphology is illustrative."

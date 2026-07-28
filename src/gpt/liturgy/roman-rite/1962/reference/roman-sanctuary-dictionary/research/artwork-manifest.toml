@@ -99,10 +99,18 @@ workflow_state = "generated"
 [[artwork_links]]
 id = "art-incense-0002-open-boat-spoon"
 asset_file_id = "file-rpd-boat-spoon"
-object_ids = ["obj-incense-boat-set"]
+object_ids = ["obj-incense-boat", "obj-incense-spoon"]
 variant_ids = []
 view = "open"
 workflow_state = "generated"
+
+[[artwork_links]]
+id = "art-incense-0003-empty-boat-spoon"
+asset_file_id = "file-rpd-empty-boat-spoon"
+object_ids = ["obj-incense-boat", "obj-incense-spoon"]
+variant_ids = []
+view = "open-with-separate-spoon"
+workflow_state = "source-audited"
 
 [[artwork_links]]
 id = "art-related-ceremonies-0001-iso-holy-water-vessel"
@@ -473,6 +481,13 @@ path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0002-open-boa
 state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1050, height_px = 700, bit_depth = 8, color_mode = "grayscale", bytes = 266221, sha256 = "98af7c63f0930855a8d65ca32fd5cb9d064b79c5abd2853882290d8870e6c421" }
+
+[[asset_files]]
+id = "file-rpd-empty-boat-spoon"
+path = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon.png"
+state = "source-audited-alpha"
+audit_record = "research/incense-boat-and-spoon-source-audit-2026-07-28.md"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 666272, sha256 = "af98d030c708eccefb623e37d5e8c4602e67ec0811ef2b2b6865f9ad3e206c3a" }
 
 [[asset_files]]
 id = "file-rpd-processional-cross"

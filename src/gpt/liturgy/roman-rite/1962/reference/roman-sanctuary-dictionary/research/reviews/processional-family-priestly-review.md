@@ -22,7 +22,7 @@ The family consists of:
 | **UNRESOLVED** | Processional cross | `obj-processional-cross` | `art-processional-objects-0001-iso-processional-cross` |
 | **UNRESOLVED** | Processional torch | `obj-processional-torch` | `art-processional-objects-0002-iso-torch` |
 | **UNRESOLVED** | Thurible | `obj-thurible` | `art-incense-0001-closed-thurible` |
-| **UNRESOLVED** | Incense boat, spoon, and incense | `obj-incense-boat-set` | `art-incense-0002-open-boat-spoon` |
+| **SUPERSEDED** | Incense boat, spoon, and incense | former grouped candidate | `art-incense-0002-open-boat-spoon` |
 | **UNRESOLVED** | Portable holy-water vessel | `obj-holy-water-vessel` | `art-related-ceremonies-0001-iso-holy-water-vessel` |
 | **UNRESOLVED** | Aspergillum | `obj-aspergillum` | `art-related-ceremonies-0002-iso-aspergillum` |
 | **UNRESOLVED — SCOPE QUESTION** | Ombrellino / umbraculum | `obj-ombrellino` | `art-related-ceremonies-0003-open-ombrellino` |
