@@ -364,9 +364,12 @@ the larger received rasters.
 - Rights state: project-created AI illustration; the only supplied reference
   was project-created `ASG-ART-001`; distributed under repository terms only
   to the extent applicable rights exist
-- Review state: generating agent's visual inspection completed 2026-07-27;
-  integrated every-page, paired-use, print-size, photocopy, and independent
-  ceremonial review remain pending
+- Review state: generating-agent and integrated every-page screen inspection
+  completed through the exact installed child/trainer PDFs of 2026-07-28;
+  page-12 TeX actor overlays were corrected and inspected at full size without
+  changing this raster; paired-use, print-size, photocopy, human artwork,
+  independent ceremonial, rights, priestly, and ecclesiastical review remain
+  pending
 
 ## ASG-ART-013
 

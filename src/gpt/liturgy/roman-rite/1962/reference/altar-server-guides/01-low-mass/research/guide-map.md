@@ -124,3 +124,9 @@ or route arrows over a figure. It corrects the Gospel-station,
 Communion-plate, finger-washing, and recession actor order. The page-29
 provenance block and common rights notice are both wholly contained on the
 same physical terminal page. The artwork bytes remain unchanged.
+
+The 2026-07-28 exact snapshot vertically separates the `PRIEST`, `FIRST`, and
+`SECOND STANDS CLEAR` capsules over the lower page-12 Gospel-station scene.
+Full-size and every-page screen inspection passed without changing the
+underlying pencil asset. All declared physical and human review gates remain
+open.

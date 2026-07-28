@@ -92,3 +92,9 @@ The later actor-overlay pass applies the same corrected, collision-free TeX
 labels as the child edition on matched pages 10, 12, 14, 18, 19, 21, 22, and
 26. The page boundaries and shared main lane remain aligned at twenty-nine
 pages; no pencil raster was altered.
+
+The 2026-07-28 exact snapshot vertically separates the `PRIEST`, `FIRST`, and
+`SECOND STANDS CLEAR` capsules over the lower page-12 Gospel-station scene.
+Full-size and every-page screen inspection passed in the page-aligned trainer
+rendering without changing the underlying pencil asset. All declared physical
+and human review gates remain open.

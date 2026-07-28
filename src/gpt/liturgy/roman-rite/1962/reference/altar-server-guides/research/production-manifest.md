@@ -1,6 +1,6 @@
 # Production manifest: 1962 altar-server guides
 
-Audit record updated through 2026-07-27 (America/Chicago).
+Audit record updated through 2026-07-28 (America/Chicago).
 
 ## Current installed public-review snapshot
 
@@ -13,8 +13,8 @@ not control the current installed files.
 
 | Publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 | Current review state |
 |---|---|---:|---:|---:|---|---|
-| `01-low-mass` | `2026-07-27T23:20:09Z` | 29 | 0 | 7,852,436 | `2bd4a3e100b414e525d523573ddbe7fabd30ec2f82b942c4c9223ca9a55ce6d0` | public alpha review; actor overlays and terminal colophon screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
-| `01-low-mass-trainer-manual` | `2026-07-27T23:20:09Z` | 29 | 0 | 7,865,170 | `5f4ded7508b55082b30ea75cf4f9973b92380d4752656b1fbfe2f4daab375014` | public alpha review; page-aligned actor overlays screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
+| `01-low-mass` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,861,791 | `1bb29420e2d4962c0bf2cebe7e80e06d6421ca65c6f6b9058ee78ef4309e426a` | public alpha review; Gospel-station actor overlays and terminal colophon screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
+| `01-low-mass-trainer-manual` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,874,334 | `4230843bbccea40e2967fe6670b9113ffe355902f88b587b00f2a15a0a8bd9d3` | public alpha review; page-aligned Gospel-station actor overlays screen-reviewed; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
 | `01-low-mass-flash-cards` | `2026-07-27T22:48:48Z` | 6 | 22 | 250,916 | `6a5d1363faab813ad51b0e2d0d68a601e3970e077ae9bf45c3cb78242b3cf460` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
 | `02-missa-cantata` | `2026-07-27T22:48:48Z` | 27 | 0 | 1,264,704 | `07a16ac90e30836c4c8aa8bebb3a788caad74ede3fd2985bcaa9b420917ed3cd` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
 | `02-missa-cantata-cue-cards` | `2026-07-27T22:48:48Z` | 12 | 36 | 624,375 | `172eadb08a796a64dcc990eb49157b3f69c0ae6e01c927c29b7cff141e6160ed` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
@@ -32,6 +32,23 @@ identities.
 The sections below preserve the development and review history. A historical
 authorization or completed screen review applies only to the exact bytes named
 in its section.
+
+## Low-Mass Gospel-station overlay repair — 2026-07-28
+
+The child and trainer editions were rebuilt for two pdfTeX passes after
+vertically separating the three actor capsules over the lower Gospel-station
+scene on page 12. Their pencil artwork bytes and twenty-nine-page extents did
+not change. Both logs contain no fatal error, undefined reference, LaTeX or
+package warning, overfull or underfull box, or unresolved rerun request.
+
+The bounded review tool rastered all fifty-eight pages. Complete contact sheets
+were inspected for page order, paired boundaries, clipping, collision,
+accidental blanks, and terminal fit. Page 12 of each edition was inspected at
+full size: `PRIEST`, `FIRST`, and `SECOND STANDS CLEAR` are distinct, remain
+associated with the three depicted actors, and no longer collide with one
+another or obscure an actor. The installed PDFs reproduce the current-ledger
+hashes above. Physical print, paired-use, intended-reader, independent,
+rights, priestly, and ecclesiastical-suitability review remain pending.
 
 The 27 July 2026 publication-label pass rebuilt, rastered, and installed all
 143 pages. The shared outer-edge strip reads `PUBLIC-ALPHA REVIEW COPY ·
