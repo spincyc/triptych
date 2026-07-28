@@ -1372,3 +1372,39 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 source_fingerprint = "sha256:0c66e188d9e3abb587483e1330602990e806dd083f07b0b7fc943a9936f6ba03"
 verified_on = "2026-07-27"
 context = "Exact official Latin control for the act's 15 August 1972 issue date, 1 January 1973 effective date, and AAS 64 (1972), pp. 529–534 identification."
+
+[[bindings]]
+source_id = "artifact.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.stanford-iiif-manifest"
+loci = ["folio-43r", "folio-43v"]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:c5ca42de77f86a828a5da7305c4bb310f18e4cdc86402ffe29f83eeadd85a10f"
+verified_on = "2026-07-28"
+context = "Exact Stanford/Parker manifest control for manuscript identity, pontifical genre, c. 1400/c. 1410 dating, canvas mapping, reader/exorcist/acolyte range boundaries, attribution, and CC BY-NC 4.0 license. Probable London production and proposed patrons or owners remain catalog inferences."
+
+[[bindings]]
+source_id = "artifact.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.stanford-iiif-folio-43r-width2000"
+loci = ["folio-43r"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:ed47295df7cffd69b3c61c13db10a27e5ec8a4bc65fca4849b923011f44581ec"
+verified_on = "2026-07-28"
+context = "Exact manuscript-image control for the end of reader ordination and the opening exorcist rubric, candidates, bishop, and book-delivery architecture. No formula, performance, ordinary duties, frequency, efficacy, representativeness, direct PRG descent, continuity, current law, or modern major-exorcism practice."
+
+[[bindings]]
+source_id = "artifact.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.stanford-iiif-folio-43v-width2000"
+loci = ["folio-43v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:89b469ac4dc1492baf6d58bfba1925c4aaa5c24645ef57bb40ef44e11d8785bc"
+verified_on = "2026-07-28"
+context = "Exact manuscript-image control for the conclusion of exorcist ordination and the opening acolyte rubric. No formula or broader practice claim."
+
+[[bindings]]
+source_id = "passage.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.folio-43r-43v-ordination-of-exorcists"
+loci = ["folio-43r", "folio-43v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:da9936d7b159e57a1e416a487d4adfc3e47c3316646a2ecd0011cc967d7da0cf"
+verified_on = "2026-07-28"
+context = "Bounded synthesis of the exact manifest and both inspected folios for this English pontifical's unit architecture. Compared with PRG and 1895 only as a distinct witness, never as direct descent or continuity."

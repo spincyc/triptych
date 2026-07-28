@@ -72,16 +72,24 @@ This comparison may establish textual transmission and changing formulary
 placement. It cannot by itself establish the ordinary duties, competence,
 career path, or frequency of activity of medieval holders of the order.
 
-### Representative local witnesses
+### Representative local witnesses: first English control closed
 
-Select at least two geographically distinct medieval books from a specialist
+The exact Stanford manifest and width-2000 images for Cambridge, Corpus
+Christi College, Parker Library MS 79, fols. 43r–43v, now close one bounded
+English pontifical control. They establish the reader/exorcist/acolyte
+boundaries, the exorcist rubric and candidates, and episcopal book-delivery
+architecture. Probable London production and proposed patronage or ownership
+remain catalog inferences. The witness is not a formula, representative
+sample, practice record, or proof of direct PRG descent.
+
+Select at least one further geographically distinct medieval book from a specialist
 manuscript inventory: one PRG-family or German witness and one English, French,
 Italian, or Iberian local pontifical, manual, or ritual. Florence Chave-Mahir,
 *L'exorcisme des possédés dans l'Église d'Occident (Xe--XIVe siècle)* (2011),
 especially its manuscript and formulary appendices, is a lead for selection,
 not a substitute for inspecting the books.
 
-For each witness record:
+For each further witness record:
 
 - shelfmark, folios, date, origin, and later provenance separately;
 - book genre and the formula's position in the book;

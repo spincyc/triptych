@@ -208,6 +208,22 @@ routes, findings, and limits are recorded in
   with modern major exorcism, or operational use. Munier's reconstructed
   *Statuta ecclesiae antiqua*, a named PRG-family manuscript, and the
   representative cross-genre comparison remain open.
+- Cambridge, Corpus Christi College, Parker Library MS 79, exact Stanford
+  IIIF manifest and width-2000 images of fols. 43r–43v acquired, hashed, and
+  visually inspected 2026-07-28. The manifest identifies a pontifical made in
+  stages circa 1400 and 1410 and bounds ordinations of readers, exorcists, and
+  acolytes; the images verify the exorcist rubric, candidates, bishop, and
+  book-delivery architecture. The manifest catalog calls the book English,
+  treats London production as probable, and proposes Guy de Mohun, Richard
+  Clifford, and Philip Morgan in patronage or ownership history from heraldic
+  and codicological evidence. Those provenance details remain catalog
+  inferences. The images and manifest are licensed CC BY-NC 4.0 with
+  attribution to the Parker Library, Corpus Christi College, Cambridge; no
+  bytes are retained. This witness supplies one geographically distinct
+  comparison with the PRG and the 1895 Roman Pontifical, not a formula,
+  actual performance, ordinary duties, frequency, efficacy,
+  representativeness, direct descent, continuity, current law, or modern
+  major-exorcism practice.
 - *Pontificale Romanum*, Leonine-recognized Latin edition (1895), *De
   Ordinatione Exorcistarum*, exact electronic-reset PDF pp. 38–39. The bounded
   title architecture places the section between lector and acolyte ordination

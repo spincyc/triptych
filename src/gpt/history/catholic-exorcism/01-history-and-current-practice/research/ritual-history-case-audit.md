@@ -40,13 +40,20 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
   226--227, 269 (Vatican City, 1963--1972). Bibliographic identification only;
   no exact artifact, ordo, or page supports a publication claim, and no
   circulation claim is inferred.
+- A local late-medieval English witness is exactly controlled in Cambridge,
+  Corpus Christi College, Parker Library MS 79, fols. 43r–43v. Its exact
+  Stanford manifest and images bound the exorcist unit between reader and
+  acolyte ordinations and verify its candidates, bishop, and book-delivery
+  architecture. Probable London production and proposed patrons or owners are
+  catalog inferences. It is one local comparison, not a formula, evidence of
+  performance, a representative sample, or proof of direct PRG descent.
 - A later Western ordination witness is now exactly controlled in the
   Leonine-recognized 1895 *Pontificale Romanum*, *De ordinatione
   exorcistarum*, PDF pp. 38–39. Its bounded architecture includes candidate
   summons, admonition, book delivery and touch, and two concluding prayers;
   no formula is reproduced. This late printed witness does not close the
-  medieval gap: no representative medieval ordinal, PRG ordo XV page, or
-  manuscript family has been acquired and collated, and no actual-practice,
+  broader medieval gap: the one English pontifical does not establish a
+  manuscript family or direct textual descent, and no actual-practice,
   frequency, continuity, current-ministry, or major-exorcism identity claim is
   inferred.
 - Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2--4. The
@@ -314,13 +321,17 @@ a freestanding collection and is reconstructed from later compilers. The
 modern literature also cautions against treating Vogel--Elze's editorial PRG
 as one uncomplicated tenth-century exemplar.
 
-No selected medieval manuscript folio was collated against the edition.
-Search-result snippets, modern transcriptions, later Roman pontificals,
-catalog descriptions, and specialist citations therefore remain leads for
-transmission and local-use claims even though the bounded critical-edition
-architecture is now directly controlled.
+Parker Library MS 79, fols. 43r–43v, is now an exact selected local
+manuscript witness. It supplies a later, geographically distinct English
+comparison for ordinal position and episcopal book delivery. It was not
+collated word-for-word against the PRG critical edition, and similarity of
+architecture does not establish direct descent. Search-result snippets,
+modern transcriptions, other later Roman pontificals, catalog descriptions,
+and specialist citations therefore remain leads for broader transmission and
+local-use claims.
 
-Accordingly, section 40 continues to omit formulas, specified duties,
+Accordingly, section 40 may name this manuscript's bounded architecture but
+continues to omit formulas, specified duties,
 career-path practice, transfer-to-priests claims, circulation, local use, and
 incidence implications. The PRG now controls only the bounded critical-edition
 ordinal architecture recorded above. This is a bounded result about the exact
