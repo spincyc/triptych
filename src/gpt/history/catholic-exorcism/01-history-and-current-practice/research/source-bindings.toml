@@ -527,6 +527,33 @@ states = ["cataloged"]
 context = "Edition-specific historical predecessor. No exact artifact or current older-book authorization claim is supplied."
 
 [[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11.chapter-1"
+loci = ["title-11.chapter-1"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:752dfcc239e59dcc690a5c835b789aea51f10bd76f7957313258365784b49232"
+verified_on = "2026-07-27"
+context = "Exact electronic-reset control for the 1925 edition's preliminary chapter and cautionary placement; not a Vatican-print facsimile, diagnostic checklist, actual-use record, or current authorization."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11.chapter-2"
+loci = ["title-11.chapter-2"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:f4b29445c14387ceb4549eac1a7ea09c01e179151bbbdf03b302387b99709b66"
+verified_on = "2026-07-27"
+context = "Exact electronic-reset control for the separate 1925 rite chapter's boundaries; formula wording and operational sequence are not reproduced."
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11.chapter-3"
+loci = ["title-11.chapter-3"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:261fc50dc101d8bfd83805b3cfeef636821d46700e3eca0b9195a1e00970bcef"
+verified_on = "2026-07-27"
+context = "Exact electronic-reset control for the distinct third chapter's existence, location, and bounded authorization sentence; not a general or current permission or operational guide."
+
+[[bindings]]
 source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-act-4f355f70"
 loci = ["8.7", "16.16-18", "19.11-20"]
 role = "textual-control"

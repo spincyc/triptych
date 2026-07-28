@@ -65,6 +65,14 @@ not treat reported phenomena as verified causes and does not reproduce a rite.
 - *Rituale Romanum* (1952), title XII. Edition-specific historical
   predecessor. It is not identified as the ordinary current ritual book and
   is not used to make a present older-book authorization claim.
+- *Rituale Romanum* (1925), title XI, chapters 1--3, now has exact
+  chapter-level controls in the registered 2007 Laudate Dominum electronic
+  resetting (SHA-256 `78f405d7…9541`), visually inspected at artifact
+  pp. 269--286. This establishes the reset's three-chapter architecture and
+  the placement of preliminary cautions, the rite, and the distinct third
+  chapter. It is not a facsimile of the Vatican printing and supplies no
+  actual-use, frequency, outcome, operational, present-authorization, or
+  typographical claim.
 - *Codex Iuris Canonici* (1917), cc. 1151--1153, Vatican Polyglot Press 1918
   witness registered in the shared source library. The section paraphrases the
   reservation and qualification rules.
