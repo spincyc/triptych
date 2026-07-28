@@ -995,10 +995,44 @@ context = "Exact facsimile control for the identity and approval statements of t
 
 [[bindings]]
 source_id = "edition.catholic-church.rituale-romanum.latin-typical-1952"
-loci = ["title-12.chapter-1", "title-12.chapter-2", "title-12.chapter-3"]
 role = "bibliographic"
 states = ["cataloged"]
-context = "Edition-specific historical predecessor. No exact artifact or current older-book authorization claim is supplied."
+context = "Catalog identity for the 1952 sixth typical edition. No complete official artifact, internal title-XII chapter claim, formula, wording, or current older-book authorization claim is supplied."
+
+[[bindings]]
+source_id = "passage.manlio-sodi-and-alessandro-toniolo.introduction-to-rituale-romanum-editio-typica-1952.italian-lev-2008-latinitas-pdf-2026-07-27.edition-identity-and-architecture"
+loci = ["vii", "viii", "ix"]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:37d480d3f461a6e6079f4678d2950bd84f360e741bf2b877ffa55d481e82f15b"
+verified_on = "2026-07-27"
+context = "Exact protected modern introduction supporting only the sixth-typical-edition identity, the editors' report of the Sacred Congregation of Rites' Cum denuo of 25 January 1952, twelve-title architecture, and title XII identity. It is not the complete facsimile or decree and supports no internal chapter, formula, wording, operational, actual-use, or present-authorization claim."
+
+[[bindings]]
+source_id = "passage.manlio-sodi.esorcismi-lecture-notes.italian-uniurb-pdf-2017.title-12-outer-extent"
+loci = ["8"]
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:ecb2b3acbd74ef8470d5ef3565d80b6c1b6f9f0d3d200a201ff99cc0d27a3170"
+verified_on = "2026-07-27"
+context = "Exact restricted modern scholarly locator for title XII's outer extent in the 2008 anastatic volume: pp. 847-886 and marginal items 2115-2174. It does not control internal divisions, wording, formulas, typography, operational sequence, actual use, or present authorization."
+
+[[bindings]]
+source_id = "artifact.manlio-sodi-and-alessandro-toniolo.introduction-to-rituale-romanum-editio-typica-1952.italian-lev-2008-latinitas-pdf-2026-07-27.open-library-edition-json-ae6cad4e"
+role = "bibliographic"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:fb388b1818c0b026c66690620e3e405374c8a119a6fff4526ce277cc4f02916c"
+verified_on = "2026-07-27"
+context = "Mutable catalog aid corroborating the protected 2008 LEV anastatic volume's ISBN, xiii plus 970-page extent, and absence of attached public scan or full text. It is not a witness to liturgical text or internal structure."
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text", "109", "110", "111", "112", "113"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:f680afaf294b0494ed20bd142a8d0ef0cac6dd82684369f59b067ef4ce978cc9"
+verified_on = "2026-07-27"
+context = "Official English copyright and typical-edition control for the conservative no-payload disposition: nn. 109-113 distinguish a Roman Rite Latin editio typica published by decree of the competent congregation and reserve copyright and reprint rights. They do not authenticate the 1952 book's contents or decide present liturgical authorization."
 
 [[bindings]]
 source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-11.chapter-1"

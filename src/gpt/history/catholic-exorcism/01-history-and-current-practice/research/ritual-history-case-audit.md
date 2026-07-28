@@ -121,9 +121,14 @@ view.
   continuous unit to a three-chapter architecture. It supplies no formula,
   operational-use, prevalence, efficacy, universal-reception, or present-
   authorization claim.
-- *Rituale Romanum* (1952), title XII. Edition-specific historical
-  predecessor. It is not identified as the ordinary current ritual book and
-  is not used to make a present older-book authorization claim.
+- *Rituale Romanum* (1952). Two exact modern finding aids now support a
+  deliberately narrow edition-state ceiling: Sodi--Toniolo's protected 2008
+  LEV introduction, pp. VII--IX, identifies it as the sixth typical edition
+  after 1614, describes the Sacred Congregation of Rites' *Cum denuo* of
+  25 January 1952, and reports a twelve-title architecture ending in
+  *De exorcizandis obsessis a Daemonio*; Sodi's exact 2017 Uniurb course PDF,
+  p. 8 n. 29, gives that title's outer extent as pp. 847--886 and marginal
+  items 2115--2174. Neither source is the complete facsimile or decree.
 - *Rituale Romanum* (1925), title XI, chapters 1--3, now has exact
   chapter-level controls in the registered 2007 Laudate Dominum electronic
   resetting (SHA-256 `78f405d7…9541`), visually inspected at artifact
@@ -144,16 +149,31 @@ hosts. Results resolved to an 1873 Baltimore edition, bibliographic records,
 modern reprints or samples, secondary excerpts, or unattributed files whose
 edition identity and rights could not be authenticated.
 
-The 1952 edition therefore remains cataloged only. In particular, the 1925
-electronic reset must not be relabeled as 1952, and secondary statements about
-changes between the two editions cannot establish the exact 1952 wording or
-pagination. Promotion requires an exact artifact whose title page and
-publication data identify the 1952 Vatican typical edition, a cryptographic
-hash and rights disposition, visual collation of the relevant title XII
-chapter boundaries, and claim-level comparison with the separately controlled
-1925 text. Until then, no 1952 formula, wording change, architecture detail,
-operational sequence, actual-use claim, or present-authorization inference is
-supported.
+The 1952 official edition therefore remains cataloged without a complete
+artifact, but the two modern finding aids are now exact, hashed, inspected,
+and registered as restricted remote artifacts. Open Library OL50130683M
+independently catalogs the 2008 LEV anastatic volume as xiii + 970 pages and
+reports no public scan or full text; it is metadata only. *Liturgiam
+authenticam* 109--113 supplies an official English copyright and
+typical-edition control: a Latin Roman Rite *editio typica* is published by
+decree of the competent congregation, and copyright and reprint rights in
+such books are reserved. This supports the conservative no-payload
+disposition, not the 1952 text's contents.
+
+What the second pass changed is bounded. The publication may now state sixth
+typical-edition identity, the reported date and dicasterial authority of
+*Cum denuo*, the twelve-title architecture, and title XII's outer page and
+item-number extent. It retracts the former unsupported 1952 three-chapter
+loci from the binding. The exact 1925 reset alone controls its own three
+chapters, while the 1872 facsimile controls its own continuous unit. No
+inference crosses those edition boundaries.
+
+Promotion beyond this ceiling requires lawful access to an authenticated
+1952 facsimile or physical copy, inspection of the title and decree leaves,
+visual collation of title XII's internal boundaries, and claim-level
+comparison with the separately controlled 1925 text. Until then, no 1952
+internal chapter division, formula, wording change, typography, operational
+sequence, actual-use claim, or present-authorization inference is supported.
 - *Codex Iuris Canonici* (1917), cc. 1151--1153, Vatican Polyglot Press 1918
   witness registered in the shared source library. The section paraphrases the
   reservation and qualification rules.

@@ -215,12 +215,21 @@ routes, findings, and limits are recorded in
   only an edition-specific boundary and placement comparison with the exact
   1925 three-chapter reset. No formula, use, prevalence, efficacy, universal
   reception, or present authorization is inferred.
-- *Rituale Romanum* (1952), title XII. Historical predecessor, not presented
-  as the ordinary current ritual book. A 2026-07-27 exact-access probe found
-  catalogs, secondary excerpts, modern samples, and an 1873 Baltimore scan,
-  but no authenticated public 1952 Vatican facsimile or electronic text.
-  Exact wording, pages, chapter comparison, and any present-authorization
-  inference therefore remain outside the evidence.
+- *Rituale Romanum* (1952). No authenticated complete public facsimile or
+  electronic text was found. Exact restricted remote finding aids now close a
+  narrower ceiling: Sodi--Toniolo's 2008 LEV introduction, pp. VII--IX
+  (Latinitas PDF, 168,166 bytes, SHA-256 `0d554564…a9b20`), identifies the
+  sixth typical edition, reports the Sacred Congregation of Rites'
+  *Cum denuo* of 25 January 1952, and describes twelve titles ending in title
+  XII. Sodi's *Esorcismi* course notes (Uniurb PDF, 186,600 bytes, SHA-256
+  `049da9bf…134f9`), p. 8 n. 29, locate that title at pp. 847--886 and marginal
+  items 2115--2174. Open Library OL50130683M corroborates the protected 2008
+  anastatic volume's identity and xiii + 970-page extent but supplies no scan.
+  *Liturgiam authenticam* 109--113 supplies official copyright and
+  typical-edition control for the conservative no-payload disposition.
+  These sources do not establish any internal 1952 chapter division, formula,
+  wording, typography, use, or present authorization. Lawful facsimile or
+  physical access remains necessary for those claims.
 - Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmillan, 2016), used as modern historical reconstruction and bibliography, paraphrased only.
 
 ## Clinical and safeguarding controls
