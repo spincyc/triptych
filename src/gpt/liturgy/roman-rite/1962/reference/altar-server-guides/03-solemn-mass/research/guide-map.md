@@ -62,6 +62,14 @@ stations, and traffic route remain local rehearsal data. The series artwork
 manifest owns the asset's provenance, identity, rights, consumers, and review
 state.
 
+The entrance-handoff drawing uses pencil asset `ASG-ART-023` for SO-003 and
+SO-007. Its TeX-owned labels distinguish the adult's two-candle handoff to A1
+and A2 from the later three-biretta handoff by C, D, and SD to MC. It does not
+depict the procession order, arrival reverence, sedilia architecture,
+distances, or traffic route; those remain local rehearsal data. The series
+artwork manifest owns the asset's generation, correction, normalization,
+identity, rights, consumers, and review state.
+
 The adult lights, gives, receives, and extinguishes the four torches. The
 ordinary torch branch leaves after the chalice elevation; the faithful-
 Communion and fast-day branches remain through the first wine ablution at
@@ -127,13 +135,14 @@ role-packet and cue-card use, physical duplex and cut alignment, photocopy
 performance, intended-reader testing, and independent liturgical, ceremonial,
 pronunciation, pedagogical, rights, and ecclesiastical review remain pending.
 
-The installed public-review snapshot built on 27 July 2026 is 28 pages with SHA-256
-`ad4a45de902147495fc22a96c42b4010d14dc8611243accd6755831aa78cce19`.
-Two pdfTeX passes settled its references, and the final log has no fatal error,
-undefined reference, box warning, or rerun request. A bounded every-page
-contact-sheet review found no clipping, collision, accidental blank, broken
-sequence, or terminal-fit defect. This technical screen review does not
-complete any pending physical, reader, or independent review.
+The installed alpha snapshot built on 28 July 2026 is 28 pages and 1,524,250
+bytes with SHA-256
+`2676cfbd6713b238a852cb7bd1ba4f02ab201dcab633cf7271fbaf7ffe199dd7`.
+Settled pdfTeX passes left no fatal error, undefined reference, box warning, or
+rerun request. Every rendered page and the new entrance-handoff page at full
+size passed screen review for clipping, collision, accidental blanks,
+sequence, label placement, object count, monochrome legibility, and terminal
+fit. This alpha screen review claims no later or external approval status.
 
 The action-card cross-view is anchored to the chronology: SO-A02 fixes the
 boat and thurible endpoints at all four incense stations; SO-A06 records the

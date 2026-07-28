@@ -761,3 +761,53 @@ evidence or independent artwork review.
   priest both wore and handed over a biretta; corrected standalone scene
   inspection passed 2026-07-27. Integrated every-page screen review,
   print-size review, and independent ceremonial review remain to be recorded.
+
+## ASG-ART-023
+
+- Logical ID: `ASG-ART-023`
+- File:
+  `shared/artwork/pencil/ASG-ART-023-so-entrance-handoffs.png`
+- Purpose and depicted state: two Solemn-Mass entrance moments controlled by
+  SO-003 and SO-007: the adult gives one lighted candle to each of A1 and A2;
+  after the sacred ministers uncover, bareheaded C, D, and SD each give one
+  biretta to MC, who receives the three birettas with both hands before taking
+  them to their marked sedilia places
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief, followed by one regeneration that
+  removed an unsupported fourth biretta
+- Prompt record: the initial request specified one wide, text-free,
+  two-moment graphite base on white. The left frame required exactly the adult,
+  two young acolytes, and two upright lighted processional candlesticks, one
+  per acolyte. The right frame required exactly three bareheaded sacred
+  ministers, one MC, and three Roman birettas, with all three ministers handing
+  one biretta each to the two-handed MC. It prohibited altar and sanctuary
+  architecture, steps, furniture, floor plans, routes, arrows, measurements,
+  distances, processional formation, bows, genuflections, kisses, labels,
+  symbols, color, and additional people or objects. The regeneration repeated
+  those constraints and expressly corrected the initial fourth biretta,
+  requiring exactly three visible birettas and none already held beyond those
+  same three.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Rejected initial output: 1774 by 887, 8-bit sRGB PNG; SHA-256
+  `5aac3f3a43e2c21b0fc83e5cff950468954ac1b4c6c30565feabcb4273e3c7d4`
+- Received corrected output: 1774 by 887, 8-bit sRGB PNG; SHA-256
+  `63e7fd70e2389477edf0958487ebe7f342af168cec7e9189a91c6fb13a1fd8e6`
+- Repository normalization: proportional resize to 500 pixels high,
+  conversion to 8-bit grayscale, and metadata stripping with ImageMagick
+- Normalized dimensions, mode, and size: 1000 by 500; 8-bit grayscale PNG;
+  204,600 bytes
+- SHA-256:
+  `f21d91073fbfbb2684b475338af256f4b9122210828342ab67c1883d0dd893c8`
+- Baked-in text, arrows, or numerals: none
+- TeX overlays: ADULT, A1, A2, C, D, SD, and MC role capsules; source-bound
+  caption distinguishes the two handoffs and preserves local procession,
+  reverence, distance, and layout choices
+- Consumers: `03-solemn-mass`
+- Rights state: project-created AI illustration; no third-party source asset
+  was incorporated; distributed under repository terms only to the extent
+  applicable rights exist
+- Review state: the first generated output was rejected because it showed four
+  birettas in the right frame. Corrected standalone scene inspection passed
+  2026-07-27. Integrated full-size page and every-page screen review passed
+  2026-07-27; no print-size or external approval status is claimed.

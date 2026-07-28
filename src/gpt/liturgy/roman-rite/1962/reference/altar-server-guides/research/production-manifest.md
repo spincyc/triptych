@@ -644,3 +644,37 @@ Its PDF title and subject are present, its revision timestamp is
 embedded, subsetted, and Unicode-mapped. The installed mirror reproduces the
 reviewed candidate exactly. This alpha record establishes the six current
 publication concerns; it claims no later or external approval status.
+
+## Solemn Mass entrance-handoff pencil scene — 2026-07-28
+
+The Solemn Mass guide now gives SO-003 and SO-007 a two-moment pencil scene.
+`ASG-ART-023` distinguishes the adult's pre-entrance two-candle handoff to A1
+and A2 from C, D, and SD's later three-biretta handoff to MC. TeX-owned
+capsules identify every actor. The caption leaves procession order, arrival
+reverence, sedilia architecture, distances, and church geometry to the locally
+marked rehearsal route.
+
+The first generated base was rejected because it contained a fourth biretta.
+The regenerated image contains exactly two candles in the left frame, exactly
+three birettas in the right frame, no baked-in semantic marks, and no
+architecture or route claim. It passed standalone inspection before grayscale
+normalization and full-size integrated review after TeX labeling.
+
+The complete seven-publication family rebuilt for settled passes because the
+diagram macro file is shared. Final logs are free of fatal errors, LaTeX or
+package warnings, undefined references, overfull or underfull boxes, and
+unresolved rerun requests. The six unchanged publications reproduce their
+installed PDF bytes exactly. The bounded review tool rastered all seven PDFs;
+both Solemn contact sheets and every Solemn page were inspected, with the new
+page also inspected at full size. No collision, accidental blank, broken role
+pointer, object-count error, unsupported architecture, unsafe diagram
+ambiguity, or terminal-fit problem was found.
+
+The reviewed Solemn Mass candidate is 28 pages and 1,524,250 bytes at SHA-256
+`2676cfbd6713b238a852cb7bd1ba4f02ab201dcab633cf7271fbaf7ffe199dd7`.
+Its PDF title and subject are present, its revision timestamp is
+`2026-07-28T03:09:23Z`, and its active text and diagram font families are
+embedded, subsetted, and Unicode-mapped. The installed mirror reproduces the
+reviewed candidate exactly. This alpha record establishes the current source,
+rights, safety, identity, mechanical, and basic visual concerns; it claims no
+later or external approval status.
