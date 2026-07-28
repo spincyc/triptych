@@ -81,12 +81,20 @@ view = "isolated"
 workflow_state = "generated"
 
 [[artwork_links]]
-id = "art-processional-objects-0002-iso-torch"
-asset_file_id = "file-rpd-processional-torch"
-object_ids = ["obj-processional-torch"]
+id = "art-acolyte-candlestick-0103-reuse"
+asset_file_id = "file-rpd-altar-candlestick-empty"
+object_ids = ["obj-acolyte-candlestick"]
 variant_ids = []
 view = "isolated"
-workflow_state = "generated"
+workflow_state = "source-audited"
+
+[[artwork_links]]
+id = "art-processional-objects-0002-iso-torch"
+asset_file_id = "file-rpd-processional-torch"
+object_ids = ["obj-elevation-torch"]
+variant_ids = []
+view = "isolated"
+workflow_state = "held"
 
 [[artwork_links]]
 id = "art-incense-0001-closed-thurible"

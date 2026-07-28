@@ -1,0 +1,81 @@
+schema_version = 1
+id = "obj-acolyte-candlestick"
+workflow_state = "source-audited"
+editorial_note = "The Missal establishes candle-bearing acolytes; Fortescue distinguishes their tall, footed, self-standing candlesticks from footless elevation torches. The reused drawing teaches only representative support morphology."
+preferred_english_name = "Acolyte candlestick"
+latin_headword = "candelabrum acolythi"
+alternate_english_names = ["carried candlestick", "acolyte candle"]
+alternate_latin_names = []
+categories = ["service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["missa-cantata", "solemn-mass"]
+confusable_with = ["obj-altar-candlestick", "obj-elevation-torch"]
+related_objects = ["obj-altar-candle", "obj-processional-cross"]
+component_objects = ["obj-altar-candle"]
+
+[presence]
+locations = ["Sacristy before and after use; carried in the entrance and Gospel formation; set on the credence when not carried."]
+contexts = ["The candle-bearing acolytes at solemn Mass."]
+composition_ids = []
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["acolyte"]
+server_relation = "carries"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Keep the light upright and at the rehearsed common height; keep flame and hot wax clear of people, hair, and textiles."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-acolyte-candlestick-missal"
+kind = "ceremonial-presence"
+text = "The 1962 Missal names two candle-bearing acolytes in the solemn entrance and places them on either side of the subdeacon holding the Gospel book."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-acolyte-candlestick-missal"]
+
+[[claims]]
+id = "clm-acolyte-candlestick-distinction"
+kind = "appearance"
+text = "Fortescue describes the acolytes’ candles as tall, footed candlesticks that can stand on the credence, unlike footless elevation torches that require a rack."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-acolyte-candlestick-fortescue"]
+
+[[claims]]
+id = "clm-acolyte-candlestick-representative-form"
+kind = "appearance"
+text = "The reused empty-candlestick drawing is a representative support form; it does not assert universal material, ornament, dimensions, or proportions."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-acolyte-candlestick-fortescue"]
+
+[[sources]]
+id = "src-acolyte-candlestick-missal"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-acolyte-candlesticks"
+locus = "Ritus servandus II.5 and VI.5."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+
+[[sources]]
+id = "src-acolyte-candlestick-fortescue"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-17"
+locus = "Printed p. 17."
+role = "manual"
+verification_state = "claim-verified"
+
+[[artwork]]
+id = "art-acolyte-candlestick-0103-reuse"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick.png"
+review_state = "identity-checked"
+depicts = ["obj-acolyte-candlestick"]
+scale_mode = "not-applicable"
+review_note = "Existing empty footed candlestick reused only as representative morphology. The source controls the functional foot and self-standing relation, not this exact turned form."

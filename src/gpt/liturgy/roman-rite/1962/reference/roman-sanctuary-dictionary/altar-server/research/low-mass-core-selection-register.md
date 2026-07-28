@@ -57,7 +57,7 @@ excluded from that edition by this register.
 | `obj-ombrellino` | art-reviewed | Omit from Low-Mass set | Procession/related-ceremony object outside this route |
 | `obj-processional-cross` | art-reviewed | Omit from Low-Mass set | No cross-bearer or carried cross occurs in the ordinary entrance/recession model |
 | `obj-thurible` | art-reviewed | Omit from Low-Mass set | The selected Low Mass has no incense route |
-| `obj-processional-torch` | art-reviewed | Omit from Low-Mass set | Torchbearers belong to sung or related ceremonies, not this route |
+| `obj-elevation-torch` | source-audited | Omit from Low-Mass set | Elevation torchbearers belong to sung Mass, not this route; the footed artwork remains held |
 | `obj-piscina-sacrarium` | source-audited | Select: sacristy recognition | May be encountered before or after service; the guide gives no server disposal permission |
 | `obj-sacristy-bell` | source-audited | Select: sacristy recognition | May supply a local entrance signal; distinguish it from the altar bells |
 | `obj-sacristy-cross` | source-audited | Select: sacristy recognition | May be present at the route's starting and ending place |

@@ -1,18 +1,18 @@
 schema_version = 1
-id = "obj-processional-torch"
-workflow_state = "art-reviewed"
-preferred_english_name = "Processional torch"
+id = "obj-elevation-torch"
+workflow_state = "source-audited"
+preferred_english_name = "Elevation torch"
 latin_headword = "intortitium"
 alternate_english_names = ["torch"]
 alternate_latin_names = ["fax"]
 categories = ["service-objects"]
 periods = ["roman-1962-horizon"]
 statuses = ["unresolved"]
-ceremonies = ["missa-cantata", "solemn-mass", "pontifical-mass", "procession"]
+ceremonies = ["missa-cantata", "solemn-mass", "pontifical-mass"]
 
 [presence]
-locations = ["Processional staging area or torch stand."]
-contexts = ["Candidate record for light carried by a torchbearer."]
+locations = ["Sacristy rack; carried to the sanctuary for the Consecration and, when appointed, through Communion."]
+contexts = ["Light carried by a torchbearer for the Elevation service, not an entrance light."]
 local_variability = "common"
 
 [handling]
@@ -30,31 +30,38 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
-id = "clm-processional-torch-candidate"
+id = "clm-elevation-torch-identity"
 kind = "identity"
-text = "Candidate inventory identity and representative torch morphology; governing source loci remain to be audited."
-evidence_state = "editorial-proposal"
-source_ids = []
+text = "Fortescue distinguishes footless elevation torches, which cannot stand alone and are stored in a rack, from the acolytes’ footed carried candlesticks."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-elevation-torch-fortescue-form"]
 
 [[claims]]
-id = "clm-processional-torch-appearance"
-kind = "appearance"
-text = "The candidate artwork shows one wax candle, socket, broad wax catcher, and carrying shaft; it does not establish one ornamental form as universal."
-evidence_state = "editorial-proposal"
-source_ids = []
+id = "clm-elevation-torch-use"
+kind = "ceremonial-presence"
+text = "Torchbearers take lighted torches in the sacristy and bring them to the sanctuary at the Sanctus for the Elevation service; this is not the entrance use of the acolytes’ candlesticks."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-elevation-torch-fortescue-use"]
 
 [[sources]]
-id = "src-processional-torch-fortescue-lead"
-binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
-locus = "Relevant torch passages not yet located."
-role = "lead-only"
-verification_state = "unlocated"
+id = "src-elevation-torch-fortescue-form"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-17"
+locus = "Printed p. 17."
+role = "manual"
+verification_state = "claim-verified"
+
+[[sources]]
+id = "src-elevation-torch-fortescue-use"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-89-90"
+locus = "Printed pp. 89-90."
+role = "manual"
+verification_state = "claim-verified"
 
 [[artwork]]
 id = "art-processional-objects-0002-iso-torch"
 view = "isolated"
 asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png"
 review_state = "identity-checked"
-depicts = ["obj-processional-torch"]
+depicts = ["obj-elevation-torch"]
 scale_mode = "not-applicable"
-review_note = "Screen-checked for one candle and coherent carrier, grayscale ground, crop safety, absent lettering, and no electric or lantern features; source and print review remain pending."
+review_note = "Held: the current footed drawing contradicts the verified defining feature that the torch cannot stand alone. Do not publish or assign it to a consumer until regenerated as a footless, rack-dependent form."

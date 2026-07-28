@@ -8,7 +8,7 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Fifteen alpha records | Built, inspected, and installed | No | Alpha |
+| Altar server | Yes | Eighteen alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
@@ -164,6 +164,25 @@ unambiguous at rendered size. The PDF has embedded fonts, extractable text, no
 fatal error, undefined reference, overfull box, clipping, overlap, or spill
 page, and exact build/installed byte identity. Installed SHA-256:
 `b8de0ef1588aabe26390e781b20a81460205f3ad3262d1b35d30a66270e411b3`.
+
+The next altar-server carrying tranche adds the source-audited acolyte
+candlestick and optional processional cross while correcting the retained
+torch record. The exact 1962 Missal controls the two candle-bearing acolytes;
+Fortescue's exact 1917 first edition controls the footed/self-standing
+candlestick distinction, the footless elevation torch, the non-self-standing
+processional-cross staff, and the cross's optional local status at a priest's
+High Mass. The existing empty-candlestick drawing is reused only as
+representative morphology. The current footed torch drawing remains held and
+is not rendered.
+
+The resulting 17-page bounded alpha was rebuilt for settled passes, rastered
+through the repository review helper, and visually inspected on every page and
+at full size on both new pages. The PDF has embedded fonts, extractable text,
+no fatal error, undefined reference, overfull box, clipping, overlap, or spill
+page, and exact build/installed byte identity. Its 7,319,228-byte size reflects
+the accumulated reviewed grayscale artwork in this image-dominant alpha; no
+source artifact is embedded. Installed SHA-256:
+`9d333dab8fef9b860f1fa90fccc44156f3427e1ba116cd944c968ece1d1b7aed`.
 
 ## Alpha readiness
 

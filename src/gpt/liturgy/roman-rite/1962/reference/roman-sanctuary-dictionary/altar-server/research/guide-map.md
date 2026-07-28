@@ -1,7 +1,7 @@
 # Altar-server edition guide map
 
-Status: **bounded altar-server alpha with Low-Mass core, paired cruets, and
-first Solemn-Mass book and incense families**
+Status: **bounded altar-server alpha with Low-Mass core and first
+Solemn-Mass book, carrying, and incense families**
 Audit date: 2026-07-28
 Edition selection: `ed-altar-server`
 
@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders sixteen source-audited records already present in the
+smaller: it renders eighteen source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -36,6 +36,8 @@ The image-dominant alpha contains:
 | `obj-book-marker` | recognizes only | protect prepared markers; do not rearrange |
 | `obj-epistle-book` | recognizes only | identify by the subdeacon's Solemn-Mass use, not the cover |
 | `obj-gospel-book` | recognizes only | distinguish the held-book Gospel sequence from a freestanding lectern |
+| `obj-acolyte-candlestick` | carries when appointed | footed carried light distinct from altar candlestick and footless elevation torch |
+| `obj-processional-cross` | optional local use | portable staff crucifix requires a stand; not universal or Missal-required for a priest's High Mass |
 | `obj-thurible` | trained thurifer only | distinguish three bowl-support chains from the separate central lid-lifting chain; cold rehearsal and hot-object boundary |
 | `obj-incense-boat` | handles only in an appointed route | container distinct from spoon, incense, and thurible |
 | `obj-incense-spoon` | handles only in an appointed route | separate transfer tool; checked deacon-to-celebrant relationship |
@@ -58,9 +60,16 @@ Unsupported granular contents were removed; decorative morphology remains
 illustrative, and loose incense is classified as a consumable material rather
 than a third vessel.
 
+The carrying family reuses the empty footed-candlestick drawing only as a
+representative support form. The processional-cross drawing shows the
+source-controlled crucifix-and-long-staff identity; TeX supplies its required
+stand and optional/local status. The existing torch drawing remains held
+because its generated foot contradicts the verified feature that an elevation
+torch cannot stand alone.
+
 ## Artwork disposition
 
-The alpha uses eleven identity-checked or consumer-reviewed pencil assets:
+The alpha uses identity-checked or consumer-reviewed pencil assets including:
 
 - altar bells;
 - a generic paired-cruet plate at common hand scale;
@@ -71,6 +80,8 @@ The alpha uses eleven identity-checked or consumer-reviewed pencil assets:
 - an isolated Missal cushion;
 - a freestanding lectern comparison; and
 - a marker-ribbon detail; and
+- the empty footed candlestick reused for the acolyte carrying family;
+- a portable processional cross on a long non-self-standing staff; and
 - a neutral thurible component-recognition view.
 
 The four books-and-supports assets are project-generated rasters made without
@@ -113,7 +124,7 @@ remains unproved. See
 
 ## Reader order
 
-1. Compact Alpha title and exact sixteen-object boundary.
+1. Compact Alpha title and exact eighteen-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels
@@ -129,11 +140,15 @@ remains unproved. See
    morphology remains text-only and unresolved.
 11. Epistle/Gospel relational spread: generic unornamented book symbols,
     subdeacon/deacon labels, and the ordinary held-book Gospel sequence.
-12. Thurible spread: component recognition, trained-thurifer boundary, cold
+12. Acolyte-candlestick spread: footed carrying light and elevation-torch
+    distinction.
+13. Optional processional-cross spread: local/customary status and required
+    stand.
+14. Thurible spread: component recognition, trained-thurifer boundary, cold
     rehearsal, appointed resting place, and non-operational hot-object safety.
-13. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
+15. Incense boat/spoon spread: distinct objects, Missal-controlled clerical
     relationship, local lay-server boundary, and non-operational heat safety.
-14. Source notes, scope and qualifications, generation metadata, and rights
+16. Source notes, scope and qualifications, generation metadata, and rights
    colophon.
 
 ## Source control

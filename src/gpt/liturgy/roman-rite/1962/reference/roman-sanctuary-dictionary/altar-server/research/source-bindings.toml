@@ -145,3 +145,30 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Supplies one historical censer variation with separately cataloged body, lid, base, and chain dimensions. It demonstrates variation only and does not control the generic teaching drawing."
 verified_on = "2026-07-27"
 source_fingerprint = "sha256:4721876162d9207ec62de37a527defdc7f63a821447f15ee65bef2039510ff82"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-acolyte-candlesticks"
+loci = ["Ritus servandus in celebratione Missae II.5 and VI.5, printed pp. LV and LVIII; artifact PDF pp. 57 and 60"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the two candle-bearing acolytes in the solemn entrance and Gospel formation. It does not prescribe candlestick material, dimensions, ornament, or one universal silhouette."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:b69fce33bd10b05da7cf96a48bdea44b490575734da4c5cdc88f29de7471f382"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-17"
+loci = ["printed p. 17; Internet Archive leaf n37"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Distinguishes the acolytes' tall footed self-standing candlesticks, footless rack-stored elevation torches, and the non-self-standing processional-cross staff. It controls functional morphology, not material, dimensions, or ornament."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:f7bc09d4c3f7e4c30e4ae91d8bb97c6e83ca959d1341ff127e9e2de0d93ee21e"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-78-79"
+loci = ["printed pp. 78-79; Internet Archive leaves n98-n99"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the processional cross's optional/local status at a priest's High Mass, its place between the acolytes when carried, and the need for an appointed sanctuary stand. It does not make the cross universal or Missal-required."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:c34b145d733957779c6e9fee0e5e28a32c4135c9508012f1aa4b0248593b8d5e"

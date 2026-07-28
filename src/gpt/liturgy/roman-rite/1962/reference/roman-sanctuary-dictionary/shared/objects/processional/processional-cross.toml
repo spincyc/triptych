@@ -1,11 +1,11 @@
 schema_version = 1
 id = "obj-processional-cross"
-workflow_state = "art-reviewed"
+workflow_state = "source-audited"
 preferred_english_name = "Processional cross"
 latin_headword = "crux processionalis"
 categories = ["service-objects"]
 periods = ["roman-1962-horizon"]
-statuses = ["unresolved"]
+statuses = ["institutional"]
 ceremonies = ["missa-cantata", "solemn-mass", "pontifical-mass", "procession"]
 
 [presence]
@@ -28,25 +28,46 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
-id = "clm-processional-cross-candidate"
+id = "clm-processional-cross-identity"
 kind = "identity"
-text = "Candidate inventory identity and representative carrying-cross morphology; governing source loci remain to be audited."
-evidence_state = "editorial-proposal"
-source_ids = []
+text = "Fortescue identifies the processional cross as a crucifix fixed to a long carrying staff that cannot stand alone."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-processional-cross-fortescue-form"]
 
 [[claims]]
 id = "clm-processional-cross-appearance"
 kind = "appearance"
 text = "The candidate artwork shows a crucifix mounted on one tall carrying staff; it does not establish one ornamental form as universal."
-evidence_state = "editorial-proposal"
-source_ids = []
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-processional-cross-fortescue-form"]
 
 [[sources]]
-id = "src-processional-cross-fortescue-lead"
-binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
-locus = "Relevant processional-cross passages not yet located."
-role = "lead-only"
-verification_state = "unlocated"
+id = "src-processional-cross-fortescue-form"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-17"
+locus = "Printed p. 17."
+role = "manual"
+verification_state = "claim-verified"
+
+[[claims]]
+id = "clm-processional-cross-optional"
+kind = "variation"
+text = "For a priest’s High Mass, Fortescue reports that carrying a cross is not the Roman custom and is not usually named by the Roman ceremonial books, but is permitted and customary in many churches."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-processional-cross-fortescue-use"]
+
+[[claims]]
+id = "clm-processional-cross-stand"
+kind = "placement"
+text = "When used at a priest’s High Mass, the cross is carried between the acolytes and placed in an appointed sanctuary stand before being retrieved for the recession."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-processional-cross-fortescue-use"]
+
+[[sources]]
+id = "src-processional-cross-fortescue-use"
+binding = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-78-79"
+locus = "Printed pp. 78-79."
+role = "manual"
+verification_state = "claim-verified"
 
 [[artwork]]
 id = "art-processional-objects-0001-iso-processional-cross"
@@ -55,4 +76,4 @@ asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects
 review_state = "identity-checked"
 depicts = ["obj-processional-cross"]
 scale_mode = "not-applicable"
-review_note = "Screen-checked for one coherent staff and crucifix, grayscale ground, crop safety, absent lettering, and no duplicated structural parts; source and print review remain pending."
+review_note = "Screen-checked for one coherent long staff and crucifix, grayscale ground, crop safety, absent lettering, and no duplicated structural parts. The representative ornament and proportions are not universal; TeX supplies the required-stand and optional/local qualifications."
