@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders thirty-one source-audited records already present in the
+smaller: it renders thirty-two source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -27,6 +27,7 @@ The image-dominant alpha contains:
 | `obj-altar-cruet` | handles | paired wine/water service; form and arrangement vary locally |
 | `obj-lavabo-basin` | handles | receives washing water; portable bowl, not lavatory or piscina |
 | `obj-lavabo-towel` | presents and receives | broad hand towel, not purificator or sacristy towel |
+| `obj-altar-cloths` | recognizes only; must not disturb | exactly three cloths cover the altar; folds, extents, and marks remain illustrative |
 | `obj-altar-candle` | varies by ceremony | distinguish wax light from support; flame safety |
 | `obj-altar-candlestick` | carries when appointed | checked carried grip; do not universalize processional use |
 | `obj-sanctuary-lamp` | recognizes only | report problems; trained handling only |
@@ -112,6 +113,14 @@ The alpha uses identity-checked or consumer-reviewed pencil assets including:
 - a neutral thurible component-recognition view.
 - a source-minimal paired Lavabo plate with one shallow empty basin and one
   plain broad once-folded manuterge.
+- a source-minimal exploded relationship drawing of exactly three plain altar
+  cloths above one neutral thin altar-top silhouette.
+
+The three-altar-cloths drawing replaces the earlier crowded multi-object
+cutaway for this consumer. It contains no masonry, frontal, dust cover,
+corporal, marks, dimensions, person, action, or ritual object. TeX states that
+its extents, hanging edges, folds, spacing, and support silhouette are
+illustrative, not prescriptions.
 
 The four books-and-supports assets are project-generated rasters made without
 reference images. Their normalized file hashes match the canonical artwork
@@ -156,7 +165,7 @@ remains unproved. See
 
 ## Reader order
 
-1. Compact Alpha title and exact thirty-one-object boundary.
+1. Compact Alpha title and exact thirty-two-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
 4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels

@@ -1,0 +1,77 @@
+schema_version = 1
+id = "obj-altar-cloths"
+workflow_state = "source-audited"
+editorial_note = "The 1962 Missal controls only the three clean blessed cloths covering the altar. The generated relationship plate makes no material, weave, dimension, marking, ornament, fold, edge-drop, preparation, or altar-construction claim."
+preferred_english_name = "Altar cloths"
+latin_headword = "tobaleae"
+alternate_english_names = ["altar linens"]
+alternate_latin_names = []
+sort_name = "Cloths, altar"
+categories = ["altar-and-appointments", "linens-and-textiles"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-corporal"]
+related_objects = []
+component_objects = []
+
+[presence]
+locations = ["Covering the altar."]
+contexts = ["The altar prepared for Mass is covered with three clean blessed cloths."]
+composition_ids = []
+local_variability = "none-recorded"
+
+[handling]
+ordinary_handlers = ["sacristan"]
+server_relation = "must-not-handle"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Recognition does not authorize a server to lift, smooth, shift, fold, remove, or replace an altar cloth."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-altar-cloths-presence"
+kind = "ceremonial-presence"
+text = "The 1962 Missal directs that the altar be covered with three clean blessed cloths."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-altar-cloths"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-altar-cloths-visual-limit"
+kind = "variation"
+text = "The checked locus does not prescribe material, dimensions, markings, ornament, folds, edge drop, or a method of arranging the three cloths; those features in the relationship drawing are illustrative only."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-missale-1962-altar-cloths"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-missale-1962-altar-cloths"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales Missalis romani 526, printed p. XXXVI, artifact PDF p. 34"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "Controls the number, clean and blessed state, and altar-covering relationship only."
+
+[[artwork]]
+id = "art-linens-0006-three-altar-cloths"
+view = "comparison"
+asset = "shared/artwork/pencil/RPD-FIG-linens-0006-three-altar-cloths.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-cloths"]
+scale_mode = "not-to-common-scale"
+review_note = "Exactly three plain cloth sheets are separated above one neutral thin altar-top silhouette. Extents, hanging edges, folds, and spacing are illustrative; the image contains no masonry, frontal, dust cover, corporal, marks, dimensions, person, action, or ritual object."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the three-cloth covering relationship, but do not lift, smooth, shift, fold, remove, or replace an altar cloth."
+claim_ids = ["clm-altar-cloths-presence"]

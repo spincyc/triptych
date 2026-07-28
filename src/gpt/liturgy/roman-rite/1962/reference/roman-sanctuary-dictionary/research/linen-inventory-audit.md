@@ -84,7 +84,8 @@ resolution:
 | Asset | Contents | Review result |
 | --- | --- | --- |
 | `shared/artwork/pencil/RSD-ART-001-white-linens.png` | corporal folded/unfolded and in use; purificator; rigid and soft pall; finger towel | identity-checked; compact and legible; some folded specimens remain dependent on labels for certainty |
-| `shared/artwork/pencil/RSD-ART-002-altar-textiles.png` | three altar-cloth relationship, cere-cloth, Communion cloth, credence cloth, corrected rectangular amice | identity-checked after rejecting and correcting a cut-neck amice; altar-layer cutaway is explanatory, not a literal ceremonial scene |
+| `shared/artwork/pencil/RSD-ART-002-altar-textiles.png` | three altar-cloth relationship, cere-cloth, Communion cloth, credence cloth, corrected rectangular amice | held multi-object research plate; the cutaway is unsuitable for altar-server publication because its explanatory layers can read as construction courses or cloths inserted between altar elements |
+| `shared/artwork/pencil/RPD-FIG-linens-0006-three-altar-cloths.png` | exactly three plain cloth sheets above one neutral thin altar-top silhouette | source-minimal altar-server successor; extents, hanging edges, folds, spacing, and support silhouette are illustrative; no masonry, frontal, dust cover, corporal, marks, dimensions, person, action, or ritual object |
 | `shared/artwork/pencil/RSD-ART-003-veils-burse-gremial.png` | chalice veil, burse, humeral uses, gremial, vimpae | partially identity-checked; chalice veil, burse, and gremial are usable studies; its flat humeral-veil silhouettes are rejected in favor of the next asset |
 | `shared/artwork/pencil/RSD-ART-004-humeral-veils-vimpae.png` | long rectangular subdeacon and Benediction humeral veils, paired vimpae, context insets | identity-checked; long rectangular geometry corrected; inset hands and vesture still require competent ceremonial review |
 

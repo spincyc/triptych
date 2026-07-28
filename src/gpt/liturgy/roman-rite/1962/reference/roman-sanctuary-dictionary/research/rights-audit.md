@@ -31,6 +31,16 @@ project-content terms. This is an auditable provenance and rights disposition,
 not an external artwork review or a claim that illustrative morphology is
 normative.
 
+The three-altar-cloths relationship raster
+`art-linens-0006-three-altar-cloths` is likewise project-generated without
+reference images. Its canonical manifest preserves the exact prompt, received
+and normalized hashes, grayscale-only transformation, corrections, consumer,
+and review states. It is distributed under the repository's project-content
+terms. The exact 1962 Missal locus controls only the three clean blessed
+cloths covering the altar; the generated image supplies no evidence for
+material, dimensions, markings, ornament, folds, edge drop, relative extent,
+arrangement method, or altar construction.
+
 ## Open rights classes
 
 | Material | Present disposition | Required action |

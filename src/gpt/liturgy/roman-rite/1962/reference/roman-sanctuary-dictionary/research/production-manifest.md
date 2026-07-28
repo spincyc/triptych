@@ -8,7 +8,7 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Thirty-one alpha records | Built, inspected, and installed | No | Alpha |
+| Altar server | Yes | Thirty-two alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
@@ -31,6 +31,27 @@ water, furniture, text, or scale cue. TeX owns the explicit not-to-common-scale
 notice, selected Low-Mass role model, Solemn-Mass acolyte relation,
 confusables, and direct-handling, spill, flame, and no-disposal-improvisation
 boundaries.
+
+The 2026-07-28 altar-cloths checkpoint expanded the altar-server alpha to
+29 pages and thirty-two records. The exact 1962 *Missale Romanum*,
+*Rubricae generales* 526 controls the three clean blessed cloths covering the
+altar. The entry makes material, dimensions, markings, ornament, folds, edge
+drop, relative extent, arrangement method, altar construction, and server
+preparation explicitly unasserted. Its project-generated text-free graphite
+plate shows exactly three plain cloth sheets above one neutral thin altar-top
+silhouette and contains no masonry, frontal, dust cover, corporal, markings,
+dimensions, person, action, or ritual object.
+
+Both contact sheets, every rendered page, and the new page 14 at full size were
+inspected. The three textiles are distinct and legible; the view cannot
+reasonably read as cloth inserted between masonry or a frontal; its source,
+confusables, recognition-only boundary, and illustrative-view notice are
+unclipped. The source and scope pages and final metadata/rights colophon remain
+legible and do not spill. The settled log has no fatal error, undefined
+reference, overfull box, or unresolved LaTeX warning. Fonts are embedded and
+text is extractable. Build and installed bytes are identical at 12,403,720
+bytes, SHA-256
+`37beab5cc0f769596f2b21265d1cdef847fc5f41dd4177818cda98b53f8688ef`.
 
 Each leaf has its own `research/guide-map.md`. Presence of `main.tex`,
 generation metadata, an installed PDF, or `web-edition.toml` does not imply
