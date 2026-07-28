@@ -10,6 +10,42 @@ states = ["cataloged"]
 context = "The legacy monograph uses the modern Holy See English Catechism for the finality of Revelation, Marian mediation, Sunday worship, and prayer. The local 2026-07-16 source review is preserved without claiming that this publication inspected the exact 2026-07-23 central artifacts."
 
 [[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1700-1706"
+loci = ["1700-1706"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact USCCB English-edition control for human dignity, reason, freedom, conscience, and responsibility in the study's treatment of children and vulnerable persons. It does not establish supernatural origin or adjudicate either witness's subjective culpability."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:93135db39d87f4a8621402fdf67bc23bc1449b8b14a42f9d57d4cb3a58b8359e"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1734-1735"
+loci = ["1734-1735"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact USCCB English-edition control for voluntariness, imputability, and factors such as coercion, fear, and immaturity that may diminish or nullify responsibility. It does not decide the moral guilt of either witness or any named historical person."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:640a8a79ee510960bf00428e4bd3095b0e3414033f19067240498d007e863b5e"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.2111"
+loci = ["2111"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact USCCB English-edition control for rejecting merely external or mechanical devotional performance and catastrophe-insurance thinking apart from interior dispositions. It does not classify La Salette prayer or authorized devotion as superstition."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:b3ddea78fcf54ec7df784a7646872bae791182e35210865e887f7bee9c210ab1"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.2116-2117"
+loci = ["2116-2117"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact USCCB English-edition control for rejecting divination, magic, and attempted occult domination when private prophecy is distorted into a technique of prediction or control. It does not classify historical mapping or every reading of private revelation as divination."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:cf40966d8c8357822ff386f1092243bbbc0ca9536ea52f2fc5744f03b209fe68"
+
+[[bindings]]
 source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
 loci = ["52-69"]
 role = "context"
