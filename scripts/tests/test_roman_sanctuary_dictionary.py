@@ -15,12 +15,12 @@ RECORDS = DICTIONARY_ROOT / "shared/objects"
 
 
 class DictionaryGeneratorTests(unittest.TestCase):
-    def generate(self, output: Path) -> None:
+    def generate(self, output: Path, selections: Path = SELECTIONS) -> None:
         subprocess.run(
             [
                 str(SCRIPT),
                 "--schema", str(SCHEMA),
-                "--selections", str(SELECTIONS),
+                "--selections", str(selections),
                 "--artwork-manifest", str(ARTWORK_MANIFEST),
                 "--records", str(RECORDS),
                 "--output", str(output),
@@ -49,7 +49,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             self.assertIn(r"\RSDObjectRecord{obj-sacristy-cross}", alpha)
             self.assertIn(r"\RSDObjectRecord{obj-sacristy-bell}", alpha)
-            self.assertIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", alpha)
+            self.assertNotIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", alpha)
             self.assertIn(
                 r"{Latin term not asserted}",
                 alpha,
@@ -103,7 +103,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 text,
             )
             self.assertIn(r"\RSDObjectRecord{obj-sacristy-bell}", text)
-            self.assertIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", text)
+            self.assertNotIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", text)
             self.assertIn(
                 r"\RSDSelectedAudienceNote{Identify the local bell",
                 text,
@@ -154,22 +154,56 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 self.assertIn(r"\RSDDensePlateCellBreak", text)
             altar_server = (output / "ed-altar-server.tex").read_text()
             self.assertNotIn(r"\RSDDensePlateStart", altar_server)
+            for edition in (
+                "ed-comprehensive", "ed-sacristan", "ed-mc-trainer",
+                "ed-general-reader", "ed-pontifical", "ed-altar-server",
+            ):
+                text = (output / f"{edition}.tex").read_text()
+                self.assertNotIn(r"\RSDStoryPlateStart", text)
 
-    def test_text_only_lavatory_is_in_five_generated_editions_only(self):
+    def test_synthetic_story_spreads_are_deterministic_and_exact_once(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            output = root / "out"
+            selections = root / "edition-selections.toml"
+            selections.write_text(SELECTIONS.read_text().replace(
+                'audience = "general-reader"',
+                'audience = "general-reader"\nlayout_mode = "story-spread-v1"',
+                1,
+            ))
+            self.generate(output, selections)
+            first = (output / "ed-general-reader.tex").read_bytes()
+            self.generate(output, selections)
+            self.assertEqual(first, (output / "ed-general-reader.tex").read_bytes())
+            text = first.decode()
+            self.assertIn(r"\RSDStoryPlateStart{Sanctuary}{1}", text)
+            self.assertIn(r"\RSDStoryPlateStart{Objects And Linens}{1}", text)
+            self.assertIn(r"\RSDStoryHeroNext", text)
+            self.assertIn(r"\RSDStoryCompanionsStart", text)
+            self.assertNotIn(r"\RSDDensePlateStart", text)
+            object_ids = [
+                line.split("{", 1)[1].split("}", 1)[0]
+                for line in text.splitlines()
+                if line.startswith(r"\RSDObjectRecord{")
+            ]
+            self.assertEqual(len(object_ids), len(set(object_ids)))
+            for edition in (
+                "ed-comprehensive", "ed-sacristan",
+                "ed-mc-trainer", "ed-pontifical", "ed-altar-server",
+            ):
+                other = (output / f"{edition}.tex").read_text()
+                self.assertNotIn(r"\RSDStoryPlateStart", other)
+
+    def test_text_only_lavatory_is_held_from_every_generated_edition(self):
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "out"
             self.generate(output)
             for edition in (
-                "ed-comprehensive",
-                "ed-sacristan",
-                "ed-mc-trainer",
-                "ed-general-reader",
-                "ed-pontifical",
+                "ed-comprehensive", "ed-sacristan", "ed-mc-trainer",
+                "ed-general-reader", "ed-pontifical", "ed-altar-server",
             ):
                 text = (output / f"{edition}.tex").read_text()
-                self.assertIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", text)
-            altar_server = (output / "ed-altar-server.tex").read_text()
-            self.assertNotIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", altar_server)
+                self.assertNotIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", text)
 
     def test_exact_lesson_books_use_the_tex_native_artwork_exception(self):
         generator = SCRIPT.read_text()

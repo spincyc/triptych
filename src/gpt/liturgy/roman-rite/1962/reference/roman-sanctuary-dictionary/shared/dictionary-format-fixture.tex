@@ -2,6 +2,7 @@
 % liturgical or historical claims.
 \input{common/preamble}
 \input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/dictionary-format}
+\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated-record-renderer}
 \DictionaryReviewEditiontrue
 
 \newcommand{\FixtureObject}[1]{%
@@ -84,6 +85,36 @@
 \DictionaryEndnote{FIX-101}{Ambiguous forms may receive specimen and context views.}
 \DictionaryEndnote{FIX-102}{Printed keys remain usable when hyperlinks are unavailable.}
 \DictionaryEndnote{FIX-201}{Variant strips collect materially different forms under one headword.}
+
+\clearpage
+\RSDStoryPlateStart{Story-layout fixture}{One discovery, four comparisons}
+\RSDStoryHeroNext
+\global\RSDStoryHerofalse
+\begin{minipage}[t][2.48in][t]{\linewidth}
+  {\fontsize{13}{14.2}\selectfont\bfseries Hero Object\par}
+  \vspace{2pt}\hrule height 0.45pt\vspace{4pt}
+  \begin{minipage}[t][1.82in][c]{0.49\linewidth}
+    \centering\FixtureObject{HERO}
+  \end{minipage}\hfill
+  \begin{minipage}[t][1.82in][t]{0.47\linewidth}
+    {\fontsize{8.2}{9.6}\selectfont
+      A large opening figure establishes the visual subject before the reader
+      discovers four related forms below.\par}
+    \vspace{4pt}{\fontsize{7.5}{8.8}\selectfont
+      \textbf{Look for.}\enspace Outline, material, use, and relationship.\par}
+  \end{minipage}
+\end{minipage}
+\par\vspace{5pt}
+\RSDStoryCompanionsStart
+  \FixtureCell{FIX-401}{Companion One}{res una}{1}
+  \RSDStoryCompanionBreak
+  \FixtureCell{FIX-402}{Companion Two}{res altera}{2}
+  \RSDStoryCompanionBreak
+  \FixtureCell{FIX-403}{Companion Three}{res tertia}{3}
+  \RSDStoryCompanionBreak
+  \FixtureCell{FIX-404}{Companion Four}{res quarta}{4}
+\RSDStoryCompanionsEnd
+\RSDStoryPlateEnd
 
 \clearpage
 \DictionaryPlateHeader

@@ -361,11 +361,14 @@ def section_label(section: str) -> str:
 
 
 def dense_edition_tex(chosen: list[dict], edition: dict) -> list[str]:
-    """Render section-ordered six-object comparison plates.
+    """Render section-ordered comparison plates in the edition's layout mode.
 
     Records remain canonical and audience notes remain edition-selected; this
     function changes only their comparison grouping and page architecture.
     """
+    layout_mode = edition.get("layout_mode", "dense-six-v1")
+    require(layout_mode in {"dense-six-v1", "story-spread-v1"},
+            f"{edition['id']}: unsupported layout_mode: {layout_mode}")
     section_order = [
         section for section in edition["section_order"]
         if section not in {
@@ -398,11 +401,29 @@ def dense_edition_tex(chosen: list[dict], edition: dict) -> list[str]:
             record.get("sort_name", record["preferred_english_name"]).casefold(),
             record["id"],
         ))
-        for offset in range(0, len(records), 6):
-            plate = records[offset:offset + 6]
+        plate_size = 5 if layout_mode == "story-spread-v1" else 6
+        for offset in range(0, len(records), plate_size):
+            plate = records[offset:offset + plate_size]
+            if layout_mode == "story-spread-v1":
+                lines.append(
+                    f"\\RSDStoryPlateStart{{{tex(section_label(section))}}}"
+                    f"{{{offset // plate_size + 1}}}"
+                )
+                for index, record in enumerate(plate):
+                    if index == 0:
+                        lines.append("\\RSDStoryHeroNext")
+                    elif index == 1:
+                        lines.append("\\RSDStoryCompanionsStart")
+                    else:
+                        lines.append("\\RSDStoryCompanionBreak")
+                    lines.append(record_tex(record, edition))
+                if len(plate) > 1:
+                    lines.append("\\RSDStoryCompanionsEnd")
+                lines.append("\\RSDStoryPlateEnd")
+                continue
             lines.append(
                 f"\\RSDDensePlateStart{{{tex(section_label(section))}}}"
-                f"{{{offset // 6 + 1}}}"
+                f"{{{offset // plate_size + 1}}}"
             )
             for index, record in enumerate(plate):
                 if index == 3:

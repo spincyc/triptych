@@ -7,6 +7,8 @@
 \RSDRenderedRecordCount=0
 \newif\ifRSDArtworkAvailable
 \newif\ifRSDSecondArtworkAvailable
+\newif\ifRSDStoryHero
+\RSDStoryHerofalse
 \usetikzlibrary{decorations.pathmorphing}
 \tikzset{
   rsd pencil line/.style={
@@ -85,6 +87,33 @@
 
 \renewcommand{\RSDEndObjectRecord}{%
   \global\advance\RSDRenderedRecordCount by 1
+  \ifRSDStoryHero
+  \begin{minipage}[t][2.48in][t]{\linewidth}
+  \DictionaryEntryAnchor{\RSDObjectID}%
+  {\fontsize{13}{14.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
+  {\fontsize{8.2}{9.2}\selectfont\itshape\RSDLatinHeadword
+    \hfill\DictionaryNoteKey{\RSDObjectID}\par}
+  \vspace{2pt}\hrule height 0.45pt\vspace{4pt}
+  \begin{minipage}[t][1.82in][c]{0.49\linewidth}
+    \centering
+    \ifRSDArtworkAvailable
+      \DictionaryGraphic{1.78in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+    \fi
+  \end{minipage}\hfill
+  \begin{minipage}[t][1.82in][t]{0.47\linewidth}
+    {\fontsize{8.2}{9.6}\selectfont
+      \RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi\par}
+    \ifx\RSDAudienceText\empty\else
+      \vspace{4pt}{\fontsize{7.5}{8.8}\selectfont
+        \textbf{Look for.}\enspace\RSDAudienceText\par}
+    \fi
+    \ifx\RSDSymbolismText\empty\else
+      \vspace{4pt}{\fontsize{7.3}{8.5}\selectfont\itshape\RSDSymbolismText\par}
+    \fi
+  \end{minipage}
+  \end{minipage}%
+  \global\RSDStoryHerofalse
+  \else
   \begin{minipage}[t][3.18in][t]{\linewidth}
   \DictionaryEntryAnchor{\RSDObjectID}%
   {\fontsize{9.2}{10.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
@@ -122,7 +151,8 @@
   \ifx\RSDSymbolismText\empty\else
     \vspace{2pt}{\fontsize{6.1}{7}\selectfont\itshape\RSDSymbolismText\par}
   \fi
-  \end{minipage}}
+  \end{minipage}%
+  \fi}
 
 \newcommand{\RSDDensePlateStart}[2]{%
   \clearpage
@@ -135,6 +165,23 @@
 \newcommand{\RSDDensePlateRowBreak}{%
   \\[5pt]}
 \newcommand{\RSDDensePlateEnd}{\end{tabular}\par}
+
+% A story spread varies scale without changing canonical records. One hero
+% introduces the group; up to four compact comparison cards follow below.
+\newcommand{\RSDStoryPlateStart}[2]{%
+  \clearpage
+  {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Visual field guide}
+    \hfill #1\enspace\textperiodcentered\enspace #2\par}
+  \vspace{2pt}\hrule height 0.65pt\vspace{6pt}}
+\newcommand{\RSDStoryHeroNext}{\global\RSDStoryHerotrue}
+\newcommand{\RSDStoryCompanionsStart}{%
+  \par\vspace{5pt}\noindent
+  \begin{tabular}{@{}p{0.235\textwidth}@{\hspace{0.02\textwidth}}%
+    p{0.235\textwidth}@{\hspace{0.02\textwidth}}%
+    p{0.235\textwidth}@{\hspace{0.02\textwidth}}p{0.235\textwidth}@{}}}
+\newcommand{\RSDStoryCompanionBreak}{&}
+\newcommand{\RSDStoryCompanionsEnd}{\end{tabular}\par}
+\newcommand{\RSDStoryPlateEnd}{\par}
 
 \newcommand{\RSDRenderGeneratedEdition}[1]{%
   \InputIfFileExists{#1}{}{%
