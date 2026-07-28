@@ -11,7 +11,7 @@ Audit date: 2026-07-27
 | `plt-vessels-comparison` | Vessels | Silhouette, components, and relative scale | Vessel inventory and dimensions | Held |
 | `plt-vessels-paten-exemplar` | Vessels / altar-server alpha | One catalog-exemplar priest's paten in dimensioned top and side views plus its Missal-controlled prepared relationship; distinguish the Communion plate textually without inventing morphology | `art-paten-catalog-exemplar-comparison`; `obj-paten`; `obj-chalice`; exact Met dimensions; *Ritus servandus* I.1 and X.7; consumer `ed-altar-server` | Consumer-reviewed; print/release pending |
 | `plt-white-linens` | Linens | Folded/unfolded/in-use distinction among confusable textiles | Linen records and source-bound fold/mark claims | Held |
-| `plt-books` | Books | Distinguish official book identities from stands, covers, and generic forms | Exact edition and object records | Held |
+| `plt-books` | Books / altar-server alpha | Distinguish the altar Missal, its mutually alternative stand or cushion, prepared markers, and the low altar support from a freestanding Holy Week lectern | Exact 1962 Missal loci; `obj-altar-missal`, `obj-missal-stand`, `obj-missal-cushion`, `obj-book-marker`; four project-generated pencil assets with illustrative-morphology qualifications; consumer `ed-altar-server` | Consumer alpha; broader-family use held |
 | `plt-service-objects` | Service | Dense identification and handling comparison | Object and handler records | Held |
 | `plt-incense-system` | Incense | Parts, preparation, presentation, and safe disposition | Ceremonial claims and artwork | Held |
 | `plt-priestly-vesture` | Vestments | Laid-flat, front, rear, and worn relationships | Vestment and variant records | Held |

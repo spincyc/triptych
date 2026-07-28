@@ -1,7 +1,7 @@
 # Rights audit
 
-Status: **open; no external artwork or source artifact cleared for publication**
-Audit date: 2026-07-27
+Status: **project-generated alpha artwork reconciled; external materials remain artifact-specific**
+Audit date: 2026-07-28
 
 ## Current owned material
 
@@ -11,6 +11,17 @@ project-content terms, subject to the exclusions in `LICENSE` and
 `THIRD_PARTY.md`. This statement does not relicense official texts, historic
 images, museum photography, third-party drawings, fonts, or reference works.
 
+The four books-and-supports pencil rasters
+`art-altar-missal-on-stand`, `art-missal-cushion-isolated`,
+`art-lectern-isolated`, and `art-book-marker-ribbons-detail` are
+project-generated works. Their canonical manifest preserves their exact
+prompts, dates, received and normalized hashes, transformations, consumers,
+and the fact that no reference images were supplied. Their normalized hashes
+were rechecked on 2026-07-28. They are distributed under the repository's
+project-content terms. This is an auditable provenance and rights disposition,
+not an external artwork review or a claim that illustrative morphology is
+normative.
+
 ## Open rights classes
 
 | Material | Present disposition | Required action |
@@ -19,7 +30,7 @@ images, museum photography, third-party drawings, fonts, or reference works.
 | Historic manuals and specialist studies | Not yet selected | Establish edition and artifact rights before tracking or quoting |
 | Museum/archive/catalog photographs | None registered | Review photographer, object-image, host, database, and reuse rights separately |
 | Manufacturer/catalog illustrations | None registered | Obtain a license, establish public-domain status, or use only as an untracked restricted reference where lawful |
-| AI-generated pencil artwork | None registered for dictionary | Record creation provenance and references; ensure no restricted reference bytes enter tracked assets |
+| AI-generated pencil artwork | Project-generated assets are cleared individually when exact no-reference provenance and hashes are recorded | Preserve each asset's manifest and factual qualifications |
 | Human-created commissioned artwork | None registered | Record contributor authority and applicable project license |
 | Fonts | Existing build system only; dictionary-specific audit pending | Confirm declared font files and embedding rights |
 | Latin and English labels/quotations | Not yet drafted | Distinguish received or official wording from project-created prose |

@@ -1,7 +1,7 @@
 # Low-Mass core selection and omission register
 
-Status: **Low-Mass review queue reconciled to the current six-record review snapshot; no records publication-ready**
-Reconciled: 2026-07-27
+Status: **Low-Mass queue reconciled through the ten-record bounded altar-server alpha**
+Reconciled: 2026-07-28
 
 ## Selection rule
 
@@ -33,8 +33,8 @@ excluded from that edition by this register.
 | `obj-altar-candlestick` | source-audited | Select: ambient recognition | Present in the altar composition; the selected Low-Mass route assigns no processional carry |
 | `obj-sanctuary-lamp` | source-audited | Select: ambient recognition | Sanctuary-orientation object visible near the route; recognition only |
 | `obj-altar-cruet` | source-audited | Select: direct handling | Wine and water cruets are carried, presented, received, poured, and reset at LM-021--LM-022 and LM-036 |
-| `obj-altar-missal` | identified | Select: direct handling | First and Second move the altar Missal with its support at LM-016 and LM-037 |
-| `obj-book-marker` | identified | Select: component recognition | May be visible in the handled Missal; the route gives no separate handling action |
+| `obj-altar-missal` | source-audited | Select: direct handling | First and Second move the altar Missal with its support at LM-016 and LM-037 |
+| `obj-book-marker` | source-audited | Select: component recognition | May be visible in the handled Missal; the route gives no separate handling action |
 | `obj-chalice` | source-audited | Select: must not handle | Present throughout; priest alone handles it, while servers pour only on his signal at LM-036 |
 | `obj-epistle-book` | identified | Omit from Low-Mass set | Separate lesson book belongs to sung or alternate lesson arrangements, not this altar-Missal Low-Mass route |
 | `obj-bishops-chair` | lead | Omit from Low-Mass set | Pontifical furnishing; no Low-Mass chronology relation |
@@ -48,8 +48,8 @@ excluded from that edition by this register.
 | `obj-sedilia` | identified | Omit from Low-Mass set | LM-018 expressly distinguishes the servers' local seats from sedilia |
 | `obj-gospel-book` | identified | Omit from Low-Mass set | The Gospel is read from the altar Missal in this route |
 | `obj-lectern` | identified | Omit from Low-Mass set | No separate lesson or Gospel lectern occurs in the selected route |
-| `obj-missal-cushion` | identified | Select: alternative support | Mutually alternative support that a server must recognize if used instead of a stand |
-| `obj-missal-stand` | identified | Select: direct handling | Carried securely with the Missal at LM-016 and LM-037 |
+| `obj-missal-cushion` | source-audited | Select: alternative support | Mutually alternative support that a server must recognize if used instead of a stand |
+| `obj-missal-stand` | source-audited | Select: direct handling | Carried securely with the Missal at LM-016 and LM-037 |
 | `obj-paten` | source-audited | Select: must not handle/confusable | Component of the prepared chalice; must be distinguished from the Communion plate |
 | `obj-aspergillum` | art-reviewed | Omit from Low-Mass set | Asperges and related-ceremony object, not part of the ordinary Low-Mass chronology |
 | `obj-holy-water-vessel` | art-reviewed | Omit from Low-Mass set | Asperges and related-ceremony object, not part of the ordinary Low-Mass chronology |

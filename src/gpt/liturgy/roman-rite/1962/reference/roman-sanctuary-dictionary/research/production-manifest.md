@@ -8,7 +8,7 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Six alpha records | Built and installed | No | Alpha |
+| Altar server | Yes | Ten alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
@@ -65,7 +65,18 @@ inventory. This is an honest
 alpha corpus, not the promised complete dictionary or a claim that the
 audience editions have reached their final differentiated scope.
 
-The altar-server snapshot now uses the consumer-reviewed, dimensioned Met
+The altar-server snapshot now contains ten pages and renders four additional
+source-audited books-and-supports records: altar Missal, Missal stand, Missal
+cushion, and book markers. Its four no-reference, project-generated pencil
+assets passed exact-hash, rights, factual-boundary, print, and consumer checks.
+The stand and cushion are explicitly mutually alternative; the freestanding
+Holy Week lectern appears only as a qualified confusable comparison. Every
+page was inspected at rendered size; the PDF has embedded fonts, extractable
+text, no overfull boxes or undefined references, and exact build/installed
+byte identity. Installed SHA-256:
+`5b2f4bae00b864922c520506a852cbb8538a5c354e976f1ea0b4caeea7889a79`.
+
+The altar-server snapshot also uses the consumer-reviewed, dimensioned Met
 catalog-exemplar paten plate with a Missal-controlled prepared inset. It
 textually distinguishes the Communion plate while preserving the unresolved
 period-morphology boundary; it does not admit a Communion-plate drawing.
