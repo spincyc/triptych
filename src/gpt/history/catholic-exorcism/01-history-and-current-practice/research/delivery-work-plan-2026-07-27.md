@@ -10,7 +10,7 @@ exact snapshot.
 
 ## Baseline and finish line
 
-- The installed public-alpha PDF is 36 physical pages.
+- The installed public-alpha PDF is 47 physical pages.
 - The deliverable remains at least 100 substantive pages, excluding front
   matter, terminal audit apparatus, padding, sparse spill, and long quotations.
 - The architecture and planning ranges remain controlled by
@@ -22,7 +22,7 @@ exact snapshot.
 ## Work unit E1 — reconcile the present baseline
 
 - [x] Reconcile every present-tense record that still described a superseded
-  20-, 29-, 32-, 33-, 34-, or 35-page snapshot with the installed 36-page
+  20-, 29-, 32-, 33-, 34-, 35-, or 36-page snapshot with the installed 47-page
   checkpoint, preserving dated historical
   findings rather than rewriting them as current.
 - [x] Make the child landing page, PDF extent, web extent, scope, source audit,
@@ -31,7 +31,7 @@ exact snapshot.
 - [x] Record the exact current source, PDF, web, and installed identities in
   the appropriate audit records before using the baseline for expansion.
 
-Reconciled again 2026-07-28. The current 36-page identities and production checks are
+Reconciled again 2026-07-28. The current 47-page identities and production checks are
 owned by `final-exact-snapshot-review-2026-07-27.md`; dated earlier baseline
 findings remain historical evidence only.
 

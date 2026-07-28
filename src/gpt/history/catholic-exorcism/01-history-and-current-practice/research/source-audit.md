@@ -489,7 +489,7 @@ and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
 web conversion, review rasters, every-page visual inspection, and PDF
 structure, font, metadata, and extracted-text checks passed for the dated
 32-page predecessor snapshot; source-library and binding validation also
-passed. The current 36-page snapshot preserves those source and safety
+passed. The current 47-page snapshot preserves those source and safety
 boundaries and has a fresh settled build, log audit, every-page visual
 inspection, PDF structure, font, metadata, and extracted-text check. The
 snapshot is installed and bound for public alpha in this worker but
