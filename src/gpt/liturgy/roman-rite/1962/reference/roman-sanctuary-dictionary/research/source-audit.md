@@ -188,3 +188,21 @@ records. Torch racks, processional-object racks, hot-thurible stations,
 generic sacristy kneelers, safes, and utility furniture remain practical/local
 discovery leads until a material-culture source supports a representative
 form. Generated resemblance is not evidence for them.
+## Paired-cruet morphology and scale pass — 2026-07-27
+
+The next bounded tranche closes a consumer-usable paired-cruet plate against
+one dated manufacturer catalog and two exact Met Open Access object records.
+The 1914 Gorham catalog leaves N36-N37 show and list multiple altar-cruet
+models, materials, capacities, and heights. Met object 467483 supplies one
+handled, footed exemplar at 16.7 cm; object 200141 supplies a cataloged pair,
+each 14 cm high. Together they support a small paired altar-service identity
+while disproving any claim that material, ornament, closure, handle, marking,
+position, or silhouette is universal.
+
+The generic plate is therefore narrower than any one witness. It teaches a
+pair at common hand scale with stable bases, pouring lips, and graspable
+handles. TeX owns the wine/water labels and local-variation statement. The
+earlier single stoppered asset remains held because it can read as a household
+decanter. Exact artifact identities, hashes, acquisition correction, rights,
+and synthesis ceilings are recorded in
+`cruet-pair-source-audit-2026-07-27.md`.

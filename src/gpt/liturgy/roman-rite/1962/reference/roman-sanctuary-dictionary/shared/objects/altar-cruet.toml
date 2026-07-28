@@ -1,7 +1,7 @@
 schema_version = 1
 id = "obj-altar-cruet"
 workflow_state = "source-audited"
-editorial_note = "The checked Missal and disclosed server-manual synthesis support the wine-and-water service and selected paired-cruet model. Latin terminology, vessel morphology, markings, dimensions, and any claim that one server route is universal remain open."
+editorial_note = "The checked Missal and disclosed server-manual synthesis support the wine-and-water service. A dated manufacturer catalog and two cataloged museum witnesses support a small paired-cruet teaching plate while demonstrating substantial variation in material, body, ornament, marking, closure, and handle. Latin terminology and any universal arrangement remain open."
 preferred_english_name = "Altar cruet"
 latin_headword = "ampulla"
 alternate_english_names = ["Cruet"]
@@ -11,7 +11,7 @@ categories = ["service-objects"]
 periods = ["roman-1962-horizon"]
 statuses = ["universal-roman"]
 ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "holy-thursday"]
-confusable_with = []
+confusable_with = ["obj-chalice"]
 related_objects = ["obj-chalice"]
 component_objects = []
 
@@ -52,6 +52,14 @@ text = "Ampulla and urceolus remain terminology leads pending a dedicated lexica
 evidence_state = "unverified-lead"
 source_ids = ["src-asg-source-audit-cruets"]
 
+[[claims]]
+id = "clm-altar-cruet-morphology-bounds"
+kind = "variation"
+text = "Checked material-culture witnesses support small pouring vessels used as a pair and show stable bases and pouring lips, while also demonstrating that body, material, ornament, marking, closure, and handle are not universal."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-gorham-1914-cruets", "src-met-467483-cruet", "src-met-200141-cruet-pair"]
+as_of = 1962-01-01
+
 [[sources]]
 id = "src-missale-1962-ritus-vii-x"
 binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium"
@@ -69,14 +77,41 @@ verification_state = "claim-verified"
 checked_on = 2026-07-27
 note = "Supports the server-facing two-cruet service model, not a universal vessel shape or Latin headword."
 
+[[sources]]
+id = "src-gorham-1914-cruets"
+binding = "artifact.gorham-manufacturing-company.ecclesiastical-department.gorham-1914.internet-archive-pdf-572ceb6b"
+locus = "Catalog leaves N36-N37; artifact PDF pages 40-41"
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "Shows and lists multiple altar-cruet models, materials, capacities, and heights. It supports dated commercial variation, not ritual normativity."
+
+[[sources]]
+id = "src-met-467483-cruet"
+binding = "artifact.metropolitan-museum-of-art.cruet-467483.met-collection-record-2026-05-20.met-open-access-image-09637ee4"
+locus = "Object 467483; accession 32.100.218; catalog metadata and complete primary image"
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "One dated handled, footed exemplar. Its lid, material, ornament, and silhouette are not generalized."
+
+[[sources]]
+id = "src-met-200141-cruet-pair"
+binding = "artifact.metropolitan-museum-of-art.pair-of-altar-cruets-200141.met-collection-record-2021-07-13.met-open-access-image-71f4019d"
+locus = "Object 200141; accession 48.187.107, .108; catalog metadata and complete primary image"
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "Cataloged as a pair of altar cruets, each 14 cm high. Its material, ornament, unhandled form, and arrangement are not generalized."
+
 [[artwork]]
-id = "art-altar-cruet-isolated"
-view = "isolated"
-asset = "shared/artwork/pencil/RPD-FIG-service-objects-0001-iso-cruet.png"
-review_state = "identity-checked"
+id = "art-altar-cruet-paired-generic"
+view = "comparison"
+asset = "shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets.png"
+review_state = "print-checked"
 depicts = ["obj-altar-cruet"]
-scale_mode = "not-to-common-scale"
-review_note = "Held as a storage-state morphology lead: the round body and tall seated stopper may read as a household decanter, and one empty figure cannot teach the wine-water pair. See research/reviews/vessels-cruets-priestly-review-2026-07-27.md."
+scale_mode = "common-scale"
+review_note = "Two generic open cruets at common hand scale. The plate teaches only pair, stable base, pouring lip, and graspable handle. TeX owns wine/water labels and the local-variability qualification. The earlier household-decanter-like single asset remains held and is not a primary consumer."
 
 [[audience_note]]
 audience = "altar-server"

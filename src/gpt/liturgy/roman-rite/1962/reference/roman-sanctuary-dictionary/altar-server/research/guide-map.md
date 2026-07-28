@@ -1,7 +1,7 @@
 # Altar-server edition guide map
 
-Status: **bounded altar-server alpha with Low-Mass core and first Solemn-Mass
-recognition pair**
+Status: **bounded altar-server alpha with Low-Mass core, paired cruets, and
+first Solemn-Mass recognition pair**
 Audit date: 2026-07-28
 Edition selection: `ed-altar-server`
 
@@ -10,7 +10,7 @@ Edition selection: `ed-altar-server`
 This use-derived edition is for altar servers and those who train them. Its
 eventual boundary remains everything a server may encounter, including objects
 the server recognizes but does not handle. The current alpha is deliberately
-smaller: it renders twelve source-audited records already present in the
+smaller: it renders thirteen source-audited records already present in the
 canonical inventory and makes identity, handling boundary, safety, and likely
 confusion the visible teaching structure.
 
@@ -24,6 +24,7 @@ The image-dominant alpha contains:
 | Canonical ID | Alpha relation | Principal teaching point |
 | --- | --- | --- |
 | `obj-altar-bells` | handles | intentional signals; avoid accidental ringing |
+| `obj-altar-cruet` | handles | paired wine/water service; form and arrangement vary locally |
 | `obj-altar-candle` | varies by ceremony | distinguish wax light from support; flame safety |
 | `obj-altar-candlestick` | carries when appointed | checked carried grip; do not universalize processional use |
 | `obj-sanctuary-lamp` | recognizes only | report problems; trained handling only |
@@ -48,9 +49,10 @@ TeX owns the exact minister and use labels.
 
 ## Artwork disposition
 
-The alpha uses nine identity-checked or consumer-reviewed pencil assets:
+The alpha uses ten identity-checked or consumer-reviewed pencil assets:
 
 - altar bells;
+- a generic paired-cruet plate at common hand scale;
 - sanctuary lamp;
 - separate candle-only and empty-candlestick views; and
 - chalice;
@@ -73,6 +75,14 @@ is explicitly labelled as the alternative. The freestanding lectern is
 visually and verbally separated from the altar stand and appears only as a
 confusable comparison, not as an eleventh Low-Mass record.
 
+The earlier single stoppered cruet asset also remains held: its round body and
+tall stopper can read as a household decanter, and one empty vessel cannot
+teach the wine/water pair. The replacement teaches only pair, common hand
+scale, stable base, pouring lip, and graspable handle. TeX owns the contents
+labels and says that markings, arrangement, material, closure, handle, and
+body form vary locally. See
+`../../research/cruet-pair-source-audit-2026-07-27.md`.
+
 The earlier combined candle-and-candlestick asset remains preserved for other
 consumers, but this leaf now uses distinct figures so the wax light and empty
 support cannot be mistaken for one object. The paten candidate is not rendered
@@ -91,21 +101,23 @@ remains unproved. See
 
 ## Reader order
 
-1. Compact Alpha title and exact twelve-object boundary.
+1. Compact Alpha title and exact thirteen-object boundary.
 2. Handling key and three high-risk confusions.
 3. Image-dominant altar-bells spread.
-4. Image-dominant sanctuary-lamp spread.
-5. Candle-and-candlestick comparison spread with two distinct figures.
-6. Altar-Missal and low-stand spread.
-7. Mutually alternative cushion/stand spread with freestanding-lectern
+4. Paired-cruet spread at common hand scale, with TeX-owned wine/water labels
+   and local-variation boundary.
+5. Image-dominant sanctuary-lamp spread.
+6. Candle-and-candlestick comparison spread with two distinct figures.
+7. Altar-Missal and low-stand spread.
+8. Mutually alternative cushion/stand spread with freestanding-lectern
    comparison.
-8. Prepared book-marker spread.
-9. Chalice-and-paten boundary spread with one dimensioned Met catalog
+9. Prepared book-marker spread.
+10. Chalice-and-paten boundary spread with one dimensioned Met catalog
    exemplar and a Missal-controlled prepared inset; Communion-plate
    morphology remains text-only and unresolved.
-10. Epistle/Gospel relational spread: generic unornamented book symbols,
+11. Epistle/Gospel relational spread: generic unornamented book symbols,
     subdeacon/deacon labels, and the ordinary held-book Gospel sequence.
-11. Source notes, scope and qualifications, generation metadata, and rights
+12. Source notes, scope and qualifications, generation metadata, and rights
    colophon.
 
 ## Source control
@@ -113,6 +125,9 @@ remains unproved. See
 All printed claims come from these canonical source keys:
 
 - `src-altar-bells-missal`;
+- `src-gorham-1914-cruets`;
+- `src-met-467483-cruet`;
+- `src-met-200141-cruet-pair`;
 - `src-sanctuary-lamp-ceremonial`;
 - `src-altar-candle-ceremonial`;
 - `src-candlestick-ceremonial`;
@@ -138,8 +153,8 @@ their morphology claim remains explicitly unresolved.
 
 ## Known omissions
 
-The alpha does not cover the complete server route, altar composition, cruets
-and Lavabo objects, Communion plate, vesture, the remaining sung and
+The alpha does not cover the complete server route, altar composition, the
+remaining Lavabo objects, Communion plate, vesture, the remaining sung and
 solemn branches, special Masses, Holy Week, pontifical ceremonies, or related
 ceremonies. The detailed Low-Mass queue and missing-candidate accounting remain
 in `low-mass-core-selection-register.md`.

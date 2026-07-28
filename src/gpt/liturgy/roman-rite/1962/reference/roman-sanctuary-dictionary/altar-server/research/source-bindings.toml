@@ -1,6 +1,51 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
+
+[[bindings]]
+source_id = "artifact.gorham-manufacturing-company.ecclesiastical-department.gorham-1914.internet-archive-pdf-572ceb6b"
+loci = ["catalog leaves N36-N37; artifact PDF pages 40-41"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Shows and lists a dated commercial family of altar cruets with multiple forms, materials, capacities, and heights. It bounds the generic plate and proves variation; it does not establish a ritual norm or universal silhouette."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:c40fd48b3a561347b004d957b2f664cf99e3834a2883ffc06e69579b498db5eb"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.cruet-467483.met-collection-record-2026-05-20.met-api-json-be82540f"
+loci = ["object 467483; accession 32.100.218; identity and dimensions"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Identifies one dated cruet and its 16.7 cm overall height. It supports hand scale and exemplar identity, not universal liturgical morphology."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:88e52bd48fb15acbbaa1dab8aa19298c390688a1a1e09fafe50f519cd20d2ba1"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.cruet-467483.met-collection-record-2026-05-20.met-open-access-image-09637ee4"
+loci = ["complete primary image for object 467483"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Shows one handled, footed exemplar. Its lid, material, ornament, and silhouette are expressly excluded from the generic plate."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:0dbc86f40e0adb54923b708fb4e0f045efc1fa60afa0a79349ccf2429feb4017"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.pair-of-altar-cruets-200141.met-collection-record-2021-07-13.met-api-json-ed416771"
+loci = ["object 200141; accession 48.187.107, .108; pair identity and dimensions"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Identifies a matched pair as altar cruets and gives each a height of 14 cm. It supports pair identity and hand scale, not a fixed arrangement."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:0eb2ce35a5e42d6fdb131d0cdacda63ca7176a7616d9de2e6992bab9c0af5e74"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.pair-of-altar-cruets-200141.met-collection-record-2021-07-13.met-open-access-image-71f4019d"
+loci = ["complete primary image for object 200141"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Shows the cataloged pair at common photographic scale. Its ornament, material, unhandled form, and relative position are not generalized."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:40ea87461baadfb8a76abf5007b7269517070b2f07c2c819bad25bf3a34d8e6d"
 
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium"

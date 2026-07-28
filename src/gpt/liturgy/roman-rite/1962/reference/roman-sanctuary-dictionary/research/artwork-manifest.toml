@@ -41,6 +41,14 @@ view = "isolated"
 workflow_state = "generated"
 
 [[artwork_links]]
+id = "art-altar-cruet-paired-generic"
+asset_file_id = "file-rpd-altar-cruet-paired-generic"
+object_ids = ["obj-altar-cruet"]
+variant_ids = []
+view = "comparison"
+workflow_state = "consumer-eligible"
+
+[[artwork_links]]
 id = "art-chalice-isolated"
 asset_file_id = "file-rpd-chalice"
 object_ids = ["obj-chalice"]
@@ -318,6 +326,13 @@ path = "shared/artwork/pencil/RPD-FIG-service-objects-0001-iso-cruet.png"
 state = "accepted-for-priestly-review"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 590347, sha256 = "8a0103616b5eeace373639391eb080866393406dbae5a2a70945c373aecaffbb" }
+
+[[asset_files]]
+id = "file-rpd-altar-cruet-paired-generic"
+path = "shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets.png"
+state = "consumer-eligible"
+audit_record = "research/reviews/paired-cruets-artwork-review-2026-07-27.md"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 612750, sha256 = "54af058e1504b3b919d7ff3fcf4e5895a1d77510c6a97e488dfc5a71a34efc7b" }
 
 [[asset_files]]
 id = "file-rpd-altar-bells"

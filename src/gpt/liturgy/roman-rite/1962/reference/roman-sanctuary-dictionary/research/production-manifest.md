@@ -8,7 +8,7 @@ Audit date: 2026-07-28
 | Leaf | Source exists | Canonical records rendered | PDF state | Web edition reviewed | Distribution state |
 | --- | --- | --- | --- | --- | --- |
 | Comprehensive | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
-| Altar server | Yes | Twelve alpha records | Built, inspected, and installed | No | Alpha |
+| Altar server | Yes | Thirteen alpha records | Built, inspected, and installed | No | Alpha |
 | Sacristan | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | MC/trainer | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
 | General reader | Yes | Six alpha records | Built, inspected, and installed | No | Alpha |
@@ -97,6 +97,23 @@ page and at full size on the new relational plate. It has embedded fonts,
 extractable text, no fatal error, undefined reference, overfull box, clipping,
 or overlap, and exact build/installed byte identity. Installed SHA-256:
 `e8c155d85d07cf9996e18e06301cbb2655c736d0797bbfc79aae341449ea283f`.
+
+The current altar-server tranche adds the directly handled paired altar
+cruets. Its exact evidence chain comprises the checked 1914 Gorham catalog
+leaves N36-N37, exact Met Open Access metadata and images for objects 467483
+and 200141, and the existing Missal/manual handling controls. The
+project-generated grayscale plate teaches only a generic hand-scale pair with
+stable bases, pouring lips, and graspable handles. Wine/water labels and the
+local-variation boundary remain in TeX; the art contains no fixed order,
+marking, material, ornament, tray, closure, liquid, or semantic mark. The
+earlier household-decanter-like single asset remains held.
+
+The resulting 13-page bounded alpha was built for two settled passes, rastered
+through the repository review helper, and visually inspected on every page and
+at full size on the new paired-cruets page. It has embedded fonts, extractable
+text, no fatal error, undefined reference, overfull box, clipping, overlap, or
+spill page, and exact build/installed byte identity. Installed SHA-256:
+`8732e866bcf195372ce59d4401cf7d5f43ed2b615e7494da7df248bec1166efe`.
 
 The current convention permits a bounded alpha when source integrity, rights,
 safety, reproducibility and identity, mechanical validity, and basic visual

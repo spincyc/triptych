@@ -1,6 +1,6 @@
 # Low-Mass core selection and omission register
 
-Status: **Low-Mass queue reconciled through the ten-record bounded altar-server alpha**
+Status: **Low-Mass queue reconciled through the eleven-record bounded Low-Mass altar-server alpha**
 Reconciled: 2026-07-28
 
 ## Selection rule
@@ -89,6 +89,11 @@ The zero authoritative render count follows from the edition contract's
 `include_workflow_states = ["publication-ready"]`; none of the 38 records in
 this snapshot has that state. The five later records are also not
 `publication-ready`.
+
+The current bounded alpha is no longer the historical six-record review
+snapshot described by those counts. It now renders eleven Low-Mass records,
+including the source- and artwork-closed `obj-altar-cruet`, plus the first two
+Solemn-Mass recognition records.
 
 ## Chronology candidates absent from the installed-snapshot 38-record core
 

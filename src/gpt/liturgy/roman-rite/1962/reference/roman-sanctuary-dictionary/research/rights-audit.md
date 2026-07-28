@@ -11,6 +11,15 @@ project-content terms, subject to the exclusions in `LICENSE` and
 `THIRD_PARTY.md`. This statement does not relicense official texts, historic
 images, museum photography, third-party drawings, fonts, or reference works.
 
+The paired-cruets raster is likewise project-generated without image inputs.
+Its evidence ceiling comes from checked public-domain material-culture
+witnesses, while its exact prompt, transformations, hashes, corrections, and
+consumer are recorded in
+`research/reviews/paired-cruets-artwork-review-2026-07-27.md`. It is distributed
+under the repository's project-content terms. Exact Met Open Access metadata
+and images used in the audit are retained under artifact-level public-domain
+records; the 1914 Gorham scan remains a hashed remote public-domain artifact.
+
 The four books-and-supports pencil rasters
 `art-altar-missal-on-stand`, `art-missal-cushion-isolated`,
 `art-lectern-isolated`, and `art-book-marker-ribbons-detail` are
@@ -28,8 +37,8 @@ normative.
 | --- | --- | --- |
 | Official liturgical and ceremonial texts | Full 1961--1962 Pontifical not acquired or bound; publicly hosted 2008 facsimile introduction inspected remotely | Record artifact-level status; quote only what is necessary; do not track facsimile bytes without an affirmative distribution basis |
 | Historic manuals and specialist studies | Not yet selected | Establish edition and artifact rights before tracking or quoting |
-| Museum/archive/catalog photographs | None registered | Review photographer, object-image, host, database, and reuse rights separately |
-| Manufacturer/catalog illustrations | None registered | Obtain a license, establish public-domain status, or use only as an untracked restricted reference where lawful |
+| Museum/archive/catalog photographs | Exact Met Open Access object 467483 and 200141 metadata and primary images registered and retained as public-domain artifacts | Keep any later museum witness artifact-specific |
+| Manufacturer/catalog illustrations | 1914 Gorham public-domain catalog registered as an exact remote artifact | Establish public-domain or licensed status for every later catalog witness |
 | AI-generated pencil artwork | Project-generated assets are cleared individually when exact no-reference provenance and hashes are recorded | Preserve each asset's manifest and factual qualifications |
 | Human-created commissioned artwork | None registered | Record contributor authority and applicable project license |
 | Fonts | Existing build system only; dictionary-specific audit pending | Confirm declared font files and embedding rights |
