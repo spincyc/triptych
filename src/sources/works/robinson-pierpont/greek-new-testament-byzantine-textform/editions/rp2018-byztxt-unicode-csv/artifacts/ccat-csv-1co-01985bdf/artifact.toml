@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-1co-01985bdf"
+edition_id = "edition.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv"
+artifact_type = "structured-text"
+media_type = "text/csv; charset=utf-8"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "The byztxt/byzantine-majority-text repository states that all of the code and text it contains is in the public domain. The underlying Byzantine textform is an edition of an ancient Greek text; the repository's declaration covers the electronic files distributed there, including this generated CSV form."
+rights_jurisdiction = "United States"
+source_url = "https://raw.githubusercontent.com/byztxt/byzantine-majority-text/27a45ff1b7be6c17ccbfeac414f3f55732ae8e28/csv-unicode/ccat/with-variants/1CO.csv"
+provenance = "Downloaded from the byztxt/byzantine-majority-text repository at the pinned commit 27a45ff1b7be6c17ccbfeac414f3f55732ae8e28. The file is the repository's Unicode CSV conversion of Professor Robinson's official CCAT BETA-code file for 1 Corinthians, with the inline variant apparatus retained. The CCAT input file was not separately acquired or hashed."
+retrieved = "2026-07-27"
+sha256 = "01985bdf5abdb888123683ba7aa8bf0988b9e3d500b6177b14a1449cdd302166"
+byte_size = 100713
+indexable = false
+encoding = "utf-8"
+notes = "Exact remote artifact pinned by commit and hash. One LF-delimited header line is followed by chapter,verse,text records; inline braces carry Nestle-Aland or internal Byzantine variant notes and are not part of the Byzantine running text."
