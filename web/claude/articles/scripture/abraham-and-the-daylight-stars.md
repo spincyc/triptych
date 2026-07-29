@@ -2,9 +2,9 @@
 
 *A close exegetical study of Genesis 15:5 and the hour at which the star-promise was given*
 
-## The hour nobody asks about
+## The hour hidden in the sequence
 
-Genesis 15 is one of the load-bearing chapters of the Bible. It contains the verse Paul quotes to prove that a man is justified by faith, the covenant rite in which God alone passes between the divided animals, and the promise that made Abram the father of a countless people. It is read in synagogues and at Mass, preached on, argued over, and set to music. And it contains a detail that almost nobody notices, which is this: on the face of the chapter, Abram is told to count stars that he cannot see.
+Genesis 15 is one of the load-bearing chapters of the Bible. It contains the verse Paul quotes to prove that a man is justified by faith, the covenant rite in which God alone passes between the divided animals, and the promise that made Abram the father of a countless people. It is read in synagogues and at Mass, preached on, argued over, and set to music. And it contains a detail whose reception is easy to flatten: on the face of the chapter, Abram is told to count stars before the chapter narrates its sunset.
 
 The Douay–Rheims prints the promise at Genesis 15:5:
 
@@ -30,11 +30,11 @@ The first is that we read the verse for its content and not its staging. “Numb
 
 The second is chapter-level reading. Verses 5, 12, and 17 belong to different paragraphs in every modern printing; verse 5 sits under the heading of the promise and verses 12 and 17 under the heading of the covenant rite. A reader who takes the chapter as two episodes will not put the two clocks side by side, and if he does, he will assume without noticing that a night has passed somewhere in between. Whether that assumption is warranted is precisely the question.
 
-The third is that the difficulty is invisible in some of the ancient versions, and least visible in the one the Fathers actually used. As will appear below, the Greek of Genesis 15 has no thick darkness at verse 17 at all, and the principal Greek codex has no “in that day” at verse 18. The Latin Fathers who read the chapter in Greek dress therefore had a text whose clock ran only from afternoon to dusk, and whose author read the sunset as an allegory of the end of the world rather than as a time of day.
+The third is versional. Swete’s identified Greek printing has no thick darkness at verse 17 and prints “there” rather than “in that day” at verse 18. That particular witness makes the closing clock less insistent. Augustine’s contrary Old Latin at verse 18 prevents projecting Swete’s wording onto Greek transmission generally or onto the texts known to the Fathers.
 
 ### What a claim like this needs before it can be believed
 
-An observation about a biblical text that a modern reader makes in an afternoon and no interpreter in three thousand years has made is almost always wrong. The prior against the claim is therefore very heavy, and the responsible first move is not to defend it but to go looking for the people who should have seen it and find out what they said.
+An observation about a biblical text that seems novel is owed a demanding reception search. The responsible first move is not to defend it but to look for readers who confronted the same sequence and determine what they said.
 
 That search is the body of this study. It has four results, and it is worth stating them at the outset so that the reader can watch them being established rather than waiting to be told:
 
@@ -42,7 +42,7 @@ That search is the body of this study. It has four results, and it is worth stat
 
 2.  Abarbanel’s own resolution goes against the claim, and so does the resolution of every other interpreter who addresses the hour. The tradition divides into at least five distinct answers, and they contradict one another; what unites them is that all five refuse the daylight.
 
-3.  The Fathers did not ask the question. Augustine gives Genesis 15 an extended treatment, discusses at length whether the stars can be numbered, and never once asks whether they could be seen. That is a material negative result and it has a specific cause, which the section on the Greek and Latin versions identifies.
+3.  Christian reception is not silent. Augustine does not ask the exact question at the checked loci, but Ambrose reads the going-out as visionary, while Chrysostom and Ephrem supply night–day–evening chronologies. Theodoret gives only a local non-treatment, and Jerome remains unchecked.
 
 4.  The reading that “he brought him forth abroad” means brought out from under the government of the stars, rather than merely out of doors, is attested — and attested far earlier than the medieval commentaries usually credited with it. Philo has it in the first century, attached to a different verse of the same chapter.
 
@@ -64,7 +64,7 @@ Genesis 15 marks time four times. Once implicitly, at verse 5, by commanding an 
 |:-----------|:----------------|:-----------------|:-------------------|
 | Gen 15:5 | *habbet-na hashamaymah usfor hakokhavim* | An act of sight requiring visible stars | After the word of the Lord at 15:1–4; before the covenant rite |
 | Gen 15:12 | *wayhi hashemesh lavo* | The sun approaching its setting; not yet set | After the animals are divided and the birds driven off |
-| Gen 15:17 | *wayhi hashemesh ba’ah wa-alatah hayah* | The sun gone in; thick darkness present | After the four hundred years are foretold |
+| Gen 15:17 | *wayhi hashemesh ba’ah wa-alatah hayah* | A feminine singular Qal active participle agreeing with the sun; thick darkness present | After the four hundred years are foretold |
 | Gen 15:18 | *bayyom hahu* | “In that day” — the whole transaction gathered into one day | The concluding covenant formula |
 
 Two things about this table matter more than they look.
@@ -88,9 +88,9 @@ The four witnesses relevant to a Catholic reader are the Masoretic Hebrew, the S
 
 Read the Septuagint column downward and a different chapter appears. Its sun never finishes setting: at verse 12 it is “about the setting”, and at verse 17 it is still *egineto pros dusmais*, becoming toward its setting.[^4] It has no thick darkness at all. And at verse 18 it says not “in that day” but “there” — a marker of place where the Hebrew and Latin have a marker of time.
 
-The Greek chapter, in other words, does not contain a night. It runs from an unspecified hour through a long afternoon to a dusk that never quite arrives. Whoever read Genesis 15 in Greek was reading a chapter in which the star-promise had no sunset to be measured against, because the sunset in that chapter is never completed and the day is never named. This single fact accounts for a great deal of the patristic silence documented later in this study.
+Swete’s printed Greek therefore makes the close less temporally insistent: it omits the Hebrew darkness phrase and prints a spatial marker at verse 18. That is a finding about this identified base text, not about every Septuagint witness and not an explanation of Christian reception.
 
-A necessary qualification belongs here rather than in an appendix. The *ekei* at verse 18 is the reading of the codex Swete prints, and it is not universal: Augustine, reading Genesis 15 in an Old Latin version made from Greek, quotes verse 18 as *In die illa disposuit Dominus Deus testamentum ad Abram* — “in that day” — which means the Greek exemplar behind his Latin had the temporal phrase.[^5] Augustine’s Latin agrees with Swete’s Greek at verses 11 and 17 and disagrees at 18. The honest statement is therefore narrower than the striking one: the Greek tradition removes the darkness of verse 17 with apparent unanimity among the witnesses consulted here, and removes the “day” of verse 18 in one major line of transmission but not in the line Augustine used.
+A necessary qualification belongs here rather than in an appendix. The *ekei* at verse 18 is the reading of the codex Swete prints, and it is not universal: Augustine, reading Genesis 15 in an Old Latin version made from Greek, quotes verse 18 as *In die illa disposuit Dominus Deus testamentum ad Abram* — “in that day” — which means the Greek exemplar behind his Latin had the temporal phrase.[^5] Augustine’s Latin agrees with Swete’s Greek at verses 11 and 17 and disagrees at 18. The honest statement is therefore narrow: Swete’s identified printing omits the Hebrew darkness phrase at verse 17 and prints “there” at verse 18, while Augustine’s Old Latin preserves “in that day.” This does not identify Augustine’s Greek exemplar or establish a history of Greek transmission.
 
 ### What the Latin does
 
@@ -121,7 +121,7 @@ The forms are these. Romanization is plain and unpointed; the glosses are glosse
 | **Locus** | **Form** | **Gloss and function** |
 |:-------------|:------------------------|:----------------------------|
 | 15:1 | *hayah devar-YHWH el-Abram bammahazeh* | “the word of the Lord came to Abram in the vision”: the frame is announced once, at the head |
-| 15:5 | *wayyotse oto hahutsah* | a causative preterite with the consecutive prefix, “and he brought him out”, with *hahutsah* carrying the directional ending: to the outside |
+| 15:5 | *wayyotse oto hahutsah* | a wayyiqtol form advancing represented action, “and he brought him out”, with *hahutsah* carrying the directional ending: to the outside |
 | 15:5 | *habbet-na hashamaymah* | causative imperative of the root *nbt*, “look”; *hashamaymah* again with the directional ending: heavenward |
 | 15:5 | *usfor hakokhavim im tukhal lispor otam* | “and count the stars, if you are able to count them”: a real conditional attached to a real act |
 | 15:6 | *weheemin baYHWH* | “and he believed in the Lord”: the consecutive chain continues without break |
@@ -499,67 +499,47 @@ This is a genuinely important result for the question as it was put. The reading
 >
 > **Bearing on the hour:** indirect. The astrological reading neither requires nor forbids daylight, because it does not treat the going-out as a change of place at all. But it does supply the missing motive for the sign. If the promise is being sealed against the horoscope, then the stars are named because they are the opposing authority, not because they were conveniently overhead — and the question of whether they were visible stops being the question the verse is about.
 
-## The Fathers did not ask
+## What the checked Christian witnesses do
 
-A study of this kind is obliged to report what it does not find as carefully as what it does. The finding of this section is negative and it is material: among the ancient Christian and Hellenistic-Jewish witnesses reached here, nobody raises the question of the hour at Genesis 15:5 — and several of them come close enough to it that the omission is informative rather than accidental.
+The earlier edition grouped several Christian witnesses under a broad negative. Exact-locus inspection overturns that result. The witnesses do not form one answer, and their differences must be retained.
 
-The result is bounded, and the bounds are stated at the end. It is not a claim that no Father ever mentioned the difficulty. It is a claim about a named set of witnesses, each read at its own locus.
+### Augustine: a bounded non-treatment
 
-### Augustine comes within a sentence of it
+Augustine discusses the impossibility of numbering the stars and allegorizes the sunset and darkness in the covenant vision. At *City of God* XVI.23–24 he does not ask whether the stars could be seen at the hour of the command. That is a negative result at two identified chapters, not a statement about Augustine’s whole corpus or Christian tradition.
 
-Augustine gives Genesis 15 two chapters of the sixteenth book of *The City of God*, and they are not perfunctory. Chapter 23 treats the promise; chapter 24 treats the sacrifice, the ecstasy, and the fire. He handles the stars directly, and what he says about them is exactly the thing that ought to have raised the question:
+### Ambrose: visionary movement
 
-> *… quia nec omnes eas uideri posse credendum est. Nam quanto quisque acutius intuetur, tanto plures uidet. Unde et acerrime cernentibus aliquas occultas esse merito existimatur… Postremo quicumque uniuersum stellarum numerum conprehendisse et conscripsisse iactantur, sicut Aratus uel Eudoxus uel si qui alii sunt, eos libri huius contemnit auctoritas.*[^38]
+Ambrose, *De Abraham* II.8.48, treats Abram’s being led outside as a visionary movement beyond bodily confines. He does not settle a waking hour. His reading instead supplies a concrete ancient instance of the vision answer and prevents the study from treating Christian reception as silent.
 
-Augustine is asking whether the stars are countable. He decides they are not, and adds the empirical observation that a sharper eye sees more of them, and then reaches for two Greek astronomers to be refuted. He is, in other words, thinking about the visibility of stars in the very sentence where the visibility of stars is the issue — and the thought that they might not have been visible at that hour does not arise.
+### Chrysostom and Ephrem: an interval
 
-Nor does it arise in chapter 24, where he quotes the whole of verses 7 to 21 and comments on the temporal markers. He allegorizes them: “that about the going down of the sun great fear fell upon Abraham and a horror of great darkness, signifies that about the end of this world believers shall be in great perturbation and tribulation”; and the fire between the pieces “signifies that at the end of the world the carnal shall be judged by fire”. And he closes the whole with the sentence that explains everything: *Haec omnia in uisu facta diuinitus adque dicta sunt* — gloss: *all these things were divinely done and said in a vision*.[^39]
+John Chrysostom, *Homilies on Genesis* 36.13 and 37.3–6, places the initial divine appearance by night and the sacrifice through the following day to sunset. Ephrem’s *Commentary on Genesis* XII.2–5 is more explicit: the words come at night, the commanded work occupies the day from dawn to evening, and the later manifestation occurs that evening. Both witnesses resolve the sequence by supplying elapsed time that Genesis does not narrate. Their readings answer the difficulty without becoming a single patristic rule.
 
-That is the whole mechanism. Augustine’s Genesis 15 is a vision, its sunset is the end of the world, and its clock is not a clock. He had no reason to ask what time it was, because in his reading nothing in the chapter happens at a time.
+### Theodoret and the remaining limit
 
-### Philo has already dissolved the question
+Theodoret’s *Questions on Genesis* 66–67 does not address the hour. That is only a local negative. Jerome’s authenticated *Hebrew Questions on Genesis* remains unchecked, as do wider portions of the authors named here. No author-wide or tradition-wide silence follows from this bounded corpus.
 
-The same structure, three centuries earlier and more thoroughly. Philo’s treatise on this chapter reads the going-out as the soul’s exit from the body and the senses; the setting sun as the setting of the human intellect; the trance as prophetic possession. There is no place in that reading where an hour could be asked about.
+### Philo dissolves the clock
 
-And Philo, like Augustine, comes close. Immediately after quoting the command to count the stars he writes: “But if it is impossible to find out the number of the stars which are perceptible by the outward senses, how much more so must it be to count those which are discernible only by the intellect?” The countability problem is raised; the visibility problem is not.[^40]
+Philo’s treatise on this chapter reads the going-out as the soul’s exit from the body and the senses, the setting sun as the setting of the human intellect, and the trance as prophetic possession. Immediately after the command to count the stars he considers their uncountability, not the hour at which they could be seen.[^38] His allegorical treatment remains useful evidence for one reception of the temporal markers. It no longer supplies a cause for an alleged patristic silence.
 
-### Josephus removes the evidence entirely
+### Josephus removes the evidence
 
-Josephus retells the chapter in the *Antiquities*, and his paraphrase is worth quoting in full because of what is missing from it:
+Josephus’ identified retelling retains the posterity-like-stars comparison and the commanded sacrifice while omitting the command to go outside and look and all the temporal markers that generate the question.[^39] This is a finding about that retelling’s architecture, not evidence that the question was absent from Christian tradition.
 
-> And God promised, that he should have a son, and that his posterity should be very numerous; insomuch, that their number should be like the stars. When he heard that, he offered a sacrifice to God, as he commanded him.[^41]
+### The Targums keep the sequence
 
-There is no bringing-out, no command to look, no counting, no sunset, no darkness, and no “that day”. Josephus has converted a demonstration into an assertion and deleted the chapter’s entire clock. Whatever his reasons, the effect is that the earliest continuous retelling of Genesis 15 available to this study contains none of the elements from which the difficulty is built.
+Targum Onkelos renders the three controlling markers closely. Targum Pseudo-Jonathan expands the dread and darkness at verses 12 and 17 but inserts no night before verse 5, morning after verse 6, or explicit interval between the promise and the rite.[^40] The negative is bounded to those inspected loci. It does not prove that every targumic witness preserves the same sequence.
 
-### The Targums keep the sequence and add nothing
+### Later Catholic commentators
 
-This is the most probative of the negative results, because the Aramaic translators were not shy.
+Cornelius a Lapide explicitly infers night from the command at verse 5: *erat ergo tunc nox*. At verse 12 he explains Abram’s deep sleep by daytime labour. Read together, the notes imply a night, a following day of work, and a later sunset, although he does not spell out that chronology or reconcile it with “in that day.”[^41]
 
-Targum Onkelos renders the three markers closely: *vahavah shimsha lemei’al* at verse 12 (the sun about to enter), *vahavah shimsha allat* at verse 17 (the sun entered), with the darkness present. Targum Pseudo-Jonathan is wildly expansive at verse 12, converting the dread and darkness into the four kingdoms of Babylon, Media, Greece, and Persia; and at verse 17 it has Abram see Gehinnom ascending with flaming coals.[^42]
+The 1609 Douay apparatus has no note at verse 5. Haydock likewise supplies no note there after using the verse at 15:1 as evidence that Abram was awake. These are local publication-apparatus negatives. They remain worth reporting without making them stand for Catholic reception as a whole.
 
-A translator who will insert four world empires into verse 12 is a translator who inserts what he thinks the text needs. Neither Targum inserts a night before verse 5, a morning after verse 6, or any interval whatever between the promise and the rite. Both keep the sequence exactly as the Hebrew has it.
+### What the versional evidence cannot explain
 
-### The later Catholic commentators notice everything except this
-
-Cornelius a Lapide is the test case, because he does raise the hour — and then does nothing with it. His note on verse 5 opens:
-
-> *Numera stellas: erat ergo tunc nox, non illunis, sed innubis, serena et stellata.*[^43]
-
-Gloss: *Number the stars: it was therefore then night — not moonless, but cloudless, clear and starry.*
-
-*Erat ergo tunc nox.* The inference is exactly the one the daylight claim denies, and a Lapide draws it in four words, from the command alone, without consulting verse 12. Seven verses later he explains Abram’s deep sleep by “excessive daytime labour”. He has therefore committed himself to a night, a following day of work, and an evening — a two-day chronology — inside a chapter that ends “in that day”, and he never says so. The two notes stand several columns apart under separate verse headings, and nothing in his commentary brings them into contact.
-
-The others are simply silent. The 1609 Douay Old Testament annotates verses 6, 9, and 13 on this opening and prints nothing at verse 5. Challoner’s revision prints no note on the chapter at all beyond its one-line argument. Haydock annotates verses 1, 2, 6, 8, 9, 12, 13, 14, and 16 — and skips verse 5 entirely, having already used it, at verse 1, as his proof that Abram was awake.
-
-### The bound of this negative result
-
-> **What the negative result covers, and what it does not**
->
-> **Covered, each read at its own locus:** Philo, *Quis rerum divinarum heres sit* (chapters XVI–XVII, XX, LI–LIII); Josephus, *Antiquities* I.7.2; Targum Onkelos and Targum Pseudo-Jonathan on Genesis 15:5, 12, 17; Augustine, *De civitate Dei* XVI.23–24 in both the CSEL Latin and the Dods English; the 1609 Douay Old Testament apparatus on Genesis 15; Cornelius a Lapide on Genesis 15:1, 5, 10, 11, 12, and 17; Haydock’s annotations on Genesis 15. None of these raises the conflict between the star-promise and the chapter’s own sunset.
->
-> **Not covered, and named so that no clause of this study depends on them:** Jerome’s *Hebrew Questions on Genesis*; Ambrose, *De Abraham*; John Chrysostom’s homilies on Genesis; Theodoret’s *Quaestiones in Genesim*; Ephrem; the Glossa ordinaria; Rupert of Deutz; Pererius, Tostatus, and Oleaster. Ambrose and Theodoret were reached only through citations in a Lapide and in the 1609 Douay margin, and are reported here only as those authors report them. Jubilees, the Genesis Apocryphon, and Targum Neofiti were not reached at all.
->
-> **What the covered set does establish:** that the difficulty was invisible to the ancient Christian tradition for a specific and identifiable reason, and not by oversight. The Greek text removed the darkness of verse 17; the Old Latin made from it did the same; and the dominant Christian reading of the chapter — Philo’s, and Augustine’s after him — converted every temporal marker in it into an allegory of the soul or of the end of the world. A clock that has been turned into a symbol cannot be read for the time.
+Swete’s identified Greek printing weakens the chapter’s closing temporal chain, but Augustine’s Old Latin retains “in that day.” Chrysostom supplies one identified Greek Christian reception, while Ambrose and Ephrem supply different Latin and Syriac receptions. These witnesses do not permit the claim that one Greek form explains patristic silence. They permit only the more modest finding that several Christian readers resolved or reframed the sequence in different ways.
 
 ## Where the promise recurs
 
@@ -592,7 +572,7 @@ That is why the daylight problem neither survives nor is dissolved by the recurr
 
 Three further observations follow from the table and are worth keeping.
 
-**The formula begins with dust, not stars.** Genesis 13:16 has already promised a seed as the dust of the earth, with a conditional of exactly the same shape — “if any man be able to number the dust”. The move from dust to stars at 15:5 is therefore an escalation within a series, and both members of the series work by proposing a count that cannot be completed. Radak notices the progression and takes both as hyperbole; the Tur reads the two as pointing to Esau and Jacob respectively, the one trodden underfoot like dust and the other untouchable like a star.[^44] Neither construal has anything to do with the hour.
+**The formula begins with dust, not stars.** Genesis 13:16 has already promised a seed as the dust of the earth, with a conditional of exactly the same shape — “if any man be able to number the dust”. The move from dust to stars at 15:5 is therefore an escalation within a series, and both members of the series work by proposing a count that cannot be completed. Radak notices the progression and takes both as hyperbole; the Tur reads the two as pointing to Esau and Jacob respectively, the one trodden underfoot like dust and the other untouchable like a star.[^42] Neither construal has anything to do with the hour.
 
 **The one recurrence that is a demonstration is a fulfilment, not a promise.** Deuteronomy 1:10 says “you are *this day* as the stars of heaven, for multitude” — and Moses is pointing at a crowd standing in front of him, in daylight, in the wilderness. The comparison has become checkable, and what is checked is the people, not the sky. The direction of the sign has reversed.
 
@@ -600,7 +580,7 @@ Three further observations follow from the table and are worth keeping.
 
 ### One recurrence that repays a second look
 
-Exodus 32:13 is the only recurrence spoken by a man to God, and Moses uses it as a legal instrument: at the golden calf, he reminds God of the oath sworn “by thy own self” and asks that the sentence be revoked. The Vulgate’s own apparatus in the Hetzenauer printing gathers the covenant of Genesis 15:18 to a chain of later passages — Genesis 12:7, 13:14, 26:4, Deuteronomy 34:4, 3 Kings 4:21, and 2 Paralipomenon 9:26 — but not to Exodus 32:13.[^45] The list is a list of land promises. It is a small sign of how the chapter was remembered: Genesis 15 entered the Latin cross-reference tradition as the *land* covenant, with its star-promise carried under verse 5 and pointed not at any other star text but at Romans 4:18.
+Exodus 32:13 is the only recurrence spoken by a man to God, and Moses uses it as a legal instrument: at the golden calf, he reminds God of the oath sworn “by thy own self” and asks that the sentence be revoked. The Vulgate’s own apparatus in the Hetzenauer printing gathers the covenant of Genesis 15:18 to a chain of later passages — Genesis 12:7, 13:14, 26:4, Deuteronomy 34:4, 3 Kings 4:21, and 2 Paralipomenon 9:26 — but not to Exodus 32:13.[^43] The list is a list of land promises. It is a small sign of how the chapter was remembered: Genesis 15 entered the Latin cross-reference tradition as the *land* covenant, with its star-promise carried under verse 5 and pointed not at any other star text but at Romans 4:18.
 
 ## Paul, and whether the hour bears on him
 
@@ -629,7 +609,7 @@ The Latin tradition confirms this by its own habits. Hetzenauer’s apparatus at
 
 Romans 4:18–21 does not merely report that Abraham believed. It characterizes the believing, and it characterizes it by contrast with appearances:
 
-> Who against hope believed in hope; that he might be made the father of many nations, according to that which was said to him: So shall thy seed be. And he was not weak in faith. Neither did he consider his own body, now dead (whereas he was almost an hundred years old), nor the dead womb of Sara. In the promise also of God he staggered not by distrust: but was strengthened in faith, giving glory to God.[^46]
+> Who against hope believed in hope; that he might be made the father of many nations, according to that which was said to him: So shall thy seed be. And he was not weak in faith. Neither did he consider his own body, now dead (whereas he was almost an hundred years old), nor the dead womb of Sara. In the promise also of God he staggered not by distrust: but was strengthened in faith, giving glory to God.[^44]
 
 The logic of the passage is that Abraham’s faith was exercised against the evidence of his senses: a body as good as dead, a womb as good as dead. Paul does not add a third item to that list. But it is at least legible that a scene in which the promise is sealed by a sign that cannot be inspected would have the same shape as the faith Paul describes — and that a scene in which the sign is plainly overhead would have a different one.
 
@@ -705,19 +685,19 @@ This study’s reply is threefold and is offered as a reply, not a refutation. F
 
 > **Findings that would overturn or materially weaken the judgment**
 >
-> **Would overturn it.** A marked temporal transition between Genesis 15:6 and 15:9 in any ancient witness. If a Targum, a Greek recension, an Old Latin manuscript, the Samaritan Pentateuch, or a Qumran copy read “and on the morrow” or “and it was morning” at verse 9, the intervening day would be textual rather than inferred and the daylight reading would be finished. Targum Neofiti, the Genesis Apocryphon, Jubilees 14, and the Samaritan Pentateuch were *not* reached by this study, and any of them could contain such a reading.
+> **Would overturn it.** A marked temporal transition between Genesis 15:6 and 15:9 in any ancient witness. If a Targum, a Greek recension, an Old Latin manuscript, the Samaritan Pentateuch, or a Qumran copy read “and on the morrow” or “and it was morning” at verse 9, the intervening day would be textual rather than inferred and the daylight reading would be finished. Targum Neofiti, the surviving Genesis Apocryphon material, and the Samaritan Pentateuch remain unreached. *Jubilees* 14 was inspected as rewritten Scripture: it separates the promise from the later sacrifice but does not fix the hour of the look.
 >
-> **Would materially weaken it.** A pre-medieval witness — patristic, targumic, Qumranic, or Hellenistic-Jewish — that treats Genesis 15:5 as a distinct night episode. The intervening-day reading is presently attested no earlier than Ibn Ezra in the twelfth century, which is why this study can describe it as a supplement. An ancient attestation would make it a preserved tradition instead.
+> **Would materially weaken it.** A pre-medieval witness — patristic, targumic, Qumranic, or Hellenistic-Jewish — that treats Genesis 15:5 as a distinct night episode. Chrysostom and Ephrem now supply ancient night–day–evening sequences. They materially establish that the interval reading is ancient, while the interval remains a supplement to the biblical narration rather than an explicit temporal marker in it.
 >
 > **Would weaken one supporting argument without touching the judgment.** A critical apparatus showing that *ekei* at Genesis 15:18 is secondary in the Greek. The Göttingen Genesis and Rahlfs’ text were not collated for this study; Augustine’s Old Latin already witnesses against *ekei*, and a critical judgment against it would remove one of the two Greek de-temporalizations this study reports. The absence of the darkness at verse 17 would stand.
 >
-> **Would not change it.** Further attestations of the astrological reading of “outside”; further Fathers found to be silent; further recurrences of the star-formula. None of these bears on the sequence, which is where the judgment lives.
+> **Would not change it.** Further attestations of the astrological reading of “outside”; further bounded Christian receptions; further recurrences of the star-formula. None of these bears on the sequence, which is where the judgment lives.
 
 ### A last word on what this is and is not
 
 The question this study set out to answer was a small one, and the reader is entitled to a plain statement of how much has been settled.
 
-What has been settled: that Genesis 15 puts the star-promise before its own sunset; that this was noticed, and stated as a dilemma, by Abarbanel; that no ancient version or Targum supplies an interval; that the Christian tradition did not raise the question and had a specific reason not to; and that the reading of “outside” as a deliverance from astral fate is attested from the first century onward.
+What has been settled: that Genesis 15 puts the star-promise before its own sunset; that this was noticed, and stated as a dilemma, by Abarbanel; that no checked ancient version or Targum supplies an explicit interval; that Ambrose, Chrysostom, and Ephrem preserve distinct Christian responses while no tradition-wide silence claim survives; and that the reading of “outside” as a deliverance from astral fate is attested from the first century onward.
 
 What has not been settled, and cannot be by this method: what happened. Genesis 15 is a text about a prophetic encounter, and the four traditions that have read it most closely disagree about whether its topography is topography at all. A study of the chapter’s clock can establish what the chapter says about its own hours. It cannot establish that those hours were hours, and this one does not claim to.
 
@@ -729,24 +709,30 @@ Every witness on which a claim in this study rests, with the locus at which it w
 
 | **Witness** | **Text / source status** | **Interpretive contribution** |
 |:--------------|:------------------------|:--------------------------|
-| Masoretic Hebrew, Genesis 15 | Consonantal and pointed text of 15:1–21 read at the Sefaria digital text; not collated against a printed Masoretic edition or a manuscript facsimile | The verbal chain, the directional endings at 15:5, the imminence/completion contrast between 15:12 and 15:17, and *bayyom hahu* at 15:18 |
+| Masoretic Hebrew, Genesis 15 | Consonantal and pointed text checked at Genesis 15:5, 12, and 17–18 against the identified Kittel–Beer 1909 page images; not collated against a manuscript facsimile or modern critical edition | The verbal chain, the directional endings at 15:5, the infinitive construct at 15:12, the active participle at 15:17, and *bayyom hahu* at 15:18 |
 | Septuagint, Swete’s edition, volume I (Cambridge, 4th ed. 1909) | Genesis 15:1–21 read in the printed text and foot apparatus by way of the archive.org text layer of that volume, checked against an independently compiled database of the same edition | *anablepson* at 15:5; *sunekathisen* at 15:11; *ekstasis* at 15:12; the absence of any darkness at 15:17; *ekei* at 15:18; no apparatus variant at 5, 12, 17, or 18 |
 | Clementine Vulgate, Hetzenauer 1914 | Genesis 15:1–21 read from a 200 dpi page image of numbered scan page 0012, retained as a tracked artifact with a checked transcription | *per visionem*; *eduxitque eum foras*; *suspice caelum*; the *occumberet*/*occubuisset* tense contrast; *caligo tenebrosa*; *in illo die*; the marginal summary and the foot cross-references |
 | Douay–Rheims, Challoner revision | Genesis 15 and every other English scriptural quotation taken from the registered public-domain witness in its Vulgate numbering; the divergence table for the 1899 American edition was checked and lists no verse used here | All English scripture in this study; the chapter argument naming the chapter a vision |
 | Douay Old Testament, 1609, volume 1 | Genesis 15 with its marginal notes and the annotations following the chapter, read in the archive.org text layer of the Princeton copy | The pre-Challoner English wording of 15:5; the absence of any note at verse 5; the citation of Theodoret at verse 9 and of Hilary and Ambrose at verse 6 |
 | Targum Onkelos, Genesis 15:5, 12, 17 | Aramaic read at the Sefaria digital text | Close rendering of the three markers with no interval inserted |
 | Targum Pseudo-Jonathan, Genesis 15:5, 12, 17 | Aramaic and Etheridge’s public-domain English of 1862 | Extensive expansion at 15:12 and 15:17 with no temporal interval inserted anywhere in the chapter |
+| Syriac Genesis 15, dated peshitta.eu delivery | Inspected web text; the textual base is unidentified | Delivery-specific preservation of the outside, look, count, sunset, and “on that day” sequence; no claim about the Peshitta tradition generally |
+| *Jubilees* 14 | R. H. Charles’s 1913 public-domain English | Rewritten-scripture reception separating the star promise from the sacrifice without identifying the hour of the look |
 
 ### Ancient Jewish and Christian witnesses
 
 | **Witness** | **Text / source status** | **Interpretive contribution** |
 |:--------------|:------------------------|:--------------------------|
 | Philo, *Quis rerum divinarum heres sit*, chs. XVI–XVII, XX, LI–LIII | Yonge’s public-domain English (Bohn, 1854), vol. II; Greek not collated | The going-out read as the soul’s exit from body and senses; the Chaldean star-fatalism reading at 15:7; the four kinds of trance; the sunset allegorized as the setting of the human mind |
-| Josephus, *Antiquitates Judaicae* I.7.2 and I.8.2 | Whiston’s public-domain English, read in the Penelope transcription; Greek not collated | A paraphrase of Genesis 15 that deletes the command to look and every temporal marker in the chapter; and, separately, the claim that Abram taught arithmetic and astronomy to the Egyptians |
+| Josephus, *Antiquitates Judaicae* I.10.3 and I.8.2 | Whiston’s public-domain English, read in the Penelope transcription; Greek not collated | A paraphrase of Genesis 15 that deletes the command to look and every temporal marker in the chapter; and, separately, the claim that Abram taught arithmetic and astronomy to the Egyptians |
 | b. Shabbat 156a | Vocalized Aramaic and facing English of the William Davidson edition (CC BY-NC) | *tse me’itstagninut shellekha*: the derivation of “Israel has no constellation” from *vayyotse oto hahutsah* |
 | b. Pesachim 6b | Vocalized Aramaic and facing English of the William Davidson edition (CC BY-NC) | *ein muqdam ume’uhar batorah* and Rav Pappa’s limitation of it to two matters |
 | Genesis Rabbah 44:10 and 44:12 | The Sefaria Midrash Rabbah (2022, CC BY) with the Torat Emet Hebrew | Three readings of “outside” side by side — the streets of heaven, above the vault, prophet-not-astrologer — and Abram’s complaint that his constellation presses him |
 | Augustine, *De civitate Dei* XVI.23–24 | Hoffmann’s CSEL 40 Latin and Dods’ 1871 English, both registered in this repository | The countability argument with Aratus and Eudoxus; the allegorized sunset; *Haec omnia in uisu facta*; an Old Latin text agreeing with the Greek at 15:11 and 15:17 and with the Hebrew at 15:18 |
+| Ambrose, *De Abraham* II.8.48 | Latin exact locus in *Patrologia Latina* 14 | The going-out as visionary movement beyond bodily confines |
+| John Chrysostom, *Homilies on Genesis* 36.13 and 37.3–6 | Copyrighted English consulted for verification only | The first appearance by night and the sacrifice through the following day to sunset |
+| Ephrem, *Commentary on Genesis* XII.2–5 | Copyrighted English consulted for verification only | An explicit night–day–evening chronology |
+| Theodoret, *Questions on Genesis* 66–67 | Exact loci inspected | A bounded local non-treatment, not author-wide silence |
 
 ### Medieval and later Jewish commentators
 
@@ -773,7 +759,7 @@ Every witness on which a claim in this study rests, with the locus at which it w
 
 ### Reported only, not read
 
-The following are named in this study solely as another author reports them, and no claim rests on their own wording: Ambrose, *De Abraham* (reported by a Lapide and by the 1609 Douay annotator); Theodoret, *Quaestiones in Genesim* (reported by the 1609 Douay margin); Rabbi Nissim of Gerona, the Ran (reported by Abarbanel); Alonso Tostado, Benedictus Pererius, and Oleaster (reported by a Lapide); the verses attributed to Orpheus in Clement’s *Stromateis* (reported by a Lapide); Nicholas Abram and Tournemine (reported by Haydock).
+The following are named in this study solely as another author reports them, and no claim rests on their own wording: Rabbi Nissim of Gerona, the Ran (reported by Abarbanel); Alonso Tostado, Benedictus Pererius, and Oleaster (reported by a Lapide); the verses attributed to Orpheus in Clement’s *Stromateis* (reported by a Lapide); Nicholas Abram and Tournemine (reported by Haydock).
 
 ## Scope, Method, and Qualifications
 
@@ -803,13 +789,15 @@ Each witness was read at its own locus, in its own language where the argument t
 
 The hierarchy applied was: the biblical text in its identified editions first; then ancient versions and Targums; then ancient Jewish and Christian commentary; then medieval and later commentary; then modern editorial apparatus. A commentator’s report of an earlier authority was treated as evidence about the commentator, not about the authority.
 
-Two collations were performed. The Latin of Genesis 15 was read from a page image of the Hetzenauer printing rather than from a transcription. Abarbanel’s seventh question, on which the central historical finding of this study depends, was read in two independent digital transcriptions of the Warsaw 1862 printing and found to agree word for word.
+Three collations were performed. The Hebrew forms at Genesis 15:5, 12, and 17–18 were verified against the identified pages of the Kittel–Beer 1909 printing. The Latin of Genesis 15 was read from a page image of the Hetzenauer printing rather than from a transcription. Abarbanel’s seventh question, on which the central historical finding of this study depends, was read in two independent digital transcriptions of the Warsaw 1862 printing and found to agree word for word.
 
 ### Limitations
 
-**Text-critical.** The Septuagint claims in this study are claims about the text Swete prints and the witnesses in his apparatus. Rahlfs’ edition, the Göttingen *Genesis*, and Wevers’ notes on the Greek text were not consulted. The reading *ekei* at 15:18 is reported as the reading of that edition and is explicitly qualified by Augustine’s contrary Old Latin witness. The Hebrew was read in a digital text and not collated against a printed Masoretic Bible or a manuscript facsimile.
+**Text-critical.** The Septuagint claims in this study are claims about the text Swete prints and the witnesses in his apparatus. Rahlfs’ edition, the Göttingen *Genesis*, and Wevers’ notes on the Greek text were not consulted. The reading *ekei* at 15:18 is reported as the reading of that edition and is explicitly qualified by Augustine’s contrary Old Latin witness. The Kittel–Beer pages verify the forms printed at the controlling loci, but that printing was not collated against a manuscript facsimile or a modern critical Hebrew edition.
 
-**Not reached.** Jubilees 14; the Genesis Apocryphon and any other Qumran witness to Genesis 15; Targum Neofiti and the Fragment Targums; the Samaritan Pentateuch; the Peshitta; Jerome’s *Hebrew Questions on Genesis*; Ambrose’s *De Abraham*; Chrysostom’s homilies on Genesis; Theodoret’s *Quaestiones in Genesim*; the Glossa ordinaria; and the sixteenth-century Catholic commentators a Lapide names. Any of the first five could contain a temporal marker between 15:6 and 15:9 that would settle the question against the claim, and the synthesis says so.
+**Not reached.** The Genesis Apocryphon and any other Qumran witness to Genesis 15; Targum Neofiti and the Fragment Targums; the Samaritan Pentateuch; Jerome’s *Hebrew Questions on Genesis*; the Glossa ordinaria; and the sixteenth-century Catholic commentators a Lapide names. Any of the first three could contain a temporal marker between 15:6 and 15:9 that would settle the question against the claim, and the synthesis says so.
+
+**Newly bounded witnesses.** A dated Syriac web delivery was inspected, but its textual base is unidentified; it supports only a claim about that delivery, not the Peshitta tradition. *Jubilees* 14 was inspected as rewritten Scripture rather than as a textual version. Ambrose, Chrysostom, and Ephrem supply exact-locus positive reception evidence; Theodoret supplies only a local negative. Their deliveries still await reusable normalization.
 
 **Optical character recognition.** The texts of Cornelius a Lapide, of the 1609 Douay Old Testament, of Haydock, of Swete, of Philo in Yonge’s translation, and of Josephus in Whiston’s were read in digital text layers of scanned printings. Long-*s* orthography and ligatures in the a Lapide and 1609 Douay texts were normalized when quoting; no word was altered. Passages quoted from these witnesses were read in enough surrounding context to establish that the sense is continuous, but were not collated against page images. This is a real limitation and it bears most heavily on the a Lapide quotations, which are short and decisive.
 
@@ -847,17 +835,31 @@ Editions are identified as they were used. Where a work was read in a digital tr
 
 -   Targum Onkelos and Targum Pseudo-Jonathan on Genesis 15. Aramaic read at Sefaria; Pseudo-Jonathan also in J. W. Etheridge, *The Targums of Onkelos and Jonathan Ben Uzziel on the Pentateuch* (London, 1862). Public domain.
 
+-   Rudolf Kittel and Paul Kahle, eds., *Biblia Hebraica*, Genesis 15, Kittel–Beer 1909 printing. The controlling loci were checked against the identified page images. Public domain.
+
+-   Syriac Peshitta Genesis 15, dated peshitta.eu delivery. The textual base is unidentified; used only as delivery-specific comparison evidence.
+
 ### Ancient witnesses
 
 -   Philo of Alexandria, *Quis rerum divinarum heres sit*, in *The Works of Philo Judaeus*, trans. C. D. Yonge, volume II (London: Bohn, 1854). Read in the archive.org text layer. Public domain.
 
--   Flavius Josephus, *Antiquitates Judaicae* I.7.2, trans. William Whiston, read in the University of Chicago (Penelope) transcription. Public domain.
+-   Flavius Josephus, *Antiquitates Judaicae* I.10.3, trans. William Whiston, read in the University of Chicago (Penelope) transcription. Public domain.
 
 -   *Babylonian Talmud*, tractates Shabbat and Pesachim. Vocalized Aramaic and facing English of the William Davidson edition, at Sefaria. The translation is licensed CC BY-NC and is not offered under this project’s licence.
 
 -   *Bereshit Rabbah* 44:10 and 44:12. English of *The Sefaria Midrash Rabbah* (2022), licensed CC BY; Hebrew of the Torat Emet text.
 
 -   Augustine, *De civitate Dei* XVI.23–24. Latin in Emanuel Hoffmann, ed., *CSEL* 40 (Vienna, 1899–1900); English in Marcus Dods, trans., *The City of God* (Edinburgh, 1871). Both registered in this repository; both public domain.
+
+-   Ambrose, *De Abraham* II.8.48, Latin in *Patrologia Latina* 14. Exact locus inspected; public domain.
+
+-   John Chrysostom, *Homilies on Genesis* 36.13 and 37.3–6. Copyrighted English consulted for verification only; no wording reproduced.
+
+-   Ephrem the Syrian, *Commentary on Genesis* XII.2–5. Copyrighted English consulted for verification only; no wording reproduced.
+
+-   Theodoret of Cyrus, *Questions on Genesis* 66–67. Consulted only for the bounded local negative reported in the text.
+
+-   *Jubilees* 14, in R. H. Charles’s 1913 public-domain English; treated as rewritten Scripture, not as a version of Genesis.
 
 ### Jewish commentary
 
@@ -971,20 +973,16 @@ Several of the Jewish sources above were read through Sefaria’s digital librar
 
 [^37]: Philo, *Quis rerum divinarum heres sit*, chapter XX, Yonge. The etymological aside in the same passage — that the name of the Chaldeans is synonymous with *homalotes*, evenness or regularity, because the regular motion of the heavenly bodies persuaded them to read omens — is Philo’s.
 
-[^38]: Augustine, *De civitate Dei* XVI.23, in the Hoffmann CSEL 40 Latin registered in this repository. Marcus Dods’ 1871 English, also registered here, renders the passage: “it is not to be believed that all of them can be seen. For the more keenly one observes them, the more does he see. So that it is to be supposed some remain concealed from the keenest observers… Finally, the authority of this book condemns those like Aratus or Eudoxus, or any others who boast that they have found out and written down the complete number of the stars.”
+[^38]: Philo, *Quis rerum divinarum heres sit*, chapters XVI–XVII, XX, LI–LIII, in Yonge’s public-domain English. The checked extent supports this local result; it does not establish Philo’s treatment of every possible related locus.
 
-[^39]: Augustine, *De civitate Dei* XVI.24, CSEL 40; the English clauses are Dods’. Augustine’s Old Latin text of the chapter, quoted in full at that place, has *et consedit illis Abram* at verse 11 and *flamma facta est* without any darkness at verse 17, agreeing with the Greek.
+[^39]: Josephus, *Antiquities* I.10.3 in Whiston’s numbering, read in the registered public-domain witness.
 
-[^40]: Philo, *Quis rerum divinarum heres sit*, chapter XVII, Yonge. In the same chapter Philo describes the seed as “like the ethereal firmament which thou beholdest… full of unshadowed and pure brilliancy (for night is driven away from heaven, and darkness from virtue)” — a sky, notably, from which night has been removed.
+[^40]: Targum Onkelos and Targum Pseudo-Jonathan on Gen 15:5, 12, and 17, read in the Aramaic and, for Pseudo-Jonathan, in J. W. Etheridge’s public-domain English of 1862.
 
-[^41]: Josephus, *Antiquitates Judaicae* I.7.2, in William Whiston’s public-domain translation, read in the Penelope (University of Chicago) transcription. The passage continues with the animals, the birds of prey, and the four hundred years, and never mentions a sunset, a darkness, or a day.
+[^41]: A Lapide on Gen 15:5 and 15:12, 1700 printing, read in the registered OCR-level witness; the text remains uncollated against page images.
 
-[^42]: Targum Onkelos and Targum Pseudo-Jonathan on Gen 15:5, 12, 17, read in the Aramaic and, for Pseudo-Jonathan, in J. W. Etheridge’s public-domain English of 1862. Etheridge renders Pseudo-Jonathan at 15:12: “And when the sun was nearing to set, a deep sleep was thrown upon Abram: and, behold, four kingdoms arose to enslave his children”; and at 15:17: “And when the sun had set there was darkness.”
+[^42]: Radak on Gen 15:5 (Munk’s English, Creative Commons Attribution): “whereas previously G’d had compared Avram’s offspring as being ‘like the dust of the earth,’ now it is described as ‘as numerous as the stars in heaven.’ Both statements, of course, have to be understood as exaggerations.” Tur HaArokh on Gen 15:5, in the public-domain Hanover 1838 Hebrew: *ella ramaz lo leYa’aqov ve’Esav, ki zeh yihyeh lema’lah kakokhavim vezeh yihyeh lemattah ke’afar ladush* — gloss: rather, He hinted to him at Jacob and Esau, that this one would be above like the stars and this one below like dust to be trodden.
 
-[^43]: A Lapide on Gen 15:5, 1700 printing, orthography normalized. He immediately continues with the countability argument and supports it from Augustine, reproducing the sentence about the keener eye with a small addition of his own (*tanto plures in coelo videt*) and citing *De civitate Dei* book 16; the chapter number in the copy read here is not legible with confidence and is not reported. He adds that God bids Abram number the stars “both because he was an astronomer, and because he was accustomed to look up at them”, and cites the verses attributed to Orpheus in the fifth book of Clement’s *Stromateis* in which Abraham is called an astrologer.
+[^43]: The cross-reference apparatus at the foot of Hetzenauer’s page for Genesis 15 lists, at verse 18: *Sup 12,7; 13,14; Inf 26,4; Dt 34,4; 1 Rg 4,21; 2 Par 9,26* — using the Vulgate book names, in which 1 Rg is 3 Kings of the Douay reckoning. Whether that apparatus is Hetzenauer’s own or inherited from earlier Clementine printings was not determined for this study.
 
-[^44]: Radak on Gen 15:5 (Munk’s English, Creative Commons Attribution): “whereas previously G’d had compared Avram’s offspring as being ‘like the dust of the earth,’ now it is described as ‘as numerous as the stars in heaven.’ Both statements, of course, have to be understood as exaggerations.” Tur HaArokh on Gen 15:5, in the public-domain Hanover 1838 Hebrew: *ella ramaz lo leYa’aqov ve’Esav, ki zeh yihyeh lema’lah kakokhavim vezeh yihyeh lemattah ke’afar ladush* — gloss: rather, He hinted to him at Jacob and Esau, that this one would be above like the stars and this one below like dust to be trodden.
-
-[^45]: The cross-reference apparatus at the foot of Hetzenauer’s page for Genesis 15 lists, at verse 18: *Sup 12,7; 13,14; Inf 26,4; Dt 34,4; 1 Rg 4,21; 2 Par 9,26* — using the Vulgate book names, in which 1 Rg is 3 Kings of the Douay reckoning. Whether that apparatus is Hetzenauer’s own or inherited from earlier Clementine printings was not determined for this study.
-
-[^46]: Rom 4:18–20, Douay–Rheims (Challoner). None of these verses is listed among the divergences between the vendored witness and the 1899 American edition.
+[^44]: Rom 4:18–20, Douay–Rheims (Challoner). None of these verses is listed among the divergences between the vendored witness and the 1899 American edition.

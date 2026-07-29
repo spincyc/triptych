@@ -49,6 +49,7 @@ All online witnesses were checked on 2026-07-24 by the authoring agent. "Verifie
 - The ascent/confession seam is marked where Augustine X.6 turns from the definition of sacrifice to the redeemed city and the altar, and again where section 6 introduces received teaching; no revealed claim is presented as a conclusion of the philosophical thread.
 - The Romans 1 reading asserts Paul's stated order only; no claim about the salvation or culpability of any people or person.
 - Aquinas's natural-law claim about sacrifice is kept generic; the positive determination of rites (85.1 ad 1) is quoted precisely to close the door on naturally-required-rite claims.
+- Augustine X.6 and CCC 2100 support Christ's unique saving oblation and the Church's dependent participation in it; they are not presented as establishing that the Cross pays a creaturely creation-debt. The acting subject is identified as the incarnate Son freely offering his human life, avoiding a person/nature ambiguity.
 - Dignitatis humanae is quoted with its own balancing clause (the untouched moral duty) and its own ground (the free nature of religious acts); no position is taken on its juridical applications or reception debates.
 - The parity-consulted GPT scope record was used for topic parity only; the GPT edition's sections and prose were not read, and its current-law coverage was deliberately not replicated.
 - The essay's efficacy claims for worship are confined to II-II.81.7 (perfection of the worshipper); nothing is claimed about sacramental efficacy ex opere operato.

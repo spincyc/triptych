@@ -19,8 +19,8 @@ establishes. Checks were performed on 2026-07-26 unless stated otherwise.
 
 | Claim | Witness and locus | Route | Limit |
 | --- | --- | --- | --- |
-| The consecutive-preterite chain runs unbroken from 15:5 to 15:18 with no temporal expression between them | Masoretic Genesis 15 | Sefaria digital Hebrew | Not collated against a printed Masoretic edition or a manuscript facsimile; the observation is about the text as that delivery gives it |
-| 15:12 uses an infinitive of imminence and 15:17 a completed form | Same, plus Ibn Ezra on 15:17 | Hebrew read directly; Ibn Ezra as an independent witness to the same distinction | Ibn Ezra on 15:17 falls outside the extent of the public-domain Piotrkow printing and was read only in the CC BY-NC English, which is paraphrased and not reproduced |
+| The represented-action chain runs from 15:5 to 15:18 with no temporal expression between them | Kittel–Beer 1909, Genesis 15:5, 12, 17–18 | Identified page images checked directly | One printing; not collated against a manuscript facsimile or modern critical edition |
+| 15:12 uses a Qal infinitive construct with prefixed *lamed* and 15:17 a feminine singular Qal active participle agreeing with the sun | Same | Forms checked directly against the identified pages | The participle is not a completed verbal form and alone does not prove completed sunset |
 | `ahar` in 15:1 means immediately after, on Rashi's reading | Rashi on Gen 15:1, first comment | Rosenbaum–Silbermann, public domain | Rashi's derivation, not a grammatical demonstration; reported as his |
 | `ein muqdam ume'uhar batorah` is limited by Rav Pappa to two separate matters | b. Pesachim 6b | Vocalized Aramaic of the William Davidson delivery; the CC BY-NC English consulted only as a control | Rav Pappa's context is halakhic derivation. The extension to narrative chronology is this study's and is labelled as project synthesis in the rendered text |
 
@@ -70,16 +70,22 @@ establishes. Checks were performed on 2026-07-26 unless stated otherwise.
 | Both ancient versions render the going-out spatially and `habbet` as an upward look, against the above-the-firmament construal | Swete Gen 15:5; Hetzenauer Gen 15:5 | As above | — |
 | The Netziv does not address the hour | `Haamek Davar` on Gen 15:5 | Vilna 1879 Hebrew, public domain | A checked negative result on one comment, not on his whole commentary |
 
-## 7. The negative result
+## 7. Bounded Christian reception
 
 | Claim | Witness set | Route | Limit |
 | --- | --- | --- | --- |
-| No consulted ancient Christian or Hellenistic-Jewish witness raises the conflict between the star-promise and the chapter's sunset | Philo (chs. XVI–XVII, XX, LI–LIII); Josephus I.7.2; Onkelos and Pseudo-Jonathan at 15:5, 12, 17; Augustine XVI.23–24 in Latin and English; 1609 Douay apparatus on Gen 15; a Lapide on 15:1, 5, 10, 11, 12, 17; Haydock on Gen 15 | Each read at its own locus | An enumerated negative over a named set, not a claim that nobody ever noticed. Loci outside these were not exhaustively read in any of these authors |
+| Augustine does not ask the exact daylight question at the checked loci | *De civitate Dei* XVI.23–24 | CSEL Latin and Dods English | A local negative only |
+| Ambrose reads the going-out as visionary movement beyond bodily confines | *De Abraham* II.8.48 | Exact Latin locus inspected | Does not identify a waking hour |
+| Chrysostom places the first appearance by night and the sacrifice through the following day to sunset | *Homilies on Genesis* 36.13; 37.3–6 | Exact loci inspected; copyrighted English verification-only | One identified Greek Christian reception, not a tradition-wide rule |
+| Ephrem gives an explicit night–day–evening chronology | *Commentary on Genesis* XII.2–5 | Exact loci inspected; copyrighted English verification-only | One identified Syriac Christian reception |
+| Theodoret does not address the hour in the checked questions | *Questions on Genesis* 66–67 | Exact loci inspected | Local negative only; Jerome remains unchecked |
 | Augustine argues at length that the stars cannot be numbered and never asks whether they could be seen | `De civ. Dei` XVI.23 | CSEL 40 Latin and Dods English | — |
 | Augustine calls the whole a vision (`Haec omnia in uisu facta`) and allegorizes the sunset as the end of the world | XVI.24 | Same | — |
-| Josephus deletes the command to look and every temporal marker | `Antiquities` I.7.2 | Whiston, Penelope transcription | Whiston's numbering; Greek not consulted |
+| Josephus deletes the command to look and every temporal marker | `Antiquities` I.10.3 | Whiston, Penelope transcription | Whiston's numbering; Greek not consulted |
 | Both Targums keep the sequence and insert no interval, though Pseudo-Jonathan expands freely at 15:12 and 15:17 | Onkelos and Pseudo-Jonathan at the three verses | Aramaic; Etheridge's public-domain English for Pseudo-Jonathan | Three verses, read at their loci; not a machine search over the chapter |
-| **Not reached and named as such:** Jerome, `Hebrew Questions on Genesis`; Ambrose, `De Abraham`; Chrysostom on Genesis; Theodoret, `Quaestiones in Genesim`; Ephrem; the Glossa ordinaria; Rupert of Deutz; Pererius, Tostatus, Oleaster; Jubilees; the Genesis Apocryphon; Targum Neofiti; the Samaritan Pentateuch; the Peshitta | — | — | No clause of the study depends on any of them. Ambrose and Theodoret appear only as a Lapide and the 1609 Douay margin report them |
+| **Not reached and named as such:** Jerome, `Hebrew Questions on Genesis`; the Glossa ordinaria; Rupert of Deutz; Pererius, Tostatus, Oleaster; the surviving Genesis Apocryphon material; Targum Neofiti; the Samaritan Pentateuch | — | — | No author-wide or tradition-wide negative follows |
+| A dated Syriac delivery preserves the command and the closing temporal sequence without an explicit interval | peshitta.eu, Genesis 15:5, 12, 17–18 | Inspected web delivery | Textual base unidentified; not an edition-critical claim about the Peshitta tradition |
+| *Jubilees* separates the star promise from the sacrifice without fixing the hour of the look | *Jubilees* 14, Charles 1913 | Public-domain English inspected | Rewritten Scripture, not a version of Genesis |
 
 ## 8. The recurrences and Paul
 
@@ -122,9 +128,8 @@ rendered text at the point where it is made.
    dissolve the daylight problem, and that no source that transmits it connects
    it to 15:12.
 4. The classification of the reception into five mutually inconsistent answers.
-5. The reading of the Septuagint's three changes as one consistent
-   de-temporalizing tendency, with the `ekei` claim explicitly bounded by
-   Augustine's contrary Old Latin.
-6. The identification of allegory as the cause of the patristic silence.
+5. The bounded observation that Swete's identified printing weakens the closing
+   temporal chain, with the `ekei` claim qualified by Augustine's contrary Old
+   Latin; no general Greek-transmission inference follows.
 7. The observation that a Lapide's notes at 15:5 and 15:12 jointly commit him to
    a two-day chronology inside a chapter that ends "in that day".

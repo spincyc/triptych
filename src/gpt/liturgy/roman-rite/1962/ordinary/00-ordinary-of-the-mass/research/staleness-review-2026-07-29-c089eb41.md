@@ -52,6 +52,7 @@ on the narrower, source-supported formulation. The issue is small in extent
 but consequential because it is an edition-history claim about the controlling
 witness.
 
-This note records comparison only. It does not select or install a candidate,
-build or review a PDF, update a ledger, or rebaseline. Replacement requires
-the user's explicit confirmation and the ordinary editorial pipeline.
+The user approved the modified treatment on 29 July 2026. Implementation
+applies its narrow chronology correction consistently to the history,
+Roman-Canon exposition, and source audit; the rewritten treatment remains
+unselected.

@@ -34,6 +34,7 @@ or status conclusion.
 
 **Material strengthening.** CCC 1700–1706 and 2111 should be added as exact
 official controls in the Claude edition with the narrow qualifications shown
-by the modified candidate. Confirmation is required before any source
-replacement, build, installation, web update, catalog change, or rebaseline.
-No replacement or rebaseline was performed.
+by the modified candidate. The user approved this recommendation on 29 July
+2026. The modified candidate was applied to the Claude source and local
+research records and its 40-page build was validated; installation, web
+generation, catalog work, and rebaselining remain separate production steps.

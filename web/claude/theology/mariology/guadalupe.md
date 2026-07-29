@@ -641,9 +641,11 @@ Three boundaries deserve their own sentences.
 
 *The image is venerated, not worshipped, and its material composition is not an article of anything.* A Catholic who believes the image was painted by a sixteenth-century Nahua artist venerates it exactly as licitly as one who believes otherwise. This is not a concession; it is the ordinary doctrine of images, and it was Bustamante’s own point in 1556 that images are wood and stone and point beyond themselves (§3.2)—a point no one then contradicted and no one since has needed to.
 
+Such veneration is corrupted when efficacy is assigned to bare external performance apart from the interior dispositions it requires (CCC 2111); this does not classify approved embodied acts of devotion as superstition.
+
 *Guadalupe is not a political credential.* The tradition has been enlisted for the insurgency of 1810, for opposing causes in the nineteenth century, for the Cristero conflict, and for movements of every kind since. That such appropriations happened is part of the history; that none of them is authorized by any act of the Church is a separate and necessary observation. A Marian devotion cannot authenticate a political programme.
 
-*Indigenous dignity is the tradition’s own theme, and it obliges something.* A narrative whose entire architecture insists that a **macehualli** was chosen and a bishop had to listen cannot be used to sentimentalize the conquest or to soften what was done to the peoples of Mexico. John Paul II drew the practical consequence at the canonization: it is necessary to support the Indigenous peoples in their legitimate aspirations (§8.4). Whatever a reader concludes about 1531, that obligation stands.
+*Indigenous dignity is the tradition’s own theme, and it obliges something.* A narrative whose entire architecture insists that a **macehualli** was chosen and a bishop had to listen cannot be used to sentimentalize the conquest or to soften what was done to the peoples of Mexico. John Paul II drew the practical consequence at the canonization: it is necessary to support the Indigenous peoples in their legitimate aspirations (§8.4). The Church’s account of human dignity, reason, freedom, conscience, and responsibility supplies the general moral control (CCC 1700–1706) without deciding any historical person’s subjective guilt. Whatever a reader concludes about 1531, that obligation stands.
 
 ### Disagreement preserved
 

@@ -73,15 +73,14 @@ The claim survives, narrowed and conditioned:
   on which the study's claim that the vision frame does not remove the daylight
   most depends, and it is a claim Nahmanides makes for an unrelated reason
   (grades of prophecy).
-- **The Septuagint de-temporalizes.** Swete's text has no equivalent of the
+- **Swete's printed Greek weakens the closing clock.** Swete's text has no equivalent of the
   Hebrew `alatah` at 15:17 and `ekei` for `bayyom hahu` at 15:18; the Greek
   chapter never reaches night. Augustine's Old Latin agrees at 15:17 and
   disagrees at 15:18, which bounds the second claim and is stated in the body.
-- **Material negative result: the Fathers did not ask.** Bounded to Philo,
-  Josephus, both Targums, Augustine, the 1609 Douay apparatus, a Lapide, and
-  Haydock, each read at its own locus. The cause is identified: the Greek text
-  removed the darkness, and Philo and Augustine allegorized every temporal
-  marker in the chapter.
+- **Christian reception is mixed, not silent.** Ambrose supplies a visionary
+  reading; Chrysostom and Ephrem supply night–day–evening chronologies;
+  Augustine does not ask the exact question at the checked loci; Theodoret
+  supplies only a local negative; Jerome remains unchecked.
 - **The "out from under the stars" reading is attested, and earlier than
   usually credited.** Philo has the astral-fatalism reading in the first
   century, attached to 15:7 and the departure from Ur; the Talmud transfers it
@@ -102,7 +101,7 @@ The Masoretic Hebrew of Genesis 15 and its verbal forms; Pesachim 6b on
 its extent; Swete's Septuagint of the chapter with his apparatus; the Clementine
 Vulgate from a page image with its marginal and foot apparatus; the Challoner
 and 1609 Douay English; Targum Onkelos and Pseudo-Jonathan at the three markers;
-Philo's `Quis rerum divinarum heres sit`; Josephus, `Antiquities` I.7.2 and
+Philo's `Quis rerum divinarum heres sit`; Josephus, `Antiquities` I.10.3 and
 I.8.2; Shabbat 156a; Genesis Rabbah 44:10 and 44:12; Augustine, `De civitate
 Dei` XVI.23–24 in Latin and English; Rashi, Ibn Ezra, Ramban, Radak, Chizkuni,
 Rabbeinu Bahya, the Tur, Malbim, the Netziv, and Abarbanel at their own loci;
@@ -139,12 +138,13 @@ Eastern covenant ritual; astronomy beyond what the witnesses themselves assert.
 Carried in the rendered `Scope, Method, and Qualifications` appendix. The
 consequential ones: the Septuagint claims are claims about Swete's printed text
 and apparatus, with Rahlfs, the Göttingen `Genesis`, and Wevers not consulted;
-the Hebrew was read in a digital text and not collated against a printed
-Masoretic Bible; Jubilees, the Genesis Apocryphon, Targum Neofiti, the Samaritan
-Pentateuch, and the Peshitta were not reached, and any of them could contain a
-temporal marker that would settle the question against the claim; Jerome's
-`Hebrew Questions`, Ambrose's `De Abraham`, Chrysostom on Genesis, and
-Theodoret were not reached and are reported only as later authors report them;
+the Kittel–Beer 1909 pages verify the controlling Hebrew forms but were not
+collated against a manuscript or modern critical edition; the Genesis
+Apocryphon, Targum Neofiti, and Samaritan Pentateuch were not reached; the
+dated Syriac delivery has an unidentified base and therefore cannot establish
+the Peshitta tradition; *Jubilees* was inspected as rewritten Scripture;
+Jerome's `Hebrew Questions` remains unchecked; Ambrose, Chrysostom, Ephrem, and
+Theodoret were inspected at bounded loci pending reusable normalization;
 a Lapide, Haydock, the 1609 Douay, Swete, Philo, and Josephus were read in
 optical-character text layers and not collated against page images.
 

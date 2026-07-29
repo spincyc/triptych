@@ -166,7 +166,8 @@ research-first candidates compared the GPT edition’s changed research and new
 Catechism controls. Event status, chronology, dogma, physical water character,
 cure count, and rights remain unchanged, but exact sacramental, anti-magic,
 agency, and consent controls materially strengthen this Claude edition. See
-`research/staleness-review-2026-07-29.md`. No candidate was installed.
+`research/staleness-review-2026-07-29.md`. The user approved and the bounded
+strengthening was installed 2026-07-29.
 
 - guidance (editorial, mariology profile, sources) read in full
   2026-07-25;

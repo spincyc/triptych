@@ -10,6 +10,24 @@ document = "theology/mariology/guadalupe"
 # source-library records themselves.
 
 [[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1700-1706"
+loci = ["1700-1706"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact USCCB English-edition control for human dignity, reason, freedom, conscience, and responsibility. It strengthens the edition's treatment of Indigenous dignity and colonial coercion without adjudicating any historical person's subjective culpability or proving the apparition."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:93135db39d87f4a8621402fdf67bc23bc1449b8b14a42f9d57d4cb3a58b8359e"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.2111"
+loci = ["2111"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact USCCB English-edition control against attributing efficacy to bare external performance apart from required interior dispositions. It governs distortions of Guadalupan image veneration, not the classification of approved veneration or embodied devotional acts as superstition."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:b3ddea78fcf54ec7df784a7646872bae791182e35210865e887f7bee9c210ab1"
+
+[[bindings]]
 source_id = "edition.luis-laso-de-la-vega.huei-tlamahuicoltica.mexico-juan-ruiz-1649"
 loci = [
   "heading of the Nican mopohua",

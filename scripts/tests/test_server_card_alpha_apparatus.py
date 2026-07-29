@@ -25,11 +25,10 @@ class ServerCardAlphaApparatusTest(unittest.TestCase):
         self.assertIn("not part of the cut grid", apparatus)
         self.assertIn(r"\clearpage", apparatus)
 
-    def test_each_card_companion_renders_terminal_apparatus(self):
+    def test_only_companions_with_an_approved_terminal_sheet_render_it(self):
         paths = (
             "01-low-mass-flash-cards/main.tex",
             "02-missa-cantata-cue-cards/main.tex",
-            "03-solemn-mass-cue-cards/main.tex",
         )
         for relative in paths:
             with self.subTest(relative=relative):
@@ -37,6 +36,12 @@ class ServerCardAlphaApparatusTest(unittest.TestCase):
                 self.assertEqual(
                     text.count(r"\CardCompanionTerminalApparatus"), 1
                 )
+
+        solemn = (
+            GUIDES / "03-solemn-mass-cue-cards/main.tex"
+        ).read_text()
+        self.assertNotIn(r"\CardCompanionTerminalApparatus", solemn)
+        self.assertIn(r"\CardCompanionRightsNotice", solemn)
 
     def test_card_grid_sources_are_not_changed_into_explanatory_pages(self):
         for relative in (

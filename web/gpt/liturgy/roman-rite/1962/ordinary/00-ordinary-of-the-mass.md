@@ -626,7 +626,7 @@ The silent pause prevents the printed formula from pretending to exhaust the Chu
 
 ##### Which “1962” includes Saint Joseph?
 
-The initial 1962 typical edition preceded the decree that added Saint Joseph and therefore did not originally print his name in *Communicantes*. The Sacred Congregation of Rites decree *Novis hisce temporibus*, dated 13 November 1962, ordered the insertion after Mary’s name effective 8 December 1962 (AAS 54 \[1962\], 873). A facsimile of the initial printing and the received 1962 order as subsequently amended can therefore differ at this point. The exposition follows the amended liturgical horizon while recording the dated change instead of projecting the name into every earlier Roman Canon.
+The 1962 typical edition was promulgated before the decree that added Saint Joseph. The Sacred Congregation of Rites decree *Novis hisce temporibus*, dated 13 November 1962, ordered the insertion after Mary’s name effective 8 December 1962 (AAS 54 \[1962\], 873). The facsimile collated here contains that amendment, although its physical impression is not dated by the evidence inspected. The exposition follows the amended liturgical horizon while recording the dated change instead of projecting the name into every earlier Roman Canon.
 
 ##### The Household and the Gifts Receive Different Petitions.
 
@@ -1060,7 +1060,7 @@ Standardization corrected textual variation and made the Roman curial tradition 
 
 ### Twentieth-century reforms and the 1962 horizon
 
-Pius X reformed the calendar and psalteral relations affecting liturgical celebration. Pius XII restored the Paschal Vigil and revised Holy Week; he also articulated the principles of legitimate liturgical development and active participation in *Mediator Dei*. John XXIII promulgated the new Code of Rubrics with *Rubricarum instructum* in 1960. The 1962 Missal incorporated that system, revised ranks and commemorations, reflected the reformed Holy Week, and omitted some formerly customary duplications. Its initial printing preceded Saint Joseph’s name in *Communicantes*; the decree *Novis hisce temporibus* amended the order effective 8 December 1962.
+Pius X reformed the calendar and psalteral relations affecting liturgical celebration. Pius XII restored the Paschal Vigil and revised Holy Week; he also articulated the principles of legitimate liturgical development and active participation in *Mediator Dei*. John XXIII promulgated the new Code of Rubrics with *Rubricarum instructum* in 1960. The 1962 Missal incorporated that system, revised ranks and commemorations, reflected the reformed Holy Week, and omitted some formerly customary duplications. The typical edition was promulgated before the decree *Novis hisce temporibus* ordered Saint Joseph’s name inserted in *Communicantes* effective 8 December 1962; the facsimile collated here incorporates the amendment, but the evidence does not date its physical impression.
 
 The resulting book is the final typical edition before the conciliar and postconciliar reform. Vatican II soon required that the nature and purpose of the parts and their connections be more clearly manifested (*Sacrosanctum Concilium* 50). That judgment confirms both that the parts possess intrinsic meaning and that their historical accretions call for disciplined interpretation. This study remains within the 1962 witness: later reform may clarify historical trajectories, but it does not retroactively become the rubric or intention of the earlier edition.
 
@@ -1242,6 +1242,6 @@ Second, the short *Sancte Michael Archangele* attached to the Leonine sequence m
 
 -   John T. McMahon, *Pray the Mass*, Part I, 13th revised ed. (Sydney: Pellegrini, 1959), with imprimatur of Archbishop Raymond Prendiville (June 1959). The booklet explicitly arranges thirty-three steps in association with Christ’s earthly years. [Public scan](https://www.ccwatershed.org/pdfs/pray-mass-booklet/download/); [bibliographic description](https://www.ccwatershed.org/2014/09/13/pray-mass-booklet-and-cards/). The superseded edition’s count had this catechetical antecedent; the present study follows natural movements and retains the old rows only as a research concordance.
 
-**Last revised (UTC):** 2026-07-23T23:15:29Z
+**Last revised (UTC):** 2026-07-29T13:56:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -82,3 +82,14 @@ restores the twelve-page cards-only boundary; the minimally modified candidate
 preserves the thirteen-page treatment. Because those candidates disagree in
 substance, this review does not replace the source or installed PDF and does
 not rebaseline the edition.
+
+## User disposition and implementation
+
+The user approved the rewritten candidate on 29 July 2026. The canonical
+source now omits the terminal-apparatus invocation and retains the compact
+revision and rights notice below the final back grid. The resulting installed
+companion has twelve physical pages and thirty-six cards; its exact build,
+validation, visual-review, and installed identity are recorded in the series
+production manifest. This disposition resolves the material
+publication-boundary question without changing any response, pronunciation,
+action-card, ceremonial, or duplex-order claim.

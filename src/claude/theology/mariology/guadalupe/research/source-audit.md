@@ -16,6 +16,13 @@ All access dates 2026-07-25 unless stated.
   re-read; marked in place in the publication;
 - **not traced** — searched for and not reached.
 
+## Doctrinal controls added in staleness review
+
+| Consequential claim | Exact control | Use and limit |
+|---|---|---|
+| Human dignity, reason, freedom, conscience, and responsibility govern the treatment of Indigenous agency and colonial coercion. | CCC 1700–1706, exact USCCB Second Edition passage record verified 27 July 2026. | Strengthens the moral-theological control; it neither adjudicates subjective culpability nor establishes the apparition or a disputed historical event. |
+| Image veneration must not assign efficacy to bare external performance or promise guaranteed protection apart from interior dispositions. | CCC 2111, exact USCCB Second Edition passage record verified 27 July 2026. | Governs distorted practice; it does not classify Guadalupe, approved sacred images, kneeling, candles, touch, flowers, songs, or processions as superstition. |
+
 ## A. Primary witnesses
 
 | Witness | State | Loci used | Notes |

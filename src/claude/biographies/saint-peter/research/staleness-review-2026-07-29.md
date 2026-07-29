@@ -36,17 +36,21 @@ Most candidate differences are depth, arrangement, and compression. The
 rewrite expressly excludes the unrelated records and general Irenaean locus
 from Petrine proof; the current paper already does not use them.
 
-## Roman-martyrdom certainty audit caveat
+## Roman-martyrdom certainty audit resolution
 
 The rewrite's “probable” differs substantively from the old and modified
 edition's “historically probable to the point of moral certainty.” The old
 paper itself preserves the strongest counterargument: the apparent witnesses
 may propagate one tradition rather than supply fully independent
 corroboration. None of the changed inputs strengthens that counterargument or
-weakens the existing Roman evidence chain. The confidence formula is therefore
-an independent editorial-calibration question for a future audit, not a
-finding caused by this staleness trigger. This review does not silently use
-that independent question to replace the current edition.
+weakens the existing Roman evidence chain.
+
+The subsequent editorial calibration was approved on 2026-07-29: the
+publication now describes Peter's Roman martyrdom as historically well
+attested and morally certain in Catholic tradition, while expressly
+distinguishing that cumulative judgment from strict documentary certainty.
+This is an independent approved correction, not a finding caused by the
+staleness trigger.
 
 ## Verdict
 

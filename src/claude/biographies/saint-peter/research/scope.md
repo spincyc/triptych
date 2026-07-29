@@ -186,10 +186,11 @@ Added in the 2026-07-25 deepening revision (16 pp. to 38 pp.):
 - The first-century core (fisherman, call, primacy among the Twelve,
   confession, denials, restoration, Jerusalem leadership, Cornelius,
   council, Antioch rebuke) is established by N-class texts read severally.
-- Martyrdom at Rome under Nero is probable to moral certainty on the
-  cumulative E-chain beginning with 1 Clement; year (64–68) and manner
-  (crucifixion, first explicit in Tertullian c. 200) are not fixed;
-  head-down crucifixion is L/E from c. 200/230 onward.
+- Martyrdom at Rome under Nero is historically well attested and morally
+  certain in Catholic tradition on the cumulative E-chain beginning with
+  1 Clement, while remaining distinct from strict documentary certainty;
+  year (64–68) and manner (crucifixion, first explicit in Tertullian c. 200)
+  are not fixed; head-down crucifixion is L/E from c. 200/230 onward.
 - The archaeology establishes a c. 160 memorial continuously enclosed up to
   the present altar; it cannot identify human remains. The 1968 relic
   identification is reported as contested, with the chain-of-custody and

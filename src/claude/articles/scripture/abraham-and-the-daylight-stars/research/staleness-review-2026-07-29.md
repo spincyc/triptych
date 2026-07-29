@@ -74,3 +74,14 @@ Per the staleness policy, replacement requires explicit confirmation followed
 by the ordinary editorial, build, page-review, installation, catalog, release,
 and rebaseline pipeline. This review performs none of those steps. No ledger
 entry was changed and no rebaseline was performed.
+
+## Maintainer disposition
+
+The maintainer approved all recommended material corrections on 2026-07-29.
+The publication-local implementation corrects the Hebrew morphology, confines
+the Greek conclusions to the identified Swete printing, replaces the broad
+patristic-negative claim with bounded Ambrose, Chrysostom, Ephrem, Theodoret,
+and Augustine findings, incorporates the dated Syriac delivery and
+*Jubilees* at their proper evidence ceilings, and records the verified
+Kittel--Beer loci. Shared staleness ledgers and release state remain outside
+this local implementation record.

@@ -1,6 +1,32 @@
 # Production manifest: 1962 altar-server guides
 
-Audit record updated through 2026-07-28 (America/Chicago).
+Audit record updated through 2026-07-29 (America/Chicago).
+
+## Solemn Mass cards-only boundary restoration — 2026-07-29
+
+User approval restored `03-solemn-mass-cue-cards` to the governing cards-only
+contract. The uncut terminal apparatus sheet was removed; the complete
+thirty-six-card run, six-up geometry, front/back order, and compact revision
+and rights notice below the final back grid remain unchanged. The paired full
+guide and series records continue to own the adult-facing Alpha, training,
+safety, textual, printing, and rights keys.
+
+Two pdfTeX passes settled the twelve-page build. The log contains no fatal
+error, undefined reference, package or LaTeX warning, overfull or underfull
+box, or unresolved rerun request. Fonts are embedded and subsetted, text
+extraction is nonempty, and leaf-scoped generation-metadata validation passes.
+The repository review helper rastered all twelve pages. Contact-sheet review
+confirmed the six front/back pairs, odd-page fronts, mirrored backs, and the
+absence of an inserted cover, parity leaf, or terminal sheet. Full-size review
+of page 12 confirmed that all six card faces and the notice remain legible,
+inside their intended boundaries, and free of clipping or collision. The
+installed file is byte-identical to the reviewed build. No actual-size print,
+physical-duplex, intended-reader, independent, rights, priestly, or
+ecclesiastical approval is inferred.
+
+| Publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 |
+|---|---|---:|---:|---:|---|
+| `03-solemn-mass-cue-cards` | `2026-07-29T13:55:09Z` | 12 | 36 | 630,577 | `8e0813a1f2fbf855787b672b71371051f4bfaaf3865f4b9fe05ef0de7243887b` |
 
 ## Card-companion Alpha-apparatus release — 2026-07-28
 
@@ -74,9 +100,9 @@ not control the current installed files.
 | `02-missa-cantata` | `2026-07-28T20:56:00Z` | 34 | 0 | 2,364,245 | `054ba65b2cb5a94cc6c4140219c56fd568920f21130d516518f16e9abe91cfaf` | Alpha; every page inspected |
 | `02-missa-cantata-cue-cards` | `2026-07-28T21:20:00Z` | 13 | 36 | 628,885 | `ce0dfad27e008e3583baa8d0937fdb62688f584e2fd90f7f69f71f201fe6314e` | Alpha; electronic pairing, parity, duplex geometry, and terminal apparatus checked |
 | `03-solemn-mass` | `2026-07-28T20:56:00Z` | 31 | 0 | 2,707,995 | `266070dd2d4463f1f491ca9dbf1ce948cf4733d36205ed7701f9fbe7b2d0822e` | Alpha; every page inspected |
-| `03-solemn-mass-cue-cards` | `2026-07-28T21:20:00Z` | 13 | 36 | 634,517 | `11c05969c289b6dcaa62a31db20f3abd805f9f05bd3c1a4fba211574b6172c5a` | Alpha; electronic pairing, parity, duplex geometry, and terminal apparatus checked |
+| `03-solemn-mass-cue-cards` | `2026-07-29T13:55:09Z` | 12 | 36 | 630,577 | `8e0813a1f2fbf855787b672b71371051f4bfaaf3865f4b9fe05ef0de7243887b` | Alpha; cards-only boundary, electronic pairing, parity, and duplex geometry checked |
 
-The current family totals 150 pages: 117 guide or manual pages and 33 card
+The current family totals 149 pages: 117 guide or manual pages and 32 card
 pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata
 cards, and 36 Solemn-Mass cards. The four changed Low-Mass replacement-art
 files make the two Low-Mass guide PDFs new byte identities. Their generation
