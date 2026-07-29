@@ -1,16 +1,16 @@
 :root {
   color-scheme: only light;
-  --ink: #2e2a26;
-  --muted: #6d665e;
-  --paper: #fffefa;
-  --surface: #ffffff;
-  --line: #e2dbd1;
-  --rubric: #9b3443;
-  --rubric-dark: #762532;
+  --ink: #302d29;
+  --muted: #6a635a;
+  --paper: #ece7de;
+  --surface: #f8f5ef;
+  --line: #d2c8ba;
+  --rubric: #8f3540;
+  --rubric-dark: #6f2831;
   --banner: #641b25;
-  --gold: #b27c16;
+  --gold: #9f7018;
   --blue: #3f7180;
-  --shadow: 0 0.8rem 2.4rem rgba(71, 58, 45, 0.055);
+  --shadow: 0 0.8rem 2.4rem rgba(63, 52, 42, 0.085);
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
     "Book Antiqua", Georgia, "Times New Roman", serif;
 }
@@ -23,8 +23,8 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(221, 184, 103, 0.075), transparent 32rem),
-    linear-gradient(180deg, #fffefa 0, #ffffff 34rem),
+    radial-gradient(circle at top left, rgba(173, 133, 64, 0.07), transparent 32rem),
+    linear-gradient(180deg, #f0ece4 0, #e9e3da 34rem),
     var(--paper);
   font-size: 1.04rem;
   line-height: 1.72;
@@ -74,7 +74,14 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
 .brand { display: flex; flex-direction: column; line-height: 1.16; }
 .brand a { color: var(--ink); font-size: 1.55rem; font-weight: 700; text-decoration: none; letter-spacing: 0.015em; }
-.brand span { color: var(--muted); font-family: system-ui, sans-serif; font-size: 0.76rem; letter-spacing: 0.13em; text-transform: uppercase; }
+.brand span {
+  max-width: 42rem;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.73rem;
+  letter-spacing: 0.055em;
+  line-height: 1.35;
+}
 
 nav { display: flex; gap: 1.1rem; font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 650; }
 nav a { color: var(--ink); text-decoration: none; }
@@ -106,13 +113,13 @@ nav a { color: var(--ink); text-decoration: none; }
   border-top: 0.2rem solid transparent;
   border-image: linear-gradient(
     90deg,
-    #c7aa63 0 14.285%,
-    #c28a16 14.285% 28.57%,
-    #b43a4a 28.57% 42.855%,
-    #3f8a55 42.855% 57.14%,
-    #7651a2 57.14% 71.425%,
-    #cc718b 71.425% 85.71%,
-    #4a4745 85.71% 100%
+    #747b80 0 14.285%,
+    #aa7715 14.285% 28.57%,
+    #a84338 28.57% 42.855%,
+    #3d7650 42.855% 57.14%,
+    #6b4b86 57.14% 71.425%,
+    #b86583 71.425% 85.71%,
+    #413f3d 85.71% 100%
   ) 1;
 }
 
@@ -135,9 +142,9 @@ nav a { color: var(--ink); text-decoration: none; }
   --section-accent: var(--rubric);
   --section-ink: var(--rubric-dark);
   --section-wash: rgba(155, 52, 67, 0.085);
-  --section-pale: #fff0f2;
-  --section-row: #fff8f8;
-  --section-line: #ead0d4;
+  --section-pale: #ead5d8;
+  --section-row: #f2e9e8;
+  --section-line: #d5afb5;
   --section-symbol-primary: "";
   --section-symbol-secondary: "";
   background:
@@ -148,72 +155,72 @@ nav a { color: var(--ink); text-decoration: none; }
   border-top: 0.3rem solid var(--section-accent);
 }
 .section-white {
-  --section-accent: #c7aa63;
-  --section-ink: #80631f;
-  --section-wash: rgba(230, 196, 111, 0.21);
-  --section-pale: #fff8df;
-  --section-row: #fffcf1;
-  --section-line: #e8d7a6;
+  --section-accent: #747b80;
+  --section-ink: #565d61;
+  --section-wash: rgba(116, 123, 128, 0.15);
+  --section-pale: #e4e6e5;
+  --section-row: #eff0ed;
+  --section-line: #bfc4c5;
   --section-symbol-primary: "☧";
   --section-symbol-secondary: "✠";
 }
 .section-gold {
-  --section-accent: #c28a16;
-  --section-ink: #875a00;
-  --section-wash: rgba(214, 154, 31, 0.16);
-  --section-pale: #fff4d7;
-  --section-row: #fffbef;
-  --section-line: #e7cc8d;
+  --section-accent: #aa7715;
+  --section-ink: #76500d;
+  --section-wash: rgba(170, 119, 21, 0.16);
+  --section-pale: #efe0ab;
+  --section-row: #f4ecd1;
+  --section-line: #d7be72;
   --section-symbol-primary: "Α";
   --section-symbol-secondary: "Ω";
 }
 .section-red {
-  --section-accent: #b43a4a;
-  --section-ink: #8b2433;
-  --section-wash: rgba(196, 57, 75, 0.14);
-  --section-pale: #fff0f2;
-  --section-row: #fff8f9;
-  --section-line: #e8bcc3;
+  --section-accent: #a84338;
+  --section-ink: #7b2d26;
+  --section-wash: rgba(168, 67, 56, 0.16);
+  --section-pale: #ebc6c2;
+  --section-row: #f2ded9;
+  --section-line: #d59a92;
   --section-symbol-primary: "℣";
   --section-symbol-secondary: "℟";
 }
 .section-green {
-  --section-accent: #3f8a55;
-  --section-ink: #28683c;
-  --section-wash: rgba(63, 148, 87, 0.14);
-  --section-pale: #edf8f0;
-  --section-row: #f7fcf8;
-  --section-line: #bcdcc5;
+  --section-accent: #3d7650;
+  --section-ink: #295a3a;
+  --section-wash: rgba(61, 118, 80, 0.16);
+  --section-pale: #cfe1d3;
+  --section-row: #e2ebe2;
+  --section-line: #9fbea8;
   --section-symbol-primary: "❦";
   --section-symbol-secondary: "✣";
 }
 .section-violet {
-  --section-accent: #7651a2;
-  --section-ink: #5a3484;
-  --section-wash: rgba(118, 81, 162, 0.14);
-  --section-pale: #f5effb;
-  --section-row: #fbf8fe;
-  --section-line: #d6c2e7;
+  --section-accent: #6b4b86;
+  --section-ink: #50366a;
+  --section-wash: rgba(107, 75, 134, 0.16);
+  --section-pale: #ddd0e7;
+  --section-row: #e9e1ed;
+  --section-line: #b9a2cb;
   --section-symbol-primary: "✦";
   --section-symbol-secondary: "❖";
 }
 .section-rose {
-  --section-accent: #cc718b;
-  --section-ink: #99415d;
-  --section-wash: rgba(204, 113, 139, 0.16);
-  --section-pale: #fff0f4;
-  --section-row: #fff8fa;
-  --section-line: #ebc2cf;
+  --section-accent: #b86583;
+  --section-ink: #82445a;
+  --section-wash: rgba(184, 101, 131, 0.17);
+  --section-pale: #efd2db;
+  --section-row: #f3e1e5;
+  --section-line: #d9a9b9;
   --section-symbol-primary: "✷";
   --section-symbol-secondary: "✥";
 }
 .section-black {
-  --section-accent: #4a4745;
-  --section-ink: #2f2d2c;
-  --section-wash: rgba(74, 71, 69, 0.1);
-  --section-pale: #f2f1f0;
-  --section-row: #faf9f8;
-  --section-line: #ccc8c5;
+  --section-accent: #413f3d;
+  --section-ink: #2e2c2a;
+  --section-wash: rgba(65, 63, 61, 0.14);
+  --section-pale: #d4d0cc;
+  --section-row: #e5e1dc;
+  --section-line: #aaa49e;
   --section-symbol-primary: "§";
   --section-symbol-secondary: "¶";
 }
@@ -380,7 +387,7 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
 .page-home table:first-of-type td,
 .page-library-root table:first-of-type td {
   border-color: var(--line);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(248, 245, 239, 0.78);
 }
 .page-home table:first-of-type td:first-child,
 .page-library-root table:first-of-type td:first-child {
@@ -390,20 +397,30 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
     "Book Antiqua", Georgia, serif;
   font-size: 1.08rem;
 }
+.page-home table:first-of-type td:first-child::before,
+.page-library-root table:first-of-type td:first-child::before {
+  float: right;
+  margin-left: 0.55rem;
+  color: var(--portal-accent);
+  content: var(--portal-symbol);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  opacity: 0.8;
+}
 .page-home table:first-of-type tbody tr:nth-child(1),
-.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #c7aa63; --portal-pale: #fff8df; }
+.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #747b80; --portal-pale: #e4e6e5; --portal-symbol: "☧"; }
 .page-home table:first-of-type tbody tr:nth-child(2),
-.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #c28a16; --portal-pale: #fff4d7; }
+.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #aa7715; --portal-pale: #efe0ab; --portal-symbol: "Α"; }
 .page-home table:first-of-type tbody tr:nth-child(3),
-.page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #b43a4a; --portal-pale: #fff0f2; }
+.page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #a84338; --portal-pale: #ebc6c2; --portal-symbol: "℣"; }
 .page-home table:first-of-type tbody tr:nth-child(4),
-.page-library-root table:first-of-type tbody tr:nth-child(4) { --portal-accent: #3f8a55; --portal-pale: #edf8f0; }
+.page-library-root table:first-of-type tbody tr:nth-child(4) { --portal-accent: #3d7650; --portal-pale: #cfe1d3; --portal-symbol: "❦"; }
 .page-home table:first-of-type tbody tr:nth-child(5),
-.page-library-root table:first-of-type tbody tr:nth-child(5) { --portal-accent: #7651a2; --portal-pale: #f5effb; }
+.page-library-root table:first-of-type tbody tr:nth-child(5) { --portal-accent: #6b4b86; --portal-pale: #ddd0e7; --portal-symbol: "✦"; }
 .page-home table:first-of-type tbody tr:nth-child(6),
-.page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #cc718b; --portal-pale: #fff0f4; }
+.page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #b86583; --portal-pale: #efd2db; --portal-symbol: "✷"; }
 .page-home table:first-of-type tbody tr:nth-child(7),
-.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #4a4745; --portal-pale: #f2f1f0; }
+.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #413f3d; --portal-pale: #d4d0cc; --portal-symbol: "§"; }
 .page-home table:first-of-type tbody td,
 .page-library-root table:first-of-type tbody td {
   background: var(--portal-pale);

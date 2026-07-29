@@ -1561,6 +1561,21 @@ def page_title(markdown_text: str) -> str:
     return re.sub(r"[*_`]", "", title)
 
 
+def page_body_markdown(source_relative: str, markdown_text: str) -> str:
+    """Move the home identity into the site header without weakening its outline."""
+    if source_relative != "README.md":
+        return markdown_text
+    match = re.match(
+        r"\A#\s+Triptych\s*\n+"
+        r"\*AI Driven Studies in Catholic Faith, Worship, and Law\*\s*\n+"
+        r"##\s+(.+?)\s*\n",
+        markdown_text,
+    )
+    if match is None:
+        return markdown_text
+    return f"# {match.group(1)}\n" + markdown_text[match.end():]
+
+
 def relative_link(output_relative: str, destination: str) -> str:
     parent = PurePosixPath(output_relative).parent.as_posix()
     return posixpath.relpath(destination, parent if parent != "." else ".")
@@ -1746,7 +1761,7 @@ def render_page(
     require_locked_markdown_dependency()
 
     content = add_table_header_scopes(markdown.markdown(
-        markdown_text,
+        page_body_markdown(source_relative, markdown_text),
         # Web editions are endnote-heavy and carry their own section anchors,
         # so footnotes and heading attributes must become real markup rather
         # than literal [^n] and {#id} text.

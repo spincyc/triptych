@@ -133,6 +133,11 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertNotIn("℟", layout)
         self.assertIn(">Library</a>", layout)
         self.assertIn(">Feedback</a>", layout)
+        self.assertIn(
+            "AI Driven Studies in Catholic Faith, Worship, and Law",
+            layout,
+        )
+        self.assertNotIn("Faith · Worship · Law", layout)
         self.assertNotIn("Browse the library", layout)
         self.assertNotIn("Give feedback", layout)
         self.assertIn("{{HOME_CURRENT}}", layout)
@@ -141,6 +146,24 @@ class PublicAlphaTest(unittest.TestCase):
     def test_home_browser_title_is_not_duplicated(self) -> None:
         self.assertEqual(self.tool.document_title("Triptych"), "Triptych")
         self.assertEqual(self.tool.document_title("Library"), "Library · Triptych")
+
+    def test_home_identity_moves_to_header_and_opening_section_becomes_h1(self) -> None:
+        source = (
+            "# Triptych\n\n"
+            "*AI Driven Studies in Catholic Faith, Worship, and Law*\n\n"
+            "## Don’t Panic!\n\n"
+            "Opening.\n\n"
+            "## Library\n"
+        )
+        body = self.tool.page_body_markdown("README.md", source)
+        self.assertTrue(body.startswith("# Don’t Panic!\n"))
+        self.assertNotIn("# Triptych", body)
+        self.assertNotIn("AI Driven Studies", body)
+        self.assertIn("## Library", body)
+        self.assertEqual(
+            self.tool.page_body_markdown("library/test.md", source),
+            source,
+        )
 
     def test_primary_navigation_marks_the_contextual_destination(self) -> None:
         self.assertEqual(
@@ -968,7 +991,7 @@ class PublicAlphaTest(unittest.TestCase):
             body = block.group("body")
             self.assertIn(f'--section-symbol-primary: "{symbols[0]}"', body)
             self.assertIn(f'--section-symbol-secondary: "{symbols[1]}"', body)
-        self.assertEqual(css.count("℣"), 1)
+        self.assertEqual(css.count("℣"), 2)
         self.assertEqual(css.count("℟"), 1)
 
     def test_public_palette_is_light_and_section_color_reaches_reading_pages(self) -> None:
@@ -977,6 +1000,17 @@ class PublicAlphaTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("color-scheme: only light", css)
         self.assertNotIn("prefers-color-scheme: dark", css)
+        self.assertIn("--paper: #ece7de", css)
+        self.assertIn("--surface: #f8f5ef", css)
+        accents = {
+            color: re.search(
+                rf"\.section-{color}\s*\{{.*?--section-accent:\s*(#[0-9a-f]{{6}})",
+                css,
+                flags=re.DOTALL,
+            ).group(1)
+            for color in ("white", "gold", "red", "green", "violet", "rose", "black")
+        }
+        self.assertEqual(len(set(accents.values())), 7)
         for token in (
             "--section-pale:",
             "--section-row:",
