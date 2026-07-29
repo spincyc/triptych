@@ -45,13 +45,16 @@ the Aquinas loci, the Roman Canon, GIRM 79, the cited Scripture, the Catechism
 ranges including CCC 1390, Trent session XXII chapters 1--2 and canon 3, and
 the principal conciliar and papal witnesses.
 
-## Production and first-baseline verdict
+## Historical first-baseline verdict
 
 On 2026-07-26 the baseline held source rendered as an eleven-page,
 warning-free Letter PDF. Every page was inspected in a bounded contact sheet
 for clipping, overlap, malformed text, bad breaks, table legibility, and
 metadata placement. The baseline generated Markdown was reviewed for heading,
 table, reference, metadata, and rights-colophon fidelity.
+
+That eleven-page baseline is historical and has been superseded by the current
+reviewed ten-page installed artifact described above.
 
 Both initial-baseline candidates and the consequential-claim comparison are
 recorded in `research/staleness-review-2026-07-26.md`. They agree in substance;

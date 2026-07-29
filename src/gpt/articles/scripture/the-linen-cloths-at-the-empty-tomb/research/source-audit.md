@@ -5,8 +5,10 @@
 The canonical Greek, Clementine Vulgate, and registered Douay–Rheims artifacts
 were inspected for the governing sequence. The five exact Vulgate passages
 control the Latin cloth vocabulary, the subject sequence, and Peter's wonder.
-The Septuagint bears only through the registered Thayer entry's identified
-Judges 14:13 lexical use; no direct Septuagint passage is claimed as inspected.
+The Septuagint bears only as lexical background. On 2026-07-29 the exact
+registered Swete 1909 OCR artifact was checked directly at Judges 14:12--13
+and against its apparatus: the base text has *sindonas* in verse 12 and
+*othonia* in verse 13; Alexandrinus reads *sindonas* in verse 13.
 The 2026-07-27 completion pass inspected and bound every material canonical,
 lexical, patristic, medieval,
 textual-critical, rabbinic, Greco-Roman, and modern-provenance witness used in
@@ -16,6 +18,13 @@ The active `source-bindings.toml` records GPT-local claim judgments and exact
 fingerprints. It distinguishes checked transcription from OCR inspection,
 keeps every negative conclusion bounded to the enumerated corpus, and
 preserves contrary readings of John 20:8.
+
+The 2026-07-29 pass also directly inspected the pinned SBLGNT v1.2 Luke
+running-text and edition-comparison artifacts at 24:12. SBLGNT prints the
+verse. Its apparatus groups Tregelles, NA28, and Robinson--Pierpont with the
+verse and marks Westcott--Hort as double-bracketed. This verifies an exact
+modern edition-level disposition without promoting the comparison file into a
+manuscript apparatus or a claim about all modern editions.
 
 The added exact bindings cover Cyril, Gregory, Bede, Ambrose, Theophylact,
 Aquinas, Westcott and Hort, B. F. and Arthur Westcott, Latham, Lightfoot,
@@ -32,9 +41,12 @@ edition's hit count is not a GPT finding and is not part of this publication's
 argument.
 
 The exact Berakhot and Sanhedrin controls were independently inspected and
-bound. The publication makes only an enumerated-witness and dated-provenance
-finding, so the unavailable mutable-site replay is neither evidence nor a
-prerequisite for its narrower conclusion.
+bound. They are Mishnah Berakhot 8:3, Babylonian Talmud Berakhot 52b, and
+Mishnah Sanhedrin 6:1. The publication does not claim a Toseftan, Jerusalem
+Talmudic, midrashic, minor-tractate, or whole-rabbinic-corpus search. It makes
+only an enumerated-witness and dated-provenance finding, so the unavailable
+mutable-site replay is neither evidence nor a prerequisite for its narrower
+conclusion.
 
 ## Re-evaluation verdict
 
@@ -101,18 +113,26 @@ blank page, or footer collision. The regenerated web candidate, SHA-256
 was checked for the Vulgate and Septuagint-boundary text, terminal review
 language, generation metadata, and rights notice.
 
-The current installed and release-bound PDF is SHA-256
-`df2ea733358c3b4e0733eaf0f52f2b7bcf3cca62101065fd7d5406bf7db596b9`,
+The current installed PDF is SHA-256
+`0e42b9c61bdc2c27b85456420cb104d348cbda634ff89aef8f95f1d8ce6c572a`,
 and the current installed web edition is SHA-256
-`3c17f912035d7d3ae7cb71f10aeb43e1370e0b56aef5f6d5a77a5594ddc11754`.
-On 2026-07-27 a fresh two-pass build reproduced the exact installed PDF bytes,
-and a fresh conversion reproduced the exact installed web bytes. The settled
-log contains no fatal error, undefined reference, overflow, underfull box, or
-layout warning. All eleven pages of the immutable review snapshot were
-inspected; no clipping, overlap, blank-page defect, footer collision, broken
-apparatus, or other layout defect was found. The generated web edition was
-byte-compared with the installed Markdown and therefore carries the same
-source-derived text, rights notice, and generation metadata. Exact-current PDF,
-web, source, audit, and every-page review are complete. Release binding remains
-distribution clearance only and does not supply or replace independent or
-ecclesiastical review.
+`042395f9b5927b6645d3e534932a0aa2b8e0d42e2f99e286f229f6b467aaa5a8`.
+On 2026-07-29 a settled
+build reproduced the exact installed PDF bytes, and a fresh conversion
+reproduced the exact installed web bytes. The settled log contains no fatal
+error, undefined reference, overflow, or actionable layout warning. Its one
+underfull-box notice arises from the terminal content block and corresponds to
+no visible defect on the inspected final page. All eleven pages of the exact
+review snapshot were inspected; no clipping, overlap, blank-page defect,
+footer collision, broken apparatus, or other layout defect was found. The
+generated web edition was byte-compared with the installed Markdown and
+therefore carries the same source-derived text, rights notice, and generation
+metadata. Exact-current PDF, web, source, audit, and every-page internal review
+are complete.
+
+An earlier release-rights supplement binds the superseded PDF hash
+`df2ea733358c3b4e0733eaf0f52f2b7bcf3cca62101065fd7d5406bf7db596b9`.
+That exact-hash entry remains historical snapshot evidence; it does not
+override the later standing public-alpha decision for current and later
+snapshots that satisfy the six alpha concerns. No independent or
+ecclesiastical approval is claimed, and neither is a current alpha gate.

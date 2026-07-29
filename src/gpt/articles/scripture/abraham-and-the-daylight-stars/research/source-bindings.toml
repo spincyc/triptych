@@ -38,6 +38,33 @@ source_fingerprint = "sha256:aba8e34331af3fc19e272bdef11140f842ca4e75fb2d097f1c8
 context = "GPT independently read the chapter and recurrence loci from the registered verse table; it controls every English scriptural quotation."
 
 [[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+loci = ["Romans.4.1-25"]
+role = "reception"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-29"
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+context = "Controls Paul's reception of Abraham's faith, promise, hope, and divine fidelity, including the quoted phrase 'against hope believed in hope'; it does not identify the hour of Genesis 15:5."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-55-galatians-e95d4a59"
+loci = ["Galatians.3.1-29"]
+role = "reception"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-29"
+source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6eb4712794c0a17"
+context = "Controls Paul's treatment of Abrahamic faith, promise, law, and seed; it supplies no hour for the star command."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-65-hebrews-78520956"
+loci = ["Hebrews.11.8-19"]
+role = "reception"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-29"
+source_fingerprint = "sha256:0c686e9320485622fa117ab272c9fdd8858abc5e2473747a5b8ee6557bd89d3b"
+context = "Controls Hebrews' reception of Abraham's departure, sojourn, promised offspring, and confidence in resurrection; it supplies no hour for Genesis 15:5."
+
+[[bindings]]
 source_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-0012-b9a1cb6a"
 loci = ["Gen.15.1-21"]
 role = "direct-witness"

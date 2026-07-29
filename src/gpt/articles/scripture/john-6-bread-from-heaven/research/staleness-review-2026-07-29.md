@@ -74,3 +74,28 @@ candidate should replace the current edition.
 This record preserves the re-evaluation event. It does not rebaseline the
 edition or modify the research-staleness ledger; those remain separate,
 unauthorized tracked operations.
+
+## Subsequent current-guidance remediation
+
+A later hard review on 2026-07-29 identified defects not caused by newly
+applicable source evidence: the publication omitted its strongest researched
+nonsacramental counterpositions, attributed “source and summit” to Catechism
+paragraphs 1322–1323 rather than 1324, exposed internal review language to
+readers, retained drafting instructions, and no longer matched the exact PDF
+hash in the shared release ledger.
+
+The publication-local remediation:
+
+- adds fair, bounded treatments of Calvin's Spirit-mediated participation
+  account and Warren's integral nonsacramental Christological account;
+- removes the unsupported Catechism phrase while retaining the exactly bound
+  1322–1323 synthesis;
+- aligns the catalog and PDF subject with the Bethlehem/manger reception claim;
+- removes reader-facing process, deferred-review, and future-drafting language;
+  and
+- records the exact rebuilt PDF and web hashes while leaving the separately
+  governed shared release refresh outstanding.
+
+This addendum supersedes the earlier “no material publication change” verdict
+for current publication state; it does not erase that verdict as the result of
+the narrower research-staleness comparison performed earlier that day.

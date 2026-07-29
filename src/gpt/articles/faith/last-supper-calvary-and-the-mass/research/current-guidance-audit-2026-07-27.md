@@ -9,14 +9,23 @@ specialist, or ecclesiastical review.
 
 - Installed PDF:
   `doc/gpt/articles/faith/last-supper-calvary-and-the-mass.pdf`,
-  SHA-256 `e1136ce9c4ac53119f42572dae392bf8327a8294788eeb81265eb09aef023625`.
+  current SHA-256
+  `deeea2d6547f70377d747eea0a2107cd2bb67ad77ffc33cc0e3193fd76ee72cc`.
 - Tracked web edition:
   `web/gpt/articles/faith/last-supper-calvary-and-the-mass.md`,
-  SHA-256 `846539c3061a662c49f028949bc4fa474bc0a03b22dbc496c73f9f4456b43813`.
+  current SHA-256
+  `24b3c3f81a77641a4fa3518965dc77676048c4f8146bc0ff0fa57676a394bd9b`.
 - Catalog: `library/faith.md`.
-- Release record: `release/public-alpha.json` classifies the edition as
-  `release` and binds the installed PDF hash under
-  `perpetual-public-repository-2026`.
+- Publication record:
+  `release/publications/gpt/articles/faith/last-supper-calvary-and-the-mass.json`
+  classifies the edition as `alpha` under
+  `perpetual-public-repository-2026`; the generated shared
+  `release/public-alpha.json` binds the current installed artifact.
+
+The two hashes originally recorded here described the artifact snapshot at the
+time of this audit. They were superseded by the current installed PDF and
+tracked web edition without changing the article's argument or the audit's
+substantive verdict.
 
 The former held-state, uninstalled, uncataloged, and unbound descriptions in
 the publication-local records were stale and have been reconciled. Release

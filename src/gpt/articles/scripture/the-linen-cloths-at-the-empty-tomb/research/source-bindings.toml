@@ -376,3 +376,30 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Controls only the contrast between John's sparse description and reconstructed classic Egyptian mummification involving organ removal and prolonged natron desiccation. It supplies no claim about Jewish practice, and its own warning against one uniform Egyptian procedure is retained."
 verified_on = "2026-07-27"
 source_fingerprint = "sha256:a7b97c10fc155875a8c87dc53152458d9cb27f119190131e77d68997fcef8f59"
+
+[[bindings]]
+source_id = "artifact.swete.old-testament-in-greek.cambridge-vol-1-1909.ia-djvu-ocr-66071dff"
+loci = ["Judg.14.12-13"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Directly controls the bounded Septuagint lexical comparison. Swete's base text has sindonas in verse 12 and othonia in verse 13; the Alexandrinus apparatus reads sindonas in verse 13. The OCR was checked at the exact locus and is used only for this lexical and apparatus observation."
+verified_on = "2026-07-29"
+source_fingerprint = "sha256:26e405aeea70ec5d4418f35dba0d10571ba1aa7da1730334e49086e7f0694a79"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-main-102d65ec"
+loci = ["Luke.24.12; physical line 1109"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the exact claim that SBLGNT v1.2 prints Luke 24:12 in its running text."
+verified_on = "2026-07-29"
+source_fingerprint = "sha256:4f7045f60dcb622dae251306375a52435eb3a8422ea868ced6abdcf56d6f4503"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-app-9b4b72d2"
+loci = ["Luke.24.12; physical lines 2485-2488"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the edition-comparison claim: the apparatus groups Tregelles, NA28, and Robinson-Pierpont with the verse and marks it double-bracketed in Westcott-Hort. It is not a manuscript apparatus."
+verified_on = "2026-07-29"
+source_fingerprint = "sha256:17292ebf3f255ef736919541612a58cc4bf842bdc9a880fac9e3fe0c420ccefc"

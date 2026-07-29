@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-29"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:042b19fd071488828d6b0b4371314eccafbab3e026903d78286b5d02bd86160d"
+inventory_snapshot = "sha256:10a2f1d4fefbcec6f6fd46295f56b1304d871a00c40e26df1b487baf9a9791f5"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
 canonical_catalog_snapshot = "sha256:d9783ddf73c8a7eba11812ca19a424be51fbb0fc087ca384e5bdd857e5ca3df4"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:0d1e82f9ddfab587f117113aee0a5486c4d26004bea2ada853165a37686d2541"
+snapshot = "sha256:230eda8a50000b34b05e033947ebf7c01a5ef0da05a9dc6f8fe8849e50da692a"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -7544,7 +7544,7 @@ record_paths = ["src/gpt/articles/faith/in-defense-of-the-particular/research/sc
 
 [[review_units]]
 owner_id = "articles/faith/last-supper-calvary-and-the-mass"
-surface_snapshot = "sha256:eaa2a7d85ef37302cba7725cf9c6d4f3d4126cf1769f5550cf950fe18f3a3a62"
+surface_snapshot = "sha256:ef76d89f440116997f85c0b494d15d81277fb153e4955efb5ae2a5b1d6a02c52"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -7764,14 +7764,14 @@ record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/
 
 [[review_units]]
 owner_id = "articles/scripture/abraham-and-the-daylight-stars"
-surface_snapshot = "sha256:5640a60237f6a01a45e4ed47c194338d188989321a3affb3db7d0a35dbcec1c7"
+surface_snapshot = "sha256:d210206d577578b733d6e0359ef77c35b0350605f2b9787f20f3013f3de39a45"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
 [[review_units.family_presence]]
 family_id = "family.abraham-ibn-ezra.perush-al-ha-torah"
 basis = "reviewed"
-record_paths = ["src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/independent-exact-snapshot-review-2026-07-27.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/independent-rabbinic-patristic-review-2026-07-27.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/jewish-witness-second-pass-2026-07-27.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/rabbinic-patristic-resolution-2026-07-27.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/source-audit.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/staleness-review-2026-07-26.md"]
+record_paths = ["src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/independent-exact-snapshot-review-2026-07-27.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/independent-rabbinic-patristic-review-2026-07-27.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/jewish-witness-second-pass-2026-07-27.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/rabbinic-patristic-resolution-2026-07-27.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/staleness-review-2026-07-26.md"]
 [[review_units.family_presence]]
 family_id = "family.anonymous.book-of-jubilees"
 basis = "reviewed"
@@ -7779,7 +7779,7 @@ record_paths = ["src/gpt/articles/scripture/abraham-and-the-daylight-stars/resea
 [[review_units.family_presence]]
 family_id = "family.anonymous.genesis-apocryphon"
 basis = "reviewed"
-record_paths = ["src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/source-audit.md", "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/versional-second-pass-2026-07-27.md"]
+record_paths = ["src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/versional-second-pass-2026-07-27.md"]
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "reviewed"
@@ -7867,7 +7867,7 @@ record_paths = ["src/gpt/articles/scripture/abraham-and-the-daylight-stars/resea
 
 [[review_units]]
 owner_id = "articles/scripture/john-6-bread-from-heaven"
-surface_snapshot = "sha256:1fc00b6849924eb8d39e5c7a267ca0bcdd3739f403fec6a9c3cb7dbaafff9819"
+surface_snapshot = "sha256:7347b94a126dfc92a880878d79661e0c8394211a1e12c474ceae15f986d8e003"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -7990,7 +7990,7 @@ record_paths = ["src/gpt/articles/scripture/john-6-bread-from-heaven/main.tex", 
 
 [[review_units]]
 owner_id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
-surface_snapshot = "sha256:5c7fe7ed568834a97bad6db051e1b0a088fa97f9da7dc6acbf86764626641613"
+surface_snapshot = "sha256:524862a1e6ca08407990c3c4a4abbcc4c53be449c0655bbc7cb08d04ceaf8ebb"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -8926,7 +8926,7 @@ record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/sourc
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:458d10b93183086808d9ece8e1b137e7c5322dac75e4b9a0874f5ffedd430f60"
+surface_snapshot = "sha256:d771b138d596437bde3125e5d57e11389b2247700c17c2f9414462a9081e6995"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"

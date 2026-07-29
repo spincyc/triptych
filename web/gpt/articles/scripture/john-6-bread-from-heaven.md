@@ -1,6 +1,6 @@
 # Bread from Heaven
 
-*A source-first study of John 6 and the patristic reception of the Bread of Life discourse*
+*A source-first study of the ancient reception joining John 6 to Bethlehem and the manger*
 
 ## The Claim under Test
 
@@ -84,7 +84,7 @@ The verb “abide” at 6:56 belongs to a major Johannine field. The same Gospel
 
 ## Text, Numbering, and Questions the Draft Must Not Hide
 
-The Douay–Rheims/Vulgate tradition divides John 6 differently from most modern editions after verse 50. What modern editions call 6:51—including both the living-bread declaration and “the bread that I will give is my flesh”—is split between Douay–Rheims 6:51 and 6:52. Modern 6:63, on Spirit and flesh, is Douay–Rheims 6:64. Every eventual citation must either follow one system consistently or give both at disputed loci.
+The Douay–Rheims/Vulgate tradition divides John 6 differently from most modern editions after verse 50. What modern editions call 6:51—including both the living-bread declaration and “the bread that I will give is my flesh”—is split between Douay–Rheims 6:51 and 6:52. Modern 6:63, on Spirit and flesh, is Douay–Rheims 6:64. This study uses modern numbering in its exposition and gives both systems where the difference could mislead a reader.
 
 The registered Greek apparatus also records variants that matter to exposition without overturning it. At 6:39 it reports differences around the pronoun and preposition in the resurrection clause. At 6:55 it reports the adverb/adjective difference just noted. At 6:63 it reports present versus perfect speech (“words I speak” / “have spoken”). At 6:69 the Byzantine confession “Christ, the Son of the living God” differs from the shorter “Holy One of God” reported for Nestle–Aland. None changes the chapter’s Eucharistic vocabulary, but 6:69 must not be quoted as textually uniform.
 
@@ -148,7 +148,7 @@ That distinction matters apologetically. A Catholic need not prove transubstanti
 
 *Sacrosanctum Concilium* 47 describes the Eucharistic sacrifice as the memorial in which the sacrifice of the Cross is perpetuated and the Church is joined to Christ’s saving work.
 
-The *Catechism of the Catholic Church* 1322–1323 begins its treatment of the Eucharist by naming it the completion of Christian initiation and the source and summit of Christian life. That placement is a doctrinal reception of the whole mystery, not evidence for the intention of a patristic author.
+The *Catechism of the Catholic Church* 1322–1323 begins its treatment of the Eucharist by placing participation in the Lord’s sacrifice within Christian initiation and by gathering sacrifice, memorial, communion, unity, charity, grace, and eschatological pledge. That placement is a doctrinal reception of the whole mystery, not evidence for the intention of a patristic author.
 
 Paul VI’s *Mysterium fidei* guards the objective presence and insists that symbolic and effective meanings do not exclude substantial conversion. John Paul II’s *Ecclesia de Eucharistia* places Eucharist at the heart of the Church and repeatedly joins sacrifice, presence, communion, and eschatological hope. Benedict XVI’s *Sacramentum caritatis* presents the Eucharist as a mystery believed, celebrated, and lived. These documents are doctrinal reception, not evidence for what a second-century Father thought.
 
@@ -173,6 +173,18 @@ Levitical prohibitions make drinking blood shocking. That shock can support eith
 ### Does verse 63 explain everything as metaphor?
 
 John can use “flesh” in different senses, so a change cannot be ruled out by repetition alone. But the ascension saying, the Spirit’s life-giving action, and the patristic distinction between Christ’s flesh and carnal hearing support reading verse 63 as a rejection of merely carnal comprehension, not a retraction of verses 51–58. A sacramental reality can be spiritual in source and mode while involving Christ’s real flesh.
+
+### Can faith alone account for the eating language?
+
+Calvin offers a stronger alternative than bare memorialism. In his commentary on John 6:47–58 he reads eating and drinking as true participation in Christ through faith, while denying that the discourse directly expounds the Lord’s Supper. In *Institutes* IV.17.4–10 he likewise rejects an empty sign: believers are truly nourished by Christ’s flesh through the Spirit, though not by the Catholic account of sacramental conversion. This reading preserves descent, Cross, indwelling, and life, and it rightly prevents sacramental vocabulary from bypassing faith.
+
+Its pressure point is historical as well as lexical. John moves from coming and believing to flesh given, drinking blood, true food and drink, and repeated eating; Cyprian, the Jerusalem catechesis, Chrysostom, Augustine, and Cyril receive those later clauses within Eucharistic teaching. That reception does not prove that every sentence is a technical account of sacramental mode, but it makes an exclusively nonsacramental account less adequate to the chapter’s full canonical and reception history.
+
+### Could verses 51c–58 be integral but nonsacramental Christology?
+
+A current nonsacramental proposal does not need to cut these verses out as a later interpolation. Meredith J. C. Warren reads the flesh-and-blood language as integral to Johannine Christology: consuming a divine figure can signify participation in divine life within ancient Mediterranean literary worlds. On this account, the passage intensifies incarnation, death, and union with Christ without describing a Christian meal. This is a serious alternative because it retains the difficult verses and explains why eating language can carry more than one ancient association.
+
+The comparison cannot decide the passage by itself. Literary analogues show available conceptual possibilities; they do not establish John’s dependence or erase the chapter’s Passover, bread, thanksgiving, communal, and later Eucharistic reception. Conversely, later reception cannot simply be projected back as proof of the Evangelist’s complete intention. The warranted conclusion is therefore cumulative: John 6 is more than a liturgical transcript, while a reading that excludes Eucharistic reference leaves its canonical setting and early reception insufficiently explained.
 
 ### Can patristic testimony be reduced to a vote?
 
@@ -224,11 +236,11 @@ This source-first study tests one reception claim about John 6: whether the Brea
 
 English Scripture quotations have been checked at their principal loci against the repository’s registered public-domain Douay–Rheims, whose John 6 numbering from modern verse 51 onward runs one verse higher. Greek observations are bounded to the identified Robinson–Pierpont witness and its inline apparatus. The Vulgate, Pusey’s Greek Cyril, the Latin of Augustine and Jerome, the Greek of Chrysostom, and the manuscript history of pseudo-Gregory have not been critically collated. Accordingly, the study uses brief paraphrase and makes no wording-critical conclusion from those witnesses.
 
-The authority classes are distinct: Scripture is the governing text; patristic witnesses show reception and theological reasoning; later ecclesiastical teaching may clarify doctrine but is not retrojected into an earlier author’s intention; the final typological synthesis is project synthesis. Internal source, production, visual, and web-fidelity review are recorded in the adjacent research files. Independent exegetical, patristic, theological, and rights review remains welcome and has not occurred; its absence is a disclosed review limitation rather than a claim of ecclesiastical approval.
+The authority classes are distinct: Scripture is the governing text; patristic witnesses show reception and theological reasoning; later ecclesiastical teaching may clarify doctrine but is not retrojected into an earlier author’s intention; the final typological synthesis is project synthesis. The study tests a bounded reception claim rather than claiming a complete commentary, critical edition, or history of Eucharistic doctrine.
 
 ## References
 
--   Holy Scripture: Luke 2:1–20; Micah 5:2–4; John 1:1–18; John 6:1–71; 1 Corinthians 10:16–17; 11:23–29. English publication text to use only from the registered public-domain Douay–Rheims witness.
+-   Holy Scripture: Luke 2:1–20; Micah 5:2–4; John 1:1–18; John 6:1–71; 1 Corinthians 10:16–17; 11:23–29. English quotations are from the public-domain Douay–Rheims Bible, Challoner revision.
 
 -   St. Ignatius of Antioch, *Letter to the Smyrnaeans* 7.
 
@@ -268,6 +280,10 @@ The authority classes are distinct: Scripture is the governing text; patristic w
 
 -   University of Iowa Bible and Archaeology, “RTL Words: LEHEM,” dated web state, 27 July 2026.
 
-**Last revised (UTC):** 2026-07-27T16:31:00Z
+-   John Calvin, *Commentary on the Gospel according to John*, on John 6:47–58; *Institutes of the Christian Religion* IV.17.4–10, trans. Henry Beveridge (Edinburgh: Calvin Translation Society, 1845).
+
+-   Meredith J. C. Warren, *My Flesh Is Meat Indeed: A Nonsacramental Reading of John 6:51–58* (Minneapolis: Fortress Press, 2015), 19–60, 249–255.
+
+**Last revised (UTC):** 2026-07-29T14:49:37Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

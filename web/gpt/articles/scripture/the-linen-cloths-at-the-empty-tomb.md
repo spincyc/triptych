@@ -60,7 +60,7 @@ The verbal link to burial wrapping creates an important alternative to the image
 
 The Clementine Vulgate preserves the same narrative distinctions without turning them into a diagram. At the burial it says that the body was bound with *lintea*; at the tomb it calls the cloths *linteamina* and the head-cloth a *sudarium*. The latter is *separatim involutum in unum locum*—apart, wrapped in one place. Luke likewise says that Peter saw the *linteamina* alone and departed *mirans*, wondering. This Latin witness therefore reinforces the subject sequence and the language of wrapping, separation, and wonder, but supplies no folded-table signal or precise cloth geometry.
 
-The Septuagint can bear here only as lexical background: this is a New Testament scene, not an Old Testament variant. The registered Thayer entry notes one Septuagint use of the *othonion* word family at Judges 14:13 for a linen garment. No direct checked Septuagint passage has been registered for this study, so that notice cannot be promoted into a broader claim about Jewish burial or dining custom.
+The Septuagint bears here only as lexical background: this is a New Testament scene, not an Old Testament variant. Swete’s Greek text of Judges 14:12–13 uses *sindonas* for the thirty garments Samson offers and *othonia* for the thirty garments his hearers must give if they cannot solve the riddle; the Alexandrinus apparatus instead reads *sindonas* in verse 13. This direct locus confirms an ordinary garment use and textual variation within the Greek tradition. It supplies no burial practice, dining custom, or coded fold.
 
 ### *Keimena*, *chōris*, and *eis hena topon*
 
@@ -74,7 +74,7 @@ John varies his verbs. The other disciple first *blepei*, sees from the doorway.
 
 The nearest grammatical antecedent of “believed” is the other disciple. A reading that says Peter believed from the arrangement must therefore be presented as inference or harmonization, not John’s explicit attribution.
 
-What the other disciple believed is itself debated. Possibilities include Mary’s report that the body had been removed, confidence that something divine had occurred, or Easter faith in Jesus’s Resurrection. The absolute use of “believed,” John’s favorable portrayal of signs rightly perceived, and the contrast with not yet knowing Scripture favor genuine resurrection belief, though still incomplete. Verse 9 does not cancel verse 8; it explains that the belief arose through the sign before scriptural understanding.
+What the other disciple believed is itself debated. Possibilities include Mary’s report that the body had been removed, confidence that something divine had occurred, or Easter faith in Jesus’s Resurrection. The unqualified “believed” in this scene, the movement from seeing to believing, and the contrast with not yet knowing Scripture favor genuine resurrection belief, though still incomplete. This is a reading of the local sequence, not a claim derived from a complete concordance of every Johannine use of “believe.” Verse 9 does not cancel verse 8; it explains that the belief arose through the sign before scriptural understanding.
 
 This distinction is theologically important. Easter faith is not irrational because it precedes a complete exegetical account. Nor is the evidence self-interpreting. The empty tomb and cloths can exclude or weaken some explanations without making the Resurrection a laboratory conclusion. The risen Jesus’s appearances and the scriptural illumination complete what the sign begins.
 
@@ -86,9 +86,9 @@ The difference between John’s “believed” and Luke’s “wondering” has 
 
 **Both believed, but Luke names only wonder.** Wonder can accompany faith, so Luke need not exclude an emerging conviction. Plausible psychology does not warrant changing Luke’s predicate to “believed.”
 
-**The other disciple believed Mary’s removal report.** On this account John 20:8 means only that the empty tomb confirmed Mary’s message. Verse 9 then explains why resurrection faith had not arisen. Against it stand John’s generally favorable absolute use of believing and the scene’s movement beyond Mary’s first inference.
+**The other disciple believed Mary’s removal report.** On this account John 20:8 means only that the empty tomb confirmed Mary’s message. Verse 9 then explains why resurrection faith had not arisen. Against it stand the local movement from seeing to believing and the scene’s movement beyond Mary’s first inference.
 
-**Luke 24:12 is a secondary harmonization from John.** Westcott and Hort once judged the verse drawn from John with the other disciple omitted. Modern critical editions print it while noting textual questions. Even if literary dependence were established, the received Lukan form witnesses an early interpretation that attributes wonder, not belief, to Peter.
+**Luke 24:12 is a secondary harmonization from John.** Westcott and Hort once judged the verse drawn from John with the other disciple omitted. The 2023 SBLGNT running text prints the verse; its edition-comparison apparatus records the verse in Tregelles, NA28, and Robinson–Pierpont while marking it as double-bracketed in Westcott–Hort. That control is not a manuscript apparatus and does not settle the verse’s earliest recoverable form. Even if literary dependence were established, the printed Lukan form attributes wonder, not belief, to Peter.
 
 Textual history asks whether Luke 24:12 belonged to the earliest recoverable Luke; narrative exegesis asks what the printed verse means; canonical interpretation asks how both accounts function together. One answer cannot silently perform all three jobs.
 
@@ -142,7 +142,7 @@ The passage does not describe the cloths as still retaining the three- dimension
 
 The modern story usually runs as follows: at a Jewish meal, a master tossed aside his napkin if finished but folded it to tell a servant that he would return; Jesus therefore folded the face-cloth to promise his return. Every link requires proof: that such a custom existed in the relevant Jewish period, that *soudarion* means the table napkin in that custom, that John’s participle means a deliberate fold, and that the Evangelist expected readers to decode the gesture.
 
-The controlled search does not establish any link. The Mishnah and Talmud contain detailed meal, hand-washing, servant, and cloth practices, but no located rule matching the return signal. Roman dining evidence likewise supplies cloths and servants without this code. Patristic and medieval commentators discuss burial, theft, order, and belief; they do not transmit the master-servant explanation. The Authorized Version contributes the old English noun “napkin” but says it was “wrapped together,” not folded as a signal.
+The exact rabbinic controls inspected for this study do not establish any link. Mishnah Berakhot 8:3 and Babylonian Talmud Berakhot 52b concern where a hand-wiping cloth is placed during a meal; Mishnah Sanhedrin 6:1 describes a cloth waved to halt an execution. None contains a departing master, an end-of-meal fold, or a promise of return. These three loci are controls, not an exhaustive search of rabbinic literature. Roman dining evidence likewise supplies cloths and servants without this code. Patristic and medieval commentators discuss burial, theft, order, and belief; they do not transmit the master-servant explanation. The Authorized Version contributes the old English noun “napkin” but says it was “wrapped together,” not folded as a signal.
 
 The claim appears in modern preaching and internet circulation, often without a primary citation. Its neatness helps it travel: one unfamiliar object, one lost custom, one uplifting message. Those are also warning signs. An explanation that depends on inaccessible cultural knowledge should become more credible as its ancient documentation improves. Here the documentation disappears as the search moves backward.
 
@@ -210,9 +210,9 @@ Three conclusions survive either decision. First, John independently attributes 
 
 ## Search Boundary
 
-The modern-custom negative is reproducible only if its boundary is explicit. The relevant source families are:
+The modern-custom negative is reproducible only if its boundary is explicit. This edition tested:
 
--   Mishnaic, Toseftan, Babylonian and Jerusalem Talmudic meal and cloth texts, with midrashic and minor-tractate controls;
+-   the directly relevant rabbinic loci Mishnah Berakhot 8:3, Babylonian Talmud Berakhot 52b, and Mishnah Sanhedrin 6:1;
 
 -   Greek and Roman dining terminology and known cloth signals;
 
@@ -222,9 +222,9 @@ The modern-custom negative is reproducible only if its boundary is explicit. The
 
 -   dated modern print, email, web, and preaching appearances.
 
-Queries must test the conjunction as well as single terms: folded cloth, crumpled cloth, master, servant, meal finished, return, and their relevant Hebrew/Aramaic/Greek/Latin equivalents. A zero English phrase count cannot exclude a differently worded source. Every positive “napkin” hit must be classified by object, setting, action, actor, and communicated meaning.
+That is an enumerated-witness investigation, not a Toseftan, Jerusalem Talmudic, midrashic, minor-tractate, or whole-rabbinic-corpus search. A future broader search would need to test conjunctions as well as single terms: folded cloth, crumpled cloth, master, servant, meal finished, return, and their relevant Hebrew, Aramaic, Greek, and Latin equivalents. A zero English phrase count could not exclude a differently worded source. Every positive “napkin” hit would still need classification by object, setting, action, actor, and communicated meaning.
 
-This edition does not inherit another provider’s hit count or treat a mutable website search as an exhaustive corpus. It independently inspected the exact positive controls at Berakhot 8:3/52b and Sanhedrin 6:1 and bound the earliest located online claim and contemporary correction. Those witnesses establish a narrow result: the relevant meal-cloth rule concerns ritual-purity placement, the execution cloth is a signal in a different setting, and neither supplies the story’s departing-master convention. They do not prove that no differently worded or unpreserved custom ever existed.
+This edition does not inherit another provider’s hit count or treat a mutable website search as an exhaustive corpus. It independently inspected the exact controls at Berakhot 8:3/52b and Sanhedrin 6:1 and bound the earliest located online claim and contemporary correction. Those witnesses establish a narrow result: the relevant meal-cloth rule concerns ritual-purity placement, the execution cloth is a signal in a different setting, and neither supplies the story’s departing-master convention. They do not prove that no differently worded or unpreserved custom ever existed.
 
 Patristic absence is separately bounded. Chrysostom, Augustine, Cyril, Gregory, Bede, Theophylact, and Aquinas discuss the passage without the table story. Their silence is weighty because several explain the arrangement. It remains an enumerated witness result, not a claim about all Christian literature.
 
@@ -240,11 +240,11 @@ The face-cloth matters too, but as burial evidence and part of John’s ordered 
 
 ## Scope, Method, and Qualifications
 
-This GPT edition independently tests the claims stated in section 1. It uses the same provider-neutral external evidence identities available to the Claude edition but inherits none of that edition’s prose, publication judgment, or review state. Greek observations were checked in the registered Robinson–Pierpont John and Luke artifacts. The exact Clementine Vulgate controls for John 11:44, 19:39–40, 20:3–10, Luke 23:53, and 24:12 were also checked; the Septuagint claim is limited to the registered lexicon’s identified lexical notice rather than an unregistered direct collation. English Scripture is quoted only from the registered public-domain Douay–Rheims.
+This GPT edition independently tests the claims stated in section 1. It uses the same provider-neutral external evidence identities available to the Claude edition but inherits none of that edition’s prose, publication judgment, or review state. Greek observations were checked in the registered Robinson–Pierpont John and Luke artifacts. The exact Clementine Vulgate controls for John 11:44, 19:39–40, 20:3–10, Luke 23:53, and 24:12 were also checked. Swete’s 1909 Judges 14:12–13 text and apparatus were directly inspected for the bounded Septuagint lexical comparison. The SBLGNT v1.2 Luke running text and edition-comparison apparatus were directly inspected at 24:12; that apparatus is not a manuscript apparatus. English Scripture is quoted only from the registered public-domain Douay–Rheims.
 
 The patristic, medieval, textual-critical, material-culture, rabbinic, and modern-provenance claims were checked against the exact publication-local bindings. The modern folded-napkin conclusion remains bounded to the exact witnesses and dated routes named here; it does not claim an exhaustive search of every language or unpreserved custom and does not depend on another provider’s search receipt. Theophylact and Lightfoot remain explicitly limited by OCR, and present-day web witnesses establish transmission rather than antiquity.
 
-The final PDF and generated web edition received internal source, quotation, theological-boundary, and production review on 2026-07-27. That review is editorial rather than independent or ecclesiastical approval.
+The final PDF and generated web edition received internal source, quotation, theological-boundary, and production review on 2026-07-29. That review is editorial rather than independent or ecclesiastical approval.
 
 ## Working References
 
@@ -258,7 +258,9 @@ The final PDF and generated web edition received internal source, quotation, the
 
 -   Joseph Henry Thayer, *Greek-English Lexicon*, s.vv. *entylissō*, *othonion*, *soudarion*.
 
--   B. F. Westcott, *The Gospel according to St John*, vol. 2, pp. 339–341; B. F. Westcott and F. J. A. Hort, *Introduction and Appendix*, p. 71 on Lk 24:12.
+-   B. F. Westcott, *The Gospel according to St John*, vol. 2, pp. 339–341; B. F. Westcott and F. J. A. Hort, *Introduction and Appendix*, p. 71 on Lk 24:12; Michael W. Holmes, ed., *SBL Greek New Testament*, v1.2 (2023), Lk 24:12 running text and edition-comparison apparatus.
+
+-   Henry Barclay Swete, ed., *The Old Testament in Greek according to the Septuagint*, vol. 1, 4th ed. (Cambridge, 1909), Judg 14:12–13 and apparatus.
 
 -   Jodi Magness, “Ancient Jewish Tombs and Burial Customs (to 70 C.E.),” in *The Archaeology of the Holy Land* (Cambridge University Press, 2012), pp. 230–255; Salima Ikram, “Mummification,” *UCLA Encyclopedia of Egyptology* (2010).
 
@@ -266,7 +268,7 @@ The final PDF and generated web edition received internal source, quotation, the
 
 -   Henry Latham, *The Risen Master*, pp. 34, 43; the dated *Jerusalem Perspective* reader question and response (7 October 2006); the archived *Recipes and More* forward (21 May 2007); and the later TruthOrFiction and GotQuestions assessments, used only as modern reception.
 
-**Last revised (UTC):** 2026-07-27T18:33:00Z
+**Last revised (UTC):** 2026-07-29T15:32:00Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

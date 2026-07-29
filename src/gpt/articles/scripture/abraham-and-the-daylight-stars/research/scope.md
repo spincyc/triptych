@@ -4,57 +4,42 @@
 - **Identity:** provider counterpart to
   `claude:articles/scripture/abraham-and-the-daylight-stars`; independent prose
   and publication-local judgments.
-- **State:** installed and release-bound publication; specialist review remains
-  outstanding.
+- **State:** installed and release-bound public-alpha publication.
 - **Question:** does Genesis 15's narrated sequence place the star command
-  before sunset, and how did historical readers handle the resulting problem?
-- **Provisional result:** yes, conditionally: under a continuous reading of the
-  chapter, verse 5 precedes its sunset. Vision or an omitted interval remains
-  possible. The daylight-faith meditation is project synthesis.
+  before sunset, and what do the bound historical witnesses establish?
+- **Result:** conditionally yes: under a continuous reading, verse 5 precedes
+  the chapter's sunset. Vision or an omitted interval remains possible. The
+  daylight-faith meditation is project synthesis.
 
-Shared external identities may be reused. Claude's prose, source-sufficiency
-judgments, search receipts, and review events do not transfer.
+The publication corpus is intentionally bounded to its exact local bindings:
+the registered Hebrew, Vulgate, Swete, Douay--Rheims--Challoner, Syriac, and
+Jubilees textual witnesses; Abarbanel, Philo, Josephus, Augustine, a Lapide,
+and Haydock for reception; and Romans 4, Galatians 3, and Hebrews 11 for
+canonical reception. Shared source identities may be reused, but the Claude
+counterpart's prose, sufficiency judgments, searches, and review events do not
+transfer.
 
-Completed through 2026-07-27: independent restructuring and compression;
-inspection of the exact repository-held Scripture, Hebrew, Vulgate, Swete,
-Augustine, Abarbanel, a Lapide, Haydock, Philo, and Josephus witnesses named in
-the local bindings; required second passes across Jewish, patristic, and
-versional source families; claim-level authority and rights audit; explicit
-astronomy and pastoral boundaries; witness register; source-library validation;
-and the production checks recorded below.
+Jewish and patristic loci recovered in exploratory research but not normalized
+into edition-identified publication bindings are excluded from the published
+proof. Jerome, the Samaritan Pentateuch, Targum Neofiti, and other unbound
+leads are outside this corpus. The article therefore makes no author-wide,
+tradition-wide, exhaustive-reception, silence, priority, or controversy claim.
+It does not claim to have read every possible witness to Genesis 15.
 
-Positive Jewish loci recovered in the second pass remain pending exact
-reusable normalization and are presented only as leads. Ambrose, Chrysostom,
-and Ephrem are exact-locus positive patristic witnesses pending reusable
-normalization; Theodoret supplies only a local negative, and Jerome remains
-unchecked. No tradition-wide silence or controversy claim is made.
+The work is an alpha study aid, not an official biblical commentary or an
+ecclesiastically approved interpretation. Alpha publication does not imply an
+imprimatur, nihil obstat, specialist endorsement, or completion of a larger
+reception-history corpus. No deferred specialist-review gate is asserted.
 
-Outstanding: independent review by a Hebraist, Septuagint specialist, rabbinics
-scholar, patristics scholar, astronomer, philosopher of religion, pastoral
-reviewer, and Catholic exegete. No imprimatur, nihil obstat, or ecclesiastical
-approval is claimed. Publication under the standing public-repository
-authorization does not close any of these deferred gates.
+## Review history
 
-## Production review
+The 2026-07-27 reviews remain historical receipts for the exact snapshots they
+identify. The later removal of a rendered metadata heading changed the
+publishable source and PDF hashes without a new exact-current review. The
+2026-07-29 remediation therefore requires a new build, every-page visual
+inspection, exact artifact hashes, and a current-snapshot audit before
+installation.
 
-On 2026-07-27, the repaired GPT source rendered as an eight-page letter-size
-PDF with SHA-256
-`6e672cfc53afe412e8535f36f30574daee50aa175516734dfc2151b5f6a98b85`.
-The final log contained no overfull or underfull boxes, undefined
-references, multiply defined labels, or package warnings. All eight rendered
-pages were inspected at page resolution for clipping, collisions, broken
-tables, stranded headings, and malformed metadata. This production review does
-not satisfy the outstanding specialist gates or authorize release.
-
-## First-baseline verdict
-
-The 2026-07-26 first-baseline review produced both required candidates and
-compared every consequential claim in
-`research/staleness-review-2026-07-26.md`. The candidates agree in substance;
-the expanded `main.tex` is preferred for its fuller audit surface. Because no
-accepted GPT baseline existed, this was a material authoring expansion rather
-than a conflict with an earlier accepted GPT edition. The reviewed eight-page
-PDF is now installed, the tracked web edition is present, the publication is
-cataloged in `library/scripture.md`, and the public-alpha manifest binds the
-installed PDF under the standing public-repository authorization. None of
-those publication operations closes a specialist gate.
+The 2026-07-26 first-baseline and 2026-07-29 staleness records preserve their
+own then-current comparisons. They do not enlarge the current publication
+corpus or supply authority for an unbound reader-facing claim.

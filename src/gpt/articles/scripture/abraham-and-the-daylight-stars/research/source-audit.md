@@ -1,73 +1,58 @@
-# Abraham and the Daylight Stars — GPT Preliminary Source Audit
+# Abraham and the Daylight Stars — GPT Source Audit
 
-Claude's audit was used only as a lead map to provider-neutral identities.
-GPT independently inspected and bound the repository-held witnesses listed in
-`source-bindings.toml`. The resulting claim audit is:
+The current article is controlled by `source-bindings.toml`. GPT independently
+inspected the bound witnesses; provider-neutral identity does not transfer
+another publication's interpretation or review state.
 
-1. Genesis 15:5, 12, 17–18 directly controls the conditional daylight claim.
-2. The identified Kittel 1909 Hebrew pages verify the represented sequence,
-   the infinitive construct at 15:12, and the active participle at 15:17.
-   Narrated progression is not a measure of elapsed time.
-3. Swete's inspected transcription supports the Greek comparison and was
-   checked against printed pages 23–24 in the second pass. A reusable page-image
-   record remains unnormalized. Augustine supplies contrary indirect Latin
-   evidence at 15:18, not proof of Greek variation.
-4. Hetzenauer's page image verifies the Vulgate temporal chain.
-5. Abarbanel's checked passage establishes that the exact dilemma is historical;
-   it does not make his answer the study's.
-6. The five-answer taxonomy is project synthesis and preserves disagreement.
-7. Philo's astral reading is attached to 15:7; later rabbinic and medieval
-   readings at 15:5 are not represented as direct transmission from him.
-8. Augustine supports countability, allegorical sunset, vision, and the Old
-   Latin comparison; he does not ask the exact daylight question. His Latin is
-   contrary indirect versional evidence, not proof of a particular Greek
-   exemplar or of Greek transmission history.
-9. A Lapide and Haydock remain OCR-level witnesses and are not promoted beyond
+1. Genesis 15:5, 12, and 17--18 controls the conditional daylight claim.
+2. Kittel's 1909 Hebrew printing verifies represented sequence, the infinitive
+   construct at 15:12, and the active participle at 15:17. Narrated progression
+   does not measure elapsed time.
+3. Swete's identified printing supports only the bounded Greek comparison.
+   Augustine's Latin supplies contrary indirect evidence at 15:18, not proof of
+   a Greek exemplar or a transmission history.
+4. Hetzenauer's Clementine Vulgate page verifies the Latin temporal chain.
+5. The registered Douay--Rheims--Challoner Genesis artifact controls English
+   scriptural wording and the named star-promise recurrences.
+6. Abarbanel question 7 establishes that the precise day/night dilemma is
+   premodern; the article does not claim priority or adopt his resolution.
+7. Augustine XVI.23--24 supports countability, vision, allegorical sunset, and
+   the Old Latin comparison. The local finding that he does not ask the exact
+   daylight question is not an author-wide or patristic-corpus negative.
+8. A Lapide and Haydock remain OCR-level witnesses and are not promoted beyond
    that ceiling.
-10. Astronomy supplies only the ordinary visibility boundary. It does not
-    decide vision, interval, miracle, or narrative intent.
-11. The exact Josephus I.10.3 witness supports the claim that his retelling
-    retains the stars comparison and sacrifice but omits the look command and
-    the temporal markers.
-12. The inspected Syriac delivery is reported only at its unidentified textual
-    ceiling, and Jubilees is treated as rewritten Scripture rather than a
-    version.
-13. The pastoral application is explicitly conditional and is not attributed
-    to Genesis, Paul, or an ancient interpreter.
-14. A required second pass overturned the earlier grouped patristic-negative
-    lead: Ambrose supplies a visionary reading, while Chrysostom and Ephrem
-    explicitly place the star scene at night and the sacrifice through the
-    following day to evening. Theodoret supplies only a local negative, and
-    Jerome remains unchecked.
-15. The same pass found exact-locus support for several omitted Jewish
-    reception families, but their deliveries still require normalization and
-    publication-local binding. Ibn Ezra does not independently state the
-    former night/work/sunset reconstruction, and Netziv does not answer the
-    daylight question.
+9. Philo's astral reading belongs to Genesis 15:7; it is not represented as
+   direct exegesis of verse 5 or proof of later transmission.
+10. Josephus I.10.3 in Whiston's identified translation retains the stars
+    comparison and sacrifice but omits the look command and temporal markers.
+11. The dated Syriac delivery is reported only at its unidentified textual
+    ceiling. Jubilees is classified as rewritten Scripture rather than a
+    biblical version.
+12. Romans 4, Galatians 3, and Hebrews 11 are inspected and bound in the
+    registered Douay--Rheims--Challoner artifacts. They support the canonical
+    reflection and its one quotation but supply no hour for Genesis 15:5.
+13. Ordinary daylight visibility constrains the proposed scene without
+    deciding vision, interval, miracle, or narrative intent.
+14. The pastoral application is conditional project synthesis and is not
+    attributed to Genesis, Paul, or an ancient interpreter.
 
-Jerome remains unresolved. Ambrose, Chrysostom, and Ephrem are inspected
-positive witnesses pending reusable normalization; Theodoret is a bounded local
-negative. The Samaritan Pentateuch and Targum Neofiti remain uncollated leads.
-The surviving Genesis Apocryphon is structurally unavailable at the controlling
-loci rather than an unresolved expected witness.
+Exploratory records preserve additional Jewish and patristic leads, including
+the exact loci pursued and their access or rights ceilings. Because those
+deliveries are not normalized into publication-local edition-identified
+bindings, the current article does not publish their claims. Jerome, the
+Samaritan Pentateuch, Targum Neofiti, and other unbound leads are outside the
+declared corpus. This is a bounded one-passage study, not a claim that every
+possible witness or tradition has been exhausted.
 
-No Claude review event, search receipt, production receipt, or publication
-approval applies to this GPT edition.
+## Verdict
 
-## Re-evaluation verdict
+The bound evidence supports the article's deliberately conditional result:
+Genesis presents the star command before its explicit sunset when the chapter
+is read as one continuous represented sequence. Neither Hebrew verbal sequence
+nor the versions prove that continuity. The reception evidence establishes
+several bounded alternatives without authorizing a tradition-wide claim.
 
-The bound witnesses continue to support the study's deliberately conditional
-result. Genesis 15 narrates the star command before its explicit sunset under a
-continuous reading, while neither Hebrew verbal sequence nor the ancient
-versions proves the absence of a vision or omitted interval. Abarbanel proves
-that the chronological difficulty is historical. Chrysostom and Ephrem
-materially resolve the chronology, but no inspected witness establishes the
-exact Abarbanel formulation as a controversy. The repaired consequential
-claims are supported at their stated evidence ceilings.
-
-The unresolved Samaritan, targumic, Second Temple, and additional patristic
-witnesses prevent promotion of the bounded result into a tradition-wide
-absence claim. Exact publication-local evidence for the omitted Jewish
-reception claims and independent rabbinic, patristic, astronomical, and
-theological review remain outstanding. The installed and release-bound state
-does not imply that those reviews occurred.
+The source, authority, synthesis, and pastoral limits are local and explicit.
+The work may be described as public alpha once its current render has passed
+the mechanical, rights, source-integrity, reproducibility, and visual gates. It
+claims no official or ecclesiastical approval and no deferred specialist gate.

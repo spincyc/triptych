@@ -43,3 +43,13 @@ paper remains the fuller treatment.
 
 The candidates remain under the ignored build tree. No candidate was installed
 and no staleness rebaseline was performed.
+
+## Subsequent reconciliation
+
+The preceding statement records the state when this comparison was completed;
+it is not a present-tense completion claim. A later repository reconciliation
+accepted the no-material-change verdict and recorded the current research
+snapshot in `src/sources/inventories/research-staleness-v1.toml`. This
+publication-local clarification changes the research-record fingerprint and
+therefore requires that ledger record to be refreshed before the staleness
+check returns to fresh. No candidate from this review was installed.

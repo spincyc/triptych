@@ -176,18 +176,18 @@ state = "complete"
 id = "project-recent-paper-hard-review"
 owner = "src/gpt/articles"
 promise = "Hard-review every recently discussed paper against current universal and genre guidance."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "paper-set"
   criterion = "The review covers Exorcism, Last Supper, Abraham, John 6, and Linen Cloths."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/editorial.md", "guidance/articles.md", "guidance/history/historical-accounts.md"]
 
   [[deliverables.requirements]]
   id = "records-reconciled"
   criterion = "Each paper's scope, audit, web artifact, installed PDF, catalog state, and completion claims agree."
-  status = "open"
+  status = "pass"
   evidence = ["promised-deliverables.toml"]
 
 [[deliverables]]
@@ -212,12 +212,12 @@ state = "complete"
 id = "project-stale-editions"
 owner = "scripts/research-staleness"
 promise = "Reconcile every publication edition reported stale by the repository-wide audit."
-state = "complete"
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "staleness-zero"
   criterion = "The exhaustive staleness audit passes with no stale edition."
-  status = "pass"
+  status = "open"
   evidence = ["scripts/research-staleness", "PROJECT-WORK.md"]
 
 [[deliverables]]

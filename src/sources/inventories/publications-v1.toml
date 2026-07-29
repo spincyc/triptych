@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-29"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 133
-source_surface_file_count = 1947
-snapshot = "sha256:042b19fd071488828d6b0b4371314eccafbab3e026903d78286b5d02bd86160d"
+source_surface_file_count = 1948
+snapshot = "sha256:10a2f1d4fefbcec6f6fd46295f56b1304d871a00c40e26df1b487baf9a9791f5"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -2952,7 +2952,7 @@ owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/current-guidance-audit-2026-07-27.md"
-sha256 = "9205395752daf07622cb3452483302cfe4e4bbb7f57d18990be08b279120a6c9"
+sha256 = "c079b08c52e0cda55cab3c0d0a2a95e878b7c1671bbf9edfb5003399e205dccd"
 kind = "research-record"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
@@ -2964,7 +2964,7 @@ owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/scope.md"
-sha256 = "d016852bcd28f587b21db2e0607e14fc6aa411f96edc90665e3e931c44d81ec8"
+sha256 = "b73bab1dcf6df1f7ee89755030010e60ccb757607e7191f2a8faf1fab15cbfdc"
 kind = "research-scope"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
@@ -2988,7 +2988,7 @@ owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/staleness-review-2026-07-29.md"
-sha256 = "44b9c7ef25af238c65bcb2110436dd807ee3f7e569e0892df1ff6adb7a0ab6f2"
+sha256 = "5aa528ab69a56273783d5e412702f9aad6ec73b8c4b0d9e23235b28412ae7557"
 kind = "research-record"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
@@ -3330,25 +3330,31 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/main.tex"
-sha256 = "ac7293da149de78be181fe74287fb86bb78cb4c51534d5366d080f9c1f9a1e4d"
+sha256 = "02240fa9228e3c065de2a3f78995170568c362425b40f95843f9ab657851fc30"
 kind = "publication-main"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
-path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/current-guidance-audit-2026-07-27.md"
-sha256 = "321b7d4d5b50ffb870e7bcb681d06b47de8faead997d7130437b8d0b0c82e4d0"
+path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/current-guidance-audit-2026-07-29.md"
+sha256 = "bc33247264e6b8c5e029404f6e474c4f8f269194f11fdaa3f82203c0fc919d00"
 kind = "research-record"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/evidence-map.md"
-sha256 = "55e44f6bbd8ee16101dd70733ccfb2e6388ee6b9cca84dd0a91a7ce056d00b1c"
+sha256 = "e4072cdd0551311d071962d818cb1e9593b55b881ddfc737988f933554a9f4a7"
 kind = "research-record"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/final-production-review-2026-07-27.md"
 sha256 = "cfdb61d3df04ed59561b867c1ee066fc8ff2e57c2c43008493f5ffe067f0596b"
+kind = "research-record"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/final-production-review-2026-07-29.md"
+sha256 = "407b04cbf940db83873378c0c46f4f31789f9be48d459a6f4f79f2f751b9389e"
 kind = "research-record"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
@@ -3402,19 +3408,19 @@ owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/scope.md"
-sha256 = "d9d0e5238ab5a585e9aadcfb6f7384e9f7f1750ce7ce356294d23356098eb373"
+sha256 = "f2674bf6119e3ded1933409cd3739c5b5a6fd4fdf75265c9e7b73a4bbab0714a"
 kind = "research-scope"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/source-audit.md"
-sha256 = "57c38a1205ec29463646ad5f38d4650f3c5232256741daa5a27f135a7e87b489"
+sha256 = "45cd82fbb843228c5fac65a7453dbc7beb7f12b189854e749b69d5202c62e409"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/source-bindings.toml"
-sha256 = "4557b276f9a651e25ee8ff7bccf795cb2f5df074604a955321c7a3ed82357b84"
+sha256 = "64f3bdb92cbbeb3f1fd15e1cfeae017237e215b3f143b903d3205886fcd45e70"
 kind = "source-binding"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
@@ -3444,19 +3450,19 @@ owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/main.tex"
-sha256 = "dd5e07745f4a73b1eae4729f4331ce38b89577842e5f6c5fedec247361d1bc2f"
+sha256 = "171bd6f9cf7f7be017dd7c61b5db5bd104cf633bcc1de74c2fdb61e11482a163"
 kind = "publication-main"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/current-guidance-audit-2026-07-27.md"
-sha256 = "cff0a7e9525d7075fc2d07aa6dcb61f39407ce97251f1f65bbfbfc5af7309c3a"
+sha256 = "dea76b212a311bcf7b4d63c784d9dde855fd0289da2ef3a7707b2d901ab90199"
 kind = "research-record"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/evidence-map.md"
-sha256 = "0fdac4dcf25d4cd1d197e0f7c5a7f390e0fef81067a6aeaef177aac3199084c2"
+sha256 = "eddf33fb51fd4d3b44659cc3536129fb4a1dc18b6f3eaf46f01c992e46e44307"
 kind = "research-record"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
@@ -3468,19 +3474,19 @@ owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/scope.md"
-sha256 = "39e66cd4dae4d9afdddc9ea66fce7db02e3ade53785e6bf95251e47a2e14bc50"
+sha256 = "1a3d2b4d83c240eb5605dac05f21fea680e377104593a1fd7f33c0828fbcab3a"
 kind = "research-scope"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/source-audit.md"
-sha256 = "00db61056f76d3dd6fb85b2361aae0b608e9724f6d8ae32de45342cdf890436d"
+sha256 = "77f50a46e90725d20bb83999757412477ded580a01bf7e33635b5efbe02b4bee"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/source-bindings.toml"
-sha256 = "2fabeabe4b055de612842d980f8086043e016a22ed5cd735f6549a037ce9872b"
+sha256 = "a202c188ccc49db12f54b4f2ab063f7a5946408d28a864abdc3b11a6d0610cd1"
 kind = "source-binding"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
@@ -3498,7 +3504,7 @@ owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/staleness-review-2026-07-29.md"
-sha256 = "e61930b535316a48ca5dab27a62d4752134f373a9d9275017d0b02201b24e5f4"
+sha256 = "b393d17525271930c7dd2f44c9126f570a3d1a0a1f47d73a95a636eb290a0350"
 kind = "research-record"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
@@ -3510,31 +3516,31 @@ owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
-sha256 = "086fdd07b7ef69e601903017ada0bb48ec853c53e5b7ec9cb09f39fc3b55ba62"
+sha256 = "b51e110ea01fbbb4aae23910b5b2c9c14f0a8f477d385be50a4d9ff9b056f03f"
 kind = "publication-main"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/evidence-map.md"
-sha256 = "1687f8bc5491dafd1baa2f7d333e611a9349fcb9b1be2701f8ce5c097f9575d8"
+sha256 = "b3c3228ef6d53078683c3499cd1227472eae9eb0203f09acd84d71a7bb7aafaf"
 kind = "research-record"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/scope.md"
-sha256 = "8afa6566183bdc88377e35859f353d0b34c72b0b569bb90ae5c3a2502a583a81"
+sha256 = "b816f67801b245fa9baaae9e34dca8fb9031bf077749116625323dbf33aa6619"
 kind = "research-scope"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-audit.md"
-sha256 = "a343a92a1874063b01a465a17a72a372cf33e7b0ef2d0e393bdacaf2c59098b1"
+sha256 = "245aa0b95fbb83724b214d1b88b5aee5044a248b6a3fb376f2796525b676e5a5"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-bindings.toml"
-sha256 = "4321567633b5f3ac7fec926d3f521b77854b910145bfff978dffff54681bfe1e"
+sha256 = "a6fb41f554a75723c36095446aafbd76d5d205f06b4a7296802d7781243d0569"
 kind = "source-binding"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
@@ -3546,7 +3552,7 @@ owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/staleness-review-2026-07-29.md"
-sha256 = "833c4b2d71ef7978558eab6bf97eb0c09534754b43da1f4c734dbcfbbef36593"
+sha256 = "a82e53465b5cff9f8821cd543687a2533c0b2755a16ee5510c9516a109ecfd5d"
 kind = "research-record"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
@@ -6840,13 +6846,13 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/evidence-map.md"
-sha256 = "b18f590db0ec8cdd469e644c52ab87e78c43a1c323e922093b67e9d10a257901"
+sha256 = "81bc9f3e3be6bd265385e165610325c13ae9cb77e0f0cbae146ed07d12412881"
 kind = "research-record"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/final-exact-snapshot-review-2026-07-27.md"
-sha256 = "459cb434f3298b2bd60a725be2fc2d2ff9441ce3cf3ad3a65a1f7ee2fe1411a4"
+sha256 = "c9b9c2aee5b3ce04c082a09a8a5a32b2c3847f6c167ff0dcb82d7a713ef2b0b3"
 kind = "research-record"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -6900,13 +6906,13 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/scope.md"
-sha256 = "814ecb6539b568891532fff94c7b8bf681f6001b3a85e43658b88897a03e9468"
+sha256 = "4c63671ae8a404380c0b6bdf0999cf910d4171dbbf76cecd8f045956cbd1f127"
 kind = "research-scope"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md"
-sha256 = "5760f1d288425d20bac89a4b546c61899a45c34947b9f935ea6f4c86871d537e"
+sha256 = "479dabd221fdbd12c0f0777b041ebc736465aaa0c532643f648dff30cb344e87"
 kind = "legacy-source-audit"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -6966,7 +6972,7 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/130-scope-method-coordinates.tex"
-sha256 = "d88abd42c4af9170952f4bea2a989ad9b2299fdbb0b29e4c6de18aea62dd549b"
+sha256 = "187301efb3c09e89dacca292f23d500a967917c2f6cb15cfacede531fa11662b"
 kind = "rendered-content"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -6978,7 +6984,7 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/150-references.tex"
-sha256 = "0f3fb69ccb37b9003923decb2c5e65221a0fca4c19903b0b32731c83d2c8dcac"
+sha256 = "aa42db467da96a67b8d454cfc41ccbe39ee5eb5004b0ca672bb698d692553c48"
 kind = "rendered-content"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 

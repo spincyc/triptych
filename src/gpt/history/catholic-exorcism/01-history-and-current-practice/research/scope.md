@@ -27,10 +27,12 @@ The promised completed deliverable is a bounded comprehensive study of at least
 source-audited coverage of every included period and governing question, with
 material disagreements and source ceilings stated; it does not mean exhaustive
 control of every manuscript, critical edition, local rite, particular law, or
-reported case. The current 116-page paper contains 103 substantive narrative
-pages and fulfills both that bounded completeness commitment and the extent
-commitment. It remains a public alpha because alpha is the publication maturity
-label, not a claim that the bounded paper is unfinished. Future work must remain
+reported case. The current 116-page paper contains 104 Arabic-numbered
+substantive pages: pages 1--104, from the governing thesis through the pastoral
+conclusion, before the terminal apparatus begins on page 105. It therefore
+fulfills both the bounded completeness commitment and the extent commitment.
+It remains a public alpha because alpha is the publication maturity label, not
+a claim that the bounded paper is unfinished. Future work must remain
 evidence-controlled; page count does not
 authorize padding, unsupported cases, operational ritual instruction, or
 relaxation of the exclusions below.
@@ -53,9 +55,13 @@ The work does not diagnose a person, reproduce or operationally summarize the
 rite, publish alleged signs as a self-test, name demons, teach adjurations,
 recommend an unauthorized ministry, adjudicate sensational cases, or replace a
 pastor, diocese, physician, mental-health professional, emergency service, or
-canonist. Named cases remain excluded because the case audit did not recover a
-sufficient chain of contemporary, official, medical, and reception evidence;
-this is not a claim that no adequate archive exists.
+canonist. Loudun is the sole named case admitted, as a documentary and
+institutional study of competing acts and later reception, because the bound
+primary dossier is sufficient for those limited historical claims. It is not
+used to establish possession, diagnosis, efficacy, guilt, procedural fairness,
+or a complete trial reconstruction. Other named cases remain excluded because
+the case audit did not recover a sufficient chain for the claims they would be
+asked to bear; this is not a claim that no adequate archive exists.
 
 The study surveys a bounded Eastern common-law and historical-transmission
 module, including identified Ruthenian and Melkite initiatory sources. It does
@@ -117,12 +123,12 @@ source function, and generation metadata.
 The earlier fifteen-page candidate and its 26 July production record are
 superseded by this expanded modular paper. Those dated records remain
 historical evidence for their exact snapshots. The current 116-page snapshot,
-including 103 substantive narrative pages, has passed the recorded source-role,
-currentness, architecture, claim, build, web, visual, metadata, text, font,
-identity, rights, and safety checks documented in the exact-snapshot record.
+including 104 Arabic-numbered substantive pages before terminal apparatus, has
+passed the recorded source-role, currentness, architecture, claim, build, web,
+visual, metadata, text, font, identity, rights, and safety checks documented in
+the exact-snapshot record.
 
-The current public-alpha snapshot is prepared for publication but will not be
-live until maintainer integration and push. The 100-page minimum and bounded
-completion standard are met. The source families identified above remain
-explicit ceilings and possible future improvements; they are neither silently
-closed nor required to support any published claim.
+The current public-alpha snapshot is installed, cataloged, and published. The
+100-page minimum and bounded completion standard are met. The source families
+identified above remain explicit ceilings and possible future improvements;
+they are neither silently closed nor required to support any published claim.

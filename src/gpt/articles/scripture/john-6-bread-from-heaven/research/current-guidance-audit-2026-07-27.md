@@ -9,27 +9,25 @@ or ecclesiastical review.
 
 - Installed PDF:
   `doc/gpt/articles/scripture/john-6-bread-from-heaven.pdf`,
-  SHA-256 `df28e626e01d0acef08c3c39fa973979d7f3d5d8e8ec27171777436ff30296e4`.
+  SHA-256 `a8b951a776dd0b166764b23909f864d764caba3f4400653e873c2a2c1e24f110`.
 - Tracked web edition:
   `web/gpt/articles/scripture/john-6-bread-from-heaven.md`,
-  SHA-256 `ad168907408b29acab928dd40c2393e6eb0d1ff723d54e86d48505612000fc1b`.
+  SHA-256 `851f076258e664d83bdb0fdc12f37d9052a40e95fa85aeb80c12f170eb03edf0`.
 - Catalog: `library/scripture.md`.
-- Release record: `release/public-alpha.json` classifies the edition as
-  `release` and binds the installed PDF hash under
-  `perpetual-public-repository-2026`.
+- Release record: the publication manifest classifies the edition as `alpha`.
+  The shared release ledger still binds the superseded PDF and web hashes and
+  must be refreshed as a separate release transaction.
 
-The publication-local statement that release-binding refresh remained pending
-was operationally stale and has been reconciled.
+The publication-local source, installed PDF, and web mirror are mutually
+current; this record does not claim that the shared release refresh occurred.
 
-## Current-guidance verdict and retained gates
+## Current-guidance verdict
 
 The publication keeps Eucharistic reception, the Bethlehem and manger
 witnesses, the pseudo-Gregorian attribution limit, and project synthesis
-distinct. Its exact claims remain subject to the disclosed future critical
-collations: an independently controlled modern Greek edition, Augustine's
-Latin, Chrysostom's and Cyril's Greek, Cyprian's Latin, and the attribution and
-date of the pseudo-Gregorian homily.
-
-Independent patristic, exegetical, theological, and rights review remains
-deferred. Publication does not imply that those reviews occurred, and no
-ecclesiastical approval is claimed.
+distinct. The 2026-07-29 remediation added fair treatments of Calvin's
+spiritual-participation reading and Warren's integral nonsacramental reading,
+removed reader-facing process and deferred-review language, corrected the
+Catechism locus, and aligned the catalog identity with the bounded reception
+claim. Uncollated-language and disputed-attribution limits remain claim-local
+evidence boundaries rather than deferred publication gates.

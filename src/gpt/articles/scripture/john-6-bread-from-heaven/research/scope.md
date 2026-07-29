@@ -5,9 +5,8 @@
 - **Provider and collection:** OpenAI GPT; `articles/scripture/`.
 - **Genre and profile:** single-claim scriptural reception study governed by
   `guidance/articles.md`, especially “Scriptural studies.”
-- **Publication state:** internally re-reviewed for publication on 2026-07-27
-  under express authorization to publish while accurately disclosing that
-  independent specialist review remains outstanding.
+- **Publication state:** public-alpha source revised and re-reviewed on
+  2026-07-29.
 - **Reader:** a Catholic reader testing the familiar conjunction of John 6 with
   Bethlehem, the manger, and the swaddled child.
 - **Question:** how early and how directly does Christian reception join John
@@ -52,11 +51,10 @@ Excluded: a full commentary on John 6; a complete history of Eucharistic
 doctrine; a general survey of modern authorship/source theories beyond the one
 bounded redactional objection; devotional elaborations without an exact source;
 the claim that lexical meaning proves authorial intent; the claim that a manger
-is an altar in Luke's own wording. Calvin's Reformed
-spiritual-participation reading, Warren's nonsacramental christological
-reading, and the later-sacramental-redactor hypothesis were evaluated as
-research leads but remain excluded from the publication because this revision
-did not normalize and bind exact reusable witnesses for them.
+is an altar in Luke's own wording. Calvin's Reformed spiritual-participation
+reading and Warren's integral nonsacramental christological reading are
+included as serious counterpositions; a full history of Reformation and modern
+Johannine exegesis remains outside the bounded reception claim.
 
 ## Authority and rights boundary
 
@@ -70,36 +68,36 @@ edition-identified artifact, rights record, exact locus, and publication
 binding. The study nevertheless relies chiefly on bounded paraphrase rather
 than extended quotation.
 
-## Disclosed limitations and future improvements
+## Evidence limitations
 
-- A future critical revision should collate the Vulgate and an independently
-  controlled modern critical Greek edition rather than relying on the
-  Robinson–Pierpont artifact's compact comparison apparatus.
-- Read Augustine's Latin Tractates 25–27 and Chrysostom's Greek or a critical
-  edition at the exact loci.
-- Collate Cyril of Alexandria against Pusey's Greek edition.
-- Collate Cyprian's Latin and the Jerusalem catechesis's Greek; preserve the
-  disputed authorship of the mystagogical lectures.
-- Establish the modern critical attribution and date range of the
-  pseudo-Gregorian Nativity homily.
-- Extend the exact Catechism bindings beyond paragraphs 1322--1323 if the
-  broader 1322--1419 overview becomes wording-critical.
-- Obtain independent patristic, exegetical, theological, and rights review.
-  Publication does not imply that those reviews occurred.
+- The Vulgate and an independently controlled modern critical Greek edition
+  were not collated; Greek observations remain bounded to the
+  Robinson–Pierpont artifact and its compact comparison apparatus.
+- Augustine's Latin, Chrysostom's and the Jerusalem catechesis's Greek, Cyril
+  of Alexandria against Pusey's Greek edition, and Cyprian's Latin were not
+  collated; the publication therefore avoids wording-critical conclusions from
+  their English witnesses.
+- The modern critical attribution and date range of the pseudo-Gregorian
+  Nativity homily remain unresolved, so it is used only as anonymous or
+  pseudonymous reception.
+- Warren is paraphrased from the inspected restricted author manuscript; no
+  text from that manuscript is redistributed.
 
 ## Production and first-baseline verdict
 
-On 2026-07-27 the revised canonical source rendered as a twelve-page,
-warning-free Letter PDF. Every page was inspected at useful resolution for
-clipping, overlap, malformed text, bad breaks, and metadata placement. The
-generated Markdown was reviewed for heading, list, reference, metadata,
-rights-colophon, and endnote fidelity.
+On 2026-07-29 the revised canonical source rendered as a twelve-page Letter
+PDF. Every page was inspected at useful resolution for clipping, overlap,
+malformed text, bad breaks, density, and metadata placement. The sole log
+notice is the expected underfull colophon paragraph; there are no overfull
+boxes, undefined references, or fatal errors. The generated Markdown was
+reviewed for heading, list, reference, metadata, rights-colophon, and textual
+fidelity.
 
 Both initial-baseline candidates and the consequential-claim comparison are
 recorded in `research/staleness-review-2026-07-26.md`; the forward revision is
 recorded in `research/staleness-review-2026-07-27.md`. The publication is
-installed and cataloged. Its revised PDF and web edition were rebuilt,
-installed, and reviewed on 2026-07-27; the exact public-release binding was
-subsequently completed in `release/public-alpha.json` under the standing
-public-repository authorization. This publication state does not imply that
-the deferred independent reviews occurred.
+installed and cataloged. The reviewed 2026-07-29 PDF is
+`a8b951a776dd0b166764b23909f864d764caba3f4400653e873c2a2c1e24f110`;
+the matching web edition is
+`851f076258e664d83bdb0fdc12f37d9052a40e95fa85aeb80c12f170eb03edf0`.
+The shared release ledger requires a separate refresh to bind these artifacts.

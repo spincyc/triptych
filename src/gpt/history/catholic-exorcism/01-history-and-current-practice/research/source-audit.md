@@ -700,7 +700,12 @@ reproduced. Original-language critical collation, recension history, reception
 in named communities, and the common, particular, and liturgical law of
 identified Eastern Catholic and Orthodox Churches remain open.
 
-## Publication audit
+## Superseded 84-page publication checkpoint
+
+The following checkpoint is retained only as historical evidence for its exact
+predecessor snapshot. It does not describe the current 116-page installed and
+published alpha; the later exact-snapshot checkpoints below supersede its
+installation, completion, and publication-state claims.
 
 ## Loudun documentary case module
 

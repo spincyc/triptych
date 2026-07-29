@@ -499,3 +499,32 @@ Source-library validation, the leaf PDF metadata check, and the provider web
 declaration check pass. The exact PDF and web artifacts identified here are the
 reviewed installation candidates; shared inventories and aggregate release
 records remain outside this leaf-owned checkpoint.
+
+## Superseding record-consistency checkpoint — 2026-07-29
+
+This checkpoint supersedes the preceding artifact identities and reconciles
+the publication's scope, evidence map, references, and publication-state
+records with the already source-controlled Loudun module, the exact Joannou
+control for Laodicea 26, and the installed public-alpha state. The substantive
+extent is now defined reproducibly as Arabic-numbered pages 1--104, from the
+governing thesis through the pastoral conclusion; terminal apparatus begins on
+page 105. No specialist, clerical, intended-reader, or ecclesiastical review is
+introduced as an alpha gate.
+
+Two settled pdfTeX passes produced a 116-page, 714,658-byte PDF with SHA-256
+`8120b6d7a8554a21909f793c853bb8839dd2a75d7f03bc17d8751bc8a2d613d1`.
+The final log has no fatal error, undefined reference, overfull box, or
+unresolved rerun request. Repository review tooling rasterized all 116 pages
+and generated six contact sheets. Every contact sheet was inspected, with the
+corrected scope, Laodicea reference, and final colophon also checked at full
+size; no clipping, collision, spill page, unintended blank page, or illegible
+material was found.
+
+The regenerated web edition has SHA-256
+`859949795f023003f592b622910fdaecbcf20304062a55ab311571c11fb71696`
+and carries the same corrected scope, evidence boundary, reference ceiling,
+publication state, page metric, and revision timestamp. The leaf generation
+metadata and web-edition declaration pass. Provider-wide source-library and web
+currency checks are presently blocked only by unrelated dirty-tree defects
+identified in the Abraham/daylight-stars and Linen publications; they do not
+alter this leaf's exact build or web/PDF identity.

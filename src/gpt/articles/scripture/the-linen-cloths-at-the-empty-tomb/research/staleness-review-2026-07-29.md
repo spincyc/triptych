@@ -57,3 +57,16 @@ consequential claim in the GPT edition.
 **Verdict: no material change.** No source, PDF, web edition, catalog, release,
 or review-state revision is warranted. Rebaselining is a separate
 shared-ledger action and was not performed in this review.
+
+## Superseding hard-review correction — 2026-07-29
+
+A later profile-level hard review found defects outside this exact-trigger
+comparison: the Septuagint notice had not been checked at its own locus, the
+statement about modern critical editions lacked a bound modern
+edition-comparison control, the rabbinic search boundary named unperformed
+corpora, the Johannine belief sentence exceeded its inspected corpus, and the
+exact-current PDF claims named a superseded artifact. The publication was
+therefore revised despite the narrower no-material-change verdict above.
+Current state is controlled by `research/scope.md`,
+`research/source-audit.md`, and the repaired publication artifacts, not by the
+historical verdict in this trigger review.

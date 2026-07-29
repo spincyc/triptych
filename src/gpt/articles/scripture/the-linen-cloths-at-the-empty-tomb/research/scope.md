@@ -5,8 +5,10 @@
   `claude:articles/scripture/the-linen-cloths-at-the-empty-tomb`; independent
   prose and publication-local judgments.
 - **State:** source-audited GPT publication with installed PDF and web
-  editions, exact-byte release distribution clearance, and completed
-  exact-current production and every-page hard review.
+  editions. The 2026-07-29 source repair and exact-current production review
+  supersede the PDF snapshot named by an earlier release-rights supplement.
+  Distribution follows the later standing public-alpha decision recorded in
+  `guidance/repository.md`, subject to its six current-snapshot concerns.
 - **Question:** what do John 20:3–10 and Luke 24:12 attribute to Peter and the
   other disciple, what can the cloth arrangement support, and is the
   folded-napkin return signal historically attested?
@@ -25,9 +27,16 @@ modern-provenance claims. Exact quotations were checked against registered
 public-domain witnesses. The review preserved the translation and OCR ceilings
 for Cyril, Theophylact, and Lightfoot and retained the unresolved range of John
 20:8 interpretations. The canonical controls include the Greek, the
-Douay--Rheims, and five exact Clementine Vulgate passages. The Septuagint
-ceiling is explicit: only the registered lexicon's identified Judges 14:13 use
-bears, and no direct Septuagint passage is claimed as inspected.
+Douay--Rheims, and five exact Clementine Vulgate passages.
+
+On 2026-07-29 the source repair directly inspected the exact registered Swete
+1909 OCR artifact at Judges 14:12--13 and its apparatus. The base text uses
+*sindonas* in verse 12 and *othonia* in verse 13, while the Alexandrinus
+apparatus reads *sindonas* in verse 13. The repair also inspected the exact
+pinned SBLGNT v1.2 Luke running text and edition-comparison apparatus at
+24:12. SBLGNT prints the verse and records its presence in Tregelles, NA28,
+and Robinson--Pierpont while marking it double-bracketed in Westcott--Hort.
+That apparatus compares editions; it is not a manuscript apparatus.
 
 A focused archaeology pass on 2026-07-27 adds only Jerusalem-specific burial
 context supported by Magness's exact publisher summary and an exact
@@ -39,7 +48,10 @@ one unspoken purpose, import Egyptian mummification, or reconstruct exact
 wrapping geometry.
 
 The failed mutable-site whole-corpus replay is not publication evidence or a
-release gate. The negative conclusion is intentionally narrowed to the exact
+release gate. The rabbinic boundary is intentionally narrowed to Mishnah
+Berakhot 8:3, Babylonian Talmud Berakhot 52b, and Mishnah Sanhedrin 6:1.
+Tosefta, Jerusalem Talmud, midrashic, minor-tractate, and whole-rabbinic-corpus
+searches are not claimed. The negative conclusion is limited to the exact
 enumerated witnesses and dated provenance routes bound here.
 
 The historical first-baseline comparison is recorded in
@@ -48,22 +60,23 @@ statements describe the snapshot reviewed that day and were superseded by the
 documented 2026-07-27 completion pass; they are not current release-state
 claims.
 
-## Exact publication identity and remaining review
+## Exact publication identity and review
 
-The current installed and release-bound PDF is the eleven-page artifact at
-SHA-256
-`df2ea733358c3b4e0733eaf0f52f2b7bcf3cca62101065fd7d5406bf7db596b9`.
+The current installed PDF is the eleven-page artifact at SHA-256
+`0e42b9c61bdc2c27b85456420cb104d348cbda634ff89aef8f95f1d8ce6c572a`.
 The current installed web edition is SHA-256
-`3c17f912035d7d3ae7cb71f10aeb43e1370e0b56aef5f6d5a77a5594ddc11754`.
-The release binding is exact-byte distribution clearance, not evidence of
-independent or ecclesiastical review.
+`042395f9b5927b6645d3e534932a0aa2b8e0d42e2f99e286f229f6b467aaa5a8`.
 
-On 2026-07-27 a fresh two-pass build reproduced the exact installed PDF bytes,
-and a fresh web conversion reproduced the exact installed Markdown bytes. All
-eleven PDF pages were inspected from the immutable review snapshot; no clipping,
-overlap, blank-page defect, footer collision, broken apparatus, or other layout
-defect was found. The settled log contains no fatal error, undefined reference,
-overflow, underfull box, or layout warning. The exact-current PDF, web, and
-every-page hard-review gate is therefore complete. The completed internal
-source, quotation, theological-boundary, and production review is not promoted
-to independent or ecclesiastical review.
+On 2026-07-29 a settled build reproduced the installed PDF bytes and a fresh
+conversion reproduced the installed Markdown bytes. All eleven PDF pages were
+inspected from the exact review snapshot; no clipping, overlap, blank-page
+defect, footer collision, broken apparatus, or other layout defect was found.
+The settled log contains no fatal error, undefined reference, overflow, or
+actionable layout warning. Its one underfull-box notice arises from the
+terminal content block and corresponds to no visible defect on the inspected
+final page. This internal source, quotation, theological-boundary, and
+production review is not independent or ecclesiastical approval. An earlier
+release-rights supplement names the superseded PDF hash `df2ea733...`; it
+remains historical snapshot evidence rather than the controlling current
+publication record. The later standing public-alpha decision governs current
+and later snapshots once its six concerns pass.
