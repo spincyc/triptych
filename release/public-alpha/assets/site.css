@@ -1,16 +1,16 @@
 :root {
-  color-scheme: light;
-  --ink: #332f2a;
-  --muted: #746d64;
-  --paper: #fbfaf7;
+  color-scheme: only light;
+  --ink: #2e2a26;
+  --muted: #6d665e;
+  --paper: #fffefa;
   --surface: #ffffff;
-  --line: #e8e2d9;
-  --rubric: #8c3f4a;
-  --rubric-dark: #71313a;
+  --line: #e2dbd1;
+  --rubric: #9b3443;
+  --rubric-dark: #762532;
   --banner: #641b25;
-  --gold: #a27a3d;
-  --blue: #4f7078;
-  --shadow: 0 0.8rem 2.4rem rgba(71, 58, 45, 0.045);
+  --gold: #b27c16;
+  --blue: #3f7180;
+  --shadow: 0 0.8rem 2.4rem rgba(71, 58, 45, 0.055);
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
     "Book Antiqua", Georgia, "Times New Roman", serif;
 }
@@ -23,7 +23,8 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(174, 139, 83, 0.055), transparent 30rem),
+    radial-gradient(circle at top left, rgba(221, 184, 103, 0.075), transparent 32rem),
+    linear-gradient(180deg, #fffefa 0, #ffffff 34rem),
     var(--paper);
   font-size: 1.04rem;
   line-height: 1.72;
@@ -105,13 +106,13 @@ nav a { color: var(--ink); text-decoration: none; }
   border-top: 0.2rem solid transparent;
   border-image: linear-gradient(
     90deg,
-    #b4ada0 0 14.285%,
-    #a27a3d 14.285% 28.57%,
-    #96545b 28.57% 42.855%,
-    #6d806b 42.855% 57.14%,
-    #776985 57.14% 71.425%,
-    #ad7783 71.425% 85.71%,
-    #565351 85.71% 100%
+    #c7aa63 0 14.285%,
+    #c28a16 14.285% 28.57%,
+    #b43a4a 28.57% 42.855%,
+    #3f8a55 42.855% 57.14%,
+    #7651a2 57.14% 71.425%,
+    #cc718b 71.425% 85.71%,
+    #4a4745 85.71% 100%
   ) 1;
 }
 
@@ -133,69 +134,95 @@ nav a { color: var(--ink); text-decoration: none; }
 .section-toned {
   --section-accent: var(--rubric);
   --section-ink: var(--rubric-dark);
-  --section-wash: rgba(140, 63, 74, 0.025);
+  --section-wash: rgba(155, 52, 67, 0.085);
+  --section-pale: #fff0f2;
+  --section-row: #fff8f8;
+  --section-line: #ead0d4;
   --section-symbol-primary: "";
   --section-symbol-secondary: "";
   background:
-    radial-gradient(circle at 100% 0, var(--section-wash), transparent 24rem),
+    linear-gradient(90deg, var(--section-accent) 0 0.32rem, transparent 0.32rem),
+    radial-gradient(circle at 100% 0, var(--section-wash), transparent 30rem),
     var(--surface);
-  border-top: 0.18rem solid var(--section-accent);
+  border-color: var(--section-line);
+  border-top: 0.3rem solid var(--section-accent);
 }
 .section-white {
-  --section-accent: #9b9488;
-  --section-ink: #625d55;
-  --section-wash: rgba(217, 210, 195, 0.22);
+  --section-accent: #c7aa63;
+  --section-ink: #80631f;
+  --section-wash: rgba(230, 196, 111, 0.21);
+  --section-pale: #fff8df;
+  --section-row: #fffcf1;
+  --section-line: #e8d7a6;
   --section-symbol-primary: "☧";
   --section-symbol-secondary: "✠";
 }
 .section-gold {
-  --section-accent: #a27a3d;
-  --section-ink: #79591f;
-  --section-wash: rgba(162, 122, 61, 0.075);
+  --section-accent: #c28a16;
+  --section-ink: #875a00;
+  --section-wash: rgba(214, 154, 31, 0.16);
+  --section-pale: #fff4d7;
+  --section-row: #fffbef;
+  --section-line: #e7cc8d;
   --section-symbol-primary: "Α";
   --section-symbol-secondary: "Ω";
 }
 .section-red {
-  --section-accent: #96545b;
-  --section-ink: #763e45;
-  --section-wash: rgba(150, 84, 91, 0.06);
+  --section-accent: #b43a4a;
+  --section-ink: #8b2433;
+  --section-wash: rgba(196, 57, 75, 0.14);
+  --section-pale: #fff0f2;
+  --section-row: #fff8f9;
+  --section-line: #e8bcc3;
   --section-symbol-primary: "℣";
   --section-symbol-secondary: "℟";
 }
 .section-green {
-  --section-accent: #6d806b;
-  --section-ink: #50654f;
-  --section-wash: rgba(109, 128, 107, 0.065);
+  --section-accent: #3f8a55;
+  --section-ink: #28683c;
+  --section-wash: rgba(63, 148, 87, 0.14);
+  --section-pale: #edf8f0;
+  --section-row: #f7fcf8;
+  --section-line: #bcdcc5;
   --section-symbol-primary: "❦";
   --section-symbol-secondary: "✣";
 }
 .section-violet {
-  --section-accent: #776985;
-  --section-ink: #5e506d;
-  --section-wash: rgba(119, 105, 133, 0.065);
+  --section-accent: #7651a2;
+  --section-ink: #5a3484;
+  --section-wash: rgba(118, 81, 162, 0.14);
+  --section-pale: #f5effb;
+  --section-row: #fbf8fe;
+  --section-line: #d6c2e7;
   --section-symbol-primary: "✦";
   --section-symbol-secondary: "❖";
 }
 .section-rose {
-  --section-accent: #ad7783;
-  --section-ink: #875461;
-  --section-wash: rgba(173, 119, 131, 0.07);
+  --section-accent: #cc718b;
+  --section-ink: #99415d;
+  --section-wash: rgba(204, 113, 139, 0.16);
+  --section-pale: #fff0f4;
+  --section-row: #fff8fa;
+  --section-line: #ebc2cf;
   --section-symbol-primary: "✷";
   --section-symbol-secondary: "✥";
 }
 .section-black {
-  --section-accent: #565351;
-  --section-ink: #45413f;
-  --section-wash: rgba(86, 83, 81, 0.055);
+  --section-accent: #4a4745;
+  --section-ink: #2f2d2c;
+  --section-wash: rgba(74, 71, 69, 0.1);
+  --section-pale: #f2f1f0;
+  --section-row: #faf9f8;
+  --section-line: #ccc8c5;
   --section-symbol-primary: "§";
   --section-symbol-secondary: "¶";
 }
 .section-toned a { color: var(--section-ink); }
 .section-toned > h1 {
   position: relative;
-  color: var(--ink);
+  color: var(--section-ink);
 }
-.page-portal.section-toned > h1::before {
+.section-toned > h1::before {
   float: right;
   margin: -0.08em 0 0.15em 0.5em;
   color: var(--section-accent);
@@ -203,12 +230,18 @@ nav a { color: var(--ink); text-decoration: none; }
   font-size: 0.72em;
   font-style: normal;
   font-weight: 400;
-  opacity: 0.34;
+  opacity: 0.62;
 }
 .section-toned > h1::after {
   border-color: var(--section-accent);
-  opacity: 0.66;
+  opacity: 0.9;
 }
+.section-toned h2,
+.section-toned h4 { color: var(--section-ink); }
+.section-toned h3 { color: var(--section-ink); }
+.section-toned h6 { color: var(--section-ink); }
+.section-toned li::marker { color: var(--section-accent); }
+.section-toned ::selection { background: var(--section-pale); }
 
 /* A catalog is scanned across its full width; a document is read down a
    column, so its page takes a measure of roughly 70 characters. */
@@ -301,12 +334,33 @@ img { max-width: 100%; height: auto; }
 }
 .gallery-note { margin-top: 2rem; padding: 1rem 1.2rem; border-left: 0.25rem solid var(--gold); background: #f5efe6; }
 
+.section-toned .gallery-categories { border-color: var(--section-line); }
+.section-toned .gallery-card {
+  border-color: var(--section-line);
+  background:
+    linear-gradient(145deg, var(--section-pale), transparent 38%),
+    var(--surface);
+}
+.section-toned .gallery-view { color: var(--section-ink); }
+.section-toned .gallery-rights { border-color: var(--section-line); }
+.section-toned .gallery-note {
+  border-color: var(--section-accent);
+  background: var(--section-pale);
+}
+
 .smallcaps { font-variant: small-caps; }
 
 table { width: 100%; margin: 1.4rem 0; border-collapse: collapse; font-family: system-ui, sans-serif; font-size: 0.94rem; }
 th, td { padding: 0.82rem 0.9rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
 th { color: var(--rubric-dark); background: #f1ebe2; }
 tbody tr:nth-child(even) { background: #fbf8f3; }
+.section-toned th,
+.section-toned td { border-color: var(--section-line); }
+.section-toned th {
+  color: var(--section-ink);
+  background: var(--section-pale);
+}
+.section-toned tbody tr:nth-child(even) { background: var(--section-row); }
 
 .page-home table:first-of-type,
 .page-library-root table:first-of-type {
@@ -331,33 +385,49 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
 .page-home table:first-of-type td:first-child,
 .page-library-root table:first-of-type td:first-child {
   width: 28%;
-  border-left: 0.24rem solid var(--portal-accent);
+  border-left: 0.32rem solid var(--portal-accent);
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
     "Book Antiqua", Georgia, serif;
   font-size: 1.08rem;
 }
 .page-home table:first-of-type tbody tr:nth-child(1),
-.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #9b9488; }
+.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #c7aa63; --portal-pale: #fff8df; }
 .page-home table:first-of-type tbody tr:nth-child(2),
-.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #a27a3d; }
+.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #c28a16; --portal-pale: #fff4d7; }
 .page-home table:first-of-type tbody tr:nth-child(3),
-.page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #96545b; }
+.page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #b43a4a; --portal-pale: #fff0f2; }
 .page-home table:first-of-type tbody tr:nth-child(4),
-.page-library-root table:first-of-type tbody tr:nth-child(4) { --portal-accent: #6d806b; }
+.page-library-root table:first-of-type tbody tr:nth-child(4) { --portal-accent: #3f8a55; --portal-pale: #edf8f0; }
 .page-home table:first-of-type tbody tr:nth-child(5),
-.page-library-root table:first-of-type tbody tr:nth-child(5) { --portal-accent: #776985; }
+.page-library-root table:first-of-type tbody tr:nth-child(5) { --portal-accent: #7651a2; --portal-pale: #f5effb; }
 .page-home table:first-of-type tbody tr:nth-child(6),
-.page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #ad7783; }
+.page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #cc718b; --portal-pale: #fff0f4; }
 .page-home table:first-of-type tbody tr:nth-child(7),
-.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #565351; }
+.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #4a4745; --portal-pale: #f2f1f0; }
+.page-home table:first-of-type tbody td,
+.page-library-root table:first-of-type tbody td {
+  background: var(--portal-pale);
+}
 
 code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
 code { padding: 0.1rem 0.28rem; border-radius: 0.2rem; background: #f0ebe4; font-size: 0.9em; }
 pre { overflow-x: auto; padding: 1rem; background: #2e2925; color: #f8f5ef; border-radius: 0.3rem; }
 pre code { padding: 0; background: transparent; }
 blockquote { margin-left: 0; padding-left: 1rem; border-left: 0.25rem solid var(--gold); color: var(--muted); }
+.section-toned code { background: var(--section-pale); }
+.section-toned blockquote {
+  padding: 0.7rem 1rem;
+  border-color: var(--section-accent);
+  background: var(--section-pale);
+  color: var(--ink);
+}
+.section-toned hr { border-color: var(--section-line); }
 
 .empty-shelf { padding: 1rem 1.2rem; border-left: 0.3rem solid var(--gold); background: #f5efe6; }
+.section-toned .empty-shelf {
+  border-color: var(--section-accent);
+  background: var(--section-pale);
+}
 .breadcrumb {
   display: flex;
   gap: 0.55rem;
@@ -368,6 +438,10 @@ blockquote { margin-left: 0; padding-left: 1rem; border-left: 0.25rem solid var(
   font-size: 0.88rem;
 }
 .breadcrumb a { color: inherit; text-decoration-color: var(--gold); }
+.section-toned .breadcrumb a {
+  color: var(--section-ink);
+  text-decoration-color: var(--section-accent);
+}
 nav [aria-current="page"] { text-decoration-thickness: 0.16rem; text-underline-offset: 0.35rem; }
 
 /* Endnotes carry much of a document's scholarship: the marker stays small and
@@ -381,6 +455,8 @@ a.footnote-ref:hover { text-decoration: underline; }
 .footnote li { margin-bottom: 0.65rem; }
 .footnote li:target { background: #f5efe6; }
 a.footnote-backref { text-decoration: none; }
+.section-toned .footnote hr { border-color: var(--section-accent); }
+.section-toned .footnote li:target { background: var(--section-pale); }
 
 .site-footer {
   max-width: 68rem;
@@ -409,10 +485,10 @@ a.footnote-backref { text-decoration: none; }
 }
 
 @media (min-width: 900px) {
-  .page-catalog.section-toned > h2 {
+  .section-toned > h2 {
     position: relative;
   }
-  .page-catalog.section-toned > h2::before {
+  .section-toned > h2::before {
     position: absolute;
     left: -1.65rem;
     top: 0.34em;
@@ -421,7 +497,7 @@ a.footnote-backref { text-decoration: none; }
     font-size: 0.72em;
     font-style: normal;
     font-weight: 400;
-    opacity: 0.42;
+    opacity: 0.62;
   }
 }
 
@@ -432,47 +508,6 @@ a.footnote-backref { text-decoration: none; }
   table { display: block; overflow-x: auto; }
 }
 
-/* Long-form reading at night: the palette inverts, the few hard-coded surfaces
-   follow it, and nothing else about the layout changes. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --ink: #e9e3d9;
-    --muted: #a89b8b;
-    --paper: #171512;
-    --surface: #211e1a;
-    --line: #403a33;
-    --rubric: #e3a6b0;
-    --rubric-dark: #f0c4cb;
-    --banner: #713d47;
-    --gold: #cfa055;
-    --blue: #4c7684;
-    --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-  }
-  body {
-    background:
-      radial-gradient(circle at top left, rgba(207, 160, 85, 0.10), transparent 28rem),
-      var(--paper);
-  }
-  .section-white { --section-ink: #ddd6ca; }
-  .section-gold { --section-ink: #d8b875; }
-  .section-red { --section-ink: #e0a7ae; }
-  .section-green { --section-ink: #b7c7b4; }
-  .section-violet { --section-ink: #c7b8d3; }
-  .section-rose { --section-ink: #dcb3bc; }
-  .section-black { --section-ink: #cbc6c2; }
-  .page-home table:first-of-type td,
-  .page-library-root table:first-of-type td {
-    background: rgba(255, 255, 255, 0.015);
-  }
-  th { background: #2a241d; }
-  tbody tr:nth-child(even) { background: #221e18; }
-  code { background: #2a241d; }
-  pre { background: #100e0b; color: var(--ink); }
-  .empty-shelf, .footnote li:target, .gallery-note { background: #24201a; }
-  .gallery-image img { filter: invert(1) contrast(1.03); mix-blend-mode: screen; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
@@ -481,6 +516,6 @@ a.footnote-backref { text-decoration: none; }
   .site-header nav, .release-banner, .site-footer, .skip-link { display: none; }
   body, .page-shell { background: #fff; }
   .page-shell { max-width: none; margin: 0; padding: 0; border: 0; box-shadow: none; }
-  .page-portal.section-toned > h1::before,
-  .page-catalog.section-toned > h2::before { color: #777; }
+  .section-toned > h1::before,
+  .section-toned > h2::before { color: #777; }
 }

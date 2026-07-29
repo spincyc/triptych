@@ -971,6 +971,23 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(css.count("℣"), 1)
         self.assertEqual(css.count("℟"), 1)
 
+    def test_public_palette_is_light_and_section_color_reaches_reading_pages(self) -> None:
+        css = (
+            REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
+        ).read_text(encoding="utf-8")
+        self.assertIn("color-scheme: only light", css)
+        self.assertNotIn("prefers-color-scheme: dark", css)
+        for token in (
+            "--section-pale:",
+            "--section-row:",
+            "--section-line:",
+            ".section-toned h2",
+            ".section-toned blockquote",
+            ".section-toned tbody tr:nth-child(even)",
+            ".section-toned > h2::before",
+        ):
+            self.assertIn(token, css)
+
     def test_landing_page_headings_do_not_skip_levels(self) -> None:
         for relative in sorted(self.tool.PAGE_MAP):
             if relative.startswith("release/") or relative in {"LICENSE", "THIRD_PARTY.md"}:

@@ -117,12 +117,14 @@ class PictorialGalleryTest(unittest.TestCase):
         self.assertIn("Public Domain Open Access image", rendered)
         self.assertIn("Public Domain Rijksmuseum image", rendered)
 
-    def test_gallery_css_blends_image_boundaries_in_both_color_schemes(self) -> None:
+    def test_gallery_css_blends_image_boundaries_on_the_light_paper(self) -> None:
         css = (
             REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
         ).read_text(encoding="utf-8")
         self.assertIn("mix-blend-mode: multiply", css)
-        self.assertIn("mix-blend-mode: screen", css)
+        self.assertNotIn("mix-blend-mode: screen", css)
+        self.assertIn("color-scheme: only light", css)
+        self.assertNotIn("prefers-color-scheme: dark", css)
 
     def test_asset_resolution_rejects_traversal_and_symlinks(self) -> None:
         with self.assertRaises(self.tool.ReleaseError):
