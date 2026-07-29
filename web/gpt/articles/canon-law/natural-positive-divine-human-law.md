@@ -1175,10 +1175,6 @@ These sources assist historical interpretation; they do not establish present ca
 
 -   Ladislas Orsy, *Theology and Canon Law: New Horizons for Legislation and Interpretation* (Collegeville, MN: Liturgical Press, 1992).
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-19T03:44:17Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

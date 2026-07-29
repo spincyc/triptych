@@ -655,11 +655,7 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 -   Anglican–Roman Catholic International Commission, *Mary: Grace and Hope in Christ* (the Seattle Statement, agreed 2004, published 2005), §§9, 58–63, on the Holy See’s Christian-unity site: <https://www.christianunity.va/content/unitacristiani/en/dialoghi/sezione-occidentale/comunione-anglicana/dialogo/arcic-ii/en.html>. Role: the most developed ecumenical treatment of the two modern dogmas, and the witness for the *Sub tuum praesidium* text quoted in Chapter 3. Status: an agreed statement of a bilateral dialogue commission, not an act of either communion’s magisterium.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T12:06:47Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

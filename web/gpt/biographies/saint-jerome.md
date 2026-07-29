@@ -481,10 +481,6 @@ This working biography has internal source, chronology, tradition, and productio
 
 -   Canellis, Aline. “L’héritage du latin chrétien: la réception de Jérôme à la Renaissance,” teaching handout (École de Néolatin, 2016), [PDF](https://neolatinlyon.sciencesconf.org/conference/neolatinlyon/pages/A._Canellis_Neolatin_2016_Exemplier.pdf). Accessible chronology consulted 2026-07-16 only for the explicitly qualified 347/419–420 scheme and late-418/early-419 placement of Eustochium’s death.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-21T15:25:48Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -18,16 +18,18 @@ learner syllables and stress, sound line, meaning, response or chunk ID, and
 any necessary condition. The visible response ID carries the `MC` form marker
 while the underlying R ID remains stable.
 
-The companion adds no cover, contents, instruction, actor key, lesson,
-ceremony, assessment, parity leaf, or terminal-reference page. The compact
-required revision and rights notice stays below the cut grid on the final
-back. The full guide owns the printing, actor, roster, branch, and safety keys
-and points to the paired downloads in the same catalog row; it does not embed
-these faces.
+The companion adds no cover, contents, lesson, ceremony, assessment, or parity
+leaf. The compact required revision and rights notice stays below the cut grid
+on the final back. An uncut, adult-facing terminal apparatus sheet follows the
+complete deck and explains the Alpha, training, safety, textual, and rights
+boundaries. The full guide owns the printing, actor, roster, branch, and safety
+keys and points to the paired downloads in the same catalog row; it does not
+embed these faces.
 
-The current source-built companion is twelve physical pages. Response fronts
+The current source-built companion is thirteen physical pages. Response fronts
 are pages 1, 3, 5, and 7; their mirrored backs are pages 2, 4, 6, and 8.
 Action fronts are pages 9 and 11; their mirrored backs are pages 10 and 12.
+Page 13 is the terminal apparatus and is not part of the cut grid.
 Print US letter, portrait, two-sided, actual size, flipped on the long edge,
 and cut on the box borders. Rendered-screen review confirmed page parity,
 electronic border alignment, screen legibility, and safe containment of the
@@ -51,3 +53,8 @@ keys; conditions that affect an individual response or action remain on the
 affected card. It inherits generation provenance from the full guide and
 remains governed by the series-wide source, response, pronunciation,
 ceremonial, flash-card, production, rights, and review records.
+
+The 2026-07-28 Alpha-apparatus snapshot has thirteen physical pages with
+thirty-six cards. Exact artifact identity, duplex sequence, and every-page
+screen-review evidence are recorded in the series production manifest; no
+actual-size print or physical-duplex review is inferred.

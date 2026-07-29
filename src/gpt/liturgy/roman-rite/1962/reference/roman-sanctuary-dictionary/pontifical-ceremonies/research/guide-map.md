@@ -4,6 +4,11 @@ Status: **bounded public alpha**
 Audit date: 2026-07-28
 Edition selection: `ed-pontifical`
 
+The title page now carries only the terse `Alpha` status. The explanation of
+the bounded inventory, edition horizon, non-authority boundary, and reliance
+limits appears once in the terminal Scope and Qualifications appendix; the
+common rights notice shares the final generation-metadata page.
+
 This focused visual reference selects canonical alpha records in the
 pontifical-and-prelatial category or records with genuine recorded
 pontifical relevance. Its current canonical selection contains forty-three

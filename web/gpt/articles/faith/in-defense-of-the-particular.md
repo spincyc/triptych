@@ -190,11 +190,7 @@ The identified online witnesses were checked through 23 July 2026. No mutable ca
 
 -   Latin loci checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html); the [New Advent Summa](https://www.newadvent.org/summa/) served as a working public English index. Work, question, article, and reply take precedence over either site’s wording.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T03:15:03Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

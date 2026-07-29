@@ -731,10 +731,6 @@ Jerome’s witness that a Paul–Seneca correspondence was widely read was check
 
 -   Papal Basilica of Saint Paul Outside the Walls. “The Tomb of the Apostle.” Official institutional presentation at [Vatican basilica site](https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm), reviewed 16 July 2026. Used for the shrine’s official identification and architectural presentation; its traditional execution and burial details were not treated as independent first-century proof.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-21T15:25:48Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

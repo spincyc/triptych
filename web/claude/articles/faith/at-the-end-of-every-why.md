@@ -168,11 +168,7 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 -   *Catechism of the Catholic Church* 1023–1029 (heaven; the beatific vision) and 1718–1729 (the desire for happiness; Christian beatitude; the In Brief paragraphs), official Vatican English web text, [vatican.va (1023–1029)](https://www.vatican.va/archive/ENG0015/__P2M.HTM) and [vatican.va (1720–1724)](https://www.vatican.va/archive/ENG0015/__P5K.HTM) with adjacent pages for 1718–1719 and 1725–1729, checked 2026-07-25. CCC 1720 quotes *De civitate Dei* 22, 30 in the Catechism’s own rendering, identified beside the Dods wording where both appear.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T04:57:20Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

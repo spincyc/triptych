@@ -17,6 +17,9 @@ DEFAULT_OWNER = (
     REPO
     / "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
 )
+DICTIONARY_PREFIX = (
+    "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/"
+)
 ID = {
     "art": re.compile(r"^art-[a-z0-9]+(?:-[a-z0-9]+)*$"),
     "obj": re.compile(r"^obj-[a-z0-9]+(?:-[a-z0-9]+)*$"),
@@ -100,6 +103,10 @@ def safe_relative(value: object, field: str, problems: Problems) -> Path | None:
     return path
 
 
+def canonical_asset_path(value: str) -> str:
+    return value[len(DICTIONARY_PREFIX):] if value.startswith(DICTIONARY_PREFIX) else value
+
+
 def png_properties(path: Path) -> tuple[int, int, int, str]:
     header = path.read_bytes()[:29]
     if len(header) < 29 or header[:8] != b"\x89PNG\r\n\x1a\n":
@@ -130,6 +137,41 @@ def object_records(owner: Path, glob: str, excluded: set[str], problems: Problem
         data["_path"] = relative
         records[object_id] = data
     return records
+
+
+def asset_local_staging_path(path: Path, problems: Problems) -> bool:
+    """Recognize an explicitly reviewed asset-local staging PNG.
+
+    Staging records are not canonical manifest admission.  They remain
+    discoverable beside their pixels while an admitted deterministic
+    derivative receives a separate canonical manifest identity.
+    """
+    sidecar = path.with_suffix(".toml")
+    if not sidecar.is_file():
+        return False
+    try:
+        data = load_toml(sidecar)
+    except ValueError as exc:
+        problems.add(str(exc))
+        return False
+    artwork_id = data.get("artwork_id")
+    review_state = data.get("review_state")
+    digest = data.get("sha256")
+    if not (
+        isinstance(artwork_id, str)
+        and ID["art"].fullmatch(artwork_id)
+        and isinstance(review_state, str)
+        and review_state
+        and isinstance(digest, str)
+        and re.fullmatch(r"[0-9a-f]{64}", digest)
+    ):
+        problems.add(f"{sidecar}: incomplete asset-local staging identity")
+        return False
+    problems.check(
+        hashlib.sha256(path.read_bytes()).hexdigest() == digest,
+        f"{sidecar}: staging sha256 does not match adjacent PNG",
+    )
+    return True
 
 
 def validate_boundary_treatment(entry: dict, label: str, problems: Problems) -> None:
@@ -326,6 +368,7 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         asset_files = []
     registered_paths: set[str] = set()
     registered_file_ids: set[str] = set()
+    asset_file_paths: dict[str, str] = {}
     asset_boundaries: dict[str, str | None] = {}
     for row in asset_files:
         if not isinstance(row, dict):
@@ -363,6 +406,7 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
             problems.add(f"{file_id}.technical must contain exactly {sorted(keys)}")
         if path is not None:
             relative = path.as_posix()
+            asset_file_paths[file_id] = relative
             if relative in registered_paths:
                 problems.add(f"duplicate registered asset path: {relative}")
             registered_paths.add(relative)
@@ -405,6 +449,9 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         if path.is_file()
     }
     for path in sorted(physical_paths - registered_paths):
+        absolute = owner / path
+        if asset_local_staging_path(absolute, problems):
+            continue
         problems.add(f"unregistered dictionary PNG: {path}")
     for path in sorted(registered_paths - physical_paths):
         problems.add(f"registered path is outside the current PNG inventory: {path}")
@@ -436,6 +483,7 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
     objects = object_records(owner, glob, excluded, problems)
 
     artworks: dict[str, dict] = {}
+    artwork_paths: dict[str, str] = {}
     entries = manifest.get("artworks")
     if not isinstance(entries, list):
         problems.add("artworks must be an array")
@@ -449,6 +497,9 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
                 problems.add(f"duplicate artwork ID: {artwork_id}")
             else:
                 artworks[artwork_id] = parsed
+                asset = parsed.get("asset")
+                if isinstance(asset, str):
+                    artwork_paths[artwork_id] = canonical_asset_path(asset)
 
     links = manifest.get("artwork_links")
     if not isinstance(links, list):
@@ -469,6 +520,8 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         asset_file_id = link.get("asset_file_id")
         problems.check(asset_file_id in registered_file_ids,
                        f"{artwork_id}: unknown asset file ID {asset_file_id}")
+        if asset_file_id in asset_file_paths:
+            artwork_paths[artwork_id] = asset_file_paths[asset_file_id]
         objects_for_link = string_list(link.get("object_ids"), f"{artwork_id}.object_ids", problems)
         problems.check(bool(objects_for_link), f"{artwork_id}.object_ids must not be empty")
         for object_id in objects_for_link:
@@ -517,14 +570,18 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
                     problems.notice(message)
             elif object_id not in artworks[artwork_id].get("object_ids", []):
                 problems.add(f"{object_id}: {artwork_id} does not link back to the object")
-        manifested = {
-            key for key, value in artworks.items()
-            if object_id in value.get("object_ids", [])
-            and key in linked_ids
-        }
-        for artwork_id in manifested - linked_ids:
-            problems.add(f"{object_id}: canonical artwork {artwork_id} is missing from object record")
-
+            else:
+                object_asset = link.get("asset")
+                manifest_asset = artwork_paths.get(artwork_id)
+                if not isinstance(object_asset, str) or not manifest_asset:
+                    problems.add(
+                        f"{object_id}: {artwork_id} lacks an exact object-to-manifest asset identity"
+                    )
+                elif canonical_asset_path(object_asset) != manifest_asset:
+                    problems.add(
+                        f"{object_id}: {artwork_id} asset {object_asset} does not match "
+                        f"canonical manifest path {manifest_asset}"
+                    )
         if record.get("workflow_state") == "publication-ready":
             if not linked_ids:
                 problems.add(f"{object_id}: publication-ready object has no artwork")

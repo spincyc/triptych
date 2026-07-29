@@ -165,3 +165,17 @@ The sacristy handwashing-place record is deliberately text-only. It contains
 project-authored source-bounded paraphrase and no artwork, visual extract, or
 third-party quotation; there is consequently no image right to clear or
 implied visual morphology.
+# Sanctuary-component Open Access records, 2026-07-28
+
+Three exact Metropolitan Museum of Art Collection API responses are retained:
+objects 469881, 200660, and 467756. Each response records
+`isPublicDomain: true`; the Met releases its collection data through its Open
+Access policy. The artifact manifests record the exact URL, retrieval date,
+SHA-256 digest, byte size, provenance, United States rights jurisdiction, and
+tracked disposition. Only the JSON responses are retained; no image bytes were
+needed for this minimum corpus.
+
+No HABS sheet bytes or metadata were retained. This pass did not affirmatively
+establish government creation for one exact, horizon-suitable composition
+sheet, so federal custody and online availability were not promoted into a
+public-domain claim.

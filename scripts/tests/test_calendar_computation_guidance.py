@@ -70,16 +70,34 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     resumed_ids = re.findall(r"^\| (4[6-9]R) \| \*\*", landing, re.MULTILINE)
     self.assertEqual(parent_ids, [f"{n:02d}" for n in range(1, 53)])
     self.assertEqual(resumed_ids, ["46R", "47R", "48R", "49R"])
+    self.assertIn("| **Mass of the Lord's Supper** | Planned | Planned |", landing)
+    self.assertIn(
+      "| **Solemn Liturgical Action of the Passion and Death of the Lord** "
+      "| Planned | Planned |",
+      landing,
+    )
+    self.assertIn("| **Easter Vigil** | Planned | Planned |", landing)
 
   def test_postconciliar_registry_and_reader_calendar_arithmetic(self):
     registry = (
       ROOT / "guidance/liturgy/postconciliar-propers-registry.md"
+    ).read_text()
+    production_plan = (
+      ROOT / "guidance/liturgy/propers-production-plan.md"
     ).read_text()
     landing = (ROOT / "library/novus-ordo-liturgy.md").read_text()
     parents = re.findall(
       r"^\| (PC-S\d{2}) \| `[^`]+` \| [^|]+ \|$", registry, re.MULTILINE
     )
     rows = re.findall(r"^\| \*\*(PC-S\d{2}) ·", landing, re.MULTILINE)
+    s42_reader_row = re.findall(
+      r"^\| \*\*Eighteenth Sunday in Ordinary Time\*\* \|.*$",
+      landing,
+      re.MULTILINE,
+    )
+    self.assertEqual(len(s42_reader_row), 1)
+    rows.append("PC-S42")
+    rows.sort(key=lambda value: int(value.removeprefix("PC-S")))
     counts = [
       int(value)
       for value in re.findall(
@@ -91,6 +109,44 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     self.assertEqual(parents, [f"PC-S{n:02d}" for n in range(1, 61)])
     self.assertEqual(rows, parents)
     self.assertEqual(sum(counts), 184)
+    self.assertIn(
+      "| PC-T01 | `pc-t01-evening-mass-of-the-lords-supper` | "
+      "Evening Mass of the Lord's Supper | `PC-T01-ABC` |",
+      registry,
+    )
+    self.assertIn(
+      "| PC-T02 | `pc-t02-celebration-of-the-lords-passion` | "
+      "Celebration of the Lord's Passion | `PC-T02-ABC` |",
+      registry,
+    )
+    self.assertIn(
+      "| PC-T03 | `pc-t03-easter-vigil` | Easter Vigil | "
+      "Alias of `PC-S17-A-VIGIL`, `PC-S17-B-VIGIL`, and "
+      "`PC-S17-C-VIGIL` |",
+      registry,
+    )
+    triduum = landing.split("### Sacred Triduum", 1)[1].split(
+      "### Sunday replacements", 1
+    )[0]
+    self.assertIn("| Celebration | Status |", triduum)
+    self.assertIn(
+      "| **Evening Mass of the Lord's Supper** | Planned |", triduum
+    )
+    self.assertIn(
+      "| **Celebration of the Lord's Passion** | Planned |", triduum
+    )
+    self.assertIn(
+      "| **Easter Vigil** | Planned with Easter Sunday |", triduum
+    )
+    self.assertIn("one cycle-invariant plan", triduum)
+    self.assertIn("rather than counted as another planned work", triduum)
+    self.assertNotRegex(triduum, r"\|\s*A\s*\|\s*B\s*\|\s*C\s*\|")
+    self.assertNotRegex(triduum, r"\bPC-[A-Z0-9-]+\b")
+    self.assertIn(
+      "| Collection segment | Permanent identities | "
+      "Distinct production targets |",
+      production_plan,
+    )
     self.assertIn(
       "| **PC-S05 · Nativity of the Lord** | Planned | Planned | Planned |",
       landing,
@@ -113,6 +169,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (20, "sixth-after-pentecost"),
         (21, "seventh-after-pentecost"),
         (22, "eighth-after-pentecost"),
+        (24, "tenth-after-pentecost"),
       )),
       *(f"pc-s{number}-{slug}-year-a.pdf" for number, slug in (
         (35, "eleventh-sunday-in-ordinary-time"),
@@ -124,6 +181,9 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (58, "most-holy-trinity"),
         (59, "most-holy-body-and-blood-of-christ"),
       )),
+      "pc-s42-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+      "pc-s42-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+      "pc-s42-eighteenth-sunday-in-ordinary-time-year-c.pdf",
     }
     for name in ("traditional-latin-mass.md", "novus-ordo-liturgy.md"):
       text = (ROOT / "library" / name).read_text()

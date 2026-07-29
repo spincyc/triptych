@@ -1,0 +1,64 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-pontifical-sandal-isolated"
+object_ids = ["obj-pontifical-sandal"]
+file = "RPD-FIG-pontifical-vesture-0002-sandal-alpha.png"
+purpose = "Teach the pontifical sandal (sandale) as an object distinct from the pontifical buskin."
+depicted_state = "One isolated low closed-shoe pontifical sandal in a three-quarter view."
+period_status = "1962-horizon pontifical vesture; depicted morphology is bounded to one circa-1900-1950 Pisa Cathedral exemplar"
+source_controlled_features = [
+  "one low closed-shoe form",
+  "shallow upper",
+  "low sole and heel",
+  "the sandal is distinct from the underlying buskin",
+]
+deliberately_omitted_details = [
+  "prescribed color",
+  "prescribed textile or leather",
+  "prescribed trim",
+  "prescribed bow or closure",
+  "dimensions",
+  "universal cut",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1417x1110 sRGB PNG"
+normalized_pixels = "1417x1110 8-bit RGBA PNG"
+normalization = "The generator returned a white field instead of the requested green key. The imagegen skill chroma-key helper removed the border-sampled white field with soft matte and despill, intentionally retaining the graphite marks rather than a white paper rectangle. Final alpha has 188 distinct levels; all four corners are transparent."
+subject_alpha_bounds = "1122x854+165+144"
+sha256 = "9c8f96573d25effd05077644a7dfd2325df1390f9d37fc2fe3b84ef516257b36"
+baked_in_content_audit = "No lettering, labels, arrows, border, watermark, foot, leg, buskin, second shoe, heraldry, cast shadow, contact shadow, reflection, display surface, or rectangular paper background is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "exemplar qualification", "source note", "callouts"]
+rights_state = "project-generated using Sailko's CC BY 3.0 photograph as a bounded morphology reference; required attribution and license remain attached to the central reference record"
+review_state = "self-reviewed-candidate-ready-for-independent-review"
+
+prompt = """
+Use case: historical-scene
+Asset type: isolated object illustration for a 1962-horizon Roman sanctuary pictorial dictionary
+Primary request: Create one restrained graphite pencil study of a single pontifical sandal, isolated and fully visible. Use the supplied circa-1900–1950 Pisa Cathedral pair only as a bounded morphology reference for a low, closed, fabric-covered shoe form.
+Input images: Image 1 is a morphology reference, not an edit target.
+Scene/backdrop: perfectly flat solid #00ff00 chroma-key background for removal; one uniform color, no shadows, gradients, texture, reflections, floor plane, or lighting variation.
+Subject: one low closed-shoe pontifical sandal, three-quarter view, entire silhouette visible, shallow upper and low sole legible.
+Style/medium: restrained monochrome graphite and pencil on paper, clean educational museum-catalog drawing, natural hand-drawn line variation, sparse tonal hatching.
+Composition/framing: centered, generous padding, crisp separated edges, no crop.
+Constraints: source-bounded to the exemplar's low closed-shoe identity only; render ornament and trim only as subdued exemplar-specific visual detail, not as a prescription. Do not imply a universal color, material, ornament, bow, closure, dimensions, or exact cut. No foot or leg, no buskin or stocking, no second shoe. Do not use #00ff00 in the subject. No cast shadow, contact shadow, reflection, watermark, words, letters, arrows, numbers, borders, labels, or semantic marks.
+Avoid: open-toe sandal, modern pump, high heel, sneaker, boot, ornate embroidery, bright color, invented buckles, floating rectangular paper background.
+"""
+
+[[source_basis]]
+source_id = "artifact.sailko.pisa-pontifical-sandals-photograph.wikimedia-commons-2021.commons-original-jpeg-081fec4f"
+locus = "Complete 2088-by-1890-pixel photograph of the circa-1900-1950 Pisa Cathedral pair, visually inspected 2026-07-28"
+supported_feature = "One dated exemplar supports a low closed-shoe form with shallow upper and low sole; its red taffeta, metallic trim, bow, proportions, and exact construction are not generalized."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-10"
+locus = "Cæremoniale Episcoporum I.X.2, Marietti 1948"
+supported_feature = "Sandalia and caligae are distinct objects used together; the ceremonial does not prescribe the sandal's morphology."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "generating-agent factual-and-production screen"
+outcome = "accepted-for-independent-review"
+scope = "Object count, low closed-shoe identity, absence of a buskin or foot, exemplar-boundary omissions, monochrome rendering, alpha extraction, crop safety, and baked-in-content exclusions."
+visual_evidence = "Transparent asset and checkerboard review composite inspected at full resolution; the white paper field is absent and graphite edge/detail marks remain visible."
+admission_boundary = "Acceptance advances only this asset-local precursor record; canonical shared-manifest admission and publication placement remain separate integration actions."

@@ -1,4 +1,5 @@
 schema_version = 1
+artwork = []
 id = "obj-vestment-case"
 workflow_state = "priestly-review-ready"
 editorial_note = "The checked specialist witness supports labelled vestment storage by liturgical color. It does not establish the Latin indexing phrase, one universal construction, or whether flat and hanging forms are substantive variants."
@@ -64,21 +65,13 @@ role = "specialist-secondary"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
 
-[[artwork]]
-id = "art-sacristy-preparation-plate"
-view = "comparison"
-asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
-review_state = "generated"
-depicts = ["obj-sacristy", "obj-vesting-table", "obj-vestment-case", "obj-sacristy-cross", "obj-sacristy-lavatory", "obj-piscina-sacrarium", "obj-sacristy-bell"]
-scale_mode = "not-to-common-scale"
-
 [review_readiness]
 qualification = "The source supports labelled vestment cases, while drawer, press, and wardrobe forms remain local and the shared image shows only two representative possibilities."
 disclosed_gaps = [
-  { id = "gap-vestment-case-variants", kind = "variant", target_ids = ["obj-vestment-case", "art-sacristy-preparation-plate"], summary = "The boundary between flat vestment press, hanging wardrobe, and generic storage cabinet is not yet source controlled." },
+  { id = "gap-vestment-case-variants", kind = "variant", target_ids = ["obj-vestment-case"], summary = "The boundary between flat vestment press, hanging wardrobe, and generic storage cabinet is not yet source controlled." },
   { id = "gap-vestment-case-terminology", kind = "terminology", target_ids = ["obj-vestment-case"], summary = "The Latin indexing phrase armarium paramentorum has not received a dedicated lexical check." },
-  { id = "gap-vestment-case-art", kind = "artwork", target_ids = ["art-sacristy-preparation-plate"], summary = "The generated drawer case and wardrobe are representative forms without material-culture verification." },
+  { id = "gap-vestment-case-art", kind = "artwork", target_ids = ["obj-vestment-case"], summary = "The generated drawer case and wardrobe are representative forms without material-culture verification." },
 ]
 review_prompts = [
-  { id = "prq-vestment-case-variants", question = "Do the generated flat-drawer and hanging forms represent substantively different cases worth naming separately for sacristans and servers, should both remain one qualified vestment-case entry, and is armarium paramentorum a sound Latin index phrase?", gap_ids = ["gap-vestment-case-variants", "gap-vestment-case-terminology", "gap-vestment-case-art"], target_ids = ["obj-vestment-case", "art-sacristy-preparation-plate"] },
+  { id = "prq-vestment-case-variants", question = "Do the generated flat-drawer and hanging forms represent substantively different cases worth naming separately for sacristans and servers, should both remain one qualified vestment-case entry, and is armarium paramentorum a sound Latin index phrase?", gap_ids = ["gap-vestment-case-variants", "gap-vestment-case-terminology", "gap-vestment-case-art"], target_ids = ["obj-vestment-case"] },
 ]

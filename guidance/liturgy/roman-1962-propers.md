@@ -33,6 +33,25 @@ members of the 52-item spine. Fixed or movable universal feasts that can
 replace a temporal Sunday remain in the `F` series and never renumber this
 registry. `M01` and later `M` identities remain a separate non-Sunday series.
 
+### Sacred Triduum identities
+
+The stable Sunday temporal series remains `01`--`52`. The following permanent
+non-Sunday identities complete the 1962 Sacred Triduum without renumbering or
+reinterpreting that series:
+
+| ID | Required slug stem | 1962 identity |
+| --- | --- | --- |
+| T01 | `t01-mass-of-the-lords-supper` | Mass of the Lord's Supper |
+| T02 | `t02-solemn-liturgical-action-of-the-passion-and-death-of-the-lord` | Solemn Liturgical Action of the Passion and Death of the Lord |
+| T03 | `t03-easter-vigil` | Easter Vigil |
+
+Each is one planned proper-guide target under `propers/temporal/`. These are
+edition-identified English catalog names, not an attempt to impose the
+postconciliar taxonomy on the 1962 books. A source audit retains a collation
+note if the controlling edition's exact printed capitalization differs.
+Reader-facing catalogs print only the celebration names, not the stable `T`
+identifiers.
+
 ## Source Records and Text Control
 
 Each guide leaf keeps its source and audit records beside `main.tex`:

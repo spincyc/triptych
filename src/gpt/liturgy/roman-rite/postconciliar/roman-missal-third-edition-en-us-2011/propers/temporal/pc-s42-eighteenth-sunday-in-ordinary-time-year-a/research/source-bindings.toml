@@ -17,3 +17,21 @@ loci = ["edition identity"]
 role = "bibliographic"
 states = ["cataloged"]
 context = "The 2008 emended reprint is the governing Latin edition base; exact Week XVIII pages were not inspected."
+
+[[bindings]]
+source_id = "artifact.anonymous.the-loaves-and-fishes-1783.british-museum-object-1868-0808-4955-2026-07-28.wikimedia-commons-scan-42b5053b"
+loci = ["complete etching, including printed title and political-table scene"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The visually checked 1783 etching converts the Gospel loaves-and-fishes image into political satire about offices and patronage. It supports a changed-register visual afterlife of the feeding tradition appointed here, not exclusive dependence on Matthew."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:f823304d2cd0211ec4cbe1c2e185e21065109cd800801f8e32e3ffb5d961590f"
+
+[[bindings]]
+source_id = "passage.matthew-arnold.dover-beach.macmillan-1867-uva-lic.lines-29-37"
+loci = ["lines-29-37"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Arnold's final stanza places a plea for lovers' fidelity beside an accumulating neither/nor catalogue of what the world lacks. The form and vocabulary support a qualified changed-register echo of Romans 8:38-39, not a claim of conscious authorial borrowing."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:7cb3ed2a502306347ed2a4fecfa066cc3bc6a1f2b7839d0cd2f71b52b40127a2"

@@ -1,0 +1,98 @@
+schema_version = 1
+id = "obj-pontifical-tunicle"
+workflow_state = "publication-ready"
+preferred_english_name = "Pontifical tunicle"
+latin_headword = "tunica"
+alternate_english_names = []
+alternate_latin_names = []
+sort_name = "Tunicle, pontifical"
+categories = ["pontifical-and-prelatial", "priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass"]
+confusable_with = ["obj-tunicle", "obj-pontifical-dalmatic"]
+related_objects = ["obj-pontifical-dalmatic", "obj-chasuble"]
+component_objects = []
+
+[presence]
+locations = ["Worn beneath the pontifical dalmatic and chasuble when appointed."]
+contexts = ["Pontifical vesting and Mass."]
+composition_ids = ["plt-pontifical-vesture"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "cleric", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["cleric"]
+receives = ["cleric"]
+stores = ["sacristan"]
+warnings = ["Do not infer exact cut, ornament, fastening, or universal thickness from the cutaway."]
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-pontifical-tunicle-layer"
+kind = "liturgical-use"
+text = "The 1962 Missal and checked Ceremonial place the tunicle beneath the pontifical dalmatic and chasuble in the appointed vesting sequence."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-vestment-missal", "src-pontifical-vestment-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-pontifical-tunicle-identity"
+kind = "identity"
+text = "The 1962 Missal and Ceremonial identify the pontifical tunicle as a distinct episcopal vestment, separate from the pontifical dalmatic and from the subdeacon's outer tunicle."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-vestment-missal", "src-pontifical-vestment-ce"]
+
+[[claims]]
+id = "clm-pontifical-tunicle-appearance"
+kind = "appearance"
+text = "The checked sources establish the tunicle's inner layer and separate vesting action but prescribe no universal cut, sleeve relation, dimensions, textile, or ornament."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-pontifical-vestment-missal", "src-pontifical-vestment-ce"]
+
+[[claims]]
+id = "clm-pontifical-tunicle-presence"
+kind = "ceremonial-presence"
+text = "The 1962 General Rubrics appoint the tunicle beneath the dalmatic and chasuble when a bishop or another person enjoying pontificals celebrates solemnly, and at specified Low Masses, while permitting omission for a reasonable cause."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-vestment-missal"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-pontifical-vestment-missal"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-pontifical-tunicle-and-dalmatic"
+locus = "Rubricae generales n. 134."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-pontifical-vestment-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-2.chapter-8.pontifical-vesting"
+locus = "Book II, chapter VIII, nn. 18-19."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-pontifical-tunicle-dalmatic-chasuble-worn-cutaway"
+view = "in-use"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-vestments-0001-layering-cutaway-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-chasuble", "obj-pontifical-dalmatic", "obj-pontifical-tunicle"]
+context_object_ids = ["obj-chasuble", "obj-pontifical-dalmatic", "obj-pontifical-tunicle"]
+scale_mode = "not-applicable"
+review_note = "The cutaway teaches layer order only; garment morphology and the anonymous torso are illustrative."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use the cutaway for layer order only, not as a universal garment-pattern or ornament guide."
+claim_ids = ["clm-pontifical-tunicle-layer"]

@@ -1052,12 +1052,6 @@ The table is also deliberately revision-sensitive. A new competent act can alter
 
 These historical works support context and reception, never supernatural origin or juridic status: Louis Châtellier, *The Religion of the Poor* (Cambridge University Press, 1997), on early-modern Catholic renewal; Brian Porter-Szűcs, *Faith and Fatherland* (Oxford University Press, 2010), on Polish Catholic identity; Eugene Hynes, *Knock* (Cork University Press, 2008); Jeffrey S. Bennett, *When the Sun Danced* (University of Virginia Press, 2012), on Fátima and modern Portugal; Stafford Poole, *Our Lady of Guadalupe* (University of Arizona Press, 1995); Timothy Longman, *Christianity and Genocide in Rwanda* (Cambridge University Press, 2010); David Rock, *Argentina, 1516–1987* (University of California Press, 1987); John M. Kirk, *Politics and the Catholic Church in Nicaragua* (University Press of Florida, 1992); and Noel Malcolm, *Bosnia: A Short History* (New York University Press, 1994). The repository source audit maps each work to the exact contextual use and preserves the distinction between history and ecclesial judgment.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-23T23:13:05Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

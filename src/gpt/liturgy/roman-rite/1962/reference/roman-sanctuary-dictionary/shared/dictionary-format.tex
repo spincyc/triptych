@@ -41,37 +41,49 @@
   \hypersetup{pageanchor=false}%
   \begin{titlepage}
     \centering
-    \vspace*{0.65in}
+    \vspace*{0.48in}
     {\fontsize{27}{31}\selectfont\bfseries #1\par}
     \vspace{0.2in}
     {\Large #2\par}
-    \vfill
+    \vspace{0.34in}
+    \noindent\hfill\rule{0.25\linewidth}{0.45pt}\enspace
+      \(\diamond\)\enspace\rule{0.25\linewidth}{0.45pt}\hfill\null\par
+    \vspace{0.28in}
     {\large #3\par}
-    \vspace{0.35in}
-    {\large\bfseries ALPHA\par}
-    \vspace{0.25in}
-    {\small Monochrome portrait visual reference\par}
+    \vspace{0.22in}
+    {\small A visual field guide to recognition, relationship, and use\par}
+    \vspace{0.28in}
+    \noindent
+    \begin{minipage}[c]{0.27\linewidth}
+      \centering
+      \includegraphics[width=\linewidth,height=1.72in,keepaspectratio]
+        {liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.39\linewidth}
+      \centering
+      \includegraphics[width=\linewidth,height=2.18in,keepaspectratio]
+        {liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/compositions/RPD-FIG-prepared-chalice-0001-formation-alpha.png}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.27\linewidth}
+      \centering
+      \includegraphics[width=\linewidth,height=1.72in,keepaspectratio]
+        {liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible-v2-alpha.png}
+    \end{minipage}\par
+    \vspace{0.10in}
+    {\fontsize{7.5}{8.5}\selectfont
+      ISOLATE\quad\(\diamond\)\quad ASSEMBLE\quad\(\diamond\)\quad COMPARE\par}
     \vfill
-    {\footnotesize
-      This Triptych study reference covers only the source-audited objects
-      admitted below at the 1962 Roman Rite horizon. It is not an official
-      liturgical book or local ceremonial direction.\par}
+    {\footnotesize\bfseries ALPHA\par}
   \end{titlepage}
   \hypersetup{pageanchor=true}%
 }
 
-% The printed stable ID is authoritative. Hyperlinks are a convenience and
-% may disappear in a paper copy without weakening the source-note mapping.
-\newcommand{\DictionaryNoteKey}[1]{%
-  \mbox{\fontsize{6.8}{7.5}\selectfont\texttt{[#1]}}}
-\newcommand{\DictionaryEntryAnchor}[1]{%
-  \hypertarget{dictionary-entry-#1}{}}
+% Stable record identifiers remain in the source/audit layer. Reader PDFs do
+% not print them or embed them as destinations.
+\newcommand{\DictionaryNoteKey}[1]{}
+\newcommand{\DictionaryEntryAnchor}[1]{}
 \newcommand{\DictionaryEndnote}[2]{%
-  \par\noindent
-  \hypertarget{dictionary-note-#1}{%
-    \hyperlink{dictionary-entry-#1}{%
-      \mbox{\fontsize{7.4}{8.5}\selectfont\bfseries\texttt{#1}}}}%
-  \enspace{\fontsize{8}{9.5}\selectfont #2\par}}
+  \par\noindent{\fontsize{8}{9.5}\selectfont #2\par}}
 
 \newcommand{\DictionaryPlateHeader}[3]{%
   \Needspace{4\baselineskip}%
@@ -113,8 +125,7 @@
     \centering #4\par
     \vspace{2pt}
     \raggedright
-    \noindent{\fontsize{8.8}{9.8}\selectfont\bfseries #2\hfill
-      \DictionaryNoteKey{#1}\par}
+    \noindent{\fontsize{8.8}{9.8}\selectfont\bfseries #2\par}
     {\fontsize{7.8}{8.8}\selectfont\itshape #3\par}
     \vspace{1pt}
     {\fontsize{7.8}{9.2}\selectfont #5\par}
@@ -147,8 +158,7 @@
 \newcommand{\DictionaryVariantStrip}[7]{%
   \DictionaryEntryAnchor{#1}%
   \begin{minipage}{\linewidth}
-    \noindent{\fontsize{9.2}{10.2}\selectfont\bfseries #2\hfill
-      \DictionaryNoteKey{#1}\par}
+    \noindent{\fontsize{9.2}{10.2}\selectfont\bfseries #2\par}
     {\fontsize{8}{9}\selectfont\itshape #3\par}
     \vspace{3pt}
     \centering #4\par
@@ -295,19 +305,39 @@
 
 \newcommand{\DictionaryTerminalMatter}{%
   \appendix
-  \section{Using This Edition}
-  Each entry gives an English name, a Latin headword where the checked record
-  supplies one, and a stable object ID in brackets.  Use that ID when comparing
-  an object across plates or reporting a correction.  A \textbf{Reader note}
-  states the preparation or recognition boundary supported for this audience;
-  it is not a general instruction for every ceremony or local sacristy.
+  \DictionaryPlateHeader{Reader's appendix}{How to use the pictures}{1962 horizon}
+  \noindent\begin{minipage}[t]{0.47\linewidth}
+    \textbf{Read name, picture, and note together.}\par
+    Each entry gives an English name and, where the checked record supplies
+    one, a Latin headword. A \textbf{Reader note} marks the preparation or
+    recognition boundary supported for this audience; it is not a general
+    direction for every ceremony or sacristy.
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.47\linewidth}
+    \textbf{Representative, not universal.}\par
+    Drawings teach recognition, not universal dimensions, ornament, material,
+    color, folding, storage, or arrangement. Status and use remain limited to
+    the ceremony, minister, condition, privilege, or local assignment stated.
+  \end{minipage}
 
-  \section{Scope and Qualifications}
-  This alpha edition renders only the source-audited records admitted for its
-  named audience at the 1962 Roman Rite horizon.  Status and use are limited to
-  the ceremony, minister, condition, privilege, or local assignment stated in
-  the entry.  Representative drawings teach recognition, not universal
-  dimensions, ornament, material, color, folding, storage, or arrangement
-  unless the accompanying text says otherwise.  Local direction and the
-  governing liturgical books control actual preparation and handling.
+  \vspace{0.34in}
+  \noindent\hrule height 0.45pt\vspace{0.12in}
+  \textbf{Scope.}\enspace
+  This alpha edition includes only the source-audited objects admitted for its
+  named audience; it is not the family's complete inventory. It is a Triptych
+  study reference, not an official liturgical book or local ceremonial
+  direction. The governing books and competent local direction control actual
+  preparation and handling.
+  \vfill
+  \begin{center}
+    {\fontsize{18}{21}\selectfont\bfseries
+      LOOK\quad\(\diamond\)\quad NAME\quad\(\diamond\)\quad COMPARE\par}
+    \vspace{0.12in}
+    {\small Follow the pictured relationship; do not infer an unprinted one.\par}
+  \end{center}
+  \vfill
+  \begin{center}
+    \rule{0.20\linewidth}{0.4pt}\enspace\(\diamond\)\enspace
+    \rule{0.20\linewidth}{0.4pt}
+  \end{center}
 }

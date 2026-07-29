@@ -1,0 +1,62 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-three-mitre-forms-comparison"
+object_ids = ["obj-mitre-precious", "obj-mitre-auriphrygiata", "obj-mitre-simple"]
+file = "RPD-FIG-pontifical-0001-three-mitre-forms-v1-alpha.png"
+purpose = "Compare the precious, gold-cloth (auriphrygiate), and simple mitres at one editorial drawing scale without asserting universal dimensions."
+depicted_state = "Exactly three representative two-panel mitres stand at a common drawn height, each with paired hanging lappets; ornament and tonal treatment distinguish the three ceremonial material classes."
+period_status = "three mitre classes identified by the checked pre-1962 Caeremoniale Episcoporum"
+source_controlled_features = [
+  "three named mitre classes",
+  "precious mitre represented with restrained generic jeweled enrichment",
+  "gold-cloth mitre represented without jewels and with lighter restrained ornament",
+  "simple mitre represented without ornament",
+  "paired hanging lappets on each representative mitre",
+]
+editorial_comparison_features = [
+  "one common drawn scale",
+  "one representative two-panel pointed silhouette",
+  "one aligned baseline",
+]
+deliberately_omitted_details = [
+  "universal dimensions",
+  "prescribed universal profile",
+  "prescribed color",
+  "construction method",
+  "iconographic program",
+  "museum-object ornament",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1536x1024 sRGB PNG"
+normalized_pixels = "1536x1024 8-bit grayscale-alpha PNG"
+normalization = "Flat green background removed locally with an ImageMagick chroma matte; RGB normalized to grayscale; extracted alpha feathered with a 0.55-sigma Gaussian blur. Final alpha histogram has 38 distinct levels."
+sha256 = "0ebde2873a29f7c00d87ae716e3b3916eaf3155dc5df0943d9e550ec6db20b14"
+baked_in_content_audit = "No lettering, labels, border, watermark, people, stands, architecture, crosses, coats of arms, or museum-specific decorative program is baked into the asset."
+tex_owned_additions = ["three English and Latin names", "common-drawing-scale notice", "source note", "material-class explanation"]
+rights_state = "project-generated; no external image supplied to the generator; Met record used only as a checked morphology boundary"
+review_state = "independently reviewed candidate ready for manifest admission"
+independent_review_outcome = "accepted"
+independent_review_date = 2026-07-28
+
+prompt = """
+Use case: scientific-educational
+Asset type: source-controlled comparison illustration for a Roman liturgical pictorial dictionary
+Primary request: Create a landscape graphite study showing exactly three Roman episcopal mitres standing upright side by side at the same drawn scale: precious mitre, gold-cloth (auriphrygiate) mitre, and simple mitre. Do not include labels; leave generous clear space beneath each for TeX labels.
+Source boundary: Use one restrained representative two-panel pointed silhouette for all three, with paired hanging lappets visible behind or below each. The shared silhouette is representative only, not a universal profile or dimension. Distinguish the three solely by verified material/ornament class: (1) precious: modest generic jeweled enrichment and restrained embroidery, without copying any museum pattern; (2) gold-cloth: visibly lighter plain metallic cloth with only sparse generic edging and no jewels; (3) simple: unornamented plain pale cloth with only seams and folds needed to show construction. Keep all three equal in overall drawn height and baseline for honest visual comparison.
+Style/medium: elegant monochrome graphite pencil drawing, fine controlled line, restrained cross-hatching and tonal modeling, educational visual-atlas quality, lively but not cartoonish.
+Composition/framing: wide horizontal row, exactly three mitres, fully visible points and lappets, separated silhouettes, consistent frontal three-quarter viewpoint, generous crop safety.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for removal; one uniform color with no shadow, gradient, texture, reflection, floor, horizon, or lighting variation. Keep subjects fully separated from backdrop and do not use green in them.
+Constraints: no people, heads, hands, stands, cases, crowns, tiaras, crosses, coats of arms, saints, letters, words, numerals, arrows, captions, labels, borders, watermark, cast shadow, contact shadow, scenery, or architectural setting. No copied Metropolitan Museum ornament, no assertion of prescribed color, no distinctive iconographic program, no universal dimension claim.
+Avoid: museum-display composition, ornate photographic replication, fantasy crowns, matching the Met object's exact decorative pattern, photorealism, floating rectangle.
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-17"
+locus = "book I, chapter XVII, paragraphs 1-4; printed pp. 51-53"
+supported_feature = "Three mitre classes distinguished by material and ornament, with hanging vittae."
+
+[[source_basis]]
+source_id = "passage.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29.object-identity-and-morphology"
+locus = "object 227306 identity, material, dimensions, and linked photograph"
+supported_feature = "A dated material-culture exemplar supports only the representative two-panel body and paired hanging lappets; its ornament and dimensions do not govern this drawing."

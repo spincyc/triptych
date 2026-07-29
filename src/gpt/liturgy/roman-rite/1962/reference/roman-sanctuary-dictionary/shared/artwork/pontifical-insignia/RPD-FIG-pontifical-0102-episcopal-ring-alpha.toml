@@ -1,0 +1,65 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-pontifical-episcopal-ring-isolated"
+object_ids = ["obj-pontifical-ring"]
+file = "RPD-FIG-pontifical-0102-episcopal-ring-alpha.png"
+purpose = "Teach the pontifical ring as a distinct object before showing its position over the right glove."
+depicted_state = "One substantial finger ring in a neutral three-quarter view, with a plain raised oval setting."
+period_status = "representative recognition study at the 1962 Roman horizon"
+source_controlled_features = [
+  "one finger ring",
+]
+generic_context_features = [
+  "a visually substantial form used as an editorial recognition convention",
+  "plain metal band",
+  "plain raised oval setting used as a non-normative editorial convention",
+]
+deliberately_omitted_details = [
+  "stone",
+  "bezel prescription",
+  "metal",
+  "heraldry",
+  "inscription",
+  "ornament",
+  "dimensions",
+  "construction",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1254x1254 sRGB PNG"
+normalized_pixels = "1254x1254 8-bit grayscale RGBA PNG with true alpha"
+normalization = "Flat green background removed with the imagegen skill's Pillow helper using border auto-key sampling, a soft matte, 12/220 transparency thresholds, and despill; accepted subject pixels were then normalized deterministically to grayscale while preserving alpha."
+sha256 = "30be5030e9949eaa9db037d09ec8b1881a65097c281900f955fa2881a29c87f4"
+baked_in_content_audit = "Exactly one complete ring is present. No hand, glove, tray, chain, lettering, label, arrow, numeral, border, watermark, signature, heraldry, inscription, or diagnostic ornament is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "source qualification", "variant boundary"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "reviewed-candidate-ready-for-manifest-admission"
+
+prompt = """
+Use case: scientific-educational
+Asset type: transparent-background graphite plate for a source-first 1962 Roman pontifical-ceremonies pictorial dictionary
+Primary request: draw one isolated episcopal ring as a recognizably substantial finger ring, shown in neutral three-quarter view; object-only recognition study
+Scene/backdrop: perfectly flat solid #00ff00 chroma-key background for later removal; absolutely uniform, no shadows, gradients, texture, floor plane, reflections, or lighting variation
+Style/medium: refined naturalistic graphite pencil drawing, archival museum-catalog study, crisp contours, restrained hatching, grayscale only
+Composition/framing: centered single ring, generous clear padding on all sides, complete object entirely inside frame, no other object
+Materials/textures: simple metal band with a plain raised oval setting represented generically; enough depth to understand how it is worn, without heraldry or diagnostic decoration
+Evidence constraints: show only the generic identity of an episcopal ring. Do not imply that this bezel shape, stone, setting, ornament, metal, dimensions, heraldry, inscription, or construction is universal or prescribed
+Constraints: no hand, no glove, no tray, no chain, no text, no labels, no arrows, no numerals, no border, no cast/contact shadow, no watermark, no signature; do not use #00ff00 anywhere in the subject; crisp fully separated edges for clean background removal
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-2.chapter-8"
+locus = "book II, chapter VIII, n. 22; printed p. 117, artifact PDF p. 128"
+supported_feature = "The assistant priest puts the pontifical ring on the ring finger of the bishop's right hand; the ceremonial controls identity and placement but not morphology."
+
+[[source_basis]]
+source_id = "artifact.benziger-brothers.catalogue-of-vestments-banners-and-regalia.new-york-1893.loc-ia-scan-pdf"
+locus = "printed p. 47, artifact PDF p. 57"
+supported_feature = "The public-domain commercial catalog identifies episcopal rings as a manufactured class but supplies no pictured universal ring form; the drawing therefore remains deliberately generic."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "independent factual-and-production review"
+outcome = "accepted"
+scope = "Single-object count, finger-ring legibility, complete silhouette, crop safety, transparent-background production, and explicit reclassification of substantial size and the raised oval setting as non-normative editorial conventions rather than source-controlled features."
+admission_boundary = "Acceptance advances only this asset-local staging record; shared-manifest admission remains a separate integration action."

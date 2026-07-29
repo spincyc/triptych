@@ -1,4 +1,5 @@
 schema_version = 1
+artwork = []
 id = "obj-vesting-table"
 workflow_state = "priestly-review-ready"
 editorial_note = "The checked 1962 ceremonial witness supports the vesting-table function and server assistance at vesting. The English category, Latin indexing phrase, construction, dimensions, and representative drawing remain review questions."
@@ -65,20 +66,12 @@ role = "ceremonial-book"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
 
-[[artwork]]
-id = "art-sacristy-preparation-plate"
-view = "comparison"
-asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
-review_state = "generated"
-depicts = ["obj-sacristy", "obj-vesting-table", "obj-vestment-case", "obj-sacristy-cross", "obj-sacristy-lavatory", "obj-piscina-sacrarium", "obj-sacristy-bell"]
-scale_mode = "not-to-common-scale"
-
 [review_readiness]
 qualification = "A 1962 ceremonial manual names a vesting table, but the proposed English and Latin headwords and the drawn construction are working choices rather than prescribed forms."
 disclosed_gaps = [
-  { id = "gap-vesting-table-form", kind = "terminology", target_ids = ["obj-vesting-table", "art-sacristy-preparation-plate"], summary = "Neither the representative table form nor the Latin indexing phrase has received material or lexical review." },
-  { id = "gap-vesting-table-art", kind = "artwork", target_ids = ["art-sacristy-preparation-plate"], summary = "The generated representative table has no source-controlled morphology and is shown only for reviewer orientation." },
+  { id = "gap-vesting-table-form", kind = "terminology", target_ids = ["obj-vesting-table"], summary = "Neither the representative table form nor the Latin indexing phrase has received material or lexical review." },
+  { id = "gap-vesting-table-art", kind = "artwork", target_ids = ["obj-vesting-table"], summary = "The generated representative table has no source-controlled morphology and is shown only for reviewer orientation." },
 ]
 review_prompts = [
-  { id = "prq-vesting-table-form", question = "Would a priest naturally distinguish the generated example as a vesting table, and is mensa ad paramenta a serviceable index term or should the Latin headword remain explicitly unresolved?", gap_ids = ["gap-vesting-table-form", "gap-vesting-table-art"], target_ids = ["obj-vesting-table", "art-sacristy-preparation-plate"] },
+  { id = "prq-vesting-table-form", question = "Would a priest naturally distinguish the generated example as a vesting table, and is mensa ad paramenta a serviceable index term or should the Latin headword remain explicitly unresolved?", gap_ids = ["gap-vesting-table-form", "gap-vesting-table-art"], target_ids = ["obj-vesting-table"] },
 ]

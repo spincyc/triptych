@@ -402,11 +402,7 @@ The legal currentness audit was refreshed through 23 July 2026. The added script
 
 -   Eastern boundary only: CCEO c. 881 contains the Eastern common-law feast-day obligation and preserves the prescriptions or legitimate customs of each Church *sui iuris*. It is not analyzed or replaced by the Latin canons in this article.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-23T21:12:55Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

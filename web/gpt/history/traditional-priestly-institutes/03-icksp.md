@@ -680,10 +680,6 @@ Gilles Wach. [Public message to Vincent Mongaillard.](https://www.icrsp.org/conf
 
 *The Pillar*. [“Women Await Vatican to Investigate Religious Community.”](https://www.pillarcatholic.com/p/you-just-feel-so-defeated-women-await) 12 March 2026. Reporting on former-Sister accounts, superior’s responses, an unpublished internal review, and a reported plan for independent visitation.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-19T03:44:17Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -60,22 +60,24 @@ rather than presented as universal rubrics.
 
 ## Model and branch boundary
 
-First begins at the priest's right and owns the bell, wine, towel,
-Epistle-to-Gospel Missal move, and continuous Communion-plate route. Second
-begins at the priest's left and owns water, bowl, and the Gospel-to-Epistle
-Missal return. Both give the ordinary verbal responses together. First leaves
+First begins at the priest's right and owns the bell, Offertory wine, both
+post-Communion cruets, towel, Epistle-to-Gospel Missal move, continuous
+Communion-plate route, and folded chalice-veil move from Epistle to Gospel.
+Second begins at the priest's left and owns Offertory water, Lavabo water and
+bowl, and the Gospel-to-Epistle Missal return. Both give the ordinary verbal responses together. First leaves
 the used Communion plate at the altar for the priest's purification and
-returns it to the credence after the final wine and water. The priest's paten
-and prepared chalice remain outside that route; the priest keeps the loose
-veil at a declared altar resting place, then recovers it as he reassembles,
-covers, centers, and carries the chalice. Neither server transfers the chalice
-or veil. The Missal's Epistle--Gospel--Epistle movement, three-level model
+returns it to the credence after the sequential First-only ablutions. The
+priest's paten and prepared chalice remain outside that route; First places
+the folded veil at the Gospel side while Second returns the Missal, and the
+priest alone reassembles, covers, centers, and carries the chalice. Neither
+server transfers the chalice. The Missal's Epistle--Gospel--Epistle movement, three-level model
 sanctuary, core branches, mandatory no-second-Confiteor correction, diagram
 policy, and exclusions are identical to the child guide map.
 
 The trainer renders the same pencil asset set and semantic TeX overlays as the
-page-matched child route: `ASG-ART-001`, `ASG-ART-002`, `ASG-ART-005`,
-`ASG-ART-006`, and `ASG-ART-011`--`ASG-ART-021`. The series artwork manifest
+page-matched child route, including the versioned model-correction plates
+`ASG-ART-027`--`029` and `ASG-ART-031`; superseded Low-Mass plates
+`ASG-ART-012`, `013`, `017`, `018`, and `019` no longer render here. The series artwork manifest
 owns each asset's provenance, normalized identity, rights, consumers, and
 review state.
 
@@ -103,7 +105,7 @@ The 2026-07-28 exact snapshot vertically separates the `PRIEST`, `FIRST`, and
 Full-size and every-page screen inspection passed in the page-aligned trainer
 rendering without changing the underlying pencil asset.
 
-The 2026-07-28 settled candidate remains twenty-six page-matched pages. Exact
-identity and review claims for the final metadata-bearing rebuild belong in
-the series production manifest; this map records no external, physical-use,
-or ecclesiastical approval.
+The 2026-07-28 installed Alpha snapshot remains twenty-six page-matched pages.
+Exact artifact identity and every-page screen-review evidence are recorded in
+the series production manifest; this map records no external, physical-use, or
+ecclesiastical approval.

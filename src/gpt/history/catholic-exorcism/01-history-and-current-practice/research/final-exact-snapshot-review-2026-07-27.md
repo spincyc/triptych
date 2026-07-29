@@ -374,3 +374,128 @@ does not alter this publication's exact source graph or bounded verdict.
 **Internal source verdict: pass. Safety and rights verdict: pass. Production
 verdict: pass. Bounded completion verdict: pass.** Public alpha remains a
 publication-maturity label and conveys no ecclesiastical approval.
+
+## Alpha-apparatus release checkpoint — 2026-07-28
+
+This addendum supersedes only the current-byte and alpha-apparatus statements
+above. The source claims, source bindings, evidence map, rights analysis,
+safety controls, and bounded currentness findings are unchanged.
+
+Exact identities:
+
+- publication-source aggregate:
+  `sha256:9c7ce49994d6d46447c38906c471842fa226327a50a8ae8b0a11a9311f149100`
+- research-control aggregate, excluding filenames containing `review`:
+  `sha256:23227a0ebfaf05ff43562051cb011e8e713d0ba8c4c9c3168c873702189ceb39`
+- `main.tex`:
+  `sha256:db8039c1fc25a42d239f88c3772904d48914bfab76e2723750663673bd0a3367`
+- generation metadata:
+  `sha256:c3d627403896dcd316a5142470c4dc2a05cfb1458efaa229c61e6670de46c064`
+- terminal scope appendix:
+  `sha256:bc2dd17cf1dae76f7951723e58f4ccf5be2ab906c26dc6647ff5e4c391f195ae`
+- source bindings:
+  `sha256:ca226b9ee982b00c2105191c54c51bff7980171c05d889bc5b24448a61b18f43`
+- source audit:
+  `sha256:d2699cd6b621b50502be52fb9e696ade95b2d20782c0c089f6eb57e4e14315a9`
+- evidence map:
+  `sha256:354246118cb2abb70d1d8cf0fac6e9dcbe28339bbfbd6dc2385bd26025a0b3b7`
+- scope:
+  `sha256:814ecb6539b568891532fff94c7b8bf681f6001b3a85e43658b88897a03e9468`
+- built PDF:
+  `sha256:30f31cbb2e532867158d5920b7e20ccb2bd12e8dde957115dd18311ad35145f1`
+- generated and tracked web edition:
+  `sha256:a46014d034d8dda1aa13e5d2d9887fa4107ec8765fad5a5e0b6c24622c787a92`
+
+The title page now carries only the terse status marker `Alpha`. The terminal
+scope appendix owns the work-wide explanation of alpha distribution,
+completion, review state, non-approval, and reliance boundaries. Immediate
+safety and non-authority language remains on the title page because delayed
+notice would create reliance risk. No epigraph or previously removed
+third-party quotation was restored.
+
+Two pdfTeX passes produced a 116-page, 736,388-byte US-letter PDF. The final
+log has no fatal error, undefined reference, overfull box, or unresolved rerun
+request. All fonts are embedded and subsetted with Unicode maps; the PDF is
+unencrypted and has no forms or JavaScript. Repository review tooling
+rasterized all 116 pages. Inspection of all six contact sheets, with the title,
+changed terminal appendix, generation metadata, and final colophon checked at
+full size where needed, found no clipping, collision, broken table, unintended
+blank page, sparse spill, or illegible terminal material.
+
+The generated and tracked web editions are byte-identical and reproduce the
+same terminal alpha apparatus and generation timestamp. The rebuilt PDF is
+authorized for installation only as the exact reviewed artifact identified
+above; installed/build byte identity and release-artifact verification remain
+separate mechanical gates.
+
+**Internal source verdict: unchanged pass. Safety and rights verdict:
+unchanged pass. Alpha-apparatus and production verdict: pass for the exact PDF
+and web edition above.** Alpha remains a distribution state and conveys no
+ecclesiastical approval.
+
+## Superseding epigraph review — 2026-07-28
+
+This section supersedes only the earlier findings that the Wolfe quotation and
+the pop-culture-derived epigraph were absent. The restored opening uses the
+reader-attested Wolfe wording at the attested first-Orb-edition p. 207 locus,
+attributes the fictional speaker and author, and immediately explains that
+fiction is neither Catholic teaching, evidence that curses work, nor permission
+to experiment. The research records expressly state that the project did not
+independently collate the protected page.
+
+The second line is no longer attributed to “Anonymous.” It is labeled
+“Editorial adaptation after Chuck Palahniuk, *Fight Club*, ch. 6 (1996);
+popularized in Jim Uhls's screenplay for David Fincher's *Fight Club* (1999).”
+Metadata-only source records and publication-local bindings identify both
+protected works; no novel, screenplay, or film bytes are retained, and the
+publication does not present underlying wording as a quotation. The terminal
+scope and references identify the quotation, adaptation, fair-use critical
+purpose, license exclusion, and evidence boundary. The immediate safety notice,
+non-operational character, and terminal alpha apparatus remain unchanged.
+
+Two pdfTeX passes produced a 116-page PDF with SHA-256
+`3e21a13bef618e1efa3a6369280b0c833481f692f5056baf4fc1c813190e9b80`.
+The final log has no fatal error, undefined reference, overfull box, or
+unresolved rerun request. Repository review tooling rasterized all 116 pages
+to a task-specific ignored build directory. All six contact sheets were
+inspected, and the changed opening was also inspected at full size. The
+epigraphs, attributions, section heading, thesis box, and immediate analysis
+are legible, unclipped, and free of collisions; no pagination spill or
+unintended blank page was introduced. The generated web edition has SHA-256
+`308959d34c02b4db4957db1a0642cc62d7eff7bfb123ce1f5b2abaa69f68434d`
+and retains both epigraphs, both attribution boundaries, the immediate
+analysis, terminal rights notice, references, and generation disclosure.
+
+Source-library validation, the leaf generation-metadata check, and the leaf
+web-edition declaration check pass. The reviewed PDF and generated web edition
+remain in ignored `build/` pending the coordinated installation and
+release-inventory refresh after concurrent source-tree work settles; this
+review does not authorize a stale release-manifest update.
+
+## Superseding public-metadata production checkpoint — 2026-07-28
+
+This checkpoint supersedes only the artifact identities and installation state
+in the preceding epigraph review. The epigraph wording, attribution, analysis,
+source bindings, rights boundary, safety language, narrative pagination, and
+source verdict are unchanged.
+
+The shared public-metadata convention now renders the revision timestamp
+without a standalone `Generation Metadata` heading and without reader-facing
+model, effort, runtime, or contribution-history fields. Two fresh pdfTeX passes
+produced a 116-page, 714,335-byte PDF with SHA-256
+`a473f7b520c1927c4838bbc036381cfd65ef1f221ccdb24deaac32d649a712f3`.
+The final log has no fatal error, undefined reference, overfull box, or
+unresolved rerun request. Repository review tooling rasterized all 116 pages.
+All six contact sheets were inspected; the opening and terminal metadata page
+were also inspected at full size. No clipping, collision, unintended blank
+page, table failure, or illegible material was found.
+
+The generated web edition has SHA-256
+`48f4963ad86240e3460d8b47d612d146b127d45e27e877c99f49f730ffe527e1`.
+It retains both epigraphs, both attribution boundaries, immediate analysis,
+terminal rights and alpha notices, references, and the public revision
+timestamp while suppressing the same nonpublic provenance details as the PDF.
+Source-library validation, the leaf PDF metadata check, and the provider web
+declaration check pass. The exact PDF and web artifacts identified here are the
+reviewed installation candidates; shared inventories and aggregate release
+records remain outside this leaf-owned checkpoint.

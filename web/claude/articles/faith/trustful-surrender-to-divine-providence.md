@@ -481,11 +481,7 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 -   The beatification (1929) and canonisation (31 May 1992) of Claude de la Colombière are reported at the level of standard reference works, checked 2026-07-25; no act of the Holy See was consulted directly, and no argument depends on the dates.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T12:10:35Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

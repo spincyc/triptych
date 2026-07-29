@@ -164,11 +164,7 @@ All online witnesses were checked on 2026-07-24; no mutable law or discipline is
 
 -   *Catechism of the Catholic Church* 2095–2109 (the virtue of religion: adoration, prayer, sacrifice, promises and vows; the social duty of religion and the right to religious freedom), official Vatican English web text, [vatican.va](https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/ii_him_only_shall_you_serve.index.html), checked 2026-07-24. CCC 2102 quotes the 1983 *Code of Canon Law*, c. 1191 §1, which is cited here only as quoted by the Catechism.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-24T23:55:51Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

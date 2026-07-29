@@ -60,11 +60,10 @@ construct.
 
 A web edition reproduces the document's rights colophon
 (`\TriptychRightsNotice` in `src/common/preamble.tex`) and its
-compact generation summary — the tracked revision timestamp and each distinct
-rendered model/configuration identity — in readable form on the page a reader
-actually reaches. It does not expand the tracked declarations into an
-agent/runtime or process ledger. A web edition that drops either is not
-publishable. The colophon rule in
+reader-facing revision timestamp in readable form on the page a reader
+actually reaches. Model identity, qualifiers, effort, agent/runtime details,
+and contribution history remain only in tracked audit records. A web edition
+that drops the timestamp or rights colophon is not publishable. The colophon rule in
 `guidance/repository.md` binds every rendering of a publication, not only
 the PDF.
 

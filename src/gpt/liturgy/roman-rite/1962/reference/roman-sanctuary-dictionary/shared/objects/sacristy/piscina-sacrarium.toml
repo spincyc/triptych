@@ -1,4 +1,5 @@
 schema_version = 1
+artwork = []
 id = "obj-piscina-sacrarium"
 workflow_state = "priestly-review-ready"
 editorial_note = "The checked specialist witness is historical evidence for names, uses, locations, and forms. It does not establish universal 1962 presence, the record's proposed handler boundary, or the generated morphology."
@@ -66,20 +67,12 @@ role = "specialist-secondary"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
 
-[[artwork]]
-id = "art-sacristy-preparation-plate"
-view = "comparison"
-asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
-review_state = "generated"
-depicts = ["obj-sacristy", "obj-vesting-table", "obj-vestment-case", "obj-sacristy-cross", "obj-sacristy-lavatory", "obj-piscina-sacrarium", "obj-sacristy-bell"]
-scale_mode = "not-to-common-scale"
-
 [review_readiness]
 qualification = "A specialist historical source supports the broad function, names, variable location, and several forms; it does not prove universal 1962 presence, and the generated cross ornaments are unsupported."
 disclosed_gaps = [
   { id = "gap-piscina-1962-scope", kind = "scope", target_ids = ["obj-piscina-sacrarium", "clm-piscina-presence", "src-piscina-ce"], summary = "The historical specialist witness does not establish universal 1962 presence or the proposed ordinary-handler and server boundary." },
-  { id = "gap-piscina-art", kind = "artwork", target_ids = ["obj-piscina-sacrarium", "art-sacristy-preparation-plate"], summary = "The generated niche and column contain unsourced cross ornament and have no checked material-form exemplar." },
+  { id = "gap-piscina-art", kind = "artwork", target_ids = ["obj-piscina-sacrarium"], summary = "The generated niche and column contain unsourced cross ornament and have no checked material-form exemplar." },
 ]
 review_prompts = [
-  { id = "prq-piscina-status-art", question = "Is this historically grounded functional description suitable at the 1962 horizon, how should servers be told to distinguish the piscina locally from an ordinary sink, and should both ornamented generated forms be rejected pending a checked material-form exemplar?", gap_ids = ["gap-piscina-1962-scope", "gap-piscina-art"], target_ids = ["obj-piscina-sacrarium", "art-sacristy-preparation-plate"] },
+  { id = "prq-piscina-status-art", question = "Is this historically grounded functional description suitable at the 1962 horizon, how should servers be told to distinguish the piscina locally from an ordinary sink, and should both ornamented generated forms be rejected pending a checked material-form exemplar?", gap_ids = ["gap-piscina-1962-scope", "gap-piscina-art"], target_ids = ["obj-piscina-sacrarium"] },
 ]

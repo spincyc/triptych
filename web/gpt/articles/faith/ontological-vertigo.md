@@ -296,11 +296,7 @@ The core online witnesses were checked through 20 July 2026; the added Augustine
 
 -   C. S. Lewis, *Mere Christianity*, III.8, “The Great Sin,” on genuine humility as freedom from self-occupation. The point is paraphrased; no Lewis wording is reproduced. The common aphorism about “thinking of yourself less” is not attributed to Lewis; see the [C. S. Lewis Foundation attribution record](https://www.cslewis.org/aboutus/faq/quotes-misattributed/).
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-23T13:29:33Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

@@ -638,10 +638,6 @@ The Latin loci were controlled through modern critical texts where a lexical or 
 
 Ancient Latin and Greek are public domain. The ANF and NPNF English research translations linked above are public domain; the hosting sites’ editorial presentation and metadata are not project-owned. Modern critical editions, translations, scholarship, Vatican English, catalog records, and manuscript images retain their own rights. This publication uses brief ancient wording by exact locus, paraphrases protected analysis and translation, reproduces no third-party image, and never treats web access as a reuse license.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-19T15:18:32Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

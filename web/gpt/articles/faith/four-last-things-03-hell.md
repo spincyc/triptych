@@ -104,10 +104,6 @@ This independent article treats the existence, eternity, principal punishment, j
 
 -   *Missale Romanum*, the final Sundays of the liturgical year and Masses for the Dead, cited at source-family level without reproducing a territorial vernacular.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-24T20:52:18Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

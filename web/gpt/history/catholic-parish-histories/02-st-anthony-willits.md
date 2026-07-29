@@ -863,10 +863,6 @@ OCR derivatives from these volumes were locating and collation aids. Original pa
 
 No founding or mission minutes, 1903 Willits notice, parish-erection decree, full sacramental register, complete appointment-decree series, property deed, parcel history, building permit, construction contract, cornerstone or dedication account, architectural survey, Capuchin departure record, comprehensive Covelo itinerary, or parish census was located. The historical list is the most complete public succession recovered, but exact tenure boundaries and the 2001–17 March 2016 interval remain unresolved. The full 1929 parish-status and financial statement, local newspaper files across the twentieth century, Archdiocese of San Francisco records, Diocese of Santa Rosa parish files, and parish archives remain priority targets. Tribal oral histories and tribal archival records would be essential to any responsible history of Native experience; Catholic station lists cannot supply them. Independent historical, local, tribal-community, architectural, canonical, and rights review remains outstanding.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-21T21:06:19Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

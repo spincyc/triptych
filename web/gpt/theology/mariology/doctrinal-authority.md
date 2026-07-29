@@ -141,10 +141,6 @@ Stable doctrine is not artificially dated. The treatment of mutable DDF norms an
 
 -   Triptych, *How the Catholic Church Teaches*; Triptych, *The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed*.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T00:00:00Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

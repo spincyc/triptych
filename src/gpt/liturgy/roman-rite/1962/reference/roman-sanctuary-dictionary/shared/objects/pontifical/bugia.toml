@@ -1,0 +1,100 @@
+schema_version = 1
+id = "obj-bugia"
+workflow_state = "publication-ready"
+preferred_english_name = "Bugia"
+latin_headword = "bugia"
+alternate_english_names = ["Hand candle", "Hand candlestick"]
+alternate_latin_names = []
+sort_name = "Bugia"
+categories = ["pontifical-and-prelatial", "service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+confusable_with = ["obj-acolyte-candlestick", "obj-altar-candlestick"]
+related_objects = ["obj-altar-missal"]
+component_objects = []
+editorial_note = "The drawing reconstructs one documented Watterson exemplar; its pan, feet, socket, and absence of a handle are not universalized."
+
+[presence]
+locations = ["Beside the book presented to the bishop."]
+contexts = ["Book service in pontifical functions, even when ambient light is sufficient."]
+composition_ids = ["plt-pontifical-insignia"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["cleric"]
+receives = ["cleric"]
+stores = ["sacristan"]
+warnings = ["Treat a lighted bugia as an open flame and do not infer a handle from the English name hand candle."]
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-bugia-use"
+kind = "liturgical-use"
+text = "The Ceremonial describes a small silver implement commonly called the bugia, bearing a lit candle beside the presented book even in sufficient daylight."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-bugia-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-bugia-exemplar"
+kind = "appearance"
+text = "The Watterson photograph supports one low circular pan, stepped socket, small-footed exemplar without establishing a universal handle or morphology."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-bugia-watterson"]
+
+[[claims]]
+id = "clm-bugia-identity"
+kind = "identity"
+text = "The Ceremonial calls the small silver candle-bearing implement used beside the bishop's book the bugia."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-bugia-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-bugia-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "At solemn Mass, a distinct candle minister normally approaches at the book minister's right and holds the lighted bugia near the bishop while the book is presented, even when daylight is sufficient."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-bugia-ce"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-bugia-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-20"
+locus = "Book I, chapter XX, section 1."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-bugia-watterson"
+binding = "artifact.maximilian775.bishop-watterson-bugia-photograph.wikimedia-commons-2025.commons-original-jpeg-e6addffc"
+locus = "Complete documentary photograph, especially the foreground object and museum identification card."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "CC BY 4.0; publication use must preserve attribution to Maximilian775."
+
+[[artwork]]
+id = "art-watterson-bugia-exemplar"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0002-watterson-bugia-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-bugia"]
+scale_mode = "not-to-common-scale"
+review_note = "Source-bounded reconstruction of one exemplar; no handle is inferred from a neighboring display object."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Place the bugia in its book-service relationship; the illustrated Watterson form is one licensed exemplar, not a universal construction."
+claim_ids = ["clm-bugia-use", "clm-bugia-exemplar"]

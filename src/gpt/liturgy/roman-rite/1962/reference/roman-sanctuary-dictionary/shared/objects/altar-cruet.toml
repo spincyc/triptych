@@ -2,9 +2,9 @@ schema_version = 1
 id = "obj-altar-cruet"
 workflow_state = "publication-ready"
 editorial_note = "The checked Missal and disclosed server-manual synthesis support the wine-and-water service. A dated manufacturer catalog and two cataloged museum witnesses support a small paired-cruet teaching plate while demonstrating substantial variation in material, body, ornament, marking, closure, and handle. A Latin headword is deliberately not asserted because the present audit did not close the lexical question; any universal arrangement remains open."
-preferred_english_name = "Paired altar cruets"
+preferred_english_name = "Altar cruet"
 latin_headword = "Latin term not asserted"
-alternate_english_names = ["Cruet"]
+alternate_english_names = ["Cruet", "Paired altar cruets"]
 alternate_latin_names = []
 sort_name = "Cruet, altar"
 categories = ["service-objects"]
@@ -17,7 +17,7 @@ component_objects = []
 
 [presence]
 locations = ["Prepared near the altar, ordinarily at the credence."]
-contexts = ["A pair supplies wine and water at the Offertory and the required liquids at the ablutions."]
+contexts = ["A cruet supplies wine or water at the Offertory or ablutions; two are ordinarily prepared together for the wine-and-water service."]
 composition_ids = []
 local_variability = "possible"
 
@@ -40,7 +40,7 @@ pontifical = "useful"
 [[claims]]
 id = "clm-altar-cruet-identity"
 kind = "identity"
-text = "Paired altar cruets are small pouring vessels prepared to supply wine and water for the Mass."
+text = "An altar cruet is a small pouring vessel prepared to supply wine or water for the Mass; two are ordinarily prepared together for the wine-and-water service."
 evidence_state = "source-grounded-synthesis"
 source_ids = ["src-missale-1962-ritus-vii-x", "src-asg-source-audit-cruets", "src-gorham-1914-cruets", "src-met-200141-cruet-pair"]
 as_of = 1962-01-01
@@ -122,13 +122,22 @@ checked_on = 2026-07-27
 note = "Cataloged as a pair of altar cruets, each 14 cm high. Its material, ornament, unhandled form, and arrangement are not generalized."
 
 [[artwork]]
-id = "art-altar-cruet-paired-generic"
-view = "comparison"
+id = "art-altar-cruet-single-generic"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-service-objects-0104-single-altar-cruet-v1-alpha.png"
+review_state = "approved"
+depicts = ["obj-altar-cruet"]
+scale_mode = "not-to-common-scale"
+review_note = "Canonical isolated recognition view of one small pouring vessel. The lid, handle, foot, material, and silhouette are representative rather than universal; TeX owns the name and variation qualification."
+
+[[artwork]]
+id = "art-altar-cruets-paired-relationship"
+view = "composition"
 asset = "shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets-v2-alpha.png"
 review_state = "approved"
 depicts = ["obj-altar-cruet"]
 scale_mode = "common-scale"
-review_note = "Two generic open cruets at common hand scale. The plate teaches only pair, stable base, pouring lip, and graspable handle. TeX owns wine/water labels and the local-variability qualification. The earlier household-decanter-like single asset remains held and is not a primary consumer."
+review_note = "Labeled relationship view of two altar cruets ordinarily prepared together for wine and water. It is not the canonical isolated identity view and does not prescribe left-right order, marking, closure, handle, tray, or material."
 
 [[audience_note]]
 audience = "altar-server"

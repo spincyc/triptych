@@ -6,44 +6,24 @@
 \fancyhf{}
 \fancyfoot[R]{\thepage}
 \setlength{\headheight}{11pt}
-\hypersetup{pdfsubject={Source-bounded alpha pictorial dictionary at the 1962 Roman Rite horizon}}
-
-\makeatletter
-\newif\ifRSD@compactmodelrecorded
-\newcommand{\RSDCompactGenerationColophon}{%
-  \begingroup
-  \RSD@compactmodelrecordedfalse
-  \def\RSD@compactmodel{}%
-  \def\RSD@compactqualifiers{}%
-  % The complete, machine-checked contribution history remains in the leaf's
-  % generation-metadata.tex.  The reader edition needs only document-level
-  % provenance, not the internal production log attached to each contribution.
-  \renewcommand{\AIModelContribution}[3]{%
-    \ifRSD@compactmodelrecorded\else
-      \def\RSD@compactmodel{##1}%
-      \def\RSD@compactqualifiers{##2}%
-      \RSD@compactmodelrecordedtrue
-    \fi}%
-  \RSDGenerationMetadata
-  \par\noindent
-  \AIDisplayDocumentRevisionTimestamp
-  \ifRSD@compactmodelrecorded
-    \textbf{Model:} \texttt{\RSD@compactmodel};
-    \texttt{\RSD@compactqualifiers}.  The complete contribution and runtime
-    record accompanies the source edition.\par
-  \fi
-  \endgroup}
-\makeatother
+\hypersetup{pdfsubject={Pictorial dictionary at the 1962 Roman Rite horizon}}
 
 \providecommand{\RSDOpeningMatter}{}
+\newcommand{\RSDLoadPublicationMetadata}{%
+  \begingroup
+  \renewcommand{\AIModelContribution}[3]{}%
+  \renewcommand{\AIInheritedGenerationMetadata}[1]{}%
+  \RSDGenerationMetadata
+  \endgroup}
 
 \newcommand{\RSDPublicationBody}{%
   \begin{document}
+  \RSDLoadPublicationMetadata
   \DictionaryTitle{\RSDTitle}{\RSDSubtitle}{\RSDEditionLine}
   \RSDOpeningMatter
   \RSDRenderGeneratedEdition{\RSDGeneratedFile}
   \clearpage
   \DictionaryTerminalMatter
-  \section{Generation Metadata}
-  {\scriptsize\RSDCompactGenerationColophon}
+  \enlargethispage{-0.14in}
+  \TriptychRightsNotice
   \end{document}}

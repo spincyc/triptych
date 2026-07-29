@@ -1,7 +1,35 @@
 # Source audit
 
-Status: **initial gap audit with one narrow sacristy-furnishings pass**
+Status: **initial gap audit with bounded object-family and sanctuary-component passes**
 Audit date: 2026-07-27
+
+## Minimum sanctuary-component corpus, 2026-07-28
+
+The comprehensive edition now binds the exact 1962 Missal controls for the
+centrally placed altar crucifix, candle-and-candlestick provision varying with the
+class of Mass, three altar cards, the reserved-Sacrament altar relationship,
+and conditional relics or saint images. It also binds three exact, tracked Met
+Open Access API artifacts: object 469881 (one standing crucifix with separately
+dimensioned cross, corpus, and base), object 200660 (one paired altar-
+candlestick set with separate dimensions), and object 467756 (one
+early-thirteenth-century tabernacle).
+
+The museum records are direct material-culture witnesses, never ritual norms.
+The tabernacle record is especially limited: its portable, reliquary-like
+medieval form cannot stand in for the central fixed tabernacle governed by the
+1917 Code. Exact page images from the 1918 Vatican Polyglot edition now bind
+cc. 1268, 1269, and 1271 as the topology control: one reservation altar, the
+preeminent place and ordinary-high-altar rule with its choral exception, an
+immovable tabernacle in the middle part of the altar, and at least one lamp
+burning continuously before it. Those canons do not establish tabernacle or
+lamp morphology.
+
+No HABS composition sheet was admitted. Federal custody was not treated as
+proof that a particular sheet was government-created, and this pass found no
+exact sheet for which both rights authorship and suitability to the 1962
+horizon were affirmatively closed. Consequently the corpus does not support
+six candles, gradines, steps, predella, baldachin, or a universal sanctuary
+composition.
 
 ## Holy-water pair, 2026-07-28
 

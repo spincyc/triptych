@@ -665,11 +665,7 @@ Both are named here because §[9](#sec:withheld) concerns a controversy argued c
 
 The 1930 União Gráfica imprint; the Leiria diocesan archive; the fifteen-volume *Documentação Crítica* beyond the selection; *O Século* and *Ilustração Portuguesa* in facsimile; the 1942 first imprints of the secret’s first two parts; Lucia’s memoirs in integral critical edition; *Insegnamenti* volumes cited by the 2000 dossier; the autograph of the letter of 12 May 1982; the Portuguese autographs of the secret’s three parts, used only through the published facsimile and translation; the Latin of the *Summa theologiae*; the celebration booklet with the 2017 canonization formula; archival materials alleged in the consecration controversy; and the two books named above.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T02:03:00Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

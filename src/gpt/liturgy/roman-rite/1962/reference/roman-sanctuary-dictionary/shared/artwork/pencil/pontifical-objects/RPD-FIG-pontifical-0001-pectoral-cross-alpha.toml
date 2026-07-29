@@ -1,0 +1,58 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-pectoral-cross-neutral-pendant"
+object_ids = ["obj-pectoral-cross"]
+file = "RPD-FIG-pontifical-0001-pectoral-cross-alpha.png"
+purpose = "Identify the pectoral cross as a suspended cross-shaped pendant without presenting one ornate exemplar as universal morphology."
+depicted_state = "One plain Latin-cross pendant with an integral suspension bail, shown without a chain or cord."
+period_status = "generic identification figure; not a universal Roman morphology claim"
+source_controlled_features = [
+  "cross-shaped pendant",
+  "integral suspension bail as a materially attested construction",
+]
+deliberately_omitted_details = [
+  "chain or cord",
+  "gemstones",
+  "enamel",
+  "filigree",
+  "pearls",
+  "corpus",
+  "heraldry",
+  "inscription",
+  "prescribed material",
+  "dimensions",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1024x1536 sRGB PNG"
+normalized_pixels = "1024x1536 8-bit sRGBA PNG"
+normalization = "Flat green background converted locally to a soft alpha matte with automatic border-key sampling and despill."
+sha256 = "8613ee22131e97ad0e545a74e1897df919af64983782f9304bcebdb609b57601"
+baked_in_content_audit = "Exactly one plain cross pendant and integral bail are present. No chain, cord, gems, enamel, filigree, pearls, corpus, heraldry, inscription, label, border, watermark, display support, person, or setting is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "source boundary", "caption", "callouts"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "creator-reviewed asset-local candidate; independent manifest admission remains required"
+
+prompt = """
+Use case: scientific-educational
+Asset type: isolated source-bounded monochrome object figure for a children's Roman liturgical pictorial dictionary
+Primary request: Draw one neutral pectoral cross as a plain pendant object, suitable for identifying the object without claiming a universal ornamental form.
+Subject: exactly one small Latin-cross pendant with a simple integral suspension bail at the top; restrained metal thickness and believable pendant construction.
+Style/medium: elegant historically attentive graphite pencil study, fine controlled line, restrained cross-hatching, subtle grayscale modeling, lively hand-drawn atlas character.
+Composition/framing: isolated front three-quarter view, centered, complete object and bail visible, generous padding, no chain or cord attached.
+Morphology boundary: the drawing establishes only a cross-shaped pendant and suspension bail. Keep surfaces plain and generic. No gemstones, jewels, filigree, engraved figures, corpus, heraldry, enamel, pearls, inscriptions, decorative terminals, prescribed material, dimensions, or chain pattern.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal; uniform with no shadows, gradient, texture, floor, reflection, or lighting variation. Keep object fully separated from background. Use only grayscale in subject and no green in subject.
+Avoid: necklace chain, cord, second object, person, hand, vestments, display stand, cast shadow, contact shadow, label, text, border, watermark, floating rectangular vignette, photorealism, fantasy ornament.
+"""
+
+[[source_basis]]
+source_id = "artifact.metropolitan-museum-of-art.pectoral-cross-810813.met-collection-record-2025-01-31.met-api-json-83f0951e"
+locus = "Object 810813 collection record: title, dimensions field, and integral-bail description"
+supported_feature = "A pectoral cross can be a suspended pendant with an integral bail; the ornate materials and chain of this single 1900 exemplar were deliberately not generalized."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "creator-production-review"
+outcome = "accepted-for-independent-review"
+scope = "Object count, plain pendant boundary, integral bail, prohibited ornament, alpha matte, crop safety, and absence of baked-in labels or rectangular background."
+admission_boundary = "This review advances only the asset-local staging record; an independent reviewer and canonical shared-manifest admission remain separate actions."

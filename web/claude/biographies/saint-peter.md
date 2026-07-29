@@ -745,10 +745,6 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   General Roman Calendar (*Calendarium Romanum Generale*, Missale Romanum, editio typica tertia, 2002): identified through the repository’s source-library record; feast statements in the text also rest on the Catholic Encyclopedia articles above and carry the 2026-07-25 currentness cutoff.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T02:03:00Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

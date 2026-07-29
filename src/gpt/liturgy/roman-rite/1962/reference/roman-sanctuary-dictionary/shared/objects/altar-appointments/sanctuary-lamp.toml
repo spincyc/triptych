@@ -1,7 +1,7 @@
 schema_version = 1
 id = "obj-sanctuary-lamp"
 workflow_state = "source-audited"
-editorial_note = "The checked Ceremonial supports reservation-place placement, perpetual burning, and multi-lamp arrangements. It does not establish the candidate single-vessel morphology, handling detail, or every ceremony named by the inventory record."
+editorial_note = "Canon 1271 directly supports at least one continuously burning lamp before the tabernacle; the checked Ceremonial supports additional multi-lamp arrangements. Neither establishes the candidate single-vessel morphology, handling detail, or every ceremony named by the inventory record."
 preferred_english_name = "Sanctuary lamp"
 latin_headword = "lampas"
 alternate_english_names = ["reservation lamp"]
@@ -15,8 +15,8 @@ related_objects = ["obj-altar-candle"]
 component_objects = []
 
 [presence]
-locations = ["Before the altar or place where the Blessed Sacrament is reserved."]
-contexts = ["A continually burning reservation light; additional lamps may form larger hanging arrangements."]
+locations = ["Before the tabernacle in which the Blessed Sacrament is reserved."]
+contexts = ["At least one continually burning reservation light; additional lamps may form larger hanging arrangements."]
 composition_ids = []
 local_variability = "common"
 
@@ -39,9 +39,9 @@ pontifical = "useful"
 [[claims]]
 id = "clm-sanctuary-lamp-identity"
 kind = "identity"
-text = "The sanctuary lamp is the reservation light burning before the altar or place where the Blessed Sacrament is reserved."
+text = "At least one sanctuary lamp burns continuously before the tabernacle in which the Blessed Sacrament is reserved."
 evidence_state = "checked-paraphrase"
-source_ids = ["src-sanctuary-lamp-ceremonial"]
+source_ids = ["src-sanctuary-lamp-canon-1271"]
 
 [[claims]]
 id = "clm-sanctuary-lamp-placement"
@@ -56,6 +56,14 @@ kind = "liturgical-use"
 text = "The Ceremonial directs that lamps around the place of reservation burn perpetually."
 evidence_state = "checked-paraphrase"
 source_ids = ["src-sanctuary-lamp-ceremonial"]
+
+[[sources]]
+id = "src-sanctuary-lamp-canon-1271"
+binding = "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1271"
+locus = "canon 1271, printed p. 366"
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
 
 [[claims]]
 id = "clm-sanctuary-lamp-form"

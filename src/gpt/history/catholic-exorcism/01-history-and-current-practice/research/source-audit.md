@@ -608,15 +608,31 @@ efficacy.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
 - Popular exorcist memoirs, films, podcasts, alleged recordings, and named case narratives were excluded: they are not needed to establish doctrine, law, ritual history, or safe practice.
-- The earlier pop-culture-derived epigraph was removed in the 27 July repair;
-  no adapted third-party wording remains in the opening.
+- The opening's “exorcist club” line is an editorial transformation of the
+  familiar rule in Chuck Palahniuk, *Fight Club*, ch. 6 (W. W. Norton, 1996),
+  as popularized in Jim Uhls's screenplay for David Fincher's *Fight Club*
+  (1999). It is labeled as an adaptation, never “Anonymous.” No protected
+  novel, screenplay, or film bytes are retained, and no underlying wording is
+  reproduced as a quotation. Its immediate discussion concerns
+  confidentiality and the afflicted person's dignity, not pop-culture
+  evidence about exorcism.
+- Gene Wolfe, *The Devil in a Forest*, first Orb edition (New York:
+  Orb/Tom Doherty Associates, 1996; ISBN 0-312-89032-X), p. 207, is retained
+  as a proposed literary epigraph source. The edition identity was checked
+  against publisher, contemporary trade, and library catalog records on
+  28 July 2026, but no protected edition bytes were acquired. A reader
+  attested the exact wording, the Abbé as speaker, and the page locus on
+  26 July 2026; the project has not independently collated the page. The
+  restored focused excerpt is attributed, immediately analyzed, limited
+  as fair-use criticism, excluded from the repository license, and treated
+  neither as Catholic teaching nor as evidence that curses work.
 
 ## Quotation, ritual-content, and rights audit — 2026-07-27
 
-The expanded source was searched after the section revisions settled for
+The source as reviewed on 27 July was searched after its section revisions for
 display quotations, prayer or ritual text, imperative formulas, operational
 sequence, diagnostic checklists, modern case material, and reproduced
-third-party tables or images. It contains no display quotation, prayer offered
+third-party tables or images. That snapshot contained no display quotation, prayer offered
 for recitation, exorcistic formula, ritual command, operational sequence,
 diagnostic criteria, case transcript, recording, table, scan, or third-party
 image.
@@ -629,7 +645,10 @@ identified public-domain Douay--Rheims/Challoner English control where English
 source wording is reproduced. The Robinson--Pierpont Greek is discussed but
 not reproduced in bulk. Quotation marks elsewhere identify contested labels,
 titles, hypothetical questions, or the publication's own analytic
-terminology, not uncredited source excerpts.
+terminology, not uncredited source excerpts. The 28 July revision adds the one
+focused, attributed Wolfe display quotation and the separately labeled
+Palahniuk/Uhls adaptation described above; neither is an operative formula,
+instruction, or uncredited excerpt.
 
 The current proprietary ritual is neither reproduced, translated, nor reduced
 to a usable sequence. The 1614, 1872, and 1952 ritual witnesses are treated

@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-faldstool"
-workflow_state = "identified"
+workflow_state = "publication-ready"
 preferred_english_name = "Faldstool"
 latin_headword = "faldistorium"
 categories = ["church-and-sanctuary", "pontifical-and-prelatial"]
@@ -21,31 +21,62 @@ prepares = ["sacristan", "cleric"]
 stores = ["sacristan"]
 
 [audience_relevance]
-altar_server = "useful"
-sacristan = "required"
-mc_trainer = "required"
-general_reader = "required"
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
 pontifical = "required"
 
 [[claims]]
-id = "clm-faldstool-identity"
+id = "clm-faldstool-use"
 kind = "liturgical-use"
 text = "The Ceremonial distinguishes the bishop's use of a faldistorium from his use of the proper pontifical seat or episcopal throne."
 evidence_state = "checked-paraphrase"
 source_ids = ["src-faldstool-ce"]
 
+[[claims]]
+id = "clm-faldstool-identity"
+kind = "identity"
+text = "The faldistorium is an episcopal seat distinct from the bishop's proper pontifical seat or throne."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-faldstool-ce"]
+
+[[claims]]
+id = "clm-faldstool-appearance"
+kind = "appearance"
+text = "For the governed use, the faldstool is covered to the ground in silk matching the vestments, with a cushion beneath; a low platform may be added when the altar steps would otherwise leave it too low."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-faldstool-ce"]
+
+[[claims]]
+id = "clm-faldstool-presence"
+kind = "ceremonial-presence"
+text = "The celebrant's faldstool is placed near the lowest altar step on the Epistle side."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-faldstool-ce"]
+
 [[sources]]
 id = "src-faldstool-ce"
-binding = "artifact.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.libri-nostri-scan-pdf-af65e16a"
-locus = "Caeremoniale Episcoporum (1948), lib. I, cap. II, VII, and VIII; inspected OCR lines 650-668, 1219-1236, and 1343-1356."
-role = "ceremonial-book"
-verification_state = "inspected"
-checked_on = 2026-07-27
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1-chapter-12"
+locus = "Book I, chapter XII, paragraphs 10-11."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-faldstool-met"
+binding = "artifact.metropolitan-museum-of-art.faldstool-193332.met-collection-record-2024-03-29.met-open-access-image-b685d21e"
+locus = "Metropolitan Museum of Art accession 16.154.11a,b, Open Access object photograph."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "One material-culture witness; backlessness, rails, finials, fringe, materials, and hidden construction are not generalized."
 
 [[artwork]]
-id = "art-faldstool-comparison"
-view = "comparison"
-asset = "shared/artwork/pencil/RSD-ART-002-pontifical-seating.png"
-review_state = "identity-checked"
-depicts = ["obj-faldstool", "obj-episcopal-throne", "obj-bishops-chair", "obj-episcopal-kneeler"]
+id = "art-faldstool-covered-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-seating-0002-covered-faldstool-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-faldstool"]
 scale_mode = "not-to-common-scale"
+review_note = "Shows the covered ceremonial state with cushion beneath a continuous ground-resting covering; no universal folding mechanism or exposed X-frame is asserted."

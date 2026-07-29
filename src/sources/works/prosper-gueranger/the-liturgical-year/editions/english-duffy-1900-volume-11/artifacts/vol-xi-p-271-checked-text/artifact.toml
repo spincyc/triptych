@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.vol-xi-p-271-checked-text"
+edition_id = "edition.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces two sentences from a United States public-domain volume published in 1900. It was manually collated against a page rendering from the hashed Internet Archive facsimile and contains no host markup."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription of printed page 271, visually collated against PDF page 292 rendered at 160 dpi from the registered Internet Archive facsimile on 2026-07-28."
+retrieved = "2026-07-28"
+sha256 = "a436ee931a53f2c37c75221d965e5631b1e7ab943528afb7d7a7e293db41703a"
+byte_size = 363
+path = "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1900-volume-11/artifacts/vol-xi-p-271-checked-text/gueranger-vol-xi-p-271.txt"
+derived_from = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
+transformation = "Render PDF page 292 as an image; transcribe the two prose sentences immediately preceding the Postcommunion, preserving wording and punctuation while regularizing printed line breaks into one sentence per LF-terminated UTF-8 line."
+indexable = true
+encoding = "utf-8"

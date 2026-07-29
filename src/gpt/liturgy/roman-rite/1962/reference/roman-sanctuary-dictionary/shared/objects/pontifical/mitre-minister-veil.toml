@@ -1,0 +1,90 @@
+schema_version = 1
+id = "obj-mitre-minister-veil"
+workflow_state = "publication-ready"
+preferred_english_name = "Mitre minister's veil"
+latin_headword = "velum seu mappa sericea oblonga"
+alternate_english_names = ["Mitre-bearer's veil"]
+alternate_latin_names = []
+sort_name = "Veil, mitre minister's"
+categories = ["pontifical-and-prelatial", "linens-and-textiles"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+confusable_with = ["obj-vimpa"]
+related_objects = ["obj-mitre"]
+component_objects = []
+editorial_note = "The governing text's descriptive terminology is retained; it is not silently collapsed into the broader familiar headword vimpa."
+
+[presence]
+locations = ["Worn from the neck by the mitre minister when appointed."]
+contexts = ["Used to support the mitre without bare-hand contact, except in the Ceremonial's cope branch."]
+composition_ids = ["plt-pontifical-insignia"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Do not infer dimensions, fastening, or a universal identity with every veil called a vimpa."]
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-mitre-minister-veil-use"
+kind = "liturgical-use"
+text = "The Ceremonial directs the mitre minister to wear a neck-hung oblong silk veil or cloth and use it to support the mitre without bare-hand contact, unless he wears a cope."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-veil-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-mitre-minister-veil-identity"
+kind = "identity"
+text = "The Ceremonial identifies a veil or oblong silk cloth assigned to the mitre minister; this checked locus does not call it a vimpa."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-veil-ce"]
+
+[[claims]]
+id = "clm-mitre-minister-veil-appearance"
+kind = "appearance"
+text = "The governing description establishes an oblong silk textile hung from the neck, but does not prescribe its dimensions, fastening, breadth, or drape."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-veil-ce"]
+
+[[claims]]
+id = "clm-mitre-minister-veil-presence"
+kind = "ceremonial-presence"
+text = "When appointed and not vested in a cope, the mitre minister wears the cloth from his neck while supporting the mitre."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-veil-ce"]
+
+[[sources]]
+id = "src-mitre-veil-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-11.sections-5-6"
+locus = "Book I, chapter XI, section 6."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-mitre-minister-neck-hung-veil-v2"
+view = "in-use"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0002-mitre-minister-veil-v2-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-mitre-minister-veil", "obj-mitre"]
+scale_mode = "not-applicable"
+context_object_ids = ["obj-mitre"]
+review_note = "The cloth is visibly neck-hung and interposed between both hands and the mitre; vesture is generic context."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Teach the checked neck-hung, hands-covered function and the cope exception; do not generalize the drawing's breadth or drape."
+claim_ids = ["clm-mitre-minister-veil-use"]

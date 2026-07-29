@@ -146,15 +146,11 @@
 \newcommand{\sacramentSummaryEnd}{}
 
 % ----------------------------------------------------------- generation metadata
-% The preamble renders the tracked timestamp once, inside the first model
-% contribution. Rendering it where it is declared reaches the same visible line
-% without the conditional state pandoc cannot evaluate. Complete contribution
-% and runtime history remains in the tracked metadata file; scripts/web-edition
-% applies the compact repeat rule by choosing \AIModelContributionRepeat.
+% The tracked timestamp remains reader-visible. Model identity, configuration,
+% contribution, and runtime history remain only in the tracked metadata file.
 \newcommand{\AIDocumentRevisionTimestamp}[1]{\par\textbf{Last revised (UTC):} #1\par}
 \newcommand{\AIDisplayDocumentRevisionTimestamp}{}
-\newcommand{\AIModelContribution}[3]{%
-  \par\textbf{Model:} \texttt{#1}; \texttt{#2}\par}
+\newcommand{\AIModelContribution}[3]{}
 \newcommand{\AIModelContributionRepeat}[3]{}
 
 % ------------------------------------------------------------------ rights notice

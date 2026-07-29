@@ -8,13 +8,15 @@ This slice does not amend the aggregate manifests.
 
 ## Evidence ceiling
 
-Every object below is an **identified lead**, not a publication-ready record.
-The dictionary source audit presently records no claim-level verification for
-this category. English and Latin names, morphology, use, handling, symbolism,
-and 1962 status must therefore be checked directly against the exact official
-books and competent contemporary material-culture sources before canonical
-promotion. The generated plates are editorial search and layout aids; they are
-not evidence for any claim.
+Most objects below remain **identified leads**, not publication-ready records.
+The sanctuary lamp is now narrower: exact 1917 Code canon 1271 directly
+controls at least one continuously burning lamp before the tabernacle, while
+the checked Ceremonial controls additional multi-lamp arrangements. Exact
+canons 1268 and 1269 separately control the reservation altar and fixed central
+tabernacle topology. None of these sources establishes the pictured suspended
+single-vessel morphology, and the other English and Latin names, handling,
+symbolism, and object forms still require direct checks. Generated plates are
+editorial search and layout aids; they are not evidence for any claim.
 
 ## Proposed canonical records
 
@@ -50,9 +52,12 @@ not evidence for any claim.
 2. Bind the applicable exact *Rituale Romanum* edition and title for Communion
    outside Mass, Communion of the sick, Viaticum, exposition, reposition, and
    Benediction.
-3. Bind the exact 1917 Code canons and then the material amendments in force at
-   the 1962 horizon for reservation and the sanctuary lamp; legal findings
-   must state jurisdiction, authority, and as-of date.
+3. The exact 1918 Vatican Polyglot pages for 1917 Code cc. 1268, 1269, and
+   1271 are now registered and visually checked for the reservation altar,
+   immovable central tabernacle, and minimum continuously burning lamp before
+   it. Any material amendments in force at the 1962 horizon still require a
+   separate currentness pass; the checked canons are superseded law and do not
+   control post-1983 practice.
 4. Use the edition-identified 1962 Fortescue/O'Connell/Reid ceremonial only
    after direct page inspection, preserving any difference between rubric,
    common practice, and editorial recommendation.

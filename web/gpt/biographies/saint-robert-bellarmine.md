@@ -522,10 +522,6 @@ Internal source, chronology, tradition, and rights boundaries are recorded in th
 
 -   Motta, Franco. “Bellarmino, Roberto,” *Dizionario Biografico degli Italiani*, 2016, [Treccani online](https://www.treccani.it/enciclopedia/santo-roberto-bellarmino_%28Dizionario-Biografico%29/); accessed 2026-07-20. This is the principal inspected modern control for formation, office chronology, print sequence, French legation, Sixtine Index, Vulgate revision, *de auxiliis*, Capua, the conclaves, political controversies, late writings, and death. Interpretations of motive are named as reconstruction rather than documentary fact.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-21T15:25:48Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

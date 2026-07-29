@@ -1242,12 +1242,6 @@ Second, the short *Sancte Michael Archangele* attached to the Leonine sequence m
 
 -   John T. McMahon, *Pray the Mass*, Part I, 13th revised ed. (Sydney: Pellegrini, 1959), with imprimatur of Archbishop Raymond Prendiville (June 1959). The booklet explicitly arranges thirty-three steps in association with Christ’s earthly years. [Public scan](https://www.ccwatershed.org/pdfs/pray-mass-booklet/download/); [bibliographic description](https://www.ccwatershed.org/2014/09/13/pray-mass-booklet-and-cards/). The superseded edition’s count had this catechetical antecedent; the present study follows natural movements and retains the old rows only as a research concordance.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-23T23:15:29Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

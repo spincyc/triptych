@@ -1235,10 +1235,6 @@ Sources are grouped by the role they play. Only sources actually read for this e
 
 -   The repository’s own *Roman Calendar Computation* guidance owns the shared arithmetic used across its liturgy collections. This edition states and applies those rules and does not establish a divergent one; the open points it records — the absence of an official statement of the computus, and the unlegislated shortfall case — are the same points recorded there.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-27T23:02:25Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

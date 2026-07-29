@@ -205,10 +205,6 @@ Thomas Aquinas, *Summa theologiae* III, qq. 73, 76, 79, and 83.
 Authoritative teaching  
 Council of Trent, session XXII, chapters 1–2 and canon 3 on the Sacrifice of the Mass; Second Vatican Council, *Sacrosanctum Concilium* 47; *Catechism of the Catholic Church* 1322–1323, 1362–1377, 1382, 1390, 1402–1405; *General Instruction of the Roman Missal* 79; John Paul II, *Ecclesia de Eucharistia* 11–12; Benedict XVI, *Sacramentum Caritatis* 9–11.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-27T13:27:22Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

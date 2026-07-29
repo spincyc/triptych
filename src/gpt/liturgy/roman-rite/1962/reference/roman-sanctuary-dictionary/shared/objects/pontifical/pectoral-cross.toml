@@ -1,0 +1,67 @@
+schema_version = 1
+id = "obj-pectoral-cross"
+workflow_state = "held"
+preferred_english_name = "Pectoral cross"
+latin_headword = "crux pectoralis"
+alternate_english_names = []
+alternate_latin_names = []
+sort_name = "Cross, pectoral"
+categories = ["pontifical-and-prelatial"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+confusable_with = ["obj-processional-cross", "obj-sacristy-cross"]
+related_objects = []
+component_objects = []
+editorial_note = "The plain pendant is a neutral recognition convention; no chain or cord, material, ornament, dimensions, or universal form is asserted."
+
+[presence]
+locations = ["Worn at the breast by the bishop in pontifical vesture."]
+contexts = ["Pontifical vesting and functions."]
+composition_ids = ["plt-pontifical-insignia"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "cleric", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["cleric"]
+receives = ["cleric"]
+stores = ["sacristan"]
+warnings = []
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-pectoral-cross-morphology"
+kind = "appearance"
+text = "The checked museum record establishes one pectoral cross with an integral bail; its gems, enamel, filigree, pearls, dimensions, and suspension are not generalized."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pectoral-cross-met"]
+
+[[sources]]
+id = "src-pectoral-cross-met"
+binding = "artifact.metropolitan-museum-of-art.pectoral-cross-810813.met-collection-record-2025-01-31.met-api-json-83f0951e"
+locus = "Object 810813 collection record: title, dimensions, and integral-bail description."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-pectoral-cross-neutral-pendant"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0001-pectoral-cross-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-pectoral-cross"]
+scale_mode = "not-to-common-scale"
+review_note = "Plain cross-shaped pendant with integral bail; substantial scale is an editorial recognition convention."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use the figure only for recognition; its plain form and integral bail do not prescribe suspension, ornament, material, or dimensions."
+claim_ids = ["clm-pectoral-cross-morphology"]

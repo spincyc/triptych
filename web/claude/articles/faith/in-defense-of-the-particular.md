@@ -869,13 +869,7 @@ No liturgical rite, civil or canonical jurisdiction, or mutable discipline gover
 
 -   Thomas Williams, “John Duns Scotus,” *Stanford Encyclopedia of Philosophy* (substantive revision 15 December 2025), for the reported account of the common nature and *haecceitas*, with *Ordinatio* II, d. 3, pars 1, qq. 1–6 as the primary locus it identifies; [entry page](https://plato.stanford.edu/entries/duns-scotus/). Scotus not collated.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T03:15:03Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

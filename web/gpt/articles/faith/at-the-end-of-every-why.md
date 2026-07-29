@@ -332,11 +332,7 @@ The online witnesses and claim-to-source record were checked through 23 July 202
 
 -   St. John of the Cross, *Dark Night* I.8–10 and II.5–8, on the discernment and passive purification of dryness, with a [public-domain working English witness to I.9](https://www.ccel.org/ccel/john_cross/dark_night.vii.ix.html); and *Spiritual Canticle* B, stanza 38.2–6 and 39.4–6, second redaction, on love in the Holy Spirit and union by participation rather than identity of essence, [stanza 38](https://www.ccel.org/ccel/john_cross/canticle.xliii.html) and [stanza 39](https://www.ccel.org/ccel/john_cross/canticle.xliv.html).
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-23T13:29:33Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

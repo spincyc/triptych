@@ -689,11 +689,7 @@ All online witnesses were checked on 2026-07-26; no mutable law or discipline is
 
 -   *The Catholic Encyclopedia* (New York: Robert Appleton Company), art. “Pope John XXII” (vol. 8, 1910), art. “Benedict XII” (vol. 2, 1907), art. “Summa Theologiae” (vol. 14, 1912); public domain; read 2026-07-26 at [New Advent (John XXII)](https://www.newadvent.org/cathen/08431a.htm), [New Advent (Benedict XII)](https://www.newadvent.org/cathen/02430a.htm), and [New Advent (Summa Theologiae)](https://www.newadvent.org/cathen/14663b.htm). Used for chronology, the preparation of the constitution, and the compilation of the Supplement; never for doctrinal authority, and its probability judgments are reproduced as probabilities.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T03:28:39Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

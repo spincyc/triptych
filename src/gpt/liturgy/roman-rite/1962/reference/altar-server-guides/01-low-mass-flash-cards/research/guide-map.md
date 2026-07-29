@@ -59,12 +59,14 @@ ceremonial actions in the booklets, not the response deck.
 
 ## Print map and boundary
 
-This standalone card-face companion has six physical pages and no cover,
-contents, instructions, actor key, lesson, assessment, parity leaf, or
-terminal-reference page. Pages 1, 3, and 5 are eight-up fronts in natural
-reading order. Pages 2, 4, and 6 mirror each row left-to-right for long-edge
-duplex printing. The last sheet contains cards 17--22; its final two grid
-positions are unbordered and do not create filler cards or blank backs.
+This standalone companion has seven physical pages and no cover, contents,
+lesson, assessment, or parity leaf. Pages 1, 3, and 5 are eight-up fronts in
+natural reading order. Pages 2, 4, and 6 mirror each row left-to-right for
+long-edge duplex printing. The last card sheet contains cards 17--22; its
+final two grid positions are unbordered and do not create filler cards or
+blank backs. Page 7 is an uncut, adult-facing terminal apparatus sheet that
+explains the Alpha, training, safety, textual, and rights boundaries. It is not
+a card and does not alter any front/back pair.
 
 Print US letter, portrait, two-sided, at actual size, flipped on the long edge,
 and cut on the card borders. Each face uses fixed 11.5-point Libertinus Serif
@@ -73,7 +75,7 @@ and all remain top-aligned. The three header zones read
 `NUMBER · PRIEST / LOW MASS / STAGE` on fronts and
 `NUMBER · BOTH / LOW MASS / STAGE` on backs. Print hints stay outside the card
 borders. The compact inherited revision and rights notice occupies unused
-space outside the final back grid and adds no page.
+space outside the final back grid.
 
 The trainer manual supplies the printing, branch, actor, and use key. That key
 must specify letter paper in portrait orientation, two-sided printing at 100
@@ -88,3 +90,8 @@ branch correction, object work, and any competence judgment in live,
 responsible adult training. This leaf inherits its generation provenance and
 remains governed by the owner-level source, response, card, rights, and
 production records.
+
+The 2026-07-28 Alpha-apparatus snapshot has seven physical pages and
+twenty-two cards. Exact artifact identity, duplex sequence, and every-page
+screen-review evidence are recorded in the series production manifest; no
+actual-size print or physical-duplex review is inferred.

@@ -42,17 +42,17 @@
 \newif\ifChildBookletGuide
 \newif\ifTrainerManualGuide
 
-% Every page in this provisional family must identify itself even when a page
-% is printed or detached without its cover.  The outer-edge strip remains
-% outside the instructional lanes and all card cut boxes.
+% Identify the publication state once, on physical page 1.  Full guides and
+% card companions explain that state in terminal matter; the detachable card
+% sheets themselves remain prose-free and preserve their existing cut geometry.
 \AddToHook{shipout/foreground}{%
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[rotate=90,anchor=center,inner sep=0pt]
-      at ([xshift=9pt]current page.west)
-      {\fontsize{6.5}{7.5}\selectfont\bfseries
-        PUBLIC-ALPHA REVIEW COPY \textperiodcentered\ PROVISIONAL
-        \textperiodcentered\ NOT AN OFFICIAL LITURGICAL BOOK};
-  \end{tikzpicture}}
+  \ifnum\ReadonlyShipoutCounter=1\relax
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south,inner sep=0pt]
+        at ([yshift=24pt]current page.south)
+        {\fontsize{7}{8}\selectfont\bfseries ALPHA};
+    \end{tikzpicture}%
+  \fi}
 
 % A cards-only companion supplies this hook so its inherited revision record
 % and compact rights notice can occupy the unused margin below the final back
@@ -74,6 +74,53 @@
     \fi}%
   \TriptychRightsNotice
   \par\endgroup}
+
+% Keep publication qualifications off the detachable cards.  This uncut,
+% adult-facing terminal sheet follows the last complete front/back pair, so it
+% cannot disturb card positions or duplex parity.  The fixed page-relative
+% measure also works for the zero-margin Low Mass flash-card document.
+\newcommand{\CardCompanionTerminalApparatus}{%
+  \clearpage
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north,text width=6.8in,align=left,inner sep=0pt]
+      at ([yshift=-0.72in]current page.north) {%
+        \begingroup
+        \RaggedRight
+        {\Large\MissalDisplay{About This Alpha Card Companion}\par}
+        \vspace{0.7em}
+        {\small
+        \textbf{Publication state.} Alpha names the review gate for this
+        snapshot. It does not mean final, complete, official, or
+        ecclesiastically approved.\par
+        \vspace{0.65em}
+        \textbf{Training boundary.} These cards are rehearsal prompts for the
+        ordinary 1962 Roman Rite route named on the deck. They are not an
+        official liturgical book, parish directive, certificate of competence,
+        or substitute for the full guide and its branch qualifications. The
+        priest and master of ceremonies govern the actual function.\par
+        \vspace{0.65em}
+        \textbf{Safe use.} Rehearse under a responsible adult. That adult
+        controls flames, hot charcoal, unfamiliar objects, and local hazards.
+        If a cue is missed, stop safely, secure any object, and look to the
+        priest or master of ceremonies; never improvise a rushed crossing.\par
+        \vspace{0.65em}
+        \textbf{Text and scope.} Latin responses are collated to the 1962
+        Vatican typical Missal. Learner pronunciation and memory helps are
+        editorial aids, not chant notation or an English ritual translation.
+        Special rites and local ceremonial variations require their own
+        instructions.\par
+        \vspace{0.65em}
+        \textbf{Rights.} Project-created teaching matter falls within the
+        repository license boundary. Received liturgical text, official
+        sources, fonts, and third-party material retain their own status.
+        Installation does not authorize public distribution.\par
+        \vspace{0.8em}
+        \textit{This sheet is not a card and is not part of the cut grid. Keep
+        it with the deck for adult reference.}\par}%
+        \endgroup};
+  \end{tikzpicture}%
+  \null}
 
 % Trainers and servers need to find one lesson or one assigned role without
 % paging through the technical route. Include subsections in the contents.
@@ -108,10 +155,6 @@
   \vspace{0.75em}
   {\large #3\par}
   \vfill
-  {\small Public-alpha training edition. Source, rights, liturgical,
-  ceremonial, pronunciation, and age-appropriate review remain open.
-  Follow the priest, master of ceremonies, and customs of your own church.
-  This is not an official liturgical book.\par}
   \end{titlepage}
   \hypersetup{pageanchor=true}%
 }
@@ -371,6 +414,5 @@
   \appendix
   \section{Sources, scope, and qualifications}
   #1
-  \section{Generation Metadata}
   {\scriptsize\input{\GuideRoot/generation-metadata}}
 }

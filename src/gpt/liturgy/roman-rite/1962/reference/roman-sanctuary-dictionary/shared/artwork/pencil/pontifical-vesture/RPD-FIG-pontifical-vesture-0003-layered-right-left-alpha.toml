@@ -1,0 +1,79 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-pontifical-buskins-sandals-layered-pair"
+object_ids = ["obj-pontifical-buskin", "obj-pontifical-sandal"]
+file = "RPD-FIG-pontifical-vesture-0003-layered-right-left-alpha.png"
+purpose = "Teach the combined right-and-left wearing formation: a distinct sandal is worn over each distinct buskin."
+depicted_state = "Paired right and left lower legs and feet, each with a stocking-like buskin underneath and a low closed-shoe sandal over it."
+period_status = "1962-horizon pontifical vesting relationship; the component morphologies remain bounded to the admitted 1948 and circa-1900-1950 exemplars"
+source_controlled_features = [
+  "a right and left pair",
+  "a stocking-like buskin covers each foot and lower leg",
+  "a distinct low closed-shoe sandal is worn over each buskin",
+  "the right and left buskins have the same neutral construction",
+  "the right and left sandals have the same exemplar-bounded construction",
+  "no exposed skin separates the layers",
+]
+deliberately_omitted_details = [
+  "prescribed color relationship",
+  "prescribed textile or leather",
+  "prescribed ornament",
+  "exact buskin height",
+  "fastening",
+  "dimensions",
+  "universal cut",
+  "ministerial handoff and tray",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1402x1122 sRGB PNG"
+normalized_pixels = "1402x1012 8-bit RGBA PNG"
+normalization = "Flat green background removed with the imagegen skill chroma-key helper using border auto-key, soft matte, and despill. The hollow upper openings were excluded by an intentional crop 110 pixels below the generated top so the two worn lower-leg layers continue through the image boundary. Final alpha has 191 distinct levels; all four corners are transparent."
+subject_alpha_bounds = "949x977+170+0"
+sha256 = "bbf83b892c5a223a51e5966ff5bb0e1aa4fcfe9099d47eac3a1de396a5987e18"
+baked_in_content_audit = "No lettering, labels, arrows, border, watermark, asymmetric tie, cuff, seam, panel, fastening, attendants, hands, tray, veil, outer vestments, heraldry, floor, cast shadow, contact shadow, reflection, or rectangular paper background is baked into the asset."
+tex_owned_additions = ["English names", "Latin names", "right-then-left sequence note", "exemplar qualification", "source note", "callouts"]
+rights_state = "project-generated from a public-domain 1948 buskin reference and Sailko's CC BY 3.0 sandal photograph; the reference records retain their respective rights notices and attribution"
+review_state = "self-reviewed-candidate-ready-for-independent-review"
+
+prompt = """
+Use case: historical-scene
+Asset type: corrected combined wearing-formation illustration for a 1962-horizon Roman sanctuary pictorial dictionary
+Primary request: Create one restrained graphite study of two cropped lower legs and feet, right and left, each wearing two visibly distinct layers: a soft seamless stocking-like pontifical buskin underneath and a low closed-shoe pontifical sandal over it.
+Input images: Image 1 is the corrected soft textile buskin morphology reference. Image 2 is the accepted low closed-shoe sandal morphology reference. Both are references, not edit targets.
+Subject: an anatomically coherent paired right and left formation viewed from a slightly elevated three-quarter front angle. The two buskins must be identical in construction: simple soft textile, thin plain upper edge, no cuff, no ties, no seams, no panels, no fastening, no sole. The two sandals must be identical in construction and consistently derived from Image 2: low closed-shoe shape, shallow opening, low sole and heel, restrained bow and edge trim. Each sandal clearly surrounds the foot portion of its buskin; the buskin remains visible above each shoe opening; no skin is visible.
+Style/medium: restrained monochrome graphite and pencil, fine controlled line, sparse tonal hatching, educational museum-catalog clarity.
+Composition/framing: centered balanced pair, full feet visible, lower legs intentionally cropped well above the shoe.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for removal, one uniform color with no shadows, gradients, texture, reflections, floor, horizon, or lighting variation. Keep subjects separated from it. No green in the subjects.
+Source boundary: teach only the two distinct objects worn in layers on a right-and-left pair. Do not prescribe color, material, ornament, height, fastening, dimensions, or universal cut. The modest bows and trim are visibly exemplar-specific sandal details, not semantic marks.
+Constraints: exactly two legs and two feet; identical right/left buskins; identical right/left sandals; no side ties, bands, cuffs, seams, panels, laces, buckles, bare ankles, outsole on the buskin, extra limbs, attendants, hands, tray, veil, outer vestments, text, letters, labels, arrows, numbers, border, watermark, cast shadow, contact shadow, reflection, floor, or paper rectangle.
+Avoid: boots, Wellington construction, open-toe sandals, pumps, sneakers, asymmetrical fastening, one tied and one untied garment, merged shoe-and-stocking construction, invented decoration.
+"""
+
+[[source_basis]]
+source_id = "artifact.r-and-k-wood.catholic-picture-dictionary-buskins-illustration.garden-city-1948-commons-file.commons-jpeg-8430ffb6"
+locus = "Complete 1948 buskin illustration, visually inspected 2026-07-28"
+supported_feature = "The underlying garment is shown only as a bounded stocking-like exemplar, without generalizing its ornament, ties, height, or cut."
+
+[[source_basis]]
+source_id = "artifact.sailko.pisa-pontifical-sandals-photograph.wikimedia-commons-2021.commons-original-jpeg-081fec4f"
+locus = "Complete photograph of the circa-1900-1950 Pisa Cathedral sandal pair, visually inspected 2026-07-28"
+supported_feature = "The outer footwear is shown only as a bounded low closed-shoe exemplar, without generalizing its color, trim, bow, material, or cut."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-10"
+locus = "Cæremoniale Episcoporum I.X.2, Marietti 1948"
+supported_feature = "Caligae and sandalia are distinct objects, vested on the right leg and foot first and then on the left; this controls the layered pair and sequence, not morphology."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-2.chapter-8"
+locus = "Cæremoniale Episcoporum II.VIII.7, Marietti 1948"
+supported_feature = "At Solemn Pontifical Mass the ordinary shoes are removed and the sandalia and caligae are put on right first and left second; no universal material or form is supplied."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "generating-agent factual-and-production screen"
+outcome = "accepted-for-independent-review"
+scope = "Corrected right-and-left count, identical neutral buskins, identical exemplar-bounded sandals, visible two-object layering, no exposed skin, exemplar-boundary omissions, monochrome rendering, alpha extraction, intentional upper-leg crop, and baked-in-content exclusions."
+visual_evidence = "Corrected transparent asset and ivory/checkerboard review composites inspected at full resolution; both sides have the same tie-free, seam-free soft buskin and the same low closed shoe. The lower legs intentionally continue through the top image boundary."
+admission_boundary = "Acceptance advances only this asset-local precursor record; canonical shared-manifest admission and publication placement remain separate integration actions."

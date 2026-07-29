@@ -821,11 +821,7 @@ Every web source below was fetched over HTTPS, hashed (SHA-256), and read on 202
 
 -   C. Cochini, *Origines apostoliques du célibat sacerdotal* (Paris: Lethielleux, 1981); A. M. Stickler, *The Case for Clerical Celibacy* (San Francisco: Ignatius, 1995); R. Cholij, *Clerical Celibacy in East and West* (Leominster: Fowler Wright, 1988); S. Heid, *Zölibat in der frühen Kirche* (Paderborn: Schöningh, 1997); R. Gryson, *Les origines du célibat ecclésiastique du premier au septième siècle* (Gembloux: Duculot, 1970). Cited only as the named positions in the reported historiographic dispute of sections 10 and 13.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T20:12:38Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

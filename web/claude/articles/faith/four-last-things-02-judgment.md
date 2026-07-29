@@ -594,11 +594,7 @@ Nothing here is pastoral counsel. A reader troubled about his own state or anoth
 
 -   Sacred Congregation for the Doctrine of the Faith, *Recentiores episcoporum Synodi*, letter on certain questions concerning eschatology, 17 May 1979, points 1–7 and the pastoral section. Holy See English text at [vatican.va](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19790517_escatologia_en.html), checked 2026-07-25 and registered. An approved but non-definitive curial act; the Latin of *Acta Apostolicae Sedis* 71 (1979) was not consulted.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T10:02:00Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

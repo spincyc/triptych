@@ -1,0 +1,54 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-gremial-isolated"
+object_ids = ["obj-gremial"]
+file = "RPD-FIG-pontifical-insignia-0002-gremial-isolated-alpha.png"
+purpose = "Teach the gremial as a distinct near-square lap textile without inventing a fastening system."
+depicted_state = "One unfolded, supple, near-square silk gremial with a restrained woven border and no ties or other fasteners."
+period_status = "universal Roman at the 1962 horizon; editorial specimen bounded by checked ceremonial and material-culture evidence"
+source_controlled_features = [
+  "near-square textile approximately 80 centimetres square",
+  "silk pontifical-Mass form",
+  "unattached cloth capable of being spread over a seated bishop's lap",
+  "no fastening ties",
+]
+deliberately_omitted_details = [
+  "prescribed color",
+  "heraldry",
+  "cross",
+  "monogram",
+  "fringe",
+  "ties",
+  "cords",
+  "loops",
+  "buttons",
+  "buckles",
+  "support frame",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1254x1254 sRGB PNG"
+normalized_pixels = "1254x1254 8-bit sRGBA PNG"
+normalization = "Flat green background removed locally with the imagegen skill's Pillow helper using border auto-key detection, soft matte, thresholds 12 and 220, and despill."
+sha256 = "70ef78c857cc972540769aad8acd58009a660e9f655e9a6f20bceba41c5efadc"
+baked_in_content_audit = "No lettering, label, watermark, person, chair, altar, architecture, tie, cord, loop, button, buckle, fastening, cross, heraldry, or prescribed color is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "approximate dimensions", "use note", "source note"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "self-reviewed candidate-ready-for-independent-review"
+
+prompt = """
+Use case: scientific-educational
+Asset type: source-controlled isolated object illustration for a Roman liturgical pictorial dictionary
+Primary request: Draw one unfolded pontifical Mass gremial as a nearly square silk textile, viewed almost straight-on from a very slight elevated angle, fully isolated.
+Source boundary: a cloth approximately 80 centimetres square, used across a seated bishop's lap; this specimen represents the silk pontifical-Mass form. Show a supple near-square cloth with a modest narrow woven border and restrained tone-on-tone ecclesiastical textile pattern only. NO ties, cords, loops, straps, buttons, buckles, fasteners, support frame, fringe, cross, heraldry, monogram, lettering, or prescribed color.
+Composition/framing: one textile only, centered, entire outline visible, generous padding, slightly natural fabric undulation but unmistakably near-square and capable of lying across a lap.
+Style/medium: elegant historically attentive monochrome graphite pencil drawing, fine controlled line, subtle fabric folds, restrained cross-hatching, tactile silk sheen translated into graphite, dignified and inviting children's visual-atlas quality.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal; exactly uniform, no shadow, gradient, texture, reflection, floor, horizon, or lighting variation. Do not use #00ff00 in the subject.
+Constraints: isolated object; no person, hands, chair, altar, architecture, caption, label, border, watermark, rectangular vignette, cast shadow, or contact shadow.
+Avoid: stole, humeral veil, apron, cape, pillow, tablecloth, napkin, fastening ties, photorealism, cartoon caricature, ornate invented morphology.
+"""
+
+[[source_basis]]
+source_id = "passage.joseph-braun.handbuch-der-paramentik.herder-1912.pages-265-266-gremiale"
+locus = "printed pages 265-266; artifact pages 279-280"
+supported_feature = "Approximate square dimensions, silk pontifical-Mass form, lap placement, and no need to depict fastening ties."

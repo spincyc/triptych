@@ -1,0 +1,68 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-episcopal-throne-isolated"
+object_ids = ["obj-episcopal-throne"]
+file = "RPD-FIG-pontifical-seating-0001-episcopal-throne-alpha.png"
+purpose = "Identify the ceremonially prepared episcopal throne as a fixed, high, elevated cathedra with covered steps and a silk-covered seat, without making a canopy or one decorative treatment universal."
+depicted_state = "One fixed high-backed episcopal seat with a visibly covered seat on exactly three textile-covered broad steps, shown without a canopy."
+period_status = "Roman 1962-horizon pontifical furnishing"
+source_controlled_features = [
+  "fixed and immovable throne",
+  "high and elevated cathedra",
+  "exactly three covered steps",
+  "seat covered in plain silk textile",
+  "one high-backed seat",
+]
+generic_context_features = [
+  "sober unornamented arms",
+  "plain fixed plinth",
+  "plain textiles without asserted color",
+]
+deliberately_omitted_details = [
+  "canopy, because its presence is conditional",
+  "heraldry",
+  "attendant seats",
+  "material",
+  "color",
+  "dimensions",
+  "ornamental architectural setting",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1133x1388 sRGB PNG on flat green chroma field"
+normalized_pixels = "1133x1388 8-bit grayscale-alpha PNG"
+normalization = "The installed imagegen chroma-key helper sampled the border, produced a soft alpha matte, and despilled the subject; ImageMagick then converted the accepted result deterministically to stripped 8-bit grayscale-alpha while preserving alpha."
+sha256 = "34d9ddd00dcdaf4f1e67577b2efdf8cdedbf741fd8ad83d8c0c31918d5f3a6d0"
+baked_in_content_audit = "Exactly three steps are visible, and textile visibly covers every tread and riser. The seat has its own plain draped covering. No bare stone step, bare wooden seat, canopy, heraldry, attendant chair, bishop, altar, architectural room, lettering, numeral, label, arrow, border, watermark, floor plane, cast shadow, or rectangular background is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "conditional-canopy qualification", "status note", "source note", "comparison labels"]
+rights_state = "project-generated derivative study; publicly reusable HABS documentary photograph supplied only as a morphology reference"
+review_state = "independently-reviewed-candidate-ready-for-manifest-admission"
+
+prompt = """
+Use case: historical-scene
+Asset type: source-bounded isolated object illustration for a monochrome Roman sanctuary pictorial dictionary
+Primary request: Draw one prepared episcopal throne / cathedra, strictly combining the Caeremoniale Episcoporum requirements with only the broad fixed-chair silhouette of the attached HABS documentary photograph.
+Input image: HABS Baltimore archbishop's throne photograph; broad morphology reference only, never copy its ornament, heraldry, materials, canopy, curtains, or attendants.
+Subject: one visibly fixed and immovable high-backed episcopal throne, high and elevated on exactly three broad steps. All three steps must be unmistakably covered by one fitted plain textile: the textile visibly wraps every tread and every riser, with soft cloth folds at corners and no exposed stone or wood on any step. The chair's entire seat cushion and seat platform must also be unmistakably covered in plain silk textile, with a modest draped edge. Keep the tall back and simple arms sober and generic.
+Style/medium: accurate monochrome graphite and pencil drawing, delicate cross-hatching, clean field-guide realism, no photorealism.
+Composition/framing: isolated three-quarter front view, full chair and exactly three textile-covered steps visible, generous padding, centered.
+Scene/backdrop: perfectly flat solid #00ff00 chroma-key background for background removal; uniform with no shadow, gradient, texture, reflection, floor plane, or lighting variation.
+Constraints: exactly three steps, not two or four; every tread and riser textile-covered; seat visibly silk-covered; no bare stone steps; no bare wooden seat; no canopy because canopy presence is conditional; no attendant chairs; no bishop or people; no heraldry; no altar; no decorative room; no words, letters, arrows, numbers, borders, captions, semantic marks, watermark, cast shadow, contact shadow, or reflection. Do not use #00ff00 in the subject. Crisp separated edges for alpha extraction.
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1-chapter-13"
+locus = "Caeremoniale Episcoporum (1948), book I, chapter XIII, paragraph 3"
+supported_feature = "Three covered steps; a high and elevated seat made as a cathedra and immovable throne; canopy only under the stated condition."
+
+[[source_basis]]
+source_id = "artifact.library-of-congress.roman-catholic-cathedral-of-baltimore-archbishops-throne.habs-md-4-balt-41-4.loc-large-jpeg-9375b8bd"
+locus = "HABS MD,4-BALT,41--4, Library of Congress large JPEG"
+supported_feature = "One documented fixed, high-backed episcopal seat elevated on three steps; the image's marble, heraldry, curtains, canopy, and attendant chairs are not generalized."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "source-boundary-and-production-review"
+outcome = "accepted"
+scope = "Corrected final asset pixels, exact three-step count, visible textile over every tread and riser, visible silk-covered seat, fixed and elevated identity, canopy omission, absence of copied ornament, and alpha-boundary production."
+admission_boundary = "Acceptance advances only this asset-local precursor record; canonical shared-manifest admission and whole-publication review remain separate integration actions."

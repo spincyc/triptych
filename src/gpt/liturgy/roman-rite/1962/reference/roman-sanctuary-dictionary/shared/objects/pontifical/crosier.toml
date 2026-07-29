@@ -1,0 +1,99 @@
+schema_version = 1
+id = "obj-crosier"
+workflow_state = "publication-ready"
+preferred_english_name = "Crosier"
+latin_headword = "baculus pastoralis"
+alternate_english_names = ["Pastoral staff"]
+alternate_latin_names = []
+sort_name = "Crosier"
+categories = ["pontifical-and-prelatial"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+confusable_with = ["obj-processional-cross"]
+related_objects = ["obj-vimpa"]
+component_objects = []
+editorial_note = "Jurisdiction and ceremony control use; the drawing is one recognition form, not a universal morphology."
+
+[presence]
+locations = ["With its designated minister or the bishop when appointed by the ceremony."]
+contexts = ["Pontifical functions in which the bishop uses the pastoral staff."]
+composition_ids = ["plt-pontifical-insignia"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["cleric"]
+receives = ["cleric"]
+stores = ["sacristan"]
+warnings = ["Do not infer that every bishop carries the crosier in every place or ceremony."]
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-crosier-identity-use"
+kind = "liturgical-use"
+text = "The Ceremonial assigns a minister to the pastoral staff and describes the bishop's use of it under jurisdictional and ceremonial conditions."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-crosier-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-crosier-morphology"
+kind = "appearance"
+text = "The checked museum record supplies one dated crosier morphology; it does not establish a universal profile, material, ornament, or dimensions."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-crosier-met"]
+
+[[claims]]
+id = "clm-crosier-identity"
+kind = "identity"
+text = "The baculus pastoralis is the bishop's pastoral staff."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-crosier-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-crosier-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "The Ceremonial places the pastoral staff in specified pontifical Vespers, Masses, and processions; Offices and Masses of the Dead are excluded."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-crosier-ce"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-crosier-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1-chapter-17"
+locus = "Book I, chapter XVII, sections 5-9; printed pp. 51-53."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-crosier-met"
+binding = "passage.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458.met-collection-record-2025-12-20.object-identity-and-morphology"
+locus = "Object 471458 collection record and visually inspected full-object image."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-crosier-isolated-neutral"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-insignia-0001-crosier-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-crosier"]
+scale_mode = "not-to-common-scale"
+review_note = "A complete source-bounded recognition study; curvature, material, ornament, and dimensions remain illustrative."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Teach the staff together with its designated minister and the applicable jurisdictional branch, not as an always-carried episcopal accessory."
+claim_ids = ["clm-crosier-identity-use"]

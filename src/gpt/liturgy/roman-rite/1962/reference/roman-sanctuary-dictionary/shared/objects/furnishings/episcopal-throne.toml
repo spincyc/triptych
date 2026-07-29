@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-episcopal-throne"
-workflow_state = "identified"
+workflow_state = "publication-ready"
 preferred_english_name = "Episcopal throne"
 latin_headword = "solium episcopale"
 alternate_english_names = ["pontifical throne"]
@@ -23,10 +23,10 @@ prepares = ["sacristan", "cleric"]
 stores = ["sacristan"]
 
 [audience_relevance]
-altar_server = "useful"
-sacristan = "required"
-mc_trainer = "required"
-general_reader = "required"
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
 pontifical = "required"
 
 [[claims]]
@@ -36,18 +36,49 @@ text = "The Ceremonial names the bishop's proper pontifical seat or episcopal th
 evidence_state = "checked-paraphrase"
 source_ids = ["src-episcopal-throne-ce"]
 
+[[claims]]
+id = "clm-episcopal-throne-appearance"
+kind = "appearance"
+text = "The Ceremonial prescribes a high, elevated cathedra or immovable throne on three covered steps, with a silk covering matching the other appointments; a canopy is conditional rather than universal."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-episcopal-throne-ce"]
+
+[[claims]]
+id = "clm-episcopal-throne-use"
+kind = "liturgical-use"
+text = "The bishop uses this proper seat at solemn Vespers and solemn Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-episcopal-throne-ce"]
+
+[[claims]]
+id = "clm-episcopal-throne-presence"
+kind = "ceremonial-presence"
+text = "The seat is appointed within the sanctuary according to the arrangement of the sanctuary and choir."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-episcopal-throne-ce"]
+
 [[sources]]
 id = "src-episcopal-throne-ce"
-binding = "artifact.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.libri-nostri-scan-pdf-af65e16a"
-locus = "Caeremoniale Episcoporum (1948), lib. I, cap. II, VII, and VIII; inspected OCR lines 666-669, 1219-1236, and 1343-1353."
-role = "ceremonial-book"
-verification_state = "inspected"
-checked_on = 2026-07-27
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1-chapter-13"
+locus = "Book I, chapter XIII, paragraph 3."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-episcopal-throne-habs"
+binding = "artifact.library-of-congress.roman-catholic-cathedral-of-baltimore-archbishops-throne.habs-md-4-balt-41-4.loc-large-jpeg-9375b8bd"
+locus = "HABS MD,4-BALT,41--4, Library of Congress large JPEG."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "One publicly reusable architectural witness; marble, heraldry, curtains, attendant chairs, and surrounding architecture are not generalized."
 
 [[artwork]]
-id = "art-episcopal-throne-comparison"
-view = "comparison"
-asset = "shared/artwork/pencil/RSD-ART-002-pontifical-seating.png"
-review_state = "identity-checked"
-depicts = ["obj-faldstool", "obj-episcopal-throne", "obj-bishops-chair", "obj-episcopal-kneeler"]
+id = "art-episcopal-throne-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-seating-0001-episcopal-throne-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-episcopal-throne"]
 scale_mode = "not-to-common-scale"
+review_note = "Shows a fixed, high, covered seat on exactly three covered steps. Conditional canopy and witness-specific architecture and ornament are omitted."

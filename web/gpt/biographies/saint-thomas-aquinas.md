@@ -469,12 +469,6 @@ Internal source, chronology, tradition, metadata, production, and page review ar
 
 -   Newton, William. “Aquinas and the ‘Genius of Woman’,” and Ana M. Romero Carrasquillo and Mary L. Troyer de Romero, “Aquinas on the Inferiority of Woman,” publisher records at [SAGE](https://journals.sagepub.com/doi/10.1177/0012580617730981) and [Philosophy Documentation Center](https://www.pdcnet.org/acpq/content/acpq_2013_0087_0004_0685_0710); accessed 2026-07-20. Used only to frame the coexistence of rational equality, erroneous biology, and asserted hierarchy.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-24T14:32:07Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

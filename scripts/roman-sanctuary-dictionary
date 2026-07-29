@@ -39,9 +39,10 @@ NESTED_KEYS = {
     "audience_note": {"audience", "text", "claim_ids"},
 }
 ID = re.compile(r"^(obj|var|clm|src|art|plt|ed)-[a-z0-9]+(?:-[a-z0-9]+)*$")
-TEX_NATIVE_ARTWORK_IDS = {
-    "obj-epistle-book",
-    "obj-gospel-book",
+TEX_NATIVE_ARTWORK_IDS: set[str] = set()
+PUBLIC_RENDER_HOLD_IDS = {"obj-book-marker"}
+PUBLIC_ARTWORK_HOLD_IDS = {
+    "art-service-objects-0106-lavabo-basin-manuterge-alpha-canonical",
 }
 SECTION_PLATE_PLANS = {
     ("ed-comprehensive", "church-and-sanctuary"): (
@@ -57,15 +58,17 @@ SECTION_PLATE_PLANS = {
         )),
     ),
     ("ed-comprehensive", "linens-and-textiles"): (
-        ("dense-six-diagnostic-v1", (
-            "obj-burse", "obj-chalice-pall", "obj-chalice-veil",
-            "obj-corporal", "obj-purificator", "obj-lavabo-towel",
+        ("balanced-four-filled-v1", (
+            "obj-chalice", "obj-paten", "obj-burse", "obj-chalice-pall",
+        )),
+        ("balanced-four-filled-v1", (
+            "obj-chalice-veil", "obj-corporal", "obj-purificator",
+            "obj-lavabo-towel",
         )),
     ),
     ("ed-comprehensive", "books-and-printed-objects"): (
-        ("balanced-four-filled-v1", (
-            "obj-epistle-book", "obj-gospel-book", "obj-book-marker",
-            "obj-altar-missal",
+        ("balanced-three-tall-v1", (
+            "obj-epistle-book", "obj-gospel-book", "obj-altar-missal",
         )),
     ),
     ("ed-comprehensive", "service-objects"): (
@@ -74,15 +77,20 @@ SECTION_PLATE_PLANS = {
             "obj-candle-lighter-extinguisher", "obj-communion-plate",
             "obj-altar-cruet",
         )),
-        ("relationship-three-feature-v1", (
+        ("heterodox-five-v1", (
             "obj-elevation-torch", "obj-sacristy-bell",
-            "obj-processional-cross",
+            "obj-processional-cross", "obj-incense-boat-and-spoon",
+            "obj-thurible",
         )),
     ),
     ("ed-comprehensive", "priestly-vestments"): (
-        ("dense-six-diagnostic-v1", (
+        ("heterodox-five-v1", (
             "obj-amice", "obj-alb", "obj-cincture", "obj-maniple",
-            "obj-priest-stole", "obj-chasuble",
+            "obj-priest-stole",
+        )),
+        ("balanced-four-filled-v1", (
+            "obj-chasuble", "obj-deacon-stole", "obj-dalmatic",
+            "obj-tunicle",
         )),
     ),
     ("ed-comprehensive", "related-ceremonies"): (
@@ -91,23 +99,21 @@ SECTION_PLATE_PLANS = {
             "obj-holy-water-vessel",
         )),
     ),
-    ("ed-mc-trainer", "vesting-sequence"): (
+    ("ed-mc-trainer", "vesting-and-sacred-ministers"): (
         (
-            "dense-six-v1",
+            "heterodox-five-v1",
             (
                 "obj-amice",
                 "obj-alb",
                 "obj-cincture",
                 "obj-maniple",
                 "obj-priest-stole",
-                "obj-chasuble",
             ),
         ),
-    ),
-    ("ed-mc-trainer", "sacred-ministers"): (
         (
-            "relationship-three-feature-v1",
+            "balanced-four-filled-v1",
             (
+                "obj-chasuble",
                 "obj-deacon-stole",
                 "obj-dalmatic",
                 "obj-tunicle",
@@ -128,12 +134,11 @@ SECTION_PLATE_PLANS = {
     ),
     ("ed-mc-trainer", "books-and-supports"): (
         (
-            "dense-seven-v1",
+            "dense-six-v1",
             (
                 "obj-altar-missal",
                 "obj-missal-stand",
                 "obj-missal-cushion",
-                "obj-book-marker",
                 "obj-altar-cloths",
                 "obj-epistle-book",
                 "obj-gospel-book",
@@ -179,20 +184,13 @@ SECTION_PLATE_PLANS = {
             ),
         ),
     ),
-    ("ed-mc-trainer", "procession-and-incense"): (
+    ("ed-mc-trainer", "processions-and-special-ceremonies"): (
         (
-            "relationship-three-feature-v1",
+            "dense-seven-v1",
             (
                 "obj-processional-cross",
                 "obj-incense-boat-and-spoon",
                 "obj-thurible",
-            ),
-        ),
-    ),
-    ("ed-mc-trainer", "branches-and-special-ceremonies"): (
-        (
-            "balanced-four-filled-v1",
-            (
                 "obj-aspergillum",
                 "obj-holy-water-vessel",
                 "obj-basilical-conopaeum",
@@ -275,13 +273,12 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "dense-six-v1",
+            "heterodox-five-v1",
             (
                 "obj-purificator",
                 "obj-lavabo-towel",
                 "obj-epistle-book",
                 "obj-gospel-book",
-                "obj-book-marker",
                 "obj-altar-missal",
             ),
         ),
@@ -338,13 +335,12 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "dense-six-v1",
+            "heterodox-five-v1",
             (
                 "obj-purificator",
                 "obj-lavabo-towel",
                 "obj-epistle-book",
                 "obj-gospel-book",
-                "obj-book-marker",
                 "obj-altar-missal",
             ),
         ),
@@ -390,7 +386,7 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "story-spread-v1",
+            "story-tall-v1",
             (
                 "obj-dalmatic",
                 "obj-priest-stole",
@@ -403,7 +399,23 @@ SECTION_PLATE_PLANS = {
         (
             "story-spread-v1",
             (
+                "obj-pontifical-dalmatic",
+                "obj-pontifical-tunicle",
                 "obj-chasuble",
+                "obj-pontifical-buskin",
+                "obj-pontifical-sandal",
+            ),
+        ),
+        (
+            "balanced-two-tall-v1",
+            (
+                "obj-mitre",
+                "obj-pontifical-gloves",
+            ),
+        ),
+        (
+            "balanced-four-filled-v1",
+            (
                 "obj-amice",
                 "obj-alb",
                 "obj-cincture",
@@ -411,7 +423,7 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "story-spread-v1",
+            "story-tall-v1",
             (
                 "obj-dalmatic",
                 "obj-priest-stole",
@@ -420,7 +432,23 @@ SECTION_PLATE_PLANS = {
             ),
         ),
     ),
+    ("ed-pontifical", "insignia"): (
+        (
+            "balanced-two-tall-v1",
+            (
+                "obj-crosier",
+                "obj-pontifical-ring",
+            ),
+        ),
+    ),
     ("ed-pontifical", "furnishings-and-books"): (
+        (
+            "balanced-two-tall-v1",
+            (
+                "obj-episcopal-throne",
+                "obj-faldstool",
+            ),
+        ),
         (
             "dense-six-v1",
             (
@@ -433,16 +461,11 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "relationship-three-feature-v1",
+            "dense-six-v1",
             (
                 "obj-altar-cloths",
                 "obj-missal-cushion",
                 "obj-missal-stand",
-            ),
-        ),
-        (
-            "relationship-three-feature-v1",
-            (
                 "obj-altar-missal",
                 "obj-epistle-book",
                 "obj-gospel-book",
@@ -450,6 +473,14 @@ SECTION_PLATE_PLANS = {
         ),
     ),
     ("ed-pontifical", "ministers-and-object-transfers"): (
+        (
+            "relationship-three-feature-v1",
+            (
+                "obj-vimpa",
+                "obj-mitre-minister-veil",
+                "obj-bugia",
+            ),
+        ),
         (
             "dense-six-v1",
             (
@@ -546,6 +577,16 @@ def tex(value: object) -> str:
 def canonical_asset_path(value: str) -> str:
     """Return the manifest/TeX path relative to the dictionary root."""
     return value[len(DICTIONARY_PREFIX):] if value.startswith(DICTIONARY_PREFIX) else value
+
+
+def canonical_alpha_assets(manifest: dict) -> set[str]:
+    """Return only assets explicitly admitted to canonical alpha publication."""
+    return {
+        canonical_asset_path(item["path"])
+        for table in ("asset_files", "asset")
+        for item in manifest.get(table, [])
+        if item.get("state") == "canonical-alpha-eligible"
+    }
 
 
 def require(condition: bool, message: str) -> None:
@@ -687,6 +728,20 @@ def alpha_omission_reason(
 
 
 def record_tex(record: dict, edition: dict, artwork_render_owners: dict[str, str]) -> str:
+    public_artwork = [
+        artwork
+        for artwork in record["artwork"]
+        if artwork["id"] not in PUBLIC_ARTWORK_HOLD_IDS
+    ]
+    has_owned_artwork = any(
+        artwork_render_owners[artwork["id"]] == record["id"]
+        for artwork in public_artwork
+    )
+    fallback_artwork_id = (
+        public_artwork[0]["id"]
+        if public_artwork and not has_owned_artwork
+        else None
+    )
     lines = [
         f"\\RSDObjectRecord{{{tex(record['id'])}}}"
         f"{{{tex(record['preferred_english_name'])}}}{{{tex(record['latin_headword'])}}}",
@@ -722,7 +777,16 @@ def record_tex(record: dict, edition: dict, artwork_render_owners: dict[str, str
                      f"{{{tex(source['role'])}}}{{{tex(source['verification_state'])}}}"
                      f"{{{tex(source.get('checked_on', ''))}}}")
     for artwork in record["artwork"]:
+        if artwork["id"] in PUBLIC_ARTWORK_HOLD_IDS:
+            continue
         render_owner = artwork_render_owners[artwork["id"]]
+        # A contextual comparison may be linked by several component records.
+        # Keep one canonical owner by default, but never emit an admitted
+        # object as a blank card when that comparison is its only approved
+        # view. The repeated rendering remains explicitly tied to the same
+        # artwork identity and is preferable to inventing an isolated form.
+        if artwork["id"] == fallback_artwork_id:
+            render_owner = record["id"]
         lines.append("\\RSDArtwork"
                      f"{{{tex(artwork['id'])}}}{{{tex(artwork['view'])}}}"
                      f"{{{tex(canonical_asset_path(artwork['asset']))}}}"
@@ -760,6 +824,12 @@ def section_for(record: dict, edition: dict) -> str:
     category = primary_category(record)
     edition_id = edition["id"]
     if edition_id == "ed-comprehensive":
+        if category == "sacred-vessels":
+            return "linens-and-textiles"
+        if category == "incense":
+            return "service-objects"
+        if category == "deacon-and-subdeacon":
+            return "priestly-vestments"
         return category
     if edition_id == "ed-altar-server":
         if category in {"priestly-vestments", "deacon-and-subdeacon",
@@ -1172,19 +1242,24 @@ def main() -> int:
         schema, selections, manifest = load(args.schema), load(args.selections), load(args.artwork_manifest)
         # Production manifests use ``asset_files``; the small schema fixture
         # retains ``asset``.  Both carry the same dictionary-relative path.
-        manifest_assets = {
-            canonical_asset_path(item["path"])
-            for table in ("asset_files", "asset")
-            for item in manifest.get(table, [])
+        asset_files = {
+            item["id"]: canonical_asset_path(item["path"])
+            for item in manifest.get("asset_files", [])
         }
-        alpha_assets = {
-            canonical_asset_path(item["path"])
-            for table in ("asset_files", "asset")
-            for item in manifest.get(table, [])
-            if item.get("state") in {
-                "accepted-for-priestly-review", "canonical-alpha-eligible"
-            }
+        manifest_artwork_assets = {
+            item["id"]: canonical_asset_path(item["asset"])
+            for item in manifest.get("artworks", [])
         }
+        manifest_artwork_assets.update({
+            item["id"]: asset_files[item["asset_file_id"]]
+            for item in manifest.get("artwork_links", [])
+            if item.get("asset_file_id") in asset_files
+        })
+        manifest_assets = set(asset_files.values()) | {
+            canonical_asset_path(item["path"])
+            for item in manifest.get("asset", [])
+        }
+        alpha_assets = canonical_alpha_assets(manifest)
         canonical = load_canonical_validator()
         validator = canonical.Validator(schema, selections)
         record_paths = canonical.discover([args.records])
@@ -1204,15 +1279,23 @@ def main() -> int:
         for object_id, record in records.items():
             for index, artwork in enumerate(record["artwork"]):
                 require(
-                    canonical_asset_path(artwork["asset"]) in manifest_assets,
-                    f"{object_id}: artwork[{index}] asset is absent from canonical artwork manifest: "
-                    f"{artwork['asset']}",
+                    artwork["id"] in manifest_artwork_assets,
+                    f"{object_id}: artwork[{index}] ID is absent from canonical artwork manifest: "
+                    f"{artwork['id']}",
+                )
+                require(
+                    canonical_asset_path(artwork["asset"])
+                    == manifest_artwork_assets.get(artwork["id"]),
+                    f"{object_id}: artwork[{index}] ID {artwork['id']} resolves to "
+                    f"{artwork['asset']}, not exact canonical manifest path "
+                    f"{manifest_artwork_assets.get(artwork['id'])}",
                 )
         args.output.mkdir(parents=True, exist_ok=True)
         for edition in selections["editions"]:
             chosen = [
                 record for record in records.values()
                 if alpha_selected(record, edition, alpha_assets)
+                and record["id"] not in PUBLIC_RENDER_HOLD_IDS
             ]
             chosen.sort(key=lambda item: (
                 item.get("sort_name", item["preferred_english_name"]).casefold(),
@@ -1223,13 +1306,7 @@ def main() -> int:
                 "% Canonical source-bounded alpha view.",
                 f"% edition: {edition['id']}",
             ]
-            if edition["id"] == "ed-altar-server":
-                body.extend(
-                    record_tex(record, edition, artwork_render_owners)
-                    for record in chosen
-                )
-            else:
-                body.extend(dense_edition_tex(chosen, edition, artwork_render_owners))
+            body.extend(dense_edition_tex(chosen, edition, artwork_render_owners))
             data = ("\n".join(body) + "\n").encode()
             (args.output / f"{edition['id']}.tex").write_bytes(data)
             if edition["id"] == "ed-altar-server":

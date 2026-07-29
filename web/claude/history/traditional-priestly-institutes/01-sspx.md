@@ -749,11 +749,7 @@ All sources were read on 2026-07-25. *Acta Apostolicae Sedis* volumes and fascic
 
 -   No Holy See response to the recourse of 11 July 2026 appears in the bulletins through 25 July 2026.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T02:03:00Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

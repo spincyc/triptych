@@ -266,11 +266,7 @@ The final PDF and generated web edition received internal source, quotation, the
 
 -   Henry Latham, *The Risen Master*, pp. 34, 43; the dated *Jerusalem Perspective* reader question and response (7 October 2006); the archived *Recipes and More* forward (21 May 2007); and the later TruthOrFiction and GotQuestions assessments, used only as modern reception.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-27T18:33:00Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

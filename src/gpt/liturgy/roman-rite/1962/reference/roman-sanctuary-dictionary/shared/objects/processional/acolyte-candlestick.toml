@@ -86,6 +86,16 @@ role = "manual"
 verification_state = "claim-verified"
 
 [[artwork]]
+id = "art-gospel-book-held-open"
+view = "in-use"
+asset = "shared/artwork/pencil/books/RPD-FIG-books-0007-gospel-book-in-use-v2-alpha.png"
+review_state = "approved"
+depicts = ["obj-gospel-book", "obj-acolyte-candlestick"]
+scale_mode = "not-applicable"
+render_owner = "obj-gospel-book"
+review_note = "Contextual relationship view: exactly two candle-bearing acolytes flank the subdeacon holding the Gospel book. The isolated acolyte-candlestick artwork remains the canonical object-identity view."
+
+[[artwork]]
 id = "art-processional-objects-0003-iso-acolyte-candlestick"
 view = "isolated"
 asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0003-iso-acolyte-candlestick-v2.png"

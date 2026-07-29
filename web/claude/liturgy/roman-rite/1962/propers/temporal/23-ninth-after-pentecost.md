@@ -781,14 +781,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 -   Molière, *Le Misanthrope* (1666), Act V, in the French of the Louandre edition (<https://fr.wikisource.org/wiki/Le_Misanthrope>) and in the English of Curtis Hidden Page (1908), <https://en.wikisource.org/wiki/The_Misanthrope_(Moli%C3%A8re)>.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T20:01:14Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

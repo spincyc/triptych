@@ -1,4 +1,5 @@
 schema_version = 1
+artwork = []
 id = "obj-communion-rail"
 workflow_state = "lead"
 preferred_english_name = "Communion rail"
@@ -41,12 +42,3 @@ binding = "corpus-roman-1962-furnishings-unclosed"
 locus = "Exact Rituale, Caeremoniale, architectural, and material-culture loci not yet closed."
 role = "lead-only"
 verification_state = "unlocated"
-
-[[artwork]]
-id = "art-communion-rail-comparison"
-view = "comparison"
-asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
-review_state = "identity-checked"
-depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
-scale_mode = "not-to-common-scale"
-review_note = "Representative rail segment only; the depicted cloth arrangement is held from publication pending source audit."

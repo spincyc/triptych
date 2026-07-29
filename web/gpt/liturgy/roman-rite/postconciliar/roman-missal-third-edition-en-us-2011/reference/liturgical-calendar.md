@@ -553,10 +553,6 @@ Paul F. Bradshaw and Maxwell E. Johnson, *The Origins of Feasts, Fasts, and Seas
 
 The Dicastery for Divine Worship and the Discipline of the Sacraments maintains an [official decree index](https://www.cultodivino.va/en/formazione/pubblicazioni/libri-liturgici/aliae/calendarium-romanum.html) for amendments through 2021. The later decrees for [St Teresa of Calcutta](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html) and [St John Henry Newman](https://www.cultodivino.va/en/attivita/2026/inscription-of-s-john-henry-newman-in-the-general-roman-calendar.html) are separately controlled. The current [United States proper](https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/proper-calendar), [special-observance guidance](https://www.usccb.org/committees/divine-worship/special-observances), and the [2026 annual control](https://www.usccb.org/resources/2026cal.pdf) are published by the USCCB. Exact decree dates and effects are summarized in the timeline and audited in the research records.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-19T12:50:42Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

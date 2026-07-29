@@ -6,7 +6,7 @@ This record states, target by target, how this edition-locale disposes of the st
 
 ## Adopted stable-registry structure
 
-The stable registry's 184 baseline Proper-of-Time targets, its three conditional Scrutiny Ritual Mass keys, its `PC-R` replacement matrix, and its six deterministic weekday fallbacks are adopted without alteration. The registry's arithmetic check for `PC-S26`–`PC-S57` — Lectionary number `= 64 + 3 × (parent − 26) + cycle offset` — was independently recomputed for the evaluated target below and agrees with the official occurrence page and the national calendar.
+The stable registry's 184 baseline Proper-of-Time targets, its three conditional Scrutiny Ritual Mass keys, its `PC-R` replacement matrix, and its six deterministic weekday fallbacks are adopted without alteration. `PC-T01` Evening Mass of the Lord's Supper and `PC-T02` Celebration of the Lord's Passion are adopted as two additional, not-yet-evaluated targets. `PC-T03` Easter Vigil is adopted as an identity alias for the existing `PC-S17-A-VIGIL`, `PC-S17-B-VIGIL`, and `PC-S17-C-VIGIL` targets and adds no target or owner. These celebration names are edition-identified; exact printed capitalization remains subject to direct altar-book collation. The registry's arithmetic check for `PC-S26`–`PC-S57` — Lectionary number `= 64 + 3 × (parent − 26) + cycle offset` — was independently recomputed for the evaluated target below and agrees with the official occurrence page and the national calendar.
 
 ## Evaluated targets
 
@@ -23,4 +23,4 @@ The stable registry's 184 baseline Proper-of-Time targets, its three conditional
 
 ## Unassessed classes
 
-All Proper-of-Time targets other than the row above; all three conditional Scrutiny Ritual Mass targets; the complete `PC-R` replacement matrix; and all six weekday fallback targets. Each remains open, and none is recorded as absent from the edition.
+All Proper-of-Time targets other than the rows above; `PC-T01` and `PC-T02`; all three conditional Scrutiny Ritual Mass targets; the complete `PC-R` replacement matrix; and all six weekday fallback targets. Each remains open, and none is recorded as absent from the edition. `PC-T03` is assessed only as the stable alias described above; its underlying Easter Vigil targets remain unassessed.

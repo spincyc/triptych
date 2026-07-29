@@ -952,12 +952,6 @@ DDF index, Holy See acts, Diocese, Shrine, public-message sources, and current r
 
 4.  Laurent Gruaz, “Maximin Giraud, le berger de La Salette: de l’Apparition de la Vierge aux soldats du Pape,” *Chrétiens et sociétés* 17 (2011), 151–172, DOI 10.4000/chretienssocietes.2827. Used for Maximin’s documented 1865 service.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-28T00:57:41Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

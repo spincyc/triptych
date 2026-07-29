@@ -223,16 +223,34 @@ material-culture corpus.
 
 ## Remaining source work
 
-1. Inspect the governing reservation law and contemporary ceremonial sources
-   for the tabernacle and sanctuary arrangement.
-2. Acquire a provenanced architectural and material-culture corpus for altar,
-   gradine, reliquary, candlestick, tabernacle, and canopy forms.
-3. Resolve the overloaded term “ciborium” before any index or cross-reference
+1. The exact 1918 Vatican Polyglot page images for 1917 Code cc. 1268, 1269,
+   and 1271 are now visually checked, registered, and bound. They control one
+   reservation altar, the preeminent place and ordinary-high-altar topology
+   with the stated choral exception, an immovable tabernacle in the middle
+   part of that altar, and at least one continuously burning lamp before the
+   tabernacle. They do not control architectural, tabernacle, or lamp
+   morphology.
+2. The minimum component corpus now includes exact Met Open Access collection
+   records for one standing crucifix (`object 469881`), one paired altar-
+   candlestick set (`object 200660`), and one historical tabernacle
+   (`object 467756`). These establish only dated exemplar identity,
+   dimensions, and variation. The tabernacle is a medieval portable,
+   reliquary-like form and therefore cannot depict or control the fixed
+   tabernacle required by the 1917 law.
+3. No HABS composition sheet was admitted. This pass did not establish, at
+   sheet level, both government authorship and a composition suitable for the
+   declared 1962 horizon; online federal custody alone is not an affirmative
+   rights or evidentiary basis. A future exact sheet remains admissible only
+   after those two questions are closed.
+4. A whole-sanctuary architectural plate remains blocked. The component
+   records do not establish gradines, reliquaries, steps, predella, baldachin,
+   materials, dimensions, or any universal simultaneous arrangement.
+5. Resolve the overloaded term “ciborium” before any index or cross-reference
    is rendered.
-4. Generate separate isolated/comparison views only after morphology and
+6. Generate separate isolated/comparison views only after morphology and
    substantive variants are source controlled.
 
-## Source-controlled opening composition
+## Retired source-controlled opening schematic
 
 ### `art-altar-appointments-0104-sanctuary-relationships`
 
@@ -272,12 +290,13 @@ material-culture corpus.
   central/flanking relationship supported by *Rubricae generales* 527. Both
   candle placeholders are intentionally cropped; the three cards are
   featureless and blank. No prohibited object or semantic mark is visible.
-- TeX owns the variable-count statement (“number varies with the Mass”), the
-  identification labels, and the qualification that the image teaches
-  checked relationships during Mass rather than a universal altar design.
-- Consumer decision: approved only for
-  `plt-sanctuary-orientation` in `ed-comprehensive`. No smaller edition or
-  object record consumes it.
+- The factual-pixel pass did not settle the pedagogical or aesthetic judgment.
+  Reader review found the schematic unsuccessful and its label “central cross
+  with crucifix” awkward. The publication now uses the ordinary reader
+  headword **altar crucifix** in a compact TeX relationship key beside the
+  independently sourced Rijks witness.
+- Consumer decision: rejected and retired from
+  `plt-sanctuary-orientation`; no edition or object record consumes it.
 - Manifest identity boundary: only the already canonical
   `obj-altar-candlestick` is linked as an object ID. The central crucifix and
   three blank-card semantics remain source-controlled composition features
@@ -287,10 +306,6 @@ material-culture corpus.
   contract, correction, received and normalized hashes, transformation,
   evidence binding, and consumer limit are recorded here. It is distributed
   under the repository's project-content terms.
-- Review result: factual, visual, boundary, rights, Comprehensive consumer,
-  and print review passed. The rebuilt 15-page Comprehensive PDF and its
-  full-size opening-page raster show legible art and TeX qualifications,
-  transparent page-blended boundaries, no clipping or overlap, and no new
-  fatal, undefined-reference, or overflow warning. One pre-existing underfull
-  line remains on a later generated object page and does not involve this
-  plate.
+- Review result: factual, boundary, rights, and historical print checks remain
+  recorded, but visual, consumer, and release disposition are **rejected**.
+  The exact raster remains solely as an auditable failed production attempt.

@@ -609,10 +609,6 @@ Vatican News. [“Vatican Orders Apostolic Visitation.”](https://www.vaticanne
 
 Dawid Pietras, FSSP. [“The Rightful Autonomy of the Priestly Fraternity of Saint Peter (Can. 586, 732 CIC/83), Part I.”](https://doi.org/10.21697/pk.2026.69.1.07) *Prawo Kanoniczne* 69/1 (2026): 165–186. Open access, CC BY-ND 4.0; participant-canonist analysis used by paraphrase.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-19T03:44:17Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

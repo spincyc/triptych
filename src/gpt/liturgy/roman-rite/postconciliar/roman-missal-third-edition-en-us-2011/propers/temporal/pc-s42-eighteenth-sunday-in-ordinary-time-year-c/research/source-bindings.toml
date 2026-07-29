@@ -3,25 +3,49 @@ record_type = "bindings"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"
 
 [[bindings]]
-source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
-loci = ["complete altar-book identity"]
-role = "bibliographic"
-states = ["cataloged"]
-context = "This catalog-only binding records the 2008 emended reprint as the governing Latin altar-book edition identified by the guide. No exact complete 2008 artifact is registered or inspected, so the binding supplies edition identity but no textual or page-level evidence."
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-23-ecclesiastes-5c6495db"
+loci = ["Ecclesiastes.1.2", "Ecclesiastes.2.21-23"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The retained public-domain study translation was checked for the discontinuous appointed boundary. It is not the protected text proclaimed in the United States Lectionary."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:62c3290c4cf6b175a6dc8427f2444bcbab10412c3e6645e4a5069afa6a875086"
 
 [[bindings]]
-source_id = "work.catholic-church.catechism"
-loci = ["121-123", "128-130", "541-546"]
-role = "context"
-states = ["cataloged"]
-context = "The legacy publication uses these loci for the enduring value and unity of the Old Testament and for the Kingdom disclosed through parables. Its sole recorded Catechism URL is the Creator page and does not support these ranges, so they remain a catalog-only work-level binding rather than being silently attached to the modern English web edition."
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.89.3-6", "Ps.89.12-14", "Ps.89.17", "Ps.94.8"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The retained public-domain text controls the guide's study of modern Psalms 90 and 95 after explicit numbering conversion. It does not resolve the official occurrence page's response-marker discrepancy."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
 
 [[bindings]]
-source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["311-312"]
-role = "official-control"
-states = ["cataloged"]
-context = "The 2026-07-21 legacy expansion identifies the modern Holy See English Creator page for these moral-evil and Providence guardrails. That URL supports 311-312 but not the publication's separate 121-130 or 541-546 uses. This binding preserves the recorded mismatch and claims no inspection of a canonical artifact."
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-58-colossians-d17592ce"
+loci = ["Colossians.3.1-5", "Colossians.3.9-11"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The retained public-domain study translation was checked for both appointed units and the omitted verses between them."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:5cf6c513d39ffc83a9faab86e624dd181f93dfa845f96437b40365ff711ed0ca"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.12.13-21"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The retained public-domain study translation was checked for the inheritance request, warning to the crowd, parable boundary, divine address, and closing contrast."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matthew.5.3"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The public-domain study translation controls the acclamation locus and remains distinct from the protected U.S. Lectionary text."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
 
 [[bindings]]
 source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice"
@@ -58,30 +82,3 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact rule was checked against the guide's compatible non-IV branch: Eucharistic Prayer II may use its own Preface or another qualifying Preface. This is a permitted unresolved path, not an inferred selection."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:55ff9568ce6ec9c09c8c9633c8371955dde89062888e95394f91657579a65420"
-
-[[bindings]]
-source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xviii-per-annum"
-loci = ["Dominica XVIII per annum, printed pp. 467-468"]
-role = "textual-control"
-states = ["cataloged", "acquired", "inspected", "verified"]
-context = "The exact 2002 witness was checked against the shared Week XVIII owner's complete Latin formulary, appointed-element, incipit, boundary, and locator audit. It controls that Latin evidence without standing in for the 2008 reprint typography or a protected United States English altar book."
-verified_on = "2026-07-23"
-source_fingerprint = "sha256:d36db209d5f33e4a8ab324d6ea16928b31a5b3a17bf71bf26b546ff43f4330f4"
-
-[[bindings]]
-source_id = "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status"
-loci = ["edition-status"]
-role = "official-control"
-states = ["cataloged", "acquired", "inspected", "verified"]
-context = "The official notice controls the guide's identification of the 2008 book as an emended reprint rather than a new typical edition and preserves the published correction and pagination limits. It is not direct inspection of the Week XVIII reprint pages."
-verified_on = "2026-07-23"
-source_fingerprint = "sha256:2b6afb5f0ceae280b31d66ef7f53b6520ba156439d7991acb69e6b2d3e1e9f14"
-
-[[bindings]]
-source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum"
-loci = ["tempus-per-annum"]
-role = "official-control"
-states = ["cataloged", "acquired", "inspected", "verified"]
-context = "The complete published Tempus per annum variation subsection lists changes only at Missal pp. 457 and 471 and none at Week XVIII, pp. 467-468. This is bounded no-listed-change evidence, not proof that the 2002 and 2008 pages are otherwise identical."
-verified_on = "2026-07-23"
-source_fingerprint = "sha256:dca2fb4e1dce71f98132cc55c9ffce5cb213af57d2732bab908824ea00bb40fb"

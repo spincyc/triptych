@@ -1,4 +1,5 @@
 schema_version = 1
+artwork = []
 id = "obj-hist-eucharistic-tower"
 workflow_state = "identified"
 preferred_english_name = "Eucharistic tower"
@@ -52,12 +53,3 @@ locus = "Checked source 3: Joseph Braun, “History of the Christian Altar,” C
 role = "specialist-secondary"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
-
-[[artwork]]
-id = "art-rsd-hist-001"
-view = "comparison"
-asset = "shared/artwork/pencil/RSD-HIST-001-early-medieval-objects.png"
-review_state = "identity-checked"
-depicts = ["obj-hist-flabellum", "obj-hist-eucharistic-dove", "obj-hist-eucharistic-tower"]
-scale_mode = "not-to-common-scale"
-review_note = "Internally checked for a distinct tower-form silhouette; exact-artifact, ceremonial, and print review remain pending."

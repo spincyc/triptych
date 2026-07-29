@@ -1,0 +1,55 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-vimpa-pair-isolated"
+object_ids = ["obj-vimpa"]
+file = "RPD-FIG-vimpa-0001-pair-alpha.png"
+purpose = "Teach the vimpa as one plain textile type supplied as a matching pair for the distinct mitre- and crosier-bearer roles."
+depicted_state = "Two matching plain broad scarves are isolated side by side, each neck-hung in form and tied simply at the front."
+period_status = "contemporary ceremonial witness at the 1962 horizon; paired use is customary, not quoted as an express provision of the governing Ceremonial"
+source_controlled_features = [
+  "one matching pair",
+  "thin plain silk scarves",
+  "broad-stole-like general morphology",
+  "worn around the neck",
+  "tied in front",
+]
+deliberately_omitted_details = [
+  "dimensions",
+  "ornament",
+  "pockets",
+  "fringe",
+  "embroidery",
+  "decorative trim",
+  "color",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1536x1024 sRGB PNG"
+normalized_pixels = "1536x1024 8-bit RGBA PNG with true alpha channel"
+normalization = "Flat green background converted locally with the imagegen skill's remove_chroma_key.py helper using border auto-key, soft matte, thresholds 12/220, and despill."
+sha256 = "62db1a74842e12c37c344743ef6e6abd11001c9160eca1a0068755e370a2cf88"
+baked_in_content_audit = "Exactly two matching plain textiles; no person, mitre, crosier, dimensions, ornament, pocket, fringe, embroidery, trim, lettering, label, arrow, border, watermark, or rectangular background is baked into the asset."
+tex_owned_additions = ["English and Latin headwords", "official-versus-customary qualification", "source note", "callouts"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "source-bounded editorial candidate ready for independent review"
+
+prompt = """
+Use case: scientific-educational
+Asset type: source-bounded graphite object plate for a Roman sanctuary pictorial dictionary
+Primary request: Draw one matching pair of vimpae as isolated textile specimens, with no person and no other object.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal.
+Subject: two separate but matching thin plain silk scarves, each shaped like a broad stole, shown hanging naturally and tied simply at the front.
+Style: restrained monochrome graphite pencil museum-catalog drawing.
+Constraints: no asserted dimensions, pockets, fringe, embroidery, crosses, decorative trim, color, people, mitre, or crosier.
+Avoid: lettering, labels, arrows, numbers, borders, semantic marks, extra objects, shadows, reflections, and watermark.
+"""
+
+[[source_basis]]
+source_id = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-10"
+locus = "printed p. 10"
+supported_feature = "Fortescue identifies the vimpa as a thin white silk scarf, like a broad stole, worn around the neck and tied in front by the two insignia bearers."
+
+[[source_basis]]
+source_id = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-157"
+locus = "printed p. 157"
+supported_feature = "Fortescue gives the plural vimpae for the mitre- and crosier-bearers, establishing one textile type in a paired provision."

@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.nikolaus-gihr.the-holy-sacrifice-of-the-mass"
+title = "The Holy Sacrifice of the Mass: Dogmatically, Liturgically, and Ascetically Explained"
+responsible = "Nikolaus Gihr (1839-1924)"
+work_type = "theological-liturgical-treatise"
+languages = ["de", "en", "la"]
+locus_pattern = 'p-[0-9]{1,3}(?:-note-[0-9]{1,2})?'
+description = "Nikolaus Gihr's dogmatic, liturgical, and ascetical exposition of the Eucharistic sacrifice. The registered English expression translates the sixth German edition. It is a dated theological and devotional witness rather than an official liturgical book or magisterial act; loci are printed page numbers and, where needed, footnote numbers."
+relations = ["work.catholic-church.missale-romanum"]

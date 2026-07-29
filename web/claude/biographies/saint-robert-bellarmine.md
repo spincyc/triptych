@@ -475,10 +475,6 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 -   Early lives named at reported level only (not inspected): Giacomo Fuligatti, *Vita del Cardinale Roberto Bellarmino* (1624; Latin amplification by Silvestro Petra Sancta, 1626); Cervini, *Imago virtutum* (1625); Daniello Bartoli (1678); James Brodrick’s modern biography (in copyright, not consulted). Bibliographic identification per the 1907 Catholic Encyclopedia article above.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T10:52:00Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

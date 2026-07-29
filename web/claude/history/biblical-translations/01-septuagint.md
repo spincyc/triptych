@@ -273,11 +273,7 @@ All web sources were accessed and checked on 2026-07-24. Citations in the text u
 
 -   *A New English Translation of the Septuagint* (NETS), ed. A. Pietersma and B. G. Wright (New York: Oxford University Press, 2007; corrected printings 2009, 2014, 2021), electronic edition pages at the University of Pennsylvania (<http://ccat.sas.upenn.edu/nets/edition/>); copyright IOSCS; nothing reproduced.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-24T23:18:11Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

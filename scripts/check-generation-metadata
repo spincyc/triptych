@@ -33,6 +33,15 @@ RENDERED_LEDGER_LABEL_RE = re.compile(
     r"Process (?:history|ledger))\s*:",
     re.IGNORECASE,
 )
+GENERATION_METADATA_HEADING_RE = re.compile(
+    r"(?:"
+    r"\\(?:part|chapter|section|subsection|subsubsection)\*?\s*\{"
+    r"|\\addcontentsline[^\n]{0,160}"
+    r"|(?:\\bfseries|\\textbf\s*\{)[^\n]{0,80}"
+    r")"
+    r"(?:AI\s+)?Generation Metadata",
+    re.IGNORECASE,
+)
 GENERIC_MODEL_RE = re.compile(
     r"(?:based runtime|model family|unexposed|unknown|unavailable)"
     r"|^gpt[- ]?5$"
@@ -194,6 +203,14 @@ def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def validate_source_metadata_display(text: str) -> None:
+    heading = GENERATION_METADATA_HEADING_RE.search(active_tex(text))
+    if heading:
+        raise ValueError(
+            "contains a standalone generation-metadata wrapper heading"
+        )
+
+
 def pdf_text(path: Path) -> str:
     result = subprocess.run(
         ["pdftotext", str(path), "-"],
@@ -236,7 +253,9 @@ def validate_pdf_info(path: Path, revision_timestamp: str) -> None:
         raise ValueError("rendered PDF contains an automatic trailer ID")
 
 
-def validate_rendered_record(path: Path, record: Record) -> None:
+def validate_rendered_record(
+    path: Path, record: Record, inherited_record: Record | None = None
+) -> None:
     validate_pdf_info(path, record.revision_timestamp)
     rendered = pdf_text(path)
     revision_field = f"Last revised (UTC): {record.revision_timestamp}"
@@ -252,42 +271,31 @@ def validate_rendered_record(path: Path, record: Record) -> None:
             "rendered PDF contains an internal production-ledger field "
             f"{forbidden_label.group(0)!r}"
         )
+    audit_contributions = (
+        inherited_record.contributions
+        if record.inheritance and inherited_record is not None
+        else record.contributions
+    )
+    for contribution in audit_contributions:
+        for kind, value in (
+            ("model identifier", contribution.model),
+            ("model qualifier", contribution.qualifiers),
+            ("agent/runtime record", contribution.runtime),
+        ):
+            normalized_value = normalize(value)
+            if normalized_value and normalized_value in rendered:
+                raise ValueError(
+                    f"rendered PDF contains a tracked {kind} {normalized_value!r}"
+                )
+
     if record.inheritance:
-        if re.search(r"\bModel\s*:", rendered, re.IGNORECASE):
-            raise ValueError("inherited provenance was duplicated visibly in the companion")
         return
 
-    expected = [revision_field]
-    seen_identities: set[tuple[str, str]] = set()
-    for contribution in record.contributions:
-        identity = (contribution.model, contribution.qualifiers)
-        if identity not in seen_identities:
-            expected.append(f"Model: {contribution.model}; {contribution.qualifiers}")
-            seen_identities.add(identity)
-        normalized_runtime = normalize(contribution.runtime)
-        if normalized_runtime and normalized_runtime in rendered:
-            raise ValueError(
-                "rendered PDF contains a tracked agent/runtime record "
-                f"{normalized_runtime!r}"
-            )
-    normalized_expected = [normalize(value) for value in expected]
-    for value in normalized_expected:
-        count = rendered.count(value)
-        if count != 1:
-            action = "omits" if count < 1 else "duplicates"
-            raise ValueError(
-                f"rendered PDF {action} metadata field {value!r}: "
-                f"expected 1, found {count}"
-            )
-
-    cursor = 0
-    for normalized_value in normalized_expected:
-        position = rendered.find(normalized_value, cursor)
-        if position < 0:
-            raise ValueError(
-                f"rendered PDF omits ordered metadata field {normalized_value!r}"
-            )
-        cursor = position + len(normalized_value)
+    effort_field = re.search(r"\beffort\s*=", rendered, re.IGNORECASE)
+    if effort_field:
+        raise ValueError(
+            "rendered PDF contains a reader-visible model effort qualifier"
+        )
 
 
 def audit_document(source_root: Path, relative: str, pdf: Path | None = None) -> Record:
@@ -309,12 +317,14 @@ def audit_document(source_root: Path, relative: str, pdf: Path | None = None) ->
         if tex_source == metadata:
             continue
         source_text = active_tex(tex_source.read_text(encoding="utf-8"))
+        validate_source_metadata_display(source_text)
         if LEGACY_LABEL_RE.search(source_text):
             raise ValueError(
                 f"{tex_source.relative_to(leaf)} contains a handwritten generation-metadata field"
             )
 
     record = parse_record(metadata)
+    inherited_record: Record | None = None
     if record.inheritance:
         target = Path(record.inheritance)
         if target.is_absolute() or ".." in target.parts:
@@ -322,11 +332,11 @@ def audit_document(source_root: Path, relative: str, pdf: Path | None = None) ->
         target_metadata = source_root / target / "generation-metadata.tex"
         if not target_metadata.is_file():
             raise ValueError(f"inheritance target has no provenance record: {target}")
-        target_record = parse_record(target_metadata)
-        if target_record.inheritance:
+        inherited_record = parse_record(target_metadata)
+        if inherited_record.inheritance:
             raise ValueError("generation provenance inheritance may not be chained")
-        validate_revision_timestamp(target_record.revision_timestamp)
-        for contribution in target_record.contributions:
+        validate_revision_timestamp(inherited_record.revision_timestamp)
+        for contribution in inherited_record.contributions:
             validate_contribution(contribution)
     else:
         for contribution in record.contributions:
@@ -337,7 +347,7 @@ def audit_document(source_root: Path, relative: str, pdf: Path | None = None) ->
     if pdf is not None:
         if not pdf.is_file():
             raise ValueError(f"rendered PDF not found: {pdf}")
-        validate_rendered_record(pdf, record)
+        validate_rendered_record(pdf, record, inherited_record)
     return record
 
 

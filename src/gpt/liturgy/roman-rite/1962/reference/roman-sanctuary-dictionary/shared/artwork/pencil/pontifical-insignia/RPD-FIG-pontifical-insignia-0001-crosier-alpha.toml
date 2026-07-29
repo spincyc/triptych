@@ -1,0 +1,66 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-crosier-isolated-neutral"
+object_ids = ["obj-crosier"]
+file = "RPD-FIG-pontifical-insignia-0001-crosier-alpha.png"
+purpose = "Teach the crosier as a distinct full-height object without copying an exemplar's figural ornament or museum display hardware."
+depicted_state = "One isolated upright crosier with a plain inward-curving crook, a visible socket, a long sectional shaft, and a narrow foot."
+period_status = "universal Roman 1962 pontifical insignium; depicted morphology is a deliberately neutral material-culture study"
+source_controlled_features = [
+  "one complete pastoral staff",
+  "inward-curving crook",
+  "socket below the crook",
+  "long straight sectional shaft",
+  "plain narrow foot",
+]
+deliberately_omitted_details = [
+  "Lamb of God ornament",
+  "figural ornament",
+  "heraldry",
+  "floral ornament",
+  "display mounting plate",
+  "display base",
+  "prescribed material",
+  "prescribed dimensions",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "887x1774 sRGB PNG"
+normalized_pixels = "887x1774 8-bit grayscale-alpha PNG"
+normalization = "Flat green background removed locally with an 18 percent color tolerance; the extraction matte was feathered with a 0.55-sigma Gaussian blur; accepted pixels were converted to grayscale while preserving alpha. Final alpha histogram has 34 distinct levels."
+sha256 = "9fcd6f35a67bf82de1cd18f0659e1de40cf1811ea9266ac25e052e3c0722aa46"
+subject_alpha_bounds = "227x1690+349+40; complete crook and foot retain at least 40 pixels of vertical crop safety"
+baked_in_content_audit = "No lettering, labels, arrows, border, watermark, person, hand, stand, base, square display mount, Lamb motif, animal, human figure, saint, heraldry, architecture, mitre, vestment, cast shadow, or reflection is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "status", "handling boundary", "source note", "scale notice", "callouts"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "self-reviewed-candidate-ready-for-independent-review"
+
+prompt = """
+Use case: scientific-educational
+Asset type: source-controlled isolated object study for a Roman liturgical pictorial dictionary
+Primary request: Draw one complete full-height traditional episcopal crosier (pastoral staff), isolated and upright. Its identifying construction is a restrained inward-curving crook/volute at the top, a clearly visible collar/socket immediately below the crook, and a long straight shaft visibly assembled in several simple threaded-looking sections, ending in a plain narrow foot. Use a neutral generic morphology derived only from these checked structural features.
+Style/medium: elegant monochrome graphite pencil drawing, fine controlled line, subtle cross-hatching, restrained tonal modeling, museum-catalog clarity, dignified and exciting for a children's visual atlas.
+Composition/framing: very tall portrait object centered vertically, entire crook through foot visible, generous clear padding on every edge, no cropping, no perspective distortion, no ground contact.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal. The background must be one uniform color with no shadows, gradients, texture, reflections, floor plane, horizon, or lighting variation. Keep the object fully separated from the background. Do not use #00ff00 anywhere in the object.
+Source boundary: show only the generic crook, socket/collar, sectional straight shaft, and plain foot. Ornament must be minimal and non-figural. Do not reproduce any museum object's Lamb of God, animal, human, saint, architectural, floral, or heraldic ornament. Do not show a square display mounting plate or any display base.
+Constraints: exactly one crosier; no person; no hand; no stand; no base; no mitre; no vestments; no church setting; no text, lettering, labels, arrows, numbers, border, watermark, cast shadow, contact shadow, or reflection.
+Avoid: copied medieval decoration, Lamb motif, crucifix, fantasy staff, shepherd's wooden walking stick, bishop figure, floating rectangular vignette, photorealism, cartoon caricature.
+"""
+
+[[source_basis]]
+source_id = "passage.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458.met-collection-record-2025-12-20.object-identity-and-morphology"
+locus = "Metropolitan Museum of Art object 471458 collection record and visually inspected full-object image"
+supported_feature = "A complete material-culture exemplar establishes the recognizable crook, socket, sectional shaft, and foot; its Lamb ornament and square museum mounting plate are deliberately not copied."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1-chapter-17"
+locus = "Cæremoniale Episcoporum I.XVII.5-9, Marietti 1948, printed pp. 51-53"
+supported_feature = "The pastoral staff is an episcopal insignium with specified carrying and use relationships; this source does not prescribe material, dimensions, ornament, exact profile, or a stand."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "generating-agent factual-and-production screen"
+outcome = "accepted-for-independent-review"
+scope = "Object count, full-height crop, crook/socket/sectional-shaft identity, omitted exemplar ornament and display hardware, monochrome rendering, transparent boundary, and baked-in-content exclusions."
+visual_evidence = "Checkerboard review composite retained under ignored build review output; alpha has transparent corners, 34 levels, and crop-safe subject bounds."
+admission_boundary = "This review advances only the asset-local precursor record. Canonical shared-manifest admission, independent review, consumer placement, publication build, and release remain separate actions."

@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-gospel-book"
-workflow_state = "source-audited"
+workflow_state = "art-reviewed"
 preferred_english_name = "Gospel book"
 latin_headword = "liber Evangeliorum"
 alternate_english_names = ["Evangeliary"]
@@ -13,7 +13,6 @@ ceremonies = ["solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", 
 confusable_with = ["obj-epistle-book"]
 related_objects = ["obj-epistle-book"]
 component_objects = []
-artwork = []
 
 [presence]
 locations = ["At the altar and then in the Gospel formation as the rite directs."]
@@ -72,6 +71,25 @@ locus = "Ritus servandus VI.5, printed LVIII/artifact PDF 60"
 role = "governing-liturgical-book"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-gospel-book-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/books/RPD-FIG-books-0009-gospel-book-isolated-alpha.png"
+review_state = "liturgically-checked"
+depicts = ["obj-gospel-book"]
+scale_mode = "not-to-common-scale"
+review_note = "Representative plain open lesson book for object recognition; it establishes no universal binding, ornament, dimensions, page design, or color."
+
+[[artwork]]
+id = "art-gospel-book-held-open"
+view = "in-use"
+asset = "shared/artwork/pencil/books/RPD-FIG-books-0007-gospel-book-in-use-v2-alpha.png"
+review_state = "approved"
+depicts = ["obj-gospel-book", "obj-acolyte-candlestick"]
+scale_mode = "not-applicable"
+render_owner = "obj-gospel-book"
+review_note = "The Gospel formation supplements the isolated object: the book is held open by the subdeacon between two candle-bearing acolytes. Neither view supplies a universal binding morphology."
 
 [[audience_note]]
 audience = "sacristan"

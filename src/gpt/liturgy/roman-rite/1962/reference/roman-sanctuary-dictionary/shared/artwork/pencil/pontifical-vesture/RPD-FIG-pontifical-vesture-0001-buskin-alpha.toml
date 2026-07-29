@@ -1,0 +1,65 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-pontifical-buskin-isolated"
+object_ids = ["obj-pontifical-buskin"]
+file = "RPD-FIG-pontifical-vesture-0001-buskin-alpha.png"
+purpose = "Teach the pontifical buskin (caliga) as an object distinct from the pontifical sandal."
+depicted_state = "One isolated stocking-like pontifical buskin, fully visible in a three-quarter side view."
+period_status = "1962-horizon pontifical vesture; depicted morphology is bounded to one 1948 material-culture illustration"
+source_controlled_features = [
+  "one stocking-like garment",
+  "foot and lower-leg portions form one textile object",
+  "the garment is distinct from the outer sandal",
+]
+deliberately_omitted_details = [
+  "prescribed color",
+  "prescribed textile",
+  "prescribed ornament",
+  "exact height",
+  "seam construction",
+  "fastening",
+  "dimensions",
+  "universal cut",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1254x1254 sRGB PNG"
+normalized_pixels = "1254x1254 8-bit RGBA PNG"
+normalization = "Flat green background removed with the imagegen skill chroma-key helper using border auto-key, soft matte, and despill. Final alpha has 192 distinct levels; all four corners are transparent."
+subject_alpha_bounds = "695x1026+279+115"
+sha256 = "c7d3b8bfc9647b24bbd25897102f8956dbc8c1bd23deb82295fdf0cdf0dc88e2"
+baked_in_content_audit = "No lettering, labels, arrows, border, watermark, person, sandal, second object, cuff, seam, panel, tie, fastening, outsole, heel block, heraldry, decorative pattern, cast shadow, contact shadow, reflection, or rectangular paper background is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "exemplar qualification", "source note", "callouts"]
+rights_state = "project-generated from a public-domain 1948 reference illustration; the reference's foreign-jurisdiction caveat remains disclosed in its central artifact record"
+review_state = "self-reviewed-candidate-ready-for-independent-review"
+
+prompt = """
+Use case: precise-object-edit
+Asset type: corrected isolated graphite object study for a 1962-horizon Roman sanctuary pictorial dictionary
+Input images: Image 1 is the edit target. Image 2 is the bounded 1948 morphology reference.
+Primary request: Correct Image 1 so it unmistakably reads as a soft textile stocking-like pontifical buskin, not a molded rubber or leather boot.
+Change only: remove the thick turned cuff, rigid cylindrical shaft, boot-like ankle construction, outsole-like foot edge, and every visible seam, panel, tie, fastening, or construction line. Replace them with one simple soft textile stocking silhouette: a thin unstructured upper edge, gently tapering lower-leg tube with slight natural fabric sag, softly articulated heel and toe, and a thin sock-like underside with no sole or heel block.
+Preserve: exactly one complete isolated garment; three-quarter side orientation; foot and lower-leg portions; restrained monochrome graphite line and sparse hatching; generous padding.
+Source boundary: the admitted witness controls only that this is one stocking-like garment with a foot and lower-leg portion. Do not copy its bands, ties, seams, panels, ornament, height, or exact cut. Do not invent structure.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for later removal, uniform with no shadow, gradient, texture, floor, or scenery. Keep the subject fully separated. Do not use green in the subject.
+Constraints: no sandal, shoe, boot sole, heel block, cuff, seam, panel, tie, bow, laces, ornament, second object, person, text, letters, labels, arrows, numbers, border, watermark, cast shadow, contact shadow, reflection, or opaque paper rectangle.
+Avoid: Wellington boot, riding boot, hosiery fashion illustration, ribbed sock, modern compression sock, armor, footwear sole.
+"""
+
+[[source_basis]]
+source_id = "artifact.r-and-k-wood.catholic-picture-dictionary-buskins-illustration.garden-city-1948-commons-file.commons-jpeg-8430ffb6"
+locus = "Complete 533-by-548-pixel illustration, visually inspected 2026-07-28"
+supported_feature = "One dated 1948 illustration supports a recognizable stocking-like form only; its ties, seams, height, ornament, material, and exact cut are not generalized."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-10"
+locus = "Cæremoniale Episcoporum I.X.2, Marietti 1948"
+supported_feature = "Caligae and sandalia are distinct objects used together; the ceremonial does not prescribe the buskin's morphology."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "generating-agent factual-and-production screen"
+outcome = "accepted-for-independent-review"
+scope = "Corrected object count, soft stocking-like identity, absence of a sandal and boot construction, source-boundary omissions, monochrome rendering, alpha extraction, crop safety, and baked-in-content exclusions."
+visual_evidence = "Corrected transparent asset and ivory/checkerboard review composites inspected at full resolution; no cuff, outsole, heel block, seam, panel, tie, or fastening remains."
+admission_boundary = "Acceptance advances only this asset-local precursor record; canonical shared-manifest admission and publication placement remain separate integration actions."

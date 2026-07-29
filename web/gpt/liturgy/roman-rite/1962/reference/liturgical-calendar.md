@@ -607,10 +607,6 @@ The United States section is deliberately separate. A national calendar, diocesa
 
 -   Thomas J. Talley, *The Origins of the Liturgical Year*, 2nd ed. (Collegeville, MN: Liturgical Press, 1991). Used for the long formation of the weekly and annual cycles, not as a substitute for edition-specific calendar evidence.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-27T23:02:25Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -506,10 +506,6 @@ Principal loci: Matt 4:18–22; 10:2–4; 14:22–33; 16:13–23; 17:1–8, 24�
 
 -   University of Oxford, Cult of Saints in Late Antiquity. Record E00118, “Gaius of Rome on the tombs of Peter and Paul,” with source, translation, and commentary. [Oxford record](https://portal.sds.ox.ac.uk/articles/online_resource/E00118_Eusebius_of_Caesarea_quotes_a_letter_from_Gaius_of_Rome_late_2nd_c_to_the_Montanist_leader_Proklos_which_mentions_the_tombs_in_Rome_of_the_Apostles_Peter_00036_in_the_Vatican_and_Paul_S00008_on_the_Via_Ostiensis_Quoted_in_Eusebius_Ec/13741720), accessed 15 July 2026. Copyrighted project commentary was paraphrased, not reproduced.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-21T15:25:48Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

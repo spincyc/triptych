@@ -1123,11 +1123,7 @@ This table lists the decisions this book teaches and the exact rubric that answe
 
 No manual, commentary, Ordo or rubrical handbook is cited, and none was used to reach a result in this book. That is a deliberate limitation and a real one: a competent commentator would resolve some of the questions left open in Section 10 from a tradition of authorised responses that this study has not examined, and the reader who needs a settled answer should seek it there and from the Ordo binding his own church.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-27T23:02:25Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

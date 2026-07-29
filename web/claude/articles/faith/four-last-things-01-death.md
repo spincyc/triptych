@@ -584,11 +584,7 @@ All online witnesses were checked on 2026-07-26, and the tracked source-library 
 
 -   *The Catholic Encyclopedia*, vol. 4 (New York: Robert Appleton Company, 1908), s.v. “Denys the Carthusian”; public domain; read 2026-07-26 at [New Advent](https://www.newadvent.org/cathen/04734a.htm). Used only for the bibliographic fact that Denys wrote *De quatuor novissimis*.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T03:53:16Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

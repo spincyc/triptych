@@ -189,7 +189,28 @@ class GenerationMetadataParserTests(unittest.TestCase):
     def test_handwritten_revision_label_is_rejected_as_legacy(self) -> None:
         self.assertRegex(r"\textbf{Last revised (UTC):}", CHECKER.LEGACY_LABEL_RE)
 
-    def test_rendered_record_compacts_distinct_runtimes_to_one_identity(self) -> None:
+    def test_rejects_standalone_generation_metadata_wrapper_headings(self) -> None:
+        headings = (
+            r"\section{Generation Metadata}",
+            r"\section*{AI Generation Metadata}",
+            r"\chapter{Generation Metadata}",
+            r"\addcontentsline{toc}{section}{Generation Metadata}",
+            r"\noindent{\small\bfseries Generation Metadata\par}",
+            r"\noindent\textbf{Generation Metadata}\par",
+        )
+        for heading in headings:
+            with (
+                self.subTest(heading=heading),
+                self.assertRaisesRegex(ValueError, "wrapper heading"),
+            ):
+                CHECKER.validate_source_metadata_display(heading)
+
+    def test_allows_metadata_input_without_a_wrapper_heading(self) -> None:
+        CHECKER.validate_source_metadata_display(
+            r"\input{articles/faith/example/generation-metadata}"
+        )
+
+    def test_rendered_record_keeps_contributions_audit_only(self) -> None:
         first = CHECKER.Contribution(
             "same-model", "effort=high", "OpenAI Codex CLI 1.2.3; first role"
         )
@@ -199,7 +220,6 @@ class GenerationMetadataParserTests(unittest.TestCase):
         record = CHECKER.Record(TIMESTAMP, (first, second), None)
         rendered = CHECKER.normalize(
             f"Last revised (UTC): {TIMESTAMP}\n"
-            "Model: same-model; effort=high\n"
         )
         with (
             mock.patch.object(CHECKER, "validate_pdf_info"),
@@ -207,15 +227,14 @@ class GenerationMetadataParserTests(unittest.TestCase):
         ):
             CHECKER.validate_rendered_record(Path("unused.pdf"), record)
 
-        duplicated = CHECKER.normalize(
+        exposed = CHECKER.normalize(
             f"Last revised (UTC): {TIMESTAMP}\n"
-            "Model: same-model; effort=high\n"
             "Model: same-model; effort=high\n"
         )
         with (
             mock.patch.object(CHECKER, "validate_pdf_info"),
-            mock.patch.object(CHECKER, "pdf_text", return_value=duplicated),
-            self.assertRaisesRegex(ValueError, "duplicates metadata field"),
+            mock.patch.object(CHECKER, "pdf_text", return_value=exposed),
+            self.assertRaisesRegex(ValueError, "tracked model"),
         ):
             CHECKER.validate_rendered_record(Path("unused.pdf"), record)
 
@@ -235,7 +254,6 @@ class GenerationMetadataParserTests(unittest.TestCase):
         for ledger in cases:
             rendered = CHECKER.normalize(
                 f"Last revised (UTC): {TIMESTAMP}\n"
-                "Model: test-model; effort=high\n"
                 f"{ledger}\n"
             )
             with (
@@ -248,7 +266,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
             ):
                 CHECKER.validate_rendered_record(Path("unused.pdf"), record)
 
-    def test_rendered_record_requires_each_distinct_identity_once_in_order(self) -> None:
+    def test_rendered_record_rejects_model_identity_and_effort(self) -> None:
         first = CHECKER.Contribution(
             "first-model", "effort=high", "OpenAI Codex CLI 1.2.3; first role"
         )
@@ -256,20 +274,31 @@ class GenerationMetadataParserTests(unittest.TestCase):
             "second-model", "effort=low", "OpenAI Codex CLI 1.2.4; second role"
         )
         record = CHECKER.Record(TIMESTAMP, (first, second), None)
-        reversed_render = CHECKER.normalize(
-            f"Last revised (UTC): {TIMESTAMP}\n"
-            "Model: second-model; effort=low\n"
-            "Model: first-model; effort=high\n"
-        )
-        with (
-            mock.patch.object(CHECKER, "validate_pdf_info"),
-            mock.patch.object(CHECKER, "pdf_text", return_value=reversed_render),
-            self.assertRaisesRegex(ValueError, "omits ordered metadata field"),
-        ):
-            CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+        for exposed in ("first-model", "effort=high"):
+            rendered = CHECKER.normalize(
+                f"Last revised (UTC): {TIMESTAMP}\n{exposed}\n"
+            )
+            with (
+                self.subTest(exposed=exposed),
+                mock.patch.object(CHECKER, "validate_pdf_info"),
+                mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
+                self.assertRaisesRegex(ValueError, "tracked model|model effort"),
+            ):
+                CHECKER.validate_rendered_record(Path("unused.pdf"), record)
 
     def test_inherited_render_rejects_duplicated_model_or_ledger(self) -> None:
         record = CHECKER.Record(TIMESTAMP, (), "theology/sacraments")
+        inherited = CHECKER.Record(
+            TIMESTAMP,
+            (
+                CHECKER.Contribution(
+                    "test-model",
+                    "effort=high",
+                    "OpenAI Codex CLI 1.2.3; inherited role",
+                ),
+            ),
+            None,
+        )
         for field in ("Model: test-model; effort=high", "Agent/runtime: hidden"):
             rendered = CHECKER.normalize(
                 f"Last revised (UTC): {TIMESTAMP}\n{field}\n"
@@ -280,7 +309,34 @@ class GenerationMetadataParserTests(unittest.TestCase):
                 mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
                 self.assertRaises(ValueError),
             ):
-                CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+                CHECKER.validate_rendered_record(
+                    Path("unused.pdf"), record, inherited
+                )
+
+    def test_rendered_record_allows_ordinary_pedagogical_model_heading(self) -> None:
+        record = CHECKER.Record(TIMESTAMP, (), "theology/sacraments")
+        inherited = CHECKER.Record(
+            TIMESTAMP,
+            (
+                CHECKER.Contribution(
+                    "test-model",
+                    "effort=high",
+                    "OpenAI Codex CLI 1.2.3; inherited role",
+                ),
+            ),
+            None,
+        )
+        rendered = CHECKER.normalize(
+            f"Last revised (UTC): {TIMESTAMP}\n"
+            "Model: practice the first sentence before continuing.\n"
+        )
+        with (
+            mock.patch.object(CHECKER, "validate_pdf_info"),
+            mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
+        ):
+            CHECKER.validate_rendered_record(
+                Path("unused.pdf"), record, inherited
+            )
 
 
 @unittest.skipUnless(
@@ -383,7 +439,9 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
             )
             rendered = CHECKER.pdf_text(first)
             self.assertEqual(rendered.count(f"Last revised (UTC): {TIMESTAMP}"), 1)
-            self.assertEqual(rendered.count("Model: test-model; effort=high"), 1)
+            self.assertNotIn("Model:", rendered)
+            self.assertNotIn("test-model", rendered)
+            self.assertNotIn("effort=high", rendered)
             self.assertNotIn("Agent/runtime:", rendered)
             self.assertNotIn("OpenAI Codex CLI 1.2.3; API workspace", rendered)
             self.assertNotIn(

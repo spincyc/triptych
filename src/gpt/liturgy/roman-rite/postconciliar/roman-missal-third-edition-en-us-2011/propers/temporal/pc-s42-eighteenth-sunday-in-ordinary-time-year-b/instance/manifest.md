@@ -31,7 +31,7 @@ The owner alone retains the Missal collation evidence.
 - permitted Sunday sprinkling in place of the Penitential Act;
 - locally selected Entrance, Offertory, and Communion chants;
 - compatible Preface and Eucharistic Prayer;
-- Communion Antiphon A (Ps 102:2 / modern 103) or B (John 6:35); and
+- Communion Antiphon A (Wis 16:20) or B (John 6:35); and
 - every proper-calendar overlay and local enactment.
 
 The Gloria and Creed are required Sunday units but are not proper-text

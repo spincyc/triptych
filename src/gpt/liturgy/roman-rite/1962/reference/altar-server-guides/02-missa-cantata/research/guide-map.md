@@ -173,8 +173,7 @@ Series-wide source, response, pronunciation, ceremonial, card, rights, and
 production records are owned by the non-publishable altar-server-guides
 research directory.
 
-The 2026-07-28 settled candidate is thirty-four pages; its companion remains
-twelve pages. Exact identities and review claims for the final
-metadata-bearing rebuild belong in the series production manifest. No
-source-built candidate is described here as externally, physically, or
-ecclesiastically approved.
+The 2026-07-28 installed Alpha snapshot is thirty-four pages; its companion
+remains twelve pages. Exact artifact identities and every-page screen-review
+evidence are recorded in the series production manifest. Neither publication
+is described here as externally, physically, or ecclesiastically approved.

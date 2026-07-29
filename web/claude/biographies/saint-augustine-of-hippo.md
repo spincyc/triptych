@@ -342,10 +342,6 @@ All web sources were accessed and checked on 2026-07-24/25. Ancient-work citatio
 
 -   “Life of St. Augustine of Hippo,” “Teaching of St. Augustine of Hippo,” “Donatists,” “Pelagius and Pelagianism,” and “St. Monica,” *The Catholic Encyclopedia*, vols. 1–11 (New York, 1907–1911), at New Advent (<https://www.newadvent.org/cathen/02084a.htm>; <https://www.newadvent.org/cathen/02091a.htm>; <https://www.newadvent.org/cathen/05121a.htm>; <https://www.newadvent.org/cathen/11604a.htm>; <https://www.newadvent.org/cathen/10482a.htm>); public domain; used as identified reporting witnesses for the ordination and consecration dates, the “Doctor of Grace” usage, the Reformation-era judgments, the Donatist and Pelagian sequences, and Monica’s dates and 1430 translation.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T05:13:00Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -819,12 +819,6 @@ Independent human Mariological, dogmatic, patristic, conciliar-historical, medie
 
 -   St. Bernard of Clairvaux, Epistle 174 to the canons of Lyons, and Eadmer, *Tractatus de conceptione sanctae Mariae*, are used to locate opposed medieval stages in the conception controversy; their views are neither presented as magisterial judgments nor collapsed into the later definition.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-21T15:25:48Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

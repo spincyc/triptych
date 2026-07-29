@@ -11,6 +11,11 @@ artwork with recorded provenance and asset identity, identity-checked visual
 content, mechanical validity, and the applicable safety boundary. It creates
 no external-review gate.
 
+The title page now carries only the terse `Alpha` status. The explanation of
+the bounded inventory, edition horizon, non-authority boundary, and reliance
+limits appears once in the terminal Scope and Qualifications appendix; the
+common rights notice shares the final generation-metadata page.
+
 The present bounded family covers forty-six records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and

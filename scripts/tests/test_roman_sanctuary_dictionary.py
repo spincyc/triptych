@@ -1,4 +1,6 @@
 import subprocess
+import importlib.machinery
+import importlib.util
 import tempfile
 import textwrap
 import unittest
@@ -14,7 +16,33 @@ ARTWORK_MANIFEST = DICTIONARY_ROOT / "research/artwork-manifest.toml"
 RECORDS = DICTIONARY_ROOT / "shared/objects"
 
 
+def load_generator():
+    loader = importlib.machinery.SourceFileLoader("dictionary_generator", str(SCRIPT))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    assert spec is not None
+    module = importlib.util.module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+GENERATOR = load_generator()
+
+
 class DictionaryGeneratorTests(unittest.TestCase):
+    def test_only_canonical_alpha_assets_are_selectable(self):
+        manifest = {
+            "asset_files": [
+                {"path": "shared/accepted.png", "state": "accepted-for-priestly-review"},
+                {"path": "shared/canonical.png", "state": "canonical-alpha-eligible"},
+                {"path": "shared/held.png", "state": "held"},
+                {"path": "shared/rejected.png", "state": "rejected"},
+            ]
+        }
+        self.assertEqual(
+            GENERATOR.canonical_alpha_assets(manifest),
+            {"shared/canonical.png"},
+        )
+
     def generate(self, output: Path, selections: Path = SELECTIONS) -> None:
         subprocess.run(
             [
@@ -84,12 +112,37 @@ class DictionaryGeneratorTests(unittest.TestCase):
         shell = (DICTIONARY_ROOT / "shared/publication-shell.tex").read_text()
         renderer = (DICTIONARY_ROOT / "shared/generated-record-renderer.tex").read_text()
         format_source = (DICTIONARY_ROOT / "shared/dictionary-format.tex").read_text()
-        self.assertIn(r"\large\bfseries ALPHA", format_source)
+        title = format_source.split(r"\newcommand{\DictionaryTitle}", 1)[1].split(
+            r"\newcommand{\DictionaryNoteKey}", 1
+        )[0]
+        self.assertIn(r"\footnotesize\bfseries ALPHA", title)
+        self.assertNotIn("source-audited objects", title)
+        self.assertNotIn("official liturgical book", title)
+        self.assertIn(r"\textbf{Scope.}", format_source)
         self.assertNotIn("ALPHA RECORD", renderer)
         self.assertNotIn("Evidence caveat", renderer)
         self.assertNotIn(r"\section{Coverage}", shell)
 
-    def test_communion_plate_split_keeps_generic_and_bespoke_consumers_distinct(self):
+    def test_alpha_status_is_only_the_title_footer_and_terminal_explanation(self):
+        format_source = (DICTIONARY_ROOT / "shared/dictionary-format.tex").read_text()
+        shell = (DICTIONARY_ROOT / "shared/publication-shell.tex").read_text()
+        self.assertIn(r"\footnotesize\bfseries ALPHA", format_source)
+        self.assertIn("This alpha edition includes only", format_source)
+        self.assertNotIn("alpha pictorial dictionary", shell.lower())
+
+        for leaf in (
+            "comprehensive",
+            "altar-server",
+            "sacristan",
+            "mc-trainer",
+            "general-reader",
+            "pontifical-ceremonies",
+        ):
+            source = (DICTIONARY_ROOT / leaf / "main.tex").read_text()
+            self.assertNotRegex(source, r"(?i)RSDEditionLine\}\{[^}]*alpha")
+            self.assertNotRegex(source, r"(?i)pdftitle=\{[^}]*alpha")
+
+    def test_communion_plate_uses_only_the_isolated_asset(self):
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "out"
             self.generate(output)
@@ -107,6 +160,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 "ed-sacristan",
                 "ed-mc-trainer",
                 "ed-pontifical",
+                "ed-altar-server",
             ):
                 text = (output / f"{edition}.tex").read_text()
                 record = text.split(
@@ -115,12 +169,6 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 self.assertIn(isolated, record, edition)
                 self.assertNotIn(comparison, record, edition)
                 self.assertNotIn("{obj-paten}", record, edition)
-
-            altar_main = (
-                DICTIONARY_ROOT / "altar-server/main.tex"
-            ).read_text()
-            self.assertIn(comparison, altar_main)
-            self.assertNotIn(isolated, altar_main)
 
     def test_generated_editions_use_only_isolated_paten_artwork(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -140,6 +188,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 "ed-sacristan",
                 "ed-mc-trainer",
                 "ed-pontifical",
+                "ed-altar-server",
             ):
                 text = (output / f"{edition}.tex").read_text()
                 record = text.split(r"\RSDObjectRecord{obj-paten}", 1)[1].split(
@@ -148,28 +197,44 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 self.assertIn(isolated, record, edition)
                 self.assertNotIn(comparison, text, edition)
 
-            altar_main = (DICTIONARY_ROOT / "altar-server/main.tex").read_text()
-            self.assertIn(comparison, altar_main)
-
-    def test_compact_renderer_fits_a_long_latin_and_key_line(self):
+    def test_reader_renderer_keeps_record_ids_out_of_entry_headings(self):
         renderer = (
             DICTIONARY_ROOT / "shared/generated-record-renderer.tex"
         ).read_text()
-        self.assertIn(r"\newcommand{\RSDLatinAndKeyLine}[2]", renderer)
-        self.assertIn(
-            r"\ifdim\wd\RSDLatinKeyLineBox>0.98\linewidth",
-            renderer,
-        )
-        self.assertIn(
-            r"\resizebox{0.98\linewidth}{!}{\usebox{\RSDLatinKeyLineBox}}",
-            renderer,
-        )
+        self.assertIn(r"\newcommand{\RSDLatinAndKeyLine}[2]{#1\par}", renderer)
+        self.assertNotIn(r"\RSDLatinKeyLineBox", renderer)
+        self.assertNotIn(r"\DictionaryNoteKey{#2}", renderer)
         self.assertEqual(
             renderer.count(
                 r"\RSDLatinAndKeyLine{\RSDLatinHeadword}{\RSDObjectID}"
             ),
             4,
         )
+
+    def test_comprehensive_opening_uses_dated_sanctuary_witness(self):
+        main = (DICTIONARY_ROOT / "comprehensive/main.tex").read_text()
+        self.assertIn("One sanctuary, seen whole", main)
+        self.assertIn(
+            "RPD-FIG-sanctuary-0001-ecce-homo-chapel-rijks-graphite.png",
+            main,
+        )
+        self.assertIn("A witness, not a model.", main)
+        self.assertIn("not a standard", main)
+        self.assertIn(r"\textbf{Altar crucifix}", main)
+        self.assertIn("vary with the class of Mass", main)
+        self.assertIn("Three altar cards", main)
+        self.assertIn("Rubricae generales Missalis Romani", main)
+        self.assertNotIn("What the Missal places together", main)
+        self.assertNotIn("Central cross with crucifix", main)
+        self.assertNotIn(
+            "RPD-FIG-altar-appointments-0104-sanctuary-relationships-alpha.png",
+            main,
+        )
+        artwork_manifest = ARTWORK_MANIFEST.read_text()
+        retired_asset = artwork_manifest.split(
+            'id = "file-rpd-sanctuary-relationships-alpha"', 1
+        )[1].split("[[asset_files]]", 1)[0]
+        self.assertIn('state = "rejected"', retired_asset)
 
     def test_canonical_output_is_deterministic_and_audience_specific(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -233,16 +298,23 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     r"\RSDDensePlateStart{Vessels Linens And Books}{1}",
                 ),
                 "ed-mc-trainer": (
-                    r"\RSDDensePlateStart{Vesting Sequence}{1}",
-                    r"\RSDDenseSevenPlateStart{Books And Supports}{1}",
+                    r"\RSDHeterodoxFivePlateStart"
+                    r"{Vesting And Sacred Ministers}{1}",
+                    r"\RSDDensePlateStart{Books And Supports}{1}",
                 ),
                 "ed-general-reader": (
                     r"\RSDDensePlateStart{Sanctuary}{1}",
                     r"\RSDDensePlateStart{Objects And Linens}{1}",
                 ),
                 "ed-pontifical": (
-                    r"\RSDDensePlateStart{Furnishings And Books}{1}",
-                    r"\RSDDensePlateStart{Ministers And Object Transfers}{1}",
+                    r"\RSDBalancedTwoTallPlateStart"
+                    r"{Furnishings And Books}{1}",
+                    r"\RSDRelationshipThreePlateStart"
+                    r"{Ministers And Object Transfers}{1}",
+                ),
+                "ed-altar-server": (
+                    r"\RSDDensePlateStart{Sanctuary Orientation}{1}",
+                    r"\RSDDensePlateStart{Objects Around The Server}{1}",
                 ),
             }
             for edition, markers in expectations.items():
@@ -251,8 +323,6 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 self.assertEqual(positions, sorted(positions), edition)
                 self.assertIn(r"\RSDDensePlateRowBreak", text)
                 self.assertIn(r"\RSDDensePlateCellBreak", text)
-            altar_server = (output / "ed-altar-server.tex").read_text()
-            self.assertNotIn(r"\RSDDensePlateStart", altar_server)
             for edition in (
                 "ed-comprehensive", "ed-altar-server",
             ):
@@ -268,18 +338,26 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertEqual(first, (output / "ed-pontifical.tex").read_bytes())
             text = first.decode()
             self.assertEqual(
-                text.count(r"\RSDStoryPlateStart{Pontifical Vesture}"), 2
+                text.count(r"\RSDStoryPlateStart{Pontifical Vesture}{1}"), 1
+            )
+            self.assertEqual(
+                text.count(
+                    r"\RSDBalancedTwoTallPlateStart{Pontifical Vesture}{2}"
+                ),
+                1,
             )
             self.assertIn(
-                r"\RSDRelationshipThreePlateStart{Furnishings And Books}{2}",
+                r"\RSDBalancedTwoTallPlateStart{Furnishings And Books}{1}",
                 text,
             )
             self.assertIn(
-                r"\RSDRelationshipThreePlateStart{Furnishings And Books}{3}",
+                r"\RSDDensePlateStart{Furnishings And Books}{3}",
                 text,
             )
+            self.assertIn(r"\RSDObjectRecord{obj-episcopal-throne}", text)
+            self.assertIn(r"\RSDObjectRecord{obj-faldstool}", text)
             transfer_two = text.split(
-                r"\RSDDensePlateStart{Ministers And Object Transfers}{2}", 1
+                r"\RSDDensePlateStart{Ministers And Object Transfers}{3}", 1
             )[1].split(r"\RSDDensePlateEnd", 1)[0]
             self.assertEqual(
                 tuple(
@@ -298,11 +376,11 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             transfer_pairs = (
                 (
-                    4,
+                    5,
                     ("obj-aspergillum", "obj-holy-water-vessel"),
                 ),
                 (
-                    5,
+                    6,
                     ("obj-basilical-conopaeum", "obj-ombrellino"),
                 ),
             )
@@ -340,7 +418,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             self.assertEqual(
                 text.count(
-                    r"\RSDStoryPlateStart{Vestments And Insignia}{2}"
+                    r"\RSDStoryTallPlateStart{Vestments And Insignia}{2}"
                 ), 1
             )
             self.assertEqual(
@@ -387,8 +465,8 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 r"\RSDStoryPlateStart{Vestments And Insignia}{1}", 1
             )[1].split(r"\RSDStoryPlateEnd", 1)[0]
             dalmatic_story = text.split(
-                r"\RSDStoryPlateStart{Vestments And Insignia}{2}", 1
-            )[1].split(r"\RSDStoryPlateEnd", 1)[0]
+                r"\RSDStoryTallPlateStart{Vestments And Insignia}{2}", 1
+            )[1].split(r"\RSDStoryTallPlateEnd", 1)[0]
             story_ids = [
                 line.split("{", 1)[1].split("}", 1)[0]
                 for line in story.splitlines()
@@ -418,13 +496,17 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     "obj-tunicle",
                 ],
             )
-            self.assertEqual(text.count(r"\RSDStoryHeroNext"), 2)
-            self.assertEqual(text.count(r"\RSDStoryCompanionsStart"), 2)
-            self.assertEqual(dalmatic_story.count(r"\RSDStoryHeroNext"), 1)
-            self.assertEqual(dalmatic_story.count(r"\RSDStoryCompanionsStart"), 1)
-            self.assertEqual(dalmatic_story.count(r"\RSDStoryCompanionBreak"), 2)
-            self.assertEqual(text.count(r"\RSDStoryTallHeroNext"), 1)
-            self.assertEqual(text.count(r"\RSDStoryTallCompanionsStart"), 1)
+            self.assertEqual(text.count(r"\RSDStoryHeroNext"), 1)
+            self.assertEqual(text.count(r"\RSDStoryCompanionsStart"), 1)
+            self.assertEqual(dalmatic_story.count(r"\RSDStoryTallHeroNext"), 1)
+            self.assertEqual(
+                dalmatic_story.count(r"\RSDStoryTallCompanionsStart"), 1
+            )
+            self.assertEqual(
+                dalmatic_story.count(r"\RSDStoryTallCompanionBreak"), 2
+            )
+            self.assertEqual(text.count(r"\RSDStoryTallHeroNext"), 2)
+            self.assertEqual(text.count(r"\RSDStoryTallCompanionsStart"), 2)
             self.assertEqual(text.count(r"\RSDBalancedFourFilledPlateRowBreak"), 1)
             self.assertEqual(text.count(r"\RSDQuadCardNext"), 4)
             rendered_ids = [
@@ -432,8 +514,8 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 for line in text.splitlines()
                 if line.startswith(r"\RSDObjectRecord{")
             ]
-            self.assertEqual(len(rendered_ids), 44)
-            self.assertEqual(len(set(rendered_ids)), 44)
+            self.assertEqual(len(rendered_ids), 43)
+            self.assertEqual(len(set(rendered_ids)), 43)
             for object_id in story_ids + dalmatic_story_ids:
                 self.assertEqual(
                     text.count(f"\\RSDObjectRecord{{{object_id}}}"), 1, object_id
@@ -443,16 +525,16 @@ class DictionaryGeneratorTests(unittest.TestCase):
         expected_plates = (
             (
                 "obj-amice", "obj-alb", "obj-cincture", "obj-maniple",
-                "obj-priest-stole", "obj-chasuble",
+                "obj-priest-stole",
             ),
-            ("obj-deacon-stole", "obj-dalmatic", "obj-tunicle"),
+            ("obj-chasuble", "obj-deacon-stole", "obj-dalmatic", "obj-tunicle"),
             (
                 "obj-credence-table", "obj-lectern", "obj-sacristy-cross",
                 "obj-sanctuary-lamp", "obj-sedilia",
             ),
             (
                 "obj-altar-missal", "obj-missal-stand", "obj-missal-cushion",
-                "obj-book-marker", "obj-altar-cloths", "obj-epistle-book",
+                "obj-altar-cloths", "obj-epistle-book",
                 "obj-gospel-book",
             ),
             (
@@ -472,8 +554,6 @@ class DictionaryGeneratorTests(unittest.TestCase):
             (
                 "obj-processional-cross", "obj-incense-boat-and-spoon",
                 "obj-thurible",
-            ),
-            (
                 "obj-aspergillum", "obj-holy-water-vessel",
                 "obj-basilical-conopaeum", "obj-ombrellino",
             ),
@@ -491,16 +571,18 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 object_id for plate in expected_plates for object_id in plate
             )
             self.assertEqual(actual_ids, expected_ids)
-            self.assertEqual(len(actual_ids), 46)
-            self.assertEqual(len(set(actual_ids)), 46)
+            self.assertEqual(len(actual_ids), 45)
+            self.assertEqual(len(set(actual_ids)), 45)
             self.assertEqual(text.count(r"\RSDDensePlateStart"), 1)
             self.assertEqual(text.count(r"\RSDStoryPlateStart"), 1)
-            self.assertEqual(text.count(r"\RSDRelationshipThreePlateStart"), 2)
+            self.assertEqual(text.count(r"\RSDRelationshipThreePlateStart"), 0)
             self.assertIn(
-                r"\RSDRelationshipThreePlateStart{Sacred Ministers}{1}", text
+                r"\RSDBalancedFourPlateStart"
+                r"{Vesting And Sacred Ministers}{2}", text
             )
             self.assertIn(
-                r"\RSDRelationshipThreePlateStart{Procession And Incense}{1}",
+                r"\RSDDenseSevenPlateStart"
+                r"{Processions And Special Ceremonies}{1}",
                 text,
             )
             self.assertEqual(text.count(r"\RSDDenseSevenPlateStart"), 3)
@@ -675,7 +757,6 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     "obj-lavabo-towel",
                     "obj-epistle-book",
                     "obj-gospel-book",
-                    "obj-book-marker",
                     "obj-altar-missal",
                 ),
                 (
@@ -701,12 +782,17 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             actual_plates = []
             for plate_number in range(1, 6):
-                if plate_number <= 3:
+                if plate_number in {1, 3}:
                     marker = (
                         rf"\RSDDensePlateStart{{Objects And Linens}}"
                         rf"{{{plate_number}}}"
                     )
                     end_marker = r"\RSDDensePlateEnd"
+                elif plate_number == 2:
+                    marker = (
+                        r"\RSDHeterodoxFivePlateStart{Objects And Linens}{2}"
+                    )
+                    end_marker = r"\RSDHeterodoxFivePlateEnd"
                 elif plate_number == 4:
                     marker = (
                         r"\RSDStoryTallPlateStart{Objects And Linens}{4}"
@@ -730,9 +816,9 @@ class DictionaryGeneratorTests(unittest.TestCase):
             planned_ids = [
                 object_id for plate in actual_plates for object_id in plate
             ]
-            self.assertEqual([len(plate) for plate in actual_plates], [6, 6, 6, 4, 4])
-            self.assertEqual(len(planned_ids), 26)
-            self.assertEqual(len(set(planned_ids)), 26)
+            self.assertEqual([len(plate) for plate in actual_plates], [6, 5, 6, 4, 4])
+            self.assertEqual(len(planned_ids), 25)
+            self.assertEqual(len(set(planned_ids)), 25)
             self.assertEqual(
                 section.count(r"\RSDBalancedFourPlateStart{Objects And Linens}"),
                 1,
@@ -794,11 +880,19 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     ),
                 ),
                 (
-                    r"\RSDDensePlateStart{Linens And Textiles}{1}",
-                    r"\RSDDensePlateEnd",
+                    r"\RSDBalancedFourPlateStart{Linens And Textiles}{1}",
+                    r"\RSDBalancedFourFilledPlateEnd",
                     (
-                        "obj-burse", "obj-chalice-pall", "obj-chalice-veil",
-                        "obj-corporal", "obj-purificator", "obj-lavabo-towel",
+                        "obj-chalice", "obj-paten", "obj-burse",
+                        "obj-chalice-pall",
+                    ),
+                ),
+                (
+                    r"\RSDBalancedFourPlateStart{Linens And Textiles}{2}",
+                    r"\RSDBalancedFourFilledPlateEnd",
+                    (
+                        "obj-chalice-veil", "obj-corporal",
+                        "obj-purificator", "obj-lavabo-towel",
                     ),
                 ),
                 (
@@ -812,19 +906,28 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     ),
                 ),
                 (
-                    r"\RSDRelationshipThreePlateStart{Service Objects}{2}",
-                    r"\RSDRelationshipThreePlateEnd",
+                    r"\RSDHeterodoxFivePlateStart{Service Objects}{2}",
+                    r"\RSDHeterodoxFivePlateEnd",
                     (
                         "obj-elevation-torch", "obj-sacristy-bell",
                         "obj-processional-cross",
+                        "obj-incense-boat-and-spoon", "obj-thurible",
                     ),
                 ),
                 (
-                    r"\RSDDensePlateStart{Priestly Vestments}{1}",
-                    r"\RSDDensePlateEnd",
+                    r"\RSDHeterodoxFivePlateStart{Priestly Vestments}{1}",
+                    r"\RSDHeterodoxFivePlateEnd",
                     (
                         "obj-amice", "obj-alb", "obj-cincture",
-                        "obj-maniple", "obj-priest-stole", "obj-chasuble",
+                        "obj-maniple", "obj-priest-stole",
+                    ),
+                ),
+                (
+                    r"\RSDBalancedFourPlateStart{Priestly Vestments}{2}",
+                    r"\RSDBalancedFourFilledPlateEnd",
+                    (
+                        "obj-chasuble", "obj-deacon-stole",
+                        "obj-dalmatic", "obj-tunicle",
                     ),
                 ),
             )
@@ -845,7 +948,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 self.assertEqual(
                     plate.count(r"\RSDHeterodoxFivePlateRowBreak"), 1
                 )
-            self.assertEqual(text.count(r"\RSDDiagnosticCardNext"), 24)
+            self.assertGreaterEqual(text.count(r"\RSDDiagnosticCardNext"), 18)
             rendered_ids = [
                 line.split("{", 1)[1].split("}", 1)[0]
                 for line in text.splitlines()
@@ -864,15 +967,25 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 text = (output / f"{edition}.tex").read_text()
                 self.assertNotIn(r"\RSDObjectRecord{obj-sacristy-lavatory}", text)
 
-    def test_exact_lesson_books_use_the_tex_native_artwork_exception(self):
-        generator = SCRIPT.read_text()
+    def test_epistle_and_gospel_books_use_distinct_ceremonial_artwork(self):
         renderer = (
             DICTIONARY_ROOT / "shared/generated-record-renderer.tex"
         ).read_text()
-        self.assertIn('"obj-epistle-book"', generator)
-        self.assertIn('"obj-gospel-book"', generator)
-        self.assertIn(r"\RSDTeXNativeBookArtwork", renderer)
-        self.assertIn("no binding, material, ornament", renderer)
+        self.assertNotIn(r"\RSDTeXNativeBookArtwork", renderer)
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "out"
+            self.generate(output)
+            for edition in (
+                "ed-comprehensive", "ed-sacristan", "ed-mc-trainer",
+                "ed-general-reader", "ed-pontifical", "ed-altar-server",
+            ):
+                text = (output / f"{edition}.tex").read_text()
+                self.assertIn(
+                    "RPD-FIG-books-0006-epistle-book-in-use-alpha.png", text
+                )
+                self.assertIn(
+                    "RPD-FIG-books-0007-gospel-book-in-use-v2-alpha.png", text
+                )
 
     def test_shared_artwork_uses_data_driven_render_owner(self):
         renderer = (

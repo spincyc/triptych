@@ -4,6 +4,11 @@ Status: **bounded public alpha**
 Audit date: 2026-07-28
 Edition selection: `ed-general-reader`
 
+The title page now carries only the terse `Alpha` status. The explanation of
+the bounded inventory, edition horizon, non-authority boundary, and reliance
+limits appears once in the terminal Scope and Qualifications appendix; the
+common rights notice shares the final generation-metadata page.
+
 This concise visual survey consumes the same canonical alpha records as the
 owner inventory and selects only records marked required for a general
 reader. It owns no copied facts. Each plate emphasizes identity and purpose;
@@ -28,8 +33,7 @@ without universalizing the pictured form. The thurible plate distinguishes
 three bowl-support chains from the separate central lid chain while presenting
 that construction only as one source-bounded representative form. Sedilia
 remain outside this concise edition because their canonical general-reader
-relevance is useful rather than required. All alpha qualifications appear on
-the first page only.
+relevance is useful rather than required.
 
 The paired altar-cruets page identifies the wine-and-water service pair while
 showing only one representative handled form. It does not assert a fixed

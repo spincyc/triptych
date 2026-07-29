@@ -1,0 +1,114 @@
+schema_version = 1
+id = "obj-pontifical-gloves"
+workflow_state = "publication-ready"
+preferred_english_name = "Pontifical gloves"
+latin_headword = "chirothecae"
+alternate_english_names = ["Episcopal gloves"]
+alternate_latin_names = []
+sort_name = "Gloves, pontifical"
+categories = ["pontifical-and-prelatial", "priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass"]
+confusable_with = []
+related_objects = ["obj-pontifical-ring"]
+component_objects = []
+editorial_note = "The pair is drawn plain; color, embroidery, cuff, textile, dimensions, and construction are not universalized."
+
+[presence]
+locations = ["Prepared for pontifical vesting and worn when appointed."]
+contexts = ["The deacon gloves the right hand and the subdeacon the left in the checked pontifical-vesting sequence."]
+composition_ids = ["plt-pontifical-insignia"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "deacon", "subdeacon", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["deacon", "subdeacon"]
+receives = ["deacon", "subdeacon"]
+stores = ["sacristan"]
+warnings = []
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-pontifical-gloves-vesting"
+kind = "liturgical-use"
+text = "In the checked pontifical-vesting sequence the deacon puts the glove on the bishop's right hand and the subdeacon puts the glove on his left."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-gloves-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-pontifical-gloves-variation"
+kind = "variation"
+text = "The 1893 catalog documents bishops' gloves in several colors, plain or with embroidered crosses, without making any treatment universal."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-gloves-benziger"]
+
+[[claims]]
+id = "clm-pontifical-gloves-identity"
+kind = "identity"
+text = "The Ceremonial identifies the pontifical gloves as a paired episcopal vesting object, one for each hand."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-gloves-ce"]
+
+[[claims]]
+id = "clm-pontifical-gloves-appearance"
+kind = "appearance"
+text = "The catalog witness shows that pontifical gloves may be plain or cross-embroidered and occur in several colors; it establishes no universal cuff, textile, dimensions, or construction."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-gloves-benziger"]
+
+[[claims]]
+id = "clm-pontifical-gloves-presence"
+kind = "ceremonial-presence"
+text = "In the checked Solemn Pontifical Mass vesting, the gloves are put on before the chasuble and before the ring."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-gloves-ce"]
+
+[[sources]]
+id = "src-pontifical-gloves-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-2.chapter-8"
+locus = "Book II, chapter VIII, n. 19; printed p. 116, artifact PDF p. 127."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-pontifical-gloves-benziger"
+binding = "artifact.benziger-brothers.catalogue-of-vestments-banners-and-regalia.new-york-1893.loc-ia-scan-pdf"
+locus = "Printed p. 47, artifact PDF p. 57."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-pontifical-episcopal-gloves-pair"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0101-episcopal-gloves-pair-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-pontifical-gloves"]
+scale_mode = "not-to-common-scale"
+review_note = "Plain paired recognition view; no universal embroidery, color, cuff, material, or construction claim."
+
+[[artwork]]
+id = "art-pontifical-ring-over-right-glove"
+view = "in-use"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0103-ring-over-right-glove-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-pontifical-gloves", "obj-pontifical-ring"]
+context_object_ids = ["obj-pontifical-gloves", "obj-pontifical-ring"]
+scale_mode = "not-applicable"
+review_note = "Combined formation shows the ring outside the already donned right glove; hand and ring morphology are illustrative."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Teach the right/left ministers and the later ring-over-right-glove relationship without prescribing glove decoration."
+claim_ids = ["clm-pontifical-gloves-vesting", "clm-pontifical-gloves-variation"]

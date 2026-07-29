@@ -1,0 +1,107 @@
+schema_version = 1
+id = "obj-pontifical-ring"
+workflow_state = "publication-ready"
+preferred_english_name = "Pontifical ring"
+latin_headword = "annulus pontificalis"
+alternate_english_names = ["Episcopal ring"]
+alternate_latin_names = []
+sort_name = "Ring, pontifical"
+categories = ["pontifical-and-prelatial"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+confusable_with = []
+related_objects = ["obj-pontifical-gloves"]
+component_objects = []
+editorial_note = "The isolated ring's substantial scale and plain raised oval setting are editorial recognition conventions, not prescribed features."
+
+[presence]
+locations = ["On the ring finger of the bishop's right hand when appointed."]
+contexts = ["Pontifical vesting after the gloves in the checked sequence."]
+composition_ids = ["plt-pontifical-insignia"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "priest", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["priest"]
+receives = ["priest"]
+stores = ["sacristan"]
+warnings = []
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-pontifical-ring-vesting"
+kind = "liturgical-use"
+text = "After the intervening vesting actions, the assistant priest puts the pontifical ring on the ring finger of the bishop's right hand."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-ring-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-pontifical-ring-class"
+kind = "appearance"
+text = "The 1893 catalog identifies episcopal rings as a manufactured class but does not prescribe a universal stone, bezel, metal, heraldry, ornament, or dimensions."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-ring-benziger"]
+
+[[claims]]
+id = "clm-pontifical-ring-identity"
+kind = "identity"
+text = "The checked sources identify a distinct pontifical or episcopal ring used in the bishop's vesting."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-ring-ce", "src-pontifical-ring-benziger"]
+
+[[claims]]
+id = "clm-pontifical-ring-presence"
+kind = "ceremonial-presence"
+text = "In the checked Solemn Pontifical Mass vesting, the assistant priest places the ring after the intervening actions that follow gloving."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-ring-ce"]
+
+[[sources]]
+id = "src-pontifical-ring-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-2.chapter-8"
+locus = "Book II, chapter VIII, n. 22; printed p. 117, artifact PDF p. 128."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-pontifical-ring-benziger"
+binding = "artifact.benziger-brothers.catalogue-of-vestments-banners-and-regalia.new-york-1893.loc-ia-scan-pdf"
+locus = "Printed p. 47, artifact PDF p. 57."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-pontifical-episcopal-ring-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0102-episcopal-ring-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-pontifical-ring"]
+scale_mode = "not-to-common-scale"
+review_note = "The raised oval setting and enlarged recognition scale are non-normative editorial conventions."
+
+[[artwork]]
+id = "art-pontifical-ring-over-right-glove"
+view = "in-use"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0103-ring-over-right-glove-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-pontifical-gloves", "obj-pontifical-ring"]
+context_object_ids = ["obj-pontifical-gloves", "obj-pontifical-ring"]
+scale_mode = "not-applicable"
+review_note = "Combined formation shows the ring outside the already donned right glove; no universal ring morphology is implied."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Teach the right ring-finger placement and its sequence after gloving; treat the isolated form as recognition art only."
+claim_ids = ["clm-pontifical-ring-vesting", "clm-pontifical-ring-class"]

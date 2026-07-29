@@ -1,0 +1,64 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-gremial-handling"
+object_ids = ["obj-gremial"]
+file = "RPD-FIG-pontifical-insignia-0003-gremial-handling-alpha.png"
+purpose = "Teach the gremial through its checked lap placement and assistant-mediated removal."
+depicted_state = "One assistant begins lifting an unattached near-square gremial from the lap of one seated bishop."
+period_status = "universal Roman at the 1962 horizon; ceremonial relationship source-controlled, surrounding vesture generic"
+source_controlled_features = [
+  "one seated bishop",
+  "one gremial spread over the bishop's lap",
+  "one assistant handling the textile",
+  "unattached textile without ties",
+]
+generic_context_features = [
+  "simple ceremonial chair",
+  "deliberately simplified plain chasuble over visible dalmatic and alb",
+  "plain mitre with two lappets",
+  "plain alb and cope for the assistant",
+  "assistant's two-handed handling pose",
+]
+context_evidence_classification = "The asset establishes lap placement and assistant-mediated handling only. Its deliberately simplified vesture prevents false insignial teaching but must not be used as a complete pontifical-vesting diagram or as evidence for a particular chair."
+deliberately_omitted_details = [
+  "exact ceremonial moment",
+  "named assistant office",
+  "chair type",
+  "prescribed textile color",
+  "textile heraldry",
+  "textile fasteners",
+  "surrounding sanctuary",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1122x1402 sRGB PNG"
+normalized_pixels = "1122x1402 8-bit sRGBA PNG"
+normalization = "Flat green background removed locally with the imagegen skill's Pillow helper using border auto-key detection, soft matte, thresholds 12 and 220, and despill."
+sha256 = "8a7f105e8598b3450d7e9a2e36719ca0b93b94efc5317d7adce09c7b7e332dc6"
+baked_in_content_audit = "Exactly two figures, one chair, and one gremial are shown. No lettering, label, watermark, altar, architecture, additional minister, book, crozier, bugia, crossed band, pallium, stole, orphrey strip, pectoral cross, textile tie, cord, loop, button, buckle, or fastening action is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "handling boundary", "source note", "generic-context warning"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "self-reviewed candidate-ready-for-independent-review"
+
+prompt = """
+Use case: scientific-educational
+Asset type: source-controlled ceremonial context illustration for a Roman liturgical pictorial dictionary
+Primary request: Draw exactly one seated bishop with one unattached near-square pontifical Mass gremial spread plainly across his lap while exactly one assistant beside him carefully begins lifting the near edge with both hands.
+Critical vesture correction: The bishop wears a simple mitre with two lappets and a deliberately simplified plain bell-shaped CHASUBLE over a plainly visible DALMATIC layer and alb. The chasuble is one broad continuous outer garment with NO vertical bands, NO Y-shaped bands, NO crossed bands, NO pallium, NO stole, NO orphrey strips, NO crosses, NO chest panel, NO insignial ribbons, and NO narrow hanging pieces. Show the dalmatic only as a simple wider-sleeved layer visible beneath the chasuble at the forearms and lower hem; no ornament on either garment. The assistant wears only a plain alb and a simple unornamented cope whose broad cape silhouette is clear, with no stole, bands, crosses, or insignia.
+Source boundary: the gremial is a supple near-square silk cloth placed over the seated bishop's lap; an assistant removes it and passes it to a dedicated minister. This frame shows only the assistant beginning that removal. The textile is loose and unattached: absolutely no ties, cords, loops, straps, buttons, buckles, or fastening action.
+Composition/framing: compact three-quarter view; both figures' upper bodies, the bishop's seated legs, and the whole readable lap cloth visible; assistant's two hands unobscured; a minimal plain chair; generous crop safety.
+Style/medium: elegant historically attentive monochrome graphite pencil drawing, fine controlled line, restrained cross-hatching and tonal modeling, dignified but lively children's visual-atlas quality.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for removal; one uniform color, no shadow, gradient, texture, reflection, floor, horizon, architecture, altar, or lighting variation. Do not use green in subjects.
+Required counts: exactly two adult men, one seated bishop, one standing assistant, one chair, one gremial.
+Avoid: crossed vestment bands; pallium; stole; Y-shaped orphrey; vertical chest panels; pectoral cross; breast ornament; cincture-hung strips; maniple; apron; humeral veil; tied cloth; additional ministers; book; crozier; bugia; altar; text; label; border; watermark; cast shadow; contact shadow; rectangular vignette; photorealism; cartoon caricature.
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapters-11-12"
+locus = "book I, chapter XI, section 9, within inspected artifact pages 43-53"
+supported_feature = "Assistant-mediated removal, folded holding at the breast by a dedicated minister, return through the assistant, and final disposition."
+
+[[source_basis]]
+source_id = "passage.joseph-braun.handbuch-der-paramentik.herder-1912.pages-265-266-gremiale"
+locus = "printed pages 265-266; artifact pages 279-280"
+supported_feature = "Near-square proportions, silk pontifical-Mass form, and placement over a seated bishop's lap."

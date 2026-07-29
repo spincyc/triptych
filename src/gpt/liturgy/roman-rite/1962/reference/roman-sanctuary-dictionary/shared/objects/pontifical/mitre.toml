@@ -1,0 +1,135 @@
+schema_version = 1
+id = "obj-mitre"
+workflow_state = "publication-ready"
+preferred_english_name = "Mitre"
+latin_headword = "mitra"
+alternate_english_names = []
+alternate_latin_names = []
+sort_name = "Mitre"
+categories = ["pontifical-and-prelatial", "priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+confusable_with = []
+related_objects = ["obj-mitre-minister-veil", "obj-vimpa"]
+component_objects = []
+editorial_note = "The three ceremonial forms are variants of one canonical object. Equal drawn height is a comparison convention, not a prescribed dimension."
+
+[presence]
+locations = ["Worn by the bishop or held by the appointed mitre minister according to the ceremony."]
+contexts = ["Pontifical functions with form and use selected by the Ceremonial."]
+composition_ids = ["plt-pontifical-insignia"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["cleric"]
+receives = ["cleric"]
+stores = ["sacristan"]
+warnings = ["Support the mitre as directed; do not treat the three forms as interchangeable decoration."]
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-mitre-three-forms"
+kind = "variation"
+text = "The Ceremonial distinguishes precious, gold-cloth, and simple mitres by material and ornament."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-ce"]
+applies_to_variants = ["var-mitre-pretiosa", "var-mitre-auriphrygiata", "var-mitre-simplex"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-mitre-morphology-boundary"
+kind = "appearance"
+text = "The museum witness confirms one two-panel body with paired lappets but does not prescribe profile, height, construction, iconography, or dimensions."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-met"]
+
+[[claims]]
+id = "clm-mitre-identity"
+kind = "identity"
+text = "The Ceremonial identifies the mitre as a pontifical object and distinguishes three forms: precious, gold-cloth, and simple."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-mitre-liturgical-use"
+kind = "liturgical-use"
+text = "The appointed form is selected by the feast, season, Office, or Mass according to the Ceremonial's distinctions."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-mitre-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "The Ceremonial appoints mitres at pontifical Vespers and Mass, with form and alternation governed by the occasion."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-mitre-ce"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-mitre-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-17"
+locus = "Book I, chapter XVII, paragraphs 1-4; printed pp. 51-53."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-mitre-met"
+binding = "passage.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29.object-identity-and-morphology"
+locus = "Object 227306 identity, material, dimensions, and linked photograph."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-three-mitre-forms-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0001-three-mitre-forms-v1-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-mitre"]
+scale_mode = "common-scale"
+review_note = "Three source-distinguished forms at equal editorial scale; morphology and dimensions are not universalized."
+
+[[variants]]
+id = "var-mitre-pretiosa"
+preferred_name = "Precious mitre"
+latin_name = "mitra pretiosa"
+distinguishing_features = "The enriched form distinguished by the Ceremonial's precious material and ornament."
+status = "universal-roman"
+source_ids = ["src-mitre-ce"]
+artwork_ids = ["art-three-mitre-forms-comparison"]
+
+[[variants]]
+id = "var-mitre-auriphrygiata"
+preferred_name = "Gold-cloth mitre"
+latin_name = "mitra auriphrygiata"
+distinguishing_features = "The form distinguished from the precious mitre by its restrained material and ornament."
+status = "universal-roman"
+source_ids = ["src-mitre-ce"]
+artwork_ids = ["art-three-mitre-forms-comparison"]
+
+[[variants]]
+id = "var-mitre-simplex"
+preferred_name = "Simple mitre"
+latin_name = "mitra simplex"
+distinguishing_features = "The plain form without gold, as distinguished by the Ceremonial."
+status = "universal-roman"
+source_ids = ["src-mitre-ce"]
+artwork_ids = ["art-three-mitre-forms-comparison"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Identify the appointed form from the ceremony; the three drawings compare source-defined classes rather than prescribe one construction."
+claim_ids = ["clm-mitre-three-forms", "clm-mitre-morphology-boundary"]

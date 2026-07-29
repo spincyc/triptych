@@ -159,10 +159,6 @@ The study remains held pending independent Hebraic, Septuagintal, rabbinic, patr
 
 -   Cornelius a Lapide and Haydock on Genesis 15.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-27T15:10:04Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

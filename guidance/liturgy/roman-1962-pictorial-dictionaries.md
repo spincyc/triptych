@@ -161,9 +161,9 @@ generation summary and rights colophon in the universal order. Full scope and
 source-audit evidence remains in the required tracked records.
 
 The tracked generation metadata remains complete under the universal standard,
-but dictionary PDFs must not print per-agent/runtime entries, contribution
-histories, or other internal production ledgers. Render each distinct
-model/configuration identity once in the compact terminal summary.
+but dictionary PDFs print only the revision timestamp. Model identity,
+qualifiers, effort, per-agent/runtime entries, contribution histories, and
+other internal production details remain in tracked audit records.
 
 Main entries give English and Latin headwords, one-line identity and use,
 compact handling status, and at most one brief sourced symbolic association.

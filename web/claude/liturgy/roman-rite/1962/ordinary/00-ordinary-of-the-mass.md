@@ -914,11 +914,7 @@ Each entry names the edition actually used and the exact loci this study read. W
 
 Adrian Fortescue, **The Mass: A Study of the Roman Liturgy** (London and New York: Longmans, Green and Co., 1922). Read at the page images of printed pp. 172 (Gregory the Great and the Canon; Benedict XIV’s dictum), 227 (the prayers at the foot of the altar; the medieval uses; the papal chapel and *sancta sanctorum*), 232 and 234 (the *Kyrie* and Gregory’s letter to John of Syracuse), 288 (the Creed at Rome in 1014, with the dissenting authorities), 305 (the offertory prayers, the mixed chalice, and *immaculatam hostiam* as “an anticipation of the consecration”), 387 (the *Agnus Dei* and Sergius I) and 394 (the last Gospel before and after 1570). Fortescue died in 1923 and this printing carries no revision by a later hand; his own footnotes preserve the disagreements among the authorities he cites, and those disagreements are reported here rather than resolved. His datings rest on manuscript arguments this study has not examined and are attributed to him throughout.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-27T15:22:42Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

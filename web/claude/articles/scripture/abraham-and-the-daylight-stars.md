@@ -893,11 +893,7 @@ Editions are identified as they were used. Where a work was read in a digital tr
 
 Several of the Jewish sources above were read through Sefaria’s digital library, which supplies both the Hebrew or Aramaic base text and, where one exists, a facing translation. Sefaria is a delivery route, not an edition: in every case the edition it serves is named in the list above and in the witness register, and the rights status recorded is that of the named edition and translation, not of the platform. Where the platform’s own base text has no named printed exemplar, that is stated as a limitation in the preceding appendix rather than concealed behind the platform’s name.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T03:46:52Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

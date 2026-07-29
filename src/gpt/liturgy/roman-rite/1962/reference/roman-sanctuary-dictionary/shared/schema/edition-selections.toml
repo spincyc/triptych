@@ -34,7 +34,7 @@ historical_order = [
 historical_secondary_order = "category"
 include_relevance = []
 exclude_statuses = ["unresolved"]
-explicit_exclusions = ["obj-sacristy-lavatory"]
+explicit_exclusions = ["obj-sacristy-lavatory", "obj-bugia", "obj-crosier", "obj-episcopal-throne", "obj-faldstool", "obj-gremial", "obj-mitre", "obj-mitre-minister-veil", "obj-pectoral-cross", "obj-pontifical-buskin", "obj-pontifical-dalmatic", "obj-pontifical-gloves", "obj-pontifical-ring", "obj-pontifical-sandal", "obj-pontifical-tunicle", "obj-vimpa"]
 section_order = [
   "church-and-sanctuary",
   "altar-and-appointments",
@@ -67,7 +67,7 @@ include_relevance = ["required", "useful"]
 relevance_field = "audience_relevance.altar_server"
 presence_rule = "include every object documented as possibly present around a server, even when server_relation is recognizes-only or must-not-handle"
 exclude_statuses = ["unresolved"]
-explicit_exclusions = ["obj-sacristy-lavatory"]
+explicit_exclusions = ["obj-sacristy-lavatory", "obj-bugia", "obj-crosier", "obj-episcopal-throne", "obj-faldstool", "obj-gremial", "obj-mitre", "obj-mitre-minister-veil", "obj-pectoral-cross", "obj-pontifical-buskin", "obj-pontifical-dalmatic", "obj-pontifical-gloves", "obj-pontifical-ring", "obj-pontifical-sandal", "obj-pontifical-tunicle", "obj-vimpa"]
 section_order = [
   "recognition-and-handling-key",
   "sanctuary-orientation",
@@ -93,7 +93,7 @@ include_workflow_states = ["publication-ready"]
 include_relevance = ["required", "useful"]
 relevance_field = "audience_relevance.sacristan"
 exclude_statuses = ["unresolved"]
-explicit_exclusions = ["obj-sacristy-lavatory"]
+explicit_exclusions = ["obj-sacristy-lavatory", "obj-bugia", "obj-crosier", "obj-episcopal-throne", "obj-faldstool", "obj-gremial", "obj-mitre", "obj-mitre-minister-veil", "obj-pectoral-cross", "obj-pontifical-buskin", "obj-pontifical-dalmatic", "obj-pontifical-gloves", "obj-pontifical-ring", "obj-pontifical-sandal", "obj-pontifical-tunicle", "obj-vimpa"]
 section_order = [
   "status-and-handling-key",
   "sanctuary-and-altar-preparation",
@@ -119,7 +119,7 @@ include_workflow_states = ["publication-ready"]
 include_relevance = ["required", "useful"]
 relevance_field = "audience_relevance.mc_trainer"
 exclude_statuses = ["unresolved"]
-explicit_exclusions = ["obj-sacristy-lavatory"]
+explicit_exclusions = ["obj-sacristy-lavatory", "obj-bugia", "obj-crosier", "obj-episcopal-throne", "obj-faldstool", "obj-gremial", "obj-mitre", "obj-mitre-minister-veil", "obj-pectoral-cross", "obj-pontifical-buskin", "obj-pontifical-dalmatic", "obj-pontifical-gloves", "obj-pontifical-ring", "obj-pontifical-sandal", "obj-pontifical-tunicle", "obj-vimpa"]
 section_order = [
   "relational-symbol-key",
   "people-roles-and-stations",
@@ -145,7 +145,7 @@ include_workflow_states = ["publication-ready"]
 include_relevance = ["required"]
 relevance_field = "audience_relevance.general_reader"
 exclude_statuses = ["unresolved"]
-explicit_exclusions = ["obj-sacristy-lavatory"]
+explicit_exclusions = ["obj-sacristy-lavatory", "obj-bugia", "obj-crosier", "obj-episcopal-throne", "obj-faldstool", "obj-gremial", "obj-mitre", "obj-mitre-minister-veil", "obj-pectoral-cross", "obj-pontifical-buskin", "obj-pontifical-dalmatic", "obj-pontifical-gloves", "obj-pontifical-ring", "obj-pontifical-sandal", "obj-pontifical-tunicle", "obj-vimpa"]
 section_order = [
   "visual-and-status-key",
   "sanctuary",

@@ -1163,10 +1163,6 @@ The general online corpus was checked 19 July 2026; pastoral-succession sources 
 
 HABS cites a *Diamond Jubilee Memorial Volume of St. Stanislaus Church* (1941), and the Notre Dame catalog identifies the parish’s 31-page 1866–1966 centennial history. Neither full text was available for claim checking. Founding minutes, sacramental registers, deeds, construction contracts, city permit files, School Sisters of Notre Dame records, the oratory-erection decree, and an audited restoration ledger remain priority archival targets. The Newberry Foreign Language Press Survey item about “The St. Stanislaus Kostka School” was examined and excluded because it concerns Chicago, not Milwaukee.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-21T21:18:49Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

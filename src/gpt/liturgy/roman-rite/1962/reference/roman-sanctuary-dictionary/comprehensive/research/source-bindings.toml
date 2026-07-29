@@ -1,0 +1,84 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-altar-preparation"
+loci = ["Rubricae generales Missalis romani 526-527, printed p. XXXVI, artifact PDF p. 34"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls three altar cloths and, for Mass, a sufficiently large altar crucifix placed centrally, candlesticks and lighted candles in a number varying with the class of Mass, and three altar cards. It does not establish a six-candle norm, gradines, steps, materials, dimensions, ornament, or a complete architectural composition."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:58a6bc62a59abed4dad368061b09bc5a0d7096cf335f14e0289108a564c64bb2"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-altar-tabernacle-and-images"
+loci = ["Ritus servandus in celebratione Missae II.2 and IV.5, printed pp. LIV and LVI, artifact PDF pp. 57 and 58"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the liturgical relationship of an altar bearing the reserved Blessed Sacrament and the conditional presence of relics or images of saints. It does not establish reservation-law topology, tabernacle morphology, reliquary morphology, or mandatory ornament."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:d1635b19b73afe74b9e8e048c56a405f642b256126ed0a8ad5bf78bab439e28b"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1268"
+loci = ["canon-1268"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the one-reservation-altar rule, the preeminent-place and ordinary-high-altar topology, the cathedral/collegiate/conventual choral-function exception favoring another chapel or altar, and the relative ornament of the reservation altar. It does not establish architecture or morphology."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:3471437badd18c16d144cef5ede0646c3466ba3b432da276b909f9b974bb0b06"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1269"
+loci = ["canon-1269"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls an immovable tabernacle in the middle part of the altar and broad construction, closure, ornament, emptiness, and security qualities. It does not establish silhouette, dimensions, material, style, or decorative program."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:1342ee1b0a81fa335a8b386898fbabc1af3dd7842101eabebe956aaa15d3fa74"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1271"
+loci = ["canon-1271"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls at least one lamp burning continuously day and night before the tabernacle. It does not establish suspension, vessel count above the minimum, morphology, dimensions, ornament, or a more exact coordinate."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:232aa2004785e9797c553d564fccf903a32b2928c948e9bbc8f40a790299d7e1"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.crucifix-469881.met-collection-record-2025-12-20.met-api-json-8f49e27d"
+loci = ["object 469881; accession 1984.129; cross, corpus, and base dimensions"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Identifies one standing crucifix and separately dimensions its cross, corpus, and base. It proves one coherent material-culture exemplar only; its date, material, ornament, proportions, and dimensions are not generalized."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:cc43edb936c5224e2ed367b9d85c7f7fee61e4f47a8b555889f385c4a700b568"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.pair-of-altar-candlesticks-200660.met-collection-record-2025-01-31.met-api-json-c339c903"
+loci = ["object 200660; accession 50.145.57, .58; paired identity and separate dimensions"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Identifies one paired set as altar candlesticks and separately dimensions its members. It establishes a dated paired exemplar, not a universal altar count, arrangement, material, silhouette, ornament, or scale."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:be95dda7b26470560d97afa5c471c3a25a050da00cc5c16e6aa1246fa4e8d85a"
+
+[[bindings]]
+source_id = "artifact.metropolitan-museum-of-art.tabernacle-467756.met-collection-record-2026-05-19.met-api-json-e5582e0d"
+loci = ["object 467756; accession 41.100.184; identity, date, and overall dimensions"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Identifies one early-thirteenth-century tabernacle exemplar. Its portable reliquary-like morphology is historical variation evidence only and cannot control the fixed-tabernacle topology required by 1917 reservation law or any 1962 teaching image."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:61f75149ce35537333c679538fbbf0f0baa011477c4e49947d088282350c5d8a"
+
+[[bindings]]
+source_id = "artifact.rijksmuseum.ecce-homo-chapel-altar-rp-f-1997-29-26.rijksmuseum-collection-record-2026-07-28.rijksmuseum-image-raw"
+loci = ["Rijksmuseum object RP-F-1997-29-26; complete retained image"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls one nineteenth-century Jerusalem pilgrimage-chapel composition and the source relationship of its graphite derivative. Its devotional niche, numerous lights, suspended lamp structure, stone architecture, and partly obscured altar are atypical. It does not establish a standard 1962 high altar, required object count, reservation arrangement, architectural norm, universal proportions, or ordinary sanctuary plan."
+verified_on = "2026-07-28"
+source_fingerprint = "sha256:a3055a626aa4c31b7c062000125a90660aea4ea8f141fb495f34816485c58632"

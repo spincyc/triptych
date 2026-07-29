@@ -1,4 +1,5 @@
 schema_version = 1
+artwork = []
 id = "obj-prie-dieu"
 workflow_state = "identified"
 preferred_english_name = "Prie-dieu"
@@ -42,11 +43,3 @@ locus = "Caeremoniale Episcoporum (1948), lib. I, cap. II; inspected OCR lines 6
 role = "ceremonial-book"
 verification_state = "inspected"
 checked_on = 2026-07-27
-
-[[artwork]]
-id = "art-prie-dieu-comparison"
-view = "comparison"
-asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
-review_state = "identity-checked"
-depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
-scale_mode = "not-to-common-scale"

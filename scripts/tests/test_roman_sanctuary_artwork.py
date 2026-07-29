@@ -6,6 +6,7 @@ import importlib.machinery
 import importlib.util
 import subprocess
 import tempfile
+import tomllib
 import unittest
 from pathlib import Path
 
@@ -186,6 +187,104 @@ id = "art-chalice-front"
                         mode, "transparent"
                     )
                 )
+
+    def test_canonical_asset_path_normalizes_repository_prefixed_links(self) -> None:
+        relative = "shared/artwork/pencil/example.png"
+        self.assertEqual(
+            ARTWORK_CHECKER.canonical_asset_path(
+                "src/gpt/liturgy/roman-rite/1962/reference/"
+                "roman-sanctuary-dictionary/" + relative
+            ),
+            relative,
+        )
+
+    def test_rijks_composition_is_bounded_to_the_comprehensive_edition(self) -> None:
+        root = (
+            REPO
+            / "src/gpt/liturgy/roman-rite/1962/reference/"
+            "roman-sanctuary-dictionary"
+        )
+        with (root / "research/artwork-manifest.toml").open("rb") as handle:
+            manifest = tomllib.load(handle)
+        artwork = next(
+            item for item in manifest["artworks"]
+            if item["id"] == "art-sanctuary-ecce-homo-rijks-graphite"
+        )
+        self.assertEqual(artwork["consumer_edition_ids"], ["ed-comprehensive"])
+        self.assertEqual(
+            artwork["consumer_plate_ids"],
+            ["plt-sanctuary-ecce-homo-rijks-witness"],
+        )
+        self.assertIn("atypical", artwork["purpose"])
+        self.assertIn(
+            "src-rijks-ecce-homo-chapel-photo",
+            artwork["reference_ids"],
+        )
+
+        asset = next(
+            item for item in manifest["asset_files"]
+            if item["id"] == "file-rpd-sanctuary-ecce-homo-rijks-graphite"
+        )
+        self.assertEqual(asset["boundary_treatment"], "page-ground")
+        self.assertEqual(asset["state"], "canonical-alpha-eligible")
+
+    def test_asset_local_staging_requires_exact_adjacent_hash(self) -> None:
+        temporary, root = self.owner()
+        self.addCleanup(temporary.cleanup)
+        asset = root / "shared/artwork/candidate.png"
+        asset.parent.mkdir(parents=True)
+        asset.write_bytes(b"candidate")
+        digest = __import__("hashlib").sha256(b"candidate").hexdigest()
+        asset.with_suffix(".toml").write_text(
+            'artwork_id = "art-candidate"\n'
+            'review_state = "rejected"\n'
+            f'sha256 = "{digest}"\n',
+            encoding="utf-8",
+        )
+        problems = ARTWORK_CHECKER.Problems()
+        self.assertTrue(ARTWORK_CHECKER.asset_local_staging_path(asset, problems))
+        self.assertEqual(problems.items, [])
+
+    def test_accepted_pontifical_assets_are_canonical_and_rejected_buskin_is_not(self) -> None:
+        root = (
+            REPO
+            / "src/gpt/liturgy/roman-rite/1962/reference/"
+            "roman-sanctuary-dictionary"
+        )
+        with (root / "research/artwork-manifest.toml").open("rb") as handle:
+            manifest = tomllib.load(handle)
+        files = {item["id"]: item for item in manifest["asset_files"]}
+        required = {
+            "file-pont-crosier-canonical",
+            "file-pont-gremial-isolated-canonical",
+            "file-pont-gremial-handling-canonical",
+            "file-pont-mitre-forms-canonical",
+            "file-pont-mitre-veil-v2-canonical",
+            "file-pont-pectoral-cross-canonical",
+            "file-pont-bugia-canonical",
+            "file-pont-throne-canonical",
+            "file-pont-faldstool-canonical",
+            "file-pont-vimpa-pair-canonical",
+            "file-pont-vimpa-mitre-canonical",
+            "file-pont-vimpa-crosier-canonical",
+            "file-pont-gloves-canonical",
+            "file-pont-ring-canonical",
+            "file-pont-ring-glove-canonical",
+            "file-pont-sandal-canonical",
+            "file-pont-footwear-layered-canonical",
+            "file-pont-layering-cutaway-canonical",
+        }
+        self.assertTrue(required <= files.keys())
+        for file_id in required:
+            with self.subTest(file_id=file_id):
+                self.assertEqual(files[file_id]["state"], "canonical-alpha-eligible")
+                self.assertEqual(files[file_id]["boundary_treatment"], "transparent")
+        canonical_paths = {item["path"] for item in files.values()}
+        self.assertNotIn(
+            "shared/artwork/pencil/pontifical-vesture/"
+            "RPD-FIG-pontifical-vesture-0001-buskin-alpha.png",
+            canonical_paths,
+        )
 
 
 if __name__ == "__main__":

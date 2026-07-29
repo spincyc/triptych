@@ -263,11 +263,7 @@ All web sources were accessed and checked on 2026-07-24; the quoted witnesses we
 
 -   Survey and finding-aid articles consulted for bounded facts with their limits recorded in the source audit: the Roman Psalter attribution debate (De Bruyne 1930; Goins 2014; Norris 2017, as surveyed at en.wikipedia.org, “Latin Psalters”); the Sixtine–Clementine difference counts (James 1600; Vercellone; Metzger; Aland, as surveyed at en.wikipedia.org, “Sixto-Clementine Vulgate”); the Benedictine edition’s volume record (public catalog listings). Finding aids only; no such page is treated as a checked witness to wording.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T04:15:59Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

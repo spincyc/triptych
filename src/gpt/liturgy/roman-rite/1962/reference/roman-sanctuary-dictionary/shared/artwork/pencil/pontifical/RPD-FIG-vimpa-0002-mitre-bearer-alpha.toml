@@ -1,0 +1,57 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-vimpa-mitre-bearer"
+object_ids = ["obj-vimpa", "obj-mitre"]
+file = "RPD-FIG-vimpa-0002-mitre-bearer-alpha.png"
+purpose = "Teach the governing Ceremonial's expressly provided neck-hung silk cloth in the mitre minister's handling context."
+depicted_state = "One mitre minister wears one continuous plain broad cloth from the neck and supports one plain mitre through its ends so that his bare hands do not touch it."
+period_status = "express official provision of Caeremoniale Episcoporum I.XI.6 at the 1962 horizon; the governing locus calls the textile velum or mappa sericea oblonga, not vimpa"
+source_controlled_features = [
+  "one mitre minister",
+  "one neck-hung oblong silk cloth",
+  "one mitre",
+  "cloth between both hands and the mitre",
+  "no bare-hand contact with the mitre",
+]
+generic_context_features = ["plain cassock", "plain cotta or surplice"]
+deliberately_omitted_details = [
+  "dimensions",
+  "ornament",
+  "pockets",
+  "fringe",
+  "embroidery",
+  "decorative trim",
+  "color",
+  "cope branch",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1024x2048 sRGB PNG"
+normalized_pixels = "864x1821 8-bit RGBA PNG with true alpha channel"
+normalization = "Flat green background converted and transparent margins cropped locally with the imagegen skill's remove_chroma_key.py helper using border auto-key, soft matte, thresholds 12/220, and despill."
+sha256 = "b13ca8450241fff26c4183066565f842dbb77a68e6b906fdf38013082cb8861e"
+baked_in_content_audit = "Exactly one minister, one plain neck-hung textile, and one plain mitre; both handling hands are covered. No cope, bishop, second minister, tray, cushion, dimensions, ornament, pocket, fringe, lettering, label, arrow, border, watermark, or rectangular background is baked into the asset."
+tex_owned_additions = ["English and Latin headwords", "official terminology qualification", "source note", "callouts"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "function-checked editorial candidate ready for independent review"
+
+prompt = """
+Use case: historical-scene
+Asset type: source-bounded graphite in-use inset for a Roman sanctuary pictorial dictionary
+Primary request: Draw one adult clerical mitre minister using a plain neck-hung oblong silk veil to support one mitre without touching it with bare hands.
+Subject: one minister in plain black cassock and white cotta or surplice; one continuous plain broad textile hangs from his neck and its ends completely cover both hands as he supports one plain mitre at chest height.
+Style: restrained monochrome graphite pencil educational illustration.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal.
+Constraints: official-source-bounded depiction; no asserted dimensions, ornament, pockets, embroidery, fringe, trim, colors, cope, bishop, second minister, tray, cushion, or other insignia.
+Avoid: lettering, labels, arrows, numbers, borders, semantic marks, extra objects, shadows, reflections, and watermark.
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-11.sections-5-6"
+locus = "book I, chapter XI, section 6"
+supported_feature = "The governing Ceremonial expressly directs the mitre minister to wear a neck-hung oblong silk veil or cloth and use it to support the mitre without bare-hand contact, unless he wears a cope."
+
+[[source_basis]]
+source_id = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-10"
+locus = "printed p. 10"
+supported_feature = "Fortescue supplies the familiar English headword vimpa and broad-stole-like practical morphology."

@@ -59,10 +59,10 @@
 \newcommand{\rubric}[1]{\textbf{#1}}
 
 % Generation provenance and the document revision timestamp are stored in each
-% document leaf and rendered through these shared commands.  The first model
-% contribution renders the timestamp in a compact provenance block.  Complete
-% contribution and runtime history remains in the tracked metadata file rather
-% than being reproduced as a reader-facing process ledger.  A mechanically
+% document leaf and processed through these shared commands.  The first model
+% contribution renders only the timestamp.  Model identity, configuration,
+% contribution, and runtime history remain in the tracked metadata file rather
+% than being reproduced in the reader-facing publication.  A mechanically
 % derived companion has no local contribution, so its timestamp is rendered
 % once by the universal final-page colophon instead.
 \newif\ifAIDocumentRevisionRendered
@@ -85,30 +85,8 @@
     \global\AIDocumentRevisionRenderedtrue
   \fi}
 \makeatletter
-\let\AI@lastmodel\relax
-\let\AI@lastqualifiers\relax
-\newif\ifAI@rendermodel
 \newcommand{\AIModelContribution}[3]{%
-  \begingroup
-  \edef\AI@currentmodel{\detokenize{#1}}%
-  \edef\AI@currentqualifiers{\detokenize{#2}}%
-  \AI@rendermodeltrue
-  \ifx\AI@currentmodel\AI@lastmodel
-    \ifx\AI@currentqualifiers\AI@lastqualifiers
-      \AI@rendermodelfalse
-    \fi
-  \fi
-  \global\let\AI@lastmodel\AI@currentmodel
-  \global\let\AI@lastqualifiers\AI@currentqualifiers
-  \par\noindent
-  \begin{minipage}{\linewidth}
-  \exhyphenpenalty=10000
-  \AIDisplayDocumentRevisionTimestamp
-  \ifAI@rendermodel
-    \textbf{Model:} \texttt{#1}; \texttt{#2}\par
-  \fi
-  \end{minipage}\par
-  \endgroup}
+  \AIDisplayDocumentRevisionTimestamp}
 \makeatother
 \newcommand{\AIInheritedGenerationMetadata}[1]{}
 

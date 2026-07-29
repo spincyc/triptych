@@ -19,7 +19,7 @@ was checked against the displayed page image.
 | 34 | General Rubrics 518--524 | Sung-Mass genuflections, ferial kneeling, the Et incarnatus branches, and permitted seating during Kyrie, Gloria, sequence, and Creed | Corrects the posture and seating cues in both sung guides |
 | 58 | Ritus servandus IV, including IV.8 | Missa Cantata execution and its incense provision | Controls the one-celebrant sung route |
 | 60--61 | Ritus servandus VI.5--8 and VII.7--11 | Solemn and Missa-Cantata Gospel differences; Offertory response and incense; Sanctus bell; Solemn credence and paten sequence | Fixes sung-reading replies, complete incense handoffs, and the prescribed Sanctus signal |
-| 60 | Ritus servandus VII.2 | At Low Mass the celebrant uncovers the chalice and shifts it to the Epistle side; the text assigns no lay server and does not fix the loose veil's resting place | The selected model keeps the veil under the priest's control at an altar place rehearsed with him, rather than silently importing a manual's server-carried veil leg |
+| 60 | Ritus servandus VII.2 | At Low Mass the celebrant uncovers the chalice and shifts it to the Epistle side; the text assigns no named First/Second allocation for the folded veil | The selected O’Connell-derived MODEL gives the folded veil to First for the later Epistle-to-Gospel move while leaving the chalice itself entirely to the priest |
 | 60 | Ritus servandus VII.4 | For Low Mass the minister kisses the wine cruet before presenting it and does not kiss the celebrant's hand | Controls the wine-cruet kiss and the explicit prohibition on transferring the kiss to the priest's hand; it does not by itself establish every practical hand position or a return kiss |
 | 62--63 | Ritus servandus VIII.6--8 and IX.4 | Warning and elevation bell options; at least two torches and their ordinary, communicant, and fast-day timing; unblessed elevation incense; post-elevation posture | Selects one warning plus three distinct elevation strokes, four-torch routes, and the independent thurifer return |
 | 64 | Ritus servandus X.5 | The celebrant receives the two ablutions, dries and reassembles the chalice with his paten, pall, corporal, burse, and veil, and places it at the altar's center | Keeps the priest's paten, chalice, and veil outside the lay-server Communion-plate route |
@@ -69,10 +69,10 @@ also checked directly. It places First on the Epistle side, gives First the
 Epistle-to-Gospel Missal move and the Communion plate, has First return the
 cruets and cleared plate after the ablutions, and then gives the
 Gospel-to-Epistle Missal move to Second. It additionally has First transfer
-the chalice veil. The selected model uses O’Connell's asymmetric Missal and
-continuous plate allocation, but it does not import that veil leg or his
-older second Communion *Confiteor*. The Missal's X.5 treatment of the
-celebrant's chalice and X.6 omission of that *Confiteor* control.
+the chalice veil. The selected model uses that coherent allocation, including
+First-only post-Communion cruets and the folded-veil leg, but rejects his older
+second Communion *Confiteor*. The Missal's X.5 treatment of the celebrant's
+chalice and X.6 omission of that *Confiteor* control.
 
 The 2022 Archconfraternity of Saint Stephen handbook supplied a current,
 organization-specific comparison of handoffs and role division. These
@@ -88,8 +88,9 @@ was read directly for its sides, paired traffic, object division, Missal
 transfers, bells, elevations, Communion plate, ablutions, and ending. Its
 pp. 10--11 corroborate First's removal of the cleared plate and Second's
 post-ablution Missal move, but its route first transfers the plate between
-servers and later adds a First-carried chalice veil. Neither feature is
-selected.
+servers and later adds a First-carried chalice veil. The cross-role plate
+transfer is rejected; the First-carried folded-veil leg is independently
+supported by O’Connell and selected as a labeled `MODEL`.
 
 Charles J. Carmody's 1961 *Learning to Serve* supplied a period comparison.
 Selected page images were checked at printed pp. 70--72 (the practical
@@ -111,15 +112,20 @@ No manual controls the model. The identified 1962 Missal controls the text,
 sequence, omissions, and every action it actually prescribes. The manuals
 document workable allocations where the Missal does not assign every task to
 a named first or second acolyte. The publication's division is a documented
-synthesis: First begins at the priest's right and has wine, towel, bell,
-optional biretta, the Epistle-to-Gospel Missal move, and the Communion plate
-through its return after purification; Second begins at the priest's left and
-has water, bowl, and the Gospel-to-Epistle Missal move. The paired wine/water
-ablution service follows the checked ACSS comparison rather than O’Connell's
-First-only cruet service. Neither server moves the chalice veil or chalice:
-at the Offertory the priest keeps the loose veil at a locally rehearsed altar
-resting place, then recovers it as he reassembles, covers, centers, and
-ultimately carries the chalice. Both servers speak the ordinary responses.
+synthesis: First begins at the priest's right and has Offertory wine, towel,
+bell, optional biretta, the Epistle-to-Gospel Missal move, Communion plate,
+both post-Communion cruets, and the folded chalice-veil move; Second begins at
+the priest's left and has Offertory and Lavabo water, bowl, and the
+Gospel-to-Epistle Missal move. The priest alone handles, reassembles, covers,
+centers, and ultimately carries the chalice. Both servers speak the ordinary
+responses.
+
+The revised declared model follows O’Connell's coherent two-server allocation
+for the Gospel return timing, First-only post-Communion cruets, First's folded
+chalice-veil move from Epistle to Gospel, and Second's simultaneous Missal-and-
+stand move from Gospel to Epistle. The Missal itself does not name these
+First/Second allocations; they remain `MODEL`, while exact lateral spacing,
+lanes, handoff points, and center reverence remain `LOCAL`.
 
 The model sanctuary has a floor, first step, second step, and predella so a
 child can see the changing level. That diagram is an original teaching model,
@@ -152,7 +158,7 @@ stopping line, and stationary geometry remain local rehearsal decisions.
 | Communion plate handed from First to Second without a printed transfer, or returned before the priest clears it | Ritus servandus X.7 distinguishes the plate held under communicants' chins and has the celebrant clear its fragments; O’Connell pp. 173--174 gives that plate to First through its post-ablution return; Carmody p. 87 and pp. 91--93 place removal after the second wine and water | First owns the Communion plate continuously in the selected model, leaves it at the altar for the priest, and returns it only after clearance. “Communion plate” distinguishes this object from the priest's paten |
 | A model diagram treated as proof of a universal number of altar steps | The ordinary rubrics do not determine every sanctuary's construction or route | The floor, first step, second step, and predella are a declared teaching model. Trainer notes require mapping the levels and centre reverence to the actual church |
 | Every Missal move assigned to the same server, or Missal-and-veil traffic left as generic “change the book” | The Missal establishes the Epistle-to-Gospel-to-Epistle sequence but names no First or Second; O’Connell p. 172 assigns the Gospel move to First and p. 174 the post-ablution return to Second; Fortescue 1917, p. 69 instead assigns the latter move to First | The selected MODEL deliberately splits the book service: First moves it for the Gospel and Second returns it after the ablutions and plate clearance. The Fortescue disagreement remains recorded rather than harmonized |
-| A lay server assigned the priest's paten, chalice, or chalice-veil transfer after the ablutions | Ritus servandus X.5 has the celebrant reassemble, veil, burse, and center the chalice; XII.6 has him carry it out. O’Connell p. 174 and ACSS p. 11 add a First-carried veil, while Fortescue 1917, p. 69 treats a Second-carried veil as optional | The selected model includes no server veil or chalice transfer. The priest's paten and chalice remain distinct from the Communion plate; omission of the manual veil legs is a declared MODEL choice, not a claim that no contrary custom exists |
+| A lay server assigned the priest's paten or chalice because he carries the folded chalice veil | Ritus servandus X.5 has the celebrant reassemble, veil, burse, and center the chalice; XII.6 has him carry it out. O’Connell p. 174 assigns First the folded veil while Fortescue 1917, p. 69 records a contrary allocation | The selected model assigns First only the folded ornamental veil E→G. The priest alone handles the paten, chalice, reassembly, covering, centering, and exit; the manual role allocation is labeled `MODEL` |
 | All sung-form Collects and Postcommunions treated as standing occasions | General Rubric 521 prescribes kneeling at the named ferial Masses and also governs the Prayer-over-the-People posture | Both sung routes name the ferial Collect and Postcommunion branches; the applicable Ash-Wednesday-through-Holy-Wednesday route remains kneeling for *Humiliate capita vestra Deo* and the Prayer over the People |
 | The Lavabo delayed until every Offertory incensation was complete, or left without a cue when incense is omitted | Ritus servandus VII.6 gives the ordinary post-offering washing; VII.10 places it after the celebrant has been incensed while remaining incensation continues | Missa Cantata gives both explicit cues; both incense routes give A1 and A2 an inner Lavabo lane concurrent with the remaining outer incense route, a return cue before their own incensation, and an explicit collision-recovery hold |
 | Candle acolytes' Gospel exception presented without the positive action for everyone else | General Rubrics 519 and 521(d) require the celebrant and applicable ministers or choir to make genuflections marked in sung text, while Gospel candle acolytes remain standing | Both sung guides positively cue free-handed servers toward the altar and state the Gospel candle exception; a general checkpoint covers other properly marked sung words |

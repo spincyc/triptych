@@ -240,7 +240,7 @@ def local_definitions(preamble: str) -> str:
 
 
 def deduplicate_contributions(body: str) -> str:
-    """Apply the preamble's rule that a repeated model+qualifier prints no Model line."""
+    """Keep contribution declarations inert in the reader-facing web edition."""
     out, index, previous = [], 0, None
     for match in CONTRIBUTION_RE.finditer(body):
         if match.start() < index:
@@ -429,8 +429,10 @@ def audit_output(body: str, markdown: str, tables: int = 0) -> list[str]:
         failures.append("rights colophon missing from output")
     if "Last revised (UTC):" not in markdown:
         failures.append("revision timestamp missing from output")
-    if r"\AIModelContribution" in body and "Model:" not in markdown:
-        failures.append("model contribution missing from output")
+    if re.search(r"\bModel\s*:", markdown, re.IGNORECASE):
+        failures.append("reader-visible model metadata remains in output")
+    if re.search(r"\beffort\s*=", markdown, re.IGNORECASE):
+        failures.append("reader-visible model effort remains in output")
     return failures
 
 

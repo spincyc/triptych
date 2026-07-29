@@ -89,27 +89,38 @@ depicts = ["obj-chalice"]
 scale_mode = "not-to-common-scale"
 review_note = "The isolated drawing follows one checked Met catalog exemplar and intentionally omits the paten; neither its morphology nor its ornament is universalized."
 
+[[artwork]]
+id = "art-prepared-chalice-formation"
+view = "composition"
+asset = "shared/artwork/pencil/compositions/RPD-FIG-prepared-chalice-0001-formation-alpha.png"
+review_state = "liturgically-checked"
+depicts = ["obj-chalice", "obj-purificator", "obj-paten", "obj-chalice-pall", "obj-chalice-veil", "obj-burse", "obj-corporal"]
+context_object_ids = ["obj-purificator", "obj-paten", "obj-chalice-pall", "obj-chalice-veil", "obj-burse", "obj-corporal"]
+scale_mode = "not-to-common-scale"
+render_owner = "obj-chalice"
+review_note = "The complete and cutaway views teach only the checked prepared relationship. The separately folded corporal is carried with the formation but is not one of its stacked layers; ornament and proportions are representative."
+
 [[audience_note]]
 audience = "altar-server"
-text = "Recognize this as the priest's sacred vessel; do not confuse it with the Communion plate."
+text = "Recognize the isolated vessel and the prepared formation; the separately folded corporal is carried with it but is not a stacked layer."
 claim_ids = ["clm-chalice-identity-use"]
 
 [[audience_note]]
 audience = "sacristan"
-text = "Recognize the paired sacred vessels and their prepared relationship; the pictured exemplar supplies no universal preparation or handling method."
+text = "Compare the isolated vessel with the prepared formation; the cutaway shows the checked order, not universal ornament, proportions, or a local handling method."
 claim_ids = ["clm-chalice-identity-use", "clm-chalice-met-exemplar"]
 
 [[audience_note]]
 audience = "mc-trainer"
-text = "Use the plate for identity and relationship teaching, not as a morphology or transfer prescription."
+text = "Teach the prepared order from the cutaway and keep the folded corporal beside, not inside, the stack; this is not a transfer prescription."
 claim_ids = ["clm-chalice-identity-use", "clm-chalice-met-exemplar"]
 
 [[audience_note]]
 audience = "general-reader"
-text = "The drawing shows one cataloged chalice-and-paten set and one Missal-controlled prepared relationship, not a universal Roman design."
+text = "The isolated exemplar and prepared cutaway distinguish the vessel from its assembled formation; the design and ornament are not universal."
 claim_ids = ["clm-chalice-identity-use", "clm-chalice-met-exemplar"]
 
 [[audience_note]]
 audience = "pontifical"
-text = "This ordinary sacred vessel remains supporting equipment in pontifical Mass; the plate establishes no distinct pontifical form."
+text = "This ordinary sacred vessel remains supporting equipment in pontifical Mass; the prepared cutaway establishes no distinct pontifical form."
 claim_ids = ["clm-chalice-identity-use"]

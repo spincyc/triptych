@@ -199,11 +199,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 -   United Grand Lodge of England, “Freemasonry FAQs,” [ugle.org.uk](https://www.ugle.org.uk/discover-freemasonry/frequently-asked-questions), web state fetched, hashed, and read 2026-07-25 (new source-library record). Mutable institutional self-description at the retrieved date.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T07:03:39Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

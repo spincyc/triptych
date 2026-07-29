@@ -1,4 +1,5 @@
 schema_version = 1
+artwork = []
 id = "obj-hist-eucharistic-dove"
 workflow_state = "identified"
 preferred_english_name = "Eucharistic dove"
@@ -52,12 +53,3 @@ locus = "Checked source 2: Joseph Braun, “Dove,” Catholic Encyclopedia 5 (19
 role = "specialist-secondary"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
-
-[[artwork]]
-id = "art-rsd-hist-001"
-view = "comparison"
-asset = "shared/artwork/pencil/RSD-HIST-001-early-medieval-objects.png"
-review_state = "identity-checked"
-depicts = ["obj-hist-flabellum", "obj-hist-eucharistic-dove", "obj-hist-eucharistic-tower"]
-scale_mode = "not-to-common-scale"
-review_note = "Internally checked after removal of an incompatible pedestal; competent ceremonial and print review remain pending."

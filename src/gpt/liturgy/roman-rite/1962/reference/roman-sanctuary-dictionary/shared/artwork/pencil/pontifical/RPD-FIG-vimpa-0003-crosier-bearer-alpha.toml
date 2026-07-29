@@ -1,0 +1,61 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-vimpa-crosier-bearer"
+object_ids = ["obj-vimpa", "obj-crosier"]
+file = "RPD-FIG-vimpa-0003-crosier-bearer-alpha.png"
+purpose = "Teach Fortescue's customary crosier-bearer use separately from the official mitre-minister provision."
+depicted_state = "One crosier-bearer wears one continuous plain broad scarf from the neck and holds one uncovered upright pastoral staff through the cloth."
+period_status = "customary use attested by Fortescue at the 1962 horizon; not presented as the governing Ceremonial's express vimpa provision for the crosier-bearer"
+source_controlled_features = [
+  "one crosier-bearer",
+  "one neck-hung plain broad scarf",
+  "one uncovered pastoral staff",
+  "staff held through the scarf",
+]
+generic_context_features = ["plain cassock", "plain cotta or surplice"]
+deliberately_omitted_details = [
+  "dimensions",
+  "ornament",
+  "pockets",
+  "fringe",
+  "embroidery",
+  "decorative trim",
+  "color",
+  "cope branch",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1024x2048 sRGB PNG"
+normalized_pixels = "864x1821 8-bit RGBA PNG with true alpha channel"
+normalization = "Flat green background converted and transparent margins cropped locally with the imagegen skill's remove_chroma_key.py helper using border auto-key, soft matte, thresholds 12/220, and despill."
+sha256 = "85a0717e52d7207a5836991cc18950df9243788bd445ac166fdd871aff39f727"
+baked_in_content_audit = "Exactly one minister, one plain neck-hung textile, and one simple pastoral staff; the holding hand is covered by the cloth. No cope, bishop, mitre, second minister, stand, dimensions, ornament, pocket, fringe, lettering, label, arrow, border, watermark, or rectangular background is baked into the asset."
+tex_owned_additions = ["English and Latin headwords", "customary-status qualification", "source note", "callouts"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "function-checked customary-context candidate ready for independent review"
+
+prompt = """
+Use case: historical-scene
+Asset type: source-bounded graphite customary in-use inset for a Roman sanctuary pictorial dictionary
+Primary request: Draw one adult clerical crosier-bearer holding one uncovered pastoral staff through a plain neck-hung broad scarf so his hand does not directly grasp the staff.
+Subject: one minister in plain black cassock and white cotta or surplice; one continuous plain broad textile hangs from his neck, with its end visibly wrapping and covering the hand that holds one simple pastoral staff.
+Style: restrained monochrome graphite pencil educational illustration.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal.
+Constraints: depict a customary Fortescue-attested context, not an invented official prescription; no asserted dimensions, ornament, pockets, embroidery, fringe, trim, colors, cope, bishop, mitre, second minister, stand, or other insignia.
+Avoid: lettering, labels, arrows, numbers, borders, semantic marks, extra objects, shadows, reflections, and watermark.
+"""
+
+[[source_basis]]
+source_id = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-10"
+locus = "printed p. 10"
+supported_feature = "Fortescue records a vimpa for the server who holds the crosier and says the insignia are held through the cloth."
+
+[[source_basis]]
+source_id = "passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-157"
+locus = "printed p. 157"
+supported_feature = "Fortescue identifies the crosier-bearer's vimpa and direct handling relationship with the pastoral staff."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-11.sections-5-6"
+locus = "book I, chapter XI, section 5"
+supported_feature = "The official locus directs the pastoral-staff minister to hold the uncovered staff with the end of his cotta over his right hand; it does not expressly prescribe the later customary vimpa in this locus."

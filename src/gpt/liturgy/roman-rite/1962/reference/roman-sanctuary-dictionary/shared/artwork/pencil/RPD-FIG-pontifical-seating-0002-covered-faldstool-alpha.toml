@@ -1,0 +1,68 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-faldstool-covered-isolated"
+object_ids = ["obj-faldstool"]
+file = "RPD-FIG-pontifical-seating-0002-covered-faldstool-alpha.png"
+purpose = "Identify a faldstool in its checked fully covered ceremonial state without teaching an X-frame, backlessness, or one exposed construction as universal."
+depicted_state = "One compact portable rectangular seat with a plain cushion beneath one continuous covering that rests fully on the ground; the construction is completely concealed."
+period_status = "Roman 1962-horizon pontifical furnishing shown in one checked ceremonial preparation"
+source_controlled_features = [
+  "one portable episcopal seat",
+  "plain cushion beneath the covering",
+  "silk covering falling to the ground",
+  "covering associated with the vestment color",
+]
+generic_context_features = [
+  "compact rectangular seat silhouette",
+  "plain textile",
+  "slightly padded top under a continuous textile",
+]
+deliberately_omitted_details = [
+  "folding mechanism",
+  "X-frame",
+  "claim of universal backlessness",
+  "exposed joinery",
+  "textile ornament",
+  "fringe",
+  "material",
+  "dimensions",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1389x1132 sRGB PNG on flat green chroma field"
+normalized_pixels = "1389x1132 8-bit grayscale-alpha PNG"
+normalization = "The installed imagegen chroma-key helper sampled the border, produced a soft alpha matte, and despilled the subject; ImageMagick then converted the accepted result deterministically to stripped 8-bit grayscale-alpha while preserving alpha."
+sha256 = "4abae4e603908cb2b7a02fa813eeff70664b04ef454a795e2e67e77470eea9c6"
+baked_in_content_audit = "The plain covering rests continuously on the ground and completely conceals the cushion edge, feet, supports, frame, rails, and mechanism. No tufting, button, quilting, exposed X-frame, throne, step, kneeler, person, heraldry, patterned textile, lettering, numeral, label, arrow, border, watermark, floor plane, cast shadow, or rectangular background is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "covered-state qualification", "construction-variation warning", "status note", "source note", "comparison labels"]
+rights_state = "project-generated derivative study; Metropolitan Museum Open Access photograph supplied only as one non-normative material-culture reference"
+review_state = "independently-reviewed-candidate-ready-for-manifest-admission"
+
+prompt = """
+Use case: historical-scene
+Asset type: source-bounded isolated object illustration for a monochrome Roman sanctuary pictorial dictionary
+Primary request: Draw one ceremonially prepared faldstool strictly according to the covering and cushion requirements, using the attached Metropolitan Museum object only as evidence that faldstool construction varies.
+Input image: Metropolitan Museum faldstool accession 16.154.11a,b; non-normative material-culture reference only. Do not reproduce its exposed rails, legs, finials, fringe, tufting, or backless silhouette.
+Subject: one compact portable rectangular faldstool completely concealed by one plain silk covering. A plain unbuttoned cushion sits on the stool UNDER the same continuous covering, so the top is gently padded but no separate cushion edge is exposed. The covering must reach and rest fully on the ground around the entire visible perimeter, pooling very slightly at the lower corners. No foot, leg, support point, frame, rail, or mechanism may be visible anywhere.
+Style/medium: accurate monochrome graphite and pencil drawing, restrained cross-hatching, clean field-guide realism, no photorealism.
+Composition/framing: isolated three-quarter front view, full covered object visible, generous padding, centered.
+Scene/backdrop: perfectly flat solid #00ff00 chroma-key background for background removal; one uniform color with no shadows, gradients, texture, reflections, floor plane, or lighting variation.
+Constraints: cloth visibly touches ground continuously; no visible feet or supports; no tufting, buttons, quilting, fringe, seam decoration, patterned textile, exposed cushion, exposed X-frame, or implied backlessness claim; no throne; no steps; no kneeler; no person; no heraldry; no words, letters, arrows, numbers, borders, captions, semantic marks, watermark, cast shadow, contact shadow, or reflection. Do not use #00ff00 in the subject. Crisp separated edges for alpha extraction.
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1-chapter-12"
+locus = "Caeremoniale Episcoporum (1948), book I, chapter XII, paragraphs 10-11"
+supported_feature = "Faldstool with a silk covering falling to the ground and a cushion; placement and a conditional low platform belong to composition rather than this isolated view."
+
+[[source_basis]]
+source_id = "artifact.metropolitan-museum-of-art.faldstool-193332.met-collection-record-2024-03-29.met-open-access-image-b685d21e"
+locus = "Metropolitan Museum of Art accession 16.154.11a,b, Open Access object photograph"
+supported_feature = "One documented compact rectangular faldstool exemplar; its backlessness, rails, finials, fringe, materials, and construction are not generalized."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "source-boundary-and-production-review"
+outcome = "accepted"
+scope = "Corrected final asset pixels, floor-length covering, plain cushion beneath the covering, complete concealment of feet and supports, absence of tufting, non-universal morphology qualification, and alpha-boundary production."
+admission_boundary = "Acceptance advances only this asset-local precursor record; canonical shared-manifest admission and whole-publication review remain separate integration actions."

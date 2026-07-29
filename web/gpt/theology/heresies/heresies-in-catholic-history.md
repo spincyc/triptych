@@ -2331,12 +2331,6 @@ The source and corpus audit is internal. Independent specialist review in histor
 
 Specialized modern histories were used to test dates, terminology, social setting, and scholarly disagreement, but not substituted for formal acts. Major orientations include Jaroslav Pelikan, *The Christian Tradition*; R. P. C. Hanson, *The Search for the Christian Doctrine of God*; John Behr, Lewis Ayres, Aloys Grillmeier, John Meyendorff, and Pauline Allen on patristic and Christological controversies; Robert Markus and Peter Brown on late antiquity; Bernard Hamilton, Malcolm Lambert, R. I. Moore, Mark Pegg, Caterina Bruschi, and Peter Biller on medieval dissent and its historiography; Heiko Oberman, Scott Hendrix, Diarmaid MacCulloch, Carlos Eire, and the confessional primary corpora on the Reformations; and document-specific studies of Jansenism, Modernism, and twentieth-century doctrinal procedure.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-24T13:15:10Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

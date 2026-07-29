@@ -1,4 +1,5 @@
 schema_version = 1
+artwork = []
 id = "obj-sanctuary-stool"
 workflow_state = "identified"
 preferred_english_name = "Sanctuary stool"
@@ -42,11 +43,3 @@ locus = "Caeremoniale Episcoporum (1948), lib. I, cap. VII; inspected OCR lines 
 role = "ceremonial-book"
 verification_state = "inspected"
 checked_on = 2026-07-27
-
-[[artwork]]
-id = "art-sanctuary-stool-comparison"
-view = "comparison"
-asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
-review_state = "identity-checked"
-depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
-scale_mode = "not-to-common-scale"

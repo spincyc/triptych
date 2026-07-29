@@ -381,11 +381,7 @@ All online witnesses were checked on 2026-07-24 or 2026-07-25; no mutable law or
 
 -   Alex Rosenberg, *The Atheist’s Guide to Reality: Enjoying Life without Illusions* (New York: W. W. Norton, 2011), p. 6 and the opening-chapter list of “persistent questions”; in copyright, not collated; quoted as reported 2026-07-25 at the named review witness, Neil Shenvi, “A Short Review of Rosenberg’s *The Atheist’s Guide to Reality*,” [shenviapologetics.com](https://shenviapologetics.com/a-short-review-of-rosenbergs-the-atheists-guide-to-reality/), corroborated across the book’s critical literature.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T10:37:00Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

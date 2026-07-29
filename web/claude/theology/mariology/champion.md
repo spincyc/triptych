@@ -641,11 +641,7 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 Listed here because their absence bounds this study: Sister M. Dominica, *The Chapel: Our Lady of Good Help* (1955); the archives of the Diocese of Green Bay and of the National Shrine; nineteenth-century Green Bay newspaper files; the sacramental registers of the parish Adele walked to; the 1871 Green Bay imprint of Tilton; the 1871 first-series imprint of Starr; the reports of the three Marian experts named in the 2010 decree; the diocesan original of that decree; the act of the United States Conference of Catholic Bishops designating the national shrine; and the diocesan and Roman instruments behind the 2023 change of title and annual solemnity.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T02:03:00Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

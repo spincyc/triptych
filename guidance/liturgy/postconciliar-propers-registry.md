@@ -201,6 +201,32 @@ The following is the canonical creation queue. The formula keys are written out 
 
 The registry contains **184 baseline Proper-of-Time targets**: 79 for `PC-S01`–`PC-S25` and 105 for `PC-S26`–`PC-S60`. Each appointed form must cover the three A/B/C occurrence slots exactly once: three cycle-specific keys or one directly collated `ABC` key, never both. For `PC-S26`–`PC-S57`, the Lectionary number is independently checkable as `64 + 3 × (parent number − 26) + cycle offset`, where the offsets for A, B, and C are 0, 1, and 2. The count excludes the separate weekday occurrence targets, General Calendar replacements, and conditional Ritual Masses below.
 
+### Sacred Triduum identities
+
+The `PC-S` spine includes Easter Sunday but does not by itself identify every
+celebration of the Sacred Triduum. The following permanent non-Sunday `PC-T`
+identities complete that planned coverage without renumbering
+`PC-S01`--`PC-S60`.
+
+| ID | Required slug stem | Sacred Triduum identity | Formula target |
+| --- | --- | --- | --- |
+| PC-T01 | `pc-t01-evening-mass-of-the-lords-supper` | Evening Mass of the Lord's Supper | `PC-T01-ABC` |
+| PC-T02 | `pc-t02-celebration-of-the-lords-passion` | Celebration of the Lord's Passion | `PC-T02-ABC` |
+| PC-T03 | `pc-t03-easter-vigil` | Easter Vigil | Alias of `PC-S17-A-VIGIL`, `PC-S17-B-VIGIL`, and `PC-S17-C-VIGIL` |
+
+Reader-facing catalogs use the celebration names, never these stable
+prefixes. The names above identify the selected English edition-locale; an
+edition record retains a collation note if exact printed capitalization
+differs. `PC-T01-ABC` and `PC-T02-ABC` are two additional formula targets.
+`PC-T03` adds no target, owner, or count: its three cycle occurrences resolve
+to the existing `PC-S17` Vigil keys, slugs, and owner rather than duplicate
+them.
+
+For `PC-T01` and `PC-T02`, use
+`<proper-root>/temporal/shared/formularies/<required-slug-stem>/` for the
+canonical owner and `<proper-root>/temporal/<full-publication-slug>/` for a
+future publishable leaf. Their full slugs append `-abc`.
+
 The registry fixes the production kernel established by the Latin typical books. Before creating a leaf, collate the selected approved Lectionary and Missal edition. An edition-specific additional option remains a named branch. If an approved adaptation makes a listed `PC-Snn-ABC[-FORM]` target materially cycle-dependent, fail closed: do not publish that `ABC` leaf and do not invent A/B/C overlay keys under the general grammar. Record the conflict, then revise this registry or an edition-locale registry expressly established under it to list the exact replacement keys, canonical position, and adjusted count before creating any leaf. No optional branch or unregistered edition difference may promote itself into another target.
 
 ### Required branches and conditional Ritual Masses
@@ -268,7 +294,7 @@ Do not collapse the three All Souls Missal formularies into anonymous prayer opt
 
 The Sunday suffix on `PC-R01`, `PC-R04`, `PC-R06`, and `PC-R09` is mandatory because these Feasts use both pre-Gospel readings when they replace a Sunday but only one, chosen as the Lectionary directs, when celebrated on a weekday. Keep that weekday rule in the shared owner; do not create `PC-R` weekday publication keys before a weekday collection is defined.
 
-The complete **fixed registry queue** for a selected edition-locale is therefore **203 targets** in an edition with the 16-target replacement shape, or **209 targets** in an edition with the 22-target replacement shape: 184 Proper-of-Time targets, three conditional Scrutiny Ritual Masses, and the applicable replacement matrix. The six weekday fallbacks are tracked separately, bringing the total working inventory to 209 or 215 respectively; they do not change the Sunday count. Other admitted Ritual Masses and territorial, diocesan, religious, parish, and church-proper overlays are resolver-generated additions, so no finite universal total can include them in advance.
+The complete **fixed registry queue** for a selected edition-locale is therefore **205 targets** in an edition with the 16-target replacement shape, or **211 targets** in an edition with the 22-target replacement shape: 184 Proper-of-Time targets, three conditional Scrutiny Ritual Masses, the two non-duplicative `PC-T` targets, and the applicable replacement matrix. The six weekday fallbacks are tracked separately, bringing the total working inventory to 211 or 217 respectively; they do not change the Sunday count. `PC-T03` Easter Vigil is already counted through its three aliased `PC-S17` Vigil targets. Other admitted Ritual Masses and territorial, diocesan, religious, parish, and church-proper overlays are resolver-generated additions, so no finite universal total can include them in advance.
 
 A celebration admitted to an Ordinary Time Sunday under Universal Norms 58 retains its underlying celebration identity and source owner; Sunday occurrence alone does not create a new `PC-S` or `PC-R` identity. This rule governs, for example, a lawful Sunday observance of the Most Sacred Heart of Jesus.
 

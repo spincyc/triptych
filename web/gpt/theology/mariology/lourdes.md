@@ -1257,12 +1257,6 @@ This appendix keeps distinct five kinds of date: the event reported by Bernadett
 
 8.  Benedict XVI, homage to the Immaculate (8 December 2008), receiving Lourdes as a “heavenly seal” after the dogmatic definition while keeping Christ’s grace primary: [official text](https://www.vatican.va/content/benedict-xvi/en/speeches/2008/december/documents/hf_ben-xvi_spe_20081208_immacolata.html).
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-28T01:38:56Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

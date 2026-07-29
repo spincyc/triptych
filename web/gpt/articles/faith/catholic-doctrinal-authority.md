@@ -133,10 +133,6 @@ The official online witnesses are identified through 26 July 2026; exact acquisi
 
 -   Irenaeus, *Against Heresies* 1.10.1–3; 3.3.1–4, in the Roberts–Rambaut translation printed in *Ante-Nicene Fathers*, vol. 1 (Buffalo, 1887); exact retained OCR used only as a locating witness.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T19:56:24Z
-
-**Model:** `gpt-5.6-sol`; `effort=ultra`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

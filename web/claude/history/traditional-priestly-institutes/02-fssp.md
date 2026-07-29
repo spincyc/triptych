@@ -945,11 +945,7 @@ All sources were read on 2026-07-25; the exact bytes registered in this reposito
 
 -   Not searched, and recorded as limits: the diocesan archives of Augsburg, Scranton and Lincoln; the archives of the Dicastery for Institutes of Consecrated Life and Societies of Apostolic Life; the Fraternity’s *Vademecum*, *Ordo administrativus* and internal directories; *Notitiae*, *Communicationes*, *Apollinaris* and *Archiv für katholisches Kirchenrecht* in print; *La Documentation Catholique* 85 (1988); Philippe Levillain, *Rome n’est plus dans Rome* (2010); and the French, German and Italian monographic literature on the *Ecclesia Dei* communities.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T00:41:32Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

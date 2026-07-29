@@ -484,11 +484,7 @@ All are institutional self-description, cited as the custodian’s or associatio
 
 The 1862 diocesan imprint and the Tarbes archives; René Laurentin and Bernard Billet, *Lourdes: Documents authentiques* (7 vols., 1957–1966), and Bernadette’s autograph écrits; the 1858 police and judicial dossiers; J.-B. Estrade’s memoir; Benedict XIV, *De servorum Dei beatificatione*; Pius X, *Ad diem illum* (quoted via Pius XII); the 1905 Roman confirmation of the Bureau’s procedures; the pre-1890 privilege acts; the Sanctuary’s 2022 re-edition of the mandement; the typical editions fixing the current rank of the 11 February memorial and the French date for St Bernadette; the diocesan proclamation texts of the recognized cures.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T09:39:08Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

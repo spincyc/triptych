@@ -679,10 +679,6 @@ Completed: source research and same-day verification of every witness quoted; cl
 
 -   *Easton’s Bible Dictionary* (1897), s.v. “Tares,” <https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/R-Z>; *Chambers’s Twentieth Century Dictionary* (1908), s.v. “Darnel,” <https://en.wikisource.org/wiki/Chambers%27s_Twentieth_Century_Dictionary_1908/D_Defect>.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T02:03:00Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

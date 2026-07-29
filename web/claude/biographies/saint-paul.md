@@ -456,10 +456,6 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   General Roman Calendar: current observances (29 June solemnity; 25 January Conversion; 18 November Dedication of the basilicas) stated per the repository’s source-library record of the *Calendarium Romanum Generale* (Missale Romanum, ed. typica tertia, 2002), with the cult’s history from the Catholic Encyclopedia articles above; mutable facts carry the 2026-07-25 cutoff.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T09:23:26Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

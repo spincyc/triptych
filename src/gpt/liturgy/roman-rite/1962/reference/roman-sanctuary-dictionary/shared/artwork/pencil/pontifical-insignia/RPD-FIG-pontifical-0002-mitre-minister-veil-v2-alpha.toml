@@ -1,0 +1,67 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-mitre-minister-neck-hung-veil-v2"
+precursor_artwork_id = "art-mitre-lappets-and-handling-detail"
+object_ids = ["obj-mitre", "obj-mitre-minister-veil"]
+file = "RPD-FIG-pontifical-0002-mitre-minister-veil-v2-alpha.png"
+purpose = "Teach the checked handling boundary with the neck suspension, continuous veil panels, and covered hand contact all visible in one source-controlled view."
+depicted_state = "One minister in plain cassock and surplice supports one generic mitre at chest height; one continuous plain oblong veil passes behind his neck, descends in two panels, and covers both supporting hands."
+period_status = "official pontifical handling relationship in the checked pre-1962 Caeremoniale Episcoporum"
+source_controlled_features = [
+  "one mitre minister",
+  "one oblong silk veil or cloth visibly worn from the neck",
+  "two continuous descending veil panels",
+  "exactly two supporting hands covered by the veil",
+  "no bare-hand contact with the mitre",
+  "one generic mitre with paired hanging lappets",
+]
+generic_context_features = ["plain cassock", "plain surplice"]
+deliberately_omitted_details = [
+  "ministerial rank",
+  "veil dimensions",
+  "veil fastening",
+  "veil color",
+  "mitre class",
+  "universal mitre dimensions",
+  "prescribed universal mitre profile",
+  "transfer sequence",
+  "ornament",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1024x1536 sRGB PNG"
+normalized_pixels = "1024x1536 8-bit grayscale-alpha PNG"
+normalization = "Flat green background removed locally with an ImageMagick chroma matte; RGB normalized to grayscale; extracted alpha feathered with a 0.55-sigma Gaussian blur. Final alpha histogram has 28 distinct levels."
+sha256 = "3cc335dd32d2906ac1f3e64607c5d54c07079d62fc2b972b4350f3b54728bfc2"
+baked_in_content_audit = "No lettering, labels, arrows, border, watermark, cope, stole, second person, second mitre, stand, case, altar, throne, crosier, architecture, cross, jewel, or coat of arms is baked into the asset."
+tex_owned_additions = ["mitre minister label", "neck-hung veil label", "handling boundary", "source note", "representative-profile notice"]
+rights_state = "project-generated; no external image supplied to the generator; Met record used only as a checked morphology boundary"
+review_state = "corrected candidate; independent factual and production re-review pending"
+
+prompt = """
+Use case: scientific-educational
+Asset type: corrected source-controlled graphite handling illustration for a Roman liturgical pictorial dictionary
+Primary request: Create one portrait-oriented upper-body study of a mitre minister correctly supporting a plain Roman episcopal mitre through a single neck-hung oblong silk veil. Show one adult male minister from head through waist, wearing a plain cassock and plain white surplice. A single broad plain oblong cloth is unmistakably suspended around the back of his neck, descends continuously in two long front panels, wraps over both hands, and forms the only contact between his hands and the mitre he supports at chest height. Both neck suspension and cloth-covered hand contact must be simultaneously clear.
+Source boundary: The official Ceremonial identifies the object only as an oblong silk veil or cloth worn from the neck by the mitre minister so he does not touch the mitre with bare hands, unless vested in a cope. Do not prescribe exact dimensions, color, fastening, fold system, ornament, or a universal mitre profile. Use a deliberately generic plain representative two-panel pointed mitre with two hanging lappets.
+Handling geometry: exactly one minister, exactly one mitre, exactly one continuous neck-hung veil, exactly two hands. The veil's left and right panels visibly run without interruption from the neck down to and over the corresponding hands. Fingers may shape the cloth from beneath, but no bare fingertip or palm may touch the mitre. The minister looks calmly forward; no ceremonial transfer or receiving person.
+Style/medium: elegant monochrome graphite pencil drawing, fine controlled line, restrained cross-hatching and tonal modeling, historically attentive educational visual-atlas quality.
+Composition/framing: centered upper-body portrait with the full head, shoulders, neck loop, both continuous cloth panels, both cloth-covered hands, entire mitre point, base, and paired lappets visible; generous crop safety and clear silhouette.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for removal, one uniform color with no shadow, gradient, texture, reflection, floor, horizon, or lighting variation. Keep subject fully separated and do not use green in it.
+Constraints: no cope; no stole; no humeral veil around shoulders; no loose detached cloth; no bare-hand contact; no second person; no second mitre; no stand, case, table, throne, altar, crosier, crown, tiara, cross, jewels, coat of arms, words, letters, numerals, arrows, caption, label, border, watermark, cast shadow, scenery, or architecture.
+Avoid: cloth that begins only at the hands, disconnected cloth panels, sleeves mistaken for the veil, mitten-like hands, impossible anatomy, copied museum ornament, prescribed dimensions, fantasy vestments, photorealism, cartoon, floating rectangle.
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-11.sections-5-6"
+locus = "book I, chapter XI, section 6"
+supported_feature = "The mitre minister wears from his neck an oblong silk veil or cloth and uses it to support the mitre without touching the mitre with bare hands, unless vested in a cope."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-17"
+locus = "book I, chapter XVII, paragraphs 1-4; printed pp. 51-53"
+supported_feature = "The mitre has hanging vittae; this source does not prescribe a universal profile or dimensions."
+
+[[source_basis]]
+source_id = "passage.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29.object-identity-and-morphology"
+locus = "object 227306 identity and linked photograph"
+supported_feature = "A dated material-culture exemplar supports only the representative two-panel body and paired hanging lappets."

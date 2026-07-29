@@ -1,0 +1,69 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-pontifical-ring-over-right-glove"
+object_ids = ["obj-pontifical-gloves", "obj-pontifical-ring"]
+file = "RPD-FIG-pontifical-0103-ring-over-right-glove-alpha.png"
+purpose = "Teach the combined wearing formation: the pontifical ring is put on the right ring finger after the gloves have been donned."
+depicted_state = "One right hand is fully covered by a plain glove, with one substantial ring worn over the glove on the ring finger."
+period_status = "source-controlled Roman pontifical-Mass use relationship at the 1962 horizon"
+source_controlled_features = [
+  "one right hand",
+  "one glove already worn",
+  "one ring",
+  "ring on the right ring finger",
+  "ring visibly outside and over the glove",
+]
+generic_context_features = [
+  "plain glove",
+  "plain substantial ring with raised oval setting",
+]
+deliberately_omitted_details = [
+  "glove color",
+  "glove material",
+  "glove embroidery",
+  "glove cuff ornament",
+  "ring stone",
+  "ring bezel prescription",
+  "ring metal",
+  "ring heraldry",
+  "ring dimensions",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1254x1254 sRGB PNG"
+normalized_pixels = "1254x1254 8-bit grayscale RGBA PNG with true alpha"
+normalization = "Flat green background removed with the imagegen skill's Pillow helper using border auto-key sampling, a soft matte, 12/220 transparency thresholds, and despill; accepted subject pixels were then normalized deterministically to grayscale while preserving alpha."
+sha256 = "c5cbcb91127323b5d54cb7a57548de9505ba1e371deb6dd85e433b075db7a594"
+baked_in_content_audit = "Exactly one right gloved hand with five fingers and exactly one ring on the ring finger is present. No bare skin, second glove, body, tray, lettering, label, arrow, numeral, border, watermark, signature, cross, monogram, heraldry, or diagnostic ornament is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "sequence note", "source qualification", "variant boundary"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "reviewed-candidate-ready-for-manifest-admission"
+
+prompt = """
+Use case: scientific-educational
+Asset type: transparent-background graphite use-sequence plate for a source-first 1962 Roman pontifical-ceremonies pictorial dictionary
+Primary request: draw one combined-use detail: the bishop's RIGHT hand already wearing a plain pontifical glove, with a substantial episcopal ring worn visibly OVER the glove on the ring finger; wrist and hand only, neutral relaxed pose, unmistakable layered relationship
+Scene/backdrop: perfectly flat solid #00ff00 chroma-key background for later removal; absolutely uniform, no shadows, gradients, texture, floor plane, reflections, or lighting variation
+Style/medium: refined naturalistic graphite pencil drawing, archival instructional study, crisp contours, restrained hatching, grayscale only
+Composition/framing: centered right hand from short cuff through fingertips, dorsal/back-of-hand view so ring placement over glove is clear, generous clear padding, no cropped fingers, no other object
+Materials/textures: simple soft glove, plain substantial ring with generic raised oval setting
+Evidence constraints: teach only the combined wearing formation and sequence relationship: ring over the already donned right glove. Do not imply that glove ornament, embroidery, color, fabric, cuff form, ring bezel shape, stone, metal, dimensions, heraldry, or decoration is universal or prescribed
+Constraints: exactly one right hand, exactly five fingers, exactly one ring on the ring finger, no bare skin, no second glove, no person/body, no tray, no text, no labels, no arrows, no numerals, no border, no cast/contact shadow, no watermark, no signature; do not use #00ff00 anywhere in the subject; crisp fully separated edges for clean background removal
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-2.chapter-8"
+locus = "book II, chapter VIII, nn. 19 and 22; printed pp. 116-117, artifact PDF pp. 127-128"
+supported_feature = "The gloves are put on first, one on each hand; after the chasuble and mitre, the pontifical ring is put on the ring finger of the bishop's right hand. Read together, the sequence establishes the ring-over-right-glove formation."
+
+[[source_basis]]
+source_id = "artifact.benziger-brothers.catalogue-of-vestments-banners-and-regalia.new-york-1893.loc-ia-scan-pdf"
+locus = "printed p. 47, artifact PDF p. 57"
+supported_feature = "The public-domain commercial catalog lists bishops' gloves in materially variable forms and identifies episcopal rings without establishing one universal ornament for either object."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "asset-author factual-and-production review"
+outcome = "accepted"
+scope = "Right-hand anatomy, five-finger count, ring-finger placement, ring-over-glove layering, sequence legibility, crop safety, transparent-background production, and absence of universal ornament claims."
+admission_boundary = "Acceptance advances only this asset-local staging record; shared-manifest admission remains a separate integration action."

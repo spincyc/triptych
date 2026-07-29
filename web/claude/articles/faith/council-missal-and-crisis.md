@@ -219,11 +219,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 -   CARA/NORC with the McGrath Institute for Church Life, *Eucharist Beliefs: A National Survey of Adult Catholics* (fielded 11 July–2 August 2022; published 2023), report and authors’ account, [churchlifejournal.nd.edu](https://churchlifejournal.nd.edu/articles/the-theological-foundations-of-eucharistic-beliefs-a-national-survey-of-adult-catholics/), checked 2026-07-25.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T06:12:30Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

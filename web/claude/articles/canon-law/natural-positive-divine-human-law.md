@@ -548,11 +548,7 @@ All web sources were fetched over HTTPS, hashed (SHA-256), and read on 2026-07-2
 
 -   G. Grisez, “The First Principle of Practical Reason: A Commentary on the *Summa theologiae*, 1-2, Question 94, Article 2,” *Natural Law Forum* 10 (1965) 168–201; J. Finnis, *Natural Law and Natural Rights* (Oxford: Clarendon Press, 1980); R. Hittinger, *A Critique of the New Natural Law Theory* (Notre Dame, 1987); R. McInerny, *Aquinas on Human Action* (Washington, 1992). Cited only as the named positions in the reported debate of section 12.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T09:42:30Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

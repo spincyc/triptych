@@ -1,0 +1,63 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-epistle-book-carried"
+object_ids = ["obj-epistle-book"]
+file = "RPD-FIG-books-0006-epistle-book-in-use-alpha.png"
+purpose = "Teach the Epistle book through the checked Solemn-Mass relationship: the subdeacon carries it in both hands against his breast."
+depicted_state = "One subdeacon carries one plain closed book vertically against the center of his breast with both hands."
+period_status = "universal Roman 1962 Solemn-Mass ceremonial relationship"
+source_controlled_features = [
+  "one subdeacon",
+  "one closed book",
+  "book carried in both hands",
+  "book held against the breast",
+]
+generic_context_features = [
+  "plain alb",
+  "plain tunicle",
+  "short unornamented maniple looped over the left forearm",
+]
+vesture_evidence_classification = "Generic minister context only; this asset does not establish tunicle or maniple morphology and must not be used as vestment evidence."
+deliberately_omitted_details = [
+  "binding material",
+  "cover color",
+  "cover ornament",
+  "title",
+  "clasps",
+  "tooling",
+  "dimensions",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1008x1560 sRGB PNG"
+normalized_pixels = "1008x1560 8-bit grayscale-alpha PNG"
+normalization = "Flat green background converted to a soft alpha matte locally; green spill suppressed by limiting the green channel to the greater of red and blue; accepted pixels then deterministically converted to grayscale while preserving alpha."
+sha256 = "f40216aa7bd050f5824dd6fba4228589119c511a81347020be8b2668d92fef2c"
+baked_in_content_audit = "No lettering, numerals, labels, border, watermark, cross, cover ornament, stole, long sash, architectural setting, lectern, altar, candle, or second person is baked into the asset. The only narrow vestment strip is a short plain maniple looped over the left forearm with ends terminating at the waist."
+tex_owned_additions = ["English name", "Latin name", "handling boundary", "source note", "callouts"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "independently-reviewed-candidate-ready-for-manifest-admission"
+
+prompt = """
+Use case: precise-object-edit
+Asset type: source-controlled monochrome reference figure for a Roman liturgical pictorial dictionary
+Input image: edit target
+Primary request: Correct only the left-forearm maniple so it cannot be mistaken for a stole or sash.
+Edit boundary: Replace the long broad hanging band on the subject's LEFT forearm (picture-right) with a narrow, short, plain maniple looped securely over that forearm. Its two short ends must terminate close to the forearm, no lower than the upper hip. It must be visually subordinate to the book and hands. Remove every trace of the former long band below that point.
+Preserve exactly: one adult male subdeacon; the same upright pose and graphite treatment; one plain closed rectangular book held vertically against the center of his breast; both hands visibly supporting the book; plain alb and plain tunicle; anatomy; framing through the knees; no cover ornament; no text; no architectural setting.
+Vesture boundary: no stole, no neck strip, no shoulder-hung sash, no cincture-hung band, no long decorated panel, no cross or ornament. The corrected maniple is the only narrow vestment strip.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for later removal, uniform with no shadows, gradients, texture, floor, or scenery. Keep the subject fully separated from it. Use grayscale only in the subject and do not use green in the subject.
+Avoid: adding or changing any book morphology; additional people, books, hands, fingers, objects, labels, watermark, border, cast shadow, or scenery.
+"""
+
+[[source_basis]]
+source_id = "src-epistle-book-1962"
+locus = "1962 Missale Romanum, Ritus servandus VI.4, printed LVII-LVIII/artifact PDF 59-60"
+supported_feature = "The subdeacon takes the Epistle book in both hands and carries it against his breast."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "independent-factual-and-production-review"
+outcome = "accepted"
+scope = "Corrected asset pixels, ceremonial carrying relationship, maniple-versus-stole ambiguity, plain-book boundary, and transparent-background production."
+admission_boundary = "Acceptance advances only this asset-local precursor record; canonical shared-manifest admission remains a separate integration action."

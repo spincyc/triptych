@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.super-psalmos"
+title = "Super Psalmos"
+responsible = "Thomas Aquinas"
+work_type = "biblical-commentary"
+alternate_titles = ["Postilla super Psalmos", "Commentary on the Psalms"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|[1-4][0-9]|5[0-4])\.n(?:[1-9]|[1-9][0-9])'
+description = "Aquinas's lectures on Psalms 1-54, preserved substantially as a reportatio by Reginald of Piperno. The registered Corpus Thomisticum pages explicitly label the selected Psalm lectures as Reginald's reportatio; consumers must not describe their exact wording as autograph."
+relations = ["work.thomas-aquinas.summa-theologiae"]

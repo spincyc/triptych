@@ -290,10 +290,6 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 -   M. Molin Pradel and L. Perrone on Munich, Bayerische Staatsbibliothek, Cod. graec. 314: identification announced 2012; critical edition L. Perrone et al., *Origenes: Die neuen Psalmenhomilien* (GCS N.F. 19, Berlin, 2015); cited at the level of the published identification and edition record.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-24T23:21:06Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

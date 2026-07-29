@@ -601,33 +601,38 @@
 \newcommand{\LMSceneGospel}{%
   \begin{center}\begin{tikzpicture}
     \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-012-lm-gospel-stations-v3-alpha.png}};
-    \node[lm role tag,anchor=south east] at ($(art.north west)!.20!(art.north east)+(0,1mm)$) {SECOND};
-    \node[lm role tag,anchor=south west] at ($(art.north west)!.29!(art.north east)+(0,7mm)$) {PRIEST};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.82!(art.north east)+(0,1mm)$) {FIRST\\RETURNED};
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-027-lm-gospel-opening-v1-alpha.png}};
+    \ifTrainerManualGuide
+      \node[lm role tag,anchor=south west,font=\fontsize{7.2}{8}\selectfont\bfseries]
+        at ($(art.north west)+(0,1mm)$) {FIRST};
+      \node[lm role tag,anchor=south east,font=\fontsize{7.2}{8}\selectfont\bfseries]
+        at ($(art.north east)+(0,1mm)$) {SECOND CLEAR};
+    \else
+      \node[lm role tag,anchor=south west] at ($(art.north west)+(0,1mm)$)
+        {FIRST\\WAITS};
+      \node[lm role tag,anchor=south east] at ($(art.north east)+(0,1mm)$)
+        {SECOND\\STANDS CLEAR};
+    \fi
   \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneCruetService}{%
   \ifTrainerManualGuide
-    \def\LMCruetSequenceWidth{.98\linewidth}%
+    \def\LMCruetSequenceWidth{.72\linewidth}%
   \else
-    \def\LMCruetSequenceWidth{.88\linewidth}%
+    \def\LMCruetSequenceWidth{.70\linewidth}%
   \fi
   \begin{center}\begin{tikzpicture}
     \node[inner sep=0pt] (art) {\includegraphics[width=\LMCruetSequenceWidth,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-013-lm-offertory-cruets-v3-alpha.png}};
-    \node[lm transfer tag,anchor=north,align=center] at
-      ($(art.south west)!.105!(art.south east)+(0,-1mm)$)
-      {1\quad WINE:\\KISS BASE OF HANDLE};
-    \node[lm transfer tag,anchor=north,align=center] at
-      ($(art.south west)!.350!(art.south east)+(0,-1mm)$)
-      {2\quad PRESENT WINE\\BY THE HANDLE};
-    \node[lm transfer tag,anchor=north,align=center] at
-      ($(art.south west)!.645!(art.south east)+(0,-1mm)$)
-      {3\quad AFTER BLESSING:\\KISS WATER HANDLE};
-    \node[lm transfer tag,anchor=north,align=center] at
-      ($(art.south west)!.885!(art.south east)+(0,-1mm)$)
-      {4\quad PRESENT WATER\\NO RETURN KISSES};
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-028-lm-offertory-formation-v1-alpha.png}};
+    \node[lm role tag,anchor=north] at
+      ($(art.south west)!.33!(art.south east)+(0,-1mm)$)
+      {FIRST\\WINE};
+    \node[lm role tag,anchor=north] at
+      ($(art.south west)!.66!(art.south east)+(0,-1mm)$)
+      {SECOND\\WATER};
+    \node[lm transfer tag,anchor=south,align=center] at
+      ($(art.north west)!.50!(art.north east)+(0,1mm)$)
+      {PRIEST ON PREDELLA\\SERVERS SIDE BY SIDE ONE STEP BELOW};
   \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneCruets}{\LMSceneCruetService}
@@ -689,29 +694,27 @@
 
 \newcommand{\LMSceneAblutions}{%
   \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilPairHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-017-lm-mc-first-ablution-wine-v2-alpha.png}};
+    \node[inner sep=0pt] (art) {\includegraphics[
+      height=\LMPencilPairHeight,viewport=0 0 824 902,clip,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-v1-alpha.png}};
     \node[lm role tag,anchor=south] at
-      ($(art.north west)!.50!(art.north east)+(0,1mm)$) {PRIEST};
+      ($(art.north west)!.35!(art.north east)+(0,1mm)$) {PRIEST};
     \node[lm role tag,anchor=north] at
-      ($(art.south west)!.20!(art.south east)+(0,-1mm)$)
+      ($(art.south west)!.72!(art.south east)+(0,-1mm)$)
       {1\quad FIRST:\\WINE};
-    \node[lm role tag,anchor=north] at
-      ($(art.south west)!.82!(art.south east)+(0,-1mm)$)
-      {SECOND\\WAITS WITH WATER};
   \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneFingerWashing}{%
   \ifTrainerManualGuide\def\LMFingerArtWidth{.52\linewidth}\else\def\LMFingerArtWidth{.80\linewidth}\fi
   \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilPairHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-018-lm-mc-ablution-fingers-v3-alpha.png}};
+    \node[inner sep=0pt] (art) {\includegraphics[
+      height=\LMPencilPairHeight,viewport=824 0 1649 902,clip,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-v1-alpha.png}};
     \node[lm role tag,anchor=south] at
-      ($(art.north west)!.50!(art.north east)+(0,1mm)$) {PRIEST};
+      ($(art.north west)!.35!(art.north east)+(0,1mm)$) {PRIEST};
     \node[lm role tag,anchor=north] at
-      ($(art.south west)!.18!(art.south east)+(0,-1mm)$) {FIRST\\WINE};
-    \node[lm role tag,anchor=north] at
-      ($(art.south west)!.82!(art.south east)+(0,-1mm)$) {SECOND\\WATER};
+      ($(art.south west)!.72!(art.south east)+(0,-1mm)$)
+      {2\quad FIRST:\\WINE, THEN WATER};
   \end{tikzpicture}\end{center}}
 
 \newcommand{\LMScenePlateReturn}{%
@@ -735,15 +738,11 @@
 \newcommand{\LMSceneBookReturn}{%
   \begin{center}\begin{tikzpicture}
     \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-019-lm-missal-return-v2-alpha.png}};
-    \node[lm role tag] at ($(art.south west)!.18!(art.south east)+(0,15mm)$) {SECOND\\WITH MISSAL};
-    \node[lm role tag] at ($(art.south west)!.50!(art.south east)+(0,26mm)$) {PRIEST};
-    \node[lm role tag] at ($(art.south west)!.84!(art.south east)+(0,9mm)$) {FIRST};
-    \draw[lm route] ($(art.south west)!.20!(art.south east)+(0,5mm)$)
-      .. controls ($(art.south west)!.36!(art.south east)+(0,1mm)$)
-      and ($(art.south west)!.58!(art.south east)+(0,1mm)$) ..
-      ($(art.south west)!.72!(art.south east)+(0,5mm)$);
-    \node[lm object tag,anchor=south] at ($(art.south west)!.54!(art.south east)+(0,1mm)$) {TO EPISTLE};
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-031-lm-veil-missal-exchange-v1-alpha.png}};
+    \node[lm role tag,anchor=south west] at ($(art.north west)+(0,1mm)$)
+      {FIRST\\VEIL TO GOSPEL};
+    \node[lm role tag,anchor=south east] at ($(art.north east)+(0,1mm)$)
+      {SECOND\\MISSAL TO EPISTLE};
   \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneBookReturnComplete}{%

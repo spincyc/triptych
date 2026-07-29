@@ -18,3 +18,11 @@ This non-publishable directory records how this edition-locale adopts and resolv
 - [2026 occurrences](occurrences-2026.md) records the first ten national-calendar dates currently represented by publication leaves, through 2 August 2026. The Year B and C leaves are recurring cycle references rather than invented 2026 occurrences.
 
 These records do not replace the leaf manifest, leaf composition audit, shared formulary audit, or research scope. A blank or unassessed target is not `not-present-in-edition`, and no collection-completeness claim follows from the twelve evaluated leaves.
+
+This edition-locale also adopts the stable Sacred Triduum identities:
+`PC-T01` Evening Mass of the Lord's Supper and `PC-T02` Celebration of the
+Lord's Passion are unassessed planned targets, while `PC-T03` Easter Vigil is
+an identity alias for the existing three cycle-specific `PC-S17` Vigil
+targets. The alias adds no target or owner. Reader-facing catalogs use only
+the celebration names; exact printed capitalization remains subject to the
+direct altar-book collation recorded in the formula dispositions.

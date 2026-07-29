@@ -1,0 +1,69 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-mitre-lappets-and-handling-detail"
+object_ids = ["obj-mitre", "obj-mitre-minister-veil"]
+file = "RPD-FIG-pontifical-0002-mitre-lappets-handling-v1-alpha.png"
+purpose = "Teach the paired hanging lappets and the checked handling boundary: the mitre minister supports the mitre through a plain oblong silk cloth rather than with bare hands."
+depicted_state = "A rear three-quarter isolated mitre shows two separate lappets; a second detail shows two hands supporting one plain mitre from below through one continuous plain cloth."
+period_status = "official pontifical handling relationship in the checked pre-1962 Caeremoniale Episcoporum"
+source_controlled_features = [
+  "exactly two hanging lappets",
+  "exactly one mitre in the handling detail",
+  "exactly two supporting hands",
+  "one plain cloth interposed at every hand-to-mitre contact",
+]
+representative_features = [
+  "generic two-panel pointed silhouette",
+  "plain seams and edge bands",
+]
+deliberately_omitted_details = [
+  "mitre class",
+  "universal dimensions",
+  "prescribed universal profile",
+  "cloth dimensions",
+  "cloth fastening",
+  "transfer ceremony",
+  "ornament",
+  "color",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1536x1024 sRGB PNG"
+normalized_pixels = "1536x1024 8-bit grayscale-alpha PNG"
+normalization = "Flat green background removed locally with an ImageMagick chroma matte; RGB normalized to grayscale; extracted alpha feathered with a 0.55-sigma Gaussian blur. Final alpha histogram has 42 distinct levels."
+sha256 = "654195fd04a6efd7b6dd8ef5e0648df6b83531f77570e64b9dc94d7c1edf4631"
+baked_in_content_audit = "No lettering, labels, arrows, border, watermark, full person, vestments, stand, case, architecture, cross, jewel, or coat of arms is baked into the asset."
+tex_owned_additions = ["lappet/vittae label", "handling boundary", "source note", "representative-profile notice"]
+rights_state = "project-generated; no external image supplied to the generator; Met record used only as a checked morphology boundary"
+review_state = "rejected by independent review; retained as a superseded precursor"
+independent_review_outcome = "rejected"
+independent_review_date = 2026-07-28
+independent_review_issue = "The loose cloth over disembodied hands does not establish the official source's neck-hung oblong mitre-minister veil identity."
+superseded_by = "art-mitre-minister-neck-hung-veil-v2"
+
+prompt = """
+Use case: scientific-educational
+Asset type: corrected source-controlled graphite detail illustration for a Roman liturgical pictorial dictionary
+Primary request: Create one landscape two-part educational study. LEFT: a generic Roman episcopal mitre in clear rear three-quarter view with exactly two long hanging lappets (vittae), separate and fully visible. RIGHT: a close handling view in which exactly two clearly anatomical human hands, each with visible fingers and thumb, support one plain mitre from below while a single plain oblong silk cloth is folded over and around both hands. The cloth must visibly intervene between every fingertip, palm, and the mitre: no skin touches it. No person beyond wrists and hands; no sleeves.
+Source boundary: deliberately generic representative two-panel pointed body and paired lappets; do not reproduce any museum object's ornament, exact profile, or dimensions. The handling view teaches only support through the prescribed oblong silk cloth; do not invent a stand, case, fastening, or transfer ceremony.
+Style/medium: elegant monochrome graphite pencil, fine controlled line, restrained cross-hatching and tonal modeling, educational visual-atlas quality.
+Composition/framing: two separate studies in one wide image, lappet view left and handling close-up right, with all points, lappet ends, cloth edges, fingers, thumbs, and wrists fully inside the frame; generous clear gap and room below for TeX callouts.
+Backdrop: perfectly flat solid #00ff00 chroma-key background, one uniform color, no shadow, gradient, texture, reflection, floor, horizon, or lighting variation. Keep subjects fully separated and do not use green in them.
+Constraints: left has exactly two lappets. Right has exactly one mitre, exactly two hands with correct five-digit anatomy, and exactly one continuous plain cloth. No bare-hand contact. No forearm sleeves, full person, face, vestments, table, stand, case, extra mitre, crown, tiara, cross, jewel, coat of arms, words, letters, numerals, arrows, caption, label, border, watermark, cast shadow, scenery, or architecture.
+Avoid: mitten-like hands, hidden hands, fused fingers, impossible anatomy, cloth shaped like sleeves, copied Met ornament, prescribed dimensions, fantasy object, floating rectangular vignette, photorealism, cartoon.
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-17"
+locus = "book I, chapter XVII, paragraphs 1-4; printed pp. 51-53"
+supported_feature = "The mitre has hanging vittae; this source does not prescribe a universal profile or dimensions."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-11.sections-5-6"
+locus = "book I, chapter XI, section 6"
+supported_feature = "The mitre minister uses a neck-hung oblong silk veil or cloth to support the mitre without touching it with bare hands, unless vested in a cope."
+
+[[source_basis]]
+source_id = "passage.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29.object-identity-and-morphology"
+locus = "object 227306 identity and linked photograph"
+supported_feature = "A dated material-culture exemplar supports only the representative two-panel body and paired hanging lappets."

@@ -385,10 +385,6 @@ Ancient Latin and the 1919 Possidius edition are public-domain source material. 
 
 -   Benedict XVI. General Audience, 9 January 2008, [“Saint Augustine of Hippo”](https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html); accessed 2026-07-15. Official ecclesial reception; Vatican English remains third-party text and is paraphrased.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-19T03:44:17Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

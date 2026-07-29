@@ -2,6 +2,30 @@
 
 Audit record updated through 2026-07-28 (America/Chicago).
 
+## Card-companion Alpha-apparatus release — 2026-07-28
+
+The three card companions retain their complete front/back runs and existing
+duplex geometry. A terse `Alpha` footer appears only on physical page 1. One
+uncut adult-reference sheet now follows the last back and owns the explanation
+of Alpha status, training and safety limits, textual scope, and rights. This
+adds one page to each companion without changing any card face, card count,
+front parity, mirrored back, cut grid, or final-back notice.
+
+The revision timestamp for these three leaves is
+`2026-07-28T21:20:00Z`. The repository review helper freshly rastered all 33
+pages; contact-sheet and full-size terminal-page review found no clipping,
+collision, accidental blank, cut-grid intrusion, or illegible terminal text.
+All three settled logs contain no fatal error, undefined reference, box
+warning, or unresolved rerun request. Fonts are embedded and subsetted, text
+extraction is nonempty, leaf-scoped generation-metadata validation passes,
+and every installed file is byte-identical to its reviewed build.
+
+| Publication | Pages | Physical cards | Bytes | SHA-256 |
+|---|---:|---:|---:|---|
+| `01-low-mass-flash-cards` | 7 | 22 | 349,771 | `15207cd0ac2bcb9b51ccb395be515fab3013919849da713378310aaa2f9f326e` |
+| `02-missa-cantata-cue-cards` | 13 | 36 | 628,885 | `ce0dfad27e008e3583baa8d0937fdb62688f584e2fd90f7f69f71f201fe6314e` |
+| `03-solemn-mass-cue-cards` | 13 | 36 | 634,517 | `11c05969c289b6dcaa62a31db20f3abd805f9f05bd3c1a4fba211574b6172c5a` |
+
 ## Settled metadata-bearing candidate — 2026-07-28
 
 The frozen seven-publication source family was rebuilt for two forced pdfTeX
@@ -10,13 +34,13 @@ not installed identities:
 
 | Publication | Revision UTC | Pages | Physical cards | Bytes | Build SHA-256 |
 |---|---|---:|---:|---:|---|
-| `01-low-mass` | `2026-07-28T20:26:00Z` | 26 | 0 | 6,548,755 | `9f1b859cc33530a18120a23f86ea332534262f9f882a549c8fdcbc44504f5690` |
-| `01-low-mass-trainer-manual` | `2026-07-28T20:26:00Z` | 26 | 0 | 6,560,985 | `74fb900733d09c6430b0ee5e0da3ff98ec67f08d51d6e9d4b33bc0676504518c` |
-| `01-low-mass-flash-cards` | `2026-07-28T20:26:00Z` | 6 | 22 | 252,799 | `0c7337f3aefe701eda17586175992f48aa8ca77f8d9a85a54ba7fa06d82b3739` |
-| `02-missa-cantata` | `2026-07-28T20:26:00Z` | 34 | 0 | 2,371,330 | `7f9fa812000340c241edcc93984260d506a773ff393442e15c818eeb74ac78f5` |
-| `02-missa-cantata-cue-cards` | `2026-07-28T20:26:00Z` | 12 | 36 | 627,502 | `25a555daee0bd4eb1e06bfb5d5a7c6592d738bee4f10e8d3953776942d263904` |
-| `03-solemn-mass` | `2026-07-28T20:26:00Z` | 31 | 0 | 2,714,554 | `8992be913a3d8402b395d7106bb1122504fa564830374cafb705aeb5933a2a4f` |
-| `03-solemn-mass-cue-cards` | `2026-07-28T20:26:00Z` | 12 | 36 | 632,779 | `5dcc631d32cb1e47c245ab855c25d8781753c88b9f9b19926fdf6c65302d71e2` |
+| `01-low-mass` | `2026-07-28T20:56:00Z` | 26 | 0 | 6,544,081 | `b555a9dfbbe4c8857f8ec2152dd5ef1c1fc1a5124934f5e0961cf2b9cb1133ee` |
+| `01-low-mass-trainer-manual` | `2026-07-28T20:56:00Z` | 26 | 0 | 6,556,369 | `84bb684a735309e8a89cf943fd28f6ae88b6e82410e57ea92f1c38c31aab068d` |
+| `01-low-mass-flash-cards` | `2026-07-28T20:56:00Z` | 6 | 22 | 252,033 | `1c3523f635a4ed3dbaff34f0dbb2f4412cd507476ea1ca628cc1cd94399b9e5e` |
+| `02-missa-cantata` | `2026-07-28T20:56:00Z` | 34 | 0 | 2,364,245 | `054ba65b2cb5a94cc6c4140219c56fd568920f21130d516518f16e9abe91cfaf` |
+| `02-missa-cantata-cue-cards` | `2026-07-28T20:56:00Z` | 12 | 36 | 624,698 | `ad689421ea605c4866cf0f7cf598535e87626b97c944de2c882ad64aa121afd7` |
+| `03-solemn-mass` | `2026-07-28T20:56:00Z` | 31 | 0 | 2,707,995 | `266070dd2d4463f1f491ca9dbf1ce948cf4733d36205ed7701f9fbe7b2d0822e` |
+| `03-solemn-mass-cue-cards` | `2026-07-28T20:56:00Z` | 12 | 36 | 630,549 | `84cc48122f2579c4cc00d7cd7ccbbdfee8188ca936f855cbeb07698a9c4d4815` |
 
 The family totals 147 pages: 117 guide or manual pages and 30 card pages,
 with 94 physical cards. All final logs are free of fatal errors, undefined
@@ -28,9 +52,10 @@ snapshot makes no new `qpdf --check` claim.
 The bounded review helper rastered all 147 pages. All full-size page rasters
 and eleven contact sheets were inspected for sequence, clipping, collision,
 accidental blanks, card pairing, monochrome legibility, and terminal fit.
-This is a screen review of the exact build hashes above. The PDFs were not
-installed in this task, and no external, intended-reader, physical-use,
-rights, priestly, or ecclesiastical approval is claimed.
+This is a screen review of the exact build hashes above. These exact bytes were
+installed after review and byte-compared against their build sources. No
+external, intended-reader, physical-use, rights, priestly, or ecclesiastical
+approval is claimed.
 
 ## Current installed public-review snapshot
 
@@ -43,15 +68,15 @@ not control the current installed files.
 
 | Publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 | Current review state |
 |---|---|---:|---:|---:|---|---|
-| `01-low-mass` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,861,791 | `1bb29420e2d4962c0bf2cebe7e80e06d6421ca65c6f6b9058ee78ef4309e426a` | Alpha; Gospel-station actor overlays and terminal colophon screen-checked |
-| `01-low-mass-trainer-manual` | `2026-07-28T02:22:18Z` | 29 | 0 | 7,874,334 | `4230843bbccea40e2967fe6670b9113ffe355902f88b587b00f2a15a0a8bd9d3` | Alpha; page-aligned Gospel-station actor overlays screen-checked |
-| `01-low-mass-flash-cards` | `2026-07-27T22:48:48Z` | 6 | 22 | 250,916 | `6a5d1363faab813ad51b0e2d0d68a601e3970e077ae9bf45c3cb78242b3cf460` | Alpha; electronic pairing and duplex geometry checked |
-| `02-missa-cantata` | `2026-07-28T03:20:00Z` | 28 | 0 | 1,479,808 | `c0bded80fd73cd845200b86f6f9d4a8ae14ca31940b6101a4a2093d6bce95c51` | Alpha; every page inspected |
-| `02-missa-cantata-cue-cards` | `2026-07-28T02:30:54Z` | 12 | 36 | 626,302 | `0c9d6045117b8f285a97a3f623c9f85ed1d07431028ef1a3680f24f3a3da1425` | Alpha; enlarged action backs and electronic pairing checked |
-| `03-solemn-mass` | `2026-07-28T03:20:00Z` | 28 | 0 | 1,524,157 | `6ffcf3bc13078702c0ffba94a532e6da8269954c2953a21a04553672faff222d` | Alpha; every page inspected |
-| `03-solemn-mass-cue-cards` | `2026-07-28T02:30:54Z` | 12 | 36 | 631,592 | `e44ece58ffa0b7bac2c412d0366608ddae4aa96f75bd1229545b14296d459b6a` | Alpha; enlarged action backs and electronic pairing checked |
+| `01-low-mass` | `2026-07-28T20:56:00Z` | 26 | 0 | 6,544,081 | `b555a9dfbbe4c8857f8ec2152dd5ef1c1fc1a5124934f5e0961cf2b9cb1133ee` | Alpha; page-matched every-page screen review passed |
+| `01-low-mass-trainer-manual` | `2026-07-28T20:56:00Z` | 26 | 0 | 6,556,369 | `84bb684a735309e8a89cf943fd28f6ae88b6e82410e57ea92f1c38c31aab068d` | Alpha; page-matched every-page screen review passed |
+| `01-low-mass-flash-cards` | `2026-07-28T21:20:00Z` | 7 | 22 | 349,771 | `15207cd0ac2bcb9b51ccb395be515fab3013919849da713378310aaa2f9f326e` | Alpha; electronic pairing, parity, duplex geometry, and terminal apparatus checked |
+| `02-missa-cantata` | `2026-07-28T20:56:00Z` | 34 | 0 | 2,364,245 | `054ba65b2cb5a94cc6c4140219c56fd568920f21130d516518f16e9abe91cfaf` | Alpha; every page inspected |
+| `02-missa-cantata-cue-cards` | `2026-07-28T21:20:00Z` | 13 | 36 | 628,885 | `ce0dfad27e008e3583baa8d0937fdb62688f584e2fd90f7f69f71f201fe6314e` | Alpha; electronic pairing, parity, duplex geometry, and terminal apparatus checked |
+| `03-solemn-mass` | `2026-07-28T20:56:00Z` | 31 | 0 | 2,707,995 | `266070dd2d4463f1f491ca9dbf1ce948cf4733d36205ed7701f9fbe7b2d0822e` | Alpha; every page inspected |
+| `03-solemn-mass-cue-cards` | `2026-07-28T21:20:00Z` | 13 | 36 | 634,517 | `11c05969c289b6dcaa62a31db20f3abd805f9f05bd3c1a4fba211574b6172c5a` | Alpha; electronic pairing, parity, duplex geometry, and terminal apparatus checked |
 
-The current family totals 143 pages: 113 guide or manual pages and 30 card
+The current family totals 150 pages: 117 guide or manual pages and 33 card
 pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata
 cards, and 36 Solemn-Mass cards. The four changed Low-Mass replacement-art
 files make the two Low-Mass guide PDFs new byte identities. Their generation
@@ -949,4 +974,40 @@ legible captions, no clipping, no checkerboard residue, and no blank page.
 
 This records source and integrated screen review only. Physical print,
 photocopy, human artwork, independent ceremonial, rights, and
+ecclesiastical-suitability reviews remain pending.
+
+## Low-Mass two-server model and drawing audit — 2026-07-28
+
+The page-matched Low Mass pair was rebuilt after the declared O'Connell-derived
+two-server model, ceremonial text, and drawing audit were reconciled. Four new
+versioned graphite assets replace the former Gospel, Offertory, paired-ablution,
+and book/veil-return plates in these two consumers:
+
+| Artwork ID | Bytes | SHA-256 |
+|---|---:|---|
+| `ASG-ART-027-lm-gospel-opening-v1-alpha.png` | 2,418,145 | `7f945ce5a8e7e702725c67aa07f19ac7dbc40ef6994949581c60758a53536307` |
+| `ASG-ART-028-lm-offertory-formation-v1-alpha.png` | 2,244,716 | `46a0091458407e5b0318772d45adb23d16e66988c9a2c4de4d2556e1fd0d2024` |
+| `ASG-ART-029-lm-first-only-ablutions-v1-alpha.png` | 2,701,618 | `41b514154ea4fcf58acc4ceb70847e8b63fed2450d83591a56a19f1841b7ae39` |
+| `ASG-ART-031-lm-veil-missal-exchange-v1-alpha.png` | 2,305,542 | `6441cf0190d776157750683b9e121a73dc87f2fb1f2363e60d2c475b55cb0783` |
+
+The final settled PDFs are 26 pages each. Every page in both consumers was
+inspected on the bounded contact sheets; pages 10, 12, 19, and 20 were also
+inspected at original raster size. That review caught and corrected an
+Offertory spill, a 9.9-point trainer overfull box, and two crowded role-label
+arrangements before this checkpoint. The final pair has no blank spill,
+clipping, overlapping label, floating raster rectangle, fatal error, undefined
+reference, overfull box, or unresolved rerun request. Each log retains one
+terminal-apparatus `Underfull \hbox (badness 10000)` report at generation
+metadata lines 2--954; full-size inspection confirms that the terminal page is
+complete and unclipped.
+
+| Direct consumer | Pages | Bytes | Build SHA-256 |
+|---|---:|---:|---|
+| Low Mass child field guide | 26 | 15,114,922 | `679f6d60b6e1995ba7e041cc1b5072829bb701ebbd833362a53e74035d1758e2` |
+| Low Mass trainer manual | 26 | 15,127,717 | `3eb642d0a774afada823feb4d20a71b7c4fec19bf3dda07a7a67e9ee555c8022` |
+
+The source and artwork prompts, alpha conversion, rejected candidates, source
+distinctions, and residual code-drawn plate follow-ups are recorded in
+`artwork-manifest.md`, `source-audit.md`, and the two leaf guide maps. Physical
+print, photocopy, human artwork, independent ceremonial, rights, and
 ecclesiastical-suitability reviews remain pending.

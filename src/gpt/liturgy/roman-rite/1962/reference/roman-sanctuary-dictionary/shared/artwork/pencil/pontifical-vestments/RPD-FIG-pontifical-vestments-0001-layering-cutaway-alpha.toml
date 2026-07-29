@@ -1,0 +1,67 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-pontifical-tunicle-dalmatic-chasuble-worn-cutaway"
+object_ids = ["obj-pontifical-tunicle", "obj-pontifical-dalmatic", "obj-chasuble"]
+file = "RPD-FIG-pontifical-vestments-0001-layering-cutaway-alpha.png"
+purpose = "Teach the verified pontifical vesting order on one coherent wearer without inventing diagnostic tunicle and dalmatic cuts."
+depicted_state = "One faceless wearer has a coherent chasuble on the left and a vertical picture-right cutaway exposing two nested plain sleeved inner layers. Restrained cord ends mark the exposed shoulder of each inner layer."
+period_status = "Roman 1962 pontifical-Mass horizon"
+source_controlled_features = [
+  "pontifical tunicle as the innermost depicted layer",
+  "pontifical dalmatic directly over the tunicle",
+  "chasuble outermost",
+  "restrained shoulder cords on both inner layers in the checked ceremonial witness",
+]
+diagrammatic_conventions = [
+  "the picture-right peel-back teaches inside-to-outside order",
+  "later publication labels, rather than garment morphology, name the tunicle and dalmatic",
+  "the faceless body is a neutral display wearer and not a portrait",
+]
+deliberately_unclaimed_features = [
+  "cut",
+  "dimensions",
+  "ornament",
+  "textile",
+  "hem relation",
+  "sleeve-length or sleeve-width distinction between tunicle and dalmatic",
+  "the literal form of the cutaway peel",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1024x1536 sRGB PNG"
+received_sha256 = "743f06dc2b0c918a5b68b517357692f7202c84a17b4e2664b2200110deead7e7"
+normalized_pixels = "1024x1536 8-bit grayscale-alpha PNG"
+normalization = "The built-in image editor first replaced the rejected gray vignette with a saturated chroma-key field while preserving the accepted one-wearer cutaway. ImageMagick 7 then removed that field with a 26-percent color tolerance, applied a 0.45-sigma alpha-edge blur, and converted retained pixels to grayscale. The operation is a mechanical matte normalization of the image-generated candidate, not a new source of vestment morphology."
+sha256 = "af208b66fe031d29c5cce62c2b5568e3626ea93195e5987bb501f90d5525090b"
+alpha_review = "GrayscaleAlpha with 8-bit storage and 17 observed alpha levels; all four corners fully transparent; nonzero-alpha bounds 825x1515+101+21. Checkerboard, #1d1a22 dark, and #e8d8bd warm composites show only the cutout and no rectangular field or vignette."
+baked_in_content_audit = "Exactly one faceless wearer and three nested vestment layers. No lettering, labels, arrows, numerals, decorative bows, ornament, accessories, second person, floating garment shell, border, watermark, or setting is baked into the asset."
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "asset-local candidate; canonical manifest admission remains a separate integration action"
+
+prompt = """
+Use case: scientific-educational
+Asset type: child-readable source-controlled graphite cutaway for a Roman liturgical pictorial dictionary
+Primary request: Draw exactly ONE coherent front-facing faceless bishop mannequin wearing exactly three nested vestment layers. Show the verified order through a clean vertical cutaway on picture-right: innermost pontifical tunicle against the torso, pontifical dalmatic directly over it, and chasuble outermost. The left half remains a coherent worn chasuble silhouette; on the right half, the chasuble edge is gently ghosted and folded aside, and a smaller section of the dalmatic is ghosted and folded aside, exposing the tunicle beneath. All layers remain centered on the same wearer and follow the same shoulders and torso—never three floating garments.
+Identification boundary: tunicle and dalmatic must use the SAME plain neutral sleeved morphology. Do not distinguish them through hem length, body width, sleeve length, sleeve width, ornament, color, or cut. Their identity comes only from verified nesting order and the later page labels. Show only restrained short functional cord ends at each shoulder of the tunicle and dalmatic where the cutaway exposes them; no bows, rosettes, tassels, or decorative loops.
+Style/medium: elegant monochrome graphite pencil, crisp controlled contour, restrained cross-hatching, simple museum cutaway, dignified and immediately legible to children.
+Composition/framing: one wearer from neck base to knees, centered, generous padding. Exactly one torso, no separate garment shells, no extra people. No text, labels, arrows, numerals, caption, or legend baked into the art.
+Source boundary: checked sources support only the order tunicle under dalmatic under chasuble and restrained shoulder cords for the first two layers. They do not support a diagnostic tunicle/dalmatic cut, dimensions, ornament, textile, sleeve relation, or hem relation.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal. It must be a single uniform RGB color with NO vignette, gradient, glow, shadow, texture, paper, floor, horizon, lighting variation, or translucent haze. Keep the subject fully separated from the background with crisp edges. Do not use green within the subject.
+Constraints: exactly three layers on exactly one coherent wearer; chasuble sleeveless outer envelope; two plain identical-morphology sleeved inner layers; restrained cord ends only; no standing collar, alb, cassock, stole, maniple, mitre, gloves, pectoral cross, ring, lace, embroidery, decorative bands, symbols, watermark, border, cast shadow, contact shadow, architecture, altar, or objects.
+Avoid: three floating garments; exploded shells; mirror duplicates; copy-paste appearance; diagonal sash or spiral wrapping; extra layer; decorative shoulder bows; invented sleeve/cut/hem distinctions; photorealism; cartoon caricature; fantasy vestments; rectangular vignette.
+"""
+
+[[source_basis]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-pontifical-tunicle-and-dalmatic"
+locus = "Rubricae generales n. 134"
+supported_feature = "The bishop wears the chasuble over the dalmatic and tunicle."
+
+[[source_basis]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.praeparatio-ad-missam-pontifical-tunicle-and-dalmatic"
+locus = "Orationes dicendae ab Episcopo cum in Pontificalibus celebrat"
+supported_feature = "Separate vesting prayers corroborate the order tunicle, dalmatic, gloves, and chasuble."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-2.chapter-8.pontifical-vesting"
+locus = "book II, chapter VIII, nn. 18-19"
+supported_feature = "The tunicle is put on first, then the dalmatic with shoulder cords tightened, and the chasuble follows after the gloves."

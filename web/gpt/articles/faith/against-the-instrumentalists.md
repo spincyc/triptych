@@ -150,11 +150,7 @@ This is an internally source-audited working study. Production and artifact evid
 
 -   G. E. M. Anscombe, “C. S. Lewis’s Rewrite of Chapter III of *Miracles*,” in Roger White, Judith Wolfe, and Brendan N. Wolfe, eds., *C. S. Lewis and His Circle* (Oxford University Press, 2015), 15–23; [publisher record and abstract](https://academic.oup.com/book/9928/chapter-abstract/157260151).
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-23T13:23:48Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

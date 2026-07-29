@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-epistle-book"
-workflow_state = "source-audited"
+workflow_state = "art-reviewed"
 preferred_english_name = "Epistle book"
 latin_headword = "liber Epistolarum"
 alternate_english_names = ["Epistolary"]
@@ -13,7 +13,6 @@ ceremonies = ["solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", 
 confusable_with = ["obj-gospel-book"]
 related_objects = ["obj-gospel-book"]
 component_objects = []
-artwork = []
 
 [presence]
 locations = ["Carried by the subdeacon for the sung Epistle in the Solemn-Mass rite."]
@@ -72,6 +71,24 @@ locus = "Ritus servandus VI.4, printed LVII-LVIII/artifact PDF 59-60"
 role = "governing-liturgical-book"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-epistle-book-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/books/RPD-FIG-books-0008-epistle-book-isolated-alpha.png"
+review_state = "liturgically-checked"
+depicts = ["obj-epistle-book"]
+scale_mode = "not-to-common-scale"
+review_note = "Representative plain closed lesson book for object recognition; it establishes no universal binding, ornament, dimensions, or color."
+
+[[artwork]]
+id = "art-epistle-book-carried"
+view = "in-use"
+asset = "shared/artwork/pencil/books/RPD-FIG-books-0006-epistle-book-in-use-alpha.png"
+review_state = "approved"
+depicts = ["obj-epistle-book"]
+scale_mode = "not-applicable"
+review_note = "The carried context supplements the isolated object. The ministerial figure is context for the checked carrying relationship and is not vestment evidence."
 
 [[audience_note]]
 audience = "sacristan"

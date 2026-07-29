@@ -1,0 +1,92 @@
+schema_version = 1
+id = "obj-gremial"
+workflow_state = "held"
+preferred_english_name = "Gremial"
+latin_headword = "gremiale"
+alternate_english_names = ["Gremial veil", "Lap cloth"]
+alternate_latin_names = []
+sort_name = "Gremial"
+categories = ["pontifical-and-prelatial", "linens-and-textiles"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+confusable_with = ["obj-vimpa", "obj-lavabo-towel"]
+related_objects = ["obj-episcopal-throne", "obj-faldstool"]
+component_objects = []
+editorial_note = "The isolated specimen and seated context teach identity and use without prescribing color, ornament, fastening, chair, or vesture."
+
+[presence]
+locations = ["Prepared at the credence and placed across the seated bishop's lap when appointed."]
+contexts = ["Seated pontifical actions and the Ceremonial's assistant-mediated handling sequence."]
+composition_ids = ["plt-pontifical-insignia"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["cleric"]
+receives = ["cleric"]
+stores = ["sacristan"]
+warnings = ["Do not confuse the lap cloth with a shoulder veil or hand towel."]
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-gremial-use"
+kind = "liturgical-use"
+text = "The Ceremonial places the gremial on the seated bishop's lap and gives an assistant-mediated sequence for removal, folded holding, return, and final disposition."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-gremial-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-gremial-morphology"
+kind = "appearance"
+text = "Braun describes an approximately square pontifical-Mass cloth and distinguishes an ornamented silk form from a washable linen service form."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-gremial-braun"]
+
+[[sources]]
+id = "src-gremial-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapters-11-12"
+locus = "Book I, chapter XI, section 9."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-gremial-braun"
+binding = "passage.joseph-braun.handbuch-der-paramentik.herder-1912.pages-265-266-gremiale"
+locus = "Printed pp. 265-266; artifact pp. 279-280."
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[artwork]]
+id = "art-gremial-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-insignia-0002-gremial-isolated-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-gremial"]
+scale_mode = "not-to-common-scale"
+review_note = "Near-square textile without fastening invention; woven pattern and folds are representative."
+
+[[artwork]]
+id = "art-gremial-handling"
+view = "in-use"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-insignia-0003-gremial-handling-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-gremial"]
+scale_mode = "not-applicable"
+review_note = "Lap placement and assistant handling are the lesson; people, chair, and simplified vesture are context only."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Trace preparation, lap placement, assistant-mediated removal and return, and final disposition; do not infer fastening or vesture details from the context drawing."
+claim_ids = ["clm-gremial-use", "clm-gremial-morphology"]

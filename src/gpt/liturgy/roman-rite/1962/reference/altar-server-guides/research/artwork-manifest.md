@@ -1155,8 +1155,8 @@ sheet.
 | Logical asset | Active file | Depicted and bounded state | Geometry | Bytes | SHA-256 | Consumers |
 |---|---|---|---:|---:|---|---|
 | `ASG-ART-006` | `shared/artwork/pencil/ASG-ART-006-lm-lavabo-corrected-v3-alpha.png` | Low Mass water-only Lavabo: Second pours water over the priest's fingers into the basin; First presents the towel | 1345 x 1170 | 2,379,050 | `3d2f91c14741d4778925addd07727b8ccde956a9bd1dcf71365e429a902d2aae` | `01-low-mass`; `01-low-mass-trainer-manual` |
-| `ASG-ART-017` | `shared/artwork/pencil/ASG-ART-017-lm-mc-first-ablution-wine-v2-alpha.png` | Low Mass and Missa Cantata first ablution: First/A1 pours wine into the priest-held chalice; Second/A2 waits with water | 700 x 470 | 488,691 | `647c56ac60215c7c2aa64617cac342ff8ec3d073f27e01dc08206527a5cd099e` | `01-low-mass`; `01-low-mass-trainer-manual`; `02-missa-cantata` |
-| `ASG-ART-018` | `shared/artwork/pencil/ASG-ART-018-lm-mc-ablution-fingers-v3-alpha.png` | Low Mass and Missa Cantata finger ablution: First/A1 pours wine and Second/A2 pours water over the priest's fingers into the chalice | 650 x 524 | 463,057 | `1f882b00e791d8494b4def2803caa93abf6ad4263e4ce2686f3405e9076c3dc6` | `01-low-mass`; `01-low-mass-trainer-manual`; `02-missa-cantata` |
+| `ASG-ART-017` | `shared/artwork/pencil/ASG-ART-017-lm-mc-first-ablution-wine-v2-alpha.png` | Missa Cantata first ablution: A1 pours wine into the priest-held chalice; A2 waits with water; superseded for Low Mass by `ASG-ART-029` | 700 x 470 | 488,691 | `647c56ac60215c7c2aa64617cac342ff8ec3d073f27e01dc08206527a5cd099e` | `02-missa-cantata` |
+| `ASG-ART-018` | `shared/artwork/pencil/ASG-ART-018-lm-mc-ablution-fingers-v3-alpha.png` | Missa Cantata finger ablution: A1 pours wine and A2 pours water over the priest's fingers into the chalice; superseded for Low Mass by `ASG-ART-029` | 650 x 524 | 463,057 | `1f882b00e791d8494b4def2803caa93abf6ad4263e4ce2686f3405e9076c3dc6` | `02-missa-cantata` |
 | `ASG-ART-030` | `shared/artwork/pencil/ASG-ART-030-so-subdeacon-ablutions-v1-alpha.png` | Solemn Mass two-state sequence: A1 supplies both cruets; the subdeacon pours the first wine, then wine and water over the celebrant's fingers | 825 x 524 | 699,610 | `1f8ecb82b09a52e341737b6cdc1b1c64a4033da83bb1d20008fd7bfbd083a7d8` | `03-solemn-mass` |
 
 Standalone inspection passed for actor and vessel counts, the accepted
@@ -1167,3 +1167,75 @@ third-party source asset incorporated, distributed under repository terms
 only to the extent applicable rights exist. Physical print, photocopy, human
 artwork, independent ceremonial, rights, and ecclesiastical-suitability
 reviews remain pending.
+
+## Low-Mass model correction plates — 2026-07-28
+
+The built-in OpenAI image-generation interface produced three accepted
+versioned replacements. No third-party image was supplied. Each prompt
+specified a children's 1962 Low-Mass instructional plate, refined monochrome
+graphite, complete altar-step geometry, a traditional Roman fiddleback
+chasuble, no baked-in words/arrows/numerals, and a flat `#00ff00` removable
+background. The generated RGB used small green-value variations, so the
+ordinary exact-key removal was insufficient and the Pillow-based installed
+helper was unavailable. A deterministic ImageMagick mask made pixels
+transparent in proportion to green-channel excess over red/blue, then trimmed
+only fully transparent perimeter pixels. The resulting files have transparent
+corners and no rectangular paper field.
+
+The exact accepted subject clauses were:
+
+- `ASG-ART-027`: “Create a wide, clean graphite pencil illustration of the
+  Gospel reading at a traditional ad orientem Roman altar, front view from the
+  nave. The priest stands on the predella at the Gospel side, turned
+  diagonally toward the open Missal and away from the nave, wearing alb,
+  maniple, and a clearly recognizable traditional Roman fiddleback chasuble.
+  ... Second stands on the first step at the Gospel side but laterally well
+  clear of the priest, never right beside him. First is shown at the second
+  step by the book at the beginning of the Gospel, waiting while the priest
+  begins reading, poised to return only after the opening words and immediate
+  reverence.”
+- `ASG-ART-028`: “Create a wide graphite pencil illustration of the Offertory
+  cruet service ... The priest ... stands on the predella directly at the
+  altar. Two boy acolytes ... stand side by side on the second step, one full
+  step below him, both facing the priest. First holds the wine cruet and
+  Second holds the water cruet, each by the handle, ready to present in strict
+  sequence rather than simultaneously.”
+- `ASG-ART-029`: “Create one wide graphite pencil plate containing two
+  clearly separated side-by-side moments of the post-Communion ablutions ...
+  ONLY First Acolyte serves, standing one step below. Left panel: First pours
+  wine alone into the chalice for the first purification. Right panel: First
+  alone pours the subsequent wine-and-water over the priest's joined thumb and
+  forefinger above the chalice. ... Second Acolyte is absent from both service
+  panels.”
+
+| Logical asset | Active file | Depicted and bounded state | Geometry | Bytes | SHA-256 | Consumers |
+|---|---|---|---:|---:|---|---|
+| `ASG-ART-027` | `shared/artwork/pencil/ASG-ART-027-lm-gospel-opening-v1-alpha.png` | Principal-Gospel opening: priest in Roman chasuble at Gospel side; First waits by the book; Second laterally clear; complete stair profile | 1433 x 954 | 2,418,145 | `7f945ce5a8e7e702725c67aa07f19ac7dbc40ef6994949581c60758a53536307` | `01-low-mass`; `01-low-mass-trainer-manual` |
+| `ASG-ART-028` | `shared/artwork/pencil/ASG-ART-028-lm-offertory-formation-v1-alpha.png` | Offertory service formation: priest at altar on predella; First and Second side by side one step below with wine and water | 1502 x 903 | 2,244,716 | `46a0091458407e5b0318772d45adb23d16e66988c9a2c4de4d2556e1fd0d2024` | `01-low-mass`; `01-low-mass-trainer-manual` |
+| `ASG-ART-029` | `shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-v1-alpha.png` | Two-state First-only ablution sequence: wine purification, then subsequent finger ablution; no Second in either service state | 1649 x 902 | 2,701,618 | `41b514154ea4fcf58acc4ceb70847e8b63fed2450d83591a56a19f1841b7ae39` | `01-low-mass`; `01-low-mass-trainer-manual` |
+| `ASG-ART-031` | `shared/artwork/pencil/ASG-ART-031-lm-veil-missal-exchange-v1-alpha.png` | Coordinated exchange: First carries folded chalice veil E→G while Second carries open Missal/stand G→E; priest alone retains chalice | 1536 x 910 | 2,305,542 | `6441cf0190d776157750683b9e121a73dc87f2fb1f2363e60d2c475b55cb0783` | `01-low-mass`; `01-low-mass-trainer-manual` |
+
+Two additional generated candidates were rejected and not copied into the
+tracked artwork tree. The proposed coordinated veil/Missal plate duplicated
+both acolytes within one state and baked each panel into an opaque white
+rectangle. The proposed Last-Gospel plate put a second book in the priest's
+hands and did not show the complete declared stair profile. Neither rejected
+candidate is a ceremonial witness or an active publication dependency.
+
+The later accepted `ASG-ART-031` prompt specified exactly one priest and two
+acolytes, one scene, First with a folded ornamental veil E→G, Second with the
+open Missal and sloped stand G→E, no server-carried chalice, full step
+geometry, Roman fiddleback chasuble, and the same no-text/chroma-key boundary.
+
+The Low-Mass scene-by-scene audit found that all in-Mass priest figures must
+show the same traditional Roman chasuble and all scenes whose instruction
+depends on height must show the complete declared floor/Step1/Step2/predella
+geometry. `ASG-ART-012`, `ASG-ART-013`, `ASG-ART-017`, `ASG-ART-018`, and
+`ASG-ART-019` are
+therefore no longer Low-Mass dependencies; they remain historical or sung-form
+assets where separately applicable. The three retained code-drawn publication
+scenes (plate return, completed reset, and Last Gospel) were also audited at
+full rendered size. They preserve the declared role allocation, step geometry,
+and in-Mass chasuble state and are not semantic release blockers. A later
+versioned graphite replacement could improve stylistic uniformity, but must
+not displace these checked scenes until it is at least as explicit.

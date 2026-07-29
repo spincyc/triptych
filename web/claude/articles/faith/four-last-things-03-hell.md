@@ -609,11 +609,7 @@ All online witnesses were checked on 2026-07-25. No mutable civil or canonical l
 
 -   Aristotle, *Rhetoric* I.10.17 (Bekker 1369b12–14), the distinction of *kolasis* and *timōria*; Greek from the text ed. W. D. Ross (Oxford, 1959) and English from the translation of J. H. Freese (Loeb, 1926, public domain in the United States by date), both read 2026-07-25 in the Perseus Digital Library, whose markup is stated to be licensed CC BY-SA 3.0 United States.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T03:17:43Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

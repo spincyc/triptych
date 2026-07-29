@@ -32,20 +32,22 @@ that can be finished is worth more than one that cannot.
 
 Status observed on the working tree at the time of writing.
 
-| Collection segment | Permanent identities | Fixed targets | gpt published | claude published | gpt remaining | claude remaining |
+| Collection segment | Permanent identities | Distinct production targets | gpt published | claude published | gpt remaining | claude remaining |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Postconciliar Proper of Time (`PC-S`) | 60 | 184 | 9 | 0 | 175 | 184 |
+| Postconciliar Sacred Triduum (`PC-T`) | 3 | 2 | 0 | 0 | 2 | 2 |
 | Postconciliar conditional Scrutiny Ritual Masses | 0 new | 3 | 0 | 0 | 3 | 3 |
 | Postconciliar weekday fallbacks | 0 new | 6 | 0 | 0 | 6 | 6 |
 | Postconciliar General Calendar replacements (`PC-R`) | 9 | 16 or 22 | 0 | 0 | 16 or 22 | 16 or 22 |
-| **Postconciliar total** | **69** | **209 or 215** | **9** | **0** | **200 or 206** | **209 or 215** |
+| **Postconciliar total** | **72** | **211 or 217** | **9** | **0** | **202 or 208** | **211 or 217** |
 | 1962 temporal Sundays (`01`–`52`) | 52 | 52 | 9 | 0 | 43 | 52 |
 | 1962 resumed Epiphany variants (`46R`–`49R`) | 4 | 4 | 0 | 0 | 4 | 4 |
+| 1962 Sacred Triduum (`T01`–`T03`) | 3 | 3 | 0 | 0 | 3 | 3 |
 | 1962 Sunday-assigned feasts (`F`) | not enumerated | not enumerated | 0 | 0 | not enumerated | not enumerated |
 | 1962 ritual, votive, and other (`M`) | not enumerated | not enumerated | 1 | 0 | not enumerated | not enumerated |
-| **1962 fixed total** | **56** | **56** | **9** | **0** | **47** | **56** |
+| **1962 fixed total** | **59** | **59** | **9** | **0** | **50** | **59** |
 
-**Remaining across both collections, fixed inventory only: 247 or 253 for `gpt`, 265 or 271 for `claude`.** The pair of figures is the registry's own `PC-R08` fork, not an uncertainty in this plan: 209 assumes the 16-target replacement shape and 215 the 22-target shape. Neither figure counts the open-ended 1962 `F` and `M` series, resolver-generated overlays, or a future `PC-W` weekday collection.
+**Remaining across both collections, fixed inventory only: 252 or 258 for `gpt`, 270 or 276 for `claude`.** The pair of figures is the registry's own `PC-R08` fork, not an uncertainty in this plan: 211 assumes the 16-target replacement shape and 217 the 22-target shape. Neither figure counts the open-ended 1962 `F` and `M` series, resolver-generated overlays, or a future `PC-W` weekday collection.
 
 In progress and therefore still counted as remaining: 1 under `claude`. Detail is in the tables below.
 
@@ -54,11 +56,11 @@ In progress and therefore still counted as remaining: 1 under `claude`. Detail i
 Every count in this plan was recomputed from the registry's own per-parent key lists and agrees with the registry's stated totals. No disagreement was found.
 
 - Summing the registry's per-parent counts gives 184 baseline Proper-of-Time targets, 79 for `PC-S01`–`PC-S25` and 105 for `PC-S26`–`PC-S60`, exactly as the registry states.
-- Adding the three conditional Scrutiny Ritual Masses gives 187; adding the six weekday fallbacks to the 184 gives 190, and both together give 193. All three match the registry.
+- Adding the three conditional Scrutiny Ritual Masses gives 187; adding the two non-duplicative `PC-T` targets gives 189. Adding the six weekday fallbacks to the 184 gives 190, and adding Scrutinies and `PC-T` gives 195. `PC-T03` is an alias of the existing three `PC-S17` Vigil targets and adds no target.
 - Summing the replacement matrix gives 13 fixed `PC-R` targets plus the `PC-R08` expansion of 3 or 9, so 16 or 22, matching the registry.
-- 184 + 3 + 16 = 203 and 184 + 3 + 22 = 209 fixed registry queue; with the six weekday fallbacks, 209 or 215 working inventory. All match the registry.
+- 184 + 3 + 2 + 16 = 205 and 184 + 3 + 2 + 22 = 211 fixed registry queue; with the six weekday fallbacks, 211 or 217 working inventory. All match the registry.
 - Every `PC-S26`–`PC-S57` Lectionary number printed in the registry was independently recomputed with the registry's own formula `64 + 3 × (parent − 26) + cycle offset` and agrees in all 96 cells. The printed numbers are therefore used directly below, not derived.
-- The 1962 profile states 52 temporal Sunday identities and four resumed variants. This plan reconstructs the 52-item enumeration, which the profile does not print; the note under that table states exactly which rows are quoted, which are read off existing leaves, and which are derived.
+- The 1962 profile states 52 temporal Sunday identities, four resumed variants, and three non-Sunday Sacred Triduum identities. This plan reconstructs the 52-item enumeration, which the profile does not print; the note under that table states exactly which rows are quoted, which are read off existing leaves, and which are derived.
 
 ### How status was derived
 
@@ -344,6 +346,18 @@ The registry's canonical creation queue, 184 rows, in registry order: parent ord
 
 `PC-S16` carries paired locators because Palm Sunday's procession Gospel and Mass readings are separately numbered per cycle.
 
+### Sacred Triduum identities
+
+`PC-T01` and `PC-T02` are two additional planned targets. `PC-T03` is a
+stable identity alias for the three existing `PC-S17` Vigil targets and
+therefore adds no target or count.
+
+| ID | Celebration | Formula target or alias | Owner under `<proper-root>` | gpt | claude |
+| --- | --- | --- | --- | --- | --- |
+| PC-T01 | Evening Mass of the Lord's Supper | `PC-T01-ABC` | `temporal/shared/formularies/pc-t01-evening-mass-of-the-lords-supper/` | not started | not started |
+| PC-T02 | Celebration of the Lord's Passion | `PC-T02-ABC` | `temporal/shared/formularies/pc-t02-celebration-of-the-lords-passion/` | not started | not started |
+| PC-T03 | Easter Vigil | `PC-S17-A-VIGIL`, `PC-S17-B-VIGIL`, and `PC-S17-C-VIGIL` | `temporal/shared/formularies/pc-s17-easter-sunday-of-the-resurrection-of-the-lord/` | not started | not started |
+
 ### Conditional Scrutiny Ritual Masses
 
 Three conditional formula targets that substitute distinct Ritual Mass formularies. They raise the Proper-of-Time-linked Sunday queue from 184 to 187, apply only when the corresponding Scrutiny is celebrated and the governing books admit the Ritual Mass, and do not become duplicate temporal-formulary owners. Their leaves remain in the temporal Sunday queue and import the ritual owner.
@@ -486,6 +500,17 @@ the identities.
 Verify the exact printed formulary against the controlling facsimile before
 creating a leaf. If this table differs from the profile registry, the profile
 controls and this status table must be corrected.
+
+### Sacred Triduum identities `T01`–`T03`
+
+These non-Sunday identities are independent of the `01`--`52` temporal
+Sunday numbering.
+
+| ID | Celebration | Required slug stem | gpt | claude |
+| --- | --- | --- | --- | --- |
+| T01 | Mass of the Lord's Supper | `t01-mass-of-the-lords-supper` | not started | not started |
+| T02 | Solemn Liturgical Action of the Passion and Death of the Lord | `t02-solemn-liturgical-action-of-the-passion-and-death-of-the-lord` | not started | not started |
+| T03 | Easter Vigil | `t03-easter-vigil` | not started | not started |
 
 ### Resumed Epiphany variants `46R`–`49R`
 

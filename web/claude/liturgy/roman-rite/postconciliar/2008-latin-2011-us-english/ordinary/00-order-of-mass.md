@@ -781,11 +781,7 @@ Two absences from this table are deliberate. The working history of the Consiliu
 
 -   Anaphora of St Basil, in any recension. Named as the best-known representative of the Antiochene type; no edition was examined and no verbal claim is made.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-26T03:14:06Z
-
-**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

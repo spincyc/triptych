@@ -34,7 +34,9 @@ supplies poverty of spirit as a liturgical lens but does not erase the
 Gospel's material and social force.
 
 The guide distinguishes prudent provision and care for dependents from the
-illusion that accumulation guarantees life. Its treatment of stewardship,
+illusion that accumulation guarantees life. It also keeps the audiences and
+speech forms distinct: an unanswered inheritance request, a warning to the
+crowd, a parable, and its closing contrast. Its treatment of stewardship,
 sharing, hidden life, and Eucharistic reception is editorial synthesis, not a
 civil inheritance rule or a condemnation of property, agriculture, saving,
 or planning.
@@ -50,6 +52,22 @@ or planning.
 - *Homiletic Directory* 145–149 as an official homiletic orientation that
   preserves the Old Testament–Gospel correlation and independent apostolic
   course.
+
+The retained source bindings directly control the public-domain study
+translation for every appointed biblical unit used in the exposition. The
+patristic and modern witnesses remain cited reception sources rather than
+surrogates for the protected U.S. Lectionary. No witness is allowed to supply
+an unspoken motive, a judgment about the brothers' civil case, or a
+famine-setting absent from Luke.
+
+## Ownership correction
+
+This leaf no longer carries the Week XVIII Missal's edition, variation-list,
+page-level collation, or formulary-provenance bindings. Those belong only to
+the shared owner. The leaf names that owner, imports its resolved element
+identities, and studies how the received formulary functions beside the Year C
+readings. It does not paraphrase the owner's collation record or claim that the
+shared prayers were selected to explain Lectionary no. 114.
 
 ## Rights, occurrence, and unresolved work
 

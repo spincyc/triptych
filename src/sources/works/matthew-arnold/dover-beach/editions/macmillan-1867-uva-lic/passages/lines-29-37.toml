@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.matthew-arnold.dover-beach.macmillan-1867-uva-lic.lines-29-37"
+edition_id = "edition.matthew-arnold.dover-beach.macmillan-1867-uva-lic"
+artifact_id = "artifact.matthew-arnold.dover-beach.macmillan-1867-uva-lic.uva-lic-tei-a58b6b0d"
+artifact_sha256 = "a58b6b0d7ee62450f292c9c8418e37d3422f403c59b3eb5ea17225c0fc76962e"
+locus = "lines-29-37"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete final stanza, read with the preceding Sea of Faith stanza in the identified first-edition transcription. Lines 29–34 move from a plea that two lovers remain true to an accumulating neither/nor catalogue in which the world lacks love and consolation. The form and context support describing a strong structural and verbal echo or inversion of Romans 8:38–39; they do not establish conscious authorial dependence, quotation, or Arnold's intended biblical source."
+physical_line_ranges = [[273, 284]]
+text = "Ah, love, let us be true To one another! for the world, which seems To lie before us like a land of dreams, So various, so beautiful, so new, Hath really neither joy, nor love, nor light, Nor certitude, nor peace, nor help for pain; And we are here as on a darkling plain Swept with confused alarms of struggle and flight, Where ignorant armies clash by night."
+transcription_segments = [
+  { line = 273, text = "Ah, love, let us be true" },
+  { line = 274, text = "To one another! for the world, which seems" },
+  { line = 275, text = "To lie before us like a land of dreams," },
+  { line = 276, text = "So various, so beautiful, so new," },
+  { line = 280, text = "Hath really neither joy, nor love, nor light," },
+  { line = 281, text = "Nor certitude, nor peace, nor help for pain;" },
+  { line = 282, text = "And we are here as on a darkling plain" },
+  { line = 283, text = "Swept with confused alarms of struggle and flight," },
+  { line = 284, text = "Where ignorant armies clash by night." },
+]
+verified_on = "2026-07-28"
+notes = "The text preserves the TEI transcription's wording and punctuation while joining verse lines with spaces. Any consumer should distinguish the observable echo from a claim about Arnold's conscious borrowing."

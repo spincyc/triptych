@@ -604,11 +604,7 @@ Quoted at the individual mysteries as early readings of the same scriptural even
 
 The prayer texts reproduced from these two witnesses are received prayers of the Church, not project-owned expression.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-25T19:22:50Z
-
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

@@ -20,3 +20,11 @@ This non-publishable directory records how this edition-locale adopts and resolv
 - [2026 occurrences](occurrences-2026.md) records dated national-calendar results for the targets that have publication leaves.
 
 A target absent from these records is **unassessed**, which is not the same as `not-present-in-edition`. No collection-completeness claim follows from the leaves that exist. These records do not replace a leaf manifest, a leaf composition audit, a shared formulary audit, or a research scope.
+
+This edition-locale also adopts the stable Sacred Triduum identities:
+`PC-T01` Evening Mass of the Lord's Supper and `PC-T02` Celebration of the
+Lord's Passion are unassessed planned targets, while `PC-T03` Easter Vigil is
+an identity alias for the existing three cycle-specific `PC-S17` Vigil
+targets. The alias adds no target or owner. Reader-facing catalogs use only
+the celebration names; exact printed capitalization remains subject to the
+direct altar-book collation recorded in the formula dispositions.

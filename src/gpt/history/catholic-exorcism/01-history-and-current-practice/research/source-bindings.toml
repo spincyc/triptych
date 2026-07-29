@@ -3,6 +3,27 @@ record_type = "bindings"
 document = "history/catholic-exorcism/01-history-and-current-practice"
 
 [[bindings]]
+source_id = "edition.gene-wolfe.the-devil-in-a-forest.orb-first-1996"
+loci = ["p.207"]
+role = "context"
+states = ["cataloged"]
+context = "Catalog identity for the first Orb edition and publication-local reader-attested locus only. A reader attested the exact wording, the Abbé as speaker, and p.207 on 2026-07-26; the project did not acquire or independently collate the protected edition. Any restored excerpt is a brief literary point of departure requiring attribution, immediate analysis, fair-use limitation, and exclusion from the repository license; it is not doctrine or evidence that curses work."
+
+[[bindings]]
+source_id = "edition.chuck-palahniuk.fight-club.norton-first-1996"
+loci = ["ch.6"]
+role = "context"
+states = ["cataloged"]
+context = "Catalog identity and source attribution for the familiar fictional rule transformed by the publication's editorial adaptation. No protected wording or edition bytes are reproduced; the adaptation is not presented as a quotation or as evidence about exorcism."
+
+[[bindings]]
+source_id = "edition.jim-uhls.fight-club-screenplay.fox-film-1999"
+loci = ["produced film"]
+role = "reception"
+states = ["cataloged"]
+context = "Catalog identity for the screenplay and film that popularized the familiar rule. No screenplay or film bytes are retained or quoted, and the reception reference supplies no evidence about exorcism."
+
+[[bindings]]
 source_id = "passage.parlement-of-paris.arest-grandier-1634.hebert-poullard-paris-1634.judgment-pp-1-7"
 loci = ["pp.1-7"]
 role = "direct-witness"
@@ -1233,7 +1254,7 @@ source_id = "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.inte
 loci = ["wilson-page-45", "wilson-page-46", "wilson-page-47", "wilson-page-48", "wilson-page-49", "wilson-page-50"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:002d26c80eec5c700410a20dc31606e2791342979e80ba0176852662ca384e85"
+source_fingerprint = "sha256:0e245cf5ba8ba24a818cfccc7dc8ef91577ce1ef2d6af189794140efa2f20753"
 context = "Exact complete scan acquired and visually checked for the sequence of scrutinies and rites for the elect on printed pages 45–50, including the heading Exorcismi super Electos on page 48. This edition witness does not by itself establish manuscript correspondence or date each textual stratum."
 
 [[bindings]]

@@ -1,0 +1,64 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-watterson-bugia-exemplar"
+object_ids = ["obj-bugia"]
+file = "RPD-FIG-pontifical-0002-watterson-bugia-alpha.png"
+purpose = "Teach the bugia through an isolated graphite reconstruction explicitly bounded to the Watterson exemplar."
+depicted_state = "One historical candle holder with a low broad pan, central stepped socket, small feet, and one lighted candle."
+period_status = "dated Watterson-era material exemplar, 1880-1899; not universal morphology"
+source_controlled_features = [
+  "low broad circular pan",
+  "shallow raised rim",
+  "central stepped candle socket",
+  "small feet beneath the pan",
+  "one candle",
+]
+deliberately_omitted_details = [
+  "dimensions",
+  "unseen construction",
+  "handle or grip",
+  "museum setting",
+  "display label",
+  "color claim",
+  "universal handle or pan morphology",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1122x1402 sRGB PNG"
+normalized_pixels = "1122x1402 8-bit sRGBA PNG"
+normalization = "Flat green background converted locally to a soft alpha matte with automatic border-key sampling and despill."
+sha256 = "a9fc824b1b6eb474694cddf89d6355cf5915cd7d2cb5b5f58aebd08a1763ac00"
+baked_in_content_audit = "Exactly one candle holder and one candle are present. No handle, grip, rod, lateral projection, museum setting, card, books, table, surrounding display objects, person, hand, matchbox, chain, label, border, watermark, or rectangular background is baked into the asset."
+tex_owned_additions = ["English name", "alternate headword", "exemplar boundary", "attribution", "caption", "callouts"]
+rights_state = "project-generated reconstruction using the CC BY 4.0 Watterson documentary photograph as a visual reference; attribution must accompany publication use"
+review_state = "creator-reviewed asset-local candidate; independent manifest admission remains required"
+
+prompt = """
+Use case: scientific-educational
+Asset type: isolated source-bounded monochrome object figure for a children's Roman liturgical pictorial dictionary
+Input image: Image 1 is a documentary reference for one historical Watterson bugia exemplar. Inspect only the foreground candle holder at picture-right. The object at picture-left and every apparent bar or grip extending leftward are separate display clutter and MUST NOT be included.
+Primary request: Create an isolated graphite reconstruction limited to the features clearly visible in the Watterson candle holder: exactly one low broad circular pan with shallow raised rim, one central stepped candle socket, small visible feet directly beneath the pan, and one plain upright lighted candle.
+Critical correction: NO HANDLE. NO SIDE GRIP. NO ROD OR PROJECTION FROM THE PAN. The photograph does not establish a handle; omit it completely.
+Evidence boundary: pan, socket, candle, and visible feet are explicitly exemplar-bounded to this Watterson object, not universal morphology. Do not invent hidden construction, ornament, or dimensions.
+Style/medium: elegant historically attentive monochrome graphite pencil study, fine controlled line, restrained cross-hatching and tonal modeling, lively hand-drawn atlas character.
+Composition/framing: isolated front three-quarter view; entire pan, feet, candle, and flame visible with generous padding.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal; uniform with no shadows, gradient, texture, floor, reflection, or lighting variation. Keep object fully separated from background. Use only grayscale in subject and no green in subject.
+Avoid: any handle, grip, rod, projection, museum display, card, books, table, crib figures, adjacent object, duplicate candlestick, bishop, minister, hand, matchbox, chain, text, label, border, watermark, cast shadow, contact shadow, decorative additions, floating rectangular vignette, photorealism.
+"""
+
+[[source_basis]]
+source_id = "artifact.maximilian775.bishop-watterson-bugia-photograph.wikimedia-commons-2025.commons-original-jpeg-e6addffc"
+locus = "Complete documentary photograph, especially the foreground object and museum identification card"
+supported_feature = "The Watterson exemplar visibly has a low circular pan, central candle socket, small feet, and candle; those features govern only this reconstruction. The separate object at picture-left does not establish a handle."
+
+[[source_basis]]
+source_id = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-20"
+locus = "Book I, chapter XX, section 1"
+supported_feature = "The ceremonial identifies a small silver instrument commonly called the bugia and specifies that it bears a lighted candle; it does not establish the exemplar's handle, pan, feet, or ornament."
+
+[[reviews]]
+reviewed_on = 2026-07-28
+reviewer_role = "creator-production-and-source-boundary-review"
+outcome = "accepted-for-independent-review"
+scope = "Single-object count, Watterson-visible pan/socket/feet relationship, explicit absence of a handle, ceremonial candle state, exclusion of museum clutter, morphology ceiling, alpha matte, crop safety, and attribution requirement."
+admission_boundary = "This review advances only the asset-local staging record; an independent reviewer and canonical shared-manifest admission remain separate actions."

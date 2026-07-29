@@ -3,6 +3,84 @@
 Status: **bounded public alphas**
 Audit date: 2026-07-28
 
+## Six-edition final visual remediation — 2026-07-28
+
+All six editions now use compact, audience-specific comparison and
+relationship plates rather than repeated one-object pages. The comprehensive
+opening no longer spills or collides. Blank render slots are eliminated,
+distinct Epistle and Gospel books have clear isolated portraits alongside
+their checked ceremonial contexts, and the prepared chalice is shown both as
+a combined formation and as an ordered cutaway with the folded corporal
+separate. Pontifical vesture, three mitre forms, gloves, footwear, insignia,
+seating, books, and object-transfer relationships render as distinct,
+source-bounded teaching groups. The incense boat and spoon remain one combined
+object; single and paired cruets remain separately identified where each
+relationship teaches something different.
+
+The three newly generated graphite subjects were normalized to 8-bit
+grayscale-alpha after removal of their flat generation grounds. Full-size
+review confirms transparent blended boundaries, no residual green fringe,
+and no floating rectangular matte. Their exact prompts, original and
+normalized identities, corrections, rights disposition, source ceiling, and
+consumer reviews are recorded in `artwork-manifest.toml` and their named
+review records.
+
+Fresh settled builds contain 73 pages. Every page was rastered through
+`scripts/pdf-review` into the isolated
+`build/pdf-review/dictionary-final-gray/` review set and inspected at
+contact-sheet scale. Covers, prepared-chalice and book plates, and the
+pontifical vesture, mitre, seating, and book plates were additionally
+inspected at original rendered resolution. No clipping, overlap, spill page,
+blank card, unsupported morphology, image-boundary rectangle, or misleading
+paired/separate treatment remains. Logs contain no fatal error, undefined
+reference, overfull box, duplicate destination, or rerun warning. All fonts
+are embedded and subset; text is extractable. The artwork checker, all 35
+focused generator/artwork tests, and all six rendered-metadata comparisons
+pass. The aggregate source-inventory gate remains temporarily noisy because
+the shared journal checkout contains concurrent uncheckpointed work across
+many collections; this lane did not modify the coordinator-owned inventory.
+Each installed PDF is byte-identical to the reviewed build named below.
+
+| Edition | Pages | Reviewed bytes | Reviewed SHA-256 |
+| --- | ---: | ---: | --- |
+| Comprehensive | 13 | 17,833,346 | `d291f15918d1dbffd4c7d76cfa4f103bfb61477a66c00e0cdc6ef9bb616a3ab9` |
+| Altar server | 11 | 17,887,116 | `a61d50d62231ba9ecdeef69399577f707b80da4f5bccb23486efe48f97112d11` |
+| Sacristan | 12 | 18,097,992 | `1e7cf8e053bdf3029df2ac675210fa1e0d64bcd7db453007c4365eff89e02131` |
+| MC and trainer | 10 | 18,057,940 | `a142ea35c553312d57aef8718315cec42d33a36f48dd201ce0fe8c8743dde63a` |
+| General reader | 11 | 17,730,096 | `85fc6cd6ac049d9bd31dab5a7fe2ea2f0a62be0632db7614ec54840028625e1f` |
+| Pontifical ceremonies | 16 | 24,285,820 | `9288fb58374991c686c91d1ad4e39b11622e928b30d2831fefa1d9bfa265ee72` |
+
+## Six-edition alpha-apparatus release — 2026-07-28
+
+All six title pages now carry only a terse `Alpha` status. The bounded
+inventory, edition horizon, non-authority boundary, and work-wide reliance
+limits appear once in the terminal Scope and Qualifications appendix.
+Immediate handling guidance remains at the point of use in the altar-server
+edition. The common rights notice now shares the final generation-metadata
+page in every edition and creates no rights-only spill page.
+
+The shared plate groupings, canonical records, audience selections, artwork,
+and source claims are unchanged. The release-final revision timestamp is
+`2026-07-28T21:20:00Z`. All 88 pages were freshly rastered through
+`scripts/pdf-review` and inspected at contact-sheet scale; every final page
+was also inspected at full size for the scope appendix, generation summary,
+rights colophon, clipping, overlap, legibility, and spill. Settled logs contain
+no fatal error, undefined reference, overfull box, or unresolved rerun warning.
+The compact altar-server, MC/trainer, general-reader, and pontifical plates
+retain their previously reviewed underfull source-key or short-line notices;
+the changed title and terminal matter introduces none. Fonts remain embedded,
+text remains extractable, and each installed PDF is byte-identical to its
+reviewed build.
+
+| Edition | Records or teaching entries | Pages | Reviewed bytes | Reviewed SHA-256 |
+| --- | ---: | ---: | ---: | --- |
+| Comprehensive | 46 records | 15 | 15,001,482 | `d138af2de74f97fcdb67236bfd9739a8b9a60f2f62eb12693ce045eff2be8183` |
+| Altar server | 38 entries / 39 canonical objects | 27 | 16,245,303 | `046270da003b35bab1bb859cb7092475a0edcf9b957c83494b7a3bb7f73309aa` |
+| Sacristan | 46 records | 12 | 14,765,472 | `d75f13b5e1b8dd9cf9638dc3a0aa3783b25c544533fb406ab146162fb123efd1` |
+| MC and trainer | 46 records | 11 | 14,726,624 | `1a65250eb7244fb3d7bf3647248db99063fa6dd2dd143b9b367ba4ed5fcea4ff` |
+| General reader | 44 records | 11 | 14,393,330 | `b9c165eaafc04fbc9d177f325593be2cb92742754bea596fd872ee7f1ca92e79` |
+| Pontifical ceremonies | 43 records | 12 | 13,402,486 | `0028aa4b87ac17f41597adfe5b8aae2a1cccd26dabe7157cb37c86250963e478` |
+
 ## Six-edition dense pictorial tranche — final reviewed builds — 2026-07-28
 
 The settled six-edition tranche replaces repeated card-like pagination with
@@ -20,9 +98,10 @@ pictorial edition.
 The artwork pass corrected the boundaries of 21 existing alpha-sensitive
 figures and introduced 17 canonical soft-alpha successors so pencil marks fade
 into the warm page rather than sitting in visible rectangles. The
-Comprehensive edition also opens with a source-bounded sanctuary-composition
-diagram: a central crucifix, neutral candle placeholders, and blank card
-positions, without unsupported architecture or furnishings.
+Comprehensive edition opens with a dated Rijksmuseum sanctuary witness and a
+separate, compact rubric key for the altar crucifix, variable-count flanking
+lights, and three altar cards. The earlier generated relationship schematic
+is retained only as a rejected audit artifact and has no consumer.
 
 Every page of all six settled PDFs was rastered through `scripts/pdf-review`
 and visually inspected. The final review covered image boundaries, pair and

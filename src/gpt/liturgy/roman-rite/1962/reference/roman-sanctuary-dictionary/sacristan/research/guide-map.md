@@ -4,6 +4,11 @@ Status: **bounded public alpha**
 Audit date: 2026-07-28
 Edition selection: `ed-sacristan`
 
+The title page now carries only the terse `Alpha` status. The explanation of
+the bounded inventory, edition horizon, non-authority boundary, and reliance
+limits appears once in the terminal Scope and Qualifications appendix; the
+common rights notice shares the final generation-metadata page.
+
 This use-derived edition selects canonical alpha records marked required or
 useful for sacristans. Audience notes emphasize verified preparation,
 placement, stability, and safety while avoiding unsupported construction,

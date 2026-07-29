@@ -85,8 +85,8 @@ unavailable editions are shown as `Planned`.
 | 20 | **Sixth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf) | Planned |
 | 21 | **Seventh Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | Planned |
 | 22 | **Eighth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.html) |
-| 23 | **Ninth Sunday after Pentecost** | [Synthesis](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) | [Synthesis](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) |
-| 24 | **Tenth Sunday after Pentecost** | [Synthesis](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost-synthesis.pdf) | Planned |
+| 23 | **Ninth Sunday after Pentecost** | [Synthesis PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) | [Synthesis PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) |
+| 24 | **Tenth Sunday after Pentecost** | [Full Research PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.pdf) · [Synthesis PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.html) | Planned |
 | 25 | **Eleventh Sunday after Pentecost** | Planned | Planned |
 | 26 | **Twelfth Sunday after Pentecost** | Planned | Planned |
 | 27 | **Thirteenth Sunday after Pentecost** | Planned | Planned |
@@ -115,6 +115,17 @@ unavailable editions are shown as `Planned`.
 | 50 | **Septuagesima Sunday** | Planned | Planned |
 | 51 | **Sexagesima Sunday** | Planned | Planned |
 | 52 | **Quinquagesima Sunday** | Planned | Planned |
+
+### Sacred Triduum
+
+These 1962 edition-specific celebrations are planned outside the numbered
+Sunday spine.
+
+| Celebration | ChatGPT | Claude |
+| --- | --- | --- |
+| **Mass of the Lord's Supper** | Planned | Planned |
+| **Solemn Liturgical Action of the Passion and Death of the Lord** | Planned | Planned |
+| **Easter Vigil** | Planned | Planned |
 
 ### Resumed after Epiphany
 

@@ -18,7 +18,7 @@ Under a provider branch, a publishable leaf lives at:
 
 `src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/propers/<calendar-family>/<full-publication-slug>/`
 
-Use `temporal` for `PC-S` leaves and `general-calendar` for `PC-R` leaves. The stable registry controls the fixed source-owner paths and reserved `PC-W` namespace. Each edition-locale owns a non-publishable `propers/registry/` directory containing:
+Use `temporal` for `PC-S` and `PC-T` leaves and `general-calendar` for `PC-R` leaves. The stable registry controls the fixed source-owner paths, the `PC-T03` Easter Vigil alias, and reserved `PC-W` namespace. Each edition-locale owns a non-publishable `propers/registry/` directory containing:
 
 - an index naming the governing editions, territory, records, and currentness;
 - formula dispositions that adopt, qualify, or leave unresolved the stable registry targets; and
@@ -245,7 +245,9 @@ Use the target's actual order:
 | --- | --- |
 | Ordinary Sunday or solemnity | Actual Introductory Rites, Liturgy of the Word, Liturgy of the Eucharist, Communion, and any distinctive conclusion. |
 | Palm Sunday | Separate Entrance commemoration and Mass; procession, solemn, and simple entrances; cycle Gospel; Passion lengths; admitted pre-Gospel reduction. |
-| Easter Vigil | Service of Light, repeated Word modules, Baptismal Liturgy, Eucharist; reduction rule and required Exodus; initiation and reception paths. |
+| Evening Mass of the Lord's Supper | Introductory Rites, Liturgy of the Word, washing of feet where carried out, Liturgy of the Eucharist, transfer of the Most Blessed Sacrament, and the prescribed conclusion. |
+| Celebration of the Lord's Passion | Liturgy of the Word, Solemn Intercessions, Adoration of the Holy Cross, and Holy Communion; preserve every appointed option and branch. |
+| Easter Vigil | Service of Light, repeated Word modules, Baptismal Liturgy, Eucharist; reduction rule and required Exodus; initiation and reception paths. This is the `PC-T03` identity resolved through the existing `PC-S17-*-VIGIL` targets, never a duplicate leaf. |
 | Easter Day | Second-reading alternatives, Sequence, Gospel paths, and authorized baptismal renewal. |
 | Pentecost Vigil | Separate simple and extended targets; preserve each reading–psalm–collect module. |
 | Pentecost Day | Sequence and every edition-appointed cycle-dependent alternative. |

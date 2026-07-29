@@ -97,12 +97,13 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("> **Operative text**", markdown)
         self.assertIn("> The quoted wording.", markdown)
 
-    def test_repeated_model_and_qualifiers_suppress_the_model_line(self) -> None:
+    def test_model_and_qualifiers_remain_audit_only(self) -> None:
         markdown = self.convert(
             "Prose.",
             metadata="\n".join([CONTRIBUTION, REPEAT_CONTRIBUTION, OTHER_CONTRIBUTION]),
         )
-        self.assertEqual(markdown.count("**Model:**"), 2)
+        self.assertNotIn("**Model:**", markdown)
+        self.assertNotIn("effort=", markdown)
         self.assertNotIn("**Agent/runtime:**", markdown)
         self.assertIn(f"**Last revised (UTC):** {TIMESTAMP}", markdown)
         self.assertNotIn("Test CLI 1.0; review role", markdown)

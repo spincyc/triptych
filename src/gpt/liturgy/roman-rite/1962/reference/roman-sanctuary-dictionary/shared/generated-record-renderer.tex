@@ -66,13 +66,6 @@
     \foreach \y in {0.46,0.68,0.90,1.12}
       \draw[black!45,line width=0.45pt] (1.84,\y) -- (2.84,\y);
   \end{tikzpicture}}
-\newcommand{\RSDTeXNativeBookArtwork}{%
-  % Generic symbols assert no binding, material, ornament, dimensions, or
-  % local combined-book practice; canonical prose below owns that boundary.
-  \begin{center}
-    \RSDGenericClosedBook\hspace{0.22in}\RSDGenericOpenBook
-  \end{center}}
-
 \renewcommand{\RSDObjectRecord}[3]{%
   \RSDClearObjectRecord
   \def\RSDObjectID{#1}%
@@ -112,27 +105,15 @@
 
 \providecommand{\RSDSelectedAudienceNote}[1]{\def\RSDAudienceText{#1}}
 
-\newsavebox{\RSDLatinKeyLineBox}
 \newsavebox{\RSDCardTitleBox}
 \newcommand{\RSDCardTitle}[1]{%
   \sbox{\RSDCardTitleBox}{\fontsize{9.2}{10.2}\selectfont\bfseries #1}%
-  \ifdim\wd\RSDCardTitleBox>0.90\linewidth
-    \resizebox{0.90\linewidth}{!}{\usebox{\RSDCardTitleBox}}\par
+  \ifdim\wd\RSDCardTitleBox>0.78\linewidth
+    \resizebox{0.78\linewidth}{!}{\usebox{\RSDCardTitleBox}}\par
   \else
-    {\fontsize{9.2}{10.2}\selectfont\bfseries #1\par}%
+    {\raggedright\fontsize{9.2}{10.2}\selectfont\bfseries #1\par}%
   \fi}
-\newcommand{\RSDLatinAndKeyLine}[2]{%
-  \ifRSDSpacedCard
-    #1\par
-    \vspace{1pt}\hfill\DictionaryNoteKey{#2}\par
-  \else
-    \sbox{\RSDLatinKeyLineBox}{#1\quad\DictionaryNoteKey{#2}}%
-    \ifdim\wd\RSDLatinKeyLineBox>0.98\linewidth
-      \resizebox{0.98\linewidth}{!}{\usebox{\RSDLatinKeyLineBox}}\par
-    \else
-      #1\hfill\DictionaryNoteKey{#2}\par
-    \fi
-  \fi}
+\newcommand{\RSDLatinAndKeyLine}[2]{#1\par}
 
 \renewcommand{\RSDEndObjectRecord}{%
   \global\advance\RSDRenderedRecordCount by 1
@@ -163,19 +144,19 @@
   \end{minipage}%
   \global\RSDStoryTallHerofalse
   \else\ifRSDStoryHero
-  \begin{minipage}[t][2.48in][t]{\linewidth}
+  \begin{minipage}[t][3.06in][t]{\linewidth}
   \DictionaryEntryAnchor{\RSDObjectID}%
   {\fontsize{13}{14.2}\selectfont\bfseries\RSDPreferredEnglishName\par}
   {\fontsize{8.2}{9.2}\selectfont\itshape
     \RSDLatinAndKeyLine{\RSDLatinHeadword}{\RSDObjectID}}
   \vspace{2pt}\hrule height 0.45pt\vspace{4pt}
-  \begin{minipage}[t][1.82in][c]{0.49\linewidth}
+  \begin{minipage}[t][2.40in][c]{0.49\linewidth}
     \centering
     \ifRSDArtworkAvailable
-      \DictionaryGraphic{1.78in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+      \DictionaryGraphic{2.34in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
     \fi
   \end{minipage}\hfill
-  \begin{minipage}[t][1.82in][t]{0.47\linewidth}
+  \begin{minipage}[t][2.40in][t]{0.47\linewidth}
     {\fontsize{8.2}{9.6}\selectfont
       \RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi\par}
     \ifx\RSDAudienceText\empty\else
@@ -197,14 +178,9 @@
   \vspace{2pt}\hrule height 0.4pt\vspace{4pt}
   \begin{minipage}[t][4.12in][c]{\linewidth}
     \centering
-    \ifdefstring{\RSDObjectID}{obj-epistle-book}{%
-      \RSDTeXNativeBookArtwork
-    }{\ifdefstring{\RSDObjectID}{obj-gospel-book}{%
-      \RSDTeXNativeBookArtwork
-    }{%
     \ifRSDArtworkAvailable
       \DictionaryGraphic{4.00in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
-    \fi}}%
+    \fi
   \end{minipage}\par
   \vspace{0.30in}
   {\fontsize{7.4}{8.7}\selectfont\raggedright
@@ -237,16 +213,16 @@
     \RSDCardGraphicHeight=1.60in
   \else\ifRSDQuadCard
     \RSDCardHeight=3.40in
-    \RSDCardArtworkFieldHeight=1.49in
-    \RSDCardGraphicHeight=1.43in
+    \RSDCardArtworkFieldHeight=1.94in
+    \RSDCardGraphicHeight=1.88in
   \else\ifRSDFieldCard
     \RSDCardHeight=3.62in
     \RSDCardArtworkFieldHeight=1.56in
     \RSDCardGraphicHeight=1.50in
   \else
-    \RSDCardHeight=3.18in
-    \RSDCardArtworkFieldHeight=1.30in
-    \RSDCardGraphicHeight=1.26in
+    \RSDCardHeight=3.30in
+    \RSDCardArtworkFieldHeight=1.54in
+    \RSDCardGraphicHeight=1.48in
   \fi\fi\fi\fi\fi\fi
   \begin{minipage}[t][\RSDCardHeight][t]{\linewidth}
   \DictionaryEntryAnchor{\RSDObjectID}%
@@ -256,18 +232,25 @@
   \vspace{2pt}\hrule height 0.35pt\vspace{3pt}
   \begin{minipage}[t][\RSDCardArtworkFieldHeight][c]{\linewidth}
     \centering
-    \ifdefstring{\RSDObjectID}{obj-epistle-book}{%
-      \RSDTeXNativeBookArtwork
-    }{\ifdefstring{\RSDObjectID}{obj-gospel-book}{%
-      \RSDTeXNativeBookArtwork
-    }{%
     \ifRSDArtworkAvailable
       \ifRSDSecondArtworkAvailable
         \begin{minipage}[c]{0.48\linewidth}\centering
           \DictionaryGraphic{1.08in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}
+          \ifdefstring{\RSDObjectID}{obj-altar-cruet}{%
+            \par{\fontsize{6}{6.8}\selectfont\bfseries One cruet}}{}
+          \ifdefstring{\RSDObjectID}{obj-epistle-book}{%
+            \par{\fontsize{6}{6.8}\selectfont\bfseries The book itself}}{}
+          \ifdefstring{\RSDObjectID}{obj-gospel-book}{%
+            \par{\fontsize{6}{6.8}\selectfont\bfseries The book itself}}{}
         \end{minipage}\hfill
         \begin{minipage}[c]{0.48\linewidth}\centering
           \DictionaryGraphic{1.08in}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDSecondArtworkPath}
+          \ifdefstring{\RSDObjectID}{obj-altar-cruet}{%
+            \par{\fontsize{6}{6.8}\selectfont\bfseries Wine-and-water pair}}{}
+          \ifdefstring{\RSDObjectID}{obj-epistle-book}{%
+            \par{\fontsize{6}{6.8}\selectfont\bfseries Carried context}}{}
+          \ifdefstring{\RSDObjectID}{obj-gospel-book}{%
+            \par{\fontsize{6}{6.8}\selectfont\bfseries Sung context}}{}
         \end{minipage}
       \else
         \ifdefstring{\RSDObjectID}{obj-processional-cross}{%
@@ -277,7 +260,7 @@
           \DictionaryGraphic{\RSDCardGraphicHeight}{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/\RSDArtworkPath}%
         }%
       \fi
-    \fi}}%
+    \fi
   \end{minipage}\par
   \ifRSDSpacedCard\vfill\else\vspace{3pt}\fi
   {\fontsize{6.6}{7.6}\selectfont
@@ -316,8 +299,8 @@
 \newcommand{\RSDDensePlateEnd}{%
   \end{tabular}\par\vfill
   \noindent\hrule height 0.35pt\vspace{4pt}
-  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Scan the silhouettes}
-    \hfill Name each object before reading\par}}
+  {\fontsize{6.6}{7.6}\selectfont\bfseries\MakeUppercase{Scan the silhouettes}
+    \hfill Name before reading\par}}
 
 % Five-object fields use a three-over-two rhythm. The wider lower pair fills
 % the page without suggesting a missing sixth object.
@@ -336,8 +319,8 @@
 \newcommand{\RSDHeterodoxFivePlateEnd}{%
   \end{tabular}\par\vfill
   \noindent\hrule height 0.35pt\vspace{4pt}
-  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Read the relationships}
-    \hfill Compare placement, form, and use\par}}
+  {\fontsize{6.6}{7.6}\selectfont\bfseries\MakeUppercase{Read the relationships}
+    \hfill Compare form and use\par}}
 
 % Seven-object fields use a four-plus-three rhythm. The centered second row
 % keeps the last three studies prominent without duplicating an empty cell.
@@ -392,13 +375,13 @@
 \newcommand{\RSDBalancedFourPlateEnd}{%
   \end{tabular}\par\vfill
   \noindent\hrule height 0.35pt\vspace{4pt}
-  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Look across the pairs}
-    \hfill Compare form, handling, and use\par}}
+  {\fontsize{6.6}{7.6}\selectfont\bfseries\MakeUppercase{Look across the pairs}
+    \hfill Compare form and use\par}}
 \newcommand{\RSDBalancedFourFilledPlateEnd}{%
   \end{tabular}\par\vfill
   \noindent\hrule height 0.35pt\vspace{4pt}
-  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Look across the pairs}
-    \hfill Compare form, handling, and use\par}}
+  {\fontsize{6.6}{7.6}\selectfont\bfseries\MakeUppercase{Look across the pairs}
+    \hfill Compare form and use\par}}
 
 % Three-object comparisons use two paired studies followed by one centered
 % study. This preserves generous diagnostic scale without leaving an accidental
@@ -448,8 +431,8 @@
 \newcommand{\RSDBalancedTwoTallPlateEnd}{%
   \end{tabular}\par\vfill
   \noindent\hrule height 0.35pt\vspace{4pt}
-  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Read the relationship}
-    \hfill Compare form, handling, and use\par}}
+  {\fontsize{6.6}{7.6}\selectfont\bfseries\MakeUppercase{Read the relationship}
+    \hfill Compare form and use\par}}
 \newcommand{\RSDBalancedThreeTallPlateStart}[2]{%
   \clearpage
   {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Relationship study}
@@ -461,8 +444,8 @@
 \newcommand{\RSDBalancedThreeTallPlateEnd}{%
   \end{tabular}\par\vfill
   \noindent\hrule height 0.35pt\vspace{4pt}
-  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Read the relationship}
-    \hfill Compare form, handling, and use\par}}
+  {\fontsize{6.6}{7.6}\selectfont\bfseries\MakeUppercase{Read the relationship}
+    \hfill Compare form and use\par}}
 \newcommand{\RSDRelationshipThreePlateStart}[2]{%
   \clearpage
   {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{Relationship study}
@@ -477,8 +460,8 @@
 \newcommand{\RSDRelationshipThreePlateEnd}{%
   \end{minipage}\end{tabular}\par\vfill
   \noindent\hrule height 0.35pt\vspace{4pt}
-  {\fontsize{6.8}{8}\selectfont\bfseries\MakeUppercase{Read the relationship}
-    \hfill Compare form, handling, and use\par}}
+  {\fontsize{6.6}{7.6}\selectfont\bfseries\MakeUppercase{Read the relationship}
+    \hfill Compare form and use\par}}
 
 % A story spread varies scale without changing canonical records. One hero
 % introduces the group; up to four compact comparison cards follow below.

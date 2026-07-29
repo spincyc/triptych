@@ -18,7 +18,7 @@ civil occurrence or locally enacted option.
 | Eph 4:17, 20–24 | Chrysostom, *Homily on Ephesians* 13 | Baptismal putting-off / putting-on tradition | Renewal concerns mind and conduct. Verses 18–19 were read as context but are not represented as proclaimed. |
 | Matt 4:4b | Patristic Matthew homilies were searched; no retained witness was needed for this short adaptation | Acclamatory use | The excerpt distinguishes bread alone from God's word; it does not relocate Matthew's temptation scene into John. |
 | John 6:24–35 | Chrysostom, *Homilies on John* 43 (vv. 24–25), 44 (vv. 26–27), 45 (vv. 28–35); Augustine, *Tractate on John* 25.8–14 | Ambrose, *On the Mysteries* 8.44–49 | Direct sequential coverage supports motive, enduring food, belief, giver, and bread-of-life claims. Sacramental reception does not erase the narrative sequence. |
-| Ps 102:2 / modern 103, Communion A | Augustinian Psalm corpus searched; no new exact-locus claim retained | Printed Missal option | Supports grateful memory only when this branch is selected. |
+| Wis 16:20, Communion A | Wisdom 16:15–29 was read as the governing literary context | Printed Missal option; Ambrose's mystagogy supplies a reception horizon, not direct exegesis of this verse | Heavenly bread, delight, and accommodation to the receiver apply only when this branch is selected. |
 | John 6:35, Communion B | Same Chrysostom and Augustine loci as Gospel | Printed Missal option | Exact return to Gospel climax, but not claimed as selected in every celebration. |
 
 The bounded search used accessible Greek- and Latin-patristic works in public
@@ -31,14 +31,14 @@ mystagogical loci. It did not claim exhaustive critical-edition coverage.
   responsorial relation, textual observation, documented reception.
 - `belief-to-renewal`: John 6 and Eph 4; source-grounded synthesis across a
   semi-continuous reading, not official correlation.
-- `bread-to-passion-memorial`: Matt 4, John 6, Communion B, final prayer;
+- `bread-to-heavenly-gift`: Matt 4, John 6, Communion A/B, final prayer;
   documented reception and source-grounded synthesis.
-- `memory-across-branches`: Exodus/Psalm, Communion A/B, final prayer;
+- `gift-across-branches`: Exodus/Psalm, Communion A/B, final prayer;
   exploratory proposal whose Communion result depends on the selected branch.
 
 ## Proposal audit
 
-The four reader-facing proposals concern receiving, truthful memory, renewed
+The four reader-facing proposals concern receiving, delight without possession, renewed
 conduct after Communion, and transformed questions. Each joins at least two
 appointed elements. Their chief limits are stated locally: none excuses
 hunger, proves compiler intent, makes ethics a validity test, or establishes a
@@ -57,4 +57,6 @@ XVIII owner alone controls the Missal formulary.
 No short-Gospel or alternative-reading branch was found for no. 113. No
 direct ancient exposition of the exact modern Psalm selection or complete
 modern formulary design was established. A future critical-edition pass could
-deepen textual history but is not silently claimed here.
+deepen textual history but is not silently claimed here. Direct comparison
+against the 2008 reprint's Week XVIII page images and a named U.S. altar-book
+typography-level collation also remain outstanding.

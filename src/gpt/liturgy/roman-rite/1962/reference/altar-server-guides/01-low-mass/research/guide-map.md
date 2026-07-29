@@ -46,13 +46,15 @@ phrase-ladder sections. Original front-view sanctuary diagrams appear only where
 positions, step levels, objects, or role traffic materially change.
 
 The continuous route consumes pencil assets `ASG-ART-001`, `ASG-ART-002`,
-`ASG-ART-005`, `ASG-ART-006`, and `ASG-ART-011`--`ASG-ART-021`. The latter
-eleven scenes cover the normal places, Gospel stations, Offertory cruets, bell
-station, elevations, Communion-plate route, two ablution states, Missal
-return, Last Gospel, and recession. The principal-Gospel asset
-`ASG-ART-012` shows the selected LM-017 finish state: after the title response
-and triple sign, First has returned to picture-right while Second remains
-picture-left. TeX retains all semantic role, object,
+`ASG-ART-005`, `ASG-ART-006`, selected `ASG-ART-011`--`ASG-ART-021`,
+`ASG-ART-026`, and the versioned model-correction plates `ASG-ART-027`--`029`
+and `ASG-ART-031`.
+`ASG-ART-027` shows the selected LM-017 opening state: First remains by the
+book while the priest begins reading and Second is laterally clear at the same
+level. `ASG-ART-028` shows the side-by-side Offertory service formation;
+`ASG-ART-029` supplies both First-only ablution moments, and `ASG-ART-031`
+shows the simultaneous veil/Missal exchange. Superseded
+`ASG-ART-012`, `013`, `017`, `018`, and `019` no longer render in Low Mass. TeX retains all semantic role, object,
 level, and route overlays. The series artwork manifest owns the assets'
 provenance, normalized identities, rights, consumers, and review state.
 
@@ -60,22 +62,24 @@ provenance, normalized identities, rights, consumers, and review state.
 
 First begins on the priest's right, the Epistle side and picture-right in the
 front-view diagrams. First leads the shared response pace and owns the bell,
-wine, towel, the Epistle-to-Gospel Missal move, and the Communion plate.
+Offertory wine, both post-Communion cruets, towel, the Epistle-to-Gospel Missal
+move, Communion plate, and folded chalice-veil move from Epistle to Gospel.
 Second begins on the priest's left, the Gospel side and picture-left; Second
-owns water, bowl, and the Gospel-to-Epistle Missal return. Neither server
-transfers the chalice veil or chalice; the priest keeps the loose veil at a
-declared altar resting place and recovers it after the ablutions. Both
+owns Offertory water, Lavabo water and bowl, and the Gospel-to-Epistle Missal
+return. Neither server transfers the chalice itself. Both
 acolytes give every ordinary core verbal response together. The Communion
 diagram names its deliberate orientation exception: when the priest faces the
 nave, his right appears picture-left.
 
 The Missal begins on the Epistle side, moves to the Gospel side after the final
 lesson or Epistle in First's hands, and returns straight to the Epistle side
-after the ablutions in Second's hands. First carries the Communion plate,
+after the ablutions in Second's hands. First carries the folded chalice veil
+the other way at the same time; after both objects are placed the acolytes make
+the centre reverence and switch back to their normal sides. First carries the Communion plate,
 leaves it at the altar for the priest's purification, and returns it to the
-credence after the final wine and water. The priest's paten and reassembled
-chalice never enter the server plate route; the priest himself recovers the
-loose veil, covers and centers the chalice, and leaves it at the altar until
+credence after the sequential First-only ablutions. The priest's paten and reassembled
+chalice never enter the server plate route; the priest himself covers and
+centers the chalice with the veil First has placed, and leaves it at the altar until
 he carries it out. The model uses the sanctuary floor for the prayers at the
 foot, the first step for ordinary kneeling places, the second step for cruet
 and Lavabo service, and the predella for elevation assistance.
@@ -140,8 +144,8 @@ The 2026-07-28 exact snapshot vertically separates the `PRIEST`, `FIRST`, and
 Full-size and every-page screen inspection passed without changing the
 underlying pencil asset.
 
-The 2026-07-28 settled candidate remains twenty-six pages. Its current source
-map is the controlling page sequence above. Exact build identity and any
-review claim for that identity belong in the series production manifest after
-the final metadata-bearing rebuild; this map does not infer external,
-physical-use, or ecclesiastical review.
+The 2026-07-28 installed Alpha snapshot remains twenty-six pages. Its current
+source map is the controlling page sequence above; exact artifact identity and
+every-page screen-review evidence are recorded in the series production
+manifest. This map does not infer external, physical-use, or ecclesiastical
+review.

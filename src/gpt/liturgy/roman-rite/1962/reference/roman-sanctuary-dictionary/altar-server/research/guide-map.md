@@ -5,6 +5,12 @@ Solemn-Mass book, carrying, and incense families**
 Audit date: 2026-07-28
 Edition selection: `ed-altar-server`
 
+The title page now carries only the terse `Alpha` status. The immediate
+handling rule remains at the point of use, while the bounded-inventory,
+edition-horizon, non-authority, and reliance explanation appears once in the
+terminal Scope and Qualifications appendix. The common rights notice shares
+the final generation-metadata page.
+
 ## Reader and purpose
 
 This use-derived edition is for altar servers and those who train them. Its

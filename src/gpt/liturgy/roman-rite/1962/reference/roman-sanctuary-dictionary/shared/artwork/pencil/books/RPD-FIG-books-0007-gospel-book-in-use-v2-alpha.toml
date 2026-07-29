@@ -1,0 +1,63 @@
+schema_version = 1
+record_scope = "asset-local-staging"
+artwork_id = "art-gospel-book-held-open"
+object_ids = ["obj-gospel-book", "obj-acolyte-candlestick"]
+file = "RPD-FIG-books-0007-gospel-book-in-use-v2-alpha.png"
+purpose = "Teach the Gospel book through the checked Solemn-Mass formation: a subdeacon holds it open between two candle-bearing acolytes."
+depicted_state = "One subdeacon in tunicle and left-forearm maniple holds one generic open book with both hands between exactly two acolytes, each bearing one lighted candlestick."
+period_status = "universal Roman 1962 Solemn-Mass ceremonial relationship"
+source_controlled_features = [
+  "one subdeacon in a tunicle",
+  "one maniple on the subdeacon's left forearm",
+  "no stole on the subdeacon",
+  "one generic open book held in both hands",
+  "two flanking candle-bearing acolytes",
+  "two lighted acolyte candlesticks",
+]
+deliberately_omitted_details = [
+  "binding material",
+  "cover color",
+  "cover ornament",
+  "title",
+  "clasps",
+  "tooling",
+  "dimensions",
+  "candlestick material",
+  "candlestick ornament",
+]
+generator_interface = "OpenAI built-in image generation interface; model and version not exposed"
+generated_on = 2026-07-28
+received_pixels = "1536x1024 sRGB PNG"
+normalized_pixels = "1536x1024 8-bit grayscale-alpha PNG"
+normalization = "Flat green background removed locally; subject normalized to monochrome; binary extraction matte then feathered with a 0.55-sigma Gaussian blur and written as 8-bit grayscale-alpha. Final alpha histogram has 39 distinct levels."
+sha256 = "790c44bcee8c62d3f2f3862d343fa21ac6ed9b7ebe5a0797163f88c39a732a1c"
+baked_in_content_audit = "No lettering, labels, border, watermark, cross, cover ornament, architectural setting, altar, lectern, priest, deacon, fourth person, third candlestick, or second book is baked into the asset."
+tex_owned_additions = ["English name", "Latin name", "handling boundary", "source note", "callouts"]
+rights_state = "project-generated; no external image supplied as a visual reference"
+review_state = "independently-reviewed candidate-ready-for-manifest-admission"
+independent_review_outcome = "accepted"
+independent_review_date = 2026-07-28
+
+prompt = """
+Use case: scientific-educational
+Asset type: source-controlled monochrome reference illustration for a children's Roman liturgical pictorial dictionary
+Primary request: Draw the verified 1962 Solemn-Mass Gospel formation: one adult subdeacon at center holds exactly one generic open Gospel book securely with both hands, while exactly two candle-bearing acolytes flank him, one on each side, each holding exactly one tall lighted candlestick upright.
+Identity and vestments: The central adult male is unmistakably a SUBDEACON. He wears a plain alb under a distinct loose short-sleeved TUNICLE with the tunicle's broad garment body and sleeves clearly visible. A short plain MANIPLE hangs only from his LEFT FOREARM. He wears NO STOLE: absolutely no narrow band, sash, strip, panel, or stole descends from his neck or either shoulder. The two younger acolytes wear plain cassock and surplice.
+Required count/state: exactly three people total; exactly one central subdeacon; exactly two acolytes; exactly two lighted candlesticks; exactly one open book. The subdeacon visibly supports the open book with both hands at chest height. The acolytes stand separately at left and right and clearly flank him.
+Book morphology: deliberately generic open codex with plain page block; no visible title, lettering, cross, clasp, tooling, cover emblem, decoration, prescribed color, or distinctive binding form. Identify it only through the ceremonial formation.
+Composition/framing: landscape grouping, full figures and candle flames visible with generous crop safety; central symmetry with slight natural variation; clean separated silhouettes.
+Style/medium: elegant historically attentive monochrome graphite pencil drawing, fine controlled line, restrained cross-hatching and tonal modeling, dignified but lively children's visual-atlas appeal.
+Backdrop: perfectly flat solid #00ff00 chroma-key background for background removal; one uniform color, no shadow, gradient, texture, reflection, floor, horizon, architecture, or lighting variation. Keep all figures fully separated from the backdrop. Do not use #00ff00 in subjects.
+Constraints: central tunicle and LEFT-FOREARM maniple must be unmistakable; NO STOLE and no neck-hanging vertical bands; no deacon, priest, extra server, extra candle, extra book, altar, lectern, tabernacle, scenery, caption, label, border, watermark, cast shadow, or contact shadow.
+Avoid: stole-like bands; long neck panels; invented vestment ornament; invented book morphology; rectangular vignette; photorealism; cartoon caricature; fantasy vestments.
+"""
+
+[[source_basis]]
+source_id = "src-gospel-book-1962"
+locus = "1962 Missale Romanum, Ritus servandus VI.5, printed LVIII/artifact PDF 60"
+supported_feature = "The subdeacon holds the Gospel book between the two candle-bearing acolytes while the deacon sings."
+
+[[source_basis]]
+source_id = "src-gospel-book-1962"
+locus = "1962 Missale Romanum, Ritus servandus II.2 and VI.5"
+supported_feature = "The subdeacon wears the tunicle and maniple proper to his ministerial role; the Gospel formation does not make him a deacon wearing a stole."

@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.augustine.enarrationes-in-psalmos"
+title = "Enarrationes in Psalmos"
+responsible = "Augustine of Hippo"
+work_type = "patristic-psalm-exposition-collection"
+alternate_titles = ["Expositions on the Psalms"]
+languages = ["la"]
+locus_pattern = '[1-9][0-9]{0,2}\.(?:[1-9][0-9]?(?:-[1-9][0-9]?)?)(?:,[1-9][0-9]?(?:-[1-9][0-9]?)?)*'
+description = "Augustine's expositions on the Psalter. Loci use the Vulgate/Septuagint psalm number followed by exposition section numbers; English editions often put the corresponding modern/Hebrew psalm number in their titles."

@@ -247,10 +247,6 @@ Outstanding: independent human collation of the Latin and historical English; in
 
 -   Pius XII, apostolic letter *Dum maerenti animo* (29 June 1956), [Holy See Italian text](https://www.vatican.va/content/pius-xii/it/apost_letters/documents/hf_p-xii_apl_19560629_dum-maerenti-animo.html), on Callistus III’s 1456 prayer-and-bell action; used as one peace-bell witness, not an origin certificate for the complete Angelus.
 
-## Generation Metadata
-
 **Last revised (UTC):** 2026-07-21T17:41:34Z
-
-**Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

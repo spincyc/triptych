@@ -1,0 +1,108 @@
+schema_version = 1
+id = "obj-pontifical-sandal"
+workflow_state = "publication-ready"
+preferred_english_name = "Pontifical sandal"
+latin_headword = "sandale"
+alternate_english_names = ["Episcopal sandal"]
+alternate_latin_names = ["sandalia"]
+sort_name = "Sandal, pontifical"
+categories = ["pontifical-and-prelatial", "priestly-vestments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass"]
+confusable_with = ["obj-pontifical-buskin"]
+related_objects = ["obj-pontifical-buskin"]
+component_objects = []
+editorial_note = "The isolated sandal is exemplar-bounded. Its bow, trim, low closed-shoe form, material, proportions, and construction are not universal."
+
+[presence]
+locations = ["Worn over the pontifical buskin when appointed."]
+contexts = ["Pontifical vesting, right foot before left in the checked sequence."]
+composition_ids = ["plt-pontifical-vesture"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["bishop", "cleric", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = ["cleric"]
+receives = ["cleric"]
+stores = ["sacristan"]
+warnings = ["Do not confuse the outer sandal with the buskin worn beneath it."]
+
+[audience_relevance]
+altar_server = "exclude"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "required"
+
+[[claims]]
+id = "clm-pontifical-sandal-layering"
+kind = "liturgical-use"
+text = "The Ceremonial distinguishes sandals from buskins, appoints them in combination, and gives the right-then-left vesting sequence."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-footwear-ce"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-pontifical-sandal-exemplar"
+kind = "appearance"
+text = "The Pisa photograph supports one low closed-shoe exemplar; its bow, trim, material, proportions, and construction are not generalized."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-sandal-sailko"]
+
+[[claims]]
+id = "clm-pontifical-sandal-identity"
+kind = "identity"
+text = "The Ceremonial distinguishes the pontifical sandal from the buskin and treats it as the outer member of the appointed footwear pair."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-footwear-ce"]
+
+[[claims]]
+id = "clm-pontifical-sandal-presence"
+kind = "ceremonial-presence"
+text = "At the checked Solemn Pontifical Mass vesting, sandals and buskins are brought covered from the credence and put on together, right side before left."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-pontifical-footwear-ce"]
+
+[[sources]]
+id = "src-pontifical-footwear-ce"
+binding = "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-10"
+locus = "Book I, chapter X, section 2; see also book II, chapter VIII, section 7."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+
+[[sources]]
+id = "src-pontifical-sandal-sailko"
+binding = "artifact.sailko.pisa-pontifical-sandals-photograph.wikimedia-commons-2021.commons-original-jpeg-081fec4f"
+locus = "Complete photograph of the circa-1900-1950 Pisa Cathedral pair."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-28
+note = "CC BY 3.0; required attribution and license remain attached to the central record."
+
+[[artwork]]
+id = "art-pontifical-sandal-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-vesture-0002-sandal-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-pontifical-sandal"]
+scale_mode = "not-to-common-scale"
+review_note = "One source-bounded outer sandal; bow and trim belong to the exemplar and are not required features."
+
+[[artwork]]
+id = "art-pontifical-buskins-sandals-layered-pair"
+view = "in-use"
+asset = "shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-vesture-0003-layered-right-left-alpha-canonical.png"
+review_state = "approved"
+depicts = ["obj-pontifical-buskin", "obj-pontifical-sandal"]
+context_object_ids = ["obj-pontifical-buskin", "obj-pontifical-sandal"]
+scale_mode = "common-scale"
+review_note = "Combined right-and-left wearing formation; TeX must state the right-first sequence because image orientation does not encode it."
+
+[[audience_note]]
+audience = "pontifical"
+text = "Teach sandal over buskin and state right first, then left in text; do not infer the Pisa exemplar's decoration as normative."
+claim_ids = ["clm-pontifical-sandal-layering", "clm-pontifical-sandal-exemplar"]
