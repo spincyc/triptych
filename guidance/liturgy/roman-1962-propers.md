@@ -99,16 +99,28 @@ classes. An included component may never depend on an omitted component.
 The full research sequence is: the existing pages 1 and 2; lawful complete
 appointed text; `Each Proper in Full`, including the bounded patristic and
 saintly reception sweep for each element; an exactly two-page `The Propers:
-Themes and Movement`; unbounded `Source-Grounded Synthesis Across the
-Propers`; unbounded `Interpretive Possibilities Across the Propers`; `The
-Propers: Notable and Quotable`; and terminal apparatus. The synthesis
-companion retains pages 1 and 2, the two-page brief synthesis, the complete
-source-grounded synthesis, the complete exploratory synthesis, notable
-quotations, and terminal apparatus. It omits complete appointed texts. It may
-retain the element-by-element sweep when that commentary is needed for a
-substantive, evidence-bearing synthesis rather than a thin digest; declare
-that component in `synthesis` mode and keep its prose, citations, transitions,
-and references complete.
+Themes and Movement`; the full element-by-element `The Propers: Detailed
+Commentary`; unbounded `Source-Grounded Synthesis Across the Propers`;
+unbounded `Interpretive Possibilities Across the Propers`; `The Propers:
+Notable and Quotable`; and terminal apparatus. The synthesis companion
+retains pages 1 and 2, the two-page brief synthesis, a dedicated integrated
+`The Propers: Detailed Commentary`, the complete source-grounded synthesis,
+the complete exploratory synthesis, notable quotations, and terminal
+apparatus. It omits both the complete appointed texts and the element-by-
+element sweep.
+
+The synthesis commentary is not an abridged procession through Introit,
+Collect, Epistle, and the remaining propers. It redistills the full research
+into a cross-proper argument whose functional units each draw together
+multiple ritual moments, scriptural contexts, and reception witnesses. For new
+and substantially revised guides, the manifest declares the per-element
+`proper-treatment` only in `research` mode and exactly one
+`integrated-commentary` only in `synthesis` mode. Legacy manifests remain valid
+until their next substantive revision; do not infer that their older mode
+boundary satisfies this standard. Do not make the synthesis longer by copying
+or lightly compressing the full commentary; make it substantive by exposing
+the relations, tensions, doctrinal limits, and evidentiary judgments that
+emerge only across the complete formulary.
 
 Because the 1962 canonical edition supplies the complete appointed texts under
 the recorded rights basis, its catalog label is `Full PDF`; the companion is
@@ -195,7 +207,7 @@ For each passage, distinguish traditional attribution from historical judgment a
 
 `The Propers: Themes and Movement` begins on page 3, immediately after the page-2 sheet, and occupies exactly two readable pages. `The Propers: Detailed Commentary` therefore begins on page 5. Open the thematic section with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five functional units that account for every appointed element and let a signpost-only scan recover the thesis, movement, decisive evidence, and principal limits. This section contains only source-grounded claims.
 
-`The Propers: Detailed Commentary` supplies the exegesis, textual comparison, reception, doctrinal distinctions, disagreement, and claim-local qualifications that prove and refine the synthesis. Treat every appointed scriptural passage and every composed proper substantively. For Scripture, move from complete canonical context through direct patristic exegesis to later saintly reception, explaining each witness's actual interpretive move and comparing real differences or developments. For composed texts, distinguish verbal echo, doctrinal illumination, and documented liturgical reception. Give each substantial claim one fullest home; remove repeated quotations, recaps, thin subsections, name lists, and stretched links.
+`The Propers: Detailed Commentary` supplies the exegesis, textual comparison, reception, doctrinal distinctions, disagreement, and claim-local qualifications that prove and refine the synthesis. In the full edition, treat every appointed scriptural passage and every composed proper substantively in the element-by-element sweep. In the synthesis companion, replace that sweep with the dedicated integrated commentary: organize by three to six cross-proper claims rather than by appointed order, draw each unit from multiple elements and witnesses, and ensure that all appointed elements materially inform the whole even though they do not receive individual headings. For Scripture, move from complete canonical context through direct patristic exegesis to later saintly reception, explaining each witness's actual interpretive move and comparing real differences or developments. For composed texts, distinguish verbal echo, doctrinal illumination, and documented liturgical reception. Give each substantial claim one fullest home; remove repeated quotations, recaps, thin subsections, name lists, and stretched links.
 
 `The Propers: Notable and Quotable` is a required compact gallery of three to five non-obvious afterlives of wording from the scriptural propers. Each entry pairs a short exact phrase from an appointed biblical text with a documented later use that changes its register or force: cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or another surprising reuse. Identify the proper, later user or work, context and exact locus; then explain the turn in meaning. Prefer a varied gallery and include humorous, ironic, or deliberate reversal where a verified example exists.
 

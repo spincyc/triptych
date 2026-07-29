@@ -35,7 +35,7 @@ references = []
 key = "per-element-sweep"
 kind = "proper-treatment"
 path = "main.tex"
-modes = ["research", "synthesis"]
+modes = ["research"]
 depends_on = []
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
 references = []
@@ -43,9 +43,18 @@ references = []
 [[components]]
 key = "brief-synthesis"
 kind = "brief-synthesis"
-path = "main.tex"
+path = "sections/synthesis/10-themes-and-movement.tex"
 modes = ["research", "synthesis"]
 depends_on = ["orientation"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "integrated-commentary"
+kind = "integrated-commentary"
+path = "sections/synthesis/20-integrated-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["brief-synthesis"]
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
 references = []
 

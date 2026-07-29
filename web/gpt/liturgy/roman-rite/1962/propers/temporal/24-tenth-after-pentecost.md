@@ -52,52 +52,50 @@ TLM propers: mercy, diverse gifts, humble prayer, entrusted offering, and sustai
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Governing thesis: received mercy turns gifted persons from comparison toward common worship**
+> **Governing thesis: mercy dismantles religious self-possession and forms a people able to receive, offer, and persevere together**
 >
-> The Eternal hears and sustains the burdened; divine omnipotence is chiefly shown in pardon and mercy; one Spirit distributes diverse manifestations for common benefit; Christ overturns self-justifying comparison; the offering and communicants await acceptance, renewal, and help from God.
+> Across this Mass, nothing spiritually decisive is self-certified. Prayer is heard, mercy is multiplied, gifts are distributed, judgment proceeds from God’s sight, sacrifice is accepted, and communicants are continually restored. The answer to self-exalting comparison is therefore not passivity or self-contempt, but a common worship in which every good remains gift.
 
-1.  **Cry and run:** burden becomes trust in merciful power.
+1.  **Standing is received:** God, not comparison, establishes the worshipper.
 
-2.  **Receive and serve:** diverse gifts disclose one divine giver.
+2.  **Difference becomes service:** gifts disclose one giver and a common good.
 
-3.  **Descend justified:** religious inventory yields to petition.
+3.  **Humility becomes worship:** confession turns outward and upward.
 
-4.  **Offer and be renewed:** acceptance remains God’s gift.
+4.  **Mercy remains active:** offering and Communion deepen dependence.
 
-*Reading order.* These stages follow the appointed sequence. Their architecture is source-grounded editorial synthesis; no cited witness is made author of the complete formulary.
+*How to read the movement.* These are recurring conversions, not four stops in the order of the propers. The chants, lessons, and orations restate and qualify one another until the assembly’s cry, gifts, judgment, offering, and hope can no longer be possessed as evidence of superiority. The architecture is source-grounded editorial synthesis; no cited witness is made author of the complete formulary.
 
-### Burden becomes movement toward mercy (*Int., Coll.*)
+### The end of self-certified standing
 
-Psalm 54 joins repeated prayer to a command to cast care upon the sustaining Lord. The cry does not deny fear or betrayal; trust acts within them. The Collect then locates divine power in pardon and mercy and asks that mercy be multiplied so that the petitioners may run toward the promises and share heavenly goods. Augustine hears the psalm’s evening, morning, and noon as continual prayer; Aquinas receives the Collect’s axiom as an account of pardoning authority. Neither makes distress unreal or mercy indifferent to repentance.
+The Mass repeatedly moves the question “Where do I stand?” out of the worshipper’s private tribunal. Psalm 54 begins in fear, betrayal, and continual prayer; its confidence consists in casting care upon the One who hears and sustains. Psalm 16 asks that judgment proceed from God’s countenance and that God’s eyes see equity. Luke then makes the contrary posture visible: the Pharisee converts real observances into a comparison that certifies himself by despising another, whereas the publican supplies no counter-inventory and asks God for mercy. The Collect states the governing divine premise: omnipotence is manifested above all in pardon and mercy.
 
-The old Gelasian witness places an early form of the Collect among other Masses, with *gratiam* where the 1962 Missal has *misericordiam*; checked modern transmission records report the prayer later in the Gregorian supplement rather than the core Hadrianum. This history establishes transmission, not authorship by Gelasius or Gregory and not the purpose of its placement here.
+The witnesses sharpen the common logic without collapsing the texts. Augustine reads the three hours of Psalm 54 as persevering prayer and its command to cast care as dependence on the sustaining Creator. Aquinas and Cassiodorus locate judgment in God’s sight rather than outside testimony; Aquinas also directly contrasts the deceitful prayer of Luke’s Pharisee with the prayer that is heard. Augustine’s *Sermon 115* distinguishes self-praise joined to accusation from confession opened toward pardon, while Cyril identifies comparison as the corruption of what might otherwise have been praiseworthy. None condemns fasting, tithing, moral effort, or Jewish worship. The object rejected is their conversion into a private verdict over oneself and one’s neighbor.
 
-### One giver makes difference useful rather than competitive (*Ep., Grad., All.*)
+### Difference released from rivalry
 
-Paul moves from remembered subjection to mute idols to confession of the Lord Jesus in the Holy Spirit. Diverse gifts, ministries, and operations have the same Spirit, Lord, and God; each manifestation is given *ad utilitatem*, for benefit. Chrysostom stresses that gifts are free rather than debts and that difference does not imply a different giver. Ambrosiaster similarly joins grace rather than merit to Trinitarian unity and ecclesial edification. The passage neither equates charism with office or talent nor guarantees every listed manifestation to every Christian.
+The same displacement governs spiritual abundance. First Corinthians distinguishes gifts, ministries, and operations while referring them to the same Spirit, Lord, and God; manifestation is given toward benefit before the individual manifestations are named. Thus difference need not become rank, and unity need not become sameness. Chrysostom calls the manifestations gifts rather than debts and refuses to infer a different giver from unequal distribution. Ambrosiaster joins grace to ecclesial usefulness; Basil and Aquinas preserve both the Spirit’s agency and the distinction of the gifts. The larger Pauline context—one body, the more excellent way of charity, and ordered edification—prevents the catalogue from functioning like the Pharisee’s inventory.
 
-The Gradual submits judgment to God’s countenance and asks protection beneath God’s wings; the Alleluia renders praise and vow in Zion. Augustine reads the pupil and wings Christologically and the Zion verse toward heavenly worship. Those are received spiritual readings, not exclusive historical senses. In the appointed sequence, guarded sight and praise restrain the temptation to convert spiritual manifestation into rank.
+The surrounding worship broadens the social end. Zion’s praise and rendered vow are corporate rather than private possession. The Secret asks that gifts already granted for the honor of God’s name become remedies for the offerers; Psalm 50 anticipates accepted sacrifice only after confession, contrition, and restored Zion. Gift, worship, and sacrifice therefore travel beyond the recipient without ceasing to be real. The common good is not a pious afterthought added to spiritual excellence: it is the form in which received difference becomes ecclesial.
 
-### Prayer ceases to be a comparative inventory (*Gosp., Off.*)
+### Humility as a Godward act
 
-Luke identifies the audience before narrating the parable: Jesus speaks to some who trusted in themselves as just and despised others. The Pharisee’s fasting and tithing become a self-comparison; the publican stands afar, lowers his eyes, strikes his breast, and petitions propitiating mercy. God, not posture alone, justifies. The target is self-grounded contempt, not the Jewish people, disciplined fasting, tithing, or good works as such.
+Humility here is not lowered self-estimation performed for its own sake. Luke’s publican lowers his eyes, but his petition is directed wholly to God. Psalm 24 lifts the soul, but that elevation remains a request to be taught, forgiven, guarded, and delivered. The two movements are compatible: lowered eyes refuse comparison, while the lifted soul refuses despair. Augustine, Cassiodorus, and Aquinas each read the psalmic ascent as hope and dependence rather than arrival or mastery. The Gradual’s guarded eye adds another qualification: sight itself is protected before judgment is requested.
 
-Augustine’s *Sermon 115*—the same work numbered 65 in the older English New Testament series—contrasts self-praise and insult with confession and pardon. Cyril emphasizes the difference between boastful comparison and humble petition. Chrysostom uses the parable in two discrete ways: fasting without accompanying duties is fruitless (*On the Statues* 3.8), and even a true accusation does not license evil-speaking (3.13). Anthony of Padua’s collection gives this Gospel to its Eleventh Sunday after Pentecost with a different Introit and Epistle; its penitential reading is direct Gospel reception, not reception of this entire 1962 Mass.
+Praise gives this humility a public horizon. Psalm 64 renders praise and vow in Zion, and its larger canonical movement passes through heard prayer, pardon, the goodness of God’s house, and a creation made fruitful. Cassiodorus explicitly names both the diverse gifts of First Corinthians 12 and Luke’s lowered publican while expounding that larger psalm. His correspondence is documented later reception, not proof of Roman compiler intent; nevertheless it shows that confession, differentiated gift, and common praise can inhabit one theological field without one being reduced to another.
 
-The Offertory’s lifted soul prevents humility from collapsing into despair. The publican does not lift his eyes, yet Psalm 24 lifts the soul toward God in trust. Augustine reads waiting without shame as persevering dependence. The cross-proper relation is demonstrable in the appointed words, though no checked witness establishes it as compiler intent.
+### Mercy that does not produce self-sufficiency
 
-### The altar receives what boasting cannot secure (*Sec., Comm., Postcomm.*)
+The Collect does not merely cancel a past liability. Multiplied mercy makes people run toward promises and become sharers in heavenly goods. Aquinas receives its axiom as an account of supreme agency: pardon and elevation into divine good display power precisely because their source is God. The Offertory gives that movement the grammar of waiting; those who lift the soul still ask for instruction and forgiveness. Mercy creates motion, but not autonomy.
 
-The Secret asks that dedicated sacrifices be rendered to God and become remedies for the offerers. The Communion quotes Psalm 50’s final expectation of accepted sacrifice. In the complete psalm, contrite heart and restored Zion precede that verse; acceptance and contrition are partners, not rivals. Augustine refuses both an abolition of sacrifice and confidence in external performance detached from the one saving sacrifice.
+The altar intensifies rather than resolves this dependence. The Secret asks God to make the offered sacrifices medicinal. The Communion’s *acceptabis* leaves acceptance with God, and the complete Miserere places sacrifice after a contrite heart and the rebuilding of Zion. The Postcommunion then withholds a tidy ending: persons whom God does not cease to restore by the sacraments still ask not to be deprived of his gracious aids. Guéranger, Schuster, and Nicolau develop this continuing need in distinct liturgical and sacramental registers. The Mass therefore preserves effort, gift, judgment, sacrifice, and sacramental fruit while denying that any of them becomes a certificate the recipient can close over the self.
 
-The Postcommunion ends in continued dependence: God does not cease restoring recipients by divine mysteries, and they ask not to be deprived of gracious aids. The Trinity Preface directs the celebration to triune praise. Mercy therefore does not erase gifts, works, judgment, or offering; it relocates their source, measure, acceptance, and fruit in God.
-
-| **Movement** | **Decisive gift** | **Controlling limit** |
+| **Common conversion** | **Positive form** | **Controlling limit** |
 |:-------------|:------------------------|:----------------------------|
-| **Cry and run** | God hears, sustains, pardons, and multiplies mercy. | Trust does not deny distress; mercy does not bless contempt. |
-| **Receive and serve** | One divine giver distributes manifestations for common benefit. | Gifts are neither merit badges nor interchangeable offices. |
-| **Descend justified** | God justifies the sinner who petitions mercy. | Humility is not self-hatred; good works are not condemned. |
-| **Offer and renew** | God accepts sacrifice, makes it remedy, and continually restores. | Neither ritual inventory nor inward feeling secures acceptance. |
+| **From comparison to judgment** | Standing is entrusted to the God who hears, sees, pardons, and justifies. | Neither observance nor penitential posture certifies a person; the Jewish setting cannot be made an ethnic indictment. |
+| **From possession to communion** | Diverse gifts and offered goods serve praise, remedy, and common benefit. | Difference is not rivalry; charism, office, talent, and claimed phenomenon are not interchangeable. |
+| **From abasement to hope** | Lowered eyes, guarded sight, and a lifted soul become one Godward dependence. | Humility is neither self-hatred nor despair, and trust does not deny distress. |
+| **From reception to perseverance** | Mercy sets the Church in motion and sacramental renewal sustains it. | Acceptance and restoration remain divine acts, not achieved spiritual closure. |
 
 <span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
 
@@ -375,11 +373,11 @@ The whole sequence therefore corrects two opposite errors. One would make interi
 
 ## Source-Grounded Synthesis Across the Propers
 
-The formulary repeatedly distinguishes received gift from self-grounded claim. The Introit’s singer is heard and sustained; the Collect names pardon and mercy as the chief manifestation of omnipotence; the Epistle attributes diverse manifestations to one divine source and orders them toward common benefit. The Gospel then exposes religious practice converted into comparison: the publican petitions mercy, and God justifies. At the altar, dedicated gifts become remedies only by divine action, sacrifice awaits divine acceptance, and communicants require continual restoration and help.
+The formulary’s several kinds of religious good—moral observance, spiritual manifestation, confident prayer, sacrificial offering, and sacramental fruit—are governed by one distinction: they may be received and enacted, but not possessed as self-grounded verdicts. Hearing, pardon, distribution, judgment, acceptance, restoration, and aid remain divine actions. The worshipper’s activity is therefore real without becoming its own origin, measure, or completion.
 
-This movement does not oppose grace to works, spiritual gifts to order, contrition to sacrifice, or humility to hope. It relocates each within dependence on God. Fasting, tithing, gifts, offerings, and sacramental reception remain real; none becomes a private certificate of superiority. The Offertory therefore lifts the soul precisely where the Gospel lowers the eyes, while the Gradual asks guarded vision and equitable judgment from God.
+This synthesis does not oppose grace to works, spiritual gifts to order, contrition to sacrifice, or humility to hope. It explains how the paired motions can remain together. Lowered eyes and a lifted soul both refuse self-verdict; differentiated gifts and common praise both refuse rivalry; contrition and accepted sacrifice both refuse a merely interior or merely external account of worship. Fasting, tithing, service, waiting, offering, and reception remain real, but none becomes a private certificate of superiority.
 
-The result is ecclesial as well as personal. Paul’s *ad utilitatem* prevents gifts from ending in the recipient; Zion’s praise and vow prevent prayer from ending in self-description; the Secret and Communion prevent offering from ending in the offerer’s inventory; the Postcommunion prevents reception from ending in self-sufficiency. Mercy restores persons for a common worship whose giver, judge, receiver, and sustaining end is God.
+The result is ecclesial as well as personal. The common-benefit criterion, Zion’s praise, medicinal offering, restored city, and continuing sacramental aid all prevent divine gifts from terminating in their recipients. Mercy forms a people whose differences become service and whose worship remains open to judgment, neighbor, altar, and promised end. God is not only the first cause of this movement, but its continuing giver, judge, receiver, and sustaining end.
 
 ## The Propers: Notable and Quotable
 
@@ -455,6 +453,6 @@ The result is ecclesial as well as personal. Paul’s *ad utilitatem* prevents g
 
 -   Martin Luther King Jr., [“Pride Versus Humility: The Parable of the Pharisee and the Publican,”](https://kinginstitute.stanford.edu/king-papers/documents/pride-versus-humility-parable-pharisee-and-publican-sermon-dexter-avenue) Dexter Avenue sermon manuscript, probably 25 September 1955.
 
-**Last revised (UTC):** 2026-07-29T19:14:52Z
+**Last revised (UTC):** 2026-07-29T20:21:55Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

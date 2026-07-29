@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-29"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 133
-source_surface_file_count = 1961
-snapshot = "sha256:0b3115406e18eb0c7c50487126ae8c3b38db13006fa82968a99dfba483dd810b"
+source_surface_file_count = 1963
+snapshot = "sha256:d746b31d6b40931d40adfca2e359796f1bfad08e9ca6c948c720ea087005251f"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -8412,13 +8412,13 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/main.tex"
-sha256 = "4009976a5b8f09ebcaa0b5548a4ac172fd1f4aed4d32b012268815fa906a2f53"
+sha256 = "fa3ae509a453f250411ff5275251ef972d16fa612ce9fda1b79dc536cac5e63e"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/proper-components.toml"
-sha256 = "2bd2da4564a34a5590406edcd5b3bada2e1f54b9e635b234781c471144e5042b"
+sha256 = "25f55dcfe0d66f5f7d1768e1fb229a38c45be1ac29e39d4f33afb319cae4eff0"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
@@ -8532,7 +8532,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/research/synthesis-sufficiency-review-2026-07-29.md"
-sha256 = "38f1d77dacbe6b401bed059b2df9ed15a8f0dfc48b9c3089bf86a367891dbe70"
+sha256 = "9bc1ae65606b4a3a0698cfd5fc7b63b9692779f071d568afcc8a5173d963fb68"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
@@ -8598,7 +8598,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/sections/35-source-grounded-synthesis.tex"
-sha256 = "560a96d96441a24aed9567ab658f7ae3f1eee4bc32da9340b4fc255d03cc36fd"
+sha256 = "b7c55f23f5826ea02057e0624b2b5f0748234811969c067c217e819e3597ca09"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
@@ -8623,6 +8623,18 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/sections/redevelopment/communion.tex"
 sha256 = "8ed8f5fda6a10b2980423fd02eec74da2178594f7da8ec52c5ff5fdf803fea00"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/sections/synthesis/10-themes-and-movement.tex"
+sha256 = "cdd5592e10cf2fff8a84bc97e67c0f5ba64050d9bdd7696f72617c8fea2a2ce3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/sections/synthesis/20-integrated-commentary.tex"
+sha256 = "42a35b8af6795c2ec7afda019caa93abb1fe296f41d48dac308360ae9ff4107a"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 

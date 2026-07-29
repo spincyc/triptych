@@ -18,20 +18,23 @@ loader.exec_module(module)
 class ProperComponentTests(unittest.TestCase):
     def component_tree(self, directory: str, *, appointed_modes: str = '["research"]',
                        treatment_modes: str = '["research"]',
+                       integrated_modes: str = '["synthesis"]',
                        swap_tail: bool = False):
         provider = Path(directory) / "src" / "gpt"
         leaf = provider / "proper"
         leaf.mkdir(parents=True)
         for name in (
             "main.tex", "synthesis.tex", "appointed.tex", "treatment.tex",
-            "brief.tex", "grounded.tex", "exploratory.tex", "notable.tex",
-            "terminal.tex", "brief-refs.tex",
+            "brief.tex", "integrated.tex", "grounded.tex", "exploratory.tex",
+            "notable.tex", "terminal.tex", "brief-refs.tex",
         ):
             (leaf / name).write_text("% fixture\n", encoding="utf-8")
         components = [
             ("appointed", "appointed-text", "appointed.tex", appointed_modes),
             ("treatment", "proper-treatment", "treatment.tex", treatment_modes),
             ("brief", "brief-synthesis", "brief.tex", '["research", "synthesis"]'),
+            ("integrated", "integrated-commentary", "integrated.tex",
+             integrated_modes),
             ("grounded", "source-grounded-synthesis", "grounded.tex",
              '["research", "synthesis"]'),
             ("exploratory", "exploratory-synthesis", "exploratory.tex",
@@ -42,7 +45,7 @@ class ProperComponentTests(unittest.TestCase):
              '["research", "synthesis"]'),
         ]
         if swap_tail:
-            components[4], components[5] = components[5], components[4]
+            components[5], components[6] = components[6], components[5]
         blocks = []
         for key, kind, path, modes in components:
             references = '["brief-refs.tex"]' if key == "brief" else "[]"
@@ -80,12 +83,21 @@ class ProperComponentTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "appointed-text"):
                 module.audit_manifest(path, provider)
 
-    def test_synthesis_may_retain_substantive_proper_treatment(self):
+    def test_synthesis_must_omit_proper_by_proper_treatment(self):
         with tempfile.TemporaryDirectory() as directory:
             path, provider = self.component_tree(
                 directory, treatment_modes='["research", "synthesis"]'
             )
-            module.audit_manifest(path, provider)
+            with self.assertRaisesRegex(ValueError, "proper-treatment"):
+                module.audit_manifest(path, provider)
+
+    def test_integrated_commentary_is_synthesis_only(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path, provider = self.component_tree(
+                directory, integrated_modes='["research", "synthesis"]'
+            )
+            with self.assertRaisesRegex(ValueError, "integrated-commentary"):
+                module.audit_manifest(path, provider)
 
     def test_exploratory_precedes_notable(self):
         with tempfile.TemporaryDirectory() as directory:

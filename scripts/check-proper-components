@@ -18,6 +18,7 @@ KINDS = {
     "appointed-text",
     "proper-treatment",
     "brief-synthesis",
+    "integrated-commentary",
     "source-grounded-synthesis",
     "exploratory-synthesis",
     "notable-quotable",
@@ -175,12 +176,29 @@ def audit_manifest(path: Path, provider_root: Path) -> None:
         component["kind"]: component for component in components
         if component["kind"] in required_once
     }
+    integrated = [
+        component for component in components
+        if component["kind"] == "integrated-commentary"
+    ]
+    if len(integrated) > 1:
+        raise ValueError("at most one integrated-commentary component is allowed")
     if set(by_kind["appointed-text"]["modes"]) != {"research"}:
         raise ValueError("appointed-text must occur only in research mode")
-    if set(by_kind["proper-treatment"]["modes"]) not in ({"research"}, MODES):
+    treatment_modes = set(by_kind["proper-treatment"]["modes"])
+    if integrated:
+        if treatment_modes != {"research"}:
+            raise ValueError(
+                "proper-treatment must occur only in research mode when an "
+                "integrated-commentary is declared"
+            )
+        if set(integrated[0]["modes"]) != {"synthesis"}:
+            raise ValueError(
+                "integrated-commentary must occur only in synthesis mode"
+            )
+    elif treatment_modes not in ({"research"}, MODES):
         raise ValueError(
             "proper-treatment must occur in research mode and may also occur "
-            "in synthesis mode"
+            "in synthesis mode in a legacy manifest"
         )
     synthesis_required = {
         "brief-synthesis",
@@ -198,11 +216,14 @@ def audit_manifest(path: Path, provider_root: Path) -> None:
         "exploratory-synthesis",
         "notable-quotable",
     ]
+    if integrated:
+        ordered.insert(1, "integrated-commentary")
     positions = [kinds.index(kind) for kind in ordered]
     if positions != sorted(positions):
         raise ValueError(
-            "component order must be brief synthesis, source-grounded synthesis, "
-            "exploratory synthesis, then notable and quotable"
+            "component order must be brief synthesis, integrated commentary, "
+            "source-grounded synthesis, exploratory synthesis, then notable "
+            "and quotable"
         )
 
     relations = data.get("relations")
