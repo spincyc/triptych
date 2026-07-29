@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-29"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:2172e79caeebdb0945f86366551c5a185a22d76b53e8324d334a8b686f120cd6"
+inventory_snapshot = "sha256:6ac5e34de1e3d007db6e2e9c1d52c87ec4e746c9eb2e18a77017d29a85892140"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
 canonical_catalog_snapshot = "sha256:d9783ddf73c8a7eba11812ca19a424be51fbb0fc087ca384e5bdd857e5ca3df4"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:99fa92f4f544542b50c9e705882911d543be22de53b1aa3239a07beed374d628"
+snapshot = "sha256:9dba89872ac7d70050732b5ceb6521d5cf8f1e2b3cb85bc46540ae6b6d070de5"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -10675,7 +10675,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/r
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:1a2317d1fdcd380b87bcb6337f4bf9ec24017c837e2cce474e43f07c305bb6a7"
+surface_snapshot = "sha256:683eea3fe0a857041f76c0ad23230f3f4c519c36ac759a30a201063f6fcb84d7"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:29d3bd093eb4e5a6f472257d1f857e2a1b849f3f8455f8ee0ef61aded571e940"

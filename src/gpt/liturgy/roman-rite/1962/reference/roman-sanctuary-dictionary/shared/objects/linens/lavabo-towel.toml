@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "useful"
 
 [[claims]]
+id = "clm-lavabo-towel-identity"
+kind = "identity"
+text = "The lavabo towel, historically called the manuterge in English, is the hand towel used after the celebrant washes his fingertips at the Offertory Lavabo."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-missale-1962-lavabo-rs", "src-ce-1910-manuterge"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-lavabo-towel-presence"
 kind = "ceremonial-presence"
 text = "The 1962 Missal requires the manuterge to be prepared with the cruets and small basin on the Epistle-side service table."

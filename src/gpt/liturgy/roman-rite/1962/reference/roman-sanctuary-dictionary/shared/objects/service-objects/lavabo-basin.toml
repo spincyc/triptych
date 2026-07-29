@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "useful"
 
 [[claims]]
+id = "clm-lavabo-basin-identity"
+kind = "identity"
+text = "The lavabo basin is the small basin that receives the water when the celebrant washes his fingertips at the Offertory Lavabo."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-lavabo-rg528", "src-missale-1962-lavabo-rs"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-lavabo-basin-presence"
 kind = "ceremonial-presence"
 text = "The 1962 Missal requires a small basin to be prepared with the wine and water cruets and manuterge on the Epistle-side service table."

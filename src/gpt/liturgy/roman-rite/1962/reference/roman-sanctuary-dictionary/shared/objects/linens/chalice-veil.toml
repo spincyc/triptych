@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-chalice-veil-identity"
+kind = "identity"
+text = "The chalice veil is the silk covering placed over the prepared chalice."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-prepared-chalice-linens"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-chalice-veil-identity-relation"
 kind = "liturgical-use"
 text = "The 1962 Missal places a silk veil over the prepared chalice and names its removal and replacement during Mass."

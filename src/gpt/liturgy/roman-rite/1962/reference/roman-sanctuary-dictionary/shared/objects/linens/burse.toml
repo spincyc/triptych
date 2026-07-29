@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-burse-identity"
+kind = "identity"
+text = "The burse is the case that contains the folded corporal and rests above the chalice veil in the prepared composition."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-prepared-chalice-linens"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-burse-identity-relation"
 kind = "liturgical-use"
 text = "The 1962 Missal places the folded corporal in the burse and the burse above the chalice veil in the prepared composition."

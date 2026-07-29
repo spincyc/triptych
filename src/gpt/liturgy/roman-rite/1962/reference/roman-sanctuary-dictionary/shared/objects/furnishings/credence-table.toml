@@ -30,6 +30,13 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-credence-table-object-identity"
+kind = "identity"
+text = "The credence is a sanctuary service table for objects needed in the ceremony."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-credence-fortescue-1943", "src-credence-ce", "src-credence-missal-use"]
+
+[[claims]]
 id = "clm-credence-table-identity"
 kind = "liturgical-use"
 text = "The credence is a sanctuary service table on which objects needed for the selected ceremony are prepared or temporarily placed; construction, covering, contents, and exact location vary."

@@ -34,6 +34,8 @@ practice.
 
 Monochrome-pencil visual references organized for six audiences.
 
+[Browse pictures and definitions](sanctuary-picture-dictionary.html)
+
 | Edition | PDF | Focus |
 | --- | --- | --- |
 | **Comprehensive dictionary** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf) | Shared inventory and historical boundary. |

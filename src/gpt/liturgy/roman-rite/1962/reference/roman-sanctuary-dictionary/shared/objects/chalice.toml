@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-chalice-identity"
+kind = "identity"
+text = "The chalice is the sacred vessel named by the 1962 Missal throughout the Offertory, Canon, Communion, ablutions, and removal from the altar."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-missale-1962-ritus-vii-xii", "src-met-463080-metadata", "src-met-463080-image"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-chalice-identity-use"
 kind = "liturgical-use"
 text = "The 1962 Missal names the calix throughout the Offertory, Canon, Communion, ablutions, and concluding removal from the altar."

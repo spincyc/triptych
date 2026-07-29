@@ -142,6 +142,69 @@ li > ul, li > ol { margin: 0.35rem 0; }
 
 img { max-width: 100%; height: auto; }
 
+.gallery-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin: 1.5rem 0 2rem;
+  padding: 0.8rem 1rem;
+  border-block: 1px solid var(--line);
+}
+.pictorial-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.7rem);
+  align-items: start;
+}
+.gallery-card {
+  break-inside: avoid;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: linear-gradient(145deg, rgba(184, 138, 67, 0.08), transparent 35%), var(--surface);
+  box-shadow: 0 0.35rem 1.2rem rgba(65, 48, 33, 0.09);
+}
+.gallery-image {
+  display: grid;
+  min-height: 14rem;
+  padding: 1rem;
+  place-items: center;
+  background: radial-gradient(ellipse at center, rgba(255, 253, 249, 0.96), rgba(248, 245, 239, 0.45) 70%, transparent);
+}
+.gallery-image img {
+  width: 100%;
+  max-height: 22rem;
+  object-fit: contain;
+  filter: contrast(1.03);
+  mix-blend-mode: multiply;
+}
+.gallery-card figcaption { padding: 0 1.1rem 1.2rem; }
+.gallery-card h2 { margin: 0; padding: 0; color: var(--ink); font-size: 1.28rem; }
+.gallery-view {
+  margin: 0.35rem 0 0.8rem;
+  color: var(--rubric);
+  font-family: system-ui, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.gallery-card dl { margin: 0; }
+.gallery-card dt { margin-top: 0.8rem; font-weight: 700; }
+.gallery-card dd { margin: 0.18rem 0 0; color: var(--muted); }
+.gallery-latin { color: var(--muted); font-weight: 400; font-style: italic; }
+.gallery-rights {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+.gallery-note { margin-top: 2rem; padding: 1rem 1.2rem; border-left: 0.25rem solid var(--gold); background: #f5efe6; }
+
 .smallcaps { font-variant: small-caps; }
 
 table { width: 100%; margin: 1.4rem 0; border-collapse: collapse; font-family: system-ui, sans-serif; font-size: 0.94rem; }
@@ -236,7 +299,8 @@ a.footnote-backref { text-decoration: none; }
   tbody tr:nth-child(even) { background: #221e18; }
   code { background: #2a241d; }
   pre { background: #100e0b; color: var(--ink); }
-  .empty-shelf, .footnote li:target { background: #24201a; }
+  .empty-shelf, .footnote li:target, .gallery-note { background: #24201a; }
+  .gallery-image img { filter: invert(1) contrast(1.03); mix-blend-mode: screen; }
 }
 
 @media (prefers-reduced-motion: reduce) {

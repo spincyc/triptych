@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-altar-cloths-identity"
+kind = "identity"
+text = "The altar cloths are the three clean blessed cloths that cover the altar for Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-altar-cloths"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-altar-cloths-presence"
 kind = "ceremonial-presence"
 text = "The 1962 Missal directs that the altar be covered with three clean blessed cloths."

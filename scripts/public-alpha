@@ -25,6 +25,16 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "release/public-alpha.json"
 TEMPLATE_ROOT = ROOT / "release/public-alpha"
 OUTPUT_ROOT = ROOT / "build/public-alpha"
+PICTORIAL_ROOT_RELATIVE = PurePosixPath(
+    "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+)
+PICTORIAL_ROOT = ROOT / PICTORIAL_ROOT_RELATIVE
+PICTORIAL_MANIFEST_RELATIVE = (
+    PICTORIAL_ROOT_RELATIVE / "research/artwork-manifest.toml"
+)
+PICTORIAL_OBJECTS_RELATIVE = PICTORIAL_ROOT_RELATIVE / "shared/objects"
+PICTORIAL_GALLERY_OUTPUT = "library/sanctuary-picture-dictionary.html"
+PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
 
 PAGE_MAP = {
     "README.md": "index.html",
@@ -151,9 +161,207 @@ def site_pages() -> dict[str, str]:
     return {**PAGE_MAP, **document_pages()}
 
 
+def pictorial_object_source_paths() -> set[str]:
+    if not (ROOT / PICTORIAL_OBJECTS_RELATIVE).is_dir():
+        return set()
+    return {
+        path.relative_to(ROOT).as_posix()
+        for path in (ROOT / PICTORIAL_OBJECTS_RELATIVE).rglob("*.toml")
+        if path.is_file() and not path.is_symlink()
+    }
+
+
+def _resolve_pictorial_asset_path(value: str, label: str) -> Path:
+    candidate = PurePosixPath(value)
+    if candidate.is_absolute() or not candidate.parts or ".." in candidate.parts:
+        raise ReleaseError(f"{label} is not a safe relative path: {value!r}")
+    possibilities = (PICTORIAL_ROOT.joinpath(*candidate.parts), ROOT.joinpath(*candidate.parts))
+    existing = [path for path in possibilities if path.exists()]
+    if len({path.resolve() for path in existing}) != 1:
+        raise ReleaseError(
+            f"{label} must resolve to exactly one dictionary or repository asset: {value!r}"
+        )
+    path = existing[0]
+    if path.is_symlink() or not path.is_file() or path.suffix.lower() != ".png":
+        raise ReleaseError(f"{label} is unsafe, missing, or not PNG: {value!r}")
+    try:
+        path.resolve().relative_to(ROOT.resolve())
+    except ValueError as exc:
+        raise ReleaseError(f"{label} leaves the repository: {value!r}") from exc
+    return path
+
+
+PICTORIAL_UNAVAILABLE_DEFINITION = (
+    "A source-verified definition is not yet available; this pictured record "
+    "remains under audit."
+)
+
+
+def _checked_definition(record: dict) -> tuple[str, bool]:
+    claims = record.get("claims", [])
+    for kind in (
+        "identity",
+        "liturgical-use",
+        "ceremonial-presence",
+        "appearance",
+        "variation",
+    ):
+        for claim in claims:
+            if (
+                claim.get("kind") == kind
+                and claim.get("evidence_state")
+                in {
+                    "checked-paraphrase",
+                    "checked-quotation",
+                    "source-grounded-synthesis",
+                    "verified-source-text",
+                }
+                and isinstance(claim.get("text"), str)
+                and claim["text"].strip()
+            ):
+                return claim["text"].strip(), False
+    return PICTORIAL_UNAVAILABLE_DEFINITION, True
+
+
+def pictorial_gallery_data() -> list[dict]:
+    """Load the release-reviewed, canonical dictionary artwork exactly once."""
+    manifest_path = ROOT / PICTORIAL_MANIFEST_RELATIVE
+    try:
+        manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as exc:
+        raise ReleaseError(f"cannot read {PICTORIAL_MANIFEST_RELATIVE}: {exc}") from exc
+
+    asset_files = {item["id"]: item for item in manifest.get("asset_files", [])}
+    admitted: list[tuple[dict, dict]] = []
+    required_reviews = {
+        "factual": "passed",
+        "visual": "passed",
+        "print": "passed",
+        "rights": "passed",
+        "consumer": "passed",
+        "release": "passed",
+    }
+    for artwork in manifest.get("artworks", []):
+        if (
+            artwork.get("workflow_state") == "consumer-review-passed"
+            and artwork.get("reviews") == required_reviews
+        ):
+            asset_path = artwork.get("asset") or artwork.get("normalized", {}).get("path")
+            matching = [item for item in asset_files.values() if item.get("path") == asset_path]
+            if len(matching) != 1:
+                raise ReleaseError(f"{artwork.get('id')}: full artwork has no unique asset-file record")
+            admitted.append((artwork, matching[0]))
+    for artwork in manifest.get("artwork_links", []):
+        asset = asset_files.get(artwork.get("asset_file_id"))
+        if (
+            artwork.get("workflow_state") == "consumer-review-passed"
+            and asset
+            and asset.get("state") in {"canonical-alpha-eligible", "consumer-eligible"}
+        ):
+            admitted.append((artwork, asset))
+
+    objects: dict[str, dict] = {}
+    for source_relative in sorted(pictorial_object_source_paths()):
+        try:
+            record = tomllib.loads((ROOT / source_relative).read_text(encoding="utf-8"))
+        except (OSError, tomllib.TOMLDecodeError) as exc:
+            raise ReleaseError(f"cannot read {source_relative}: {exc}") from exc
+        object_id = record.get("id")
+        if not isinstance(object_id, str) or object_id in objects:
+            raise ReleaseError(f"invalid or duplicate pictorial object id in {source_relative}")
+        objects[object_id] = record
+
+    grouped: dict[str, dict] = {}
+    for artwork, asset in admitted:
+        path = _resolve_pictorial_asset_path(
+            str(asset.get("path", "")), f"{artwork.get('id')} asset"
+        )
+        technical = asset.get("technical", {})
+        expected_hash = technical.get("sha256")
+        if not isinstance(expected_hash, str) or not SHA256_RE.fullmatch(expected_hash):
+            raise ReleaseError(f"{asset.get('id')}: missing valid canonical SHA-256")
+        actual_hash = sha256(path)
+        if actual_hash != expected_hash:
+            raise ReleaseError(f"{asset.get('id')}: canonical PNG hash mismatch")
+        expected_bytes = technical.get("bytes")
+        if expected_bytes != path.stat().st_size:
+            raise ReleaseError(f"{asset.get('id')}: canonical PNG byte count mismatch")
+        key = path.relative_to(ROOT).as_posix()
+        entry = grouped.setdefault(
+            key,
+            {
+                "source": path,
+                "sha256": actual_hash,
+                "width": technical.get("width_px"),
+                "height": technical.get("height_px"),
+                "object_ids": set(),
+                "views": set(),
+                "artwork_ids": set(),
+                "rights": set(),
+            },
+        )
+        if entry["sha256"] != actual_hash:
+            raise ReleaseError(f"duplicate pictorial path has conflicting bytes: {key}")
+        entry["object_ids"].update(artwork.get("object_ids", []))
+        entry["views"].add(str(artwork.get("view", "view")))
+        entry["artwork_ids"].add(str(artwork.get("id")))
+        if isinstance(artwork.get("rights"), str) and artwork["rights"].strip():
+            entry["rights"].add(artwork["rights"].strip())
+
+    cards: list[dict] = []
+    for source_relative, entry in grouped.items():
+        definitions = []
+        for object_id in sorted(entry["object_ids"]):
+            record = objects.get(object_id)
+            if record is None:
+                raise ReleaseError(f"{source_relative}: unknown object id {object_id}")
+            definition, under_audit = _checked_definition(record)
+            definitions.append(
+                {
+                    "id": object_id,
+                    "name": record["preferred_english_name"],
+                    "latin": record.get("latin_headword", ""),
+                    "category": (record.get("categories") or ["other"])[0],
+                    "definition": definition,
+                    "under_audit": under_audit,
+                }
+            )
+        if not definitions:
+            raise ReleaseError(f"{source_relative}: admitted artwork has no object identity")
+        if not all(isinstance(entry[item], int) and entry[item] > 0 for item in ("width", "height")):
+            raise ReleaseError(f"{source_relative}: invalid canonical PNG dimensions")
+        destination = (
+            PICTORIAL_GALLERY_ASSET_ROOT
+            / f"{entry['sha256'][:16]}-{Path(source_relative).name}"
+        ).as_posix()
+        cards.append(
+            {
+                **entry,
+                "source_relative": source_relative,
+                "destination": destination,
+                "definitions": definitions,
+                "sort_name": definitions[0]["name"].casefold(),
+            }
+        )
+    cards.sort(key=lambda item: (item["sort_name"], item["sha256"]))
+    return cards
+
+
+def pictorial_gallery_source_paths() -> set[str]:
+    if not (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+        return set()
+    paths = {PICTORIAL_MANIFEST_RELATIVE.as_posix()} | pictorial_object_source_paths()
+    paths.update(card["source_relative"] for card in pictorial_gallery_data())
+    return paths
+
+
 def site_source_paths() -> set[str]:
     """Every repository input the artifact's approval binds."""
-    return set(SITE_SOURCE_PATHS) | set(document_pages())
+    return (
+        set(SITE_SOURCE_PATHS)
+        | set(document_pages())
+        | pictorial_gallery_source_paths()
+    )
 
 
 def artifact_license_source_paths() -> list[str]:
@@ -1038,6 +1246,9 @@ def expected_artifact_files(
     authorization: dict,
 ) -> set[str]:
     expected = set(PAGE_MAP.values())
+    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+        expected.add(PICTORIAL_GALLERY_OUTPUT)
+        expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
     expected.update(f"doc/{provider}/{leaf}.pdf" for provider, leaf in included)
     expected.update(
@@ -1232,6 +1443,12 @@ def source_to_output(
     resolved_text = resolved.as_posix()
 
     destination = PAGE_MAP.get(resolved_text)
+    if (
+        destination is None
+        and (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file()
+        and resolved_text == PICTORIAL_GALLERY_OUTPUT
+    ):
+        destination = PICTORIAL_GALLERY_OUTPUT
     if destination is None and resolved_text in artifact_license_source_paths():
         license_path = ROOT.joinpath(*resolved.parts)
         if license_path.is_file():
@@ -1552,6 +1769,115 @@ def render_source_page(
     )
 
 
+def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
+    cards = pictorial_gallery_data()
+    under_audit_count = sum(
+        definition["under_audit"]
+        for card in cards
+        for definition in card["definitions"]
+    )
+    categories = sorted(
+        {
+            card["definitions"][0]["category"]
+            for card in cards
+        }
+    )
+    category_links = " · ".join(
+        f'<a href="#category-{html.escape(category)}">'
+        f'{html.escape(category.replace("-", " ").title())}</a>'
+        for category in categories
+    )
+    blocks = [
+        "# Sanctuary Picture Dictionary",
+        "",
+        (
+            "Explore the checked monochrome drawings used across Triptych’s 1962 "
+            "Roman sanctuary dictionaries. Each image appears once, even when several "
+            "objects or teaching views share it. "
+            f"{under_audit_count} pictured object record"
+            f"{'s remain' if under_audit_count != 1 else ' remains'} under definition audit; "
+            "those cards say so directly."
+        ),
+        "",
+        f'<nav class="gallery-categories" aria-label="Picture categories">{category_links}</nav>',
+        "",
+        '<div class="pictorial-gallery">',
+    ]
+    seen_categories: set[str] = set()
+    for card in cards:
+        primary_category = card["definitions"][0]["category"]
+        category_id = ""
+        if primary_category not in seen_categories:
+            category_id = f' id="category-{html.escape(primary_category)}"'
+            seen_categories.add(primary_category)
+        title = " · ".join(definition["name"] for definition in card["definitions"])
+        descriptions = []
+        for definition in card["definitions"]:
+            latin = definition["latin"]
+            latin_text = (
+                f' <span class="gallery-latin" lang="la">({html.escape(latin)})</span>'
+                if latin and latin != "Latin term not asserted"
+                else ""
+            )
+            descriptions.append(
+                f'<dt>{html.escape(definition["name"])}{latin_text}</dt>'
+                f'<dd>{html.escape(definition["definition"])}</dd>'
+            )
+        views = ", ".join(sorted(card["views"])).replace("-", " ")
+        rights = "".join(
+            f'<p class="gallery-rights">{html.escape(statement)}</p>'
+            for statement in sorted(card["rights"])
+        )
+        blocks.extend(
+            [
+                f'<figure class="gallery-card"{category_id}>',
+                '<div class="gallery-image">',
+                (
+                    f'<img src="../{html.escape(card["destination"], quote=True)}" '
+                    f'width="{card["width"]}" height="{card["height"]}" loading="lazy" '
+                    f'decoding="async" alt="{html.escape("Pencil study: " + title, quote=True)}">'
+                ),
+                "</div>",
+                "<figcaption>",
+                f"<h2>{html.escape(title)}</h2>",
+                f'<p class="gallery-view">{html.escape(views.title())}</p>',
+                f'<dl>{"".join(descriptions)}</dl>',
+                rights,
+                "</figcaption>",
+                "</figure>",
+            ]
+        )
+    blocks.extend(
+        [
+            "</div>",
+            "",
+            (
+                '<p class="gallery-note">Definitions are drawn only from verified claims '
+                "in the canonical object records, preferring identity and liturgical-use "
+                "claims before narrower ceremonial or appearance descriptions. The drawings "
+                "are study aids, not substitutes for the governing liturgical books or "
+                "local direction.</p>"
+            ),
+            (
+                '<p class="gallery-note gallery-rights-context">Each image follows its '
+                "tracked artwork audit. Project-created content follows the "
+                '<a href="../license.html">Triptych licensing statement</a>; source and '
+                "third-party boundaries, including required attributions, remain governed "
+                'by the <a href="../third-party.html">third-party material notice</a>. '
+                "A card prints an additional rights statement only when its structured "
+                "artwork record supplies one.</p>"
+            ),
+        ]
+    )
+    return render_page(
+        PICTORIAL_MANIFEST_RELATIVE.as_posix(),
+        "\n".join(blocks) + "\n",
+        PICTORIAL_GALLERY_OUTPUT,
+        preview,
+        authorization,
+    )
+
+
 class LinkParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -1687,7 +2013,7 @@ def verify_output(
             actual_file_paths.add(relative)
             if path.suffix == ".pdf":
                 actual_pdf_paths.add(relative)
-            elif path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"} and path.suffix not in TEXT_SUFFIXES:
+            elif path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"} and path.suffix not in TEXT_SUFFIXES | {".png"}:
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not path.is_dir():
             errors.append(f"artifact contains a special file: {relative}")
@@ -1747,6 +2073,18 @@ def verify_output(
             expected_authorization,
         ):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
+
+    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+        gallery_path = output / PICTORIAL_GALLERY_OUTPUT
+        expected_gallery = render_pictorial_gallery(preview, expected_authorization)
+        if gallery_path.is_file() and gallery_path.read_text(
+            encoding="utf-8", errors="replace"
+        ) != expected_gallery:
+            errors.append(f"{PICTORIAL_GALLERY_OUTPUT}: generated gallery does not match canonical inputs")
+        for card in pictorial_gallery_data():
+            artifact_path = output / card["destination"]
+            if artifact_path.is_file() and sha256(artifact_path) != card["sha256"]:
+                errors.append(f"{card['destination']}: gallery PNG does not match canonical bytes")
 
     static_sources = [
         (TEMPLATE_ROOT / "assets/site.css", output / "assets/site.css"),
@@ -1888,6 +2226,12 @@ def build_site(
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
 
+    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+        for card in pictorial_gallery_data():
+            destination = output / card["destination"]
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(card["source"], destination)
+
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
     for source_relative, output_relative in rendered_pages.items():
@@ -1902,6 +2246,12 @@ def build_site(
                 authorization,
             ),
             encoding="utf-8",
+        )
+    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+        gallery_destination = output / PICTORIAL_GALLERY_OUTPUT
+        gallery_destination.parent.mkdir(parents=True, exist_ok=True)
+        gallery_destination.write_text(
+            render_pictorial_gallery(preview, authorization), encoding="utf-8"
         )
 
     artifact_manifest = artifact_manifest_data(manifest, included, preview)

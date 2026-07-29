@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-corporal-identity"
+kind = "identity"
+text = "The corporal is the wholly white linen kept folded in the burse for preparation and spread in the middle of the altar."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-prepared-chalice-linens"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-corporal-identity-relation"
 kind = "liturgical-use"
 text = "The 1962 Missal requires a wholly white linen corporal, folded in the burse during preparation and spread in the middle of the altar."

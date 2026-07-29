@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-purificator-identity"
+kind = "identity"
+text = "The purificator is the clean linen placed over the chalice mouth during preparation and used by the celebrant to wipe the chalice and his fingers."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-prepared-chalice-linens"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-purificator-identity-use"
 kind = "liturgical-use"
 text = "The 1962 Missal places a clean purificator over the chalice mouth during preparation and names it in the celebrant's wiping of the chalice and fingers."

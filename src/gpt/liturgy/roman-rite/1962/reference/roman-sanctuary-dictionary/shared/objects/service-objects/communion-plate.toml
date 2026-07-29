@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-communion-plate-identity"
+kind = "identity"
+text = "The Communion plate is the plate placed beneath communicants' chins, distinct from the celebrant's paten."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-communion-plate"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-communion-plate-identity-use"
 kind = "liturgical-use"
 text = "The 1962 Missal names a distinct patina placed beneath communicants' chins and directs the celebrant to put any fragments found on it into the chalice."

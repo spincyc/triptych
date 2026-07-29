@@ -38,6 +38,14 @@ general_reader = "required"
 pontifical = "required"
 
 [[claims]]
+id = "clm-chalice-pall-identity"
+kind = "identity"
+text = "The chalice pall is the small linen cover placed above the paten in the prepared composition and used over the chalice during Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-prepared-chalice-linens"]
+as_of = 1962-01-01
+
+[[claims]]
 id = "clm-chalice-pall-identity-relation"
 kind = "liturgical-use"
 text = "The 1962 Missal names a small linen pall placed above the paten in the prepared chalice stack and used over the chalice during Mass."
