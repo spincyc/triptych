@@ -14,8 +14,13 @@ poetry-branch map control received text, attribution, normalization, rights,
 and verification.  Project scansion, gloss, translation, and composition are
 identified as project work.  No spoken-pronunciation system is supplied.
 
-## Research-staleness verdict — 2026-07-26
+## Research-staleness verdict — 2026-07-29
 
-Comparison of the current packet and both candidates against changed inputs
-found no material composition, source, revision, or answer correction. This
-exact packet is ready for rebaselining.
+The exact-trigger review, both ignored candidates, and the
+old/modified/rewritten comparison are recorded in
+`staleness-review-2026-07-29.md`.
+
+**Edition-local verdict: no material change.** The fifteen new Missal passage
+records are collateral to EL-P8's sole local binding, the verified 1962
+Pentecost Sequence analogue. No publication or review-state change is
+warranted. This evaluation does not rebaseline the edition.

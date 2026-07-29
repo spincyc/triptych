@@ -59,3 +59,61 @@ The settled 12-page PDF, SHA-256 `d6eaf8220ff47fe26618c9dc4d3b0ae3e18e9770585514
 Both candidates were compared with owner and companion. No fragment, rubric,
 dependency, or independent-claim correction was found; this exact companion
 is ready for rebaselining.
+
+## Exact-trigger staleness review — 2026-07-29
+
+### Trigger and candidates
+
+Immediately before review, `scripts/research-staleness explain` reported
+thirteen newly fingerprinted records beneath the bound 1962 *Missale Romanum*
+edition: the aspersion order; pontifical tunicle and dalmatic; acolyte
+candlesticks; altar, tabernacle, and images; chalice and paten preparation;
+Communion plate; incense boat and spoon; Offertory lavabo; sacristy
+preparation and reverence; thurible service; altar-preparation articles;
+lavabo articles; and pontifical tunicle and dalmatic rubrics. It also reported
+the 2002 *Missale Romanum* records for the Eighteenth and Twenty-sixth Sundays
+per annum.
+
+The companion's sole binding names only the 1962 Good Friday Lord's Prayer at
+no. 960, p. 180, and the Lesser Doxology in the *Ordo Missae*, p. 216. None of
+the thirteen new 1962 records reaches either locus. The companion has no 2002
+Missal binding, and neither Sunday formulary owns an imported fragment.
+
+The ignored modified candidate at
+`build/staleness/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer/modified/`
+is an exact pre-review snapshot: minimal incorporation requires no change.
+The ignored rewritten candidate under the sibling `rewritten/` directory was
+drafted from this derivation record, the owner records, and the changed inputs
+without consulting the current companion prose. It imports or names only
+owner-controlled received prayer fragments and composes no prayer.
+
+### Component-by-component three-way comparison
+
+| Component | Old companion | Modified candidate | Rewritten candidate | Effect and substantive disagreement |
+|---|---|---|---|---|
+| Relationship to full guide | Identifies itself as a derived prayer-book view whose owner controls substantive claims | Identical | Retains that relationship prominently | No changed record bears on the relationship. No substantive disagreement. |
+| Minimal executable order | Supplies opening, appointed *Flos Carmeli*, day collect, common prayers, feast collect, and closing | Identical | Retains the same sequence in plainer form | No changed record bears on the order. Formatting differs; substance does not. |
+| Sign of the Cross | Imports the canonical shared fragment | Identical | Names it as part of the inherited order rather than creating text | None of the new Missal loci controls this fragment. No correction. |
+| Short *Flos Carmeli*, Days 1--8 | Imports the canonical short-form fragment | Identical | Imports the same canonical owner | No changed record concerns the sequence. No correction. |
+| Received collects, Days 1--9 | Imports the nine owner-controlled Latin collects and English-source pointers | Identical | Imports the same nine canonical files | The two new 2002 Sunday formularies are different collects and are not bound. They neither add, remove, strengthen, weaken, nor contradict these texts or status boundaries. |
+| Hail Mary | Imports the canonical fragment | Identical | Imports the same canonical owner | No changed record concerns this prayer. |
+| Lord's Prayer | Imports the canonical shared fragment controlled at 1962 Good Friday no. 960 | Identical | Names it as part of the inherited order; creates no text | All new 1962 passages are at different ceremonial or object loci. The controlling text is unchanged. |
+| Collect of the Feast | Imports the canonical fragment | Identical | Imports the same canonical owner | No changed record concerns this historical feast collect. |
+| Lesser Doxology | Imports the canonical shared fragment controlled in the 1962 *Ordo Missae*, p. 216 | Identical | Names it as part of the inherited order; creates no text | None of the new 1962 passages reaches p. 216 or the doxology. The controlling text is unchanged. |
+| Complete *Flos Carmeli*, Day 9 | Imports the canonical permission-bounded Latin--English fragment | Identical | Imports the same canonical owner | No changed record concerns the witness, permission, or translation status. |
+| Nine day headings | Provides nine mechanically distinct destinations without independent meditation or claims | Identical | Retains nine plain headings | No changed record bears on navigation. No substantive disagreement. |
+| Compact Scope and Status | Points to the owner; distinguishes pious exercise from liturgy and preserves prayer/status/rights boundaries | Identical | Retains those boundaries in shorter prose | No changed record alters a boundary. The rewrite differs rhetorically and lacks the installed typography, not substantively. |
+| Exclusion of exposition and independent claims | Adds no meditation, history, calendar essay, promise, indulgence, translation, or source judgment | Identical | Maintains the exclusion | No changed input warrants an independent claim. No substantive disagreement. |
+| Provenance and dependencies | Inherits generation metadata and depends on each canonical fragment | Identical | Records owner imports but is not a production-verified replacement | The rewrite is substantively weaker as a publication candidate because its metadata, formatting, and rendered equivalence have not been validated; this is a rewrite artifact difference, not an evidence-driven correction. |
+
+### Verdict
+
+**No material change.** Every new input is collateral to the companion's exact
+prayer loci and derivation map. No prayer, rubric, dependency, status summary,
+rights boundary, or forbidden independent claim is added, removed,
+strengthened, weakened, or contradicted. The rewritten candidate reaches the
+same substantive result but lacks the installed companion's established
+formatting and production verification, so it supplies no reason to replace
+the old edition.
+
+Per the task boundary, this review does **not** rebaseline the edition.

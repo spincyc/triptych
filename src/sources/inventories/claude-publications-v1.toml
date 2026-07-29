@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-07-28"
+audited_on = "2026-07-29"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 45
-source_surface_file_count = 909
-snapshot = "sha256:2c916ffde3c830fbb0adc4aad2b2f37bb5046ce34fbdb99d1fd991fef988d821"
+source_surface_file_count = 954
+snapshot = "sha256:7a562b99a03285eb8347c4ec1ab60d1387ee5f9199b8d541804decb5f94c4b09"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -600,6 +600,12 @@ kind = "research-record"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/research/staleness-review-2026-07-29.md"
+sha256 = "f4ca616c6538047f93dbb1a8e4bd8c10938ed34086ddec1106bff45b5f2b1f68"
+kind = "research-record"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
 path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/00-three-obligations.tex"
 sha256 = "7652d30a63ee6f4adb5ee5009e9f6b778390a2d7705e6294b2777c3f19c5390e"
 kind = "rendered-content"
@@ -732,6 +738,12 @@ kind = "research-record"
 owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/research/staleness-review-2026-07-29.md"
+sha256 = "586e4ad0d8631f47ddb5345032ff46a422706dda77b4957e07c872e677ccebbf"
+kind = "research-record"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
 path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/00-two-canons-and-a-question.tex"
 sha256 = "4c6d20347bdfe2c580fe44408c69b3268a05982004b876c6f28c3e3c496646ab"
 kind = "rendered-content"
@@ -852,6 +864,12 @@ kind = "research-record"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/research/staleness-review-2026-07-29.md"
+sha256 = "ccb35b75bb53f6c69c26751baa3e146e337dd845177e2720cf15696d66eb77fd"
+kind = "research-record"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/00-the-case-for-the-instruments.tex"
 sha256 = "f508b815d6379e00ef25e3b4eb2cb4e4571b52a824e514768785bf833bc6c63e"
 kind = "rendered-content"
@@ -954,6 +972,12 @@ kind = "research-record"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/research/staleness-review-2026-07-29.md"
+sha256 = "7738300307d5b3425a7850b8ccc89afa33dd5c66e734cc9a705f15896b3f0e25"
+kind = "research-record"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
 path = "src/claude/articles/faith/at-the-end-of-every-why/sections/00-the-question-that-survives-its-answers.tex"
 sha256 = "e4ec8ca3b456446455c7f229cef6f953d393d80be826a511f4d1068bbd6f48ea"
 kind = "rendered-content"
@@ -1040,6 +1064,12 @@ owners = ["articles/faith/council-missal-and-crisis"]
 [[files]]
 path = "src/claude/articles/faith/council-missal-and-crisis/research/staleness-review-2026-07-27.md"
 sha256 = "5b6657797bc48f0ca6bc8772c959f763cbbc918c75214a502d02654de2290f3d"
+kind = "research-record"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/research/staleness-review-2026-07-29.md"
+sha256 = "dee7b3666d34490c97df241eff8379185f4ae4146ef34f705dfbe14528f8c598"
 kind = "research-record"
 owners = ["articles/faith/council-missal-and-crisis"]
 
@@ -1136,6 +1166,12 @@ owners = ["articles/faith/four-last-things-01-death"]
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/research/staleness-review-2026-07-27.md"
 sha256 = "fa0ef9b47e6696ec6d66c977e3d1e3f0aadcc0503b0a3c2384f62ac1bbb8cdc7"
+kind = "research-record"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/research/staleness-review-2026-07-29.md"
+sha256 = "b10473e3e7751c7306bfbc47c1688ea4e50148610aeb2375d90e8e56824d6ea0"
 kind = "research-record"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -1248,6 +1284,12 @@ kind = "research-record"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/research/staleness-review-2026-07-29.md"
+sha256 = "bed6840388848db504501c1818ea413c5ae756be1b2ef51567ff53a14de34372"
+kind = "research-record"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/00-the-same-man-sentenced-twice.tex"
 sha256 = "0151d04f2a527f14a07358a32e53cf138f553bd6322f196321fc35c51b4f9a39"
 kind = "rendered-content"
@@ -1344,6 +1386,12 @@ kind = "source-binding"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/research/staleness-review-2026-07-29-c089eb41.md"
+sha256 = "4789bc0f06bd6380f26b8f5c3727bbc1e5fbbaa9339cfa2c58abaf8a17bee529"
+kind = "research-record"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/00-a-short-file.tex"
 sha256 = "9ddbd0a9ef678a61868b45f80d59d9e0424e2994d1140f68e93e5058e2baf208"
 kind = "rendered-content"
@@ -1437,6 +1485,12 @@ owners = ["articles/faith/four-last-things-04-heaven"]
 path = "src/claude/articles/faith/four-last-things-04-heaven/research/source-bindings.toml"
 sha256 = "729e449df8d8f6e9ac6ffcbb864a4a604daef8302b83855b78df2e6fe51d73b9"
 kind = "source-binding"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/research/staleness-review-2026-07-29-c089eb41.md"
+sha256 = "73a7e31d1f300d3f3bfaf94eb4d71e62f132e21474a89e77a01b417a8d4fd3ff"
+kind = "research-record"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
@@ -1548,6 +1602,12 @@ kind = "research-record"
 owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/research/staleness-review-2026-07-29.md"
+sha256 = "57d44406c5d68a590384adffdc60fbc701e65f5153775b23faeebe1fb710fb28"
+kind = "research-record"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
 path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/00-a-question-that-keeps-returning.tex"
 sha256 = "97878ef3ab7620867ad15cf013ee715feff82311e8f3d3e1462bc219da7c4530"
 kind = "rendered-content"
@@ -1641,6 +1701,12 @@ owners = ["articles/faith/in-defense-of-the-particular"]
 path = "src/claude/articles/faith/in-defense-of-the-particular/research/source-bindings.toml"
 sha256 = "e174fa1a1d035c0c94b89216b2117239d1525ff9c3acdc14410e1115b966d5b2"
 kind = "source-binding"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-defense-of-the-particular/research/staleness-review-2026-07-29.md"
+sha256 = "779b97f67a05549cd2967572d5d3a4b26811206b3f3da3a7cfa94ad10005442a"
+kind = "research-record"
 owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
@@ -1752,6 +1818,12 @@ kind = "source-binding"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
+path = "src/claude/articles/faith/ontological-vertigo/research/staleness-review-2026-07-29.md"
+sha256 = "670603c6789401a204e5c55fdd7ffcf7a1385697945ddc775230e93a3ceff31e"
+kind = "research-record"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
 path = "src/claude/articles/faith/ontological-vertigo/sections/00-the-song-and-the-house.tex"
 sha256 = "88064af4f8b00b28ef4167a5f31c9d0f283bb2bb5cb49217e966f5e9aabe5018"
 kind = "rendered-content"
@@ -1854,6 +1926,12 @@ kind = "research-record"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
+path = "src/claude/articles/faith/the-due-return/research/staleness-review-2026-07-29.md"
+sha256 = "d353e07c9ba5eabd2791417644dab735bf248ec3f35a685208895da580e79645"
+kind = "research-record"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
 path = "src/claude/articles/faith/the-due-return/sections/00-the-question-the-psalmist-asked.tex"
 sha256 = "bd06cbf5ba87de026c2f2a6d7117340e49dfc6c30516e48103c5dd63ba204937"
 kind = "rendered-content"
@@ -1940,6 +2018,12 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 [[files]]
 path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/research/staleness-review-2026-07-27.md"
 sha256 = "f2fea836a8ba174436dfb3fac48b67a9712896aefe1196dec5fda3a456552b9d"
+kind = "research-record"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/research/staleness-review-2026-07-29.md"
+sha256 = "81a973dc37075e97143075c1c1b87a1025bcd1d399e0f000f115bf61abe287c2"
 kind = "research-record"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
@@ -2043,6 +2127,12 @@ owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/research/source-bindings.toml"
 sha256 = "05fb53c67eef57faa26d749f8444e8be2714f6272b58b99205daa8c59400c25c"
 kind = "source-binding"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/research/staleness-review-2026-07-29.md"
+sha256 = "5c80a8b8b2ab1ef459ac009a8242ac70026efd1c76a134ecd19192dfd42a9ce8"
+kind = "research-record"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
@@ -2178,6 +2268,12 @@ kind = "research-record"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/staleness-review-2026-07-29.md"
+sha256 = "dd00677eaeb162a7d68c80f31aa3154564e8c9494f8c3d98c5668d487b17bede"
+kind = "research-record"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
 path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/00-the-claim-under-test.tex"
 sha256 = "35b3c37a63e018601f3a070b2b0043fbd6ca48a5537ca628e20f7e5279c9bae1"
 kind = "rendered-content"
@@ -2283,6 +2379,12 @@ owners = ["biographies/origen"]
 path = "src/claude/biographies/origen/research/source-bindings.toml"
 sha256 = "382edcc92dd4c789d9f4a9d19e74cb3e53463f491245cb9765e2ee138e871874"
 kind = "source-binding"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/research/staleness-review-2026-07-29.md"
+sha256 = "366d5d930d44928935e1ea9146c8a448b52c6ad8582a35c2cb556284cafe3fc8"
+kind = "research-record"
 owners = ["biographies/origen"]
 
 [[files]]
@@ -2414,6 +2516,12 @@ owners = ["biographies/saint-augustine-of-hippo"]
 [[files]]
 path = "src/claude/biographies/saint-augustine-of-hippo/research/staleness-review-2026-07-27.md"
 sha256 = "2c05a8c58dd2e0cd0ad9d91ffb38e338ee0e77722d90b3c020fa60a42c27c1a2"
+kind = "research-record"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/research/staleness-review-2026-07-29.md"
+sha256 = "ac181dad069e19d02792fcecc5c9cb1bc1083e4ada7a7e5e3d1f45e541ea4fbd"
 kind = "research-record"
 owners = ["biographies/saint-augustine-of-hippo"]
 
@@ -2550,6 +2658,12 @@ kind = "research-record"
 owners = ["biographies/saint-jerome"]
 
 [[files]]
+path = "src/claude/biographies/saint-jerome/research/staleness-review-2026-07-29.md"
+sha256 = "6691a1c0bb1545a9f0b7348df18cd187cf69b8edd20384182dc6c3cfd6512ee8"
+kind = "research-record"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
 path = "src/claude/biographies/saint-jerome/research/tradition-audit.md"
 sha256 = "f60971633b7a5a0256b19c866d379767d3f66566b1e7d91978dcc32bc569c1c4"
 kind = "research-record"
@@ -2672,6 +2786,12 @@ owners = ["biographies/saint-paul"]
 [[files]]
 path = "src/claude/biographies/saint-paul/research/staleness-review-2026-07-27.md"
 sha256 = "35df6b42c2575346a0955b6611914ebacfcbd9908f4ad8f9c9406217ade3732d"
+kind = "research-record"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/research/staleness-review-2026-07-29.md"
+sha256 = "3075963f9fea16e3b263381f194374b9080f025f296976766d5e10004e50f617"
 kind = "research-record"
 owners = ["biographies/saint-paul"]
 
@@ -2820,6 +2940,12 @@ kind = "research-record"
 owners = ["biographies/saint-peter"]
 
 [[files]]
+path = "src/claude/biographies/saint-peter/research/staleness-review-2026-07-29.md"
+sha256 = "a7ce77a43efb51057cf585b2375d60cb32cb1249524214cbacb30e78cfbd405a"
+kind = "research-record"
+owners = ["biographies/saint-peter"]
+
+[[files]]
 path = "src/claude/biographies/saint-peter/research/tradition-audit.md"
 sha256 = "5bc62971d421560af1f1850795125f88ede2e87add59b673c762b2051f7325fd"
 kind = "research-record"
@@ -2961,6 +3087,12 @@ owners = ["biographies/saint-robert-bellarmine"]
 path = "src/claude/biographies/saint-robert-bellarmine/research/source-bindings.toml"
 sha256 = "72c9d61e4b930e7ba1fddf8e43697036407ca274f9b67ebb5d809071a591c13b"
 kind = "source-binding"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/research/staleness-review-2026-07-29.md"
+sha256 = "04ba7a19c3a66321f18fbfff474015c27f1c9ff91885cb176e7cd2d25cc892ce"
+kind = "research-record"
 owners = ["biographies/saint-robert-bellarmine"]
 
 [[files]]
@@ -3108,6 +3240,12 @@ kind = "source-binding"
 owners = ["biographies/saint-thomas-aquinas"]
 
 [[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/research/staleness-review-2026-07-29.md"
+sha256 = "d8b3a20c592b45f9a10464d67cad5124c6f55a4f4b5f136486effdc1e667e726"
+kind = "research-record"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
 path = "src/claude/biographies/saint-thomas-aquinas/research/tradition-audit.md"
 sha256 = "a3b4476a81a9d8905328f87e0a5a93e29985f8c7f17ebe4a9f1e357730444212"
 kind = "research-record"
@@ -3234,6 +3372,12 @@ kind = "source-binding"
 owners = ["biographies/tertullian"]
 
 [[files]]
+path = "src/claude/biographies/tertullian/research/staleness-review-2026-07-29.md"
+sha256 = "d1bd241e293e31f29adbb72b326c0eda8bf2aa2229b21b46497ea958e33801bc"
+kind = "research-record"
+owners = ["biographies/tertullian"]
+
+[[files]]
 path = "src/claude/biographies/tertullian/research/tradition-audit.md"
 sha256 = "fd981e279b811410db6dfc367c79a96a84e31a2abb1e72652e12d9550ac58657"
 kind = "research-record"
@@ -3355,7 +3499,7 @@ owners = ["history/biblical-translations/01-septuagint"]
 
 [[files]]
 path = "src/claude/history/biblical-translations/01-septuagint/research/scope.md"
-sha256 = "312412df84082dde37af2c3fe4547de3589d02c937671c2f4553790888150658"
+sha256 = "1e98577393f83d2ab9aaad3bdc85dbd517c26dc01debde320035fe3f9e37df76"
 kind = "research-scope"
 owners = ["history/biblical-translations/01-septuagint"]
 
@@ -3374,6 +3518,12 @@ owners = ["history/biblical-translations/01-septuagint"]
 [[files]]
 path = "src/claude/history/biblical-translations/01-septuagint/research/staleness-review-2026-07-27.md"
 sha256 = "bd8d0e6e6f02cf2b212d7bc62143fff6c6dc61b84aa0a8e336981a70c4c79ff1"
+kind = "research-record"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/research/staleness-review-2026-07-29.md"
+sha256 = "25930ef16237b929e287a9ed1ca7dbbe7c349aaf09b5c89a1cc8df982175de40"
 kind = "research-record"
 owners = ["history/biblical-translations/01-septuagint"]
 
@@ -3504,6 +3654,12 @@ kind = "research-record"
 owners = ["history/biblical-translations/02-vulgate"]
 
 [[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/research/staleness-review-2026-07-29.md"
+sha256 = "cac30a96d5e153e2fec919676f3d6602a638d442f268caff206689936619a46f"
+kind = "research-record"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
 path = "src/claude/history/biblical-translations/02-vulgate/sections/00-question.tex"
 sha256 = "b424be4720b70734dc46840a33ccbd130eac15712c69bcd578a98cfa327cbe21"
 kind = "rendered-content"
@@ -3626,6 +3782,12 @@ owners = ["history/traditional-priestly-institutes/01-sspx"]
 [[files]]
 path = "src/claude/history/traditional-priestly-institutes/01-sspx/research/staleness-review-2026-07-27.md"
 sha256 = "b5aebe82f72f1c45336b8b474d06a9a009fe8689d7fe8e7ffce132a35cbbeb7e"
+kind = "research-record"
+owners = ["history/traditional-priestly-institutes/01-sspx"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/01-sspx/research/staleness-review-2026-07-29.md"
+sha256 = "77fd2bf4d296b3318704d88151ca2b8d7ac80799fa3e1a9b4ff9ba53c1369379"
 kind = "research-record"
 owners = ["history/traditional-priestly-institutes/01-sspx"]
 
@@ -3770,6 +3932,12 @@ owners = ["history/traditional-priestly-institutes/02-fssp"]
 [[files]]
 path = "src/claude/history/traditional-priestly-institutes/02-fssp/research/staleness-review-2026-07-27.md"
 sha256 = "5170b6f919dac8c489311bb4e1190f944d172eba41632787d08524e999787f31"
+kind = "research-record"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/research/staleness-review-2026-07-29.md"
+sha256 = "835d800af1035a0fb1e8eec2aa7cc45f0747ebefbb99afbb742b0aa8e722d98d"
 kind = "research-record"
 owners = ["history/traditional-priestly-institutes/02-fssp"]
 
@@ -3996,6 +4164,12 @@ kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/staleness-review-2026-07-29-c089eb41.md"
+sha256 = "885a969e32783c3f5f2124a58aceae66bba525b9e2bf59bc532fac9992a3fa55"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/00-map.tex"
 sha256 = "917d5e5f7fccc09ea24b06307735065a991fd48bba27a6654b76f7ebdf61dada"
 kind = "rendered-content"
@@ -4122,6 +4296,12 @@ kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/staleness-review-2026-07-29.md"
+sha256 = "d094af88d9d116f58928509c8e62e13dee75774882b76790ec36ae64e18309ab"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/00-map.tex"
 sha256 = "7c8091834ca683a7f92d1c714ae7340a1855b13f17933b33bf279d6e5e8d2ed1"
 kind = "rendered-content"
@@ -4221,6 +4401,12 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
 sha256 = "e7596d7241ac49081b9d9b6f6d4f5aff5447389148d1cf9ba6c63da05032c53a"
 kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/staleness-review-2026-07-29.md"
+sha256 = "fab9b864d5795974d543eafa6ea89871d2158b66638422e30ebeeb20aba5605c"
+kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
@@ -4335,6 +4521,12 @@ owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
 path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-bindings.toml"
 sha256 = "3cdb8ac7a98126f71d97a047593d51527e064694e75cc0cab51215a56e5f99bf"
 kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/staleness-review-2026-07-29.md"
+sha256 = "7c70b604d5ca8d7d8cfea8e703dadcaf6e500109486c8a3b10f1c44df8092613"
+kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
 
 [[files]]
@@ -4467,6 +4659,12 @@ owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
 path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/research/source-audit.md"
 sha256 = "76a6cf9c5cad1c7081f25d403cccc58583b62c73840fb3db9ca05a0aa76f1246"
 kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/research/staleness-review-2026-07-29.md"
+sha256 = "65e9466a63e8eb5e6f3df1d6ee5fafd828a5c0e1d0a208c01ad25a7df32d70c0"
+kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
 
 [[files]]
@@ -4608,6 +4806,12 @@ kind = "source-binding"
 owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/staleness-review-2026-07-29.md"
+sha256 = "776745a30bb12efb254a36e4e786c0c496ca4de362afa8533ca66841cd95c665"
+kind = "research-record"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/00-two-books.tex"
 sha256 = "6c07031308e9b0a00eb9a8f8c6060ebdbf9fc5a47d1155b8815c4802991a06c4"
 kind = "rendered-content"
@@ -4719,6 +4923,12 @@ owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/
 path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-bindings.toml"
 sha256 = "cfc8f512549ac263cbffbd8f505ae469d23ffebcffa5a8ec8fb595101265394f"
 kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/staleness-review-2026-07-29.md"
+sha256 = "79add0c1d28fc5d70ec313cb9b76645003916afbd3dad1b162a06f9375bdf48a"
+kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
 
 [[files]]
@@ -4878,6 +5088,12 @@ kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/staleness-review-2026-07-29.md"
+sha256 = "6f66e0c18f91b4dee437a4108d2fcc70b391c6e05e7981be102c6a050ee42be4"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/00-inventory.tex"
 sha256 = "c2193210255e95d36d8c328ec619494e1cdccd88118109b402321b504c47a252"
 kind = "rendered-content"
@@ -4977,6 +5193,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
 sha256 = "306f542c843ec411a26ee28f99f8ba1d08b05710866fc308686a7e0a7cda2923"
 kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/staleness-review-2026-07-29.md"
+sha256 = "7864acf1cbbb1c5bde0e7a612e812fa4d4f71ea9a20c8daa5b0df28cfa260f73"
+kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
@@ -5136,6 +5358,12 @@ kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/staleness-review-2026-07-29.md"
+sha256 = "319372b2b4d1d79182982de03b7843b9a3ea0553aed2b7835ccf2e1e4e765d07"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/00-front.tex"
 sha256 = "dd569f9723c34d0d251668a9b9dc12312ac6a58d101ab0f209ece94146324aa9"
 kind = "rendered-content"
@@ -5268,6 +5496,12 @@ kind = "research-record"
 owners = ["theology/mariology/champion"]
 
 [[files]]
+path = "src/claude/theology/mariology/champion/research/staleness-review-2026-07-29.md"
+sha256 = "7081ef0dec83736c6cd08da5a90287f4876bd07ce0f01f2dc3affb476fbf1d07"
+kind = "research-record"
+owners = ["theology/mariology/champion"]
+
+[[files]]
 path = "src/claude/theology/mariology/champion/sections/00-decree-first.tex"
 sha256 = "f44157721cfe7ae933e1baf6cd76ebd07899d23eb3162b4060ba9a0b6f405c8f"
 kind = "rendered-content"
@@ -5378,6 +5612,12 @@ owners = ["theology/mariology/fatima"]
 [[files]]
 path = "src/claude/theology/mariology/fatima/research/staleness-review-2026-07-27.md"
 sha256 = "629e41853652a95eccc7b16d5bbbc43605b9d068ac9d2612cc96a2904b4f4084"
+kind = "research-record"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/research/staleness-review-2026-07-29.md"
+sha256 = "7ecc6c3f529b2f709cadc744c3f106be2159e4909fc0856d45e06b368287baa0"
 kind = "research-record"
 owners = ["theology/mariology/fatima"]
 
@@ -5520,6 +5760,12 @@ kind = "source-binding"
 owners = ["theology/mariology/guadalupe"]
 
 [[files]]
+path = "src/claude/theology/mariology/guadalupe/research/staleness-review-2026-07-29.md"
+sha256 = "863231c7d5755c87b44518b4498f8208e28762b392040a65620ba982f1dd39b1"
+kind = "research-record"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
 path = "src/claude/theology/mariology/guadalupe/sections/00-judgment-first.tex"
 sha256 = "4be1a93704a04b6b709061ca71e0a268ad6cf29427c780aff5d8cfc2ad51aa48"
 kind = "rendered-content"
@@ -5628,6 +5874,12 @@ kind = "source-binding"
 owners = ["theology/mariology/la-salette"]
 
 [[files]]
+path = "src/claude/theology/mariology/la-salette/research/staleness-review-2026-07-29.md"
+sha256 = "4b40bbb49fbd7e37e88fb1fdab3614a993db68c1d3db959b8cb11ee13831b9a5"
+kind = "research-record"
+owners = ["theology/mariology/la-salette"]
+
+[[files]]
 path = "src/claude/theology/mariology/la-salette/sections/00-judgment-first.tex"
 sha256 = "10a0327bc2ac14a44cd43312dddd75652a7b6979ab6433304b84505695521c46"
 kind = "rendered-content"
@@ -5731,7 +5983,7 @@ owners = ["theology/mariology/lourdes"]
 
 [[files]]
 path = "src/claude/theology/mariology/lourdes/research/scope.md"
-sha256 = "f7a1e2653216866ac878ad00fb06c86a08310daa3d2aba2e5359526852841388"
+sha256 = "f02fdff5fee14b25f6328b8c2cd06cb73e746b6a767bc3b5ee9848f4a37c923e"
 kind = "research-scope"
 owners = ["theology/mariology/lourdes"]
 
@@ -5745,6 +5997,12 @@ owners = ["theology/mariology/lourdes"]
 path = "src/claude/theology/mariology/lourdes/research/source-bindings.toml"
 sha256 = "3a7cf30909e6f3f2ed74c96a845368a73fcc0653752aaf057f416978345064a4"
 kind = "source-binding"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/research/staleness-review-2026-07-29.md"
+sha256 = "d168a555b6ad2e1c2e510db000fba0f15ac52fa81f13a8f1501d2631edb53fcb"
+kind = "research-record"
 owners = ["theology/mariology/lourdes"]
 
 [[files]]
@@ -5852,6 +6110,12 @@ owners = ["theology/mariology/marian-dogmas"]
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/research/staleness-review-2026-07-27.md"
 sha256 = "58ded30299dc51f2f3b92a9fef2e1d79495edff8088be78b5f49b10bf5a0998a"
+kind = "research-record"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/research/staleness-review-2026-07-29.md"
+sha256 = "07852f0af7e9d09ee156aade4b52615336d8d520e4a12825a653bd69f2858128"
 kind = "research-record"
 owners = ["theology/mariology/marian-dogmas"]
 
@@ -5972,6 +6236,12 @@ owners = ["theology/mariology/rosary"]
 [[files]]
 path = "src/claude/theology/mariology/rosary/research/staleness-review-2026-07-27.md"
 sha256 = "908c16c0e1efe79963763fd5509c6e2cf562271ce63d688f7a85214d6f7bd50c"
+kind = "research-record"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/research/staleness-review-2026-07-29.md"
+sha256 = "e7f3d4cc5e0a7662bb901bdeb5a195873b319bfff582608a35c02c2a6eb376c5"
 kind = "research-record"
 owners = ["theology/mariology/rosary"]
 

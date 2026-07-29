@@ -71,6 +71,15 @@ changed Catechism and LG records. No competent judgment, corpus entry, message
 limit, 2024 category, jurisdiction, Revelation boundary, or rights conclusion
 changed. No material change.
 
+## Staleness review — 2026-07-29
+
+Twelve new shared-source passage records were compared through both required
+ignored candidates. LG 12 reinforces the existing ecclesial-discernment claim;
+the Catechism passages supply adjacent moral and pastoral safeguards but alter
+no event, act, status, message boundary, doctrinal conclusion, or rights
+judgment. **No material change.** The edition-local per-claim comparison and
+verdict are recorded in `research/staleness-review-2026-07-29.md`.
+
 ## Compact-rights-colophon production review — 2026-07-19
 
 The settled 44-page PDF, SHA-256 `0d1d81dfab295cc665386ac6b4df7b5324f3bf35358d9c5d985c4e0721e9d8bb`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF was byte-identical to this reviewed build. This reviewed build superseded every earlier production snapshot and received release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplied no independent review or ecclesiastical approval, and its exact-byte clearance does not attach to the revision below.

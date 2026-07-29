@@ -14,3 +14,16 @@ owner root's `research/` records.
 Comparison of the current companion and both candidates against changed inputs
 found no material formulary, prompt, transfer, or answer correction. This
 exact assessment is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-29
+
+The later inputs are thirteen 1962 Missal passage records about ceremonial
+articles, ministers, vesture, preparation, and ritual relationships outside
+the four bound formularies, plus two formulary records from the 2002 typical
+edition. A minimal candidate retained the exact leaf wrapper; an independent
+rewrite reconstructed it from this map, its exact binding, the course-wide
+source audits, and M-A/M-B/M-C. The per-claim comparison in
+`staleness-review-2026-07-29.md` found no change to a bound source window,
+printed Latin, prompt, method, model, rubric, or answer. Both candidate
+treatments are non-material. No publication revision is warranted, and this
+task did not rebaseline the edition.

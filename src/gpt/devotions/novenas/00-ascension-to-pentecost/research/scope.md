@@ -115,3 +115,10 @@ rebaselining.
 The central-source expansion received both required candidate treatments and
 a claim-by-claim comparison. **No material change.** See
 `research/staleness-review-2026-07-27.md`.
+
+## Research-staleness verdict — 2026-07-29
+
+Eighteen newly registered central passages received both required candidate
+treatments and an edition-local claim-by-claim comparison. **No material
+change.** See `research/staleness-review-2026-07-29.md`. The edition was not
+rebaselined.

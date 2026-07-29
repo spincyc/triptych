@@ -110,3 +110,9 @@ Septuagint claim. **No material change.** See
 `src/sources/inventories/biblical-translations-staleness-review-2026-07-26.md`.
 
 The settled 22-page PDF, SHA-256 `0fb0ff3415fcd85773dc69c0e266857476070cec85fc6f16f9783317d8f95299`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+
+## Staleness review — 2026-07-29
+
+Both required candidates found Augustine 9.2 irrelevant to every Septuagint
+claim. **No material change.** See
+`research/staleness-review-2026-07-29.md`. The edition was not rebaselined.

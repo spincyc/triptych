@@ -16,8 +16,12 @@ reader, packet-practice, and exercise sources are authoritative for their
 respective prompts and models.  No elapsed-time estimate, numerical score, or
 page-completion rule controls progression.
 
-## Research-staleness verdict — 2026-07-26
+## Research-staleness verdict — 2026-07-29
 
-The current packet and both candidates were compared claim by claim against
-changed corpus inputs. No material collation, teaching, or answer correction
-was found; this exact packet is ready for rebaselining.
+The edition-local, claim-level comparison of the old edition and both required
+candidates is recorded in `staleness-review-2026-07-29.md`.
+
+**No material change (GPT edition).** The fifteen new inputs are at unrelated
+1962 ceremonial or rubrical loci or in the 2002 typical edition. They do not
+change this packet's three controlled 1962 proper windows, teaching claims,
+prompts, answers, or models. This review deliberately does not rebaseline.

@@ -90,6 +90,13 @@ Ripple follow-up (2026-07-26): Claude's later paired-review note was compared
 through modified and research-first candidates. It is review metadata only and
 changes no prior claim or boundary. No material change.
 
+Staleness review (2026-07-29): both ignored candidates compared the current
+authoring state with its changed research records, eleven new Catechism
+passages, and LG 12. Five strengthening Catechism controls had already been
+incorporated and reviewed. The remaining inputs alter no chronology, status,
+water, cure, dignity, doctrine, or rights conclusion. No further material
+change. See `research/staleness-review-2026-07-29.md`.
+
 Completed for this source revision: current official web checks through 2026-07-16; claim-level status, chronology, water, and cure audits; doctrinal boundary review; complete eighteen-event analytical map; and internal editorial review. Superseded production snapshot completed 2026-07-16: the clean two-pass 32-page US-letter PDF, SHA-256 `4bc7fd3705ff27426647d47edeb5831e8f83c999db644fc3cf25a01ac5193a74`, passed metadata, structure, embedded-font, nonempty-extraction, every-page visual, and installed/build identity checks. Final clean-build review completed 2026-07-18 for a now-superseded 32-page PDF, SHA-256 `d889199713e2aba57f3ec540ca08585fd1ee831a3d70ff1549e33f7016ffea05`; it passed the same production checks and was byte-identical to the installed publication. Final-typography production review completed on 2026-07-19: a settled two-pass build produced the current 32-page PDF, SHA-256 `52c9b7797f4a9576a7852e0a7a16c2b4e671636eb5abda9758e7635f56fd739b`. The warning-free final log, `qpdf`, PDF title and page metadata, embedded/subsetted/Unicode-mapped fonts, and nonempty text extraction passed; every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build.
 
 ## Compact-rights-colophon production review — 2026-07-19

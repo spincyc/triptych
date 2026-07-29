@@ -161,6 +161,13 @@ research-first treatments were compared against GPT's dated review-state
 change. Chronology, judgment, testimony, cure distinctions, corpus,
 jurisdiction, and rights remain unchanged. No material change.
 
+Paired-provider staleness review (2026-07-29): independent minimal and
+research-first candidates compared the GPT edition’s changed research and new
+Catechism controls. Event status, chronology, dogma, physical water character,
+cure count, and rights remain unchanged, but exact sacramental, anti-magic,
+agency, and consent controls materially strengthen this Claude edition. See
+`research/staleness-review-2026-07-29.md`. No candidate was installed.
+
 - guidance (editorial, mariology profile, sources) read in full
   2026-07-25;
 - every quotation checked against the witness listed in

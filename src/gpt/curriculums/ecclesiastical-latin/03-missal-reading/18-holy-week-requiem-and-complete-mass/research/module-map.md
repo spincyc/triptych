@@ -21,3 +21,16 @@ page-completion rule controls progression.
 The current packet and both candidates were compared claim by claim against
 changed corpus inputs. No material teaching, source-window, or answer
 correction was found; this exact packet is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-29
+
+The exact trigger comprised thirteen new 1962 Missal passage records about
+sanctuary objects and bounded ceremonial relationships, plus two 2002
+formularies. The ignored minimal candidate retained the packet unchanged; an
+independent research-first rewrite reconstructed its two-lesson teaching,
+four-formulary reading sequence, cumulative practice, and non-Missal transfer
+from the governing records. The three-way consequential-claim comparison
+found no change to a bound formulary, source window, grammatical or lexical
+claim, exercise, model, answer, or readiness boundary. The changed records are
+collateral to this 1962 language packet. No material change is warranted; this
+review does not rebaseline the edition.

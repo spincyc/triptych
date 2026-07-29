@@ -122,6 +122,12 @@ Central-source expansion was re-evaluated with both required candidates and a
 claim-by-claim comparison. **No material change.** See
 `research/staleness-review-2026-07-27.md`.
 
+## Staleness review — 2026-07-29
+
+Both required candidates found the nineteen new central records collateral to
+the translation-history claims. **No material change.** See
+`research/staleness-review-2026-07-29.md`. The edition was not rebaselined.
+
 ## Staleness review — 2026-07-26
 
 Both candidates found new Augustine, Catechism, and Irenaeus loci unrelated to
