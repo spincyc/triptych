@@ -1,6 +1,6 @@
 # Curriculums
 
-[Return to the Library](../LIBRARY.md)
+[Return to Formation](formation.md)
 
 Choose a course, then choose an available AI-provider edition for its guides,
 lessons, practice, and reviews.

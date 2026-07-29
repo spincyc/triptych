@@ -24,17 +24,13 @@ Choose a section, open a PDF, and read.
 
 | Section | Focus |
 | --- | --- |
-| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, altar-server training, Mass assembly, calendar, pictorial dictionaries, and regularly updated proper expositions. |
-| **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and proper studies identified by edition, language, territory, cycle, and date. |
-| **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
-| **[Curriculums](library/curriculums.md)** | Self-paced courses and printable study materials. |
-| **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
-| **[Scripture](library/scripture.md)** | Close studies of biblical passages and claims about them. |
-| **[Biographies](library/biographies.md)** | Historical and hagiographic lives. |
-| **[Heresies](library/heresies.md)** | Historical studies of condemned propositions, ecclesial responses, and their aftermaths. |
-| **[Historical Accounts](library/historical-accounts.md)** | Histories of texts, institutions, and events. |
-| **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
-| **[Law and Church Discipline](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
+| **[Faith](library/faith.md)** | Doctrine, theology, sacraments, virtues, and apologetics. |
+| **[Scripture](library/scripture.md)** | Biblical studies, translations, textual history, and reception. |
+| **[Liturgy](library/liturgy.md)** | The 1962 and postconciliar Roman rites, propers, and calendars. |
+| **[History](library/history.md)** | Biographies, parishes, institutes, and exorcism. |
+| **[Formation](library/formation.md)** | Prayer, novenas, devotions, and curricula. |
+| **[Mary](library/mariology.md)** | Dogmas, prayer, apparitions, and history. |
+| **[Law](library/law-and-church-discipline.md)** | Canon law, Church discipline, and heresies. |
 
 ## Reuse
 

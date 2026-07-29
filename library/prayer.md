@@ -1,6 +1,6 @@
 # Prayer
 
-[Return to the Library](../LIBRARY.md)
+[Return to Formation](formation.md)
 
 ## Novenas
 

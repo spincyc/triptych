@@ -2,7 +2,7 @@
 
 <!-- triptych-publication-id: history/catholic-exorcism/01-history-and-current-practice -->
 
-[Return to Historical Accounts](historical-accounts.md)
+[Return to History](history.md)
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |

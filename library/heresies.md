@@ -1,6 +1,6 @@
 # Heresies
 
-[Return to the Library](../LIBRARY.md)
+[Return to Law](law-and-church-discipline.md)
 
 These studies distinguish condemned propositions from personal culpability, schism, discipline, civil coercion, and present communities.
 

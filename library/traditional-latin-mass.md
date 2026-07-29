@@ -1,6 +1,6 @@
 # Traditional Latin Mass: 1962 Roman Rite
 
-[Return to the Library](../LIBRARY.md)
+[Return to Liturgy](liturgy.md)
 
 Studies of the books and calendar in force in 1962.
 

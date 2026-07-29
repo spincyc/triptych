@@ -87,11 +87,11 @@ class PublicAlphaTest(unittest.TestCase):
     def test_page_classes_are_semantic_and_stable(self) -> None:
         self.assertEqual(
             self.tool.page_classes("README.md", "index.html"),
-            "page-shell page-home",
+            "page-shell page-home page-spectrum",
         )
         self.assertEqual(
             self.tool.page_classes("LIBRARY.md", "library.html"),
-            "page-shell page-catalog",
+            "page-shell page-catalog page-library-root page-spectrum",
         )
         self.assertEqual(
             self.tool.page_classes("library/test.md", "library/test.html"),
@@ -127,8 +127,10 @@ class PublicAlphaTest(unittest.TestCase):
         layout = (
             REPOSITORY_ROOT / "release/public-alpha/layout.html"
         ).read_text(encoding="utf-8")
-        self.assertIn('class="responsory-mark" aria-hidden="true"', layout)
-        self.assertIn('class="responsory-divider" aria-hidden="true"', layout)
+        self.assertIn('class="triptych-mark" aria-hidden="true"', layout)
+        self.assertIn('class="triptych-divider" aria-hidden="true"', layout)
+        self.assertNotIn("℣", layout)
+        self.assertNotIn("℟", layout)
         self.assertIn(">Library</a>", layout)
         self.assertIn(">Feedback</a>", layout)
         self.assertNotIn("Browse the library", layout)
@@ -896,17 +898,13 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_root_landings_use_the_exact_section_hierarchy(self) -> None:
         expected = [
-            ("Traditional Latin Mass (1962 Roman Rite)", "library/traditional-latin-mass.md"),
-            ("Novus Ordo (Postconciliar Roman Rite)", "library/novus-ordo-liturgy.md"),
-            ("Prayer", "library/prayer.md"),
-            ("Curriculums", "library/curriculums.md"),
             ("Faith", "library/faith.md"),
             ("Scripture", "library/scripture.md"),
-            ("Biographies", "library/biographies.md"),
-            ("Heresies", "library/heresies.md"),
-            ("Historical Accounts", "library/historical-accounts.md"),
-            ("Mariology", "library/mariology.md"),
-            ("Law and Church Discipline", "library/law-and-church-discipline.md"),
+            ("Liturgy", "library/liturgy.md"),
+            ("History", "library/history.md"),
+            ("Formation", "library/formation.md"),
+            ("Mary", "library/mariology.md"),
+            ("Law", "library/law-and-church-discipline.md"),
         ]
         for landing in ("README.md", "LIBRARY.md"):
             text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
@@ -932,6 +930,47 @@ class PublicAlphaTest(unittest.TestCase):
             text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
             self.assertNotIn("sanctuary-pictorial-dictionaries", text)
 
+    def test_root_landings_use_the_approved_section_descriptions(self) -> None:
+        descriptions = (
+            "Doctrine, theology, sacraments, virtues, and apologetics.",
+            "Biblical studies, translations, textual history, and reception.",
+            "The 1962 and postconciliar Roman rites, propers, and calendars.",
+            "Biographies, parishes, institutes, and exorcism.",
+            "Prayer, novenas, devotions, and curricula.",
+            "Dogmas, prayer, apparitions, and history.",
+            "Canon law, Church discipline, and heresies.",
+        )
+        for landing in ("README.md", "LIBRARY.md"):
+            text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
+            for description in descriptions:
+                self.assertEqual(text.count(description), 1)
+
+    def test_section_ornaments_are_distinct_and_vr_are_liturgy_only(self) -> None:
+        css = (
+            REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
+        ).read_text(encoding="utf-8")
+        expected = {
+            "white": ("☧", "✠"),
+            "gold": ("Α", "Ω"),
+            "red": ("℣", "℟"),
+            "green": ("❦", "✣"),
+            "violet": ("✦", "❖"),
+            "rose": ("✷", "✥"),
+            "black": ("§", "¶"),
+        }
+        for color, symbols in expected.items():
+            block = re.search(
+                rf"\.section-{color}\s*\{{(?P<body>.*?)\n\}}",
+                css,
+                flags=re.DOTALL,
+            )
+            self.assertIsNotNone(block)
+            body = block.group("body")
+            self.assertIn(f'--section-symbol-primary: "{symbols[0]}"', body)
+            self.assertIn(f'--section-symbol-secondary: "{symbols[1]}"', body)
+        self.assertEqual(css.count("℣"), 1)
+        self.assertEqual(css.count("℟"), 1)
+
     def test_landing_page_headings_do_not_skip_levels(self) -> None:
         for relative in sorted(self.tool.PAGE_MAP):
             if relative.startswith("release/") or relative in {"LICENSE", "THIRD_PARTY.md"}:
@@ -956,10 +995,10 @@ class PublicAlphaTest(unittest.TestCase):
     def test_child_catalogs_link_only_through_their_parent_sections(self) -> None:
         relationships = (
             (
-                "library/historical-accounts.md",
+                "library/history.md",
                 "catholic-exorcism.md",
                 "library/catholic-exorcism.md",
-                "historical-accounts.md",
+                "history.md",
             ),
             (
                 "library/curriculums.md",

@@ -1,12 +1,6 @@
 # Historical Accounts
 
-[Return to the Library](../LIBRARY.md)
-
-## Catholic Exorcism
-
-| Child study | Study page | Coverage |
-| --- | --- | --- |
-| **Catholic Exorcism: History, Discipline, and Pastoral Practice** | [Open study](catholic-exorcism.md) | History, theology, discipline, discernment, safeguarding, and subject-by-subject web links. |
+[Return to History](history.md)
 
 ## Biblical Translation Histories
 

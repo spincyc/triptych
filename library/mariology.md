@@ -1,6 +1,8 @@
-# Mariology
+# Mary
 
 [Return to the Library](../LIBRARY.md)
+
+Dogmas, prayer, apparitions, and the historical reception of Marian devotion.
 
 ## Doctrine
 

@@ -1,6 +1,6 @@
 # Novus Ordo: Postconciliar Roman Rite
 
-[Return to the Library](../LIBRARY.md)
+[Return to Liturgy](liturgy.md)
 
 Edition-specific studies of the postconciliar Roman Rite, distinct from the 1962 books. Each entry identifies its books, language, territory, cycle, and date where applicable.
 

@@ -47,9 +47,12 @@ PAGE_MAP = {
     "library/curriculums.md": "library/curriculums.html",
     "library/ecclesiastical-latin.md": "library/ecclesiastical-latin.html",
     "library/faith.md": "library/faith.html",
+    "library/formation.md": "library/formation.html",
     "library/heresies.md": "library/heresies.html",
+    "library/history.md": "library/history.html",
     "library/historical-accounts.md": "library/historical-accounts.html",
     "library/law-and-church-discipline.md": "library/law-and-church-discipline.html",
+    "library/liturgy.md": "library/liturgy.html",
     "library/mariology.md": "library/mariology.html",
     "library/novus-ordo-liturgy.md": "library/novus-ordo-liturgy.html",
     "library/prayer.md": "library/prayer.html",
@@ -1565,6 +1568,15 @@ def relative_link(output_relative: str, destination: str) -> str:
 
 def page_classes(source_relative: str, output_relative: str) -> str:
     """Return stable semantic classes for the page's reader-facing purpose."""
+    portals = {
+        "library/faith.md",
+        "library/scripture.md",
+        "library/liturgy.md",
+        "library/history.md",
+        "library/formation.md",
+        "library/mariology.md",
+        "library/law-and-church-discipline.md",
+    }
     if output_relative.startswith("web/"):
         kind = "reader"
     elif source_relative == "README.md":
@@ -1573,7 +1585,64 @@ def page_classes(source_relative: str, output_relative: str) -> str:
         kind = "catalog"
     else:
         kind = "utility"
-    return f"page-shell page-{kind}" + (" reading" if kind == "reader" else "")
+    classes = ["page-shell", f"page-{kind}"]
+    if kind == "reader":
+        classes.append("reading")
+    if source_relative == "LIBRARY.md":
+        classes.extend(("page-library-root", "page-spectrum"))
+    elif source_relative == "README.md":
+        classes.append("page-spectrum")
+    if source_relative in portals:
+        classes.append("page-portal")
+    section = liturgical_section(source_relative)
+    if section is not None:
+        classes.extend(("section-toned", f"section-{section}"))
+    return " ".join(classes)
+
+
+def liturgical_section(source_relative: str) -> str | None:
+    """Map every reader surface to one durable liturgical-color portal."""
+    catalog_sections = {
+        "library/faith.md": "white",
+        "library/scripture.md": "gold",
+        "library/liturgy.md": "red",
+        "library/traditional-latin-mass.md": "red",
+        "library/novus-ordo-liturgy.md": "red",
+        "library/history.md": "green",
+        "library/biographies.md": "green",
+        "library/historical-accounts.md": "green",
+        "library/catholic-exorcism.md": "green",
+        "library/formation.md": "violet",
+        "library/prayer.md": "violet",
+        "library/curriculums.md": "violet",
+        "library/ecclesiastical-latin.md": "violet",
+        "library/mariology.md": "rose",
+        "library/law-and-church-discipline.md": "black",
+        "library/heresies.md": "black",
+    }
+    if source_relative in catalog_sections:
+        return catalog_sections[source_relative]
+    if not source_relative.startswith("web/"):
+        return None
+    normalized = "/" + source_relative.removeprefix("web/").split("/", 1)[-1] + "/"
+    routes = (
+        ("/articles/canon-law/", "black"),
+        ("/theology/heresies/", "black"),
+        ("/theology/mariology/", "rose"),
+        ("/history/biblical-translations/", "gold"),
+        ("/articles/scripture/", "gold"),
+        ("/liturgy/", "red"),
+        ("/biographies/", "green"),
+        ("/history/", "green"),
+        ("/curriculums/", "violet"),
+        ("/devotions/", "violet"),
+        ("/articles/faith/", "white"),
+        ("/theology/", "white"),
+    )
+    for marker, section in routes:
+        if marker in normalized:
+            return section
+    return None
 
 
 def document_title(title: str) -> str:
@@ -1599,6 +1668,7 @@ def reader_shelf(source_relative: str) -> tuple[str, str] | None:
     routes = (
         ("/liturgy/roman-rite/1962/", "Traditional Latin Mass", "library/traditional-latin-mass.html"),
         ("/liturgy/roman-rite/postconciliar/", "Novus Ordo", "library/novus-ordo-liturgy.html"),
+        ("/liturgy/roman-rite/comparative/", "Liturgy", "library/liturgy.html"),
         ("/history/catholic-exorcism/", "Catholic Exorcism", "library/catholic-exorcism.html"),
         ("/curriculums/ecclesiastical-latin/", "Ecclesiastical Latin", "library/ecclesiastical-latin.html"),
         ("/biographies/", "Biographies", "library/biographies.html"),
@@ -1694,29 +1764,14 @@ def render_page(
         robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
         if authorization.get("expires_at"):
             expires_at = html.escape(str(authorization["expires_at"]))
-            through = html.escape(authorization_through_label(authorization) or "the recorded cutoff")
             robots += (
                 "\n"
                 f'  <meta name="triptych-authorization-expires" content="{expires_at}">'
             )
-            banner = (
-                '<aside class="release-banner conditional" aria-label="Edition status">'
-                "<strong>Review edition.</strong>"
-                f" Available through {through}.</aside>"
-            )
-        else:
-            banner = (
-                '<aside class="release-banner conditional" aria-label="Edition status">'
-                "<strong>Review edition.</strong>"
-                " Read critically and follow the cited sources.</aside>"
-            )
+        banner = ""
     else:
         robots = '<meta name="robots" content="index, follow">'
-        banner = (
-            '<aside class="release-banner" aria-label="Edition status">'
-            "<strong>Study edition.</strong>"
-            " Read critically and follow the cited sources.</aside>"
-        )
+        banner = ""
     title = page_title(markdown_text)
     home_current, library_current, feedback_current = navigation_state(source_relative)
     replacements = {

@@ -5,17 +5,13 @@ editions (GPT and Claude); each catalog row links every available edition.
 
 | Section | Contents |
 | --- | --- |
-| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | Ordinary, altar-server training, assembly, calendar, pictorial dictionaries, and proper guides. |
-| **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | Edition-specific Order, calendar, and proper guides. |
-| **[Prayer](library/prayer.md)** | Novenas and daily prayer books. |
-| **[Curriculums](library/curriculums.md)** | Self-paced courses and printable study materials. |
-| **[Faith](library/faith.md)** | Sacraments, virtues, and theological studies. |
-| **[Scripture](library/scripture.md)** | Close studies of a single passage or a single claim about one. |
-| **[Biographies](library/biographies.md)** | Historical and hagiographic lives. |
-| **[Heresies](library/heresies.md)** | Doctrinal errors, ecclesial responses, and reception. |
-| **[Historical Accounts](library/historical-accounts.md)** | Histories of texts, institutions, and events. |
-| **[Mariology](library/mariology.md)** | Doctrine, prayer, apparitions, and reception. |
-| **[Law and Church Discipline](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
+| **[Faith](library/faith.md)** | Doctrine, theology, sacraments, virtues, and apologetics. |
+| **[Scripture](library/scripture.md)** | Biblical studies, translations, textual history, and reception. |
+| **[Liturgy](library/liturgy.md)** | The 1962 and postconciliar Roman rites, propers, and calendars. |
+| **[History](library/history.md)** | Biographies, parishes, institutes, and exorcism. |
+| **[Formation](library/formation.md)** | Prayer, novenas, devotions, and curricula. |
+| **[Mary](library/mariology.md)** | Dogmas, prayer, apparitions, and history. |
+| **[Law](library/law-and-church-discipline.md)** | Canon law, Church discipline, and heresies. |
 
 Project licenses cover only project-created material. See
 [Licensing](LICENSE) and [Third-Party Material](THIRD_PARTY.md).

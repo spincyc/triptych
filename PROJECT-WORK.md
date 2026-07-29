@@ -202,9 +202,9 @@ exegetical, patristic, rabbinic, text-critical, or ecclesiastical approval.
 
 Commit `be940904` repaired the seven guide/card PDFs and replaced the four
 retained old Low Mass images. All are publicly discoverable review copies on
-the branch. The exact-current PDFs carry a conspicuous provisional
-public-alpha strip on all 143 pages; page counts, card counts, maps, hashes,
-and production records agree, and every page has been visually reviewed.
+the branch. The current PDFs carry no reader-facing release-state strip or
+label; page counts, card counts, maps, hashes, and production records agree,
+and every page has been visually reviewed.
 The remaining ledger requirement is exact-snapshot agreement among the Low
 Mass and trainer PDFs, maps, hashes, artwork records, and every-page visual
 evidence. Rights or liturgical-text permission uncertainty and any concrete
@@ -319,6 +319,15 @@ leads remain outside the ledger until their own family records are justified.
 
 ## Reconciliation history
 
+- 2026-07-29: Reorganized the public library into the seven approved portals:
+  Faith, Scripture, Liturgy, History, Formation, Mary, and Law. Applied their
+  muted white, gold, red, green, violet, rose, and black accents and distinct
+  ornament pairs throughout the generated site, reserving ℣/℟ for Liturgy.
+  Removed reader-facing release-state banners and document labels. Installed
+  the expanded 16-page Tenth Sunday synthesis, the sparse lower-third exorcism
+  title page with consolidated terminal endnote, and the exact reviewed
+  no-label GPT PDF set; Claude publication sources and artifacts were not
+  changed.
 - 2026-07-29: Retired unavailable human, priestly, specialist,
   intended-reader, physical-use, and ecclesiastical review as placeholder
   alpha gates. Recast current completion tracking around source support, rights

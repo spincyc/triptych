@@ -211,26 +211,29 @@ For a move, preserve history and update imports, dependencies, internal links, c
 
 ## Public navigation and catalog
 
-`README.md` is a terse reader landing page, not a catalog or maintainer guide. It begins with `Don't Panic!`, explains AI and authority limits in ordinary language, links the library sections with the 1962 and postconciliar liturgy pages first and Prayer next, states the reuse boundary, and explains the name.
+`README.md` is a terse reader landing page, not a catalog or maintainer guide.
+It begins with `Don't Panic!`, explains AI and authority limits in ordinary
+language, links the seven durable library portals, states the reuse boundary,
+and explains the name.
 
 `LIBRARY.md` is the section index. Each installed publication has exactly one
-owning catalog under `library/`. The section landing pages are:
+owning catalog under `library/`. The root landing tables expose exactly seven
+reader portals, in this order and with these muted liturgical-color identities:
+white `Faith`, gold `Scripture`, red `Liturgy`, green `History`, violet
+`Formation`, rose `Mary`, and black `Law`. Gold is an interface category for
+Scripture rather than a claim that gold is a separate universally prescribed
+Roman liturgical color.
 
-- `library/traditional-latin-mass.md`
-- `library/novus-ordo-liturgy.md`
-- `library/prayer.md`
-- `library/curriculums.md`
-- `library/faith.md`
-- `library/scripture.md`
-- `library/biographies.md`
-- `library/heresies.md`
-- `library/historical-accounts.md`
-- `library/mariology.md`
-- `library/law-and-church-discipline.md`
+`library/faith.md`, `library/scripture.md`, `library/liturgy.md`,
+`library/history.md`, `library/formation.md`, `library/mariology.md`, and
+`library/law-and-church-discipline.md` are the portal landings. Detailed
+catalogs such as the two Roman Rite pages, Prayer, Curricula, Biographies,
+Heresies, and Historical Accounts remain their children. A portal may route to
+an existing child subsection when a subject spans categories, but publication
+links remain on exactly one owning catalog.
 
-The root landing tables expose only this durable section hierarchy, in the
-order above. They do not promote a subsection already contained by a section,
-a child catalog, or an individual publication to a peer row. A direct
+The root tables do not promote a subsection already contained by a portal, a
+child catalog, or an individual publication to a peer row. A direct
 child-catalog or publication spotlight is an explicit maintainer exception
 and belongs outside the section table under a clear featured-work label; it is
 not a precedent for cross-listing.
@@ -318,19 +321,18 @@ edition's state never covers another's:
 - `published` records deployment of a verified alpha artifact.
 
 The editorial status `review` includes an installed paper in the public alpha
-when the alpha concerns pass; it controls conspicuous labeling, not ordinary
-discoverability.
+when the alpha concerns pass. It is internal release control and does not
+control reader-facing labeling or ordinary discoverability.
 
 Alpha and published are distribution states, not editorial promotions. Neither
 asserts completeness, finality, official status, an imprimatur, a nihil obstat,
-or approval by an external authority. The owning document explains its alpha
-state, actual scope, completion limits, review state, and any work-wide
-reliance boundary once in its terminal scope-and-qualifications appendix. Its
-first page may carry a terse status-only `Alpha` footer. Catalogs use terse
-reader-facing labels and do not repeat release apparatus. Immediate safety
-warnings, claim-local legal qualifications, and legally necessary notices
-remain where readers need them and are not deferred merely because the work is
-an alpha.
+or approval by an external authority. These internal states are not rendered
+in a PDF, web edition, catalog, title-page footer, running footer, or public-site
+banner. The owning document instead states its actual scope, completion limits,
+completed review facts, and any work-wide reliance boundary once in its
+terminal scope-and-qualifications appendix, without explaining the release
+workflow. Immediate safety warnings, claim-local legal qualifications, and
+legally necessary notices remain where readers need them.
 
 Each migrated publication owns
 `release/publications/<provider>/<leaf-id>.json`; the path below the provider
