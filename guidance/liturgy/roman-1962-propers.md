@@ -104,9 +104,11 @@ Propers`; unbounded `Interpretive Possibilities Across the Propers`; `The
 Propers: Notable and Quotable`; and terminal apparatus. The synthesis
 companion retains pages 1 and 2, the two-page brief synthesis, the complete
 source-grounded synthesis, the complete exploratory synthesis, notable
-quotations, and terminal apparatus. It omits both complete appointed texts and
-the element-by-element sweep. Retained prose, citations, transitions, and
-references must remain complete without either omission.
+quotations, and terminal apparatus. It omits complete appointed texts. It may
+retain the element-by-element sweep when that commentary is needed for a
+substantive, evidence-bearing synthesis rather than a thin digest; declare
+that component in `synthesis` mode and keep its prose, citations, transitions,
+and references complete.
 
 Because the 1962 canonical edition supplies the complete appointed texts under
 the recorded rights basis, its catalog label is `Full PDF`; the companion is

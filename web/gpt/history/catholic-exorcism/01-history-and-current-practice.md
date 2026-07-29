@@ -1,6 +1,6 @@
 # Catholic Exorcism: History, Discipline, and Pastoral Practice
 
-*Public-alpha bounded comprehensive historical study*
+*A bounded comprehensive historical study*
 
 > *“And one other thing: no curses. Not within my hearing. I happen to credit the efficacy of the powers to whom they’re addressed even though I question the efficiency of what’s said.”*
 >
@@ -2083,15 +2083,15 @@ The controlling universal law is the 1983 *Codex Iuris Canonici* for the Latin C
 
 No auditable global dataset establishes the frequency or outcomes of major exorcism. Ancient and medieval reports usually cannot be retrospectively diagnosed, and several early liturgical corpora have disputed dates, attributions, or compositional histories. The proprietary current ritual is neither reproduced nor operationally summarized. Protected modern works are quoted only in focused excerpts or paraphrased.
 
-The title page quotes one focused passage from Gene Wolfe’s protected *The Devil in a Forest* for criticism and discussion. A reader attested the exact wording, the Abbé as speaker, and p. 207 in the first Orb edition (1996); the project did not acquire or independently collate that protected page. The adjacent “exorcist club” sentence is displayed under the attribution “Anonymous.” Its title-page footnote identifies the editorial adaptation after Chuck Palahniuk’s *Fight Club*, ch. 6 (1996), as popularized in Jim Uhls’s screenplay for David Fincher’s 1999 film. It is not presented as wording from either work, and no novel, screenplay, or film bytes are retained.
+The title page quotes one focused passage from Gene Wolfe’s protected *The Devil in a Forest* for criticism and discussion. A reader attested the exact wording, the Abbé as speaker, and p. 207 in the first Orb edition (1996); the project did not acquire or independently collate that protected page. The adjacent “exorcist club” sentence is displayed under the attribution “Anonymous.” Its endnote identifies the editorial adaptation after Chuck Palahniuk’s *Fight Club*, ch. 6 (1996), as popularized in Jim Uhls’s screenplay for David Fincher’s 1999 film. It is not presented as wording from either work, and no novel, screenplay, or film bytes are retained.
 
 The repository’s CC BY 4.0 terms apply only to project-created synthesis, organization, and other contributions that the project may license. Scripture, liturgical and official texts, received translations, historical source wording, and modern scholarship retain their own status. The few biblical phrases quoted in the body use the identified public-domain Douay–Rheims/Challoner witness; ancient and medieval witnesses, official acts, modern scholarship, and clinical or safeguarding sources are otherwise paraphrased at identified loci. The Wolfe excerpt and the expression underlying the labeled adaptation remain excluded third-party material. No scan, ritual formulary, modern-source table, diagnostic criteria, case transcript, recording, or third-party image is reproduced.
 
-### Alpha status, completion, and reliance
+### Completion and reliance
 
-This edition is distributed as an alpha after review for source integrity, rights and lawful distribution, safety, reproducibility and artifact identity, mechanical validity, and basic visual usability. Alpha is a distribution state, not a claim of finality, exhaustive coverage, official status, an imprimatur, a nihil obstat, or approval by an ecclesiastical or other external authority. This study has no ecclesiastical authority and is not a diagnostic, clinical, legal, or ritual guide; it does not replace competent pastoral, medical, mental-health, emergency, protective, or canonical help.
+This study has no ecclesiastical authority and is not a diagnostic, clinical, legal, or ritual guide; it does not replace competent pastoral, medical, mental-health, emergency, protective, or canonical help.
 
-The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. This 116-page public alpha contains 104 Arabic-numbered substantive pages: pages 1–104, from the governing thesis through the pastoral conclusion, before the terminal apparatus begins on page 105. It therefore meets the promised extent of at least 100 substantive pages. It is a bounded comprehensive study of the representative, source-audited corpus named above, not an exhaustive catalog of every witness, local rite, particular law, or reported case. Inaccessible or deliberately excluded source families remain documented ceilings and future research rather than unstated support for this study’s claims. The present review state is source-audited and production-reviewed within the project’s alpha concerns; no specialist, clerical, intended-reader, or ecclesiastical review or approval is claimed.
+The historical-accounts profile governs the narrative. The articles profile applies only to bounded theological-authority and current-law claims. The study contains more than 100 Arabic-numbered substantive pages, from the governing thesis through the pastoral conclusion, before the terminal apparatus. It is a bounded comprehensive study of the representative, source-audited corpus named above, not an exhaustive catalog of every witness, local rite, particular law, or reported case. Inaccessible or deliberately excluded source families remain documented ceilings and future research rather than unstated support for this study’s claims. It has been source-audited and production-reviewed; no specialist, clerical, intended-reader, or ecclesiastical review or approval is claimed.
 
 ## Dated Witness, Act, and Edition Orientation
 
@@ -2155,7 +2155,7 @@ This orientation dates the acts and witnesses that carry the argument. It is not
 
 **5 June 2022: current curial competence.** *Praedicate Evangelium*, issued 19 March 2022, takes effect on 5 June. Articles 88–90 state the present competence of the Dicastery for Divine Worship and the Discipline of the Sacraments over Apostolic-See liturgical regulation, typical books, confirmation and recognition, and sacramentals. This central competence remains distinct from a conference’s acts and from a local ordinary’s permission to a priest.
 
-**27–28 July 2026: research and currentness coordinates.** Current-law deliveries, the published authentic-interpretations compilation, and additional historical controls were checked through these dates as recorded in the source audit. The exact official texts showed no published authentic interpretation for canons 134 or 1172 in the inspected compilation. This is a dated text-and-register check, not a comprehensive amendment-or-repeal inventory. It closes the alpha’s stated research snapshot without converting a currentness check into a claim of permanent completion.
+**27–28 July 2026: research and currentness coordinates.** Current-law deliveries, the published authentic-interpretations compilation, and additional historical controls were checked through these dates as recorded in the source audit. The exact official texts showed no published authentic interpretation for canons 134 or 1172 in the inspected compilation. This is a dated text-and-register check, not a comprehensive amendment-or-repeal inventory. It closes this dated research snapshot without converting a currentness check into a claim of permanent completion.
 
 ### How to read the sequence
 
@@ -2201,11 +2201,11 @@ Jacques Goar, ed., *Euchologion sive rituale Graecorum* (Paris, 1647), printed p
 
 ### Modern reconstruction and professional controls
 
-Gene Wolfe, *The Devil in a Forest*, first Orb edition (New York: Orb/Tom Doherty Associates, 1996), p. 207. The focused quotation is a reader-attested literary point of departure used for criticism; the project did not independently collate the protected page, and fiction supplies neither Catholic teaching nor evidence that curses work. Chuck Palahniuk, *Fight Club* (New York: W. W. Norton, 1996), ch. 6; and Jim Uhls, screenplay for David Fincher’s *Fight Club* (1999). These latter works identify the literary context and popular reception recorded in the footnote to the title-page epigraph attributed there to Anonymous; their protected wording and bytes are not reproduced.
+Gene Wolfe, *The Devil in a Forest*, first Orb edition (New York: Orb/Tom Doherty Associates, 1996), p. 207. The focused quotation is a reader-attested literary point of departure used for criticism; the project did not independently collate the protected page, and fiction supplies neither Catholic teaching nor evidence that curses work. Chuck Palahniuk, *Fight Club* (New York: W. W. Norton, 1996), ch. 6; and Jim Uhls, screenplay for David Fincher’s *Fight Club* (1999). These latter works identify the literary context and popular reception recorded in the endnote to the title-page epigraph attributed there to Anonymous; their protected wording and bytes are not reproduced.
 
 Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmillan, 2016), used critically as historical reconstruction. World Health Organization, *Clinical Descriptions and Diagnostic Requirements for ICD-11 Mental, Behavioural and Neurodevelopmental Disorders* (2024), used only within the bounded clinical discussion recorded in the source audit. United Kingdom Department for Education, *National action plan to tackle child abuse linked to faith or belief* (2012), used only for its England-specific safeguarding evidence.
 
-**Last revised (UTC):** 2026-07-29T18:38:23Z
+**Last revised (UTC):** 2026-07-29T19:14:52Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

@@ -464,8 +464,8 @@ block. In the page-matched Low Mass pair these may share the final authored
 page when they remain legible and in the required order. The terminal material
 owns the form boundary, edition, model roster status, excluded ceremonies,
 pronunciation convention, current-authorization boundary, global custom and
-  manual limits, rights, and alpha state. A condition that changes what a
-server says or does remains local as well.
+manual limits, and rights. Internal release state is not reader-facing. A
+condition that changes what a server says or does remains local as well.
 
 Each cards-only companion follows the source selection and form boundary of its
 named teaching publication, begins directly with the first integrated-response
@@ -485,12 +485,12 @@ and deployment are separate operations.
 
 An alpha snapshot may be installed when source integrity, rights and lawful
 distribution, safety, reproducibility and identity, mechanical validity, and
-basic visual usability pass. Its first page may carry a terse status-only
-`Alpha` footer. The terminal `Scope, Edition, and Qualifications` appendix
-explains the alpha state and any work-wide form or use boundary once; immediate
-safety instructions and conditions that change an action remain at their
-points of use. Catalogs need only identify the work and available formats.
-Installation and deployment remain separate operations.
+basic visual usability pass. Internal release state does not appear in the
+reader edition. The terminal `Scope, Edition, and Qualifications` appendix
+states any work-wide form or use boundary once; immediate safety instructions
+and conditions that change an action remain at their points of use. Catalogs
+need only identify the work and available formats. Installation and deployment
+remain separate operations.
 
 Before installation or release, in addition to the universal gates:
 

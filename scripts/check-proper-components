@@ -175,10 +175,13 @@ def audit_manifest(path: Path, provider_root: Path) -> None:
         component["kind"]: component for component in components
         if component["kind"] in required_once
     }
-    research_only = {"appointed-text", "proper-treatment"}
-    for kind in research_only:
-        if set(by_kind[kind]["modes"]) != {"research"}:
-            raise ValueError(f"{kind} must occur only in research mode")
+    if set(by_kind["appointed-text"]["modes"]) != {"research"}:
+        raise ValueError("appointed-text must occur only in research mode")
+    if set(by_kind["proper-treatment"]["modes"]) not in ({"research"}, MODES):
+        raise ValueError(
+            "proper-treatment must occur in research mode and may also occur "
+            "in synthesis mode"
+        )
     synthesis_required = {
         "brief-synthesis",
         "source-grounded-synthesis",

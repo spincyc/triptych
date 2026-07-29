@@ -1,10 +1,11 @@
 \input{common/preamble}
 \input{history/biblical-translations/account-format}
 \input{history/catholic-exorcism/01-history-and-current-practice/format}
+\usepackage{endnotes}
 
 \hypersetup{
   pdftitle={Catholic Exorcism: History, Discipline, and Pastoral Practice},
-  pdfsubject={Public-alpha bounded comprehensive historical study}
+  pdfsubject={A bounded comprehensive historical study}
 }
 
 \def\TriptychPrintEdition{}
@@ -18,31 +19,18 @@
 {\Huge\bfseries Catholic Exorcism\par}
 \vspace{0.5em}
 {\Large\itshape History, Discipline, and Pastoral Practice\par}
-\vspace{1.2em}
+\vfill
 \begin{minipage}{0.86\textwidth}
 \small
 \raggedright
-\ExorcismEpigraphs{\footnotemark}
+\ExorcismEpigraphs{\endnote{\ExorcismClubContext}}
 \end{minipage}
-\par
-\footnotetext{\ExorcismClubContext}
-\vspace{1.0em}
-{\large Scripture, ritual development, canon law,\par}
-{\large discernment, and care of afflicted persons\par}
-\vspace{0.8em}
-{\small This study has no ecclesiastical authority and is not a diagnostic or
-ritual guide. Continue competent care; use emergency or protective services for
-immediate danger; seek Catholic pastoral help through accountable parish or
-diocesan channels.\par}
-\vfill
-{\small Historical Accounts \textbullet{} Catholic Exorcism \textbullet{} CE-01\par}
-\vspace{0.8em}
-{\small\bfseries Alpha\par}
+\vspace*{0.06\textheight}
 \end{titlepage}
 
 \ifdefined\TriptychPrintEdition
 \else
-\ExorcismEpigraphs{\footnote{\ExorcismClubContext}}
+\ExorcismEpigraphs{\endnote{\ExorcismClubContext}}
 \fi
 
 \pagenumbering{roman}
@@ -52,6 +40,13 @@ diocesan channels.\par}
 \pagenumbering{arabic}
 \begin{deepstudy}
 \input{history/catholic-exorcism/01-history-and-current-practice/sections/all}
+
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.45em}
+\theendnotes
+\endgroup
 
 \input{history/catholic-exorcism/01-history-and-current-practice/generation-metadata}
 \end{deepstudy}

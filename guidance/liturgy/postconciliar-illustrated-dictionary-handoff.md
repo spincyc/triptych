@@ -441,11 +441,11 @@ must pass before installing a PDF.
    construction, and unresolved factual placeholder prose.
 4. Run reproducibility, artifact-identity, mechanical-validity, and basic
    visual-usability checks.
-5. Put the alpha explanation, actual scope, and one short work-wide reliance
-   boundary in the terminal scope-and-qualifications appendix. The first page
-   may carry a terse status-only `Alpha` footer. Keep immediate safety notices
-   beside the affected object or action, then record the exact installed
-   artifact identity.
+5. Put the actual scope and one short work-wide reliance boundary in the
+   terminal scope-and-qualifications appendix. Keep internal release state out
+   of reader-facing pages and prose. Keep immediate safety notices beside the
+   affected object or action, then record the exact installed artifact
+   identity.
 
 Gate: alpha eligibility requires those six concerns and no external-review,
 intended-reader, or physical-human-review process.
@@ -485,10 +485,10 @@ requires more specificity:
 
 - `alpha` identifies a publication that passes source, rights, safety,
   reproducibility, mechanical, and basic visual checks.
-- The terminal scope-and-qualifications appendix explains alpha status,
-  edition-locale scope, and any work-wide reliance boundary once. The first
-  page may carry a terse status-only `Alpha` footer; catalogs and running
-  footers do not repeat it.
+- The terminal scope-and-qualifications appendix states edition-locale scope
+  and any work-wide reliance boundary once. Internal release state does not
+  appear on the first page, in running matter, in catalogs, or in explanatory
+  prose.
 - Immediate safety warnings and legally necessary notices remain at the point
   of reliance rather than being deferred to terminal apparatus.
 - The production record identifies every edition-locale disposition rendered

@@ -1045,3 +1045,29 @@ distinctions, and residual code-drawn plate follow-ups are recorded in
 `artwork-manifest.md`, `source-audit.md`, and the two leaf guide maps. Physical
 print, photocopy, human artwork, independent ceremonial, rights, and
 ecclesiastical-suitability reviews remain pending.
+
+## Superseding reader-state-label checkpoint — 2026-07-29
+
+The shared reader-facing release strips and title-page release labels have
+been removed from all seven editions. The exact settled candidates were
+rasterized with the bounded review helper; every page of all seven PDFs was
+inspected. Their logs contain no fatal error, undefined reference, overfull
+box, LaTeX warning, or unresolved rerun request. The four full guide or trainer
+editions each retain one harmless terminal-apparatus underfull-box diagnostic;
+their terminal pages were inspected and are complete and unclipped. The three
+card editions have none. A text extraction scan finds no public Alpha,
+review-edition, or study-edition marking.
+
+| Edition | Pages | Bytes | Build SHA-256 |
+|---|---:|---:|---|
+| Low Mass field guide | 26 | 15,114,699 | `024d56d9fddc966560058c33db01c22cf773adbdc3f5236b903cd29cd4e3c5a9` |
+| Low Mass flash cards | 7 | 349,317 | `e847165fbbd01f0031477c0fd409fb88037e695f51f288a051cf54e7605f7991` |
+| Low Mass trainer manual | 26 | 15,127,489 | `5c22a6171c732d3a40f035a343b478217d8ea23a47adcdad7821390fda16333e` |
+| Missa Cantata guide | 34 | 2,363,826 | `1338773cc10044789ffc1c76dc850d9418806823efd0d02cd3edfbfb436cb12d` |
+| Missa Cantata cue cards | 13 | 628,470 | `abcd27d40cf04af3cec3be36ca67f6b0a6e480e452cade65203a186f7b004909` |
+| Solemn Mass guide | 30 | 2,707,272 | `c026383c946a4ac48a1469fb388355f25173ed90cb931dc650a356a7c57811c9` |
+| Solemn Mass cue cards | 12 | 630,490 | `b2703a930eafcfb245f987ae48b98554d5eec2dcdaff08867d105103d2eb4ad6` |
+
+**Verdict: pass for the exact seven-PDF set identified here.** Earlier
+release-label descriptions and earlier hashes remain historical checkpoints,
+not descriptions of the final reader presentation.

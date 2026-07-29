@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Structural checks for terminal Alpha matter in altar-server card decks."""
+"""Structural checks for reader-facing altar-server card apparatus."""
 
 from pathlib import Path
 import unittest
@@ -12,18 +12,19 @@ GUIDES = (
 )
 
 
-class ServerCardAlphaApparatusTest(unittest.TestCase):
-    def test_shared_terminal_explains_alpha_and_preserves_deck_boundary(self):
+class ServerCardApparatusTest(unittest.TestCase):
+    def test_shared_terminal_preserves_safety_and_deck_boundary(self):
         text = (GUIDES / "shared/server-guide-format.tex").read_text()
         apparatus = text.split(
             r"\newcommand{\CardCompanionTerminalApparatus}", 1
         )[1]
-        self.assertIn("Alpha names the review gate", apparatus)
-        self.assertIn("not mean final, complete, official", apparatus)
+        self.assertIn("About This Card Companion", apparatus)
+        self.assertNotIn("Alpha", apparatus)
         self.assertIn("Safe use", apparatus)
         self.assertIn("Rights", apparatus)
         self.assertIn("not part of the cut grid", apparatus)
         self.assertIn(r"\clearpage", apparatus)
+        self.assertNotIn(r"\AddToHook{shipout/foreground}", text)
 
     def test_only_companions_with_an_approved_terminal_sheet_render_it(self):
         paths = (

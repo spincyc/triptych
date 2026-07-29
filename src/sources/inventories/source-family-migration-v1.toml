@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-29"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:07b4ad7514f88e972384ba388b0d68eaa19f37af30a9de4086d37caf5acac5ff"
+inventory_snapshot = "sha256:0b3115406e18eb0c7c50487126ae8c3b38db13006fa82968a99dfba483dd810b"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
 canonical_catalog_snapshot = "sha256:4dc4ce70afd4558894893e5bf47190acb9e3583be7b5b50239b06334271ac418"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:35e1ee61fbcc327be4717424d543d4cbdc690dcad2041e50e3986c93f002e49e"
+snapshot = "sha256:51513cbcee39894474375f74766592cddb533b6e8c671ccaf89304402d6d0d9d"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -7944,7 +7944,7 @@ record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/
 
 [[review_units]]
 owner_id = "articles/scripture/abraham-and-the-daylight-stars"
-surface_snapshot = "sha256:d210206d577578b733d6e0359ef77c35b0350605f2b9787f20f3013f3de39a45"
+surface_snapshot = "sha256:40a14212eda9259c554706c68cf9461f230157921338757dfebe8af2414f1ee8"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
@@ -9106,7 +9106,7 @@ record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/sourc
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:42af12ccd56f37b11d358f5ad8f883a74f1627d923e67d34054aa0841afcf2ae"
+surface_snapshot = "sha256:fa7c24244f61d981e1c95f9d4b766e1624a0e349f2022aa4cc314504aff4d6cf"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
@@ -10345,7 +10345,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"
-surface_snapshot = "sha256:06172bccaf644efc8a02fa4eb42e314263fb4f602e1526b58cc9518de890e0d5"
+surface_snapshot = "sha256:400408bb400a0fadf0989298c487ec5c74af865e682e3ab4b383de707e566113"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
@@ -11796,7 +11796,7 @@ family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:523cbc6c898f22b6794ab609d3a2403085c3bfd4e0238be4c0e959f6868cd1b9"
+surface_snapshot = "sha256:ad3638e19f00dd15ddcbb43c0fc5f840191a2fac40fd1115d662c8be45e53cf7"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
@@ -11819,7 +11819,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/r
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:7f62343068521c86484b1b85bf29398cde13289447d9cb28bcbf38858443b8b2"
+surface_snapshot = "sha256:0a0ca604ac5bd0d21500ca5842054c5c45a04c5cff44518c60348442e53aa425"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"

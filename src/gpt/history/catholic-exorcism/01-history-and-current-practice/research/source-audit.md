@@ -612,7 +612,7 @@ efficacy.
   familiar rule in Chuck Palahniuk, *Fight Club*, ch. 6 (W. W. Norton, 1996),
   as popularized in Jim Uhls's screenplay for David Fincher's *Fight Club*
   (1999). The displayed attribution is “Anonymous,” while a title-page
-  footnote carries this transformation and reception context. No protected
+  endnote carries this transformation and reception context. No protected
   novel, screenplay, or film bytes are retained, and no underlying wording is
   reproduced as a quotation. Its immediate discussion concerns
   confidentiality and the afflicted person's dignity, not pop-culture
@@ -648,7 +648,7 @@ not reproduced in bulk. Quotation marks elsewhere identify contested labels,
 titles, hypothetical questions, or the publication's own analytic
 terminology, not uncredited source excerpts. The 28 July revision adds the one
 focused, attributed Wolfe display quotation and the Anonymous epigraph whose
-Palahniuk/Uhls literary context is recorded in a footnote; neither is an
+Palahniuk/Uhls literary context is recorded in an endnote; neither is an
 operative formula, instruction, or uncredited excerpt.
 
 The current proprietary ritual is neither reproduced, translated, nor reduced

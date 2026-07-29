@@ -141,7 +141,7 @@ This GPT study independently tests the hour of Genesis 15:5. It shares the provi
 
 Provider-local bindings identify the exact retained or registered artifacts used for every reader-facing textual and reception claim. Its reception scope is deliberately bounded to Abarbanel, Philo, Josephus, Augustine, a Lapide, Haydock, one dated Syriac delivery, and *Jubilees*; it does not claim to exhaust Jewish or Christian interpretation. Other witnesses recorded in the research notes remain outside the published evidentiary argument until an edition-identified passage can be bound locally.
 
-This is a public-alpha study aid, not an official biblical commentary or an ecclesiastically approved interpretation. Its conclusion is conditional on continuous narrated sequence, and its daylight application is identified as project synthesis.
+This is a study aid, not an official biblical commentary or an ecclesiastically approved interpretation. Its conclusion is conditional on continuous narrated sequence, and its daylight application is identified as project synthesis.
 
 ## References
 
@@ -155,6 +155,6 @@ This is a public-alpha study aid, not an official biblical commentary or an eccl
 
 -   Cornelius a Lapide and Haydock on Genesis 15.
 
-**Last revised (UTC):** 2026-07-29T14:58:21Z
+**Last revised (UTC):** 2026-07-29T19:14:52Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

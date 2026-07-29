@@ -42,18 +42,6 @@
 \newif\ifChildBookletGuide
 \newif\ifTrainerManualGuide
 
-% Identify the publication state once, on physical page 1.  Full guides and
-% card companions explain that state in terminal matter; the detachable card
-% sheets themselves remain prose-free and preserve their existing cut geometry.
-\AddToHook{shipout/foreground}{%
-  \ifnum\ReadonlyShipoutCounter=1\relax
-    \begin{tikzpicture}[remember picture,overlay]
-      \node[anchor=south,inner sep=0pt]
-        at ([yshift=24pt]current page.south)
-        {\fontsize{7}{8}\selectfont\bfseries ALPHA};
-    \end{tikzpicture}%
-  \fi}
-
 % A cards-only companion supplies this hook so its inherited revision record
 % and compact rights notice can occupy the unused margin below the final back
 % sheet.  Full guides leave it empty and render their ordinary terminal matter.
@@ -87,13 +75,9 @@
       at ([yshift=-0.72in]current page.north) {%
         \begingroup
         \RaggedRight
-        {\Large\MissalDisplay{About This Alpha Card Companion}\par}
+        {\Large\MissalDisplay{About This Card Companion}\par}
         \vspace{0.7em}
         {\small
-        \textbf{Publication state.} Alpha names the review gate for this
-        snapshot. It does not mean final, complete, official, or
-        ecclesiastically approved.\par
-        \vspace{0.65em}
         \textbf{Training boundary.} These cards are rehearsal prompts for the
         ordinary 1962 Roman Rite route named on the deck. They are not an
         official liturgical book, parish directive, certificate of competence,

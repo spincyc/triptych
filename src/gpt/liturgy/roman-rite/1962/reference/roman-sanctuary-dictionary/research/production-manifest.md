@@ -1390,3 +1390,29 @@ every-page raster inspection, log review, build-to-installed byte comparison,
 and the exact installed page count, byte count, and SHA-256 identity remain
 pending the coordinating production pass; no new artifact identity is claimed
 at this checkpoint.
+
+## Superseding reader-state-label checkpoint — 2026-07-29
+
+The shared reader-facing release-state markings have been removed from all six
+editions. The exact settled candidates were rasterized with the bounded review
+helper; every page of every edition was inspected, including the new compact
+Sacristan composition. Their logs contain no fatal error, undefined reference,
+overfull box, LaTeX warning, or unresolved rerun request. Four editions have
+no underfull-box diagnostics; MC and trainer retains six and Pontifical
+ceremonies retains four in narrow record text. Their affected pages were
+inspected and show no visible spacing, clipping, or collision defect. A text
+extraction scan finds no public Alpha, review-edition, or study-edition
+marking.
+
+| Edition | Pages | Bytes | Build SHA-256 |
+|---|---:|---:|---|
+| Altar server | 11 | 17,888,111 | `a1c73dae1be5cdfb5c64aeb821da5858aa2bf06c1e07200f39fead0c9f6c91fd` |
+| Comprehensive | 13 | 17,834,324 | `1d6d8e87927b671f5cbc2fe8215e80ea26a1150f92ee47084b9b6a2555668e20` |
+| General reader | 11 | 17,731,157 | `064698f20dae028eb9e9c77a9d2d6add68bb378125a4ac415854bddcf2260706` |
+| MC and trainer | 10 | 18,059,017 | `803f92f2239a6c2923b33185e7a66bbbcc9681d6c078d8ed1fa254fb6951df8f` |
+| Pontifical ceremonies | 16 | 24,286,779 | `dc0da7ba4de58bb1ca4ae5c8c8d5388164a92eae9ae6348c4095961c5d7fcd2a` |
+| Sacristan | 12 | 18,099,062 | `8240b82fe9f764747fdc0bf0d8005c2c4abd64c4ee17e645a8a053c8177c09a0` |
+
+**Verdict: pass for the exact six-PDF set identified here.** Earlier
+release-label descriptions and earlier hashes remain historical checkpoints,
+not descriptions of the final reader presentation.

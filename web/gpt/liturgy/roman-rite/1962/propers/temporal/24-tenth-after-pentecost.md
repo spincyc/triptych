@@ -455,6 +455,6 @@ The result is ecclesial as well as personal. Paul’s *ad utilitatem* prevents g
 
 -   Martin Luther King Jr., [“Pride Versus Humility: The Parable of the Pharisee and the Publican,”](https://kinginstitute.stanford.edu/king-papers/documents/pride-versus-humility-parable-pharisee-and-publican-sermon-dexter-avenue) Dexter Avenue sermon manuscript, probably 25 September 1955.
 
-**Last revised (UTC):** 2026-07-29T18:04:07Z
+**Last revised (UTC):** 2026-07-29T19:14:52Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

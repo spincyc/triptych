@@ -37,11 +37,13 @@ Put work-wide controls in a terminal `Scope and Qualifications` appendix or the 
 
 Keep that appendix concise and linked from the contents. References contain bibliography and source-local role or rights notes, not a second statement of the global method. Generation metadata is the final content block, after references, and no exposition follows it. The common legal notice is a subordinate final-page colophon, not exposition, an appendix, or a separate section.
 
-A work's alpha explanation—including what alpha means, present scope,
-completion limits, review state, and non-approval or reliance qualifications—
-belongs in that terminal appendix. The first page may carry a terse
-status-only footer such as `Alpha`; it does not carry the explanation or
-repeat it in a running footer.
+A work states its present scope, completion limits, review facts, and
+non-approval or reliance qualifications directly in that terminal appendix.
+Internal release and distribution states such as `alpha`, `hold`, `review`,
+and `published` are not reader-facing content: do not print them on title
+pages, in running matter, in explanatory prose, in catalogs, or in web-edition
+banners. Production review uses the same reader-facing composition intended
+for publication, without a temporary status mark that must later be removed.
 
 A thesis or governing question is substantive and may open the body. Operational facts needed at the point of use—such as the selected liturgical branch, recitation order, or applicable rule—stay there. Safety warnings and legally necessary notices remain immediately visible wherever delayed notice could expose a reader to harm or materially misstate the law; this terminal-apparatus rule never displaces them. A one-line title-page non-authority warning is permitted only for immediate reliance risk and must point to the terminal appendix rather than repeat it.
 

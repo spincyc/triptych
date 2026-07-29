@@ -20,9 +20,10 @@ record remain audit history; ordinary publication changes do not rewrite them.
 
 Each publication's own source and research records retain material source,
 rights, safety, edition, jurisdiction, currentness, and scope facts. Catalogs
-provide terse navigation. A document-wide alpha or reliance boundary appears
-once on the document's first page; claim-local limits remain with the affected
-claim.
+provide terse navigation. Internal release state is not rendered in reader
+editions or public-site banners. A work-wide reliance boundary appears once in
+the document's terminal qualifications; claim-local limits remain with the
+affected claim.
 
 The public build contains rendered HTML, CSS, license texts, alpha PDFs,
 eligible web editions, and narrowly scoped generated policy, manifest, and

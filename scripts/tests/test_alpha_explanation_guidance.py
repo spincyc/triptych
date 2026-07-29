@@ -5,18 +5,19 @@ import unittest
 ROOT = Path(__file__).resolve().parents[2]
 
 
-class AlphaExplanationGuidanceTest(unittest.TestCase):
+class ReaderFacingReleaseStateGuidanceTest(unittest.TestCase):
   def read(self, path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
-  def test_universal_policy_places_explanation_in_terminal_appendix(self):
+  def test_universal_policy_keeps_release_state_out_of_reader_editions(self):
     editorial = self.read("guidance/editorial.md")
     self.assertIn(
-      "A work's alpha explanation—including what alpha means, present scope,",
+      "Internal release and distribution states such as `alpha`, `hold`, "
+      "`review`,",
       editorial,
     )
     self.assertIn(
-      "The first page may carry a terse\nstatus-only footer such as `Alpha`",
+      "Production review uses the same reader-facing composition intended",
       editorial,
     )
     self.assertIn(
@@ -25,19 +26,14 @@ class AlphaExplanationGuidanceTest(unittest.TestCase):
       editorial,
     )
 
-  def test_repository_policy_does_not_require_first_page_exposition(self):
+  def test_repository_policy_forbids_reader_facing_release_labels(self):
     repository = self.read("guidance/repository.md")
     self.assertIn(
-      "explains its alpha\nstate, actual scope, completion limits, review "
-      "state",
+      "These internal states are not rendered\nin a PDF, web edition, catalog",
       repository,
     )
     self.assertIn(
-      "first page may carry a terse status-only `Alpha` footer",
-      repository,
-    )
-    self.assertNotIn(
-      "states its actual present scope on the first page",
+      "without explaining the release\nworkflow",
       repository,
     )
 
@@ -51,8 +47,7 @@ class AlphaExplanationGuidanceTest(unittest.TestCase):
       with self.subTest(path=path):
         text = self.read(path)
         self.assertIn("terminal", text)
-        self.assertIn("status-only", text)
-        self.assertIn("`Alpha` footer", text)
+        self.assertIn("internal release state", text.lower())
         self.assertIn("safety", text.lower())
 
 

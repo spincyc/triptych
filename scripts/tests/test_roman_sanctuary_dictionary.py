@@ -115,7 +115,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
         title = format_source.split(r"\newcommand{\DictionaryTitle}", 1)[1].split(
             r"\newcommand{\DictionaryNoteKey}", 1
         )[0]
-        self.assertIn(r"\footnotesize\bfseries ALPHA", title)
+        self.assertNotIn(r"\footnotesize\bfseries ALPHA", title)
         self.assertNotIn("source-audited objects", title)
         self.assertNotIn("official liturgical book", title)
         self.assertIn(r"\textbf{Scope.}", format_source)
@@ -123,11 +123,12 @@ class DictionaryGeneratorTests(unittest.TestCase):
         self.assertNotIn("Evidence caveat", renderer)
         self.assertNotIn(r"\section{Coverage}", shell)
 
-    def test_alpha_status_is_only_the_title_footer_and_terminal_explanation(self):
+    def test_release_status_is_not_reader_facing(self):
         format_source = (DICTIONARY_ROOT / "shared/dictionary-format.tex").read_text()
         shell = (DICTIONARY_ROOT / "shared/publication-shell.tex").read_text()
-        self.assertIn(r"\footnotesize\bfseries ALPHA", format_source)
-        self.assertIn("This alpha edition includes only", format_source)
+        self.assertNotIn(r"\footnotesize\bfseries ALPHA", format_source)
+        self.assertNotIn("This alpha edition includes only", format_source)
+        self.assertIn("This edition includes only", format_source)
         self.assertNotIn("alpha pictorial dictionary", shell.lower())
 
         for leaf in (

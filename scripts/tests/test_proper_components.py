@@ -17,6 +17,7 @@ loader.exec_module(module)
 
 class ProperComponentTests(unittest.TestCase):
     def component_tree(self, directory: str, *, appointed_modes: str = '["research"]',
+                       treatment_modes: str = '["research"]',
                        swap_tail: bool = False):
         provider = Path(directory) / "src" / "gpt"
         leaf = provider / "proper"
@@ -29,7 +30,7 @@ class ProperComponentTests(unittest.TestCase):
             (leaf / name).write_text("% fixture\n", encoding="utf-8")
         components = [
             ("appointed", "appointed-text", "appointed.tex", appointed_modes),
-            ("treatment", "proper-treatment", "treatment.tex", '["research"]'),
+            ("treatment", "proper-treatment", "treatment.tex", treatment_modes),
             ("brief", "brief-synthesis", "brief.tex", '["research", "synthesis"]'),
             ("grounded", "source-grounded-synthesis", "grounded.tex",
              '["research", "synthesis"]'),
@@ -78,6 +79,13 @@ class ProperComponentTests(unittest.TestCase):
             )
             with self.assertRaisesRegex(ValueError, "appointed-text"):
                 module.audit_manifest(path, provider)
+
+    def test_synthesis_may_retain_substantive_proper_treatment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path, provider = self.component_tree(
+                directory, treatment_modes='["research", "synthesis"]'
+            )
+            module.audit_manifest(path, provider)
 
     def test_exploratory_precedes_notable(self):
         with tempfile.TemporaryDirectory() as directory:

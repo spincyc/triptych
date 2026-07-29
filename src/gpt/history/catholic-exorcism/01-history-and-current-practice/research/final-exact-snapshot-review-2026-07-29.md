@@ -100,3 +100,44 @@ Its conversion audit and the converter's 27-test regression suite pass. The
 source-library, generation-metadata, web-declaration, and complete
 source-family-screening gates pass. This checkpoint authorizes installation
 only of the exact PDF and web artifacts identified here.
+
+## Superseding final-presentation checkpoint — 2026-07-29
+
+This checkpoint supersedes every earlier artifact identity and every earlier
+description of the title-page composition or note placement in this record.
+The print title page now contains only the title, subtitle, and two epigraphs.
+The epigraph block sits in the lower third of the page, with additional space
+between its two entries. The second epigraph is attributed to “Anonymous.”
+Nothing follows the epigraphs on that page: there is no deck, safety notice,
+catalog line, release-state label, footnote, or other apparatus.
+
+The Palahniuk/Uhls transformation and reception context is retained as the
+paper's only endnote. It appears with all note matter in one terminal
+`Notes` section rather than on the title page. A source scan confirms that the
+publication uses the `endnotes` apparatus and contains no TeX `\footnote`
+command.
+
+The exact reviewed PDF is 120 U.S.-letter pages and 764,589 bytes, with
+SHA-256
+`960c517f9b4bf716f0f39cbccce32fbd8e49fc0aee58db8184822a8cad365fd8`.
+Repository review tooling rasterized all 120 pages into six bounded contact
+sheets. Every page was inspected; the title page and final Notes page were
+also inspected at full rendered size. The composition is legible and free of
+clipping, collisions, unintended blank pages, failed glyphs, or note spill.
+The settled log has no fatal error, undefined reference, overfull box, LaTeX
+warning, or unresolved rerun request. It retains five underfull-box diagnostics
+in inherited narrow table or terminal-metadata settings; the affected pages
+were inspected at rendered size and show no visible spacing, clipping, or
+collision defect.
+
+**Verdict: pass for the exact PDF identified in this checkpoint.** Installation
+and web generation must preserve the same source state. Earlier hashes and
+earlier footnote, catalog-line, safety-notice, or release-label descriptions
+in this file are historical checkpoints and do not describe the final
+presentation.
+
+The generated and installed web edition from the same source state is 471,477
+bytes, with SHA-256
+`aefb8ca6b0a8c7694a388c108467f05e6ff7187deed344f40d57b55be0e9acad`.
+It preserves both epigraphs, the “Anonymous” attribution, and one terminal note
+definition, and carries no reader-facing release-state banner.
