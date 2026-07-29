@@ -147,5 +147,4 @@ underlying pencil asset.
 The 2026-07-28 installed Alpha snapshot remains twenty-six pages. Its current
 source map is the controlling page sequence above; exact artifact identity and
 every-page screen-review evidence are recorded in the series production
-manifest. This map does not infer external, physical-use, or ecclesiastical
-review.
+manifest. Those records do not imply official or ecclesiastical approval.

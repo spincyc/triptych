@@ -12,9 +12,8 @@ publication but adds meanings, correction points, and adult preparation
 notes instead of duplicating the child's prose word for word.
 
 This is an evidence-informed editorial application of the hierarchy,
-connected-media, and rehearsal principles recorded below. It has passed
-internal source and screen review only; it has not received new intended-reader
-testing, independent pedagogical review, or physical-use testing.
+connected-media, and rehearsal principles recorded below. Its alpha evidence
+consists of the recorded source, artifact, and every-page visual checks.
 
 ## 2026-07-25 density correction
 
@@ -45,13 +44,10 @@ system and selected two-acolyte sequence now correctly identify the
 selected two-acolyte sequence for the Gospel-side Missal move, Communion
 plate, ablutions, return of the Missal, and the priest's prepared chalice. It
 does not change the Low-Mass flash cards. Its production and every-page screen
-review status is recorded in `production-manifest.md`; it remains uninstalled
-and has not received renewed actual-size child-and-parent or photocopy
-testing. The maintainer expressly authorized the preceding installation after
-the pending actual-size, physical-duplex, photocopy, paired-use, independent,
-rights, and ecclesiastical-review gates were disclosed. The override does not
-assert that those gates are complete and does not grant exact-snapshot release
-clearance.
+review status is recorded in `production-manifest.md`. Installation and screen
+review do not establish actual-size reader behavior, photocopy behavior,
+physical duplex alignment, or cut safety; record those objective results when
+performed and retain any concrete failure.
 
 ## Evidence classes
 
@@ -392,13 +388,11 @@ labels are literal strings.
 
 ## Required prototype and verification record
 
-Ordinarily before installation, and always before treating these checks as
-complete, test the exact full-size outputs rather than a screen thumbnail.
+When recording these mechanical and usability checks, test the exact full-size
+outputs rather than a screen thumbnail.
 Preserve the participant count, ages or reader roles, task script, printer and
-paper, observations, errors, and changes made. For this evaluation set, the
-maintainer expressly authorized installation after the pending tests were
-disclosed. That one installation-state override neither counts as a test nor
-changes the evidence standard below.
+paper, observations, errors, and changes made. Installation does not count as
+one of these checks.
 
 The child-booklet test must check whether a new reader can:
 
@@ -437,11 +431,11 @@ trainer pages identical is a source-architecture failure, not a cosmetic
 variance.
 
 The current installed evaluation set has completed its automated checks and an
-every-page screen review, as recorded in `production-manifest.md`. Actual-size
-child reading, physical duplex alignment, black-and-white photocopying, and
-renewed child-and-trainer testing remain pending. The installed Low-Mass child
-PDF has changed, and the trainer and flash-card identities are newly installed;
-none of those three snapshots is release-authorized.
+every-page screen review, as recorded in `production-manifest.md`. No
+actual-size child-reading, physical-duplex, black-and-white photocopy, or
+renewed child-and-trainer result is recorded for the current snapshots. Those
+limits do not constitute deferred publication gates; any observed concrete
+mechanical or visual failure does.
 
 ## Liturgical exchange and display hierarchy — 2026-07-27
 

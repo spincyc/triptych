@@ -2,8 +2,14 @@
 
 Review packet date: 2026-07-27
 
-Review state: **awaiting qualified priest/ceremonialist review; no release
-approval requested**
+Historical state on 2026-07-27: **awaiting qualified
+priest/ceremonialist review; no release approval requested**
+
+Current status (2026-07-29): this packet is retained as a record of unresolved
+questions that informed later source and artwork work. It is not a current
+review request, alpha admission path, release gate, or promise of external
+review. Every concrete source, rights, safety, reproducibility, mechanical, or
+visual defect recorded below remains actionable on its own terms.
 
 This packet exposes the unresolved liturgical and morphological questions in
 the three generated vestment study plates. The images are composition studies,

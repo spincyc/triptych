@@ -72,8 +72,7 @@ Two pdfTeX passes settled the build, and the final log has no fatal error,
 undefined reference, box warning, or rerun request. Bounded every-page screen
 review confirmed the six-up sequence, odd-page fronts, mirrored backs, safe
 card borders, R08B containment, and final-notice fit. This technical screen
-review does not complete the pending actual-size, physical, reader, or
-independent checks.
+review does not establish actual-size, physical-duplex, or reader-use results.
 
 The later response-card frame repair increases the safe top and side insets on
 pages 1--8. Full-size screen inspection confirmed that every response ID and
@@ -85,4 +84,5 @@ The superseded 2026-07-28 Alpha-apparatus snapshot had thirteen physical pages
 with thirty-six cards. User approval on 29 July 2026 restored the governing
 twelve-page cards-only boundary. Exact artifact identity, duplex sequence, and
 every-page screen-review evidence are recorded in the series production
-manifest; no actual-size print or physical-duplex review is inferred.
+manifest. No actual-size print or physical-duplex result is recorded for this
+snapshot.

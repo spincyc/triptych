@@ -147,29 +147,25 @@ Across the audited bank:
   the model does not transcribe aspiration, vowel reduction, exact consonant
   duration, or connected-speech elision. No alternative is silently treated
   as a different Latin spelling.
-- **No completed oral certification:** no competent human listener or
-  independent ecclesiastical-Latin specialist has yet heard and approved
-  these response lines. The desk audit cannot establish a server's
+- **Oral-performance boundary:** the desk audit cannot establish a server's
   intelligibility, rhythm, stress weight, gemination, or recovery after an
-  error.
+  error; those judgments require a competent human listener in the teaching
+  setting.
 - **Production boundary:** the production manifest preserves the completed
   full-size IPA, integrated R-card, parity, alignment, extraction, and
   installed-identity checks for the six predecessor PDFs. It also records the
   redesigned Low-Mass first-occurrence aids, phrase ladder, text extraction,
   absence of pronunciation data from every flash-card face, and exact
-  installed identities. The maintainer authorized installation for
-  evaluation after the remaining physical and independent gates were
-  disclosed. Rendering and installation success remain distinct from
-  linguistic and oral review.
+  installed identities. Rendering and installation success remain distinct
+  from a learner's oral performance.
 - **Outstanding chant boundary:** the pronunciation rows may support initial
   diction practice, but they neither encode nor certify Gregorian melody,
   rhythm, morae, liquescence, or choir division. Those require the identified
   chant witness and a competent director.
 
-Accordingly, pronunciation judgment in any guide requires a competent human
-listener. Independent pronunciation and age-appropriate pedagogical review
-remain outstanding maturity and review limits even when every written row is
-internally consistent. The 23 July 2026 exact-byte exception remains a
+Accordingly, judging a learner's pronunciation requires a competent human
+listener even when every written row is internally consistent. This is a
+teaching limitation, not a deferred publication gate. The 23 July 2026
+exact-byte exception remains a
 historical clearance only for the six immutable predecessor PDF hashes it
-named; it does not complete those reviews or clear a changed or new Low-Mass
-snapshot.
+named; it does not clear a changed or new Low-Mass snapshot.

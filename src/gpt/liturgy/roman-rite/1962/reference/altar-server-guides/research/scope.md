@@ -43,12 +43,11 @@ The Low-Mass family now has three independently printable publications:
 
 This is a deliberate replacement of the former response-only Low-Mass guide
 and its six-up twenty-four-card `01-low-mass-cue-cards` source design. The
-earlier installed PDFs and their exact-snapshot approval remain historical
-facts about only those bytes; they do not describe or authorize the redesigned
-sources. After the remaining physical, user, independent, rights, and
-ecclesiastical-review gates were disclosed, the maintainer expressly authorized
-installation of the redesigned trio for evaluation. That override
-changes installation state only and supplies no release authorization.
+earlier installed PDFs and their exact-snapshot decision remain historical
+facts about only those bytes; they do not describe the redesigned sources.
+The redesigned trio is installed as public alpha material. Its status depends
+on current source, rights, safety, reproducibility, mechanical, and visual
+records rather than deferred specialist or user-review placeholders.
 
 The child and trainer publications integrate the responses, pronunciation
 aids, meanings, positions, movement, objects, bells, and conditional branches
@@ -204,14 +203,12 @@ reconciled internally with the response bank and the new LM-001--LM-043
 ceremonial inventory. The production manifest records the exact installed
 Low-Mass illustration and choreography identities and the installed sung-form
 layout corrections, together with their technical font and text checks and
-every-page screen review. Actual-size card legibility and physical duplex and
-photocopy review remain pending and must not be inferred from installation or
-screen review.
+every-page screen review. Installation and screen review do not establish
+actual-size legibility, physical duplex alignment, photocopy behavior, or cut
+safety. Record those mechanical and visual results when performed, and retain
+any concrete defect.
 
-Independent liturgical, ceremonial, Latin-pronunciation, pedagogical, rights,
-and ecclesiastical review remain outstanding. The 23 July 2026 exact-byte
-exception remains a historical release decision for the six immutable PDFs
-and hashes it named. It supplies none of those missing reviews. The redesigned
-Low-Mass trio and sung companions have received the maintainer's current
-release decision; that decision supplies none of the missing independent
-maturity reviews.
+The 23 July 2026 exact-byte exception remains a historical decision for the
+six immutable PDFs and hashes it named. Current alpha records do not imply
+official, ecclesiastical, or specialist approval. Unresolved received-text and
+font rights questions remain substantive and must stay explicit.

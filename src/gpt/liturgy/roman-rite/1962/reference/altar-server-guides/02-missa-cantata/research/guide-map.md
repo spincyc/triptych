@@ -127,9 +127,9 @@ pairs. The full guide has no embedded card range. A historical alpha full
 guide was twenty-eight physical pages; its companion was twelve. Electronic
 review of that card companion confirmed response fronts on pages 1,
 3, 5, and 7, action fronts on pages 9 and 11, mirrored backs, border alignment,
-and screen legibility. Physical actual-size, long-edge-duplex, photocopy, and
-cut review remain pending. Public-review visibility is not independent,
-rights, liturgical-text-permission, or ecclesiastical approval.
+and screen legibility. No physical actual-size, long-edge-duplex, photocopy,
+or cut result is recorded. Public-alpha visibility does not resolve rights or
+liturgical-text-permission questions and does not imply official approval.
 
 The 2026-07-28 entrance-handoff diagram tranche produced a historical
 twenty-eight-page alpha full guide with SHA-256
@@ -176,4 +176,4 @@ research directory.
 The 2026-07-28 installed Alpha snapshot is thirty-four pages; its companion
 remains twelve pages. Exact artifact identities and every-page screen-review
 evidence are recorded in the series production manifest. Neither publication
-is described here as externally, physically, or ecclesiastically approved.
+claims official or ecclesiastical approval.

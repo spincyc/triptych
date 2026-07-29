@@ -155,8 +155,8 @@ Settled pdfTeX passes left no fatal error, undefined reference, box warning, or
 rerun request. Every rendered page, both contact sheets, and the new
 Gospel-departure and following station pages at full size passed screen review
 for clipping, collision, accidental blanks, sequence, label placement, object
-count, monochrome legibility, and terminal fit. This alpha screen review
-claims no later or external approval status.
+count, monochrome legibility, and terminal fit. This alpha screen review does
+not imply official approval.
 
 The action-card cross-view is anchored to the chronology: SO-A02 fixes the
 boat and thurible endpoints at all four incense stations; SO-A06 records the
@@ -186,4 +186,4 @@ research directory.
 The 2026-07-28 installed Alpha snapshot is thirty-one pages; its companion
 remains twelve pages. Exact artifact identities and every-page screen-review
 evidence are recorded in the series production manifest. Neither publication
-is described here as externally, physically, or ecclesiastically approved.
+claims official or ecclesiastical approval.

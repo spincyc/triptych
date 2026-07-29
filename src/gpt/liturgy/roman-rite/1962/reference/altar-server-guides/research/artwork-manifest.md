@@ -7,6 +7,13 @@ generic ad-orientem Roman altar frontally from the nave. They do not establish
 a rubric, sanctuary arrangement, or ceremonial fact. TeX owns every role
 label, level marker, route, cue, and finish-state annotation.
 
+Current policy reconciliation (2026-07-29): dated entries below may record
+that physical-use, intended-reader, independent ceremonial, priestly, or
+ecclesiastical review was not performed. Those statements are provenance, not
+Alpha admission gates. Only a concrete source, rights, safety,
+reproducibility, mechanical, or visual defect remains operative; nothing in
+this manifest implies external approval.
+
 ## Provenance boundary
 
 The built-in OpenAI image-generation interface produced the received raster

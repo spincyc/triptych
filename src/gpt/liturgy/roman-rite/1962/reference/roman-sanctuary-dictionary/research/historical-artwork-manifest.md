@@ -2,6 +2,12 @@
 
 Audit date: 2026-07-27
 
+Current status (2026-07-29): this manifest preserves a historical asset and
+review snapshot. The linked priest-review sheet is non-operative research
+history, not a current alpha admission path, release gate, or promise of
+external review. Concrete source, rights, safety, reproducibility, mechanical,
+and visual limitations stated here remain controlling.
+
 | Artwork ID | Asset | Depicts | SHA-256 | Review state |
 | --- | --- | --- | --- | --- |
 | `art-rsd-hist-001` | `shared/artwork/pencil/RSD-HIST-001-early-medieval-objects.png` | flabellum; suspended Eucharistic dove; Eucharistic tower | `613ee9f2fbba6f64c0386bce82d53bda02205cf1a97540d94f53b30244957b69` | reviewed after removal of an impossible pedestal from the suspended dove |
@@ -36,9 +42,9 @@ candle.
 ## Review boundary
 
 Internal visual review checked count, silhouette, support, absence of generated
-lettering, and gross construction errors. Priestly or competent ceremonial
-review remains pending under `historical-priest-review.md`; the internal review
-does not certify exact artifact reproduction or liturgical status.
+lettering, and gross construction errors. The questions preserved in
+`historical-priest-review.md` do not certify exact artifact reproduction or
+liturgical status and are not a current review requirement.
 
 The second raster remains in exhaustive technical custody only. It is not an
 eligible artwork record and is not rendered in a priestly-review copy. The

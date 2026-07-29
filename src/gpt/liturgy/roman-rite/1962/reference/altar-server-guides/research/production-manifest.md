@@ -2,6 +2,14 @@
 
 Audit record updated through 2026-07-29 (America/Chicago).
 
+Current policy reconciliation (2026-07-29): older checkpoints may record
+unperformed physical-use, intended-reader, independent ceremonial, priestly,
+or ecclesiastical review. Those statements are historical provenance, not
+Alpha admission gates. Current admission depends only on source support,
+rights and distribution status, safety, exact artifact identity,
+mechanical correctness, and every-page visual usability; concrete failures in
+those areas remain operative. No external approval is implied.
+
 ## Solemn Mass cards-only boundary restoration — 2026-07-29
 
 User approval restored `03-solemn-mass-cue-cards` to the governing cards-only

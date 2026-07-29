@@ -17,9 +17,8 @@ authorization to render an entry.
 | Identified | 8 |
 | Source-audited | 30 |
 | Art-reviewed | 2 |
-| Priestly-review-ready | 4 |
 | Publication-ready | 28 |
-| Held | 2 canonical records |
+| Held | 6 canonical records |
 
 `shared/schema/object.example.toml` is a syntax fixture and is excluded from
 all counts. These counts describe canonical workflow labels. The canonical

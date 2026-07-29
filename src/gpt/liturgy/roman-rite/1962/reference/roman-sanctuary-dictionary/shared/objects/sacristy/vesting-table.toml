@@ -1,7 +1,7 @@
 schema_version = 1
 artwork = []
 id = "obj-vesting-table"
-workflow_state = "priestly-review-ready"
+workflow_state = "held"
 editorial_note = "The checked 1962 ceremonial witness supports the vesting-table function and server assistance at vesting. The English category, Latin indexing phrase, construction, dimensions, and representative drawing remain review questions."
 preferred_english_name = "Vesting table"
 latin_headword = "mensa ad paramenta"
@@ -66,12 +66,9 @@ role = "ceremonial-book"
 verification_state = "claim-verified"
 checked_on = 2026-07-27
 
-[review_readiness]
+[unresolved_gaps]
 qualification = "A 1962 ceremonial manual names a vesting table, but the proposed English and Latin headwords and the drawn construction are working choices rather than prescribed forms."
-disclosed_gaps = [
+gaps = [
   { id = "gap-vesting-table-form", kind = "terminology", target_ids = ["obj-vesting-table"], summary = "Neither the representative table form nor the Latin indexing phrase has received material or lexical review." },
   { id = "gap-vesting-table-art", kind = "artwork", target_ids = ["obj-vesting-table"], summary = "The generated representative table has no source-controlled morphology and is shown only for reviewer orientation." },
-]
-review_prompts = [
-  { id = "prq-vesting-table-form", question = "Would a priest naturally distinguish the generated example as a vesting table, and is mensa ad paramenta a serviceable index term or should the Latin headword remain explicitly unresolved?", gap_ids = ["gap-vesting-table-form", "gap-vesting-table-art"], target_ids = ["obj-vesting-table"] },
 ]

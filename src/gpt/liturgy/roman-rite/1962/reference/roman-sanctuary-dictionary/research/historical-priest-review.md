@@ -1,7 +1,13 @@
 # Priest review: selective historical pre-1962 plates
 
-Review state: **awaiting priestly review**
+Historical state on 2026-07-27: **awaiting priestly review**
 Prepared: 2026-07-27
+
+Current status (2026-07-29): this sheet is retained as a record of questions
+that informed later source and artwork work. It is not a current review
+request, alpha admission path, release gate, or promise of external review.
+Any concrete source, rights, safety, reproducibility, mechanical, or visual
+defect recorded below remains actionable on its own terms.
 
 This is a bounded review of six historical comparanda, not approval of a
 complete historical inventory or of any present-day ceremonial use. The

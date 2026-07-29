@@ -371,14 +371,14 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-dic-art-pi-001"
 path = "shared/artwork/pontifical-insignia/DIC-ART-PI-001-pontifical-insignia.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/slices/pontifical-insignia.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 662265, sha256 = "3b910adc92b1a9743cd91646c61d1c137f0e719f7a94942d343889e0f610712a" }
 
 [[asset_files]]
 id = "file-dic-art-pi-002"
 path = "shared/artwork/pontifical-insignia/DIC-ART-PI-002-vimpa-in-use.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/slices/pontifical-insignia.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 668413, sha256 = "474fbdd235e8d2d07edc899fcff41c16ed8a9aea584eb26f251871cd02c844a0" }
 
@@ -414,21 +414,21 @@ technical = { width_px = 1693, height_px = 929, bit_depth = 8, color_mode = "gra
 [[asset_files]]
 id = "file-rpd-altar-candlestick"
 path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0101-iso-candlestick.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/reviews/lighting-bells-priestly-review-2026-07-27.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 407293, sha256 = "6199609efaa18d02cd86b78db7fb079b3a1fd3b925db69a433118d407af87f6e" }
 
 [[asset_files]]
 id = "file-rpd-altar-candle-separate"
 path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle.png"
-state = "accepted-for-priestly-review"
+state = "consumer-eligible"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 485696, sha256 = "1105b24c3425d2a6b51c8811ba98513af3fe27db227b50c0fdb30eb6aa466766" }
 
 [[asset_files]]
 id = "file-rpd-altar-candlestick-empty"
 path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick.png"
-state = "accepted-for-priestly-review"
+state = "consumer-eligible"
 audit_record = "research/artwork-manifest.toml"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 550746, sha256 = "6960b0b15ee2388e419b7e171541ddfaee4b5f3d8967c71ed07851445ec9945a" }
 
@@ -443,21 +443,21 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-sanctuary-lamp"
 path = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/reviews/lighting-bells-priestly-review-2026-07-27.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 398255, sha256 = "703654a21d7bd4f04de87d38dde0ef4374a6de46c10c6dd0830e338b72df8895" }
 
 [[asset_files]]
 id = "file-rpd-chalice"
 path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0001-iso-chalice.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 581707, sha256 = "d91bae179ec37547dd0fd0b2a6a3fc18a96d6507d042d624627c8a7022f7bb61" }
 
 [[asset_files]]
 id = "file-rpd-paten"
 path = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0002-iso-paten.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 549864, sha256 = "6cabd1ee6894e64c495569ab12b624f649a7cd495004d8500a1776e1dd3247d1" }
 
@@ -502,7 +502,7 @@ technical = { width_px = 1050, height_px = 680, bit_depth = 8, color_mode = "gra
 [[asset_files]]
 id = "file-rpd-altar-cruet"
 path = "shared/artwork/pencil/RPD-FIG-service-objects-0001-iso-cruet.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 590347, sha256 = "8a0103616b5eeace373639391eb080866393406dbae5a2a70945c373aecaffbb" }
 
@@ -516,7 +516,7 @@ technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-altar-bells"
 path = "shared/artwork/pencil/RPD-FIG-service-objects-0101-iso-altar-bells.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/reviews/lighting-bells-priestly-review-2026-07-27.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 525490, sha256 = "0fbd280dece2c1e6ba2badc8228b3b9c7b093d6a475862eb6096e2695182e342" }
 
@@ -544,14 +544,14 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rsd-sanctuary-furnishings"
 path = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1694, height_px = 929, bit_depth = 8, color_mode = "grayscale", bytes = 697972, sha256 = "47637514220b7fb7078ae214e349cfe9c72a49fa86cb885db05977cd2c6b572c" }
 
 [[asset_files]]
 id = "file-rsd-white-linens"
 path = "shared/artwork/pencil/RSD-ART-001-white-linens.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 401215, sha256 = "93502ee77f04d160e3d6115399b3dca588e75ff97a54412131d38108d6e24a50" }
 
@@ -595,21 +595,21 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rsd-pontifical-seating"
 path = "shared/artwork/pencil/RSD-ART-002-pontifical-seating.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 653976, sha256 = "75fbc022c30b2b1b3c6b66bf7ec5b8e8d3bb32b71babf7bb608a43daa6669415" }
 
 [[asset_files]]
 id = "file-rsd-veils-burse-gremial"
 path = "shared/artwork/pencil/RSD-ART-003-veils-burse-gremial.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 753730, sha256 = "08d6d2fb05c235adb1dce49ce8ce7324cf30428c0d517e29e06ffcb2758ef6c3" }
 
 [[asset_files]]
 id = "file-rsd-humeral-veils-vimpae"
 path = "shared/artwork/pencil/RSD-ART-004-humeral-veils-vimpae.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 667093, sha256 = "2dcf9cf500f93006b806ddb829bf18a038f18d85acac8e16967e7b6d1de8a64c" }
 
@@ -637,7 +637,7 @@ technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "rg
 [[asset_files]]
 id = "file-rsd-hist-001"
 path = "shared/artwork/pencil/RSD-HIST-001-early-medieval-objects.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/historical-artwork-manifest.md"
 technical = { width_px = 1426, height_px = 1103, bit_depth = 8, color_mode = "grayscale", bytes = 704175, sha256 = "613ee9f2fbba6f64c0386bce82d53bda02205cf1a97540d94f53b30244957b69" }
 
@@ -674,21 +674,21 @@ technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-book-cushion"
 path = "shared/artwork/pencil/books/RPD-FIG-books-0002-iso-missal-cushion.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1199, height_px = 1312, bit_depth = 8, color_mode = "grayscale", bytes = 636010, sha256 = "1a8126fc1e7bedb0c16d3e98519ab69b54e7a9c33d7142289312506c0eb1978c" }
 
 [[asset_files]]
 id = "file-rpd-book-lectern"
 path = "shared/artwork/pencil/books/RPD-FIG-books-0003-iso-lectern.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 591093, sha256 = "8116d8f5dee9196dfee294afe2bcaca61b8d5528ec523491a8c51132bc6f6788" }
 
 [[asset_files]]
 id = "file-rpd-book-markers"
 path = "shared/artwork/pencil/books/RPD-FIG-books-0004-detail-marker-ribbons.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/artwork-manifest.md"
 technical = { width_px = 1122, height_px = 1402, bit_depth = 8, color_mode = "grayscale", bytes = 652868, sha256 = "02c8142705916a8ce9c9dd55f75d37009bbcb54951bc7d931456e14b8e9c53d4" }
 

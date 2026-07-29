@@ -32,7 +32,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
     def test_only_canonical_alpha_assets_are_selectable(self):
         manifest = {
             "asset_files": [
-                {"path": "shared/accepted.png", "state": "accepted-for-priestly-review"},
+                {"path": "shared/consumer.png", "state": "consumer-eligible"},
                 {"path": "shared/canonical.png", "state": "canonical-alpha-eligible"},
                 {"path": "shared/held.png", "state": "held"},
                 {"path": "shared/rejected.png", "state": "rejected"},

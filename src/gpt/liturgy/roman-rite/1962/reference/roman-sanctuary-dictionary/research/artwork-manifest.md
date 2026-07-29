@@ -1,6 +1,6 @@
 # Artwork manifest
 
-Status: **generated candidates present; none accepted or approved**
+Status: **canonical alpha assets and held research leads recorded**
 Audit date: 2026-07-27
 
 The canonical machine-readable manifest is `artwork-manifest.toml`. Its format
@@ -10,8 +10,8 @@ human audit boundary; it does not duplicate asset rows.
 
 The altar-server-guide pencil assets elsewhere in the repository are not
 automatically dictionary assets. Reuse requires an explicit dictionary
-artwork record, object-level factual audit, rights review, and full-size
-approval.
+artwork record, object-level factual audit, rights clearance, exact technical
+identity, and visual-usability checks at the intended placement size.
 
 ## Visual contract
 

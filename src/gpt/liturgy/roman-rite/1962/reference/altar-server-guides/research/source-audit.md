@@ -189,33 +189,29 @@ Public License. The selected pdfTeX route and faces are recorded in the edition
 manifest; final embedded-font, glyph, and fallback results belong to the
 production record.
 
-## Outstanding independent checks
+## Current alpha audit boundary
 
 The source, response, pronunciation, ceremonial, and pedagogical checks above
 remain the audit basis for the series. The prior integrated R-card companions
 and full-guide catalog pointers received the historical build and production
-review recorded in `production-manifest.md`. The redesigned Low-Mass child
+checks recorded in `production-manifest.md`. The redesigned Low-Mass child
 field guide, page-aligned trainer manual, and twenty-two-card flash deck now have
 source-built exact identities, clean build and text checks, a completed
 technical font audit, every-page screen review, and exact installed identities
 recorded there. The same production record separately identifies the later
 installed Low-Mass illustration and choreography snapshots and the installed
-sung-form layout corrections. After the remaining physical
-actual-size, duplex, paired-use, independent, rights, and
-ecclesiastical-review gates were disclosed, the maintainer expressly
-authorized the recorded snapshots for release. Those gates remain disclosed
-as maturity work rather than represented as completed. None is independently
-asserted by this source audit, and these internal checks are not an
-independent approval.
+sung-form layout corrections. The public-alpha state is governed by the
+recorded source, rights, safety, reproducibility, mechanical, and visual
+evidence. It neither requires deferred specialist approval nor implies that
+such approval has occurred.
 
-Outstanding independent maturity review should check the complete response
-collation, the Roman-pronunciation details, all three ceremonial routes, the
-Low-Mass educational suitability for ages eight to ten, the sung-form
-suitability for ages eight to fourteen, the rights treatment, and
-ecclesiastical suitability. Particular attention should be given to
+Continued audit should check the complete response collation, the
+Roman-pronunciation details, all three ceremonial routes, age-appropriate
+legibility and instruction, the rights treatment, and every concrete
+mechanical or visual condition. Particular attention should be given to
 *Michaeli*, *adhuc*, *totiusque*, *Kyrie eleison*, doubled consonants,
 sanctuary reverences, the Low-Mass bell and plate models, torch departure
 branches, and every site-dependent handoff. The 23 July 2026 exact-byte
 exception remains a historical decision only for the six immutable predecessor
-PDF hashes it named; it does not complete or waive these reviews and does not
-extend to any changed or new Low-Mass snapshot.
+PDF hashes it named; it does not extend to any changed or new Low-Mass
+snapshot.

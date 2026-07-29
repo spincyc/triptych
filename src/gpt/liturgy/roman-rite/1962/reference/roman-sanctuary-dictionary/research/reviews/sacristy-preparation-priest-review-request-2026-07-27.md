@@ -2,6 +2,12 @@
 
 Request date: 2026-07-27 (America/Chicago).
 
+Historical note (2026-07-29): this request is retained as a record of
+questions that informed later source and artwork work. It is not a current
+review request, alpha admission path, release gate, or promise of external
+review. Any concrete source, rights, safety, reproducibility, mechanical, or
+visual defect recorded below remains actionable on its own terms.
+
 Review object:
 `research/slices/sacristy-preparation.md`, the seven canonical records under
 `shared/objects/sacristy/`, and generated candidate
@@ -9,8 +15,9 @@ Review object:
 
 This is a request for informed correction, **not** an assertion that the
 records, terminology, handling language, or image are authoritative. The
-records are excluded from publication selection while in
-`priestly-review-ready`.
+records were excluded from publication selection while in
+`priestly-review-ready`. That historical workflow state does not control
+current admission.
 
 ## Reviewer context
 

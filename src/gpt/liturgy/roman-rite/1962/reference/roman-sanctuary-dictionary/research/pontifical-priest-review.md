@@ -3,6 +3,12 @@
 Status: **questions for competent review; not a ceremonial direction**
 Prepared: 2026-07-27
 
+Historical note (2026-07-29): this packet is retained as a record of questions
+that informed later source and artwork work. It is not a current review
+request, alpha admission path, release gate, or promise of external review.
+Any concrete source, rights, safety, reproducibility, mechanical, or visual
+defect recorded below remains actionable on its own terms.
+
 Reviewer: ______________________________
 
 Review date: ___________________________

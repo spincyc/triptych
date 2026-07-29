@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-29"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:78259d4a0a54d423e9288a7952b124abdd8239c04f3ad76d13d07c771b671087"
+inventory_snapshot = "sha256:ceb222c99ed74ca5dcc413f2f87b483475ec3c9f0e25630df1fc070741f49600"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
 canonical_catalog_snapshot = "sha256:d9783ddf73c8a7eba11812ca19a424be51fbb0fc087ca384e5bdd857e5ca3df4"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:196d9fdc3ab195c9d0110a4f1321bce407aa08dd0a4ef6e7330ec59d5fee31a0"
+snapshot = "sha256:1eea303c663a914d84c652140b68f5547b360940499ce2ad949d1ac4d5f3e524"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -10324,7 +10324,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
-surface_snapshot = "sha256:1cea5f5b6d4c90923d37ead36fd0e413deb2168b1f4f311e99cd841e1e183183"
+surface_snapshot = "sha256:9ec0f48e2abd49a11820dc231a3d71f1d83da915221cf98d8c9c38d1245c8fad"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -10335,7 +10335,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
-surface_snapshot = "sha256:72de197219ff6c41ff471cecf9839b466a8de686f088de494141108528b3e9f6"
+surface_snapshot = "sha256:5387d626c73d5396a1033033bdeec1195bfcd10bb138b4291f5276ce3307251b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -10346,7 +10346,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
-surface_snapshot = "sha256:ce7cf8ce6cfd9c6a28092b0d6a683403def22389d46842dacfd6aaecc95bad01"
+surface_snapshot = "sha256:ebc4347a6972a0ff75f1a8c299a407d32dfe74017eb6c76c2944b99bd460247a"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -10357,7 +10357,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
-surface_snapshot = "sha256:08922ba667bc21e9114c7e4ee47d1f489ea039fa5150a63ce0f51d19bd3aa2cb"
+surface_snapshot = "sha256:81e898d9f6a9dee7d0c4af32cb105b1e86d85826d17575577692d6e77838981b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -10368,14 +10368,14 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
-surface_snapshot = "sha256:492f771653c21301aba1ab42aa8e64180cf10d881ee2241a08393ddb121974aa"
+surface_snapshot = "sha256:b19d3792ddff7415796023e6ddba3d5531227f3186072370ea8839b5613d3707"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
-surface_snapshot = "sha256:4da87fbe16a3ff5e66f9753950570c645eca6ff9a2621485b39a2019f73bda3a"
+surface_snapshot = "sha256:b3e29de6446f0e3470a13d595e01ab460b122c985171bdb87e69b3e098e3af4e"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -10386,7 +10386,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
-surface_snapshot = "sha256:4f2b5ebe4cc7033f23ce6cd5b28f9c64369f9ee9b96981aba709f65eccf75e26"
+surface_snapshot = "sha256:75a960a28d5384e02ed806cd0cca1d2ea038315484fc5d28fc4b04edde7c39b1"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -11580,7 +11580,7 @@ family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8a
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:4910340d005d7a88e9ed91a763e9d7f90a3ba107d7544fc4088b7cd886c29935"
+surface_snapshot = "sha256:523cbc6c898f22b6794ab609d3a2403085c3bfd4e0238be4c0e959f6868cd1b9"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -11603,7 +11603,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/r
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:dcabfb9babbae0e71d3bff1f00566cf9ece087d0d2dcf2b2e47739c1d2dadde0"
+surface_snapshot = "sha256:7f62343068521c86484b1b85bf29398cde13289447d9cb28bcbf38858443b8b2"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"

@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-07-28.
+Last reconciled: 2026-07-29.
 
 ## Standing public-alpha authority
 
@@ -29,12 +29,16 @@ changing remotes, integrating a retained worker, or triggering another
 deployment mechanism. Never represent a snapshot as live until its Pages run
 has succeeded and the affected production routes have been verified.
 
-Public-alpha approval is distribution authority only. It never records or
-implies human, priestly, specialist, ecclesiastical, rights, intended-reader,
-physical-print, or final editorial review that has not actually occurred.
-Every unresolved work-specific gate remains explicit in the research records,
-release inventory, catalogs, and this register. A publication remains
-conspicuously provisional until those gates are genuinely closed.
+Public-alpha authorization is distribution authority only. It never records
+or implies human, priestly, specialist, ecclesiastical, rights, intended-reader,
+physical-print, or final editorial approval that has not actually occurred.
+Alpha completion is assessed against six concrete concerns: source support,
+rights and distribution status, safety, artifact consistency, mechanical
+correctness, and every-page visual inspection. A known defect in any concern
+remains explicit in the research records, release inventory, catalogs, and
+this register. The workflow does not create placeholder gates for unavailable
+external reviewers, and passing an internal check does not imply external
+approval.
 
 Research for the promised work is limited to publicly reachable sources. Do
 not purchase an edition, use a paid subscription, request credentials, or ask
@@ -55,11 +59,12 @@ liturgical, ceremonial, or ecclesiastical review.
 
 No external human-review cycle will be available for some time. Human,
 priestly, specialist, intended-reader, physical-use, and ecclesiastical review
-therefore remain honestly recorded as deferred gates, but they do not pause or
-block continued research, revision, artwork production, mechanical and
-AI-assisted audit, building, installation, public-alpha binding, integration,
-push, or deployment. Do not repeatedly request unavailable review and never
-convert internal or AI checking into a claim that human review occurred.
+are therefore neither promised workflow steps nor alpha completion gates.
+Continue research, revision, artwork production, mechanical and AI-assisted
+audit, building, installation, public-alpha binding, integration, push, and
+deployment against the six concrete concerns above. Record an external review
+only if it actually occurs, and never convert internal or AI checking into a
+claim of human approval.
 
 ## Current integration and publication state
 
@@ -107,7 +112,7 @@ The restarting agent must then:
    `task-1-altar-server-guides`;
    `task-4-missa-cantata`; `task-5-solemn-mass`;
    `task-3-sanctuary-dictionaries`; `task-6-linen-restoration`; then the
-   repository-wide staleness, source-family, public-review, and artwork queues.
+   repository-wide staleness, source-family, exact-snapshot, and artwork queues.
 6. For the exorcism work, begin with its tracked comprehensive expansion plan,
    scope, source audit, and final exact-snapshot review record. Acquire and
    verify research before drafting; preserve the 100 substantive-page
@@ -155,8 +160,8 @@ GPT paper and rebuilt its artifacts. Both provider editions now have one
 reproduced exact-current snapshot: the GPT and Claude PDFs rebuild
 byte-for-byte to the installed artifacts, their web conversions likewise
 match, and all 46 pages have current visual-review evidence. Exact-byte
-distribution clearance does not close either edition's deferred independent
-exegetical, patristic, rabbinic, text-critical, or ecclesiastical reviews.
+distribution clearance and internal review do not imply independent
+exegetical, patristic, rabbinic, text-critical, or ecclesiastical approval.
 
 ### Altar-server guide series
 
@@ -167,8 +172,11 @@ retained old Low Mass images. All are publicly discoverable review copies on
 the branch. The exact-current PDFs carry a conspicuous provisional
 public-alpha strip on all 143 pages; page counts, card counts, maps, hashes,
 and production records agree, and every page has been visually reviewed.
-Independent server-guide, rights, liturgical-text permission, physical,
-intended-reader, and ecclesiastical reviews remain open.
+The remaining ledger requirement is exact-snapshot agreement among the Low
+Mass and trainer PDFs, maps, hashes, artwork records, and every-page visual
+evidence. Rights or liturgical-text permission uncertainty and any concrete
+source, safety, artifact, mechanical, or visual defect remain open when
+recorded; unavailable external review is not a placeholder gate.
 The series-wide sequenced checklist is
 `src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/delivery-work-plan-2026-07-27.md`;
 it governs the shared Low Mass work and the Missa Cantata and Solemn Mass
@@ -178,22 +186,12 @@ deliverables without conflating their remaining gates.
 
 <!-- promised-deliverable: task-3-sanctuary-dictionaries -->
 
-Commits `0b1f79ae`, `7a05f79e`, `50794fc6`, and `8533fcd9` created, exposed,
-and repaired six priestly-review PDFs. Complete object inventories, exact
-source collation, independent priestly review, and artwork review remain open.
-Five evidence-supported historical object identities now have canonical
-`identified` records. The ten artwork-validator notices are now reconciled
-without inventing identities: stale historical placement metadata was
-corrected, unsupported Communion/reservation eligibility links were removed
-while their assets remain held, and the unsupported broad-stole composite was
-removed from the rendered priestly-review slice. The validator reports zero
-notices. Independent human artwork and priestly review remain open.
-The canonical structured inventory consequently contains 43 records. The six
-installed six-page PDFs have been rebuilt and visually inspected against the
-current source: they retain 6 admitted entries and list 37 omissions.
-Fourteen evidence-rich existing records—seven source-audited and seven
-priestly-review-ready—also received a bounded record-level evidence and gap
-audit without workflow promotion or creation of unsupported objects.
+The six sanctuary pictorial dictionaries have current inventory, omission,
+source, artwork, page-count, and review records that agree with their installed
+PDFs. The artwork validator reports zero notices; unsupported identities or
+uses remain omitted or held rather than being invented. These objective
+records establish the current alpha state without implying human artwork,
+priestly, or ecclesiastical approval.
 The sequenced inventory, artwork, edition, and publication checklist is
 `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md`.
 
@@ -201,17 +199,21 @@ The sequenced inventory, artwork, edition, and publication checklist is
 
 <!-- promised-deliverable: task-4-missa-cantata -->
 
-The rebuilt guide and cue cards are installed and linked as review copies.
-Physical-print, intended-reader, independent ceremonial, rights, and
-ecclesiastical review of the exact snapshot remain open.
+The rebuilt guide and cue cards are installed and linked as public-alpha
+copies. Completion remains open until their source support, rights and
+distribution status, safety, artifact consistency, mechanical correctness,
+and every-page visual evidence agree on one exact snapshot. This does not
+imply external ceremonial or ecclesiastical approval.
 
 ### Solemn Mass guide and cards
 
 <!-- promised-deliverable: task-5-solemn-mass -->
 
-The rebuilt guide and cue cards are installed and linked as review copies.
-Physical-print, intended-reader, independent ceremonial, rights, and
-ecclesiastical review of the exact snapshot remain open.
+The rebuilt guide and cue cards are installed and linked as public-alpha
+copies. Completion remains open until their source support, rights and
+distribution status, safety, artifact consistency, mechanical correctness,
+and every-page visual evidence agree on one exact snapshot. This does not
+imply external ceremonial or ecclesiastical approval.
 
 ### Review-publication discoverability
 
@@ -226,8 +228,9 @@ release publications and 14 review publications, 178 total; the exorcism
 source, installed PDF, web edition, and audit records agree on 116 physical
 pages, including 103 substantive narrative pages.
 The standing 27 July 2026 public-alpha authority permits future exact-current
-review snapshots to be installed and deployed without repeated
-document-by-document approval while preserving every unresolved review gate.
+snapshots to be installed and deployed without repeated document-by-document
+authorization while preserving every concrete defect in the six alpha
+concerns.
 
 ### Recently discussed paper hard review
 
@@ -239,7 +242,7 @@ substantive repair, but the set has not passed one complete current-guidance
 audit. Publication-local internal current-guidance audits now identify and
 reconcile the exact installed, web, catalog, and release states for Last
 Supper, both Abraham editions, and GPT John 6 while preserving all disclosed
-evidence ceilings and deferred external reviews. Exorcism and both Linen
+evidence ceilings and without implying external approval. Exorcism and both Linen
 editions remain separate exact-snapshot boundaries, and the set-level promise
 remains open.
 
@@ -252,8 +255,8 @@ The 2026-07-27 audit establishes the following actionable backlog:
 | `AUD-INTEGRATE-001` | Repair integration and Pages deployment | Integrated through `b93e64b4`; Pages run `30296605957` succeeded | passed; exact catalog-text discrepancy retained under the affected work |
 | `AUD-STALE-001` | Rendered publications disagree with current inputs or records | 92 recovered baseline editions; 93 in this checkpoint because the exorcism source audit and delivery plan now correctly make that edition stale pending its later rebuild | `make check-staleness` passes |
 | `AUD-SOURCES-001` | Reusable-source family screening | 140 of 140 review units screened across 229 source families; 806 reviewed owner-family presences; atomic citation coverage remains false | `make check-source-family-screening` passes |
-| `AUD-REVIEW-001` | Public review copies retain unclosed completion gates | 14 publications | each work-specific review record closes against its exact snapshot |
-| `AUD-ART-001` | Dictionary artwork identification/resolution notices | 0 validator notices; held unsupported assets and deferred human review remain explicit | artwork validator passes; human artwork review remains a separate open gate |
+| `AUD-REVIEW-001` | Public-alpha copies require exact-snapshot evidence or explicit concrete defects | 14 publications at the recorded checkpoint | each work-specific record resolves the six alpha concerns against its exact snapshot |
+| `AUD-ART-001` | Dictionary artwork identification/resolution notices | 0 validator notices; held unsupported assets remain explicit | artwork validator passes without implying external approval |
 | `AUD-MEMORY-001` | Conversation outcomes were not exhaustively represented in tracked work records | prior ledger had 8 broad items | every known agreement is represented here and in the ledger when criteria are known |
 
 The audit findings promoted to acceptance-criterion work are tracked below.
@@ -283,6 +286,13 @@ leads remain outside the ledger until their own family records are justified.
 
 ## Reconciliation history
 
+- 2026-07-29: Retired unavailable human, priestly, specialist,
+  intended-reader, physical-use, and ecclesiastical review as placeholder
+  alpha gates. Recast current completion tracking around source support, rights
+  and distribution status, safety, artifact consistency, mechanical
+  correctness, and every-page visual inspection. External approval is recorded
+  only when it actually occurs and is never inferred from internal or AI
+  review.
 - 2026-07-28: Reconciled the exorcism promise ledger and work register to the
   exact bounded-completion evidence: 116 physical pages, 103 substantive
   narrative pages, and passing source, safety, rights, law/currentness,
@@ -315,9 +325,8 @@ leads remain outside the ledger until their own family records are justified.
 - 2026-07-27: Combined that tranche with bounded canon-law and safeguarding
   repairs, built and inspected all 32 pages, installed byte-identical PDF and
   web artifacts, corrected the landing-page extent, and bound the exact alpha
-  snapshot. The promised 100 substantive pages and deferred external reviews
-  remain open; production will not change until maintainer integration and
-  push.
+  snapshot. At that checkpoint the promised 100 substantive pages remained
+  open; production would not change until maintainer integration and push.
 - 2026-07-27: Recorded the maintainer's standing authority to publish every
   document as a conspicuously provisional public-alpha snapshot for priestly
   and qualified-reader review. This authorizes the ordinary build, install,
@@ -333,10 +342,9 @@ leads remain outside the ledger until their own family records are justified.
   the sanctuary pictorial dictionaries and altar-server guides, subject to
   exact provenance, rights, source-control, consumer, and review records and
   without treating generated output as human factual or artistic review.
-- 2026-07-27: Recorded that no external human-review cycle will be established
-  for some time. Human and ecclesiastical gates remain explicit and deferred,
-  but no longer pause the continuing public-alpha production and publication-
-  preparation workflow.
+- 2026-07-27: Recorded the then-current expectation that external review would
+  be deferred. The 2026-07-29 reconciliation supersedes its use as an alpha
+  completion gate while retaining the non-approval boundary.
 - 2026-07-27: Replaced the worker's earlier integration, push, and deployment
   authority with the maintainer's final boundary: complete and commit every
   predecessor step in the isolated worker, but leave integration into `main`

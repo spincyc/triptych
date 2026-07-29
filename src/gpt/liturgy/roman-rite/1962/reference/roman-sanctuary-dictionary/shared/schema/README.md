@@ -105,10 +105,13 @@ filename are never identifiers.
 ## Evidence and completeness
 
 An object can be inventoried before it is publishable. `workflow_state`
-distinguishes a lead, an identified record, a source-audited record, and a
-publication-ready record. Every reader-facing factual field is represented by
-one or more claim records with exact source bindings. A source-wide citation
-does not make every field verified.
+distinguishes a lead, an identified record, a source-audited record, an
+art-reviewed record, a publication-ready record, and a held record. Concrete
+source, claim, artwork, terminology, scope, rights, or variant defects belong
+in `unresolved_gaps`; they do not create a deferred external-review workflow.
+Every reader-facing factual field is represented by one or more claim records
+with exact source bindings. A source-wide citation does not make every field
+verified.
 
 The canonical alpha generator admits a source-audited or later record only
 when identity and governing status are resolved, every rendered factual claim
@@ -122,8 +125,8 @@ An artwork custody row uses `canonical-alpha-eligible` when that exact asset
 has completed the source, rights, identity, safety, and basic visual-usability
 checks required by this path. `consumer-eligible` remains a narrower
 consumer-specific state and does not admit an asset into another edition.
-`accepted-for-priestly-review` is retained only as historical vocabulary for
-older reconciled records; it creates no current review dependency.
+Assets with concrete unresolved defects remain `held`; the custody vocabulary
+contains no external-review state.
 
 Artwork IDs are shared identities, not object-local IDs. A comparison or
 composition may therefore repeat the same artwork ID in each object record

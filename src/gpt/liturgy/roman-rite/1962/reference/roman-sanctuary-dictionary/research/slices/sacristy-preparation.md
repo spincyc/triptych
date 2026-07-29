@@ -39,28 +39,29 @@ furniture suite, cabinet construction, storage hardware, dimensions, hidden
 plumbing, or the representative morphology of the generated plate.
 `research/source-audit.md` records exact bindings and loci.
 
-## Canonical candidates submitted for priestly review
+## Current canonical dispositions
 
-| Object ID | Working entry | Current distinction | Question requiring priestly judgment |
+| Object ID | Working entry | Current distinction | Concrete next requirement |
 | --- | --- | --- | --- |
-| `obj-sacristy` | Sacristy | Functional room, not one plan | Is the boundary broad enough for what a server must recognize but narrow enough to exclude incidental furniture? |
-| `obj-vesting-table` | Vesting table | Work surface used in vesting; construction local | Is the English category natural, and should the provisional Latin indexing phrase be retained? |
-| `obj-vestment-case` | Vestment case | Common storage class | Should flat press/drawers and hanging wardrobe become substantive variants or separate entries? |
-| `obj-sacristy-cross` | Sacristy cross or image | Rubric permits cross or suitable image | Must the plate show both alternatives to avoid narrowing the rubric visually? |
+| `obj-sacristy` | Sacristy | Held; functional room, not one plan | Define a source-controlled visual composition without implying a universal furniture arrangement. |
+| `obj-vesting-table` | Vesting table | Held; work surface used in vesting; construction local | Check the Latin index term and support any representative morphology with material-form evidence. |
+| `obj-vestment-case` | Vestment case | Held; common storage class | Resolve the flat-press/hanging-wardrobe variant boundary, Latin index term, and representative morphology. |
+| `obj-sacristy-cross` | Sacristy cross or image | Source-audited; rubric permits cross or suitable image | Preserve both alternatives in any composition that teaches the rubric. |
 | `obj-sacristy-lavatory` | Sacristy lavatory (clergy handwashing sink or basin) | Practical local furnishing serving the universal preparatory handwashing action; not the portable Offertory Lavabo and not automatically a piscina | Held from pictorial publication until a checked material exemplar supports a representative drawing |
-| `obj-piscina-sacrarium` | Piscina or sacrarium | Special-purpose disposal fitting with variable place and form | Is the proposed 1962 functional description and server handling boundary sound? |
-| `obj-sacristy-bell` | Sacristy door bell | Customary local signal, not universal requirement | Is it important enough for the server edition, and how should local operation be qualified? |
+| `obj-piscina-sacrarium` | Piscina or sacrarium | Held; special-purpose disposal fitting with variable place and form | Establish its 1962 scope and handler boundary and replace the unsupported generated morphology. |
+| `obj-sacristy-bell` | Sacristy door bell | Source-audited; customary local signal, not universal requirement | Keep its local, non-universal status explicit in every use. |
 
-Each record is in the schema's nonpublication
-`priestly-review-ready` state. Each contains its own visible qualification,
-targeted gap disclosure, and question. The state neither asserts clerical
-approval nor makes the record selectable by any publication edition.
+The four held records preserve their concrete source, terminology, variant,
+and artwork defects in structured `unresolved_gaps`. Those defects block
+publication on their own terms; no priestly or other external-review event is
+required to make them actionable or to resolve them.
 
-## Expansion queue for reviewer triage
+## Expansion queue for source-and-scope triage
 
 These are candidates only. They are not canonical objects or claims. The
-reviewer is asked to mark each **essential**, **useful**, **incidental**, or
-**out of scope** before further source and artwork work.
+next inventory pass must classify each as **essential**, **useful**,
+**incidental**, or **out of scope** from documented recognition, handling, or
+safety needs before further source and artwork work.
 
 ### Storage and preparation
 
@@ -85,8 +86,8 @@ reviewer is asked to mark each **essential**, **useful**, **incidental**, or
 - ash receptacle and flame-extinguishing station.
 
 These forms are strongly local and safety-driven. No item should be shown as a
-universal Roman furnishing. A review should identify which are genuinely
-recognition-critical for young servers and which belong only in the
+universal Roman furnishing. Source-and-scope analysis must identify which are
+genuinely recognition-critical for young servers and which belong only in the
 sacristan edition.
 
 ### Nearby devotional and practical furnishings
@@ -98,8 +99,8 @@ sacristan edition.
 - sacristan's desk, register cabinet, clock, rota board, mirror, garment-care
   equipment, utility sink, step stool, and cleaning cupboard.
 
-The last group is presumptively incidental. It should enter only when a
-reviewer identifies a concrete liturgical, recognition, or safety reason.
+The last group is presumptively incidental. It should enter only when the
+record identifies a concrete liturgical, recognition, or safety reason.
 
 ## Shared pencil review plate
 
@@ -124,26 +125,25 @@ but it is **rejected as publication art in its current state**:
 4. the ordinary basin is a modern representative form, not a form prescribed
    by the Missal;
 5. the shared plate does not show scale or use context; and
-6. none of the furnishings has passed priestly, factual, full-size print,
-   consumer, or release review.
+6. none of the furnishings has source-controlled representative morphology,
+   canonical publication artwork, or a passed basic visual-usability check.
 
 The full prompt, received and normalized hashes, technical properties, and
 failed visual-review findings are recorded in
-`research/artwork-manifest.toml`. The asset should be displayed to a reviewer
-only with this qualification.
+`research/artwork-manifest.toml`. Any internal comparison must retain this
+qualification.
 
 ## Promotion boundary
 
-No candidate may move to `publication-ready` merely because a priest
+No candidate may move to `publication-ready` merely because someone
 recognizes it from experience. Promotion still requires:
 
-1. written reviewer answers tied to the stable question IDs;
-2. reconciliation of universal, customary, institutional, and local status;
-3. exact lexical review of English and Latin headwords;
-4. competent material-form evidence for anything illustrated as a
+1. reconciliation of universal, customary, institutional, and local status;
+2. exact lexical checks of English and Latin headwords;
+3. competent material-form evidence for anything illustrated as a
    representative object;
-5. corrected artwork with unsupported ornament removed;
-6. independent factual, visual, monochrome-print, rights, and consumer
-   review; and
-7. agreement among object, artwork, plate, source, rights, completeness, and
+4. corrected artwork with unsupported ornament removed;
+5. passed source, rights, identity, safety, and basic visual-usability checks;
+   and
+6. agreement among object, artwork, plate, source, rights, completeness, and
    edition records.

@@ -2,8 +2,14 @@
 
 Prepared: 2026-07-27 (America/Chicago)
 
-Status: **review packet; no image or object record is approved for
-publication**.
+Historical disposition on 2026-07-27: **review packet; no image or object
+record was approved for publication by this packet**.
+
+Current status (2026-07-29): this study is retained as a record of questions
+that informed later source and artwork work. It is not a current review
+request, alpha admission path, release gate, or promise of external review.
+Any concrete source, rights, safety, reproducibility, mechanical, or visual
+defect recorded below remains actionable on its own terms.
 
 ## Purpose and evidence boundary
 
@@ -112,10 +118,10 @@ Please also distinguish:
 - an artistic example that must be labelled as a variant;
 - a form not supportable at the 1962 horizon.
 
-No “approve for print trial” response by itself promotes the object records
-to publication-ready. Source registration, morphology evidence, full-size
-monochrome print review, rights review, canonical-inventory migration, and
-the repository publication gates remain required.
+No response recorded in this historical packet promotes an object record.
+Current admission instead depends on the applicable source, rights, safety,
+reproducibility, mechanical, and visual requirements, including any concrete
+morphology or print defect preserved here.
 
 ## Provenance cross-reference
 

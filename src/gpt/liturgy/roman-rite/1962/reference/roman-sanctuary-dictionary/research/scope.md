@@ -64,8 +64,7 @@ No completeness claim is authorized. The official source corpus has not been
 closed; the material-culture corpus has not been defined; the canonical
 inventory contains 76 records; and the completeness matrix has open rows in
 every category. The current workflow labels are 2 `lead`, 8 `identified`, 30
-`source-audited`, 2 `art-reviewed`, 4 `priestly-review-ready`, 28
-`publication-ready`, and 2 `held`.
+`source-audited`, 2 `art-reviewed`, 28 `publication-ready`, and 6 `held`.
 Those labels neither close a category nor establish an authoritative edition.
 The five generated leaves may publish the checked subset as bounded alphas;
 their first pages identify that alpha boundary. The unclosed owner corpus
@@ -75,7 +74,8 @@ must not be described as complete.
 
 Canonical `workflow_state` describes editorial progress: `lead`,
 `identified`, `source-audited`, `art-reviewed`,
-`priestly-review-ready`, `publication-ready`, or `held`. It must not be
+`publication-ready`, or `held`. Concrete unresolved defects are recorded
+separately and do not create an external-review workflow. It must not be
 confused with an object's liturgical status.
 
 The governing profile requires object status to distinguish universal Roman,

@@ -2,7 +2,13 @@
 
 Prepared: 2026-07-27 (America/Chicago)
 
-Decision before priestly review: **held; not publication-ready**.
+Historical disposition on 2026-07-27: **held; not publication-ready**.
+
+Historical note (2026-07-29): this packet is retained as a record of questions
+that informed later source and artwork work. It is not a current review
+request, alpha admission path, release gate, or promise of external review.
+Any concrete source, rights, safety, reproducibility, mechanical, or visual
+defect recorded below remains actionable on its own terms.
 
 This packet concerns five canonical object records and four isolated pencil
 candidates:
@@ -227,8 +233,8 @@ practical basis when known. Specifically ask the reviewer to distinguish:
 - a local handling or safety practice; and
 - an image defect requiring regeneration.
 
-Priestly review alone does not close lexical, legal, morphology-source,
-rights, actual-size print, plate, consumer, or release gates. Record reviewer
-identity, qualifications, date, scope, answers, disagreements, and requested
-corrections. Regenerated pixels receive new artwork IDs; these candidates are
-not silently overwritten.
+No answer recorded in this historical packet closes a concrete lexical,
+legal, morphology-source, rights, actual-size print, plate, or consumer
+defect. If the questions are reused, retain reviewer identity, qualifications,
+date, scope, answers, disagreements, and requested corrections. Regenerated
+pixels receive new artwork IDs; these candidates are not silently overwritten.

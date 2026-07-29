@@ -210,17 +210,16 @@ twenty-two front/back pairs derived from that bank, and exact installed-PDF
 extraction finds twenty-two `PRIEST` and twenty-two `BOTH` headers. The two
 sung companions retain the recorded twenty-four-card R projection. This
 reconfirms source and rendering consistency; it is not a new facsimile
-collation or independent speaker-assignment review.
+collation.
 
 The source-to-inventory reconciliation is complete for A1--A22. The redesigned
 Low-Mass child/trainer projection and the deck-local 01--22 selection have
 been reconciled at source and final-render level. Their rendered text,
 electronic pairing, production checks, and exact installed identities are
-recorded in the production manifest. The maintainer authorized installation
-for evaluation after the remaining physical and independent gates were
-disclosed; that decision does not complete them. Independent liturgical review
-of the form-specific speaker assignments and received Latin remains
-outstanding. The received text also remains subject to the series'
+recorded in the production manifest. The form-specific speaker assignments and
+received Latin remain governed by their cited source records; any concrete
+source conflict stays open until resolved. The received text also remains
+subject to the series'
 unresolved substantive rights analysis; an audit row is not release
 authorization. The separate 23 July 2026 exact-byte exception remains a
 historical clearance only for the six immutable predecessor PDF hashes it

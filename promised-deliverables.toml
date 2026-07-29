@@ -67,15 +67,15 @@ state = "candidate"
   ]
 
   [[deliverables.requirements]]
-  id = "paired-review"
-  criterion = "Low Mass and trainer PDFs, maps, hashes, artwork review, and every-page review agree."
+  id = "artifact-and-visual-consistency"
+  criterion = "Low Mass and trainer PDFs, maps, hashes, artwork records, and every-page visual evidence agree on one exact snapshot."
   status = "open"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"]
 
 [[deliverables]]
 id = "task-3-sanctuary-dictionaries"
 owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
-promise = "Repair the six priestly-review dictionaries and make their qualified state accurate."
+promise = "Repair the six sanctuary pictorial dictionaries and make their qualified state accurate."
 state = "complete"
 
   [[deliverables.requirements]]
@@ -115,8 +115,8 @@ state = "candidate"
   ]
 
   [[deliverables.requirements]]
-  id = "remaining-specialist-review"
-  criterion = "Physical print, intended-reader, independent ceremonial, rights, and ecclesiastical review are recorded for the exact snapshot."
+  id = "exact-snapshot-review"
+  criterion = "Source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual evidence agree on one exact snapshot; any concrete defect remains explicit."
   status = "open"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
 
@@ -137,8 +137,8 @@ state = "candidate"
   ]
 
   [[deliverables.requirements]]
-  id = "remaining-specialist-review"
-  criterion = "Physical print, intended-reader, independent ceremonial, rights, and ecclesiastical review are recorded for the exact snapshot."
+  id = "exact-snapshot-review"
+  criterion = "Source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual evidence agree on one exact snapshot; any concrete defect remains explicit."
   status = "open"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
 
@@ -159,7 +159,7 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "standing-alpha-authority"
-  criterion = "A standing maintainer decision permits exact-current public-alpha snapshots without repeated document-by-document approval while preserving all open completion gates."
+  criterion = "A standing maintainer decision permits exact-current public-alpha snapshots without repeated document-by-document authorization while preserving all concrete completion defects."
   status = "pass"
   check = "contains"
   path = "guidance/repository.md"
@@ -240,7 +240,7 @@ state = "in_progress"
 
   [[deliverables.requirements]]
   id = "work-specific-gates"
-  criterion = "Every review publication has exact-snapshot evidence for each required source, rights, specialist, ecclesiastical, artwork, and production review."
+  criterion = "Every public-alpha publication has exact-snapshot evidence for source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual inspection, or retains each concrete defect explicitly."
   status = "open"
   evidence = ["release/public-alpha.json", "PROJECT-WORK.md"]
 
@@ -252,6 +252,6 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "artwork-notices-closed"
-  criterion = "Artwork validation and human review records close every held notice without inventing object identities."
+  criterion = "Artwork validation and source-controlled review records close every held notice without inventing object identities or implying external approval."
   status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]

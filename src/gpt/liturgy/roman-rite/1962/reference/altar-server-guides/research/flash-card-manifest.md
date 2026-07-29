@@ -166,8 +166,8 @@ sets for each sung companion. Page-local extraction reconfirmed odd response
 fronts and even backs throughout: pages 1/2, 3/4, and 5/6 for Low Mass;
 response pairs through pages 7/8 and action pairs at 9/10 and 11/12 for each
 sung companion. Low-Mass extraction contains twenty-two `PRIEST` and
-twenty-two `BOTH` headers. These electronic results do not complete the
-pending actual-size, physical-duplex, photocopy, or cut tests.
+twenty-two `BOTH` headers. These electronic results do not establish
+actual-size, physical-duplex, photocopy, or cut behavior.
 
 The Low-Mass source map accounts for twenty-two fronts, twenty-two mirrored
 backs, six populated positions on the final sheet, and two wholly unused
@@ -178,12 +178,10 @@ consistent headers, cell containment, and blank unbordered final positions.
 Those results and the exact PDF hash are recorded in
 `production-manifest.md`.
 
-Actual-size reader legibility, physical long-edge duplex overlay or equivalent
-cut-and-turn alignment, and black-and-white photocopy and cut-safety tests
-remain pending. After those limits were disclosed, the maintainer expressly
-authorized installation of the exact companion for evaluation.
-Installation does not complete the pending checks, and the companion is not
-release-authorized.
+No actual-size reader-legibility, physical long-edge duplex overlay or
+equivalent cut-and-turn, or black-and-white photocopy result is recorded for
+this snapshot. Installation does not establish those properties; any observed
+legibility, alignment, photocopy, or cut-safety defect remains actionable.
 
 The production manifest's earlier six-up R-deck and action-deck results remain
 historical evidence for their named PDFs. They must not be silently reused as
@@ -199,5 +197,5 @@ field while restoring a safe inset for the continuation note on page 8.
 Text extraction and full-page inspection also confirm that pages 1--11 contain
 no running page numeral and page 12 uses the otherwise unused margin only for
 the required revision and rights notice. Electronic pairing, border alignment,
-and full-size screen checks pass; physical actual-size, duplex, photocopy, and
-cut tests remain pending.
+and full-size screen checks pass. No physical actual-size, duplex, photocopy,
+or cut result is recorded for this snapshot.

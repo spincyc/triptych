@@ -35,7 +35,7 @@ optional = [
   "pronunciation_key",
   "editorial_note",
   "presentation_mode",
-  "review_readiness",
+  "unresolved_gaps",
 ]
 
 [fields.schema_version]
@@ -49,7 +49,7 @@ unique = true
 
 [fields.workflow_state]
 type = "enum"
-values = ["lead", "identified", "source-audited", "art-reviewed", "priestly-review-ready", "publication-ready", "held"]
+values = ["lead", "identified", "source-audited", "art-reviewed", "publication-ready", "held"]
 
 [fields.presentation_mode]
 type = "enum"
@@ -439,68 +439,36 @@ required = ["audience", "text", "claim_ids"]
 type = "enum"
 values = ["altar-server", "sacristan", "mc-trainer", "general-reader", "pontifical"]
 
-[review_readiness]
-required = ["qualification", "disclosed_gaps", "review_prompts"]
-description = "Required only for priestly-review-ready records; it qualifies unresolved material and is not publication approval."
+[unresolved_gaps]
+required = ["qualification", "gaps"]
+description = "Optional concrete source, claim, artwork, terminology, scope, rights, or variant defects. It records work to resolve without creating an external-review gate."
 
-[review_readiness.qualification]
+[unresolved_gaps.qualification]
 type = "string"
-description = "Reader-facing statement of what has and has not been established."
+description = "Statement of what has and has not been established."
 
-[review_readiness.disclosed_gap]
-table = "disclosed_gaps"
+[unresolved_gaps.gap]
+table = "gaps"
 array = true
 required = ["id", "kind", "target_ids", "summary"]
 
-[review_readiness.disclosed_gap.id]
+[unresolved_gaps.gap.id]
 type = "id"
 prefix = "gap-"
 globally_unique = true
 
-[review_readiness.disclosed_gap.kind]
+[unresolved_gaps.gap.kind]
 type = "enum"
 values = ["claim", "artwork", "variant", "terminology", "scope", "rights", "other"]
 
-[review_readiness.disclosed_gap.target_ids]
+[unresolved_gaps.gap.target_ids]
 type = "array[id]"
 allowed_prefixes = ["obj-", "clm-", "src-", "art-", "var-"]
 min_items = 1
-
-[review_readiness.review_prompt]
-table = "review_prompts"
-array = true
-required = ["id", "question", "gap_ids"]
-optional = ["target_ids"]
-
-[review_readiness.review_prompt.id]
-type = "id"
-prefix = "prq-"
-globally_unique = true
-
-[review_readiness.review_prompt.gap_ids]
-type = "array[id]"
-prefix = "gap-"
-min_items = 1
-
-[review_readiness.review_prompt.target_ids]
-type = "array[id]"
-allowed_prefixes = ["obj-", "clm-", "src-", "art-", "var-"]
 
 [pronunciation_key]
 type = "string"
 description = "Optional reference to a pronunciation-appendix record; pronunciation is not repeated on visual plates."
-
-[priestly_review_gate]
-selectable_workflow_states = ["priestly-review-ready"]
-allowed_claim_states = ["verified-source-text", "checked-paraphrase", "source-grounded-synthesis", "editorial-proposal", "unverified-lead"]
-allowed_artwork_states = ["prompted", "generated", "identity-checked", "liturgically-checked", "print-checked", "approved"]
-requires_qualification = true
-requires_disclosed_gap_for_claim_states = ["editorial-proposal", "unverified-lead"]
-requires_disclosed_gap_for_artwork_states = ["prompted", "generated", "identity-checked", "liturgically-checked", "print-checked"]
-empty_artwork_requires_object_gap = true
-unresolved_status_requires_object_gap = true
-each_gap_requires_review_prompt = true
-publication_effect = "none"
 
 [publication_gate]
 selectable_workflow_states = ["publication-ready"]

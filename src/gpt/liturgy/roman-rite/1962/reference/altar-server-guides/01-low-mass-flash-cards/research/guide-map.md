@@ -93,5 +93,5 @@ production records.
 
 The 2026-07-28 Alpha-apparatus snapshot has seven physical pages and
 twenty-two cards. Exact artifact identity, duplex sequence, and every-page
-screen-review evidence are recorded in the series production manifest; no
-actual-size print or physical-duplex review is inferred.
+screen-review evidence are recorded in the series production manifest. No
+actual-size print or physical-duplex result is recorded for this snapshot.

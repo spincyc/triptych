@@ -187,7 +187,7 @@ class Validator:
                 "text-only object must not register publication artwork",
             )
         self.validate_audience_notes(path, data)
-        self.validate_review_readiness(path, object_id, data)
+        self.validate_unresolved_gaps(path, object_id, data)
 
     def validate_id_array(
         self, path: Path, data: dict[str, Any], field: str, prefix: str
@@ -507,45 +507,38 @@ class Validator:
                 )
             self.validate_local_id_list(path, f"{field}.claim_ids", note.get("claim_ids"), "clm-", 1)
 
-    def validate_review_readiness(
+    def validate_unresolved_gaps(
         self, path: Path, owner: Any, data: dict[str, Any]
     ) -> None:
-        value = data.get("review_readiness")
+        value = data.get("unresolved_gaps")
         if value is None:
-            if data.get("workflow_state") == "priestly-review-ready":
-                self.error(
-                    path,
-                    "review_readiness",
-                    "priestly-review-ready record requires review readiness disclosures",
-                )
             return
         if not isinstance(value, dict):
-            self.error(path, "review_readiness", "expected a table")
+            self.error(path, "unresolved_gaps", "expected a table")
             return
-        required = self.schema["review_readiness"]["required"]
-        self.require_keys(path, value, "review_readiness.", required)
+        required = self.schema["unresolved_gaps"]["required"]
+        self.require_keys(path, value, "unresolved_gaps.", required)
         for key in set(value) - set(required):
-            self.error(path, f"review_readiness.{key}", "unknown field")
+            self.error(path, f"unresolved_gaps.{key}", "unknown field")
         if not isinstance(value.get("qualification"), str) or not value[
             "qualification"
         ].strip():
             self.error(
-                path, "review_readiness.qualification", "expected a nonempty string"
+                path, "unresolved_gaps.qualification", "expected a nonempty string"
             )
 
-        gaps = value.get("disclosed_gaps")
+        gaps = value.get("gaps")
         if not isinstance(gaps, list) or not gaps:
             self.error(
                 path,
-                "review_readiness.disclosed_gaps",
+                "unresolved_gaps.gaps",
                 "expected a nonempty array of tables",
             )
             gaps = []
-        gap_ids: set[str] = set()
         allowed_gap_targets = ("obj-", "clm-", "src-", "art-", "var-")
-        gap_spec = self.schema["review_readiness"]["disclosed_gap"]
+        gap_spec = self.schema["unresolved_gaps"]["gap"]
         for index, gap in enumerate(gaps):
-            field = f"review_readiness.disclosed_gaps[{index}]"
+            field = f"unresolved_gaps.gaps[{index}]"
             if not isinstance(gap, dict):
                 self.error(path, field, "expected a table")
                 continue
@@ -555,14 +548,12 @@ class Validator:
             gap_id = gap.get("id")
             self.id_value(path, f"{field}.id", gap_id, "gap-")
             self.register_unique(self.gaps, path, f"{field}.id", gap_id, str(owner))
-            if isinstance(gap_id, str):
-                gap_ids.add(gap_id)
             if "kind" in gap:
                 self.enum(
                     path,
                     f"{field}.kind",
                     gap["kind"],
-                    self.schema["review_readiness"]["disclosed_gap"]["kind"][
+                    self.schema["unresolved_gaps"]["gap"]["kind"][
                         "values"
                     ],
                 )
@@ -574,58 +565,6 @@ class Validator:
                 gap.get("target_ids"),
                 allowed_gap_targets,
                 minimum=1,
-            )
-
-        prompts = value.get("review_prompts")
-        if not isinstance(prompts, list) or not prompts:
-            self.error(
-                path,
-                "review_readiness.review_prompts",
-                "expected a nonempty array of tables",
-            )
-            prompts = []
-        prompted_gaps: set[str] = set()
-        prompt_spec = self.schema["review_readiness"]["review_prompt"]
-        for index, prompt in enumerate(prompts):
-            field = f"review_readiness.review_prompts[{index}]"
-            if not isinstance(prompt, dict):
-                self.error(path, field, "expected a table")
-                continue
-            allowed = set(prompt_spec["required"] + prompt_spec["optional"])
-            self.require_keys(path, prompt, field + ".", prompt_spec["required"])
-            for key in set(prompt) - allowed:
-                self.error(path, f"{field}.{key}", "unknown field")
-            prompt_id = prompt.get("id")
-            self.id_value(path, f"{field}.id", prompt_id, "prq-")
-            self.register_unique(
-                self.prompts, path, f"{field}.id", prompt_id, str(owner)
-            )
-            if not isinstance(prompt.get("question"), str) or not prompt[
-                "question"
-            ].strip():
-                self.error(path, f"{field}.question", "expected a nonempty string")
-            self.validate_local_id_list(
-                path, f"{field}.gap_ids", prompt.get("gap_ids"), "gap-", 1
-            )
-            for gap_id in prompt.get("gap_ids", []):
-                if gap_id not in gap_ids:
-                    self.error(
-                        path, f"{field}.gap_ids", f"unknown local gap {gap_id}"
-                    )
-                else:
-                    prompted_gaps.add(gap_id)
-            if "target_ids" in prompt:
-                self.validate_mixed_id_list(
-                    path,
-                    f"{field}.target_ids",
-                    prompt["target_ids"],
-                    allowed_gap_targets,
-                )
-        for gap_id in sorted(gap_ids - prompted_gaps):
-            self.error(
-                path,
-                "review_readiness.review_prompts",
-                f"disclosed gap {gap_id} has no review prompt",
             )
 
     def validate_mixed_id_list(
@@ -733,8 +672,8 @@ class Validator:
             }
             for index, gap in enumerate(
                 (
-                    data.get("review_readiness", {}).get("disclosed_gaps", [])
-                    if isinstance(data.get("review_readiness"), dict)
+                    data.get("unresolved_gaps", {}).get("gaps", [])
+                    if isinstance(data.get("unresolved_gaps"), dict)
                     else []
                 )
             ):
@@ -751,7 +690,7 @@ class Validator:
                     if not known:
                         self.error(
                             path,
-                            f"review_readiness.disclosed_gaps[{index}].target_ids",
+                            f"unresolved_gaps.gaps[{index}].target_ids",
                             f"unknown or nonlocal target {target}",
                         )
 
@@ -793,87 +732,6 @@ class Validator:
             if "claim-verified" not in source_states:
                 self.error(path, "sources", "publication-ready object has no claim-verified source")
 
-    def validate_priestly_review_gate(self) -> None:
-        gate = self.schema["priestly_review_gate"]
-        for object_id, (path, data) in self.records.items():
-            if data.get("workflow_state") not in gate["selectable_workflow_states"]:
-                continue
-            readiness = data.get("review_readiness")
-            if not isinstance(readiness, dict):
-                continue
-            gaps = [
-                gap
-                for gap in readiness.get("disclosed_gaps", [])
-                if isinstance(gap, dict)
-            ]
-            targets_by_kind: dict[str, set[str]] = {}
-            for gap in gaps:
-                kind = gap.get("kind")
-                if isinstance(kind, str):
-                    targets_by_kind.setdefault(kind, set()).update(
-                        gap.get("target_ids", [])
-                    )
-            for index, claim in enumerate(data.get("claims", [])):
-                if not isinstance(claim, dict):
-                    continue
-                state = claim.get("evidence_state")
-                if state not in gate["allowed_claim_states"]:
-                    self.error(
-                        path,
-                        f"claims[{index}].evidence_state",
-                        "not allowed for priestly-review-ready record",
-                    )
-                if (
-                    state in gate["requires_disclosed_gap_for_claim_states"]
-                    and claim.get("id") not in targets_by_kind.get("claim", set())
-                ):
-                    self.error(
-                        path,
-                        f"claims[{index}]",
-                        f"{state} claim requires a targeted disclosed gap",
-                    )
-            artworks = [
-                art for art in data.get("artwork", []) if isinstance(art, dict)
-            ]
-            if (
-                not artworks
-                and object_id not in targets_by_kind.get("artwork", set())
-            ):
-                self.error(
-                    path,
-                    "artwork",
-                    "priestly-review-ready record with no artwork requires an object-targeted artwork gap",
-                )
-            for index, art in enumerate(artworks):
-                state = art.get("review_state")
-                if state not in gate["allowed_artwork_states"]:
-                    self.error(
-                        path,
-                        f"artwork[{index}].review_state",
-                        "not allowed for priestly-review-ready record",
-                    )
-                if (
-                    state in gate["requires_disclosed_gap_for_artwork_states"]
-                    and art.get("id") not in targets_by_kind.get("artwork", set())
-                ):
-                    self.error(
-                        path,
-                        f"artwork[{index}]",
-                        f"{state} artwork requires a targeted disclosed gap",
-                    )
-            status_gap_targets = targets_by_kind.get("scope", set()) | targets_by_kind.get(
-                "other", set()
-            )
-            if (
-                "unresolved" in data.get("statuses", [])
-                and object_id not in status_gap_targets
-            ):
-                self.error(
-                    path,
-                    "statuses",
-                    "unresolved priestly-review-ready record requires an object-targeted gap",
-                )
-
     def selected(self, edition: dict[str, Any]) -> list[str]:
         selected: list[str] = []
         for object_id, (_, data) in self.records.items():
@@ -908,7 +766,6 @@ class Validator:
                 continue
             self.validate_record(path, data)
         self.validate_cross_references()
-        self.validate_priestly_review_gate()
         self.validate_publication_gate()
 
 

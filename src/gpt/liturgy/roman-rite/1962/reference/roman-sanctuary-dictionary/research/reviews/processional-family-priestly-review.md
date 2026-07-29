@@ -2,6 +2,13 @@
 
 Review packet prepared: 2026-07-27 (America/Chicago).
 
+Historical note (2026-07-29): this packet is retained as a record of questions
+that informed later source and artwork work. It is not a current review
+request, alpha admission path, release gate, or promise of external review.
+The unresolved candidates and concrete source, rights, safety,
+reproducibility, mechanical, or visual defects recorded below remain
+actionable on their own terms.
+
 ## Review boundary
 
 > **UNRESOLVED CANDIDATES — NOT APPROVED FOR PUBLICATION**
@@ -11,9 +18,8 @@ Every figure and inventory record in this packet remains visibly labelled
 evidence for a rubric, universal morphology, handling rule, or ceremonial
 presence. The matching object records have workflow state `art-reviewed`,
 status `unresolved`, editorial-proposal claims, and unlocated source leads.
-Priestly review may identify defects and source questions; it does not by
-itself advance a record to `source-audited`, `publication-ready`, or release
-approval.
+The questions may identify defects and source needs, but completing this
+historical packet is neither necessary nor sufficient to advance a record.
 
 The family consists of:
 

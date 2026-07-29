@@ -11,11 +11,9 @@ This plan sequences work under
 - Seven PDFs are installed and publicly discoverable as alpha review copies:
   three Low Mass publications and two publications for each sung form.
 - The current production ledger records 143 PDF pages and 94 physical cards.
-- The four retained Low Mass scenes have replacement assets, but their
-  generating-agent inspection is not independent artwork or ceremonial review.
-- Current external and physical gates remain open as recorded in
-  `production-manifest.md`; installation and review discoverability do not
-  close them.
+- The four retained Low Mass scenes have replacement assets. Their current
+  evidence is the recorded source, artifact, and every-page visual inspection;
+  no approval claim follows from that evidence.
 - Completion requires the shared response, pronunciation, ceremonial, card,
   artwork, guide-map, production, rights, and exact-snapshot records to agree
   across all seven consumers.
@@ -42,12 +40,12 @@ This plan sequences work under
 - [ ] Inspect each replacement scene at full size for actor, object, posture,
   route, destination, handoff, finish state, label clearance, and monochrome
   legibility.
-- [ ] Record independent liturgical, ceremonial, Latin-pronunciation,
-  pedagogical/artwork, and applicable rights or liturgical-text review only
-  when actually received for the exact snapshot.
-- [ ] Conduct and record paired child/trainer use testing when available.
+- [ ] Preserve exact source loci, unresolved rights questions, and every
+  concrete actor, route, object, safety, or visual defect for the snapshot.
+- [ ] Check the child/trainer pair deterministically for page, wording,
+  diagram, and rail consistency.
 
-## Work unit A3 — Low Mass card physical gate
+## Work unit A3 — Low Mass card mechanical and visual checks
 
 - [ ] Print at actual size and confirm the fixed type remains readable for the
   intended age range.
@@ -68,9 +66,8 @@ Electronic parity or raster inspection does not check these physical items.
   that manual conventions and local customs are locally labelled.
 - [ ] Reconcile all 36 companion cards with the guide's actor/branch/safety
   key and shared data.
-- [ ] Close actual-size, duplex, photocopy, cut, intended-reader, independent
-  ceremonial, rights, and ecclesiastical-suitability gates only from recorded
-  exact-snapshot evidence.
+- [ ] Record actual-size, duplex, photocopy, and cut results when performed;
+  retain any concrete mechanical, visual, safety, source, or rights defect.
 
 ## Work unit A5 — Solemn Mass source and route audit
 
@@ -82,9 +79,8 @@ Electronic parity or raster inspection does not check these physical items.
   with the role sheets.
 - [ ] Reconcile all 36 companion cards with the guide's actor/branch/safety
   key and shared data.
-- [ ] Close actual-size, duplex, photocopy, cut, intended-reader, independent
-  ceremonial, rights, and ecclesiastical-suitability gates only from recorded
-  exact-snapshot evidence.
+- [ ] Record actual-size, duplex, photocopy, and cut results when performed;
+  retain any concrete mechanical, visual, safety, source, or rights defect.
 
 ## Work unit A6 — shared pronunciation, rights, and production
 
@@ -112,6 +108,5 @@ Electronic parity or raster inspection does not check these physical items.
 
 Do not change a received response, assign an actor, choose a ceremonial branch,
 or repair an illustration from plausibility. Do not let an optional role make
-an object disappear, combine incompatible local routes, or infer release or
-ecclesiastical approval from a clean build, installation, or public-review
-listing.
+an object disappear, combine incompatible local routes, or infer approval from
+a clean build, installation, or public-review listing.

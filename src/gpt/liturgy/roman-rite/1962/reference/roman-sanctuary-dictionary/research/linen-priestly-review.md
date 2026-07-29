@@ -3,7 +3,14 @@
 Prepared: 2026-07-27
 Review target: comprehensive 1962 Roman sanctuary dictionary
 Prerequisite: read `linen-inventory-audit.md` and inspect each PNG at full size
-Current state: **awaiting priestly/ceremonial review; no plate is approved**
+Historical state on 2026-07-27: **awaiting priestly/ceremonial review; no plate
+was approved by this packet**
+
+Current status (2026-07-29): this sheet is retained as a record of questions
+that informed later source and artwork work. It is not a current review
+request, alpha admission path, release gate, or promise of external review.
+Any concrete source, rights, safety, reproducibility, mechanical, or visual
+defect recorded below remains actionable on its own terms.
 
 This sheet deliberately separates what the checked 1962 Missal names from what
 generated artwork merely proposes. A reviewer should mark **accept**,

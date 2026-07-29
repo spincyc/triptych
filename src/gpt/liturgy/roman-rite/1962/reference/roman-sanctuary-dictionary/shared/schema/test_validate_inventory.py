@@ -67,39 +67,26 @@ def validator() -> Validator:
     return Validator(load_toml(DEFAULT_SCHEMA), load_toml(DEFAULT_EDITIONS))
 
 
-def priestly_review_record() -> dict:
-    claims = [dict(claim) for claim in VALID_RECORD["claims"]]
-    claims[0]["evidence_state"] = "unverified-lead"
-    artwork = [dict(VALID_RECORD["artwork"][0])]
-    artwork[0]["review_state"] = "identity-checked"
+def held_record_with_gaps() -> dict:
     return {
         **VALID_RECORD,
-        "workflow_state": "priestly-review-ready",
-        "claims": claims,
-        "artwork": artwork,
-        "review_readiness": {
-            "qualification": "Identity and artwork remain submitted for priestly review; this record is not publication-ready.",
-            "disclosed_gaps": [
+        "workflow_state": "held",
+        "artwork": [],
+        "unresolved_gaps": {
+            "qualification": "The source boundary and representative artwork remain unresolved.",
+            "gaps": [
                 {
-                    "id": "gap-test-identity",
-                    "kind": "claim",
-                    "target_ids": ["clm-test-identity"],
-                    "summary": "The identity claim remains an unverified lead.",
+                    "id": "gap-test-scope",
+                    "kind": "scope",
+                    "target_ids": ["obj-test", "clm-test-identity"],
+                    "summary": "The source does not establish the proposed universal scope.",
                 },
                 {
                     "id": "gap-test-artwork",
                     "kind": "artwork",
-                    "target_ids": ["art-test"],
-                    "summary": "The drawing has identity review only.",
+                    "target_ids": ["obj-test"],
+                    "summary": "No checked representative artwork is registered.",
                 },
-            ],
-            "review_prompts": [
-                {
-                    "id": "prq-test-identity-art",
-                    "question": "Are the identification and depicted form suitable for further development?",
-                    "gap_ids": ["gap-test-identity", "gap-test-artwork"],
-                    "target_ids": ["clm-test-identity", "art-test"],
-                }
             ],
         },
     }
@@ -110,7 +97,6 @@ class ValidatorTests(unittest.TestCase):
         check = validator()
         check.validate_record(Path("fixture.toml"), record)
         check.validate_cross_references()
-        check.validate_priestly_review_gate()
         check.validate_publication_gate()
         return check
 
@@ -258,42 +244,23 @@ class ValidatorTests(unittest.TestCase):
         check.validate_record(Path("second.toml"), second)
         self.assertTrue(any("shared artwork definition conflicts" in p.message for p in check.problems))
 
-    def test_qualified_unresolved_record_can_be_priestly_review_ready(self) -> None:
-        self.assertEqual(self.validate(priestly_review_record()).problems, [])
+    def test_held_record_can_preserve_concrete_gaps(self) -> None:
+        self.assertEqual(self.validate(held_record_with_gaps()).problems, [])
 
-    def test_priestly_review_ready_requires_targeted_claim_gap(self) -> None:
-        record = priestly_review_record()
-        record["review_readiness"]["disclosed_gaps"] = [
-            record["review_readiness"]["disclosed_gaps"][1]
-        ]
-        record["review_readiness"]["review_prompts"][0]["gap_ids"] = [
-            "gap-test-artwork"
-        ]
+    def test_unresolved_gaps_require_nonempty_gap_list(self) -> None:
+        record = held_record_with_gaps()
+        record["unresolved_gaps"]["gaps"] = []
         problems = self.validate(record).problems
-        self.assertTrue(any("claim requires a targeted disclosed gap" in p.message for p in problems))
+        self.assertTrue(any(p.field == "unresolved_gaps.gaps" for p in problems))
 
-    def test_priestly_review_ready_requires_prompt_for_every_gap(self) -> None:
-        record = priestly_review_record()
-        record["review_readiness"]["review_prompts"][0]["gap_ids"] = [
-            "gap-test-identity"
-        ]
+    def test_unresolved_gap_target_must_be_local(self) -> None:
+        record = held_record_with_gaps()
+        record["unresolved_gaps"]["gaps"][0]["target_ids"] = ["obj-other"]
         problems = self.validate(record).problems
-        self.assertTrue(any("has no review prompt" in p.message for p in problems))
+        self.assertTrue(any("unknown or nonlocal target" in p.message for p in problems))
 
-    def test_priestly_review_ready_with_no_art_needs_object_art_gap(self) -> None:
-        record = priestly_review_record()
-        record["artwork"] = []
-        record["review_readiness"]["disclosed_gaps"][1]["target_ids"] = [
-            "obj-test"
-        ]
-        record["review_readiness"]["review_prompts"][0]["target_ids"] = [
-            "clm-test-identity",
-            "obj-test",
-        ]
-        self.assertEqual(self.validate(record).problems, [])
-
-    def test_priestly_review_ready_is_not_selected_for_publication(self) -> None:
-        check = self.validate(priestly_review_record())
+    def test_held_record_is_not_selected_for_publication(self) -> None:
+        check = self.validate(held_record_with_gaps())
         edition = next(
             entry
             for entry in check.editions["editions"]
@@ -302,8 +269,9 @@ class ValidatorTests(unittest.TestCase):
         self.assertEqual(check.selected(edition), [])
 
     def test_publication_ready_gate_still_rejects_unverified_claim(self) -> None:
-        record = priestly_review_record()
-        record["workflow_state"] = "publication-ready"
+        claims = [dict(claim) for claim in VALID_RECORD["claims"]]
+        claims[0]["evidence_state"] = "unverified-lead"
+        record = {**VALID_RECORD, "claims": claims}
         problems = self.validate(record).problems
         self.assertTrue(
             any("not allowed for publication-ready object" in p.message for p in problems)

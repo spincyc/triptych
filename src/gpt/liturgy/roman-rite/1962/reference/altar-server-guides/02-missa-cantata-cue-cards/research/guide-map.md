@@ -33,9 +33,8 @@ Page 13 is the terminal apparatus and is not part of the cut grid.
 Print US letter, portrait, two-sided, actual size, flipped on the long edge,
 and cut on the box borders. Rendered-screen review confirmed page parity,
 electronic border alignment, screen legibility, and safe containment of the
-R08B continuation note. Physical actual-size, long-edge-duplex, photocopy, and
-cut review remain pending. The installed exact identity is a public alpha
-review copy, not a release-complete or independently approved publication.
+R08B continuation note. No physical actual-size, long-edge-duplex, photocopy,
+or cut result is recorded for this public-alpha snapshot.
 
 Only the final back may use the margin below the cut grid, for the required
 revision timestamp and compact rights notice. All other card sheets use an
@@ -56,5 +55,5 @@ ceremonial, flash-card, production, rights, and review records.
 
 The 2026-07-28 Alpha-apparatus snapshot has thirteen physical pages with
 thirty-six cards. Exact artifact identity, duplex sequence, and every-page
-screen-review evidence are recorded in the series production manifest; no
-actual-size print or physical-duplex review is inferred.
+screen-review evidence are recorded in the series production manifest. No
+actual-size print or physical-duplex result is recorded for this snapshot.

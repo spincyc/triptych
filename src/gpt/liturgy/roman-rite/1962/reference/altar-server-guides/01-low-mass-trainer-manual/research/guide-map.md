@@ -90,10 +90,9 @@ altar-server-guides research directory.
 The historical repair map recorded a twenty-nine-page sequence and the
 repaired child-visible branches and replaced illustrations. The card key and terminal
 trainer rail have been restored, and trainer-only meaning blocks have been
-removed from the mirrored main lane. Stage-level checks, physical tests,
-independent ceremonial and pedagogical review, rights, and ecclesiastical
-review remain open. This is a discoverable alpha review copy, not a completed
-release.
+removed from the mirrored main lane. This discoverable alpha retains every
+concrete source, rights, safety, artifact, mechanical, or visual defect found
+in subsequent checks.
 
 The later actor-overlay pass applies the same corrected, collision-free TeX
 labels as the child edition on matched pages 10, 12, 14, 18, 19, 21, 22, and
@@ -107,5 +106,5 @@ rendering without changing the underlying pencil asset.
 
 The 2026-07-28 installed Alpha snapshot remains twenty-six page-matched pages.
 Exact artifact identity and every-page screen-review evidence are recorded in
-the series production manifest; this map records no external, physical-use, or
+the series production manifest. Those records do not imply official or
 ecclesiastical approval.

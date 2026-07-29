@@ -2,7 +2,13 @@
 
 Prepared: 2026-07-27 (America/Chicago)
 
-Decision before priestly review: **held; not publication-ready**.
+Historical disposition on 2026-07-27: **held; not publication-ready**.
+
+Historical note (2026-07-29): this packet is retained as a record of questions
+that informed later source and artwork work. It is not a current review
+request, alpha admission path, release gate, or promise of external review.
+Any concrete source, rights, safety, reproducibility, mechanical, or visual
+defect recorded below remains actionable on its own terms.
 
 This packet concerns three isolated pencil candidates and their canonical
 records:
@@ -189,8 +195,8 @@ Priestly reviewer:
   plate and in-use inset only after source and priestly review; redraw if the
   decanter-like scale or stopper arrangement is judged misleading.
 
-No priestly answer by itself closes the lexical, legal, morphology-source,
-rights, print, plate, consumer, or release gates. Record the reviewer, date,
-scope, answers, disagreements, and requested corrections; then issue new
-artwork IDs for regenerated pixels rather than silently overwriting these
-candidates.
+No answer recorded in this historical packet closes a concrete lexical,
+legal, morphology-source, rights, print, plate, or consumer defect. If the
+questions are reused, retain the reviewer, date, scope, answers,
+disagreements, and requested corrections; issue new artwork IDs for
+regenerated pixels rather than silently overwriting these candidates.

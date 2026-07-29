@@ -395,7 +395,7 @@ def validate(owner: Path) -> tuple[list[str], list[str]]:
         path = safe_relative(row.get("path"), f"{file_id}.path", problems)
         audit = safe_relative(row.get("audit_record"), f"{file_id}.audit_record", problems)
         problems.check(row.get("state") in {
-            "accepted-for-priestly-review", "canonical-alpha-eligible", "held", "rejected", "consumer-eligible"
+            "canonical-alpha-eligible", "held", "rejected", "consumer-eligible"
         },
                        f"{file_id}: invalid state")
         if audit is not None:
