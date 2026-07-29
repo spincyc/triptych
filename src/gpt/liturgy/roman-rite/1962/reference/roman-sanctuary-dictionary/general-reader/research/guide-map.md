@@ -1,8 +1,14 @@
 # General-reader edition guide map
 
 Status: **bounded public alpha**
-Audit date: 2026-07-28
+Audit date: 2026-07-29
 Edition selection: `ed-general-reader`
+
+Current generated selection: **43 admitted records and 33 omissions from 76
+canonical records**. This statement supersedes earlier count and
+one-object-per-page references in the accumulated checkpoint narrative. The
+installed artifact is the reviewed 11-page dense comparison edition recorded
+at the head of the production manifest.
 
 The title page now carries only the terse `Alpha` status. The explanation of
 the bounded inventory, edition horizon, non-authority boundary, and reliance
@@ -15,7 +21,7 @@ reader. It owns no copied facts. Each plate emphasizes identity and purpose;
 its canonical audience note explains a useful distinction without enlarging
 the verified claims.
 
-The current forty-four-record alpha includes the corporal, purificator, chalice pall,
+The current forty-three-record alpha includes the corporal, purificator, chalice pall,
 chalice veil, burse, three altar cloths, credence table, Lavabo basin, and
 Lavabo towel to the appointments-and-books family, together with the incense
 boat, spoon, chalice, and paten. The two sacred-vessel pages reuse one

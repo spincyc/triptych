@@ -1,8 +1,13 @@
 # MC and trainer edition guide map
 
 Status: **bounded public alpha**
-Audit date: 2026-07-28
+Audit date: 2026-07-29
 Edition selection: `ed-mc-trainer`
+
+Current generated selection: **45 admitted records and 31 omissions from 76
+canonical records**. This statement supersedes earlier count references in
+the accumulated checkpoint narrative. The installed artifact is the reviewed
+10-page snapshot recorded at the head of the production manifest.
 
 The title page now carries only the terse `Alpha` status. The explanation of
 the bounded inventory, edition horizon, non-authority boundary, and reliance
@@ -50,7 +55,7 @@ the separately admitted priest's paten; the bespoke altar-server lesson keeps
 the explicit comparison. The chalice and paten reuse one controlled
 catalog exemplar to teach identity and the prepared relationship, not a
 universal morphology, handoff, transfer, touching, or recovery procedure. The
-current forty-six-record canonical alpha gate requires
+current forty-five-record canonical alpha gate requires
 no external review. The footless elevation-torch page teaches the
 Elevation-service timing and distinction from
 the acolytes' footed candlesticks without inventing a route, grip, height,

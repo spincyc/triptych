@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-29"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:10a2f1d4fefbcec6f6fd46295f56b1304d871a00c40e26df1b487baf9a9791f5"
+inventory_snapshot = "sha256:78259d4a0a54d423e9288a7952b124abdd8239c04f3ad76d13d07c771b671087"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
 canonical_catalog_snapshot = "sha256:d9783ddf73c8a7eba11812ca19a424be51fbb0fc087ca384e5bdd857e5ca3df4"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:230eda8a50000b34b05e033947ebf7c01a5ef0da05a9dc6f8fe8849e50da692a"
+snapshot = "sha256:196d9fdc3ab195c9d0110a4f1321bce407aa08dd0a4ef6e7330ec59d5fee31a0"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -10443,7 +10443,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/m
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
-surface_snapshot = "sha256:29fb32d03b1aad07616dea3d48cace118e2ee2040e5282532d9c85746381ab82"
+surface_snapshot = "sha256:32c35aecb40b457f7e6c92c822b5cce932c197226e799ca629b87ec7bd87ee8a"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -10506,7 +10506,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dicti
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"
-surface_snapshot = "sha256:f66c110f8facc2d91260273956ab5bfaf50a4fb8b77f103833b9497e20362ec9"
+surface_snapshot = "sha256:7db80ebbbf1fa8adbfea27102d2d88490af4341be2d9e3f46c8b782043e706b5"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -10537,28 +10537,28 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dicti
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader"
-surface_snapshot = "sha256:c43ee0b2079efbad4deed41f43ccf6325514550cbc5780d716f4b736bcd56a06"
+surface_snapshot = "sha256:bfe70d93f92171c6a569af17772ea8fb40ad61cf07ac6570dd5c840068fd7eaf"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer"
-surface_snapshot = "sha256:29867bb35f2beba39349adc5ac4892613f129fdd66e7e57a4c3e438da4ca50d3"
+surface_snapshot = "sha256:b2e486b019d330194c2c043928dda787968fc9e6467afff56906a1c051f5c22b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies"
-surface_snapshot = "sha256:7d31a01b7e9dc009d136ceabe4fd5310bc4efc1c9d7e7d96fc0c9e72b681bbb0"
+surface_snapshot = "sha256:4e9d6a4b20d91249a0d9f5058d7dfac93b2d6206b8ee8d520e9ff8150c55b3cf"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
-surface_snapshot = "sha256:516def3b3d426af84ab44e60a0b14fde063b77fd91fd35d47f6e9fa58660e310"
+surface_snapshot = "sha256:c026eff26afb67ad82c84d5f340016641a94007dfb6271287ebd85001a9530d3"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
@@ -11603,7 +11603,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/r
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:683eea3fe0a857041f76c0ad23230f3f4c519c36ac759a30a201063f6fcb84d7"
+surface_snapshot = "sha256:dcabfb9babbae0e71d3bff1f00566cf9ece087d0d2dcf2b2e47739c1d2dadde0"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
 family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"

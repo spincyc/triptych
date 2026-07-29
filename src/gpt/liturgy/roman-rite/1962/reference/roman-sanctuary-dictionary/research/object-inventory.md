@@ -1,7 +1,7 @@
 # Object inventory
 
-Status: **64 canonical records populated; 48 records in the current comprehensive alpha**
-Audit date: 2026-07-28
+Status: **76 canonical records populated; 45 records in the current comprehensive alpha**
+Audit date: 2026-07-29
 
 The authoritative format is the structured contract under `shared/schema/`.
 This Markdown file is the human audit index for the populated TOML records and
@@ -14,12 +14,12 @@ authorization to render an entry.
 | State | Count |
 | --- | ---: |
 | Lead | 2 canonical records |
-| Identified | 10 |
-| Source-audited | 34 |
-| Art-reviewed | 0 |
+| Identified | 8 |
+| Source-audited | 30 |
+| Art-reviewed | 2 |
 | Priestly-review-ready | 4 |
-| Publication-ready | 14 |
-| Held | 0 canonical records |
+| Publication-ready | 28 |
+| Held | 2 canonical records |
 
 `shared/schema/object.example.toml` is a syntax fixture and is excluded from
 all counts. These counts describe canonical workflow labels. The canonical
@@ -30,7 +30,7 @@ artwork rights, provenance, exact asset identity, and passed identity and
 basic-usability checks. A validated text-only record registers no artwork.
 There is no external-review admission path.
 
-The structured inventory validator accepts all 64 records as conforming to
+The structured inventory validator accepts all 76 records as conforming to
 the current TOML contract. That is a structural result only: it does not close
 the source corpus, the completeness matrix, variants, artwork review, rights,
 or any publication gate.
@@ -107,7 +107,10 @@ make the later 1978 discipline the inventory's 1962 status rule.
 This evidence adds search targets but does not itself advance any record.
 The workflow counts above supersede earlier tranche snapshots. Canonical alpha
 admission is evaluated separately from the workflow label and presently
-admits forty-eight records to the comprehensive bounded edition.
+admits forty-five records to the comprehensive bounded edition. The current
+derived-edition admissions are forty-four altar-server, forty-five sacristan,
+forty-five MC/trainer, forty-three general-reader, and fifty-six pontifical
+records. These are selection counts, not completeness claims.
 
 ## Alpha boundary
 

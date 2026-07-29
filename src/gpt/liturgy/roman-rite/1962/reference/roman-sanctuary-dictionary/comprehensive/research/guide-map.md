@@ -1,8 +1,15 @@
 # Comprehensive edition guide map
 
 Status: **bounded public alpha**
-Audit date: 2026-07-28
+Audit date: 2026-07-29
 Edition selection: `ed-comprehensive`
+
+Current generated selection: **45 admitted records and 31 omissions from 76
+canonical records**. The count and plate architecture below accumulated
+through earlier checkpoints; where an earlier paragraph says forty-six
+records or one full page per object, this current generated-selection
+statement controls. The installed artifact is the reviewed 13-page snapshot
+recorded at the head of the production manifest.
 
 This adult reference consumes the canonical alpha view generated from the
 shared object inventory. Alpha admission requires resolved identity and
@@ -16,7 +23,7 @@ the bounded inventory, edition horizon, non-authority boundary, and reliance
 limits appears once in the terminal Scope and Qualifications appendix; the
 common rights notice shares the final generation-metadata page.
 
-The present bounded family covers forty-six records: the appointments-and-books
+The present bounded family covers forty-five records: the appointments-and-books
 objects already admitted; the corporal, purificator, chalice pall, chalice
 veil, and burse; the three altar cloths; the credence table and sedilia; and
 the paired Offertory Lavabo basin and towel; and the thurible, incense boat,

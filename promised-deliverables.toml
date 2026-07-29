@@ -76,7 +76,7 @@ state = "candidate"
 id = "task-3-sanctuary-dictionaries"
 owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
 promise = "Repair the six priestly-review dictionaries and make their qualified state accurate."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "six-pdfs"
@@ -95,7 +95,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "records-consistent"
   criterion = "Inventory, omissions, page counts, source state, artwork state, and review records are mutually consistent."
-  status = "open"
+  status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"]
 
 [[deliverables]]

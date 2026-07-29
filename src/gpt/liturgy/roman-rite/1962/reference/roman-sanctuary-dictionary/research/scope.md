@@ -62,9 +62,10 @@ canonical records but may not copy or enlarge them independently.
 
 No completeness claim is authorized. The official source corpus has not been
 closed; the material-culture corpus has not been defined; the canonical
-inventory contains 55 records; and the completeness matrix has open rows in
-every category. The current workflow labels are 2 `lead`, 10 `identified`, 34
-`source-audited`, 4 `priestly-review-ready`, and 5 `publication-ready`.
+inventory contains 76 records; and the completeness matrix has open rows in
+every category. The current workflow labels are 2 `lead`, 8 `identified`, 30
+`source-audited`, 2 `art-reviewed`, 4 `priestly-review-ready`, 28
+`publication-ready`, and 2 `held`.
 Those labels neither close a category nor establish an authoritative edition.
 The five generated leaves may publish the checked subset as bounded alphas;
 their first pages identify that alpha boundary. The unclosed owner corpus

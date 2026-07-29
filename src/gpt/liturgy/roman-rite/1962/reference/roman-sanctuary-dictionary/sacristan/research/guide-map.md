@@ -1,8 +1,13 @@
 # Sacristan edition guide map
 
 Status: **bounded public alpha**
-Audit date: 2026-07-28
+Audit date: 2026-07-29
 Edition selection: `ed-sacristan`
+
+Current generated selection: **45 admitted records and 31 omissions from 76
+canonical records**. This statement supersedes earlier count references in
+the accumulated checkpoint narrative. The installed artifact is the reviewed
+12-page snapshot recorded at the head of the production manifest.
 
 The title page now carries only the terse `Alpha` status. The explanation of
 the bounded inventory, edition horizon, non-authority boundary, and reliance
@@ -52,7 +57,7 @@ separately admitted priest's paten is not duplicated there; the chalice and
 paten reuse one catalog-exemplar plate and the Missal-controlled prepared
 relationship without prescribing a universal design, setup tolerance,
 transfer, touching, care, or purification method. The edition also admits the
-footless elevation torch; its current canonical selection contains forty-six
+footless elevation torch; its current canonical selection contains forty-five
 records. It
 distinguishes rack storage from the acolyte
 candlestick's self-standing relation and leaves dimensions, material,

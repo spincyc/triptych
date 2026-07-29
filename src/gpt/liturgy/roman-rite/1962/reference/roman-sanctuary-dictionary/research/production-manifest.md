@@ -3,6 +3,28 @@
 Status: **bounded public alphas**
 Audit date: 2026-07-28
 
+## Canonical-record reconciliation — 2026-07-29
+
+The structured owner now contains 76 conforming canonical object records.
+The deterministic generated selections, their omissions, and the exact
+installed artifacts agree as follows. These selection counts supersede
+unqualified counts in the historical checkpoint narrative below; the
+historical tables retain the state observed at their named checkpoints.
+Every completeness-matrix row remains open.
+
+| Edition | Admitted | Omitted | Pages | Installed SHA-256 |
+| --- | ---: | ---: | ---: | --- |
+| Comprehensive | 45 | 31 | 13 | `d291f15918d1dbffd4c7d76cfa4f103bfb61477a66c00e0cdc6ef9bb616a3ab9` |
+| Altar server | 44 | 32 | 11 | `a61d50d62231ba9ecdeef69399577f707b80da4f5bccb23486efe48f97112d11` |
+| Sacristan | 45 | 31 | 12 | `1e7cf8e053bdf3029df2ac675210fa1e0d64bcd7db453007c4365eff89e02131` |
+| MC and trainer | 45 | 31 | 10 | `a142ea35c553312d57aef8718315cec42d33a36f48dd201ce0fe8c8743dde63a` |
+| General reader | 43 | 33 | 11 | `85fc6cd6ac049d9bd31dab5a7fe2ea2f0a62be0632db7614ec54840028625e1f` |
+| Pontifical ceremonies | 56 | 20 | 16 | `9288fb58374991c686c91d1ad4e39b11622e928b30d2831fefa1d9bfa265ee72` |
+
+No PDF rebuild or installation was required: the current installed artifacts
+already embody these selections, and their exact page, byte, and hash
+identities match the immediately following final visual-remediation record.
+
 ## Six-edition final visual remediation — 2026-07-28
 
 All six editions now use compact, audience-specific comparison and

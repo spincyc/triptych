@@ -1,8 +1,14 @@
 # Pontifical-ceremonies edition guide map
 
 Status: **bounded public alpha**
-Audit date: 2026-07-28
+Audit date: 2026-07-29
 Edition selection: `ed-pontifical`
+
+Current generated selection: **56 admitted records and 20 omissions from 76
+canonical records**. This statement supersedes the historical 43-record
+checkpoint retained in the accumulated narrative. The installed artifact is
+the reviewed 16-page snapshot recorded at the head of the production
+manifest.
 
 The title page now carries only the terse `Alpha` status. The explanation of
 the bounded inventory, edition horizon, non-authority boundary, and reliance
@@ -11,7 +17,7 @@ common rights notice shares the final generation-metadata page.
 
 This focused visual reference selects canonical alpha records in the
 pontifical-and-prelatial category or records with genuine recorded
-pontifical relevance. Its current canonical selection contains forty-three
+pontifical relevance. Its current canonical selection contains fifty-six
 records. Visual proximity does not create relevance.
 
 For the bounded appointments-and-books family, altar and carried lights,
