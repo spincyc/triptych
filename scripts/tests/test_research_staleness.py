@@ -1,7 +1,9 @@
 """Tests for the cross-provider research staleness ledger."""
 
+import contextlib
 import importlib.machinery
 import importlib.util
+import io
 import pathlib
 import tempfile
 import unittest
@@ -55,9 +57,32 @@ class ResearchStalenessTests(unittest.TestCase):
     def test_sibling_provider_research_change_flags_both(self):
         self.tool.cmd_bootstrap()
         (self.claude_leaf / "research/scope.md").write_text("scope v2")
-        self.assertEqual(1, self.tool.cmd_status(None))
-        self.assertEqual(1, self.tool.cmd_explain("gpt", "articles/example"))
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            self.assertEqual(1, self.tool.cmd_status(None))
+            self.assertEqual(1, self.tool.cmd_explain("gpt", "articles/example"))
         self.assertEqual(1, self.tool.cmd_explain("claude", "articles/example"))
+        diagnostic = output.getvalue()
+        self.assertIn(
+            "stale gpt articles/example "
+            "[cross-provider diagnostic only; staleness grants no authority "
+            "to change this provider]",
+            diagnostic,
+        )
+        self.assertIn(
+            "changed input src/claude/articles/example/research/scope.md "
+            "[cross-provider diagnostic only; staleness grants no authority "
+            "to change this provider]",
+            diagnostic,
+        )
+
+    def test_provider_local_change_does_not_show_cross_provider_notice(self):
+        self.tool.cmd_bootstrap()
+        (self.gpt_leaf / "research/scope.md").write_text("scope v2")
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            self.assertEqual(1, self.tool.cmd_explain("gpt", "articles/example"))
+        self.assertNotIn(self.tool.CROSS_PROVIDER_NOTICE, output.getvalue())
 
     def test_bound_source_record_change_flags_binder_only(self):
         self.tool.cmd_bootstrap()

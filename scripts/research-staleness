@@ -21,6 +21,10 @@ ROOT = Path(__file__).resolve().parent.parent
 LEDGER = ROOT / "src" / "sources" / "inventories" / "research-staleness-v1.toml"
 PROVIDERS = ("gpt", "claude")
 SCHEMA = 1
+CROSS_PROVIDER_NOTICE = (
+    "cross-provider diagnostic only; staleness grants no authority "
+    "to change this provider"
+)
 
 
 class StalenessError(Exception):
@@ -165,6 +169,32 @@ def compute_all() -> dict[tuple[str, str], dict]:
     return computed
 
 
+def input_provider(name: str) -> str | None:
+    parts = Path(name).parts
+    if len(parts) >= 3 and parts[0] == "src" and parts[1] in PROVIDERS:
+        return parts[1]
+    return None
+
+
+def changed_inputs(recorded: dict, current: dict) -> list[str]:
+    old_inputs = recorded.get("inputs", {})
+    new_inputs = current.get("inputs", {})
+    return [
+        name
+        for name in sorted(set(old_inputs) | set(new_inputs))
+        if old_inputs.get(name) != new_inputs.get(name)
+    ]
+
+
+def has_cross_provider_change(
+    provider: str, recorded: dict, current: dict
+) -> bool:
+    return any(
+        input_provider(name) not in (None, provider)
+        for name in changed_inputs(recorded, current)
+    )
+
+
 def cmd_bootstrap() -> int:
     if LEDGER.is_file():
         raise StalenessError("ledger already exists; use rebaseline")
@@ -186,7 +216,12 @@ def cmd_status(provider_filter: str | None) -> int:
             print(f"unbaselined {provider} {leaf}")
             stale += 1
         elif entry["fingerprint"] != current[key]["fingerprint"]:
-            print(f"stale {provider} {leaf}")
+            suffix = (
+                f" [{CROSS_PROVIDER_NOTICE}]"
+                if has_cross_provider_change(provider, entry, current[key])
+                else ""
+            )
+            print(f"stale {provider} {leaf}{suffix}")
             stale += 1
     for key in sorted(recorded):
         if key not in current and (not provider_filter or key[0] == provider_filter):
@@ -209,15 +244,20 @@ def cmd_explain(provider: str, leaf: str) -> int:
     old_inputs = entry["inputs"]
     new_inputs = current[key]["inputs"]
     changed = False
-    for name in sorted(set(old_inputs) | set(new_inputs)):
+    for name in changed_inputs(entry, current[key]):
+        suffix = (
+            f" [{CROSS_PROVIDER_NOTICE}]"
+            if input_provider(name) not in (None, provider)
+            else ""
+        )
         if name not in new_inputs:
-            print(f"removed input {name}")
+            print(f"removed input {name}{suffix}")
             changed = True
         elif name not in old_inputs:
-            print(f"new input {name}")
+            print(f"new input {name}{suffix}")
             changed = True
-        elif old_inputs[name] != new_inputs[name]:
-            print(f"changed input {name}")
+        else:
+            print(f"changed input {name}{suffix}")
             changed = True
     if not changed:
         print(f"fresh {provider} {leaf}")

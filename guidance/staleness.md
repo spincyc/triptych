@@ -22,11 +22,20 @@ changed inputs. Staleness is a flag for re-evaluation, not a judgment
 that the paper is wrong, and it never blocks builds or release checks on
 its own.
 
+Staleness is also diagnostic only: it grants no authority to edit,
+rebaseline, rebuild, install, or otherwise change an edition. A
+cross-provider input may make another provider's edition stale, but that
+dependency edge authorizes inspection only. Perform the re-evaluation
+steps below solely for providers that the current request expressly places
+in material-edit scope. Leave every other provider's flag open and its
+tracked and generated publication files unchanged until authority for that
+provider is explicit.
+
 ## Re-evaluation
 
-Each provider re-evaluates its own stale editions independently; one
-provider's re-evaluation neither clears nor substitutes for another's.
-For each stale edition the provider:
+Each authorized provider re-evaluates its own stale editions independently;
+one provider's re-evaluation neither clears nor substitutes for another's.
+For each stale edition within the expressly authorized provider scope:
 
 1. reads the changed inputs (`explain`) and the current paper;
 2. produces **both** candidate treatments under the ignored build tree
