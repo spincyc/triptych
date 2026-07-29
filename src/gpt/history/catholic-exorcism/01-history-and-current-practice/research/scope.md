@@ -8,7 +8,7 @@
 - **Primary profile:** `guidance/history/historical-accounts.md`
 - **Additional profile:** `guidance/articles.md` applies only to the bounded theological-authority and current-law claims
 - **Legal center:** universal law of the Latin Church, with U.S. territorial implementation distinguished and a bounded Eastern jurisdictional comparison
-- **Current-law as-of date:** 2026-07-28
+- **Current-law as-of date:** 2026-07-29
 - **Governing Code:** the 1983 *Codex Iuris Canonici*, promulgated by John Paul II on 1983-01-25 and in force from 1983-11-27; canon 1 limits its scope to the Latin Church
 - **Additional historical-source inspection:** 2026-07-27
 
@@ -27,9 +27,9 @@ The promised completed deliverable is a bounded comprehensive study of at least
 source-audited coverage of every included period and governing question, with
 material disagreements and source ceilings stated; it does not mean exhaustive
 control of every manuscript, critical edition, local rite, particular law, or
-reported case. The current 116-page paper contains 104 Arabic-numbered
-substantive pages: pages 1--104, from the governing thesis through the pastoral
-conclusion, before the terminal apparatus begins on page 105. It therefore
+reported case. The installed 120-page public-alpha edition contains 108 Arabic-numbered
+substantive pages: pages 1--108, from the governing thesis through the pastoral
+conclusion, before the terminal apparatus begins on page 109. It therefore
 fulfills both the bounded completeness commitment and the extent commitment.
 It remains a public alpha because alpha is the publication maturity label, not
 a claim that the bounded paper is unfinished. Future work must remain
@@ -122,13 +122,14 @@ source function, and generation metadata.
 
 The earlier fifteen-page candidate and its 26 July production record are
 superseded by this expanded modular paper. Those dated records remain
-historical evidence for their exact snapshots. The current 116-page snapshot,
-including 104 Arabic-numbered substantive pages before terminal apparatus, has
-passed the recorded source-role, currentness, architecture, claim, build, web,
-visual, metadata, text, font, identity, rights, and safety checks documented in
-the exact-snapshot record.
+historical evidence for their exact snapshots. The installed 120-page edition,
+including 108 Arabic-numbered substantive pages before terminal apparatus,
+supersedes the 116-page exact snapshot after the 29 July cross-period synthesis
+and currentness recheck. Its exact-snapshot, web, visual, metadata, font,
+identity, rights, and safety checks are recorded in
+`final-exact-snapshot-review-2026-07-29.md`.
 
-The current public-alpha snapshot is installed, cataloged, and published. The
-100-page minimum and bounded completion standard are met. The source families
-identified above remain explicit ceilings and possible future improvements;
-they are neither silently closed nor required to support any published claim.
+The installed source, PDF, and web edition meet the 100-page minimum and
+bounded completion standard. The source families identified above remain
+explicit ceilings and possible future improvements; they are neither silently
+closed nor required to support any published claim.

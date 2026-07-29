@@ -138,6 +138,57 @@ The acclamation answers that one lives not by bread alone but by every word from
 
 The Entrance is drawn from Ps. 69:2, 6 (modern 70); the Collect begins *Adesto, Domine, famulis tuis*; the offerings prayer, *Propitius, Domine, quaesumus, haec dona sanctifica*; and the final prayer, *Quos caelesti recreas munere*. Communion offers Wis. 16:20 or John 6:35. Consult the approved Missal for the protected English and the complete ritual text.
 
+## Comparative Reception and Theological Dossier
+
+> **Three histories of bread**
+>
+> Exodus narrates provision and testing; Psalm 78 turns that event into intergenerational memory; John receives the manna dispute but redirects it toward the Father, belief, and the Son who is bread of life. Typology relates the texts without making their speakers, questions, or gifts interchangeable.
+
+### Complaint, daily sufficiency, and the education of desire
+
+Exodus 16 begins with a congregation complaining against Moses and Aaron and remembering Egypt through an imagined abundance of meat and bread. The memory is morally distorted but the hunger is not dismissed. God answers before the people understand the gift, promises both quail and bread, and makes daily gathering a test of whether Israel will walk in the divine instruction. The appointed cut omits later hoarding and Sabbath episodes, but verse 4’s daily measure preserves their governing logic: provision is joined to disciplined reliance.
+
+The question “What is this?” is not a decorative etymology. Israel receives before it can classify. Psalm 78 later names manna and “bread of angels,” but also places the gift inside a history of rebellion, testing, judgment, and mercy. The appointed responsorial verses select tradition, heavenly command, food, and arrival at God’s holy land. The whole psalm prevents nostalgia for a miracle detached from covenant fidelity.
+
+Augustine’s exposition of Psalm 77 reads manna christologically and ecclesially, but his spiritual reception does not cancel Exodus’s bodily hunger, daily gathering, or Israel’s own scriptural identity. Ambrose’s mystagogy similarly contrasts wilderness figure and Christ’s gift. These witnesses show a received Christian trajectory; they do not establish that every detail of Exodus was composed as an encoded Eucharistic rubric.
+
+### John’s crowd: right pursuit, disordered motive, deeper giver
+
+John 6:24–35 follows the feeding and crossing of the sea. The crowd’s pursuit is energetic and superficially admirable. Jesus exposes its motive: they seek because they ate and were filled, not because they perceived the sign. The correction does not despise bodily bread. It distinguishes satisfaction from recognition and redirects labor toward food enduring to eternal life, which the Son of Man will give.
+
+The dialogue repeatedly shifts the grammatical subject. The crowd asks what works it should do; Jesus speaks of the work of believing in the one sent. They request a sign and cite manna; Jesus corrects the giver from Moses to the Father and the tense from a past provision to the Father’s present giving. Finally, the bread is not merely an object from heaven: Christ identifies himself as bread of life. Desire is not extinguished but converted from control of a gift toward communion with the giver.
+
+Chrysostom’s Homilies 43–45 track these turns instead of beginning at the conclusion. He faults the crowd’s fixation without pretending hunger is evil, and he holds together gift, faith, and moral seriousness. Augustine’s Tractate 25 distinguishes seeking Jesus for the sign from seeking him for perishable satisfaction and interprets belief as eating in a real spiritual sense. Aquinas distinguishes manna from the true bread given by the Father and then, later in the discourse, sacramental from merely exterior reception. Their emphases differ, but all resist a magical reading in which contact with bread substitutes for faith and conversion.
+
+### Ephesians: the new person is corporate and ethical
+
+Ephesians 4 is semi-continuous and must not be presented as though chosen to explain John 6. Its discontinuous lection is also visible: verse 17 is followed by verses 20–24, omitting the darkened understanding and hardened conduct of verses 18–19. The movement from former walk to learning Christ, renewed mind, and putting on the new person is ethical and ecclesial, not a contempt for the body or created world.
+
+Chrysostom’s Homily 13 treats stripping and clothing as an actual change of conduct. Baptismal reception gives the imagery a sacramental home, but baptism does not make renewal automatic or solitary. The continuation of Ephesians names truth-telling, disciplined anger, honest labor capable of sharing, edifying speech, forgiveness, and imitation of God. “New person” therefore cannot be reduced to private interior freshness. It describes a life whose relations are being remade in Christ.
+
+Placed beside John, the texts form a legitimate liturgical overlay rather than an editorially designed pair. Belief in the sent one and renewal of mind both resist appetite closed around immediate satisfaction. Yet Ephesians must keep its own corporate horizon and John his own sign-and-discourse sequence.
+
+### The acclamation and the two Communion endings
+
+The acclamation quotes the Deuteronomic confession that human life is not sustained by bread alone but by every word from God. In Matthew’s temptation narrative that confession refuses to make sonship a demand for self-serving spectacle. On this Sunday it does not deny Exodus bread; it prevents bread from being detached from the giver’s word and covenant.
+
+Communion A and B then create genuinely different endings. Wisdom 16 receives wilderness provision as heavenly food accommodated to the eater’s desire. John 6:35 returns exactly to the Gospel’s climax. Ambrose’s Eucharistic catechesis and Aquinas’s John commentary illuminate both trajectories, but no generic recurring celebration establishes which text was used. The guide therefore studies both without printing a composite.
+
+The Week XVIII offerings prayer adds a decisive personal transformation: the gifts are sanctified and the worshippers ask to become an enduring offering. The prayer after Communion asks that recipients of the heavenly gift be protected and made worthy of eternal redemption. Bread imagery thus reaches its liturgical goal not in possession of a sacred object but in a people renewed, protected, and ordered toward communion.
+
+### Reception beyond commentary
+
+The manna tradition changed material register in medieval and early modern visual culture. The Cloisters stained-glass panel *Gathering Manna* (1497–99) makes collection, differentiated figures, and carried portions visible in a church window. Allori’s 1595–96 tapestry design joins manna and the tablets within an elaborate civic-ecclesial commission. Neither object explains Exodus, but each shows how provision became a public visual memory.
+
+The hymn tradition’s “bread of heaven” language similarly moves the biblical image into congregational petition. Such reception is valuable only when named as reception: it cannot be quoted backward as the sense of Exodus’s Hebrew question or of John’s crowd. Visual and musical afterlives make the history of Christian hearing broader; they do not replace exegesis.
+
+| **Textual movement** | **Reception gain** | **Limit** |
+|:-------------|:------------------------|:----------------------------|
+| Unknown gift to remembered manna | Psalm and patristic reception teach memory and typology. | Do not erase bodily hunger, complaint, daily measure, or testing. |
+| Past gift to present giver | John corrects source, motive, and object of desire. | Do not despise food or reduce faith to appetite. |
+| Old walk to new person | Baptismal and moral reception hold identity and conduct together. | Ephesians is semi-continuous, not selected as a commentary on John. |
+| Gift received to persons offered | The Missal prayers frame communion as sanctification and transformation. | Communion alternatives remain mutually exclusive. |
+
 ## Source-Grounded Synthesis Across the Propers
 
 ### From provision to the giver
@@ -187,13 +238,11 @@ Israel asks “What is this?”; the Johannine crowd asks what work and sign it 
 
 ## The Propers: Notable and Quotable
 
--   “Manhu! which signifieth: What is this!” (Exod. 16:15, Douay–Rheims) preserves a question inside the name by which the wilderness food became culturally memorable.
+-   **“Manna of Females” (*First Reading; Responsorial Psalm*)** William Dent’s 1784 satirical etching *Catlap for Ever, or the Smuggler’s Downfall* puts the phrase into William Pitt’s speech about reduced tea duties. Wilderness food becomes cheap tea in an argument about taxation, smuggling, gin, windows, coal, and candles. The British Museum record controls the object, inscription, and political setting; the satire illuminates an economic afterlife of “manna,” not the meaning of Exodus.
 
--   “Put off the old man” and “put on the new man” (Eph. 4:22, 24, Douay–Rheims) supplied Christian culture with a durable clothing idiom for conversion. In this passage the image concerns a created new manner of life, not branding or superficial reinvention.
+-   **“Operation Manna” (*First Reading; Responsorial Psalm*)** The Allied food drops over the occupied Netherlands in 1945 turned the biblical name into an operational title. The named relation was material rather than decorative: food came from aircraft to people suffering in the Dutch famine. The NOS liberation-year dossier explicitly explains the biblical naming and preserves the danger, organization, and human labor behind the aid. The comparison must not recast war relief as an unmediated miracle.
 
--   “Labour not for the meat which perisheth” (John 6:27, Douay–Rheims) has often traveled as a maxim contrasting transient and lasting ends. Its Gospel setting prevents the phrase from becoming contempt for work, food, or care of bodies.
-
--   “I am the bread of life” (John 6:35, Douay–Rheims) is both the Gospel’s climax and one printed Communion-antiphon option. That institutional reuse is exact and liturgical; it does not prove that this option was enacted at every Year B celebration.
+-   **“Bread of heaven, feed me” (*Gospel; Communion B*)** William Williams’s pilgrimage hymn *Guide Me, O Thou Great Jehovah*, in Peter Williams’s English tradition, gathers wilderness guidance, living water, bread from heaven, death, and arrival in Canaan into a singer’s petition. A 1913 public-domain hymnal witness was checked. The hymn therefore shows Exodus and Johannine imagery becoming congregational prayer; it is not direct exegesis of John 6 or evidence that the Communion option was selected.
 
 ## Appendix: Liturgical Resolution
 
@@ -236,8 +285,14 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 -   Ambrose, *On the Mysteries* 8.44–49.
 
+-   William Dent, [*Catlap for Ever, or the Smuggler’s Downfall*](https://www.britishmuseum.org/collection/object/P_1868-0808-5356) (1784), British Museum 1868,0808.5356.
+
+-   NOS, [“Als manna uit de hemel: voedsel gedropt in Nederland”](https://nos.nl/bevrijdingsjaar/bericht/2332123-als-manna-uit-de-hemel-voedsel-gedropt-in-nederland), liberation-year dossier for 29 April 1945.
+
+-   William Williams and Peter Williams, [“Guide me, O thou great Jehovah”](https://hymnary.org/hymn/HoP1913/265), *The Hymnal of Praise* (1913), no. 265.
+
 -   GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
-**Last revised (UTC):** 2026-07-28T22:15:00Z
+**Last revised (UTC):** 2026-07-29T18:04:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

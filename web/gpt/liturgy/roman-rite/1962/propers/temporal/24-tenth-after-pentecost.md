@@ -320,6 +320,59 @@ Direct liturgical commentators develop this compact petition in distinct ways. G
 
 The prayer has a longer and more mobile history than its present Sunday placement. The Old Gelasian prints it twice in adjacent formularies (III.V, no. 1197, and III.VI, no. 1200), without assigning either occurrence to the Tenth Sunday after Pentecost. Mohlberg’s diplomatic text has *distituas* in both occurrences; Wilson normalizes *destituas* and judges the first occurrence probably inserted through scribal error. La Fontaine’s inspected modern synthesis reports later Gellone/Gregorian- supplement, Vilabertran, Alemannic, and Ambrosian assignments. Those underlying editions were not all directly inspected for this publication, so their detailed variants and calendar assignments remain secondary orientation. The evidence supports durable, portable transmission, not authorship, an original date, or the reason for the Roman prayer’s eventual Pentecost-X location.
 
+## Comparative Reception Dossier
+
+> **How to use this dossier**
+>
+> The witnesses below do not supply one inherited commentary on this complete Mass. They receive different appointed units in different genres and periods. The comparison therefore asks three questions at every stage: what the source text says in its own literary setting; what a later reader adds; and what the 1962 sequence permits the assembled Church to hear without turning juxtaposition into a claim about compiler intent.
+
+### Psalmic distress: from a betrayed speaker to the praying Church (*Int.*)
+
+The Introit is a liturgical cento from Psalm 54 (modern 55), not a continuous reading of the psalm. Its first movement retains the repeated cry and expected deliverance; its second identifies the enthroned Eternal and the moral unchangeableness of the adversaries; its third commands the worshipper to cast care upon the Lord; the opening invocation then returns as the verse. The omitted psalmic setting matters. The complete lament speaks of violence in the city and, most painfully, betrayal by a companion with whom the speaker once shared worship. The antiphon does not disclose that whole plot, but neither does it convert the cry into generic serenity.
+
+The Greek and Latin fathers receive this instability ecclesially in different ways. Theodoret keeps the threatened speaker and divine rescue prominent, while Augustine repeatedly moves from the psalmist to Christ’s body praying amid division. Augustine’s evening, morning, and noon become continual prayer; his interpretation of casting care addresses the “little one” sustained by God. Bellarmine, writing in another exegetical culture, gives closer attention to the sequence of distress, petition, judgment, and trust. None of the three licenses the worshipper to identify a disliked neighbor with the psalm’s unchangeable enemies. Their useful disagreement is about scale: threatened individual, afflicted ecclesial body, and moral-spiritual instruction.
+
+The liturgical cento makes a further move that belongs to the Missal rather than to any commentator. It begins the Mass with a burden already voiced before God and ends its antiphonal unit with entrustment. The Collect will not ask for the removal of every burden; it asks multiplied mercy and movement toward promises. Distress is therefore neither the final word nor an embarrassing prelude to be hurried past.
+
+### Omnipotence and mercy: an oration received as theology (*Coll.*)
+
+The Collect’s celebrated clause says that God manifests omnipotence chiefly in sparing and showing mercy. Its grammar first addresses God through a relative clause, then asks that mercy be multiplied, and finally gives the purpose: those hastening toward the promises may be made sharers in heavenly goods. Mercy is not only remission behind the runner; it is the power that creates and sustains the runner’s movement.
+
+The Gelasian witness is indispensable and limited. It proves an early sacramentary form and records *gratiam* where the 1962 Missal reads *misericordiam*; it does not prove Gelasian authorship or the antiquity of this Sunday’s later assignment. Aquinas receives the underlying axiom theologically when he explains that the exercise of mercy displays power precisely because pardon belongs to the one who has authority to punish and because mercy draws creatures from defect toward good. The Catechism places the same prayer in its account of divine omnipotence. Francis, in *Misericordiae vultus* 6, reads mercy as the mode in which divine power is made visible.
+
+These witnesses deepen rather than flatten the petition. The sacramentary shows transmission and variation; Aquinas analyzes agency; the Catechism locates the prayer doctrinally; the modern papal reception presses its ecclesial visibility. None turns mercy into indifference to truth, victim, or conversion. In this Mass the Gospel will specify the obstacle as self-justifying contempt, while the Secret and Postcommunion keep divine action necessary after confession.
+
+### Charism: difference, divine unity, and the common good (*Ep.*)
+
+First Corinthians 12:2–11 has an argumentative order often lost when its gift list is read alone. Paul begins from former subjection to mute idols, gives a criterion centered on confession of Jesus as Lord in the Holy Spirit, names gifts, ministries, and operations in relation to Spirit, Lord, and God, and only then enumerates manifestations. The controlling purpose is *ad utilitatem*: manifestation is given for benefit. The continuation into the one body and the “more excellent way” of charity prevents the lection from becoming an inventory of impressive persons.
+
+Chrysostom and Ambrosiaster agree that difference does not imply several divine sources and that grace cannot be converted into debt. They differ in emphasis. Chrysostom addresses envy and discouragement among recipients, showing how unequal manifestations remain gifts of the same giver. Ambrosiaster presses the triadic wording and ecclesial usefulness. Basil’s *On the Holy Spirit* 16.37 places distributions within the Spirit’s undivided activity; Aquinas’s reportatio on the chapter distinguishes gifts, ministries, and operations and carries the passage forward into the body’s mutual need. *Lumen gentium* 12 and *Apostolicam actuositatem* 3 receive charisms in the Church while subjecting their exercise to discernment, communion, and service.
+
+The breadth of reception also exposes what the passage does not settle. It does not make every natural ability a charism in the same sense; identify a charism with canonical office; promise every listed manifestation in every age or assembly; authorize self-certification; or excuse disorder because a claim sounds spiritual. Its place immediately before the Gradual is liturgically bracing: claims to manifestation pass beneath the judgment of God’s countenance and the petition for guarded sight.
+
+### Two worshippers: justification without caricature (*Gosp.*)
+
+Luke supplies the audience and vice before the parable: some trust in themselves that they are just and despise the rest. The Pharisee’s acts are not invented crimes. Fasting and tithing can be genuine disciplines; their placement inside comparison makes them a ground of self-reliance and contempt. The publican supplies no counter-inventory. Distance, lowered eyes, the struck breast, and the request for propitiating mercy form a petition, but God’s verdict—not the gestures taken by themselves—is decisive.
+
+Tertullian uses the contrast against Marcion to defend the continuity of humility and judgment rather than to condemn Israel. Augustine’s *Sermon* 115 contrasts self-praise joined to accusation with confession that opens toward pardon. Cyril of Alexandria observes how the Pharisee’s comparison corrupts what might otherwise have been praiseworthy. Chrysostom deploys the text twice in one homily: first to show that fasting without its fitting moral fruits is sterile, and later to show that a true allegation does not grant permission to revile. Anthony of Padua expands the publican’s posture into penitential instruction in a different Sunday arrangement.
+
+Comparison discloses a shared center and real diversity. Augustine emphasizes grace and pardon; Cyril analyzes boastful comparison; Chrysostom tests fasting and speech; Anthony develops posture and penitence. The parable cannot responsibly serve as an anti-Jewish type, a denunciation of disciplined religion, a romanticization of wrongdoing, or a technique for manufacturing humility. Its target is the attempt to use religious performance and another person’s degradation as proof of one’s standing before God.
+
+### Offering after confession: sacrifice received, not self-certified (*Off., Sec., Comm., Postcomm.*)
+
+The Offertory and Communion deliberately require their complete psalms as context. Psalm 24 lifts the soul, waits upon God, remembers sin, asks for instruction, and seeks redemption. Psalm 50 moves through confession, cleansing, a contrite heart, restored joy, teaching, praise, and rebuilt Zion before it anticipates accepted sacrifice. Augustine, Cassiodorus, Theodoret, Aquinas, and Bellarmine do not reduce either psalm to one level. Historical petition, moral conversion, ecclesial reception, Christological fulfillment, and eschatological worship appear in different proportions.
+
+That plurality helps interpret the orations. The Secret asks that already dedicated sacrifices be rendered acceptable and medicinal for the offerers. The Communion does not announce that any external act is automatically just; heard after Luke, it lets the assembly receive Psalm 50’s sacrificial ending through contrition and divine rebuilding. The Postcommunion then refuses a neat finish: those whom God does not cease to restore ask never to be deprived of gracious aid. Guéranger, Schuster, Nicolau, and La Fontaine receive this continuing dependence from liturgical, historical, and sacramental angles.
+
+The whole sequence therefore corrects two opposite errors. One would make interior humility a substitute for ecclesial worship and concrete service. The other would make worship, gifts, or disciplines evidence that acceptance has already been secured. The Mass retains cry, running, charism, fasting, tithing, offering, sacrament, and aid, but orders all of them beneath mercy received from God and toward benefit beyond the self.
+
+| **Reception lane** | **What it contributes** | **What it cannot prove** |
+|:-------------|:------------------------|:----------------------------|
+| Patristic Psalm and Gospel exposition | Ecclesial, Christological, ascetical, and moral readings in identifiable loci. | Compiler intent, one exclusive historical sense, or a license to assign biblical enemies to contemporaries. |
+| Medieval theology and commentary | Analysis of mercy, prayer, charism, sacrifice, and ordered agency. | That a scholastic distinction caused the Missal’s assignment or exhausts the text. |
+| Sacramentary and Missal history | Wording, variant, sequence, assignment, and liturgical function. | Authorship merely from a book’s traditional name, or actual local performance without separate evidence. |
+| Modern ecclesial reception | Charisms ordered to communion and mercy made visible in the Church. | A replacement for the appointed texts, rubrics, or historical witnesses. |
+
 ## Source-Grounded Synthesis Across the Propers
 
 The formulary repeatedly distinguishes received gift from self-grounded claim. The Introit’s singer is heard and sustained; the Collect names pardon and mercy as the chief manifestation of omnipotence; the Epistle attributes diverse manifestations to one divine source and orders them toward common benefit. The Gospel then exposes religious practice converted into comparison: the publican petitions mercy, and God justifies. At the altar, dedicated gifts become remedies only by divine action, sacrifice awaits divine acceptance, and communicants require continual restoration and help.
@@ -402,6 +455,6 @@ The result is ecclesial as well as personal. Paul’s *ad utilitatem* prevents g
 
 -   Martin Luther King Jr., [“Pride Versus Humility: The Parable of the Pharisee and the Publican,”](https://kinginstitute.stanford.edu/king-papers/documents/pride-versus-humility-parable-pharisee-and-publican-sermon-dexter-avenue) Dexter Avenue sermon manuscript, probably 25 September 1955.
 
-**Last revised (UTC):** 2026-07-28T21:48:17Z
+**Last revised (UTC):** 2026-07-29T18:04:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

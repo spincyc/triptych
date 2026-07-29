@@ -77,3 +77,26 @@ requires stronger reader wording, weakens no claim, and contradicts none.
 are already incorporated and controlled; the remaining triggers are irrelevant
 collateral. No source, installed PDF, web edition, catalog, or release change
 is warranted. This review does not rebaseline the edition.
+
+## Superseding qualitative deficiency determination
+
+The preceding verdict asked whether a specified set of changed inputs
+contradicted or displaced claims in the then-current paper. It did not answer
+the separate editorial question later raised by the user: whether a paper of
+this scope did enough cross-period analytical work. The user expressly found a
+lack of content, depth, and breadth and authorized a full replacement pass.
+
+The minimal candidate required a comparative bridge across the paper's
+otherwise well-developed modules. The research-first candidate exposed the
+same gap more sharply: a reader could not reliably compare recipient, act,
+minister, artifact, authority, evidence class, and duty of care across Gospel
+narrative, initiation, office, ritual book, modern law, reported case,
+clinical control, and safeguarding material. The replacement adds a
+source-grounded seven-test chapter while preserving the paper's non-operational
+and anti-sensational limits.
+
+**Superseding verdict: MATERIAL—qualitative insufficiency in cross-period
+synthesis.** The user provided the explicit replacement authority required by
+the policy. The installed replacement's exact identity and every-page review
+are recorded in `final-exact-snapshot-review-2026-07-29.md`; rebaselining
+follows installation.

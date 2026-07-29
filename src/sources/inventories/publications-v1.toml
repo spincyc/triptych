@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-29"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 133
-source_surface_file_count = 1949
-snapshot = "sha256:ceb222c99ed74ca5dcc413f2f87b483475ec3c9f0e25630df1fc070741f49600"
+source_surface_file_count = 1960
+snapshot = "sha256:a862b1eb43819f76da15d81908849ed439574ca076eabd41d08744caf42a1254"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -6833,6 +6833,12 @@ kind = "research-record"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/deep-broad-redevelopment-2026-07-29.md"
+sha256 = "46bac0154a3fdb2211fe60f8289a8418f71098c90589371e84fb3f858f2d21ac"
+kind = "research-record"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/delivery-work-plan-2026-07-27.md"
 sha256 = "4cf922f41db315632902f89c5111a856d19144de6ce7706459abc16ee109398f"
 kind = "research-record"
@@ -6846,13 +6852,19 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/evidence-map.md"
-sha256 = "81bc9f3e3be6bd265385e165610325c13ae9cb77e0f0cbae146ed07d12412881"
+sha256 = "ac451eb70bad86d316ad1625a3988df98ebce7cb643b3215c8f7c2578381c8a3"
 kind = "research-record"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/final-exact-snapshot-review-2026-07-27.md"
 sha256 = "c9b9c2aee5b3ce04c082a09a8a5a32b2c3847f6c167ff0dcb82d7a713ef2b0b3"
+kind = "research-record"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/final-exact-snapshot-review-2026-07-29.md"
+sha256 = "89bd1f69f0e8d67422a35b3b1446bf752cd4bdefdfcc10c02805011216b432e7"
 kind = "research-record"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -6906,13 +6918,13 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/scope.md"
-sha256 = "4c63671ae8a404380c0b6bdf0999cf910d4171dbbf76cecd8f045956cbd1f127"
+sha256 = "a7171d43b5d0c377f3cfcf660c3f91e23b92a5198045ae0a4c8d64c77eec9581"
 kind = "research-scope"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md"
-sha256 = "479dabd221fdbd12c0f0777b041ebc736465aaa0c532643f648dff30cb344e87"
+sha256 = "537315d6f003b6c4b525c86d592861641e8d77820a3cb85cc8daa69ce328d419"
 kind = "legacy-source-audit"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -6924,7 +6936,7 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/staleness-review-2026-07-29.md"
-sha256 = "f011e93b209c5f44f7ec572fe86a80e373a7089775a0c0ada9681bde1e9eee3e"
+sha256 = "3ef8f7fcb5364db591f94ef5401f6b147e20c4afbc193727dc2e1c7bd82048c4"
 kind = "research-record"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -7031,6 +7043,12 @@ kind = "rendered-content"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
+path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/75-cross-period-synthesis.tex"
+sha256 = "a29d4a8f3b98408fb3cedcf8bd417b24b96213b0d6597a241ca1622bac9c9b6b"
+kind = "rendered-content"
+owners = ["history/catholic-exorcism/01-history-and-current-practice"]
+
+[[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/80-catholic-demonology.tex"
 sha256 = "eb98ef96fe7b602fbe2995ff928bad00f983a02ebb6042504c5def86799b37ae"
 kind = "rendered-content"
@@ -7044,7 +7062,7 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/all.tex"
-sha256 = "b064f00050ab7eebcc8d52c1ef9a4af0d283bf5c35a9e3f36289c39a68886c1d"
+sha256 = "9fb7e3ca1378b1bd9acbd0e870b8767459e4b3aa474e9be3be79aba105b7b02b"
 kind = "rendered-content"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -8394,7 +8412,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/main.tex"
-sha256 = "6956573bdc84ea73b7a57734ce68afe75e5918a9a699ff581bc65955d814a5c8"
+sha256 = "2583c42c7f0b006a55da0830807e7df5f211fad08941f192dc6e2b37f75c5a45"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
@@ -8431,6 +8449,12 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/research/communion-redevelopment.md"
 sha256 = "16c5ba2d4765696350088f6f940834eec2f2c33dbe84c19e6918f4574cf16725"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/research/deep-broad-redevelopment-2026-07-29.md"
+sha256 = "4c8a6409ea7193c67dfc92a9e245bb7e0588b8425bb6b24e70a9a6bd896585b3"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
@@ -8484,7 +8508,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/research/scope.md"
-sha256 = "747a031806187436264212cca042361fd9b60b1ccc10268d1c2ab5f3f2e33c20"
+sha256 = "137933cb69e45ffa2c80f803083da0f7af3b689d96cd78b0bbcab8a782691b93"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
@@ -8502,7 +8526,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/research/staleness-review-2026-07-29.md"
-sha256 = "5caf5456e56d63bfba17dca1147fa68043e493e830b911a2d5952de2a1eddc96"
+sha256 = "a52a37a2680faccbcd41e264c99af05cd7ef609f2f45a1254aefecebcc8b208e"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
@@ -8557,6 +8581,12 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/sections/32-secret.tex"
 sha256 = "818af11b69c51fda801010ff33fe6033130b8235d0f06e2ef0dc5f36ed63f7bf"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/sections/33-comparative-reception.tex"
+sha256 = "edd2addcfe158250103ade9532528684c2545130665f1ff736fb54f6e8919c9d"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"]
 
@@ -11172,7 +11202,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/main.tex"
-sha256 = "1dfba9b5506382d0895512718fc3ffeb819ac90455edcdc3fbad3c1b90b421fd"
+sha256 = "9ac1250ec695aeb69e09276a9beae5d385027a61d067dab69f0008e14f95024b"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"]
 
@@ -11189,20 +11219,26 @@ kind = "proper-verification"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/research/deep-broad-redevelopment-2026-07-29.md"
+sha256 = "5a7fc2a69dc7982ae28daa713428fd19baa11d38339ba908b939573b060442f7"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "252f95f01bfe7dc031d56bf70e11be44daa8a949498b741c5e800bf716e2d5a5"
+sha256 = "6c99d3a72707a2ed4fe998ca468fa7a404dd931dddce96e0584ea9d88b35bb35"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
-sha256 = "b8fa8dc67e5401f551da2d5b9af54e70a45a5db5a34bb6d9d462291c37c3fe0f"
+sha256 = "da7f58c1d59f005704ce815ac947c9456edb9af530f9a29577627f86cd77fa2a"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/research/staleness-review-2026-07-29.md"
-sha256 = "5c4fc4789e3b49d0b06d67c695ed7616e4f2de1fa3e4e7161e7e5d478c915516"
+sha256 = "9a9f22b5e006da50e8b3b8a8bfecf93bfb4df37d79c572af2dab3568af657099"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"]
 
@@ -11233,6 +11269,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/sections/30-each-proper.tex"
 sha256 = "eda5439fefc2d27ea9bc5b281db44a9646fe8d466743229f267dac392f016b6e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/sections/33-comparative-reception.tex"
+sha256 = "256c124f9dc5deff919af7a27623674d7c2f9edf0c9e46ce9685c86ec6dc332a"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"]
 
@@ -11274,7 +11316,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/main.tex"
-sha256 = "e06c6ddba413864abdb8afafa36dea791e7e303a111b0d2a85b551682c4dbe84"
+sha256 = "b98b572154b67eb9e9a31a03e873ef9d1f85712e54e40c01bfb4131e5d8fad5c"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
 
@@ -11291,20 +11333,26 @@ kind = "proper-verification"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/deep-broad-redevelopment-2026-07-29.md"
+sha256 = "9f5f2353a7fa9466160d78df1c4007e2e897f08d4dbf5648741bbdca7a06b874"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/scope.md"
-sha256 = "6eaa26c326f34813a954d585a35ffaf717d20727509c4970cf266bd21b97d797"
+sha256 = "a676c97bd834a2a408b1934a28f23f68c2e3bdec8ef831d5845a901b3737ddac"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/source-bindings.toml"
-sha256 = "7483dae764eddf82578a19fcdc984060898b98e79d0233ca94b214e2c339395f"
+sha256 = "320b8628d2f5b5c69a014c1c8ddf9596f442effa55c6dd05ee4a436e87c9deab"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/staleness-review-2026-07-29.md"
-sha256 = "ef42f56f282ab805b724fa61f2b4b6a5e3b09cb98f999076d798291f58c7f541"
+sha256 = "b3c82b5920be6b5991e73171360eaaa718f4de202f11932c9f54ac98ea3c0eb2"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
 
@@ -11345,6 +11393,12 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/33-comparative-reception.tex"
+sha256 = "ccafc32d8ae807ace09b894ceaa7c18e20a32d1c53e8fbaf7f44f08e8bc53377"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/35-source-grounded-synthesis.tex"
 sha256 = "5e66cde86e6eee3e95b7d04245c3226e5cac6aadc9a084c45518081e89a53216"
 kind = "rendered-content"
@@ -11352,13 +11406,13 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/40-interpretive-and-notable.tex"
-sha256 = "98308492f15d4cb4830310791505f68a5d053270d721a99fe46b01bd9bd4c7c2"
+sha256 = "67fc3c71a2dc59a31a813b8a15981f0799e0eff378cdf509e8d60b27c1050f4a"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/90-apparatus.tex"
-sha256 = "02487c078bdce00e461282bfc00d88cdcca059c06f1202224e83cdc4029c321f"
+sha256 = "db052e9b3710e42955599a02081853a8c330dee4f447a18ee3d3d6c4be730585"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"]
 
@@ -11382,7 +11436,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/main.tex"
-sha256 = "3649f2db48be05d5d71d918db53b3d0de6d16537b3665476d127ea7588305ece"
+sha256 = "561524c4634c388988ebca3b5a4c56a85820f770067a64d35ea0086626daa291"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"]
 
@@ -11399,20 +11453,26 @@ kind = "proper-verification"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research/deep-broad-redevelopment-2026-07-29.md"
+sha256 = "f4512f87b74bf3ec2ccdb0de1409a2154ecc2a8058864c5be55a29675346568b"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research/scope.md"
-sha256 = "f5fbc13d2edf4841efb9329a3edbb219efeed701a999e1464741e3cbc0cebbcd"
+sha256 = "da58e3d501fb2deeed0a3e055f8140839a07ab0646f57ba9782da39b7ea15882"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research/source-bindings.toml"
-sha256 = "1de12c092da3d725f0bc2c87ab5747bf490d0949a5924b30719a519530529aae"
+sha256 = "057bd1532ffbce31d5f452876376599ff2f7ec34e7223a4179d303cea6b74a56"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research/staleness-review-2026-07-29.md"
-sha256 = "4e65687c60afd94743ed1830cd6ceb06e90a3e47edade129449b3606b0c79ba5"
+sha256 = "31464187f64fb5d775fcb214d08b2d9dc5f95b2f4e1d2ce54546480f1edcbbae"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"]
 
@@ -11443,6 +11503,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/sections/30-each-proper.tex"
 sha256 = "f5c325e268c7c0968e89c0db14b86d80ee3251e4d55678b64d2b9233cc015e51"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/sections/33-comparative-reception.tex"
+sha256 = "a5d840e0a4539df0fc2c34d66f6e83c2d97efb854a87f535dd833df0014f56a9"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"]
 

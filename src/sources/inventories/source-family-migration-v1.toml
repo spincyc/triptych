@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-29"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:ceb222c99ed74ca5dcc413f2f87b483475ec3c9f0e25630df1fc070741f49600"
+inventory_snapshot = "sha256:a862b1eb43819f76da15d81908849ed439574ca076eabd41d08744caf42a1254"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
-canonical_catalog_snapshot = "sha256:d9783ddf73c8a7eba11812ca19a424be51fbb0fc087ca384e5bdd857e5ca3df4"
+canonical_catalog_snapshot = "sha256:4dc4ce70afd4558894893e5bf47190acb9e3583be7b5b50239b06334271ac418"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:1eea303c663a914d84c652140b68f5547b360940499ce2ad949d1ac4d5f3e524"
+snapshot = "sha256:50b4f09f5f58c4ae664cd7cdc2662e136328bcda11c5f2e464ff27cedb728fac"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -905,7 +905,7 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = ["artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-17-new-advent-bda047c6", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-25-new-advent-e033307b", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-51-new-advent-79839238", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-55-new-advent-2bc51cd7", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-65-new-advent-633e6490", "edition.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.16.2-8", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.24.1-11-15-22", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.50.21-23", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.54.16-19-23-24", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.64.3-5", "work.augustine.enarrationes-in-psalmos"]
+canonical_ids = ["artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-17-new-advent-bda047c6", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-25-new-advent-e033307b", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-51-new-advent-79839238", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-55-new-advent-2bc51cd7", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.psalm-65-new-advent-633e6490", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.psalm-144-new-advent-fbe9c0c9", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.psalm-69-new-advent-6e31d5ed", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.psalm-77-new-advent-eaddbebe", "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.psalm-90-new-advent-45240d63", "edition.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28", "edition.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.16.2-8", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.24.1-11-15-22", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.50.21-23", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.54.16-19-23-24", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-28.64.3-5", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.143.15-21", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.68-poverty-and-help", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.76.15-30", "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.89.1-17", "work.augustine.enarrationes-in-psalmos"]
 trace_patterns = ["(?:Enarrationes in Psalmos|Expositions? (?:on|of) (?:the )?Psalm(?:s)?|Augustine[^\\n]{0,120}(?:Exposition on Psalm|Psalm\\s+[0-9]+))", "augustine\\.enarrationes\\-in\\-psalmos"]
 reviewed_on = "2026-07-29"
 notes = "Reviewed as the distinct source family for Enarrationes in Psalmos. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
@@ -925,7 +925,7 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9-checked-text-84752351", "artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.augustinus-it-omelia-120-f479c788", "edition.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25", "passage.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9", "work.augustine.in-iohannis-evangelium-tractatus"]
+canonical_ids = ["artifact.augustine.in-iohannis-evangelium-tractatus.english-npnf1-7-new-advent-web-2026-07-29.tractate-25-new-advent-58b3e1da", "artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9-checked-text-84752351", "artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.augustinus-it-omelia-120-f479c788", "edition.augustine.in-iohannis-evangelium-tractatus.english-npnf1-7-new-advent-web-2026-07-29", "edition.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25", "passage.augustine.in-iohannis-evangelium-tractatus.english-npnf1-7-new-advent-web-2026-07-29.25.8-14", "passage.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9", "work.augustine.in-iohannis-evangelium-tractatus"]
 trace_patterns = ["(?:In Iohannis Evangelium Tractatus(?: CXXIV)?|Tractatus in (?:Ioannem|Iohannis Evangelium)|Tractates?(?:\\s+[0-9]+)? on (?:the Gospel of )?John)", "augustine\\.in-iohannis-evangelium-tractatus"]
 reviewed_on = "2026-07-29"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
@@ -1711,6 +1711,26 @@ reviewed_on = "2026-07-29"
 notes = "Reviewed as the distinct source family for Decretum promulgating De Exorcismis et Supplicationibus Quibusdam. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
 
 [[families]]
+id = "family.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.homiletic-directory"
+label = "Homiletic Directory"
+kind = "work"
+source_categories = ["institutional-current", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.homiletic-directory.official-english-holy-see-web-2026-07-29.official-html-b76aaa4e", "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.homiletic-directory.official-english-holy-see-web-2026-07-29", "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.homiletic-directory.official-english-holy-see-web-2026-07-29.145", "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.homiletic-directory"]
+trace_patterns = ["(?:Homiletic Directory|homiletic-directory)"]
+reviewed_on = "2026-07-29"
+notes = "The dicastery's directory is an independent official work. The exact dated Holy See English delivery and paragraph 145 passage support the bounded homiletic-method claim; they do not become a Lectionary or Missal text witness."
+
+[[families]]
 id = "family.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.litterae-circulares-litaniae-lauretanae-2020"
 label = "CDW circular letter on the Litany of Loreto (2020)"
 kind = "work"
@@ -2449,6 +2469,26 @@ canonical_ids = ["work.francis-de-sales.traite-de-lamour-de-dieu"]
 trace_patterns = ["(?:Trait[eé] de l'amour de Dieu|Treatise on the Love of God|traite-de-lamour-de-dieu)"]
 reviewed_on = "2026-07-29"
 notes = "Francis de Sales's twelve-book treatise on the love of God, first published at Lyon in 1616 and addressed to Theotimus, owns its catalog-level work at book-and-chapter loci; books 8 and 9 carry the Salesian account of the signified will and the will of good pleasure and the distinction of resignation from holy indifference. It is a separate family from the Alba House composite volume and its two constituents, and from the Caussade treatise, per the ledger's per-work norm for independent intellectual works: nothing relates them beyond a shared subject, and no manifest records a relation. The witness read is Henry Benedict Mackey's complete public-domain English translation at the Christian Classics Ethereal Library, whose chapter divisions govern the loci cited; no collation against the French Annecy edition was performed, and neither that translation nor any French printing is registered as an edition, so evidence stops at the work and no exact artifact is registered. Section and paragraph divisions vary by edition and translation, so consumers cite book and chapter only."
+
+[[families]]
+id = "family.francis.angelus-2019-08-04"
+label = "Francis, Angelus of 4 August 2019"
+kind = "work"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.francis.angelus-2019-08-04.official-english-holy-see-web-2026-07-29.official-html-bc442c7a", "edition.francis.angelus-2019-08-04.official-english-holy-see-web-2026-07-29", "passage.francis.angelus-2019-08-04.official-english-holy-see-web-2026-07-29.1", "work.francis.angelus-2019-08-04"]
+trace_patterns = ["(?:Angelus[^\\n]{0,80}4 August 2019|angelus-2019-08-04)"]
+reviewed_on = "2026-07-29"
+notes = "The dated Angelus address is a distinct papal work. Its exact official English delivery is used as modern pastoral reception of Luke 12, not as a surrogate for the Lectionary text or as civil-property law."
 
 [[families]]
 id = "family.francis.in-erythraea-nova-constituitur-ecclesia-metropolitana-asmarensis"
@@ -3785,10 +3825,50 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["artifact.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25.homily-23-html", "edition.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25", "passage.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25.23", "work.john-chrysostom.homiliae-in-matthaeum"]
+canonical_ids = ["artifact.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25.homily-23-html", "artifact.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25.homily-49-html", "edition.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25", "passage.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25.23", "passage.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25.49", "work.john-chrysostom.homiliae-in-matthaeum"]
 trace_patterns = ["(?:Homiliae in Matthaeum|Homil(?:y|ies)(?:\\s+[0-9]+)?\\s+on (?:the Gospel of )?Matthew)", "john-chrysostom\\.homiliae-in-matthaeum"]
 reviewed_on = "2026-07-29"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
+
+[[families]]
+id = "family.john-chrysostom.homilies-on-colossians"
+label = "John Chrysostom, Homilies on Colossians"
+kind = "work"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.john-chrysostom.homilies-on-colossians.english-npnf1-13-new-advent-web-2026-07-29.homily-7-new-advent-8be7ae6e", "artifact.john-chrysostom.homilies-on-colossians.english-npnf1-13-new-advent-web-2026-07-29.homily-8-new-advent-f9bc7a0e", "edition.john-chrysostom.homilies-on-colossians.english-npnf1-13-new-advent-web-2026-07-29", "passage.john-chrysostom.homilies-on-colossians.english-npnf1-13-new-advent-web-2026-07-29.7", "passage.john-chrysostom.homilies-on-colossians.english-npnf1-13-new-advent-web-2026-07-29.8", "work.john-chrysostom.homilies-on-colossians"]
+trace_patterns = ["(?:Homilies? on Colossians|homilies-on-colossians)"]
+reviewed_on = "2026-07-29"
+notes = "Independent Chrysostom homily series; the exact NPNF English web artifacts and passages for homilies 7 and 8 remain bounded reception witnesses."
+
+[[families]]
+id = "family.john-chrysostom.homilies-on-ephesians"
+label = "John Chrysostom, Homilies on Ephesians"
+kind = "work"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.john-chrysostom.homilies-on-ephesians.english-npnf1-13-new-advent-web-2026-07-29.homily-13-new-advent-6df1457c", "edition.john-chrysostom.homilies-on-ephesians.english-npnf1-13-new-advent-web-2026-07-29", "passage.john-chrysostom.homilies-on-ephesians.english-npnf1-13-new-advent-web-2026-07-29.13", "work.john-chrysostom.homilies-on-ephesians"]
+trace_patterns = ["(?:Homilies? on Ephesians|homilies-on-ephesians)"]
+reviewed_on = "2026-07-29"
+notes = "Independent Chrysostom homily series; the exact NPNF English web artifact and homily 13 passage remain a bounded reception witness."
 
 [[families]]
 id = "family.john-chrysostom.homilies-on-first-corinthians"
@@ -3809,6 +3889,46 @@ canonical_ids = ["artifact.john-chrysostom.homilies-on-first-corinthians.chamber
 trace_patterns = ["Homil(?:y|ies)(?:\\s+\\d+)?\\s+(?:on|upon)\\s+(?:the\\s+)?(?:First|1|I)\\s+Corinthians", "john\\-chrysostom\\.homilies\\-on\\-first\\-corinthians"]
 reviewed_on = "2026-07-29"
 notes = "Reviewed as the distinct source family for Homilies on First Corinthians. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
+
+[[families]]
+id = "family.john-chrysostom.homilies-on-john"
+label = "John Chrysostom, Homilies on John"
+kind = "work"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-07-29.homily-43-new-advent-6b6871e5", "artifact.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-07-29.homily-44-new-advent-9408a49d", "artifact.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-07-29.homily-45-new-advent-4ef17cfa", "edition.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-07-29", "passage.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-07-29.43", "passage.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-07-29.44", "passage.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-07-29.45", "work.john-chrysostom.homilies-on-john"]
+trace_patterns = ["(?:Homilies? on (?:the Gospel of )?John|homilies-on-john)"]
+reviewed_on = "2026-07-29"
+notes = "Independent Chrysostom homily series; the exact NPNF English web artifacts and sequential passages for homilies 43--45 remain bounded reception witnesses."
+
+[[families]]
+id = "family.john-chrysostom.homilies-on-romans"
+label = "John Chrysostom, Homilies on Romans"
+kind = "work"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.john-chrysostom.homilies-on-romans.english-npnf1-11-new-advent-web-2026-07-29.homily-15-new-advent-61ee2fe7", "edition.john-chrysostom.homilies-on-romans.english-npnf1-11-new-advent-web-2026-07-29", "passage.john-chrysostom.homilies-on-romans.english-npnf1-11-new-advent-web-2026-07-29.15", "work.john-chrysostom.homilies-on-romans"]
+trace_patterns = ["(?:Homilies? on Romans|homilies-on-romans)"]
+reviewed_on = "2026-07-29"
+notes = "Independent Chrysostom homily series; the exact NPNF English web artifact and homily 15 passage remain a bounded reception witness."
 
 [[families]]
 id = "family.john-chrysostom.homilies-on-the-statues"
@@ -5149,6 +5269,26 @@ canonical_ids = ["edition.national-shrine-of-our-lady-of-champion.apparition-nar
 trace_patterns = ["(?:National Shrine of Our Lady of Champion|championshrine\\.org)", "apparition-narrative-and-timeline"]
 reviewed_on = "2026-07-29"
 notes = "The custodian's own published presentation of the Champion events - the narrative, the historical timeline, and the solemnity pages - registered as one work with a single dated web state of 2026-07-25. It is a family of its own and not part of family.champion.ecclesial-acts because a custodial institution's self-description is not an ecclesial act, the same boundary that keeps the Fatima sanctuary's documentation distinct from the Fatima acts. Its evidentiary ceiling is institutional self-description and nothing higher: the narrative page states its own method, that Adele Brise never learned to read or write and that the account was compiled from oral history, historical documents, and second and third-hand accounts in the shrine's archives, so it is never an independent historical witness to 1859 or 1871. Two internal inconsistencies are recorded rather than harmonized - the timeline's five acres against Pernin's six in both 1874 printings, and its placing of the beginning of the 15 August devotions in 1871 although Starr describes the August procession as already annual in a volume copyright-entered that year - and the fire section attributes to Pernin a paragraph that the consuming publication collated against both printings and found is not his text. Storage is restricted because the pages are the publisher's copyright with no redistribution permission, so exact bytes are not retained and the artifact gap stands; the date gap is the mutability itself, the three pages carrying different stamps of April 2026, January 2026, and July 2026 within one retrieval state."
+
+[[families]]
+id = "family.netherlands-broadcasting-foundation.operation-manna-liberation-year-dossier"
+label = "NOS Operation Manna liberation-year dossier"
+kind = "work"
+source_categories = ["secondary"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.netherlands-broadcasting-foundation.operation-manna-liberation-year-dossier.nos-web-2026-07-29.complete-html-0e271ce5", "edition.netherlands-broadcasting-foundation.operation-manna-liberation-year-dossier.nos-web-2026-07-29", "work.netherlands-broadcasting-foundation.operation-manna-liberation-year-dossier"]
+trace_patterns = ["(?:Operation Manna|operation-manna-liberation-year-dossier)"]
+reviewed_on = "2026-07-29"
+notes = "The dated NOS historical feature and its exact Dutch web artifact form one bounded source family. It controls the documented explanation of the operation's biblical name and historical setting, not military completeness or theological interpretation."
 
 [[families]]
 id = "family.nicene-and-post-nicene-fathers.series-1-volume-12"
@@ -6891,6 +7031,26 @@ reviewed_on = "2026-07-29"
 notes = "The narrative of the Bishop of Birmingham's 1854 journey to Corps and the mountain, written with access to the diocesan documents of the 1847 inquiry and reproducing them in English translation, owns its container work at printed-page loci and the 1854 London Richardson imprint read in the public-domain Internet Archive scan. Following the container precedent decided for the Fatima DCF Selecao and applied to family.henri-lasserre.notre-dame-de-lourdes, the book's identity stays distinct from the diocesan act it carries: the mandement of 19 September 1851 and its ullathorne-1854-english reproduction edition are owned by family.la-salette.ecclesial-acts, while the book itself, its apologetic argument, and the documents it transmits - the depositions of Pierre Selme and Jean-Baptiste Pra signed 27 November 1847, the superioress of Corps's 1847 opinion of both children, the recital of the discourse in parallel French, patois, and English columns, the interrogation answers about the secret including the report that Melanie's was given in patois and Maximin's in French, and the 1850 Ars episode with Maximin's reported answers - stay here. It is a bishop's pilgrimage narrative, openly favourable to La Salette and apologetic in argument, not a critical edition, and consumers use it at that ceiling and name it when its translations are the only witness. The 1854 imprint is public domain (Ullathorne died 1889), but no exact artifact is registered, so evidence stops at edition and page loci; the OCR text was used for reading and search without page-image collation and is imperfect, printing 1840 where Pra's deposition requires 1846, and the French originals of the documents it renders are the unregistered expression gap."
 
 [[families]]
+id = "family.william-dent.catlap-for-ever-or-the-smugglers-downfall"
+label = "William Dent, Catlap for Ever, or the Smuggler's Downfall"
+kind = "work"
+source_categories = ["historical-primary"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.william-dent.catlap-for-ever-or-the-smugglers-downfall.british-museum-object-1868-0808-5356-2026-07-29", "work.william-dent.catlap-for-ever-or-the-smugglers-downfall"]
+trace_patterns = ["(?:Catlap for Ever|Manna of Females|catlap-for-ever-or-the-smugglers-downfall)"]
+reviewed_on = "2026-07-29"
+notes = "The 1784 satire is an independent visual work. The British Museum object record controls its identity and inscription, but direct artifact acquisition was blocked; the evidence ceiling therefore remains edition and catalog locus."
+
+[[families]]
 id = "family.william-j-hirten-company.hirten-church-goods"
 label = "Hirten Church Goods"
 kind = "work"
@@ -6931,6 +7091,26 @@ reviewed_on = "2026-07-29"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
 
 [[families]]
+id = "family.william-williams.guide-me-o-thou-great-jehovah"
+label = "William Williams, Guide Me, O Thou Great Jehovah"
+kind = "work"
+source_categories = ["prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.william-williams.guide-me-o-thou-great-jehovah.hymnal-of-praise-1913-hymnary-web-2026-07-29.hymn-265-html-f3b75b0a", "edition.william-williams.guide-me-o-thou-great-jehovah.hymnal-of-praise-1913-hymnary-web-2026-07-29", "work.william-williams.guide-me-o-thou-great-jehovah"]
+trace_patterns = ["(?:Guide Me, O Thou Great (?:Jehovah|Redeemer)|guide-me-o-thou-great-jehovah)"]
+reviewed_on = "2026-07-29"
+notes = "The Welsh hymn and its English translation tradition form an independent devotional work family. The exact public-domain 1913 hymnal delivery supports the bounded changed-register reception claim; it is not evidence that a Communion antiphon option was selected."
+
+[[families]]
 id = "family.world-health-organization.icd-11-clinical-descriptions-and-diagnostic-requirements"
 label = "WHO, ICD-11 Clinical Descriptions and Diagnostic Requirements"
 kind = "work"
@@ -6955,7 +7135,7 @@ owner_id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
 surface_snapshot = "sha256:4636e1d1c8c4f1090f1218780fbd19d262f881a672760a6da3ddf718c33c5c9a"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -7022,7 +7202,7 @@ owner_id = "articles/canon-law/natural-positive-divine-human-law"
 surface_snapshot = "sha256:6727c6ba537656cc0fa8607cbffcf6ee3a78ffa2de20d78fd6b2deaf51029615"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -7093,7 +7273,7 @@ owner_id = "articles/faith/against-the-instrumentalists"
 surface_snapshot = "sha256:e90c492fbf5237e5188d08c90c421f88e438a4eee8a96520bb26190f1c108a70"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.thomas-aquinas.summa-theologiae"
 basis = "reviewed"
@@ -7108,7 +7288,7 @@ owner_id = "articles/faith/at-the-end-of-every-why"
 surface_snapshot = "sha256:ed51d59dc5c0e24655e01e64818c8d890fe6429407199c86b963f01a50eb6a53"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
 basis = "reviewed"
@@ -7139,7 +7319,7 @@ owner_id = "articles/faith/catholic-doctrinal-authority"
 surface_snapshot = "sha256:db862a5f8d0a22c72ab57fd7335a31ca90a897acd4be657d051942eed4daf4e4"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
 basis = "reviewed"
@@ -7190,7 +7370,7 @@ owner_id = "articles/faith/council-missal-and-crisis"
 surface_snapshot = "sha256:97255e4624d01322933cfdd89bab7d332d6c372dd8725256305dc045d7300233"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -7317,7 +7497,7 @@ owner_id = "articles/faith/four-last-things-01-death"
 surface_snapshot = "sha256:507e6ae2d9a5919ea8f231564f037a3b24cec490004fd4e0f3ad0348223b40a1"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.benedict-xii.benedictus-deus"
 basis = "reviewed"
@@ -7348,7 +7528,7 @@ owner_id = "articles/faith/four-last-things-02-judgment"
 surface_snapshot = "sha256:d701aa8bed5e03e54add5fcfc82efc734bb70219b7d10e93c07e847987a0f0d8"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "reviewed"
@@ -7383,7 +7563,7 @@ owner_id = "articles/faith/four-last-things-03-hell"
 surface_snapshot = "sha256:ad6a613eec310cd5c5e34ba0ad0119d6380177adbae09cbe2661990eaab143bc"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "reviewed"
@@ -7414,7 +7594,7 @@ owner_id = "articles/faith/four-last-things-04-heaven"
 surface_snapshot = "sha256:2c56224f08ae444578257e1986b54e8237b732e3cccb241661fff93401020737"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "reviewed"
@@ -7449,7 +7629,7 @@ owner_id = "articles/faith/freemasonry-and-the-catholic-church"
 surface_snapshot = "sha256:bdca8b409c13cb544b84a824ecd21a51788071f8ff71f1e7e33120b359e3c498"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -7520,7 +7700,7 @@ owner_id = "articles/faith/in-defense-of-the-particular"
 surface_snapshot = "sha256:c2a011351b3a1e3cc04478fafaa4149174078ff3ff1a829f08394e2447016515"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -7547,7 +7727,7 @@ owner_id = "articles/faith/last-supper-calvary-and-the-mass"
 surface_snapshot = "sha256:ef76d89f440116997f85c0b494d15d81277fb153e4955efb5ae2a5b1d6a02c52"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "reviewed"
@@ -7614,7 +7794,7 @@ owner_id = "articles/faith/ontological-vertigo"
 surface_snapshot = "sha256:5d4bab21e8eefa2c4ea23d3083570cf3e646dd5516bbc7663f44440d1e875426"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -7641,7 +7821,7 @@ owner_id = "articles/faith/the-due-return"
 surface_snapshot = "sha256:3c9cd3b61c79dda4d0d57d35efda4c47678f26a207a2783e364e28901530df8b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
 basis = "reviewed"
@@ -7700,7 +7880,7 @@ owner_id = "articles/faith/trustful-surrender-to-divine-providence"
 surface_snapshot = "sha256:0f8021bebe5366cf694a6cee9b0095a6c5478fff09902d2213e141402c928fdd"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.alba-house.trustful-surrender-to-divine-providence"
 basis = "reviewed"
@@ -7767,7 +7947,7 @@ owner_id = "articles/scripture/abraham-and-the-daylight-stars"
 surface_snapshot = "sha256:d210206d577578b733d6e0359ef77c35b0350605f2b9787f20f3013f3de39a45"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.abraham-ibn-ezra.perush-al-ha-torah"
 basis = "reviewed"
@@ -7870,7 +8050,7 @@ owner_id = "articles/scripture/john-6-bread-from-heaven"
 surface_snapshot = "sha256:7347b94a126dfc92a880878d79661e0c8394211a1e12c474ceae15f986d8e003"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.de-mysteriis"
 basis = "reviewed"
@@ -7993,7 +8173,7 @@ owner_id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
 surface_snapshot = "sha256:524862a1e6ca08407990c3c4a4abbcc4c53be449c0655bbc7cb08d04ceaf8ebb"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.expositio-evangelii-secundum-lucam"
 basis = "reviewed"
@@ -8112,7 +8292,7 @@ owner_id = "biographies/origen"
 surface_snapshot = "sha256:d5f10f0ad09a59808f59a0a2cb62cf1e27d518846dfb9314b178f73560f6d6a0"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -8143,7 +8323,7 @@ owner_id = "biographies/saint-augustine-of-hippo"
 surface_snapshot = "sha256:564e04f045e452b7c355aea08e64fd794b14bbb9e108ae04ccd15207dbe080f3"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "reviewed"
@@ -8166,7 +8346,7 @@ owner_id = "biographies/saint-jerome"
 surface_snapshot = "sha256:e19fd04d87e760a465353fb71fe49e881839c0eec7803a0c9c81cd8fa62bbbf5"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.book-of-tobit"
 basis = "reviewed"
@@ -8205,7 +8385,7 @@ owner_id = "biographies/saint-paul"
 surface_snapshot = "sha256:3b78766d78e9d30bc816d10e6b7236f823d2d2a6e5a91f4643dead0288848223"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
 basis = "reviewed"
@@ -8244,7 +8424,7 @@ owner_id = "biographies/saint-peter"
 surface_snapshot = "sha256:9c87de9ada7792e2ddf82c285d36aa7946eb7809da3c5061b06133ca3ed1bff1"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
 basis = "reviewed"
@@ -8275,7 +8455,7 @@ owner_id = "biographies/saint-robert-bellarmine"
 surface_snapshot = "sha256:7f1905d39847330b0ce0f3a471498d3bf8331f3dad949e8ae8b7efd1929d0dfc"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -8306,7 +8486,7 @@ owner_id = "biographies/saint-thomas-aquinas"
 surface_snapshot = "sha256:468cecaa9455669e6b46745664a1e4528e4dbb63c59a6567ab62065b14d43d3b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -8333,7 +8513,7 @@ owner_id = "biographies/tertullian"
 surface_snapshot = "sha256:3bf294385b3983ffcb9be472e8149d27516465dfd62f4e874e330b903039c4b5"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -8364,7 +8544,7 @@ owner_id = "curriculums/ecclesiastical-latin/00-course-guide"
 surface_snapshot = "sha256:8509502cfa85ae4d5d8a4b126d70af420ab7dbd20c5292a94780fb5779146c60"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8375,7 +8555,7 @@ owner_id = "curriculums/ecclesiastical-latin/00-memory-workbook"
 surface_snapshot = "sha256:482fbae019c509e1807b0e52d04d15b0c9af9e40e6088ca522075b76b0b89a24"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8386,63 +8566,63 @@ owner_id = "curriculums/ecclesiastical-latin/00-reference-grammar"
 surface_snapshot = "sha256:7a87f38f9fa88e373b685f2f62d708effd063a7ce1649d18030f001d1a151ce2"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement"
 surface_snapshot = "sha256:3534280375361b468d3eabc82302bdea4b1bcdfd0da5949f1d55f424eb22388e"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/02-noun-systems"
 surface_snapshot = "sha256:538021b0ee658abe2dfcaac9c971515b9edc98310ebbce2497cfebf218dd04fd"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives"
 surface_snapshot = "sha256:4b4188647b0070591e57641fc97c914bd7dd5821eb5dfa35a43b1d8991255aba"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action"
 surface_snapshot = "sha256:f5dfba66d7325b7b8121f4693c23e9a9dbbdeb06a22d0ea732f7ce3da86a2128"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents"
 surface_snapshot = "sha256:86168bdedafd63e901926828b713a946163a2daa66f29983441599c3d9b7a817"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading"
 surface_snapshot = "sha256:d883e5ba70049040b8eb6a0b19aea242357401533845834697565984cf08adee"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number"
 surface_snapshot = "sha256:862018fd65ae8b7dd83a0f609df67c2c8890b623c53e851ccd044176b870af96"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes"
 surface_snapshot = "sha256:4eb4c9e08131476234c2a609801a3f107d8824e7e7e39ab32ef5c931a2710aab"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.scripture.vulgata-clementina-hetzenauer-1914"
 basis = "reviewed"
@@ -8457,28 +8637,28 @@ owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-syst
 surface_snapshot = "sha256:5b072e121477a8b57cd7861e5d48803e54ddcc189253b56ea0f8bf98acb7392f"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic"
 surface_snapshot = "sha256:65d94c0dea0a95b31e70fecb53820796c0bd78fad7f691aebb080780af549953"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns"
 surface_snapshot = "sha256:23c25efa95c5b14a7d9c5bf6b113e83b596d84016faaf6b9e7ce95d0241ab637"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"
 surface_snapshot = "sha256:5817e7aa36c2eac379304df1452983f6c5833b47e39527ee815f10e34549e104"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8489,28 +8669,28 @@ owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-
 surface_snapshot = "sha256:469c3e86f1105aca02325afd64b797023503c9eb67bb2f567c66e74cc9554530"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions"
 surface_snapshot = "sha256:dacab9eeb5eb55e1124ab9373bcb1f6028fe9ee6a42fd59c82d5629c21615887"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels"
 surface_snapshot = "sha256:0627a7f0f7cc81ebc217041145ab861bad26993bee103b9a13fba08ad14ba458"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"
 surface_snapshot = "sha256:e61c0a788af507eb82033cf29978c3a2b1fef53554f3a36b68cd6cf849ed04ab"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8521,7 +8701,7 @@ owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanct
 surface_snapshot = "sha256:f2f871a677ab01e4cba2bff3c920ba9f0e57bb0d289a2d693f4ec10d2cebdea8"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8532,7 +8712,7 @@ owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requ
 surface_snapshot = "sha256:68c40f10628d3c136f75cef96a4f2d9a15d0d26edda34a2cff9f02125ca65372"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8543,7 +8723,7 @@ owner_id = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblica
 surface_snapshot = "sha256:cef13a394ea29dc02967e370eb460a3bc408edcb58d3a7bd4a9fb373272a38fa"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8562,7 +8742,7 @@ owner_id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-an
 surface_snapshot = "sha256:602d92360b9fbaef53f59a6f30a02fdc2fe8a7537ab420705735631d82a869eb"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8573,7 +8753,7 @@ owner_id = "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-contro
 surface_snapshot = "sha256:df8457e00e011c85652402e6377898bc55b3b37fabe178fd5cf1ad8fae00222f"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8588,7 +8768,7 @@ owner_id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-a
 surface_snapshot = "sha256:79c557551bb07e75cc9265001f16c32e356fdbb18b87b86d6ab9373e84c0a136"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8615,35 +8795,35 @@ owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-proso
 surface_snapshot = "sha256:c6ba0592837ab07b863432551d605a519a2789353cd7c88f81ea1dd6ff73d76a"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter"
 surface_snapshot = "sha256:fb142dacfbba3efde5960e920aef2b0d95c4cedd6fde5f4f0f7f8fd55f6e7f75"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse"
 surface_snapshot = "sha256:cb34a46f182e84ab5792e3f7f95a1c04fa7433215b022c410b69535aea4bd899"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters"
 surface_snapshot = "sha256:c5d52cfb534319b4548dca4b7af47ed03772476322dd233e4981e2de02890661"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"
 surface_snapshot = "sha256:754d4de2cfc01640b75ba6f5495e7d0938baa74cb3dc960bc832052c09788901"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8654,7 +8834,7 @@ owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymn
 surface_snapshot = "sha256:0749809076bd7b56defa4b3fc59399e2a22789b777b08a34a17ef28cc177ee4b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8665,7 +8845,7 @@ owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commen
 surface_snapshot = "sha256:9dbf84771f48f9fb8f36e3d0a9e4eaa4137b9d3b01fef55211baae19236983b1"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8676,7 +8856,7 @@ owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composi
 surface_snapshot = "sha256:dc0de6c650ecb5c96707149353e1360418ba5cfeda4d55b9f6cab34bbc16d25e"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8687,21 +8867,21 @@ owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations
 surface_snapshot = "sha256:66cefe0d408f5a595ce34d7eda155f256c3e02628897a8ca7ee950411f5b2479"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar"
 surface_snapshot = "sha256:f93d632c17855852e4a2a86163ccc2641df5c4959a3f7599210949056a1c0b65"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
 surface_snapshot = "sha256:5bf038ccf29163bd0d511bf1c1a26a9b02f3e405cd06dc12c971c15b492599a8"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8712,7 +8892,7 @@ owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
 surface_snapshot = "sha256:358078bd6dd4f73e25b14dc2dd3cd7c7b9e4f0a5c377f798fc83200ee65a8d42"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -8735,7 +8915,7 @@ owner_id = "devotions/novenas/00-ascension-to-pentecost"
 surface_snapshot = "sha256:23831b782bba376953ed8ff620058355877b1ff42a60ebd4352fc61aa15eeedc"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.apostolic-penitentiary.enchiridion-indulgentiarum"
 basis = "reviewed"
@@ -8786,7 +8966,7 @@ owner_id = "devotions/novenas/00-ascension-to-pentecost-daily-prayer"
 surface_snapshot = "sha256:287203ccd912c5ba41069510defed5aed418d14d0e7eb0f374817638409daec9"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.gaspar-lefebvre.daily-missal-with-vespers"
 basis = "reviewed"
@@ -8801,7 +8981,7 @@ owner_id = "devotions/novenas/10-our-lady-of-mount-carmel"
 surface_snapshot = "sha256:4b01a545c43c01f4f9a46faf96b73c72c462dcb39e90a4851e9d3ff798d57959"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -8836,7 +9016,7 @@ owner_id = "devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"
 surface_snapshot = "sha256:0292cf12b9ed11b895c386df826564ca92287c731b76ed656eff6f07bca6cee0"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.gaspar-lefebvre.daily-missal-with-vespers"
 basis = "reviewed"
@@ -8855,7 +9035,7 @@ owner_id = "history/biblical-translations/01-septuagint"
 surface_snapshot = "sha256:5f3de1435fb7c8d45f8f01502778dfd043b53831350c3b0657ddcb36e6c35f73"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.aristeas.letter-of-aristeas"
 basis = "reviewed"
@@ -8894,7 +9074,7 @@ owner_id = "history/biblical-translations/02-vulgate"
 surface_snapshot = "sha256:cbf87dbe564a299b154530f8d993bf4c4f4c3a14f61ef0b616b119d7d8cf7013"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.book-of-tobit"
 basis = "reviewed"
@@ -8926,10 +9106,10 @@ record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/sourc
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:d771b138d596437bde3125e5d57e11389b2247700c17c2f9414462a9081e6995"
+surface_snapshot = "sha256:0ef731f95865a675fd7c44e514610b8d3669a621d98df0203f5204f133e2884d"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -9340,7 +9520,7 @@ owner_id = "history/catholic-parish-histories/01-st-stanislaus-milwaukee"
 surface_snapshot = "sha256:d8cbd6e38986cbecd9c679c9f4aee70d0688e2d083d9ae1176b105e0cfe6e239"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -9355,7 +9535,7 @@ owner_id = "history/catholic-parish-histories/02-st-anthony-willits"
 surface_snapshot = "sha256:c8fcce28588d5bce8d3f67b849ab78858e538ef813eaceea278847a254080d21"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.isidore.etymologiae"
 basis = "reviewed"
@@ -9366,7 +9546,7 @@ owner_id = "history/traditional-priestly-institutes/01-sspx"
 surface_snapshot = "sha256:da64e933dd39ee3e5222714857cdf20bb41919f613adde862ab0f3f87b7901ce"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.holy-see.cic-1917"
 basis = "reviewed"
@@ -9401,7 +9581,7 @@ owner_id = "history/traditional-priestly-institutes/02-fssp"
 surface_snapshot = "sha256:f29c45bf70ef0ba44283792153bb4aab6cacd6d8b1a0d26a7db7148b7addb997"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -9440,7 +9620,7 @@ owner_id = "history/traditional-priestly-institutes/03-icksp"
 surface_snapshot = "sha256:9f3cb5460acce041e454320782efb33a2b43089026e18e4dfce7dfae03905b8e"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -9471,7 +9651,7 @@ owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
 surface_snapshot = "sha256:053f0da2afcc2dc5960a18d09c4de25f1dd7f8e8afd7da5856412bebb4f94742"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -9582,7 +9762,7 @@ owner_id = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
 surface_snapshot = "sha256:9d3d10b64e5ea56d3b380c62fa7747549e52945459415a5c7756207cae25be91"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.book-of-tobit"
 basis = "reviewed"
@@ -9665,7 +9845,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"
 surface_snapshot = "sha256:c40a129a6f5e2fdf0eb279ec79c5d65ec5a8cc48358304f855c11623a8baecca"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.apostolic-constitutions"
 basis = "reviewed"
@@ -9720,7 +9900,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"
 surface_snapshot = "sha256:3fec9a0c667df17981eec3725bda27a3220951562b826e97613414e0c932e078"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anthony-of-padua.sermons-for-sundays-and-festivals"
 basis = "reviewed"
@@ -9771,7 +9951,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost"
 surface_snapshot = "sha256:501d13e07f22c42b03703e2eb3a04b415f2394a72fc35c29e3746fa79aa71c0d"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.expositio-evangelii-secundum-lucam"
 basis = "reviewed"
@@ -9826,7 +10006,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost"
 surface_snapshot = "sha256:74daa5a34884269a1e2a2ef0755935ef22686f040d09610204a28f81a560910c"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.expositio-evangelii-secundum-lucam"
 basis = "reviewed"
@@ -9877,7 +10057,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"
 surface_snapshot = "sha256:d533e5e4b4e257eb33d637c215436fa483a1fb5e2596c2c1595605cbc36aff65"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anthony-of-padua.sermons-for-sundays-and-festivals"
 basis = "reviewed"
@@ -9924,7 +10104,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost"
 surface_snapshot = "sha256:9c41652eae68698564cf128d4b4fbd6633008c88a3f4cacac3c00541fde1d6b2"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.de-mysteriis"
 basis = "reviewed"
@@ -9967,7 +10147,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"
 surface_snapshot = "sha256:d1c40db403e692c4e1040bf18835683b8915a8282525375b36a751fd914c3f36"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anthony-of-padua.sermons-for-sundays-and-festivals"
 basis = "reviewed"
@@ -10018,7 +10198,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
 surface_snapshot = "sha256:4059d22f999f5d2e9bfcbcc991e0a79c4eac45461da49e4443d7b188c3e3a7c9"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anthony-of-padua.sermons-for-sundays-and-festivals"
 basis = "reviewed"
@@ -10073,7 +10253,7 @@ owner_id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 surface_snapshot = "sha256:241e0211948cbeb3e8642e7b2e8e91ec052dc9d2b9d861d34b51fb86ad8b41ac"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -10165,10 +10345,10 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"
-surface_snapshot = "sha256:83b44165d7524a106b35939a8d9e4127946295dfe3f878bec78db0dd28f4f07b"
+surface_snapshot = "sha256:06172bccaf644efc8a02fa4eb42e314263fb4f602e1526b58cc9518de890e0d5"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrosiaster.commentaria-in-epistolam-ad-corinthios-primam"
 basis = "reviewed"
@@ -10327,7 +10507,7 @@ owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
 surface_snapshot = "sha256:9ec0f48e2abd49a11820dc231a3d71f1d83da915221cf98d8c9c38d1245c8fad"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -10338,7 +10518,7 @@ owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-fl
 surface_snapshot = "sha256:5387d626c73d5396a1033033bdeec1195bfcd10bb138b4291f5276ce3307251b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -10349,7 +10529,7 @@ owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-tr
 surface_snapshot = "sha256:ebc4347a6972a0ff75f1a8c299a407d32dfe74017eb6c76c2944b99bd460247a"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -10360,7 +10540,7 @@ owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-canta
 surface_snapshot = "sha256:81e898d9f6a9dee7d0c4af32cb105b1e86d85826d17575577692d6e77838981b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -10371,14 +10551,14 @@ owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-canta
 surface_snapshot = "sha256:b19d3792ddff7415796023e6ddba3d5531227f3186072370ea8839b5613d3707"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
 surface_snapshot = "sha256:b3e29de6446f0e3470a13d595e01ab460b122c985171bdb87e69b3e098e3af4e"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "reviewed"
@@ -10389,14 +10569,14 @@ owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass
 surface_snapshot = "sha256:75a960a28d5384e02ed806cd0cca1d2ea038315484fc5d28fc4b04edde7c39b1"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
 surface_snapshot = "sha256:ea9aa08c64656402bb726dbd2ad9c78e2c3cad4339852db714683abd6efec84f"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -10423,7 +10603,7 @@ owner_id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
 surface_snapshot = "sha256:f3d43eb323bb296d77cdaab780249990cd6a15743edbd9bfd457cd3859e0c708"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -10446,7 +10626,7 @@ owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-s
 surface_snapshot = "sha256:32c35aecb40b457f7e6c92c822b5cce932c197226e799ca629b87ec7bd87ee8a"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.adrian-fortescue.ceremonies-of-the-roman-rite-described"
 basis = "reviewed"
@@ -10509,7 +10689,7 @@ owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/compreh
 surface_snapshot = "sha256:7db80ebbbf1fa8adbfea27102d2d88490af4341be2d9e3f46c8b782043e706b5"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.holy-see.cic-1917"
 basis = "reviewed"
@@ -10540,35 +10720,35 @@ owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general
 surface_snapshot = "sha256:bfe70d93f92171c6a569af17772ea8fb40ad61cf07ac6570dd5c840068fd7eaf"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer"
 surface_snapshot = "sha256:b2e486b019d330194c2c043928dda787968fc9e6467afff56906a1c051f5c22b"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies"
 surface_snapshot = "sha256:4e9d6a4b20d91249a0d9f5058d7dfac93b2d6206b8ee8d520e9ff8150c55b3cf"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
 surface_snapshot = "sha256:c026eff26afb67ad82c84d5f340016641a94007dfb6271287ebd85001a9530d3"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
 surface_snapshot = "sha256:343019e7bb5e3224ee1bb8e96d72d4a1ed775517e5095366ae620edb2dc3b9d6"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.apostolic-tradition"
 basis = "reviewed"
@@ -10651,7 +10831,7 @@ owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary
 surface_snapshot = "sha256:e2e4e2a2ff020f28f2c1ab22d0178390a281c1fd2de6eddf6d88dbf8e0869b4a"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.apostolic-constitutions"
 basis = "reviewed"
@@ -10790,7 +10970,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:414977aa2ba0993186df122c0cfe23a7bc67077fd8bb39bd74812097ea9242cb"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.apostolic-constitutions"
 basis = "reviewed"
@@ -10849,7 +11029,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:c71fbe73a8749208ecf991f93e3f0202a9d6197e18e27d6b06a8be7ceb8eb016"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.apostolic-constitutions"
 basis = "reviewed"
@@ -10908,7 +11088,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:833641ed596ca63e30c0a2c4c5ce9faf3170f29fbf4b5d330740ce0d6c3750e4"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.apostolic-constitutions"
 basis = "reviewed"
@@ -10963,7 +11143,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:40f29cfe83df5ef3d769968a4d2992db726a0f198784cd5ab7e6e07230987dee"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.enarrationes-in-psalmos"
 basis = "reviewed"
@@ -11014,7 +11194,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:0f27a23c04a492f21e9422a682d0c2d84152bbb14262e99584a20d659d79bf86"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.enarrationes-in-psalmos"
 basis = "reviewed"
@@ -11081,7 +11261,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:635eeac40d81358fde1d397fc9f75142af3150772ced12992c76846d2ed45339"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.enarrationes-in-psalmos"
 basis = "reviewed"
@@ -11136,7 +11316,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:3ce53c019650c5b8647500b5e48d0a422575f09640ad4c4af6234a3f8ca89601"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.enarrationes-in-psalmos"
 basis = "reviewed"
@@ -11188,10 +11368,10 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:18bddd03e390edd45e13d241c31f57dcaa6039ad1ba910781fd8c311d7bdc91e"
+surface_snapshot = "sha256:d8e4f9fee10cbab4e1a6e67734ba4b5799fce32a186f556e21e4574aa6f4d771"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.anonymous.the-loaves-and-fishes-1783"
 basis = "reviewed"
@@ -11212,6 +11392,10 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 family_id = "family.john-chrysostom.homiliae-in-matthaeum"
 basis = "reviewed"
 record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/research/scope.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/sections/30-each-proper.tex", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex"]
+[[review_units.family_presence]]
+family_id = "family.john-chrysostom.homilies-on-romans"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.matthew-arnold.dover-beach"
 basis = "reviewed"
@@ -11243,10 +11427,10 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b"
-surface_snapshot = "sha256:12af617c336cb083565670e8ec773bb961f4d1fd6d4d774c6e62e7b4b7aba43a"
+surface_snapshot = "sha256:86895fd3cf856ddae251accf4260315a2d6c174964d7663d875cf001063967ee"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.de-mysteriis"
 basis = "reviewed"
@@ -11259,6 +11443,18 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 family_id = "family.augustine.in-iohannis-evangelium-tractatus"
 basis = "reviewed"
 record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/propers/verified.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/scope.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/30-each-proper.tex", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/90-apparatus.tex"]
+[[review_units.family_presence]]
+family_id = "family.john-chrysostom.homilies-on-ephesians"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.john-chrysostom.homilies-on-john"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.netherlands-broadcasting-foundation.operation-manna-liberation-year-dossier"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.patristics.anf-npnf-schaff"
 basis = "reviewed"
@@ -11274,18 +11470,38 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 [[review_units.family_presence]]
 family_id = "family.scripture.douay-rheims-bible"
 basis = "reviewed"
-record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/instance/manifest.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/propers/verified.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/scope.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/source-bindings.toml", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/week-xviii-reconciliation.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/05-appointed-text.tex", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/40-interpretive-and-notable.tex", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/90-apparatus.tex"]
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/instance/manifest.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/propers/verified.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/scope.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/source-bindings.toml", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/week-xviii-reconciliation.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/05-appointed-text.tex", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/sections/90-apparatus.tex"]
+[[review_units.family_presence]]
+family_id = "family.william-dent.catlap-for-ever-or-the-smugglers-downfall"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.william-williams.guide-me-o-thou-great-jehovah"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research/source-bindings.toml"]
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c"
-surface_snapshot = "sha256:9422fba2c9bce45ac3c8f24727dbba22fc5d53e788d7ccb36a416a10d523cd01"
+surface_snapshot = "sha256:0314b548c9cd806466871cee91ba5b68134a86de9bd7d869b927d85939a4d6d1"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.enarrationes-in-psalmos"
 basis = "reviewed"
 record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research/scope.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/sections/90-apparatus.tex"]
+[[review_units.family_presence]]
+family_id = "family.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.homiletic-directory"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.francis.angelus-2019-08-04"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.john-chrysostom.homilies-on-colossians"
+basis = "reviewed"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.roman-lectionary.olm-us-lectionary"
 basis = "reviewed"
@@ -11304,7 +11520,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:37bec46b9466e188f35a6c32c4d3d8cece66cd0e97f24bfc792cebd4fb00a28d"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "reviewed"
@@ -11367,7 +11583,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:76c477672ef4362643980b5533767161cd18695ecd0bf3d9828ccd4ddc7c7d38"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.de-mysteriis"
 basis = "reviewed"
@@ -11446,7 +11662,7 @@ owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-20
 surface_snapshot = "sha256:8e38a2475006ec4443396c348ec3dd3b69535da96d3ad837d84f201d90f1679f"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.benedict-xvi.anglicanorum-coetibus"
 basis = "reviewed"
@@ -11505,14 +11721,14 @@ owner_id = "owner.biographies.shared"
 surface_snapshot = "sha256:df13a54a56979cec46c1f7ed548d0249257970606fc9918265bafa6deb425ae7"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "owner.curriculums.ecclesiastical-latin"
 surface_snapshot = "sha256:707c12f11a210bbe91109338017bb587e5b5c3df58c385d01c59542d7dcecde9"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.holy-see.cdf-declaration-dominus-iesus-2000"
 basis = "reviewed"
@@ -11547,7 +11763,7 @@ owner_id = "owner.devotions.novenas.shared"
 surface_snapshot = "sha256:2f7f5c197d29569d28970c4f7137b3adc9fdb3aaa30ecb9f9fe349f86aaf5a73"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.gaspar-lefebvre.daily-missal-with-vespers"
 basis = "reviewed"
@@ -11562,28 +11778,28 @@ owner_id = "owner.history.biblical-translations"
 surface_snapshot = "sha256:6a1389ba16f4f1c22315696f1e385ac95e6bda7031dbee5bc78169e0803e89b8"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "owner.history.catholic-parish-histories"
 surface_snapshot = "sha256:b15933ddfd3985da511d43db092984a24e18b87d7d9610d1671ec163ff00d935"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "owner.history.traditional-priestly-institutes"
 surface_snapshot = "sha256:ce60bfe641f64e128986a9aab51081029c034e7c423a9d28f19873618c897eb0"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
 surface_snapshot = "sha256:523cbc6c898f22b6794ab609d3a2403085c3bfd4e0238be4c0e959f6868cd1b9"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -11606,7 +11822,7 @@ owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
 surface_snapshot = "sha256:7f62343068521c86484b1b85bf29398cde13289447d9cb28bcbf38858443b8b2"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -11733,7 +11949,7 @@ owner_id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en
 surface_snapshot = "sha256:00399577ec5975a7971a9c8f275286bcd2e9d470d8a73c50553eed4448bfffb0"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.holy-see.notitiae"
 basis = "reviewed"
@@ -11756,21 +11972,21 @@ owner_id = "owner.theology.mariology.shared"
 surface_snapshot = "sha256:e08e4ed137fc8d38065437c7914d053f3ac83e1e8090f56e14a39510abfab61f"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "owner.typesetting.common"
 surface_snapshot = "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 
 [[review_units]]
 owner_id = "theology/heresies/heresies-in-catholic-history"
 surface_snapshot = "sha256:8c5246f222f5bbf816236214226e088ac144692477e2d3291f9c0e5ae99a00e0"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -11877,7 +12093,7 @@ owner_id = "theology/mariology/angelus"
 surface_snapshot = "sha256:ea7ebcbe5f03c81722ae7da111005567e14b877fc579054f2f1708aa7ff436e2"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.apostolic-penitentiary.enchiridion-indulgentiarum"
 basis = "reviewed"
@@ -11916,7 +12132,7 @@ owner_id = "theology/mariology/apparitions"
 surface_snapshot = "sha256:cc873981edb4b153434f8d640f6e96559991418707bb2f6a0a614819b8e0cfad"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.expositio-evangelii-secundum-lucam"
 basis = "reviewed"
@@ -11979,7 +12195,7 @@ owner_id = "theology/mariology/champion"
 surface_snapshot = "sha256:3cf28d83c3214640a18c86cb913a69fc679e0959c2f2abc1b86380f5a4a67e17"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -12030,7 +12246,7 @@ owner_id = "theology/mariology/doctrinal-authority"
 surface_snapshot = "sha256:436f4b15273e786234dd125b2086aa77e67f1f4940df623b7f86e9177c035da3"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -12065,7 +12281,7 @@ owner_id = "theology/mariology/fatima"
 surface_snapshot = "sha256:2997630162d6472edf8309af046ba2c8875d6e4d0dc6b1d807354646001ae584"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -12096,7 +12312,7 @@ owner_id = "theology/mariology/guadalupe"
 surface_snapshot = "sha256:b38a807eb46f95990f8b307c22ad5bdb1cebd16be0ae854b7bf97fa51ae3ddef"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -12127,7 +12343,7 @@ owner_id = "theology/mariology/la-salette"
 surface_snapshot = "sha256:1dc58ce537a0bda3fd215b5012861a32b0646d809ab58a760044ce20276c43c0"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -12178,7 +12394,7 @@ owner_id = "theology/mariology/lourdes"
 surface_snapshot = "sha256:48e6802b154d8b80bff5609f23e571945e9664c4acefa54efd4b42ab9c37efcf"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -12213,7 +12429,7 @@ owner_id = "theology/mariology/marian-dogmas"
 surface_snapshot = "sha256:edb684ab6725a9454e4db0966cf3039a9af4925b52995818a7306e1cdfcd860c"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "reviewed"
@@ -12276,7 +12492,7 @@ owner_id = "theology/mariology/regina-coeli"
 surface_snapshot = "sha256:95a5e79d7a15b7e8af9653a52bd29cb39fe6cf6aede8a3be7d53fd324273f9a1"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "reviewed"
@@ -12315,7 +12531,7 @@ owner_id = "theology/mariology/rosary"
 surface_snapshot = "sha256:0191cf67a5efcfa8b099868a99b3001221d5013040a73fbde2fa2f9f95800718"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.expositio-evangelii-secundum-lucam"
 basis = "reviewed"
@@ -12414,7 +12630,7 @@ owner_id = "theology/sacraments"
 surface_snapshot = "sha256:4f742e48bbbcc2bd2bb9a0438d0504c64fa0a8820c214930c6aa17d79e2e8ce1"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ambrose.de-mysteriis"
 basis = "reviewed"
@@ -12529,7 +12745,7 @@ owner_id = "theology/sacraments-at-a-glance"
 surface_snapshot = "sha256:222e1e24654e7abcabac608aa484219f8bc1bcb94b1443704c465713e69e579f"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
 basis = "reviewed"
@@ -12560,7 +12776,7 @@ owner_id = "theology/virtues"
 surface_snapshot = "sha256:27c069e361983f0df260a435d9b1fae2340204bd0f162b698bd43c8cce6bf330"
 review_state = "family-screened"
 reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:2476c49ae3cbce6f21edcdcb1dce892ccd24e1404c8aa9807d086a526a7b5380"
+family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
 [[review_units.family_presence]]
 family_id = "family.aristotle.ethica-nicomachea"
 basis = "reviewed"

@@ -1,6 +1,6 @@
 # Research Scope — PC-S42-A
 
-**As of:** 2026-07-28
+**As of:** 2026-07-29
 
 ## Coverage and source roles
 
@@ -59,19 +59,38 @@ rabbinic, modern-critical, local-homiletic, or musical survey is claimed.
 | Communion comparison | Wisdom + John + Gospel; remembrance and encounter | Precedent located separately for each branch, not their exact comparison | Branches remain mutually exclusive |
 | Charity without outcome control | Romans + Gospel + final prayer | Not located in the checked corpus | Cannot excuse incompetence or withheld aid |
 
-## Remaining profile dependencies
+## Source-binding result and remaining profile dependencies
 
 The notable-and-quotable gallery now has three checked entries. The two new
 entries use provider-neutral source-library records and state the evidentiary
 limits on dependence. Generic memorial and food-ministry examples remain
 excluded rather than padding the gallery.
 
-Several cited patristic works are currently identified by work, locus, and
-public edition in the reader apparatus but do not yet have leaf-specific
-canonical passage records in `src/sources/`. Those provider-neutral additions
-are a shared-source task and were deliberately not created in this
-directory-exclusive redevelopment lane.
+The 29 July full pass added canonical passage records and exact leaf bindings
+for Augustine on the recurring Entrance psalm and Psalm 145, Chrysostom on
+Matthew 14 and Romans 8, and Aquinas on John 6. The remaining Aquinas
+*Super Romanos* reference is bibliographically identified in the reader
+apparatus but does not yet have an exact reusable passage record. It supports
+no claim unavailable from the directly bound Chrysostom witness and the
+appointed biblical unit. Thoreau's public-domain text is directly linked and
+was checked, but its reusable source-library record remains outstanding.
 
 ## Rights and review
 
 The guide uses citations, short Latin incipits, and original summaries. It does not reproduce protected U.S. Missal, Lectionary, NABRE, or Grail wording. Public-domain witnesses remain attributed. Content and structure were internally checked; independent specialist, theological, rights, and ecclesiastical review remain outstanding.
+
+## Production review
+
+Two settled passes produced an 18-page, 512,878-byte full PDF with SHA-256
+`0c75179b791e4609d4dcbc090d2f5f8f9f232e2213253ff32f505dd1981277b0`
+and a 10-page, 483,233-byte synthesis PDF with SHA-256
+`e68f90ca2e72a41a7840df55752f19d4d63a0610171f99f5ea8ffc4884357a20`.
+The final logs contain no fatal error, undefined reference, overfull box, or
+unresolved rerun warning; the sole underfull notice is on terminal metadata
+and has no visible defect. All pages of both outputs were visually inspected
+for clipping, collision, density, tables, headings, glyphs, and terminal
+apparatus. The web converter's loss audit passed, and the installed web edition
+has SHA-256
+`85125eabc696d16ff701408355ef2f09d48939dda62da0c9da6107d59d68edcf`.
+The installed PDFs and web edition are byte-identical to the reviewed
+candidates. This is internal production review, not ecclesiastical approval.

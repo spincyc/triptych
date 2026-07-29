@@ -154,13 +154,23 @@ research records, source and rights gates, rebuilt and installed GPT PDFs and
 web editions, every-page visual inspection, coherent release records, and
 validated pushed checkpoints.
 
+Completed 29 July 2026. The five GPT leaves now contain new comparative
+research dossiers or synthesis, checked reusable source records and bindings,
+superseding material-change reviews, and exact production records. Nine PDFs
+(the five full publications and four proper syntheses) and five canonical web
+editions were rebuilt, inspected page by page, installed with exact build
+identity, and passed the repository's metadata, component, web-currentness,
+source-library, source-inventory, source-family-screening, public-alpha, and
+release-binding gates. The affected GPT staleness records are fresh. No file
+under `src/claude`, `doc/claude`, or `web/claude` changed.
+
 ### Exorcism reference
 
 <!-- promised-deliverable: task-2-exorcism-100-pages -->
 
 The requested result is a researched, substantive 100+ page Catholic exorcism
-reference, not a padded PDF. The current public-alpha edition is 116 physical
-pages, of which the first 103 numbered pages are substantive narrative under
+reference, not a padded PDF. The current public-alpha edition is 120 physical
+pages, of which the first 108 numbered pages are substantive narrative under
 the tracked exclusion rule. The comprehensive plan, delivery plan, source
 audit, evidence map, scope record, and final exact-snapshot review agree that
 the bounded representative study meets the promised extent and that its
@@ -172,7 +182,7 @@ p. 220, exhaustive manuscript collation, additional local rites and cases,
 and Eastern particular law remain explicit future-research ceilings; they do
 not reopen the bounded completion verdict or imply ecclesiastical approval.
 The controlling evidence is
-`research/final-exact-snapshot-review-2026-07-27.md` beside the publication.
+`research/final-exact-snapshot-review-2026-07-29.md` beside the publication.
 
 ### Linen-cloths restoration
 

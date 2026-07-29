@@ -7,3 +7,17 @@ occurrence, and rights limits.
 
 **Verdict: suitable for first-baseline consideration.** This is a substantive
 first-baseline review, not a blind baseline; no baseline was created.
+
+## Superseding full-pass verdict
+
+The first-baseline note did not test the user-identified deficiency in depth
+and breadth. Both candidate arms showed that a serious treatment needed the
+complaint, daily-measure, and hoarding logic of Exodus; Psalm 78's memory;
+John 6's dialogue sequence; Ephesians' corporate and ethical new person; and
+the alternative Communion branches. The old notable gallery also failed its
+changed-register burden and was replaced by three directly checked witnesses.
+
+**Verdict: MATERIAL—qualitative insufficiency and a deficient reception
+gallery.** The user explicitly authorized replacement. Exact installed
+artifact identities and review results are recorded in `scope.md`;
+rebaselining follows installation.

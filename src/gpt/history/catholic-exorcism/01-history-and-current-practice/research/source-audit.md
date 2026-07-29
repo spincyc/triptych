@@ -703,9 +703,10 @@ identified Eastern Catholic and Orthodox Churches remain open.
 ## Superseded 84-page publication checkpoint
 
 The following checkpoint is retained only as historical evidence for its exact
-predecessor snapshot. It does not describe the current 116-page installed and
-published alpha; the later exact-snapshot checkpoints below supersede its
-installation, completion, and publication-state claims.
+predecessor snapshot. It does not describe the 116-page installed and
+published alpha or the 120-page replacement candidate; the later
+exact-snapshot checkpoints below supersede its installation, completion, and
+publication-state claims.
 
 ## Loudun documentary case module
 
@@ -755,3 +756,43 @@ the promised 100+ page comprehensive deliverable. The expansion's incomplete
 source families remain open. Completion requires the substantive-page, source,
 evidence, safety, rights, identity, mechanical, web/PDF anti-drift, and
 every-page visual gates to pass for one exact snapshot.
+
+## 29 July 2026 deep-research and currentness pass
+
+The full-paper reread found a qualitative problem rather than an extent
+problem: the 116-page edition accumulated strong period and source-family
+modules but left too much comparative work to the reader. The replacement
+candidate therefore adds a seven-test cross-period synthesis over recipient,
+act, minister, artifact, authority, evidence class, and care. It adds no
+formula, sign list, case allegation, ritual sequence, diagnostic criterion,
+or operational instruction. Every source family used by that synthesis was
+already bound to the paper; the new section changes the comparison, not the
+underlying evidence ceiling.
+
+Current official controls were checked again on 29 July:
+
+- the Holy See's Latin Code pages still present canons 1 and 1172 in the form
+  used by the paper;
+- the official authentic-interpretations register checked for this study
+  still contains no canon 1172 entry;
+- the USCCB Exorcism page still states the 2014 approval, 2016 confirmation,
+  2017 implementation, professional-evaluation, consent, confidentiality,
+  cultural-attention, and non-isolated-ministry boundaries used here;
+- WHO continues to publish the 2024 *Clinical Descriptions and Diagnostic
+  Requirements for ICD-11 Mental, Behavioural and Neurodevelopmental
+  Disorders* used for the bounded possession-trance and differential-
+  assessment discussion; and
+- the Crown Prosecution Service's 26 February 2026 England-and-Wales guidance
+  remains the distinct safeguarding control used for spiritual or
+  ritualistic abuse.
+
+These are dated currentness checks, not new claims of universal civil,
+clinical, or conference competence. The paper continues to distinguish the
+Latin Code, U.S. implementation, WHO clinical classification, and an
+England-and-Wales prosecution source.
+
+A direct-image retry for the 1614 *Rituale Romanum* page 220 returned only an
+“image not available” placeholder rather than usable source pixels. It was
+not registered or promoted as evidence. Page 219 remains the exact direct
+terminal control for *De exorcizandis*; the following title at page 220
+remains a secondary-located boundary and is described as such.

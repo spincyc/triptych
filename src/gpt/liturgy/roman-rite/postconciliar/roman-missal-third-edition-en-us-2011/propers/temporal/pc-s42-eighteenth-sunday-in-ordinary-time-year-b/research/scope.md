@@ -44,13 +44,39 @@ appointed elements. Their chief limits are stated locally: none excuses
 hunger, proves compiler intent, makes ethics a validity test, or establishes a
 direct etymological dependence between Exodus and John.
 
+## Notable-and-quotable audit
+
+- William Dent, *Catlap for Ever, or the Smuggler's Downfall* (1784),
+  British Museum 1868,0808.5356: the museum object record was checked for the
+  title, date, inscription, figures, and tax-and-smuggling setting. “Manna of
+  Females” redirects manna toward cheap tea and partisan fiscal satire. It
+  supplies a strong verbal and political afterlife, not Exodus interpretation.
+- Operation Manna: the NOS liberation-year dossier for 29 April 1945 was
+  checked in Dutch for the explicit biblical explanation of the operation's
+  name, the food-drop setting, the first flight, and the risks. The reuse moves
+  manna into military-humanitarian nomenclature; it does not erase logistics,
+  human agency, wartime danger, or the historical Dutch famine.
+- William Williams / Peter Williams, “Guide me, O thou great Jehovah,” in
+  *The Hymnal of Praise* (1913), no. 265: the public-domain hymnal witness and
+  Hymnary catalog record were checked. Wilderness guidance and bread from
+  heaven become congregational pilgrimage prayer. The hymn is reception
+  combining scriptural images, not direct commentary on John 6 or evidence for
+  an enacted Communion-antiphon branch.
+- The previous gallery's unlocated generalizations about phrases having
+  “often traveled” were removed. A mere biblical quotation, ordinary
+  liturgical reuse, or the word's etymology did not meet the changed-register
+  requirement.
+
 ## Rights and source roles
 
 The USCCB occurrence page controls identifiers and boundaries, not reusable
 English text. The registered Douay–Rheims artifacts provide public-domain
 study wording. New Advent's NPNF translations are used for checked reception;
-quotations are minimized and the publication chiefly paraphrases. The Week
-XVIII owner alone controls the Missal formulary.
+quotations are minimized and the publication chiefly paraphrases. The British
+Museum and NOS pages are used for bounded object and historical
+identification; their page content is not redistributed. The Williams hymn
+text and the identified 1913 hymnal are public domain in the United States.
+The Week XVIII owner alone controls the Missal formulary.
 
 ## Negative results and outstanding work
 
@@ -60,3 +86,18 @@ modern formulary design was established. A future critical-edition pass could
 deepen textual history but is not silently claimed here. Direct comparison
 against the 2008 reprint's Week XVIII page images and a named U.S. altar-book
 typography-level collation also remain outstanding.
+
+## Production review
+
+Two settled passes produced a 16-page, 449,234-byte full PDF with SHA-256
+`8c4e600d9d399c4899acda02370cca57c7634c5a58de2e79015627c9cd0f533f`
+and a 10-page, 426,037-byte synthesis PDF with SHA-256
+`f1dd5e429cae8d66adf0e643594d2588abcfd34e2775c37d0427bb76084d8555`.
+The final logs contain no fatal error, undefined reference, overfull box, or
+unresolved rerun warning; the sole underfull notice is on terminal metadata
+and has no visible defect. All pages of both outputs were visually inspected,
+including the rebuilt changed-register gallery and comparative dossier. The
+web converter's loss audit passed, and the installed web edition has SHA-256
+`92adfc91c710f18b53459aadbe3b43aacaa10b9901d22f43f32113741a2b012c`.
+The installed PDFs and web edition are byte-identical to the reviewed
+candidates. This is internal production review, not ecclesiastical approval.

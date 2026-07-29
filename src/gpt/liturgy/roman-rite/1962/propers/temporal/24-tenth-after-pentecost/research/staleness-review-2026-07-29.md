@@ -76,3 +76,24 @@ catalog, release record, or generation metadata change is warranted.
 
 **No rebaseline was performed.** The edition remains unbaselined exactly as
 required; any future baseline action requires separate authority.
+
+## Superseding qualitative deficiency determination
+
+The preceding `NO_MATERIAL` verdict addressed only whether the then-recorded
+research corpus disclosed an unincorporated correction. It did not test the
+separate editorial question later raised by the user: whether the publication
+had adequate depth and breadth. The user expressly determined that the answer
+was no and authorized a full research-first replacement.
+
+The modified arm expanded the existing exposition with a focused comparative
+reception dossier. The research-first arm exposed the same principal omission:
+the publication named many witnesses but did too little sustained comparative
+work across Psalm 54, the Collect, 1 Corinthians 12, Luke 18, the offertory and
+Communion psalms, and later reception. The installed replacement adds that
+analysis while retaining the edition, text, attribution, and rights controls
+recorded above.
+
+**Superseding verdict: MATERIAL—qualitative insufficiency in depth and
+breadth.** The user supplied the explicit replacement authority required by
+the staleness policy. The exact installed replacement and its production
+review are recorded in `scope.md`; rebaselining follows that installation.

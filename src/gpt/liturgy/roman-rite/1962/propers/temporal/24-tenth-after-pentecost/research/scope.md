@@ -148,30 +148,28 @@ quotations, or third-party scholarship.
 
 ## Production Review
 
-The redeveloped source was built for two passes in both modes. The full edition is
-16 pages with SHA-256
-`ca101711ce380f1a8a5273b5ace8ebcaecd58503dfb1b4c0aa28d996320550cc`;
-the seven-page synthesis edition is
-`cb4ac38a6a116d135f884bb876ca18abe25b14268680dda7ac435be1e9a0c005`.
+The deep-research source was built for two passes in both modes. The full
+edition is 18 pages, 488,850 bytes, and has SHA-256
+`3cf9d91cacc46ab52727a11bde516c20cc43ebf2517be788db07250d983b31fa`;
+the seven-page synthesis edition is 403,433 bytes and has SHA-256
+`912c6d17e6141d42533685cb2583b1eb1dad57d3d8c1ed179d87febfd6d1aaf7`.
 Both logs contain no fatal error, undefined reference, overfull box, or
 unresolved rerun warning. Each records one terminal-metadata underfull-box
-notice; full-size review found no visible defect. The component checker proves that the brief
-synthesis occupies exactly two consecutive pages in each output and that the
-next component begins on the following page.
+notice; full-size review found no visible defect. The component checker passed.
 
 Review rasters were generated only through `scripts/pdf-review`. Every page of
 both outputs was inspected at full size for clipping, overlap, density,
 orphaned spill pages, tables, headings, footers, glyphs, monochrome legibility,
 and the terminal colophon. Page 1 is the
 proper map and four senses; page 2 alone is the complete date/location sheet;
-the full edition gives complete appointed text and the reception sweep; the
-synthesis omits them mechanically; and both retain the complete two-page brief,
-cross-proper synthesis, exploratory proposals, notable afterlives, and terminal
-apparatus.
+the full edition gives the complete appointed-text study and comparative
+reception dossier; the synthesis omits the appointed-text branch mechanically;
+and both retain the governing brief, cross-proper synthesis, exploratory
+proposals, notable afterlives, and terminal apparatus.
 
 The canonical web edition was generated from the same research source with
 SHA-256
-`e221710e5b2f9cd292c89be69f2be6d2dce10ac5bff07a78b37eee2336fb3a6e`.
+`535bcbe4f0aa634155633cb4beefd43e4afbd290d676fd9f79bb90449739b211`.
 The reviewed full PDF, synthesis PDF, and canonical web edition were installed
 with exact byte identity to those candidates. This is internal source and
 production review, not official liturgical or ecclesiastical approval.
