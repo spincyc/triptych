@@ -146,7 +146,7 @@ state = "candidate"
 id = "project-review-discoverability"
 owner = "scripts/public-alpha"
 promise = "Keep review publications ordinarily discoverable with conspicuous review labeling."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "policy"
@@ -169,7 +169,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "site-check"
   criterion = "Production-site validation proves every review publication has a resolving catalog route and visible review label."
-  status = "open"
+  status = "pass"
   evidence = ["scripts/public-alpha"]
 
 [[deliverables]]
@@ -194,7 +194,7 @@ state = "in_progress"
 id = "project-integrate-and-deploy"
 owner = ".github/workflows/pages.yml"
 promise = "Integrate the pushed repair series and verify the resulting production Pages deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "integrated"
@@ -205,19 +205,19 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "production-verified"
   criterion = "The deployed production artifact resolves the repaired landing pages, web editions, and PDFs."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "scripts/public-alpha"]
 
 [[deliverables]]
 id = "project-stale-editions"
 owner = "scripts/research-staleness"
 promise = "Reconcile every publication edition reported stale by the repository-wide audit."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "staleness-zero"
   criterion = "The exhaustive staleness audit passes with no stale edition."
-  status = "open"
+  status = "pass"
   evidence = ["scripts/research-staleness", "PROJECT-WORK.md"]
 
 [[deliverables]]
@@ -248,10 +248,10 @@ state = "in_progress"
 id = "project-dictionary-artwork-holds"
 owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
 promise = "Resolve every held dictionary-artwork identification and resolution notice."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "artwork-notices-closed"
   criterion = "Artwork validation and human review records close every held notice without inventing object identities."
-  status = "open"
+  status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
