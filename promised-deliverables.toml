@@ -1,6 +1,54 @@
 schema_version = 1
 
 [[deliverables]]
+id = "project-gpt-deep-research-redevelopment-2026-07-29"
+owner = "src/gpt"
+promise = "Substantively redevelop the GPT Tenth Sunday after Pentecost, all three GPT Eighteenth Sunday in Ordinary Time cycles, and the GPT Catholic exorcism study through broad and deep source-first research without materially changing Claude publications."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "five-gpt-leaves"
+  criterion = "The five authorized GPT leaves receive substantive content redevelopment rather than date-only, layout-only, or quota-driven expansion."
+  status = "open"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c",
+    "src/gpt/history/catholic-exorcism/01-history-and-current-practice",
+  ]
+
+  [[deliverables.requirements]]
+  id = "broad-and-deep-evidence"
+  criterion = "Publication-local audits document broad relevant source-family coverage, deep treatment of the strongest witnesses, material disagreements and limits, and consequential negative results."
+  status = "open"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost/research",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/research",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b/research",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c/research",
+    "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gpt-publications-verified"
+  criterion = "Every affected GPT research and synthesis PDF and canonical web edition is rebuilt, installed from a reviewed build, checked for source and metadata integrity, and visually inspected page by page."
+  status = "open"
+  evidence = [
+    "doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.pdf",
+    "doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+    "doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+    "doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+    "doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+  ]
+
+  [[deliverables.requirements]]
+  id = "claude-boundary"
+  criterion = "No Claude publication receives a material source, PDF, web, catalog, release, or baseline change from this work."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "task-2-exorcism-100-pages"
 owner = "src/gpt/history/catholic-exorcism/01-history-and-current-practice"
 promise = "Produce and hard-review a substantive Catholic exorcism study of at least 100 pages."

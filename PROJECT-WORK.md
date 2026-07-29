@@ -131,6 +131,29 @@ operations.
 
 ## Promised work
 
+### GPT deep-research redevelopment
+
+<!-- promised-deliverable: project-gpt-deep-research-redevelopment-2026-07-29 -->
+
+The maintainer identified substantive underdevelopment—not merely stale dates
+or presentation—in five GPT publication leaves: the 1962 Tenth Sunday after
+Pentecost; Years A, B, and C of the postconciliar Eighteenth Sunday in Ordinary
+Time; and *Catholic Exorcism: History, Discipline, and Pastoral Practice*. Each
+requires a full source-first redevelopment that broadens the relevant source
+families and deepens treatment of the strongest witnesses, material
+disagreements, transmission, and limits. Existing prose is provisional, and
+page count or repeated source summaries do not establish completion.
+
+The authorized scope is GPT only. Claude publications may be inspected to
+understand cross-provider staleness or dependencies, but they must not receive
+material source, PDF, web, catalog, release, or baseline changes under this
+work. Provider-neutral reusable evidence may be corrected or extended only
+where the GPT research requires it; such a change does not authorize rebuilding
+or revising a Claude consumer. Completion requires current publication-local
+research records, source and rights gates, rebuilt and installed GPT PDFs and
+web editions, every-page visual inspection, coherent release records, and
+validated pushed checkpoints.
+
 ### Exorcism reference
 
 <!-- promised-deliverable: task-2-exorcism-100-pages -->
