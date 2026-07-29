@@ -14,10 +14,6 @@ from pathlib import Path
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
-MAKE_FRAGMENT = (
-    REPOSITORY_ROOT
-    / "tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk"
-)
 
 
 class MakefileBuildGraphTests(unittest.TestCase):
@@ -25,12 +21,6 @@ class MakefileBuildGraphTests(unittest.TestCase):
         self.temporary_directory = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary_directory.name)
         shutil.copy2(REPOSITORY_ROOT / "Makefile", self.root / "Makefile")
-        make_fragment = (
-            self.root
-            / "tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk"
-        )
-        make_fragment.parent.mkdir(parents=True)
-        shutil.copy2(MAKE_FRAGMENT, make_fragment)
         shutil.copy2(
             REPOSITORY_ROOT / "requirements-public-alpha.txt",
             self.root / "requirements-public-alpha.txt",
@@ -209,6 +199,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
                 "MAKE_TEST_SOURCE_GATE_ORDER_LOG": str(self.source_gate_order_log),
                 "MAKE_TEST_PACMAN_LOG": str(self.pacman_log),
                 "MAKE_TEST_CODEX_LOG": str(self.codex_log),
+                "PATH": f"{scripts}:{self.environment['PATH']}",
                 "PDFLATEX": str(self.pdflatex),
             }
         )
@@ -701,9 +692,6 @@ exec /usr/bin/id "$@"
             "github-cli",
             "openai-codex",
             "ripgrep",
-            "python-setuptools",
-            "python-build",
-            "python-wheel",
         ]
 
         self.assertEqual(arguments[:2], ["-Syu", "--needed"])
@@ -747,27 +735,6 @@ exit 99
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Unsupported host OS: ubuntu", result.stderr)
         self.assertFalse(self.pacman_log.exists())
-
-    def test_codex_launch_targets_pin_the_configured_system_binary(self) -> None:
-        launcher = self.root / "scripts/triptych-codex"
-        launcher.write_text(
-            """#!/bin/sh
-printf '%s\\n' "$TRIPTYCH_CODEX_REAL" >> "$MAKE_TEST_CODEX_LOG"
-""",
-            encoding="utf-8",
-        )
-        launcher.chmod(0o755)
-        self.environment.pop("CODEX", None)
-        self.environment["TRIPTYCH_CODEX_REAL"] = "/home/test/.local/bin/codex"
-
-        self.run_make("codex")
-        self.run_make("reopen", "RUN=20260720t141000z-112955d84c04")
-
-        self.assertEqual(
-            self.lines(self.codex_log),
-            ["/usr/bin/codex", "/usr/bin/codex"],
-        )
-
 
 if __name__ == "__main__":
     unittest.main()

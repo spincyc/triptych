@@ -404,15 +404,32 @@ def is_relative_to(path: Path, parent: Path) -> bool:
     return True
 
 
-def validate_artifact_root(value: Path, option: str) -> Path:
-    output = (ROOT / value).resolve() if not value.is_absolute() else value.resolve()
-    build_root = (ROOT / "build").resolve()
+def managed_run_id() -> str | None:
+    marker_names = (
+        "TRIPTYCH_CODEX_ROLE",
+        "TRIPTYCH_CODEX_RUN_ID",
+    )
+    if not any(name in os.environ for name in marker_names):
+        return None
+    role = os.environ.get("TRIPTYCH_CODEX_ROLE")
     run_id = os.environ.get("TRIPTYCH_CODEX_RUN_ID")
-    managed_worker = (
-        os.environ.get("TRIPTYCH_CODEX_ROLE") in {"worker", "resolver"}
+    valid = (
+        all(name in os.environ for name in marker_names)
+        and role in {"worker", "resolver"}
         and isinstance(run_id, str)
         and RUN_ID_RE.fullmatch(run_id) is not None
     )
+    if not valid:
+        raise ReviewError("incomplete or invalid Triptych managed-worker markers")
+    assert run_id is not None
+    return run_id
+
+
+def validate_artifact_root(value: Path, option: str) -> Path:
+    output = (ROOT / value).resolve() if not value.is_absolute() else value.resolve()
+    build_root = (ROOT / "build").resolve()
+    run_id = managed_run_id()
+    managed_worker = run_id is not None
     temporary_roots: list[Path] = []
     if managed_worker:
         configured_values = {

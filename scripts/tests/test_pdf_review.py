@@ -322,7 +322,9 @@ os.execv(
 
 
 class ArtifactPathTests(unittest.TestCase):
-    def test_managed_worker_accepts_only_a_tmpdir_subdirectory(self) -> None:
+    def assert_managed_worker_accepts_only_a_tmpdir_subdirectory(
+        self, markers: dict[str, str]
+    ) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             run_id = "20260722t000000z-000000000000"
             managed_root = Path(temporary) / "tmp" / run_id
@@ -331,8 +333,7 @@ class ArtifactPathTests(unittest.TestCase):
                 "TMPDIR": str(managed_root),
                 "TMP": str(managed_root),
                 "TEMP": str(managed_root),
-                "TRIPTYCH_CODEX_ROLE": "worker",
-                "TRIPTYCH_CODEX_RUN_ID": run_id,
+                **markers,
             }
             with mock.patch.dict(os.environ, environment, clear=True):
                 expected = managed_root / "review"
@@ -341,6 +342,38 @@ class ArtifactPathTests(unittest.TestCase):
                     review.validate_cache_root(managed_root)
                 with self.assertRaisesRegex(review.ReviewError, "managed TMPDIR"):
                     review.validate_output_root(Path("/tmp/unmanaged-review-output"))
+
+    def test_legacy_managed_worker_accepts_only_a_tmpdir_subdirectory(self) -> None:
+        self.assert_managed_worker_accepts_only_a_tmpdir_subdirectory(
+            {
+                "TRIPTYCH_CODEX_ROLE": "worker",
+                "TRIPTYCH_CODEX_RUN_ID": "20260722t000000z-000000000000",
+            }
+        )
+
+    def test_incomplete_or_spoofed_managed_markers_are_rejected(self) -> None:
+        run_id = "20260722t000000z-000000000000"
+        cases = (
+            {"TRIPTYCH_CODEX_ROLE": "worker"},
+            {"TRIPTYCH_CODEX_RUN_ID": run_id},
+            {
+                "TRIPTYCH_CODEX_ROLE": "primary",
+                "TRIPTYCH_CODEX_RUN_ID": run_id,
+            },
+            {
+                "TRIPTYCH_CODEX_ROLE": "worker",
+                "TRIPTYCH_CODEX_RUN_ID": "spoofed",
+            },
+        )
+        for environment in cases:
+            with self.subTest(environment=environment):
+                with mock.patch.dict(os.environ, environment, clear=True):
+                    with self.assertRaisesRegex(
+                        review.ReviewError, "incomplete or invalid"
+                    ):
+                        review.validate_output_root(
+                            Path("/tmp/triptych-pdf-review-spoofed")
+                        )
 
     def test_unmanaged_invocation_ignores_a_caller_selected_tmpdir(self) -> None:
         # A literal path outside /tmp and build/: tempfile would honour the

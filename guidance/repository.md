@@ -121,7 +121,7 @@ publication-local binding records why and how that publication used a central
 source. Central identity never supplies a consumer's interpretation
 automatically.
 
-Do not combine unlike formularies, editions, translations, jurisdictions, or unrelated works in one record merely because they share a theme. Never record credentials, private communications, host or user identity, machine paths, network data, launcher state, or session identifiers.
+Do not combine unlike formularies, editions, translations, jurisdictions, or unrelated works in one record merely because they share a theme. Never record credentials, private communications, host or user identity, machine paths, network data, or session identifiers.
 
 ## Rights and project identity
 
@@ -185,7 +185,7 @@ completion audit. These research gates are deliberately not prerequisites of `al
 `pdf`, or an individual PDF build. Rendered source changes still require every
 profile-specific build, page review, and installation gate above.
 
-## Direct Codex sessions and retained workers
+## Direct Codex sessions
 
 The ordinary Codex workflow runs directly in the current checkout. A direct
 session may edit, build, inspect, create coherent commits, and push validated
@@ -196,56 +196,6 @@ the checks required by the affected guidance. Pushing `origin/main` starts the
 GitHub Pages workflow and therefore authorizes that automatic deployment
 attempt. It does not authorize another deployment, a force-push, or history
 rewriting.
-
-The launcher remains available for retained runs and optional isolated work.
-A session already in its assigned linked worktree must not invoke the launcher
-again or administer worktrees. Launcher-managed workers may edit, build,
-inspect, and commit only when authorized. They never switch branches, merge,
-rebase, amend, push, use the shared stash, change shared Git configuration or
-remotes, administer worktrees, or leave background processes running.
-Runtime paths, run IDs, locks, manifests, prompts, logs, and private launcher
-state are never tracked.
-
-The launcher exports the same exact run-owned directory as `TMPDIR`, `TMP`, and `TEMP`. Every off-worktree transient produced by a worker or resolver—downloads, OCR and text extracts, generated helper scripts, screenshots, review rasters, and ad hoc caches—must be created below that directory rather than in an arbitrary shared `/tmp` path. Stable shared IPC locks are the narrow exception. Reproducible repository intermediates belong in the ignored `build/` tree while a worker is retained; material that must survive completed integration must be incorporated into the authorized tracked paths. No process may keep using the run-owned temporary tree after its worker or resolver exits; the inherited lifecycle lock and prohibition on background processes establish cleanup exclusivity. Ordinary managed cleanup authenticates and removes only the exact temporary path recorded for that run before deleting its private lifecycle refs; failure leaves a retryable retained state, and a cleaned run must have no such path. The separately authorized rewritten-quarantine retirement retains its stricter receipt transaction and removes the same authenticated temporary path only during finalization.
-
-From the primary checkout, inspect and manage ordinary retained runs with:
-
-```sh
-make status                 # list runs that still need attention
-make status RUN=<run-id>    # inspect one exact record, including a cleaned run
-make reopen RUN=<run-id>    # start a fresh Codex process in a retained worker
-make clean-run RUN=<run-id> # request launcher-verified safe cleanup
-```
-
-The cleanup command never force-discards a result, and `make clean` remains the build-artifact cleanup target. The Make reopen wrapper accepts only the exact run ID; use the direct `--triptych-reopen` launcher form when supported Codex arguments are needed. Status may reconcile a stale lifecycle record while reporting it.
-
-Integration is launcher-owned and separately authorized. The opaque lifecycle is:
-
-```sh
-make final-diff RUN=<run-id>
-make integrate RUN=<run-id>
-make resolve RUN=<run-id>    # only after a recorded conflict
-make continue RUN=<run-id>
-make abort RUN=<run-id>
-```
-
-Except for the no-argument status overview, Make lifecycle commands take an exact launcher-produced ID as `RUN=<run-id>`. The former positional spelling remains accepted for local compatibility, but new instructions and automation use `RUN=`. Use direct launcher forms for untrusted or externally supplied input because GNU Make interprets assignments before target validation. A resolver may edit and stage only the recorded conflict; it may not commit or administer the rebase. Only the launcher continues, aborts, lands, and cleans the retained run. Review the complete object-to-object final diff and every affected consumer before authorizing landing. Reconcile PDF conflicts from authoritative sources and rebuild; never choose one binary side. The launcher never pushes or deploys.
-
-Explicit abort may restore an initial merge-backend rebase stopped before its first replay commit only after proving the captured target HEAD, audited source branch and private anchor, first replay identity, exact independently reproduced index tree, unchanged rebase administration, and absence of unstaged or untracked changes; otherwise it retains the worker unchanged.
-
-### Exceptional rewritten-quarantine retirement
-
-Retirement is a destructive exception for a quarantined run that an operator has explicitly determined is superseded after its worker history was rewritten. It requires separate authorization to discard the exact head and is available only from the primary checkout through the direct launcher form:
-
-```sh
-scripts/triptych-codex --triptych-retire RUN_ID --discard-head FULL_OID --target-contains FULL_OID
-```
-
-There is deliberately no Make wrapper. Both object arguments must be full, exact commit IDs. `--discard-head` must identify the freshly audited, clean head of the inactive worker on its recorded branch, and that head must still descend from the recorded base while no longer descending from the last terminal `final_head`; `recorded_clean_final_head` is not a substitute for that terminal audit. The recorded target must exist and contain `--target-contains`. That object is only an operator-selected reachability checkpoint: reachability does not establish that the target semantically incorporates, supersedes, or is equivalent to the discarded work. Retirement verifies the target but never moves it, and it does not relax ordinary cleanup or integration eligibility.
-
-Before removing the authenticated worker checkout, the launcher resolves and verifies the retirement arguments, terminal and observed heads, base ancestry, selected containment checkpoint, and exact initial target once, then durably records that eligibility proof and anchors the discarded head under a private per-run ref. Retries do not repeat that initial history proof. Before every still-avoidable worktree removal, the launcher freshly resolves the recorded target and requires it to contain the selected checkpoint. While the only valid pre-transaction tuple remains branch and anchor at the discarded head with the receipt absent, it checks containment again, durably updates `retirement_cleanup_target_head` to that exact current target, and atomically verifies that ref while creating the receipt and exact-deleting the branch and anchor. The only valid post-transaction tuple is branch and anchor absent with the receipt at the discarded head. Every other tuple fails closed.
-
-Only after observing the exact post-transaction tuple does the launcher durably record the transaction. It then deletes the receipt with an exact-old-object check, observes its absence, durably records that removal, and finalizes cleaned metadata. A target race leaves the pre-transaction refs intact; an exact retry may checkpoint a newer target descendant that still contains the selected checkpoint. Loss of containment fails closed without deleting those refs and succeeds only after containment is restored. Once the receipt transaction has committed, recovery uses only durable fields and strict phase refs without resolving the initial, discard, final, base, selected-checkpoint, or target objects, so garbage collection may already have pruned them. Conflicting lifecycle state, a partial deletion, an active worker, a changed checkout, or a tampered tuple also fails closed. Repeating the command with the exact checkpointed argument text is idempotent; changed arguments are rejected. A completed retirement uses the ordinary cleaned state, so the overview omits it; its durable record remains addressable by exact run ID with `make status RUN=<run-id>`. The compact status output does not print the full retirement audit, which remains in the durable manifest. `make clean-run RUN=<run-id>` may resume a retirement only after the direct command has checkpointed it and must continue to reject an untouched quarantine.
 
 ## Adding or moving a publication
 
@@ -424,11 +374,11 @@ Conditional authorization records its effective instant, timezone, duration, exc
 ## Version control and authority
 
 Preserve unrelated changes and stage only a coherent requested result.
-Editing, building, installing, committing, integrating a retained worker,
-updating another local target, pushing another ref, and deploying outside the
+Editing, building, installing, committing, updating another local target,
+pushing another ref, and deploying outside the
 automatic Pages workflow remain distinct authorities. Direct sessions have
 standing authority for coherent ordinary commits on `main` and validated
-regular pushes to `origin/main`; launcher-managed workers do not.
+regular pushes to `origin/main`.
 
 Before any push to a public ref, review the exact outgoing range and confirm
 that every newly reachable source, record, PDF, and historical object is

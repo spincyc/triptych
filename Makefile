@@ -4,7 +4,6 @@ PROVIDER ?= gpt
 PDF_JOBS ?= 4
 SHA256 ?= sha256sum
 INSTALL ?= install
-CODEX ?= /usr/bin/codex
 
 # Arch Linux dependency manifest (the only supported local host for now).
 # Keep direct owner packages explicit even when pacman currently installs one
@@ -31,11 +30,6 @@ CODEX ?= /usr/bin/codex
 #     pandoc
 #   repository/review/isolated-agent workflow:
 #     git github-cli openai-codex ripgrep
-#   the worktree-marshal installed-lifecycle suite, which builds and installs a
-#   wheel rebuilt from its own source distribution and is the release gate for
-#   that tool; without these its packaging tests error rather than skip:
-#     python-setuptools python-build python-wheel
-#
 # pacman supplies the native shared-library closure and TeX package
 # transitives. poppler-data is optional for non-Latin CMaps and is not needed
 # by the current embedded-font corpus. pacman and either root access or sudo
@@ -55,10 +49,9 @@ ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 ARCH_PDF_PACKAGES := poppler imagemagick
 ARCH_WEB_PACKAGES := pandoc
 ARCH_WORKFLOW_PACKAGES := git github-cli openai-codex ripgrep
-ARCH_PACKAGING_PACKAGES := python-setuptools python-build python-wheel
 ARCH_DEPENDENCY_PACKAGES := $(ARCH_CORE_PACKAGES) $(ARCH_PYTHON_PACKAGES) \
 	$(ARCH_TEX_PACKAGES) $(ARCH_PDF_PACKAGES) $(ARCH_WEB_PACKAGES) \
-	$(ARCH_WORKFLOW_PACKAGES) $(ARCH_PACKAGING_PACKAGES)
+	$(ARCH_WORKFLOW_PACKAGES)
 ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	env:/usr/bin/env id:/usr/bin/id find:/usr/bin/find sort:/usr/bin/sort \
 	cmp:/usr/bin/cmp \
@@ -105,37 +98,9 @@ PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
 RELEASE_BINDINGS_TOOL := scripts/release-bindings
 RESEARCH_STALENESS_TOOL := scripts/research-staleness
-override CODEX_LAUNCHER := scripts/triptych-codex
 SOURCE_LIBRARY_TOOL := scripts/source-library
 SOURCE_INVENTORY_TOOL := scripts/source-inventory
 SOURCE_FAMILY_MIGRATION_TOOL := scripts/source-family-migration
-
-# Triptych consumes the reusable Worktree Marshal Make API through the existing
-# compatibility launcher. Keep target names plain; lifecycle IDs are supplied
-# only as validated RUN=<run-id> command-line assignments.
-override WORKTREE_MARSHAL := $(CODEX_LAUNCHER)
-override WORKTREE_MARSHAL_DISPLAY_NAME := Triptych Codex
-override WORKTREE_MARSHAL_GLOBAL_ARGUMENTS :=
-override WORKTREE_MARSHAL_RUN_TARGET := codex
-override WORKTREE_MARSHAL_STATUS_TARGET := status
-override WORKTREE_MARSHAL_REOPEN_TARGET := reopen
-override WORKTREE_MARSHAL_DIFF_TARGET := final-diff
-override WORKTREE_MARSHAL_INTEGRATE_TARGET := integrate
-override WORKTREE_MARSHAL_RESOLVE_TARGET := resolve
-override WORKTREE_MARSHAL_CONTINUE_TARGET := continue
-override WORKTREE_MARSHAL_ABORT_TARGET := abort
-override WORKTREE_MARSHAL_CLEAN_TARGET := clean-run
-override WORKTREE_MARSHAL_POSITIONAL_RUN_ID_COMPAT := 1
-override WORKTREE_MARSHAL_RUN_ARGUMENTS :=
-override WORKTREE_MARSHAL_STATUS_ARGUMENTS := --triptych-status
-override WORKTREE_MARSHAL_REOPEN_ARGUMENTS := --triptych-reopen
-override WORKTREE_MARSHAL_DIFF_ARGUMENTS := --triptych-final-diff
-override WORKTREE_MARSHAL_INTEGRATE_ARGUMENTS := --triptych-integrate
-override WORKTREE_MARSHAL_RESOLVE_ARGUMENTS := --triptych-resolve
-override WORKTREE_MARSHAL_CONTINUE_ARGUMENTS := --triptych-continue
-override WORKTREE_MARSHAL_ABORT_ARGUMENTS := --triptych-abort
-override WORKTREE_MARSHAL_CLEAN_ARGUMENTS := --triptych-clean
-include tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk
 
 COMMON_SOURCES := $(shell find src/common -type f 2>/dev/null | sort)
 ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
@@ -229,7 +194,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-family-screening \
 	check-promised-deliverables \
 	check-public-alpha prepare-public-alpha \
-	check-pdf-review check-agent-isolation check-curriculum-sources \
+	check-pdf-review check-curriculum-sources \
 	check-curriculum-structure \
 	public-site public-preview \
 	dependencies-arch install-dependencies-arch \
@@ -292,8 +257,6 @@ install: check-metadata $(DOC_PDFS)
 list:
 	@printf '%s\n' $(DOCUMENTS)
 
-codex reopen resolve: private export TRIPTYCH_CODEX_REAL := $(CODEX)
-
 dependencies-arch:
 	@printf '%s\n' $(ARCH_DEPENDENCY_PACKAGES)
 
@@ -341,10 +304,6 @@ install-dependencies-arch:
 			printf '%s\n' "Warning: $$effective shadows canonical $$canonical" >&2; \
 		fi; \
 	done
-
-check-agent-isolation:
-	@$(PYTHON) -m unittest discover -s tools/worktree-marshal/tests -t tools/worktree-marshal -v
-	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_triptych_codex.py' -v
 
 check-pdf-review:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_pdf_review.py' -v
@@ -425,17 +384,6 @@ help:
 		'make list     List discovered document IDs' \
 		'make dependencies-arch  List canonical Arch package dependencies' \
 		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
-		'make codex    Start Codex in an automatically isolated task checkout' \
-		'make status [RUN=<run-id>]  List runs needing attention or inspect one exact record' \
-		'make reopen RUN=<run-id>  Start a new Codex process in a retained task checkout' \
-		'make clean-run RUN=<run-id>  Safely clean an eligible retained run' \
-		'make integrate RUN=<run-id>  Integrate a clean run or land an unchanged review-pending candidate' \
-		'make resolve RUN=<run-id>  Open Codex to resolve and stage a managed rebase conflict' \
-		'make continue RUN=<run-id>  Continue staged resolutions to a review-pending candidate' \
-		'make abort RUN=<run-id>  Abort a managed rebase and restore its exact audited source' \
-		'make final-diff RUN=<run-id>  Show the complete review-pending diff without a worktree path' \
-		'Run-ID Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
-		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-sources  Validate the source library, inventory, and migration ledger' \
 		'make check-deployment-sources  Validate deployable sources and publication inventories' \
