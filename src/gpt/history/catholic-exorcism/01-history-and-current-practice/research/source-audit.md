@@ -608,10 +608,11 @@ efficacy.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
 - Popular exorcist memoirs, films, podcasts, alleged recordings, and named case narratives were excluded: they are not needed to establish doctrine, law, ritual history, or safe practice.
-- The opening's “exorcist club” line is an editorial transformation of the
+- The title-page “exorcist club” line is an editorial transformation of the
   familiar rule in Chuck Palahniuk, *Fight Club*, ch. 6 (W. W. Norton, 1996),
   as popularized in Jim Uhls's screenplay for David Fincher's *Fight Club*
-  (1999). It is labeled as an adaptation, never “Anonymous.” No protected
+  (1999). The displayed attribution is “Anonymous,” while a title-page
+  footnote carries this transformation and reception context. No protected
   novel, screenplay, or film bytes are retained, and no underlying wording is
   reproduced as a quotation. Its immediate discussion concerns
   confidentiality and the afflicted person's dignity, not pop-culture
@@ -646,9 +647,9 @@ source wording is reproduced. The Robinson--Pierpont Greek is discussed but
 not reproduced in bulk. Quotation marks elsewhere identify contested labels,
 titles, hypothetical questions, or the publication's own analytic
 terminology, not uncredited source excerpts. The 28 July revision adds the one
-focused, attributed Wolfe display quotation and the separately labeled
-Palahniuk/Uhls adaptation described above; neither is an operative formula,
-instruction, or uncredited excerpt.
+focused, attributed Wolfe display quotation and the Anonymous epigraph whose
+Palahniuk/Uhls literary context is recorded in a footnote; neither is an
+operative formula, instruction, or uncredited excerpt.
 
 The current proprietary ritual is neither reproduced, translated, nor reduced
 to a usable sequence. The 1614, 1872, and 1952 ritual witnesses are treated

@@ -7,16 +7,26 @@
   pdfsubject={Public-alpha bounded comprehensive historical study}
 }
 
+\def\TriptychPrintEdition{}
+
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
 \thispagestyle{empty}
 \centering
-\vspace*{0.12\textheight}
+\vspace*{0.045\textheight}
 {\Huge\bfseries Catholic Exorcism\par}
 \vspace{0.5em}
 {\Large\itshape History, Discipline, and Pastoral Practice\par}
-\vspace{0.9em}
+\vspace{1.2em}
+\begin{minipage}{0.86\textwidth}
+\small
+\raggedright
+\ExorcismEpigraphs{\footnotemark}
+\end{minipage}
+\par
+\footnotetext{\ExorcismClubContext}
+\vspace{1.0em}
 {\large Scripture, ritual development, canon law,\par}
 {\large discernment, and care of afflicted persons\par}
 \vspace{0.8em}
@@ -29,6 +39,11 @@ diocesan channels.\par}
 \vspace{0.8em}
 {\small\bfseries Alpha\par}
 \end{titlepage}
+
+\ifdefined\TriptychPrintEdition
+\else
+\ExorcismEpigraphs{\footnote{\ExorcismClubContext}}
+\fi
 
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}

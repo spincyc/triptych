@@ -82,6 +82,10 @@ COMMENT_RE = re.compile(r"(?<!\\)%.*")
 MATH_RE = re.compile(r"\$\$.*?\$\$|\$[^$]*\$|\\\\\(.*?\\\\\)|\\\\\[.*?\\\\\]", re.DOTALL)
 INPUT_RE = re.compile(r"\\input\s*\{([^{}]+)\}")
 TITLEPAGE_RE = re.compile(r"\\begin\{titlepage\}.*?\\end\{titlepage\}", re.DOTALL)
+PRINT_EDITION_BRANCH_RE = re.compile(
+    r"\\ifdefined\\TriptychPrintEdition(.*?)\\else(.*?)\\fi",
+    re.DOTALL,
+)
 HYPERSETUP_RE = re.compile(r"pdf(title|subject)\s*=\s*\{")
 FOOTNOTE_DEF_RE = re.compile(r"^\[\^[^\]]+\]:", re.MULTILINE)
 SAFE_PAYLOAD_RE = re.compile(r"^[A-Za-z0-9 .,()]+$")
@@ -441,6 +445,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     if not main.is_file():
         raise ConversionError(f"no such document: {main}")
     source = main.read_text(encoding="utf-8")
+    source = PRINT_EDITION_BRANCH_RE.sub(lambda match: match.group(2), source)
     if (main.parent / "proper-components.toml").is_file():
         branch = re.compile(
             r"\\ifdefined\\TriptychSynthesisEdition(.*?)\\else(.*?)\\fi",

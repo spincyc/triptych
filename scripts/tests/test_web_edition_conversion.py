@@ -78,6 +78,17 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("## Body", markdown)
         self.assertNotIn("Dropped title page", markdown)
 
+    def test_print_only_branch_keeps_its_web_alternative(self) -> None:
+        markdown = self.convert(
+            "\\ifdefined\\TriptychPrintEdition\n"
+            "Print-only wording.\n"
+            "\\else\n"
+            "Web alternative.\n"
+            "\\fi\n"
+        )
+        self.assertIn("Web alternative.", markdown)
+        self.assertNotIn("Print-only wording.", markdown)
+
     def test_named_table_environment_keeps_its_header_and_every_row(self) -> None:
         markdown = self.convert(
             "\\begin{lifetimeline}\n"

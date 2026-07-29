@@ -70,3 +70,33 @@ repository's license as required.
 internal source, rights, safety, and production review. Public alpha is a
 publication-maturity label and conveys no ecclesiastical, legal, medical, or
 pastoral approval.
+
+## Superseding title-page epigraph checkpoint
+
+This checkpoint supersedes only the artifact identities and epigraph
+placement or attribution recorded above and in earlier reviews. Both
+epigraphs now appear on the print title page. The second is displayed as
+“Anonymous”; its transformed-allusion context remains in title-page footnote
+1, which identifies Chuck Palahniuk's *Fight Club*, chapter 6 (1996), and Jim
+Uhls's screenplay for David Fincher's 1999 film. The web edition retains the
+same two epigraphs before the opening section, because its conversion
+intentionally suppresses the print title page, and renders the same context as
+a footnote. The immediate critical analysis, source bindings, rights boundary,
+safety notices, substantive body, and source verdict remain unchanged.
+
+Two settled pdfTeX passes produced a 120-page, 789,672-byte PDF with SHA-256
+`bd38b39a21adaa7f8bf4208aaee7a714c2c6c64601740b4d7e59c03ac860ef03`.
+The final log contains no fatal error, undefined reference, overfull box, or
+unresolved rerun request; every font is embedded. Repository review tooling
+rasterized all 120 pages into six 20-page contact sheets. Every sheet and
+every page was inspected, with the title page also examined at full size.
+The epigraphs, attributions, footnote, title, safety notice, catalog line, and
+alpha marker are legible and free of collision, clipping, spill, or unintended
+pagination.
+
+The generated web edition is 472,085 bytes with SHA-256
+`8d2ba4b0f5b2879b2e64b117a508795bba098d9cd6f594723cfe4c842194c593`.
+Its conversion audit and the converter's 27-test regression suite pass. The
+source-library, generation-metadata, web-declaration, and complete
+source-family-screening gates pass. This checkpoint authorizes installation
+only of the exact PDF and web artifacts identified here.

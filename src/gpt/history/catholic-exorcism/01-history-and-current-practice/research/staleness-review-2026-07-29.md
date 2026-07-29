@@ -58,7 +58,7 @@ case.
 | Ancient and biblical narratives | No modern diagnosis, continuity, or efficacy inferred | Retained | Same ceilings | No collateral effect |
 | Early and medieval exorcistic evidence | Recipient, office, and book contexts distinguished | Retained | Same distinctions | New Gelasian prayers are different-locus collateral; they neither add nor contradict a mapped claim |
 | 1614 and later Roman ritual history | Editions and acts distinguished without operational reproduction | Retained | Same architecture | No collateral effect |
-| Literary opening | Wolfe quotation and Palahniuk/Uhls adaptation attributed and excluded as evidence | Retained | Treated only as controlled framing | Changed local bindings strengthen attribution/rights control already incorporated |
+| Literary opening | Wolfe quotation and Anonymous epigraph, with Palahniuk/Uhls context in a footnote, attributed and excluded as evidence | Retained | Treated only as controlled framing | Changed local bindings strengthen attribution/rights control already incorporated |
 | Catholic demonology | Authority levels and Thomistic school theology bounded | Retained | Same authority separation | Aquinas II-II.30.4 on mercy neither strengthens nor weakens the mapped demonology claims |
 | Current Latin canon 1172 | Particular and express local-ordinary permission; suitable priest; Latin jurisdiction | Retained | Same rule | Official 2026-07-29 check confirms; no amendment or contradiction found |
 | Ritual-book and territorial implementation | Universal law distinguished from book editions and U.S. implementation | Retained | Same jurisdiction/date boundary | No changed input alters these acts |
