@@ -127,6 +127,19 @@
       "stage": "draft",
       "usage": "commentary-work-index {discover,build-corpus}"
     },
+    "index-bible": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Build an indexed bible from the source library's tracked verse text.",
+      "requires": [
+        "mass-propers"
+      ],
+      "stage": "draft",
+      "usage": "index-bible {check,build} [--bible ID] [--root DIR] [--bible-root DIR] [--verbose]"
+    },
     "mass-propers": {
       "idempotent": true,
       "json": true,

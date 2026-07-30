@@ -1,0 +1,114 @@
+#!/bin/sh
+# Test for `tools/tpt index-bible`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="index-bible"
+tracked="$repo/src/sources/bibles/douay-rheims/index.yaml"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+# The tracked index is current: a rebuild reproduces it byte for byte.
+run_tool check >/dev/null
+
+# A build is deterministic, and it never touches the repository when it is
+# pointed somewhere else.
+run_tool build --bible-root "$sandbox/one" >/dev/null
+run_tool build --bible-root "$sandbox/two" >/dev/null
+if ! cmp -s "$sandbox/one/douay-rheims/index.yaml" "$sandbox/two/douay-rheims/index.yaml"; then
+	echo "build output is not byte-stable across runs" >&2
+	exit 1
+fi
+if ! cmp -s "$sandbox/one/douay-rheims/index.yaml" "$tracked"; then
+	echo "a fresh build does not match the tracked index" >&2
+	exit 1
+fi
+
+# The index declares the contract mass-propers enforces before resolving.
+for want in "schema: triptych-bible-index/v1" "rights: public-domain" \
+	"publishable: true" "numbering: vulgate"; do
+	if ! grep -q "^$want\$" "$tracked"; then
+		echo "the index is missing $want" >&2
+		exit 1
+	fi
+done
+
+# No Project Gutenberg boilerplate may reach a tracked index.
+if grep -qi "gutenberg-tm\|START OF THE PROJECT GUTENBERG\|Project Gutenberg License\|gutenberg.org/license" "$tracked"; then
+	echo "licence boilerplate leaked into the index" >&2
+	exit 1
+fi
+
+# The Advent introit is the standing proof that a citation resolves end to end:
+# Ad te levavi is Vulgate Psalm 24 and Hebrew Psalm 25.
+# The reading view wraps, so compare against a single flattened line.
+introit="$("$tool" mass-propers --calendar roman-1962 --mass advent-1 --bible douay-rheims |
+	tr '\n' ' ' | tr -s ' ')"
+case "$introit" in
+*"have I lifted up my soul"*) ;;
+*) echo "the 1962 introit did not resolve to its verse text" >&2; exit 1 ;;
+esac
+crossed="$("$tool" mass-propers --calendar postconciliar --mass advent-1 --bible douay-rheims |
+	tr '\n' ' ' | tr -s ' ')"
+case "$crossed" in
+*"have I lifted up my soul"*) ;;
+*) echo "the converted postconciliar citation did not resolve" >&2; exit 1 ;;
+esac
+
+# Machine form is one key-sorted object and reports the coverage it achieved.
+run_tool check --format json >one.json
+run_tool check --format json >two.json
+if ! cmp -s one.json two.json; then
+	echo "json output is not byte-stable across runs" >&2
+	exit 1
+fi
+for want in '"passages"' '"calendars"' '"roman-1962"' '"unresolved"'; do
+	if ! grep -q "$want" one.json; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+
+# A stale index is reported rather than silently accepted.
+mkdir -p stale/douay-rheims
+sed 's/^numbering: vulgate$/numbering: hebrew/' "$tracked" >stale/douay-rheims/index.yaml
+status=0
+run_tool check --bible-root stale >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a stale index should exit 2, got $status" >&2
+	exit 1
+fi
+status=0
+run_tool check --bible-root missing >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "an absent index should exit 2, got $status" >&2
+	exit 1
+fi
+
+# An edition with no source record is refused by name rather than half-built.
+status=0
+run_tool build --bible no-such-bible --bible-root "$sandbox/none" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 3 ]; then
+	echo "an unknown edition should exit 3, got $status" >&2
+	exit 1
+fi
+if [ -e "$sandbox/none" ]; then
+	echo "a refused build must not create an output directory" >&2
+	exit 1
+fi
+
+if run_tool check --format nonesuch >/dev/null 2>&1; then
+	echo "expected failure for an unknown format" >&2
+	exit 1
+fi
+
+echo ok

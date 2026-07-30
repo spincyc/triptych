@@ -1,0 +1,439 @@
+#!/usr/bin/env python3
+"""Build an indexed bible from the source library's tracked verse text.
+
+`mass-propers --bible <id>` looks a passage up by the exact reference string a
+calendar prints, so an index cannot be a whole bible: the key space is the set
+of references the calendars actually make, not a book/chapter/verse tree. This
+tool walks every calendar, resolves each citation against the per-book verse
+files registered under the edition in `src/sources/works/`, and writes the
+resulting `passages` map.
+
+The verse text is never re-downloaded. It comes from the tracked artifacts of
+the registered edition, so a rebuild is offline, deterministic, and diffable
+against the same bytes the source library already verified.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import re
+import sys
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _psalms import PSALMS, NumberingError, convert_range, convert_reference  # noqa: E402
+from _tooling import print_json, run_verb_cli  # noqa: E402
+
+DEFAULT_CALENDAR_ROOT = ROOT / "src" / "sources" / "calendars"
+DEFAULT_BIBLE_ROOT = ROOT / "src" / "sources" / "bibles"
+SOURCE_ROOT = ROOT / "src" / "sources" / "works"
+
+# Ranges that do not abut are joined by an elision rather than run together,
+# because "Isaiah 35:1-6a, 10" is not a continuous sentence.
+ELISION = " ... "
+SPACING = re.compile(r"\s+")
+
+# One entry per indexed edition. `artifacts` is the tracked artifact directory
+# of the edition in the source library; the verse files, book index, and verse
+# aliases are discovered inside it by name.
+EDITIONS: dict[str, dict[str, object]] = {
+    "douay-rheims": {
+        "edition": "The Holy Bible, Douay-Rheims (Challoner revision), "
+        "Project Gutenberg eBook 1581",
+        "source_id": "edition.english-college-of-douay.douay-rheims-bible"
+        ".challoner-gutenberg-1581",
+        "rights": "public-domain",
+        "publishable": True,
+        "numbering": "vulgate",
+        "artifacts": "english-college-of-douay/douay-rheims-bible/editions"
+        "/challoner-gutenberg-1581/artifacts",
+    },
+}
+
+
+def mass_propers():
+    """Reuse the consumer's own reference handling so the keys cannot drift.
+
+    `mass-propers` decides what string it will look up; deriving the same
+    string here from a copy of that logic is how an index silently stops
+    resolving. Import the tool instead.
+    """
+    path = ROOT / "tools" / "mass-propers"
+    loader = SourceFileLoader("_mass_propers", str(path))
+    spec = spec_from_loader(loader.name, loader)
+    if spec is None:  # pragma: no cover - a broken checkout, not a code path
+        raise ValueError(f"cannot load {path}")
+    module = module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+def read_tsv(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle, delimiter="\t"))
+
+
+def sole(root: Path, prefix: str, suffix: str) -> Path:
+    """The one file under a `<prefix>-<hash>/` artifact directory."""
+    found = sorted(root.glob(f"{prefix}-*/*{suffix}"))
+    if len(found) != 1:
+        raise ValueError(f"expected exactly one {prefix} artifact under {root}, found {len(found)}")
+    return found[0]
+
+
+def normalize(name: str) -> str:
+    return SPACING.sub(" ", name.replace(".", " ").strip()).casefold()
+
+
+def load_books(artifacts: Path) -> dict[str, str]:
+    """Map every name a calendar might print to this edition's book token.
+
+    The Douay-Rheims prints Vulgate book names and the calendars print modern
+    ones, and the trap is not the spelling but the Kings shift: Douay 1 and 2
+    Kings are modern 1 and 2 Samuel, and Douay 3 and 4 Kings are modern 1 and
+    2 Kings. The edition's own book index carries both columns, so the mapping
+    is read from it rather than restated here. Modern names are claimed first
+    so that an alternate spelling can never take a name a modern name owns.
+    """
+    rows = read_tsv(sole(artifacts, "book-index", "book-index.tsv"))
+    if not rows:
+        raise ValueError("the edition's book index is empty")
+    names: dict[str, str] = {}
+    for row in rows:
+        names[normalize(row["modern_name"])] = row["token"]
+    for row in rows:
+        token = row["token"]
+        aliases = [token, row["douay_title"], *row["alternate_names"].split(";")]
+        # "Psalms" is the calendars' book name; "Psalm" is how a citation reads.
+        if token == "Ps":
+            aliases.append("Psalm")
+        for alias in aliases:
+            key = normalize(alias)
+            if key and key not in names:
+                names[key] = token
+    return names
+
+
+def load_verses(artifacts: Path) -> dict[tuple[str, int, int], str]:
+    verses: dict[tuple[str, int, int], str] = {}
+    files = sorted(artifacts.glob("verse-text-*/*.tsv"))
+    if not files:
+        raise ValueError(f"no verse-text artifacts under {artifacts}")
+    for path in files:
+        for row in read_tsv(path):
+            verses[(row["book"], int(row["chapter"]), int(row["verse"]))] = row["text"]
+    return verses
+
+
+def load_aliases(artifacts: Path) -> dict[tuple[str, int, int], tuple[str, int, int]]:
+    """Verses this edition merged away, and the verse that carries their text."""
+
+    def locus(value: str) -> tuple[str, int, int]:
+        book, chapter, verse = value.rsplit(".", 2)
+        return book, int(chapter), int(verse)
+
+    rows = read_tsv(sole(artifacts, "verse-aliases", "verse-aliases.tsv"))
+    return {locus(row["cited_locus"]): locus(row["resolves_to"]) for row in rows}
+
+
+class Bible:
+    """One edition's text, addressed the way a citation addresses it."""
+
+    def __init__(self, artifacts: Path) -> None:
+        self.books = load_books(artifacts)
+        self.verses = load_verses(artifacts)
+        self.aliases = load_aliases(artifacts)
+        # A chapter's verse numbers are not always 1..n. Where the Vulgate
+        # splits a Hebrew psalm the Douay-Rheims prints the second part with
+        # the numbering it had before the split: Psalm 115 runs 10-19 and
+        # Psalm 147 runs 12-20. Both bounds are therefore read from the text.
+        self.chapters: dict[tuple[str, int], tuple[int, int]] = {}
+        for token, chapter, verse in self.verses:
+            here = (token, chapter)
+            low, high = self.chapters.get(here, (verse, verse))
+            self.chapters[here] = (min(low, verse), max(high, verse))
+
+    def token(self, book: str) -> str | None:
+        return self.books.get(normalize(book))
+
+    def verse(self, token: str, chapter: int, verse: int) -> str | None:
+        found = self.verses.get((token, chapter, verse))
+        if found is not None:
+            return found
+        merged = self.aliases.get((token, chapter, verse))
+        return None if merged is None else self.verses.get(merged)
+
+    def span(self, token: str, span: dict, realign: bool) -> tuple[list[str], str, tuple, tuple]:
+        """The verses one range names, with the locus each end resolved to.
+
+        `realign` applies when a psalm range has been converted between
+        numbering systems. The converter restarts the verse count in the part
+        it lands in, so a converted verse 1 means "the first verse this
+        chapter has" — which in this edition may be printed as 10 or 12.
+        """
+        begin = span.get("begin") or {}
+        end = span.get("end") or begin
+        first = begin.get("chapter")
+        last = end.get("chapter", first)
+        if first is None:
+            return [], "range has no chapter", (), ()
+        texts: list[str] = []
+        opened: tuple = ()
+        closed: tuple = ()
+        for chapter in range(int(first), int(last) + 1):
+            bounds = self.chapters.get((token, chapter))
+            if bounds is None:
+                return [], f"{token} has no chapter {chapter}", (), ()
+            base, bound = bounds
+            offset = base - 1 if realign else 0
+            low = begin.get("verse") if chapter == int(first) else None
+            high = end.get("verse") if chapter == int(last) else None
+            low = base if low is None else int(low) + offset
+            high = bound if high is None else int(high) + offset
+            for verse in range(low, min(high, bound) + 1):
+                # A verse part ("6a") cannot be cut without editorial judgment,
+                # so the whole verse stands and the citation keeps the part.
+                text = self.verse(token, chapter, verse)
+                if text is None:
+                    return [], f"{token} {chapter}:{verse} is missing", (), ()
+                closed = (chapter, verse)
+                opened = opened or closed
+                texts.append(text)
+        return texts, "", opened, closed
+
+    def passage(self, token: str, ranges: list, realign: bool) -> tuple[str, str]:
+        parts: list[str] = []
+        previous: tuple = ()
+        for span in ranges:
+            texts, problem, opened, closed = self.span(token, span, realign)
+            if problem:
+                return "", problem
+            if parts and opened:
+                abuts = previous == (opened[0], opened[1] - 1)
+                parts.append(" " if abuts else ELISION)
+            parts.append(" ".join(texts))
+            previous = closed or previous
+        text = SPACING.sub(" ", "".join(parts)).strip()
+        return text, "" if text else "no text found"
+
+
+def citation(entry: dict, source: str, target: str, tool) -> tuple[str, list, bool, str]:
+    """The key `mass-propers` will look up, and the ranges that key covers.
+
+    The key follows the tool exactly: only a psalm chapter is renumbered, and
+    the calendar's own verse numbers stay in the string. The ranges are
+    converted properly, verse shifts included, because they select the text.
+    """
+    ref = str(entry["ref"])
+    book = str(entry.get("book") or "")
+    ranges = [span for span in (entry.get("ranges") or []) if isinstance(span, dict)]
+    if not ranges:
+        return ref, [], False, "citation carries no ranges"
+    if source == target or book != PSALMS:
+        return ref, ranges, False, ""
+    chapter, verse = tool.locus_of(entry)
+    if chapter is None:
+        return ref, ranges, False, ""
+    try:
+        converted, _ = convert_reference(book, chapter, source, target, verse)
+        moved: list = []
+        for span in ranges:
+            spans, _ = convert_range(book, span.get("begin") or {}, span.get("end"), source, target)
+            moved.extend(spans)
+    except NumberingError as error:
+        return ref, [], False, str(error)
+    key = ref if converted == chapter else tool.renumber(ref, converted)
+    return key, moved, True, ""
+
+
+def collect(bible: Bible, calendar_root: Path, target: str, tool) -> dict:
+    """Index every citation every calendar makes, and record what failed."""
+    passages: dict[str, str] = {}
+    unresolved: list[dict[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    counts: dict[str, dict[str, int]] = {}
+    for calendar in tool.calendars(calendar_root):
+        document = tool.load_calendar(calendar_root, calendar)
+        source = document.get("psalm_numbering") or target
+        wanted: set[str] = set()
+        resolved: set[str] = set()
+        for _, mass in tool.masses_of(document):
+            for entry in tool.scripture_entries(mass):
+                ref = str(entry["ref"])
+                wanted.add(ref)
+                key, ranges, realign, problem = citation(entry, source, target, tool)
+                if (calendar, ref) in seen:
+                    if key in passages:
+                        resolved.add(ref)
+                    continue
+                seen.add((calendar, ref))
+                token = bible.token(str(entry.get("book") or ""))
+                if token is None:
+                    problem = problem or f"no book named {entry.get('book')!r} in this edition"
+                text = ""
+                if token is not None and not problem:
+                    text, problem = bible.passage(token, ranges, realign)
+                if problem:
+                    unresolved.append({"calendar": calendar, "ref": ref, "reason": problem})
+                    continue
+                resolved.add(ref)
+                if passages.get(key, text) != text:
+                    unresolved.append(
+                        {"calendar": calendar, "ref": ref, "reason": f"key {key!r} disagrees"}
+                    )
+                    continue
+                passages[key] = text
+        counts[calendar] = {"cited": len(wanted), "resolved": len(resolved)}
+    return {
+        "passages": dict(sorted(passages.items())),
+        "calendars": dict(sorted(counts.items())),
+        "unresolved": sorted(unresolved, key=lambda row: (row["calendar"], row["ref"])),
+    }
+
+
+def document_for(name: str, built: dict) -> dict:
+    edition = EDITIONS[name]
+    return {
+        "schema": "triptych-bible-index/v1",
+        "edition": edition["edition"],
+        "source_id": edition["source_id"],
+        "rights": edition["rights"],
+        "publishable": edition["publishable"],
+        "numbering": edition["numbering"],
+        "generator": "index-bible build",
+        "coverage": "the references the tracked calendars make; rebuild after a "
+        "calendar adds a reference",
+        "passages": built["passages"],
+    }
+
+
+def serialize(document: dict) -> str:
+    import yaml
+
+    text = yaml.safe_dump(document, sort_keys=False, allow_unicode=True, width=88)
+    # A quoted scalar that wraps must fold back to the same bytes, so prove it
+    # rather than trusting the emitter with several megabytes of scripture.
+    if yaml.safe_load(text) != document:
+        raise ValueError("the emitted index does not round-trip; refusing to write it")
+    return text
+
+
+def build(name: str, calendar_root: Path, artifacts: Path) -> dict:
+    bible = Bible(artifacts)
+    tool = mass_propers()
+    built = collect(bible, calendar_root, str(EDITIONS[name]["numbering"]), tool)
+    return {**built, "text": serialize(document_for(name, built))}
+
+
+def artifacts_for(name: str, arguments: argparse.Namespace) -> Path:
+    if name not in EDITIONS:
+        raise KeyError(f"no indexable edition {name!r}; known: {', '.join(sorted(EDITIONS))}")
+    root = Path(arguments.source_root) / str(EDITIONS[name]["artifacts"])
+    if not root.is_dir():
+        raise ValueError(f"no tracked artifacts for {name} at {root}")
+    return root
+
+
+def summary(name: str, built: dict, path: Path, arguments: argparse.Namespace) -> dict:
+    return {
+        "bible": name,
+        "calendars": built["calendars"],
+        "passages": len(built["passages"]),
+        "path": str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path),
+        "unresolved": built["unresolved"] if arguments.verbose else len(built["unresolved"]),
+        "status": "ok",
+    }
+
+
+def run_build(arguments: argparse.Namespace) -> dict:
+    name = arguments.bible
+    built = build(name, Path(arguments.root), artifacts_for(name, arguments))
+    path = Path(arguments.bible_root) / name / "index.yaml"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(built["text"], encoding="utf-8")
+    return summary(name, built, path, arguments)
+
+
+def run_check(arguments: argparse.Namespace) -> dict:
+    name = arguments.bible
+    built = build(name, Path(arguments.root), artifacts_for(name, arguments))
+    path = Path(arguments.bible_root) / name / "index.yaml"
+    if not path.is_file():
+        raise ValueError(f"no index at {path}; run `index-bible build`")
+    current = path.read_text(encoding="utf-8")
+    if current != built["text"]:
+        raise ValueError(f"{path} is stale; run `index-bible build`")
+    return summary(name, built, path, arguments)
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("index-bible error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    print(f"{payload['bible']}: {payload['passages']} passages -> {payload['path']}")
+    for calendar, counts in payload["calendars"].items():
+        resolved, cited = counts["resolved"], counts["cited"]
+        share = 100.0 * resolved / cited if cited else 0.0
+        print(f"  {calendar}: {resolved}/{cited} references resolved ({share:.1f}%)")
+    rows = payload["unresolved"]
+    if isinstance(rows, int):
+        print(f"  unresolved: {rows}")
+        return 0
+    for row in rows:
+        print(f"  unresolved {row['calendar']} {row['ref']}: {row['reason']}")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument(
+        "--bible", default="douay-rheims", help="edition id, e.g. douay-rheims"
+    )
+    shared.add_argument("--root", default=str(DEFAULT_CALENDAR_ROOT), help="calendar root")
+    shared.add_argument(
+        "--bible-root", default=str(DEFAULT_BIBLE_ROOT), help="where indexed bibles are written"
+    )
+    shared.add_argument(
+        "--source-root", default=str(SOURCE_ROOT), help="source library works root"
+    )
+    shared.add_argument(
+        "--format", choices=("text", "json"), default="text", help="output form"
+    )
+    shared.add_argument(
+        "--verbose", action="store_true", help="list every citation that did not resolve"
+    )
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    parser = argparse.ArgumentParser(
+        prog="index-bible",
+        description="Build an indexed bible from the source library's tracked verse text.",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("build", help="write the index", parents=[shared])
+    sub.add_parser("check", help="rebuild in memory and report drift", parents=[shared])
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"build": run_build, "check": run_check},
+        renderer=render,
+        prefix="index-bible",
+        argv=argv,
+        # The read-only verb is the default: a bare invocation reports drift
+        # rather than rewriting a tracked file.
+        default_verb="check",
+        dependency_message="install PyYAML (requirements-tools.txt)",
+        mapped_errors={KeyError: ("not-found", 3), ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

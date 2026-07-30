@@ -19,6 +19,28 @@ passages:
   'Psalm 24:1-3': 'The earth is the Lord's, and the fulness thereof...'
 ```
 
+## An index is generated, not written
+
+`index-bible` builds an edition's `index.yaml` from the per-book verse files
+already registered under that edition in `src/sources/works/`, so a rebuild is
+offline and reproducible and no text is transcribed twice:
+
+```sh
+tools/tpt index-bible check          # is the tracked index current?
+tools/tpt index-bible build          # rewrite it
+```
+
+`passages` is keyed by the reference string, which cannot enumerate a whole
+bible: `Psalm 24:1-3` and `Psalm 24:4` are separate keys and the key space is
+open. An index therefore covers the references the tracked calendars actually
+cite, and `coverage` in each index says so. A calendar that gains a reference
+needs a rebuild, and `check` fails until it gets one.
+
+Book names are mapped through the edition's own book index rather than a table
+kept here. The Douay-Rheims prints Vulgate names, and the trap is not the
+spelling but the shift: Douay 1 and 2 Kings are modern 1 and 2 Samuel, while
+Douay 3 and 4 Kings are modern 1 and 2 Kings.
+
 ## Psalm numbering is not cosmetic
 
 Vulgate and Hebrew psalm numbering diverge across most of the psalter. The same
