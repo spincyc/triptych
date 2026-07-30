@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Derive the date-ordered sanctoral spine from the repo's calendar references.
 
-Usage: calendar-spine [--calendar NAME] [--kind KIND]
+Usage: calendar-spine [derive] [--calendar NAME] [--kind KIND]
 
 Parses the verified calendar-reference publications — the 1962 sanctorale
 sections and the postconciliar general-calendar section — into one date-ordered
@@ -18,13 +18,11 @@ and this tool reproduces that difference rather than harmonizing it.
 from __future__ import annotations
 
 import argparse
-import json
 import re
 import sys
 import unicodedata
 from pathlib import Path
-
-PROTOCOL_VERSION = 1
+from _tooling import print_json, run_verb_cli
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = {
@@ -70,8 +68,7 @@ MARIAN = (
     "lourdes", "fatima", "loreto", "maternitatis", "visitatione", "septem dolorum",
     "sorrows", "queenship", "assumption",
 )
-# A day within an octave whose principal celebration is the octave itself, not a
-# saint named after a colon, is a seasonal day standing in the fixed calendar.
+# A day within the octave is a seasonal celebration for the fixed-calendar spine.
 OCTAVE_DAY = re.compile(r"^\w+\s+day\s+within\s+the\s+octave\b", re.IGNORECASE)
 VIGIL_OF = re.compile(r"^vigil\s+of\s+(?:the\s+)?(.*)$", re.IGNORECASE)
 # A word boundary after a literal period never matches before a space, so these
@@ -102,7 +99,7 @@ def classify(title: str) -> str:
     a feast of the Lord.
     """
     head = re.sub(r"^comm\.\s*", "", title.strip(), flags=re.IGNORECASE)
-    if OCTAVE_DAY.match(head) and ":" not in head.split(";")[0]:
+    if OCTAVE_DAY.match(head):
         return "seasonal"
     # A vigil belongs to the celebration it precedes.
     vigil = VIGIL_OF.match(head.split(";")[0])
@@ -236,60 +233,55 @@ def run(calendar: str | None, kind: str | None) -> dict[str, object]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(
-        prog="calendar-spine",
-        description="Derive the date-ordered sanctoral spine from the repo's calendar references.",
-    )
-    parser.add_argument("--calendar", choices=sorted(SOURCES))
-    parser.add_argument("--kind", choices=KINDS)
-    parser.add_argument(
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--calendar", choices=sorted(SOURCES))
+    shared.add_argument("--kind", choices=KINDS)
+    shared.add_argument(
         "--json",
         action="store_true",
         help="emit one compact key-sorted JSON object (cli-v1)",
     )
-    arguments = parser.parse_args(argv)
-    try:
-        payload = run(arguments.calendar, arguments.kind)
-    except Exception as error:
-        message = str(error) or error.__class__.__name__
-        if arguments.json:
-            print(
-                json.dumps(
-                    {
-                        "code": "internal",
-                        "error": message,
-                        "status": "error",
-                        "v": PROTOCOL_VERSION,
-                    },
-                    ensure_ascii=False,
-                    sort_keys=True,
-                    separators=(",", ":"),
-                ),
-                file=sys.stderr,
-            )
-        else:
-            print(f"calendar-spine: {message}", file=sys.stderr)
-        return 70
-    if arguments.json:
-        print(
-            json.dumps(
-                {**payload, "v": PROTOCOL_VERSION},
-                ensure_ascii=False,
-                sort_keys=True,
-                separators=(",", ":"),
-            )
-        )
+    parser = argparse.ArgumentParser(
+        prog="calendar-spine",
+        description=(
+            "Derive the date-ordered sanctoral spine from the repo's "
+            "calendar references."
+        ),
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("derive", help="derive the date-ordered sanctoral spine", parents=[shared])
+
+    def dispatch(arguments):
+        return run(arguments.calendar, arguments.kind)
+
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        as_json = bool(getattr(arguments, "json", False))
+        if as_json:
+            print_json(payload if isinstance(payload, dict) else {})
+            return 0
+        if not isinstance(payload, dict):
+            print("calendar-spine error: invalid payload", file=sys.stderr)
+            return 70
+        for name, entries in payload["calendars"].items():
+            for entry in entries:
+                print(
+                    f"{name}\t{entry['date']}\t{entry['kind']}\t{entry['registry']}"
+                    f"\t{entry['rank']}\t{entry['key']}\t{entry['title']}"
+                )
+        for name, tally in payload["counts"].items():
+            detail = ", ".join(f"{count} {kind}" for kind, count in tally.items())
+            print(f"# {name}: {sum(tally.values())} entries ({detail})", file=sys.stderr)
         return 0
-    for name, entries in payload["calendars"].items():
-        for entry in entries:
-            print(
-                f"{name}\t{entry['date']}\t{entry['kind']}\t{entry['registry']}"
-                f"\t{entry['rank']}\t{entry['key']}\t{entry['title']}"
-            )
-    for name, tally in payload["counts"].items():
-        detail = ", ".join(f"{count} {kind}" for kind, count in tally.items())
-        print(f"# {name}: {sum(tally.values())} entries ({detail})", file=sys.stderr)
-    return 0
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"derive": dispatch},
+        renderer=render,
+        prefix="calendar-spine",
+        argv=argv,
+        default_verb="derive",
+    )
 
 
 if __name__ == "__main__":

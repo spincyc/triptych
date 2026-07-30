@@ -16,16 +16,18 @@ from __future__ import annotations
 import argparse
 import dataclasses
 import datetime as dt
-import json
 import sys
 from collections import defaultdict
 from importlib.machinery import SourceFileLoader
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
+TOOLING_ROOT = Path(__file__).resolve().parent.parent / "tools"
+if str(TOOLING_ROOT) not in sys.path:
+    sys.path.insert(0, str(TOOLING_ROOT))
 
-PROTOCOL_VERSION = 1
+from _tooling import print_json, run_verb_cli
+
 SCHEMA_DISCOVERY = "triptych-commentary-work-index/v1"
 SCHEMA_CORPUS = "triptych-missal-commentary-corpus/v1"
 
@@ -544,20 +546,16 @@ def _load_calendar_doc(path: Path) -> dict[str, Any]:
     return data
 
 
-def _emit_payload(payload: dict[str, Any], output: str) -> int:
-    if output == "json":
-        print(
-            json.dumps(
-                {**payload, "v": PROTOCOL_VERSION},
-                ensure_ascii=False,
-                sort_keys=True,
-                separators=(",", ":"),
-            )
-        )
-        return 0
-    if output == "yaml":
+def _render_payload(
+    payload: dict[str, Any], output: str | None
+) -> None:
+    format_name = output or "text"
+    if format_name == "json":
+        print_json(payload)
+        return None
+    if format_name == "yaml":
         print(_dump_yaml(payload).rstrip())
-        return 0
+        return None
 
     if payload.get("discoveries") is not None:
         for item in payload["discoveries"]:
@@ -569,13 +567,13 @@ def _emit_payload(payload: dict[str, Any], output: str) -> int:
             for index, work in enumerate(works, start=1):
                 print(
                     f"  {index:>2}. {work.get('author')} — {work.get('title')}"
-                    + (f" ({work.get('date')})" if work.get('date') else "")
+                    + (f" ({work.get('date')})" if work.get("date") else "")
                 )
                 if work.get("role"):
                     print(f"      role: {work['role']}")
                 if work.get("source_hint"):
                     print(f"      source hint: {work['source_hint']}")
-        return 0
+        return None
 
     if payload.get("masses") is not None:
         print(
@@ -591,22 +589,21 @@ def _emit_payload(payload: dict[str, Any], output: str) -> int:
                 f" -> {len(mass['works'])} works"
             )
         if len(payload["masses"]) > 20:
-            print(f"… and {len(payload['masses']) - 20} more masses (full output in YAML/JSON)")
-        return 0
-
-    if payload.get("status") and payload.get("status") != "ok":
-        print(payload["status"])
-    else:
-        print(payload.get("message", "ok"))
-    return 0
+            print(
+                f"… and {len(payload['masses']) - 20} more masses (full output in YAML/JSON)"
+            )
+    return None
 
 
-def _fail(message: str, code: int) -> int:
-    print(f"commentary-work-index: {message}", file=sys.stderr)
-    return code
+def _select_output_format(arguments: argparse.Namespace) -> str:
+    if arguments.explicit_format is not None:
+        return arguments.explicit_format
+    if arguments.short_format is not None:
+        return arguments.short_format
+    return "text"
 
 
-def run_discover(args: argparse.Namespace, citations) -> int:
+def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
     discovery = _load_discovery(args.discovery)
 
     passages = list(args.passage)
@@ -615,20 +612,20 @@ def run_discover(args: argparse.Namespace, citations) -> int:
         try:
             parsed = __import__("yaml").safe_load(text)
         except Exception as error:
-            return _fail(f"cannot parse passage file: {error}", 66)
+            raise ValueError(f"cannot parse passage file: {error}") from error
         if parsed is None:
-            return _fail("passage file is empty", 66)
+            raise ValueError("passage file is empty")
         passages.append(parsed)
 
     if not passages:
-        return _fail("no passage input provided", 2)
+        raise ValueError("no passage input provided")
 
     discoveries: list[dict[str, Any]] = []
     for passage in passages:
         try:
             ref, works = _lookup_works(discovery, citations, passage, args.max_results)
         except Exception as error:
-            return _fail(f"invalid passage {passage!r}: {error}", 64)
+            raise ValueError(f"invalid passage {passage!r}: {error}") from error
 
         discoveries.append(
             {
@@ -644,14 +641,14 @@ def run_discover(args: argparse.Namespace, citations) -> int:
         "discoveries": discoveries,
     }
 
-    return _emit_payload(payload, args.format)
+    return payload
 
 
-def run_build_corpus(args: argparse.Namespace, citations) -> int:
+def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     discovery = _load_discovery(args.discovery)
     root = Path(args.root)
     if not root.is_dir():
-        return _fail(f"calendar root is missing: {root}", 64)
+        raise ValueError(f"calendar root is missing: {root}")
 
     calendar_records: list[dict[str, Any]] = []
     calendars = args.calendar or DEFAULT_CALENDARS
@@ -659,15 +656,15 @@ def run_build_corpus(args: argparse.Namespace, citations) -> int:
     for calendar in calendars:
         path = root / calendar / "propers.yaml"
         if not path.exists():
-            return _fail(f"missing calendar index: {path}", 64)
+            raise ValueError(f"missing calendar index: {path}")
         try:
             doc = _load_calendar_doc(path)
             calendar_records.extend(_collect_mass_records(citations, doc, calendar))
         except Exception as error:
-            return _fail(f"failed to read {path}: {error}", 70)
+            raise ValueError(f"failed to read {path}: {error}") from error
 
     if not calendar_records:
-        return _fail("no scripture passages were extracted from the requested calendars", 64)
+        raise ValueError("no scripture passages were extracted from the requested calendars")
 
     masses_payload, passage_to_masses, unresolved, full_corpus = _build_mass_coverage(
         citations,
@@ -703,7 +700,7 @@ def run_build_corpus(args: argparse.Namespace, citations) -> int:
         Path(args.output).parent.mkdir(parents=True, exist_ok=True)
         Path(args.output).write_text(_dump_yaml(payload), encoding="utf-8")
 
-    return _emit_payload(payload, args.format)
+    return payload
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -711,29 +708,31 @@ def main(argv: list[str] | None = None) -> int:
         prog="commentary-work-index",
         description="Build and query commentary-work mappings for scripture passages.",
     )
-    parser.add_argument(
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument(
         "--json",
-        dest="format",
+        dest="short_format",
         action="store_const",
         const="json",
-        default="text",
         help="emit compact JSON",
     )
-    parser.add_argument(
+    shared.add_argument(
         "--yaml",
-        dest="format",
+        dest="short_format",
         action="store_const",
         const="yaml",
-        default=None,
         help="emit YAML",
     )
-
-    # Keep --format for explicit choice while still supporting --yaml/--json compatibility.
-    parser.add_argument("--format", choices=("text", "json", "yaml"))
+    # Keep --format for explicit choice while still supporting --yaml/--json.
+    shared.add_argument("--format", dest="explicit_format", choices=("text", "json", "yaml"))
 
     sub = parser.add_subparsers(dest="command", required=True)
 
-    discover = sub.add_parser("discover", help="List mapped works for one or more passages.")
+    discover = sub.add_parser(
+        "discover",
+        help="List mapped works for one or more passages.",
+        parents=[shared],
+    )
     discover.add_argument("--passage", action="append", default=[], help="Passage input")
     discover.add_argument(
         "--passage-file", type=Path, help="YAML/JSON passage spec to load"
@@ -751,7 +750,9 @@ def main(argv: list[str] | None = None) -> int:
         help="maximum number of works returned per passage (default: 20)",
     )
 
-    build = sub.add_parser("build-corpus", help="Build corpus coverage across all masses.")
+    build = sub.add_parser(
+        "build-corpus", help="Build corpus coverage across all masses.", parents=[shared]
+    )
     build.add_argument(
         "--root",
         type=Path,
@@ -789,22 +790,35 @@ def main(argv: list[str] | None = None) -> int:
         help=f"write corpus output (default: {DEFAULT_CORPUS_PATH})",
     )
 
-    args = parser.parse_args(argv)
-
-    # --format and flags share precedence intentionally: explicit --format wins.
-    if hasattr(args, "format") and args.format is None:
-        args.format = "text"
-
-    try:
+    def dispatch(arguments: argparse.Namespace):
+        if arguments.command == "discover":
+            citations = _load_citations_tool()
+            return run_discover(arguments, citations)
         citations = _load_citations_tool()
-    except Exception as error:
-        return _fail(f"failed to load tool/parser dependency: {error}", 69)
+        return run_build_corpus(arguments, citations)
 
-    if args.command == "discover":
-        return run_discover(args, citations)
-    if args.command == "build-corpus":
-        return run_build_corpus(args, citations)
-    return _fail("unknown command", 64)
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        if not isinstance(payload, dict):
+            print("commentary-work-index error: invalid payload", file=sys.stderr)
+            return 70
+        _render_payload(payload, _select_output_format(arguments))
+        return 0 if payload.get("status") == "ok" else 1
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={
+            "discover": dispatch,
+            "build-corpus": dispatch,
+        },
+        renderer=render,
+        prefix="commentary-work-index",
+        argv=argv,
+        mapped_errors={
+            ValueError: ("invalid", 64),
+            ModuleNotFoundError: ("dependency", 69),
+            OSError: ("read", 64),
+        },
+    )
 
 
 if __name__ == "__main__":

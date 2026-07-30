@@ -1,0 +1,113 @@
+#!/bin/sh
+# Test for tools/calendar-spine: exit 0 = pass (the stable gate).
+set -eu
+
+tool="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)/calendar-spine"
+
+"$tool" --help >/dev/null
+
+# The 1962 total must match the collated inventory: 275 dated universal rows.
+total="$("$tool" --calendar roman-1962 2>/dev/null | wc -l | tr -d ' ')"
+if [ "$total" -ne 275 ]; then
+	echo "expected 275 rows in the 1962 spine, got $total" >&2
+	exit 1
+fi
+
+# Both calendars are ordered by civil date, and the order is stable.
+check_sorted() {
+	"$tool" --calendar "$1" 2>/dev/null | cut -f2 >dates.txt
+	sort dates.txt >sorted.txt
+	if ! cmp -s dates.txt sorted.txt; then
+		echo "$1 spine is not in calendar-date order" >&2
+		exit 1
+	fi
+	if [ "$(head -1 dates.txt | cut -d- -f1)" != "01" ]; then
+		echo "$1 spine does not begin in January" >&2
+		exit 1
+	fi
+}
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+check_sorted roman-1962
+check_sorted postconciliar
+
+# Output is byte-stable for unchanged inputs.
+"$tool" --json >first.json 2>/dev/null
+"$tool" --json >second.json 2>/dev/null
+if ! cmp -s first.json second.json; then
+	echo "output is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# Keys are unique within each calendar.
+for calendar in roman-1962 postconciliar; do
+	"$tool" --calendar "$calendar" 2>/dev/null | cut -f6 >keys.txt
+	if [ "$(sort keys.txt | uniq -d | wc -l | tr -d ' ')" -ne 0 ]; then
+		echo "$calendar has duplicate keys:" >&2
+		sort keys.txt | uniq -d >&2
+		exit 1
+	fi
+done
+
+# Classification follows each edition's own title: the 1962 books print
+# February 2 and March 25 as Marian, the postconciliar books as of the Lord.
+kind_on() {
+	"$tool" --calendar "$1" 2>/dev/null | awk -F'\t' -v d="$2" '$2 == d {print $3; exit}'
+}
+for probe in "roman-1962 02-02 marian" "roman-1962 03-25 marian" \
+	"postconciliar 02-02 christological" "postconciliar 03-25 christological" \
+	"roman-1962 08-15 marian" "roman-1962 08-14 marian" \
+	"roman-1962 12-30 seasonal" "roman-1962 12-29 seasonal" \
+	"roman-1962 12-28 seasonal" "roman-1962 12-27 seasonal" \
+	"roman-1962 12-26 seasonal" \
+	"roman-1962 09-14 christological" "postconciliar 09-14 christological"; do
+	set -- $probe
+	got="$(kind_on "$1" "$2")"
+	if [ "$got" != "$3" ]; then
+		echo "$1 $2: expected $3, got ${got:-nothing}" >&2
+		exit 1
+	fi
+done
+
+# A saint's feast that names Our Lady stays a saint's feast, and a saint whose
+# name merely contains "Domini" is not read as a feast of the Lord.
+for probe in "roman-1962 03-19 saintly" "roman-1962 08-16 saintly" \
+	"roman-1962 07-26 saintly" "roman-1962 08-04 saintly" \
+	"postconciliar 03-19 saintly" "postconciliar 07-26 saintly" \
+	"postconciliar 08-08 saintly"; do
+	set -- $probe
+	got="$(kind_on "$1" "$2")"
+	if [ "$got" != "$3" ]; then
+		echo "$1 $2: expected $3, got ${got:-nothing}" >&2
+		exit 1
+	fi
+done
+
+# --kind filters, and every kind in the roster is a legal choice.
+marian="$("$tool" --calendar postconciliar --kind marian 2>/dev/null | wc -l | tr -d ' ')"
+if [ "$marian" -ne 14 ]; then
+	echo "expected 14 postconciliar Marian entries, got $marian" >&2
+	exit 1
+fi
+if "$tool" --kind nonesuch >/dev/null 2>&1; then
+	echo "expected an unknown kind to be refused" >&2
+	exit 1
+fi
+if "$tool" --calendar nonesuch >/dev/null 2>&1; then
+	echo "expected an unknown calendar to be refused" >&2
+	exit 1
+fi
+
+# Every row carries a registry id prefixed for its calendar.
+if "$tool" --calendar roman-1962 2>/dev/null | cut -f4 | grep -qv '^1962-'; then
+	echo "a 1962 row carries a foreign registry prefix" >&2
+	exit 1
+fi
+if "$tool" --calendar postconciliar 2>/dev/null | cut -f4 | grep -qv '^pc-'; then
+	echo "a postconciliar row carries a foreign registry prefix" >&2
+	exit 1
+fi
+
+echo ok

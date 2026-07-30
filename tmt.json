@@ -20,7 +20,7 @@
       "purpose": "Derive the date-ordered sanctoral spine from the repo's calendar references.",
       "requires": [],
       "stage": "draft",
-      "usage": "calendar-spine [--calendar NAME] [--kind KIND]"
+      "usage": "calendar-spine [derive] [--calendar NAME] [--kind KIND]"
     },
     "check-calendar-masses": {
       "idempotent": true,
@@ -33,7 +33,7 @@
         "citations"
       ],
       "stage": "draft",
-      "usage": "check-calendar-masses [--root DIR] [--calendar NAME]"
+      "usage": "check-calendar-masses [check] [--root DIR] [--calendar NAME]"
     },
     "check-curriculum-structure": {
       "idempotent": true,

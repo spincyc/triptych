@@ -1,0 +1,451 @@
+#!/bin/sh
+# Test for tools/check-calendar-masses: exit 0 = pass (the stable gate).
+set -eu
+
+# Resolved sibling path: keeps working after a cd into a sandbox.
+tools="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+tool="$tools/check-calendar-masses"
+
+# Fixtures are written with printed citations, then encoded by the sibling
+# tool that owns them, so the checker sees the same shape the indexes hold.
+encode() {
+	"$tools/citations" encode --root src/sources/calendars >/dev/null 2>&1 || true
+}
+
+# --help always works.
+"$tool" --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+header() {
+	cat <<'YAML'
+schema: triptych-calendar-masses/v1
+edition: test edition
+calendar: test
+series: test series
+ordering: test ordering
+registry: test registry
+citation_convention: test convention
+orthography: test orthography
+verification: unverified test fixture
+masses:
+YAML
+}
+
+mkdir -p src/sources/calendars/test
+
+# Valid index: a scripture proper, a composed proper, and a cycle proper.
+{
+	header
+	cat <<'YAML'
+  - key: test-sunday
+    name: Test Sunday
+    registry: "01"
+    season: test
+    propers:
+      - name: Introit
+        incipit: Ad te levavi
+        source: scripture
+        verses: ["Psalm 24:1-3"]
+      - name: Collect
+        incipit: Excita
+        source: composed
+        text: |
+          Excita, quaesumus, Domine.
+      - name: First Reading
+        source: scripture
+        cycles:
+          A: {verses: ["Isaiah 2:1-5"]}
+          B: {verses: ["Jeremiah 33:14-16"]}
+          C: {verses: ["Micah 5:1-4"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+
+"$tool" --root src/sources/calendars >/dev/null
+"$tool" --root src/sources/calendars --calendar test >/dev/null
+
+# --json reports ok and counts every proper.
+out="$("$tool" --root src/sources/calendars --json)"
+case "$out" in
+*'"status":"ok"'*) ;;
+*) echo "expected ok status, got: $out" >&2; exit 1 ;;
+esac
+case "$out" in
+*'"propers":3'*) ;;
+*) echo "expected 3 propers, got: $out" >&2; exit 1 ;;
+esac
+
+# A cycle-varying proper may declare its source per cycle instead of once.
+{
+	header
+	cat <<'YAML'
+  - key: mixed-kind-cycles
+    name: Mixed Kind Cycles
+    registry: "01"
+    season: test
+    propers:
+      - name: Gospel Acclamation
+        cycles:
+          A:
+            source: composed
+            text: |
+              Semen est verbum Dei.
+          B: {source: scripture, verses: ["Luke 4:18"]}
+          C: {source: scripture, verses: ["Luke 7:16"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+"$tool" --root src/sources/calendars >/dev/null
+
+# A cycle with neither its own source nor one on the proper is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: sourceless-cycle
+    name: Sourceless Cycle
+    registry: "01"
+    season: test
+    propers:
+      - name: Gospel Acclamation
+        cycles:
+          A: {verses: ["Luke 4:18"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a cycle with no source" >&2
+	exit 1
+fi
+
+# A composed cycle without text is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: textless-cycle
+    name: Textless Cycle
+    registry: "01"
+    season: test
+    propers:
+      - name: Gospel Acclamation
+        cycles:
+          A: {source: composed, verses: ["Luke 4:18"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a composed cycle without text" >&2
+	exit 1
+fi
+
+# A scripture proper carrying text is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: bad-sunday
+    name: Bad Sunday
+    registry: "02"
+    season: test
+    propers:
+      - name: Introit
+        source: scripture
+        verses: ["Psalm 24:1"]
+        text: |
+          should not be here
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for scripture proper carrying text" >&2
+	exit 1
+fi
+
+# A composed proper without text is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: bad-sunday
+    name: Bad Sunday
+    registry: "02"
+    season: test
+    propers:
+      - {name: Collect, source: composed}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for composed proper without text" >&2
+	exit 1
+fi
+
+# An unquoted registry number is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: bad-sunday
+    name: Bad Sunday
+    registry: 2
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for unquoted registry value" >&2
+	exit 1
+fi
+
+# Duplicate mass keys are rejected.
+{
+	header
+	cat <<'YAML'
+  - key: same
+    name: One
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+  - key: same
+    name: Two
+    registry: "02"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 2:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for duplicate mass keys" >&2
+	exit 1
+fi
+
+# Carrying both propers and forms is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: both
+    name: Both
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+    forms:
+      - name: Vigil Mass
+        propers:
+          - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an entry carrying both propers and forms" >&2
+	exit 1
+fi
+
+# A forms entry counts its nested propers.
+{
+	header
+	cat <<'YAML'
+  - key: forms-entry
+    name: Forms Entry
+    registry: "01"
+    season: test
+    forms:
+      - name: Vigil Mass
+        propers:
+          - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+      - name: Mass during the Day
+        propers:
+          - {name: Introit, source: scripture, verses: ["Psalm 2:1"]}
+          - {name: Gospel, source: scripture, verses: ["John 1:1-18"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+out="$("$tool" --root src/sources/calendars --json)"
+case "$out" in
+*'"propers":3'*) ;;
+*) echo "expected 3 propers across forms, got: $out" >&2; exit 1 ;;
+esac
+
+# A sanctoral entry is placed by civil date, with a kind and the printed rank.
+{
+	header
+	cat <<'YAML'
+  - key: assumptione-beatae-mariae-virginis
+    name: In Assumptione Beatae Mariae Virginis
+    registry: "1962-08-15"
+    date: "08-15"
+    rank: I
+    kind: marian
+    propers:
+      - {name: Introit, source: scripture, verses: ["Revelation 12:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+"$tool" --root src/sources/calendars >/dev/null
+
+# Carrying both a season and a date is rejected, as is carrying neither.
+{
+	header
+	cat <<'YAML'
+  - key: both-placements
+    name: Both Placements
+    registry: "1962-08-15"
+    date: "08-15"
+    rank: I
+    kind: marian
+    season: advent
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an entry with both season and date" >&2
+	exit 1
+fi
+
+{
+	header
+	cat <<'YAML'
+  - key: no-placement
+    name: No Placement
+    registry: "01"
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an entry with neither season nor date" >&2
+	exit 1
+fi
+
+# An impossible date is rejected; February 29 is allowed.
+{
+	header
+	cat <<'YAML'
+  - key: bad-date
+    name: Bad Date
+    registry: "1962-02-30"
+    date: "02-30"
+    rank: III
+    kind: saintly
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for February 30" >&2
+	exit 1
+fi
+
+{
+	header
+	cat <<'YAML'
+  - key: leap-day
+    name: Leap Day
+    registry: "1962-02-29"
+    date: "02-29"
+    rank: III
+    kind: saintly
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+"$tool" --root src/sources/calendars >/dev/null
+
+# An unquoted date, which YAML would not read as MM-DD, is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: unquoted-date
+    name: Unquoted Date
+    registry: "1962-08-15"
+    date: 08-15
+    rank: I
+    kind: marian
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an unquoted date" >&2
+	exit 1
+fi
+
+# A dated entry with an unknown kind, or with no rank, is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: bad-kind
+    name: Bad Kind
+    registry: "1962-08-15"
+    date: "08-15"
+    rank: I
+    kind: nonesuch
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an unknown kind" >&2
+	exit 1
+fi
+
+{
+	header
+	cat <<'YAML'
+  - key: no-rank
+    name: No Rank
+    registry: "1962-08-15"
+    date: "08-15"
+    kind: marian
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a dated entry with no rank" >&2
+	exit 1
+fi
+
+# A wrong schema value is rejected.
+cat >src/sources/calendars/test/propers.yaml <<'YAML'
+schema: something-else/v9
+edition: test edition
+calendar: test
+series: test series
+ordering: test ordering
+registry: test registry
+citation_convention: test convention
+orthography: test orthography
+verification: unverified test fixture
+masses:
+  - key: only
+    name: Only
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for wrong schema" >&2
+	exit 1
+fi
+
+# A root with no index is an error, not a silent pass.
+mkdir -p empty-root
+if "$tool" --root empty-root >/dev/null 2>&1; then
+	echo "expected failure for a root with no index" >&2
+	exit 1
+fi
+
+echo ok

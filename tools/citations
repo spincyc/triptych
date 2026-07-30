@@ -26,8 +26,7 @@ import json
 import re
 import sys
 from pathlib import Path
-
-PROTOCOL_VERSION = 1
+from _tooling import print_json, run_verb_cli
 
 DEFAULT_ROOT = Path("src/sources/calendars")
 
@@ -428,14 +427,7 @@ def check(root: Path) -> dict[str, object]:
 def emit(payload: dict[str, object], as_json: bool) -> int:
     problems = payload.get("problems") or []
     if as_json:
-        print(
-            json.dumps(
-                {**payload, "v": PROTOCOL_VERSION},
-                ensure_ascii=False,
-                sort_keys=True,
-                separators=(",", ":"),
-            )
-        )
+        print_json(payload)
         return 1 if problems else 0
     for problem in problems:
         print(f"citation error: {problem}", file=sys.stderr)
@@ -445,84 +437,64 @@ def emit(payload: dict[str, object], as_json: bool) -> int:
     return 1 if problems else 0
 
 
-def fail(message: str, code: str, as_json: bool, status: int) -> int:
-    if as_json:
-        print(
-            json.dumps(
-                {
-                    "code": code,
-                    "error": message,
-                    "status": "error",
-                    "v": PROTOCOL_VERSION,
-                },
-                ensure_ascii=False,
-                sort_keys=True,
-                separators=(",", ":"),
-            ),
-            file=sys.stderr,
-        )
-    else:
-        print(f"citations: {message}", file=sys.stderr)
-    return status
-
-
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(
-        prog="citations",
-        description="Encode and validate scripture citations in the calendar mass indexes.",
-    )
-    parser.add_argument(
+    json_flags = argparse.ArgumentParser(add_help=False)
+    json_flags.add_argument(
         "--json",
         action="store_true",
         help="emit one compact key-sorted JSON object (cli-v1)",
     )
+    parser = argparse.ArgumentParser(
+        prog="citations",
+        description="Encode and validate scripture citations in the calendar mass indexes.",
+        parents=[json_flags],
+    )
     sub = parser.add_subparsers(dest="command", required=True)
-    # --json is accepted before or after the subcommand.
-    one = sub.add_parser("parse", help="encode one citation string")
-    one.add_argument("citation")
-    one.add_argument("--json", action="store_true")
+    parse_command = sub.add_parser(
+        "parse",
+        help="encode one citation string",
+        parents=[json_flags],
+    )
+    parse_command.add_argument("citation")
     for name, help_text in (
         ("encode", "rewrite bare citation strings as passages, in place"),
         ("check", "validate every encoded passage"),
     ):
-        action = sub.add_parser(name, help=help_text)
+        action = sub.add_parser(name, help=help_text, parents=[json_flags])
         action.add_argument("--root", type=Path, default=DEFAULT_ROOT)
-        action.add_argument("--json", action="store_true")
-    arguments = parser.parse_args(argv)
-    try:
+
+    def dispatch(arguments: argparse.Namespace):
         if arguments.command == "parse":
-            payload = {"passage": parse_citation(arguments.citation), "status": "ok"}
-        elif arguments.command == "encode":
-            payload = encode(arguments.root)
-        else:
-            payload = check(arguments.root)
-    except ModuleNotFoundError as error:
-        return fail(
-            f"{error}; install requirements-tools.txt", "dependency", arguments.json, 69
-        )
-    except CitationError as error:
-        return fail(str(error), "citation", arguments.json, 65)
-    except Exception as error:
-        message = str(error) or error.__class__.__name__
-        return fail(message, "internal", arguments.json, 70)
-    if arguments.command == "parse":
-        if arguments.json:
-            print(
-                json.dumps(
-                    {**payload, "v": PROTOCOL_VERSION},
-                    ensure_ascii=False,
-                    sort_keys=True,
-                    separators=(",", ":"),
-                )
-            )
-        else:
-            passage = payload["passage"]
+            return {"passage": parse_citation(arguments.citation), "status": "ok"}
+        if arguments.command == "encode":
+            return encode(arguments.root)
+        return check(arguments.root)
+
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        if arguments.command == "parse":
+            passage = payload["passage"] if isinstance(payload, dict) else None
+            if arguments.json:
+                print_json(payload if isinstance(payload, dict) else {})
+                return 0
+            if not isinstance(passage, dict):
+                print("invalid parse payload", file=sys.stderr)
+                return 70
             print(f"book\t{passage['book']}")
             for extent in passage["ranges"]:
                 print(f"range\t{extent['begin']}\t{extent['end']}")
             print(f"ref\t{passage['ref']}")
-        return 0
-    return emit(payload, arguments.json)
+            return 0
+        return emit(payload, arguments.json)
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"parse": dispatch, "encode": dispatch, "check": dispatch},
+        renderer=render,
+        prefix="citations",
+        argv=argv,
+        dependency_message="install requirements-tools.txt",
+        mapped_errors={CitationError: ("citation", 65)},
+    )
 
 
 if __name__ == "__main__":

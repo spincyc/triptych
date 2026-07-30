@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate the normalized YAML mass-proper indexes under src/sources/calendars.
 
-Usage: check-calendar-masses [--root DIR] [--calendar NAME]
+Usage: check-calendar-masses [check] [--root DIR] [--calendar NAME]
 
 Requires PyYAML (requirements-tools.txt).
 """
@@ -13,8 +13,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-
-PROTOCOL_VERSION = 1
+from _tooling import print_json, run_verb_cli
 
 DEFAULT_ROOT = Path("src/sources/calendars")
 SCHEMA = "triptych-calendar-masses/v1"
@@ -280,68 +279,53 @@ def citation_problems(root: Path, calendar: str | None) -> list[str]:
     return list(payload.get("problems") or [])
 
 
-def fail(message: str, code: str, as_json: bool, status: int) -> int:
-    if as_json:
-        print(
-            json.dumps(
-                {
-                    "code": code,
-                    "error": message,
-                    "status": "error",
-                    "v": PROTOCOL_VERSION,
-                },
-                ensure_ascii=False,
-                sort_keys=True,
-                separators=(",", ":"),
-            ),
-            file=sys.stderr,
-        )
-    else:
-        print(f"check-calendar-masses: {message}", file=sys.stderr)
-    return status
-
-
 def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--root", type=Path, default=DEFAULT_ROOT)
+    shared.add_argument("--calendar", help="limit to one calendar directory name")
+    shared.add_argument(
+        "--json",
+        action="store_true",
+        help="emit one compact key-sorted JSON object (cli-v1)",
+    )
     parser = argparse.ArgumentParser(
         prog="check-calendar-masses",
         description=(
             "Validate the normalized YAML mass-proper indexes under "
             "src/sources/calendars."
         ),
+        parents=[shared],
     )
-    parser.add_argument("--root", type=Path, default=DEFAULT_ROOT)
-    parser.add_argument("--calendar", help="limit to one calendar directory name")
-    parser.add_argument(
-        "--json",
-        action="store_true",
-        help="emit one compact key-sorted JSON object (cli-v1)",
-    )
-    arguments = parser.parse_args(argv)
-    try:
-        payload = run(arguments.root, arguments.calendar)
-    except ModuleNotFoundError as error:
-        return fail(
-            f"{error}; install requirements-tools.txt", "dependency", arguments.json, 69
-        )
-    except Exception as error:
-        message = str(error) or error.__class__.__name__
-        return fail(message, "internal", arguments.json, 70)
-    problems = payload["problems"]
-    if arguments.json:
-        print(
-            json.dumps(
-                {**payload, "v": PROTOCOL_VERSION},
-                ensure_ascii=False,
-                sort_keys=True,
-                separators=(",", ":"),
-            )
-        )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("check", help="validate all calendars and propers", parents=[shared])
+
+    def dispatch(arguments):
+        return run(arguments.root, arguments.calendar)
+
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        as_json = bool(getattr(arguments, "json", False))
+        problems = payload.get("problems") if isinstance(payload, dict) else None
+        if as_json:
+            print_json(payload if isinstance(payload, dict) else {})
+            return 1 if problems else 0
+        if problems is None:
+            print("calendar-mass error: invalid checker payload", file=sys.stderr)
+            return 70
+        for problem in problems:
+            print(f"calendar-mass error: {problem}", file=sys.stderr)
+        for path, counts in payload.get("files", {}).items():
+            print(f"{path}\t{counts['masses']} masses\t{counts['propers']} propers")
         return 1 if problems else 0
-    for problem in problems:
-        print(f"calendar-mass error: {problem}", file=sys.stderr)
-    for path, counts in payload["files"].items():
-        print(f"{path}\t{counts['masses']} masses\t{counts['propers']} propers")
-    return 1 if problems else 0
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"check": dispatch},
+        renderer=render,
+        prefix="check-calendar-masses",
+        argv=argv,
+        default_verb="check",
+        dependency_message="install requirements-tools.txt",
+    )
 
 
 if __name__ == "__main__":
