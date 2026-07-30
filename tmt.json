@@ -164,6 +164,17 @@
       "stage": "draft",
       "usage": "release-bindings {refresh,status,migrate-publications,approve,add-publication}"
     },
+    "tpt": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Unified launcher for Triptych tools and tool discovery commands.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "tpt <tool> [<tool args>...] | tpt {run,tools,help,path}"
+    },
     "render-sanctuary-dictionary": {
       "idempotent": true,
       "json": false,
