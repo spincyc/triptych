@@ -125,6 +125,23 @@ def check_date(where: str, value: object, problems: list[str]) -> None:
         problems.append(f"{where}: day out of range in {value!r}")
 
 
+def iter_masses(document: dict) -> list:
+    """Masses live in two containers; `sections` supersedes and duplicates.
+
+    `sections` re-buckets every top-level mass by kind and adds the seasonal
+    cycle, so reading both would double-count. Falling back keeps this working
+    once the list is canonicalised to one place.
+    """
+    sections = document.get("sections")
+    if isinstance(sections, dict) and sections:
+        out = []
+        for _, body in sorted(sections.items()):
+            if isinstance(body, dict):
+                out.extend(m for m in (body.get("masses") or []) if isinstance(m, dict))
+        return out
+    return [m for m in (document.get("masses") or []) if isinstance(m, dict)]
+
+
 def check_entry(entry: object, index: int, problems: list[str]) -> str | None:
     where = f"mass[{index}]"
     if not isinstance(entry, dict):
@@ -216,9 +233,9 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
         problems.append(
             f"{path}: schema must be {SCHEMA!r}, got {document.get('schema')!r}"
         )
-    masses = document.get("masses")
-    if not isinstance(masses, list) or not masses:
-        problems.append(f"{path}: masses must be a nonempty list")
+    masses = iter_masses(document)
+    if not masses:
+        problems.append(f"{path}: no masses found in masses or sections")
         return {"masses": 0, "propers": 0}
     keys: list[str] = []
     for index, entry in enumerate(masses):

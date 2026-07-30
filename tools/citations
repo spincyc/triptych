@@ -280,13 +280,28 @@ def check_passage(where: str, passage: object, problems: list[str]) -> None:
         problems.append(f"{where}: ref must be a nonempty string when present")
 
 
+def iter_masses(document: dict) -> list:
+    """Masses live in two containers; `sections` supersedes and duplicates.
+
+    `sections` re-buckets every top-level mass by kind and adds the seasonal
+    cycle, so reading both would double-count. Falling back keeps this working
+    once the list is canonicalised to one place.
+    """
+    sections = document.get("sections")
+    if isinstance(sections, dict) and sections:
+        out = []
+        for _, body in sorted(sections.items()):
+            if isinstance(body, dict):
+                out.extend(m for m in (body.get("masses") or []) if isinstance(m, dict))
+        return out
+    return [m for m in (document.get("masses") or []) if isinstance(m, dict)]
+
+
 def each_proper(document: object):
     """Yield (label, proper) for every proper in a loaded index."""
     if not isinstance(document, dict):
         return
-    for entry in document.get("masses") or []:
-        if not isinstance(entry, dict):
-            continue
+    for entry in iter_masses(document):
         key = entry.get("key", "?")
         groups = [(key, entry.get("propers"))]
         for form in entry.get("forms") or []:
