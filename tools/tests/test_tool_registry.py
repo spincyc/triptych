@@ -87,6 +87,17 @@ class ToolRegistryTests(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertNotIn("Traceback", result.stderr)
 
+    def test_no_tool_hardcodes_an_absolute_path(self) -> None:
+        # public-alpha searches published content for leaked machine-local
+        # paths, so the pattern itself must contain the literal.
+        allowed = {"public-alpha"}
+        for name in registry():
+            with self.subTest(tool=name):
+                body = (TOOLS / name).read_text(encoding="utf-8", errors="replace")
+                self.assertNotIn(str(ROOT), body)
+                if name not in allowed:
+                    self.assertNotIn("/home/", body)
+
     def test_every_id_is_its_own_basename(self) -> None:
         """tmt resolves an entry only at tools/<id>; an alias would break it."""
         for name in registry():
