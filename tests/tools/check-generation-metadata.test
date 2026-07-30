@@ -1,0 +1,95 @@
+#!/bin/sh
+# Test for `tools/tpt check-generation-metadata`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="check-generation-metadata"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+fail() {
+	echo "$1" >&2
+	exit 1
+}
+
+# "N M" from the summary line, or empty when it is unrecognizable.
+record_counts() {
+	printf '%s\n' "$1" | sed -n \
+		's/^Generation metadata valid: \([0-9][0-9]*\) canonical record(s), \([0-9][0-9]*\) inherited record(s)\.$/\1 \2/p'
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+summary="$(run_tool --provider gpt)"
+counts="$(record_counts "$summary")"
+[ -n "$counts" ] || fail "unrecognized summary line: $summary"
+canonical="${counts% *}"
+inherited="${counts#* }"
+
+# A gate that audits nothing is not a pass.
+[ "$canonical" -gt 0 ] || fail "audited 0 canonical records under src/gpt"
+
+# The audited total must match the documents discovered independently of the
+# tool, so a root-resolution or discovery bug cannot pass unnoticed.
+found="$(find "$repo/src/gpt" -name main.tex -type f | wc -l | tr -d ' ')"
+total="$((canonical + inherited))"
+[ "$total" = "$found" ] ||
+	fail "audited $total records but $found documents exist under src/gpt"
+
+# Every provider that ships documents must audit at least one of them.
+claude_counts="$(record_counts "$(run_tool --provider claude)")"
+[ -n "$claude_counts" ] || fail "unrecognized summary for the claude provider"
+[ "${claude_counts% *}" -gt 0 ] || fail "audited 0 canonical records under src/claude"
+
+# The default provider run also succeeds and reports a nonzero audit.
+default_counts="$(record_counts "$(run_tool)")"
+[ -n "$default_counts" ] || fail "unrecognized summary for the default provider"
+[ "${default_counts% *}" -gt 0 ] || fail "the default provider audited 0 records"
+
+# The summary is deterministic byte for byte.
+run_tool --provider gpt >"$sandbox/first" 2>&1
+run_tool --provider gpt >"$sandbox/second" 2>&1
+cmp -s "$sandbox/first" "$sandbox/second" || fail "summary output is not stable"
+
+# A provider with no documents is an error, not a silent pass over an empty set.
+if run_tool --provider no-such-provider >/dev/null 2>&1; then
+	fail "expected failure for a provider with no documents"
+fi
+
+# An unknown flag is refused rather than ignored.
+if run_tool --badflag >/dev/null 2>&1; then
+	fail "expected failure for an unknown flag"
+fi
+
+# --pdf takes a document and a PDF together; one argument is a usage error.
+if run_tool --pdf only-one-argument >/dev/null 2>&1; then
+	fail "expected failure for --pdf with a single argument"
+fi
+
+# A real document with a missing rendered PDF is an error.
+main="$(find "$repo/src/gpt" -name main.tex -type f | sort | head -n 1)"
+[ -n "$main" ] || fail "no main.tex found under src/gpt"
+document="${main#"$repo"/src/gpt/}"
+document="${document%/main.tex}"
+if run_tool --pdf "$document" "$sandbox/absent.pdf" >/dev/null 2>&1; then
+	fail "expected failure for a missing rendered PDF"
+fi
+
+# A document that does not exist is an error.
+if run_tool --pdf no/such/document "$sandbox/absent.pdf" >/dev/null 2>&1; then
+	fail "expected failure for a document that does not exist"
+fi
+
+# A file that is not a PDF is refused rather than accepted as one.
+printf 'not a pdf\n' >"$sandbox/decoy.pdf"
+if run_tool --pdf "$document" "$sandbox/decoy.pdf" >/dev/null 2>&1; then
+	fail "expected failure for a file that is not a PDF"
+fi
+
+echo ok

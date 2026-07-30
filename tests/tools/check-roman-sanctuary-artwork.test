@@ -1,0 +1,107 @@
+#!/bin/sh
+# Test for `tools/tpt check-roman-sanctuary-artwork`: exit 0 = pass (the gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="check-roman-sanctuary-artwork"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+owner="$repo/src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+manifest="$owner/research/artwork-manifest.toml"
+if [ ! -f "$manifest" ]; then
+	echo "missing canonical artwork manifest: $manifest" >&2
+	exit 1
+fi
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+# The checked-in dictionary must validate as it stands: this is the gate the
+# repository actually runs, and it is read-only.
+run_tool >first.txt
+if ! grep -q '^Roman sanctuary artwork manifest valid' first.txt; then
+	echo "unexpected report on the real dictionary:" >&2
+	cat first.txt >&2
+	exit 1
+fi
+
+# Read-only validation of unchanged inputs is byte-stable.
+run_tool >second.txt
+if ! cmp -s first.txt second.txt; then
+	echo "the report is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# --root selects the owner. A sandbox root that shares the real artwork tree
+# but owns its own copy of the manifest reproduces the same verdict.
+mkdir -p root
+ln -s "$owner/shared" root/shared
+cp -R "$owner/research" root/research
+run_tool --root root >rooted.txt
+if ! cmp -s first.txt rooted.txt; then
+	echo "an equivalent --root gave a different verdict" >&2
+	diff first.txt rooted.txt >&2 || true
+	exit 1
+fi
+
+reject() {
+	message="$1"
+	shift
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $message" >&2
+		exit 1
+	fi
+}
+
+# A digest that no longer matches its PNG is a hard failure.
+sed 's/sha256 = "[0-9a-f]*"/sha256 = "0000000000000000000000000000000000000000000000000000000000000000"/g' \
+	root/research/artwork-manifest.toml >tampered.toml
+cp tampered.toml root/research/artwork-manifest.toml
+if run_tool --root root >/dev/null 2>tampered-errors.txt; then
+	echo "expected tampered digests to fail validation" >&2
+	exit 1
+fi
+if ! grep -q 'sha256 does not match asset' tampered-errors.txt; then
+	echo "expected a sha256 mismatch to be named, got:" >&2
+	cat tampered-errors.txt >&2
+	exit 1
+fi
+if ! grep -q 'Roman sanctuary artwork validation failed' tampered-errors.txt; then
+	echo "expected a failure summary, got:" >&2
+	cat tampered-errors.txt >&2
+	exit 1
+fi
+
+# An asset registered in the manifest but absent from the tree is a failure.
+cp -R "$owner/research" partial-research
+mkdir -p partial-root
+cp -R partial-research partial-root/research
+mkdir -p partial-root/shared/artwork
+if run_tool --root partial-root >/dev/null 2>partial-errors.txt; then
+	echo "expected a root with no artwork to fail validation" >&2
+	exit 1
+fi
+if ! grep -q 'missing asset' partial-errors.txt; then
+	echo "expected missing assets to be named, got:" >&2
+	head -5 partial-errors.txt >&2
+	exit 1
+fi
+
+# A manifest that is not valid TOML, an absent root, and an unknown flag are
+# all refused.
+mkdir -p broken-root/research
+echo 'this is not = valid = toml' >broken-root/research/artwork-manifest.toml
+reject "a malformed manifest" --root broken-root
+reject "a root with no manifest at all" --root "$sandbox/nonesuch"
+mkdir -p bare-root
+reject "an empty root" --root bare-root
+reject "an unknown flag" --nonesuch
+
+echo ok

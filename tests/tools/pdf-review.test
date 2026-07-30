@@ -1,0 +1,178 @@
+#!/bin/sh
+# Test for `tools/tpt pdf-review`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="pdf-review"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+reject() {
+	message="$1"
+	shift
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $message" >&2
+		exit 1
+	fi
+}
+
+# Selection is never implicit: naming nothing to rasterize is an error.
+reject "no PDF and no selection"
+reject "an unknown flag" --nonesuch
+reject "--changed-to without --changed-from" --changed-to HEAD
+
+# --explain reports the bounded resource plan and renders nothing.
+plan="$(run_tool --explain)"
+case "$plan" in
+*"jobs="*) ;;
+*) echo "expected a resource plan with a job count, got: $plan" >&2; exit 1 ;;
+esac
+case "$plan" in
+*"per-worker="*) ;;
+*) echo "expected a per-worker memory bound, got: $plan" >&2; exit 1 ;;
+esac
+if run_tool --explain --jobs 0 >/dev/null 2>&1; then
+	echo "expected --jobs 0 to be refused" >&2
+	exit 1
+fi
+capped="$(run_tool --explain --jobs 1)"
+case "$capped" in
+*"jobs=1, requested-cap=1"*) ;;
+*) echo "expected --jobs 1 to cap the plan, got: $capped" >&2; exit 1 ;;
+esac
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+# One small single-page PDF, written here so the test owns its input.
+cat >tiny.pdf <<'PDF'
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 144 144] /Contents 4 0 R >> endobj
+4 0 obj << /Length 33 >>
+stream
+1 0 0 RG 4 w 20 20 m 124 124 l S
+endstream
+endobj
+trailer << /Root 1 0 R /Size 5 >>
+%%EOF
+PDF
+
+# The artifact root is refused outside this checkout's build/ tree or a
+# temporary root, and the refusal happens before anything is written.
+refused="$repo/pdf-review-refusal-check"
+if run_tool --output "$refused" --cache "$sandbox/cache" tiny.pdf >/dev/null 2>refusal.txt; then
+	echo "expected an --output outside build/ to be refused" >&2
+	exit 1
+fi
+if ! grep -q -- "--output must remain under this checkout's build/ tree" refusal.txt; then
+	echo "expected the artifact-root refusal, got:" >&2
+	cat refusal.txt >&2
+	exit 1
+fi
+if [ -e "$refused" ]; then
+	echo "the refused output root was created anyway: $refused" >&2
+	exit 1
+fi
+if run_tool --output "$sandbox/out" --cache "$repo/pdf-review-cache-check" tiny.pdf \
+	>/dev/null 2>&1; then
+	echo "expected a --cache outside build/ to be refused" >&2
+	exit 1
+fi
+if [ -e "$repo/pdf-review-cache-check" ]; then
+	echo "the refused cache root was created anyway" >&2
+	exit 1
+fi
+
+# Input that is not a readable PDF is refused.
+echo 'not a pdf' >decoy.txt
+reject "a non-PDF input" --output "$sandbox/out" --cache "$sandbox/cache" decoy.txt
+reject "an absent input" --output "$sandbox/out" --cache "$sandbox/cache" absent.pdf
+reject "nesting --cache inside --output" \
+	--output "$sandbox/out" --cache "$sandbox/out/cache" tiny.pdf
+
+# Rasterizing needs Poppler, ImageMagick, and the TeX contact-sheet font.
+# A checkout without them skips cleanly rather than failing.
+for binary in pdftoppm magick kpsewhich; do
+	if ! command -v "$binary" >/dev/null 2>&1; then
+		echo ok
+		exit 0
+	fi
+done
+# The artifact roots must sit under a temporary root the tool accepts.
+case "$sandbox" in
+/tmp/*) ;;
+*) echo ok; exit 0 ;;
+esac
+
+run_tool --output "$sandbox/a" --cache "$sandbox/cache-a" tiny.pdf >report.txt 2>/dev/null
+case "$(cat report.txt)" in
+*"$sandbox/tiny.pdf -> $sandbox/a/"*) ;;
+*) echo "expected a source -> destination line, got:" >&2; cat report.txt >&2; exit 1 ;;
+esac
+
+destination="$(sed 's/.* -> //' report.txt)"
+for artifact in pages/page-1.png thumbnails/page-1.png contact-sheets/sheet-001.png \
+	review-cache.json; do
+	if [ ! -s "$destination/$artifact" ]; then
+		echo "missing review artifact: $destination/$artifact" >&2
+		exit 1
+	fi
+done
+if [ ! -s "$sandbox/a/review-run.json" ]; then
+	echo "missing the run manifest" >&2
+	exit 1
+fi
+if ! grep -q '"page_count":1' "$sandbox/a/review-run.json"; then
+	echo "expected a one-page run manifest, got:" >&2
+	cat "$sandbox/a/review-run.json" >&2
+	exit 1
+fi
+if ! grep -q '"renderer_fingerprint":"[0-9a-f]\{64\}"' "$sandbox/a/review-run.json"; then
+	echo "expected a renderer fingerprint in the run manifest" >&2
+	exit 1
+fi
+
+# A second run through a cold cache reproduces the same bytes.
+run_tool --output "$sandbox/b" --cache "$sandbox/cache-b" tiny.pdf >/dev/null 2>&1
+if ! cmp -s "$sandbox/a/review-run.json" "$sandbox/b/review-run.json"; then
+	echo "the run manifest is not byte-stable across runs" >&2
+	exit 1
+fi
+(cd "$sandbox/a" && find . -type f | sort) >a.list
+(cd "$sandbox/b" && find . -type f | sort) >b.list
+if ! cmp -s a.list b.list; then
+	echo "the two runs produced different artifact sets" >&2
+	diff a.list b.list >&2 || true
+	exit 1
+fi
+# Page rasters and contact sheets are reproducible; the ImageMagick thumbnail
+# pass is not, and review-cache.json records the thumbnail digest, so both are
+# excluded from the byte-stability comparison.
+grep -v -e '/thumbnails/' -e 'review-cache\.json$' a.list >stable.list
+if [ ! -s stable.list ]; then
+	echo "no stable artifacts to compare" >&2
+	exit 1
+fi
+while IFS= read -r relative; do
+	if ! cmp -s "$sandbox/a/$relative" "$sandbox/b/$relative"; then
+		echo "review artifact is not byte-stable: $relative" >&2
+		exit 1
+	fi
+done <stable.list
+
+# No stray staging or snapshot directories survive a completed run.
+if find "$sandbox/a" "$sandbox" -maxdepth 1 -name '.*.tmp-*' -o -maxdepth 1 -name '.*.snapshots-*' \
+	| grep -q .; then
+	echo "a staging directory outlived the run" >&2
+	exit 1
+fi
+
+echo ok

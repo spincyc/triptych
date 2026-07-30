@@ -1,0 +1,135 @@
+#!/bin/sh
+# Test for `tools/tpt check-promised-deliverables`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="check-promised-deliverables"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+fail() {
+	echo "$1" >&2
+	exit 1
+}
+
+# "TRACKED COMPLETE" from the summary line, or empty when unrecognizable.
+ledger_counts() {
+	printf '%s\n' "$1" | sed -n \
+		's/^Promised-deliverable ledger valid: \([0-9][0-9]*\) tracked, \([0-9][0-9]*\) complete\.$/\1 \2/p'
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+summary="$(run_tool)"
+counts="$(ledger_counts "$summary")"
+[ -n "$counts" ] || fail "unrecognized summary line: $summary"
+tracked="${counts% *}"
+complete="${counts#* }"
+
+# A ledger that tracks nothing is not a pass.
+[ "$tracked" -gt 0 ] || fail "the tracked ledger holds 0 deliverables"
+[ "$complete" -le "$tracked" ] || fail "complete ($complete) exceeds tracked ($tracked)"
+
+# The tracked count must match the ledger read independently of the tool.
+declared="$(grep -c '^\[\[deliverables\]\]' "$repo/promised-deliverables.toml" | tr -d ' ')"
+[ "$tracked" = "$declared" ] ||
+	fail "reported $tracked deliverables but the ledger declares $declared"
+
+# The summary is deterministic byte for byte.
+run_tool >"$sandbox/first" 2>&1
+run_tool >"$sandbox/second" 2>&1
+cmp -s "$sandbox/first" "$sandbox/second" || fail "summary output is not stable"
+
+# A synthetic ledger exercises the state machine without depending on the
+# current state of any tracked promise. Owner and evidence paths stay
+# repository-relative because the tool resolves them against the repo root.
+cat >"$sandbox/ledger.toml" <<'TOML'
+schema_version = 1
+
+[[deliverables]]
+id = "alpha-done"
+owner = "README.md"
+promise = "A finished thing."
+state = "complete"
+[[deliverables.requirements]]
+id = "r1"
+criterion = "The README exists."
+status = "pass"
+check = "path_exists"
+evidence = ["README.md"]
+
+[[deliverables]]
+id = "beta-open"
+owner = "README.md"
+promise = "An unfinished thing."
+state = "planned"
+[[deliverables.requirements]]
+id = "r1"
+criterion = "Still open."
+status = "open"
+evidence = ["README.md"]
+TOML
+
+synthetic="$(ledger_counts "$(run_tool --ledger "$sandbox/ledger.toml")")"
+[ "$synthetic" = "2 1" ] || fail "expected '2 1' for the synthetic ledger, got: $synthetic"
+
+# --require-complete is satisfied by a complete deliverable and refuses one
+# that is not.
+run_tool --ledger "$sandbox/ledger.toml" --require-complete alpha-done >/dev/null
+if run_tool --ledger "$sandbox/ledger.toml" --require-complete beta-open >/dev/null 2>&1; then
+	fail "expected failure requiring completion of a planned deliverable"
+fi
+
+# An unknown deliverable id cannot be quietly treated as satisfied.
+if run_tool --require-complete no-such-deliverable-id >/dev/null 2>&1; then
+	fail "expected failure requiring completion of an unknown deliverable"
+fi
+
+# A deliverable may not claim completion while a requirement is still open.
+sed 's/^state = "planned"$/state = "complete"/' "$sandbox/ledger.toml" >"$sandbox/lying.toml"
+if run_tool --ledger "$sandbox/lying.toml" >/dev/null 2>&1; then
+	fail "expected failure for a complete state with an unmet requirement"
+fi
+
+# A passing requirement must point at evidence that exists.
+sed 's|^evidence = \["README.md"\]$|evidence = ["no-such-evidence.md"]|' \
+	"$sandbox/ledger.toml" >"$sandbox/ghost.toml"
+if run_tool --ledger "$sandbox/ghost.toml" >/dev/null 2>&1; then
+	fail "expected failure for missing evidence"
+fi
+
+# An unsupported state is refused.
+sed 's/^state = "planned"$/state = "nearly"/' "$sandbox/ledger.toml" >"$sandbox/state.toml"
+if run_tool --ledger "$sandbox/state.toml" >/dev/null 2>&1; then
+	fail "expected failure for an unsupported deliverable state"
+fi
+
+# The schema version is pinned.
+sed 's/^schema_version = 1$/schema_version = 2/' "$sandbox/ledger.toml" >"$sandbox/schema.toml"
+if run_tool --ledger "$sandbox/schema.toml" >/dev/null 2>&1; then
+	fail "expected failure for an unsupported schema version"
+fi
+
+# A ledger that does not exist is an error, not an empty pass.
+if run_tool --ledger "$sandbox/absent.toml" >/dev/null 2>&1; then
+	fail "expected failure for a ledger path that does not exist"
+fi
+
+# Malformed TOML is an error.
+printf 'schema_version = \n' >"$sandbox/broken.toml"
+if run_tool --ledger "$sandbox/broken.toml" >/dev/null 2>&1; then
+	fail "expected failure for malformed TOML"
+fi
+
+# An unknown flag is refused rather than ignored.
+if run_tool --badflag >/dev/null 2>&1; then
+	fail "expected failure for an unknown flag"
+fi
+
+echo ok

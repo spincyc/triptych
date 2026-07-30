@@ -1,0 +1,148 @@
+#!/bin/sh
+# Test for `tools/tpt source-family-migration`: exit 0 = pass (the stable gate).
+#
+# bootstrap and refresh write the ledger, so both run only against a throwaway
+# root built under mktemp; the repository's own ledger is exercised solely by
+# the read-only `check`.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="source-family-migration"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+inventory="src/sources/inventories/publications-v1.toml"
+review="src/sources/inventories/classification-review-v1.toml"
+ledger="src/sources/inventories/source-family-migration-v1.toml"
+
+match() {
+	if ! printf '%s\n' "$2" | grep -Eq "$1"; then
+		echo "expected /$1/ in: $2" >&2
+		exit 1
+	fi
+}
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $tool_id $*" >&2
+		exit 1
+	fi
+}
+
+field() {
+	printf '%s\n' "$2" | sed -n "s/.*[ ]$1=\([^ ]*\).*/\1/p" | head -n 1
+}
+
+run_tool --help >/dev/null
+for verb in check bootstrap refresh; do
+	run_tool "$verb" --help >/dev/null
+done
+
+# The repository's own ledger is valid, and check is read-only, so it may be
+# asked directly. Two runs agree byte for byte.
+run_tool check >"$sandbox/check-1"
+run_tool check >"$sandbox/check-2"
+if ! cmp -s "$sandbox/check-1" "$sandbox/check-2"; then
+	echo "check output is not byte-stable" >&2
+	exit 1
+fi
+summary="$(cat "$sandbox/check-1")"
+match '^source-family-migration valid: families=[0-9]+ review_units=[0-9]+ screened=[0-9]+ pending=[0-9]+ trace_records=[0-9]+ atomic_citation_coverage=false$' \
+	"$summary"
+
+units="$(field review_units "$summary")"
+screened="$(field screened "$summary")"
+pending="$(field pending "$summary")"
+if [ "$units" -lt 1 ] || [ "$(field families "$summary")" -lt 1 ]; then
+	echo "expected the repository ledger to carry families and review units: $summary" >&2
+	exit 1
+fi
+if [ "$pending" != "0" ] || [ "$screened" != "$units" ]; then
+	echo "expected every review unit to be screened: $summary" >&2
+	exit 1
+fi
+
+# --require-family-screened is the stricter gate and the repository passes it.
+strict="$(run_tool check --require-family-screened)"
+if [ "$strict" != "$summary" ]; then
+	echo "expected the strict check to agree with the plain check" >&2
+	exit 1
+fi
+
+# Everything below writes, so it writes into a throwaway tree: one publication
+# with a legacy source record, and the two ledgers this tool is pinned to.
+root="$sandbox/root"
+mkdir -p "$root/src/gpt/articles/faith/demo/research"
+printf 'Demo\n' >"$root/src/gpt/articles/faith/demo/main.tex"
+printf 'Augustine, City of God 19.13.\n' \
+	>"$root/src/gpt/articles/faith/demo/research/source-audit.md"
+"$tool" source-inventory --root "$root" bootstrap "$inventory" --audited-on 2026-07-22
+"$tool" source-inventory --root "$root" bootstrap-classification-review \
+	"$review" --audited-on 2026-07-22
+
+# bootstrap pins the two inputs by path and by digest, records the canonical
+# catalog it was built against, and files the publication as an unscreened
+# review unit.
+run_tool --root "$root" bootstrap "$ledger" --audited-on 2026-07-22
+built="$(cat "$root/$ledger")"
+match '^record_type = "reviewed-source-family-migration-ledger"$' "$built"
+match '^audited_on = "2026-07-22"$' "$built"
+match "^inventory_path = \"$inventory\"\$" "$built"
+match "^classification_review_path = \"$review\"\$" "$built"
+match '^inventory_snapshot = "sha256:[0-9a-f]{64}"$' "$built"
+match '^classification_snapshot = "sha256:[0-9a-f]{64}"$' "$built"
+match '^canonical_catalog_snapshot = "sha256:[0-9a-f]{64}"$' "$built"
+match '^coverage_granularity = "owner-record-family"$' "$built"
+match '^atomic_citation_coverage = false$' "$built"
+match '^owner_id = "articles/faith/demo"$' "$built"
+match '^review_state = "pending"$' "$built"
+
+# The rendering is deterministic: same inputs, same audit date, same bytes.
+run_tool --root "$root" bootstrap "second.toml" --audited-on 2026-07-22
+if ! cmp -s "$root/$ledger" "$root/second.toml"; then
+	echo "bootstrap is not deterministic" >&2
+	exit 1
+fi
+rm -f "$root/second.toml"
+
+# check reads the new ledger back and counts the one pending unit.
+built_summary="$(run_tool --root "$root" check "$ledger")"
+match '^source-family-migration valid: families=0 review_units=1 screened=0 pending=1 trace_records=0 atomic_citation_coverage=false$' \
+	"$built_summary"
+
+# The stricter gate refuses a ledger with a pending unit, and says which.
+strict_error="$(run_tool --root "$root" check "$ledger" --require-family-screened 2>&1 >/dev/null || true)"
+match 'pending family review units: articles/faith/demo' "$strict_error"
+reject --root "$root" check "$ledger" --require-family-screened
+
+# bootstrap will not overwrite an existing ledger; refresh is the way forward,
+# and it moves the audit date without disturbing the review state.
+reject --root "$root" bootstrap "$ledger" --audited-on 2026-07-23
+run_tool --root "$root" refresh "$ledger" --audited-on 2026-07-23
+refreshed="$(cat "$root/$ledger")"
+match '^audited_on = "2026-07-23"$' "$refreshed"
+match '^owner_id = "articles/faith/demo"$' "$refreshed"
+match '^review_state = "pending"$' "$refreshed"
+run_tool --root "$root" check "$ledger" >/dev/null
+
+# A refresh may not walk the audit date backwards.
+reject --root "$root" refresh "$ledger" --audited-on 2026-07-01
+
+# A pin that escapes the repository is refused.
+reject --root "$root" bootstrap "escaped.toml" --audited-on 2026-07-22 --inventory ../outside.toml
+
+# Malformed invocations are refused.
+reject nosuchverb
+reject --root "$root" bootstrap "out.toml"
+reject --root "$root" bootstrap "out.toml" --audited-on 2026-13-99
+reject --root "$root" refresh "$ledger"
+reject --root "$root" check "missing.toml"
+reject --root "$sandbox/absent" check
+
+echo ok

@@ -135,6 +135,18 @@ class ToolRegistryTests(unittest.TestCase):
 class ToolSmokeTests(unittest.TestCase):
     """tests/tools/<id>.test are tmt's stable-gate smoke tests."""
 
+    def test_every_registered_tool_has_a_smoke_test(self) -> None:
+        missing = sorted(
+            name for name in registry()
+            if not (ROOT / "tests" / "tools" / f"{name}.test").is_file()
+        )
+        self.assertEqual(missing, [], f"tools without a smoke test: {missing}")
+
+    def test_smoke_tests_are_executable(self) -> None:
+        for script in sorted((ROOT / "tests" / "tools").glob("*.test")):
+            with self.subTest(test=script.name):
+                self.assertTrue(os.access(script, os.X_OK))
+
     def test_shell_smoke_tests_pass(self) -> None:
         suite = sorted((ROOT / "tests" / "tools").glob("*.test"))
         self.assertTrue(suite, "no shell smoke tests found")

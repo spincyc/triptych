@@ -1,0 +1,155 @@
+#!/bin/sh
+# Test for `tools/tpt source-library`: exit 0 = pass (the stable gate).
+#
+# source-library is read-only, so every assertion here runs against the real
+# repository; the only writes are into a scratch directory used to prove that
+# an empty or absent library root is refused rather than silently accepted.
+# Loading the library costs about a second, so each query below is asked once.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="source-library"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+match() {
+	if ! printf '%s\n' "$2" | grep -Eq "$1"; then
+		echo "expected /$1/ in: $2" >&2
+		exit 1
+	fi
+}
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $tool_id $*" >&2
+		exit 1
+	fi
+}
+
+# A source the repository registers as a work, one of its editions, and the
+# passage that publications actually bind. These are the fixtures below.
+work="work.ambrose.de-mysteriis"
+edition="edition.ambrose.de-mysteriis.english-npnf2-10-1896"
+passage="passage.ambrose.de-mysteriis.english-npnf2-10-1896.47-49"
+# A separate work whose edition carries a tracked, indexable Latin artifact.
+indexed="work.ambrose.expositio-evangelii-secundum-lucam"
+
+run_tool --help >/dev/null
+for verb in validate fingerprint uses impact search; do
+	run_tool "$verb" --help >/dev/null
+done
+
+# validate reports one count per record type plus the binding total, and is a
+# pure function of the tree: two runs agree byte for byte.
+run_tool validate >"$sandbox/validate-1"
+run_tool validate >"$sandbox/validate-2"
+if ! cmp -s "$sandbox/validate-1" "$sandbox/validate-2"; then
+	echo "validate output is not byte-stable" >&2
+	exit 1
+fi
+summary="$(cat "$sandbox/validate-1")"
+match '^source-library valid: artifact=[0-9]+ corpus=[0-9]+ edition=[0-9]+ passage=[0-9]+ segment=[0-9]+ work=[0-9]+ bindings=[0-9]+$' "$summary"
+
+# The library is populated, so every count is positive, not an empty pass.
+if printf '%s\n' "$summary" | grep -Eq '=0( |$)'; then
+	echo "expected every validate count to be positive: $summary" >&2
+	exit 1
+fi
+
+# A fingerprint is a canonical sha256 digest, and distinct records fingerprint
+# distinctly: the digest covers the record, not the family it belongs to.
+work_fingerprint="$(run_tool fingerprint "$work")"
+passage_fingerprint="$(run_tool fingerprint "$passage")"
+match '^sha256:[0-9a-f]{64}$' "$work_fingerprint"
+match '^sha256:[0-9a-f]{64}$' "$passage_fingerprint"
+if [ "$work_fingerprint" = "$passage_fingerprint" ]; then
+	echo "expected the work and passage fingerprints to differ" >&2
+	exit 1
+fi
+
+# uses descends from a work to the bindings of its passages, and each row
+# carries the document, the bound source, the locus, the role, the evidence
+# states, and the bindings file.
+uses_tsv="$(run_tool uses "$work")"
+match "^articles/scripture/john-6-bread-from-heaven	$passage	47-49	reception	" "$uses_tsv"
+match 'source-bindings\.toml$' "$uses_tsv"
+uses_rows="$(printf '%s\n' "$uses_tsv" | wc -l)"
+if [ "$uses_rows" -lt 1 ]; then
+	echo "expected at least one binding row for $work" >&2
+	exit 1
+fi
+
+# Every row carries the six declared tab-separated fields.
+malformed="$(printf '%s\n' "$uses_tsv" |
+	grep -Ecv '^[^	]*	[^	]*	[^	]*	[^	]*	[^	]*	[^	]*$' || true)"
+if [ "$malformed" != "0" ]; then
+	echo "uses rows do not all carry six fields" >&2
+	exit 1
+fi
+
+# --locus narrows to a locus the bound passages carry; a locus none of them
+# carries selects nothing rather than everything.
+dropped="$(run_tool uses "$work" --locus 9999 | wc -l)"
+if [ "$dropped" != "0" ]; then
+	echo "expected --locus 9999 to select no rows, got $dropped" >&2
+	exit 1
+fi
+
+# The json rendering is a sorted array of the same bindings.
+uses_json="$(run_tool uses "$work" --format json)"
+match '^\[' "$uses_json"
+match "\"source_id\": \"$passage\"" "$uses_json"
+match '"role": "reception"' "$uses_json"
+
+# impact reports both the affected publications and the affected source
+# records, tagging each row with its kind.
+impact_tsv="$(run_tool impact "$work")"
+match "^document	articles/scripture/john-6-bread-from-heaven	reception	$passage	" "$impact_tsv"
+match "^source	$edition	edition	" "$impact_tsv"
+match "^source	$passage	passage	" "$impact_tsv"
+match 'src/sources/works/ambrose/de-mysteriis/' "$impact_tsv"
+
+# search reads the tracked indexable artifact and reports the physical line:
+# the artifact id, the line number, the text, and the path.
+hit="$(run_tool search "$indexed" Petrum)"
+match '^artifact\.ambrose\.expositio-evangelii-secundum-lucam\.[^	]*	[0-9]+	' "$hit"
+match 'Petrum' "$hit"
+match '\.txt$' "$hit"
+
+# The default search folds case; --case-sensitive does not.
+insensitive="$(run_tool search "$indexed" petrum --count)"
+sensitive="$(run_tool search "$indexed" petrum --case-sensitive --count)"
+if [ "$insensitive" -lt 1 ]; then
+	echo "expected the default search to fold case, got $insensitive" >&2
+	exit 1
+fi
+if [ "$sensitive" != "0" ]; then
+	echo "expected --case-sensitive to reject the lowercase query, got $sensitive" >&2
+	exit 1
+fi
+
+# An unknown source id is refused rather than answered with an empty result.
+reject uses nonesuch.source
+reject fingerprint nonesuch.source
+
+# A search boundary with no indexable artifact is an error, not a zero count.
+reject search "$work" Petrum
+
+# Malformed invocations are refused before any work is done.
+reject nosuchverb
+reject fingerprint
+reject search "$indexed"
+reject uses "$work" --format xml
+
+# A root with no library, and a root that does not exist, both fail.
+mkdir -p "$sandbox/empty"
+reject --root "$sandbox/empty" validate
+reject --root "$sandbox/absent" validate
+
+echo ok

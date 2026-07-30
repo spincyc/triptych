@@ -1,0 +1,110 @@
+#!/bin/sh
+# Test for `tools/tpt public-alpha`: exit 0 = pass (the stable gate).
+# Only the read-only verbs are exercised: `check` validates the manifest and
+# `prepare` prints a candidate inventory without recording anything.  `build`
+# and `verify` write the site artifact and are left to the release chain.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="public-alpha"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# The policy check passes and reports how the publication set is divided.
+run_tool check >"$sandbox/check.txt"
+summary="$(head -1 "$sandbox/check.txt")"
+case "$summary" in
+"public-alpha policy valid: "*" publications ("*" alpha, "*" hold)") ;;
+*)
+	echo "unexpected policy summary: $summary" >&2
+	exit 1
+	;;
+esac
+
+set -- $(printf '%s\n' "$summary" | tr -dc '0-9 ')
+publications="$1"
+alpha="$2"
+hold="$3"
+if [ "$publications" -lt 1 ]; then
+	echo "policy check counted no publications" >&2
+	exit 1
+fi
+if [ "$((alpha + hold))" -ne "$publications" ]; then
+	echo "alpha $alpha + hold $hold does not total $publications" >&2
+	exit 1
+fi
+
+# The authorization the artifact rests on is stated, with its one condition.
+if ! grep -q 'authorization active' "$sandbox/check.txt"; then
+	echo "check did not report the active authorization" >&2
+	exit 1
+fi
+if ! grep -qF 'no-project-initiated-promotion' "$sandbox/check.txt"; then
+	echo "check did not restate the promotion condition" >&2
+	exit 1
+fi
+
+# The summary is byte-stable for unchanged release records.
+run_tool check >"$sandbox/check-again.txt"
+if ! cmp -s "$sandbox/check.txt" "$sandbox/check-again.txt"; then
+	echo "check output is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# prepare prints a hash inventory and says in the artifact itself that no
+# approval was conferred by printing it.
+run_tool prepare >"$sandbox/prepare.json"
+case "$(head -1 "$sandbox/prepare.json")" in
+"{") ;;
+*)
+	echo "prepare did not print a JSON object" >&2
+	exit 1
+	;;
+esac
+if ! grep -q '"approval_conferred": false' "$sandbox/prepare.json"; then
+	echo "prepare did not declare approval_conferred false" >&2
+	exit 1
+fi
+for key in '"schema_version"' '"pdfs"' '"site_sources"' '"sha256"'; do
+	if ! grep -qF "$key" "$sandbox/prepare.json"; then
+		echo "prepare inventory lacks $key" >&2
+		exit 1
+	fi
+done
+if [ "$(grep -c '"sha256"' "$sandbox/prepare.json")" -lt "$alpha" ]; then
+	echo "prepare hashed fewer files than there are alpha publications" >&2
+	exit 1
+fi
+
+run_tool prepare >"$sandbox/prepare-again.json"
+if ! cmp -s "$sandbox/prepare.json" "$sandbox/prepare-again.json"; then
+	echo "prepare inventory is not byte-stable across runs" >&2
+	exit 1
+fi
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $*" >&2
+		exit 1
+	fi
+}
+
+# A verb is required, and only the four named verbs exist.
+reject
+reject bogus
+# The private preview is a property of the built artifact, not of validation.
+reject check --preview
+reject prepare --preview
+# A deployment target constrains verification alone.
+reject check --deployment-target github-pages
+reject verify --deployment-target nonesuch
+
+echo ok

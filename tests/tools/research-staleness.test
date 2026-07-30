@@ -1,0 +1,191 @@
+#!/bin/sh
+# Test for `tools/tpt research-staleness`: exit 0 = pass (the stable gate).
+#
+# This tool's ledger is a tracked file and its ROOT is fixed to the repository
+# checkout, so `bootstrap` and `rebaseline` cannot be exercised without
+# rewriting tracked state. This test therefore runs only the read-only verbs,
+# and proves at the end that the ledger is byte-for-byte unchanged.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="research-staleness"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+ledger="$repo/src/sources/inventories/research-staleness-v1.toml"
+if [ ! -f "$ledger" ]; then
+	echo "ledger is missing: $ledger" >&2
+	exit 1
+fi
+cp "$ledger" "$sandbox/ledger.before"
+
+notice="cross-provider diagnostic only"
+
+# status reports 1 when anything needs attention, which is a finding rather
+# than a tool failure; capture the output and keep going either way.
+status_into() {
+	dest="$1"
+	shift
+	if run_tool status "$@" >"$dest"; then :; fi
+}
+
+summary_of() {
+	tail -n 1 "$1"
+}
+
+details_of() {
+	sed '$d' "$1"
+}
+
+reject() {
+	label="$1"
+	shift
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $label" >&2
+		exit 1
+	fi
+}
+
+# ---------------------------------------------------------------------------
+# status: shape of the report.
+status_into "$sandbox/status.all"
+
+summary="$(summary_of "$sandbox/status.all")"
+case "$summary" in
+"fresh: "*" edition(s) need attention" | "stale: "*" edition(s) need attention") ;;
+*) echo "unexpected status summary: $summary" >&2; exit 1 ;;
+esac
+
+reported="$(printf '%s\n' "$summary" | sed 's/^[a-z]*: \([0-9][0-9]*\) .*$/\1/')"
+case "$reported" in
+'' | *[!0-9]*) echo "cannot read a count from summary: $summary" >&2; exit 1 ;;
+esac
+
+# The banner word and the count must agree.
+case "$summary" in
+"fresh: "*) [ "$reported" -eq 0 ] || { echo "fresh banner with $reported findings" >&2; exit 1; } ;;
+"stale: "*) [ "$reported" -gt 0 ] || { echo "stale banner with no findings" >&2; exit 1; } ;;
+esac
+
+# Every detail line is "<state> <provider> <leaf>" with a known state and a
+# known provider, and there are exactly as many of them as the summary claims.
+detail_count="$(details_of "$sandbox/status.all" | grep -c . || true)"
+[ "$detail_count" -eq "$reported" ] ||
+	{ echo "summary says $reported, but $detail_count detail lines" >&2; exit 1; }
+
+bad="$(details_of "$sandbox/status.all" |
+	awk '$1 != "stale" && $1 != "unbaselined" && $1 != "removed" { print }
+	     $2 != "gpt" && $2 != "claude" { print }')"
+[ -z "$bad" ] || { echo "malformed status detail line(s): $bad" >&2; exit 1; }
+
+# The ledger and the working tree do not move under us: status is byte-stable.
+status_into "$sandbox/status.again"
+if ! cmp -s "$sandbox/status.all" "$sandbox/status.again"; then
+	echo "status output is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# ---------------------------------------------------------------------------
+# status --provider partitions the same report.
+status_into "$sandbox/status.gpt" --provider gpt
+status_into "$sandbox/status.claude" --provider claude
+
+for provider in gpt claude; do
+	off="$(details_of "$sandbox/status.$provider" | awk -v p="$provider" '$2 != p { print }')"
+	[ -z "$off" ] ||
+		{ echo "--provider $provider leaked other providers: $off" >&2; exit 1; }
+done
+
+gpt_count="$(summary_of "$sandbox/status.gpt" | sed 's/^[a-z]*: \([0-9][0-9]*\) .*$/\1/')"
+claude_count="$(summary_of "$sandbox/status.claude" | sed 's/^[a-z]*: \([0-9][0-9]*\) .*$/\1/')"
+[ "$((gpt_count + claude_count))" -eq "$reported" ] ||
+	{ echo "provider counts $gpt_count + $claude_count do not sum to $reported" >&2; exit 1; }
+
+# ---------------------------------------------------------------------------
+# explain agrees with status, edition by edition.
+#
+# `explain` takes its provider as a positional argument while `status` and
+# `rebaseline` take --provider; the calls below pin that asymmetry down so a
+# future unification has to update this test deliberately.
+
+# A reported edition must explain itself with at least one input-level cause.
+first_detail="$(details_of "$sandbox/status.all" | head -n 1)"
+if [ -n "$first_detail" ]; then
+	provider="$(printf '%s\n' "$first_detail" | awk '{print $2}')"
+	leaf="$(printf '%s\n' "$first_detail" | awk '{print $3}')"
+	if run_tool explain "$provider" "$leaf" >"$sandbox/explain.flagged" 2>&1; then
+		echo "explain $provider $leaf exited 0 for a flagged edition" >&2
+		exit 1
+	fi
+	causes="$(grep -c -E '^(changed|new|removed) input |^unbaselined ' \
+		"$sandbox/explain.flagged" || true)"
+	[ "$causes" -gt 0 ] ||
+		{ echo "explain gave no cause for $provider $leaf:" >&2
+		  cat "$sandbox/explain.flagged" >&2; exit 1; }
+
+	# When status flags a cause as cross-provider, explain must say so too.
+	case "$first_detail" in
+	*"$notice"*)
+		grep -q "$notice" "$sandbox/explain.flagged" ||
+			{ echo "explain dropped the cross-provider notice" >&2; exit 1; } ;;
+	esac
+
+	# explain is byte-stable as well.
+	if run_tool explain "$provider" "$leaf" >"$sandbox/explain.again" 2>&1; then :; fi
+	if ! cmp -s "$sandbox/explain.flagged" "$sandbox/explain.again"; then
+		echo "explain output is not byte-stable across runs" >&2
+		exit 1
+	fi
+fi
+
+# An edition status did not flag must explain as fresh, and exit 0. The leaf is
+# taken from the edition tree rather than hard-coded, so rebaselining or moving
+# a paper cannot turn this into a false failure.
+details_of "$sandbox/status.claude" | awk '{print $3}' | sort >"$sandbox/flagged.claude"
+find "$repo/src/claude" -name main.tex |
+	sed -e "s|^$repo/src/claude/||" -e 's|/main\.tex$||' |
+	sort >"$sandbox/leaves.claude"
+fresh_leaf="$(comm -23 "$sandbox/leaves.claude" "$sandbox/flagged.claude" | head -n 1)"
+
+if [ -n "$fresh_leaf" ]; then
+	out="$(run_tool explain claude "$fresh_leaf")"
+	[ "$out" = "fresh claude $fresh_leaf" ] ||
+		{ echo "expected 'fresh claude $fresh_leaf', got: $out" >&2; exit 1; }
+else
+	echo "note: no unflagged claude edition to explain as fresh" >&2
+fi
+
+# ---------------------------------------------------------------------------
+# Negative cases.
+reject "unknown verb" bogus
+reject "unknown provider for status" status --provider gemini
+reject "status takes --provider, not a positional" status claude
+reject "explain with no arguments" explain
+reject "explain with no leaf" explain claude
+reject "unknown provider for explain" explain gemini articles/faith/nothing
+reject "explain of an edition that does not exist" explain claude no/such/leaf/at/all
+# explain's provider is positional; the --provider spelling used by the other
+# verbs must not silently work here.
+if [ -n "$fresh_leaf" ]; then
+	reject "explain rejects --provider" explain --provider claude "$fresh_leaf"
+fi
+# Only the flag parsing of the mutating verb is exercised: argparse rejects an
+# unknown provider before any handler can touch the ledger.
+reject "unknown provider for rebaseline" rebaseline --provider gemini
+
+# ---------------------------------------------------------------------------
+# The read-only verbs left the tracked ledger exactly as they found it.
+if ! cmp -s "$sandbox/ledger.before" "$ledger"; then
+	echo "research-staleness modified the tracked ledger: $ledger" >&2
+	exit 1
+fi
+
+echo ok

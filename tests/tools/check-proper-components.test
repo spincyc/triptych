@@ -1,0 +1,130 @@
+#!/bin/sh
+# Test for `tools/tpt check-proper-components`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="check-proper-components"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+fail() {
+	echo "$1" >&2
+	exit 1
+}
+
+# The validated count, or empty when the summary line is unrecognizable.
+manifest_count() {
+	printf '%s\n' "$1" |
+		sed -n 's/^Proper component manifests valid: \([0-9][0-9]*\)\.$/\1/p'
+}
+
+lines() {
+	printf '%s\n' "$1" | wc -l | tr -d ' '
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+summary="$(run_tool --provider gpt)"
+count="$(manifest_count "$summary")"
+[ -n "$count" ] || fail "unrecognized summary line: $summary"
+
+# The regression this gate exists for. The tool once computed the wrong
+# repository root, discovered no manifests, printed "valid: 0." and exited 0 --
+# a green gate that validated nothing. A zero count is never a pass.
+[ "$count" -gt 0 ] ||
+	fail "validated 0 manifests: the gate is green over nothing"
+
+# Prove the assertion above can actually see a zero. A provider with no tree
+# reproduces the exact silent-false-pass shape. If the tool is later hardened
+# to reject an empty search outright, the branch is simply skipped.
+if empty="$(run_tool --provider no-such-provider 2>/dev/null)"; then
+	[ "$(manifest_count "$empty")" = "0" ] ||
+		fail "the zero-count probe did not read as zero: $empty"
+fi
+
+# The count must match manifests discovered independently of the tool, so a
+# root-resolution bug cannot hide behind a plausible-looking nonzero number.
+found="$(find "$repo/src/gpt" -name proper-components.toml -type f | wc -l | tr -d ' ')"
+[ "$count" = "$found" ] ||
+	fail "counted $count manifests but $found exist under src/gpt"
+
+# Every provider that ships manifests must validate at least one of them.
+claude="$(manifest_count "$(run_tool --provider claude)")"
+[ -n "$claude" ] && [ "$claude" -gt 0 ] ||
+	fail "the claude provider validated no manifests"
+
+# A single named document validates exactly itself.
+manifest="$(find "$repo/src/gpt" -name proper-components.toml -type f | sort | head -n 1)"
+[ -n "$manifest" ] || fail "no proper-components.toml found under src/gpt"
+document="${manifest#"$repo"/src/gpt/}"
+document="${document%/proper-components.toml}"
+[ "$(manifest_count "$(run_tool --document "$document")")" = "1" ] ||
+	fail "expected exactly one manifest for $document"
+
+# --list-synthesis names one synthesis output per manifest, each derived from
+# the canonical leaf id.
+synthesis="$(run_tool --provider gpt --list-synthesis)"
+[ -n "$synthesis" ] || fail "--list-synthesis printed nothing"
+[ "$(lines "$synthesis")" = "$count" ] ||
+	fail "expected $count synthesis outputs, got: $synthesis"
+printf '%s\n' "$synthesis" | while read -r item; do
+	case "$item" in
+	*-synthesis) ;;
+	*) echo "synthesis output lacks the -synthesis suffix: $item" >&2; exit 1 ;;
+	esac
+done
+case "$synthesis" in
+*"$document-synthesis"*) ;;
+*) fail "expected $document-synthesis in the synthesis list" ;;
+esac
+
+# The summary is deterministic byte for byte.
+run_tool --provider gpt >"$sandbox/first" 2>&1
+run_tool --provider gpt >"$sandbox/second" 2>&1
+cmp -s "$sandbox/first" "$sandbox/second" || fail "summary output is not stable"
+
+# An unknown flag is refused rather than ignored.
+if run_tool --badflag >/dev/null 2>&1; then
+	fail "expected failure for an unknown flag"
+fi
+
+# A named document with no manifest is an error, not a silent zero.
+if run_tool --document no/such/document >/dev/null 2>&1; then
+	fail "expected failure for a document with no manifest"
+fi
+
+# A missing aux file is an error.
+if run_tool --aux "$sandbox/absent.aux" >/dev/null 2>&1; then
+	fail "expected failure for a missing aux file"
+fi
+
+# An aux file without the brief-synthesis page markers is an error.
+printf '\\newlabel{unrelated}{{1}{7}}\n' >"$sandbox/bare.aux"
+if run_tool --aux "$sandbox/bare.aux" >/dev/null 2>&1; then
+	fail "expected failure for an aux file lacking brief-synthesis markers"
+fi
+
+# The brief synthesis must occupy exactly two physical pages.
+cat >"$sandbox/wide.aux" <<'AUX'
+\newlabel{triptych:brief-synthesis:start}{{1}{10}}
+\newlabel{triptych:brief-synthesis:end}{{1}{12}}
+\newlabel{triptych:brief-synthesis:next}{{1}{13}}
+AUX
+if run_tool --aux "$sandbox/wide.aux" >/dev/null 2>&1; then
+	fail "expected failure for a brief synthesis spanning three pages"
+fi
+
+cat >"$sandbox/good.aux" <<'AUX'
+\newlabel{triptych:brief-synthesis:start}{{1}{10}}
+\newlabel{triptych:brief-synthesis:end}{{1}{11}}
+\newlabel{triptych:brief-synthesis:next}{{1}{12}}
+AUX
+run_tool --aux "$sandbox/good.aux" >/dev/null
+
+echo ok

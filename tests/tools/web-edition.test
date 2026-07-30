@@ -1,0 +1,110 @@
+#!/bin/sh
+# Test for `tools/tpt web-edition`: exit 0 = pass (the stable gate).
+# The tool writes Markdown, so every conversion here is redirected with
+# --output into a temporary directory; the repository tree is never written to.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="web-edition"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+# Conversion is pandoc's work; without it there is nothing to gate.
+if ! command -v pandoc >/dev/null 2>&1; then
+	echo ok
+	exit 0
+fi
+
+run_tool --help >/dev/null
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $*" >&2
+		exit 1
+	fi
+}
+
+# The provider is required, and a run must name what to convert.
+reject articles/faith/at-the-end-of-every-why
+reject --provider gpt
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# A leaf that does not exist is reported rather than half-written.
+reject --provider gpt --output "$sandbox/none" nonesuch/leaf
+if [ -e "$sandbox/none/gpt" ]; then
+	echo "a failed conversion left output behind" >&2
+	exit 1
+fi
+
+# The document is taken from the eligibility gate's own list, so this test
+# converts a leaf the corpus currently declares publishable.
+leaf="$("$tool" check-web-edition --provider gpt --list-eligible | head -1)"
+if [ -z "$leaf" ]; then
+	echo "no eligible leaf to convert" >&2
+	exit 1
+fi
+
+printed="$(run_tool --provider gpt --output "$sandbox/one" "$leaf")"
+page="$sandbox/one/gpt/$leaf.md"
+if [ "$printed" != "$page" ]; then
+	echo "printed $printed, expected $page" >&2
+	exit 1
+fi
+if [ ! -s "$page" ]; then
+	echo "no page written to $page" >&2
+	exit 1
+fi
+
+# The page opens with the PDF title as its sole H1.
+case "$(head -1 "$page")" in
+"# "?*) ;;
+*)
+	echo "page does not open with an H1 title: $(head -1 "$page")" >&2
+	exit 1
+	;;
+esac
+if [ "$(grep -c '^# ' "$page")" -ne 1 ]; then
+	echo "page carries more than one H1" >&2
+	exit 1
+fi
+
+# The colophon and revision stamp the audit requires reached the reader's page.
+for wanted in "Reuse and rights." "Last revised (UTC):"; do
+	if ! grep -qF "$wanted" "$page"; then
+		echo "page is missing: $wanted" >&2
+		exit 1
+	fi
+done
+
+# No LaTeX structure survives into the Markdown.
+for unwanted in '\begin{' '\end{' '\section{' '\label{'; do
+	if grep -qF "$unwanted" "$page"; then
+		echo "raw LaTeX left in output: $unwanted" >&2
+		exit 1
+	fi
+done
+
+# Conversion of unchanged sources is byte-stable.
+run_tool --provider gpt --output "$sandbox/two" "$leaf" >/dev/null
+if ! cmp -s "$page" "$sandbox/two/gpt/$leaf.md"; then
+	echo "conversion is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# A batch reports the failing leaf without abandoning the ones that converted.
+second="$("$tool" check-web-edition --provider gpt --list-eligible | sed -n 2p)"
+if run_tool --provider gpt --output "$sandbox/batch" "$second" nonesuch/leaf >/dev/null 2>&1; then
+	echo "expected a batch with an unknown leaf to fail" >&2
+	exit 1
+fi
+if [ ! -s "$sandbox/batch/gpt/$second.md" ]; then
+	echo "a good leaf in a failing batch was not written" >&2
+	exit 1
+fi
+
+echo ok

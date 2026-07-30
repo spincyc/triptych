@@ -1,0 +1,162 @@
+#!/bin/sh
+# Test for `tools/tpt render-sanctuary-dictionary`: exit 0 = pass (the gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="render-sanctuary-dictionary"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+owner="$repo/src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+schema="$owner/shared/schema/inventory-schema.toml"
+selections="$owner/shared/schema/edition-selections.toml"
+manifest="$owner/research/artwork-manifest.toml"
+records="$owner/shared/objects"
+for fixture in "$schema" "$selections" "$manifest"; do
+	if [ ! -f "$fixture" ]; then
+		echo "missing dictionary fixture: $fixture" >&2
+		exit 1
+	fi
+done
+if [ ! -d "$records" ]; then
+	echo "missing dictionary object records: $records" >&2
+	exit 1
+fi
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+render() {
+	run_tool \
+		--schema "$schema" \
+		--selections "$selections" \
+		--artwork-manifest "$manifest" \
+		--records "$records" \
+		--output "$1"
+}
+
+render first >/dev/null
+
+# Every edition named by the selections is rendered, and each view is a
+# generated TeX file that says so in its own header.
+editions=0
+for view in first/ed-*.tex; do
+	if [ ! -s "$view" ]; then
+		echo "empty rendered view: $view" >&2
+		exit 1
+	fi
+	if ! head -1 "$view" | grep -q '^% Generated deterministically; do not edit\.$'; then
+		echo "$view lacks the generated-file header" >&2
+		exit 1
+	fi
+	editions=$((editions + 1))
+done
+if [ "$editions" -lt 2 ]; then
+	echo "expected several rendered editions, got $editions" >&2
+	exit 1
+fi
+
+for required in first/ed-comprehensive.tex first/ed-general-reader.tex; do
+	if [ ! -s "$required" ]; then
+		echo "expected $required to be rendered" >&2
+		exit 1
+	fi
+done
+
+# The comprehensive view carries object records drawn from the TOML sources.
+if ! grep -q '^\\RSDObjectRecord{obj-' first/ed-comprehensive.tex; then
+	echo "the comprehensive view carries no object records" >&2
+	exit 1
+fi
+
+# The run pins its inputs with a single lowercase SHA-256.
+if [ "$(wc -l <first/selection-input.sha256 | tr -d ' ')" -ne 1 ]; then
+	echo "selection-input.sha256 is not a single line" >&2
+	exit 1
+fi
+if ! grep -qx '[0-9a-f]\{64\}' first/selection-input.sha256; then
+	echo "selection-input.sha256 is not a lowercase SHA-256" >&2
+	exit 1
+fi
+
+# The renderer is documented as deterministic: a second run into a fresh
+# output tree must produce byte-identical files and nothing else.
+render second >/dev/null
+(cd first && find . -type f | sort) >first.list
+(cd second && find . -type f | sort) >second.list
+if ! cmp -s first.list second.list; then
+	echo "the two runs produced different file sets" >&2
+	diff first.list second.list >&2 || true
+	exit 1
+fi
+while IFS= read -r relative; do
+	if ! cmp -s "first/$relative" "second/$relative"; then
+		echo "rendered output is not byte-stable: $relative" >&2
+		exit 1
+	fi
+done <first.list
+
+# Re-rendering over an existing output tree is idempotent.
+render first >/dev/null
+while IFS= read -r relative; do
+	if ! cmp -s "first/$relative" "second/$relative"; then
+		echo "re-rendering in place changed $relative" >&2
+		exit 1
+	fi
+done <first.list
+
+reject() {
+	message="$1"
+	shift
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $message" >&2
+		exit 1
+	fi
+}
+
+# Every one of the five inputs is required; none may be inferred.
+reject "no arguments at all"
+reject "only --schema" --schema "$schema" --output missing-flags
+reject "a missing --output" \
+	--schema "$schema" --selections "$selections" \
+	--artwork-manifest "$manifest" --records "$records"
+reject "an unknown flag" \
+	--schema "$schema" --selections "$selections" \
+	--artwork-manifest "$manifest" --records "$records" \
+	--output rejected --nonesuch
+
+# A records root with no object TOML is an error, not an empty render.
+mkdir -p empty-records
+reject "an empty records root" \
+	--schema "$schema" --selections "$selections" \
+	--artwork-manifest "$manifest" --records empty-records \
+	--output rejected-empty
+
+# Absent fixtures are refused rather than skipped.
+reject "an absent schema" \
+	--schema absent-schema.toml --selections "$selections" \
+	--artwork-manifest "$manifest" --records "$records" \
+	--output rejected-schema
+reject "an absent selections file" \
+	--schema "$schema" --selections absent-selections.toml \
+	--artwork-manifest "$manifest" --records "$records" \
+	--output rejected-selections
+reject "an absent artwork manifest" \
+	--schema "$schema" --selections "$selections" \
+	--artwork-manifest absent-manifest.toml --records "$records" \
+	--output rejected-manifest
+
+# A malformed schema is refused.
+echo 'this is not = valid = toml' >broken.toml
+reject "a malformed schema" \
+	--schema broken.toml --selections "$selections" \
+	--artwork-manifest "$manifest" --records "$records" \
+	--output rejected-broken
+
+echo ok

@@ -1,0 +1,173 @@
+#!/bin/sh
+# Test for `tools/tpt source-inventory`: exit 0 = pass (the stable gate).
+#
+# bootstrap, bootstrap-classification-review, classify, and refresh all write.
+# Every one of them runs here against a throwaway root built under mktemp, so
+# the repository's own ledgers are never touched; only the read-only `check`
+# is aimed at the real tree.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="source-inventory"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+inventory="src/sources/inventories/publications-v1.toml"
+review="src/sources/inventories/classification-review-v1.toml"
+
+match() {
+	if ! printf '%s\n' "$2" | grep -Eq "$1"; then
+		echo "expected /$1/ in: $2" >&2
+		exit 1
+	fi
+}
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $tool_id $*" >&2
+		exit 1
+	fi
+}
+
+# Rewrite one line of a sandbox file in place, portably.
+substitute() {
+	sed "$1" "$2" >"$2.edited"
+	mv "$2.edited" "$2"
+}
+
+run_tool --help >/dev/null
+for verb in check bootstrap bootstrap-classification-review classify refresh; do
+	run_tool "$verb" --help >/dev/null
+done
+
+# The repository's own inventory is valid, and check is read-only, so it may
+# be asked directly. Two runs agree byte for byte.
+run_tool check >"$sandbox/check-1"
+run_tool check >"$sandbox/check-2"
+if ! cmp -s "$sandbox/check-1" "$sandbox/check-2"; then
+	echo "check output is not byte-stable" >&2
+	exit 1
+fi
+match '^source-inventory valid: publications=[0-9]+ source_surface_files=[0-9]+ owners=[0-9]+$' \
+	"$(cat "$sandbox/check-1")"
+if grep -Eq 'publications=0 ' "$sandbox/check-1"; then
+	echo "expected the repository inventory to cover publications" >&2
+	exit 1
+fi
+
+# Everything below writes, so it writes into a throwaway tree holding one
+# publication and one legacy source record.
+root="$sandbox/root"
+mkdir -p "$root/src/gpt/articles/faith/demo/research"
+printf 'Demo\n' >"$root/src/gpt/articles/faith/demo/main.tex"
+printf '# Legacy audit\n\nA source record.\n' \
+	>"$root/src/gpt/articles/faith/demo/research/source-audit.md"
+
+# bootstrap enumerates the publication, its source-bearing files, and their
+# digests, and pins the audit date it was given.
+run_tool --root "$root" bootstrap "$inventory" --audited-on 2026-07-22
+bootstrapped="$(cat "$root/$inventory")"
+match '^record_type = "publication-source-inventory"$' "$bootstrapped"
+match '^audited_on = "2026-07-22"$' "$bootstrapped"
+match '^discovery_rule = "src/gpt/\*\*/main\.tex"$' "$bootstrapped"
+match '^publication_count = 1$' "$bootstrapped"
+match '^source_surface_file_count = 2$' "$bootstrapped"
+match '^snapshot = "sha256:[0-9a-f]{64}"$' "$bootstrapped"
+match '^id = "articles/faith/demo"$' "$bootstrapped"
+match '^inventory_state = "records-enumerated"$' "$bootstrapped"
+match '^source_categories = \["unresolved"\]$' "$bootstrapped"
+match '^path = "src/gpt/articles/faith/demo/research/source-audit\.md"$' "$bootstrapped"
+match '^kind = "legacy-source-audit"$' "$bootstrapped"
+
+# The rendering is deterministic: the same tree and the same audit date give
+# a byte-identical inventory.
+run_tool --root "$root" bootstrap "second.toml" --audited-on 2026-07-22
+if ! cmp -s "$root/$inventory" "$root/second.toml"; then
+	echo "bootstrap is not deterministic" >&2
+	exit 1
+fi
+rm -f "$root/second.toml"
+
+# bootstrap-classification-review seeds one unresolved row per publication and
+# is idempotent when replayed over its own output.
+run_tool --root "$root" bootstrap-classification-review "$review" --audited-on 2026-07-22
+seeded="$(cat "$root/$review")"
+match '^record_type = "publication-source-classification-review"$' "$seeded"
+match '^document = "articles/faith/demo"$' "$seeded"
+match '^source_categories = \["unresolved"\]$' "$seeded"
+match '^classification_snapshot = "sha256:[0-9a-f]{64}"$' "$seeded"
+cp "$root/$review" "$sandbox/review-before"
+run_tool --root "$root" bootstrap-classification-review "$review" --audited-on 2026-07-22
+if ! cmp -s "$sandbox/review-before" "$root/$review"; then
+	echo "bootstrap-classification-review is not idempotent" >&2
+	exit 1
+fi
+
+# check accepts the freshly bootstrapped pair.
+checked="$(run_tool --root "$root" check "$inventory" --review "$review")"
+match '^source-inventory valid: publications=1 source_surface_files=2 owners=0$' "$checked"
+
+# classify refuses a review that is still unresolved.
+reject --root "$root" classify "$inventory" --review "$review"
+
+# Resolving a category by hand leaves the review's own snapshot stale, and
+# classify refuses that too, naming the digest it expects.
+substitute 's/^source_categories = \["unresolved"\]$/source_categories = ["secondary"]/' \
+	"$root/$review"
+stale="$(run_tool --root "$root" classify "$inventory" --review "$review" 2>&1 >/dev/null || true)"
+match 'classification_snapshot is stale; expected sha256:[0-9a-f]{64}' "$stale"
+reject --root "$root" classify "$inventory" --review "$review"
+
+expected_snapshot="$(printf '%s\n' "$stale" |
+	sed -n 's/.*classification_snapshot is stale; expected \(sha256:[0-9a-f]*\).*/\1/p' |
+	head -n 1)"
+if [ -z "$expected_snapshot" ]; then
+	echo "classify did not report the expected classification snapshot" >&2
+	exit 1
+fi
+substitute "s|^classification_snapshot = .*|classification_snapshot = \"$expected_snapshot\"|" \
+	"$root/$review"
+
+# With the review resolved and re-snapshotted, classify carries the reviewed
+# categories into the inventory and advances the publication's state.
+run_tool --root "$root" classify "$inventory" --review "$review"
+classified="$(cat "$root/$inventory")"
+match '^inventory_state = "sources-categorized"$' "$classified"
+match '^source_categories = \["secondary"\]$' "$classified"
+run_tool --root "$root" check "$inventory" --review "$review" >/dev/null
+
+# refresh re-reads the tree, keeps the reviewed categories, and moves the
+# inventory's audit date forward.
+run_tool --root "$root" refresh "$inventory" --review "$review" --audited-on 2026-07-23
+refreshed="$(cat "$root/$inventory")"
+match '^audited_on = "2026-07-23"$' "$refreshed"
+match '^inventory_state = "sources-categorized"$' "$refreshed"
+match '^source_categories = \["secondary"\]$' "$refreshed"
+run_tool --root "$root" check "$inventory" --review "$review" >/dev/null
+
+# A refresh may not walk the audit date backwards, and may not be pointed at
+# a single file for both the inventory and the review.
+reject --root "$root" refresh "$inventory" --review "$review" --audited-on 2026-07-01
+reject --root "$root" refresh "$inventory" --review "$inventory" --audited-on 2026-07-24
+
+# A source-bearing file no publication owns stops a bootstrap.
+mkdir -p "$root/src/gpt/articles/faith/orphan/research"
+printf '# Orphan audit\n' >"$root/src/gpt/articles/faith/orphan/research/source-audit.md"
+reject --root "$root" bootstrap "orphan.toml" --audited-on 2026-07-22
+rm -rf "$root/src/gpt/articles/faith/orphan"
+
+# Malformed invocations are refused.
+reject nosuchverb
+reject --root "$root" bootstrap "out.toml"
+reject --root "$root" bootstrap "out.toml" --audited-on 22-07-2026
+reject --root "$root" bootstrap "out.toml" --audited-on 2026-07-22 --provider bogus
+reject --root "$root" check "missing.toml"
+reject --root "$sandbox/absent" check
+
+echo ok

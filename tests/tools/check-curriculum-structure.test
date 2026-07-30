@@ -1,0 +1,113 @@
+#!/bin/sh
+# Test for `tools/tpt check-curriculum-structure`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="check-curriculum-structure"
+curriculum="$repo/src/gpt/curriculums/ecclesiastical-latin"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+fail() {
+	echo "$1" >&2
+	exit 1
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+[ -d "$curriculum" ] || fail "missing curriculum root $curriculum"
+
+# The tracked curriculum passes its source audit and says nothing while doing
+# so: a clean audit is silent on stdout.
+run_tool --curriculum-root "$curriculum" --sources-only >"$sandbox/clean" 2>&1
+if [ -s "$sandbox/clean" ]; then
+	fail "a clean source audit must print nothing"
+fi
+
+# The audit reads the root it is given rather than a root of its own choosing:
+# an identical copy elsewhere on disk passes identically.
+cp -R "$curriculum" "$sandbox/copy"
+run_tool --curriculum-root "$sandbox/copy" --sources-only >/dev/null
+
+# A registry leaf whose module source is gone is caught, which proves the audit
+# really cross-checks the registry against discovered files under the root.
+cp -R "$sandbox/copy" "$sandbox/gap"
+module="$(find "$sandbox/gap/01-foundations" -name module-data.tex -type f | sort | head -n 1)"
+[ -n "$module" ] || fail "no module-data.tex found beneath 01-foundations"
+rm "$module"
+if run_tool --curriculum-root "$sandbox/gap" --sources-only >/dev/null 2>&1; then
+	fail "expected failure for a registry leaf with no module-data.tex"
+fi
+
+# An emptied curriculum map is caught, and the diagnostics are byte-stable.
+cp -R "$sandbox/copy" "$sandbox/blank"
+: >"$sandbox/blank/research/curriculum-map.md"
+if run_tool --curriculum-root "$sandbox/blank" --sources-only \
+	>"$sandbox/out1" 2>"$sandbox/err1"; then
+	fail "expected failure for an emptied curriculum map"
+fi
+run_tool --curriculum-root "$sandbox/blank" --sources-only \
+	>"$sandbox/out2" 2>"$sandbox/err2" || :
+[ -s "$sandbox/err1" ] || fail "a failing audit must explain itself on stderr"
+cmp -s "$sandbox/err1" "$sandbox/err2" || fail "audit diagnostics are not stable"
+grep -q '^curriculum structure error (curriculum sources): ' "$sandbox/err1" ||
+	fail "diagnostics lack the curriculum structure error prefix"
+
+# A missing shared style file is caught rather than skipped.
+cp -R "$sandbox/copy" "$sandbox/nosty"
+rm "$sandbox/nosty/shared/course-format.sty"
+if run_tool --curriculum-root "$sandbox/nosty" --sources-only >/dev/null 2>&1; then
+	fail "expected failure for a missing shared/course-format.sty"
+fi
+
+# An empty directory is an error, not a silent pass over nothing.
+mkdir "$sandbox/empty"
+if run_tool --curriculum-root "$sandbox/empty" --sources-only >/dev/null 2>&1; then
+	fail "expected failure for an empty curriculum root"
+fi
+
+# A root that does not exist is an error.
+if run_tool --curriculum-root "$sandbox/absent" --sources-only >/dev/null 2>&1; then
+	fail "expected failure for a curriculum root that does not exist"
+fi
+
+# --curriculum-root is required; without it the tool refuses to guess.
+if run_tool --sources-only >/dev/null 2>&1; then
+	fail "expected failure when --curriculum-root is omitted"
+fi
+
+# An unknown flag is refused rather than ignored.
+if run_tool --curriculum-root "$curriculum" --sources-only --badflag >/dev/null 2>&1; then
+	fail "expected failure for an unknown flag"
+fi
+
+# The rendered-document options travel together.
+if run_tool --curriculum-root "$curriculum" --document some-document >/dev/null 2>&1; then
+	fail "expected failure for --document without --toc, --out and --pdf"
+fi
+if run_tool --curriculum-root "$curriculum" --toc "$sandbox/a.toc" >/dev/null 2>&1; then
+	fail "expected failure for --toc without the other rendered options"
+fi
+
+# --sources-only is exclusive of the rendered-document options.
+if run_tool --curriculum-root "$curriculum" --sources-only --document some-document \
+	>/dev/null 2>&1; then
+	fail "expected failure for --sources-only combined with --document"
+fi
+
+# A rendered check over files that do not exist fails and names the document.
+if run_tool --curriculum-root "$curriculum" --document some-document \
+	--toc "$sandbox/a.toc" --out "$sandbox/a.out" --pdf "$sandbox/a.pdf" \
+	>/dev/null 2>"$sandbox/rendered"; then
+	fail "expected failure for rendered artefacts that do not exist"
+fi
+grep -q '^curriculum structure error (some-document): ' "$sandbox/rendered" ||
+	fail "rendered diagnostics must name the document under check"
+
+echo ok

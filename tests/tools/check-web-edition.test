@@ -1,0 +1,116 @@
+#!/bin/sh
+# Test for `tools/tpt check-web-edition`: exit 0 = pass (the stable gate).
+# The tool only reads sources and their web-edition.toml declarations, so every
+# invocation here runs against the repository itself.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="check-web-edition"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# The provider is pinned so an inherited PROVIDER cannot move the gate.
+summary="$(run_tool --provider gpt)"
+case "$summary" in
+"Web-edition declarations valid: "*" eligible, "*" conditional, "*" ineligible.") ;;
+*)
+	echo "unexpected summary line: $summary" >&2
+	exit 1
+	;;
+esac
+
+counts="$(printf '%s\n' "$summary" | tr -dc '0-9 ')"
+set -- $counts
+eligible="$1"
+conditional="$2"
+ineligible="$3"
+
+# The corpus is large and mixed: each bucket is populated, so a summary that
+# collapsed to zeros or swallowed a bucket would be caught.
+if [ "$eligible" -lt 20 ] || [ "$conditional" -lt 10 ] || [ "$ineligible" -lt 5 ]; then
+	echo "implausible bucket counts: $summary" >&2
+	exit 1
+fi
+
+total="$(find "$repo/src/gpt" -name main.tex | wc -l | tr -d ' ')"
+if [ "$((eligible + conditional + ineligible))" -ne "$total" ]; then
+	echo "buckets sum to $((eligible + conditional + ineligible)), not $total leaves" >&2
+	exit 1
+fi
+
+# --list-eligible names exactly the leaves the summary counted as eligible.
+run_tool --provider gpt --list-eligible >"$sandbox/first.txt"
+listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
+if [ "$listed" -ne "$eligible" ]; then
+	echo "listed $listed eligible leaves but counted $eligible" >&2
+	exit 1
+fi
+
+# The listing is byte-stable and in source order.
+run_tool --provider gpt --list-eligible >"$sandbox/second.txt"
+if ! cmp -s "$sandbox/first.txt" "$sandbox/second.txt"; then
+	echo "--list-eligible is not byte-stable across runs" >&2
+	exit 1
+fi
+if ! sort -c "$sandbox/first.txt"; then
+	echo "--list-eligible is not in sorted order" >&2
+	exit 1
+fi
+
+# Every listed id is a real leaf whose own record declares it eligible.
+while read -r document; do
+	if [ ! -f "$repo/src/gpt/$document/main.tex" ]; then
+		echo "$document: listed but has no main.tex" >&2
+		exit 1
+	fi
+	if ! grep -q '^eligibility = "eligible"$' "$repo/src/gpt/$document/web-edition.toml"; then
+		echo "$document: listed but its record does not declare eligible" >&2
+		exit 1
+	fi
+done <"$sandbox/first.txt"
+
+# Auditing one leaf reports that leaf alone.
+one="$(head -1 "$sandbox/first.txt")"
+single="$(run_tool --provider gpt --document "$one")"
+case "$single" in
+"Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.") ;;
+*)
+	echo "--document $one reported: $single" >&2
+	exit 1
+	;;
+esac
+
+# A second provider is audited on its own terms rather than the default's.
+other="$(run_tool --provider claude)"
+case "$other" in
+"Web-edition declarations valid: "*" eligible, "*" conditional, "*" ineligible.") ;;
+*)
+	echo "unexpected summary line for claude: $other" >&2
+	exit 1
+	;;
+esac
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $*" >&2
+		exit 1
+	fi
+}
+
+# A provider with no documents is an error, not a silent pass.
+reject --provider nonesuch
+# An id that names no leaf cannot be audited.
+reject --provider gpt --document nonesuch/leaf
+# A leaf that exists but declares nothing is refused; every discovered leaf of
+# a real provider is covered, so an unknown option is the remaining misuse.
+reject --provider gpt --bogus
+
+echo ok

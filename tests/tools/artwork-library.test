@@ -1,0 +1,186 @@
+#!/bin/sh
+# Test for `tools/tpt artwork-library`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="artwork-library"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+# A repository publishing asset carries the monochrome contract the tool
+# reports: 8-bit, and grayscale-alpha for the isolated `-alpha` masters.
+pencil="$repo/src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil"
+asset=""
+for candidate in "$pencil"/*-alpha.png; do
+	if [ -f "$candidate" ]; then
+		asset="$candidate"
+		break
+	fi
+done
+if [ -z "$asset" ]; then
+	echo "no repository -alpha.png master to identify" >&2
+	exit 1
+fi
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+run_tool identify "$asset" >real-first.txt
+if ! grep -q '^depth = 8$' real-first.txt; then
+	echo "expected an 8-bit repository master, got:" >&2
+	cat real-first.txt >&2
+	exit 1
+fi
+if ! grep -q '^mode = "grayscale-alpha"$' real-first.txt; then
+	echo "expected a grayscale-alpha repository master, got:" >&2
+	cat real-first.txt >&2
+	exit 1
+fi
+if ! grep -q '^sha256 = "[0-9a-f]\{64\}"$' real-first.txt; then
+	echo "expected a lowercase SHA-256 line, got:" >&2
+	cat real-first.txt >&2
+	exit 1
+fi
+
+# identify reads only the file, so its report is byte-stable.
+run_tool identify "$asset" >real-second.txt
+if ! cmp -s real-first.txt real-second.txt; then
+	echo "identify is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# An 8x8 opaque white 8-bit grayscale PNG: the shape the normalizer targets.
+python3 - asset.png <<'PY'
+import struct
+import sys
+import zlib
+
+path = sys.argv[1]
+width = height = 8
+raw = b"".join(b"\x00" + b"\xff" * width for _ in range(height))
+
+
+def chunk(kind: bytes, payload: bytes) -> bytes:
+    return (
+        struct.pack(">I", len(payload))
+        + kind
+        + payload
+        + struct.pack(">I", zlib.crc32(kind + payload) & 0xFFFFFFFF)
+    )
+
+
+with open(path, "wb") as stream:
+    stream.write(
+        b"\x89PNG\r\n\x1a\n"
+        + chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 0, 0, 0, 0))
+        + chunk(b"IDAT", zlib.compress(raw, 9))
+        + chunk(b"IEND", b"")
+    )
+PY
+
+run_tool identify asset.png >fields.txt
+for expected in 'width = 8' 'height = 8' 'depth = 8' 'mode = "grayscale"'; do
+	if ! grep -qx "$expected" fields.txt; then
+		echo "expected '$expected' from identify, got:" >&2
+		cat fields.txt >&2
+		exit 1
+	fi
+done
+
+# identify emits manifest-ready TOML: what it prints must satisfy check.
+write_manifest() {
+	{
+		echo '[[asset]]'
+		echo 'id = "test-asset"'
+		echo 'path = "asset.png"'
+		cat fields.txt
+		for extra in "$@"; do
+			echo "$extra"
+		done
+	} >manifest.toml
+}
+
+write_manifest
+out="$(run_tool check manifest.toml)"
+case "$out" in
+*"artwork manifest valid"*) ;;
+*) echo "expected a valid manifest, got: $out" >&2; exit 1 ;;
+esac
+
+# A page-ground asset passes the perimeter audit when its edges are white.
+write_manifest 'boundary_treatment = "page-ground"'
+run_tool check manifest.toml >/dev/null
+
+# A generous placement keeps the effective resolution above 300 dpi.
+write_manifest 'largest_placement_inches = 0.02'
+run_tool check manifest.toml >/dev/null
+
+reject() {
+	message="$1"
+	shift
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $message" >&2
+		exit 1
+	fi
+}
+
+# A manifest field that disagrees with the file is a failure, not a warning.
+write_manifest
+sed 's/^width = 8$/width = 9/' manifest.toml >tampered.toml
+reject "manifest width disagreeing with the asset" check tampered.toml
+
+# Declared transparency that the asset does not have is refused.
+write_manifest 'boundary_treatment = "transparent"'
+reject "transparent boundary_treatment on an opaque asset" check manifest.toml
+
+# An unknown boundary treatment is refused outright.
+write_manifest 'boundary_treatment = "nonesuch"'
+reject "an unknown boundary_treatment" check manifest.toml
+
+# A rationale without the treatment it explains is refused.
+write_manifest 'boundary_treatment_rationale = "because"'
+reject "a rationale without a boundary_treatment" check manifest.toml
+
+# An 8px asset placed one inch wide is 8 effective dpi.
+write_manifest 'largest_placement_inches = 1.0'
+reject "an asset below 300 effective dpi" check manifest.toml
+
+# A missing asset, a missing manifest, and a non-PNG are all failures.
+{
+	echo '[[asset]]'
+	echo 'id = "absent"'
+	echo 'path = "absent.png"'
+	echo 'sha256 = "0000000000000000000000000000000000000000000000000000000000000000"'
+	echo 'width = 8'
+	echo 'height = 8'
+	echo 'depth = 8'
+	echo 'mode = "grayscale"'
+} >missing.toml
+reject "a manifest naming an absent asset" check missing.toml
+reject "a manifest that does not exist" check nonesuch.toml
+
+echo 'not a png' >decoy.png
+reject "identify on a file that is not a PNG" identify decoy.png
+reject "identify on a file that does not exist" identify absent.png
+
+# A truncated PNG is refused rather than half-read.
+dd if=asset.png of=truncated.png bs=1 count=20 2>/dev/null
+reject "identify on a truncated PNG" identify truncated.png
+
+# An unknown verb and a missing verb are refused.
+reject "an unknown subcommand" nonesuch asset.png
+reject "no subcommand at all"
+
+# check-pdf refuses input that Poppler cannot read as a PDF.
+if command -v pdfimages >/dev/null 2>&1; then
+	echo 'not a pdf' >decoy.pdf
+	reject "check-pdf on a file that is not a PDF" check-pdf decoy.pdf
+fi
+
+echo ok

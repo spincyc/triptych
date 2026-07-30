@@ -1,0 +1,240 @@
+#!/bin/sh
+# Test for `tools/tpt commentary-work-index`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="commentary-work-index"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+# Every invocation of this test runs from a scratch directory. Both verbs
+# resolve their default --discovery and --output relative to the working
+# directory, and build-corpus writes by default; running outside the repo
+# means a missing --output can never touch tracked state.
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+repo_discovery="$repo/src/sources/commentary/passage-commentary-index.yaml"
+
+contains() {
+	# contains WHAT HAYSTACK LABEL
+	case "$2" in
+	*"$1"*) ;;
+	*) echo "$3: expected '$1' in: $2" >&2; exit 1 ;;
+	esac
+}
+
+lacks() {
+	case "$2" in
+	*"$1"*) echo "$3: did not expect '$1' in: $2" >&2; exit 1 ;;
+	*) ;;
+	esac
+}
+
+reject() {
+	label="$1"
+	shift
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $label" >&2
+		exit 1
+	fi
+}
+
+cd "$sandbox"
+
+# ---------------------------------------------------------------------------
+# discover loads the sibling `citations` tool by path.
+#
+# This is the load-bearing case. `commentary-work-index` reaches its sibling
+# through Path(__file__).with_name("citations"); a path expressed relative to
+# the working directory (the old `tools/tools/citations` form) breaks every
+# discover call. Running from a scratch directory that has no `tools/` in it
+# at all means only a __file__-relative resolution can succeed.
+out="$(run_tool discover --discovery "$repo_discovery" --passage "John 3:16" --json)"
+contains '"status":"ok"' "$out" "discover from a foreign cwd"
+contains '"passage":"John 3:16"' "$out" "discover from a foreign cwd"
+contains '"schema":"triptych-commentary-work-index/v1"' "$out" "discover schema"
+
+# The sibling is what validates books and ranges, so its rejections surface
+# here. A stubbed or missing citations module could not produce these.
+err="$(run_tool discover --discovery "$repo_discovery" --passage "Nonesuch 1:1" 2>&1 || true)"
+contains "unknown book" "$err" "unknown book is reported by the citations sibling"
+
+# ---------------------------------------------------------------------------
+# discover ranks and shapes the works it finds.
+cat >"$sandbox/discovery.yaml" <<'YAML'
+schema: triptych-commentary-work-index/v1
+updated: 2026-07-30
+passages:
+  - passage: "John 3:16"
+    works:
+      - work_id: aug.tract-io
+        author: Augustine
+        title: Tractates on John
+        date: c. 407
+        role: church-father
+        confidence: 0.9
+        source_hint: PL 35
+      - work_id: chrys.hom-io
+        author: John Chrysostom
+        title: Homilies on John
+        date: c. 390
+        role: patristic
+        confidence: 0.95
+  - passage: "Psalm 24:1-3"
+    works:
+      - work_id: aug.enarr
+        author: Augustine
+        title: Enarrationes in Psalmos
+        role: doctor
+        confidence: 0.8
+YAML
+
+discover() {
+	run_tool discover --discovery "$sandbox/discovery.yaml" "$@"
+}
+
+out="$(discover --passage "John 3:16" --json)"
+# Ranked by confidence descending, so Chrysostom (0.95) precedes Augustine (0.9).
+case "$out" in
+*'"work_id":"chrys.hom-io"'*'"work_id":"aug.tract-io"'*) ;;
+*) echo "expected works ranked by confidence, got: $out" >&2; exit 1 ;;
+esac
+# `patristic` is an alias that normalizes onto the church-father role.
+lacks '"role":"patristic"' "$out" "role alias normalization"
+contains '"role":"church-father"' "$out" "role alias normalization"
+# Side metadata survives the round trip.
+contains '"source_hint":"PL 35"' "$out" "source hint is preserved"
+
+# --max-results truncates the ranked list and is echoed back.
+out="$(discover --passage "John 3:16" --max-results 1 --json)"
+contains '"max_results":1' "$out" "max-results echo"
+contains '"work_id":"chrys.hom-io"' "$out" "max-results keeps the top rank"
+lacks '"work_id":"aug.tract-io"' "$out" "max-results drops the tail"
+
+# Several --passage flags produce several discoveries, in the order given.
+out="$(discover --passage "John 3:16" --passage "Psalm 24:1-3" --json)"
+case "$out" in
+*'"passage":"John 3:16"'*'"passage":"Psalm 24:1-3"'*) ;;
+*) echo "expected both passages in order, got: $out" >&2; exit 1 ;;
+esac
+
+# A passage file may carry a machine-readable passage record rather than a
+# printed citation; the tool builds the label from the ranges itself.
+cat >"$sandbox/passage.yaml" <<'YAML'
+book: Psalms
+ranges:
+  - begin: {chapter: 24, verse: 1}
+    end: {chapter: 24, verse: 3}
+YAML
+out="$(discover --passage-file "$sandbox/passage.yaml" --json)"
+contains '"passage":"Psalms 24:1-24:3"' "$out" "machine passage record label"
+
+# ---------------------------------------------------------------------------
+# Output selection: --json/--yaml are shorthands for --format.
+discover --passage "John 3:16" --json >"$sandbox/short.json"
+discover --passage "John 3:16" --format json >"$sandbox/long.json"
+if ! cmp -s "$sandbox/short.json" "$sandbox/long.json"; then
+	echo "--json and --format json disagree" >&2
+	exit 1
+fi
+
+discover --passage "John 3:16" --yaml >"$sandbox/short.yaml"
+discover --passage "John 3:16" --format yaml >"$sandbox/long.yaml"
+if ! cmp -s "$sandbox/short.yaml" "$sandbox/long.yaml"; then
+	echo "--yaml and --format yaml disagree" >&2
+	exit 1
+fi
+
+out="$(discover --passage "John 3:16")"
+contains "passage: John 3:16" "$out" "default text rendering"
+contains "John Chrysostom" "$out" "default text rendering lists works"
+
+# discover carries no clock or randomness: it is byte-stable.
+discover --passage "John 3:16" --passage "Psalm 24:1-3" --json >"$sandbox/first"
+discover --passage "John 3:16" --passage "Psalm 24:1-3" --json >"$sandbox/second"
+if ! cmp -s "$sandbox/first" "$sandbox/second"; then
+	echo "discover output is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# ---------------------------------------------------------------------------
+# build-corpus, confined to the sandbox by --root and --output.
+mkdir -p "$sandbox/calendars/testcal"
+cat >"$sandbox/calendars/testcal/propers.yaml" <<'YAML'
+schema: triptych-calendar-masses/v1
+calendar: testcal
+masses:
+- key: test-mass
+  name: Test Mass
+  kind: temporal
+  date: 01-01
+  propers:
+  - name: Gospel
+    source: scripture
+    verses: ["John 3:16"]
+  - name: Epistle
+    source: scripture
+    verses: ["Psalm 46"]
+  - name: Placeholder
+    source: composed
+    text: not scripture, and so contributes no passage
+YAML
+
+out="$(run_tool build-corpus \
+	--discovery "$sandbox/discovery.yaml" \
+	--root "$sandbox/calendars" \
+	--calendar testcal \
+	--output "$sandbox/corpus.yaml" \
+	--json 2>/dev/null)"
+contains '"status":"ok"' "$out" "build-corpus"
+contains '"mass_count":1' "$out" "build-corpus counts masses"
+contains '"covered_mass_count":1' "$out" "build-corpus counts covered masses"
+# Psalm 46 has no mapped commentary; John 3:16 does.
+contains '"unresolved_passage_count":1' "$out" "build-corpus counts unresolved passages"
+contains '"has_commentary":true' "$out" "build-corpus marks resolved passages"
+contains '"has_commentary":false' "$out" "build-corpus marks unresolved passages"
+# The `temporal` mass kind is reported under its `seasonal` category.
+contains '"mass_kind":"seasonal"' "$out" "mass kind category"
+
+if [ ! -s "$sandbox/corpus.yaml" ]; then
+	echo "build-corpus did not write --output" >&2
+	exit 1
+fi
+out="$(cat "$sandbox/corpus.yaml")"
+contains "schema: triptych-missal-commentary-corpus/v1" "$out" "written corpus schema"
+contains "mass_key: test-mass" "$out" "written corpus content"
+
+# Nothing was written to the default corpus path relative to the cwd.
+if [ -e "$sandbox/src" ]; then
+	echo "build-corpus wrote to its default path despite --output" >&2
+	exit 1
+fi
+
+# ---------------------------------------------------------------------------
+# Negative cases: bad input is refused, never guessed at.
+reject "unknown verb" bogus
+reject "discover with no passage input" discover --discovery "$sandbox/discovery.yaml"
+reject "unparseable book" discover --discovery "$sandbox/discovery.yaml" --passage "Nonesuch 1:1"
+reject "citation with no book" discover --discovery "$sandbox/discovery.yaml" --passage "24:1-3"
+reject "descending range" discover --discovery "$sandbox/discovery.yaml" --passage "Psalm 24:3-1"
+reject "unknown output format" discover --discovery "$sandbox/discovery.yaml" \
+	--passage "John 3:16" --format xml
+reject "missing passage file" discover --discovery "$sandbox/discovery.yaml" \
+	--passage-file "$sandbox/no-such-file.yaml"
+reject "build-corpus with a missing root" build-corpus --root "$sandbox/no-such-root" \
+	--output "$sandbox/unwritten.yaml"
+reject "build-corpus with an unknown calendar" build-corpus --root "$sandbox/calendars" \
+	--calendar no-such-calendar --output "$sandbox/unwritten.yaml"
+
+if [ -e "$sandbox/unwritten.yaml" ]; then
+	echo "build-corpus wrote output for a failed run" >&2
+	exit 1
+fi
+
+echo ok

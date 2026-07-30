@@ -1,0 +1,80 @@
+#!/bin/sh
+# Test for `tools/tpt release-bindings`: exit 0 = pass (the stable gate).
+# Only `status` is run against the repository.  refresh, approve,
+# add-publication, and migrate-publications rewrite tracked release records, so
+# they are exercised no further than argument parsing, which happens before the
+# manifest is read and therefore cannot touch a file.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="release-bindings"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+usage="$(run_tool --help)"
+for verb in refresh status migrate-publications approve add-publication; do
+	case "$usage" in
+	*"$verb"*) ;;
+	*)
+		echo "usage does not offer the $verb verb" >&2
+		exit 1
+		;;
+	esac
+done
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# The recorded bindings are exact: the rights record still hashes to the value
+# the manifest authorization names.  A stale binding exits nonzero.
+run_tool status >"$sandbox/status.txt"
+status_line="$(cat "$sandbox/status.txt")"
+case "$status_line" in
+"exact: 0 stale binding(s)") ;;
+*)
+	echo "release bindings are not exact: $status_line" >&2
+	exit 1
+	;;
+esac
+
+# The report is byte-stable for unchanged release records.
+run_tool status >"$sandbox/status-again.txt"
+if ! cmp -s "$sandbox/status.txt" "$sandbox/status-again.txt"; then
+	echo "status output is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# Each writing verb states its own required arguments without doing any work.
+approve_usage="$(run_tool approve --help)"
+case "$approve_usage" in
+*--note*) ;;
+*)
+	echo "approve does not document its operator note" >&2
+	exit 1
+	;;
+esac
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $*" >&2
+		exit 1
+	fi
+}
+
+# A verb is required, and only the five named verbs exist.
+reject
+reject bogus
+reject status --bogus
+# An approval without the operator's instruction note is refused at parse time,
+# before the manifest is opened, so nothing is recorded.
+reject approve
+reject approve --note ""
+# A new publication record needs its provider, id, and catalog named.
+reject add-publication
+reject add-publication --provider gpt
+reject add-publication --provider gpt --id nonesuch-leaf
+
+echo ok
