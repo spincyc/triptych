@@ -3,12 +3,13 @@
 
 Usage:
   tpt <tool> [<tool args>...]
-  tpt run <tool> [<tool args>...]
-  tpt list [--json]
-  tpt tools list [--json]
-  tpt tools info <tool> [--json]
-  tpt help <tool>
-  tpt path <tool>
+  tpt --list [--json]
+  tpt --info <tool> [--json]
+  tpt --path <tool>
+  tpt --check
+
+Tool ids never begin with a dash, so the launcher's own options can never be
+shadowed by a registry entry.
 
 `tpt` is the unified entrypoint for repo tools. It loads the tool registry
 from ``tmt.json`` and dispatches to the implementation at ``tools/<tool>``.
@@ -28,9 +29,6 @@ ROOT = SELF.parents[1]
 MANIFEST = ROOT / "tmt.json"
 TOOLS = ROOT / "tools"
 
-# Top-level verbs. A registry id matching one of these would shadow it, so
-# load_registry rejects the manifest rather than silently hiding the verb.
-VERBS = ("list", "tools", "run", "help", "path")
 
 
 ToolRecord = dict[str, object]
@@ -56,9 +54,9 @@ def load_registry() -> Registry:
         if not isinstance(entry, dict):
             raise ToolError(f"{name}: registry entry is not an object")
         registry[str(name)] = entry
-    shadowed = sorted(set(registry).intersection(VERBS))
-    if shadowed:
-        raise ToolError(f"registry ids shadow tpt verbs: {', '.join(shadowed)}")
+    dashed = sorted(name for name in registry if name.startswith("-"))
+    if dashed:
+        raise ToolError(f"registry ids may not begin with a dash: {', '.join(dashed)}")
     return registry
 
 
@@ -129,49 +127,58 @@ def run_tool(registry: Registry, name: str, tool_args: list[str]) -> int:
     return 128 - code if code < 0 else code
 
 
+def check_registry(registry: Registry) -> int:
+    """Registry and filesystem must agree; the launcher can say so itself."""
+    problems: list[str] = []
+    for name in registry:
+        try:
+            resolve_tool_path(name)
+        except ToolError as error:
+            problems.append(str(error))
+    companions = (".md", ".test")
+    for path in sorted(TOOLS.iterdir()):
+        if not path.is_file() or path.name.endswith(companions):
+            continue
+        if path.name not in registry:
+            problems.append(f"{path.name}: implementation has no registry entry")
+    for problem in problems:
+        print(f"tpt: {problem}", file=sys.stderr)
+    if problems:
+        return 1
+    print(f"registry ok: {len(registry)} tools")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="tpt", description="Triptych Tool launcher")
-    verbs = parser.add_subparsers(dest="command", required=True)
-
-    def with_json(sub: argparse.ArgumentParser) -> argparse.ArgumentParser:
-        sub.add_argument("--json", action="store_true", help="emit JSON output")
-        return sub
-
-    with_json(verbs.add_parser("list", help="list registered tools"))
-
-    tools_cmd = verbs.add_parser("tools", help="tool metadata commands")
-    tools_sub = tools_cmd.add_subparsers(dest="tools_command", required=True)
-    with_json(tools_sub.add_parser("list", help="list registered tools"))
-    with_json(tools_sub.add_parser("info", help="show tool metadata")).add_argument("tool")
-
-    run_parser = verbs.add_parser("run", help="invoke one registered tool")
-    run_parser.add_argument("tool")
-    run_parser.add_argument("tool_args", nargs=argparse.REMAINDER,
-                            help="arguments for the underlying tool")
-
-    verbs.add_parser("help", help="show a registered tool's help").add_argument("tool")
-    verbs.add_parser("path", help="print the resolved executable").add_argument("tool")
+    parser = argparse.ArgumentParser(
+        prog="tpt",
+        description="Triptych Tool launcher. Run a tool as `tpt <tool> [args]`.",
+    )
+    what = parser.add_mutually_exclusive_group(required=True)
+    what.add_argument("--list", action="store_true", help="list registered tools")
+    what.add_argument("--info", metavar="TOOL", help="show one tool's registry entry")
+    what.add_argument("--path", metavar="TOOL", help="print a tool's executable path")
+    what.add_argument("--check", action="store_true",
+                      help="verify the registry matches the filesystem")
+    parser.add_argument("--json", action="store_true", help="emit JSON output")
     return parser
 
 
 def dispatch(registry: Registry, raw: list[str]) -> int:
-    if raw and raw[0] in registry:
-        return run_tool(registry, raw[0], raw[1:])
-    if raw and not raw[0].startswith("-") and raw[0] not in VERBS:
+    if raw and not raw[0].startswith("-"):
+        if raw[0] in registry:
+            return run_tool(registry, raw[0], raw[1:])
         raise ToolError(f"unknown tool: {raw[0]}\navailable: {', '.join(registry)}")
 
     args = build_parser().parse_args(raw)
-    as_json = bool(getattr(args, "json", False))
-    if args.command in ("list", "tools") and getattr(args, "tools_command", "list") == "list":
-        return list_tools(registry, as_json=as_json)
-    if args.command == "tools":
-        return show_tool_info(registry, args.tool, as_json=as_json)
-    if args.command == "run":
-        return run_tool(registry, args.tool, args.tool_args)
-    if args.command == "help":
-        return run_tool(registry, args.tool, ["--help"])
-    tool_record(registry, args.tool)
-    print(resolve_tool_path(args.tool))
+    if args.check:
+        return check_registry(registry)
+    if args.list:
+        return list_tools(registry, as_json=args.json)
+    if args.info:
+        return show_tool_info(registry, args.info, as_json=args.json)
+    tool_record(registry, args.path)
+    print(resolve_tool_path(args.path))
     return 0
 
 

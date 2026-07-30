@@ -7,22 +7,22 @@ tool="$repo/tools/tpt"
 
 "$tool" --help >/dev/null
 
-if ! "$tool" tools list >/dev/null; then
-    echo "tpt tools list did not execute" >&2
+if ! "$tool" --list >/dev/null; then
+    echo "tpt --list did not execute" >&2
     exit 1
 fi
 
-if ! "$tool" tools list --json | grep -q '"name"'; then
-    echo "tpt tools list --json did not emit JSON" >&2
+if ! "$tool" --list --json | grep -q '"name"'; then
+    echo "tpt --list --json did not emit JSON" >&2
     exit 1
 fi
 
-if ! "$tool" tools info citations --json | grep -q '"purpose"'; then
-    echo "tpt tools info --json did not report purpose" >&2
+if ! "$tool" --info citations --json | grep -q '"purpose"'; then
+    echo "tpt --info --json did not report purpose" >&2
     exit 1
 fi
 
-run_output="$($tool run citations parse "Psalm 24:1-3" --json)"
+run_output="$($tool citations parse "Psalm 24:1-3" --json)"
 case "$run_output" in
 *'"book":"Psalms"'*) ;;
 *)
@@ -40,7 +40,7 @@ case "$compat_output" in
 	exit 1
 esac
 
-path_output="$($tool path citations)"
+path_output="$($tool --path citations)"
 case "$path_output" in
 *"/citations") ;;
 *)
@@ -48,8 +48,8 @@ case "$path_output" in
 	exit 1
 esac
 
-if ! "$tool" help citations >/dev/null; then
-    echo "tpt help citations failed" >&2
+if ! "$tool" --check >/dev/null; then
+    echo "tpt --check failed against the real registry" >&2
     exit 1
 fi
 

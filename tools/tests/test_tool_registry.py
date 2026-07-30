@@ -19,8 +19,6 @@ MANIFEST = ROOT / "tmt.json"
 TOOLS = ROOT / "tools"
 LAUNCHER = ROOT / "tools" / "tpt"
 
-# tools/tpt's own verbs. A registry id matching one would shadow it.
-LAUNCHER_VERBS = {"list", "tools", "run", "help", "path"}
 # tmt ignores subdirectories and these companion suffixes when scanning tools/.
 COMPANION_SUFFIXES = (".md", ".test")
 # tmt's registry validator caps the field.
@@ -36,7 +34,7 @@ class ToolRegistryTests(unittest.TestCase):
         for name in registry():
             with self.subTest(tool=name):
                 resolved = subprocess.run(
-                    [str(LAUNCHER), "path", name],
+                    [str(LAUNCHER), "--path", name],
                     capture_output=True, text=True, cwd=ROOT,
                 )
                 self.assertEqual(resolved.returncode, 0, resolved.stderr)
@@ -52,15 +50,22 @@ class ToolRegistryTests(unittest.TestCase):
             with self.subTest(tool=path.name):
                 resolved = {
                     Path(subprocess.run(
-                        [str(LAUNCHER), "path", name],
+                        [str(LAUNCHER), "--path", name],
                         capture_output=True, text=True, cwd=ROOT,
                     ).stdout.strip()).name
                     for name in registered
                 }
                 self.assertIn(path.name, resolved)
 
-    def test_no_id_shadows_a_launcher_verb(self) -> None:
-        self.assertEqual(set(registry()) & LAUNCHER_VERBS, set())
+    def test_no_id_can_shadow_a_launcher_option(self) -> None:
+        """The launcher's own controls are dash-prefixed; ids must not be."""
+        self.assertEqual([n for n in registry() if n.startswith("-")], [])
+
+    def test_launcher_self_check_agrees_with_the_filesystem(self) -> None:
+        result = subprocess.run(
+            [str(LAUNCHER), "--check"], capture_output=True, text=True, cwd=ROOT,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_purposes_fit_the_registry_cap(self) -> None:
         for name, record in registry().items():
@@ -126,7 +131,7 @@ class ToolRegistryTests(unittest.TestCase):
         for name in registry():
             with self.subTest(tool=name):
                 result = subprocess.run(
-                    [str(LAUNCHER), "path", name], capture_output=True, text=True, cwd=ROOT,
+                    [str(LAUNCHER), "--path", name], capture_output=True, text=True, cwd=ROOT,
                 )
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(Path(result.stdout.strip()), TOOLS / name)

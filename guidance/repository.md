@@ -136,15 +136,16 @@ Every publication retains the common rights notice as a compact final-page colop
 `tmt.json` indexes the repository's tools. Every registry id is an executable
 script at exactly `tools/<id>`, which `tmt` requires and `tmt check` enforces;
 an id may not be aliased to another basename. Run a tool directly, or through
-the `tools/tpt <id> [args]` launcher, which adds discovery: `tpt list`,
-`tpt tools info <id>`, `tpt path <id>`, `tpt help <id>`, the first three with
-`--json`. Registry ids may not collide with those verbs.
+the `tools/tpt <id> [args]` launcher, which adds `--list`, `--info <id>`,
+`--path <id>`, and `--check`; the first two take `--json`. The launcher's own
+controls are dash-prefixed and tool ids are not, so a new entry can never
+shadow one.
 
 Everything else under `tools/` is either a subdirectory, which `tmt` ignores,
 or a `.md`/`.test` companion. Shared library code and tool data live in
 `scripts/`; a bare file in `tools/` without a registry entry fails the gate.
-Python tests live in `tools/tests/`, and `tests/tools/<id>.test` holds the
-shell smoke test `tmt` requires before promoting a tool to `stable`.
+Python tests live in `tools/tests/`; `tests/tools/<id>.test` holds each tool's
+shell smoke test, and every registered id must have one.
 
 Register a new tool with `tmt new <id>`. `make check` runs `tmt check`, which
 must stay green; it is skipped, not failed, where `tmt` is not installed.
