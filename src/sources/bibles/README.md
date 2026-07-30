@@ -12,11 +12,24 @@ schema: triptych-bible-index/v1
 edition: The Holy Bible, Douay-Rheims (Challoner revision)
 source_id: work.douay-rheims.challoner
 rights: public-domain          # public-domain | licensed | project-created
+numbering: vulgate             # vulgate | hebrew — psalm numbering system
 publishable: true              # may this text be served from the public site?
 notice: ''                     # required when rights is licensed
 passages:
   'Psalm 24:1-3': 'The earth is the Lord's, and the fulness thereof...'
 ```
+
+## Psalm numbering is not cosmetic
+
+Vulgate and Hebrew psalm numbering diverge across most of the psalter. The same
+Advent chant *Ad te levavi* is Psalm 24 in the 1962 missal and Psalm 25 in the
+postconciliar one, and Douay-Rheims Psalm 25 is *Iudica me* — a different psalm.
+Resolving a reference against a bible in the other system therefore returns the
+wrong text under a correct-looking reference.
+
+Every index declares its `numbering`, every calendar declares its
+`psalm_numbering`, and `mass-propers` refuses to resolve across a mismatch
+rather than rendering something plausible and wrong.
 
 Keys are the reference as the calendar indexes write it, which is what
 `mass-propers` looks up. Deriving them from the structured `book`/`ranges`

@@ -24,6 +24,9 @@ SCHEMA = "triptych-calendar-masses/v1"
 # A translation is carried on exactly one of these bases; project-created
 # work is CC BY 4.0 only when its authorship is identified as such.
 TRANSLATION_RIGHTS = {"public-domain", "licensed", "project-created"}
+# Vulgate and Hebrew psalm numbering diverge across most of the psalter,
+# so a reference is only resolvable against a bible in the same system.
+PSALM_NUMBERING = {"vulgate", "hebrew"}
 
 REQUIRED_HEADER = (
     "calendar",
@@ -270,6 +273,12 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
     for field in REQUIRED_HEADER:
         if field not in document:
             problems.append(f"{path}: missing header field {field}")
+    numbering = document.get("psalm_numbering")
+    if numbering not in PSALM_NUMBERING:
+        problems.append(
+            f"{path}: psalm_numbering must be one of {sorted(PSALM_NUMBERING)}, "
+            f"got {numbering!r}"
+        )
     if document.get("schema") != SCHEMA:
         problems.append(
             f"{path}: schema must be {SCHEMA!r}, got {document.get('schema')!r}"
