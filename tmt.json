@@ -127,6 +127,17 @@
       "stage": "draft",
       "usage": "commentary-work-index {discover,build-corpus}"
     },
+    "mass-propers": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Print one mass's propers as YAML, JSON, or a reading view.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "mass-propers [--root DIR] [--calendar NAME] [--mass KEY] {show,list} [--format {text,yaml,json}]"
+    },
     "pdf-review": {
       "idempotent": true,
       "json": false,

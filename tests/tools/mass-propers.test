@@ -1,0 +1,115 @@
+#!/bin/sh
+# Test for `tools/tpt mass-propers`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="mass-propers"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+# The reading view names the mass, its edition, and every proper slot.
+out="$(run_tool --calendar roman-1962 --mass advent-1)"
+for want in "First Sunday of Advent" "Missale Romanum" "Introit" "Collect" "Excita, quaesumus"; do
+	case "$out" in
+	*"$want"*) ;;
+	*) echo "reading view is missing $want" >&2; exit 1 ;;
+	esac
+done
+
+# Scripture propers show their reference; without a bible there is no verse text.
+case "$out" in
+*"Psalm 24:1-3"*) ;;
+*) echo "scripture proper did not print its reference" >&2; exit 1 ;;
+esac
+
+# Latin is the tracked text, so an unrecorded language falls back and says so.
+english="$(run_tool --calendar roman-1962 --mass advent-1 --lang en)"
+case "$english" in
+*"no en translation recorded"*) ;;
+*) echo "expected a note when the requested language is absent" >&2; exit 1 ;;
+esac
+
+# Machine forms carry the record only; rendering options stay off the payload.
+run_tool --calendar roman-1962 --mass advent-1 --format json >one.json
+run_tool --calendar roman-1962 --mass advent-1 --format json >two.json
+if ! cmp -s one.json two.json; then
+	echo "json output is not byte-stable across runs" >&2
+	exit 1
+fi
+for leaked in '"bible"' '"lang"'; do
+	if grep -q "$leaked" one.json; then
+		echo "rendering option $leaked leaked into the payload" >&2
+		exit 1
+	fi
+done
+for want in '"calendar"' '"mass"' '"edition"'; do
+	if ! grep -q "$want" one.json; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+
+run_tool --calendar roman-1962 --mass advent-1 --format yaml | grep -q '^calendar: roman-1962'
+
+# `list` reports every mass in the canonical container, and is byte-stable.
+run_tool list --calendar roman-1962 >first.txt 2>/dev/null
+run_tool list --calendar roman-1962 >second.txt 2>/dev/null
+if ! cmp -s first.txt second.txt; then
+	echo "list output is not byte-stable across runs" >&2
+	exit 1
+fi
+count="$(wc -l <first.txt | tr -d ' ')"
+if [ "$count" -ne 331 ]; then
+	echo "expected 331 masses in the 1962 calendar, got $count" >&2
+	exit 1
+fi
+if ! grep -q 'advent-1' first.txt; then
+	echo "list omitted a seasonal mass" >&2
+	exit 1
+fi
+
+# Failures are distinguishable: unknown mass is not-found, bad input is input.
+if run_tool --calendar roman-1962 --mass no-such-mass >/dev/null 2>&1; then
+	echo "expected failure for an unknown mass key" >&2
+	exit 1
+fi
+run_tool --calendar roman-1962 --mass no-such-mass >/dev/null 2>&1 || status=$?
+if [ "${status:-0}" -ne 3 ]; then
+	echo "unknown mass should exit 3, got ${status:-0}" >&2
+	exit 1
+fi
+
+# An unindexed bible is refused by name rather than silently ignored.
+if run_tool --calendar roman-1962 --mass advent-1 --bible no-such-bible >/dev/null 2>&1; then
+	echo "expected failure for an unindexed bible" >&2
+	exit 1
+fi
+if ! run_tool --calendar roman-1962 --mass advent-1 --bible no-such-bible 2>&1 |
+	grep -q 'no indexed bible'; then
+	echo "expected the unindexed bible to be named in the diagnostic" >&2
+	exit 1
+fi
+
+for bad in "--calendar roman-1962" "--mass advent-1" "--calendar nope --mass advent-1"; do
+	# shellcheck disable=SC2086
+	if run_tool $bad >/dev/null 2>&1; then
+		echo "expected failure for: $bad" >&2
+		exit 1
+	fi
+done
+
+if run_tool --calendar roman-1962 --mass advent-1 --format nonesuch >/dev/null 2>&1; then
+	echo "expected failure for an unknown format" >&2
+	exit 1
+fi
+
+echo ok

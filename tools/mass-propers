@@ -1,0 +1,264 @@
+#!/usr/bin/env python3
+"""Print one mass's propers as YAML, JSON, or a reading view.
+
+Reads the canonical `sections` container in a calendar's `propers.yaml`; the
+mass list is not duplicated elsewhere.
+"""
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import print_json, run_verb_cli  # noqa: E402
+
+DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
+BIBLE_ROOT = ROOT / "src" / "sources" / "bibles"
+INDEX = "propers.yaml"
+WIDTH = 78
+
+
+def load_calendar(root: Path, calendar: str) -> dict:
+    import yaml
+
+    path = root / calendar / INDEX
+    if not path.is_file():
+        raise ValueError(f"no calendar index at {path}")
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(document, dict):
+        raise ValueError(f"{path}: top level must be a mapping")
+    return document
+
+
+def calendars(root: Path) -> list[str]:
+    if not root.is_dir():
+        raise ValueError(f"calendar root is missing: {root}")
+    return sorted(p.name for p in root.iterdir() if (p / INDEX).is_file())
+
+
+def masses_of(document: dict) -> list[tuple[str, dict]]:
+    """Yield (kind, mass) from the one canonical container, in section order."""
+    out: list[tuple[str, dict]] = []
+    for _, body in sorted((document.get("sections") or {}).items()):
+        if not isinstance(body, dict):
+            continue
+        kind = str(body.get("kind") or "")
+        for mass in body.get("masses") or []:
+            if isinstance(mass, dict):
+                out.append((kind, mass))
+    return out
+
+
+def propers_of(mass: dict) -> list[tuple[str, dict]]:
+    """Yield (form, proper); a mass with seasonal forms labels each one."""
+    out = [("", proper) for proper in (mass.get("propers") or []) if isinstance(proper, dict)]
+    for form in mass.get("forms") or []:
+        if not isinstance(form, dict):
+            continue
+        label = str(form.get("name") or "form")
+        out.extend(
+            (label, proper) for proper in (form.get("propers") or []) if isinstance(proper, dict)
+        )
+    return out
+
+
+def load_bible(name: str) -> dict:
+    """Resolve an indexed bible, keyed by the citations-encoded passage."""
+    import yaml
+
+    path = BIBLE_ROOT / name / "index.yaml"
+    if not path.is_file():
+        available = (
+            sorted(p.name for p in BIBLE_ROOT.iterdir() if (p / "index.yaml").is_file())
+            if BIBLE_ROOT.is_dir()
+            else []
+        )
+        raise ValueError(
+            f"no indexed bible {name!r} at {path}"
+            + (f"; available: {', '.join(available)}" if available else "; none are indexed yet")
+        )
+    document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return {str(k): v for k, v in (document.get("passages") or {}).items()}
+
+
+def find_mass(root: Path, calendar: str, key: str) -> dict:
+    document = load_calendar(root, calendar)
+    for kind, mass in masses_of(document):
+        if mass.get("key") == key:
+            return {
+                "calendar": calendar,
+                "edition": document.get("edition"),
+                "kind": mass.get("kind") or kind,
+                "mass": mass,
+            }
+    raise KeyError(f"{calendar}: no mass with key {key!r}")
+
+
+def run_show(arguments: argparse.Namespace) -> dict:
+    if not arguments.calendar:
+        raise ValueError("--calendar is required")
+    if not arguments.mass:
+        raise ValueError("--mass is required")
+    payload = find_mass(Path(arguments.root), arguments.calendar, arguments.mass)
+    # Validate the selection here so a missing bible fails before rendering.
+    arguments.resolved_bible = load_bible(arguments.bible) if arguments.bible else {}
+    return payload
+
+
+def run_list(arguments: argparse.Namespace) -> dict:
+    root = Path(arguments.root)
+    wanted = [arguments.calendar] if arguments.calendar else calendars(root)
+    listing = {}
+    for calendar in wanted:
+        rows = []
+        for kind, mass in masses_of(load_calendar(root, calendar)):
+            rows.append(
+                {
+                    "key": mass.get("key"),
+                    "name": mass.get("name"),
+                    "kind": mass.get("kind") or kind,
+                    "registry": mass.get("registry"),
+                    "propers": len(propers_of(mass)),
+                }
+            )
+        listing[calendar] = rows
+    return {"calendars": listing}
+
+
+def wrap(text: str, indent: str) -> list[str]:
+    import textwrap
+
+    lines: list[str] = []
+    for paragraph in text.strip().split("\n\n"):
+        block = " ".join(paragraph.split())
+        if not block:
+            continue
+        lines.extend(textwrap.wrap(block, WIDTH - len(indent)) or [""])
+        lines.append("")
+    return [indent + line if line else "" for line in lines[:-1] or lines]
+
+
+def render_reading(payload: dict, lang: str, bible: dict) -> int:
+    mass = payload["mass"]
+    print(mass.get("name") or mass.get("key") or "(unnamed)")
+    subtitle = " · ".join(
+        str(part)
+        for part in (payload.get("edition"), payload.get("kind"), mass.get("registry"))
+        if part
+    )
+    if subtitle:
+        print(subtitle)
+    print("=" * WIDTH)
+    for form, proper in propers_of(mass):
+        heading = str(proper.get("name") or "(unnamed proper)")
+        if form:
+            heading = f"{heading} [{form}]"
+        print(f"\n{heading}")
+        print("-" * len(heading))
+        for entry in proper.get("verses") or []:
+            if isinstance(entry, dict) and entry.get("ref"):
+                print(f"  {entry['ref']}")
+                verse = bible.get(entry["ref"]) if bible else None
+                if verse:
+                    print("\n".join(wrap(str(verse), "    ")))
+        for cycle, owner in sorted((proper.get("cycles") or {}).items()):
+            refs = [
+                v["ref"]
+                for v in (owner.get("verses") or [])
+                if isinstance(v, dict) and v.get("ref")
+            ]
+            if refs:
+                print(f"  {cycle}: {', '.join(refs)}")
+        body, note = select_text(proper, lang)
+        if body:
+            print()
+            print("\n".join(wrap(body, "  ")))
+        if note:
+            print(f"\n  ({note})")
+    return 0
+
+
+def select_text(proper: dict, lang: str) -> tuple[str, str]:
+    """Latin is the tracked text; any other language is a carried translation."""
+    if lang == "la":
+        return str(proper.get("text") or ""), ""
+    for translation in proper.get("translations") or []:
+        if isinstance(translation, dict) and translation.get("lang") == lang:
+            return str(translation.get("text") or ""), ""
+    if proper.get("text"):
+        return str(proper["text"]), f"no {lang} translation recorded; showing Latin"
+    return "", ""
+
+
+def render_listing(payload: dict) -> int:
+    for calendar, rows in payload["calendars"].items():
+        for row in rows:
+            print(
+                f"{calendar}\t{row['registry'] or ''}\t{row['kind']}\t"
+                f"{row['propers']}\t{row['key']}\t{row['name'] or ''}"
+            )
+        print(f"# {calendar}: {len(rows)} masses", file=sys.stderr)
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--root", default=str(DEFAULT_ROOT), help="calendar root directory")
+    shared.add_argument("--calendar", help="calendar directory name, e.g. roman-1962")
+    shared.add_argument("--mass", help="mass key, e.g. advent-1")
+    shared.add_argument(
+        "--format", choices=("text", "yaml", "json"), default="text", help="output form"
+    )
+    shared.add_argument(
+        "--bible", help="indexed bible to resolve scripture refs against, e.g. douay-rheims"
+    )
+    shared.add_argument(
+        "--lang", default="la", help="language for composed propers (default: la)"
+    )
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    parser = argparse.ArgumentParser(
+        prog="mass-propers",
+        description="Print one mass's propers as YAML, JSON, or a reading view.",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("show", help="print one mass's propers", parents=[shared])
+    sub.add_parser("list", help="list the masses a calendar carries", parents=[shared])
+
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        if not isinstance(payload, dict):
+            print("mass-propers error: invalid payload", file=sys.stderr)
+            return 70
+        if arguments.json or arguments.format == "json":
+            print_json(payload)
+            return 0
+        if arguments.format == "yaml":
+            import yaml
+
+            print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
+            return 0
+        if "calendars" in payload:
+            return render_listing(payload)
+        return render_reading(
+            payload, arguments.lang, getattr(arguments, "resolved_bible", {})
+        )
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"show": run_show, "list": run_list},
+        renderer=render,
+        prefix="mass-propers",
+        argv=argv,
+        default_verb="show",
+        dependency_message="install PyYAML (requirements-tools.txt)",
+        mapped_errors={KeyError: ("not-found", 3), ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
