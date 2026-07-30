@@ -2,7 +2,8 @@
 # Test for tools/calendar-spine: exit 0 = pass (the stable gate).
 set -eu
 
-tool="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)/calendar-spine"
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/calendar-spine"
 
 "$tool" --help >/dev/null
 

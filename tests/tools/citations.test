@@ -2,7 +2,8 @@
 # Test for tools/citations: exit 0 = pass (the stable gate).
 set -eu
 
-tool="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)/citations"
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/citations"
 
 "$tool" --help >/dev/null
 

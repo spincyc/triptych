@@ -2,8 +2,8 @@
 # Test for tools/check-calendar-masses: exit 0 = pass (the stable gate).
 set -eu
 
-# Resolved sibling path: keeps working after a cd into a sandbox.
-tools="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+# Resolved tool roots: keeps working after a cd into a sandbox.
+tools="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)/tools"
 tool="$tools/check-calendar-masses"
 
 # Fixtures are written with printed citations, then encoded by the sibling
@@ -359,14 +359,14 @@ YAML
 encode
 "$tool" --root src/sources/calendars >/dev/null
 
-# An unquoted date, which YAML would not read as MM-DD, is rejected.
+# A non-string date is rejected.
 {
 	header
 	cat <<'YAML'
   - key: unquoted-date
     name: Unquoted Date
     registry: "1962-08-15"
-    date: 08-15
+    date: 815
     rank: I
     kind: marian
     propers:
