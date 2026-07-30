@@ -1769,7 +1769,7 @@ def _validate_source_tree(library: Library) -> None:
         # Calendar and commentary records are tracked sources with their own
         # validators (check-calendar-masses, citations); the bibliographic
         # schema does not own them.
-        if relative.parts[0] in {"calendars", "commentary"} and entry.suffix in {".md", ".yaml"}:
+        if relative.parts[0] in {"bibles", "calendars", "commentary"} and entry.suffix in {".md", ".yaml"}:
             continue
         if entry.resolve() in library.payload_paths:
             continue
