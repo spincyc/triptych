@@ -10,9 +10,24 @@ psalm_numbering: vulgate
 citation_convention: Vulgate book names and Vulgate psalm numbering as printed in
   the 1962 Missal
 orthography: 1962 missal Latin (j retained, ae/oe digraphs, no accent marks)
-verification: unverified placeholder index skeleton; propers are pending full migration
-  and collation
+verification: two tiers; the seasonal section carries unverified model-generated
+  leads whose every citation and text requires collation against the controlling
+  edition before any evidentiary reuse, and the marian, christological and saintly
+  sections remain a placeholder skeleton pending formula migration
+conventions:
+- every Introit concludes with the Gloria Patri and the repeated antiphon; the
+  doxology is not repeated per entry
+- propers stand in the order the Missal appoints them, not in a fixed template;
+  Tracts, Sequences, and ritual texts appear only where appointed
+- the invariant Ordinary is out of scope; prefaces are not recorded
 open_collation_items:
+- oration conclusions reproduce the abbreviated printed cue, but the cue's expansion
+  is not uniform across entries (Per Dominum nostrum Jesum Christum... against
+  Per Dominum.); settle one rendering at collation
+- some chant citations were collapsed from the source's discrete verse list to
+  a contiguous range; confirm each against the facsimile
+- pre-1960 commemorations, suffrages, and suppressed octave texts were omitted
+  as not appointed in 1962; confirm against the controlling edition's rubrics
 - all entries in this file are placeholders pending source-backed completion
 sections:
   seasonal:

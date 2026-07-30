@@ -11,9 +11,28 @@ psalm_numbering: hebrew
 citation_convention: Lectionary readings and antiphons preserve the numbering in the
   controlling missal
 orthography: 2002 missal Latin (j for i, ae/oe digraphs, no accent marks)
-verification: unverified placeholder index skeleton; propers are pending full migration
-  and collation
+verification: two tiers; the seasonal section carries unverified model-generated
+  leads whose every citation and text requires collation against the controlling
+  edition before any evidentiary reuse, and the marian, christological and saintly
+  sections remain a placeholder skeleton pending formula migration
+conventions:
+- cycle-varying elements carry a cycles mapping keyed A, B, C
+- celebrations with several Mass formularies use forms instead of propers
+- the Missal's Vel alternatives are separate propers carrying a notes line, not
+  cycle entries, except where the alternative is genuinely cycle-linked
+- the invariant Ordinary is out of scope; prefaces are not recorded
 open_collation_items:
+- antiphon psalm numbering is not yet uniform, because some entries kept the Missal's
+  printed Vulgate or Neo-Vulgate number while others were converted to Hebrew
+  numbering; normalize to the printed cue at collation
+- part-verse letters such as 8b-12 are retained in some Lectionary citations and
+  dropped in others; settle one notation at collation
+- oration conclusions are rendered both as the terse printed cue and in expanded
+  form; settle one rendering at collation
+- where the 1998 US Lectionary and the Ordo Lectionum diverge, the Ordo reading
+  was preferred; confirm against the approved edition actually in use
+- proper prefaces and the Oratio super populum are recorded inconsistently across
+  seasons; decide whether either belongs in this index at all
 - all entries in this file are placeholders pending source-backed completion
 sections:
   seasonal:
