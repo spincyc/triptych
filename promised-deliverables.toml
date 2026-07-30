@@ -192,7 +192,7 @@ state = "candidate"
 
 [[deliverables]]
 id = "project-review-discoverability"
-owner = "tools/lib/public-alpha"
+owner = "tools/public-alpha"
 promise = "Keep review publications ordinarily discoverable with conspicuous review labeling."
 state = "complete"
 
@@ -218,7 +218,7 @@ state = "complete"
   id = "site-check"
   criterion = "Production-site validation proves every review publication has a resolving catalog route and visible review label."
   status = "pass"
-  evidence = ["tools/lib/public-alpha"]
+  evidence = ["tools/public-alpha"]
 
 [[deliverables]]
 id = "project-recent-paper-hard-review"
@@ -254,11 +254,11 @@ state = "complete"
   id = "production-verified"
   criterion = "The deployed production artifact resolves the repaired landing pages, web editions, and PDFs."
   status = "pass"
-  evidence = ["PROJECT-WORK.md", "tools/lib/public-alpha"]
+  evidence = ["PROJECT-WORK.md", "tools/public-alpha"]
 
 [[deliverables]]
 id = "project-stale-editions"
-owner = "tools/lib/research-staleness"
+owner = "tools/research-staleness"
 promise = "Reconcile every publication edition reported stale by the repository-wide audit."
 state = "in_progress"
 
@@ -266,7 +266,7 @@ state = "in_progress"
   id = "staleness-zero"
   criterion = "The exhaustive staleness audit passes with no stale edition."
   status = "open"
-  evidence = ["tools/lib/research-staleness", "PROJECT-WORK.md"]
+  evidence = ["tools/research-staleness", "PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "project-source-family-screening"

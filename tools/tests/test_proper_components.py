@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-PATH = ROOT / "tools" / "lib" / "check-proper-components"
+PATH = ROOT / "tools" / "check-proper-components"
 loader = importlib.machinery.SourceFileLoader("proper_components", str(PATH))
 spec = importlib.util.spec_from_loader(loader.name, loader)
 module = importlib.util.module_from_spec(spec)

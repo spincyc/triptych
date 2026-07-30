@@ -22,9 +22,9 @@ from importlib.machinery import SourceFileLoader
 from pathlib import Path
 from typing import Any
 
-TOOLING_ROOT = Path(__file__).resolve().parent
-if str(TOOLING_ROOT) not in sys.path:
-    sys.path.insert(0, str(TOOLING_ROOT))
+# Shared CLI helpers live outside tools/ so that tmt's registry scan,
+# which requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import print_json, run_verb_cli
 

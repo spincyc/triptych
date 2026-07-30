@@ -16,8 +16,8 @@ import tomllib
 
 
 ROOT = Path(__file__).resolve().parents[2]
-TOOL = ROOT / "tools/lib/source-family-migration"
-SOURCE_INVENTORY = ROOT / "tools/lib/source-inventory"
+TOOL = ROOT / "tools/source-family-migration"
+SOURCE_INVENTORY = ROOT / "tools/source-inventory"
 loader = importlib.machinery.SourceFileLoader("source_family_migration", str(TOOL))
 spec = importlib.util.spec_from_loader(loader.name, loader)
 assert spec is not None

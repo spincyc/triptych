@@ -13,6 +13,10 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan,
+# which requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
 from _tooling import print_json, run_verb_cli
 
 DEFAULT_ROOT = Path("src/sources/calendars")

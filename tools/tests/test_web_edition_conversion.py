@@ -12,7 +12,7 @@ from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DRIVER_PATH = ROOT / "tools" / "lib" / "web-edition"
+DRIVER_PATH = ROOT / "tools" / "web-edition"
 LOADER = importlib.machinery.SourceFileLoader("triptych_web_edition", str(DRIVER_PATH))
 SPEC = importlib.util.spec_from_loader(LOADER.name, LOADER)
 if SPEC is None or SPEC.loader is None:

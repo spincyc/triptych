@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 RECORD_NAME = "web-edition.toml"
 SCHEMA = 1
 RECORD_TYPE = "web-edition"

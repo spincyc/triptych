@@ -17,7 +17,7 @@ import sys
 import tomllib
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "src" / "sources" / "inventories" / "research-staleness-v1.toml"
 PROVIDERS = ("gpt", "claude")
 SCHEMA = 1

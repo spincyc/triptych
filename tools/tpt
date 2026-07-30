@@ -11,7 +11,7 @@ Usage:
   tpt path <tool>
 
 `tpt` is the unified entrypoint for repo tools. It loads the tool registry
-from ``tmt.json`` and dispatches to the implementation in ``tools/lib/<tool>``.
+from ``tmt.json`` and dispatches to the implementation at ``tools/<tool>``.
 """
 
 from __future__ import annotations
@@ -26,14 +26,12 @@ from pathlib import Path
 SELF = Path(__file__).resolve()
 ROOT = SELF.parents[1]
 MANIFEST = ROOT / "tmt.json"
-LIB = ROOT / "tools" / "lib"
+TOOLS = ROOT / "tools"
 
 # Top-level verbs. A registry id matching one of these would shadow it, so
 # load_registry rejects the manifest rather than silently hiding the verb.
 VERBS = ("list", "tools", "run", "help", "path")
 
-# Registry ids whose implementation file carries a different basename.
-ALIASES = {"render-sanctuary-dictionary": "roman-sanctuary-dictionary"}
 
 ToolRecord = dict[str, object]
 Registry = dict[str, ToolRecord]
@@ -72,9 +70,7 @@ def tool_record(registry: Registry, name: str) -> ToolRecord:
 
 
 def resolve_tool_path(name: str) -> Path:
-    if name == "tpt":
-        return SELF
-    path = LIB / ALIASES.get(name, name)
+    path = TOOLS / name
     if not path.is_file():
         raise ToolError(f"{name}: no implementation at {path}")
     if not os.access(path, os.X_OK):
@@ -126,8 +122,8 @@ def show_tool_info(registry: Registry, name: str, *, as_json: bool) -> int:
 def run_tool(registry: Registry, name: str, tool_args: list[str]) -> int:
     tool_record(registry, name)
     path = resolve_tool_path(name)
-    # Tools are executable scripts; sys.path[0] must stay tools/lib so that
-    # the shared _tooling helpers import, which rules out in-process dispatch.
+    # Tools are executable scripts run as subprocesses, so each keeps its own
+    # interpreter state and argv.
     code = subprocess.run([str(path), *tool_args]).returncode
     # Translate a signal death into the conventional 128+N shell status.
     return 128 - code if code < 0 else code

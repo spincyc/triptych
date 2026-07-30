@@ -56,7 +56,7 @@ class MakefileBuildGraphTests(unittest.TestCase):
 
         scripts = self.root / "scripts"
         scripts.mkdir()
-        library = self.root / "tools" / "lib"
+        library = self.root / "tools"
         library.mkdir(parents=True)
         (self.root / "tools" / "tests").mkdir()
         launcher = self.root / "tools" / "tpt"
@@ -66,7 +66,7 @@ import os
 import sys
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-target = os.path.join(root, "tools", "lib", sys.argv[1])
+target = os.path.join(root, "tools", sys.argv[1])
 if not os.path.exists(target):
     sys.stderr.write("stub tpt: no fake tool for %s\\n" % sys.argv[1])
     raise SystemExit(127)

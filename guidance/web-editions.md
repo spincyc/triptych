@@ -79,7 +79,7 @@ edition itself. An undeclared omission is a defect.
 
 The converter's job is to make omission impossible to miss, because the
 reader deletes silently and exits zero. Known deletions, all now handled
-in `tools/lib/web-shim.tex` or `tools/tpt web-edition`: a `\multicolumn`
+in `scripts/web-shim.tex` or `tools/tpt web-edition`: a `\multicolumn`
 cell loses its contents; a `>{...\arraybackslash}` column prefix
 swallows the token opening every cell in that column, so dates and book
 numbers vanish from a citation; `\cmidrule` leaks its span into the

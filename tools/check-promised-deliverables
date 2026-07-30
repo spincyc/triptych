@@ -10,7 +10,7 @@ import tomllib
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_LEDGER = ROOT / "promised-deliverables.toml"
 WORK_REGISTER = ROOT / "PROJECT-WORK.md"
 DELIVERABLE_STATES = {"planned", "in_progress", "blocked", "candidate", "complete"}

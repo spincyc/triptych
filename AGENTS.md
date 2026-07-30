@@ -103,7 +103,7 @@ Do not amend, rebase, filter, force-update a ref, or otherwise rewrite history u
 
 <!-- tmt:agents v1 -->
 Before writing any script, read tmt.json and prefer a listed tool
-(`tools/tpt <id> --help`). After deriving anything repeatable, run
+(`tools/<id> --help`). After deriving anything repeatable, run
 `tmt note <slug>`; at two notes build it with `tmt new <slug>`.
 Keep the registry honest with `tmt check`.
 <!-- /tmt:agents -->

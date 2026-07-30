@@ -22,9 +22,13 @@ import re
 import sys
 import unicodedata
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan,
+# which requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
 from _tooling import print_json, run_verb_cli
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 SOURCES = {
     "roman-1962": (
         ROOT / "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections",

@@ -20,7 +20,7 @@ import sys
 import zoneinfo
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "release" / "public-alpha.json"
 PUBLIC_ALPHA = Path(__file__).with_name("public-alpha")
 

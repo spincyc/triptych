@@ -93,8 +93,8 @@ METADATA_CHECKER := tools/tpt check-generation-metadata
 # A launcher invocation is two words. Make would read it as two prerequisites
 # and sha256sum would look for a file whose name contains a space, so
 # prerequisite and hash sites must name the implementation file instead.
-METADATA_CHECKER_IMPL := tools/lib/check-generation-metadata
-CURRICULUM_STRUCTURE_CHECKER_IMPL := tools/lib/check-curriculum-structure
+METADATA_CHECKER_IMPL := tools/check-generation-metadata
+CURRICULUM_STRUCTURE_CHECKER_IMPL := tools/check-curriculum-structure
 PROPER_COMPONENT_CHECKER := tools/tpt check-proper-components
 WEB_EDITION_CHECKER := tools/tpt check-web-edition
 WEB_EDITION_TOOL := tools/tpt web-edition
@@ -622,7 +622,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-calendar-masses
 
 # tmt.json indexes the repo's tools; invoke them through tpt.
-# tools dispatch through tmt entries to their implementation under tools/lib/.
+# tools dispatch through tmt entries to their implementation under tools/.
 # Skipped rather than failed where tmt is not installed, so a plain clone
 # still runs `check`.
 check-tool-registry:

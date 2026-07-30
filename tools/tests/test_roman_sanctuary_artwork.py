@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 REPO = Path(__file__).resolve().parents[2]
-CHECKER = REPO / "tools/lib/check-roman-sanctuary-artwork"
+CHECKER = REPO / "tools/check-roman-sanctuary-artwork"
 
 
 def load_checker():

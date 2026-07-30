@@ -20,7 +20,7 @@ if sys.version_info < (3, 11):
 import tomllib
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INVENTORY = Path("src/sources/inventories/publications-v1.toml")
 DEFAULT_CLASSIFICATION_REVIEW = Path(
     "src/sources/inventories/classification-review-v1.toml"

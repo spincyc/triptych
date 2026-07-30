@@ -10,8 +10,8 @@ import sys
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-SHIM = Path(__file__).resolve().parent / "web-shim.tex"
+ROOT = Path(__file__).resolve().parents[1]
+SHIM = Path(__file__).resolve().parents[1] / "scripts" / "web-shim.tex"
 SRC = ROOT / "src"
 OUT = ROOT / "build" / "web"
 # Every disabled extension names a construct the site's Markdown renderer would

@@ -1704,7 +1704,7 @@ release attachment, announcement, or promotion.
 | --- | --- |
 | `CONTRIBUTING.md` | `960df05b3029636e87aa04c3d501244ffa98840c74fbd2b9cdda848586e13012` |
 | `LIBRARY.md` | `99439f28a92258b364c6d033e8d56e0589ddc01258333f94ab78f74b1c54d63c` |
-| `LICENSE` | `263c33ce53a6660606d86bb24a233fe6575293dc2573f9b7ee7195a02fe41b44` |
+| `LICENSE` | `1aba8015fac9e3c0cb0cdb01cbb258c2d0733a57199ea6b73288d9ef02a113b6` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `63a929087876c5b249f0548a4f1cf9485bc31d2d6cbd28c4c5754716068d1ecd` |
@@ -1729,7 +1729,6 @@ release attachment, announcement, or promotion.
 | `release/public-alpha/assets/site.css` | `acae106be43a6648fb7896c726192d7f5077ae43acd5d335c6b9c479e169d0b7` |
 | `release/public-alpha/layout.html` | `2da457d6aea6c2bf8943d7b53e4e034eab5181e61560041b8e1862a10a2d3c43` |
 | `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
-| `scripts/public-alpha` | `71573761cf43c927d8e0c13c7d80bcf86f0a59ad4768c6eb226ff45ad52dd9b1` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml` | `77d170a850917063fcd3d51fea4727456497df494dedc7dd390f19972a2a7847` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle-v2-alpha.png` | `973f7cc89692ff07b3dd598d5c148eadcd72a1fe2e7f7206599f6953bee3088a` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp-v2-alpha.png` | `c30ac4b8b384ff1816043b48ddaea78cfb255a3791a3b7c13c55c7ce3ba191d4` |
@@ -1907,6 +1906,7 @@ release attachment, announcement, or promotion.
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/maniple.toml` | `f2f451ddc7c0b7a5bc01751411f99816818a58d6f7ff5ef58bc1221054c6a0ce` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/priest-stole.toml` | `5c3f574d850498a159c6f6d3909ec821194983227fae0d2ab316091f05667dec` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/tunicle.toml` | `c5783b74f453bf7206f001f79c4a30a2c2b5a46e0f14307340267843d1027520` |
+| `tools/public-alpha` | `a7cdf553e3eb3d05eeec2581c81daa130936717a6aef6bbbc68bade0f87788b7` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `4d97a8a50671d69dac75bd40ba84646439bbc3c9426db541f17b63002e0a204e` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `5142fc621475233a8843f98ca10e49e22bc63adc6cd001044335b5f9e1634482` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `6b86977adffdece0e49c43803db515040f30e115d68ba382d8e9658b14fc3569` |

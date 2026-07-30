@@ -15,7 +15,7 @@ import tomllib
 
 
 ROOT = Path(__file__).resolve().parents[2]
-TOOL = ROOT / "tools/lib/source-inventory"
+TOOL = ROOT / "tools/source-inventory"
 
 
 class SourceInventoryTests(unittest.TestCase):

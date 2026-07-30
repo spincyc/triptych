@@ -9,7 +9,7 @@ import tempfile
 import unittest
 
 TOOL_PATH = (
-    pathlib.Path(__file__).resolve().parents[2] / "tools" / "lib" / "research-staleness"
+    pathlib.Path(__file__).resolve().parents[2] / "tools" / "research-staleness"
 )
 
 

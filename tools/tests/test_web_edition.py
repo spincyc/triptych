@@ -13,7 +13,7 @@ from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CHECKER_PATH = ROOT / "tools" / "lib" / "check-web-edition"
+CHECKER_PATH = ROOT / "tools" / "check-web-edition"
 LOADER = importlib.machinery.SourceFileLoader(
     "triptych_web_edition_checker", str(CHECKER_PATH)
 )
@@ -24,7 +24,7 @@ CHECKER = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = CHECKER
 SPEC.loader.exec_module(CHECKER)
 
-DRIVER_PATH = ROOT / "tools" / "lib" / "web-edition"
+DRIVER_PATH = ROOT / "tools" / "web-edition"
 DRIVER_LOADER = importlib.machinery.SourceFileLoader(
     "triptych_web_edition_driver", str(DRIVER_PATH)
 )

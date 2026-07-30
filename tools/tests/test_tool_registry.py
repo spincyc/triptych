@@ -1,4 +1,4 @@
-"""Registry drift: tmt.json, tools/lib/, and the Makefile must agree.
+"""Registry drift: tmt.json, tools/, and the Makefile must agree.
 
 Every failure here has shipped at least once. The Makefile invoked a tool by
 its filename rather than its registry id, the registry advertised a tool with
@@ -16,15 +16,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "tmt.json"
-LIBRARY = ROOT / "tools" / "lib"
+TOOLS = ROOT / "tools"
 LAUNCHER = ROOT / "tools" / "tpt"
 
 # tools/tpt's own verbs. A registry id matching one would shadow it.
 LAUNCHER_VERBS = {"list", "tools", "run", "help", "path"}
-# Registered ids that deliberately do not live under tools/lib/.
-LAUNCHER_IDS = {"tpt"}
-# Support files under tools/lib/ that are not tools.
-NON_TOOLS = {"_tooling.py", "web-shim.tex"}
+# tmt ignores subdirectories and these companion suffixes when scanning tools/.
+COMPANION_SUFFIXES = (".md", ".test")
 # tmt's registry validator caps the field.
 PURPOSE_LIMIT = 80
 
@@ -48,8 +46,8 @@ class ToolRegistryTests(unittest.TestCase):
 
     def test_every_implementation_is_registered(self) -> None:
         registered = set(registry())
-        for path in sorted(LIBRARY.iterdir()):
-            if path.name in NON_TOOLS or not path.is_file():
+        for path in sorted(TOOLS.iterdir()):
+            if not path.is_file() or path.name.endswith(COMPANION_SUFFIXES):
                 continue
             with self.subTest(tool=path.name):
                 resolved = {
@@ -89,14 +87,15 @@ class ToolRegistryTests(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertNotIn("Traceback", result.stderr)
 
-    def test_launcher_ids_resolve_outside_the_library(self) -> None:
-        for name in LAUNCHER_IDS:
+    def test_every_id_is_its_own_basename(self) -> None:
+        """tmt resolves an entry only at tools/<id>; an alias would break it."""
+        for name in registry():
             with self.subTest(tool=name):
                 result = subprocess.run(
                     [str(LAUNCHER), "path", name], capture_output=True, text=True, cwd=ROOT,
                 )
                 self.assertEqual(result.returncode, 0, result.stderr)
-                self.assertEqual(Path(result.stdout.strip()), LAUNCHER)
+                self.assertEqual(Path(result.stdout.strip()), TOOLS / name)
 
 
 class ToolSmokeTests(unittest.TestCase):

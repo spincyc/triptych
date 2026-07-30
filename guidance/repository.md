@@ -133,23 +133,21 @@ Every publication retains the common rights notice as a compact final-page colop
 
 ## Tool registry
 
-`tmt.json` indexes the repository's tools; each implementation is an
-executable script at `tools/lib/<id>`. Invoke one as `tools/tpt <id> [args]`.
-`tpt list`, `tpt tools info <id>`, `tpt path <id>`, and `tpt help <id>`
-discover them; the first three take `--json`. The Makefile and Pages workflow
-call tools through `tools/tpt`; `tools/tests/` and the release hash records
-pin `tools/lib/<id>` directly, because both need the implementation rather
-than the launcher.
+`tmt.json` indexes the repository's tools. Every registry id is an executable
+script at exactly `tools/<id>`, which `tmt` requires and `tmt check` enforces;
+an id may not be aliased to another basename. Run a tool directly, or through
+the `tools/tpt <id> [args]` launcher, which adds discovery: `tpt list`,
+`tpt tools info <id>`, `tpt path <id>`, `tpt help <id>`, the first three with
+`--json`. Registry ids may not collide with those verbs.
 
-Register a new tool with `tmt new <id>`, move the scaffolded script to
-`tools/lib/<id>`, keep it executable, and add its test under `tools/tests/`.
-A registry id must not match a `tpt` verb, and must differ from its script's
-basename where that basename would collide with a publication slug or record
-name: `tmt check` reads any standalone occurrence of a registered id in a
-tool body, path strings included, as a `requires` edge.
+Everything else under `tools/` is either a subdirectory, which `tmt` ignores,
+or a `.md`/`.test` companion. Shared library code and tool data live in
+`scripts/`; a bare file in `tools/` without a registry entry fails the gate.
+Python tests live in `tools/tests/`, and `tests/tools/<id>.test` holds the
+shell smoke test `tmt` requires before promoting a tool to `stable`.
 
-`make check` runs `tmt check`, which must stay green; it is skipped, not
-failed, where `tmt` is not installed.
+Register a new tool with `tmt new <id>`. `make check` runs `tmt check`, which
+must stay green; it is skipped, not failed, where `tmt` is not installed.
 
 ## Build and review contract
 

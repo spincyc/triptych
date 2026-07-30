@@ -12,7 +12,7 @@ import tomllib
 from pathlib import Path
 
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[1]
 DEFAULT_OWNER = (
     REPO
     / "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
