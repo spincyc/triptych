@@ -11,6 +11,17 @@
       "stage": "draft",
       "usage": "artwork-library {check,normalize,identify,check-pdf} --help"
     },
+    "calendar-spine": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Derive the date-ordered sanctoral spine from the repo's calendar references.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "calendar-spine [--calendar NAME] [--kind KIND]"
+    },
     "check-calendar-masses": {
       "idempotent": true,
       "json": true,
