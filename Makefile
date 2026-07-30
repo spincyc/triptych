@@ -185,7 +185,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
-	distclean check-tools check-tool-registry check-metadata check-web-editions \
+	distclean check-tools check-tool-registry check-calendar-masses \
+	check-metadata check-web-editions \
 	check-proper-components \
 	web-editions install-web-editions check-web-editions-current \
 	check-sources check-deployment-sources check-source-library \
@@ -612,7 +613,8 @@ rebaseline-doc:
 check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
-	check-public-alpha check-release-bindings check-tool-registry
+	check-public-alpha check-release-bindings check-tool-registry \
+	check-calendar-masses
 
 # tmt.json indexes the repo's tools; tools/<id> are symlinks onto scripts/.
 # Skipped rather than failed where tmt is not installed, so a plain clone
@@ -620,6 +622,12 @@ check: check-metadata check-web-editions check-web-editions-current \
 check-tool-registry:
 	@if command -v tmt >/dev/null; then tmt check; \
 	else echo "tmt not installed; skipping tool-registry check"; fi
+
+# Needs PyYAML (requirements-tools.txt); skipped rather than failed without it.
+check-calendar-masses:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		tools/check-calendar-masses; \
+	else echo "PyYAML missing; skipping calendar-mass check"; fi
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s scripts/tests

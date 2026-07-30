@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -90,14 +91,15 @@ def check_proper(where: str, proper: object, problems: list[str]) -> None:
             problems.append(f"{where}: composed proper must not carry verses")
     elif "verses" not in proper or "text" not in proper:
         problems.append(f"{where}: mixed proper needs both verses and text")
-    verses = proper.get("verses")
-    if verses is not None:
-        if not isinstance(verses, list) or not verses:
-            problems.append(f"{where}: verses must be a nonempty list")
-        else:
-            for citation in verses:
-                if not isinstance(citation, str) or ":" not in citation:
-                    problems.append(f"{where}: not a verse citation: {citation!r}")
+    check_verses(where, proper.get("verses"), problems)
+
+
+def check_verses(where: str, verses: object, problems: list[str]) -> None:
+    """`verses` holds encoded passages; `tools/citations` owns their contents."""
+    if verses is None:
+        return
+    if not isinstance(verses, list) or not verses:
+        problems.append(f"{where}: verses must be a nonempty list")
 
 
 def check_entry(entry: object, index: int, problems: list[str]) -> str | None:
@@ -215,11 +217,35 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
         path.as_posix(): check_file(path, problems)
         for path in paths
     }
+    problems.extend(citation_problems(root, calendar))
     return {
         "files": files,
         "problems": problems,
         "status": "error" if problems else "ok",
     }
+
+
+def citation_problems(root: Path, calendar: str | None) -> list[str]:
+    """Delegate citation contents to the sibling tool that owns the canon."""
+    tool = Path(__file__).resolve().parent / "citations"
+    if not tool.exists():
+        return ["tools/citations is missing; cannot validate citation contents"]
+    scope = root / calendar if calendar else root
+    result = subprocess.run(
+        [sys.executable, str(tool), "check", "--root", str(scope), "--json"],
+        capture_output=True,
+        text=True,
+    )
+    stream = result.stdout.strip() or result.stderr.strip()
+    if not stream:
+        return [f"tools/citations produced no output (exit {result.returncode})"]
+    try:
+        payload = json.loads(stream)
+    except json.JSONDecodeError:
+        return [f"tools/citations emitted unreadable output: {stream[:200]}"]
+    if payload.get("code"):
+        return [f"tools/citations: {payload.get('error')}"]
+    return list(payload.get("problems") or [])
 
 
 def fail(message: str, code: str, as_json: bool, status: int) -> int:

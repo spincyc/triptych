@@ -18,7 +18,9 @@
       "mutates": false,
       "origin": "local",
       "purpose": "Validate the normalized YAML mass-proper indexes under src/sources/calendars.",
-      "requires": [],
+      "requires": [
+        "citations"
+      ],
       "stage": "draft",
       "usage": "check-calendar-masses [--root DIR] [--calendar NAME]"
     },
@@ -89,6 +91,17 @@
       ],
       "stage": "draft",
       "usage": "check-web-edition [--provider NAME] [--document ID] [--list-eligible]"
+    },
+    "citations": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Encode and validate scripture citations in the calendar mass indexes.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "citations {parse,encode,check} [--root DIR]"
     },
     "pdf-review": {
       "idempotent": true,

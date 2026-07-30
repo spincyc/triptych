@@ -94,8 +94,32 @@ src/sources/
       segments/<segment>.toml
       passages/<passage>.toml
   corpora/<corpus>.toml
+  calendars/<calendar>/<series>.yaml
   inventories/
 ```
+
+`calendars/` holds the normalized YAML indexes of mass formularies and their
+ordered propers, one directory per calendar (`roman-1962`, `postconciliar`)
+and one file per deterministic series. Each file declares the
+`triptych-calendar-masses/v1` schema, the controlling edition, its ordering
+rule, the registry that owns its identities, its citation and orthography
+conventions, and its verification state. `tools/check-calendar-masses`
+validates them and runs inside `make check`.
+
+An index is a planning and cross-reference spine, not a source of record: it
+carries no artifact hash and proves nothing on its own. A publication still
+binds the edition and artifact that control each text through
+`research/source-bindings.toml`, and a claim still needs its own verified
+passage. Treat every citation and text in an index as an unverified lead until
+collated against the controlling edition, and keep each file's
+`open_collation_items` current rather than silently harmonizing a known
+divergence.
+
+Sunday and Triduum series are ordered by the liturgical year from the First
+Sunday of Advent. Sanctoral series — Marian, Christological, and saints'
+feasts — are ordered by calendar date from 1 January, each in its own file.
+Neither ordering asserts rank, precedence, or the occurrence schedule of any
+civil year.
 
 `<namespace>` identifies the responsible author, body, collection, or other
 stable owner needed to avoid collisions; it is not a theological or editorial
