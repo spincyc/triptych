@@ -43,11 +43,13 @@ def check_proper(where: str, proper: object, problems: list[str]) -> None:
         return
     where = f"{where}/{name}"
     source = proper.get("source")
-    if source not in SOURCES:
-        problems.append(f"{where}: source must be one of {SOURCES}, got {source!r}")
-        return
-    if "cycles" in proper:
-        cycles = proper["cycles"]
+    cycles = proper.get("cycles")
+    # A cycle-varying proper may differ in kind between cycles — an acclamation
+    # composed in one year and scriptural in another — so each cycle may carry
+    # its own source instead of one at the top.
+    if cycles is not None:
+        if source is not None and source not in SOURCES:
+            problems.append(f"{where}: source must be one of {SOURCES}, got {source!r}")
         if not isinstance(cycles, dict) or not cycles:
             problems.append(f"{where}: cycles must be a nonempty mapping")
             return
@@ -55,10 +57,26 @@ def check_proper(where: str, proper: object, problems: list[str]) -> None:
             if cycle not in CYCLES:
                 problems.append(f"{where}: unknown cycle key {cycle!r}")
                 continue
-            if not isinstance(value, dict) or not ("verses" in value or "text" in value):
-                problems.append(f"{where}/{cycle}: needs verses or text")
+            if not isinstance(value, dict):
+                problems.append(f"{where}/{cycle}: cycle must be a mapping")
+                continue
+            effective = value.get("source", source)
+            if effective not in SOURCES:
+                problems.append(
+                    f"{where}/{cycle}: no source, and the proper declares none"
+                )
+                continue
+            if effective == "scripture" and "verses" not in value:
+                problems.append(f"{where}/{cycle}: scripture cycle has no verses")
+            elif effective == "composed" and "text" not in value:
+                problems.append(f"{where}/{cycle}: composed cycle has no text")
+            elif effective == "mixed" and not ("verses" in value and "text" in value):
+                problems.append(f"{where}/{cycle}: mixed cycle needs verses and text")
         if "verses" in proper or "text" in proper:
             problems.append(f"{where}: cycles excludes top-level verses and text")
+        return
+    if source not in SOURCES:
+        problems.append(f"{where}: source must be one of {SOURCES}, got {source!r}")
         return
     if source == "scripture":
         if "verses" not in proper:

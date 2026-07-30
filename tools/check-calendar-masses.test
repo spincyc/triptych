@@ -70,6 +70,65 @@ case "$out" in
 *) echo "expected 3 propers, got: $out" >&2; exit 1 ;;
 esac
 
+# A cycle-varying proper may declare its source per cycle instead of once.
+{
+	header
+	cat <<'YAML'
+  - key: mixed-kind-cycles
+    name: Mixed Kind Cycles
+    registry: "01"
+    season: test
+    propers:
+      - name: Gospel Acclamation
+        cycles:
+          A:
+            source: composed
+            text: |
+              Semen est verbum Dei.
+          B: {source: scripture, verses: ["Luke 4:18"]}
+          C: {source: scripture, verses: ["Luke 7:16"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+"$tool" --root src/sources/calendars >/dev/null
+
+# A cycle with neither its own source nor one on the proper is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: sourceless-cycle
+    name: Sourceless Cycle
+    registry: "01"
+    season: test
+    propers:
+      - name: Gospel Acclamation
+        cycles:
+          A: {verses: ["Luke 4:18"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a cycle with no source" >&2
+	exit 1
+fi
+
+# A composed cycle without text is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: textless-cycle
+    name: Textless Cycle
+    registry: "01"
+    season: test
+    propers:
+      - name: Gospel Acclamation
+        cycles:
+          A: {source: composed, verses: ["Luke 4:18"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a composed cycle without text" >&2
+	exit 1
+fi
+
 # A scripture proper carrying text is rejected.
 {
 	header
