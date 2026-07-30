@@ -11,6 +11,17 @@
       "stage": "draft",
       "usage": "artwork-library {check,normalize,identify,check-pdf} --help"
     },
+    "check-calendar-masses": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate the normalized YAML mass-proper indexes under src/sources/calendars.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-calendar-masses [--root DIR] [--calendar NAME]"
+    },
     "check-curriculum-structure": {
       "idempotent": true,
       "json": false,
