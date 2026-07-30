@@ -236,6 +236,58 @@ if run_tool check --root calendars >/dev/null 2>&1; then
 	exit 1
 fi
 
+# A verse beyond its own system's psalm is a numbering leak: Hebrew Psalm 9
+# ends at verse 21 where the Vulgate runs to 39.
+mkdir -p leak/heb
+{
+	sed 's/^psalm_numbering: vulgate$/psalm_numbering: hebrew/' <<'HDR'
+schema: triptych-calendar-masses/v1
+edition: test
+calendar: heb
+series: test
+ordering: test
+registry: test
+psalm_numbering: vulgate
+citation_convention: test
+orthography: test
+verification: unverified test fixture
+HDR
+	cat <<'YAML'
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
+  - key: t
+    name: T
+    registry: "t1"
+    season: advent
+    propers:
+    - name: Introit
+      source: scripture
+      verses:
+      - book: Psalms
+        ranges:
+        - begin: {chapter: 9, verse: 39}
+          end: {chapter: 9, verse: 39}
+        ref: 'Psalm 9:39'
+YAML
+} >leak/heb/propers.yaml
+if run_tool check --root leak >/dev/null 2>&1; then
+	echo "expected a hebrew calendar citing Psalm 9:39 to fail" >&2
+	exit 1
+fi
+if ! run_tool check --root leak 2>&1 | grep -q 'ends at verse 21'; then
+	echo "expected the psalm bound to be named" >&2
+	exit 1
+fi
+sed -i 's/^psalm_numbering: hebrew$/psalm_numbering: vulgate/' leak/heb/propers.yaml
+if ! run_tool check --root leak >/dev/null 2>&1; then
+	echo "Psalm 9:39 is valid under vulgate numbering" >&2
+	exit 1
+fi
+rm -rf leak
+
 # An empty root is an error, not a silent pass.
 mkdir -p empty-root
 if run_tool check --root empty-root >/dev/null 2>&1; then

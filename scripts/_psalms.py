@@ -248,3 +248,27 @@ def convert_range(
         ],
         caveats,
     )
+
+
+# Highest verse in each psalm that divides, per system. A reference beyond its
+# system's bound is a numbering leak: Hebrew 9 ends at 21 where Vulgate 9 runs
+# to 39, so `Psalm 9:39` in a Hebrew-declared calendar is citing the Vulgate.
+_VERSE_CEILING = {
+    "vulgate": {9: 39, 113: 26, 114: 9, 115: 19, 146: 11, 147: 20},
+    "hebrew": {9: 21, 10: 39, 114: 8, 115: 26, 116: 19, 147: 20},
+}
+LAST_PSALM = 150
+
+
+def validate_psalm(chapter: int, verse: int | None, system: str) -> str:
+    """Return a problem describing an impossible psalm reference, or ''."""
+    _check(system)
+    if not isinstance(chapter, int) or not 1 <= chapter <= LAST_PSALM:
+        return f"Psalm {chapter} is outside the psalter (1-{LAST_PSALM})"
+    ceiling = _VERSE_CEILING.get(system, {}).get(chapter)
+    if verse is not None and ceiling is not None and verse > ceiling:
+        return (
+            f"Psalm {chapter}:{verse} exceeds {system} Psalm {chapter}, "
+            f"which ends at verse {ceiling}"
+        )
+    return ""

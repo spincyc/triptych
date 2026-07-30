@@ -30,6 +30,7 @@ from pathlib import Path
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from _psalms import PSALMS, validate_psalm
 from _tooling import print_json, run_verb_cli
 
 DEFAULT_ROOT = Path("src/sources/calendars")
@@ -224,7 +225,9 @@ def parse_citation(text: str) -> dict[str, object]:
     return {"book": book, "ranges": ranges, "ref": stripped}
 
 
-def check_passage(where: str, passage: object, problems: list[str]) -> None:
+def check_passage(
+    where: str, passage: object, problems: list[str], numbering: str | None = None
+) -> None:
     if isinstance(passage, str):
         problems.append(f"{where}: citation is still a bare string: {passage!r}")
         return
@@ -238,6 +241,17 @@ def check_passage(where: str, passage: object, problems: list[str]) -> None:
     if not isinstance(ranges, list) or not ranges:
         problems.append(f"{where}: ranges must be a nonempty list")
         return
+    if book == PSALMS and numbering:
+        for entry in ranges:
+            if not isinstance(entry, dict):
+                continue
+            for edge in ("begin", "end"):
+                point = entry.get(edge)
+                if not isinstance(point, dict):
+                    continue
+                trouble = validate_psalm(point.get("chapter"), point.get("verse"), numbering)
+                if trouble:
+                    problems.append(f"{where}/{edge}: {trouble}")
     for index, extent in enumerate(ranges):
         scope = f"{where}/range[{index}]"
         if not isinstance(extent, dict):
@@ -419,19 +433,20 @@ def check(root: Path) -> dict[str, object]:
     for path in indexes(root):
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
         passages = 0
+        before = len(problems)
         books: set[str] = set()
+        numbering = document.get("psalm_numbering") if isinstance(document, dict) else None
         for label, proper in each_proper(document):
             for suffix, owner, key in verse_lists(proper):
                 for passage in owner[key]:
-                    check_passage(f"{label}{suffix}", passage, problems)
+                    check_passage(f"{label}{suffix}", passage, problems, numbering)
                     passages += 1
                     if isinstance(passage, dict) and passage.get("book") in CANONICAL:
                         books.add(passage["book"])
         files[path.as_posix()] = {"passages": passages, "books": len(books)}
-        problems[:] = [
-            problem if problem.startswith(str(path)) else f"{path}: {problem}"
-            for problem in problems
-        ]
+        # Prefix only this file's own problems; re-prefixing the whole list
+        # stamped earlier files' problems with a later file's name.
+        problems[before:] = [f"{path}: {problem}" for problem in problems[before:]]
     return {
         "files": files,
         "problems": problems,
