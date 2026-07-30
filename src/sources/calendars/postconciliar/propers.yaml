@@ -2443,7 +2443,11 @@ masses:
 
       '
 sections:
-  mary:
+  seasonal:
+    kind: temporal
+    label: Seasonal
+    masses: []
+  marian:
     kind: marian
     label: Marian
     masses:
@@ -2703,7 +2707,7 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
-  saints:
+  saintly:
     kind: saints
     label: Saints
     masses:

@@ -3,7 +3,7 @@
 Normalized YAML indexes of Roman-rite mass formularies and their ordered
 propers, one directory per calendar and one file per deterministic series.
 For sanctoral propers, each calendar now uses one `propers.yaml` with
-separate, labeled sections (`mary`, `christological`, and `saints`).
+separate, labeled sections (`marian`, `christological`, and `saintly`).
 `guidance/sources.md` owns the contract; this file records what is here and how
 to read it.
 
@@ -11,10 +11,10 @@ to read it.
 src/sources/calendars/
   roman-1962/
     sundays.yaml        # 52 temporal Sundays plus the three Triduum identities
-    propers.yaml        # consolidated sanctoral propers (mary/christological/saints)
+    propers.yaml        # consolidated sanctoral propers (marian/christological/saintly)
   postconciliar/
     sundays.yaml        # PC-S01-PC-S60 plus the three PC-T Triduum identities
-    propers.yaml        # consolidated sanctoral propers (mary/christological/saints)
+    propers.yaml        # consolidated sanctoral propers (marian/christological/saintly)
 ```
 
 ## What an index is
