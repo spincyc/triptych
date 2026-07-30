@@ -23,7 +23,7 @@ if sys.version_info < (3, 11):
 import tomllib
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 ID_PATTERN = re.compile(r"^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$")
 KEBAB_PATTERN = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$")
 SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
@@ -1765,6 +1765,11 @@ def _validate_source_tree(library: Library) -> None:
         if relative.parts[0] == "schema" and entry.suffix in {".json", ".md", ".toml"}:
             continue
         if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
+            continue
+        # Calendar and commentary records are tracked sources with their own
+        # validators (check-calendar-masses, citations); the bibliographic
+        # schema does not own them.
+        if relative.parts[0] in {"calendars", "commentary"} and entry.suffix in {".md", ".yaml"}:
             continue
         if entry.resolve() in library.payload_paths:
             continue

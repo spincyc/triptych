@@ -121,7 +121,6 @@ if [ "$first" != "$second" ]; then
 fi
 
 # The encoded form reports no bare strings left, and counts the passages.
-out="$("$tool" check --root calendars --json)"
 out="$(run_tool check --root calendars --json)"
 case "$out" in
 *'"status":"ok"'*) ;;
@@ -219,7 +218,7 @@ fi
 
 # An empty root is an error, not a silent pass.
 mkdir -p empty-root
-if "$tool" check --root empty-root >/dev/null 2>&1; then
+if run_tool check --root empty-root >/dev/null 2>&1; then
 	echo "expected failure for a root with no index" >&2
 	exit 1
 fi

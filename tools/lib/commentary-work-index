@@ -22,7 +22,7 @@ from importlib.machinery import SourceFileLoader
 from pathlib import Path
 from typing import Any
 
-TOOLING_ROOT = Path(__file__).resolve().parent.parent / "tools"
+TOOLING_ROOT = Path(__file__).resolve().parent
 if str(TOOLING_ROOT) not in sys.path:
     sys.path.insert(0, str(TOOLING_ROOT))
 
@@ -71,7 +71,7 @@ def _dump_yaml(payload: Any) -> str:
 
 
 def _load_citations_tool():
-    path = Path(__file__).resolve().parent.parent / "tools" / "citations"
+    path = Path(__file__).with_name("citations")
     module = SourceFileLoader("triptych_citations", str(path)).load_module()
     return module
 

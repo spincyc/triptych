@@ -21,7 +21,7 @@ from urllib.parse import unquote, urlsplit
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 MANIFEST_PATH = ROOT / "release/public-alpha.json"
 TEMPLATE_ROOT = ROOT / "release/public-alpha"
 OUTPUT_ROOT = ROOT / "build/public-alpha"

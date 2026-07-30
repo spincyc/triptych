@@ -10,7 +10,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SHIM = Path(__file__).resolve().parent / "web-shim.tex"
 SRC = ROOT / "src"
 OUT = ROOT / "build" / "web"

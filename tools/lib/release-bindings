@@ -20,9 +20,9 @@ import sys
 import zoneinfo
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "release" / "public-alpha.json"
-PUBLIC_ALPHA = ROOT / "scripts" / "public-alpha"
+PUBLIC_ALPHA = Path(__file__).with_name("public-alpha")
 
 SNAPSHOT_HEADER = "## Exact approved snapshots"
 SITE_HEADER = "## Exact approved reader-facing site sources"

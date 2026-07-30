@@ -90,6 +90,11 @@ BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := tools/tpt check-generation-metadata
+# A launcher invocation is two words. Make would read it as two prerequisites
+# and sha256sum would look for a file whose name contains a space, so
+# prerequisite and hash sites must name the implementation file instead.
+METADATA_CHECKER_IMPL := tools/lib/check-generation-metadata
+CURRICULUM_STRUCTURE_CHECKER_IMPL := tools/lib/check-curriculum-structure
 PROPER_COMPONENT_CHECKER := tools/tpt check-proper-components
 WEB_EDITION_CHECKER := tools/tpt check-web-edition
 WEB_EDITION_TOOL := tools/tpt web-edition
@@ -132,7 +137,7 @@ ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS := $(filter \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/%,$(BUILD_PDFS))
 ROMAN_SANCTUARY_DICTIONARY_GENERATED := \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated
-ROMAN_SANCTUARY_DICTIONARY_GENERATOR := tools/tpt roman-sanctuary-dictionary
+ROMAN_SANCTUARY_DICTIONARY_GENERATOR := tools/tpt render-sanctuary-dictionary
 # 1962 proper full-text editions: each imports its study edition's sections and
 # format from the sibling leaf at the same id without the -full-text suffix.
 ROMAN_1962_FULL_TEXT_DOCUMENTS := $(filter \
@@ -246,7 +251,7 @@ install: check-metadata $(DOC_PDFS)
 		stamp='$(BUILD_ROOT)/.metadata/'$$document.ok; \
 		pdf_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_hash=$${pdf_line%% *}; \
-		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_hash=$${validator_line%% *}; \
 		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
 			'$(PROVIDER)' "$$document" "$$pdf_hash" "$$validator_hash"); \
@@ -566,7 +571,7 @@ install-altar-server-guides: review-altar-server-guides \
 			pdf='$(BUILD_ROOT)/'$$document.pdf; \
 			stamp='$(BUILD_ROOT)/.metadata/'$$document.ok; \
 			pdf_line=$$($(SHA256) -- "$$pdf"); pdf_hash=$${pdf_line%% *}; \
-			validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+			validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 			validator_hash=$${validator_line%% *}; \
 			expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
 				'$(PROVIDER)' "$$document" "$$pdf_hash" "$$validator_hash"); \
@@ -669,7 +674,7 @@ $(BUILD_ROOT)/%-synthesis.pdf:
 	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' '$@'
 	@set -eu; \
 		pdf_line=$$($(SHA256) -- '$@'); pdf_hash=$${pdf_line%% *}; \
-		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_hash=$${validator_line%% *}; \
 		printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s\n' \
 			'$(PROVIDER)' '$*-synthesis' "$$pdf_hash" "$$validator_hash" \
@@ -696,12 +701,12 @@ $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadat
 		stamp='$(BUILD_ROOT)/.metadata/$*.ok'; \
 		pdf_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_hash=$${pdf_line%% *}; \
-		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_hash=$${validator_line%% *}; \
 		$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' "$$pdf"; \
 		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_after_hash=$${pdf_after_line%% *}; \
-		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_after_hash=$${validator_after_line%% *}; \
 		if [ "$$pdf_hash" != "$$pdf_after_hash" ] || [ "$$validator_hash" != "$$validator_after_hash" ]; then \
 			echo 'PDF or metadata checker changed during validation: $*' >&2; \
@@ -714,13 +719,13 @@ $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadat
 		mv -f -- "$$temporary" "$$stamp"; \
 		trap - 0 1 2 15
 
-$(BUILD_ROOT)/.metadata/%.ok: $(BUILD_ROOT)/%.pdf $(METADATA_CHECKER)
+$(BUILD_ROOT)/.metadata/%.ok: $(BUILD_ROOT)/%.pdf $(METADATA_CHECKER_IMPL)
 	@set -eu; \
 		pdf='$<'; \
 		stamp='$@'; \
 		pdf_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_hash=$${pdf_line%% *}; \
-		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_hash=$${validator_line%% *}; \
 		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
 			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash"); \
@@ -730,7 +735,7 @@ $(BUILD_ROOT)/.metadata/%.ok: $(BUILD_ROOT)/%.pdf $(METADATA_CHECKER)
 		$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' "$$pdf"; \
 		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_after_hash=$${pdf_after_line%% *}; \
-		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_after_hash=$${validator_after_line%% *}; \
 		if [ "$$pdf_hash" != "$$pdf_after_hash" ] || [ "$$validator_hash" != "$$validator_after_hash" ]; then \
 			echo 'PDF or metadata checker changed during validation: $*' >&2; \
@@ -752,7 +757,7 @@ $(BUILD_ROOT)/.metadata/%.verify: $(BUILD_ROOT)/.metadata/%.ok FORCE_METADATA_VE
 		stamp='$<'; \
 		pdf_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_hash=$${pdf_line%% *}; \
-		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_hash=$${validator_line%% *}; \
 		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
 			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash"); \
@@ -769,7 +774,7 @@ $(BUILD_ROOT)/.metadata/%.verify: $(BUILD_ROOT)/.metadata/%.ok FORCE_METADATA_VE
 		$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' "$$pdf"; \
 		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_after_hash=$${pdf_after_line%% *}; \
-		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_after_hash=$${validator_after_line%% *}; \
 		if [ "$$pdf_hash" != "$$pdf_after_hash" ] || [ "$$validator_hash" != "$$validator_after_hash" ]; then \
 			echo 'PDF or metadata checker changed during validation: $*' >&2; \
@@ -784,7 +789,7 @@ $(BUILD_ROOT)/.metadata/%.verify: $(BUILD_ROOT)/.metadata/%.ok FORCE_METADATA_VE
 
 $(ECCLESIASTICAL_LATIN_BUILD_PDFS): \
 	$(ECCLESIASTICAL_LATIN_SHARED) \
-	$(CURRICULUM_STRUCTURE_CHECKER) | check-curriculum-sources
+	$(CURRICULUM_STRUCTURE_CHECKER_IMPL) | check-curriculum-sources
 $(ALTAR_SERVER_GUIDES_BUILD_PDFS): $(ALTAR_SERVER_GUIDES_SHARED)
 .PHONY: generate-roman-sanctuary-dictionary
 generate-roman-sanctuary-dictionary:
@@ -866,7 +871,7 @@ $(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata $(BUILD_ROOT)/.metadata/
 		mkdir -p '$(@D)'; \
 		pdf_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_hash=$${pdf_line%% *}; \
-		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_hash=$${validator_line%% *}; \
 		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
 			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash"); \
@@ -879,7 +884,7 @@ $(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata $(BUILD_ROOT)/.metadata/
 		temporary_hash=$${temporary_line%% *}; \
 		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
 		pdf_after_hash=$${pdf_after_line%% *}; \
-		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
 		validator_after_hash=$${validator_after_line%% *}; \
 		if [ "$$temporary_hash" != "$$pdf_hash" ] || [ "$$pdf_after_hash" != "$$pdf_hash" ] || [ "$$validator_after_hash" != "$$validator_hash" ]; then \
 			echo 'PDF or metadata checker changed during install: $*' >&2; \

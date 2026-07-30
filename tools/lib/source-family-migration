@@ -23,7 +23,7 @@ if sys.version_info < (3, 11):
 import tomllib
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_LEDGER = Path("src/sources/inventories/source-family-migration-v1.toml")
 DEFAULT_INVENTORY = Path("src/sources/inventories/publications-v1.toml")
 DEFAULT_CLASSIFICATION_REVIEW = Path(

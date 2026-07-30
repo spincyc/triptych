@@ -56,7 +56,26 @@ class MakefileBuildGraphTests(unittest.TestCase):
 
         scripts = self.root / "scripts"
         scripts.mkdir()
-        self.checker = scripts / "check-generation-metadata"
+        library = self.root / "tools" / "lib"
+        library.mkdir(parents=True)
+        (self.root / "tools" / "tests").mkdir()
+        launcher = self.root / "tools" / "tpt"
+        launcher.write_text(
+            """#!/usr/bin/env python3
+import os
+import sys
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+target = os.path.join(root, "tools", "lib", sys.argv[1])
+if not os.path.exists(target):
+    sys.stderr.write("stub tpt: no fake tool for %s\\n" % sys.argv[1])
+    raise SystemExit(127)
+os.execv(target, [target] + sys.argv[2:])
+""",
+            encoding="utf-8",
+        )
+        launcher.chmod(0o755)
+        self.checker = library / "check-generation-metadata"
         self.checker.write_text(
             """#!/bin/sh
 printf '%s\\n' "$*" >> "$MAKE_TEST_CHECK_LOG"
@@ -72,7 +91,7 @@ fi
         )
         self.checker.chmod(0o755)
 
-        self.structure_checker = scripts / "check-curriculum-structure"
+        self.structure_checker = library / "check-curriculum-structure"
         self.structure_checker.write_text(
             """#!/usr/bin/env python3
 import os
@@ -92,7 +111,7 @@ if "--sources-only" not in arguments:
         )
         self.structure_checker.chmod(0o755)
 
-        self.pdf_review = scripts / "pdf-review"
+        self.pdf_review = library / "pdf-review"
         self.pdf_review.write_text(
             """#!/usr/bin/env python3
 import os
@@ -105,7 +124,7 @@ with open(os.environ["MAKE_TEST_REVIEW_LOG"], "a", encoding="utf-8") as log:
         )
         self.pdf_review.chmod(0o755)
 
-        self.source_library = scripts / "source-library"
+        self.source_library = library / "source-library"
         self.source_library.write_text(
             """#!/usr/bin/env python3
 import os
@@ -120,7 +139,7 @@ with open(os.environ["MAKE_TEST_SOURCE_GATE_ORDER_LOG"], "a", encoding="utf-8") 
         )
         self.source_library.chmod(0o755)
 
-        self.source_inventory = scripts / "source-inventory"
+        self.source_inventory = library / "source-inventory"
         self.source_inventory.write_text(
             """#!/usr/bin/env python3
 import os
@@ -135,7 +154,7 @@ with open(os.environ["MAKE_TEST_SOURCE_GATE_ORDER_LOG"], "a", encoding="utf-8") 
         )
         self.source_inventory.chmod(0o755)
 
-        self.source_family_migration = scripts / "source-family-migration"
+        self.source_family_migration = library / "source-family-migration"
         self.source_family_migration.write_text(
             """#!/usr/bin/env python3
 import os

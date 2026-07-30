@@ -27,7 +27,7 @@ import time
 import uuid
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT = ROOT / "build/pdf-review"
 MIB = 1024 * 1024
 GIB = 1024 * MIB

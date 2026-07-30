@@ -536,7 +536,7 @@ TEX_ESCAPE = str.maketrans({
     "~": r"\~{}",
 })
 
-REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 DICTIONARY_PREFIX = (
     "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/"
 )
