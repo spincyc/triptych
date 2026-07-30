@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from typing import Callable
 
@@ -79,6 +80,11 @@ def run_verb_cli(
                         status,
                         prefix,
                     )
+        # An unmapped exception is a defect, not a data-validation failure.
+        # The friendly one-line form makes the two indistinguishable, so keep
+        # an escape hatch for diagnosing one.
+        if os.environ.get("TPT_TRACEBACK"):
+            raise
         return fail(
             str(error) or error.__class__.__name__,
             "internal",
