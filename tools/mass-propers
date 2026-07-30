@@ -65,15 +65,15 @@ def propers_of(mass: dict) -> list[tuple[str, dict]]:
     return out
 
 
-def load_bible(name: str) -> dict:
+def load_bible(name: str, root: Path) -> dict:
     """Resolve an indexed bible, keyed by the citations-encoded passage."""
     import yaml
 
-    path = BIBLE_ROOT / name / "index.yaml"
+    path = root / name / "index.yaml"
     if not path.is_file():
         available = (
-            sorted(p.name for p in BIBLE_ROOT.iterdir() if (p / "index.yaml").is_file())
-            if BIBLE_ROOT.is_dir()
+            sorted(p.name for p in root.iterdir() if (p / "index.yaml").is_file())
+            if root.is_dir()
             else []
         )
         raise ValueError(
@@ -104,7 +104,9 @@ def run_show(arguments: argparse.Namespace) -> dict:
         raise ValueError("--mass is required")
     payload = find_mass(Path(arguments.root), arguments.calendar, arguments.mass)
     # Validate the selection here so a missing bible fails before rendering.
-    arguments.resolved_bible = load_bible(arguments.bible) if arguments.bible else {}
+    arguments.resolved_bible = (
+        load_bible(arguments.bible, Path(arguments.bible_root)) if arguments.bible else {}
+    )
     return payload
 
 
@@ -217,6 +219,12 @@ def main(argv: list[str] | None = None) -> int:
     )
     shared.add_argument(
         "--lang", default="la", help="language for composed propers (default: la)"
+    )
+    shared.add_argument(
+        "--bible-root",
+        default=str(BIBLE_ROOT),
+        help="where indexed bibles live; point outside the repo to keep a "
+        "licensed text unpublished",
     )
     shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
