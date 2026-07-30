@@ -30,6 +30,27 @@ controlling edition. Each file states this in its `verification` field and
 tracks known divergences in `open_collation_items`. Fix a divergence by
 collation, not by harmonizing the file into false uniformity.
 
+## Translations
+
+A proper that carries `text` may carry `translations`, a list of renderings in
+other languages. Each entry needs `lang`, `text`, and a `rights` basis of
+`public-domain`, `licensed`, or `project-created`. A public-domain or licensed
+translation names its `source_id`; a licensed one also carries the `notice` its
+licensor requires. Languages may not repeat within a proper.
+
+```yaml
+translations:
+- lang: en
+  rights: licensed
+  source_id: work.icel.roman-missal-2011
+  notice: 'Excerpts from the English translation of The Roman Missal (c) 2010, ICEL.'
+  text: |
+    Stir up thy power, O Lord, and come...
+```
+
+A translation is someone's expression and is not relicensed by inclusion; see
+`THIRD_PARTY.md`.
+
 ## Entry shape
 
 Each file is a mapping with an identifying header and a `sections` map. Each

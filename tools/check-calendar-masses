@@ -21,6 +21,10 @@ from _tooling import print_json, run_verb_cli
 
 DEFAULT_ROOT = Path("src/sources/calendars")
 SCHEMA = "triptych-calendar-masses/v1"
+# A translation is carried on exactly one of these bases; project-created
+# work is CC BY 4.0 only when its authorship is identified as such.
+TRANSLATION_RIGHTS = {"public-domain", "licensed", "project-created"}
+
 REQUIRED_HEADER = (
     "calendar",
     "citation_convention",
@@ -99,6 +103,47 @@ def check_proper(where: str, proper: object, problems: list[str]) -> None:
     elif "verses" not in proper or "text" not in proper:
         problems.append(f"{where}: mixed proper needs both verses and text")
     check_verses(where, proper.get("verses"), problems)
+    check_translations(where, proper, problems)
+
+
+def check_translations(where: str, proper: dict, problems: list[str]) -> None:
+    """A translation is someone's expression; it carries its own rights basis.
+
+    Liturgical translations are not relicensed by inclusion, so each one names
+    the edition it came from and the basis on which it is carried.
+    """
+    payload = proper.get("translations")
+    if payload is None:
+        return
+    if "text" not in proper:
+        problems.append(f"{where}: translations require a text to translate")
+    if not isinstance(payload, list) or not payload:
+        problems.append(f"{where}: translations must be a nonempty list")
+        return
+    seen: list[str] = []
+    for index, entry in enumerate(payload):
+        label = f"{where}.translations[{index}]"
+        if not isinstance(entry, dict):
+            problems.append(f"{label}: must be a mapping")
+            continue
+        for field in ("lang", "text", "rights"):
+            value = entry.get(field)
+            if not isinstance(value, str) or not value.strip():
+                problems.append(f"{label}: {field} must be a nonempty string")
+        rights = entry.get("rights")
+        if isinstance(rights, str) and rights not in TRANSLATION_RIGHTS:
+            problems.append(
+                f"{label}: rights must be one of {sorted(TRANSLATION_RIGHTS)}, got {rights!r}"
+            )
+        if rights in {"licensed", "public-domain"} and not entry.get("source_id"):
+            problems.append(f"{label}: {rights} translation must name its source_id")
+        if rights == "licensed" and not entry.get("notice"):
+            problems.append(f"{label}: licensed translation must carry its required notice")
+        lang = entry.get("lang")
+        if isinstance(lang, str):
+            if lang in seen:
+                problems.append(f"{label}: duplicate translation language {lang!r}")
+            seen.append(lang)
 
 
 def check_verses(where: str, verses: object, problems: list[str]) -> None:

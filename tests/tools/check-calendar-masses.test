@@ -450,6 +450,62 @@ if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	exit 1
 fi
 
+# A translation carries its own rights basis; a licensed one names its source
+# and its required notice, and languages may not repeat within a proper.
+translated() {
+	rm -rf tr-root
+	mkdir -p tr-root/tr
+	{ header; cat; } >tr-root/tr/propers.yaml
+}
+base='  - key: t
+    name: T
+    registry: "t1"
+    season: advent
+    propers:
+    - name: Collect
+      source: composed
+      text: "Excita, quaesumus, Domine."'
+
+translated <<YAML
+$base
+      translations:
+      - lang: en
+        rights: licensed
+        source_id: work.icel.roman-missal-2011
+        notice: "Excerpts (c) 2010 ICEL."
+        text: "Stir up thy power."
+YAML
+if ! "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
+	echo "a fully specified licensed translation should validate" >&2
+	exit 1
+fi
+
+for bad in "rights: vibes" "rights: licensed"; do
+	translated <<YAML
+$base
+      translations:
+      - lang: en
+        $bad
+        text: "Stir up thy power."
+YAML
+	if "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
+		echo "expected failure for translation with $bad and no attribution" >&2
+		exit 1
+	fi
+done
+
+translated <<YAML
+$base
+      translations:
+      - {lang: en, rights: project-created, text: "a"}
+      - {lang: en, rights: project-created, text: "b"}
+YAML
+if "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
+	echo "expected failure for a duplicated translation language" >&2
+	exit 1
+fi
+rm -rf tr-root
+
 # A root with no index is an error, not a silent pass.
 mkdir -p empty-root
 if "$tpt" "$tool" --root empty-root >/dev/null 2>&1; then

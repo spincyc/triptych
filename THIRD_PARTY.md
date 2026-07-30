@@ -61,7 +61,14 @@ In particular:
 - `src/gpt/liturgy/roman-rite/1962/propers/**/propers/retrieved.txt` contains
   focused OCR source extracts and is not offered under CC BY 4.0; and
 - the liturgical-text portions of the corresponding `propers/verified.md`
-  files, document sources, and PDFs are not offered under CC BY 4.0.
+  files, document sources, and PDFs are not offered under CC BY 4.0; and
+- English translations carried in the calendar mass indexes under
+  `src/sources/calendars/**/propers.yaml` are recorded per proper with their
+  own `rights` basis and, where licensed, the notice their licensor requires.
+  The English translation of *The Roman Missal*, third edition, is copyright
+  the International Commission on English in the Liturgy Corporation and is
+  carried under permission granted to this project; it is not relicensed and
+  is not offered under CC BY 4.0.
 
 Their inclusion as evidence or text for study is not a representation that
 they may be extracted and redistributed independently. Their redistribution
