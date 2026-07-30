@@ -169,6 +169,7 @@ mkdir -p "$sandbox/calendars/testcal"
 cat >"$sandbox/calendars/testcal/propers.yaml" <<'YAML'
 schema: triptych-calendar-masses/v1
 calendar: testcal
+psalm_numbering: vulgate
 sections:
  seasonal:
   kind: seasonal

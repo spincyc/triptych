@@ -26,12 +26,50 @@ from typing import Any
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from _psalms import PSALMS, NumberingError, convert_point
 from _tooling import print_json, run_verb_cli
 
 SCHEMA_DISCOVERY = "triptych-commentary-work-index/v1"
 SCHEMA_CORPUS = "triptych-missal-commentary-corpus/v1"
 
 DEFAULT_ROOT = Path("src/sources/calendars")
+# The corpus unions both missals, which number the psalter differently, so
+# every psalm reference is normalised to one system before it becomes a key.
+# Vulgate, because the patristic works the corpus exists to acquire are
+# numbered that way throughout.
+CANONICAL_NUMBERING = "vulgate"
+NUMBERING_SYSTEMS = ("vulgate", "hebrew")
+
+
+def _canonical_passage(record: dict[str, Any], source: str) -> dict[str, Any]:
+    """Renumber a psalm passage into the canonical system."""
+    if not isinstance(record, dict):
+        return record
+    if record.get("book") != PSALMS or source == CANONICAL_NUMBERING:
+        # Still re-render, so every key uses one spelling regardless of system.
+        canonical = dict(record)
+        canonical["ref"] = _normalize_ref_from_record(canonical)
+        return canonical
+    ranges = []
+    for entry in record.get("ranges") or []:
+        begin = dict(entry.get("begin") or {})
+        end = dict(entry.get("end") or begin)
+        b_ch, b_v, _ = convert_point(
+            begin.get("chapter"), begin.get("verse"), source, CANONICAL_NUMBERING
+        )
+        e_ch, e_v, _ = convert_point(
+            end.get("chapter", begin.get("chapter")), end.get("verse"),
+            source, CANONICAL_NUMBERING,
+        )
+        ranges.append(
+            {**entry, "begin": {**begin, "chapter": b_ch, "verse": b_v},
+             "end": {**end, "chapter": e_ch, "verse": e_v}}
+        )
+    canonical = {**record, "ranges": ranges}
+    canonical["ref"] = _normalize_ref_from_record(canonical)
+    return canonical
+
+
 DEFAULT_DISCOVERY_PATH = Path("src/sources/commentary/passage-commentary-index.yaml")
 DEFAULT_CORPUS_PATH = Path("src/sources/commentary/mass-commentary-corpus.yaml")
 DEFAULT_CALENDARS = ("roman-1962", "postconciliar")
@@ -363,6 +401,12 @@ def _iter_calendar_masses(doc: dict[str, Any]):
 
 
 def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list[dict[str, Any]]:
+    numbering = _coerce_str(doc.get("psalm_numbering"))
+    if numbering not in NUMBERING_SYSTEMS:
+        raise ValueError(
+            f"{calendar}: psalm_numbering must be one of {list(NUMBERING_SYSTEMS)}, "
+            f"got {numbering!r}; without it psalm references cannot be unioned"
+        )
     entries: list[dict[str, Any]] = []
 
     for entry, section_kind in _iter_calendar_masses(doc):
@@ -387,6 +431,7 @@ def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list
                         "date": date,
                         "proper_slot": slot_name,
                         "passage": passage,
+                        "numbering": numbering,
                         "source_category": "base",
                     }
                 )
@@ -410,6 +455,7 @@ def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list
                             "date": date,
                             "proper_slot": slot_name,
                             "passage": passage,
+                            "numbering": numbering,
                             "source_category": "form",
                         }
                     )
@@ -450,7 +496,10 @@ def _build_mass_coverage(
 
     for item in records:
         mass_id = f"{item['calendar']}::{item['mass_key']}"
-        passage_ref = item["passage"]["ref"]
+        cited_ref = item["passage"]["ref"]
+        canonical = _canonical_passage(item["passage"], item.get("numbering", CANONICAL_NUMBERING))
+        passage_ref = canonical["ref"]
+        item = {**item, "passage": canonical, "cited_ref": cited_ref}
         mass_seen.setdefault(
             mass_id,
             {
