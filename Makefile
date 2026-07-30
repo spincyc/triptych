@@ -307,7 +307,7 @@ install-dependencies-arch:
 	done
 
 check-pdf-review:
-	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_pdf_review.py' -v
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_pdf_review.py' -v
 
 check-deployment-sources:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
@@ -325,19 +325,19 @@ check-sources: check-deployment-sources
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 check-source-library:
-	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_source_library.py' -v
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_source_library.py' -v
 
 check-source-inventory:
 	@$(PYTHON) $(SOURCE_INVENTORY_TOOL) check
 
 check-source-inventory-tool:
-	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_source_inventory.py' -v
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_source_inventory.py' -v
 
 check-source-family-migration:
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 check-source-family-migration-tool:
-	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_source_family_migration.py' -v
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_source_family_migration.py' -v
 
 check-source-family-screening:
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check --require-family-screened
@@ -631,7 +631,7 @@ check-calendar-masses:
 	else echo "PyYAML missing; skipping calendar-mass check"; fi
 
 check-tests:
-	@$(PYTHON) -m unittest discover -s scripts/tests
+	@$(PYTHON) -m unittest discover -s tools/tests
 
 # Register only render-capable files owned by a document leaf. Research and
 # retrieval records remain authoritative tracked sources, but changing one does

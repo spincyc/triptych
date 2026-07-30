@@ -572,7 +572,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
 
     def test_pdf_replaced_during_copy_is_not_installed(self) -> None:
         self.run_make("pdf")
-        mutating_install = self.root / "scripts/mutating-install"
+        mutating_install = self.root / "tools/tests/mutating-install"
         mutating_install.write_text(
             """#!/bin/sh
 printf 'replacement during copy\\n' > "$3"
