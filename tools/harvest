@@ -1,0 +1,504 @@
+#!/usr/bin/env python3
+"""Harvest candidate commentary works for scripture passages.
+
+The harvest itself consults a model, which is not reproducible, so this tool
+never calls one. It emits a worklist, ingests one run's results into a dated
+ledger, and derives confidence from agreement across runs. Every step here is
+deterministic and the nondeterminism stays visible in the ledger, where the
+model identity and date are recorded alongside what it said.
+
+  plan     passages still needing harvest, as a worklist
+  record   one run's results into the ledger, validated
+  promote  the ledger into the discovery index, confidence = appearances / runs
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import print_json, run_verb_cli  # noqa: E402
+
+LEDGER = ROOT / "src" / "sources" / "commentary" / "harvest-ledger.yaml"
+INDEX = ROOT / "src" / "sources" / "commentary" / "passage-commentary-index.yaml"
+SCHEMA = "triptych-commentary-harvest/v1"
+INDEX_SCHEMA = "triptych-commentary-work-index/v1"
+# Works whose author died after this are outside the harvest.
+CUTOFF_YEAR = 1900
+ROLES = ("church-father", "saint", "saintly", "pope", "doctor")
+
+
+def _load(path: Path) -> dict:
+    import yaml
+
+    if not path.is_file():
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+
+def _dump(path: Path, payload: dict) -> None:
+    import yaml
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        yaml.safe_dump(payload, sort_keys=False, allow_unicode=True, width=88),
+        encoding="utf-8",
+    )
+
+
+def _ledger_runs(ledger: dict) -> list[dict]:
+    return [r for r in (ledger.get("runs") or []) if isinstance(r, dict)]
+
+
+def _chapter_loci(passage: str) -> list[str]:
+    """Split a reference into one locus per chapter, never wider.
+
+    A query may cover at most a single chapter: grouping across chapters drops
+    works that comment on only one of them. Isaiah 63:16-64:7 is therefore two
+    queries, not one, which costs more queries and loses nothing.
+    """
+    import re
+
+    match = re.match(r"^(.*?)\s+(\d.*)$", passage.strip())
+    if not match:
+        return [passage]
+    book, tail = match.group(1), match.group(2)
+    chapters: list[str] = []
+    for chapter in re.findall(r"(\d+):", tail) or re.findall(r"^(\d+)$", tail):
+        locus = f"{book} {chapter}"
+        if locus not in chapters:
+            chapters.append(locus)
+    return chapters or [passage]
+
+
+def run_plan(arguments: argparse.Namespace) -> dict:
+    """Passages that still need harvesting, with how many runs each has."""
+    corpus = _load(Path(arguments.corpus)) if arguments.corpus else {}
+    if corpus:
+        wanted = [p["passage"] for p in corpus.get("passages") or [] if p.get("passage")]
+    else:
+        raise ValueError("--corpus is required; build it with commentary-work-index")
+    seen: dict[str, int] = defaultdict(int)
+    for run in _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER)))):
+        for passage in (run.get("passages") or {}):
+            seen[passage] += 1
+    target = arguments.runs
+    if arguments.by_chapter:
+        loci: list[str] = []
+        for passage in wanted:
+            for locus in _chapter_loci(passage):
+                if locus not in loci:
+                    loci.append(locus)
+        wanted = loci
+    pending = [p for p in wanted if seen[p] < target]
+    if arguments.limit:
+        pending = pending[: arguments.limit]
+    return {
+        "target_runs": target,
+        "total": len(wanted),
+        "pending": len(pending),
+        "cutoff_year": CUTOFF_YEAR,
+        "roles": list(ROLES),
+        "passages": [{"passage": p, "runs": seen[p]} for p in pending],
+    }
+
+
+def _check_work(work: dict, where: str, problems: list[str]) -> None:
+    for field in ("author", "title", "role"):
+        if not str(work.get(field) or "").strip():
+            problems.append(f"{where}: {field} is required")
+    if work.get("role") not in ROLES:
+        problems.append(f"{where}: role must be one of {list(ROLES)}, got {work.get('role')!r}")
+    death = work.get("death_year")
+    if not isinstance(death, int):
+        problems.append(f"{where}: death_year must be an integer so the cutoff is checkable")
+    elif death > CUTOFF_YEAR:
+        problems.append(f"{where}: death_year {death} is after the {CUTOFF_YEAR} cutoff")
+
+
+def run_record(arguments: argparse.Namespace) -> dict:
+    """Ingest one run. The model and date are recorded, not inferred."""
+    results = _load(Path(arguments.results))
+    passages = results.get("passages")
+    if not isinstance(passages, dict) or not passages:
+        raise ValueError(f"{arguments.results}: no passages mapping")
+    problems: list[str] = []
+    cleaned: dict[str, list[dict]] = {}
+    for passage, works in sorted(passages.items()):
+        if not isinstance(works, list):
+            problems.append(f"{passage}: works must be a list")
+            continue
+        kept = []
+        for index, work in enumerate(works):
+            if not isinstance(work, dict):
+                problems.append(f"{passage}[{index}]: work must be a mapping")
+                continue
+            _check_work(work, f"{passage}[{index}]", problems)
+            kept.append(
+                {
+                    "author": str(work.get("author", "")).strip(),
+                    "title": str(work.get("title", "")).strip(),
+                    "role": work.get("role"),
+                    "death_year": work.get("death_year"),
+                    **({"aliases": sorted({str(a).strip() for a in work["aliases"] if str(a).strip()})}
+                       if work.get("aliases") else {}),
+                    **({"work_id": work["work_id"]} if work.get("work_id") else {}),
+                }
+            )
+        cleaned[str(passage)] = kept
+    if problems:
+        raise ValueError("; ".join(problems[:6]) + (f"; +{len(problems) - 6} more" if len(problems) > 6 else ""))
+
+    ledger = _load(Path(getattr(arguments, 'ledger', LEDGER))) or {"schema": SCHEMA, "runs": []}
+    digest = hashlib.sha256(
+        json.dumps(cleaned, sort_keys=True, ensure_ascii=False).encode()
+    ).hexdigest()
+    run_id = f"{arguments.audited_on}-{arguments.model}-{digest[:8]}"
+    runs = _ledger_runs(ledger)
+    if any(r.get("run_id") == run_id for r in runs):
+        return {"status": "already recorded", "run_id": run_id, "runs": len(runs)}
+    runs.append(
+        {
+            "run_id": run_id,
+            "model": arguments.model,
+            "audited_on": arguments.audited_on,
+            "passage_count": len(cleaned),
+            "passages": cleaned,
+        }
+    )
+    ledger["schema"] = SCHEMA
+    ledger["runs"] = sorted(runs, key=lambda r: r["run_id"])
+    _dump(Path(getattr(arguments, 'ledger', LEDGER)), ledger)
+    return {"status": "recorded", "run_id": run_id, "passages": len(cleaned), "runs": len(ledger["runs"])}
+
+
+def _titles(work: dict) -> list[str]:
+    names = [work.get("title", "")] + list(work.get("aliases") or [])
+    return [str(n).casefold().strip() for n in names if str(n).strip()]
+
+
+def _key(work: dict, registry: dict[tuple[str, str], tuple[str, str]] | None = None):
+    """Identity is author plus any known title. Aliases collapse to one entry.
+
+    Three runs named one Aquinas work two ways and it split in the corpus,
+    each fragment scoring below what the work earned, so a title alias is
+    matched as readily as the title itself.
+    """
+    author = str(work.get("author", "")).casefold().strip()
+    if registry is not None:
+        for title in _titles(work):
+            if (author, title) in registry:
+                return registry[(author, title)]
+    canonical = (author, str(work.get("title", "")).casefold().strip())
+    if registry is not None:
+        for title in _titles(work):
+            registry[(author, title)] = canonical
+    return canonical
+
+
+def run_promote(arguments: argparse.Namespace) -> dict:
+    """Confidence is agreement across runs, not a number the model supplied."""
+    runs = _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER))))
+    if not runs:
+        raise ValueError("the harvest ledger holds no runs")
+    aliases: dict[tuple[str, str], tuple[str, str]] = {}
+    seen: dict[str, dict[tuple[str, str], dict]] = defaultdict(dict)
+    counts: dict[str, int] = defaultdict(int)
+    for run in runs:
+        for passage, works in (run.get("passages") or {}).items():
+            counts[passage] += 1
+            for work in works:
+                entry = seen[passage].setdefault(_key(work, aliases), {"work": work, "appearances": 0})
+                entry["appearances"] += 1
+    payload = []
+    for passage in sorted(seen):
+        total = counts[passage]
+        works = []
+        for entry in seen[passage].values():
+            confidence = round(entry["appearances"] / total, 4)
+            if confidence < arguments.min_confidence:
+                continue
+            work = entry["work"]
+            works.append(
+                {
+                    **({"work_id": work["work_id"]} if work.get("work_id") else {}),
+                    "author": work["author"],
+                    "title": work["title"],
+                    "date": str(work.get("death_year") or ""),
+                    "role": work["role"],
+                    "confidence": confidence,
+                    "runs": total,
+                }
+            )
+        works.sort(key=lambda w: (-w["confidence"], w["author"].casefold(), w["title"].casefold()))
+        if works:
+            payload.append({"passage": passage, "works": works})
+    index = {
+        "schema": INDEX_SCHEMA,
+        "updated": arguments.audited_on,
+        "harvest_runs": len(runs),
+        "min_confidence": arguments.min_confidence,
+        "passages": payload,
+    }
+    if not arguments.dry_run:
+        _dump(Path(getattr(arguments, 'index', INDEX)), index)
+    return {
+        "status": "promoted" if not arguments.dry_run else "dry-run",
+        "passages": len(payload),
+        "runs": len(runs),
+        "works": sum(len(p["works"]) for p in payload),
+    }
+
+
+def _mass_passages(missal: str, mass: str) -> list[str]:
+    """The canonical passage keys a mass cites, via the corpus's own speller."""
+    from importlib.machinery import SourceFileLoader
+
+    index = SourceFileLoader("cwi", str(ROOT / "tools" / "commentary-work-index")).load_module()
+    import yaml
+
+    document = yaml.safe_load(
+        (ROOT / "src" / "sources" / "calendars" / missal / "propers.yaml").read_text("utf-8")
+    )
+    citations = index._load_citations_tool()
+    records = index._collect_mass_records(citations, document, missal)
+    found = [r for r in records if r["mass_key"] == mass or r["mass_key"].startswith(f"{mass}:")]
+    if not found:
+        raise KeyError(f"{missal}: no mass with key {mass!r}")
+    seen: list[str] = []
+    for record in found:
+        canonical = index._canonical_passage(record["passage"], record.get("numbering", "vulgate"))
+        if canonical["ref"] not in seen:
+            seen.append(canonical["ref"])
+    return seen
+
+
+def run_harvest(arguments: argparse.Namespace) -> dict:
+    """One mass's ranked works, naming any passage still short of its runs.
+
+    The cache stays keyed by passage, not by mass: masses share passages, and
+    asking per mass would consult the model repeatedly for the same text.
+    """
+    passages = _mass_passages(arguments.missal, arguments.mass)
+    aliases: dict[tuple[str, str], tuple[str, str]] = {}
+    runs_for: dict[str, int] = defaultdict(int)
+    works_for: dict[str, dict] = defaultdict(dict)
+    for run in _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER)))):
+        for passage, works in (run.get("passages") or {}).items():
+            if passage not in passages:
+                continue
+            runs_for[passage] += 1
+            for work in works:
+                entry = works_for[passage].setdefault(_key(work, aliases), {"work": work, "n": 0})
+                entry["n"] += 1
+    pending = [p for p in passages if runs_for[p] < arguments.runs]
+
+    ranked: dict[tuple[str, str], dict] = {}
+    for passage in passages:
+        total = runs_for[passage] or 1
+        for rank, entry in enumerate(
+            sorted(works_for[passage].values(), key=lambda e: -e["n"])
+        ):
+            work = entry["work"]
+            slot = ranked.setdefault(
+                _key(work, aliases),
+                {**work, "score": 0.0, "confidence": 0.0, "passages": []},
+            )
+            slot["score"] += 1.0 / (rank + 1)
+            slot["confidence"] = max(slot["confidence"], round(entry["n"] / total, 4))
+            slot["passages"].append(passage)
+    top = sorted(
+        ranked.values(),
+        key=lambda w: (-w["score"], w["author"].casefold(), w["title"].casefold()),
+    )[: arguments.top]
+    for work in top:
+        work["score"] = round(work["score"], 4)
+        work["passages"] = sorted(set(work["passages"]))
+    return {
+        "missal": arguments.missal,
+        "mass": arguments.mass,
+        "passages": passages,
+        "pending_passages": pending,
+        "target_runs": arguments.runs,
+        "works": top,
+    }
+
+
+def run_propers(arguments: argparse.Namespace) -> dict:
+    """Collate every harvested passage into one ranked acquisition list.
+
+    The terminal step: the union across all propers of both missals,
+    deduplicated by author and title, which is the list of works to pull into
+    the source vault.
+    """
+    runs = _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER))))
+    if not runs:
+        raise ValueError("the harvest ledger holds no runs; harvest some masses first")
+    aliases: dict[tuple[str, str], tuple[str, str]] = {}
+    per_passage: dict[str, dict] = defaultdict(dict)
+    counts: dict[str, int] = defaultdict(int)
+    for run in runs:
+        for passage, works in (run.get("passages") or {}).items():
+            counts[passage] += 1
+            for rank, work in enumerate(works):
+                entry = per_passage[passage].setdefault(
+                    _key(work, aliases), {"work": work, "n": 0, "best": rank}
+                )
+                entry["n"] += 1
+                entry["best"] = min(entry["best"], rank)
+
+    collated: dict[tuple[str, str], dict] = {}
+    for passage, entries in per_passage.items():
+        total = counts[passage]
+        for key, entry in entries.items():
+            work = entry["work"]
+            slot = collated.setdefault(key, {
+                **({"work_id": work["work_id"]} if work.get("work_id") else {}),
+                "author": work["author"], "title": work["title"], "role": work["role"],
+                "death_year": work["death_year"],
+                **({"aliases": work["aliases"]} if work.get("aliases") else {}),
+                "score": 0.0, "confidence": 0.0,
+                "passages": [],
+            })
+            slot["score"] += 1.0 / (entry["best"] + 1)
+            slot["confidence"] = max(slot["confidence"], round(entry["n"] / total, 4))
+            slot["passages"].append(passage)
+
+    works = sorted(collated.values(),
+                   key=lambda w: (-w["score"], w["author"].casefold(), w["title"].casefold()))
+    for work in works:
+        work["score"] = round(work["score"], 4)
+        work["passage_count"] = len(set(work["passages"]))
+        work["passages"] = sorted(set(work["passages"]))
+    if arguments.min_confidence:
+        works = [w for w in works if w["confidence"] >= arguments.min_confidence]
+    if arguments.top:
+        works = works[: arguments.top]
+    return {"harvest_runs": len(runs), "passages_harvested": len(per_passage), "works": works}
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--json", action="store_true", default=argparse.SUPPRESS,
+                        help="emit one compact JSON object")
+    shared.add_argument(
+        "--format", choices=("text", "yaml", "json"), default=argparse.SUPPRESS,
+        help="human-readable text, YAML, or JSON; every verb offers all three",
+    )
+    # A concrete default here would be re-applied by the subparser and clobber
+    # a value given before the verb, so leave it unset and fall back.
+    shared.add_argument("--ledger", default=argparse.SUPPRESS, help="harvest ledger path")
+    shared.add_argument("--index", default=argparse.SUPPRESS, help="discovery index path")
+    shared.add_argument(
+        "--src-list-only", action="store_true", default=argparse.SUPPRESS,
+        help="just the works to extract, without scores or passage detail",
+    )
+    parser = argparse.ArgumentParser(
+        prog="harvest",
+        description="Plan, record and promote model-harvested commentary candidates.",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+
+    propers = sub.add_parser(
+        "propers", help="one collated list across every harvested proper", parents=[shared]
+    )
+    propers.add_argument("--top", type=int, default=0, help="cap the list; 0 is all")
+    propers.add_argument("--min-confidence", type=float, default=0.0)
+
+    plan = sub.add_parser("plan", help="passages still needing harvest", parents=[shared])
+    plan.add_argument("--corpus", required=True, help="corpus emitted by commentary-work-index")
+    plan.add_argument("--runs", type=int, default=3, help="target runs per passage")
+    plan.add_argument("--limit", type=int, default=0, help="cap the worklist")
+    plan.add_argument(
+        "--by-chapter", action="store_true",
+        help="one locus per chapter, never wider; more queries, no drops",
+    )
+
+    record = sub.add_parser("record", help="ingest one run's results", parents=[shared])
+    record.add_argument("--results", required=True)
+    record.add_argument("--model", required=True, help="the model that produced them")
+    record.add_argument("--audited-on", required=True, help="ISO date of the run")
+
+    harvest = sub.add_parser(
+        "harvest", help="one mass's ranked works", parents=[shared]
+    )
+    harvest.add_argument("missal")
+    harvest.add_argument("mass")
+    harvest.add_argument("--runs", type=int, default=3)
+    harvest.add_argument("--top", type=int, default=20)
+
+    promote = sub.add_parser("promote", help="write the discovery index", parents=[shared])
+    promote.add_argument("--audited-on", required=True)
+    promote.add_argument("--min-confidence", type=float, default=0.0)
+    promote.add_argument("--dry-run", action="store_true")
+
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        if not isinstance(payload, dict):
+            print("harvest error: invalid payload", file=sys.stderr)
+            return 70
+        if getattr(arguments, "src_list_only", False) and "works" in payload:
+            payload = {
+                "works": [
+                    {k: w[k] for k in ("work_id", "author", "title", "role", "death_year") if k in w}
+                    for w in payload["works"]
+                ]
+            }
+        want = getattr(arguments, "format", "text")
+        if getattr(arguments, "json", False) or want == "json":
+            print_json(payload)
+            return 0
+        if want == "yaml":
+            import yaml
+
+            print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True, width=88).rstrip())
+            return 0
+        if "works" in payload:
+            for work in payload["works"]:
+                bits = [f"{work['author']} — {work['title']}"]
+                if "confidence" in work:
+                    bits.append(f"conf {work['confidence']:.2f}")
+                if "passage_count" in work:
+                    bits.append(f"{work['passage_count']} passages")
+                print(f"  {work.get('death_year', '?')}  " + "  ".join(bits))
+            if "passages_harvested" in payload:
+                print(
+                    f"# {len(payload['works'])} works across "
+                    f"{payload['passages_harvested']} passages, "
+                    f"{payload['harvest_runs']} runs",
+                    file=sys.stderr,
+                )
+            return 0
+        if "passages" in payload and isinstance(payload["passages"], list) and "pending" in payload:
+            for entry in payload["passages"]:
+                print(f"{entry['runs']}\t{entry['passage']}")
+            print(
+                f"# {payload['pending']} of {payload['total']} passages below "
+                f"{payload['target_runs']} runs",
+                file=sys.stderr,
+            )
+            return 0
+        for key, value in sorted(payload.items()):
+            print(f"{key}: {value}")
+        return 0
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"plan": run_plan, "record": run_record, "promote": run_promote,
+                  "harvest": run_harvest, "propers": run_propers},
+        renderer=render,
+        prefix="harvest",
+        argv=argv,
+        dependency_message="install PyYAML (requirements-tools.txt)",
+        mapped_errors={KeyError: ("not-found", 3), ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

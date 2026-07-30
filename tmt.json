@@ -127,6 +127,20 @@
       "stage": "draft",
       "usage": "commentary-work-index {discover,build-corpus}"
     },
+    "harvest": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Harvest, collate and rank pre-1900 commentary for the propers.",
+      "requires": [
+        "citations",
+        "commentary-work-index"
+      ],
+      "stage": "draft",
+      "usage": "harvest {propers,plan,record,promote} | harvest <missal> <mass> [--top N]"
+    },
     "index-bible": {
       "idempotent": true,
       "json": true,

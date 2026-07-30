@@ -1,0 +1,115 @@
+#!/bin/sh
+# Test for `tools/tpt harvest`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="harvest"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+cat >corpus.yaml <<'YAML'
+schema: triptych-missal-commentary-corpus/v1
+passages:
+- passage: 'Isaiah 63:16-64:7'
+- passage: 'Psalms 24:1-24:3'
+- passage: 'Luke 21:25-21:33'
+YAML
+
+# A query covers at most one chapter: a reference spanning two becomes two
+# loci, never one, so nothing commenting on only one chapter is dropped.
+plain="$(run_tool --ledger ledger.yaml plan --corpus corpus.yaml --json 2>/dev/null)"
+chaptered="$(run_tool --ledger ledger.yaml plan --corpus corpus.yaml --by-chapter --json 2>/dev/null)"
+case "$chaptered" in
+*'Isaiah 63'*) ;;
+*) echo "chapter planning lost Isaiah 63" >&2; exit 1 ;;
+esac
+case "$chaptered" in
+*'Isaiah 64'*) ;;
+*) echo "a reference spanning two chapters must yield both" >&2; exit 1 ;;
+esac
+case "$chaptered" in
+*'63:16'*) echo "chapter loci must not carry verse detail" >&2; exit 1 ;;
+*) ;;
+esac
+case "$plain" in
+*'Isaiah 63:16-64:7'*) ;;
+*) echo "verse-range planning should keep the cited range" >&2; exit 1 ;;
+esac
+
+# The cutoff and the role vocabulary are enforced at record, not by the prompt.
+write_run() {
+	cat >"$1" <<YAML
+passages:
+  'Psalms 24:1-24:3':
+    - author: Augustine of Hippo
+      title: $2
+      role: church-father
+      death_year: 430
+      aliases: [$3]
+YAML
+}
+
+write_run bad.yaml 'Enarrationes in Psalmos' "''"
+sed -i 's/death_year: 430/death_year: 1950/' bad.yaml
+if run_tool --ledger ledger.yaml record --results bad.yaml --model test --audited-on 2026-07-30 >/dev/null 2>&1; then
+	echo "expected a post-1900 death_year to be refused" >&2
+	exit 1
+fi
+sed -i 's/death_year: 1950/death_year: 430/; s/role: church-father/role: pundit/' bad.yaml
+if run_tool --ledger ledger.yaml record --results bad.yaml --model test --audited-on 2026-07-30 >/dev/null 2>&1; then
+	echo "expected an unknown role to be refused" >&2
+	exit 1
+fi
+
+# One work under two names collapses when either carries the other as an alias.
+write_run one.yaml 'Enarrationes in Psalmos' "'Expositions on the Psalms'"
+write_run two.yaml 'Expositions on the Psalms' "'Enarrationes in Psalmos'"
+run_tool --ledger ledger.yaml record --results one.yaml --model test --audited-on 2026-07-30 >/dev/null
+run_tool --ledger ledger.yaml record --results two.yaml --model test --audited-on 2026-07-30 >/dev/null
+count="$(run_tool --ledger ledger.yaml propers --json 2>/dev/null | grep -o '"author"' | wc -l | tr -d ' ')"
+if [ "$count" -ne 1 ]; then
+	echo "an aliased work should collate to one entry, got $count" >&2
+	exit 1
+fi
+
+# Confidence is agreement across runs, not a number the model supplied.
+if ! run_tool --ledger ledger.yaml propers --json 2>/dev/null | grep -q '"confidence":1.0'; then
+	echo "a work in every run should reach full confidence" >&2
+	exit 1
+fi
+
+# Both output forms are available, and --src-list-only drops the scoring.
+run_tool --ledger ledger.yaml --format yaml propers 2>/dev/null | grep -q '^works:'
+run_tool --ledger ledger.yaml --src-list-only --format yaml propers 2>/dev/null >slim.yaml
+if grep -q 'confidence\|score\|passages' slim.yaml; then
+	echo "--src-list-only should carry no scoring or passage detail" >&2
+	exit 1
+fi
+grep -q 'author' slim.yaml
+
+# Recording the same run twice is a no-op rather than a second vote.
+before="$(run_tool --ledger ledger.yaml propers --json 2>/dev/null)"
+run_tool --ledger ledger.yaml record --results one.yaml --model test --audited-on 2026-07-30 >/dev/null
+if [ "$before" != "$(run_tool --ledger ledger.yaml propers --json 2>/dev/null)" ]; then
+	echo "re-recording an identical run must not change the collation" >&2
+	exit 1
+fi
+
+for bad in "plan" "record --results one.yaml --model test" "propers --top notanumber"; do
+	# shellcheck disable=SC2086
+	if run_tool $bad >/dev/null 2>&1; then
+		echo "expected failure for: $bad" >&2
+		exit 1
+	fi
+done
+
+echo ok
