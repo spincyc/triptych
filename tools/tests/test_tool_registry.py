@@ -87,6 +87,29 @@ class ToolRegistryTests(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertNotIn("Traceback", result.stderr)
 
+    def test_usage_names_every_verb_the_tool_accepts(self) -> None:
+        """The registry usage string is hand-maintained, so it drifts.
+
+        Read the verbs from the tool's own --help rather than by feeding the
+        parser a junk positional, which would invoke the mutating tools.
+        """
+        entries = registry()
+        for name, record in entries.items():
+            with self.subTest(tool=name):
+                helped = subprocess.run(
+                    [str(LAUNCHER), name, "--help"],
+                    capture_output=True, text=True, cwd=ROOT,
+                )
+                self.assertEqual(helped.returncode, 0, helped.stderr)
+                section = re.search(
+                    r"positional arguments:\n\s+\{([a-z0-9,\-]+)\}", helped.stdout
+                )
+                if section is None:
+                    continue
+                declared = record["usage"]
+                for verb in section.group(1).split(","):
+                    self.assertIn(verb, declared, f"{name}: usage omits {verb!r}")
+
     def test_no_tool_hardcodes_an_absolute_path(self) -> None:
         # public-alpha searches published content for leaked machine-local
         # paths, so the pattern itself must contain the literal.
