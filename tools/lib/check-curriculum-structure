@@ -1,0 +1,2454 @@
+#!/usr/bin/env python3
+"""Validate the rendered hierarchy of an Ecclesiastical Latin publication."""
+
+from __future__ import annotations
+
+import argparse
+import re
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+from dataclasses import dataclass
+from pathlib import Path
+from statistics import median
+from typing import Sequence
+
+
+CURRICULUM_PREFIX = "curriculums/ecclesiastical-latin/"
+STRUCTURAL_KINDS = ("part", "chapter", "section", "subsection", "subsubsection")
+BOOKMARK_LEVEL = {
+    "part": 0,
+    "chapter": 1,
+    "section": 2,
+    "subsection": 3,
+    "subsubsection": 4,
+}
+PARENT_KIND = {
+    "chapter": "part",
+    "section": "chapter",
+    "subsection": "section",
+    "subsubsection": "subsection",
+}
+MODULE_PARTS = (
+    "Teaching",
+    "Memory Work",
+    "Reading and Composition",
+    "Cumulative Practice",
+    "Answers and Models",
+    "Scope and Sources",
+)
+ASSESSMENT_PARTS = (
+    "Using This Review",
+    "Review Forms",
+    "Answers and Models",
+    "Scope and Sources",
+)
+ASSESSMENT_PARTS_WITH_SOURCES = (
+    "Using This Review",
+    "Included Latin",
+    "Review Forms",
+    "Answers and Models",
+    "Scope and Sources",
+)
+ASSESSMENT_EXPECTATIONS = {
+    "01-foundations": ("Foundations Cumulative Review", ("F-A", "F-B")),
+    "02-core-grammar": ("Core Grammar Cumulative Review", ("C-A", "C-B")),
+    "03-missal-reading": (
+        "Missal Reading Cumulative Review",
+        ("M-A", "M-B", "M-C"),
+    ),
+    "04-advanced": (
+        "Advanced Reading and Composition Cumulative Review",
+        ("A-A", "A-B"),
+    ),
+}
+OBSOLETE_DEFINITION_CHECK = re.compile(
+    r"Definition\s*/\s*error\s+check\s*:", re.IGNORECASE
+)
+FORM_CONTINUATION_MARKER = re.compile(
+    r"\b(?:Worksheet|Solution)\s+[IVXLCDM]+\.\d+\b", re.IGNORECASE
+)
+WORKSHEET_ID_MARKER = re.compile(r"\bWorksheet\s+ID\s*:", re.IGNORECASE)
+READINESS_MARKER = re.compile(r"\bBefore\s+continuing\b", re.IGNORECASE)
+BODY_MARGIN_POINTS = 70.0
+MINIMUM_READINESS_PAGE_WORDS = 90
+MINIMUM_FORM_CONTINUATION_WORDS = 80
+TOC_ROW_Y_TOLERANCE_POINTS = 1.5
+TOC_TITLE_X_TOLERANCE_POINTS = 2.0
+TOC_MINIMUM_LEVEL_INDENT_POINTS = 8.0
+TOC_MARKER_MAX_Y_POINTS = 90.0
+
+
+class StructureError(ValueError):
+    """The rendered curriculum hierarchy violates an invariant."""
+
+
+@dataclass(frozen=True)
+class TocEntry:
+    kind: str
+    title: str
+    destination: str
+    number: str | None
+    page: str = "1"
+
+
+@dataclass(frozen=True)
+class Bookmark:
+    level: int
+    destination: str
+    parent: str
+
+
+@dataclass(frozen=True)
+class BboxWord:
+    text: str
+    x_min: float
+    y_min: float
+
+
+@dataclass(frozen=True)
+class BboxLine:
+    words: tuple[BboxWord, ...]
+    y_min: float
+
+
+@dataclass(frozen=True)
+class PositionedTocEntry:
+    entry: TocEntry
+    part_ordinal: int
+    gutter_x: float
+    title_x: float
+    continuation_title_x: tuple[float, ...]
+
+
+@dataclass(frozen=True)
+class SourceAudit:
+    registry_rows: int
+    module_leaves: int
+    companion_leaves: int
+    assessment_ids: int
+
+
+def _is_escaped(text: str, index: int) -> bool:
+    backslashes = 0
+    index -= 1
+    while index >= 0 and text[index] == "\\":
+        backslashes += 1
+        index -= 1
+    return bool(backslashes % 2)
+
+
+def _skip_space(text: str, index: int) -> int:
+    while index < len(text) and text[index].isspace():
+        index += 1
+    return index
+
+
+def _read_group(
+    text: str, index: int, opening: str, closing: str, context: str
+) -> tuple[str, int]:
+    index = _skip_space(text, index)
+    if index >= len(text) or text[index] != opening:
+        raise StructureError(f"{context}: expected {opening!r}")
+    start = index + 1
+    depth = 1
+    index += 1
+    while index < len(text):
+        character = text[index]
+        if character == opening and not _is_escaped(text, index):
+            depth += 1
+        elif character == closing and not _is_escaped(text, index):
+            depth -= 1
+            if depth == 0:
+                return text[start:index], index + 1
+        index += 1
+    raise StructureError(f"{context}: unterminated {opening}{closing} group")
+
+
+def _command_positions(text: str, command: str):
+    start = 0
+    while True:
+        index = text.find(command, start)
+        if index < 0:
+            return
+        after = index + len(command)
+        if after == len(text) or not text[after].isalpha():
+            yield index
+        start = after
+
+
+def _split_numberline(body: str) -> tuple[str | None, str]:
+    stripped = body.lstrip()
+    command = r"\numberline"
+    if not stripped.startswith(command):
+        return None, stripped.strip()
+    number, index = _read_group(
+        stripped, len(command), "{", "}", "table-of-contents numberline"
+    )
+    normalized_number = number.strip()
+    return normalized_number or None, stripped[index:].strip()
+
+
+def _strip_tex_comments(text: str) -> str:
+    lines = []
+    for line in text.splitlines():
+        for index, character in enumerate(line):
+            if character == "%" and not _is_escaped(line, index):
+                line = line[:index]
+                break
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def _definition_body(
+    text: str,
+    declaration: str,
+    declared_name: str,
+    path: Path,
+) -> str:
+    """Return one balanced definition body from stripped TeX source."""
+    matches: list[str] = []
+    for ordinal, position in enumerate(_command_positions(text, declaration), 1):
+        index = position + len(declaration)
+        context = f"{path}: {declaration} declaration {ordinal}"
+        name, index = _read_group(text, index, "{", "}", context)
+        if name.strip() != declared_name:
+            continue
+        index = _skip_space(text, index)
+        while index < len(text) and text[index] == "[":
+            _, index = _read_group(text, index, "[", "]", context)
+            index = _skip_space(text, index)
+        body, _ = _read_group(text, index, "{", "}", context)
+        matches.append(body)
+    if len(matches) != 1:
+        raise StructureError(
+            f"{path}: expected one {declaration}{{{declared_name}}} definition; "
+            f"found {len(matches)}"
+        )
+    return matches[0]
+
+
+def _control_sequence_definition_body(
+    text: str, control_sequence: str, path: Path
+) -> str:
+    """Return one parameter-free TeX control-sequence definition body."""
+    matches: list[str] = []
+    for declaration in (r"\def", r"\gdef", r"\edef", r"\xdef"):
+        for ordinal, position in enumerate(_command_positions(text, declaration), 1):
+            index = _skip_space(text, position + len(declaration))
+            after = index + len(control_sequence)
+            if not text.startswith(control_sequence, index) or (
+                after < len(text) and text[after].isalpha()
+            ):
+                continue
+            context = f"{path}: {declaration} declaration {ordinal}"
+            body, _ = _read_group(text, after, "{", "}", context)
+            matches.append(body)
+
+    for declaration in (r"\newcommand", r"\renewcommand", r"\providecommand"):
+        for ordinal, position in enumerate(_command_positions(text, declaration), 1):
+            index = _skip_space(text, position + len(declaration))
+            if index < len(text) and text[index] == "*":
+                index = _skip_space(text, index + 1)
+            context = f"{path}: {declaration} declaration {ordinal}"
+            try:
+                name, index = _read_group(text, index, "{", "}", context)
+            except StructureError:
+                continue
+            if name.strip() != control_sequence:
+                continue
+            index = _skip_space(text, index)
+            while index < len(text) and text[index] == "[":
+                _, index = _read_group(text, index, "[", "]", context)
+                index = _skip_space(text, index)
+            body, _ = _read_group(text, index, "{", "}", context)
+            matches.append(body)
+
+    if len(matches) != 1:
+        raise StructureError(
+            f"{path}: expected one definition of {control_sequence}; "
+            f"found {len(matches)}"
+        )
+    return matches[0]
+
+
+def _conditional_branches(
+    text: str, conditional: str, context: str
+) -> tuple[str, str]:
+    """Return the true and false branches of the first named TeX conditional."""
+    conditional_match = re.search(
+        re.escape(conditional) + r"(?![A-Za-z@])", text
+    )
+    if conditional_match is None:
+        raise StructureError(f"{context}: missing {conditional}")
+
+    token_pattern = re.compile(r"\\if[A-Za-z@]+|\\else(?![A-Za-z@])|\\fi(?![A-Za-z@])")
+    depth = 0
+    branch_start = conditional_match.end()
+    else_match: re.Match[str] | None = None
+    for token_match in token_pattern.finditer(text, conditional_match.start()):
+        token = token_match.group(0)
+        if token.startswith(r"\if"):
+            depth += 1
+        elif token == r"\else":
+            if depth == 1 and else_match is None:
+                else_match = token_match
+        else:
+            depth -= 1
+            if depth == 0:
+                if else_match is None:
+                    raise StructureError(f"{context}: {conditional} lacks \\else")
+                return (
+                    text[branch_start : else_match.start()],
+                    text[else_match.end() : token_match.start()],
+                )
+            if depth < 0:
+                break
+    raise StructureError(f"{context}: unterminated {conditional}")
+
+
+def validate_course_format_layout(source_text: str, path: Path) -> None:
+    """Enforce grouped worksheet and assessment pagination contracts."""
+    text = _strip_tex_comments(source_text)
+    chapter_destination = _control_sequence_definition_body(
+        text, r"\theHchapter", path
+    )
+    if not any(
+        token in chapter_destination
+        for token in (r"\arabic{part}", r"\thepart", r"\theHpart")
+    ) or not any(
+        token in chapter_destination
+        for token in (r"\arabic{chapter}", r"\thechapter")
+    ):
+        raise StructureError(
+            f"{path}: theHchapter must combine a Part-qualified component "
+            "with the local chapter number"
+        )
+    section_destination = _control_sequence_definition_body(
+        text, r"\theHsection", path
+    )
+    if r"\theHchapter" not in section_destination or not any(
+        token in section_destination
+        for token in (r"\arabic{section}", r"\thesection")
+    ):
+        raise StructureError(
+            f"{path}: theHsection must derive from the Part-qualified "
+            "theHchapter and the local section number"
+        )
+    begin_bank = _definition_body(
+        text, r"\newcommand", r"\BeginExerciseBank", path
+    )
+    if re.search(
+        r"\\firstcourseworksheettrue(?![A-Za-z@])", begin_bank
+    ) is None:
+        raise StructureError(
+            f"{path}: BeginExerciseBank must initialize firstcourseworksheettrue"
+        )
+    unit_opening_guard = _definition_body(
+        text, r"\newcommand", r"\CourseUnitOpeningGuard", path
+    )
+    if re.search(
+        r"\\global\s*\\firstcourseworksheettrue(?![A-Za-z@])",
+        unit_opening_guard,
+    ) is None:
+        raise StructureError(
+            f"{path}: CourseUnitOpeningGuard must reset "
+            "firstcourseworksheettrue for every selected unit"
+        )
+    courseunit = _definition_body(text, r"\NewEnviron", "courseunit", path)
+    guard_invocations = re.findall(
+        r"\\CourseUnitOpeningGuard(?![A-Za-z@])", courseunit
+    )
+    if len(guard_invocations) != 2:
+        raise StructureError(
+            f"{path}: courseunit must invoke CourseUnitOpeningGuard in both "
+            f"selection branches; found {len(guard_invocations)} invocations"
+        )
+
+    worksheet = _definition_body(text, r"\NewEnviron", "worksheet", path)
+    solution_path, learner_path = _conditional_branches(
+        worksheet, r"\ifsolutions", f"{path}: worksheet environment"
+    )
+    global_transition = re.compile(
+        r"\\global\s*\\firstcourseworksheetfalse(?![A-Za-z@])"
+    )
+    trimmed_clear_page = re.compile(
+        r"\\removelastskip(?![A-Za-z@])\s*\\clearpage(?![A-Za-z@])"
+    )
+    for label, branch in (
+        ("keyed solution", solution_path),
+        ("learner worksheet", learner_path),
+    ):
+        first_path, later_path = _conditional_branches(
+            branch,
+            r"\iffirstcourseworksheet",
+            f"{path}: {label} path",
+        )
+        if global_transition.search(first_path) is None:
+            raise StructureError(
+                f"{path}: first {label} must globally transition "
+                "firstcourseworksheetfalse"
+            )
+        if trimmed_clear_page.search(later_path) is None:
+            raise StructureError(
+                f"{path}: later {label} path must contain \\removelastskip "
+                "followed by \\clearpage"
+            )
+
+    select_assessments = _definition_body(
+        text, r"\newcommand", r"\SelectAssessments", path
+    )
+    if re.search(
+        r"\\firstcourseassessmenttrue(?![A-Za-z@])", select_assessments
+    ) is None:
+        raise StructureError(
+            f"{path}: SelectAssessments must initialize firstcourseassessmenttrue"
+        )
+
+    assessment = _definition_body(text, r"\NewEnviron", "assessment", path)
+    first_assessment, later_assessment = _conditional_branches(
+        assessment,
+        r"\iffirstcourseassessment",
+        f"{path}: assessment environment",
+    )
+    if re.search(
+        r"\\global\s*\\firstcourseassessmentfalse(?![A-Za-z@])",
+        first_assessment,
+    ) is None:
+        raise StructureError(
+            f"{path}: first assessment must globally transition "
+            "firstcourseassessmentfalse"
+        )
+    if trimmed_clear_page.search(later_assessment) is None:
+        raise StructureError(
+            f"{path}: later assessment path must contain \\removelastskip "
+            "followed by \\clearpage"
+        )
+
+    assessment_item = _definition_body(
+        text, r"\newcommand", r"\AssessmentItem", path
+    )
+    minipage_pattern = re.compile(
+        r"\\begin\s*\{minipage\}\s*(?:\[[^\[\]]*\]\s*)?"
+        r"\{[^{}]*\}(.*?)\\end\s*\{minipage\}",
+        re.DOTALL,
+    )
+    minipages = minipage_pattern.findall(assessment_item)
+    if len(minipages) != 1 or any(
+        token not in minipages[0]
+        for token in (r"\CourseAssessmentID", "#2", "#3", r"\ifsolutions")
+    ):
+        raise StructureError(
+            f"{path}: AssessmentItem must keep its ID, prompt, response, and "
+            "answer inside one minipage"
+        )
+
+
+def validate_obsolete_definition_checks(curriculum_root: Path) -> None:
+    """Reject the retired worksheet footer from authoring sources."""
+    errors: list[str] = []
+    for path in sorted(curriculum_root.rglob("*")):
+        if not path.is_file() or path.suffix.casefold() not in {
+            ".md",
+            ".sty",
+            ".tex",
+        }:
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as error:
+            errors.append(f"cannot read {path}: {error}")
+            continue
+        if OBSOLETE_DEFINITION_CHECK.search(text) is not None:
+            errors.append(f"{path}: contains obsolete Definition/error check footer")
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def _macro_value(text: str, name: str, path: Path) -> str:
+    pattern = re.compile(
+        rf"\\newcommand\s*\{{\\{re.escape(name)}\}}\s*\{{([^{{}}]*)\}}"
+    )
+    matches = pattern.findall(text)
+    if len(matches) != 1:
+        raise StructureError(
+            f"{path}: expected one simple \\newcommand{{\\{name}}}; found {len(matches)}"
+        )
+    return matches[0].strip()
+
+
+def _validate_module_key_alignment(text: str, path: Path, module_id: str) -> None:
+    """Keep every packet-local renderer keyed to the packet's stable ID."""
+    expected_key = module_id.removeprefix("EL-")
+    errors: list[str] = []
+    for macro_name in ("ModuleIDKey", "ModuleMemorySet", "ModuleReaderSet"):
+        value = _macro_value(text, macro_name, path)
+        if value != expected_key:
+            errors.append(
+                f"{path}: {macro_name} {value!r} != packet key {expected_key!r}"
+            )
+    practice = _definition_body(text, r"\newcommand", r"\ModulePractice", path)
+    practice_selections = re.findall(
+        r"\\SelectCourseUnits\s*\{([^{}]+)\}", practice
+    )
+    if practice_selections != [expected_key]:
+        errors.append(
+            f"{path}: ModulePractice must select only packet key "
+            f"{expected_key!r}; found {practice_selections!r}"
+        )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def _source_path(curriculum_root: Path, value: str, path: Path) -> Path:
+    prefix = r"\CourseRoot/"
+    if not value.startswith(prefix):
+        raise StructureError(f"{path}: shared source does not begin {prefix!r}: {value!r}")
+    relative = value[len(prefix) :]
+    relative_path = Path(relative)
+    if relative_path.is_absolute() or ".." in relative_path.parts:
+        raise StructureError(f"{path}: shared source escapes curriculum root: {value!r}")
+    resolved_root = curriculum_root.resolve(strict=False)
+    resolved_source = (curriculum_root / f"{relative}.tex").resolve(strict=False)
+    try:
+        resolved_source.relative_to(resolved_root)
+    except ValueError as error:
+        raise StructureError(
+            f"{path}: shared source resolves outside curriculum root: {value!r}"
+        ) from error
+    return resolved_source
+
+
+def _course_units(path: Path) -> dict[str, str]:
+    try:
+        text = _strip_tex_comments(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError) as error:
+        raise StructureError(f"cannot read {path}: {error}") from error
+    units: dict[str, str] = {}
+    pattern = re.compile(
+        r"\\begin\{courseunit\}\{([^{}]+)\}(.*?)\\end\{courseunit\}",
+        re.DOTALL,
+    )
+    for match in pattern.finditer(text):
+        unit = match.group(1).strip()
+        if unit in units:
+            raise StructureError(f"{path}: duplicate courseunit {unit}")
+        units[unit] = match.group(2)
+    if not units:
+        raise StructureError(f"{path}: no courseunit definitions")
+    return units
+
+
+def _worksheet_definitions(block: str, path: Path, unit: str) -> dict[str, str]:
+    worksheets: dict[str, str] = {}
+    worksheet_ids: set[str] = set()
+    pattern = re.compile(
+        r"\\begin\{worksheet\}\{([^{}]+)\}\{([^{}]+)\}"
+    )
+    for match in pattern.finditer(block):
+        worksheet_id = match.group(1).strip()
+        variant = match.group(2).strip()
+        if variant in worksheets:
+            raise StructureError(f"{path}: courseunit {unit} repeats variant {variant}")
+        if worksheet_id in worksheet_ids:
+            raise StructureError(
+                f"{path}: courseunit {unit} repeats worksheet ID {worksheet_id}"
+            )
+        worksheets[variant] = worksheet_id
+        worksheet_ids.add(worksheet_id)
+    if not worksheets:
+        raise StructureError(f"{path}: courseunit {unit} has no worksheets")
+    if set(worksheets) != {"A", "B", "C", "D"}:
+        raise StructureError(
+            f"{path}: courseunit {unit} must define variants A,B,C,D; "
+            f"found {sorted(worksheets)}"
+        )
+    return worksheets
+
+
+def _registry_rows(curriculum_root: Path) -> list[tuple[str, str, tuple[str, ...], str]]:
+    path = curriculum_root / "research/curriculum-map.md"
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as error:
+        raise StructureError(f"cannot read {path}: {error}") from error
+    rows: list[tuple[str, str, tuple[str, ...], str]] = []
+    for line in text.splitlines():
+        if not line.startswith("| EL-"):
+            continue
+        columns = [column.strip() for column in line.strip().strip("|").split("|")]
+        if len(columns) != 5 or not columns[4].startswith("`"):
+            continue
+        module_id = columns[0].split("·", 1)[0].strip()
+        owner_unit = columns[1]
+        worksheet_ids = tuple(
+            worksheet.strip() for worksheet in columns[2].split(";") if worksheet.strip()
+        )
+        leaf = columns[4].strip("`")
+        rows.append((module_id, owner_unit, worksheet_ids, leaf))
+    return rows
+
+
+def _publication_leaves(
+    curriculum_root: Path, expected_leaves: set[str]
+) -> set[str]:
+    discovered = {
+        path.parent.relative_to(curriculum_root).as_posix()
+        for path in curriculum_root.rglob("main.tex")
+    }
+    errors: list[str] = []
+    for leaf in sorted(expected_leaves - discovered):
+        errors.append(f"required curriculum publication leaf is missing: {leaf}")
+    for leaf in sorted(discovered - expected_leaves):
+        errors.append(f"unregistered curriculum publication leaf: {leaf}")
+    if errors:
+        raise StructureError("\n".join(errors))
+    return discovered
+
+
+def _validate_registry_shape(
+    rows: Sequence[tuple[str, str, tuple[str, ...], str]],
+) -> None:
+    """Enforce the declared 22-packet trunk and eight-packet poetry branch."""
+    errors: list[str] = []
+    expected_ids = [f"EL-M{number:02d}" for number in range(1, 23)] + [
+        f"EL-P{number}" for number in range(1, 9)
+    ]
+    actual_ids = [module_id for module_id, _, _, _ in rows]
+    if actual_ids != expected_ids:
+        errors.append(
+            "curriculum registry packet IDs must run EL-M01--EL-M22 then "
+            f"EL-P1--EL-P8; found {actual_ids!r}"
+        )
+
+    expected_trunk_units = (
+        [f"I.{number}" for number in range(1, 13)]
+        + [f"II.{number}" for number in range(1, 15)]
+        + [f"III.{number}" for number in range(1, 13)]
+        + [f"A{number}" for number in range(1, 9)]
+    )
+    expected_poetry_units = [f"P{number}" for number in range(1, 9)]
+    actual_trunk_units: list[str] = []
+    actual_poetry_units: list[str] = []
+
+    for module_id, owner_unit, _, leaf in rows:
+        row_units = [unit.strip() for unit in owner_unit.split(",") if unit.strip()]
+        if module_id.startswith("EL-M"):
+            actual_trunk_units.extend(row_units)
+            if len(row_units) not in {2, 3}:
+                errors.append(
+                    f"curriculum registry {module_id} must contain two or three "
+                    f"common-trunk units; found {row_units!r}"
+                )
+            try:
+                number = int(module_id.removeprefix("EL-M"))
+            except ValueError:
+                number = 0
+            if 1 <= number <= 6:
+                expected_prefix = "01-foundations/"
+            elif number <= 12:
+                expected_prefix = "02-core-grammar/"
+            elif number <= 18:
+                expected_prefix = "03-missal-reading/"
+            else:
+                expected_prefix = "04-advanced/"
+            if not leaf.startswith(expected_prefix) or "/poetry/" in f"/{leaf}/":
+                errors.append(
+                    f"curriculum registry {module_id} has a canonical leaf outside "
+                    f"{expected_prefix!r}: {leaf!r}"
+                )
+        elif module_id.startswith("EL-P"):
+            actual_poetry_units.extend(row_units)
+            if len(row_units) != 1:
+                errors.append(
+                    f"curriculum registry {module_id} must contain one poetry unit; "
+                    f"found {row_units!r}"
+                )
+            if not leaf.startswith("04-advanced/poetry/"):
+                errors.append(
+                    f"curriculum registry {module_id} has a non-poetry canonical "
+                    f"leaf: {leaf!r}"
+                )
+
+    if actual_trunk_units != expected_trunk_units:
+        errors.append(
+            "curriculum registry common-trunk units must cover the 46 stable "
+            f"lessons in order; found {actual_trunk_units!r}"
+        )
+    if actual_poetry_units != expected_poetry_units:
+        errors.append(
+            "curriculum registry poetry units must run P1--P8 in order; "
+            f"found {actual_poetry_units!r}"
+        )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def audit_sources(curriculum_root: Path) -> SourceAudit:
+    errors: list[str] = []
+    course_format_path = curriculum_root / "shared/course-format.sty"
+    try:
+        validate_course_format_layout(
+            course_format_path.read_text(encoding="utf-8"), course_format_path
+        )
+    except (OSError, UnicodeError, StructureError) as error:
+        errors.append(str(error))
+    try:
+        validate_obsolete_definition_checks(curriculum_root)
+    except StructureError as error:
+        errors.append(str(error))
+
+    rows = _registry_rows(curriculum_root)
+    try:
+        _validate_registry_shape(rows)
+    except StructureError as error:
+        errors.append(str(error))
+
+    row_by_leaf: dict[str, tuple[str, str, tuple[str, ...]]] = {}
+    module_ids: set[str] = set()
+    owner_units: set[str] = set()
+    for module_id, owner_unit, worksheet_ids, leaf in rows:
+        if leaf in row_by_leaf:
+            errors.append(f"curriculum registry repeats canonical leaf {leaf}")
+        row_by_leaf[leaf] = (module_id, owner_unit, worksheet_ids)
+        if module_id in module_ids:
+            errors.append(f"curriculum registry repeats module ID {module_id}")
+        module_ids.add(module_id)
+        row_units = tuple(
+            unit.strip() for unit in owner_unit.split(",") if unit.strip()
+        )
+        if not row_units:
+            errors.append(f"curriculum registry {module_id} has no teaching units")
+        for unit in row_units:
+            if unit in owner_units:
+                errors.append(f"curriculum registry repeats owner unit {unit}")
+            owner_units.add(unit)
+        expected_worksheet_count = 4 * len(row_units)
+        if (
+            len(worksheet_ids) != expected_worksheet_count
+            or len(set(worksheet_ids)) != expected_worksheet_count
+        ):
+            errors.append(
+                f"curriculum registry {module_id} must list all four worksheets "
+                f"for each of its {len(row_units)} units; "
+                f"found {worksheet_ids!r}"
+            )
+
+    stages = {"01-foundations", "02-core-grammar", "03-missal-reading", "04-advanced"}
+    module_paths = sorted(
+        path
+        for path in curriculum_root.rglob("module-data.tex")
+        if path.relative_to(curriculum_root).parts[0] in stages
+    )
+    discovered_leaves = {
+        path.parent.relative_to(curriculum_root).as_posix() for path in module_paths
+    }
+    registry_leaves = set(row_by_leaf)
+    for leaf in sorted(registry_leaves - discovered_leaves):
+        errors.append(f"registry canonical leaf has no module-data.tex: {leaf}")
+    for leaf in sorted(discovered_leaves - registry_leaves):
+        errors.append(f"module-data.tex leaf is absent from registry: {leaf}")
+
+    expected_companions = {
+        "00-course-guide",
+        "00-memory-workbook",
+        "00-reference-grammar",
+        "05-stage-assessments/01-foundations",
+        "05-stage-assessments/02-core-grammar",
+        "05-stage-assessments/03-missal-reading",
+        "05-stage-assessments/04-advanced",
+    }
+    try:
+        discovered_publications = _publication_leaves(
+            curriculum_root, registry_leaves | expected_companions
+        )
+    except StructureError as error:
+        errors.append(str(error))
+        discovered_publications = set()
+    discovered_companions = discovered_publications & expected_companions
+
+    expected_assessments = {
+        leaf: forms for leaf, (_, forms) in ASSESSMENT_EXPECTATIONS.items()
+    }
+    selected_assessment_ids: list[str] = []
+    for leaf, expected_ids in expected_assessments.items():
+        path = curriculum_root / "05-stage-assessments" / leaf / "main.tex"
+        if not path.is_file():
+            continue
+        try:
+            text = _strip_tex_comments(path.read_text(encoding="utf-8"))
+            selection = tuple(
+                assessment_id.strip()
+                for assessment_id in _macro_value(
+                    text, "AssessmentSelection", path
+                ).split(",")
+                if assessment_id.strip()
+            )
+        except (OSError, UnicodeError, StructureError) as error:
+            errors.append(str(error))
+            continue
+        if selection != expected_ids:
+            errors.append(
+                f"{path}: AssessmentSelection {selection!r} != authoritative "
+                f"{expected_ids!r}"
+            )
+        selected_assessment_ids.extend(selection)
+
+    assessments_path = curriculum_root / "shared/assessments/all.tex"
+    try:
+        assessment_text = _strip_tex_comments(
+            assessments_path.read_text(encoding="utf-8")
+        )
+        defined_assessment_ids = re.findall(
+            r"\\begin\{assessment\}\{([^{}]+)\}", assessment_text
+        )
+    except (OSError, UnicodeError) as error:
+        errors.append(f"cannot read {assessments_path}: {error}")
+        defined_assessment_ids = []
+    if len(defined_assessment_ids) != len(set(defined_assessment_ids)):
+        errors.append("shared assessment definitions contain duplicate IDs")
+    expected_assessment_ids = {
+        assessment_id
+        for assessment_ids in expected_assessments.values()
+        for assessment_id in assessment_ids
+    }
+    if set(defined_assessment_ids) != expected_assessment_ids:
+        errors.append(
+            "shared assessment IDs differ from the authoritative nine: "
+            f"found {sorted(set(defined_assessment_ids))}"
+        )
+    if (
+        len(selected_assessment_ids) != 9
+        or set(selected_assessment_ids) != expected_assessment_ids
+    ):
+        errors.append(
+            "assessment companion selections must cover each authoritative ID exactly once"
+        )
+
+    source_units: dict[Path, dict[str, str]] = {}
+    lesson_sources: set[Path] = set()
+    exercise_sources: set[Path] = set()
+    all_worksheet_ids: dict[str, tuple[Path, str]] = {}
+
+    def cached_course_units(path: Path) -> dict[str, str]:
+        if path not in source_units:
+            source_units[path] = _course_units(path)
+        return source_units[path]
+
+    for path in module_paths:
+        leaf = path.parent.relative_to(curriculum_root).as_posix()
+        expectation = row_by_leaf.get(leaf)
+        if expectation is None:
+            continue
+        if not (path.parent / "main.tex").is_file():
+            errors.append(f"canonical leaf lacks main.tex: {leaf}")
+        try:
+            text = _strip_tex_comments(path.read_text(encoding="utf-8"))
+            module_id = _macro_value(text, "ModuleID", path)
+            _validate_module_key_alignment(text, path, module_id)
+            owner_unit = _macro_value(text, "ModuleUnit", path)
+            lesson_value = _macro_value(text, "ModuleLessonSource", path)
+            exercise_value = _macro_value(text, "ModuleExerciseSource", path)
+            variants = tuple(
+                variant.strip()
+                for variant in _macro_value(text, "ModuleWorksheetVariants", path).split(",")
+                if variant.strip()
+            )
+            lesson_path = _source_path(curriculum_root, lesson_value, path)
+            exercise_path = _source_path(curriculum_root, exercise_value, path)
+            lesson_sources.add(lesson_path)
+            exercise_sources.add(exercise_path)
+        except (OSError, UnicodeError, StructureError) as error:
+            errors.append(str(error))
+            continue
+
+        expected_id, expected_unit, expected_worksheets = expectation
+        if module_id != expected_id:
+            errors.append(f"{path}: ModuleID {module_id!r} != registry {expected_id!r}")
+        if owner_unit != expected_unit:
+            errors.append(
+                f"{path}: ModuleUnit {owner_unit!r} != registry {expected_unit!r}"
+            )
+        if variants != ("A", "B", "C", "D"):
+            errors.append(
+                f"{path}: ModuleWorksheetVariants must select A,B,C,D in order; "
+                f"found {variants!r}"
+            )
+
+        try:
+            lesson_units = cached_course_units(lesson_path)
+            exercise_units = cached_course_units(exercise_path)
+        except StructureError as error:
+            errors.append(str(error))
+            continue
+
+        selected_ids: list[str] = []
+        for unit in (item.strip() for item in owner_unit.split(",") if item.strip()):
+            if unit not in lesson_units:
+                errors.append(f"{path}: lesson source lacks courseunit {unit}")
+                continue
+            exercise_block = exercise_units.get(unit)
+            if exercise_block is None:
+                errors.append(f"{path}: exercise source lacks courseunit {unit}")
+                continue
+            try:
+                definitions = _worksheet_definitions(
+                    exercise_block, exercise_path, unit
+                )
+            except StructureError as error:
+                errors.append(str(error))
+                continue
+            for variant in variants:
+                worksheet_id = definitions.get(variant)
+                if worksheet_id is None:
+                    errors.append(
+                        f"{path}: courseunit {unit} has no worksheet variant {variant}"
+                    )
+                    continue
+                selected_ids.append(worksheet_id)
+            for worksheet_id in definitions.values():
+                previous = all_worksheet_ids.get(worksheet_id)
+                if previous is not None:
+                    errors.append(
+                        f"worksheet ID {worksheet_id} is duplicated in "
+                        f"{previous[0]} ({previous[1]}) and {exercise_path} ({unit})"
+                    )
+                all_worksheet_ids[worksheet_id] = (exercise_path, unit)
+        if tuple(selected_ids) != expected_worksheets:
+            errors.append(
+                f"{path}: selected worksheet IDs {tuple(selected_ids)!r} != registry "
+                f"{expected_worksheets!r}"
+            )
+
+    if len(all_worksheet_ids) != 216:
+        errors.append(
+            "shared exercise definitions must contain 216 unique worksheet IDs; "
+            f"found {len(all_worksheet_ids)}"
+        )
+
+    for label, paths in (("lesson", lesson_sources), ("exercise", exercise_sources)):
+        occurrences: dict[str, list[Path]] = {}
+        for path in paths:
+            try:
+                units = cached_course_units(path)
+            except StructureError as error:
+                errors.append(str(error))
+                continue
+            for unit in units:
+                occurrences.setdefault(unit, []).append(path)
+        for unit in sorted(owner_units - set(occurrences)):
+            errors.append(f"shared {label} definitions omit registry owner unit {unit}")
+        for unit in sorted(set(occurrences) - owner_units):
+            errors.append(f"shared {label} definitions contain unregistered unit {unit}")
+        for unit, paths_for_unit in sorted(occurrences.items()):
+            if len(paths_for_unit) != 1:
+                errors.append(
+                    f"shared {label} definitions repeat unit {unit}: "
+                    + ", ".join(str(path) for path in paths_for_unit)
+                )
+
+    if errors:
+        raise StructureError("\n".join(errors))
+    return SourceAudit(
+        len(rows),
+        len(module_paths),
+        len(discovered_companions),
+        len(set(defined_assessment_ids)),
+    )
+
+
+def parse_toc(text: str) -> list[TocEntry]:
+    entries: list[TocEntry] = []
+    command = r"\contentsline"
+    for record_number, position in enumerate(_command_positions(text, command), 1):
+        index = position + len(command)
+        context = f"table-of-contents record {record_number}"
+        kind, index = _read_group(text, index, "{", "}", context)
+        body, index = _read_group(text, index, "{", "}", context)
+        page, index = _read_group(text, index, "{", "}", context)
+        destination, _ = _read_group(text, index, "{", "}", context)
+        kind = kind.strip()
+        if kind not in STRUCTURAL_KINDS:
+            raise StructureError(f"{context}: unsupported entry kind {kind!r}")
+        number, title = _split_numberline(body)
+        entries.append(
+            TocEntry(kind, title, destination.strip(), number, page.strip())
+        )
+    if not entries:
+        raise StructureError("table of contents has no structural entries")
+    return entries
+
+
+def parse_bookmarks(text: str) -> list[Bookmark]:
+    bookmarks: list[Bookmark] = []
+    command = r"\BOOKMARK"
+    for record_number, position in enumerate(_command_positions(text, command), 1):
+        index = position + len(command)
+        context = f"bookmark record {record_number}"
+        level, index = _read_group(text, index, "[", "]", context)
+        _, index = _read_group(text, index, "[", "]", context)
+        destination, index = _read_group(text, index, "{", "}", context)
+        _, index = _read_group(text, index, "{", "}", context)
+        parent, _ = _read_group(text, index, "{", "}", context)
+        try:
+            parsed_level = int(level)
+        except ValueError as error:
+            raise StructureError(f"{context}: invalid level {level!r}") from error
+        bookmarks.append(
+            Bookmark(parsed_level, destination.strip(), parent.strip())
+        )
+    if not bookmarks:
+        raise StructureError("bookmark file has no structural entries")
+    return bookmarks
+
+
+def _plain_title(title: str) -> str:
+    plain = title.replace(r"\protect", "")
+    plain = re.sub(r"\\hspace\*?\s*\{[^{}]*\}", " ", plain)
+    plain = re.sub(
+        r"\\(?:Latin|textit|emph|textbf|textrm|textsf|texttt|mbox)\*?\s*",
+        "",
+        plain,
+    )
+    replacements = {
+        r"\&": "&",
+        r"\%": "%",
+        r"\#": "#",
+        r"\_": "_",
+        "``": "“",
+        "''": "”",
+        "---": "—",
+        "--": "–",
+        "~": " ",
+    }
+    for original, replacement in replacements.items():
+        plain = plain.replace(original, replacement)
+    plain = re.sub(r"\\[A-Za-z@]+\*?", "", plain)
+    return re.sub(r"\s+", " ", plain.replace("{", "").replace("}", "")).strip()
+
+
+def _rendered_prefix(title: str, word_limit: int = 4) -> str:
+    words = _plain_title(title).split()
+    return " ".join(words[:word_limit]).casefold()
+
+
+def _rendered_entry_match(entry: TocEntry, part_ordinal: int, line: str) -> bool:
+    rendered = re.sub(r"\s+", " ", line).strip().casefold()
+    title_prefix = _rendered_prefix(entry.title)
+    if entry.kind == "part":
+        match = re.fullmatch(
+            r"([IVXLCDM]+)\s*\\hspace\s*\{\s*1em\s*\}\s*(.*)",
+            entry.title,
+        )
+        if match is not None:
+            numeral = match.group(1)
+            title_prefix = _rendered_prefix(match.group(2))
+        else:
+            numeral = _roman(part_ordinal)
+        expected = f"{numeral} {title_prefix}".strip().casefold()
+        return rendered.startswith(expected)
+    if entry.number is not None:
+        expected = f"{entry.number} {title_prefix}".strip().casefold()
+        return rendered.startswith(expected)
+    return bool(title_prefix) and rendered.startswith(title_prefix)
+
+
+def _rendered_entry_label(entry: TocEntry, part_ordinal: int) -> str:
+    if entry.kind == "part":
+        return f"Part {_roman(part_ordinal)}"
+    if entry.number is not None:
+        return f"{entry.kind.capitalize()} {entry.number}"
+    return f"unnumbered {entry.kind} {_plain_title(entry.title)!r}"
+
+
+def validate_toc_rendering(
+    extracted_text: str,
+    entries: Sequence[TocEntry],
+    *,
+    require_single_page: bool = False,
+) -> None:
+    pages = extracted_text.split("\f")
+    toc_pages = []
+    for page in pages:
+        top = "\n".join(page.splitlines()[:10])
+        if re.search(r"(?im)^.*\bContents\s*$", top):
+            toc_pages.append(page)
+    if not toc_pages:
+        raise StructureError("rendered PDF has no identifiable Contents page")
+    if require_single_page and len(toc_pages) != 1:
+        raise StructureError(
+            "learning-module Contents must occupy exactly one physical page; "
+            f"found {len(toc_pages)}"
+        )
+
+    lines = "\n".join(toc_pages).splitlines()
+    errors: list[str] = []
+    starts: list[int | None] = []
+    cursor = 0
+    part_ordinal = 0
+    ordinals: list[int] = []
+    for entry in entries:
+        if entry.kind == "part":
+            part_ordinal += 1
+        ordinals.append(part_ordinal)
+        index = next(
+            (
+                candidate
+                for candidate in range(cursor, len(lines))
+                if _rendered_entry_match(entry, part_ordinal, lines[candidate])
+            ),
+            None,
+        )
+        starts.append(index)
+        label = _rendered_entry_label(entry, part_ordinal)
+        if index is None:
+            errors.append(
+                f"rendered Contents lacks a distinct ordered line for {label}"
+            )
+            continue
+        cursor = index + 1
+
+    for entry_index, (entry, start, ordinal) in enumerate(
+        zip(entries, starts, ordinals)
+    ):
+        if start is None:
+            continue
+        end = next(
+            (
+                later
+                for later in starts[entry_index + 1 :]
+                if later is not None
+            ),
+            len(lines),
+        )
+        block = "\n".join(lines[start:end])
+        label = _rendered_entry_label(entry, ordinal)
+        page = re.escape(entry.page)
+        if entry.kind == "part":
+            page_pattern = re.compile(rf"(?:^|\s){page}\s*$", re.MULTILINE)
+            if page_pattern.search(lines[start]) is None:
+                errors.append(
+                    f"rendered Contents {label} lacks its separate declared page "
+                    f"{entry.page!r}"
+                )
+            continue
+        leader_and_page = re.compile(
+            rf"(?:\.\s*){{3,}}{page}\s*$", re.MULTILINE
+        )
+        if leader_and_page.search(block) is None:
+            errors.append(
+                f"rendered Contents {label} lacks a dotted leader and separate "
+                f"declared page {entry.page!r}"
+            )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def _toc_bbox_rows(bbox_text: str) -> list[list[BboxWord]]:
+    """Return visual rows from every rendered Contents page."""
+    try:
+        root = ET.fromstring(bbox_text)
+    except ET.ParseError as error:
+        raise StructureError(f"cannot parse PDF bounding-box output: {error}") from error
+
+    contents_pages: list[list[BboxLine]] = []
+    errors: list[str] = []
+    pages = [element for element in root.iter() if element.tag.endswith("page")]
+    for physical_page, page in enumerate(pages, 1):
+        words: list[BboxWord] = []
+        word_positions: dict[int, BboxWord] = {}
+        for word in (
+            element for element in page.iter() if element.tag.endswith("word")
+        ):
+            value = (word.text or "").strip()
+            if not value:
+                continue
+            try:
+                x_min = float(word.attrib["xMin"])
+                y_min = float(word.attrib["yMin"])
+            except (KeyError, ValueError):
+                errors.append(
+                    f"PDF bounding-box word on physical page {physical_page} "
+                    "lacks valid xMin/yMin coordinates"
+                )
+                continue
+            positioned_word = BboxWord(value, x_min, y_min)
+            words.append(positioned_word)
+            word_positions[id(word)] = positioned_word
+        if any(
+            word.text.casefold() == "contents"
+            and word.y_min <= TOC_MARKER_MAX_Y_POINTS
+            for word in words
+        ):
+            lines: list[BboxLine] = []
+            for line in (
+                element for element in page.iter() if element.tag.endswith("line")
+            ):
+                line_words = tuple(
+                    word_positions[id(word)]
+                    for word in line.iter()
+                    if word.tag.endswith("word") and id(word) in word_positions
+                )
+                if not line_words:
+                    continue
+                raw_y_min = line.attrib.get("yMin")
+                if raw_y_min is None:
+                    line_y_min = min(word.y_min for word in line_words)
+                else:
+                    try:
+                        line_y_min = float(raw_y_min)
+                    except ValueError:
+                        errors.append(
+                            f"PDF bounding-box line on physical page "
+                            f"{physical_page} lacks a valid yMin coordinate"
+                        )
+                        continue
+                lines.append(BboxLine(line_words, line_y_min))
+            if not lines:
+                errors.append(
+                    f"PDF bounding-box Contents page {physical_page} has no "
+                    "line geometry"
+                )
+            contents_pages.append(lines)
+
+    if errors:
+        raise StructureError("\n".join(errors))
+    if not contents_pages:
+        raise StructureError(
+            "PDF bounding-box output has no identifiable Contents page"
+        )
+
+    rows: list[list[BboxWord]] = []
+    for lines in contents_pages:
+        current: list[BboxWord] = []
+        current_line_y: list[float] = []
+        current_y = 0.0
+        for line in sorted(
+            lines,
+            key=lambda item: (
+                item.y_min,
+                min(word.x_min for word in item.words),
+            ),
+        ):
+            if (
+                current
+                and abs(line.y_min - current_y) > TOC_ROW_Y_TOLERANCE_POINTS
+            ):
+                rows.append(sorted(current, key=lambda item: item.x_min))
+                current = []
+                current_line_y = []
+            current.extend(line.words)
+            current_line_y.append(line.y_min)
+            current_y = median(current_line_y)
+        if current:
+            rows.append(sorted(current, key=lambda item: item.x_min))
+    return rows
+
+
+def _toc_entry_title(entry: TocEntry, part_ordinal: int) -> str:
+    if entry.kind != "part":
+        return _plain_title(entry.title)
+    match = re.fullmatch(
+        r"([IVXLCDM]+)\s*\\hspace\s*\{\s*1em\s*\}\s*(.*)", entry.title
+    )
+    return _plain_title(match.group(2) if match is not None else entry.title)
+
+
+def _position_toc_entry(
+    rows: Sequence[Sequence[BboxWord]],
+    start: int,
+    entry: TocEntry,
+    part_ordinal: int,
+) -> tuple[int, PositionedTocEntry] | None:
+    """Match one ToC entry, consuming any visual title-continuation rows."""
+    row = rows[start]
+    if entry.kind == "part":
+        marker = _roman(part_ordinal)
+    else:
+        marker = entry.number
+    title_offset = 1 if marker is not None else 0
+    first_title_offset = title_offset
+    if len(row) <= title_offset:
+        return None
+    if marker is not None and row[0].text.casefold() != marker.casefold():
+        return None
+
+    expected_words = _toc_entry_title(entry, part_ordinal).casefold().split()
+    if not expected_words:
+        return None
+    expected_index = 0
+    row_index = start
+    continuation_title_x: list[float] = []
+    while row_index < len(rows):
+        title_words = rows[row_index][title_offset:] if row_index == start else rows[row_index]
+        if not title_words:
+            return None
+        remaining = len(expected_words) - expected_index
+        comparable = min(len(title_words), remaining)
+        rendered_words = [word.text.casefold() for word in title_words[:comparable]]
+        if rendered_words != expected_words[expected_index : expected_index + comparable]:
+            return None
+        if row_index != start:
+            continuation_title_x.append(title_words[0].x_min)
+        expected_index += comparable
+        if expected_index == len(expected_words):
+            return (
+                row_index + 1,
+                PositionedTocEntry(
+                    entry,
+                    part_ordinal,
+                    row[0].x_min,
+                    row[first_title_offset].x_min,
+                    tuple(continuation_title_x),
+                ),
+            )
+        row_index += 1
+        title_offset = 0
+    return None
+
+
+def validate_toc_geometry(
+    bbox_text: str, entries: Sequence[TocEntry]
+) -> None:
+    """Require the rendered Contents to expose its structural hierarchy."""
+    rows = _toc_bbox_rows(bbox_text)
+    positioned: list[PositionedTocEntry] = []
+    errors: list[str] = []
+    cursor = 0
+    part_ordinal = 0
+
+    for entry in entries:
+        if entry.kind == "part":
+            part_ordinal += 1
+        match = next(
+            (
+                positioned_match
+                for index in range(cursor, len(rows))
+                if (
+                    positioned_match := _position_toc_entry(
+                        rows, index, entry, part_ordinal
+                    )
+                )
+                is not None
+            ),
+            None,
+        )
+        label = _rendered_entry_label(entry, part_ordinal)
+        if match is None:
+            errors.append(
+                f"rendered Contents geometry lacks an ordered row for {label}"
+            )
+            continue
+        cursor, positioned_entry = match
+        positioned.append(positioned_entry)
+
+    if errors:
+        raise StructureError("\n".join(errors))
+
+    current: dict[str, PositionedTocEntry | None] = {
+        kind: None for kind in STRUCTURAL_KINDS
+    }
+    for item in positioned:
+        entry = item.entry
+        label = _rendered_entry_label(entry, item.part_ordinal)
+        for continuation_x in item.continuation_title_x:
+            if abs(continuation_x - item.title_x) > TOC_TITLE_X_TOLERANCE_POINTS:
+                errors.append(
+                    f"rendered Contents {label} wrapped continuation is not "
+                    f"aligned with its title column: {continuation_x:.2f}pt "
+                    f"versus {item.title_x:.2f}pt; tolerance "
+                    f"{TOC_TITLE_X_TOLERANCE_POINTS:.2f}pt"
+                )
+        if entry.kind == "part":
+            current.update({kind: None for kind in STRUCTURAL_KINDS})
+            current["part"] = item
+            continue
+        parent_kind = PARENT_KIND[entry.kind]
+        parent = current[parent_kind]
+        if parent is not None:
+            parent_label = _rendered_entry_label(
+                parent.entry, parent.part_ordinal
+            )
+            gutter_delta = item.gutter_x - parent.gutter_x
+            title_delta = item.title_x - parent.title_x
+            if gutter_delta < TOC_MINIMUM_LEVEL_INDENT_POINTS:
+                errors.append(
+                    f"rendered Contents {label} gutter is not visibly indented "
+                    f"beneath {parent_label}: {gutter_delta:.2f}pt; expected at "
+                    f"least {TOC_MINIMUM_LEVEL_INDENT_POINTS:.2f}pt"
+                )
+            if title_delta < TOC_MINIMUM_LEVEL_INDENT_POINTS:
+                errors.append(
+                    f"rendered Contents {label} title is not visibly indented "
+                    f"beneath {parent_label}: {title_delta:.2f}pt; expected at "
+                    f"least {TOC_MINIMUM_LEVEL_INDENT_POINTS:.2f}pt"
+                )
+        current[entry.kind] = item
+        if entry.kind == "chapter":
+            current.update(
+                {"section": None, "subsection": None, "subsubsection": None}
+            )
+        elif entry.kind == "section":
+            current.update({"subsection": None, "subsubsection": None})
+        elif entry.kind == "subsection":
+            current["subsubsection"] = None
+
+    for kind in STRUCTURAL_KINDS[1:]:
+        peers = [item for item in positioned if item.entry.kind == kind]
+        if len(peers) < 2:
+            continue
+        expected_title_x = median(item.title_x for item in peers)
+        for item in peers:
+            if abs(item.title_x - expected_title_x) <= TOC_TITLE_X_TOLERANCE_POINTS:
+                continue
+            label = _rendered_entry_label(item.entry, item.part_ordinal)
+            errors.append(
+                f"rendered Contents {label} title column is not aligned with "
+                f"other {kind} entries: {item.title_x:.2f}pt versus "
+                f"{expected_title_x:.2f}pt; tolerance "
+                f"{TOC_TITLE_X_TOLERANCE_POINTS:.2f}pt"
+            )
+
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def _run_text(command: Sequence[str], purpose: str) -> str:
+    try:
+        result = subprocess.run(
+            command,
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+        )
+    except OSError as error:
+        raise StructureError(f"cannot run {command[0]} for {purpose}: {error}") from error
+    if result.returncode:
+        detail = result.stderr.strip() or f"exit status {result.returncode}"
+        raise StructureError(f"{purpose} failed: {detail}")
+    return result.stdout
+
+
+def validate_pdf_destinations(
+    destinations_text: str, entries: Sequence[TocEntry]
+) -> None:
+    destination_pages: dict[str, int] = {}
+    duplicates: set[str] = set()
+    for match in re.finditer(
+        r'^\s*(\d+)\s+.*"([^"]+)"\s*$', destinations_text, re.MULTILINE
+    ):
+        physical_page = int(match.group(1))
+        destination = match.group(2)
+        if destination in destination_pages:
+            duplicates.add(destination)
+        destination_pages[destination] = physical_page
+
+    errors: list[str] = []
+    if duplicates:
+        errors.append(
+            "rendered PDF contains duplicate named destinations: "
+            + ", ".join(sorted(duplicates))
+        )
+    missing = sorted(
+        entry.destination
+        for entry in entries
+        if entry.destination not in destination_pages
+    )
+    if missing:
+        errors.append(
+            "rendered PDF lacks table-of-contents destinations: " + ", ".join(missing)
+        )
+    for entry in entries:
+        destination_page = destination_pages.get(entry.destination)
+        page_anchor = f"page.{entry.page}"
+        declared_page = destination_pages.get(page_anchor)
+        if declared_page is None:
+            errors.append(
+                f"rendered PDF lacks logical page destination {page_anchor!r} "
+                f"for {entry.destination}"
+            )
+        elif destination_page is not None and destination_page != declared_page:
+            errors.append(
+                f"rendered PDF destination {entry.destination} is on physical page "
+                f"{destination_page}, but its declared ToC page {entry.page!r} maps "
+                f"to physical page {declared_page}"
+            )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def validate_chapter_positions(
+    bbox_text: str, entries: Sequence[TocEntry]
+) -> None:
+    try:
+        root = ET.fromstring(bbox_text)
+    except ET.ParseError as error:
+        raise StructureError(f"cannot parse PDF bounding-box output: {error}") from error
+
+    expected = [
+        int(entry.number)
+        for entry in entries
+        if entry.kind == "chapter"
+        and entry.number is not None
+        and entry.number.isdecimal()
+    ]
+    found: list[int] = []
+    errors: list[str] = []
+    for physical_page, page in enumerate(
+        (element for element in root.iter() if element.tag.endswith("page")), 1
+    ):
+        try:
+            height = float(page.attrib["height"])
+        except (KeyError, ValueError):
+            errors.append(f"PDF bounding-box page {physical_page} lacks a valid height")
+            continue
+        for line in (element for element in page.iter() if element.tag.endswith("line")):
+            words = [
+                (word.text or "").strip()
+                for word in line
+                if word.tag.endswith("word")
+            ]
+            if not words or words[0] != "CHAPTER":
+                continue
+            rendered_number = next(
+                (int(word) for word in words[1:] if word.isdecimal()), None
+            )
+            if rendered_number is None:
+                continue
+            found.append(rendered_number)
+            try:
+                bottom = float(line.attrib["yMax"])
+            except (KeyError, ValueError):
+                errors.append(
+                    f"chapter label on physical page {physical_page} lacks a valid yMax"
+                )
+                continue
+            if bottom > height * 0.80:
+                errors.append(
+                    f"chapter label on physical page {physical_page} begins too near "
+                    "the page foot to retain a meaningful opening block"
+                )
+    if found != expected:
+        errors.append(
+            "rendered PDF chapter-label sequence differs from the table of "
+            f"contents: found {found!r}, expected {expected!r}"
+        )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def validate_body_word_pages(bbox_text: str) -> None:
+    """Reject physical pages containing only headers, footers, or rules."""
+    try:
+        root = ET.fromstring(bbox_text)
+    except ET.ParseError as error:
+        raise StructureError(f"cannot parse PDF bounding-box output: {error}") from error
+
+    pages = [element for element in root.iter() if element.tag.endswith("page")]
+    if not pages:
+        raise StructureError("PDF bounding-box output contains no physical pages")
+
+    errors: list[str] = []
+    for physical_page, page in enumerate(pages, 1):
+        try:
+            height = float(page.attrib["height"])
+        except (KeyError, ValueError):
+            errors.append(f"PDF bounding-box page {physical_page} lacks a valid height")
+            continue
+
+        body_words = 0
+        invalid_words = 0
+        for word in (element for element in page.iter() if element.tag.endswith("word")):
+            if not (word.text or "").strip():
+                continue
+            try:
+                center = (
+                    float(word.attrib["yMin"]) + float(word.attrib["yMax"])
+                ) / 2
+            except (KeyError, ValueError):
+                invalid_words += 1
+                continue
+            if BODY_MARGIN_POINTS <= center <= height - BODY_MARGIN_POINTS:
+                body_words += 1
+        if invalid_words:
+            errors.append(
+                f"PDF bounding-box page {physical_page} contains {invalid_words} "
+                "words without valid vertical coordinates"
+            )
+        if body_words == 0:
+            errors.append(
+                f"physical page {physical_page} has no body words between the "
+                "header and footer margins"
+            )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def _page_word_count(page: str) -> int:
+    return len(re.findall(r"\S+", page))
+
+
+def _form_marker_near_page_top(page: str) -> bool:
+    nonempty_lines = [line.strip() for line in page.splitlines() if line.strip()]
+    return FORM_CONTINUATION_MARKER.search("\n".join(nonempty_lines[:6])) is not None
+
+
+def validate_fragmentary_pages(
+    extracted_text: str, *, is_module: bool = False
+) -> None:
+    errors: list[str] = []
+    for physical_page, page in enumerate(extracted_text.split("\f"), 1):
+        word_count = _page_word_count(page)
+        if OBSOLETE_DEFINITION_CHECK.search(page) is not None:
+            errors.append(
+                f"physical page {physical_page} contains obsolete "
+                "Definition/error check footer"
+            )
+        if (
+            is_module
+            and READINESS_MARKER.search(page) is not None
+            and word_count < MINIMUM_READINESS_PAGE_WORDS
+        ):
+            errors.append(
+                f"module physical page {physical_page} contains Before continuing "
+                f"but only {word_count} words; expected at least "
+                f"{MINIMUM_READINESS_PAGE_WORDS}"
+            )
+        if (
+            _form_marker_near_page_top(page)
+            and WORKSHEET_ID_MARKER.search(page) is None
+            and word_count < MINIMUM_FORM_CONTINUATION_WORDS
+        ):
+            errors.append(
+                f"physical page {physical_page} is a sparse worksheet/solution "
+                f"continuation with only {word_count} words; expected at least "
+                f"{MINIMUM_FORM_CONTINUATION_WORDS}"
+            )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def validate_pdf(
+    document: str, pdf_path: Path, entries: Sequence[TocEntry]
+) -> None:
+    if not pdf_path.is_file():
+        raise StructureError(f"rendered PDF does not exist: {pdf_path}")
+    extracted = _run_text(
+        ("pdftotext", "-layout", str(pdf_path), "-"), "PDF text extraction"
+    )
+    validate_toc_rendering(extracted, entries, require_single_page=False)
+    validate_fragmentary_pages(extracted, is_module=_is_module(document))
+
+    bbox_text = _run_text(
+        ("pdftotext", "-bbox-layout", str(pdf_path), "-"),
+        "PDF bounding-box extraction",
+    )
+    validate_body_word_pages(bbox_text)
+    validate_chapter_positions(bbox_text, entries)
+    validate_toc_geometry(bbox_text, entries)
+
+    destinations_text = _run_text(
+        ("pdfinfo", "-dests", str(pdf_path)), "PDF destination inspection"
+    )
+    validate_pdf_destinations(destinations_text, entries)
+
+
+def _normalized_title(title: str) -> str:
+    return re.sub(r"\s+", " ", title.replace(r"\protect", "")).strip()
+
+
+def _roman(number: int) -> str:
+    values = (
+        (1000, "M"),
+        (900, "CM"),
+        (500, "D"),
+        (400, "CD"),
+        (100, "C"),
+        (90, "XC"),
+        (50, "L"),
+        (40, "XL"),
+        (10, "X"),
+        (9, "IX"),
+        (5, "V"),
+        (4, "IV"),
+        (1, "I"),
+    )
+    result: list[str] = []
+    for value, numeral in values:
+        while number >= value:
+            result.append(numeral)
+            number -= value
+    return "".join(result)
+
+
+def _part_title(entry: TocEntry, ordinal: int, errors: list[str]) -> str:
+    match = re.fullmatch(
+        r"([IVXLCDM]+)\s*\\hspace\s*\{\s*1em\s*\}\s*(.*)", entry.title
+    )
+    if match is None:
+        errors.append(f"Part {ordinal} has an unrecognized numbered title: {entry.title!r}")
+        return _normalized_title(entry.title)
+    expected = _roman(ordinal)
+    if match.group(1) != expected:
+        errors.append(
+            f"Part sequence is not I..N: expected {expected}, found {match.group(1)}"
+        )
+    return _normalized_title(match.group(2))
+
+
+def _is_module(document: str) -> bool:
+    relative = document.removeprefix(CURRICULUM_PREFIX)
+    stage = relative.split("/", 1)[0]
+    return stage in {"01-foundations", "02-core-grammar", "03-missal-reading", "04-advanced"}
+
+
+def _is_assessment(document: str) -> bool:
+    return document.startswith(f"{CURRICULUM_PREFIX}05-stage-assessments/")
+
+
+def _validate_part_population(
+    entries: Sequence[TocEntry], part_indexes: Sequence[int], errors: list[str]
+) -> None:
+    for ordinal, start in enumerate(part_indexes, 1):
+        end = part_indexes[ordinal] if ordinal < len(part_indexes) else len(entries)
+        if not any(entry.kind == "chapter" for entry in entries[start + 1 : end]):
+            errors.append(f"Part {ordinal} contains no chapter")
+
+
+def _validate_numbers(entries: Sequence[TocEntry], errors: list[str]) -> None:
+    expected_chapter = 1
+    numbered_chapters = 0
+    part_ordinal = 0
+    current_numbers: dict[str, str | None] = {
+        "chapter": None,
+        "section": None,
+        "subsection": None,
+        "subsubsection": None,
+    }
+    expected_child = {"section": 1, "subsection": 1, "subsubsection": 1}
+
+    for entry in entries:
+        if entry.kind == "part":
+            part_ordinal += 1
+            expected_chapter = 1
+            current_numbers.update(
+                {"chapter": None, "section": None, "subsection": None, "subsubsection": None}
+            )
+            expected_child.update(
+                {"section": 1, "subsection": 1, "subsubsection": 1}
+            )
+            continue
+        if entry.kind == "chapter":
+            current_numbers.update(
+                {"chapter": None, "section": None, "subsection": None, "subsubsection": None}
+            )
+            expected_child.update({"section": 1, "subsection": 1, "subsubsection": 1})
+            if entry.number is None:
+                errors.append(
+                    f"Unnumbered chapter is not permitted in Part "
+                    f"{_roman(part_ordinal)}: {entry.title}"
+                )
+                continue
+            if not entry.number.isdecimal():
+                errors.append(f"Chapter number is not an integer: {entry.number!r}")
+                continue
+            actual = int(entry.number)
+            if actual != expected_chapter:
+                errors.append(
+                    f"Chapter sequence within Part {_roman(part_ordinal)} is "
+                    f"invalid: expected {expected_chapter}, found {actual} "
+                    f"({entry.title})"
+                )
+            current_numbers["chapter"] = entry.number
+            expected_chapter += 1
+            numbered_chapters += 1
+            continue
+
+        parent_kind = PARENT_KIND[entry.kind]
+        if entry.number is None:
+            current_numbers[entry.kind] = None
+            if entry.kind == "section":
+                current_numbers["subsection"] = None
+                current_numbers["subsubsection"] = None
+                expected_child["subsection"] = 1
+                expected_child["subsubsection"] = 1
+            elif entry.kind == "subsection":
+                current_numbers["subsubsection"] = None
+                expected_child["subsubsection"] = 1
+            continue
+
+        parent_number = current_numbers[parent_kind]
+        if parent_number is None:
+            errors.append(
+                f"Numbered {entry.kind} {entry.number!r} has no numbered {parent_kind}"
+            )
+            continue
+        expected_number = f"{parent_number}.{expected_child[entry.kind]}"
+        if entry.number != expected_number:
+            errors.append(
+                f"{entry.kind.capitalize()} sequence is invalid: expected "
+                f"{expected_number}, found {entry.number} ({entry.title})"
+            )
+        current_numbers[entry.kind] = entry.number
+        expected_child[entry.kind] += 1
+        if entry.kind == "section":
+            current_numbers["subsection"] = None
+            current_numbers["subsubsection"] = None
+            expected_child["subsection"] = 1
+            expected_child["subsubsection"] = 1
+        elif entry.kind == "subsection":
+            current_numbers["subsubsection"] = None
+            expected_child["subsubsection"] = 1
+
+    if numbered_chapters == 0:
+        errors.append("document has no numbered chapters")
+
+
+def _validate_bookmarks(
+    entries: Sequence[TocEntry], bookmarks: Sequence[Bookmark], errors: list[str]
+) -> None:
+    toc_destinations = [entry.destination for entry in entries]
+    bookmark_destinations = [bookmark.destination for bookmark in bookmarks]
+    for label, destinations in (
+        ("table of contents", toc_destinations),
+        ("bookmarks", bookmark_destinations),
+    ):
+        duplicates = sorted(
+            destination
+            for destination in set(destinations)
+            if destinations.count(destination) > 1
+        )
+        if "" in destinations:
+            errors.append(f"{label} contains an empty destination")
+        if duplicates:
+            errors.append(f"{label} contains duplicate destinations: {', '.join(duplicates)}")
+
+    if toc_destinations != bookmark_destinations:
+        errors.append("bookmark destinations do not match table-of-contents order")
+
+    current_destination: dict[str, str | None] = {
+        "part": None,
+        "chapter": None,
+        "section": None,
+        "subsection": None,
+        "subsubsection": None,
+    }
+    for entry, bookmark in zip(entries, bookmarks):
+        expected_level = BOOKMARK_LEVEL[entry.kind]
+        if bookmark.level != expected_level:
+            errors.append(
+                f"Bookmark {entry.destination} has level {bookmark.level}; "
+                f"expected {expected_level} for {entry.kind}"
+            )
+        if entry.kind == "part":
+            expected_parent = ""
+            current_destination.update(
+                {
+                    "part": entry.destination,
+                    "chapter": None,
+                    "section": None,
+                    "subsection": None,
+                    "subsubsection": None,
+                }
+            )
+        else:
+            parent_kind = PARENT_KIND[entry.kind]
+            expected_parent = current_destination[parent_kind] or ""
+            current_destination[entry.kind] = entry.destination
+            if entry.kind == "chapter":
+                current_destination.update(
+                    {"section": None, "subsection": None, "subsubsection": None}
+                )
+            elif entry.kind == "section":
+                current_destination.update({"subsection": None, "subsubsection": None})
+            elif entry.kind == "subsection":
+                current_destination["subsubsection"] = None
+        if not expected_parent and entry.kind != "part":
+            errors.append(f"Bookmark {entry.destination} has no preceding {parent_kind}")
+        if bookmark.parent != expected_parent:
+            errors.append(
+                f"Bookmark {entry.destination} has parent {bookmark.parent!r}; "
+                f"expected {expected_parent!r}"
+            )
+
+
+def _entries_by_part(
+    entries: Sequence[TocEntry], part_indexes: Sequence[int]
+) -> list[list[TocEntry]]:
+    result: list[list[TocEntry]] = []
+    for ordinal, start in enumerate(part_indexes, 1):
+        end = part_indexes[ordinal] if ordinal < len(part_indexes) else len(entries)
+        result.append(list(entries[start + 1 : end]))
+    return result
+
+
+def _validate_legacy_module(
+    entries: Sequence[TocEntry],
+    bookmarks: Sequence[Bookmark],
+    part_titles: Sequence[str],
+    part_indexes: Sequence[int],
+    errors: list[str],
+) -> None:
+    if tuple(part_titles) != MODULE_PARTS:
+        errors.append(
+            "learning module Parts differ from the required sequence: "
+            + " / ".join(part_titles)
+        )
+        return
+    parts = _entries_by_part(entries, part_indexes)
+    worksheet_chapters = [
+        entry
+        for entry in parts[2]
+        if entry.kind == "chapter" and entry.number is not None
+    ]
+    if len(worksheet_chapters) != 1:
+        errors.append(
+            "Worksheets must contain exactly one numbered, source-owned "
+            f"unit chapter; found {len(worksheet_chapters)}"
+        )
+        return
+    answer_chapters = [
+        entry
+        for entry in parts[4]
+        if entry.kind == "chapter" and entry.number is not None
+    ]
+    answer_titles = [
+        _normalized_title(entry.title)
+        for entry in parts[4]
+        if entry.kind == "chapter"
+    ]
+    if any(
+        title.casefold() == "selected worksheet solutions" for title in answer_titles
+    ):
+        errors.append(
+            "Answer Key contains the forbidden generic Selected worksheet solutions chapter"
+        )
+    worksheet_title = _normalized_title(worksheet_chapters[0].title)
+    matching_answers = [
+        entry
+        for entry in answer_chapters
+        if _normalized_title(entry.title) == worksheet_title
+    ]
+    if len(matching_answers) != 1:
+        errors.append(
+            "Answer Key must contain exactly one matching source-owned unit chapter "
+            f"for Worksheets {worksheet_title!r}; found {len(matching_answers)}"
+        )
+
+    worksheet_prefix = "worksheet "
+    solution_prefix = "solution "
+    worksheet_entries = [
+        entry
+        for entry in parts[2]
+        if entry.kind == "section"
+        and _normalized_title(entry.title).casefold().startswith(worksheet_prefix)
+    ]
+    solution_entries = [
+        entry
+        for entry in parts[4]
+        if entry.kind == "section"
+        and _normalized_title(entry.title).casefold().startswith(solution_prefix)
+    ]
+    if len(worksheet_entries) != 2:
+        errors.append(
+            "Worksheets must expose exactly two worksheet sections; "
+            f"found {len(worksheet_entries)}"
+        )
+    if len(solution_entries) != 2:
+        errors.append(
+            "Answer Key must expose exactly two solution sections; "
+            f"found {len(solution_entries)}"
+        )
+    if len(matching_answers) == 1 and solution_entries:
+        answer_page = matching_answers[0].page
+        first_solution_page = solution_entries[0].page
+        if answer_page != first_solution_page:
+            errors.append(
+                "Answer Key source-owned unit chapter and first solution must "
+                "share one logical page; "
+                f"found chapter page {answer_page!r} and first-solution page "
+                f"{first_solution_page!r}"
+            )
+    for label, rendered_entries in (
+        ("learner worksheets", worksheet_entries),
+        ("keyed solutions", solution_entries),
+    ):
+        pages = [entry.page for entry in rendered_entries]
+        try:
+            numeric_pages = [int(page) for page in pages]
+        except ValueError:
+            numeric_pages = []
+        if len(numeric_pages) != len(pages) or any(
+            later <= earlier
+            for earlier, later in zip(numeric_pages, numeric_pages[1:])
+        ):
+            errors.append(
+                f"later {label} must start on a strictly later logical page; "
+                f"found {pages!r}"
+            )
+    worksheet_ids = [
+        _normalized_title(entry.title)[len(worksheet_prefix) :]
+        for entry in worksheet_entries
+    ]
+    solution_ids = [
+        _normalized_title(entry.title)[len(solution_prefix) :]
+        for entry in solution_entries
+    ]
+    if worksheet_ids != solution_ids:
+        errors.append(
+            "worksheet and solution section IDs differ: "
+            f"{worksheet_ids!r} != {solution_ids!r}"
+        )
+    if any(entry.number is not None for entry in worksheet_entries + solution_entries):
+        errors.append("worksheet and solution navigation entries must be unnumbered sections")
+
+    bookmark_by_destination = {
+        bookmark.destination: bookmark for bookmark in bookmarks
+    }
+    worksheet_parent = worksheet_chapters[0].destination
+    for entry in worksheet_entries:
+        bookmark = bookmark_by_destination.get(entry.destination)
+        if bookmark is not None and bookmark.parent != worksheet_parent:
+            errors.append(
+                f"worksheet {entry.destination} has bookmark parent "
+                f"{bookmark.parent!r}; expected source-owned unit {worksheet_parent!r}"
+            )
+    if len(matching_answers) == 1:
+        solution_parent = matching_answers[0].destination
+        for entry in solution_entries:
+            bookmark = bookmark_by_destination.get(entry.destination)
+            if bookmark is not None and bookmark.parent != solution_parent:
+                errors.append(
+                    f"solution {entry.destination} has bookmark parent "
+                    f"{bookmark.parent!r}; expected source-owned unit "
+                    f"{solution_parent!r}"
+                )
+
+
+def _validate_module(
+    document: str,
+    entries: Sequence[TocEntry],
+    bookmarks: Sequence[Bookmark],
+    part_titles: Sequence[str],
+    part_indexes: Sequence[int],
+    errors: list[str],
+    expected_module: tuple[tuple[str, ...], tuple[str, ...]] | None = None,
+) -> None:
+    """Validate a grouped self-paced teaching or poetry packet."""
+    if tuple(part_titles) != MODULE_PARTS:
+        errors.append(
+            "learning packet Parts differ from the declared sequence: "
+            + " / ".join(part_titles)
+        )
+        return
+
+    parts = _entries_by_part(entries, part_indexes)
+    teaching_chapters = [
+        entry
+        for entry in parts[0]
+        if entry.kind == "chapter" and entry.number is not None
+    ]
+    practice_part = parts[3]
+    answer_part = parts[4]
+    bookmark_by_destination = {
+        bookmark.destination: bookmark for bookmark in bookmarks
+    }
+    chapter_by_destination = {
+        entry.destination: entry
+        for entry in entries
+        if entry.kind == "chapter" and entry.number is not None
+    }
+
+    worksheet_prefix = "worksheet "
+    solution_prefix = "solution "
+    worksheets = [
+        entry
+        for entry in practice_part
+        if entry.kind == "section"
+        and _normalized_title(entry.title).casefold().startswith(worksheet_prefix)
+    ]
+    solutions = [
+        entry
+        for entry in answer_part
+        if entry.kind == "section"
+        and _normalized_title(entry.title).casefold().startswith(solution_prefix)
+    ]
+    if not worksheets:
+        errors.append("Cumulative Practice contains no worksheet sections")
+        return
+    if len(worksheets) % 4:
+        errors.append(
+            "Cumulative Practice must expose four worksheet variants per "
+            f"teaching unit; found {len(worksheets)} sections"
+        )
+    if len(solutions) != len(worksheets):
+        errors.append(
+            "Answers and Models must expose one solution for every worksheet; "
+            f"found {len(solutions)} solutions for {len(worksheets)} worksheets"
+        )
+
+    worksheet_labels = [
+        _normalized_title(entry.title)[len(worksheet_prefix) :]
+        for entry in worksheets
+    ]
+    solution_labels = [
+        _normalized_title(entry.title)[len(solution_prefix) :]
+        for entry in solutions
+    ]
+    if worksheet_labels != solution_labels:
+        errors.append(
+            "worksheet and solution section IDs/titles differ: "
+            f"{worksheet_labels!r} != {solution_labels!r}"
+        )
+    rendered_worksheet_ids = tuple(
+        label.split(" — ", 1)[0].strip() for label in worksheet_labels
+    )
+    if any(entry.number is not None for entry in worksheets + solutions):
+        errors.append("worksheet and solution navigation entries must be unnumbered")
+
+    def grouped_parents(
+        rendered_entries: Sequence[TocEntry], label: str
+    ) -> list[str]:
+        groups: list[str] = []
+        counts: dict[str, int] = {}
+        for entry in rendered_entries:
+            bookmark = bookmark_by_destination.get(entry.destination)
+            if bookmark is None:
+                continue
+            parent = bookmark.parent
+            if parent not in counts:
+                groups.append(parent)
+                counts[parent] = 0
+            counts[parent] += 1
+            if parent not in chapter_by_destination:
+                errors.append(
+                    f"{label} {entry.destination} has no numbered unit-chapter parent"
+                )
+        for parent in groups:
+            if counts[parent] != 4:
+                title = _normalized_title(
+                    chapter_by_destination.get(parent, TocEntry("chapter", parent, parent, None)).title
+                )
+                errors.append(
+                    f"{label} unit {title!r} must contain four A–D forms; "
+                    f"found {counts[parent]}"
+                )
+        return groups
+
+    worksheet_parents = grouped_parents(worksheets, "worksheet")
+    solution_parents = grouped_parents(solutions, "solution")
+    is_poetry = document.startswith(
+        f"{CURRICULUM_PREFIX}04-advanced/poetry/"
+    )
+    allowed_unit_counts = {1} if is_poetry else {2, 3}
+    if len(worksheet_parents) not in allowed_unit_counts:
+        packet_kind = "poetry" if is_poetry else "common-trunk"
+        errors.append(
+            f"a {packet_kind} packet must render "
+            f"{'one' if is_poetry else 'two or three'} teaching units; "
+            f"found {len(worksheet_parents)} worksheet units"
+        )
+    if len(teaching_chapters) != len(worksheet_parents):
+        errors.append(
+            "Teaching and Cumulative Practice must render the same number of "
+            f"source units; found {len(teaching_chapters)} teaching chapters "
+            f"and {len(worksheet_parents)} worksheet units"
+        )
+    if expected_module is not None:
+        expected_units, expected_worksheet_ids = expected_module
+        if len(teaching_chapters) != len(expected_units):
+            errors.append(
+                f"rendered Teaching unit count differs from registry {expected_units!r}: "
+                f"found {len(teaching_chapters)}"
+            )
+        if len(worksheet_parents) != len(expected_units):
+            errors.append(
+                f"rendered worksheet-unit count differs from registry "
+                f"{expected_units!r}: found {len(worksheet_parents)}"
+            )
+        if rendered_worksheet_ids != expected_worksheet_ids:
+            errors.append(
+                "rendered worksheet IDs differ from the canonical registry: "
+                f"{rendered_worksheet_ids!r} != {expected_worksheet_ids!r}"
+            )
+    worksheet_parent_titles = [
+        _normalized_title(chapter_by_destination[parent].title)
+        for parent in worksheet_parents
+        if parent in chapter_by_destination
+    ]
+    solution_parent_titles = [
+        _normalized_title(chapter_by_destination[parent].title)
+        for parent in solution_parents
+        if parent in chapter_by_destination
+    ]
+    if worksheet_parent_titles != solution_parent_titles:
+        errors.append(
+            "source-owned worksheet and solution unit chapters differ: "
+            f"{worksheet_parent_titles!r} != {solution_parent_titles!r}"
+        )
+
+    for label, rendered_entries in (
+        ("learner worksheets", worksheets),
+        ("keyed solutions", solutions),
+    ):
+        pages = [entry.page for entry in rendered_entries]
+        try:
+            numeric_pages = [int(page) for page in pages]
+        except ValueError:
+            numeric_pages = []
+        if len(numeric_pages) != len(pages) or any(
+            later <= earlier
+            for earlier, later in zip(numeric_pages, numeric_pages[1:])
+        ):
+            errors.append(
+                f"later {label} must start on a strictly later logical page; "
+                f"found {pages!r}"
+            )
+
+
+def _validate_assessment(
+    document: str,
+    entries: Sequence[TocEntry],
+    bookmarks: Sequence[Bookmark],
+    part_titles: Sequence[str],
+    part_indexes: Sequence[int],
+    errors: list[str],
+) -> None:
+    rendered_parts = tuple(part_titles)
+    if rendered_parts not in {ASSESSMENT_PARTS, ASSESSMENT_PARTS_WITH_SOURCES}:
+        errors.append(
+            "cumulative-review Parts differ from the declared sequence: "
+            + " / ".join(part_titles)
+        )
+        return
+    leaf = document.rsplit("/", 1)[-1]
+    expectation = ASSESSMENT_EXPECTATIONS.get(leaf)
+    if expectation is None:
+        errors.append(f"unknown stage-assessment leaf {leaf!r}")
+        return
+    expected_group, expected_forms = expectation
+    parts = _entries_by_part(entries, part_indexes)
+    review_part_index = 2 if rendered_parts == ASSESSMENT_PARTS_WITH_SOURCES else 1
+    answer_part_index = review_part_index + 1
+    protocol_titles = (
+        "Purpose and method",
+        "Common self-review method",
+        "Reading the result qualitatively",
+    )
+    for required_title in protocol_titles:
+        protocol_matches = [
+            entry
+            for entry in entries
+            if _normalized_title(entry.title) == required_title
+        ]
+        if len(protocol_matches) != 1:
+            errors.append(
+                f"{required_title!r} must occur exactly once in the whole document; "
+                f"found {len(protocol_matches)}"
+            )
+        elif (
+            protocol_matches[0].destination
+            not in {entry.destination for entry in parts[0]}
+            or protocol_matches[0].kind != "chapter"
+            or protocol_matches[0].number is None
+        ):
+            errors.append(f"{required_title!r} must be a numbered chapter in Part I")
+    form_pattern = re.compile(r"^([FCMA]-[ABC])\.")
+    bookmark_by_destination = {
+        bookmark.destination: bookmark for bookmark in bookmarks
+    }
+    for label, assessment_part in zip(
+        ("Review Forms", "Answers and Models"),
+        (parts[review_part_index], parts[answer_part_index]),
+    ):
+        groups = [
+            entry
+            for entry in assessment_part
+            if entry.kind == "chapter"
+            and entry.number is not None
+        ]
+        group_titles = [_normalized_title(entry.title) for entry in groups]
+        if group_titles != [expected_group]:
+            errors.append(
+                f"{label} must render only {expected_group!r}; found {group_titles!r}"
+            )
+
+        forms = []
+        for entry in assessment_part:
+            title = _normalized_title(entry.title)
+            match = form_pattern.match(title)
+            if match is not None:
+                forms.append((match.group(1), entry))
+        found_forms = [form_id for form_id, _ in forms]
+        if found_forms != list(expected_forms):
+            errors.append(
+                f"{label} forms do not match the leaf selection: expected "
+                f"{list(expected_forms)!r}, found {found_forms!r}"
+            )
+        if any(entry.kind != "section" or entry.number is not None for _, entry in forms):
+            errors.append(f"{label} forms must be unnumbered sections under their review group")
+        if len(groups) == 1:
+            group_parent = groups[0].destination
+            for form_id, entry in forms:
+                bookmark = bookmark_by_destination.get(entry.destination)
+                if bookmark is not None and bookmark.parent != group_parent:
+                    errors.append(
+                        f"{label} form {form_id} has bookmark parent "
+                        f"{bookmark.parent!r}; expected review group {group_parent!r}"
+                    )
+
+
+def validate_document(
+    document: str,
+    toc_entries: Sequence[TocEntry],
+    bookmarks: Sequence[Bookmark],
+    *,
+    expected_module: tuple[tuple[str, ...], tuple[str, ...]] | None = None,
+) -> None:
+    errors: list[str] = []
+    if not document.startswith(CURRICULUM_PREFIX):
+        errors.append(f"document is outside {CURRICULUM_PREFIX}")
+
+    part_indexes = [index for index, entry in enumerate(toc_entries) if entry.kind == "part"]
+    if not part_indexes:
+        errors.append("document has no Parts")
+    elif part_indexes[0] != 0:
+        errors.append("the first structural entry is not a Part")
+    part_titles = [
+        _part_title(toc_entries[index], ordinal, errors)
+        for ordinal, index in enumerate(part_indexes, 1)
+    ]
+
+    current_kind: dict[str, bool] = {kind: False for kind in STRUCTURAL_KINDS}
+    for entry in toc_entries:
+        if entry.kind == "part":
+            current_kind.update({kind: False for kind in STRUCTURAL_KINDS})
+            current_kind["part"] = True
+            continue
+        parent_kind = PARENT_KIND[entry.kind]
+        if not current_kind[parent_kind]:
+            errors.append(
+                f"{entry.kind.capitalize()} {entry.title!r} has no preceding "
+                f"{parent_kind}"
+            )
+        current_kind[entry.kind] = True
+        if entry.kind == "chapter":
+            current_kind.update({"section": False, "subsection": False, "subsubsection": False})
+        elif entry.kind == "section":
+            current_kind.update({"subsection": False, "subsubsection": False})
+        elif entry.kind == "subsection":
+            current_kind["subsubsection"] = False
+
+    _validate_part_population(toc_entries, part_indexes, errors)
+    _validate_numbers(toc_entries, errors)
+    _validate_bookmarks(toc_entries, bookmarks, errors)
+    if _is_module(document):
+        _validate_module(
+            document,
+            toc_entries,
+            bookmarks,
+            part_titles,
+            part_indexes,
+            errors,
+            expected_module,
+        )
+    elif _is_assessment(document):
+        _validate_assessment(
+            document, toc_entries, bookmarks, part_titles, part_indexes, errors
+        )
+
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
+def check_files(
+    curriculum_root: Path,
+    document: str,
+    toc_path: Path,
+    out_path: Path,
+    pdf_path: Path,
+) -> None:
+    try:
+        toc_text = toc_path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as error:
+        raise StructureError(f"cannot read {toc_path}: {error}") from error
+    try:
+        out_text = out_path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as error:
+        raise StructureError(f"cannot read {out_path}: {error}") from error
+    entries = parse_toc(toc_text)
+    expected_module = None
+    if _is_module(document):
+        leaf = document.removeprefix(CURRICULUM_PREFIX)
+        matching_rows = [
+            (owner_unit, worksheet_ids)
+            for _, owner_unit, worksheet_ids, row_leaf in _registry_rows(curriculum_root)
+            if row_leaf == leaf
+        ]
+        if len(matching_rows) != 1:
+            raise StructureError(
+                f"rendered module {leaf!r} must have exactly one registry row; "
+                f"found {len(matching_rows)}"
+            )
+        owner_unit, worksheet_ids = matching_rows[0]
+        expected_module = (
+            tuple(unit.strip() for unit in owner_unit.split(",") if unit.strip()),
+            worksheet_ids,
+        )
+    validate_document(
+        document,
+        entries,
+        parse_bookmarks(out_text),
+        expected_module=expected_module,
+    )
+    validate_pdf(document, pdf_path, entries)
+
+
+def _parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--curriculum-root", required=True, type=Path, help="authoritative source root"
+    )
+    parser.add_argument("--sources-only", action="store_true")
+    parser.add_argument("--skip-source-audit", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--document", help="provider-relative document ID")
+    parser.add_argument("--toc", type=Path, help="rendered .toc file")
+    parser.add_argument("--out", type=Path, help="rendered .out file")
+    parser.add_argument("--pdf", type=Path, help="rendered PDF")
+    return parser
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    parser = _parser()
+    arguments = parser.parse_args(argv)
+    rendered_arguments = (arguments.document, arguments.toc, arguments.out, arguments.pdf)
+    if arguments.sources_only:
+        if arguments.skip_source_audit or any(value is not None for value in rendered_arguments):
+            parser.error("--sources-only cannot be combined with rendered-document options")
+    elif any(value is None for value in rendered_arguments):
+        parser.error("--document, --toc, --out, and --pdf are required together")
+    try:
+        if not arguments.skip_source_audit:
+            audit_sources(arguments.curriculum_root)
+        if not arguments.sources_only:
+            check_files(
+                arguments.curriculum_root,
+                arguments.document,
+                arguments.toc,
+                arguments.out,
+                arguments.pdf,
+            )
+    except StructureError as error:
+        context = arguments.document or "curriculum sources"
+        for message in str(error).splitlines():
+            print(
+                f"curriculum structure error ({context}): {message}",
+                file=sys.stderr,
+            )
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

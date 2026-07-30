@@ -1,0 +1,825 @@
+#!/usr/bin/env python3
+"""Build and query a passage-to-commentary-work index.
+
+Usage:
+  commentary-work-index discover [--discovery PATH] --passage PASSAGE [--max-results N]
+  commentary-work-index build-corpus [--discovery PATH] [--root DIR]
+    [--calendar CALENDAR ...] [--max-results-per-mass N]
+    [--max-results-per-passage N] [--output PATH]
+
+This tool does not invoke external search agents. It works from curated mapping
+records in `--discovery`, and returns ranked work metadata for each passage.
+"""
+
+from __future__ import annotations
+
+import argparse
+import dataclasses
+import datetime as dt
+import sys
+from collections import defaultdict
+from importlib.machinery import SourceFileLoader
+from pathlib import Path
+from typing import Any
+
+TOOLING_ROOT = Path(__file__).resolve().parent.parent / "tools"
+if str(TOOLING_ROOT) not in sys.path:
+    sys.path.insert(0, str(TOOLING_ROOT))
+
+from _tooling import print_json, run_verb_cli
+
+SCHEMA_DISCOVERY = "triptych-commentary-work-index/v1"
+SCHEMA_CORPUS = "triptych-missal-commentary-corpus/v1"
+
+DEFAULT_ROOT = Path("src/sources/calendars")
+DEFAULT_DISCOVERY_PATH = Path("src/sources/commentary/passage-commentary-index.yaml")
+DEFAULT_CORPUS_PATH = Path("src/sources/commentary/mass-commentary-corpus.yaml")
+DEFAULT_CALENDARS = ("roman-1962", "postconciliar")
+
+SOURCE_ROLES = {
+    "church-father": "church-father",
+    "saint": "saint",
+    "saintly": "saintly",
+    "pope": "pope",
+    "doctor": "doctor",
+    "patristic": "church-father",
+    "tradition": "saintly",
+}
+
+
+def _load_yaml(path: Path) -> Any:
+    import yaml
+
+    if not path.exists():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    if not text.strip():
+        return {}
+    data = yaml.safe_load(text)
+    return data if isinstance(data, dict) else {}
+
+
+def _dump_yaml(payload: Any) -> str:
+    import yaml
+
+    return yaml.safe_dump(
+        payload,
+        sort_keys=False,
+        allow_unicode=True,
+        width=88,
+    )
+
+
+def _load_citations_tool():
+    path = Path(__file__).resolve().parent.parent / "tools" / "citations"
+    module = SourceFileLoader("triptych_citations", str(path)).load_module()
+    return module
+
+
+def _coerce_str(value: object) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    return str(value)
+
+
+def _normalize_ref_from_record(record: dict[str, Any]) -> str:
+    """Build one stable passage label from parsed machine passage data."""
+
+    if not isinstance(record, dict):
+        raise ValueError("passage must be a mapping")
+    book = _coerce_str(record.get("book"))
+    if not book:
+        raise ValueError("passage record missing book")
+
+    ranges = record.get("ranges")
+    if not isinstance(ranges, list) or not ranges:
+        return book
+
+    pieces: list[str] = []
+
+    for raw in ranges:
+        if not isinstance(raw, dict):
+            raise ValueError("passage range must be a mapping")
+        begin = raw.get("begin", {}) if isinstance(raw.get("begin"), dict) else {}
+        end = raw.get("end", {}) if isinstance(raw.get("end"), dict) else {}
+
+        b_chapter = begin.get("chapter")
+        e_chapter = end.get("chapter")
+        b_verse = begin.get("verse")
+        e_verse = end.get("verse")
+        b_part = _coerce_str(begin.get("part"))
+        e_part = _coerce_str(end.get("part"))
+
+        if not isinstance(b_chapter, int) or not isinstance(e_chapter, int):
+            continue
+
+        b_text = f"{b_chapter}"
+        if isinstance(b_verse, int):
+            b_text = f"{b_chapter}:{b_verse}{b_part}"
+        e_text = f"{e_chapter}"
+        if isinstance(e_verse, int):
+            e_text = f"{e_chapter}:{e_verse}{e_part}"
+
+        if b_text == e_text:
+            pieces.append(b_text)
+        else:
+            pieces.append(f"{b_text}-{e_text}")
+
+    if not pieces:
+        return book
+    return f"{book} {'; '.join(pieces)}"
+
+
+def _parse_passage_value(citations, payload: object) -> list[dict[str, Any]]:
+    """Accept machine-readable passage maps, YAML/JSON lists, and raw citations."""
+
+    if payload is None:
+        return []
+
+    if isinstance(payload, dict):
+        if "book" in payload and "ranges" in payload:
+            record = dict(payload)
+        elif "book" in payload:
+            record = {
+                "book": payload.get("book"),
+                "ranges": payload.get("ranges", []),
+            }
+        else:
+            # treat dict with nested key as a YAML/JSON wrapper only if it has one
+            # known payload key.
+            wrapped = payload.get("passage")
+            if wrapped is None:
+                return []
+            return _parse_passage_value(citations, wrapped)
+        return [_normalize_passage(record)]
+
+    if isinstance(payload, list):
+        out: list[dict[str, Any]] = []
+        for item in payload:
+            out.extend(_parse_passage_value(citations, item))
+        return out
+
+    if not isinstance(payload, str):
+        raise ValueError(f"unsupported passage payload type {payload!r}")
+
+    text = payload.strip()
+    if not text:
+        return []
+
+    # Allow YAML/JSON inline input (for example, multi-line machine payloads).
+    if "\n" in text:
+        try:
+            parsed = __import__("yaml").safe_load(text)
+        except Exception:
+            parsed = None
+        else:
+            if isinstance(parsed, (dict, list)):
+                return _parse_passage_value(citations, parsed)
+    parsed = citations.parse_citation(text)
+    return [_normalize_passage(parsed)]
+
+
+def _normalize_passage(record: dict[str, Any]) -> dict[str, Any]:
+    if not isinstance(record, dict):
+        raise ValueError("passage record must be a mapping")
+    normalized = dict(record)
+    normalized["ref"] = _coerce_ref(normalized)
+    return normalized
+
+
+def _coerce_ref(record: dict[str, Any]) -> str:
+    explicit = _coerce_str(record.get("ref"))
+    if explicit:
+        return explicit
+    return _normalize_ref_from_record(record)
+
+
+def _coerce_work_record(record: dict[str, Any]) -> dict[str, Any]:
+    if not isinstance(record, dict):
+        raise ValueError("work must be a mapping")
+    title = _coerce_str(record.get("work_title") or record.get("title") or record.get("name"))
+    author = _coerce_str(record.get("author") or record.get("responsible") or "Unknown")
+    date = _coerce_str(record.get("date") or record.get("dates") or record.get("author_dates"))
+    role = _coerce_str(record.get("role") or record.get("witness_role") or record.get("source") or "patristic")
+    role = SOURCE_ROLES.get(role, role)
+    work_id = _coerce_str(record.get("work_id") or record.get("id") or record.get("slug")) or None
+    confidence = record.get("confidence")
+    try:
+        confidence_float = float(confidence)
+    except (TypeError, ValueError):
+        confidence_float = None
+
+    return {
+        "work_id": work_id,
+        "author": author,
+        "title": title,
+        "date": date,
+        "role": role,
+        "confidence": confidence_float,
+        "source_hint": _coerce_str(
+            record.get("source_hint") or record.get("edition") or record.get("evidence")
+        ),
+    }
+
+
+def _work_key(work: dict[str, Any]) -> str:
+    if work.get("work_id"):
+        return work["work_id"]
+    return f"{work.get('author','')!s} | {work.get('title','')!s}".strip()
+
+
+def _sort_works(works: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return sorted(
+        works,
+        key=lambda item: (
+            -(item.get("confidence") if item.get("confidence") is not None else 1.0),
+            (item.get("author") or "").casefold(),
+            (item.get("title") or "").casefold(),
+        ),
+    )
+
+
+def _load_discovery(path: Path) -> dict[str, list[dict[str, Any]]]:
+    data = _load_yaml(path)
+    if not data:
+        return {}
+
+    mapping: dict[str, list[dict[str, Any]]] = {}
+    if isinstance(data.get("passages"), list):
+        for entry in data["passages"]:
+            if not isinstance(entry, dict):
+                continue
+            key = _coerce_str(entry.get("passage") or entry.get("passage_ref"))
+            works = entry.get("works")
+            if not key or not isinstance(works, list):
+                continue
+            normalized: list[dict[str, Any]] = []
+            for raw in works:
+                try:
+                    normalized.append(_coerce_work_record(raw))
+                except ValueError:
+                    continue
+            if normalized:
+                mapping[key] = _sort_works(normalized)
+        return mapping
+
+    for key, works in data.get("by_passage", {}).items():
+        if not isinstance(key, str) or not isinstance(works, list):
+            continue
+        normalized = [_coerce_work_record(work) for work in works if isinstance(work, dict)]
+        if normalized:
+            mapping[key.strip()] = _sort_works(normalized)
+    return mapping
+
+
+def _lookup_works(
+    discovery: dict[str, list[dict[str, Any]]],
+    citations,
+    passage_input: object,
+    max_results: int,
+) -> tuple[str, list[dict[str, Any]]]:
+    records = _parse_passage_value(citations, passage_input)
+    if not records:
+        raise ValueError("no parseable passage")
+    passage_ref = records[0]["ref"]
+    works = discovery.get(passage_ref, [])
+    if max_results > 0:
+        works = works[:max_results]
+    return passage_ref, works
+
+
+def _category_for_kind(kind: object) -> str:
+    normalized = _coerce_str(kind)
+    if normalized == "temporal":
+        return "seasonal"
+    if normalized == "saints":
+        return "saintly"
+    return normalized
+
+
+def _extract_passages_from_owner(owner: dict[str, Any], key: str | None) -> list[dict[str, Any]]:
+    payload = owner.get(key or "verses", [])
+    if payload is None:
+        return []
+    if not isinstance(payload, list):
+        return []
+    return [entry for entry in payload if isinstance(entry, (dict, str))]
+
+
+def _passage_records_from_proper(citations, proper: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+    if not isinstance(proper, dict):
+        return []
+
+    out: list[tuple[str, dict[str, Any]]] = []
+    source = _coerce_str(proper.get("source"))
+
+    cycles = proper.get("cycles")
+    proper_name = _coerce_str(proper.get("name") or "proper")
+
+    if isinstance(cycles, dict) and cycles:
+        for cycle_name, cycle_owner in cycles.items():
+            if not isinstance(cycle_owner, dict):
+                continue
+            cycle_source = _coerce_str(cycle_owner.get("source") or source)
+            if cycle_source not in {"scripture", "mixed"}:
+                continue
+            for raw in _extract_passages_from_owner(cycle_owner, "verses"):
+                for passage in _parse_passage_value(citations, raw):
+                    out.append((f"{proper_name}/{cycle_name}", passage))
+        return out
+
+    if source not in {"scripture", "mixed"}:
+        return []
+    for raw in _extract_passages_from_owner(proper, "verses"):
+        for passage in _parse_passage_value(citations, raw):
+            out.append((proper_name, passage))
+    return out
+
+
+def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list[dict[str, Any]]:
+    masses = doc.get("masses")
+    if not isinstance(masses, list):
+        return []
+
+    entries: list[dict[str, Any]] = []
+
+    for entry in masses:
+        if not isinstance(entry, dict):
+            continue
+        mass_key = _coerce_str(entry.get("key") or entry.get("slug") or "")
+        mass_name = _coerce_str(entry.get("name"))
+        if not mass_key:
+            continue
+        mass_kind = _coerce_str(entry.get("kind"))
+        date = _coerce_str(entry.get("date") or entry.get("season"))
+
+        # Top-level propers.
+        for proper in entry.get("propers", []):
+            if not isinstance(proper, dict):
+                continue
+            for slot_name, passage in _passage_records_from_proper(citations, proper):
+                entries.append(
+                    {
+                        "calendar": calendar,
+                        "mass_key": mass_key,
+                        "mass_name": mass_name,
+                        "mass_kind": mass_kind,
+                        "date": date,
+                        "proper_slot": slot_name,
+                        "passage": passage,
+                        "source_category": "base",
+                    }
+                )
+
+        # Seasonal forms.
+        for form in entry.get("forms", []):
+            if not isinstance(form, dict):
+                continue
+            form_name = _coerce_str(form.get("name") or "form")
+            form_kind = _coerce_str(form.get("kind") or mass_kind)
+            for proper in form.get("propers", []):
+                if not isinstance(proper, dict):
+                    continue
+                for slot_name, passage in _passage_records_from_proper(citations, proper):
+                    entries.append(
+                        {
+                            "calendar": calendar,
+                            "mass_key": f"{mass_key}:{form_name}",
+                            "mass_name": f"{mass_name} ({form_name})",
+                            "mass_kind": form_kind,
+                            "date": date,
+                            "proper_slot": slot_name,
+                            "passage": passage,
+                            "source_category": "form",
+                        }
+                    )
+
+    return entries
+
+
+@dataclasses.dataclass
+class CorpusWork:
+    work_id: str | None
+    author: str
+    title: str
+    date: str
+    role: str
+    confidence: float
+    passages: list[str]
+    score: float
+
+
+def _build_mass_coverage(
+    citations,
+    discovery: dict[str, list[dict[str, Any]]],
+    records: list[dict[str, Any]],
+    max_per_mass: int,
+    max_per_passage: int,
+) -> tuple[list[dict[str, Any]], dict[str, list[str]], list[str], dict[str, list[str]]]:
+    if max_per_mass <= 0:
+        max_per_mass = 20
+    if max_per_passage <= 0:
+        max_per_passage = 20
+
+    by_mass: dict[str, dict[str, CorpusWork]] = defaultdict(dict)
+    mass_work_passage_map: dict[str, set[str]] = defaultdict(set)
+    passage_to_masses: dict[str, list[str]] = defaultdict(list)
+    unresolved: list[str] = []
+    work_metadata: dict[str, dict[str, Any]] = {}
+    mass_seen: dict[str, dict[str, Any]] = {}
+
+    for item in records:
+        mass_id = f"{item['calendar']}::{item['mass_key']}"
+        passage_ref = item["passage"]["ref"]
+        mass_seen.setdefault(
+            mass_id,
+            {
+                "calendar": item["calendar"],
+                "mass_key": item["mass_key"],
+                "mass_name": item["mass_name"],
+                "mass_kind": item["mass_kind"],
+                "date": item["date"],
+                "source_category": item["source_category"],
+            },
+        )
+        passage_to_masses[passage_ref].append(mass_id)
+
+        _, works = _lookup_works(discovery, citations, item["passage"], max_per_passage)
+        if not works:
+            if passage_ref not in unresolved:
+                unresolved.append(passage_ref)
+            continue
+
+        for rank, raw in enumerate(works):
+            work = _coerce_work_record(raw)
+            key = _work_key(work)
+            existing = by_mass[mass_id].get(key)
+
+            if existing is None:
+                existing = CorpusWork(
+                    work_id=work["work_id"],
+                    author=work["author"],
+                    title=work["title"],
+                    date=work["date"],
+                    role=work["role"],
+                    confidence=work["confidence"] if work["confidence"] is not None else 1.0,
+                    passages=[passage_ref],
+                    score=1.0 / (rank + 1),
+                )
+                by_mass[mass_id][key] = existing
+                work_metadata[key] = {
+                    "work_id": existing.work_id,
+                    "author": existing.author,
+                    "title": existing.title,
+                    "date": existing.date,
+                    "role": existing.role,
+                }
+            else:
+                existing.passages.append(passage_ref)
+                existing.score += 1.0 / (rank + 1)
+
+            mass_work_passage_map[mass_id].add(passage_ref)
+
+    by_mass_payload: list[dict[str, Any]] = []
+    full_corpus_ids: set[str] = set()
+
+    for mass_id in sorted(mass_seen):
+        base = mass_seen[mass_id]
+        work_map = by_mass.get(mass_id, {})
+
+        sorted_works = sorted(
+            work_map.values(),
+            key=lambda w: (-w.score, w.author.casefold(), w.title.casefold()),
+        )[:max_per_mass]
+        full_corpus_ids.update(_work_key({
+            "work_id": w.work_id,
+            "author": w.author,
+            "title": w.title,
+        }) for w in sorted_works)
+
+        by_mass_payload.append(
+            {
+                "calendar": base["calendar"],
+                "mass_key": base["mass_key"],
+                "mass_name": base["mass_name"],
+                "mass_kind": _category_for_kind(base["mass_kind"]),
+                "date": base["date"],
+                "source_category": base["source_category"],
+                "works": [
+                    {
+                        "work_id": item.work_id,
+                        "author": item.author,
+                        "title": item.title,
+                        "date": item.date,
+                        "role": item.role,
+                        "confidence": item.confidence,
+                        "score": round(item.score, 4),
+                        "passages": sorted(set(item.passages)),
+                    }
+                    for item in sorted_works
+                ],
+                "passage_count": len(mass_work_passage_map[mass_id]),
+            }
+        )
+
+    for entry in by_mass_payload:
+        if len(entry["works"]) > max_per_mass:
+            entry["works"] = entry["works"][:max_per_mass]
+
+    full_corpus: list[dict[str, Any]] = []
+    for key in sorted(full_corpus_ids):
+        meta = work_metadata.get(key, {})
+        meta = dict(meta)
+        if not meta:
+            continue
+        full_corpus.append(meta)
+
+    return by_mass_payload, passage_to_masses, sorted(unresolved), full_corpus
+
+
+def _load_calendar_doc(path: Path) -> dict[str, Any]:
+    data = _load_yaml(path)
+    if not isinstance(data, dict):
+        raise ValueError(f"calendar index is not a mapping: {path}")
+    return data
+
+
+def _render_payload(
+    payload: dict[str, Any], output: str | None
+) -> None:
+    format_name = output or "text"
+    if format_name == "json":
+        print_json(payload)
+        return None
+    if format_name == "yaml":
+        print(_dump_yaml(payload).rstrip())
+        return None
+
+    if payload.get("discoveries") is not None:
+        for item in payload["discoveries"]:
+            print(f"passage: {item['passage']}")
+            works = item.get("works", [])
+            if not works:
+                print("  - no mapped commentaries yet")
+                continue
+            for index, work in enumerate(works, start=1):
+                print(
+                    f"  {index:>2}. {work.get('author')} — {work.get('title')}"
+                    + (f" ({work.get('date')})" if work.get("date") else "")
+                )
+                if work.get("role"):
+                    print(f"      role: {work['role']}")
+                if work.get("source_hint"):
+                    print(f"      source hint: {work['source_hint']}")
+        return None
+
+    if payload.get("masses") is not None:
+        print(
+            f"masses: {payload['covered_mass_count']} covered"
+            f" of {payload['mass_count']}"
+        )
+        print(f"total works in union corpus: {len(payload['corpus'])}")
+        print(f"unresolved passages: {payload['unresolved_passage_count']}")
+        print()
+        for mass in payload["masses"][:20]:
+            print(
+                f"{mass['calendar']}::{mass['mass_key']} [{mass['mass_kind']}]"
+                f" -> {len(mass['works'])} works"
+            )
+        if len(payload["masses"]) > 20:
+            print(
+                f"… and {len(payload['masses']) - 20} more masses (full output in YAML/JSON)"
+            )
+    return None
+
+
+def _select_output_format(arguments: argparse.Namespace) -> str:
+    if arguments.explicit_format is not None:
+        return arguments.explicit_format
+    if arguments.short_format is not None:
+        return arguments.short_format
+    return "text"
+
+
+def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
+    discovery = _load_discovery(args.discovery)
+
+    passages = list(args.passage)
+    if args.passage_file:
+        text = Path(args.passage_file).read_text(encoding="utf-8")
+        try:
+            parsed = __import__("yaml").safe_load(text)
+        except Exception as error:
+            raise ValueError(f"cannot parse passage file: {error}") from error
+        if parsed is None:
+            raise ValueError("passage file is empty")
+        passages.append(parsed)
+
+    if not passages:
+        raise ValueError("no passage input provided")
+
+    discoveries: list[dict[str, Any]] = []
+    for passage in passages:
+        try:
+            ref, works = _lookup_works(discovery, citations, passage, args.max_results)
+        except Exception as error:
+            raise ValueError(f"invalid passage {passage!r}: {error}") from error
+
+        discoveries.append(
+            {
+                "passage": ref,
+                "works": _sort_works([_coerce_work_record(item) for item in works]),
+            }
+        )
+
+    payload = {
+        "status": "ok",
+        "schema": SCHEMA_DISCOVERY,
+        "max_results": args.max_results,
+        "discoveries": discoveries,
+    }
+
+    return payload
+
+
+def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
+    discovery = _load_discovery(args.discovery)
+    root = Path(args.root)
+    if not root.is_dir():
+        raise ValueError(f"calendar root is missing: {root}")
+
+    calendar_records: list[dict[str, Any]] = []
+    calendars = args.calendar or DEFAULT_CALENDARS
+
+    for calendar in calendars:
+        path = root / calendar / "propers.yaml"
+        if not path.exists():
+            raise ValueError(f"missing calendar index: {path}")
+        try:
+            doc = _load_calendar_doc(path)
+            calendar_records.extend(_collect_mass_records(citations, doc, calendar))
+        except Exception as error:
+            raise ValueError(f"failed to read {path}: {error}") from error
+
+    if not calendar_records:
+        raise ValueError("no scripture passages were extracted from the requested calendars")
+
+    masses_payload, passage_to_masses, unresolved, full_corpus = _build_mass_coverage(
+        citations,
+        discovery,
+        calendar_records,
+        args.max_results_per_mass,
+        args.max_results_per_passage,
+    )
+
+    payload = {
+        "schema": SCHEMA_CORPUS,
+        "status": "ok",
+        "generated": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+        "max_results_per_passage": args.max_results_per_passage,
+        "max_results_per_mass": args.max_results_per_mass,
+        "mass_count": len(masses_payload),
+        "covered_mass_count": len([mass for mass in masses_payload if mass["works"]]),
+        "unresolved_passage_count": len(unresolved),
+        "passages": [
+            {
+                "passage": passage,
+                "mass_count": len(set(passage_to_masses[passage])),
+                "masses": sorted(set(passage_to_masses[passage])),
+                "has_commentary": passage not in unresolved,
+            }
+            for passage in sorted(passage_to_masses)
+        ],
+        "masses": masses_payload,
+        "corpus": full_corpus,
+    }
+
+    if args.output:
+        Path(args.output).parent.mkdir(parents=True, exist_ok=True)
+        Path(args.output).write_text(_dump_yaml(payload), encoding="utf-8")
+
+    return payload
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        prog="commentary-work-index",
+        description="Build and query commentary-work mappings for scripture passages.",
+    )
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument(
+        "--json",
+        dest="short_format",
+        action="store_const",
+        const="json",
+        help="emit compact JSON",
+    )
+    shared.add_argument(
+        "--yaml",
+        dest="short_format",
+        action="store_const",
+        const="yaml",
+        help="emit YAML",
+    )
+    # Keep --format for explicit choice while still supporting --yaml/--json.
+    shared.add_argument("--format", dest="explicit_format", choices=("text", "json", "yaml"))
+
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    discover = sub.add_parser(
+        "discover",
+        help="List mapped works for one or more passages.",
+        parents=[shared],
+    )
+    discover.add_argument("--passage", action="append", default=[], help="Passage input")
+    discover.add_argument(
+        "--passage-file", type=Path, help="YAML/JSON passage spec to load"
+    )
+    discover.add_argument(
+        "--discovery",
+        type=Path,
+        default=DEFAULT_DISCOVERY_PATH,
+        help=f"path to passage→works index (default: {DEFAULT_DISCOVERY_PATH})",
+    )
+    discover.add_argument(
+        "--max-results",
+        type=int,
+        default=20,
+        help="maximum number of works returned per passage (default: 20)",
+    )
+
+    build = sub.add_parser(
+        "build-corpus", help="Build corpus coverage across all masses.", parents=[shared]
+    )
+    build.add_argument(
+        "--root",
+        type=Path,
+        default=DEFAULT_ROOT,
+        help=f"calendar root directory (default: {DEFAULT_ROOT})",
+    )
+    build.add_argument(
+        "--calendar",
+        action="append",
+        default=[],
+        help="calendar directory name under root (can be repeated)",
+    )
+    build.add_argument(
+        "--discovery",
+        type=Path,
+        default=DEFAULT_DISCOVERY_PATH,
+        help=f"path to passage→works index (default: {DEFAULT_DISCOVERY_PATH})",
+    )
+    build.add_argument(
+        "--max-results-per-passage",
+        type=int,
+        default=20,
+        help="limit each passage lookup to this many works before aggregation (default: 20)",
+    )
+    build.add_argument(
+        "--max-results-per-mass",
+        type=int,
+        default=20,
+        help="cap each mass to this many ranked works (default: 20)",
+    )
+    build.add_argument(
+        "--output",
+        type=Path,
+        default=DEFAULT_CORPUS_PATH,
+        help=f"write corpus output (default: {DEFAULT_CORPUS_PATH})",
+    )
+
+    def dispatch(arguments: argparse.Namespace):
+        if arguments.command == "discover":
+            citations = _load_citations_tool()
+            return run_discover(arguments, citations)
+        citations = _load_citations_tool()
+        return run_build_corpus(arguments, citations)
+
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        if not isinstance(payload, dict):
+            print("commentary-work-index error: invalid payload", file=sys.stderr)
+            return 70
+        _render_payload(payload, _select_output_format(arguments))
+        return 0 if payload.get("status") == "ok" else 1
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={
+            "discover": dispatch,
+            "build-corpus": dispatch,
+        },
+        renderer=render,
+        prefix="commentary-work-index",
+        argv=argv,
+        mapped_errors={
+            ValueError: ("invalid", 64),
+            ModuleNotFoundError: ("dependency", 69),
+            OSError: ("read", 64),
+        },
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

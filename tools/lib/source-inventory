@@ -1,0 +1,1359 @@
+#!/usr/bin/env python3
+"""Bootstrap, refresh, and validate Triptych's publication-source inventory."""
+
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import hashlib
+import json
+import os
+import stat
+import sys
+import tempfile
+from pathlib import Path, PurePosixPath
+from typing import Any
+
+if sys.version_info < (3, 11):
+    raise SystemExit("source-inventory requires Python 3.11 or newer")
+
+import tomllib
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_INVENTORY = Path("src/sources/inventories/publications-v1.toml")
+DEFAULT_CLASSIFICATION_REVIEW = Path(
+    "src/sources/inventories/classification-review-v1.toml"
+)
+
+SOURCE_CATEGORIES = {
+    "scripture",
+    "liturgical",
+    "magisterial",
+    "canon-law",
+    "patristic",
+    "scholastic",
+    "classical",
+    "prayer-devotional",
+    "historical-primary",
+    "archival-material",
+    "institutional-current",
+    "dataset-survey",
+    "secondary",
+    "finding-aid",
+    "repository-internal",
+    "unresolved",
+}
+SOURCE_MODES = {"local", "inherited", "mixed", "profile-exempt"}
+INVENTORY_STATES = {
+    "records-enumerated",
+    "sources-categorized",
+    "canonicalization-planned",
+    "partially-migrated",
+    "bindings-covered",
+}
+RELATIONSHIPS = {
+    "local",
+    "local-routing",
+    "source-owner",
+    "derived-source-owner",
+    "render-import",
+}
+FILE_KINDS = {
+    "publication-main",
+    "source-binding",
+    "legacy-source-audit",
+    "research-scope",
+    "research-record",
+    "proper-verification",
+    "local-evidence-payload",
+    "instance-manifest",
+    "edition-registry",
+    "rendered-content",
+    "shared-source-or-render",
+}
+EVIDENCE_WORDS = {"acquired", "searched", "inspected", "verified"}
+
+PROVIDERS = {"gpt", "claude"}
+DEFAULT_PROVIDER = "gpt"
+
+CURRICULUM_OWNER = "owner.curriculums.ecclesiastical-latin"
+NOVENA_OWNER = "owner.devotions.novenas.shared"
+POSTCONCILIAR_OWNER = (
+    "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
+)
+BIOGRAPHY_OWNER = "owner.biographies.shared"
+MARIOLOGY_OWNER = "owner.theology.mariology.shared"
+BIBLICAL_HISTORY_OWNER = "owner.history.biblical-translations"
+PARISH_HISTORY_OWNER = "owner.history.catholic-parish-histories"
+INSTITUTE_HISTORY_OWNER = "owner.history.traditional-priestly-institutes"
+SERVER_TRAINING_OWNER = "owner.liturgy.roman-rite.1962.altar-server-guides"
+SANCTUARY_DICTIONARY_OWNER = (
+    "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
+)
+COMMON_TYPESETTING_OWNER = "owner.typesetting.common"
+
+# Roots are relative to one provider tree (src/<provider>/) and are
+# materialized per provider by _nonpublication_owners.
+PROVIDER_NONPUBLICATION_OWNERS = (
+    {
+        "id": BIOGRAPHY_OWNER,
+        "roots": ["biographies/shared"],
+        "kind": "shared-render-owner",
+    },
+    {
+        "id": CURRICULUM_OWNER,
+        "roots": [
+            "curriculums/ecclesiastical-latin/research",
+            "curriculums/ecclesiastical-latin/shared",
+        ],
+        "kind": "curriculum-source-owner",
+    },
+    {
+        "id": NOVENA_OWNER,
+        "roots": ["devotions/novenas/shared"],
+        "kind": "shared-prayer-owner",
+    },
+    {
+        "id": BIBLICAL_HISTORY_OWNER,
+        "roots": ["history/biblical-translations"],
+        "kind": "shared-render-owner",
+    },
+    {
+        "id": PARISH_HISTORY_OWNER,
+        "roots": ["history/catholic-parish-histories"],
+        "kind": "shared-render-owner",
+    },
+    {
+        "id": INSTITUTE_HISTORY_OWNER,
+        "roots": ["history/traditional-priestly-institutes"],
+        "kind": "shared-render-owner",
+    },
+    {
+        "id": SERVER_TRAINING_OWNER,
+        "roots": [
+            "liturgy/roman-rite/1962/reference/altar-server-guides/research",
+            "liturgy/roman-rite/1962/reference/altar-server-guides/shared",
+        ],
+        "kind": "server-training-source-owner",
+    },
+    {
+        "id": SANCTUARY_DICTIONARY_OWNER,
+        "roots": [
+            "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary",
+        ],
+        "kind": "shared-render-owner",
+    },
+    {
+        "id": POSTCONCILIAR_OWNER,
+        "roots": [
+            "liturgy/roman-rite/postconciliar/"
+            "roman-missal-third-edition-en-us-2011/propers/registry",
+            "liturgy/roman-rite/postconciliar/"
+            "roman-missal-third-edition-en-us-2011/propers/shared",
+            "liturgy/roman-rite/postconciliar/"
+            "roman-missal-third-edition-en-us-2011/propers/temporal/shared",
+        ],
+        "kind": "edition-proper-owner",
+    },
+    {
+        "id": MARIOLOGY_OWNER,
+        "roots": ["theology/mariology/shared"],
+        "kind": "shared-render-owner",
+    },
+)
+
+# Provider-neutral trees classified outside any provider's source surface.
+# src/common holds typesetting primitives (the shared preamble); typesetting
+# is not source material, so its files are never inventory file rows, but the
+# tree carries an explicit non-publication owner classification.
+SHARED_NONPUBLICATION_OWNERS = (
+    {
+        "id": COMMON_TYPESETTING_OWNER,
+        "roots": ["src/common"],
+        "kind": "shared-typesetting-owner",
+    },
+)
+
+
+def _nonpublication_owners(provider: str) -> tuple[dict[str, Any], ...]:
+    """Materialize explicit non-publication ownership rules for one provider."""
+    owners = [
+        {
+            "id": owner["id"],
+            "kind": owner["kind"],
+            "roots": [f"src/{provider}/{root}" for root in owner["roots"]],
+        }
+        for owner in PROVIDER_NONPUBLICATION_OWNERS
+    ] + [
+        {"id": owner["id"], "kind": owner["kind"], "roots": list(owner["roots"])}
+        for owner in SHARED_NONPUBLICATION_OWNERS
+    ]
+    return tuple(sorted(owners, key=lambda owner: owner["id"]))
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _toml_string(value: str) -> str:
+    return json.dumps(value, ensure_ascii=False)
+
+
+def _toml_array(values: list[str]) -> str:
+    return "[" + ", ".join(_toml_string(value) for value in values) + "]"
+
+
+def _safe_repo_path(value: str) -> bool:
+    path = PurePosixPath(value)
+    return (
+        bool(value)
+        and "\\" not in value
+        and not path.is_absolute()
+        and path.as_posix() == value
+        and all(part not in {"", ".", ".."} for part in path.parts)
+    )
+
+
+def _documents(root: Path, provider: str) -> list[str]:
+    source_root = root / "src" / provider
+    if not source_root.is_dir():
+        return []
+    return sorted(
+        path.parent.relative_to(source_root).as_posix()
+        for path in source_root.rglob("main.tex")
+        if path.is_file()
+    )
+
+
+def _is_source_surface(path: Path, source_root: Path) -> bool:
+    relative = path.relative_to(source_root)
+    parts = relative.parts
+    if (
+        not path.is_file()
+        or "common" == parts[0]
+        or path.name == "generation-metadata.tex"
+    ):
+        return False
+    return path.suffix.lower() in {".md", ".sty", ".tex", ".toml", ".txt"}
+
+
+def _surface_files(root: Path, provider: str) -> list[str]:
+    source_root = root / "src" / provider
+    if not source_root.is_dir():
+        return []
+    return sorted(
+        path.relative_to(root).as_posix()
+        for path in source_root.rglob("*")
+        if _is_source_surface(path, source_root)
+    )
+
+
+def _owner_for_file(relative: str, documents: list[str], provider: str) -> str | None:
+    prefix = f"src/{provider}/"
+    if not relative.startswith(prefix):
+        return None
+    below = relative[len(prefix) :]
+    candidates = [document for document in documents if below.startswith(document + "/")]
+    if candidates:
+        return max(candidates, key=len)
+    for owner in _nonpublication_owners(provider):
+        if any(relative == root or relative.startswith(root + "/") for root in owner["roots"]):
+            return str(owner["id"])
+    return None
+
+
+def _file_kind(relative: str) -> str:
+    path = Path(relative)
+    parts = path.parts
+    name = path.name.lower()
+    if name == "main.tex":
+        return "publication-main"
+    if name == "source-bindings.toml":
+        return "source-binding"
+    if name.startswith("source-audit") and path.suffix == ".md":
+        return "legacy-source-audit"
+    if name == "scope.md" and "research" in parts:
+        return "research-scope"
+    if name == "verified.md" and "propers" in parts:
+        return "proper-verification"
+    if name == "retrieved.txt" and "propers" in parts:
+        return "local-evidence-payload"
+    if name == "manifest.md" and "instance" in parts:
+        return "instance-manifest"
+    if "registry" in parts:
+        return "edition-registry"
+    if "research" in parts:
+        return "research-record"
+    if "shared" in parts:
+        return "shared-source-or-render"
+    return "rendered-content"
+
+
+def _document_shape(document: str) -> tuple[str, list[dict[str, str]], str]:
+    local = {"id": document, "relationship": "local"}
+    if document.startswith("curriculums/ecclesiastical-latin/"):
+        return (
+            "mixed",
+            [
+                {"id": document, "relationship": "local-routing"},
+                {"id": CURRICULUM_OWNER, "relationship": "source-owner"},
+            ],
+            "curriculum-packet",
+        )
+    novena_companions = {
+        "devotions/novenas/00-ascension-to-pentecost-daily-prayer":
+            "devotions/novenas/00-ascension-to-pentecost",
+        "devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer":
+            "devotions/novenas/10-our-lady-of-mount-carmel",
+    }
+    if document in novena_companions:
+        return (
+            "mixed",
+            [
+                {"id": document, "relationship": "local-routing"},
+                {
+                    "id": novena_companions[document],
+                    "relationship": "derived-source-owner",
+                },
+                {"id": NOVENA_OWNER, "relationship": "render-import"},
+            ],
+            "derived-companion",
+        )
+    if document == "theology/sacraments-at-a-glance":
+        return (
+            "inherited",
+            [
+                {
+                    "id": "theology/sacraments",
+                    "relationship": "derived-source-owner",
+                }
+            ],
+            "derived-companion",
+        )
+    postconciliar_prefix = (
+        "liturgy/roman-rite/postconciliar/"
+        "roman-missal-third-edition-en-us-2011/propers/temporal/pc-"
+    )
+    if document.startswith(postconciliar_prefix):
+        return (
+            "mixed",
+            [local, {"id": POSTCONCILIAR_OWNER, "relationship": "source-owner"}],
+            "proper-instance",
+        )
+    edges = [local]
+    if document.startswith("biographies/"):
+        edges.append({"id": BIOGRAPHY_OWNER, "relationship": "render-import"})
+    if document in {
+        "devotions/novenas/00-ascension-to-pentecost",
+        "devotions/novenas/10-our-lady-of-mount-carmel",
+    }:
+        edges.append({"id": NOVENA_OWNER, "relationship": "render-import"})
+    history_render_owners = {
+        "history/biblical-translations/": BIBLICAL_HISTORY_OWNER,
+        "history/catholic-parish-histories/": PARISH_HISTORY_OWNER,
+        "history/traditional-priestly-institutes/": INSTITUTE_HISTORY_OWNER,
+    }
+    for prefix, owner_id in history_render_owners.items():
+        if document.startswith(prefix):
+            edges.append({"id": owner_id, "relationship": "render-import"})
+    if document.startswith(
+        "liturgy/roman-rite/1962/reference/altar-server-guides/"
+    ):
+        edges.append({"id": SERVER_TRAINING_OWNER, "relationship": "source-owner"})
+    if document.startswith(
+        "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/"
+    ):
+        edges.append(
+            {"id": SANCTUARY_DICTIONARY_OWNER, "relationship": "source-owner"}
+        )
+    if document == "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass":
+        edges.append({"id": "theology/sacraments", "relationship": "render-import"})
+    if document == "theology/mariology/angelus":
+        edges.append(
+            {
+                "id": "devotions/novenas/10-our-lady-of-mount-carmel",
+                "relationship": "render-import",
+            }
+        )
+    if document in {"theology/mariology/angelus", "theology/mariology/regina-coeli"}:
+        edges.append({"id": MARIOLOGY_OWNER, "relationship": "render-import"})
+    return "local", edges, "canonical"
+
+
+def _snapshot(
+    documents: list[dict[str, Any]],
+    owners: list[dict[str, Any]],
+    files: list[dict[str, Any]],
+) -> str:
+    payload = {
+        "documents": documents,
+        "owners": owners,
+        "files": files,
+    }
+    encoded = json.dumps(
+        payload,
+        default=lambda value: f"<{type(value).__name__}:{value}>",
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return "sha256:" + hashlib.sha256(encoded).hexdigest()
+
+
+def _document_set_snapshot(documents: list[str]) -> str:
+    payload = "".join(f"{document}\n" for document in sorted(documents)).encode("utf-8")
+    return "sha256:" + hashlib.sha256(payload).hexdigest()
+
+
+def _classification_snapshot(classifications: list[dict[str, Any]]) -> str:
+    payload = json.dumps(
+        classifications,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return "sha256:" + hashlib.sha256(payload).hexdigest()
+
+
+def _render_classification_review(
+    documents: list[str],
+    audited_on: str,
+    seed: dict[str, list[str]] | None = None,
+) -> str:
+    documents = sorted(documents)
+    seed = seed or {}
+    classifications = [
+        {
+            "document": document,
+            "source_categories": list(seed.get(document, ["unresolved"])),
+        }
+        for document in documents
+    ]
+    lines = [
+        "classification_schema = 1",
+        'record_type = "publication-source-classification-review"',
+        f"audited_on = {_toml_string(audited_on)}",
+        f"publication_snapshot = {_toml_string(_document_set_snapshot(documents))}",
+        f"classification_snapshot = {_toml_string(_classification_snapshot(classifications))}",
+    ]
+    for classification in classifications:
+        lines.extend(
+            [
+                "",
+                "[[classifications]]",
+                f"document = {_toml_string(classification['document'])}",
+                "source_categories = "
+                + _toml_array(classification["source_categories"]),
+            ]
+        )
+    return "\n".join(lines) + "\n"
+
+
+def _classification_review(
+    path: Path,
+    actual_documents: list[str] | None,
+    *,
+    allow_unresolved: bool = False,
+) -> tuple[dict[str, list[str]], list[str]]:
+    data, errors = _read_inventory(path)
+    if data is None:
+        return {}, errors
+    expected = {
+        "classification_schema",
+        "record_type",
+        "audited_on",
+        "publication_snapshot",
+        "classification_snapshot",
+        "classifications",
+    }
+    if set(data) != expected:
+        errors.append(f"{path}: classification review must contain exactly the documented fields")
+    if data.get("classification_schema") != 1 or isinstance(
+        data.get("classification_schema"), bool
+    ):
+        errors.append(f"{path}: classification_schema must be integer 1")
+    if data.get("record_type") != "publication-source-classification-review":
+        errors.append(
+            f"{path}: record_type must be publication-source-classification-review"
+        )
+    audited_on = data.get("audited_on")
+    try:
+        if not isinstance(audited_on, str):
+            raise ValueError
+        dt.date.fromisoformat(audited_on)
+    except ValueError:
+        errors.append(f"{path}: audited_on must be an ISO date")
+    rows = data.get("classifications")
+    if not isinstance(rows, list) or not rows:
+        errors.append(f"{path}: classifications must be a nonempty array of tables")
+        rows = []
+    normalized: list[dict[str, Any]] = []
+    documents: list[str] = []
+    mapping: dict[str, list[str]] = {}
+    for index, row in enumerate(rows, start=1):
+        label = f"{path}: classifications[{index}]"
+        if not isinstance(row, dict) or set(row) != {"document", "source_categories"}:
+            errors.append(
+                f"{label} must contain exactly document and source_categories"
+            )
+            continue
+        document = row.get("document")
+        categories = row.get("source_categories")
+        if not isinstance(document, str) or not document:
+            errors.append(f"{label}.document must be a nonempty string")
+            continue
+        documents.append(document)
+        if not _string_list(categories, nonempty=True):
+            errors.append(
+                f"{label}.source_categories must be a nonempty string array"
+            )
+            continue
+        invalid = sorted(set(categories) - SOURCE_CATEGORIES)
+        if invalid:
+            errors.append(
+                f"{label}.source_categories are invalid: {', '.join(invalid)}"
+            )
+        if categories != sorted(set(categories)):
+            errors.append(f"{label}.source_categories must be unique and sorted")
+        if not allow_unresolved and "unresolved" in categories:
+            errors.append(f"{label}.source_categories must be resolved")
+        normalized.append(
+            {"document": document, "source_categories": categories}
+        )
+        mapping[document] = categories
+    if documents != sorted(set(documents)):
+        errors.append(f"{path}: reviewed document IDs must be unique and sorted")
+    if actual_documents is not None:
+        missing = sorted(set(actual_documents) - set(documents))
+        extra = sorted(set(documents) - set(actual_documents))
+        if missing:
+            errors.append(
+                f"{path}: publications lack classification review: {', '.join(missing)}"
+            )
+        if extra:
+            errors.append(
+                f"{path}: classification review has unknown publications: {', '.join(extra)}"
+            )
+    expected_snapshot = _document_set_snapshot(documents)
+    if data.get("publication_snapshot") != expected_snapshot:
+        errors.append(
+            f"{path}: publication_snapshot is stale; expected {expected_snapshot}"
+        )
+    expected_classification_snapshot = _classification_snapshot(normalized)
+    if data.get("classification_snapshot") != expected_classification_snapshot:
+        errors.append(
+            f"{path}: classification_snapshot is stale; "
+            f"expected {expected_classification_snapshot}"
+        )
+    return mapping, sorted(set(errors))
+
+
+def _inventory_classification_errors(
+    review_path: Path,
+    documents: list[dict[str, Any]],
+) -> list[str]:
+    categorized = [
+        document
+        for document in documents
+        if document["inventory_state"] != "records-enumerated"
+    ]
+    if not categorized:
+        return []
+    mapping, errors = _classification_review(
+        review_path,
+        [document["id"] for document in documents],
+    )
+    if errors:
+        return errors
+    for document in categorized:
+        expected = mapping[document["id"]]
+        if document["source_categories"] != expected:
+            errors.append(
+                f"{review_path}: inventory categories diverge for "
+                f"{document['id']}; expected {', '.join(expected)}"
+            )
+    return sorted(set(errors))
+
+
+def _active_owners(root: Path, provider: str) -> list[dict[str, Any]]:
+    return [
+        {"id": owner["id"], "kind": owner["kind"], "roots": list(owner["roots"])}
+        for owner in _nonpublication_owners(provider)
+        if any((root / owner_root).is_dir() for owner_root in owner["roots"])
+    ]
+
+
+def _bootstrap_data(root: Path, audited_on: str, provider: str) -> dict[str, Any]:
+    document_ids = _documents(root, provider)
+    documents: list[dict[str, Any]] = []
+    for document in document_ids:
+        source_mode, record_owners, publication_kind = _document_shape(document)
+        documents.append(
+            {
+                "id": document,
+                "main": f"src/{provider}/{document}/main.tex",
+                "publication_kind": publication_kind,
+                "source_mode": source_mode,
+                "inventory_state": "records-enumerated",
+                "source_categories": ["unresolved"],
+                "record_owners": record_owners,
+            }
+        )
+    owners = _active_owners(root, provider)
+    files = []
+    for relative in _surface_files(root, provider):
+        owner = _owner_for_file(relative, document_ids, provider)
+        files.append(
+            {
+                "path": relative,
+                "sha256": _sha256(root / relative),
+                "kind": _file_kind(relative),
+                "owners": [owner] if owner else [],
+            }
+        )
+    return {
+        "inventory_schema": 1,
+        "record_type": "publication-source-inventory",
+        "provider": provider,
+        "audited_on": audited_on,
+        "discovery_rule": f"src/{provider}/**/main.tex",
+        "publication_count": len(documents),
+        "source_surface_file_count": len(files),
+        "documents": documents,
+        "owners": owners,
+        "files": files,
+        "snapshot": _snapshot(documents, owners, files),
+    }
+
+
+def _render(data: dict[str, Any]) -> str:
+    lines = [
+        f"inventory_schema = {data['inventory_schema']}",
+        f"record_type = {_toml_string(data['record_type'])}",
+        f"provider = {_toml_string(data['provider'])}",
+        f"audited_on = {_toml_string(data['audited_on'])}",
+        f"discovery_rule = {_toml_string(data['discovery_rule'])}",
+        f"publication_count = {data['publication_count']}",
+        f"source_surface_file_count = {data['source_surface_file_count']}",
+        f"snapshot = {_toml_string(data['snapshot'])}",
+    ]
+    if not data["owners"]:
+        lines.append("owners = []")
+    if not data["documents"]:
+        lines.append("documents = []")
+    if not data["files"]:
+        lines.append("files = []")
+    for owner in data["owners"]:
+        lines.extend(
+            [
+                "",
+                "[[owners]]",
+                f"id = {_toml_string(owner['id'])}",
+                f"kind = {_toml_string(owner['kind'])}",
+                f"roots = {_toml_array(owner['roots'])}",
+            ]
+        )
+    for document in data["documents"]:
+        lines.extend(
+            [
+                "",
+                "[[documents]]",
+                f"id = {_toml_string(document['id'])}",
+                f"main = {_toml_string(document['main'])}",
+                f"publication_kind = {_toml_string(document['publication_kind'])}",
+                f"source_mode = {_toml_string(document['source_mode'])}",
+                f"inventory_state = {_toml_string(document['inventory_state'])}",
+                f"source_categories = {_toml_array(document['source_categories'])}",
+            ]
+        )
+        for edge in document["record_owners"]:
+            lines.extend(
+                [
+                    "[[documents.record_owners]]",
+                    f"id = {_toml_string(edge['id'])}",
+                    f"relationship = {_toml_string(edge['relationship'])}",
+                ]
+            )
+    for item in data["files"]:
+        lines.extend(
+            [
+                "",
+                "[[files]]",
+                f"path = {_toml_string(item['path'])}",
+                f"sha256 = {_toml_string(item['sha256'])}",
+                f"kind = {_toml_string(item['kind'])}",
+                f"owners = {_toml_array(item['owners'])}",
+            ]
+        )
+    return "\n".join(lines) + "\n"
+
+
+def _read_inventory(path: Path) -> tuple[dict[str, Any] | None, list[str]]:
+    try:
+        with path.open("rb") as source:
+            data = tomllib.load(source)
+    except (OSError, tomllib.TOMLDecodeError) as error:
+        return None, [f"{path}: cannot read inventory: {error}"]
+    if not isinstance(data, dict):
+        return None, [f"{path}: inventory root must be a table"]
+    return data, []
+
+
+def _string_list(value: Any, *, nonempty: bool = False) -> bool:
+    return (
+        isinstance(value, list)
+        and (not nonempty or bool(value))
+        and all(isinstance(item, str) and bool(item.strip()) for item in value)
+    )
+
+
+def _validate(
+    root: Path,
+    path: Path,
+    *,
+    allow_source_drift: bool = False,
+) -> list[str]:
+    data, errors = _read_inventory(path)
+    if data is None:
+        return errors
+    expected_keys = {
+        "inventory_schema",
+        "record_type",
+        "provider",
+        "audited_on",
+        "discovery_rule",
+        "publication_count",
+        "source_surface_file_count",
+        "snapshot",
+        "owners",
+        "documents",
+        "files",
+    }
+    unknown = sorted(set(data) - expected_keys)
+    missing = sorted(expected_keys - set(data))
+    if unknown:
+        errors.append(f"{path}: unknown top-level fields: {', '.join(unknown)}")
+    if missing:
+        errors.append(f"{path}: missing top-level fields: {', '.join(missing)}")
+    if data.get("inventory_schema") != 1 or isinstance(data.get("inventory_schema"), bool):
+        errors.append(f"{path}: inventory_schema must be integer 1")
+    if data.get("record_type") != "publication-source-inventory":
+        errors.append(f"{path}: record_type must be publication-source-inventory")
+    provider = data.get("provider")
+    if provider not in PROVIDERS:
+        errors.append(
+            f"{path}: provider must be one of: {', '.join(sorted(PROVIDERS))}"
+        )
+        provider = DEFAULT_PROVIDER
+    try:
+        audited_on = data.get("audited_on")
+        if not isinstance(audited_on, str):
+            raise ValueError
+        dt.date.fromisoformat(audited_on)
+    except ValueError:
+        errors.append(f"{path}: audited_on must be an ISO date")
+    if data.get("discovery_rule") != f"src/{provider}/**/main.tex":
+        errors.append(f"{path}: discovery_rule is not canonical")
+
+    owner_rows = data.get("owners")
+    document_rows = data.get("documents")
+    file_rows = data.get("files")
+    if not isinstance(owner_rows, list):
+        errors.append(f"{path}: owners must be an array of tables")
+        owner_rows = []
+    if not isinstance(document_rows, list):
+        errors.append(f"{path}: documents must be an array of tables")
+        document_rows = []
+    if not isinstance(file_rows, list):
+        errors.append(f"{path}: files must be an array of tables")
+        file_rows = []
+
+    owner_ids: list[str] = []
+    normalized_owners: list[dict[str, Any]] = []
+    for index, owner in enumerate(owner_rows, start=1):
+        label = f"{path}: owners[{index}]"
+        if not isinstance(owner, dict):
+            errors.append(f"{label} must be a table")
+            continue
+        if set(owner) != {"id", "kind", "roots"}:
+            errors.append(f"{label} must contain exactly id, kind, roots")
+            continue
+        owner_id = owner.get("id")
+        roots = owner.get("roots")
+        if not isinstance(owner_id, str) or not owner_id.startswith("owner."):
+            errors.append(f"{label}.id must be a nonpublication owner id")
+            continue
+        if not isinstance(owner.get("kind"), str) or not owner["kind"]:
+            errors.append(f"{label}.kind must be a nonempty string")
+        if not _string_list(roots, nonempty=True):
+            errors.append(f"{label}.roots must be a nonempty string array")
+        elif not allow_source_drift:
+            for root_value in roots:
+                if not (root / root_value).is_dir():
+                    errors.append(f"{label}.roots path does not exist: {root_value}")
+        if allow_source_drift:
+            expected_owner = next(
+                (
+                    candidate
+                    for candidate in _nonpublication_owners(provider)
+                    if candidate["id"] == owner_id
+                ),
+                None,
+            )
+            if expected_owner is None or owner != expected_owner:
+                errors.append(f"{label} does not match explicit ownership rules")
+        owner_ids.append(owner_id)
+        normalized_owners.append(owner)
+    if owner_ids != sorted(set(owner_ids)):
+        errors.append(f"{path}: owner IDs must be unique and sorted")
+    if not allow_source_drift and normalized_owners != _active_owners(root, provider):
+        errors.append(f"{path}: nonpublication owners do not match explicit ownership rules")
+
+    actual_documents = _documents(root, provider)
+    recorded_documents = [
+        document.get("id")
+        for document in document_rows
+        if isinstance(document, dict)
+        and isinstance(document.get("id"), str)
+        and document.get("id")
+    ]
+    ownership_documents = recorded_documents if allow_source_drift else actual_documents
+    document_ids: list[str] = []
+    normalized_documents: list[dict[str, Any]] = []
+    for index, document in enumerate(document_rows, start=1):
+        label = f"{path}: documents[{index}]"
+        if not isinstance(document, dict):
+            errors.append(f"{label} must be a table")
+            continue
+        required = {
+            "id",
+            "main",
+            "publication_kind",
+            "source_mode",
+            "inventory_state",
+            "source_categories",
+            "record_owners",
+        }
+        if set(document) != required:
+            errors.append(f"{label} must contain exactly the documented fields")
+            continue
+        document_id = document.get("id")
+        if not isinstance(document_id, str) or not document_id:
+            errors.append(f"{label}.id must be a nonempty string")
+            continue
+        document_ids.append(document_id)
+        if document.get("main") != f"src/{provider}/{document_id}/main.tex":
+            errors.append(f"{label}.main does not match its document id")
+        mode = document.get("source_mode")
+        if not isinstance(mode, str) or mode not in SOURCE_MODES:
+            errors.append(f"{label}.source_mode is invalid")
+        state = document.get("inventory_state")
+        if not isinstance(state, str) or state not in INVENTORY_STATES:
+            errors.append(f"{label}.inventory_state is invalid")
+        if isinstance(state, str) and state in EVIDENCE_WORDS:
+            errors.append(f"{label}.inventory_state must not be an evidence state")
+        categories = document.get("source_categories")
+        if not _string_list(categories, nonempty=True):
+            errors.append(f"{label}.source_categories must be a nonempty string array")
+        else:
+            invalid = sorted(set(categories) - SOURCE_CATEGORIES)
+            if invalid:
+                errors.append(f"{label}.source_categories are invalid: {', '.join(invalid)}")
+            if categories != sorted(set(categories)):
+                errors.append(f"{label}.source_categories must be unique and sorted")
+        edges = document.get("record_owners")
+        if not isinstance(edges, list) or not edges:
+            errors.append(f"{label}.record_owners must be a nonempty array of tables")
+        else:
+            expected_mode, expected_edges, expected_kind = _document_shape(document_id)
+            if edges != expected_edges:
+                errors.append(f"{label}.record_owners do not match explicit ownership rules")
+            if mode != expected_mode:
+                errors.append(f"{label}.source_mode does not match explicit ownership rules")
+            if document.get("publication_kind") != expected_kind:
+                errors.append(f"{label}.publication_kind does not match explicit ownership rules")
+            for edge in edges:
+                if not isinstance(edge, dict) or set(edge) != {"id", "relationship"}:
+                    errors.append(f"{label}.record_owners entry is malformed")
+                    continue
+                target = edge.get("id")
+                if target not in ownership_documents and target not in owner_ids:
+                    errors.append(f"{label}.record_owners references unknown owner: {target}")
+                relationship = edge.get("relationship")
+                if not isinstance(relationship, str) or relationship not in RELATIONSHIPS:
+                    errors.append(f"{label}.record_owners relationship is invalid")
+        normalized_documents.append(document)
+    if document_ids != sorted(set(document_ids)):
+        errors.append(f"{path}: document IDs must be unique and sorted")
+    if not allow_source_drift:
+        missing_documents = sorted(set(actual_documents) - set(document_ids))
+        extra_documents = sorted(set(document_ids) - set(actual_documents))
+        if missing_documents:
+            errors.append(f"{path}: publications missing from inventory: {', '.join(missing_documents)}")
+        if extra_documents:
+            errors.append(f"{path}: inventory has unknown publications: {', '.join(extra_documents)}")
+    if data.get("publication_count") != len(document_rows):
+        errors.append(f"{path}: publication_count does not match document rows")
+
+    actual_files = [] if allow_source_drift else _surface_files(root, provider)
+    file_paths: list[str] = []
+    normalized_files: list[dict[str, Any]] = []
+    known_owners = set(ownership_documents) | set(owner_ids)
+    for index, item in enumerate(file_rows, start=1):
+        label = f"{path}: files[{index}]"
+        if not isinstance(item, dict) or set(item) != {"path", "sha256", "kind", "owners"}:
+            errors.append(f"{label} must contain exactly path, sha256, kind, owners")
+            continue
+        relative = item.get("path")
+        if (
+            not isinstance(relative, str)
+            or not relative.startswith(f"src/{provider}/")
+            or not _safe_repo_path(relative)
+        ):
+            errors.append(f"{label}.path must be below src/{provider}")
+            continue
+        file_paths.append(relative)
+        digest = item.get("sha256")
+        if (
+            not isinstance(digest, str)
+            or len(digest) != 64
+            or any(character not in "0123456789abcdef" for character in digest)
+        ):
+            errors.append(f"{label}.sha256 must be a lowercase SHA-256 digest")
+        if not allow_source_drift:
+            target = root / relative
+            if target.is_symlink():
+                errors.append(f"{label}.path must not be a symbolic link: {relative}")
+            elif not target.is_file():
+                errors.append(f"{label}.path does not exist: {relative}")
+            else:
+                actual_hash = _sha256(target)
+                if digest != actual_hash:
+                    errors.append(f"{label}.sha256 is stale for {relative}")
+        kind = item.get("kind")
+        if not isinstance(kind, str) or kind not in FILE_KINDS:
+            errors.append(f"{label}.kind is invalid")
+        elif item.get("kind") != _file_kind(relative):
+            errors.append(f"{label}.kind does not match deterministic classification")
+        owners = item.get("owners")
+        if not _string_list(owners, nonempty=True):
+            errors.append(f"{label}.owners must be a nonempty string array")
+        else:
+            expected_owner = _owner_for_file(relative, ownership_documents, provider)
+            if owners != ([expected_owner] if expected_owner else []):
+                errors.append(f"{label}.owners do not match explicit ownership rules")
+            unknown_owners = sorted(set(owners) - known_owners)
+            if unknown_owners:
+                errors.append(f"{label}.owners are unknown: {', '.join(unknown_owners)}")
+        normalized_files.append(item)
+    if file_paths != sorted(set(file_paths)):
+        errors.append(f"{path}: file paths must be unique and sorted")
+    if not allow_source_drift:
+        missing_files = sorted(set(actual_files) - set(file_paths))
+        extra_files = sorted(set(file_paths) - set(actual_files))
+        if missing_files:
+            errors.append(f"{path}: source-bearing files missing from inventory: {', '.join(missing_files)}")
+        if extra_files:
+            errors.append(f"{path}: inventory has unknown source-bearing files: {', '.join(extra_files)}")
+    if data.get("source_surface_file_count") != len(file_rows):
+        errors.append(f"{path}: source_surface_file_count does not match file rows")
+
+    expected_snapshot = _snapshot(
+        normalized_documents, normalized_owners, normalized_files
+    )
+    if data.get("snapshot") != expected_snapshot:
+        errors.append(f"{path}: snapshot is stale; expected {expected_snapshot}")
+    return sorted(set(errors))
+
+
+def _reviewed_prior_categories(
+    review_path: Path,
+    documents: list[dict[str, Any]],
+    current_documents: list[str],
+) -> tuple[dict[str, list[str]], list[str]]:
+    prior_document_ids = [document["id"] for document in documents]
+    mapping, errors = _classification_review(
+        review_path,
+        None,
+        allow_unresolved=True,
+    )
+    if errors:
+        return mapping, errors
+    reviewed_ids = set(mapping)
+    prior_ids = set(prior_document_ids)
+    current_ids = set(current_documents)
+    if frozenset(reviewed_ids) not in {
+        frozenset(prior_ids),
+        frozenset(current_ids),
+    }:
+        errors.append(
+            f"{review_path}: reviewed publication set must match either the prior "
+            "inventory or the current source tree during refresh"
+        )
+        return mapping, sorted(set(errors))
+    for document in documents:
+        document_id = document["id"]
+        if document_id not in current_ids:
+            continue
+        categories = document["source_categories"]
+        reviewed_categories = mapping.get(document_id)
+        if reviewed_categories is None:
+            errors.append(
+                f"{review_path}: surviving publication is unreviewed: {document_id}"
+            )
+            continue
+        if document["inventory_state"] == "records-enumerated" and categories != [
+            "unresolved"
+        ]:
+            errors.append(
+                f"{review_path}: records-enumerated publication must remain unresolved: "
+                f"{document_id}"
+            )
+        if categories != reviewed_categories:
+            errors.append(
+                f"{review_path}: inventory categories diverge for {document_id}; "
+                f"expected {', '.join(reviewed_categories)}"
+            )
+    for document_id in sorted(current_ids - prior_ids):
+        if document_id in mapping and mapping[document_id] != ["unresolved"]:
+            errors.append(
+                f"{review_path}: new publication must remain unresolved until classify: "
+                f"{document_id}"
+            )
+    return mapping, sorted(set(errors))
+
+
+def _refresh_data(
+    root: Path,
+    audited_on: str,
+    prior_documents: list[dict[str, Any]],
+    provider: str,
+) -> dict[str, Any]:
+    data = _bootstrap_data(root, audited_on, provider)
+    prior_by_id = {document["id"]: document for document in prior_documents}
+    for document in data["documents"]:
+        prior = prior_by_id.get(document["id"])
+        if prior is None:
+            continue
+        document["inventory_state"] = prior["inventory_state"]
+        document["source_categories"] = list(prior["source_categories"])
+    data["snapshot"] = _snapshot(data["documents"], data["owners"], data["files"])
+    return data
+
+
+def _stage_text(path: Path, text: str) -> Path:
+    """Write a durable sibling temporary while preserving the target's mode."""
+    descriptor, temporary_name = tempfile.mkstemp(
+        dir=path.parent,
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+    )
+    temporary = Path(temporary_name)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as output:
+            output.write(text)
+            output.flush()
+            os.fsync(output.fileno())
+        os.chmod(temporary, stat.S_IMODE(path.stat().st_mode))
+    except BaseException:
+        temporary.unlink(missing_ok=True)
+        raise
+    return temporary
+
+
+def _replace_refresh_pair(
+    inventory: Path,
+    inventory_text: str,
+    review: Path,
+    review_text: str,
+) -> None:
+    """Replace the review first so an interrupted pair remains refresh-replayable."""
+    staged_inventory: Path | None = None
+    staged_review: Path | None = None
+    staged_review_rollback: Path | None = None
+    review_replaced = False
+    try:
+        staged_inventory = _stage_text(inventory, inventory_text)
+        staged_review = _stage_text(review, review_text)
+        staged_review_rollback = _stage_text(
+            review,
+            review.read_text(encoding="utf-8"),
+        )
+        os.replace(staged_review, review)
+        review_replaced = True
+        os.replace(staged_inventory, inventory)
+    except BaseException:
+        if review_replaced:
+            os.replace(staged_review_rollback, review)
+        raise
+    finally:
+        for temporary in (
+            staged_inventory,
+            staged_review,
+            staged_review_rollback,
+        ):
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
+
+
+def _rooted(root: Path, value: Path) -> Path:
+    return value if value.is_absolute() else root / value
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--root", type=Path, default=ROOT)
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    provider_default = os.environ.get("PROVIDER", DEFAULT_PROVIDER)
+    check = subparsers.add_parser("check")
+    check.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
+    check.add_argument(
+        "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
+    )
+    bootstrap = subparsers.add_parser("bootstrap")
+    bootstrap.add_argument("output", type=Path)
+    bootstrap.add_argument("--audited-on", required=True)
+    bootstrap.add_argument("--provider", default=provider_default)
+    review_bootstrap = subparsers.add_parser("bootstrap-classification-review")
+    review_bootstrap.add_argument("output", type=Path)
+    review_bootstrap.add_argument("--audited-on", required=True)
+    review_bootstrap.add_argument("--provider", default=provider_default)
+    classify = subparsers.add_parser("classify")
+    classify.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
+    classify.add_argument(
+        "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
+    )
+    refresh = subparsers.add_parser("refresh")
+    refresh.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
+    refresh.add_argument(
+        "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
+    )
+    refresh.add_argument("--audited-on", required=True)
+    args = parser.parse_args()
+    root = args.root.resolve()
+    if args.command in {"bootstrap", "bootstrap-classification-review"}:
+        if args.provider not in PROVIDERS:
+            parser.error(
+                "--provider must be one of: " + ", ".join(sorted(PROVIDERS))
+            )
+    if args.command == "bootstrap-classification-review":
+        try:
+            dt.date.fromisoformat(args.audited_on)
+        except ValueError:
+            parser.error("--audited-on must be an ISO date")
+        output = _rooted(root, args.output)
+        seed: dict[str, list[str]] = {}
+        if output.exists():
+            seed, seed_errors = _classification_review(
+                output,
+                None,
+                allow_unresolved=True,
+            )
+            if seed_errors:
+                for error in seed_errors:
+                    print(f"source-inventory error: {error}", file=sys.stderr)
+                return 1
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            _render_classification_review(
+                _documents(root, args.provider),
+                args.audited_on,
+                seed,
+            ),
+            encoding="utf-8",
+        )
+        return 0
+    if args.command == "bootstrap":
+        try:
+            dt.date.fromisoformat(args.audited_on)
+        except ValueError:
+            parser.error("--audited-on must be an ISO date")
+        data = _bootstrap_data(root, args.audited_on, args.provider)
+        unowned = [item["path"] for item in data["files"] if not item["owners"]]
+        if unowned:
+            for relative in unowned:
+                print(
+                    f"source-inventory error: source-bearing file has no explicit owner: {relative}",
+                    file=sys.stderr,
+                )
+            return 1
+        output = _rooted(root, args.output)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(_render(data), encoding="utf-8")
+        return 0
+    if args.command == "refresh":
+        try:
+            refresh_date = dt.date.fromisoformat(args.audited_on)
+        except ValueError:
+            parser.error("--audited-on must be an ISO date")
+        inventory = _rooted(root, args.inventory)
+        review = _rooted(root, args.review)
+        if inventory.resolve() == review.resolve():
+            parser.error("inventory and --review must be different paths")
+        errors: list[str] = []
+        inventory_before: bytes | None = None
+        review_before: bytes | None = None
+        try:
+            inventory_before = inventory.read_bytes()
+            review_before = review.read_bytes()
+        except OSError as error:
+            errors.append(f"cannot capture refresh inputs: {error}")
+        if not errors:
+            errors.extend(_validate(root, inventory, allow_source_drift=True))
+        data = None
+        if not errors:
+            data, read_errors = _read_inventory(inventory)
+            errors.extend(read_errors)
+        if not errors and data is not None:
+            prior_inventory_date = dt.date.fromisoformat(data["audited_on"])
+            if refresh_date < prior_inventory_date:
+                errors.append(
+                    f"{inventory}: --audited-on {args.audited_on} is earlier than "
+                    f"prior inventory audited_on {data['audited_on']}"
+                )
+        prior_categories: dict[str, list[str]] = {}
+        review_audited_on = ""
+        if not errors and data is not None:
+            prior_categories, review_errors = _reviewed_prior_categories(
+                review,
+                data["documents"],
+                _documents(root, data["provider"]),
+            )
+            errors.extend(review_errors)
+        if not errors:
+            review_data, review_read_errors = _read_inventory(review)
+            errors.extend(review_read_errors)
+            if review_data is not None:
+                review_audited_on = review_data["audited_on"]
+                review_date = dt.date.fromisoformat(review_audited_on)
+                if refresh_date < review_date:
+                    errors.append(
+                        f"{inventory}: --audited-on {args.audited_on} is earlier "
+                        f"than classification review audited_on {review_audited_on}"
+                    )
+        if errors:
+            for error in sorted(set(errors)):
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        refreshed = _refresh_data(
+            root, args.audited_on, data["documents"], data["provider"]
+        )
+        unowned = [item["path"] for item in refreshed["files"] if not item["owners"]]
+        known_owners = {
+            document["id"] for document in refreshed["documents"]
+        } | {owner["id"] for owner in refreshed["owners"]}
+        unknown_edges = sorted(
+            {
+                edge["id"]
+                for document in refreshed["documents"]
+                for edge in document["record_owners"]
+                if edge["id"] not in known_owners
+            }
+        )
+        symbolic_links = [
+            item["path"]
+            for item in refreshed["files"]
+            if (root / item["path"]).is_symlink()
+        ]
+        for relative in unowned:
+            errors.append(f"source-bearing file has no explicit owner: {relative}")
+        for owner_id in unknown_edges:
+            errors.append(f"record_owners references unknown owner: {owner_id}")
+        for relative in symbolic_links:
+            errors.append(f"source-bearing file must not be a symbolic link: {relative}")
+        if errors:
+            for error in sorted(set(errors)):
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        current_documents = [document["id"] for document in refreshed["documents"]]
+        inventory_text = _render(refreshed)
+        review_text = _render_classification_review(
+            current_documents,
+            review_audited_on,
+            prior_categories,
+        )
+        confirmation = _refresh_data(
+            root, args.audited_on, data["documents"], data["provider"]
+        )
+        if confirmation["snapshot"] != refreshed["snapshot"]:
+            print(
+                "source-inventory error: source tree changed during refresh; retry",
+                file=sys.stderr,
+            )
+            return 1
+        try:
+            if (
+                inventory.read_bytes() != inventory_before
+                or review.read_bytes() != review_before
+            ):
+                raise RuntimeError("inventory or classification review changed during refresh")
+            _replace_refresh_pair(
+                inventory,
+                inventory_text,
+                review,
+                review_text,
+            )
+        except (OSError, RuntimeError) as error:
+            print(f"source-inventory error: cannot complete refresh: {error}", file=sys.stderr)
+            return 1
+        return 0
+    if args.command == "classify":
+        inventory = _rooted(root, args.inventory)
+        errors = _validate(root, inventory)
+        if errors:
+            for error in errors:
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        data, read_errors = _read_inventory(inventory)
+        if data is None:
+            for error in read_errors:
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        review = _rooted(root, args.review)
+        categories_by_document, review_errors = _classification_review(
+            review, [document["id"] for document in data["documents"]]
+        )
+        if review_errors:
+            for error in review_errors:
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        for document in data["documents"]:
+            document["source_categories"] = categories_by_document[document["id"]]
+            if document["inventory_state"] == "records-enumerated":
+                document["inventory_state"] = "sources-categorized"
+        data["snapshot"] = _snapshot(data["documents"], data["owners"], data["files"])
+        inventory.write_text(_render(data), encoding="utf-8")
+        return 0
+    inventory = _rooted(root, args.inventory)
+    errors = _validate(root, inventory)
+    data = None
+    if not errors:
+        data, read_errors = _read_inventory(inventory)
+        errors.extend(read_errors)
+    if not errors and data is not None:
+        errors.extend(
+            _inventory_classification_errors(
+                _rooted(root, args.review),
+                data["documents"],
+            )
+        )
+    if errors:
+        for error in errors:
+            print(f"source-inventory error: {error}", file=sys.stderr)
+        return 1
+    print(
+        "source-inventory valid: "
+        f"publications={data['publication_count']} "
+        f"source_surface_files={data['source_surface_file_count']} "
+        f"owners={len(data['owners'])}"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,289 @@
+#!/usr/bin/env python3
+"""Validate per-leaf web-edition declarations against the documents' own sources."""
+
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import os
+import re
+import sys
+import tomllib
+from dataclasses import dataclass
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+RECORD_NAME = "web-edition.toml"
+SCHEMA = 1
+RECORD_TYPE = "web-edition"
+ELIGIBILITIES = ("eligible", "conditional", "ineligible")
+FIELDS = frozenset(
+    {
+        "schema",
+        "record_type",
+        "document",
+        "eligibility",
+        "basis",
+        "blocking_constructs",
+        "rationale",
+        "reviewed",
+    }
+)
+BASIS_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+INPUT_RE = re.compile(r"\\(?:input|include)\{([^{}]+)\}")
+MACRO_RE = re.compile(r"\\newcommand\{\\([A-Za-z@]+)\}\{([^{}]*)\}")
+MACRO_REFERENCE_RE = re.compile(r"\\[A-Za-z@]+")
+
+# Constructs whose meaning is carried by the printed page rather than by the
+# text.  A leaf that uses any of them cannot be declared eligible.
+BLOCKING_CONSTRUCTS = (
+    ("landscape", re.compile(r"\\begin\{landscape\}")),
+    ("tikzpicture", re.compile(r"\\begin\{tikzpicture\}")),
+    ("multicols", re.compile(r"\\begin\{multicols\}")),
+    ("overlay-picture", re.compile(r"remember picture\s*,\s*overlay")),
+    ("zero-margin-geometry", re.compile(r"\\geometry\{[^{}]*margin=0in")),
+    ("rule-line", re.compile(r"\\hrulefill|\\RuleLine")),
+    ("solutions-enabled", re.compile(r"\\solutionstrue")),
+)
+
+
+@dataclass(frozen=True)
+class Record:
+    document: str
+    eligibility: str
+    basis: str | None
+    blocking_constructs: tuple[str, ...]
+    rationale: str | None
+    reviewed: dt.date
+
+
+@dataclass(frozen=True)
+class Finding:
+    construct: str
+    source: str
+
+
+def active_tex(text: str) -> str:
+    """Remove TeX comments so a commented-out construct does not fail the gate."""
+    return "\n".join(re.sub(r"(?<!\\)%.*$", "", line) for line in text.splitlines())
+
+
+def resolve_input(argument: str, source_root: Path) -> Path | None:
+    """Resolve one \\input argument the way the build's TEXINPUTS does."""
+    candidate = Path(argument)
+    if candidate.is_absolute() or ".." in candidate.parts:
+        return None
+    for base in (source_root, ROOT / "src"):
+        for path in (base / argument, base / f"{argument}.tex"):
+            if path.is_file():
+                return path
+    return None
+
+
+def expand_macros(argument: str, macros: dict[str, str]) -> str:
+    """Expand the literal path macros documents use to name their shared trees."""
+    for _ in range(8):
+        if not MACRO_REFERENCE_RE.search(argument):
+            return argument
+        expanded = re.sub(
+            r"\\([A-Za-z@]+)",
+            lambda match: macros.get(match.group(1), match.group(0)),
+            argument,
+        )
+        if expanded == argument:
+            return argument
+        argument = expanded
+    return argument
+
+
+def input_closure(main: Path, source_root: Path) -> dict[Path, str]:
+    """Return every reachable source file of a leaf, including shared trees."""
+    sources: dict[Path, str] = {}
+    macros: dict[str, str] = {}
+    pending = [main]
+    while pending:
+        path = pending.pop()
+        if path in sources:
+            continue
+        try:
+            text = active_tex(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError):
+            continue
+        sources[path] = text
+        macros.update(dict(MACRO_RE.findall(text)))
+        for argument in INPUT_RE.findall(text):
+            target = resolve_input(expand_macros(argument.strip(), macros), source_root)
+            if target is not None:
+                pending.append(target)
+    return sources
+
+
+def scan_constructs(main: Path, source_root: Path) -> list[Finding]:
+    findings: list[Finding] = []
+    for path, text in sorted(input_closure(main, source_root).items()):
+        for construct, pattern in BLOCKING_CONSTRUCTS:
+            if pattern.search(text):
+                findings.append(Finding(construct, str(path.relative_to(ROOT))))
+    return findings
+
+
+def parse_record(path: Path) -> Record:
+    try:
+        data = tomllib.loads(path.read_text(encoding="utf-8"))
+    except tomllib.TOMLDecodeError as exc:
+        raise ValueError(f"{RECORD_NAME} is not valid TOML: {exc}") from exc
+
+    unknown = sorted(set(data) - FIELDS)
+    if unknown:
+        raise ValueError(f"{RECORD_NAME} declares unknown field(s): {', '.join(unknown)}")
+    if data.get("schema") != SCHEMA:
+        raise ValueError(f"{RECORD_NAME} must declare schema = {SCHEMA}")
+    if data.get("record_type") != RECORD_TYPE:
+        raise ValueError(f"{RECORD_NAME} must declare record_type = {RECORD_TYPE!r}")
+
+    document = data.get("document")
+    if not isinstance(document, str) or not document:
+        raise ValueError(f"{RECORD_NAME} must declare a provider-relative document id")
+
+    eligibility = data.get("eligibility")
+    if eligibility not in ELIGIBILITIES:
+        raise ValueError(
+            f"eligibility must be one of {', '.join(ELIGIBILITIES)}: {eligibility!r}"
+        )
+
+    constructs = data.get("blocking_constructs")
+    if not isinstance(constructs, list) or not all(
+        isinstance(item, str) and item.strip() for item in constructs
+    ):
+        raise ValueError("blocking_constructs must be a list of nonempty strings")
+    if eligibility == "eligible" and constructs:
+        raise ValueError("an eligible document must declare no blocking construct")
+    if eligibility != "eligible" and not constructs:
+        raise ValueError(
+            f"a {eligibility} document must name the blocking construct(s) it uses"
+        )
+
+    basis = data.get("basis")
+    rationale = data.get("rationale")
+    for name, value in (("basis", basis), ("rationale", rationale)):
+        if eligibility == "eligible":
+            if value is not None:
+                raise ValueError(f"an eligible document must not declare a {name}")
+            continue
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"a {eligibility} document requires a {name}")
+    if basis is not None and not BASIS_RE.fullmatch(basis):
+        raise ValueError(f"basis must be a lowercase kebab-case token: {basis!r}")
+
+    reviewed = data.get("reviewed")
+    if not isinstance(reviewed, str) or not re.fullmatch(
+        r"[0-9]{4}-[0-9]{2}-[0-9]{2}", reviewed
+    ):
+        raise ValueError(f"reviewed must be an ISO date YYYY-MM-DD: {reviewed!r}")
+    try:
+        reviewed_date = dt.date.fromisoformat(reviewed)
+    except ValueError as exc:
+        raise ValueError(f"invalid reviewed date {reviewed!r}") from exc
+
+    return Record(
+        document=document,
+        eligibility=eligibility,
+        basis=basis,
+        blocking_constructs=tuple(constructs),
+        rationale=rationale,
+        reviewed=reviewed_date,
+    )
+
+
+def audit_document(source_root: Path, relative: str) -> Record:
+    leaf = source_root / relative
+    main = leaf / "main.tex"
+    record_path = leaf / RECORD_NAME
+    if not main.is_file():
+        raise ValueError(f"missing source document {main}")
+    if not record_path.is_file():
+        raise ValueError(
+            f"missing web-edition declaration {record_path.relative_to(ROOT)}; "
+            "every publishable leaf must declare its own eligibility"
+        )
+
+    record = parse_record(record_path)
+    if record.document != relative:
+        raise ValueError(
+            f"document must match the leaf's provider-relative id {relative!r}: "
+            f"{record.document!r}"
+        )
+
+    if record.eligibility == "eligible":
+        findings = scan_constructs(main, source_root)
+        if findings:
+            detail = "; ".join(
+                f"{finding.construct} in {finding.source}" for finding in findings
+            )
+            raise ValueError(f"declared eligible but uses a blocking construct: {detail}")
+    return record
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--provider", default=os.environ.get("PROVIDER", "gpt"))
+    parser.add_argument(
+        "--document",
+        help="audit one provider-relative leaf id instead of every discovered leaf",
+    )
+    parser.add_argument(
+        "--list-eligible",
+        action="store_true",
+        help="print each validated eligible leaf id instead of the count summary",
+    )
+    args = parser.parse_args()
+    source_root = ROOT / "src" / args.provider
+
+    if args.document:
+        documents = [args.document]
+    else:
+        documents = [
+            str(path.parent.relative_to(source_root))
+            for path in sorted(source_root.rglob("main.tex"))
+        ]
+
+    if not documents:
+        print(
+            f"web-edition error: no documents found beneath {source_root}",
+            file=sys.stderr,
+        )
+        return 1
+
+    errors: list[str] = []
+    records: list[Record] = []
+    for relative in documents:
+        try:
+            records.append(audit_document(source_root, relative))
+        except (OSError, ValueError) as exc:
+            errors.append(f"{relative}: {exc}")
+
+    if errors:
+        for error in errors:
+            print(f"web-edition error: {error}", file=sys.stderr)
+        return 1
+
+    if args.list_eligible:
+        for record in records:
+            if record.eligibility == "eligible":
+                print(record.document)
+        return 0
+
+    counts = {name: 0 for name in ELIGIBILITIES}
+    for record in records:
+        counts[record.eligibility] += 1
+    print(
+        "Web-edition declarations valid: "
+        + ", ".join(f"{counts[name]} {name}" for name in ELIGIBILITIES)
+        + "."
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

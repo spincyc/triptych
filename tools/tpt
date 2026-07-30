@@ -11,7 +11,7 @@ Usage:
 
 `tpt` is the unified entrypoint for repo tools. It loads the tool registry
 from ``tmt.json`` and dispatches to the corresponding implementation in
-``scripts/<tool>`` (or ``tools/<tool>`` as a fallback).
+``tools/lib/<tool>`` (or ``tools/<tool>`` as a compatibility fallback).
 """
 
 from __future__ import annotations
@@ -26,6 +26,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "tmt.json"
 SELF = Path(__file__).resolve()
+ALIASES = {
+    "render-sanctuary-dictionary": "roman-sanctuary-dictionary",
+}
+
+
+def resolve_tool_name(name: str) -> str:
+    return ALIASES.get(name, name)
 
 
 def load_registry() -> dict[str, dict[str, str]]:
@@ -52,7 +59,12 @@ def tool_record(registry: dict[str, object], name: str) -> dict[str, object]:
 
 
 def resolve_tool_path(name: str) -> Path:
-    candidates = (ROOT / "scripts" / name, ROOT / "tools" / name)
+    target_name = resolve_tool_name(name)
+    candidates = (
+        ROOT / "tools" / "lib" / target_name,
+        ROOT / "tools" / target_name,
+        ROOT / "scripts" / name,
+    )
     for path in candidates:
         if not path.exists() or not path.is_file():
             continue

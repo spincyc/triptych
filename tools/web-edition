@@ -1,1 +1,14 @@
-../scripts/web-edition
+#!/usr/bin/env sh
+set -eu
+
+SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+TOOL_NAME="$(basename -- "$0")"
+
+case "$TOOL_NAME" in
+  render-sanctuary-dictionary)
+    exec "$SCRIPT_DIR/lib/roman-sanctuary-dictionary" "$@"
+    ;;
+  *)
+    exec "$SCRIPT_DIR/lib/$TOOL_NAME" "$@"
+    ;;
+esac

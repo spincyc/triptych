@@ -1,0 +1,501 @@
+#!/usr/bin/env python3
+"""Encode and validate scripture citations in the calendar mass indexes.
+
+Usage: citations {parse,encode,check} [--root DIR]
+
+A citation's machine encoding is primary. Each element of a proper's `verses`
+list is a passage:
+
+    - book: Psalms
+      ranges:
+        - begin: {chapter: 24, verse: 1}
+          end: {chapter: 24, verse: 3}
+      ref: "Psalm 24:1-3"
+
+`book` is the canonical Catholic-canon name. `ranges` holds one or more
+contiguous extents; a range may cross a chapter boundary, and a range with no
+verse denotes a whole chapter. `part` records a printed part-verse letter
+(8b, 3ac). `ref` is the edition's own display string, kept as a side field.
+
+Requires PyYAML (requirements-tools.txt).
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+from _tooling import print_json, run_verb_cli
+
+DEFAULT_ROOT = Path("src/sources/calendars")
+
+# Canonical Catholic canon, in canonical order, with the aliases and printed
+# variants that actually occur in liturgical books.
+CANON: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("Genesis", ("Gen",)),
+    ("Exodus", ("Exod", "Ex")),
+    ("Leviticus", ("Lev",)),
+    ("Numbers", ("Num",)),
+    ("Deuteronomy", ("Deut", "Deut.")),
+    ("Joshua", ("Josh", "Josue")),
+    ("Judges", ("Judg",)),
+    ("Ruth", ()),
+    ("1 Samuel", ("1 Sam", "1 Kingdoms")),
+    ("2 Samuel", ("2 Sam", "2 Kingdoms")),
+    ("1 Kings", ("1 Kgs", "3 Kingdoms")),
+    ("2 Kings", ("2 Kgs", "4 Kingdoms")),
+    ("1 Chronicles", ("1 Chron", "1 Paralipomenon")),
+    ("2 Chronicles", ("2 Chron", "2 Paralipomenon")),
+    ("Ezra", ("Esdras", "1 Esdras")),
+    ("Nehemiah", ("Neh", "2 Esdras")),
+    ("Tobit", ("Tob", "Tobias")),
+    ("Judith", ("Jdt",)),
+    ("Esther", ("Esth",)),
+    ("1 Maccabees", ("1 Macc",)),
+    ("2 Maccabees", ("2 Macc",)),
+    ("Job", ()),
+    ("Psalms", ("Psalm", "Ps",)),
+    ("Proverbs", ("Prov",)),
+    ("Ecclesiastes", ("Eccl", "Qoheleth")),
+    ("Song of Songs", ("Canticle of Canticles", "Song of Solomon", "Cant")),
+    ("Wisdom", ("Wis",)),
+    ("Sirach", ("Ecclesiasticus", "Sir")),
+    ("Isaiah", ("Isa", "Isaias")),
+    ("Jeremiah", ("Jer", "Jeremias")),
+    ("Lamentations", ("Lam",)),
+    ("Baruch", ("Bar",)),
+    ("Ezekiel", ("Ezek", "Ezechiel")),
+    ("Daniel", ("Dan",)),
+    ("Hosea", ("Hos", "Osee")),
+    ("Joel", ()),
+    ("Amos", ()),
+    ("Obadiah", ("Obad", "Abdias")),
+    ("Jonah", ("Jon", "Jonas")),
+    ("Micah", ("Mic", "Micheas")),
+    ("Nahum", ("Nah",)),
+    ("Habakkuk", ("Hab", "Habacuc")),
+    ("Zephaniah", ("Zeph", "Sophonias")),
+    ("Haggai", ("Hag", "Aggeus")),
+    ("Zechariah", ("Zech", "Zacharias")),
+    ("Malachi", ("Mal", "Malachias")),
+    ("Matthew", ("Matt", "Mt")),
+    ("Mark", ("Mk",)),
+    ("Luke", ("Lk",)),
+    ("John", ("Jn",)),
+    ("Acts", ("Acts of the Apostles",)),
+    ("Romans", ("Rom",)),
+    ("1 Corinthians", ("1 Cor",)),
+    ("2 Corinthians", ("2 Cor",)),
+    ("Galatians", ("Gal",)),
+    ("Ephesians", ("Eph",)),
+    ("Philippians", ("Phil",)),
+    ("Colossians", ("Col",)),
+    ("1 Thessalonians", ("1 Thess",)),
+    ("2 Thessalonians", ("2 Thess",)),
+    ("1 Timothy", ("1 Tim",)),
+    ("2 Timothy", ("2 Tim",)),
+    ("Titus", ("Tit",)),
+    ("Philemon", ("Phlm",)),
+    ("Hebrews", ("Heb",)),
+    ("James", ("Jas",)),
+    ("1 Peter", ("1 Pet",)),
+    ("2 Peter", ("2 Pet",)),
+    ("1 John", ("1 Jn",)),
+    ("2 John", ("2 Jn",)),
+    ("3 John", ("3 Jn",)),
+    ("Jude", ()),
+    ("Revelation", ("Apocalypse", "Rev", "Apoc")),
+    # Outside the canon, but cited by the Roman books themselves: the Easter
+    # and Requiem antiphons take their text from 4 Esdras.
+    ("4 Esdras", ("4 Esd", "2 Esdras (apocalypse)")),
+)
+
+# Books of one chapter, cited by verse alone: "Philemon 9-10", not "Philemon 1:9".
+SINGLE_CHAPTER = frozenset(
+    {"Obadiah", "Philemon", "2 John", "3 John", "Jude"}
+)
+
+CANONICAL = {name for name, _ in CANON}
+ALIASES = {
+    alias.lower().rstrip("."): name
+    for name, aliases in CANON
+    for alias in (name, *aliases)
+}
+ORDER = {name: index for index, (name, _) in enumerate(CANON)}
+
+BOOK_RE = re.compile(r"^((?:[1-4]\s+)?[A-Za-z][A-Za-z' ]*?)\s+(\d.*)$")
+POINT_RE = re.compile(r"^(?:(\d+):)?(\d+)([a-z]*)$")
+CHAPTER_ONLY_RE = re.compile(r"^\d+$")
+
+
+class CitationError(ValueError):
+    """A citation string that cannot be encoded without guessing."""
+
+
+def canonical_book(name: str) -> str:
+    resolved = ALIASES.get(name.strip().lower().rstrip("."))
+    if resolved is None:
+        raise CitationError(f"unknown book: {name!r}")
+    return resolved
+
+
+def point(chapter: int, verse: int | None, part: str) -> dict[str, object]:
+    marker: dict[str, object] = {"chapter": chapter}
+    if verse is not None:
+        marker["verse"] = verse
+    if part:
+        marker["part"] = part
+    return marker
+
+
+def parse_endpoint(token: str, chapter: int | None) -> tuple[int, int, str]:
+    """Resolve one endpoint against the running chapter context."""
+    match = POINT_RE.match(token)
+    if not match:
+        raise CitationError(f"unreadable locus: {token!r}")
+    explicit, verse, part = match.groups()
+    if explicit is not None:
+        return int(explicit), int(verse), part
+    if chapter is None:
+        raise CitationError(f"verse {token!r} with no chapter in scope")
+    return chapter, int(verse), part
+
+
+def parse_citation(text: str) -> dict[str, object]:
+    """Encode one printed citation string.
+
+    Handles a bare chapter ("Psalm 46"), a verse ("John 3:16"), a range
+    ("Psalm 24:1-3"), a cross-chapter range ("John 18:1-19:42"), a selection
+    within a chapter ("Psalm 22:8-9, 17-20"), several chapter blocks
+    ("Exodus 14:24-31; 15:1"), and printed part-verse letters ("Isaiah 50:4-9a").
+    """
+    stripped = text.strip()
+    if stripped != text:
+        raise CitationError(f"citation has stray whitespace: {text!r}")
+    match = BOOK_RE.match(stripped)
+    if not match:
+        raise CitationError(f"no book and locus in {text!r}")
+    book = canonical_book(match.group(1))
+    locus = match.group(2)
+    single = book in SINGLE_CHAPTER
+    ranges: list[dict[str, object]] = []
+    chapter: int | None = 1 if single else None
+    for block in locus.split(";"):
+        block = block.strip()
+        if not block:
+            raise CitationError(f"empty chapter block in {text!r}")
+        # A block introduces its own chapter; selections inside it inherit it.
+        for selection in block.split(","):
+            selection = selection.strip()
+            if not selection:
+                raise CitationError(f"empty selection in {text!r}")
+            if CHAPTER_ONLY_RE.match(selection) and ":" not in block and not single:
+                # A whole chapter, cited without verses.
+                chapter = int(selection)
+                ranges.append(
+                    {"begin": point(chapter, None, ""), "end": point(chapter, None, "")}
+                )
+                continue
+            halves = selection.split("-")
+            if len(halves) > 2:
+                raise CitationError(f"more than one dash in {selection!r}")
+            start_chapter, start_verse, start_part = parse_endpoint(halves[0], chapter)
+            chapter = start_chapter
+            if len(halves) == 1:
+                end_chapter, end_verse, end_part = start_chapter, start_verse, start_part
+            else:
+                end_chapter, end_verse, end_part = parse_endpoint(halves[1], chapter)
+                chapter = end_chapter
+            if (end_chapter, end_verse) < (start_chapter, start_verse):
+                raise CitationError(f"descending range in {selection!r}")
+            ranges.append(
+                {
+                    "begin": point(start_chapter, start_verse, start_part),
+                    "end": point(end_chapter, end_verse, end_part),
+                }
+            )
+    if not ranges:
+        raise CitationError(f"no ranges in {text!r}")
+    return {"book": book, "ranges": ranges, "ref": stripped}
+
+
+def check_passage(where: str, passage: object, problems: list[str]) -> None:
+    if isinstance(passage, str):
+        problems.append(f"{where}: citation is still a bare string: {passage!r}")
+        return
+    if not isinstance(passage, dict):
+        problems.append(f"{where}: passage is not a mapping")
+        return
+    book = passage.get("book")
+    if book not in CANONICAL:
+        problems.append(f"{where}: book is not a canonical name: {book!r}")
+    ranges = passage.get("ranges")
+    if not isinstance(ranges, list) or not ranges:
+        problems.append(f"{where}: ranges must be a nonempty list")
+        return
+    for index, extent in enumerate(ranges):
+        scope = f"{where}/range[{index}]"
+        if not isinstance(extent, dict):
+            problems.append(f"{scope}: range is not a mapping")
+            continue
+        bounds = []
+        for edge in ("begin", "end"):
+            marker = extent.get(edge)
+            if not isinstance(marker, dict):
+                problems.append(f"{scope}: {edge} is not a mapping")
+                bounds.append(None)
+                continue
+            unknown = set(marker) - {"chapter", "verse", "part"}
+            if unknown:
+                problems.append(f"{scope}/{edge}: unknown keys {sorted(unknown)}")
+            chapter = marker.get("chapter")
+            if not isinstance(chapter, int) or chapter < 1:
+                problems.append(f"{scope}/{edge}: chapter must be a positive integer")
+                bounds.append(None)
+                continue
+            verse = marker.get("verse")
+            if verse is not None and (not isinstance(verse, int) or verse < 1):
+                problems.append(f"{scope}/{edge}: verse must be a positive integer")
+                bounds.append(None)
+                continue
+            part = marker.get("part")
+            if part is not None and (
+                not isinstance(part, str) or not part.isalpha() or not part.islower()
+            ):
+                problems.append(f"{scope}/{edge}: part must be lowercase letters")
+            bounds.append((chapter, verse if verse is not None else 0))
+        if len(bounds) == 2 and all(bounds) and bounds[1] < bounds[0]:
+            problems.append(f"{scope}: end precedes begin")
+        begin_verse = extent.get("begin", {}).get("verse") if isinstance(extent.get("begin"), dict) else None
+        end_verse = extent.get("end", {}).get("verse") if isinstance(extent.get("end"), dict) else None
+        if (begin_verse is None) != (end_verse is None):
+            problems.append(f"{scope}: a whole-chapter range needs no verse on either edge")
+    ref = passage.get("ref")
+    if ref is not None and (not isinstance(ref, str) or not ref.strip()):
+        problems.append(f"{where}: ref must be a nonempty string when present")
+
+
+def each_proper(document: object):
+    """Yield (label, proper) for every proper in a loaded index."""
+    if not isinstance(document, dict):
+        return
+    for entry in document.get("masses") or []:
+        if not isinstance(entry, dict):
+            continue
+        key = entry.get("key", "?")
+        groups = [(key, entry.get("propers"))]
+        for form in entry.get("forms") or []:
+            if isinstance(form, dict):
+                groups.append((f"{key}/{form.get('name', '?')}", form.get("propers")))
+        for label, propers in groups:
+            for proper in propers or []:
+                if isinstance(proper, dict):
+                    yield f"{label}/{proper.get('name', '?')}", proper
+
+
+def verse_lists(proper: dict) -> list[tuple[str, dict, str]]:
+    """Every (label-suffix, owner, key) holding a verses list on one proper."""
+    owners = [("", proper, "verses")]
+    for cycle, value in (proper.get("cycles") or {}).items():
+        if isinstance(value, dict):
+            owners.append((f"/{cycle}", value, "verses"))
+    return [(suffix, owner, key) for suffix, owner, key in owners if key in owner]
+
+
+def indexes(root: Path) -> list[Path]:
+    if not root.is_dir():
+        raise ValueError(f"missing calendar root: {root}")
+    paths = sorted(root.rglob("*.yaml"))
+    if not paths:
+        raise ValueError(f"no calendar index found under {root}")
+    return paths
+
+
+MARKER_KEYS = frozenset({"chapter", "verse", "part"})
+
+
+class Inline(dict):
+    """A mapping written on one line, so a verse marker stays readable."""
+
+
+def represent_text(dumper, data):
+    style = "|" if "\n" in data else None
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data, style=style)
+
+
+def inline_markers(value: object) -> object:
+    """Wrap chapter/verse markers so they dump as {chapter: 24, verse: 1}."""
+    if isinstance(value, dict):
+        if value and set(value) <= MARKER_KEYS:
+            return Inline(
+                (key, value[key]) for key in ("chapter", "verse", "part") if key in value
+            )
+        return {key: inline_markers(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [inline_markers(item) for item in value]
+    return value
+
+
+def dump(document: object, path: Path) -> None:
+    import yaml
+
+    class Dumper(yaml.SafeDumper):
+        def ignore_aliases(self, data):  # every passage is written out in full
+            return True
+
+    Dumper.add_representer(str, represent_text)
+    Dumper.add_representer(
+        Inline,
+        lambda dumper, data: dumper.represent_mapping(
+            "tag:yaml.org,2002:map", data, flow_style=True
+        ),
+    )
+    text = yaml.dump(
+        inline_markers(document),
+        Dumper=Dumper,
+        sort_keys=False,
+        default_flow_style=False,
+        allow_unicode=True,
+        width=88,
+    )
+    path.write_text(text, encoding="utf-8")
+
+
+def encode(root: Path) -> dict[str, object]:
+    import yaml
+
+    files: dict[str, object] = {}
+    problems: list[str] = []
+    for path in indexes(root):
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        encoded = 0
+        already = 0
+        for label, proper in each_proper(document):
+            for suffix, owner, key in verse_lists(proper):
+                passages = []
+                for citation in owner[key]:
+                    if isinstance(citation, dict):
+                        already += 1
+                        passages.append(citation)
+                        continue
+                    try:
+                        passages.append(parse_citation(citation))
+                        encoded += 1
+                    except CitationError as error:
+                        problems.append(f"{path}: {label}{suffix}: {error}")
+                        passages.append(citation)
+                owner[key] = passages
+        if not problems:
+            dump(document, path)
+        files[path.as_posix()] = {"encoded": encoded, "already_encoded": already}
+    return {
+        "files": files,
+        "problems": problems,
+        "status": "error" if problems else "ok",
+    }
+
+
+def check(root: Path) -> dict[str, object]:
+    import yaml
+
+    files: dict[str, object] = {}
+    problems: list[str] = []
+    for path in indexes(root):
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        passages = 0
+        books: set[str] = set()
+        for label, proper in each_proper(document):
+            for suffix, owner, key in verse_lists(proper):
+                for passage in owner[key]:
+                    check_passage(f"{label}{suffix}", passage, problems)
+                    passages += 1
+                    if isinstance(passage, dict) and passage.get("book") in CANONICAL:
+                        books.add(passage["book"])
+        files[path.as_posix()] = {"passages": passages, "books": len(books)}
+        problems[:] = [
+            problem if problem.startswith(str(path)) else f"{path}: {problem}"
+            for problem in problems
+        ]
+    return {
+        "files": files,
+        "problems": problems,
+        "status": "error" if problems else "ok",
+    }
+
+
+def emit(payload: dict[str, object], as_json: bool) -> int:
+    problems = payload.get("problems") or []
+    if as_json:
+        print_json(payload)
+        return 1 if problems else 0
+    for problem in problems:
+        print(f"citation error: {problem}", file=sys.stderr)
+    for path, counts in (payload.get("files") or {}).items():
+        detail = "\t".join(f"{value} {name}" for name, value in sorted(counts.items()))
+        print(f"{path}\t{detail}")
+    return 1 if problems else 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    json_flags = argparse.ArgumentParser(add_help=False)
+    json_flags.add_argument(
+        "--json",
+        action="store_true",
+        help="emit one compact key-sorted JSON object (cli-v1)",
+    )
+    parser = argparse.ArgumentParser(
+        prog="citations",
+        description="Encode and validate scripture citations in the calendar mass indexes.",
+        parents=[json_flags],
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+    parse_command = sub.add_parser(
+        "parse",
+        help="encode one citation string",
+        parents=[json_flags],
+    )
+    parse_command.add_argument("citation")
+    for name, help_text in (
+        ("encode", "rewrite bare citation strings as passages, in place"),
+        ("check", "validate every encoded passage"),
+    ):
+        action = sub.add_parser(name, help=help_text, parents=[json_flags])
+        action.add_argument("--root", type=Path, default=DEFAULT_ROOT)
+
+    def dispatch(arguments: argparse.Namespace):
+        if arguments.command == "parse":
+            return {"passage": parse_citation(arguments.citation), "status": "ok"}
+        if arguments.command == "encode":
+            return encode(arguments.root)
+        return check(arguments.root)
+
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        if arguments.command == "parse":
+            passage = payload["passage"] if isinstance(payload, dict) else None
+            if arguments.json:
+                print_json(payload if isinstance(payload, dict) else {})
+                return 0
+            if not isinstance(passage, dict):
+                print("invalid parse payload", file=sys.stderr)
+                return 70
+            print(f"book\t{passage['book']}")
+            for extent in passage["ranges"]:
+                print(f"range\t{extent['begin']}\t{extent['end']}")
+            print(f"ref\t{passage['ref']}")
+            return 0
+        return emit(payload, arguments.json)
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"parse": dispatch, "encode": dispatch, "check": dispatch},
+        renderer=render,
+        prefix="citations",
+        argv=argv,
+        dependency_message="install requirements-tools.txt",
+        mapped_errors={CitationError: ("citation", 65)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
