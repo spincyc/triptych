@@ -1,0 +1,4889 @@
+schema: triptych-calendar-masses/v1
+edition: Missale Romanum, editio typica tertia 2008, reimpressio emendata 2008
+calendar: postconciliar
+series: deterministic fixed-date feast masses
+ordering: civil date order, beginning with January 1
+registry: guidance/liturgy/postconciliar-propers-registry.md (calendar-spine filtered
+  by kind)
+citation_convention: Lectionary readings and antiphons preserve the numbering in the
+  controlling missal
+orthography: 2002 missal Latin (j for i, ae/oe digraphs, no accent marks)
+verification: unverified placeholder index skeleton; propers are pending full migration
+  and collation
+open_collation_items:
+- all entries in this file are placeholders pending source-backed completion
+masses:
+- key: mary-holy-mother-god
+  name: Mary, the Holy Mother of God
+  registry: pc-01-01
+  date: 01-01
+  rank: Solemnity
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: our-lady-lourdes
+  name: Our Lady of Lourdes
+  registry: pc-02-11
+  date: 02-11
+  rank: Optional memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: our-lady-fatima
+  name: Our Lady of Fatima
+  registry: pc-05-13
+  date: 05-13
+  rank: Optional memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: visitation-blessed-virgin-mary
+  name: The Visitation of the Blessed Virgin Mary
+  registry: pc-05-31
+  date: 05-31
+  rank: Feast
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: our-lady-mount-carmel
+  name: Our Lady of Mount Carmel
+  registry: pc-07-16
+  date: 07-16
+  rank: Optional memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: assumption-blessed-virgin-mary
+  name: The Assumption of the Blessed Virgin Mary
+  registry: pc-08-15
+  date: 08-15
+  rank: Solemnity
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: queenship-blessed-virgin-mary
+  name: The Queenship of the Blessed Virgin Mary
+  registry: pc-08-22
+  date: 08-22
+  rank: Memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: nativity-blessed-virgin-mary
+  name: The Nativity of the Blessed Virgin Mary
+  registry: pc-09-08
+  date: 09-08
+  rank: Feast
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: our-lady-sorrows
+  name: Our Lady of Sorrows
+  registry: pc-09-15
+  date: 09-15
+  rank: Memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: our-lady-rosary
+  name: Our Lady of the Rosary
+  registry: pc-10-07
+  date: 10-07
+  rank: Memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: presentation-blessed-virgin-mary
+  name: The Presentation of the Blessed Virgin Mary
+  registry: pc-11-21
+  date: 11-21
+  rank: Memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: immaculate-conception-blessed-virgin-mary
+  name: The Immaculate Conception of the Blessed Virgin Mary
+  registry: pc-12-08
+  date: 12-08
+  rank: Solemnity
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: our-lady-loreto
+  name: Our Lady of Loreto
+  registry: pc-12-10
+  date: 12-10
+  rank: Optional memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: our-lady-guadalupe
+  name: Our Lady of Guadalupe
+  registry: pc-12-12
+  date: 12-12
+  rank: Optional memorial
+  kind: marian
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: most-holy-name-jesus
+  name: The Most Holy Name of Jesus
+  registry: pc-01-03
+  date: 01-03
+  rank: Optional memorial
+  kind: christological
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: epiphany-lord
+  name: The Epiphany of the Lord
+  registry: pc-01-06
+  date: 01-06
+  rank: Solemnity
+  kind: christological
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: presentation-lord
+  name: The Presentation of the Lord
+  registry: pc-02-02
+  date: 02-02
+  rank: Feast
+  kind: christological
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: annunciation-lord
+  name: The Annunciation of the Lord
+  registry: pc-03-25
+  date: 03-25
+  rank: Solemnity
+  kind: christological
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: transfiguration-lord
+  name: The Transfiguration of the Lord
+  registry: pc-08-06
+  date: 08-06
+  rank: Feast
+  kind: christological
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: exaltation-holy-cross
+  name: The Exaltation of the Holy Cross
+  registry: pc-09-14
+  date: 09-14
+  rank: Feast
+  kind: christological
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: nativity-lord
+  name: The Nativity of the Lord
+  registry: pc-12-25
+  date: 12-25
+  rank: Solemnity
+  kind: christological
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-basil-great-gregory-nazianzen-bishops
+  name: Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the Church
+  registry: pc-01-02
+  date: 01-02
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-raymond-penyafort-priest
+  name: Saint Raymond of Penyafort, Priest
+  registry: pc-01-07
+  date: 01-07
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-hilary-bishop-doctor-church
+  name: Saint Hilary, Bishop and Doctor of the Church
+  registry: pc-01-13
+  date: 01-13
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-anthony-abbot
+  name: Saint Anthony, Abbot
+  registry: pc-01-17
+  date: 01-17
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-fabian-pope-martyr
+  name: Saint Fabian, Pope and Martyr; Saint Sebastian, Martyr
+  registry: pc-01-20
+  date: 01-20
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-agnes-virgin-martyr
+  name: Saint Agnes, Virgin and Martyr
+  registry: pc-01-21
+  date: 01-21
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-vincent-deacon-martyr
+  name: Saint Vincent, Deacon and Martyr
+  registry: pc-01-22
+  date: 01-22
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-francis-sales-bishop-doctor-church
+  name: Saint Francis de Sales, Bishop and Doctor of the Church
+  registry: pc-01-24
+  date: 01-24
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: conversion-saint-paul-apostle
+  name: The Conversion of Saint Paul the Apostle
+  registry: pc-01-25
+  date: 01-25
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-timothy-titus-bishops
+  name: Saints Timothy and Titus, Bishops
+  registry: pc-01-26
+  date: 01-26
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-angela-merici-virgin
+  name: Saint Angela Merici, Virgin
+  registry: pc-01-27
+  date: 01-27
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-thomas-aquinas-priest-doctor-church
+  name: Saint Thomas Aquinas, Priest and Doctor of the Church
+  registry: pc-01-28
+  date: 01-28
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-bosco-priest
+  name: Saint John Bosco, Priest
+  registry: pc-01-31
+  date: 01-31
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-blaise-bishop-martyr
+  name: Saint Blaise, Bishop and Martyr; Saint Ansgar, Bishop
+  registry: pc-02-03
+  date: 02-03
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-agatha-virgin-martyr
+  name: Saint Agatha, Virgin and Martyr
+  registry: pc-02-05
+  date: 02-05
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-paul-miki-companions-martyrs
+  name: Saints Paul Miki and Companions, Martyrs
+  registry: pc-02-06
+  date: 02-06
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-jerome-emiliani
+  name: Saint Jerome Emiliani; Saint Josephine Bakhita, Virgin
+  registry: pc-02-08
+  date: 02-08
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-scholastica-virgin
+  name: Saint Scholastica, Virgin
+  registry: pc-02-10
+  date: 02-10
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-cyril-monk-methodius-bishop
+  name: Saints Cyril, Monk, and Methodius, Bishop
+  registry: pc-02-14
+  date: 02-14
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: seven-holy-founders-servite-order
+  name: The Seven Holy Founders of the Servite Order
+  registry: pc-02-17
+  date: 02-17
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-peter-damian-bishop-doctor-church
+  name: Saint Peter Damian, Bishop and Doctor of the Church
+  registry: pc-02-21
+  date: 02-21
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: chair-saint-peter-apostle
+  name: The Chair of Saint Peter the Apostle
+  registry: pc-02-22
+  date: 02-22
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-polycarp-bishop-martyr
+  name: Saint Polycarp, Bishop and Martyr
+  registry: pc-02-23
+  date: 02-23
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-gregory-narek-abbot-doctor-church
+  name: Saint Gregory of Narek, Abbot and Doctor of the Church
+  registry: pc-02-27
+  date: 02-27
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-casimir
+  name: Saint Casimir
+  registry: pc-03-04
+  date: 03-04
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-perpetua-felicity-martyrs
+  name: Saints Perpetua and Felicity, Martyrs
+  registry: pc-03-07
+  date: 03-07
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-god-religious
+  name: Saint John of God, Religious
+  registry: pc-03-08
+  date: 03-08
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-frances-rome-religious
+  name: Saint Frances of Rome, Religious
+  registry: pc-03-09
+  date: 03-09
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-patrick-bishop
+  name: Saint Patrick, Bishop
+  registry: pc-03-17
+  date: 03-17
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-cyril-jerusalem-bishop-doctor-church
+  name: Saint Cyril of Jerusalem, Bishop and Doctor of the Church
+  registry: pc-03-18
+  date: 03-18
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-joseph-spouse-blessed-virgin-mary
+  name: Saint Joseph, Spouse of the Blessed Virgin Mary
+  registry: pc-03-19
+  date: 03-19
+  rank: Solemnity
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-turibius-mogrovejo-bishop
+  name: Saint Turibius of Mogrovejo, Bishop
+  registry: pc-03-23
+  date: 03-23
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-francis-paola-hermit
+  name: Saint Francis of Paola, Hermit
+  registry: pc-04-02
+  date: 04-02
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-isidore-bishop-doctor-church
+  name: Saint Isidore, Bishop and Doctor of the Church
+  registry: pc-04-04
+  date: 04-04
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-vincent-ferrer-priest
+  name: Saint Vincent Ferrer, Priest
+  registry: pc-04-05
+  date: 04-05
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-baptist-la-salle-priest
+  name: Saint John Baptist de la Salle, Priest
+  registry: pc-04-07
+  date: 04-07
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-stanislaus-bishop-martyr
+  name: Saint Stanislaus, Bishop and Martyr
+  registry: pc-04-11
+  date: 04-11
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-martin-i-pope-martyr
+  name: Saint Martin I, Pope and Martyr
+  registry: pc-04-13
+  date: 04-13
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-anselm-bishop-doctor-church
+  name: Saint Anselm, Bishop and Doctor of the Church
+  registry: pc-04-21
+  date: 04-21
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-george-martyr
+  name: Saint George, Martyr; Saint Adalbert, Bishop and Martyr
+  registry: pc-04-23
+  date: 04-23
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-fidelis-sigmaringen-priest-martyr
+  name: Saint Fidelis of Sigmaringen, Priest and Martyr
+  registry: pc-04-24
+  date: 04-24
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-mark-evangelist
+  name: Saint Mark, Evangelist
+  registry: pc-04-25
+  date: 04-25
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-peter-chanel-priest-martyr
+  name: Saint Peter Chanel, Priest and Martyr; Saint Louis Grignion de Montfort, Priest
+  registry: pc-04-28
+  date: 04-28
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-catherine-siena-virgin-doctor-church
+  name: Saint Catherine of Siena, Virgin and Doctor of the Church
+  registry: pc-04-29
+  date: 04-29
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-pius-v-pope
+  name: Saint Pius V, Pope
+  registry: pc-04-30
+  date: 04-30
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-joseph-worker
+  name: Saint Joseph the Worker
+  registry: pc-05-01
+  date: 05-01
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-athanasius-bishop-doctor-church
+  name: Saint Athanasius, Bishop and Doctor of the Church
+  registry: pc-05-02
+  date: 05-02
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-philip-james-apostles
+  name: Saints Philip and James, Apostles
+  registry: pc-05-03
+  date: 05-03
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-avila-priest-doctor-church
+  name: Saint John of Avila, Priest and Doctor of the Church
+  registry: pc-05-10
+  date: 05-10
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-nereus-achilleus-martyrs
+  name: Saints Nereus and Achilleus, Martyrs; Saint Pancras, Martyr
+  registry: pc-05-12
+  date: 05-12
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-matthias-apostle
+  name: Saint Matthias, Apostle
+  registry: pc-05-14
+  date: 05-14
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-i-pope-martyr
+  name: Saint John I, Pope and Martyr
+  registry: pc-05-18
+  date: 05-18
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-bernardine-siena-priest
+  name: Saint Bernardine of Siena, Priest
+  registry: pc-05-20
+  date: 05-20
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-christopher-magallanes-priest-companions-martyrs
+  name: Saints Christopher Magallanes, Priest, and Companions, Martyrs
+  registry: pc-05-21
+  date: 05-21
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-rita-cascia-religious
+  name: Saint Rita of Cascia, Religious
+  registry: pc-05-22
+  date: 05-22
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-bede-venerable-priest-doctor-church
+  name: Saint Bede the Venerable, Priest and Doctor of the Church; Saint Gregory VII,
+    Pope; Saint Mary Magdalene de' Pazzi, Virgin
+  registry: pc-05-25
+  date: 05-25
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-philip-neri-priest
+  name: Saint Philip Neri, Priest
+  registry: pc-05-26
+  date: 05-26
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-augustine-canterbury-bishop
+  name: Saint Augustine of Canterbury, Bishop
+  registry: pc-05-27
+  date: 05-27
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-paul-vi-pope
+  name: Saint Paul VI, Pope
+  registry: pc-05-29
+  date: 05-29
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-justin-martyr
+  name: Saint Justin, Martyr
+  registry: pc-06-01
+  date: 06-01
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-marcellinus-peter-martyrs
+  name: Saints Marcellinus and Peter, Martyrs
+  registry: pc-06-02
+  date: 06-02
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-charles-lwanga-companions-martyrs
+  name: Saints Charles Lwanga and Companions, Martyrs
+  registry: pc-06-03
+  date: 06-03
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-boniface-bishop-martyr
+  name: Saint Boniface, Bishop and Martyr
+  registry: pc-06-05
+  date: 06-05
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-norbert-bishop
+  name: Saint Norbert, Bishop
+  registry: pc-06-06
+  date: 06-06
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-ephrem-deacon-doctor-church
+  name: Saint Ephrem, Deacon and Doctor of the Church
+  registry: pc-06-09
+  date: 06-09
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-barnabas-apostle
+  name: Saint Barnabas, Apostle
+  registry: pc-06-11
+  date: 06-11
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-anthony-padua-priest-doctor-church
+  name: Saint Anthony of Padua, Priest and Doctor of the Church
+  registry: pc-06-13
+  date: 06-13
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-romuald-abbot
+  name: Saint Romuald, Abbot
+  registry: pc-06-19
+  date: 06-19
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-aloysius-gonzaga-religious
+  name: Saint Aloysius Gonzaga, Religious
+  registry: pc-06-21
+  date: 06-21
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-paulinus-nola-bishop
+  name: Saint Paulinus of Nola, Bishop; Saints John Fisher, Bishop, and Thomas More,
+    Martyrs
+  registry: pc-06-22
+  date: 06-22
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: nativity-saint-john-baptist
+  name: The Nativity of Saint John the Baptist
+  registry: pc-06-24
+  date: 06-24
+  rank: Solemnity
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-cyril-alexandria-bishop-doctor-church
+  name: Saint Cyril of Alexandria, Bishop and Doctor of the Church
+  registry: pc-06-27
+  date: 06-27
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-irenaeus-bishop-martyr-doctor-church
+  name: Saint Irenaeus, Bishop, Martyr, and Doctor of the Church
+  registry: pc-06-28
+  date: 06-28
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-peter-paul-apostles
+  name: Saints Peter and Paul, Apostles
+  registry: pc-06-29
+  date: 06-29
+  rank: Solemnity
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: first-martyrs-holy-roman-church
+  name: The First Martyrs of the Holy Roman Church
+  registry: pc-06-30
+  date: 06-30
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-thomas-apostle
+  name: Saint Thomas, Apostle
+  registry: pc-07-03
+  date: 07-03
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-elizabeth-portugal
+  name: Saint Elizabeth of Portugal
+  registry: pc-07-04
+  date: 07-04
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-anthony-zaccaria-priest
+  name: Saint Anthony Zaccaria, Priest
+  registry: pc-07-05
+  date: 07-05
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-maria-goretti-virgin-martyr
+  name: Saint Maria Goretti, Virgin and Martyr
+  registry: pc-07-06
+  date: 07-06
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-augustine-zhao-rong-priest-companions
+  name: Saints Augustine Zhao Rong, Priest, and Companions, Martyrs
+  registry: pc-07-09
+  date: 07-09
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-benedict-abbot
+  name: Saint Benedict, Abbot
+  registry: pc-07-11
+  date: 07-11
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-henry
+  name: Saint Henry
+  registry: pc-07-13
+  date: 07-13
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-camillus-lellis-priest
+  name: Saint Camillus de Lellis, Priest
+  registry: pc-07-14
+  date: 07-14
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-bonaventure-bishop-doctor-church
+  name: Saint Bonaventure, Bishop and Doctor of the Church
+  registry: pc-07-15
+  date: 07-15
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-apollinaris-bishop-martyr
+  name: Saint Apollinaris, Bishop and Martyr
+  registry: pc-07-20
+  date: 07-20
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-lawrence-brindisi-priest-doctor-church
+  name: Saint Lawrence of Brindisi, Priest and Doctor of the Church
+  registry: pc-07-21
+  date: 07-21
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-mary-magdalene
+  name: Saint Mary Magdalene
+  registry: pc-07-22
+  date: 07-22
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-bridget-religious
+  name: Saint Bridget, Religious
+  registry: pc-07-23
+  date: 07-23
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-sharbel-makhluf-priest
+  name: Saint Sharbel Makhluf, Priest
+  registry: pc-07-24
+  date: 07-24
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-james-apostle
+  name: Saint James, Apostle
+  registry: pc-07-25
+  date: 07-25
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-joachim-anne-parents-blessed-virgin
+  name: Saints Joachim and Anne, Parents of the Blessed Virgin Mary
+  registry: pc-07-26
+  date: 07-26
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-martha-mary-lazarus
+  name: Saints Martha, Mary, and Lazarus
+  registry: pc-07-29
+  date: 07-29
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-peter-chrysologus-bishop-doctor-church
+  name: Saint Peter Chrysologus, Bishop and Doctor of the Church
+  registry: pc-07-30
+  date: 07-30
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-ignatius-loyola-priest
+  name: Saint Ignatius of Loyola, Priest
+  registry: pc-07-31
+  date: 07-31
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-alphonsus-liguori-bishop-doctor-church
+  name: Saint Alphonsus Liguori, Bishop and Doctor of the Church
+  registry: pc-08-01
+  date: 08-01
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-eusebius-vercelli-bishop
+  name: Saint Eusebius of Vercelli, Bishop; Saint Peter Julian Eymard, Priest
+  registry: pc-08-02
+  date: 08-02
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-vianney-priest
+  name: Saint John Vianney, Priest
+  registry: pc-08-04
+  date: 08-04
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: dedication-basilica-saint-mary-major
+  name: The Dedication of the Basilica of Saint Mary Major
+  registry: pc-08-05
+  date: 08-05
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-sixtus-ii-pope-companions-martyrs
+  name: Saints Sixtus II, Pope, and Companions, Martyrs; Saint Cajetan, Priest
+  registry: pc-08-07
+  date: 08-07
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-dominic-priest
+  name: Saint Dominic, Priest
+  registry: pc-08-08
+  date: 08-08
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-teresa-benedicta-cross-virgin-martyr
+  name: Saint Teresa Benedicta of the Cross, Virgin and Martyr
+  registry: pc-08-09
+  date: 08-09
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-lawrence-deacon-martyr
+  name: Saint Lawrence, Deacon and Martyr
+  registry: pc-08-10
+  date: 08-10
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-clare-virgin
+  name: Saint Clare, Virgin
+  registry: pc-08-11
+  date: 08-11
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-jane-frances-chantal-religious
+  name: Saint Jane Frances de Chantal, Religious
+  registry: pc-08-12
+  date: 08-12
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-pontian-pope-hippolytus-priest-martyrs
+  name: Saints Pontian, Pope, and Hippolytus, Priest, Martyrs
+  registry: pc-08-13
+  date: 08-13
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-maximilian-mary-kolbe-priest-martyr
+  name: Saint Maximilian Mary Kolbe, Priest and Martyr
+  registry: pc-08-14
+  date: 08-14
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-stephen-hungary
+  name: Saint Stephen of Hungary
+  registry: pc-08-16
+  date: 08-16
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-eudes-priest
+  name: Saint John Eudes, Priest
+  registry: pc-08-19
+  date: 08-19
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-bernard-abbot-doctor-church
+  name: Saint Bernard, Abbot and Doctor of the Church
+  registry: pc-08-20
+  date: 08-20
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-pius-x-pope
+  name: Saint Pius X, Pope
+  registry: pc-08-21
+  date: 08-21
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-rose-lima-virgin
+  name: Saint Rose of Lima, Virgin
+  registry: pc-08-23
+  date: 08-23
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-bartholomew-apostle
+  name: Saint Bartholomew, Apostle
+  registry: pc-08-24
+  date: 08-24
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-louis
+  name: Saint Louis; Saint Joseph Calasanz, Priest
+  registry: pc-08-25
+  date: 08-25
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-monica
+  name: Saint Monica
+  registry: pc-08-27
+  date: 08-27
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-augustine-bishop-doctor-church
+  name: Saint Augustine, Bishop and Doctor of the Church
+  registry: pc-08-28
+  date: 08-28
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: passion-saint-john-baptist
+  name: The Passion of Saint John the Baptist
+  registry: pc-08-29
+  date: 08-29
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-gregory-great-pope-doctor-church
+  name: Saint Gregory the Great, Pope and Doctor of the Church
+  registry: pc-09-03
+  date: 09-03
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-teresa-calcutta-virgin
+  name: Saint Teresa of Calcutta, Virgin
+  registry: pc-09-05
+  date: 09-05
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-peter-claver-priest
+  name: Saint Peter Claver, Priest
+  registry: pc-09-09
+  date: 09-09
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: most-holy-name-mary
+  name: The Most Holy Name of Mary
+  registry: pc-09-12
+  date: 09-12
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-chrysostom-bishop-doctor-church
+  name: Saint John Chrysostom, Bishop and Doctor of the Church
+  registry: pc-09-13
+  date: 09-13
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-cornelius-pope-cyprian-bishop-martyrs
+  name: Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs
+  registry: pc-09-16
+  date: 09-16
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-robert-bellarmine-bishop-doctor-church
+  name: Saint Robert Bellarmine, Bishop and Doctor of the Church; Saint Hildegard
+    of Bingen, Virgin and Doctor of the Church
+  registry: pc-09-17
+  date: 09-17
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-januarius-bishop-martyr
+  name: Saint Januarius, Bishop and Martyr
+  registry: pc-09-19
+  date: 09-19
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-andrew-kim-tae-gon-priest
+  name: Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs
+  registry: pc-09-20
+  date: 09-20
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-matthew-apostle-evangelist
+  name: Saint Matthew, Apostle and Evangelist
+  registry: pc-09-21
+  date: 09-21
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-pius-pietrelcina-priest
+  name: Saint Pius of Pietrelcina, Priest
+  registry: pc-09-23
+  date: 09-23
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-cosmas-damian-martyrs
+  name: Saints Cosmas and Damian, Martyrs
+  registry: pc-09-26
+  date: 09-26
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-vincent-paul-priest
+  name: Saint Vincent de Paul, Priest
+  registry: pc-09-27
+  date: 09-27
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-wenceslaus-martyr
+  name: Saint Wenceslaus, Martyr; Saints Lawrence Ruiz and Companions, Martyrs
+  registry: pc-09-28
+  date: 09-28
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-michael-gabriel-raphael-archangels
+  name: Saints Michael, Gabriel, and Raphael, Archangels
+  registry: pc-09-29
+  date: 09-29
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-jerome-priest-doctor-church
+  name: Saint Jerome, Priest and Doctor of the Church
+  registry: pc-09-30
+  date: 09-30
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-therese-child-jesus-virgin-doctor
+  name: Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church
+  registry: pc-10-01
+  date: 10-01
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: holy-guardian-angels
+  name: The Holy Guardian Angels
+  registry: pc-10-02
+  date: 10-02
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-francis-assisi
+  name: Saint Francis of Assisi
+  registry: pc-10-04
+  date: 10-04
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-faustina-kowalska-virgin
+  name: Saint Faustina Kowalska, Virgin
+  registry: pc-10-05
+  date: 10-05
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-bruno-priest
+  name: Saint Bruno, Priest
+  registry: pc-10-06
+  date: 10-06
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-denis-bishop-companions-martyrs
+  name: Saints Denis, Bishop, and Companions, Martyrs; Saint John Leonardi, Priest;
+    Saint John Henry Newman, Priest and Doctor of the Church
+  registry: pc-10-09
+  date: 10-09
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-xxiii-pope
+  name: Saint John XXIII, Pope
+  registry: pc-10-11
+  date: 10-11
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-callistus-i-pope-martyr
+  name: Saint Callistus I, Pope and Martyr
+  registry: pc-10-14
+  date: 10-14
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-teresa-jesus-virgin-doctor-church
+  name: Saint Teresa of Jesus, Virgin and Doctor of the Church
+  registry: pc-10-15
+  date: 10-15
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-hedwig-religious
+  name: Saint Hedwig, Religious; Saint Margaret Mary Alacoque, Virgin
+  registry: pc-10-16
+  date: 10-16
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-ignatius-antioch-bishop-martyr
+  name: Saint Ignatius of Antioch, Bishop and Martyr
+  registry: pc-10-17
+  date: 10-17
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-luke-evangelist
+  name: Saint Luke, Evangelist
+  registry: pc-10-18
+  date: 10-18
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-john-brebeuf-isaac-jogues-priests
+  name: Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs;
+    Saint Paul of the Cross, Priest
+  registry: pc-10-19
+  date: 10-19
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-paul-ii-pope
+  name: Saint John Paul II, Pope
+  registry: pc-10-22
+  date: 10-22
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-capistrano-priest
+  name: Saint John of Capistrano, Priest
+  registry: pc-10-23
+  date: 10-23
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-anthony-mary-claret-bishop
+  name: Saint Anthony Mary Claret, Bishop
+  registry: pc-10-24
+  date: 10-24
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-simon-jude-apostles
+  name: Saints Simon and Jude, Apostles
+  registry: pc-10-28
+  date: 10-28
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: all-saints
+  name: All Saints
+  registry: pc-11-01
+  date: 11-01
+  rank: Solemnity
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: commemoration-all-faithful-departed-all-souls
+  name: The Commemoration of All the Faithful Departed (All Souls)
+  registry: pc-11-02
+  date: 11-02
+  rank: All Souls commemoration
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-martin-porres-religious
+  name: Saint Martin de Porres, Religious
+  registry: pc-11-03
+  date: 11-03
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-charles-borromeo-bishop
+  name: Saint Charles Borromeo, Bishop
+  registry: pc-11-04
+  date: 11-04
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: dedication-lateran-basilica
+  name: The Dedication of the Lateran Basilica
+  registry: pc-11-09
+  date: 11-09
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-leo-great-pope-doctor-church
+  name: Saint Leo the Great, Pope and Doctor of the Church
+  registry: pc-11-10
+  date: 11-10
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-martin-tours-bishop
+  name: Saint Martin of Tours, Bishop
+  registry: pc-11-11
+  date: 11-11
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-josaphat-bishop-martyr
+  name: Saint Josaphat, Bishop and Martyr
+  registry: pc-11-12
+  date: 11-12
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-albert-great-bishop-doctor-church
+  name: Saint Albert the Great, Bishop and Doctor of the Church
+  registry: pc-11-15
+  date: 11-15
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-margaret-scotland
+  name: Saint Margaret of Scotland; Saint Gertrude, Virgin
+  registry: pc-11-16
+  date: 11-16
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-elizabeth-hungary-religious
+  name: Saint Elizabeth of Hungary, Religious
+  registry: pc-11-17
+  date: 11-17
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: dedication-basilicas-saints-peter-paul-apostles
+  name: The Dedication of the Basilicas of Saints Peter and Paul, Apostles
+  registry: pc-11-18
+  date: 11-18
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-cecilia-virgin-martyr
+  name: Saint Cecilia, Virgin and Martyr
+  registry: pc-11-22
+  date: 11-22
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-clement-i-pope-martyr
+  name: Saint Clement I, Pope and Martyr; Saint Columban, Abbot
+  registry: pc-11-23
+  date: 11-23
+  rank: Optional memorials
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saints-andrew-dung-lac-priest-companions
+  name: Saints Andrew Dung-Lac, Priest, and Companions, Martyrs
+  registry: pc-11-24
+  date: 11-24
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-catherine-alexandria-virgin-martyr
+  name: Saint Catherine of Alexandria, Virgin and Martyr
+  registry: pc-11-25
+  date: 11-25
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-andrew-apostle
+  name: Saint Andrew, Apostle
+  registry: pc-11-30
+  date: 11-30
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-francis-xavier-priest
+  name: Saint Francis Xavier, Priest
+  registry: pc-12-03
+  date: 12-03
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-damascene-priest-doctor-church
+  name: Saint John Damascene, Priest and Doctor of the Church
+  registry: pc-12-04
+  date: 12-04
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-nicholas-bishop
+  name: Saint Nicholas, Bishop
+  registry: pc-12-06
+  date: 12-06
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-ambrose-bishop-doctor-church
+  name: Saint Ambrose, Bishop and Doctor of the Church
+  registry: pc-12-07
+  date: 12-07
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-juan-diego-cuauhtlatoatzin
+  name: Saint Juan Diego Cuauhtlatoatzin
+  registry: pc-12-09
+  date: 12-09
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-damasus-i-pope
+  name: Saint Damasus I, Pope
+  registry: pc-12-11
+  date: 12-11
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-lucy-virgin-martyr
+  name: Saint Lucy, Virgin and Martyr
+  registry: pc-12-13
+  date: 12-13
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-cross-priest-doctor-church
+  name: Saint John of the Cross, Priest and Doctor of the Church
+  registry: pc-12-14
+  date: 12-14
+  rank: Memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-peter-canisius-priest-doctor-church
+  name: Saint Peter Canisius, Priest and Doctor of the Church
+  registry: pc-12-21
+  date: 12-21
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-kanty-priest
+  name: Saint John of Kanty, Priest
+  registry: pc-12-23
+  date: 12-23
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-stephen-first-martyr
+  name: Saint Stephen, the First Martyr
+  registry: pc-12-26
+  date: 12-26
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-john-apostle-evangelist
+  name: Saint John, Apostle and Evangelist
+  registry: pc-12-27
+  date: 12-27
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: holy-innocents-martyrs
+  name: The Holy Innocents, Martyrs
+  registry: pc-12-28
+  date: 12-28
+  rank: Feast
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-thomas-becket-bishop-martyr
+  name: Saint Thomas Becket, Bishop and Martyr
+  registry: pc-12-29
+  date: 12-29
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+- key: saint-sylvester-i-pope
+  name: Saint Sylvester I, Pope
+  registry: pc-12-31
+  date: 12-31
+  rank: Optional memorial
+  kind: saints
+  propers:
+  - name: Placeholder
+    source: composed
+    text: 'This entry is a placeholder pending formula migration and source verification.
+
+      '
+sections:
+  mary:
+    kind: marian
+    label: Marian
+    masses:
+    - key: mary-holy-mother-god
+      name: Mary, the Holy Mother of God
+      registry: pc-01-01
+      date: 01-01
+      rank: Solemnity
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: our-lady-lourdes
+      name: Our Lady of Lourdes
+      registry: pc-02-11
+      date: 02-11
+      rank: Optional memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: our-lady-fatima
+      name: Our Lady of Fatima
+      registry: pc-05-13
+      date: 05-13
+      rank: Optional memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: visitation-blessed-virgin-mary
+      name: The Visitation of the Blessed Virgin Mary
+      registry: pc-05-31
+      date: 05-31
+      rank: Feast
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: our-lady-mount-carmel
+      name: Our Lady of Mount Carmel
+      registry: pc-07-16
+      date: 07-16
+      rank: Optional memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: assumption-blessed-virgin-mary
+      name: The Assumption of the Blessed Virgin Mary
+      registry: pc-08-15
+      date: 08-15
+      rank: Solemnity
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: queenship-blessed-virgin-mary
+      name: The Queenship of the Blessed Virgin Mary
+      registry: pc-08-22
+      date: 08-22
+      rank: Memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: nativity-blessed-virgin-mary
+      name: The Nativity of the Blessed Virgin Mary
+      registry: pc-09-08
+      date: 09-08
+      rank: Feast
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: our-lady-sorrows
+      name: Our Lady of Sorrows
+      registry: pc-09-15
+      date: 09-15
+      rank: Memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: our-lady-rosary
+      name: Our Lady of the Rosary
+      registry: pc-10-07
+      date: 10-07
+      rank: Memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: presentation-blessed-virgin-mary
+      name: The Presentation of the Blessed Virgin Mary
+      registry: pc-11-21
+      date: 11-21
+      rank: Memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: immaculate-conception-blessed-virgin-mary
+      name: The Immaculate Conception of the Blessed Virgin Mary
+      registry: pc-12-08
+      date: 12-08
+      rank: Solemnity
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: our-lady-loreto
+      name: Our Lady of Loreto
+      registry: pc-12-10
+      date: 12-10
+      rank: Optional memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: our-lady-guadalupe
+      name: Our Lady of Guadalupe
+      registry: pc-12-12
+      date: 12-12
+      rank: Optional memorial
+      kind: marian
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+  christological:
+    kind: christological
+    label: Christological
+    masses:
+    - key: most-holy-name-jesus
+      name: The Most Holy Name of Jesus
+      registry: pc-01-03
+      date: 01-03
+      rank: Optional memorial
+      kind: christological
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: epiphany-lord
+      name: The Epiphany of the Lord
+      registry: pc-01-06
+      date: 01-06
+      rank: Solemnity
+      kind: christological
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: presentation-lord
+      name: The Presentation of the Lord
+      registry: pc-02-02
+      date: 02-02
+      rank: Feast
+      kind: christological
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: annunciation-lord
+      name: The Annunciation of the Lord
+      registry: pc-03-25
+      date: 03-25
+      rank: Solemnity
+      kind: christological
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: transfiguration-lord
+      name: The Transfiguration of the Lord
+      registry: pc-08-06
+      date: 08-06
+      rank: Feast
+      kind: christological
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: exaltation-holy-cross
+      name: The Exaltation of the Holy Cross
+      registry: pc-09-14
+      date: 09-14
+      rank: Feast
+      kind: christological
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: nativity-lord
+      name: The Nativity of the Lord
+      registry: pc-12-25
+      date: 12-25
+      rank: Solemnity
+      kind: christological
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+  saints:
+    kind: saints
+    label: Saints
+    masses:
+    - key: saints-basil-great-gregory-nazianzen-bishops
+      name: Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the
+        Church
+      registry: pc-01-02
+      date: 01-02
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-raymond-penyafort-priest
+      name: Saint Raymond of Penyafort, Priest
+      registry: pc-01-07
+      date: 01-07
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-hilary-bishop-doctor-church
+      name: Saint Hilary, Bishop and Doctor of the Church
+      registry: pc-01-13
+      date: 01-13
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-anthony-abbot
+      name: Saint Anthony, Abbot
+      registry: pc-01-17
+      date: 01-17
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-fabian-pope-martyr
+      name: Saint Fabian, Pope and Martyr; Saint Sebastian, Martyr
+      registry: pc-01-20
+      date: 01-20
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-agnes-virgin-martyr
+      name: Saint Agnes, Virgin and Martyr
+      registry: pc-01-21
+      date: 01-21
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-vincent-deacon-martyr
+      name: Saint Vincent, Deacon and Martyr
+      registry: pc-01-22
+      date: 01-22
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-francis-sales-bishop-doctor-church
+      name: Saint Francis de Sales, Bishop and Doctor of the Church
+      registry: pc-01-24
+      date: 01-24
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: conversion-saint-paul-apostle
+      name: The Conversion of Saint Paul the Apostle
+      registry: pc-01-25
+      date: 01-25
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-timothy-titus-bishops
+      name: Saints Timothy and Titus, Bishops
+      registry: pc-01-26
+      date: 01-26
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-angela-merici-virgin
+      name: Saint Angela Merici, Virgin
+      registry: pc-01-27
+      date: 01-27
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-thomas-aquinas-priest-doctor-church
+      name: Saint Thomas Aquinas, Priest and Doctor of the Church
+      registry: pc-01-28
+      date: 01-28
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-bosco-priest
+      name: Saint John Bosco, Priest
+      registry: pc-01-31
+      date: 01-31
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-blaise-bishop-martyr
+      name: Saint Blaise, Bishop and Martyr; Saint Ansgar, Bishop
+      registry: pc-02-03
+      date: 02-03
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-agatha-virgin-martyr
+      name: Saint Agatha, Virgin and Martyr
+      registry: pc-02-05
+      date: 02-05
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-paul-miki-companions-martyrs
+      name: Saints Paul Miki and Companions, Martyrs
+      registry: pc-02-06
+      date: 02-06
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-jerome-emiliani
+      name: Saint Jerome Emiliani; Saint Josephine Bakhita, Virgin
+      registry: pc-02-08
+      date: 02-08
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-scholastica-virgin
+      name: Saint Scholastica, Virgin
+      registry: pc-02-10
+      date: 02-10
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-cyril-monk-methodius-bishop
+      name: Saints Cyril, Monk, and Methodius, Bishop
+      registry: pc-02-14
+      date: 02-14
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: seven-holy-founders-servite-order
+      name: The Seven Holy Founders of the Servite Order
+      registry: pc-02-17
+      date: 02-17
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-peter-damian-bishop-doctor-church
+      name: Saint Peter Damian, Bishop and Doctor of the Church
+      registry: pc-02-21
+      date: 02-21
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: chair-saint-peter-apostle
+      name: The Chair of Saint Peter the Apostle
+      registry: pc-02-22
+      date: 02-22
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-polycarp-bishop-martyr
+      name: Saint Polycarp, Bishop and Martyr
+      registry: pc-02-23
+      date: 02-23
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-gregory-narek-abbot-doctor-church
+      name: Saint Gregory of Narek, Abbot and Doctor of the Church
+      registry: pc-02-27
+      date: 02-27
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-casimir
+      name: Saint Casimir
+      registry: pc-03-04
+      date: 03-04
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-perpetua-felicity-martyrs
+      name: Saints Perpetua and Felicity, Martyrs
+      registry: pc-03-07
+      date: 03-07
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-god-religious
+      name: Saint John of God, Religious
+      registry: pc-03-08
+      date: 03-08
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-frances-rome-religious
+      name: Saint Frances of Rome, Religious
+      registry: pc-03-09
+      date: 03-09
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-patrick-bishop
+      name: Saint Patrick, Bishop
+      registry: pc-03-17
+      date: 03-17
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-cyril-jerusalem-bishop-doctor-church
+      name: Saint Cyril of Jerusalem, Bishop and Doctor of the Church
+      registry: pc-03-18
+      date: 03-18
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-joseph-spouse-blessed-virgin-mary
+      name: Saint Joseph, Spouse of the Blessed Virgin Mary
+      registry: pc-03-19
+      date: 03-19
+      rank: Solemnity
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-turibius-mogrovejo-bishop
+      name: Saint Turibius of Mogrovejo, Bishop
+      registry: pc-03-23
+      date: 03-23
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-francis-paola-hermit
+      name: Saint Francis of Paola, Hermit
+      registry: pc-04-02
+      date: 04-02
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-isidore-bishop-doctor-church
+      name: Saint Isidore, Bishop and Doctor of the Church
+      registry: pc-04-04
+      date: 04-04
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-vincent-ferrer-priest
+      name: Saint Vincent Ferrer, Priest
+      registry: pc-04-05
+      date: 04-05
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-baptist-la-salle-priest
+      name: Saint John Baptist de la Salle, Priest
+      registry: pc-04-07
+      date: 04-07
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-stanislaus-bishop-martyr
+      name: Saint Stanislaus, Bishop and Martyr
+      registry: pc-04-11
+      date: 04-11
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-martin-i-pope-martyr
+      name: Saint Martin I, Pope and Martyr
+      registry: pc-04-13
+      date: 04-13
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-anselm-bishop-doctor-church
+      name: Saint Anselm, Bishop and Doctor of the Church
+      registry: pc-04-21
+      date: 04-21
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-george-martyr
+      name: Saint George, Martyr; Saint Adalbert, Bishop and Martyr
+      registry: pc-04-23
+      date: 04-23
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-fidelis-sigmaringen-priest-martyr
+      name: Saint Fidelis of Sigmaringen, Priest and Martyr
+      registry: pc-04-24
+      date: 04-24
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-mark-evangelist
+      name: Saint Mark, Evangelist
+      registry: pc-04-25
+      date: 04-25
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-peter-chanel-priest-martyr
+      name: Saint Peter Chanel, Priest and Martyr; Saint Louis Grignion de Montfort,
+        Priest
+      registry: pc-04-28
+      date: 04-28
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-catherine-siena-virgin-doctor-church
+      name: Saint Catherine of Siena, Virgin and Doctor of the Church
+      registry: pc-04-29
+      date: 04-29
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-pius-v-pope
+      name: Saint Pius V, Pope
+      registry: pc-04-30
+      date: 04-30
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-joseph-worker
+      name: Saint Joseph the Worker
+      registry: pc-05-01
+      date: 05-01
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-athanasius-bishop-doctor-church
+      name: Saint Athanasius, Bishop and Doctor of the Church
+      registry: pc-05-02
+      date: 05-02
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-philip-james-apostles
+      name: Saints Philip and James, Apostles
+      registry: pc-05-03
+      date: 05-03
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-avila-priest-doctor-church
+      name: Saint John of Avila, Priest and Doctor of the Church
+      registry: pc-05-10
+      date: 05-10
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-nereus-achilleus-martyrs
+      name: Saints Nereus and Achilleus, Martyrs; Saint Pancras, Martyr
+      registry: pc-05-12
+      date: 05-12
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-matthias-apostle
+      name: Saint Matthias, Apostle
+      registry: pc-05-14
+      date: 05-14
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-i-pope-martyr
+      name: Saint John I, Pope and Martyr
+      registry: pc-05-18
+      date: 05-18
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-bernardine-siena-priest
+      name: Saint Bernardine of Siena, Priest
+      registry: pc-05-20
+      date: 05-20
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-christopher-magallanes-priest-companions-martyrs
+      name: Saints Christopher Magallanes, Priest, and Companions, Martyrs
+      registry: pc-05-21
+      date: 05-21
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-rita-cascia-religious
+      name: Saint Rita of Cascia, Religious
+      registry: pc-05-22
+      date: 05-22
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-bede-venerable-priest-doctor-church
+      name: Saint Bede the Venerable, Priest and Doctor of the Church; Saint Gregory
+        VII, Pope; Saint Mary Magdalene de' Pazzi, Virgin
+      registry: pc-05-25
+      date: 05-25
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-philip-neri-priest
+      name: Saint Philip Neri, Priest
+      registry: pc-05-26
+      date: 05-26
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-augustine-canterbury-bishop
+      name: Saint Augustine of Canterbury, Bishop
+      registry: pc-05-27
+      date: 05-27
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-paul-vi-pope
+      name: Saint Paul VI, Pope
+      registry: pc-05-29
+      date: 05-29
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-justin-martyr
+      name: Saint Justin, Martyr
+      registry: pc-06-01
+      date: 06-01
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-marcellinus-peter-martyrs
+      name: Saints Marcellinus and Peter, Martyrs
+      registry: pc-06-02
+      date: 06-02
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-charles-lwanga-companions-martyrs
+      name: Saints Charles Lwanga and Companions, Martyrs
+      registry: pc-06-03
+      date: 06-03
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-boniface-bishop-martyr
+      name: Saint Boniface, Bishop and Martyr
+      registry: pc-06-05
+      date: 06-05
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-norbert-bishop
+      name: Saint Norbert, Bishop
+      registry: pc-06-06
+      date: 06-06
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-ephrem-deacon-doctor-church
+      name: Saint Ephrem, Deacon and Doctor of the Church
+      registry: pc-06-09
+      date: 06-09
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-barnabas-apostle
+      name: Saint Barnabas, Apostle
+      registry: pc-06-11
+      date: 06-11
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-anthony-padua-priest-doctor-church
+      name: Saint Anthony of Padua, Priest and Doctor of the Church
+      registry: pc-06-13
+      date: 06-13
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-romuald-abbot
+      name: Saint Romuald, Abbot
+      registry: pc-06-19
+      date: 06-19
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-aloysius-gonzaga-religious
+      name: Saint Aloysius Gonzaga, Religious
+      registry: pc-06-21
+      date: 06-21
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-paulinus-nola-bishop
+      name: Saint Paulinus of Nola, Bishop; Saints John Fisher, Bishop, and Thomas
+        More, Martyrs
+      registry: pc-06-22
+      date: 06-22
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: nativity-saint-john-baptist
+      name: The Nativity of Saint John the Baptist
+      registry: pc-06-24
+      date: 06-24
+      rank: Solemnity
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-cyril-alexandria-bishop-doctor-church
+      name: Saint Cyril of Alexandria, Bishop and Doctor of the Church
+      registry: pc-06-27
+      date: 06-27
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-irenaeus-bishop-martyr-doctor-church
+      name: Saint Irenaeus, Bishop, Martyr, and Doctor of the Church
+      registry: pc-06-28
+      date: 06-28
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-peter-paul-apostles
+      name: Saints Peter and Paul, Apostles
+      registry: pc-06-29
+      date: 06-29
+      rank: Solemnity
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: first-martyrs-holy-roman-church
+      name: The First Martyrs of the Holy Roman Church
+      registry: pc-06-30
+      date: 06-30
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-thomas-apostle
+      name: Saint Thomas, Apostle
+      registry: pc-07-03
+      date: 07-03
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-elizabeth-portugal
+      name: Saint Elizabeth of Portugal
+      registry: pc-07-04
+      date: 07-04
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-anthony-zaccaria-priest
+      name: Saint Anthony Zaccaria, Priest
+      registry: pc-07-05
+      date: 07-05
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-maria-goretti-virgin-martyr
+      name: Saint Maria Goretti, Virgin and Martyr
+      registry: pc-07-06
+      date: 07-06
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-augustine-zhao-rong-priest-companions
+      name: Saints Augustine Zhao Rong, Priest, and Companions, Martyrs
+      registry: pc-07-09
+      date: 07-09
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-benedict-abbot
+      name: Saint Benedict, Abbot
+      registry: pc-07-11
+      date: 07-11
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-henry
+      name: Saint Henry
+      registry: pc-07-13
+      date: 07-13
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-camillus-lellis-priest
+      name: Saint Camillus de Lellis, Priest
+      registry: pc-07-14
+      date: 07-14
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-bonaventure-bishop-doctor-church
+      name: Saint Bonaventure, Bishop and Doctor of the Church
+      registry: pc-07-15
+      date: 07-15
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-apollinaris-bishop-martyr
+      name: Saint Apollinaris, Bishop and Martyr
+      registry: pc-07-20
+      date: 07-20
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-lawrence-brindisi-priest-doctor-church
+      name: Saint Lawrence of Brindisi, Priest and Doctor of the Church
+      registry: pc-07-21
+      date: 07-21
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-mary-magdalene
+      name: Saint Mary Magdalene
+      registry: pc-07-22
+      date: 07-22
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-bridget-religious
+      name: Saint Bridget, Religious
+      registry: pc-07-23
+      date: 07-23
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-sharbel-makhluf-priest
+      name: Saint Sharbel Makhluf, Priest
+      registry: pc-07-24
+      date: 07-24
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-james-apostle
+      name: Saint James, Apostle
+      registry: pc-07-25
+      date: 07-25
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-joachim-anne-parents-blessed-virgin
+      name: Saints Joachim and Anne, Parents of the Blessed Virgin Mary
+      registry: pc-07-26
+      date: 07-26
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-martha-mary-lazarus
+      name: Saints Martha, Mary, and Lazarus
+      registry: pc-07-29
+      date: 07-29
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-peter-chrysologus-bishop-doctor-church
+      name: Saint Peter Chrysologus, Bishop and Doctor of the Church
+      registry: pc-07-30
+      date: 07-30
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-ignatius-loyola-priest
+      name: Saint Ignatius of Loyola, Priest
+      registry: pc-07-31
+      date: 07-31
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-alphonsus-liguori-bishop-doctor-church
+      name: Saint Alphonsus Liguori, Bishop and Doctor of the Church
+      registry: pc-08-01
+      date: 08-01
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-eusebius-vercelli-bishop
+      name: Saint Eusebius of Vercelli, Bishop; Saint Peter Julian Eymard, Priest
+      registry: pc-08-02
+      date: 08-02
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-vianney-priest
+      name: Saint John Vianney, Priest
+      registry: pc-08-04
+      date: 08-04
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: dedication-basilica-saint-mary-major
+      name: The Dedication of the Basilica of Saint Mary Major
+      registry: pc-08-05
+      date: 08-05
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-sixtus-ii-pope-companions-martyrs
+      name: Saints Sixtus II, Pope, and Companions, Martyrs; Saint Cajetan, Priest
+      registry: pc-08-07
+      date: 08-07
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-dominic-priest
+      name: Saint Dominic, Priest
+      registry: pc-08-08
+      date: 08-08
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-teresa-benedicta-cross-virgin-martyr
+      name: Saint Teresa Benedicta of the Cross, Virgin and Martyr
+      registry: pc-08-09
+      date: 08-09
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-lawrence-deacon-martyr
+      name: Saint Lawrence, Deacon and Martyr
+      registry: pc-08-10
+      date: 08-10
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-clare-virgin
+      name: Saint Clare, Virgin
+      registry: pc-08-11
+      date: 08-11
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-jane-frances-chantal-religious
+      name: Saint Jane Frances de Chantal, Religious
+      registry: pc-08-12
+      date: 08-12
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-pontian-pope-hippolytus-priest-martyrs
+      name: Saints Pontian, Pope, and Hippolytus, Priest, Martyrs
+      registry: pc-08-13
+      date: 08-13
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-maximilian-mary-kolbe-priest-martyr
+      name: Saint Maximilian Mary Kolbe, Priest and Martyr
+      registry: pc-08-14
+      date: 08-14
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-stephen-hungary
+      name: Saint Stephen of Hungary
+      registry: pc-08-16
+      date: 08-16
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-eudes-priest
+      name: Saint John Eudes, Priest
+      registry: pc-08-19
+      date: 08-19
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-bernard-abbot-doctor-church
+      name: Saint Bernard, Abbot and Doctor of the Church
+      registry: pc-08-20
+      date: 08-20
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-pius-x-pope
+      name: Saint Pius X, Pope
+      registry: pc-08-21
+      date: 08-21
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-rose-lima-virgin
+      name: Saint Rose of Lima, Virgin
+      registry: pc-08-23
+      date: 08-23
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-bartholomew-apostle
+      name: Saint Bartholomew, Apostle
+      registry: pc-08-24
+      date: 08-24
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-louis
+      name: Saint Louis; Saint Joseph Calasanz, Priest
+      registry: pc-08-25
+      date: 08-25
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-monica
+      name: Saint Monica
+      registry: pc-08-27
+      date: 08-27
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-augustine-bishop-doctor-church
+      name: Saint Augustine, Bishop and Doctor of the Church
+      registry: pc-08-28
+      date: 08-28
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: passion-saint-john-baptist
+      name: The Passion of Saint John the Baptist
+      registry: pc-08-29
+      date: 08-29
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-gregory-great-pope-doctor-church
+      name: Saint Gregory the Great, Pope and Doctor of the Church
+      registry: pc-09-03
+      date: 09-03
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-teresa-calcutta-virgin
+      name: Saint Teresa of Calcutta, Virgin
+      registry: pc-09-05
+      date: 09-05
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-peter-claver-priest
+      name: Saint Peter Claver, Priest
+      registry: pc-09-09
+      date: 09-09
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: most-holy-name-mary
+      name: The Most Holy Name of Mary
+      registry: pc-09-12
+      date: 09-12
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-chrysostom-bishop-doctor-church
+      name: Saint John Chrysostom, Bishop and Doctor of the Church
+      registry: pc-09-13
+      date: 09-13
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-cornelius-pope-cyprian-bishop-martyrs
+      name: Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs
+      registry: pc-09-16
+      date: 09-16
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-robert-bellarmine-bishop-doctor-church
+      name: Saint Robert Bellarmine, Bishop and Doctor of the Church; Saint Hildegard
+        of Bingen, Virgin and Doctor of the Church
+      registry: pc-09-17
+      date: 09-17
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-januarius-bishop-martyr
+      name: Saint Januarius, Bishop and Martyr
+      registry: pc-09-19
+      date: 09-19
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-andrew-kim-tae-gon-priest
+      name: Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions,
+        Martyrs
+      registry: pc-09-20
+      date: 09-20
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-matthew-apostle-evangelist
+      name: Saint Matthew, Apostle and Evangelist
+      registry: pc-09-21
+      date: 09-21
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-pius-pietrelcina-priest
+      name: Saint Pius of Pietrelcina, Priest
+      registry: pc-09-23
+      date: 09-23
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-cosmas-damian-martyrs
+      name: Saints Cosmas and Damian, Martyrs
+      registry: pc-09-26
+      date: 09-26
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-vincent-paul-priest
+      name: Saint Vincent de Paul, Priest
+      registry: pc-09-27
+      date: 09-27
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-wenceslaus-martyr
+      name: Saint Wenceslaus, Martyr; Saints Lawrence Ruiz and Companions, Martyrs
+      registry: pc-09-28
+      date: 09-28
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-michael-gabriel-raphael-archangels
+      name: Saints Michael, Gabriel, and Raphael, Archangels
+      registry: pc-09-29
+      date: 09-29
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-jerome-priest-doctor-church
+      name: Saint Jerome, Priest and Doctor of the Church
+      registry: pc-09-30
+      date: 09-30
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-therese-child-jesus-virgin-doctor
+      name: Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church
+      registry: pc-10-01
+      date: 10-01
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: holy-guardian-angels
+      name: The Holy Guardian Angels
+      registry: pc-10-02
+      date: 10-02
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-francis-assisi
+      name: Saint Francis of Assisi
+      registry: pc-10-04
+      date: 10-04
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-faustina-kowalska-virgin
+      name: Saint Faustina Kowalska, Virgin
+      registry: pc-10-05
+      date: 10-05
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-bruno-priest
+      name: Saint Bruno, Priest
+      registry: pc-10-06
+      date: 10-06
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-denis-bishop-companions-martyrs
+      name: Saints Denis, Bishop, and Companions, Martyrs; Saint John Leonardi, Priest;
+        Saint John Henry Newman, Priest and Doctor of the Church
+      registry: pc-10-09
+      date: 10-09
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-xxiii-pope
+      name: Saint John XXIII, Pope
+      registry: pc-10-11
+      date: 10-11
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-callistus-i-pope-martyr
+      name: Saint Callistus I, Pope and Martyr
+      registry: pc-10-14
+      date: 10-14
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-teresa-jesus-virgin-doctor-church
+      name: Saint Teresa of Jesus, Virgin and Doctor of the Church
+      registry: pc-10-15
+      date: 10-15
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-hedwig-religious
+      name: Saint Hedwig, Religious; Saint Margaret Mary Alacoque, Virgin
+      registry: pc-10-16
+      date: 10-16
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-ignatius-antioch-bishop-martyr
+      name: Saint Ignatius of Antioch, Bishop and Martyr
+      registry: pc-10-17
+      date: 10-17
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-luke-evangelist
+      name: Saint Luke, Evangelist
+      registry: pc-10-18
+      date: 10-18
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-john-brebeuf-isaac-jogues-priests
+      name: Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs;
+        Saint Paul of the Cross, Priest
+      registry: pc-10-19
+      date: 10-19
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-paul-ii-pope
+      name: Saint John Paul II, Pope
+      registry: pc-10-22
+      date: 10-22
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-capistrano-priest
+      name: Saint John of Capistrano, Priest
+      registry: pc-10-23
+      date: 10-23
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-anthony-mary-claret-bishop
+      name: Saint Anthony Mary Claret, Bishop
+      registry: pc-10-24
+      date: 10-24
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-simon-jude-apostles
+      name: Saints Simon and Jude, Apostles
+      registry: pc-10-28
+      date: 10-28
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: all-saints
+      name: All Saints
+      registry: pc-11-01
+      date: 11-01
+      rank: Solemnity
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: commemoration-all-faithful-departed-all-souls
+      name: The Commemoration of All the Faithful Departed (All Souls)
+      registry: pc-11-02
+      date: 11-02
+      rank: All Souls commemoration
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-martin-porres-religious
+      name: Saint Martin de Porres, Religious
+      registry: pc-11-03
+      date: 11-03
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-charles-borromeo-bishop
+      name: Saint Charles Borromeo, Bishop
+      registry: pc-11-04
+      date: 11-04
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: dedication-lateran-basilica
+      name: The Dedication of the Lateran Basilica
+      registry: pc-11-09
+      date: 11-09
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-leo-great-pope-doctor-church
+      name: Saint Leo the Great, Pope and Doctor of the Church
+      registry: pc-11-10
+      date: 11-10
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-martin-tours-bishop
+      name: Saint Martin of Tours, Bishop
+      registry: pc-11-11
+      date: 11-11
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-josaphat-bishop-martyr
+      name: Saint Josaphat, Bishop and Martyr
+      registry: pc-11-12
+      date: 11-12
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-albert-great-bishop-doctor-church
+      name: Saint Albert the Great, Bishop and Doctor of the Church
+      registry: pc-11-15
+      date: 11-15
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-margaret-scotland
+      name: Saint Margaret of Scotland; Saint Gertrude, Virgin
+      registry: pc-11-16
+      date: 11-16
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-elizabeth-hungary-religious
+      name: Saint Elizabeth of Hungary, Religious
+      registry: pc-11-17
+      date: 11-17
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: dedication-basilicas-saints-peter-paul-apostles
+      name: The Dedication of the Basilicas of Saints Peter and Paul, Apostles
+      registry: pc-11-18
+      date: 11-18
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-cecilia-virgin-martyr
+      name: Saint Cecilia, Virgin and Martyr
+      registry: pc-11-22
+      date: 11-22
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-clement-i-pope-martyr
+      name: Saint Clement I, Pope and Martyr; Saint Columban, Abbot
+      registry: pc-11-23
+      date: 11-23
+      rank: Optional memorials
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saints-andrew-dung-lac-priest-companions
+      name: Saints Andrew Dung-Lac, Priest, and Companions, Martyrs
+      registry: pc-11-24
+      date: 11-24
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-catherine-alexandria-virgin-martyr
+      name: Saint Catherine of Alexandria, Virgin and Martyr
+      registry: pc-11-25
+      date: 11-25
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-andrew-apostle
+      name: Saint Andrew, Apostle
+      registry: pc-11-30
+      date: 11-30
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-francis-xavier-priest
+      name: Saint Francis Xavier, Priest
+      registry: pc-12-03
+      date: 12-03
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-damascene-priest-doctor-church
+      name: Saint John Damascene, Priest and Doctor of the Church
+      registry: pc-12-04
+      date: 12-04
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-nicholas-bishop
+      name: Saint Nicholas, Bishop
+      registry: pc-12-06
+      date: 12-06
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-ambrose-bishop-doctor-church
+      name: Saint Ambrose, Bishop and Doctor of the Church
+      registry: pc-12-07
+      date: 12-07
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-juan-diego-cuauhtlatoatzin
+      name: Saint Juan Diego Cuauhtlatoatzin
+      registry: pc-12-09
+      date: 12-09
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-damasus-i-pope
+      name: Saint Damasus I, Pope
+      registry: pc-12-11
+      date: 12-11
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-lucy-virgin-martyr
+      name: Saint Lucy, Virgin and Martyr
+      registry: pc-12-13
+      date: 12-13
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-cross-priest-doctor-church
+      name: Saint John of the Cross, Priest and Doctor of the Church
+      registry: pc-12-14
+      date: 12-14
+      rank: Memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-peter-canisius-priest-doctor-church
+      name: Saint Peter Canisius, Priest and Doctor of the Church
+      registry: pc-12-21
+      date: 12-21
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-kanty-priest
+      name: Saint John of Kanty, Priest
+      registry: pc-12-23
+      date: 12-23
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-stephen-first-martyr
+      name: Saint Stephen, the First Martyr
+      registry: pc-12-26
+      date: 12-26
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-john-apostle-evangelist
+      name: Saint John, Apostle and Evangelist
+      registry: pc-12-27
+      date: 12-27
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: holy-innocents-martyrs
+      name: The Holy Innocents, Martyrs
+      registry: pc-12-28
+      date: 12-28
+      rank: Feast
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-thomas-becket-bishop-martyr
+      name: Saint Thomas Becket, Bishop and Martyr
+      registry: pc-12-29
+      date: 12-29
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: saint-sylvester-i-pope
+      name: Saint Sylvester I, Pope
+      registry: pc-12-31
+      date: 12-31
+      rank: Optional memorial
+      kind: saints
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
