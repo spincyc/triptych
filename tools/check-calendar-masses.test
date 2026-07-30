@@ -61,7 +61,7 @@ mkdir -p src/sources/calendars/test
           B: {verses: ["Jeremiah 33:14-16"]}
           C: {verses: ["Micah 5:1-4"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 
 "$tool" --root src/sources/calendars >/dev/null
@@ -96,7 +96,7 @@ esac
           B: {source: scripture, verses: ["Luke 4:18"]}
           C: {source: scripture, verses: ["Luke 7:16"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 "$tool" --root src/sources/calendars >/dev/null
 
@@ -113,7 +113,7 @@ encode
         cycles:
           A: {verses: ["Luke 4:18"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for a cycle with no source" >&2
@@ -133,7 +133,7 @@ fi
         cycles:
           A: {source: composed, verses: ["Luke 4:18"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for a composed cycle without text" >&2
@@ -155,7 +155,7 @@ fi
         text: |
           should not be here
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for scripture proper carrying text" >&2
@@ -173,7 +173,7 @@ fi
     propers:
       - {name: Collect, source: composed}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for composed proper without text" >&2
@@ -191,7 +191,7 @@ fi
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for unquoted registry value" >&2
@@ -215,7 +215,7 @@ fi
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 2:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for duplicate mass keys" >&2
@@ -237,7 +237,7 @@ fi
         propers:
           - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an entry carrying both propers and forms" >&2
@@ -261,7 +261,7 @@ fi
           - {name: Introit, source: scripture, verses: ["Psalm 2:1"]}
           - {name: Gospel, source: scripture, verses: ["John 1:1-18"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 out="$("$tool" --root src/sources/calendars --json)"
 case "$out" in
@@ -282,7 +282,7 @@ esac
     propers:
       - {name: Introit, source: scripture, verses: ["Revelation 12:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 "$tool" --root src/sources/calendars >/dev/null
 
@@ -300,7 +300,7 @@ encode
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an entry with both season and date" >&2
@@ -316,7 +316,7 @@ fi
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an entry with neither season nor date" >&2
@@ -332,11 +332,11 @@ fi
     registry: "1962-02-30"
     date: "02-30"
     rank: III
-    kind: saints
+    kind: saintly
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for February 30" >&2
@@ -351,11 +351,11 @@ fi
     registry: "1962-02-29"
     date: "02-29"
     rank: III
-    kind: saints
+    kind: saintly
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 "$tool" --root src/sources/calendars >/dev/null
 
@@ -372,7 +372,7 @@ encode
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an unquoted date" >&2
@@ -392,7 +392,7 @@ fi
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an unknown kind" >&2
@@ -410,7 +410,7 @@ fi
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-} >src/sources/calendars/test/sundays.yaml
+} >src/sources/calendars/test/propers.yaml
 encode
 if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for a dated entry with no rank" >&2
@@ -418,7 +418,7 @@ if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 fi
 
 # A wrong schema value is rejected.
-cat >src/sources/calendars/test/sundays.yaml <<'YAML'
+cat >src/sources/calendars/test/propers.yaml <<'YAML'
 schema: something-else/v9
 edition: test edition
 calendar: test

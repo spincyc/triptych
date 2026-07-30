@@ -59,7 +59,7 @@ kind_on() {
 for probe in "roman-1962 02-02 marian" "roman-1962 03-25 marian" \
 	"postconciliar 02-02 christological" "postconciliar 03-25 christological" \
 	"roman-1962 08-15 marian" "roman-1962 08-14 marian" \
-	"roman-1962 12-30 temporal" "roman-1962 12-26 saints" \
+	"roman-1962 12-30 seasonal" "roman-1962 12-26 saintly" \
 	"roman-1962 09-14 christological" "postconciliar 09-14 christological"; do
 	set -- $probe
 	got="$(kind_on "$1" "$2")"
@@ -71,10 +71,10 @@ done
 
 # A saint's feast that names Our Lady stays a saint's feast, and a saint whose
 # name merely contains "Domini" is not read as a feast of the Lord.
-for probe in "roman-1962 03-19 saints" "roman-1962 08-16 saints" \
-	"roman-1962 07-26 saints" "roman-1962 08-04 saints" \
-	"postconciliar 03-19 saints" "postconciliar 07-26 saints" \
-	"postconciliar 08-08 saints"; do
+for probe in "roman-1962 03-19 saintly" "roman-1962 08-16 saintly" \
+	"roman-1962 07-26 saintly" "roman-1962 08-04 saintly" \
+	"postconciliar 03-19 saintly" "postconciliar 07-26 saintly" \
+	"postconciliar 08-08 saintly"; do
 	set -- $probe
 	got="$(kind_on "$1" "$2")"
 	if [ "$got" != "$3" ]; then

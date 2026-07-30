@@ -114,6 +114,19 @@
       "stage": "draft",
       "usage": "citations {parse,encode,check} [--root DIR]"
     },
+    "commentary-work-index": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Resolve scripture passages to mapped commentary works and build corpus coverage across calendars.",
+      "requires": [
+        "citations"
+      ],
+      "stage": "draft",
+      "usage": "commentary-work-index {discover,build-corpus}"
+    },
     "pdf-review": {
       "idempotent": true,
       "json": false,

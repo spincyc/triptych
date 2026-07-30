@@ -10,10 +10,8 @@ to read it.
 ```text
 src/sources/calendars/
   roman-1962/
-    sundays.yaml        # 52 temporal Sundays plus the three Triduum identities
     propers.yaml        # consolidated sanctoral propers (marian/christological/saintly)
   postconciliar/
-    sundays.yaml        # PC-S01-PC-S60 plus the three PC-T Triduum identities
     propers.yaml        # consolidated sanctoral propers (marian/christological/saintly)
 ```
 
@@ -138,10 +136,10 @@ owns the canon. Both run inside `make check` and need PyYAML
 
 | Index | Masses | Propers | Encoded passages |
 | --- | --- | --- | --- |
-| `roman-1962/sundays.yaml` | 59 | 636 | 548 |
-| `postconciliar/sundays.yaml` | 63 | 821 | 1082 |
+| `roman-1962/propers.yaml` | 59 | 636 | 548 |
+| `postconciliar/propers.yaml` | 63 | 821 | 1082 |
 
-The 1962 index covers the 52-Sunday temporal spine, the four resumed Epiphany
+The 1962 index covers the 59-item seasonal spine, the four resumed Epiphany
 Sundays, and `T01`-`T03`. The postconciliar index covers `PC-S01`-`PC-S60` and
 `PC-T01`-`PC-T03`, with the Nativity, Epiphany, Ascension, and Pentecost
 carrying `forms`. Registry coverage in both is exact and duplicate-free.
