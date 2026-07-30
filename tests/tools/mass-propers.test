@@ -88,6 +88,80 @@ if [ "${status:-0}" -ne 3 ]; then
 	exit 1
 fi
 
+# A Vulgate bible resolves a Vulgate calendar's citation as written.
+mkdir -p bibles/vg
+cat >bibles/vg/index.yaml <<'YAML'
+schema: triptych-bible-index/v1
+edition: Demo
+source_id: work.demo
+rights: public-domain
+publishable: true
+numbering: vulgate
+passages:
+  'Psalm 24:1-3': 'To thee, O Lord, have I lifted up my soul.'
+  'Psalm 146': 'Praise ye the Lord, because psalm is good.'
+  'Psalm 147': 'Praise the Lord, O Jerusalem.'
+YAML
+if ! run_tool --calendar roman-1962 --mass advent-1 --bible vg --bible-root bibles |
+	grep -q 'lifted up my soul'; then
+	echo "matching numbering should resolve the verse" >&2
+	exit 1
+fi
+
+# The same chant is Psalm 25 in the postconciliar missal and Psalm 24 in the
+# Vulgate; the citation is converted, not refused.
+crossed="$(run_tool --calendar postconciliar --mass advent-1 --bible vg --bible-root bibles)"
+case "$crossed" in
+*"lifted up my soul"*) ;;
+*) echo "hebrew citation was not resolved against a vulgate bible" >&2; exit 1 ;;
+esac
+# The missal's own citation stands, with the bible's chapter named beside it.
+case "$crossed" in
+*"Psalm 25:1-3"*"vulgate: Psalm 24:1-3"*) ;;
+*) echo "the conversion was not shown beside the calendar's citation" >&2; exit 1 ;;
+esac
+
+# A split psalm cited without a verse is reported, never guessed at.
+mkdir -p calendars/demo-hebrew
+cat >calendars/demo-hebrew/propers.yaml <<'YAML'
+edition: Demo Missal
+psalm_numbering: hebrew
+sections:
+  '01':
+    kind: seasonal
+    masses:
+    - key: split
+      name: Ambiguous Split
+      propers:
+      - name: Introit
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 147}
+          ref: Psalm 147
+YAML
+split="$(run_tool --root calendars --calendar demo-hebrew --mass split --bible vg --bible-root bibles)"
+case "$split" in
+*"Psalm 147"*"a verse is needed"*) ;;
+*) echo "expected an ambiguous split to be named, not guessed" >&2; exit 1 ;;
+esac
+case "$split" in
+*"Praise"*) echo "an ambiguous split must not print verse text" >&2; exit 1 ;;
+esac
+
+# An unusable numbering system is refused as bad input rather than converted.
+mkdir -p bibles/odd
+sed 's/^numbering: vulgate$/numbering: nonesuch/' bibles/vg/index.yaml >bibles/odd/index.yaml
+status=0
+run_tool --calendar postconciliar --mass advent-1 --bible odd --bible-root bibles >/dev/null 2>&1 ||
+	status=$?
+if [ "${status:-0}" -ne 2 ]; then
+	echo "unknown psalm numbering should exit 2, got ${status:-0}" >&2
+	exit 1
+fi
+status=0
+
 # An unindexed bible is refused by name rather than silently ignored.
 if run_tool --calendar roman-1962 --mass advent-1 --bible no-such-bible >/dev/null 2>&1; then
 	echo "expected failure for an unindexed bible" >&2

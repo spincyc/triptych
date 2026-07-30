@@ -122,3 +122,129 @@ def convert_reference(book: str, chapter: int, source: str, target: str, verse=N
     if book != PSALMS:
         return chapter, ""
     return convert_chapter(chapter, source, target, verse)
+
+
+# Where one system's psalm is part of another's, the part restarts its own
+# verse numbering: Hebrew 116:10 is Vulgate 115:1, so the verse shifts by the
+# length of the preceding part. Keyed by (source, target, source chapter) to
+# (target chapter, verse delta), applied when the source verse is in range.
+_POINT_MAP = {
+    ("vulgate", "hebrew"): {
+        9: (((1, 21), 9, 0), ((22, None), 10, -21)),
+        113: (((1, 8), 114, 0), ((9, None), 115, -8)),
+        114: (((1, None), 116, 0),),
+        115: (((1, None), 116, +9),),
+        146: (((1, None), 147, 0),),
+        147: (((1, None), 147, +11),),
+    },
+    ("hebrew", "vulgate"): {
+        9: (((1, None), 9, 0),),
+        10: (((1, None), 9, +21),),
+        114: (((1, None), 113, 0),),
+        115: (((1, None), 113, +8),),
+        116: (((1, 9), 114, 0), ((10, None), 115, -9)),
+        147: (((1, 11), 146, 0), ((12, None), 147, -11)),
+    },
+}
+
+
+def convert_point(chapter: int, verse: int | None, source: str, target: str):
+    """Convert one chapter:verse point. Returns (chapter, verse, caveat)."""
+    _check(source)
+    _check(target)
+    if source == target:
+        return chapter, verse, ""
+    table = _POINT_MAP[(source, target)].get(chapter)
+    if table is None:
+        converted, note = convert_chapter(chapter, source, target, verse)
+        return converted, verse, note
+    for (low, high), target_chapter, delta in table:
+        if verse is None:
+            if len(table) > 1:
+                raise NumberingError(
+                    f"{source} Psalm {chapter} divides in {target}; a verse is needed to choose"
+                )
+            return target_chapter, None, f"{source} {chapter} is part of {target} {target_chapter}"
+        if verse >= low and (high is None or verse <= high):
+            shifted = verse + delta
+            note = ""
+            if delta or len(table) > 1:
+                note = f"{source} {chapter}:{verse} is {target} {target_chapter}:{shifted}"
+            return target_chapter, shifted, note
+    raise NumberingError(f"{source} Psalm {chapter}:{verse} is outside the psalm")
+
+
+def _first_part_bound(chapter: int, system: str) -> int | None:
+    """Last verse of the first part where a psalm divides in the other system."""
+    if system == "vulgate":
+        return {9: 21, 113: 8}.get(chapter)
+    return {116: 9, 147: 11}.get(chapter)
+
+
+def convert_range(
+    book: str, begin: dict, end: dict | None, source: str, target: str
+) -> tuple[list[dict], list[str]]:
+    """Convert one passage range, splitting it where the psalter divides.
+
+    A range is the unit the calendar data actually stores, and it is the unit
+    that can cross a boundary: Hebrew 116:8-12 is Vulgate 114:8-9 plus
+    115:1-3. Returning ranges rather than a bare chapter keeps that expressible
+    and stops every caller reassembling it differently.
+
+    Verse numbers are carried through unchanged. The Vulgate commonly counts a
+    psalm's title as its first verse, so a verse may sit one off within the
+    corresponding chapter; that offset is edition-dependent and is reported as
+    a caveat rather than guessed.
+    """
+    _check(source)
+    _check(target)
+    end = end or dict(begin)
+    if book != PSALMS or source == target:
+        return [{"begin": dict(begin), "end": dict(end)}], []
+
+    start_chapter, start_verse = begin.get("chapter"), begin.get("verse")
+    stop_chapter, stop_verse = end.get("chapter", start_chapter), end.get("verse")
+    if start_chapter != stop_chapter:
+        raise NumberingError(
+            f"psalm range spans chapters {start_chapter}-{stop_chapter}; "
+            "convert each chapter separately"
+        )
+
+    caveats: list[str] = []
+    bound = _first_part_bound(start_chapter, source)
+    if bound is not None and start_verse is not None and stop_verse is not None:
+        if start_verse <= bound < stop_verse:
+            # The range crosses where this psalm divides, so it becomes two,
+            # each carrying the verse numbering of its own target chapter.
+            lo_c, lo_v, lo_note = convert_point(start_chapter, start_verse, source, target)
+            _, lo_end, _ = convert_point(start_chapter, bound, source, target)
+            hi_c, hi_v, hi_note = convert_point(start_chapter, bound + 1, source, target)
+            _, hi_end, _ = convert_point(start_chapter, stop_verse, source, target)
+            caveats = [n for n in (lo_note, hi_note) if n]
+            caveats.append(
+                f"{source} {start_chapter}:{start_verse}-{stop_verse} divides across "
+                f"{target} {lo_c} and {hi_c}"
+            )
+            return (
+                [
+                    {"begin": {"chapter": lo_c, "verse": lo_v},
+                     "end": {"chapter": lo_c, "verse": lo_end}},
+                    {"begin": {"chapter": hi_c, "verse": hi_v},
+                     "end": {"chapter": hi_c, "verse": hi_end}},
+                ],
+                caveats,
+            )
+
+    begin_chapter, begin_verse, begin_note = convert_point(
+        start_chapter, start_verse, source, target
+    )
+    end_chapter, end_verse, _ = convert_point(start_chapter, stop_verse, source, target)
+    if begin_note:
+        caveats.append(begin_note)
+    return (
+        [
+            {**{"begin": {**begin, "chapter": begin_chapter, "verse": begin_verse}},
+             "end": {**end, "chapter": end_chapter, "verse": end_verse}}
+        ],
+        caveats,
+    )

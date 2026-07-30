@@ -7,18 +7,22 @@ mass list is not duplicated elsewhere.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _psalms import PSALMS, SYSTEMS, NumberingError, convert_reference  # noqa: E402
 from _tooling import print_json, run_verb_cli  # noqa: E402
 
 DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
 BIBLE_ROOT = ROOT / "src" / "sources" / "bibles"
 INDEX = "propers.yaml"
 WIDTH = 78
+# The chapter of a reference is its first number: "Psalm 25:1-3" is chapter 25.
+CHAPTER = re.compile(r"^(\D*?)(\d+)")
 
 
 def load_calendar(root: Path, calendar: str) -> dict:
@@ -81,7 +85,11 @@ def load_bible(name: str, root: Path) -> dict:
             + (f"; available: {', '.join(available)}" if available else "; none are indexed yet")
         )
     document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-    return {str(k): v for k, v in (document.get("passages") or {}).items()}
+    return {
+        "numbering": document.get("numbering"),
+        "edition": document.get("edition"),
+        "passages": {str(k): v for k, v in (document.get("passages") or {}).items()},
+    }
 
 
 def find_mass(root: Path, calendar: str, key: str) -> dict:
@@ -91,10 +99,73 @@ def find_mass(root: Path, calendar: str, key: str) -> dict:
             return {
                 "calendar": calendar,
                 "edition": document.get("edition"),
+                "psalm_numbering": document.get("psalm_numbering"),
                 "kind": mass.get("kind") or kind,
                 "mass": mass,
             }
     raise KeyError(f"{calendar}: no mass with key {key!r}")
+
+
+def scripture_entries(mass: dict):
+    """Yield every verse entry a mass carries, cycle readings included."""
+    for _, proper in propers_of(mass):
+        owners = [proper] + [
+            owner for owner in (proper.get("cycles") or {}).values() if isinstance(owner, dict)
+        ]
+        for owner in owners:
+            for entry in owner.get("verses") or []:
+                if isinstance(entry, dict) and entry.get("ref"):
+                    yield entry
+
+
+def locus_of(entry: dict) -> tuple[int | None, int | None]:
+    """The first chapter and verse a reference names, taken from its ranges."""
+    for span in entry.get("ranges") or []:
+        begin = span.get("begin") if isinstance(span, dict) else None
+        if isinstance(begin, dict) and begin.get("chapter") is not None:
+            verse = begin.get("verse")
+            return int(begin["chapter"]), (None if verse is None else int(verse))
+    return None, None
+
+
+def renumber(ref: str, chapter: int) -> str:
+    """Rewrite a citation onto another chapter, keeping its verses."""
+    return CHAPTER.sub(lambda match: f"{match.group(1)}{chapter}", ref, count=1)
+
+
+def resolve_entry(entry: dict, passages: dict, source: str, target: str) -> dict:
+    """Look one reference up, converting its psalm chapter when systems differ."""
+    ref = str(entry["ref"])
+    book = str(entry.get("book") or "")
+    chapter, verse = locus_of(entry)
+    if source == target or book != PSALMS or chapter is None:
+        return {"text": passages.get(ref), "note": ""}
+    try:
+        converted, caveat = convert_reference(book, chapter, source, target, verse)
+    except NumberingError as error:
+        # A split psalm without a verse has no one answer; say so, guess nothing.
+        return {"text": None, "note": f"not resolved: {error}"}
+    if converted == chapter:
+        return {"text": passages.get(ref), "note": caveat}
+    key = renumber(ref, converted)
+    note = f"{target}: {key}" + (f"; {caveat}" if caveat else "")
+    return {"text": passages.get(key), "note": note}
+
+
+def resolve_passages(payload: dict, bible: dict) -> dict:
+    """Map each citation the mass makes to the bible's text and any caveat."""
+    source, target = payload.get("psalm_numbering"), bible.get("numbering")
+    if source != target:
+        for system, whose in ((source, "calendar"), (target, "bible")):
+            if system not in SYSTEMS:
+                raise ValueError(
+                    f"the {whose} declares unknown psalm numbering {system!r}; "
+                    f"expected one of {', '.join(SYSTEMS)}"
+                )
+    return {
+        str(entry["ref"]): resolve_entry(entry, bible["passages"], source, target)
+        for entry in scripture_entries(payload["mass"])
+    }
 
 
 def run_show(arguments: argparse.Namespace) -> dict:
@@ -103,9 +174,11 @@ def run_show(arguments: argparse.Namespace) -> dict:
     if not arguments.mass:
         raise ValueError("--mass is required")
     payload = find_mass(Path(arguments.root), arguments.calendar, arguments.mass)
-    # Validate the selection here so a missing bible fails before rendering.
+    # Resolve here so a missing bible or an unusable numbering fails before rendering.
     arguments.resolved_bible = (
-        load_bible(arguments.bible, Path(arguments.bible_root)) if arguments.bible else {}
+        resolve_passages(payload, load_bible(arguments.bible, Path(arguments.bible_root)))
+        if arguments.bible
+        else {}
     )
     return payload
 
@@ -143,7 +216,7 @@ def wrap(text: str, indent: str) -> list[str]:
     return [indent + line if line else "" for line in lines[:-1] or lines]
 
 
-def render_reading(payload: dict, lang: str, bible: dict) -> int:
+def render_reading(payload: dict, lang: str, resolved: dict) -> int:
     mass = payload["mass"]
     print(mass.get("name") or mass.get("key") or "(unnamed)")
     subtitle = " · ".join(
@@ -162,10 +235,12 @@ def render_reading(payload: dict, lang: str, bible: dict) -> int:
         print("-" * len(heading))
         for entry in proper.get("verses") or []:
             if isinstance(entry, dict) and entry.get("ref"):
-                print(f"  {entry['ref']}")
-                verse = bible.get(entry["ref"]) if bible else None
-                if verse:
-                    print("\n".join(wrap(str(verse), "    ")))
+                # The missal's own citation stands; a conversion is shown beside it.
+                found = resolved.get(str(entry["ref"])) or {}
+                note = found.get("note")
+                print(f"  {entry['ref']}" + (f"  ({note})" if note else ""))
+                if found.get("text"):
+                    print("\n".join(wrap(str(found["text"]), "    ")))
         for cycle, owner in sorted((proper.get("cycles") or {}).items()):
             refs = [
                 v["ref"]
