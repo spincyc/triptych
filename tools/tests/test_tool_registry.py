@@ -1,0 +1,117 @@
+"""Registry drift: tmt.json, tools/lib/, and the Makefile must agree.
+
+Every failure here has shipped at least once. The Makefile invoked a tool by
+its filename rather than its registry id, the registry advertised a tool with
+no implementation, and a tool body moved without its callers.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import re
+import subprocess
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+MANIFEST = ROOT / "tmt.json"
+LIBRARY = ROOT / "tools" / "lib"
+LAUNCHER = ROOT / "tools" / "tpt"
+
+# tools/tpt's own verbs. A registry id matching one would shadow it.
+LAUNCHER_VERBS = {"list", "tools", "run", "help", "path"}
+# Registered ids that deliberately do not live under tools/lib/.
+LAUNCHER_IDS = {"tpt"}
+# Support files under tools/lib/ that are not tools.
+NON_TOOLS = {"_tooling.py", "web-shim.tex"}
+# tmt's registry validator caps the field.
+PURPOSE_LIMIT = 80
+
+
+def registry() -> dict[str, dict]:
+    return json.loads(MANIFEST.read_text(encoding="utf-8"))["tools"]
+
+
+class ToolRegistryTests(unittest.TestCase):
+    def test_every_id_resolves_to_an_executable(self) -> None:
+        for name in registry():
+            with self.subTest(tool=name):
+                resolved = subprocess.run(
+                    [str(LAUNCHER), "path", name],
+                    capture_output=True, text=True, cwd=ROOT,
+                )
+                self.assertEqual(resolved.returncode, 0, resolved.stderr)
+                path = Path(resolved.stdout.strip())
+                self.assertTrue(path.is_file(), f"{name}: {path} is not a file")
+                self.assertTrue(os.access(path, os.X_OK), f"{name}: {path} not executable")
+
+    def test_every_implementation_is_registered(self) -> None:
+        registered = set(registry())
+        for path in sorted(LIBRARY.iterdir()):
+            if path.name in NON_TOOLS or not path.is_file():
+                continue
+            with self.subTest(tool=path.name):
+                resolved = {
+                    Path(subprocess.run(
+                        [str(LAUNCHER), "path", name],
+                        capture_output=True, text=True, cwd=ROOT,
+                    ).stdout.strip()).name
+                    for name in registered
+                }
+                self.assertIn(path.name, resolved)
+
+    def test_no_id_shadows_a_launcher_verb(self) -> None:
+        self.assertEqual(set(registry()) & LAUNCHER_VERBS, set())
+
+    def test_purposes_fit_the_registry_cap(self) -> None:
+        for name, record in registry().items():
+            with self.subTest(tool=name):
+                self.assertLessEqual(len(record["purpose"]), PURPOSE_LIMIT)
+
+    def test_makefile_invokes_only_registered_ids(self) -> None:
+        known = set(registry())
+        text = (ROOT / "Makefile").read_text(encoding="utf-8")
+        called = set(re.findall(r"tools/tpt\s+([a-z][a-z0-9-]*)", text))
+        self.assertTrue(called, "no tpt invocations found; did the Makefile change shape?")
+        self.assertEqual(called - known, set())
+
+    def test_workflow_invokes_only_registered_ids(self) -> None:
+        workflow = ROOT / ".github" / "workflows" / "pages.yml"
+        called = set(re.findall(r"tools/tpt\s+([a-z][a-z0-9-]*)",
+                                workflow.read_text(encoding="utf-8")))
+        self.assertEqual(called - set(registry()), set())
+
+    def test_unknown_tool_fails_without_a_traceback(self) -> None:
+        result = subprocess.run(
+            [str(LAUNCHER), "no-such-tool"], capture_output=True, text=True, cwd=ROOT,
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertNotIn("Traceback", result.stderr)
+
+    def test_launcher_ids_resolve_outside_the_library(self) -> None:
+        for name in LAUNCHER_IDS:
+            with self.subTest(tool=name):
+                result = subprocess.run(
+                    [str(LAUNCHER), "path", name], capture_output=True, text=True, cwd=ROOT,
+                )
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(Path(result.stdout.strip()), LAUNCHER)
+
+
+class ToolSmokeTests(unittest.TestCase):
+    """tests/tools/<id>.test are tmt's stable-gate smoke tests."""
+
+    def test_shell_smoke_tests_pass(self) -> None:
+        suite = sorted((ROOT / "tests" / "tools").glob("*.test"))
+        self.assertTrue(suite, "no shell smoke tests found")
+        for script in suite:
+            with self.subTest(test=script.name):
+                result = subprocess.run(
+                    ["sh", str(script)], capture_output=True, text=True, cwd=ROOT,
+                )
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+
+if __name__ == "__main__":
+    unittest.main()

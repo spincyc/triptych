@@ -107,7 +107,7 @@
       "idempotent": true,
       "json": true,
       "lang": "python",
-      "mutates": false,
+      "mutates": true,
       "origin": "local",
       "purpose": "Encode and validate scripture citations in the calendar mass indexes.",
       "requires": [],
@@ -116,11 +116,11 @@
     },
     "commentary-work-index": {
       "idempotent": true,
-      "json": false,
+      "json": true,
       "lang": "python",
       "mutates": true,
       "origin": "local",
-      "purpose": "Resolve scripture passages to mapped commentary works and build corpus coverage across calendars.",
+      "purpose": "Map scripture passages to commentary works and build corpus coverage.",
       "requires": [
         "citations"
       ],
@@ -163,17 +163,6 @@
       ],
       "stage": "draft",
       "usage": "release-bindings {refresh,status,migrate-publications,approve,add-publication}"
-    },
-    "tpt": {
-      "idempotent": true,
-      "json": false,
-      "lang": "python",
-      "mutates": false,
-      "origin": "local",
-      "purpose": "Unified launcher for Triptych tools and tool discovery commands.",
-      "requires": [],
-      "stage": "draft",
-      "usage": "tpt <tool> [<tool args>...] | tpt {run,tools,help,path}"
     },
     "render-sanctuary-dictionary": {
       "idempotent": true,
@@ -222,7 +211,7 @@
       "purpose": "Bootstrap, refresh, and validate Triptych's publication-source inventory.",
       "requires": [],
       "stage": "draft",
-      "usage": "source-inventory [--root DIR] {check,bootstrap,classify,refresh}"
+      "usage": "source-inventory [--root DIR] {check,bootstrap,bootstrap-classification-review,classify,refresh}"
     },
     "source-library": {
       "idempotent": true,
@@ -234,6 +223,17 @@
       "requires": [],
       "stage": "draft",
       "usage": "source-library {validate,fingerprint,uses,impact,search}"
+    },
+    "tpt": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Unified launcher for Triptych tools and tool discovery commands.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "tpt <tool> [<tool args>...] | tpt {list,tools,run,help,path}"
     },
     "web-edition": {
       "idempotent": true,

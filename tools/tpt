@@ -4,14 +4,14 @@
 Usage:
   tpt <tool> [<tool args>...]
   tpt run <tool> [<tool args>...]
-  tpt tools list
-  tpt tools info <tool>
+  tpt list [--json]
+  tpt tools list [--json]
+  tpt tools info <tool> [--json]
   tpt help <tool>
   tpt path <tool>
 
 `tpt` is the unified entrypoint for repo tools. It loads the tool registry
-from ``tmt.json`` and dispatches to the corresponding implementation in
-``tools/lib/<tool>``.
+from ``tmt.json`` and dispatches to the implementation in ``tools/lib/<tool>``.
 """
 
 from __future__ import annotations
@@ -23,210 +23,169 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "tmt.json"
 SELF = Path(__file__).resolve()
-ALIASES = {
-    "render-sanctuary-dictionary": "roman-sanctuary-dictionary",
-}
+ROOT = SELF.parents[1]
+MANIFEST = ROOT / "tmt.json"
+LIB = ROOT / "tools" / "lib"
+
+# Top-level verbs. A registry id matching one of these would shadow it, so
+# load_registry rejects the manifest rather than silently hiding the verb.
+VERBS = ("list", "tools", "run", "help", "path")
+
+# Registry ids whose implementation file carries a different basename.
+ALIASES = {"render-sanctuary-dictionary": "roman-sanctuary-dictionary"}
+
+ToolRecord = dict[str, object]
+Registry = dict[str, ToolRecord]
 
 
-def resolve_tool_name(name: str) -> str:
-    return ALIASES.get(name, name)
+class ToolError(RuntimeError):
+    """A registry or tool-resolution failure worth reporting as one line."""
 
 
-def load_registry() -> dict[str, dict[str, str]]:
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+def load_registry() -> Registry:
+    try:
+        manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    except OSError as error:
+        raise ToolError(f"cannot read {MANIFEST}: {error}") from error
+    except ValueError as error:
+        raise ToolError(f"{MANIFEST} is not valid JSON: {error}") from error
     tools = manifest.get("tools")
     if not isinstance(tools, dict):
-        raise RuntimeError("tmt.json is missing a tools map")
-    registry: dict[str, dict[str, str]] = {}
-    for name, entry in tools.items():
-        if isinstance(entry, dict):
-            registry[str(name)] = entry
+        raise ToolError(f"{MANIFEST} is missing a tools map")
+    registry: Registry = {}
+    for name, entry in sorted(tools.items()):
+        if not isinstance(entry, dict):
+            raise ToolError(f"{name}: registry entry is not an object")
+        registry[str(name)] = entry
+    shadowed = sorted(set(registry).intersection(VERBS))
+    if shadowed:
+        raise ToolError(f"registry ids shadow tpt verbs: {', '.join(shadowed)}")
     return registry
 
 
-def ordered_tools(registry: dict[str, object]) -> list[str]:
-    return sorted(registry)
-
-
-def tool_record(registry: dict[str, object], name: str) -> dict[str, object]:
-    record = registry.get(name)
-    if not isinstance(record, dict):
-        raise KeyError(name)
-    return record
+def tool_record(registry: Registry, name: str) -> ToolRecord:
+    try:
+        return registry[name]
+    except KeyError:
+        raise ToolError(f"unknown tool: {name}") from None
 
 
 def resolve_tool_path(name: str) -> Path:
-    target_name = resolve_tool_name(name)
-    candidates = (
-        ROOT / "tools" / "lib" / target_name,
-    )
-    for path in candidates:
-        if not path.exists() or not path.is_file():
-            continue
-        if path == SELF:
-            # Avoid recursive launch when a legacy wrapper points to tpt itself.
-            continue
-        if not os.access(path, os.X_OK):
-            raise RuntimeError(f"{name}: tool target is not executable: {path}")
-        return path
-    raise FileNotFoundError(f"{name}: no executable target found")
+    if name == "tpt":
+        return SELF
+    path = LIB / ALIASES.get(name, name)
+    if not path.is_file():
+        raise ToolError(f"{name}: no implementation at {path}")
+    if not os.access(path, os.X_OK):
+        raise ToolError(f"{name}: implementation is not executable: {path}")
+    return path
 
 
-def require_tool(registry: dict[str, object], name: str) -> None:
-    _ = tool_record(registry, name)
-
-
-def list_tools(registry: dict[str, object], *, as_json: bool) -> int:
-    names = ordered_tools(registry)
+def list_tools(registry: Registry, *, as_json: bool) -> int:
     if as_json:
-        payload: list[dict[str, object]] = []
-        for name in names:
-            record = tool_record(registry, name)
-            payload.append(
-                {
-                    "name": name,
-                    "purpose": record.get("purpose"),
-                    "usage": record.get("usage"),
-                    "mutates": record.get("mutates"),
-                }
-            )
+        payload = [
+            {
+                "name": name,
+                "purpose": record.get("purpose"),
+                "usage": record.get("usage"),
+                "mutates": record.get("mutates"),
+            }
+            for name, record in registry.items()
+        ]
         print(json.dumps(payload, sort_keys=True, ensure_ascii=False))
         return 0
-    if not names:
+    if not registry:
         print("(no tools registered)")
         return 0
-    width = max(len(name) for name in names) + 2
-    for name in names:
-        record = tool_record(registry, name)
-        purpose = str(record.get("purpose", ""))
-        print(f"{name:{width}}{purpose}")
+    width = max(len(name) for name in registry) + 2
+    for name, record in registry.items():
+        print(f"{name:{width}}{record.get('purpose', '')}")
     return 0
 
 
-def show_tool_info(name: str, registry: dict[str, object], *, as_json: bool) -> int:
+def show_tool_info(registry: Registry, name: str, *, as_json: bool) -> int:
     record = tool_record(registry, name)
     path = resolve_tool_path(name)
     if as_json:
-        payload = {**dict(record), "name": name, "path": str(path)}
-        print(json.dumps(payload, sort_keys=True, ensure_ascii=False))
+        print(json.dumps({**record, "name": name, "path": str(path)},
+                         sort_keys=True, ensure_ascii=False))
         return 0
     print(f"name: {name}")
-    if "purpose" in record:
-        print(f"purpose: {record['purpose']}")
-    if "usage" in record:
-        print(f"usage: {record['usage']}")
+    for field in ("purpose", "usage"):
+        if field in record:
+            print(f"{field}: {record[field]}")
     print(f"path: {path}")
     if "requires" in record:
         requires = record["requires"]
-        if requires:
-            print(f"requires: {', '.join(requires)}")
-        else:
-            print("requires: (none)")
+        joined = ", ".join(requires) if isinstance(requires, list) else str(requires)
+        print(f"requires: {joined or '(none)'}")
     return 0
 
 
-def run_tool(name: str, tool_args: list[str]) -> int:
+def run_tool(registry: Registry, name: str, tool_args: list[str]) -> int:
+    tool_record(registry, name)
     path = resolve_tool_path(name)
-    # Tools are designed as executable scripts.
-    result = subprocess.run([str(path)] + tool_args)
-    return result.returncode
+    # Tools are executable scripts; sys.path[0] must stay tools/lib so that
+    # the shared _tooling helpers import, which rules out in-process dispatch.
+    code = subprocess.run([str(path), *tool_args]).returncode
+    # Translate a signal death into the conventional 128+N shell status.
+    return 128 - code if code < 0 else code
 
 
-def run_tool_help(name: str, registry: dict[str, object]) -> int:
-    require_tool(registry, name)
-    return run_tool(name, ["--help"])
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(prog="tpt", description="Triptych Tool launcher")
+    verbs = parser.add_subparsers(dest="command", required=True)
 
+    def with_json(sub: argparse.ArgumentParser) -> argparse.ArgumentParser:
+        sub.add_argument("--json", action="store_true", help="emit JSON output")
+        return sub
 
-def show_tool_path(name: str, registry: dict[str, object]) -> int:
-    require_tool(registry, name)
-    path = resolve_tool_path(name)
-    print(path)
-    return 0
+    with_json(verbs.add_parser("list", help="list registered tools"))
 
+    tools_cmd = verbs.add_parser("tools", help="tool metadata commands")
+    tools_sub = tools_cmd.add_subparsers(dest="tools_command", required=True)
+    with_json(tools_sub.add_parser("list", help="list registered tools"))
+    with_json(tools_sub.add_parser("info", help="show tool metadata")).add_argument("tool")
 
-def run_command(name: str, tool_args: list[str], registry: dict[str, object]) -> int:
-    if name not in registry:
-        print(f"tpt: unknown tool: {name}", file=sys.stderr)
-        print("available tools:", ordered_tools(registry), file=sys.stderr)
-        return 2
-    return run_tool(name, tool_args)
-
-
-def parse_parser() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        prog="tpt",
-        description="Triptych Tool launcher",
-        add_help=True,
-    )
-
-    tools = parser.add_subparsers(dest="command", required=True)
-
-    list_parser = tools.add_parser("list", help="list registered tools")
-    list_parser.add_argument("--json", action="store_true", help="emit JSON output")
-
-    tools_cmd = tools.add_parser("tools", help="tool metadata commands")
-    tool_sub = tools_cmd.add_subparsers(dest="tools_command", required=True)
-
-    tools_list = tool_sub.add_parser("list", help="list registered tools")
-    tools_list.add_argument("--json", action="store_true", help="emit JSON output")
-    tools_info = tool_sub.add_parser("info", help="show tool metadata")
-    tools_info.add_argument("tool")
-    tools_info.add_argument("--json", action="store_true", help="emit JSON output")
-
-    run_parser = tools.add_parser("run", help="invoke one registered tool")
+    run_parser = verbs.add_parser("run", help="invoke one registered tool")
     run_parser.add_argument("tool")
-    run_parser.add_argument(
-        "tool_args", nargs=argparse.REMAINDER, help="arguments for the underlying tool"
-    )
+    run_parser.add_argument("tool_args", nargs=argparse.REMAINDER,
+                            help="arguments for the underlying tool")
 
-    help_parser = tools.add_parser("help", help="show a registered tool's help")
-    help_parser.add_argument("tool")
+    verbs.add_parser("help", help="show a registered tool's help").add_argument("tool")
+    verbs.add_parser("path", help="print the resolved executable").add_argument("tool")
+    return parser
 
-    path_parser = tools.add_parser("path", help="print the resolved executable for a tool")
-    path_parser.add_argument("tool")
-    return parser.parse_args(sys.argv[1:])
+
+def dispatch(registry: Registry, raw: list[str]) -> int:
+    if raw and raw[0] in registry:
+        return run_tool(registry, raw[0], raw[1:])
+    if raw and not raw[0].startswith("-") and raw[0] not in VERBS:
+        raise ToolError(f"unknown tool: {raw[0]}\navailable: {', '.join(registry)}")
+
+    args = build_parser().parse_args(raw)
+    as_json = bool(getattr(args, "json", False))
+    if args.command in ("list", "tools") and getattr(args, "tools_command", "list") == "list":
+        return list_tools(registry, as_json=as_json)
+    if args.command == "tools":
+        return show_tool_info(registry, args.tool, as_json=as_json)
+    if args.command == "run":
+        return run_tool(registry, args.tool, args.tool_args)
+    if args.command == "help":
+        return run_tool(registry, args.tool, ["--help"])
+    tool_record(registry, args.tool)
+    print(resolve_tool_path(args.tool))
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
-    if argv is not None:
-        sys.argv = [sys.argv[0], *argv]
-
-    registry = load_registry()
-    invoked = Path(sys.argv[0]).name
-
-    if invoked != "tpt" and invoked in registry:
-        return run_command(invoked, sys.argv[1:], registry)
-
-    raw = sys.argv[1:]
-    if raw and raw[0] in registry:
-        return run_command(raw[0], raw[1:], registry)
-
-    args = parse_parser()
-
-    action = "tools:" + args.tools_command if args.command == "tools" else args.command
-    handlers = {
-        "list": lambda: list_tools(registry, as_json=bool(args.json)),
-        "tools:list": lambda: list_tools(registry, as_json=bool(args.json)),
-        "tools:info": lambda: show_tool_info(args.tool, registry, as_json=bool(args.json)),
-        "run": lambda: run_command(args.tool, args.tool_args, registry),
-        "help": lambda: run_tool_help(args.tool, registry),
-        "path": lambda: show_tool_path(args.tool, registry),
-    }
-
-    handler = handlers.get(action)
-    if handler is None:
-        print("tpt: unknown command", file=sys.stderr)
-        return 2
-
+    raw = list(sys.argv[1:] if argv is None else argv)
     try:
-        return handler()
-    except KeyError:
-        print(f"tpt: unknown tool: {args.tool}", file=sys.stderr)
+        return dispatch(load_registry(), raw)
+    except ToolError as error:
+        print(f"tpt: {error}", file=sys.stderr)
         return 2
-
 
 
 if __name__ == "__main__":
