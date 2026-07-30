@@ -317,6 +317,32 @@ owner-family relationships in total. This does not assert atomic citation
 coverage, which remains explicitly false, and unsupported catalog-expansion
 leads remain outside the ledger until their own family records are justified.
 
+## Commentary discovery chain
+
+The research algorithm maps a scripture passage to the commentary works worth
+pulling into the source vault, then unions those mappings across every proper.
+`commentary-work-index discover` is the repo-maintained lookup and
+`build-corpus` the union; the harvester that populates the index does not exist
+yet, and `src/sources/commentary/passage-commentary-index.yaml` is still
+`passages: []`, so every lookup resolves to zero works.
+
+Weighting is already implemented and needs no schema change. Each mapping
+carries a `confidence` float that orders works within a passage, and
+`build-corpus` accumulates a reciprocal-rank `score` across passages, so a work
+recurring at good rank through many propers outranks one appearing once.
+
+On 30 July 2026 the maintainer accepted the nondeterminism of a model-ranked
+"top 20", judging the head of the list unlikely to differ materially between
+runs. The concern was that a generated ranking is not a measured citation count
+and that variance is largest for obscure passages, which is where the volume is
+— 572 of 1301 distinct references are Psalms, many of them ferial antiphon
+fragments. The accepted resolution is to define `confidence` as multi-run
+agreement frequency rather than a model-asserted score, so the stability claim
+is measured rather than assumed and low-agreement works self-identify for
+review. Harvest results belong in a dated, tracked ledger; every downstream
+tool reads that ledger, which is what keeps the chain repeatable even though
+the harvest step is stochastic.
+
 ## Tool CLI consolidation backlog
 
 The 2026-07-30 tool review left a deliberate remainder. Delivered: the layout
