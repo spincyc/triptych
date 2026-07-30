@@ -34,21 +34,56 @@ series' declared order.
 ```yaml
 - key: advent-1                # kebab-case identity, stable within the file
   name: First Sunday of Advent # the edition's catalog name
-  registry: "39"               # quoted registry id; never a bare number
+  registry: '39'               # quoted registry id; never a bare number
   season: advent
   propers:
-    - name: Introit
-      incipit: Ad te levavi
-      source: scripture        # scripture | composed | mixed
-      verses: ["Psalm 24:1-3", "Psalm 24:4"]
-    - name: Collect
-      incipit: Excita, quaesumus
-      source: composed
-      text: |
-        Excita, quaesumus, Domine, potentiam tuam, et veni...
+  - name: Introit
+    incipit: Ad te levavi
+    source: scripture          # scripture | composed | mixed
+    verses:
+    - book: Psalms             # canonical Catholic-canon name
+      ranges:
+      - begin: {chapter: 24, verse: 1}
+        end: {chapter: 24, verse: 3}
+      ref: Psalm 24:1-3        # the edition's printed string, a side field
+  - name: Collect
+    incipit: Excita, quaesumus
+    source: composed
+    text: |
+      Excita, quaesumus, Domine, potentiam tuam, et veni...
 ```
 
-- `source: scripture` carries `verses`, the full ordered set of citations that
+## Citations are machine-primary
+
+A passage is structured data, not a string to re-parse. `book` is the canonical
+canon name, so `Ecclesiasticus` and `Sirach` both resolve to `Sirach`. `ranges`
+holds one or more contiguous extents, and a citation that selects several
+stretches of a chapter becomes several ranges:
+
+```yaml
+- book: Psalms
+  ranges:
+  - begin: {chapter: 22, verse: 8}
+    end: {chapter: 22, verse: 9}
+  - begin: {chapter: 22, verse: 17}
+    end: {chapter: 22, verse: 20}
+  ref: Psalm 22:8-9, 17-20
+```
+
+- A range may cross a chapter boundary, as the Passions do:
+  `begin: {chapter: 18, verse: 1}`, `end: {chapter: 19, verse: 42}`.
+- A chant sung entire is cited by chapter, with no `verse` on either edge.
+- `part` records a printed part-verse letter: `{chapter: 4, verse: 10, part: b}`.
+- One-chapter books resolve into chapter 1, so `Philemon 9-10` encodes as
+  chapter 1, verses 9 to 10.
+- `ref` preserves what the edition actually prints and is never authoritative;
+  the ranges are.
+
+`tools/citations encode` derives this form from a printed citation and is
+idempotent, so re-running it on an encoded index changes nothing. It refuses a
+citation it cannot encode without guessing rather than writing a wrong range.
+
+- `source: scripture` carries `verses`, the full ordered set of passages that
   construct the text, and no `text`.
 - `source: composed` carries the full Latin `text` and no `verses`.
 - `source: mixed` carries both: the scriptural constituents and the full text.
@@ -83,12 +118,26 @@ not the file's.
 ## Validating
 
 ```sh
-tools/check-calendar-masses                      # every index
+tools/check-calendar-masses                       # every index
 tools/check-calendar-masses --calendar roman-1962
-tools/check-calendar-masses --json
+tools/citations check --root src/sources/calendars # citation contents only
+tools/citations parse "Baruch 3:9-15, 32-4:4"     # encode one citation
 ```
 
-The validator checks the schema header, entry identity and uniqueness, the
-`propers`/`forms` exclusivity, the source-kind rules above, and the cycle
-shape. It runs inside `make check` and needs PyYAML
-(`requirements-tools.txt`).
+`check-calendar-masses` checks the schema header, entry identity and
+uniqueness, the `propers`/`forms` exclusivity, the source-kind rules above, and
+the cycle shape, then delegates citation contents to `tools/citations`, which
+owns the canon. Both run inside `make check` and need PyYAML
+(`requirements-tools.txt`); `make check` skips rather than fails without it.
+
+## Current contents
+
+| Index | Masses | Propers | Encoded passages |
+| --- | --- | --- | --- |
+| `roman-1962/sundays.yaml` | 59 | 636 | 548 |
+| `postconciliar/sundays.yaml` | 63 | 821 | 1082 |
+
+The 1962 index covers the 52-Sunday temporal spine, the four resumed Epiphany
+Sundays, and `T01`-`T03`. The postconciliar index covers `PC-S01`-`PC-S60` and
+`PC-T01`-`PC-T03`, with the Nativity, Epiphany, Ascension, and Pentecost
+carrying `forms`. Registry coverage in both is exact and duplicate-free.
