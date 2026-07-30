@@ -317,6 +317,28 @@ owner-family relationships in total. This does not assert atomic citation
 coverage, which remains explicitly false, and unsupported catalog-expansion
 leads remain outside the ledger until their own family records are justified.
 
+## Tool CLI consolidation backlog
+
+The 2026-07-30 tool review left a deliberate remainder. Delivered: the layout
+returned to `tools/<id>` so `tmt check` gates it; the launcher's controls became
+dash-prefixed options that a registry id cannot shadow; every registered tool
+gained a `tests/tools/<id>.test`; and registry drift, hardcoded paths, and
+`usage` staleness are asserted in `tools/tests/test_tool_registry.py`.
+
+The remainder changes interfaces the Makefile, guidance, and release records
+depend on, so each needs its own scoped unit rather than an incidental edit:
+
+| Item | Change | Blast radius |
+| --- | --- | --- |
+| Flag vocabulary | One meaning per flag: `--root` currently carries four, leaf identity has five spellings, `--provider` three shapes | ~20 tools, Makefile, guidance, source READMEs |
+| Shared dispatcher | Adopt `scripts/_tooling.py`'s `run_verb_cli` beyond its four current users, giving every tool `--json` and one error contract | 17 tools |
+| Verb vocabulary | Collapse 27 verbs onto a closed lifecycle set; `check`/`validate`/`verify` and `bootstrap`/`prepare`/`build-corpus` are synonyms today | 11 verb-bearing tools, Makefile, guidance |
+| Id naming | Retire the `check-*` prefix into a `check` verb on the domain tool; `web-edition` and `check-web-edition` already declare the dependency | 7 registry ids, Makefile, guidance, release hash records |
+
+Sequence the flag and dispatcher work first: neither renames an id, and both
+make the verb and id changes mechanical. The id renames come last because they
+move release hash records and every smoke-test filename together.
+
 ## Reconciliation history
 
 - 2026-07-29: Reorganized the public library into the seven approved portals:
