@@ -20,7 +20,7 @@ including one whose exact artifact is truthfully owned by a different container
 work. It adds segment records, optional exact artifact page counts, and
 passages and bindings that can name those segments; it does not reinterpret
 version 1 or change its artifact-only corpora. During migration,
-`scripts/source-library validate` checks only records already entered into
+`tools/tpt source-library validate` checks only records already entered into
 this tree and publication binding files that already exist. Generated indexes
 and reports belong in ignored `build/sources/`.
 
@@ -28,12 +28,12 @@ and reports belong in ignored `build/sources/`.
 
 ```sh
 make check-sources
-scripts/source-library validate
-scripts/source-library fingerprint SOURCE_ID
-scripts/source-library uses SOURCE_ID
-scripts/source-library impact SOURCE_ID
-scripts/source-library search SOURCE_ID QUERY
-scripts/source-library search SOURCE_ID QUERY --count
+tools/tpt source-library validate
+tools/tpt source-library fingerprint SOURCE_ID
+tools/tpt source-library uses SOURCE_ID
+tools/tpt source-library impact SOURCE_ID
+tools/tpt source-library search SOURCE_ID QUERY
+tools/tpt source-library search SOURCE_ID QUERY --count
 ```
 
 The command-line queries are deterministic and read-only. They compute the

@@ -15,14 +15,14 @@ from unittest import mock
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
-TOOL_PATH = REPOSITORY_ROOT / "scripts/public-alpha"
+TOOL_PATH = REPOSITORY_ROOT / "tools/lib/public-alpha"
 
 
 def load_tool():
     loader = importlib.machinery.SourceFileLoader("test_public_alpha_tool", str(TOOL_PATH))
     spec = importlib.util.spec_from_loader(loader.name, loader)
     if spec is None:
-        raise RuntimeError("could not load scripts/public-alpha")
+        raise RuntimeError("could not load tools/lib/public-alpha")
     module = importlib.util.module_from_spec(spec)
     loader.exec_module(module)
     return module
@@ -53,7 +53,7 @@ class PublicAlphaTest(unittest.TestCase):
             "release/public-alpha/layout.html",
             "release/public-alpha/assets/site.css",
             "requirements-public-alpha.txt",
-            "scripts/public-alpha",
+            "tools/lib/public-alpha",
         }
         self.write("README.md", b"# Test\n")
         self.write(
@@ -71,7 +71,7 @@ class PublicAlphaTest(unittest.TestCase):
         self.write("release/public-alpha/layout.html", b"{{CONTENT}}\n")
         self.write("release/public-alpha/assets/site.css", b"body {}\n")
         self.write("requirements-public-alpha.txt", b"Markdown==3.10.2\n")
-        self.write("scripts/public-alpha", b"test generator\n")
+        self.write("tools/lib/public-alpha", b"test generator\n")
         self.write("release/rights/approval.md", b"stale approval record\n")
         self.write("src/gpt/work/main.tex", b"source\n")
         self.write("doc/gpt/work.pdf", b"current pdf bytes\n")
@@ -785,7 +785,7 @@ class PublicAlphaTest(unittest.TestCase):
     ) -> None:
         self.authorize_current_inputs()
         authorization = self.manifest["authorizations"]["test-authorization"]
-        authorization["site_sources"].pop("scripts/public-alpha")
+        authorization["site_sources"].pop("tools/lib/public-alpha")
         authorization["site_sources"].pop("requirements-public-alpha.txt")
         authorization["site_sources"].pop("LICENSES/MIT.txt")
         self.write_manifest()
@@ -799,7 +799,7 @@ class PublicAlphaTest(unittest.TestCase):
         candidate_paths = {entry["path"] for entry in inventory["site_sources"]}
         self.assertTrue(
             {
-                "scripts/public-alpha",
+                "tools/lib/public-alpha",
                 "requirements-public-alpha.txt",
                 "LICENSES/MIT.txt",
             }.issubset(candidate_paths)
@@ -808,7 +808,7 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_changed_artifact_inputs_do_not_require_shared_rebinding(self) -> None:
         for source_path in (
-            "scripts/public-alpha",
+            "tools/lib/public-alpha",
             "requirements-public-alpha.txt",
             "LICENSES/MIT.txt",
         ):
@@ -907,7 +907,7 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.assertIn("run: make check-deployment-sources", workflow)
         self.assertIn(
-            "python scripts/public-alpha verify --deployment-target github-pages",
+            "python tools/tpt public-alpha verify --deployment-target github-pages",
             workflow,
         )
         self.assertLess(
@@ -1312,7 +1312,7 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(result, 0)
         self.assertEqual(stderr, "")
         self.assertIn("not verified", stdout)
-        self.assertIn("scripts/public-alpha verify", stdout)
+        self.assertIn("tools/tpt public-alpha verify", stdout)
         build_site.assert_called_once_with(self.manifest, publications, False)
         verify_output.assert_not_called()
 

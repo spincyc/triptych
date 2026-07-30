@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CHECKER = ROOT / "scripts/check-promised-deliverables"
+CHECKER = ROOT / "tools/lib/check-promised-deliverables"
 
 
 class PromisedDeliverableTests(unittest.TestCase):

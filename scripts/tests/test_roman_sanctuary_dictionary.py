@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SCRIPT = ROOT / "scripts" / "roman-sanctuary-dictionary"
+SCRIPT = ROOT / "tools" / "lib" / "roman-sanctuary-dictionary"
 DICTIONARY_ROOT = ROOT / "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
 SCHEMA = DICTIONARY_ROOT / "shared/schema/inventory-schema.toml"
 SELECTIONS = DICTIONARY_ROOT / "shared/schema/edition-selections.toml"

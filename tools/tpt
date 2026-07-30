@@ -11,7 +11,7 @@ Usage:
 
 `tpt` is the unified entrypoint for repo tools. It loads the tool registry
 from ``tmt.json`` and dispatches to the corresponding implementation in
-``tools/lib/<tool>`` (or ``tools/<tool>`` as a compatibility fallback).
+``tools/lib/<tool>``.
 """
 
 from __future__ import annotations
@@ -62,8 +62,6 @@ def resolve_tool_path(name: str) -> Path:
     target_name = resolve_tool_name(name)
     candidates = (
         ROOT / "tools" / "lib" / target_name,
-        ROOT / "tools" / target_name,
-        ROOT / "scripts" / name,
     )
     for path in candidates:
         if not path.exists() or not path.is_file():

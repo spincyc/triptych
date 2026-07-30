@@ -15,7 +15,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CHECKER_PATH = ROOT / "scripts" / "check-generation-metadata"
+CHECKER_PATH = ROOT / "tools" / "lib" / "check-generation-metadata"
 LOADER = importlib.machinery.SourceFileLoader(
     "triptych_generation_metadata_checker", str(CHECKER_PATH)
 )

@@ -14,7 +14,7 @@ from xml.sax.saxutils import escape
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CHECKER_PATH = ROOT / "scripts" / "check-curriculum-structure"
+CHECKER_PATH = ROOT / "tools" / "lib" / "check-curriculum-structure"
 LOADER = importlib.machinery.SourceFileLoader(
     "triptych_curriculum_structure_checker", str(CHECKER_PATH)
 )

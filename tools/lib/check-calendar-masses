@@ -98,7 +98,7 @@ def check_proper(where: str, proper: object, problems: list[str]) -> None:
 
 
 def check_verses(where: str, verses: object, problems: list[str]) -> None:
-    """`verses` holds encoded passages; `tools/citations` owns their contents."""
+    """`verses` holds encoded passages; citations owns their contents."""
     if verses is None:
         return
     if not isinstance(verses, list) or not verses:
@@ -260,7 +260,7 @@ def citation_problems(root: Path, calendar: str | None) -> list[str]:
     """Delegate citation contents to the sibling tool that owns the canon."""
     tool = Path(__file__).resolve().parent / "citations"
     if not tool.exists():
-        return ["tools/citations is missing; cannot validate citation contents"]
+        return [f"{tool} is missing; cannot validate citation contents"]
     scope = root / calendar if calendar else root
     result = subprocess.run(
         [sys.executable, str(tool), "check", "--root", str(scope), "--json"],
@@ -269,13 +269,13 @@ def citation_problems(root: Path, calendar: str | None) -> list[str]:
     )
     stream = result.stdout.strip() or result.stderr.strip()
     if not stream:
-        return [f"tools/citations produced no output (exit {result.returncode})"]
+        return [f"{tool} produced no output (exit {result.returncode})"]
     try:
         payload = json.loads(stream)
     except json.JSONDecodeError:
-        return [f"tools/citations emitted unreadable output: {stream[:200]}"]
+        return [f"{tool} emitted unreadable output: {stream[:200]}"]
     if payload.get("code"):
-        return [f"tools/citations: {payload.get('error')}"]
+        return [f"{tool}: {payload.get('error')}"]
     return list(payload.get("problems") or [])
 
 

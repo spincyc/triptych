@@ -99,7 +99,7 @@ Mark the brief synthesis with
 `triptych:brief-synthesis:start`,
 `triptych:brief-synthesis:end`, and
 `triptych:brief-synthesis:next`. After the build settles,
-`scripts/check-proper-components --aux` must find those markers on pages N,
+`tools/tpt check-proper-components --aux` must find those markers on pages N,
 N+1, and N+2. Page breaks without that validation do not meet the exact
 two-page requirement.
 

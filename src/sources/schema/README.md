@@ -1,6 +1,6 @@
 # Source Manifest Schema
 
-`scripts/source-library` is the executable schema and validator. Version 1 was
+`tools/tpt source-library` is the executable schema and validator. Version 1 was
 frozen on 2026-07-22 after the complete-source City of God tracer exercised its
 identity, artifact, corpus, passage, binding, rights, search, fingerprint, and
 impact semantics. Its five source record types and one publication-local
@@ -191,7 +191,7 @@ graph is intentionally distinct from structural ownership traversal. Compute
 the value with:
 
 ```sh
-scripts/source-library fingerprint SOURCE_ID
+tools/tpt source-library fingerprint SOURCE_ID
 ```
 
 Changing the bound record or any exact ancestor then makes the binding stale

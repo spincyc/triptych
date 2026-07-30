@@ -81,7 +81,7 @@ stretches of a chapter becomes several ranges:
 - `ref` preserves what the edition actually prints and is never authoritative;
   the ranges are.
 
-`tools/citations encode` derives this form from a printed citation and is
+`tools/tpt citations encode` derives this form from a printed citation and is
 idempotent, so re-running it on an encoded index changes nothing. It refuses a
 citation it cannot encode without guessing rather than writing a wrong range.
 
@@ -120,15 +120,15 @@ not the file's.
 ## Validating
 
 ```sh
-tools/check-calendar-masses                       # every index
-tools/check-calendar-masses --calendar roman-1962
-tools/citations check --root src/sources/calendars # citation contents only
-tools/citations parse "Baruch 3:9-15, 32-4:4"     # encode one citation
+tools/tpt check-calendar-masses                       # every index
+tools/tpt check-calendar-masses --calendar roman-1962
+tools/tpt citations check --root src/sources/calendars # citation contents only
+tools/tpt citations parse "Baruch 3:9-15, 32-4:4"  # encode one citation
 ```
 
 `check-calendar-masses` checks the schema header, entry identity and
 uniqueness, the `propers`/`forms` exclusivity, the source-kind rules above, and
-the cycle shape, then delegates citation contents to `tools/citations`, which
+the cycle shape, then delegates citation contents to `tools/tpt citations`, which
 owns the canon. Both run inside `make check` and need PyYAML
 (`requirements-tools.txt`); `make check` skips rather than fails without it.
 

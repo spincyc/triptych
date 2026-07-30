@@ -19,7 +19,7 @@ from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SCRIPT = ROOT / "scripts/pdf-review"
+SCRIPT = ROOT / "tools/lib/pdf-review"
 
 
 def load_review_module():

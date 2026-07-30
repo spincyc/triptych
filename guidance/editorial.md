@@ -163,7 +163,7 @@ Before installing a publication:
 - verify the reader-first order, terminal apparatus, every material claim and citation, source/proposal boundaries, and absence of unused references or padding;
 - confirm rights, attribution, edition, jurisdiction, as-of, review, and generation records describe the artifact;
 - compile enough passes to settle contents and references; reject fatal errors, undefined references, overflow, and unresolved layout warnings;
-- generate bounded review rasters with `make review-pdfs` or `scripts/pdf-review` and visually inspect every page, using full-size pages where contact-sheet scale is insufficient;
+- generate bounded review rasters with `make review-pdfs` or `tools/tpt pdf-review` and visually inspect every page, using full-size pages where contact-sheet scale is insufficient;
 - check clipping, density, heading splits, tables, callouts, artificial whitespace, sparse spill pages, monochrome legibility, PDF structure, embedded fonts, metadata, and extracted text; confirm the final-page rights colophon is readable, unclipped, non-overlapping, and has not created a spill page; and
 - install only the reviewed PDF at its mirrored `doc/` path, leaving intermediates under ignored `build/`.
 

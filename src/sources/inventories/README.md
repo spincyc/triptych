@@ -35,13 +35,13 @@ snapshot. Generated discovery reports belong below ignored `build/sources/`.
 The structural baseline is created and checked with:
 
 ```sh
-scripts/source-inventory bootstrap \
+tools/tpt source-inventory bootstrap \
   src/sources/inventories/publications-v1.toml --audited-on YYYY-MM-DD
-scripts/source-inventory bootstrap-classification-review \
+tools/tpt source-inventory bootstrap-classification-review \
   src/sources/inventories/classification-review-v1.toml \
   --audited-on YYYY-MM-DD
-scripts/source-inventory classify
-scripts/source-inventory check
+tools/tpt source-inventory classify
+tools/tpt source-inventory check
 ```
 
 `bootstrap` deliberately begins every publication at `records-enumerated` with
@@ -164,13 +164,13 @@ other manifest metadata force a fresh ledger review.
 Use the standalone tool directly:
 
 ```sh
-scripts/source-family-migration bootstrap \
+tools/tpt source-family-migration bootstrap \
   src/sources/inventories/source-family-migration-v1.toml \
   --audited-on YYYY-MM-DD
-scripts/source-family-migration check
-scripts/source-family-migration check --require-family-screened
-scripts/source-family-migration refresh --audited-on YYYY-MM-DD
-scripts/source-family-migration refresh --audited-on YYYY-MM-DD \
+tools/tpt source-family-migration check
+tools/tpt source-family-migration check --require-family-screened
+tools/tpt source-family-migration refresh --audited-on YYYY-MM-DD
+tools/tpt source-family-migration refresh --audited-on YYYY-MM-DD \
   --accept-canonical-catalog
 ```
 
@@ -182,7 +182,7 @@ evidence. Refresh never discovers or adds a new family presence. Review and add
 that presence explicitly.
 
 A canonical-manifest addition or edit intentionally blocks ordinary refresh.
-First run `scripts/source-library validate`, review the changed manifests, and
+First run `tools/tpt source-library validate`, review the changed manifests, and
 update their family membership. Version 1 uses a conservative global catalog
 checkpoint: every family with canonical IDs must then be re-reviewed and set
 to a `reviewed_on` equal to the new ledger audit date, even when its own

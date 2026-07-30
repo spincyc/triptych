@@ -93,7 +93,7 @@ Preserve the provider hierarchy under `src/<provider>/`; the present providers a
 
 Use `rg` or `rg --files` first for repository search. Use history-preserving moves for tracked paths, and update imports, build dependencies, catalogs, links, attributes, and installed mirrors coherently. Existing relative TeX imports and shared-fragment consumers must be checked before moving a source directory.
 
-Build each affected document for enough passes to settle references and contents. Inspect logs for fatal errors, undefined references, overflow, and layout warnings. Generate review rasters and contact sheets through `make review-pdfs` or `scripts/pdf-review`; never fan out raw `montage`, `magick`, or equivalent whole-document contact-sheet commands. Visually inspect every rendered page, then install only the reviewed PDF. When a shared source changes, build and inspect every affected consumer. Run the profile's quality gates in addition to the universal gates in `guidance/editorial.md`.
+Build each affected document for enough passes to settle references and contents. Inspect logs for fatal errors, undefined references, overflow, and layout warnings. Generate review rasters and contact sheets through `make review-pdfs` or `tools/tpt pdf-review`; never fan out raw `montage`, `magick`, or equivalent whole-document contact-sheet commands. Visually inspect every rendered page, then install only the reviewed PDF. When a shared source changes, build and inspect every affected consumer. Run the profile's quality gates in addition to the universal gates in `guidance/editorial.md`.
 
 ## Commits and history
 
@@ -103,7 +103,7 @@ Do not amend, rebase, filter, force-update a ref, or otherwise rewrite history u
 
 <!-- tmt:agents v1 -->
 Before writing any script, read tmt.json and prefer a listed tool
-(`tools/<id> --help`). After deriving anything repeatable, run
+(`tools/tpt <id> --help`). After deriving anything repeatable, run
 `tmt note <slug>`; at two notes build it with `tmt new <slug>`.
 Keep the registry honest with `tmt check`.
 <!-- /tmt:agents -->

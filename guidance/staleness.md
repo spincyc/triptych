@@ -1,7 +1,7 @@
 # Research Staleness and Re-evaluation
 
 This policy governs every provider branch. Its deterministic half is
-implemented by `scripts/research-staleness` and the tracked ledger
+implemented by `tools/tpt research-staleness` and the tracked ledger
 `src/sources/inventories/research-staleness-v1.toml`; the evaluative half
 is provider work that this profile defines.
 
@@ -17,7 +17,7 @@ A paper's research inputs are:
 
 When any input changes — by any provider — every provider's edition of
 that leaf is stale. `make check-staleness` reports stale editions;
-`scripts/research-staleness explain <provider> <leaf>` names the exact
+`tools/tpt research-staleness explain <provider> <leaf>` names the exact
 changed inputs. Staleness is a flag for re-evaluation, not a judgment
 that the paper is wrong, and it never blocks builds or release checks on
 its own.

@@ -133,18 +133,17 @@ Every publication retains the common rights notice as a compact final-page colop
 
 ## Tool registry
 
-Repository tools are indexed in `tmt.json` and exposed under `tools/<id>`.
+Repository tools are indexed in `tmt.json` and invoked as `tools/tpt <id>`.
 Before writing a script, read the registry and prefer a listed tool
-(`tools/<id> --help`) over re-deriving its logic. `make check` runs
+(`tools/tpt <id> --help`) over re-deriving its logic. `make check` runs
 `tmt check`, which must stay green; it is skipped, not failed, where `tmt`
 is not installed.
 
-Implementations live in `scripts/`, which remains their canonical path for
-the Makefile, the Pages workflow, tests, and release records. Each
-`tools/<id>` is a symlink onto that implementation, so a tool has one
-implementation and one registered identity. Register a new tool with
-`tmt new <id>`; to register an existing script, add the symlink and its
-registry entry by hand.
+Implementations live in `tools/lib/`, and `tpt` dispatches tool ids from
+the registry to that implementation path. The Makefile, Pages workflow, tests,
+and release records invoke tools through `tools/tpt` by default.
+Register a new tool with `tmt new <id>` and add the implementation under
+`tools/lib/` as part of the tool definition update.
 
 A registry id may differ from its script's basename, and must where the
 basename collides with a publication slug or record name. `tmt check` treats
@@ -152,7 +151,7 @@ any standalone occurrence of a registered id in a tool body — including
 inside path strings — as a declared dependency, so a tool named after the
 publication it renders produces false edges and can force a `requires`
 cycle. `render-sanctuary-dictionary` carries a distinct id for exactly this
-reason, pointing at `scripts/roman-sanctuary-dictionary`.
+reason, pointing at `tools/lib/roman-sanctuary-dictionary`.
 
 ## Build and review contract
 
@@ -178,7 +177,7 @@ Build recipes must:
 
 Compile each affected publication for enough passes to settle references and contents. Reject fatal errors, undefined references, overflow, and unresolved layout warnings.
 
-Use only `make review-pdfs`, `make review-all-pdfs`, or `scripts/pdf-review` to prepare page rasters and bounded contact sheets. The helper owns concurrency and memory controls; do not replace it with raw parallel ImageMagick or equivalent whole-document commands. A cache hit or contact sheet is not review. Inspect every rendered page, opening full-size rasters where scale matters, then verify PDF structure, fonts, metadata, extracted text, and byte identity between reviewed build and installed mirror.
+Use only `make review-pdfs`, `make review-all-pdfs`, or `tools/tpt pdf-review` to prepare page rasters and bounded contact sheets. The helper owns concurrency and memory controls; do not replace it with raw parallel ImageMagick or equivalent whole-document commands. A cache hit or contact sheet is not review. Inspect every rendered page, opening full-size rasters where scale matters, then verify PDF structure, fonts, metadata, extracted text, and byte identity between reviewed build and installed mirror.
 
 Audit publication size after rendered content settles. Investigate, rather
 than automatically rewrite, a PDF above 1 MiB or 75 KiB per page. Investigate

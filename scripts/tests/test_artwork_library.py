@@ -10,7 +10,7 @@ from pathlib import Path
 from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
-SCRIPT = ROOT / "scripts" / "artwork-library"
+SCRIPT = ROOT / "tools" / "lib" / "artwork-library"
 LOADER = importlib.machinery.SourceFileLoader("artwork_library", str(SCRIPT))
 SPEC = importlib.util.spec_from_loader("artwork_library", LOADER)
 ARTWORK = importlib.util.module_from_spec(SPEC)

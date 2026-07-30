@@ -46,7 +46,7 @@ Add a requirement before beginning material work when a request changes scope.
 Do not weaken or delete an unmet requirement. Supersede it with a new
 requirement or record an explicit user-authorized waiver. Completion claims in
 commit messages, catalogs, release notes, or handoffs are permitted only when
-`scripts/check-promised-deliverables --require-complete <id>` passes.
+`tools/tpt check-promised-deliverables --require-complete <id>` passes.
 
 Keep coherent commits small enough that completed work is durably checkpointed
 without waiting for an unrelated workstream. A clean direct Codex session on

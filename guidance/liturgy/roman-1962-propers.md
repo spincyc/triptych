@@ -129,7 +129,7 @@ the recorded rights basis, its catalog label is `Full PDF`; the companion is
 The brief synthesis marks its first page, second page, and the first following
 page with `triptych:brief-synthesis:start`,
 `triptych:brief-synthesis:end`, and `triptych:brief-synthesis:next`.
-After references settle, `scripts/check-proper-components --aux` must prove
+After references settle, `tools/tpt check-proper-components --aux` must prove
 that these occupy pages N, N+1, and N+2. Forced breaks alone do not satisfy the
 exact-two-page gate.
 

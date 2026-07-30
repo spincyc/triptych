@@ -64,7 +64,7 @@ The generator must:
 7. emit one `\RSDObjectRecord` block per selected object, followed by its
    names, claims, variants, sources, artwork, and cross-references.
 
-Before generation, `scripts/check-roman-sanctuary-artwork` reconciles the
+Before generation, `tools/tpt check-roman-sanctuary-artwork` reconciles the
 canonical `research/artwork-manifest.toml` against every populated record
 under `shared/objects/`. The check is deliberately valid with an empty held
 manifest and no object records. Once records exist, it rejects one-way links,

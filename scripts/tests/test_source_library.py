@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-TOOL_PATH = ROOT / "scripts" / "source-library"
+TOOL_PATH = ROOT / "tools" / "lib" / "source-library"
 LOADER = importlib.machinery.SourceFileLoader(
     "triptych_source_library", str(TOOL_PATH)
 )

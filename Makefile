@@ -82,25 +82,25 @@ PROVIDERS := $(sort $(foreach path,$(ALL_MAIN_SOURCES),$(word 2,$(subst /, ,$(pa
 MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex 2>/dev/null | sort)
 CANONICAL_DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
 PROPER_SYNTHESIS_DOCUMENTS := $(shell \
-	$(PYTHON) scripts/check-proper-components --provider $(PROVIDER) \
+	$(PYTHON) tools/tpt check-proper-components --provider $(PROVIDER) \
 		--list-synthesis 2>/dev/null)
 DOCUMENTS := $(CANONICAL_DOCUMENTS) $(PROPER_SYNTHESIS_DOCUMENTS)
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(DOCUMENTS)))
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
-METADATA_CHECKER := scripts/check-generation-metadata
-PROPER_COMPONENT_CHECKER := scripts/check-proper-components
-WEB_EDITION_CHECKER := scripts/check-web-edition
-WEB_EDITION_TOOL := scripts/web-edition
-CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
-PDF_REVIEW_TOOL := scripts/pdf-review
-PUBLIC_ALPHA_TOOL := scripts/public-alpha
-RELEASE_BINDINGS_TOOL := scripts/release-bindings
-RESEARCH_STALENESS_TOOL := scripts/research-staleness
-SOURCE_LIBRARY_TOOL := scripts/source-library
-SOURCE_INVENTORY_TOOL := scripts/source-inventory
-SOURCE_FAMILY_MIGRATION_TOOL := scripts/source-family-migration
+METADATA_CHECKER := tools/tpt check-generation-metadata
+PROPER_COMPONENT_CHECKER := tools/tpt check-proper-components
+WEB_EDITION_CHECKER := tools/tpt check-web-edition
+WEB_EDITION_TOOL := tools/tpt web-edition
+CURRICULUM_STRUCTURE_CHECKER := tools/tpt check-curriculum-structure
+PDF_REVIEW_TOOL := tools/tpt pdf-review
+PUBLIC_ALPHA_TOOL := tools/tpt public-alpha
+RELEASE_BINDINGS_TOOL := tools/tpt release-bindings
+RESEARCH_STALENESS_TOOL := tools/tpt research-staleness
+SOURCE_LIBRARY_TOOL := tools/tpt source-library
+SOURCE_INVENTORY_TOOL := tools/tpt source-inventory
+SOURCE_FAMILY_MIGRATION_TOOL := tools/tpt source-family-migration
 
 COMMON_SOURCES := $(shell find src/common -type f 2>/dev/null | sort)
 ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
@@ -132,7 +132,7 @@ ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS := $(filter \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/%,$(BUILD_PDFS))
 ROMAN_SANCTUARY_DICTIONARY_GENERATED := \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated
-ROMAN_SANCTUARY_DICTIONARY_GENERATOR := scripts/roman-sanctuary-dictionary
+ROMAN_SANCTUARY_DICTIONARY_GENERATOR := tools/tpt roman-sanctuary-dictionary
 # 1962 proper full-text editions: each imports its study edition's sections and
 # format from the sibling leaf at the same id without the -full-text suffix.
 ROMAN_1962_FULL_TEXT_DOCUMENTS := $(filter \
@@ -343,7 +343,7 @@ check-source-family-screening:
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check --require-family-screened
 
 check-roman-sanctuary-artwork:
-	@$(PYTHON) scripts/check-roman-sanctuary-artwork
+	@$(PYTHON) tools/tpt check-roman-sanctuary-artwork
 
 check-curriculum-sources: check-tools
 	@$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
@@ -421,7 +421,7 @@ check-metadata: check-tools
 	@$(METADATA_CHECKER) --provider $(PROVIDER)
 
 check-promised-deliverables:
-	@$(PYTHON) scripts/check-promised-deliverables
+	@$(PYTHON) tools/tpt check-promised-deliverables
 
 # Absence of a leaf's declaration is an error: nothing defaults to eligible.
 check-web-editions:
@@ -616,7 +616,8 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-public-alpha check-release-bindings check-tool-registry \
 	check-calendar-masses
 
-# tmt.json indexes the repo's tools; tools/<id> are symlinks onto scripts/.
+# tmt.json indexes the repo's tools; invoke them through tpt.
+# tools dispatch through tmt entries to their implementation under tools/lib/.
 # Skipped rather than failed where tmt is not installed, so a plain clone
 # still runs `check`.
 check-tool-registry:
@@ -626,7 +627,7 @@ check-tool-registry:
 # Needs PyYAML (requirements-tools.txt); skipped rather than failed without it.
 check-calendar-masses:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
-		tools/check-calendar-masses; \
+		$(PYTHON) tools/tpt check-calendar-masses; \
 	else echo "PyYAML missing; skipping calendar-mass check"; fi
 
 check-tests:

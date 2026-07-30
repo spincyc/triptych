@@ -1,16 +1,21 @@
 #!/bin/sh
-# Test for tools/citations: exit 0 = pass (the stable gate).
+# Test for `tools/tpt citations`: exit 0 = pass (the stable gate).
 set -eu
 
 repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
-tool="$repo/tools/citations"
+tool="$repo/tools/tpt"
+tool_id="citations"
 
-"$tool" --help >/dev/null
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
 
 expect() {
 	want="$1"
 	shift
-	got="$("$tool" parse "$1" --json)"
+	got="$(run_tool parse "$1" --json)"
 	case "$got" in
 	*"$want"*) ;;
 	*) echo "parse $1: expected $want in: $got" >&2; exit 1 ;;
@@ -18,7 +23,7 @@ expect() {
 }
 
 reject() {
-	if "$tool" parse "$1" --json >/dev/null 2>&1; then
+	if run_tool parse "$1" --json >/dev/null 2>&1; then
 		echo "expected parse to reject: $1" >&2
 		exit 1
 	fi
@@ -104,11 +109,11 @@ masses:
           B: {verses: ["Philemon 9-10"]}
 YAML
 
-"$tool" encode --root calendars >/dev/null
-"$tool" check --root calendars >/dev/null
+run_tool encode --root calendars >/dev/null
+run_tool check --root calendars >/dev/null
 
 first="$(cat calendars/test/sundays.yaml)"
-"$tool" encode --root calendars >/dev/null
+run_tool encode --root calendars >/dev/null
 second="$(cat calendars/test/sundays.yaml)"
 if [ "$first" != "$second" ]; then
 	echo "encode is not idempotent" >&2
@@ -117,6 +122,7 @@ fi
 
 # The encoded form reports no bare strings left, and counts the passages.
 out="$("$tool" check --root calendars --json)"
+out="$(run_tool check --root calendars --json)"
 case "$out" in
 *'"status":"ok"'*) ;;
 *) echo "expected ok after encode, got: $out" >&2; exit 1 ;;
@@ -147,7 +153,7 @@ masses:
         source: scripture
         verses: ["Psalm 24:1-3"]
 YAML
-if "$tool" check --root calendars >/dev/null 2>&1; then
+if run_tool check --root calendars >/dev/null 2>&1; then
 	echo "expected check to reject an unencoded citation string" >&2
 	exit 1
 fi
@@ -177,7 +183,7 @@ masses:
               - begin: {chapter: 24, verse: 1}
                 end: {chapter: 24, verse: 3}
 YAML
-if "$tool" check --root calendars >/dev/null 2>&1; then
+if run_tool check --root calendars >/dev/null 2>&1; then
 	echo "expected check to reject a non-canonical book name" >&2
 	exit 1
 fi
@@ -206,7 +212,7 @@ masses:
               - begin: {chapter: 24, verse: 5}
                 end: {chapter: 24, verse: 2}
 YAML
-if "$tool" check --root calendars >/dev/null 2>&1; then
+if run_tool check --root calendars >/dev/null 2>&1; then
 	echo "expected check to reject a descending range" >&2
 	exit 1
 fi

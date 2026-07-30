@@ -8,7 +8,9 @@ import pathlib
 import tempfile
 import unittest
 
-TOOL_PATH = pathlib.Path(__file__).resolve().parent.parent / "release-bindings"
+TOOL_PATH = (
+    pathlib.Path(__file__).resolve().parent.parent / "tools" / "lib" / "release-bindings"
+)
 
 
 def load_tool():

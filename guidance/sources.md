@@ -103,7 +103,7 @@ ordered propers, one directory per calendar (`roman-1962`, `postconciliar`)
 and one file per deterministic series. Each file declares the
 `triptych-calendar-masses/v1` schema, the controlling edition, its ordering
 rule, the registry that owns its identities, its citation and orthography
-conventions, and its verification state. `tools/check-calendar-masses`
+conventions, and its verification state. `tools/tpt check-calendar-masses`
 validates them and runs inside `make check`.
 
 An index is a planning and cross-reference spine, not a source of record: it
@@ -404,14 +404,14 @@ Migrate through a dual-record period:
 
 For an ordinary source-bearing change, refresh and review in this order:
 
-1. run `scripts/source-inventory refresh --audited-on YYYY-MM-DD` after the
+1. run `tools/tpt source-inventory refresh --audited-on YYYY-MM-DD` after the
    publication or its owned source surface changes;
 2. review any new or unresolved publication in
    the provider's classification review (`classification-review-v1.toml` for
    GPT or `claude-classification-review-v1.toml` for Claude), then rerun
-   `scripts/source-inventory classify --review PATH` when its broad source
+   `tools/tpt source-inventory classify --review PATH` when its broad source
    strata change;
-3. run `scripts/source-family-migration refresh --audited-on YYYY-MM-DD`, and
+3. run `tools/tpt source-family-migration refresh --audited-on YYYY-MM-DD`, and
    manually review any new family presence rather than expecting refresh to
    infer it;
 4. use `--accept-canonical-catalog` only after the source library validates and

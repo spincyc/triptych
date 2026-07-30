@@ -8,7 +8,9 @@ import pathlib
 import tempfile
 import unittest
 
-TOOL_PATH = pathlib.Path(__file__).resolve().parent.parent / "research-staleness"
+TOOL_PATH = (
+    pathlib.Path(__file__).resolve().parent.parent / "tools" / "lib" / "research-staleness"
+)
 
 
 def load_tool():

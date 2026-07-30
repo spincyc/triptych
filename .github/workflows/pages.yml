@@ -43,7 +43,7 @@ jobs:
         run: make public-site
 
       - name: Verify artifact and GitHub Pages compatibility
-        run: python scripts/public-alpha verify --deployment-target github-pages
+        run: python tools/tpt public-alpha verify --deployment-target github-pages
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

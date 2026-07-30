@@ -10,7 +10,7 @@ from unittest import mock
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
-TOOL_PATH = REPOSITORY_ROOT / "scripts/public-alpha"
+TOOL_PATH = REPOSITORY_ROOT / "tools/lib/public-alpha"
 
 
 def load_tool():
@@ -19,7 +19,7 @@ def load_tool():
     )
     spec = importlib.util.spec_from_loader(loader.name, loader)
     if spec is None:
-        raise RuntimeError("could not load scripts/public-alpha")
+        raise RuntimeError("could not load tools/lib/public-alpha")
     module = importlib.util.module_from_spec(spec)
     loader.exec_module(module)
     return module

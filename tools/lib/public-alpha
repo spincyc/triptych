@@ -64,7 +64,7 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "release/public-alpha/layout.html",
     "release/public-alpha/assets/site.css",
     "requirements-public-alpha.txt",
-    "scripts/public-alpha",
+    "tools/lib/public-alpha",
 }
 LICENSE_SOURCE_PATHS = {
     path.relative_to(ROOT).as_posix()
@@ -2418,7 +2418,7 @@ def main() -> int:
             verify_command = "verify --preview" if args.preview else "verify"
             print(
                 f"built {output.relative_to(ROOT)}; not verified — run "
-                f"scripts/public-alpha {verify_command} before publication"
+                f"python tools/tpt public-alpha {verify_command} before publication"
             )
         else:
             output = OUTPUT_ROOT / ("preview" if args.preview else "site")

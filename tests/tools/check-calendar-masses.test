@@ -1,19 +1,20 @@
 #!/bin/sh
-# Test for tools/check-calendar-masses: exit 0 = pass (the stable gate).
+# Test for `tools/tpt check-calendar-masses`: exit 0 = pass (the stable gate).
 set -eu
 
 # Resolved tool roots: keeps working after a cd into a sandbox.
 tools="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)/tools"
-tool="$tools/check-calendar-masses"
+tpt="$tools/tpt"
+tool="check-calendar-masses"
 
 # Fixtures are written with printed citations, then encoded by the sibling
 # tool that owns them, so the checker sees the same shape the indexes hold.
 encode() {
-	"$tools/citations" encode --root src/sources/calendars >/dev/null 2>&1 || true
+	"$tpt" citations encode --root src/sources/calendars >/dev/null 2>&1 || true
 }
 
 # --help always works.
-"$tool" --help >/dev/null
+"$tpt" "$tool" --help >/dev/null
 
 sandbox="$(mktemp -d)"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
@@ -64,11 +65,11 @@ YAML
 } >src/sources/calendars/test/propers.yaml
 encode
 
-"$tool" --root src/sources/calendars >/dev/null
-"$tool" --root src/sources/calendars --calendar test >/dev/null
+"$tpt" "$tool" --root src/sources/calendars >/dev/null
+"$tpt" "$tool" --root src/sources/calendars --calendar test >/dev/null
 
 # --json reports ok and counts every proper.
-out="$("$tool" --root src/sources/calendars --json)"
+out="$("$tpt" "$tool" --root src/sources/calendars --json)"
 case "$out" in
 *'"status":"ok"'*) ;;
 *) echo "expected ok status, got: $out" >&2; exit 1 ;;
@@ -98,7 +99,7 @@ esac
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-"$tool" --root src/sources/calendars >/dev/null
+"$tpt" "$tool" --root src/sources/calendars >/dev/null
 
 # A cycle with neither its own source nor one on the proper is rejected.
 {
@@ -115,7 +116,7 @@ encode
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for a cycle with no source" >&2
 	exit 1
 fi
@@ -135,7 +136,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for a composed cycle without text" >&2
 	exit 1
 fi
@@ -157,7 +158,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for scripture proper carrying text" >&2
 	exit 1
 fi
@@ -175,7 +176,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for composed proper without text" >&2
 	exit 1
 fi
@@ -193,7 +194,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for unquoted registry value" >&2
 	exit 1
 fi
@@ -217,7 +218,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for duplicate mass keys" >&2
 	exit 1
 fi
@@ -239,7 +240,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an entry carrying both propers and forms" >&2
 	exit 1
 fi
@@ -263,7 +264,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-out="$("$tool" --root src/sources/calendars --json)"
+out="$("$tpt" "$tool" --root src/sources/calendars --json)"
 case "$out" in
 *'"propers":3'*) ;;
 *) echo "expected 3 propers across forms, got: $out" >&2; exit 1 ;;
@@ -284,7 +285,7 @@ esac
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-"$tool" --root src/sources/calendars >/dev/null
+"$tpt" "$tool" --root src/sources/calendars >/dev/null
 
 # Carrying both a season and a date is rejected, as is carrying neither.
 {
@@ -302,7 +303,7 @@ encode
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an entry with both season and date" >&2
 	exit 1
 fi
@@ -318,7 +319,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an entry with neither season nor date" >&2
 	exit 1
 fi
@@ -338,7 +339,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for February 30" >&2
 	exit 1
 fi
@@ -357,7 +358,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-"$tool" --root src/sources/calendars >/dev/null
+"$tpt" "$tool" --root src/sources/calendars >/dev/null
 
 # A non-string date is rejected.
 {
@@ -374,7 +375,7 @@ encode
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an unquoted date" >&2
 	exit 1
 fi
@@ -394,7 +395,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for an unknown kind" >&2
 	exit 1
 fi
@@ -412,7 +413,7 @@ fi
 YAML
 } >src/sources/calendars/test/propers.yaml
 encode
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for a dated entry with no rank" >&2
 	exit 1
 fi
@@ -436,14 +437,14 @@ masses:
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
-if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	echo "expected failure for wrong schema" >&2
 	exit 1
 fi
 
 # A root with no index is an error, not a silent pass.
 mkdir -p empty-root
-if "$tool" --root empty-root >/dev/null 2>&1; then
+if "$tpt" "$tool" --root empty-root >/dev/null 2>&1; then
 	echo "expected failure for a root with no index" >&2
 	exit 1
 fi

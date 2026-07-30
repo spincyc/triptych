@@ -1452,6 +1452,69 @@ exact-snapshot binding, validation, and coherent commits. Integration into
 not be represented as authority for the worker to perform or claim those final
 actions.
 
+## Supplemental exact-current-snapshot clearance — 30 July 2026
+
+At `2026-07-30T10:45:32-05:00` in `America/Chicago`, the maintainer instructed:
+“Approve the exact current snapshot.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 0 exact installed release
+PDF snapshots, all 0 conspicuously labelled public-alpha
+review snapshots, and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
+## Supplemental exact-current-snapshot clearance — 30 July 2026
+
+At `2026-07-30T10:46:20-05:00` in `America/Chicago`, the maintainer instructed:
+“Approve the exact current snapshot.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 0 exact installed release
+PDF snapshots, all 0 conspicuously labelled public-alpha
+review snapshots, and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
+## Supplemental exact-current-snapshot clearance — 30 July 2026
+
+At `2026-07-30T10:46:57-05:00` in `America/Chicago`, the maintainer instructed:
+“Approve the exact current snapshot.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 0 exact installed release
+PDF snapshots, all 0 conspicuously labelled public-alpha
+review snapshots, and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1639,31 +1702,211 @@ actions.
 
 | Repository path | SHA-256 |
 | --- | --- |
-| `CONTRIBUTING.md` | `721bca5335145a3b3f36c746e530e2fc73f4b0b3d0db2e4a874e7e9ea25deac2` |
-| `LIBRARY.md` | `ee53f06b0c8bd251e57f2004be4856f0b964d036153f38da96cb345720171fe6` |
-| `LICENSE` | `5ac6501c8ad1ead4885d7691d97f2240e94934ba19ac548c259718e85f3e2cad` |
+| `CONTRIBUTING.md` | `960df05b3029636e87aa04c3d501244ffa98840c74fbd2b9cdda848586e13012` |
+| `LIBRARY.md` | `99439f28a92258b364c6d033e8d56e0589ddc01258333f94ab78f74b1c54d63c` |
+| `LICENSE` | `263c33ce53a6660606d86bb24a233fe6575293dc2573f9b7ee7195a02fe41b44` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
-| `README.md` | `819cf4d3c11724d04d679702d29a1870403933e3901ae1273fb2409a334beba9` |
+| `README.md` | `63a929087876c5b249f0548a4f1cf9485bc31d2d6cbd28c4c5754716068d1ecd` |
 | `THIRD_PARTY.md` | `9b0b1a2bd4034035688cecf50e9943556dea120fd349809a813d3c16d2870fa2` |
-| `library/biographies.md` | `dd9905a5498ee06cebff017b2c95825ac5028f35d8ebfcabe1e26194f14ec266` |
-| `library/catholic-exorcism.md` | `2746a8f8aaefaf3611b6c69e69bead2e7197d3cfbb59fb0bb85a8dbbfdd8d11d` |
-| `library/curriculums.md` | `326b9f08c7274ffd4ba76fa3a475a839993323dff49e54517fe131cf05275916` |
+| `library/biographies.md` | `12074c46b97fc556382094c94d71b03bbbbad0616b4b855f3b362a71e7867d7a` |
+| `library/catholic-exorcism.md` | `749c2bd890d5cfd724ff4a2beb03ff518f07f175e443a8ecc9508a77eb787ea5` |
+| `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
 | `library/ecclesiastical-latin.md` | `02055f76bdd8ebd5618607194256ee6298947f30391bcafffacd4dbe1af319eb` |
 | `library/faith.md` | `510145724932331711d81b6677ea80ec7d76937cee33f1e0c7c0f32ff4770535` |
-| `library/heresies.md` | `2f8cbb8b910281e3d6ace3b232d724b6e08866a459344268fe611a6652229feb` |
-| `library/historical-accounts.md` | `c7bc01ea38390a2616c606132d6e061b241f13e1f9a3ac59960cc0e1331dfd7d` |
-| `library/law-and-church-discipline.md` | `5ab1ce0ac9730a28f27453f3d83538c053fe88cefeda66db4904805bccbe88bf` |
-| `library/mariology.md` | `de60d5fe81779020b8628f1f0739cf63b61db98852e78b4280ee9811029554f2` |
-| `library/novus-ordo-liturgy.md` | `8095cebc134f3e1b0b7bf0b7cee387ab0e7f521f81f9d4e301993ddf948e4251` |
-| `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
-| `library/scripture.md` | `35f08b4977640748586438af41d1263d006dc7e1edf8484f02867f8c71c63482` |
-| `library/traditional-latin-mass.md` | `251b8d8f53d889799e59099eecc7a6c75ba3c00f9800693b09a17842c01edb94` |
+| `library/formation.md` | `71a61f5da15b6c8294919a8636538d1824ef5a66d6b991c8556730a3de01caaf` |
+| `library/heresies.md` | `8704f8f02168d22d54447da973b7b1468cdafaf48a865d0cef080f19ac7d9ea0` |
+| `library/historical-accounts.md` | `1f24a33c4326255454e0116519622a88637a42f954de42e248e40c50ebb2f8f3` |
+| `library/history.md` | `066955ac6953bb6b3eaa5a8615832787720755ccf09189e03da500c4bfa78c55` |
+| `library/law-and-church-discipline.md` | `bf9784b3fa711d1d7c473c9f71a47763d1dcb3ac0e842ac7da2824c3f38690b9` |
+| `library/liturgy.md` | `ff7b571109616f556c0f436942937a5e1859efe1a58dc660ced06b6dd7c2d706` |
+| `library/mariology.md` | `3bd07d206ae4d217359257e02c63c88f7a3c098b1cd01b8e07f1553d99ccf60e` |
+| `library/novus-ordo-liturgy.md` | `9d7187a62001c6c9e19585a332ac698b87fd97cbe37fcd9dc8fc11d6f400238a` |
+| `library/prayer.md` | `632b73cb3d18581f0884a6881388eabb47f4958c8e0e13d546c758e7a6bbd81e` |
+| `library/scripture.md` | `94baa7502488a08abef2e277407860a87fc6a539b22cbb89de0672f115a73549` |
+| `library/traditional-latin-mass.md` | `5a425b135e3c51ab8ef631ec0062688531452e51912a8b1ce0d7a0791faa7c89` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
-| `release/public-alpha/assets/site.css` | `df4c180c140264c831c00e52098e10f67f2597d967fdd1a9f2e6bb8a3ac16e30` |
-| `release/public-alpha/layout.html` | `fe6e3db7cdd681358317527ce33d1daee12f68b3a734ea27892a74f09555b77b` |
+| `release/public-alpha/assets/site.css` | `acae106be43a6648fb7896c726192d7f5077ae43acd5d335c6b9c479e169d0b7` |
+| `release/public-alpha/layout.html` | `2da457d6aea6c2bf8943d7b53e4e034eab5181e61560041b8e1862a10a2d3c43` |
 | `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
-| `scripts/public-alpha` | `6dad054581532150058551b4b6e108c8cc0b26e02e3feaa99b49cc3412e07998` |
+| `scripts/public-alpha` | `71573761cf43c927d8e0c13c7d80bcf86f0a59ad4768c6eb226ff45ad52dd9b1` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml` | `77d170a850917063fcd3d51fea4727456497df494dedc7dd390f19972a2a7847` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle-v2-alpha.png` | `973f7cc89692ff07b3dd598d5c148eadcd72a1fe2e7f7206599f6953bee3088a` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp-v2-alpha.png` | `c30ac4b8b384ff1816043b48ddaea78cfb255a3791a3b7c13c55c7ce3ba191d4` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick-v2-alpha.png` | `ddac26f56dac1d02eec78c0ce7c1103dbba89586e23f93d6370e7d2dc2d06250` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal-v2-alpha.png` | `9e1d8a4848c297600042751579b7e8d5da74a5145ecc703c82cbb1fa1e2a3a2f` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0001-iso-corporal.png` | `791c7deba1af79769116a7f89d832da7670f0e13f9ce61fe93d4aadfd452104b` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0002-iso-purificator-v2-alpha.png` | `baa62a67b222da585488c1662de08937762c2cf787d04ba4e799d4f24cff7266` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0002-iso-purificator.png` | `ac4809fc7841adfb0c1c5640bc53883fb4877ed49d18b4736901500ffb48b3c5` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall-v2-alpha.png` | `39bddf4605a6cf80937c5c9e4a82eb6ba5091efb8c2ea9cd18eb777560a71543` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0003-iso-chalice-pall.png` | `9143511846bb616ecf4132318891b844896796ddeb5a0e9034628a9a977e335e` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0004-iso-chalice-veil-v2-alpha.png` | `c65d507707df7e0c9fb4abf79773920b890f9d7f1e794061ea59f6b45394ccb7` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0004-iso-chalice-veil.png` | `b1230b776c72e52602328e29534f1013cd2b98096e104bb0f8f18f7e48fcd7f6` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse-v2-alpha.png` | `ff164e6d8da53cb94e3432f5f01c271f6977b5c93af67ee0b9bb12bef03ca22e` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0005-iso-burse.png` | `4fd1876c0d8eb112c53084f0294444c9d0566f88b3a6f4a4e026c5915b9ebfc7` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0006-three-altar-cloths-v2-alpha.png` | `09b27e7df36332beec30fbfd3bc2eec479824a847ee9553545bbb11bfd0bbef6` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0006-three-altar-cloths.png` | `f5faaff351887cf14b64cf40fbca4d71e5cb7205b8cfd290943a7f58ac42b894` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-linens-0007-iso-manuterge-v2.png` | `88bf1592fc4d3c8f3149e1710e49327f3ae918a94f3858e0ec766f9f6ebe4736` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacred-vessels-0003-comparison-paten-exemplar.png` | `7c344a7fe84a1995303f82559e4e7447cee468a4c35466267edd7e9e1ac9c85f` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacred-vessels-0004-communion-plate-paten-comparison.png` | `54b95d36083a0af26a2aa1134288a0ba5ac6cf2abb6a6734dc6cb7041b8e5946` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png` | `b491ba8fb6192c3357f0f4ff7e17d054404f3f20032fbc1d414980b1bdedffb5` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacred-vessels-0006-iso-paten-v2.png` | `1a48e746b3b7faaed41b2ea328801f73c43ead8b52e4218f45f582e993e0fa57` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacristy-0001-representative-cross-v2-alpha.png` | `1497411b3a949bd7f00a97f0529a8239e01882d4cfdd98ad33d67aa6dff4d5db` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacristy-0001-representative-cross.png` | `c28affcab66a3cfd629258811225c02daec4d6c746dc819482bdd2dffe5a8b8c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacristy-0002-local-signal-bell-v2-alpha.png` | `380c623989480c1a73960e415460948345fbd0704220ac5b7621d02ccd102f40` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-sacristy-0002-local-signal-bell.png` | `96fea3fa35e785d0b3431752d8cf576ca71dcc06c2d84c2207ab1bbc408aa369` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0101-iso-altar-bells-v2-alpha.png` | `1c6bebd11a26dd569890dc1393b08461ed5c99e07d291af8d8d6d8cdb1240ec7` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0102-iso-candle-tool-v2.png` | `0c2b6837ca7f647cc38d21d34af76cbd64dd9d25ce356acec25db30e0f66f41e` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0102-iso-candle-tool-v3-alpha.png` | `c8ab566e586cbcff67d3054d10b5757e75faee20588e5e211b4c37d3b18641d0` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets-v2-alpha.png` | `a485b88c70b29cffd130663619c1e15a86aac362de8336a10f3779b7b0517adc` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0103-paired-cruets.png` | `54af058e1504b3b919d7ff3fcf4e5895a1d77510c6a97e488dfc5a71a34efc7b` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0104-single-altar-cruet-v1-alpha.png` | `a58cb02e86d293657309c264f6b750da9366dcb0c3d01e6f6d95d7dbd536d419` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0106-lavabo-basin-manuterge-v2-alpha.png` | `409eaed5816081bcaac77ec498cce12f6780fc944fe937ac07a0fb25056f77e2` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0106-lavabo-basin-manuterge.png` | `7c2d900d482e447af273440acadd02f90dca8b9cfbf0613800464c1923997357` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-service-objects-0107-iso-lavabo-basin-v2.png` | `2dcbd8a0026c71eaf294960e88724ad1a7cfb358e0029ddd743654e1a40868a5` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand-v2.png` | `30227d4df112ec1d2715425186d3b5ccc01a9d1708f806c35d5682a56ce02c35` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand-v3-alpha.png` | `5ec8ef31b37bcfb1f973a487150a61c17f4e6da6595e18b0d6cedd075e66f846` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0002-iso-missal-cushion-v2-alpha.png` | `970f9fdc9867a4388dddef993a7d785e4ab8d3e2e40f3fe76b94492792ade2df` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0003-iso-lectern-v2-alpha.png` | `f1d9801c756ea5317a3424bf083871b8f286a21474951ea13f1018c6663e3895` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0004-detail-marker-ribbons-v2-alpha.png` | `d29c7ea30a771bcc914f583071059318b3bf0575f3bbabd0e10154e206fcd968` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0005-iso-missal-stand-v2.png` | `d0888c36ce240256b191aba3d5b253675108c5ac796692505fe8cf87cbb9b497` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0006-epistle-book-in-use-alpha.png` | `f40216aa7bd050f5824dd6fba4228589119c511a81347020be8b2668d92fef2c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0007-gospel-book-in-use-v2-alpha.png` | `790c44bcee8c62d3f2f3862d343fa21ac6ed9b7ebe5a0797163f88c39a732a1c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0008-epistle-book-isolated-alpha.png` | `8d09ded6ba7b243ad9f0317e397e2566f85f6ab6cfe6277c198034a05138d031` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0009-gospel-book-isolated-alpha.png` | `187e32ede4ad90db6c5a26aa2f23b67a05bfb48b32576b1528cecbafcaa8f72a` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/compositions/RPD-FIG-prepared-chalice-0001-formation-alpha.png` | `618894f99e7416e208ef88d1c8a2674be343b59040c6c96ab0440e66c0ef2a16` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/compositions/RPD-FIG-sanctuary-0001-ecce-homo-chapel-rijks-graphite.png` | `d58e4ccc76d96612af6e918e89bae19c81f8143876fb7e31b181a1d5518a8fd3` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table-v2-alpha.png` | `842a1bfa769aa31d530c003ba5acefed62ba6d2a43ac0e56b716a37c07184bc2` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table.png` | `30d8b2595769d96149ae6d6bf737085a07e6874c9b5ed457bc075bcc3b5d30d5` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0002-sedilia-variants-v2-alpha.png` | `71460673336fa3a55d7951d499a153474476f2ce55550d4fad065d2f8a912bd4` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0002-sedilia-variants.png` | `e98e59798ae1e9f2233e9f135ba7ec1d00a44da663198cfc7f98397927b7b856` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0001-pectoral-cross-alpha-canonical.png` | `4e6e468421e7826b64bf3e728ecc53ef629147026d3b0516f8cd3636a85b00c7` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0001-three-mitre-forms-v1-alpha-canonical.png` | `18b8ed8ebce8e9edf7a879b366b881e6f3cabc50ebf37245a44aefd39508d840` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0002-mitre-minister-veil-v2-alpha-canonical.png` | `851a28ec0025588a8d5470c8357ac1869523b26ee5cc031e6d5acafbbc1bc09a` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0002-watterson-bugia-alpha-canonical.png` | `bf68bf0bad17fd5bf19928525f76c2c7f25ab705e287f0ab9de5a9119fdec441` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0101-episcopal-gloves-pair-alpha-canonical.png` | `cc239b7c1ce387b6406de708317af204799553944933bb29b311349b02c43ccd` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0102-episcopal-ring-alpha-canonical.png` | `88325223cb47e9e903f137c0368a2a996bfa04ad09695056bca9c4018642d61c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-0103-ring-over-right-glove-alpha-canonical.png` | `e16f4ccfb3ab9694d63c74e7368d0f9323618e8aa58cc717c44a7e91d30b4f73` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-insignia-0001-crosier-alpha-canonical.png` | `334e8f08394aaa0686029d1d91776583dd41b9c795bd31216846599189285632` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-insignia-0002-gremial-isolated-alpha-canonical.png` | `bb1eca0b177cfa10ad8b233e19a9a66f794dc544952431130b8b04bef5c68e2f` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-insignia-0003-gremial-handling-alpha-canonical.png` | `7e4daaef3de0e970e8aa8ec302efd9d70f5b258d35ced3a789587400d2168765` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-seating-0001-episcopal-throne-alpha-canonical.png` | `b7fcfd89f831dd1768e90673a739ec5e69ff3953d6018bd572d2a7f757925038` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-seating-0002-covered-faldstool-alpha-canonical.png` | `f511a486883ab3ef3b95234ca8cfb95777b6f55c268ab69e4c8622612898fabe` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-vestments-0001-layering-cutaway-alpha-canonical.png` | `6e78fcd57b2853a999e7668fb3d454881af86de168cca8654d29bbbc6779ef19` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-vesture-0002-sandal-alpha-canonical.png` | `5f89a826d2a33fe03a529fb4a5f276ff238e9996c7c10936c2195ebb2139b738` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-pontifical-vesture-0003-layered-right-left-alpha-canonical.png` | `64b4bc61d51c26103ea6eb5c79a41994721f00819543241fb1de9e8f369be1fe` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-vimpa-0001-pair-alpha-canonical.png` | `b45b3742458d4cd5496c8a4202448a700c8d22c6ba1cdd26139471e8b2970105` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-vimpa-0002-mitre-bearer-alpha-canonical.png` | `d25a50f6f3bd67e21ac5b337e653c63af3b9ca8b8135590ca31d96c7d93cdbd9` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-canonical/RPD-FIG-vimpa-0003-crosier-bearer-alpha-canonical.png` | `6fe398fbadea14220a36763a69851fcad64ebea0f4ce06fdcdc061a68016784b` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible-v2-alpha.png` | `4b9fc048431f172c0dc9a3dc62e944c33404a21dae2ae0f6ab8de7eb6a239036` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible.png` | `ea611ce0b2e539483a39d2fe803f901dd0f83be4db931d4639364ce37f6769dc` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-incense-0003-empty-boat-spoon-v2-alpha.png` | `4ab621886229f88044a53950491be555f29cf11bc6d9f4f2acdb0a2d49899bbe` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v3.png` | `5e19f4e826e3f138433d1a692ce398f5420c6cf1491e13785e48a0f74258302b` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross-v4-alpha.png` | `7d19ca898ea49ea5a142a20788dfbc16c826d6f92069d49939e12fef84c41b7b` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch-v2-alpha.png` | `386e8954420cb9d9b351ccfe8b5071f2e79c0fd3911df834bf981bf895b71bcf` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0002-iso-torch.png` | `42515401346587f2daddc33d6ab6dc7d478483fda55817d69e1dae20ec3913f2` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel-v2.png` | `0beb2cc255d667231beae30a3f0d1eaf0147964685e571e21a952792045770ef` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel-v3-alpha.png` | `41dd7753545e01d72d430de9d833e0d2ef7dcd28c36b31cefa602f0b1e6ec899` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v2.png` | `c8453019c107c7b0b85ab4847577867bf56463353ea4aacfc2e97c390dc8e9f1` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum-v3-alpha.png` | `6a8d03bd409aad6abab6cbeb03e96606d317faf59d20f4b31cbf5cc121494b70` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v2.png` | `2bc2433289c6fc6d119354c61c53ae800f10405a3dd711fa262d5ff8d5db51bc` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-basilical-conopaeum-v3-alpha.png` | `31402c7c3c0891b8d28f1cb05df7bda34a053e77c2dc99d72ac7bcabececac0e` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v2.png` | `bcdffc7d0ae4677ab7490fc2a25e727df8fbc0b2947c50bccd57bff8f6d4ceca` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0004-eucharistic-ombrellino-v3-alpha.png` | `b831e0ef96e8b845498749f3a812b17ef90c9f45972550be9f79304677081a40` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v2.png` | `3215b44d265c2a2452a46285989c75c043837b2806912287bb037882199ac902` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png` | `e83d557d9c5d755f675d7cb4997d10adf44e0a8061742825e260928062f13dd9` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v2.png` | `0017169f71808e6108b7a3ff8d36d1654d3b90036b306174a1559884c7086bdf` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0002-alb-v3-alpha.png` | `8303523bf3c106e3f8c7f75e8d4950e8b39d5cd59ca4af6df1fc33755ee5d959` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v2.png` | `7c429d9cf7effa8e31a7e9f65e4a2944341e864bfe8c2557694e709f2ab51b75` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0003-cincture-v3-alpha.png` | `370c3b4942d805345dbcaefea85dd18dc4f7cdbf592244e0f8391d11d09018ce` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v2.png` | `d7cd099e4ab1ccb38b3b7d5e19451178e6bb900fe04303eef70c091b0b816286` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v3-alpha.png` | `47cf77323f3a1548f2b5556894fbdb7834c42cfbce5f8c7b018d629ed4b87724` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v2.png` | `191d0cb33b7a54dceb9bff71265805bfec843bb24cd5adeebe3d34b945df500a` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0005-priest-stole-v3-alpha.png` | `a7746371bc7efc66d44bcf3bdae30cbb4f0494070ebfeaa7795a3d979a3de467` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v2.png` | `b2dea2cca53cd0f20bfed32b88ca5f762a9216fa5cc0f5250da600d85b82f6a9` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0006-chasuble-comparison-v3-alpha.png` | `8fe0eaf6ac691cf4177aa886040ac33d0463540ba57f8c91c04d8ef03c98e3c3` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v2.png` | `2732ebb2b606bd6c29356f41f2fdcf202a19eb67619a51ee24bb25e4c22abc33` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0007-deacon-stole-v4-alpha.png` | `eac7199f1433160269ec6c8daaca913ec89088b96fc569271c6e9e528b3d9b1c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v2.png` | `3fd85257e901c93f25e0b723d351498d04743d2f65a8b4f4bdd9861f0612e5a8` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0008-dalmatic-v3-alpha.png` | `9d2f860c6cc99204277e0deb721daac25f907cd652cc379098e98b9050aeb45c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v2.png` | `c2566fdc0460d058d04640be5ae17deef3a4638607fcffc1dda457b6dfcf3932` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/vestments/RPD-FIG-vestments-0009-tunicle-v3-alpha.png` | `df5e01c1a8ef2810723cb287060bc4a5e2d8f97829c4b3a59432365c918a854c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/altar-candle.toml` | `4cb01e04b6cb0debd3bc66be1d91a0ebd9e882e0ad1e516ae154c05ab37ac1b7` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/altar-candlestick.toml` | `051f0fd0c53ab7bad7f5d424a9ef7efd62c99230bfd35f459fd907c1f0060fe6` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/sanctuary-lamp.toml` | `ab4c3b195d2a9d7b774dd57a669751ea16cc9077562350fd30cd479c79983fc8` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-cruet.toml` | `b906092f443847a806c7250e17684657eb3f584450a52bd10193b57ae0986d72` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-missal.toml` | `6b329dbd26b1c224038dd2e2d2d48de799391908796c985588f59ab2319d96a8` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/book-marker.toml` | `597d423b32c42b57940f0158567fe84581622a85f4cd413e810d86c56a31194e` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/chalice.toml` | `52ac944eaf52c338f89db4b87edcebb4f792b89dbca817f21f7fff2a8e23ed35` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/epistle-book.toml` | `63907bb151364c15d68cd3a825a6f1b591bc87b7d7f8e6192afdfae72a021252` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/bishops-chair.toml` | `d09dfebb347caae2a3b7c285df13e49d624c7ddc4ec7b2ff6e144cdc2bf85693` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/communion-rail.toml` | `2ecfb5349c63edcb89f7f1245d52a8f802a3bc418427d7f40f1b3698c17871ec` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/credence-table.toml` | `38c32b1ad7f50d063e9b278963e9eb7fc688722c26a597dd9e6700132f76a65f` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/episcopal-kneeler.toml` | `8680f277b3d58ac0f1fe24162788738acf74d1d9a4ff746b7ab1fcceac5436d9` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/episcopal-throne.toml` | `f405ce0bc13b0dc1bfc208bf14985ba3df61057ab131e3cc9a69a0730175c9c3` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/faldstool.toml` | `62c701721ace07fe519bfc21e27a20f0bd3fabf6be7313e53e3b0a6b2f90eff6` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/prie-dieu.toml` | `80103746b9b89bbed61392a5a72849ff2e1fdc41d7b67de5fa30dae93057cbcc` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/sanctuary-stool.toml` | `20dd2782804d11d60b0b97c84fba3a1a205ad5d84fa7b1038798f44d5319357d` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/sedilia.toml` | `76e6532dbea063bddaaac6b14682b41ad07a715758a04d8c5cda5d66f29b1398` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/gospel-book.toml` | `a9abafdb197b39a26e996a2f608b08291313463a837040dd5804f3a4bec2b2c9` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/eucharistic-dove.toml` | `1428c1b6fa5d852e5d24e01e396e7aff62eed94f695c5463b04510d278c4bf74` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/eucharistic-tower.toml` | `710c099b9a4a1e6cbf5d9ab35d4b28bdefea2a14c56f6baec4a19564bc12ff92` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/flabellum.toml` | `e372f436c641a64151b54bc3b6ed26b290e00de0efee6631fea7a2b7a9aadf7f` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/folded-chasuble.toml` | `b80242491f9be17a3a95ccfbd63c7b3e23105a24d79b359b4ffc10cf94be272d` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/triple-candle.toml` | `e0824187121ad1808c5af9fdfe8683692b36253c9584014d8a1527c678fa5572` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/lectern.toml` | `c831a9e1c3ce0a23b04edc22a6926a8c59c84fc224ee77521a92b9245543f124` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/altar-cloths.toml` | `41d8b10cbf079e83690d38e8e1c854399e9d92aecb95d08d8f4619a9ee6deb2c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/burse.toml` | `f16bb04fff137292bc93b1587bf0abb5c6bf8c193e87828b9d8336843c89f3f1` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/chalice-pall.toml` | `fcd29fd49b9476475cf9c60b772e40a503b2c8557c521ef041ac0efee81b6b6c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/chalice-veil.toml` | `d29393c08243966d7bb87e82623dd6387eebac6a2040ae0c9fe3d589d07621ee` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/corporal.toml` | `41207128518fd91ca0e49e6cc77870a91c0ee16d1f9be9add4b57cd3d1c962a0` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/lavabo-towel.toml` | `935c7c0b3816c38c9d333e1a80a39f5c3f2b45169fc5a41e8e170c3648046fc1` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/purificator.toml` | `3b9f77b13a52f49a04577e29168dcf33ccb30549242b6e6db7e4cb2e3e0bfd66` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/missal-cushion.toml` | `eed12828aed306bee34458212f960729573e1c787a254a5a2136b6358587658f` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/missal-stand.toml` | `d9e0c45c255c055a766986e36db58b5fd32672ea8b9c55e4f86a94283e055f76` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/paten.toml` | `f91587dfe988919e4c87a4884c438a8a6e6b70131baba3ef24faf67b5969ec53` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/bugia.toml` | `bb7b159f6fd4187d71eb4032b355e13931d6373639879b38e2b439c5e0aad430` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/crosier.toml` | `d0775314820b69063100063ae9ff872fc5e0b8b7185d8550432adfbd4060a467` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/gremial.toml` | `cb35292dfff8fba836cfab84006c178e685f7ced8d5df0f1357d0d5ec29089cd` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/mitre-minister-veil.toml` | `fa1899b390f2df4c1bb434217f311792ef56de0585ef6e03f75235941e8774e1` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/mitre.toml` | `c263ce11d5e69470c028e89f9087c186a720fbd5fd5183cf9270346142eeda2c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pectoral-cross.toml` | `527fd6d888b3d1593cca1e4f0cb6abad32fa29ffdfb48f8b991e17ccc32eff49` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-buskin.toml` | `b5be3129d376e40a481c8b6eab461aefd4361bdfafb2bec335ea7fd9ebd36738` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-dalmatic.toml` | `496da5cd3f1ed9110c9e60368cf1268375e6322bbdd648489a71d44d8041726b` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-gloves.toml` | `9c80599e1a15be1af2913f2ec5f2c5804603f0c4c0f99e6fe19de87ae24ceed2` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-ring.toml` | `e52b4f2c6b8035190dc2de7f351f481ac80aebbcf03e909eec0d08c5040b2609` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-sandal.toml` | `c70c89b29495570116e7f32f8a8a0bc859209846e8c6e419ca0ad95cbf686675` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-tunicle.toml` | `749dd409fdf4716355b9bcf04bebd366d7fdf24a3134549fdc220e7b2554235e` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/vimpa.toml` | `4abc2c05779cc5c24346bff7875e13ffaf7e887ca19b086f844bcdec147539c1` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/acolyte-candlestick.toml` | `03cdedc0899a183dde99ed2ab1a1985eb09cfc1dcb7d29525ad12baa696047d3` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/aspergillum.toml` | `de862562435b91d7557b4db894b8519a3b875020097fb49bf21d3ee7770ea74e` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/basilical-conopaeum.toml` | `3c9e8e8d88473f06ffa8a2ef18c5918964ec43ef55e4e1d1bfcd532b78a1af6f` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/holy-water-vessel.toml` | `cf5aa22b284d46d4b4e85c7f1f767c0bc086db87781113e4deee217d0b9f99a4` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/incense-boat-and-spoon.toml` | `fc4d805c6f65fd81f48c3211c27f89dc5bdcd1848c038474c1736762caa20adc` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/ombrellino.toml` | `144c919ea55c93be7cc4a26d91c8268643f5d0ebdbeb6c7b7c3dbb379b6cadc8` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/processional-cross.toml` | `5a42ed415579a754c813496559f0bbcc9ce9ece7d434016acd35968bb329c068` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/thurible.toml` | `0948eef919648ff848bcb067ec19396ac1a8897a54651637c241715271784980` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/torch.toml` | `3cb3c61ddda60e2abe0e29a22c4f1dad063ada38ead40a9a7d1bce9344d1b9e3` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/piscina-sacrarium.toml` | `68cba9486c1b3fe119218eee0cc410ae7b730a7a36d18280b15b290a480c8c15` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-bell.toml` | `26a2cc0d04a69b6a9d6a4a086b549dda8f7a9e92eeb53fdc1674fb59480d5982` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-cross.toml` | `81ad27f830bb54624aa697bdea74bf2be001c47b88ff3b36c8c81e4abcb91636` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-lavatory.toml` | `92f2063aa486996ea332715f883ed6af2bf5b9e55a43e306acb8b94a117a4a5a` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy.toml` | `38c4141fcfe1b88521b4b7af35329d2cd887acbb826bc0980c0229135079f858` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/vesting-table.toml` | `4533d959786a3a784ec657b862a4536a3af260e09118213f11d948d36ca3e00e` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/vestment-case.toml` | `96add00473157c64fb103c7bc40894a5b71aad6d7a97e708ac93e052b4bc4ce5` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/altar-bells.toml` | `41a176e260f2badb8f296326fd8ef3bcc146bd1cbaa023dfc04f536367bf0c92` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/candle-lighter-extinguisher.toml` | `d21dc7b4f1ab6506b6432444671093cccbc40e6ea6580afa3ddd8c140667f609` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/communion-plate.toml` | `32b54d3dd86ae9648bf27b8488f6b1d076e604aee7429bc2063c26a1f24b4457` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/lavabo-basin.toml` | `c6d9b015541eeba7c33f671ab906a76bb3e56fc9b757e0e1943d791500c1d34c` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/alb.toml` | `3add6a50bfbb983f1bc1710f3944722d9f5e914e1d2a1e7f7456076790e43a9a` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/amice.toml` | `b1509fffe1bcabc488dcec5d5fe1f218944aace6ead86e2127cc97c66de6d6de` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/chasuble.toml` | `7146b598178a3eaf8af6818835fc9cb714aa011d314fabb6901b7387db202378` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/cincture.toml` | `e363f75fe9028238f911045198bcaf5fa9046724c601bd7268741490c2380c0f` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/dalmatic.toml` | `1681c53cb81d7b533da41369d325ba01e31d554c6eeb04d6e6aabc13eafdfd94` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/deacon-stole.toml` | `e67fce6284b199e1744d52523d1ead59cbed365296aa49d1ad9d88bde0a4af04` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/maniple.toml` | `f2f451ddc7c0b7a5bc01751411f99816818a58d6f7ff5ef58bc1221054c6a0ce` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/priest-stole.toml` | `5c3f574d850498a159c6f6d3909ec821194983227fae0d2ab316091f05667dec` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/tunicle.toml` | `c5783b74f453bf7206f001f79c4a30a2c2b5a46e0f14307340267843d1027520` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `4d97a8a50671d69dac75bd40ba84646439bbc3c9426db541f17b63002e0a204e` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `5142fc621475233a8843f98ca10e49e22bc63adc6cd001044335b5f9e1634482` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `6b86977adffdece0e49c43803db515040f30e115d68ba382d8e9658b14fc3569` |
@@ -1676,15 +1919,15 @@ actions.
 | `web/claude/articles/faith/freemasonry-and-the-catholic-church.md` | `c3209a70bd5ca9861317d18e78ea384bb2f878cf7783d0bf1190cbf66756307e` |
 | `web/claude/articles/faith/in-defense-of-the-particular.md` | `36b4ecc1b778b1d07ca911930f1e8377823f9103646285ba3f5e1940868bb364` |
 | `web/claude/articles/faith/ontological-vertigo.md` | `34006bb71b5da828c64d7645c896634ee8df1bf1b15b4a750ef68a7c0d4b7106` |
-| `web/claude/articles/faith/the-due-return.md` | `6ba42a12d86de063d752b925ada7a5edf342c1b16312e899fbc439081e15b3c7` |
+| `web/claude/articles/faith/the-due-return.md` | `c22db1b7a4d57b554319bfcfe019497bb6e192bf98ff36ea8df6c55a3ca31cd0` |
 | `web/claude/articles/faith/trustful-surrender-to-divine-providence.md` | `229e5830a905394e1ba48711bd6b0d887867c7e98145400956ec2748c53a4421` |
-| `web/claude/articles/scripture/abraham-and-the-daylight-stars.md` | `9169b5b39a9b07dcd8f64dc03fb179a66f2b4c09ae79cead0eee7cfdfd7a5320` |
+| `web/claude/articles/scripture/abraham-and-the-daylight-stars.md` | `94b5d919ba50cef80f9fe83a6e745bd32d7dbbe983bebb11787763987f1dc6c9` |
 | `web/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.md` | `efebdb9ee5828c6fe0a0287ab3ca44a0f3d8d9e757736281109496d59786b9a7` |
 | `web/claude/biographies/origen.md` | `6976caa1f154597f48b51ec437a986e8b01f73eb80312ff65f1feff6107b9208` |
 | `web/claude/biographies/saint-augustine-of-hippo.md` | `77bd31ce42536c9b6b368710976141f652da245a1ec77d843f6258d6205ec94c` |
 | `web/claude/biographies/saint-jerome.md` | `cbe7ce6554b37bf6cf0b87e10cdf8ccfb114ccc87acba06ee58ba7b4c33e1bce` |
 | `web/claude/biographies/saint-paul.md` | `e73cce582f7ccbbd061cd725de5967fcde7e1ff20eba26eafce7b1355b3acf88` |
-| `web/claude/biographies/saint-peter.md` | `7b995bfb75d69908e2af50daf7e308ac921706f1c9172c0c00ffb1ac37520185` |
+| `web/claude/biographies/saint-peter.md` | `5b75482f0c7696b427d73ea15e60e33c6915a33c050bacd709267153d33482fd` |
 | `web/claude/biographies/saint-robert-bellarmine.md` | `ea642251b8f9538e2ee8f24847d7cf5e20a84bc81ca0d614ac0a43fa823e8d55` |
 | `web/claude/biographies/saint-thomas-aquinas.md` | `cf877d248ebf7c859b6a4a4238105c49241afa66ecba23616a9e4ec3ca946471` |
 | `web/claude/biographies/tertullian.md` | `15fbd70ab54b1c103626e0c87507d3969e6c2c9f336e2d2fc2ac13af905183b7` |
@@ -1704,9 +1947,9 @@ actions.
 | `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md` | `d8f45ebe303a1713bd491c3a7d650ee64aec6dc13fa1db478cd0eba6ac80d6c9` |
 | `web/claude/theology/mariology/champion.md` | `61dbc3bf40ba24f01ed1363085ff46e6615fcbff50491a8217261c891bcb1ada` |
 | `web/claude/theology/mariology/fatima.md` | `89756c13f8c859f8c9fee967a8d945eef808d21e23e53cc02e79b920d78b7014` |
-| `web/claude/theology/mariology/guadalupe.md` | `5f0a11b0dbe4b158ae2b141d75d873693a69c6df9909148a021cfa5e42968315` |
+| `web/claude/theology/mariology/guadalupe.md` | `c78465f9909b9be59bdd83c02545169660c4f86dc7eb57227a44ec2be9286094` |
 | `web/claude/theology/mariology/la-salette.md` | `cb1c985a621f0c3b1b74bab096bf63af2b0254d1cac0eaf19aaf049cf7ac9c0c` |
-| `web/claude/theology/mariology/lourdes.md` | `00ed2f591f0b29343c8bd68aabd773e24c405597717cfdb21f449d5f9463b371` |
+| `web/claude/theology/mariology/lourdes.md` | `8436023bb8b793956c686d9613479a84cace05934b105947dd359c61a361082a` |
 | `web/claude/theology/mariology/marian-dogmas.md` | `fa551c04981d0a1272cccfc51c711dc6557ba0224ba0b22c04e1cd821184b187` |
 | `web/claude/theology/mariology/rosary.md` | `c9c40a1d71d0895bf47e14c407cf41f922773daecf06bb63d5b8cd04dc6d22b4` |
 | `web/gpt/articles/canon-law/natural-positive-divine-human-law.md` | `4e5c1e4355dfeee8e615fdcb3f761e09225f3017a7c18eaa894bffe47a9c7f09` |
@@ -1721,9 +1964,9 @@ actions.
 | `web/gpt/articles/faith/last-supper-calvary-and-the-mass.md` | `24b3c3f81a77641a4fa3518965dc77676048c4f8146bc0ff0fa57676a394bd9b` |
 | `web/gpt/articles/faith/ontological-vertigo.md` | `706e78c5031aa5a13391a8cb9914e8cfe8a8636023f466e2a2e7742a3153db4b` |
 | `web/gpt/articles/faith/the-due-return.md` | `9ea96ef7f0c43e5f455c85165d117379ace1c3c28c2b14d8a05bd1bda4d1cdbc` |
-| `web/gpt/articles/scripture/abraham-and-the-daylight-stars.md` | `605763383eadcafe330c7e7755ae7b9dee9028e6d3940bb681ed91e73f0b6298` |
-| `web/gpt/articles/scripture/john-6-bread-from-heaven.md` | `3ac7257182d6c0a8236312ed772205527611ae9bdce8b94d7ecd765843a93efe` |
-| `web/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.md` | `1795eb3af9d7b508f65cc8ca6da53a388d31b710a7aa16e237893d11c89c2d96` |
+| `web/gpt/articles/scripture/abraham-and-the-daylight-stars.md` | `c6eec028b74456d81e5350081b9224a24fb3a2d23a982a7d4a2f398d3bf02b5b` |
+| `web/gpt/articles/scripture/john-6-bread-from-heaven.md` | `851f076258e664d83bdb0fdc12f37d9052a40e95fa85aeb80c12f170eb03edf0` |
+| `web/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.md` | `042395f9b5927b6645d3e534932a0aa2b8e0d42e2f99e286f229f6b467aaa5a8` |
 | `web/gpt/biographies/origen.md` | `c27f178c1cee25714f40c1920ad9730fbddbeb49bbdef7eaee3f3b243f342702` |
 | `web/gpt/biographies/saint-augustine-of-hippo.md` | `137ac4b608ec4fa8b962b8ac033cf3aedf3725bdf858d0de7338d7783cc617aa` |
 | `web/gpt/biographies/saint-jerome.md` | `062d0ad9b5cf2be40c77ea61ddcacfc843a251e5fe44c5292a2bd7d0b81c77dc` |
@@ -1733,16 +1976,16 @@ actions.
 | `web/gpt/biographies/saint-thomas-aquinas.md` | `36efeddc6caa9e8dda22cf26c9627944b2a692188c87ee4573599f8b77552588` |
 | `web/gpt/biographies/tertullian.md` | `e14d224db78325d08061bbd4fee7adaa3efddce4da3cf0e47d52cd313ad3bdb1` |
 | `web/gpt/history/biblical-translations/02-vulgate.md` | `0f47a936c8a53be0db3468fdfa477c55e9e982c8f57a96ae08a06c3898e63246` |
-| `web/gpt/history/catholic-exorcism/01-history-and-current-practice.md` | `48f4963ad86240e3460d8b47d612d146b127d45e27e877c99f49f730ffe527e1` |
+| `web/gpt/history/catholic-exorcism/01-history-and-current-practice.md` | `aefb8ca6b0a8c7694a388c108467f05e6ff7187deed344f40d57b55be0e9acad` |
 | `web/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.md` | `d75e13857923e3eec240d36db1fe0b77a53f35cd63246bd200b080ec802d2a64` |
 | `web/gpt/history/catholic-parish-histories/02-st-anthony-willits.md` | `4bbc8678d2b5e81056049ecdd07695095255d889701d6db2774dc4840e5d82d4` |
 | `web/gpt/history/traditional-priestly-institutes/02-fssp.md` | `32534cc3605da1384c7f1e193b1064f7f7f245f51a9954dcfbd77af627373649` |
 | `web/gpt/history/traditional-priestly-institutes/03-icksp.md` | `85aa787a2929bda593793752f146ae51bad33cb1e419871a986d926c5dd8d4e9` |
-| `web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md` | `8348ade723b5c72a7e2bd4a98ebbbbf63d1cff04612787010f59ce3b3539e248` |
+| `web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md` | `2d001533d4dbeb1696576f438132a42af02804fa831398fcf02de0cd7b4645ce` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.md` | `8816abece2f80406df093c52b33ee529d69e3d131182d4986b4f373c6caada4a` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.md` | `f464af9245a3e3ba28c226f8ba19155240ce146066041bc657ccce7b1e8bd2e1` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `40e0d1892931e29c893c791940636419deeb8668428bd6471a0076c02073a214` |
-| `web/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.md` | `e221710e5b2f9cd292c89be69f2be6d2dce10ac5bff07a78b37eee2336fb3a6e` |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.md` | `cd88ddb9aff2e0390cd87de50c6d211adac00ef7e4d15e000bcef12e404d9cd6` |
 | `web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `581cb867f547ffca464e45d99f5edf7e3025987e8a9dd2f64c22fdb8887e4a05` |
 | `web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `22e0acddf4792b7998b1701384cfdd5c3c806c2de0332ea9d10579f57e4bdebd` |
 | `web/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md` | `ed93576b582a949800b19e1755f1ce23a8a3bc159044c92e8917ba2cd76ae83a` |
@@ -1753,9 +1996,9 @@ actions.
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a.md` | `3493c6759bd430280544ca190ce30fc4fba8e2d5ef815a1a29c0a37ba29a9584` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md` | `68829ecac2123512a925a162ec5357a44b61e5a5dfa05ea498cccf1e575cb949` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md` | `0d071ac2acba018e5615b0fc20e0f41f8223ed536642e0e62a8c5bf7bade6a36` |
-| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a.md` | `f3cbd18207106d9a20dbcdabe788c7e50676fe387371d95cc4fcfbc452b30325` |
-| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b.md` | `800b8b232da84d18087d21dbeb10c116219793715503728d62d0310e5b05d503` |
-| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c.md` | `b56d83fb7bf1e3b265b1ff7248faa9157e27443f5debaf3ef397cf7a542ddf4f` |
+| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a.md` | `85125eabc696d16ff701408355ef2f09d48939dda62da0c9da6107d59d68edcf` |
+| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b.md` | `92adfc91c710f18b53459aadbe3b43aacaa10b9901d22f43f32113741a2b012c` |
+| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c.md` | `d2f955d00a1ac9da3d96d28fabf61cd6a4e72c5cdb3674b013fdb419428df524` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md` | `e3659c8e7dee98b020904ef239ec5f5affc0c4b3f15e46dd7a6fd45321bd5516` |
 | `web/gpt/theology/heresies/heresies-in-catholic-history.md` | `57c3c56080c782580494d6ff76f51250e707e38f083cee6c00060862ee0acf98` |
 | `web/gpt/theology/mariology/angelus.md` | `c96fff0e88f606528128d0753e31c2f439d77b6957ac2d789f5627e4bab31a5c` |

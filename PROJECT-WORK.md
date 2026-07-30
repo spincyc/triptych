@@ -99,12 +99,12 @@ The restarting agent must then:
    `origin/main`, and preserve unrelated changes.
 2. Confirm that `f6e9d2e2` is contained by `main`. If it is not, stop content
    work and report that integration remains open.
-3. Run `scripts/check-promised-deliverables`, `make check`, `make
+3. Run `tools/tpt check-promised-deliverables`, `make check`, `make
    check-staleness`, and `make check-source-family-screening`. The latter two
    are expected to fail until their recorded backlogs are actually closed;
    record changed counts rather than concealing the failures.
-4. Build and verify the public artifact with `scripts/public-alpha check`,
-   `scripts/public-alpha build`, and `scripts/public-alpha verify
+4. Build and verify the public artifact with `tools/tpt public-alpha check`,
+   `tools/tpt public-alpha build`, and `tools/tpt public-alpha verify
    --deployment-target github-pages`; separately verify the live production
    routes after Pages completes.
 5. Resume in this order unless the maintainer gives a new priority:
