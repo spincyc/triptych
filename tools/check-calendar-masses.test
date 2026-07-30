@@ -269,6 +269,154 @@ case "$out" in
 *) echo "expected 3 propers across forms, got: $out" >&2; exit 1 ;;
 esac
 
+# A sanctoral entry is placed by civil date, with a kind and the printed rank.
+{
+	header
+	cat <<'YAML'
+  - key: assumptione-beatae-mariae-virginis
+    name: In Assumptione Beatae Mariae Virginis
+    registry: "1962-08-15"
+    date: "08-15"
+    rank: I
+    kind: marian
+    propers:
+      - {name: Introit, source: scripture, verses: ["Revelation 12:1"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+encode
+"$tool" --root src/sources/calendars >/dev/null
+
+# Carrying both a season and a date is rejected, as is carrying neither.
+{
+	header
+	cat <<'YAML'
+  - key: both-placements
+    name: Both Placements
+    registry: "1962-08-15"
+    date: "08-15"
+    rank: I
+    kind: marian
+    season: advent
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an entry with both season and date" >&2
+	exit 1
+fi
+
+{
+	header
+	cat <<'YAML'
+  - key: no-placement
+    name: No Placement
+    registry: "01"
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an entry with neither season nor date" >&2
+	exit 1
+fi
+
+# An impossible date is rejected; February 29 is allowed.
+{
+	header
+	cat <<'YAML'
+  - key: bad-date
+    name: Bad Date
+    registry: "1962-02-30"
+    date: "02-30"
+    rank: III
+    kind: saints
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for February 30" >&2
+	exit 1
+fi
+
+{
+	header
+	cat <<'YAML'
+  - key: leap-day
+    name: Leap Day
+    registry: "1962-02-29"
+    date: "02-29"
+    rank: III
+    kind: saints
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+encode
+"$tool" --root src/sources/calendars >/dev/null
+
+# An unquoted date, which YAML would not read as MM-DD, is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: unquoted-date
+    name: Unquoted Date
+    registry: "1962-08-15"
+    date: 08-15
+    rank: I
+    kind: marian
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an unquoted date" >&2
+	exit 1
+fi
+
+# A dated entry with an unknown kind, or with no rank, is rejected.
+{
+	header
+	cat <<'YAML'
+  - key: bad-kind
+    name: Bad Kind
+    registry: "1962-08-15"
+    date: "08-15"
+    rank: I
+    kind: nonesuch
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for an unknown kind" >&2
+	exit 1
+fi
+
+{
+	header
+	cat <<'YAML'
+  - key: no-rank
+    name: No Rank
+    registry: "1962-08-15"
+    date: "08-15"
+    kind: marian
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+} >src/sources/calendars/test/sundays.yaml
+encode
+if "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a dated entry with no rank" >&2
+	exit 1
+fi
+
 # A wrong schema value is rejected.
 cat >src/sources/calendars/test/sundays.yaml <<'YAML'
 schema: something-else/v9

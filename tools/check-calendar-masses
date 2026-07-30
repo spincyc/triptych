@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -28,10 +29,13 @@ REQUIRED_HEADER = (
     "series",
     "verification",
 )
-ENTRY_REQUIRED = ("key", "name", "registry", "season")
+ENTRY_REQUIRED = ("key", "name", "registry")
 SOURCES = ("scripture", "composed", "mixed")
 CYCLES = ("A", "B", "C")
+KINDS = ("marian", "christological", "saints", "temporal")
 KEY_CHARS = set("abcdefghijklmnopqrstuvwxyz0123456789-")
+DAYS_IN_MONTH = (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+DATE_RE = re.compile(r"^(\d{2})-(\d{2})$")
 
 
 def check_proper(where: str, proper: object, problems: list[str]) -> None:
@@ -102,6 +106,22 @@ def check_verses(where: str, verses: object, problems: list[str]) -> None:
         problems.append(f"{where}: verses must be a nonempty list")
 
 
+def check_date(where: str, value: object, problems: list[str]) -> None:
+    """A sanctoral date is a quoted MM-DD; February allows the 29th."""
+    if not isinstance(value, str):
+        problems.append(f"{where}: date must be a quoted MM-DD string, got {value!r}")
+        return
+    found = DATE_RE.match(value)
+    if not found:
+        problems.append(f"{where}: date must read MM-DD, got {value!r}")
+        return
+    month, day = int(found.group(1)), int(found.group(2))
+    if not 1 <= month <= 12:
+        problems.append(f"{where}: month out of range in {value!r}")
+    elif not 1 <= day <= DAYS_IN_MONTH[month - 1]:
+        problems.append(f"{where}: day out of range in {value!r}")
+
+
 def check_entry(entry: object, index: int, problems: list[str]) -> str | None:
     where = f"mass[{index}]"
     if not isinstance(entry, dict):
@@ -120,6 +140,18 @@ def check_entry(entry: object, index: int, problems: list[str]) -> str | None:
     registry = entry.get("registry")
     if registry is not None and not isinstance(registry, str):
         problems.append(f"{where}: registry must be a quoted string, got {registry!r}")
+    # A temporal entry is placed by season, a sanctoral one by civil date.
+    has_season = "season" in entry
+    has_date = "date" in entry
+    if has_season == has_date:
+        problems.append(f"{where}: exactly one of season or date is required")
+    if has_date:
+        check_date(where, entry["date"], problems)
+        kind = entry.get("kind")
+        if kind not in KINDS:
+            problems.append(f"{where}: kind must be one of {KINDS}, got {kind!r}")
+        if not entry.get("rank"):
+            problems.append(f"{where}: a dated entry needs the edition's printed rank")
     has_propers = "propers" in entry
     has_forms = "forms" in entry
     if has_propers == has_forms:
