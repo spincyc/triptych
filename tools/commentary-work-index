@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
-import datetime as dt
+import hashlib
 import sys
 from collections import defaultdict
 from importlib.machinery import SourceFileLoader
@@ -241,6 +241,14 @@ def _sort_works(works: list[dict[str, Any]]) -> list[dict[str, Any]]:
     )
 
 
+def _file_sha256(path: Path) -> str:
+    """Exact provenance for the corpus: which index produced it."""
+    try:
+        return "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
+    except OSError:
+        return ""
+
+
 def _load_discovery(path: Path) -> dict[str, list[dict[str, Any]]]:
     data = _load_yaml(path)
     if not data:
@@ -338,21 +346,36 @@ def _passage_records_from_proper(citations, proper: dict[str, Any]) -> list[tupl
     return out
 
 
-def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list[dict[str, Any]]:
-    masses = doc.get("masses")
-    if not isinstance(masses, list):
-        return []
+def _iter_calendar_masses(doc: dict[str, Any]):
+    """Yield (mass, section_kind) from both containers a calendar uses.
 
+    Fixed-date feasts sit in the top-level ``masses`` list; the sanctoral and
+    seasonal cycles sit under ``sections``, keyed by kind. Reading only the
+    first silently skips every mass that carries scripture.
+    """
+    for entry in doc.get("masses") or []:
+        if isinstance(entry, dict):
+            yield entry, ""
+    sections = doc.get("sections")
+    if isinstance(sections, dict):
+        for _, body in sorted(sections.items()):
+            if not isinstance(body, dict):
+                continue
+            section_kind = _coerce_str(body.get("kind"))
+            for entry in body.get("masses") or []:
+                if isinstance(entry, dict):
+                    yield entry, section_kind
+
+
+def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list[dict[str, Any]]:
     entries: list[dict[str, Any]] = []
 
-    for entry in masses:
-        if not isinstance(entry, dict):
-            continue
+    for entry, section_kind in _iter_calendar_masses(doc):
         mass_key = _coerce_str(entry.get("key") or entry.get("slug") or "")
         mass_name = _coerce_str(entry.get("name"))
         if not mass_key:
             continue
-        mass_kind = _coerce_str(entry.get("kind"))
+        mass_kind = _coerce_str(entry.get("kind")) or section_kind
         date = _coerce_str(entry.get("date") or entry.get("season"))
 
         # Top-level propers.
@@ -677,7 +700,7 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     payload = {
         "schema": SCHEMA_CORPUS,
         "status": "ok",
-        "generated": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+        "discovery_sha256": _file_sha256(Path(args.discovery)),
         "max_results_per_passage": args.max_results_per_passage,
         "max_results_per_mass": args.max_results_per_mass,
         "mass_count": len(masses_payload),
