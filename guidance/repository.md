@@ -133,25 +133,23 @@ Every publication retains the common rights notice as a compact final-page colop
 
 ## Tool registry
 
-Repository tools are indexed in `tmt.json` and invoked as `tools/tpt <id>`.
-Before writing a script, read the registry and prefer a listed tool
-(`tools/tpt <id> --help`) over re-deriving its logic. `make check` runs
-`tmt check`, which must stay green; it is skipped, not failed, where `tmt`
-is not installed.
+`tmt.json` indexes the repository's tools; each implementation is an
+executable script at `tools/lib/<id>`. Invoke one as `tools/tpt <id> [args]`.
+`tpt list`, `tpt tools info <id>`, `tpt path <id>`, and `tpt help <id>`
+discover them; the first three take `--json`. The Makefile and Pages workflow
+call tools through `tools/tpt`; `tools/tests/` and the release hash records
+pin `tools/lib/<id>` directly, because both need the implementation rather
+than the launcher.
 
-Implementations live in `tools/lib/`, and `tpt` dispatches tool ids from
-the registry to that implementation path. The Makefile, Pages workflow, tests,
-and release records invoke tools through `tools/tpt` by default.
-Register a new tool with `tmt new <id>` and add the implementation under
-`tools/lib/` as part of the tool definition update.
+Register a new tool with `tmt new <id>`, move the scaffolded script to
+`tools/lib/<id>`, keep it executable, and add its test under `tools/tests/`.
+A registry id must not match a `tpt` verb, and must differ from its script's
+basename where that basename would collide with a publication slug or record
+name: `tmt check` reads any standalone occurrence of a registered id in a
+tool body, path strings included, as a `requires` edge.
 
-A registry id may differ from its script's basename, and must where the
-basename collides with a publication slug or record name. `tmt check` treats
-any standalone occurrence of a registered id in a tool body — including
-inside path strings — as a declared dependency, so a tool named after the
-publication it renders produces false edges and can force a `requires`
-cycle. `render-sanctuary-dictionary` carries a distinct id for exactly this
-reason, pointing at `tools/lib/roman-sanctuary-dictionary`.
+`make check` runs `tmt check`, which must stay green; it is skipped, not
+failed, where `tmt` is not installed.
 
 ## Build and review contract
 
