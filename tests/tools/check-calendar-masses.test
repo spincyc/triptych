@@ -31,7 +31,11 @@ registry: test registry
 citation_convention: test convention
 orthography: test orthography
 verification: unverified test fixture
-masses:
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
 YAML
 }
 
@@ -429,7 +433,11 @@ registry: test registry
 citation_convention: test convention
 orthography: test orthography
 verification: unverified test fixture
-masses:
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
   - key: only
     name: Only
     registry: "01"

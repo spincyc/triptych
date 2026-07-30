@@ -2,8 +2,10 @@
 
 Normalized YAML indexes of Roman-rite mass formularies and their ordered
 propers, one directory per calendar and one file per deterministic series.
-For sanctoral propers, each calendar now uses one `propers.yaml` with
-separate, labeled sections (`marian`, `christological`, and `saintly`).
+Each calendar has one `propers.yaml` whose `sections` map is the single
+canonical mass list, labeled by kind (`christological`, `marian`, `saintly`,
+`seasonal`). There is no other copy: a top-level `masses` key duplicates the
+list and `check-calendar-masses` rejects it.
 `guidance/sources.md` owns the contract; this file records what is here and how
 to read it.
 
@@ -30,8 +32,10 @@ collation, not by harmonizing the file into false uniformity.
 
 ## Entry shape
 
-Each file is a mapping with an identifying header and a `masses` list in the
-series' declared order.
+Each file is a mapping with an identifying header and a `sections` map. Each
+section carries its `kind`, a display `label`, and a `masses` list: dated
+masses in civil date order within their kind, seasonal masses in
+liturgical-year order.
 
 ```yaml
 - key: advent-1                # kebab-case identity, stable within the file

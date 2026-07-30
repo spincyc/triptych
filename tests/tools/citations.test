@@ -93,7 +93,11 @@ registry: test registry
 citation_convention: test convention
 orthography: test orthography
 verification: unverified test fixture
-masses:
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
   - key: test-sunday
     name: Test Sunday
     registry: "01"
@@ -142,7 +146,11 @@ registry: test registry
 citation_convention: test convention
 orthography: test orthography
 verification: unverified test fixture
-masses:
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
   - key: test-sunday
     name: Test Sunday
     registry: "01"
@@ -168,7 +176,11 @@ registry: test registry
 citation_convention: test convention
 orthography: test orthography
 verification: unverified test fixture
-masses:
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
   - key: test-sunday
     name: Test Sunday
     registry: "01"
@@ -197,7 +209,11 @@ registry: test registry
 citation_convention: test convention
 orthography: test orthography
 verification: unverified test fixture
-masses:
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
   - key: test-sunday
     name: Test Sunday
     registry: "01"

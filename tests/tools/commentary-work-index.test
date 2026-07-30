@@ -169,21 +169,25 @@ mkdir -p "$sandbox/calendars/testcal"
 cat >"$sandbox/calendars/testcal/propers.yaml" <<'YAML'
 schema: triptych-calendar-masses/v1
 calendar: testcal
-masses:
-- key: test-mass
-  name: Test Mass
-  kind: temporal
-  date: 01-01
-  propers:
-  - name: Gospel
-    source: scripture
-    verses: ["John 3:16"]
-  - name: Epistle
-    source: scripture
-    verses: ["Psalm 46"]
-  - name: Placeholder
-    source: composed
-    text: not scripture, and so contributes no passage
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
+  - key: test-mass
+    name: Test Mass
+    kind: temporal
+    date: 01-01
+    propers:
+    - name: Gospel
+      source: scripture
+      verses: ["John 3:16"]
+    - name: Epistle
+      source: scripture
+      verses: ["Psalm 46"]
+    - name: Placeholder
+      source: composed
+      text: not scripture, and so contributes no passage
 YAML
 
 out="$(run_tool build-corpus \

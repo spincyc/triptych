@@ -281,20 +281,16 @@ def check_passage(where: str, passage: object, problems: list[str]) -> None:
 
 
 def iter_masses(document: dict) -> list:
-    """Masses live in two containers; `sections` supersedes and duplicates.
+    """Yield every mass from the calendar's one canonical container.
 
-    `sections` re-buckets every top-level mass by kind and adds the seasonal
-    cycle, so reading both would double-count. Falling back keeps this working
-    once the list is canonicalised to one place.
+    `sections` is the single source; the mass list is not duplicated elsewhere,
+    and the calendar-mass checker rejects a file that reintroduces one.
     """
-    sections = document.get("sections")
-    if isinstance(sections, dict) and sections:
-        out = []
-        for _, body in sorted(sections.items()):
-            if isinstance(body, dict):
-                out.extend(m for m in (body.get("masses") or []) if isinstance(m, dict))
-        return out
-    return [m for m in (document.get("masses") or []) if isinstance(m, dict)]
+    out = []
+    for _, body in sorted((document.get("sections") or {}).items()):
+        if isinstance(body, dict):
+            out.extend(m for m in (body.get("masses") or []) if isinstance(m, dict))
+    return out
 
 
 def each_proper(document: object):
