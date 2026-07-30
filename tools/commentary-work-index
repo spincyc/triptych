@@ -353,11 +353,11 @@ def _iter_calendar_masses(doc: dict[str, Any]):
     seasonal cycles sit under ``sections``, keyed by kind. Reading only the
     first silently skips every mass that carries scripture.
     """
-    for entry in doc.get("masses") or []:
-        if isinstance(entry, dict):
-            yield entry, ""
     sections = doc.get("sections")
-    if isinstance(sections, dict):
+    if isinstance(sections, dict) and sections:
+        # `sections` re-buckets every top-level mass by kind and adds the
+        # seasonal cycle, so reading both containers would count the sanctoral
+        # masses twice and double their reciprocal-rank score.
         for _, body in sorted(sections.items()):
             if not isinstance(body, dict):
                 continue
@@ -365,6 +365,10 @@ def _iter_calendar_masses(doc: dict[str, Any]):
             for entry in body.get("masses") or []:
                 if isinstance(entry, dict):
                     yield entry, section_kind
+        return
+    for entry in doc.get("masses") or []:
+        if isinstance(entry, dict):
+            yield entry, ""
 
 
 def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list[dict[str, Any]]:
