@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-07-29"
+audited_on = "2026-07-30"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 133
 source_surface_file_count = 1963
-snapshot = "sha256:d746b31d6b40931d40adfca2e359796f1bfad08e9ca6c948c720ea087005251f"
+snapshot = "sha256:96bbce70753710f5725db3b2168a83555a593192d63c4be17b7b38132e396da3"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -10080,7 +10080,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated-record-renderer.tex"
-sha256 = "75dff654c4ebc474c8f08cfefcbdd2a43a05454758b2590e9a1a56d15213833f"
+sha256 = "5e1a8afffb8dee9c39c4d317758f6a333a40eed4a6e3ebc27a6635318b7687a4"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -10560,7 +10560,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/README.md"
-sha256 = "0a69eee124f2aa035da4cc7c88321e42c9a04226873759a9384a05377fdef267"
+sha256 = "b499cc3c0e2f066f4877338b50ae48e94ef0a982ac727660bb3c40165cd4ae8c"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 

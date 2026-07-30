@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-07-29"
+audited_on = "2026-07-30"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:d746b31d6b40931d40adfca2e359796f1bfad08e9ca6c948c720ea087005251f"
+inventory_snapshot = "sha256:96bbce70753710f5725db3b2168a83555a593192d63c4be17b7b38132e396da3"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
 canonical_catalog_snapshot = "sha256:4dc4ce70afd4558894893e5bf47190acb9e3583be7b5b50239b06334271ac418"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:973741d145e60a98e10b800f26a125e1611e2916c1f012927b6227db0f97c52c"
+snapshot = "sha256:a45fe57b2fa04afac38a50168ede423d5bf19e83ffed7b68bd4155d39e3672da"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -11819,129 +11819,127 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/r
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:0a0ca604ac5bd0d21500ca5842054c5c45a04c5cff44518c60348442e53aa425"
-review_state = "family-screened"
-reviewed_on = "2026-07-29"
-family_screening_snapshot = "sha256:36ac4a7193a504f651520dc59a91bd21a601e382840b7a4df9427b5d11ec4bea"
+surface_snapshot = "sha256:b48568a904927c9847286f4c2e4e06ffab01eb8a18de3b8ba4e91c0502ed31fc"
+review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/caeremoniale-episcoporum-source-audit.md"]
 [[review_units.family_presence]]
 family_id = "family.adrian-fortescue.ceremonies-of-the-roman-rite-described"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/pontifical-insignia.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical/RPD-FIG-vimpa-0001-pair-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical/RPD-FIG-vimpa-0002-mitre-bearer-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical/RPD-FIG-vimpa-0003-crosier-bearer-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/credence-table.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/sedilia.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/vimpa.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/acolyte-candlestick.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/aspergillum.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/holy-water-vessel.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/processional-cross.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/torch.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-bell.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-cross.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/alb.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/amice.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/chasuble.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/cincture.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/dalmatic.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/deacon-stole.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/maniple.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/priest-stole.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/tunicle.toml"]
 [[review_units.family_presence]]
 family_id = "family.benziger-brothers.catalogue-of-vestments-banners-and-regalia"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pontifical-insignia/RPD-FIG-pontifical-0101-episcopal-gloves-pair-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pontifical-insignia/RPD-FIG-pontifical-0102-episcopal-ring-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pontifical-insignia/RPD-FIG-pontifical-0103-ring-over-right-glove-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-gloves.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-ring.toml"]
 [[review_units.family_presence]]
 family_id = "family.benziger-brothers.church-goods-catalogue"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/thurible.toml"]
 [[review_units.family_presence]]
 family_id = "family.catholic-church.caeremoniale-episcoporum"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/books-and-book-supports-source-pass.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/books-and-supports-priestly-review.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/caeremoniale-episcoporum-source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/edition-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/pontifical-ceremony-candidate-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/pontifical-priest-review.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/bugia-hand-candlestick-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/lighting-bells-priestly-review-2026-07-27.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/mitre-forms-and-handling-artwork-review-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/pontifical-seating-isolated-artwork-review-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/furnishings-priest-review.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/pontifical-insignia.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-pontifical-seating-0001-episcopal-throne-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-pontifical-seating-0002-covered-faldstool-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-0001-three-mitre-forms-v1-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-0002-mitre-lappets-handling-v1-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-0002-mitre-minister-veil-v2-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-insignia-0001-crosier-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-insignia-0003-gremial-handling-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-objects/RPD-FIG-pontifical-0002-watterson-bugia-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vestments/RPD-FIG-pontifical-vestments-0001-layering-cutaway-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vesture/RPD-FIG-pontifical-vesture-0001-buskin-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vesture/RPD-FIG-pontifical-vesture-0002-sandal-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vesture/RPD-FIG-pontifical-vesture-0003-layered-right-left-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical/RPD-FIG-vimpa-0002-mitre-bearer-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical/RPD-FIG-vimpa-0003-crosier-bearer-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pontifical-insignia/RPD-FIG-pontifical-0101-episcopal-gloves-pair-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pontifical-insignia/RPD-FIG-pontifical-0102-episcopal-ring-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pontifical-insignia/RPD-FIG-pontifical-0103-ring-over-right-glove-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/altar-candle.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/altar-candlestick.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/sanctuary-lamp.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/episcopal-kneeler.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/episcopal-throne.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/faldstool.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/prie-dieu.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/sanctuary-stool.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/bugia.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/crosier.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/gremial.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/mitre-minister-veil.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/mitre.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-buskin.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-dalmatic.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-gloves.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-ring.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-sandal.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-tunicle.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/vimpa.toml"]
 [[review_units.family_presence]]
 family_id = "family.catholic-church.rituale-romanum"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/books-and-supports-priestly-review.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/edition-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/ombrellino-taxonomy-and-artwork-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/communion-reservation-artwork-review-2026-07-27.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/communion-reservation.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/ombrellino.toml"]
 [[review_units.family_presence]]
 family_id = "family.catholic-church.rubricae-breviarii-et-missalis-romani"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/caeremoniale-episcoporum-source-audit.md"]
 [[review_units.family_presence]]
 family_id = "family.catholic-encyclopedia.new-york-1907-1912"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/credence-sedilia-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/historical-pre-1962-inventory.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/lavabo-basin-manuterge-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/linen-inventory-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/ombrellino-taxonomy-and-artwork-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/sacristy-recognition-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/historical-pre-1962.tex", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/credence-table.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/sedilia.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/eucharistic-dove.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/eucharistic-tower.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/flabellum.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/folded-chasuble.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/historical/triple-candle.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/lavabo-towel.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/ombrellino.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/piscina-sacrarium.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-bell.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-cross.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-lavatory.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/vestment-case.toml"]
 [[review_units.family_presence]]
 family_id = "family.catholic-encyclopedia.volume-9"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/lavabo-towel.toml"]
 [[review_units.family_presence]]
 family_id = "family.gorham-manufacturing-company.ecclesiastical-department"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-cruet.toml"]
 [[review_units.family_presence]]
 family_id = "family.holy-see.cdf-norms-apparitions-1978"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/edition-manifest.md"]
 [[review_units.family_presence]]
 family_id = "family.holy-see.cic-1917"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/altar-sanctuary-composition.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/communion-reservation.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/sanctuary-lamp.toml"]
 [[review_units.family_presence]]
 family_id = "family.joseph-braun.handbuch-der-paramentik"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-insignia-0002-gremial-isolated-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-insignia-0003-gremial-handling-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/gremial.toml"]
 [[review_units.family_presence]]
 family_id = "family.library-of-congress.roman-catholic-cathedral-of-baltimore-archbishops-throne"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-pontifical-seating-0001-episcopal-throne-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/episcopal-throne.toml"]
 [[review_units.family_presence]]
 family_id = "family.maximilian775.bishop-watterson-bugia-photograph"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/bugia-hand-candlestick-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-objects/RPD-FIG-pontifical-0002-watterson-bugia-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/bugia.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.censer-464340"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/thurible.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.chalice-and-paten-463080"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/chalice.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/paten.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-insignia-0001-crosier-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/crosier.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.cruet-467483"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-cruet.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.faldstool-193332"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-pontifical-seating-0002-covered-faldstool-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/faldstool.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.incense-boat-and-spoon-236950"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/incense-boat-and-spoon.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.lavabo-basin-188520"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/lavabo-basin.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.mitre-227306"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-0001-three-mitre-forms-v1-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-0002-mitre-lappets-handling-v1-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-insignia/RPD-FIG-pontifical-0002-mitre-minister-veil-v2-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/mitre.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.pair-of-altar-cruets-200141"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-cruet.toml"]
 [[review_units.family_presence]]
 family_id = "family.metropolitan-museum-of-art.pectoral-cross-810813"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-objects/RPD-FIG-pontifical-0001-pectoral-cross-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pectoral-cross.toml"]
 [[review_units.family_presence]]
 family_id = "family.r-and-k-wood.catholic-picture-dictionary-buskins-illustration"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vesture/RPD-FIG-pontifical-vesture-0001-buskin-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vesture/RPD-FIG-pontifical-vesture-0003-layered-right-left-alpha.toml"]
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/altar-cloths-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/books-and-book-supports-source-pass.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/books-and-supports-priestly-review.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/caeremoniale-episcoporum-source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/carried-lights-and-cross-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/chalice-paten-cross-edition-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/chalice-paten-isolated-artwork-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/communion-plate-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/credence-sedilia-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/edition-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/epistle-gospel-isolated-artwork-review-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/holy-water-pair-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/incense-boat-and-spoon-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/lavabo-basin-manuterge-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/lavabo-isolated-artwork-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/linen-inventory-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/linen-priestly-review.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/paten-comparison-source-audit-2026-07-27.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/plate-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/prepared-chalice-formation-artwork-review-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/priestly-vestments-alpha-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/production-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/communion-reservation-artwork-review-2026-07-27.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/gospel-book-ceremonial-artwork-review-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/lighting-bells-priestly-review-2026-07-27.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/paten-catalog-exemplar-artwork-review-2026-07-27.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/pontifical-tunicle-dalmatic-layering-artwork-review-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/reviews/vessels-cruets-priestly-review-2026-07-27.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/rights-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/sacred-minister-vestments-alpha-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/sacristy-lavatory-alpha-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/sacristy-recognition-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/altar-sanctuary-composition.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/communion-reservation.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/furnishings-priest-review.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/sacristy-preparation.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/thurible-source-audit-2026-07-27.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/vestments-ministers-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0006-epistle-book-in-use-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0007-gospel-book-in-use-v2-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vestments/RPD-FIG-pontifical-vestments-0001-layering-cutaway-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-cruet.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-missal.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/book-marker.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/chalice.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/epistle-book.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/credence-table.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/gospel-book.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/lectern.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/altar-cloths.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/burse.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/chalice-pall.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/chalice-veil.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/corporal.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/lavabo-towel.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/linens/purificator.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/missal-cushion.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/missal-stand.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/paten.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-dalmatic.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-tunicle.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/acolyte-candlestick.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/aspergillum.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/holy-water-vessel.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/incense-boat-and-spoon.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/thurible.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-cross.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-lavatory.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/altar-bells.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/communion-plate.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/lavabo-basin.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/alb.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/amice.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/chasuble.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/cincture.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/dalmatic.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/deacon-stole.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/maniple.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/priest-stole.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/tunicle.toml"]
 [[review_units.family_presence]]
 family_id = "family.sailko.pisa-pontifical-sandals-photograph"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vesture/RPD-FIG-pontifical-vesture-0002-sandal-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/pontifical-vesture/RPD-FIG-pontifical-vesture-0003-layered-right-left-alpha.toml", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-sandal.toml"]
 [[review_units.family_presence]]
 family_id = "family.united-states-patent-office.patent-717186"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/candle-tool-source-audit-2026-07-28.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/candle-lighter-extinguisher.toml"]
 [[review_units.family_presence]]
 family_id = "family.william-j-hirten-company.hirten-church-goods"
-basis = "reviewed"
+basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/service-objects/communion-plate.toml"]
 
 [[review_units]]
