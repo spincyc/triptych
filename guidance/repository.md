@@ -131,6 +131,29 @@ Record a local rights statement wherever Scripture, official or liturgical text,
 
 Every publication retains the common rights notice as a compact final-page colophon; it must not force a dedicated page. The colophon contains only the universal license boundary and pointers to `LICENSE` and `THIRD_PARTY.md`. A local notice may add necessary precision but may not weaken or duplicate that boundary. The Triptych name and visual identity do not convey endorsement, official status, or ecclesiastical approval to a derivative.
 
+## Tool registry
+
+Repository tools are indexed in `tmt.json` and exposed under `tools/<id>`.
+Before writing a script, read the registry and prefer a listed tool
+(`tools/<id> --help`) over re-deriving its logic. `make check` runs
+`tmt check`, which must stay green; it is skipped, not failed, where `tmt`
+is not installed.
+
+Implementations live in `scripts/`, which remains their canonical path for
+the Makefile, the Pages workflow, tests, and release records. Each
+`tools/<id>` is a symlink onto that implementation, so a tool has one
+implementation and one registered identity. Register a new tool with
+`tmt new <id>`; to register an existing script, add the symlink and its
+registry entry by hand.
+
+A registry id may differ from its script's basename, and must where the
+basename collides with a publication slug or record name. `tmt check` treats
+any standalone occurrence of a registered id in a tool body — including
+inside path strings — as a declared dependency, so a tool named after the
+publication it renders produces false edges and can force a `requires`
+cycle. `render-sanctuary-dictionary` carries a distinct id for exactly this
+reason, pointing at `scripts/roman-sanctuary-dictionary`.
+
 ## Build and review contract
 
 The normal lifecycle is:

@@ -185,7 +185,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
-	distclean check-tools check-metadata check-web-editions \
+	distclean check-tools check-tool-registry check-metadata check-web-editions \
 	check-proper-components \
 	web-editions install-web-editions check-web-editions-current \
 	check-sources check-deployment-sources check-source-library \
@@ -612,7 +612,14 @@ rebaseline-doc:
 check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
-	check-public-alpha check-release-bindings
+	check-public-alpha check-release-bindings check-tool-registry
+
+# tmt.json indexes the repo's tools; tools/<id> are symlinks onto scripts/.
+# Skipped rather than failed where tmt is not installed, so a plain clone
+# still runs `check`.
+check-tool-registry:
+	@if command -v tmt >/dev/null; then tmt check; \
+	else echo "tmt not installed; skipping tool-registry check"; fi
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s scripts/tests

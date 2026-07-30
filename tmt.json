@@ -1,0 +1,192 @@
+{
+  "tools": {
+    "artwork-library": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Normalize and validate repository-owned monochrome publishing artwork.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "artwork-library {check,normalize,identify,check-pdf} --help"
+    },
+    "check-curriculum-structure": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate the rendered hierarchy of an Ecclesiastical Latin publication.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-curriculum-structure --curriculum-root DIR [--document ID] [--pdf PDF]"
+    },
+    "check-generation-metadata": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate tracked revision timestamps and AI provenance in source and PDFs.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-generation-metadata [--provider NAME] [--pdf DOCUMENT PDF]"
+    },
+    "check-promised-deliverables": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate the tracked promised-deliverable ledger.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-promised-deliverables [--ledger PATH]"
+    },
+    "check-proper-components": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate the provider-neutral component manifest used by proper guides.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-proper-components [--provider NAME] [--document ID]"
+    },
+    "check-roman-sanctuary-artwork": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate Roman Sanctuary Dictionary artwork identity and object coverage.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-roman-sanctuary-artwork [--root DIR]"
+    },
+    "check-web-edition": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate per-leaf web-edition declarations against the documents' own sources.",
+      "requires": [
+        "web-edition"
+      ],
+      "stage": "draft",
+      "usage": "check-web-edition [--provider NAME] [--document ID] [--list-eligible]"
+    },
+    "pdf-review": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Prepare memory-bounded page rasters and contact sheets for visual PDF review.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "pdf-review [--output DIR] [--changed-from REV] [PDF ...]"
+    },
+    "public-alpha": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Inventory, validate, build, and verify Triptych's public-alpha artifact.",
+      "requires": [
+        "web-edition"
+      ],
+      "stage": "draft",
+      "usage": "public-alpha {check,prepare,build,verify} [--preview]"
+    },
+    "release-bindings": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Deterministic site-authorization and per-publication alpha bookkeeping.",
+      "requires": [
+        "public-alpha"
+      ],
+      "stage": "draft",
+      "usage": "release-bindings {refresh,status,migrate-publications,approve,add-publication}"
+    },
+    "render-sanctuary-dictionary": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Validate sanctuary dictionary fixtures and render deterministic TeX views.",
+      "requires": [
+        "public-alpha"
+      ],
+      "stage": "draft",
+      "usage": "render-sanctuary-dictionary --schema F --selections F --artwork-manifest F --records F --output F"
+    },
+    "research-staleness": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Cross-provider research staleness ledger (policy: guidance/staleness.md).",
+      "requires": [],
+      "stage": "draft",
+      "usage": "research-staleness {bootstrap,status,explain,rebaseline}"
+    },
+    "source-family-migration": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Bootstrap, refresh, and validate the reviewed source-family migration ledger.",
+      "requires": [
+        "source-inventory",
+        "source-library"
+      ],
+      "stage": "draft",
+      "usage": "source-family-migration [--root DIR] {check,bootstrap,refresh}"
+    },
+    "source-inventory": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Bootstrap, refresh, and validate Triptych's publication-source inventory.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "source-inventory [--root DIR] {check,bootstrap,classify,refresh}"
+    },
+    "source-library": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate and query Triptych's provider-neutral reusable source library.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "source-library {validate,fingerprint,uses,impact,search}"
+    },
+    "web-edition": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Convert publication leaves to Markdown web editions with installed pandoc.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "web-edition --provider NAME [--all] [--output DIR] [DOCUMENT ...]"
+    }
+  },
+  "v": 1
+}
