@@ -65,8 +65,9 @@ once at high rank — the property that matters when choosing what to acquire.
 ## Harvest contract
 
 A model-ranked list is not a measured citation count, and its variance is
-largest for exactly the passages that dominate by volume: 572 of the 1301
-distinct references are Psalms, many of them ferial antiphon fragments. The
+largest for exactly the passages that dominate by volume: 426 of the 1301
+distinct references are Psalms, and Psalms account for 572 of the 1630
+passage occurrences, many of them ferial antiphon fragments. The
 harvester therefore records what it is:
 
 - Write to a dated ledger, never straight to the index, and record the model
