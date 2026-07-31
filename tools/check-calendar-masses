@@ -58,6 +58,13 @@ PSALM_NUMBERING = {"vulgate", "hebrew"}
 # declaration while the antiphons holding them wait to be collated; the file
 # that carries one states what it is and what empties it.
 EXCEPTIONS = "psalm_numbering_exceptions"
+# A calendar's translations are recorded in a sidecar until they can move into
+# each proper, and the sidecar's own `merge` prose says its arrays "already
+# carry exactly the keys check-calendar-masses validates". Nothing checked that
+# claim, so every rule below applied to a key of `propers.yaml` that no calendar
+# yet uses while the file the site actually serves went unvalidated.
+OVERLAY_DIR = Path("src/sources/inventories")
+OVERLAY_SUFFIX = "-proper-translations-v1.toml"
 # Every psalm-bound complaint opens on the locus it refused (see
 # `_psalms.validate_psalm`), which is what the ledger is keyed by. Matching the
 # locus rather than the whole sentence keeps the ledger readable and survives a
@@ -155,20 +162,42 @@ def check_proper(where: str, proper: object, problems: list[str]) -> None:
 
 
 def check_translations(where: str, proper: dict, problems: list[str]) -> None:
-    """A translation is someone's expression; it carries its own rights basis.
-
-    Liturgical translations are not relicensed by inclusion, so each one names
-    the edition it came from and the basis on which it is carried.
-    """
+    """A proper's translations, and the Latin they answer."""
     payload = proper.get("translations")
     if payload is None:
         return
     if "text" not in proper:
         problems.append(f"{where}: translations require a text to translate")
+    check_translation_list(where, payload, problems)
+
+
+def check_translation_list(where: str, payload: object, problems: list[str]) -> None:
+    """A translation is someone's expression; it carries its own rights basis.
+
+    Liturgical translations are not relicensed by inclusion, so each one names
+    the edition it came from and the basis on which it is carried.
+
+    Two English translations of one oration are the feature and not the fault.
+    Offering a choice is only worth a control because translations differ, and
+    the difference is also the detector: the two independent transcriptions of
+    the 1861 Cummiskey missal in this repository disagreed at 45 of the 153
+    orations they share, and every one of the 38 errors the site was serving sat
+    inside those 45 — where they agreed, they were right 54 times out of 54. So
+    what must not repeat is the *witness*, not the language, and uniqueness is
+    keyed `(lang, source_id)`.
+
+    A translation carrying no `source_id` is the one case where the language
+    still stands alone, because nothing else tells two of them apart. Only a
+    `project-created` translation may omit it, so the effect is that the project
+    speaks once per language and every quoted witness speaks under its own name.
+    """
     if not isinstance(payload, list) or not payload:
         problems.append(f"{where}: translations must be a nonempty list")
         return
-    seen: list[str] = []
+    # A library that cannot be read is reported once by `run`, not once per
+    # proper: the same defect repeated 1,475 times is a defect nobody reads.
+    registered = source_ids()[0]
+    seen: set[tuple[str, str | None]] = set()
     for index, entry in enumerate(payload):
         label = f"{where}.translations[{index}]"
         if not isinstance(entry, dict):
@@ -183,15 +212,69 @@ def check_translations(where: str, proper: dict, problems: list[str]) -> None:
             problems.append(
                 f"{label}: rights must be one of {sorted(TRANSLATION_RIGHTS)}, got {rights!r}"
             )
-        if rights in {"licensed", "public-domain"} and not entry.get("source_id"):
+        source_id = entry.get("source_id")
+        if rights in {"licensed", "public-domain"} and not source_id:
             problems.append(f"{label}: {rights} translation must name its source_id")
         if rights == "licensed" and not entry.get("notice"):
             problems.append(f"{label}: licensed translation must carry its required notice")
+        if source_id is not None and not isinstance(source_id, str):
+            problems.append(f"{label}: source_id must be a string, got {source_id!r}")
+            source_id = None
+        # An id that names nothing is worse than no id at all: it reads as
+        # provenance and answers no question, and it is now load-bearing, since
+        # it is what tells two translations of one prayer apart.
+        if isinstance(source_id, str) and registered is not None:
+            if source_id not in registered:
+                problems.append(
+                    f"{label}: source_id {source_id!r} is registered nowhere in "
+                    "the source library"
+                )
         lang = entry.get("lang")
         if isinstance(lang, str):
-            if lang in seen:
-                problems.append(f"{label}: duplicate translation language {lang!r}")
-            seen.append(lang)
+            key = (lang, source_id if isinstance(source_id, str) else None)
+            if key in seen:
+                problems.append(
+                    f"{label}: duplicate translation {lang!r} from "
+                    f"{source_id!r}; one witness speaks once per proper"
+                    if key[1]
+                    else f"{label}: a second {lang!r} translation names no "
+                    "source_id, so nothing tells it from the first"
+                )
+            seen.add(key)
+
+
+# Resolved once per process and cached, because loading the source graph costs
+# well over a second and a calendar makes thousands of translation entries.
+_SOURCE_IDS: tuple[set[str] | None, str | None] | None = None
+
+
+def source_ids() -> tuple[set[str] | None, str | None]:
+    """Every id the source library registers, and why it could not be read.
+
+    Taken from the tool that owns the source graph rather than re-globbed here,
+    so that this check and `source-library validate` cannot come to disagree
+    about what is registered. Loaded lazily: a calendar carrying no translations
+    never pays for it.
+
+    Only the record ids are used, not the library's own verdict. Whether the
+    graph is internally sound is `check-sources`' question, and answering it
+    twice would report one defect under two names.
+    """
+    global _SOURCE_IDS
+    if _SOURCE_IDS is None:
+        try:
+            module = sibling("source-library")
+            library = module.load_library(
+                Path(__file__).resolve().parents[1], check_binding_fingerprints=False
+            )
+            _SOURCE_IDS = (set(library.records), None)
+        except Exception as error:  # the tool is a sibling script, not an API
+            _SOURCE_IDS = (
+                None,
+                f"cannot read the source library to resolve translation "
+                f"source ids: {error}",
+            )
+    return _SOURCE_IDS
 
 
 def check_verses(where: str, verses: object, problems: list[str]) -> None:
@@ -385,6 +468,12 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     }
     problems.extend(citation_problems(root, calendar))
     problems.extend(spine_problems(paths))
+    problems.extend(overlay_problems(paths))
+    # Reported here and once: the cache is populated only if some translation
+    # actually asked for it, so a calendar with none never raises it at all.
+    unreadable = (_SOURCE_IDS or (None, None))[1]
+    if unreadable:
+        problems.append(unreadable)
     problems, excepted = apply_psalm_exceptions(paths, problems)
     return {
         "excepted": excepted,
@@ -397,21 +486,33 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     }
 
 
+def sibling(name: str):
+    """Load a sibling tool as a module rather than restating what it decides.
+
+    The module is registered in `sys.modules` before it is executed. A tool that
+    declares a dataclass cannot be executed otherwise: `dataclasses` resolves a
+    field's annotation through whatever `sys.modules` holds for the class's
+    `__module__`, and finds nothing there for a module loaded without one.
+    """
+    path = Path(__file__).resolve().parent / name
+    loader = SourceFileLoader(f"_{name.replace('-', '_')}", str(path))
+    spec = spec_from_loader(loader.name, loader)
+    if spec is None:  # pragma: no cover - a broken checkout, not a code path
+        raise ValueError(f"cannot load {path}")
+    module = module_from_spec(spec)
+    sys.modules[spec.name] = module
+    loader.exec_module(module)
+    return module
+
+
 def calendar_spine():
-    """Load the sibling tool that owns the spine rather than reparsing it.
+    """The tool that owns the spine, rather than a second parse of it.
 
     The spine is derived from the calendar-reference publications, which is a
     different source from the mass indexes; restating that derivation here is
     how the two would come to disagree about what a calendar contains.
     """
-    path = Path(__file__).resolve().parent / "calendar-spine"
-    loader = SourceFileLoader("_calendar_spine", str(path))
-    spec = spec_from_loader(loader.name, loader)
-    if spec is None:  # pragma: no cover - a broken checkout, not a code path
-        raise ValueError(f"cannot load {path}")
-    module = module_from_spec(spec)
-    loader.exec_module(module)
-    return module
+    return sibling("calendar-spine")
 
 
 def spine_problems(paths: list[Path]) -> list[str]:
@@ -468,6 +569,52 @@ def spine_problems(paths: list[Path]) -> list[str]:
                     f"{path}: {registry} ({entry['title']}) is filed "
                     f"{filed[registry]} but the spine classifies it {entry['kind']}"
                 )
+    return problems
+
+
+def overlay_problems(paths: list[Path]) -> list[str]:
+    """Hold the translation sidecars to the same rules as an inline translation.
+
+    A calendar's `translations` belong inside each proper and are recorded in
+    `src/sources/inventories/<calendar>-proper-translations-v1.toml` only until
+    the file that owns them can take them. That sidecar is what `mass-propers`
+    reads and therefore what the site serves, so leaving it unvalidated made
+    every rule above ceremonial: no calendar index carries an inline
+    translation, and all 160 real ones sat in a file nothing checked.
+
+    Keyed off the calendar directories actually being checked, so a temporary
+    root with no sidecar beside it validates nothing rather than reaching into
+    the repository behind the caller's back.
+    """
+    import tomllib
+
+    root = Path(__file__).resolve().parents[1] / OVERLAY_DIR
+    problems: list[str] = []
+    for path in paths:
+        sidecar = root / f"{path.parent.name}{OVERLAY_SUFFIX}"
+        if not sidecar.is_file():
+            continue
+        try:
+            document = tomllib.loads(sidecar.read_text(encoding="utf-8"))
+        except (OSError, tomllib.TOMLDecodeError) as error:
+            problems.append(f"{sidecar}: unreadable: {error}")
+            continue
+        for index, entry in enumerate(document.get("entries") or []):
+            where = f"{sidecar}: entries[{index}]"
+            if not isinstance(entry, dict):
+                problems.append(f"{where}: entry is not a table")
+                continue
+            named = " ".join(
+                str(entry.get(field) or "")
+                for field in ("mass", "form", "proper")
+                if entry.get(field)
+            )
+            where = f"{sidecar}: {named or f'entries[{index}]'}"
+            payload = entry.get("translations")
+            if payload is None:
+                problems.append(f"{where}: entry records no translations")
+                continue
+            check_translation_list(where, payload, problems)
     return problems
 
 

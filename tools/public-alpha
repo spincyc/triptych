@@ -12,6 +12,7 @@ import json
 import posixpath
 import re
 import shutil
+import struct
 import sys
 import tomllib
 from collections import Counter, defaultdict
@@ -181,9 +182,30 @@ PAGE_MAP = {
 FIXED_ARTIFACT_INPUT_PATHS = {
     "release/public-alpha/layout.html",
     "release/public-alpha/assets/site.css",
+    "release/public-alpha/assets/social-card.png",
+    "release/public-alpha/assets/icon.png",
     "requirements-public-alpha.txt",
     "tools/public-alpha",
 }
+# The one origin the published site is reached at. A link preview needs an
+# absolute URL: the Open Graph protocol's URL type admits only http:// and
+# https:// forms (https://ogp.me/), and Apple's own worked example in TN3156
+# uses one, so nothing here may be left for a fetcher to resolve relatively.
+SITE_ORIGIN = "https://spincyc.github.io/triptych"
+# Apple's TN3156 is explicit that the site name belongs in og:site_name and not
+# in og:title, so the preview reads as a page rather than as the site repeated.
+# `document_title` already appends this for the browser tab; the social title is
+# the bare page title, and neither is written twice.
+SITE_NAME = "Triptych"
+SOCIAL_CARD_RELATIVE = "assets/social-card.png"
+SITE_ICON_RELATIVE = "assets/icon.png"
+# Used only by a page that carries no prose of its own — a browser page whose
+# lede the script fills in after load has nothing static to describe it with.
+# A page with an opening paragraph never reaches this.
+SITE_DESCRIPTION = (
+    "Source-first AI studies of Catholic faith, worship, and law, "
+    "issued in parallel GPT and Claude editions with their citations."
+)
 LICENSE_SOURCE_PATHS = {
     path.relative_to(ROOT).as_posix()
     for path in (ROOT / "LICENSES").glob("*.txt")
@@ -1624,6 +1646,8 @@ def expected_artifact_files(
         {
             ".nojekyll",
             "assets/site.css",
+            SOCIAL_CARD_RELATIVE,
+            SITE_ICON_RELATIVE,
             "PUBLICATION-MANIFEST.json",
             "robots.txt",
             "SHA256SUMS",
@@ -2055,6 +2079,93 @@ def document_title(title: str) -> str:
     return "Triptych" if title.casefold() == "triptych" else f"{title} · Triptych"
 
 
+def png_dimensions(path: Path) -> tuple[int, int]:
+    """Read a PNG's own IHDR rather than restating its size beside it."""
+    header = path.read_bytes()[:24]
+    if header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
+        raise ReleaseError(f"{path.name}: not a PNG")
+    return struct.unpack(">II", header[16:24])
+
+
+PARAGRAPH_RE = re.compile(r"<p\b[^>]*>(.*?)</p>", re.DOTALL)
+LEDE_RE = re.compile(r'<p class="lede"[^>]*>(.*?)</p>', re.DOTALL)
+MARKUP_RE = re.compile(r"<[^>]+>")
+# Long enough that a breadcrumb ("Return to the library"), a running head or a
+# script's "Loading…" placeholder cannot be mistaken for the page's own prose,
+# and short enough to admit a publication's one-line subtitle, which is the best
+# description most of the reading editions have.
+DESCRIPTION_FLOOR = 55
+DESCRIPTION_CEILING = 300
+
+
+def social_description(content: str, declared: str) -> str:
+    """Describe the page from what the page already says.
+
+    A description authored beside a page is a second copy of its opening, and
+    the two drift; the reader's own lede cannot. So the order is: what the page
+    declared for itself, then its opening paragraph, then — only for a page
+    whose opening the script writes after load, and which therefore has no
+    static prose at all — the site's standing description.
+    """
+    if declared:
+        return declared
+    # A page that states a lede has said what it is about; a later paragraph on
+    # the same page has not, so a short lede falls through to the site rather
+    # than to whatever prose happens to come next. A page with no lede at all —
+    # every page rendered from Markdown — opens with its first paragraph.
+    lede = LEDE_RE.search(content)
+    candidates = [lede] if lede else PARAGRAPH_RE.finditer(content)
+    for match in candidates:
+        text = " ".join(html.unescape(MARKUP_RE.sub("", match.group(1))).split())
+        if len(text) >= DESCRIPTION_FLOOR:
+            return shorten_description(text)
+    return SITE_DESCRIPTION
+
+
+def shorten_description(text: str) -> str:
+    """Cut a long lede at a word boundary; never mid-word."""
+    if len(text) <= DESCRIPTION_CEILING:
+        return text
+    return text[:DESCRIPTION_CEILING].rsplit(" ", 1)[0].rstrip(" ,;:—-") + "…"
+
+
+def social_meta(output_relative: str, title: str, description: str) -> str:
+    """The link-preview metadata, absolute, for one page.
+
+    Verified against Apple's TN3156 (Create Rich Previews for Messages): a rich
+    iMessage preview needs og:title and og:image and nothing else; the site name
+    belongs in og:site_name; the image must be at least 900 pixels wide and
+    carry no text, since it is displayed at sizes Apple does not promise.
+    LPLinkMetadata has no description field at all, so og:description and the
+    twitter:* properties below change nothing in Messages — they are here for
+    Slack, Discord, Facebook and search, which do read them.
+    """
+    card = TEMPLATE_ROOT / SOCIAL_CARD_RELATIVE
+    width, height = png_dimensions(card)
+    page_url = f"{SITE_ORIGIN}/{output_relative}"
+    card_url = f"{SITE_ORIGIN}/{SOCIAL_CARD_RELATIVE}"
+    properties = [
+        ("og:type", "website"),
+        ("og:site_name", SITE_NAME),
+        ("og:title", title),
+        ("og:description", description),
+        ("og:url", page_url),
+        ("og:image", card_url),
+        ("og:image:width", str(width)),
+        ("og:image:height", str(height)),
+        ("og:image:alt", "Three panels of an open triptych, the site's mark."),
+    ]
+    names = [
+        ("twitter:card", "summary_large_image"),
+        ("twitter:title", title),
+        ("twitter:description", description),
+        ("twitter:image", card_url),
+    ]
+    lines = [f'<meta property="{key}" content="{html.escape(value)}">' for key, value in properties]
+    lines += [f'<meta name="{key}" content="{html.escape(value)}">' for key, value in names]
+    return "".join(f"\n  {line}" for line in lines)
+
+
 def navigation_state(source_relative: str) -> tuple[str, str, str]:
     """Return aria-current attributes for the stable primary navigation."""
     if source_relative == "README.md":
@@ -2185,6 +2296,7 @@ def wrap_in_layout(
     authorization: dict,
     head_extra: str = "",
     body_extra: str = "",
+    declared_description: str = "",
 ) -> str:
     """Put one page's content inside the site's chrome.
 
@@ -2211,11 +2323,21 @@ def wrap_in_layout(
     else:
         robots = '<meta name="robots" content="index, follow">'
         banner = ""
+    description = social_description(content, declared_description)
+    # Only the public, advertised artifact carries link-preview metadata. Its
+    # URLs are absolute and name the one public origin, which a preview or an
+    # unadvertised copy is deliberately not; such a copy would otherwise hand a
+    # reader the public page it was built to stand apart from.
+    social = f'\n  <meta name="description" content="{html.escape(description)}">'
+    if not preview and not requires_unadvertised_controls(authorization):
+        social += social_meta(output_relative, title, description)
     home_current, about_current, feedback_current = navigation_state(source_relative)
     replacements = {
         "{{PAGE_CLASS}}": page_class,
         "{{DOCUMENT_TITLE}}": html.escape(document_title(title)),
         "{{ROBOTS}}": robots,
+        "{{SOCIAL}}": social,
+        "{{ICON_PATH}}": relative_link(output_relative, SITE_ICON_RELATIVE),
         "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
         "{{HEAD_EXTRA}}": head_extra,
         "{{HOME_PATH}}": relative_link(output_relative, "index.html"),
@@ -2256,11 +2378,13 @@ BROWSER_HEAD_ALLOWED_RE = re.compile(
     (?: <!--.*?-->
       | <meta\ charset="utf-8">
       | <meta\ name="viewport"\ content="[^"]*">
+      | <meta\ name="description"\ content="[^"]*">
       | <title>.*?</title>
       | <link\ rel="stylesheet"\ href="[^"]+">
     )\s*""",
     re.DOTALL | re.VERBOSE,
 )
+BROWSER_DESCRIPTION_RE = re.compile(r'<meta name="description" content="([^"]*)">')
 
 
 def browser_page_parts(source_path: Path, output_relative: str) -> dict:
@@ -2303,8 +2427,13 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
     classes.append(f"section-{BROWSER_SECTION_COLOURS[output_relative.split('/')[0]]}")
     if body_class:
         classes.extend(body_class.group(1).split())
+    # A page whose lede the script writes after load has no static prose to be
+    # described by, so it may declare its own description instead. A page that
+    # opens with a real lede must not: the two would drift.
+    declared = BROWSER_DESCRIPTION_RE.search(head)
     return {
         "title": title_match.group(1).strip(),
+        "declared_description": html.unescape(declared.group(1)) if declared else "",
         "head_extra": "".join(f"\n  {link}" for link in stylesheets),
         "body_extra": "".join(f"\n  {script}" for script in scripts),
         "content": content.strip("\n"),
@@ -2337,6 +2466,7 @@ def render_browser_page(
         authorization,
         head_extra=parts["head_extra"],
         body_extra=parts["body_extra"],
+        declared_description=parts["declared_description"],
     )
 
 
@@ -2763,7 +2893,10 @@ def verify_output(
                 errors.append(f"{card['destination']}: gallery PNG does not match canonical bytes")
 
     static_sources = [
-        (TEMPLATE_ROOT / "assets/site.css", output / "assets/site.css"),
+        *[
+            (TEMPLATE_ROOT / asset_relative, output / asset_relative)
+            for asset_relative in ("assets/site.css", SOCIAL_CARD_RELATIVE, SITE_ICON_RELATIVE)
+        ],
         *[
             (ROOT / source_relative, output / source_relative)
             for source_relative in artifact_license_source_paths()
@@ -2859,6 +2992,7 @@ def verify_output(
             if '<meta name="robots" content="index, follow">' in page:
                 errors.append(f"{html_path.relative_to(output)}: public indexing is enabled")
 
+    errors.extend(verify_link_previews(output, preview, expected_authorization))
     errors.extend(verify_links(output))
     errors.extend(verify_catalog_reachability(manifest, included, output))
     errors.extend(verify_web_data(output))
@@ -2870,6 +3004,100 @@ def verify_output(
 
     if errors:
         raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
+
+
+SOCIAL_PROPERTY_RE = re.compile(r'<meta property="(og:[a-z_:]+)" content="([^"]*)">')
+SOCIAL_NAME_RE = re.compile(r'<meta name="((?:twitter:[a-z]+)|description)" content="([^"]*)">')
+# TN3156, "Respect resource usage guidelines": the previewed document is limited
+# to 1 MB, preview images should be at least 900 pixels wide, and icons should
+# be square and at least 108 pixels per side.
+PREVIEW_DOCUMENT_LIMIT = 1_000_000
+PREVIEW_IMAGE_MINIMUM_WIDTH = 900
+PREVIEW_ICON_MINIMUM_SIDE = 108
+
+
+def verify_link_previews(output: Path, preview: bool, authorization: dict) -> list[str]:
+    """Prove every page can actually raise a link preview.
+
+    Nothing renders these tags locally, so a page that quietly lost them looks
+    exactly like a page that has them until someone sends the link to a phone.
+    The numbers checked here are Apple's own, from TN3156.
+    """
+    errors: list[str] = []
+    advertised = not preview and not requires_unadvertised_controls(authorization)
+    required_properties = {
+        "og:type",
+        "og:site_name",
+        "og:title",
+        "og:description",
+        "og:url",
+        "og:image",
+        "og:image:width",
+        "og:image:height",
+    }
+
+    icon = output / SITE_ICON_RELATIVE
+    if not icon.is_file():
+        errors.append(f"{SITE_ICON_RELATIVE}: the artifact carries no icon for a link preview")
+    else:
+        width, height = png_dimensions(icon)
+        if width != height or width < PREVIEW_ICON_MINIMUM_SIDE:
+            errors.append(
+                f"{SITE_ICON_RELATIVE}: icon is {width}x{height}; a preview icon must be "
+                f"square and at least {PREVIEW_ICON_MINIMUM_SIDE} pixels a side"
+            )
+
+    for path in sorted(output.rglob("*.html")):
+        relative = path.relative_to(output).as_posix()
+        page = path.read_text(encoding="utf-8", errors="replace")
+        size = path.stat().st_size
+        if size > PREVIEW_DOCUMENT_LIMIT:
+            errors.append(
+                f"{relative}: {size} bytes exceeds the {PREVIEW_DOCUMENT_LIMIT}-byte "
+                "document limit a link preview will fetch"
+            )
+        names = dict(SOCIAL_NAME_RE.findall(page))
+        if not names.get("description"):
+            errors.append(f"{relative}: no description metadata")
+        if 'rel="apple-touch-icon"' not in page:
+            errors.append(f"{relative}: no apple-touch-icon for the preview's icon")
+        if not advertised:
+            # A no-index copy deliberately carries no absolute public URLs.
+            if SOCIAL_PROPERTY_RE.search(page):
+                errors.append(f"{relative}: a no-index artifact must not advertise the public site")
+            continue
+        properties = dict(SOCIAL_PROPERTY_RE.findall(page))
+        for missing in sorted(required_properties - set(properties)):
+            errors.append(f"{relative}: no {missing} metadata")
+        if names.get("twitter:card") != "summary_large_image":
+            errors.append(f"{relative}: no summary_large_image twitter:card")
+        title = properties.get("og:title", "")
+        if title.endswith(f"· {SITE_NAME}"):
+            errors.append(
+                f"{relative}: og:title repeats the site name, which belongs in og:site_name"
+            )
+        expected_url = f"{SITE_ORIGIN}/{relative}"
+        if properties.get("og:url") != expected_url:
+            errors.append(f"{relative}: og:url is not {expected_url}")
+        image = properties.get("og:image", "")
+        if not image.startswith(f"{SITE_ORIGIN}/"):
+            errors.append(f"{relative}: og:image is not an absolute URL on {SITE_ORIGIN}")
+            continue
+        card = output / image.removeprefix(f"{SITE_ORIGIN}/")
+        if not card.is_file():
+            errors.append(f"{relative}: og:image {image} is not in the artifact")
+            continue
+        width, height = png_dimensions(card)
+        if width < PREVIEW_IMAGE_MINIMUM_WIDTH:
+            errors.append(
+                f"{relative}: og:image is {width} pixels wide; a preview image should be "
+                f"at least {PREVIEW_IMAGE_MINIMUM_WIDTH}"
+            )
+        if properties.get("og:image:width") != str(width) or properties.get(
+            "og:image:height"
+        ) != str(height):
+            errors.append(f"{relative}: og:image dimensions disagree with the image itself")
+    return errors
 
 
 def assemble_web_data(output: Path, preview: bool, authorization: dict) -> None:
@@ -2902,9 +3130,10 @@ def build_site(
         shutil.rmtree(output)
     output.mkdir(parents=True)
 
-    css_destination = output / "assets/site.css"
-    css_destination.parent.mkdir(parents=True)
-    shutil.copyfile(TEMPLATE_ROOT / "assets/site.css", css_destination)
+    for asset_relative in ("assets/site.css", SOCIAL_CARD_RELATIVE, SITE_ICON_RELATIVE):
+        asset_destination = output / asset_relative
+        asset_destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(TEMPLATE_ROOT / asset_relative, asset_destination)
 
     for source_relative in artifact_license_source_paths():
         license_path = ROOT / source_relative

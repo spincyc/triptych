@@ -35,21 +35,39 @@ collation, not by harmonizing the file into false uniformity.
 A proper that carries `text` may carry `translations`, a list of renderings in
 other languages. Each entry needs `lang`, `text`, and a `rights` basis of
 `public-domain`, `licensed`, or `project-created`. A public-domain or licensed
-translation names its `source_id`; a licensed one also carries the `notice` its
-licensor requires. Languages may not repeat within a proper.
+translation names its `source_id`, and that id must resolve to a record in the
+source library; a licensed one also carries the `notice` its licensor requires.
+
+**A proper may hold two translations in the same language, and should.** What
+may not repeat is the pair `(lang, source_id)` — one witness speaking twice in
+one proper is a copied row, not a second reading. Two witnesses are the reason
+a translation control is worth offering at all, and their disagreement is this
+corpus's only detector for a bad transcription: the two independent readings of
+the 1861 Cummiskey missal here disagree at 45 of 153 shared orations, and all
+38 errors the site was serving sat inside those 45. A translation that names no
+`source_id` — only a `project-created` one may — has nothing to tell it from
+another in its language, so a language holds at most one of those.
 
 ```yaml
 translations:
 - lang: en
-  rights: licensed
-  source_id: work.icel.roman-missal-2011
-  notice: 'Excerpts from the English translation of The Roman Missal (c) 2010, ICEL.'
+  rights: public-domain
+  source_id: edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861
   text: |
-    Stir up thy power, O Lord, and come...
+    Exert, we beseech thee, O Lord, thy power, and come...
+- lang: en
+  rights: public-domain
+  source_id: artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en
+  text: |
+    Stir up thy power, we beseech thee, O Lord, and come...
 ```
 
 A translation is someone's expression and is not relicensed by inclusion; see
 `THIRD_PARTY.md`.
+
+Until a calendar's translations can move into its propers they are recorded in
+`src/sources/inventories/<calendar>-proper-translations-v1.toml`, and
+`check-calendar-masses` holds that sidecar to every rule above.
 
 ## Entry shape
 

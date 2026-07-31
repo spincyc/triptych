@@ -669,7 +669,7 @@ if ! "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 fi
 
 # A translation carries its own rights basis; a licensed one names its source
-# and its required notice, and languages may not repeat within a proper.
+# and its required notice; and a witness may not speak twice in one proper.
 translated() {
 	rm -rf tr-root
 	mkdir -p tr-root/tr
@@ -683,13 +683,19 @@ base='  - key: t
     - name: Collect
       source: composed
       text: "Excita, quaesumus, Domine."'
+# Two witnesses registered in this repository's source library. A source_id
+# must resolve there, so the fixtures name real records rather than plausible
+# strings: an id that resolves to nothing reads as provenance and is not.
+missal_en='edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021'
+cummiskey='edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861'
+transcription='artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en'
 
 translated <<YAML
 $base
       translations:
       - lang: en
         rights: licensed
-        source_id: work.icel.roman-missal-2011
+        source_id: $missal_en
         notice: "Excerpts (c) 2010 ICEL."
         text: "Stir up thy power."
 YAML
@@ -712,6 +718,63 @@ YAML
 	fi
 done
 
+# A source_id that names nothing is refused. Provenance that resolves to no
+# record is worse than none: it answers a question it cannot answer.
+translated <<YAML
+$base
+      translations:
+      - lang: en
+        rights: public-domain
+        source_id: edition.nobody.no-such-missal.nowhere-1900
+        text: "Stir up thy power."
+YAML
+if "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
+	echo "expected failure for a source_id that resolves to no record" >&2
+	exit 1
+fi
+
+# THE POINT OF THE DROPDOWN. Two witnesses to the same oration, in the same
+# language, must both be expressible: the reason to offer a choice is that
+# translations differ, and their disagreement is also the only detector this
+# corpus has for a bad transcription -- it found 38 wrong orations at 45 loci.
+translated <<YAML
+$base
+      translations:
+      - lang: en
+        rights: public-domain
+        source_id: $cummiskey
+        text: "Exert, we beseech thee, O Lord, thy power."
+      - lang: en
+        rights: public-domain
+        source_id: $transcription
+        text: "Stir up thy power, we beseech thee, O Lord."
+YAML
+if ! "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
+	echo "two witnesses in one language must be accepted" >&2
+	exit 1
+fi
+
+# The same witness twice is still a duplicate: that is a copied row, not a
+# second reading.
+translated <<YAML
+$base
+      translations:
+      - lang: en
+        rights: public-domain
+        source_id: $cummiskey
+        text: "a"
+      - lang: en
+        rights: public-domain
+        source_id: $cummiskey
+        text: "b"
+YAML
+if "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
+	echo "expected failure for one witness quoted twice in a proper" >&2
+	exit 1
+fi
+
+# A translation naming no source_id has nothing to tell it from another in the
+# same language, so the language still stands alone for those.
 translated <<YAML
 $base
       translations:
@@ -719,7 +782,7 @@ $base
       - {lang: en, rights: project-created, text: "b"}
 YAML
 if "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
-	echo "expected failure for a duplicated translation language" >&2
+	echo "expected failure for two sourceless translations in one language" >&2
 	exit 1
 fi
 rm -rf tr-root
