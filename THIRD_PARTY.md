@@ -77,8 +77,8 @@ In particular:
   record, and carry no ICEL text on the strength of it; and
 - the English orations recorded in
   `src/sources/inventories/roman-1962-proper-translations-v1.toml`, and the
-  optical-character-recognition text layer they are read from at
-  `src/sources/works/anonymous/roman-missal-in-english-for-the-laity/`, come
+  transcription of the same book vendored at
+  `src/sources/works/eugene-cummiskey/roman-missal-english-laity/`, come
   from *The Roman Missal translated into the English language for the use of
   the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861).
   That translation is in the public domain in the United States by publication
@@ -86,7 +86,11 @@ In particular:
   claims no exclusive right in the wording and does not offer it under
   CC BY 4.0. It is a nineteenth-century lay hand missal, not an approved
   liturgical translation, and nothing taken from it may be used for
-  recitation.
+  recitation. The Internet Archive text layer the orations were read out of is
+  registered as a remote artifact of that same edition and is not vendored:
+  those exact bytes are a Google-produced derivative carrying Google's own
+  front matter, no distribution grant for it was established, and the record
+  keeps its rights status unresolved.
 
 Their inclusion as evidence or text for study is not a representation that
 they may be extracted and redistributed independently. Their redistribution
