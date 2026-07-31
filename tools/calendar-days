@@ -1,0 +1,1344 @@
+#!/usr/bin/env python3
+"""Resolve civil dates to each calendar's masses as a computed finding aid.
+
+Usage: calendar-days {check,structure,coverage,day} [--calendar NAME] ...
+
+What this is, and what it is not
+--------------------------------
+`guidance/liturgy/calendar-computation.md` owns every rule applied here, and it
+opens by saying that computation is a finding aid and never an authority. So
+this tool answers "which mass does the arithmetic point at for this date", and
+it never answers "which mass is celebrated". The competent General, territorial,
+diocesan, religious, parish and church calendar, the approved books and the
+competent annual Ordo decide that, and nothing emitted here is an occurrence
+witness for a date.
+
+Three consequences run through the whole design.
+
+*A territorial transfer is never computed.* Universal Norms 7 assigns the
+Epiphany, the Ascension and the Body and Blood of Christ to a Sunday only where
+the competent authority has actually decided it. Both forms are therefore
+emitted, each tagged with the option it holds under, so a page shows the choice
+rather than making it. Where even that is not stated -- the 1962 Sundays after
+the Epiphany are counted from January 6 and the guidance gives no rule for
+recounting them after a transfer -- the file says the transfer is not computed.
+
+*Precedence is emitted only where the guidance states it.* The guidance carries
+no general table of liturgical days, so a date that carries a fixed-date feast
+and a temporal day carries both, unranked. An honest list beats a confident
+wrong pick.
+
+*A day is placed only where the guidance fixes it.* The Ember Days of Advent and
+September, the Rogation Mass and the Sacred Heart have masses in the 1962 index
+and no rule in the guidance that fixes their date, so this tool leaves them
+unplaced and `coverage` says so. Inventing the rule would be worse than the gap.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from datetime import date, timedelta
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+# Shared CLI helpers live outside tools/ so that tmt's registry scan,
+# which requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import print_json, run_verb_cli  # noqa: E402
+
+DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
+SCHEMA = "triptych-calendar-days/v1"
+GUIDANCE = "guidance/liturgy/calendar-computation.md"
+FIRST_YEAR = 2020
+LAST_YEAR = 2120
+# The guidance states its own field of validity for the Advent boundary and for
+# the 1962 surplus, and `check` re-derives both across it.
+GUIDANCE_SPAN = (1900, 2100)
+
+ADVISORY = (
+    "Computed, not celebrated. Every date here is derived from the arithmetic in "
+    + GUIDANCE
+    + " and is a finding aid only. The competent General, territorial, diocesan, "
+    "religious, parish and church calendar, the approved books and the competent "
+    "annual Ordo control an actual celebration. Verify against a dated official "
+    "witness before relying on any date, and never cite this file as an occurrence "
+    "witness."
+)
+
+PRECEDENCE_NOTE = (
+    "No general table of precedence is stated in "
+    + GUIDANCE
+    + ", so a date carrying more than one candidate lists them all unranked, "
+    "temporal candidates before fixed-date ones. The `rank` a candidate carries is "
+    "the rank its own calendar prints, not a computed ordering, and it does not "
+    "resolve the day. The competent Ordo decides which mass is said."
+)
+
+TERRITORIAL_NOTE = (
+    "Universal Norms 7 assigns these celebrations to a Sunday only where the "
+    "competent authority has actually so decided. Both forms are emitted; a "
+    "candidate tagged with one option holds only under that option, and an "
+    "untagged candidate holds under both. This file does not know which option "
+    "applies in any place, and a transfer is never inferred from arithmetic."
+)
+
+TERRITORIAL_OPTIONS = {
+    "epiphany": ("epiphany-january-6", "epiphany-transferred-to-sunday"),
+    "ascension": ("ascension-thursday", "ascension-transferred-to-sunday"),
+    "corpus-christi": ("corpus-christi-thursday", "corpus-christi-transferred-to-sunday"),
+}
+
+# The 1962 mechanism in the guidance counts the Sundays after the Epiphany from
+# January 6, and states no rule for recounting them under a transfer.
+NO_TRANSFER_RULE = (
+    "not computed: the Sundays-after-Epiphany mechanism in "
+    + GUIDANCE
+    + " is stated from January 6, and no rule is given for recounting them after a "
+    "territorial transfer"
+)
+
+WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday")
+
+FIXED_DATE_RULE = "the calendar's own index pins this mass to this month and day"
+
+# Masses whose day the guidance does not fix. Never placed; reported by
+# `coverage` with the reason. A mass that is never placed and is absent from
+# this map is reported with a generic reason instead, so an index that grows a
+# new mass surfaces rather than silently vanishing.
+UNPLACEABLE = {
+    ("roman-1962", "advent-ember-wednesday"): "the Advent Ember Days are not dated in " + GUIDANCE,
+    ("roman-1962", "advent-ember-friday"): "the Advent Ember Days are not dated in " + GUIDANCE,
+    ("roman-1962", "advent-ember-saturday"): "the Advent Ember Days are not dated in " + GUIDANCE,
+    ("roman-1962", "september-ember-wednesday"): "the September Ember Days are not dated in " + GUIDANCE,
+    ("roman-1962", "september-ember-friday"): "the September Ember Days are not dated in " + GUIDANCE,
+    ("roman-1962", "september-ember-saturday"): "the September Ember Days are not dated in " + GUIDANCE,
+    ("roman-1962", "rogation-mass"): "neither the greater nor the lesser Litanies are dated in " + GUIDANCE,
+    ("roman-1962", "sacred-heart"): "no offset from Easter is given for the Sacred Heart in " + GUIDANCE,
+}
+
+# A date-pinned mass that is also the subject of a territorial transfer. The
+# postconciliar index carries the Epiphany twice, once in the seasonal section
+# and once pinned to 6 January in the christological one; without this the
+# pinned entry would sit untagged on 6 January in a place that has actually
+# transferred the Epiphany to the Sunday. The 1962 index pins it too, but that
+# calendar computes no transfer at all, so nothing there needs tagging.
+FIXED_TERRITORIAL = {
+    ("postconciliar", "epiphany-lord"): TERRITORIAL_OPTIONS["epiphany"][0],
+}
+
+
+# ---------------------------------------------------------------- computus
+
+
+def gregorian_easter(year: int) -> date:
+    """Easter by the Gregorian computus: the Sunday after the first
+    ecclesiastical full moon falling on or after March 21."""
+    a = year % 19
+    b, c = divmod(year, 100)
+    d, e = divmod(b, 4)
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i, k = divmod(c, 4)
+    lunar = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * lunar) // 451
+    month = (h + lunar - 7 * m + 114) // 31
+    day = ((h + lunar - 7 * m + 114) % 31) + 1
+    return date(year, month, day)
+
+
+def sunday_on_or_before(when: date) -> date:
+    return when - timedelta(days=(when.weekday() + 1) % 7)
+
+
+def sunday_after(when: date) -> date:
+    """The first Sunday strictly after `when`."""
+    return when + timedelta(days=7 - (when.weekday() + 1) % 7)
+
+
+def first_sunday_of_advent(civil_year: int) -> date:
+    """The fourth Sunday before 25 December of `civil_year`."""
+    return sunday_on_or_before(date(civil_year, 12, 24)) - timedelta(days=21)
+
+
+def sunday_nearest_november_30(civil_year: int) -> date:
+    """Universal Norms 40's formulation, kept for the agreement check."""
+    pivot = date(civil_year, 11, 30)
+    earlier = sunday_on_or_before(pivot)
+    later = earlier + timedelta(days=7)
+    return earlier if (pivot - earlier) <= (later - pivot) else later
+
+
+def sunday_cycle(ending: int) -> str:
+    """General Introduction to the Lectionary 66.2, on the civil year in which
+    the liturgical year ends."""
+    return {1: "A", 2: "B", 0: "C"}[ending % 3]
+
+
+def weekday_cycle(ending: int) -> str:
+    """General Introduction to the Lectionary 69.4, resolved independently."""
+    return "I" if ending % 2 else "II"
+
+
+class Anchors:
+    """Every movable anchor of the liturgical year ending in `ending`."""
+
+    def __init__(self, ending: int) -> None:
+        self.ending = ending
+        self.easter = gregorian_easter(ending)
+        self.septuagesima = self.easter - timedelta(days=63)
+        self.sexagesima = self.easter - timedelta(days=56)
+        self.quinquagesima = self.easter - timedelta(days=49)
+        self.ash_wednesday = self.easter - timedelta(days=46)
+        self.ascension_thursday = self.easter + timedelta(days=39)
+        self.ascension_sunday = self.easter + timedelta(days=42)
+        self.pentecost = self.easter + timedelta(days=49)
+        self.trinity = self.easter + timedelta(days=56)
+        self.corpus_christi_thursday = self.easter + timedelta(days=60)
+        self.corpus_christi_sunday = self.easter + timedelta(days=63)
+        self.begins = first_sunday_of_advent(ending - 1)
+        self.next_advent = first_sunday_of_advent(ending)
+        self.last_day = self.next_advent - timedelta(days=1)
+        self.sunday_before_advent = self.next_advent - timedelta(days=7)
+        self.christmas = date(ending - 1, 12, 25)
+
+    def as_json(self) -> dict:
+        return {
+            "ascension_thursday_form": self.ascension_thursday.isoformat(),
+            "ascension_transferred_sunday_form": self.ascension_sunday.isoformat(),
+            "ash_wednesday": self.ash_wednesday.isoformat(),
+            "body_and_blood_thursday_form": self.corpus_christi_thursday.isoformat(),
+            "body_and_blood_transferred_sunday_form": self.corpus_christi_sunday.isoformat(),
+            "easter": self.easter.isoformat(),
+            "first_sunday_of_advent": self.begins.isoformat(),
+            "next_first_sunday_of_advent": self.next_advent.isoformat(),
+            "pentecost": self.pentecost.isoformat(),
+            "septuagesima": self.septuagesima.isoformat(),
+            "sunday_before_advent": self.sunday_before_advent.isoformat(),
+            "trinity": self.trinity.isoformat(),
+        }
+
+
+# ------------------------------------------------------------ temporal cycles
+
+
+class Year:
+    """One liturgical year's placements, seasons and computed facts.
+
+    `known` is the calendar's own key set, so a placement can never name a mass
+    the calendar does not carry. A rule that names an absent key records the
+    miss in `missing` unless it was offered as an alternative spelling, which is
+    how the Lenten ferias are placed: the 1962 index calls three of them Ember
+    Days and the rest by their weekday, and both namings sit on the same day.
+    """
+
+    def __init__(self, calendar: str, ending: int, known: set[str]) -> None:
+        self.calendar = calendar
+        self.ending = ending
+        self.known = known
+        self.anchors = Anchors(ending)
+        self.placements: dict[date, list[dict]] = {}
+        self.seasons: list[tuple[date, date, str]] = []
+        self.weeks: dict[date, int] = {}
+        self.unresolved: list[dict] = []
+        self.missing: list[dict] = []
+        self.facts: dict[str, object] = {}
+
+    def put(
+        self,
+        when: date,
+        key: str,
+        rule: str,
+        territorial: str | None = None,
+        alternative: bool = False,
+    ) -> None:
+        if key not in self.known:
+            if not alternative:
+                self.missing.append({"date": when.isoformat(), "key": key, "rule": rule})
+            return
+        entry = {"key": key, "origin": "temporal", "rule": rule}
+        if territorial:
+            entry["territorial"] = territorial
+        held = self.placements.setdefault(when, [])
+        if entry not in held:
+            held.append(entry)
+
+    def season_of(self, when: date) -> str | None:
+        for start, end, name in self.seasons:
+            if start <= when <= end:
+                return name
+        return None
+
+    def refuse(self, what: str, why: str) -> None:
+        self.unresolved.append({"what": what, "why": why})
+
+
+def build_1962(ending: int, known: set[str]) -> Year:
+    year = Year("roman-1962", ending, known)
+    a = year.anchors
+    easter = a.easter
+
+    # Advent. The guidance fixes the boundary and nothing else in the season:
+    # the Ember Days of Advent have no stated date and stay unplaced.
+    year.put(a.begins, "advent-1", "the fourth Sunday before 25 December")
+    for n in (2, 3, 4):
+        year.put(
+            a.begins + timedelta(days=7 * (n - 1)),
+            f"advent-{n}",
+            f"First Sunday of Advent +{7 * (n - 1)}",
+        )
+
+    # The Sunday within the octave of the Nativity. When 25 December is itself a
+    # Sunday there is none, and the guidance states no fallback.
+    within = sunday_after(a.christmas)
+    if within <= date(ending - 1, 12, 31):
+        year.put(within, "sunday-within-octave-of-nativity", "the Sunday falling 26-31 December")
+    else:
+        year.refuse(
+            "sunday-within-octave-of-nativity",
+            "25 December is a Sunday, so no Sunday falls within the octave, and "
+            + GUIDANCE
+            + " states no fallback date",
+        )
+
+    # Sundays after the Epiphany, counted from January 6 and bounded by
+    # Septuagesima. The first always occurs and carries the Holy Family.
+    epiphany = date(ending, 1, 6)
+    first_after = sunday_after(epiphany)
+    count = (a.septuagesima - first_after).days // 7
+    year.put(first_after, "holy-family", "the first Sunday after 6 January")
+    for n in range(2, count + 1):
+        year.put(
+            first_after + timedelta(days=7 * (n - 1)),
+            f"epiphany-{n}",
+            f"Sunday {n} after 6 January",
+        )
+
+    # Septuagesima is stated as Easter -63 and Ash Wednesday as Easter -46, so
+    # the two Sundays between them are forced, not chosen.
+    year.put(a.septuagesima, "septuagesima", "Easter -63")
+    year.put(a.sexagesima, "sexagesima", "Easter -56")
+    year.put(a.quinquagesima, "quinquagesima", "Easter -49")
+
+    year.put(a.ash_wednesday, "ash-wednesday", "Easter -46")
+    for offset, name in ((1, "thursday"), (2, "friday"), (3, "saturday")):
+        year.put(
+            a.ash_wednesday + timedelta(days=offset),
+            f"{name}-after-ash-wednesday",
+            f"Ash Wednesday +{offset}",
+        )
+
+    for week in (1, 2, 3, 4):
+        sunday = easter - timedelta(days=42 - 7 * (week - 1))
+        year.put(sunday, f"lent-{week}", f"Easter -{(easter - sunday).days}")
+        for step, name in enumerate(WEEKDAYS, start=1):
+            when = sunday + timedelta(days=step)
+            rule = f"{name} of week {week} of Lent"
+            # The book names three days of week I as Ember Days and the rest by
+            # their weekday. Either spelling sits on the day Lent's own
+            # structure fixes, unlike the Advent and September Ember Days.
+            year.put(when, f"lent-{week}-{name}", rule, alternative=True)
+            year.put(when, f"lent-{week}-ember-{name}", rule, alternative=True)
+
+    passion = easter - timedelta(days=14)
+    year.put(passion, "passion-sunday", "Easter -14")
+    for step, name in enumerate(WEEKDAYS, start=1):
+        year.put(passion + timedelta(days=step), f"passion-{name}", f"Passion Sunday +{step}")
+
+    palm = easter - timedelta(days=7)
+    year.put(palm, "palm-sunday", "Easter -7")
+    for step, name in ((1, "monday"), (2, "tuesday"), (3, "wednesday")):
+        year.put(palm + timedelta(days=step), f"holy-{name}", f"Palm Sunday +{step}")
+
+    year.put(easter - timedelta(days=3), "chrism-mass", "Easter -3")
+    year.put(easter - timedelta(days=3), "mass-of-the-lords-supper", "Easter -3")
+    year.put(easter - timedelta(days=2), "good-friday", "Easter -2")
+    year.put(easter - timedelta(days=1), "easter-vigil", "Easter -1")
+
+    year.put(easter, "easter-sunday", "Easter")
+    for step, name in enumerate(WEEKDAYS, start=1):
+        year.put(easter + timedelta(days=step), f"easter-{name}", f"Easter +{step}")
+    year.put(easter + timedelta(days=7), "low-sunday", "Easter +7")
+    for n in (2, 3, 4, 5):
+        year.put(
+            easter + timedelta(days=7 + 7 * (n - 1)),
+            f"easter-{n}",
+            f"Easter +{7 + 7 * (n - 1)}",
+        )
+
+    thursday_form, sunday_form = TERRITORIAL_OPTIONS["ascension"]
+    year.put(easter + timedelta(days=38), "vigil-of-the-ascension", "Easter +38", thursday_form)
+    year.put(a.ascension_thursday, "ascension", "Easter +39", thursday_form)
+    year.put(a.ascension_sunday, "sunday-after-ascension", "Easter +42", thursday_form)
+    year.put(a.ascension_sunday, "ascension", "Easter +42", sunday_form)
+
+    year.put(easter + timedelta(days=48), "vigil-of-pentecost", "Easter +48")
+    year.put(a.pentecost, "pentecost", "Easter +49")
+    for step, key in (
+        (1, "pentecost-monday"),
+        (2, "pentecost-tuesday"),
+        (3, "pentecost-ember-wednesday"),
+        (4, "pentecost-thursday"),
+        (5, "pentecost-ember-friday"),
+        (6, "pentecost-ember-saturday"),
+    ):
+        year.put(a.pentecost + timedelta(days=step), key, f"Pentecost +{step}")
+
+    # Sundays after Pentecost: Trinity is the first, the Sunday before Advent
+    # the last, and the twenty-fourth formulary always keeps the last place.
+    after = (a.sunday_before_advent - a.pentecost).days // 7
+    year.put(a.trinity, "trinity", "Easter +56")
+    year.put(
+        a.trinity,
+        "mass-of-the-first-sunday-after-pentecost",
+        "Easter +56; the Missal's own formulary for the first Sunday after "
+        "Pentecost, whose slot Trinity Sunday occupies",
+    )
+    corpus_thursday, corpus_sunday = TERRITORIAL_OPTIONS["corpus-christi"]
+    year.put(a.corpus_christi_thursday, "corpus-christi", "Easter +60", corpus_thursday)
+    year.put(a.corpus_christi_sunday, "corpus-christi", "Easter +63", corpus_sunday)
+
+    resumed = max(after - 24, 0)
+    for slot in range(2, min(23, after - 1) + 1):
+        when = a.pentecost + timedelta(days=7 * slot)
+        # Slot 2 is the Sunday a transferred Body and Blood of Christ occupies.
+        mark = corpus_thursday if slot == 2 else None
+        year.put(when, f"pentecost-{slot}", f"slot {slot} of {after} Sundays after Pentecost", mark)
+    for index, ordinal in enumerate(range(7 - resumed, 7)):
+        slot = 24 + index
+        year.put(
+            a.pentecost + timedelta(days=7 * slot),
+            f"resumed-epiphany-{ordinal}",
+            f"resumption slot {slot} of {after} Sundays after Pentecost",
+        )
+    year.put(
+        a.sunday_before_advent,
+        "last-sunday-after-pentecost",
+        "the Sunday before the First Sunday of Advent; the twenty-fourth "
+        "formulary always keeps the last place",
+    )
+    if after == 23:
+        year.put(a.sunday_before_advent, "pentecost-23", "slot 23 of 23 Sundays after Pentecost")
+        year.refuse(
+            "the last Sunday after Pentecost",
+            "23 Sundays after Pentecost. "
+            + GUIDANCE
+            + " records that neither identified normative locus provides for the "
+            "shortfall, so both the twenty-third and the twenty-fourth-and-last "
+            "formulary are listed and neither is chosen",
+        )
+
+    year.facts = {
+        "resumption_slots": resumed,
+        "sundays_after_epiphany": count,
+        "sundays_after_pentecost": after,
+        "surplus": (6 - count) - resumed,
+        "unused_after_epiphany": 6 - count,
+    }
+
+    year.seasons = [
+        (a.begins, date(ending - 1, 12, 24), "advent"),
+        (date(ending - 1, 12, 25), date(ending, 1, 5), "christmastide"),
+        (date(ending, 1, 6), a.septuagesima - timedelta(days=1), "epiphanytide"),
+        (a.septuagesima, a.ash_wednesday - timedelta(days=1), "septuagesima"),
+        (a.ash_wednesday, passion - timedelta(days=1), "lent"),
+        (passion, easter - timedelta(days=4), "passiontide"),
+        (easter - timedelta(days=3), easter - timedelta(days=1), "triduum"),
+        (easter, a.pentecost + timedelta(days=6), "paschaltide"),
+        (a.trinity, a.last_day, "after-pentecost"),
+    ]
+    return year
+
+
+def build_postconciliar(ending: int, known: set[str]) -> Year:
+    year = Year("postconciliar", ending, known)
+    a = year.anchors
+    easter = a.easter
+
+    year.put(a.begins, "advent-1", "the fourth Sunday before 25 December")
+    for n in (2, 3, 4):
+        year.put(
+            a.begins + timedelta(days=7 * (n - 1)),
+            f"advent-{n}",
+            f"First Sunday of Advent +{7 * (n - 1)}",
+        )
+    year.put(a.christmas, "nativity", "25 December")
+
+    within = sunday_after(a.christmas)
+    if within <= date(ending - 1, 12, 31):
+        year.put(
+            within,
+            "holy-family",
+            "Universal Norms 6: the Sunday within the octave of the Nativity",
+        )
+    else:
+        year.refuse(
+            "holy-family",
+            "25 December is a Sunday, so no Sunday falls within the octave, and "
+            + GUIDANCE
+            + " states no fallback date",
+        )
+    year.put(date(ending, 1, 1), "mary-mother-of-god", "1 January")
+
+    fixed_option, moved_option = TERRITORIAL_OPTIONS["epiphany"]
+    epiphany = date(ending, 1, 6)
+    epiphany_sunday = sunday_on_or_before(date(ending, 1, 8))
+    year.put(epiphany, "epiphany", "6 January", fixed_option)
+    year.put(epiphany_sunday, "epiphany", "the Sunday falling 2-8 January", moved_option)
+    # The Second Sunday after the Nativity occurs only where the Epiphany keeps
+    # 6 January; where it is transferred it takes that Sunday.
+    second = sunday_on_or_before(date(ending, 1, 5))
+    if second >= date(ending, 1, 2):
+        year.put(
+            second,
+            "second-sunday-after-nativity",
+            "the Sunday falling 2-5 January",
+            fixed_option,
+        )
+
+    # Universal Norms 6 and General Introduction to the Lectionary 104.1: the
+    # Baptism is the Sunday after 6 January, or the Monday after a Sunday
+    # Epiphany that falls on 7 or 8 January.
+    baptism_fixed = sunday_after(epiphany)
+    baptism_moved = (
+        epiphany_sunday + timedelta(days=1)
+        if epiphany_sunday >= date(ending, 1, 7)
+        else baptism_fixed
+    )
+    if baptism_fixed == baptism_moved:
+        year.put(baptism_fixed, "baptism-of-the-lord", "the Sunday after 6 January")
+    else:
+        year.put(baptism_fixed, "baptism-of-the-lord", "the Sunday after 6 January", fixed_option)
+        year.put(
+            baptism_moved,
+            "baptism-of-the-lord",
+            "the Monday after a Sunday Epiphany falling on 7 or 8 January",
+            moved_option,
+        )
+
+    # Ordinary Time, anchored at both ends. The Sunday numbering is the same
+    # under either Epiphany option, because both put the Second Sunday seven
+    # days after the Sunday following 6 January.
+    second_sunday = baptism_fixed + timedelta(days=7)
+    sunday_before_lent = a.ash_wednesday - timedelta(days=3)
+    last_before_lent = 2 + (sunday_before_lent - second_sunday).days // 7
+    resumed = 34 - (a.sunday_before_advent - a.pentecost).days // 7
+    for n in range(2, last_before_lent + 1):
+        year.put(
+            second_sunday + timedelta(days=7 * (n - 2)),
+            f"ot-{n}",
+            f"the Sunday of Ordinary Time week {n}, counted from the Baptism",
+        )
+
+    for week in (1, 2, 3, 4, 5):
+        sunday = easter - timedelta(days=42 - 7 * (week - 1))
+        year.put(sunday, f"lent-{week}", f"Easter -{(easter - sunday).days}")
+    year.put(easter - timedelta(days=7), "palm-sunday", "Easter -7")
+    year.put(easter - timedelta(days=3), "mass-of-the-lords-supper", "Easter -3")
+    year.put(easter - timedelta(days=2), "good-friday", "Easter -2")
+    year.put(easter - timedelta(days=1), "easter-vigil", "Easter -1")
+    year.put(easter, "easter-sunday", "Easter")
+    for n in (2, 3, 4, 5, 6):
+        year.put(easter + timedelta(days=7 * (n - 1)), f"easter-{n}", f"Easter +{7 * (n - 1)}")
+
+    ascension_thursday, ascension_sunday = TERRITORIAL_OPTIONS["ascension"]
+    year.put(a.ascension_thursday, "ascension", "Easter +39", ascension_thursday)
+    year.put(a.ascension_sunday, "easter-7", "Easter +42", ascension_thursday)
+    year.put(a.ascension_sunday, "ascension", "Easter +42", ascension_sunday)
+    year.put(a.pentecost, "pentecost", "Easter +49")
+    year.put(a.trinity, "most-holy-trinity", "Universal Norms 6: the Sunday after Pentecost")
+
+    corpus_thursday, corpus_sunday = TERRITORIAL_OPTIONS["corpus-christi"]
+    year.put(a.corpus_christi_thursday, "corpus-christi", "Easter +60", corpus_thursday)
+    year.put(a.corpus_christi_sunday, "corpus-christi", "Easter +63", corpus_sunday)
+
+    for n in range(resumed + 2, 34):
+        when = a.pentecost + timedelta(days=7 * (n - resumed))
+        mark = corpus_thursday if n == resumed + 2 else None
+        year.put(when, f"ot-{n}", f"the Sunday of Ordinary Time week {n}", mark)
+    year.put(
+        a.sunday_before_advent,
+        "christ-the-king",
+        "Universal Norms 6: the last Sunday in Ordinary Time, which is week 34",
+    )
+
+    weeks = 34 if resumed == last_before_lent + 1 else 33
+    omitted = None if resumed == last_before_lent + 1 else last_before_lent + 1
+    if resumed not in (last_before_lent + 1, last_before_lent + 2):
+        year.refuse(
+            "the Ordinary Time week count",
+            f"the resumed week {resumed} is neither L+1 nor L+2 for L={last_before_lent}, "
+            "which " + GUIDANCE + " does not provide for",
+        )
+    year.facts = {
+        "baptism_of_the_lord": baptism_moved.isoformat(),
+        "baptism_of_the_lord_january_6_form": baptism_fixed.isoformat(),
+        "last_week_before_lent": last_before_lent,
+        "omitted_week": omitted,
+        "ordinary_time_weeks": weeks,
+        "resumed_week": resumed,
+    }
+
+    # Ordinary Time week numbers, on the 6 January basis; the transferred form
+    # moves only the first week's opening day, never a Sunday number.
+    when = baptism_fixed + timedelta(days=1)
+    while when < a.ash_wednesday:
+        year.weeks[when] = 1 if when < second_sunday else 2 + (when - second_sunday).days // 7
+        when += timedelta(days=1)
+    when = a.pentecost + timedelta(days=1)
+    while when <= a.last_day:
+        year.weeks[when] = resumed + (when - a.pentecost).days // 7
+        when += timedelta(days=1)
+
+    year.seasons = [
+        (a.begins, date(ending - 1, 12, 24), "advent"),
+        (date(ending - 1, 12, 25), baptism_fixed, "christmas"),
+        (baptism_fixed + timedelta(days=1), a.ash_wednesday - timedelta(days=1), "ordinary-time"),
+        (a.ash_wednesday, easter - timedelta(days=8), "lent"),
+        (easter - timedelta(days=7), easter - timedelta(days=4), "holy-week"),
+        (easter - timedelta(days=3), easter - timedelta(days=1), "triduum"),
+        (easter, a.pentecost, "easter"),
+        (a.pentecost + timedelta(days=1), a.last_day, "ordinary-time"),
+    ]
+    return year
+
+
+BUILDERS = {"roman-1962": build_1962, "postconciliar": build_postconciliar}
+CYCLED = {"roman-1962": False, "postconciliar": True}
+
+
+# --------------------------------------------------------------- calendar I/O
+
+
+def load_calendar(root: Path, name: str) -> dict:
+    import yaml
+
+    path = root / name / "propers.yaml"
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(document, dict):
+        raise ValueError(f"{path}: top level must be a mapping")
+    masses: dict[str, dict] = {}
+    for section, body in sorted((document.get("sections") or {}).items()):
+        for mass in (body or {}).get("masses") or []:
+            if not isinstance(mass, dict) or not mass.get("key"):
+                continue
+            masses[str(mass["key"])] = {
+                "key": str(mass["key"]),
+                "name": mass.get("name"),
+                "section": section,
+                "rank": mass.get("rank"),
+                "date": mass.get("date"),
+            }
+    if not masses:
+        raise ValueError(f"{path}: carries no masses")
+    if name not in BUILDERS:
+        raise ValueError(f"{name}: no temporal cycle is implemented for this calendar")
+    return {
+        "calendar": document.get("calendar") or name,
+        "directory": name,
+        "edition": document.get("edition"),
+        "masses": masses,
+        "keys": set(masses),
+    }
+
+
+def calendars(root: Path, only: str | None) -> list[str]:
+    if not root.is_dir():
+        raise ValueError(f"no calendar directory at {root}")
+    found = sorted(p.name for p in root.iterdir() if (p / "propers.yaml").is_file())
+    if only:
+        if only not in found:
+            raise ValueError(f"no calendar {only!r} under {root}; have {found}")
+        return [only]
+    if not found:
+        raise ValueError(f"no calendar with a propers.yaml under {root}")
+    return found
+
+
+def fixed_dates(index: dict, civil_year: int) -> dict[date, list[dict]]:
+    """Every mass the calendar pins to a civil date, placed in `civil_year`."""
+    out: dict[date, list[dict]] = {}
+    for mass in index["masses"].values():
+        stamp = mass.get("date")
+        if not stamp:
+            continue
+        try:
+            month, day = (int(part) for part in str(stamp).split("-"))
+            when = date(civil_year, month, day)
+        except ValueError:
+            # 29 February in a common year: the day does not exist, so nothing
+            # is placed and nothing is invented.
+            continue
+        # One rule for the whole fixed-date layer, because the rule is the date
+        # the entry is filed under and repeating it per mass would put the
+        # calendar's whole sanctoral into every year's rule table.
+        entry = {"key": mass["key"], "origin": "fixed-date", "rule": FIXED_DATE_RULE}
+        option = FIXED_TERRITORIAL.get((index["directory"], mass["key"]))
+        if option:
+            entry["territorial"] = option
+        out.setdefault(when, []).append(entry)
+    return out
+
+
+# ------------------------------------------------------------------- assembly
+
+
+def build_years(index: dict, endings: list[int]) -> dict[int, Year]:
+    builder = BUILDERS[index["directory"]]
+    return {ending: builder(ending, index["keys"]) for ending in endings}
+
+
+def owner_of(built: dict[int, Year], civil_year: int, when: date) -> Year:
+    ending = built[civil_year]
+    return ending if when <= ending.anchors.last_day else built[civil_year + 1]
+
+
+def decorate(entry: dict, mass: dict) -> dict:
+    out = dict(entry)
+    out["name"] = mass["name"]
+    out["section"] = mass["section"]
+    if mass.get("rank"):
+        out["rank"] = mass["rank"]
+    return out
+
+
+def candidates_for(index: dict, built: dict[int, Year], civil_year: int, when: date) -> tuple[Year, list[dict]]:
+    owner = owner_of(built, civil_year, when)
+    masses = index["masses"]
+    found = [decorate(e, masses[e["key"]]) for e in owner.placements.get(when, [])]
+    found += [
+        decorate(e, masses[e["key"]])
+        for e in index["fixed"].get(civil_year, {}).get(when, [])
+    ]
+    return owner, found
+
+
+DAYS_NOTE = (
+    "A civil date absent from `days` carries no mass in this calendar's index: "
+    "the day is computed, and no formulary for it has been written. A date "
+    "present carries one entry per candidate, in the order temporal-then-fixed-"
+    "date; more than one entry means the day is unranked, in the sense of "
+    "`precedence` above. `rule` indexes `rules`, which says how the date was "
+    "derived; `territorial`, when present, names the option the candidate holds "
+    "under and is absent when it holds under both. A candidate's `key` is a mass "
+    "in this calendar's own propers structure, where its title and text live; the "
+    "season and, in Ordinary Time, the week of any date are read from the spans "
+    "in `liturgical_years`."
+)
+
+
+def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
+    rules: list[dict] = []
+    seen: dict[tuple[str, str], int] = {}
+
+    def rule_id(entry: dict) -> int:
+        where = (entry["origin"], entry["rule"])
+        if where not in seen:
+            seen[where] = len(rules)
+            rules.append({"origin": entry["origin"], "rule": entry["rule"]})
+        return seen[where]
+
+    days: dict[str, list[dict]] = {}
+    when = date(civil_year, 1, 1)
+    stop = date(civil_year, 12, 31)
+    while when <= stop:
+        _, found = candidates_for(index, built, civil_year, when)
+        if found:
+            days[when.isoformat()] = [
+                {"key": entry["key"], "rule": rule_id(entry)}
+                | ({"territorial": entry["territorial"]} if entry.get("territorial") else {})
+                for entry in found
+            ]
+        when += timedelta(days=1)
+
+    name = index["directory"]
+    return {
+        "advisory": ADVISORY,
+        "calendar": index["calendar"],
+        "civil_year": civil_year,
+        "days": days,
+        "days_note": DAYS_NOTE,
+        "edition": index["edition"],
+        "guidance": GUIDANCE,
+        "liturgical_years": [year_summary(built[e], name) for e in sorted(built)],
+        "precedence": {"note": PRECEDENCE_NOTE, "stated": False},
+        "rules": rules,
+        "schema": SCHEMA,
+        "territorial": territorial_block(name),
+    }
+
+
+def spans(runs: list[tuple[date, date, str]]) -> list[dict]:
+    return [
+        {"from": start.isoformat(), "season": name, "to": end.isoformat()}
+        for start, end, name in runs
+    ]
+
+
+def week_spans(weeks: dict[date, int]) -> list[dict]:
+    """The Ordinary Time weeks as contiguous runs, so no day carries its own."""
+    out: list[dict] = []
+    for when in sorted(weeks):
+        number = weeks[when]
+        if out and out[-1]["week"] == number and date.fromisoformat(out[-1]["to"]) == when - timedelta(days=1):
+            out[-1]["to"] = when.isoformat()
+            continue
+        out.append({"from": when.isoformat(), "to": when.isoformat(), "week": number})
+    return out
+
+
+def year_summary(year: Year, calendar: str) -> dict:
+    summary: dict[str, object] = {
+        "anchors": year.anchors.as_json(),
+        "begins": year.anchors.begins.isoformat(),
+        "ends": year.anchors.last_day.isoformat(),
+        "facts": year.facts,
+        "label": f"Advent {year.anchors.begins.year} - November {year.ending}",
+        "lectionary": None,
+        "ordinary_time_weeks": week_spans(year.weeks),
+        "seasons": spans(year.seasons),
+        "unresolved": year.unresolved,
+        "year": year.ending,
+    }
+    if CYCLED[calendar]:
+        summary["lectionary"] = {
+            "note": (
+                "The cycle turns at the First Sunday of Advent and nowhere else. "
+                "The weekday numeral is resolved independently of the Sunday "
+                "letter and governs the Ordinary Time ferial course alone."
+            ),
+            "sunday": sunday_cycle(year.ending),
+            "weekday": weekday_cycle(year.ending),
+        }
+    else:
+        summary["lectionary_note"] = (
+            "The 1962 system has no Lectionary cycle: formulary and readings are "
+            "appointed together and repeat annually."
+        )
+    return summary
+
+
+def territorial_block(calendar: str) -> dict:
+    block: dict[str, object] = {"note": TERRITORIAL_NOTE}
+    if calendar == "roman-1962":
+        block["epiphany"] = {"computed": "6 January", "transferred_sunday_form": NO_TRANSFER_RULE}
+    else:
+        block["epiphany"] = {"options": list(TERRITORIAL_OPTIONS["epiphany"])}
+    block["ascension"] = {"options": list(TERRITORIAL_OPTIONS["ascension"])}
+    block["body_and_blood_of_christ"] = {"options": list(TERRITORIAL_OPTIONS["corpus-christi"])}
+    return block
+
+
+def with_fixed(index: dict, years: list[int]) -> dict:
+    index["fixed"] = {y: fixed_dates(index, y) for y in years}
+    return index
+
+
+# ------------------------------------------------------------------- coverage
+
+
+def coverage_of(index: dict, first: int, last: int) -> dict:
+    name = index["directory"]
+    built = build_years(index, list(range(first, last + 2)))
+    with_fixed(index, list(range(first, last + 1)))
+    masses = index["masses"]
+    placed: dict[str, int] = {}
+    total = resolved = empty = unranked = 0
+    empty_by_season: dict[str, int] = {}
+    for civil_year in range(first, last + 1):
+        when = date(civil_year, 1, 1)
+        stop = date(civil_year, 12, 31)
+        while when <= stop:
+            owner, found = candidates_for(index, built, civil_year, when)
+            total += 1
+            if found:
+                resolved += 1
+                for entry in found:
+                    placed[entry["key"]] = placed.get(entry["key"], 0) + 1
+            else:
+                empty += 1
+                season = owner.season_of(when) or "unassigned"
+                empty_by_season[season] = empty_by_season.get(season, 0) + 1
+            if len(found) > 1:
+                unranked += 1
+            when += timedelta(days=1)
+
+    never = [
+        {
+            "key": key,
+            "name": mass["name"],
+            "section": mass["section"],
+            "why": UNPLACEABLE.get(
+                (name, key), "no rule in " + GUIDANCE + " fixes a date for this mass"
+            ),
+        }
+        for key, mass in sorted(masses.items())
+        if key not in placed
+    ]
+    return {
+        "calendar": index["calendar"],
+        "dates": total,
+        "dates_resolved": resolved,
+        "dates_unresolved": empty,
+        "dates_unresolved_by_season": dict(sorted(empty_by_season.items())),
+        "dates_with_unranked_candidates": unranked,
+        "masses": len(masses),
+        "masses_never_placed": never,
+        "masses_placed": len(placed),
+        "span": {"first": first, "last": last},
+    }
+
+
+# ---------------------------------------------------------------------- check
+
+# Reproduced from the worked tables in the guidance. Every one must match.
+WORKED_ANCHORS = {
+    2024: ("2024-03-31", "2024-02-14", "2024-01-28", "2024-05-19", "2024-05-26", "2024-12-01", "2024-11-24"),
+    2025: ("2025-04-20", "2025-03-05", "2025-02-16", "2025-06-08", "2025-06-15", "2025-11-30", "2025-11-23"),
+    2026: ("2026-04-05", "2026-02-18", "2026-02-01", "2026-05-24", "2026-05-31", "2026-11-29", "2026-11-22"),
+    2027: ("2027-03-28", "2027-02-10", "2027-01-24", "2027-05-16", "2027-05-23", "2027-11-28", "2027-11-21"),
+    2028: ("2028-04-16", "2028-03-01", "2028-02-13", "2028-06-04", "2028-06-11", "2028-12-03", "2028-11-26"),
+}
+WORKED_INTERVALS = {
+    2024: ("2023-12-03", "2024-11-30", "B", "II"),
+    2025: ("2024-12-01", "2025-11-29", "C", "I"),
+    2026: ("2025-11-30", "2026-11-28", "A", "II"),
+    2027: ("2026-11-29", "2027-11-27", "B", "I"),
+}
+WORKED_SERIES = {1980: "C", 1981: "A", 1982: "B", 1983: "C"}
+WORKED_PAIRS = {
+    2024: ("B", "II"), 2025: ("C", "I"), 2026: ("A", "II"), 2027: ("B", "I"),
+    2028: ("C", "II"), 2029: ("A", "I"), 2030: ("B", "II"), 2031: ("C", "I"),
+    2032: ("A", "II"),
+}
+# Baptism, L, R, weeks, omitted week, and the first numbered Sunday after
+# Pentecost in the United States, whose Body and Blood of Christ is transferred.
+WORKED_ORDINARY = {
+    2024: ("2024-01-08", 6, 7, 34, None, "2024-06-09", 10),
+    2025: ("2025-01-12", 8, 10, 33, 9, "2025-06-29", 13),
+    2026: ("2026-01-11", 6, 8, 33, 7, "2026-06-14", 11),
+    2027: ("2027-01-10", 5, 7, 33, 6, "2027-06-06", 10),
+    2028: ("2028-01-09", 8, 9, 34, None, "2028-06-25", 12),
+}
+# E, P, unused after Epiphany, resumption slots.
+WORKED_1962 = {
+    2024: (3, 27, 3, 3),
+    2025: (5, 24, 1, 0),
+    2026: (3, 26, 3, 2),
+    2027: (2, 27, 4, 3),
+    2028: (5, 25, 1, 1),
+}
+# The guidance's own 1962 worked example: the nominal slot map for 2008.
+WORKED_SLOTS_2008 = {
+    "2008-10-26": "resumed-epiphany-3",
+    "2008-11-02": "resumed-epiphany-4",
+    "2008-11-09": "resumed-epiphany-5",
+    "2008-11-16": "resumed-epiphany-6",
+}
+# Independent spot checks named in the task, not taken from the guidance tables.
+SPOT_CHECKS = {
+    "ash-wednesday-2026": ("2026-02-18", lambda: gregorian_easter(2026) - timedelta(days=46)),
+    "easter-2026": ("2026-04-05", lambda: gregorian_easter(2026)),
+    "first-sunday-of-advent-2026": ("2026-11-29", lambda: first_sunday_of_advent(2026)),
+    "pentecost-2026": ("2026-05-24", lambda: gregorian_easter(2026) + timedelta(days=49)),
+}
+
+
+def check_computus() -> list[str]:
+    problems: list[str] = []
+    for civil_year, row in sorted(WORKED_ANCHORS.items()):
+        a = Anchors(civil_year)
+        got = (
+            a.easter.isoformat(),
+            a.ash_wednesday.isoformat(),
+            a.septuagesima.isoformat(),
+            a.pentecost.isoformat(),
+            a.trinity.isoformat(),
+            first_sunday_of_advent(civil_year).isoformat(),
+            a.sunday_before_advent.isoformat(),
+        )
+        if got != row:
+            problems.append(f"{civil_year}: worked anchors {row} but computed {got}")
+    for name, (want, produce) in sorted(SPOT_CHECKS.items()):
+        got = produce().isoformat()
+        if got != want:
+            problems.append(f"spot check {name}: want {want}, computed {got}")
+    # The guidance says the two Advent formulations agree across 1900-2100.
+    for civil_year in range(GUIDANCE_SPAN[0], GUIDANCE_SPAN[1] + 1):
+        fourth = first_sunday_of_advent(civil_year)
+        nearest = sunday_nearest_november_30(civil_year)
+        if fourth != nearest:
+            problems.append(
+                f"{civil_year}: the fourth Sunday before 25 December is {fourth} "
+                f"but the Sunday nearest 30 November is {nearest}"
+            )
+        if not date(civil_year, 11, 27) <= fourth <= date(civil_year, 12, 3):
+            problems.append(
+                f"{civil_year}: First Sunday of Advent {fourth} is outside 27 Nov - 3 Dec"
+            )
+    return problems
+
+
+def check_cycles() -> list[str]:
+    problems: list[str] = []
+    for ending, (begins, ends, sunday, weekday) in sorted(WORKED_INTERVALS.items()):
+        a = Anchors(ending)
+        if a.begins.isoformat() != begins or a.last_day.isoformat() != ends:
+            problems.append(
+                f"{ending}: worked interval {begins}..{ends} but computed "
+                f"{a.begins}..{a.last_day}"
+            )
+        if sunday_cycle(ending) != sunday or weekday_cycle(ending) != weekday:
+            problems.append(
+                f"{ending}: worked cycle {sunday}/{weekday} but computed "
+                f"{sunday_cycle(ending)}/{weekday_cycle(ending)}"
+            )
+    for ending, letter in sorted(WORKED_SERIES.items()):
+        if sunday_cycle(ending) != letter:
+            problems.append(
+                f"{ending}: the Introduction's series says {letter}, computed {sunday_cycle(ending)}"
+            )
+    for ending, (sunday, weekday) in sorted(WORKED_PAIRS.items()):
+        if (sunday_cycle(ending), weekday_cycle(ending)) != (sunday, weekday):
+            problems.append(f"{ending}: worked pair {sunday}/{weekday} disagrees")
+    return problems
+
+
+def check_ordinary_time(known: set[str]) -> list[str]:
+    problems: list[str] = []
+    for ending, row in sorted(WORKED_ORDINARY.items()):
+        baptism, last_before, resumed, weeks, omitted, first_sunday, first_week = row
+        year = build_postconciliar(ending, known)
+        facts = year.facts
+        if facts["baptism_of_the_lord"] != baptism:
+            problems.append(
+                f"{ending}: worked Baptism {baptism}, computed {facts['baptism_of_the_lord']}"
+            )
+        for label, want, got in (
+            ("L", last_before, facts["last_week_before_lent"]),
+            ("R", resumed, facts["resumed_week"]),
+            ("weeks", weeks, facts["ordinary_time_weeks"]),
+            ("omitted", omitted, facts["omitted_week"]),
+        ):
+            if want != got:
+                problems.append(f"{ending}: worked {label} {want}, computed {got}")
+        # The table's last column is the United States form, where the Body and
+        # Blood of Christ is transferred to the Sunday, so the candidate tagged
+        # for the Thursday form is the one that does not hold there.
+        when = date.fromisoformat(first_sunday)
+        held = [
+            entry["key"]
+            for entry in year.placements.get(when, [])
+            if entry.get("territorial") != TERRITORIAL_OPTIONS["corpus-christi"][0]
+        ]
+        if f"ot-{first_week}" not in held:
+            problems.append(
+                f"{ending}: worked first numbered Sunday after Pentecost is "
+                f"{first_sunday} week {first_week}, computed {held}"
+            )
+    return problems
+
+
+def check_1962(known: set[str]) -> list[str]:
+    problems: list[str] = []
+    for ending, (count, after, unused, slots) in sorted(WORKED_1962.items()):
+        facts = build_1962(ending, known).facts
+        got = (
+            facts["sundays_after_epiphany"],
+            facts["sundays_after_pentecost"],
+            facts["unused_after_epiphany"],
+            facts["resumption_slots"],
+        )
+        if got != (count, after, unused, slots):
+            problems.append(
+                f"{ending}: worked 1962 row {(count, after, unused, slots)}, computed {got}"
+            )
+    slots_2008 = build_1962(2008, known).placements
+    for stamp, key in sorted(WORKED_SLOTS_2008.items()):
+        held = [entry["key"] for entry in slots_2008.get(date.fromisoformat(stamp), [])]
+        if key not in held:
+            problems.append(
+                f"2008: the guidance's nominal slot map puts {key} on {stamp}, computed {held}"
+            )
+    # The guidance's stated invariants over its own field of validity.
+    for ending in range(GUIDANCE_SPAN[0], GUIDANCE_SPAN[1] + 1):
+        facts = build_1962(ending, known).facts
+        if not 1 <= facts["sundays_after_epiphany"] <= 6:
+            problems.append(f"{ending}: E is {facts['sundays_after_epiphany']}, outside 1-6")
+        if not 23 <= facts["sundays_after_pentecost"] <= 28:
+            problems.append(f"{ending}: P is {facts['sundays_after_pentecost']}, outside 23-28")
+        if facts["surplus"] not in (0, 1):
+            problems.append(f"{ending}: surplus is {facts['surplus']}, not 0 or 1")
+    return problems
+
+
+def check_guidance(indexes: dict[str, dict]) -> list[str]:
+    """The worked tables run against each calendar's own key set where one is
+    loaded, and against an unrestricted set otherwise, so the arithmetic is
+    checked even when a calendar is filtered out with --calendar."""
+
+    class Everything(set):
+        def __contains__(self, item: object) -> bool:
+            return True
+
+    postconciliar = indexes.get("postconciliar", {}).get("keys") or Everything()
+    roman = indexes.get("roman-1962", {}).get("keys") or Everything()
+    return (
+        check_computus()
+        + check_cycles()
+        + check_ordinary_time(postconciliar)
+        + check_1962(roman)
+    )
+
+
+def run_check(arguments: argparse.Namespace) -> dict:
+    root = Path(arguments.root)
+    first, last = arguments.first, arguments.last
+    indexes = {name: load_calendar(root, name) for name in calendars(root, arguments.calendar)}
+    problems = check_guidance(indexes)
+    seen: dict[str, dict] = {}
+    for name, index in indexes.items():
+        placements = 0
+        missing: list[dict] = []
+        for ending in range(first, last + 2):
+            year = BUILDERS[name](ending, index["keys"])
+            placements += sum(len(v) for v in year.placements.values())
+            missing.extend(year.missing)
+        # Every emitted key is in the calendar by construction; this reports the
+        # rules whose key the calendar does not carry, which is a coverage gap
+        # rather than a wrong emission.
+        seen[name] = {
+            "placements": placements,
+            "rules_without_a_mass": sorted({row["key"] for row in missing}),
+        }
+        for key, mass in index["masses"].items():
+            if not mass.get("date"):
+                continue
+            month, day = (int(part) for part in str(mass["date"]).split("-"))
+            if not 1 <= month <= 12 or not 1 <= day <= 31:
+                problems.append(f"{name}: {key} carries an impossible date {mass['date']!r}")
+    if problems:
+        head = "; ".join(problems[:4])
+        raise ValueError(head + (f" (and {len(problems) - 4} more)" if len(problems) > 4 else ""))
+    return {
+        "calendars": seen,
+        "checked": {
+            "advent_agreement_span": list(GUIDANCE_SPAN),
+            "worked_1962_rows": len(WORKED_1962) + len(WORKED_SLOTS_2008),
+            "worked_anchor_rows": len(WORKED_ANCHORS) + len(SPOT_CHECKS),
+            "worked_cycle_rows": len(WORKED_INTERVALS) + len(WORKED_PAIRS) + len(WORKED_SERIES),
+            "worked_ordinary_time_rows": len(WORKED_ORDINARY),
+        },
+        "span": {"first": first, "last": last},
+        "status": "ok",
+    }
+
+
+def run_structure(arguments: argparse.Namespace) -> dict:
+    root = Path(arguments.root)
+    first, last = arguments.first, arguments.last
+    if last < first:
+        raise ValueError(f"--last {last} precedes --first {first}")
+    indexes = {name: load_calendar(root, name) for name in calendars(root, arguments.calendar)}
+    problems = check_guidance(indexes)
+    if problems:
+        raise ValueError(
+            "the computation does not agree with " + GUIDANCE + "; run `calendar-days check`"
+        )
+    out = Path(arguments.out)
+    written: list[str] = []
+    manifest = []
+    for name, index in indexes.items():
+        built = build_years(index, list(range(first, last + 2)))
+        with_fixed(index, list(range(first, last + 1)))
+        target = out / "structure" / "calendar" / name
+        target.mkdir(parents=True, exist_ok=True)
+        for civil_year in range(first, last + 1):
+            document = year_document(
+                index,
+                civil_year,
+                {civil_year: built[civil_year], civil_year + 1: built[civil_year + 1]},
+            )
+            path = target / f"{civil_year}.json"
+            path.write_text(
+                json.dumps(document, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+                + "\n",
+                encoding="utf-8",
+            )
+            written.append(str(path))
+        manifest.append(
+            {
+                "calendar": index["calendar"],
+                "edition": index["edition"],
+                "lectionary_cycles": CYCLED[name],
+                "path": f"structure/calendar/{name}/{{civil_year}}.json",
+                "territorial": territorial_block(name),
+            }
+        )
+    index_path = out / "structure" / "calendar" / "index.json"
+    index_path.parent.mkdir(parents=True, exist_ok=True)
+    index_path.write_text(
+        json.dumps(
+            {
+                "advisory": ADVISORY,
+                "calendars": manifest,
+                "guidance": GUIDANCE,
+                "precedence": {"note": PRECEDENCE_NOTE, "stated": False},
+                "schema": SCHEMA,
+                "span": {"first": first, "last": last},
+            },
+            ensure_ascii=False,
+            sort_keys=True,
+            indent=1,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    written.append(str(index_path))
+    return {
+        "files": len(written),
+        "span": {"first": first, "last": last},
+        "status": "ok",
+        "written": written if arguments.verbose else written[-1:],
+    }
+
+
+def run_coverage(arguments: argparse.Namespace) -> dict:
+    root = Path(arguments.root)
+    report = [
+        coverage_of(load_calendar(root, name), arguments.first, arguments.last)
+        for name in calendars(root, arguments.calendar)
+    ]
+    return {"coverage": report, "status": "ok"}
+
+
+def run_day(arguments: argparse.Namespace) -> dict:
+    if not arguments.date:
+        raise ValueError("day needs --date YYYY-MM-DD")
+    try:
+        when = date.fromisoformat(arguments.date)
+    except ValueError as error:
+        raise ValueError(f"--date {arguments.date!r} is not a civil date: {error}") from error
+    root = Path(arguments.root)
+    found = []
+    for name in calendars(root, arguments.calendar):
+        index = load_calendar(root, name)
+        built = build_years(index, [when.year, when.year + 1])
+        with_fixed(index, [when.year])
+        owner, candidates = candidates_for(index, built, when.year, when)
+        summary = year_summary(owner, name)
+        found.append(
+            {
+                "calendar": index["calendar"],
+                "candidates": candidates,
+                "lectionary": summary["lectionary"],
+                "ranked": len(candidates) <= 1,
+                "season": owner.season_of(when),
+                "unresolved": owner.unresolved,
+                "week": owner.weeks.get(when),
+                "year": owner.ending,
+            }
+        )
+    return {"advisory": ADVISORY, "date": when.isoformat(), "days": found, "status": "ok"}
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("calendar-days error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    if "coverage" in payload:
+        for row in payload["coverage"]:
+            print(f"{row['calendar']}: {row['span']['first']}-{row['span']['last']}")
+            print(
+                f"  dates {row['dates']}: {row['dates_resolved']} resolve to a mass, "
+                f"{row['dates_unresolved']} to nothing, "
+                f"{row['dates_with_unranked_candidates']} carry unranked candidates"
+            )
+            print(
+                f"  masses {row['masses']}: {row['masses_placed']} reachable, "
+                f"{len(row['masses_never_placed'])} never placed"
+            )
+            for season, count in row["dates_unresolved_by_season"].items():
+                print(f"    no mass, {season}: {count}")
+            for mass in row["masses_never_placed"]:
+                print(f"    never placed: {mass['key']} ({mass['section']}) - {mass['why']}")
+        return 0
+    if isinstance(payload.get("days"), list):
+        print(payload["date"])
+        for row in payload["days"]:
+            week = f" week {row['week']}" if row.get("week") else ""
+            print(f"  {row['calendar']}: {row['season']}{week}, liturgical year {row['year']}")
+            if row.get("lectionary"):
+                print(f"    Lectionary {row['lectionary']['sunday']} / {row['lectionary']['weekday']}")
+            for entry in row["candidates"]:
+                tag = f"  [{entry['territorial']}]" if entry.get("territorial") else ""
+                print(f"    {entry['key']}: {entry['name']}{tag}")
+            if not row["candidates"]:
+                print("    no mass is written for this day")
+            if not row["ranked"]:
+                print("    unranked: more than one candidate, and no precedence is stated")
+            for refusal in row["unresolved"]:
+                print(f"    unresolved this year: {refusal['what']} - {refusal['why']}")
+        print(f"  {ADVISORY}")
+        return 0
+    if "files" in payload:
+        print(f"wrote {payload['files']} files for {payload['span']['first']}-{payload['span']['last']}")
+        for path in payload["written"]:
+            print(f"  -> {path}")
+        return 0
+    for name, row in payload["calendars"].items():
+        print(f"{name}: {row['placements']} placements")
+        for key in row["rules_without_a_mass"]:
+            print(f"    a rule names {key}, which this calendar does not carry")
+    print(f"checked against the worked tables in {GUIDANCE}")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--root", default=str(DEFAULT_ROOT), help="calendar directory")
+    shared.add_argument("--out", default="src/web/data", help="where `structure` writes")
+    shared.add_argument("--calendar", default=None, help="limit to one calendar")
+    shared.add_argument("--first", type=int, default=FIRST_YEAR, help="first civil year")
+    shared.add_argument("--last", type=int, default=LAST_YEAR, help="last civil year")
+    shared.add_argument("--date", default=None, help="the date `day` resolves")
+    shared.add_argument("--format", choices=("text", "json"), default="text")
+    shared.add_argument("--verbose", action="store_true", help="list every file written")
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    parser = argparse.ArgumentParser(
+        prog="calendar-days",
+        description="Resolve civil dates to each calendar's masses as a computed finding aid.",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("check", help="verify the computation against the guidance", parents=[shared])
+    sub.add_parser("structure", help="write the browser's date-to-mass files", parents=[shared])
+    sub.add_parser("coverage", help="report what each calendar can reach", parents=[shared])
+    sub.add_parser("day", help="resolve one civil date", parents=[shared])
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={
+            "check": run_check,
+            "structure": run_structure,
+            "coverage": run_coverage,
+            "day": run_day,
+        },
+        renderer=render,
+        prefix="calendar-days",
+        argv=argv,
+        default_verb="check",
+        dependency_message="install PyYAML (requirements-tools.txt)",
+        mapped_errors={ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

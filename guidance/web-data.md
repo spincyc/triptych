@@ -82,13 +82,41 @@ when the file is generated rather than filtered in the page, so a browser
 cannot offer what the project has no right to serve even if its fragments were
 somehow present beside it.
 
+## The calendar layer
+
+`structure/calendar/<calendar>/<civil-year>.json`, written by `calendar-days
+structure`, answers the one question the four layers above cannot: which mass
+does a given date point at. It sits beside the structure files rather than
+above them, because it is derived from the calendar's mass index and the
+arithmetic in [calendar computation](liturgy/calendar-computation.md), not from
+verse text.
+
+One file per civil year per calendar is additive in both directions: a year
+adds one file per calendar and a calendar adds one file per year. A file per
+date would be neither, and it is the trap the propers browser already avoids.
+`structure/calendar/index.json` names the calendars, the span, and the path
+template, so a page discovers the set with one fetch and then fetches the year
+it wants.
+
+The layer is a **finding aid and never an authority**, which is a constraint on
+the data and not only on the page. A date carries every candidate the rules
+reach — a temporal day and a fixed-date feast both stand, unranked, because no
+general table of precedence is stated. A celebration whose transfer to a Sunday
+belongs to the competent authority carries both forms, each tagged with the
+option it holds under, so nothing in the file resolves a territorial decision by
+arithmetic. Where the rules run out — a year with no Sunday in the Christmas
+octave, a 1962 year with twenty-three Sundays after Pentecost — the year records
+the refusal in `unresolved` instead of choosing. Each file carries the advisory
+that says so, so the caution cannot be separated from the data.
+
 ## Assembling the site
 
-Three of the four pieces are generated straight into the data root:
+Four of the pieces are generated straight into the data root:
 
 ```sh
-tools/tpt mass-propers structure --out src/web/data   # structure/propers/*.json
+tools/tpt mass-propers  structure --out src/web/data  # structure/propers/*.json
 tools/tpt reading-plan  structure --out src/web/data  # structure/readings/*.json
+tools/tpt calendar-days structure --out src/web/data  # structure/calendar/**/*.json
 tools/tpt index-bible   manifest  --out src/web/data  # bibles.json
 ```
 

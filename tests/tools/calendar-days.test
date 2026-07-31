@@ -1,0 +1,238 @@
+#!/bin/sh
+# Test for `tools/tpt calendar-days`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="calendar-days"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# The computation agrees with every worked table in the guidance.
+run_tool check >/dev/null
+
+# A short span keeps the gate quick; the shape is the same at any span.
+run_tool structure --out "$sandbox/data" --first 2024 --last 2028 >/dev/null
+root="$sandbox/data/structure/calendar"
+if [ ! -f "$root/index.json" ]; then
+	echo "structure wrote no calendar index" >&2
+	exit 1
+fi
+
+python3 - "$repo" "$root" <<'PY'
+import json, pathlib, sys
+
+repo, root = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
+years = list(range(2024, 2029))
+
+index = json.loads((root / "index.json").read_text(encoding="utf-8"))
+names = [entry["calendar"] for entry in index["calendars"]]
+assert "roman-1962" in names and "postconciliar" in names, names
+# Nothing computed may be offered as a witness, so the advisory travels with
+# every file rather than living in a page the data could be served without.
+for word in ("finding aid", "Ordo"):
+    assert word in index["advisory"], index["advisory"]
+
+# File counts stay additive: one file per year per calendar, plus one index.
+written = sorted(p for p in root.rglob("*.json"))
+assert len(written) == len(years) * len(names) + 1, [p.name for p in written]
+
+import yaml
+
+for entry in index["calendars"]:
+    name = entry["calendar"]
+    masses = {
+        mass["key"]: mass
+        for body in yaml.safe_load(
+            (repo / "src/sources/calendars" / name / "propers.yaml").read_text(encoding="utf-8")
+        )["sections"].values()
+        for mass in body["masses"]
+    }
+    # The path template is what a page substitutes into, so it must name the
+    # only variable it carries.
+    assert "{civil_year}" in entry["path"], entry["path"]
+
+    for civil_year in years:
+        document = json.loads((root / name / f"{civil_year}.json").read_text(encoding="utf-8"))
+        assert document["civil_year"] == civil_year
+        # A computed table never ranks what the guidance does not rank.
+        assert document["precedence"]["stated"] is False
+
+        for stamp, candidates in document["days"].items():
+            assert stamp.startswith(f"{civil_year}-"), stamp
+            assert candidates, stamp
+            for candidate in candidates:
+                # Every emitted key is a mass this calendar actually carries.
+                assert candidate["key"] in masses, (name, stamp, candidate["key"])
+                assert 0 <= candidate["rule"] < len(document["rules"]), candidate
+
+        # Every day of the civil year sits in exactly one season of exactly one
+        # of the liturgical years the file carries, so a date with no mass can
+        # still be named.
+        seasons = [
+            (span["from"], span["to"])
+            for year in document["liturgical_years"]
+            for span in year["seasons"]
+        ]
+        for month, day in ((1, 1), (6, 15), (12, 31)):
+            stamp = f"{civil_year}-{month:02d}-{day:02d}"
+            covering = [pair for pair in seasons if pair[0] <= stamp <= pair[1]]
+            assert len(covering) == 1, (name, stamp, covering)
+
+        for year in document["liturgical_years"]:
+            assert year["begins"] < year["ends"]
+            if name == "roman-1962":
+                # The 1962 system has no Lectionary cycle and must never be
+                # given one.
+                assert year["lectionary"] is None, year["lectionary"]
+            else:
+                assert year["lectionary"]["sunday"] in ("A", "B", "C")
+                assert year["lectionary"]["weekday"] in ("I", "II")
+
+# The cycle turns at the First Sunday of Advent, not at 1 January, and the
+# weekday numeral is resolved independently of the letter.
+document = json.loads((root / "postconciliar" / "2026.json").read_text(encoding="utf-8"))
+cycles = {year["year"]: year["lectionary"] for year in document["liturgical_years"]}
+assert cycles[2026]["sunday"] == "A" and cycles[2026]["weekday"] == "II", cycles
+assert cycles[2027]["sunday"] == "B" and cycles[2027]["weekday"] == "I", cycles
+assert [y for y in document["liturgical_years"] if y["year"] == 2026][0]["begins"] == "2025-11-30"
+
+# The dates the guidance works out by hand.
+keys = {stamp: {c["key"] for c in row} for stamp, row in document["days"].items()}
+assert "easter-sunday" in keys["2026-04-05"], keys.get("2026-04-05")
+assert "pentecost" in keys["2026-05-24"], keys.get("2026-05-24")
+assert "most-holy-trinity" in keys["2026-05-31"], keys.get("2026-05-31")
+assert "advent-1" in keys["2026-11-29"], keys.get("2026-11-29")
+assert "christ-the-king" in keys["2026-11-22"], keys.get("2026-11-22")
+# 2026 omits Ordinary Time week 7, so its Sunday never occurs.
+assert not any("ot-7" in row for row in keys.values()), "the omitted week was placed"
+assert [y for y in document["liturgical_years"] if y["year"] == 2026][0]["facts"]["omitted_week"] == 7
+
+# A territorial transfer is shown, never chosen: the Ascension stands on both
+# the Thursday and the Sunday, each tagged with the option it holds under, and
+# neither is offered untagged.
+forms = {}
+for stamp, row in document["days"].items():
+    for candidate in row:
+        if candidate["key"] == "ascension":
+            forms[stamp] = candidate.get("territorial")
+assert forms == {
+    "2026-05-14": "ascension-thursday",
+    "2026-05-17": "ascension-transferred-to-sunday",
+}, forms
+
+# The same for the Body and Blood of Christ, whose Sunday form displaces the
+# numbered Sunday that otherwise stands there.
+sunday = {c["key"]: c.get("territorial") for c in document["days"]["2026-06-07"]}
+assert sunday == {
+    "corpus-christi": "corpus-christi-transferred-to-sunday",
+    "ot-10": "corpus-christi-thursday",
+}, sunday
+
+# The 1962 file must carry no postconciliar vocabulary at all.
+older = json.loads((root / "roman-1962" / "2026.json").read_text(encoding="utf-8"))
+assert "ordinary" not in json.dumps(older["days"]).lower()
+for year in older["liturgical_years"]:
+    assert year["ordinary_time_weeks"] == []
+    facts = year["facts"]
+    assert 1 <= facts["sundays_after_epiphany"] <= 6, facts
+    assert 23 <= facts["sundays_after_pentecost"] <= 28, facts
+    assert facts["surplus"] in (0, 1), facts
+# The Epiphany is not transferred in this calendar, and the file says why.
+assert "not computed" in older["territorial"]["epiphany"]["transferred_sunday_form"]
+PY
+
+# A year in which 25 December is a Sunday has no Sunday within the octave, and
+# the guidance states no fallback, so the year refuses rather than inventing one.
+run_tool structure --out "$sandbox/gap" --first 2022 --last 2022 >/dev/null
+python3 - "$sandbox/gap/structure/calendar" <<'PY'
+import json, pathlib, sys
+
+root = pathlib.Path(sys.argv[1])
+document = json.loads((root / "postconciliar" / "2022.json").read_text(encoding="utf-8"))
+year = [y for y in document["liturgical_years"] if y["year"] == 2023][0]
+refused = [row["what"] for row in year["unresolved"]]
+assert "holy-family" in refused, year["unresolved"]
+assert "2022-12-25" in document["days"]
+assert all("holy-family" not in c["key"] for c in document["days"]["2022-12-25"])
+PY
+
+# `day` answers one date and says what it is.
+run_tool day --date 2026-04-05 --calendar roman-1962 --format json >"$sandbox/one.json"
+for want in '"easter-sunday"' 'finding aid'; do
+	if ! grep -q "$want" "$sandbox/one.json"; then
+		echo "day payload is missing $want" >&2
+		exit 1
+	fi
+done
+
+status=0
+run_tool day >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "day without --date should exit 2, got $status" >&2
+	exit 1
+fi
+
+# `coverage` says what is reachable and what is not, by name.
+run_tool coverage --first 2026 --last 2026 --format json >"$sandbox/coverage.json"
+python3 - "$sandbox/coverage.json" <<'PY'
+import json, sys
+
+payload = json.load(open(sys.argv[1], encoding="utf-8"))
+rows = {row["calendar"]: row for row in payload["coverage"]}
+assert set(rows) == {"roman-1962", "postconciliar"}, sorted(rows)
+for name, row in rows.items():
+    assert row["dates"] == 365, (name, row["dates"])
+    assert row["dates_resolved"] + row["dates_unresolved"] == row["dates"]
+    assert row["dates_resolved"] > 0
+    # A mass the guidance cannot date is reported with the reason, never placed.
+    for mass in row["masses_never_placed"]:
+        assert mass["why"], mass
+older = rows["roman-1962"]
+unplaced = {mass["key"] for mass in older["masses_never_placed"]}
+assert "september-ember-wednesday" in unplaced, sorted(unplaced)
+assert "rogation-mass" in unplaced, sorted(unplaced)
+PY
+
+# An empty calendar root is an error rather than a silent success.
+mkdir -p "$sandbox/empty"
+status=0
+run_tool check --root "$sandbox/empty" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "an empty calendar root should exit 2, got $status" >&2
+	exit 1
+fi
+
+status=0
+run_tool structure --root "$sandbox/empty" --out "$sandbox/never" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "structure should refuse an empty root, got $status" >&2
+	exit 1
+fi
+if [ -e "$sandbox/never" ]; then
+	echo "a refused structure must not create an output directory" >&2
+	exit 1
+fi
+
+# Machine form is one key-sorted object.
+run_tool check --format json >"$sandbox/check.json"
+for want in '"calendars"' '"status"'; do
+	if ! grep -q "$want" "$sandbox/check.json"; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+
+if run_tool check --format nonesuch >/dev/null 2>&1; then
+	echo "expected failure for an unknown format" >&2
+	exit 1
+fi
+
+echo ok

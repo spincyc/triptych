@@ -11,6 +11,17 @@
       "stage": "draft",
       "usage": "artwork-library {check,normalize,identify,check-pdf} --help"
     },
+    "calendar-days": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Resolve civil dates to each calendar's masses as a computed finding aid.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "calendar-days {check,structure,coverage,day} [--calendar NAME] [--first Y] [--last Y] [--date D] [--root DIR] [--out DIR]"
+    },
     "calendar-spine": {
       "idempotent": true,
       "json": true,
