@@ -213,9 +213,92 @@ record cannot express them today:
 
 ---
 
-## 6. OCR quality
+## 6. OCR quality, with examples
 
-Assessed during acquisition — see section 8.
+Two separate quality problems, and they are not the same problem.
+
+### Migne OCR from the Internet Archive is not publishable text
+
+Sampled from `patrologiae_cursus_completus_lat_vol_034_djvu.txt`, the Internet
+Archive text layer of Migne PL 34 — the volume holding Augustine's Genesis
+works. Reproduced exactly:
+
+```
+Omnis doctrina vel rerum est vel signorum, sed res per signa discuntur.
+Proprie autem nunc res appel¬ lavi, quae non ad significandum aliquid
+adbibentur, Siculi est lignum, bpis, pecus , atqne hujusmodi ca> tora.
+[...] ncqne ille lapis quem Jacob sibi ad caput posuerat (Cenes, xxvui, II);
+neque illud pecus quod pro filio immoiarit Abrabam (Id. xxu, 43).
+[...] Cx quo bitet- Ugitur quid appeUeni signa; res eas videlicet quae ad
+significandum aliquid adliibcntur.
+```
+
+Every one of these is wrong: `bpis` for *ovis*, `Siculi` for *sicut*, `atqne`
+and `ncqne` for *atque* and *neque*, `ca> tora` for *cetera*, `Cenes` for
+*Genes.*, `immoiarit` for *immolavit*, `Abrabam` for *Abraham*, `Cx quo bitet-
+Ugitur quid appeUeni` for *Ex quo intelligitur quid appellem*, `adliibcntur`
+for *adhibentur*. Roughly **one word in eight is corrupted**, and the
+double-column layout leaves soft-hyphen artifacts (`appel¬ lavi`, `re¬ rum`)
+and stray spacing throughout.
+
+This cannot be rendered on a page. It is a finding aid and nothing more. The
+repository already says so in its own words, in the note on
+`artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.ia-djvu-ocr-d1f91f40`:
+"Long s is frequently read as f, the ae ligature as z, and marginal keywords
+are interleaved with the text. It is a finding aid; a quotation taken from it
+is a quotation of the text layer and not of the page unless separately
+collated."
+
+**The consequence is the real cost of this corpus.** The Latin is
+licence-clear and the English is licence-blocked, but the licence-clear Latin
+is not readable as delivered. Clean keyed-in Latin does exist — Corpus
+Corporum and Documenta Catholica Omnia both have it — and it is exactly that
+clean text which carries the non-commercial restrictions in section 2. So the
+two constraints interlock: **the clean Latin is encumbered and the
+unencumbered Latin is OCR wreckage.** Acquisition cost for the eight
+Latin-only works is transcription and repair, not download.
+
+### The English web transcriptions are clean
+
+By contrast the NPNF text on Wikisource and CCEL is keyed, not scanned, and
+needed no repair. The only defect found across roughly 1,800 words was a
+doubled auxiliary — "and that was all was given up to chance" — and because it
+is present identically in **both** independent witnesses it belongs to the
+transcription lineage rather than to either host. It is preserved in the
+landed artifact and flagged in its notes rather than silently corrected.
+
+---
+
+## 6a. Three tool-level blockers, each demonstrated
+
+These are why this lane could not land text for all ten works, and each is a
+hard requirement on the acquisition verb.
+
+1. **A model-mediated fetch refuses on a copyright notice.** Asked for the
+   Basil text, New Advent's page returned a refusal citing "Copyright © 2026
+   by New Advent LLC" — the site's own bare notice over a public-domain
+   translation. The route was blocked by a claim that is not valid over the
+   underlying text.
+2. **A model-mediated fetch is not reliably verbatim.** The same route
+   returned Basil's Homily I sections 1 and 2 word for word from CCEL, and
+   then returned a **paraphrase** of Gregory of Nyssa's *On the Making of Man*
+   chapter 1 from the same host — "Gregory of Nyssa discusses how heaven and
+   earth were created…" — in answer to an explicit verbatim instruction.
+   Nothing in the response distinguishes the two cases, and a subtler
+   paraphrase would not be detectable at all. **Text acquired this way cannot
+   be trusted as a transcription without a second independent witness.** That
+   is why the Basil fragments were landed only after Wikisource and CCEL were
+   found to agree character for character, and why nothing was landed for
+   Gregory of Nyssa.
+3. **A model-mediated fetch cannot reach into a large file.** The hashed
+   7.2 MB Internet Archive OCR of a Lapide truncates to its front matter; a
+   request for the commentary on Genesis 1:1 returned "The text ends before
+   reaching the exegetical content on the Pentateuch proper." The locus is in
+   the file and is unreachable by this route.
+
+The verb must therefore **fetch and retain whole byte streams, hash them, and
+seek within them locally.** Text must never be routed through a model on its
+way into an artifact.
 
 ---
 
@@ -272,4 +355,58 @@ specification a future verb has to satisfy.
 
 ## 8. What landed on disk
 
-Filled in as acquisition proceeds.
+### Landed by this lane
+
+| Path | What |
+| --- | --- |
+| `src/sources/commentary/pilot-genesis/licence-survey.md` | this document |
+| `.../series-2-volume-8/editions/new-york-1895/passages/basil-hexaemeron-1.1.toml` | Basil, Hexaemeron I.1 — the proem on Moses |
+| `.../series-2-volume-8/editions/new-york-1895/passages/basil-hexaemeron-1.2.toml` | Basil, Hexaemeron I.2 — **the exposition of Genesis 1:1** |
+| `.../artifacts/basil-hexaemeron-1.1-web-text-b1f7692f/` | tracked transcription, 2,789 bytes, 5 sense units |
+| `.../artifacts/basil-hexaemeron-1.2-web-text-0e2f2b33/` | tracked transcription, 2,904 bytes, 8 sense units |
+
+Both passages carry `states = ["cataloged", "acquired", "inspected"]`. They are
+**not** `verified`: no facsimile of the 1895 printing was hashed or collated,
+so the wording rests on two agreeing web witnesses and not on the page.
+Promoting them to `verified` would be exactly the false claim that vocabulary
+exists to prevent.
+
+### Already in the repository — the page lane should use these
+
+Discovered rather than acquired, and directly usable:
+
+- **Augustine, *De civitate Dei* XI.6, XI.7, XI.19** on Genesis 1, landed by
+  another lane at `0c99de39`, transcribed from a hash-pinned Dods 1871
+  artifact and `verified`.
+- **`work.cornelius-a-lapide.commentaria-in-pentateuchum`** already exists with
+  a hashed Internet Archive OCR artifact and a checked transcription of **eight
+  notes on Genesis 15**. That is one of the ten, already acquired, and a
+  complete worked example of the Latin pattern: OCR as a `remote` hashed
+  finding aid, transcription as the `tracked` derivative naming its
+  transformation.
+- **`src/sources/works/migne/`** carries PL 13 and PL 16 as works cited by
+  column, with page-image artifacts. The container for the eight Latin-only
+  works exists and does not need designing.
+- Of the fifteen tracked NPNF volumes, only **series 2 volume 8** (Basil) and
+  **series 2 volume 5** (Gregory of Nyssa, *On the Making of Man*) contain any
+  Genesis exposition at all.
+
+So the prototype page can already render a real chain across three authors and
+two languages: **Basil (d. 379) → Augustine (d. 430) → Cornelius a Lapide
+(d. 1637)**, the first two in English and the third in Latin. That is enough to
+exercise chronological ordering, the language split, and the extent rule.
+
+### Not landed, and why
+
+Nothing was landed for the other eight works. For the Latin and Greek works the
+blockers in section 6a are decisive: the only unencumbered text is Internet
+Archive OCR, which is a multi-megabyte file this lane cannot seek into and
+which would need per-word repair even if it could. For Gregory of Nyssa — clean,
+public domain, in an already-tracked volume — the one route that answered
+returned a paraphrase and no second witness was found, so nothing was written
+rather than writing something that might not be the translator's words.
+
+**This is the pilot's practical answer to "what will acquiring actually look
+like".** It looks like a byte-level fetch-and-hash tool, followed by
+transcription work bounded by collation effort rather than by bandwidth. It
+does not look like scraping.
