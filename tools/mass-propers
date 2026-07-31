@@ -303,8 +303,50 @@ def citation_structure(entry: dict, source: str, tokens: dict[str, str]) -> dict
     return structure
 
 
+TRANSLATIONS_DIR = "inventories"
+
+
+def translation_overlay(calendar: str) -> tuple[dict, set, list]:
+    """Translations recorded for a calendar's propers, keyed by proper.
+
+    The contract in `src/sources/calendars/README.md` puts `translations` inside
+    each proper, and that is still where they belong. They are read from a
+    sidecar here because the two validators leave nowhere else to put them:
+    `check-calendar-masses` reads every yaml under `src/sources/calendars` as a
+    mass index, and `source-library validate` rejects any file under
+    `src/sources` outside its own schema list. Reading the sidecar rather than
+    merging it into `propers.yaml` also keeps one copy of each translation
+    instead of two, which is the same rule the verse fragments follow.
+
+    Returns the overlay, the propers deliberately left untranslated, and the
+    entries that no longer answer their target.
+    """
+    import tomllib
+
+    path = (
+        ROOT
+        / "src"
+        / "sources"
+        / TRANSLATIONS_DIR
+        / f"{calendar}-proper-translations-v1.toml"
+    )
+    if not path.is_file():
+        return {}, set(), []
+    document = tomllib.loads(path.read_text(encoding="utf-8"))
+    overlay, stale = {}, []
+    for entry in document.get("entries") or []:
+        key = (entry.get("mass"), entry.get("form") or "", entry.get("proper"))
+        overlay[key] = entry
+    untranslated = {
+        (entry.get("mass"), entry.get("form") or "", entry.get("proper"))
+        for entry in document.get("untranslated") or []
+    }
+    return overlay, untranslated, stale
+
+
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dict:
     document = load_calendar(root, calendar)
+    overlay, untranslated, stale = translation_overlay(calendar)
     source = document.get("psalm_numbering")
     if source not in SYSTEMS:
         raise ValueError(f"{calendar} declares unknown psalm numbering {source!r}")
@@ -312,6 +354,24 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
     for kind, mass in masses_of(document):
         propers = []
         for form, proper in propers_of(mass):
+            key = (mass.get("key"), form or "", proper.get("name"))
+            recorded = overlay.get(key)
+            # An entry whose proper no longer opens with the incipit it was
+            # derived against is stale, and merging it on the strength of the
+            # mass key alone would attach one prayer's English to another's
+            # Latin. Refuse it and report it: a missing translation is visible,
+            # a misattached one is not.
+            if recorded and recorded.get("incipit") and proper.get("incipit"):
+                if recorded["incipit"].strip() != str(proper["incipit"]).strip():
+                    stale.append(
+                        f"{calendar} {key[0]}/{key[2]}: recorded incipit "
+                        f"{recorded['incipit']!r} does not match "
+                        f"{proper['incipit']!r}"
+                    )
+                    recorded = None
+            carried = dict(proper)
+            if recorded:
+                carried["translations"] = recorded.get("translations")
 
             def cited(owner: dict) -> list[dict]:
                 return [
@@ -343,7 +403,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     # are the proper. Carrying only the incipit left the page
                     # naming a Collect it could not show.
                     "text": proper.get("text"),
-                    "translations": publishable_translations(proper),
+                    "translations": publishable_translations(carried),
+                    # Distinguishes a proper nobody has looked at from one
+                    # deliberately left without English.
+                    "untranslated": key in untranslated or None,
                     "citations": cited(proper),
                     "cycles": {
                         year: {"citations": rows, "text": owner.get("text")}

@@ -1,0 +1,2574 @@
+# English translations for the text-bearing propers of the roman-1962 calendar.
+#
+# This file sits in inventories/ rather than beside its calendar because the two
+# validators leave nowhere else: `check-calendar-masses` reads every .yaml under
+# src/sources/calendars as a mass index, and `source-library validate` rejects any
+# file under src/sources outside its own schema. Its eventual home is inside each
+# proper in propers.yaml, which is where the contract in
+# src/sources/calendars/README.md puts `translations`; it is here only because
+# another lane owns that file. See `merge` below.
+
+translations_schema = 1
+record_type = "calendar-proper-translations"
+calendar = "roman-1962"
+target = "src/sources/calendars/roman-1962/propers.yaml"
+recorded_on = "2026-07-31"
+merge = """
+Each entry names one proper by mass key, form label and proper name. Set that
+proper's `translations` key to the entry's `translations` array verbatim: the
+array already carries exactly the keys `check-calendar-masses` validates -- lang,
+text, rights, and source_id for a public-domain or licensed basis -- so the merge
+copies a structure and does not translate between schemas.
+
+Check `incipit` against the target proper before merging. An entry whose mass,
+form, proper or incipit no longer answers the target is stale and must be
+re-derived from the witness, never merged on the strength of its mass key alone.
+
+`untranslated` merges nothing. It is the ledger of propers deliberately left
+without English, so that a proper carrying no `translations` key can be
+distinguished from one nobody looked at, and so that a page can say that no
+English is recorded rather than showing Latin as though it were the answer.
+"""
+verification = """
+Unverified. Every English text here was read out of an optical-character-
+recognition text layer and has been collated against nothing. Page images were
+not rendered or inspected, and no printed page or leaf is recorded for any
+entry; establishing those from the Internet Archive item's page-number map is
+the first step of any collation.
+
+The alignment of each oration to its mass was settled by reading the English
+against the Latin the calendar carries. That is a judgement and not a
+collation, and it was necessary: the book abbreviates its Latin incipits, dozens
+of orations open `Deus qui`, and the scan damages italic worst of all, so
+matching on incipits alone produced confident wrong answers. Where the scan lost
+a part label, two masses share one block; those cases are named in the entries
+that depend on them.
+
+Treat every text here as a lead of the same standing as the Latin beside it in
+propers.yaml, whose own `verification` field says the same of itself.
+"""
+corrections = """
+The retained English is not a diplomatic transcription. Optical damage to
+ordinary English words was corrected from a substitution table built by reading
+the generated file, spacing before punctuation was closed up, a full stop
+falling inside a clause was removed, and the book's abbreviated conclusion was
+normalised to Thro'. Nothing was modernised, no wording was supplied, and no
+oration was completed from another source. Two extents that the general rules
+cut in the wrong place were restored by rereading the text layer at those two
+points, and are marked `boundary_restored`. Where the scan broke off mid-clause
+the oration is recorded as untranslated rather than mended.
+"""
+
+[[sources]]
+id = "cummiskey-1861"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+artifact_id = "artifact.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861.ia-djvu-ocr-4e9d1aa6"
+label = "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)"
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Published in the United States in 1861, so in the public domain there by publication date: every United States work published before 1930 has entered the public domain and no renewal question arises for an 1861 imprint. The translator is unnamed and no proprietor survives. The basis is a United States one and is recorded as such, as the King James Version and Revised Version records here are, because a public-domain claim does not travel of itself; a reader outside the United States must establish the position in their own jurisdiction."
+caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics, its seasonal second and third orations, its Holy Week and its sanctoral are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation."
+
+
+[[entries]]
+mass = "advent-1"
+form = ""
+proper = "Collect"
+incipit = "Excita, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Exert, we beseech thee, O Lord, thy power, and come: that by thy protection we may be freed from the imminent dangers of our sins, and be saved by thy mercy, who liveth and reigneth, &c.
+"""
+
+[[entries]]
+mass = "advent-1"
+form = ""
+proper = "Secret"
+incipit = "Haec sacra nos"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, O Lord, that these sacred mysteries may cleanse us by their powerful virtue, and bring us with greater purity to him, who.
+"""
+
+[[entries]]
+mass = "advent-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Suscipiamus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May we receive, O Lord, thy mercy in the midst of thy temple, that with due honour we may prepare for the approaching solemnity of our reparation. Thro'.
+"""
+
+[[entries]]
+mass = "advent-2"
+form = ""
+proper = "Collect"
+incipit = "Excita, Domine, corda nostra"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Stir up, O Lord, our hearts to prepare the ways of thy only begotten Son: that by his coming we may be enabled to serve thee with pure minds. Who livest.
+"""
+
+[[entries]]
+mass = "advent-2"
+form = ""
+proper = "Secret"
+incipit = "Placare, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Be appeased, O Lord, we beseech thee, by our humble prayers and sacrifices; and although we can allege no deserts on our part, grant us thy protection. Thro'.
+"""
+
+[[entries]]
+mass = "advent-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Repleti cibo"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Being filled, O Lord, with this spiritual food, we humbly -»eseech thee, to teach us, by partaking of this mystery, to despise earthly things, and to love such as are heavenly.
+"""
+
+[[entries]]
+mass = "advent-3"
+form = ""
+proper = "Collect"
+incipit = "Aurem tuam"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Bend thine ear, € Lord, we beseech thee, to our prayers, and enlight en the darkness of our minds by the grace of thy visitation. Who livest.
+"""
+
+[[entries]]
+mass = "advent-3"
+form = ""
+proper = "Secret"
+incipit = "Devotionis nostrae"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May we always, O Lord, offer thee this sacrifice of our devotion, both to comply with the institution of these sacred mysteries, and wonderfully to procure ourselves that salvation which thou designest us. Thro'.
+"""
+
+[[entries]]
+mass = "advent-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Imploramus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We implore, O Lord, thy mercy, that these divine helps having cleansed us from sin, may prepare us for the ensuing solemnity.
+"""
+
+[[entries]]
+mass = "advent-4"
+form = ""
+proper = "Collect"
+incipit = "Excita, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Exert, we beseech thee, O Lord, thy power, and come: and succour us by thy grent might: that by the assistance of thy grace, thy indulgent mercy may hasten, what is delayed by our sins. Who livest.
+"""
+
+[[entries]]
+mass = "advent-4"
+form = ""
+proper = "Secret"
+incipit = "Sacrificiis praesentibus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Hear us, O Lord, we beseech thee, and being appeased by these offerings, grant they may increase our devotion, and advance our salvation.
+"""
+
+[[entries]]
+mass = "advent-4"
+form = ""
+proper = "Postcommunion"
+incipit = "Sumptis muneribus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Having received what has been offered to thee, O Lord, grant, we beseech thee, that the more frequently we partake of these sacred mysteries, the more our devotion may increase.
+"""
+
+[[entries]]
+mass = "sunday-within-octave-of-nativity"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus, dirige"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O almighty and eternal God, regulate our actions according to thy divine will, that, in the name of thy beloved Son, we may abound in good works, Thro'.
+"""
+
+[[entries]]
+mass = "sunday-within-octave-of-nativity"
+form = ""
+proper = "Secret"
+incipit = "Concede, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that this sacrifice offered to thy Divine Majesty, may obtain for us the grace of true devotion, and a happy eternity. Thro'.
+"""
+
+[[entries]]
+mass = "sunday-within-octave-of-nativity"
+form = ""
+proper = "Postcommunion"
+incipit = "Per hujus, Domine, operationem"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the efficacy of this sacrament, O Lord, cleanse us from our sins, and obtain for us the accomplishment of our just desires. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-3"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O almighty and eterna] God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-3"
+form = ""
+proper = "Secret"
+incipit = "Haec hostia"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this offering, O Lord, we beseech thee, cleanse away our sins: and sanctify the bodies and souls of thy servants, to prepare them for worthily celebrating this sacrifice. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Quos tantis"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We beseech thee, O Lord, that we, to whom thou vouchsafest the use of these great mysteries, may be made truly worthy to receive the benefits thereof. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-4"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nos"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who knowest that thro’ human frailty we are not able to subsist amidst so many dangers, grant us health of soul and body; that whatsoever we suffer for our sins, we may overcome by thy assistance. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-4"
+form = ""
+proper = "Secret"
+incipit = "Concede, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that the offering of this sacrifice may always cleanse our frailty from all evil, and be a protection to us. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-4"
+form = ""
+proper = "Postcommunion"
+incipit = "Munera tua"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May thy gifts, which we have partaken of, O God, detach us from all earthly pleasures, and ever refresh and strengthen us with heavenly food. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-5"
+form = ""
+proper = "Collect"
+incipit = "Familiam tuam"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Preserve, we beseech thee, O Lord, thy family by thy constant mercy, that we, who confide solely in the support of thy heavenly grace, may be always defended by thy protection. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-5"
+form = ""
+proper = "Secret"
+incipit = "Hostias tibi"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We offer thee, O Lord, this sacrifice of propitiation: that thou wouldst mercifully forgive us our sins, and guide our tottering hearts. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-5"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We, beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-6"
+form = ""
+proper = "Collect"
+incipit = "Praesta, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that being always intent upon what is reasonable and just, we may, both in word and deed, perform what is acceptable to thee. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-6"
+form = ""
+proper = "Secret"
+incipit = "Haec nos oblatio"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this oblation, O God, we beseech thee, cleanse, renew, govern and protect us.
+"""
+
+[[entries]]
+mass = "septuagesima"
+form = ""
+proper = "Collect"
+incipit = "Preces populi tui, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Mercifuly hear, we be seech thee, O Lard, the prayers of thy people: that we who are justly afflicted for our sins, may be mercifully delivered for the glory of thy name. Thro'.
+"""
+
+[[entries]]
+mass = "septuagesima"
+form = ""
+proper = "Secret"
+incipit = "Muneribus nostris, quaesumus"
+witness = "cummiskey-1861"
+boundary_restored = true
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Having received, O Lord, our offerings and prayers, cleanse us, we beseech thee, by these heavenly mysteries, and mercifully hear us.
+"""
+
+[[entries]]
+mass = "septuagesima"
+form = ""
+proper = "Postcommunion"
+incipit = "Fideles tui, Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May thy faithful, O God, be strengthened by tliese thy mysteries; that receiving them, they may still desire them; aud desiring them may eternally receive them. Thro'.
+"""
+
+[[entries]]
+mass = "sexagesima"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui conspicis"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who seest that we place no confidence in any thing we do: mercifully grant that, by the protection of the Doctor of the Gentiles, we may be defended against all adversity. Thro'.
+"""
+
+[[entries]]
+mass = "sexagesima"
+form = ""
+proper = "Secret"
+incipit = "Oblatum tibi, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the sacrifice we have offered to thee, O Lord, always enliven us and defend us. Thro'.
+"""
+
+[[entries]]
+mass = "sexagesima"
+form = ""
+proper = "Postcommunion"
+incipit = "Supplices te rogamus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we humbly beseech thee, O Almighty God, that those whom thou refreshest with thy sacraments, may, by a life well pleasing to thee, worthily serve thee. Thro'.
+"""
+
+[[entries]]
+mass = "quinquagesima"
+form = ""
+proper = "Collect"
+incipit = "Preces nostras, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Mercifully hear our prayers, we beseech thee, O Lord, and being freed from the chains of our sins, preserve us from all adversity Thro'.
+"""
+
+[[entries]]
+mass = "quinquagesima"
+form = ""
+proper = "Secret"
+incipit = "Haec hostia, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this offering, we beseech thee, O Lord, cleanse away our sins: and sanctify the bodies and souls of thy servants, to prepare them for worthily celebrating this sacrifice. Thro'.
+"""
+
+[[entries]]
+mass = "quinquagesima"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+boundary_restored = true
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We beseech thee, O Almighty God, that we who have taken this heavenly food, may by it be defended from all adversity.
+"""
+
+[[entries]]
+mass = "lent-1"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui Ecclesiam tuam"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who purifiest thy Church by the yearly observation of Lent: grant that what thy children endeavour to obtain of thee by abstinence, they may put in execution by good works. Thro'.
+"""
+
+[[entries]]
+mass = "lent-1"
+form = ""
+proper = "Secret"
+incipit = "Sacrificium quadragesimalis initii"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We offer thee, O Lord, in the most solemn manner, this sacrifice at the beginning of Lent, humbly beseeching thee, that as we retrench from the food of our bodies, we may also refrain from all noxious pleasures. Thro'.
+"""
+
+[[entries]]
+mass = "lent-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Tui nos, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the holy oblation, O Lord, of thy sacrament, give us a new life, that, by laying aside the old man, it may bring us to the participation of this saving mystery. Thro'.
+"""
+
+[[entries]]
+mass = "lent-2"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui conspicis"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who seest how destitute we are of all strength, preserve us both within and without, that our bodies may be free from all adversity, and our souls purified from all evil thoughts, Thro'.
+"""
+
+[[entries]]
+mass = "lent-2"
+form = ""
+proper = "Secret"
+incipit = "Sacrificiis praesentibus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Look down, O Lord, we beseech thee, on this our sacrifice, that it may increase our devotion, and procure our salvation. Thro'.
+"""
+
+[[entries]]
+mass = "lent-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Supplices te rogamus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant we humbly be.
+"""
+
+[[entries]]
+mass = "lent-3"
+form = ""
+proper = "Collect"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Be attentive, we beseech thee, O Almighty God, to the prayers of thy servants: and stretch forth the arm of thy divine majesty in our defence. Thro'.
+"""
+
+[[entries]]
+mass = "lent-3"
+form = ""
+proper = "Secret"
+incipit = "Haec hostia, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this offering, O Lord, we beseech thee, cleanse us from our sins, and sanctify the bodies and souls of thy servants for the celebrating of this sacrifice. Thro'.
+"""
+
+[[entries]]
+mass = "lent-3"
+form = ""
+proper = "Postcommunion"
+incipit = "A cunctis nos, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Mercifully,O Lord, we beseech thee, deliver us from all guilt and from all danger, since thou admittest us to be partakers of this great mystery. Thro'.
+"""
+
+[[entries]]
+mass = "lent-4"
+form = ""
+proper = "Collect"
+incipit = "Concede, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that we, who are justly afflicted according to our demerits, may be relieved by thy comforting grace. Thro'.
+"""
+
+[[entries]]
+mass = "lent-4"
+form = ""
+proper = "Secret"
+incipit = "Sacrificiis praesentibus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We beseech thee, O Lord, mercifully regard this present sacrifice, that it may both increase our devotion, and advance our salvation. Thro'.
+"""
+
+[[entries]]
+mass = "lent-4"
+form = ""
+proper = "Postcommunion"
+incipit = "Da nobis, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O merciful God, that we may sincerely respect, and receive with faith thy holy mysteries, with which thou daily feedest us.
+"""
+
+[[entries]]
+mass = "passion-sunday"
+form = ""
+proper = "Collect"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Mercifully look down on thy people, we beseech thee, O Almighty God, that, by thy bounty and protection, they may be governed and guarded both in body and soul. Thro'.
+"""
+
+[[entries]]
+mass = "passion-sunday"
+form = ""
+proper = "Secret"
+incipit = "Haec munera"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May these offerings, O Lord, both loosen the bonds of our wickedness, and obtain for us the gifts of thy mercy. Thro'.
+"""
+
+[[entries]]
+mass = "passion-sunday"
+form = ""
+proper = "Postcommunion"
+incipit = "Adesto nobis, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Help us, O Lord our God, and forever protect those whom thou hast refreshed with thy sacred mysteries. Thro'.
+"""
+
+[[entries]]
+mass = "palm-sunday"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O almighty and eternal God, who wouldst have our Saviour become man, and suffer on a cross, to give mankind an example of humility: mercifully grant, that we may improve by the example of his patience, and partake of his resurrection. Thro'.
+"""
+
+[[entries]]
+mass = "palm-sunday"
+form = ""
+proper = "Secret"
+incipit = "Concede, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, that what hath been offered in the presence of thy divine Majesty may procure us the grace of devotion, and effectually obtain a blessed eternity. Thro'.
+"""
+
+[[entries]]
+mass = "palm-sunday"
+form = ""
+proper = "Postcommunion"
+incipit = "Per hujus, Domine, operationem mysterii"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May our vices, O Lord, be destroyed, and our righteous desires fulfilled by the efficacy of these mysteries. Thro'.
+"""
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Collect"
+incipit = "Deus, a quo et Judas"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, from whom both Judas received the punishment of his sin, and the thief the reward of his confession: grant us the effects of thy mercy; that as our Lord Jesus Christ, at the time of his passion, bestowed on both different rewards according to their merits; so, having destroyed the old man in us, he may give us grace to rise again with him. Who liveth.
+"""
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Postcommunion"
+incipit = "Refecti vitalibus alimentis"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We beseech thee, O Lord, our God, that being nourished with this life-giving food, we may receive by thy grace, in immortal glory, what we celebrate in this mortal life. Thro’ \\ >.
+"""
+
+[[entries]]
+mass = "easter-vigil"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui hanc sacratissimam noctem"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who enlightenest this most sacred night by the glory of the resurrection of the Lord; preserve in the new offspring of thy family the spirit of adoption thou hast given them; that being renewed in body and soul, they may serve thee with purity of heart. Thro'.
+"""
+
+[[entries]]
+mass = "easter-vigil"
+form = ""
+proper = "Secret"
+incipit = "Suscipe, quaesumus, Domine, preces populi tui"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Receive,O Lord, we beseech thee, the prayers of thy people, together with the offering of these Hosts, that what is consecrated by these paschal mysteries, may, by the help of thy grace, avail us to eternal life. Thro'.
+"""
+
+[[entries]]
+mass = "easter-sunday"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui hodierna die per Unigenitum tuum"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who, on this day, by thy only begotten Son's victory over death, didst open for us a passage to eternity; grant that our prayers, which thy preventing grace inspireth, may by thy help become effectual. Thro'.
+"""
+
+[[entries]]
+mass = "easter-sunday"
+form = ""
+proper = "Secret"
+incipit = "Suscipe, quaesumus, Domine, preces populi tui"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Receive, O Lord, we beseech thee, the prayers of thy people, together with the offerings of these hosts, that what is consecrated by these paschal mysteries, may by the help of thy grace, avail us to eternal life. Thro'.
+"""
+
+[[entries]]
+mass = "easter-sunday"
+form = ""
+proper = "Postcommunion"
+incipit = "Spiritum nobis, Domine, tuae caritatis infunde"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Pour forth on us, O Lord, the spirit of thy love: that those whom thou hast filled with the paschal sacrament, may, by thy goodness, live in perfect concord. Thro’—in the unity of the Holy Ghost.
+"""
+
+[[entries]]
+mass = "low-sunday"
+form = ""
+proper = "Collect"
+incipit = "Praesta, quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that we, who have celebrated the solemnity of Easter, may, by the assistance of thy divine grace, ever make the effects thereof manifest in our lives and actions. Thro'.
+"""
+
+[[entries]]
+mass = "low-sunday"
+form = ""
+proper = "Secret"
+incipit = "Suscipe munera, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Receive, we beseech thee, O Lord, the offerings of thy joyful Church: and as thou hast given occasion to this great joy, grant she may receive the fruits of that joy, which will never end. Thro'.
+"""
+
+[[entries]]
+mass = "low-sunday"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, Domine, Deus noster"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord our God, that the sacred mysteries thou hast given us to preserve the grace of our redemption, may be our present and future remedy. Thro'.
+"""
+
+[[entries]]
+mass = "easter-2"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui in Filii tui humilitate"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who, by the humiliauon of thy Son, hast raised up the fallen world: grant to thy people perpetual joy: that they whom thou hast delivered from the danger of everlasting death, may arrive at eternal happiness. Thro'.
+"""
+
+[[entries]]
+mass = "easter-2"
+form = ""
+proper = "Secret"
+incipit = "Benedictionem nobis, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this holy oblation, O Lord, draw iown upon us thy saving blessing; and always produce in us the effect of what is represented in these sacred mysteries. Thro'.
+"""
+
+[[entries]]
+mass = "easter-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Praesta nobis, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that, receiving from thee the grace of life, we may always glory in thy gift. Thro'.
+"""
+
+[[entries]]
+mass = "easter-3"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui errantibus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who shewest the light of thy truth to such as go astray, that they may return to the way of righteousness: grant that all, who profess the Christian name, may forsake whatever is contrary to that profession, and closely pursue what is agreeable to it. Thro'.
+"""
+
+[[entries]]
+mass = "easter-3"
+form = ""
+proper = "Secret"
+incipit = "His nobis, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May these sacred mysteries, O Lord, diminish in us the love of the things of this world, and increase the love of such as are eternal. Thro'.
+"""
+
+[[entries]]
+mass = "easter-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Sacramenta quae sumpsimus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the sacrament we have received, O Lord, supply us with the spiritual food of the soul, and all necessary helps of the body. 'Thro'.
+"""
+
+[[entries]]
+mass = "easter-4"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui fidelium mentes"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who makest the faithful to be of one mind: grant that thy people may love what thou commandest, and desire what thou promisest: that, amidst the uncertainties of this world, we may place our affections where there are true joys. Thro'.
+"""
+
+[[entries]]
+mass = "easter-4"
+form = ""
+proper = "Secret"
+incipit = "Deus, qui nos, per hujus sacrificii"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who madest us partakers of the one Supreme Divinity, by the frequent celebration and participation of this holy sacrifice: grant, we beseech thee, that as we know thy truth, so we may live up to it by a worthy conduct of life. Thro'.
+"""
+
+[[entries]]
+mass = "easter-4"
+form = ""
+proper = "Postcommunion"
+incipit = "Adesto nobis, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Help us, O God, our Lord, that our sins may be forgiven, and that we may be delivered from all dangers by the sacrament, which we have received with faith, Thro'.
+"""
+
+[[entries]]
+mass = "easter-5"
+form = ""
+proper = "Collect"
+incipit = "Deus, a quo bona cuncta procedunt"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, from whom all that is good proceeds: grant that thy people, by thy inspiration, may resolve on what is right, and by thy direction, put it in practice. Thro'.
+"""
+
+[[entries]]
+mass = "easter-5"
+form = ""
+proper = "Secret"
+incipit = "Suscipe, Domine, fidelium preces"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Receive, O Lord, we beseech thee, the prayers of the faithful, together with these oblations; that by these duties of piety we may obtain eternal life. Thro'.
+"""
+
+[[entries]]
+mass = "easter-5"
+form = ""
+proper = "Postcommunion"
+incipit = "Tribue nobis, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, O Lord by the power of the heavenly nourishment we have received, that we desire what is right, and obtain our desire. Thro'.
+"""
+
+[[entries]]
+mass = "sunday-after-ascension"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O almighty and eternal] God, inspire thy servants with true devotion, and grant that we may serve thy divine Majesty with sincere hearts. Thro'.
+"""
+
+[[entries]]
+mass = "sunday-after-ascension"
+form = ""
+proper = "Secret"
+incipit = "Sacrificia nos, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May these unspotted sacrifices purify us, O Lord! and strengthen our souls with heavenly grace. Thro'.
+"""
+
+[[entries]]
+mass = "sunday-after-ascension"
+form = ""
+proper = "Postcommunion"
+incipit = "Repleti, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, that we may be always thankful for the sacred:gifts with which we have been filled.
+"""
+
+[[entries]]
+mass = "pentecost"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui hodierna die"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who, by the light of the Holy Ghost, didst this day instruct the hearts of the faithful: grant, by the direction of the same Holy Spirit, that we may relish what is right, and always enjoy his consolation. Thro’—in the unity of the same, &c.
+"""
+
+[[entries]]
+mass = "pentecost"
+form = ""
+proper = "Secret"
+incipit = "Munera, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Sanctify, we beseech thee, O Lord these oblations, and purify our hearts by the light of the Holy Ghost. Thro’—in the unity of, &c.
+"""
+
+[[entries]]
+mass = "pentecost"
+form = ""
+proper = "Postcommunion"
+incipit = "Sancti Spiritus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the pouring forth of the Holy Ghost into our hearts cleanse them, O Lord, and render them fruitful by the inward dew of his grace. Thro’ our Lord—in the unity of the same, &c.
+"""
+
+[[entries]]
+mass = "trinity"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O almighty and ever lasting God who has ted thy servants, in the confession of the true faith to acknowledge the glory of an Eternal Trinity, and in the power of majesty, to adore an Unity: we beseech thee that, by the strength of this faith, we may be defended from all adversity. Thro'.
+"""
+
+[[entries]]
+mass = "trinity"
+form = ""
+proper = "Secret"
+incipit = "Sanctifica, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Sanctify, we beseech thee, O Lord, our God, by the invocation of thy holy name, the victim of this oblation: and by it make us an eternal offering to thee. Thro'.
+"""
+
+[[entries]]
+mass = "trinity"
+form = ""
+proper = "Postcommunion"
+incipit = "Proficiat nobis ad salutem"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the receiving of this sacrament, O Lord our God, avail us to the salvation of body and soul: together with the confession of an everlasting Holy Trinity, and of the undivided unity thereof. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-2"
+form = ""
+proper = "Collect"
+incipit = "Sancti nominis tui, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant us, O Lord, both a constant love and fear of thy holy name: since thou never withdrawest thy protection from those, whom thou solidly groundest in thy love. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-2"
+form = ""
+proper = "Secret"
+incipit = "Oblatio nos, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this sacrifice offered to thy name purify us, O Lord: and make us every day advance towards a heavenly life. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Sumptis muneribus sacris"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Having received, O Lord, this sacred oblation, grant, that by frequenting these mysteries we may hasten our salvation.
+"""
+
+[[entries]]
+mass = "pentecost-3"
+form = ""
+proper = "Secret"
+incipit = "Respice, Domine, munera"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Look down, O Lord, on the offerings of thy suppliant Church; and grant that thy faithful may always worthily partake thereof in order to their salvation. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Sancta tua nos, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May thy sacred mysteries, O Lord, which we have received, give us life: and cleansing us from our sins, make us worthy of thy eternal mercy. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-4"
+form = ""
+proper = "Collect"
+incipit = "Da nobis, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, that the world, with regard to us, may be governed in peace by thy providence, and thy Church pay her devotions to thee in tranquillity. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-4"
+form = ""
+proper = "Secret"
+incipit = "Oblationibus nostris"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Receive our offerings, we beseech thee, O Lord, and be appeased thereby: and mercifully compel our wills to yield to thee, even when they rebel. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-4"
+form = ""
+proper = "Postcommunion"
+incipit = "Mysteria nos, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the mysteries we have received, both purify and defend us, O Lord, by the efficacy of what they contain. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-5"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui diligentibus te"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who hast prepared invisible good things for those that love thee: pour forth into our hearts an affectionate love for thee: that loving thee in all things, and above all things, we may come to the enjoyment of thy promises which are above whatever we can desire Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-5"
+form = ""
+proper = "Secret"
+incipit = "Propitiare, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Be appeased, O Lord, by our humble prayers, and mercifully receive these offerings of thy servants: that what each hath offered to the honour of thy name, may avail to the salvation of all.
+"""
+
+[[entries]]
+mass = "pentecost-5"
+form = ""
+proper = "Postcommunion"
+incipit = "Quos coelesti, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, O Lord, we beseech thee: that we, whom thou hast fed with this heavenly sacrifice, may be cleansed from our hidden sins and delivered from the snares of our enemies Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-6"
+form = ""
+proper = "Collect"
+incipit = "Deus virtutum"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God of all power, to whom entirely belongeth whatever is best: implant in our hearts the love of thy name, and grant us an increase of religion that thou mayest improve in us what is good, and preserve what thou thus improvest by the practice of piety. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-7"
+form = ""
+proper = "Secret"
+incipit = "Deus, qui legalium"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who in one perfect sacrifice hast united all the various sacrifices of the law, accept from thy devout servants this sacrifice, and sanctify it by the like blessing as thou didst the offering of Abel: that what each hath offered to thy divine Majesty, may avail to the salvation of all. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-7"
+form = ""
+proper = "Postcommunion"
+incipit = "Tua nos, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, O Lord, that the healing efficacy of these thy mysteries may, through thy mercy, free us from all our sins, and bring us to the practice of what is right. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-8"
+form = ""
+proper = "Collect"
+incipit = "Largire nobis, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant us, O Lord, we beseech thee, the spirit of thinking and doing wliat is right, that we, who cannot even subsist without thee, may live according to thee. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-8"
+form = ""
+proper = "Secret"
+incipit = "Suscipe, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Receive, we beseech thee, O Lord, the offerings we bring, which are the gifts of thine own bounty: that these most holy mysteries may, by the power of thy grace, make our conduct in this life holy, and bring us to those joys that will never end. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-8"
+form = ""
+proper = "Postcommunion"
+incipit = "Sit nobis, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this heavenly mystery, O Lord, renew us both in soul and body: that we may find in ourselves the effects of what we celebrate. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-9"
+form = ""
+proper = "Collect"
+incipit = "Pateant aures misericordiae tuae"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the ears of thy mercy, O Lord, be open to the prayers of thy suppliants: and, that they may succeed in their desires, make them ask those things that are agreeable to thee. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-9"
+form = ""
+proper = "Secret"
+incipit = "Concede nobis, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-9"
+form = ""
+proper = "Postcommunion"
+incipit = "Tui nobis, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the participation of this thy sacrament, O Lord, we beseech thee, both purify us, and unite us. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-10"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui omnipotentiam tuam"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who chiefly manifestest thy Almighty power in pardoning and shewing mercy, increase thy goodness towards us: that having recourse to thy promises, we may be partakers of thy heavenly blessing. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-10"
+form = ""
+proper = "Secret"
+incipit = "Tibi, Domine, sacrificia dicata"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the sacrifice, we offer, O Lord, be presented before thee: which thou hast appointed to be offered in honour of thy name; and at the same time become a remedy to us. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-10"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, Domine, Deus noster"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We beseech thee, G Lord our God, that in thy mercy thou wouldst never deprive those of thy help, whom thou continually strengthenest by these divine mysteries. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-11"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O Almighty and eternal God, who, in the abundance of thy goodness, exceedest both the merits and requests of thy suppliants; pour forth thy mercy upon us: and both pardon what our consciences dreadeth, and grant such blessings as we dare not presume to ask. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-11"
+form = ""
+proper = "Secret"
+incipit = "Respice, Domine, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Look down, O Lord, we beseech thee, on our homage: that the offerings we make may be acceptable to thee, and a help to our weakness Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-11"
+form = ""
+proper = "Postcommunion"
+incipit = "Sentiamus, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May we receive, by the participation of these thy mysteries, we beseech thee, O Lord, help in body and mind: that in the salvation of both we may enjoy the full effect of this heavenly remedy. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-12"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens et misericors Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O Almighty and merciful God, from whose gift it proceedeth that thy people worthily serve thee; grant we beseech thee, that we may run on, without stumbling, to the obtaining the effects of thy promises. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-12"
+form = ""
+proper = "Secret"
+incipit = "Hostias, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Mercifully look down, O Lord, on the offerings we lay on thy holy altar; that they may be to the honour of thy name, by obtaining pardon for us. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-12"
+form = ""
+proper = "Postcommunion"
+incipit = "Vivificet nos, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the sacred participation of these thy mysteries, O Lord, we beseech thee, give us life; and be to us both an expiation and protection. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-13"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus, da nobis"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O Almighty and eternal God, grant us an increase of faith, hope, and charity; and, that we may deserve what thou promisest, make us love what thou commandest. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-13"
+form = ""
+proper = "Secret"
+incipit = "Propitiare, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Be thou propitious, O Lord, to thy people: and mercifully receive their offerings: that being appeased thereby, thou mayest grant us pardon, and hear our requests. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-13"
+form = ""
+proper = "Postcommunion"
+incipit = "Sumptis, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May these heavenly mysteries, O Lord, which we have received, advance our eternal redemption. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-14"
+form = ""
+proper = "Collect"
+incipit = "Custodi, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Preserve, O Lord, we beseech thee, thy Church by thy constant mercy: and since our weak mortality is continually falling without thy assistance, may thy grace withdraw it from what is hurtful, and direct it in the ways of salvation. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-14"
+form = ""
+proper = "Secret"
+incipit = "Concede nobis, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, that this victim of salvation may both cleanse us from our sins, and render thy Majesty propitious to us Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-14"
+form = ""
+proper = "Postcommunion"
+incipit = "Purificent semper"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May these thy mysteries, O God, continually purify us and strengthen us: and procure us eternal salvation. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-15"
+form = ""
+proper = "Collect"
+incipit = "Ecclesiam tuam, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May thy continual mercy purify and defend thy church: and since without thee it cannot be safe, may it always be directed by the influence of thy grace. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-15"
+form = ""
+proper = "Secret"
+incipit = "Tua nos, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May thy mysteries, O Lord, preserve us, and always defend us against the attacks of the evil.
+"""
+
+[[entries]]
+mass = "pentecost-15"
+form = ""
+proper = "Postcommunion"
+incipit = "Mentes nostras"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the efficacy of these divine mysteries O Lord, possess both our souls and bodies: that their effects, not our own sensuality, may always take the lead in us. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-16"
+form = ""
+proper = "Collect"
+incipit = "Tua nos, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May thy grace, O Lord, always prevent and follow us; and make us constantly zealous in the practice of good works. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-16"
+form = ""
+proper = "Secret"
+incipit = "Munda nos, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Cleanse us, O Lord, we beseech thee, by the efficacy of this sacrifice: and by thy mercy make us worthy to partake thereof. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-16"
+form = ""
+proper = "Postcommunion"
+incipit = "Purifica, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Mercifully, O Lord, we beseech thee, purify our souls, and renew them by these holy mysteries; that we may receive help thereby, both while we are in these mortal bodies and hereafter. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-17"
+form = ""
+proper = "Collect"
+incipit = "Da, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, that thy people may avoid all contagion of the devil: and with a clean heart follow thee, the only true God. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-17"
+form = ""
+proper = "Secret"
+incipit = "Majestatem tuam, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We humbly beseech thy Majesty, O Lord, that the sacred mysteries we celebrate may cleanse us from all past offences, and from those we may hereafter be guilty of. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-17"
+form = ""
+proper = "Postcommunion"
+incipit = "Sanctificationibus tuis"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May our vices be cured, O Almighty God! and an eternal remedy procured for us by these sacred mysteries. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-18"
+form = ""
+proper = "Collect"
+incipit = "Dirigat corda nostra"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the influence of thy mercy, O Lord, direct our souls: for without thy help we can do nothing well pleasing to thee. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-18"
+form = ""
+proper = "Secret"
+incipit = "Deus, qui nos, per hujus sacrificii"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who by the participation of this august sacrifice makest us partakers of the one supreme divine nature: grant, we beseech thee, that as we know thy truth, so we may shew it by a worthy conduct of life. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-18"
+form = ""
+proper = "Postcommunion"
+incipit = "Gratias tibi referimus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Being fed, O Lord, with tois Loly sacrifice: we give thee thanks, humbly beseeching thy mercy: that thou wouldst make us worthy of what we have received. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-19"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens et misericors Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O Almighty and mertiful God, favourably defend us from all adversity: that being free both in soul and body, we may with security of mind perform thy service. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-19"
+form = ""
+proper = "Secret"
+incipit = "Haec munera, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, that the offerings we bring before thy divine Majesty may avail to our salvation, Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-19"
+form = ""
+proper = "Postcommunion"
+incipit = "Tua nos, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May the healing efficacy of these thy mysteries O Lord, mercifully free us from our perverseness, and make us always obedient to thy commandments. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-20"
+form = ""
+proper = "Collect"
+incipit = "Largire, quaesumus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Favourably grant, we beseech thee, O Lord, thy servants both pardon and peace; that, being cleansed from the guilt of all committed offences, they may serve thee with secure minds Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-20"
+form = ""
+proper = "Secret"
+incipit = "Coelestem nobis praebeant"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May these mysteries, O Lord, we beseech thee, procure us a heavenly remedy, and cleanse away the vices of our hearts. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-20"
+form = ""
+proper = "Postcommunion"
+incipit = "Ut sacris, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+That we may be worthy of thy sacred gifts, O Lord: grant, we beseech thee, we may always obey thy commandments. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-21"
+form = ""
+proper = "Collect"
+incipit = "Familiam tuam, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Preserve thy family, O Lord, we beseech thee, by thy constant mercy: that under thy protection, it may be freed from all adversity; and by the practice of good works, continue devoted to thy name. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-21"
+form = ""
+proper = "Secret"
+incipit = "Suscipe, Domine, propitius hostias"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Mercifully receive, O Lord, these offerings, by which thou art pleased to be appeased, and restore us to salvation by thy powerful goodness, Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-21"
+form = ""
+proper = "Postcommunion"
+incipit = "Immortalitatis alimoniam"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Having received the food of immortality, we beseech thee, O Lord, that what we have taken with our mouths we may receive with pure souls. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-22"
+form = ""
+proper = "Collect"
+incipit = "Deus, refugium nostrum"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, our refuge and strength, fountain of all goodness, mercifully give ear to the fervent prayers of thy church, and grant, that what we ask with faith, we may effectually obtain. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-22"
+form = ""
+proper = "Secret"
+incipit = "Da, misericors Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, O merciful God, that this sacrifice of salvation may constantly both free us from our sins, and protect us from all adversity. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-22"
+form = ""
+proper = "Postcommunion"
+incipit = "Sumpsimus, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Having received, O Lord, the sacred mysteries, we humbly beseech thee, that what thou hast ordered us to do in remembrance of thee, may be a help to our weakness. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-23"
+form = ""
+proper = "Collect"
+incipit = "Absolve, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Pardon, O Lord, we beseech thee, the sins of thy people: that we may be delivered by thy goodness from the guilt we have contracted by our own weakness, Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-23"
+form = ""
+proper = "Secret"
+incipit = "Pro nostrae servitutis augmento"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We offer thee, O Lord, this sacrifice of praise, as a repeated token of our homage; that thou mayest accomplish in us what thou hast already granted beyond our deserts. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-23"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We beseech thee, O Almighty God, that thou wouldst not leave exposed to the dangers of this life, those whom thou hast joyfully made partakers of this divine food. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-3"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O almighty and eterna] God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-3"
+form = ""
+proper = "Secret"
+incipit = "Haec hostia, Domine"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this offering, O Lord, we beseech thee, cleanse away our sins: and sanctify the bodies and souls of thy servants, to prepare them for worthily celebrating this sacrifice. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Quos tantis, Domine"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We beseech thee, O Lord, that we, to whom thou vouchsafest the use of these great mysteries, may be made truly worthy to receive the benefits thereof. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-4"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nos, in tantis periculis"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+O God, who knowest that thro’ human frailty we are not able to subsist amidst so many dangers, grant us health of soul and body; that whatsoever we suffer for our sins, we may overcome by thy assistance. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-4"
+form = ""
+proper = "Secret"
+incipit = "Concede, quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that the offering of this sacrifice may always cleanse our frailty from all evil, and be a protection to us. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-4"
+form = ""
+proper = "Postcommunion"
+incipit = "Munera tua nos, Deus"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May thy gifts, which we have partaken of, O God, detach us from all earthly pleasures, and ever refresh and strengthen us with heavenly food. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-5"
+form = ""
+proper = "Collect"
+incipit = "Familiam tuam"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Preserve, we beseech thee, O Lord, thy family by thy constant mercy, that we, who confide solely in the support of thy heavenly grace, may be always defended by thy protection. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-5"
+form = ""
+proper = "Secret"
+incipit = "Hostias tibi, Domine"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We offer thee, O Lord, this sacrifice of propitiation: that thou wouldst mercifully forgive us our sins, and guide our tottering hearts. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-5"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+We, beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-6"
+form = ""
+proper = "Collect"
+incipit = "Praesta, quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that being always intent upon what is reasonable and just, we may, both in word and deed, perform what is acceptable to thee. Thro'.
+"""
+
+[[entries]]
+mass = "resumed-epiphany-6"
+form = ""
+proper = "Secret"
+incipit = "Haec nos oblatio, Deus"
+witness = "cummiskey-1861"
+witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+May this oblation, O God, we beseech thee, cleanse, renew, govern and protect us.
+"""
+
+[[entries]]
+mass = "last-sunday-after-pentecost"
+form = ""
+proper = "Collect"
+incipit = "Excita, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Stir up, we beseech thee, O Lord, the hearts of thy faithful: that, becoming more zealous in the performance of good works, they may receive from thy goodness more effectual remedies for their disorders. Thro'.
+"""
+
+[[entries]]
+mass = "last-sunday-after-pentecost"
+form = ""
+proper = "Secret"
+incipit = "Propitius esto, Domine"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Mercifully receive, O Lord, the prayers and offerings of thy people: turn our hearts to thee; that being freed from earthly concupiscence, we may desire heavenly pleasures. Thro'.
+"""
+
+[[entries]]
+mass = "last-sunday-after-pentecost"
+form = ""
+proper = "Postcommunion"
+incipit = "Concede nobis, quaesumus"
+witness = "cummiskey-1861"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.anonymous.roman-missal-in-english-for-the-laity.cummiskey-philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, that whatever vice our souls are subject to may be cured by the virtue of the sacrament we have received. Thro'.
+"""
+
+[[untranslated]]
+mass = "holy-family"
+form = ""
+proper = "Collect"
+reason = "the feast did not exist in 1861 and its orations were composed in the twentieth century, so this witness has no counterpart to it"
+
+[[untranslated]]
+mass = "holy-family"
+form = ""
+proper = "Secret"
+reason = "the feast did not exist in 1861 and its orations were composed in the twentieth century, so this witness has no counterpart to it"
+
+[[untranslated]]
+mass = "holy-family"
+form = ""
+proper = "Postcommunion"
+reason = "the feast did not exist in 1861 and its orations were composed in the twentieth century, so this witness has no counterpart to it"
+
+[[untranslated]]
+mass = "epiphany-2"
+form = ""
+proper = "Collect"
+reason = "the block the book prints for this Sunday could not be identified in the text layer with enough confidence to take its orations"
+
+[[untranslated]]
+mass = "epiphany-2"
+form = ""
+proper = "Secret"
+reason = "the block the book prints for this Sunday could not be identified in the text layer with enough confidence to take its orations"
+
+[[untranslated]]
+mass = "epiphany-2"
+form = ""
+proper = "Postcommunion"
+reason = "the block the book prints for this Sunday could not be identified in the text layer with enough confidence to take its orations"
+
+[[untranslated]]
+mass = "epiphany-6"
+form = ""
+proper = "Postcommunion"
+reason = "the witness prints it, but the text layer breaks off mid-clause"
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Secret"
+reason = "no oration answering this proper was found in the witness"
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Collect"
+reason = "the book prints no text here, referring the reader back to Maundy Thursday"
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Postcommunion"
+reason = "no oration answering this proper was found in the witness"
+
+[[untranslated]]
+mass = "pentecost-3"
+form = ""
+proper = "Collect"
+reason = "no oration answering this proper was found in the witness"
+
+[[untranslated]]
+mass = "pentecost-6"
+form = ""
+proper = "Secret"
+reason = "no oration answering this proper was found in the witness"
+
+[[untranslated]]
+mass = "pentecost-6"
+form = ""
+proper = "Postcommunion"
+reason = "no oration answering this proper was found in the witness"
+
+[[untranslated]]
+mass = "pentecost-7"
+form = ""
+proper = "Collect"
+reason = "no oration answering this proper was found in the witness"
+
+[[untranslated]]
+mass = "resumed-epiphany-6"
+form = ""
+proper = "Postcommunion"
+reason = "the witness prints it, but the text layer breaks off mid-clause"

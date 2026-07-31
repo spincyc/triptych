@@ -1,0 +1,1812 @@
+# English translations for the text-bearing propers of the postconciliar calendar.
+#
+# There are none, and this file records why. It is the companion of
+# roman-1962-proper-translations-v1.toml and carries the same schema; its
+# `entries` array is empty by decision, not by omission.
+
+translations_schema = 1
+record_type = "calendar-proper-translations"
+calendar = "postconciliar"
+target = "src/sources/calendars/postconciliar/propers.yaml"
+recorded_on = "2026-07-31"
+merge = """
+Nothing here merges into propers.yaml. `entries` is empty; `untranslated` is the
+whole content, and it is data: a proper listed here is one that was examined and
+deliberately left without English, which a page may state, rather than one nobody
+reached. Do not fall back to the Latin and present it as though it were the
+English a reader asked for.
+"""
+finding = """
+The approved English of the postconciliar Roman Missal is the translation of the
+International Commission on English in the Liturgy, confirmed for the dioceses of
+the United States in 2011 and published under the authority of the episcopal
+conferences. It is in copyright, held by ICEL, and reproduction of its orations
+requires ICEL's permission. This project has not obtained it.
+
+The imprimatur the project holds for the alpha does not supply it. An imprimatur
+is an ecclesiastical judgement that a book is free of doctrinal error; it is
+granted by an ordinary under canon law, it conveys no proprietary interest in
+anyone's text, and it cannot license the reproduction of a third party's
+copyrighted translation. The two instruments answer different questions and
+neither substitutes for the other.
+
+That is also this repository's own settled position, stated in its publications
+before this record: the Mount Carmel novena leaves three collects unquoted
+because 'ICEL publication permission has not been obtained'; the postconciliar
+propers guides state that no English oration or antiphon is reproduced in whole
+or in part; and the comparative study says in terms that the ICEL English is
+never reproduced at any length. Nothing found in this review disturbs that.
+
+One statement in the repository reads the other way and should be corrected or
+substantiated by the project owner. THIRD_PARTY.md, in the paragraph added on
+2026-07-30 with the `translations` contract itself, says the ICEL translation
+'is carried under permission granted to this project'. No permission record
+exists anywhere in the repository, no ICEL text is in fact carried, and every
+other statement in the tree denies that permission was obtained. Until the owner
+produces the grant, that sentence is a forward-looking illustration standing
+where a rights record should be, and it must not be relied on.
+"""
+if_permission_is_obtained = """
+A licence to reproduce is not a licence to publish, and the two must be settled
+separately. The `translations` contract already anticipates the first: an entry
+with rights = "licensed" carries the notice its licensor requires. The second is
+not yet handled anywhere in this machinery, and that is a defect to fix before
+any licensed text is written into propers.yaml.
+
+The Knox bible is the precedent for withholding: its artifacts are kept outside
+the repository, `index-bible` marks its edition publishable = false, and
+`public-alpha` omits an unpublishable edition from the site's manifest. No
+equivalent exists for a calendar translation. `mass-propers structure` copies
+`proper.get("translations")` into the browser's data file with no regard to the
+`rights` value on it, so a licensed translation written into propers.yaml would
+be baked into the public artifact by the ordinary build, and nothing would
+report it. Tracked-but-unpublishable is therefore not a state this repository can
+currently express for a proper's translation, whatever a licence might allow.
+"""
+alternatives_considered = """
+Three, none of which yields publishable English for these orations.
+
+A public-domain English of the postconciliar orations does not exist. The Latin
+editio typica is of 1970 and later, so no pre-1930 book can witness it, and every
+complete English of it is ICEL's. Where a postconciliar oration is textually the
+same prayer as one in the 1962 books, an old English of the 1962 prayer renders
+that Latin and not the postconciliar text; the reform edited a great many of the
+prayers it kept, and asserting identity without collating the two Latin texts
+oration by oration is exactly the kind of plausible wrong answer this repository
+refuses. No such collation was done here, and no 1962 English was transferred.
+
+A project-created translation is permitted by the contract as rights =
+"project-created" and would be publishable under CC BY 4.0 with its authorship
+identified. It is not attempted here. It is a decision for the owner, not for
+this lane: it is a large body of new liturgical English, it would sit beside
+approved texts that readers may mistake it for, and the contract's requirement
+that project authorship be identified at the point of use is a presentation
+question the browser lane would have to answer.
+
+Divinum Officium was examined and rejected as a source. Its repository carries an
+MIT licence, but that licence covers the software; its own sources page says the
+English of the Mass was taken from the Tridentine Latin Rite Missal Project 'with
+the permission of the owner', from a collection by Fr Brian T. Austin FSSP
+described only as 'a free project', and from The Catholic Missal (New York: P. J.
+Kenedy and Sons, 1943). A personal permission granted to that project's author is
+not a licence to this one, an informal declaration is not a rights record, and a
+1943 American imprint raises a renewal question nobody has answered. An MIT
+licence on a repository is not evidence that the text inside it was the
+repository's to license.
+"""
+
+[[untranslated]]
+mass = "advent-1"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-1"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-1"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-2"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-2"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-2"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-3"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-3"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-3"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-4"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-4"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "advent-4"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Vigil Mass"
+proper = "Entrance Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Vigil Mass"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Vigil Mass"
+proper = "Gospel Acclamation"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Vigil Mass"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Vigil Mass"
+proper = "Communion Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Vigil Mass"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Night"
+proper = "Entrance Antiphon (alternative)"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Night"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Night"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Night"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass at Dawn"
+proper = "Entrance Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass at Dawn"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass at Dawn"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass at Dawn"
+proper = "Communion Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass at Dawn"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Day"
+proper = "Entrance Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Day"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Day"
+proper = "Gospel Acclamation"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Day"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Day"
+proper = "Communion Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "nativity"
+form = "Mass during the Day"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "holy-family"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "holy-family"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "holy-family"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mary-mother-of-god"
+form = ""
+proper = "Entrance Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mary-mother-of-god"
+form = ""
+proper = "Entrance Antiphon (alternative)"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mary-mother-of-god"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mary-mother-of-god"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mary-mother-of-god"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "second-sunday-after-nativity"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "second-sunday-after-nativity"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "second-sunday-after-nativity"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "epiphany"
+form = "Vigil Mass"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "epiphany"
+form = "Vigil Mass"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "epiphany"
+form = "Vigil Mass"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "epiphany"
+form = "Mass during the Day"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "epiphany"
+form = "Mass during the Day"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "epiphany"
+form = "Mass during the Day"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "baptism-of-the-lord"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "baptism-of-the-lord"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "baptism-of-the-lord"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "baptism-of-the-lord"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-1"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-1"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-1"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-1"
+form = ""
+proper = "Prayer over the People"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-2"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-2"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-2"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-2"
+form = ""
+proper = "Prayer over the People"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-3"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-3"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-3"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-3"
+form = ""
+proper = "Prayer over the People"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-4"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-4"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-4"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-4"
+form = ""
+proper = "Prayer over the People"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-5"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-5"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-5"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "lent-5"
+form = ""
+proper = "Prayer over the People"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Address before the Blessing of Branches"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Blessing of Branches"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Blessing of Branches"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Invitation to the Procession"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Procession Antiphon 1"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Procession Antiphon 2"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Hymn to Christ the King"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Responsory at the Entrance into the Church"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Entrance Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Prayer over the People"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Entrance Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Antiphon at the Presentation of the Gifts"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Hymn at the Transfer of the Blessed Sacrament"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Chant at the Place of Reposition"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Prayer"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Prayer (alternative)"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession I: For Holy Church"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession II: For the Pope"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession III: For all orders and degrees of the faithful"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession IV: For catechumens"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession V: For the unity of Christians"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession VI: For the Jewish people"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession VII: For those who do not believe in Christ"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession VIII: For those who do not believe in God"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession IX: For those in public office"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession X: For those in tribulation"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Showing of the Holy Cross"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Antiphon at the Adoration of the Holy Cross"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Improperia"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Hymn at the Adoration of the Holy Cross"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Prayer over the People"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Blessing of the Fire"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Inscription of the Paschal Candle"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Insertion of the Grains of Incense"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Lighting of the Paschal Candle"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Acclamation in the Procession"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Easter Proclamation (Exsultet)"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the First Reading"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the First Reading (alternative)"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Second Reading"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Third Reading"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Third Reading (alternative)"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Fourth Reading"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Fifth Reading"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Sixth Reading"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Seventh Reading"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Seventh Reading (alternative)"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Litany of the Saints"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after the Litany"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Blessing of Baptismal Water"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Blessing of Water"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Renewal of Baptismal Promises"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Antiphon at the Sprinkling"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Solemn Blessing"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-sunday"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-sunday"
+form = ""
+proper = "Sequence"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-sunday"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-sunday"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-2"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-2"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-2"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-3"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-3"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-3"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-4"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-4"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-4"
+form = ""
+proper = "Communion Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-4"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-5"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-5"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-5"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-6"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-6"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-6"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ascension"
+form = "Vigil Mass"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ascension"
+form = "Vigil Mass"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ascension"
+form = "Vigil Mass"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ascension"
+form = "Mass during the Day"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ascension"
+form = "Mass during the Day"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ascension"
+form = "Mass during the Day"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ascension"
+form = "Mass during the Day"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-7"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-7"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "easter-7"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Vigil Mass"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Vigil Mass"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Vigil Mass"
+proper = "Gospel Acclamation"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Vigil Mass"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Vigil Mass"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Mass during the Day"
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Mass during the Day"
+proper = "Sequence"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Mass during the Day"
+proper = "Gospel Acclamation"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Mass during the Day"
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "pentecost"
+form = "Mass during the Day"
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-2"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-2"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-2"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-3"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-3"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-3"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-4"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-4"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-4"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-5"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-5"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-5"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-6"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-6"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-6"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-7"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-7"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-7"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-8"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-8"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-8"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-9"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-9"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-9"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-10"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-10"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-10"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-11"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-11"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-11"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-12"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-12"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-12"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-13"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-13"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-13"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-14"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-14"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-14"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-15"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-15"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-15"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-16"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-16"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-16"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-17"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-17"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-17"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-18"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-18"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-18"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-19"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-19"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-19"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-20"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-20"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-20"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-21"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-21"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-21"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-22"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-22"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-22"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-23"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-23"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-23"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-24"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-24"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-24"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-25"
+form = ""
+proper = "Entrance Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-25"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-25"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-25"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-26"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-26"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-26"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-27"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-27"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-27"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-28"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-28"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-28"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-29"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-29"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-29"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-30"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-30"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-30"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-31"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-31"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-31"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-32"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-32"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-32"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-33"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-33"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "ot-33"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "most-holy-trinity"
+form = ""
+proper = "Entrance Antiphon"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "most-holy-trinity"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "most-holy-trinity"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "most-holy-trinity"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "corpus-christi"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "corpus-christi"
+form = ""
+proper = "Sequence"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "corpus-christi"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "corpus-christi"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "christ-the-king"
+form = ""
+proper = "Collect"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "christ-the-king"
+form = ""
+proper = "Prayer over the Offerings"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."
+
+[[untranslated]]
+mass = "christ-the-king"
+form = ""
+proper = "Prayer after Communion"
+reason = "no publishable English exists: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See `finding`."

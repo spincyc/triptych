@@ -68,7 +68,25 @@ In particular:
   The English translation of *The Roman Missal*, third edition, is copyright
   the International Commission on English in the Liturgy Corporation and is
   carried under permission granted to this project; it is not relicensed and
-  is not offered under CC BY 4.0.
+  is not offered under CC BY 4.0. **No such permission is recorded anywhere in
+  this repository and no ICEL text is in fact carried.** Every other statement
+  in the tree says the permission has not been obtained, and
+  `src/sources/inventories/postconciliar-proper-translations-v1.toml` records
+  that finding and the reasons for it. Until the grant is produced, treat the
+  preceding sentence as an illustration of the schema and not as a rights
+  record, and carry no ICEL text on the strength of it; and
+- the English orations recorded in
+  `src/sources/inventories/roman-1962-proper-translations-v1.toml`, and the
+  optical-character-recognition text layer they are read from at
+  `src/sources/works/anonymous/roman-missal-in-english-for-the-laity/`, come
+  from *The Roman Missal translated into the English language for the use of
+  the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861).
+  That translation is in the public domain in the United States by publication
+  date; the artifact record states the basis and its jurisdiction. Triptych
+  claims no exclusive right in the wording and does not offer it under
+  CC BY 4.0. It is a nineteenth-century lay hand missal, not an approved
+  liturgical translation, and nothing taken from it may be used for
+  recitation.
 
 Their inclusion as evidence or text for study is not a representation that
 they may be extracted and redistributed independently. Their redistribution
