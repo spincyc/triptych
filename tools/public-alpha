@@ -20,6 +20,15 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
 from urllib.parse import unquote, urlsplit
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+}
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -593,11 +602,36 @@ def structure_loci(node: object, found: dict[str, set[tuple[str, int]]]) -> None
 
 
 def site_source_paths() -> set[str]:
-    """Every repository input the artifact's approval binds."""
+    """Every repository input the artifact's approval binds.
+
+    The reading pages and their machinery are here for the same reason the prose
+    pages are: a reader reaches them, and the approval is a statement about what
+    a reader may reach. `bibles.json` is here because it is the single decision
+    about which scripture editions the site may serve, so an edition added or a
+    publishable flag flipped moves the authorization.
+
+    The 9,387 verse fragments are deliberately not bound. Binding them would add
+    a hash line per fragment and move the authorization on every regeneration,
+    which makes an approval record nobody can read — and the manifest above is
+    the decision, while the fragments are its consequence. Three checks already
+    stand between an unpublishable edition and the site: the copy is driven from
+    the manifest and never from a directory listing, `verify_web_data` refuses
+    the build if an unoffered edition id reaches the data root, and the artifact
+    file-set check refuses anything unexpected.
+    """
+    browser = {
+        path.relative_to(ROOT).as_posix()
+        for path in (*web_browser_pages().values(), *web_data_files().values())
+        if WEB_BROWSER_ROOT_RELATIVE.as_posix() in path.relative_to(ROOT).as_posix()
+    }
+    manifest = web_data_manifest_path()
+    if manifest.is_file():
+        browser.add(manifest.relative_to(ROOT).as_posix())
     return (
         set(SITE_SOURCE_PATHS)
         | set(document_pages())
         | pictorial_gallery_source_paths()
+        | browser
     )
 
 
