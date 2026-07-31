@@ -235,7 +235,7 @@ It begins with `Don't Panic!`, explains AI and authority limits in ordinary
 language, links the seven durable library portals, states the reuse boundary,
 and explains the name.
 
-`LIBRARY.md` is the section index. Each installed publication has exactly one
+`README.md` is both the landing page and the section index. Each installed publication has exactly one
 owning catalog under `library/`. The root landing tables expose exactly seven
 reader portals, in this order and with these muted liturgical-color identities:
 white `Faith`, gold `Scripture`, red `Liturgy`, green `History`, violet

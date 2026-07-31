@@ -87,11 +87,11 @@ class PublicAlphaTest(unittest.TestCase):
     def test_page_classes_are_semantic_and_stable(self) -> None:
         self.assertEqual(
             self.tool.page_classes("README.md", "index.html"),
-            "page-shell page-home page-spectrum",
+            "page-shell page-home page-library-root page-spectrum",
         )
         self.assertEqual(
-            self.tool.page_classes("LIBRARY.md", "library.html"),
-            "page-shell page-catalog page-library-root page-spectrum",
+            self.tool.page_classes("ABOUT.md", "about.html"),
+            "page-shell page-utility",
         )
         self.assertEqual(
             self.tool.page_classes("library/test.md", "library/test.html"),
@@ -131,8 +131,11 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn('class="triptych-divider" aria-hidden="true"', layout)
         self.assertNotIn("℣", layout)
         self.assertNotIn("℟", layout)
-        self.assertIn(">Library</a>", layout)
+        self.assertIn(">About</a>", layout)
         self.assertIn(">Feedback</a>", layout)
+        # The library is the landing page now; a separate Library entry would be a
+        # second name for Home.
+        self.assertNotIn(">Library</a>", layout)
         self.assertIn(
             "AI Driven Studies in Catholic Faith, Worship, and Law",
             layout,
@@ -171,12 +174,18 @@ class PublicAlphaTest(unittest.TestCase):
             (' aria-current="page"', "", ""),
         )
         self.assertEqual(
-            self.tool.navigation_state("library/test.md"),
+            self.tool.navigation_state("ABOUT.md"),
             ("", ' aria-current="page"', ""),
+        )
+        # A shelf and a reading page are both reached from the landing page,
+        # which is where the library lives.
+        self.assertEqual(
+            self.tool.navigation_state("library/test.md"),
+            (' aria-current="page"', "", ""),
         )
         self.assertEqual(
             self.tool.navigation_state("web/gpt/work.md"),
-            ("", ' aria-current="page"', ""),
+            (' aria-current="page"', "", ""),
         )
 
     def test_reader_breadcrumb_uses_owning_subject_shelf(self) -> None:
@@ -188,6 +197,7 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn(">Library</a>", crumb)
         self.assertIn(">Catholic Exorcism</a>", crumb)
         self.assertIn("../../../../library/catholic-exorcism.html", crumb)
+        self.assertIn("../../../../index.html", crumb)
 
     def test_markdown_table_headers_receive_column_scope(self) -> None:
         self.assertEqual(
@@ -929,10 +939,9 @@ class PublicAlphaTest(unittest.TestCase):
             ("Mary", "library/mariology.md"),
             ("Law", "library/law-and-church-discipline.md"),
         ]
-        for landing in ("README.md", "LIBRARY.md"):
+        for landing in ("README.md",):
             text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
-            if landing == "README.md":
-                text = text.split("## Library", 1)[1].split("## Reuse", 1)[0]
+            text = text.split("## Library", 1)[1].split("## Read in the browser", 1)[0]
             section_links = [
                 (label, target)
                 for label, target in self.tool.MARKDOWN_LINK_RE.findall(text)
@@ -949,7 +958,7 @@ class PublicAlphaTest(unittest.TestCase):
             )
 
     def test_root_landings_do_not_promote_pictorial_dictionary_child_anchor(self) -> None:
-        for landing in ("README.md", "LIBRARY.md"):
+        for landing in ("README.md", "ABOUT.md"):
             text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
             self.assertNotIn("sanctuary-pictorial-dictionaries", text)
 
@@ -963,7 +972,7 @@ class PublicAlphaTest(unittest.TestCase):
             "Dogmas, prayer, apparitions, and history.",
             "Canon law, Church discipline, and heresies.",
         )
-        for landing in ("README.md", "LIBRARY.md"):
+        for landing in ("README.md",):
             text = (REPOSITORY_ROOT / landing).read_text(encoding="utf-8")
             for description in descriptions:
                 self.assertEqual(text.count(description), 1)
@@ -1162,7 +1171,7 @@ class PublicAlphaTest(unittest.TestCase):
         catalog_path = output / "library/test.html"
         catalog_path.write_text(
             catalog_path.read_text(encoding="utf-8").replace(
-                'href="../doc/gpt/work.pdf"', 'href="../library.html"'
+                'href="../doc/gpt/work.pdf"', 'href="../nonexistent.html"'
             ),
             encoding="utf-8",
         )

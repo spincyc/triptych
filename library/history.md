@@ -1,6 +1,6 @@
 # History
 
-[Return to the Library](../LIBRARY.md)
+[Return to the library](../README.md)
 
 Read lives and source-first accounts of Catholic texts, communities,
 institutions, and practices.

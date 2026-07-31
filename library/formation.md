@@ -1,6 +1,6 @@
 # Formation
 
-[Return to the Library](../LIBRARY.md)
+[Return to the library](../README.md)
 
 Resources for sustained prayer, study, practice, and self-directed learning.
 

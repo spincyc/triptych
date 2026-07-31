@@ -2,7 +2,7 @@
 
 <!-- triptych-publication-id: articles/faith/last-supper-calvary-and-the-mass -->
 
-[Return to the Library](../LIBRARY.md)
+[Return to the library](../README.md)
 
 ## The Creature Before God
 

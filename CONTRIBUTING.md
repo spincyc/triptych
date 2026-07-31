@@ -99,6 +99,6 @@ Submit only material you created or have authority to provide. Identify quotatio
 - [Repository and publication contract](guidance/repository.md)
 - [Reusable source library contract](guidance/sources.md)
 - [Reusable source library](src/sources/README.md)
-- [Library index](LIBRARY.md)
+- [About](ABOUT.md)
 
 `AGENTS.md` routes each kind of document to its detailed profile.

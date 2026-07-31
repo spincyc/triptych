@@ -1,6 +1,6 @@
 # Liturgy
 
-[Return to the Library](../LIBRARY.md)
+[Return to the library](../README.md)
 
 Study the Roman Rite through the books and calendars that govern each edition.
 

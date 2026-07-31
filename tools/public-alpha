@@ -66,7 +66,7 @@ BOOK_TOKEN_RE = re.compile(r"^[0-9A-Za-z]+$")
 
 PAGE_MAP = {
     "README.md": "index.html",
-    "LIBRARY.md": "library.html",
+    "ABOUT.md": "about.html",
     "CONTRIBUTING.md": "contributing.html",
     "LICENSE": "license.html",
     "THIRD_PARTY.md": "third-party.html",
@@ -1653,7 +1653,7 @@ def filter_catalog(
             for line in markdown_text.splitlines()
             if re.match(r"^\[Return to [^\]]+\]\([^)]+\)\s*$", line)
         ),
-        "[Return to the Library](../LIBRARY.md)",
+        "[Return to the library](../README.md)",
     )
     return (
         f"{title}\n\n{back}\n\n"
@@ -1842,17 +1842,17 @@ def page_classes(source_relative: str, output_relative: str) -> str:
         kind = "reader"
     elif source_relative == "README.md":
         kind = "home"
-    elif source_relative == "LIBRARY.md" or source_relative.startswith("library/"):
+    elif source_relative.startswith("library/"):
         kind = "catalog"
     else:
         kind = "utility"
     classes = ["page-shell", f"page-{kind}"]
     if kind == "reader":
         classes.append("reading")
-    if source_relative == "LIBRARY.md":
+    if source_relative == "README.md":
+        # The landing page is the library now, so it carries the portal table and
+        # the treatment that colours it.
         classes.extend(("page-library-root", "page-spectrum"))
-    elif source_relative == "README.md":
-        classes.append("page-spectrum")
     if source_relative in portals:
         classes.append("page-portal")
     section = liturgical_section(source_relative)
@@ -1917,8 +1917,12 @@ def navigation_state(source_relative: str) -> tuple[str, str, str]:
         return (' aria-current="page"', "", "")
     if source_relative == "CONTRIBUTING.md":
         return ("", "", ' aria-current="page"')
-    if source_relative == "LIBRARY.md" or source_relative.startswith(("library/", "web/")):
+    if source_relative == "ABOUT.md":
         return ("", ' aria-current="page"', "")
+    if source_relative.startswith(("library/", "web/")):
+        # A shelf or a reading page is reached from the landing page, which is
+        # where the library lives.
+        return (' aria-current="page"', "", "")
     return ("", "", "")
 
 
@@ -1954,9 +1958,9 @@ def breadcrumb(source_relative: str, output_relative: str) -> str:
     if shelf is None:
         return ""
     label, destination = shelf
-    library_href = html.escape(relative_link(output_relative, "library.html"), quote=True)
+    library_href = html.escape(relative_link(output_relative, "index.html"), quote=True)
     shelf_href = html.escape(relative_link(output_relative, destination), quote=True)
-    if destination == "library.html":
+    if destination == "index.html":
         return (
             '<nav class="breadcrumb" aria-label="Breadcrumb">'
             f'<a href="{library_href}">Library</a></nav>'
@@ -1979,7 +1983,7 @@ def add_table_header_scopes(rendered_html: str) -> str:
 
 def reject_internal_reader_labels(source_relative: str, rendered_html: str) -> None:
     """Keep implementation identities out of navigation and catalog prose."""
-    if source_relative == "LIBRARY.md" or source_relative.startswith("library/"):
+    if source_relative == "README.md" or source_relative.startswith("library/"):
         forbidden = {
             "PC-ANN": "internal postconciliar registry identifier",
             "triptych-publication-id": "internal publication marker",
@@ -2063,7 +2067,7 @@ def wrap_in_layout(
     else:
         robots = '<meta name="robots" content="index, follow">'
         banner = ""
-    home_current, library_current, feedback_current = navigation_state(source_relative)
+    home_current, about_current, feedback_current = navigation_state(source_relative)
     replacements = {
         "{{PAGE_CLASS}}": page_class,
         "{{DOCUMENT_TITLE}}": html.escape(document_title(title)),
@@ -2071,13 +2075,13 @@ def wrap_in_layout(
         "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
         "{{HEAD_EXTRA}}": head_extra,
         "{{HOME_PATH}}": relative_link(output_relative, "index.html"),
-        "{{LIBRARY_PATH}}": relative_link(output_relative, "library.html"),
+        "{{ABOUT_PATH}}": relative_link(output_relative, "about.html"),
         "{{CONTRIBUTING_PATH}}": relative_link(output_relative, "contributing.html"),
         "{{LICENSE_PATH}}": relative_link(output_relative, "license.html"),
         "{{THIRD_PARTY_PATH}}": relative_link(output_relative, "third-party.html"),
         "{{MODE_BANNER}}": banner,
         "{{HOME_CURRENT}}": home_current,
-        "{{LIBRARY_CURRENT}}": library_current,
+        "{{ABOUT_CURRENT}}": about_current,
         "{{FEEDBACK_CURRENT}}": feedback_current,
         "{{BREADCRUMB}}": breadcrumb_html,
         "{{CONTENT}}": content,
