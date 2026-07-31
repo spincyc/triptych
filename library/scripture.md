@@ -4,6 +4,10 @@
 
 Each study takes one passage, or one claim about one passage, and works it to the bottom: the original language, the ancient versions, and the reception read at their own loci. Where a widely repeated claim turns out to have no source behind it, these studies say so and show what was searched.
 
+**[Read the narrative spine](../scripture/)** — an abridged reading that carries
+the story of scripture without stalling in the genealogies and law codes, in
+three lengths, with the translation of your choosing.
+
 For the making and reception of complete biblical versions, see the
 [biblical translation histories](historical-accounts.md#biblical-translation-histories).
 

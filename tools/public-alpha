@@ -1642,6 +1642,16 @@ def source_to_output(
     resolved_text = resolved.as_posix()
 
     destination = PAGE_MAP.get(resolved_text)
+    # The browser entrances are generated into the artifact rather than built
+    # from a source file, so a link to one resolves to no page here and would
+    # be dropped as dangling; name them, and only when the data they open is
+    # actually being assembled.
+    if (
+        destination is None
+        and web_data_manifest_path().is_file()
+        and resolved_text in WEB_BROWSER_ENTRANCES
+    ):
+        destination = f"{resolved_text}/index.html"
     if (
         destination is None
         and (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file()
