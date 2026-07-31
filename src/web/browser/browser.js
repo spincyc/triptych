@@ -453,8 +453,9 @@ function fromInline(path) {
  * Load one JSON file from the data root.
  *
  * A 404 raises NotFound, which callers handle per file — a missing chapter is
- * a reportable gap, not a broken page. A transport failure (no server, file://
- * origin) switches the whole page to the inline fixture once and says so.
+ * a reportable gap, not a broken page. A transport failure — no server, or a
+ * local-file origin — switches the whole page to the inline fixture once and
+ * says so.
  */
 async function loadJSON(path) {
   if (inlineMode) return fromInline(path);
@@ -777,7 +778,10 @@ function entryIndex() {
 function readHash() {
   const raw = window.location.hash.replace(/^#/, '');
   const parsed = new URLSearchParams(raw);
-  const mode = parsed.get('mode');
+  // An entrance page opens one mode with ?mode=, because a link carrying a
+  // fragment would be checked against the target page's anchors. The hash still
+  // wins, so a shared link keeps the reader's place.
+  const mode = parsed.get('mode') || PARAMS.get('mode');
   return {
     // A hash written before the reading plan existed carries a mass and no
     // mode, and must keep working.

@@ -41,8 +41,23 @@ PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
 # <edition>/chapters/<BookToken>/<n>.json against one configurable root, so the
 # artifact carries a single data directory and the page needs no other setting.
 WEB_DATA_ROOT_RELATIVE = PurePosixPath("src/web/data")
+WEB_BROWSER_ROOT_RELATIVE = PurePosixPath("src/web/browser")
 BIBLE_SOURCE_ROOT_RELATIVE = PurePosixPath("src/sources/bibles")
-SITE_DATA_ROOT = PurePosixPath("data")
+# The page is served from the data root it reads, so its default root — the
+# directory it was loaded from — is already right and it needs no setting to
+# work deployed. The directory is named for the reader rather than the data.
+SITE_DATA_ROOT = PurePosixPath("browse")
+# The page itself. Its fixture is a development aid and is not published.
+WEB_BROWSER_PAGE_FILES = ("index.html", "browser.css", "browser.js")
+# The browser is one page with two modes, so it is served once and entered
+# twice: the propers belong under liturgy and the reading plan under scripture.
+# These are entrances rather than copies, because copying the page to each path
+# would either duplicate the whole corpus beside it or leave one of them
+# reading a data root it does not sit in.
+WEB_BROWSER_ENTRANCES = {
+    "liturgy": ("propers", "Propers browser"),
+    "scripture": ("readings", "Abridged reading plan"),
+}
 # Fragments stay beside the edition that owns them, where index-bible checks
 # them for staleness and orphans; copying them into src/web/data as well would
 # put the same verse text in the tree twice.
@@ -447,6 +462,15 @@ def web_data_files() -> dict[str, Path]:
     if not web_data_manifest_path().is_file():
         return {}
     files: dict[str, Path] = {}
+    # The page ships beside the data it reads; without it the artifact carries a
+    # corpus nothing serves, which is how the data root first went live alone.
+    for name in WEB_BROWSER_PAGE_FILES:
+        page = ROOT / WEB_BROWSER_ROOT_RELATIVE / name
+        if not page.is_file():
+            raise ReleaseError(
+                f"the browser is missing {(WEB_BROWSER_ROOT_RELATIVE / name).as_posix()}"
+            )
+        files[(SITE_DATA_ROOT / name).as_posix()] = page
     data_root = ROOT / WEB_DATA_ROOT_RELATIVE
     for path in sorted(data_root.rglob("*")):
         if path.is_symlink() or not path.is_file():
@@ -1421,6 +1445,11 @@ def expected_artifact_files(
     expected.update(included_document_pages(set(included)).values())
     expected.update(f"doc/{provider}/{leaf}.pdf" for provider, leaf in included)
     expected.update(web_data_files())
+    # The entrances are generated, not copied, so they have no source file
+    # in the map; name them here or the file-set check reads them as extras.
+    expected.update(
+        f"{path}/index.html" for path in WEB_BROWSER_ENTRANCES
+    )
     expected.update(
         artifact_license_source_paths()
     )
@@ -2496,12 +2525,35 @@ def verify_output(
         raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
 
 
+def browser_entrance_html(mode: str, title: str) -> str:
+    """A page that opens the browser in one mode.
+
+    Static hosting cannot rewrite a path, so an entrance is a real page that
+    forwards. It carries a link as well as the redirect, so it still works
+    without scripting and says where it is going.
+    """
+    target = f"../{SITE_DATA_ROOT.as_posix()}/?mode={mode}"
+    return (
+        "<!doctype html>\n"
+        '<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f'<meta http-equiv="refresh" content="0; url={target}">\n'
+        f"<title>{title}</title>\n</head>\n<body>\n"
+        f'<p><a href="{target}">{title}</a></p>\n'
+        "</body>\n</html>\n"
+    )
+
+
 def assemble_web_data(output: Path) -> None:
-    """Assemble the browser's data root: manifest, structure, and fragments."""
+    """Assemble the browser's data root: page, manifest, structure, fragments."""
     for destination_relative, source in sorted(web_data_files().items()):
         destination = output / destination_relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
+    for path, (mode, title) in sorted(WEB_BROWSER_ENTRANCES.items()):
+        destination = output / path / "index.html"
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(browser_entrance_html(mode, title), encoding="utf-8")
 
 
 def build_site(

@@ -145,6 +145,13 @@ assert tool.data_root_edition_ids(tool.web_data_files()) == offered
 
 # A sandbox holding one offered edition and one that is on disk only.
 tool.ROOT = sandbox
+# The page ships with the data it reads, so a sandbox carrying a data root
+# carries a browser too; without one the assembly refuses, which is the
+# invariant that keeps a corpus from going live with nothing to serve it.
+for name in tool.WEB_BROWSER_PAGE_FILES:
+    page = sandbox / "src/web/browser" / name
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text("fixture", encoding="utf-8")
 data = sandbox / "src/web/data"
 write(
     data / "bibles.json",
@@ -171,25 +178,26 @@ assert tool.data_root_edition_ids(files) == {"offered"}, sorted(files)
 assert not any("licensed" in path for path in files), sorted(files)
 
 site = sandbox / "site"
+root = tool.SITE_DATA_ROOT.as_posix()
 tool.assemble_web_data(site)
-assert (site / "data/offered/chapters/Ps/24.json").is_file()
-assert not (site / "data/licensed").exists()
+assert (site / f"{root}/offered/chapters/Ps/24.json").is_file()
+assert not (site / f"{root}/licensed").exists()
 # The offered edition is Vulgate-numbered, so the Hebrew loci of the same
 # citation demand nothing: numbering is a property of the system, not a
 # translation to be shipped twice.
-assert not (site / "data/offered/chapters/Ps/25.json").exists()
+assert not (site / f"{root}/offered/chapters/Ps/25.json").exists()
 assert tool.verify_web_data(site) == []
 
 # Planted after assembly, an unoffered edition still fails verification.
-planted = site / "data/licensed/chapters/Ps/24.json"
+planted = site / f"{root}/licensed/chapters/Ps/24.json"
 planted.parent.mkdir(parents=True)
 planted.write_text("{}\n", encoding="utf-8")
 errors = tool.verify_web_data(site)
 assert any("unpublishable" in error and "licensed" in error for error in errors), errors
-shutil.rmtree(site / "data/licensed")
+shutil.rmtree(site / f"{root}/licensed")
 
 # A cited chapter with no fragment in the artifact is a reader-visible hole.
-(site / "data/offered/chapters/Ps/24.json").unlink()
+(site / f"{root}/offered/chapters/Ps/24.json").unlink()
 errors = tool.verify_web_data(site)
 assert any("no fragment for" in error for error in errors), errors
 
