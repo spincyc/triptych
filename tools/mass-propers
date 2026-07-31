@@ -7,6 +7,7 @@ mass list is not duplicated elsewhere.
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -14,7 +15,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _psalms import PSALMS, SYSTEMS, NumberingError, convert_reference  # noqa: E402
+from _psalms import (  # noqa: E402
+    PSALMS,
+    SYSTEMS,
+    NumberingError,
+    convert_range,
+    convert_reference,
+)
 from _tooling import print_json, run_verb_cli  # noqa: E402
 
 DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
@@ -168,6 +175,173 @@ def resolve_passages(payload: dict, bible: dict) -> dict:
     }
 
 
+BOOK_INDEX = (
+    ROOT / "src/sources/works/english-college-of-douay/douay-rheims-bible/editions"
+    "/challoner-gutenberg-1581/artifacts"
+)
+
+
+def book_tokens() -> dict[str, str]:
+    """Canonical book name to the token the chapter fragments are filed under.
+
+    Every edition in this library addresses a book by the same token, because
+    each one's book index is built from the Douay-Rheims's. A structure file is
+    therefore edition-independent; an edition that chose its own tokens would
+    break that and would need its own loci.
+    """
+    import csv
+
+    found = sorted(BOOK_INDEX.glob("book-index-*/book-index.tsv"))
+    if len(found) != 1:
+        raise ValueError(f"expected one book index under {BOOK_INDEX}, found {len(found)}")
+    with found[0].open(encoding="utf-8", newline="") as handle:
+        return {row["modern_name"]: row["token"] for row in csv.DictReader(handle, delimiter="\t")}
+
+
+def spans_in(entry: dict, source: str, target: str) -> list[dict]:
+    """One citation's ranges as explicit loci in `target` numbering."""
+    book = str(entry.get("book") or "")
+    loci: list[dict] = []
+    for span in entry.get("ranges") or []:
+        if not isinstance(span, dict):
+            continue
+        converted, _ = convert_range(book, span.get("begin") or {}, span.get("end"), source, target)
+        for piece in converted:
+            begin, end = piece.get("begin") or {}, piece.get("end") or {}
+            loci.append(
+                {
+                    "chapter": begin.get("chapter"),
+                    "first": begin.get("verse"),
+                    "last": end.get("verse"),
+                }
+            )
+    return loci
+
+
+def citation_structure(entry: dict, source: str, tokens: dict[str, str]) -> dict:
+    """A citation with its verses resolved in both numbering systems.
+
+    Resolved here rather than in the browser so that no numbering logic ships
+    to the page: a reader picks a translation, reads its numbering, and takes
+    the loci already computed for it. A citation that cannot be converted
+    carries the reason and no loci, because a page that renders nothing is
+    better than one that renders the wrong psalm.
+    """
+    book = str(entry.get("book") or "")
+    structure = {
+        "ref": str(entry["ref"]),
+        "book": book,
+        "token": tokens.get(book),
+        "loci": {},
+        "unresolved": None,
+    }
+    if structure["token"] is None:
+        structure["unresolved"] = f"no book named {book!r} in this library"
+        return structure
+    for target in SYSTEMS:
+        try:
+            structure["loci"][target] = spans_in(entry, source, target)
+        except NumberingError as error:
+            structure["loci"] = {}
+            structure["unresolved"] = str(error)
+            return structure
+    return structure
+
+
+def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dict:
+    document = load_calendar(root, calendar)
+    source = document.get("psalm_numbering")
+    if source not in SYSTEMS:
+        raise ValueError(f"{calendar} declares unknown psalm numbering {source!r}")
+    masses = []
+    for kind, mass in masses_of(document):
+        propers = []
+        for form, proper in propers_of(mass):
+
+            def cited(owner: dict) -> list[dict]:
+                return [
+                    citation_structure(entry, source, tokens)
+                    for entry in (owner.get("verses") or [])
+                    if isinstance(entry, dict) and entry.get("ref")
+                ]
+
+            # A cycle-varying proper reads differently in years A, B and C, so
+            # each year's citations are kept apart rather than merged into one
+            # list the browser could not tell apart.
+            cycles = {
+                year: cited(owner)
+                for year, owner in (proper.get("cycles") or {}).items()
+                if isinstance(owner, dict)
+            }
+            propers.append(
+                {
+                    "name": proper.get("name"),
+                    # A mass with several formularies labels each one; an
+                    # ordinary mass has no form and carries an empty label.
+                    "form": form,
+                    "incipit": proper.get("incipit"),
+                    "source": proper.get("source"),
+                    "citations": cited(proper),
+                    "cycles": {year: rows for year, rows in cycles.items() if rows},
+                }
+            )
+        masses.append(
+            {
+                "key": mass.get("key"),
+                "name": mass.get("name"),
+                "season": mass.get("season"),
+                "kind": kind,
+                "registry": mass.get("registry"),
+                "propers": propers,
+            }
+        )
+    return {
+        "schema": "triptych-propers-structure/v1",
+        "calendar": calendar,
+        "edition": document.get("edition"),
+        "numbering": source,
+        "masses": masses,
+    }
+
+
+def run_structure(arguments: argparse.Namespace) -> dict:
+    """Write one structure file per calendar for the browser to assemble from."""
+    root = Path(arguments.root)
+    tokens = book_tokens()
+    names = [arguments.calendar] if arguments.calendar else calendars(root)
+    out = Path(arguments.out)
+    written, counts, refused = [], {}, []
+    for name in names:
+        built = calendar_structure(root, name, tokens)
+        # `--out` is the data root the page is served from, so both generators
+        # take the same one: the manifest lands at its head and the structure
+        # files under `structure/`.
+        path = out / "structure" / "propers" / f"{name}.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps(built, ensure_ascii=False, sort_keys=True, indent=1) + "\n",
+            encoding="utf-8",
+        )
+        written.append(str(path))
+        cited = [
+            citation
+            for mass in built["masses"]
+            for proper in mass["propers"]
+            for rows in [proper["citations"], *proper["cycles"].values()]
+            for citation in rows
+        ]
+        counts[name] = {"masses": len(built["masses"]), "citations": len(cited)}
+        refused.extend(
+            f"{name} {c['ref']}: {c['unresolved']}" for c in cited if c["unresolved"]
+        )
+    return {
+        "written": written,
+        "calendars": counts,
+        "refused": refused if arguments.verbose else len(refused),
+        "status": "ok",
+    }
+
+
 def run_show(arguments: argparse.Namespace) -> dict:
     if not arguments.calendar:
         raise ValueError("--calendar is required")
@@ -302,6 +476,12 @@ def main(argv: list[str] | None = None) -> int:
         "licensed text unpublished",
     )
     shared.add_argument(
+        "--out", default="src/web/data", help="where `structure` writes its files"
+    )
+    shared.add_argument(
+        "--verbose", action="store_true", help="list every citation that refused to resolve"
+    )
+    shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
     )
     parser = argparse.ArgumentParser(
@@ -312,6 +492,11 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command")
     sub.add_parser("show", help="print one mass's propers", parents=[shared])
     sub.add_parser("list", help="list the masses a calendar carries", parents=[shared])
+    sub.add_parser(
+        "structure",
+        help="write the browser's structure files, citations resolved to loci",
+        parents=[shared],
+    )
 
     def render(payload: object, arguments: argparse.Namespace) -> int:
         if not isinstance(payload, dict):
@@ -325,6 +510,18 @@ def main(argv: list[str] | None = None) -> int:
 
             print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
             return 0
+        if "written" in payload:
+            for calendar, counts in payload["calendars"].items():
+                print(f"{calendar}: {counts['masses']} masses, {counts['citations']} citations")
+            for path in payload["written"]:
+                print(f"  -> {path}")
+            refused = payload["refused"]
+            if isinstance(refused, list):
+                for row in refused:
+                    print(f"  refused {row}")
+            else:
+                print(f"  refused: {refused}")
+            return 0
         if "calendars" in payload:
             return render_listing(payload)
         return render_reading(
@@ -333,7 +530,7 @@ def main(argv: list[str] | None = None) -> int:
 
     return run_verb_cli(
         parser=parser,
-        handlers={"show": run_show, "list": run_list},
+        handlers={"show": run_show, "list": run_list, "structure": run_structure},
         renderer=render,
         prefix="mass-propers",
         argv=argv,

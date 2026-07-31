@@ -107,4 +107,104 @@ reject prepare --preview
 reject check --deployment-target github-pages
 reject verify --deployment-target nonesuch
 
+# The browser's data root is assembled from bibles.json and from nothing else.
+# That is the one rule keeping a licensed edition off the site, so it is tested
+# directly rather than through a full build: an edition whose fragments sit on
+# disk but which the manifest does not offer must never be copied, and must
+# never survive verification if it is planted in an assembled root.
+python3 - "$repo" "$sandbox/data-root" <<'PY'
+import importlib.machinery
+import importlib.util
+import json
+import shutil
+import sys
+from pathlib import Path
+
+repo, sandbox = Path(sys.argv[1]), Path(sys.argv[2])
+loader = importlib.machinery.SourceFileLoader(
+    "public_alpha", str(repo / "tools/public-alpha")
+)
+tool = importlib.util.module_from_spec(
+    importlib.util.spec_from_loader(loader.name, loader)
+)
+loader.exec_module(tool)
+
+
+def write(path, payload):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload) + "\n", encoding="utf-8")
+
+
+# The real repository: every edition the data root carries is an edition
+# bibles.json offers. Knox is retrieved outside the tree precisely because it
+# may not be republished, and so is offered by no manifest.
+offered = set(tool.offered_bible_ids())
+assert offered, "the repository manifest offers no editions"
+assert "knox" not in offered, offered
+assert tool.data_root_edition_ids(tool.web_data_files()) == offered
+
+# A sandbox holding one offered edition and one that is on disk only.
+tool.ROOT = sandbox
+data = sandbox / "src/web/data"
+write(
+    data / "bibles.json",
+    {"bibles": [{"id": "offered", "label": "Offered", "language": "la",
+                 "numbering": "vulgate", "psalter": "gallican",
+                 "rights": "public-domain"}]},
+)
+write(
+    data / "structure/propers/test.json",
+    {"masses": [{"propers": [{"citations": [{
+        "ref": "Psalm 24:1-3", "token": "Ps", "unresolved": None,
+        "loci": {"vulgate": [{"chapter": 24, "first": 1, "last": 3}],
+                 "hebrew": [{"chapter": 25, "first": 1, "last": 3}]},
+    }]}]}]},
+)
+for edition in ("offered", "licensed"):
+    write(
+        sandbox / f"src/sources/bibles/{edition}/chapters/Ps/24.json",
+        {"book": "Ps", "chapter": 24, "verses": {"1": "Ad te levavi"}},
+    )
+
+files = tool.web_data_files()
+assert tool.data_root_edition_ids(files) == {"offered"}, sorted(files)
+assert not any("licensed" in path for path in files), sorted(files)
+
+site = sandbox / "site"
+tool.assemble_web_data(site)
+assert (site / "data/offered/chapters/Ps/24.json").is_file()
+assert not (site / "data/licensed").exists()
+# The offered edition is Vulgate-numbered, so the Hebrew loci of the same
+# citation demand nothing: numbering is a property of the system, not a
+# translation to be shipped twice.
+assert not (site / "data/offered/chapters/Ps/25.json").exists()
+assert tool.verify_web_data(site) == []
+
+# Planted after assembly, an unoffered edition still fails verification.
+planted = site / "data/licensed/chapters/Ps/24.json"
+planted.parent.mkdir(parents=True)
+planted.write_text("{}\n", encoding="utf-8")
+errors = tool.verify_web_data(site)
+assert any("unpublishable" in error and "licensed" in error for error in errors), errors
+shutil.rmtree(site / "data/licensed")
+
+# A cited chapter with no fragment in the artifact is a reader-visible hole.
+(site / "data/offered/chapters/Ps/24.json").unlink()
+errors = tool.verify_web_data(site)
+assert any("no fragment for" in error for error in errors), errors
+
+# A stray edition dropped into the generated data root is refused as well: the
+# manifest, not a directory listing, decides what may be published.
+write(
+    data / "stray/chapters/Ps/24.json",
+    {"book": "Ps", "chapter": 24, "verses": {"1": "should never be copied"}},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "stray" in str(exc), exc
+else:
+    raise AssertionError("a stray edition in the data root was accepted")
+PY
+
 echo ok

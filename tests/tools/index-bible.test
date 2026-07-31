@@ -64,6 +64,59 @@ case "$crossed" in
 *) echo "the converted postconciliar citation did not resolve" >&2; exit 1 ;;
 esac
 
+# A citation the postconciliar calendar makes in Nova Vulgata numbering resolves
+# through its recorded override, not to whatever the Vulgate prints at those
+# numbers: Joel 3:1-5 is the outpoured spirit, never the valley of Josaphat.
+vigil="$("$tool" mass-propers --calendar postconciliar --mass pentecost --bible douay-rheims |
+	tr '\n' ' ' | tr -s ' ')"
+case "$vigil" in
+*"I will pour out my spirit upon all flesh"*) ;;
+*) echo "the Pentecost vigil Joel citation did not resolve to its own text" >&2; exit 1 ;;
+esac
+case "$vigil" in
+*"valley of Josaphat"*)
+	echo "the Joel citation still resolves to the Vulgate text at those numbers" >&2
+	exit 1 ;;
+esac
+
+# The overrides are validated against the calendar, not trusted: one that has
+# stopped addressing real text fails the build rather than silently lapsing.
+mkdir -p cal
+cp -R "$repo/src/sources/calendars/roman-1962" cal/
+mkdir -p cal/postconciliar
+sed 's|"Joel 3:1-5": "Joel 2:28-32"|"Joel 3:1-5": "Joel 9:1"|' \
+	"$repo/src/sources/calendars/postconciliar/propers.yaml" >cal/postconciliar/propers.yaml
+status=0
+run_tool build --root cal --bible-root "$sandbox/broken" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "an override addressing no text should exit 2, got $status" >&2
+	exit 1
+fi
+
+# An override naming a reference the calendar no longer cites is equally dead.
+sed 's|"Joel 3:1-5": "Joel 2:28-32"|"Joel 3:2-6": "Joel 2:28-32"|' \
+	"$repo/src/sources/calendars/postconciliar/propers.yaml" >cal/postconciliar/propers.yaml
+status=0
+run_tool build --root cal --bible-root "$sandbox/dead" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "an override for an uncited reference should exit 2, got $status" >&2
+	exit 1
+fi
+
+# A divergent citation with no override refuses: it is reported unresolved and
+# kept out of the index, because a plausible wrong verse is worse than none.
+sed '/"Joel 3:1-5": "Joel 2:28-32"/d' \
+	"$repo/src/sources/calendars/postconciliar/propers.yaml" >cal/postconciliar/propers.yaml
+run_tool build --root cal --bible-root "$sandbox/bare" --verbose >bare.txt 2>&1
+if ! grep -q "unresolved postconciliar Joel 3:1-5" bare.txt; then
+	echo "an unrecorded divergent citation was not reported unresolved" >&2
+	exit 1
+fi
+if grep -q "valley of Josaphat" "$sandbox/bare/douay-rheims/index.yaml"; then
+	echo "a refused citation still put the wrong verse in the index" >&2
+	exit 1
+fi
+
 # Machine form is one key-sorted object and reports the coverage it achieved.
 run_tool check --format json >one.json
 run_tool check --format json >two.json

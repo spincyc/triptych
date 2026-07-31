@@ -1,0 +1,9075 @@
+{
+ "canon": "catholic-73",
+ "numbering": "vulgate",
+ "omissions": "This plan is an abridgement, and the honest account of an abridgement is what it\nleaves out. All figures below are verse counts taken from the Douay-Rheims\n(Challoner) text indexed in this repository, whose 73 books hold 35,804 verses.\nPercentages computed on a 66-book canon run higher for every class named here,\nbecause the denominator is smaller; the commonly quoted figures of about 19.8 per\ncent for the prophets, 14.4 per cent for wisdom and poetry and 8.1 per cent for\nthe epistles are of that kind.\n\nAt its fullest tier this plan reads 13,867 verses, 38.7 per cent of the Bible.\nThe narrative tier reads 3,675 verses, 10.3 per cent. The overview tier reads\n1,210 verses, 3.4 per cent.\n\nThe reduction does not come from cutting genealogies and law codes. Those are\nsmall: every genealogy and register dropped here comes to 297 verses, 0.8 per\ncent of the Bible, and the whole of Leviticus, Exodus 25-31 and 35-40, Numbers\n1-9 and 26-30 and Deuteronomy 12-26 together come to 2,217 verses, 6.2 per cent.\nSeven per cent, between them. The reduction comes from dropping three whole\nclasses of book that are not narrative, which come to 15,519 verses, 43.3 per\ncent of the Bible.\n\nNot read at any tier:\n\n  The prophets, 5,875 verses, 16.4 per cent of the Bible (counting Lamentations,\n  Baruch and Daniel among them). What survives is fifteen passages in thirteen\n  readings, and the narrative chapters of Daniel: Isaias 7:1-17, 9:1-7, 11:1-10,\n  52:13-53:12, 54:5-14 and 55:1-11; Jeremias 31:31-40, 36 and 38:1-13; Baruch\n  3:9-15 with 3:32-4:4; Ezechiel 34, 36:16-28 and 37:1-14; Lamentations 3:19-33;\n  Daniel 1-6, 13 and 14. Everything else is absent - the whole of Osee through\n  Malachias, all but six passages of Isaias, all but three of Jeremias, Daniel's\n  visions, and every oracle against the nations. A reader who finishes this plan\n  has not read the prophets.\n\n  The wisdom and poetical books, 6,881 verses, 19.2 per cent. Job, Proverbs,\n  Ecclesiastes, the Canticle of Canticles, Wisdom and Ecclesiasticus are not read\n  at all. Of the 150 psalms, sixteen are read, each because a narrative moment\n  demands it.\n\n  The epistles, 2,763 verses, 7.7 per cent. All twenty-one, and Hebrews with\n  them. The plan follows the Church's expansion through the Acts and stops; it\n  does not read what the apostles wrote to the churches they founded. That is the\n  largest gap in its New Testament coverage, and no narrative plan can close it,\n  because the epistles are not narrative.\n\n  The Apocalypse, but for 21:1-22:5, read as the close of the arc opened in\n  Genesis 1.\n\nAlso not read, being narrative or historical but doubled, legal, or list:\nLeviticus entire; Exodus 25-31 and 35-40; Numbers 1-9 and 26-30 apart from\nchapter 27; Deuteronomy 12-26; Josue 12-22; Judges 17-21; 1 and 2 Paralipomenon\nentire, as a second telling of reigns already read in Samuel and Kings; Aggeus,\nZacharias and Malachias, though they belong to the Return; and 2 Machabees but\nfor chapters 6 and 7.\n\nGenealogies and registers dropped: Genesis 5, 10, 22:20-24, 25:12-18 and 36;\nExodus 6:14-30; Esdras 2; Nehemias 3 and 7. Genesis 11:10-32 and St. Matthew 1\nare kept, because they are the two genealogies that carry the plot.\n\nThe consensus narrative spine within the twelve periods is 334 chapters. This\nplan reads 331 of them, holding back only Esdras 2, Nehemias 3 and Nehemias 7,\nand adds the material listed at the year tier. It touches 454 chapters in 31 of\nthe 73 books.\n\nThe cost is stated here because every abridgement that concealed it has been\nattacked for concealing it. A reader who wants the Bible should read the Bible.\nWhat this offers is the story in order, at three depths, with the seams visible.\n",
+ "periods": [
+  {
+   "key": "early-world",
+   "label": "Primeval History",
+   "readings": [
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 2
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 2
+       }
+      ]
+     },
+     "note": "The first lesson of the Easter Vigil. The Vigil's own abridgement of salvation history governs this plan: every one of its lessons is read at some tier.\n",
+     "order": 1,
+     "tier": "overview",
+     "title": "Creation",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 3,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 3,
+        "last": 25
+       }
+      ]
+     },
+     "note": "The sabbath blessing, and the second account, in which man is placed in the garden and given the woman.\n",
+     "order": 2,
+     "tier": "year",
+     "title": "The seventh day and the garden",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 24
+       }
+      ]
+     },
+     "note": "The protoevangelium at 3:15 is the seed of everything the plan afterwards follows.\n",
+     "order": 3,
+     "tier": "overview",
+     "title": "The fall",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 16
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 16
+       }
+      ]
+     },
+     "note": null,
+     "order": 4,
+     "tier": "narrative",
+     "title": "Cain and Abel",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 17,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 17,
+        "last": 26
+       }
+      ]
+     },
+     "note": "Kept, against the general omission of genealogies, because it divides the two lines from which the flood narrative proceeds.\n",
+     "order": 5,
+     "tier": "year",
+     "title": "The sons of Cain, and calling on the name of the Lord",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 4
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 4
+       }
+      ]
+     },
+     "note": null,
+     "order": 6,
+     "tier": "year",
+     "title": "The sons of God and the daughters of men",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 5,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 5,
+        "last": 22
+       }
+      ]
+     },
+     "note": "Read as one unit: the corruption, the ark, the deluge and its abating.\n",
+     "order": 7,
+     "tier": "overview",
+     "title": "The flood",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": "The first covenant of the plan; the bow set in the cloud.\n",
+     "order": 8,
+     "tier": "narrative",
+     "title": "The covenant with Noe",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 9
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 9
+       }
+      ]
+     },
+     "note": null,
+     "order": 9,
+     "tier": "narrative",
+     "title": "Babel",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 10,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 10,
+        "last": 32
+       }
+      ]
+     },
+     "note": "The one genealogy retained in this period, because without it the call of Abram has no ancestry.\n",
+     "order": 10,
+     "tier": "year",
+     "title": "From Sem to Abram",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 10
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 10
+       }
+      ]
+     },
+     "note": "Vulgate numbering, which is this plan's throughout; here the Vulgate and the Hebrew agree.\n",
+     "order": 11,
+     "tier": "year",
+     "title": "Psalm 8",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 104,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 103,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": "Vulgate 103 = Hebrew 104.\n",
+     "order": 12,
+     "tier": "year",
+     "title": "Psalm 103, the hymn of creation",
+     "token": "Ps",
+     "unresolved": null
+    }
+   ],
+   "summary": "From the creation to the scattering at Babel: the world God made, the fault that broke it, and the first covenant made with a remnant. Genesis 5 and 10, which are genealogies, are passed over; Genesis 11:10-32 is kept because it is the bridge to Abram.\n"
+  },
+  {
+   "key": "patriarchs",
+   "label": "Patriarchs",
+   "readings": [
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 9
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 9
+       }
+      ]
+     },
+     "note": "The promise on which the rest of the Old Testament depends.\n",
+     "order": 13,
+     "tier": "overview",
+     "title": "The call of Abram",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 10,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 10,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 14,
+     "tier": "year",
+     "title": "Abram in Egypt",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 15,
+     "tier": "year",
+     "title": "Abram and Lot part",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 24
+       }
+      ]
+     },
+     "note": "Melchisedech's bread and wine is read again in the Canon of the Mass and in Hebrews; the epistle is not in this plan.\n",
+     "order": 16,
+     "tier": "year",
+     "title": "Melchisedech, and the rescue of Lot",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": "\"He believed God, and it was reputed to him unto justice.\"\n",
+     "order": 17,
+     "tier": "narrative",
+     "title": "The covenant of the divided victims",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 16
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 16
+       }
+      ]
+     },
+     "note": null,
+     "order": 18,
+     "tier": "year",
+     "title": "Agar and Ismael",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 19,
+     "tier": "year",
+     "title": "Circumcision, and the new names",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 33
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 33
+       }
+      ]
+     },
+     "note": null,
+     "order": 20,
+     "tier": "narrative",
+     "title": "The three at Mambre, and the plea for Sodom",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 21,
+     "tier": "year",
+     "title": "Sodom destroyed; Abraham and Abimelech",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 34
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 34
+       }
+      ]
+     },
+     "note": null,
+     "order": 22,
+     "tier": "year",
+     "title": "The birth of Isaac; Agar cast out",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": "The second lesson of the Easter Vigil, read to its Vigil terminus at verse 18; the genealogy of Nachor that follows is omitted.\n",
+     "order": 23,
+     "tier": "overview",
+     "title": "The binding of Isaac",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": "The only land Abraham ever owns in the country promised to him is a grave.\n",
+     "order": 24,
+     "tier": "year",
+     "title": "The death of Sara, and the cave of Machpelah",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 67
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 67
+       }
+      ]
+     },
+     "note": null,
+     "order": 25,
+     "tier": "year",
+     "title": "A wife for Isaac",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 11
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 11
+       }
+      ]
+     },
+     "note": "25:12-18, the generations of Ismael, is omitted.\n",
+     "order": 26,
+     "tier": "year",
+     "title": "The death of Abraham",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 25,
+        "first": 19,
+        "last": 34
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 25,
+        "first": 19,
+        "last": 34
+       }
+      ]
+     },
+     "note": null,
+     "order": 27,
+     "tier": "year",
+     "title": "Esau and Jacob; the birthright sold",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 26,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 26,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": null,
+     "order": 28,
+     "tier": "year",
+     "title": "Isaac at Gerara, and the wells",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 27,
+        "first": 1,
+        "last": 46
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 27,
+        "first": 1,
+        "last": 46
+       }
+      ]
+     },
+     "note": null,
+     "order": 29,
+     "tier": "narrative",
+     "title": "The stolen blessing",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 28,
+        "first": 1,
+        "last": 9
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 28,
+        "first": 1,
+        "last": 9
+       }
+      ]
+     },
+     "note": null,
+     "order": 30,
+     "tier": "year",
+     "title": "Jacob sent into Mesopotamia",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 28,
+        "first": 10,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 28,
+        "first": 10,
+        "last": 22
+       }
+      ]
+     },
+     "note": null,
+     "order": 31,
+     "tier": "narrative",
+     "title": "Jacob's ladder at Bethel",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 29,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 29,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": null,
+     "order": 32,
+     "tier": "year",
+     "title": "Lia and Rachel",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 30,
+        "first": 1,
+        "last": 55
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 30,
+        "first": 1,
+        "last": 55
+       }
+      ]
+     },
+     "note": null,
+     "order": 33,
+     "tier": "year",
+     "title": "The sons of Jacob, and the flight from Laban",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 32,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 32,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": "The name Israel is given here.\n",
+     "order": 34,
+     "tier": "narrative",
+     "title": "Jacob wrestles until daybreak",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 33,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 33,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 35,
+     "tier": "year",
+     "title": "Reconciliation, and the men of Sichem",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 35,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 35,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": "Genesis 36, the generations of Esau, is omitted.\n",
+     "order": 36,
+     "tier": "year",
+     "title": "Bethel confirmed; the death of Rachel",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 37,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 37,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": null,
+     "order": 37,
+     "tier": "narrative",
+     "title": "Joseph sold by his brethren",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 38,
+        "first": 1,
+        "last": 30
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 38,
+        "first": 1,
+        "last": 30
+       }
+      ]
+     },
+     "note": "Retained because Phares stands in the genealogy of Christ that closes the book of Ruth and opens St. Matthew.\n",
+     "order": 38,
+     "tier": "year",
+     "title": "Juda and Thamar",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 39,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 39,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 39,
+     "tier": "year",
+     "title": "Joseph and the wife of Putiphar",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 40,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 40,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 40,
+     "tier": "year",
+     "title": "The dreams of the butler and the baker",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 41,
+        "first": 1,
+        "last": 57
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 41,
+        "first": 1,
+        "last": 57
+       }
+      ]
+     },
+     "note": null,
+     "order": 41,
+     "tier": "year",
+     "title": "Pharao's dreams; Joseph exalted",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 42,
+        "first": 1,
+        "last": 34
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 42,
+        "first": 1,
+        "last": 34
+       }
+      ]
+     },
+     "note": "Three journeys read as one: the first descent, Benjamin, and the cup in the sack.\n",
+     "order": 42,
+     "tier": "year",
+     "title": "The brethren come down into Egypt",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 45,
+        "first": 1,
+        "last": 15
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 45,
+        "first": 1,
+        "last": 15
+       }
+      ]
+     },
+     "note": null,
+     "order": 43,
+     "tier": "overview",
+     "title": "Joseph makes himself known",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 45,
+        "first": 16,
+        "last": 28
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 45,
+        "first": 16,
+        "last": 28
+       }
+      ]
+     },
+     "note": null,
+     "order": 44,
+     "tier": "year",
+     "title": "Pharao invites Jacob",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 46,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 46,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 45,
+     "tier": "year",
+     "title": "Jacob goes down into Egypt",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 48,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 48,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": null,
+     "order": 46,
+     "tier": "year",
+     "title": "Ephraim set before Manasses",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 49,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 49,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": "\"The sceptre shall not be taken away from Juda\" (49:10).\n",
+     "order": 47,
+     "tier": "narrative",
+     "title": "The blessing of Jacob",
+     "token": "Gen",
+     "unresolved": null
+    },
+    {
+     "book": "Genesis",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 50,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 50,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": "\"You thought evil against me: but God turned it into good\" (50:20) is the hinge of the whole patriarchal narrative.\n",
+     "order": 48,
+     "tier": "narrative",
+     "title": "The death of Jacob and of Joseph",
+     "token": "Gen",
+     "unresolved": null
+    }
+   ],
+   "summary": "Genesis 12-50, less chapter 36: the promise given to Abraham, carried through Isaac and Jacob, and preserved in Egypt through Joseph. The genealogy of Esau (36), the genealogy of Nachor (22:20-24) and the generations of Ismael (25:12-18) are passed over.\n"
+  },
+  {
+   "key": "egypt-and-exodus",
+   "label": "Egypt and Exodus",
+   "readings": [
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": null,
+     "order": 49,
+     "tier": "narrative",
+     "title": "Israel in bondage",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 50,
+     "tier": "narrative",
+     "title": "The birth of Moses, and his flight",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 17
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 17
+       }
+      ]
+     },
+     "note": "\"I AM WHO AM.\" The divine name is given here.\n",
+     "order": 51,
+     "tier": "overview",
+     "title": "The burning bush",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 18,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 18,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 52,
+     "tier": "year",
+     "title": "Moses returns into Egypt",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 53,
+     "tier": "year",
+     "title": "Bricks without straw",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 13
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 13
+       }
+      ]
+     },
+     "note": "6:14-30, the genealogy of Levi, is omitted.\n",
+     "order": 54,
+     "tier": "year",
+     "title": "The promise renewed",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": null,
+     "order": 55,
+     "tier": "year",
+     "title": "The rod, the blood, the frogs and the flies",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 56,
+     "tier": "year",
+     "title": "Murrain, hail, locusts and darkness",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 10
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 10
+       }
+      ]
+     },
+     "note": null,
+     "order": 57,
+     "tier": "year",
+     "title": "The last plague foretold",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 42
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 42
+       }
+      ]
+     },
+     "note": null,
+     "order": 58,
+     "tier": "overview",
+     "title": "The passover, and the going out",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 43,
+        "last": 16
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 43,
+        "last": 16
+       }
+      ]
+     },
+     "note": null,
+     "order": 59,
+     "tier": "year",
+     "title": "The law of the passover and of the firstborn",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 17,
+        "last": 14
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 17,
+        "last": 14
+       }
+      ]
+     },
+     "note": null,
+     "order": 60,
+     "tier": "year",
+     "title": "The pillar of cloud; Israel at the sea",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 15,
+        "last": 1
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 15,
+        "last": 1
+       }
+      ]
+     },
+     "note": "The third lesson of the Easter Vigil, whose range this reading reproduces exactly, ending as the Vigil does at the opening of the canticle.\n",
+     "order": 61,
+     "tier": "overview",
+     "title": "The crossing of the sea",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 2,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 2,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 62,
+     "tier": "year",
+     "title": "The canticle of Moses, and the bitter waters",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": null,
+     "order": 63,
+     "tier": "narrative",
+     "title": "The manna and the quails",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 16
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 16
+       }
+      ]
+     },
+     "note": null,
+     "order": 64,
+     "tier": "year",
+     "title": "Water from the rock; Amalec",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 65,
+     "tier": "year",
+     "title": "The counsel of Jethro",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 66,
+     "tier": "narrative",
+     "title": "Israel at the mountain",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": "Kept at the highest tier although it is law and not narrative: the covenant it states is the standard against which every later collapse in this plan is measured.\n",
+     "order": 67,
+     "tier": "overview",
+     "title": "The Decalogue",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 20,
+        "first": 22,
+        "last": 33
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 20,
+        "first": 22,
+        "last": 33
+       }
+      ]
+     },
+     "note": "The one law code this plan reads, and only because it stands inside the Sinai narrative.\n",
+     "order": 68,
+     "tier": "year",
+     "title": "The book of the covenant",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": "Exodus 25-31, the tabernacle specifications, are omitted here.\n",
+     "order": 69,
+     "tier": "narrative",
+     "title": "The blood of the covenant",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 32,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 32,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": null,
+     "order": 70,
+     "tier": "narrative",
+     "title": "The golden calf",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 33,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 33,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 71,
+     "tier": "year",
+     "title": "\"Shew me thy glory\"",
+     "token": "Ex",
+     "unresolved": null
+    },
+    {
+     "book": "Exodus",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 34,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 34,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": "Exodus 35-40, the making of the tabernacle, are omitted; they repeat chapters 25-31 in the past tense.\n",
+     "order": 72,
+     "tier": "narrative",
+     "title": "The covenant renewed; the shining face",
+     "token": "Ex",
+     "unresolved": null
+    }
+   ],
+   "summary": "Exodus 1-24 and 32-34: bondage, the passover, the sea, and the covenant at Sinai. The tabernacle specifications (25-31) and their execution (35-40) are passed over; they are description, not narrative, and the second is largely a repetition of the first.\n"
+  },
+  {
+   "key": "desert-wanderings",
+   "label": "The Wilderness",
+   "readings": [
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": null,
+     "order": 73,
+     "tier": "year",
+     "title": "The cloud lifts",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 34
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 34
+       }
+      ]
+     },
+     "note": null,
+     "order": 74,
+     "tier": "narrative",
+     "title": "The quails, and the seventy elders",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 15
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 15
+       }
+      ]
+     },
+     "note": null,
+     "order": 75,
+     "tier": "year",
+     "title": "Mary and Aaron murmur",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 45
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 45
+       }
+      ]
+     },
+     "note": "The forty years in the desert begin here; every later reading in this period is its consequence.\n",
+     "order": 76,
+     "tier": "overview",
+     "title": "The spies, and the refusal of the land",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 50
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 50
+       }
+      ]
+     },
+     "note": null,
+     "order": 77,
+     "tier": "narrative",
+     "title": "The rebellion of Core",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 13
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 13
+       }
+      ]
+     },
+     "note": null,
+     "order": 78,
+     "tier": "year",
+     "title": "The rod of Aaron that blossomed",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 30
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 30
+       }
+      ]
+     },
+     "note": null,
+     "order": 79,
+     "tier": "narrative",
+     "title": "Meriba; the death of Aaron",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": "Read again in St. John 3:14, which this plan also reads.\n",
+     "order": 80,
+     "tier": "narrative",
+     "title": "The brazen serpent",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 30
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 30
+       }
+      ]
+     },
+     "note": null,
+     "order": 81,
+     "tier": "year",
+     "title": "Balaam",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 82,
+     "tier": "year",
+     "title": "\"A star shall rise out of Jacob\"",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 83,
+     "tier": "year",
+     "title": "Beelphegor, and the zeal of Phinees",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 27,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 27,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 84,
+     "tier": "year",
+     "title": "The daughters of Salphaad; Josue appointed",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Numbers",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 31,
+        "first": 1,
+        "last": 56
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 31,
+        "first": 1,
+        "last": 56
+       }
+      ]
+     },
+     "note": "Chapter 33 is an itinerary rather than a narrative, kept because it is the desert generation's whole record.\n",
+     "order": 85,
+     "tier": "year",
+     "title": "Madian, the land beyond Jordan, and the stations of the journey",
+     "token": "Num",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 86,
+     "tier": "year",
+     "title": "Moses recalls the way from Horeb",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 49
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 49
+       }
+      ]
+     },
+     "note": null,
+     "order": 87,
+     "tier": "year",
+     "title": "\"Ask of the days of old\"",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 33
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 33
+       }
+      ]
+     },
+     "note": "The second of the two statements of the Decalogue this plan reads.\n",
+     "order": 88,
+     "tier": "narrative",
+     "title": "The Decalogue rehearsed",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": "The Shema, and the first commandment as Christ cites it. Deuteronomy 12-26, the law code, is omitted after chapter 11.\n",
+     "order": 89,
+     "tier": "overview",
+     "title": "\"Hear, O Israel\"",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 26
+       }
+      ]
+     },
+     "note": null,
+     "order": 90,
+     "tier": "year",
+     "title": "A people chosen and holy",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": "Cited in the temptation of Christ, read later in this plan.\n",
+     "order": 91,
+     "tier": "year",
+     "title": "\"Not in bread alone\"",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": null,
+     "order": 92,
+     "tier": "year",
+     "title": "\"Not for thy justices\"; the circumcision of the heart",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": null,
+     "order": 93,
+     "tier": "year",
+     "title": "The blessing and the curse",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 29,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 29,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 94,
+     "tier": "year",
+     "title": "The covenant in the land of Moab",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 30,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 30,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 95,
+     "tier": "year",
+     "title": "\"Life and death, blessing and cursing\"",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 31,
+        "first": 1,
+        "last": 30
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 31,
+        "first": 1,
+        "last": 30
+       }
+      ]
+     },
+     "note": null,
+     "order": 96,
+     "tier": "year",
+     "title": "Josue commissioned; the law entrusted",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 32,
+        "first": 1,
+        "last": 52
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 32,
+        "first": 1,
+        "last": 52
+       }
+      ]
+     },
+     "note": null,
+     "order": 97,
+     "tier": "narrative",
+     "title": "The canticle of Moses",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 33,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 33,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 98,
+     "tier": "year",
+     "title": "The blessing of the tribes",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Deuteronomy",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 34,
+        "first": 1,
+        "last": 12
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 34,
+        "first": 1,
+        "last": 12
+       }
+      ]
+     },
+     "note": null,
+     "order": 99,
+     "tier": "overview",
+     "title": "The death of Moses",
+     "token": "Deut",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 95,
+        "first": 1,
+        "last": 11
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 94,
+        "first": 1,
+        "last": 11
+       }
+      ]
+     },
+     "note": "Vulgate 94 = Hebrew 95: \"Harden not your hearts, as in the provocation.\" The desert generation judged in a psalm.\n",
+     "order": 100,
+     "tier": "year",
+     "title": "Psalm 94",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 106,
+        "first": 1,
+        "last": 48
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 105,
+        "first": 1,
+        "last": 48
+       }
+      ]
+     },
+     "note": "Vulgate 105 = Hebrew 106: Israel's own confession of the rebellions read in this period.\n",
+     "order": 101,
+     "tier": "year",
+     "title": "Psalm 105",
+     "token": "Ps",
+     "unresolved": null
+    }
+   ],
+   "summary": "Numbers 10-14, 16-17, 20-25, 27 and 31-33, with Deuteronomy 1-11 and 29-34. The Deuteronomic law code (12-26) is passed over, as is Leviticus entire and Numbers 1-9 and 26-30 apart from chapter 27: censuses, offerings and cultic ordinance.\n"
+  },
+  {
+   "key": "conquest-and-judges",
+   "label": "Conquest and Judges",
+   "readings": [
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 102,
+     "tier": "narrative",
+     "title": "The commission of Josue",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 24
+       }
+      ]
+     },
+     "note": "Rahab stands in the genealogy of Christ; the plan reads her here and there only.\n",
+     "order": 103,
+     "tier": "year",
+     "title": "Rahab and the spies",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 17
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 17
+       }
+      ]
+     },
+     "note": null,
+     "order": 104,
+     "tier": "narrative",
+     "title": "The crossing of the Jordan",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 16
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 16
+       }
+      ]
+     },
+     "note": null,
+     "order": 105,
+     "tier": "year",
+     "title": "The twelve stones; the pasch at Galgal",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 106,
+     "tier": "overview",
+     "title": "The fall of Jericho",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 26
+       }
+      ]
+     },
+     "note": null,
+     "order": 107,
+     "tier": "year",
+     "title": "Achan's theft, and the defeat at Hai",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 108,
+     "tier": "year",
+     "title": "Hai taken; the stratagem of the Gabaonites",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 43
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 43
+       }
+      ]
+     },
+     "note": null,
+     "order": 109,
+     "tier": "year",
+     "title": "The five kings; the sun stayed",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": "Josue 12-22, the lists of conquered kings and the tribal allotments, are omitted here.\n",
+     "order": 110,
+     "tier": "year",
+     "title": "The northern kings",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 16
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 16
+       }
+      ]
+     },
+     "note": null,
+     "order": 111,
+     "tier": "year",
+     "title": "The last charge of Josue",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Joshua",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 33
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 33
+       }
+      ]
+     },
+     "note": null,
+     "order": 112,
+     "tier": "narrative",
+     "title": "The covenant at Sichem",
+     "token": "Jos",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": null,
+     "order": 113,
+     "tier": "year",
+     "title": "What the tribes failed to drive out",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": "The interpretative key to the whole book: they forsook the Lord, he delivered them up, they cried, he raised a judge.\n",
+     "order": 114,
+     "tier": "narrative",
+     "title": "The pattern of the judges",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 115,
+     "tier": "year",
+     "title": "Othoniel, Aod and Samgar",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 24
+       }
+      ]
+     },
+     "note": null,
+     "order": 116,
+     "tier": "year",
+     "title": "Debbora and Barac",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": null,
+     "order": 117,
+     "tier": "year",
+     "title": "The canticle of Debbora",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 40
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 40
+       }
+      ]
+     },
+     "note": null,
+     "order": 118,
+     "tier": "narrative",
+     "title": "The call of Gedeon",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 119,
+     "tier": "overview",
+     "title": "Gedeon and the three hundred",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": null,
+     "order": 120,
+     "tier": "year",
+     "title": "Gedeon's victory, and the ephod",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 121,
+     "tier": "year",
+     "title": "Abimelech, and the parable of the trees",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 15
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 15
+       }
+      ]
+     },
+     "note": null,
+     "order": 122,
+     "tier": "year",
+     "title": "Jephte, his vow, and Ephraim",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 123,
+     "tier": "year",
+     "title": "The birth of Samson",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 124,
+     "tier": "year",
+     "title": "The riddle, the foxes and the jawbone",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Judges",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": "Judges 17-21, the appendix of Michas and the outrage at Gabaa, is omitted.\n",
+     "order": 125,
+     "tier": "narrative",
+     "title": "Samson and Dalila",
+     "token": "Judg",
+     "unresolved": null
+    },
+    {
+     "book": "Ruth",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": null,
+     "order": 126,
+     "tier": "narrative",
+     "title": "\"Thy people shall be my people\"",
+     "token": "Ruth",
+     "unresolved": null
+    },
+    {
+     "book": "Ruth",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 127,
+     "tier": "year",
+     "title": "Ruth gleans in the field of Booz",
+     "token": "Ruth",
+     "unresolved": null
+    },
+    {
+     "book": "Ruth",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 128,
+     "tier": "year",
+     "title": "Ruth at the threshing floor",
+     "token": "Ruth",
+     "unresolved": null
+    },
+    {
+     "book": "Ruth",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": "The book ends in a genealogy, and it is the one genealogy no abridgement can cut: Phares, Booz, Obed, Isai, David.\n",
+     "order": 129,
+     "tier": "overview",
+     "title": "Booz redeems Ruth",
+     "token": "Ruth",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 78,
+        "first": 1,
+        "last": 72
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 77,
+        "first": 1,
+        "last": 72
+       }
+      ]
+     },
+     "note": "Vulgate 77 = Hebrew 78: the desert and the conquest rehearsed as a parable, ending in the choice of David.\n",
+     "order": 130,
+     "tier": "year",
+     "title": "Psalm 77",
+     "token": "Ps",
+     "unresolved": null
+    }
+   ],
+   "summary": "Josue 1-11 and 23-24, Judges 1-16, and Ruth. The allotment of the tribal territories (Josue 12-22) is passed over as a survey document, and Judges 17-21, the appendix, is left aside as outside the line of the story.\n"
+  },
+  {
+   "key": "royal-kingdom",
+   "label": "The United Monarchy",
+   "readings": [
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 28
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 28
+       }
+      ]
+     },
+     "note": "Douay-Rheims title: the First Book of Samuel, otherwise called the First Book of Kings.\n",
+     "order": 131,
+     "tier": "narrative",
+     "title": "Anna, and the birth of Samuel",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": "The Magnificat answers this canticle; both are read in this plan.\n",
+     "order": 132,
+     "tier": "year",
+     "title": "The canticle of Anna; the sons of Heli",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": null,
+     "order": 133,
+     "tier": "narrative",
+     "title": "The call of Samuel",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": null,
+     "order": 134,
+     "tier": "year",
+     "title": "The ark taken; the glory departed",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": null,
+     "order": 135,
+     "tier": "year",
+     "title": "The ark among the Philistines, and its return",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 17
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 17
+       }
+      ]
+     },
+     "note": null,
+     "order": 136,
+     "tier": "year",
+     "title": "Samuel judges Israel at Masphath",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": "The kingdom is granted as a concession; every later reading in this period is coloured by that.\n",
+     "order": 137,
+     "tier": "overview",
+     "title": "\"Give us a king\"",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 138,
+     "tier": "year",
+     "title": "Saul sought, anointed, and acclaimed",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 139,
+     "tier": "year",
+     "title": "Jabes Galaad delivered; the farewell of Samuel",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 140,
+     "tier": "year",
+     "title": "Saul's unlawful sacrifice",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 52
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 52
+       }
+      ]
+     },
+     "note": null,
+     "order": 141,
+     "tier": "year",
+     "title": "Jonathan at Machmas; the rash oath",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": "\"Obedience is better than sacrifices\" (15:22).\n",
+     "order": 142,
+     "tier": "narrative",
+     "title": "Saul rejected",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 143,
+     "tier": "overview",
+     "title": "David anointed",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 58
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 58
+       }
+      ]
+     },
+     "note": null,
+     "order": 144,
+     "tier": "narrative",
+     "title": "David and Goliath",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 30
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 30
+       }
+      ]
+     },
+     "note": null,
+     "order": 145,
+     "tier": "year",
+     "title": "Jonathan's friendship, and Saul's envy",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 43
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 43
+       }
+      ]
+     },
+     "note": null,
+     "order": 146,
+     "tier": "year",
+     "title": "Michol's stratagem; the covenant with Jonathan",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": "Christ cites the loaves of proposition against the Pharisees; that passage is read in this plan.\n",
+     "order": 147,
+     "tier": "year",
+     "title": "The loaves of proposition; the priests of Nobe",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 28
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 28
+       }
+      ]
+     },
+     "note": null,
+     "order": 148,
+     "tier": "year",
+     "title": "David in the wilderness of Ziph",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 149,
+     "tier": "year",
+     "title": "David spares Saul in the cave",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 150,
+     "tier": "year",
+     "title": "Nabal and Abigail; Saul spared again",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 27,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 27,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 151,
+     "tier": "year",
+     "title": "David among the Philistines; the witch of Endor",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 29,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 29,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 152,
+     "tier": "year",
+     "title": "Siceleg burned and recovered",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 31,
+        "first": 1,
+        "last": 13
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 31,
+        "first": 1,
+        "last": 13
+       }
+      ]
+     },
+     "note": null,
+     "order": 153,
+     "tier": "narrative",
+     "title": "The death of Saul on Gelboe",
+     "token": "1Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": "Douay-Rheims title: the Second Book of Samuel, otherwise called the Second Book of Kings.\n",
+     "order": 154,
+     "tier": "year",
+     "title": "The lament for Saul and Jonathan",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 12
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 12
+       }
+      ]
+     },
+     "note": null,
+     "order": 155,
+     "tier": "year",
+     "title": "Hebron, Abner, and the murder of Isboseth",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 156,
+     "tier": "narrative",
+     "title": "King over all Israel; Jerusalem taken",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 157,
+     "tier": "year",
+     "title": "The ark brought up",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": "The Davidic covenant. The angel's words at the Annunciation, read later in this plan, are its direct answer.\n",
+     "order": 158,
+     "tier": "overview",
+     "title": "\"Thy house shall be faithful for ever\"",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 19
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 19
+       }
+      ]
+     },
+     "note": null,
+     "order": 159,
+     "tier": "year",
+     "title": "The wars of David; kindness to Miphiboseth",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 160,
+     "tier": "narrative",
+     "title": "David and Bethsabee",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 161,
+     "tier": "narrative",
+     "title": "Nathan's parable",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 51,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 50,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": "Vulgate 50 = Hebrew 51, the Miserere, inscribed to this episode and read here for that reason.\n",
+     "order": 162,
+     "tier": "year",
+     "title": "Psalm 50",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 33
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 33
+       }
+      ]
+     },
+     "note": null,
+     "order": 163,
+     "tier": "year",
+     "title": "Amnon and Thamar; Absalom recalled",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 37
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 37
+       }
+      ]
+     },
+     "note": null,
+     "order": 164,
+     "tier": "narrative",
+     "title": "The revolt of Absalom",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 165,
+     "tier": "year",
+     "title": "Semei, Achitophel and Chusai",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 33
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 33
+       }
+      ]
+     },
+     "note": null,
+     "order": 166,
+     "tier": "narrative",
+     "title": "The death of Absalom",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 26
+       }
+      ]
+     },
+     "note": null,
+     "order": 167,
+     "tier": "year",
+     "title": "The return, and the revolt of Seba",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 39
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 39
+       }
+      ]
+     },
+     "note": null,
+     "order": 168,
+     "tier": "year",
+     "title": "The famine, the song, and the last words of David",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Samuel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": "The threshing floor of Areuna is where the temple will stand.\n",
+     "order": 169,
+     "tier": "year",
+     "title": "The census, the plague, and the threshing floor",
+     "token": "2Kings",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 6
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 6
+       }
+      ]
+     },
+     "note": "Vulgate 22 = Hebrew 23, \"The Lord ruleth me.\" The numbering convention of this plan in one line: the shepherd psalm is 22, not 23.\n",
+     "order": 170,
+     "tier": "year",
+     "title": "Psalm 22",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 89,
+        "first": 1,
+        "last": 53
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 88,
+        "first": 1,
+        "last": 53
+       }
+      ]
+     },
+     "note": "Vulgate 88 = Hebrew 89: the oath sworn to David, and the complaint that it appears broken.\n",
+     "order": 171,
+     "tier": "year",
+     "title": "Psalm 88",
+     "token": "Ps",
+     "unresolved": null
+    }
+   ],
+   "summary": "1 and 2 Samuel entire. The Douay-Rheims prints these as the First and Second Books of Kings; this plan uses the modern names, so that Douay 3 and 4 Kings appear in the next period as 1 and 2 Kings. 1 and 2 Paralipomenon (Chronicles) are passed over as a second telling of the same reigns.\n"
+  },
+  {
+   "key": "divided-kingdom",
+   "label": "The Divided Monarchy",
+   "readings": [
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 46
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 46
+       }
+      ]
+     },
+     "note": "TRAP: this is Douay 3 Kings. Every modern 1 Kings citation in this period is Douay 3 Kings.\n",
+     "order": 172,
+     "tier": "year",
+     "title": "Adonias; the anointing of Solomon; David's charge",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 28
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 28
+       }
+      ]
+     },
+     "note": null,
+     "order": 173,
+     "tier": "narrative",
+     "title": "The gift of wisdom, and the two mothers",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 72,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 71,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": "Vulgate 71 = Hebrew 72, inscribed \"a psalm on Solomon\": the king's son, and a reign of peace to the ends of the earth.\n",
+     "order": 174,
+     "tier": "year",
+     "title": "Psalm 71",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 175,
+     "tier": "year",
+     "title": "The glory of the reign; preparation for the temple",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 51
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 51
+       }
+      ]
+     },
+     "note": null,
+     "order": 176,
+     "tier": "year",
+     "title": "The temple built and furnished",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 66
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 66
+       }
+      ]
+     },
+     "note": null,
+     "order": 177,
+     "tier": "year",
+     "title": "The dedication of the temple",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 178,
+     "tier": "year",
+     "title": "The second appearing, the condition, and the queen of Saba",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 43
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 43
+       }
+      ]
+     },
+     "note": null,
+     "order": 179,
+     "tier": "narrative",
+     "title": "Solomon's wives, and the sentence",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 33
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 33
+       }
+      ]
+     },
+     "note": null,
+     "order": 180,
+     "tier": "overview",
+     "title": "The kingdom torn in two",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 181,
+     "tier": "year",
+     "title": "The man of God out of Juda; Jeroboam condemned",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 34
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 34
+       }
+      ]
+     },
+     "note": null,
+     "order": 182,
+     "tier": "year",
+     "title": "The dynasties of Israel; Achab and Jezabel",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 24
+       }
+      ]
+     },
+     "note": null,
+     "order": 183,
+     "tier": "narrative",
+     "title": "Elias, the drought, and the widow of Sarephta",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 46
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 46
+       }
+      ]
+     },
+     "note": null,
+     "order": 184,
+     "tier": "overview",
+     "title": "Elias on Carmel",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": "Horeb again, and the call of Eliseus.\n",
+     "order": 185,
+     "tier": "narrative",
+     "title": "The whistling of a gentle air",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 43
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 43
+       }
+      ]
+     },
+     "note": null,
+     "order": 186,
+     "tier": "year",
+     "title": "The Syrian wars",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 187,
+     "tier": "narrative",
+     "title": "Naboth's vineyard",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "1 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 54
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 54
+       }
+      ]
+     },
+     "note": null,
+     "order": 188,
+     "tier": "year",
+     "title": "Micheas the prophet; the death of Achab",
+     "token": "3Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": "TRAP: this is Douay 4 Kings.\n",
+     "order": 189,
+     "tier": "year",
+     "title": "Ochozias, and the fire from heaven",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 190,
+     "tier": "narrative",
+     "title": "Elias taken up; the mantle of Eliseus",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 191,
+     "tier": "year",
+     "title": "The campaign against Moab",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 44
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 44
+       }
+      ]
+     },
+     "note": null,
+     "order": 192,
+     "tier": "year",
+     "title": "The widow's oil, and the Sunamitess",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": "Cited by Christ at Nazareth, read later in this plan.\n",
+     "order": 193,
+     "tier": "year",
+     "title": "Naaman the Syrian",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 194,
+     "tier": "year",
+     "title": "The floating iron; the blinded army; the siege lifted",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 37
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 37
+       }
+      ]
+     },
+     "note": null,
+     "order": 195,
+     "tier": "year",
+     "title": "Hazael, and the anointing of Jehu",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": null,
+     "order": 196,
+     "tier": "year",
+     "title": "The house of Achab destroyed",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": null,
+     "order": 197,
+     "tier": "year",
+     "title": "Athalia, the boy king Joas, and the temple repaired",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 198,
+     "tier": "year",
+     "title": "Joachaz, Joas, the death of Eliseus, and Amasias",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 199,
+     "tier": "year",
+     "title": "The kings hasten to the end; Achaz and the altar of Damascus",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "Isaiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 17
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 17
+       }
+      ]
+     },
+     "note": "Read at the reign in which it was spoken. One of four passages of Isaias in this plan; the remaining sixty-two chapters are not read.\n",
+     "order": 200,
+     "tier": "year",
+     "title": "Emmanuel promised to Achaz",
+     "token": "Is",
+     "unresolved": null
+    },
+    {
+     "book": "Isaiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 7
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 7
+       }
+      ]
+     },
+     "note": null,
+     "order": 201,
+     "tier": "year",
+     "title": "\"A child is born to us\"",
+     "token": "Is",
+     "unresolved": null
+    },
+    {
+     "book": "Isaiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 10
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 10
+       }
+      ]
+     },
+     "note": null,
+     "order": 202,
+     "tier": "year",
+     "title": "\"A rod out of the root of Jesse\"",
+     "token": "Is",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 41
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 41
+       }
+      ]
+     },
+     "note": "The chapter states why the northern kingdom ended, and is the plan's explanation of everything that follows it.\n",
+     "order": 203,
+     "tier": "overview",
+     "title": "The fall of Samaria",
+     "token": "4Kings",
+     "unresolved": null
+    }
+   ],
+   "summary": "1 Kings entire and 2 Kings 1-17 - in the Douay-Rheims, the Third Book of Kings and the Fourth as far as the fall of Samaria. The period runs from Solomon to the deportation of the northern tribes. Isaias 7, 9 and 11 are read here, at the reign of Achaz to whom the first of them was spoken.\n"
+  },
+  {
+   "key": "exile",
+   "label": "Exile",
+   "readings": [
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 37
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 37
+       }
+      ]
+     },
+     "note": null,
+     "order": 204,
+     "tier": "narrative",
+     "title": "Ezechias reforms; Sennacherib invades",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 37
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 37
+       }
+      ]
+     },
+     "note": null,
+     "order": 205,
+     "tier": "overview",
+     "title": "The angel of the Lord before Jerusalem",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 26
+       }
+      ]
+     },
+     "note": null,
+     "order": 206,
+     "tier": "year",
+     "title": "The envoys of Babylon; Manasses fills Jerusalem with blood",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 207,
+     "tier": "narrative",
+     "title": "The book of the law found",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 37
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 37
+       }
+      ]
+     },
+     "note": null,
+     "order": 208,
+     "tier": "overview",
+     "title": "The reform and the death of Josias",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 209,
+     "tier": "narrative",
+     "title": "The first deportation",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "2 Kings",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 30
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 30
+       }
+      ]
+     },
+     "note": "The temple is burned. The lowest point of the plan, and the ground of everything the prophets afterwards say.\n",
+     "order": 210,
+     "tier": "overview",
+     "title": "The fall of Jerusalem",
+     "token": "4Kings",
+     "unresolved": null
+    },
+    {
+     "book": "Jeremiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 36,
+        "first": 1,
+        "last": 32
+       },
+       {
+        "chapter": 38,
+        "first": 1,
+        "last": 13
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 36,
+        "first": 1,
+        "last": 32
+       },
+       {
+        "chapter": 38,
+        "first": 1,
+        "last": 13
+       }
+      ]
+     },
+     "note": "Two of the three passages of Jeremias in this plan; the prophecy entire is not read.\n",
+     "order": 211,
+     "tier": "year",
+     "title": "Jeremias: the burnt roll, and the cistern",
+     "token": "Jer",
+     "unresolved": null
+    },
+    {
+     "book": "Jeremiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 31,
+        "first": 31,
+        "last": 40
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 31,
+        "first": 31,
+        "last": 40
+       }
+      ]
+     },
+     "note": "Read out of book order, after the fall it interprets. Cited at the Last Supper, and in Hebrews, which this plan does not read.\n",
+     "order": 212,
+     "tier": "year",
+     "title": "The new covenant",
+     "token": "Jer",
+     "unresolved": null
+    },
+    {
+     "book": "Isaiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 52,
+        "first": 13,
+        "last": 12
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 52,
+        "first": 13,
+        "last": 12
+       }
+      ]
+     },
+     "note": null,
+     "order": 213,
+     "tier": "year",
+     "title": "The suffering servant",
+     "token": "Is",
+     "unresolved": null
+    },
+    {
+     "book": "Isaiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 54,
+        "first": 5,
+        "last": 14
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 54,
+        "first": 5,
+        "last": 14
+       }
+      ]
+     },
+     "note": "A lesson of the Easter Vigil, whose range this reading reproduces exactly.\n",
+     "order": 214,
+     "tier": "year",
+     "title": "\"Thy Maker shall rule over thee\"",
+     "token": "Is",
+     "unresolved": null
+    },
+    {
+     "book": "Isaiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 55,
+        "first": 1,
+        "last": 11
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 55,
+        "first": 1,
+        "last": 11
+       }
+      ]
+     },
+     "note": "A lesson of the Easter Vigil, whose range this reading reproduces exactly.\n",
+     "order": 215,
+     "tier": "year",
+     "title": "\"All you that thirst, come to the waters\"",
+     "token": "Is",
+     "unresolved": null
+    },
+    {
+     "book": "Baruch",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 9,
+        "last": 15
+       },
+       {
+        "chapter": 3,
+        "first": 32,
+        "last": 4
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 9,
+        "last": 15
+       },
+       {
+        "chapter": 3,
+        "first": 32,
+        "last": 4
+       }
+      ]
+     },
+     "note": "A lesson of the Easter Vigil, read in the Vigil's own two parts: 3:9-15 and 3:32-4:4. Baruch is deuterocanonical and stands in the 73-book canon this plan follows.\n",
+     "order": 216,
+     "tier": "year",
+     "title": "\"Hear, O Israel, the commandments of life\"",
+     "token": "Bar",
+     "unresolved": null
+    },
+    {
+     "book": "Ezekiel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 34,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 34,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": "The one shepherd promised here is claimed in St. John 10, read later in this plan.\n",
+     "order": 217,
+     "tier": "year",
+     "title": "The shepherds of Israel",
+     "token": "Ezech",
+     "unresolved": null
+    },
+    {
+     "book": "Ezekiel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 36,
+        "first": 16,
+        "last": 28
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 36,
+        "first": 16,
+        "last": 28
+       }
+      ]
+     },
+     "note": "A lesson of the Easter Vigil, whose range this reading reproduces exactly.\n",
+     "order": 218,
+     "tier": "year",
+     "title": "\"A new heart, and a new spirit\"",
+     "token": "Ezech",
+     "unresolved": null
+    },
+    {
+     "book": "Ezekiel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 37,
+        "first": 1,
+        "last": 14
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 37,
+        "first": 1,
+        "last": 14
+       }
+      ]
+     },
+     "note": null,
+     "order": 219,
+     "tier": "year",
+     "title": "The dry bones",
+     "token": "Ezech",
+     "unresolved": null
+    },
+    {
+     "book": "Lamentations",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 19,
+        "last": 33
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 19,
+        "last": 33
+       }
+      ]
+     },
+     "note": null,
+     "order": 220,
+     "tier": "year",
+     "title": "\"The mercies of the Lord that we are not consumed\"",
+     "token": "Lam",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 137,
+        "first": 1,
+        "last": 9
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 136,
+        "first": 1,
+        "last": 9
+       }
+      ]
+     },
+     "note": "Vulgate 136 = Hebrew 137: \"Upon the rivers of Babylon.\"\n",
+     "order": 221,
+     "tier": "year",
+     "title": "Psalm 136",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "Daniel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": null,
+     "order": 222,
+     "tier": "year",
+     "title": "Daniel and his companions at the king's table",
+     "token": "Dan",
+     "unresolved": null
+    },
+    {
+     "book": "Daniel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 49
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 49
+       }
+      ]
+     },
+     "note": "The stone cut without hands, which becomes a mountain.\n",
+     "order": 223,
+     "tier": "year",
+     "title": "The dream of the statue",
+     "token": "Dan",
+     "unresolved": null
+    },
+    {
+     "book": "Daniel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 100
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 100
+       }
+      ]
+     },
+     "note": "The canticle stands inline at 3:24-90 in the Vulgate; modern versions print it separately or omit it.\n",
+     "order": 224,
+     "tier": "year",
+     "title": "The furnace, and the canticle of the three children",
+     "token": "Dan",
+     "unresolved": null
+    },
+    {
+     "book": "Daniel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 225,
+     "tier": "year",
+     "title": "The madness of Nabuchodonosor; the writing on the wall",
+     "token": "Dan",
+     "unresolved": null
+    },
+    {
+     "book": "Daniel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 28
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 28
+       }
+      ]
+     },
+     "note": "Daniel 7-12, the visions, are not read.\n",
+     "order": 226,
+     "tier": "year",
+     "title": "The lions' den",
+     "token": "Dan",
+     "unresolved": null
+    },
+    {
+     "book": "Daniel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 65
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 65
+       }
+      ]
+     },
+     "note": "Vulgate chapter 13; modern versions print it as an addition.\n",
+     "order": 227,
+     "tier": "year",
+     "title": "Susanna",
+     "token": "Dan",
+     "unresolved": null
+    },
+    {
+     "book": "Daniel",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 42
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 42
+       }
+      ]
+     },
+     "note": "Vulgate chapter 14.\n",
+     "order": 228,
+     "tier": "year",
+     "title": "Bel and the dragon",
+     "token": "Dan",
+     "unresolved": null
+    },
+    {
+     "book": "Tobit",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": "The Douay-Rheims follows the Vulgate text of Tobias, whose chapter and verse division differs from the Greek used by most modern versions; these references will not always transfer to a modern Bible.\n",
+     "order": 229,
+     "tier": "year",
+     "title": "Tobias in exile, and his blindness",
+     "token": "Tob",
+     "unresolved": null
+    },
+    {
+     "book": "Tobit",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 230,
+     "tier": "year",
+     "title": "Two prayers heard in one hour",
+     "token": "Tob",
+     "unresolved": null
+    },
+    {
+     "book": "Tobit",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 28
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 28
+       }
+      ]
+     },
+     "note": null,
+     "order": 231,
+     "tier": "year",
+     "title": "The charge to the son, and the guide",
+     "token": "Tob",
+     "unresolved": null
+    },
+    {
+     "book": "Tobit",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 232,
+     "tier": "year",
+     "title": "The fish, and the house of Raguel",
+     "token": "Tob",
+     "unresolved": null
+    },
+    {
+     "book": "Tobit",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": null,
+     "order": 233,
+     "tier": "year",
+     "title": "The marriage, the return, and Raphael made known",
+     "token": "Tob",
+     "unresolved": null
+    },
+    {
+     "book": "Tobit",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 17
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 17
+       }
+      ]
+     },
+     "note": null,
+     "order": 234,
+     "tier": "year",
+     "title": "The canticle of Tobias, and his death",
+     "token": "Tob",
+     "unresolved": null
+    }
+   ],
+   "summary": "2 Kings 18-25: Juda alone, from Ezechias to the burning of the temple, with the prophetic and deuterocanonical material the exile requires. Ezechias and Josias stand here rather than in the Divided Kingdom because their reigns are the last reprieve before the deportation, and the book treats them so.\n"
+  },
+  {
+   "key": "return",
+   "label": "Return and Restoration",
+   "readings": [
+    {
+     "book": "Ezra",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 11
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 11
+       }
+      ]
+     },
+     "note": "Douay-Rheims title: the First Book of Esdras. Esdras 2, the register of those who returned, is omitted.\n",
+     "order": 235,
+     "tier": "overview",
+     "title": "The decree of Cyrus",
+     "token": "1Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Ezra",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 13
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 13
+       }
+      ]
+     },
+     "note": null,
+     "order": 236,
+     "tier": "narrative",
+     "title": "The altar, and the foundation laid",
+     "token": "1Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Ezra",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 24
+       }
+      ]
+     },
+     "note": null,
+     "order": 237,
+     "tier": "year",
+     "title": "The work stopped",
+     "token": "1Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Ezra",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 22
+       }
+      ]
+     },
+     "note": null,
+     "order": 238,
+     "tier": "narrative",
+     "title": "The temple finished and dedicated",
+     "token": "1Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Ezra",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": null,
+     "order": 239,
+     "tier": "year",
+     "title": "Esdras comes up from Babylon",
+     "token": "1Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Ezra",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 44
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 44
+       }
+      ]
+     },
+     "note": null,
+     "order": 240,
+     "tier": "year",
+     "title": "The prayer of Esdras, and the separation",
+     "token": "1Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 11
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 11
+       }
+      ]
+     },
+     "note": "Douay-Rheims title: the Book of Nehemias, which is called the Second of Esdras.\n",
+     "order": 241,
+     "tier": "narrative",
+     "title": "Nehemias hears of the ruined walls",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": "Nehemias 3, the register of the builders, is omitted.\n",
+     "order": 242,
+     "tier": "narrative",
+     "title": "The night ride, and the king's leave",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 19
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 19
+       }
+      ]
+     },
+     "note": null,
+     "order": 243,
+     "tier": "year",
+     "title": "Sword and trowel; the usury of the nobles",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 19
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 19
+       }
+      ]
+     },
+     "note": "Nehemias 7, the census of the returned, is omitted.\n",
+     "order": 244,
+     "tier": "year",
+     "title": "The wall finished in fifty-two days",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": "\"The joy of the Lord is our strength.\" The people hear the law they had lost, and the restored community is constituted around it.\n",
+     "order": 245,
+     "tier": "overview",
+     "title": "Esdras reads the law",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 38
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 38
+       }
+      ]
+     },
+     "note": "The whole of salvation history to this point, recited by the people themselves - the nearest thing in scripture to this plan's own table of contents.\n",
+     "order": 246,
+     "tier": "narrative",
+     "title": "The great confession",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": null,
+     "order": 247,
+     "tier": "year",
+     "title": "The covenant subscribed; Jerusalem repeopled",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 46
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 46
+       }
+      ]
+     },
+     "note": null,
+     "order": 248,
+     "tier": "year",
+     "title": "The dedication of the wall",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Nehemiah",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": "Aggeus, Zacharias and Malachias belong to this period and are not read.\n",
+     "order": 249,
+     "tier": "year",
+     "title": "The last reforms of Nehemias",
+     "token": "2Esd",
+     "unresolved": null
+    },
+    {
+     "book": "Esther",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 250,
+     "tier": "year",
+     "title": "Vasthi deposed; Esther made queen",
+     "token": "Esth",
+     "unresolved": null
+    },
+    {
+     "book": "Esther",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 17
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 17
+       }
+      ]
+     },
+     "note": null,
+     "order": 251,
+     "tier": "year",
+     "title": "The decree of Aman; \"who knoweth whether thou art come for such a time\"",
+     "token": "Esth",
+     "unresolved": null
+    },
+    {
+     "book": "Esther",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 14
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 14
+       }
+      ]
+     },
+     "note": null,
+     "order": 252,
+     "tier": "year",
+     "title": "Esther before the king; the night without sleep",
+     "token": "Esth",
+     "unresolved": null
+    },
+    {
+     "book": "Esther",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 17
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 17
+       }
+      ]
+     },
+     "note": null,
+     "order": 253,
+     "tier": "year",
+     "title": "Aman hanged; the decree reversed",
+     "token": "Esth",
+     "unresolved": null
+    },
+    {
+     "book": "Esther",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 3
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 3
+       }
+      ]
+     },
+     "note": null,
+     "order": 254,
+     "tier": "year",
+     "title": "The feast of Phurim",
+     "token": "Esth",
+     "unresolved": null
+    },
+    {
+     "book": "Esther",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 4,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 4,
+        "last": 24
+       }
+      ]
+     },
+     "note": "St. Jerome removed these portions from their Greek places and set them at the end of the book; the Douay-Rheims prints them so. Modern versions print them inline or as Greek Esther A-F, so these references do not transfer.\n",
+     "order": 255,
+     "tier": "year",
+     "title": "The Vulgate additions to Esther",
+     "token": "Esth",
+     "unresolved": null
+    },
+    {
+     "book": "Judith",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 15
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 15
+       }
+      ]
+     },
+     "note": "The Vulgate division of Judith differs from the Greek; as with Tobias, these references do not transfer to a modern Bible unchanged.\n",
+     "order": 256,
+     "tier": "year",
+     "title": "Nabuchodonosor and Holofernes",
+     "token": "Jdt",
+     "unresolved": null
+    },
+    {
+     "book": "Judith",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 21
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 21
+       }
+      ]
+     },
+     "note": null,
+     "order": 257,
+     "tier": "year",
+     "title": "Israel prepares; the warning of Achior",
+     "token": "Jdt",
+     "unresolved": null
+    },
+    {
+     "book": "Judith",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 258,
+     "tier": "year",
+     "title": "The siege of Bethulia",
+     "token": "Jdt",
+     "unresolved": null
+    },
+    {
+     "book": "Judith",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 19
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 19
+       }
+      ]
+     },
+     "note": null,
+     "order": 259,
+     "tier": "year",
+     "title": "The counsel and the prayer of Judith",
+     "token": "Jdt",
+     "unresolved": null
+    },
+    {
+     "book": "Judith",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 260,
+     "tier": "year",
+     "title": "Judith in the camp",
+     "token": "Jdt",
+     "unresolved": null
+    },
+    {
+     "book": "Judith",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 261,
+     "tier": "year",
+     "title": "The rout, and the canticle of Judith",
+     "token": "Jdt",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 126,
+        "first": 1,
+        "last": 7
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 125,
+        "first": 1,
+        "last": 7
+       }
+      ]
+     },
+     "note": "Vulgate 125 = Hebrew 126: \"When the Lord brought back the captivity of Sion.\"\n",
+     "order": 262,
+     "tier": "year",
+     "title": "Psalm 125",
+     "token": "Ps",
+     "unresolved": null
+    }
+   ],
+   "summary": "Esdras (Ezra) and Nehemias entire but for their registers, with Esther and Judith. The Douay-Rheims prints the first two as the First and Second Books of Esdras. Esdras 2, Nehemias 3 and Nehemias 7 are lists of names and are passed over on the same rule that omits Genesis 5, 10 and 36.\n"
+  },
+  {
+   "key": "maccabean-revolt",
+   "label": "Maccabean Revolt",
+   "readings": [
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 67
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 67
+       }
+      ]
+     },
+     "note": "The Greek kingdoms, and the abomination set upon the altar. Deuterocanonical.\n",
+     "order": 263,
+     "tier": "overview",
+     "title": "The desolation of the sanctuary",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 70
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 70
+       }
+      ]
+     },
+     "note": null,
+     "order": 264,
+     "tier": "narrative",
+     "title": "Mathathias, and the beginning of the revolt",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 60
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 60
+       }
+      ]
+     },
+     "note": null,
+     "order": 265,
+     "tier": "narrative",
+     "title": "Judas Machabeus takes the lead",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": null,
+     "order": 266,
+     "tier": "year",
+     "title": "Emmaus and Bethsura",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 36,
+        "last": 61
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 36,
+        "last": 61
+       }
+      ]
+     },
+     "note": "The dedication kept afterwards as a feast, and named in St. John 10:22, which this plan reads.\n",
+     "order": 267,
+     "tier": "overview",
+     "title": "The sanctuary cleansed",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 68
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 68
+       }
+      ]
+     },
+     "note": null,
+     "order": 268,
+     "tier": "year",
+     "title": "The campaigns round about",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 63
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 63
+       }
+      ]
+     },
+     "note": null,
+     "order": 269,
+     "tier": "year",
+     "title": "The death of Antiochus; Eleazar and the elephant",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 50
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 50
+       }
+      ]
+     },
+     "note": null,
+     "order": 270,
+     "tier": "year",
+     "title": "Nicanor",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": null,
+     "order": 271,
+     "tier": "year",
+     "title": "The league with the Romans",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 73
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 73
+       }
+      ]
+     },
+     "note": null,
+     "order": 272,
+     "tier": "narrative",
+     "title": "The death of Judas; Jonathan succeeds",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 89
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 89
+       }
+      ]
+     },
+     "note": null,
+     "order": 273,
+     "tier": "year",
+     "title": "Jonathan made high priest",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 74
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 74
+       }
+      ]
+     },
+     "note": null,
+     "order": 274,
+     "tier": "year",
+     "title": "The shifting kings of Syria",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 54
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 12,
+        "first": 1,
+        "last": 54
+       }
+      ]
+     },
+     "note": null,
+     "order": 275,
+     "tier": "year",
+     "title": "Jonathan's embassies, and his capture",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 54
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 54
+       }
+      ]
+     },
+     "note": null,
+     "order": 276,
+     "tier": "narrative",
+     "title": "Simon, and the freedom of Israel",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 49
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 49
+       }
+      ]
+     },
+     "note": null,
+     "order": 277,
+     "tier": "year",
+     "title": "The praise of Simon",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "1 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 24
+       }
+      ]
+     },
+     "note": null,
+     "order": 278,
+     "tier": "year",
+     "title": "Antiochus turns; the death of Simon",
+     "token": "1Mach",
+     "unresolved": null
+    },
+    {
+     "book": "2 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 279,
+     "tier": "year",
+     "title": "The martyrdom of Eleazar",
+     "token": "2Mach",
+     "unresolved": null
+    },
+    {
+     "book": "2 Maccabees",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 42
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 42
+       }
+      ]
+     },
+     "note": "The clearest statement of the resurrection in the Old Testament, and the reason these two chapters are read though the rest of 2 Machabees is not.\n",
+     "order": 280,
+     "tier": "year",
+     "title": "The mother and her seven sons",
+     "token": "2Mach",
+     "unresolved": null
+    }
+   ],
+   "summary": "1 Machabees entire, with the two martyr chapters of 2 Machabees. Both books are deuterocanonical and belong to the 73-book canon; an abridgement built on a 66-book canon has no period here at all, and the centuries before Christ go silent.\n"
+  },
+  {
+   "key": "messianic-fulfilment",
+   "label": "The Life of Christ",
+   "readings": [
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 281,
+     "tier": "year",
+     "title": "Zachary in the temple",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 26,
+        "last": 38
+       },
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 26,
+        "last": 38
+       },
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": "Read as one sitting from two places in St. Luke. The angel's promise of a throne and a kingdom without end answers 2 Samuel 7, read earlier in this plan.\n",
+     "order": 282,
+     "tier": "overview",
+     "title": "The Annunciation and the Nativity",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 39,
+        "last": 56
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 39,
+        "last": 56
+       }
+      ]
+     },
+     "note": "The canticle answers Anna's in 1 Samuel 2.\n",
+     "order": 283,
+     "tier": "narrative",
+     "title": "The Visitation, and the Magnificat",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 57,
+        "last": 80
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 57,
+        "last": 80
+       }
+      ]
+     },
+     "note": null,
+     "order": 284,
+     "tier": "year",
+     "title": "The birth of John, and the Benedictus",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 21,
+        "last": 52
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 21,
+        "last": 52
+       }
+      ]
+     },
+     "note": null,
+     "order": 285,
+     "tier": "narrative",
+     "title": "The presentation, and the finding in the temple",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": "The one New Testament genealogy this plan reads: it gathers Abraham, David, Thamar, Rahab, Ruth and the exile, all read above.\n",
+     "order": 286,
+     "tier": "year",
+     "title": "The genealogy according to St. Matthew",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 287,
+     "tier": "year",
+     "title": "The magi, and the flight into Egypt",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 38
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 38
+       }
+      ]
+     },
+     "note": null,
+     "order": 288,
+     "tier": "narrative",
+     "title": "John the Baptist, and the baptism of Christ",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 13
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 13
+       }
+      ]
+     },
+     "note": "Christ answers out of Deuteronomy 6 and 8, both read in this plan.\n",
+     "order": 289,
+     "tier": "narrative",
+     "title": "The temptation",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 14,
+        "last": 44
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 14,
+        "last": 44
+       }
+      ]
+     },
+     "note": "Nazareth. The widow of Sarephta and Naaman, cited here, were read in the Divided Kingdom.\n",
+     "order": 290,
+     "tier": "narrative",
+     "title": "\"This day is fulfilled this scripture\"",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Mark",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 291,
+     "tier": "year",
+     "title": "The beginning of the gospel",
+     "token": "Mark",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 292,
+     "tier": "year",
+     "title": "The prologue",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 19,
+        "last": 51
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 19,
+        "last": 51
+       }
+      ]
+     },
+     "note": null,
+     "order": 293,
+     "tier": "year",
+     "title": "\"Behold the Lamb of God\"",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 36
+       }
+      ]
+     },
+     "note": "\"As Moses lifted up the serpent in the desert\" - Numbers 21, read in the Desert Wanderings.\n",
+     "order": 294,
+     "tier": "year",
+     "title": "Cana, the temple, and Nicodemus",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 54
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 54
+       }
+      ]
+     },
+     "note": null,
+     "order": 295,
+     "tier": "year",
+     "title": "The woman at the well",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 39
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 39
+       }
+      ]
+     },
+     "note": null,
+     "order": 296,
+     "tier": "year",
+     "title": "The first disciples; the leper and the paralytic",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 49
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 49
+       }
+      ]
+     },
+     "note": null,
+     "order": 297,
+     "tier": "year",
+     "title": "The twelve, and the sermon on the plain",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 48
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 48
+       }
+      ]
+     },
+     "note": null,
+     "order": 298,
+     "tier": "year",
+     "title": "The beatitudes",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": null,
+     "order": 299,
+     "tier": "year",
+     "title": "The Our Father, and the two ways",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 56
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 56
+       }
+      ]
+     },
+     "note": null,
+     "order": 300,
+     "tier": "year",
+     "title": "The centurion, the widow of Naim, the sinful woman, the sower and Jairus",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Mark",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 35,
+        "last": 43
+       },
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 23
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 35,
+        "last": 43
+       },
+       {
+        "chapter": 7,
+        "first": 1,
+        "last": 23
+       }
+      ]
+     },
+     "note": null,
+     "order": 301,
+     "tier": "year",
+     "title": "The storm, the Gerasene, Jairus, and what defiles a man",
+     "token": "Mark",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 17
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 17
+       }
+      ]
+     },
+     "note": null,
+     "order": 302,
+     "tier": "year",
+     "title": "The mission of the twelve, and the loaves",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 72
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 72
+       }
+      ]
+     },
+     "note": null,
+     "order": 303,
+     "tier": "year",
+     "title": "The bread of life",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 18,
+        "last": 36
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 18,
+        "last": 36
+       }
+      ]
+     },
+     "note": "Moses and Elias, read in this plan at Sinai and at Carmel, stand with him.\n",
+     "order": 304,
+     "tier": "overview",
+     "title": "The confession of Peter, and the Transfiguration",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 13,
+        "last": 28
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 13,
+        "last": 28
+       }
+      ]
+     },
+     "note": null,
+     "order": 305,
+     "tier": "year",
+     "title": "\"Thou art Peter\"",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "Mark",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 32,
+        "last": 52
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 32,
+        "last": 52
+       }
+      ]
+     },
+     "note": null,
+     "order": 306,
+     "tier": "year",
+     "title": "Blind Bartimeus, and the ransom for many",
+     "token": "Mark",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 37,
+        "last": 62
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 37,
+        "last": 62
+       }
+      ]
+     },
+     "note": null,
+     "order": 307,
+     "tier": "year",
+     "title": "The road to Jerusalem",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 42
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 42
+       }
+      ]
+     },
+     "note": null,
+     "order": 308,
+     "tier": "narrative",
+     "title": "The seventy-two, the good Samaritan, Martha and Mary",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 59
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 59
+       }
+      ]
+     },
+     "note": null,
+     "order": 309,
+     "tier": "year",
+     "title": "The Our Father, the strong man, and \"fear not, little flock\"",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": null,
+     "order": 310,
+     "tier": "year",
+     "title": "The narrow gate, the lament over Jerusalem, and the great supper",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": null,
+     "order": 311,
+     "tier": "narrative",
+     "title": "The lost sheep, the lost groat, the prodigal son",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 37
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 37
+       }
+      ]
+     },
+     "note": null,
+     "order": 312,
+     "tier": "year",
+     "title": "Dives and Lazarus; the ten lepers",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 43
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 43
+       }
+      ]
+     },
+     "note": null,
+     "order": 313,
+     "tier": "year",
+     "title": "The widow, the publican, and the rich ruler",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 58
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 58
+       }
+      ]
+     },
+     "note": null,
+     "order": 314,
+     "tier": "year",
+     "title": "The parables of the kingdom",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": null,
+     "order": 315,
+     "tier": "year",
+     "title": "The church, and forgiveness without number",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 12,
+        "last": 41
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 12,
+        "last": 41
+       }
+      ]
+     },
+     "note": null,
+     "order": 316,
+     "tier": "year",
+     "title": "\"I am the light of the world\"; the man born blind",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 42
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 10,
+        "first": 1,
+        "last": 42
+       }
+      ]
+     },
+     "note": "Answers Ezechiel 34, read in the Exile.\n",
+     "order": 317,
+     "tier": "year",
+     "title": "The good shepherd",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 56
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 56
+       }
+      ]
+     },
+     "note": null,
+     "order": 318,
+     "tier": "year",
+     "title": "Lazarus",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 48
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 19,
+        "first": 1,
+        "last": 48
+       }
+      ]
+     },
+     "note": null,
+     "order": 319,
+     "tier": "narrative",
+     "title": "Zacheus, and the entry into Jerusalem",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 38
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 38
+       }
+      ]
+     },
+     "note": null,
+     "order": 320,
+     "tier": "year",
+     "title": "The temple disputes, and the discourse on the end",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 46
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 46
+       }
+      ]
+     },
+     "note": null,
+     "order": 321,
+     "tier": "year",
+     "title": "The last judgment",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 38
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 38
+       }
+      ]
+     },
+     "note": null,
+     "order": 322,
+     "tier": "year",
+     "title": "The washing of the feet",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 26
+       }
+      ]
+     },
+     "note": null,
+     "order": 323,
+     "tier": "year",
+     "title": "The last discourse, and the priestly prayer",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 71
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 71
+       }
+      ]
+     },
+     "note": null,
+     "order": 324,
+     "tier": "narrative",
+     "title": "The supper, Gethsemani, and the arrest",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 56
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 23,
+        "first": 1,
+        "last": 56
+       }
+      ]
+     },
+     "note": null,
+     "order": 325,
+     "tier": "overview",
+     "title": "The Passion",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 22,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": "Vulgate 21 = Hebrew 22: \"O God my God, look upon me: why hast thou forsaken me?\" - the psalm Christ speaks from the cross.\n",
+     "order": 326,
+     "tier": "year",
+     "title": "Psalm 21",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 19,
+        "first": 25,
+        "last": 37
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 19,
+        "first": 25,
+        "last": 37
+       }
+      ]
+     },
+     "note": null,
+     "order": 327,
+     "tier": "year",
+     "title": "The pierced side",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "Luke",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 53
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 53
+       }
+      ]
+     },
+     "note": null,
+     "order": 328,
+     "tier": "overview",
+     "title": "The resurrection, and the road to Emmaus",
+     "token": "Luke",
+     "unresolved": null
+    },
+    {
+     "book": "Mark",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 329,
+     "tier": "year",
+     "title": "The empty tomb, and the ending of St. Mark",
+     "token": "Mark",
+     "unresolved": null
+    },
+    {
+     "book": "John",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 330,
+     "tier": "year",
+     "title": "The risen Lord, and the charge to Peter",
+     "token": "John",
+     "unresolved": null
+    },
+    {
+     "book": "Matthew",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 28,
+        "first": 16,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 28,
+        "first": 16,
+        "last": 20
+       }
+      ]
+     },
+     "note": null,
+     "order": 331,
+     "tier": "year",
+     "title": "The great commission",
+     "token": "Matt",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 110,
+        "first": 1,
+        "last": 7
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 109,
+        "first": 1,
+        "last": 7
+       }
+      ]
+     },
+     "note": "Vulgate 109 = Hebrew 110: \"The Lord said to my Lord\" - the psalm Christ turns on the Pharisees, and the one St. Peter preaches at Pentecost.\n",
+     "order": 332,
+     "tier": "year",
+     "title": "Psalm 109",
+     "token": "Ps",
+     "unresolved": null
+    }
+   ],
+   "summary": "St. Luke entire is the spine of this period: it is the gospel written as a continuous narrative, and it carries the infancy, the journey to Jerusalem, and the resurrection appearances. St. Matthew, St. Mark and St. John enter at the year tier only, and only where they give what St. Luke does not.\n"
+  },
+  {
+   "key": "the-church",
+   "label": "The Apostolic Church",
+   "readings": [
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 26
+       }
+      ]
+     },
+     "note": null,
+     "order": 333,
+     "tier": "narrative",
+     "title": "The Ascension, and the choosing of Matthias",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 47
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 47
+       }
+      ]
+     },
+     "note": "Babel, read in the Early World, is answered here. St. Peter preaches from Joel and from Psalms 15 and 109.\n",
+     "order": 334,
+     "tier": "overview",
+     "title": "Pentecost",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 11
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 11
+       }
+      ]
+     },
+     "note": "Vulgate 15 = Hebrew 16: \"Thou wilt not leave my soul in hell\" - quoted in Acts 2.\n",
+     "order": 335,
+     "tier": "year",
+     "title": "Psalm 15",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 26
+       }
+      ]
+     },
+     "note": null,
+     "order": 336,
+     "tier": "year",
+     "title": "The lame man at the Beautiful gate",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 37
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 37
+       }
+      ]
+     },
+     "note": null,
+     "order": 337,
+     "tier": "narrative",
+     "title": "Peter and John before the council",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 13
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 13
+       }
+      ]
+     },
+     "note": "Vulgate 2 = Hebrew 2: \"Why have the Gentiles raged\" - prayed by the Church in Acts 4.\n",
+     "order": 338,
+     "tier": "year",
+     "title": "Psalm 2",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 42
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 5,
+        "first": 1,
+        "last": 42
+       }
+      ]
+     },
+     "note": null,
+     "order": 339,
+     "tier": "year",
+     "title": "Ananias and Saphira; the apostles imprisoned",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 59
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 59
+       }
+      ]
+     },
+     "note": "Stephen's speech is the salvation history of this plan, told in one breath before his death.\n",
+     "order": 340,
+     "tier": "narrative",
+     "title": "Stephen",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 40
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 40
+       }
+      ]
+     },
+     "note": "The eunuch is reading Isaias 53, which this plan reads in the Exile.\n",
+     "order": 341,
+     "tier": "year",
+     "title": "Philip in Samaria, and on the road to Gaza",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": null,
+     "order": 342,
+     "tier": "overview",
+     "title": "The conversion of Saul",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 32,
+        "last": 18
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 32,
+        "last": 18
+       }
+      ]
+     },
+     "note": null,
+     "order": 343,
+     "tier": "overview",
+     "title": "Cornelius, and the door opened to the Gentiles",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 19,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 19,
+        "last": 25
+       }
+      ]
+     },
+     "note": null,
+     "order": 344,
+     "tier": "year",
+     "title": "Antioch; Herod; the deliverance of Peter",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 52
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 13,
+        "first": 1,
+        "last": 52
+       }
+      ]
+     },
+     "note": null,
+     "order": 345,
+     "tier": "narrative",
+     "title": "The first mission",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 27
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 14,
+        "first": 1,
+        "last": 27
+       }
+      ]
+     },
+     "note": null,
+     "order": 346,
+     "tier": "year",
+     "title": "Lystra and Derbe",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 41
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 15,
+        "first": 1,
+        "last": 41
+       }
+      ]
+     },
+     "note": null,
+     "order": 347,
+     "tier": "narrative",
+     "title": "The council of Jerusalem",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 40
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 40
+       }
+      ]
+     },
+     "note": null,
+     "order": 348,
+     "tier": "narrative",
+     "title": "Macedonia: Lydia, and the jailer",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 34
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 17,
+        "first": 1,
+        "last": 34
+       }
+      ]
+     },
+     "note": null,
+     "order": 349,
+     "tier": "year",
+     "title": "Athens, and the unknown God",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 40
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 18,
+        "first": 1,
+        "last": 40
+       }
+      ]
+     },
+     "note": null,
+     "order": 350,
+     "tier": "year",
+     "title": "Corinth and Ephesus",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 38
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 20,
+        "first": 1,
+        "last": 38
+       }
+      ]
+     },
+     "note": null,
+     "order": 351,
+     "tier": "year",
+     "title": "The farewell at Miletus",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "note": null,
+     "order": 352,
+     "tier": "year",
+     "title": "Jerusalem, the arrest, the defence, and the plot",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 32
+       }
+      ]
+     },
+     "note": null,
+     "order": 353,
+     "tier": "year",
+     "title": "Felix, Festus, the appeal to Caesar, and Agrippa",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 27,
+        "first": 1,
+        "last": 44
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 27,
+        "first": 1,
+        "last": 44
+       }
+      ]
+     },
+     "note": null,
+     "order": 354,
+     "tier": "year",
+     "title": "The shipwreck",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Acts",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 28,
+        "first": 1,
+        "last": 31
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 28,
+        "first": 1,
+        "last": 31
+       }
+      ]
+     },
+     "note": "\"Preaching the kingdom of God... without prohibition.\" The book stops rather than ends, and so does the period.\n",
+     "order": 355,
+     "tier": "narrative",
+     "title": "Rome",
+     "token": "Acts",
+     "unresolved": null
+    },
+    {
+     "book": "Psalms",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 118,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 117,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "note": "Vulgate 117 = Hebrew 118: \"The stone which the builders rejected\" - quoted by Christ and by St. Peter before the council.\n",
+     "order": 356,
+     "tier": "year",
+     "title": "Psalm 117",
+     "token": "Ps",
+     "unresolved": null
+    },
+    {
+     "book": "Revelation",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 5
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 5
+       }
+      ]
+     },
+     "note": "Douay-Rheims title: the Apocalypse of St. John. The one passage of the Apocalypse in this plan, read so that the arc opened in Genesis 1 closes: a garden, a river, and the tree of life, with no sea and no night.\n",
+     "order": 357,
+     "tier": "year",
+     "title": "A new heaven and a new earth",
+     "token": "Apoc",
+     "unresolved": null
+    }
+   ],
+   "summary": "The Acts of the Apostles entire, from the Ascension to Rome, with three psalms the apostles preach from, and one passage of the Apocalypse to close the arc opened in Genesis 1. The epistles are not read; see the omissions.\n"
+  }
+ ],
+ "plan": "The Narrative Spine: an abridged reading of salvation history",
+ "schema": "triptych-reading-structure/v1",
+ "tiers": {
+  "narrative": {
+   "description": "The story told continuously: 111 readings, the 36 above plus 75 more, at 3,675 verses or 10.3 per cent of the Bible. Adds the connecting episodes, so that cause and consequence hold from Genesis 12 to Acts 28. Confined to the consensus narrative spine, and to it alone: at this tier the plan reads no prophet, no psalm, no gospel but St. Luke, and none of the narrative deuterocanon but 1 Machabees.\n",
+   "label": "Narrative",
+   "readings": 111
+  },
+  "overview": {
+   "description": "Thirty-six sittings, two to four in each period: the hinge readings, without which the arc does not stand. 1,210 verses, 3.4 per cent of the Bible. It is deliberately jumpy - a skeleton, not yet a story.\n\nThe three tiers nest. Every reading carries the tier at which it first appears, and no reading appears twice, so a tier is read by taking every reading marked at that tier or above, in order. The lower tiers therefore fill the gaps between the higher ones rather than restating them, and no passage is read twice in one pass.\n",
+   "label": "Overview",
+   "readings": 36
+  },
+  "year": {
+   "description": "The full spine at about a chapter to a reading: 357 readings, 13,867 verses, 38.7 per cent of the Bible, touching 454 chapters in 31 books. Adds to the narrative tier the three remaining gospels where they give what St. Luke does not; the narrative deuterocanon - Daniel, Esther, Tobias, Judith and 2 Machabees 6-7; and the non-narrative passages the story is unintelligible without: the messianic prophecies of Isaias, the new covenant of Jeremias, the shepherd and the dry bones of Ezechiel, and sixteen psalms. At roughly a reading a day it runs a year with eight days to spare.\n",
+   "label": "Year",
+   "readings": 357
+  }
+ }
+}

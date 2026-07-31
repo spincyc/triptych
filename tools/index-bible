@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import re
 import sys
 from importlib.machinery import SourceFileLoader
@@ -49,21 +50,58 @@ EDITIONS: dict[str, dict[str, object]] = {
         "rights": "public-domain",
         "publishable": True,
         "numbering": "vulgate",
+        "language": "en",
+        # Challoner translated the Clementine text, whose psalter is Gallican.
+        "psalter": "gallican",
         "artifacts": "english-college-of-douay/douay-rheims-bible/editions"
         "/challoner-gutenberg-1581/artifacts",
     },
+    "clementine-vulgate": {
+        "edition": "Biblia Sacra Vulgatae Editionis Clementina, eBible.org latVUC",
+        "source_id": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+        "rights": "public-domain",
+        "publishable": True,
+        "numbering": "vulgate",
+        "language": "la",
+        # The 1962 books print the Gallican psalter. It is not the psalter the
+        # Mass chants sing; see this edition's record before matching an incipit.
+        "psalter": "gallican",
+        "artifacts": "catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts",
+    },
+    # Licensed and not redistributable: its artifacts live outside this
+    # repository and are reached with --source-root, and its index must be
+    # written outside it too with --bible-root. `publishable: false` keeps it
+    # out of the public artifact even if an index is built by mistake.
+    "knox": {
+        "edition": "The Holy Bible, translated by Monsignor Ronald Knox",
+        "source_id": "edition.westminster-diocese.knox-translation.baronius-2012",
+        "rights": "licensed",
+        "publishable": False,
+        "numbering": "vulgate",
+        "language": "en",
+        "psalter": "gallican",
+        "artifacts": "knox/artifacts",
+    },
 }
 
+# A psalm reference resolves against a psalter, and the Latin psalters differ in
+# wording where they agree in numbering, so numbering alone cannot identify the
+# text. Two editions differing only in recension would otherwise be
+# indistinguishable, and a near-miss reads as a match.
+PSALTERS = ("gallican", "roman", "iuxta-hebraeos", "pian", "nova-vulgata")
 
-def mass_propers():
-    """Reuse the consumer's own reference handling so the keys cannot drift.
 
-    `mass-propers` decides what string it will look up; deriving the same
-    string here from a copy of that logic is how an index silently stops
-    resolving. Import the tool instead.
+def sibling(name: str):
+    """Load a sibling tool as a module rather than restating what it decides.
+
+    Two tools are read this way and for the same reason. `mass-propers` decides
+    what string it will look up, and deriving that string here from a copy of
+    its logic is how an index silently stops resolving. `citations` owns what a
+    reference string means, and a second parser is how a hand-written override
+    and the calendar it corrects would come to disagree about a locus.
     """
-    path = ROOT / "tools" / "mass-propers"
-    loader = SourceFileLoader("_mass_propers", str(path))
+    path = ROOT / "tools" / name
+    loader = SourceFileLoader(f"_{name.replace('-', '_')}", str(path))
     spec = spec_from_loader(loader.name, loader)
     if spec is None:  # pragma: no cover - a broken checkout, not a code path
         raise ValueError(f"cannot load {path}")
@@ -167,13 +205,11 @@ class Bible:
         merged = self.aliases.get((token, chapter, verse))
         return None if merged is None else self.verses.get(merged)
 
-    def span(self, token: str, span: dict, realign: bool) -> tuple[list[str], str, tuple, tuple]:
+    def span(self, token: str, span: dict) -> tuple[list[str], str, tuple, tuple]:
         """The verses one range names, with the locus each end resolved to.
 
-        `realign` applies when a psalm range has been converted between
-        numbering systems. The converter restarts the verse count in the part
-        it lands in, so a converted verse 1 means "the first verse this
-        chapter has" — which in this edition may be printed as 10 or 12.
+        A converted range arrives in the numbering this edition prints, so the
+        verses it names are looked up as they stand.
         """
         begin = span.get("begin") or {}
         end = span.get("end") or begin
@@ -189,11 +225,10 @@ class Bible:
             if bounds is None:
                 return [], f"{token} has no chapter {chapter}", (), ()
             base, bound = bounds
-            offset = base - 1 if realign else 0
             low = begin.get("verse") if chapter == int(first) else None
             high = end.get("verse") if chapter == int(last) else None
-            low = base if low is None else int(low) + offset
-            high = bound if high is None else int(high) + offset
+            low = base if low is None else int(low)
+            high = bound if high is None else int(high)
             for verse in range(low, min(high, bound) + 1):
                 # A verse part ("6a") cannot be cut without editorial judgment,
                 # so the whole verse stands and the citation keeps the part.
@@ -205,11 +240,11 @@ class Bible:
                 texts.append(text)
         return texts, "", opened, closed
 
-    def passage(self, token: str, ranges: list, realign: bool) -> tuple[str, str]:
+    def passage(self, token: str, ranges: list) -> tuple[str, str]:
         parts: list[str] = []
         previous: tuple = ()
         for span in ranges:
-            texts, problem, opened, closed = self.span(token, span, realign)
+            texts, problem, opened, closed = self.span(token, span)
             if problem:
                 return "", problem
             if parts and opened:
@@ -221,7 +256,180 @@ class Bible:
         return text, "" if text else "no text found"
 
 
-def citation(entry: dict, source: str, target: str, tool) -> tuple[str, list, bool, str]:
+# Where a calendar's citations do not address the text an edition in Vulgate
+# numbering prints. The postconciliar Lectionary cites the Nova Vulgata, which
+# divides Joel, Malachi and parts of Isaiah differently, and the reference that
+# results is not merely wrong but resolvable: `Joel 3:1-5` returns the valley of
+# Josaphat instead of the outpoured spirit, and nothing counts it as a failure.
+#
+# The correspondence is recorded per citation in the calendar rather than
+# derived, because this library tracks no witness of the Nova Vulgata. There is
+# nothing here to compile a concordance from, and a remembered one would
+# mis-resolve exactly as quietly as the mismatch it replaced.
+DIVERGENCES = "citation_divergences"
+
+
+def chapters_touched(entry: dict) -> set[int]:
+    """Every chapter a citation's ranges reach into, boundary-crossers included."""
+    chapters: set[int] = set()
+    for span in entry.get("ranges") or []:
+        if not isinstance(span, dict):
+            continue
+        begin = span.get("begin") or {}
+        end = span.get("end") or begin
+        first = begin.get("chapter")
+        if first is None:
+            continue
+        last = end.get("chapter")
+        chapters.update(range(int(first), int(first if last is None else last) + 1))
+    return chapters
+
+
+class Divergences:
+    """One calendar's declared numbering divergences, validated as they load.
+
+    A declaration is worth only as much as its upkeep, so each one is checked
+    against the citations the calendar actually makes. A resolution for a
+    reference no longer cited, a resolution landing in another book, and a
+    declared chapter nothing cites are all errors: dead entries that still read
+    as coverage are how a table stops matching the thing it describes.
+
+    What is deliberately *not* an error is a citation inside a declared locus
+    with no resolution recorded. That one refuses, and the citation goes
+    unindexed. Returning whatever verse the edition happens to print at those
+    numbers is the defect this machinery exists to stop, and a refusal is the
+    only answer that cannot be mistaken for the text.
+    """
+
+    def __init__(self, calendar: str, document: dict, entries: list[dict], canon) -> None:
+        self.calendar = calendar
+        self.canon = canon
+        self.loci: list[tuple[str, frozenset[int], str]] = []
+        self.resolved: dict[str, tuple[str, str, list]] = {}
+        # Absent and empty both mean the calendar claims no divergence; a value
+        # of any other shape is a mistake, and reading it as "none" would drop
+        # the declaration silently, which is the failure mode being fixed here.
+        declared = document.get(DIVERGENCES)
+        declared = [] if declared is None else declared
+        if not isinstance(declared, list):
+            raise ValueError(f"{calendar}: {DIVERGENCES} must be a list of divergent loci")
+        self.cited: dict[str, tuple[str, set[int]]] = {}
+        for entry in entries:
+            ref = str(entry["ref"])
+            if ref not in self.cited:
+                self.cited[ref] = (str(entry.get("book") or ""), chapters_touched(entry))
+        for locus in declared:
+            self._declare(locus)
+
+    def _declare(self, locus: object) -> None:
+        where = f"{self.calendar}: {DIVERGENCES}"
+        if not isinstance(locus, dict):
+            raise ValueError(f"{where}: each divergent locus must be a mapping")
+        book = locus.get("book")
+        if not isinstance(book, str) or not book:
+            raise ValueError(f"{where}: a divergent locus must name a book")
+        if book == PSALMS:
+            # The psalter has a tracked verse-level concordance and converts
+            # through it; a second mechanism here could only contradict it.
+            raise ValueError(f"{where}: {book} numbering is owned by the psalm concordance")
+        reason = locus.get("divergence")
+        if not isinstance(reason, str) or not reason.strip():
+            raise ValueError(f"{where}: {book} must say how the numbering diverges")
+        chapters = self._chapters(where, book, locus.get("chapters"))
+        resolutions = locus.get("citations")
+        if not isinstance(resolutions, dict) or not resolutions:
+            raise ValueError(f"{where}: {book} declares no citations; remove the locus instead")
+        covered: set[int] = set()
+        for ref, target in sorted(resolutions.items()):
+            covered |= self._resolve(where, book, chapters, str(ref), target)
+        stale = sorted(chapters - covered) if chapters else []
+        if stale:
+            raise ValueError(
+                f"{where}: {book} declares chapters {stale} that no listed citation reaches"
+            )
+        self.loci.append((book, chapters, reason.strip()))
+
+    def _chapters(self, where: str, book: str, declared: object) -> frozenset[int]:
+        """The chapters this book diverges in; empty means the whole book."""
+        if declared is None:
+            return frozenset()
+        if not isinstance(declared, list) or not declared:
+            raise ValueError(f"{where}: {book} chapters must be a non-empty list")
+        for chapter in declared:
+            if not isinstance(chapter, int) or isinstance(chapter, bool) or chapter < 1:
+                raise ValueError(f"{where}: {book} chapter {chapter!r} is not a chapter number")
+        return frozenset(declared)
+
+    def _resolve(
+        self, where: str, book: str, chapters: frozenset[int], ref: str, target: object
+    ) -> set[int]:
+        """Validate one recorded resolution and keep it. Returns what it covers."""
+        if not isinstance(target, str) or not target.strip():
+            raise ValueError(f"{where}: {book} resolution for {ref!r} must be a reference string")
+        if ref in self.resolved:
+            raise ValueError(f"{where}: {ref!r} is resolved twice")
+        found = self.cited.get(ref)
+        if found is None:
+            raise ValueError(f"{where}: {ref!r} is resolved but no longer cited by this calendar")
+        home, touched = found
+        if home != book:
+            raise ValueError(f"{where}: {ref!r} is cited under {home!r}, not {book!r}")
+        if chapters and not touched & chapters:
+            raise ValueError(f"{where}: {ref!r} reaches no divergent chapter of {book}")
+        try:
+            passage = self.canon.parse_citation(target.strip())
+        except self.canon.CitationError as error:
+            raise ValueError(
+                f"{where}: {ref!r} resolves to an unreadable reference: {error}"
+            ) from error
+        if passage["book"] != book:
+            # An override may correct the numbering, never the book: a citation
+            # that resolves into another book is a different citation.
+            raise ValueError(
+                f"{where}: {ref!r} resolves into {passage['book']}, outside {book}"
+            )
+        self.resolved[ref] = (book, target.strip(), passage["ranges"])
+        return touched & chapters if chapters else touched
+
+    def apply(self, entry: dict, ranges: list) -> tuple[list, str]:
+        """The ranges that select this citation's text here, or why it refuses."""
+        ref = str(entry["ref"])
+        recorded = self.resolved.get(ref)
+        if recorded is not None:
+            return recorded[2], ""
+        book = str(entry.get("book") or "")
+        touched = chapters_touched(entry)
+        for declared, chapters, reason in self.loci:
+            if declared != book or (chapters and not touched & chapters):
+                continue
+            return [], (
+                f"{self.calendar} numbers {book} divergently ({reason}) and records no "
+                f"resolution for this citation; add one under {DIVERGENCES}"
+            )
+        return ranges, ""
+
+    def confirm(self, bible: "Bible") -> None:
+        """Every resolution must reach real text in an edition holding its book.
+
+        A citation the edition cannot address is ordinary — a calendar may cite
+        a book this edition never printed. A hand-written resolution that
+        cannot be addressed is not: it is a correction that has stopped
+        correcting, and it fails the build rather than joining the unresolved
+        tally where a reader would read it as the calendar's problem.
+        """
+        for ref, (book, target, ranges) in sorted(self.resolved.items()):
+            token = bible.token(book)
+            if token is None:
+                continue
+            _, problem = bible.passage(token, ranges)
+            if problem:
+                raise ValueError(
+                    f"{self.calendar}: {DIVERGENCES} resolves {ref!r} to {target!r}, "
+                    f"which this edition cannot address: {problem}"
+                )
+
+
+def citation(entry: dict, source: str, target: str, tool) -> tuple[str, list, str]:
     """The key `mass-propers` will look up, and the ranges that key covers.
 
     The key follows the tool exactly: only a psalm chapter is renumbered, and
@@ -232,12 +440,12 @@ def citation(entry: dict, source: str, target: str, tool) -> tuple[str, list, bo
     book = str(entry.get("book") or "")
     ranges = [span for span in (entry.get("ranges") or []) if isinstance(span, dict)]
     if not ranges:
-        return ref, [], False, "citation carries no ranges"
+        return ref, [], "citation carries no ranges"
     if source == target or book != PSALMS:
-        return ref, ranges, False, ""
+        return ref, ranges, ""
     chapter, verse = tool.locus_of(entry)
     if chapter is None:
-        return ref, ranges, False, ""
+        return ref, ranges, ""
     try:
         converted, _ = convert_reference(book, chapter, source, target, verse)
         moved: list = []
@@ -245,12 +453,12 @@ def citation(entry: dict, source: str, target: str, tool) -> tuple[str, list, bo
             spans, _ = convert_range(book, span.get("begin") or {}, span.get("end"), source, target)
             moved.extend(spans)
     except NumberingError as error:
-        return ref, [], False, str(error)
+        return ref, [], str(error)
     key = ref if converted == chapter else tool.renumber(ref, converted)
-    return key, moved, True, ""
+    return key, moved, ""
 
 
-def collect(bible: Bible, calendar_root: Path, target: str, tool) -> dict:
+def collect(bible: Bible, calendar_root: Path, target: str, tool, canon) -> dict:
     """Index every citation every calendar makes, and record what failed."""
     passages: dict[str, str] = {}
     unresolved: list[dict[str, str]] = []
@@ -259,34 +467,42 @@ def collect(bible: Bible, calendar_root: Path, target: str, tool) -> dict:
     for calendar in tool.calendars(calendar_root):
         document = tool.load_calendar(calendar_root, calendar)
         source = document.get("psalm_numbering") or target
+        entries = [
+            entry for _, mass in tool.masses_of(document) for entry in tool.scripture_entries(mass)
+        ]
+        # Both checks run before a single citation is indexed, so a declaration
+        # that has fallen out of step stops the build rather than shaping it.
+        divergences = Divergences(calendar, document, entries, canon)
+        divergences.confirm(bible)
         wanted: set[str] = set()
         resolved: set[str] = set()
-        for _, mass in tool.masses_of(document):
-            for entry in tool.scripture_entries(mass):
-                ref = str(entry["ref"])
-                wanted.add(ref)
-                key, ranges, realign, problem = citation(entry, source, target, tool)
-                if (calendar, ref) in seen:
-                    if key in passages:
-                        resolved.add(ref)
-                    continue
-                seen.add((calendar, ref))
-                token = bible.token(str(entry.get("book") or ""))
-                if token is None:
-                    problem = problem or f"no book named {entry.get('book')!r} in this edition"
-                text = ""
-                if token is not None and not problem:
-                    text, problem = bible.passage(token, ranges, realign)
-                if problem:
-                    unresolved.append({"calendar": calendar, "ref": ref, "reason": problem})
-                    continue
-                resolved.add(ref)
-                if passages.get(key, text) != text:
-                    unresolved.append(
-                        {"calendar": calendar, "ref": ref, "reason": f"key {key!r} disagrees"}
-                    )
-                    continue
-                passages[key] = text
+        for entry in entries:
+            ref = str(entry["ref"])
+            wanted.add(ref)
+            key, ranges, problem = citation(entry, source, target, tool)
+            if not problem:
+                ranges, problem = divergences.apply(entry, ranges)
+            if (calendar, ref) in seen:
+                if key in passages:
+                    resolved.add(ref)
+                continue
+            seen.add((calendar, ref))
+            token = bible.token(str(entry.get("book") or ""))
+            if token is None:
+                problem = problem or f"no book named {entry.get('book')!r} in this edition"
+            text = ""
+            if token is not None and not problem:
+                text, problem = bible.passage(token, ranges)
+            if problem:
+                unresolved.append({"calendar": calendar, "ref": ref, "reason": problem})
+                continue
+            resolved.add(ref)
+            if passages.get(key, text) != text:
+                unresolved.append(
+                    {"calendar": calendar, "ref": ref, "reason": f"key {key!r} disagrees"}
+                )
+                continue
+            passages[key] = text
         counts[calendar] = {"cited": len(wanted), "resolved": len(resolved)}
     return {
         "passages": dict(sorted(passages.items())),
@@ -295,15 +511,68 @@ def collect(bible: Bible, calendar_root: Path, target: str, tool) -> dict:
     }
 
 
+def fragments_for(bible: Bible) -> dict[str, str]:
+    """One JSON file per chapter, which is what a reader actually fetches.
+
+    A chapter is the unit that is small enough to send for a three-verse
+    antiphon and large enough to serve a reading that runs to the end of one,
+    so the page fetches a chapter and the passage range filters it. Keyed by
+    the edition's own book token and its own printed verse numbers, because a
+    consumer that has resolved a citation is asking for numbers, not for a
+    reference string.
+    """
+    chapters: dict[tuple[str, int], dict[int, str]] = {}
+    for (token, chapter, verse), text in bible.verses.items():
+        chapters.setdefault((token, chapter), {})[verse] = text
+    written: dict[str, str] = {}
+    for (token, chapter), verses in chapters.items():
+        body = ",".join(
+            f'{json.dumps(str(verse))}:{json.dumps(verses[verse], ensure_ascii=False)}'
+            for verse in sorted(verses)
+        )
+        written[f"chapters/{token}/{chapter}.json"] = (
+            f'{{"book":{json.dumps(token)},"chapter":{chapter},"verses":{{{body}}}}}\n'
+        )
+    return written
+
+
+def write_fragments(root: Path, fragments: dict[str, str]) -> None:
+    for relative, payload in sorted(fragments.items()):
+        path = root / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(payload, encoding="utf-8")
+
+
+def stale_fragments(root: Path, fragments: dict[str, str]) -> list[str]:
+    problems: list[str] = []
+    for relative, payload in sorted(fragments.items()):
+        path = root / relative
+        if not path.is_file():
+            problems.append(f"missing chapter fragment {relative}")
+        elif path.read_text(encoding="utf-8") != payload:
+            problems.append(f"stale chapter fragment {relative}")
+    existing = {
+        p.relative_to(root).as_posix()
+        for p in (root / "chapters").rglob("*.json")
+    } if (root / "chapters").is_dir() else set()
+    for orphan in sorted(existing - set(fragments)):
+        problems.append(f"chapter fragment no longer derived: {orphan}")
+    return problems
+
+
 def document_for(name: str, built: dict) -> dict:
     edition = EDITIONS[name]
+    if edition["psalter"] not in PSALTERS:
+        raise ValueError(f"{name}: psalter must be one of {list(PSALTERS)}")
     return {
         "schema": "triptych-bible-index/v1",
         "edition": edition["edition"],
         "source_id": edition["source_id"],
         "rights": edition["rights"],
         "publishable": edition["publishable"],
+        "language": edition["language"],
         "numbering": edition["numbering"],
+        "psalter": edition["psalter"],
         "generator": "index-bible build",
         "coverage": "the references the tracked calendars make; rebuild after a "
         "calendar adds a reference",
@@ -324,9 +593,15 @@ def serialize(document: dict) -> str:
 
 def build(name: str, calendar_root: Path, artifacts: Path) -> dict:
     bible = Bible(artifacts)
-    tool = mass_propers()
-    built = collect(bible, calendar_root, str(EDITIONS[name]["numbering"]), tool)
-    return {**built, "text": serialize(document_for(name, built))}
+    tool = sibling("mass-propers")
+    built = collect(
+        bible, calendar_root, str(EDITIONS[name]["numbering"]), tool, sibling("citations")
+    )
+    return {
+        **built,
+        "text": serialize(document_for(name, built)),
+        "fragments": fragments_for(bible),
+    }
 
 
 def artifacts_for(name: str, arguments: argparse.Namespace) -> Path:
@@ -349,12 +624,50 @@ def summary(name: str, built: dict, path: Path, arguments: argparse.Namespace) -
     }
 
 
+def run_manifest(arguments: argparse.Namespace) -> dict:
+    """List the editions a public page may offer, and only those.
+
+    The site's translation choices are exactly the publishable editions. A
+    licensed text is excluded here rather than filtered in the browser, so a
+    page cannot offer what it has no right to serve even if its fragments were
+    somehow present.
+    """
+    offered = [
+        {
+            "id": name,
+            "label": str(edition["edition"]),
+            "language": str(edition["language"]),
+            "numbering": str(edition["numbering"]),
+            "psalter": str(edition["psalter"]),
+            "rights": str(edition["rights"]),
+        }
+        for name, edition in sorted(EDITIONS.items())
+        if edition["publishable"]
+    ]
+    path = Path(arguments.out) / "bibles.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps({"bibles": offered}, ensure_ascii=False, sort_keys=True, indent=1) + "\n",
+        encoding="utf-8",
+    )
+    return {
+        "bible": "manifest",
+        "offered": [row["id"] for row in offered],
+        "withheld": sorted(
+            name for name, edition in EDITIONS.items() if not edition["publishable"]
+        ),
+        "path": str(path),
+        "status": "ok",
+    }
+
+
 def run_build(arguments: argparse.Namespace) -> dict:
     name = arguments.bible
     built = build(name, Path(arguments.root), artifacts_for(name, arguments))
     path = Path(arguments.bible_root) / name / "index.yaml"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(built["text"], encoding="utf-8")
+    write_fragments(path.parent, built["fragments"])
     return summary(name, built, path, arguments)
 
 
@@ -367,6 +680,11 @@ def run_check(arguments: argparse.Namespace) -> dict:
     current = path.read_text(encoding="utf-8")
     if current != built["text"]:
         raise ValueError(f"{path} is stale; run `index-bible build`")
+    drift = stale_fragments(path.parent, built["fragments"])
+    if drift:
+        shown = "; ".join(drift[:3])
+        more = f" (and {len(drift) - 3} more)" if len(drift) > 3 else ""
+        raise ValueError(f"{shown}{more}; run `index-bible build`")
     return summary(name, built, path, arguments)
 
 
@@ -376,6 +694,11 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         return 70
     if arguments.json or arguments.format == "json":
         print_json(payload)
+        return 0
+    if "offered" in payload:
+        print(f"offered: {', '.join(payload['offered'])} -> {payload['path']}")
+        if payload["withheld"]:
+            print(f"withheld as unpublishable: {', '.join(payload['withheld'])}")
         return 0
     print(f"{payload['bible']}: {payload['passages']} passages -> {payload['path']}")
     for calendar, counts in payload["calendars"].items():
@@ -410,6 +733,9 @@ def main(argv: list[str] | None = None) -> int:
         "--verbose", action="store_true", help="list every citation that did not resolve"
     )
     shared.add_argument(
+        "--out", default="src/web/data", help="where `manifest` writes bibles.json"
+    )
+    shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
     )
     parser = argparse.ArgumentParser(
@@ -420,10 +746,13 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command")
     sub.add_parser("build", help="write the index", parents=[shared])
     sub.add_parser("check", help="rebuild in memory and report drift", parents=[shared])
+    sub.add_parser(
+        "manifest", help="list the editions a public page may offer", parents=[shared]
+    )
 
     return run_verb_cli(
         parser=parser,
-        handlers={"build": run_build, "check": run_check},
+        handlers={"build": run_build, "check": run_check, "manifest": run_manifest},
         renderer=render,
         prefix="index-bible",
         argv=argv,

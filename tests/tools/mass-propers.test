@@ -68,8 +68,8 @@ if ! cmp -s first.txt second.txt; then
 	exit 1
 fi
 count="$(wc -l <first.txt | tr -d ' ')"
-if [ "$count" -ne 331 ]; then
-	echo "expected 331 masses in the 1962 calendar, got $count" >&2
+if [ "$count" -ne 334 ]; then
+	echo "expected 334 masses in the 1962 calendar, got $count" >&2
 	exit 1
 fi
 if ! grep -q 'advent-1' first.txt; then
@@ -185,5 +185,64 @@ if run_tool --calendar roman-1962 --mass advent-1 --format nonesuch >/dev/null 2
 	echo "expected failure for an unknown format" >&2
 	exit 1
 fi
+
+# `structure` writes the browser's data: every citation resolved to explicit
+# loci in both numbering systems, so no numbering logic reaches the page.
+structure="$(mktemp -d)"
+# Replace the earlier trap rather than adding one: a second `trap ... EXIT`
+# supersedes the first, so it must clean up the sandbox too.
+trap 'rm -rf "$sandbox" "$structure"' EXIT INT TERM
+run_tool structure --out "$structure" >/dev/null
+
+for calendar in roman-1962 postconciliar; do
+	if [ ! -f "$structure/structure/propers/$calendar.json" ]; then
+		echo "structure wrote no file for $calendar" >&2
+		exit 1
+	fi
+done
+
+# Ad te levavi is Vulgate Psalm 24 and Hebrew Psalm 25. Both must be present
+# and correct: the browser picks by its translation's numbering, so a missing
+# or wrong system silently renders a different psalm.
+python3 - "$structure/structure/propers/roman-1962.json" <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+masses = {mass["key"]: mass for mass in document["masses"]}
+introit = next(
+    proper for proper in masses["advent-1"]["propers"] if proper["name"] == "Introit"
+)
+citation = introit["citations"][0]
+assert citation["ref"] == "Psalm 24:1-3", citation["ref"]
+assert citation["token"] == "Ps", citation["token"]
+assert citation["unresolved"] is None, citation["unresolved"]
+assert citation["loci"]["vulgate"] == [{"chapter": 24, "first": 1, "last": 3}], citation
+assert citation["loci"]["hebrew"] == [{"chapter": 25, "first": 1, "last": 3}], citation
+
+# A citation that cannot be converted carries the reason and NO loci: a page
+# that explains itself beats one that renders the wrong psalm confidently.
+postconciliar = json.load(open(sys.argv[1].replace("roman-1962", "postconciliar"), encoding="utf-8"))
+refused = [
+    citation
+    for mass in postconciliar["masses"]
+    for proper in mass["propers"]
+    for rows in [proper["citations"], *proper["cycles"].values()]
+    for citation in rows
+    if citation["unresolved"]
+]
+assert refused, "the known mis-numbered antiphons should refuse"
+for citation in refused:
+    assert citation["loci"] == {}, citation
+    assert citation["unresolved"], citation
+
+# Cycle readings are kept per year, not merged into one indistinguishable list.
+cycled = [
+    proper
+    for mass in postconciliar["masses"]
+    for proper in mass["propers"]
+    if proper["cycles"]
+]
+assert cycled, "the postconciliar calendar carries cycle-varying propers"
+PY
 
 echo ok

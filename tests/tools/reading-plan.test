@@ -1,0 +1,118 @@
+#!/bin/sh
+# Test for `tools/tpt reading-plan`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="reading-plan"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# The tracked plans validate against the library's own verse text.
+run_tool check >/dev/null
+
+# `structure` resolves every reading into both numbering systems, so the page
+# needs no psalter correspondence of its own.
+run_tool structure --out "$sandbox/data" >/dev/null
+plan="$sandbox/data/structure/readings/narrative-spine.json"
+if [ ! -f "$plan" ]; then
+	echo "structure wrote no reading plan" >&2
+	exit 1
+fi
+
+python3 - "$plan" <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+readings = [r for period in document["periods"] for r in period["readings"]]
+assert readings, "the plan carries no readings"
+
+# Every reading resolves: the plan is checked against real verse text before it
+# is written, so a refusal here means the check let something through.
+refused = [r for r in readings if r["unresolved"]]
+assert not refused, refused[:3]
+
+for reading in readings:
+    for system in ("vulgate", "hebrew"):
+        assert reading["loci"][system], (reading["title"], system)
+
+# Tiers are cumulative: reading a tier means taking it and every tier above.
+tiers = document["tiers"]
+entered = {}
+for reading in readings:
+    entered[reading["tier"]] = entered.get(reading["tier"], 0) + 1
+running = 0
+for name in ("overview", "narrative", "year"):
+    running += entered.get(name, 0)
+    assert tiers[name]["readings"] == running, (name, tiers[name]["readings"], running)
+
+# The order is one unbroken sequence across the whole document.
+assert [r["order"] for r in readings] == list(range(1, len(readings) + 1))
+
+# A psalm whose systems agree must not be split by the concordance's own
+# seam around an inscription; a psalm that genuinely divides still may be.
+for reading in readings:
+    if reading["token"] != "Ps":
+        continue
+    for system in ("vulgate", "hebrew"):
+        loci = reading["loci"][system]
+        for earlier, later in zip(loci, loci[1:]):
+            same = later["chapter"] == earlier["chapter"]
+            abuts = later["first"] == (earlier["last"] or 0) + 1
+            assert not (same and abuts), (reading["title"], system, loci)
+PY
+
+# A plan that addresses text the library does not hold is refused, not written.
+mkdir -p "$sandbox/bad"
+sed 's/^numbering: vulgate$/numbering: klingon/' \
+	"$repo/src/sources/reading-plans/narrative-spine.yaml" >"$sandbox/bad/broken.yaml"
+status=0
+run_tool check --root "$sandbox/bad" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "an unknown numbering system should exit 2, got $status" >&2
+	exit 1
+fi
+
+# structure refuses to write a plan that does not validate.
+status=0
+run_tool structure --root "$sandbox/bad" --out "$sandbox/never" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "structure should refuse an invalid plan, got $status" >&2
+	exit 1
+fi
+if [ -e "$sandbox/never" ]; then
+	echo "a refused structure must not create an output directory" >&2
+	exit 1
+fi
+
+# An empty plan directory is an error rather than a silent success.
+mkdir -p "$sandbox/empty"
+status=0
+run_tool check --root "$sandbox/empty" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "an empty plan root should exit 2, got $status" >&2
+	exit 1
+fi
+
+# Machine form is one key-sorted object.
+run_tool check --format json >"$sandbox/one.json"
+for want in '"plans"' '"status"'; do
+	if ! grep -q "$want" "$sandbox/one.json"; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+
+if run_tool check --format nonesuch >/dev/null 2>&1; then
+	echo "expected failure for an unknown format" >&2
+	exit 1
+fi
+
+echo ok

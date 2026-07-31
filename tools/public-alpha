@@ -15,6 +15,7 @@ import shutil
 import sys
 import tomllib
 from collections import Counter, defaultdict
+from collections.abc import Iterable
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
 from urllib.parse import unquote, urlsplit
@@ -35,6 +36,19 @@ PICTORIAL_MANIFEST_RELATIVE = (
 PICTORIAL_OBJECTS_RELATIVE = PICTORIAL_ROOT_RELATIVE / "shared/objects"
 PICTORIAL_GALLERY_OUTPUT = "library/sanctuary-picture-dictionary.html"
 PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
+
+# The browser resolves bibles.json, structure/<kind>/<id>.json and
+# <edition>/chapters/<BookToken>/<n>.json against one configurable root, so the
+# artifact carries a single data directory and the page needs no other setting.
+WEB_DATA_ROOT_RELATIVE = PurePosixPath("src/web/data")
+BIBLE_SOURCE_ROOT_RELATIVE = PurePosixPath("src/sources/bibles")
+SITE_DATA_ROOT = PurePosixPath("data")
+# Fragments stay beside the edition that owns them, where index-bible checks
+# them for staleness and orphans; copying them into src/web/data as well would
+# put the same verse text in the tree twice.
+BIBLE_FRAGMENT_DIRECTORY = "chapters"
+BIBLE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+BOOK_TOKEN_RE = re.compile(r"^[0-9A-Za-z]+$")
 
 PAGE_MAP = {
     "README.md": "index.html",
@@ -356,6 +370,158 @@ def pictorial_gallery_source_paths() -> set[str]:
     paths = {PICTORIAL_MANIFEST_RELATIVE.as_posix()} | pictorial_object_source_paths()
     paths.update(card["source_relative"] for card in pictorial_gallery_data())
     return paths
+
+
+def load_json_file(path: Path, label: str) -> object:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ReleaseError(f"cannot read {label}: {exc}") from exc
+
+
+def web_data_manifest_path() -> Path:
+    return ROOT / WEB_DATA_ROOT_RELATIVE / "bibles.json"
+
+
+def parse_bible_manifest(path: Path, label: str) -> dict[str, str]:
+    """Return {edition id: numbering} for a bibles.json, rejecting anything unsafe.
+
+    index-bible writes this manifest from the edition records that say
+    publishable: true, so a licensed text is absent from it. This is the site's
+    single answer to "which editions exist"; nothing may substitute a listing of
+    src/sources/bibles/ for it.
+    """
+    manifest = load_json_file(path, label)
+    if not isinstance(manifest, dict) or not isinstance(manifest.get("bibles"), list):
+        raise ReleaseError(f"{label} must hold a 'bibles' list")
+    editions: dict[str, str] = {}
+    for entry in manifest["bibles"]:
+        if not isinstance(entry, dict):
+            raise ReleaseError(f"{label} has a non-object edition")
+        bible_id = entry.get("id")
+        if not isinstance(bible_id, str) or not BIBLE_ID_RE.fullmatch(bible_id):
+            raise ReleaseError(f"{label} has an invalid edition id: {bible_id!r}")
+        if bible_id in editions:
+            raise ReleaseError(f"{label} repeats edition id {bible_id}")
+        numbering = entry.get("numbering")
+        if not isinstance(numbering, str) or not numbering:
+            raise ReleaseError(f"{label}: {bible_id} declares no numbering system")
+        editions[bible_id] = numbering
+    if not editions:
+        raise ReleaseError(f"{label} offers no editions")
+    return editions
+
+
+def offered_bible_ids() -> list[str]:
+    """Return the published editions the repository's manifest offers."""
+    return sorted(
+        parse_bible_manifest(
+            web_data_manifest_path(),
+            (WEB_DATA_ROOT_RELATIVE / "bibles.json").as_posix(),
+        )
+    )
+
+
+def data_root_edition_ids(relative_paths: Iterable[str]) -> set[str]:
+    """Return the editions a data root actually carries fragments for."""
+    editions: set[str] = set()
+    prefix = SITE_DATA_ROOT.as_posix()
+    for relative in relative_paths:
+        parts = PurePosixPath(relative).parts
+        if (
+            len(parts) > 3
+            and parts[0] == prefix
+            and parts[2] == BIBLE_FRAGMENT_DIRECTORY
+        ):
+            editions.add(parts[1])
+    return editions
+
+
+def web_data_files() -> dict[str, Path]:
+    """Map every artifact data-root path to the repository file it copies.
+
+    One map, so build and verify cannot disagree about what the data root holds.
+    Absent when the repository carries no generated data root, exactly as the
+    pictorial gallery is absent without its manifest.
+    """
+    if not web_data_manifest_path().is_file():
+        return {}
+    files: dict[str, Path] = {}
+    data_root = ROOT / WEB_DATA_ROOT_RELATIVE
+    for path in sorted(data_root.rglob("*")):
+        if path.is_symlink() or not path.is_file():
+            continue
+        if path.suffix != ".json":
+            raise ReleaseError(
+                "the generated data root must hold JSON only: "
+                f"{path.relative_to(ROOT).as_posix()}"
+            )
+        relative = path.relative_to(data_root).as_posix()
+        files[(SITE_DATA_ROOT / relative).as_posix()] = path
+
+    offered = offered_bible_ids()
+    for bible_id in offered:
+        chapters = (
+            ROOT / BIBLE_SOURCE_ROOT_RELATIVE / bible_id / BIBLE_FRAGMENT_DIRECTORY
+        )
+        if not chapters.is_dir():
+            raise ReleaseError(
+                f"offered edition {bible_id} has no fragments at "
+                f"{(BIBLE_SOURCE_ROOT_RELATIVE / bible_id / BIBLE_FRAGMENT_DIRECTORY).as_posix()}"
+            )
+        for path in sorted(chapters.rglob("*.json")):
+            if path.is_symlink() or not path.is_file():
+                continue
+            relative = path.relative_to(chapters).as_posix()
+            destination = (
+                SITE_DATA_ROOT / bible_id / BIBLE_FRAGMENT_DIRECTORY / relative
+            ).as_posix()
+            files[destination] = path
+
+    # The load-bearing rule: the copy is driven from bibles.json and never from
+    # a directory listing. An unpublishable edition is absent from the manifest,
+    # so its fragments are never copied even when they sit on disk beside the
+    # published ones; a deploy that walked src/sources/bibles/ would publish
+    # whatever it found. This check also catches an edition smuggled in through
+    # a stray directory under the generated data root.
+    unpublishable = sorted(set(data_root_edition_ids(files)) - set(offered))
+    if unpublishable:
+        raise ReleaseError(
+            "site data root would carry editions absent from bibles.json: "
+            f"{unpublishable!r}"
+        )
+    return files
+
+
+def structure_loci(node: object, found: dict[str, set[tuple[str, int]]]) -> None:
+    """Collect every (book token, chapter) a structure file resolves, by numbering.
+
+    Walked generically because the layers differ — propers nest citations under
+    masses and cycles, the reading plan under periods — while the resolved locus
+    is the same shape everywhere. An unresolved citation carries no loci and so
+    demands no fragment, which is the point of recording the reason instead.
+    """
+    if isinstance(node, list):
+        for item in node:
+            structure_loci(item, found)
+        return
+    if not isinstance(node, dict):
+        return
+    token = node.get("token")
+    loci = node.get("loci")
+    if isinstance(token, str) and isinstance(loci, dict):
+        if not BOOK_TOKEN_RE.fullmatch(token):
+            raise ReleaseError(f"unsafe book token in structure data: {token!r}")
+        for numbering, entries in loci.items():
+            if not isinstance(entries, list):
+                raise ReleaseError(f"{token}: {numbering} loci must be a list")
+            for locus in entries:
+                chapter = locus.get("chapter") if isinstance(locus, dict) else None
+                if not isinstance(chapter, int) or chapter < 1:
+                    raise ReleaseError(f"invalid chapter for {token}: {chapter!r}")
+                found.setdefault(numbering, set()).add((token, chapter))
+    for value in node.values():
+        structure_loci(value, found)
 
 
 def site_source_paths() -> set[str]:
@@ -1254,6 +1420,7 @@ def expected_artifact_files(
         expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
     expected.update(f"doc/{provider}/{leaf}.pdf" for provider, leaf in included)
+    expected.update(web_data_files())
     expected.update(
         artifact_license_source_paths()
     )
@@ -2042,6 +2209,69 @@ def verify_catalog_reachability(
     return errors
 
 
+def verify_web_data(output: Path) -> list[str]:
+    """Confirm the assembled data root serves exactly what it may, and all of it."""
+    expected = web_data_files()
+    if not expected:
+        return []
+    errors: list[str] = []
+    data_root = output / SITE_DATA_ROOT
+    if not data_root.is_dir():
+        return ["artifact is missing the browser's data root"]
+
+    actual = {
+        path.relative_to(output).as_posix()
+        for path in data_root.rglob("*")
+        if path.is_file()
+    }
+    for relative in sorted(actual & set(expected)):
+        if sha256(output / relative) != sha256(expected[relative]):
+            errors.append(f"{relative}: data file does not match its repository source")
+
+    manifest_relative = (SITE_DATA_ROOT / "bibles.json").as_posix()
+    if manifest_relative not in actual:
+        return errors + ["assembled data root is missing bibles.json"]
+    try:
+        offered = parse_bible_manifest(output / manifest_relative, manifest_relative)
+    except ReleaseError as exc:
+        return errors + [str(exc)]
+
+    # Read back from the artifact rather than from the repository: what the
+    # site serves is the only thing a reader can reach, and an edition that is
+    # not in the served manifest may not have its verse text sitting beside it.
+    unpublishable = sorted(data_root_edition_ids(actual) - set(offered))
+    if unpublishable:
+        errors.append(
+            f"artifact data root carries unpublishable editions: {unpublishable!r}"
+        )
+
+    # Presence of the copied files is owned by the artifact file-set check; what
+    # is checked here is that the data root is internally complete — every locus
+    # the served structure resolves has verse text beside it, in the numbering
+    # that edition declares, since the browser ships no numbering logic of its own.
+    loci: dict[str, set[tuple[str, int]]] = {}
+    for path in sorted((data_root / "structure").rglob("*.json")):
+        try:
+            structure_loci(load_json_file(path, path.relative_to(output).as_posix()), loci)
+        except ReleaseError as exc:
+            errors.append(str(exc))
+    for bible_id, numbering in sorted(offered.items()):
+        missing = sorted(
+            f"{token} {chapter}"
+            for token, chapter in loci.get(numbering, set())
+            if (
+                SITE_DATA_ROOT / bible_id / BIBLE_FRAGMENT_DIRECTORY / token / f"{chapter}.json"
+            ).as_posix()
+            not in actual
+        )
+        if missing:
+            errors.append(
+                f"{bible_id}: the structure files cite chapters the artifact has no "
+                f"fragment for: {missing[:10]!r} ({len(missing)} in all)"
+            )
+    return errors
+
+
 def write_checksums(output: Path) -> None:
     checksum_path = output / "SHA256SUMS"
     lines = []
@@ -2255,6 +2485,7 @@ def verify_output(
 
     errors.extend(verify_links(output))
     errors.extend(verify_catalog_reachability(manifest, included, output))
+    errors.extend(verify_web_data(output))
     checksum_path = output / "SHA256SUMS"
     if not checksum_path.is_file():
         errors.append("artifact is missing SHA256SUMS")
@@ -2263,6 +2494,14 @@ def verify_output(
 
     if errors:
         raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
+
+
+def assemble_web_data(output: Path) -> None:
+    """Assemble the browser's data root: manifest, structure, and fragments."""
+    for destination_relative, source in sorted(web_data_files().items()):
+        destination = output / destination_relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, destination)
 
 
 def build_site(
@@ -2301,6 +2540,8 @@ def build_site(
             destination = output / card["destination"]
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(card["source"], destination)
+
+    assemble_web_data(output)
 
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}

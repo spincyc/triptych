@@ -12,7 +12,9 @@ schema: triptych-bible-index/v1
 edition: The Holy Bible, Douay-Rheims (Challoner revision)
 source_id: work.douay-rheims.challoner
 rights: public-domain          # public-domain | licensed | project-created
+language: en                   # the language of the verse text itself
 numbering: vulgate             # vulgate | hebrew — psalm numbering system
+psalter: gallican              # gallican | roman | iuxta-hebraeos | pian | nova-vulgata
 publishable: true              # may this text be served from the public site?
 notice: ''                     # required when rights is licensed
 passages:
@@ -52,6 +54,18 @@ wrong text under a correct-looking reference.
 Every index declares its `numbering`, every calendar declares its
 `psalm_numbering`, and `mass-propers` refuses to resolve across a mismatch
 rather than rendering something plausible and wrong.
+
+Numbering alone does not identify a psalter. The Latin psalters agree on how
+the psalms are numbered and differ in how they read: Gallican Psalm 22 opens
+*Dominus regit me*, the Nova Vulgata *Dominus pascit me*. Two editions
+differing only in recension would be indistinguishable without `psalter`, and
+a near-miss reads as a match.
+
+A further warning, because it is not obvious: the Mass chants of the 1962 books
+are older than the Gallican psalter and frequently disagree with it. The
+sixth-after-Pentecost introit sings *protéctor salutárium Christi sui* where
+the Clementine reads *protector salvationum*. No indexed psalter resolves a
+chant incipit reliably; that needs a corpus of the sung text.
 
 Keys are the reference as the calendar indexes write it, which is what
 `mass-propers` looks up. Deriving them from the structured `book`/`ranges`

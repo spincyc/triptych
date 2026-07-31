@@ -1,0 +1,677 @@
+{
+ "schema": "triptych-reading-structure/v1",
+ "plan": "The Narrative Spine — fixture excerpt (three periods of twelve, plus diagnostics)",
+ "canon": "catholic-73",
+ "numbering": "vulgate",
+ "tiers": {
+  "overview": {
+   "label": "Overview",
+   "readings": 10,
+   "description": "Fixture excerpt. 10 readings at this tier, counted the same way the published plan counts: every reading marked at this tier and at every tier above it."
+  },
+  "narrative": {
+   "label": "Narrative",
+   "readings": 15,
+   "description": "Fixture excerpt. 15 readings at this tier, counted the same way the published plan counts: every reading marked at this tier and at every tier above it."
+  },
+  "year": {
+   "label": "Year",
+   "readings": 25,
+   "description": "Fixture excerpt. 25 readings at this tier, counted the same way the published plan counts: every reading marked at this tier and at every tier above it."
+  }
+ },
+ "omissions": "This file is a demonstration fixture, not the published plan. It carries three of the plan's twelve periods, verbatim in title, note and loci, and a fourth period of synthetic diagnostics that belongs to no plan. Every count in it is a count of itself. For the plan's own account of what it leaves out, read the published structure file.\n",
+ "periods": [
+  {
+   "key": "early-world",
+   "label": "Primeval History",
+   "summary": "From the creation to the scattering at Babel: the world God made, the fault that broke it, and the first covenant made with a remnant. Genesis 5 and 10, which are genealogies, are passed over; Genesis 11:10-32 is kept because it is the bridge to Abram.\n",
+   "readings": [
+    {
+     "order": 1,
+     "tier": "overview",
+     "title": "Creation",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": "The first lesson of the Easter Vigil. The Vigil's own abridgement of salvation history governs this plan: every one of its lessons is read at some tier.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 2
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 2
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 2,
+     "tier": "year",
+     "title": "The seventh day and the garden",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": "The sabbath blessing, and the second account, in which man is placed in the garden and given the woman.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 3,
+        "last": 25
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 3,
+        "last": 25
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 3,
+     "tier": "overview",
+     "title": "The fall",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": "The protoevangelium at 3:15 is the seed of everything the plan afterwards follows.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 24
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 24
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 4,
+     "tier": "narrative",
+     "title": "Cain and Abel",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": null,
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 16
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 1,
+        "last": 16
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 5,
+     "tier": "year",
+     "title": "The sons of Cain, and calling on the name of the Lord",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": "Kept, against the general omission of genealogies, because it divides the two lines from which the flood narrative proceeds.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 4,
+        "first": 17,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 4,
+        "first": 17,
+        "last": 26
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 6,
+     "tier": "year",
+     "title": "The sons of God and the daughters of men",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": null,
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 4
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 1,
+        "last": 4
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 7,
+     "tier": "overview",
+     "title": "The flood",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": "Read as one unit: the corruption, the ark, the deluge and its abating.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 6,
+        "first": 5,
+        "last": 22
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 6,
+        "first": 5,
+        "last": 22
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 8,
+     "tier": "narrative",
+     "title": "The covenant with Noe",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": "The first covenant of the plan; the bow set in the cloud.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 9,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 9,
+     "tier": "narrative",
+     "title": "Babel",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": null,
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 9
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 1,
+        "last": 9
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 10,
+     "tier": "year",
+     "title": "From Sem to Abram",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": "The one genealogy retained in this period, because without it the call of Abram has no ancestry.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 11,
+        "first": 10,
+        "last": 32
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 11,
+        "first": 10,
+        "last": 32
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 11,
+     "tier": "year",
+     "title": "Psalm 8",
+     "book": "Psalms",
+     "token": "Ps",
+     "note": "Vulgate numbering, which is this plan's throughout; here the Vulgate and the Hebrew agree.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 10
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 8,
+        "first": 1,
+        "last": 10
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 12,
+     "tier": "year",
+     "title": "Psalm 103, the hymn of creation",
+     "book": "Psalms",
+     "token": "Ps",
+     "note": "Vulgate 103 = Hebrew 104.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 104,
+        "first": 1,
+        "last": 35
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 103,
+        "first": 1,
+        "last": 35
+       }
+      ]
+     },
+     "unresolved": null
+    }
+   ]
+  },
+  {
+   "key": "messianic-fulfilment",
+   "label": "The Life of Christ",
+   "summary": "St. Luke entire is the spine of this period: it is the gospel written as a continuous narrative, and it carries the infancy, the journey to Jerusalem, and the resurrection appearances. St. Matthew, St. Mark and St. John enter at the year tier only, and only where they give what St. Luke does not.\n",
+   "readings": [
+    {
+     "order": 282,
+     "tier": "overview",
+     "title": "The Annunciation and the Nativity",
+     "book": "Luke",
+     "token": "Luke",
+     "note": "Read as one sitting from two places in St. Luke. The angel's promise of a throne and a kingdom without end answers 2 Samuel 7, read earlier in this plan.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 26,
+        "last": 38
+       },
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 26,
+        "last": 38
+       },
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 283,
+     "tier": "narrative",
+     "title": "The Visitation, and the Magnificat",
+     "book": "Luke",
+     "token": "Luke",
+     "note": "The canticle answers Anna's in 1 Samuel 2.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 39,
+        "last": 56
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 39,
+        "last": 56
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 291,
+     "tier": "year",
+     "title": "The beginning of the gospel",
+     "book": "Mark",
+     "token": "Mark",
+     "note": null,
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 328,
+     "tier": "overview",
+     "title": "The resurrection, and the road to Emmaus",
+     "book": "Luke",
+     "token": "Luke",
+     "note": null,
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 53
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 24,
+        "first": 1,
+        "last": 53
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 329,
+     "tier": "year",
+     "title": "The empty tomb, and the ending of St. Mark",
+     "book": "Mark",
+     "token": "Mark",
+     "note": null,
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 20
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 16,
+        "first": 1,
+        "last": 20
+       }
+      ]
+     },
+     "unresolved": null
+    }
+   ]
+  },
+  {
+   "key": "the-church",
+   "label": "The Apostolic Church",
+   "summary": "The Acts of the Apostles entire, from the Ascension to Rome, with three psalms the apostles preach from, and one passage of the Apocalypse to close the arc opened in Genesis 1. The epistles are not read; see the omissions.\n",
+   "readings": [
+    {
+     "order": 333,
+     "tier": "narrative",
+     "title": "The Ascension, and the choosing of Matthias",
+     "book": "Acts",
+     "token": "Acts",
+     "note": null,
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 26
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 26
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 334,
+     "tier": "overview",
+     "title": "Pentecost",
+     "book": "Acts",
+     "token": "Acts",
+     "note": "Babel, read in the Early World, is answered here. St. Peter preaches from Joel and from Psalms 15 and 109.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 47
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 2,
+        "first": 1,
+        "last": 47
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 356,
+     "tier": "year",
+     "title": "Psalm 117",
+     "book": "Psalms",
+     "token": "Ps",
+     "note": "Vulgate 117 = Hebrew 118: \"The stone which the builders rejected\" - quoted by Christ and by St. Peter before the council.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 118,
+        "first": 1,
+        "last": 29
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 117,
+        "first": 1,
+        "last": 29
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 357,
+     "tier": "year",
+     "title": "A new heaven and a new earth",
+     "book": "Revelation",
+     "token": "Apoc",
+     "note": "Douay-Rheims title: the Apocalypse of St. John. The one passage of the Apocalypse in this plan, read so that the arc opened in Genesis 1 closes: a garden, a river, and the tree of life, with no sea and no night.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 5
+       }
+      ],
+      "vulgate": [
+       {
+        "chapter": 21,
+        "first": 1,
+        "last": 5
+       }
+      ]
+     },
+     "unresolved": null
+    }
+   ]
+  },
+  {
+   "key": "fixture-diagnostics",
+   "label": "Fixture diagnostics (not part of the plan)",
+   "summary": "Invented entries, not readings. Each one exercises a failure the page must explain rather than swallow, and each is marked at the overview tier so that it appears whichever tier is chosen.\n",
+   "readings": [
+    {
+     "order": 9001,
+     "tier": "overview",
+     "title": "Diagnostic: unresolved reading",
+     "book": "Psalms",
+     "token": "Ps",
+     "note": "The structure could not resolve this reference, so the reason is shown in place of the text.\n",
+     "loci": {},
+     "unresolved": "Ps has no chapter 151"
+    },
+    {
+     "order": 9002,
+     "tier": "overview",
+     "title": "Diagnostic: missing fragment",
+     "book": "Tobias",
+     "token": "Tob",
+     "note": "No chapter file for Tob 3 is present in this fixture, so the fetch 404s.\n",
+     "loci": {
+      "vulgate": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 2
+       }
+      ],
+      "hebrew": [
+       {
+        "chapter": 3,
+        "first": 1,
+        "last": 2
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 9003,
+     "tier": "overview",
+     "title": "Diagnostic: numbering absent",
+     "book": "Psalms",
+     "token": "Ps",
+     "note": "Hebrew-only loci, read by a vulgate-numbered edition.\n",
+     "loci": {
+      "hebrew": [
+       {
+        "chapter": 25,
+        "first": 1,
+        "last": 1
+       }
+      ]
+     },
+     "unresolved": null
+    },
+    {
+     "order": 9004,
+     "tier": "overview",
+     "title": "Diagnostic: verses absent from the fragment",
+     "book": "Genesis",
+     "token": "Gen",
+     "note": "Genesis 1 is present but has no verse 300; the gap is named rather than passed over.\n",
+     "loci": {
+      "vulgate": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 3
+       },
+       {
+        "chapter": 1,
+        "first": 300,
+        "last": 302
+       }
+      ],
+      "hebrew": [
+       {
+        "chapter": 1,
+        "first": 1,
+        "last": 3
+       },
+       {
+        "chapter": 1,
+        "first": 300,
+        "last": 302
+       }
+      ]
+     },
+     "unresolved": null
+    }
+   ]
+  }
+ ]
+}

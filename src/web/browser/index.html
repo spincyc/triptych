@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triptych — Scripture Browser</title>
+<link rel="stylesheet" href="browser.css">
+</head>
+<body>
+<a class="skip-link" href="#reading">Skip to the reading</a>
+
+<header class="page-header">
+  <h1>Scripture Browser</h1>
+  <p class="lede">
+    Choose a Mass from the calendar, or a reading from the plan, and a
+    translation. The page holds the structure and fetches only the chapters that
+    the chosen Mass or reading actually cites. Reading-plan tiers nest: the
+    overview is the smallest set, the year tier is everything.
+  </p>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="controls" class="controls" aria-labelledby="controls-heading">
+  <h2 id="controls-heading" class="visually-hidden">Selection</h2>
+
+  <div class="field field-mode">
+    <label for="mode-select">View</label>
+    <select id="mode-select" name="mode">
+      <option value="propers">Mass propers</option>
+      <option value="readings">Reading plan</option>
+    </select>
+  </div>
+
+  <!-- Tiers apply to the reading plan only; the field is hidden, not merely
+       greyed, in propers mode, so it leaves the tab order with it. -->
+  <div class="field field-tier" id="tier-field" hidden>
+    <label for="tier-select">Tier</label>
+    <select id="tier-select" name="tier" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="entry-select" id="entry-label">Mass</label>
+    <select id="entry-select" name="entry" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="bible-select">Translation</label>
+    <select id="bible-select" name="bible" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-steps">
+    <span class="field-legend" id="step-legend">Step</span>
+    <div class="steps" role="group" aria-labelledby="step-legend">
+      <button type="button" id="prev-button" disabled>
+        <span aria-hidden="true">←</span> Previous
+      </button>
+      <button type="button" id="next-button" disabled>
+        Next <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- The reading is not itself a live region: replacing it would read the whole
+     Mass, or the whole reading, aloud on every change. browser.js announces a
+     one-line summary through #reading-status instead. -->
+<main id="reading" class="reading" tabindex="-1" aria-busy="false">
+  <p class="placeholder">Loading the calendar…</p>
+</main>
+
+<footer class="page-footer">
+  <p>
+    Nothing here is pre-rendered. Every Mass-and-translation and
+    reading-and-translation pairing is assembled in the browser from the same
+    shared chapter fragments, in one page rather than two; see the notes at the
+    top of <code>browser.js</code> before turning any of it into static pages or
+    splitting the two modes apart.
+  </p>
+</footer>
+
+<script src="browser.js"></script>
+</body>
+</html>

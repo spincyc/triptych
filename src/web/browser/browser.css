@@ -1,0 +1,388 @@
+/* Scripture browser — plain CSS, no build step, no external assets.
+   Colours are declared once as custom properties and re-declared under
+   prefers-color-scheme so the whole page follows the reader's setting. */
+
+:root {
+  color-scheme: light dark;
+
+  --page: #fbfaf7;
+  --panel: #ffffff;
+  --ink: #1d1b17;
+  --ink-soft: #55504a;
+  --ink-faint: #7b746b;
+  --rule: #ddd7cc;
+  --rule-soft: #ece7dd;
+  --accent: #7a3b20;
+  --accent-soft: #f3e9e2;
+  --notice: #7a2f2f;
+  --notice-bg: #f8ecea;
+  --focus: #14539a;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+    Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --measure: 65ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #14130f;
+    --panel: #1c1b17;
+    --ink: #ece7dd;
+    --ink-soft: #b9b2a6;
+    --ink-faint: #8e877c;
+    --rule: #35322b;
+    --rule-soft: #26241f;
+    --accent: #e0a884;
+    --accent-soft: #2a221c;
+    --notice: #f0a9a0;
+    --notice-bg: #2c1d1b;
+    --focus: #8fbcf0;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  max-width: 52rem;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* ---- Skip link and screen-reader helpers ---- */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.6rem 1rem;
+  background: var(--panel);
+  color: var(--ink);
+  border: 2px solid var(--focus);
+  border-radius: 0 0 6px 0;
+  z-index: 10;
+}
+
+.skip-link:focus { left: 0; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---- Header ---- */
+
+.page-header { margin-bottom: 1.5rem; }
+
+.page-header h1 {
+  margin: 0 0 0.35rem;
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.lede {
+  margin: 0;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+/* ---- Banner ---- */
+
+.banner {
+  margin: 0 0 1.25rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  max-width: var(--measure);
+}
+
+.banner[hidden] { display: none; }
+
+/* ---- Controls ---- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+  margin: 0 0 2rem;
+  padding: 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+  flex: 1 1 16rem;
+}
+
+/* A hidden field must actually go: display:flex would otherwise beat the
+   hidden attribute and leave the tier select on screen in propers mode. */
+.field[hidden] { display: none; }
+
+.field-mode, .field-tier { flex: 1 1 11rem; }
+
+.field label,
+.field-legend {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.field select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--page);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+}
+
+.field select:disabled { opacity: 0.6; }
+
+.field-steps { flex: 0 0 auto; }
+
+.steps { display: flex; gap: 0.5rem; }
+
+.steps button {
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--page);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.steps button:hover:not(:disabled) { border-color: var(--accent); }
+
+.steps button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ---- Reading ---- */
+
+.reading { max-width: var(--measure); }
+
+.reading:focus { outline: none; }
+
+.reading[aria-busy="true"] { opacity: 0.55; }
+
+.placeholder, .error {
+  margin: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.entry-title {
+  margin: 0 0 0.15rem;
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+}
+
+.entry-meta {
+  margin: 0 0 1.5rem;
+  color: var(--ink-faint);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Reading plan ---- */
+
+.period-summary {
+  margin: 0 0 1.25rem;
+  padding: 0 0 0 0.9rem;
+  border-left: 2px solid var(--rule-soft);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.reading-note {
+  margin: 0 0 1.75rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.reading-note-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.omissions {
+  margin: 2rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.omissions summary {
+  cursor: pointer;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+
+.omissions-body {
+  margin: 0.75rem 0 0;
+  white-space: pre-wrap;
+}
+
+.proper {
+  margin: 0 0 2.5rem;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid var(--rule-soft);
+}
+
+.proper-name {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.proper-incipit {
+  margin: 0.15rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.citation { margin-top: 1rem; }
+
+.citation-ref {
+  margin: 0 0 0.3rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+/* Scripture proper: the reason for the generous measure and leading. */
+.passage {
+  margin: 0 0 0.75rem;
+  font-family: var(--serif);
+  font-size: 1.09rem;
+  line-height: 1.85;
+  hyphens: auto;
+}
+
+.passage:last-child { margin-bottom: 0; }
+
+.verse { display: inline; }
+
+.verse-num {
+  font-family: var(--sans);
+  font-size: 0.62em;
+  font-weight: 600;
+  line-height: 0;
+  vertical-align: super;
+  margin-right: 0.22em;
+  color: var(--ink-faint);
+  user-select: none;
+}
+
+.composed {
+  margin: 1rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.09rem;
+  line-height: 1.85;
+}
+
+.composed-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+/* A citation that could not be rendered always says so, in place. */
+.notice {
+  margin: 0.5rem 0 0;
+  padding: 0.55rem 0.75rem;
+  border-left: 3px solid var(--notice);
+  border-radius: 0 4px 4px 0;
+  background: var(--notice-bg);
+  color: var(--notice);
+  font-size: 0.92rem;
+}
+
+.notice strong { font-weight: 700; }
+
+/* ---- Footer ---- */
+
+.page-footer {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  max-width: var(--measure);
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
+
+.page-footer p { margin: 0; }
+
+.page-footer code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+@media (max-width: 34rem) {
+  body { padding: 1.25rem 1rem 3rem; }
+  .controls { padding: 0.85rem; }
+  .field-steps { flex: 1 1 100%; }
+  .steps button { flex: 1 1 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

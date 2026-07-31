@@ -1,0 +1,311 @@
+#!/usr/bin/env python3
+"""Validate the abridged reading plans and emit their browser structure.
+
+A reading plan is a curated sequence of passages, which makes it two things at
+once: an editorial claim about what carries the story, and a set of references
+that must resolve to real verses. This tool owns the second. It checks that
+every reading addresses text the library actually holds, that the tiers form a
+partition rather than overlapping, and that the order is a single unbroken
+sequence — then writes the same structure shape the propers browser reads, so
+one page can render either.
+
+Loci are resolved here, in both numbering systems, for the reason the propers
+structure does it: a page that had to convert psalm numbers would need the
+psalter's correspondence in the browser, and the first thing to go wrong would
+be silent.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _psalms import PSALMS, SYSTEMS, NumberingError, convert_range  # noqa: E402
+from _tooling import print_json, run_verb_cli  # noqa: E402
+
+DEFAULT_ROOT = ROOT / "src" / "sources" / "reading-plans"
+SCHEMA = "triptych-reading-plan/v1"
+BOOK_INDEX = (
+    ROOT / "src/sources/works/english-college-of-douay/douay-rheims-bible/editions"
+    "/challoner-gutenberg-1581/artifacts"
+)
+REQUIRED = ("schema", "title", "canon", "numbering", "tiers", "omissions", "precedents", "periods")
+
+
+def read_tsv(path: Path) -> list[dict[str, str]]:
+    import csv
+
+    with path.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle, delimiter="\t"))
+
+
+def sole(prefix: str, name: str) -> Path:
+    found = sorted(BOOK_INDEX.glob(f"{prefix}-*/{name}"))
+    if len(found) != 1:
+        raise ValueError(f"expected one {prefix} artifact, found {len(found)}")
+    return found[0]
+
+
+def verse_text() -> tuple[dict[str, str], dict[tuple[str, int], tuple[int, int]]]:
+    """Book tokens by modern name, and each chapter's printed verse bounds.
+
+    Read from the Douay-Rheims because it is the tracked Vulgate-numbered
+    witness the plan declares itself against; a reading that names a verse this
+    edition does not print is addressing nothing.
+    """
+    tokens = {row["modern_name"]: row["token"] for row in read_tsv(sole("book-index", "book-index.tsv"))}
+    bounds: dict[tuple[str, int], tuple[int, int]] = {}
+    for path in sorted(BOOK_INDEX.glob("verse-text-*/*.tsv")):
+        for row in read_tsv(path):
+            here = (row["book"], int(row["chapter"]))
+            verse = int(row["verse"])
+            low, high = bounds.get(here, (verse, verse))
+            bounds[here] = (min(low, verse), max(high, verse))
+    return tokens, bounds
+
+
+def load_plan(path: Path) -> dict:
+    import yaml
+
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(document, dict):
+        raise ValueError(f"{path}: top level must be a mapping")
+    return document
+
+
+def readings_of(document: dict) -> list[tuple[dict, dict]]:
+    out = []
+    for period in document.get("periods") or []:
+        if not isinstance(period, dict):
+            continue
+        for reading in period.get("readings") or []:
+            if isinstance(reading, dict):
+                out.append((period, reading))
+    return out
+
+
+def check_plan(path: Path, document: dict, tokens: dict, bounds: dict) -> list[str]:
+    problems: list[str] = []
+    for field in REQUIRED:
+        if field not in document:
+            problems.append(f"{path}: missing {field}")
+    if document.get("schema") != SCHEMA:
+        problems.append(f"{path}: schema must be {SCHEMA!r}, got {document.get('schema')!r}")
+    numbering = document.get("numbering")
+    if numbering not in SYSTEMS:
+        problems.append(f"{path}: numbering must be one of {list(SYSTEMS)}, got {numbering!r}")
+        return problems
+
+    tiers = document.get("tiers") or {}
+    pairs = readings_of(document)
+    if not pairs:
+        problems.append(f"{path}: carries no readings")
+        return problems
+
+    # A tier is read by taking every reading at that tier or above, so a tier
+    # name that no reading uses would silently offer an empty pass.
+    used = {reading.get("tier") for _, reading in pairs}
+    for name in used:
+        if name not in tiers:
+            problems.append(f"{path}: a reading claims undeclared tier {name!r}")
+    for name in tiers:
+        if name not in used:
+            problems.append(f"{path}: tier {name!r} is declared but no reading enters at it")
+
+    orders = [reading.get("order") for _, reading in pairs]
+    if orders != list(range(1, len(orders) + 1)):
+        problems.append(f"{path}: order must run 1..{len(orders)} without gaps or repeats")
+
+    for _, reading in pairs:
+        where = f"{path}: reading {reading.get('order')}"
+        book = reading.get("book")
+        token = tokens.get(book)
+        if token is None:
+            problems.append(f"{where}: no book named {book!r} in the library")
+            continue
+        for span in reading.get("ranges") or []:
+            begin = (span or {}).get("begin") or {}
+            end = (span or {}).get("end") or begin
+            for edge, point in (("begin", begin), ("end", end)):
+                chapter, verse = point.get("chapter"), point.get("verse")
+                extent = bounds.get((token, chapter))
+                if extent is None:
+                    problems.append(f"{where}/{edge}: {book} has no chapter {chapter}")
+                    continue
+                if verse is not None and not extent[0] <= verse <= extent[1]:
+                    problems.append(
+                        f"{where}/{edge}: {book} {chapter}:{verse} is outside "
+                        f"{extent[0]}-{extent[1]}"
+                    )
+    return problems
+
+
+def reading_structure(reading: dict, source: str, tokens: dict) -> dict:
+    book = str(reading.get("book") or "")
+    structure = {
+        "order": reading.get("order"),
+        "tier": reading.get("tier"),
+        "title": reading.get("title"),
+        "book": book,
+        "token": tokens.get(book),
+        "note": reading.get("note"),
+        "loci": {},
+        "unresolved": None,
+    }
+    if structure["token"] is None:
+        structure["unresolved"] = f"no book named {book!r} in this library"
+        return structure
+    for target in SYSTEMS:
+        loci = []
+        try:
+            for span in reading.get("ranges") or []:
+                begin = (span or {}).get("begin") or {}
+                end = (span or {}).get("end") or begin
+                for piece in convert_range(book, begin, end, source, target)[0]:
+                    head, tail = piece.get("begin") or {}, piece.get("end") or {}
+                    loci.append(
+                        {
+                            "chapter": head.get("chapter"),
+                            "first": head.get("verse"),
+                            "last": tail.get("verse"),
+                        }
+                    )
+        except NumberingError as error:
+            structure["loci"] = {}
+            structure["unresolved"] = str(error)
+            return structure
+        structure["loci"][target] = loci
+    return structure
+
+
+def plan_structure(document: dict, tokens: dict) -> dict:
+    source = document["numbering"]
+    periods = []
+    for period in document.get("periods") or []:
+        periods.append(
+            {
+                "key": period.get("key"),
+                "label": period.get("label"),
+                "summary": period.get("summary"),
+                "readings": [
+                    reading_structure(reading, source, tokens)
+                    for reading in (period.get("readings") or [])
+                    if isinstance(reading, dict)
+                ],
+            }
+        )
+    return {
+        "schema": "triptych-reading-structure/v1",
+        "plan": document.get("title"),
+        "canon": document.get("canon"),
+        "numbering": source,
+        "tiers": document.get("tiers"),
+        "omissions": document.get("omissions"),
+        "periods": periods,
+    }
+
+
+def plans(root: Path) -> list[Path]:
+    found = sorted(root.glob("*.yaml"))
+    if not found:
+        raise ValueError(f"no reading plan under {root}")
+    return found
+
+
+def run_check(arguments: argparse.Namespace) -> dict:
+    tokens, bounds = verse_text()
+    problems: list[str] = []
+    counts: dict[str, int] = {}
+    for path in plans(Path(arguments.root)):
+        document = load_plan(path)
+        problems.extend(check_plan(path, document, tokens, bounds))
+        counts[path.stem] = len(readings_of(document))
+    if problems:
+        raise ValueError("; ".join(problems[:4]) + (f" (and {len(problems) - 4} more)" if len(problems) > 4 else ""))
+    return {"plans": counts, "problems": problems, "status": "ok"}
+
+
+def run_structure(arguments: argparse.Namespace) -> dict:
+    tokens, bounds = verse_text()
+    out = Path(arguments.out)
+    written, counts, refused = [], {}, []
+    for path in plans(Path(arguments.root)):
+        document = load_plan(path)
+        problems = check_plan(path, document, tokens, bounds)
+        if problems:
+            raise ValueError(f"{path} does not validate; run `reading-plan check`")
+        built = plan_structure(document, tokens)
+        target = out / "structure" / "readings" / f"{path.stem}.json"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(
+            json.dumps(built, ensure_ascii=False, sort_keys=True, indent=1) + "\n",
+            encoding="utf-8",
+        )
+        written.append(str(target))
+        rows = [r for period in built["periods"] for r in period["readings"]]
+        counts[path.stem] = len(rows)
+        refused.extend(f"{path.stem} {r['title']}: {r['unresolved']}" for r in rows if r["unresolved"])
+    return {
+        "written": written,
+        "plans": counts,
+        "refused": refused if arguments.verbose else len(refused),
+        "status": "ok",
+    }
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("reading-plan error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    for name, count in payload["plans"].items():
+        print(f"{name}: {count} readings")
+    for path in payload.get("written") or []:
+        print(f"  -> {path}")
+    refused = payload.get("refused")
+    if isinstance(refused, list):
+        for row in refused:
+            print(f"  refused {row}")
+    elif isinstance(refused, int):
+        print(f"  refused: {refused}")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--root", default=str(DEFAULT_ROOT), help="reading-plan directory")
+    shared.add_argument("--out", default="src/web/data", help="where `structure` writes")
+    shared.add_argument("--format", choices=("text", "json"), default="text")
+    shared.add_argument("--verbose", action="store_true", help="list every refused reading")
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    parser = argparse.ArgumentParser(
+        prog="reading-plan",
+        description="Validate the abridged reading plans and emit their browser structure.",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("check", help="validate every plan", parents=[shared])
+    sub.add_parser("structure", help="write the browser's reading structure", parents=[shared])
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"check": run_check, "structure": run_structure},
+        renderer=render,
+        prefix="reading-plan",
+        argv=argv,
+        default_verb="check",
+        dependency_message="install PyYAML (requirements-tools.txt)",
+        mapped_errors={ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

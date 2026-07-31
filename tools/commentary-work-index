@@ -491,13 +491,26 @@ def _build_mass_coverage(
     mass_work_passage_map: dict[str, set[str]] = defaultdict(set)
     passage_to_masses: dict[str, list[str]] = defaultdict(list)
     unresolved: list[str] = []
+    unconvertible: list[dict[str, str]] = []
     work_metadata: dict[str, dict[str, Any]] = {}
     mass_seen: dict[str, dict[str, Any]] = {}
 
     for item in records:
         mass_id = f"{item['calendar']}::{item['mass_key']}"
         cited_ref = item["passage"]["ref"]
-        canonical = _canonical_passage(item["passage"], item.get("numbering", CANONICAL_NUMBERING))
+        try:
+            canonical = _canonical_passage(
+                item["passage"], item.get("numbering", CANONICAL_NUMBERING)
+            )
+        except NumberingError as error:
+            # A reference that does not exist in the system its calendar
+            # declares cannot be normalised into another one. Record it and
+            # carry on: the corpus covers the psalter, and one calendar's
+            # mis-numbered antiphon is not a reason to build none of it.
+            entry = {"mass": mass_id, "ref": cited_ref, "reason": str(error)}
+            if entry not in unconvertible:
+                unconvertible.append(entry)
+            continue
         passage_ref = canonical["ref"]
         item = {**item, "passage": canonical, "cited_ref": cited_ref}
         mass_seen.setdefault(
@@ -603,7 +616,13 @@ def _build_mass_coverage(
             continue
         full_corpus.append(meta)
 
-    return by_mass_payload, passage_to_masses, sorted(unresolved), full_corpus
+    return (
+        by_mass_payload,
+        passage_to_masses,
+        sorted(unresolved),
+        full_corpus,
+        sorted(unconvertible, key=lambda row: (row["mass"], row["ref"])),
+    )
 
 
 def _load_calendar_doc(path: Path) -> dict[str, Any]:
@@ -649,6 +668,8 @@ def _render_payload(
         )
         print(f"total works in union corpus: {len(payload['corpus'])}")
         print(f"unresolved passages: {payload['unresolved_passage_count']}")
+        for row in payload.get("unconvertible_references") or []:
+            print(f"unconvertible {row['mass']} {row['ref']}: {row['reason']}")
         print()
         for mass in payload["masses"][:20]:
             print(
@@ -733,7 +754,7 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     if not calendar_records:
         raise ValueError("no scripture passages were extracted from the requested calendars")
 
-    masses_payload, passage_to_masses, unresolved, full_corpus = _build_mass_coverage(
+    masses_payload, passage_to_masses, unresolved, full_corpus, unconvertible = _build_mass_coverage(
         citations,
         discovery,
         calendar_records,
@@ -750,6 +771,7 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
         "mass_count": len(masses_payload),
         "covered_mass_count": len([mass for mass in masses_payload if mass["works"]]),
         "unresolved_passage_count": len(unresolved),
+        "unconvertible_references": unconvertible,
         "passages": [
             {
                 "passage": passage,

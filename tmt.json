@@ -30,6 +30,7 @@
       "origin": "local",
       "purpose": "Validate the normalized YAML mass-proper indexes under src/sources/calendars.",
       "requires": [
+        "calendar-spine",
         "citations"
       ],
       "stage": "draft",
@@ -149,10 +150,25 @@
       "origin": "local",
       "purpose": "Build an indexed bible from the source library's tracked verse text.",
       "requires": [
+        "citations",
         "mass-propers"
       ],
       "stage": "draft",
-      "usage": "index-bible {check,build} [--bible ID] [--root DIR] [--bible-root DIR] [--verbose]"
+      "usage": "index-bible {check,build,manifest} [--bible ID] [--root DIR] [--bible-root DIR] [--out DIR] [--verbose]"
+    },
+    "knox-bible": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Retrieve the Knox Bible from its publisher's site into source-library artifacts.",
+      "requires": [
+        "index-bible",
+        "source-library"
+      ],
+      "stage": "draft",
+      "usage": "knox-bible {plan,fetch,build} --root DIR [--pace SECONDS] [--limit N] [--verbose]"
     },
     "mass-propers": {
       "idempotent": true,
@@ -161,9 +177,11 @@
       "mutates": false,
       "origin": "local",
       "purpose": "Print one mass's propers as YAML, JSON, or a reading view.",
-      "requires": [],
+      "requires": [
+        "citations"
+      ],
       "stage": "draft",
-      "usage": "mass-propers [--root DIR] [--calendar NAME] [--mass KEY] {show,list} [--format {text,yaml,json}]"
+      "usage": "mass-propers [--root DIR] [--calendar NAME] [--mass KEY] {show,list,structure} [--format {text,yaml,json}] [--out DIR]"
     },
     "pdf-review": {
       "idempotent": true,
@@ -184,10 +202,23 @@
       "origin": "local",
       "purpose": "Inventory, validate, build, and verify Triptych's public-alpha artifact.",
       "requires": [
+        "citations",
+        "index-bible",
         "web-edition"
       ],
       "stage": "draft",
       "usage": "public-alpha {check,prepare,build,verify} [--preview]"
+    },
+    "reading-plan": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Validate the abridged reading plans and emit their browser structure.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "reading-plan {check,structure} [--root DIR] [--out DIR] [--verbose]"
     },
     "release-bindings": {
       "idempotent": true,
