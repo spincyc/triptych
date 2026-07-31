@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.book-index-fcad78c2"
+edition_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table recording the identity and naming of public-domain biblical books. It contains no third-party text and no exclusive right is claimed in the underlying facts."
+retrieved = "2026-07-30"
+sha256 = "fcad78c2275ec7a7a79d20cbeae678de8ef4d13fa154912a117b23bef429c1a0"
+byte_size = 9071
+path = "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/book-index-fcad78c2/book-index.tsv"
+rights_jurisdiction = "United States"
+provenance = "The book identities, tokens, and names of the Douay-Rheims Challoner book index, restated for this edition because the two carry the same 73 books in the same Vulgate order and must be addressed by the same tokens. Each eBible.org USFM file was matched to its row by USFM book code and its chapter count checked against the Douay-Rheims before the row was accepted. Compiled by Triptych on 2026-07-30."
+indexable = true
+encoding = "utf-8"
+notes = "73 books. Tokens are shared with the Douay-Rheims so a citation resolves to the same book in either edition."

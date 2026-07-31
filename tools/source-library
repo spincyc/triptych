@@ -1766,10 +1766,21 @@ def _validate_source_tree(library: Library) -> None:
             continue
         if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
             continue
-        # Calendar and commentary records are tracked sources with their own
-        # validators (check-calendar-masses, citations); the bibliographic
-        # schema does not own them.
-        if relative.parts[0] in {"bibles", "calendars", "commentary"} and entry.suffix in {".md", ".yaml"}:
+        # Bible, calendar and commentary records are tracked sources with their
+        # own validators (index-bible, check-calendar-masses, citations); the
+        # bibliographic schema owns neither their contents nor their formats.
+        # The chapter fragments index-bible derives are .json and are checked
+        # for staleness and for orphans by the tool that writes them.
+        if relative.parts[0] in {
+            "bibles",
+            "calendars",
+            "commentary",
+            "reading-plans",
+        } and entry.suffix in {
+            ".json",
+            ".md",
+            ".yaml",
+        }:
             continue
         if entry.resolve() in library.payload_paths:
             continue
