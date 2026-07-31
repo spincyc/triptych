@@ -11,7 +11,7 @@ harvest contract; this file owns nothing — it points at the owners and states
 what breaks.
 
 All figures below were recomputed on 2026-07-31 against
-`narrative-spine.yaml` `sha256:1d0a0a7c…` and `harvest-ledger.yaml`
+`narrative-spine.yaml` `sha256:5008d353…` and `harvest-ledger.yaml`
 `sha256:9ed0293a…`. Every figure names the command that produces it. Recompute
 before quoting; do not trust a number in prose over a number you measured.
 
