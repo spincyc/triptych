@@ -277,7 +277,32 @@ long because they were derived, not remembered.
 - **16 psalms divide their bodies differently as well** and are flagged
   `english_offset_uniform: no` — Hebrew 2, 4, 13, 20, 29, 43, 44, 53, 56, 72,
   100, 109, 126, 136, 146, 150. `english_verse` refuses for these. Do not apply
-  the head-of-psalm offset.
+  the head-of-psalm offset. **These sixteen are externally corroborated and the
+  list is complete.** Three independent detectors built only from outside data —
+  SWORD `vm_vulg` verse counts against the Douay, TVTMS `SubdividedVerse` and
+  `MergedPrevVerse` rows in its Latin column, and TVTMS Latin title treatment
+  against the Douay's recorded offset — union to exactly these sixteen, no more
+  and no less, and an independent word-overlap alignment against an external
+  King James recovered the same sixteen and nothing else. TVTMS also reproduces
+  the 2026-07-30 Psalm 12 correction verbatim, split and merge included.
+
+- **Do not confuse a wrong verse number with a displaced verse boundary.** They
+  are different defects of different severity, and the second is not what
+  `english_offset_uniform` means. In the sixteen above the offset lands on
+  *entirely different text*. In a larger set — an audit of 31 July 2026 proposed
+  38, and hand-verified 7 of them — the verse count is equal, the offset is
+  uniform, the verse *number* is right, and only the boundary is displaced by a
+  clause: the King James Psalm 130:5 runs "I wait for the LORD, my soul doth
+  wait" where the Douay's 129:4 already carries "my soul hath relied on his
+  word". A reader lands within a verse of the passage rather than on a different
+  passage. No external standard models this: TVTMS's `StartDifferent` relation
+  exists for exactly it and is used three times in the whole file and never in
+  the Psalms, Copenhagen's `partialVerses` has one Psalms entry, and SWORD has
+  no subverse concept at all. So an external witness settles the sixteen and
+  cannot settle the thirty-eight. Do not fold the second class into the first by
+  flagging it `no`: that would take `english_verse` from refusing 16 of 150
+  psalms to refusing 54, on a basis no standard supports, to describe a smaller
+  error.
 - **Beyond the psalter** (Nova Vulgata against every edition tracked here): Joel 4
   chapters vs 3; Malachi 3 vs 4; Isaiah 8 to v. 23 vs v. 22; Isaiah 64 with 11
   verses vs 12; Micah 4 to v. 14 vs v. 13. Resolutions:
