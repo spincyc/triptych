@@ -424,7 +424,21 @@ class Bible:
         for chapter in range(int(first), int(last) + 1):
             bounds = self.chapters.get((token, chapter))
             if bounds is None:
-                return [], f"{token} has no chapter {chapter}", (), ()
+                # The edition prints no chapter of that number, and that is not
+                # the end of the question: its alias table may record where it
+                # carries those verses, which is precisely what a book divided
+                # differently needs. Refusing here consulted `self.chapters`
+                # ahead of the aliases — the same ordering defect as the verse
+                # clamp, one level up, and it kept tracked concordance rows for
+                # Esther and Daniel permanently out of reach.
+                recorded = sorted(
+                    verse
+                    for (held, held_chapter, verse) in self.aliases
+                    if held == token and held_chapter == chapter
+                )
+                if not recorded:
+                    return [], f"{token} has no chapter {chapter}", (), ()
+                bounds = (recorded[0], recorded[-1])
             base, bound = bounds
             low = begin.get("verse") if chapter == int(first) else None
             high = end.get("verse") if chapter == int(last) else None
