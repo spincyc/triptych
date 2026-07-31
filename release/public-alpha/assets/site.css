@@ -113,13 +113,13 @@ nav a { color: var(--ink); text-decoration: none; }
   border-top: 0.2rem solid transparent;
   border-image: linear-gradient(
     90deg,
-    #747b80 0 14.285%,
-    #aa7715 14.285% 28.57%,
-    #a84338 28.57% 42.855%,
-    #3d7650 42.855% 57.14%,
-    #6b4b86 57.14% 71.425%,
-    #b86583 71.425% 85.71%,
-    #413f3d 85.71% 100%
+    #6d7a84 0 14.285%,
+    #b07c07 14.285% 28.57%,
+    #b33a26 28.57% 42.855%,
+    #2c7a51 42.855% 57.14%,
+    #5a3f96 57.14% 71.425%,
+    #c96b9c 71.425% 85.71%,
+    #3c3a38 85.71% 100%
   ) 1;
 }
 
@@ -155,72 +155,72 @@ nav a { color: var(--ink); text-decoration: none; }
   border-top: 0.3rem solid var(--section-accent);
 }
 .section-white {
-  --section-accent: #747b80;
-  --section-ink: #565d61;
-  --section-wash: rgba(116, 123, 128, 0.15);
-  --section-pale: #e4e6e5;
-  --section-row: #eff0ed;
-  --section-line: #bfc4c5;
+  --section-accent: #6d7a84;
+  --section-ink: #4c555d;
+  --section-wash: rgba(109, 122, 132, 0.16);
+  --section-pale: #c8ccd0;
+  --section-row: #e2e4e6;
+  --section-line: #a4adb3;
   --section-symbol-primary: "☧";
   --section-symbol-secondary: "✠";
 }
 .section-gold {
-  --section-accent: #aa7715;
-  --section-ink: #76500d;
-  --section-wash: rgba(170, 119, 21, 0.16);
-  --section-pale: #efe0ab;
-  --section-row: #f4ecd1;
-  --section-line: #d7be72;
-  --section-symbol-primary: "Α";
-  --section-symbol-secondary: "Ω";
+  --section-accent: #b07c07;
+  --section-ink: #7e5802;
+  --section-wash: rgba(176, 124, 7, 0.16);
+  --section-pale: #e1cda1;
+  --section-row: #efe5cd;
+  --section-line: #ceae65;
+  --section-symbol-primary: "α";
+  --section-symbol-secondary: "ω";
 }
 .section-red {
-  --section-accent: #a84338;
-  --section-ink: #7b2d26;
-  --section-wash: rgba(168, 67, 56, 0.16);
-  --section-pale: #ebc6c2;
-  --section-row: #f2ded9;
-  --section-line: #d59a92;
+  --section-accent: #b33a26;
+  --section-ink: #802718;
+  --section-wash: rgba(179, 58, 38, 0.16);
+  --section-pale: #e2b4ad;
+  --section-row: #f0d8d4;
+  --section-line: #d08578;
   --section-symbol-primary: "℣";
   --section-symbol-secondary: "℟";
 }
 .section-green {
-  --section-accent: #3d7650;
-  --section-ink: #295a3a;
-  --section-wash: rgba(61, 118, 80, 0.16);
-  --section-pale: #cfe1d3;
-  --section-row: #e2ebe2;
-  --section-line: #9fbea8;
+  --section-accent: #2c7a51;
+  --section-ink: #1d5739;
+  --section-wash: rgba(44, 122, 81, 0.16);
+  --section-pale: #afccbd;
+  --section-row: #d5e4dc;
+  --section-line: #7cad93;
   --section-symbol-primary: "❦";
   --section-symbol-secondary: "✣";
 }
 .section-violet {
-  --section-accent: #6b4b86;
-  --section-ink: #50366a;
-  --section-wash: rgba(107, 75, 134, 0.16);
-  --section-pale: #ddd0e7;
-  --section-row: #e9e1ed;
-  --section-line: #b9a2cb;
+  --section-accent: #5a3f96;
+  --section-ink: #3e2b6b;
+  --section-wash: rgba(90, 63, 150, 0.16);
+  --section-pale: #c0b6d7;
+  --section-row: #ded9ea;
+  --section-line: #9988be;
   --section-symbol-primary: "✦";
   --section-symbol-secondary: "❖";
 }
 .section-rose {
-  --section-accent: #b86583;
-  --section-ink: #82445a;
-  --section-wash: rgba(184, 101, 131, 0.17);
-  --section-pale: #efd2db;
-  --section-row: #f3e1e5;
-  --section-line: #d9a9b9;
+  --section-accent: #c96b9c;
+  --section-ink: #a0376e;
+  --section-wash: rgba(201, 107, 156, 0.17);
+  --section-pale: #eac7d9;
+  --section-row: #f4e1eb;
+  --section-line: #dea3c2;
   --section-symbol-primary: "✷";
   --section-symbol-secondary: "✥";
 }
 .section-black {
-  --section-accent: #413f3d;
-  --section-ink: #2e2c2a;
-  --section-wash: rgba(65, 63, 61, 0.14);
-  --section-pale: #d4d0cc;
-  --section-row: #e5e1dc;
-  --section-line: #aaa49e;
+  --section-accent: #3c3a38;
+  --section-ink: #2a2927;
+  --section-wash: rgba(60, 58, 56, 0.14);
+  --section-pale: #b5b4b3;
+  --section-row: #d8d8d7;
+  --section-line: #868584;
   --section-symbol-primary: "§";
   --section-symbol-secondary: "¶";
 }
@@ -374,15 +374,11 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
   border-collapse: separate;
   border-spacing: 0 0.48rem;
 }
-.page-home table:first-of-type th,
-.page-library-root table:first-of-type th {
-  padding-block: 0.4rem;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+/* The portal tables name a section and describe it, which the rows already
+   say; Markdown requires the header row, so it is written and not shown. */
+.page-home table:first-of-type thead,
+.page-library-root table:first-of-type thead {
+  display: none;
 }
 .page-home table:first-of-type td,
 .page-library-root table:first-of-type td {
@@ -408,19 +404,19 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
   opacity: 0.8;
 }
 .page-home table:first-of-type tbody tr:nth-child(1),
-.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #747b80; --portal-pale: #e4e6e5; --portal-symbol: "☧"; }
+.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #6d7a84; --portal-pale: #c8ccd0; --portal-symbol: "☧"; }
 .page-home table:first-of-type tbody tr:nth-child(2),
-.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #aa7715; --portal-pale: #efe0ab; --portal-symbol: "Α"; }
+.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #b07c07; --portal-pale: #e1cda1; --portal-symbol: "α"; }
 .page-home table:first-of-type tbody tr:nth-child(3),
-.page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #a84338; --portal-pale: #ebc6c2; --portal-symbol: "℣"; }
+.page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #b33a26; --portal-pale: #e2b4ad; --portal-symbol: "℣"; }
 .page-home table:first-of-type tbody tr:nth-child(4),
-.page-library-root table:first-of-type tbody tr:nth-child(4) { --portal-accent: #3d7650; --portal-pale: #cfe1d3; --portal-symbol: "❦"; }
+.page-library-root table:first-of-type tbody tr:nth-child(4) { --portal-accent: #2c7a51; --portal-pale: #afccbd; --portal-symbol: "❦"; }
 .page-home table:first-of-type tbody tr:nth-child(5),
-.page-library-root table:first-of-type tbody tr:nth-child(5) { --portal-accent: #6b4b86; --portal-pale: #ddd0e7; --portal-symbol: "✦"; }
+.page-library-root table:first-of-type tbody tr:nth-child(5) { --portal-accent: #5a3f96; --portal-pale: #c0b6d7; --portal-symbol: "✦"; }
 .page-home table:first-of-type tbody tr:nth-child(6),
-.page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #b86583; --portal-pale: #efd2db; --portal-symbol: "✷"; }
+.page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #c96b9c; --portal-pale: #eac7d9; --portal-symbol: "✷"; }
 .page-home table:first-of-type tbody tr:nth-child(7),
-.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #413f3d; --portal-pale: #d4d0cc; --portal-symbol: "§"; }
+.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #3c3a38; --portal-pale: #b5b4b3; --portal-symbol: "§"; }
 .page-home table:first-of-type tbody td,
 .page-library-root table:first-of-type tbody td {
   background: var(--portal-pale);

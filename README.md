@@ -32,6 +32,16 @@ Choose a section, open a PDF, and read.
 | **[Mary](library/mariology.md)** | Dogmas, prayer, apparitions, and history. |
 | **[Law](library/law-and-church-discipline.md)** | Canon law, Church discipline, and heresies. |
 
+## Source and Contact
+
+Everything here is built in the open at
+[github.com/spincyc/triptych](https://github.com/spincyc/triptych) — the sources,
+the tools that typeset them, and the checks that gate a release. Corrections and
+questions are welcome as an
+[issue](https://github.com/spincyc/triptych/issues) or by writing to
+<71109625+spincyc@users.noreply.github.com>. See
+[How to Contribute](CONTRIBUTING.md); a useful note can be one sentence.
+
 ## Reuse
 
 Project-created content is licensed under [CC BY 4.0](LICENSES/CC-BY-4.0.txt); software and the listed reusable typesetting tools under [MIT](LICENSES/MIT.txt). See [Licensing](LICENSE) and [Third-Party Material](THIRD_PARTY.md) for the boundaries.

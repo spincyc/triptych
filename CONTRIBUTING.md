@@ -6,7 +6,7 @@ Feedback starts an investigation; every proposed change is still checked against
 
 ## Easiest: Send a Short Note
 
-Ask the person who shared the PDF to pass your note to the project team, or open an issue on the project’s hosting page. The team can turn ordinary feedback into a prompt—a plain-language request—for an AI agent.
+Open an issue at [github.com/spincyc/triptych/issues](https://github.com/spincyc/triptych/issues), or write to <71109625+spincyc@users.noreply.github.com>. If you were given a PDF by someone else, passing your note back to them works just as well. The team can turn ordinary feedback into a prompt—a plain-language request—for an AI agent.
 
 Useful notes can be short:
 
