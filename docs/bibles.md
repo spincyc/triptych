@@ -13,8 +13,7 @@ because the target edition happens to print *something* at those numbers — and
 returns the wrong words under a correct-looking reference. Nothing counts that
 as a failure.
 
-Everything below is checkable against files in this repository. The headings are
-written to carry the argument on their own; the detail sits underneath each one.
+Everything below is checkable against files in this repository.
 
 ---
 
@@ -182,11 +181,10 @@ This library's authority for the correspondence is a tracked, verse-level
 concordance — `psalm-numbering.tsv`, an artifact of the Douay-Rheims edition —
 which maps all **2,528 verses** of the psalter in **219 rows**, one row per run
 of verses both systems number without interruption. It is data, not a remembered
-rule, and `scripts/_psalms.py` reads it and validates it on load: both sides of
-every row must be the same length, and each system must cover all 150 psalms
-with no gap and no overlap. The module deliberately holds no table of its own.
-The reason is recorded in its docstring — when the correspondence was restated
-in several places, the copies disagreed.
+rule, and it is validated every time it is read: both sides of every row must be
+the same length, and each system must cover all 150 psalms with no gap and no
+overlap. Nothing else in the repository restates the correspondence — when it
+was restated in several places, the copies disagreed.
 
 ### Second offset: whether a psalm's title counts as verse 1
 
@@ -425,25 +423,19 @@ departs, and there is nowhere to record that it departs.
 
 ### The silent clamp
 
-`index-bible` derives a chapter's bounds from the verses the edition actually
-prints, and then truncates a request to fit:
+A citation that runs past the last verse an edition prints is currently truncated
+to fit, and nothing reports it. So `1 Thessalonians 4:13-18` against the
+Douay-Rheims, whose chapter 4 ends at 17, returns verses 13 through 17 and
+reports no problem. Three citations are handled this way in the Douay-Rheims
+today — `1 Thessalonians 4:13-18`, `Acts 7:55-60` and `Mark 4:35-41` — and all
+three happen to lose no words, because the verse the Vulgate merged them into
+carries them. The same clamp against the Clementine's psalms destroys the
+passage.
 
-```python
-for verse in range(low, min(high, bound) + 1):
-```
-
-So `1 Thessalonians 4:13-18` against the Douay-Rheims, whose chapter 4 ends at
-17, returns verses 13 through 17 and reports no problem. Three citations are
-handled this way in the Douay-Rheims today — `1 Thessalonians 4:13-18`,
-`Acts 7:55-60` and `Mark 4:35-41` — and all three happen to lose no words,
-because the verse the Vulgate merged them into carries them. The same clamp
-against the Clementine's psalms destroys the passage.
-
-The design study `guidance/versification.md` names removing this clamp as the
-second item of work, and the shape of the replacement matters: the error message
-has to name the cited verse, the edition's last verse, **and the edition**,
-because `1 Thessalonians 4:18` is an error against the Douay and correct against
-the Clementine.
+Removing the clamp is recorded work, and the shape of the replacement matters:
+the error has to name the cited verse, the edition's last verse, **and the
+edition**, because `1 Thessalonians 4:18` is an error against the Douay and
+correct against the Clementine.
 
 ---
 

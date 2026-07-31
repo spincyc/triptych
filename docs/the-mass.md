@@ -13,13 +13,15 @@ Missal** is the last edition before the Second Vatican Council; the
 that replaced it. They share a rite, a language, and a great many actual texts,
 but they cut the year differently, name the slots differently, and read
 scripture on entirely different schedules. This repository models both, side by
-side, in one schema, and refuses to harmonize them where they genuinely differ.
+side, and refuses to harmonize them where they genuinely differ.
 
-This document explains what a proper is, how the two missals differ, and how
-this repository stores them. The headings alone give the shape; the prose under
-each gives the detail. Every number in it was counted from the repository's own
-files, and the commands that count them are in
+This document explains what a proper is, how the two missals differ, and what
+this repository actually holds of them. Every number in it was counted from the
+repository's own files, and the commands that count them are in
 [`guidance/propers-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/propers-for-agents.md).
+
+**[Browse the propers](../liturgy/)** — every Mass of both calendars, with each
+appointed passage rendered in the translation you choose.
 
 ---
 
@@ -114,10 +116,11 @@ Propers are also not a fixed template. The repository stores each Mass's propers
 **in the order the edition appoints them**, so Tracts, Sequences, the palm-rite
 antiphons, the Improperia, the Exsultet, the Holy Saturday prophecies and the
 litanies appear only where they are actually appointed, and a ten-row Sunday
-template is never imposed on a day that does not have ten rows. The data uses 88 distinct slot names in the 1962 file and 86 in the
-postconciliar one, and many occur exactly once: *First Antiphon at the
-Imposition of Ashes*, *Exsultet (Praeconium paschale)*, *Improperia*, *Fourth
-Prophecy*, *Washing of Feet, Antiphon 4*, *Chant at the Place of Reposition*.
+template is never imposed on a day that does not have ten rows. The data uses 88
+distinct slot names in the 1962 file and 86 in the postconciliar one, and many
+occur exactly once: *First Antiphon at the Imposition of Ashes*, *Exsultet
+(Praeconium paschale)*, *Improperia*, *Washing of Feet, Antiphon 4*, *Chant at
+the Place of Reposition*.
 
 ---
 
@@ -245,117 +248,6 @@ has not actually been checked.
 
 ---
 
-## How this repository models it
-
-### The files
-
-```text
-src/sources/calendars/
-  roman-1962/propers.yaml
-  postconciliar/propers.yaml
-```
-
-One directory per calendar, one file per calendar. Each file opens with a header
-that declares the schema, the controlling edition, the ordering rule, the
-registry that owns its identities, its psalm numbering, its citation convention,
-its Latin orthography, and — importantly — its **verification state**.
-
-Below the header sits `sections`, a mapping from section name to a body carrying
-its `kind`, a display `label`, and a `masses` list. That is the *single*
-canonical mass list: a top-level `masses` key that duplicates it is rejected
-outright by the validator, so the two cannot drift apart.
-
-### A mass entry
-
-```yaml
-- key: advent-1                # kebab-case identity, stable within the file
-  name: First Sunday of Advent # the edition's catalog name
-  registry: '39'               # quoted registry id; never a bare number
-  season: advent
-  propers:
-  - name: Introit
-    incipit: Ad te levavi
-    source: scripture
-    verses:
-    - book: Psalms
-      ranges:
-      - begin: {chapter: 24, verse: 1}
-        end: {chapter: 24, verse: 3}
-      ref: Psalm 24:1-3
-  - name: Collect
-    incipit: Excita, quaesumus
-    source: composed
-    text: |
-      Excita, quaesumus, Domine, potentiam tuam, et veni...
-```
-
-`source` is the load-bearing field, and it decides the shape of everything else:
-
-- `scripture` carries `verses` — the full ordered set of passages the text is
-  built from — and **no** `text`.
-- `composed` carries the full Latin `text` and **no** `verses`.
-- `mixed` carries both.
-
-The validator enforces this. A scripture proper with a `text` field fails; a
-composed proper with `verses` fails.
-
-`registry` is the identity in the owning registry document. The 1962 temporal
-Sundays carry the numbers `01`–`52` from
-[`guidance/liturgy/roman-1962-propers.md`](https://github.com/spincyc/triptych/blob/main/guidance/liturgy/roman-1962-propers.md),
-with `46R`–`49R` for the resumed Epiphany Sundays and `T01`–`T03` for the
-Triduum; the postconciliar Sundays carry `pc-s01`–`pc-s60` and `pc-t01`–`pc-t03`;
-fixed-date entries carry a date-derived id such as `1962-12-29` or `pc-01-02`.
-
-### Three special shapes
-
-**`forms`** replaces `propers` where one celebration has several complete Mass
-formularies. In the postconciliar data these are the Nativity's four Masses
-(Vigil, Night, Dawn, Day) and the Vigil and Day Masses of Epiphany, Ascension
-and Pentecost. In the 1962 data they are the four Ember Saturdays, each of which
-the Missal prints in a longer and a shorter form.
-
-**`cycles`** replaces the text on a proper whose content varies by Lectionary
-year, keyed `A`, `B`, `C`. Where the cycles differ in *kind* — the Third Sunday
-of Easter has a scriptural Gospel Acclamation in Years A and B and a composed one
-in Year C — `source` moves inside each cycle.
-
-**The placeholder.** A celebration whose formulary has not yet been authored
-holds exactly one proper:
-
-```yaml
-propers:
-- name: Placeholder
-  source: composed
-  text: |
-    This entry is a placeholder pending formula migration and source verification.
-```
-
-Nothing is partial. A Mass either has its propers or has exactly this and
-nothing else, so there is no half-finished tier to mistake for real data.
-
-### Citations are structured data
-
-A reference is never stored as a string to be re-parsed. `book` is the canonical
-Catholic-canon name — *Ecclesiasticus* and *Sirach* both resolve to `Sirach` —
-and `ranges` holds one or more contiguous extents. `ref` sits beside them as the
-edition's own printed display string and is **never authoritative**: everything
-downstream reads the ranges.
-
-The encoding handles what liturgical books actually print:
-
-- a selection within a chapter becomes several ranges — `Psalm 22:8-9, 17-20`;
-- a range may cross a chapter boundary, as the Passions do — `John 18:1-19:42`;
-- a chant sung entire is cited by chapter, with no verse on either edge;
-- a printed part-verse letter is kept — `{chapter: 4, verse: 10, part: b}`;
-- a one-chapter book resolves into chapter 1, so `Philemon 9-10` is chapter 1,
-  verses 9 to 10.
-
-`tools/citations` owns this. It is idempotent — re-running it on an encoded file
-changes nothing — and it **refuses** a citation it cannot encode without
-guessing rather than writing a wrong range.
-
----
-
 ## Two numberings, and eleven antiphons that fell between them
 
 The Latin psalter is numbered two ways, and over most of its length the Vulgate
@@ -364,8 +256,7 @@ Hebrew 85, Vulgate 118 is Hebrew 119. That is why the 1962 Introit cites
 Psalm 24 and the postconciliar Entrance Antiphon cites Psalm 25 for the same
 words. The correspondence is not a formula — six psalms divide between the two
 systems — so the repository converts through a tracked verse-level concordance
-built from the Challoner edition, owned by `scripts/_psalms.py`, and never from
-a typed table.
+built from the Challoner edition, and never from a typed table.
 
 Each calendar file declares its own numbering. `roman-1962` declares `vulgate`
 and means it throughout. `postconciliar` declares `hebrew` — and here the books
@@ -403,19 +294,10 @@ The eleven are:
 | ot-33 | Communion Antiphon | *Mihi autem adhaerere Deo bonum est* | Psalm 72:28 |
 | christ-the-king | Communion Antiphon | *Sedebit Dominus Rex in aeternum* | Psalm 28:10-11 |
 
-**The fix.** The schema now lets a *proper* declare its own numbering, rather
-than forcing a whole calendar into one. Each of those eleven propers now carries
-`psalm_numbering: vulgate`, and `tools/mass-propers` reads it: what a proper does
-not declare it inherits from its calendar, and its cycles may differ again. This
-is the right shape precisely because the recovered `citation_convention` predicts
-that antiphons and Lectionary items will disagree — the file-level declaration
-was always going to be too coarse.
-
-**The honest current state.** The declarations are in the data; the validation
-path has not yet caught up. `tools/citations check` still reads only the
-file-level key, so all eleven still report as out of bounds, and
-`check-calendar-masses` still sets them aside through a
-`psalm_numbering_exceptions` ledger in the file's header. That ledger is
+**The current state, stated honestly.** Each proper may now declare its own
+numbering rather than being forced into its calendar's, and all eleven carry that
+declaration; the validation path has not caught up, so all eleven still report as
+out of bounds and are set aside through a listed exceptions ledger. That ledger is
 self-cleaning in both directions: an out-of-bounds psalm at an *unlisted* locus
 still fails the build, so a new leak cannot hide behind the known ones, and a
 listed locus that has *stopped* breaching also fails, so an entry cannot outlive
@@ -448,18 +330,14 @@ wrong one is an answer.
 
 ---
 
-## Three days that were in the calendar and in no Mass list
+## Within an octave, the edition's punctuation decides the day
 
-The date-ordered list of celebrations (the **spine**) is derived from the
-repository's verified calendar-reference publications by `tools/calendar-spine`.
-The propers indexes are a different artifact with a different history. Nothing
-compared them, and three days fell through the gap: 29, 30 and 31 December 1962
-— the fifth, sixth and seventh days within the Octave of the Nativity — sat in
-the spine and in no section of the propers file at all.
-
-They are there now, as placeholders, filed `seasonal`. And a check now exists:
-every celebration the spine carries must have a mass, filed under the kind the
-spine assigns it, or the build fails.
+Three days fell through a gap between two records: 29, 30 and 31 December 1962 —
+the fifth, sixth and seventh days within the Octave of the Nativity — sat in the
+date-ordered list of celebrations and in no section of the propers file at all.
+They are there now, as placeholders, and every celebration the date list carries
+must now have a Mass, filed under the kind that list assigns it, or the build
+fails.
 
 Closing the gap required settling a classification question, and the answer
 turned out to be in the edition's own punctuation. Within an octave:
@@ -472,12 +350,11 @@ turned out to be in the edition's own punctuation. Within an octave:
   classifies **seasonal**.
 
 So in the 1962 data, 26–28 December are filed sanctoral and 29–31 December
-seasonal, and the spine and the propers now agree on all six.
+seasonal.
 
 The formulary those three days actually use is still absent. It is one of three
 the Missal carries that this file does not — the others being *D. N. Iesu Christi
-Regis* and *Sanctissimi Nominis Iesu* — and all three are movable or shared, so
-nothing in the fixed-date spine reports them missing.
+Regis* and *Sanctissimi Nominis Iesu*.
 
 ---
 
@@ -505,15 +382,14 @@ the two files encode 2190 scripture passages, in 47 and 61 distinct books.
 
 ### The 1962 temporal expansion, and what it deliberately omits
 
-The 1962 seasonal section was 59 Masses — the Sunday spine plus the Triduum and
+The 1962 seasonal section was 59 Masses — the Sunday run plus the Triduum and
 Palm Sunday. It is now 125: 63 temporal days were added, plus the three Christmas
-octave placeholders. The 63 cover the days the Missal keeps and the file did not:
-the three Advent Ember Days; Ash Wednesday and the three days after it; every
-feria of Lent weeks 1–4 with the Lenten Ember Days; the ferias of Passion week
-and Holy Week to Wednesday; the Chrism Mass; the Easter octave; the Rogation
-Mass; the Vigil of the Ascension, the Ascension, and the Vigil of Pentecost; the
-Whitsun octave with its Ember Days; the Mass of the First Sunday after Pentecost;
-Corpus Christi; the Sacred Heart; and the September Ember Days.
+octave placeholders. The 63 cover the days the Missal keeps and the file did not
+— the Ember Days of all four seasons, Ash Wednesday and the days after it, the
+ferias of Lent and Passiontide and of Holy Week to Wednesday, the Chrism Mass,
+the Easter and Whitsun octaves, the Rogation Mass, the Vigil and feast of the
+Ascension, the Vigil of Pentecost, the Mass of the First Sunday after Pentecost,
+Corpus Christi, and the Sacred Heart.
 
 Every one of those 63 entries carries **only its scripture-bearing propers**, and
 says so in its own notes:
@@ -524,16 +400,13 @@ says so in its own notes:
 This is a deliberate refusal. The orations of those days exist and are appointed;
 they were not transcribed because they were not read. The alternative would have
 been to generate plausible Latin, and a plausible wrong oration is worse than an
-absent one — the same principle that makes the citation encoder refuse a
-reference it cannot encode.
+absent one.
 
 The provenance is stated with matching care. Identity, rank and the printed
 scripture references were read from an **OCR text layer** of the CMAA 1962
 facsimile, not from the facsimile images. Confidence in each day's identity and
 rank is high; confidence in each citation is only as high as an unproofed scan
-allows; nothing has been visually collated. Their registry ids read
-`1962-T-<key>` and are synthetic, because the temporal registry numbers only the
-52 Sundays and the Triduum and no printed identifier exists for a feria.
+allows; nothing has been visually collated.
 
 ### Everything here is an unverified lead
 
@@ -553,6 +426,34 @@ collation, not by making the file falsely uniform.
 Note also that `open_collation_items` in both files ends with the line *all
 entries in this file are placeholders pending source-backed completion*. That is
 not decoration.
+
+---
+
+## How the two calendars are stored
+
+One file holds each calendar, under a header that declares the controlling
+edition, the ordering rule, the psalm numbering, the citation convention, and
+the verification state. Each Mass carries a stable key, the edition's own
+catalog name, its identity in the registry that numbers it, and its propers in
+the order the edition appoints them.
+
+Every proper declares whether its text is scripture, composed, or both, and the
+rest of its shape follows: a scripture proper carries the passages it is built
+from and no text, a composed proper carries the Latin text and no passages, and
+the validator refuses either one carrying the other. A proper whose content
+varies by Lectionary year carries the A, B and C forms separately. A celebration
+with several complete formularies — the Nativity's four Masses, the Ember
+Saturdays the Missal prints in a longer and a shorter form — carries each
+formulary whole.
+
+References are stored as structured extents rather than as strings to be
+re-parsed: one or more contiguous ranges under a canonical book name, with the
+edition's own printed display string kept beside them and never treated as
+authoritative. The encoding carries what liturgical books actually print — a
+selection within a chapter, a range crossing a chapter boundary as the Passions
+do, a chant cited whole by chapter, a printed part-verse letter — and the
+encoder refuses a citation it cannot encode without guessing rather than writing
+a wrong range.
 
 ---
 

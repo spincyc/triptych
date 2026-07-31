@@ -22,8 +22,7 @@ core packets, eight advanced-poetry packets, and four cumulative reviews.
 
 ## ChatGPT edition
 
-Choose a packet below. All publications on this page belong to the same
-ChatGPT-authored course edition.
+Choose a packet below.
 
 ## Course companions
 

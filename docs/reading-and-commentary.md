@@ -19,17 +19,19 @@ how often three separate askings agreed. The measurement came back with an
 uncomfortable and useful answer, and the answer is why nothing from the harvest
 has been promoted into the source library yet.
 
-This document explains what each undertaking decided and why. The headings alone
-give the shape; the prose under each gives the detail. Every number in it was
-recomputed from the repository's own tracked files — where a figure disagreed
+This document explains what each undertaking decided and why. Every number in it
+was recomputed from the repository's own tracked files — where a figure disagreed
 with what the files claim about themselves, the measurement is given and the
 disagreement said out loud. The recompute commands, the invariants, and the
 failure modes are in
 [`guidance/reading-plan-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/reading-plan-for-agents.md).
 
+**[Read Salvation History](../scripture/)** — the plan itself, in three
+lengths, with the translation of your choosing.
+
 ---
 
-## Part one — the narrative spine
+## Part one — Salvation History, the reading plan
 
 ### What the plan is
 
@@ -38,10 +40,8 @@ periods, running from creation to the end of Acts and closing on Apocalypse
 21:1–22:5. It touches 454 chapters in 31 of the canon's 73 books.
 
 It is a *route*, not a text. The file carries references — book, chapter, verse
-— and nothing else that a reader would call scripture. That matters for rights,
-and it matters for the architecture: the browser fetches the same chapter
-fragments the propers browser uses, and the reading plan just tells it which
-ones and in what order.
+— and nothing else that a reader would call scripture. The words come from
+whichever tracked translation the reader chooses.
 
 ### Three tiers that nest, so a shorter pass is not a different plan
 
@@ -234,15 +234,11 @@ Two consequences the file handles explicitly rather than hoping nobody notices:
 
 ## Part two — the commentary harvest
 
-### The thing it deliberately does not do
+### The harvester never calls a model
 
-`tools/harvest` never calls a model.
-
-That is the whole design, and it is worth understanding why a tool built to
-process model output would refuse to produce any. A model consulted twice does
-not answer twice the same. If the tool called out, then the tool's output would
-depend on when you ran it, and every downstream artifact would inherit that
-irreproducibility with no marker on it.
+A model consulted twice does not answer twice the same. If the tool called out,
+its output would depend on when you ran it, and every downstream artifact would
+inherit that irreproducibility with no marker on it.
 
 So the nondeterminism is pushed out of the tool and into a tracked file, where it
 is visible. The harvester:
@@ -262,9 +258,9 @@ The output is also narrower than it sounds. The harvest produces an
 **acquisition list** — which works to go and obtain — not commentary text and not
 a citation. Nothing enters the source library on a harvest alone.
 
-### One more design decision that pays for itself
+### A query never spans two chapters
 
-A query covers at most one chapter. Isaias 63:16–64:7 is two loci, not one.
+Isaias 63:16–64:7 is two loci, not one.
 
 Grouping across chapters would silently drop any work that comments on only one
 of them, and "silently" is the operative word: the result would look like a
@@ -373,25 +369,14 @@ duplicate a row; it demotes both halves below works that are genuinely less
 attested, which corrupts the ranking that the acquisition list exists to
 provide.
 
-Open tasks, in the order they need doing:
-
-1. **Build a work-identity registry.** Reconcile harvested candidates to the
-   `work.*` identities `tools/source-library` already uses, so a harvested
-   candidate can become a vault record without a second identity
-   reconciliation. The harvester already supports `work_id` and an `aliases`
-   field, and already collapses aliases onto a canonical key — the alias table
-   is simply empty. Nothing else in the chain needs to change.
-2. **Resolve whole-versus-part titling** for the authors whose works are
-   per-book. This is a cataloguing decision, not a data problem: pick the rule,
-   then apply it as aliases.
-3. **Reconcile the two locus granularities in the ledger.** Three early pilot
-   runs used verse-range keys (`Psalms 24:1-24:3`); the three full passes use
-   chapter keys (`Psalms 24`). They do not collide, so promotion currently emits
-   497 passages where 491 were harvested, with seven of them carrying pilot data
-   at a finer grain.
-4. **Then promote**, with a confidence floor, and review candidates into the
-   vault under `guidance/sources.md` — the way a source family's presence is
-   promoted to `reviewed`.
+What has to happen first, in order: build a work-identity registry, so that one
+work appearing under five Latin titles collapses to one entry; settle whether a
+per-book commentary is named by the whole or by the part, which is a cataloguing
+decision rather than a data problem; reconcile the two locus granularities the
+ledger carries, since three early pilot runs keyed verse ranges where the three
+full passes key chapters, so promotion would currently emit 497 passages where
+491 were harvested; and only then promote, with a confidence floor and a review
+into the source library.
 
 ### What this is, plainly
 
