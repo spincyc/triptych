@@ -113,7 +113,7 @@ nav a { color: var(--ink); text-decoration: none; }
   border-top: 0.2rem solid transparent;
   border-image: linear-gradient(
     90deg,
-    #6d7a84 0 14.285%,
+    #9c8f78 0 14.285%,
     #b07c07 14.285% 28.57%,
     #b33a26 28.57% 42.855%,
     #2c7a51 42.855% 57.14%,
@@ -155,12 +155,12 @@ nav a { color: var(--ink); text-decoration: none; }
   border-top: 0.3rem solid var(--section-accent);
 }
 .section-white {
-  --section-accent: #6d7a84;
-  --section-ink: #4c555d;
-  --section-wash: rgba(109, 122, 132, 0.16);
-  --section-pale: #c8ccd0;
-  --section-row: #e2e4e6;
-  --section-line: #a4adb3;
+  --section-accent: #9c8f78;
+  --section-ink: #6a5f4c;
+  --section-wash: rgba(156, 143, 120, 0.16);
+  --section-pale: #e1ddd6;
+  --section-row: #f1efec;
+  --section-line: #cac3b6;
   --section-symbol-primary: "☧";
   --section-symbol-secondary: "✠";
 }
@@ -399,14 +399,17 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
   margin-left: 0.55rem;
   color: var(--portal-accent);
   content: var(--portal-symbol);
+  /* Lowercase Greek sits far below the cap height of the other marks, so a
+     row may scale its own symbol to match them optically. */
+  font-size: var(--portal-symbol-scale, 1em);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   opacity: 0.8;
 }
 .page-home table:first-of-type tbody tr:nth-child(1),
-.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #6d7a84; --portal-pale: #c8ccd0; --portal-symbol: "☧"; }
+.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #9c8f78; --portal-pale: #e1ddd6; --portal-symbol: "☧"; }
 .page-home table:first-of-type tbody tr:nth-child(2),
-.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #b07c07; --portal-pale: #e1cda1; --portal-symbol: "α"; }
+.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #b07c07; --portal-pale: #e1cda1; --portal-symbol: "α"; --portal-symbol-scale: 1.42em; }
 .page-home table:first-of-type tbody tr:nth-child(3),
 .page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #b33a26; --portal-pale: #e2b4ad; --portal-symbol: "℣"; }
 .page-home table:first-of-type tbody tr:nth-child(4),
