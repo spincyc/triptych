@@ -19,6 +19,7 @@ from pathlib import Path
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from _calendars import partition
 from _tooling import print_json, run_verb_cli
 
 DEFAULT_ROOT = Path("src/sources/calendars")
@@ -321,17 +322,15 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
 
 
 def run(root: Path, calendar: str | None) -> dict[str, object]:
-    if not root.is_dir():
-        raise ValueError(f"missing calendar root: {root}")
-    paths = sorted(
-        path
-        for path in root.rglob("*.yaml")
-        if calendar is None or path.parent.name == calendar
-    )
+    # Discovery is by declared schema, not by extension: a calendar directory
+    # may hold a source another tool owns, and reading it as a mass index is how
+    # this check first went red for a file that was never its business. The
+    # partition is shared with `citations` so the two cannot disagree about what
+    # a calendar directory contains.
+    paths, companions, problems = partition(root, calendar)
     if not paths:
         scope = f" for calendar {calendar!r}" if calendar else ""
         raise ValueError(f"no calendar index found under {root}{scope}")
-    problems: list[str] = []
     files = {
         path.as_posix(): check_file(path, problems)
         for path in paths
@@ -342,6 +341,9 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     return {
         "excepted": excepted,
         "files": files,
+        # Named rather than counted, so a reader can see which files this check
+        # did not look at and which tool is supposed to.
+        "held_by_other_tools": companions,
         "problems": problems,
         "status": "error" if problems else "ok",
     }

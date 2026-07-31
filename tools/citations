@@ -30,6 +30,7 @@ from pathlib import Path
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from _calendars import partition
 from _psalms import PSALMS, validate_psalm
 from _tooling import print_json, run_verb_cli
 
@@ -333,9 +334,15 @@ def verse_lists(proper: dict) -> list[tuple[str, dict, str]]:
 
 
 def indexes(root: Path) -> list[Path]:
-    if not root.is_dir():
-        raise ValueError(f"missing calendar root: {root}")
-    paths = sorted(root.rglob("*.yaml"))
+    """Only the mass indexes, chosen by their declared schema.
+
+    A calendar directory may hold a source another tool owns. Selecting by
+    extension read those as mass indexes and complained that they had no
+    citations; the shared partition rejects a file no tool claims instead.
+    """
+    paths, _, problems = partition(root)
+    if problems:
+        raise ValueError("; ".join(problems))
     if not paths:
         raise ValueError(f"no calendar index found under {root}")
     return paths

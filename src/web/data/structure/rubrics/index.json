@@ -1,0 +1,24 @@
+{
+ "advisory": "A finding aid for how a day is put together, and never an authority for what was celebrated. The rules here are transcribed from this repository's own collated publications; the competent particular calendar, a legitimate indult and the competent annual Ordo control an actual celebration. Precedence is one of five decisions, and this layer takes only that one and the orations that follow from it.",
+ "calendars": [
+  {
+   "calendar": "postconciliar",
+   "code": "Normae universales de anno liturgico et de calendario, 1969, with the Institutio generalis Missalis Romani",
+   "commemorates": false,
+   "edition": "Missale Romanum, editio typica tertia 2008, reimpressio emendata 2008",
+   "path": "structure/rubrics/postconciliar.json",
+   "precedence_stated": true
+  },
+  {
+   "calendar": "roman-1962",
+   "code": "Codex rubricarum, 25 July 1960, as printed in the 1962 Missale Romanum",
+   "commemorates": true,
+   "edition": "Missale Romanum, editio typica 1962",
+   "path": "structure/rubrics/roman-1962.json",
+   "precedence_stated": true
+  }
+ ],
+ "guidance": "guidance/web-data.md",
+ "note": "structure/calendar/*/<year>.json lists a date's candidates and states that it does not rank them. This layer states the ranking, once per calendar rather than once per day: the file count here grows with calendars and never with years.",
+ "schema": "triptych-calendar-rubrics/v1"
+}

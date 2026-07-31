@@ -416,6 +416,7 @@ help:
 		'make approve-release NOTE="..."  Record a dated supplement with the operator instruction, then refresh' \
 		'make add-publication ID=<leaf> CATALOG=<page> [PROVIDER=<p>] [STATUS=hold]  Add an independent alpha record' \
 		'make check    Run every repository policy check' \
+		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-tests  Run the complete script unit-test suite' \
 		'make check-staleness  Report editions whose research inputs changed (any provider)' \
 		'make explain-staleness DOC=<leaf> [PROVIDER=<p>]  Name the changed research inputs' \
@@ -619,7 +620,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
-	check-calendar-masses
+	check-calendar-masses check-calendar-rubrics
 
 # tmt.json indexes the repo's tools; invoke them through tpt.
 # tools dispatch through tmt entries to their implementation under tools/.
@@ -634,6 +635,15 @@ check-calendar-masses:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt check-calendar-masses; \
 	else echo "PyYAML missing; skipping calendar-mass check"; fi
+
+# Validates the rubrical precedence sources, refuses a stale generated layer,
+# and runs the browser's own derivation over each source's solved cases. Needs
+# PyYAML for the sources and node for the derivation; both are skipped rather
+# than failed, and the tool says which verification it did not perform.
+check-calendar-rubrics:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) tools/tpt calendar-rubrics check; \
+	else echo "PyYAML missing; skipping calendar-rubric check"; fi
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s tools/tests

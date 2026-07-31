@@ -1,0 +1,432 @@
+/* ===========================================================================
+ * The assembly page — what only this page renders
+ * ===========================================================================
+ *
+ * The palette is `liturgy.css`, which this page shares with the propers page
+ * because both are entered from the liturgy section and the section has one
+ * colour. Nothing here redeclares a colour variable; everything below is
+ * structure, and every colour it uses comes from the six the section set.
+ *
+ * The page is an argument, so it is built as one: numbered steps down the left,
+ * each step's rubric beside its claim, and every uncertainty in a form the eye
+ * cannot skip. Three states are visually distinct on purpose —
+ *
+ *   settled          the rules reach an answer
+ *   conditional      the answer holds unless something this repository cannot
+ *                    check turns out to be true
+ *   unsettled        the rules, as this repository holds them, do not decide
+ *
+ * — because a reader who cannot tell them apart has been told the third is the
+ * first, which is the failure this whole page exists to avoid.
+ *
+ * The site declares `color-scheme: only light`, so there is no dark block here.
+ * ======================================================================== */
+
+/* The derivation is a wide argument rather than a column of prose, so it is not
+   held to the reading measure the propers are set in. */
+.reading-wide { max-width: none; }
+
+
+/* ---- The standing warning ---------------------------------------------- */
+
+.standing-warning {
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--notice-bg);
+  border: 1px solid var(--section-line);
+  border-left: 0.32rem solid var(--notice);
+  border-radius: 4px;
+}
+
+.standing-warning h2 {
+  margin: 0 0 0.35rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--notice);
+}
+
+.standing-warning p { margin: 0; font-size: 0.92rem; }
+
+.field input[type="date"] {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--section-line);
+  border-radius: 4px;
+}
+
+.field input[type="date"]:hover { border-color: var(--section-accent); }
+
+
+/* ---- Where the date falls ---------------------------------------------- */
+
+.day-head {
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--section-accent);
+}
+
+.day-head h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  color: var(--section-ink);
+}
+
+.day-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.day-facts b {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-right: 0.3rem;
+}
+
+
+/* ---- A territorial branch ---------------------------------------------- */
+
+.branch {
+  margin: 0 0 2rem;
+  padding: 0.9rem 1.1rem 1.1rem;
+  background: var(--panel);
+  border: 1px solid var(--section-pale);
+  border-radius: 6px;
+}
+
+.branch-head {
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--section-row);
+}
+
+.branch-head h3 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.branch-head p { margin: 0.3rem 0 0; font-size: 0.86rem; color: var(--ink-soft); }
+
+
+/* ---- The five steps ----------------------------------------------------- */
+
+.step { margin: 0 0 1.4rem; }
+
+.step:last-child { margin-bottom: 0; }
+
+.step-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 0.5rem;
+}
+
+.step-number {
+  flex: 0 0 auto;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--section-accent);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.step-head h4 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--section-ink);
+}
+
+.step-lede {
+  margin: 0 0 0.7rem 2.2rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.step-body { margin-left: 2.2rem; }
+
+
+/* ---- A candidate, a loser, an oration: one row form --------------------- */
+
+.rows { margin: 0; padding: 0; list-style: none; }
+
+.row-item {
+  margin: 0 0 0.5rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--section-wash);
+  border-left: 3px solid var(--section-line);
+  border-radius: 0 4px 4px 0;
+}
+
+.row-item:last-child { margin-bottom: 0; }
+
+.row-item.is-winner {
+  background: var(--section-row);
+  border-left-color: var(--section-accent);
+}
+
+.row-item.is-uncertain { border-left-style: dashed; }
+
+.row-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+  font-weight: 600;
+}
+
+.row-title .name { color: var(--ink); }
+
+.row-place {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+  white-space: nowrap;
+}
+
+.row-why { margin: 0.2rem 0 0; font-size: 0.86rem; color: var(--ink-soft); }
+
+.row-meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+/* The rubric number is the load-bearing thing on the page: it is what makes a
+   claim checkable. It is set as a citation, not as decoration. */
+.locus {
+  display: inline-block;
+  padding: 0.02rem 0.34rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--section-ink);
+  background: var(--section-row);
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.latin {
+  margin: 0.4rem 0 0;
+  font-style: italic;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+
+/* ---- Dispositions ------------------------------------------------------- */
+
+.tag {
+  display: inline-block;
+  padding: 0.04rem 0.42rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  white-space: nowrap;
+  border: 1px solid var(--section-line);
+  color: var(--section-ink);
+  background: var(--panel);
+}
+
+.tag-commemorated { background: var(--section-row); }
+.tag-transferred { background: var(--panel); }
+.tag-omitted { color: var(--ink-faint); border-color: var(--section-pale); }
+.tag-reduced { background: var(--section-row); }
+.tag-source { text-transform: none; letter-spacing: 0.04em; font-weight: 600; }
+
+
+/* ---- The orations ------------------------------------------------------- */
+
+.orations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 0.9rem;
+  margin: 0;
+}
+
+.oration-set {
+  padding: 0.7rem 0.8rem;
+  background: var(--section-wash);
+  border: 1px solid var(--section-pale);
+  border-radius: 4px;
+}
+
+.oration-set h5 {
+  margin: 0 0 0.15rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.oration-set .count {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.oration-set ol { margin: 0; padding-left: 1.1rem; }
+
+.oration-set li { margin-bottom: 0.45rem; }
+
+.oration-set li:last-child { margin-bottom: 0; }
+
+.oration-label {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: block;
+}
+
+.oration-of { font-weight: 600; }
+
+.oration-why { font-size: 0.82rem; color: var(--ink-soft); }
+
+
+/* ---- States: conditional and unsettled ---------------------------------- */
+
+.verdict {
+  margin: 0 0 0.9rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  border: 1px solid var(--section-line);
+  background: var(--section-wash);
+}
+
+.verdict h5 {
+  margin: 0 0 0.25rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.verdict-settled h5 { color: var(--section-ink); }
+
+.verdict-conditional {
+  border-left: 0.28rem solid var(--section-accent);
+  border-style: dashed solid solid dashed;
+}
+
+.verdict-conditional h5 { color: var(--section-ink); }
+
+.verdict-unsettled {
+  background: var(--notice-bg);
+  border-color: var(--notice);
+  border-left: 0.28rem solid var(--notice);
+}
+
+.verdict-unsettled h5 { color: var(--notice); }
+
+.verdict ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+
+.verdict li { margin-bottom: 0.3rem; }
+
+
+/* ---- The formulary ------------------------------------------------------ */
+
+.formulary { margin-top: 0.4rem; }
+
+.formulary-list { margin: 0; padding: 0; list-style: none; }
+
+.formulary-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+  padding: 0.28rem 0;
+  border-bottom: 1px solid var(--section-row);
+}
+
+.formulary-item:last-child { border-bottom: none; }
+
+.formulary-slot {
+  flex: 0 0 11rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--section-ink);
+}
+
+.formulary-detail { flex: 1 1 14rem; font-size: 0.86rem; color: var(--ink-soft); }
+
+.formulary-item.is-added {
+  background: var(--section-wash);
+  border-left: 3px solid var(--section-accent);
+  padding-left: 0.5rem;
+}
+
+
+/* ---- The closing apparatus ---------------------------------------------- */
+
+.apparatus {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--section-pale);
+}
+
+.apparatus h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.apparatus ul { margin: 0 0 1rem; padding-left: 1.1rem; font-size: 0.86rem; color: var(--ink-soft); }
+
+.apparatus li { margin-bottom: 0.3rem; }
+
+.apparatus p { margin: 0 0 0.8rem; font-size: 0.86rem; color: var(--ink-soft); }
+
+
+@media (max-width: 34rem) {
+  .step-lede, .step-body { margin-left: 0; }
+  .formulary-slot { flex-basis: 100%; }
+}

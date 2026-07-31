@@ -310,13 +310,16 @@ def translation_overlay(calendar: str) -> tuple[dict, set, list]:
     """Translations recorded for a calendar's propers, keyed by proper.
 
     The contract in `src/sources/calendars/README.md` puts `translations` inside
-    each proper, and that is still where they belong. They are read from a
-    sidecar here because the two validators leave nowhere else to put them:
-    `check-calendar-masses` reads every yaml under `src/sources/calendars` as a
-    mass index, and `source-library validate` rejects any file under
-    `src/sources` outside its own schema list. Reading the sidecar rather than
-    merging it into `propers.yaml` also keeps one copy of each translation
-    instead of two, which is the same rule the verse fragments follow.
+    each proper, and that is still where they belong. They were recorded in a
+    sidecar because at the time nothing else under `src/sources` would accept
+    them — every yaml beside a calendar was read as a mass index, and the source
+    library rejected any file outside its own schema list. That constraint has
+    since been lifted by the shared schema partition in `scripts/_calendars.py`,
+    so the sidecar may move beside its calendar.
+
+    Reading it rather than merging it into `propers.yaml` is worth keeping
+    either way: it holds one copy of each translation instead of two, which is
+    the rule the verse fragments already follow.
 
     Returns the overlay, the propers deliberately left untranslated, and the
     entries that no longer answer their target.

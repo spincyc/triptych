@@ -1,8 +1,14 @@
 /* ===========================================================================
- * The propers page — the liturgy section's colour
+ * The liturgy section's colour, and the propers page's own rules
  * ===========================================================================
  *
- * The site gives every section a liturgical colour, and this page is entered
+ * Loaded by both pages in this directory — `index.html`, the propers, and
+ * `day.html`, how a day's Mass is assembled — because the palette belongs to
+ * the section rather than to either page, and two copies of it would let the
+ * two pages drift apart in colour. What only the assembly page renders lives in
+ * `day.css`, which declares no colour of its own.
+ *
+ * The site gives every section a liturgical colour, and these pages are entered
  * from the liturgy section, which is RED. The light values below are the live
  * ones from the site's own stylesheet (.section-red), copied rather than
  * imported: these pages are standalone and make no external request of any

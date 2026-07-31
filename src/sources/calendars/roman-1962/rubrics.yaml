@@ -1,0 +1,1086 @@
+schema: triptych-calendar-rubrics/v1
+calendar: roman-1962
+edition: Missale Romanum, editio typica 1962
+code: Codex rubricarum, 25 July 1960, as printed in the 1962 Missale Romanum
+citation_forms:
+  RG: Rubricae generales, nn. 1-137, in the 1962 Missal's front matter
+  RGMR: Rubricae generales Missalis Romani, nn. 269-530, in the same front matter
+  RGBR: Rubricae generales Breviarii Romani, nn. 138-268, which the Missal omits
+    and which are cited only from the Acta
+advisory: >-
+  This file states which rubric governs a decision. It does not state what was
+  celebrated anywhere. Precedence is only one of five decisions, and a day
+  resolved here is still subject to the particular calendar of the church, the
+  place, the diocese and the religious institute, to a legitimate indult, and to
+  the competent annual Ordo, which controls. Nothing here is an occurrence
+  witness and nothing here authorises the use of any book.
+
+# ---------------------------------------------------------------------------
+# Where every rule below came from
+#
+# Not one rubric here was read for this file. Every one of them is transcribed
+# from the repository's own collated publication, which read them as 260 dpi
+# page images of a tracked facsimile and recorded the reading in a rubric index
+# with an evidence class against each rule. This file adds no rule that
+# publication does not carry, and where this file departs from it, it says so
+# in `divergences` below and does not silently choose.
+# ---------------------------------------------------------------------------
+derived_from:
+  publication: liturgy/roman-rite/1962/reference/assembling-the-mass
+  rubric_index: src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/rubric-index.md
+  sections:
+  - src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/10-the-day.tex
+  - src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/20-precedence.tex
+  - src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/30-impediment.tex
+  - src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/50-assembly-map.tex
+  worked_cases: src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/worked-cases.md
+  witnesses:
+  - id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+    role: direct-witness
+    what: the controlling 1962 Missal, artifact pages 10-34 for the whole code
+  - id: segment.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960.aas-52-1960-pages-597-740
+    role: textual-control
+    what: the promulgated text in the Acta, which controls the Missal's reprint
+
+# ---------------------------------------------------------------------------
+# Decision two. RG 91 introduces the table in a sentence that forecloses
+# argument, and the row numbers are addresses used by later rubrics, so they
+# are learned as numbers and not merely as an order.
+# ---------------------------------------------------------------------------
+precedence:
+  stated: true
+  locus: RG 91
+  latin: >-
+    Praecedentia dierum liturgicorum, sublatis quibuslibet aliis titulis vel
+    normis, unice regitur ex sequenti tabella dierum liturgicorum secundum
+    ordinem praecedentiae disposita.
+  gloss: >-
+    Twenty-eight numbered rows, banded into the four classes of day. A lower row
+    number wins. The table ranks days, not saints: eight of its rows contain no
+    feast at all, and a universal third-class feast sits below both the Lenten
+    ferias and any third-class feast a particular calendar owns.
+  rows:
+  - {row: 1, class: I, label: 'The Nativity of the Lord, Easter Sunday and Pentecost
+      Sunday (each first class with an octave)'}
+  - {row: 2, class: I, label: The Sacred Triduum}
+  - {row: 3, class: I, label: 'The Epiphany and the Ascension of the Lord, the Most
+      Holy Trinity, Corpus Christi, the Sacred Heart and Christ the King'}
+  - {row: 4, class: I, label: The Immaculate Conception and the Assumption of the Blessed
+      Virgin Mary}
+  - {row: 5, class: I, label: The vigil and the octave day of the Nativity}
+  - {row: 6, class: I, label: 'The Sundays of Advent, Lent and Passiontide, and Low
+      Sunday'}
+  - {row: 7, class: I, label: 'The first-class ferias not named above: Ash Wednesday
+      and Monday, Tuesday and Wednesday of Holy Week'}
+  - {row: 8, class: I, label: The Commemoration of All the Faithful Departed, which
+      nevertheless yields to an occurring Sunday, note: 'The only row of the table
+      that carries its own defeat: quae tamen locum cedit dominicae occurrenti. RG
+      16 b says the same from the Sunday''s side.'}
+  - {row: 9, class: I, label: The vigil of Pentecost}
+  - {row: 10, class: I, label: The days within the octaves of Easter and Pentecost}
+  - {row: 11, class: I, label: First-class feasts of the universal Church not named
+      above}
+  - {row: 12, class: I, label: 'Proper first-class feasts: principal Patron of nation,
+      region or province, or diocese; the anniversary of the dedication of the cathedral;
+      principal Patron of the place; the dedication and the Title of one''s own church;
+      the Title, canonised Founder or principal Patron of an Order or Congregation',
+    particular: true}
+  - {row: 13, class: I, label: 'Indulted first-class feasts, movable first, then fixed',
+    particular: true}
+  - {row: 14, class: II, label: 'Second-class feasts of the Lord, movable first, then
+      fixed'}
+  - {row: 15, class: II, label: Second-class Sundays}
+  - {row: 16, class: II, label: Second-class feasts of the universal Church which are
+      not of the Lord}
+  - {row: 17, class: II, label: The days within the octave of the Nativity}
+  - {row: 18, class: II, label: 'Second-class ferias: Advent from 17 to 23 December
+      inclusive, and the Ember Days of Advent, Lent and September'}
+  - {row: 19, class: II, label: 'Proper second-class feasts: secondary Patrons, and
+      the feasts RG 43 d, RG 45 c, RG 46 b and RG 46 d-e enumerate', particular: true}
+  - {row: 20, class: II, label: 'Indulted second-class feasts, movable first, then
+      fixed', particular: true}
+  - {row: 21, class: II, label: Second-class vigils}
+  - {row: 22, class: III, label: 'The ferias of Lent and Passiontide, Ember Days excepted',
+    note: Above rows 23 and 24. A third-class saint loses to a Lenten weekday and is
+      commemorated.}
+  - {row: 23, class: III, label: 'Third-class feasts inscribed in particular calendars,
+      the proper ones first, then the indulted', particular: true, note: 'At third
+      class the universal-before-particular order of rows 11-12 and 16-19 reverses:
+      a diocesan third-class feast displaces a universal one on the same date. The
+      code prints the inversion without explaining it.'}
+  - {row: 24, class: III, label: 'Third-class feasts inscribed in the calendar of the
+      universal Church, movable first, then fixed'}
+  - {row: 25, class: III, label: 'The ferias of Advent to 16 December inclusive, Ember
+      Days excepted', note: Below rows 23 and 24. The same third-class saint that loses
+      on a Lenten weekday wins on an Advent one. Nothing in the class numbers predicts
+      this; only RG 25 does.}
+  - {row: 26, class: III, label: Third-class vigils}
+  - {row: 27, class: IV, label: The Office of Our Lady on Saturday}
+  - {row: 28, class: IV, label: Fourth-class ferias}
+  occurrence:
+    locus: RG 92
+    latin: >-
+      Occurrentia dicitur occursus duorum vel plurium Officiorum uno eodemque
+      die. Occurrentia autem dicitur accidentalis, quando dies liturgicus
+      mobilis et dies liturgicus fixus certis solummodo annorum intervallis
+      simul occurrunt; perpetua vero quando duo dies liturgici quotannis simul
+      occurrunt.
+    gloss: >-
+      The distinction selects the remedy. Accidental occurrence may lead to
+      transfer; perpetual occurrence may lead to reposition. A feast cannot be
+      transferred out of a perpetual collision or repositioned out of an
+      accidental one.
+  effect:
+    locus: RG 93
+    latin: >-
+      Effectus occurrentiae est, ut Officium diei liturgici gradus inferioris
+      Officio gradus superioris cedat: quod fieri potest per minus nobilis
+      omissionem, aut commemorationem, aut translationem, aut repositionem.
+    gloss: Four outcomes and no others - omission, commemoration, transfer, reposition.
+  concurrence:
+    locus: RG 103-105
+    gloss: >-
+      Concurrence is the meeting of one evening's Vespers, not of two days. It
+      never decides which Mass is said the next morning. That is occurrence,
+      settled by the same table on the following day's own competitors.
+    decides_the_mass: false
+
+# ---------------------------------------------------------------------------
+# Overrides. Rules that defeat a straight comparison of row numbers.
+# ---------------------------------------------------------------------------
+overrides:
+- id: all-souls-yields-to-a-sunday
+  key: commemoratione-omnium-fidelium-defunctorum
+  yields_to: sunday
+  locus: RG 91 row 8; RG 16 b
+  why: >-
+    All Souls stands at row 8, above the vigil of Pentecost and above every
+    first-class feast of the universal Church, and the row itself adds "quae
+    tamen locum cedit dominicae occurrenti". It is the only qualified row in the
+    table.
+- id: the-last-sunday-after-pentecost-keeps-the-final-slot
+  key: last-sunday-after-pentecost
+  over_key_matches: '^pentecost-\d+$'
+  when_same_row: true
+  locus: RG 18, closing paragraph
+  why: >-
+    In a year whose count of Sundays after Pentecost leaves the numbered Sunday
+    and the last Sunday in one slot, the Mass Dominica XXIV et ultima post
+    Pentecosten is the one that is said: RG 18's closing paragraph puts it last
+    always. Both are second-class Sundays at row 15, so the table alone cannot
+    separate them.
+- id: same-divine-person-or-same-saint
+  locus: RG 95 second paragraph
+  stated_only: true
+  why: >-
+    Two feasts of the same divine Person, or of the same saint or blessed, do
+    not commemorate one another: the lower is simply omitted and is not
+    transferred. This file cannot detect that identity from a mass key, so it is
+    stated and never applied.
+
+# ---------------------------------------------------------------------------
+# The bases. Each is one reason a day carries the row it carries, and it fixes
+# the row, the class, what kind of day it is, and whether its commemoration is
+# privileged or ordinary in the sense of RG 107-109.
+# ---------------------------------------------------------------------------
+bases:
+- id: row-1-sunday
+  constitutes_the_day: true
+  label: Easter Sunday or Pentecost Sunday
+  de_tempore: true
+  row: 1
+  nature: sunday
+  commemoration: privileged
+  commemoration_locus: RG 109 a, b
+  why: Easter Sunday and Pentecost Sunday, first-class Sundays which are also
+    first-class feasts with octaves
+  locus: RG 11; RG 91 row 1
+- id: row-1-nativity
+  label: the Nativity of the Lord
+  of_the_lord: true
+  row: 1
+  nature: feast
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: the Nativity of the Lord, a first-class feast with an octave
+  locus: RG 91 row 1
+- id: row-2-triduum
+  constitutes_the_day: true
+  label: a day of the Sacred Triduum
+  de_tempore: true
+  row: 2
+  nature: sacred-triduum
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: a day of the Sacred Triduum
+  locus: RG 91 row 2
+- id: row-3-feast-of-the-lord
+  label: a first-class feast of the Lord named in row 3
+  of_the_lord: true
+  row: 3
+  nature: feast
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: one of the six feasts row 3 names by name
+  locus: RG 91 row 3
+- id: row-4-our-lady
+  label: the Immaculate Conception or the Assumption
+  row: 4
+  nature: feast
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: the Immaculate Conception or the Assumption
+  locus: RG 91 row 4
+- id: row-5-nativity-vigil-and-octave-day
+  constitutes_the_day: true
+  label: the vigil or the octave day of the Nativity
+  de_tempore: true
+  row: 5
+  nature: vigil-or-octave-day
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: the vigil of the Nativity, a first-class vigil, or its octave day
+  locus: RG 30 a; RG 67; RG 91 row 5
+- id: row-6-sunday
+  constitutes_the_day: true
+  label: a first-class Sunday
+  de_tempore: true
+  row: 6
+  nature: sunday
+  commemoration: privileged
+  commemoration_locus: RG 109 a, b
+  why: a first-class Sunday - one of the four of Advent, the four of Lent, the two
+    of Passiontide, or Low Sunday
+  locus: RG 11; RG 91 row 6
+- id: row-7-feria
+  constitutes_the_day: true
+  label: a first-class feria
+  de_tempore: true
+  row: 7
+  nature: feria
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: 'a first-class feria: Ash Wednesday, or Monday, Tuesday or Wednesday of Holy
+    Week, which take precedence over any feast whatever'
+  locus: RG 23; RG 91 row 7
+- id: row-8-all-souls
+  label: the Commemoration of All the Faithful Departed
+  row: 8
+  nature: commemoration-of-the-dead
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: the Commemoration of All the Faithful Departed
+  locus: RG 91 row 8
+- id: row-9-pentecost-vigil
+  constitutes_the_day: true
+  label: the vigil of Pentecost
+  de_tempore: true
+  row: 9
+  nature: vigil
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: the vigil of Pentecost, a first-class vigil which yields to nothing and admits
+    no commemoration
+  locus: RG 30 b; RG 91 row 9
+- id: row-10-octave-day
+  constitutes_the_day: true
+  label: a day within the octave of Easter or of Pentecost
+  de_tempore: true
+  row: 10
+  nature: day-within-an-octave
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: a day within the octave of Easter or of Pentecost, which are first-class octaves
+  locus: RG 66; RG 91 row 10
+- id: row-11-universal-first-class-feast
+  label: a first-class feast of the universal calendar
+  row: 11
+  nature: feast
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: a first-class feast of the universal Church not named in the rows above
+  locus: RG 39; RG 91 row 11
+- id: row-14-second-class-feast-of-the-lord
+  label: a second-class feast of the Lord
+  of_the_lord: true
+  row: 14
+  nature: feast
+  commemoration: ordinary
+  why: a second-class feast of the Lord, which takes the place of a second-class Sunday
+    it meets
+  locus: RG 16 a; RG 91 row 14
+- id: row-15-sunday
+  constitutes_the_day: true
+  label: a second-class Sunday
+  de_tempore: true
+  row: 15
+  nature: sunday
+  commemoration: privileged
+  commemoration_locus: RG 109 a
+  why: a second-class Sunday - every Sunday that is not one of the six first-class
+    kinds
+  locus: RG 12; RG 91 row 15
+- id: row-16-universal-second-class-feast
+  label: a second-class feast of the universal calendar
+  row: 16
+  nature: feast
+  commemoration: ordinary
+  why: a second-class feast of the universal Church which is not of the Lord
+  locus: RG 91 row 16
+- id: row-17-day-within-the-christmas-octave
+  constitutes_the_day: true
+  label: a day within the octave of the Nativity
+  de_tempore: true
+  row: 17
+  nature: day-within-an-octave
+  commemoration: privileged
+  commemoration_locus: RG 109 c
+  why: a day within the octave of the Nativity, a second-class octave
+  locus: RG 67; RG 91 row 17
+- id: row-18-feria
+  constitutes_the_day: true
+  label: a second-class feria
+  de_tempore: true
+  row: 18
+  nature: feria
+  commemoration: privileged
+  commemoration_locus: RG 109 d, e
+  why: 'a second-class feria: an Advent feria from 17 to 23 December, or an Ember Day
+    of Advent, Lent or September. It must be commemorated if impeded'
+  locus: RG 24; RG 91 row 18
+- id: row-21-second-class-vigil
+  constitutes_the_day: true
+  label: a second-class vigil
+  row: 21
+  nature: vigil
+  commemoration: ordinary
+  why: 'one of the four second-class vigils: the Ascension, the Assumption, the Nativity
+    of St John the Baptist, and Ss Peter and Paul. Commemorated if impeded, but dropped
+    entirely on a Sunday or a first-class feast'
+  locus: RG 31; RG 33; RG 91 row 21
+- id: row-22-lenten-feria
+  constitutes_the_day: true
+  label: a feria of Lent or Passiontide
+  de_tempore: true
+  row: 22
+  nature: feria
+  commemoration: privileged
+  commemoration_locus: RG 109 e
+  why: a feria of Lent or Passiontide outside the Ember Days, which takes precedence
+    over third-class feasts and must be commemorated if impeded
+  locus: RG 25 a; RG 91 row 22
+- id: row-24-universal-third-class-feast
+  label: a third-class feast of the universal calendar
+  row: 24
+  nature: feast
+  commemoration: ordinary
+  why: a third-class feast inscribed in the calendar of the universal Church
+  locus: RG 91 row 24
+- id: row-25-advent-feria
+  constitutes_the_day: true
+  label: a feria of Advent before 17 December
+  de_tempore: true
+  row: 25
+  nature: feria
+  commemoration: privileged
+  commemoration_locus: RG 109 e
+  why: an Advent feria to 16 December outside the Ember Days, which yields to third-class
+    feasts and must be commemorated if impeded
+  locus: RG 25 b; RG 91 row 25
+- id: row-26-third-class-vigil
+  constitutes_the_day: true
+  label: the vigil of St Lawrence
+  row: 26
+  nature: vigil
+  commemoration: ordinary
+  why: the one third-class vigil, that of St Lawrence
+  locus: RG 32; RG 91 row 26
+- id: row-27-our-lady-on-saturday
+  constitutes_the_day: true
+  label: the Office of Our Lady on Saturday
+  row: 27
+  nature: office
+  commemoration: ordinary
+  why: the Office of Our Lady on Saturday, kept on a Saturday that carries a fourth-class
+    feria. It is an Office and not a feast, and any occurring feast displaces it
+  locus: RG 78; RG 79; RG 91 row 27
+- id: row-28-feria
+  constitutes_the_day: true
+  label: a fourth-class feria
+  de_tempore: true
+  row: 28
+  nature: feria
+  commemoration: none
+  commemoration_locus: RG 26
+  why: 'a fourth-class feria: every feria not named above. It is never commemorated'
+  locus: RG 26; RG 91 row 28
+- id: calendar-commemoration
+  label: a commemoration inscribed in the calendar
+  row: null
+  nature: commemoration
+  commemoration: ordinary
+  why: an entry the calendar inscribes as a commemoration and not as a feast. It occupies
+    no row of the table, so it can never take the day; it can only ever be an ordinary
+    commemoration
+  locus: RG 91 (the table has no row for a commemoration); RG 107-108
+- id: additional-mass
+  label: a further Mass appointed on this day
+  row: null
+  nature: additional-mass
+  commemoration: none
+  competes: false
+  why: a further Mass the Missal appoints on a day whose identity is settled elsewhere.
+    It is not a competitor for the day
+  locus: the Missal prints both formularies at this day
+- id: alternative-formulary
+  label: a formulary the Missal prints for a slot another day occupies
+  row: null
+  nature: alternative-formulary
+  commemoration: none
+  competes: false
+  why: a formulary the Missal prints for a slot another celebration occupies. It is
+    a formulary, not a liturgical day, and it competes for nothing
+  locus: RG 17; the Missal's own heading at the formulary
+- id: not-classified
+  label: not classified here
+  row: null
+  nature: unknown
+  commemoration: none
+  competes: false
+  certain: false
+  why: this repository states no class for this entry
+  locus: null
+
+# ---------------------------------------------------------------------------
+# Assignment. Ordered; the first rule whose predicate matches a mass wins. The
+# checker requires that every mass in the calendar's own index match exactly one
+# rule, so a mass added to the index surfaces here instead of vanishing.
+# ---------------------------------------------------------------------------
+assignment:
+- {basis: row-2-triduum, keys: [mass-of-the-lords-supper, good-friday, easter-vigil]}
+- {basis: additional-mass, keys: [chrism-mass], note: 'the Chrism Mass is said in the
+    cathedral on the morning of Maundy Thursday: a second Mass of the same liturgical
+    day'}
+- {basis: alternative-formulary, keys: [mass-of-the-first-sunday-after-pentecost],
+  note: the Missal's own formulary for the first Sunday after Pentecost, whose slot
+    Trinity Sunday occupies}
+- {basis: not-classified, keys: [rogation-mass], note: 'neither the Greater nor the
+    Lesser Litanies are dated in guidance/liturgy/calendar-computation.md, so this
+    mass is never placed on a date and is never reached'}
+- {basis: row-1-sunday, keys: [easter-sunday, pentecost]}
+- {basis: row-1-nativity, keys: [nativitate-domini-octave]}
+- {basis: row-3-feast-of-the-lord, keys: [epiphania-domini, ascension, trinity, corpus-christi,
+      sacred-heart]}
+- {basis: row-4-our-lady, keys: [conceptione-immaculata-beatae-mariae-virginis, assumptione-beatae-mariae-virginis]}
+- {basis: row-5-nativity-vigil-and-octave-day, keys: [vigil-nativity-lord, octava-nativitatis-domini]}
+- {basis: row-6-sunday, keys: [advent-1, advent-2, advent-3, advent-4, lent-1, lent-2,
+      lent-3, lent-4, passion-sunday, palm-sunday, low-sunday]}
+- {basis: row-7-feria, keys: [ash-wednesday, holy-monday, holy-tuesday, holy-wednesday]}
+- {basis: row-8-all-souls, keys: [commemoratione-omnium-fidelium-defunctorum]}
+- {basis: row-9-pentecost-vigil, keys: [vigil-of-pentecost]}
+- {basis: row-10-octave-day, keys: [easter-monday, easter-tuesday, easter-wednesday,
+      easter-thursday, easter-friday, easter-saturday, pentecost-monday, pentecost-tuesday,
+      pentecost-ember-wednesday, pentecost-thursday, pentecost-ember-friday, pentecost-ember-saturday]}
+- {basis: row-14-second-class-feast-of-the-lord, keys: [holy-family], note: 'RG 17
+    b assigns the Holy Family perpetually to the Sunday within the octave of the Epiphany,
+    where it takes the Sunday''s place "cum omnibus iuribus et privilegiis; de dominica,
+    proinde, nulla fit commemoratio"'}
+- {basis: row-14-second-class-feast-of-the-lord, keys: [purificatione-beatae-mariae-virginis],
+  note: the Missal's own rubric at 2 February holds the Purification "tamquam festum
+    Domini", which is why it sits at row 14 and not at row 16; RGMR 484 a and 495 follow
+    it}
+- {basis: row-15-sunday, keys: [sunday-within-octave-of-nativity, last-sunday-after-pentecost]}
+- {basis: row-15-sunday, key_matches: '^(epiphany|easter|pentecost|resumed-epiphany)-\d+$'}
+- {basis: row-15-sunday, keys: [septuagesima, sexagesima, quinquagesima, sunday-after-ascension]}
+- {basis: row-17-day-within-the-christmas-octave, keys: [fifth-day-within-octave, sixth-day-within-octave,
+      seventh-day-within-octave]}
+- {basis: row-18-feria, key_matches: '(^advent-ember-|^september-ember-|^lent-\d+-ember-)'}
+- {basis: row-21-second-class-vigil, keys: [vigil-of-the-ascension, vigil-assumption,
+      vigil-nativity-saint-john-baptist, vigil-saints-peter-paul]}
+- {basis: row-22-lenten-feria, key_matches: '^(thursday|friday|saturday)-after-ash-wednesday$'}
+- {basis: row-22-lenten-feria, key_matches: '^(lent-\d+|passion)-(monday|tuesday|wednesday|thursday|friday|saturday)$'}
+- {basis: row-26-third-class-vigil, keys: [vigil-saint-lawrence]}
+- {basis: calendar-commemoration, dated: true, rank: Comm.}
+- {basis: row-11-universal-first-class-feast, dated: true, rank: I}
+- {basis: row-14-second-class-feast-of-the-lord, dated: true, rank: II, kind: christological}
+- {basis: row-16-universal-second-class-feast, dated: true, rank: II}
+- {basis: row-24-universal-third-class-feast, dated: true, rank: III}
+
+# ---------------------------------------------------------------------------
+# Implied days. The calendar index holds a formulary only where the Missal
+# prints one, and RGMR 299 gives most ferias the preceding Sunday's Mass rather
+# than a Mass of their own. So on many dates the day the feast is measured
+# against carries no mass key at all. These rules constitute that day from the
+# season the year file already computed and from the civil date, which is how
+# the rubrics themselves state it. They fire only when the date carries no
+# temporal candidate of its own.
+#
+# `certain: false` means this repository cannot exclude a competing identity for
+# the day. The page must say so and must not present the result as settled.
+# ---------------------------------------------------------------------------
+implied:
+- id: advent-feria-late
+  label: a feria of Advent from 17 to 23 December
+  season: advent
+  from: 12-17
+  to: 12-23
+  weekday_only: true
+  basis: row-18-feria
+  certain: true
+  note: An Advent Ember Day falling in this window is also a second-class feria, so
+    the row holds either way.
+- id: advent-feria-early
+  label: a feria of Advent before 17 December
+  season: advent
+  to: 12-16
+  before_anchor: {anchor: first_sunday_of_advent, offset_days: 17}
+  weekday_only: true
+  basis: row-25-advent-feria
+  certain: true
+  note: >-
+    The Ember Days of Advent follow the Third Sunday of Advent, which is the
+    First Sunday plus fourteen days, so the earliest of them is that Sunday's
+    Wednesday - the First Sunday plus seventeen. A weekday before it cannot be
+    an Ember Day, and the row is therefore settled without dating them. The
+    bound is the reasoning the publication's own Case 1b performs by hand.
+- id: advent-feria-early-ember-window
+  label: a feria of Advent before 17 December
+  season: advent
+  to: 12-16
+  from_anchor: {anchor: first_sunday_of_advent, offset_days: 17}
+  weekday_only: true
+  basis: row-25-advent-feria
+  certain: false
+  unless: >-
+    the day is one of the three Ember Days of Advent, which are second-class
+    ferias at row 18 (RG 24 b) and would take the day from a third-class feast
+    rather than yield to it. guidance/liturgy/calendar-computation.md does not
+    date the Advent Ember Days, so this repository cannot exclude them once the
+    Third Sunday of Advent has passed.
+- id: christmas-octave-day
+  label: a day within the octave of the Nativity
+  season: christmastide
+  from: 12-26
+  to: 12-31
+  weekday_only: true
+  basis: row-17-day-within-the-christmas-octave
+  certain: true
+- id: christmastide-feria
+  label: a feria of Christmastide
+  season: christmastide
+  from: 01-02
+  to: 01-05
+  weekday_only: true
+  basis: row-28-feria
+  certain: true
+- id: epiphanytide-feria
+  label: a feria after the Epiphany
+  season: epiphanytide
+  weekday_only: true
+  basis: row-28-feria
+  certain: true
+  note: RG 64 celebrates only the octaves of Christmas, Easter and Pentecost, so the
+    days after the Epiphany are ordinary ferias.
+- id: septuagesima-feria
+  label: a feria of Septuagesima
+  season: septuagesima
+  weekday_only: true
+  basis: row-28-feria
+  certain: true
+- id: paschaltide-feria
+  label: a feria of Paschaltide
+  season: paschaltide
+  weekday_only: true
+  basis: row-28-feria
+  certain: true
+  note: >-
+    The Greater Litanies and the Rogation days fall in this season and are not
+    dated here. They do not change the feria's class; what is lost is the
+    privileged commemoration of RG 109 f, which is recorded under `unsettled`.
+- id: september-feria
+  label: a feria after Pentecost, in September
+  season: after-pentecost
+  from: 09-01
+  to: 09-30
+  weekday_only: true
+  basis: row-28-feria
+  certain: false
+  unless: >-
+    the day is one of the three Ember Days of September, which are second-class
+    ferias at row 18 (RG 24 b). guidance/liturgy/calendar-computation.md does not
+    date the September Ember Days, so this repository cannot exclude them from a
+    September weekday.
+- id: after-pentecost-feria
+  label: a feria after Pentecost
+  season: after-pentecost
+  weekday_only: true
+  basis: row-28-feria
+  certain: true
+saturday_office:
+  basis: row-27-our-lady-on-saturday
+  when_implied_basis: row-28-feria
+  locus: RG 78; RG 79
+  why: >-
+    On a Saturday carrying a fourth-class feria the Office is of Our Lady on
+    Saturday. Its Mass exists and may be sung, but any occurring feast displaces
+    it, because row 27 sits below rows 23 and 24.
+
+# ---------------------------------------------------------------------------
+# Decision three. What becomes of the day that lost.
+# ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Celebrations the Missal carries that this calendar index does not, with the
+# dates they would occupy. Without this block the derivation is not merely
+# incomplete on those dates, it is wrong: the last Sunday of October would be
+# handed to a numbered Sunday after Pentecost that Christ the King displaces.
+# The index's own notes record the absences; these entries date them.
+# ---------------------------------------------------------------------------
+known_absences:
+- what: D. N. Iesu Christi Regis
+  row: 3
+  when: the last Sunday of October, which always falls between 25 and 31 October
+  match: {from: 10-25, to: 10-31, weekday: sunday}
+  locus: RG 17 d; RG 91 row 3
+  blocks_result: true
+  effect: >-
+    A first-class feast of the Lord at row 3 would take this day from any Sunday
+    after Pentecost. It is absent from this calendar index, so the winner shown
+    below is not the day's identity.
+- what: Sanctissimi Nominis Iesu
+  row: 16
+  when: the Sunday falling between 2 and 5 January
+  match: {from: 01-02, to: 01-05, weekday: sunday}
+  locus: RG 17 a
+  blocks_result: true
+  effect: >-
+    RG 17 a assigns the Most Holy Name of Jesus perpetually to this Sunday, where
+    it takes the Sunday's place. It is absent from this calendar index, so this
+    date carries no day at all here. Where no Sunday falls between 2 and 5
+    January the feast is kept on 2 January, which this file does not date.
+
+impediment:
+  outcomes: [omission, commemoration, transfer, reposition]
+  outcomes_locus: RG 93
+  transfer:
+    locus: RG 95 first paragraph
+    latin: >-
+      Ius translationis in alium diem ob occurrentiam accidentalem cum die
+      liturgico, qui in tabella praecedentiae superiorem obtinet locum, competit
+      solummodo festis I classis. Alia festa, ab Officio gradus superioris
+      accidentaliter impedita, aut commemorantur aut, eo anno, penitus
+      omittuntur, iuxta rubricas.
+    applies_to: first-class feasts only
+    destination:
+      locus: RG 96
+      rule: the next following day that is neither first nor second class
+      computed_here: false
+      why_not: >-
+        The destination depends on the class of every following day and on RG
+        97-98, which order several transferred feasts among themselves. This
+        repository does not compute it, and a page that guessed it would be
+        asserting an Ordo result it has not checked. The two destinations the
+        rubric fixes by name are computed, because the rubric states them.
+    proper_seats:
+    - key: annuntiatio-beatae-mariae-virginis
+      locus: RG 96 a
+      own_date: 03-25
+      when: 25 March falls between Palm Sunday and the Saturday after Easter inclusive,
+        which is when it must be transferred past Easter
+      impeded_when_easter_offset_between: [-7, 6]
+      destination: the Monday after Low Sunday
+      seat_easter_offset: 8
+      latin: festum Annuntiationis B. Mariae Virg., quando est transferendum post Pascha,
+        transfertur, tamquam in sedem propriam, in feriam II post dominicam in albis
+    - key: commemoratione-omnium-fidelium-defunctorum
+      locus: RG 96 b
+      own_date: 11-02
+      when: 2 November falls on a Sunday
+      impeded_when_weekday: sunday
+      destination: the following Monday
+      seat_offset_days: 1
+      latin: Commemoratio omnium Fidelium defunctorum, quando occurrit cum dominica,
+        transfertur, tamquam in sedem propriam, in feriam II sequentem
+    proper_seat_note: >-
+      "Tamquam in sedem propriam" matters: a day reached as a proper seat is not
+      a borrowed lodging. On it the transferred item behaves as though it were at
+      home, and the third-class feast that ordinarily occupies that date is
+      impeded for that year.
+    keeps_its_class:
+      locus: RG 99
+      latin: Festa translata sunt eiusdem gradus ac in sede propria.
+  reposition:
+    locus: RG 100-102
+    stated_only: true
+    why: >-
+      Reposition answers a perpetual collision, which is a permanent fact about
+      a particular calendar rather than a fact about a date. This repository
+      carries no particular calendar, so nothing here is ever repositioned.
+  fixed_commemoration:
+    locus: RG 94
+    latin: >-
+      Commemoratio die fixo statuta non transfertur vel reponitur cum festo
+      transferendo vel reponendo, sed fit suo die vel omittitur.
+    gloss: A commemoration attached to a date does not travel with the feast it accompanies.
+  sunday_not_resumed:
+    locus: RG 14
+    latin: Officium et Missa dominicae impeditae nec anticipantur nec resumuntur.
+    gloss: An impeded Sunday is gone for that year. It is not moved forward, back, or
+      into the following week.
+  vigil_dropped:
+    locus: RG 33
+    gloss: >-
+      A second- or third-class vigil is dropped altogether - penitus omittitur -
+      if it falls on a Sunday or on a first-class feast, or if the feast it
+      precedes is itself transferred or reduced to a commemoration.
+
+# ---------------------------------------------------------------------------
+# Commemoration: the part of the older system the 1960 code most drastically
+# reduced, and the part the second and third collect come from.
+# ---------------------------------------------------------------------------
+commemoration:
+  kinds:
+    locus: RG 107-108
+    latin: >-
+      Commemorationes sunt aut privilegiatae aut ordinariae. Commemorationes
+      privilegiatae fiunt in Laudibus et in Vesperis necnon in omnibus Missis;
+      commemorationes vero ordinariae fiunt tantum in Laudibus, in Missis
+      conventualibus et in omnibus Missis lectis.
+    gloss: >-
+      An ordinary commemoration is made at every Low Mass and at the conventual
+      Mass, and at no other sung Mass. A sung parish Mass that is not a
+      conventual Mass drops every ordinary commemoration, whatever the day. This
+      is the single most-missed rule in the apparatus.
+  privileged:
+    locus: RG 109
+    list:
+    - {clause: a, what: of the Sunday}
+    - {clause: b, what: of a first-class liturgical day}
+    - {clause: c, what: of the days within the octave of the Nativity}
+    - {clause: d, what: of the September Ember Days}
+    - {clause: e, what: 'of the ferias of Advent, Lent and Passiontide'}
+    - {clause: f, what: 'of the Greater Litanies, in the Mass'}
+    closing: Omnes aliae commemorationes sunt commemorationes ordinariae.
+  ceilings:
+    locus: RG 111; RGMR 434
+    latin: >-
+      Ratio admittendi commemorationes haec est: a) in diebus liturgicis I
+      classis et in Missis in cantu non conventualibus, nulla admittitur
+      commemoratio, praeter unam privilegiatam; b) in dominicis II classis, una
+      tantum admittitur commemoratio, scilicet de festo II classis, quae tamen
+      omittitur si commemoratio privilegiata facienda sit; c) in aliis diebus
+      liturgicis II classis, una tantum admittitur commemoratio, scilicet aut
+      una privilegiata aut una ordinaria; d) in diebus liturgicis III et IV
+      classis, duae tantum admittuntur commemorationes.
+    rules:
+    - {clause: a, when_class: I, max: 1, privileged_only: true, what: 'On a first-class
+        day, one commemoration only and it must be privileged.'}
+    - {clause: b, when_class: II, when_nature: sunday, max: 1, privileged_only: false,
+      second_class_feasts_only: true, displaced_by_privileged: true, what: 'On a second-class
+        Sunday, one commemoration only, and it must be of a second-class feast; it
+        is omitted if a privileged commemoration is due, and that privileged one is
+        made instead.'}
+    - {clause: c, when_class: II, max: 1, privileged_only: false, what: 'On any other
+        second-class day, exactly one commemoration, privileged or ordinary.'}
+    - {clause: d, when_class: [III, IV], max: 2, privileged_only: false, what: 'On
+        a third- or fourth-class day, two commemorations.'}
+    sung_non_conventual:
+      locus: RGMR 434 a; RG 108
+      max: 1
+      privileged_only: true
+      what: >-
+        A sung Mass that is not the conventual Mass is put in the same clause as
+        a first-class day: one privileged commemoration and no more, whatever the
+        calendar says. A parish sung Mass on a fourth-class Tuesday therefore has
+        fewer orations than the Low Mass said at the side altar an hour earlier.
+  exclusions:
+    locus: RG 112
+    list:
+    - {clause: a, what: 'An Office, Mass or commemoration of a feast or mystery of
+        one divine Person excludes a commemoration or prayer of another feast or mystery
+        of the same Person.', applied: false}
+    - {clause: b, what: 'An Office, Mass or commemoration of the Sunday excludes a
+        commemoration or prayer of a feast or mystery of the Lord, and conversely.',
+      applied: true}
+    - {clause: c, what: 'An Office, Mass or commemoration de Tempore excludes another
+        commemoration de Tempore.', applied: true}
+    - {clause: d, what: 'An Office, Mass or commemoration of Our Lady or of a saint
+        excludes another commemoration or prayer asking the same intercession - but
+        not the prayer of the Sunday or feria in which the same saint is invoked.',
+      applied: false}
+    not_applied_note: >-
+      Clauses a and d turn on the identity of a divine Person or of a saint,
+      which this file cannot read off a mass key. They are stated at the step
+      where they would apply and are never applied. Where either might bite, the
+      page says the case is unsettled here.
+  inseparable:
+    locus: RG 110
+    what: >-
+      The mutual commemoration of Ss Peter and Paul is inseparable: in the Office
+      or Mass of either, the other's prayer is added under a single conclusion,
+      and "duae orationes adeo in unam coalescere censentur ut, in numero
+      orationum computando, pro unica habeantur". Two prayers counting as one.
+    applied: false
+  order:
+    locus: RG 113
+    latin: >-
+      Commemoratio de Tempore fit primo loco. In admittendis et ordinandis aliis
+      commemorationibus, servetur ordo tabellae praecedentiae.
+    gloss: The season first, then the table order.
+  surplus:
+    locus: RG 114
+    latin: Quaelibet commemoratio, quae numerum pro singulis diebus liturgicis statutum
+      superet, omittitur.
+  abolished:
+    locus: Variationes cap. II n. 13; cap. IV n. 18 (Acta 52 (1960) 708-709)
+    what: >-
+      The Suffragium de omnibus Sanctis, the commemoratio de Cruce and the
+      seasonal second and third orations of Advent, Lent and the Sundays - the
+      orationes pro diversitate Temporum that older hand missals print beneath
+      the collect - were abolished with the code. A reader holding a pre-1955
+      hand missal is holding a book whose commemoration apparatus has been
+      dismantled, not trimmed, and its printed second and third collects must not
+      be used with the 1962 calendar.
+
+# ---------------------------------------------------------------------------
+# Decision five, as far as the orations. Everything else in the assembly is
+# named in `not_decided_here`.
+# ---------------------------------------------------------------------------
+orations:
+  what_counts:
+    locus: RGMR 433
+    what: the oration of the Mass being celebrated; the orations of a commemorated
+      Office and of any occurring commemoration; other orations the rubrics prescribe;
+      the prayer imposed by the local Ordinary; and the votive prayer.
+  ceiling_covers_all:
+    locus: RGMR 434
+    what: The ceiling counts all of them together, not only the commemorations.
+  absolute_cap:
+    locus: RGMR 435
+    value: 3
+    latin: 'Quaelibet oratio, quae numerum pro singulis diebus liturgicis statutum
+      superet, omittitur; profecto numerum ternarium orationum nullo praetextu excedere
+      licet.'
+    gloss: Three, always. Nullo praetextu.
+  conclusions:
+    locus: RGMR 436-437
+    what: The Mass's own oration is said under its own conclusion unless another is
+      joined to it; commemorations, the imposed prayer and the votive prayer are always
+      said under a second conclusion.
+  tracked_by:
+  - {slot: Secret, locus: RGMR 480-481, what: 'as many as there were orations at the
+      beginning of Mass, in the same order and with the same conclusions'}
+  - {slot: Postcommunion, locus: RGMR 505, what: eodem numero, modo et ordine ac orationes
+      in principio Missae}
+  prayer_over_the_people:
+    locus: RGMR 506
+    what: Added after the last postcommunion in Masses OF the ferias of Lent and Passiontide,
+      the Sacred Triduum excepted; under its own conclusion; said even when three postcommunions
+      have preceded.
+    applies_when_winner_basis: [row-22-lenten-feria]
+  imposed_prayer:
+    locus: RGMR 454; RGMR 457 d
+    applied: false
+    what: >-
+      The local Ordinary may impose one prayer for a grave and public necessity.
+      It is barred on every first- and second-class day, in every sung Mass, and
+      whenever privileged commemorations have already filled the day's number.
+      Whether one is imposed is a fact about a diocese, so this page never adds
+      one and never assumes there is none.
+  votive_prayer:
+    locus: RGMR 461-464
+    applied: false
+    what: Any priest may add one at his discretion in read non-conventual Masses on
+      fourth-class days, placed last. It is a choice, not a rule, so this page never
+      adds one.
+
+# ---------------------------------------------------------------------------
+# Decision four is not taken here at all, and saying which rubrics would take it
+# is more useful than a silence a reader could mistake for permission.
+# ---------------------------------------------------------------------------
+mass_category:
+  assumed: the Mass of the Office of the day
+  locus: RGMR 270
+  latin: Missa proinde per se cum Officio diei concordare debet.
+  not_tested:
+  - {category: festive Mass, locus: RGMR 301-303}
+  - {category: votive Mass, locus: 'RGMR 306-309, 314-317, 326, 328, 341, 384-387'}
+  - {category: First Thursday, First Friday and First Saturday votives, locus: RGMR
+      385}
+  - {category: Requiem and funeral Mass, locus: 'RGMR 391-423'}
+  - {category: ritual and nuptial Mass, locus: 'RGMR 378-382, 447-448'}
+  - {category: external solemnity, locus: RGMR 356-361}
+  - {category: the ordination Mass on Ember Saturdays, locus: RGMR 300}
+  warning: >-
+    A day's class tells you only that a category is not excluded. What admits it
+    is a separate fact - about the church, the celebrant, the day's exercises, or
+    an indult - and permission is never inferred from rank.
+
+not_decided_here:
+- Which calendar binds the celebrant (RGMR 274-284), and every particular, diocesan,
+  religious, patronal, titular and dedication feast that calendar carries. Rows 12,
+  13, 19, 20 and 23 of the table are therefore always empty here, and row 23 outranks
+  row 24.
+- The Gloria, which depends on whether the Te Deum was said at Matins (RGMR 431; RGBR
+  237-238, which the Missal does not print).
+- The Creed (RGMR 475-476), the Preface (RGMR 482-499), the colour (RG 117-132), the
+  Last Gospel (RGMR 509-510) and the tone.
+- Whether a first-class feast transferred from an earlier date occupies this one,
+  except at the two proper seats RG 96 a-b names.
+- Concurrence, which disposes of Vespers and never of the next morning's Mass (RG 103-105).
+
+divergences:
+- what: the span of the third-class ferias at row 22
+  publication_reads: from the Thursday after Ash Wednesday to the Saturday before Passion
+    Sunday inclusive
+  this_file_reads: from the Thursday after Ash Wednesday to the Saturday before Palm
+    Sunday inclusive
+  why: >-
+    The publication's own Case 1a classes Wednesday 17 March 2027 - a weekday of
+    Passion week, after Passion Sunday - at row 22 and states the span as running
+    "to the Saturday before Palm Sunday (20 March) inclusive". Its transcription
+    of the row and of RG 25 a says "Passion Sunday" instead. The tracked 1962
+    calendar in this repository independently prints rank III against every feria
+    of Passion week, and RG 23 makes Monday to Wednesday of Holy Week first class,
+    which leaves no other class for the days between. This file follows the case
+    and the calendar, records the disagreement, and does not claim to have
+    resolved it against the witness.
+  reported: true
+
+unsettled:
+- what: three formularies the Missal carries and this calendar index does not
+  why: >-
+    The index's own notes record them: D. N. Iesu Christi Regis on the last
+    Sunday of October, Sanctissimi Nominis Iesu on the Sunday between 2 and 5
+    January, and the Mass for the days within the octave of the Nativity used on
+    29, 30 and 31 December. None is in the fixed-date spine, so nothing places
+    them.
+  effect: >-
+    Row 3 of the table has no mass for Christ the King in this repository, and a
+    Sunday falling between 2 and 5 January carries no day at all. The page says
+    it cannot constitute the day rather than handing it to whatever else the
+    date carries.
+- what: two entries that are the same celebration under different keys
+  why: >-
+    A year with exactly twenty-three Sundays after Pentecost puts the numbered
+    Sunday and the last Sunday in one slot, and the day file emits both. RG 18's
+    closing paragraph decides it and is applied as an override; the underlying
+    duplication is in the day file rather than here.
+- what: the three Ember Days of Advent and the three of September
+  why: guidance/liturgy/calendar-computation.md does not date them, so calendar-days
+    never places them and this file cannot exclude them from an Advent or after-Pentecost
+    weekday.
+  effect: an implied Advent feria before 17 December, and an implied feria after Pentecost,
+    are marked uncertain and the page says the result may not hold.
+- what: the Greater Litanies and the Rogation days
+  why: >-
+    The calendar index inscribes the Greater Litanies at 25 April under one key
+    with the feast of St Mark, so where that day loses, this page cannot tell
+    the feast's ordinary commemoration from the Litanies' commemoration, which
+    RG 109 f makes privileged in the Mass. The Rogation Mass itself is not dated
+    in guidance/liturgy/calendar-computation.md and is never placed, so the three
+    Rogation days before the Ascension do not appear at all.
+  effect: >-
+    On 25 April a commemoration is derived as ordinary and may in fact be
+    privileged, which changes whether it survives at a sung non-conventual Mass.
+- what: two candidates that land on the same row
+  why: the table orders within several rows - movable before fixed, proper before indulted
+    - and this repository cannot always tell which a mass is. Where two candidates
+    tie, the derivation stops and says the day is not settled here.
+- what: RG 95 second paragraph, RG 110 and RG 112 a and d
+  why: all four turn on the identity of a divine Person or of a saint, which cannot
+    be read off a mass key. They are stated where they would apply and never applied.
+
+# ---------------------------------------------------------------------------
+# Solved cases. Each is checked by running the browser's own derivation against
+# the generated data, so the page and this file cannot drift apart silently.
+# Every one is taken from the publication's worked-case ledger.
+# ---------------------------------------------------------------------------
+worked_cases:
+- id: case-1a-lenten-feria-beats-a-third-class-saint
+  source: worked-cases.md Case 1a
+  date: '2027-03-17'
+  why: the single most-misremembered rule in the code - a third-class universal feast
+    loses to a third-class feria of Lent or Passiontide.
+  expect:
+    winner: passion-wednesday
+    winner_row: 22
+    commemorated: [s-patricii-episcopi-confessoris]
+    omitted: []
+    orations_low_mass: 2
+    orations_sung_non_conventual: 1
+    settled: true
+- id: case-1b-advent-feria-yields-to-the-same-class-of-saint
+  source: worked-cases.md Case 1b
+  date: '2027-12-03'
+  why: the mirror image of Case 1a with identical class numbers, to show that the class
+    numbers are not what decide.
+  expect:
+    winner: s-francisci-xaverii-confessoris
+    winner_row: 24
+    commemorated: ['implied:advent-feria-early']
+    orations_low_mass: 2
+    orations_sung_non_conventual: 2
+    settled: true
+- id: case-2-easter-takes-the-annunciation
+  source: worked-cases.md Case 2
+  date: '2035-03-25'
+  why: the extreme accidental occurrence - a first-class feast of the universal calendar
+    against the highest row of the table.
+  expect:
+    winner: easter-sunday
+    winner_row: 1
+    transferred: [annuntiatio-beatae-mariae-virginis]
+    commemorated: []
+    orations_low_mass: 1
+    settled: true
+- id: case-2b-the-annunciation-at-its-proper-seat
+  source: worked-cases.md Case 2
+  date: '2035-04-02'
+  why: the proper seat RG 96 a fixes by name, and the third-class feast it impedes
+    for the year.
+  expect:
+    winner: annuntiatio-beatae-mariae-virginis
+    winner_row: 11
+    arrived: true
+    omitted: [s-francisci-paula-confessoris, 'implied:paschaltide-feria']
+    orations_low_mass: 1
+    settled: true
+- id: case-3-all-souls-yields-to-a-sunday
+  source: worked-cases.md Case 3
+  date: '2036-11-02'
+  why: the one row of the table that carries its own defeat.
+  expect:
+    winner: pentecost-22
+    winner_row: 15
+    transferred: [commemoratione-omnium-fidelium-defunctorum]
+    orations_low_mass: 1
+    settled: true
+- id: case-3b-all-souls-at-its-proper-seat
+  source: worked-cases.md Case 3
+  date: '2036-11-03'
+  why: RG 96 b's named seat, which the Missal prints in its own heading at the day.
+  expect:
+    winner: commemoratione-omnium-fidelium-defunctorum
+    arrived: true
+    settled: true
+- id: case-5-a-resumed-sunday-after-the-epiphany
+  source: worked-cases.md Case 5
+  date: '2026-11-08'
+  why: the signature 1962 arrangement - a Sunday after Pentecost whose slot is filled
+    by a Sunday after the Epiphany that was impeded in January.
+  expect:
+    winner: resumed-epiphany-5
+    winner_row: 15
+    settled: true
+- id: all-saints-on-a-sunday
+  source: derived from Case 5's dated anchors; RG 16 a and RG 111 a
+  date: '2026-11-01'
+  why: a first-class feast on a second-class Sunday - the Sunday is commemorated, and
+    because its commemoration is privileged it survives even at a sung Mass.
+  expect:
+    winner: omnium-sanctorum
+    winner_row: 11
+    commemorated: [pentecost-23]
+    orations_low_mass: 2
+    orations_sung_non_conventual: 2
+    settled: true

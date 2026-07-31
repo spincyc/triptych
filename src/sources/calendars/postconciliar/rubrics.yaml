@@ -1,0 +1,593 @@
+schema: triptych-calendar-rubrics/v1
+calendar: postconciliar
+edition: Missale Romanum, editio typica tertia 2008, reimpressio emendata 2008
+code: Normae universales de anno liturgico et de calendario, 1969, with the Institutio
+  generalis Missalis Romani
+citation_forms:
+  NUALC: Normae universales de anno liturgico et de calendario, printed in the Missal
+    before the General Roman Calendar
+  IGMR: Institutio generalis Missalis Romani, the General Instruction of the Roman
+    Missal
+advisory: >-
+  This file states which norm governs a decision. It does not state what was
+  celebrated anywhere. The universal calendar is the floor and not the answer: a
+  national, diocesan, religious and church calendar is laid over it, the
+  Ascension, the Body and Blood of Christ and the Epiphany sit on a Sunday only
+  where the competent authority has actually decided it, and the competent
+  territorial calendar or Ordo controls. Nothing here is an occurrence witness.
+
+# ---------------------------------------------------------------------------
+# Where every norm below came from
+#
+# Every article here is transcribed from the repository's own collated
+# publication on the postconciliar calendar, which read the Universal Norms and
+# the Table of Liturgical Days complete in a registered reproduction of the 2002
+# editio typica tertia and the General Instruction at the articles it cites.
+# This file adds no rule that publication does not carry.
+# ---------------------------------------------------------------------------
+derived_from:
+  publication: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar
+  sections:
+  - src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/20-ranks.tex
+  - src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/30-table.tex
+  - src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/40-occurrence.tex
+  edition_manifest: src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/edition-manifest.md
+  witnesses:
+  - id: Missale Romanum, editio typica tertia 2002
+    role: controlling book
+    what: Universal Norms and the Table of Liturgical Days complete, artifact pages
+      64-71; the General Instruction at the cited articles
+
+# ---------------------------------------------------------------------------
+# Decision two. Thirteen numbered places, in three parts which are not three
+# grades: Ash Wednesday and the weekdays of Holy Week sit in part I though they
+# are weekdays, and the privileged weekdays sit at the bottom of part II above
+# every memorial. The operative unit is the numbered place.
+# ---------------------------------------------------------------------------
+precedence:
+  stated: true
+  locus: NUALC 59
+  latin: Praecedentia inter dies liturgicos, quoad eorum celebrationem, unice regitur
+    sequenti tabula.
+  gloss: >-
+    Unice - solely. There is no residual customary precedence, no appeal to the
+    dignity of a titular, and no general principle that a solemnity always wins.
+    Where two celebrations fall on one day the question is only which of them
+    stands higher in the thirteen numbered places.
+  rows:
+  - {row: 1, part: I, label: The Paschal Triduum of the Passion and Resurrection of
+      the Lord}
+  - {row: 2, part: I, label: 'The Nativity, the Epiphany, the Ascension and Pentecost;
+      the Sundays of Advent, Lent and Easter; Ash Wednesday; the weekdays of Holy Week
+      from Monday to Thursday inclusive; the days within the Octave of Easter', note: 'Ash
+      Wednesday and the Holy Week weekdays outrank every solemnity, and so does a weekday
+      of the Easter octave.'}
+  - {row: 3, part: I, label: 'Solemnities of the Lord, of the Blessed Virgin Mary and
+      of the saints inscribed in the General Roman Calendar; the Commemoration of All
+      the Faithful Departed'}
+  - {row: 4, part: I, label: 'Proper solemnities: the principal patron of the place;
+      the dedication and its anniversary for one''s own church; the title of one''s
+      own church; the title, founder or principal patron of an Order or Congregation',
+    particular: true}
+  - {row: 5, part: II, label: Feasts of the Lord inscribed in the General Roman Calendar,
+    note: 'These, and only these, displace a Sunday of Christmas Time or of Ordinary
+      Time.'}
+  - {row: 6, part: II, label: The Sundays of Christmas Time and the Sundays in Ordinary
+      Time}
+  - {row: 7, part: II, label: Feasts of the Blessed Virgin Mary and of the saints in
+      the General Roman Calendar, note: 'Being below place 6, such a feast is simply
+      omitted in a year in which it falls on a Sunday.'}
+  - {row: 8, part: II, label: 'Proper feasts: the diocesan principal patron; the cathedral
+      dedication anniversary; the patron of a region, province, nation or wider territory;
+      a religious title, founder or principal patron; other feasts proper to a church;
+      other feasts of a diocesan or religious calendar', particular: true}
+  - {row: 9, part: II, label: 'The privileged weekdays: Advent from 17 to 24 December
+      inclusive, the days within the Octave of the Nativity, and the weekdays of Lent',
+    note: They stand above every memorial and below every feast.}
+  - {row: 10, part: III, label: Obligatory memorials of the General Roman Calendar}
+  - {row: 11, part: III, label: 'Proper obligatory memorials: secondary patrons, and
+      other obligatory memorials of a diocesan or religious calendar', particular: true}
+  - {row: 12, part: III, label: Optional memorials, note: 'The only entry in the table
+      that carries a substantive rule inside it. Optional memorials may be made even
+      on the privileged weekdays of place 9, in the manner IGMR 355 a describes; and
+      by the same provision an obligatory memorial falling on a weekday of Lent is
+      kept as an optional memorial.'}
+  - {row: 13, part: III, label: 'The ordinary weekdays: Advent to 16 December inclusive;
+      Christmas Time from 2 January to the Saturday after the Epiphany; Easter Time
+      from the Monday after the Octave of Easter to the Saturday before Pentecost inclusive;
+      the weekdays in Ordinary Time'}
+  occurrence:
+    locus: NUALC 60
+    latin: >-
+      Si eodem die plures celebrationes occurrunt, fit de ea quae in tabula
+      dierum liturgicorum superiorem obtinet locum. Attamen sollemnitas, quae
+      impeditur a die liturgico, qui praecedentia gaudeat, ad proximiorem diem
+      transferatur qui sit liber a diebus sub nn. 1-8 in tabula praecedentiae
+      recensitis, servatis iis quae n. 5 statuuntur. Sollemnitas vero
+      Annuntiationis Domini, quotiescumque occurrit aliquo die Hebdomadae
+      sanctae, semper ad feriam II post dominicam II Paschae erit transferenda.
+      Reliquae celebrationes eo anno omittuntur.
+    gloss: >-
+      Four dispositions in one article: occurrence resolved by the table;
+      transfer, reserved to solemnities; the Annunciation's fixed transfer; and
+      omission of everything else. Confusing them is the commonest error in
+      calendar work.
+  concurrence:
+    locus: NUALC 61
+    gloss: >-
+      Where the Vespers of the current day and the First Vespers of the next
+      meet, the higher place wins and a tie goes to the current day. It is stated
+      for the Office and has no Mass analogue.
+    decides_the_mass: false
+
+overrides: []
+
+# ---------------------------------------------------------------------------
+# The bases.
+# ---------------------------------------------------------------------------
+bases:
+- id: place-1-triduum
+  constitutes_the_day: true
+  label: a day of the Paschal Triduum
+  row: 1
+  nature: triduum
+  commemoration: none
+  why: a day of the Paschal Triduum, which NUALC 18 calls the summit of the whole liturgical
+    year
+  locus: NUALC 59 table 1; NUALC 18-20
+- id: place-2-great-day
+  constitutes_the_day: true
+  label: a greatest solemnity, or a Sunday of Advent, Lent or Easter
+  row: 2
+  nature: solemnity-or-sunday
+  commemoration: none
+  why: one of the four greatest solemnities of the Lord, or a Sunday of Advent, Lent
+    or Easter
+  locus: NUALC 59 table 2; NUALC 5
+- id: place-2-privileged-weekday
+  constitutes_the_day: true
+  label: Ash Wednesday, a weekday of Holy Week, or a day in the Octave of Easter
+  row: 2
+  nature: weekday
+  commemoration: none
+  why: Ash Wednesday, a weekday of Holy Week from Monday to Thursday, or a day within
+    the Octave of Easter - all of which are preferred to every other celebration without
+    qualification
+  locus: NUALC 16 a; NUALC 59 table 2
+- id: place-3-solemnity
+  label: a solemnity of the General Roman Calendar
+  row: 3
+  nature: solemnity
+  commemoration: none
+  why: a solemnity of the General Roman Calendar, or the Commemoration of All the Faithful
+    Departed
+  locus: NUALC 59 table 3
+- id: place-5-feast-of-the-lord
+  label: a feast of the Lord
+  row: 5
+  nature: feast
+  commemoration: none
+  why: a feast of the Lord in the General Roman Calendar, which displaces a Sunday of
+    Christmas Time or of Ordinary Time
+  locus: NUALC 5; NUALC 59 table 5
+- id: place-6-sunday
+  constitutes_the_day: true
+  label: a Sunday of Christmas Time or in Ordinary Time
+  row: 6
+  nature: sunday
+  commemoration: none
+  why: a Sunday of Christmas Time or a Sunday in Ordinary Time
+  locus: NUALC 59 table 6
+- id: place-7-feast
+  label: a feast of Our Lady or of a saint
+  row: 7
+  nature: feast
+  commemoration: none
+  why: a feast of the Blessed Virgin Mary or of a saint in the General Roman Calendar
+  locus: NUALC 59 table 7
+- id: place-9-privileged-weekday
+  constitutes_the_day: true
+  label: a privileged weekday
+  row: 9
+  nature: weekday
+  commemoration: none
+  why: 'a privileged weekday: Advent from 17 to 24 December, a day within the Octave
+    of the Nativity, or a weekday of Lent'
+  locus: NUALC 16 b; NUALC 59 table 9
+- id: place-10-obligatory-memorial
+  label: an obligatory memorial
+  row: 10
+  nature: memorial
+  commemoration: none
+  why: an obligatory memorial of the General Roman Calendar, which is joined to the
+    occurring weekday rather than replacing it
+  locus: NUALC 14; NUALC 59 table 10
+- id: place-12-optional-memorial
+  label: an optional memorial
+  row: 12
+  nature: optional-memorial
+  commemoration: none
+  optional: true
+  why: an optional memorial, which may be kept or omitted; where several fall on one
+    day only one may be kept and the rest are omitted
+  locus: NUALC 14; NUALC 59 table 12
+- id: place-13-weekday
+  constitutes_the_day: true
+  label: an ordinary weekday
+  row: 13
+  nature: weekday
+  commemoration: none
+  why: an ordinary weekday, which yields to everything above a memorial and is combined
+    with a memorial rather than displaced by it
+  locus: NUALC 16 c; NUALC 59 table 13
+- id: not-classified
+  label: not classified here
+  row: null
+  nature: unknown
+  commemoration: none
+  competes: false
+  certain: false
+  why: this repository states no place for this entry
+  locus: null
+
+# ---------------------------------------------------------------------------
+# The index carries three celebrations twice, once as a temporal key that can
+# move and once as a fixed-date key. They are one celebration, not two
+# competitors, and collapsing them here is what keeps the derivation from
+# reporting a tie against a celebration and itself.
+# ---------------------------------------------------------------------------
+same_celebration:
+- {keep: nativity, also: [nativity-lord], what: The Nativity of the Lord}
+- {keep: epiphany, also: [epiphany-lord], what: The Epiphany of the Lord}
+- {keep: mary-mother-of-god, also: [mary-holy-mother-god], what: 'Mary, the Holy Mother
+    of God'}
+
+assignment:
+- {basis: place-1-triduum, keys: [mass-of-the-lords-supper, good-friday, easter-vigil,
+      easter-sunday], note: 'NUALC 19 runs the Triduum from the evening Mass of the
+    Lord''s Supper to Evening Prayer on Easter Sunday, so Easter Sunday is in place
+    1 and not in place 2.'}
+- {basis: place-2-great-day, keys: [nativity, nativity-lord, epiphany, epiphany-lord,
+      ascension, pentecost, palm-sunday]}
+- {basis: place-2-great-day, key_matches: '^(advent-[1-4]|lent-[1-5]|easter-[2-7])$'}
+- {basis: place-3-solemnity, keys: [mary-mother-of-god, mary-holy-mother-god, most-holy-trinity,
+      corpus-christi, christ-the-king]}
+- {basis: place-5-feast-of-the-lord, keys: [holy-family, baptism-of-the-lord]}
+- {basis: place-6-sunday, keys: [second-sunday-after-nativity]}
+- {basis: place-6-sunday, key_matches: '^ot-\d+$'}
+- {basis: place-3-solemnity, dated: true, rank: Solemnity}
+- {basis: place-3-solemnity, dated: true, rank: All Souls commemoration}
+- {basis: place-5-feast-of-the-lord, dated: true, rank: Feast, kind: christological}
+- {basis: place-7-feast, dated: true, rank: Feast}
+- {basis: place-10-obligatory-memorial, dated: true, rank: Memorial}
+- {basis: place-12-optional-memorial, dated: true, rank: Optional memorial}
+- {basis: place-12-optional-memorial, dated: true, rank: Optional memorials, note: 'This
+    entry holds more than one optional memorial under a single key. The calendar index
+    does not separate them, so the page can only say that several fall here and that
+    NUALC 14 permits one.'}
+
+# ---------------------------------------------------------------------------
+# Implied days. The index carries a formulary only for the Sundays, the
+# solemnities and the days of the Triduum, so on most weekdays the day that a
+# memorial is measured against has no key at all. These rules constitute it from
+# the season the year file already computed.
+# ---------------------------------------------------------------------------
+implied:
+- id: ash-wednesday
+  label: Ash Wednesday
+  season: lent
+  on_anchor: ash_wednesday
+  basis: place-2-privileged-weekday
+  certain: true
+- id: lent-weekday
+  label: a weekday of Lent
+  season: lent
+  weekday_only: true
+  basis: place-9-privileged-weekday
+  certain: true
+- id: holy-week-weekday
+  label: a weekday of Holy Week
+  season: holy-week
+  weekday_only: true
+  basis: place-2-privileged-weekday
+  certain: true
+- id: holy-thursday
+  label: Thursday of Holy Week
+  season: triduum
+  weekday_only: true
+  basis: place-2-privileged-weekday
+  certain: true
+  note: The weekdays of Holy Week to Thursday inclusive are place 2; the Triduum at
+    place 1 begins with the evening Mass of the Lord's Supper, which the index carries
+    as its own key.
+- id: easter-octave-weekday
+  label: a weekday within the Octave of Easter
+  season: easter
+  from_anchor: {anchor: easter, offset_days: 1}
+  to_anchor: {anchor: easter, offset_days: 6}
+  weekday_only: true
+  basis: place-2-privileged-weekday
+  certain: true
+- id: easter-weekday
+  label: a weekday of Easter Time
+  season: easter
+  weekday_only: true
+  basis: place-13-weekday
+  certain: true
+- id: advent-weekday-late
+  label: a weekday of Advent from 17 to 24 December
+  season: advent
+  from: 12-17
+  to: 12-24
+  weekday_only: true
+  basis: place-9-privileged-weekday
+  certain: true
+- id: advent-weekday-early
+  label: a weekday of Advent before 17 December
+  season: advent
+  to: 12-16
+  weekday_only: true
+  basis: place-13-weekday
+  certain: true
+- id: christmas-octave-weekday
+  label: a day within the Octave of the Nativity
+  season: christmas
+  from: 12-26
+  to: 01-01
+  weekday_only: true
+  basis: place-9-privileged-weekday
+  certain: true
+- id: christmas-weekday
+  label: a weekday of Christmas Time
+  season: christmas
+  weekday_only: true
+  basis: place-13-weekday
+  certain: true
+- id: ordinary-time-weekday
+  label: a weekday in Ordinary Time
+  season: ordinary-time
+  weekday_only: true
+  basis: place-13-weekday
+  certain: true
+saturday_office:
+  locus: NUALC 15
+  latin: In sabbatis "per annum", in quibus non occurrat memoria obligatoria, fieri
+    potest memoria ad libitum de beata Maria Virgine.
+  stated_only: true
+  why: >-
+    The Saturday memorial of the Blessed Virgin Mary is an optional memorial and
+    not a rank, and its condition - a Saturday in Ordinary Time on which no
+    obligatory memorial occurs - is one the page can state but not resolve
+    against a particular calendar. It is named at the step and never asserted.
+
+impediment:
+  outcomes: [omission, transfer]
+  outcomes_locus: NUALC 60
+  transfer:
+    locus: NUALC 60
+    applies_to: solemnities only
+    latin: Sollemnitas, quae impeditur a die liturgico, qui praecedentia gaudeat, ad
+      proximiorem diem transferatur qui sit liber a diebus sub nn. 1-8 in tabula praecedentiae
+      recensitis.
+    destination:
+      rule: the nearest day free of the days listed under table places 1 to 8
+      computed_here: false
+      why_not: >-
+        The destination depends on the place of every following day and on
+        whether another solemnity has already been moved onto it. This repository
+        does not compute it. The destinations the article fixes by name are
+        computed, because the article states them.
+    proper_seats:
+    - key: annunciation-lord
+      locus: NUALC 60
+      own_date: 03-25
+      when: 25 March falls on any day of Holy Week
+      impeded_when_easter_offset_between: [-7, -1]
+      destination: the Monday after the Second Sunday of Easter
+      seat_easter_offset: 8
+      latin: Sollemnitas vero Annuntiationis Domini, quotiescumque occurrit aliquo die
+        Hebdomadae sanctae, semper ad feriam II post dominicam II Paschae erit transferenda.
+      note: This is not the nearest free day and is not derived from the general rule;
+        it is a specific disposition that overrides it.
+    sunday_rule:
+      locus: NUALC 5
+      what: A solemnity occurring on a Sunday of Advent, Lent or Easter goes to the
+        following Monday rather than to the nearest free day, except on Palm Sunday
+        and Easter Sunday, where the general rule of NUALC 60 takes over.
+      computed_here: false
+    anticipation:
+      locus: NUALC 56 f
+      what: The one movement backwards in the system. Where 19 March is a day of precept
+        and Saint Joseph meets Palm Sunday, the solemnity is anticipated to Saturday
+        18 March; where it is not of precept, the Episcopal Conference may instead move
+        it outside Lent altogether.
+      computed_here: false
+      why_not: Both branches turn on whether the day is of precept in a particular territory,
+        which this repository does not know.
+  omission:
+    locus: NUALC 60
+    latin: Reliquae celebrationes eo anno omittuntur.
+    gloss: >-
+      Everything else that lost is omitted for that year. Not anticipated, not
+      deferred, not commemorated - omitted. Transfer does not reach downwards:
+      nothing below a solemnity is ever moved by the general law.
+  reduction:
+    locus: NUALC 14; NUALC 59 table 12
+    latin: Memoriae vero obligatoriae, quae occurrunt in feriis Quadragesimae, solummodo
+      tamquam memoriae ad libitum celebrari possunt.
+    applies_when_loser_basis: [place-10-obligatory-memorial]
+    applies_when_winner_basis: [place-9-privileged-weekday]
+    only_in_season: [lent]
+    what: An obligatory memorial that falls on a weekday of Lent is not omitted outright
+      but kept as an optional memorial, and in practice survives as the collect IGMR
+      355 a permits.
+
+# ---------------------------------------------------------------------------
+# The contrast that is the whole point of putting the two missals side by side.
+# ---------------------------------------------------------------------------
+commemoration:
+  exists: false
+  locus: NUALC 60
+  what: >-
+    This rite does not commemorate. The 1962 apparatus of privileged and
+    ordinary commemorations, ceilings and second and third collects has no
+    counterpart here. A celebration that loses on the table is omitted for the
+    year, and no oration of it is added to the Mass that displaced it.
+  surviving_qualification:
+    locus: NUALC 59 table 12; IGMR 355 a
+    what: >-
+      On the weekdays of Advent from 17 December, on the days within the Octave
+      of the Nativity, and on the weekdays of Lent, the Mass is of the occurring
+      liturgical day, but the Collect may be taken from a memorial inscribed that
+      day in the General Roman Calendar - Ash Wednesday and the weekdays of Holy
+      Week excepted. This is the postconciliar residue of what the older system
+      called a commemoration. It substitutes one collect; it never adds a second.
+    is_a_second_collect: false
+
+orations:
+  count: 1
+  what: >-
+    One collect. The number never varies with the day, because nothing is ever
+    added to it: a losing celebration is omitted rather than commemorated
+    (NUALC 60), and the one qualification the system carries - the collect of a
+    memorial on a privileged weekday, IGMR 355 a - replaces the day's collect
+    rather than following it.
+  locus: NUALC 60; IGMR 355 a
+  general_rule_not_collated:
+    locus: IGMR 54
+    what: >-
+      The General Instruction states the one-oration rule directly at its n. 54,
+      and that article is the citation a reader should follow. This repository
+      has not read n. 54 in a witness, so the count above is stated from NUALC 60
+      and IGMR 355 a, which it has read. The gap is recorded rather than papered
+      over with a citation nobody here has checked.
+  memorial_orations:
+    locus: IGMR 363
+    what: On a memorial the proper collect is said, or one from the appropriate Common;
+      the other orations may be taken from the Common or from the current weekday.
+
+mass_category:
+  assumed: the Mass of the occurring liturgical day
+  locus: IGMR 353-355
+  not_tested:
+  - {category: 'the choice among an optional memorial, the weekday, a saint in the
+      Martyrology, a Mass for various needs and a votive Mass on a weekday in Ordinary
+      Time', locus: IGMR 355 c}
+  - {category: ritual Masses, locus: IGMR 372}
+  - {category: Masses for various needs and occasions, locus: IGMR 374}
+  - {category: votive Masses, locus: IGMR 375}
+  - {category: Masses for the dead, locus: IGMR 380-385}
+  warning: >-
+    IGMR 355 adds two cautions that belong beside any choice: the priest is not
+    to omit the assigned weekday readings frequently and without sufficient
+    cause, and where the choice lies between a memorial of the general calendar
+    and one of a diocesan or religious calendar, other things being equal the
+    particular memorial is to be preferred.
+
+not_decided_here:
+- The national, diocesan, religious and church calendars laid over the General Roman
+  Calendar, which change ranks upwards for the places that own them. Places 4, 8 and
+  11 of the table are therefore always empty here.
+- Whether the Ascension, the Body and Blood of Christ or the Epiphany is kept on its
+  own day or on a Sunday. NUALC 7 assigns them to a Sunday only where the competent
+  authority has so decided, and both forms are shown, tagged, with neither chosen.
+- Whether the Saturday memorial of the Blessed Virgin Mary is available (NUALC 15),
+  which turns on whether an obligatory memorial occurs.
+- Which optional memorial a celebrant keeps where several fall on one day (NUALC 14;
+  IGMR 355).
+- The Gloria, the Creed, the readings, the Preface, the Eucharistic Prayer and the
+  colour.
+- Whether a solemnity transferred from an earlier date occupies this one, except at
+  the Annunciation's named seat.
+
+unsettled:
+- what: an entry that carries several optional memorials under one key
+  why: the calendar index in this repository joins them, so the page can say that more
+    than one falls on the day but cannot list them separately or say which is which.
+- what: two candidates that land on the same place
+  why: 'the table orders within several places - and at place 12 it does not order at
+    all, because NUALC 14 leaves the choice to the celebrant. Where two candidates tie
+    below place 12 the derivation stops and says the day is not settled here; where
+    they tie at place 12 it says what NUALC 14 says: one may be kept and the rest are
+    omitted.'
+- what: IGMR 54
+  why: the article that states the one-oration rule directly has not been read in a
+    witness here. The count is stated from NUALC 60 and IGMR 355 a instead.
+
+worked_cases:
+- id: assumption-on-a-saturday
+  source: 40-occurrence.tex, worked occurrences
+  date: '2026-08-15'
+  why: a solemnity of the General Roman Calendar against an ordinary Saturday in Ordinary
+    Time.
+  expect:
+    winner: assumption-blessed-virgin-mary
+    winner_row: 3
+    omitted: ['implied:ordinary-time-weekday']
+    orations: 1
+    settled: true
+- id: matthias-against-a-transferred-ascension
+  source: 40-occurrence.tex, worked occurrences
+  date: '2026-05-14'
+  why: >-
+    The same civil date bears two different celebrations within one country. In
+    the provinces that keep the Thursday Ascension it is a solemnity at place 2;
+    where the Ascension has been moved to the Sunday it is the Feast of Saint
+    Matthias at place 7.
+  expect_by_option:
+    ascension-thursday: {winner: ascension, winner_row: 2, omitted: [saint-matthias-apostle],
+      settled: true}
+    ascension-transferred-to-sunday: {winner: saint-matthias-apostle, winner_row: 7,
+      settled: true}
+- id: a-feast-of-a-saint-on-a-sunday-in-ordinary-time
+  source: 40-occurrence.tex, worked occurrences
+  date: '2026-10-18'
+  why: place 7 against place 6 - the Sunday wins and the feast is omitted for the year.
+    Contrast a feast of the Lord at place 5, which displaces the same Sunday.
+  expect:
+    winner: ot-29
+    winner_row: 6
+    omitted: [saint-luke-evangelist]
+    orations: 1
+    settled: true
+- id: a-feast-of-the-lord-on-a-sunday-of-christmas-time
+  source: 30-table.tex, reading the table correctly
+  date: '2026-12-27'
+  why: the contrast the previous case names - place 5 does displace place 6.
+  expect:
+    winner: holy-family
+    winner_row: 5
+    omitted: [saint-john-apostle-evangelist]
+    settled: true
+- id: the-annunciation-in-holy-week
+  source: 40-occurrence.tex, worked occurrences
+  date: '2027-03-25'
+  why: place 3 against place 2, resolved by the express disposition of NUALC 60 rather
+    than by the nearest free day.
+  expect:
+    winner: mass-of-the-lords-supper
+    transferred: [annunciation-lord]
+    settled: true
+- id: the-annunciation-at-its-named-seat
+  source: 40-occurrence.tex, worked occurrences
+  date: '2027-04-05'
+  why: the Monday after the Second Sunday of Easter, which NUALC 60 names.
+  expect:
+    winner: annunciation-lord
+    winner_row: 3
+    arrived: true
+    settled: true
+- id: an-obligatory-memorial-on-a-weekday-of-lent
+  source: 40-occurrence.tex, worked occurrences
+  date: '2026-02-23'
+  why: >-
+    Place 10 against place 9. The weekday wins. The memorial is not omitted
+    outright but reduced to an optional memorial by NUALC 14 and table place 12,
+    and survives as the collect IGMR 355 a permits - which is the whole of what
+    this rite retains of commemoration.
+  expect:
+    winner: 'implied:lent-weekday'
+    winner_row: 9
+    reduced: [saint-polycarp-bishop-martyr]
+    orations: 1
+    settled: true

@@ -22,6 +22,19 @@
       "stage": "draft",
       "usage": "calendar-days {check,structure,coverage,day} [--calendar NAME] [--first Y] [--last Y] [--date D] [--root DIR] [--out DIR]"
     },
+    "calendar-rubrics": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Encode the rubrical precedence tables and emit them for the browser.",
+      "requires": [
+        "calendar-days"
+      ],
+      "stage": "draft",
+      "usage": "calendar-rubrics {check,structure,assign} [--calendar NAME] [--root DIR] [--out DIR]"
+    },
     "calendar-spine": {
       "idempotent": true,
       "json": true,

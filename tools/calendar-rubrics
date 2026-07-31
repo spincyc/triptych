@@ -1,0 +1,761 @@
+#!/usr/bin/env python3
+"""Validate the rubrical precedence sources and emit them for the browser.
+
+Usage: calendar-rubrics {check,structure,assign} [--calendar NAME] ...
+
+What this is, and why it is separate from `calendar-days`
+---------------------------------------------------------
+`calendar-days` refuses to rank. It says so in its own output: no general table
+of precedence is stated in `guidance/liturgy/calendar-computation.md`, so a date
+carrying several candidates emits them all with `precedence.stated: false`. That
+refusal was right, and this tool does not overturn it. It supplies the missing
+authority as a separate tracked source that can be read, checked and disagreed
+with on its own, and leaves the day files exactly as they were.
+
+The authority is not invented here either. Both `rubrics.yaml` files transcribe
+rules from this repository's own collated publications -- the 1962 leaf read the
+whole code as 260 dpi page images of a tracked facsimile and recorded every rule
+in a rubric index with an evidence class; the postconciliar leaf read the
+Universal Norms and the Table of Liturgical Days complete. Each source names its
+publication, its sections and its witnesses, and records where it departs from
+them.
+
+Three things this tool refuses to do
+------------------------------------
+*It does not classify a mass the source has no rule for.* Every mass in a
+calendar's index must match exactly one assignment rule; an unmatched mass is a
+hard failure rather than a silent `unknown`, because a calendar that grows an
+entry must surface here instead of vanishing into a default.
+
+*It does not check the derivation in a second implementation.* The browser owns
+the derivation, in `src/web/browser/liturgy/assembly-model.js`, and `check` runs
+that same file under node against the solved cases each source carries. A Python
+re-implementation would drift from the page it is meant to hold.
+
+*It does not date what the calendar guidance leaves undated.* The Ember Days of
+Advent and September are not placed by `calendar-days`, so a weekday that could
+be one is emitted with `certain: false` and the reason, and the page says the
+result may not hold.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import print_json, run_verb_cli  # noqa: E402
+
+DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
+DEFAULT_DATA = ROOT / "src" / "web" / "data"
+MODEL = ROOT / "src" / "web" / "browser" / "liturgy" / "assembly-model.js"
+SCHEMA = "triptych-calendar-rubrics/v1"
+SOURCE_NAME = "rubrics.yaml"
+GUIDANCE = "guidance/web-data.md"
+
+ADVISORY = (
+    "A finding aid for how a day is put together, and never an authority for what "
+    "was celebrated. The rules here are transcribed from this repository's own "
+    "collated publications; the competent particular calendar, a legitimate indult "
+    "and the competent annual Ordo control an actual celebration. Precedence is one "
+    "of five decisions, and this layer takes only that one and the orations that "
+    "follow from it."
+)
+
+# The fields a rubrics source must carry before anything is emitted from it.
+# Listed rather than inferred, so a source that quietly loses its provenance
+# block fails instead of shipping unattributed rules.
+REQUIRED_TOP = (
+    "schema",
+    "calendar",
+    "edition",
+    "code",
+    "advisory",
+    "derived_from",
+    "precedence",
+    "bases",
+    "assignment",
+    "impediment",
+    "commemoration",
+    "orations",
+    "mass_category",
+    "not_decided_here",
+    "unsettled",
+    "worked_cases",
+)
+# Emitted to the browser. `worked_cases` is deliberately absent: it is how this
+# tool holds the model, not something a page reads.
+EMITTED = (
+    "advisory",
+    "assignment",
+    "bases",
+    "calendar",
+    "citation_forms",
+    "code",
+    "commemoration",
+    "derived_from",
+    "divergences",
+    "edition",
+    "impediment",
+    "implied",
+    "keys",
+    "known_absences",
+    "mass_category",
+    "not_decided_here",
+    "orations",
+    "overrides",
+    "precedence",
+    "same_celebration",
+    "saturday_office",
+    "schema",
+    "unsettled",
+)
+
+PREDICATE_FIELDS = ("keys", "key_matches", "dated", "kind", "rank", "season")
+
+
+class SourceError(ValueError):
+    """A rubrics source that cannot be trusted to emit anything."""
+
+
+# --------------------------------------------------------------- reading
+
+
+def calendars(root: Path, only: str | None) -> list[str]:
+    if not root.is_dir():
+        raise SourceError(f"no calendar directory at {root}")
+    found = sorted(p.name for p in root.iterdir() if (p / SOURCE_NAME).is_file())
+    if only:
+        if only not in found:
+            raise SourceError(f"no calendar {only!r} with a {SOURCE_NAME} under {root}; have {found}")
+        return [only]
+    if not found:
+        raise SourceError(f"no calendar with a {SOURCE_NAME} under {root}")
+    return found
+
+
+def load_masses(root: Path, name: str) -> dict[str, dict]:
+    """The calendar's own mass index, which the rubrics classify.
+
+    Read from the same `propers.yaml` `calendar-days` reads, so a rank or a kind
+    is never restated beside the file that owns it.
+    """
+    import yaml
+
+    path = root / name / "propers.yaml"
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(document, dict):
+        raise SourceError(f"{path}: top level must be a mapping")
+    masses: dict[str, dict] = {}
+    for section, body in sorted((document.get("sections") or {}).items()):
+        for mass in (body or {}).get("masses") or []:
+            if not isinstance(mass, dict) or not mass.get("key"):
+                continue
+            key = str(mass["key"])
+            masses[key] = {
+                "key": key,
+                "name": mass.get("name"),
+                "section": section,
+                "kind": mass.get("kind") or section,
+                "rank": mass.get("rank"),
+                "season": mass.get("season"),
+                "dated": bool(mass.get("date")),
+            }
+    if not masses:
+        raise SourceError(f"{path}: carries no masses")
+    return masses
+
+
+def load_source(root: Path, name: str) -> dict:
+    import yaml
+
+    path = root / name / SOURCE_NAME
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(document, dict):
+        raise SourceError(f"{path}: top level must be a mapping")
+    missing = [field for field in REQUIRED_TOP if field not in document]
+    if missing:
+        raise SourceError(f"{path}: missing {', '.join(missing)}")
+    if document.get("schema") != SCHEMA:
+        raise SourceError(f"{path}: schema is {document.get('schema')!r}, expected {SCHEMA!r}")
+    if document.get("calendar") != name:
+        raise SourceError(f"{path}: declares calendar {document.get('calendar')!r}, lives under {name!r}")
+    return document
+
+
+# --------------------------------------------------------------- validation
+
+
+def check_precedence(document: dict, where: str) -> list[str]:
+    problems: list[str] = []
+    table = document["precedence"]
+    if not table.get("stated"):
+        problems.append(f"{where}: precedence.stated is false; this file exists to state it")
+    if not table.get("locus"):
+        problems.append(f"{where}: the precedence table carries no locus")
+    rows = table.get("rows") or []
+    numbers = [row.get("row") for row in rows]
+    if numbers != list(range(1, len(rows) + 1)):
+        problems.append(f"{where}: the precedence rows are not 1..{len(rows)} in order")
+    for row in rows:
+        if not row.get("label"):
+            problems.append(f"{where}: row {row.get('row')} carries no label")
+    return problems
+
+
+def check_bases(document: dict, where: str) -> tuple[dict[str, int], list[str]]:
+    problems: list[str] = []
+    rows = {row["row"] for row in document["precedence"]["rows"]}
+    index: dict[str, int] = {}
+    for position, basis in enumerate(document["bases"]):
+        identifier = basis.get("id")
+        if not identifier:
+            problems.append(f"{where}: a basis at position {position} carries no id")
+            continue
+        if identifier in index:
+            problems.append(f"{where}: two bases share the id {identifier!r}")
+        index[identifier] = position
+        if not basis.get("why"):
+            problems.append(f"{where}: basis {identifier!r} says nothing about why")
+        # A basis names a class of days, and the page prints that name where the
+        # index has no formulary to name it. Falling back to `why` put a whole
+        # sentence where a day's name belongs.
+        if not basis.get("label"):
+            problems.append(f"{where}: basis {identifier!r} carries no short label")
+        row = basis.get("row")
+        if row is None:
+            # A basis with no row is one that never competes; it must say so,
+            # because a competitor with no row would silently win or lose.
+            if basis.get("competes") is not False and basis.get("nature") != "commemoration":
+                problems.append(
+                    f"{where}: basis {identifier!r} carries no row and does not declare `competes: false`"
+                )
+        elif row not in rows:
+            problems.append(f"{where}: basis {identifier!r} names row {row}, which the table does not have")
+        elif basis.get("locus") in (None, ""):
+            problems.append(f"{where}: basis {identifier!r} carries a row and no locus")
+    return index, problems
+
+
+def matches(rule: dict, mass: dict) -> bool:
+    if "keys" in rule and mass["key"] not in rule["keys"]:
+        return False
+    if "key_matches" in rule and not re.search(rule["key_matches"], mass["key"]):
+        return False
+    if "dated" in rule and bool(rule["dated"]) != mass["dated"]:
+        return False
+    for field in ("kind", "rank", "season"):
+        if field in rule and str(rule[field]) != str(mass.get(field)):
+            return False
+    return True
+
+
+def assign(document: dict, masses: dict[str, dict], where: str) -> tuple[dict[str, dict], list[str]]:
+    """Map every mass to exactly one basis, in declared order, first match wins."""
+    problems: list[str] = []
+    rules = document["assignment"]
+    known = {basis["id"] for basis in document["bases"]}
+    for position, rule in enumerate(rules):
+        if rule.get("basis") not in known:
+            problems.append(f"{where}: assignment rule {position} names unknown basis {rule.get('basis')!r}")
+        if not any(field in rule for field in PREDICATE_FIELDS):
+            problems.append(f"{where}: assignment rule {position} has no predicate and would take everything")
+
+    assigned: dict[str, dict] = {}
+    used = [0] * len(rules)
+    for key in sorted(masses):
+        mass = masses[key]
+        for position, rule in enumerate(rules):
+            if matches(rule, mass):
+                used[position] += 1
+                assigned[key] = {"basis": rule["basis"], "name": mass["name"], "rule": position}
+                break
+        else:
+            problems.append(
+                f"{where}: {key} ({mass['kind']}, rank {mass['rank']!r}) matches no assignment rule"
+            )
+    for position, count in enumerate(used):
+        if count == 0:
+            rules_shown = {field: rules[position][field] for field in PREDICATE_FIELDS if field in rules[position]}
+            problems.append(f"{where}: assignment rule {position} {rules_shown} matches nothing")
+    return assigned, problems
+
+
+def check_implied(document: dict, basis_index: dict[str, int], where: str) -> list[str]:
+    problems: list[str] = []
+    seen: set[str] = set()
+    for entry in document.get("implied") or []:
+        identifier = entry.get("id")
+        if not identifier:
+            problems.append(f"{where}: an implied-day rule carries no id")
+            continue
+        if identifier in seen:
+            problems.append(f"{where}: two implied-day rules share the id {identifier!r}")
+        seen.add(identifier)
+        if entry.get("basis") not in basis_index:
+            problems.append(f"{where}: implied rule {identifier!r} names unknown basis {entry.get('basis')!r}")
+        if not entry.get("season") and not entry.get("on_anchor"):
+            problems.append(f"{where}: implied rule {identifier!r} is bounded by neither a season nor an anchor")
+        if not entry.get("label"):
+            problems.append(f"{where}: implied rule {identifier!r} carries no label")
+        if entry.get("certain") is None:
+            problems.append(f"{where}: implied rule {identifier!r} does not say whether it is certain")
+        if entry.get("certain") is False and not entry.get("unless"):
+            problems.append(f"{where}: implied rule {identifier!r} is uncertain and does not say what it cannot exclude")
+    office = document.get("saturday_office") or {}
+    if office and not office.get("stated_only"):
+        if office.get("basis") not in basis_index:
+            problems.append(f"{where}: saturday_office names unknown basis {office.get('basis')!r}")
+    return problems
+
+
+def check_absences(document: dict, where: str) -> list[str]:
+    problems: list[str] = []
+    for entry in document.get("known_absences") or []:
+        if not entry.get("what"):
+            problems.append(f"{where}: a known absence names nothing")
+        if not entry.get("match"):
+            problems.append(f"{where}: the absence {entry.get('what')!r} carries no date match")
+        if not entry.get("effect"):
+            problems.append(f"{where}: the absence {entry.get('what')!r} does not say what it changes")
+        if not entry.get("locus"):
+            problems.append(f"{where}: the absence {entry.get('what')!r} carries no locus")
+    return problems
+
+
+def check_seats(document: dict, assigned: dict[str, dict], where: str) -> list[str]:
+    problems: list[str] = []
+    transfer = (document["impediment"].get("transfer") or {})
+    for seat in transfer.get("proper_seats") or []:
+        key = seat.get("key")
+        if key not in assigned:
+            problems.append(f"{where}: a proper seat names {key!r}, which the calendar does not carry")
+        if not seat.get("locus"):
+            problems.append(f"{where}: the proper seat for {key!r} carries no locus")
+        if not seat.get("own_date"):
+            problems.append(f"{where}: the proper seat for {key!r} does not say which date it moves from")
+    if transfer.get("destination", {}).get("computed_here") and not transfer.get("destination", {}).get("rule"):
+        problems.append(f"{where}: transfer claims to compute a destination and states no rule")
+    return problems
+
+
+# --------------------------------------------------------------- emission
+
+
+def document_for(document: dict, assigned: dict[str, dict], basis_index: dict[str, int]) -> dict:
+    """The browser's copy: the same rules, with basis ids resolved to positions."""
+    out: dict[str, object] = {"advisory": ADVISORY, "guidance": GUIDANCE, "source_advisory": document["advisory"]}
+    for field in EMITTED:
+        if field == "advisory":
+            continue
+        if field == "keys":
+            out["keys"] = {
+                key: {"basis": basis_index[row["basis"]], "name": row["name"]}
+                for key, row in sorted(assigned.items())
+            }
+            continue
+        if field == "implied":
+            out["implied"] = [
+                {**entry, "basis": basis_index[entry["basis"]]}
+                for entry in (document.get("implied") or [])
+            ]
+            continue
+        if field == "saturday_office":
+            office = document.get("saturday_office")
+            if office and office.get("basis"):
+                office = {**office, "basis": basis_index[office["basis"]]}
+            out["saturday_office"] = office
+            continue
+        if field == "assignment":
+            # Emitted so a reader can see which rule classified a mass without
+            # opening the source; the browser reads `keys` and never re-matches.
+            out["assignment"] = document["assignment"]
+            continue
+        if field in document:
+            out[field] = document[field]
+    return out
+
+
+def write_json(path: Path, payload: dict, *, indent: int | None) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=indent,
+                      separators=(",", ":") if indent is None else None)
+    path.write_text(text + "\n", encoding="utf-8")
+
+
+def index_document(built: list[dict]) -> dict:
+    return {
+        "advisory": ADVISORY,
+        "calendars": [
+            {
+                "calendar": row["calendar"],
+                "code": row["code"],
+                "edition": row["edition"],
+                "path": f"structure/rubrics/{row['calendar']}.json",
+                "precedence_stated": True,
+                "commemorates": bool((row.get("commemoration") or {}).get("exists", True)),
+            }
+            for row in built
+        ],
+        "guidance": GUIDANCE,
+        "note": (
+            "structure/calendar/*/<year>.json lists a date's candidates and states that it "
+            "does not rank them. This layer states the ranking, once per calendar rather than "
+            "once per day: the file count here grows with calendars and never with years."
+        ),
+        "schema": SCHEMA,
+    }
+
+
+# --------------------------------------------------------------- the model
+
+
+def run_model(payload: dict) -> dict:
+    """Run the browser's own derivation over a batch of cases, under node.
+
+    The harness is written here rather than kept as a file so that there is
+    exactly one implementation of the derivation in the repository and nothing
+    beside it that could disagree.
+    """
+    harness = (
+        "const model = require(process.argv[1]);\n"
+        "let raw = '';\n"
+        "process.stdin.on('data', (chunk) => { raw += chunk; });\n"
+        "process.stdin.on('end', () => {\n"
+        "  const input = JSON.parse(raw);\n"
+        "  const out = input.cases.map((one) => {\n"
+        "    try {\n"
+        "      return { id: one.id, ok: true,"
+        " result: model.derive({ date: one.date, year: one.year, rubrics: one.rubrics }) };\n"
+        "    } catch (error) {\n"
+        "      return { id: one.id, ok: false, error: String(error && error.stack || error) };\n"
+        "    }\n"
+        "  });\n"
+        "  process.stdout.write(JSON.stringify({ results: out }));\n"
+        "});\n"
+    )
+    finished = subprocess.run(
+        ["node", "-e", harness, str(MODEL)],
+        input=json.dumps(payload),
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if finished.returncode != 0:
+        raise SourceError(f"the derivation model failed under node: {finished.stderr.strip()[:800]}")
+    return json.loads(finished.stdout)
+
+
+def year_file(data_root: Path, calendar: str, civil_year: int) -> dict:
+    path = data_root / "structure" / "calendar" / calendar / f"{civil_year}.json"
+    if not path.is_file():
+        raise SourceError(f"no day file at {path}; run `calendar-days structure` first")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def name_of(result: dict, key: str) -> str:
+    for candidate in result.get("candidates") or []:
+        if candidate.get("key") == key:
+            return candidate.get("name") or key
+    return key
+
+
+def compare(case: dict, result: dict, where: str) -> list[str]:
+    """One solved case against what the model actually derived."""
+    problems: list[str] = []
+    identifier = f"{where}: {case['id']}"
+
+    if "expect_by_option" in case:
+        derived = {row.get("option"): row for row in result["options"]}
+        for option, expect in case["expect_by_option"].items():
+            if option not in derived:
+                problems.append(f"{identifier}: the model derived no branch for option {option!r}")
+                continue
+            problems.extend(compare_one(f"{identifier} [{option}]", expect, derived[option]))
+        return problems
+
+    options = result["options"]
+    if len(options) != 1:
+        problems.append(f"{identifier}: expected one derivation, the model returned {len(options)}")
+        return problems
+    return compare_one(identifier, case["expect"], options[0])
+
+
+def compare_one(identifier: str, expect: dict, derived: dict) -> list[str]:
+    problems: list[str] = []
+    winner = derived.get("winner")
+    got_winner = winner.get("id") if winner else None
+    if "winner" in expect and got_winner != expect["winner"]:
+        problems.append(f"{identifier}: winner is {got_winner!r}, expected {expect['winner']!r}")
+    if "winner_row" in expect and winner and winner.get("row") != expect["winner_row"]:
+        problems.append(f"{identifier}: winner sits at row {winner.get('row')}, expected {expect['winner_row']}")
+    if "arrived" in expect and winner and (winner.get("source") == "arrived") != expect["arrived"]:
+        problems.append(f"{identifier}: winner source is {winner.get('source')!r}, expected an arrival")
+    if "settled" in expect and bool(derived.get("settled")) != bool(expect["settled"]):
+        problems.append(
+            f"{identifier}: settled is {derived.get('settled')}, expected {expect['settled']}"
+            + (f" ({'; '.join(row['why'] for row in derived.get('unsettled') or [])})" if derived.get("unsettled") else "")
+        )
+    by_disposition: dict[str, list[str]] = {}
+    for loser in derived.get("losers") or []:
+        by_disposition.setdefault(loser["disposition"], []).append(loser["id"])
+    for field, disposition in (
+        ("commemorated", "commemorated"),
+        ("omitted", "omitted"),
+        ("transferred", "transferred"),
+        ("reduced", "reduced"),
+    ):
+        if field not in expect:
+            continue
+        got = sorted(by_disposition.get(disposition, []))
+        if got != sorted(expect[field]):
+            problems.append(f"{identifier}: {disposition} is {got}, expected {sorted(expect[field])}")
+    orations = derived.get("orations") or {}
+    for field, series in (
+        ("orations_low_mass", "low_mass"),
+        ("orations_sung_non_conventual", "sung_non_conventual"),
+        ("orations", "all"),
+    ):
+        if field not in expect:
+            continue
+        got = orations.get(series)
+        if got is None:
+            problems.append(f"{identifier}: the model derived no {series} orations")
+        elif len(got) != expect[field]:
+            labels = ", ".join(row.get("of_name") or row.get("of") or "?" for row in got)
+            problems.append(f"{identifier}: {series} has {len(got)} orations ({labels}), expected {expect[field]}")
+    if "conditional_on_implied" in expect:
+        conditions = [row.get("id") for row in derived.get("conditions") or []]
+        if expect["conditional_on_implied"] not in conditions:
+            problems.append(
+                f"{identifier}: expected the result to depend on implied rule "
+                f"{expect['conditional_on_implied']!r}; conditions are {conditions}"
+            )
+    return problems
+
+
+# --------------------------------------------------------------- verbs
+
+
+def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str, dict]]:
+    problems: list[str] = []
+    built: list[dict] = []
+    sources: dict[str, dict] = {}
+    for name in calendars(root, only):
+        where = f"{name}/{SOURCE_NAME}"
+        document = load_source(root, name)
+        masses = load_masses(root, name)
+        problems.extend(check_precedence(document, where))
+        basis_index, found = check_bases(document, where)
+        problems.extend(found)
+        assigned, found = assign(document, masses, where)
+        problems.extend(found)
+        problems.extend(check_implied(document, basis_index, where))
+        problems.extend(check_seats(document, assigned, where))
+        problems.extend(check_absences(document, where))
+        for key, row in assigned.items():
+            if row["name"] != masses[key]["name"]:
+                problems.append(f"{where}: the name recorded for {key} disagrees with the calendar index")
+        sources[name] = document
+        built.append(document_for(document, assigned, basis_index))
+    return built, problems, sources
+
+
+def run_structure(arguments: argparse.Namespace) -> dict:
+    built, problems, _ = build(Path(arguments.root), arguments.calendar)
+    if problems:
+        raise SourceError("; ".join(problems[:4]) + (f" (and {len(problems) - 4} more)" if len(problems) > 4 else ""))
+    out = Path(arguments.out)
+    written: list[str] = []
+    for payload in built:
+        path = out / "structure" / "rubrics" / f"{payload['calendar']}.json"
+        write_json(path, payload, indent=None)
+        written.append(str(path))
+    index = out / "structure" / "rubrics" / "index.json"
+    write_json(index, index_document(built), indent=1)
+    written.append(str(index))
+    return {
+        "files": len(written),
+        "status": "ok",
+        "written": written if arguments.verbose else written[-1:],
+    }
+
+
+def run_check(arguments: argparse.Namespace) -> dict:
+    root = Path(arguments.root)
+    data = Path(arguments.out)
+    built, problems, sources = build(root, arguments.calendar)
+
+    # The written layer must be what the source would write now, or a page is
+    # serving a rule the repository has already changed.
+    stale: list[str] = []
+    for payload in built:
+        path = data / "structure" / "rubrics" / f"{payload['calendar']}.json"
+        if not path.is_file():
+            stale.append(f"{path} has not been written")
+            continue
+        if json.loads(path.read_text(encoding="utf-8")) != payload:
+            stale.append(f"{path} is stale; run `calendar-rubrics structure`")
+    index = data / "structure" / "rubrics" / "index.json"
+    if index.is_file():
+        if json.loads(index.read_text(encoding="utf-8")) != index_document(built):
+            stale.append(f"{index} is stale; run `calendar-rubrics structure`")
+    elif built:
+        stale.append(f"{index} has not been written")
+    problems.extend(stale)
+
+    cases: list[dict] = []
+    for payload in built:
+        name = payload["calendar"]
+        for case in sources[name]["worked_cases"]:
+            civil_year = int(str(case["date"])[:4])
+            try:
+                year = year_file(data, name, civil_year)
+            except SourceError as error:
+                problems.append(f"{name}: {case['id']}: {error}")
+                continue
+            cases.append({"id": f"{name}/{case['id']}", "date": case["date"], "year": year, "rubrics": payload,
+                          "case": case, "calendar": name})
+
+    verified = 0
+    skipped = None
+    if not cases:
+        skipped = "no solved case could be prepared"
+    elif not MODEL.is_file():
+        skipped = f"{MODEL.relative_to(ROOT)} is absent"
+    elif not shutil.which("node"):
+        skipped = "node is not installed, so the derivation was not exercised"
+    else:
+        answered = run_model({"cases": [{k: v for k, v in row.items() if k in ("id", "date", "year", "rubrics")}
+                                        for row in cases]})
+        by_id = {row["id"]: row for row in answered["results"]}
+        for row in cases:
+            got = by_id.get(row["id"])
+            if got is None:
+                problems.append(f"{row['id']}: the model returned nothing")
+                continue
+            if not got.get("ok"):
+                problems.append(f"{row['id']}: the model raised {got.get('error', '')[:300]}")
+                continue
+            found = compare(row["case"], got["result"], row["calendar"])
+            problems.extend(found)
+            if not found:
+                verified += 1
+
+    if problems:
+        head = "; ".join(problems[:5])
+        raise SourceError(head + (f" (and {len(problems) - 5} more)" if len(problems) > 5 else ""))
+    return {
+        "calendars": [
+            {
+                "calendar": payload["calendar"],
+                "bases": len(payload["bases"]),
+                "rows": len(payload["precedence"]["rows"]),
+                "masses_classified": len(payload["keys"]),
+                "implied_rules": len(payload.get("implied") or []),
+                "unsettled": len(payload.get("unsettled") or []),
+            }
+            for payload in built
+        ],
+        "solved_cases": {"declared": len(cases), "verified": verified, "skipped": skipped},
+        "status": "ok",
+    }
+
+
+def run_assign(arguments: argparse.Namespace) -> dict:
+    """What each mass was classified as, and by which rule. A reading verb."""
+    root = Path(arguments.root)
+    report = []
+    for name in calendars(root, arguments.calendar):
+        document = load_source(root, name)
+        masses = load_masses(root, name)
+        basis_index, _ = check_bases(document, name)
+        assigned, _ = assign(document, masses, name)
+        bases = document["bases"]
+        rows = []
+        for key in sorted(assigned):
+            basis = bases[basis_index[assigned[key]["basis"]]]
+            rows.append(
+                {
+                    "key": key,
+                    "name": assigned[key]["name"],
+                    "basis": basis["id"],
+                    "row": basis.get("row"),
+                    "rule": assigned[key]["rule"],
+                }
+            )
+        report.append({"calendar": name, "masses": rows})
+    return {"assignments": report, "status": "ok"}
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("calendar-rubrics error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    if "assignments" in payload:
+        for row in payload["assignments"]:
+            print(f"{row['calendar']}: {len(row['masses'])} masses")
+            for mass in row["masses"]:
+                place = f"row {mass['row']}" if mass["row"] is not None else "no row"
+                print(f"  {mass['key']}: {place} — {mass['basis']}")
+        return 0
+    if "files" in payload:
+        print(f"wrote {payload['files']} files")
+        for path in payload["written"]:
+            print(f"  -> {path}")
+        return 0
+    for row in payload["calendars"]:
+        print(
+            f"{row['calendar']}: {row['masses_classified']} masses classified over "
+            f"{row['bases']} bases and {row['rows']} rows, "
+            f"{row['implied_rules']} implied-day rules, {row['unsettled']} questions left open"
+        )
+    solved = payload["solved_cases"]
+    if solved["skipped"]:
+        print(f"solved cases: {solved['declared']} declared, NOT RUN — {solved['skipped']}")
+    else:
+        print(f"solved cases: {solved['verified']} of {solved['declared']} verified against the browser's model")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--root", default=str(DEFAULT_ROOT), help="calendar directory")
+    shared.add_argument("--out", default=str(DEFAULT_DATA), help="the browser's data root")
+    shared.add_argument("--calendar", default=None, help="limit to one calendar")
+    shared.add_argument("--format", choices=("text", "json"), default="text")
+    shared.add_argument("--verbose", action="store_true", help="list every file written")
+    shared.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
+    parser = argparse.ArgumentParser(
+        prog="calendar-rubrics",
+        description="Validate the rubrical precedence sources and emit them for the browser.",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("check", help="validate the sources and run the solved cases", parents=[shared])
+    sub.add_parser("structure", help="write the browser's rubrics files", parents=[shared])
+    sub.add_parser("assign", help="report what each mass was classified as", parents=[shared])
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"check": run_check, "structure": run_structure, "assign": run_assign},
+        renderer=render,
+        prefix="calendar-rubrics",
+        argv=argv,
+        default_verb="check",
+        dependency_message="install PyYAML (requirements-tools.txt)",
+        mapped_errors={SourceError: ("input", 2), ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
