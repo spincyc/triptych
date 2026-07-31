@@ -1,112 +1,166 @@
 # Handoff, 2026-07-30
 
-Written at the end of a long session so the next agent starts from state rather
-than from scratch. `PROJECT-WORK.md` remains the durable register; this is the
-session-specific picture. The work ledger (`aiq list`) holds the task queue.
+Written so the next agent starts from state rather than from scratch.
+`PROJECT-WORK.md` remains the durable register; this is the session-specific
+picture. The work ledger (`aiq list`) holds the task queue and is authoritative.
 
-## What this session was
+This file was rewritten during the second session of the day. The earlier
+version described the tooling repair and the beginnings of the commentary
+chain; git history has it. What follows is current.
 
-It began as a code review of `tools/tpt` and became a repair of the tooling
-layer beneath it, then the beginnings of the commentary research chain.
+## Nothing is committed
 
-## The tool layer
+Twenty-eight paths are modified or new. `make check` exits 1, on purpose — see
+the decisions below. Read those four before committing anything.
 
-`tools/tpt` is the launcher. Implementations are executable scripts at
-`tools/<id>`, which is what `tmt` requires; `scripts/` holds shared library
-code (`_tooling.py`, `_psalms.py`) and tool data (`web-shim.tex`), because a
-bare unregistered file in `tools/` fails the registry gate. Python tests live
-in `tools/tests/`; every registered tool must have a shell smoke test at
-`tests/tools/<id>.test`, and `tools/tests/test_tool_registry.py` enforces that
-plus registry drift, hardcoded paths, and `usage` accuracy.
+## The one theme
 
-Launcher controls are dash-prefixed — `--list`, `--info`, `--path`, `--check` —
-so a registry id can never shadow one.
+Almost everything found this session was the same bug in different clothes: a
+reference that resolves **successfully and wrongly**. Not a crash, not a miss —
+plausible text under a correct-looking citation. Five instances:
 
-Things repaired that are worth not re-breaking:
+- `Joel 3:1-5` returned the valley of Josaphat instead of the outpoured spirit,
+  and `Isaiah 9:5` the garments rolled in blood instead of the Child born to
+  us. Neither appeared in any error count, because both resolved.
+- Two hand-typed psalm ceilings gave Hebrew 10 and 115 the last verse of the
+  Vulgate psalm hosting them, so impossible references passed the gate.
+- The structure generator dropped every postconciliar cycle reading — 43% of
+  citations — and looked fine.
+- Mapping eBible's books by file position would have filed Ezekiel's text under
+  Sirach, because it orders the deuterocanon differently from the Douay.
+- The eleven mis-numbered antiphons, which resolved to real, wrong verses.
 
-- The Makefile used two-word variables (`tools/tpt <id>`) as prerequisites and
-  as `sha256sum` arguments. Make read them as two prerequisites and silently
-  dropped the PDF rules; `make pdf` planned zero builds. Prerequisite and hash
-  sites must name `tools/<id>`, not the launcher invocation.
-- Sixteen tools computed the repo root one level too high after a directory
-  move. `check-proper-components` printed `valid: 0` and exited 0 — a green
-  gate over nothing.
-- The mass list was stored twice. `sections` is now the single canonical
-  container and a top-level `masses` key is a hard error.
+The standing lesson, now enforced in several places: **refuse rather than
+guess**. A citation that cannot be resolved unambiguously carries a reason and
+no text.
 
-## Psalm numbering
+## Psalm numbering, settled
 
-The two missals number the psalter differently: the Advent chant *Ad te levavi*
-is Psalm 24 in the 1962 books and Psalm 25 in the postconciliar. Resolving one
-against the other returns a different psalm under a correct-looking reference.
+`scripts/_psalms.py` holds no correspondence data of its own. Every conversion,
+bound and split is read from the verse-level concordance tracked with the
+Challoner edition, which maps all 2528 psalm verses one to one. It is validated
+on load: equal-length rows, 150 psalms per system, no gaps, no overlaps.
 
-`scripts/_psalms.py` converts chapters, points and ranges, rebasing verses
-across the psalms that divide (Hebrew 116:10 is Vulgate 115:1, not 115:10). It
-raises rather than guesses where a split needs a verse. Each calendar declares
-`psalm_numbering`; `commentary-work-index` normalises everything to Vulgate
-before keying, which healed 27 false merges and 20 false splits.
+Conversions work in **printed** numbering, so Vulgate 115:10 is simply Hebrew
+116:10. That removed `index-bible`'s `realign` flag, and the rebuilt index was
+byte-identical, which is the proof the refactor changed no output.
 
-**Open and important:** the postconciliar file declares `hebrew` at file level,
-but its own recovered `citation_convention` says antiphons keep the Missal's
-printed Vulgate number while responsorial psalms use the Lectionary's. Eleven
-references are confirmed Vulgate-numbered inside that Hebrew-declared file and
-fail to resolve. The declaration may need to be per-slot. See the TODO.
-
-## The commentary chain
-
-    propers.yaml -> commentary-work-index build-corpus -> 1307 passages
-    harvest plan/record/promote -> passage-commentary-index.yaml
-    harvest propers -> one collated acquisition list
-
-`tools/harvest` never calls a model. `plan` emits a worklist, `record` ingests
-one run with its model identity and date, `promote` and `propers` collate.
-Confidence is agreement across runs — appearances over runs — so the tool stays
-deterministic and the nondeterminism is visible and dated in the ledger.
-
-Rules the maintainer set, now enforced:
-
-- A query covers at most one chapter. `Isaiah 63:16-64:7` becomes two loci,
-  never one. `plan --by-chapter` gives 491 loci against 1300 verse ranges.
-- Work identity is author plus any known title, so aliases collapse. The
-  machinery is in; **the alias data is not populated**, which is why Aquinas
-  still appears twice in the current collation as *Postilla super Psalmos* and
-  *In Psalmos Davidis Expositio*. Those are one work.
-- `death_year` is required and must be at or before 1900, so the cutoff is
-  checkable rather than living in a prompt.
-
-Three real harvest runs are recorded for the 1962 Advent I propers, seven
-passages. Augustine's *Enarrationes*, Cassiodorus, Theodoret and Gregory the
-Great each appear in all three; the variance is in the tail. `harvest-ledger.yaml`
-is untracked so far — decide whether it belongs in the repository.
+`convert_range` rejoins pieces that abut within a chapter — the concordance
+segments a psalm around its inscription and a range crossing that seam came
+back as two — while a genuine division across chapters stays split.
 
 ## Bibles
 
-`src/sources/bibles/<id>/index.yaml` carries `rights`, `publishable` and
-`numbering`. Douay-Rheims is indexed and resolves 438 of 438 roman-1962
-references and 937 of 950 postconciliar. It was built from the repository's
-already-tracked Challoner edition, not a fresh download, so book names come
-from its own modern-name column.
+| id | rights | numbering | psalter | publishable |
+|---|---|---|---|---|
+| douay-rheims | public-domain | vulgate | gallican | yes |
+| clementine-vulgate | public-domain | vulgate | gallican | yes |
+| knox | licensed | vulgate | gallican | **no** |
 
-Knox and NJB are approved by the maintainer but **not obtained**: Baronius's own
-site carries no scripture text, and the one host that does returned 500 on every
-chapter URL tried. They need a real file or a licensed feed. `--bible-root`
-lets a licensed index live outside the repository so it is never published.
+Knox came from `catholicbible.online`, operated by Baronius Press, the licensee
+of the Westminster Diocese text — the only source whose rights chain can be
+stated truthfully in an artifact record. `tools/knox-bible` retrieves it, and
+every verb refuses a `--root` inside the repository. Its index and fragments
+live outside the tree.
 
-## Propers
+The index schema now carries `language` and `psalter`, because numbering alone
+does not identify a psalter.
 
-Only the seasonal sections have real propers: 122 of 596 masses. The other 474
-carry a single placeholder. `guidance/liturgy/propers-completion-todo.md` holds
-the coverage tables, the scope decision, five known defects and the cost.
+**Read this before adding a Latin psalter.** The 1962 Mass chants are older
+than the Gallican psalter and disagree with it: the sixth Sunday after
+Pentecost sings *protéctor salutárium Christi sui* where the Clementine reads
+*protector salvationum*. Six divergences in two chants, verified against the
+repo's own collated text. A Vulgate psalter gives confident near-misses on
+chant incipits, which is worse than a miss. TASK-46 covers finding a corpus of
+the sung text.
+
+Not obtained: RNJB, NRSV, NABRE. No authorised bulk source exists for any of
+them; `bible.usccb.org` blocks automated requests outright, and api.bible's
+terms forbid populating a local database regardless. NRSV is also textually
+wrong for this project — it fails the same citations the Douay does. NABRE is
+the only English Bible whose versification matches the postconciliar citations.
+
+## Web data
+
+`guidance/web-data.md` is the contract. Four layers, each generated from the
+one above and checked against it: canonical TSVs, per-chapter JSON fragments,
+structure files with citations resolved into both numbering systems, and a
+manifest naming only publishable editions.
+
+The rule that matters: **file counts must be additive, never multiplicative**.
+Adding a translation adds its fragments and changes nothing else. A future
+reader will be tempted to pre-render mass-by-translation pages; the browser's
+header comment argues against it at length.
+
+Deploy assembly is TASK-49 and is specified but not built. The copy must be
+driven from `bibles.json`, not from a directory listing — that is what keeps
+Knox off the site.
+
+## Reading plan
+
+`src/sources/reading-plans/narrative-spine.yaml`: 357 readings, 12 periods,
+tiers at 36 / 111 / 357 that partition rather than restate. Validated by
+`tools/reading-plan` against real verse text.
+
+Its period labels were originally Ascension's Great Adventure names, which
+their terms forbid reproducing; they were replaced with the periodisation
+ordinary in scholarship, and the file records that it happened. The selection
+itself is independently derived from where four schemes overlap.
+
+## The postconciliar numbering seam is not closed
+
+This is the largest thing left, and it is bigger than it first looked.
+
+The calendar cites in Nova Vulgata numbering; every bible in the library
+follows the Vulgate division. `citation_divergences` in the postconciliar
+calendar now corrects four books — Joel, Malachi, Isaiah 9 and 64, Micah 5 —
+eleven citations in all, resolved by hand against the printed Douay because no
+witness of the Nova Vulgata is tracked here to compile a concordance from. The
+mechanism validates: an entry addressing no text fails the build, and so does
+one naming a reference the calendar no longer cites.
+
+**A further 23 citations still resolve to the wrong verses** — Exodus 22, Hosea
+2 and 6, Esther 4, Wisdom 6 and 11, Sirach 3, 27 and 35, Mark 9, John 6, Acts
+14 (TASK-51). Do not batch-correct them. They are three different problems: the
+Sirach and Wisdom references follow the Greek the US Lectionary numbers rather
+than the Nova Vulgata, and several John 6 antiphons are already
+Clementine-numbered and correct while the readings beside them are not. Settle
+which system each reference speaks before touching it.
+
+Separately, **a citation naming a verse past the end of a chapter is silently
+clamped rather than reported** (TASK-52). `Mark 4:41`, `1 Thessalonians 4:18`
+and `Acts 7:60` are each dropped this way. They lose no text, because the
+Vulgate merged those verses into their neighbours — but the mechanism is
+silent. It cannot be fixed in the calendar, because the two Vulgate editions
+disagree: the Douay ends 1 Thessalonians 4 at verse 17 and the Clementine at
+18. It belongs in each edition's verse-aliases artifact.
 
 ## Where to pick up
 
-The work ledger is authoritative; at the time of writing the priority ones are
-the postconciliar per-slot numbering, the psalter verse-count derivation that
-would have caught those eleven references at the gate, the spine-coverage check,
-and populating the alias metadata so the collation stops splitting works.
+Four decisions are yours and block nothing else:
+
+- **TASK-41** — how the psalm-bound gate lands while the eleven antiphons
+  stand. `make check` exits 1 until this is settled.
+- **TASK-43** — are the Christmas octave days seasonal or saintly. The spine
+  and the propers disagree; both are defensible.
+- **TASK-48** — family membership for the new Clementine edition. Needs an
+  audit date over reviewed prose, not a mechanical `refresh`.
+- **TASK-49 / TASK-50** — deploy assembly, and teaching the browser to render
+  reading plans as well as propers.
+
+Then the ledger's p1 queue: TASK-17 (populate the discovery index — it is
+empty, which is why the commentary corpus finds zero works), TASK-32, TASK-33's
+follow-through, TASK-35, TASK-44.
 
 ## Verification
 
-`make check` rc=0, `tmt check` ok, 23 of 23 smoke tests pass, and the Python
-suite runs with `python3 -m unittest discover -s tools/tests`. Run all four
-before believing anything here.
+521 of 522 Python tests, 24 of 25 smoke tests, `source-library validate` clean,
+`check-generation-metadata` clean. The single failure is TASK-48. Run all of
+these before believing anything here:
+
+```sh
+python3 -m unittest discover -s tools/tests
+for t in tests/tools/*.test; do "$t" >/dev/null || echo "FAIL $t"; done
+tools/tpt source-library validate
+make check
+```
