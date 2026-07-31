@@ -1,0 +1,144 @@
+#!/bin/sh
+# Test for `tools/tpt knox-bible`: exit 0 = pass (the stable gate).
+#
+# Retrieval is never exercised here: the tool reads a third party's website,
+# and a test that depends on the network is a test that fails for reasons that
+# have nothing to do with this repository. What is exercised is everything
+# that guards the licensed text — the refusal to write inside the repository,
+# and the parse and naming performed on a cached page.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="knox-bible"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# The Knox text is licensed. Every verb refuses a destination inside the
+# repository, and refuses to run without one at all, before any request.
+for verb in plan fetch build; do
+	status=0
+	run_tool "$verb" >/dev/null 2>&1 || status=$?
+	if [ "$status" -ne 2 ]; then
+		echo "$verb without --root should exit 2, got $status" >&2
+		exit 1
+	fi
+	for inside in "$repo" "$repo/src/sources" "$repo/tmp/knox"; do
+		status=0
+		run_tool "$verb" --root "$inside" >/dev/null 2>&1 || status=$?
+		if [ "$status" -ne 2 ]; then
+			echo "$verb --root $inside should exit 2, got $status" >&2
+			exit 1
+		fi
+	done
+done
+
+# Nothing may have been created inside the repository by those refusals.
+if [ -e "$repo/tmp/knox" ]; then
+	echo "a refused root must not be created" >&2
+	exit 1
+fi
+
+# build without a plan is refused rather than writing an empty edition.
+status=0
+run_tool build --root "$sandbox/none" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "build without a plan should exit 2, got $status" >&2
+	exit 1
+fi
+
+# A plan over the whole canon with one cached chapter proves the parse without
+# a request. The plan is generated from the tracked Douay-Rheims book index so
+# that it carries all 73 books in canonical order, which is what the naming
+# step requires; only Genesis 1 is cached, so only Genesis is parsed.
+mkdir -p "$sandbox/one/cache/OT/Gen"
+douay="$(find "$repo/src/sources/works/english-college-of-douay/douay-rheims-bible" \
+	-name 'book-index.tsv' | head -1)"
+if [ -z "$douay" ]; then
+	echo "the Douay-Rheims book index is missing" >&2
+	exit 1
+fi
+awk -F'\t' '
+	NR == 1 { for (i = 1; i <= NF; i++) col[$i] = i; printf "{\"site\": \"offline fixture\", \"books\": ["; next }
+	{
+		part = ($col["testament"] == "old") ? "OT" : "NT"
+		printf "%s{\"part\": \"%s\", \"slug\": \"%s\", \"name\": \"%s\", \"chapters\": 1}", \
+			(NR > 2 ? ", " : ""), part, $col["token"], $col["modern_name"]
+	}
+	END { print "]}" }
+' "$douay" >"$sandbox/one/plan.json"
+cat >"$sandbox/one/cache/OT/Gen/ch_1.html" <<'HTML'
+<div id="vers1" class="vers">
+<div class="vers-no">1</div>
+<div class="vers-content">God, at the beginning of time, created heaven and earth.</div>
+</div>
+<div id="vers2" class="vers">
+<div class="vers-no">2</div>
+<div class="vers-content">Earth was still an empty waste<a href="" class="inline-comment" data-comment-id="1">*</a>, and darkness hung over the deep.</div>
+</div>
+HTML
+run_tool build --root "$sandbox/one" >/dev/null
+
+verses="$(find "$sandbox/one/artifacts" -name '*-gen.tsv')"
+if [ -z "$verses" ]; then
+	echo "build wrote no verse text" >&2
+	exit 1
+fi
+if ! grep -q "God, at the beginning of time, created heaven and earth." "$verses"; then
+	echo "the verse text did not survive the parse" >&2
+	exit 1
+fi
+# A note marker is an editorial mark, not part of the verse.
+if grep -q "inline-comment\|<" "$verses"; then
+	echo "markup leaked into the verse text" >&2
+	exit 1
+fi
+if ! grep -q "empty waste, and darkness" "$verses"; then
+	echo "removing a note marker should not disturb the surrounding words" >&2
+	exit 1
+fi
+
+# The book index names Genesis the way a calendar cites it, not by slug alone.
+index="$(find "$sandbox/one/artifacts" -name 'book-index.tsv')"
+if ! awk -F'\t' 'NR>1 && $1=="Gen" && $3=="Genesis"' "$index" | grep -q .; then
+	echo "the book index does not carry the modern name" >&2
+	exit 1
+fi
+
+# The rights notice is written beside the text it governs.
+if ! grep -q "Westminster Diocese" "$sandbox/one/RIGHTS.txt"; then
+	echo "the rights notice is missing" >&2
+	exit 1
+fi
+
+# A rebuild of unchanged content is byte-stable and lands in the same place.
+before="$(find "$sandbox/one/artifacts" -type f | sort | xargs sha256sum | sha256sum)"
+run_tool build --root "$sandbox/one" >/dev/null
+after="$(find "$sandbox/one/artifacts" -type f | sort | xargs sha256sum | sha256sum)"
+if [ "$before" != "$after" ]; then
+	echo "a rebuild is not byte-stable" >&2
+	exit 1
+fi
+
+# Machine form is one key-sorted object.
+run_tool build --root "$sandbox/one" --format json >"$sandbox/one.json"
+for want in '"verses"' '"root"' '"status"'; do
+	if ! grep -q "$want" "$sandbox/one.json"; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+
+if run_tool build --root "$sandbox/one" --format nonesuch >/dev/null 2>&1; then
+	echo "expected failure for an unknown format" >&2
+	exit 1
+fi
+
+echo ok

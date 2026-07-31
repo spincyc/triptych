@@ -1,0 +1,398 @@
+#!/usr/bin/env python3
+"""Retrieve the Knox Bible from its publisher's site into source-library artifacts.
+
+The Knox translation is not public domain and not redistributable: the text is
+© 2013 Westminster Diocese, re-typeset and published in 2012 by Baronius Press,
+which also operates the site this tool reads. Nothing it writes may be
+committed. Every verb therefore requires `--root`, and refuses a destination
+inside this repository, so a licensed text cannot reach the tracked tree by
+accident. Point `index-bible --source-root` at the same place to index it.
+
+Retrieval is deliberately slow and resumable. One chapter is one request, the
+HTML is cached, and a cached chapter is never re-requested — so an interrupted
+run continues rather than restarting, and a rebuild costs nothing. The default
+pace is one request a second against a small publisher's server.
+
+`plan` learns the books and their chapter counts from the site's own
+navigation; `fetch` retrieves what the plan lists; `build` parses the cache into
+the same artifact shape `index-bible` already reads for the Douay-Rheims.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import html
+import json
+import re
+import sys
+import time
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import print_json, run_verb_cli  # noqa: E402
+
+SITE = "https://catholicbible.online"
+# Identifies the project rather than impersonating a browser, so the operator
+# can see who is asking and throttle or block it.
+AGENT = "TriptychBibleIndexer/1.0 (+liturgical research; one request per second)"
+PARTS = ("OT", "NT")
+
+RIGHTS_NOTICE = (
+    "Knox Translation © 2013 Westminster Diocese. Nihil Obstat: Father Anton "
+    "Cowan, Censor. Imprimatur: +Most Rev. Vincent Nichols, Archbishop of "
+    "Westminster, 8 January 2012. Re-typeset and published in 2012 by Baronius "
+    "Press Ltd. Retrieved from catholicbible.online, operated by Baronius Press."
+)
+
+# One verse is one `vers` div carrying its number and its text as siblings.
+VERSE = re.compile(
+    r'<div id="vers\d+" class="vers">\s*'
+    r'<div class="vers-no">(?P<no>.*?)</div>\s*'
+    r'<div class="vers-content">(?P<text>.*?)</div>\s*</div>',
+    re.S,
+)
+# The testament page lists its books as anchors, each carrying the slug in its
+# href and the printed name as its text.
+BOOK_LINK = re.compile(
+    r'class="book-item[^"]*">\s*<a href="[^"]*/knox/(?P<part>OT|NT)/(?P<slug>[A-Za-z0-9_]+)"[^>]*>'
+    r'(?P<name>.*?)</a>',
+    re.S,
+)
+CHAPTER_LINK = re.compile(r'/knox/(?:OT|NT)/[A-Za-z0-9_]+/ch_(?P<chapter>\d+)"')
+TAG = re.compile(r"<[^>]+>")
+SPACES = re.compile(r"\s+")
+
+
+class Refused(ValueError):
+    """The request would put licensed text where it must not go."""
+
+
+def destination(raw: str) -> Path:
+    """The external root, refused if it lies inside the repository."""
+    if not raw:
+        raise Refused("--root is required: the Knox text is licensed and lives outside the repo")
+    root = Path(raw).expanduser().resolve()
+    if root == ROOT or ROOT in root.parents:
+        raise Refused(
+            f"{root} is inside {ROOT}; the Knox text is licensed and must not be "
+            "tracked. Choose a root outside the repository."
+        )
+    return root
+
+
+def clean(fragment: str) -> str:
+    """Verse text as printed: markup and note markers removed, spacing settled."""
+    # Paragraph breaks are markup, and a note anchor is an editorial marker
+    # rather than part of the verse, so both go before the text is measured.
+    text = re.sub(r'<a [^>]*class="inline-comment".*?</a>', "", fragment, flags=re.S)
+    text = TAG.sub(" ", text)
+    return SPACES.sub(" ", html.unescape(text)).strip()
+
+
+def get(url: str, pace: float, timeout: float = 30.0) -> str:
+    request = urllib.request.Request(url, headers={"User-Agent": AGENT})
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        body = response.read().decode("utf-8", errors="replace")
+    time.sleep(pace)
+    return body
+
+
+def cache_path(root: Path, part: str, slug: str, chapter: int) -> Path:
+    return root / "cache" / part / slug / f"ch_{chapter}.html"
+
+
+def cached(path: Path, url: str, pace: float) -> tuple[str, bool]:
+    """A page, from the cache when it is there. Returns (html, fetched)."""
+    if path.is_file():
+        return path.read_text(encoding="utf-8"), False
+    body = get(url, pace)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(body, encoding="utf-8")
+    return body, True
+
+
+def read_or_get(root: Path, part: str, slug: str, chapter: int, pace: float) -> tuple[str, bool]:
+    """One chapter of one book."""
+    return cached(
+        cache_path(root, part, slug, chapter), f"{SITE}/knox/{part}/{slug}/ch_{chapter}", pace
+    )
+
+
+def read_index(root: Path, part: str, pace: float) -> tuple[str, bool]:
+    """A testament's landing page, which lists every book it contains."""
+    return cached(root / "cache" / part / "_index.html", f"{SITE}/knox/{part}", pace)
+
+
+def plan_path(root: Path) -> Path:
+    return root / "plan.json"
+
+
+def load_plan(root: Path) -> list[dict]:
+    path = plan_path(root)
+    if not path.is_file():
+        raise ValueError(f"no plan at {path}; run `knox-bible plan --root {root}` first")
+    return json.loads(path.read_text(encoding="utf-8"))["books"]
+
+
+def run_plan(arguments: argparse.Namespace) -> dict:
+    """Learn the canon and each book's length from the site's own navigation."""
+    root = destination(arguments.root)
+    books: list[dict] = []
+    fetched = 0
+    for part in PARTS:
+        index, got = read_index(root, part, arguments.pace)
+        fetched += got
+        listed: list[tuple[str, str]] = []
+        for match in BOOK_LINK.finditer(index):
+            entry = (match.group("slug"), clean(match.group("name")))
+            if match.group("part") == part and entry[0] not in {slug for slug, _ in listed}:
+                listed.append(entry)
+        if not listed:
+            raise ValueError(f"no books listed on the {part} page; the site's markup has changed")
+        for slug, name in listed:
+            # A book's own first chapter carries the full chapter list for it.
+            first, got = read_or_get(root, part, slug, 1, arguments.pace)
+            fetched += got
+            chapters = max(int(m.group("chapter")) for m in CHAPTER_LINK.finditer(first))
+            books.append({"part": part, "slug": slug, "name": name, "chapters": chapters})
+    plan_path(root).parent.mkdir(parents=True, exist_ok=True)
+    plan_path(root).write_text(
+        json.dumps({"site": SITE, "books": books}, indent=1) + "\n", encoding="utf-8"
+    )
+    return {
+        "root": str(root),
+        "books": len(books),
+        "chapters": sum(book["chapters"] for book in books),
+        "requested": fetched,
+        "status": "ok",
+    }
+
+
+def run_fetch(arguments: argparse.Namespace) -> dict:
+    """Retrieve every chapter the plan lists, skipping what is already cached."""
+    root = destination(arguments.root)
+    books = load_plan(root)
+    fetched = cached = 0
+    failures: list[dict] = []
+    for book in books:
+        for chapter in range(1, int(book["chapters"]) + 1):
+            if arguments.limit and fetched >= arguments.limit:
+                return summary_fetch(root, books, fetched, cached, failures, stopped=True)
+            try:
+                _, got = read_or_get(root, book["part"], book["slug"], chapter, arguments.pace)
+            except (urllib.error.URLError, OSError) as error:
+                failures.append(
+                    {"book": book["slug"], "chapter": chapter, "reason": str(error)}
+                )
+                continue
+            fetched += got
+            cached += not got
+    return summary_fetch(root, books, fetched, cached, failures, stopped=False)
+
+
+def summary_fetch(root, books, fetched, cached, failures, stopped) -> dict:
+    return {
+        "root": str(root),
+        "chapters": sum(int(book["chapters"]) for book in books),
+        "retrieved": fetched,
+        "already_cached": cached,
+        "failures": failures,
+        "complete": not stopped and not failures,
+        "status": "ok",
+    }
+
+
+def digest(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def artifact_dir(root: Path, prefix: str, payload: str) -> Path:
+    return root / "artifacts" / f"{prefix}-{digest(payload)[:8]}"
+
+
+def write_artifact(root: Path, prefix: str, filename: str, payload: str) -> Path:
+    # An artifact directory is named for the bytes it holds, so rebuilding
+    # unchanged content lands in the same place and a change is visible.
+    directory = artifact_dir(root, prefix, payload)
+    directory.mkdir(parents=True, exist_ok=True)
+    path = directory / filename
+    path.write_text(payload, encoding="utf-8")
+    return path
+
+
+def tsv(rows: list[tuple], header: tuple[str, ...]) -> str:
+    lines = ["\t".join(header)]
+    lines.extend("\t".join(str(cell) for cell in row) for row in rows)
+    return "\n".join(lines) + "\n"
+
+
+def douay_books() -> list[dict[str, str]]:
+    """The tracked Douay-Rheims book index, read for its naming columns."""
+    found = sorted(
+        (ROOT / "src/sources/works/english-college-of-douay/douay-rheims-bible/editions"
+         "/challoner-gutenberg-1581/artifacts").glob("book-index-*/book-index.tsv")
+    )
+    if len(found) != 1:
+        raise ValueError(f"expected one Douay-Rheims book index, found {len(found)}")
+    import csv
+
+    with found[0].open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle, delimiter="\t"))
+    return sorted(rows, key=lambda row: int(row["ordinal"]))
+
+
+def book_index_rows(books: list[dict]) -> list[tuple]:
+    """Name each Knox book every way a calendar might cite it.
+
+    Knox translates the Vulgate and carries the same 73 books in the same
+    order, but abbreviates them its own way — `3_Kgs` where the Douay-Rheims
+    writes `3Kings`. The calendars print modern names, so the modern name is
+    taken from the Douay-Rheims index by position rather than invented here.
+    Position is only trustworthy if the two orders agree, so every slug that is
+    also a Douay token must land on that token; otherwise the mapping is
+    refused rather than silently misfiled.
+    """
+    douay = douay_books()
+    if len(douay) != len(books):
+        raise ValueError(f"Knox lists {len(books)} books, the Douay-Rheims {len(douay)}")
+    tokens = {row["token"] for row in douay}
+    rows: list[tuple] = []
+    for knox, other in zip(books, douay):
+        if knox["slug"] in tokens and knox["slug"] != other["token"]:
+            raise ValueError(
+                f"{knox['slug']} is a Douay token but sits against {other['token']}; "
+                "the two book orders disagree"
+            )
+        aliases = [other["token"], other["douay_title"], other["missal_latin_abbreviation"]]
+        aliases.extend(filter(None, (other["alternate_names"] or "").split(";")))
+        rows.append(
+            (
+                knox["slug"],
+                knox["name"] or other["douay_title"],
+                other["modern_name"],
+                ";".join(dict.fromkeys(alias for alias in aliases if alias)),
+            )
+        )
+    return rows
+
+
+def run_build(arguments: argparse.Namespace) -> dict:
+    """Parse the cache into the artifact shape `index-bible` already reads."""
+    root = destination(arguments.root)
+    books = load_plan(root)
+    written: list[str] = []
+    missing: list[dict] = []
+    verses_total = 0
+    for order, book in enumerate(books, start=1):
+        rows: list[tuple] = []
+        for chapter in range(1, int(book["chapters"]) + 1):
+            path = cache_path(root, book["part"], book["slug"], chapter)
+            if not path.is_file():
+                missing.append({"book": book["slug"], "chapter": chapter})
+                continue
+            body = path.read_text(encoding="utf-8")
+            found = list(VERSE.finditer(body))
+            if not found:
+                missing.append(
+                    {"book": book["slug"], "chapter": chapter, "reason": "no verses parsed"}
+                )
+                continue
+            for match in found:
+                number = clean(match.group("no"))
+                text = clean(match.group("text"))
+                if not number.isdigit() or not text:
+                    continue
+                rows.append((book["slug"], chapter, int(number), text))
+        if not rows:
+            continue
+        verses_total += len(rows)
+        stem = f"{order:02d}-{book['slug'].lower()}"
+        payload = tsv(rows, ("book", "chapter", "verse", "text"))
+        written.append(str(write_artifact(root, f"verse-text-{stem}", f"{stem}.tsv", payload)))
+
+    index = tsv(book_index_rows(books), ("token", "douay_title", "modern_name", "alternate_names"))
+    written.append(str(write_artifact(root, "book-index", "book-index.tsv", index)))
+    # This edition merges no verses; the file exists because the reader
+    # requires exactly one, and an absent one is indistinguishable from a
+    # forgotten one.
+    aliases = tsv([], ("cited_locus", "resolves_to"))
+    written.append(str(write_artifact(root, "verse-aliases", "verse-aliases.tsv", aliases)))
+    (root / "RIGHTS.txt").write_text(RIGHTS_NOTICE + "\n", encoding="utf-8")
+    return {
+        "root": str(root),
+        "books": len([path for path in written if "verse-text-" in path]),
+        "verses": verses_total,
+        "missing": missing if arguments.verbose else len(missing),
+        "notice": str(root / "RIGHTS.txt"),
+        "status": "ok",
+    }
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("knox-bible error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    for field in ("books", "chapters", "retrieved", "already_cached", "verses", "requested"):
+        if field in payload:
+            print(f"{field.replace('_', ' ')}: {payload[field]}")
+    failures = payload.get("failures")
+    if isinstance(failures, list):
+        for row in failures:
+            print(f"  failed {row['book']} {row['chapter']}: {row['reason']}")
+    missing = payload.get("missing")
+    if isinstance(missing, list):
+        for row in missing:
+            print(f"  missing {row['book']} {row['chapter']}")
+    elif isinstance(missing, int) and missing:
+        print(f"missing chapters: {missing}")
+    print(f"root: {payload['root']}")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    # Required in effect, but checked in `destination` rather than by argparse:
+    # a required option on both the parent and the subparser would have to be
+    # written before the verb, which is not how the other tools read.
+    shared.add_argument(
+        "--root", default="", help="destination outside this repository (licensed text)"
+    )
+    shared.add_argument(
+        "--pace", type=float, default=1.0, help="seconds to wait after each request"
+    )
+    shared.add_argument("--limit", type=int, default=0, help="stop after N new requests")
+    shared.add_argument("--format", choices=("text", "json"), default="text")
+    shared.add_argument("--verbose", action="store_true", help="list every missing chapter")
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    parser = argparse.ArgumentParser(
+        prog="knox-bible",
+        description="Retrieve the Knox Bible into source-library artifacts.",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("plan", help="learn the books and their chapter counts", parents=[shared])
+    sub.add_parser("fetch", help="retrieve every chapter the plan lists", parents=[shared])
+    sub.add_parser("build", help="parse the cache into artifacts", parents=[shared])
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"plan": run_plan, "fetch": run_fetch, "build": run_build},
+        renderer=render,
+        prefix="knox-bible",
+        argv=argv,
+        default_verb="plan",
+        mapped_errors={Refused: ("input", 2), ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
