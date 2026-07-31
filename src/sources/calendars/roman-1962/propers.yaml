@@ -10,16 +10,21 @@ psalm_numbering: vulgate
 citation_convention: Vulgate book names and Vulgate psalm numbering as printed in
   the 1962 Missal
 orthography: 1962 missal Latin (j retained, ae/oe digraphs, no accent marks)
-verification: two tiers; the seasonal section carries unverified model-generated
-  leads whose every citation and text requires collation against the controlling
-  edition before any evidentiary reuse, and the marian, christological and sanctoral
-  sections remain a placeholder skeleton pending formula migration
+verification: three tiers; the seasonal Sundays, the Triduum and Palm Sunday carry
+  unverified model-generated leads whose every citation and text requires collation
+  against the controlling edition before any evidentiary reuse; the seasonal ferias,
+  vigils, Ember Days and movable feasts of the Lord added afterwards carry only their
+  scripture-bearing propers, read from an OCR text layer of that edition and equally
+  uncollated; and the marian, christological and sanctoral sections remain a
+  placeholder skeleton pending formula migration
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
   doxology is not repeated per entry
 - propers stand in the order the Missal appoints them, not in a fixed template;
   Tracts, Sequences, and ritual texts appear only where appointed
 - the invariant Ordinary is out of scope; prefaces are not recorded
+- a mass whose propers cover only the scripture-bearing slots says so in its own
+  notes; the omitted orations and composed chants are appointed, not absent
 open_collation_items:
 - oration conclusions reproduce the abbreviated printed cue, but the cue's expansion
   is not uniform across entries (Per Dominum nostrum Jesum Christum... against
@@ -29,6 +34,48 @@ open_collation_items:
 - pre-1960 commemorations, suffrages, and suppressed octave texts were omitted
   as not appointed in 1962; confirm against the controlling edition's rubrics
 - all entries in this file are placeholders pending source-backed completion
+- 63 seasonal entries were added for the temporal days the Missal keeps and this
+  file did not, namely the three Advent Ember Days; Ash Wednesday and the three days
+  after it; every feria of Lent weeks 1-4 with the Lenten Ember Days; the ferias
+  of Passion week and Holy Week to Wednesday; the Chrism Mass; the Easter octave;
+  the Rogation Mass; the Vigil of the Ascension, the Ascension, and the Vigil of
+  Pentecost; the Whitsun octave with its Ember Days; the Mass of the First Sunday
+  after Pentecost; Corpus Christi; the Sacred Heart; and the September Ember Days
+- those 63 entries carry only scripture-bearing propers. Identity, rank and the
+  printed scripture references were read from an OCR text layer of the CMAA 1962
+  facsimile, not from the facsimile images; confidence in the day's identity and
+  rank is high, in each citation only as high as an unproofed scan allows, and
+  nothing here has been visually collated
+- their registry ids read 1962-T-<key> and are synthetic. The temporal registry in
+  guidance/liturgy/roman-1962-propers.md numbers only the 52 Sundays and T01-T03,
+  so no printed identifier exists for a feria; settle a scheme at collation
+- citations in those entries were normalised into this file's English form (Psalm
+  24:1-3) from the Missal's printed Latin (Ps. 24, 1-3), mapping 3 Reg. to 1 Kings,
+  4 Reg. to 2 Kings, Eccli. to Sirach, Sap. to Wisdom and 2 Esdrae to Nehemiah;
+  the printed strings themselves are not preserved
+- the 1962 typica prints i where this file prints j (Iesu, Iudica, Iubilate, eius),
+  so the orthography line describes a hand-missal witness rather than the edition
+  named above. The new incipits were normalised to this file's j to keep one
+  spelling; no incipit here reproduces the typica's letterforms
+- an Introit's psalm verse was recorded only where the scan showed its printed
+  verse numbers, so a new Introit carrying one passage is not evidence that the
+  Missal appoints no psalm verse there
+- in easter-thursday the scan reads the Introit psalm verse as Ps. 79, 1 while the
+  words printed are those of Psalm 97:1; it is recorded as Psalm 97:1
+- in lent-3-thursday the Missal prints no scriptural reference for the Introit
+  antiphon Salus populi ego sum, only for its psalm verse
+- the 1962 books have no octave of the Ascension, of Corpus Christi, or of the
+  Epiphany, and no Vigil of the Epiphany; nothing was added for them
+- ascension, corpus-christi, sacred-heart and chrism-mass are filed seasonal
+  because the Missal prints them in the Proprium de Tempore and each is placed by
+  the liturgical year rather than a civil date; by kind they are christological,
+  and which section should hold them is open
+- three formularies the Missal carries are still absent from this file, namely
+  D. N. Iesu Christi Regis (last Sunday of October, I classis), Sanctissimi
+  Nominis Iesu, and the
+  Mass for the days within the Octave of the Nativity that 12-29, 12-30 and 12-31
+  use. All three are movable or shared and none is in the fixed-date spine, which
+  is why nothing reports them
 sections:
   seasonal:
     kind: seasonal
@@ -327,6 +374,390 @@ sections:
         text: |
           Imploramus, Domine, clementiam tuam: ut haec divina subsidia, a vitiis
           expiatos, ad festa ventura nos praeparent. Per Dominum...
+    - key: advent-ember-wednesday
+      name: Ember Wednesday of Advent
+      registry: '1962-T-advent-ember-wednesday'
+      season: advent
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Rorate caeli desuper
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 45, verse: 8}
+            end: {chapter: 45, verse: 8}
+          ref: Isaiah 45:8
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 18, verse: 2}
+            end: {chapter: 18, verse: 2}
+          ref: Psalm 18:2
+      - name: First Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 2, verse: 2}
+            end: {chapter: 2, verse: 5}
+          ref: Isaiah 2:2-5
+      - name: First Gradual
+        incipit: Tollite portas
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 23, verse: 7}
+            end: {chapter: 23, verse: 7}
+          - begin: {chapter: 23, verse: 3}
+            end: {chapter: 23, verse: 4}
+          ref: Psalm 23:7, 3-4
+      - name: Second Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 7, verse: 10}
+            end: {chapter: 7, verse: 15}
+          ref: Isaiah 7:10-15
+      - name: Second Gradual
+        incipit: Prope est Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 144, verse: 18}
+            end: {chapter: 144, verse: 18}
+          - begin: {chapter: 144, verse: 21}
+            end: {chapter: 144, verse: 21}
+          ref: Psalm 144:18, 21
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 1, verse: 26}
+            end: {chapter: 1, verse: 38}
+          ref: Luke 1:26-38
+      - name: Offertory
+        incipit: Confortamini, et jam nolite timere
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 35, verse: 4}
+            end: {chapter: 35, verse: 4}
+          ref: Isaiah 35:4
+      - name: Communion
+        incipit: Ecce virgo concipiet
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 7, verse: 14}
+            end: {chapter: 7, verse: 14}
+          ref: Isaiah 7:14
+    - key: advent-ember-friday
+      name: Ember Friday of Advent
+      registry: '1962-T-advent-ember-friday'
+      season: advent
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Prope es tu, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 151}
+            end: {chapter: 118, verse: 152}
+          ref: Psalm 118:151-152
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 1}
+            end: {chapter: 118, verse: 1}
+          ref: Psalm 118:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 11, verse: 1}
+            end: {chapter: 11, verse: 5}
+          ref: Isaiah 11:1-5
+      - name: Gradual
+        incipit: Ostende nobis, Domine, misericordiam tuam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 84, verse: 8}
+            end: {chapter: 84, verse: 8}
+          - begin: {chapter: 84, verse: 2}
+            end: {chapter: 84, verse: 2}
+          ref: Psalm 84:8, 2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 1, verse: 39}
+            end: {chapter: 1, verse: 47}
+          ref: Luke 1:39-47
+      - name: Offertory
+        incipit: Deus, tu conversus vivificabis nos
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 84, verse: 7}
+            end: {chapter: 84, verse: 8}
+          ref: Psalm 84:7-8
+      - name: Communion
+        incipit: Ecce Dominus veniet
+        source: scripture
+        verses:
+        - book: Zechariah
+          ranges:
+          - begin: {chapter: 14, verse: 5}
+            end: {chapter: 14, verse: 6}
+          ref: Zechariah 14:5-6
+    - key: advent-ember-saturday
+      name: Ember Saturday of Advent
+      registry: '1962-T-advent-ember-saturday'
+      season: advent
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The Missal prints a longer
+        and a shorter form of this Mass.
+      forms:
+      - name: Longer form (forma missae longior)
+        propers:
+        - name: Introit
+          incipit: Veni, et ostende nobis
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 79, verse: 4}
+              end: {chapter: 79, verse: 4}
+            - begin: {chapter: 79, verse: 2}
+              end: {chapter: 79, verse: 2}
+            ref: Psalm 79:4, 2
+        - name: First Lesson
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin: {chapter: 19, verse: 20}
+              end: {chapter: 19, verse: 22}
+            ref: Isaiah 19:20-22
+        - name: First Gradual
+          incipit: A summo caelo egressio ejus
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 18, verse: 7}
+              end: {chapter: 18, verse: 7}
+            - begin: {chapter: 18, verse: 2}
+              end: {chapter: 18, verse: 2}
+            ref: Psalm 18:7, 2
+        - name: Second Lesson
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin: {chapter: 35, verse: 1}
+              end: {chapter: 35, verse: 7}
+            ref: Isaiah 35:1-7
+        - name: Second Gradual
+          incipit: In sole posuit tabernaculum suum
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 18, verse: 6}
+              end: {chapter: 18, verse: 7}
+            ref: Psalm 18:6-7
+        - name: Third Lesson
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin: {chapter: 40, verse: 9}
+              end: {chapter: 40, verse: 11}
+            ref: Isaiah 40:9-11
+        - name: Third Gradual
+          incipit: Domine Deus virtutum, converte nos
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 79, verse: 20}
+              end: {chapter: 79, verse: 20}
+            - begin: {chapter: 79, verse: 3}
+              end: {chapter: 79, verse: 3}
+            ref: Psalm 79:20, 3
+        - name: Fourth Lesson
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin: {chapter: 45, verse: 1}
+              end: {chapter: 45, verse: 8}
+            ref: Isaiah 45:1-8
+        - name: Fourth Gradual
+          incipit: Excita, Domine, potentiam tuam
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 79, verse: 3}
+              end: {chapter: 79, verse: 3}
+            - begin: {chapter: 79, verse: 2}
+              end: {chapter: 79, verse: 3}
+            ref: Psalm 79:3, 2-3
+        - name: Fifth Lesson
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin: {chapter: 3, verse: 47}
+              end: {chapter: 3, verse: 51}
+            ref: Daniel 3:47-51
+        - name: Hymn (Benedictus es)
+          incipit: Benedictus es, Domine Deus patrum nostrorum
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin: {chapter: 3, verse: 52}
+              end: {chapter: 3, verse: 56}
+            ref: Daniel 3:52-56
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: 2 Thessalonians
+            ranges:
+            - begin: {chapter: 2, verse: 1}
+              end: {chapter: 2, verse: 8}
+            ref: 2 Thessalonians 2:1-8
+        - name: Tract
+          incipit: Qui regis Israel, intende
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 79, verse: 2}
+              end: {chapter: 79, verse: 3}
+            ref: Psalm 79:2-3
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 3, verse: 1}
+              end: {chapter: 3, verse: 6}
+            ref: Luke 3:1-6
+        - name: Offertory
+          incipit: Exsulta satis, filia Sion
+          source: scripture
+          verses:
+          - book: Zechariah
+            ranges:
+            - begin: {chapter: 9, verse: 9}
+              end: {chapter: 9, verse: 9}
+            ref: Zechariah 9:9
+        - name: Communion
+          incipit: Exsultavit ut gigas ad currendam viam
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 18, verse: 6}
+              end: {chapter: 18, verse: 7}
+            ref: Psalm 18:6-7
+      - name: Shorter form
+        propers:
+        - name: Introit
+          incipit: Veni, et ostende nobis
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 79, verse: 4}
+              end: {chapter: 79, verse: 4}
+            - begin: {chapter: 79, verse: 2}
+              end: {chapter: 79, verse: 2}
+            ref: Psalm 79:4, 2
+        - name: Lesson
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin: {chapter: 19, verse: 20}
+              end: {chapter: 19, verse: 22}
+            ref: Isaiah 19:20-22
+        - name: Gradual
+          incipit: A summo caelo egressio ejus
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 18, verse: 7}
+              end: {chapter: 18, verse: 7}
+            - begin: {chapter: 18, verse: 2}
+              end: {chapter: 18, verse: 2}
+            ref: Psalm 18:7, 2
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: 2 Thessalonians
+            ranges:
+            - begin: {chapter: 2, verse: 1}
+              end: {chapter: 2, verse: 8}
+            ref: 2 Thessalonians 2:1-8
+        - name: Tract
+          incipit: Qui regis Israel, intende
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 79, verse: 2}
+              end: {chapter: 79, verse: 3}
+            ref: Psalm 79:2-3
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 3, verse: 1}
+              end: {chapter: 3, verse: 6}
+            ref: Luke 3:1-6
+        - name: Offertory
+          incipit: Exsulta satis, filia Sion
+          source: scripture
+          verses:
+          - book: Zechariah
+            ranges:
+            - begin: {chapter: 9, verse: 9}
+              end: {chapter: 9, verse: 9}
+            ref: Zechariah 9:9
+        - name: Communion
+          incipit: Exsultavit ut gigas ad currendam viam
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 18, verse: 6}
+              end: {chapter: 18, verse: 7}
+            ref: Psalm 18:6-7
     - key: advent-4
       name: Fourth Sunday of Advent
       registry: '42'
@@ -1440,6 +1871,370 @@ sections:
           Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus,
           per haec contra omnia adversa muniamur. Per Dominum nostrum Jesum
           Christum...
+    - key: ash-wednesday
+      name: Ash Wednesday
+      registry: '1962-T-ash-wednesday'
+      season: lent
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Antiphon at the Blessing of Ashes
+        incipit: Exaudi nos, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 68, verse: 17}
+            end: {chapter: 68, verse: 17}
+          ref: Psalm 68:17
+      - name: First Antiphon at the Imposition of Ashes
+        incipit: Immutemur habitu
+        source: scripture
+        verses:
+        - book: Joel
+          ranges:
+          - begin: {chapter: 2, verse: 13}
+            end: {chapter: 2, verse: 13}
+          ref: Joel 2:13
+      - name: Second Antiphon at the Imposition of Ashes
+        incipit: Inter vestibulum et altare
+        source: scripture
+        verses:
+        - book: Joel
+          ranges:
+          - begin: {chapter: 2, verse: 17}
+            end: {chapter: 2, verse: 17}
+          ref: Joel 2:17
+        - book: Esther
+          ranges:
+          - begin: {chapter: 13, verse: 17}
+            end: {chapter: 13, verse: 17}
+          ref: Esther 13:17
+      - name: Responsory at the Imposition of Ashes
+        incipit: Emendemus in melius
+        source: scripture
+        verses:
+        - book: Esther
+          ranges:
+          - begin: {chapter: 13}
+            end: {chapter: 13}
+          ref: Esther 13
+        - book: Joel
+          ranges:
+          - begin: {chapter: 2}
+            end: {chapter: 2}
+          ref: Joel 2
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 9}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:9
+      - name: Formula at the Imposition of Ashes
+        incipit: Memento, homo, quia pulvis es
+        source: scripture
+        verses:
+        - book: Genesis
+          ranges:
+          - begin: {chapter: 3, verse: 19}
+            end: {chapter: 3, verse: 19}
+          ref: Genesis 3:19
+      - name: Introit
+        incipit: Misereris omnium, Domine
+        source: scripture
+        verses:
+        - book: Wisdom
+          ranges:
+          - begin: {chapter: 11, verse: 24}
+            end: {chapter: 11, verse: 25}
+          - begin: {chapter: 11, verse: 27}
+            end: {chapter: 11, verse: 27}
+          ref: Wisdom 11:24-25, 27
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 56, verse: 2}
+            end: {chapter: 56, verse: 2}
+          ref: Psalm 56:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Joel
+          ranges:
+          - begin: {chapter: 2, verse: 12}
+            end: {chapter: 2, verse: 19}
+          ref: Joel 2:12-19
+      - name: Gradual
+        incipit: Miserere mei, Deus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 56, verse: 2}
+            end: {chapter: 56, verse: 2}
+          - begin: {chapter: 56, verse: 4}
+            end: {chapter: 56, verse: 4}
+          ref: Psalm 56:2, 4
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 6, verse: 16}
+            end: {chapter: 6, verse: 21}
+          ref: Matthew 6:16-21
+      - name: Offertory
+        incipit: Exaltabo te, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 29, verse: 2}
+            end: {chapter: 29, verse: 3}
+          ref: Psalm 29:2-3
+      - name: Communion
+        incipit: Qui meditabitur in lege Domini
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 1, verse: 2}
+            end: {chapter: 1, verse: 3}
+          ref: Psalm 1:2-3
+    - key: thursday-after-ash-wednesday
+      name: Thursday after Ash Wednesday
+      registry: '1962-T-thursday-after-ash-wednesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Dum clamarem ad Dominum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 54, verse: 17}
+            end: {chapter: 54, verse: 17}
+          - begin: {chapter: 54, verse: 19}
+            end: {chapter: 54, verse: 20}
+          - begin: {chapter: 54, verse: 23}
+            end: {chapter: 54, verse: 23}
+          ref: Psalm 54:17, 19-20, 23
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 54, verse: 2}
+            end: {chapter: 54, verse: 3}
+          ref: Psalm 54:2-3
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 38, verse: 1}
+            end: {chapter: 38, verse: 6}
+          ref: Isaiah 38:1-6
+      - name: Gradual
+        incipit: Jacta cogitatum tuum in Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 54, verse: 23}
+            end: {chapter: 54, verse: 23}
+          - begin: {chapter: 54, verse: 17}
+            end: {chapter: 54, verse: 19}
+          ref: Psalm 54:23, 17-19
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 8, verse: 5}
+            end: {chapter: 8, verse: 13}
+          ref: Matthew 8:5-13
+      - name: Offertory
+        incipit: Ad te, Domine, levavi animam meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 1}
+            end: {chapter: 24, verse: 3}
+          ref: Psalm 24:1-3
+      - name: Communion
+        incipit: Acceptabis sacrificium justitiae
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 50, verse: 21}
+            end: {chapter: 50, verse: 21}
+          ref: Psalm 50:21
+    - key: friday-after-ash-wednesday
+      name: Friday after Ash Wednesday
+      registry: '1962-T-friday-after-ash-wednesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Audivit Dominus, et misertus est mihi
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 29, verse: 11}
+            end: {chapter: 29, verse: 11}
+          ref: Psalm 29:11
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 29, verse: 2}
+            end: {chapter: 29, verse: 2}
+          ref: Psalm 29:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 58, verse: 1}
+            end: {chapter: 58, verse: 9}
+          ref: Isaiah 58:1-9
+      - name: Gradual
+        incipit: Unam petii a Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 26, verse: 4}
+            end: {chapter: 26, verse: 4}
+          ref: Psalm 26:4
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 43}
+            end: {chapter: 5, verse: 48}
+          - begin: {chapter: 6, verse: 1}
+            end: {chapter: 6, verse: 4}
+          ref: Matthew 5:43-48; 6:1-4
+      - name: Offertory
+        incipit: Domine, vivifica me secundum eloquium tuum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 154}
+            end: {chapter: 118, verse: 154}
+          - begin: {chapter: 118, verse: 125}
+            end: {chapter: 118, verse: 125}
+          ref: Psalm 118:154, 125
+      - name: Communion
+        incipit: Servite Domino in timore
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 2, verse: 11}
+            end: {chapter: 2, verse: 12}
+          ref: Psalm 2:11-12
+    - key: saturday-after-ash-wednesday
+      name: Saturday after Ash Wednesday
+      registry: '1962-T-saturday-after-ash-wednesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Audivit Dominus, et misertus est mihi
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 29, verse: 11}
+            end: {chapter: 29, verse: 11}
+          ref: Psalm 29:11
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 29, verse: 2}
+            end: {chapter: 29, verse: 2}
+          ref: Psalm 29:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 58, verse: 9}
+            end: {chapter: 58, verse: 14}
+          ref: Isaiah 58:9-14
+      - name: Gradual
+        incipit: Unam petii a Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 26, verse: 4}
+            end: {chapter: 26, verse: 4}
+          ref: Psalm 26:4
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 6, verse: 47}
+            end: {chapter: 6, verse: 56}
+          ref: Mark 6:47-56
+      - name: Offertory
+        incipit: Domine, vivifica me secundum eloquium tuum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 154}
+            end: {chapter: 118, verse: 154}
+          - begin: {chapter: 118, verse: 125}
+            end: {chapter: 118, verse: 125}
+          ref: Psalm 118:154, 125
+      - name: Communion
+        incipit: Servite Domino in timore
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 2, verse: 11}
+            end: {chapter: 2, verse: 12}
+          ref: Psalm 2:11-12
     - key: lent-1
       name: First Sunday of Lent
       registry: '01'
@@ -1534,6 +2329,619 @@ sections:
           Tui nos, Domine, sacramenti libatio sancta restauret: et a vetustate
           purgatos, in mysterii salutaris faciat transire consortium. Per
           Dominum nostrum Jesum Christum...
+    - key: lent-1-monday
+      name: Monday of the First Week of Lent
+      registry: '1962-T-lent-1-monday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Sicut oculi servorum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 122, verse: 2}
+            end: {chapter: 122, verse: 2}
+          ref: Psalm 122:2
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 122, verse: 1}
+            end: {chapter: 122, verse: 1}
+          ref: Psalm 122:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Ezekiel
+          ranges:
+          - begin: {chapter: 34, verse: 11}
+            end: {chapter: 34, verse: 16}
+          ref: Ezekiel 34:11-16
+      - name: Gradual
+        incipit: Protector noster, aspice, Deus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 83, verse: 10}
+            end: {chapter: 83, verse: 10}
+          - begin: {chapter: 83, verse: 9}
+            end: {chapter: 83, verse: 9}
+          ref: Psalm 83:10, 9
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 25, verse: 31}
+            end: {chapter: 25, verse: 46}
+          ref: Matthew 25:31-46
+      - name: Offertory
+        incipit: Levabo oculos meos
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 18}
+            end: {chapter: 118, verse: 18}
+          - begin: {chapter: 118, verse: 26}
+            end: {chapter: 118, verse: 26}
+          - begin: {chapter: 118, verse: 73}
+            end: {chapter: 118, verse: 73}
+          ref: Psalm 118:18, 26, 73
+      - name: Communion
+        incipit: Amen dico vobis
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 25, verse: 40}
+            end: {chapter: 25, verse: 40}
+          - begin: {chapter: 25, verse: 34}
+            end: {chapter: 25, verse: 34}
+          ref: Matthew 25:40, 34
+    - key: lent-1-tuesday
+      name: Tuesday of the First Week of Lent
+      registry: '1962-T-lent-1-tuesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Domine, refugium factus es nobis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 89, verse: 1}
+            end: {chapter: 89, verse: 2}
+          ref: Psalm 89:1-2
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 89, verse: 2}
+            end: {chapter: 89, verse: 2}
+          ref: Psalm 89:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 55, verse: 6}
+            end: {chapter: 55, verse: 11}
+          ref: Isaiah 55:6-11
+      - name: Gradual
+        incipit: Dirigatur oratio mea
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 140, verse: 2}
+            end: {chapter: 140, verse: 2}
+          ref: Psalm 140:2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 21, verse: 10}
+            end: {chapter: 21, verse: 17}
+          ref: Matthew 21:10-17
+      - name: Offertory
+        incipit: In te speravi, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 30, verse: 15}
+            end: {chapter: 30, verse: 16}
+          ref: Psalm 30:15-16
+      - name: Communion
+        incipit: Cum invocarem te, exaudisti me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 4, verse: 2}
+            end: {chapter: 4, verse: 2}
+          ref: Psalm 4:2
+    - key: lent-1-ember-wednesday
+      name: Ember Wednesday of Lent
+      registry: '1962-T-lent-1-ember-wednesday'
+      season: lent
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Reminiscere miserationum tuarum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 6}
+            end: {chapter: 24, verse: 6}
+          - begin: {chapter: 24, verse: 3}
+            end: {chapter: 24, verse: 3}
+          - begin: {chapter: 24, verse: 22}
+            end: {chapter: 24, verse: 22}
+          ref: Psalm 24:6, 3, 22
+      - name: First Lesson
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin: {chapter: 24, verse: 12}
+            end: {chapter: 24, verse: 18}
+          ref: Exodus 24:12-18
+      - name: First Gradual
+        incipit: Tribulationes cordis mei
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 17}
+            end: {chapter: 24, verse: 18}
+          ref: Psalm 24:17-18
+      - name: Second Lesson
+        source: scripture
+        verses:
+        - book: 1 Kings
+          ranges:
+          - begin: {chapter: 19, verse: 3}
+            end: {chapter: 19, verse: 8}
+          ref: 1 Kings 19:3-8
+      - name: Tract
+        incipit: De necessitatibus meis eripe me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 17}
+            end: {chapter: 24, verse: 18}
+          - begin: {chapter: 24, verse: 1}
+            end: {chapter: 24, verse: 4}
+          ref: Psalm 24:17-18, 1-4
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 12, verse: 38}
+            end: {chapter: 12, verse: 50}
+          ref: Matthew 12:38-50
+      - name: Offertory
+        incipit: Meditabor in mandatis tuis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 47}
+            end: {chapter: 118, verse: 48}
+          ref: Psalm 118:47-48
+      - name: Communion
+        incipit: Intellege clamorem meum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 5, verse: 2}
+            end: {chapter: 5, verse: 4}
+          ref: Psalm 5:2-4
+    - key: lent-1-thursday
+      name: Thursday of the First Week of Lent
+      registry: '1962-T-lent-1-thursday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Confessio et pulchritudo in conspectu ejus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 95, verse: 6}
+            end: {chapter: 95, verse: 6}
+          ref: Psalm 95:6
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Ezekiel
+          ranges:
+          - begin: {chapter: 18, verse: 1}
+            end: {chapter: 18, verse: 9}
+          ref: Ezekiel 18:1-9
+      - name: Gradual
+        incipit: Custodi me, Domine, ut pupillam oculi
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 16, verse: 8}
+            end: {chapter: 16, verse: 8}
+          - begin: {chapter: 16, verse: 2}
+            end: {chapter: 16, verse: 2}
+          ref: Psalm 16:8, 2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 15, verse: 21}
+            end: {chapter: 15, verse: 28}
+          ref: Matthew 15:21-28
+      - name: Offertory
+        incipit: Immittet Angelus Domini
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 33, verse: 8}
+            end: {chapter: 33, verse: 9}
+          ref: Psalm 33:8-9
+      - name: Communion
+        incipit: Panis, quem ego dedero
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 6, verse: 52}
+            end: {chapter: 6, verse: 52}
+          ref: John 6:52
+    - key: lent-1-ember-friday
+      name: Ember Friday of Lent
+      registry: '1962-T-lent-1-ember-friday'
+      season: lent
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: De necessitatibus meis eripe me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 17}
+            end: {chapter: 24, verse: 18}
+          ref: Psalm 24:17-18
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 1}
+            end: {chapter: 24, verse: 2}
+          ref: Psalm 24:1-2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Ezekiel
+          ranges:
+          - begin: {chapter: 18, verse: 20}
+            end: {chapter: 18, verse: 28}
+          ref: Ezekiel 18:20-28
+      - name: Gradual
+        incipit: Salvum fac servum tuum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 85, verse: 2}
+            end: {chapter: 85, verse: 2}
+          - begin: {chapter: 85, verse: 6}
+            end: {chapter: 85, verse: 6}
+          ref: Psalm 85:2, 6
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 5, verse: 1}
+            end: {chapter: 5, verse: 15}
+          ref: John 5:1-15
+      - name: Offertory
+        incipit: Benedic, anima mea, Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 2}
+            end: {chapter: 102, verse: 2}
+          - begin: {chapter: 102, verse: 5}
+            end: {chapter: 102, verse: 5}
+          ref: Psalm 102:2, 5
+      - name: Communion
+        incipit: Erubescant et conturbentur
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 6, verse: 11}
+            end: {chapter: 6, verse: 11}
+          ref: Psalm 6:11
+    - key: lent-1-ember-saturday
+      name: Ember Saturday of Lent
+      registry: '1962-T-lent-1-ember-saturday'
+      season: lent
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The Missal prints a longer
+        and a shorter form of this Mass.
+      forms:
+      - name: Longer form (forma missae longior)
+        propers:
+        - name: Introit
+          incipit: Intret oratio mea in conspectu tuo
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 3}
+              end: {chapter: 87, verse: 3}
+            ref: Psalm 87:3
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 2}
+              end: {chapter: 87, verse: 2}
+            ref: Psalm 87:2
+        - name: First Lesson
+          source: scripture
+          verses:
+          - book: Deuteronomy
+            ranges:
+            - begin: {chapter: 26, verse: 12}
+              end: {chapter: 26, verse: 19}
+            ref: Deuteronomy 26:12-19
+        - name: First Gradual
+          incipit: Propitius esto, Domine, peccatis nostris
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 78, verse: 9}
+              end: {chapter: 78, verse: 10}
+            ref: Psalm 78:9-10
+        - name: Second Lesson
+          source: scripture
+          verses:
+          - book: Deuteronomy
+            ranges:
+            - begin: {chapter: 11, verse: 22}
+              end: {chapter: 11, verse: 25}
+            ref: Deuteronomy 11:22-25
+        - name: Second Gradual
+          incipit: Protector noster, aspice, Deus
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 83, verse: 10}
+              end: {chapter: 83, verse: 10}
+            - begin: {chapter: 83, verse: 9}
+              end: {chapter: 83, verse: 9}
+            ref: Psalm 83:10, 9
+        - name: Third Lesson
+          source: scripture
+          verses:
+          - book: 2 Maccabees
+            ranges:
+            - begin: {chapter: 1, verse: 23}
+              end: {chapter: 1, verse: 26}
+            - begin: {chapter: 1, verse: 27}
+              end: {chapter: 1, verse: 27}
+            ref: 2 Maccabees 1:23-26, 27
+        - name: Third Gradual
+          incipit: Convertere, Domine, aliquantulum
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 89, verse: 13}
+              end: {chapter: 89, verse: 13}
+            ref: Psalm 89:13
+        - name: Fourth Lesson
+          source: scripture
+          verses:
+          - book: Sirach
+            ranges:
+            - begin: {chapter: 36, verse: 1}
+              end: {chapter: 36, verse: 10}
+            ref: Sirach 36:1-10
+        - name: Fourth Gradual
+          incipit: Dirigatur oratio mea
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 140, verse: 2}
+              end: {chapter: 140, verse: 2}
+            ref: Psalm 140:2
+        - name: Fifth Lesson
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin: {chapter: 3, verse: 47}
+              end: {chapter: 3, verse: 51}
+            ref: Daniel 3:47-51
+        - name: Hymn (Benedictus es)
+          incipit: Benedictus es, Domine Deus patrum nostrorum
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin: {chapter: 3, verse: 52}
+              end: {chapter: 3, verse: 56}
+            ref: Daniel 3:52-56
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: 1 Thessalonians
+            ranges:
+            - begin: {chapter: 5, verse: 14}
+              end: {chapter: 5, verse: 23}
+            ref: 1 Thessalonians 5:14-23
+        - name: Tract
+          incipit: Laudate Dominum, omnes gentes
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 116, verse: 1}
+              end: {chapter: 116, verse: 2}
+            ref: Psalm 116:1-2
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 17, verse: 1}
+              end: {chapter: 17, verse: 9}
+            ref: Matthew 17:1-9
+        - name: Offertory
+          incipit: Domine, Deus salutis meae
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 2}
+              end: {chapter: 87, verse: 3}
+            ref: Psalm 87:2-3
+        - name: Communion
+          incipit: Domine Deus meus, in te speravi
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 7, verse: 2}
+              end: {chapter: 7, verse: 2}
+            ref: Psalm 7:2
+      - name: Shorter form
+        propers:
+        - name: Introit
+          incipit: Intret oratio mea in conspectu tuo
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 3}
+              end: {chapter: 87, verse: 3}
+            ref: Psalm 87:3
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 2}
+              end: {chapter: 87, verse: 2}
+            ref: Psalm 87:2
+        - name: Lesson
+          source: scripture
+          verses:
+          - book: Deuteronomy
+            ranges:
+            - begin: {chapter: 26, verse: 12}
+              end: {chapter: 26, verse: 19}
+            ref: Deuteronomy 26:12-19
+        - name: Gradual
+          incipit: Propitius esto, Domine, peccatis nostris
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 78, verse: 9}
+              end: {chapter: 78, verse: 10}
+            ref: Psalm 78:9-10
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: 1 Thessalonians
+            ranges:
+            - begin: {chapter: 5, verse: 14}
+              end: {chapter: 5, verse: 23}
+            ref: 1 Thessalonians 5:14-23
+        - name: Tract
+          incipit: Laudate Dominum, omnes gentes
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 116, verse: 1}
+              end: {chapter: 116, verse: 2}
+            ref: Psalm 116:1-2
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 17, verse: 1}
+              end: {chapter: 17, verse: 9}
+            ref: Matthew 17:1-9
+        - name: Offertory
+          incipit: Domine, Deus salutis meae
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 2}
+              end: {chapter: 87, verse: 3}
+            ref: Psalm 87:2-3
+        - name: Communion
+          incipit: Domine Deus meus, in te speravi
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 7, verse: 2}
+              end: {chapter: 7, verse: 2}
+            ref: Psalm 7:2
     - key: lent-2
       name: Second Sunday of Lent
       registry: '02'
@@ -1637,6 +3045,428 @@ sections:
           Supplices te rogamus, omnipotens Deus: ut quos tuis reficis
           sacramentis, tibi etiam placitis moribus dignanter deservire concedas.
           Per Dominum nostrum Jesum Christum...
+    - key: lent-2-monday
+      name: Monday of the Second Week of Lent
+      registry: '1962-T-lent-2-monday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Redime me, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 25, verse: 11}
+            end: {chapter: 25, verse: 12}
+          ref: Psalm 25:11-12
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Daniel
+          ranges:
+          - begin: {chapter: 9, verse: 15}
+            end: {chapter: 9, verse: 19}
+          ref: Daniel 9:15-19
+      - name: Gradual
+        incipit: Adjutor meus et liberator meus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 69, verse: 6}
+            end: {chapter: 69, verse: 6}
+          - begin: {chapter: 69, verse: 3}
+            end: {chapter: 69, verse: 3}
+          ref: Psalm 69:6, 3
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 8, verse: 21}
+            end: {chapter: 8, verse: 29}
+          ref: John 8:21-29
+      - name: Offertory
+        incipit: Benedicam Dominum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 15, verse: 7}
+            end: {chapter: 15, verse: 8}
+          ref: Psalm 15:7-8
+      - name: Communion
+        incipit: Domine, Dominus noster
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 8, verse: 2}
+            end: {chapter: 8, verse: 2}
+          ref: Psalm 8:2
+    - key: lent-2-tuesday
+      name: Tuesday of the Second Week of Lent
+      registry: '1962-T-lent-2-tuesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Tibi dixit cor meum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 26, verse: 8}
+            end: {chapter: 26, verse: 9}
+          ref: Psalm 26:8-9
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: 1 Kings
+          ranges:
+          - begin: {chapter: 17, verse: 8}
+            end: {chapter: 17, verse: 16}
+          ref: 1 Kings 17:8-16
+      - name: Gradual
+        incipit: Jacta cogitatum tuum in Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 54, verse: 23}
+            end: {chapter: 54, verse: 23}
+          - begin: {chapter: 54, verse: 17}
+            end: {chapter: 54, verse: 19}
+          ref: Psalm 54:23, 17-19
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 23, verse: 1}
+            end: {chapter: 23, verse: 12}
+          ref: Matthew 23:1-12
+      - name: Offertory
+        incipit: Miserere mei, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 50, verse: 3}
+            end: {chapter: 50, verse: 3}
+          ref: Psalm 50:3
+      - name: Communion
+        incipit: Narrabo omnia mirabilia tua
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 9, verse: 2}
+            end: {chapter: 9, verse: 3}
+          ref: Psalm 9:2-3
+    - key: lent-2-wednesday
+      name: Wednesday of the Second Week of Lent
+      registry: '1962-T-lent-2-wednesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Ne derelinquas me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 37, verse: 22}
+            end: {chapter: 37, verse: 23}
+          ref: Psalm 37:22-23
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 37, verse: 2}
+            end: {chapter: 37, verse: 2}
+          ref: Psalm 37:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Esther
+          ranges:
+          - begin: {chapter: 13, verse: 8}
+            end: {chapter: 13, verse: 11}
+          - begin: {chapter: 13, verse: 15}
+            end: {chapter: 13, verse: 17}
+          ref: Esther 13:8-11, 15-17
+      - name: Gradual
+        incipit: Salvum fac populum tuum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 27, verse: 9}
+            end: {chapter: 27, verse: 9}
+          - begin: {chapter: 27, verse: 1}
+            end: {chapter: 27, verse: 1}
+          ref: Psalm 27:9, 1
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 20, verse: 17}
+            end: {chapter: 20, verse: 28}
+          ref: Matthew 20:17-28
+      - name: Offertory
+        incipit: Ad te, Domine, levavi animam meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 1}
+            end: {chapter: 24, verse: 3}
+          ref: Psalm 24:1-3
+      - name: Communion
+        incipit: Justus Dominus, et justitiam dilexit
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 10, verse: 8}
+            end: {chapter: 10, verse: 8}
+          ref: Psalm 10:8
+    - key: lent-2-thursday
+      name: Thursday of the Second Week of Lent
+      registry: '1962-T-lent-2-thursday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Deus, in adjutorium meum intende
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 69, verse: 2}
+            end: {chapter: 69, verse: 3}
+          ref: Psalm 69:2-3
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Jeremiah
+          ranges:
+          - begin: {chapter: 17, verse: 5}
+            end: {chapter: 17, verse: 10}
+          ref: Jeremiah 17:5-10
+      - name: Gradual
+        incipit: Propitius esto, Domine, peccatis nostris
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 9}
+            end: {chapter: 78, verse: 10}
+          ref: Psalm 78:9-10
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 16, verse: 19}
+            end: {chapter: 16, verse: 31}
+          ref: Luke 16:19-31
+      - name: Offertory
+        incipit: Precatus est Moyses
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin: {chapter: 32, verse: 11}
+            end: {chapter: 32, verse: 11}
+          - begin: {chapter: 32, verse: 13}
+            end: {chapter: 32, verse: 14}
+          ref: Exodus 32:11, 13-14
+      - name: Communion
+        incipit: Qui manducat meam carnem
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 6, verse: 57}
+            end: {chapter: 6, verse: 57}
+          ref: John 6:57
+    - key: lent-2-friday
+      name: Friday of the Second Week of Lent
+      registry: '1962-T-lent-2-friday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Ego autem cum justitia apparebo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 16, verse: 15}
+            end: {chapter: 16, verse: 15}
+          ref: Psalm 16:15
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 16, verse: 1}
+            end: {chapter: 16, verse: 1}
+          ref: Psalm 16:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Genesis
+          ranges:
+          - begin: {chapter: 37, verse: 6}
+            end: {chapter: 37, verse: 22}
+          ref: Genesis 37:6-22
+      - name: Gradual
+        incipit: Ad Dominum cum tribularer clamavi
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 119, verse: 1}
+            end: {chapter: 119, verse: 2}
+          ref: Psalm 119:1-2
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 21, verse: 33}
+            end: {chapter: 21, verse: 46}
+          ref: Matthew 21:33-46
+      - name: Offertory
+        incipit: Domine, in auxilium meum respice
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 39, verse: 14}
+            end: {chapter: 39, verse: 15}
+          ref: Psalm 39:14-15
+      - name: Communion
+        incipit: Tu, Domine, servabis nos
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 11, verse: 8}
+            end: {chapter: 11, verse: 8}
+          ref: Psalm 11:8
+    - key: lent-2-saturday
+      name: Saturday of the Second Week of Lent
+      registry: '1962-T-lent-2-saturday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Lex Domini irreprehensibilis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 18, verse: 8}
+            end: {chapter: 18, verse: 8}
+          ref: Psalm 18:8
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Genesis
+          ranges:
+          - begin: {chapter: 27, verse: 6}
+            end: {chapter: 27, verse: 39}
+          ref: Genesis 27:6-39
+      - name: Gradual
+        incipit: Bonum est confiteri Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 91, verse: 2}
+            end: {chapter: 91, verse: 3}
+          ref: Psalm 91:2-3
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 15, verse: 11}
+            end: {chapter: 15, verse: 32}
+          ref: Luke 15:11-32
+      - name: Offertory
+        incipit: Illumina oculos meos
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 12, verse: 4}
+            end: {chapter: 12, verse: 5}
+          ref: Psalm 12:4-5
+      - name: Communion
+        incipit: Oportet te, fili, gaudere
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 15, verse: 32}
+            end: {chapter: 15, verse: 32}
+          ref: Luke 15:32
     - key: lent-3
       name: Third Sunday of Lent
       registry: '03'
@@ -1734,6 +3564,425 @@ sections:
           A cunctis nos, quaesumus, Domine, reatibus et periculis propitiatus
           absolve: quos tanti mysterii tribuis esse participes. Per Dominum
           nostrum Jesum Christum...
+    - key: lent-3-monday
+      name: Monday of the Third Week of Lent
+      registry: '1962-T-lent-3-monday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: In Deo laudabo verbum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 55, verse: 5}
+            end: {chapter: 55, verse: 5}
+          ref: Psalm 55:5
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: 2 Kings
+          ranges:
+          - begin: {chapter: 5, verse: 1}
+            end: {chapter: 5, verse: 15}
+          ref: 2 Kings 5:1-15
+      - name: Gradual
+        incipit: Deus, vitam meam annuntiavi tibi
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 55, verse: 9}
+            end: {chapter: 55, verse: 9}
+          - begin: {chapter: 55, verse: 2}
+            end: {chapter: 55, verse: 2}
+          ref: Psalm 55:9, 2
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 4, verse: 23}
+            end: {chapter: 4, verse: 30}
+          ref: Luke 4:23-30
+      - name: Offertory
+        incipit: Exaudi, Deus, orationem meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 54, verse: 2}
+            end: {chapter: 54, verse: 3}
+          ref: Psalm 54:2-3
+      - name: Communion
+        incipit: Quis dabit ex Sion salutare Israel
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 13, verse: 7}
+            end: {chapter: 13, verse: 7}
+          ref: Psalm 13:7
+    - key: lent-3-tuesday
+      name: Tuesday of the Third Week of Lent
+      registry: '1962-T-lent-3-tuesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Ego clamavi, quoniam exaudisti me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 16, verse: 6}
+            end: {chapter: 16, verse: 6}
+          - begin: {chapter: 16, verse: 8}
+            end: {chapter: 16, verse: 8}
+          ref: Psalm 16:6, 8
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: 2 Kings
+          ranges:
+          - begin: {chapter: 4, verse: 1}
+            end: {chapter: 4, verse: 7}
+          ref: 2 Kings 4:1-7
+      - name: Gradual
+        incipit: Ab occultis meis munda me, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 18, verse: 13}
+            end: {chapter: 18, verse: 14}
+          ref: Psalm 18:13-14
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 18, verse: 15}
+            end: {chapter: 18, verse: 22}
+          ref: Matthew 18:15-22
+      - name: Offertory
+        incipit: Dextera Domini fecit virtutem
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 16}
+            end: {chapter: 117, verse: 17}
+          ref: Psalm 117:16-17
+      - name: Communion
+        incipit: Domine, quis habitabit in tabernaculo tuo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 14, verse: 1}
+            end: {chapter: 14, verse: 2}
+          ref: Psalm 14:1-2
+    - key: lent-3-wednesday
+      name: Wednesday of the Third Week of Lent
+      registry: '1962-T-lent-3-wednesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Ego autem in Domino speravi
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 30, verse: 7}
+            end: {chapter: 30, verse: 8}
+          ref: Psalm 30:7-8
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin: {chapter: 20, verse: 12}
+            end: {chapter: 20, verse: 24}
+          ref: Exodus 20:12-24
+      - name: Gradual
+        incipit: Miserere mei, Domine, quoniam infirmus sum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 6, verse: 3}
+            end: {chapter: 6, verse: 4}
+          ref: Psalm 6:3-4
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 15, verse: 1}
+            end: {chapter: 15, verse: 20}
+          ref: Matthew 15:1-20
+      - name: Offertory
+        incipit: Domine, fac mecum misericordiam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 108, verse: 21}
+            end: {chapter: 108, verse: 21}
+          ref: Psalm 108:21
+      - name: Communion
+        incipit: Notas mihi fecisti vias vitae
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 15, verse: 11}
+            end: {chapter: 15, verse: 11}
+          ref: Psalm 15:11
+    - key: lent-3-thursday
+      name: Thursday of the Third Week of Lent
+      registry: '1962-T-lent-3-thursday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The Missal prints no scriptural
+        reference for the Introit antiphon Salus populi, only for its psalm verse.
+      propers:
+      - name: Introit
+        incipit: Salus populi ego sum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 77, verse: 1}
+            end: {chapter: 77, verse: 1}
+          ref: Psalm 77:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Jeremiah
+          ranges:
+          - begin: {chapter: 7, verse: 1}
+            end: {chapter: 7, verse: 7}
+          ref: Jeremiah 7:1-7
+      - name: Gradual
+        incipit: Oculi omnium in te sperant
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 144, verse: 15}
+            end: {chapter: 144, verse: 16}
+          ref: Psalm 144:15-16
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 4, verse: 38}
+            end: {chapter: 4, verse: 44}
+          ref: Luke 4:38-44
+      - name: Offertory
+        incipit: Si ambulavero in medio tribulationis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 137, verse: 7}
+            end: {chapter: 137, verse: 7}
+          ref: Psalm 137:7
+      - name: Communion
+        incipit: Tu mandasti mandata tua
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 4}
+            end: {chapter: 118, verse: 5}
+          ref: Psalm 118:4-5
+    - key: lent-3-friday
+      name: Friday of the Third Week of Lent
+      registry: '1962-T-lent-3-friday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Fac mecum, Domine, signum in bonum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 85, verse: 17}
+            end: {chapter: 85, verse: 17}
+          ref: Psalm 85:17
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Numbers
+          ranges:
+          - begin: {chapter: 20, verse: 1}
+            end: {chapter: 20, verse: 1}
+          - begin: {chapter: 20, verse: 3}
+            end: {chapter: 20, verse: 3}
+          - begin: {chapter: 20, verse: 6}
+            end: {chapter: 20, verse: 13}
+          ref: Numbers 20:1, 3, 6-13
+      - name: Gradual
+        incipit: In Deo speravit cor meum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 27, verse: 7}
+            end: {chapter: 27, verse: 7}
+          - begin: {chapter: 27, verse: 1}
+            end: {chapter: 27, verse: 1}
+          ref: Psalm 27:7, 1
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 4, verse: 5}
+            end: {chapter: 4, verse: 42}
+          ref: John 4:5-42
+      - name: Offertory
+        incipit: Intende voci orationis meae
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 5, verse: 3}
+            end: {chapter: 5, verse: 4}
+          ref: Psalm 5:3-4
+      - name: Communion
+        incipit: Qui biberit aquam
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 4, verse: 13}
+            end: {chapter: 4, verse: 14}
+          ref: John 4:13-14
+    - key: lent-3-saturday
+      name: Saturday of the Third Week of Lent
+      registry: '1962-T-lent-3-saturday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Verba mea auribus percipe
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 5, verse: 2}
+            end: {chapter: 5, verse: 3}
+          ref: Psalm 5:2-3
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Daniel
+          ranges:
+          - begin: {chapter: 13, verse: 1}
+            end: {chapter: 13, verse: 9}
+          - begin: {chapter: 13, verse: 15}
+            end: {chapter: 13, verse: 17}
+          - begin: {chapter: 13, verse: 19}
+            end: {chapter: 13, verse: 30}
+          - begin: {chapter: 13, verse: 33}
+            end: {chapter: 13, verse: 62}
+          ref: Daniel 13:1-9, 15-17, 19-30, 33-62
+      - name: Gradual
+        incipit: Si ambulem in medio umbrae mortis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 22, verse: 4}
+            end: {chapter: 22, verse: 4}
+          ref: Psalm 22:4
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 8, verse: 1}
+            end: {chapter: 8, verse: 11}
+          ref: John 8:1-11
+      - name: Offertory
+        incipit: Gressus meos dirige
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 133}
+            end: {chapter: 118, verse: 133}
+          ref: Psalm 118:133
+      - name: Communion
+        incipit: Nemo te condemnavit, mulier
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 8, verse: 10}
+            end: {chapter: 8, verse: 11}
+          ref: John 8:10-11
     - key: lent-4
       name: Fourth Sunday of Lent
       registry: '04'
@@ -1830,6 +4079,467 @@ sections:
           Da nobis, quaesumus, misericors Deus: ut sancta tua, quibus
           incessanter explemur, sinceris tractemus obsequiis, et fideli semper
           mente sumamus. Per Dominum nostrum Jesum Christum...
+    - key: lent-4-monday
+      name: Monday of the Fourth Week of Lent
+      registry: '1962-T-lent-4-monday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Deus, in nomine tuo salvum me fac
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 53, verse: 3}
+            end: {chapter: 53, verse: 4}
+          ref: Psalm 53:3-4
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 53, verse: 5}
+            end: {chapter: 53, verse: 5}
+          ref: Psalm 53:5
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: 1 Kings
+          ranges:
+          - begin: {chapter: 3, verse: 16}
+            end: {chapter: 3, verse: 28}
+          ref: 1 Kings 3:16-28
+      - name: Gradual
+        incipit: Esto mihi in Deum protectorem
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 30, verse: 3}
+            end: {chapter: 30, verse: 3}
+          ref: Psalm 30:3
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 70, verse: 1}
+            end: {chapter: 70, verse: 1}
+          ref: Psalm 70:1
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 2, verse: 13}
+            end: {chapter: 2, verse: 25}
+          ref: John 2:13-25
+      - name: Offertory
+        incipit: Jubilate Deo, omnis terra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 99, verse: 1}
+            end: {chapter: 99, verse: 2}
+          ref: Psalm 99:1-2
+      - name: Communion
+        incipit: Ab occultis meis munda me, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 18, verse: 13}
+            end: {chapter: 18, verse: 14}
+          ref: Psalm 18:13-14
+    - key: lent-4-tuesday
+      name: Tuesday of the Fourth Week of Lent
+      registry: '1962-T-lent-4-tuesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Exaudi, Deus, orationem meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 54, verse: 2}
+            end: {chapter: 54, verse: 3}
+          ref: Psalm 54:2-3
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin: {chapter: 32, verse: 7}
+            end: {chapter: 32, verse: 14}
+          ref: Exodus 32:7-14
+      - name: Gradual
+        incipit: Exsurge, Domine, fer opem nobis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 43, verse: 26}
+            end: {chapter: 43, verse: 26}
+          - begin: {chapter: 43, verse: 2}
+            end: {chapter: 43, verse: 2}
+          ref: Psalm 43:26, 2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 7, verse: 14}
+            end: {chapter: 7, verse: 31}
+          ref: John 7:14-31
+      - name: Offertory
+        incipit: Exspectans exspectavi Dominum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 39, verse: 2}
+            end: {chapter: 39, verse: 4}
+          ref: Psalm 39:2-4
+      - name: Communion
+        incipit: Laetabimur in salutari tuo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 19, verse: 6}
+            end: {chapter: 19, verse: 6}
+          ref: Psalm 19:6
+    - key: lent-4-wednesday
+      name: Wednesday of the Fourth Week of Lent
+      registry: '1962-T-lent-4-wednesday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Cum sanctificatus fuero in vobis
+        source: scripture
+        verses:
+        - book: Ezekiel
+          ranges:
+          - begin: {chapter: 36, verse: 23}
+            end: {chapter: 36, verse: 26}
+          ref: Ezekiel 36:23-26
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 33, verse: 2}
+            end: {chapter: 33, verse: 2}
+          ref: Psalm 33:2
+      - name: First Lesson
+        source: scripture
+        verses:
+        - book: Ezekiel
+          ranges:
+          - begin: {chapter: 36, verse: 23}
+            end: {chapter: 36, verse: 28}
+          ref: Ezekiel 36:23-28
+      - name: First Gradual
+        incipit: Venite, filii, audite me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 33, verse: 12}
+            end: {chapter: 33, verse: 12}
+          - begin: {chapter: 33, verse: 6}
+            end: {chapter: 33, verse: 6}
+          ref: Psalm 33:12, 6
+      - name: Second Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 1, verse: 16}
+            end: {chapter: 1, verse: 19}
+          ref: Isaiah 1:16-19
+      - name: Second Gradual
+        incipit: Beata gens, cujus est Dominus Deus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 32, verse: 12}
+            end: {chapter: 32, verse: 12}
+          - begin: {chapter: 32, verse: 6}
+            end: {chapter: 32, verse: 6}
+          ref: Psalm 32:12, 6
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 9, verse: 1}
+            end: {chapter: 9, verse: 38}
+          ref: John 9:1-38
+      - name: Offertory
+        incipit: Benedicite, gentes, Dominum Deum nostrum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 65, verse: 8}
+            end: {chapter: 65, verse: 9}
+          - begin: {chapter: 65, verse: 20}
+            end: {chapter: 65, verse: 20}
+          ref: Psalm 65:8-9, 20
+      - name: Communion
+        incipit: Lutum fecit ex sputo Dominus
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 9, verse: 11}
+            end: {chapter: 9, verse: 11}
+          ref: John 9:11
+    - key: lent-4-thursday
+      name: Thursday of the Fourth Week of Lent
+      registry: '1962-T-lent-4-thursday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Laetetur cor quaerentium Dominum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 104, verse: 3}
+            end: {chapter: 104, verse: 4}
+          ref: Psalm 104:3-4
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: 2 Kings
+          ranges:
+          - begin: {chapter: 4, verse: 25}
+            end: {chapter: 4, verse: 38}
+          ref: 2 Kings 4:25-38
+      - name: Gradual
+        incipit: Respice, Domine, in testamentum tuum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 73, verse: 20}
+            end: {chapter: 73, verse: 20}
+          - begin: {chapter: 73, verse: 19}
+            end: {chapter: 73, verse: 19}
+          - begin: {chapter: 73, verse: 22}
+            end: {chapter: 73, verse: 22}
+          ref: Psalm 73:20, 19, 22
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 7, verse: 11}
+            end: {chapter: 7, verse: 16}
+          ref: Luke 7:11-16
+      - name: Offertory
+        incipit: Domine, ad adjuvandum me festina
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 69, verse: 2}
+            end: {chapter: 69, verse: 4}
+          ref: Psalm 69:2-4
+      - name: Communion
+        incipit: Domine, memorabor justitiae tuae solius
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 70, verse: 16}
+            end: {chapter: 70, verse: 18}
+          ref: Psalm 70:16-18
+    - key: lent-4-friday
+      name: Friday of the Fourth Week of Lent
+      registry: '1962-T-lent-4-friday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Meditatio cordis mei
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 18, verse: 15}
+            end: {chapter: 18, verse: 15}
+          ref: Psalm 18:15
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: 1 Kings
+          ranges:
+          - begin: {chapter: 17, verse: 17}
+            end: {chapter: 17, verse: 24}
+          ref: 1 Kings 17:17-24
+      - name: Gradual
+        incipit: Bonum est confidere in Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 8}
+            end: {chapter: 117, verse: 9}
+          ref: Psalm 117:8-9
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 11, verse: 1}
+            end: {chapter: 11, verse: 45}
+          ref: John 11:1-45
+      - name: Offertory
+        incipit: Populum humilem salvum facies
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 17, verse: 28}
+            end: {chapter: 17, verse: 28}
+          - begin: {chapter: 17, verse: 32}
+            end: {chapter: 17, verse: 32}
+          ref: Psalm 17:28, 32
+      - name: Communion
+        incipit: Videns Dominus flentes sorores Lazari
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 11, verse: 33}
+            end: {chapter: 11, verse: 33}
+          - begin: {chapter: 11, verse: 35}
+            end: {chapter: 11, verse: 35}
+          - begin: {chapter: 11, verse: 43}
+            end: {chapter: 11, verse: 44}
+          - begin: {chapter: 11, verse: 39}
+            end: {chapter: 11, verse: 39}
+          ref: John 11:33, 35, 43-44, 39
+    - key: lent-4-saturday
+      name: Saturday of the Fourth Week of Lent
+      registry: '1962-T-lent-4-saturday'
+      season: lent
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Sitientes, venite ad aquas
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 55, verse: 1}
+            end: {chapter: 55, verse: 1}
+          ref: Isaiah 55:1
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 77, verse: 1}
+            end: {chapter: 77, verse: 1}
+          ref: Psalm 77:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 49, verse: 8}
+            end: {chapter: 49, verse: 15}
+          ref: Isaiah 49:8-15
+      - name: Gradual
+        incipit: Tibi, Domine, derelictus est pauper
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 9, verse: 14}
+            end: {chapter: 9, verse: 14}
+          - begin: {chapter: 9, verse: 1}
+            end: {chapter: 9, verse: 2}
+          ref: Psalm 9:14, 1-2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 8, verse: 12}
+            end: {chapter: 8, verse: 20}
+          ref: John 8:12-20
+      - name: Offertory
+        incipit: Factus est Dominus firmamentum meum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 17, verse: 3}
+            end: {chapter: 17, verse: 3}
+          ref: Psalm 17:3
+      - name: Communion
+        incipit: Dominus regit me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 22, verse: 1}
+            end: {chapter: 22, verse: 2}
+          ref: Psalm 22:1-2
     - key: passion-sunday
       name: First Sunday of the Passion
       registry: '05'
@@ -1936,6 +4646,455 @@ sections:
         text: |
           Adesto nobis, Domine, Deus noster: et, quos tuis mysteriis recreasti,
           perpetuis defende subsidiis. Per Dominum nostrum Jesum Christum...
+    - key: passion-monday
+      name: Monday of Passion Week
+      registry: '1962-T-passion-monday'
+      season: passiontide
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Miserere mihi, Domine, quoniam conculcavit me homo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 55, verse: 2}
+            end: {chapter: 55, verse: 2}
+          ref: Psalm 55:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Jonah
+          ranges:
+          - begin: {chapter: 3, verse: 1}
+            end: {chapter: 3, verse: 10}
+          ref: Jonah 3:1-10
+      - name: Gradual
+        incipit: Deus, exaudi orationem meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 53, verse: 4}
+            end: {chapter: 53, verse: 4}
+          - begin: {chapter: 53, verse: 3}
+            end: {chapter: 53, verse: 3}
+          ref: Psalm 53:4, 3
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 7, verse: 32}
+            end: {chapter: 7, verse: 39}
+          ref: John 7:32-39
+      - name: Offertory
+        incipit: Domine, convertere, et eripe animam meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 6, verse: 5}
+            end: {chapter: 6, verse: 5}
+          ref: Psalm 6:5
+      - name: Communion
+        incipit: Dominus virtutum ipse est Rex gloriae
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 23, verse: 10}
+            end: {chapter: 23, verse: 10}
+          ref: Psalm 23:10
+    - key: passion-tuesday
+      name: Tuesday of Passion Week
+      registry: '1962-T-passion-tuesday'
+      season: passiontide
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Exspecta Dominum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 26, verse: 14}
+            end: {chapter: 26, verse: 14}
+          ref: Psalm 26:14
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Daniel
+          ranges:
+          - begin: {chapter: 14, verse: 27}
+            end: {chapter: 14, verse: 27}
+          - begin: {chapter: 14, verse: 28}
+            end: {chapter: 14, verse: 42}
+          ref: Daniel 14:27, 28-42
+      - name: Gradual
+        incipit: Discerne causam meam, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 42, verse: 1}
+            end: {chapter: 42, verse: 1}
+          - begin: {chapter: 42, verse: 3}
+            end: {chapter: 42, verse: 3}
+          ref: Psalm 42:1, 3
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 7, verse: 1}
+            end: {chapter: 7, verse: 13}
+          ref: John 7:1-13
+      - name: Offertory
+        incipit: Sperent in te omnes
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 9, verse: 11}
+            end: {chapter: 9, verse: 13}
+          ref: Psalm 9:11-13
+      - name: Communion
+        incipit: Redime me, Deus Israel
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 22}
+            end: {chapter: 24, verse: 22}
+          ref: Psalm 24:22
+    - key: passion-wednesday
+      name: Wednesday of Passion Week
+      registry: '1962-T-passion-wednesday'
+      season: passiontide
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Liberator meus de gentibus iracundis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 17, verse: 48}
+            end: {chapter: 17, verse: 49}
+          ref: Psalm 17:48-49
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Leviticus
+          ranges:
+          - begin: {chapter: 19, verse: 1}
+            end: {chapter: 19, verse: 2}
+          - begin: {chapter: 19, verse: 11}
+            end: {chapter: 19, verse: 19}
+          - begin: {chapter: 19, verse: 25}
+            end: {chapter: 19, verse: 25}
+          ref: Leviticus 19:1-2, 11-19, 25
+      - name: Gradual
+        incipit: Exaltabo te, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 29, verse: 2}
+            end: {chapter: 29, verse: 4}
+          ref: Psalm 29:2-4
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 10, verse: 22}
+            end: {chapter: 10, verse: 38}
+          ref: John 10:22-38
+      - name: Offertory
+        incipit: Eripe me de inimicis meis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 58, verse: 2}
+            end: {chapter: 58, verse: 2}
+          ref: Psalm 58:2
+      - name: Communion
+        incipit: Lavabo inter innocentes manus meas
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 25, verse: 6}
+            end: {chapter: 25, verse: 7}
+          ref: Psalm 25:6-7
+    - key: passion-thursday
+      name: Thursday of Passion Week
+      registry: '1962-T-passion-thursday'
+      season: passiontide
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Omnia, quae fecisti nobis, Domine
+        source: scripture
+        verses:
+        - book: Daniel
+          ranges:
+          - begin: {chapter: 3, verse: 31}
+            end: {chapter: 3, verse: 31}
+          ref: Daniel 3:31
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 1}
+            end: {chapter: 118, verse: 1}
+          ref: Psalm 118:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Daniel
+          ranges:
+          - begin: {chapter: 3, verse: 25}
+            end: {chapter: 3, verse: 25}
+          - begin: {chapter: 3, verse: 34}
+            end: {chapter: 3, verse: 45}
+          ref: Daniel 3:25, 34-45
+      - name: Gradual
+        incipit: Tollite hostias
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 95, verse: 8}
+            end: {chapter: 95, verse: 9}
+          ref: Psalm 95:8-9
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 28, verse: 9}
+            end: {chapter: 28, verse: 9}
+          ref: Psalm 28:9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 7, verse: 36}
+            end: {chapter: 7, verse: 50}
+          ref: Luke 7:36-50
+      - name: Offertory
+        incipit: Super flumina Babylonis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 136, verse: 1}
+            end: {chapter: 136, verse: 1}
+          ref: Psalm 136:1
+      - name: Communion
+        incipit: Memento verbi tui servo tuo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 49}
+            end: {chapter: 118, verse: 50}
+          ref: Psalm 118:49-50
+    - key: passion-friday
+      name: Friday of Passion Week
+      registry: '1962-T-passion-friday'
+      season: passiontide
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Miserere mihi, Domine, quoniam tribulor
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 30, verse: 10}
+            end: {chapter: 30, verse: 10}
+          - begin: {chapter: 30, verse: 16}
+            end: {chapter: 30, verse: 16}
+          - begin: {chapter: 30, verse: 18}
+            end: {chapter: 30, verse: 18}
+          ref: Psalm 30:10, 16, 18
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Jeremiah
+          ranges:
+          - begin: {chapter: 17, verse: 13}
+            end: {chapter: 17, verse: 18}
+          ref: Jeremiah 17:13-18
+      - name: Gradual
+        incipit: Pacifice loquebantur mihi inimici mei
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 20}
+            end: {chapter: 34, verse: 20}
+          - begin: {chapter: 34, verse: 22}
+            end: {chapter: 34, verse: 22}
+          ref: Psalm 34:20, 22
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 11, verse: 47}
+            end: {chapter: 11, verse: 54}
+          ref: John 11:47-54
+      - name: Offertory
+        incipit: Benedictus es, Domine, doce me justificationes tuas
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 12}
+            end: {chapter: 118, verse: 12}
+          - begin: {chapter: 118, verse: 121}
+            end: {chapter: 118, verse: 121}
+          - begin: {chapter: 118, verse: 42}
+            end: {chapter: 118, verse: 42}
+          ref: Psalm 118:12, 121, 42
+      - name: Communion
+        incipit: Ne tradideris me, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 26, verse: 12}
+            end: {chapter: 26, verse: 12}
+          ref: Psalm 26:12
+    - key: passion-saturday
+      name: Saturday of Passion Week
+      registry: '1962-T-passion-saturday'
+      season: passiontide
+      rank: III
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Miserere mihi, Domine, quoniam tribulor
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 30, verse: 10}
+            end: {chapter: 30, verse: 10}
+          - begin: {chapter: 30, verse: 16}
+            end: {chapter: 30, verse: 16}
+          - begin: {chapter: 30, verse: 18}
+            end: {chapter: 30, verse: 18}
+          ref: Psalm 30:10, 16, 18
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 30, verse: 2}
+            end: {chapter: 30, verse: 2}
+          ref: Psalm 30:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Jeremiah
+          ranges:
+          - begin: {chapter: 18, verse: 18}
+            end: {chapter: 18, verse: 23}
+          ref: Jeremiah 18:18-23
+      - name: Gradual
+        incipit: Pacifice loquebantur mihi inimici mei
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 20}
+            end: {chapter: 34, verse: 20}
+          - begin: {chapter: 34, verse: 22}
+            end: {chapter: 34, verse: 22}
+          ref: Psalm 34:20, 22
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 12, verse: 10}
+            end: {chapter: 12, verse: 36}
+          ref: John 12:10-36
+      - name: Offertory
+        incipit: Benedictus es, Domine, doce me justificationes tuas
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 12}
+            end: {chapter: 118, verse: 12}
+          - begin: {chapter: 118, verse: 121}
+            end: {chapter: 118, verse: 121}
+          - begin: {chapter: 118, verse: 42}
+            end: {chapter: 118, verse: 42}
+          ref: Psalm 118:12, 121, 42
+      - name: Communion
+        incipit: Ne tradideris me, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 26, verse: 12}
+            end: {chapter: 26, verse: 12}
+          ref: Psalm 26:12
     - key: palm-sunday
       name: Second Sunday of the Passion (Palm Sunday)
       registry: '06'
@@ -2230,6 +5389,315 @@ sections:
         text: |
           Per hujus, Domine, operationem mysterii: et vitia nostra purgentur, et
           justa desideria compleantur. Per Dominum nostrum Jesum Christum...
+    - key: holy-monday
+      name: Monday of Holy Week
+      registry: '1962-T-holy-monday'
+      season: passiontide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Judica, Domine, nocentes me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 1}
+            end: {chapter: 34, verse: 2}
+          ref: Psalm 34:1-2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 50, verse: 5}
+            end: {chapter: 50, verse: 10}
+          ref: Isaiah 50:5-10
+      - name: Gradual
+        incipit: Exsurge, Domine, et intende judicio meo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 23}
+            end: {chapter: 34, verse: 23}
+          - begin: {chapter: 34, verse: 3}
+            end: {chapter: 34, verse: 3}
+          ref: Psalm 34:23, 3
+      - name: Tract
+        incipit: Domine, non secundum peccata nostra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 10}
+            end: {chapter: 102, verse: 10}
+          ref: Psalm 102:10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 8}
+            end: {chapter: 78, verse: 9}
+          ref: Psalm 78:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 12, verse: 1}
+            end: {chapter: 12, verse: 9}
+          ref: John 12:1-9
+      - name: Offertory
+        incipit: Eripe me de inimicis meis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 142, verse: 9}
+            end: {chapter: 142, verse: 10}
+          ref: Psalm 142:9-10
+      - name: Communion
+        incipit: Erubescant et revereantur simul
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 26}
+            end: {chapter: 34, verse: 26}
+          ref: Psalm 34:26
+    - key: holy-tuesday
+      name: Tuesday of Holy Week
+      registry: '1962-T-holy-tuesday'
+      season: passiontide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Nos autem gloriari oportet
+        source: scripture
+        verses:
+        - book: Galatians
+          ranges:
+          - begin: {chapter: 6, verse: 14}
+            end: {chapter: 6, verse: 14}
+          ref: Galatians 6:14
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 66, verse: 2}
+            end: {chapter: 66, verse: 2}
+          ref: Psalm 66:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Jeremiah
+          ranges:
+          - begin: {chapter: 11, verse: 18}
+            end: {chapter: 11, verse: 20}
+          ref: Jeremiah 11:18-20
+      - name: Gradual
+        incipit: Ego autem, dum mihi molesti essent
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 13}
+            end: {chapter: 34, verse: 13}
+          - begin: {chapter: 34, verse: 1}
+            end: {chapter: 34, verse: 2}
+          ref: Psalm 34:13, 1-2
+      - name: Passion according to Mark
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 14, verse: 32}
+            end: {chapter: 14, verse: 72}
+          - begin: {chapter: 15, verse: 1}
+            end: {chapter: 15, verse: 46}
+          ref: Mark 14:32-72; 15:1-46
+      - name: Offertory
+        incipit: Custodi me, Domine, de manu peccatoris
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 139, verse: 5}
+            end: {chapter: 139, verse: 5}
+          ref: Psalm 139:5
+      - name: Communion
+        incipit: Adversum me exercebantur
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 68, verse: 13}
+            end: {chapter: 68, verse: 14}
+          ref: Psalm 68:13-14
+    - key: holy-wednesday
+      name: Wednesday of Holy Week
+      registry: '1962-T-holy-wednesday'
+      season: passiontide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: In nomine Jesu omne genu flectatur
+        source: scripture
+        verses:
+        - book: Philippians
+          ranges:
+          - begin: {chapter: 2, verse: 10}
+            end: {chapter: 2, verse: 10}
+          - begin: {chapter: 2, verse: 8}
+            end: {chapter: 2, verse: 8}
+          - begin: {chapter: 2, verse: 11}
+            end: {chapter: 2, verse: 11}
+          ref: Philippians 2:10, 8, 11
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 101, verse: 2}
+            end: {chapter: 101, verse: 2}
+          ref: Psalm 101:2
+      - name: First Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 62, verse: 11}
+            end: {chapter: 62, verse: 11}
+          - begin: {chapter: 63, verse: 1}
+            end: {chapter: 63, verse: 7}
+          ref: Isaiah 62:11; 63:1-7
+      - name: Gradual
+        incipit: Ne avertas faciem tuam a puero tuo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 68, verse: 18}
+            end: {chapter: 68, verse: 18}
+          - begin: {chapter: 68, verse: 2}
+            end: {chapter: 68, verse: 3}
+          ref: Psalm 68:18, 2-3
+      - name: Second Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 53, verse: 1}
+            end: {chapter: 53, verse: 12}
+          ref: Isaiah 53:1-12
+      - name: Tract
+        incipit: Domine, exaudi orationem meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 101, verse: 2}
+            end: {chapter: 101, verse: 5}
+          - begin: {chapter: 101, verse: 14}
+            end: {chapter: 101, verse: 14}
+          ref: Psalm 101:2-5, 14
+      - name: Passion according to Luke
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 22, verse: 39}
+            end: {chapter: 22, verse: 71}
+          - begin: {chapter: 23, verse: 1}
+            end: {chapter: 23, verse: 53}
+          ref: Luke 22:39-71; 23:1-53
+      - name: Offertory
+        incipit: Domine, exaudi orationem meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 101, verse: 2}
+            end: {chapter: 101, verse: 3}
+          ref: Psalm 101:2-3
+      - name: Communion
+        incipit: Potum meum cum fletu temperabam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 101, verse: 10}
+            end: {chapter: 101, verse: 10}
+          - begin: {chapter: 101, verse: 13}
+            end: {chapter: 101, verse: 14}
+          ref: Psalm 101:10, 13-14
+    - key: chrism-mass
+      name: Chrism Mass
+      registry: '1962-T-chrism-mass'
+      season: triduum
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The blessing of the oils and
+        the chrism, which this Mass carries, is not recorded here.
+      propers:
+      - name: Introit
+        incipit: Facies unctionis oleum sanctum
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin: {chapter: 30, verse: 25}
+            end: {chapter: 30, verse: 25}
+          - begin: {chapter: 30, verse: 31}
+            end: {chapter: 30, verse: 31}
+          ref: Exodus 30:25, 31
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 88, verse: 2}
+            end: {chapter: 88, verse: 2}
+          ref: Psalm 88:2
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: James
+          ranges:
+          - begin: {chapter: 5, verse: 13}
+            end: {chapter: 5, verse: 16}
+          ref: James 5:13-16
+      - name: Gradual
+        incipit: In Deo confisum est cor meum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 27, verse: 7}
+            end: {chapter: 27, verse: 8}
+          ref: Psalm 27:7-8
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 6, verse: 7}
+            end: {chapter: 6, verse: 13}
+          ref: Mark 6:7-13
+      - name: Offertory
+        incipit: Diligis justitiam et odisti iniquitatem
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 44, verse: 7}
+            end: {chapter: 44, verse: 7}
+          ref: Psalm 44:7
+      - name: Communion
+        incipit: Praedicabant Apostoli
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 6, verse: 12}
+            end: {chapter: 6, verse: 13}
+          ref: Mark 6:12-13
     - key: mass-of-the-lords-supper
       name: Mass of the Lord's Supper
       registry: T01
@@ -3517,6 +6985,454 @@ sections:
           Spiritum nobis, Domine, tuae caritatis infunde: ut, quos sacramentis
           paschalibus satiasti, tua facias pietate concordes. Per Dominum... in
           unitate ejusdem Spiritus Sancti...
+    - key: easter-monday
+      name: Easter Monday
+      registry: '1962-T-easter-monday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Introduxit vos Dominus
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin: {chapter: 13, verse: 5}
+            end: {chapter: 13, verse: 5}
+          - begin: {chapter: 13, verse: 9}
+            end: {chapter: 13, verse: 9}
+          ref: Exodus 13:5, 9
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 104, verse: 1}
+            end: {chapter: 104, verse: 1}
+          ref: Psalm 104:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 10, verse: 37}
+            end: {chapter: 10, verse: 43}
+          ref: Acts 10:37-43
+      - name: Gradual
+        incipit: Haec dies, quam fecit Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 24}
+            end: {chapter: 117, verse: 24}
+          - begin: {chapter: 117, verse: 2}
+            end: {chapter: 117, verse: 2}
+          ref: Psalm 117:24, 2
+      - name: Alleluia
+        incipit: Angelus Domini descendit de caelo
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 28, verse: 2}
+            end: {chapter: 28, verse: 2}
+          ref: Matthew 28:2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 24, verse: 13}
+            end: {chapter: 24, verse: 35}
+          ref: Luke 24:13-35
+      - name: Offertory
+        incipit: Angelus Domini descendit de caelo
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 28, verse: 2}
+            end: {chapter: 28, verse: 2}
+          - begin: {chapter: 28, verse: 5}
+            end: {chapter: 28, verse: 6}
+          ref: Matthew 28:2, 5-6
+      - name: Communion
+        incipit: Surrexit Dominus, et apparuit Petro
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 24, verse: 34}
+            end: {chapter: 24, verse: 34}
+          ref: Luke 24:34
+    - key: easter-tuesday
+      name: Easter Tuesday
+      registry: '1962-T-easter-tuesday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Aqua sapientiae potavit eos
+        source: scripture
+        verses:
+        - book: Sirach
+          ranges:
+          - begin: {chapter: 15, verse: 3}
+            end: {chapter: 15, verse: 4}
+          ref: Sirach 15:3-4
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 104, verse: 1}
+            end: {chapter: 104, verse: 1}
+          ref: Psalm 104:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 13, verse: 16}
+            end: {chapter: 13, verse: 16}
+          - begin: {chapter: 13, verse: 26}
+            end: {chapter: 13, verse: 33}
+          ref: Acts 13:16, 26-33
+      - name: Gradual
+        incipit: Haec dies, quam fecit Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 24}
+            end: {chapter: 117, verse: 24}
+          ref: Psalm 117:24
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 106, verse: 2}
+            end: {chapter: 106, verse: 2}
+          ref: Psalm 106:2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 24, verse: 36}
+            end: {chapter: 24, verse: 47}
+          ref: Luke 24:36-47
+      - name: Offertory
+        incipit: Intonuit de caelo Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 17, verse: 14}
+            end: {chapter: 17, verse: 14}
+          - begin: {chapter: 17, verse: 16}
+            end: {chapter: 17, verse: 16}
+          ref: Psalm 17:14, 16
+      - name: Communion
+        incipit: Si consurrexistis cum Christo
+        source: scripture
+        verses:
+        - book: Colossians
+          ranges:
+          - begin: {chapter: 3, verse: 1}
+            end: {chapter: 3, verse: 2}
+          ref: Colossians 3:1-2
+    - key: easter-wednesday
+      name: Easter Wednesday
+      registry: '1962-T-easter-wednesday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Venite, benedicti Patris mei
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 25, verse: 34}
+            end: {chapter: 25, verse: 34}
+          ref: Matthew 25:34
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 95, verse: 1}
+            end: {chapter: 95, verse: 1}
+          ref: Psalm 95:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 3, verse: 13}
+            end: {chapter: 3, verse: 15}
+          - begin: {chapter: 3, verse: 17}
+            end: {chapter: 3, verse: 19}
+          ref: Acts 3:13-15, 17-19
+      - name: Gradual
+        incipit: Haec dies, quam fecit Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 24}
+            end: {chapter: 117, verse: 24}
+          - begin: {chapter: 117, verse: 16}
+            end: {chapter: 117, verse: 16}
+          ref: Psalm 117:24, 16
+      - name: Alleluia
+        incipit: Surrexit Dominus vere
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 24, verse: 34}
+            end: {chapter: 24, verse: 34}
+          ref: Luke 24:34
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 21, verse: 1}
+            end: {chapter: 21, verse: 14}
+          ref: John 21:1-14
+      - name: Offertory
+        incipit: Portas caeli aperuit Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 77, verse: 23}
+            end: {chapter: 77, verse: 25}
+          ref: Psalm 77:23-25
+      - name: Communion
+        incipit: Christus resurgens ex mortuis
+        source: scripture
+        verses:
+        - book: Romans
+          ranges:
+          - begin: {chapter: 6, verse: 9}
+            end: {chapter: 6, verse: 9}
+          ref: Romans 6:9
+    - key: easter-thursday
+      name: Easter Thursday
+      registry: '1962-T-easter-thursday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The scan reads the Introit
+        psalm verse as Psalm 79:1, but the words printed are those of Psalm 97:1; confirm
+        at collation.
+      propers:
+      - name: Introit
+        incipit: Victricem manum tuam, Domine
+        source: scripture
+        verses:
+        - book: Wisdom
+          ranges:
+          - begin: {chapter: 10, verse: 20}
+            end: {chapter: 10, verse: 21}
+          ref: Wisdom 10:20-21
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 97, verse: 1}
+            end: {chapter: 97, verse: 1}
+          ref: Psalm 97:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 8, verse: 26}
+            end: {chapter: 8, verse: 40}
+          ref: Acts 8:26-40
+      - name: Gradual
+        incipit: Haec dies, quam fecit Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 24}
+            end: {chapter: 117, verse: 24}
+          - begin: {chapter: 117, verse: 22}
+            end: {chapter: 117, verse: 23}
+          ref: Psalm 117:24, 22-23
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 20, verse: 11}
+            end: {chapter: 20, verse: 18}
+          ref: John 20:11-18
+      - name: Offertory
+        incipit: In die solemnitatis vestrae
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin: {chapter: 13, verse: 5}
+            end: {chapter: 13, verse: 5}
+          ref: Exodus 13:5
+      - name: Communion
+        incipit: Populus acquisitionis
+        source: scripture
+        verses:
+        - book: 1 Peter
+          ranges:
+          - begin: {chapter: 2, verse: 9}
+            end: {chapter: 2, verse: 9}
+          ref: 1 Peter 2:9
+    - key: easter-friday
+      name: Easter Friday
+      registry: '1962-T-easter-friday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Eduxit eos Dominus in spe
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 77, verse: 53}
+            end: {chapter: 77, verse: 53}
+          ref: Psalm 77:53
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 77, verse: 1}
+            end: {chapter: 77, verse: 1}
+          ref: Psalm 77:1
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: 1 Peter
+          ranges:
+          - begin: {chapter: 3, verse: 18}
+            end: {chapter: 3, verse: 22}
+          ref: 1 Peter 3:18-22
+      - name: Gradual
+        incipit: Haec dies, quam fecit Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 24}
+            end: {chapter: 117, verse: 24}
+          - begin: {chapter: 117, verse: 26}
+            end: {chapter: 117, verse: 27}
+          ref: Psalm 117:24, 26-27
+      - name: Alleluia
+        incipit: Dicite in gentibus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 95, verse: 10}
+            end: {chapter: 95, verse: 10}
+          ref: Psalm 95:10
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 28, verse: 16}
+            end: {chapter: 28, verse: 20}
+          ref: Matthew 28:16-20
+      - name: Offertory
+        incipit: Erit vobis haec dies memorialis
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin: {chapter: 12, verse: 14}
+            end: {chapter: 12, verse: 14}
+          ref: Exodus 12:14
+      - name: Communion
+        incipit: Data est mihi omnis potestas
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 28, verse: 18}
+            end: {chapter: 28, verse: 19}
+          ref: Matthew 28:18-19
+    - key: easter-saturday
+      name: Easter Saturday (Sabbato in albis)
+      registry: '1962-T-easter-saturday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. No Gradual is sung on this
+        day; four Alleluia verses stand in its place.
+      propers:
+      - name: Introit
+        incipit: Eduxit Dominus populum suum in exsultatione
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 104, verse: 43}
+            end: {chapter: 104, verse: 43}
+          ref: Psalm 104:43
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 104, verse: 1}
+            end: {chapter: 104, verse: 1}
+          ref: Psalm 104:1
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: 1 Peter
+          ranges:
+          - begin: {chapter: 2, verse: 1}
+            end: {chapter: 2, verse: 10}
+          ref: 1 Peter 2:1-10
+      - name: Alleluia
+        incipit: Haec dies, quam fecit Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 24}
+            end: {chapter: 117, verse: 24}
+          ref: Psalm 117:24
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 112, verse: 1}
+            end: {chapter: 112, verse: 1}
+          ref: Psalm 112:1
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 20, verse: 1}
+            end: {chapter: 20, verse: 9}
+          ref: John 20:1-9
+      - name: Offertory
+        incipit: Benedictus, qui venit in nomine Domini
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 26}
+            end: {chapter: 117, verse: 27}
+          ref: Psalm 117:26-27
+      - name: Communion
+        incipit: Omnes, qui in Christo baptizati estis
+        source: scripture
+        verses:
+        - book: Galatians
+          ranges:
+          - begin: {chapter: 3, verse: 27}
+            end: {chapter: 3, verse: 27}
+          ref: Galatians 3:27
     - key: low-sunday
       name: Low Sunday (Dominica in albis)
       registry: 08
@@ -3972,6 +7888,234 @@ sections:
           Tribue nobis, Domine, caelestis mensae virtute satiatis: et
           desiderare, quae recta sunt, et desiderata percipere. Per Dominum
           nostrum Jesum Christum...
+    - key: rogation-mass
+      name: Rogation Mass (in Litaniis maioribus et minoribus)
+      registry: '1962-T-rogation-mass'
+      season: paschaltide
+      notes: 'Only the scripture-bearing propers are recorded; the day''s orations and other
+        composed chants are appointed but not yet transcribed. The chants between the readings
+        are conditional: the Alleluia alone in paschaltide, the Gradual and Alleluia outside
+        it, and the Tract after Septuagesima.'
+      propers:
+      - name: Introit
+        incipit: Exaudivit de templo sancto suo vocem meam
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 17, verse: 7}
+            end: {chapter: 17, verse: 7}
+          ref: Psalm 17:7
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 17, verse: 2}
+            end: {chapter: 17, verse: 3}
+          ref: Psalm 17:2-3
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: James
+          ranges:
+          - begin: {chapter: 5, verse: 16}
+            end: {chapter: 5, verse: 20}
+          ref: James 5:16-20
+      - name: Gradual
+        incipit: Liberasti nos, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 43, verse: 8}
+            end: {chapter: 43, verse: 9}
+          ref: Psalm 43:8-9
+      - name: Alleluia
+        incipit: Propitius esto, Domine, peccatis nostris
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 78, verse: 9}
+            end: {chapter: 78, verse: 10}
+          ref: Psalm 78:9-10
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 30, verse: 8}
+            end: {chapter: 30, verse: 8}
+          ref: Psalm 30:8
+      - name: Tract
+        incipit: De necessitatibus meis eripe me
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 17}
+            end: {chapter: 24, verse: 18}
+          - begin: {chapter: 24, verse: 1}
+            end: {chapter: 24, verse: 4}
+          ref: Psalm 24:17-18, 1-4
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 11, verse: 5}
+            end: {chapter: 11, verse: 13}
+          ref: Luke 11:5-13
+      - name: Offertory
+        incipit: Confitebor Domino nimis in ore meo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 108, verse: 30}
+            end: {chapter: 108, verse: 31}
+          ref: Psalm 108:30-31
+      - name: Communion
+        incipit: Petite, et accipietis
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 11, verse: 9}
+            end: {chapter: 11, verse: 10}
+          ref: Luke 11:9-10
+    - key: vigil-of-the-ascension
+      name: Vigil of the Ascension
+      registry: '1962-T-vigil-of-the-ascension'
+      season: paschaltide
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Vocem jucunditatis annuntiate
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 48, verse: 20}
+            end: {chapter: 48, verse: 20}
+          ref: Isaiah 48:20
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 65, verse: 1}
+            end: {chapter: 65, verse: 2}
+          ref: Psalm 65:1-2
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: Ephesians
+          ranges:
+          - begin: {chapter: 4, verse: 7}
+            end: {chapter: 4, verse: 13}
+          ref: Ephesians 4:7-13
+      - name: Alleluia
+        incipit: Surrexit Christus, et illuxit nobis
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 16, verse: 28}
+            end: {chapter: 16, verse: 28}
+          ref: John 16:28
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 17, verse: 1}
+            end: {chapter: 17, verse: 11}
+          ref: John 17:1-11
+      - name: Offertory
+        incipit: Benedicite, gentes, Dominum Deum nostrum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 65, verse: 8}
+            end: {chapter: 65, verse: 9}
+          - begin: {chapter: 65, verse: 20}
+            end: {chapter: 65, verse: 20}
+          ref: Psalm 65:8-9, 20
+      - name: Communion
+        incipit: Cantate Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 95, verse: 2}
+            end: {chapter: 95, verse: 2}
+          ref: Psalm 95:2
+    - key: ascension
+      name: Ascension of the Lord
+      registry: '1962-T-ascension'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Viri Galilaei, quid admiramini aspicientes in caelum
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 1, verse: 11}
+            end: {chapter: 1, verse: 11}
+          ref: Acts 1:11
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 46, verse: 2}
+            end: {chapter: 46, verse: 2}
+          ref: Psalm 46:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 1, verse: 1}
+            end: {chapter: 1, verse: 11}
+          ref: Acts 1:1-11
+      - name: Alleluia
+        incipit: Ascendit Deus in jubilatione
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 46, verse: 6}
+            end: {chapter: 46, verse: 6}
+          ref: Psalm 46:6
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 67, verse: 18}
+            end: {chapter: 67, verse: 19}
+          ref: Psalm 67:18-19
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 16, verse: 14}
+            end: {chapter: 16, verse: 20}
+          ref: Mark 16:14-20
+      - name: Offertory
+        incipit: Ascendit Deus in jubilatione
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 46, verse: 6}
+            end: {chapter: 46, verse: 6}
+          ref: Psalm 46:6
+      - name: Communion
+        incipit: Psallite Domino, qui ascendit super caelos caelorum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 67, verse: 33}
+            end: {chapter: 67, verse: 34}
+          ref: Psalm 67:33-34
     - key: sunday-after-ascension
       name: Sunday after the Ascension
       registry: '13'
@@ -4066,6 +8210,80 @@ sections:
         text: |
           Repleti, Domine, muneribus sacris: da, quaesumus; ut in gratiarum
           semper actione maneamus. Per Dominum nostrum Jesum Christum...
+    - key: vigil-of-pentecost
+      name: Vigil of Pentecost
+      registry: '1962-T-vigil-of-pentecost'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Cum sanctificatus fuero in vobis
+        source: scripture
+        verses:
+        - book: Ezekiel
+          ranges:
+          - begin: {chapter: 36, verse: 23}
+            end: {chapter: 36, verse: 26}
+          ref: Ezekiel 36:23-26
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 33, verse: 2}
+            end: {chapter: 33, verse: 2}
+          ref: Psalm 33:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 19, verse: 1}
+            end: {chapter: 19, verse: 8}
+          ref: Acts 19:1-8
+      - name: Alleluia
+        incipit: Confitemini Domino, quoniam bonus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 106, verse: 1}
+            end: {chapter: 106, verse: 1}
+          ref: Psalm 106:1
+      - name: Tract
+        incipit: Laudate Dominum, omnes gentes
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 116, verse: 1}
+            end: {chapter: 116, verse: 2}
+          ref: Psalm 116:1-2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 14, verse: 15}
+            end: {chapter: 14, verse: 21}
+          ref: John 14:15-21
+      - name: Offertory
+        incipit: Emitte Spiritum tuum, et creabuntur
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 103, verse: 30}
+            end: {chapter: 103, verse: 31}
+          ref: Psalm 103:30-31
+      - name: Communion
+        incipit: Ultimo festivitatis die
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 7, verse: 37}
+            end: {chapter: 7, verse: 39}
+          ref: John 7:37-39
     - key: pentecost
       name: Pentecost Sunday (Whitsunday)
       registry: '14'
@@ -4172,6 +8390,566 @@ sections:
           Sancti Spiritus, Domine, corda nostra mundet infusio: et sui roris
           intima aspersione fecundet. Per Dominum... in unitate ejusdem
           Spiritus Sancti...
+    - key: pentecost-monday
+      name: Monday within the Octave of Pentecost
+      registry: '1962-T-pentecost-monday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Cibavit eos ex adipe frumenti
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 80, verse: 17}
+            end: {chapter: 80, verse: 17}
+          ref: Psalm 80:17
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 80, verse: 2}
+            end: {chapter: 80, verse: 2}
+          ref: Psalm 80:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 10, verse: 34}
+            end: {chapter: 10, verse: 34}
+          - begin: {chapter: 10, verse: 42}
+            end: {chapter: 10, verse: 48}
+          ref: Acts 10:34, 42-48
+      - name: Alleluia
+        incipit: Loquebantur variis linguis Apostoli
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 2, verse: 4}
+            end: {chapter: 2, verse: 4}
+          ref: Acts 2:4
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 3, verse: 16}
+            end: {chapter: 3, verse: 21}
+          ref: John 3:16-21
+      - name: Offertory
+        incipit: Intonuit de caelo Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 17, verse: 14}
+            end: {chapter: 17, verse: 14}
+          - begin: {chapter: 17, verse: 16}
+            end: {chapter: 17, verse: 16}
+          ref: Psalm 17:14, 16
+      - name: Communion
+        incipit: Spiritus Sanctus docebit vos
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 14, verse: 26}
+            end: {chapter: 14, verse: 26}
+          ref: John 14:26
+    - key: pentecost-tuesday
+      name: Tuesday within the Octave of Pentecost
+      registry: '1962-T-pentecost-tuesday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Accipite jucunditatem gloriae vestrae
+        source: scripture
+        verses:
+        - book: 4 Esdras
+          ranges:
+          - begin: {chapter: 2, verse: 36}
+            end: {chapter: 2, verse: 37}
+          ref: 4 Esdras 2:36-37
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 77, verse: 1}
+            end: {chapter: 77, verse: 1}
+          ref: Psalm 77:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 8, verse: 14}
+            end: {chapter: 8, verse: 17}
+          ref: Acts 8:14-17
+      - name: Alleluia
+        incipit: Spiritus Sanctus docebit vos
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 14, verse: 26}
+            end: {chapter: 14, verse: 26}
+          ref: John 14:26
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 10, verse: 1}
+            end: {chapter: 10, verse: 10}
+          ref: John 10:1-10
+      - name: Offertory
+        incipit: Portas caeli aperuit Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 77, verse: 23}
+            end: {chapter: 77, verse: 25}
+          ref: Psalm 77:23-25
+      - name: Communion
+        incipit: Spiritus qui a Patre procedit
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 26}
+            end: {chapter: 15, verse: 26}
+          - begin: {chapter: 16, verse: 14}
+            end: {chapter: 16, verse: 14}
+          ref: John 15:26; 16:14
+    - key: pentecost-ember-wednesday
+      name: Ember Wednesday of Pentecost
+      registry: '1962-T-pentecost-ember-wednesday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Deus, dum egrederis coram populo tuo
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 67, verse: 8}
+            end: {chapter: 67, verse: 9}
+          ref: Psalm 67:8-9
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 67, verse: 2}
+            end: {chapter: 67, verse: 2}
+          ref: Psalm 67:2
+      - name: First Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 2, verse: 14}
+            end: {chapter: 2, verse: 21}
+          ref: Acts 2:14-21
+      - name: First Alleluia
+        incipit: Verbo Domini caeli firmati sunt
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 32, verse: 6}
+            end: {chapter: 32, verse: 6}
+          ref: Psalm 32:6
+      - name: Second Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 5, verse: 12}
+            end: {chapter: 5, verse: 16}
+          ref: Acts 5:12-16
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 6, verse: 44}
+            end: {chapter: 6, verse: 52}
+          ref: John 6:44-52
+      - name: Offertory
+        incipit: Meditabor in mandatis tuis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 47}
+            end: {chapter: 118, verse: 48}
+          ref: Psalm 118:47-48
+      - name: Communion
+        incipit: Pacem relinquo vobis
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 14, verse: 27}
+            end: {chapter: 14, verse: 27}
+          ref: John 14:27
+    - key: pentecost-thursday
+      name: Thursday within the Octave of Pentecost
+      registry: '1962-T-pentecost-thursday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Spiritus Domini replevit orbem terrarum
+        source: scripture
+        verses:
+        - book: Wisdom
+          ranges:
+          - begin: {chapter: 1, verse: 7}
+            end: {chapter: 1, verse: 7}
+          ref: Wisdom 1:7
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 67, verse: 2}
+            end: {chapter: 67, verse: 2}
+          ref: Psalm 67:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 8, verse: 5}
+            end: {chapter: 8, verse: 8}
+          ref: Acts 8:5-8
+      - name: Alleluia
+        incipit: Emitte Spiritum tuum, et creabuntur
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 103, verse: 30}
+            end: {chapter: 103, verse: 30}
+          ref: Psalm 103:30
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 9, verse: 1}
+            end: {chapter: 9, verse: 6}
+          ref: Luke 9:1-6
+      - name: Offertory
+        incipit: Confirma hoc, Deus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 67, verse: 29}
+            end: {chapter: 67, verse: 30}
+          ref: Psalm 67:29-30
+      - name: Communion
+        incipit: Factus est repente de caelo sonus
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 2, verse: 2}
+            end: {chapter: 2, verse: 2}
+          - begin: {chapter: 2, verse: 4}
+            end: {chapter: 2, verse: 4}
+          ref: Acts 2:2, 4
+    - key: pentecost-ember-friday
+      name: Ember Friday of Pentecost
+      registry: '1962-T-pentecost-ember-friday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Repleatur os meum laude tua
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 70, verse: 8}
+            end: {chapter: 70, verse: 8}
+          - begin: {chapter: 70, verse: 23}
+            end: {chapter: 70, verse: 23}
+          ref: Psalm 70:8, 23
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 70, verse: 1}
+            end: {chapter: 70, verse: 2}
+          ref: Psalm 70:1-2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Joel
+          ranges:
+          - begin: {chapter: 2, verse: 23}
+            end: {chapter: 2, verse: 24}
+          - begin: {chapter: 2, verse: 26}
+            end: {chapter: 2, verse: 27}
+          ref: Joel 2:23-24, 26-27
+      - name: Alleluia
+        incipit: O quam bonus et suavis est, Domine, Spiritus tuus in nobis
+        source: scripture
+        verses:
+        - book: Wisdom
+          ranges:
+          - begin: {chapter: 12, verse: 1}
+            end: {chapter: 12, verse: 1}
+          ref: Wisdom 12:1
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 5, verse: 17}
+            end: {chapter: 5, verse: 26}
+          ref: Luke 5:17-26
+      - name: Offertory
+        incipit: Lauda, anima mea, Dominum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 145, verse: 2}
+            end: {chapter: 145, verse: 2}
+          ref: Psalm 145:2
+      - name: Communion
+        incipit: Non vos relinquam orphanos
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 14, verse: 18}
+            end: {chapter: 14, verse: 18}
+          ref: John 14:18
+    - key: pentecost-ember-saturday
+      name: Ember Saturday of Pentecost
+      registry: '1962-T-pentecost-ember-saturday'
+      season: paschaltide
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The Missal prints a longer
+        and a shorter form of this Mass.
+      forms:
+      - name: Longer form (forma missae longior)
+        propers:
+        - name: Introit
+          incipit: Caritas Dei diffusa est in cordibus nostris
+          source: scripture
+          verses:
+          - book: Romans
+            ranges:
+            - begin: {chapter: 5, verse: 5}
+              end: {chapter: 5, verse: 5}
+            ref: Romans 5:5
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 102, verse: 1}
+              end: {chapter: 102, verse: 1}
+            ref: Psalm 102:1
+        - name: First Lesson
+          source: scripture
+          verses:
+          - book: Joel
+            ranges:
+            - begin: {chapter: 2, verse: 28}
+              end: {chapter: 2, verse: 32}
+            ref: Joel 2:28-32
+        - name: First Alleluia
+          incipit: Spiritus est qui vivificat
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 6, verse: 64}
+              end: {chapter: 6, verse: 64}
+            ref: John 6:64
+        - name: Second Lesson
+          source: scripture
+          verses:
+          - book: Leviticus
+            ranges:
+            - begin: {chapter: 23, verse: 9}
+              end: {chapter: 23, verse: 11}
+            - begin: {chapter: 23, verse: 15}
+              end: {chapter: 23, verse: 17}
+            - begin: {chapter: 23, verse: 21}
+              end: {chapter: 23, verse: 21}
+            ref: Leviticus 23:9-11, 15-17, 21
+        - name: Second Alleluia
+          incipit: Spiritus ejus ornavit caelos
+          source: scripture
+          verses:
+          - book: Job
+            ranges:
+            - begin: {chapter: 26, verse: 13}
+              end: {chapter: 26, verse: 13}
+            ref: Job 26:13
+        - name: Third Lesson
+          source: scripture
+          verses:
+          - book: Deuteronomy
+            ranges:
+            - begin: {chapter: 26, verse: 1}
+              end: {chapter: 26, verse: 11}
+            ref: Deuteronomy 26:1-11
+        - name: Third Alleluia
+          incipit: Cum complerentur dies Pentecostes
+          source: scripture
+          verses:
+          - book: Acts
+            ranges:
+            - begin: {chapter: 2, verse: 1}
+              end: {chapter: 2, verse: 1}
+            ref: Acts 2:1
+        - name: Fourth Lesson
+          source: scripture
+          verses:
+          - book: Leviticus
+            ranges:
+            - begin: {chapter: 26, verse: 3}
+              end: {chapter: 26, verse: 12}
+            ref: Leviticus 26:3-12
+        - name: Fifth Lesson
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin: {chapter: 3, verse: 47}
+              end: {chapter: 3, verse: 51}
+            ref: Daniel 3:47-51
+        - name: Fifth Alleluia
+          incipit: Benedictus es, Domine Deus patrum nostrorum
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin: {chapter: 3, verse: 52}
+              end: {chapter: 3, verse: 52}
+            ref: Daniel 3:52
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: Romans
+            ranges:
+            - begin: {chapter: 5, verse: 1}
+              end: {chapter: 5, verse: 5}
+            ref: Romans 5:1-5
+        - name: Tract
+          incipit: Laudate Dominum, omnes gentes
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 116, verse: 1}
+              end: {chapter: 116, verse: 2}
+            ref: Psalm 116:1-2
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 4, verse: 38}
+              end: {chapter: 4, verse: 44}
+            ref: Luke 4:38-44
+        - name: Offertory
+          incipit: Domine, Deus salutis meae
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 2}
+              end: {chapter: 87, verse: 3}
+            ref: Psalm 87:2-3
+        - name: Communion
+          incipit: Spiritus ubi vult spirat
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 3, verse: 8}
+              end: {chapter: 3, verse: 8}
+            ref: John 3:8
+      - name: Shorter form
+        propers:
+        - name: Introit
+          incipit: Caritas Dei diffusa est in cordibus nostris
+          source: scripture
+          verses:
+          - book: Romans
+            ranges:
+            - begin: {chapter: 5, verse: 5}
+              end: {chapter: 5, verse: 5}
+            ref: Romans 5:5
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 102, verse: 1}
+              end: {chapter: 102, verse: 1}
+            ref: Psalm 102:1
+        - name: Lesson
+          source: scripture
+          verses:
+          - book: Joel
+            ranges:
+            - begin: {chapter: 2, verse: 28}
+              end: {chapter: 2, verse: 32}
+            ref: Joel 2:28-32
+        - name: Alleluia
+          incipit: Spiritus est qui vivificat
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 6, verse: 64}
+              end: {chapter: 6, verse: 64}
+            ref: John 6:64
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: Romans
+            ranges:
+            - begin: {chapter: 5, verse: 1}
+              end: {chapter: 5, verse: 5}
+            ref: Romans 5:1-5
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 4, verse: 38}
+              end: {chapter: 4, verse: 44}
+            ref: Luke 4:38-44
+        - name: Offertory
+          incipit: Domine, Deus salutis meae
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 2}
+              end: {chapter: 87, verse: 3}
+            ref: Psalm 87:2-3
+        - name: Communion
+          incipit: Spiritus ubi vult spirat
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 3, verse: 8}
+              end: {chapter: 3, verse: 8}
+            ref: John 3:8
     - key: trinity
       name: Trinity Sunday (First Sunday after Pentecost)
       registry: '15'
@@ -4265,6 +9043,157 @@ sections:
           Proficiat nobis ad salutem corporis et animae, Domine, Deus noster,
           hujus sacramenti susceptio: et sempiternae sanctae Trinitatis
           ejusdemque individuae Unitatis confessio. Per Dominum.
+    - key: mass-of-the-first-sunday-after-pentecost
+      name: Mass of the First Sunday after Pentecost
+      registry: '1962-T-mass-of-the-first-sunday-after-pentecost'
+      season: after-pentecost
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The Missal prints this formulary
+        for the ferias of the week after Trinity Sunday, whose Sunday it displaces.
+      propers:
+      - name: Introit
+        incipit: Domine, in tua misericordia speravi
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 12, verse: 6}
+            end: {chapter: 12, verse: 6}
+          ref: Psalm 12:6
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 12, verse: 1}
+            end: {chapter: 12, verse: 1}
+          ref: Psalm 12:1
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: 1 John
+          ranges:
+          - begin: {chapter: 4, verse: 8}
+            end: {chapter: 4, verse: 21}
+          ref: 1 John 4:8-21
+      - name: Gradual
+        incipit: 'Ego dixi: Domine, miserere mei'
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 40, verse: 5}
+            end: {chapter: 40, verse: 5}
+          - begin: {chapter: 40, verse: 2}
+            end: {chapter: 40, verse: 2}
+          ref: Psalm 40:5, 2
+      - name: Alleluia
+        incipit: Verba mea auribus percipe, Domine
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 5, verse: 2}
+            end: {chapter: 5, verse: 2}
+          ref: Psalm 5:2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 6, verse: 36}
+            end: {chapter: 6, verse: 42}
+          ref: Luke 6:36-42
+      - name: Offertory
+        incipit: Intende voci orationis meae
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 5, verse: 3}
+            end: {chapter: 5, verse: 4}
+          ref: Psalm 5:3-4
+      - name: Communion
+        incipit: Narrabo omnia mirabilia tua
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 9, verse: 2}
+            end: {chapter: 9, verse: 3}
+          ref: Psalm 9:2-3
+    - key: corpus-christi
+      name: Corpus Christi
+      registry: '1962-T-corpus-christi'
+      season: after-pentecost
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The Sequence Lauda Sion Salvatorem
+        is appointed between the Alleluia and the Gospel and is not recorded here.
+      propers:
+      - name: Introit
+        incipit: Cibavit eos ex adipe frumenti
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 80, verse: 17}
+            end: {chapter: 80, verse: 17}
+          ref: Psalm 80:17
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 80, verse: 2}
+            end: {chapter: 80, verse: 2}
+          ref: Psalm 80:2
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: 1 Corinthians
+          ranges:
+          - begin: {chapter: 11, verse: 23}
+            end: {chapter: 11, verse: 29}
+          ref: 1 Corinthians 11:23-29
+      - name: Gradual
+        incipit: Oculi omnium in te sperant
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 144, verse: 15}
+            end: {chapter: 144, verse: 16}
+          ref: Psalm 144:15-16
+      - name: Alleluia
+        incipit: Caro mea vere est cibus
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 6, verse: 56}
+            end: {chapter: 6, verse: 57}
+          ref: John 6:56-57
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 6, verse: 56}
+            end: {chapter: 6, verse: 59}
+          ref: John 6:56-59
+      - name: Offertory
+        incipit: Sacerdotes Domini incensum et panes offerunt Deo
+        source: scripture
+        verses:
+        - book: Leviticus
+          ranges:
+          - begin: {chapter: 21, verse: 6}
+            end: {chapter: 21, verse: 6}
+          ref: Leviticus 21:6
+      - name: Communion
+        incipit: Quotiescumque manducabitis panem hunc
+        source: scripture
+        verses:
+        - book: 1 Corinthians
+          ranges:
+          - begin: {chapter: 11, verse: 26}
+            end: {chapter: 11, verse: 27}
+          ref: 1 Corinthians 11:26-27
     - key: pentecost-2
       name: Second Sunday after Pentecost
       registry: '16'
@@ -4355,6 +9284,84 @@ sections:
         text: |
           Sumptis muneribus sacris, quaesumus, Domine: ut cum frequentatione
           mysterii, crescat nostrae salutis effectus. Per Dominum.
+    - key: sacred-heart
+      name: The Most Sacred Heart of Jesus
+      registry: '1962-T-sacred-heart'
+      season: after-pentecost
+      rank: I
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Cogitationes Cordis ejus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 32, verse: 11}
+            end: {chapter: 32, verse: 11}
+          - begin: {chapter: 32, verse: 19}
+            end: {chapter: 32, verse: 19}
+          ref: Psalm 32:11, 19
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 32, verse: 1}
+            end: {chapter: 32, verse: 1}
+          ref: Psalm 32:1
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: Ephesians
+          ranges:
+          - begin: {chapter: 3, verse: 8}
+            end: {chapter: 3, verse: 12}
+          - begin: {chapter: 3, verse: 14}
+            end: {chapter: 3, verse: 19}
+          ref: Ephesians 3:8-12, 14-19
+      - name: Gradual
+        incipit: Dulcis et rectus Dominus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 8}
+            end: {chapter: 24, verse: 9}
+          ref: Psalm 24:8-9
+      - name: Alleluia
+        incipit: Tollite jugum meum super vos
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 29}
+            end: {chapter: 11, verse: 29}
+          ref: Matthew 11:29
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 19, verse: 31}
+            end: {chapter: 19, verse: 37}
+          ref: John 19:31-37
+      - name: Offertory
+        incipit: Improperium exspectavit Cor meum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 68, verse: 21}
+            end: {chapter: 68, verse: 21}
+          ref: Psalm 68:21
+      - name: Communion
+        incipit: Unus militum lancea latus ejus aperuit
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 19, verse: 34}
+            end: {chapter: 19, verse: 34}
+          ref: John 19:34
     - key: pentecost-3
       name: Third Sunday after Pentecost
       registry: '17'
@@ -5837,6 +10844,398 @@ sections:
           Sanctificationibus tuis, omnipotens Deus, et vitia nostra curentur, et
           remedia nobis aeterna proveniant. Per Dominum nostrum Jesum
           Christum...
+    - key: september-ember-wednesday
+      name: Ember Wednesday of September
+      registry: '1962-T-september-ember-wednesday'
+      season: after-pentecost
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The second lesson is printed
+        Neh. vel 2 Esdrae 8, 1-10.
+      propers:
+      - name: Introit
+        incipit: Exsultate Deo adjutori nostro
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 80, verse: 2}
+            end: {chapter: 80, verse: 5}
+          ref: Psalm 80:2-5
+      - name: First Lesson
+        source: scripture
+        verses:
+        - book: Amos
+          ranges:
+          - begin: {chapter: 9, verse: 13}
+            end: {chapter: 9, verse: 15}
+          ref: Amos 9:13-15
+      - name: First Gradual
+        incipit: Quis sicut Dominus Deus noster
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 112, verse: 5}
+            end: {chapter: 112, verse: 7}
+          ref: Psalm 112:5-7
+      - name: Second Lesson
+        source: scripture
+        verses:
+        - book: Nehemiah
+          ranges:
+          - begin: {chapter: 8, verse: 1}
+            end: {chapter: 8, verse: 10}
+          ref: Nehemiah 8:1-10
+      - name: Second Gradual
+        incipit: Beata gens, cujus est Dominus Deus
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 32, verse: 12}
+            end: {chapter: 32, verse: 12}
+          - begin: {chapter: 32, verse: 6}
+            end: {chapter: 32, verse: 6}
+          ref: Psalm 32:12, 6
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 9, verse: 16}
+            end: {chapter: 9, verse: 28}
+          ref: Mark 9:16-28
+      - name: Offertory
+        incipit: Meditabor in mandatis tuis
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 47}
+            end: {chapter: 118, verse: 48}
+          ref: Psalm 118:47-48
+      - name: Communion
+        incipit: Comedite pinguia, et bibite mulsum
+        source: scripture
+        verses:
+        - book: Nehemiah
+          ranges:
+          - begin: {chapter: 8, verse: 10}
+            end: {chapter: 8, verse: 10}
+          ref: Nehemiah 8:10
+    - key: september-ember-friday
+      name: Ember Friday of September
+      registry: '1962-T-september-ember-friday'
+      season: after-pentecost
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed.
+      propers:
+      - name: Introit
+        incipit: Laetetur cor quaerentium Dominum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 104, verse: 3}
+            end: {chapter: 104, verse: 4}
+          ref: Psalm 104:3-4
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 104, verse: 1}
+            end: {chapter: 104, verse: 1}
+          ref: Psalm 104:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Hosea
+          ranges:
+          - begin: {chapter: 14, verse: 2}
+            end: {chapter: 14, verse: 10}
+          ref: Hosea 14:2-10
+      - name: Gradual
+        incipit: Convertere, Domine, aliquantulum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 89, verse: 13}
+            end: {chapter: 89, verse: 13}
+          - begin: {chapter: 89, verse: 1}
+            end: {chapter: 89, verse: 1}
+          ref: Psalm 89:13, 1
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 7, verse: 36}
+            end: {chapter: 7, verse: 50}
+          ref: Luke 7:36-50
+      - name: Offertory
+        incipit: Benedic, anima mea, Domino
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 102, verse: 2}
+            end: {chapter: 102, verse: 2}
+          - begin: {chapter: 102, verse: 5}
+            end: {chapter: 102, verse: 5}
+          ref: Psalm 102:2, 5
+      - name: Communion
+        incipit: Aufer a me opprobrium et contemptum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 118, verse: 22}
+            end: {chapter: 118, verse: 22}
+          - begin: {chapter: 118, verse: 24}
+            end: {chapter: 118, verse: 24}
+          ref: Psalm 118:22, 24
+    - key: september-ember-saturday
+      name: Ember Saturday of September
+      registry: '1962-T-september-ember-saturday'
+      season: after-pentecost
+      rank: II
+      notes: Only the scripture-bearing propers are recorded; the day's orations and other
+        composed chants are appointed but not yet transcribed. The Missal prints a longer
+        and a shorter form of this Mass.
+      forms:
+      - name: Longer form (forma missae longior)
+        propers:
+        - name: Introit
+          incipit: Venite, adoremus Deum
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 94, verse: 6}
+              end: {chapter: 94, verse: 7}
+            ref: Psalm 94:6-7
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 94, verse: 1}
+              end: {chapter: 94, verse: 1}
+            ref: Psalm 94:1
+        - name: First Lesson
+          source: scripture
+          verses:
+          - book: Leviticus
+            ranges:
+            - begin: {chapter: 23, verse: 26}
+              end: {chapter: 23, verse: 32}
+            ref: Leviticus 23:26-32
+        - name: First Gradual
+          incipit: Propitius esto, Domine, peccatis nostris
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 78, verse: 9}
+              end: {chapter: 78, verse: 10}
+            ref: Psalm 78:9-10
+        - name: Second Lesson
+          source: scripture
+          verses:
+          - book: Leviticus
+            ranges:
+            - begin: {chapter: 23, verse: 39}
+              end: {chapter: 23, verse: 43}
+            ref: Leviticus 23:39-43
+        - name: Second Gradual
+          incipit: Protector noster, aspice, Deus
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 83, verse: 10}
+              end: {chapter: 83, verse: 10}
+            - begin: {chapter: 83, verse: 9}
+              end: {chapter: 83, verse: 9}
+            ref: Psalm 83:10, 9
+        - name: Third Lesson
+          source: scripture
+          verses:
+          - book: Micah
+            ranges:
+            - begin: {chapter: 7, verse: 14}
+              end: {chapter: 7, verse: 14}
+            - begin: {chapter: 7, verse: 16}
+              end: {chapter: 7, verse: 16}
+            - begin: {chapter: 7, verse: 18}
+              end: {chapter: 7, verse: 20}
+            ref: Micah 7:14, 16, 18-20
+        - name: Third Gradual
+          incipit: Convertere, Domine, aliquantulum
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 89, verse: 13}
+              end: {chapter: 89, verse: 13}
+            - begin: {chapter: 89, verse: 1}
+              end: {chapter: 89, verse: 1}
+            ref: Psalm 89:13, 1
+        - name: Fourth Lesson
+          source: scripture
+          verses:
+          - book: Zechariah
+            ranges:
+            - begin: {chapter: 8, verse: 14}
+              end: {chapter: 8, verse: 19}
+            ref: Zechariah 8:14-19
+        - name: Fourth Gradual
+          incipit: Dirigatur oratio mea
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 140, verse: 2}
+              end: {chapter: 140, verse: 2}
+            ref: Psalm 140:2
+        - name: Fifth Lesson
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin: {chapter: 3, verse: 47}
+              end: {chapter: 3, verse: 51}
+            ref: Daniel 3:47-51
+        - name: Hymn (Benedictus es)
+          incipit: Benedictus es, Domine Deus patrum nostrorum
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin: {chapter: 3, verse: 52}
+              end: {chapter: 3, verse: 56}
+            ref: Daniel 3:52-56
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: Hebrews
+            ranges:
+            - begin: {chapter: 9, verse: 2}
+              end: {chapter: 9, verse: 12}
+            ref: Hebrews 9:2-12
+        - name: Tract
+          incipit: Laudate Dominum, omnes gentes
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 116, verse: 1}
+              end: {chapter: 116, verse: 2}
+            ref: Psalm 116:1-2
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 13, verse: 6}
+              end: {chapter: 13, verse: 17}
+            ref: Luke 13:6-17
+        - name: Offertory
+          incipit: Domine Deus salutis meae
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 2}
+              end: {chapter: 87, verse: 3}
+            ref: Psalm 87:2-3
+        - name: Communion
+          incipit: Mense septimo festa celebrabitis
+          source: scripture
+          verses:
+          - book: Leviticus
+            ranges:
+            - begin: {chapter: 23, verse: 41}
+              end: {chapter: 23, verse: 41}
+            - begin: {chapter: 23, verse: 43}
+              end: {chapter: 23, verse: 43}
+            ref: Leviticus 23:41, 43
+      - name: Shorter form
+        propers:
+        - name: Introit
+          incipit: Venite, adoremus Deum
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 94, verse: 6}
+              end: {chapter: 94, verse: 7}
+            ref: Psalm 94:6-7
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 94, verse: 1}
+              end: {chapter: 94, verse: 1}
+            ref: Psalm 94:1
+        - name: Lesson
+          source: scripture
+          verses:
+          - book: Leviticus
+            ranges:
+            - begin: {chapter: 23, verse: 26}
+              end: {chapter: 23, verse: 32}
+            ref: Leviticus 23:26-32
+        - name: Gradual
+          incipit: Propitius esto, Domine, peccatis nostris
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 78, verse: 9}
+              end: {chapter: 78, verse: 10}
+            ref: Psalm 78:9-10
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: Hebrews
+            ranges:
+            - begin: {chapter: 9, verse: 2}
+              end: {chapter: 9, verse: 12}
+            ref: Hebrews 9:2-12
+        - name: Tract
+          incipit: Laudate Dominum, omnes gentes
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 116, verse: 1}
+              end: {chapter: 116, verse: 2}
+            ref: Psalm 116:1-2
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 13, verse: 6}
+              end: {chapter: 13, verse: 17}
+            ref: Luke 13:6-17
+        - name: Offertory
+          incipit: Domine Deus salutis meae
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 87, verse: 2}
+              end: {chapter: 87, verse: 3}
+            ref: Psalm 87:2-3
+        - name: Communion
+          incipit: Mense septimo festa celebrabitis
+          source: scripture
+          verses:
+          - book: Leviticus
+            ranges:
+            - begin: {chapter: 23, verse: 41}
+              end: {chapter: 23, verse: 41}
+            - begin: {chapter: 23, verse: 43}
+              end: {chapter: 23, verse: 43}
+            ref: Leviticus 23:41, 43
     - key: pentecost-18
       name: Eighteenth Sunday after Pentecost
       registry: '32'

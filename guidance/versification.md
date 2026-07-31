@@ -773,7 +773,22 @@ For each: does a numeric mapping suffice, or is the difference structural?
 |---|---|---|---|
 | Douay-Rheims | 1-16 | 13 verses | integrated as 10:4-16:24 |
 | Clementine | 1-16 | 13 verses | integrated as 10:4-16:24 |
-| King James | 1-10 | 3 verses | separate book `EsthGr`, chapters 10-16, **carrying the Vulgate's own numbers** |
+| King James | 1-10 | 3 verses | separate book `EsthGr`, chapters 10-16, ~~carrying the Vulgate's own numbers~~ — **carrying them in six chapters of seven; see below** |
+
+**Correction, 2026-07-31 [verified].** `EsthGr` carries the Vulgate's numbers in
+chapters 10, 11, 12, 13, 14 and 16, and does not in **chapter 15**, where it has
+16 verses against the Vulgate's 19 and needs three different relations at once:
+
+| Vulgate | `EsthGr` | Relation |
+|---|---|---|
+| 15:1-3 | — | **absent**; Mardochai's charge, which the Vulgate repeats here from 4:8 |
+| 15:4-12 | 15:1-9 | one-to-one, offset −3 |
+| 15:13-14 | 15:10 | **merged**; *thou shalt not die* and *come near then, and touch the sceptre* are one Greek verse |
+| 15:15 | 15:11-12 | **split**; the sceptre, the embrace and *why dost thou not speak to me* are one Latin verse |
+| 15:16-19 | 15:13-16 | one-to-one, offset −3 |
+
+A schema that requires a row's two runs to be the same length — which is what
+`psalm-numbering.tsv` requires — cannot state any of the three.
 
 **Structural.** Three things differ at once: number of books, number of
 chapters, and — at the seam — the number of verses inside a shared chapter
@@ -832,9 +847,19 @@ to `EsthGr 13:9` by **book-level redirection**, with no arithmetic.
 
 **Mixed**, and instructive because it needs both mechanisms at once.
 
-- **Susanna and Bel are pure chapter relabelling** — Daniel 13 ↔ `Sus` 1-64,
-  Daniel 14 ↔ `Bel` 1-42, verse for verse **[verified]** from the tracked verse
-  counts. A numeric map expresses these completely.
+- ~~**Susanna and Bel are pure chapter relabelling** — Daniel 13 ↔ `Sus` 1-64,
+  Daniel 14 ↔ `Bel` 1-42, verse for verse~~ — **wrong; corrected 2026-07-31 by
+  reading the verses rather than counting them.** Vulgate Daniel 13 has **65**
+  verses against Susanna's 64, and Daniel 13:65 (*And king Astyages was
+  gathered to his fathers; and Cyrus, the Persian, received his kingdom*) is
+  `Bel` **1**. So Bel runs one verse ahead of Vulgate Daniel 14 throughout —
+  Daniel 14:1 is Bel 2, 14:27 is Bel 28, 14:41 is Bel 42 — and **Vulgate Daniel
+  14:42** (*Then the king said: Let all the inhabitants of the whole earth fear
+  the God of Daniel*) **has no counterpart in Bel at all**. Susanna alone is a
+  clean relabelling, of Daniel 13:1-64. Chapter-count arithmetic cannot see
+  this, which is why it was believed for as long as it was: 65 and 64 differ,
+  and 42 and 42 do not. The correspondence now lives in
+  `deuterocanon-numbering.tsv` (§7.9).
 - **The Song of the Three does not relabel.** `SgThree` runs 1-68 against
   Vulgate Daniel 3:24-90, which is 67 verses. **[sourced]** the endpoints are
   offset differently — NRSV Prayer of Azariah v. 1 = Nova Vulgata Daniel 3:24
@@ -844,6 +869,20 @@ to `EsthGr 13:9` by **book-level redirection**, with no arithmetic.
   not a formula.** The tracked King James book index says exactly this and
   refuses rather than asserting an offset — the right call, implemented by the
   existing `not-in-this-edition` alias rows.
+
+  **The split point was located on 2026-07-31 [verified]**, and it is not at
+  either end. Vulgate Daniel 3:52 carries *both* "Blessed art thou, O Lord, the
+  God of our fathers" *and* "blessed is the holy name of thy glory", which
+  `SgThree` numbers **29 and 30**; that one merge is the entire difference
+  between 68 and 67. But the block is not otherwise an offset either: **from
+  Vulgate 3:53 to 3:78 the two traditions order the Benedicite differently and
+  realign at 3:79.** The throne and the depths are exchanged (Vulgate 3:54 is
+  `SgThree` 33, its 3:55 is 32), the angels and the heavens are exchanged
+  (3:58 is 37, 3:59 is 36), the fountains and the seas are exchanged (3:77 is
+  56, 3:78 is 55), and the Vulgate keeps its four couplets of cold together as
+  *frigus et aestus, rores et pruina, gelu et frigus, glacies et nives* where
+  the Greek sets nights and days and light and darkness between them. Twenty-six
+  correspondences, each read; none derivable from a count.
 
 Useful for the Song of the Three when someone does compile it: the Nova Vulgata
 prints the Aramaic verse number alongside its own, so NV 3:91 carries a
@@ -917,6 +956,41 @@ it follows would silently corrupt Sirach 30-36. Add it to the ingest gate.
 compiled per system pair, and will be largely `absent` rows in both
 directions.** Both published datasets decline Sirach outright, for the reason
 quoted in §4(a). This is where the project is on its own.
+
+**Measured in full, 2026-07-31 [verified], and the verdict revised to
+`not-recorded`.** Aligning the Douay's 1591 verses against the World English
+Catholic Edition's 1359 by content, chapter by chapter:
+
+| Finding | Value |
+|---|---|
+| Chapters where the two agree throughout | **0 of 51** |
+| Douay verses standing at the same number in the Greek | 412 of 1591 |
+| Chapters sharing no verse number at all | 6 (3, 25, 41, 46, 49, 51) |
+| Two Latin verses becoming one Greek verse | ≈230 |
+| Latin verses with no Greek counterpart | ≈45 |
+| One Latin verse becoming two Greek | 15 |
+
+The dominant mechanism is not the Latin plus. It is the Latin **subdividing a
+Greek bicolon**, which happens some two hundred and thirty times. A per-chapter
+offset is not merely insufficient, as §7.3 already said; there is no chapter in
+which any offset holds from beginning to end.
+
+An alignment *can* be computed — the table above is one — but the two texts are
+independent translations out of two different languages, so the computation
+produces a candidate and not a reading, and dozens of its rows are low-confidence
+by its own scoring. Writing 1591 such rows into a tracked concordance would be a
+hand-typed lookup table with a machine's confidence and nothing behind it. **The
+concordance therefore records Ecclesiasticus as `not-recorded` for the whole
+book, with one exception established by reading the verse**: the introit *Da
+pacem Domine sustinentibus te* is Vulgate 36:18 and Greek 36:16, and Greek 36:18
+is the proverb of the belly. Refusing the rest is the finding, not a gap in it.
+
+Two incidental corrections. A report that the Vulgate and the Greek "disagree at
+Ecclus 3, 15, 24, 27, 28, 35 and 36" is **wrong**: they disagree everywhere, and
+that list corresponds to nothing measurable. And the tracked *Clementine* divides
+Ecclesiasticus **29:16** into three verses where the Douay has two, running one
+ahead of it to the end of that chapter — so §7.7's list of Douay/Clementine
+departures is one longer than it says.
 
 ### 7.4 3 and 4 Esdras
 
@@ -1015,15 +1089,94 @@ should not be used, to cut a verse.
 | Hebrew ↔ Vulgate psalm numbers | **Yes** | piecewise psalm map + per-psalm superscription offset — already built |
 | Nova Vulgata vs Vulgate: Joel, Malachi, Isaiah, Micah, Hosea, Exodus | **Yes** | segment rows; acquirable (§6.1) |
 | John 6, Mark 9, Acts 14, Acts 7, Mark 4 | **Yes** | segment rows with one split/merge; acquirable |
-| Susanna ↔ Daniel 13, Bel ↔ Daniel 14 | **Yes** | pure chapter relabelling |
-| Song of the Three ↔ Daniel 3:24-90 | **Almost** | 68 onto 67 — explicit alignment table, no formula |
-| Wisdom, Sirach chapter-internal Latin pluses | **No** | different amount of text; segment rows plus `absent-*` |
+| Susanna ↔ Daniel 13:1-64 | **Yes** | chapter relabelling |
+| Bel ↔ Daniel 13:65 + 14:1-41 | **Yes** | relabelling plus a +1 shift and one `absent-right`; **built** (§7.9) |
+| Song of the Three ↔ Daniel 3:24-90 | **Yes** | one `split-right` at 3:52 plus a 26-verse reordering; **built** (§7.9) |
+| Esther additions ↔ `EsthGr` | **Yes** | book redirection, and one chapter needing absent + merge + split; **built** (§7.9) |
+| Wisdom chapter-internal Latin pluses | **No** | different amount of text; segment rows plus `absent-*` |
+| Sirach, Vulgate ↔ Greek | **No** | all 51 chapters diverge; recorded `not-recorded` (§7.3) |
 | Sirach 30-36 displacement | **No** | different text order; block swap, and only if a Rahlfs-derived scheme is ingested |
 | Esther additions | **No** | different text, different order, three addressing schemes; book-level redirection |
 | 1/2/3/4 Esdras | **No** | book-identity resolution per edition |
 | 4 Ezra 7:36-105 | **Yes, but** | flat +70, and the same citation string is valid in both schemes — an edition discriminator is mandatory |
 | Prayer of Manasses, Psalm 151 | **No** | presence and placement, not numbering |
 | Douay vs Clementine merges (1 Thess 4, Hosea 6) | **Partly** | edition departure rows; mid-verse cases refuse or declare a superset |
+
+### 7.9 What was built, and what the resolver still needs
+
+**2026-07-31.** Esther, Ecclesiasticus and Daniel now have a tracked verse-level
+concordance, `deuterocanon-numbering-*/deuterocanon-numbering.tsv` under the
+Douay's artifacts, loaded and validated by `scripts/_deuterocanon.py`. It is the
+§8.2 shape with two departures from it, both deliberate:
+
+- **Every row names both sides' arrangements.** `psalm-numbering.tsv` names
+  neither, and in consequence its `hebrew` column records the Vulgate's division
+  of a psalm under Hebrew numbers — a third thing, named for neither system.
+- **The correspondences are between *arrangements*, not systems or editions.**
+  Three are declared: `vulgate`, `greek` (the additions as separate books, as the
+  Revised Version and the King James print them), and `world-english-catholic`
+  (the Greek divisions addressed as the Greek Daniel and Esther address them).
+  The third is a distinct arrangement and not a departure from the second: its
+  Daniel 14 runs one verse ahead of the Vulgate's from beginning to end, and no
+  edition-departure table would say so.
+
+All six §8.2 relations are expressible, and the load-time checks are stronger
+than the six listed there in one respect that matters: **no chapter ceiling is
+recorded in the file.** Both ends of every chapter are read from the witness
+edition's tracked verse text, and the rows must tile the printed extent of every
+chapter of every book the pair rules on, exactly once. Each row also records the
+opening words of the first verse of each run, checked against the witness on
+load. The psalm concordance's hand-typed ceilings were wrong for two psalms and
+nothing noticed; a ceiling that is derived cannot be.
+
+Each edition's `verse-aliases.tsv` rows for these three books are now a
+mechanical expansion of the concordance against that edition's own verse text —
+`python3 scripts/_deuterocanon.py <edition>` — and `tools/tests/test_deuterocanon.py`
+fails if the tracked rows and the derivation disagree.
+
+**What `index-bible` must change for the rest to work.** `Bible.span` resolves
+the chapter before the alias table:
+
+```python
+bounds = self.chapters.get((token, chapter))
+if bounds is None:
+    return [], f"{token} has no chapter {chapter}", (), ()
+```
+
+A locus in a chapter the edition does not have therefore never reaches
+`load_aliases`, so no alias can redirect it — while a locus in a chapter the
+edition *does* have, past its last verse, does reach it, because `Bible.verse`
+consults the aliases first. The asymmetry is invisible in the psalter and decides
+everything here. Consequences today, all of them present rows that cannot fire:
+
+| Citation | Refused as | The tracked text is at |
+|---|---|---|
+| `Esther 13:8-11, 15-17` (1962) | `Esth has no chapter 13` | KJV/RV `EsthGr 13:8-11, 15-17`; WEB-CE `Esth 4:18-21, 25-27` |
+| `Esther 13:9-11`, `Esther 13:17`, `Esther 13` | same | same |
+| `Esther 14:12-13` (1962) | `Esth has no chapter 14` | KJV/RV `EsthGr 14:12-13`; WEB-CE `Esth 4:40-41` |
+| `Daniel 13:1-9, 15-17, 19-30, 33-62` (1962) | `Dan has no chapter 13` | KJV/RV `Sus 1:1-9, …` |
+| `Daniel 14:27, 28-42` (1962) | `Dan has no chapter 14` | KJV/RV `Bel 1:28, 29-42`, less Vulgate 14:42, which Bel lacks |
+
+The change is to consult the alias table before the chapter-bounds check —
+`Bible.verse` already does the right thing and returns `None` for an unaliased
+locus — and to derive the refusal message from whichever check actually failed.
+Nothing else in this document depends on it, and the concordance rows for those
+loci are already tracked and tested, so the change is expected to turn five
+refusals per Greek-numbered edition into text without any further data work.
+
+Two further asks for whoever owns `index-bible`:
+
+1. **`EDITIONS[…]['numbering']` is wrong for these books.** The King James, the
+   Revised Version and the World English Catholic Edition all declare `hebrew`.
+   For the psalter that is right. For Esther, Ecclesiasticus and Daniel the
+   Hebrew has no such books, and the three editions are in two different
+   arrangements, neither of them Hebrew. Nothing currently reads `numbering` for
+   these books, so this is latent, not live.
+2. **A range one of whose verses is refused refuses whole.** That is right, but
+   it costs `Daniel 14:27, 28-42` in the World English Catholic Edition, where
+   41 of the 42 verses are present and only Vulgate 14:42 is not. A declared
+   partial — §8.5's "superset is not a hit", in the other direction — would be
+   worth having.
 
 ---
 

@@ -354,17 +354,33 @@ class WithheldLocusTests(unittest.TestCase):
     The King James Version's Daniel 3:29 is Nabuchodonosor's decree; a Vulgate
     citation of Daniel 3:29 means the Prayer of Azarias, which this edition
     prints as a separate book. Returning what it prints would be wrong with
-    nothing to report, so the alias table refuses instead.
+    nothing to report.
+
+    Until 2026-07-31 the alias table answered that by refusing, because the
+    correspondence with the separate book had not been established. It has been
+    now, verse by verse, in the tracked deuterocanon numbering concordance, so
+    these loci redirect rather than refuse. What still refuses is what the
+    concordance says cannot be answered: Vulgate Daniel 3:52, which is two
+    verses of the Greek book and cannot be selected by one reference without
+    cutting it, and Vulgate Daniel 14:42, which the Greek Bel does not carry.
     """
 
     @classmethod
     def setUpClass(cls) -> None:
         cls.bible = index_bible.Bible(ENGKJV)
 
-    def test_the_withheld_daniel_verses_refuse(self) -> None:
-        for verse in range(24, 31):
-            with self.subTest(verse=verse):
-                self.assertIsNone(self.bible.verse("Dan", 3, verse))
+    def test_the_prayer_of_azarias_now_redirects_to_the_separate_book(self) -> None:
+        text = self.bible.verse("Dan", 3, 29)
+        self.assertIsNotNone(text)
+        assert text is not None
+        self.assertTrue(text.startswith("For we have sinned"), text)
+        self.assertNotEqual(text, self.bible.verses[("Dan", 3, 29)])
+
+    def test_a_locus_the_concordance_cannot_answer_still_refuses(self) -> None:
+        # 3:52 carries both blessings the Greek numbers 29 and 30; 14:42 has no
+        # counterpart in Bel at all.
+        self.assertIsNone(self.bible.verse("Dan", 3, 52))
+        self.assertIsNone(self.bible.verse("Dan", 14, 42))
 
     def test_the_edition_still_prints_those_verses(self) -> None:
         self.assertIn(("Dan", 3, 29), self.bible.verses)
@@ -376,9 +392,18 @@ class WithheldLocusTests(unittest.TestCase):
         import yaml
 
         found = yaml.safe_load(KING_JAMES.read_text(encoding="utf-8"))["passages"]
-        for ref in ("Daniel 3:29", "Daniel 3:30", "Psalm 13:4-5", "Psalm 13:6"):
+        for ref in ("Daniel 3:52", "Daniel 3:52-56", "Psalm 13:4-5", "Psalm 13:6"):
             with self.subTest(ref=ref):
                 self.assertNotIn(ref, found)
+
+    def test_the_index_now_carries_the_redirected_citations(self) -> None:
+        import yaml
+
+        found = yaml.safe_load(KING_JAMES.read_text(encoding="utf-8"))["passages"]
+        self.assertTrue(found["Daniel 3:29"].startswith("For we have sinned"))
+        self.assertTrue(
+            found["Ecclesiasticus 36:18"].startswith("Reward them that wait for thee")
+        )
 
     def test_the_miserere_resolves_to_the_verse_this_edition_prints_it_at(self) -> None:
         import yaml
@@ -514,8 +539,10 @@ class ChapterBoundTests(unittest.TestCase):
         self.assertEqual(both.count("I will plant them upon their own land"), 1)
 
     def test_a_locus_the_edition_recorded_as_absent_says_so(self) -> None:
+        # Vulgate Daniel 3:52 is verses 29 and 30 of this edition's separate
+        # book, which one reference cannot select without cutting them.
         king_james = index_bible.Bible(ENGKJV)
-        _, problem = king_james.passage("Dan", [span(3, 29)])
+        _, problem = king_james.passage("Dan", [span(3, 52)])
         self.assertTrue(problem.endswith(index_bible.NOT_CARRIED), problem)
 
 

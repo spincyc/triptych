@@ -109,14 +109,60 @@ octave, a 1962 year with twenty-three Sundays after Pentecost — the year recor
 the refusal in `unresolved` instead of choosing. Each file carries the advisory
 that says so, so the caution cannot be separated from the data.
 
+## The rubrics layer
+
+`structure/rubrics/<calendar>.json`, written by `calendar-rubrics structure`,
+supplies the one thing the calendar layer deliberately withholds: the ranking.
+It is a separate layer rather than a field on the day files, because it is a
+separate kind of claim. A day file says *this date carries these masses*, which
+is arithmetic. A rubrics file says *this one takes the day, under this numbered
+rubric*, which is a reading of a code — and a reading has to be citable,
+arguable, and correctable in one place.
+
+The layer is **one file per calendar and none per year**. That is the whole of
+its storage design and it is not an optimisation: an assembly precomputed per
+date per calendar would be some seventy-four thousand objects over the span the
+day files cover, and correcting a single rubric would invalidate every one of
+them at once. So the page fetches the rules once, the year it wants once, and
+derives the day in the browser. Adding a year adds nothing here; adding a
+calendar adds one file.
+
+The source is `src/sources/calendars/<calendar>/rubrics.yaml`, beside the mass
+index it classifies. It carries the precedence table with its locus, the bases
+that assign each mass to a row, the rules that constitute a day the index has no
+formulary for, the commemoration ceilings, the oration rules, and — as much as
+the rest — what it does not decide. Every rule names the rubric number behind
+it, and every rule is transcribed from a collated in-repository publication
+rather than read afresh. Where the file departs from that publication it says so
+in `divergences` and does not silently choose.
+
+Two consequences are worth stating because they are easy to erode:
+
+- **`calendar-days` is not changed by this.** Its refusal to rank was correct
+  and stands; `precedence.stated` is still `false` in the day files. The
+  authority arrives as a separate tracked artifact that can be checked and
+  disagreed with on its own.
+- **A calendar directory now holds more than one kind of file.** Discovery under
+  `src/sources/calendars` is therefore by declared `schema`, in
+  `scripts/_calendars.py`, shared by every tool that reads the directory. A file
+  whose schema nothing claims is a hard failure: silently skipping it would let
+  a mass index with a mistyped schema stop being checked.
+
+The derivation itself lives in `src/web/browser/liturgy/assembly-model.js` and
+exists once. `calendar-rubrics check` runs that same file under node against the
+solved cases each source carries, so the page and the check cannot drift; where
+node is absent the check says which verification it did not perform instead of
+passing quietly.
+
 ## Assembling the site
 
-Four of the pieces are generated straight into the data root:
+Five of the pieces are generated straight into the data root:
 
 ```sh
 tools/tpt mass-propers  structure --out src/web/data  # structure/propers/*.json
 tools/tpt reading-plan  structure --out src/web/data  # structure/readings/*.json
 tools/tpt calendar-days structure --out src/web/data  # structure/calendar/**/*.json
+tools/tpt calendar-rubrics structure --out src/web/data  # structure/rubrics/*.json
 tools/tpt index-bible   manifest  --out src/web/data  # bibles.json
 ```
 

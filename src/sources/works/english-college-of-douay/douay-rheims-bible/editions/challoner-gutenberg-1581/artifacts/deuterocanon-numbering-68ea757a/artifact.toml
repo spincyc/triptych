@@ -1,0 +1,92 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.deuterocanon-numbering-68ea757a"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table. It records the identity, numbering, and naming of public-domain biblical books and verses, together with the opening words of a verse where those words are what identifies it; it carries no continuous scripture text. Triptych places it under the repository licence and claims no exclusive right in the underlying facts."
+provenance = "Compiled by Triptych on 2026-07-31 from the exact verse-text artifacts of the editions named below, by reading the verses. The table is a concordance between three arrangements of Esther, Ecclesiasticus and Daniel. The vulgate arrangement is witnessed by this edition and controlled against the tracked Clementine Vulgate and the Catholic Public Domain Version. The greek arrangement is witnessed by the tracked Revised Version of 1895 with Apocrypha and controlled against the tracked King James with Apocrypha. The world-english-catholic arrangement is witnessed by the tracked World English Bible, Catholic Edition, which is the only edition here that prints it. Every row's opening words were read out of the witness rather than typed, and scripts/_deuterocanon.py re-reads them at load and refuses the table if a row no longer describes the tracked text or no longer tiles a chapter's printed extent exactly once. No chapter ceiling is recorded anywhere in the file; every one is derived from the text, which is the defect the psalm concordance's hand-typed ceilings carried until 2026-07-31."
+retrieved = "2026-07-31"
+sha256 = "68ea757ad20de46a6c78339e0d8a79a0ecf23d17561d32bbf5161bd5f11cd906"
+byte_size = 38003
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/deuterocanon-numbering-68ea757a/deuterocanon-numbering.tsv"
+indexable = true
+encoding = "utf-8"
+notes = """
+Two hundred and seventeen rows. Each names both arrangements it speaks about, so no
+column means anything by its position; the psalm concordance beside this one does not,
+and its hebrew column in fact records the Vulgate's division of a psalm under Hebrew
+numbers, which is a third thing named for neither.
+
+Six relations are expressible: one-to-one, split-right, merged-right, absent-right,
+absent-left and not-recorded. The psalm concordance can say only the first, because its
+schema requires both runs of a row to be the same length. Three of the six are needed in
+Esther 15 alone. The Vulgate's 15:1-3, Mardochai's charge repeated from 4:8, is absent
+from the Greek. Its 15:13 "thou shalt not die" and 15:14 "come near then, and touch the
+sceptre" are the Greek's single 15:10. Its 15:15, which holds the sceptre, the embrace
+and "why dost thou not speak to me", is the Greek's 15:11 and 15:12. Daniel needs the
+same: the Vulgate's 3:52 carries both "blessed art thou, O Lord, the God of our fathers"
+and "blessed is the holy name of thy glory", which the Greek numbers 29 and 30, and that
+one merge is the whole of the difference between the Canticle's sixty-eight Greek verses
+and the Vulgate's sixty-seven.
+
+What was established, and against what.
+
+Esther. Chapters 1 to 10:3 agree verse for verse. The Vulgate's 10:4-16:24 is the Greek
+additions, which the Revised Version and the King James print as a separate book under
+the Vulgate's own numbers -- except in chapter 15, where they do not: the Greek's 15:1
+is the Vulgate's 15:4, and the chapter also holds the merge and the split described
+above. The claim that that book carries the Vulgate's numbers throughout is therefore
+wrong, and this table follows the text.
+
+Daniel. Chapters 1 to 3:23 agree. The Vulgate's 3:24-90 is the Song of the Three, and
+the correspondence is not an offset: after the merge at 3:52 the two traditions order
+the Benedicite differently from 3:53 to 3:78 and realign at 3:79. The throne and the
+depths are exchanged, the angels and the heavens are exchanged, the fountains and the
+seas are exchanged, and the Vulgate keeps its four couplets of cold together where the
+Greek sets nights and days and light and darkness between them. Every one of those
+twenty-six correspondences was read. The Vulgate's 3:91-97 is the Greek's 3:24-30, its
+3:98-100 is the Greek's 4:1-3, and its chapter 4 therefore runs three verses behind.
+Susanna is Daniel 13:1-64. Daniel 13:65, "and king Astyages was gathered to his
+fathers", is Bel 1, so Bel runs one verse ahead of Vulgate Daniel 14 from beginning to
+end, and Vulgate 14:42 has no counterpart at all. The assertion in guidance/versification
+section 7.2 that Susanna and Bel are pure chapter relabelling, verse for verse, is wrong
+on both counts.
+
+Ecclesiasticus. Recorded as not-recorded, which is a finding and not a gap. Measured
+against the tracked texts, the Vulgate and the Greek differ in all fifty-one chapters,
+not in the seven that had been reported; only 412 of the Douay's 1591 verses stand at
+the same number in the World English Catholic Edition's 1359; six chapters share no
+number at all; and the dominant mechanism is the Latin subdividing a Greek bicolon,
+which happens some two hundred and thirty times. An alignment can be computed between
+the two English translations, but they are translations of different languages and the
+computation is a candidate, not a reading. One locus is recorded, because it was settled
+by reading the verse: the introit Da pacem Domine sustinentibus te is the Vulgate's
+36:18 and the Greek's 36:16, and the Greek's own 36:18 is the proverb of the belly.
+
+What is deliberately not modelled.
+
+The Catholic Public Domain Version's Esther. It prints the book in the Septuagint's
+narrative order and in fifteen chapters of its own division: its 1:1 is the Vulgate's
+11:2, its 2:1 is the Vulgate's 12:1, its 3:1 is the Vulgate's 1:1, and its chapter 5
+holds thirteen verses where the Vulgate's chapter 3 holds fifteen. The chapter
+boundaries fall inside Vulgate chapters, so this is a re-chaptering of the book and not
+a renumbering of it; one edition witnesses it and no calendar cites it. Its Esther stays
+refused wholesale by the rows that edition's own verse-alias artifact already carries.
+
+The Brenton Septuagint, for the same reason and by the same earlier decision.
+
+A verse-level Ecclesiasticus concordance, as above.
+
+Two divergences found while compiling this and left for their owners. The tracked
+Clementine Vulgate divides Ecclesiasticus 29:16 into three verses where the Douay has
+two, and runs one ahead of it to the end of that chapter, so the Latin witnesses
+disagree with each other there; it is not recorded here because this table is between
+arrangements and that is a departure between two witnesses of one. And the King James
+Apocrypha repeats the mountains of Song of the Three 53 at its verse 55, where the
+Revised Version and the Latin both have the seas and rivers, so its 55 and 56 are one
+line out of step; that is a textual defect rather than a numbering one and is declared,
+with both openings and checked against both texts, in scripts/_deuterocanon.py.
+"""

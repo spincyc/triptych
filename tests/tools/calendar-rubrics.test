@@ -1,0 +1,128 @@
+#!/bin/sh
+# Test for `tools/tpt calendar-rubrics`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="calendar-rubrics"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# The sources validate and every solved case still agrees with the model the
+# page itself runs. This is the gate that matters: the cases are worked answers
+# taken from the collated publications, so a rule edited into a shape that
+# reaches a different answer fails here rather than on the page.
+run_tool check >/dev/null
+
+run_tool structure --out "$sandbox/data" >/dev/null
+root="$sandbox/data/structure/rubrics"
+
+python3 - "$repo" "$root" <<'PY'
+import json, pathlib, sys
+
+repo, root = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
+
+written = sorted(path.name for path in root.glob("*.json"))
+# One file per calendar and none per year: the whole point of deriving the
+# assembly in the browser rather than precomputing a date at a time.
+assert "roman-1962.json" in written, written
+assert "postconciliar.json" in written, written
+assert len(written) <= 3, written
+
+for name in ("roman-1962", "postconciliar"):
+    document = json.loads((root / f"{name}.json").read_text(encoding="utf-8"))
+    assert document["calendar"] == name, document["calendar"]
+
+    # Nothing computed may be offered as a witness. The advisory travels with
+    # the data rather than living in a page the data could be served without.
+    advisory = json.dumps(document).lower()
+    assert "finding aid" in advisory or "ordo" in advisory, name
+
+    # The precedence table carries the rubric it was transcribed from. A
+    # precedence claim with no citation is exactly the authoritative-looking
+    # guess this page must not make, so an uncited table is a defect whatever
+    # it says. The citation sits on the table rather than on each row because
+    # the whole table is one rubric.
+    precedence = document["precedence"]
+    assert precedence["locus"], name
+    assert precedence["rows"], name
+    for row in precedence["rows"]:
+        assert row.get("label"), (name, row)
+
+    # Anything the books do not settle is recorded rather than computed, so the
+    # page can say a case is open instead of answering it.
+    assert isinstance(document["unsettled"], list), name
+
+    # Every section that states a rule names where the rule came from.
+    for key, body in document.items():
+        if isinstance(body, dict) and body.get("rows"):
+            assert body.get("locus"), (name, key)
+
+expected = {"roman-1962": "RG", "postconciliar": "NUALC"}
+for name, prefix in expected.items():
+    document = json.loads((root / f"{name}.json").read_text(encoding="utf-8"))
+    # Each calendar cites its own book. Citing the other one's would mean a
+    # rule had been carried across two rites that do not share it.
+    assert document["precedence"]["locus"].startswith(prefix), (
+        name,
+        document["precedence"]["locus"],
+    )
+PY
+
+# `assign` says what each mass was classified as, which is what makes a
+# misclassification findable without reading the page.
+run_tool assign --calendar roman-1962 --format json >"$sandbox/assign.json"
+python3 - "$sandbox/assign.json" <<'PY'
+import json, sys
+
+payload = json.load(open(sys.argv[1], encoding="utf-8"))
+body = json.dumps(payload)
+assert "roman-1962" in body, sorted(payload)
+# A mass the rules cannot place is reported, never quietly given a class: an
+# unclassified mass is a question, and a wrongly classified one is an answer.
+assert "postconciliar" not in body, "--calendar did not limit the report"
+PY
+
+# Machine form is one key-sorted object.
+run_tool check --format json >"$sandbox/check.json"
+for want in '"calendars"' '"status"'; do
+	if ! grep -q "$want" "$sandbox/check.json"; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+
+if run_tool check --format nonesuch >/dev/null 2>&1; then
+	echo "expected failure for an unknown format" >&2
+	exit 1
+fi
+
+# An empty calendar root is an error rather than a silent success: rubrics that
+# validate because there are none is the worst possible pass.
+mkdir -p "$sandbox/empty"
+status=0
+run_tool check --root "$sandbox/empty" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "an empty calendar root should exit 2, got $status" >&2
+	exit 1
+fi
+
+status=0
+run_tool structure --root "$sandbox/empty" --out "$sandbox/never" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "structure should refuse an empty root, got $status" >&2
+	exit 1
+fi
+if [ -e "$sandbox/never" ]; then
+	echo "a refused structure must not create an output directory" >&2
+	exit 1
+fi
+
+echo ok
