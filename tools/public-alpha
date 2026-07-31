@@ -144,13 +144,13 @@ SITE_DATA_ROOT = PurePosixPath("browse")
 # belong under liturgy and the reading plan under scripture; the parts neither
 # may drift on live once, in shared. The fixture beside them is a development
 # aid and is not published.
-WEB_BROWSER_DIRECTORIES = ("shared", "liturgy", "scripture")
+WEB_BROWSER_DIRECTORIES = ("shared", "liturgy", "scripture", "catena")
 # Everything a reading directory holds is served. Naming the files instead made
 # the artifact refuse to build the moment a page gained or renamed one, which
 # says nothing about whether the page is publishable.
 WEB_BROWSER_SUFFIXES = (".html", ".css", ".js")
 # The two a reader is sent to; shared carries no page of its own.
-WEB_BROWSER_ENTRANCES = ("liturgy", "scripture")
+WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena")
 # Fragments stay beside the edition that owns them, where index-bible checks
 # them for staleness and orphans; copying them into src/web/data as well would
 # put the same verse text in the tree twice.
@@ -2504,7 +2504,7 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
 # pages from its gold one. Naming the colour here rather than in each page's
 # stylesheet is what lets those stylesheets stop carrying a copy of the site's
 # palette that had to be re-copied every time the site was retuned.
-BROWSER_SECTION_COLOURS = {"liturgy": "red", "scripture": "gold"}
+BROWSER_SECTION_COLOURS = {"liturgy": "red", "scripture": "gold", "catena": "violet"}
 
 
 def render_browser_page(

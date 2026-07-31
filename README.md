@@ -25,6 +25,8 @@ Choose a section, open a PDF, and read. New here? Start with
   Mass, with the rubric behind each step.
 - **[The Story of Salvation](scripture/)** — the abridged reading plan, at three
   depths.
+- **[The Catena](catena/)** — a chapter, and the commentary this site holds on
+  it, oldest first. Early: four fragments so far, all in Genesis.
 
 ## How this was built
 
