@@ -12,12 +12,16 @@ and the obvious way to build one — read four of them and take the union — is
 one way you may not.
 
 The second is **a commentary harvest** — an attempt to find out which pre-1900
-commentaries actually treat each passage the missals cite. It consulted a model,
-which is not a reproducible act, so the tooling was built to never call one. It
-records what a model said, with the model's name and the date, and then measures
-how often three separate askings agreed. The measurement came back with an
-uncomfortable and useful answer, and the answer is why nothing from the harvest
-has been promoted into the source library yet.
+commentaries actually treat each passage the missals cite. Consulting a model is
+not a reproducible act, so exactly one verb of the tool does it, and what that
+verb produces lands in a tracked ledger stamped with the model that answered and
+the date. Three separate askings are then measured against each other. The
+measurement came back with an uncomfortable and useful answer — the passes agreed
+on *who* wrote on a passage far more often than on *what the work was called* —
+and that answer blocked promotion until a derived table of work identities closed
+the gap. Promotion ran on 2026-07-31. The discovery index now holds 497 passages
+and 7,297 work entries, under no confidence floor, and over a locus-granularity
+mismatch that is still unsettled.
 
 This document explains what each undertaking decided and why. Every number in it
 was recomputed from the repository's own tracked files — where a figure disagreed
@@ -234,23 +238,49 @@ Two consequences the file handles explicitly rather than hoping nobody notices:
 
 ## Part two — the commentary harvest
 
-### The harvester never calls a model
+### The harvester calls a model in exactly one verb
 
-A model consulted twice does not answer twice the same. If the tool called out,
-its output would depend on when you ran it, and every downstream artifact would
-inherit that irreproducibility with no marker on it.
+A model consulted twice does not answer twice the same. If that were spread
+through the tool, every downstream artifact would inherit the irreproducibility
+with no marker on it.
 
-So the nondeterminism is pushed out of the tool and into a tracked file, where it
-is visible. The harvester:
+So it is confined to one verb, and what that verb hears goes into a tracked file
+where it is visible. The harvester:
 
 - **plans** — emits a worklist of loci still short of their target run count;
+- **asks** — the only verb that reaches outside this machine: the `claude` CLI,
+  once per passage per run, three runs by default, with no tools, no session on
+  disk and this repository's own customization switched off, each answer
+  validated against a schema derived from what `record` accepts. It writes
+  results files and records nothing;
 - **records** — ingests one run's results into a dated ledger, validated, with
-  the model's identity and an `--audited-on` date stored beside what it said;
+  the model's identity and the date stored beside what it said;
+- **aliases** — derives the work-identity table from the alias claims the runs
+  themselves made;
 - **promotes** — collates the ledger into a discovery index, deriving each
   work's confidence from *agreement across runs*, never from a score the model
   supplied.
 
-Everything the tool itself does is deterministic. The judgement stays in the
+Until 2026-07-31 there was no `ask` and the harvest was run by hand outside the
+tool. That was not free: the model identity and date the ledger carried were
+whatever an operator typed. `ask` takes both from the answer instead. `--model
+opus` is a request and an alias; what gets recorded is read from the `model` that
+each assistant message declares. The first implementation read it from the
+response's `modelUsage` tally and was wrong — an opus query bills
+`claude-haiku-4-5` alongside `claude-opus-5`, because the CLI uses a helper
+model, so the tally cannot say which of them wrote the answer. Where the
+assistant messages disagree, the run stops rather than picking one.
+
+Two smaller things `ask` was built to say out loud. The ledger keys a run by a
+digest of its content, so two runs that answered identically are one run there —
+the same guard that makes re-recording a file a no-op, but silently it would
+leave an operator believing three runs of corroboration landed where one did, and
+confidence is appearances over runs; so it is reported as `identical_runs`. And
+running with the repository's customization switched off is load-bearing: the
+first probe without it inherited this repository's own `CLAUDE.md` and hooks and
+answered about a hook instead of about the Psalms.
+
+Everything else the tool does is deterministic. The judgement stays in the
 ledger with its provenance attached, and a run can be re-read, re-counted, or
 thrown out years later because you can see whose answer it was.
 
@@ -264,15 +294,18 @@ Isaias 63:16–64:7 is two loci, not one.
 
 Grouping across chapters would silently drop any work that comments on only one
 of them, and "silently" is the operative word: the result would look like a
-complete answer. Splitting costs more queries and loses nothing. The 1,296
-verse-range references the missals cite collapse to 491 chapter-bounded loci.
+complete answer. Splitting costs more queries and loses nothing. The 1,600
+verse-range references the two missals cite collapse to 525 chapter-bounded loci.
+The three passes ran over 491 of them: the corpus has grown since they were
+asked, and 34 loci have never been asked about at all.
 
 ### The measurement, which is the actual result
 
 Three independent passes over all 491 loci, all by `claude-opus-5`, all dated
 2026-07-31, produced **15,803 attributions** (5,927 + 4,963 + 4,913). Across them
 sit 6,511 distinct (locus, author) pairs and 10,293 distinct (locus, author,
-title) triples.
+title) triples. Titles are compared case-insensitively throughout this section,
+as the tooling compares them; compared byte-for-byte the triples come to 10,619.
 
 Corroboration — appearing in at least two of the three passes:
 
@@ -314,6 +347,38 @@ ambiguity — Latin titles with no standard form, and works that legitimately ha
 a whole-and-part relationship. That is a *cataloguing* problem, and it wants a
 work-identity registry, not more passes.
 
+### The registry was built, and the gap closed
+
+`src/sources/commentary/work-aliases.yaml` holds **300 groups over 2,862 title
+spellings**, covering 77 authors. It is derived, not hand-typed: `groups` is the
+connected components of the "these names are the same work" graph that the runs
+themselves asserted, per author, regenerated whole and validated on load. It is
+stamped `derived_on: 2026-07-31` and carries a digest of the alias claims it was
+built from, so recording a run that asserts a new alias ages the table and
+`promote` refuses until the new grouping has been looked at.
+
+Collapsing titles through it, on the same three passes:
+
+| Matched on | Corroborated | Total | Rate |
+| --- | --- | --- | --- |
+| Author | 5,095 | 6,511 | 78.3% |
+| Author **and** title, as written | 3,635 | 10,293 | 35.3% |
+| Author **and** work, through the table | 5,060 | 7,156 | **70.7%** |
+
+The 42.9-point gap becomes 7.5. Corroborated (locus, author) pairs carrying more
+than one name for the work fall from 54.9% to 11.8%; 718 title spellings resolve
+to 283 works. Where the passes agree on the author, they now agree on the work
+**98.2%** of the time. The document's own reading of the gap — that the research
+was sound and the identity matching was the weak link — is what the fix confirms:
+nothing was asked again, and 1,425 more (locus, work) claims came out corroborated.
+
+One thing the table records because it could not be derived. Blind title
+normalisation was rejected, and the reason is in the file's `review` block: Peter
+Lombard's *Magna Glossatura* names both his Psalms gloss and his *Collectanea* on
+Paul, and two of the three runs offered it as an alias of each, so normalising
+would have merged two works into one. No corroboration threshold catches that —
+both runs were right about the name and wrong about what it picks out.
+
 ### Why extent gating is the whole game
 
 The failure a lead list like this invites is confident nonsense: naming a great
@@ -330,7 +395,7 @@ The tracked ledger shows:
 | Jerome on Jeremias | breaks off around chapter 32 | cited on Jeremias 1, 17, 20, 23, 29, 31 — never on 33 or 38, the two harvested loci above the break |
 | Origen on Matthew | survives only from 13:36 | cited on Matthew 13–28 and never on 1–11, though eleven such loci were harvested |
 | Gregory the Great, *Homiliae in Hiezechihelem* | covers only chapters 1–4 and 40 | of eight harvested Ezechiel loci, cited on chapter 2 alone |
-| Cornelius a Lapide | wrote on nearly all of scripture, but never on Job or the Psalms | **zero** of the 89 Job attributions and **zero** of the 4,399 Psalms attributions, while appearing across 58 other books |
+| Cornelius a Lapide | wrote on nearly all of scripture, but never on Job or the Psalms | **zero** of the 89 Job attributions and **zero** of the 4,399 Psalms attributions, while appearing across 59 other books |
 
 The Lapide row is the strongest of the five. He is the most reflexively cited
 Catholic commentator there is; the passes cite him constantly; and across 4,399
@@ -354,42 +419,77 @@ Three passes, three empty lists, no hedging and no plausible-sounding filler.
 Returning nothing is the hardest thing to get from a model and the most
 informative thing to get from one, and here it is the correct answer.
 
-### Why nothing has been promoted
+### What was promoted, and what is still open
 
-`src/sources/commentary/passage-commentary-index.yaml` is still an empty stub:
-`passages: []`. Running the promotion now would write 9,034 work entries across
-497 passages — and a large share of those entries would be the same work counted
-twice under two titles, each fragment carrying a confidence of 0.33 or 0.67
-instead of the 1.0 the work actually earned.
+Promotion ran on **2026-07-31**, once the alias table existed.
+`src/sources/commentary/passage-commentary-index.yaml` holds **497 passages and
+7,297 work entries**, naming 341 distinct works by 86 authors, stamped
+`updated: 2026-07-31` and `harvest_runs: 6`. The 6 counts the ledger's runs; no
+passage was seen by more than three, and every entry accordingly reads `runs: 3`.
 
-You can watch it happen in the collation output as it stands: **Denis the
-Carthusian occupies four of the top fifteen slots**, as four different titles of
-what is substantially one commentary. Splitting a work in two does not merely
-duplicate a row; it demotes both halves below works that are genuinely less
-attested, which corrupts the ranking that the acquisition list exists to
-provide.
+**No confidence floor was applied.** The index records `min_confidence: 0.0`, and
+confidence is appearances over runs:
 
-What has to happen first, in order: build a work-identity registry, so that one
-work appearing under five Latin titles collapses to one entry; settle whether a
-per-book commentary is named by the whole or by the part, which is a cataloguing
-decision rather than a data problem; reconcile the two locus granularities the
-ledger carries, since three early pilot runs keyed verse ranges where the three
-full passes key chapters, so promotion would currently emit 497 passages where
-491 were harvested; and only then promote, with a confidence floor and a review
-into the source library.
+| Confidence | Entries | Share |
+| --- | --- | --- |
+| 1.0 — all three passes | 3,631 | 49.8% |
+| 0.6667 — two of three | 1,499 | 20.5% |
+| 0.3333 — one of three | 2,167 | 29.7% |
+
+So very nearly three in ten entries rest on a single asking, and they sit in the
+file beside the ones that three askings agreed on, distinguished only by the
+number.
+
+**The work-identity split is reduced, not gone.** Denis the Carthusian takes two
+of the collation's top fifteen slots — the 2nd and the 11th — and the index
+carries four Denis titles in all. The table gathers 304 of his per-book names
+under *Enarrationes in universam Bibliam* (495 passages, confidence 1.00) but
+keeps *Enarrationes in omnes libros sacrae Scripturae* (326 passages, 0.67)
+separate, because no run asserted the two whole-Bible names of each other. The
+whole-versus-part question is settled for the parts and open for the wholes.
+(This section used to say Denis held four of the top fifteen. That figure is not
+reproducible and is not restated: `promote`'s identity map was first-hit rather
+than a union at the time, so the ranking depended on the order the ledger was
+walked.)
+
+**The granularity mismatch is real and unresolved.** 490 of the index's keys are
+chapters; 7 are verse ranges, left by the three pilot runs of 2026-07-30, which
+keyed verse ranges where the three full passes key chapters. The two key spaces
+disagree about the same text:
+
+| Verse-range key | Works | Chapter row | Works | On the range but not the chapter |
+| --- | --- | --- | --- | --- |
+| Luke 21:25-21:33 | 27 | Luke 21 | 16 | 14 |
+| Romans 13:11-13:14 | 22 | Romans 13 | 15 | 13 |
+| Psalms 24:1-24:3 | 22 | Psalms 24 | 18 | 10 |
+| Psalms 24:3 | 17 | Psalms 24 | 18 | 5 |
+| Psalms 24:4 | 19 | Psalms 24 | 18 | 7 |
+| Psalms 84:8 | 17 | Psalms 84 | 15 | 8 |
+| Psalms 84:13 | 17 | Psalms 84 | 15 | 8 |
+
+Reconciling the two granularities was named here as something that had to happen
+before promotion. It did not happen, and promotion ran anyway. The commit that
+promoted records the identity fix as what unblocked it and says nothing about the
+granularity; this document does not know why it ran, and will not guess.
+
+Two smaller facts about the shape of the file. 490 chapter rows, not 491, because
+4 Esdras 2 came back empty from all three passes and `promote` writes no row for
+a passage with no works. And the corpus has outgrown the harvest since: it now
+resolves to 525 chapter loci, of which 491 have been asked about.
 
 ### What this is, plainly
 
 Model-generated leads requiring collation. Not citations, not evidence, not
-scholarship. The value is that 491 loci now have a ranked list of plausible
+scholarship. The value is that 497 passages now carry a ranked list of plausible
 pre-1900 commentators with a measured agreement figure attached to each, so that
 a human deciding what to acquire starts from an ordered list instead of a blank
 page — and knows, per entry, whether three independent askings agreed or only
-one did.
+one did. Nearly three in ten entries are the one-did case.
 
-The single most useful thing the harvest produced is not the list. It is the
-78.3%/35.3% split, which says where to spend the next effort: not on more passes,
-but on knowing what the works are called.
+The most useful thing the harvest produced is not the list. It is the 78.3%/35.3%
+split, which said where to spend the next effort: not on more passes, but on
+knowing what the works are called. That effort was spent, and it moved the title
+figure to 70.7% without asking anything again.
 
 ---
 
@@ -400,8 +500,9 @@ artifact, permanently.
 
 The reading plan records that it once used period labels it had no right to, and
 what it does not read, in verse counts, on the correct denominator. The harvest
-records the model that produced each run and the date, and a corroboration rate
-that is bad enough to block the next step.
+records the model that produced each run and the date, a corroboration rate that
+was bad enough to block the next step until a derived table lifted it, and the
+precondition that was still unmet when the next step was taken anyway.
 
 Neither disclosure was required by anything. Both are load-bearing anyway,
 because the alternative in each case is an artifact that looks finished and
@@ -412,6 +513,9 @@ readers have learned to distrust.
 
 *Sources: `src/sources/reading-plans/narrative-spine.yaml`,
 `src/sources/commentary/harvest-ledger.yaml`,
+`src/sources/commentary/work-aliases.yaml`,
+`src/sources/commentary/passage-commentary-index.yaml`,
+`src/sources/commentary/mass-commentary-corpus.yaml`,
 `src/sources/commentary/README.md`, `tools/reading-plan`, `tools/harvest`.
 Verification commands, invariants and failure modes:
 [`guidance/reading-plan-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/reading-plan-for-agents.md).*
