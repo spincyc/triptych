@@ -26,12 +26,12 @@ disagreement said out loud. The recompute commands, the invariants, and the
 failure modes are in
 [`guidance/reading-plan-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/reading-plan-for-agents.md).
 
-**[Read Salvation History](../scripture/)** — the plan itself, in three
+**[The Story of Salvation](../scripture/)** — the plan itself, in three
 lengths, with the translation of your choosing.
 
 ---
 
-## Part one — Salvation History, the reading plan
+## Part one — The Story of Salvation, the reading plan
 
 ### What the plan is
 
