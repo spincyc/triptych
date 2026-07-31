@@ -189,6 +189,15 @@ body:not(:has(> .site-header)) {
   margin: 0 0.4rem;
 }
 
+/* The review state, when it is short of collation. Set apart enough to be
+   noticed and not so much that it reads as a warning: an inspected text is a
+   text someone read, not a suspect one. */
+.fragment-source .state {
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  color: var(--section-ink);
+}
+
 /* ---------------------------------------------------------------------------
  * The two things that are not fragments
  *
