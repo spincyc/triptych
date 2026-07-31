@@ -60,6 +60,18 @@
    * Every list on this page is in a meaningful order, never an alphabetical
    * one. Alphabetical order would interleave Advent with Pentecost and file
    * the sanctoral by the spelling of a saint's name.
+   *
+   * THE ORDER ARRIVES WITH THE DATA, AND THIS PAGE DOES NOT RE-SORT IT. Each
+   * structure file lists a kind's Masses in the order its calendar source
+   * compiles them: the temporal cycle for the seasonal Masses, beginning at the
+   * First Sunday of Advent, and the civil date for everything dated. Sorting
+   * here would put a second ordering beside that one, free to disagree with it
+   * — and the sort that used to stand here did disagree. It read a calendar
+   * date out of each registry id with a pattern, so the three dated days of the
+   * Christmas octave, whose ids are "1962-12-29" and its two fellows but whose
+   * place is in the temporal cycle, were hoisted to the head of the seasonal
+   * list ahead of Advent, and the sixty commemorations whose ids end "-comm"
+   * were read as undated and exiled to the tail of the sanctoral.
    * --------------------------------------------------------------------- */
 
   // Types in the order a missal is read in, not the order they were declared.
@@ -80,43 +92,19 @@
   /**
    * The calendar date a Mass is kept on, as [month, day], or null.
    *
-   * A sanctoral entry carries it either as `date` ("08-15") or inside
-   * `registry` ("1962-08-15", "pc-08-15"). A seasonal entry carries neither —
-   * its registry is a position in the temporal cycle ("39", "pc-s01", "T02") —
-   * and must not be mistaken for one.
+   * Read from the Mass's own `date` ("08-15"), which the structure file carries
+   * because its calendar source records it. It is never read back out of the
+   * registry id: the registry conventions belong to the calendar and not to
+   * this page, a date-shaped id is not always a date and a dated entry does not
+   * always end in one.
    */
   function massDate(mass) {
-    const raw = String((mass && (mass.date || mass.registry)) || '');
-    const found = /(?:^|[^\d])(\d{2})-(\d{2})$/.exec(raw);
+    const found = /^(\d{2})-(\d{2})$/.exec(String((mass && mass.date) || ''));
     if (!found) return null;
     const month = Number(found[1]);
     const day = Number(found[2]);
     if (month < 1 || month > 12 || day < 1 || day > 31) return null;
     return [month, day];
-  }
-
-  /**
-   * Put one type's Masses in reading order.
-   *
-   * Dated Masses — the sanctoral — go in calendar-date order, which the
-   * structure files are not already in. Everything else keeps the order of the
-   * structure file, which is the temporal cycle for the seasonal Masses and is
-   * the compiler's own sequence for anything else. Never alphabetical.
-   *
-   * A type holding both is sorted date-first and file-order-after, so that
-   * neither half is scrambled by the other.
-   */
-  function orderMasses(masses) {
-    const dated = [];
-    const undated = [];
-    masses.forEach((mass, index) => {
-      const date = massDate(mass);
-      (date ? dated : undated).push({ mass: mass, index: index, date: date });
-    });
-    dated.sort((a, b) => {
-      return (a.date[0] - b.date[0]) || (a.date[1] - b.date[1]) || (a.index - b.index);
-    });
-    return dated.concat(undated).map((held) => held.mass);
   }
 
   /** The optgroup a Mass belongs in: its season, or the month it is kept in. */
@@ -144,7 +132,8 @@
     return known.concat(rest).map((kind) => ({
       kind: kind,
       label: KIND_LABELS[kind] || T.titleCase(kind),
-      masses: orderMasses(held.get(kind))
+      // In the file's own order, which is the missal's; see Order above.
+      masses: held.get(kind)
     }));
   }
 
@@ -426,14 +415,38 @@
    * Rendering
    * --------------------------------------------------------------------- */
 
+  /**
+   * One year of a cycle-varying proper: its citations and its own words.
+   *
+   * A cycle is an object and not a list of citations, because a proper may vary
+   * in kind as well as in text — an acclamation composed one year and
+   * scriptural the next — so each year carries both. Every reader of `cycles`
+   * on this page goes through here, so the shape is asserted in one place
+   * rather than assumed in four.
+   */
+  function cycleOf(proper, key) {
+    const held = (proper && proper.cycles && proper.cycles[key]) || null;
+    if (!held) return { citations: [], text: null };
+    return { citations: held.citations || [], text: held.text || null };
+  }
+
+  /** The years a proper actually varies over, in order, each carrying something. */
+  function cycleKeysOf(proper) {
+    return Object.keys((proper && proper.cycles) || {})
+      .sort()
+      .filter((key) => {
+        const cycle = cycleOf(proper, key);
+        return cycle.citations.length || cycle.text;
+      });
+  }
+
   /** Every citation a Mass carries, including each cycle's. */
   function citationsOf(mass) {
     const found = [];
     for (const proper of (mass && mass.propers) || []) {
       for (const citation of proper.citations || []) found.push(citation);
-      const cycles = proper.cycles || {};
-      for (const key of Object.keys(cycles)) {
-        for (const citation of cycles[key] || []) found.push(citation);
+      for (const key of cycleKeysOf(proper)) {
+        for (const citation of cycleOf(proper, key).citations) found.push(citation);
       }
     }
     return found;
@@ -525,13 +538,20 @@
     // A cycle-varying proper reads differently in each year of the lectionary.
     // The structure file keeps the years apart, and so does this: merging them
     // would hand the reader three readings with no way to tell which is this
-    // year's.
-    const cycles = proper.cycles || {};
-    const cycleKeys = Object.keys(cycles).filter((key) => (cycles[key] || []).length).sort();
+    // year's. A year may carry composed words instead of, or beside, a reading.
+    const cycleKeys = cycleKeysOf(proper);
     for (const key of cycleKeys) {
+      const cycle = cycleOf(proper, key);
       const block = T.el('div', 'cycle');
       block.appendChild(T.el('h4', 'cycle-name', cycleLabel(key)));
-      for (const citation of cycles[key]) {
+      if (cycle.text) {
+        const composed = T.el('p', 'composed');
+        composed.appendChild(T.el('span', 'composed-label', 'Composed text — not scripture'));
+        composed.appendChild(document.createTextNode(cycle.text));
+        composed.lang = SOURCE_LANGUAGE;
+        block.appendChild(composed);
+      }
+      for (const citation of cycle.citations) {
         block.appendChild(T.renderCitation(citation, bible, fragments, numbering));
       }
       section.appendChild(block);
@@ -558,10 +578,7 @@
     for (const proper of (mass && mass.propers) || []) {
       if (proper.text || proper.incipit) return true;
       if ((proper.citations || []).length) return true;
-      const cycles = proper.cycles || {};
-      for (const key of Object.keys(cycles)) {
-        if ((cycles[key] || []).length) return true;
-      }
+      if (cycleKeysOf(proper).length) return true;
     }
     return false;
   }

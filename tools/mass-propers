@@ -506,6 +506,15 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                 "name": mass.get("name"),
                 "season": mass.get("season"),
                 "kind": kind,
+                # The calendar date the mass is kept on, "MM-DD", exactly as the
+                # source records it, and absent where the source records none.
+                # It is carried rather than left to be read back out of the
+                # registry id: the registry conventions are the calendar's, a
+                # date-shaped id is not always a date ("1962-12-29" is a day of
+                # the temporal cycle) and a dated entry does not always end in
+                # one ("1962-03-07-comm"), so a reader that parses ids is a
+                # second derivation standing beside this one, free to disagree.
+                "date": mass.get("date"),
                 "registry": mass.get("registry"),
                 "propers": propers,
             }

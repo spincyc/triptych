@@ -593,7 +593,32 @@
    * The formulary, fetched after the argument is on screen
    * --------------------------------------------------------------------- */
 
-  function renderFormulary(node, branch, structure, rubrics) {
+  /**
+   * The year of a cycle-varying proper that this date actually falls in.
+   *
+   * A structure file keeps the years apart under `cycles`, each one an object
+   * carrying that year's citations and, where the year is composed rather than
+   * read, its own words. The Sunday cycles are keyed A, B and C and the ferial
+   * ones I and II, which is what the calendar layer states for the date; a key
+   * the lectionary does not name is not this date's, and returning nothing is
+   * right — this page shows one day, not three.
+   */
+  function cycleFor(proper, lectionary) {
+    const cycles = (proper && proper.cycles) || {};
+    const keys = Object.keys(cycles);
+    if (!keys.length || !lectionary) return null;
+    const wanted = keys.indexOf(lectionary.sunday) >= 0
+      ? lectionary.sunday
+      : (keys.indexOf(lectionary.weekday) >= 0 ? lectionary.weekday : null);
+    if (!wanted) return null;
+    const held = cycles[wanted] || {};
+    const refs = (held.citations || []).map((one) => one.ref).filter(Boolean);
+    const what = refs.length ? refs.join('; ') : (held.text ? 'composed text' : null);
+    if (!what) return null;
+    return { label: /^[A-C]$/.test(wanted) ? 'Year ' + wanted : 'Cycle ' + wanted, what: what };
+  }
+
+  function renderFormulary(node, branch, structure, rubrics, lectionary) {
     T.clear(node);
     if (!branch.winner) {
       node.appendChild(T.el('p', 'row-meta',
@@ -641,7 +666,17 @@
         if (proper.incipit) detail.appendChild(document.createTextNode(' · '));
         detail.appendChild(document.createTextNode(refs.join('; ')));
       }
-      if (!proper.incipit && !refs.length) {
+      // A proper that varies with the lectionary carries its reading under the
+      // year rather than on the proper, and this page knows which year the date
+      // falls in. Reading only the proper's own citations printed "no citation
+      // or text is compiled here" against five readings the corpus holds.
+      const cycle = cycleFor(proper, lectionary);
+      if (cycle) {
+        if (refs.length || proper.incipit) detail.appendChild(document.createTextNode(' · '));
+        detail.appendChild(T.el('span', 'formulary-cycle', cycle.label));
+        detail.appendChild(document.createTextNode(' ' + cycle.what));
+      }
+      if (!proper.incipit && !refs.length && !cycle) {
         detail.appendChild(document.createTextNode(
           proper.text ? 'composed text' : 'no citation or text is compiled here'));
       }
@@ -858,7 +893,9 @@
           'The formulary could not be fetched: ' + propersHeld.message));
         continue;
       }
-      renderFormulary(one.formulary, one.branch, propersHeld.value, rubrics);
+      renderFormulary(
+        one.formulary, one.branch, propersHeld.value, rubrics,
+        (derived.liturgicalYear && derived.liturgicalYear.lectionary) || null);
     }
   }
 

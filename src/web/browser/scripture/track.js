@@ -141,13 +141,13 @@
    * --------------------------------------------------------------------- */
 
   function fillTrackSelect() {
-    T.fillSelect(trackSelect, P.tiers(state.plan).map((tier) => {
-      const view = P.track(state.plan, tier);
-      return {
-        value: tier,
-        label: view.label + ' — ' + P.plural(view.count, 'reading')
-      };
-    }));
+    // The name alone. The reading count is a fact about the track a reader
+    // wants once they are in it, and the page states it below; repeating it in
+    // the control makes three long options out of three short ones.
+    T.fillSelect(trackSelect, P.tiers(state.plan).map((tier) => ({
+      value: tier,
+      label: P.track(state.plan, tier).label
+    })));
     if (state.tier) trackSelect.value = state.tier;
   }
 

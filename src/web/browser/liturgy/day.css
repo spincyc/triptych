@@ -27,10 +27,14 @@
 .reading-wide { max-width: none; }
 
 
-/* ---- The standing warning ---------------------------------------------- */
+/* ---- The standing warning ----------------------------------------------
+   It sits after the derivation, not before the controls: a reader who has an
+   answer on the screen is the reader who needs telling what the answer is
+   worth. Its weight is unchanged — it is still the loudest block on the page —
+   only its place. */
 
 .standing-warning {
-  margin: 0 0 1.5rem;
+  margin: 2.5rem 0 0;
   padding: 0.9rem 1.1rem;
   background: var(--notice-bg);
   border: 1px solid var(--section-line);
@@ -49,6 +53,9 @@
 }
 
 .standing-warning p { margin: 0; font-size: 0.92rem; }
+
+/* The warning and the footer are one closing block, not two separated ones. */
+.standing-warning + .page-footer { margin-top: 1.5rem; }
 
 .field input[type="date"] {
   width: 100%;
@@ -393,6 +400,15 @@
 }
 
 .formulary-detail { flex: 1 1 14rem; font-size: 0.86rem; color: var(--ink-soft); }
+
+/* Which year of the lectionary the reading beside it belongs to. */
+.formulary-cycle {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--section-ink);
+}
 
 .formulary-item.is-added {
   background: var(--section-wash);
