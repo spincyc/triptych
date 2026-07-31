@@ -214,7 +214,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
-	check-staleness explain-staleness rebaseline-doc \
+	check-staleness measure-staleness explain-staleness rebaseline-doc \
 	bibles bible review-bible check-bibles \
 	FORCE_METADATA_VERIFICATION FORCE_BIBLE_RENDER
 .DELETE_ON_ERROR:
@@ -429,7 +429,8 @@ help:
 		'make check    Run every repository policy check' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-tests  Run the complete script unit-test suite' \
-		'make check-staleness  Report editions whose research inputs changed (any provider)' \
+		'make check-staleness  Suspended 2026-07-31; reports the suspension and exits clean' \
+		'make measure-staleness  Run the suspended signal anyway, without acting on it' \
 		'make explain-staleness DOC=<leaf> [PROVIDER=<p>]  Name the changed research inputs' \
 		'make rebaseline-doc DOC=<leaf> [PROVIDER=<p>]  Clear a staleness flag after re-evaluation' \
 		'make clean    Remove transient build artifacts only'
@@ -609,8 +610,31 @@ install-altar-server-guides: review-altar-server-guides \
 		trap - 0 1 2 15
 
 # Cross-provider research staleness (policy in guidance/staleness.md).
+#
+# SUSPENDED on 31 July 2026 by the maintainer. Nothing is flagged stale until
+# the tooling settles. The signal is not merely noisy — it measures library
+# growth rather than dependency, so a paper on the virtues reported 156 changed
+# inputs, every one a Clementine verse table it does not bind — and the tooling
+# that will keep changing under these papers has further to go, so a baseline
+# taken now would be taken against a moving one. The papers are to be left
+# exactly as they are; one full pass back through the research happens when the
+# tooling has matured.
+#
+# Suspended rather than rebaselined on purpose. Rebaselining writes down that
+# the research WAS re-read against the changed inputs, which is a review that
+# did not happen. Suspension says the true thing: measurement has stopped.
+# `measure-staleness` still runs it for anyone who wants to look.
 check-staleness:
-	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) status
+	@echo 'staleness: suspended 2026-07-31; papers are left as they are until the tooling settles'
+	@echo 'staleness: nothing is rebaselined, so no paper claims a review it did not have'
+	@echo 'staleness: run `make measure-staleness` to see the raw signal'
+
+# The raw signal, for looking at rather than acting on. It exits non-zero when
+# anything is stale, which is right for a gate and wrong for a diagnostic, so
+# the status is reported and not propagated while the suspension stands.
+measure-staleness:
+	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) status || \
+		echo 'staleness: the signal above is suspended; do not act on it (see check-staleness)'
 
 explain-staleness:
 	@if [ -z '$(DOC)' ]; then \

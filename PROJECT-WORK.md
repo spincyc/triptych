@@ -48,6 +48,36 @@ external approval, and the workflow still creates no placeholder gate for a
 reviewer who is not coming. Those are statements about what is true, and
 withdrawing a scoring scheme does not make them false.
 
+## Research staleness is suspended
+
+On 31 July 2026 the maintainer suspended the research-staleness signal. Nothing
+is to be flagged stale, and **the papers are to be left exactly as they are**.
+No research is re-read, no review record is written, and no edition is
+rebaselined until the suspension is lifted.
+
+Two reasons, and the second is the larger. The signal measures the wrong thing:
+it reports a publication stale when any artifact appears under a work it cites,
+not when an input it binds changes, so a paper on the virtues reported 156
+changed inputs, every one a Clementine verse table it does not bind. And the
+tooling under these papers is still moving — the calendars, the concordance, the
+commentary chain and the source library all changed materially in a single day —
+so anything this tooling will eventually invalidate, it has not finished
+invalidating. A baseline taken now is taken against a moving one.
+
+**Suspended, deliberately not rebaselined.** Rebaselining writes down that the
+research was re-read against the changed inputs. That review did not happen, and
+recording it would put a false statement in 24 editions to make a number go to
+zero. Suspension records the true thing instead: measurement has stopped.
+
+`make check-staleness` reports the suspension and exits clean;
+`make measure-staleness` still runs the raw signal for anyone who wants to look
+at it without acting on it. Nothing in the ledger or in any paper was touched.
+
+**How this ends:** one full pass back through the research, when the tooling has
+matured — not edition by edition as the flag fires. TASK-93 repairs what
+staleness measures and is a prerequisite of that pass, not of lifting the
+suspension.
+
 Research is not limited to publicly reachable sources. On 31 July 2026 the
 maintainer withdrew the rule that had forbidden purchasing an edition, using a
 paid subscription, requesting credentials, or asking the maintainer to fund
@@ -115,10 +145,12 @@ The restarting agent must then:
    `origin/main`, and preserve unrelated changes.
 2. Confirm that `f6e9d2e2` is contained by `main`. If it is not, stop content
    work and report that integration remains open.
-3. Run `tools/tpt check-promised-deliverables`, `make check`, `make
-   check-staleness`, and `make check-source-family-screening`. The latter two
-   are expected to fail until their recorded backlogs are actually closed;
-   record changed counts rather than concealing the failures.
+3. Run `tools/tpt check-promised-deliverables` and `make check`. Do **not** act
+   on research staleness: it is suspended, `make check-staleness` reports the
+   suspension, and the papers are left as they are until the tooling settles.
+   `make check-source-family-screening` still fails, and honestly — 144 review
+   units are unscreened and marking them screened would record a review that did
+   not happen. Record the count; do not close it by writing it down.
 4. Build and verify the public artifact with `tools/tpt public-alpha check`,
    `tools/tpt public-alpha build`, and `tools/tpt public-alpha verify
    --deployment-target github-pages`; separately verify the live production
