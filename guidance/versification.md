@@ -759,6 +759,116 @@ preference:
 
 Whichever is chosen, record it. Do not ingest first and decide later.
 
+**The psalter is excluded from all of this by §6.5 below.** §6.4 says which
+source to prefer *if* something is acquired; it does not say the psalter must
+have one, and the ruling below is that it must not.
+
+### 6.5 The psalter is not a candidate for acquisition — ruling, 31 July 2026
+
+TASK-92 asked whether adopting an external versification standard could replace
+the psalm splits this project derives by hand. **It cannot, and adopting one
+would cost the project the rule that keeps those splits honest.** The ruling:
+**TVTMS stays a corroborator and does not become a source of record for the
+psalter.** Nothing here narrows §6.4 or §9.1 for the rest of the Bible, where
+TVTMS remains the preferred source on rights grounds.
+
+#### What TVTMS was checked to hold, and not hold
+
+Retrieved 31 July 2026 from the single file under
+`STEPBible-Data/Versification/` **[sourced]**. The retrieval was a summarizing
+fetch rather than a byte inspection, and it truncated inside the Psalms at
+`Psa.27`, so the quotations below are reported and not re-derived; the reach is
+stated so the next reader knows what was and was not seen.
+
+| Question | Answer |
+|---|---|
+| Header of the condensed dataset | `$Section (in Eng refs) \| English KJV \| Hebrew \| Latin \| Greek \| Unidivided or others…` |
+| Licence line the file carries | *Data created by www.STEPBible.org based on work at Tyndale House Cambridge (CC BY 4.0)* |
+| `StartDifferent` records in the condensed dataset | **none** |
+| `StartDifferent` in any Psalms row read — Psalms 1-27, containing 4 of the 16 | **none** |
+| Where the file's own glossary illustrates `StartDifferent` | `Num.26:1` and `Rev.13:1`, neither in the Psalms |
+| What the flagged psalms carry instead | `SubdividedVerse` and `MergedPrevVerse` — e.g. a `Psa.2:12` row against `Psa.2:12-13`, which is flagged Psalm 2 |
+| How a psalm title is addressed | as a pseudo-verse, `Psa.3:Title`, against `Absent [=Psa.3:1]` in the tradition that leaves it unnumbered |
+
+So §8.0's claim survives an independent check: the one relation that would model
+a displaced boundary is not used in the Psalms, and the condensed ruleset — the
+human-curated half of the file — does not use it at all. **The standard does not
+omit the displacement by oversight. It declines it on purpose**, in the sentence
+already quoted at §3.2: *"Occasionally it is better to leave versification
+uncorrected … The difference is equivalent to moving the verse division by a few
+words, and a correction will merely add confusion."* That is the same judgement
+this project reached from the other side, and the reason `displaced` records
+that a boundary moved and refuses to say where.
+
+#### Adoption would add a table, not remove one
+
+The test is the repository's standing rule: **one derived table, and no
+hand-typed restatement left beside it** — the rule exists because the restated
+copies disagreed and hid a bad reference (§4b). Adoption fails it.
+
+**[verified]** measuring the tracked concordance: 219 rows tile all **2 528**
+verses of the psalter, and exactly **6** of them have all three systems agreeing.
+It is a *total tiling of a printed edition*. TVTMS is a *divergence record* —
+like a §8.0 projection, it writes nothing where the traditions agree. A
+divergence record cannot supply extents, so the tracked editions' printed verses
+would stay the authority for every bound and TVTMS would sit beside them as a
+second statement requiring reconciliation on load (§6.3). That is the second
+table.
+
+Four things the concordance holds that no tradition-level standard can:
+
+| Held here | Why an external standard cannot hold it |
+|---|---|
+| The extents of 2 528 printed verses | it records divergences, not a tiling; the numbers come from the tracked edition |
+| `printed_douay_rheims` — two rows, at Vg 9:22-39 and Vg 113:9-26, where the Douay restarts at 1 under its own running head | a fact about one printing. §3.3's `canon_vulg.h` note is the standard-makers' own admission that a scheme supersets editions rather than describing one |
+| `english_offset_uniform` | not a TVTMS field at all. The sixteen are *derived* from TVTMS by unioning detectors over its Latin column; the derivation is this project's judgement, and it has already been run |
+| Every bound validated against the edition on load | TVTMS validates against the traditions it was compiled from, not against this library |
+
+The sixteen would therefore still be a project judgement after adoption. Nothing
+becomes deletable: `english_verse` would refuse the same sixteen for the same
+reason, `_projection.displaced_psalms()` would still write a row with no target,
+and the site would serve exactly what it serves now — at the cost of a 5.8 MB
+tracked file to derive 219 rows, plus a licence obligation.
+
+#### The licence obligation, stated exactly
+
+TVTMS is **CC BY 4.0**: compatible, and not free. Ingesting it turns
+`psalm-numbering.tsv` from a table the project owns outright into a derivative
+that must be attributed. Three placements, all required **before** ingest:
+
+1. `…/artifacts/psalm-numbering-*/artifact.toml` — `rights_status` moves from
+   `project-created` to `licensed` (both are in `source-library`'s
+   `RIGHTS_STATUSES` and `TRACKABLE_RIGHTS`, so the artifact stays trackable),
+   and `rights_basis` names STEPBible.org, Tyndale House Cambridge, CC BY 4.0,
+   the retrieved file, and the changes made to it.
+2. `THIRD_PARTY.md` — a paragraph under *Retained Reusable Source Artifacts*, on
+   the model of the CSEL 40 entry: who made it, under which licence, and that
+   reusers must retain attribution and indicate changes.
+3. `LICENSES/` already carries `CC-BY-4.0.txt`; no new licence text is needed.
+
+The artifact today says the project "claims no exclusive right in the underlying
+facts." That sentence would have to go, and it is worth more than the
+acquisition.
+
+#### What would overturn this
+
+- **TVTMS using `StartDifferent`, or any equivalent, in the Psalms.** Then the
+  standard could say *where* a boundary moved, `displaced` could resolve, and the
+  case for adoption becomes a case for something this project cannot derive at
+  all. This is the one finding that changes the answer, and it is the one to
+  re-check if the file is ever re-read.
+- **A psalter entering the library in a numbering the concordance does not
+  carry**, so that the tiling would have to be authored rather than read.
+- **Acquisition for the rest of the Bible proceeding under §9.1**, which would
+  make TVTMS tracked anyway and drop the marginal cost of the psalter to the
+  reconciliation alone. Smaller than it looks — the reconciliation is the
+  expensive part — but a real change of facts.
+
+Absent one of those, the psalter's numbering is settled: derived from one tracked
+table, that table read from the editions it describes, the sixteen it flags
+confirmed by an external standard, and **the confirmation recorded rather than
+tracked**. A corroborator does not have to be vendored to have done its work.
+
 ---
 
 ## 7. The hard cases
@@ -1459,7 +1569,7 @@ candidates as they appear.
 
 | Item | Buys | Rights |
 |---|---|---|
-| A Vulgate↔`org` mapping — TVTMS preferred, Copenhagen `vul.json` measured in §6 | 13 of the open cases, including Exodus 22, Hosea 2, Wisdom 6, Mark 9, John 6, Acts 14, and two of the clamps | TVTMS CC BY 4.0; Copenhagen CC BY-SA 4.0 — see §6.4 |
+| A Vulgate↔`org` mapping — TVTMS preferred, Copenhagen `vul.json` measured in §6. **The psalter is excluded (§6.5)** | 13 of the open cases, including Exodus 22, Hosea 2, Wisdom 6, Mark 9, John 6, Acts 14, and two of the clamps | TVTMS CC BY 4.0; Copenhagen CC BY-SA 4.0 — see §6.4 |
 | `org` / `lxx` extents | system bounds for gap and overlap checks | as above |
 | Nova Vulgata extents | the one system with no witness and no full published mapping. Note it agrees with the Vulgate on Sirach and with the NAB on Hosea and Wisdom 6 (§5) | numbering only |
 | NAB / US Lectionary extents | *Liturgiam authenticam* §37 makes the Lectionary's numbering free to differ, and it does — Sirach throughout, Wisdom 17 | numbering only |
@@ -1467,6 +1577,17 @@ candidates as they appear.
 **Validate on ingest against the tracked inventories before trusting anything.**
 §6.2's 1311/1318 and 1298/1318 figures are that validation performed once; make
 it a gate.
+
+**Where the retrieval itself would live.** Nothing in `tools/` may open a socket
+outside the acquisition group, so an acquisition here is not a script beside the
+data: it is a verb on the harvest tool, declared `NETWORK` in
+`scripts/_tooling.py`'s `REACHES` table, with `tools/tests/test_tool_registry.py`
+proving the body and the declaration agree. One verb suffices — retrieve the
+named upstream file to a path the operator gives, record its URL, retrieval date
+and sha256, and write nothing into `src/sources/` itself; registering the
+artifact stays a separate, offline step, so the fetch is re-runnable and the
+rights decision of §6.4 still has to be made by hand before anything is tracked.
+**No such verb exists today, and §6.5 means the psalter does not need one.**
 
 **Two specific ingest checks that a generic gate would miss:**
 
@@ -1604,6 +1725,10 @@ than a number. This proposal extends that belief to the rest of the Bible.
 - [ ] Acquired scheme validated against tracked inventories on ingest; Sirach
       order and superset-versus-inventory checked (§9.1); rights basis recorded
       in `THIRD_PARTY.md` before ingest, not after.
+- [ ] Nothing acquired for the psalter. §6.5 rules it out: the concordance is a
+      total tiling of a tracked edition, an external standard is a divergence
+      record, and adopting one would add a second table rather than replace the
+      first.
 - [ ] System names specific enough to distinguish two states of one tradition
       (§7.4) — not a bare `vulgate` or `greek`.
 - [ ] Per-citation `numbering` declaration added; `citation_divergences`
