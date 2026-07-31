@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-14-2-paralipomenon-9c43291f"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "eBible.org dedicates the World English Bible to the public domain: “The World English Bible is in the Public Domain. That means that it is not copyrighted,” and the copyright page distributed inside this release adds that the translators “freely give it to you by dedicating it to the Public Domain.” The only stated condition is a trademark one and not a copyright one: “World English Bible” is a trademark of eBible.org, and a changed text may not be called the World English Bible. This derivative changes no wording. It carries only the scripture text with a mechanical reference column, and none of the translators' footnotes, Strong's-number annotations, section headings, psalm inscriptions, book introductions, or front matter, so it is a reference index into the translation rather than a republication of it under the name."
+rights_jurisdiction = "United States"
+derived_from = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.ebible-usfm-d4901f9f"
+transformation = "Parse the USFM of eBible.org's eng-web-c release into one verse per line. Read \\c for the chapter and \\v for the verse, join a verse's continuation lines with single spaces, and take the text between one \\v and the next. Drop the content of \\f and \\fe footnotes, \\x cross references and \\fig figures entirely, and drop the whole of every heading-class marker with its text — \\s section headings, \\ms major-section headings, \\r and \\sr parallel references, \\sp speaker labels, \\d psalm inscriptions, \\cl chapter labels and the \\id, \\h, \\toc and \\mt identification block — because a heading standing between two verses is not part of either and would otherwise be joined to the verse before it. Unwrap character markup, keeping the words it encloses: \\w gloss|strong=\"H1234\"\\w* becomes the gloss alone, the Strong's number being an annotation and not text, and \\add, \\nd, \\wj, \\qt, \\tl and \\bk lose their wrappers. Discard every remaining marker, which is paragraph, poetry and table structure rather than text. Collapse runs of whitespace to one space and strip the ends. Emit \"book<TAB>chapter<TAB>verse<TAB>text<TAB>usfm\" with a header line, LF terminated. Book tokens are the Douay-Rheims tokens registered in that edition's book index, so a citation resolves to the same book in either edition; the mapping is by USFM book code and not by file order, because eBible.org orders the deuterocanonical books differently from the Douay-Rheims, and every book's chapter count was checked against the Douay-Rheims before the mapping was accepted. Two codes are mapped deliberately and are recorded in the book index: ESG, which this release prints as its Esther, and DAG, which it prints as its Daniel."
+indexable = true
+encoding = "utf-8"
+notes = "2 Chronicles (2Par): 36 chapters and 822 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are this edition's own, which are the Hebrew and Greek ones, not the Vulgate numbers the 1962 Missal cites; the book index records where the two differ."
+retrieved = "2026-07-31"
+sha256 = "9c43291f4b9047832001157fbd4256cad571433539dd3d3a3500692cfc21fd3f"
+byte_size = 146837
+path = "src/sources/works/ebible-org/world-english-bible/editions/catholic-eng-web-c/artifacts/verse-text-14-2-paralipomenon-9c43291f/14-2-paralipomenon.tsv"

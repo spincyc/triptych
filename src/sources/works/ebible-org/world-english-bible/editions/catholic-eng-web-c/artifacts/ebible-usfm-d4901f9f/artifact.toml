@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.ebible-usfm-d4901f9f"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_type = "structured-text"
+media_type = "application/zip"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "eBible.org dedicates the World English Bible to the public domain: “The World English Bible is in the Public Domain. That means that it is not copyrighted,” and the copyright page distributed inside this release adds that the translators “freely give it to you by dedicating it to the Public Domain.” The only stated condition is a trademark one and not a copyright one: “World English Bible” is a trademark of eBible.org, and a changed text may not be called the World English Bible. This derivative changes no wording. It carries only the scripture text with a mechanical reference column, and none of the translators' footnotes, Strong's-number annotations, section headings, psalm inscriptions, book introductions, or front matter, so it is a reference index into the translation rather than a republication of it under the name."
+rights_jurisdiction = "United States"
+source_url = "https://eBible.org/Scriptures/eng-web-c_usfm.zip"
+provenance = "eBible.org's USFM distribution package for eng-web-c, the World English Bible with the traditional Catholic book set, downloaded and hashed on 2026-07-31. Not retained: the verse text extracted from it is registered as tracked artifacts under this edition, and its footnotes, Strong's annotations, headings and front matter are not used."
+retrieved = "2026-07-31"
+sha256 = "d4901f9f788d1ea1b15bf1477f44f3518b3d7e8a064d5a0e67c2297613f1a08e"
+byte_size = 3085916
+notes = "73 USFM files, one per book, in the Catholic book order, plus the copyright page and stylesheet the package ships with. The Greek Esther and the Greek Daniel stand under the USFM codes ESG and DAG."

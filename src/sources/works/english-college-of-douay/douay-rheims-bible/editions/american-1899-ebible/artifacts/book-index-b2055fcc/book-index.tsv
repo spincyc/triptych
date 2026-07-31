@@ -1,0 +1,74 @@
+ordinal	token	file	testament	edition_title	douay_title	modern_name	missal_latin_abbreviation	alternate_names	chapters	verses	note
+1	Gen	01-genesis.tsv	old	The First Book of Moses, Commonly Called Genesis	The Book of Genesis	Genesis	Gen.	Gn	50	1531	Chapter 5 has 32 verses here against the Challoner text's 31: this edition divides 5:32 where the vendored Challoner e-text runs it into 5:31.
+2	Ex	02-exodus.tsv	old	The Second Book of Moses, Commonly Called Exodus	The Book of Exodus	Exodus	Exod.	Ex	40	1211	
+3	Lev	03-leviticus.tsv	old	The Third Book of Moses, Commonly Called Leviticus	The Book of Leviticus	Leviticus	Levit.	Lev	27	858	
+4	Num	04-numbers.tsv	old	The Fourth Book of Moses, Commonly Called Numbers	The Book of Numbers	Numbers	Num.	Nm	36	1288	
+5	Deut	05-deuteronomy.tsv	old	The Fifth Book of Moses, Commonly Called Deuteronomy	The Book of Deuteronomy	Deuteronomy	Deut.	Dt	34	959	
+6	Jos	06-josue.tsv	old	The Book of Joshua	The Book of Josue	Joshua	Jos.	Josue; Jos	24	658	
+7	Judg	07-judges.tsv	old	The Book of Judges	The Book of Judges	Judges	Judic.	Jdg; Judg	21	618	
+8	Ruth	08-ruth.tsv	old	The Book of Ruth	The Book of Ruth	Ruth	Ruth	Rt	4	85	
+9	1Kings	09-1-kings.tsv	old	The First Book of Samuel	The First Book of Samuel, otherwise called the First Book of Kings	1 Samuel	1 Reg.	1 Kings; 1 Samuel; 1 Sm	31	811	TRAP: the Douay “First Book of Kings” is modern 1 Samuel. A modern “1 Kings” citation is Douay 3 Kings.
+10	2Kings	10-2-kings.tsv	old	The Second Book of Samuel	The Second Book of Samuel, otherwise called the Second Book of Kings	2 Samuel	2 Reg.	2 Kings; 2 Samuel; 2 Sm	24	695	TRAP: the Douay “Second Book of Kings” is modern 2 Samuel. Chapter 13 has 39 verses here against the Challoner text's 38.
+11	3Kings	11-3-kings.tsv	old	The First Book of Kings	The Third Book of Kings	1 Kings	3 Reg.	3 Kings; 1 Kings (modern)	22	817	TRAP: Douay 3 Kings is modern 1 Kings.
+12	4Kings	12-4-kings.tsv	old	The Second Book of Kings	The Fourth Book of Kings	2 Kings	4 Reg.	4 Kings; 2 Kings (modern)	25	719	TRAP: Douay 4 Kings is modern 2 Kings.
+13	1Par	13-1-paralipomenon.tsv	old	The First Book of Chronicles	The First Book of Paralipomenon	1 Chronicles	1 Paral.	1 Paralipomenon; 1 Par	29	940	
+14	2Par	14-2-paralipomenon.tsv	old	The Second Book of Chronicles	The Second Book of Paralipomenon	2 Chronicles	2 Paral.	2 Paralipomenon; 2 Par	36	822	
+15	1Esd	15-1-esdras.tsv	old	The Book of Ezra	The First Book of Esdras	Ezra	1 Esdr.	1 Esdras; Esdras	10	280	
+16	2Esd	16-2-esdras.tsv	old	The Book of Nehemiah	The Book of Nehemias, which is called the Second of Esdras	Nehemiah	2 Esdr.	2 Esdras; Nehemias; Neh	13	404	
+17	Tob	17-tobias.tsv	old	Tobit	The Book of Tobias	Tobit	Tob.	Tobias; Tb	14	298	
+18	Jdt	18-judith.tsv	old	Judith	The Book of Judith	Judith	Judith	Jdt	16	345	
+19	Esth	19-esther.tsv	old	The Book of Esther	The Book of Esther	Esther	Esth.	Est	16	275	Sixteen chapters and 275 verses, agreeing with the Challoner text; the Vulgate additions stand at 10:4-16:24.
+20	Job	20-job.tsv	old	The Book of Job	The Book of Job	Job	Job	Jb	42	1070	
+21	Ps	21-psalms.tsv	old	The Psalms	The Book of Psalms	Psalms	Ps.	Psalmi; Pss	150	2530	Psalm numbers are the Vulgate and Septuagint numbers the 1962 Missal cites, and the psalm inscription is numbered as verse 1, as in the Challoner text. TRAP: two psalms are renumbered. The Vulgate prints Psalm 115 with the numbering it had before the Hebrew split, verses 10 to 19, and Psalm 147 likewise as verses 12 to 20; this edition restarts both at verse 1, so its Psalm 115 runs 1-10 and its Psalm 147 runs 1-9. A citation of Psalm 115:10, which the Vulgate opens the psalm with, would otherwise resolve here to “In the courts of the house of the Lord”, its last verse, and it is withheld in the verse-alias table. Psalm 147:12-20 falls past the end of the chapter this edition prints and refuses for want of the verses. Psalms 9 and 113 are NOT renumbered: this edition keeps them joined at 39 and 26 verses exactly as the Challoner text does. Two verse divisions are restored that no Douay-Rheims printing has: 28:11 and 150:6, so the psalter has 2530 verses against the Challoner text's 2528.
+22	Prov	22-proverbs.tsv	old	The Proverbs	The Book of Proverbs	Proverbs	Prov.	Prv	31	915	
+23	Eccles	23-ecclesiastes.tsv	old	Ecclesiates or, The Preacher	Ecclesiastes	Ecclesiastes	Eccle.	Qoheleth; Eccl	12	222	TRAP: the Missal abbreviation “Eccle.” is Ecclesiastes; “Eccli.” is Ecclesiasticus, which is under token Ecclus.
+24	Cant	24-canticle-of-canticles.tsv	old	The Song of Solomon	Solomon’s Canticle of Canticles	Song of Songs	Cant.	Canticle of Canticles; Song of Solomon; Sg	8	116	
+25	Wis	25-wisdom.tsv	old	The Wisdom of Solomon	The Book of Wisdom	Wisdom	Sap.	Sapientia; Ws	19	439	
+26	Ecclus	26-ecclesiasticus.tsv	old	The Wisdom of Jesus the Son of Sirach, or Ecclesiasticus	Ecclesiasticus	Sirach	Eccli.	Ecclesiasticus; Sir	51	1591	TRAP: “Eccli.” is this book, not Ecclesiastes.
+27	Is	27-isaias.tsv	old	The Book of the Prophet Isaiah	The Prophecy of Isaias	Isaiah	Is.	Isaias; Isa	66	1292	
+28	Jer	28-jeremias.tsv	old	The Book of the Prophet Jeremiah	The Prophecy of Jeremias	Jeremiah	Jer.	Jeremias	52	1363	
+29	Lam	29-lamentations.tsv	old	The Lamentations of Jeremiah	The Lamentations of Jeremias	Lamentations	Thren.	Threni; Lam	5	154	
+30	Bar	30-baruch.tsv	old	Baruch	The Prophecy of Baruch	Baruch	Bar.	Bar	6	213	
+31	Ezech	31-ezechiel.tsv	old	The Book of Ezekiel	The Prophecy of Ezechiel	Ezekiel	Ezech.	Ezechiel; Ez	48	1272	
+32	Dan	32-daniel.tsv	old	The Book of Daniel	The Prophecy of Daniel	Daniel	Dan.	Dn	14	531	The Vulgate additions stand inline as in the Challoner text: the Prayer of Azarias and the Canticle of the Three Children at 3:24-90, Susanna as chapter 13, Bel and the Dragon as chapter 14. Fourteen chapters and 531 verses, agreeing with the Challoner text.
+33	Os	33-osee.tsv	old	The Book of Hosea	The Prophecy of Osee	Hosea	Os.	Osee; Hos	14	198	
+34	Joel	34-joel.tsv	old	The Book of Joel	The Prophecy of Joel	Joel	Joel	Jl	3	73	
+35	Amos	35-amos.tsv	old	The Book of Amos	The Prophecy of Amos	Amos	Amos	Am	9	147	Chapter 9 has 15 verses here against the Challoner text's 14.
+36	Abd	36-abdias.tsv	old	The Book of Obadiah	The Prophecy of Abdias	Obadiah	Abd.	Abdias; Ob	1	21	
+37	Jon	37-jonas.tsv	old	The Book of Jonah	The Prophecy of Jonas	Jonah	Jonae	Jonas; Jon	4	48	
+38	Mich	38-micheas.tsv	old	The Book of Micah	The Prophecy of Micheas	Micah	Mich.	Micheas; Mic	7	104	
+39	Nah	39-nahum.tsv	old	The Book of Nahum	The Prophecy of Nahum	Nahum	Nah.	Na	3	47	
+40	Hab	40-habacuc.tsv	old	The Book of Habakkuk	The Prophecy of Habacuc	Habakkuk	Hab.	Habacuc	3	56	
+41	Soph	41-sophonias.tsv	old	The Book of Zephaniah	The Prophecy of Sophonias	Zephaniah	Soph.	Sophonias; Zep	3	53	
+42	Agg	42-aggeus.tsv	old	The Book of Haggai	The Prophecy of Aggeus	Haggai	Agg.	Aggeus; Hag	2	38	
+43	Zach	43-zacharias.tsv	old	The Book of Zechariah	The Prophecy of Zacharias	Zechariah	Zach.	Zacharias; Zec	14	211	
+44	Mal	44-malachias.tsv	old	The Book of Malachi	The Prophecy of Malachias	Malachi	Mal.	Malachias	4	55	
+45	1Mach	45-1-machabees.tsv	old	The First Book of the Maccabees	The First Book of Machabees	1 Maccabees	1 Mach.	1 Machabees; 1 Mc	16	929	
+46	2Mach	46-2-machabees.tsv	old	The Second Book of the Maccabees	The Second Book of Machabees	2 Maccabees	2 Mach.	2 Machabees; 2 Mc	15	558	
+47	Matt	47-matthew.tsv	new	The Good News According to Matthew	The Holy Gospel of Jesus Christ according to St. Matthew	Matthew	Matt.	Mt	28	1070	
+48	Mark	48-mark.tsv	new	The Good News According to Mark	The Holy Gospel of Jesus Christ according to St. Mark	Mark	Marc.	Mk	16	677	
+49	Luke	49-luke.tsv	new	The Good News According to Luke	The Holy Gospel of Jesus Christ according to St. Luke	Luke	Luc.	Lk	24	1151	
+50	John	50-john.tsv	new	The Good News According to John	The Holy Gospel of Jesus Christ according to St. John	John	Joan.	Jn	21	880	Chapter 11 has 57 verses here against the Challoner text's 56, which runs 11:56 and 11:57 together; the Challoner edition registers that locus as a passage record.
+51	Acts	51-acts.tsv	new	The Acts of the Apostles	The Acts of the Apostles	Acts	Act.	Acts of the Apostles	28	1004	
+52	Rom	52-romans.tsv	new	Paul’s Letter to the Romans	The Epistle of St. Paul the Apostle to the Romans	Romans	Rom.	Rm	16	433	
+53	1Cor	53-1-corinthians.tsv	new	Paul’s First Letter to the Corinthians	The First Epistle of St. Paul to the Corinthians	1 Corinthians	1 Cor.	1 Co	16	437	
+54	2Cor	54-2-corinthians.tsv	new	Paul’s Second Letter to the Corinthians	The Second Epistle of St. Paul to the Corinthians	2 Corinthians	2 Cor.	2 Co	13	256	Chapter 1 has 24 verses here against the Challoner text's 23.
+55	Gal	55-galatians.tsv	new	Paul’s Letter to the Galatians	The Epistle of St. Paul to the Galatians	Galatians	Gal.	Ga	6	149	
+56	Eph	56-ephesians.tsv	new	Paul’s Letter to the Ephesians	The Epistle of St. Paul to the Ephesians	Ephesians	Ephes.	Eph	6	155	
+57	Phil	57-philippians.tsv	new	Paul’s Letter to the Philippians	The Epistle of St. Paul to the Philippians	Philippians	Philipp.	Php	4	104	TRAP: the token Phil is Philippians; Philemon is Philem.
+58	Col	58-colossians.tsv	new	Paul’s Letter to the Colossians	The Epistle of St. Paul to the Colossians	Colossians	Coloss.	Col	4	95	
+59	1Thess	59-1-thessalonians.tsv	new	Paul’s First Letter to the Thessalonians	The First Epistle of St. Paul to the Thessalonians	1 Thessalonians	1 Thess.	1 Th	5	88	
+60	2Thess	60-2-thessalonians.tsv	new	Paul’s Second Letter to the Thessalonians	The Second Epistle of St. Paul to the Thessalonians	2 Thessalonians	2 Thess.	2 Th	3	46	
+61	1Tim	61-1-timothy.tsv	new	Paul’s First Letter to Timothy	The First Epistle of St. Paul to Timothy	1 Timothy	1 Tim.	1 Tm	6	113	
+62	2Tim	62-2-timothy.tsv	new	Paul’s Second Letter to Timothy	The Second Epistle of St. Paul to Timothy	2 Timothy	2 Tim.	2 Tm	4	83	
+63	Tit	63-titus.tsv	new	Paul’s Letter to Titus	The Epistle of St. Paul to Titus	Titus	Tit.	Tt	3	46	
+64	Philem	64-philemon.tsv	new	Paul’s Letter to Philemon	The Epistle of St. Paul to Philemon	Philemon	Philem.	Phm	1	25	
+65	Heb	65-hebrews.tsv	new	The Letter to the Hebrews	The Epistle of St. Paul to the Hebrews	Hebrews	Hebr.	Heb	13	303	
+66	James	66-james.tsv	new	The Letter from James	The Catholic Epistle of St. James the Apostle	James	Jac.	Jas	5	108	
+67	1Pet	67-1-peter.tsv	new	Peter’s First Letter	The First Epistle of St. Peter the Apostle	1 Peter	1 Pet.	1 P	5	105	
+68	2Pet	68-2-peter.tsv	new	Peter’s Second Letter	The Second Epistle of St. Peter the Apostle	2 Peter	2 Pet.	2 P	3	61	
+69	1John	69-1-john.tsv	new	John’s First Letter	The First Epistle of St. John the Apostle	1 John	1 Joan.	1 Jn	5	105	
+70	2John	70-2-john.tsv	new	John’s Second Letter	The Second Epistle of St. John the Apostle	2 John	2 Joan.	2 Jn	1	13	
+71	3John	71-3-john.tsv	new	John’s Third Letter	The Third Epistle of St. John the Apostle	3 John	3 Joan.	3 Jn	1	14	
+72	Jude	72-jude.tsv	new	The Letter from Jude	The Catholic Epistle of St. Jude the Apostle	Jude	Judae	Jud	1	25	TRAP: Jude is the epistle; Judith is Jdt and Judges is Judg.
+73	Apoc	73-apocalypse.tsv	new	The Revelation to John	The Apocalypse of St. John the Apostle	Revelation	Apoc.	Apocalypse; Rv	22	405	

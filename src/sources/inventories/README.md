@@ -156,7 +156,20 @@ and match at least one pattern. A screened unit pins a
 `family_screening_snapshot` covering family identity boundaries and trace
 patterns; adding a family or changing those screening semantics returns the
 unit to pending on refresh. Migration-only changes such as priority or storage
-do not invalidate source-surface screening. The top-level
+do not invalidate source-surface screening.
+
+That reset is the default and is correct whenever the new family's semantics
+were not actually carried through the screened surface. Refresh compares each
+unit's pinned snapshot against the one computed from the ledger as it stands on
+disk, so an operator who has genuinely rescreened may keep the completed review
+by doing the rescreen and the re-pin together, by hand, before running refresh:
+evaluate the added family's `trace_patterns` over every owner's pinned files,
+record any match as `family_presence`, and only then write the new snapshot onto
+each unit that is still `family-screened`. Re-pinning without that scan asserts
+a screening that never happened, and the tool cannot detect the difference.
+Choose narrow patterns for exactly that reason — a bare surname or a common
+title matches unrelated prose and manufactures presence a later reader will
+trust. The top-level
 `canonical_catalog_snapshot` hashes every canonical source manifest's path and
 bytes, so new records or changes to rights, storage, relationships, hashes, or
 other manifest metadata force a fresh ledger review.

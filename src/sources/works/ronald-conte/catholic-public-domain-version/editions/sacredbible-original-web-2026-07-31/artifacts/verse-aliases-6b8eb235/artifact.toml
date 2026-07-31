@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31.verse-aliases-6b8eb235"
+edition_id = "edition.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table containing no third-party text."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-07-31 from the extracted text of this edition, checked book by book against both the Douay-Rheims Challoner text and the Clementine Vulgate registered in this library. This version merges no verse away and so every row is a withholding. All but one are in Esther. The translator prints Esther in the Septuagint arrangement rather than the Vulgate's, with the Greek additions standing where the Greek puts them instead of gathered into an appendix after chapter 10, and in fifteen chapters against the Vulgate's sixteen. Not one chapter of it corresponds: this edition's 1:1 is the Vulgate's 11:2, its 3:1 is the Vulgate's 1:1, its 4:17 is Assuerus loving Esther above all the women where the Vulgate's 4:17 is Mardochai doing as Esther commanded, and its 13:9 is part of the king's letter where the Vulgate's is the prayer O Lord, Lord, almighty king. The whole book is therefore withheld rather than resolved: a verse-for-verse correspondence would have to be established by reading all 274 verses against the Vulgate's 275, and until that is done a refusal is the only answer that cannot be mistaken for the text. Every other book of this version answers a Vulgate citation directly. Eight of them carry one more or one fewer verse division than the Clementine, in 2 Kings 13, Isaias 45, Amos 9, John 11, 2 Corinthians 1, 1 Thessalonians 4, 2 Thessalonians 2 and Ecclesiasticus 29, and the Canticle of Canticles carries eleven more; those are recorded in the book index rather than here, because the chapters they fall in are still addressable and a withholding would refuse text a citation would otherwise reach correctly. The one row outside Esther is Psalm 115:10. This edition restarts Psalms 115 and 147 at verse 1 where the Vulgate prints them as verses 10-19 and 12-20, so its 115:10 is the Vulgate's 115:19. Psalm 147:12-20 falls past the end of the nine verses printed here and is refused before any alias is consulted, so no row can or need carry it; Psalm 115:10 does not, and is withheld. The correspondence is deliberately not resolved instead, because the reader clamps a range to a chapter's last printed verse before the alias table is read, so a resolution would answer Psalm 115:10-19 with one verse and it would read as ten."
+indexable = true
+encoding = "utf-8"
+notes = "Every row is a withholding covering the whole of Esther, whose fifteen chapters this version arranges as the Septuagint does and not as the Vulgate does, with one further row for Psalm 115:10, which this version renumbers. An empty resolves_to means a citation naming that locus cannot be answered from this edition, whatever it prints at those numbers. No verse of this edition is merged away, so no row of the other kind is needed."
+retrieved = "2026-07-31"
+sha256 = "6b8eb2352261bfebefba5920ea178f1a748255a9aff5a3f6a2d1965772ecf6cb"
+byte_size = 157629
+path = "src/sources/works/ronald-conte/catholic-public-domain-version/editions/sacredbible-original-web-2026-07-31/artifacts/verse-aliases-6b8eb235/verse-aliases.tsv"

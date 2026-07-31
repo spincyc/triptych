@@ -1,0 +1,54 @@
+ordinal	token	file	testament	edition_title	douay_title	modern_name	missal_latin_abbreviation	alternate_names	chapters	verses	note
+1	Gen	01-genesis.tsv	old	Genesis	The Book of Genesis	Genesis	Gen.	Gn	50	1532	
+2	Ex	02-exodus.tsv	old	Exodus	The Book of Exodus	Exodus	Exod.	Ex	40	1166	
+3	Lev	03-leviticus.tsv	old	Leviticus	The Book of Leviticus	Leviticus	Levit.	Lev	27	859	
+4	Num	04-numbers.tsv	old	Numbers	The Book of Numbers	Numbers	Num.	Nm	36	1288	
+5	Deut	05-deuteronomy.tsv	old	Deuteronomy	The Book of Deuteronomy	Deuteronomy	Deut.	Dt	34	958	
+6	Jos	06-joshua.tsv	old	Joshua	The Book of Josue	Joshua	Jos.	Josue; Jos	24	659	
+7	Judg	07-judges.tsv	old	Judges	The Book of Judges	Judges	Judic.	Jdg; Judg	21	618	
+8	Ruth	08-ruth.tsv	old	Ruth	The Book of Ruth	Ruth	Ruth	Rt	4	85	
+9	1Kings	09-1-samuel.tsv	old	Kings I	The First Book of Samuel, otherwise called the First Book of Kings	1 Samuel	1 Reg.	1 Kings; 1 Samuel; 1 Sm	31	792	TRAP: the token 1Kings is the Douay-Rheims token for this book, which the Septuagint calls the first book of Kingdoms and modern versions call 1 Samuel.
+10	2Kings	10-2-samuel.tsv	old	Kings II	The Second Book of Samuel, otherwise called the Second Book of Kings	2 Samuel	2 Reg.	2 Kings; 2 Samuel; 2 Sm	24	697	TRAP: the token 2Kings is the Douay-Rheims token for modern 2 Samuel.
+11	3Kings	11-1-kings.tsv	old	Kings III	The Third Book of Kings	1 Kings	3 Reg.	3 Kings; 1 Kings (modern)	22	823	TRAP: Douay 3 Kings is modern 1 Kings.
+12	4Kings	12-2-kings.tsv	old	Kings IV	The Fourth Book of Kings	2 Kings	4 Reg.	4 Kings; 2 Kings (modern)	25	723	TRAP: Douay 4 Kings is modern 2 Kings.
+13	1Par	13-1-chronicles.tsv	old	Chronicles I	The First Book of Paralipomenon	1 Chronicles	1 Paral.	1 Paralipomenon; 1 Par	29	931	
+14	2Par	14-2-chronicles.tsv	old	Chronicles II	The Second Book of Paralipomenon	2 Chronicles	2 Paral.	2 Paralipomenon; 2 Par	36	832	
+15	1Esd	15-ezra.tsv	old	Ezra and Nehemiah	The First Book of Esdras	Ezra	1 Esdr.	1 Esdras; Esdras	23	669	WARNING: this file is the Septuagint's second book of Esdras entire, which is Ezra and Nehemias run together in one book of 23 chapters: its chapters 1-10 are Ezra and its chapters 11-23 are Nehemias. The same thirteen chapters are also registered here under token 2Esd with the numbering 1-13 that every other edition in this library uses, so those verses stand twice, once under each addressing convention, and a consumer must not count them twice.
+16	2Esd	16-nehemiah.tsv	old	NEHEMIAH	The Book of Nehemias, which is called the Second of Esdras	Nehemiah	2 Esdr.	2 Esdras; Nehemias; Neh	13	389	Nehemias, numbered 1-13 as the Vulgate numbers it. The same text also stands as chapters 11-23 of the book under token 1Esd, which is how this edition's own file numbers it.
+17	1Esdras	17-1-esdras.tsv	septuagint	Esdras I		1 Esdras			9	448	NOT in the Catholic canon. The Septuagint's first book of Esdras, which the Vulgate prints in an appendix after the New Testament as 3 Esdras, outside the canon fixed at Trent.
+18	Tob	18-tobit.tsv	old	Tobit	The Book of Tobias	Tobit	Tob.	Tobias; Tb	14	245	
+19	Jdt	19-judith.tsv	old	Judith	The Book of Judith	Judith	Judith	Jdt	16	339	
+20	Esth	20-esther.tsv	old	Esther (Greek)	The Book of Esther	Esther	Esth.	Est	10	252	The whole book translated from the Greek, in ten chapters. It carries the Greek additions in the Septuagint's own positions and not in the Vulgate's appendix, so the Vulgate's Esther 11-16 do not exist here and a citation of them refuses.
+21	PrMan	21-prayer-of-manasses.tsv	septuagint	The Prayer of Manasses		Prayer of Manasses			1	15	NOT in the Catholic canon. The Vulgate prints it in an appendix after the New Testament, outside the canon fixed at Trent.
+22	1Mach	22-1-maccabees.tsv	old	Maccabees I	The First Book of Machabees	1 Maccabees	1 Mach.	1 Machabees; 1 Mc	16	924	
+23	2Mach	23-2-maccabees.tsv	old	Maccabees II	The Second Book of Machabees	2 Maccabees	2 Mach.	2 Machabees; 2 Mc	15	555	
+24	3Mach	24-3-maccabees.tsv	septuagint	Maccabees III		3 Maccabees			7	228	NOT in the Catholic canon and not in the Vulgate at all. Received as scripture by the Greek and Slavonic churches.
+25	Ps	25-psalms.tsv	old	Psalms	The Book of Psalms	Psalms	Ps.	Psalmi; Pss	151	2535	151 psalms: the Septuagint's 150 with the supernumerary Psalm 151, which is not in the Catholic canon. Psalm numbers are the Septuagint's, which are the Vulgate's, and the inscription is numbered as verse 1. TRAP: two psalms are renumbered. This edition restarts Psalm 115 and Psalm 147 at verse 1 where the Vulgate prints them as verses 10-19 and 12-20.
+26	Prov	26-proverbs.tsv	old	Proverbs	The Book of Proverbs	Proverbs	Prov.	Prv	30	937	The Septuagint orders the last chapters of Proverbs differently from the Hebrew and the Vulgate. This edition prints no chapter 30, its matter standing inside chapters 24 and 29, and it numbers a chapter 31; chapter 16 begins at verse 2, chapter 19 at verse 3 and chapter 31 at verse 10.
+27	Eccles	27-ecclesiastes.tsv	old	Ecclesiastes	Ecclesiastes	Ecclesiastes	Eccle.	Qoheleth; Eccl	12	222	TRAP: the Missal abbreviation “Eccle.” is Ecclesiastes; “Eccli.” is Ecclesiasticus, which is under token Ecclus.
+28	Cant	28-song-of-songs.tsv	old	Song of Solomon	Solomon’s Canticle of Canticles	Song of Songs	Cant.	Canticle of Canticles; Song of Solomon; Sg	8	117	
+29	Job	29-job.tsv	old	Job	The Book of Job	Job	Job	Jb	42	1082	
+30	Wis	30-wisdom.tsv	old	Wisdom of Solomon	The Book of Wisdom	Wisdom	Sap.	Sapientia; Ws	19	436	
+31	Ecclus	31-sirach.tsv	old	Wisdom Of Jesus The Son Of Sirach (Ecclesiasticus)	Ecclesiasticus	Sirach	Eccli.	Ecclesiasticus; Sir	51	1368	TRAP: “Eccli.” is this book, not Ecclesiastes. The Greek division differs from the Vulgate's throughout.
+32	Os	32-hosea.tsv	old	Osee	The Prophecy of Osee	Hosea	Os.	Osee; Hos	14	197	
+33	Amos	33-amos.tsv	old	Amos	The Prophecy of Amos	Amos	Amos	Am	9	146	
+34	Mich	34-micah.tsv	old	Michæas	The Prophecy of Micheas	Micah	Mich.	Micheas; Mic	7	105	The Septuagint divides Micheas 4 and 5 as the Nova Vulgata does and not as the Vulgate does: this edition's 4:14 is the Vulgate's 5:1, and the rest of chapter 5 runs one verse behind the Vulgate.
+35	Joel	35-joel.tsv	old	Joel	The Prophecy of Joel	Joel	Joel	Jl	4	73	Four chapters, as the Septuagint and the Nova Vulgata divide the book, where the Vulgate has three: this edition's chapters 3 and 4 are the Vulgate's 2:28-32 and 3.
+36	Abd	36-obadiah.tsv	old	Obdias	The Prophecy of Abdias	Obadiah	Abd.	Abdias; Ob	1	21	
+37	Jon	37-jonah.tsv	old	Jonas	The Prophecy of Jonas	Jonah	Jonae	Jonas; Jon	4	48	
+38	Nah	38-nahum.tsv	old	Naum	The Prophecy of Nahum	Nahum	Nah.	Na	3	47	
+39	Hab	39-habakkuk.tsv	old	Ambacum	The Prophecy of Habacuc	Habakkuk	Hab.	Habacuc	3	56	
+40	Soph	40-zephaniah.tsv	old	Sophonias	The Prophecy of Sophonias	Zephaniah	Soph.	Sophonias; Zep	3	53	
+41	Agg	41-haggai.tsv	old	Aggæus	The Prophecy of Aggeus	Haggai	Agg.	Aggeus; Hag	2	38	
+42	Zach	42-zechariah.tsv	old	Zacharias	The Prophecy of Zacharias	Zechariah	Zach.	Zacharias; Zec	14	211	
+43	Mal	43-malachi.tsv	old	Malachias	The Prophecy of Malachias	Malachi	Mal.	Malachias	3	55	Three chapters, as the Septuagint divides the book, where the Vulgate has four: this edition's 3:19-24 is the Vulgate's 4:1-6.
+44	Is	44-isaiah.tsv	old	Esaias	The Prophecy of Isaias	Isaiah	Is.	Isaias; Isa	66	1289	The Septuagint divides Isaias 8 and 9 as the Nova Vulgata does and not as the Vulgate does: this edition's 8:23 is the Vulgate's 9:1, and the rest of chapter 9 runs one verse behind the Vulgate.
+45	Jer	45-jeremiah.tsv	old	Jeremias	The Prophecy of Jeremias	Jeremiah	Jer.	Jeremias	52	1299	WARNING: the Septuagint's Jeremias is not the Vulgate's. It is about an eighth shorter, and the oracles against the nations that the Vulgate prints as chapters 46-51 stand here in the middle of the book as chapters 25-31, so from chapter 25 onward a Vulgate chapter and verse number names entirely different matter. No Vulgate citation of Jeremias past chapter 25 can be answered from this edition.
+46	Bar	46-baruch.tsv	old	Baruch	The Prophecy of Baruch	Baruch	Bar.	Bar	5	140	Five chapters. The Epistle of Jeremias, which the Vulgate prints as Baruch 6, is a separate book here under token EpJer, so a citation of Baruch 6 finds no chapter.
+47	Lam	47-lamentations.tsv	old	Lamentations	The Lamentations of Jeremias	Lamentations	Thren.	Threni; Lam	5	153	
+48	EpJer	48-epistle-of-jeremiah.tsv	septuagint	Epistle of Jeremy		Epistle of Jeremiah			1	73	The Epistle of Jeremias, which the Vulgate prints as chapter 6 of Baruch and this edition prints as a book of its own with 73 verses numbered from 1.
+49	Ezech	49-ezekiel.tsv	old	Jezekiel	The Prophecy of Ezechiel	Ezekiel	Ezech.	Ezechiel; Ez	48	1265	
+50	Dan	50-daniel.tsv	old	Daniel (Greek)	The Prophecy of Daniel	Daniel	Dan.	Dn	12	422	Greek Daniel in twelve chapters. The Prayer of Azarias and the Canticle of the Three Children stand inline in chapter 3, as in the Vulgate, but Susanna and Bel are separate books under tokens Sus and Bel and not chapters 13 and 14, so a Vulgate citation of Daniel 13 or 14 finds no chapter here.
+51	Sus	51-susanna.tsv	septuagint	Susanna		Susanna			1	64	
+52	Bel	52-bel-and-the-dragon.tsv	septuagint	Bel and the Dragon		Bel and the Dragon			1	42	
+53	4Mach	53-4-maccabees.tsv	septuagint	Maccabees IV		4 Maccabees			18	483	NOT in the Catholic canon and not in the Vulgate at all. An appendix to the Septuagint.

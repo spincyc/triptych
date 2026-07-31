@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton.verse-aliases-786c8a5c"
+edition_id = "edition.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table containing no third-party text."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-07-31. This edition merges no verse away, so the one row it carries is a withholding. It restarts Psalms 115 and 147 at verse 1 where the Vulgate prints them as verses 10-19 and 12-20; Psalm 147:12-20 falls past the end of the verses printed here and is refused before any alias is consulted, while Psalm 115:10 is inside the chapter's bounds and would otherwise answer with the wrong verse. The far larger divergences of this edition are not recorded here because no alias can reach them: they are whole books and whole chapters the Septuagint divides or orders differently from the Vulgate, above all Jeremias, and they are recorded book by book in the book index instead."
+indexable = true
+encoding = "utf-8"
+notes = "One row, a withholding, for Psalm 115:10. An empty resolves_to means a citation naming that locus cannot be answered from this edition. This edition's other divergences from the Vulgate are chapter-level and book-level and are recorded in the book index."
+retrieved = "2026-07-31"
+sha256 = "786c8a5cf17a299fe36eb1c25f359f8802fb0f40405415d51de975489d31cd0a"
+byte_size = 269
+path = "src/sources/works/lancelot-brenton/septuagint-english-translation/editions/ebible-eng-brenton/artifacts/verse-aliases-786c8a5c/verse-aliases.tsv"

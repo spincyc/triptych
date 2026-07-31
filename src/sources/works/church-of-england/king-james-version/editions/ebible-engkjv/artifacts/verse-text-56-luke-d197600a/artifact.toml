@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-56-luke-d197600a"
+edition_id = "edition.church-of-england.king-james-version.ebible-engkjv"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The King James Version was published in 1611 and this is its standardized text of 1769. It is in the public domain in the United States and everywhere else except the United Kingdom. The one exception is real: the translation is held there under the Crown's perpetual letters patent, which have no expiry, and printing it in the United Kingdom or importing printed copies into it is reserved to the Crown's patentees — Cambridge University Press, Oxford University Press and Collins. The decree has no effect outside the United Kingdom. eBible.org distributes this text as eng-kjv, marks it public domain, and states the same United Kingdom exception in its own notice. This derivative carries only the scripture text with a mechanical reference column: none of the translators' marginal notes, none of the Strong's number annotations the electronic edition adds, and none of the 1611 preface or added headings."
+rights_jurisdiction = "United States"
+retrieved = "2026-07-31"
+sha256 = "d197600a4fb5cbf3361e13bfd8dc86378d4facc974f0e6c510275f39587e1f7a"
+byte_size = 146777
+path = "src/sources/works/church-of-england/king-james-version/editions/ebible-engkjv/artifacts/verse-text-56-luke-d197600a/56-luke.tsv"
+derived_from = "artifact.church-of-england.king-james-version.ebible-engkjv.ebible-usfm-1ba52215"
+transformation = "Parse the USFM of eBible.org's eng-kjv release into one verse per line. Read \\c for the chapter and \\v for the verse, and take the text between one \\v and the next, continuation lines included. Drop the content of \\f footnotes entirely: they are the translators' marginal alternatives and Hebrew glosses, which are apparatus and not the text appointed to be read. Drop every USFM attribute list, which in the Old Testament is the Strong's number the electronic edition attaches to each word and is not part of the King James text. Unwrap character markup, keeping the words it encloses: \\w and \\+w for words, \\add for the words the translators supplied and printed in italic, which belong to the verse, and \\nd, \\wj and \\tl. A closing marker is removed without leaving a space, because the text writes \\nd LORD\\nd* immediately before an apostrophe. Discard every remaining marker: they are paragraph, poetry and heading structure rather than text. Drop the pilcrows the standardized text prints to open a paragraph — 2970 of them, every one at the head of a verse — for the same reason the \\p markers they duplicate are dropped. The \\d psalm inscriptions are not emitted: this edition prints them but gives them no verse number, so there is no verse for them to be, and that absence is the numbering fact recorded in the edition record. Collapse runs of whitespace to one space and strip the ends. Emit \"book<TAB>chapter<TAB>verse<TAB>text\" with a header line, LF terminated. Book tokens are the Douay-Rheims tokens registered in that edition's book index wherever the two carry the same book, so a citation addresses the same book in either edition; the seven books this edition prints that the Douay-Rheims has no separate book for take new tokens. The mapping is by USFM book code, not by file order. The front matter file, which carries the 1611 preface The Translators to the Reader, is not scripture and is not read."
+indexable = true
+encoding = "utf-8"
+notes = "Luke (Luke): 24 chapters and 1151 verses, numbered as chapters 1-24, one LF-terminated line per verse after a header line."

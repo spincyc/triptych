@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31.verse-text-08-ruth-20606a67"
+edition_id = "edition.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The translator dedicated this version to the public domain and forbade anyone to take a right in it. His own statement, distributed with the CrossWire SWORD module and repeated on the site: “Since the Latin editions of the Bible used in this translation are in the public domain, as the sole translator and editor of the Catholic Public Domain Version of the Sacred Bible, I hereby place the Catholic Public Domain Version of the Sacred Bible in the public domain in perpetuity. As a text in the public domain, the Catholic Public Domain Version of the Sacred Bible has no copyright, trademark, or other legal restrictions. The only restriction is that there can be no restriction. No one may copyright this version of the Bible.” Each page of sacredbible.org carries a copyright meta element saying “Entire text, including all html and css code, is in the public domain. No copyright.” The Latin the version renders, the Sixto-Clementine Vulgate, is out of copyright everywhere by age. This derivative contains only the scripture text with a mechanical reference column, and none of the translator's own bracketed commentary, page navigation, or headings."
+rights_jurisdiction = "United States"
+derived_from = "artifact.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31.page-ot-08-ruth-dcfb7d71"
+transformation = "Read sacredbible.org's per-book page for this book, which prints one verse to a line as “{chapter:verse} text” between the page's begin and end comments, and take the chapter and verse numbers from those markers rather than from any versification table. Decode the page as windows-1252, which is the character set it declares. Strip HTML tags, unescape entities, and drop the translator's own bracketed explanatory notes, which he signs (Conte) inside square brackets in the running text and which are commentary and not scripture. Anything outside a {chapter:verse} marker is chapter heading or page navigation and is dropped with it. Collapse runs of whitespace to one space and strip the ends. Emit \"book<TAB>chapter<TAB>verse<TAB>text<TAB>usfm\" with a header line, LF terminated, the usfm column carrying the page's own file stem. Book tokens, ordinals, file names and names are those of the Douay-Rheims Challoner book index, because this version carries the same 73 books of the Catholic canon in the same Vulgate order and must be addressed by the same tokens; the mapping is by the book named on each page and not by file order, and every book's chapter and verse counts were checked against both the Douay-Rheims and the Clementine Vulgate registered in this library before the mapping was accepted. Sixty-four of the 73 books agree with the Clementine exactly; the nine that do not are recorded in the book index."
+indexable = true
+encoding = "utf-8"
+notes = "Ruth (Ruth): 4 chapters and 85 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Vulgate ones the 1962 Missal cites, taken from the page's own {chapter:verse} markers, and the psalm inscription is numbered as verse 1. This is a translation of the Sixto-Clementine Latin, not of the Hebrew or the Greek."
+retrieved = "2026-07-31"
+sha256 = "20606a67e4668dd713270d09434530e134ebf559e2f7d784d9a1d6272dc32b99"
+byte_size = 16155
+path = "src/sources/works/ronald-conte/catholic-public-domain-version/editions/sacredbible-original-web-2026-07-31/artifacts/verse-text-08-ruth-20606a67/08-ruth.tsv"

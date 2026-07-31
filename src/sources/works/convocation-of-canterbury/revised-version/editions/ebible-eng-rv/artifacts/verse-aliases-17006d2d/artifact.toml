@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.verse-aliases-17006d2d"
+edition_id = "edition.convocation-of-canterbury.revised-version.ebible-eng-rv"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table containing no third-party text."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-07-31. This edition merges no verses, so every row is of the other kind: a locus a citation may name that this edition cannot answer at those numbers, recorded because the edition prints real text there and a lookup would otherwise return it. Only the overlap needs a row. Vulgate Daniel 3:24-90 is the Greek addition, which this edition prints as a separate book; its own Daniel 3 runs to verse 30, so 3:24-30 are recorded here and 3:31-90 refuse for want of the verses. The correspondence with the separate book is deliberately not asserted: it is not a uniform offset, so a resolution would have to be checked verse by verse against a Greek witness this library does not hold, and a refusal is the only answer that cannot be mistaken for the text. No row is needed for a verse the revisers omitted — Matthew 17:21, Mark 9:44, John 5:4 and the rest — because those numbers carry no text in this edition at all and refuse for want of the verse; they are listed in the book index. No row is needed for the Greek additions to Esther either: this edition prints them as a separate book under the Vulgate's own chapter numbers 10:4-16:24, so a Vulgate citation of Esther 13 or 14 reaches them correctly under token EsthGr."
+indexable = true
+encoding = "utf-8"
+notes = "Seven rows, all withholdings, covering Vulgate Daniel 3:24-30. An empty resolves_to means a citation naming this locus cannot be answered from this edition, whatever it prints at those numbers. No verse of this edition is merged away, so no row of the other kind is needed."
+retrieved = "2026-07-31"
+sha256 = "17006d2d6d547beaf4fa5026fe2f339235126f70595e5de3b61bb0b731e05465"
+byte_size = 2351
+path = "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv/artifacts/verse-aliases-17006d2d/verse-aliases.tsv"

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton.verse-text-24-3-maccabees-8b01bb8a"
+edition_id = "edition.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "eBible.org publishes this release with the copyright statement “Published in 1851, and now in the Public Domain.” Sir Lancelot Charles Lee Brenton died in 1862 and the translation was published in 1851, so it is out of copyright in the United States and everywhere its term runs from publication or from the translator's death. This derivative contains only the scripture text with a mechanical reference column, and none of the release's footnotes, headings, front matter, or the facing Greek of the printed book."
+rights_jurisdiction = "United States"
+derived_from = "artifact.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton.ebible-usfm-c75beefc"
+transformation = "Parse the USFM of eBible.org's eng-Brenton release into one verse per line. Read \\c for the chapter and \\v for the verse, join a verse's continuation lines with single spaces, and take the text between one \\v and the next. Drop the content of \\f footnotes and \\x cross references entirely, and drop the whole of every heading-class marker with its text — \\s section headings, \\d psalm inscriptions where they carry any, the \\ip and \\im introduction blocks, and the \\id, \\h, \\toc and \\mt identification block. A psalm's inscription in this release is not one of those: it is numbered as verse 1, as in the Septuagint and the Vulgate, and the \\d marker that precedes it is empty. Unwrap character markup such as \\add, \\nd and \\bk, keeping the words it encloses, and discard every remaining marker, which is paragraph and poetry structure rather than text. A marker leaves a space behind only where it separated two words. Collapse runs of whitespace to one space and strip the ends. Emit \"book<TAB>chapter<TAB>verse<TAB>text<TAB>usfm\" with a header line, LF terminated. The six front-matter and back-matter files the package ships — FRT, INT, BAK, OTH, XXA, XXB and XXC — carry no verse and are not registered. Book tokens are the Douay-Rheims tokens wherever this edition carries the same book, so a citation resolves to the same token in either, with new tokens for the books the Douay-Rheims has no separate book for; the mapping is by USFM book code and not by file order."
+indexable = true
+encoding = "utf-8"
+notes = "3 Maccabees (3Mach): 7 chapters and 228 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Septuagint's, not the Vulgate's, though the two agree across much of the Old Testament and agree in the psalter's numbering; the book index records every book where they do not."
+retrieved = "2026-07-31"
+sha256 = "8b01bb8a281e63614d4403329c8122b65c9f68ceb4175790bdab3acd40a850df"
+byte_size = 42067
+path = "src/sources/works/lancelot-brenton/septuagint-english-translation/editions/ebible-eng-brenton/artifacts/verse-text-24-3-maccabees-8b01bb8a/24-3-maccabees.tsv"

@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31.book-index-65312628"
+edition_id = "edition.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table recording the identity and naming of public-domain biblical books. It contains no third-party text and no exclusive right is claimed in the underlying facts."
+rights_jurisdiction = "United States"
+provenance = "Compiled by Triptych on 2026-07-31 from sacredbible.org's per-book pages of the Catholic Public Domain Version, Original Edition. Each page was matched to its row by the book it names and its chapter and verse counts read from the extracted text, then checked against both the Douay-Rheims Challoner text and the Clementine Vulgate registered in this library. The token, ordinal, file name, Douay title, modern name, Missal abbreviation and alternate names are those of the Douay-Rheims Challoner book index, because this version carries the same 73 books of the Catholic canon in the same Vulgate order and must be addressed by the same tokens. Sixty-four books agree with the Clementine exactly. Nine do not, and every one is recorded in the note column; eight differ by a single verse division, and the ninth is Esther, which this version prints in the Septuagint arrangement and which no Vulgate citation can reach."
+indexable = true
+encoding = "utf-8"
+notes = "73 books: 46 Old Testament and 27 New Testament, the Catholic canon fixed at Trent, in the Vulgate order, with 1333 chapters and 35827 verses — one fewer chapter than the Douay-Rheims, Esther having fifteen here against its sixteen. Tokens are shared with the Douay-Rheims and the Clementine Vulgate so a citation resolves to the same book in any of them. Every chapter count agrees with both of those editions except Esther, which has fifteen chapters here against their sixteen and is not addressable by Vulgate numbers at all; see its note and the verse-alias table."
+retrieved = "2026-07-31"
+sha256 = "65312628b379c0a3d794e805e9477191bc198537cf33773f7aba400bfd235444"
+byte_size = 10914
+path = "src/sources/works/ronald-conte/catholic-public-domain-version/editions/sacredbible-original-web-2026-07-31/artifacts/book-index-65312628/book-index.tsv"

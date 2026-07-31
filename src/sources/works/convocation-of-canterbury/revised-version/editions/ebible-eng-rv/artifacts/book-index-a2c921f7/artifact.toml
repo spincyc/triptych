@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.book-index-a2c921f7"
+edition_id = "edition.convocation-of-canterbury.revised-version.ebible-eng-rv"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table recording the identity and naming of public-domain biblical books. It contains no third-party text and no exclusive right is claimed in the underlying facts."
+rights_jurisdiction = "United States"
+provenance = "Compiled by Triptych on 2026-07-31 from the eBible.org eng-rv release. Each USFM file was matched to its row by book code and its chapter and verse counts read from the extracted text. The token, ordinal, file name, Douay title, modern name and alternate names are those registered for the eBible.org eng-kjv edition of the King James Version, because this is a revision of that translation carrying the same eighty books in the same order and the two must be addressed by the same tokens; the edition title and the counts are this release's own. Those tokens are in turn the Douay-Rheims tokens wherever a book is common to all three, so one citation resolves to the same book in any of them, with distinct tokens for the seven books the Douay-Rheims has no separate book for."
+indexable = true
+encoding = "utf-8"
+notes = "80 books: 39 Old Testament, 14 Apocrypha, 27 New Testament. TRAP: the tokens 1Esd and 2Esd are Ezra and Nehemiah, which the Douay-Rheims calls 1 and 2 Esdras; the tokens 1Esdras and 2Esdras are the apocryphal books of those names, which the Vulgate prints in an appendix as 3 and 4 Esdras and which are not in the Catholic canon. The note column records every book whose canon status or verse division differs from the Douay-Rheims, and every book from which the revisers omitted a verse the Vulgate carries."
+retrieved = "2026-07-31"
+sha256 = "a2c921f75b20cb723d8d11410b9cc7dc1c76159adcc2eca329a7c5c921056330"
+byte_size = 17108
+path = "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv/artifacts/book-index-a2c921f7/book-index.tsv"

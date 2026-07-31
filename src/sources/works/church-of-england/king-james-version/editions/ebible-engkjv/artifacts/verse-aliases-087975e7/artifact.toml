@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.king-james-version.ebible-engkjv.verse-aliases-087975e7"
+edition_id = "edition.church-of-england.king-james-version.ebible-engkjv"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table containing no third-party text."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-07-31. This edition merges no verses, so every row is of the other kind: a locus a citation may name that this edition cannot answer at those numbers, recorded because the edition prints real text there and a lookup would otherwise return it. Only the overlap needs a row. Vulgate Daniel 3:24-90 is the Greek addition; this edition's Daniel 3 runs to verse 30, so 3:24-30 are recorded here and 3:31-90 refuse for want of the verses. The correspondence with the separate book is deliberately not asserted: it is not a uniform offset — Vulgate Daniel 3:52 is verse 29 of that book and Vulgate 3:89 is verse 67, not 66 — so a resolution would have to be checked verse by verse, and a refusal is the only answer that cannot be mistaken for the text. Psalm 13:3-6 is withheld for a different reason. The psalm concordance tracked under the Douay-Rheims marks Hebrew Psalm 13 as uniformly offset from the English convention, and it is not: this edition's 13:2 carries the whole of Vulgate 12:2-3, so from its third verse to the end the psalm stands one verse ahead of what a Vulgate or Hebrew numbered citation of the same number means. The concordance is the record that would have to be corrected; until it is, those four loci refuse here rather than answering with the following verse."
+retrieved = "2026-07-31"
+sha256 = "087975e7f71c3aeba2ab90ed9cefed051b848682065924763bc9d13447c5cdb8"
+byte_size = 3364
+path = "src/sources/works/church-of-england/king-james-version/editions/ebible-engkjv/artifacts/verse-aliases-087975e7/verse-aliases.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Eleven rows, all withholdings: an empty resolves_to means a citation naming this locus cannot be answered from this edition, whatever it prints at those numbers. Seven are the Daniel canon divergence and four are Psalm 13, where the tracked psalm concordance's English offset is wrong. No verse of this edition is merged away, so no row of the other kind is needed."

@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.king-james-version.ebible-engkjv.book-index-ee979c6e"
+edition_id = "edition.church-of-england.king-james-version.ebible-engkjv"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table recording the identity and naming of public-domain biblical books. It contains no third-party text and no exclusive right is claimed in the underlying facts."
+rights_jurisdiction = "United States"
+retrieved = "2026-07-31"
+sha256 = "ee979c6e13a6edb3ed429987d8b0919f6438a2d6c489b472d6d41c0e43f8f300"
+byte_size = 15409
+path = "src/sources/works/church-of-england/king-james-version/editions/ebible-engkjv/artifacts/book-index-ee979c6e/book-index.tsv"
+provenance = "Compiled by Triptych on 2026-07-31 from the eBible.org eng-kjv release. Each USFM file was matched to its row by book code and its chapter and verse counts read from the extracted text. The token column repeats the Douay-Rheims token wherever the two editions carry the same book, so a citation resolves to the same token in either; the naming columns are this edition's own, and the Douay-Rheims title is carried beside them so a Vulgate-style citation still finds the book. Seven books here have no Douay-Rheims counterpart as a separate book and take new tokens: 1Esdras, 2Esdras, PrMan, EsthGr, SgThree, Sus and Bel. The Apocrypha is ordered as the Authorized Version prints it, which is not the order the USFM files are numbered in."
+indexable = true
+encoding = "utf-8"
+notes = "80 books: 39 Old Testament, 14 Apocrypha, 27 New Testament. TRAP: the tokens 1Esd and 2Esd are Ezra and Nehemiah, which the Douay-Rheims calls 1 and 2 Esdras; the tokens 1Esdras and 2Esdras are the apocryphal books of those names, which the Vulgate prints in an appendix as 3 and 4 Esdras and which are not in the Catholic canon. The note column records every book whose canon status or verse division differs from the Douay-Rheims registered here."

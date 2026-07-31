@@ -1,0 +1,81 @@
+ordinal	token	file	testament	kjv_title	douay_title	modern_name	missal_latin_abbreviation	alternate_names	chapters	verses	note
+1	Gen	01-genesis.tsv	old	The First Book of Moses, called Genesis	The Book of Genesis	Genesis	Gen.	Gn	50	1533	
+2	Ex	02-exodus.tsv	old	The Second Book of Moses, called Exodus	The Book of Exodus	Exodus	Exod.	Ex	40	1213	
+3	Lev	03-leviticus.tsv	old	The Third Book of Moses, called Leviticus	The Book of Leviticus	Leviticus	Levit.	Lev	27	859	
+4	Num	04-numbers.tsv	old	The Fourth Book of Moses, called Numbers	The Book of Numbers	Numbers	Num.	Nm	36	1288	
+5	Deut	05-deuteronomy.tsv	old	The Fifth Book of Moses, called Deuteronomy	The Book of Deuteronomy	Deuteronomy	Deut.	Dt	34	959	
+6	Jos	06-joshua.tsv	old	The Book of Joshua	The Book of Josue	Joshua	Jos.	Josue; Jos	24	658	
+7	Judg	07-judges.tsv	old	The Book of Judges	The Book of Judges	Judges	Judic.	Jdg; Judg	21	618	
+8	Ruth	08-ruth.tsv	old	The Book of Ruth	The Book of Ruth	Ruth	Ruth	Rt	4	85	
+9	1Kings	09-1-samuel.tsv	old	The First Book of Samuel Otherwise Called The First Book of the Kings	The First Book of Samuel, otherwise called the First Book of Kings	1 Samuel	1 Reg.	1 Kings; 1 Samuel; 1 Sm	31	810	TRAP: the token 1Kings is the Douay-Rheims token for this book, which the King James Version prints as 1 Samuel. A modern “1 Kings” citation is the book under token 3Kings.
+10	2Kings	10-2-samuel.tsv	old	The Second Book of Samuel Otherwise Called The Second Book of the Kings	The Second Book of Samuel, otherwise called the Second Book of Kings	2 Samuel	2 Reg.	2 Kings; 2 Samuel; 2 Sm	24	695	TRAP: the token 2Kings is the Douay-Rheims token for this book, which the King James Version prints as 2 Samuel. A modern “2 Kings” citation is the book under token 4Kings.
+11	3Kings	11-1-kings.tsv	old	The First Book of the Kings, Commonly Called the Third Book of the Kings	The Third Book of Kings	1 Kings	3 Reg.	3 Kings; 1 Kings (modern)	22	816	TRAP: Douay 3 Kings is the King James 1 Kings.
+12	4Kings	12-2-kings.tsv	old	The Second Book of the Kings, Commonly Called the Fourth Book of the Kings	The Fourth Book of Kings	2 Kings	4 Reg.	4 Kings; 2 Kings (modern)	25	719	TRAP: Douay 4 Kings is the King James 2 Kings.
+13	1Par	13-1-chronicles.tsv	old	The First Book of the Chronicles	The First Book of Paralipomenon	1 Chronicles	1 Paral.	1 Paralipomenon; 1 Par	29	942	
+14	2Par	14-2-chronicles.tsv	old	The Second Book of the Chronicles	The Second Book of Paralipomenon	2 Chronicles	2 Paral.	2 Paralipomenon; 2 Par	36	822	
+15	1Esd	15-ezra.tsv	old	Ezra	The First Book of Esdras	Ezra	1 Esdr.	Esdras (Douay 1)	10	280	TRAP: the Douay-Rheims calls this book 1 Esdras. In this edition the name “1 Esdras” belongs to the apocryphal book under token 1Esdras, so the Douay name is deliberately not registered as an alias here.
+16	2Esd	16-nehemiah.tsv	old	The Book of Nehemiah	The Book of Nehemias, which is called the Second of Esdras	Nehemiah	2 Esdr.	Nehemias; Neh	13	406	TRAP: the Douay-Rheims calls this book 2 Esdras. In this edition the name “2 Esdras” belongs to the apocryphal book under token 2Esdras, so the Douay name is deliberately not registered as an alias here.
+17	Esth	17-esther.tsv	old	The Book of Esther	The Book of Esther	Esther	Esth.	Est	10	167	This is the Hebrew Esther only, 10 chapters ending at 10:3. The Greek additions the Vulgate and the Douay-Rheims print inside Esther at 10:4-16:24 stand in this edition as a separate book under token EsthGr.
+18	Job	18-job.tsv	old	The Book of Job	The Book of Job	Job	Job	Jb	42	1070	
+19	Ps	19-psalms.tsv	old	The Book of Psalms	The Book of Psalms	Psalms	Ps.	Psalmi; Pss; Psalm	150	2461	Psalm numbers are Hebrew/Masoretic numbers throughout, not the Vulgate and Septuagint numbers the 1962 Missal cites. Psalm inscriptions are printed but left unnumbered, so this edition's verse numbers run one or two lower than the Hebrew numbering the psalm concordance records; see the edition record.
+20	Prov	20-proverbs.tsv	old	The Proverbs	The Book of Proverbs	Proverbs	Prov.	Prv	31	915	
+21	Eccles	21-ecclesiastes.tsv	old	Ecclesiastes or, the Preacher	Ecclesiastes	Ecclesiastes	Eccle.	Qoheleth; Eccl	12	222	TRAP: the Missal abbreviation “Eccle.” is Ecclesiastes; “Eccli.” is Ecclesiasticus, which is under token Ecclus.
+22	Cant	22-song-of-solomon.tsv	old	The Song of Solomon	Solomon’s Canticle of Canticles	Song of Songs	Cant.	Canticle of Canticles; Song of Solomon; Sg	8	117	
+23	Is	23-isaiah.tsv	old	The Book of the Prophet Isaiah	The Prophecy of Isaias	Isaiah	Is.	Isaias; Isa	66	1292	
+24	Jer	24-jeremiah.tsv	old	The Book of the Prophet Jeremiah	The Prophecy of Jeremias	Jeremiah	Jer.	Jeremias	52	1364	
+25	Lam	25-lamentations.tsv	old	The Lamentations of Jeremiah	The Lamentations of Jeremias	Lamentations	Thren.	Threni; Lam	5	154	
+26	Ezech	26-ezekiel.tsv	old	The Book of the Prophet Ezekiel	The Prophecy of Ezechiel	Ezekiel	Ezech.	Ezechiel; Ez	48	1273	
+27	Dan	27-daniel.tsv	old	The Book of Daniel	The Prophecy of Daniel	Daniel	Dan.	Dn	12	357	This is the Hebrew and Aramaic Daniel only, 12 chapters, and chapter 3 ends at verse 30. The three Greek additions the Vulgate and the Douay-Rheims print inside Daniel stand in this edition as three separate books: the Prayer of Azarias and Canticle of the Three Children, at Vulgate Daniel 3:24-90, under token SgThree; Susanna, Vulgate Daniel 13, under token Sus; and Bel and the Dragon, Vulgate Daniel 14, under token Bel.
+28	Os	28-hosea.tsv	old	Hosea	The Prophecy of Osee	Hosea	Os.	Osee; Hos	14	197	
+29	Joel	29-joel.tsv	old	Joel	The Prophecy of Joel	Joel	Joel	Jl	3	73	
+30	Amos	30-amos.tsv	old	Amos	The Prophecy of Amos	Amos	Amos	Am	9	146	
+31	Abd	31-obadiah.tsv	old	Obadiah	The Prophecy of Abdias	Obadiah	Abd.	Abdias; Ob	1	21	
+32	Jon	32-jonah.tsv	old	Jonah	The Prophecy of Jonas	Jonah	Jonae	Jonas; Jon	4	48	
+33	Mich	33-micah.tsv	old	Micah	The Prophecy of Micheas	Micah	Mich.	Micheas; Mic	7	105	
+34	Nah	34-nahum.tsv	old	Nahum	The Prophecy of Nahum	Nahum	Nah.	Na	3	47	
+35	Hab	35-habakkuk.tsv	old	Habakkuk	The Prophecy of Habacuc	Habakkuk	Hab.	Habacuc	3	56	
+36	Soph	36-zephaniah.tsv	old	Zephaniah	The Prophecy of Sophonias	Zephaniah	Soph.	Sophonias; Zep	3	53	
+37	Agg	37-haggai.tsv	old	Haggai	The Prophecy of Aggeus	Haggai	Agg.	Aggeus; Hag	2	38	
+38	Zach	38-zechariah.tsv	old	Zechariah	The Prophecy of Zacharias	Zechariah	Zach.	Zacharias; Zec	14	211	
+39	Mal	39-malachi.tsv	old	Malachi	The Prophecy of Malachias	Malachi	Mal.	Malachias	4	55	
+40	1Esdras	40-1-esdras.tsv	apocrypha	1 Esdras		1 Esdras		3 Esdras; Esdras A; Greek Ezra	9	448	NOT in the Catholic canon. The Vulgate prints this book in an appendix after the New Testament as 3 Esdras, outside the canon fixed at Trent. It is a Greek reworking of Paralipomenon, Esdras and Nehemias, not the Douay-Rheims 1 Esdras, which is Ezra and stands under token 1Esd.
+41	2Esdras	41-2-esdras.tsv	apocrypha	2 Esdras		2 Esdras		4 Esdras; 4 Esd; Esdras IV; Apocalypse of Ezra; 2 Esdras (Apocrypha)	16	874	NOT in the Catholic canon. The Vulgate prints this book in an appendix after the New Testament as 4 Esdras, outside the canon fixed at Trent, in the same 16 chapters this edition numbers. The postconciliar Lectionary cites it as 4 Esdras, so that name is registered as an alias here.
+42	Tob	42-tobit.tsv	apocrypha	Tobit	The Book of Tobias	Tobit	Tob.	Tobias; Tb	14	244	Deuterocanonical, and in the Catholic canon. This edition follows the Greek, whose chapter and verse division differs from the Vulgate the Douay-Rheims translates: 244 verses here against the Douay-Rheims's 298. A Vulgate-numbered citation may land on different words.
+43	Jdt	43-judith.tsv	apocrypha	Judith	The Book of Judith	Judith	Judith	Jdt	16	339	Deuterocanonical, and in the Catholic canon. This edition follows the Greek, whose chapter and verse division differs from the Vulgate: 339 verses here against the Douay-Rheims's 345.
+44	EsthGr	44-rest-of-esther.tsv	apocrypha	The Rest of the Chapters of The Book of Esther Which are Found Neither in the Hebrew, nor in the Chaldee		Rest of Esther		Esther (Greek); Greek Esther; Additions to Esther; Rest of the Chapters of Esther	7	105	Deuterocanonical, and in the Catholic canon, but printed here as a separate book rather than integrated. It carries the Vulgate's own chapter and verse numbers, 10:4 through 16:24, so a Vulgate citation of Esther 13-16 addresses this book and not the Esther under token Esth.
+45	Wis	45-wisdom.tsv	apocrypha	The Wisdom of Solomon	The Book of Wisdom	Wisdom	Sap.	Sapientia; Ws	19	436	Deuterocanonical, and in the Catholic canon.
+46	Ecclus	46-ecclesiasticus.tsv	apocrypha	The Wisdom of Jesus the Son of Sirach, or Ecclesiasticus	Ecclesiasticus	Sirach	Eccli.	Ecclesiasticus; Sir	51	1393	Deuterocanonical, and in the Catholic canon. TRAP: “Eccli.” is this book, not Ecclesiastes. This edition follows the Greek, whose chapter and verse division differs from the Vulgate, often by one or more verses: 1393 verses here against the Douay-Rheims's 1591.
+47	Bar	47-baruch.tsv	apocrypha	Baruch	The Prophecy of Baruch	Baruch	Bar.	Bar	6	213	Deuterocanonical, and in the Catholic canon. Chapter 6 is the Epistle of Jeremias, as in the Vulgate. 213 verses, the same total as the Douay-Rheims, but not the same division: chapter 3 has 37 verses here against 38 because this edition joins what the Vulgate divides at 3:34, and chapter 6 has 73 against 72. A Vulgate citation of Baruch 3:35-38 is one verse ahead of this edition and 3:38 falls past the end of its chapter, so it refuses.
+48	SgThree	48-song-of-the-three.tsv	apocrypha	The Song of The Three Holy Children		Song of the Three Holy Children		Prayer of Azariah; Song of the Three Children; Benedicite; Azariah	1	68	Deuterocanonical, and in the Catholic canon, but printed here as a separate book of 68 verses rather than integrated. The Vulgate and the Douay-Rheims print this matter inside Daniel at 3:24-90. The correspondence is not a uniform offset, so this edition asserts none: a Daniel 3:24-90 citation is withheld rather than resolved here.
+49	Sus	49-susanna.tsv	apocrypha	The History of Susanna		Susanna		History of Susanna	1	64	Deuterocanonical, and in the Catholic canon, but printed here as a separate book of 64 verses rather than integrated. The Vulgate and the Douay-Rheims print this matter as Daniel 13.
+50	Bel	50-bel-and-the-dragon.tsv	apocrypha	The History of the Destruction of Bel and the Dragon		Bel and the Dragon		Bel; Bel and the Dragon; Destruction of Bel	1	42	Deuterocanonical, and in the Catholic canon, but printed here as a separate book of 42 verses rather than integrated. The Vulgate and the Douay-Rheims print this matter as Daniel 14.
+51	PrMan	51-prayer-of-manasses.tsv	apocrypha	The Prayer of Manasseh King of Judah When He was Held Captive in Babylon		Prayer of Manasses		Prayer of Manasseh; Manasses; Manasseh; Oratio Manassae	1	15	NOT in the Catholic canon. The Vulgate prints it in an appendix after the New Testament, outside the canon fixed at Trent.
+52	1Mach	52-1-maccabees.tsv	apocrypha	The First Book of the Maccabees	The First Book of Machabees	1 Maccabees	1 Mach.	1 Machabees; 1 Mc	16	924	Deuterocanonical, and in the Catholic canon. 924 verses here against the Douay-Rheims's 929.
+53	2Mach	53-2-maccabees.tsv	apocrypha	The Second Book of the Maccabees	The Second Book of Machabees	2 Maccabees	2 Mach.	2 Machabees; 2 Mc	15	555	Deuterocanonical, and in the Catholic canon. 555 verses here against the Douay-Rheims's 558.
+54	Matt	54-matthew.tsv	new	The Gospel According to St. Matthew	The Holy Gospel of Jesus Christ according to St. Matthew	Matthew	Matt.	Mt	28	1071	
+55	Mark	55-mark.tsv	new	The Gospel According to St. Mark	The Holy Gospel of Jesus Christ according to St. Mark	Mark	Marc.	Mk	16	678	
+56	Luke	56-luke.tsv	new	The Gospel According to St. Luke	The Holy Gospel of Jesus Christ according to St. Luke	Luke	Luc.	Lk	24	1151	
+57	John	57-john.tsv	new	The Gospel According to St. John	The Holy Gospel of Jesus Christ according to St. John	John	Joan.	Jn	21	879	TRAP: do not confuse the token John with Jon (Jonas) or 1John/2John/3John.
+58	Acts	58-acts.tsv	new	The Acts of the Apostles	The Acts of the Apostles	Acts	Act.	Acts of the Apostles	28	1007	
+59	Rom	59-romans.tsv	new	The Epistle of Paul the Apostle to the Romans	The Epistle of St. Paul the Apostle to the Romans	Romans	Rom.	Rm	16	433	
+60	1Cor	60-1-corinthians.tsv	new	The First Epistle of Paul the Apostle to the Corinthians	The First Epistle of St. Paul to the Corinthians	1 Corinthians	1 Cor.	1 Co	16	437	
+61	2Cor	61-2-corinthians.tsv	new	The Second Epistle of Paul the Apostle to the Corinthians	The Second Epistle of St. Paul to the Corinthians	2 Corinthians	2 Cor.	2 Co	13	257	
+62	Gal	62-galatians.tsv	new	The Epistle of Paul the Apostle to the Galatians	The Epistle of St. Paul to the Galatians	Galatians	Gal.	Ga	6	149	
+63	Eph	63-ephesians.tsv	new	The Epistle of Paul the Apostle to the Ephesians	The Epistle of St. Paul to the Ephesians	Ephesians	Ephes.	Eph	6	155	
+64	Phil	64-philippians.tsv	new	The Epistle of Paul the Apostle to the Philippians	The Epistle of St. Paul to the Philippians	Philippians	Philipp.	Php	4	104	TRAP: the token Phil is Philippians; Philemon is Philem.
+65	Col	65-colossians.tsv	new	The Epistle of Paul the Apostle to the Colossians	The Epistle of St. Paul to the Colossians	Colossians	Coloss.	Col	4	95	
+66	1Thess	66-1-thessalonians.tsv	new	The First Epistle of Paul the Apostle to the Thessalonians	The First Epistle of St. Paul to the Thessalonians	1 Thessalonians	1 Thess.	1 Th	5	89	
+67	2Thess	67-2-thessalonians.tsv	new	The Second Epistle of Paul the Apostle to the Thessalonians	The Second Epistle of St. Paul to the Thessalonians	2 Thessalonians	2 Thess.	2 Th	3	47	
+68	1Tim	68-1-timothy.tsv	new	The First Epistle of Paul the Apostle to Timothy	The First Epistle of St. Paul to Timothy	1 Timothy	1 Tim.	1 Tm	6	113	
+69	2Tim	69-2-timothy.tsv	new	The Second Epistle of Paul the Apostle to Timothy	The Second Epistle of St. Paul to Timothy	2 Timothy	2 Tim.	2 Tm	4	83	
+70	Tit	70-titus.tsv	new	The Epistle of Paul the Apostle to Titus	The Epistle of St. Paul to Titus	Titus	Tit.	Tt	3	46	
+71	Philem	71-philemon.tsv	new	The Epistle of Paul the Apostle to Philemon	The Epistle of St. Paul to Philemon	Philemon	Philem.	Phm	1	25	
+72	Heb	72-hebrews.tsv	new	The Epistle of Paul the Apostle to the Hebrews	The Epistle of St. Paul to the Hebrews	Hebrews	Hebr.	Heb	13	303	
+73	James	73-james.tsv	new	The General Epistle of James	The Catholic Epistle of St. James the Apostle	James	Jac.	Jas	5	108	
+74	1Pet	74-1-peter.tsv	new	The First Epistle General of Peter	The First Epistle of St. Peter the Apostle	1 Peter	1 Pet.	1 P	5	105	
+75	2Pet	75-2-peter.tsv	new	The Second Epistle General of Peter	The Second Epistle of St. Peter the Apostle	2 Peter	2 Pet.	2 P	3	61	
+76	1John	76-1-john.tsv	new	The First Epistle General of John	The First Epistle of St. John the Apostle	1 John	1 Joan.	1 Jn	5	105	
+77	2John	77-2-john.tsv	new	The Second Epistle of John	The Second Epistle of St. John the Apostle	2 John	2 Joan.	2 Jn	1	13	
+78	3John	78-3-john.tsv	new	The Third Epistle of John	The Third Epistle of St. John the Apostle	3 John	3 Joan.	3 Jn	1	14	
+79	Jude	79-jude.tsv	new	The General Epistle of Jude	The Catholic Epistle of St. Jude the Apostle	Jude	Judae	Jud	1	25	TRAP: Jude is the epistle; Judith is Jdt and Judges is Judg.
+80	Apoc	80-revelation.tsv	new	The Revelation of St. John the Divine	The Apocalypse of St. John the Apostle	Revelation	Apoc.	Apocalypse; Rv	22	404	

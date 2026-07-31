@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.book-index-b2055fcc"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table recording the identity and naming of public-domain biblical books. It contains no third-party text and no exclusive right is claimed in the underlying facts."
+rights_jurisdiction = "United States"
+provenance = "Compiled by Triptych on 2026-07-31 from the eBible.org engDRA release. Each USFM file was matched to its row by book code and its chapter and verse counts read from the extracted text. The token, ordinal, file name, Douay title, modern name, Missal abbreviation and alternate names are those of the Challoner book index registered under the same work, because the two editions carry the same 73 books of the Catholic canon in the same order and must be addressed by the same tokens; the edition title and the counts are this release's own. Every chapter count agrees with the Challoner text. Seven verse counts do not, and each is recorded in the note column."
+indexable = true
+encoding = "utf-8"
+notes = "73 books: 46 Old Testament and 27 New Testament, the Catholic canon fixed at Trent, in the Vulgate order, with 1334 chapters and 35811 verses. Tokens are shared with the Challoner edition so a citation resolves to the same book in either. Two divergences from the Challoner text are recorded in the note column and must not be lost in reuse: this edition restarts the numbering of Psalms 115 and 147, which the Vulgate prints as verses 10-19 and 12-20, and it restores seven verse divisions the Challoner e-text runs together, in Genesis 5, 2 Kings 13, Psalms 28 and 150, Amos 9, John 11 and 2 Corinthians 1."
+retrieved = "2026-07-31"
+sha256 = "b2055fcc06fc1a7b4bd618b465e205c0ed771d38a5d439bb505ab42a61c26a66"
+byte_size = 11193
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/book-index-b2055fcc/book-index.tsv"

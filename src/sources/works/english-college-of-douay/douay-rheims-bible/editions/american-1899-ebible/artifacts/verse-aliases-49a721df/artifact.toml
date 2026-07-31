@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-aliases-49a721df"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table containing no third-party text."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-07-31 from the extracted text of this release, read against the Challoner text registered under the same work. This edition merges no verses away — it has seven more verse divisions than the Challoner text, not fewer — so the table carries no merged-verse row. It carries one withholding. This release restarts the numbering of Psalms 115 and 147, which the Vulgate prints as verses 10-19 and 12-20 of psalms that keep the numbering they had before the Hebrew split. Psalm 147:12-20 falls past the end of the nine verses this edition prints and is refused before any alias is consulted, so no row can or need carry it. Psalm 115:10 does not: this edition prints ten verses, so a citation of 115:10 would resolve to its tenth, which is the Vulgate's 115:19, “In the courts of the house of the Lord, in the midst of thee, O Jerusalem.” That one locus is withheld. The correspondence is deliberately not resolved instead, because a resolution would silently answer a range citation with its last verse alone: the reader clamps a range to the chapter's last printed verse before the alias table is read, so Psalm 115:10-19 would return one verse and read as ten."
+indexable = true
+encoding = "utf-8"
+notes = "One row, a withholding. An empty resolves_to means a citation naming that locus cannot be answered from this edition, whatever it prints at those numbers. This edition merges no verse away, so no row of the other kind is needed."
+retrieved = "2026-07-31"
+sha256 = "49a721df9aaf4ac1a95add5aa4c93b4e4629987681038c0e206dc79bf6d1c485"
+byte_size = 309
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-aliases-49a721df/verse-aliases.tsv"

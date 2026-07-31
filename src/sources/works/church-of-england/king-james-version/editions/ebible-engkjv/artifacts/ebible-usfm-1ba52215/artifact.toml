@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.king-james-version.ebible-engkjv.ebible-usfm-1ba52215"
+edition_id = "edition.church-of-england.king-james-version.ebible-engkjv"
+artifact_type = "structured-text"
+media_type = "application/zip"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "The King James Version was published in 1611 and this is its standardized text of 1769. It is in the public domain in the United States and everywhere else except the United Kingdom. The one exception is real: the translation is held there under the Crown's perpetual letters patent, which have no expiry, and printing it in the United Kingdom or importing printed copies into it is reserved to the Crown's patentees — Cambridge University Press, Oxford University Press and Collins. The decree has no effect outside the United Kingdom. eBible.org distributes this text as eng-kjv, marks it public domain, and states the same United Kingdom exception in its own notice. This derivative carries only the scripture text with a mechanical reference column: none of the translators' marginal notes, none of the Strong's number annotations the electronic edition adds, and none of the 1611 preface or added headings."
+rights_jurisdiction = "United States"
+source_url = "https://eBible.org/Scriptures/eng-kjv_usfm.zip"
+provenance = "eBible.org's USFM distribution package for eng-kjv, downloaded and hashed on 2026-07-31. Its own copyright page dates the source files 16 May 2026 and describes the contents as the King James or Authorized Version using the standardized text of 1769, with Apocrypha. Not retained: the verse text extracted from it is registered as tracked artifacts under this edition, and the marginal-note apparatus, Strong's number annotations and 1611 preface it also carries are not used."
+retrieved = "2026-07-31"
+sha256 = "1ba522157152c537013c1be86c5eb96c17a9c7a0f8e02e23262d61eea5bef054"
+byte_size = 2770418
+notes = "81 USFM files: one front-matter file carrying the 1611 preface and 80 book files, 39 of the Old Testament, 14 of the Apocrypha and 27 of the New Testament. The Old Testament and New Testament files carry Strong's number attributes on most words; the Apocrypha files come from a separate transcription and carry none."

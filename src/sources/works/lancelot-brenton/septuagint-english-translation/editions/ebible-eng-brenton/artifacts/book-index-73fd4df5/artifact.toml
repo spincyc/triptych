@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton.book-index-73fd4df5"
+edition_id = "edition.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table recording the identity and naming of public-domain biblical books. It contains no third-party text and no exclusive right is claimed in the underlying facts."
+rights_jurisdiction = "United States"
+provenance = "Compiled by Triptych on 2026-07-31 from the eBible.org eng-Brenton release. Each USFM file was matched to its row by book code and its chapter and verse counts read from the extracted text. The token, Douay title, Missal abbreviation and alternate names are those of the Douay-Rheims Challoner book index wherever this edition carries the same book, so a citation resolves to the same token in either; the ordinal, file name, edition title and counts are this edition's own, and the ordinals follow the Septuagint order rather than the Vulgate's. Six books take tokens the Douay-Rheims has no separate book for: EpJer, Sus and Bel, which the Vulgate prints inside Baruch and Daniel, and 1Esdras, PrMan, 3Mach and 4Mach, which are not in the Catholic canon. Every book whose chapter division differs from the Vulgate's is recorded in the note column."
+indexable = true
+encoding = "utf-8"
+notes = "53 books and no New Testament: this is the Septuagint alone. It is not the Catholic canon. It adds 1 Esdras, the Prayer of Manasses, 3 Maccabees, 4 Maccabees and Psalm 151, none of which Trent received, and it prints the Epistle of Jeremias, Susanna and Bel as separate books rather than inside Baruch and Daniel. Its chapter division follows the Septuagint and departs from the Vulgate's in Jeremias, whose oracles against the nations stand as chapters 25-31 where the Vulgate prints them as 46-51, and in Joel, Malachias, Isaias, Micheas and Proverbs. The note column records each one."
+retrieved = "2026-07-31"
+sha256 = "73fd4df5564f20259aac2541a44d43117acf15844615f7bff13182871401ce7c"
+byte_size = 9347
+path = "src/sources/works/lancelot-brenton/septuagint-english-translation/editions/ebible-eng-brenton/artifacts/book-index-73fd4df5/book-index.tsv"

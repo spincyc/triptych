@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.ronald-conte.catholic-public-domain-version"
+title = "The Sacred Bible, Catholic Public Domain Version"
+responsible = "Ronald L. Conte Jr., sole translator and editor"
+work_type = "biblical-translation"
+alternate_titles = ["Catholic Public Domain Version", "CPDV", "The Sacred Bible, Catholic Public Domain Version, Original Edition"]
+languages = ["en"]
+locus_pattern = "[1-4]?[A-Z][A-Za-z]*\\.[1-9][0-9]*\\.[1-9][0-9]*(?:-(?:[1-9][0-9]*\\.)?[1-9][0-9]*)?"
+relations = ["work.catholic-church.vulgata-clementina", "work.english-college-of-douay.douay-rheims-bible"]
+description = "A modern English translation of the Sixto-Clementine Latin Vulgate made by Ronald L. Conte Jr. and completed on 28 March 2009, using the Challoner Douay-Rheims as a guide. The translator states his Latin base on his own site and in the SWORD module distributed from it: three Latin editions were consulted, the 1861 Vercellone, the 1885 Desclee, and the 1914 Hetzenauer, the last being the main text used. That 1914 Hetzenauer printing is registered in this library as an edition of the Clementine Vulgate, so this translation renders a text this library already holds. It is a one-man translation and carries no imprimatur; it is registered as a further English witness to the Vulgate's wording and versification, not as an authority, and no claim of this project may rest on it alone. It carries the Catholic canon's 73 books in the Vulgate order with the Vulgate's chapter and verse numbers, which is what distinguishes it from every other modern-English bible this library can lawfully redistribute. A locus is BookToken.chapter.verse, optionally with a closing verse or chapter.verse after a hyphen. Psalm numbers follow the Septuagint and Vulgate series and a psalm's inscription is numbered as verse 1, so Ps 53 here is Ps 54 in a modern Bible. One book is an exception and consumers must respect it: Esther is printed in the Septuagint arrangement in fifteen chapters and is not addressable by Vulgate numbers at all. The book tokens and the naming traps are registered in the book index of each edition."

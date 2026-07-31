@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.book-index-ed6ce3fc"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table recording the identity and naming of public-domain biblical books. It contains no third-party text and no exclusive right is claimed in the underlying facts."
+rights_jurisdiction = "United States"
+provenance = "Compiled by Triptych on 2026-07-31 from the eBible.org eng-web-c release. Each USFM file was matched to its row by book code and its chapter and verse counts read from the extracted text. The token, ordinal, file name and Douay-Rheims title are those of the Douay-Rheims Challoner book index, because this edition carries the same 73 books of the Catholic canon in the same order, so a citation resolves to the same token in either; the edition title and the counts are this release's own. Two codes were mapped by judgment and not mechanically: ESG is this edition's Esther and DAG is its Daniel, and each row records what that costs a Vulgate-numbered citation."
+indexable = true
+encoding = "utf-8"
+notes = "73 books: 46 Old Testament and 27 New Testament, the Catholic canon fixed at Trent, in the Douay-Rheims order. Every book's chapter count agrees with the Douay-Rheims registered in this library, Daniel's fourteen and Esther's ten excepted — Esther is the Greek book merged into the Hebrew chapter numbering and has ten chapters where the Vulgate has sixteen. The note column records every book whose verse division differs from the Douay-Rheims."
+retrieved = "2026-07-31"
+sha256 = "ed6ce3fc0936b50b09d5c0ec47cf6a4134ef465f08aba93f29207f683595196e"
+byte_size = 15492
+path = "src/sources/works/ebible-org/world-english-bible/editions/catholic-eng-web-c/artifacts/book-index-ed6ce3fc/book-index.tsv"

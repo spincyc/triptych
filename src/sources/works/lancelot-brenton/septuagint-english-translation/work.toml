@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.lancelot-brenton.septuagint-english-translation"
+title = "The Septuagint Version of the Old Testament, with an English Translation"
+responsible = "Sir Lancelot Charles Lee Brenton"
+work_type = "biblical-translation"
+alternate_titles = ["Brenton's Septuagint", "The Septuagint Version of the Old Testament and Apocrypha, with an English Translation", "Brenton Septuagint Translation"]
+languages = ["en", "grc"]
+locus_pattern = "[1-4]?[A-Z][A-Za-z]*\\.[1-9][0-9]*\\.[1-9][0-9]*(?:-(?:[1-9][0-9]*\\.)?[1-9][0-9]*)?"
+relations = ["work.catholic-church.vulgata-clementina"]
+description = "Sir Lancelot Brenton's English translation of the Greek Old Testament, published by Samuel Bagster and Sons in 1851 with the Greek of the Codex Vaticanus text on facing pages. It is registered here as the library's only witness to the Septuagint, the Greek Old Testament the Church read before Jerome and from which the Latin psalter and the deuterocanonical books ultimately descend, and it is registered for that comparative purpose and no other. It is not a Catholic bible and its canon is not the canon of Trent: it adds 1 Esdras, the Prayer of Manasses, 3 Maccabees, 4 Maccabees and Psalm 151, and it prints the Epistle of Jeremias, Susanna and Bel as books of their own rather than inside Baruch and Daniel. It has no New Testament. Its versification is the Septuagint's, and that is not the Vulgate's: the psalter agrees, because the Vulgate psalter follows the Greek numbering, but Jeremias does not agree at all, the Septuagint being about an eighth shorter and printing the oracles against the nations in the middle of the book where the Vulgate prints them at the end, and Joel, Malachias, Isaias, Micheas and Proverbs are divided differently. A locus is BookToken.chapter.verse, optionally with a closing verse or chapter.verse after a hyphen. Psalm numbers follow the Septuagint series and the inscription is numbered as verse 1. The book tokens, the names they answer to, and every divergence from the Vulgate division are registered in the book index of each edition."
