@@ -4,7 +4,7 @@
 
 Apply these rules in order:
 
-1. keep authoritative inputs and audit records under `src/`, reviewed publications under `doc/`, and reproducible intermediates under ignored `build/`;
+1. keep authoritative inputs and audit records under `src/`, reviewed publications under `pdf/`, and reproducible intermediates under ignored `build/`;
 2. preserve provider, collection, rite, edition, locale, jurisdiction, and document identity in the path and records;
 3. give shared text one owner, keep reusable external sources provider-neutral, and declare every consumer dependency;
 4. build deterministically, inspect every affected page, and install only the reviewed PDF; and
@@ -15,13 +15,13 @@ Apply these rules in order:
 ## Ownership and paths
 
 - `src/` contains tracked authoring sources, focused evidence and research records, reusable fragments, and the provider-neutral reusable source library governed by `guidance/sources.md`.
-- `doc/` contains tracked PDFs installed from reviewed builds.
+- `pdf/` contains tracked PDFs installed from reviewed builds.
 - `web/` contains tracked reader-facing web editions installed from reviewed conversions of the same sources, governed by `guidance/web-editions.md`.
 - `build/` contains only ignored, reproducible intermediates, logs, caches, review rasters, and generated release artifacts.
 
-Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Reader-facing `doc/` and `web/` outputs may summarize tracked generation and production metadata; they must not reproduce internal agent/runtime or process ledgers merely because those records remain auditable under `src/`. Neither `doc/` nor `web/` is a build directory. Cleaning may remove `build/` but never `src/`, `doc/`, or `web/`.
+Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Reader-facing `pdf/` and `web/` outputs may summarize tracked generation and production metadata; they must not reproduce internal agent/runtime or process ledgers merely because those records remain auditable under `src/`. Neither `pdf/` nor `web/` is a build directory. Cleaning may remove `build/` but never `src/`, `pdf/`, or `web/`.
 
-Installed PDFs under `doc/` are tracked release artifacts retained through
+Installed PDFs under `pdf/` are tracked release artifacts retained through
 ordinary Git history. Their reproducibility does not make them disposable
 intermediates or authorize rewriting history to remove prior releases. Moving
 release artifacts to external storage requires a separately designed and
@@ -82,12 +82,12 @@ components whose manifest mode is `synthesis`. Both outputs are independently
 reviewed, installed, cataloged in the canonical row, and bound to their own
 exact release hashes.
 
-`build/<provider>/`, `doc/<provider>/`, and `web/<provider>/` mirror a publishable leaf's path below `src/<provider>/`; the PDF and the web edition are named for the leaf. For example, under `gpt`:
+`build/<provider>/`, `pdf/<provider>/`, and `web/<provider>/` mirror a publishable leaf's path below `src/<provider>/`; the PDF and the web edition are named for the leaf. For example, under `gpt`:
 
 ```text
 src/gpt/articles/canon-law/example/main.tex
 build/gpt/articles/canon-law/example.pdf
-doc/gpt/articles/canon-law/example.pdf
+pdf/gpt/articles/canon-law/example.pdf
 web/gpt/articles/canon-law/example.md
 ```
 
@@ -159,7 +159,7 @@ make                  # bounded parallel build into build/
 make pdf              # incremental PDF build
 make review-pdfs      # artifacts for changed PDFs
 make review-all-pdfs  # artifacts for every built PDF
-make install          # copy reviewed PDFs into doc/
+make install          # copy reviewed PDFs into pdf/
 make clean            # remove reproducible intermediates only
 ```
 
@@ -170,7 +170,7 @@ Build recipes must:
 - preserve mirrored paths without basename collisions and isolate concurrent targets;
 - declare every render-affecting input and shared-consumer edge;
 - stop on fatal failure and never install a partial result; and
-- keep all intermediates out of `doc/`.
+- keep all intermediates out of `pdf/`.
 
 Compile each affected publication for enough passes to settle references and contents. Reject fatal errors, undefined references, overflow, and unresolved layout warnings.
 

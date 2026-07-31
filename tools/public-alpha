@@ -112,7 +112,7 @@ WEB_PAGE_RE = re.compile(r"web/([a-z0-9-]+)/(.+)\.html")
 # Matches any provider edition link; provider membership in the manifest's
 # declared provider set is enforced during validation so that a link to an
 # undeclared provider is a hard error rather than silently unmatched text.
-PDF_LINK_RE = re.compile(r"(?:\.\./)?doc/([a-z0-9-]+)/([^)#\s]+)\.pdf(?:#[^)]*)?")
+PDF_LINK_RE = re.compile(r"(?:\.\./)?pdf/([a-z0-9-]+)/([^)#\s]+)\.pdf(?:#[^)]*)?")
 # Catalog links to a reviewed web edition. Catalog counting rules read only
 # PDF links, so a Read link never adds or moves a publication's one home.
 WEB_LINK_RE = re.compile(r"(?:\.\./)?web/([a-z0-9-]+)/([^)#\s]+)\.html(?:#[^)]*)?")
@@ -664,7 +664,7 @@ def declared_providers(manifest: dict) -> tuple[str, list[str]]:
 
     ``provider`` names the primary provider; bare publication ids, catalog
     identity markers, and rights-record rows belong to it. ``providers`` is an
-    optional ordered list of every provider whose ``doc/<provider>/`` and
+    optional ordered list of every provider whose ``pdf/<provider>/`` and
     ``src/<provider>/`` trees are discovered, validated, copied, and linkable;
     it defaults to the primary provider alone and must include it.
     """
@@ -1026,7 +1026,7 @@ def publication_source_path(provider: str, leaf: str) -> Path:
 
 
 def discover_pdf_ids(provider: str) -> set[str]:
-    root = ROOT / "doc" / provider
+    root = ROOT / "pdf" / provider
     return {
         path.relative_to(root).with_suffix("").as_posix()
         for path in root.rglob("*.pdf")
@@ -1058,7 +1058,7 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
                     ids.append((link_provider, leaf))
                 else:
                     undeclared_provider_references.append(
-                        (relative, f"doc/{link_provider}/{leaf}.pdf")
+                        (relative, f"pdf/{link_provider}/{leaf}.pdf")
                     )
             marked_ids: list[tuple[str, str]] = []
             for marked_provider, leaf in CATALOG_PUBLICATION_ID_RE.findall(line):
@@ -1312,7 +1312,7 @@ def candidate_inventory_data(
     for key in sorted(publications):
         provider, leaf = key
         source_path = publication_source_path(provider, leaf)
-        pdf_path = ROOT / "doc" / provider / f"{leaf}.pdf"
+        pdf_path = ROOT / "pdf" / provider / f"{leaf}.pdf"
         if source_path.is_symlink() or not source_path.is_file():
             errors.append(f"unsafe or missing publication source: {source_path.relative_to(ROOT)}")
         if pdf_path.is_symlink():
@@ -1455,12 +1455,12 @@ def artifact_manifest_data(
                 f"{publication_label(key, primary)}: missing alpha binding"
             )
         authorization_id = binding["authorization"]
-        pdf_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
+        pdf_hash = sha256(ROOT / "pdf" / provider / f"{leaf}.pdf")
         publication_entries.append(
             {
                 "id": publication_label(key, primary),
                 "status": "alpha",
-                "pdf": f"doc/{provider}/{leaf}.pdf",
+                "pdf": f"pdf/{provider}/{leaf}.pdf",
                 "authorization": authorization_id,
                 "pdf_sha256": pdf_hash,
             }
@@ -1487,7 +1487,7 @@ def expected_artifact_files(
         expected.add(PICTORIAL_GALLERY_OUTPUT)
         expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
-    expected.update(f"doc/{provider}/{leaf}.pdf" for provider, leaf in included)
+    expected.update(f"pdf/{provider}/{leaf}.pdf" for provider, leaf in included)
     expected.update(web_data_files())
     expected.update(web_browser_pages())
     expected.update(
@@ -1703,7 +1703,7 @@ def source_to_output(
         if license_path.is_file():
             destination = resolved_text
     if destination is None:
-        pdf_match = re.fullmatch(r"doc/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
+        pdf_match = re.fullmatch(r"pdf/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
         if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
             destination = resolved_text
     if destination is None:
@@ -2401,7 +2401,7 @@ def verify_catalog_reachability(
         catalog_path = output / catalog_output
         if not catalog_path.is_file():
             continue
-        destination = f"doc/{provider}/{leaf}.pdf"
+        destination = f"pdf/{provider}/{leaf}.pdf"
         expected_href = relative_link(catalog_output, destination)
         local_paths = {
             unquote(urlsplit(href).path)
@@ -2521,7 +2521,7 @@ def verify_output(
     primary, _ = declared_providers(manifest)
     included = included_publications(publications, preview)
     expected_authorization = artifact_authorization(manifest, included)
-    expected_pdf_paths = {f"doc/{provider}/{leaf}.pdf" for provider, leaf in included}
+    expected_pdf_paths = {f"pdf/{provider}/{leaf}.pdf" for provider, leaf in included}
     if not output.is_dir():
         raise ReleaseError(f"artifact does not exist: {output.relative_to(ROOT)}")
 
@@ -2572,10 +2572,10 @@ def verify_output(
         errors.append("artifact manifest does not exactly match the release policy")
     for key, publication in included.items():
         provider, leaf = key
-        pdf_path = output / "doc" / provider / f"{leaf}.pdf"
+        pdf_path = output / "pdf" / provider / f"{leaf}.pdf"
         if pdf_path.is_file():
             actual_hash = sha256(pdf_path)
-            expected_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
+            expected_hash = sha256(ROOT / "pdf" / provider / f"{leaf}.pdf")
             mismatch = "does not match its alpha SHA-256"
             if actual_hash != expected_hash:
                 errors.append(
@@ -2659,7 +2659,7 @@ def verify_output(
                     # Every surface an excluded publication could reach the
                     # reader through: its PDF and its web edition alike.
                     excluded_targets = (
-                        f"doc/{excluded_provider}/{excluded_leaf}.pdf",
+                        f"pdf/{excluded_provider}/{excluded_leaf}.pdf",
                         f"web/{excluded_provider}/{excluded_leaf}.html",
                     )
                     if any(target in unquote(href) for target in excluded_targets):
@@ -2769,8 +2769,8 @@ def build_site(
         shutil.copyfile(license_path, destination)
 
     for provider, leaf in sorted(included):
-        source = ROOT / "doc" / provider / f"{leaf}.pdf"
-        destination = output / "doc" / provider / f"{leaf}.pdf"
+        source = ROOT / "pdf" / provider / f"{leaf}.pdf"
+        destination = output / "pdf" / provider / f"{leaf}.pdf"
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
 

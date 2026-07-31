@@ -64,12 +64,12 @@ fi
 
 # A render is a build artifact: it may not be written into a source tree.
 status=0
-run_tool render --bible douay-rheims --out "$repo/doc/bibles" >/dev/null 2>&1 || status=$?
+run_tool render --bible douay-rheims --out "$repo/pdf/bibles" >/dev/null 2>&1 || status=$?
 if [ "$status" -ne 2 ]; then
 	echo "rendering into a tracked tree should exit 2, got $status" >&2
 	exit 1
 fi
-if [ -e "$repo/doc/bibles" ]; then
+if [ -e "$repo/pdf/bibles" ]; then
 	echo "a refused destination was created anyway" >&2
 	exit 1
 fi

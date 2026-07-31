@@ -165,6 +165,6 @@ Before installing a publication:
 - compile enough passes to settle contents and references; reject fatal errors, undefined references, overflow, and unresolved layout warnings;
 - generate review rasters as `guidance/repository.md` requires and visually inspect every page;
 - check clipping, density, heading splits, tables, callouts, artificial whitespace, sparse spill pages, monochrome legibility, PDF structure, embedded fonts, metadata, and extracted text; confirm the final-page rights colophon is readable, unclipped, non-overlapping, and has not created a spill page; and
-- install only the reviewed PDF at its mirrored `doc/` path, leaving intermediates under ignored `build/`.
+- install only the reviewed PDF at its mirrored `pdf/` path, leaving intermediates under ignored `build/`.
 
 Profile-specific gates remain mandatory.

@@ -13,7 +13,7 @@ class RepositoryPdfRetentionGuidanceTests(unittest.TestCase):
     guidance = (ROOT / "guidance/repository.md").read_text(encoding="utf-8")
 
     self.assertIn(
-        "Installed PDFs under `doc/` are tracked release artifacts retained through\n"
+        "Installed PDFs under `pdf/` are tracked release artifacts retained through\n"
         "ordinary Git history.",
         guidance,
     )

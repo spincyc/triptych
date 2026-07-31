@@ -370,7 +370,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertNotIn("jobserver unavailable", result.stderr)
         for document in ("demo-a", "demo-b"):
             self.assertEqual(
-                (self.root / f"doc/gpt/{document}.pdf").read_bytes(),
+                (self.root / f"pdf/gpt/{document}.pdf").read_bytes(),
                 (self.root / f"build/gpt/{document}.pdf").read_bytes(),
             )
 
@@ -449,7 +449,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
     def test_install_uses_only_validated_builds_and_refreshes_changed_pdf(self) -> None:
         self.run_make("-j4", "install")
         build_pdf = self.root / "build/gpt/demo-a.pdf"
-        installed_pdf = self.root / "doc/gpt/demo-a.pdf"
+        installed_pdf = self.root / "pdf/gpt/demo-a.pdf"
         self.assertEqual(installed_pdf.read_bytes(), build_pdf.read_bytes())
 
         time.sleep(0.02)
@@ -509,7 +509,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
             )
             self.assertIn(f"build/gpt/{relative}", reviewed)
             self.assertEqual(
-                (self.root / f"doc/gpt/{relative}").read_bytes(),
+                (self.root / f"pdf/gpt/{relative}").read_bytes(),
                 (self.root / f"build/gpt/{relative}").read_bytes(),
             )
 
@@ -529,7 +529,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
     def test_checker_refresh_does_not_reinstall_identical_pdf_bytes(self) -> None:
         self.run_make("-j4", "install")
         installed_pdfs = [
-            self.root / f"doc/gpt/{document}.pdf"
+            self.root / f"pdf/gpt/{document}.pdf"
             for document in ("demo-a", "demo-b")
         ]
         installed_mtimes = [pdf.stat().st_mtime_ns for pdf in installed_pdfs]
@@ -564,7 +564,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
 
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Validation stamp does not match current PDF/checker", result.stderr)
-        self.assertFalse((self.root / "doc/gpt/demo-a.pdf").exists())
+        self.assertFalse((self.root / "pdf/gpt/demo-a.pdf").exists())
         self.assertEqual(len(self.lines(self.check_log)), 1)  # global source only
 
     def test_legacy_empty_stamp_is_revalidated_and_migrated(self) -> None:
@@ -604,16 +604,16 @@ chmod 0644 "$4"
         self.clear_logs()
 
         result = self.run_make(
-            "doc/gpt/demo-a.pdf",
+            "pdf/gpt/demo-a.pdf",
             f"INSTALL={mutating_install}",
             check=False,
         )
 
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("PDF or metadata checker changed during install", result.stderr)
-        self.assertFalse((self.root / "doc/gpt/demo-a.pdf").exists())
+        self.assertFalse((self.root / "pdf/gpt/demo-a.pdf").exists())
         self.assertEqual(
-            list((self.root / "doc/gpt").glob("demo-a.pdf.tmp.*")), []
+            list((self.root / "pdf/gpt").glob("demo-a.pdf.tmp.*")), []
         )
 
     def test_empty_parallel_limit_fails_closed(self) -> None:

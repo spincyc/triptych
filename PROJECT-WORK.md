@@ -178,7 +178,7 @@ editions were rebuilt, inspected page by page, installed with exact build
 identity, and passed the repository's metadata, component, web-currentness,
 source-library, source-inventory, source-family-screening, public-alpha, and
 release-binding gates. The affected GPT staleness records are fresh. No file
-under `src/claude`, `doc/claude`, or `web/claude` changed.
+under `src/claude`, `pdf/claude`, or `web/claude` changed.
 
 ### Exorcism reference
 

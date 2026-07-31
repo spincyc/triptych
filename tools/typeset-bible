@@ -49,7 +49,7 @@ SOURCE_ROOT = ROOT / "src" / "sources" / "works"
 DEFAULT_OUT = ROOT / "build" / "bibles"
 
 # Where a rendered edition may be written. `build/` is the only tree in this
-# repository that holds reproducible artifacts; `doc/`, `web/` and `src/` hold
+# repository that holds reproducible artifacts; `pdf/`, `web/` and `src/` hold
 # reviewed or authoritative ones, and a whole-bible render is neither.
 WRITABLE_ROOT = ROOT / "build"
 

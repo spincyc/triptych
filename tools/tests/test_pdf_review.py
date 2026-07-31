@@ -785,7 +785,7 @@ printf '%s\\n' "$PDF_REVIEW_TEST_FONT"
 
     def test_changed_against_skips_identical_pdf_with_a_cold_cache(self) -> None:
         build_root = self.root / "build/gpt"
-        installed_root = self.root / "doc/gpt"
+        installed_root = self.root / "pdf/gpt"
         build_root.mkdir(parents=True)
         installed_root.mkdir(parents=True)
         same = build_root / "same.pdf"
@@ -812,7 +812,7 @@ printf '%s\\n' "$PDF_REVIEW_TEST_FONT"
 
     def test_no_change_run_atomically_replaces_stale_output_with_empty_manifest(self) -> None:
         build_root = self.root / "build/gpt"
-        installed_root = self.root / "doc/gpt"
+        installed_root = self.root / "pdf/gpt"
         build_root.mkdir(parents=True)
         installed_root.mkdir(parents=True)
         source = build_root / "document.pdf"
@@ -850,7 +850,7 @@ printf '%s\\n' "$PDF_REVIEW_TEST_FONT"
 
     def test_changed_run_removes_outputs_for_pdfs_no_longer_selected(self) -> None:
         build_root = self.root / "changed-build/gpt"
-        installed_root = self.root / "changed-doc/gpt"
+        installed_root = self.root / "changed-pdf/gpt"
         build_root.mkdir(parents=True)
         installed_root.mkdir(parents=True)
         first_source = build_root / "first.pdf"
@@ -890,7 +890,7 @@ printf '%s\\n' "$PDF_REVIEW_TEST_FONT"
 
     def test_changed_selection_is_bound_to_an_immutable_source_snapshot(self) -> None:
         build_root = self.root / "selection-build/gpt"
-        installed_root = self.root / "selection-doc/gpt"
+        installed_root = self.root / "selection-pdf/gpt"
         build_root.mkdir(parents=True)
         installed_root.mkdir(parents=True)
         source = build_root / "document.pdf"
@@ -1017,7 +1017,7 @@ printf '%s\\n' "$PDF_REVIEW_TEST_FONT"
             any(self.output.parent.glob(f".{self.output.name}.snapshots-*"))
         )
 
-    def test_git_selection_maps_build_pdf_to_its_doc_mirror(self) -> None:
+    def test_git_selection_maps_build_pdf_to_its_installed_mirror(self) -> None:
         task = review.PdfTask(
             source=ROOT / "build/gpt/example/document.pdf",
             relative_output=Path("build/gpt/example/document"),
@@ -1025,7 +1025,7 @@ printf '%s\\n' "$PDF_REVIEW_TEST_FONT"
         with mock.patch.object(
             review,
             "git_changed_pdf_paths",
-            return_value={Path("doc/gpt/example/document.pdf")},
+            return_value={Path("pdf/gpt/example/document.pdf")},
         ):
             self.assertEqual(review.select_git_changed([task], "HEAD", None), [task])
 

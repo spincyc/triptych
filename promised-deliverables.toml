@@ -35,11 +35,11 @@ state = "complete"
   criterion = "Every affected GPT research and synthesis PDF and canonical web edition is rebuilt, installed from a reviewed build, checked for source and metadata integrity, and visually inspected page by page."
   status = "pass"
   evidence = [
-    "doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.pdf",
-    "doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a.pdf",
-    "doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b.pdf",
-    "doc/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c.pdf",
-    "doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+    "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
   ]
 
   [[deliverables.requirements]]
@@ -59,9 +59,9 @@ state = "complete"
   criterion = "The installed Catholic exorcism PDF has at least 100 physical pages."
   status = "pass"
   check = "pdf_min_pages"
-  path = "doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
+  path = "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
   minimum = 100
-  evidence = ["doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"]
+  evidence = ["pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"]
 
   [[deliverables.requirements]]
   id = "substantive-pages"
@@ -132,12 +132,12 @@ state = "complete"
   status = "pass"
   check = "path_exists"
   evidence = [
-    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
-    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
-    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
-    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
-    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
-    "doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
   ]
 
   [[deliverables.requirements]]
@@ -158,8 +158,8 @@ state = "candidate"
   status = "pass"
   check = "path_exists"
   evidence = [
-    "doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
-    "doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
   ]
 
   [[deliverables.requirements]]
@@ -180,8 +180,8 @@ state = "candidate"
   status = "pass"
   check = "path_exists"
   evidence = [
-    "doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
-    "doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
   ]
 
   [[deliverables.requirements]]

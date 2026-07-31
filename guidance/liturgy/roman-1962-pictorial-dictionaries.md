@@ -9,7 +9,7 @@ review, and publication rules remain in force.
 The family belongs under
 `src/<provider>/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/`.
 The owner root is non-publishable. Its independently printable leaves mirror
-under `build/<provider>/` and `doc/<provider>/`.
+under `build/<provider>/` and `pdf/<provider>/`.
 
 ## Governing priorities
 

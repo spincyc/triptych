@@ -58,11 +58,11 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         self.root = pathlib.Path(self.tmp.name)
-        (self.root / "doc/gpt/articles").mkdir(parents=True)
-        (self.root / "doc/claude/articles").mkdir(parents=True)
+        (self.root / "pdf/gpt/articles").mkdir(parents=True)
+        (self.root / "pdf/claude/articles").mkdir(parents=True)
         (self.root / "release/rights").mkdir(parents=True)
-        self.gpt_pdf = self.root / "doc/gpt/articles/example.pdf"
-        self.claude_pdf = self.root / "doc/claude/articles/example.pdf"
+        self.gpt_pdf = self.root / "pdf/gpt/articles/example.pdf"
+        self.claude_pdf = self.root / "pdf/claude/articles/example.pdf"
         self.readme = self.root / "README.md"
         self.gpt_pdf.write_bytes(b"gpt pdf v1")
         self.claude_pdf.write_bytes(b"claude pdf v1")
@@ -209,7 +209,7 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.tool.refresh(self.tool.load_manifest())
 
     def test_add_publication_qualifies_and_rejects_duplicates(self):
-        new_pdf = self.root / "doc/claude/articles/second.pdf"
+        new_pdf = self.root / "pdf/claude/articles/second.pdf"
         new_pdf.write_bytes(b"second")
         publication_id = self.tool.add_publication(
             self.tool.load_manifest(),

@@ -13,9 +13,9 @@ On this page: [Core and reference works](#core-and-reference-works) ·
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **The Ordinary and Order of the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | Stable texts, ritual sequence, and theological exposition. |
-| **Assembling the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | Calendar, precedence, Mass classes, formularies, and commemorations. |
-| **The 1962 Roman Calendar** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | Construction history and complete recurring universal and United States inventories. |
+| **The Ordinary and Order of the Mass** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | [PDF](../pdf/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | Stable texts, ritual sequence, and theological exposition. |
+| **Assembling the Mass** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | [PDF](../pdf/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | Calendar, precedence, Mass classes, formularies, and commemorations. |
+| **The 1962 Roman Calendar** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | [PDF](../pdf/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | Construction history and complete recurring universal and United States inventories. |
 
 <a id="altar-server-guides"></a>
 ## Altar Server Guides
@@ -25,9 +25,9 @@ practice.
 
 | Form | ChatGPT | Claude | Best for |
 | --- | --- | --- | --- |
-| **Low Mass Child Booklet** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf) · [Trainer manual](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf) · [Flash cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf) | — | Ages 8–10; a two-server route, trainer notes, and response cards. |
-| **Serving Missa Cantata** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf) · [Cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf) | — | Ages 8–14; role practice and a trainer chronology. |
-| **Serving Solemn Mass** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf) · [Cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf) | — | Ages 8–14; role practice and a trainer chronology. |
+| **Low Mass Child Booklet** | [Booklet](../pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf) · [Trainer manual](../pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf) · [Flash cards](../pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf) | — | Ages 8–10; a two-server route, trainer notes, and response cards. |
+| **Serving Missa Cantata** | [Booklet](../pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf) · [Cue cards](../pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf) | — | Ages 8–14; role practice and a trainer chronology. |
+| **Serving Solemn Mass** | [Booklet](../pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf) · [Cue cards](../pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf) | — | Ages 8–14; role practice and a trainer chronology. |
 
 <a id="sanctuary-pictorial-dictionaries"></a>
 ## Sanctuary Pictorial Dictionaries
@@ -38,12 +38,12 @@ Monochrome-pencil visual references organized for six audiences.
 
 | Edition | PDF | Focus |
 | --- | --- | --- |
-| **Comprehensive dictionary** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf) | Shared inventory and historical boundary. |
-| **Altar server** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf) | Recognition, proximity, and handling. |
-| **Sacristan** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf) | Preparation, placement, and storage. |
-| **MC and trainer** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf) | Roles, handoffs, and ceremonial relationships. |
-| **General reader** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf) | Identity, symbolism, status, and period. |
-| **Pontifical ceremonies** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf) | Vesture, insignia, furnishings, and ministers. |
+| **Comprehensive dictionary** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf) | Shared inventory and historical boundary. |
+| **Altar server** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf) | Recognition, proximity, and handling. |
+| **Sacristan** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf) | Preparation, placement, and storage. |
+| **MC and trainer** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf) | Roles, handoffs, and ceremonial relationships. |
+| **General reader** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf) | Identity, symbolism, status, and period. |
+| **Pontifical ceremonies** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf) | Vesture, insignia, furnishings, and ministers. |
 
 ## Sunday Propers Calendar
 
@@ -79,16 +79,16 @@ unavailable editions are shown as `Planned`.
 | 12 | **Fifth Sunday after Easter** | Planned | Planned |
 | 13 | **Sunday after the Ascension** | Planned | Planned |
 | 14 | **Pentecost Sunday** | Planned | Planned |
-| 15 | **Trinity Sunday** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday.pdf) | Planned |
-| 16 | **Second Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost.pdf) | Planned |
-| 17 | **Third Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.html) | Planned |
-| 18 | **Fourth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.html) | Planned |
-| 19 | **Fifth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost.pdf) | Planned |
-| 20 | **Sixth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf) | Planned |
-| 21 | **Seventh Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | Planned |
-| 22 | **Eighth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.html) |
-| 23 | **Ninth Sunday after Pentecost** | [Synthesis PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) | [Synthesis PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) |
-| 24 | **Tenth Sunday after Pentecost** | [Full Research PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.pdf) · [Synthesis PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.html) | Planned |
+| 15 | **Trinity Sunday** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday.pdf) | Planned |
+| 16 | **Second Sunday after Pentecost** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost.pdf) | Planned |
+| 17 | **Third Sunday after Pentecost** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.html) | Planned |
+| 18 | **Fourth Sunday after Pentecost** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.html) | Planned |
+| 19 | **Fifth Sunday after Pentecost** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost.pdf) | Planned |
+| 20 | **Sixth Sunday after Pentecost** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf) | Planned |
+| 21 | **Seventh Sunday after Pentecost** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | Planned |
+| 22 | **Eighth Sunday after Pentecost** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) | [PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.html) |
+| 23 | **Ninth Sunday after Pentecost** | [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) | [Synthesis PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) |
+| 24 | **Tenth Sunday after Pentecost** | [Full Research PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost.html) | Planned |
 | 25 | **Eleventh Sunday after Pentecost** | Planned | Planned |
 | 26 | **Twelfth Sunday after Pentecost** | Planned | Planned |
 | 27 | **Thirteenth Sunday after Pentecost** | Planned | Planned |
@@ -165,4 +165,4 @@ Sunday spine.
 
 | ID | Guide | ChatGPT | Claude |
 | --- | --- | --- | --- |
-| M01 | **The Nuptial Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf) | — |
+| M01 | **The Nuptial Mass** | [PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf) | — |

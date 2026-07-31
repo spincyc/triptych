@@ -12,7 +12,7 @@ model server roster where ceremonial training is in scope.
 The series belongs under
 `src/<provider>/liturgy/roman-rite/1962/reference/altar-server-guides/`. Its
 owner root is non-publishable; its seven independently printable leaves mirror
-under `build/<provider>/` and `doc/<provider>/`. Universal evidence, rights, metadata, review, and
+under `build/<provider>/` and `pdf/<provider>/`. Universal evidence, rights, metadata, review, and
 publication rules remain in `guidance/editorial.md`; ownership, paths, shared
 dependencies, catalogs, and installation remain governed by
 `guidance/repository.md`.

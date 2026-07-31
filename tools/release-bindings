@@ -67,7 +67,7 @@ def split_id(manifest: dict, publication_id: str) -> tuple[str, str]:
 
 def pdf_path(manifest: dict, publication_id: str) -> Path:
     provider, leaf = split_id(manifest, publication_id)
-    return ROOT / "doc" / provider / f"{leaf}.pdf"
+    return ROOT / "pdf" / provider / f"{leaf}.pdf"
 
 
 def single_authorization(manifest: dict) -> dict:
@@ -238,7 +238,7 @@ def add_publication(
     if provider not in providers:
         raise BindingError(f"provider {provider!r} is not declared in the manifest")
     publication_id = leaf if provider == primary_provider(manifest) else f"{provider}:{leaf}"
-    path = ROOT / "doc" / provider / f"{leaf}.pdf"
+    path = ROOT / "pdf" / provider / f"{leaf}.pdf"
     if status == "alpha" and not path.is_file():
         raise BindingError(f"installed PDF missing: {path.relative_to(ROOT)}")
     authorizations = list(manifest.get("authorizations", {}))

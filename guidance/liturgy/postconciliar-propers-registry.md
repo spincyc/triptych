@@ -77,7 +77,7 @@ There is no `PC-S` identity for a numbered First Sunday in Ordinary Time. Normal
 
 ### Fixed layout and ownership
 
-Let `<proper-root>` mean `src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/propers`. Use these paths exactly; the corresponding publishable PDF mirrors follow the repository-wide `doc/` and `build/` rules.
+Let `<proper-root>` mean `src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/propers`. Use these paths exactly; the corresponding publishable PDF mirrors follow the repository-wide `pdf/` and `build/` rules.
 
 | Material | Required source path | Publication status |
 | --- | --- | --- |

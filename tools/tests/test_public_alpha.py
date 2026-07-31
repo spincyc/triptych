@@ -58,7 +58,7 @@ class PublicAlphaTest(unittest.TestCase):
         self.write("README.md", b"# Test\n")
         self.write(
             "library/test.md",
-            b"# Test shelf\n\n[Work](../doc/gpt/work.pdf)\n",
+            b"# Test shelf\n\n[Work](../pdf/gpt/work.pdf)\n",
         )
         self.write(
             "library/curriculums.md",
@@ -74,7 +74,7 @@ class PublicAlphaTest(unittest.TestCase):
         self.write("tools/public-alpha", b"test generator\n")
         self.write("release/rights/approval.md", b"stale approval record\n")
         self.write("src/gpt/work/main.tex", b"source\n")
-        self.write("doc/gpt/work.pdf", b"current pdf bytes\n")
+        self.write("pdf/gpt/work.pdf", b"current pdf bytes\n")
         self.write("LICENSES/MIT.txt", b"test license\n")
         self.manifest = self.make_manifest()
         self.write_manifest()
@@ -265,14 +265,14 @@ class PublicAlphaTest(unittest.TestCase):
             raise ValueError(f"unsupported unapproved status: {status}")
         self.write(f"src/gpt/{publication_id}/main.tex", b"source\n")
         if install_pdf:
-            self.write(f"doc/gpt/{publication_id}.pdf", b"publication pdf bytes\n")
+            self.write(f"pdf/gpt/{publication_id}.pdf", b"publication pdf bytes\n")
         if link_catalog is not None:
             catalog_path = self.root / link_catalog
             existing = catalog_path.read_bytes() if catalog_path.is_file() else b""
             self.write(
                 link_catalog,
                 existing
-                + f"\n[{publication_id}](../doc/gpt/{publication_id}.pdf)\n".encode(),
+                + f"\n[{publication_id}](../pdf/gpt/{publication_id}.pdf)\n".encode(),
             )
         if not install_pdf:
             catalog_path = self.root / catalog
@@ -314,11 +314,11 @@ class PublicAlphaTest(unittest.TestCase):
         self.manifest["providers"] = ["gpt", "claude"]
         self.write(f"src/claude/{leaf}/main.tex", b"claude source\n")
         if install_pdf:
-            self.write(f"doc/claude/{leaf}.pdf", b"claude pdf bytes\n")
+            self.write(f"pdf/claude/{leaf}.pdf", b"claude pdf bytes\n")
         if link_catalog is not None:
             catalog_path = self.root / link_catalog
             existing = catalog_path.read_bytes() if catalog_path.is_file() else b""
-            addition = link_line or f"[{leaf} claude](../doc/claude/{leaf}.pdf)"
+            addition = link_line or f"[{leaf} claude](../pdf/claude/{leaf}.pdf)"
             self.write(link_catalog, existing + f"\n{addition}\n".encode())
         if status == "release":
             gates: list[str] = []
@@ -351,7 +351,7 @@ class PublicAlphaTest(unittest.TestCase):
             if publication["status"] not in {"release", "review"}:
                 continue
             provider, leaf = self.publication_provider_and_leaf(publication["id"])
-            pdf_path = self.root / "doc" / provider / f"{leaf}.pdf"
+            pdf_path = self.root / "pdf" / provider / f"{leaf}.pdf"
             if not pdf_path.is_file():
                 continue
             pdf_hash = digest(pdf_path.read_bytes())
@@ -421,7 +421,7 @@ class PublicAlphaTest(unittest.TestCase):
             [
                 {
                     "id": "work",
-                    "path": "doc/gpt/work.pdf",
+                    "path": "pdf/gpt/work.pdf",
                     "sha256": digest(b"current pdf bytes\n"),
                 }
             ],
@@ -464,7 +464,7 @@ class PublicAlphaTest(unittest.TestCase):
         )
         empty_catalog = self.tool.filter_catalog("library/test.md", catalog, set())
 
-        self.assertIn("../doc/gpt/work.pdf", public_catalog)
+        self.assertIn("../pdf/gpt/work.pdf", public_catalog)
         self.assertNotIn("held-work", public_catalog)
         self.assertNotIn("held-work", empty_catalog)
         self.assertIn("No publications from this section are included", empty_catalog)
@@ -583,7 +583,7 @@ class PublicAlphaTest(unittest.TestCase):
                 "# Test shelf\n\n"
                 "| Publication | Supporting records |\n"
                 "| --- | --- |\n"
-                "| [Work](../doc/gpt/work.pdf) | "
+                "| [Work](../pdf/gpt/work.pdf) | "
                 "[Source map](../src/gpt/work/research/module-map.md) |\n"
             ).encode(),
         )
@@ -635,7 +635,7 @@ class PublicAlphaTest(unittest.TestCase):
             (
                 "# Ecclesiastical Latin\n\n"
                 "[Return to Curriculums](curriculums.md)\n\n"
-                "[Held](../doc/gpt/held.pdf)\n"
+                "[Held](../pdf/gpt/held.pdf)\n"
             ).encode(),
         )
         with mock.patch.object(
@@ -663,7 +663,7 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_unmanifested_installed_pdf_is_rejected(self) -> None:
         self.authorize_current_inputs()
-        self.write("doc/gpt/unmanifested.pdf", b"unmanifested pdf bytes\n")
+        self.write("pdf/gpt/unmanifested.pdf", b"unmanifested pdf bytes\n")
 
         with self.assertRaises(self.tool.ReleaseError) as failure:
             self.tool.validate_manifest(self.manifest)
@@ -675,7 +675,7 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_release_entry_requires_installed_pdf(self) -> None:
         self.authorize_current_inputs()
-        (self.root / "doc/gpt/work.pdf").unlink()
+        (self.root / "pdf/gpt/work.pdf").unlink()
 
         with self.assertRaises(self.tool.ReleaseError) as failure:
             self.tool.validate_manifest(self.manifest)
@@ -778,7 +778,7 @@ class PublicAlphaTest(unittest.TestCase):
     def test_installed_pdf_rejects_multiple_catalog_links(self) -> None:
         catalog = self.root / "library/test.md"
         catalog.write_bytes(
-            catalog.read_bytes() + b"\n[Work again](../doc/gpt/work.pdf)\n"
+            catalog.read_bytes() + b"\n[Work again](../pdf/gpt/work.pdf)\n"
         )
         self.authorize_current_inputs()
 
@@ -1101,13 +1101,13 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_public_site_records_and_reaches_legacy_review_as_alpha(self) -> None:
         self.write("src/gpt/review-work/main.tex", b"review source\n")
-        self.write("doc/gpt/review-work.pdf", b"review pdf bytes\n")
+        self.write("pdf/gpt/review-work.pdf", b"review pdf bytes\n")
         self.write(
             "library/test.md",
             (
                 "# Test shelf\n\n"
-                "[Work](../doc/gpt/work.pdf)\n\n"
-                "[Review copy](../doc/gpt/review-work.pdf)\n"
+                "[Work](../pdf/gpt/work.pdf)\n\n"
+                "[Review copy](../pdf/gpt/review-work.pdf)\n"
             ).encode(),
         )
         self.manifest["publications"].append(
@@ -1141,9 +1141,9 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(
             review_entry["pdf_sha256"], digest(b"review pdf bytes\n")
         )
-        self.assertTrue((output / "doc/gpt/review-work.pdf").is_file())
+        self.assertTrue((output / "pdf/gpt/review-work.pdf").is_file())
         catalog = (output / "library/test.html").read_text(encoding="utf-8")
-        self.assertIn('href="../doc/gpt/review-work.pdf"', catalog)
+        self.assertIn('href="../pdf/gpt/review-work.pdf"', catalog)
 
     def test_alpha_catalog_link_may_use_terse_reader_label(self) -> None:
         self.add_unapproved_publication(
@@ -1171,7 +1171,7 @@ class PublicAlphaTest(unittest.TestCase):
         catalog_path = output / "library/test.html"
         catalog_path.write_text(
             catalog_path.read_text(encoding="utf-8").replace(
-                'href="../doc/gpt/work.pdf"', 'href="../nonexistent.html"'
+                'href="../pdf/gpt/work.pdf"', 'href="../nonexistent.html"'
             ),
             encoding="utf-8",
         )
@@ -1205,7 +1205,7 @@ class PublicAlphaTest(unittest.TestCase):
         filtered = self.tool.filter_catalog(
             "library/test.md", catalog, set(public)
         )
-        self.assertIn("../doc/gpt/review-work.pdf", filtered)
+        self.assertIn("../pdf/gpt/review-work.pdf", filtered)
         self.assertNotIn("held-work", filtered)
 
         artifact = self.tool.artifact_manifest_data(self.manifest, public, False)
@@ -1252,7 +1252,7 @@ class PublicAlphaTest(unittest.TestCase):
                 + "\n"
             ).encode(),
         )
-        self.write("doc/gpt/work.pdf", b"new independently published bytes\n")
+        self.write("pdf/gpt/work.pdf", b"new independently published bytes\n")
 
         publications = self.tool.validate_manifest(self.manifest)
         artifact = self.tool.artifact_manifest_data(
@@ -1349,8 +1349,8 @@ class PublicAlphaTest(unittest.TestCase):
             "# Test shelf\n\n"
             "| Publication | Focus |\n"
             "| --- | --- |\n"
-            "| **[Work](../doc/gpt/work.pdf)** · "
-            "[Claude edition](../doc/claude/work.pdf) | Focus text. |\n"
+            "| **[Work](../pdf/gpt/work.pdf)** · "
+            "[Claude edition](../pdf/claude/work.pdf) | Focus text. |\n"
         )
 
     def test_mixed_provider_row_degrades_unreleased_edition_to_em_dash(self) -> None:
@@ -1358,8 +1358,8 @@ class PublicAlphaTest(unittest.TestCase):
             "library/test.md", self.mixed_provider_catalog(), {("gpt", "work")}
         )
 
-        self.assertIn("[Work](../doc/gpt/work.pdf)", filtered)
-        self.assertNotIn("doc/claude", filtered)
+        self.assertIn("[Work](../pdf/gpt/work.pdf)", filtered)
+        self.assertNotIn("pdf/claude", filtered)
         self.assertIn("—", filtered)
         self.assertIn("Focus text.", filtered)
 
@@ -1370,8 +1370,8 @@ class PublicAlphaTest(unittest.TestCase):
             {("gpt", "work"), ("claude", "work")},
         )
 
-        self.assertIn("[Work](../doc/gpt/work.pdf)", filtered)
-        self.assertIn("[Claude edition](../doc/claude/work.pdf)", filtered)
+        self.assertIn("[Work](../pdf/gpt/work.pdf)", filtered)
+        self.assertIn("[Claude edition](../pdf/claude/work.pdf)", filtered)
         self.assertNotIn("—", filtered)
 
     def read_link_catalog(self) -> str:
@@ -1379,8 +1379,8 @@ class PublicAlphaTest(unittest.TestCase):
             "# Test shelf\n\n"
             "| Publication | ChatGPT | Claude | Focus |\n"
             "| --- | --- | --- | --- |\n"
-            "| **Work** | [PDF](../doc/gpt/work.pdf) · [Read](../web/gpt/work.html) | "
-            "[PDF](../doc/claude/work.pdf) · [Read](../web/claude/work.html) | "
+            "| **Work** | [PDF](../pdf/gpt/work.pdf) · [Read](../web/gpt/work.html) | "
+            "[PDF](../pdf/claude/work.pdf) · [Read](../web/claude/work.html) | "
             "Focus text. |\n"
         )
 
@@ -1391,7 +1391,7 @@ class PublicAlphaTest(unittest.TestCase):
 
         self.assertIn("[Read](../web/gpt/work.html)", filtered)
         self.assertNotIn("web/claude", filtered)
-        self.assertNotIn("doc/claude", filtered)
+        self.assertNotIn("pdf/claude", filtered)
         self.assertIn("| — |", filtered)
         self.assertNotIn("— · —", filtered)
 
@@ -1416,13 +1416,13 @@ class PublicAlphaTest(unittest.TestCase):
             "library/test.md", self.mixed_provider_catalog(), set()
         )
 
-        self.assertNotIn("doc/gpt", filtered)
-        self.assertNotIn("doc/claude", filtered)
+        self.assertNotIn("pdf/gpt", filtered)
+        self.assertNotIn("pdf/claude", filtered)
         self.assertIn("No publications from this section are included", filtered)
 
     def test_catalog_link_to_undeclared_provider_is_rejected(self) -> None:
         with (self.root / "library/test.md").open("a", encoding="utf-8") as stream:
-            stream.write("\n[Other edition](../doc/other/work.pdf)\n")
+            stream.write("\n[Other edition](../pdf/other/work.pdf)\n")
         self.authorize_current_inputs()
 
         with self.assertRaises(self.tool.ReleaseError) as failure:
@@ -1430,7 +1430,7 @@ class PublicAlphaTest(unittest.TestCase):
 
         self.assertIn(
             "library/test.md: catalog references undeclared provider edition "
-            "doc/other/work.pdf",
+            "pdf/other/work.pdf",
             str(failure.exception),
         )
 
@@ -1438,8 +1438,8 @@ class PublicAlphaTest(unittest.TestCase):
         self.write(
             "library/test.md",
             "# Test shelf\n\n"
-            "[Work](../doc/gpt/work.pdf) · "
-            "[Claude edition](../doc/claude/work.pdf)\n".encode(),
+            "[Work](../pdf/gpt/work.pdf) · "
+            "[Claude edition](../pdf/claude/work.pdf)\n".encode(),
         )
         self.add_claude_publication("work", "hold")
         self.authorize_current_inputs()
@@ -1450,16 +1450,16 @@ class PublicAlphaTest(unittest.TestCase):
 
         catalog = (self.root / "library/test.md").read_text(encoding="utf-8")
         filtered = self.tool.filter_catalog("library/test.md", catalog, set(included))
-        self.assertIn("[Work](../doc/gpt/work.pdf)", filtered)
-        self.assertNotIn("doc/claude", filtered)
+        self.assertIn("[Work](../pdf/gpt/work.pdf)", filtered)
+        self.assertNotIn("pdf/claude", filtered)
         self.assertIn("—", filtered)
 
     def test_released_claude_edition_validates_and_enters_the_artifact(self) -> None:
         self.write(
             "library/test.md",
             "# Test shelf\n\n"
-            "[Work](../doc/gpt/work.pdf) · "
-            "[Claude edition](../doc/claude/work.pdf)\n".encode(),
+            "[Work](../pdf/gpt/work.pdf) · "
+            "[Claude edition](../pdf/claude/work.pdf)\n".encode(),
         )
         self.add_claude_publication("work", "release")
         self.authorize_current_inputs()
@@ -1472,7 +1472,7 @@ class PublicAlphaTest(unittest.TestCase):
         entries = {entry["id"]: entry["pdf"] for entry in artifact["publications"]}
         self.assertEqual(
             entries,
-            {"work": "doc/gpt/work.pdf", "claude:work": "doc/claude/work.pdf"},
+            {"work": "pdf/gpt/work.pdf", "claude:work": "pdf/claude/work.pdf"},
         )
         expected_files = self.tool.expected_artifact_files(
             self.manifest,
@@ -1480,8 +1480,8 @@ class PublicAlphaTest(unittest.TestCase):
             False,
             self.tool.artifact_authorization(self.manifest, included),
         )
-        self.assertIn("doc/gpt/work.pdf", expected_files)
-        self.assertIn("doc/claude/work.pdf", expected_files)
+        self.assertIn("pdf/gpt/work.pdf", expected_files)
+        self.assertIn("pdf/claude/work.pdf", expected_files)
 
     def test_released_claude_edition_requires_catalog_link(self) -> None:
         self.add_claude_publication("work", "release")

@@ -79,17 +79,17 @@ When legal rules, current discipline, translations, software, or other mutable f
 
 ## Repository and build discipline
 
-Preserve the provider hierarchy under `src/<provider>/`; the present providers are `gpt` and `claude`. New and migrated documents follow the collection schema in `guidance/repository.md`; their installed PDFs and transient artifacts mirror the same relative path under `doc/<provider>/` and `build/<provider>/`.
+Preserve the provider hierarchy under `src/<provider>/`; the present providers are `gpt` and `claude`. New and migrated documents follow the collection schema in `guidance/repository.md`; their installed PDFs and transient artifacts mirror the same relative path under `pdf/<provider>/` and `build/<provider>/`.
 
 - Tracked inputs and audit records belong under `src/`.
 - Provider-neutral reusable external-source records and lawful retained
   artifacts belong under `src/sources/` and follow `guidance/sources.md`.
-- Reviewed, publishable PDFs belong under `doc/`.
+- Reviewed, publishable PDFs belong under `pdf/`.
 - Reviewed, publishable web editions belong under `web/`, generated from the
   same sources and governed by `guidance/web-editions.md`.
 - LaTeX intermediates, logs, caches, and other reproducible artifacts belong only under ignored `build/`.
 - Shared theological or typesetting text has one authoritative source and is imported by its consumers; do not create drifting copies.
-- Never use `doc/` as a build directory or treat `build/` as an authoritative input.
+- Never use `pdf/` as a build directory or treat `build/` as an authoritative input.
 
 Use `rg` or `rg --files` first for repository search. Use history-preserving moves for tracked paths, and update imports, build dependencies, catalogs, links, attributes, and installed mirrors coherently. Existing relative TeX imports and shared-fragment consumers must be checked before moving a source directory.
 

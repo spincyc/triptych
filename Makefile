@@ -71,7 +71,7 @@ ARCH_OS_RELEASE ?= /etc/os-release
 
 SOURCE_ROOT := src/$(PROVIDER)
 BUILD_ROOT := build/$(PROVIDER)
-DOC_ROOT := doc/$(PROVIDER)
+PDF_ROOT := pdf/$(PROVIDER)
 WEB_BUILD_ROOT := build/web/$(PROVIDER)
 WEB_ROOT := web/$(PROVIDER)
 # The drift gate compares every provider's tracked tree, not only $(PROVIDER).
@@ -88,7 +88,7 @@ DOCUMENTS := $(CANONICAL_DOCUMENTS) $(PROPER_SYNTHESIS_DOCUMENTS)
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(DOCUMENTS)))
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
-DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
+INSTALLED_PDFS := $(addprefix $(PDF_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := tools/tpt check-generation-metadata
 # A launcher invocation is two words. Make would read it as two prerequisites
 # and sha256sum would look for a file whose name contains a space, so
@@ -108,7 +108,7 @@ SOURCE_INVENTORY_TOOL := tools/tpt source-inventory
 SOURCE_FAMILY_MIGRATION_TOOL := tools/tpt source-family-migration
 # Complete-text bible editions. These are build artifacts, not publications:
 # they are generated from the tracked verse text of the source library and are
-# never installed into doc/.
+# never installed into pdf/.
 BIBLE_TYPESET_TOOL := tools/tpt typeset-bible
 BIBLE_TYPESET_IMPL := tools/typeset-bible
 BIBLE_BUILD_ROOT := build/bibles
@@ -226,8 +226,8 @@ all:
 
 review-pdfs:
 	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
-	@if [ -d '$(DOC_ROOT)' ]; then \
-		$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS); \
+	@if [ -d '$(PDF_ROOT)' ]; then \
+		$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(PDF_ROOT) $(BUILD_PDFS); \
 	else \
 		$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS); \
 	fi
@@ -239,8 +239,8 @@ else
 all: pdf
 
 review-pdfs: pdf
-	@if [ -d '$(DOC_ROOT)' ]; then \
-		$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS); \
+	@if [ -d '$(PDF_ROOT)' ]; then \
+		$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(PDF_ROOT) $(BUILD_PDFS); \
 	else \
 		$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS); \
 	fi
@@ -251,7 +251,7 @@ endif
 
 pdf: check-metadata $(BUILD_METADATA_VERIFICATIONS)
 
-install: check-metadata $(DOC_PDFS)
+install: check-metadata $(INSTALLED_PDFS)
 	@set -eu; \
 	for document in $(DOCUMENTS); do \
 		pdf='$(BUILD_ROOT)/'$$document.pdf; \
@@ -264,7 +264,7 @@ install: check-metadata $(DOC_PDFS)
 			'$(PROVIDER)' "$$document" "$$pdf_hash" "$$validator_hash"); \
 		actual=$$(cat "$$stamp"); \
 		[ "$$actual" = "$$expected" ] || { echo "Validation stamp does not match current PDF/checker: $$document" >&2; exit 1; }; \
-		cmp -s "$$pdf" "$(DOC_ROOT)/$$document.pdf" || { echo "Installed PDF differs from reviewed build: $$document"; exit 1; }; \
+		cmp -s "$$pdf" "$(PDF_ROOT)/$$document.pdf" || { echo "Installed PDF differs from reviewed build: $$document"; exit 1; }; \
 	done
 
 list:
@@ -387,7 +387,7 @@ help:
 		'make pdf      Build incrementally in the current Make jobserver' \
 		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster changed PDFs' \
 		'make review-all-pdfs  Build with at most $(PDF_JOBS) jobs, then raster every PDF' \
-		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
+		'make install  Publish built PDFs into the mirrored tracked pdf/ tree' \
 		'make doc DOC=<id>  Build one document below src/$$PROVIDER/' \
 		'make review-doc DOC=<id>  Build one document and raster it for page review' \
 		'make install-doc DOC=<id>  Build, gate, and install one document' \
@@ -556,7 +556,7 @@ install-doc:
 		liturgy/roman-rite/1962/reference/altar-server-guides/*) \
 			$(MAKE) --no-print-directory install-altar-server-guides ;; \
 		*) \
-			$(MAKE) --no-print-directory '$(DOC_ROOT)/$(DOC).pdf' ;; \
+			$(MAKE) --no-print-directory '$(PDF_ROOT)/$(DOC).pdf' ;; \
 	esac
 
 # The altar-server profile makes the seven leaves one review unit whenever a
@@ -601,7 +601,7 @@ install-altar-server-guides: review-altar-server-guides \
 		done; \
 		for document in $(ALTAR_SERVER_GUIDES_DOCUMENTS); do \
 			staged="$$stage/$$document.pdf"; \
-			destination='$(DOC_ROOT)/'$$document.pdf; \
+			destination='$(PDF_ROOT)/'$$document.pdf; \
 			mkdir -p "$${destination%/*}"; \
 			mv -f -- "$$staged" "$$destination"; \
 		done; \
@@ -884,7 +884,7 @@ $(BUILD_ROOT)/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf: \
 	$(CARMEL_NOVENA_PRAYERS) \
 	$(CARMEL_NOVENA_ROOT)/generation-metadata.tex
 
-$(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata $(BUILD_ROOT)/.metadata/%.verify
+$(PDF_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata $(BUILD_ROOT)/.metadata/%.verify
 	@set -eu; \
 		pdf='$(BUILD_ROOT)/$*.pdf'; \
 		stamp='$(BUILD_ROOT)/.metadata/$*.ok'; \

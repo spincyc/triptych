@@ -1296,10 +1296,10 @@ def hash_tasks(tasks: list[PdfTask]) -> list[PdfTask]:
 
 def changed_mirror_path(source: Path, against: Path) -> Path:
     build_root = (ROOT / "build").resolve()
-    doc_root = (ROOT / "doc").resolve()
+    pdf_root = (ROOT / "pdf").resolve()
     try:
         source_relative = source.relative_to(build_root)
-        against_relative = against.relative_to(doc_root)
+        against_relative = against.relative_to(pdf_root)
     except ValueError:
         source_relative = None
         against_relative = None
@@ -1308,7 +1308,7 @@ def changed_mirror_path(source: Path, against: Path) -> Path:
         if source_relative.parts[: len(prefix)] != prefix:
             raise ReviewError(
                 f"cannot map {source} into comparison root {against}; "
-                "the build/doc mirror prefixes differ"
+                "the build/pdf mirror prefixes differ"
             )
         return against.joinpath(*source_relative.parts[len(prefix) :])
     if against.name:
@@ -1372,7 +1372,7 @@ def git_changed_pdf_paths(base: str, target: str | None) -> set[Path]:
     command = ["git", "diff", "--name-only", "-z", "--diff-filter=ACMRT", base_commit]
     if target is not None:
         command.append(resolved_git_commit(target))
-    command.extend(["--", "doc"])
+    command.extend(["--", "pdf"])
     result = subprocess.run(
         command,
         cwd=ROOT,
@@ -1387,7 +1387,7 @@ def git_changed_pdf_paths(base: str, target: str | None) -> set[Path]:
     changed = set(nul_paths(result.stdout))
     if target is None:
         untracked = subprocess.run(
-            ["git", "ls-files", "--others", "--exclude-standard", "-z", "--", "doc"],
+            ["git", "ls-files", "--others", "--exclude-standard", "-z", "--", "pdf"],
             cwd=ROOT,
             check=False,
             stdout=subprocess.PIPE,
@@ -1408,7 +1408,7 @@ def task_git_candidates(task: PdfTask) -> set[Path]:
         return set()
     candidates = {relative}
     if relative.parts[:1] == ("build",):
-        candidates.add(Path("doc", *relative.parts[1:]))
+        candidates.add(Path("pdf", *relative.parts[1:]))
     return candidates
 
 

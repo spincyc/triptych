@@ -6,7 +6,7 @@
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| CE-01 · **Catholic Exorcism: History, Discipline, and Pastoral Practice** | [PDF](../doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf) · [Read](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html) | — | History, theology, discipline, discernment, and safeguarding. |
+| CE-01 · **Catholic Exorcism: History, Discipline, and Pastoral Practice** | [PDF](../pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf) · [Read](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html) | — | History, theology, discipline, discernment, and safeguarding. |
 
 ## Read by subject
 
