@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-07-29"
+audited_on = "2026-07-31"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 45
 source_surface_file_count = 954
-snapshot = "sha256:ca3ca29443fbee4ff8675d2f6c812cbca1096595f10e0cbf62bf9649b5714a2e"
+snapshot = "sha256:356b5d4eb582ccfaeacdf5a3f01905b5a0dbcb62559cc5840dbc9b15f983b2ca"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -4399,7 +4399,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "e7596d7241ac49081b9d9b6f6d4f5aff5447389148d1cf9ba6c63da05032c53a"
+sha256 = "e2e7ef98f918b2eb624bcf8d9372c1de87bf1811d79935bcd307352eec8374fc"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 

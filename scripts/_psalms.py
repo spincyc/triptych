@@ -395,7 +395,7 @@ def english_verse(chapter: int, verse: int) -> tuple[int | None, str]:
     Returns the verse and an empty problem, or `None` and the reason no verse
     can be named. Refusing is the point: an edition that leaves the inscription
     unnumbered has no verse at all for the Hebrew numbering's first verse, and
-    the fifteen psalms the concordance flags as not uniformly offset divide
+    the sixteen psalms the concordance flags as not uniformly offset divide
     their bodies differently as well. Returning whatever number the head of the
     psalm suggests would land on real text that is not the text cited.
     """

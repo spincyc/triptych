@@ -388,5 +388,72 @@ class RoundTripTests(unittest.TestCase):
                 self.assertTrue(1 <= vulgate <= 150)
 
 
+class EnglishTitleConventionTests(unittest.TestCase):
+    """The offset an edition takes on by leaving a psalm's inscription unnumbered.
+
+    The Hebrew numbering counts the inscription as a verse and the English
+    convention does not, so an English bible's Psalm 51:1 is the *Miserere* a
+    Hebrew-numbered calendar cites as 51:3. Nothing here converts a chapter:
+    the two agree on which psalm, and differ only on where its verses start.
+    """
+
+    def test_the_miserere_is_two_verses_earlier_in_english(self) -> None:
+        self.assertEqual(_psalms.english_verse(51, 3), (1, ""))
+
+    def test_a_psalm_with_a_one_verse_inscription_shifts_by_one(self) -> None:
+        self.assertEqual(_psalms.english_verse(3, 2), (1, ""))
+
+    def test_a_psalm_with_no_inscription_does_not_shift(self) -> None:
+        self.assertEqual(_psalms.english_verse(23, 1), (1, ""))
+        self.assertEqual(_psalms.english_verse(119, 176), (176, ""))
+
+    def test_an_inscription_has_no_english_verse_at_all(self) -> None:
+        found, problem = _psalms.english_verse(51, 1)
+        self.assertIsNone(found)
+        self.assertIn("inscription", problem)
+
+    def test_a_psalm_the_two_conventions_divide_differently_refuses(self) -> None:
+        for chapter in (2, 4, 29, 100, 150):
+            with self.subTest(chapter=chapter):
+                found, problem = _psalms.english_verse(chapter, 1)
+                self.assertIsNone(found)
+                self.assertIn("divide", problem)
+
+    def test_a_verse_outside_its_psalm_is_an_error_not_a_refusal(self) -> None:
+        with self.assertRaises(NumberingError):
+            _psalms.english_verse(23, 99)
+
+    def test_every_convertible_psalm_lands_inside_the_english_psalm(self) -> None:
+        """A converted verse must exist in an edition that prints the convention.
+
+        The King James Version is that edition here, and reading its extents
+        rather than restating them is what would catch a concordance whose
+        English column had drifted from the text it describes.
+        """
+        import csv
+
+        artifacts = (
+            ROOT / "src/sources/works/church-of-england/king-james-version"
+            / "editions/ebible-engkjv/artifacts"
+        )
+        found = sorted(artifacts.glob("verse-text-*-psalms-*/*.tsv"))
+        self.assertEqual(len(found), 1)
+        printed: dict[int, set[int]] = {}
+        with found[0].open(encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                printed.setdefault(int(row["chapter"]), set()).add(int(row["verse"]))
+        converted = 0
+        for chapter in range(1, 151):
+            first, last = _psalms.psalm_extent(chapter, "hebrew")
+            for verse in range(first, last + 1):
+                English, problem = _psalms.english_verse(chapter, verse)
+                if English is None:
+                    continue
+                converted += 1
+                with self.subTest(chapter=chapter, verse=verse):
+                    self.assertIn(English, printed[chapter])
+        self.assertGreater(converted, 2000)
+
+
 if __name__ == "__main__":
     unittest.main()

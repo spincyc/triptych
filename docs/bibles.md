@@ -210,12 +210,19 @@ This is why the edition registry carries `psalm_titles` alongside `numbering`. A
 edition can agree with a calendar on which psalm is meant and still be two verses
 out on which words.
 
-### Fifteen psalms where neither rule holds, and the tool refuses rather than guessing
+### Sixteen psalms where neither rule holds, and the tool refuses rather than guessing
 
-For fifteen psalms the two conventions divide the *body* differently as well, not
+For sixteen psalms the two conventions divide the *body* differently as well, not
 just the head, so an offset taken at verse 1 stops being right further down. The
-concordance flags them (`english_offset_uniform: no`): Hebrew 2, 4, 20, 29, 43,
-44, 53, 56, 72, 100, 109, 126, 136, 146 and 150.
+concordance flags them (`english_offset_uniform: no`): Hebrew 2, 4, 13, 20, 29,
+43, 44, 53, 56, 72, 100, 109, 126, 136, 146 and 150.
+
+Hebrew 13 is the subtlest of them, and was recorded as uniform until 2026-07-31:
+the Douay and the English both print six verses, so a count of verses shows
+nothing, but the Douay divides "how long shall I take counsel" from "how long
+shall my enemy be exalted" into its verses 2 and 3 where the English holds both
+in its verse 2, and then divides at the end what the English divides one verse
+earlier. Vulgate 12:4 is English 13:3.
 
 For those, `_psalms.english_verse` returns no number and a reason. So does an
 endpoint that lands on the inscription itself, which an English Bible has no
