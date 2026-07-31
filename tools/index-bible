@@ -26,7 +26,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _psalms import PSALMS, NumberingError, convert_range, convert_reference  # noqa: E402
+from _psalms import (  # noqa: E402
+    PSALMS,
+    NumberingError,
+    convert_range,
+    convert_reference,
+    english_verse,
+)
 from _tooling import print_json, run_verb_cli  # noqa: E402
 
 DEFAULT_CALENDAR_ROOT = ROOT / "src" / "sources" / "calendars"
@@ -41,8 +47,16 @@ SPACING = re.compile(r"\s+")
 # One entry per indexed edition. `artifacts` is the tracked artifact directory
 # of the edition in the source library; the verse files, book index, and verse
 # aliases are discovered inside it by name.
+#
+# `psalm_titles` says whether the edition gives a psalm's inscription a verse
+# number of its own. That is not a second numbering system — the chapters and
+# the body agree — but it shifts every numbered verse of most psalms, so an
+# edition that leaves the inscription unnumbered cannot be addressed by the
+# numbers a title-numbering calendar prints. See `unnumber_titles`.
 EDITIONS: dict[str, dict[str, object]] = {
     "douay-rheims": {
+        "rank": 10,
+        "label": "Douay-Rheims (Challoner)",
         "edition": "The Holy Bible, Douay-Rheims (Challoner revision), "
         "Project Gutenberg eBook 1581",
         "source_id": "edition.english-college-of-douay.douay-rheims-bible"
@@ -53,10 +67,32 @@ EDITIONS: dict[str, dict[str, object]] = {
         "language": "en",
         # Challoner translated the Clementine text, whose psalter is Gallican.
         "psalter": "gallican",
+        "psalm_titles": "numbered",
         "artifacts": "english-college-of-douay/douay-rheims-bible/editions"
         "/challoner-gutenberg-1581/artifacts",
     },
+    # The other electronic Douay-Rheims. It is registered as a textual control
+    # on the Challoner e-text, not as a second reading text, and it is offered
+    # because a reader matching a printed American Bible needs it; see the
+    # edition record before preferring either.
+    "douay-rheims-american-1899": {
+        "rank": 15,
+        "label": "Douay-Rheims (American 1899)",
+        "edition": "The Holy Bible in English, Douay-Rheims American Edition of 1899, "
+        "eBible.org engDRA",
+        "source_id": "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible",
+        "rights": "public-domain",
+        "publishable": True,
+        "numbering": "vulgate",
+        "language": "en",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "artifacts": "english-college-of-douay/douay-rheims-bible/editions"
+        "/american-1899-ebible/artifacts",
+    },
     "clementine-vulgate": {
+        "rank": 20,
+        "label": "Clementine Vulgate (Latin)",
         "edition": "Biblia Sacra Vulgatae Editionis Clementina, eBible.org latVUC",
         "source_id": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
         "rights": "public-domain",
@@ -66,13 +102,76 @@ EDITIONS: dict[str, dict[str, object]] = {
         # The 1962 books print the Gallican psalter. It is not the psalter the
         # Mass chants sing; see this edition's record before matching an incipit.
         "psalter": "gallican",
+        "psalm_titles": "numbered",
         "artifacts": "catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts",
+    },
+    "king-james-version": {
+        "rank": 40,
+        "label": "King James, with Apocrypha",
+        "edition": "The Holy Bible, King James Version with the Apocrypha, "
+        "eBible.org eng-kjv",
+        "source_id": "edition.church-of-england.king-james-version.ebible-engkjv",
+        "rights": "public-domain",
+        "publishable": True,
+        "numbering": "hebrew",
+        "language": "en",
+        # Not one of the Latin recensions: the King James psalter was Englished
+        # from the Hebrew, so the text it witnesses is the Masoretic one. A
+        # Latin value here would read as a match against editions it does not
+        # match.
+        "psalter": "masoretic",
+        # This edition prints a psalm's inscription unnumbered, so its verse
+        # numbers run one or two lower than the Hebrew numbering through the
+        # body of most psalms.
+        "psalm_titles": "unnumbered",
+        "artifacts": "church-of-england/king-james-version/editions/ebible-engkjv/artifacts",
+    },
+    "world-english-bible-catholic": {
+        "rank": 30,
+        "label": "World English, Catholic Edition",
+        "edition": "The World English Bible, Catholic Edition, eBible.org eng-web-c",
+        "source_id": "edition.ebible-org.world-english-bible.catholic-eng-web-c",
+        "rights": "public-domain",
+        "publishable": True,
+        "numbering": "hebrew",
+        "language": "en",
+        # An update of the American Standard Version of 1901 revised against
+        # the Biblia Hebraica Stuttgartensia, so its psalter witnesses the
+        # Masoretic text and no Latin recension. It is the only modern-English
+        # text of the whole Catholic canon this library may redistribute, and
+        # it is still not a witness to the Latin the 1962 Missal prints.
+        "psalter": "masoretic",
+        # Psalm inscriptions are printed as headings without a verse number, so
+        # the body of most psalms runs one or two lower than Hebrew numbering.
+        "psalm_titles": "unnumbered",
+        "artifacts": "ebible-org/world-english-bible/editions/catholic-eng-web-c/artifacts",
+    },
+    "revised-version-1895": {
+        "rank": 50,
+        "label": "Revised Version, with Apocrypha",
+        "edition": "The Revised Version of the Holy Bible with Apocrypha (1895), "
+        "eBible.org eng-rv",
+        "source_id": "edition.convocation-of-canterbury.revised-version.ebible-eng-rv",
+        # Public domain in the United States and everywhere outside the United
+        # Kingdom; inside it the Crown's perpetual letters patent in the
+        # Authorized Version and its revisions still run. The edition record
+        # states the limit and every manifest names the jurisdiction.
+        "rights": "public-domain",
+        "publishable": True,
+        "numbering": "hebrew",
+        "language": "en",
+        # Revised from the Hebrew, so the psalter it witnesses is Masoretic.
+        "psalter": "masoretic",
+        "psalm_titles": "unnumbered",
+        "artifacts": "convocation-of-canterbury/revised-version/editions/ebible-eng-rv/artifacts",
     },
     # Licensed and not redistributable: its artifacts live outside this
     # repository and are reached with --source-root, and its index must be
     # written outside it too with --bible-root. `publishable: false` keeps it
     # out of the public artifact even if an index is built by mistake.
     "knox": {
+        "rank": 90,
+        "label": "Knox",
         "edition": "The Holy Bible, translated by Monsignor Ronald Knox",
         "source_id": "edition.westminster-diocese.knox-translation.baronius-2012",
         "rights": "licensed",
@@ -80,6 +179,7 @@ EDITIONS: dict[str, dict[str, object]] = {
         "numbering": "vulgate",
         "language": "en",
         "psalter": "gallican",
+        "psalm_titles": "numbered",
         "artifacts": "knox/artifacts",
     },
 }
@@ -87,8 +187,15 @@ EDITIONS: dict[str, dict[str, object]] = {
 # A psalm reference resolves against a psalter, and the Latin psalters differ in
 # wording where they agree in numbering, so numbering alone cannot identify the
 # text. Two editions differing only in recension would otherwise be
-# indistinguishable, and a near-miss reads as a match.
-PSALTERS = ("gallican", "roman", "iuxta-hebraeos", "pian", "nova-vulgata")
+# indistinguishable, and a near-miss reads as a match. `masoretic` is not a
+# recension of the Latin psalter at all; it names the Hebrew text a psalter
+# Englished from the Hebrew witnesses, and it is here because calling such a
+# psalter `iuxta-hebraeos` would assert Jerome's third Latin psalter, which it
+# is not.
+PSALTERS = ("gallican", "roman", "iuxta-hebraeos", "pian", "nova-vulgata", "masoretic")
+
+# A psalm inscription an edition prints without a verse number of its own.
+UNNUMBERED_TITLES = "unnumbered"
 
 
 def sibling(name: str):
@@ -167,15 +274,32 @@ def load_verses(artifacts: Path) -> dict[tuple[str, int, int], str]:
     return verses
 
 
-def load_aliases(artifacts: Path) -> dict[tuple[str, int, int], tuple[str, int, int]]:
-    """Verses this edition merged away, and the verse that carries their text."""
+def load_aliases(
+    artifacts: Path,
+) -> dict[tuple[str, int, int], tuple[str, int, int] | None]:
+    """The locus a citation names, and the verse of this edition that carries it.
+
+    Two things are recorded here. A verse this edition merged away resolves to
+    the verse its text now stands in. A locus this edition does not carry under
+    that book at all resolves to nothing: `resolves_to` is empty, and the
+    lookup refuses instead of returning whatever the edition happens to print
+    at those numbers. The King James Version needs the second kind because its
+    canon is shaped differently — a Vulgate citation of Daniel 3:29 means the
+    Prayer of Azarias, which this edition prints as a separate book, while its
+    own Daniel 3:29 is Nabuchodonosor's decree and is real text at real numbers.
+    """
 
     def locus(value: str) -> tuple[str, int, int]:
         book, chapter, verse = value.rsplit(".", 2)
         return book, int(chapter), int(verse)
 
     rows = read_tsv(sole(artifacts, "verse-aliases", "verse-aliases.tsv"))
-    return {locus(row["cited_locus"]): locus(row["resolves_to"]) for row in rows}
+    return {
+        locus(row["cited_locus"]): (
+            locus(row["resolves_to"]) if row["resolves_to"].strip() else None
+        )
+        for row in rows
+    }
 
 
 class Bible:
@@ -199,11 +323,17 @@ class Bible:
         return self.books.get(normalize(book))
 
     def verse(self, token: str, chapter: int, verse: int) -> str | None:
-        found = self.verses.get((token, chapter, verse))
-        if found is not None:
-            return found
-        merged = self.aliases.get((token, chapter, verse))
-        return None if merged is None else self.verses.get(merged)
+        """The text this edition carries at a cited locus, or None.
+
+        The alias table is read first and its answer is final, including a
+        recorded refusal. An edition can print real text at numbers a citation
+        does not mean, and preferring what it prints is exactly how such a
+        locus resolves to the wrong words with nothing to report.
+        """
+        if (token, chapter, verse) in self.aliases:
+            merged = self.aliases[(token, chapter, verse)]
+            return None if merged is None else self.verses.get(merged)
+        return self.verses.get((token, chapter, verse))
 
     def span(self, token: str, span: dict) -> tuple[list[str], str, tuple, tuple]:
         """The verses one range names, with the locus each end resolved to.
@@ -429,36 +559,94 @@ class Divergences:
                 )
 
 
-def citation(entry: dict, source: str, target: str, tool) -> tuple[str, list, str]:
+def unnumber_titles(ranges: list) -> tuple[list, str]:
+    """Move Hebrew-numbered psalm ranges onto an edition that numbers no title.
+
+    Every calendar tracked here numbers a psalm's inscription, and the King
+    James Version does not, so its Psalm 51:1 is the *Miserere* that a
+    Hebrew-numbered calendar cites as 51:3. The shift is a property of the
+    edition rather than of the reference, and it is applied to the ranges only:
+    the key stays the string the calendar printed.
+
+    A range this correspondence cannot carry is refused rather than moved by
+    the offset at the head of the psalm. Two cases refuse. An endpoint on the
+    inscription has no verse to move to, because the edition prints those words
+    without a number. And where the two conventions divide a psalm's body
+    differently the concordance records no verse-for-verse correspondence at
+    all, so an offset taken from the first verse would land on real text some
+    way from the words cited.
+    """
+    moved: list = []
+    for span in ranges:
+        piece: dict = {}
+        for side in ("begin", "end"):
+            end = span.get(side)
+            if not isinstance(end, dict):
+                continue
+            chapter, verse = end.get("chapter"), end.get("verse")
+            if chapter is None or verse is None:
+                piece[side] = dict(end)
+                continue
+            found, problem = english_verse(int(chapter), int(verse))
+            if found is None:
+                return [], problem
+            piece[side] = {**end, "verse": found}
+        moved.append(piece)
+    return moved, ""
+
+
+def citation(
+    entry: dict, source: str, target: str, tool, titles: str = ""
+) -> tuple[str, list, str]:
     """The key `mass-propers` will look up, and the ranges that key covers.
 
     The key follows the tool exactly: only a psalm chapter is renumbered, and
     the calendar's own verse numbers stay in the string. The ranges are
     converted properly, verse shifts included, because they select the text.
+
+    Numbering and title convention are two separate moves and both are needed.
+    A calendar in Vulgate numbering is renumbered into the edition's system
+    first; then, for an edition that leaves psalm inscriptions unnumbered, the
+    ranges shift again. The second move applies even when the calendar and the
+    edition already agree on numbering, which is the case that would otherwise
+    read as needing no work at all.
     """
     ref = str(entry["ref"])
     book = str(entry.get("book") or "")
     ranges = [span for span in (entry.get("ranges") or []) if isinstance(span, dict)]
     if not ranges:
         return ref, [], "citation carries no ranges"
-    if source == target or book != PSALMS:
+    if book != PSALMS:
         return ref, ranges, ""
-    chapter, verse = tool.locus_of(entry)
-    if chapter is None:
-        return ref, ranges, ""
-    try:
-        converted, _ = convert_reference(book, chapter, source, target, verse)
-        moved: list = []
-        for span in ranges:
-            spans, _ = convert_range(book, span.get("begin") or {}, span.get("end"), source, target)
-            moved.extend(spans)
-    except NumberingError as error:
-        return ref, [], str(error)
-    key = ref if converted == chapter else tool.renumber(ref, converted)
-    return key, moved, ""
+    key = ref
+    if source != target:
+        chapter, verse = tool.locus_of(entry)
+        if chapter is not None:
+            try:
+                converted, _ = convert_reference(book, chapter, source, target, verse)
+                moved: list = []
+                for span in ranges:
+                    spans, _ = convert_range(
+                        book, span.get("begin") or {}, span.get("end"), source, target
+                    )
+                    moved.extend(spans)
+            except NumberingError as error:
+                return ref, [], str(error)
+            key = ref if converted == chapter else tool.renumber(ref, converted)
+            ranges = moved
+    if titles == UNNUMBERED_TITLES:
+        try:
+            ranges, problem = unnumber_titles(ranges)
+        except NumberingError as error:
+            return key, [], str(error)
+        if problem:
+            return key, [], problem
+    return key, ranges, ""
 
 
-def collect(bible: Bible, calendar_root: Path, target: str, tool, canon) -> dict:
+def collect(
+    bible: Bible, calendar_root: Path, target: str, titles: str, tool, canon
+) -> dict:
     """Index every citation every calendar makes, and record what failed."""
     passages: dict[str, str] = {}
     unresolved: list[dict[str, str]] = []
@@ -467,19 +655,24 @@ def collect(bible: Bible, calendar_root: Path, target: str, tool, canon) -> dict
     for calendar in tool.calendars(calendar_root):
         document = tool.load_calendar(calendar_root, calendar)
         source = document.get("psalm_numbering") or target
-        entries = [
-            entry for _, mass in tool.masses_of(document) for entry in tool.scripture_entries(mass)
+        # Each citation carries the numbering that applies to it, which is the
+        # calendar's unless the proper declares otherwise.
+        numbered = [
+            pair
+            for _, mass in tool.masses_of(document)
+            for pair in tool.numbered_entries(mass, source)
         ]
+        entries = [entry for entry, _ in numbered]
         # Both checks run before a single citation is indexed, so a declaration
         # that has fallen out of step stops the build rather than shaping it.
         divergences = Divergences(calendar, document, entries, canon)
         divergences.confirm(bible)
         wanted: set[str] = set()
         resolved: set[str] = set()
-        for entry in entries:
+        for entry, numbering in numbered:
             ref = str(entry["ref"])
             wanted.add(ref)
-            key, ranges, problem = citation(entry, source, target, tool)
+            key, ranges, problem = citation(entry, numbering or source, target, tool, titles)
             if not problem:
                 ranges, problem = divergences.apply(entry, ranges)
             if (calendar, ref) in seen:
@@ -564,6 +757,12 @@ def document_for(name: str, built: dict) -> dict:
     edition = EDITIONS[name]
     if edition["psalter"] not in PSALTERS:
         raise ValueError(f"{name}: psalter must be one of {list(PSALTERS)}")
+    if edition["psalm_titles"] not in ("numbered", UNNUMBERED_TITLES):
+        raise ValueError(f"{name}: psalm_titles must be numbered or {UNNUMBERED_TITLES}")
+    if edition["psalm_titles"] == UNNUMBERED_TITLES and edition["numbering"] != "hebrew":
+        # The correspondence is recorded from the Hebrew numbering outward, so
+        # an edition declaring it must already be addressed in that numbering.
+        raise ValueError(f"{name}: {UNNUMBERED_TITLES} psalm titles need hebrew numbering")
     return {
         "schema": "triptych-bible-index/v1",
         "edition": edition["edition"],
@@ -573,6 +772,10 @@ def document_for(name: str, built: dict) -> dict:
         "language": edition["language"],
         "numbering": edition["numbering"],
         "psalter": edition["psalter"],
+        # A consumer addressing this edition by chapter and verse needs both:
+        # the numbering says which psalm, and this says whether its inscription
+        # took a verse number away from the body.
+        "psalm_titles": edition["psalm_titles"],
         "generator": "index-bible build",
         "coverage": "the references the tracked calendars make; rebuild after a "
         "calendar adds a reference",
@@ -595,7 +798,12 @@ def build(name: str, calendar_root: Path, artifacts: Path) -> dict:
     bible = Bible(artifacts)
     tool = sibling("mass-propers")
     built = collect(
-        bible, calendar_root, str(EDITIONS[name]["numbering"]), tool, sibling("citations")
+        bible,
+        calendar_root,
+        str(EDITIONS[name]["numbering"]),
+        str(EDITIONS[name]["psalm_titles"]),
+        tool,
+        sibling("citations"),
     )
     return {
         **built,
@@ -635,13 +843,19 @@ def run_manifest(arguments: argparse.Namespace) -> dict:
     offered = [
         {
             "id": name,
-            "label": str(edition["edition"]),
+            # The short name a reader chooses by; the full edition string
+            # stays available for provenance.
+            "label": str(edition.get("label") or edition["edition"]),
+            "edition": str(edition["edition"]),
             "language": str(edition["language"]),
             "numbering": str(edition["numbering"]),
             "psalter": str(edition["psalter"]),
+            "psalm_titles": str(edition["psalm_titles"]),
             "rights": str(edition["rights"]),
         }
-        for name, edition in sorted(EDITIONS.items())
+        for name, edition in sorted(
+            EDITIONS.items(), key=lambda row: (row[1].get("rank", 999), row[0])
+        )
         if edition["publishable"]
     ]
     path = Path(arguments.out) / "bibles.json"

@@ -1,19 +1,43 @@
 {
  "bibles": [
   {
-   "id": "clementine-vulgate",
-   "label": "Biblia Sacra Vulgatae Editionis Clementina, eBible.org latVUC",
-   "language": "la",
+   "edition": "The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581",
+   "id": "douay-rheims",
+   "label": "Douay-Rheims (Challoner)",
+   "language": "en",
    "numbering": "vulgate",
+   "psalm_titles": "numbered",
    "psalter": "gallican",
    "rights": "public-domain"
   },
   {
-   "id": "douay-rheims",
-   "label": "The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581",
-   "language": "en",
+   "edition": "Biblia Sacra Vulgatae Editionis Clementina, eBible.org latVUC",
+   "id": "clementine-vulgate",
+   "label": "Clementine Vulgate (Latin)",
+   "language": "la",
    "numbering": "vulgate",
+   "psalm_titles": "numbered",
    "psalter": "gallican",
+   "rights": "public-domain"
+  },
+  {
+   "edition": "The World English Bible, Catholic Edition, eBible.org eng-web-c",
+   "id": "world-english-bible-catholic",
+   "label": "World English, Catholic Edition",
+   "language": "en",
+   "numbering": "hebrew",
+   "psalm_titles": "unnumbered",
+   "psalter": "masoretic",
+   "rights": "public-domain"
+  },
+  {
+   "edition": "The Holy Bible, King James Version with the Apocrypha, eBible.org eng-kjv",
+   "id": "king-james-version",
+   "label": "King James, with Apocrypha",
+   "language": "en",
+   "numbering": "hebrew",
+   "psalm_titles": "unnumbered",
+   "psalter": "masoretic",
    "rights": "public-domain"
   }
  ]
