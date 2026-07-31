@@ -48,8 +48,11 @@ tiers = document["tiers"]
 entered = {}
 for reading in readings:
     entered[reading["tier"]] = entered.get(reading["tier"], 0) + 1
+# Ordered by size rather than by name: the tiers nest, so each is a superset of
+# the one before it, and naming them here would be a second copy of the plan's
+# own vocabulary that goes stale the moment a tier is renamed. It has.
 running = 0
-for name in ("overview", "narrative", "year"):
+for name in sorted(tiers, key=lambda tier: tiers[tier]["readings"]):
     running += entered.get(name, 0)
     assert tiers[name]["readings"] == running, (name, tiers[name]["readings"], running)
 
