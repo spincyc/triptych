@@ -15,9 +15,10 @@
  * file. They are deliberately not shared: one variable serving both would have
  * to change meaning to change either.
  *
- * THE GOLD ACCENT IS NOT A TEXT COLOUR. #b07c07 on white is 3.7:1 — under the
+ * THE GOLD ACCENT IS NOT A TEXT COLOUR. #b07c07 on white is 3.66:1 — under the
  * 4.5:1 that body text needs. Everything set in the section colour is set in
- * --section-ink (#7e5802, 7.2:1); --section-accent is for rules, borders,
+ * --section-ink (#7e5802: 6.39:1 on white, 6.13:1 on the page, 5.10:1 on the
+ * toned row it is used against); --section-accent is for rules, borders,
  * markers and fills, where contrast is a matter of visibility rather than
  * legibility. Dark mode lifts both rather than dropping the colour, since a
  * section that loses its colour after dark has lost the only thing that says

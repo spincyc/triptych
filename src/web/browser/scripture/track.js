@@ -441,7 +441,7 @@
     const before = view.periods[period.index - 2];
     const after = view.periods[period.index];
 
-    const back = T.el('p', 'period-step period-step-back');
+    const back = T.el('p', 'period-step');
     if (before) {
       back.appendChild(T.el('span', 'period-step-label', 'Before'));
       back.appendChild(link(before.label, { view: 'period', period: before.key }));
@@ -729,9 +729,14 @@
         }
         if (nearest) {
           key = nearest.key;
-          state.notice = 'That reading is not in the ' + view.label +
-            ' track, which is the smaller selection. This is the nearest ' +
-            'reading before it.';
+          // Only worth saying where the reader is actually looking at a
+          // reading; on an orientation it would sit unread until some later
+          // reading wore it, and explain nothing.
+          if (state.view === 'reading') {
+            state.notice = 'That reading is not in the ' + view.label +
+              ' track, which is the smaller selection. This is the nearest ' +
+              'reading before it.';
+          }
         }
       }
     }
@@ -826,6 +831,15 @@
   // moves to the content that replaced it rather than being dropped on the body.
   T.onHashChange((hash) => {
     if (!state.plan) return;
+
+    // A hash that names none of this page's keys is not a place in the track:
+    // it is the skip link jumping to #reading, or an anchor of some other kind.
+    // Treating it as a navigation would throw the reader out of their reading
+    // and back to the orientation, which is the opposite of skipping to it.
+    if (!hash.get('tier') && !hash.get('reading') && !hash.get('period') &&
+        !hash.get('bible')) {
+      return;
+    }
 
     const wantedBible = hash.get('bible');
     if (state.bibles.some((bible) => bible.id === wantedBible)) {

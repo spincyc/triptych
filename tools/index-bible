@@ -840,6 +840,14 @@ def run_manifest(arguments: argparse.Namespace) -> dict:
     page cannot offer what it has no right to serve even if its fragments were
     somehow present.
     """
+    # An edition is offered only if its fragments are actually here to serve.
+    # A manifest naming one that is not breaks the site build, and worse, would
+    # promise a reader a translation the artifact cannot render.
+    servable = {
+        name
+        for name in EDITIONS
+        if (Path(arguments.bible_root) / name / "chapters").is_dir()
+    }
     offered = [
         {
             "id": name,
@@ -856,7 +864,7 @@ def run_manifest(arguments: argparse.Namespace) -> dict:
         for name, edition in sorted(
             EDITIONS.items(), key=lambda row: (row[1].get("rank", 999), row[0])
         )
-        if edition["publishable"]
+        if edition["publishable"] and name in servable
     ]
     path = Path(arguments.out) / "bibles.json"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -869,6 +877,11 @@ def run_manifest(arguments: argparse.Namespace) -> dict:
         "offered": [row["id"] for row in offered],
         "withheld": sorted(
             name for name, edition in EDITIONS.items() if not edition["publishable"]
+        ),
+        "unservable": sorted(
+            name
+            for name, edition in EDITIONS.items()
+            if edition["publishable"] and name not in servable
         ),
         "path": str(path),
         "status": "ok",
@@ -913,6 +926,8 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print(f"offered: {', '.join(payload['offered'])} -> {payload['path']}")
         if payload["withheld"]:
             print(f"withheld as unpublishable: {', '.join(payload['withheld'])}")
+        if payload.get("unservable"):
+            print(f"not offered, no fragments here: {', '.join(payload['unservable'])}")
         return 0
     print(f"{payload['bible']}: {payload['passages']} passages -> {payload['path']}")
     for calendar, counts in payload["calendars"].items():

@@ -27,7 +27,12 @@
   --panel: #ffffff;
   --ink: #1d1b17;
   --ink-soft: #55504a;
-  --ink-faint: #7b746b;
+  /* The quietest text on the page is still text: references, positions and
+     meta lines are set in it, and a reader who cannot make them out cannot say
+     where they are. #7b746b measured 4.42:1 on --page, just under the 4.5:1
+     that body-sized text needs; #777067 measures 4.68:1 there and 4.89:1 on
+     --panel, at no visible cost to the hierarchy. */
+  --ink-faint: #777067;
   --notice: #7a2f2f;
   --notice-bg: #f8ecea;
 
@@ -53,7 +58,10 @@
     --panel: #1c1b17;
     --ink: #ece7dd;
     --ink-soft: #b9b2a6;
-    --ink-faint: #8e877c;
+    /* 4.85:1 on --panel and 4.15:1 on a toned row before; 5.25:1 and 4.49:1
+       now, so the faint text clears the threshold on every surface it lands on
+       after dark as well as before it. */
+    --ink-faint: #948d82;
     --notice: #f0a9a0;
     --notice-bg: #2c1d1b;
   }

@@ -254,7 +254,9 @@ window.ScripturePlan = (function () {
     if (days < 14) return plural(days, 'day');
     if (days < 70) return plural(days, 'day') + ' — about ' +
       plural(Math.round(days / 7), 'week');
-    if (days < 365) return plural(days, 'day') + ' — about ' +
+    // 357 days is a year with eight days to spare, and calling it twelve
+    // months makes the fullest track sound longer than the plan says it is.
+    if (days < 330) return plural(days, 'day') + ' — about ' +
       plural(Math.round(days / 30.4), 'month');
     const years = days / 365;
     const rounded = years < 1.1 ? 'about a year'
