@@ -1,0 +1,1048 @@
+{
+ "schema": "triptych-propers-structure/v1",
+ "calendar": "postconciliar",
+ "edition": "Missale Romanum, editio typica tertia 2008, reimpressio emendata 2008",
+ "numbering": "hebrew",
+ "masses": [
+  {
+   "key": "advent-1",
+   "kind": "seasonal",
+   "name": "First Sunday of Advent",
+   "propers": [
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 25,
+          "first": 1,
+          "last": 3
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 24,
+          "first": 1,
+          "last": 3
+         }
+        ]
+       },
+       "ref": "Psalm 25:1-3",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Ad te levavi",
+     "name": "Entrance Antiphon",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Da, quaesumus, omnipotens Deus",
+     "name": "Collect",
+     "source": "composed"
+    },
+    {
+     "citations": [],
+     "cycles": {
+      "A": [
+       {
+        "book": "Isaiah",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 2,
+           "first": 1,
+           "last": 5
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 2,
+           "first": 1,
+           "last": 5
+          }
+         ]
+        },
+        "ref": "Isaiah 2:1-5",
+        "token": "Is",
+        "unresolved": null
+       }
+      ],
+      "B": [
+       {
+        "book": "Isaiah",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 63,
+           "first": 16,
+           "last": 17
+          },
+          {
+           "chapter": 63,
+           "first": 19,
+           "last": 19
+          },
+          {
+           "chapter": 64,
+           "first": 2,
+           "last": 7
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 63,
+           "first": 16,
+           "last": 17
+          },
+          {
+           "chapter": 63,
+           "first": 19,
+           "last": 19
+          },
+          {
+           "chapter": 64,
+           "first": 2,
+           "last": 7
+          }
+         ]
+        },
+        "ref": "Isaiah 63:16b-17, 19b; 64:2-7",
+        "token": "Is",
+        "unresolved": null
+       }
+      ],
+      "C": [
+       {
+        "book": "Jeremiah",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 33,
+           "first": 14,
+           "last": 16
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 33,
+           "first": 14,
+           "last": 16
+          }
+         ]
+        },
+        "ref": "Jeremiah 33:14-16",
+        "token": "Jer",
+        "unresolved": null
+       }
+      ]
+     },
+     "form": "",
+     "incipit": null,
+     "name": "First Reading",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {
+      "A": [
+       {
+        "book": "Psalms",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 122,
+           "first": 1,
+           "last": 2
+          },
+          {
+           "chapter": 122,
+           "first": 3,
+           "last": 4
+          },
+          {
+           "chapter": 122,
+           "first": 4,
+           "last": 5
+          },
+          {
+           "chapter": 122,
+           "first": 6,
+           "last": 7
+          },
+          {
+           "chapter": 122,
+           "first": 8,
+           "last": 9
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 121,
+           "first": 1,
+           "last": 2
+          },
+          {
+           "chapter": 121,
+           "first": 3,
+           "last": 4
+          },
+          {
+           "chapter": 121,
+           "first": 4,
+           "last": 5
+          },
+          {
+           "chapter": 121,
+           "first": 6,
+           "last": 7
+          },
+          {
+           "chapter": 121,
+           "first": 8,
+           "last": 9
+          }
+         ]
+        },
+        "ref": "Psalm 122:1-2, 3-4, 4-5, 6-7, 8-9",
+        "token": "Ps",
+        "unresolved": null
+       }
+      ],
+      "B": [
+       {
+        "book": "Psalms",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 80,
+           "first": 2,
+           "last": 3
+          },
+          {
+           "chapter": 80,
+           "first": 15,
+           "last": 16
+          },
+          {
+           "chapter": 80,
+           "first": 18,
+           "last": 19
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 79,
+           "first": 2,
+           "last": 3
+          },
+          {
+           "chapter": 79,
+           "first": 15,
+           "last": 16
+          },
+          {
+           "chapter": 79,
+           "first": 18,
+           "last": 19
+          }
+         ]
+        },
+        "ref": "Psalm 80:2-3, 15-16, 18-19",
+        "token": "Ps",
+        "unresolved": null
+       }
+      ],
+      "C": [
+       {
+        "book": "Psalms",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 25,
+           "first": 4,
+           "last": 5
+          },
+          {
+           "chapter": 25,
+           "first": 8,
+           "last": 9
+          },
+          {
+           "chapter": 25,
+           "first": 10,
+           "last": 10
+          },
+          {
+           "chapter": 25,
+           "first": 14,
+           "last": 14
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 24,
+           "first": 4,
+           "last": 5
+          },
+          {
+           "chapter": 24,
+           "first": 8,
+           "last": 9
+          },
+          {
+           "chapter": 24,
+           "first": 10,
+           "last": 10
+          },
+          {
+           "chapter": 24,
+           "first": 14,
+           "last": 14
+          }
+         ]
+        },
+        "ref": "Psalm 25:4-5, 8-9, 10, 14",
+        "token": "Ps",
+        "unresolved": null
+       }
+      ]
+     },
+     "form": "",
+     "incipit": null,
+     "name": "Responsorial Psalm",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {
+      "A": [
+       {
+        "book": "Romans",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 13,
+           "first": 11,
+           "last": 14
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 13,
+           "first": 11,
+           "last": 14
+          }
+         ]
+        },
+        "ref": "Romans 13:11-14",
+        "token": "Rom",
+        "unresolved": null
+       }
+      ],
+      "B": [
+       {
+        "book": "1 Corinthians",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 1,
+           "first": 3,
+           "last": 9
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 1,
+           "first": 3,
+           "last": 9
+          }
+         ]
+        },
+        "ref": "1 Corinthians 1:3-9",
+        "token": "1Cor",
+        "unresolved": null
+       }
+      ],
+      "C": [
+       {
+        "book": "1 Thessalonians",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 3,
+           "first": 12,
+           "last": 2
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 3,
+           "first": 12,
+           "last": 2
+          }
+         ]
+        },
+        "ref": "1 Thessalonians 3:12-4:2",
+        "token": "1Thess",
+        "unresolved": null
+       }
+      ]
+     },
+     "form": "",
+     "incipit": null,
+     "name": "Second Reading",
+     "source": "scripture"
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 85,
+          "first": 8,
+          "last": 8
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 84,
+          "first": 8,
+          "last": 8
+         }
+        ]
+       },
+       "ref": "Psalm 85:8",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Ostende nobis, Domine",
+     "name": "Gospel Acclamation",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {
+      "A": [
+       {
+        "book": "Matthew",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 24,
+           "first": 37,
+           "last": 44
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 24,
+           "first": 37,
+           "last": 44
+          }
+         ]
+        },
+        "ref": "Matthew 24:37-44",
+        "token": "Matt",
+        "unresolved": null
+       }
+      ],
+      "B": [
+       {
+        "book": "Mark",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 13,
+           "first": 33,
+           "last": 37
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 13,
+           "first": 33,
+           "last": 37
+          }
+         ]
+        },
+        "ref": "Mark 13:33-37",
+        "token": "Mark",
+        "unresolved": null
+       }
+      ],
+      "C": [
+       {
+        "book": "Luke",
+        "loci": {
+         "hebrew": [
+          {
+           "chapter": 21,
+           "first": 25,
+           "last": 28
+          },
+          {
+           "chapter": 21,
+           "first": 34,
+           "last": 36
+          }
+         ],
+         "vulgate": [
+          {
+           "chapter": 21,
+           "first": 25,
+           "last": 28
+          },
+          {
+           "chapter": 21,
+           "first": 34,
+           "last": 36
+          }
+         ]
+        },
+        "ref": "Luke 21:25-28, 34-36",
+        "token": "Luke",
+        "unresolved": null
+       }
+      ]
+     },
+     "form": "",
+     "incipit": null,
+     "name": "Gospel",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Suscipe, quaesumus, Domine",
+     "name": "Prayer over the Offerings",
+     "source": "composed"
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 85,
+          "first": 13,
+          "last": 13
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 84,
+          "first": 13,
+          "last": 13
+         }
+        ]
+       },
+       "ref": "Psalm 85:13",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Dominus dabit benignitatem",
+     "name": "Communion Antiphon",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Prosint nobis",
+     "name": "Prayer after Communion",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-s01",
+   "season": "advent"
+  },
+  {
+   "key": "easter-sunday",
+   "kind": "seasonal",
+   "name": "Easter Sunday of the Resurrection of the Lord",
+   "propers": [
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 139,
+          "first": 18,
+          "last": 18
+         },
+         {
+          "chapter": 139,
+          "first": 5,
+          "last": 6
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 138,
+          "first": 18,
+          "last": 18
+         },
+         {
+          "chapter": 138,
+          "first": 5,
+          "last": 6
+         }
+        ]
+       },
+       "ref": "Psalm 139:18, 5-6",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Resurrexi, et adhuc tecum sum",
+     "name": "Entrance Antiphon",
+     "source": "scripture"
+    },
+    {
+     "citations": [
+      {
+       "book": "Luke",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 24,
+          "first": 34,
+          "last": 34
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 24,
+          "first": 34,
+          "last": 34
+         }
+        ]
+       },
+       "ref": "Luke 24:34",
+       "token": "Luke",
+       "unresolved": null
+      },
+      {
+       "book": "Revelation",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 1,
+          "first": 6,
+          "last": 6
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 1,
+          "first": 6,
+          "last": 6
+         }
+        ]
+       },
+       "ref": "Revelation 1:6",
+       "token": "Apoc",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Surrexit Dominus vere",
+     "name": "Entrance Antiphon",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Deus, qui hodierna die",
+     "name": "Collect",
+     "source": "composed"
+    },
+    {
+     "citations": [
+      {
+       "book": "Acts",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 10,
+          "first": 34,
+          "last": 34
+         },
+         {
+          "chapter": 10,
+          "first": 37,
+          "last": 43
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 10,
+          "first": 34,
+          "last": 34
+         },
+         {
+          "chapter": 10,
+          "first": 37,
+          "last": 43
+         }
+        ]
+       },
+       "ref": "Acts 10:34a, 37-43",
+       "token": "Acts",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "First Reading",
+     "source": "scripture"
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 118,
+          "first": 1,
+          "last": 2
+         },
+         {
+          "chapter": 118,
+          "first": 16,
+          "last": 17
+         },
+         {
+          "chapter": 118,
+          "first": 22,
+          "last": 23
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 117,
+          "first": 1,
+          "last": 2
+         },
+         {
+          "chapter": 117,
+          "first": 16,
+          "last": 17
+         },
+         {
+          "chapter": 117,
+          "first": 22,
+          "last": 23
+         }
+        ]
+       },
+       "ref": "Psalm 118:1-2, 16-17, 22-23",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Responsorial Psalm",
+     "source": "scripture"
+    },
+    {
+     "citations": [
+      {
+       "book": "Colossians",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 3,
+          "first": 1,
+          "last": 4
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 3,
+          "first": 1,
+          "last": 4
+         }
+        ]
+       },
+       "ref": "Colossians 3:1-4",
+       "token": "Col",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Second Reading",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Victimae paschali laudes",
+     "name": "Sequence",
+     "source": "composed"
+    },
+    {
+     "citations": [
+      {
+       "book": "1 Corinthians",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 5,
+          "first": 7,
+          "last": 8
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 5,
+          "first": 7,
+          "last": 8
+         }
+        ]
+       },
+       "ref": "1 Corinthians 5:7b-8a",
+       "token": "1Cor",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Pascha nostrum immolatus est Christus",
+     "name": "Gospel Acclamation",
+     "source": "scripture"
+    },
+    {
+     "citations": [
+      {
+       "book": "John",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 20,
+          "first": 1,
+          "last": 9
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 20,
+          "first": 1,
+          "last": 9
+         }
+        ]
+       },
+       "ref": "John 20:1-9",
+       "token": "John",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Gospel",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Sacrificia, Domine, paschalibus gaudiis",
+     "name": "Prayer over the Offerings",
+     "source": "composed"
+    },
+    {
+     "citations": [
+      {
+       "book": "1 Corinthians",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 5,
+          "first": 7,
+          "last": 8
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 5,
+          "first": 7,
+          "last": 8
+         }
+        ]
+       },
+       "ref": "1 Corinthians 5:7-8",
+       "token": "1Cor",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Pascha nostrum immolatus est Christus",
+     "name": "Communion Antiphon",
+     "source": "scripture"
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Perpetuo, Deus, Ecclesiam tuam",
+     "name": "Prayer after Communion",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-s17",
+   "season": "easter"
+  },
+  {
+   "key": "nativity-lord",
+   "kind": "christological",
+   "name": "The Nativity of the Lord",
+   "propers": [
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Placeholder",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-12-25",
+   "season": null
+  },
+  {
+   "key": "epiphany-lord",
+   "kind": "christological",
+   "name": "The Epiphany of the Lord",
+   "propers": [
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Placeholder",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-01-06",
+   "season": null
+  },
+  {
+   "key": "assumption-blessed-virgin-mary",
+   "kind": "marian",
+   "name": "The Assumption of the Blessed Virgin Mary",
+   "propers": [
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Placeholder",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-08-15",
+   "season": null
+  },
+  {
+   "key": "our-lady-fatima",
+   "kind": "marian",
+   "name": "Our Lady of Fatima",
+   "propers": [
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Placeholder",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-05-13",
+   "season": null
+  },
+  {
+   "key": "all-saints",
+   "kind": "saintly",
+   "name": "All Saints",
+   "propers": [
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Placeholder",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-11-01",
+   "season": null
+  },
+  {
+   "key": "chair-saint-peter-apostle",
+   "kind": "saintly",
+   "name": "The Chair of Saint Peter the Apostle",
+   "propers": [
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Placeholder",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-02-22",
+   "season": null
+  },
+  {
+   "key": "conversion-saint-paul-apostle",
+   "kind": "saintly",
+   "name": "The Conversion of Saint Paul the Apostle",
+   "propers": [
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Placeholder",
+     "source": "composed"
+    }
+   ],
+   "registry": "pc-01-25",
+   "season": null
+  }
+ ]
+}

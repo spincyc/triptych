@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triptych — The Propers of the Mass</title>
+<!-- The shared machinery first, then this page's own colour. Both are local;
+     the page makes no external request of any kind. -->
+<link rel="stylesheet" href="../shared/browser-core.css">
+<link rel="stylesheet" href="liturgy.css">
+</head>
+<body>
+<a class="skip-link" href="#reading">Skip to the propers</a>
+
+<header class="page-header">
+  <h1><span class="page-mark" aria-hidden="true">℣</span>The Propers of the Mass</h1>
+  <p class="lede">
+    Choose a missal, then a type of Mass, then the Mass itself, then a
+    translation. Each missal carries its own calendar: choosing one loads that
+    missal's structure and rebuilds the lists below it. Only the chapters the
+    chosen Mass actually cites are fetched, and each of them only once.
+  </p>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="controls" class="controls" aria-labelledby="controls-heading">
+  <h2 id="controls-heading" class="visually-hidden">Choose a Mass</h2>
+
+  <!-- The missal comes first and everything below it is downstream: the type
+       list and the Mass list are both rebuilt from whichever missal is chosen. -->
+  <div class="field">
+    <label for="missal-select">Missal</label>
+    <select id="missal-select" name="missal" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="type-select">Type</label>
+    <select id="type-select" name="type" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="mass-select">Mass</label>
+    <select id="mass-select" name="mass" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="bible-select">Translation</label>
+    <select id="bible-select" name="bible" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-steps">
+    <span class="field-legend" id="step-legend">Step</span>
+    <div class="steps" role="group" aria-labelledby="step-legend">
+      <button type="button" id="prev-button" disabled>
+        <span aria-hidden="true">←</span> Previous
+      </button>
+      <button type="button" id="next-button" disabled>
+        Next <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- The propers are not themselves a live region: replacing them would read a
+     whole Mass aloud on every change. The shared script announces a one-line
+     summary through #reading-status instead. -->
+<main id="reading" class="reading" tabindex="-1" aria-busy="false">
+  <p class="placeholder">Loading the missals…</p>
+</main>
+
+<footer class="page-footer">
+  <p>
+    Nothing here is pre-rendered. Every Mass-and-translation pairing is
+    assembled in the browser out of shared chapter fragments, fetched once each
+    and cached for the rest of the session.
+  </p>
+  <p>
+    This page reads missals. The reading plan is a separate page with its own
+    address, deliberately: they are separate tasks, and the machinery they share
+    lives in <code>shared/browser-core.js</code> rather than in a mode switch.
+  </p>
+</footer>
+
+<script src="../shared/browser-core.js"></script>
+<script src="liturgy.js"></script>
+</body>
+</html>

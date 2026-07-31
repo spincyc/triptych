@@ -1,0 +1,94 @@
+/* ===========================================================================
+ * The reading-plan page — the scripture section's colour
+ * ===========================================================================
+ *
+ * The site gives every section a liturgical colour, and this page is entered
+ * from the scripture section, which is GOLD. The light values below are the
+ * live ones from the site's own stylesheet (.section-gold), copied rather than
+ * imported: these pages are standalone and make no external request of any
+ * kind, not even to the site's CSS.
+ *
+ * The propers page declares its own block of the same six variables in its own
+ * file. They are deliberately not shared: one variable serving both pages would
+ * have to change meaning to change either.
+ *
+ * The gold accent is the one colour in the site's set that is too light to
+ * carry small text on white, which is why the shared stylesheet sets text in
+ * --section-ink and keeps --section-accent for rules, borders and markers.
+ * Dark mode lifts both rather than dropping the colour, since a section that
+ * loses its colour after dark has lost the only thing that says which section
+ * it is.
+ * ======================================================================== */
+
+:root {
+  --section-accent: #b07c07;
+  --section-ink: #7e5802;
+  --section-wash: rgba(176, 124, 7, 0.16);
+  --section-pale: #e1cda1;
+  --section-row: #efe5cd;
+  --section-line: #ceae65;
+  --focus: #7e5802;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --section-accent: #dbb45c;
+    --section-ink: #eed091;
+    --section-wash: rgba(219, 180, 92, 0.12);
+    --section-pale: #7a5f20;
+    --section-row: #2f2716;
+    --section-line: #6f5a24;
+    --focus: #dbb45c;
+  }
+}
+
+/* ---- What only this page renders ---- */
+
+.period-summary {
+  margin: 0 0 1.25rem;
+  padding: 0 0 0 0.9rem;
+  border-left: 2px solid var(--section-pale);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.reading-note {
+  margin: 0 0 1.75rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--section-pale);
+  border-radius: 4px;
+  background: var(--section-row);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.reading-note-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+/* An abridgement that hides what it drops is the thing this plan refuses to
+   be, so its account of its omissions is collapsed but never absent. */
+.omissions {
+  margin: 2rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--section-line);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.omissions summary {
+  cursor: pointer;
+  color: var(--section-ink);
+  letter-spacing: 0.02em;
+}
+
+.omissions-body {
+  margin: 0.75rem 0 0;
+  white-space: pre-wrap;
+}

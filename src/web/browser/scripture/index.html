@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triptych — The Reading Plan</title>
+<!-- The shared machinery first, then this page's own colour. Both are local;
+     the page makes no external request of any kind. -->
+<link rel="stylesheet" href="../shared/browser-core.css">
+<link rel="stylesheet" href="scripture.css">
+</head>
+<body>
+<a class="skip-link" href="#reading">Skip to the reading</a>
+
+<header class="page-header">
+  <h1><span class="page-mark" aria-hidden="true">α</span>The Reading Plan</h1>
+  <p class="lede">
+    Choose a tier, then a reading, then a translation. The tiers nest: the
+    overview is the smallest set, the narrative tier holds the overview and
+    more, and the year tier holds everything. Only the chapters the chosen
+    reading cites are fetched, and each of them only once.
+  </p>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="controls" class="controls" aria-labelledby="controls-heading">
+  <h2 id="controls-heading" class="visually-hidden">Choose a reading</h2>
+
+  <!-- The tier comes first: it decides which readings exist at all. -->
+  <div class="field field-narrow">
+    <label for="tier-select">Tier</label>
+    <select id="tier-select" name="tier" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="reading-select">Reading</label>
+    <select id="reading-select" name="reading" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="bible-select">Translation</label>
+    <select id="bible-select" name="bible" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-steps">
+    <span class="field-legend" id="step-legend">Step</span>
+    <div class="steps" role="group" aria-labelledby="step-legend">
+      <button type="button" id="prev-button" disabled>
+        <span aria-hidden="true">←</span> Previous
+      </button>
+      <button type="button" id="next-button" disabled>
+        Next <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- The reading is not itself a live region: replacing it would read the whole
+     passage aloud on every change. The shared script announces a one-line
+     summary through #reading-status instead. -->
+<main id="reading" class="reading" tabindex="-1" aria-busy="false">
+  <p class="placeholder">Loading the plan…</p>
+</main>
+
+<footer class="page-footer">
+  <p>
+    Nothing here is pre-rendered. Every reading-and-translation pairing is
+    assembled in the browser out of shared chapter fragments, fetched once each
+    and cached for the rest of the session.
+  </p>
+  <p>
+    This page reads a plan. The propers of the Mass are a separate page with
+    their own address, deliberately: they are separate tasks, and the machinery
+    they share lives in <code>shared/browser-core.js</code> rather than in a
+    mode switch.
+  </p>
+</footer>
+
+<script src="../shared/browser-core.js"></script>
+<script src="scripture.js"></script>
+</body>
+</html>

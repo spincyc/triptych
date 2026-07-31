@@ -1,0 +1,82 @@
+/* ===========================================================================
+ * The propers page — the liturgy section's colour
+ * ===========================================================================
+ *
+ * The site gives every section a liturgical colour, and this page is entered
+ * from the liturgy section, which is RED. The light values below are the live
+ * ones from the site's own stylesheet (.section-red), copied rather than
+ * imported: these pages are standalone and make no external request of any
+ * kind, not even to the site's CSS.
+ *
+ * The reading-plan page declares its own block of the same six variables in
+ * its own file. They are deliberately not shared: one variable serving both
+ * pages would have to change meaning to change either.
+ *
+ * Dark mode lightens the accent rather than dropping it — a section that loses
+ * its colour after dark has lost the only thing that says which section it is.
+ * The dark values are the same hue, lifted until they read against the dark
+ * page; the ink stays the text colour and the accent stays the rule colour, so
+ * every contrast pairing holds in both schemes.
+ * ======================================================================== */
+
+:root {
+  --section-accent: #b33a26;
+  --section-ink: #802718;
+  --section-wash: rgba(179, 58, 38, 0.16);
+  --section-pale: #e2b4ad;
+  --section-row: #f0d8d4;
+  --section-line: #d08578;
+  --focus: #802718;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --section-accent: #e08a76;
+    --section-ink: #f2b6a8;
+    --section-wash: rgba(224, 138, 118, 0.12);
+    --section-pale: #7c3b2d;
+    --section-row: #33201a;
+    --section-line: #6d3628;
+    --focus: #e08a76;
+  }
+}
+
+/* ---- What only this page renders ---- */
+
+/* The form a proper belongs to, where a day carries more than one Mass:
+   "Vigil Mass", "Mass at Dawn". */
+.proper-form {
+  margin-left: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: var(--ink-faint);
+}
+
+/* Said once, quietly, where the corpus holds a composed proper's incipit and
+   not its body. It is a statement about the corpus, not a failure, so it is
+   not styled as one. */
+.composed-note {
+  margin: 0.5rem 0 0;
+  color: var(--ink-faint);
+  font-size: 0.86rem;
+  font-style: italic;
+}
+
+/* A cycle-varying proper keeps each year apart, on the page as in the data: a
+   merged list is one the reader cannot tell apart. */
+.cycle {
+  margin-top: 1rem;
+  padding: 0.35rem 0 0.35rem 0.8rem;
+  border-left: 3px solid var(--section-row);
+}
+
+.cycle-name {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}

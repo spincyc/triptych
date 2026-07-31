@@ -119,7 +119,7 @@ nav a { color: var(--ink); text-decoration: none; }
     #2c7a51 42.855% 57.14%,
     #5a3f96 57.14% 71.425%,
     #da8aa0 71.425% 85.71%,
-    #42536e 85.71% 100%
+    #484d57 85.71% 100%
   ) 1;
 }
 
@@ -215,12 +215,12 @@ nav a { color: var(--ink); text-decoration: none; }
   --section-symbol-secondary: "✥";
 }
 .section-black {
-  --section-accent: #42536e;
-  --section-ink: #2a374a;
-  --section-wash: rgba(66, 83, 110, 0.15);
-  --section-pale: #ced2d9;
-  --section-row: #e8eaee;
-  --section-line: #a4acb9;
+  --section-accent: #484d57;
+  --section-ink: #2f333a;
+  --section-wash: rgba(72, 77, 87, 0.15);
+  --section-pale: #cfd1d3;
+  --section-row: #e9eaeb;
+  --section-line: #a7aaae;
   --section-symbol-primary: "§";
   --section-symbol-secondary: "¶";
 }
@@ -427,7 +427,7 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
 .page-home table:first-of-type tbody tr:nth-child(6),
 .page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #da8aa0; --portal-pale: #f2d7df; --portal-symbol: "✷"; }
 .page-home table:first-of-type tbody tr:nth-child(7),
-.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #42536e; --portal-pale: #ced2d9; --portal-symbol: "§"; }
+.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #484d57; --portal-pale: #cfd1d3; --portal-symbol: "§"; }
 .page-home table:first-of-type tbody td,
 .page-library-root table:first-of-type tbody td {
   background: var(--portal-pale);

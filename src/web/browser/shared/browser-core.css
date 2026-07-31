@@ -1,6 +1,24 @@
-/* Scripture browser — plain CSS, no build step, no external assets.
-   Colours are declared once as custom properties and re-declared under
-   prefers-color-scheme so the whole page follows the reader's setting. */
+/* ===========================================================================
+ * Triptych browser — shared stylesheet
+ * ===========================================================================
+ *
+ * The structure, typography and failure styling both reading pages share. It
+ * carries no colour identity of its own: the section palette arrives in the
+ * six variables below, and each page declares its own block of them in its own
+ * stylesheet — liturgy the red of the site's liturgy section, scripture the
+ * gold of the scripture section. Sharing one palette variable between the two
+ * pages would mean changing its meaning to change either.
+ *
+ *   --section-accent   rules, labels, markers, the page's line of identity
+ *   --section-ink      headings and links: the accent darkened to read as text
+ *   --section-wash     the faint tint behind panels
+ *   --section-pale     soft borders inside toned blocks
+ *   --section-row      the tint of a toned block or a selected row
+ *   --section-line     the border of a toned block
+ *
+ * A page that loads this file and declares nothing still renders: the
+ * fallbacks below are neutral, not invisible.
+ * ======================================================================== */
 
 :root {
   color-scheme: light dark;
@@ -10,13 +28,17 @@
   --ink: #1d1b17;
   --ink-soft: #55504a;
   --ink-faint: #7b746b;
-  --rule: #ddd7cc;
-  --rule-soft: #ece7dd;
-  --accent: #7a3b20;
-  --accent-soft: #f3e9e2;
   --notice: #7a2f2f;
   --notice-bg: #f8ecea;
-  --focus: #14539a;
+
+  /* Neutral fallbacks; every page overrides all six. */
+  --section-accent: #6a635a;
+  --section-ink: #453f38;
+  --section-wash: rgba(106, 99, 90, 0.12);
+  --section-pale: #ddd7cc;
+  --section-row: #efece6;
+  --section-line: #cdc6b8;
+  --focus: var(--section-ink);
 
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
     Georgia, "Times New Roman", serif;
@@ -32,13 +54,8 @@
     --ink: #ece7dd;
     --ink-soft: #b9b2a6;
     --ink-faint: #8e877c;
-    --rule: #35322b;
-    --rule-soft: #26241f;
-    --accent: #e0a884;
-    --accent-soft: #2a221c;
     --notice: #f0a9a0;
     --notice-bg: #2c1d1b;
-    --focus: #8fbcf0;
   }
 }
 
@@ -50,11 +67,14 @@ body {
   margin: 0 auto;
   padding: 2rem 1.25rem 4rem;
   max-width: 52rem;
-  background: var(--page);
+  background:
+    radial-gradient(circle at 100% 0, var(--section-wash), transparent 28rem),
+    var(--page);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 1rem;
   line-height: 1.55;
+  min-height: 100vh;
 }
 
 /* ---- Skip link and screen-reader helpers ---- */
@@ -93,7 +113,11 @@ body {
 
 /* ---- Header ---- */
 
-.page-header { margin-bottom: 1.5rem; }
+.page-header {
+  margin-bottom: 1.5rem;
+  padding-left: 0.9rem;
+  border-left: 0.32rem solid var(--section-accent);
+}
 
 .page-header h1 {
   margin: 0 0 0.35rem;
@@ -101,6 +125,13 @@ body {
   font-size: 1.9rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  color: var(--section-ink);
+}
+
+.page-mark {
+  margin-right: 0.4rem;
+  color: var(--section-accent);
+  font-weight: 400;
 }
 
 .lede {
@@ -114,11 +145,11 @@ body {
 .banner {
   margin: 0 0 1.25rem;
   padding: 0.7rem 0.9rem;
-  border: 1px solid var(--rule);
-  border-left: 4px solid var(--accent);
+  border: 1px solid var(--section-line);
+  border-left: 4px solid var(--section-accent);
   border-radius: 4px;
-  background: var(--accent-soft);
-  color: var(--ink-soft);
+  background: var(--section-row);
+  color: var(--section-ink);
   font-size: 0.9rem;
   max-width: var(--measure);
 }
@@ -134,7 +165,8 @@ body {
   align-items: end;
   margin: 0 0 2rem;
   padding: 1rem;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--section-line);
+  border-top: 0.2rem solid var(--section-accent);
   border-radius: 8px;
   background: var(--panel);
 }
@@ -144,14 +176,14 @@ body {
   flex-direction: column;
   gap: 0.3rem;
   min-width: 0;
-  flex: 1 1 16rem;
+  flex: 1 1 15rem;
 }
 
 /* A hidden field must actually go: display:flex would otherwise beat the
-   hidden attribute and leave the tier select on screen in propers mode. */
+   hidden attribute and leave the control on screen and in the tab order. */
 .field[hidden] { display: none; }
 
-.field-mode, .field-tier { flex: 1 1 11rem; }
+.field-narrow { flex: 1 1 11rem; }
 
 .field label,
 .field-legend {
@@ -159,7 +191,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--section-ink);
 }
 
 .field select {
@@ -168,9 +200,11 @@ body {
   font: inherit;
   color: var(--ink);
   background: var(--page);
-  border: 1px solid var(--rule);
+  border: 1px solid var(--section-line);
   border-radius: 5px;
 }
+
+.field select:hover:not(:disabled) { border-color: var(--section-accent); }
 
 .field select:disabled { opacity: 0.6; }
 
@@ -183,12 +217,15 @@ body {
   font: inherit;
   color: var(--ink);
   background: var(--page);
-  border: 1px solid var(--rule);
+  border: 1px solid var(--section-line);
   border-radius: 5px;
   cursor: pointer;
 }
 
-.steps button:hover:not(:disabled) { border-color: var(--accent); }
+.steps button:hover:not(:disabled) {
+  border-color: var(--section-accent);
+  background: var(--section-row);
+}
 
 .steps button:disabled {
   opacity: 0.45;
@@ -214,6 +251,7 @@ body {
   font-family: var(--serif);
   font-size: 1.55rem;
   font-weight: 600;
+  color: var(--section-ink);
 }
 
 .entry-meta {
@@ -223,61 +261,18 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ---- Reading plan ---- */
-
-.period-summary {
-  margin: 0 0 1.25rem;
-  padding: 0 0 0 0.9rem;
-  border-left: 2px solid var(--rule-soft);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-}
-
-.reading-note {
-  margin: 0 0 1.75rem;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid var(--rule-soft);
-  border-radius: 4px;
-  background: var(--accent-soft);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-}
-
-.reading-note-label {
-  display: block;
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.omissions {
-  margin: 2rem 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
-  font-size: 0.88rem;
-}
-
-.omissions summary {
-  cursor: pointer;
-  color: var(--ink-faint);
-  letter-spacing: 0.02em;
-}
-
-.omissions-body {
-  margin: 0.75rem 0 0;
-  white-space: pre-wrap;
-}
+/* ---- A block of citations: a proper, or a reading ---- */
 
 .proper {
   margin: 0 0 2.5rem;
   padding: 0 0 0 1rem;
-  border-left: 2px solid var(--rule-soft);
+  border-left: 2px solid var(--section-pale);
 }
 
+/* Section text is set in --section-ink rather than --section-accent. The
+   accent is a rule-and-marker colour: at 0.8rem the gold of the scripture
+   section does not carry enough contrast on white to be read as text, and the
+   ink of every section does. */
 .proper-name {
   margin: 0;
   font-family: var(--sans);
@@ -285,7 +280,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--section-ink);
 }
 
 .proper-incipit {
@@ -305,6 +300,12 @@ body {
   color: var(--ink-faint);
 }
 
+/* The same passage, said in the edition's own numbering, where the structure
+   file's reference is written in the other one. */
+.citation-recast::before { content: " — "; }
+
+.citation-recast { font-style: italic; }
+
 /* Scripture proper: the reason for the generous measure and leading. */
 .passage {
   margin: 0 0 0.75rem;
@@ -318,6 +319,9 @@ body {
 
 .verse { display: inline; }
 
+/* Verse numbers are subordinate: small, superscript, and never bold enough to
+   compete with the verse. The number is also given to assistive technology as
+   ordinary text, so nothing depends on reading this. */
 .verse-num {
   font-family: var(--sans);
   font-size: 0.62em;
@@ -325,7 +329,7 @@ body {
   line-height: 0;
   vertical-align: super;
   margin-right: 0.22em;
-  color: var(--ink-faint);
+  color: var(--section-ink);
   user-select: none;
 }
 
@@ -345,7 +349,9 @@ body {
   color: var(--ink-faint);
 }
 
-/* A citation that could not be rendered always says so, in place. */
+/* A citation that could not be rendered always says so, in place. The notice
+   colour is deliberately not the section colour: a failure must not read as
+   ordinary page furniture. */
 .notice {
   margin: 0.5rem 0 0;
   padding: 0.55rem 0.75rem;
@@ -363,13 +369,15 @@ body {
 .page-footer {
   margin-top: 3.5rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--section-line);
   max-width: var(--measure);
   color: var(--ink-faint);
   font-size: 0.85rem;
 }
 
-.page-footer p { margin: 0; }
+.page-footer p { margin: 0 0 0.6rem; }
+
+.page-footer p:last-child { margin-bottom: 0; }
 
 .page-footer code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
