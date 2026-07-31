@@ -50,6 +50,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import _calendars  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -167,6 +168,7 @@ EMITTED = (
     "derived_from",
     "divergences",
     "edition",
+    "edition_short",
     "impediment",
     "implied",
     "keys",
@@ -462,6 +464,7 @@ def index_document(built: list[dict]) -> dict:
                 "calendar": row["calendar"],
                 "code": row["code"],
                 "edition": row["edition"],
+                "edition_short": row.get("edition_short"),
                 "path": f"structure/rubrics/{row['calendar']}.json",
                 "precedence_stated": True,
                 "commemorates": bool((row.get("commemoration") or {}).get("exists", True)),
@@ -627,6 +630,11 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
         for key, row in assigned.items():
             if row["name"] != masses[key]["name"]:
                 problems.append(f"{where}: the name recorded for {key} disagrees with the calendar index")
+        # The short name of the book, taken from the mass index that owns it and
+        # not restated in this source. `edition` is already carried in both
+        # files of a calendar directory, which is one copy too many; the name a
+        # control shows will not be a second instance of that.
+        document["edition_short"] = _calendars.edition_short(root, name)
         sources[name] = document
         built.append(document_for(document, assigned, basis_index))
     return built, problems, sources

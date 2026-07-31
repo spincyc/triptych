@@ -193,11 +193,24 @@
    * Discovery
    * --------------------------------------------------------------------- */
 
-  function described(id, label, edition) {
+  /**
+   * A missal has three names, and they are not interchangeable.
+   *
+   *   short    "1962 Missal" — what a reader would say, and what the control
+   *            shows. Authored in the calendar source beside the edition it
+   *            shortens, never composed here.
+   *   edition  "Missale Romanum, editio typica 1962" — the bibliographic
+   *            identification. It is what the page prints against the texts
+   *            themselves, because a page serving prayers must say which book
+   *            they were read out of.
+   *   label    the id made readable, and only until the file has been fetched.
+   */
+  function described(id, label, edition, short) {
     return {
       id: id,
       label: label || T.titleCase(id),
-      edition: edition || null
+      edition: edition || null,
+      short: short || null
     };
   }
 
@@ -213,7 +226,8 @@
       if (entries.length) {
         return entries.map((entry) => {
           if (typeof entry === 'string') return described(entry);
-          return described(entry.id, entry.label || entry.edition, entry.edition);
+          return described(
+            entry.id, entry.label || entry.edition, entry.edition, entry.edition_short);
         });
       }
     } catch (error) {
@@ -270,8 +284,14 @@
   function fillMissalSelect() {
     T.fillSelect(missalSelect, state.missals.map((missal) => ({
       value: missal.id,
-      label: missal.edition || missal.label,
-      title: missal.id
+      // The short name where the file offers one. A missal whose source has not
+      // been given one falls back to the edition string rather than to the id:
+      // long is better than cryptic, and the fallback is visible enough to get
+      // the source fixed.
+      label: missal.short || missal.edition || missal.label,
+      // The full identification is a hover away, and is printed in full against
+      // the propers themselves.
+      title: missal.edition || missal.id
     })));
     if (state.missalId) missalSelect.value = state.missalId;
   }
@@ -716,9 +736,13 @@
 
     state.structure = loaded.file;
 
+    // Both names come out of the file the missal itself ships, so the control
+    // renames itself once the missal is open and the site holds no opinion of
+    // its own about what either book is called.
     const missal = currentMissal();
-    if (missal && loaded.file.edition) {
-      missal.edition = String(loaded.file.edition);
+    if (missal && (loaded.file.edition || loaded.file.edition_short)) {
+      if (loaded.file.edition) missal.edition = String(loaded.file.edition);
+      if (loaded.file.edition_short) missal.short = String(loaded.file.edition_short);
       fillMissalSelect();
     }
 

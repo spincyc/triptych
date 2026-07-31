@@ -243,7 +243,10 @@
   color: var(--section-ink);
   background: var(--section-row);
   border-radius: 3px;
-  white-space: nowrap;
+  /* A locus is not always short: "RGMR 306-309, 314-317, 326, 328, 341,
+     384-387" is one of them. Held on one line it ran off the side of a phone
+     and took the page with it, so it wraps, at its own commas where it can. */
+  overflow-wrap: anywhere;
 }
 
 .latin {
@@ -445,4 +448,9 @@
 @media (max-width: 34rem) {
   .step-lede, .step-body { margin-left: 0; }
   .formulary-slot { flex-basis: 100%; }
+  /* A row place and a disposition tag are short enough to keep on one line on
+     a desktop, which is why they say so; on a narrow screen one unbreakable
+     phrase is enough to scroll the whole page sideways, and a tag that wraps
+     is better than a page that does. */
+  .row-place, .tag { white-space: normal; }
 }

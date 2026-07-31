@@ -623,6 +623,12 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
         "schema": "triptych-propers-structure/v1",
         "calendar": calendar,
         "edition": document.get("edition"),
+        # The name a reader would say, for the control; `edition` stays the
+        # bibliographic identification and is what the page prints against the
+        # texts themselves. Carried from the source rather than shortened here,
+        # so that no tool and no page holds a second opinion about what the two
+        # books are called.
+        "edition_short": document.get("edition_short"),
         "numbering": source,
         # The witnesses this missal's orations may be read in, in the order a
         # control should offer them; the first row of a language is its default.

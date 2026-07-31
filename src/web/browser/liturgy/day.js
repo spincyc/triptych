@@ -107,9 +107,15 @@
   async function discoverMissals() {
     const file = await T.loadJSON(RUBRICS_INDEX);
     const rows = (file && file.calendars) || [];
+    // The short name for the control and the edition for the hover, the same
+    // two names the propers page shows and out of the same calendar source, so
+    // a reader moving between the pages is choosing between the same two words.
+    // The full identification is not lost: the derivation prints it as the
+    // first fact of every day.
     return rows.map((row) => ({
       id: row.calendar,
-      label: row.edition || T.titleCase(row.calendar),
+      label: row.edition_short || row.edition || T.titleCase(row.calendar),
+      edition: row.edition || null,
       code: row.code || null,
       commemorates: row.commemorates !== false
     }));
@@ -958,7 +964,7 @@
     T.fillSelect(missalSelect, missals.map((one) => ({
       value: one.id,
       label: one.label,
-      title: one.code || one.id
+      title: one.edition || one.code || one.id
     })));
 
     const hash = T.readHash();

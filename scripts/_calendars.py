@@ -31,6 +31,7 @@ COMPANION_SCHEMAS = {
 # A YAML top-level key sits at column zero, which is what makes this cheap scan
 # equivalent to a parse for the one field it wants.
 SCHEMA_LINE = re.compile(r"^schema:[ \t]*(?:['\"])?([^'\"\s#]+)", re.MULTILINE)
+EDITION_SHORT_LINE = re.compile(r"^edition_short:[ \t]*(.+?)[ \t]*$", re.MULTILINE)
 
 
 def declared_schema(path: Path) -> str | None:
@@ -41,6 +42,29 @@ def declared_schema(path: Path) -> str | None:
         return None
     found = SCHEMA_LINE.search(text)
     return found.group(1) if found else None
+
+
+def edition_short(root: Path, calendar: str) -> str | None:
+    """The short name of the book a calendar's masses are printed in.
+
+    The name a reader would say — "1962 Missal" — as against the bibliographic
+    `edition` that identifies the printing. A select control has room for one of
+    them and a reader has patience for one of them, and it is not the sixty-eight
+    characters of "Missale Romanum, editio typica tertia 2008, reimpressio
+    emendata 2008".
+
+    It is read from the mass index, which is the file that names the book, and
+    from nowhere else. Two tools emit it to the browser and neither keeps a copy:
+    a short name pasted into a second source is the restatement that drifts, and
+    `edition` is already carried twice in this directory for want of one owner.
+    """
+    path = root / calendar / "propers.yaml"
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError:
+        return None
+    found = EDITION_SHORT_LINE.search(text)
+    return found.group(1).strip("'\"") if found else None
 
 
 def partition(root: Path, calendar: str | None = None) -> tuple[list[Path], list[dict], list[str]]:
