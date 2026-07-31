@@ -60,6 +60,55 @@ works. Ids should reconcile to the `work.*` identities `source-library` already
 uses, which is what lets a harvested candidate become a vault record without a
 second identity reconciliation.
 
+## Key spaces
+
+The index and the propers do not speak the same key space, and the bridge
+between them is `discover`'s, not the index's.
+
+- **The index is keyed by chapter locus.** 490 of its 497 keys are one chapter
+  (`Psalms 24`), because the harvest is run `--by-chapter` and a locus is one
+  chapter, never wider. The other 7 are verse ranges left by the pilot runs
+  (`Psalms 24:1-24:3`). Both are live; neither hides the other.
+- **A proper cites a verse range** (`Psalm 24:1-3`, `Baruch 3:9-15, 32-4:4`).
+  Of the 2190 references the two calendars carry, 2 met an index key exactly.
+
+Three rules close the gap, all of them in `commentary-work-index`:
+
+**The key is derived, never the spelling.** `tools/citations` keeps the citation
+verbatim in `ref` while parsing its book to the canonical `Psalms`, so a lookup
+renders its key from the parsed book and ranges instead. Without that, 926 of
+the 2190 references missed the index outright — 888 of them psalms, purely
+because the missals write "Psalm" and the index is keyed "Psalms". The citation
+as written is still reported, as `cited`.
+
+**A psalm lookup must name its numbering.** `discover` takes
+`--numbering {vulgate,hebrew}` and refuses a psalm without it. Vulgate 50 is
+Hebrew 51, and the two missals disagree by declaration: `roman-1962` is vulgate,
+`postconciliar` is hebrew. Guessing returns a real, confident, wrong psalm,
+which is worse than the miss it replaces. `build-corpus` needs no flag — it
+reads `psalm_numbering` off each calendar. Conversion runs through
+`scripts/_psalms.py` and the tracked concordance; nothing is renumbered by hand,
+and a reference that does not exist in its declared system is reported
+`unconvertible` rather than moved.
+
+**A range crossing a chapter boundary resolves to every chapter it touches.**
+It is never collapsed to one. 43 distinct references cross a boundary — the
+Passions, the Vigil, the Sunday epistles, `Baruch 3:32-4:4`. Each chapter's
+works are interleaved by rank rather than taken in a block, because a block
+let the first chapter fill the result alone: `Genesis 1:1-2:2` returned twenty
+works from Genesis 1 and none at all from Genesis 2, and `Matthew 26:14-27:66`
+returned nineteen from chapter 26 against one from chapter 27. Interleaving
+keeps each chapter's own confidence order and guarantees no named chapter is
+starved by the cut at `--max-results`. A work found under several chapters is
+one work carrying several loci.
+
+A chapter-level hit is labelled `matched: chapter` with `matched_loci`, and the
+corpus counts it under `chapter_matched_passage_count` rather than as coverage.
+Widening is not a loosening — a commentary on a chapter is what was asked for
+and what was recorded — but it is broader than the citation that reached it,
+and a reader deciding whether to open the book is owed the difference between
+"commented on these verses" and "commented on the chapter they are in".
+
 ## Ranking
 
 Two weights combine, and both are already implemented:

@@ -2,13 +2,20 @@
 """Build and query a passage-to-commentary-work index.
 
 Usage:
-  commentary-work-index discover [--discovery PATH] --passage PASSAGE [--max-results N]
+  commentary-work-index discover [--discovery PATH] --passage PASSAGE
+    [--numbering {vulgate,hebrew}] [--max-results N]
   commentary-work-index build-corpus [--discovery PATH] [--root DIR]
     [--calendar CALENDAR ...] [--max-results-per-mass N]
     [--max-results-per-passage N] [--output PATH]
 
 This tool does not invoke external search agents. It works from curated mapping
 records in `--discovery`, and returns ranked work metadata for each passage.
+
+The index and the propers speak two key spaces: the index is keyed one chapter
+at a time and a proper cites a verse range. A lookup therefore builds its key
+from the parsed citation rather than from its spelling, answers from both key
+spaces, and falls back to the chapters a range touches — saying so, and saying
+which chapters, whenever it does.
 """
 
 from __future__ import annotations
@@ -226,15 +233,34 @@ def _normalize_passage(record: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(record, dict):
         raise ValueError("passage record must be a mapping")
     normalized = dict(record)
+    # Keep the citation as it was written before the key replaces it, so a
+    # caller can still see that "Psalm 24:1-3" is what was asked about.
+    cited = _coerce_str(normalized.get("cited_ref") or normalized.get("ref"))
     normalized["ref"] = _coerce_ref(normalized)
+    if cited:
+        normalized["cited_ref"] = cited
     return normalized
 
 
 def _coerce_ref(record: dict[str, Any]) -> str:
-    explicit = _coerce_str(record.get("ref"))
-    if explicit:
-        return explicit
-    return _normalize_ref_from_record(record)
+    """Derive the key, never trust the spelling the caller happened to use.
+
+    `tools/citations` preserves the citation verbatim in `ref` — "Psalm 24:1-3"
+    stays "Psalm 24:1-3" — while parsing its book to the canonical `Psalms`.
+    Keying on the verbatim form meant the propers' own spelling never met the
+    index: 926 of 2190 references missed it outright, 888 of them psalms, purely
+    because the missals write "Psalm" and the index is keyed "Psalms". The key
+    is therefore always rendered from the parsed book and ranges, which is the
+    one rendering both ends of the chain already agree on.
+    """
+    derived = ""
+    try:
+        derived = _normalize_ref_from_record(record)
+    except ValueError:
+        derived = ""
+    if derived:
+        return derived
+    return _coerce_str(record.get("ref"))
 
 
 def _coerce_work_record(record: dict[str, Any]) -> dict[str, Any]:
@@ -252,7 +278,7 @@ def _coerce_work_record(record: dict[str, Any]) -> dict[str, Any]:
     except (TypeError, ValueError):
         confidence_float = None
 
-    return {
+    coerced = {
         "work_id": work_id,
         "author": author,
         "title": title,
@@ -263,6 +289,14 @@ def _coerce_work_record(record: dict[str, Any]) -> dict[str, Any]:
             record.get("source_hint") or record.get("edition") or record.get("evidence")
         ),
     }
+    # How the work was reached survives the coercion, or the caller cannot tell
+    # a work commented on the verses cited from one commented on the chapter
+    # they sit in — and for a range crossing a boundary, which chapter.
+    if record.get("matched") == "chapter":
+        coerced["matched"] = "chapter"
+        loci = record.get("matched_loci")
+        coerced["matched_loci"] = list(loci) if isinstance(loci, list) else []
+    return coerced
 
 
 def _work_key(work: dict[str, Any]) -> str:
@@ -333,34 +367,70 @@ def _lookup_works(
     if not records:
         raise ValueError("no parseable passage")
     passage_ref = records[0]["ref"]
-    works = discovery.get(passage_ref, [])
-    if not works:
-        # The harvest is run by chapter and this corpus is keyed by verse
-        # range, so `Psalms 24:1-24:3` never matches the harvested `Psalms 24`
-        # however much the discovery index holds about that chapter. Only 13 of
-        # 1596 references met their locus exactly. Falling back to the chapter
-        # is not a loosening of the match: a commentary on a chapter is what was
-        # asked for and what was recorded, and the range is narrower than the
-        # thing the attribution was ever about.
-        #
-        # The corpus records which passages were matched this way, because a
-        # chapter-level attribution is broader than the citation that reached
-        # it and a reader deciding whether to open the book is owed the
-        # difference between "commented on these verses" and "commented on the
-        # chapter they are in".
-        seen: set[tuple] = set()
-        widened: list[dict[str, Any]] = []
-        for locus in chapter_loci(passage_ref):
-            for work in discovery.get(locus, []):
-                key = (work.get("author"), work.get("title"))
-                if key in seen:
-                    continue
-                seen.add(key)
-                widened.append({**work, "matched": "chapter", "matched_locus": locus})
-        works = widened
+
+    # The harvest is run by chapter and the propers cite verse ranges, so
+    # `Psalms 24:1-24:3` never matches the harvested `Psalms 24` however much
+    # the index holds about that chapter. Both key spaces are live in one
+    # index — 490 chapter loci from the full passes beside 7 verse-range loci
+    # left by the pilot runs — so a lookup answers from both rather than
+    # letting whichever it happens to hit hide the other.
+    #
+    # Falling back to the chapter is not a loosening of the match: a commentary
+    # on a chapter is what was asked for and what was recorded, and the cited
+    # range is narrower than the thing the attribution was ever about. It is
+    # reported rather than silently counted as exact, because a reader deciding
+    # whether to open the book is owed the difference between "commented on
+    # these verses" and "commented on the chapter they are in".
+    ordered: list[dict[str, Any]] = []
+    seen: dict[str, dict[str, Any]] = {}
+
+    for work in discovery.get(passage_ref, []):
+        key = _work_key(work)
+        if key in seen:
+            continue
+        entry = dict(work)
+        seen[key] = entry
+        ordered.append(entry)
+
+    # A range crossing a chapter boundary is a query about *every* chapter it
+    # touches, never about one of them. Taking each chapter's works in a block
+    # let the first chapter fill the result on its own: `Genesis 1:1-2:2`
+    # returned twenty works from Genesis 1 and none at all from Genesis 2, and
+    # the Passion at `Matthew 26:14-27:66` returned nineteen from chapter 26
+    # against one from chapter 27. Interleaving by rank instead — every
+    # chapter's first work, then every chapter's second — keeps each chapter's
+    # own confidence order while guaranteeing that no chapter the citation
+    # names is starved by the cut at --max-results.
+    per_locus = [(locus, discovery.get(locus, [])) for locus in chapter_loci(passage_ref)]
+    for index in range(max((len(works) for _, works in per_locus), default=0)):
+        for locus, works in per_locus:
+            if index >= len(works):
+                continue
+            work = works[index]
+            key = _work_key(work)
+            existing = seen.get(key)
+            if existing is not None:
+                # An exact hit keeps no locus list: it matched the citation
+                # itself, not a chapter standing in for it.
+                if existing.get("matched") == "chapter":
+                    loci = existing["matched_loci"]
+                    if locus not in loci:
+                        loci.append(locus)
+                continue
+            entry = {**work, "matched": "chapter", "matched_loci": [locus]}
+            seen[key] = entry
+            ordered.append(entry)
+
+    # Report a work's chapters in the order the citation names them, not in the
+    # order the interleave happened to reach them.
+    position = {locus: index for index, (locus, _) in enumerate(per_locus)}
+    for entry in ordered:
+        if entry.get("matched") == "chapter":
+            entry["matched_loci"].sort(key=position.__getitem__)
+
     if max_results > 0:
-        works = works[:max_results]
-    return passage_ref, works
+        ordered = ordered[:max_results]
+    return passage_ref, ordered
 
 
 def _category_for_kind(kind: object) -> str:
@@ -532,7 +602,11 @@ def _build_mass_coverage(
 
     for item in records:
         mass_id = f"{item['calendar']}::{item['mass_key']}"
-        cited_ref = item["passage"]["ref"]
+        # The citation as the missal prints it, not the key derived from it:
+        # an `unconvertible` row has to name the reference a reader can find.
+        cited_ref = _coerce_str(
+            item["passage"].get("cited_ref") or item["passage"].get("ref")
+        )
         try:
             canonical = _canonical_passage(
                 item["passage"], item.get("numbering", CANONICAL_NUMBERING)
@@ -685,6 +759,8 @@ def _render_payload(
     if payload.get("discoveries") is not None:
         for item in payload["discoveries"]:
             print(f"passage: {item['passage']}")
+            if item.get("cited"):
+                print(f"  cited as: {item['cited']}")
             works = item.get("works", [])
             if not works:
                 print("  - no mapped commentaries yet")
@@ -696,6 +772,9 @@ def _render_payload(
                 )
                 if work.get("role"):
                     print(f"      role: {work['role']}")
+                if work.get("matched") == "chapter":
+                    loci = ", ".join(work.get("matched_loci") or [])
+                    print(f"      matched on the chapter, not the verses cited: {loci}")
                 if work.get("source_hint"):
                     print(f"      source hint: {work['source_hint']}")
         return None
@@ -750,20 +829,56 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
     discoveries: list[dict[str, Any]] = []
     for passage in passages:
         try:
-            ref, works = _lookup_works(discovery, citations, passage, args.max_results)
+            records = _parse_passage_value(citations, passage)
         except Exception as error:
             raise ValueError(f"invalid passage {passage!r}: {error}") from error
+        if not records:
+            raise ValueError(f"invalid passage {passage!r}: no parseable passage")
+        record = records[0]
+        # Name the passage by its citation, not by the machine record a
+        # --passage-file may have carried in.
+        named = _coerce_str(record.get("cited_ref") or record.get("ref")) or repr(passage)
 
-        discoveries.append(
-            {
-                "passage": ref,
-                "works": _sort_works([_coerce_work_record(item) for item in works]),
-            }
-        )
+        # The index is keyed in one numbering system and a psalm reference does
+        # not say which one it is written in. Vulgate 50 is Hebrew 51, so
+        # guessing returns a real, confident, wrong psalm — worse than the miss
+        # it replaces. The two missals disagree here by declaration, not by
+        # accident: roman-1962 is vulgate and postconciliar is hebrew, which is
+        # why build-corpus reads the system off the calendar and why a bare
+        # lookup has to be told.
+        if record.get("book") == PSALMS and args.numbering is None:
+            raise ValueError(
+                f"invalid passage {named}: a psalm reference does not say which "
+                f"numbering it uses, and Vulgate 50 is Hebrew 51; pass --numbering "
+                f"{{{'|'.join(NUMBERING_SYSTEMS)}}} to name the system it is written in"
+            )
+        try:
+            canonical = _canonical_passage(record, args.numbering or CANONICAL_NUMBERING)
+        except NumberingError as error:
+            raise ValueError(f"invalid passage {named}: {error}") from error
+
+        try:
+            ref, works = _lookup_works(discovery, citations, canonical, args.max_results)
+        except Exception as error:
+            raise ValueError(f"invalid passage {named}: {error}") from error
+
+        entry: dict[str, Any] = {
+            "passage": ref,
+            "works": _sort_works([_coerce_work_record(item) for item in works]),
+        }
+        cited = _coerce_str(record.get("cited_ref") or record.get("ref"))
+        if cited and cited != ref:
+            entry["cited"] = cited
+        discoveries.append(entry)
 
     payload = {
         "status": "ok",
         "schema": SCHEMA_DISCOVERY,
+        # The keys returned are always CANONICAL_NUMBERING, whatever the input
+        # was written in, for the same reason the corpus says so: "Psalms 24"
+        # printed beside "1 Samuel 16" reads as Hebrew unless it is told not to.
+        "numbering": CANONICAL_NUMBERING,
+        "cited_numbering": args.numbering,
         "max_results": args.max_results,
         "discoveries": discoveries,
     }
@@ -900,6 +1015,16 @@ def main(argv: list[str] | None = None) -> int:
         type=int,
         default=20,
         help="maximum number of works returned per passage (default: 20)",
+    )
+    discover.add_argument(
+        "--numbering",
+        choices=NUMBERING_SYSTEMS,
+        default=None,
+        help=(
+            "psalm numbering the given citations are written in; required for a "
+            f"psalm, since the index is keyed {CANONICAL_NUMBERING} and Vulgate 50 "
+            "is Hebrew 51"
+        ),
     )
 
     build = sub.add_parser(
