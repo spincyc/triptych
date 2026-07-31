@@ -1641,16 +1641,23 @@ candidates as they appear.
 §6.2's 1311/1318 and 1298/1318 figures are that validation performed once; make
 it a gate.
 
-**Where the retrieval itself would live.** Nothing in `tools/` may open a socket
-outside the acquisition group, so an acquisition here is not a script beside the
-data: it is a verb on the harvest tool, declared `NETWORK` in
+**Where the retrieval itself would live.** Nothing in `tools/` may reach outside
+the machine except from the acquisition group, so an acquisition here is not a
+script beside the data: it is a verb on an acquisition-group tool, declared in
 `scripts/_tooling.py`'s `REACHES` table, with `tools/tests/test_tool_registry.py`
 proving the body and the declaration agree. One verb suffices — retrieve the
 named upstream file to a path the operator gives, record its URL, retrieval date
 and sha256, and write nothing into `src/sources/` itself; registering the
 artifact stays a separate, offline step, so the fetch is re-runnable and the
 rights decision of §6.4 still has to be made by hand before anything is tracked.
-**No such verb exists today, and §6.5 means the psalter does not need one.**
+
+Two facts about the table have to be settled first. `REACHES` carries **one
+value per tool**, and `harvest` already declares `MODEL`; a fetch verb hung there
+would make the tool reach two ways at once and the declaration could state only
+one. So either the declaration grows to hold a set, or the fetch verb belongs on
+a different acquisition-group tool. **No such verb exists today, and §6.5 means
+the psalter does not need one**, so this is a question for whoever acquires the
+rest of the Bible under §9.1 — not a blocker for anything already ruled on.
 
 **Two specific ingest checks that a generic gate would miss:**
 
