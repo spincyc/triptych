@@ -399,9 +399,17 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
   margin-left: 0.55rem;
   color: var(--portal-accent);
   content: var(--portal-symbol);
-  /* Lowercase Greek sits far below the cap height of the other marks, so a
-     row may scale its own symbol to match them optically. */
+  /* Lowercase Greek sits far below the cap height of the other marks, so a row
+     may scale its own symbol to match them optically. The line box is fixed in
+     absolute units and the glyph is centred in it, so scaling one mark cannot
+     make its row taller than the others. */
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
   font-size: var(--portal-symbol-scale, 1em);
+  line-height: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   opacity: 0.8;
@@ -409,7 +417,7 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
 .page-home table:first-of-type tbody tr:nth-child(1),
 .page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #9c8f78; --portal-pale: #e1ddd6; --portal-symbol: "☧"; }
 .page-home table:first-of-type tbody tr:nth-child(2),
-.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #b07c07; --portal-pale: #e1cda1; --portal-symbol: "α"; --portal-symbol-scale: 1.42em; }
+.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #b07c07; --portal-pale: #e1cda1; --portal-symbol: "α"; --portal-symbol-scale: 1.3em; }
 .page-home table:first-of-type tbody tr:nth-child(3),
 .page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #b33a26; --portal-pale: #e2b4ad; --portal-symbol: "℣"; }
 .page-home table:first-of-type tbody tr:nth-child(4),
