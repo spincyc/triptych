@@ -441,3 +441,28 @@ rather than writing something that might not be the translator's words.
 like".** It looks like a byte-level fetch-and-hash tool, followed by
 transcription work bounded by collation effort rather than by bandwidth. It
 does not look like scraping.
+
+### Ready-to-run acquisition routes
+
+What a `harvest` verb should be pointed at, with the state of each route as this
+lane left it. "Pinned" means the exact item identifier or page URL was fetched
+and confirmed; "unpinned" means the volume is known but the identifier was not
+resolved, and resolving it is one catalogue lookup each.
+
+| # | Work | Route | Identifier or URL | State |
+| --- | --- | --- | --- | --- |
+| 1 | Origen, *Hom. in Gen.* | PG 12 via Internet Archive | — | unpinned |
+| 2 | Basil, *Hexaemeron* (English) | Wikisource NPNF 2-8, one page per homily | `…/Volume_VIII/The_Hexaemeron/Homily_1` … `Homily_9` | **Homily 1 acquired**; 2–9 pinned and outstanding |
+| 3 | Gregory of Nyssa, *De hominis opificio* (English) | Wikisource NPNF 2-5, **one page for all 30 chapters** | `…/Volume_V/Philosophical_Works/The_Making_of_Man` | pinned, not pulled |
+| 4 | Ambrose, *Hexameron* | PL 14 via Internet Archive | — | unpinned |
+| 5 | Chrysostom, *Hom. in Gen.* | PG 53–54 via Internet Archive | — | unpinned |
+| 6 | Jerome, *Quaest. hebr. in Gen.* | PL 23 via Internet Archive | — | unpinned |
+| 7 | Augustine, *De Genesi ad litteram* | PL 34 via Internet Archive | `patrologiae_cursus_completus_lat_vol_034` | **pinned**, Public Domain Mark 1.0, `_djvu.txt` 4.4 MB |
+| 8 | Bede, *In principium Genesis* | PL 91 via Internet Archive | — | unpinned |
+| 9 | Rupert of Deutz, *De sancta Trinitate* I–IX | PL 167 via Internet Archive | — | unpinned |
+| 10 | Cornelius a Lapide, *in Genesim* | already in the repository | `bub_gb_DEzDctVJ9HgC`, OCR hashed `d1f91f40` | **Genesis 15 acquired**; Genesis 1–3 outstanding in the same hashed file |
+
+Routes 1 and 4 to 9 all terminate in Migne OCR and therefore inherit the
+section 6 verdict: the download is the cheap part and the transcription is the
+whole cost. Routes 2, 3 and 10 are the ones that yield readable text for a
+bounded effort, and two of the three are already partly done.
