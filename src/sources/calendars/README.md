@@ -223,7 +223,7 @@ before trusting the table.
 
 | Index | Masses | Propers | Encoded passages | Placeholder-only masses |
 | --- | --- | --- | --- | --- |
-| `roman-1962/propers.yaml` | 397 | 1401 | 1108 | 275 |
+| `roman-1962/propers.yaml` | 457 | 1461 | 1108 | 335 |
 | `postconciliar/propers.yaml` | 265 | 1023 | 1082 | 202 |
 
 The proper counts include those nested inside `forms`: 94 of the 1962's and 108

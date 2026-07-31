@@ -112,7 +112,7 @@ Assume more of the same kind exist.
 | A psalm verse **beyond the end of its psalm** under the file's declared numbering | The bounds check once held ceilings for six psalms only, so `Psalm 118:137` passed although Hebrew 118 ends at 29. | Now caught: every psalm is bounded from the tracked verse-level concordance. Eleven loci remain, ledgered. |
 | A celebration in the **spine and in no section** | The two artifacts had different histories and nothing compared them. Three Christmas octave days sat in the gap. | Now caught: `spine_problems` in `check-calendar-masses`. |
 | A verse **past the end of a chapter** | `index-bible` derives a chapter's bounds from the verses the edition prints, so it clamps rather than reports. `Mark 4:41`, `1 Thessalonians 4:18`, `Acts 7:60` are each dropped this way. | Open. The remedy is a `merged-verse` row in the edition's verse-aliases artifact, because the Douay and Clementine disagree here. |
-| **1962 commemorations** | They exist only as prose inside a `name` string; a commemoration's own three orations have nowhere to live. 44 masses carry rank `Comm.` | Open. Needs a schema. |
+| **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their orations are still placeholders. |
 | Any **stale count table** | Nothing regenerates the tables in `src/sources/calendars/README.md` or `guidance/liturgy/propers-completion-todo.md`. Both currently understate the 1962 seasonal section. | Count it yourself. See below. |
 
 ## Tool ownership
@@ -188,14 +188,14 @@ them; other agents are actively expanding these files.
 | roman-1962 | seasonal | 125 | 1129 | 3 |
 | roman-1962 | christological | 8 | 8 | 8 |
 | roman-1962 | marian | 17 | 17 | 17 |
-| roman-1962 | sanctoral | 247 | 247 | 247 |
+| roman-1962 | sanctoral | 307 | 307 | 307 |
 | postconciliar | seasonal | 63 | 821 | 0 |
 | postconciliar | christological | 7 | 7 | 7 |
 | postconciliar | marian | 14 | 14 | 14 |
 | postconciliar | sanctoral | 181 | 181 | 181 |
 
-- Totals: 1962 397 masses / 1401 propers; postconciliar 265 / 1023.
-- 477 of 662 masses hold nothing but a placeholder (275 + 202).
+- Totals: 1962 457 masses / 1461 propers; postconciliar 265 / 1023.
+- 537 of 722 masses hold nothing but a placeholder (335 + 202).
 - Passages: 1108 in 47 books (1962); 1082 in 61 books (postconciliar).
   Counted with `tools/tpt citations check`.
 - 252 postconciliar propers carry `cycles`; zero 1962 propers do.
