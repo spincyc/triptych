@@ -77,6 +77,29 @@ The Rogation days carry a discretion that is not computable and must never be in
 
 The Sacred Heart offset is attested twice and the two agree: `40-temporale.tex` line 42 gives Easter +68 with the gloss "Friday after the second Sunday after Pentecost", and `calendar-inventory.md` line 167 gives +68 as a first-class feast. The gloss and the offset are the same day in every year of the span, Pentecost being Easter +49 and the second Sunday after it Easter +63.
 
+### Two 1962 feasts assigned to a Sunday
+
+General rubric 17 assigns four celebrations to a Sunday outright, and two of them have no ordinal position in the temporal cycle to be reached by, so they need a rule here of their own. Both are quoted from the Missal's own front matter at `src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/10-the-day.tex` lines 65–80, and named in the calendar reference at `src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/60-sanctoral.tex` lines 17 and 20.
+
+| Celebration | Rule | Locus | Window, 2020–2120 |
+| --- | --- | --- | --- |
+| D. N. Iesu Christi Regis | The last Sunday of October | general rubric 17 d | October 25–31, always a Sunday |
+| Sanctissimi Nominis Iesu | The Sunday falling January 2–5; where no Sunday falls in that span, January 2 | general rubric 17 a | January 2–5 |
+
+The Holy Name is the only rule in this file whose result is not always the same weekday, and that is the rule and not a defect: in 43 of the 101 years from 2020 to 2120 no Sunday falls between January 2 and January 5, and in those years the feast is kept on January 2 whatever day that is. A rule stated as "the Sunday after the Circumcision" would be wrong in exactly those 43 years.
+
+### The three postconciliar movables
+
+The Universal Norms fix no dates; these three are assigned in the Missal's own temporal cycle, and the repository's tracked postconciliar calendar reference carries all three at `src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/50-movable.tex` lines 56, 63 and 65, corroborated at that publication's `research/calendar-inventory.md` lines 66, 70 and 71.
+
+| Celebration | Rule | Latin | Window, 2020–2120 |
+| --- | --- | --- | --- |
+| Most Sacred Heart of Jesus | Easter +68 | *Feria VI post dominicam secundam post Pentecosten* | June 1 – July 2, always a Friday |
+| Immaculate Heart of the Blessed Virgin Mary | Easter +69 | *Sabbato post dominicam secundam post Pentecosten* | June 2 – July 3, always a Saturday |
+| Blessed Virgin Mary, Mother of the Church | Easter +50 | The Monday after Pentecost | May 14 – June 14, always a Monday |
+
+The Sacred Heart carries the same Easter +68 in both calendars, and the two rows are stated separately rather than shared. They are different books assigning the same day, and a single row would make one calendar's rule depend on the other's, so that correcting either would silently move both.
+
 ## Sunday Lectionary cycle A, B, C
 
 The three-year cycle and its determination are fixed by the General Introduction to the Lectionary at no. 66.2 and its note: "The letter C designates a year whose number is divisible into three equal parts… Obviously each cycle runs in accord with the plan of the liturgical year, that is, it begins with the First Week of Advent, which falls in the preceding year of the civil calendar."

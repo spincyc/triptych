@@ -39,6 +39,7 @@ anchors and their loci.
 from __future__ import annotations
 
 import argparse
+import calendar
 import json
 import sys
 from datetime import date, timedelta
@@ -49,7 +50,75 @@ ROOT = Path(__file__).resolve().parents[1]
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _tooling import print_json, run_verb_cli  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "day": (
+        Example(
+            "tools/tpt calendar-days day --date 2026-12-25",
+            (
+                "calendar-days: name 'calendar' is not defined",
+            ),
+        ),
+        Example(
+            "tools/tpt calendar-days day --date 2026-04-05 --calendar roman-1962",
+            (
+                "calendar-days: name 'calendar' is not defined",
+            ),
+        ),
+    ),
+    "check": (
+        Example(
+            "tools/tpt calendar-days check",
+            (
+                "calendar-days: name 'calendar' is not defined",
+            ),
+        ),
+        Example(
+            "tools/tpt calendar-days check --json",
+            (
+                "{\"code\":\"internal\",\"error\":\"name 'calendar' is not defined\",\"status\":\"error\",\"v\":1}",
+            ),
+        ),
+    ),
+    "coverage": (
+        Example(
+            "tools/tpt calendar-days coverage --calendar roman-1962 --first 2026 --last 2026",
+            (
+                "calendar-days: name 'calendar' is not defined",
+            ),
+        ),
+        Example(
+            "tools/tpt calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json",
+            (
+                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_resolved\":228,\"dates_unresolved\":137... [+1352 chars]",
+            ),
+        ),
+    ),
+    "structure": (
+        Example(
+            "tools/tpt calendar-days check",
+            (
+                "calendar-days: name 'calendar' is not defined",
+            ),
+            "read-only first: `check` verifies the same computation `structure` writes out",
+        ),
+        Example(
+            "tools/tpt calendar-days structure --out build/example-days --first 2026 --last 2026",
+            (
+                "calendar-days: name 'calendar' is not defined",
+            ),
+            "WRITES one file per date. --out here is untracked; the default writes tracked src/web/data",
+        ),
+    ),
+}
 
 DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
 SCHEMA = "triptych-calendar-days/v1"
@@ -166,6 +235,12 @@ def nth_sunday_of_month(civil_year: int, month: int, nth: int) -> date:
     seventh day, and the rest are counted from there."""
     first = date(civil_year, month, 1)
     return first + timedelta(days=(6 - first.weekday()) % 7 + 7 * (nth - 1))
+
+
+def last_sunday_of_month(civil_year: int, month: int) -> date:
+    """The last Sunday falling inside the month, counted back from its end."""
+    last = date(civil_year, month, calendar.monthrange(civil_year, month)[1])
+    return last - timedelta(days=(last.weekday() + 1) % 7)
 
 
 def first_sunday_of_advent(civil_year: int) -> date:
@@ -448,6 +523,28 @@ def build_1962(ending: int, known: set[str]) -> Year:
         "Easter +68, the Friday after the second Sunday after Pentecost",
     )
 
+    # General rubric 17 assigns these two to a Sunday outright, and neither has
+    # an ordinal position in the temporal cycle to be reached by. The Holy Name
+    # is the one rule here whose result is not always a Sunday: where no Sunday
+    # falls between 2 and 5 January the feast keeps 2 January, whatever day that
+    # is, in 43 of the 101 years this browser serves.
+    year.put(
+        last_sunday_of_month(ending, 10),
+        "christ-the-king",
+        "general rubric 17 d: the last Sunday of October",
+    )
+    holy_name = next(
+        (day for day in (date(ending, 1, n) for n in range(2, 6)) if day.weekday() == 6),
+        date(ending, 1, 2),
+    )
+    year.put(
+        holy_name,
+        "most-holy-name-of-jesus",
+        "general rubric 17 a: the Sunday falling 2-5 January, else 2 January"
+        if holy_name.weekday() == 6
+        else "general rubric 17 a: no Sunday falls 2-5 January this year, so 2 January",
+    )
+
     # The Ember Days of September follow the third Sunday of September, reckoned
     # by general rubric 19. This is a Sunday of the civil month, not an offset
     # from Easter, so it is computed on its own anchor.
@@ -621,6 +718,27 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
         a.sunday_before_advent,
         "christ-the-king",
         "Universal Norms 6: the last Sunday in Ordinary Time, which is week 34",
+    )
+
+    # Three movables the Universal Norms do not date; the Missal's own temporal
+    # cycle assigns them. The Sacred Heart falls at the same Easter offset in
+    # both calendars, and the two placements are written separately on purpose:
+    # they are different books assigning the same day, and one shared line would
+    # make correcting either silently move both.
+    year.put(
+        a.easter + timedelta(days=50),
+        "blessed-virgin-mary-mother-church",
+        "the Monday after Pentecost, Easter +50",
+    )
+    year.put(
+        a.easter + timedelta(days=68),
+        "most-sacred-heart-jesus",
+        "Easter +68, feria VI post dominicam secundam post Pentecosten",
+    )
+    year.put(
+        a.easter + timedelta(days=69),
+        "immaculate-heart-blessed-virgin-mary",
+        "Easter +69, sabbato post dominicam secundam post Pentecosten",
     )
 
     weeks = 34 if resumed == last_before_lent + 1 else 33
@@ -1434,11 +1552,24 @@ def main(argv: list[str] | None = None) -> int:
         description="Resolve civil dates to each calendar's masses as a computed finding aid.",
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "calendar-days")
     sub = parser.add_subparsers(dest="command")
-    sub.add_parser("check", help="verify the computation against the guidance", parents=[shared])
-    sub.add_parser("structure", help="write the browser's date-to-mass files", parents=[shared])
-    sub.add_parser("coverage", help="report what each calendar can reach", parents=[shared])
-    sub.add_parser("day", help="resolve one civil date", parents=[shared])
+    with_examples(
+        sub.add_parser("check", help="verify the computation against the guidance", parents=[shared]),
+        EXAMPLES["check"],
+    )
+    with_examples(
+        sub.add_parser("structure", help="write the browser's date-to-mass files", parents=[shared]),
+        EXAMPLES["structure"],
+    )
+    with_examples(
+        sub.add_parser("coverage", help="report what each calendar can reach", parents=[shared]),
+        EXAMPLES["coverage"],
+    )
+    with_examples(
+        sub.add_parser("day", help="resolve one civil date", parents=[shared]),
+        EXAMPLES["day"],
+    )
 
     return run_verb_cli(
         parser=parser,
