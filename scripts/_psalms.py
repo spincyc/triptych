@@ -102,6 +102,21 @@ def _concordance() -> dict[str, dict[int, tuple[Segment, ...]]]:
     row must run the same length, and each system must cover all 150 psalms
     without a gap or an overlap. A concordance that failed those tests could
     convert a reference into a plausible wrong verse silently.
+
+    The equal-length rule is also a limit on what the table can say, and it is
+    worth stating because it is invisible from the file. A row is a
+    correspondence between two runs of verses, so one verse of one system
+    answering to two of the other has no representation here at all: there is no
+    row shape that holds it, and the check below refuses any attempt to write
+    one. That is a property of the format rather than an oversight, but it means
+    the concordance cannot record a division inside a psalm — only that there is
+    one. Where such a division exists the psalm carries
+    `english_offset_uniform: no` and `english_verse` refuses it, rather than
+    applying an offset that holds only at the head of the psalm. A psalm so
+    flagged is therefore saying two things at once: the body divides
+    differently, and this table cannot say how. Anything that needs to know how
+    must read the two editions' printed verses, which is what the Hebrew 13
+    correction of 2026-07-30 did.
     """
     found = sorted(CONCORDANCE_ROOT.glob(CONCORDANCE_GLOB))
     if len(found) != 1:

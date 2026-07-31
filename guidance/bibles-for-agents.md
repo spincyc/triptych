@@ -41,6 +41,13 @@ apparatus exists to catch, and no resolution count will show it to you.
 - **Do not restate a numbering correspondence in code or prose.** Read it from
   the tracked concordance. Restated copies have already disagreed here; the
   reason is recorded in `scripts/_psalms.py`'s docstring.
+- **Do not expect the concordance to tell you how a psalm divides.** A row is a
+  correspondence between two runs of verses and both runs must be the same
+  length, so one verse answering to two has no representation in the table at
+  all, and `_concordance` refuses any row that tries. The concordance can say
+  *that* a psalm's body divides differently — that is what
+  `english_offset_uniform: no` means — and never *how*. To learn how, read the
+  two editions' printed verses; nothing else will tell you.
 - **Do not treat a resolution rate as a correctness rate.** The Douay-Rheims
   reported 99.9% on both calendars through the whole period in which two dozen
   postconciliar citations were returning the wrong verses. The rate did not move
