@@ -1,23 +1,32 @@
 /* ===========================================================================
- * The reading-plan page — the scripture section's colour
+ * The reading plan — the scripture section's colour, and a course's furniture
  * ===========================================================================
  *
- * The site gives every section a liturgical colour, and this page is entered
- * from the scripture section, which is GOLD. The light values below are the
- * live ones from the site's own stylesheet (.section-gold), copied rather than
- * imported: these pages are standalone and make no external request of any
- * kind, not even to the site's CSS.
+ * Two pages load this file: index.html, the plan's front door, and track.html,
+ * one track read as a course. They are one section of the site and therefore
+ * one colour, so the palette is declared once here rather than twice.
+ *
+ * The site gives every section a liturgical colour, and scripture is GOLD. The
+ * light values below are the live ones from the site's own stylesheet
+ * (.section-gold), copied rather than imported: these pages are standalone and
+ * make no external request of any kind, not even to the site's CSS.
  *
  * The propers page declares its own block of the same six variables in its own
- * file. They are deliberately not shared: one variable serving both pages would
- * have to change meaning to change either.
+ * file. They are deliberately not shared: one variable serving both would have
+ * to change meaning to change either.
  *
- * The gold accent is the one colour in the site's set that is too light to
- * carry small text on white, which is why the shared stylesheet sets text in
- * --section-ink and keeps --section-accent for rules, borders and markers.
- * Dark mode lifts both rather than dropping the colour, since a section that
- * loses its colour after dark has lost the only thing that says which section
- * it is.
+ * THE GOLD ACCENT IS NOT A TEXT COLOUR. #b07c07 on white is 3.7:1 — under the
+ * 4.5:1 that body text needs. Everything set in the section colour is set in
+ * --section-ink (#7e5802, 7.2:1); --section-accent is for rules, borders,
+ * markers and fills, where contrast is a matter of visibility rather than
+ * legibility. Dark mode lifts both rather than dropping the colour, since a
+ * section that loses its colour after dark has lost the only thing that says
+ * which section it is.
+ *
+ * LEGIBILITY GOVERNS. The scripture is the point and the apparatus is not:
+ * every measure is capped at --measure, the passage keeps the shared file's
+ * generous leading, and nothing in the apparatus is set larger or darker than
+ * the verse it sits beside.
  * ======================================================================== */
 
 :root {
@@ -42,53 +51,679 @@
   }
 }
 
-/* ---- What only this page renders ---- */
+/* ---- Links ---- */
 
-.period-summary {
-  margin: 0 0 1.25rem;
-  padding: 0 0 0 0.9rem;
-  border-left: 2px solid var(--section-pale);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
+a {
+  color: var(--section-ink);
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: from-font;
 }
 
-.reading-note {
-  margin: 0 0 1.75rem;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid var(--section-pale);
-  border-radius: 4px;
-  background: var(--section-row);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
+a:hover { text-decoration-thickness: 2px; }
+
+/* ---- Header ---- */
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
-.reading-note-label {
-  display: block;
+.eyebrow a { color: var(--ink-faint); }
+
+.eyebrow a:hover { color: var(--section-ink); }
+
+/* ===========================================================================
+ * The period rail — where you are in the story, always on screen
+ *
+ * The twelve periods are the spine of the plan, so the map does not disappear
+ * when the reader walks into one of its regions. The current period is marked
+ * with the accent; the periods before it are marked more faintly, which states
+ * position in the sequence and claims nothing about what has been read.
+ * ======================================================================== */
+
+.rail {
+  margin: 0 0 2rem;
+  padding: 0.85rem 1rem 1rem;
+  border: 1px solid var(--section-line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.rail[hidden] { display: none; }
+
+.rail-heading {
+  margin: 0 0 0.6rem;
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--section-ink);
 }
 
-/* An abridgement that hides what it drops is the thing this plan refuses to
-   be, so its account of its omissions is collapsed but never absent. */
-.omissions {
-  margin: 2rem 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid var(--section-line);
-  color: var(--ink-soft);
-  font-size: 0.88rem;
+.rail-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.omissions summary {
-  cursor: pointer;
+.rail-item { flex: 1 1 5.2rem; min-width: 0; }
+
+.rail-link {
+  display: block;
+  height: 100%;
+  padding: 0.4rem 0.45rem 0.5rem;
+  border-top: 3px solid var(--section-line);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.rail-link:hover {
+  background: var(--section-row);
   color: var(--section-ink);
+}
+
+.rail-num {
+  display: block;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+}
+
+.rail-label { display: block; }
+
+.is-earlier > .rail-link { border-top-color: var(--section-pale); }
+
+.is-here > .rail-link {
+  border-top-color: var(--section-accent);
+  border-top-width: 3px;
+  background: var(--section-row);
+  color: var(--section-ink);
+  font-weight: 600;
+}
+
+.is-here .rail-num { color: var(--section-ink); }
+
+/* Under about 30rem the twelve labels cost more room than they earn. The text
+   stays in the accessible name; only its rendering goes. */
+@media (max-width: 30rem) {
+  .rail-item { flex: 0 0 auto; }
+  .rail-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .rail-link { padding: 0.35rem 0.6rem; text-align: center; }
+}
+
+/* ---- Breadcrumbs ---- */
+
+.crumbs {
+  margin: 0 0 0.9rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
+}
+
+.crumb-sep {
+  margin: 0 0.4rem;
+  color: var(--section-accent);
+}
+
+/* ===========================================================================
+ * The plan's own prose
+ *
+ * `omissions`, the tier descriptions and the period summaries are the plan
+ * talking about itself, and they are the teaching material of these pages. They
+ * are set at the reading measure, not squeezed into a caption.
+ * ======================================================================== */
+
+.prose-line {
+  margin: 0 0 0.9rem;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+/* The three classes of book the plan drops entire arrive indented in the
+   source, and the indent is the author's own emphasis. It is kept. */
+.prose-aside {
+  margin: 0 0 0.9rem;
+  padding: 0.15rem 0 0.15rem 1rem;
+  max-width: var(--measure);
+  border-left: 3px solid var(--section-pale);
+  color: var(--ink-soft);
+}
+
+.period-summary.prose-line,
+.period-summary.prose-aside {
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+
+/* ---- Orientation ---- */
+
+.view-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--section-ink);
+}
+
+.orient-block {
+  margin: 0 0 2.5rem;
+  max-width: var(--measure);
+}
+
+.orient-title {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--section-line);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.orient-lead {
+  margin: 0 0 0.9rem;
+  color: var(--ink-soft);
+}
+
+.figures {
+  margin: 0 0 0.8rem;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--section-ink);
+}
+
+.begin { margin: 0 0 2.5rem; }
+
+.begin-link {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--section-accent);
+  border-radius: 5px;
+  background: var(--section-row);
+  color: var(--section-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.begin-link:hover {
+  background: var(--section-pale);
+  text-decoration: underline;
+}
+
+.begin-again {
+  margin: 0.7rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---- Tables: pacing, nesting, per-period counts ---- */
+
+.pacing,
+.nesting {
+  width: 100%;
+  margin: 0 0 1rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.pacing caption,
+.nesting-caption {
+  margin-bottom: 0.6rem;
+  text-align: left;
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
+
+.pacing th,
+.pacing td,
+.nesting th,
+.nesting td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--section-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.pacing thead th,
+.nesting thead th {
+  border-bottom-width: 2px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.pacing tbody th,
+.nesting tbody th {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.nesting td {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.nesting thead th + th { text-align: right; }
+
+.nesting-total th,
+.nesting-total td {
+  border-top: 2px solid var(--section-line);
+  border-bottom: 0;
+  font-weight: 700;
+}
+
+/* ---- The contents of a track ---- */
+
+.contents {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.contents-item { margin: 0 0 1.35rem; }
+
+.contents-item::marker {
+  color: var(--section-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.contents-head {
+  margin: 0 0 0.15rem;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+
+.contents-link { text-decoration: none; }
+
+.contents-link:hover { text-decoration: underline; }
+
+.contents-meta {
+  margin: 0 0 0.3rem;
+  color: var(--ink-faint);
+  font-size: 0.82rem;
   letter-spacing: 0.02em;
 }
 
-.omissions-body {
-  margin: 0.75rem 0 0;
-  white-space: pre-wrap;
+.contents-line {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ===========================================================================
+ * A period: its readings in sequence
+ * ======================================================================== */
+
+.legend {
+  margin: 0 0 1.25rem;
+  max-width: var(--measure);
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
+
+.entry-list {
+  margin: 0 0 2.5rem;
+  padding-left: 1.6rem;
+  max-width: var(--measure);
+}
+
+.entry-item {
+  margin: 0 0 1.5rem;
+  padding-left: 0.2rem;
+}
+
+.entry-item::marker {
+  color: var(--section-accent);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85em;
+}
+
+.entry-item-head {
+  margin: 0 0 0.1rem;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+}
+
+.entry-item-link { text-decoration: none; }
+
+.entry-item-link:hover { text-decoration: underline; }
+
+.entry-item-ref {
+  margin: 0 0 0.3rem;
+  color: var(--ink-faint);
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+}
+
+.entry-item-note {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* A reading that also belongs to a smaller track: the hinge the shorter
+   readings of the plan are built from. */
+.tier-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--section-line);
+  border-radius: 3px;
+  background: var(--section-row);
+  color: var(--section-ink);
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: 0.15em;
+}
+
+.period-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin: 2rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--section-line);
+  max-width: var(--measure);
+}
+
+.period-step { margin: 0; flex: 1 1 12rem; }
+
+.period-step-on { text-align: right; }
+
+.period-step-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.period-step-none { color: var(--ink-faint); font-style: italic; }
+
+/* ===========================================================================
+ * A reading
+ * ======================================================================== */
+
+.entry-ref {
+  margin: 0 0 0.4rem;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.diverted {
+  margin: 0 0 1rem;
+  padding: 0.55rem 0.75rem;
+  border-left: 3px solid var(--section-accent);
+  border-radius: 0 4px 4px 0;
+  background: var(--section-row);
+  color: var(--section-ink);
+  font-size: 0.88rem;
+  max-width: var(--measure);
+}
+
+/* Position within the track, said twice: in words on the meta line, and here
+   as a shape, because 47 of 111 is easier to feel than to read. */
+.progress {
+  height: 4px;
+  margin: 0 0 1.75rem;
+  max-width: var(--measure);
+  border-radius: 2px;
+  background: var(--section-row);
+  overflow: hidden;
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  background: var(--section-accent);
+}
+
+/* The note is teaching material. 106 of the plan's readings carry one, and it
+   is the only place the plan says why a passage is here. It is given the width
+   of the reading and a colour of its own, and it is never collapsed. */
+.reading-note {
+  margin: 0 0 2rem;
+  padding: 0.85rem 1rem;
+  max-width: var(--measure);
+  border: 1px solid var(--section-pale);
+  border-left: 4px solid var(--section-accent);
+  border-radius: 4px;
+  background: var(--section-row);
+}
+
+.reading-note-label {
+  margin: 0 0 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.reading-note-body {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* The recast reference, where the structure's numbering is not the edition's
+   and the reference has already been given above the text. */
+.citation-ref-recast-only {
+  margin: 0 0 0.5rem;
+  font-style: italic;
+}
+
+/* ---- Continuity: the thread, made visible rather than implied ---- */
+
+.continuity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin: 2.5rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--section-line);
+  max-width: var(--measure);
+}
+
+.continuity-side { flex: 1 1 13rem; min-width: 0; }
+
+.continuity-side:last-child { text-align: right; }
+
+.continuity-label {
+  margin: 0 0 0.2rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.continuity-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+
+.continuity-ref,
+.continuity-cross {
+  margin: 0.1rem 0 0;
+  color: var(--ink-faint);
+  font-size: 0.82rem;
+}
+
+.continuity-cross {
+  font-style: italic;
+  color: var(--section-ink);
+}
+
+.continuity-none {
+  margin: 0;
+  color: var(--ink-faint);
+  font-style: italic;
+  font-size: 0.92rem;
+}
+
+.reading-foot {
+  margin: 1.5rem 0 0;
+  max-width: var(--measure);
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
+
+/* ===========================================================================
+ * The front door
+ * ======================================================================== */
+
+.plan-page .reading { max-width: none; }
+
+.plan-block {
+  margin: 0 0 3rem;
+  max-width: 46rem;
+}
+
+.plan-title {
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--section-accent);
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--section-ink);
+}
+
+.plan-lead {
+  margin: 0 0 1.25rem;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+.track-deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
+.track-card {
+  flex: 1 1 15rem;
+  min-width: 0;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid var(--section-line);
+  border-top: 4px solid var(--section-accent);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.track-card-title {
+  margin: 0 0 0.1rem;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.track-card-link { text-decoration: none; }
+
+.track-card-link:hover { text-decoration: underline; }
+
+.track-card-rank {
+  margin: 0 0 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.track-card .figures { font-size: 1rem; }
+
+.track-card-pace {
+  margin: 0 0 0.8rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.track-card .prose-line { font-size: 0.92rem; }
+
+.track-card-go { margin: 1rem 0 0; }
+
+.track-card-begin {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1.25rem;
+  max-width: var(--measure);
+  font-size: 0.92rem;
+}
+
+.facts dt {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+  padding-top: 0.15rem;
+}
+
+.facts dd { margin: 0; color: var(--ink-soft); }
+
+/* ---- Narrow screens ---- */
+
+@media (max-width: 34rem) {
+  .continuity-side:last-child,
+  .period-step-on { text-align: left; }
+
+  .nesting { font-size: 0.82rem; }
+
+  .nesting th,
+  .nesting td { padding: 0.35rem 0.35rem; }
+}
+
+/* A table that will not fit scrolls in its own box; the page itself never
+   scrolls sideways. */
+@media (max-width: 30rem) {
+  .plan-block .nesting {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }

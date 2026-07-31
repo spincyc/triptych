@@ -444,16 +444,103 @@ window.Triptych = (function () {
     };
   }
 
-  /** "Ps 24:1-3, Ps 24:4" — used where the structure names no reference. */
-  function formatLoci(loci) {
-    return loci
-      .map((locus) => {
-        const range = Number(locus.first) === Number(locus.last)
-          ? String(locus.first)
-          : locus.first + '-' + locus.last;
-        return locus.book + ' ' + locus.chapter + ':' + range;
-      })
-      .join(', ');
+  /**
+   * OPEN BOUNDS — `first` or `last` may be null, and null is not zero.
+   *
+   * A structure file spells "from the start of the chapter" as a null `first`
+   * and "to the end of it" as a null `last`, because neither page may be made
+   * to know how many verses a chapter has in an edition it has not fetched. So
+   * a reading of Genesis 1:1-2:2 is stored as two loci — {1, 1, null} and
+   * {2, null, 2} — and a whole chapter as {7, null, null}.
+   *
+   * `Number(null)` is 0, which is finite, so any arithmetic that forgets this
+   * silently turns "to the end of the chapter" into "up to verse 0" and shows
+   * an empty passage with a confident reason attached. Every bound therefore
+   * goes through here, and an absent bound becomes an infinity rather than a
+   * number.
+   */
+  function bound(value, whenAbsent) {
+    if (value === null || value === undefined || value === '') return whenAbsent;
+    const number = Number(value);
+    return Number.isFinite(number) ? number : whenAbsent;
+  }
+
+  function openStart(locus) {
+    return bound(locus.first, null) === null;
+  }
+
+  function openEnd(locus) {
+    return bound(locus.last, null) === null;
+  }
+
+  /**
+   * Loci that continue one another are one span, not two.
+   *
+   * A citation running from one chapter into the next arrives as a locus with
+   * an open end followed by a locus with an open start, and printing them
+   * separately ("Gen 1:1-, Gen 2:-2") describes a reading nobody asked for.
+   * A run is joined when the previous locus runs to the end of its chapter,
+   * the next begins at the start of the chapter after it, and both name the
+   * same book.
+   */
+  function lociRuns(loci) {
+    const runs = [];
+    for (const locus of loci) {
+      const held = runs.length ? runs[runs.length - 1] : null;
+      const tail = held ? held[held.length - 1] : null;
+      const continues = tail &&
+        tail.book === locus.book &&
+        openEnd(tail) && openStart(locus) &&
+        Number(locus.chapter) === Number(tail.chapter) + 1;
+      if (continues) held.push(locus);
+      else runs.push([locus]);
+    }
+    return runs;
+  }
+
+  /**
+   * One run, in the notation the plan's own prose uses: "Genesis 1:1-2:2",
+   * "Genesis 3:1-24", "Psalm 46", "Daniel 1-6".
+   *
+   * A run left open at one end only — which this corpus does not produce, but
+   * a hand-written structure file could — is printed with "ff." rather than
+   * with a verse number nobody computed.
+   */
+  function formatRun(run, bookLabel) {
+    const head = run[0];
+    const tail = run[run.length - 1];
+    const book = bookLabel || head.book;
+    const from = Number(head.chapter);
+    const to = Number(tail.chapter);
+
+    if (openStart(head) && openEnd(tail)) {
+      return book + ' ' + (from === to ? from : from + '-' + to);
+    }
+
+    if (from === to) {
+      const lo = openStart(head) ? 1 : bound(head.first, 1);
+      if (openEnd(tail)) return book + ' ' + from + ':' + lo + 'ff.';
+      const hi = bound(tail.last, lo);
+      return book + ' ' + from + ':' + (lo === hi ? String(lo) : lo + '-' + hi);
+    }
+
+    const opening = openStart(head) ? String(from) : from + ':' + bound(head.first, 1);
+    const closing = openEnd(tail) ? to + 'ff.' : to + ':' + bound(tail.last, 1);
+    return book + ' ' + opening + '-' + closing;
+  }
+
+  /**
+   * "Ps 24:1-3, Ps 24:4" — used where the structure names no reference.
+   *
+   * `options.book` substitutes a display name for the fragment token, so a
+   * page that knows the citation names one book can print "Genesis 1:1-2:2"
+   * where the path needs "Gen". Pass it or omit it consistently: `recastLoci`
+   * compares two formattings of the same citation, and comparing a formatting
+   * that names the book differently would report a difference that is not one.
+   */
+  function formatLoci(loci, options) {
+    const book = (options && options.book) || null;
+    return lociRuns(loci).map((run) => formatRun(run, book)).join(', ');
   }
 
   /** Every distinct chapter a list of citations needs, in this numbering. */
@@ -493,6 +580,22 @@ window.Triptych = (function () {
    * Rendering
    * --------------------------------------------------------------------- */
 
+  /** The range a locus asks for, said in words, for a failure that must name it. */
+  function locusRange(locus) {
+    const where = locus.book + ' ' + locus.chapter;
+    if (openStart(locus) && openEnd(locus)) return 'no verses at all in ' + where;
+    if (openEnd(locus)) {
+      return 'no verses from ' + bound(locus.first, 1) + ' onward in ' + where;
+    }
+    if (openStart(locus)) {
+      return 'no verses up to ' + bound(locus.last, 1) + ' in ' + where;
+    }
+    const first = bound(locus.first, 1);
+    const last = bound(locus.last, first);
+    return 'no verse' + (first === last ? ' ' : 's ') +
+      (first === last ? String(first) : first + '-' + last) + ' in ' + where;
+  }
+
   /**
    * Render one locus out of an already-fetched chapter.
    *
@@ -500,30 +603,52 @@ window.Triptych = (function () {
    * are emitted in the order the citation lists them — a chant citation such as
    * "Psalm 138:18, 5-6" is deliberately out of sequence and must stay that way.
    *
+   * `options.showChapter` prints the chapter before the text. A citation that
+   * stays inside one chapter does not want it; one that runs across three does,
+   * because the verse numbers restart at each boundary and a reader with no
+   * marker cannot tell a new chapter from a repeated verse.
+   *
    * Carries FAILURE 3 (the fragment is not there at all) and FAILURE 4 (the
    * fragment is there and the verses are not).
    */
-  function renderLocus(locus, fragment, language) {
-    if (!fragment.ok) return notice(fragment.problem);
+  function renderLocus(locus, fragment, language, options) {
+    const out = document.createDocumentFragment();
+    out.passage = null;
+    if (!fragment.ok) {
+      out.appendChild(notice(fragment.problem));
+      return out;
+    }
 
-    const first = Number(locus.first);
-    const last = Number(locus.last);
+    // Absent bounds are infinities, never zero: see `bound` above.
+    const first = bound(locus.first, -Infinity);
+    const last = bound(locus.last, Infinity);
     const numbers = Object.keys(fragment.verses)
       .map(Number)
       .filter((n) => Number.isFinite(n) && n >= first && n <= last)
       .sort((a, b) => a - b);
 
     if (!numbers.length) {
-      return notice(
-        'this edition\'s ' + locus.book + ' ' + locus.chapter + ' has no verses ' +
-        first + '-' + last + '.'
-      );
+      out.appendChild(notice('this edition has ' + locusRange(locus) + '.'));
+      return out;
     }
 
-    const passage = el('p', 'passage');
+    if (options && options.showChapter) {
+      const mark = el('p', 'chapter-mark');
+      mark.appendChild(el('span', 'chapter-mark-word', 'Chapter '));
+      mark.appendChild(el('span', 'chapter-mark-number', String(locus.chapter)));
+      out.appendChild(mark);
+    }
+
+    // A segment after the first joins the passage already open, so a citation
+    // cited in pieces reads as the one passage it is.
+    const joining = options && options.into;
+    const passage = joining || el('p', 'passage');
     // The edition's own language, so that Latin is spoken and hyphenated as
     // Latin and English as English.
     if (language) passage.lang = language;
+    if (joining && options.elide) {
+      passage.appendChild(el('span', 'elision', ' … '));
+    }
 
     for (const number of numbers) {
       const verse = el('span', 'verse');
@@ -536,25 +661,31 @@ window.Triptych = (function () {
       verse.appendChild(document.createTextNode(fragment.verses[number] + ' '));
       passage.appendChild(verse);
     }
+    if (!joining) out.appendChild(passage);
 
+    out.passage = passage;
+
+    // Gaps are only reported between bounds that were actually asked for. An
+    // open end has no expected last verse, so the scan stops at the last verse
+    // the fragment holds rather than inventing verses that were never claimed;
+    // a bounded locus still reports a missing tail, as it always did.
+    const from = Number.isFinite(first) ? first : numbers[0];
+    const to = Number.isFinite(last) ? last : numbers[numbers.length - 1];
     const gaps = [];
-    for (let n = first; n <= last; n += 1) {
+    for (let n = from; n <= to; n += 1) {
       if (!numbers.includes(n)) gaps.push(n);
     }
-    if (gaps.length && gaps.length < last - first + 1) {
-      const wrapper = document.createDocumentFragment();
-      wrapper.appendChild(passage);
-      wrapper.appendChild(
+    if (gaps.length && gaps.length < to - from + 1) {
+      out.appendChild(
         notice(
           'verse' + (gaps.length > 1 ? 's ' : ' ') + gaps.join(', ') +
           ' of ' + locus.book + ' ' + locus.chapter +
           ' — absent from this edition\'s fragment.'
         )
       );
-      return wrapper;
     }
 
-    return passage;
+    return out;
   }
 
   /**
@@ -566,14 +697,16 @@ window.Triptych = (function () {
    * notices that they disagree is owed the reason rather than left to doubt one
    * of them.
    */
-  function recastLoci(citation, bible, sourceNumbering, picked) {
+  function recastLoci(citation, bible, sourceNumbering, picked, options) {
     if (!sourceNumbering || sourceNumbering === bible.numbering) return null;
     if (!picked.loci) return null;
     const source = lociFor(citation, sourceNumbering);
     if (!source.loci) return null;
-    if (formatLoci(source.loci) === formatLoci(picked.loci)) return null;
-    return formatLoci(picked.loci) + ' in this edition\'s ' + bible.numbering +
-      ' numbering';
+    if (formatLoci(source.loci, options) === formatLoci(picked.loci, options)) {
+      return null;
+    }
+    return formatLoci(picked.loci, options) + ' in this edition\'s ' +
+      bible.numbering + ' numbering';
   }
 
   /**
@@ -582,14 +715,23 @@ window.Triptych = (function () {
    *
    * `sourceNumbering` is the numbering the structure file's own references are
    * written in, where the caller knows it.
+   *
+   * `options.book`    a display name for the book, where the caller knows one
+   *                   that reads better than the fragment token
+   * `options.showRef` false where the caller has already given the reference a
+   *                   better place than a line above the text. The recast note
+   *                   survives either way: a reader who is shown one numbering
+   *                   and given another edition's text is owed the reason.
    */
-  function renderCitation(citation, bible, fragments, sourceNumbering) {
+  function renderCitation(citation, bible, fragments, sourceNumbering, options) {
     const block = el('div', 'citation');
+    const showRef = !(options && options.showRef === false);
 
     if (citation.unresolved) {
       block.appendChild(
         el('p', 'citation-ref',
-          citation.ref || citation.book || citation.token || 'Unlabelled citation')
+          citation.ref || (options && options.book) || citation.book ||
+          citation.token || 'Unlabelled citation')
       );
       block.appendChild(notice(String(citation.unresolved)));
       return block;
@@ -597,22 +739,54 @@ window.Triptych = (function () {
 
     const picked = lociFor(citation, bible.numbering);
     const label = citation.ref ||
-      (picked.loci ? formatLoci(picked.loci) : null) ||
-      citation.book || citation.token || 'Unlabelled citation';
-    const line = el('p', 'citation-ref', label);
-    const recast = recastLoci(citation, bible, sourceNumbering, picked);
-    if (recast) line.appendChild(el('span', 'citation-recast', recast));
-    block.appendChild(line);
+      (picked.loci ? formatLoci(picked.loci, options) : null) ||
+      (options && options.book) || citation.book || citation.token ||
+      'Unlabelled citation';
+    const recast = recastLoci(citation, bible, sourceNumbering, picked, options);
+    if (showRef) {
+      const line = el('p', 'citation-ref', label);
+      if (recast) line.appendChild(el('span', 'citation-recast', recast));
+      block.appendChild(line);
+    } else if (recast) {
+      block.appendChild(el('p', 'citation-ref citation-ref-recast-only', recast));
+    }
 
     if (!picked.loci) {
       block.appendChild(notice(picked.problem));
       return block;
     }
 
+    // Verse numbers restart at a chapter boundary, so a citation that crosses
+    // one must say where the boundary is.
+    const chapters = new Set(picked.loci.map((locus) => String(locus.chapter)));
+    const showChapter = chapters.size > 1;
+
+    // A citation is one passage even when it is cited in segments: the
+    // reference line above already names them ("Psalm 24:16, 18"), so the words
+    // run on as they are sung rather than breaking into a paragraph apiece. A
+    // gap between segments is marked, because the omitted verses are not
+    // silence — they are text the missal chose to pass over.
+    let previous = null;
+    let open = null;
     for (const locus of picked.loci) {
       const fragment = fragments.get(locus.book + '|' + locus.chapter) ||
         { ok: false, problem: locus.book + ' ' + locus.chapter + ' was not loaded.' };
-      block.appendChild(renderLocus(locus, fragment, bible.language));
+      const abuts = previous !== null &&
+        previous.chapter === locus.chapter &&
+        previous.last !== null && previous.last !== undefined &&
+        locus.first === previous.last + 1;
+      // A new chapter opens a new passage, since its verse numbers restart and
+      // the chapter mark has to sit between them; within one chapter the
+      // segments join, with an ellipsis where verses were passed over.
+      const sameChapter = previous !== null && previous.chapter === locus.chapter;
+      const rendered = renderLocus(locus, fragment, bible.language, {
+        showChapter: showChapter && !sameChapter,
+        into: sameChapter ? open : null,
+        elide: sameChapter && !abuts
+      });
+      block.appendChild(rendered);
+      if (rendered.passage) open = rendered.passage;
+      previous = locus;
     }
 
     return block;

@@ -267,8 +267,7 @@
   function fillTypeSelect() {
     T.fillSelect(typeSelect, state.kinds.map((group) => ({
       value: group.kind,
-      label: group.label + ' — ' + group.masses.length +
-        (group.masses.length === 1 ? ' Mass' : ' Masses')
+      label: group.label
     })));
     if (state.kind) typeSelect.value = state.kind;
   }
@@ -347,9 +346,23 @@
     // "Vigil Mass", "Mass at Dawn" — the form this proper belongs to, where a
     // day carries more than one.
     if (proper.form) heading.appendChild(T.el('span', 'proper-form', proper.form));
+
+    // The reference belongs beside the name, not on a line of its own: one
+    // heading says what this proper is and where it comes from. Segments stay
+    // together in that one reference, since they are one passage.
+    const refs = (proper.citations || [])
+      .map((citation) => citation.ref)
+      .filter(Boolean);
+    if (refs.length) {
+      heading.appendChild(T.el('span', 'proper-ref', refs.join('; ')));
+    }
     section.appendChild(heading);
 
-    if (proper.incipit) {
+    // The incipit is the passage's own opening words, so printing it above the
+    // passage says the same thing twice. It earns its place only when the words
+    // themselves are not shown.
+    const showsWords = Boolean(proper.text) || refs.length > 0;
+    if (proper.incipit && !showsWords) {
       section.appendChild(T.el('p', 'proper-incipit', proper.incipit));
     }
 
@@ -377,7 +390,9 @@
     const numbering = (state.structure && state.structure.numbering) || null;
     const citations = proper.citations || [];
     for (const citation of citations) {
-      section.appendChild(T.renderCitation(citation, bible, fragments, numbering));
+      section.appendChild(
+        T.renderCitation(citation, bible, fragments, numbering, { showRef: false })
+      );
     }
 
     // A cycle-varying proper reads differently in each year of the lectionary.

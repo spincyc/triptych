@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A track of the Reading Plan — Triptych</title>
+<!-- The shared machinery first, then this section's colour. Both are local;
+     the page makes no external request of any kind. -->
+<link rel="stylesheet" href="../shared/browser-core.css">
+<link rel="stylesheet" href="scripture.css">
+</head>
+<body class="track-page">
+<a class="skip-link" href="#reading">Skip to the content</a>
+
+<header class="page-header">
+  <p class="eyebrow"><a href="./" id="plan-link">The Reading Plan</a></p>
+  <h1><span class="page-mark" aria-hidden="true">α</span><span id="track-name">Loading…</span></h1>
+  <p class="lede" id="track-lede">
+    A track is one of the plan's three depths, read as a course: an orientation,
+    twelve periods, and the readings in order.
+  </p>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="controls" class="controls" aria-labelledby="controls-heading">
+  <h2 id="controls-heading" class="visually-hidden">Choose a track, a place in it, and a translation</h2>
+
+  <!-- The track comes first: it decides which readings exist at all. -->
+  <div class="field field-narrow">
+    <label for="track-select">Track</label>
+    <select id="track-select" name="tier" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="reading-select">Go to reading</label>
+    <select id="reading-select" name="reading" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="bible-select">Translation</label>
+    <select id="bible-select" name="bible" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-steps">
+    <span class="field-legend" id="step-legend">Step</span>
+    <div class="steps" role="group" aria-labelledby="step-legend">
+      <button type="button" id="prev-button" disabled>
+        <span aria-hidden="true">←</span> Previous
+      </button>
+      <button type="button" id="next-button" disabled>
+        Next <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- The twelve periods are the spine of the story, so they are on screen
+     whatever the reader is looking at: the map does not disappear when you
+     walk into one of its regions. -->
+<nav id="rail" class="rail" aria-labelledby="rail-heading" hidden>
+  <h2 id="rail-heading" class="rail-heading">The periods</h2>
+  <ol id="rail-list" class="rail-list"></ol>
+</nav>
+
+<!-- The content is not itself a live region: replacing it would read a whole
+     passage aloud on every change. The shared script announces a one-line
+     summary through #reading-status instead. -->
+<main id="reading" class="reading" tabindex="-1" aria-busy="false">
+  <p class="placeholder">Loading the track…</p>
+</main>
+
+<footer class="page-footer">
+  <p>
+    <a href="./">The plan and its three tracks</a> ·
+    <a href="../liturgy/">The propers of the Mass</a>
+  </p>
+  <p>
+    Nothing here is pre-rendered. Every reading-and-translation pairing is
+    assembled in the browser out of shared chapter fragments, fetched once each
+    and cached for the rest of the session, so the file count grows with the
+    corpus and not with the number of ways of reading it.
+  </p>
+</footer>
+
+<script src="../shared/browser-core.js"></script>
+<script src="plan-model.js"></script>
+<script src="track.js"></script>
+</body>
+</html>

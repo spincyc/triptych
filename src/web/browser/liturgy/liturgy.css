@@ -17,27 +17,49 @@
  * The dark values are the same hue, lifted until they read against the dark
  * page; the ink stays the text colour and the accent stays the rule colour, so
  * every contrast pairing holds in both schemes.
+ *
+ * These are the liturgy section's colours from release/public-alpha/assets/
+ * site.css. They are copied, not imported, because this page is standalone —
+ * so retuning the section there must be carried here or the page and the
+ * section it is entered from will disagree.
  * ======================================================================== */
 
 :root {
-  --section-accent: #b33a26;
-  --section-ink: #802718;
-  --section-wash: rgba(179, 58, 38, 0.16);
-  --section-pale: #e2b4ad;
-  --section-row: #f0d8d4;
-  --section-line: #d08578;
-  --focus: #802718;
+  --section-accent: #b02419;
+  --section-ink: #78140d;
+  --section-wash: rgba(176, 36, 25, 0.16);
+  --section-pale: #e1aca8;
+  --section-row: #efd3d1;
+  --section-line: #ce7770;
+  --focus: #78140d;
+  /* The shared stylesheet paints its surfaces from these, so a section that
+     set only its accent and ink left the page neutral grey and the colour did
+     not carry. Every surface is now tinted from the section's own hue. */
+  --page: #fbf6f6;
+  --panel: #fefdfd;
+  --ink: #2b1917;
+  --ink-soft: #634745;
+  --ink-faint: #91706e;
+  --notice: #8f2f24;
+  --notice-bg: #f8eae8;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --section-accent: #e08a76;
-    --section-ink: #f2b6a8;
-    --section-wash: rgba(224, 138, 118, 0.12);
-    --section-pale: #7c3b2d;
-    --section-row: #33201a;
-    --section-line: #6d3628;
-    --focus: #e08a76;
+    --section-accent: #db7e76;
+    --section-ink: #e7b3af;
+    --section-wash: rgba(224, 130, 118, 0.12);
+    --section-pale: #733732;
+    --section-row: #321c1a;
+    --section-line: #61332f;
+    --focus: #db7e76;
+    --page: #190e0d;
+    --panel: #251716;
+    --ink: #ebe1e0;
+    --ink-soft: #bfa8a6;
+    --ink-faint: #9b807d;
+    --notice: #f0a9a0;
+    --notice-bg: #2e1a18;
   }
 }
 
@@ -78,5 +100,24 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* The name and its reference share a line: one heading saying what this proper
+   is and where it comes from. The reference is subordinate to the name. */
+.proper-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.6rem;
+}
+.proper-ref {
+  color: var(--ink-soft);
+  font-size: 0.72em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+/* Verses passed over inside a citation are marked, not silently closed up. */
+.elision {
   color: var(--ink-faint);
 }

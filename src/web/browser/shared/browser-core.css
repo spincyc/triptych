@@ -306,6 +306,24 @@ body {
 
 .citation-recast { font-style: italic; }
 
+/* A citation that crosses a chapter boundary says where the boundary is: verse
+   numbers restart there, and without a marker a new chapter is indistinguishable
+   from a repeated verse. Shown only for citations that actually cross one. */
+.chapter-mark {
+  margin: 1.5rem 0 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.citation > .chapter-mark:first-child,
+.chapter-mark:first-child { margin-top: 0; }
+
+.chapter-mark-number { letter-spacing: 0.08em; }
+
 /* Scripture proper: the reason for the generous measure and leading. */
 .passage {
   margin: 0 0 0.75rem;
