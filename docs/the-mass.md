@@ -1,0 +1,590 @@
+# The Mass and its propers
+
+A Mass is built from two kinds of text. Most of it never changes: the same
+Kyrie, the same Creed, the same Canon, every day of every year. That invariant
+part is the **Ordinary**. Woven through it are about ten short texts that change
+with the day — a different opening chant, a different prayer, a different pair
+of readings — and those are the **propers**. Knowing what Mass is being said on
+a given day means knowing which propers are appointed for it.
+
+The Roman rite currently has two books of propers in use. The **1962 Roman
+Missal** is the last edition before the Second Vatican Council; the
+**postconciliar Missal** (here the *editio typica tertia* of 2008) is the one
+that replaced it. They share a rite, a language, and a great many actual texts,
+but they cut the year differently, name the slots differently, and read
+scripture on entirely different schedules. This repository models both, side by
+side, in one schema, and refuses to harmonize them where they genuinely differ.
+
+This document explains what a proper is, how the two missals differ, and how
+this repository stores them. The headings alone give the shape; the prose under
+each gives the detail. Every number in it was counted from the repository's own
+files, and the commands that count them are in
+[`guidance/propers-for-agents.md`](../guidance/propers-for-agents.md).
+
+---
+
+## The concrete case: the First Sunday of Advent
+
+Start with a real Mass. It opens the liturgical year in both books, and both
+books open it with the same chant.
+
+In the 1962 Missal the day is *Dominica Prima Adventus*, and its first proper is
+the **Introit**, the chant sung as the priest approaches the altar. Its incipit
+— the first words, which is how a chant is identified — is **Ad te levavi**, and
+it is built out of Psalm 24, verses 1 to 3, with verse 4 as its psalm verse. In
+the Douay-Rheims that this repository has indexed, those verses read:
+
+> To thee, O Lord, have I lifted up my soul. In thee, O my God, I put my trust;
+> let me not be ashamed. Neither let my enemies laugh at me: for none of them
+> that wait on thee shall be confounded.
+
+The whole 1962 Mass of that day has ten propers:
+
+| Slot | Kind | Content |
+| --- | --- | --- |
+| Introit | scripture | *Ad te levavi* — Psalm 24:1-3, 24:4 |
+| Collect | composed | *Excita, quaesumus* |
+| Epistle | scripture | Romans 13:11-14 |
+| Gradual | scripture | *Universi, qui te exspectant* — Psalm 24:3, 24:4 |
+| Alleluia | scripture | *Ostende nobis* — Psalm 84:8 |
+| Gospel | scripture | Luke 21:25-33 |
+| Offertory | scripture | *Ad te levavi* — Psalm 24:1-3 |
+| Secret | composed | *Haec sacra nos* |
+| Communion | scripture | *Dominus dabit benignitatem* — Psalm 84:13 |
+| Postcommunion | composed | *Suscipiamus, Domine* |
+
+The postconciliar Mass of the same Sunday also has ten, and the family
+resemblance is unmistakable — the same three chants, by the same incipits:
+
+| Slot | Kind | Content |
+| --- | --- | --- |
+| Entrance Antiphon | scripture | *Ad te levavi* — Psalm 25:1-3 |
+| Collect | composed | *Da, quaesumus, omnipotens Deus* |
+| First Reading | scripture | A: Isaiah 2:1-5 · B: Isaiah 63:16b-17, 19b; 64:2-7 · C: Jeremiah 33:14-16 |
+| Responsorial Psalm | scripture | A: Psalm 122 · B: Psalm 80 · C: Psalm 25 |
+| Second Reading | scripture | A: Romans 13:11-14 · B: 1 Corinthians 1:3-9 · C: 1 Thessalonians 3:12-4:2 |
+| Gospel Acclamation | scripture | *Ostende nobis, Domine* — Psalm 85:8 |
+| Gospel | scripture | A: Matthew 24:37-44 · B: Mark 13:33-37 · C: Luke 21:25-28, 34-36 |
+| Prayer over the Offerings | composed | *Suscipe, quaesumus, Domine* |
+| Communion Antiphon | scripture | *Dominus dabit benignitatem* — Psalm 85:13 |
+| Prayer after Communion | composed | *Prosint nobis* |
+
+Four things in that pair are worth pausing on, because each one is a whole
+subject below.
+
+1. **Psalm 24 and Psalm 25 are the same psalm.** So are 84 and 85. The two books
+   number the psalter differently. See *Two numberings*.
+2. **The 1962 Epistle is Romans 13:11-14; so is the postconciliar Second
+   Reading, but only in Year A.** The postconciliar readings rotate on a
+   three-year cycle. See *One cycle against three*.
+3. **The Collects are different prayers.** Chants often survived the reform
+   unchanged; orations were frequently rewritten or replaced.
+4. **The Douay text above is the psalm, not the antiphon.** The Introit's actual
+   sung words are a lightly adapted form of those verses, and this repository
+   does not carry them. It records what a chant is *made of*, not what it says.
+
+---
+
+## Propers versus the Ordinary
+
+The Ordinary is out of scope here entirely — this repository's calendar indexes
+record no part of it, and record no prefaces either. That is deliberate: the
+Ordinary is invariant, so an index of what varies has nothing to say about it.
+
+What varies falls into two families:
+
+- **Chants** — Introit, Gradual, Alleluia, Tract, Offertory, Communion; in the
+  postconciliar books, the Entrance and Communion Antiphons and the Responsorial
+  Psalm and Gospel Acclamation. Almost all are scripture, usually a psalm, cut to
+  a few verses.
+- **Orations** — Collect, Secret, Postcommunion (1962); Collect, Prayer over the
+  Offerings, Prayer after Communion (postconciliar). These are *composed* Latin
+  prayers. They quote scripture only incidentally and are not built from it.
+
+And between them the **readings** — Epistle and Gospel in 1962; First Reading,
+Second Reading and Gospel in the postconciliar books — which are scripture
+outright.
+
+The division matters practically. Only scripture-bearing propers contribute
+anything to a passage-keyed index; the orations contribute nothing, because
+their words are their own. Setting placeholders aside, 915 of the 1126 real
+1962 propers carry scripture, and 546 of the 821 postconciliar ones.
+
+Propers are also not a fixed template. The repository stores each Mass's propers
+**in the order the edition appoints them**, so Tracts, Sequences, the palm-rite
+antiphons, the Improperia, the Exsultet, the Holy Saturday prophecies and the
+litanies appear only where they are actually appointed, and a ten-row Sunday
+template is never imposed on a day that does not have ten rows. The data uses 88 distinct slot names in the 1962 file and 86 in the
+postconciliar one, and many occur exactly once: *First Antiphon at the
+Imposition of Ashes*, *Exsultet (Praeconium paschale)*, *Improperia*, *Fourth
+Prophecy*, *Washing of Feet, Antiphon 4*, *Chant at the Place of Reposition*.
+
+---
+
+## Two missals
+
+### The temporal cycle and the sanctoral cycle
+
+Every Roman missal is organized around two overlapping cycles.
+
+The **temporal** cycle (the *Proprium de Tempore*) follows the life of Christ
+through the seasons: Advent, Christmas, Lent, Easter, and the long stretch after
+Pentecost. Its days are movable, because they hang off Easter, which moves.
+
+The **sanctoral** cycle (the *Proprium Sanctorum*) is a fixed-date list of
+feasts of the Lord, of Our Lady, and of the saints: 25 December, 25 March,
+29 June, and so on through the year.
+
+The two run simultaneously, and this is why a single calendar date can carry
+more than one candidate celebration. 26 December is both the second day within
+the Octave of the Nativity (temporal) and the feast of Saint Stephen
+(sanctoral). Which wins is a question of **precedence**, settled by rank and by
+rubric, and it is a separate question from which formularies exist.
+
+This repository classifies every celebration by `kind` — `seasonal`,
+`christological`, `marian`, or `sanctoral` — and the classification follows the
+*edition's own printed title*, not a modern judgement. The 1962 books title
+2 February and 25 March as feasts of Our Lady (*In Purificatione*, *Annuntiatio
+Beatae Mariae Virginis*) while the postconciliar books title them as feasts of
+the Lord, and the repository reproduces that disagreement rather than resolving
+it.
+
+### Where the two books diverge
+
+| | 1962 | postconciliar |
+| --- | --- | --- |
+| Season before Lent | **Septuagesima, Sexagesima, Quinquagesima** — a three-week pre-Lenten season | does not exist |
+| Long summer/autumn stretch | Sundays after Pentecost, in a single run | Ordinary Time, numbered weeks I–XXXIV, interrupted by Lent and Easter |
+| Sunday readings | one fixed set, repeated every year | a **three-year cycle**, Years A, B and C |
+| Weekday readings | one fixed set | a **two-year cycle**, Years I and II, independent of the Sunday cycle |
+| Readings per Sunday Mass | Epistle and Gospel | First Reading, Responsorial Psalm, Second Reading, Gospel |
+| Psalm numbering | Vulgate throughout | mixed — see below |
+
+Septuagesima is the cleanest case of a season existing in one book and not the
+other. In the 1962 data it is a season in its own right holding three Masses;
+in the postconciliar data there is no such season and no such key.
+
+The postconciliar Ordinary Time has its own arithmetic quirk: there is no
+**First** Sunday in Ordinary Time at all. Week I is the week in which the
+Baptism of the Lord falls, and the Baptism replaces that Sunday, so the numbered
+Sundays run from the Second to the Thirty-fourth. The repository's data agrees:
+its Ordinary Time Masses are keyed `ot-2` through `ot-33`, thirty-two of them,
+with the Thirty-fourth Sunday carried separately as Christ the King.
+
+### One cycle against three
+
+The single largest structural difference is the Lectionary. The 1962 system
+appoints formulary and readings together: the First Sunday of Advent has *one*
+Epistle and *one* Gospel, the same every year, forever. The postconciliar system
+separates them. A Sunday has one set of chants and orations but three sets of
+readings, and which set is used depends on whether the liturgical year is Year
+A, B or C.
+
+The letter is fixed by the civil year in which the liturgical year *ends*, not
+the year it begins. Call that year `Y`; then `Y mod 3 = 1` is Year A, `2` is
+Year B, `0` is Year C, and the cycle turns at the First Sunday of Advent and
+nowhere else. Weekdays in Ordinary Time run a separate two-year cycle, Year I in
+odd years and Year II in even ones, which is *independent*: with periods 3 and
+2 the pairing repeats only every six years, and neither letter can ever be
+derived from the other.
+
+In the repository's data, 252 postconciliar propers carry a cycles mapping —
+55 Gospels, 54 Second Readings, 51 First Readings, 50 Responsorial Psalms,
+39 Gospel Acclamations, and a handful of Holy Week items. No 1962 proper carries
+one, and none ever should.
+
+---
+
+## The calendar arithmetic, and its hard limit
+
+[`guidance/liturgy/calendar-computation.md`](../guidance/liturgy/calendar-computation.md)
+is the single authoritative statement of the arithmetic. Nothing else in the
+repository may restate it; everything else references it.
+
+**Easter** is the Sunday after the first ecclesiastical full moon falling on or
+after 21 March, by the Gregorian computus — the tabular ecclesiastical rule, not
+an astronomical full moon. Every other movable day is a fixed offset in days
+from Easter:
+
+| Day | Offset |
+| --- | ---: |
+| Septuagesima (1962 only) | −63 |
+| Ash Wednesday | −46 |
+| Ascension, Thursday form | +39 |
+| Ascension, transferred Sunday form | +42 |
+| Pentecost | +49 |
+| Trinity Sunday | +56 |
+| Corpus Christi, Thursday form | +60 |
+| Corpus Christi, transferred Sunday form | +63 |
+
+The liturgical year itself turns at the First Sunday of Advent, the fourth
+Sunday before 25 December, which falls between 27 November and 3 December.
+
+And then the constraint that governs everything above:
+
+> **Computation is a finding aid, never an authority.**
+
+The competent General, territorial, diocesan, religious, parish and church
+calendar, the approved books, and the competent annual Ordo control what is
+actually celebrated. The rule in this repository is: compute, then verify
+against a dated official witness, record both, and **fail closed on
+disagreement** — state the divergence and resolve nothing by preference. A
+computed date is never published as its own occurrence witness.
+
+The sharpest form of this is the **territorial transfer**. Epiphany, the
+Ascension, and the Body and Blood of Christ are moved to a Sunday in some places
+and not in others, and that is a decision of the competent authority. It is not
+derivable from any calendar arithmetic whatsoever. The offsets table above gives
+both the Thursday and the transferred Sunday form of Ascension and Corpus
+Christi precisely because no formula can choose between them.
+
+Two smaller cases are recorded as deliberately unresolved rather than guessed:
+a 1962 year with only twenty-three Sundays after Pentecost (neither identified
+normative text provides for the shortfall), and any proper-calendar overlay that
+has not actually been checked.
+
+---
+
+## How this repository models it
+
+### The files
+
+```text
+src/sources/calendars/
+  roman-1962/propers.yaml
+  postconciliar/propers.yaml
+```
+
+One directory per calendar, one file per calendar. Each file opens with a header
+that declares the schema, the controlling edition, the ordering rule, the
+registry that owns its identities, its psalm numbering, its citation convention,
+its Latin orthography, and — importantly — its **verification state**.
+
+Below the header sits `sections`, a mapping from section name to a body carrying
+its `kind`, a display `label`, and a `masses` list. That is the *single*
+canonical mass list: a top-level `masses` key that duplicates it is rejected
+outright by the validator, so the two cannot drift apart.
+
+### A mass entry
+
+```yaml
+- key: advent-1                # kebab-case identity, stable within the file
+  name: First Sunday of Advent # the edition's catalog name
+  registry: '39'               # quoted registry id; never a bare number
+  season: advent
+  propers:
+  - name: Introit
+    incipit: Ad te levavi
+    source: scripture
+    verses:
+    - book: Psalms
+      ranges:
+      - begin: {chapter: 24, verse: 1}
+        end: {chapter: 24, verse: 3}
+      ref: Psalm 24:1-3
+  - name: Collect
+    incipit: Excita, quaesumus
+    source: composed
+    text: |
+      Excita, quaesumus, Domine, potentiam tuam, et veni...
+```
+
+`source` is the load-bearing field, and it decides the shape of everything else:
+
+- `scripture` carries `verses` — the full ordered set of passages the text is
+  built from — and **no** `text`.
+- `composed` carries the full Latin `text` and **no** `verses`.
+- `mixed` carries both.
+
+The validator enforces this. A scripture proper with a `text` field fails; a
+composed proper with `verses` fails.
+
+`registry` is the identity in the owning registry document. The 1962 temporal
+Sundays carry the numbers `01`–`52` from
+[`guidance/liturgy/roman-1962-propers.md`](../guidance/liturgy/roman-1962-propers.md),
+with `46R`–`49R` for the resumed Epiphany Sundays and `T01`–`T03` for the
+Triduum; the postconciliar Sundays carry `pc-s01`–`pc-s60` and `pc-t01`–`pc-t03`;
+fixed-date entries carry a date-derived id such as `1962-12-29` or `pc-01-02`.
+
+### Three special shapes
+
+**`forms`** replaces `propers` where one celebration has several complete Mass
+formularies. In the postconciliar data these are the Nativity's four Masses
+(Vigil, Night, Dawn, Day) and the Vigil and Day Masses of Epiphany, Ascension
+and Pentecost. In the 1962 data they are the four Ember Saturdays, each of which
+the Missal prints in a longer and a shorter form.
+
+**`cycles`** replaces the text on a proper whose content varies by Lectionary
+year, keyed `A`, `B`, `C`. Where the cycles differ in *kind* — the Third Sunday
+of Easter has a scriptural Gospel Acclamation in Years A and B and a composed one
+in Year C — `source` moves inside each cycle.
+
+**The placeholder.** A celebration whose formulary has not yet been authored
+holds exactly one proper:
+
+```yaml
+propers:
+- name: Placeholder
+  source: composed
+  text: |
+    This entry is a placeholder pending formula migration and source verification.
+```
+
+Nothing is partial. A Mass either has its propers or has exactly this and
+nothing else, so there is no half-finished tier to mistake for real data.
+
+### Citations are structured data
+
+A reference is never stored as a string to be re-parsed. `book` is the canonical
+Catholic-canon name — *Ecclesiasticus* and *Sirach* both resolve to `Sirach` —
+and `ranges` holds one or more contiguous extents. `ref` sits beside them as the
+edition's own printed display string and is **never authoritative**: everything
+downstream reads the ranges.
+
+The encoding handles what liturgical books actually print:
+
+- a selection within a chapter becomes several ranges — `Psalm 22:8-9, 17-20`;
+- a range may cross a chapter boundary, as the Passions do — `John 18:1-19:42`;
+- a chant sung entire is cited by chapter, with no verse on either edge;
+- a printed part-verse letter is kept — `{chapter: 4, verse: 10, part: b}`;
+- a one-chapter book resolves into chapter 1, so `Philemon 9-10` is chapter 1,
+  verses 9 to 10.
+
+`tools/citations` owns this. It is idempotent — re-running it on an encoded file
+changes nothing — and it **refuses** a citation it cannot encode without
+guessing rather than writing a wrong range.
+
+---
+
+## Two numberings, and eleven antiphons that fell between them
+
+The Latin psalter is numbered two ways, and over most of its length the Vulgate
+number runs one behind the Hebrew one: Vulgate 24 is Hebrew 25, Vulgate 84 is
+Hebrew 85, Vulgate 118 is Hebrew 119. That is why the 1962 Introit cites
+Psalm 24 and the postconciliar Entrance Antiphon cites Psalm 25 for the same
+words. The correspondence is not a formula — six psalms divide between the two
+systems — so the repository converts through a tracked verse-level concordance
+built from the Challoner edition, owned by `scripts/_psalms.py`, and never from
+a typed table.
+
+Each calendar file declares its own numbering. `roman-1962` declares `vulgate`
+and means it throughout. `postconciliar` declares `hebrew` — and here the books
+themselves are not consistent. The file's own recovered `citation_convention`
+states the rule:
+
+> Lectionary readings and antiphons preserve the numbering in the controlling
+> missal
+
+Which is to say: a postconciliar antiphon reproduces the number printed in the
+*Missal*, and a responsorial psalm or acclamation takes the number printed in the
+*Lectionary*, and those are not always the same system. The Twenty-third Sunday
+in Ordinary Time shows it inside a single Mass: its Entrance Antiphon is cited
+`Psalm 118:137, 124` and its Year C Gospel Acclamation `Psalm 119:135`. Both are
+the psalm *Beati immaculati*. One is numbered Vulgate, the other Hebrew.
+
+**The defect.** Eleven antiphons carried the Missal's printed Vulgate number
+inside a file declaring Hebrew numbering. Because Hebrew 118 ends at verse 29,
+`Psalm 118:137` is not a resolvable verse at all under the file's own
+declaration — and for a long time nothing noticed, because the psalter bounds
+check held verse ceilings only for the six psalms that split between the systems.
+The eleven are:
+
+| Mass | Slot | Incipit | Cited |
+| --- | --- | --- | --- |
+| ascension (Vigil Mass) | Entrance Antiphon | *Regna terrae cantate Deo* | Psalm 67:33, 35 |
+| ot-6 | Communion Antiphon | *Manducaverunt, et saturati sunt nimis* | Psalm 77:29-30 |
+| ot-8 | Entrance Antiphon | *Factus est Dominus protector meus* | Psalm 17:19-20 |
+| ot-9 | Entrance Antiphon | *Respice in me, et miserere mei* | Psalm 24:16, 18 |
+| ot-22 | Communion Antiphon | *Quam magna multitudo dulcedinis tuae* | Psalm 30:20 |
+| ot-23 | Entrance Antiphon | *Iustus es, Domine* | Psalm 118:137, 124 |
+| ot-26 | Communion Antiphon | *Memento verbi tui servo tuo* | Psalm 118:49-50 |
+| ot-29 | Communion Antiphon | *Ecce oculi Domini super timentes eum* | Psalm 32:18-19 |
+| ot-31 | Communion Antiphon | *Notas mihi fecisti vias vitae* | Psalm 15:11 |
+| ot-33 | Communion Antiphon | *Mihi autem adhaerere Deo bonum est* | Psalm 72:28 |
+| christ-the-king | Communion Antiphon | *Sedebit Dominus Rex in aeternum* | Psalm 28:10-11 |
+
+**The fix.** The schema now lets a *proper* declare its own numbering, rather
+than forcing a whole calendar into one. Each of those eleven propers now carries
+`psalm_numbering: vulgate`, and `tools/mass-propers` reads it: what a proper does
+not declare it inherits from its calendar, and its cycles may differ again. This
+is the right shape precisely because the recovered `citation_convention` predicts
+that antiphons and Lectionary items will disagree — the file-level declaration
+was always going to be too coarse.
+
+**The honest current state.** The declarations are in the data; the validation
+path has not yet caught up. `tools/citations check` still reads only the
+file-level key, so all eleven still report as out of bounds, and
+`check-calendar-masses` still sets them aside through a
+`psalm_numbering_exceptions` ledger in the file's header. That ledger is
+self-cleaning in both directions: an out-of-bounds psalm at an *unlisted* locus
+still fails the build, so a new leak cannot hide behind the known ones, and a
+listed locus that has *stopped* breaching also fails, so an entry cannot outlive
+the defect that earned it. Correcting the eleven — deciding, per slot, whether
+the number moves or the declaration does — is tracked as TASK-32.
+
+Two other references cannot resolve for reasons upstream of any of this:
+`4 Esdras 2:36-37` is not among the Douay-Rheims' 73 books, and
+`Malachi 3:19-20a` is Hebrew numbering where the Vulgate prints Malachi 4:1-6.
+Only psalms are converted between systems today.
+
+### Numbering divergences outside the psalter
+
+The psalter converts between numberings through a tracked verse-level
+concordance. Nothing else can. The postconciliar Lectionary cites the Nova
+Vulgata, no witness of that versification is tracked here, and every bible in
+this library follows the Vulgate division. Where the two divide a book
+differently — Joel, Malachi, and single chapters of Isaiah and Micah — the
+reference does not fail. It **resolves, to different words**: `Joel 3:1-5`
+returned the valley of Josaphat instead of the outpoured spirit, in Latin and
+English alike, and appeared in no error count.
+
+So a calendar records the correspondence by hand, citation by citation, in a
+`citation_divergences` list. A correspondence that holds unchanged is written out
+anyway rather than omitted, on the principle that inside a divergent locus,
+silence is not evidence that anyone checked. A citation reaching a divergent
+locus with no correspondence recorded is refused — left out of every index and
+reported unresolved — because a missing passage is a question and a plausible
+wrong one is an answer.
+
+---
+
+## Three days that were in the calendar and in no Mass list
+
+The date-ordered list of celebrations (the **spine**) is derived from the
+repository's verified calendar-reference publications by `tools/calendar-spine`.
+The propers indexes are a different artifact with a different history. Nothing
+compared them, and three days fell through the gap: 29, 30 and 31 December 1962
+— the fifth, sixth and seventh days within the Octave of the Nativity — sat in
+the spine and in no section of the propers file at all.
+
+They are there now, as placeholders, filed `seasonal`. And a check now exists:
+every celebration the spine carries must have a mass, filed under the kind the
+spine assigns it, or the build fails.
+
+Closing the gap required settling a classification question, and the answer
+turned out to be in the edition's own punctuation. Within an octave:
+
+- a **colon** introduces the day's own principal celebration — *"Second day
+  within the octave: S. Stephani Protomartyris"* is Saint Stephen's feast, set
+  within the octave, and classifies **sanctoral**;
+- a **semicolon** introduces a mere commemoration — *"Fifth day within the
+  octave; comm. S. Thomae Episcopi et Martyris"* is the octave day itself, and
+  classifies **seasonal**.
+
+So in the 1962 data, 26–28 December are filed sanctoral and 29–31 December
+seasonal, and the spine and the propers now agree on all six.
+
+The formulary those three days actually use is still absent. It is one of three
+the Missal carries that this file does not — the others being *D. N. Iesu Christi
+Regis* and *Sanctissimi Nominis Iesu* — and all three are movable or shared, so
+nothing in the fixed-date spine reports them missing.
+
+---
+
+## What is actually here
+
+The seasonal sections carry real propers. Everything else is a placeholder
+skeleton. These counts are current as of 31 July 2026 and were counted from the
+files, not estimated:
+
+| Calendar | Section | Masses | Propers | Placeholder-only |
+| --- | --- | ---: | ---: | ---: |
+| roman-1962 | seasonal | 125 | 1129 | 3 |
+| roman-1962 | christological | 8 | 8 | 8 |
+| roman-1962 | marian | 17 | 17 | 17 |
+| roman-1962 | sanctoral | 247 | 247 | 247 |
+| postconciliar | seasonal | 63 | 821 | 0 |
+| postconciliar | christological | 7 | 7 | 7 |
+| postconciliar | marian | 14 | 14 | 14 |
+| postconciliar | sanctoral | 181 | 181 | 181 |
+
+Totals: **397 masses and 1401 propers** for 1962, **265 and 1023** for the
+postconciliar calendar. **477 of those 662 masses hold nothing but a
+placeholder** — 275 in the 1962 file, 202 in the postconciliar one. Between them
+the two files encode 2190 scripture passages, in 47 and 61 distinct books.
+
+### The 1962 temporal expansion, and what it deliberately omits
+
+The 1962 seasonal section was 59 Masses — the Sunday spine plus the Triduum and
+Palm Sunday. It is now 125: 63 temporal days were added, plus the three Christmas
+octave placeholders. The 63 cover the days the Missal keeps and the file did not:
+the three Advent Ember Days; Ash Wednesday and the three days after it; every
+feria of Lent weeks 1–4 with the Lenten Ember Days; the ferias of Passion week
+and Holy Week to Wednesday; the Chrism Mass; the Easter octave; the Rogation
+Mass; the Vigil of the Ascension, the Ascension, and the Vigil of Pentecost; the
+Whitsun octave with its Ember Days; the Mass of the First Sunday after Pentecost;
+Corpus Christi; the Sacred Heart; and the September Ember Days.
+
+Every one of those 63 entries carries **only its scripture-bearing propers**, and
+says so in its own notes:
+
+> Only the scripture-bearing propers are recorded; the day's orations and other
+> composed chants are appointed but not yet transcribed.
+
+This is a deliberate refusal. The orations of those days exist and are appointed;
+they were not transcribed because they were not read. The alternative would have
+been to generate plausible Latin, and a plausible wrong oration is worse than an
+absent one — the same principle that makes the citation encoder refuse a
+reference it cannot encode.
+
+The provenance is stated with matching care. Identity, rank and the printed
+scripture references were read from an **OCR text layer** of the CMAA 1962
+facsimile, not from the facsimile images. Confidence in each day's identity and
+rank is high; confidence in each citation is only as high as an unproofed scan
+allows; nothing has been visually collated. Their registry ids read
+`1962-T-<key>` and are synthetic, because the temporal registry numbers only the
+52 Sundays and the Triduum and no printed identifier exists for a feria.
+
+### Everything here is an unverified lead
+
+This is the single most important thing to know about the data. A calendar index
+is a **planning and cross-reference spine, not a source of record**. It carries
+no artifact hash and proves nothing on its own; a publication still binds the
+edition and artifact that control each text through its own
+`research/source-bindings.toml`.
+
+Both files say so in their `verification` header. The 1962 file states three
+tiers of confidence; the postconciliar file states two. Every citation and every
+text is an unverified lead until collated against the controlling edition, and
+each file tracks its known problems in `open_collation_items` rather than
+silently harmonizing them away. The instruction is explicit: fix a divergence by
+collation, not by making the file falsely uniform.
+
+Note also that `open_collation_items` in both files ends with the line *all
+entries in this file are placeholders pending source-backed completion*. That is
+not decoration.
+
+---
+
+## Open questions
+
+Each of these is recorded in the repository as unresolved, not silently decided.
+
+| Question | Where it lives |
+| --- | --- |
+| Whether the eleven antiphons should move their numbers or keep their per-slot declaration | TASK-32; the `psalm_numbering_exceptions` ledger |
+| Whether Ascension, Corpus Christi, the Sacred Heart and the Chrism Mass belong under `seasonal` (where the Missal prints them) or `christological` (what they are by kind) | 1962 `open_collation_items` |
+| A registry scheme for 1962 ferias, which have no printed identifier | 1962 `open_collation_items` |
+| How 1962 commemorations should be modelled — they exist only as prose inside a `name` string, so a commemoration's own three orations have nowhere to live | `guidance/liturgy/propers-completion-todo.md` |
+| Which numbering system each of a further 23 non-psalm postconciliar citations actually speaks, before any of them is corrected | postconciliar `open_collation_items` |
+| Whether proper prefaces and the *Oratio super populum* belong in this index at all | postconciliar `open_collation_items` |
+| The 1962 twenty-three-Sunday shortfall after Pentecost | `guidance/liturgy/calendar-computation.md` |
+
+---
+
+## Where to look next
+
+| For | Read |
+| --- | --- |
+| The schema and how to read an index | `src/sources/calendars/README.md` |
+| The calendar arithmetic, authoritatively | `guidance/liturgy/calendar-computation.md` |
+| What completing the propers would cost | `guidance/liturgy/propers-completion-todo.md` |
+| The source contract for calendars | `guidance/sources.md` |
+| Working here as an agent | `guidance/propers-for-agents.md` |
+
+To read a Mass:
+
+```sh
+tools/tpt mass-propers show --calendar roman-1962 --mass advent-1 --bible douay-rheims
+tools/tpt mass-propers list --calendar postconciliar
+```
