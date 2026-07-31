@@ -155,10 +155,9 @@
         document.createTextNode('tr. ' + fragment.translators.join(', '))
       );
     }
-    if (fragment.container) {
-      source.appendChild(T.el('span', 'sep'));
-      source.appendChild(document.createTextNode('printed in ' + fragment.container));
-    }
+    // `fragment.container` is carried in the data and deliberately not printed:
+    // it is a record id, and the edition line above already names the volume in
+    // words. A reader is owed the volume, not the key it is filed under.
     if (fragment.rights) {
       source.appendChild(T.el('span', 'sep'));
       source.appendChild(document.createTextNode(fragment.rights));
