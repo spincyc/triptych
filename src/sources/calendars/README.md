@@ -62,6 +62,10 @@ translations:
     Stir up thy power, we beseech thee, O Lord, and come...
 ```
 
+Which one a page shows is not left to list order. `mass-propers structure`
+writes a per-calendar witness manifest beside the masses, ordered by coverage,
+and sorts every translation list into that order; see `guidance/web-data.md`.
+
 A translation is someone's expression and is not relicensed by inclusion; see
 `THIRD_PARTY.md`.
 

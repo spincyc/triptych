@@ -248,4 +248,104 @@ cycled = [
 assert cycled, "the postconciliar calendar carries cycle-varying propers"
 PY
 
+# A proper may carry two English translations, and something visible has to
+# choose between them. The manifest is that choice: it is derived from what was
+# actually published, ordered by coverage, and every proper's list is sorted
+# into the same order, so a consumer that reads it and one that simply takes the
+# first entry in its language land on the same witness.
+cummiskey='edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861'
+transcription='artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en'
+mkdir -p witness/two
+cat >witness/two/propers.yaml <<YAML
+schema: triptych-calendar-masses/v1
+calendar: two
+edition: Demo Missal
+series: demo
+ordering: demo
+registry: demo
+orthography: demo
+citation_convention: demo
+verification: demo
+psalm_numbering: vulgate
+sections:
+  '01':
+    kind: seasonal
+    masses:
+    - key: t
+      name: T
+      registry: 't1'
+      season: advent
+      propers:
+      - name: Collect
+        source: composed
+        text: "Excita, quaesumus, Domine."
+        translations:
+        - lang: en
+          rights: public-domain
+          source_id: $transcription
+          text: "Stir up thy power, we beseech thee, O Lord."
+        - lang: en
+          rights: public-domain
+          source_id: $cummiskey
+          text: "Exert, we beseech thee, O Lord, thy power."
+      - name: Secret
+        source: composed
+        text: "Haec sacra nos."
+        translations:
+        - lang: en
+          rights: public-domain
+          source_id: $cummiskey
+          text: "Grant, O Lord."
+YAML
+run_tool structure --root witness --calendar two --out witness-out >/dev/null
+
+python3 - witness-out/structure/propers/two.json "$cummiskey" "$transcription" <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+wide, narrow = sys.argv[2], sys.argv[3]
+manifest = document["translations"]
+assert [row["source_id"] for row in manifest] == [wide, narrow], manifest
+# Counted, not assumed: a control that implies completeness is worse than none.
+assert [row["held"] for row in manifest] == [2, 1], manifest
+assert all(row["composed"] == 2 for row in manifest), manifest
+
+propers = {proper["name"]: proper for proper in document["masses"][0]["propers"]}
+# Recorded narrow-witness-first in the source; the file must not preserve that.
+# List order is the whole of the default, so it cannot be left to typing order.
+assert [t["source_id"] for t in propers["Collect"]["translations"]] == [wide, narrow]
+assert [t["source_id"] for t in propers["Secret"]["translations"]] == [wide]
+PY
+
+# A terminal has no dropdown, so both witnesses are shown and each is named;
+# showing one silently would hide exactly what a reader asked to compare.
+both="$(run_tool --root witness --calendar two --mass t --lang en)"
+for want in "Stir up thy power" "Exert, we beseech thee" "$cummiskey" "$transcription"; do
+	case "$both" in
+	*"$want"*) ;;
+	*) echo "the reading view did not show both witnesses and name them: $want" >&2; exit 1 ;;
+	esac
+done
+
+# --witness narrows to one, and then there is nothing to attribute.
+one="$(run_tool --root witness --calendar two --mass t --lang en --witness "$cummiskey")"
+case "$one" in
+*"Stir up thy power"*) echo "--witness did not narrow to the named witness" >&2; exit 1 ;;
+esac
+case "$one" in
+*"Exert, we beseech thee"*) ;;
+*) echo "--witness dropped the translation it was asked for" >&2; exit 1 ;;
+esac
+
+# A witness that translated nothing here is an absence stated, never filled in
+# from whichever other witness happens to have the proper.
+missing="$(run_tool --root witness --calendar two --mass t --lang en --witness "$transcription")"
+case "$missing" in
+*"no en translation from $transcription recorded"*) ;;
+*) echo "expected the missing witness to be named where the text would be" >&2; exit 1 ;;
+esac
+case "$missing" in
+*"Grant, O Lord"*) echo "a missing witness must not be filled in from another" >&2; exit 1 ;;
+esac
+
 echo ok

@@ -229,15 +229,93 @@ def withheld_translations(mass: dict):
 
     Withholding silently would be the same defect in a quieter coat: the
     operator needs to see that the corpus holds English the site is not showing.
+
+    The witness is named and not only the language, because a proper may hold
+    two English translations: "en withheld" would no longer say which one.
     """
     for proper in mass.get("propers") or []:
         for translation in proper.get("translations") or []:
             if not isinstance(translation, dict):
                 continue
             if translation.get("rights") not in PUBLISHABLE_RIGHTS:
-                yield proper.get("name"), translation.get("lang"), translation.get(
-                    "rights"
+                yield (
+                    proper.get("name"),
+                    translation.get("lang"),
+                    translation.get("source_id"),
+                    translation.get("rights"),
                 )
+
+
+def witness_of(translation: dict) -> tuple[str, str]:
+    """The (language, witness) pair a translation is filed under.
+
+    A translation naming no source is the project's own, and the project speaks
+    once per language, so the empty id is a real and unambiguous key rather than
+    a missing one.
+    """
+    lang = str(translation.get("lang") or "")
+    source_id = translation.get("source_id")
+    return lang, str(source_id) if isinstance(source_id, str) else ""
+
+
+def translation_manifest(masses: list[dict], witnesses: dict) -> list[dict]:
+    """The witnesses a page may offer for this calendar's orations, in order.
+
+    This is the propers' answer to `bibles.json`, and it is here rather than in
+    a file of its own because a witness is a property of one missal: the rights
+    position differs sharply between the two, the coverage differs with it, and
+    a page has already fetched this file by the time it can offer anything. The
+    load-bearing property of `bibles.json` is kept exactly — the list is
+    *derived from what was actually published*, so it cannot name a translation
+    the structure pass withheld, and a page cannot offer what it does not hold.
+
+    Order is `(lang, -held, source_id)`: within a language the witness that
+    reaches the most of the missal comes first, and ties break on the id so the
+    file is byte-stable. That order is also the documented default. A consumer
+    that reads the manifest and one that simply takes the first translation in
+    the language it wants land on the same witness, because `calendar_structure`
+    sorts every proper's list the same way — so the default is deterministic
+    whether or not a page has been taught about the manifest yet.
+
+    Coverage is counted, not assumed. Partial coverage is expected to be
+    permanent — 160 of 636 English orations here — and a reader offered a
+    choice is owed the figure rather than a control implying completeness.
+    """
+    composed = sum(
+        1 for mass in masses for proper in mass["propers"] if proper.get("text")
+    )
+    held: dict[tuple[str, str], int] = {}
+    carried: dict[tuple[str, str], dict] = {}
+    for mass in masses:
+        for proper in mass["propers"]:
+            for translation in proper.get("translations") or []:
+                key = witness_of(translation)
+                held[key] = held.get(key, 0) + 1
+                carried.setdefault(key, translation)
+    rows = []
+    for (lang, source_id), count in held.items():
+        witness = witnesses.get(source_id) or {}
+        rows.append(
+            {
+                "lang": lang,
+                # Empty for the project's own work, which names no source; the
+                # key is still the pair, so the field is present either way.
+                "source_id": source_id,
+                # The witness as it should be cited. Taken from the calendar's
+                # own record of its sources where there is one, because that is
+                # where the label was written; an id with no such record is
+                # shown as itself rather than under an invented name.
+                "label": str(witness.get("label") or source_id or "This project"),
+                "rights": carried[(lang, source_id)].get("rights"),
+                # What the reader must be told before weighing the text: a
+                # pre-1955 hand missal is not an approved liturgical
+                # translation, and the caution travels with the offer.
+                "caution": witness.get("caution"),
+                "held": count,
+                "composed": composed,
+            }
+        )
+    return sorted(rows, key=lambda row: (row["lang"], -row["held"], row["source_id"]))
 
 
 def scripture_entries(mass: dict):
@@ -403,8 +481,9 @@ def translation_overlay(calendar: str) -> tuple[dict, set, list]:
     either way: it holds one copy of each translation instead of two, which is
     the rule the verse fragments already follow.
 
-    Returns the overlay, the propers deliberately left untranslated, and the
-    entries that no longer answer their target.
+    Returns the overlay, the propers deliberately left untranslated, the entries
+    that no longer answer their target, and the file's own record of the
+    witnesses it quotes, keyed by `source_id`.
     """
     import tomllib
 
@@ -416,7 +495,7 @@ def translation_overlay(calendar: str) -> tuple[dict, set, list]:
         / f"{calendar}-proper-translations-v1.toml"
     )
     if not path.is_file():
-        return {}, set(), []
+        return {}, set(), [], {}
     document = tomllib.loads(path.read_text(encoding="utf-8"))
     overlay, stale = {}, []
     for entry in document.get("entries") or []:
@@ -426,12 +505,20 @@ def translation_overlay(calendar: str) -> tuple[dict, set, list]:
         (entry.get("mass"), entry.get("form") or "", entry.get("proper"))
         for entry in document.get("untranslated") or []
     }
-    return overlay, untranslated, stale
+    # Read rather than restated: the label and the caution are already written
+    # here, beside the rights basis they qualify, and a second copy in this tool
+    # would be free to disagree with them.
+    witnesses = {
+        str(row.get("source_id")): row
+        for row in document.get("sources") or []
+        if isinstance(row, dict) and row.get("source_id")
+    }
+    return overlay, untranslated, stale, witnesses
 
 
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dict:
     document = load_calendar(root, calendar)
-    overlay, untranslated, stale = translation_overlay(calendar)
+    overlay, untranslated, stale, witnesses = translation_overlay(calendar)
     source = document.get("psalm_numbering")
     if source not in SYSTEMS:
         raise ValueError(f"{calendar} declares unknown psalm numbering {source!r}")
@@ -519,11 +606,27 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                 "propers": propers,
             }
         )
+    manifest = translation_manifest(masses, witnesses)
+    # Every proper's list is put into the manifest's order, so that the choice
+    # of which English a reader sees is made once, here, and is the same choice
+    # whether a consumer reads the manifest or simply takes the first entry in
+    # the language it wants. Left in source order it would be neither stated nor
+    # stable: two witnesses would be ranked by which happened to be typed first.
+    order = {(row["lang"], row["source_id"]): index for index, row in enumerate(manifest)}
+    for mass in masses:
+        for proper in mass["propers"]:
+            if proper.get("translations"):
+                proper["translations"] = sorted(
+                    proper["translations"], key=lambda t: order[witness_of(t)]
+                )
     return {
         "schema": "triptych-propers-structure/v1",
         "calendar": calendar,
         "edition": document.get("edition"),
         "numbering": source,
+        # The witnesses this missal's orations may be read in, in the order a
+        # control should offer them; the first row of a language is its default.
+        "translations": manifest,
         "masses": masses,
     }
 
@@ -543,9 +646,10 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         document = load_calendar(root, name)
         for section in (document.get("sections") or {}).values():
             for mass in section.get("masses") or []:
-                for proper_name, lang, rights in withheld_translations(mass):
+                for proper_name, lang, source_id, rights in withheld_translations(mass):
                     withheld.append(
-                        f"{name} {mass.get('key')}/{proper_name}: {lang} withheld "
+                        f"{name} {mass.get('key')}/{proper_name}: {lang} from "
+                        f"{source_id or 'no source'} withheld "
                         f"({rights or 'no rights basis stated'})"
                     )
         # `--out` is the data root the page is served from, so both generators
@@ -632,7 +736,9 @@ def wrap(text: str, indent: str) -> list[str]:
     return [indent + line if line else "" for line in lines[:-1] or lines]
 
 
-def render_reading(payload: dict, lang: str, resolved: dict) -> int:
+def render_reading(
+    payload: dict, lang: str, resolved: dict, witness: str | None = None
+) -> int:
     mass = payload["mass"]
     print(mass.get("name") or mass.get("key") or "(unnamed)")
     subtitle = " · ".join(
@@ -665,25 +771,56 @@ def render_reading(payload: dict, lang: str, resolved: dict) -> int:
             ]
             if refs:
                 print(f"  {cycle}: {', '.join(refs)}")
-        body, note = select_text(proper, lang)
-        if body:
-            print()
-            print("\n".join(wrap(body, "  ")))
-        if note:
-            print(f"\n  ({note})")
+        for body, attribution, note in select_texts(proper, lang, witness):
+            if body:
+                print()
+                if attribution:
+                    print(f"  [{attribution}]")
+                print("\n".join(wrap(body, "  ")))
+            if note:
+                print(f"\n  ({note})")
     return 0
 
 
-def select_text(proper: dict, lang: str) -> tuple[str, str]:
-    """Latin is the tracked text; any other language is a carried translation."""
+def select_texts(
+    proper: dict, lang: str, witness: str | None = None
+) -> list[tuple[str, str, str]]:
+    """Latin is the tracked text; any other language is a carried translation.
+
+    Where a proper holds two translations in the requested language, both are
+    printed and each is named. A terminal has no dropdown, and picking one
+    silently would hide exactly what the reader asked to see: two witnesses to
+    one prayer are worth showing precisely because they differ, and their
+    disagreement is what caught 38 wrong orations in this corpus. `--witness`
+    narrows to one when that is what is wanted.
+
+    Returns `(text, attribution, note)` triples; the attribution is empty where
+    there is nothing to choose between.
+    """
     if lang == "la":
-        return str(proper.get("text") or ""), ""
-    for translation in proper.get("translations") or []:
-        if isinstance(translation, dict) and translation.get("lang") == lang:
-            return str(translation.get("text") or ""), ""
+        return [(str(proper.get("text") or ""), "", "")]
+    found = [
+        translation
+        for translation in proper.get("translations") or []
+        if isinstance(translation, dict) and translation.get("lang") == lang
+        and (witness is None or translation.get("source_id") == witness)
+    ]
+    if found:
+        named = len(found) > 1
+        return [
+            (
+                str(translation.get("text") or ""),
+                str(translation.get("source_id") or "this project") if named else "",
+                "",
+            )
+            for translation in found
+        ]
     if proper.get("text"):
-        return str(proper["text"]), f"no {lang} translation recorded; showing Latin"
-    return "", ""
+        scope = f" from {witness}" if witness else ""
+        return [
+            (str(proper["text"]), "", f"no {lang} translation{scope} recorded; showing Latin")
+        ]
+    return []
 
 
 def render_listing(payload: dict) -> int:
@@ -710,6 +847,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     shared.add_argument(
         "--lang", default="la", help="language for composed propers (default: la)"
+    )
+    shared.add_argument(
+        "--witness",
+        help="show only this translation's source_id; without it every "
+        "translation in --lang is shown, each one named",
     )
     shared.add_argument(
         "--bible-root",
@@ -783,7 +925,10 @@ def main(argv: list[str] | None = None) -> int:
         if "calendars" in payload:
             return render_listing(payload)
         return render_reading(
-            payload, arguments.lang, getattr(arguments, "resolved_bible", {})
+            payload,
+            arguments.lang,
+            getattr(arguments, "resolved_bible", {}),
+            arguments.witness,
         )
 
     return run_verb_cli(

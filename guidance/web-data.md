@@ -82,6 +82,55 @@ when the file is generated rather than filtered in the page, so a browser
 cannot offer what the project has no right to serve even if its fragments were
 somehow present beside it.
 
+The orations have the same manifest and it works the same way, but it is a key
+inside each propers structure file rather than a file of its own:
+
+```json
+"translations": [
+ {"lang": "en",
+  "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+  "label": "The Roman Missal translated into the English language for the use of the laity...",
+  "rights": "public-domain", "caution": "A pre-1955 lay hand missal...",
+  "held": 160, "composed": 564}
+]
+```
+
+A scripture edition is a property of the site; an oration witness is a property
+of one missal. The rights position differs sharply between the two books, the
+coverage differs with it, and a page has already fetched this file by the time
+it can offer anything — so a second top-level file would be fetched once per
+missal anyway and would be one more thing to keep in step. What is kept exactly
+is the load-bearing property of `bibles.json`: the list is **derived from what
+was actually published**, after `publishable_translations` has dropped every
+licensed text, so it cannot name a translation the structure pass withheld.
+
+**A proper may carry two translations in the same language**, and that is the
+point of offering a control at all: the reason to show a choice is that
+translations differ. It is also the only detector this corpus has for a bad
+transcription. Two independent readings of the 1861 Cummiskey missal disagree
+at 45 of the 153 orations they share, and all 38 errors the site was serving
+sat inside those 45 — where they agreed, they were right 54 times out of 54.
+`check-calendar-masses` therefore keys translation uniqueness on
+`(lang, source_id)`: the same witness twice is a copied row, two witnesses are
+the feature.
+
+Which one a reader sees is decided once, in the generator, and never by list
+order. The manifest is sorted `(lang, -held, source_id)` — within a language
+the witness that reaches the most of the missal comes first — and every
+proper's `translations` array is sorted into that same order. So **the default
+is the first row of the manifest in the reader's language**, and a consumer
+that has never heard of the manifest, taking the first translation matching the
+language it wants, lands on the identical witness. The coverage figures are
+counted rather than assumed, because partial coverage here is permanent and a
+reader offered a choice is owed the figure rather than a control implying
+completeness.
+
+Where the chosen witness has no translation for a proper, the absence is stated
+where the text would have been. It is not filled in from another witness: that
+is the same rule the page already applies to a missing language, and quietly
+substituting one translator for another is exactly the confusion a choice of
+witness exists to prevent.
+
 ## The calendar layer
 
 `structure/calendar/<calendar>/<civil-year>.json`, written by `calendar-days
@@ -211,3 +260,18 @@ copyright, recorded with the acknowledgement wording that licence requires.
 
 Nothing else changes. No page is rewritten, no structure file is regenerated,
 and no existing fragment is touched.
+
+## Adding a translation of the orations
+
+1. Register the witness in the source library, with its rights, and record its
+   `label` and any `caution` in the calendar's
+   `src/sources/inventories/<calendar>-proper-translations-v1.toml`.
+2. Add each rendering to its proper's `translations`, naming that `source_id`.
+   A proper that already carries another witness's English keeps it; the two
+   stand side by side and their disagreement is the thing worth having.
+3. `mass-propers structure` to rewrite the structure files. The witness
+   manifest and every translation's order fall out of that one pass.
+
+`check-calendar-masses` refuses a `source_id` that resolves to no record in the
+source library, in the propers and in the sidecar alike. An id that names
+nothing is worse than none at all: it reads as provenance and answers nothing.
