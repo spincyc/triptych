@@ -32,20 +32,36 @@ has succeeded and the affected production routes have been verified.
 Public-alpha authorization is distribution authority only. It never records
 or implies human, priestly, specialist, ecclesiastical, rights, intended-reader,
 physical-print, or final editorial approval that has not actually occurred.
-Alpha completion is assessed against six concrete concerns: source support,
-rights and distribution status, safety, artifact consistency, mechanical
-correctness, and every-page visual inspection. A known defect in any concern
-remains explicit in the research records, release inventory, catalogs, and
-this register. The workflow does not create placeholder gates for unavailable
-external reviewers, and passing an internal check does not imply external
-approval.
 
-Research for the promised work is limited to publicly reachable sources. Do
-not purchase an edition, use a paid subscription, request credentials, or ask
-the maintainer to fund source access. When a necessary witness cannot be
-reached publicly, pursue proportionate public primary, official, library, and
-critical-edition alternatives, then record the access boundary and resulting
-open evidence gate without inventing verification.
+On 31 July 2026 the maintainer retired the six-concern alpha completion
+assessment — source support, rights and distribution status, safety, artifact
+consistency, mechanical correctness, every-page visual inspection — as
+bookkeeping the project imposed on itself. No tool ever read those fields; they
+were prose scoring prose. A publication is alpha when it is built, checked by
+the gates that actually run, and published.
+
+What that retirement does not touch, because none of it was ever the
+bookkeeping: a known defect still stays explicit in the research records,
+release inventory, catalogs, and this register — recording a defect is how a
+reader learns of it, not a gate. Passing an internal check still does not imply
+external approval, and the workflow still creates no placeholder gate for a
+reviewer who is not coming. Those are statements about what is true, and
+withdrawing a scoring scheme does not make them false.
+
+Research is not limited to publicly reachable sources. On 31 July 2026 the
+maintainer withdrew the rule that had forbidden purchasing an edition, using a
+paid subscription, requesting credentials, or asking the maintainer to fund
+source access, on the ground that it was never a requirement of anything — it
+was a self-imposed limit that turned an ordinary cost question into a permanent
+evidence gap. Where a witness would settle a question, name it and what it
+would cost; the maintainer decides whether to obtain it.
+
+Two things this does not change, because neither was ever a project rule.
+Copyright and licence terms bind whatever the research budget is: a text the
+project may read is not thereby a text it may republish, and the standing
+public-alpha authorization is authority to distribute this project's own work,
+never someone else's. And a witness that has not actually been consulted is
+still unconsulted — record what was read, not what was reachable.
 
 The maintainer authorizes creation and revision of project-owned AI artwork
 for the sanctuary pictorial dictionaries and altar-server guide series. Each

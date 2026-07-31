@@ -63,17 +63,20 @@ if [ "$units" -lt 1 ] || [ "$(field families "$summary")" -lt 1 ]; then
 	echo "expected the repository ledger to carry families and review units: $summary" >&2
 	exit 1
 fi
-if [ "$pending" != "0" ] || [ "$screened" != "$units" ]; then
-	echo "expected every review unit to be screened: $summary" >&2
+# The counts must add up. Whether a human has screened the families is a
+# separate question and not one this test may answer for them: asserting
+# screened == units over the repository's own ledger meant that adding a single
+# source family turned the suite red until 144 review units were marked
+# reviewed, which is pressure to write down a review that did not happen. The
+# maintainer withdrew that requirement on 31 July 2026.
+if [ "$(( screened + pending ))" != "$units" ]; then
+	echo "expected screened and pending to account for every review unit: $summary" >&2
 	exit 1
 fi
 
-# --require-family-screened is the stricter gate and the repository passes it.
-strict="$(run_tool check --require-family-screened)"
-if [ "$strict" != "$summary" ]; then
-	echo "expected the strict check to agree with the plain check" >&2
-	exit 1
-fi
+# --require-family-screened remains the stricter gate, for a ledger that has
+# actually been screened. It is exercised below against a tree built for it,
+# not against the repository.
 
 # Everything below writes, so it writes into a throwaway tree: one publication
 # with a legacy source record, and the two ledgers this tool is pinned to.

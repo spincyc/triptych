@@ -304,13 +304,24 @@ long because they were derived, not remembered.
   Copenhagen Alliance mappings are CC BY-**SA** 4.0, which is a copyleft
   obligation this project's CC BY 4.0 grant does not carry.
 
-## The access boundary — do not re-run this search
+## The access boundary — what actually blocks each one
 
-Searched 30 July 2026 and **not obtained: RNJB, NRSV, NABRE.** No authorised
-bulk source exists for any of them. `bible.usccb.org` blocks automated requests
-outright, and api.bible's terms forbid populating a local database whatever
-licence the text itself carries. Do not spend another session on these without a
-new source; record the boundary rather than working around it.
+Searched 30 July 2026 and **not obtained: RNJB, NRSV, NABRE.** The reasons are
+not the same, and only one of them is now a hard stop.
+
+- **api.bible's terms forbid populating a local database**, whatever licence the
+  text carries and whatever the project is willing to spend. That is a contract
+  term, not a budget question, and it does not move.
+- **`bible.usccb.org` blocks automated requests**, which is an obstacle rather
+  than a prohibition. A licensed electronic edition obtained another way would
+  answer it.
+- **The Jerusalem Bible family is Darton, Longman and Todd copyright.** Reading
+  it is a purchase; republishing it needs a licence. Those are two different
+  permissions and obtaining the first grants nothing of the second.
+
+The rule that once forbade proposing a paid source was withdrawn on 31 July 2026
+(see `PROJECT-WORK.md`). Where one of these would settle a question, say what it
+would cost and what it would answer.
 
 Two consequences worth stating, because a later reader will otherwise re-derive
 them:
