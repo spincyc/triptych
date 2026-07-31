@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-07-29.
+Last reconciled: 2026-07-31.
 
 ## Standing public-alpha authority
 
@@ -322,9 +322,10 @@ leads remain outside the ledger until their own family records are justified.
 The research algorithm maps a scripture passage to the commentary works worth
 pulling into the source vault, then unions those mappings across every proper.
 `commentary-work-index discover` is the repo-maintained lookup and
-`build-corpus` the union; the harvester that populates the index does not exist
-yet, and `src/sources/commentary/passage-commentary-index.yaml` is still
-`passages: []`, so every lookup resolves to zero works.
+`build-corpus` the union. `tools/harvest` populates the index and
+`src/sources/commentary/passage-commentary-index.yaml` now carries the result of
+six harvest runs, so a lookup resolves to the works the harvest actually
+recorded rather than to nothing.
 
 Weighting is already implemented and needs no schema change. Each mapping
 carries a `confidence` float that orders works within a passage, and
@@ -367,6 +368,18 @@ move release hash records and every smoke-test filename together.
 
 ## Reconciliation history
 
+- 2026-07-31: Retired `PROJECT-HANDOFF-2026-07-30.md`. Every task in its "where
+  to pick up" section had landed and its opening line, "nothing is committed,"
+  had stopped being true. The two facts it held that no other artifact did — that
+  no authorised bulk source exists for the NRSV or the NABRE, and what is lost by
+  not having the NABRE — moved into `guidance/bibles-for-agents.md` as a recorded
+  access boundary. Re-measured that document's open-work and
+  fails-silently sections against the repository rather than against memory: the
+  clamp in `Bible.span` is gone, `citation_divergences` covers twelve books
+  rather than four, and the unresolved counts rose in every edition because a
+  citation that used to be truncated into a neighbour now refuses.
+  `guidance/liturgy/postconciliar-illustrated-dictionary-handoff.md` is a forward
+  handoff for unstarted work and was left alone.
 - 2026-07-29: Reorganized the public library into the seven approved portals:
   Faith, Scripture, Liturgy, History, Formation, Mary, and Law. Applied their
   muted white, gold, red, green, violet, rose, and black accents and distinct

@@ -42,8 +42,9 @@ apparatus exists to catch, and no resolution count will show it to you.
   the tracked concordance. Restated copies have already disagreed here; the
   reason is recorded in `scripts/_psalms.py`'s docstring.
 - **Do not treat a resolution rate as a correctness rate.** The Douay-Rheims
-  reports 99.9% on both calendars while ~23 postconciliar citations are known to
-  resolve to the wrong verses.
+  reported 99.9% on both calendars through the whole period in which two dozen
+  postconciliar citations were returning the wrong verses. The rate did not move
+  when they were corrected, because they had never been counted as failures.
 
 ## Invariants that hold
 
@@ -83,39 +84,34 @@ apparatus exists to catch, and no resolution count will show it to you.
 
 Ranked by how much damage it does before anyone notices.
 
-1. **The clamp.** `Bible.span` still contains `range(low, min(high, bound) + 1)`.
-   A citation naming a verse past the chapter end is truncated and reported as
-   success. Live today: `1 Thessalonians 4:13-18`, `Acts 7:55-60` and
-   `Mark 4:35-41` against the Douay-Rheims. All three happen to lose no words;
-   the same clamp against the Clementine's Psalms 115 and 147 destroys the
-   passage. **A defect harmless in one edition and destructive in another is the
-   kind that survives review.**
-2. **Numbering-system mismatch inside a chapter.** `Isaiah 9:5` against a
+1. **Numbering-system mismatch inside a chapter.** `Isaiah 9:5` against a
    Vulgate-numbered edition returns *garment mingled with blood*, not *For a
    CHILD IS BORN to us*. `Joel 3:1-5` returned *the valley of Josaphat*, not *I
-   will pour out my spirit*. Both resolved. Both counted as successes. These two
-   now have `citation_divergences` rows; roughly 23 comparable citations do not
-   and are listed in the postconciliar calendar's `open_collation_items`.
-3. **Currently shipping wrong.** `src/sources/bibles/clementine-vulgate/index.yaml`
-   holds `Psalm 115:10, 15, 16-17, 18-19: in atriis domus Domini, in medio tui,
-   Jerusalem.` — a four-part responsorial psalm reduced to one clause, and the
-   psalm's last clause rather than its first. The concordance is right (published
-   Vulgate data also numbers Psalm 115 to 19); the **Clementine is the departing
-   edition**, and there is no departure table to record that in.
-4. **Unrecorded edition divergences.** 13 of the 17 Douay/Clementine chapter
+   will pour out my spirit*. Both resolved. Both counted as successes. Twelve
+   books now carry `citation_divergences` rows; what is left after them is in
+   Open work below, and in the postconciliar calendar's `open_collation_items`.
+2. **The departing edition, now refusing rather than lying.** The Clementine
+   e-text numbers Psalm 115 to 10 and Psalm 147 to 9, where the concordance and
+   published Vulgate data run them to 19 and 20. Until the clamp was removed this
+   silently served `Psalm 115:10, 15, 16-17, 18-19` as one clause — a four-part
+   responsorial psalm reduced to the last words of the wrong end. It now refuses,
+   which is why the Clementine reports 12 unresolved against 3 for the Douay.
+   **A higher unresolved count is the honest number, not the worse one.** There
+   is still no departure table to record the divergence in.
+3. **Unrecorded edition divergences.** Most of the 17 Douay/Clementine chapter
    differences have no explaining alias row. The Clementine's
    `verse-aliases.tsv` is a header line and nothing else.
-5. **Unrecorded cross-edition shifts nothing currently cites.** The World English
+4. **Unrecorded cross-edition shifts nothing currently cites.** The World English
    Bible Catholic Edition's Daniel 14 is one verse ahead of the Vulgate's
    throughout (its 14:1 is Vulgate 13:65); no alias row records it. It is inert
    only because no tracked calendar cites Daniel 13 or 14. Do not add such a
    citation without adding the rows.
-6. **Unvalidated book indexes.** Six editions carry four different header lines.
+5. **Unvalidated book indexes.** Six editions carry four different header lines.
    The Clementine declares no `chapters`/`verses` columns at all, so its book
    index cannot be checked against its own text. No schema governs any of them
    and no gate validates them; the five that do declare counts happen to agree,
    by luck rather than enforcement.
-7. **The same citation string valid in two systems.** King James `2 Esdras 7:36`
+6. **The same citation string valid in two systems.** King James `2 Esdras 7:36`
    and Revised Version `2 Esdras 7:36` are unrelated text, 70 verses apart —
    the 1875 Bensly restoration. A bare system name is not a sufficient
    discriminator where two states of one tradition exist.
@@ -190,16 +186,21 @@ python3 tools/index-bible check --bible world-english-bible-catholic --verbose
 ```
 
 `check` is the default verb; a bare invocation reports drift rather than
-rewriting a tracked file. Current state: douay-rheims 2 unresolved,
-douay-rheims-american-1899 7, clementine-vulgate 8, world-english-bible-catholic
-53, king-james-version 64, revised-version-1895 68.
+rewriting a tracked file. Measured 31 July 2026: douay-rheims 3 unresolved,
+douay-rheims-american-1899 8, clementine-vulgate 12,
+world-english-bible-catholic 78, king-james-version 74, revised-version-1895 79.
+These rose when the clamp came out. A citation that used to be truncated into a
+neighbouring verse and counted as a success now refuses and is counted as one of
+these.
 
 **Does the alias table already explain a difference?**
 
 ```sh
 cat $DR/verse-aliases-*/verse-aliases.tsv   # 7 merged-verse rows
 cat $CV/verse-aliases-*/verse-aliases.tsv   # header only
-cat $KJ/verse-aliases-*/verse-aliases.tsv   # not-in-this-edition, numbering-not-recorded
+cat $KJ/verse-aliases-*/verse-aliases.tsv   # 317 renumbered rows derived from the
+                                            # deuterocanon concordance, plus 1594
+                                            # numbering-not-recorded refusals
 ```
 
 **Diff two editions' verse sets** — the derivation the repository does not yet
@@ -266,10 +267,10 @@ long because they were derived, not remembered.
   67 psalms carry an inscription row; the offset is one verse for 63 and **two**
   for four (Vulgate 50, 51, 53, 59). Both offsets apply at once: the *Miserere*
   is Vulgate 50:3 = Hebrew 51:3 = King James 51:1.
-- **15 psalms divide their bodies differently as well** and are flagged
-  `english_offset_uniform: no` — Hebrew 2, 4, 20, 29, 43, 44, 53, 56, 72, 100,
-  109, 126, 136, 146, 150. `english_verse` refuses for these. Do not apply the
-  head-of-psalm offset.
+- **16 psalms divide their bodies differently as well** and are flagged
+  `english_offset_uniform: no` — Hebrew 2, 4, 13, 20, 29, 43, 44, 53, 56, 72,
+  100, 109, 126, 136, 146, 150. `english_verse` refuses for these. Do not apply
+  the head-of-psalm offset.
 - **Beyond the psalter** (Nova Vulgata against every edition tracked here): Joel 4
   chapters vs 3; Malachi 3 vs 4; Isaiah 8 to v. 23 vs v. 22; Isaiah 64 with 11
   verses vs 12; Micah 4 to v. 14 vs v. 13. Resolutions:
@@ -303,6 +304,24 @@ long because they were derived, not remembered.
   Copenhagen Alliance mappings are CC BY-**SA** 4.0, which is a copyleft
   obligation this project's CC BY 4.0 grant does not carry.
 
+## The access boundary — do not re-run this search
+
+Searched 30 July 2026 and **not obtained: RNJB, NRSV, NABRE.** No authorised
+bulk source exists for any of them. `bible.usccb.org` blocks automated requests
+outright, and api.bible's terms forbid populating a local database whatever
+licence the text itself carries. Do not spend another session on these without a
+new source; record the boundary rather than working around it.
+
+Two consequences worth stating, because a later reader will otherwise re-derive
+them:
+
+- **The NABRE is the only English bible whose versification matches the
+  postconciliar citations.** Not having it means nothing tracked here witnesses
+  that numbering in English, which is why the postconciliar seam is settled
+  citation-by-citation against the printed Douay instead of from a concordance.
+- **The NRSV would not have helped.** It fails the same citations the Douay
+  does; it is textually wrong for this project, not merely unobtainable.
+
 ## When you find a divergence
 
 1. Establish which side is the departure by measuring both editions' printed
@@ -322,18 +341,44 @@ long because they were derived, not remembered.
 
 ## Open work — do not report as done
 
-- The clamp in `Bible.span` is unremoved.
-- ~23 postconciliar citations resolve to the wrong verses (Exodus 22, Hosea 2 and
-  6, Esther 4, Wisdom 6 and 11, Sirach 3, 27 and 35, Mark 9, John 6, Acts 14).
-  Recorded in the calendar's `open_collation_items`. Each needs its *source
-  system* settled first — several John 6 antiphons are already Vulgate-numbered
-  and correct while the John 6 readings beside them are not.
-- 11 psalm antiphons carry Vulgate numbers in a Hebrew-declared file. Listed
-  under `psalm_numbering_exceptions`; the calendar names the decision work as
-  TASK-32 (identifier used in comments, not in a tracked task ledger).
-- 13 Douay/Clementine differences have no explaining alias row; the Clementine's
-  alias table is empty.
-- No `verse-inventory` artifact, no book-index schema, no cross-edition
-  divergence register, no concordance beyond the psalter. All four are proposed
-  and unbuilt in `guidance/versification.md` §8; nothing in that document has
-  been implemented.
+Measured 31 July 2026. Re-measure before quoting any figure here.
+
+- **The Douay and the Clementine still disagree in 17 of their 1,334 shared
+  chapters, and most of it is unrecorded.** Three carry an explaining
+  `merged-verse` row in the Douay's alias table (2 Kings 13, Psalm 28, Amos 9)
+  and two more are the psalm splits the concordance owns (Psalms 115 and 147).
+  The rest have no row anywhere, and the Clementine's `verse-aliases.tsv` is
+  still a header line and nothing else.
+- **1 Thessalonians 4 and 2 Thessalonians 2 are the two that break live
+  citations.** The Douay e-text joins verses the Clementine prints separately, so
+  those chapter tails stand one number low: `1 Thessalonians 4:13-18` goes
+  unresolved and `2 Thessalonians 2:14` and `2:16-3:5` resolve to the wrong
+  verses, in the tracked Douay and in the Catholic Public Domain Version alike.
+  This is an edition fact, not a numbering divergence — the remedy is
+  `merged-verse` rows in each edition's own alias artifact.
+- **Sirach and John 6 mix two numbering systems inside one calendar.** Settling
+  the postconciliar citations showed that Sirach 15:16-21, 24:1-4 and 27:5-8 are
+  in the Vulgate's own numbering and needed no correction, while others in the
+  same file are not. Those loci are therefore `unrecorded` for a Greek-numbered
+  edition and cannot be served by one ruling while the mixture stands.
+  Normalizing them onto one system would return about twenty references to the
+  English indexes.
+- **Two beatitude citations cannot be told apart.** The `ot-4` Communion Antiphon
+  cites Matthew 5:3-4 and the Easter Vigil canticle Matthew 5:5-6, where the
+  Vulgate and the Nova Vulgata exchange the meek and those who mourn. Both
+  resolve to real beatitudes either way and the recorded incipit is too short to
+  say which was meant. Settle against the printed antiphon, not by reasoning.
+- **10 psalms, 19 loci, carry Vulgate numbers in a Hebrew-declared file.** Listed
+  under the postconciliar calendar's `psalm_numbering_exceptions`, which is
+  self-cleaning in both directions and is meant to empty.
+- **No `verse-inventory` artifact, no book-index schema, no cross-edition
+  divergence register.** All three are proposed and unbuilt in
+  `guidance/versification.md` §8. The fourth item that section proposes — a
+  concordance beyond the psalter — now exists for Esther, Sirach and Daniel as
+  the Douay's `deuterocanon-numbering` artifact, read by
+  `scripts/_deuterocanon.py`.
+
+Settled, so that a later reader does not re-open them: the clamp is gone from
+`Bible.span`, which now looks up every verse a range names and refuses rather
+than truncating, and consults the alias table before deciding a chapter is
+absent. `citation_divergences` has grown from four books to twelve.
