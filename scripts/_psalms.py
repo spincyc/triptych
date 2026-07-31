@@ -19,34 +19,64 @@ Chapter correspondence, Vulgate to Hebrew:
     147      Hebrew 147 (vv. 12-20)
     148-150  identical
 
-Verse numbering diverges too: the Vulgate commonly counts a psalm's title as
-its first verse, so a verse number may shift by one within a corresponding
-chapter. That offset is edition-dependent, so this module converts chapters and
-reports the verse relationship rather than silently renumbering verses.
+That table is documentation, not data. The module holds no correspondence of
+its own: every conversion, bound and split is read from the verse-level
+concordance the source library carries for the Douay-Rheims, which maps all
+2528 verses of the psalter one to one between the two systems. Deriving from
+one table rather than restating it in several is the point — the restated
+copies disagreed, and gave Hebrew 10 and 115 the last verse of the Vulgate
+psalm hosting them rather than their own.
+
+Verse numbers are those actually printed. Where the Vulgate keeps a psalm's
+pre-split numbering the concordance keeps it too, so Vulgate 115 runs 10-19 and
+is Hebrew 116:10-19 verse for verse, exactly as the editions print both. A
+converted reference therefore addresses its target edition directly and needs
+no realignment afterwards.
+
+The Vulgate commonly counts a psalm's title as its first verse where modern
+English versions leave it unnumbered. That offset is a property of the English
+convention rather than of either system here, and the concordance records it
+separately; it is not applied by these conversions.
 """
 
 from __future__ import annotations
 
+import csv
+from functools import lru_cache
+from pathlib import Path
+from typing import NamedTuple
+
 SYSTEMS = ("vulgate", "hebrew")
 PSALMS = "Psalms"
+LAST_PSALM = 150
 
-# Vulgate chapters that correspond to part of a Hebrew chapter, and vice versa.
-# Each entry maps a Vulgate chapter to (hebrew chapter, first verse, last verse)
-# of the Vulgate range it covers; None bounds mean the whole chapter.
-_VULGATE_SPLITS = {
-    9: ((9, 1, 21), (10, 22, 39)),
-    113: ((114, 1, 8), (115, 9, 26)),
-}
-_VULGATE_PARTIALS = {
-    114: (116, 1, 9),
-    115: (116, 10, 19),
-    146: (147, 1, 11),
-    147: (147, 12, 20),
-}
+# The verse-level concordance, tracked as an artifact of the edition it was
+# compiled from and against. It is a Triptych-created reference table of
+# numbering alone, carrying no scripture text.
+CONCORDANCE_ROOT = (
+    Path(__file__).resolve().parents[1]
+    / "src" / "sources" / "works" / "english-college-of-douay" / "douay-rheims-bible"
+    / "editions" / "challoner-gutenberg-1581" / "artifacts"
+)
+CONCORDANCE_GLOB = "psalm-numbering-*/psalm-numbering.tsv"
 
 
 class NumberingError(ValueError):
     """A psalm reference cannot be converted without more information."""
+
+
+class PsalterUnavailable(RuntimeError):
+    """The concordance is missing or malformed, so nothing can be converted."""
+
+
+class Segment(NamedTuple):
+    """One run of verses that both systems number without interruption."""
+
+    chapter: int
+    first: int
+    last: int
+    other_chapter: int
+    other_first: int
 
 
 def _check(system: str) -> str:
@@ -55,55 +85,133 @@ def _check(system: str) -> str:
     return system
 
 
+def _bounds(field: str) -> tuple[int, int] | None:
+    """A `12` or `12-20` cell as a verse range; the English-only cells are not."""
+    text = field.strip()
+    if not text or not text[0].isdigit():
+        return None
+    low, _, high = text.partition("-")
+    return int(low), int(high or low)
+
+
+@lru_cache(maxsize=1)
+def _concordance() -> dict[str, dict[int, tuple[Segment, ...]]]:
+    """Every verse of the psalter, keyed by system and chapter.
+
+    The table is validated as it is read rather than trusted: both sides of a
+    row must run the same length, and each system must cover all 150 psalms
+    without a gap or an overlap. A concordance that failed those tests could
+    convert a reference into a plausible wrong verse silently.
+    """
+    found = sorted(CONCORDANCE_ROOT.glob(CONCORDANCE_GLOB))
+    if len(found) != 1:
+        raise PsalterUnavailable(
+            f"expected one psalm concordance under {CONCORDANCE_ROOT}, found {len(found)}"
+        )
+    rows: dict[str, list[Segment]] = {system: [] for system in SYSTEMS}
+    with found[0].open(encoding="utf-8", newline="") as handle:
+        for line, row in enumerate(csv.DictReader(handle, delimiter="\t"), start=2):
+            vulgate = _bounds(row["vulgate_verses"])
+            hebrew = _bounds(row["hebrew_verses"])
+            if vulgate is None or hebrew is None:
+                raise PsalterUnavailable(f"{found[0]}:{line}: a psalm row without both systems")
+            if vulgate[1] - vulgate[0] != hebrew[1] - hebrew[0]:
+                raise PsalterUnavailable(
+                    f"{found[0]}:{line}: the two systems disagree on how many verses this is"
+                )
+            here = int(row["vulgate_psalm"]), int(row["hebrew_psalm"])
+            rows["vulgate"].append(Segment(here[0], *vulgate, here[1], hebrew[0]))
+            rows["hebrew"].append(Segment(here[1], *hebrew, here[0], vulgate[0]))
+    return {system: _by_chapter(found[0], system, rows[system]) for system in SYSTEMS}
+
+
+def _by_chapter(path: Path, system: str, segments: list[Segment]) -> dict[int, tuple[Segment, ...]]:
+    table: dict[int, list[Segment]] = {}
+    for segment in segments:
+        table.setdefault(segment.chapter, []).append(segment)
+    missing = [c for c in range(1, LAST_PSALM + 1) if c not in table]
+    if missing or len(table) != LAST_PSALM:
+        raise PsalterUnavailable(f"{path}: the {system} psalter is missing psalms {missing}")
+    for chapter, found in table.items():
+        found.sort(key=lambda segment: segment.first)
+        for earlier, later in zip(found, found[1:]):
+            if later.first != earlier.last + 1:
+                raise PsalterUnavailable(
+                    f"{path}: {system} Psalm {chapter} is not continuous at verse {later.first}"
+                )
+    return {chapter: tuple(found) for chapter, found in table.items()}
+
+
+def _segments(chapter: int, system: str) -> tuple[Segment, ...]:
+    found = _concordance()[_check(system)].get(chapter)
+    if found is None:
+        raise NumberingError(f"Psalm {chapter} is outside the psalter")
+    return found
+
+
+def _targets(chapter: int, system: str) -> tuple[int, ...]:
+    """The chapters this one corresponds to in the other system, in order."""
+    seen: list[int] = []
+    for segment in _segments(chapter, system):
+        if segment.other_chapter not in seen:
+            seen.append(segment.other_chapter)
+    return tuple(seen)
+
+
+def _extent(chapter: int, system: str) -> tuple[int, int]:
+    found = _segments(chapter, system)
+    return found[0].first, found[-1].last
+
+
+def _other(system: str) -> str:
+    return "hebrew" if _check(system) == "vulgate" else "vulgate"
+
+
+def _describe(chapter: int, system: str, target: int) -> str:
+    """How much of `target` this chapter accounts for, where it is only part."""
+    covered = [s for s in _segments(chapter, system) if s.other_chapter == target]
+    low = min(s.other_first for s in covered)
+    high = max(s.other_first + (s.last - s.first) for s in covered)
+    other = _other(system)
+    if _extent(target, other) == (low, high):
+        return f"{system} {chapter} is part of {other} {target}"
+    return f"{system} {chapter} is {other} {target}:{low}-{high}"
+
+
+def _convert_chapter(chapter: int, system: str, verse: int | None) -> tuple[int, str]:
+    """Convert a chapter, using `verse` only to choose between targets."""
+    targets = _targets(chapter, system)
+    other = _other(system)
+    if len(targets) == 1:
+        target = targets[0]
+        if len(_targets(target, other)) > 1:
+            # This chapter is only part of the one it maps to.
+            return target, _describe(chapter, system, target)
+        return target, ""
+    if verse is None:
+        options = ", ".join(str(target) for target in targets)
+        raise NumberingError(
+            f"{system.capitalize()} Psalm {chapter} splits into {other.capitalize()} "
+            f"{options}; a verse is needed to choose"
+        )
+    for segment in _segments(chapter, system):
+        if segment.first <= verse <= segment.last:
+            return (
+                segment.other_chapter,
+                f"{system.capitalize()} {chapter}:{verse} falls in "
+                f"{other.capitalize()} {segment.other_chapter}",
+            )
+    raise NumberingError(f"{system} Psalm {chapter}:{verse} is outside the psalm")
+
+
 def vulgate_to_hebrew(chapter: int, verse: int | None = None) -> tuple[int, str]:
     """Return the Hebrew chapter for a Vulgate one, plus any caveat."""
-    if chapter in _VULGATE_SPLITS:
-        for hebrew, low, high in _VULGATE_SPLITS[chapter]:
-            if verse is not None and low <= verse <= high:
-                return hebrew, f"Vulgate {chapter}:{verse} falls in Hebrew {hebrew}"
-        options = ", ".join(str(h) for h, _, _ in _VULGATE_SPLITS[chapter])
-        raise NumberingError(
-            f"Vulgate Psalm {chapter} splits into Hebrew {options}; a verse is needed to choose"
-        )
-    if chapter in _VULGATE_PARTIALS:
-        hebrew, low, high = _VULGATE_PARTIALS[chapter]
-        return hebrew, f"Vulgate {chapter} is Hebrew {hebrew}:{low}-{high}"
-    if 10 <= chapter <= 112 or 116 <= chapter <= 145:
-        return chapter + 1, ""
-    if 1 <= chapter <= 8 or 148 <= chapter <= 150:
-        return chapter, ""
-    raise NumberingError(f"Psalm {chapter} is outside the psalter")
+    return _convert_chapter(chapter, "vulgate", verse)
 
 
 def hebrew_to_vulgate(chapter: int, verse: int | None = None) -> tuple[int, str]:
     """Return the Vulgate chapter for a Hebrew one, plus any caveat."""
-    if chapter in (9, 10):
-        return 9, f"Hebrew {chapter} is part of Vulgate 9"
-    if chapter in (114, 115):
-        return 113, f"Hebrew {chapter} is part of Vulgate 113"
-    if chapter == 116:
-        if verse is None:
-            raise NumberingError(
-                "Hebrew Psalm 116 splits into Vulgate 114 and 115; a verse is needed to choose"
-            )
-        return (114, "Hebrew 116:1-9 is Vulgate 114") if verse <= 9 else (
-            115,
-            "Hebrew 116:10-19 is Vulgate 115",
-        )
-    if chapter == 147:
-        if verse is None:
-            raise NumberingError(
-                "Hebrew Psalm 147 splits into Vulgate 146 and 147; a verse is needed to choose"
-            )
-        return (146, "Hebrew 147:1-11 is Vulgate 146") if verse <= 11 else (
-            147,
-            "Hebrew 147:12-20 is Vulgate 147",
-        )
-    if 11 <= chapter <= 113 or 117 <= chapter <= 146:
-        return chapter - 1, ""
-    if 1 <= chapter <= 8 or 148 <= chapter <= 150:
-        return chapter, ""
-    raise NumberingError(f"Psalm {chapter} is outside the psalter")
+    return _convert_chapter(chapter, "hebrew", verse)
 
 
 def convert_chapter(chapter: int, source: str, target: str, verse: int | None = None):
@@ -112,9 +220,7 @@ def convert_chapter(chapter: int, source: str, target: str, verse: int | None = 
     _check(target)
     if source == target:
         return chapter, ""
-    if source == "vulgate":
-        return vulgate_to_hebrew(chapter, verse)
-    return hebrew_to_vulgate(chapter, verse)
+    return _convert_chapter(chapter, source, verse)
 
 
 def convert_reference(book: str, chapter: int, source: str, target: str, verse=None):
@@ -124,61 +230,30 @@ def convert_reference(book: str, chapter: int, source: str, target: str, verse=N
     return convert_chapter(chapter, source, target, verse)
 
 
-# Where one system's psalm is part of another's, the part restarts its own
-# verse numbering: Hebrew 116:10 is Vulgate 115:1, so the verse shifts by the
-# length of the preceding part. Keyed by (source, target, source chapter) to
-# (target chapter, verse delta), applied when the source verse is in range.
-_POINT_MAP = {
-    ("vulgate", "hebrew"): {
-        9: (((1, 21), 9, 0), ((22, None), 10, -21)),
-        113: (((1, 8), 114, 0), ((9, None), 115, -8)),
-        114: (((1, None), 116, 0),),
-        115: (((1, None), 116, +9),),
-        146: (((1, None), 147, 0),),
-        147: (((1, None), 147, +11),),
-    },
-    ("hebrew", "vulgate"): {
-        9: (((1, None), 9, 0),),
-        10: (((1, None), 9, +21),),
-        114: (((1, None), 113, 0),),
-        115: (((1, None), 113, +8),),
-        116: (((1, 9), 114, 0), ((10, None), 115, -9)),
-        147: (((1, 11), 146, 0), ((12, None), 147, -11)),
-    },
-}
-
-
 def convert_point(chapter: int, verse: int | None, source: str, target: str):
-    """Convert one chapter:verse point. Returns (chapter, verse, caveat)."""
+    """Convert one chapter:verse point. Returns (chapter, verse, caveat).
+
+    Unlike the chapter functions, a verse given here is converted and so must
+    exist: it selects text, and a verse outside its psalm cannot.
+    """
     _check(source)
     _check(target)
     if source == target:
         return chapter, verse, ""
-    table = _POINT_MAP[(source, target)].get(chapter)
-    if table is None:
-        converted, note = convert_chapter(chapter, source, target, verse)
-        return converted, verse, note
-    for (low, high), target_chapter, delta in table:
-        if verse is None:
-            if len(table) > 1:
-                raise NumberingError(
-                    f"{source} Psalm {chapter} divides in {target}; a verse is needed to choose"
-                )
-            return target_chapter, None, f"{source} {chapter} is part of {target} {target_chapter}"
-        if verse >= low and (high is None or verse <= high):
-            shifted = verse + delta
+    if verse is None:
+        converted, note = _convert_chapter(chapter, source, None)
+        return converted, None, note
+    for segment in _segments(chapter, source):
+        if segment.first <= verse <= segment.last:
+            moved = segment.other_first + (verse - segment.first)
             note = ""
-            if delta or len(table) > 1:
-                note = f"{source} {chapter}:{verse} is {target} {target_chapter}:{shifted}"
-            return target_chapter, shifted, note
+            if segment.other_chapter != chapter or moved != verse:
+                note = (
+                    f"{source} {chapter}:{verse} is {target} "
+                    f"{segment.other_chapter}:{moved}"
+                )
+            return segment.other_chapter, moved, note
     raise NumberingError(f"{source} Psalm {chapter}:{verse} is outside the psalm")
-
-
-def _first_part_bound(chapter: int, system: str) -> int | None:
-    """Last verse of the first part where a psalm divides in the other system."""
-    if system == "vulgate":
-        return {9: 21, 113: 8}.get(chapter)
-    return {116: 9, 147: 11}.get(chapter)
 
 
 def convert_range(
@@ -188,13 +263,8 @@ def convert_range(
 
     A range is the unit the calendar data actually stores, and it is the unit
     that can cross a boundary: Hebrew 116:8-12 is Vulgate 114:8-9 plus
-    115:1-3. Returning ranges rather than a bare chapter keeps that expressible
-    and stops every caller reassembling it differently.
-
-    Verse numbers are carried through unchanged. The Vulgate commonly counts a
-    psalm's title as its first verse, so a verse may sit one off within the
-    corresponding chapter; that offset is edition-dependent and is reported as
-    a caveat rather than guessed.
+    115:10-12. Returning ranges rather than a bare chapter keeps that
+    expressible and stops every caller reassembling it differently.
     """
     _check(source)
     _check(target)
@@ -210,65 +280,107 @@ def convert_range(
             "convert each chapter separately"
         )
 
+    if start_verse is None or stop_verse is None:
+        # A whole chapter, or an open end: there is no verse to divide on, so
+        # the chapter conversion decides and any caveat it raises stands.
+        chapter, note = _convert_chapter(start_chapter, source, start_verse or stop_verse)
+        moved = {
+            "begin": {**begin, "chapter": chapter},
+            "end": {**end, "chapter": chapter},
+        }
+        return [moved], [note] if note else []
+
+    pieces: list[dict] = []
     caveats: list[str] = []
-    bound = _first_part_bound(start_chapter, source)
-    if bound is not None and start_verse is not None and stop_verse is not None:
-        if start_verse <= bound < stop_verse:
-            # The range crosses where this psalm divides, so it becomes two,
-            # each carrying the verse numbering of its own target chapter.
-            lo_c, lo_v, lo_note = convert_point(start_chapter, start_verse, source, target)
-            _, lo_end, _ = convert_point(start_chapter, bound, source, target)
-            hi_c, hi_v, hi_note = convert_point(start_chapter, bound + 1, source, target)
-            _, hi_end, _ = convert_point(start_chapter, stop_verse, source, target)
-            caveats = [n for n in (lo_note, hi_note) if n]
-            caveats.append(
-                f"{source} {start_chapter}:{start_verse}-{stop_verse} divides across "
-                f"{target} {lo_c} and {hi_c}"
-            )
-            return (
-                [
-                    {"begin": {"chapter": lo_c, "verse": lo_v},
-                     "end": {"chapter": lo_c, "verse": lo_end}},
-                    {"begin": {"chapter": hi_c, "verse": hi_v},
-                     "end": {"chapter": hi_c, "verse": hi_end}},
-                ],
-                caveats,
-            )
+    for segment in _segments(start_chapter, source):
+        low = max(start_verse, segment.first)
+        high = min(stop_verse, segment.last)
+        if low > high:
+            continue
+        shift = segment.other_first - segment.first
+        # Anything the endpoints carry beyond the locus — a verse-part letter,
+        # say — belongs to the endpoint it was written on. Where a range
+        # divides, the interior ends are new and carry nothing.
+        opens = begin if low == start_verse else {}
+        closes = end if high == stop_verse else {}
+        pieces.append(
+            {
+                "begin": {**opens, "chapter": segment.other_chapter, "verse": low + shift},
+                "end": {**closes, "chapter": segment.other_chapter, "verse": high + shift},
+            }
+        )
+    if not pieces:
+        raise NumberingError(
+            f"{source} Psalm {start_chapter}:{start_verse}-{stop_verse} is outside the psalm"
+        )
+    # The concordance segments a psalm wherever the two systems account for it
+    # differently — around an inscription, say — and a range crossing such a
+    # seam comes back as two pieces that abut. Rejoin those: the seam is an
+    # artefact of the table, not a break in the passage. Pieces that land in
+    # different chapters, or that leave a gap, are a real division and stay
+    # apart, which is what keeps a deliberately disjoint citation disjoint.
+    joined = [pieces[0]]
+    for piece in pieces[1:]:
+        last = joined[-1]
+        abuts = (
+            piece["begin"]["chapter"] == last["end"]["chapter"]
+            and piece["begin"]["verse"] == last["end"]["verse"] + 1
+        )
+        if abuts:
+            joined[-1] = {"begin": last["begin"], "end": piece["end"]}
+        else:
+            joined.append(piece)
+    pieces = joined
+    if len(pieces) > 1:
+        landed = ", ".join(str(piece["begin"]["chapter"]) for piece in pieces)
+        caveats.append(
+            f"{source} {start_chapter}:{start_verse}-{stop_verse} divides across "
+            f"{target} {landed}"
+        )
+    else:
+        _, _, note = convert_point(start_chapter, start_verse, source, target)
+        if note:
+            caveats.append(note)
+    return pieces, caveats
 
-    begin_chapter, begin_verse, begin_note = convert_point(
-        start_chapter, start_verse, source, target
-    )
-    end_chapter, end_verse, _ = convert_point(start_chapter, stop_verse, source, target)
-    if begin_note:
-        caveats.append(begin_note)
-    return (
-        [
-            {**{"begin": {**begin, "chapter": begin_chapter, "verse": begin_verse}},
-             "end": {**end, "chapter": end_chapter, "verse": end_verse}}
-        ],
-        caveats,
-    )
+
+def psalm_extent(chapter: int, system: str) -> tuple[int, int] | None:
+    """The first and last verse Psalm `chapter` has in `system`.
+
+    The first is not always 1: where the Vulgate keeps a pre-split numbering it
+    prints Psalm 115 as verses 10-19 and Psalm 147 as 12-20.
+    """
+    _check(system)
+    if not isinstance(chapter, int) or not 1 <= chapter <= LAST_PSALM:
+        return None
+    return _extent(chapter, system)
 
 
-# Highest verse in each psalm that divides, per system. A reference beyond its
-# system's bound is a numbering leak: Hebrew 9 ends at 21 where Vulgate 9 runs
-# to 39, so `Psalm 9:39` in a Hebrew-declared calendar is citing the Vulgate.
-_VERSE_CEILING = {
-    "vulgate": {9: 39, 113: 26, 114: 9, 115: 19, 146: 11, 147: 20},
-    "hebrew": {9: 21, 10: 39, 114: 8, 115: 26, 116: 19, 147: 20},
-}
-LAST_PSALM = 150
+def psalm_ceiling(chapter: int, system: str) -> int | None:
+    """The last verse Psalm `chapter` has in `system`, or None if unknown."""
+    extent = psalm_extent(chapter, system)
+    return None if extent is None else extent[1]
 
 
 def validate_psalm(chapter: int, verse: int | None, system: str) -> str:
-    """Return a problem describing an impossible psalm reference, or ''."""
+    """Return a problem describing an impossible psalm reference, or ''.
+
+    Every psalm is bounded, not only the six that divide, so a reference like
+    `Psalm 118:137` in a Hebrew-declared calendar is caught: Hebrew 118 ends at
+    29, and only the Vulgate's 118 runs to 176.
+    """
     _check(system)
     if not isinstance(chapter, int) or not 1 <= chapter <= LAST_PSALM:
         return f"Psalm {chapter} is outside the psalter (1-{LAST_PSALM})"
-    ceiling = _VERSE_CEILING.get(system, {}).get(chapter)
-    if verse is not None and ceiling is not None and verse > ceiling:
+    first, last = _extent(chapter, system)
+    if verse is not None and verse > last:
         return (
             f"Psalm {chapter}:{verse} exceeds {system} Psalm {chapter}, "
-            f"which ends at verse {ceiling}"
+            f"which ends at verse {last}"
+        )
+    if verse is not None and verse < first:
+        return (
+            f"Psalm {chapter}:{verse} precedes {system} Psalm {chapter}, "
+            f"which begins at verse {first}"
         )
     return ""

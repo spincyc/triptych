@@ -65,11 +65,15 @@ bible: Psalms 15:11, 17:19-20, 24:16 and 18, 28:10-11, 30:20, 32:18-19,
 number while responsorial psalms use the Lectionary's. The file-level
 declaration may need to become per-slot.
 
-**The psalter bounds check is too narrow to catch them.** `validate_psalm` in
-`scripts/_psalms.py` holds verse ceilings only for the six psalms that divide
-between the systems, so `Psalm 118:137` passes although Hebrew 118 ends at 29.
-Full Vulgate verse counts can be derived from the tracked Challoner edition
-rather than typed by hand, and Hebrew references validated by converting first.
+**The psalter bounds check now catches them.** `validate_psalm` in
+`scripts/_psalms.py` used to hold verse ceilings for the six psalms that divide
+between the systems and no others, so `Psalm 118:137` passed although Hebrew 118
+ends at 29. Every psalm is bounded now, from the verse-level concordance tracked
+with the Challoner edition rather than from a typed table; the two ceilings that
+were typed wrong — Hebrew 10 and 115 carried the last verse of the Vulgate psalm
+hosting them — went with it. All eleven references above are reported by
+`check-calendar-masses`, by `index-bible` as unresolved, and by
+`commentary-work-index` as unconvertible.
 
 **Two references cannot resolve for upstream reasons.** `4 Esdras 2:36-37` is
 not among the Douay-Rheims' 73 books, and `Malachi 3:19-20a` is Hebrew

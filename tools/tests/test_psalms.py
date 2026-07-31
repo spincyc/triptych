@@ -244,6 +244,89 @@ class InvalidInputTests(unittest.TestCase):
                     convert_chapter(chapter, "hebrew", "vulgate")
 
 
+class VerseBoundTests(unittest.TestCase):
+    """Every psalm is bounded, so a reference carried in the wrong system is
+    caught by its verse number rather than passing as a plausible one."""
+
+    def test_the_whole_psalter_is_bounded_in_both_systems(self) -> None:
+        for system in _psalms.SYSTEMS:
+            for chapter in range(1, _psalms.LAST_PSALM + 1):
+                with self.subTest(system=system, chapter=chapter):
+                    self.assertIsInstance(_psalms.psalm_ceiling(chapter, system), int)
+
+    def test_the_vulgate_bounds_are_those_the_editions_print(self) -> None:
+        # The two psalms the Vulgate prints under a pre-split numbering.
+        self.assertEqual(_psalms.psalm_ceiling(115, "vulgate"), 19)
+        self.assertEqual(_psalms.psalm_ceiling(147, "vulgate"), 20)
+        self.assertEqual(_psalms.psalm_ceiling(118, "vulgate"), 176)
+        self.assertIn("precedes", _psalms.validate_psalm(115, 9, "vulgate"))
+
+    def test_a_hebrew_reference_beyond_its_psalm_is_reported(self) -> None:
+        # Psalm 118 is the long one only in the Vulgate; Hebrew 118 ends at 29.
+        problem = _psalms.validate_psalm(118, 137, "hebrew")
+        self.assertIn("ends at verse 29", problem)
+        self.assertEqual(_psalms.validate_psalm(118, 137, "vulgate"), "")
+
+    def test_a_hebrew_psalm_ends_where_its_vulgate_host_divides(self) -> None:
+        """Vulgate 9 runs to 39, but Hebrew 9 stops at 21 and Hebrew 10 at 18;
+        a bound taken from the host would pass both of the references below."""
+        self.assertEqual(_psalms.psalm_ceiling(9, "hebrew"), 21)
+        self.assertEqual(_psalms.psalm_ceiling(10, "hebrew"), 18)
+        self.assertEqual(_psalms.psalm_ceiling(9, "vulgate"), 39)
+        self.assertNotEqual(_psalms.validate_psalm(9, 22, "hebrew"), "")
+        self.assertNotEqual(_psalms.validate_psalm(10, 19, "hebrew"), "")
+
+    def test_the_concordance_matches_the_tracked_verse_text(self) -> None:
+        """The lookup table is numbering, and the verse text is scripture; if
+        they ever disagree the table is describing a psalter no edition has."""
+        import collections
+        import csv
+
+        artifacts = (
+            ROOT / "src/sources/works/english-college-of-douay/douay-rheims-bible"
+            "/editions/challoner-gutenberg-1581/artifacts"
+        )
+        found = sorted(artifacts.glob("verse-text-*-psalms-*/*.tsv"))
+        self.assertEqual(len(found), 1)
+        printed: dict[int, set[int]] = collections.defaultdict(set)
+        with found[0].open(encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                printed[int(row["chapter"])].add(int(row["verse"]))
+        self.assertEqual(sum(len(verses) for verses in printed.values()), 2528)
+        for chapter, verses in printed.items():
+            with self.subTest(chapter=chapter):
+                first, last = min(verses), max(verses)
+                self.assertEqual(_psalms.psalm_ceiling(chapter, "vulgate"), last)
+                self.assertEqual(_psalms.validate_psalm(chapter, first, "vulgate"), "")
+                self.assertNotEqual(_psalms.validate_psalm(chapter, last + 1, "vulgate"), "")
+
+    def test_every_verse_converts_and_returns(self) -> None:
+        """The table is a bijection, so a round trip is the identity on all
+        2528 verses; nothing is dropped at a join and nothing doubles up."""
+        seen: set[tuple[int, int]] = set()
+        for chapter in range(1, _psalms.LAST_PSALM + 1):
+            first, last = _psalms.psalm_extent(chapter, "vulgate")
+            for verse in range(first, last + 1):
+                hebrew = _psalms.convert_point(chapter, verse, "vulgate", "hebrew")
+                self.assertNotIn(hebrew[:2], seen)
+                seen.add(hebrew[:2])
+                back = _psalms.convert_point(hebrew[0], hebrew[1], "hebrew", "vulgate")
+                self.assertEqual(back[:2], (chapter, verse))
+        self.assertEqual(len(seen), 2528)
+
+    def test_a_psalm_outside_the_psalter_is_reported(self) -> None:
+        for chapter in (0, 151, "24", None):
+            with self.subTest(chapter=chapter):
+                self.assertIn("outside the psalter", _psalms.validate_psalm(chapter, 1, "vulgate"))
+
+    def test_a_reference_without_a_verse_is_not_rejected(self) -> None:
+        self.assertEqual(_psalms.validate_psalm(118, None, "hebrew"), "")
+
+    def test_an_unknown_system_raises(self) -> None:
+        with self.assertRaises(NumberingError):
+            _psalms.validate_psalm(24, 1, "septuagint")
+
+
 class RoundTripTests(unittest.TestCase):
     """Converting out and back returns the original chapter, except where the
     systems genuinely lose information at a merge boundary."""
