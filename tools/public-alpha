@@ -2291,10 +2291,19 @@ def verify_web_data(output: Path) -> list[str]:
         except ReleaseError as exc:
             errors.append(str(exc))
     for bible_id, numbering in sorted(offered.items()):
+        # An edition may legitimately not hold a book at all: the King James
+        # and the World English print the Greek additions to Esther and Daniel
+        # as separate books, so neither has an Esther 11-16 to ship. That is a
+        # canon divergence the page reports, not a fragment that failed to copy.
+        # The repository is the authority on what the edition holds, so a
+        # chapter it has and the artifact lacks is still a defect — asking the
+        # artifact would let a lost book excuse its own absence.
+        source_chapters = ROOT / BIBLE_SOURCE_ROOT_RELATIVE / bible_id / BIBLE_FRAGMENT_DIRECTORY
         missing = sorted(
             f"{token} {chapter}"
             for token, chapter in loci.get(numbering, set())
-            if (
+            if (source_chapters / token / f"{chapter}.json").is_file()
+            and (
                 SITE_DATA_ROOT / bible_id / BIBLE_FRAGMENT_DIRECTORY / token / f"{chapter}.json"
             ).as_posix()
             not in actual

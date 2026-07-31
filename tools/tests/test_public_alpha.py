@@ -974,7 +974,7 @@ class PublicAlphaTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         expected = {
             "white": ("☧", "✠"),
-            "gold": ("Α", "Ω"),
+            "gold": ("α", "ω"),
             "red": ("℣", "℟"),
             "green": ("❦", "✣"),
             "violet": ("✦", "❖"),
