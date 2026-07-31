@@ -30,11 +30,24 @@ distinguished from one nobody looked at, and so that a page can say that no
 English is recorded rather than showing Latin as though it were the answer.
 """
 verification = """
-Unverified. Every English text here was read out of an optical-character-
-recognition text layer and has been collated against nothing. Page images were
-not rendered or inspected, and no printed page or leaf is recorded for any
-entry; establishing those from the Internet Archive item's page-number map is
-the first step of any collation.
+Partly collated. Of the 160 entries, 99 carry `printed_page`, `ia_leaf`,
+`collated` and `collation_result`: those were read against the page images of
+Internet Archive item romanmissaltran00churgoog, the same 1861 printing this
+file quotes, at
+`https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg`
+on 2026-07-31. 61 were confirmed as printed and 38 were corrected against the
+page. The remaining 61 entries carry no such keys: they have still been read
+out of an optical-character-recognition text layer and collated against
+nothing, and must be treated as unverified.
+
+The 99 were not chosen at random. They are every entry that disagreed with the
+project's independent transcription of the same book (the artifact
+temporal-orations-en registered on this edition), plus a seeded random sample
+of the entries that agreed with it, plus every further oration that happened to
+be printed on a page opened for one of those two reasons. That sampling is
+biased towards the loci most likely to be wrong, so the measured 38 per cent
+correction rate over the collated set is an upper bound on the error rate of
+the file as a whole, not an estimate of it.
 
 The alignment of each oration to its mass was settled by reading the English
 against the Latin the calendar carries. That is a judgement and not a
@@ -42,10 +55,18 @@ collation, and it was necessary: the book abbreviates its Latin incipits, dozens
 of orations open `Deus qui`, and the scan damages italic worst of all, so
 matching on incipits alone produced confident wrong answers. Where the scan lost
 a part label, two masses share one block; those cases are named in the entries
-that depend on them.
+that depend on them. The page collation confirmed the alignment wherever it
+opened a page, because the 1861 headings are visible there, but it did not
+re-derive the alignment of the 61 uncollated entries.
 
-Treat every text here as a lead of the same standing as the Latin beside it in
-propers.yaml, whose own `verification` field says the same of itself.
+`printed_page` and `ia_leaf` were taken from the sibling temporal-orations-en
+transcription and independently confirmed by the page actually opening on the
+oration named. Where an oration runs over a page break it is filed at the page
+where it begins, and the following leaf was read as well.
+
+Treat every entry without a `collated` key as a lead of the same standing as
+the Latin beside it in propers.yaml, whose own `verification` field says the
+same of itself.
 """
 corrections = """
 The retained English is not a diplomatic transcription. Optical damage to
@@ -57,6 +78,77 @@ oration was completed from another source. Two extents that the general rules
 cut in the wrong place were restored by rereading the text layer at those two
 points, and are marked `boundary_restored`. Where the scan broke off mid-clause
 the oration is recorded as untranslated rather than mended.
+
+On 2026-07-31 a further 38 entries were corrected from the page images rather
+than from the text layer, and are marked `collation_result = "corrected"`. The
+damage that collation found was of four kinds: letter substitutions the earlier
+substitution table had missed (`eterna]`, `Lard`, `tliese`, `aud`, `humiliauon`,
+`draw iown`, `mertiful`, `wliat`, `G Lord`, `grent`); one word read as another
+(`the attacks of the evil` for the printed `devil`, `all committed offences`
+for the printed `all their offences`, `has ted` for the printed `has granted`);
+two orations truncated mid-clause where the earlier rules had cut them (`to
+him, who.` and `Grant we humbly be.`); and, most often, a terminal full stop
+turned into a comma or dropped before the abbreviated conclusion. Nothing was
+supplied that the page does not print, and where the page prints no conclusion
+none was added.
+
+The page also settled three readings in the other direction, against the
+sibling temporal-orations-en transcription, and those entries are marked
+`collation_result = "confirmed; the sibling ... is wrong"`. The 1861 book does
+not always print `Thro'.`: at Quinquagesima's postcommunion it prints no
+conclusion at all, at Quinquagesima's collect it prints `adversity Thro'.` with
+no stop after `adversity`, and at Easter Sunday's postcommunion, Pentecost's
+collect and Pentecost's postcommunion it prints the conclusion out in full
+(`Thro'-in the unity of the Holy Ghost.` and the like). Those are reproduced as
+printed here.
+"""
+
+sibling_transcription = """
+This file is the second English transcription of the 1861 Cummiskey missal in
+the repository. The first is the artifact
+
+  artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en
+
+whose 183 rows cover the same temporal orations, carry a `printed_page` and
+`ia_leaf` per row, and are cited by 84 passage records and by the
+`source-bindings.toml` of several tracked documents. Neither transcription is
+derived from the other: both were read independently out of the same Internet
+Archive text layer, and on 2026-07-31 they disagreed at 45 of the 153 orations
+they both carry. The page collation recorded above settled every one of those
+45. The artifact was right at 37 of them and this file was right at 8. This
+file has been corrected; the artifact has not, because its bytes are pinned by
+sha256 in its own `artifact.toml`, in the `artifact_sha256` of all 84 passage
+records, and in the prose of at least one tracked document, so correcting it is
+a co-ordinated change and not a lane-local one.
+
+The eight rows of the artifact that the page images contradict, with the
+printed reading, are:
+
+  advent-4 collect (p. 69, n79)        `may hasten, what is delayed` - the
+                                       artifact drops the printed comma
+  quinquagesima collect (p. 111, n121) `all adversity Thro'.` - the artifact
+                                       adds a full stop the page does not print
+  quinquagesima postcommunion          `defended from all adversity.` - the
+    (p. 113, n123)                     artifact appends a `Thro'.` that the
+                                       page does not print at all
+  easter-sunday postcommunion          `Thro'-in the unity of the Holy Ghost.`
+    (p. 332, n340)                     - the artifact truncates it to `Thro'.`
+  easter-5 postcommunion               `Grant, O Lord by the power` - the
+    (p. 357, n365)                     artifact inserts a comma after `Lord`
+  pentecost collect (p. 375, n383)     `Thro'-in the unity of the same, &c.` -
+                                       the artifact truncates it to `Thro'.`
+  pentecost postcommunion              `Thro' our Lord-in the unity of the
+    (p. 378, n386)                     same, &c.` - the artifact truncates it
+  pentecost-6 collect (p. 407, n415)   `an increase of religion that thou
+                                       mayest improve` - the artifact inserts a
+                                       semicolon after `religion`
+
+Six of the eight are the artifact normalising the book's conclusions where the
+book is not uniform, which its own `transformation` note says it did not do.
+Two transcriptions of one book will keep drifting; the standing rule is one
+derived table with no hand-typed restatement beside it, and this file is that
+restatement. It should end as `translations` inside propers.yaml derived from
+the artifact, not as a parallel reading of the same pages.
 """
 
 [[sources]]
@@ -91,13 +183,17 @@ form = ""
 proper = "Secret"
 incipit = "Haec sacra nos"
 witness = "cummiskey-1861"
+printed_page = "52"
+ia_leaf = 62
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Grant, O Lord, that these sacred mysteries may cleanse us by their powerful virtue, and bring us with greater purity to him, who.
+Grant, O Lord, that these sacred mysteries may cleanse us by their powerful virtue, and bring us with greater purity to him, who was the author and institutor of them. Thro'.
 """
 
 [[entries]]
@@ -106,6 +202,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Suscipiamus, Domine"
 witness = "cummiskey-1861"
+printed_page = "52"
+ia_leaf = 62
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -136,6 +236,10 @@ form = ""
 proper = "Secret"
 incipit = "Placare, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "55"
+ia_leaf = 65
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -151,13 +255,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Repleti cibo"
 witness = "cummiskey-1861"
+printed_page = "55"
+ia_leaf = 65
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Being filled, O Lord, with this spiritual food, we humbly -»eseech thee, to teach us, by partaking of this mystery, to despise earthly things, and to love such as are heavenly.
+Being filled, O Lord, with this spiritual food, we humbly beseech thee, to teach us, by partaking of this mystery, to despise earthly things, and to love such as are heavenly.
 """
 
 [[entries]]
@@ -166,13 +274,17 @@ form = ""
 proper = "Collect"
 incipit = "Aurem tuam"
 witness = "cummiskey-1861"
+printed_page = "56"
+ia_leaf = 66
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Bend thine ear, € Lord, we beseech thee, to our prayers, and enlight en the darkness of our minds by the grace of thy visitation. Who livest.
+Bend thine ear, O Lord, we beseech thee, to our prayers, and enlighten the darkness of our minds by the grace of thy visitation. Who livest.
 """
 
 [[entries]]
@@ -181,6 +293,10 @@ form = ""
 proper = "Secret"
 incipit = "Devotionis nostrae"
 witness = "cummiskey-1861"
+printed_page = "57"
+ia_leaf = 67
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -196,6 +312,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Imploramus, Domine"
 witness = "cummiskey-1861"
+printed_page = "57"
+ia_leaf = 67
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -211,13 +331,17 @@ form = ""
 proper = "Collect"
 incipit = "Excita, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "69"
+ia_leaf = 79
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Exert, we beseech thee, O Lord, thy power, and come: and succour us by thy grent might: that by the assistance of thy grace, thy indulgent mercy may hasten, what is delayed by our sins. Who livest.
+Exert, we beseech thee, O Lord, thy power, and come: and succour us by thy great might: that by the assistance of thy grace, thy indulgent mercy may hasten, what is delayed by our sins. Who livest.
 """
 
 [[entries]]
@@ -256,13 +380,17 @@ form = ""
 proper = "Collect"
 incipit = "Omnipotens sempiterne Deus, dirige"
 witness = "cummiskey-1861"
+printed_page = "86"
+ia_leaf = 96
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O almighty and eternal God, regulate our actions according to thy divine will, that, in the name of thy beloved Son, we may abound in good works, Thro'.
+O almighty and eternal God, regulate our actions according to thy divine will, that, in the name of thy beloved Son, we may abound in good works. Thro'.
 """
 
 [[entries]]
@@ -301,13 +429,17 @@ form = ""
 proper = "Collect"
 incipit = "Omnipotens sempiterne Deus"
 witness = "cummiskey-1861"
+printed_page = "98"
+ia_leaf = 108
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O almighty and eterna] God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro'.
+O almighty and eternal God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro'.
 """
 
 [[entries]]
@@ -361,6 +493,10 @@ form = ""
 proper = "Secret"
 incipit = "Concede, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "101"
+ia_leaf = 111
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -376,6 +512,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Munera tua"
 witness = "cummiskey-1861"
+printed_page = "101"
+ia_leaf = 111
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -391,6 +531,10 @@ form = ""
 proper = "Collect"
 incipit = "Familiam tuam"
 witness = "cummiskey-1861"
+printed_page = "101"
+ia_leaf = 111
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -406,6 +550,10 @@ form = ""
 proper = "Secret"
 incipit = "Hostias tibi"
 witness = "cummiskey-1861"
+printed_page = "102"
+ia_leaf = 112
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -421,13 +569,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Quaesumus, omnipotens Deus"
 witness = "cummiskey-1861"
+printed_page = "102"
+ia_leaf = 112
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-We, beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
+We beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
 """
 
 [[entries]]
@@ -436,6 +588,10 @@ form = ""
 proper = "Collect"
 incipit = "Praesta, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "102"
+ia_leaf = 112
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -451,6 +607,10 @@ form = ""
 proper = "Secret"
 incipit = "Haec nos oblatio"
 witness = "cummiskey-1861"
+printed_page = "104"
+ia_leaf = 114
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -466,13 +626,17 @@ form = ""
 proper = "Collect"
 incipit = "Preces populi tui, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "104"
+ia_leaf = 114
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Mercifuly hear, we be seech thee, O Lard, the prayers of thy people: that we who are justly afflicted for our sins, may be mercifully delivered for the glory of thy name. Thro'.
+Mercifully hear, we beseech thee, O Lord, the prayers of thy people: that we who are justly afflicted for our sins, may be mercifully delivered for the glory of thy name. Thro'.
 """
 
 [[entries]]
@@ -497,13 +661,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Fideles tui, Deus"
 witness = "cummiskey-1861"
+printed_page = "107"
+ia_leaf = 117
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-May thy faithful, O God, be strengthened by tliese thy mysteries; that receiving them, they may still desire them; aud desiring them may eternally receive them. Thro'.
+May thy faithful, O God, be strengthened by these thy mysteries; that receiving them, they may still desire them; and desiring them may eternally receive them. Thro'.
 """
 
 [[entries]]
@@ -512,6 +680,10 @@ form = ""
 proper = "Collect"
 incipit = "Deus, qui conspicis"
 witness = "cummiskey-1861"
+printed_page = "107"
+ia_leaf = 117
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -527,6 +699,10 @@ form = ""
 proper = "Secret"
 incipit = "Oblatum tibi, Domine"
 witness = "cummiskey-1861"
+printed_page = "94"
+ia_leaf = 104
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -557,6 +733,10 @@ form = ""
 proper = "Collect"
 incipit = "Preces nostras, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "111"
+ia_leaf = 121
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
 
 [[entries.translations]]
 lang = "en"
@@ -572,6 +752,10 @@ form = ""
 proper = "Secret"
 incipit = "Haec hostia, Domine"
 witness = "cummiskey-1861"
+printed_page = "113"
+ia_leaf = 123
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -587,6 +771,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Quaesumus, omnipotens Deus"
 witness = "cummiskey-1861"
+printed_page = "113"
+ia_leaf = 123
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
 boundary_restored = true
 
 [[entries.translations]]
@@ -603,13 +791,17 @@ form = ""
 proper = "Collect"
 incipit = "Deus, qui Ecclesiam tuam"
 witness = "cummiskey-1861"
+printed_page = "126"
+ia_leaf = 136
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O God, who purifiest thy Church by the yearly observation of Lent: grant that what thy children endeavour to obtain of thee by abstinence, they may put in execution by good works. Thro'.
+O God, who purifiest thy Church by the yearly observation of Lent: grant, that what thy children endeavour to obtain of thee by abstinence, they may put in execution by good works. Thro'.
 """
 
 [[entries]]
@@ -648,13 +840,17 @@ form = ""
 proper = "Collect"
 incipit = "Deus, qui conspicis"
 witness = "cummiskey-1861"
+printed_page = "146"
+ia_leaf = 156
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O God, who seest how destitute we are of all strength, preserve us both within and without, that our bodies may be free from all adversity, and our souls purified from all evil thoughts, Thro'.
+O God, who seest how destitute we are of all strength, preserve us both within and without, that our bodies may be free from all adversity, and our souls purified from all evil thoughts. Thro'.
 """
 
 [[entries]]
@@ -663,6 +859,10 @@ form = ""
 proper = "Secret"
 incipit = "Sacrificiis praesentibus, Domine"
 witness = "cummiskey-1861"
+printed_page = "148"
+ia_leaf = 158
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -678,13 +878,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Supplices te rogamus"
 witness = "cummiskey-1861"
+printed_page = "148"
+ia_leaf = 158
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Grant we humbly be.
+Grant we humbly beseech thee, O Almighty God, that those, whom thou hast refreshed with thy sacraments, may worthily serve thee in the conduct of their lives. Thro'.
 """
 
 [[entries]]
@@ -723,13 +927,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "A cunctis nos, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "168"
+ia_leaf = 178
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Mercifully,O Lord, we beseech thee, deliver us from all guilt and from all danger, since thou admittest us to be partakers of this great mystery. Thro'.
+Mercifully, O Lord, we beseech thee, deliver us from all guilt and from all danger, since thou admittest us to be partakers of this great mystery. Thro'.
 """
 
 [[entries]]
@@ -753,6 +961,10 @@ form = ""
 proper = "Secret"
 incipit = "Sacrificiis praesentibus, Domine"
 witness = "cummiskey-1861"
+printed_page = "190"
+ia_leaf = 200
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -768,6 +980,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Da nobis, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "190"
+ia_leaf = 200
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -798,6 +1014,10 @@ form = ""
 proper = "Secret"
 incipit = "Haec munera"
 witness = "cummiskey-1861"
+printed_page = "212"
+ia_leaf = 222
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -813,6 +1033,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Adesto nobis, Domine"
 witness = "cummiskey-1861"
+printed_page = "212"
+ia_leaf = 222
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -963,6 +1187,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Spiritum nobis, Domine, tuae caritatis infunde"
 witness = "cummiskey-1861"
+printed_page = "332"
+ia_leaf = 340
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
 
 [[entries.translations]]
 lang = "en"
@@ -1023,13 +1251,17 @@ form = ""
 proper = "Collect"
 incipit = "Deus, qui in Filii tui humilitate"
 witness = "cummiskey-1861"
+printed_page = "349"
+ia_leaf = 357
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O God, who, by the humiliauon of thy Son, hast raised up the fallen world: grant to thy people perpetual joy: that they whom thou hast delivered from the danger of everlasting death, may arrive at eternal happiness. Thro'.
+O God, who, by the humiliation of thy Son, hast raised up the fallen world: grant to thy people perpetual joy: that they whom thou hast delivered from the danger of everlasting death, may arrive at eternal happiness. Thro'.
 """
 
 [[entries]]
@@ -1038,13 +1270,17 @@ form = ""
 proper = "Secret"
 incipit = "Benedictionem nobis, Domine"
 witness = "cummiskey-1861"
+printed_page = "350"
+ia_leaf = 358
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-May this holy oblation, O Lord, draw iown upon us thy saving blessing; and always produce in us the effect of what is represented in these sacred mysteries. Thro'.
+May this holy oblation, O Lord, draw down upon us thy saving blessing; and always produce in us the effect of what is represented in these sacred mysteries. Thro'.
 """
 
 [[entries]]
@@ -1053,6 +1289,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Praesta nobis, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "350"
+ia_leaf = 358
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1083,6 +1323,10 @@ form = ""
 proper = "Secret"
 incipit = "His nobis, Domine"
 witness = "cummiskey-1861"
+printed_page = "352"
+ia_leaf = 360
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1098,13 +1342,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Sacramenta quae sumpsimus"
 witness = "cummiskey-1861"
+printed_page = "352"
+ia_leaf = 360
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-May the sacrament we have received, O Lord, supply us with the spiritual food of the soul, and all necessary helps of the body. 'Thro'.
+May the sacrament we have received, O Lord, supply us with the spiritual food of the soul, and all necessary helps of the body. Thro'.
 """
 
 [[entries]]
@@ -1143,13 +1391,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Adesto nobis, Domine"
 witness = "cummiskey-1861"
+printed_page = "355"
+ia_leaf = 363
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Help us, O God, our Lord, that our sins may be forgiven, and that we may be delivered from all dangers by the sacrament, which we have received with faith, Thro'.
+Help us, O God, our Lord, that our sins may be forgiven, and that we may be delivered from all dangers by the sacrament, which we have received with faith. Thro'.
 """
 
 [[entries]]
@@ -1158,6 +1410,10 @@ form = ""
 proper = "Collect"
 incipit = "Deus, a quo bona cuncta procedunt"
 witness = "cummiskey-1861"
+printed_page = "355"
+ia_leaf = 363
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1173,6 +1429,10 @@ form = ""
 proper = "Secret"
 incipit = "Suscipe, Domine, fidelium preces"
 witness = "cummiskey-1861"
+printed_page = "356"
+ia_leaf = 364
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1188,6 +1448,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Tribue nobis, Domine"
 witness = "cummiskey-1861"
+printed_page = "357"
+ia_leaf = 365
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
 
 [[entries.translations]]
 lang = "en"
@@ -1203,13 +1467,17 @@ form = ""
 proper = "Collect"
 incipit = "Omnipotens sempiterne Deus"
 witness = "cummiskey-1861"
+printed_page = "369"
+ia_leaf = 377
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O almighty and eternal] God, inspire thy servants with true devotion, and grant that we may serve thy divine Majesty with sincere hearts. Thro'.
+O almighty and eternal God, inspire thy servants with true devotion, and grant that we may serve thy divine Majesty with sincere hearts. Thro'.
 """
 
 [[entries]]
@@ -1218,6 +1486,10 @@ form = ""
 proper = "Secret"
 incipit = "Sacrificia nos, Domine"
 witness = "cummiskey-1861"
+printed_page = "370"
+ia_leaf = 378
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1233,13 +1505,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Repleti, Domine"
 witness = "cummiskey-1861"
+printed_page = "370"
+ia_leaf = 378
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Grant, we beseech thee, O Lord, that we may be always thankful for the sacred:gifts with which we have been filled.
+Grant, we beseech thee, O Lord, that we may be always thankful for the sacred gifts with which we have been filled. Thro'.
 """
 
 [[entries]]
@@ -1248,6 +1524,10 @@ form = ""
 proper = "Collect"
 incipit = "Deus, qui hodierna die"
 witness = "cummiskey-1861"
+printed_page = "375"
+ia_leaf = 383
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
 
 [[entries.translations]]
 lang = "en"
@@ -1263,13 +1543,17 @@ form = ""
 proper = "Secret"
 incipit = "Munera, quaesumus, Domine"
 witness = "cummiskey-1861"
+printed_page = "377"
+ia_leaf = 385
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Sanctify, we beseech thee, O Lord these oblations, and purify our hearts by the light of the Holy Ghost. Thro’—in the unity of, &c.
+Sanctify, we beseech thee, O Lord, these oblations, and purify our hearts by the light of the Holy Ghost. Thro’—in the unity of, &c.
 """
 
 [[entries]]
@@ -1278,6 +1562,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Sancti Spiritus, Domine"
 witness = "cummiskey-1861"
+printed_page = "378"
+ia_leaf = 386
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
 
 [[entries.translations]]
 lang = "en"
@@ -1293,13 +1581,17 @@ form = ""
 proper = "Collect"
 incipit = "Omnipotens sempiterne Deus"
 witness = "cummiskey-1861"
+printed_page = "392"
+ia_leaf = 400
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O almighty and ever lasting God who has ted thy servants, in the confession of the true faith to acknowledge the glory of an Eternal Trinity, and in the power of majesty, to adore an Unity: we beseech thee that, by the strength of this faith, we may be defended from all adversity. Thro'.
+O almighty and everlasting God who has granted thy servants, in the confession of the true faith to acknowledge the glory of an Eternal Trinity, and in the power of majesty, to adore an Unity: we beseech thee that, by the strength of this faith, we may be defended from all adversity. Thro'.
 """
 
 [[entries]]
@@ -1413,6 +1705,10 @@ form = ""
 proper = "Collect"
 incipit = "Da nobis, quaesumus, Domine"
 witness = "cummiskey-1861"
+printed_page = "403"
+ia_leaf = 411
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1428,6 +1724,10 @@ form = ""
 proper = "Secret"
 incipit = "Oblationibus nostris"
 witness = "cummiskey-1861"
+printed_page = "404"
+ia_leaf = 412
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1443,6 +1743,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Mysteria nos, Domine"
 witness = "cummiskey-1861"
+printed_page = "405"
+ia_leaf = 413
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1458,13 +1762,17 @@ form = ""
 proper = "Collect"
 incipit = "Deus, qui diligentibus te"
 witness = "cummiskey-1861"
+printed_page = "405"
+ia_leaf = 413
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O God, who hast prepared invisible good things for those that love thee: pour forth into our hearts an affectionate love for thee: that loving thee in all things, and above all things, we may come to the enjoyment of thy promises which are above whatever we can desire Thro'.
+O God, who hast prepared invisible good things for those that love thee: pour forth into our hearts an affectionate love for thee: that loving thee in all things, and above all things, we may come to the enjoyment of thy promises, which are above whatever we can desire. Thro'.
 """
 
 [[entries]]
@@ -1488,13 +1796,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Quos coelesti, Domine"
 witness = "cummiskey-1861"
+printed_page = "407"
+ia_leaf = 415
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Grant, O Lord, we beseech thee: that we, whom thou hast fed with this heavenly sacrifice, may be cleansed from our hidden sins and delivered from the snares of our enemies Thro'.
+Grant, O Lord, we beseech thee: that we, whom thou hast fed with this heavenly sacrifice, may be cleansed from our hidden sins, and delivered from the snares of our enemies. Thro'.
 """
 
 [[entries]]
@@ -1503,6 +1815,10 @@ form = ""
 proper = "Collect"
 incipit = "Deus virtutum"
 witness = "cummiskey-1861"
+printed_page = "407"
+ia_leaf = 415
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
 
 [[entries.translations]]
 lang = "en"
@@ -1518,6 +1834,10 @@ form = ""
 proper = "Secret"
 incipit = "Deus, qui legalium"
 witness = "cummiskey-1861"
+printed_page = "411"
+ia_leaf = 419
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1533,6 +1853,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Tua nos, Domine"
 witness = "cummiskey-1861"
+printed_page = "411"
+ia_leaf = 419
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1548,13 +1872,17 @@ form = ""
 proper = "Collect"
 incipit = "Largire nobis, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "411"
+ia_leaf = 419
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Grant us, O Lord, we beseech thee, the spirit of thinking and doing wliat is right, that we, who cannot even subsist without thee, may live according to thee. Thro'.
+Grant us, O Lord, we beseech thee, the spirit of thinking and doing what is right, that we, who cannot even subsist without thee, may live according to thee. Thro'.
 """
 
 [[entries]]
@@ -1608,6 +1936,10 @@ form = ""
 proper = "Secret"
 incipit = "Concede nobis, quaesumus, Domine"
 witness = "cummiskey-1861"
+printed_page = "415"
+ia_leaf = 423
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1623,6 +1955,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Tui nobis, quaesumus, Domine"
 witness = "cummiskey-1861"
+printed_page = "415"
+ia_leaf = 423
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1668,13 +2004,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Quaesumus, Domine, Deus noster"
 witness = "cummiskey-1861"
+printed_page = "418"
+ia_leaf = 426
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-We beseech thee, G Lord our God, that in thy mercy thou wouldst never deprive those of thy help, whom thou continually strengthenest by these divine mysteries. Thro'.
+We beseech thee, O Lord our God, that in thy mercy thou wouldst never deprive those of thy help, whom thou continually strengthenest by these divine mysteries. Thro'.
 """
 
 [[entries]]
@@ -1683,6 +2023,10 @@ form = ""
 proper = "Collect"
 incipit = "Omnipotens sempiterne Deus"
 witness = "cummiskey-1861"
+printed_page = "418"
+ia_leaf = 426
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1698,13 +2042,17 @@ form = ""
 proper = "Secret"
 incipit = "Respice, Domine, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "420"
+ia_leaf = 428
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Look down, O Lord, we beseech thee, on our homage: that the offerings we make may be acceptable to thee, and a help to our weakness Thro'.
+Look down, O Lord, we beseech thee, on our homage: that the offerings we make may be acceptable to thee, and a help to our weakness. Thro'.
 """
 
 [[entries]]
@@ -1713,6 +2061,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Sentiamus, quaesumus, Domine"
 witness = "cummiskey-1861"
+printed_page = "420"
+ia_leaf = 428
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1728,6 +2080,10 @@ form = ""
 proper = "Collect"
 incipit = "Omnipotens et misericors Deus"
 witness = "cummiskey-1861"
+printed_page = "420"
+ia_leaf = 428
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1788,6 +2144,10 @@ form = ""
 proper = "Secret"
 incipit = "Propitiare, Domine"
 witness = "cummiskey-1861"
+printed_page = "424"
+ia_leaf = 432
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1833,13 +2193,17 @@ form = ""
 proper = "Secret"
 incipit = "Concede nobis, Domine"
 witness = "cummiskey-1861"
+printed_page = "427"
+ia_leaf = 435
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Grant, we beseech thee, O Lord, that this victim of salvation may both cleanse us from our sins, and render thy Majesty propitious to us Thro'.
+Grant, we beseech thee, O Lord, that this victim of salvation may both cleanse us from our sins, and render thy Majesty propitious to us. Thro'.
 """
 
 [[entries]]
@@ -1848,6 +2212,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Purificent semper"
 witness = "cummiskey-1861"
+printed_page = "427"
+ia_leaf = 435
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1878,13 +2246,17 @@ form = ""
 proper = "Secret"
 incipit = "Tua nos, Domine"
 witness = "cummiskey-1861"
+printed_page = "429"
+ia_leaf = 437
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-May thy mysteries, O Lord, preserve us, and always defend us against the attacks of the evil.
+May thy mysteries, O Lord, preserve us, and always defend us against the attacks of the devil.
 """
 
 [[entries]]
@@ -1893,13 +2265,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Mentes nostras"
 witness = "cummiskey-1861"
+printed_page = "429"
+ia_leaf = 437
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-May the efficacy of these divine mysteries O Lord, possess both our souls and bodies: that their effects, not our own sensuality, may always take the lead in us. Thro'.
+May the efficacy of these divine mysteries, O Lord, possess both our souls and bodies: that their effects, not our own sensuality, may always take the lead in us. Thro'.
 """
 
 [[entries]]
@@ -1908,6 +2284,10 @@ form = ""
 proper = "Collect"
 incipit = "Tua nos, quaesumus, Domine"
 witness = "cummiskey-1861"
+printed_page = "429"
+ia_leaf = 437
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1968,6 +2348,10 @@ form = ""
 proper = "Secret"
 incipit = "Majestatem tuam, Domine"
 witness = "cummiskey-1861"
+printed_page = "433"
+ia_leaf = 441
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -1983,6 +2367,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Sanctificationibus tuis"
 witness = "cummiskey-1861"
+printed_page = "433"
+ia_leaf = 441
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2013,6 +2401,10 @@ form = ""
 proper = "Secret"
 incipit = "Deus, qui nos, per hujus sacrificii"
 witness = "cummiskey-1861"
+printed_page = "445"
+ia_leaf = 453
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2028,13 +2420,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Gratias tibi referimus"
 witness = "cummiskey-1861"
+printed_page = "445"
+ia_leaf = 453
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Being fed, O Lord, with tois Loly sacrifice: we give thee thanks, humbly beseeching thy mercy: that thou wouldst make us worthy of what we have received. Thro'.
+Being fed, O Lord, with this holy sacrifice: we give thee thanks, humbly beseeching thy mercy: that thou wouldst make us worthy of what we have received. Thro'.
 """
 
 [[entries]]
@@ -2043,13 +2439,17 @@ form = ""
 proper = "Collect"
 incipit = "Omnipotens et misericors Deus"
 witness = "cummiskey-1861"
+printed_page = "446"
+ia_leaf = 454
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O Almighty and mertiful God, favourably defend us from all adversity: that being free both in soul and body, we may with security of mind perform thy service. Thro'.
+O Almighty and merciful God, favourably defend us from all adversity: that being free both in soul and body, we may with security of mind perform thy service. Thro'.
 """
 
 [[entries]]
@@ -2058,13 +2458,17 @@ form = ""
 proper = "Secret"
 incipit = "Haec munera, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "447"
+ia_leaf = 455
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Grant, we beseech thee, O Lord, that the offerings we bring before thy divine Majesty may avail to our salvation, Thro'.
+Grant, we beseech thee, O Lord, that the offerings we bring before thy divine Majesty may avail to our salvation. Thro'.
 """
 
 [[entries]]
@@ -2073,13 +2477,17 @@ form = ""
 proper = "Postcommunion"
 incipit = "Tua nos, Domine"
 witness = "cummiskey-1861"
+printed_page = "447"
+ia_leaf = 455
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-May the healing efficacy of these thy mysteries O Lord, mercifully free us from our perverseness, and make us always obedient to thy commandments. Thro'.
+May the healing efficacy of these thy mysteries, O Lord, mercifully free us from our perverseness, and make us always obedient to thy commandments. Thro'.
 """
 
 [[entries]]
@@ -2088,13 +2496,17 @@ form = ""
 proper = "Collect"
 incipit = "Largire, quaesumus, Domine"
 witness = "cummiskey-1861"
+printed_page = "448"
+ia_leaf = 456
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Favourably grant, we beseech thee, O Lord, thy servants both pardon and peace; that, being cleansed from the guilt of all committed offences, they may serve thee with secure minds Thro'.
+Favourably grant, we beseech thee, O Lord, thy servants both pardon and peace; that, being cleansed from the guilt of all their offences, they may serve thee with secure minds. Thro'.
 """
 
 [[entries]]
@@ -2103,6 +2515,10 @@ form = ""
 proper = "Secret"
 incipit = "Coelestem nobis praebeant"
 witness = "cummiskey-1861"
+printed_page = "449"
+ia_leaf = 457
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2118,6 +2534,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Ut sacris, Domine"
 witness = "cummiskey-1861"
+printed_page = "449"
+ia_leaf = 457
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2148,13 +2568,17 @@ form = ""
 proper = "Secret"
 incipit = "Suscipe, Domine, propitius hostias"
 witness = "cummiskey-1861"
+printed_page = "452"
+ia_leaf = 460
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Mercifully receive, O Lord, these offerings, by which thou art pleased to be appeased, and restore us to salvation by thy powerful goodness, Thro'.
+Mercifully receive, O Lord, these offerings, by which thou art pleased to be appeased, and restore us to salvation by thy powerful goodness. Thro'.
 """
 
 [[entries]]
@@ -2163,6 +2587,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Immortalitatis alimoniam"
 witness = "cummiskey-1861"
+printed_page = "452"
+ia_leaf = 460
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2178,6 +2606,10 @@ form = ""
 proper = "Collect"
 incipit = "Deus, refugium nostrum"
 witness = "cummiskey-1861"
+printed_page = "453"
+ia_leaf = 461
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2193,6 +2625,10 @@ form = ""
 proper = "Secret"
 incipit = "Da, misericors Deus"
 witness = "cummiskey-1861"
+printed_page = "454"
+ia_leaf = 462
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2208,6 +2644,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Sumpsimus, Domine"
 witness = "cummiskey-1861"
+printed_page = "454"
+ia_leaf = 462
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2223,13 +2663,17 @@ form = ""
 proper = "Collect"
 incipit = "Absolve, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "455"
+ia_leaf = 463
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 
 [[entries.translations]]
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-Pardon, O Lord, we beseech thee, the sins of thy people: that we may be delivered by thy goodness from the guilt we have contracted by our own weakness, Thro'.
+Pardon, O Lord, we beseech thee, the sins of thy people: that we may be delivered by thy goodness from the guilt we have contracted by our own weakness. Thro'.
 """
 
 [[entries]]
@@ -2238,6 +2682,10 @@ form = ""
 proper = "Secret"
 incipit = "Pro nostrae servitutis augmento"
 witness = "cummiskey-1861"
+printed_page = "456"
+ia_leaf = 464
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2253,6 +2701,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Quaesumus, omnipotens Deus"
 witness = "cummiskey-1861"
+printed_page = "457"
+ia_leaf = 465
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
@@ -2268,6 +2720,10 @@ form = ""
 proper = "Collect"
 incipit = "Omnipotens sempiterne Deus"
 witness = "cummiskey-1861"
+printed_page = "98"
+ia_leaf = 108
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
 
 [[entries.translations]]
@@ -2275,7 +2731,7 @@ lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-O almighty and eterna] God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro'.
+O almighty and eternal God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro'.
 """
 
 [[entries]]
@@ -2332,6 +2788,10 @@ form = ""
 proper = "Secret"
 incipit = "Concede, quaesumus, omnipotens Deus"
 witness = "cummiskey-1861"
+printed_page = "101"
+ia_leaf = 111
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
 
 [[entries.translations]]
@@ -2348,6 +2808,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Munera tua nos, Deus"
 witness = "cummiskey-1861"
+printed_page = "101"
+ia_leaf = 111
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
 
 [[entries.translations]]
@@ -2364,6 +2828,10 @@ form = ""
 proper = "Collect"
 incipit = "Familiam tuam"
 witness = "cummiskey-1861"
+printed_page = "101"
+ia_leaf = 111
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
 
 [[entries.translations]]
@@ -2380,6 +2848,10 @@ form = ""
 proper = "Secret"
 incipit = "Hostias tibi, Domine"
 witness = "cummiskey-1861"
+printed_page = "102"
+ia_leaf = 112
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
 
 [[entries.translations]]
@@ -2396,6 +2868,10 @@ form = ""
 proper = "Postcommunion"
 incipit = "Quaesumus, omnipotens Deus"
 witness = "cummiskey-1861"
+printed_page = "102"
+ia_leaf = 112
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
 witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
 
 [[entries.translations]]
@@ -2403,7 +2879,7 @@ lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
-We, beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
+We beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
 """
 
 [[entries]]
@@ -2412,6 +2888,10 @@ form = ""
 proper = "Collect"
 incipit = "Praesta, quaesumus, omnipotens Deus"
 witness = "cummiskey-1861"
+printed_page = "102"
+ia_leaf = 112
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
 
 [[entries.translations]]
@@ -2428,6 +2908,10 @@ form = ""
 proper = "Secret"
 incipit = "Haec nos oblatio, Deus"
 witness = "cummiskey-1861"
+printed_page = "104"
+ia_leaf = 114
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
 
 [[entries.translations]]
@@ -2444,6 +2928,10 @@ form = ""
 proper = "Collect"
 incipit = "Excita, quaesumus"
 witness = "cummiskey-1861"
+printed_page = "457"
+ia_leaf = 465
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
 
 [[entries.translations]]
 lang = "en"
