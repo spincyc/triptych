@@ -39,9 +39,18 @@ passages:
         source_hint: CCSL 36
 ```
 
-`role` is one of `church-father`, `saint`, `saintly`, `pope`, `doctor`;
-`patristic` and `tradition` are accepted aliases normalising to
-`church-father` and `saintly`. Absent fields degrade rather than fail: a
+`role` is one of `church-father`, `saint`, `saintly`, `pope`, `doctor`,
+`ecclesiastical-writer`; `patristic` and `tradition` are accepted aliases
+normalising to `church-father` and `saintly`.
+
+Use `ecclesiastical-writer` — patrology's own *scriptor ecclesiasticus* — for an
+orthodox writer who is not venerated as a saint: Cassiodorus, Peter Lombard,
+Nicholas of Lyra, Cornelius a Lapide, Theophylact. Before it existed the
+vocabulary had no slot for them and runs fell back to `saintly`, which is why
+4098 of the 7297 attributions already promoted carry that role against 333 for
+`saint`. Those are not re-tagged: whether a given writer is venerated is a fact
+about that person, and asserting it wrongly in either direction is worse than
+leaving a coarse tag visible for what it is. Absent fields degrade rather than fail: a
 missing `author` becomes `Unknown`, a missing `role` becomes `church-father`,
 and a missing `confidence` sorts as `1.0`.
 

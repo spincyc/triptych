@@ -231,7 +231,8 @@ passages{}     "<Book> <chapter>" -> [work, …]     (empty list is meaningful)
 work           author, title, role, death_year, aliases[]?, work_id?
 ```
 
-- `role` ∈ `church-father | saint | saintly | pope | doctor`. Enforced at
+- `role` ∈ `church-father | saint | saintly | pope | doctor |
+  ecclesiastical-writer`. Enforced at
   `record`.
 - `death_year` must be an integer ≤ **1900**. Enforced at `record` — the cutoff
   is a field so it is checkable afterwards, never only a prompt.

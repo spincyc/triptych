@@ -37,7 +37,28 @@ INDEX_SCHEMA = "triptych-commentary-work-index/v1"
 ALIAS_SCHEMA = "triptych-commentary-work-aliases/v1"
 # Works whose author died after this are outside the harvest.
 CUTOFF_YEAR = 1900
-ROLES = ("church-father", "saint", "saintly", "pope", "doctor")
+# `ecclesiastical-writer` is patrology's own term (scriptor ecclesiasticus) for
+# an orthodox writer who is not venerated as a saint. Without it the vocabulary
+# had no slot for Cassiodorus, Peter Lombard, Nicholas of Lyra, Cornelius a
+# Lapide or Theophylact, and three independent harvest runs each fell back to
+# `saintly` as the only catch-all — which is why 4098 of the 7297 attributions
+# already promoted carry it, against 333 for `saint`. A field that says the same
+# thing about most of the corpus cannot rank any of it, and two runs could
+# disagree about a work purely by role convention rather than about whether the
+# work exists.
+#
+# Adding the slot fixes what future runs can say. It does not re-tag what is
+# already recorded: whether a particular writer is venerated is a fact about
+# that person, and asserting it wrongly in either direction is worse than
+# leaving the existing coarse tag visible for what it is.
+ROLES = (
+    "church-father",
+    "saint",
+    "saintly",
+    "pope",
+    "doctor",
+    "ecclesiastical-writer",
+)
 
 
 def _load(path: Path) -> dict:
