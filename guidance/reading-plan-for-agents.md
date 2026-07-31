@@ -211,14 +211,32 @@ explicitly after any edit to the plan or the tool.
 | --- | --- | --- |
 | What a model said, with identity and date | `src/sources/commentary/harvest-ledger.yaml` | inferred |
 | Worklist of loci short of target runs | `harvest plan --corpus … --by-chapter` | guessed |
+| Asking the model | `harvest ask --corpus … --runs 3` | any other tool or verb |
+| Which model a run is stamped with | the answer, via `harvest ask` | asserted about it |
 | Ingesting one run | `harvest record --model --audited-on` | hand-editing the ledger |
 | Confidence | `harvest promote` — appearances ÷ runs | a score from the model |
 | The passage→works lookup | `passage-commentary-index.yaml` | written by hand |
 | Entry to the source library | human review under `guidance/sources.md` | a harvest alone |
 
-**`tools/harvest` never calls a model.** Do not add a call. The tool's contract
-is that its own behaviour is deterministic and the nondeterminism is confined to
-the tracked ledger, tagged with `model` and `audited_on`.
+**`harvest ask` is the only verb in this repository that calls a model, and
+`knox-bible` the only tool that opens a socket.** Everything else is
+deterministic, and the nondeterminism stays confined to the tracked ledger,
+tagged with `model` and `audited_on`. Do not add a model call anywhere else:
+`tpt --list` groups both under `acquisition` precisely so a reader can answer
+"does this spend anything outside my machine" by where a tool appears, and
+`tools/tests/test_tool_registry.py` fails on any tool whose body and declaration
+disagree.
+
+Until 2026-07-31 the tool called nothing and the harvest ran by hand outside it.
+That was not the safer arrangement it looked like: `record --model X
+--audited-on Y` stamped a run with whatever an operator typed, so the ledger's
+provenance was an assertion rather than an observation — the failure this
+repository treats as worst, a reference that resolves successfully and wrongly.
+`ask` takes both stamps from the response: the date from the clock, and the
+model from the `model` each assistant message declares. Not from the run's
+`modelUsage` tally, which names a helper model beside the answering one and
+cannot say which wrote the answer. `--model opus` is a request, and an alias;
+what reaches the ledger is what answered.
 
 ### Data model
 
@@ -237,6 +255,10 @@ work           author, title, role, death_year, aliases[]?, work_id?
 - `death_year` must be an integer ≤ **1900**. Enforced at `record` — the cutoff
   is a field so it is checkable afterwards, never only a prompt.
 - Runs are stored sorted by `run_id`; re-recording an identical run is a no-op.
+  A run is keyed by what it said, so two runs that answered identically are one
+  run here — right, but it means N runs asked is not N runs recorded. `ask`
+  reports the difference as `identical_runs`; confidence is appearances ÷ runs,
+  so an unnoticed collapse is a wrong number rather than a missing one.
 - **A locus is one chapter, never wider.** `--by-chapter` enforces it.
   `Isaiah 63:16-64:7` becomes `Isaiah 63` and `Isaiah 64`. Wider grouping drops
   works commenting on only one chapter and the loss is invisible.
@@ -247,6 +269,18 @@ work           author, title, role, death_year, aliases[]?, work_id?
 tools/tpt harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml \
   --by-chapter --json          # → total 491, pending 0, cutoff_year 1900
 tools/tpt harvest promote --audited-on <date> --dry-run --json
+```
+
+The 491 loci are the ones both missals' propers cite. The corpus is wider —
+1,596 passages, of which roughly 1,583 have never been asked about. Read the
+scale before starting: `ask --dry-run` reports the query count, and it is one
+query per passage per run.
+
+```sh
+tools/tpt harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yaml \
+  --by-chapter --runs 3 --dry-run     # what it would ask, of how many; spends nothing
+tools/tpt harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yaml \
+  --by-chapter --runs 3 --limit 20    # then record each results file it names
 ```
 
 | Quantity | Value |

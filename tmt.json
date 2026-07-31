@@ -158,13 +158,13 @@
       "lang": "python",
       "mutates": true,
       "origin": "local",
-      "purpose": "Harvest, collate and rank pre-1900 commentary for the propers.",
+      "purpose": "Harvest pre-1900 commentary for the propers; `ask` calls a model.",
       "requires": [
         "citations",
         "commentary-work-index"
       ],
       "stage": "draft",
-      "usage": "harvest {propers,plan,record,aliases,harvest,promote} | harvest harvest <missal> <mass> [--top N]"
+      "usage": "harvest {propers,plan,ask,record,aliases,harvest,promote} | harvest ask --corpus F --dry-run"
     },
     "index-bible": {
       "idempotent": true,

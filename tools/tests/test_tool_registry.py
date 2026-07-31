@@ -19,6 +19,7 @@ import json
 import os
 import re
 import subprocess
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -288,7 +289,10 @@ class ListingGroupTests(unittest.TestCase):
         self.assertNotIn("ungrouped", result.stdout)
 
     def test_the_acquisition_group_states_where_its_output_may_not_go(self) -> None:
-        """Its whole reason for being named is that its output stays outside."""
+        """The licensed text it retrieves may not land in the checkout, and the
+        note has to say so — that constraint is why the group exists, even now
+        that it also holds the tool which spends on a model rather than a
+        socket."""
         result = self.listing()
         section = result.stdout.split("acquisition:", 1)
         self.assertEqual(len(section), 2, "no acquisition group in the listing")
@@ -312,15 +316,22 @@ class ListingGroupTests(unittest.TestCase):
 class ReachTests(unittest.TestCase):
     """What a tool reaches is declared, and the declaration is checked.
 
-    Exactly one registered tool opens a socket and none call a model. That is
-    the property a reader is being asked to trust before running anything, and
-    a convention alone would not keep it: a tool that grows a `urlopen` and
-    forgets its declaration has to fail here, or the listing starts lying.
+    Exactly one registered tool opens a socket and exactly one calls a model.
+    That is the property a reader is being asked to trust before running
+    anything, and a convention alone would not keep it: a tool that grows a
+    `urlopen` and forgets its declaration has to fail here, or the listing
+    starts lying.
 
     The patterns are deliberately crude. A body that mentions `urlopen` in a
     string it never calls will fail this test, and the fix is to declare the
     reach or stop mentioning it — which is the right trade when the alternative
     is a silent network call.
+
+    They are also a floor, not a proof. A model can be reached by shelling out
+    as easily as by importing an SDK, which is how `harvest` reaches one, so the
+    model patterns cover the CLI form too — but no grep can enumerate every way
+    a subprocess might spend money, and the declaration remains the claim these
+    only defend.
     """
 
     NETWORK_CALLS = re.compile(
@@ -336,6 +347,9 @@ class ReachTests(unittest.TestCase):
         r"anthropic|openai|Anthropic\(|OpenAI\("
         r"|messages\.create|chat\.completions|generate_content"
         r"|ollama|litellm|langchain"
+        # Shelling out to an agent CLI: the named constant a tool holds it in,
+        # or the command written out with its non-interactive flag.
+        r"|claude_cli|claude\s+(?:-p|--print)\b"
         r")",
         re.I,
     )
@@ -400,20 +414,29 @@ class ReachTests(unittest.TestCase):
                         "but does not declare it; set REACHES in scripts/_tooling.py",
                     )
 
-    def test_exactly_one_tool_reaches_outside_and_the_listing_says_so(self) -> None:
-        """The measured fact, and the sentence a reader is shown, must agree."""
+    def test_exactly_two_tools_reach_outside_and_the_listing_says_so(self) -> None:
+        """The measured fact, and the sentence a reader is shown, must agree.
+
+        Two, and which two, is the whole claim: `harvest ask` calls a model and
+        `knox-bible` opens a socket, and nothing else does either. A third name
+        appearing here is a tool that started spending outside this machine, and
+        it should have to be added deliberately rather than noticed later.
+        """
         declared = self.declarations()
         outward = sorted(n for n, r in declared.items() if r != "nothing")
-        self.assertEqual(outward, ["knox-bible"], "the reach story has changed")
+        self.assertEqual(outward, ["harvest", "knox-bible"], "the reach story has changed")
+        self.assertEqual(declared["harvest"], "model")
+        self.assertEqual(declared["knox-bible"], "network")
         listing = subprocess.run(
             [str(LAUNCHER), "--list"], capture_output=True, text=True, cwd=ROOT,
         ).stdout
         self.assertIn("reaches the network: knox-bible", listing)
+        self.assertIn("calls a model: harvest", listing)
         self.assertIn(
             "No other registered tool reaches the network or calls a model", listing
         )
 
-    def test_the_acquisition_group_claims_the_only_outward_tool(self) -> None:
+    def test_the_acquisition_group_claims_every_outward_tool(self) -> None:
         rows = {
             row["name"]: row for row in json.loads(subprocess.run(
                 [str(LAUNCHER), "--list", "--json"],
@@ -425,19 +448,47 @@ class ReachTests(unittest.TestCase):
                 if row["reaches"] != "nothing":
                     self.assertEqual(row["group"], "acquisition")
 
-    def test_harvest_says_it_records_a_model_run_rather_than_making_one(self) -> None:
-        """Its name reads as though it calls one; the help has to correct that.
+    def test_harvest_names_the_one_verb_of_it_that_calls_a_model(self) -> None:
+        """Six of its seven verbs reach nothing; the help must say which is which.
 
-        `record` carries it too, because that is the verb holding --model, and
-        a reader who jumps straight to it never sees the tool's own preamble.
+        `record` carries its own sentence, because that is the verb holding
+        --model and a reader who jumps straight to it never sees the tool's
+        preamble — and because after `ask` landed, `record`'s --model is the one
+        place left where a run could still be stamped by hand.
         """
         for argv, wanted in (
-            (("harvest",), "This tool never calls a model."),
+            (("harvest",), "One verb calls a model: `ask`, and nothing else here"),
+            (("harvest", "ask"), "The only verb here that reaches outside this machine."),
             (("harvest", "record"), "Nothing here calls a model or opens a socket."),
         ):
             with self.subTest(target=" ".join(argv)):
                 flattened = " ".join(help_text(*argv).split())
                 self.assertIn(wanted, flattened)
+
+    def test_ask_is_dry_runnable_without_reaching_anything(self) -> None:
+        """The verb that spends must be answerable about what it would spend.
+
+        A `claude` that records having been run shadows the real one, so this
+        asserts the dry run did not invoke it rather than assuming so. Emptying
+        PATH instead would prove nothing: the launcher's own `env python3`
+        could not resolve either, and the failure would look the same.
+        """
+        with tempfile.TemporaryDirectory() as scratch:
+            shim, marker = Path(scratch) / "claude", Path(scratch) / "asked"
+            shim.write_text(f'#!/bin/sh\necho "$@" >{marker}\n', encoding="utf-8")
+            shim.chmod(0o755)
+            shadowed = {**os.environ, "PATH": f"{scratch}{os.pathsep}{os.environ['PATH']}"}
+            result = subprocess.run(
+                [str(LAUNCHER), "harvest", "ask", "--passage", "Psalms 24",
+                 "--runs", "3", "--dry-run", "--json"],
+                capture_output=True, text=True, cwd=ROOT, env=shadowed,
+            )
+            self.assertFalse(marker.exists(), "a dry run invoked the model CLI")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["status"], "dry-run")
+        self.assertEqual(payload["queries"], payload["passages"] * payload["runs"])
+        self.assertIn("Psalms 24", payload["prompt"])
 
 
 class ToolSmokeTests(unittest.TestCase):

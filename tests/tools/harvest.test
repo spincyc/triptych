@@ -45,6 +45,41 @@ case "$plain" in
 *) echo "verse-range planning should keep the cited range" >&2; exit 1 ;;
 esac
 
+# `ask` is the one verb that spends outside this machine, so the gate here is
+# that its dry run does not. A `claude` that records having been run shadows the
+# real one for this check: emptying PATH instead would only prove the launcher's
+# own `env python3` cannot resolve either. The dry run must still report the
+# scale it would run at and the prompt it would send.
+mkdir -p shim
+cat >shim/claude <<'SH'
+#!/bin/sh
+echo "$@" >"$(dirname -- "$0")/../asked"
+exit 0
+SH
+chmod +x shim/claude
+dry="$(PATH="$PWD/shim:$PATH" run_tool --ledger ledger.yaml ask \
+	--corpus corpus.yaml --by-chapter --runs 3 --dry-run --json 2>/dev/null)"
+if [ -e asked ]; then
+	echo "a dry run invoked the model CLI" >&2
+	exit 1
+fi
+case "$dry" in
+*'"status":"dry-run"'*) ;;
+*) echo "ask --dry-run should report a dry run, got: $dry" >&2; exit 1 ;;
+esac
+case "$dry" in
+*'"queries":12'*) ;;
+*) echo "four loci over three runs is twelve queries, got: $dry" >&2; exit 1 ;;
+esac
+case "$dry" in
+*'Isaiah 63'*) ;;
+*) echo "the dry run must show the prompt it would send" >&2; exit 1 ;;
+esac
+if [ -e build ] || [ -e harvest-runs ]; then
+	echo "a dry run must not create its output directory" >&2
+	exit 1
+fi
+
 # The cutoff and the role vocabulary are enforced at record, not by the prompt.
 write_run() {
 	cat >"$1" <<YAML

@@ -51,10 +51,12 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         "acquisition",
         "Retrieval from outside the project. This is the only group that "
         "reaches outside your machine at all, and no tool in any other group "
-        "makes a network call or calls a model. What these write never enters "
-        "the repository either: the text is licensed, so every verb refuses a "
-        "destination inside this checkout.",
-        ("knox-bible",),
+        "makes a network call or calls a model. knox-bible fetches licensed "
+        "text and what it writes never enters the repository: every verb of it "
+        "refuses a destination inside this checkout. harvest spends on a model "
+        "in one verb, `ask`, and what comes back lands in a dated ledger that "
+        "records which model said it and when.",
+        ("harvest", "knox-bible"),
     ),
     (
         "scripture",
@@ -63,7 +65,6 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         (
             "citations",
             "commentary-work-index",
-            "harvest",
             "index-bible",
             "reading-plan",
             "typeset-bible",
@@ -132,17 +133,20 @@ GROUP_OF = {name: group for group, _, names in GROUPS for name in names}
 # A reader deciding whether to run something wants one question answered before
 # any other: does this spend anything outside my machine? Two ways it could —
 # a network call, or a model — so each tool declares which, and the honest
-# current answer is that exactly one does either.
+# current answer is that exactly one does either, and both sit in the same
+# group so the listing answers the question by where a tool appears.
 #
 # `knox-bible` is the only tool that opens a socket: it retrieves the licensed
 # Knox text from its publisher, one chapter a request, and refuses to write
 # anywhere inside the repository. Nothing else in tools/ contains urlopen,
 # urllib.request, a requests call, http.client or a socket.
 #
-# No tool calls a model. `harvest` is the one whose name says otherwise: the
-# harvesting happens outside it, and `harvest record --model ... --audited-on
-# ...` ingests what the operator brings back, stamping the run with the model
-# identity and date it was told. The tool is the ledger, not the caller.
+# `harvest` is the only tool that calls a model, and only in its `ask` verb,
+# which runs the `claude` CLI once per passage per run. Everything else it does
+# reads the ledger `ask` feeds. Until 2026-07-31 it called nothing: the harvest
+# ran outside it and `record --model ... --audited-on ...` stamped a run with
+# whatever an operator typed. Moving the call inside is what lets both stamps be
+# taken from the answer instead of asserted about it.
 #
 # This lives beside GROUPS, and for the same reason: tmt.json's entry keys are
 # a closed set, so a `reaches` field there is a hard `tmt check` failure. The
@@ -167,7 +171,7 @@ REACHES: dict[str, str] = {
     "check-web-edition": NOTHING,
     "citations": NOTHING,
     "commentary-work-index": NOTHING,
-    "harvest": NOTHING,
+    "harvest": MODEL,
     "index-bible": NOTHING,
     "knox-bible": NETWORK,
     "mass-propers": NOTHING,

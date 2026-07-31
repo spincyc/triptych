@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 """Harvest candidate commentary works for scripture passages.
 
-The harvest itself consults a model, which is not reproducible, so this tool
-never calls one. It emits a worklist, ingests one run's results into a dated
-ledger, and derives confidence from agreement across runs. Every step here is
-deterministic and the nondeterminism stays visible in the ledger, where the
-model identity and date are recorded alongside what it said.
+The harvest itself consults a model, which is not reproducible. Exactly one
+verb here does that; everything else is deterministic, and the nondeterminism
+stays visible in the ledger, where the model identity and date are recorded
+alongside what it said.
 
   plan     passages still needing harvest, as a worklist
+  ask      the model, for one worklist, N times over  <- the only outward verb
   record   one run's results into the ledger, validated
   aliases  derive the tracked work-alias table from the ledger, validated
   promote  the ledger into the discovery index, confidence = appearances / runs
+
+Until 2026-07-31 this tool called no model at all and the harvest was run by
+hand outside it. That was not free: the identity and date `record` stamps were
+whatever an operator typed, which is the failure this repository treats as
+worst — a reference that resolves successfully and wrongly. `ask` closes that
+gap by taking both from the answer itself, and the deterministic verbs stay
+deterministic: `ask` writes nothing but a results file that `record` ingests.
 """
 from __future__ import annotations
 
@@ -18,10 +25,13 @@ import argparse
 import hashlib
 import json
 import os
+import subprocess
 import sys
 import tempfile
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,6 +98,44 @@ EXAMPLES = {
             (
                 "{\"cutoff_year\":1900,\"numbering\":\"vulgate\",\"numbering_note\":\"Psalm numbers here are Vulgate, not ... [+328 chars]",
             ),
+        ),
+    ),
+    "ask": (
+        Example(
+            "tools/harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yaml --by-chapter --limit 3 --dry-run",
+            (
+                "audited_on: 2026-07-31",
+                "first_passage: 2 Maccabees 1",
+                "model_recorded: whichever model answers, read from the answer",
+                "model_requested: opus",
+                "out: build/harvest-runs",
+                "passages: 3",
+                "queries: 9",
+                "runs: 3",
+                "status: dry-run",
+                "",
+                "--- asked of every passage, verbatim ---",
+                "List up to 20 distinct pre-1900 commentary works on 2 Maccabees 1.",
+                "... 6 more lines",
+            ),
+            "read-only: --dry-run spends nothing and prints the prompt in full, so what would be asked can be read before it is",
+        ),
+        Example(
+            "tools/harvest ask --passage 'Psalms 24' --runs 1 --top 5 --out build/example-harvest",
+            (
+                "run 1/1: 1 passages",
+                "  Psalms 24: 5",
+                "audited_on: 2026-07-31",
+                "failures: 0",
+                "model: claude-opus-5",
+                "passages: 1",
+                "queries: 1",
+                "record_with: ['tools/harvest record --results build/example-harvest/2026-07-31-claude-opus-5-run... [+54 chars]",
+                "results: ['build/example-harvest/2026-07-31-claude-opus-5-run1.yaml']",
+                "runs: 1",
+                "status: asked",
+            ),
+            "CALLS A MODEL, once a passage a run, and WRITES the results file named above. `model` is the model the answer says wrote it, not the `opus` alias that was asked for. Nothing reaches the ledger until record does",
         ),
     ),
     "aliases": (
@@ -340,6 +388,347 @@ def run_plan(arguments: argparse.Namespace) -> dict:
         "numbering_note": NUMBERING_NOTE,
         "passages": [{"passage": p, "runs": seen[p]} for p in pending],
     }
+
+
+# --- asking the model -------------------------------------------------------
+#
+# The one place in this repository that spends anything outside this machine on
+# a model. It goes through the `claude` CLI rather than hand-rolled HTTP: the
+# CLI is already installed and already authenticated, it takes a JSON schema and
+# validates the answer against it before returning, and it reports which model
+# actually served the request. That last point is the whole reason this verb
+# exists — see `_answered_by`.
+#
+# `--safe-mode` matters as much as `--tools ""`. Without it the subprocess would
+# inherit this repository's CLAUDE.md, its hooks and its skills, and the harvest
+# would be answering with the repository looking over its shoulder; the first
+# probe of this path came back talking about a hook rather than about Psalms.
+# With it the query is just the prompt below, which is what the ledger claims.
+CLAUDE_CLI = "claude"
+# An alias, not a pinned id: it resolves to whatever is current, and what the
+# run is stamped with comes from the answer regardless.
+ASK_MODEL = "opus"
+ASK_TIMEOUT = 900
+
+
+def _ask_schema() -> dict:
+    """The answer's shape, derived from what `record` will accept.
+
+    Both are generated from ROLES and nothing restates them, because a schema
+    that let a role through which `record` then rejects would spend a query to
+    produce something unusable.
+    """
+    return {
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["works"],
+        "properties": {
+            "works": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "required": ["author", "title", "role", "death_year"],
+                    "properties": {
+                        "author": {"type": "string"},
+                        "title": {"type": "string"},
+                        "role": {"type": "string", "enum": list(ROLES)},
+                        "death_year": {"type": "integer"},
+                        "aliases": {"type": "array", "items": {"type": "string"}},
+                    },
+                },
+            }
+        },
+    }
+
+
+def _ask_prompt(passage: str, top: int) -> str:
+    """What is asked, built from the same constants `record` validates against.
+
+    Hand-typing the cutoff or the role list here would let the prompt and the
+    validator drift, and the drift would show up as whole runs rejected at
+    `record` after the queries had already been paid for.
+    """
+    return (
+        f"List up to {top} distinct pre-{CUTOFF_YEAR} commentary works on "
+        f"{passage}.\n"
+        "\n"
+        f"{NUMBERING_NOTE}\n"
+        "\n"
+        "A work qualifies if it is a commentary, homily series, catena or "
+        "exposition that treats this passage, and its author died in or "
+        f"before {CUTOFF_YEAR}. Give death_year as the author's year of "
+        f"death. Give role as one of: {', '.join(ROLES)} — "
+        "ecclesiastical-writer is patrology's own term for an orthodox writer "
+        "who is not venerated as a saint, and is the right slot for "
+        "Cassiodorus, Nicholas of Lyra or Cornelius a Lapide. Put any other "
+        "name the same work is known by in aliases.\n"
+        "\n"
+        "Name no work you are not confident exists. An empty list is a valid "
+        "answer and is worth more than a plausible invention: agreement across "
+        "independent runs is what this is scored on, so a guess costs more "
+        "than a gap."
+    )
+
+
+def _answered_by(events: list[dict]) -> str:
+    """The model that produced the answer, taken from the answer.
+
+    Never the model that was asked for. `--model opus` is an alias that
+    resolves to whatever is current, a request can be served by a fallback, and
+    a run stamped with a model that did not produce it is exactly the defect
+    this repository is built to avoid: a reference that resolves successfully
+    and wrongly.
+
+    It is read from the `model` each assistant message declares, and not from
+    the run's `modelUsage` tally, which is where the first version of this
+    looked and was wrong: an opus query bills a helper model for work nobody
+    asked about, so the tally named claude-haiku-4-5 beside claude-opus-5 and
+    could not say which of them wrote the answer. The assistant messages can:
+    every one of them on that same query said claude-opus-5. Disagreement among
+    them stops the run rather than being resolved by picking.
+    """
+    served = sorted(
+        {
+            str(event["message"]["model"])
+            for event in events
+            if event.get("type") == "assistant"
+            and isinstance(event.get("message"), dict)
+            and event["message"].get("model")
+        }
+    )
+    if len(served) != 1:
+        raise ValueError(
+            f"the answer was written by {len(served)} models ({served or 'none'}); "
+            "a run can only be stamped with the one model that produced it"
+        )
+    return served[0]
+
+
+def _ask_model(prompt: str, *, model: str, budget: float = 0.0) -> tuple[list[dict], str]:
+    """One query. Returns what was said and who said it, never one without the other.
+
+    The streaming form is asked for because the single-object form reports only
+    a per-model token tally, and a tally cannot say which model wrote the text;
+    the stream's assistant messages each name their own. See `_answered_by`.
+    """
+    argv = [
+        CLAUDE_CLI,
+        "--print",
+        prompt,
+        # No customization, no tools, no session on disk: the query is the
+        # prompt and nothing else, and it cannot read or write this checkout.
+        "--safe-mode",
+        "--tools",
+        "",
+        "--no-session-persistence",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--json-schema",
+        json.dumps(_ask_schema()),
+        "--model",
+        model,
+    ]
+    if budget:
+        argv += ["--max-budget-usd", str(budget)]
+    try:
+        finished = subprocess.run(
+            argv,
+            capture_output=True,
+            text=True,
+            timeout=ASK_TIMEOUT,
+            stdin=subprocess.DEVNULL,
+        )
+    except FileNotFoundError:
+        raise ValueError(
+            f"{CLAUDE_CLI} is not on PATH; `ask` reaches a model through it"
+        ) from None
+    except subprocess.TimeoutExpired:
+        raise ValueError(f"no answer within {ASK_TIMEOUT}s") from None
+    if finished.returncode != 0:
+        raise ValueError(
+            f"{CLAUDE_CLI} exited {finished.returncode}: "
+            f"{(finished.stderr or finished.stdout or '').strip()[:200]}"
+        )
+    events = []
+    for line in finished.stdout.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            events.append(json.loads(line))
+        except ValueError:
+            raise ValueError(f"unreadable answer: {line[:200]!r}") from None
+    outcome = next((e for e in reversed(events) if e.get("type") == "result"), None)
+    if outcome is None:
+        raise ValueError("the query returned no result")
+    if outcome.get("is_error") or outcome.get("subtype") != "success":
+        raise ValueError(f"the query failed: {str(outcome.get('result'))[:200]}")
+    answered_by = _answered_by(events)
+    works = (outcome.get("structured_output") or {}).get("works")
+    if not isinstance(works, list):
+        raise ValueError("the answer carried no works list")
+    return works, answered_by
+
+
+def _ask_worklist(arguments: argparse.Namespace) -> list[str]:
+    """What to ask about: `plan`'s answer, never a second implementation of it."""
+    chosen = list(dict.fromkeys(getattr(arguments, "passage", None) or []))
+    if chosen:
+        return chosen
+    if not arguments.corpus:
+        raise ValueError("--corpus or --passage is required; ask what plan says is missing")
+    planned = run_plan(
+        argparse.Namespace(
+            corpus=arguments.corpus,
+            runs=arguments.runs,
+            limit=arguments.limit,
+            by_chapter=arguments.by_chapter,
+            ledger=getattr(arguments, "ledger", LEDGER),
+        )
+    )
+    return [entry["passage"] for entry in planned["passages"]]
+
+
+def _ask_run(
+    passages: list[str], arguments: argparse.Namespace
+) -> tuple[dict[str, list[dict]], set[str], list[str]]:
+    """One run over the whole worklist, one query a passage.
+
+    A passage that fails is dropped from the run rather than failing it: a run
+    is a set of passages, and the ones that were answered are evidence whether
+    or not the rest were.
+    """
+    answers: dict[str, list[dict]] = {}
+    served: set[str] = set()
+    failed: list[str] = []
+
+    def one(passage: str) -> None:
+        try:
+            works, model = _ask_model(
+                _ask_prompt(passage, arguments.top),
+                model=arguments.model,
+                budget=arguments.budget,
+            )
+        except ValueError as error:
+            failed.append(f"{passage}: {error}")
+            print(f"  ! {passage}: {error}", file=sys.stderr)
+            return
+        answers[passage] = works
+        served.add(model)
+        print(f"  {passage}: {len(works)}", file=sys.stderr)
+
+    if arguments.jobs > 1:
+        with ThreadPoolExecutor(max_workers=arguments.jobs) as pool:
+            list(pool.map(one, passages))
+    else:
+        for passage in passages:
+            one(passage)
+    return {p: answers[p] for p in sorted(answers)}, served, failed
+
+
+def run_ask(arguments: argparse.Namespace) -> dict:
+    """Ask the model, N independent times, and write what `record` ingests.
+
+    The only verb in this repository that spends anything outside this machine.
+    It writes one results file per run and stops there: recording is `record`'s
+    job, and keeping the two apart means the evidence survives on disk even if
+    the ingest is refused.
+    """
+    import yaml
+
+    passages = _ask_worklist(arguments)
+    if not passages:
+        raise ValueError("nothing to ask about; every passage already has its runs")
+    out = Path(arguments.out)
+    audited_on = date.today().isoformat()
+    if arguments.dry_run:
+        return {
+            "status": "dry-run",
+            "passages": len(passages),
+            "runs": arguments.runs,
+            "queries": len(passages) * arguments.runs,
+            "model_requested": arguments.model,
+            "model_recorded": "whichever model answers, read from the answer",
+            "audited_on": audited_on,
+            "out": str(out),
+            "first_passage": passages[0],
+            "prompt": _ask_prompt(passages[0], arguments.top),
+        }
+
+    written: list[str] = []
+    recorded: list[str] = []
+    served: set[str] = set()
+    failures: list[str] = []
+    for index in range(1, arguments.runs + 1):
+        print(f"run {index}/{arguments.runs}: {len(passages)} passages", file=sys.stderr)
+        answers, models, failed = _ask_run(passages, arguments)
+        served |= models
+        failures += failed
+        if not answers:
+            raise ValueError(f"run {index} answered no passage at all; " + "; ".join(failed[:3]))
+        model = _one_model(models)
+        # Written as soon as the run is complete, not deferred to the report:
+        # unlike everything else here the queries cannot be re-run for free, so
+        # a failure after they are paid for must not also lose them.
+        path = out / f"{audited_on}-{model}-run{index}.yaml"
+        _write_atomic(
+            path,
+            yaml.safe_dump(
+                {"passages": answers}, sort_keys=False, allow_unicode=True, width=88
+            ),
+        )
+        written.append(str(path))
+        if arguments.record:
+            outcome = run_record(
+                argparse.Namespace(
+                    results=str(path),
+                    model=model,
+                    audited_on=audited_on,
+                    ledger=getattr(arguments, "ledger", LEDGER),
+                    allow_shrink=False,
+                )
+            )
+            recorded.append(outcome["run_id"])
+    model = _one_model(served)
+    return {
+        "status": "asked",
+        "model": model,
+        "audited_on": audited_on,
+        "passages": len(passages),
+        "runs": arguments.runs,
+        "queries": len(passages) * arguments.runs,
+        "failures": len(failures),
+        "results": written,
+        # A run is keyed in the ledger by what it said, so two runs that
+        # answered identically are one run there. That is right — it is the
+        # same guard that makes re-recording a file a no-op — but silent it
+        # would leave an operator believing three runs of corroboration landed
+        # where one did, and confidence is appearances over runs.
+        **({"identical_runs": len(recorded) - len(set(recorded))}
+           if arguments.record and len(recorded) != len(set(recorded)) else {}),
+        **({"recorded": recorded} if arguments.record else {
+            # Its own path, not the launcher's: naming a sibling id in a tool
+            # body reads to tmt as an undeclared dependency, and harvest does
+            # not depend on tpt to run.
+            "record_with": [
+                f"tools/harvest record --results {path} "
+                f"--model {model} --audited-on {audited_on}"
+                for path in written
+            ]
+        }),
+    }
+
+
+def _one_model(served: set[str]) -> str:
+    """One run, one model. Two would make `model` in the ledger a half-truth."""
+    if len(served) != 1:
+        raise ValueError(
+            f"answers came from {sorted(served)}; a run records one model, so "
+            "pass --model with a pinned id and ask again"
+        )
+    return next(iter(served))
 
 
 def _check_work(work: dict, where: str, problems: list[str]) -> None:
@@ -938,12 +1327,15 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="harvest",
         description=(
-            "Plan, record and promote model-harvested commentary candidates.\n"
+            "Plan, ask, record and promote model-harvested commentary\n"
+            "candidates.\n"
             "\n"
-            "This tool never calls a model. The harvest is run outside it and\n"
-            "brought back; `record --model NAME --audited-on DATE` ingests one\n"
-            "run and stamps it with the model identity and date it was told. It\n"            "is the ledger, not the caller, and it reaches nothing outside this\n"
-            "machine."
+            "One verb calls a model: `ask`, and nothing else here opens a\n"
+            "socket or spends anything outside this machine. `ask` writes only\n"
+            "a results file, stamped with the model that answered — read out of\n"
+            "the answer, never the model that was requested — and the date it\n"
+            "ran. `record` ingests that file; every other verb reads the ledger\n"
+            "and derives from it."
         ),
         parents=[shared],
     )
@@ -970,6 +1362,61 @@ def main(argv: list[str] | None = None) -> int:
         "--by-chapter", action="store_true",
         help="one locus per chapter, never wider; more queries, no drops",
     )
+
+    ask = with_examples(
+        sub.add_parser(
+            "ask",
+            help="query the model for a worklist, N runs over",
+            description=(
+                "Ask the model for the works, N independent times.\n"
+                "\n"
+                "The only verb here that reaches outside this machine. It runs\n"
+                "the `claude` CLI once per passage per run, with no tools, no\n"
+                "session on disk and this repository's own customization\n"
+                "switched off, and validates each answer against a schema\n"
+                "derived from what `record` accepts.\n"
+                "\n"
+                "It writes one results file per run under --out, in exactly the\n"
+                "shape `record --results` ingests, named for the date and the\n"
+                "model that answered. Both stamps are discovered, not supplied:\n"
+                "the date is today's and the model is read out of the response,\n"
+                "so a run cannot be attributed to a model that did not produce\n"
+                "it. Recording is left to `record` unless --record is given;\n"
+                "two runs that answered identically are one run in the ledger,\n"
+                "which is reported as identical_runs rather than left to be\n"
+                "noticed in a confidence figure later.\n"
+                "\n"
+                "--dry-run prints the worklist size, the query count and the\n"
+                "prompt verbatim, and asks nothing."
+            ),
+            parents=[shared],
+        ),
+        EXAMPLES["ask"],
+    )
+    ask.add_argument("--corpus", help="corpus emitted by commentary-work-index")
+    ask.add_argument(
+        "--passage", action="append", default=[],
+        help="ask about this passage instead of a corpus worklist; repeatable",
+    )
+    ask.add_argument("--runs", type=int, default=3,
+                     help="independent runs per passage; collation reconciles them")
+    ask.add_argument("--limit", type=int, default=0, help="cap the worklist")
+    ask.add_argument("--top", type=int, default=20, help="works to ask for per passage")
+    ask.add_argument(
+        "--by-chapter", action="store_true",
+        help="one locus per chapter, never wider; more queries, no drops",
+    )
+    ask.add_argument("--out", default="build/harvest-runs",
+                     help="directory for the results files")
+    ask.add_argument("--model", default=ASK_MODEL,
+                     help="model to request; what is recorded comes from the answer")
+    ask.add_argument("--jobs", type=int, default=1, help="queries in flight at once")
+    ask.add_argument("--budget", type=float, default=0.0,
+                     help="cap in USD for a single query; 0 leaves it uncapped")
+    ask.add_argument("--record", action="store_true",
+                     help="also ingest each run, with the model and date discovered")
+    ask.add_argument("--dry-run", action="store_true",
+                     help="print what would be asked, of how many, and ask nothing")
 
     record = with_examples(
         sub.add_parser(
@@ -1070,8 +1517,19 @@ def main(argv: list[str] | None = None) -> int:
                 file=sys.stderr,
             )
             return 0
+        # The prompt is the one payload value that is a document rather than a
+        # field, and a dry run exists to show it. Printing it inline would
+        # break the key: value shape the rest of this renderer keeps, so it
+        # goes to stderr whole, the way plan prints its numbering note.
+        prompt = payload.pop("prompt", None)
         for key, value in sorted(payload.items()):
             print(f"{key}: {value}")
+        if prompt:
+            # Or a piped stdout buffers past the unbuffered stderr and the
+            # prompt lands above the report that introduces it.
+            sys.stdout.flush()
+            print("\n--- asked of every passage, verbatim ---", file=sys.stderr)
+            print(prompt, file=sys.stderr)
         return 0
 
     def render(payload: object, arguments: argparse.Namespace) -> int:
@@ -1098,8 +1556,9 @@ def main(argv: list[str] | None = None) -> int:
 
     return run_verb_cli(
         parser=parser,
-        handlers={"plan": run_plan, "record": run_record, "promote": run_promote,
-                  "harvest": run_harvest, "propers": run_propers, "aliases": run_aliases},
+        handlers={"plan": run_plan, "ask": run_ask, "record": run_record,
+                  "promote": run_promote, "harvest": run_harvest,
+                  "propers": run_propers, "aliases": run_aliases},
         renderer=render,
         prefix="harvest",
         argv=argv,
