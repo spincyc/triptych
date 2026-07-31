@@ -1,0 +1,141 @@
+# Which scripture each held commentary fragment comments on.
+#
+# The missing edge. A `passage` record in the source library already holds a
+# commentary fragment's text, its edition, its rights and its locator, and it is
+# validated against hash-pinned bytes — see the four patristic passages under
+# `src/sources/works/`. What it cannot say is *what scripture the fragment is
+# about*. Its `locus` is an address in the commentary's own work ("11.7" is book
+# eleven, chapter seven of De civitate Dei), and `context` is prose. So there is
+# no way to ask "every fragment commenting on Genesis 1", and that inverted
+# index is the whole machinery of the catena.
+#
+# This file is that edge and nothing else. It adds no field to any source
+# record, so no artifact manifest changes, no `source_fingerprint` moves, and
+# none of the pinned research bindings acquires a review obligation.
+#
+# Each row also carries the reconciliation `src/sources/commentary/README.md`
+# asks for and nothing has performed: `work_id` is the source-library identity
+# and `work_alias` is the harvest identity, and `catena check` fails unless they
+# name the same author. Every `work_id` in `passage-commentary-index.yaml` is
+# still null, so this is the first place the two identity spaces meet.
+#
+# Rules, from `guidance/catena.md`:
+#   Rule 3  `extent` is in CANONICAL (Vulgate) numbering, always, and says so.
+#   Rule 5  the extent is the range the commentator actually addressed; the
+#           chapter view is derived from it and stored nowhere.
+#   Rule 6  an extent may cross a chapter boundary. It is never split there.
+#   Rule 7  `text_date` is the date of the text, not of the claimed author, and
+#           `text_date_basis` carries the ground so a reader can dispute it.
+#   Rule 8  `catena check` refuses a fragment whose work-alias group has a
+#           canonical title naming a book the group does not everywhere name.
+#
+# The author is derived and never stored: it is the `responsible` of the
+# work record `work_id` names. `work_alias.author` is half of the key into
+# `work-aliases.yaml`, not a second copy, and the two must agree.
+schema: triptych-commentary-fragment-loci/v1
+updated: '2026-07-31'
+numbering: vulgate
+fragments:
+- passage_id: passage.augustine.de-civitate-dei.dods-1871.11.6
+  work_id: work.augustine.de-civitate-dei
+  work_alias:
+    author: Augustine of Hippo
+    work: De civitate Dei
+  text_date: 417
+  text_date_basis: Books XI-XIV were issued about 417; the whole work was finished in
+    426 and Augustine died in 430. The date of this text is the first of the three.
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 1
+    last_chapter: 2
+    last_verse: 2
+  basis: The excerpt opens on "in the beginning God created the heavens and the earth,
+    in order that it may be understood that He had made nothing previously" and closes
+    on "the sixth day, all things which God then made were finished, and on the seventh
+    the rest of God was mysteriously and sublimely signalized". It therefore runs from
+    Genesis 1:1 to Genesis 2:2 and crosses the chapter boundary.
+- passage_id: passage.augustine.de-civitate-dei.dods-1871.11.7
+  work_id: work.augustine.de-civitate-dei
+  work_alias:
+    author: Augustine of Hippo
+    work: De civitate Dei
+  text_date: 417
+  text_date_basis: Books XI-XIV were issued about 417; the whole work was finished in
+    426 and Augustine died in 430. The date of this text is the first of the three.
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 3
+    last_chapter: 1
+    last_verse: 5
+  basis: The excerpt expounds "light was made by the word of God, and God, we read,
+    separated it from the darkness, and called the light Day, and the darkness Night",
+    which is Genesis 1:3-5. The fourth day is named only as the premise that the sun
+    did not yet exist, so Genesis 1:14-19 is outside the extent.
+- passage_id: passage.augustine.de-civitate-dei.dods-1871.11.19
+  work_id: work.augustine.de-civitate-dei
+  work_alias:
+    author: Augustine of Hippo
+    work: De civitate Dei
+  text_date: 417
+  text_date_basis: Books XI-XIV were issued about 417; the whole work was finished in
+    426 and Augustine died in 430. The date of this text is the first of the three.
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 4
+    last_chapter: 1
+    last_verse: 5
+  basis: The excerpt quotes "God divided the light from the darkness; and God called
+    the light Day, and the darkness He called Night" and reads it of the separation
+    of the angels. That is Genesis 1:4-5. The chapter's later appeal to the luminaries
+    of the fourth day is a contrast drawn against the reading and is not expounded.
+
+# Fragments that are held and still may not render, with the reason and the
+# fix. A refusal recorded here is data a reader and a maintainer can both see;
+# a fragment quietly missing from the list above would be indistinguishable
+# from one nobody ever acquired.
+blocked:
+- passage_ids:
+  - passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1.1
+  - passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1.2
+  work_alias:
+    author: Basil the Great
+    work: Homiliae in Hexaemeron
+  reason: The passages hang off edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895,
+    whose work is the anthology and whose responsible is "Philip Schaff and Henry Wace".
+    The author is derived from the work a fragment names, so rendering these would
+    print Schaff and Wace as the author of Basil's Hexaemeron. There is no work record
+    for the Hexaemeron at all, so there is nothing truthful to derive from.
+  fix: Register work.basil-of-caesarea.homiliae-in-hexaemeron with responsible "Basil
+    of Caesarea", give it edition.basil-of-caesarea.homiliae-in-hexaemeron.english-npnf2-8-1895
+    as work.ambrose.de-mysteriis already does for its NPNF translation, and repoint
+    the two passages' edition_id at it. Alternatively keep the anthology edition and
+    add a schema version 2 segment under a Basil edition naming the container artifact,
+    which guidance/sources.md provides for exactly this. The first is the idiom this
+    library already uses for a single father's work inside NPNF.
+
+# The cases the chapter derivation is replayed against. The derivation itself
+# lives once, in `src/web/browser/catena/catena-model.js`, because the browser
+# is what performs it; `catena check` runs that same file under node against
+# these, exactly as `calendar-rubrics check` runs the liturgy assembly model.
+# Restating the answers here is what makes a broken derivation fail loudly, and
+# it is the only place any chapter-keyed list of fragments is written down.
+solved_chapters:
+- token: Gen
+  chapter: 1
+  passage_ids:
+  - passage.augustine.de-civitate-dei.dods-1871.11.6
+  - passage.augustine.de-civitate-dei.dods-1871.11.7
+  - passage.augustine.de-civitate-dei.dods-1871.11.19
+- token: Gen
+  chapter: 2
+  passage_ids:
+  - passage.augustine.de-civitate-dei.dods-1871.11.6
+- token: Gen
+  chapter: 3
+  passage_ids: []
