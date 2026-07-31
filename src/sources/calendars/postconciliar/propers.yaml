@@ -42,7 +42,22 @@ open_collation_items:
   PC-R series is declared exhaustive for fixed-date replacements and these are
   not fixed-date; and it requires a registry revision naming exact keys, slugs,
   positions and counts before a new identity. Whether that requirement binds this
-  calendar index at all, as against a publication leaf, is itself unsettled. Each
+  calendar index at all, as against a publication leaf, is itself unsettled, and
+  reading the registry closely on 2026-07-31 narrowed the question without
+  deciding it. Its own words scope the requirement to publication - a registry
+  revision must state the exact replacement keys, slugs, canonical positions,
+  counts, and affected edition records "before any new publication leaf is
+  created" - and its opening paragraph places the records that adopt or qualify
+  it under src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/
+  propers/registry/. A file under src/sources/calendars is neither. Cutting the
+  other way, this file's own header names that registry as its registry, and no
+  tool tests the claim - check-calendar-masses only requires that the value be a
+  quoted string, unique within the file, and matched by the spine. The PC-R
+  series does not refuse a movable celebration either; it is declared exhaustive
+  only for universal fixed-date General Calendar celebrations that can replace a
+  Sunday, so a movable one is outside its declared scope rather than excluded by
+  it. Nothing in either document says which reading governs, and the maintainer
+  must choose. Each
   therefore carries a synthetic pc-T-<key> id formed on the 1962 index's own
   1962-T-<key> pattern, and none of the three should be read as claiming a
   registry identity; settle the scheme with the registry's owner
@@ -50,7 +65,16 @@ open_collation_items:
   still declares that absence. Nothing tracked here settles whether a Mass that
   is neither a Sunday nor a solemnity nor a day of the Triduum belongs in this
   index, and the 1962 index in this repository carries one while this one does
-  not; it was left rather than resolved by preference
+  not; it was left rather than resolved by preference. What did change on
+  2026-07-31 is that the ground given for the absence stopped being true. The
+  seasonal section now holds blessed-virgin-mary-mother-church and
+  immaculate-heart-blessed-virgin-mary, both of rank Memorial, so the index is no
+  longer scoped to the Sundays, the solemnities and the days of the Triduum, and
+  that sentence cannot carry the Chrism Mass's absence any longer. The scope
+  itself is what needs deciding, and either answer costs something - admitting
+  every Mass the Missal prints in the Proper of Time means adding the Chrism Mass
+  and rewriting the scope sentence, while holding the narrow scope means the two
+  memorials leave or the sentence names them as exceptions
 - whether the three celebrations inscribed by rule belong under seasonal, as
   they are filed, or under christological and marian, is the same question the
   1962 index records for its own movable feasts of the Lord

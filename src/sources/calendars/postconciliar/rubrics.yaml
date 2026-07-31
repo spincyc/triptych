@@ -540,10 +540,23 @@ known_absences:
 unsettled:
 - what: whether the Chrism Mass belongs in an index scoped to Sundays, solemnities
     and the Triduum
-  why: the 1962 index in this repository carries one and this one does not, and
+  why: >-
+    The 1962 index in this repository carries one and this one does not, and
     nothing here decides which scope is right. Recorded as an absence above with
     blocks_result false, because it adds a Mass to the day rather than taking the
-    day from anything.
+    day from anything. The absence's stated ground has since failed: the seasonal
+    section of the calendar index now carries
+    blessed-virgin-mary-mother-church and
+    immaculate-heart-blessed-virgin-mary, both of rank Memorial, so the index is
+    not in fact scoped to the Sundays, the solemnities and the days of the
+    Triduum, and the scope sentence in known_absences above no longer describes
+    it. This needs a maintainer ruling on the scope itself, not a further
+    witness. Admitting every Mass the Missal prints in the Proper of Time costs
+    one mass entry, one assignment row - the 1962 file classifies its own Chrism
+    Mass as an additional-mass on Maundy Thursday - and the deletion of the
+    absence above. Holding the narrow scope costs either the removal of two
+    masses added on 2026-07-31 or an honest restatement naming them as
+    exceptions. Either way the sentence above must change.
 - what: an entry that carries several optional memorials under one key
   why: the calendar index in this repository joins them, so the page can say that more
     than one falls on the day but cannot list them separately or say which is which.

@@ -64,17 +64,49 @@ open_collation_items:
   1962-T-<key> id this file already uses for its undated temporal entries rather
   than an F number nothing here fixes; settle the scheme at collation
 - the fifth, sixth and seventh days within the octave of the Nativity are three
-  dated entries, as the calendar prints them. Whether the Missal gives them one
-  shared formulary, and what it is, was not established, because no witness
-  tracked here says so; the shared Mass is therefore absent rather than guessed
+  dated entries, as the calendar prints them, and the Missal gives all three one
+  shared formulary. Settled 2026-07-31 against the CMAA facsimile of the 1962
+  typica, the artifact this repository already records at
+  src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/
+  artifacts/cmaa-facsimile-pdf (sha256 648fdb8f...3518a, 82815941 bytes, matched
+  on retrieval). At 29, 30 and 31 December the Missal prints no propers at all,
+  only Missa Puer natus est nobis, ut supra 28 (printed pp. 29, 31 and 31;
+  digital pp. 110, 112 and 112, visually collated), which points back to the
+  formulary headed Diebus infra octavam Nativitatis Domini, II classis, at
+  printed pp. 28-29. So the calendar's three entries and this file's one shared
+  formulary are both right - three liturgical days, one Mass. That Mass is not the
+  Mass of Christmas Day. It takes the third Mass's Introit Puer natus est nobis
+  (Isai. 9, 6; Ps. 97, 1), Collect Concede quaesumus, Gradual Viderunt omnes
+  (Ps. 97, 3-4 et 2), Alleluia Dies sanctificatus, Offertory Tui sunt caeli
+  (Ps. 88, 12 et 15), Communion Viderunt omnes (Ps. 97, 3), Secret Oblata Domine
+  munera and Postcommunion Praesta quaesumus, but reads Titus 3, 4-7 and
+  Luke 2, 15-20 - the Aurora Mass's readings - where the Day Mass reads
+  Hebrews 1, 1-12 and John 1, 1-14. Only the two readings move, and that is
+  enough to make it a formulary of its own rather than a repetition of Christmas
+  Day. Nothing was added to this file; only the question is answered,
+  and the shared Mass is still absent
 - the Office of Our Lady on Saturday has no entry. Its rubrical place is settled
   (RG 78, RG 79, RG 91 row 27, and RGMR 515 b, which says its Mass exists and may
   be sung) and src/sources/calendars/roman-1962/rubrics.yaml already constitutes
   the day from it, but it falls on any Saturday carrying a fourth-class feria,
   which this file's own implied rules place in five different seasons, and the
   schema admits exactly one season on an undated entry. Its seasonal formularies
-  were also not read. Both must be settled before an entry can be written that
-  is not partly invented
+  have now been read, and there are five. Settled 2026-07-31 against the CMAA
+  facsimile named in the Nativity-octave item above, visually collated at digital
+  pp. 851-856. The Commune carries a section headed Missae de S. Maria in
+  sabbato, quae dici etiam possunt aliis diebus ut votivae de B. Maria Virgine,
+  iuxta rubricas vel, ex indulto, pro temporum diversitate, printed pp. [43]-[48],
+  whose five Masses are numbered I to V - I Tempore Adventus (Rorate caeli);
+  II A Nativitate Domini usque ad Purificationem (Vultum tuum); III A die 3
+  februarii usque ad feriam IV Hebdomadae sanctae (Salve sancta parens);
+  IV Tempore paschali (Salve sancta parens, with alleluias); V A festo Ss.
+  Trinitatis usque ad sabbatum ante dominicam I Adventus (Salve sancta parens).
+  RGMR 309 a calls them the Masses assigned pro sancta Maria in sabbato iuxta
+  temporum diversitatem. Form III carries its own internal switch rather than a
+  sixth form - after Septuagesima the Alleluia and its verse give way to the Tract
+  Gaude Maria Virgo. What remains is the schema question alone - five seasonal
+  forms against a schema that admits one season on an undated entry - and the
+  five Masses themselves, none of which was transcribed here
 - all entries in this file are placeholders pending source-backed completion
 - 63 seasonal entries were added for the temporal days the Missal keeps and this
   file did not, namely the three Advent Ember Days; Ash Wednesday and the three days
@@ -108,16 +140,74 @@ open_collation_items:
   antiphon Salus populi ego sum, only for its psalm verse
 - the 1962 books have no octave of the Ascension, of Corpus Christi, or of the
   Epiphany, and no Vigil of the Epiphany; nothing was added for them
+- no feria of Advent outside the Ember Days, and no fourth-class feria of
+  Septuagesima, of Epiphanytide, of Paschaltide or of the season after Pentecost,
+  has a Mass formulary of its own, so the absence of such entries from this file
+  is correct and not a gap. Settled 2026-07-31 against the CMAA facsimile named
+  above. RGMR 299, printed p. XXII under the heading IV - De Missa in dominicis
+  et feriis and visually collated, reads in full - Item propriam Missam habent
+  omnes feriae temporis Quadragesimae et Passionis necnon Quatuor Temporum
+  Adventus et septembris. In reliquis feriis dicitur Missa dominicae praecedentis,
+  nisi a rubricis aliter provisum sit. The Proprium de Tempore agrees, printing
+  a formulary for every feria of Lent and Passiontide and for the six Ember Days
+  of Advent and September, and for no other feria of any season. Four printed
+  rubrics say the same at the day - at Dominica secunda Adventus, printed p. 3,
+  orationes de dominica, quando de feria, quae Missam propriam non habeat,
+  facienda sit commemoratio iuxta rubricas; at Dominica I post Epiphaniam,
+  printed p. 40, si Missa dominicae celebratur in feriis temporis Epiphaniae; at
+  Septuagesima, Sexagesima and Quinquagesima, quando in feriis adhibetur Missa
+  dominicae; and at Dominica II post Pentecosten, non dicitur autem in diebus
+  ferialibus, quando adhibetur Missa dominicae praecedentis
+- the nisi a rubricis aliter provisum sit of RGMR 299 was chased and yields one
+  instance inside the seasons above, and it does not give a feria a Mass of its
+  own either. At In Ascensione Domini, printed p. 352, the Missal directs -
+  Diebus a feria VI post Ascensionem usque ad feriam VI ante vigiliam Pentecostes
+  inclusive, dicitur Missa de festo Ascensionis, cum Gloria et praefatione de
+  Ascensione, sine Credo et Communicantes proprio. So those nine days take the
+  Ascension's Mass rather than the preceding Sunday's. Everything else the
+  rubrics provide otherwise for in these seasons - the Easter and Whitsun octave
+  days, the Litaniae maiores et minores, the Vigils of the Ascension and of
+  Pentecost, the September Ember Days - is already a separately printed
+  formulary in this file and is not a fourth-class feria
+- chasing RGMR 299 turned up a formulary this file does not carry. At printed
+  p. 40 the Missal prints MISSA DOMINICAE PRIMAE post Epiphaniam, Introit In
+  excelso throno, under the rubric Haec Missa dicenda est diebus ferialibus huius
+  hebdomadae, because the Holy Family occupies that Sunday. It is the exact twin
+  of mass-of-the-first-sunday-after-pentecost, which this file does carry and
+  which src/sources/calendars/roman-1962/rubrics.yaml classifies as an
+  alternative-formulary; there is no epiphany-1 key here to match it. Nothing was
+  added, because the formulary was not transcribed
+- the Commemoratio septem Dolorum B. Mariae Virg. on the Friday after Passion
+  Sunday has no entry, and the commemoration model landed on 2026-07-31 does not
+  reach it. That model is dated - each of the 104 entries of rank Comm. carries a
+  civil date and a 1962-<date>-comm registry id, and this celebration is movable,
+  so it has neither. The Missal is not silent about it. At printed pp. 499-501,
+  between the March and April feasts of the Proprium Sanctorum, it prints the
+  heading Feria VI post dominicam I Passionis / Septem Dolorum beatae Mariae
+  Virginis / Commemoratio, then the rubric Hodie, ubi peculiaria pietatis
+  exercitia in honorem beatae Mariae Virg. Matris dolorosae peraguntur,
+  permittuntur duae Missae festivae de septem Doloribus beatae Mariae Virginis,
+  then a complete formulary - Introit Stabant iuxta Crucem Iesu mater (Io. 19,
+  25), Lesson Iudith 13, 22 et 23-25, Sequence Stabat Mater dolorosa, and the
+  rest, with a commemoration of the feria at each oration. So an entry of rank
+  Comm. holding only a placeholder would understate what the Missal prints here,
+  which the sixty unfolded commemorations do not. Two things must be settled
+  before it can be written - a registry scheme for a movable commemoration, which
+  is the same open item recorded above for the ferias, and whether a Comm. that
+  carries its own printed Mass is filed as a commemoration or as a mass
 - ascension, corpus-christi, sacred-heart and chrism-mass are filed seasonal
   because the Missal prints them in the Proprium de Tempore and each is placed by
   the liturgical year rather than a civil date; by kind they are christological,
   and which section should hold them is open
-- three formularies the Missal carries are still absent from this file, namely
+- five formularies the Missal carries are still absent from this file, namely
   D. N. Iesu Christi Regis (last Sunday of October, I classis), Sanctissimi
-  Nominis Iesu, and the
+  Nominis Iesu, the
   Mass for the days within the Octave of the Nativity that 12-29, 12-30 and 12-31
-  use. All three are movable or shared and none is in the fixed-date spine, which
-  is why nothing reports them
+  use, which the collation above identifies as Diebus infra octavam Nativitatis
+  Domini, II classis, printed pp. 28-29, the Missa dominicae primae post
+  Epiphaniam of printed p. 40, and the Commemoratio septem Dolorum B. Mariae
+  Virg. of printed pp. 499-501. All five are movable or shared and none is in the
+  fixed-date spine, which is why nothing reports them
 sections:
   seasonal:
     kind: seasonal
