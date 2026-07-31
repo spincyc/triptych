@@ -33,6 +33,30 @@ open_collation_items:
   a contiguous range; confirm each against the facsimile
 - pre-1960 commemorations, suffrages, and suppressed octave texts were omitted
   as not appointed in 1962; confirm against the controlling edition's rubrics
+- 60 commemorations stood inside another celebration's name, in the shape the
+  calendar reference prints them, a feast then a semicolon then comm. and the
+  saint. Each is now its own dated entry with rank Comm., the shape the calendar
+  already used for the 44 entries it inscribes as commemorations outright, so that
+  each can be looked up and reached as the second or third oration it is. The split
+  follows the reference's own stated convention, that a commemoration following a
+  feast is shown after a semicolon, and never a reading of the name, so a joint
+  title such as Ss. Perpetuae et Felicitatis Martyrum or Ss. Petri et Pauli
+  Apostolorum stays one celebration
+- their registry ids read 1962-<date>-comm and are synthetic, as the temporal
+  1962-T-<key> ids are. The sanctoral registry carries one id per civil date and
+  the reference prints no identifier for a commemoration standing beside a feast;
+  settle a scheme at collation
+- nothing was read for those 60 beyond identity, date and the fact of the
+  commemoration. Each carries a placeholder, and the three orations a commemoration
+  actually consists of are still absent
+- 25 December keeps its commemoration of S. Anastasia in a note rather than in an
+  entry of its own. It is proper to the second Mass and printed inside that
+  formulary, not inscribed on the date, and a dated entry would put it through the
+  occurrence rules RG 111 a would then refuse it under; settle at collation
+- 25 April holds two celebrations in one entry, the Litania maior and S. Marci
+  Evangelistae. Neither is a commemoration, the reference prints no comm. there,
+  so this is not the same defect and nothing was split; the rank II the entry
+  carries is the Evangelist's
 - all entries in this file are placeholders pending source-backed completion
 - 63 seasonal entries were added for the temporal days the Missal keeps and this
   file did not, namely the three Advent Ember Days; Ash Wednesday and the three days
@@ -952,7 +976,7 @@ sections:
           Per hujus, Domine, operationem mysterii, et vitia nostra purgentur, et
           justa desideria compleantur. Per Dominum nostrum Jesum Christum...
     - key: fifth-day-within-octave
-      name: 'Fifth day within the octave; comm. S. Thomae Episcopi et Martyris'
+      name: Fifth day within the octave
       registry: '1962-12-29'
       date: 12-29
       rank: II
@@ -976,7 +1000,7 @@ sections:
 
           '
     - key: seventh-day-within-octave
-      name: 'Seventh day within the octave; comm. S. Silvestri I Papae et Confessoris'
+      name: Seventh day within the octave
       registry: '1962-12-31'
       date: 12-31
       rank: II
@@ -12356,7 +12380,7 @@ sections:
 
           '
     - key: beatae-mariae-virginis-reginae
-      name: Beatae Mariae Virginis Reginae; comm. S. Petronillae Virginis
+      name: Beatae Mariae Virginis Reginae
       registry: '1962-05-31'
       date: 05-31
       rank: II
@@ -12368,8 +12392,7 @@ sections:
 
           '
     - key: visitatione-beatae-mariae-virginis
-      name: In Visitatione Beatae Mariae Virginis; comm. Ss. Processi et Martiniani
-        Martyrum
+      name: In Visitatione Beatae Mariae Virginis
       registry: '1962-07-02'
       date: 07-02
       rank: II
@@ -12393,7 +12416,7 @@ sections:
 
           '
     - key: vigil-assumption
-      name: Vigil of the Assumption; comm. S. Eusebii Confessoris
+      name: Vigil of the Assumption
       registry: '1962-08-14'
       date: 08-14
       rank: II
@@ -12417,8 +12440,7 @@ sections:
 
           '
     - key: immaculati-cordis-beatae-mariae-virginis
-      name: Immaculati Cordis Beatae Mariae Virginis; comm. Ss. Timothei et Sociorum
-        Martyrum
+      name: Immaculati Cordis Beatae Mariae Virginis
       registry: '1962-08-22'
       date: 08-22
       rank: II
@@ -12430,7 +12452,7 @@ sections:
 
           '
     - key: nativitate-beatae-mariae-virginis
-      name: In Nativitate Beatae Mariae Virginis; comm. S. Hadriani Martyris
+      name: In Nativitate Beatae Mariae Virginis
       registry: '1962-09-08'
       date: 09-08
       rank: II
@@ -12454,7 +12476,7 @@ sections:
 
           '
     - key: septem-dolorum-beatae-mariae-virginis
-      name: Septem Dolorum Beatae Mariae Virginis; comm. S. Nicomedis Martyris
+      name: Septem Dolorum Beatae Mariae Virginis
       registry: '1962-09-15'
       date: 09-15
       rank: II
@@ -12478,7 +12500,7 @@ sections:
 
           '
     - key: beatae-mariae-virginis-a-rosario
-      name: Beatae Mariae Virginis a Rosario; comm. S. Marci Papae et Confessoris
+      name: Beatae Mariae Virginis a Rosario
       registry: '1962-10-07'
       date: 10-07
       rank: II
@@ -12578,8 +12600,7 @@ sections:
 
           '
     - key: transfiguratione-domini-nostri-iesu-christi
-      name: In Transfiguratione Domini Nostri Iesu Christi; comm. Ss. Xysti II Papae,
-        Felicissimi et Agapiti Martyrum
+      name: In Transfiguratione Domini Nostri Iesu Christi
       registry: '1962-08-06'
       date: 08-06
       rank: II
@@ -12615,12 +12636,14 @@ sections:
 
           '
     - key: nativitate-domini-octave
-      name: In Nativitate Domini, with octave; at the second Mass, comm. S. Anastasiae
-        Martyris
+      name: In Nativitate Domini, with octave
       registry: '1962-12-25'
       date: 12-25
       rank: I
       kind: christological
+      notes: The second Mass, in aurora, carries a commemoration of S. Anastasia Martyr
+        that the Missal prints inside that formulary; it is not an entry the calendar
+        inscribes on the date and has no dated entry of its own here.
       propers:
       - name: Placeholder
         source: composed
@@ -12656,8 +12679,7 @@ sections:
 
           '
     - key: s-hilarii-episcopi-confessoris-ecclesiae-doctoris
-      name: S. Hilarii Episcopi, Confessoris et Ecclesiae Doctoris; comm. S. Felicis
-        Presbyteri et Martyris
+      name: S. Hilarii Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-01-14'
       date: 01-14
       rank: III
@@ -12668,11 +12690,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-felicis-presbyteri-martyris
+      name: Comm. S. Felicis Presbyteri et Martyris
+      registry: '1962-01-14-comm'
+      date: 01-14
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-pauli-primi-eremitae-confessoris
-      name: S. Pauli primi Eremitae, Confessoris; comm. S. Mauri Abbatis
+      name: S. Pauli primi Eremitae, Confessoris
       registry: '1962-01-15'
       date: 01-15
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-mauri-abbatis
+      name: Comm. S. Mauri Abbatis
+      registry: '1962-01-15-comm'
+      date: 01-15
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -12717,9 +12763,20 @@ sections:
 
           '
     - key: comm-ss-marii-marthae-audifacis-abachum
-      name: Comm. Ss. Marii, Marthae, Audifacis et Abachum Martyrum; comm. S. Canuti
-        Regis, Martyris
+      name: Comm. Ss. Marii, Marthae, Audifacis et Abachum Martyrum
       registry: '1962-01-19'
+      date: 01-19
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-canuti-regis-martyris
+      name: Comm. S. Canuti Regis, Martyris
+      registry: '1962-01-19-comm'
       date: 01-19
       rank: Comm.
       kind: sanctoral
@@ -12766,11 +12823,22 @@ sections:
 
           '
     - key: s-raymundi-penafort-confessoris
-      name: S. Raymundi de Penafort Confessoris; comm. S. Emerentianae Virginis et
-        Martyris
+      name: S. Raymundi de Penafort Confessoris
       registry: '1962-01-23'
       date: 01-23
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-emerentianae-virginis-martyris
+      name: Comm. S. Emerentianae Virginis et Martyris
+      registry: '1962-01-23-comm'
+      date: 01-23
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -12791,10 +12859,22 @@ sections:
 
           '
     - key: conversione-s-pauli-apostoli
-      name: In Conversione S. Pauli Apostoli; comm. S. Petri Apostoli
+      name: In Conversione S. Pauli Apostoli
       registry: '1962-01-25'
       date: 01-25
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-petri-apostoli
+      name: Comm. S. Petri Apostoli
+      registry: '1962-01-25-comm'
+      date: 01-25
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -12827,10 +12907,22 @@ sections:
 
           '
     - key: s-petri-nolasci-confessoris
-      name: S. Petri Nolasci Confessoris; comm. S. Agnetis Virginis et Martyris, secundo
+      name: S. Petri Nolasci Confessoris
       registry: '1962-01-28'
       date: 01-28
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-agnetis-virginis-martyris-secundo
+      name: Comm. S. Agnetis Virginis et Martyris, secundo
+      registry: '1962-01-28-comm'
+      date: 01-28
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -12923,10 +13015,22 @@ sections:
 
           '
     - key: s-titi-episcopi-confessoris
-      name: S. Titi Episcopi et Confessoris; comm. S. Dorotheae Virginis et Martyris
+      name: S. Titi Episcopi et Confessoris
       registry: '1962-02-06'
       date: 02-06
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-dorotheae-virginis-martyris
+      name: Comm. S. Dorotheae Virginis et Martyris
+      registry: '1962-02-06-comm'
+      date: 02-06
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -12959,11 +13063,22 @@ sections:
 
           '
     - key: s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae
-      name: S. Cyrilli Episcopi Alexandrini, Confessoris et Ecclesiae Doctoris; comm.
-        S. Apolloniae Virginis et Martyris
+      name: S. Cyrilli Episcopi Alexandrini, Confessoris et Ecclesiae Doctoris
       registry: '1962-02-09'
       date: 02-09
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-apolloniae-virginis-martyris
+      name: Comm. S. Apolloniae Virginis et Martyris
+      registry: '1962-02-09-comm'
+      date: 02-09
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -13032,10 +13147,22 @@ sections:
 
           '
     - key: cathedrae-s-petri-apostoli
-      name: Cathedrae S. Petri Apostoli; comm. S. Pauli Apostoli
+      name: Cathedrae S. Petri Apostoli
       registry: '1962-02-22'
       date: 02-22
       rank: II
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-pauli-apostoli
+      name: Comm. S. Pauli Apostoli
+      registry: '1962-02-22-comm'
+      date: 02-22
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -13080,10 +13207,22 @@ sections:
 
           '
     - key: s-casimiri-confessoris
-      name: S. Casimiri Confessoris; comm. S. Lucii I Papae et Martyris
+      name: S. Casimiri Confessoris
       registry: '1962-03-04'
       date: 03-04
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-lucii-i-papae-martyris
+      name: Comm. S. Lucii I Papae et Martyris
+      registry: '1962-03-04-comm'
+      date: 03-04
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -13309,10 +13448,22 @@ sections:
 
           '
     - key: s-iustini-martyris
-      name: S. Iustini Martyris; comm. Ss. Tiburtii, Valeriani et Maximi Martyrum
+      name: S. Iustini Martyris
       registry: '1962-04-14'
       date: 04-14
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-tiburtii-valeriani-maximi-martyrum
+      name: Comm. Ss. Tiburtii, Valeriani et Maximi Martyrum
+      registry: '1962-04-14-comm'
+      date: 04-14
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -13538,10 +13689,22 @@ sections:
 
           '
     - key: s-antonini-episcopi-confessoris
-      name: S. Antonini Episcopi et Confessoris; comm. Ss. Gordiani et Epimachi Martyrum
+      name: S. Antonini Episcopi et Confessoris
       registry: '1962-05-10'
       date: 05-10
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-gordiani-epimachi-martyrum
+      name: Comm. Ss. Gordiani et Epimachi Martyrum
+      registry: '1962-05-10-comm'
+      date: 05-10
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -13646,10 +13809,22 @@ sections:
 
           '
     - key: s-petri-caelestini-papae-confessoris
-      name: S. Petri Caelestini Papae et Confessoris; comm. S. Pudentianae Virginis
+      name: S. Petri Caelestini Papae et Confessoris
       registry: '1962-05-19'
       date: 05-19
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-pudentianae-virginis
+      name: Comm. S. Pudentianae Virginis
+      registry: '1962-05-19-comm'
+      date: 05-19
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -13670,7 +13845,7 @@ sections:
 
           '
     - key: s-gregorii-vii-papae-confessoris
-      name: S. Gregorii VII Papae et Confessoris; comm. S. Urbani I Papae et Martyris
+      name: S. Gregorii VII Papae et Confessoris
       registry: '1962-05-25'
       date: 05-25
       rank: III
@@ -13681,8 +13856,20 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-urbani-i-papae-martyris
+      name: Comm. S. Urbani I Papae et Martyris
+      registry: '1962-05-25-comm'
+      date: 05-25
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-philippi-nerii-confessoris
-      name: S. Philippi Nerii Confessoris; comm. S. Eleutherii Papae et Martyris
+      name: S. Philippi Nerii Confessoris
       registry: '1962-05-26'
       date: 05-26
       rank: III
@@ -13693,12 +13880,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-eleutherii-papae-martyris
+      name: Comm. S. Eleutherii Papae et Martyris
+      registry: '1962-05-26-comm'
+      date: 05-26
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-bedae-venerabilis-confessoris-ecclesiae-doctoris
-      name: S. Bedae Venerabilis Confessoris et Ecclesiae Doctoris; comm. S. Ioannis
-        I Papae et Martyris
+      name: S. Bedae Venerabilis Confessoris et Ecclesiae Doctoris
       registry: '1962-05-27'
       date: 05-27
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-ioannis-i-papae-martyris
+      name: Comm. S. Ioannis I Papae et Martyris
+      registry: '1962-05-27-comm'
+      date: 05-27
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -13734,6 +13944,18 @@ sections:
       name: Comm. S. Felicis I Papae et Martyris
       registry: '1962-05-30'
       date: 05-30
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-petronillae-virginis
+      name: Comm. S. Petronillae Virginis
+      registry: '1962-05-31-comm'
+      date: 05-31
       rank: Comm.
       kind: sanctoral
       propers:
@@ -13839,11 +14061,22 @@ sections:
 
           '
     - key: s-ioannis-s-facundo-confessoris
-      name: S. Ioannis de S. Facundo Confessoris; comm. Ss. Basilidis, Cyrini, Naboris
-        et Nazarii Martyrum
+      name: S. Ioannis de S. Facundo Confessoris
       registry: '1962-06-12'
       date: 06-12
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-basilidis-cyrini-naboris-nazarii
+      name: Comm. Ss. Basilidis, Cyrini, Naboris et Nazarii Martyrum
+      registry: '1962-06-12-comm'
+      date: 06-12
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -13900,8 +14133,7 @@ sections:
 
           '
     - key: s-ephraem-syri-diaconi-confessoris-ecclesiae
-      name: S. Ephraem Syri Diaconi, Confessoris et Ecclesiae Doctoris; comm. Ss.
-        Marci et Marcelliani Martyrum
+      name: S. Ephraem Syri Diaconi, Confessoris et Ecclesiae Doctoris
       registry: '1962-06-18'
       date: 06-18
       rank: III
@@ -13912,11 +14144,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-ss-marci-marcelliani-martyrum
+      name: Comm. Ss. Marci et Marcelliani Martyrum
+      registry: '1962-06-18-comm'
+      date: 06-18
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-iulianae-falconeriis-virginis
-      name: S. Iulianae de Falconeriis Virginis; comm. Ss. Gervasii et Protasii Martyrum
+      name: S. Iulianae de Falconeriis Virginis
       registry: '1962-06-19'
       date: 06-19
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-gervasii-protasii-martyrum
+      name: Comm. Ss. Gervasii et Protasii Martyrum
+      registry: '1962-06-19-comm'
+      date: 06-19
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14033,10 +14289,34 @@ sections:
 
           '
     - key: commemoratione-s-pauli-apostoli
-      name: In Commemoratione S. Pauli Apostoli; comm. S. Petri Apostoli
+      name: In Commemoratione S. Pauli Apostoli
       registry: '1962-06-30'
       date: 06-30
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-petri-apostoli-2
+      name: Comm. S. Petri Apostoli
+      registry: '1962-06-30-comm'
+      date: 06-30
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-processi-martiniani-martyrum
+      name: Comm. Ss. Processi et Martiniani Martyrum
+      registry: '1962-07-02-comm'
+      date: 07-02
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14117,10 +14397,22 @@ sections:
 
           '
     - key: s-ioannis-gualberti-abbatis
-      name: S. Ioannis Gualberti Abbatis; comm. Ss. Naboris et Felicis Martyrum
+      name: S. Ioannis Gualberti Abbatis
       registry: '1962-07-12'
       date: 07-12
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-naboris-felicis-martyrum
+      name: Comm. Ss. Naboris et Felicis Martyrum
+      registry: '1962-07-12-comm'
+      date: 07-12
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14165,11 +14457,22 @@ sections:
 
           '
     - key: s-camilli-lellis-confessoris
-      name: S. Camilli de Lellis Confessoris; comm. Ss. Symphorosae et septem eius
-        filiorum Martyrum
+      name: S. Camilli de Lellis Confessoris
       registry: '1962-07-18'
       date: 07-18
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-symphorosae-septem-eius-filiorum
+      name: Comm. Ss. Symphorosae et septem eius filiorum Martyrum
+      registry: '1962-07-18-comm'
+      date: 07-18
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14190,7 +14493,7 @@ sections:
 
           '
     - key: s-hieronymi-aemiliani-confessoris
-      name: S. Hieronymi Aemiliani Confessoris; comm. S. Margaritae Virginis et Martyris
+      name: S. Hieronymi Aemiliani Confessoris
       registry: '1962-07-20'
       date: 07-20
       rank: III
@@ -14201,12 +14504,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-margaritae-virginis-martyris
+      name: Comm. S. Margaritae Virginis et Martyris
+      registry: '1962-07-20-comm'
+      date: 07-20
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-laurentii-brundusio-confessoris-ecclesiae-doctoris
-      name: S. Laurentii de Brundusio Confessoris et Ecclesiae Doctoris; comm. S.
-        Praxedis Virginis
+      name: S. Laurentii de Brundusio Confessoris et Ecclesiae Doctoris
       registry: '1962-07-21'
       date: 07-21
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-praxedis-virginis
+      name: Comm. S. Praxedis Virginis
+      registry: '1962-07-21-comm'
+      date: 07-21
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14227,10 +14553,22 @@ sections:
 
           '
     - key: s-apollinaris-episcopi-martyris
-      name: S. Apollinaris Episcopi et Martyris; comm. S. Liborii Episcopi et Confessoris
+      name: S. Apollinaris Episcopi et Martyris
       registry: '1962-07-23'
       date: 07-23
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-liborii-episcopi-confessoris
+      name: Comm. S. Liborii Episcopi et Confessoris
+      registry: '1962-07-23-comm'
+      date: 07-23
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14251,10 +14589,22 @@ sections:
 
           '
     - key: s-iacobi-apostoli
-      name: S. Iacobi Apostoli; comm. S. Christophori Martyris
+      name: S. Iacobi Apostoli
       registry: '1962-07-25'
       date: 07-25
       rank: II
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-christophori-martyris
+      name: Comm. S. Christophori Martyris
+      registry: '1962-07-25-comm'
+      date: 07-25
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14300,11 +14650,22 @@ sections:
 
           '
     - key: s-marthae-virginis
-      name: S. Marthae Virginis; comm. Ss. Felicis, Simplicii, Faustini et Beatricis
-        Martyrum
+      name: S. Marthae Virginis
       registry: '1962-07-29'
       date: 07-29
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-felicis-simplicii-faustini-beatricis
+      name: Comm. Ss. Felicis, Simplicii, Faustini et Beatricis Martyrum
+      registry: '1962-07-29-comm'
+      date: 07-29
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14349,11 +14710,22 @@ sections:
 
           '
     - key: s-alfonsi-mariae-ligorio-episcopi-confessoris
-      name: S. Alfonsi Mariae de Ligorio Episcopi, Confessoris et Ecclesiae Doctoris;
-        comm. S. Stephani I Papae et Martyris
+      name: S. Alfonsi Mariae de Ligorio Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-08-02'
       date: 08-02
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-stephani-i-papae-martyris
+      name: Comm. S. Stephani I Papae et Martyris
+      registry: '1962-08-02-comm'
+      date: 08-02
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14385,8 +14757,20 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-ss-xysti-ii-papae-felicissimi
+      name: Comm. Ss. Xysti II Papae, Felicissimi et Agapiti Martyrum
+      registry: '1962-08-06-comm'
+      date: 08-06
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-caietani-confessoris
-      name: S. Caietani Confessoris; comm. S. Donati Episcopi et Martyris
+      name: S. Caietani Confessoris
       registry: '1962-08-07'
       date: 08-07
       rank: III
@@ -14397,9 +14781,20 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-donati-episcopi-martyris
+      name: Comm. S. Donati Episcopi et Martyris
+      registry: '1962-08-07-comm'
+      date: 08-07
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-ioannis-mariae-vianney-confessoris
-      name: S. Ioannis Mariae Vianney Confessoris; comm. Ss. Cyriaci, Largi et Smaragdi
-        Martyrum
+      name: S. Ioannis Mariae Vianney Confessoris
       registry: '1962-08-08'
       date: 08-08
       rank: III
@@ -14410,11 +14805,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-ss-cyriaci-largi-smaragdi-martyrum
+      name: Comm. Ss. Cyriaci, Largi et Smaragdi Martyrum
+      registry: '1962-08-08-comm'
+      date: 08-08
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: vigil-saint-lawrence
-      name: Vigil of Saint Lawrence; comm. S. Romani Martyris
+      name: Vigil of Saint Lawrence
       registry: '1962-08-09'
       date: 08-09
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-romani-martyris
+      name: Comm. S. Romani Martyris
+      registry: '1962-08-09-comm'
+      date: 08-09
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14462,6 +14881,18 @@ sections:
       name: Comm. Ss. Hippolyti et Cassiani Martyrum
       registry: '1962-08-13'
       date: 08-13
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-eusebii-confessoris
+      name: Comm. S. Eusebii Confessoris
+      registry: '1962-08-14-comm'
+      date: 08-14
       rank: Comm.
       kind: sanctoral
       propers:
@@ -14542,6 +14973,18 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-ss-timothei-sociorum-martyrum
+      name: Comm. Ss. Timothei et Sociorum Martyrum
+      registry: '1962-08-22-comm'
+      date: 08-22
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-philippi-benitii-confessoris
       name: S. Philippi Benitii Confessoris
       registry: '1962-08-23'
@@ -14603,8 +15046,7 @@ sections:
 
           '
     - key: s-augustini-episcopi-confessoris-ecclesiae-doctoris
-      name: S. Augustini Episcopi, Confessoris et Ecclesiae Doctoris; comm. S. Hermetis
-        Martyris
+      name: S. Augustini Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-08-28'
       date: 08-28
       rank: III
@@ -14615,8 +15057,20 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-hermetis-martyris
+      name: Comm. S. Hermetis Martyris
+      registry: '1962-08-28-comm'
+      date: 08-28
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: decollatione-s-ioannis-baptistae
-      name: In Decollatione S. Ioannis Baptistae; comm. S. Sabinae Martyris
+      name: In Decollatione S. Ioannis Baptistae
       registry: '1962-08-29'
       date: 08-29
       rank: III
@@ -14627,11 +15081,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-sabinae-martyris
+      name: Comm. S. Sabinae Martyris
+      registry: '1962-08-29-comm'
+      date: 08-29
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-rosae-limanae-virginis
-      name: S. Rosae Limanae Virginis; comm. Ss. Felicis et Adaucti Martyrum
+      name: S. Rosae Limanae Virginis
       registry: '1962-08-30'
       date: 08-30
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-felicis-adaucti-martyrum
+      name: Comm. Ss. Felicis et Adaucti Martyrum
+      registry: '1962-08-30-comm'
+      date: 08-30
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14652,8 +15130,20 @@ sections:
 
           '
     - key: comm-s-aegidii-abbatis
-      name: Comm. S. Aegidii Abbatis; comm. Ss. duodecim Fratrum Martyrum
+      name: Comm. S. Aegidii Abbatis
       registry: '1962-09-01'
+      date: 09-01
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-duodecim-fratrum-martyrum
+      name: Comm. Ss. duodecim Fratrum Martyrum
+      registry: '1962-09-01-comm'
       date: 09-01
       rank: Comm.
       kind: sanctoral
@@ -14699,6 +15189,18 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-hadriani-martyris
+      name: Comm. S. Hadriani Martyris
+      registry: '1962-09-08-comm'
+      date: 09-08
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: comm-s-gorgonii-martyris
       name: Comm. S. Gorgonii Martyris
       registry: '1962-09-09'
@@ -14735,12 +15237,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-nicomedis-martyris
+      name: Comm. S. Nicomedis Martyris
+      registry: '1962-09-15-comm'
+      date: 09-15
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: ss-cornelii-papae-cypriani-episcopi-martyrum
-      name: Ss. Cornelii Papae et Cypriani Episcopi, Martyrum; comm. Ss. Euphemiae
-        Virginis, Luciae et Geminiani Martyrum
+      name: Ss. Cornelii Papae et Cypriani Episcopi, Martyrum
       registry: '1962-09-16'
       date: 09-16
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-euphemiae-virginis-luciae-geminiani
+      name: Comm. Ss. Euphemiae Virginis, Luciae et Geminiani Martyrum
+      registry: '1962-09-16-comm'
+      date: 09-16
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14809,8 +15334,7 @@ sections:
 
           '
     - key: s-thomae-villanova-episcopi-confessoris
-      name: S. Thomae de Villanova Episcopi et Confessoris; comm. Ss. Mauritii et
-        Sociorum Martyrum
+      name: S. Thomae de Villanova Episcopi et Confessoris
       registry: '1962-09-22'
       date: 09-22
       rank: III
@@ -14821,11 +15345,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-ss-mauritii-sociorum-martyrum
+      name: Comm. Ss. Mauritii et Sociorum Martyrum
+      registry: '1962-09-22-comm'
+      date: 09-22
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-lini-papae-martyris
-      name: S. Lini Papae et Martyris; comm. S. Theclae Virginis et Martyris
+      name: S. Lini Papae et Martyris
       registry: '1962-09-23'
       date: 09-23
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-theclae-virginis-martyris
+      name: Comm. S. Theclae Virginis et Martyris
+      registry: '1962-09-23-comm'
+      date: 09-23
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -14965,8 +15513,20 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-marci-papae-confessoris
+      name: Comm. S. Marci Papae et Confessoris
+      registry: '1962-10-07-comm'
+      date: 10-07
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-birgittae-viduae
-      name: S. Birgittae Viduae; comm. Ss. Sergii, Bacchi, Marcelli et Apuleii Martyrum
+      name: S. Birgittae Viduae
       registry: '1962-10-08'
       date: 10-08
       rank: III
@@ -14977,12 +15537,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-ss-sergii-bacchi-marcelli-apuleii
+      name: Comm. Ss. Sergii, Bacchi, Marcelli et Apuleii Martyrum
+      registry: '1962-10-08-comm'
+      date: 10-08
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-ioannis-leonardi-confessoris
-      name: S. Ioannis Leonardi Confessoris; comm. Ss. Dionysii Episcopi, Rustici
-        et Eleutherii Martyrum
+      name: S. Ioannis Leonardi Confessoris
       registry: '1962-10-09'
       date: 10-09
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-dionysii-episcopi-rustici-eleutherii
+      name: Comm. Ss. Dionysii Episcopi, Rustici et Eleutherii Martyrum
+      registry: '1962-10-09-comm'
+      date: 10-09
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -15099,9 +15682,20 @@ sections:
 
           '
     - key: comm-s-hilarionis-abbatis
-      name: Comm. S. Hilarionis Abbatis; comm. Ss. Ursulae ac Sociarum Virginum et
-        Martyrum
+      name: Comm. S. Hilarionis Abbatis
       registry: '1962-10-21'
+      date: 10-21
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-ursulae-ac-sociarum-virginum
+      name: Comm. Ss. Ursulae ac Sociarum Virginum et Martyrum
+      registry: '1962-10-21-comm'
       date: 10-21
       rank: Comm.
       kind: sanctoral
@@ -15196,10 +15790,22 @@ sections:
 
           '
     - key: s-caroli-episcopi-confessoris
-      name: S. Caroli Episcopi et Confessoris; comm. Ss. Vitalis et Agricolae Martyrum
+      name: S. Caroli Episcopi et Confessoris
       registry: '1962-11-04'
       date: 11-04
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-ss-vitalis-agricolae-martyrum
+      name: Comm. Ss. Vitalis et Agricolae Martyrum
+      registry: '1962-11-04-comm'
+      date: 11-04
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -15220,7 +15826,7 @@ sections:
 
           '
     - key: dedicatione-archibasilicae-mi-salvatoris
-      name: In Dedicatione Archibasilicae Ss.mi Salvatoris; comm. S. Theodori Martyris
+      name: In Dedicatione Archibasilicae Ss.mi Salvatoris
       registry: '1962-11-09'
       date: 11-09
       rank: II
@@ -15231,9 +15837,20 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-theodori-martyris
+      name: Comm. S. Theodori Martyris
+      registry: '1962-11-09-comm'
+      date: 11-09
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-andreae-avellini-confessoris
-      name: S. Andreae Avellini Confessoris; comm. Ss. Tryphonis, Respicii et Nymphae
-        Virginis, Martyrum
+      name: S. Andreae Avellini Confessoris
       registry: '1962-11-10'
       date: 11-10
       rank: III
@@ -15244,11 +15861,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-ss-tryphonis-respicii-nymphae-virginis
+      name: Comm. Ss. Tryphonis, Respicii et Nymphae Virginis, Martyrum
+      registry: '1962-11-10-comm'
+      date: 11-10
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-martini-episcopi-confessoris
-      name: S. Martini Episcopi et Confessoris; comm. S. Mennae Martyris
+      name: S. Martini Episcopi et Confessoris
       registry: '1962-11-11'
       date: 11-11
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-mennae-martyris
+      name: Comm. S. Mennae Martyris
+      registry: '1962-11-11-comm'
+      date: 11-11
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -15341,10 +15982,22 @@ sections:
 
           '
     - key: s-elisabeth-viduae
-      name: S. Elisabeth Viduae; comm. S. Pontiani Papae et Martyris
+      name: S. Elisabeth Viduae
       registry: '1962-11-19'
       date: 11-19
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-pontiani-papae-martyris
+      name: Comm. S. Pontiani Papae et Martyris
+      registry: '1962-11-19-comm'
+      date: 11-19
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -15377,7 +16030,7 @@ sections:
 
           '
     - key: s-clementis-i-papae-martyris
-      name: S. Clementis I Papae et Martyris; comm. S. Felicitatis Martyris
+      name: S. Clementis I Papae et Martyris
       registry: '1962-11-23'
       date: 11-23
       rank: III
@@ -15388,12 +16041,35 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
+    - key: comm-s-felicitatis-martyris
+      name: Comm. S. Felicitatis Martyris
+      registry: '1962-11-23-comm'
+      date: 11-23
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: s-ioannis-a-cruce-confessoris-ecclesiae
-      name: S. Ioannis a Cruce Confessoris et Ecclesiae Doctoris; comm. S. Chrysogoni
-        Martyris
+      name: S. Ioannis a Cruce Confessoris et Ecclesiae Doctoris
       registry: '1962-11-24'
       date: 11-24
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-chrysogoni-martyris
+      name: Comm. S. Chrysogoni Martyris
+      registry: '1962-11-24-comm'
+      date: 11-24
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -15414,10 +16090,22 @@ sections:
 
           '
     - key: s-silvestri-abbatis
-      name: S. Silvestri Abbatis; comm. S. Petri Alexandrini Episcopi et Martyris
+      name: S. Silvestri Abbatis
       registry: '1962-11-26'
       date: 11-26
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-petri-alexandrini-episcopi-martyris
+      name: Comm. S. Petri Alexandrini Episcopi et Martyris
+      registry: '1962-11-26-comm'
+      date: 11-26
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -15474,11 +16162,22 @@ sections:
 
           '
     - key: s-petri-chrysologi-episcopi-confessoris-ecclesiae
-      name: S. Petri Chrysologi Episcopi, Confessoris et Ecclesiae Doctoris; comm.
-        S. Barbarae Virginis et Martyris
+      name: S. Petri Chrysologi Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-12-04'
       date: 12-04
       rank: III
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-barbarae-virginis-martyris
+      name: Comm. S. Barbarae Virginis et Martyris
+      registry: '1962-12-04-comm'
+      date: 12-04
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder
@@ -15611,6 +16310,31 @@ sections:
       registry: '1962-12-28'
       date: 12-28
       rank: II
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+
+    - key: comm-s-thomae-episcopi-martyris
+      name: Comm. S. Thomae Episcopi et Martyris
+      registry: '1962-12-29-comm'
+      date: 12-29
+      rank: Comm.
+      kind: sanctoral
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: comm-s-silvestri-i-papae-confessoris
+      name: Comm. S. Silvestri I Papae et Confessoris
+      registry: '1962-12-31-comm'
+      date: 12-31
+      rank: Comm.
       kind: sanctoral
       propers:
       - name: Placeholder

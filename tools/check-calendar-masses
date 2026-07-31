@@ -59,6 +59,14 @@ KINDS = ("christological", "marian", "sanctoral", "seasonal")
 KEY_CHARS = set("abcdefghijklmnopqrstuvwxyz0123456789-")
 DAYS_IN_MONTH = (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 DATE_RE = re.compile(r"^(\d{2})-(\d{2})$")
+# A commemoration written into another celebration's name - "Feast; comm. Saint"
+# - is a second celebration with nowhere to live: it cannot be looked up, it
+# cannot be commemorated on its own, and no page can show it as the second or
+# third oration it is. An entry that *is* the commemoration names itself so from
+# its first character, which is why only a later occurrence is refused. The
+# abbreviation carries its printed period, so a name reading "In Commemoratione"
+# is a title and not a fold.
+FOLDED_COMMEMORATION = re.compile(r"\bcomm\.", re.IGNORECASE)
 
 
 def check_proper(where: str, proper: object, problems: list[str]) -> None:
@@ -186,6 +194,21 @@ def check_date(where: str, value: object, problems: list[str]) -> None:
         problems.append(f"{where}: day out of range in {value!r}")
 
 
+def check_name(where: str, name: object, problems: list[str]) -> None:
+    """Refuse a name that folds a commemoration into another celebration."""
+    if not isinstance(name, str):
+        return
+    for found in FOLDED_COMMEMORATION.finditer(name):
+        if found.start() == 0:
+            continue
+        problems.append(
+            f"{where}: the name folds a commemoration in at "
+            f"{name[found.start():]!r}; record it as its own dated entry with "
+            "rank 'Comm.' instead"
+        )
+        return
+
+
 def iter_masses(document: dict) -> list:
     """Yield every mass from the calendar's one canonical container.
 
@@ -214,6 +237,7 @@ def check_entry(entry: object, index: int, problems: list[str]) -> str | None:
             problems.append(f"{where}: key must be lowercase kebab-case")
     else:
         key = None
+    check_name(where, entry.get("name"), problems)
     registry = entry.get("registry")
     if registry is not None and not isinstance(registry, str):
         problems.append(f"{where}: registry must be a quoted string, got {registry!r}")

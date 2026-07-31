@@ -204,6 +204,56 @@ if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	exit 1
 fi
 
+# A name that folds a commemoration into another celebration is rejected: the
+# commemoration is a second celebration, and inside a name it can be neither
+# looked up nor reached as the oration it is.
+for folded in \
+	"S. Hilarii Episcopi et Confessoris; comm. S. Felicis Presbyteri et Martyris" \
+	"In Nativitate Domini, with octave; at the second Mass, comm. S. Anastasiae Martyris"; do
+	{
+		header
+		cat <<YAML
+  - key: folded
+    name: "$folded"
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+YAML
+	} >src/sources/calendars/test/propers.yaml
+	encode
+	if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+		echo "expected failure for a name folding a commemoration in: $folded" >&2
+		exit 1
+	fi
+done
+
+# An entry that *is* the commemoration says so from its first character, and
+# a title carrying the unabbreviated word is a title, not a fold. Neither is
+# refused, or the shape the fix moves these into would be unwritable.
+{
+	header
+	cat <<'YAML'
+  - key: own-commemoration
+    name: Comm. S. Felicis Presbyteri et Martyris
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+  - key: commemoratione
+    name: In Commemoratione S. Pauli Apostoli
+    registry: "02"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 2:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if ! "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "a standalone commemoration entry must not be refused" >&2
+	exit 1
+fi
+
 # Duplicate mass keys are rejected.
 {
 	header
