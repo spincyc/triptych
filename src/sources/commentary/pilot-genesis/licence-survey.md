@@ -295,10 +295,26 @@ hard requirement on the acquisition verb.
    request for the commentary on Genesis 1:1 returned "The text ends before
    reaching the exegetical content on the Pentateuch proper." The locus is in
    the file and is unreachable by this route.
+4. **A model-mediated fetch refuses a whole document even when it is public
+   domain and freely licensed.** Asked for the complete text of Basil's Homily
+   I from Wikisource — eleven sections, Creative Commons Attribution-ShareAlike,
+   translator dead since 1905 — the route refused outright: "Reproducing it in
+   full would violate content reproduction guidelines I must follow." The same
+   route then returned every one of the eleven sections without objection when
+   asked for three at a time. **The whole document is reachable only in
+   pieces**, which is how the complete homily was in fact acquired: four
+   requests to each of two witnesses.
+
+The bound this lane actually reached, stated exactly: **roughly three sections
+of running prose per request, about 1,500 to 3,000 words.** Above that the
+response is refused or silently truncated, and truncation is only detectable by
+comparing two witnesses and noticing that one reading is a prefix of the other
+— which is how two of the three divergences in Homily I were diagnosed.
 
 The verb must therefore **fetch and retain whole byte streams, hash them, and
 seek within them locally.** Text must never be routed through a model on its
-way into an artifact.
+way into an artifact. Every limit above is a property of the retrieval route,
+not of the sources: all eleven sections were freely available the whole time.
 
 ---
 
@@ -360,16 +376,31 @@ specification a future verb has to satisfy.
 | Path | What |
 | --- | --- |
 | `src/sources/commentary/pilot-genesis/licence-survey.md` | this document |
-| `.../series-2-volume-8/editions/new-york-1895/passages/basil-hexaemeron-1.1.toml` | Basil, Hexaemeron I.1 — the proem on Moses |
-| `.../series-2-volume-8/editions/new-york-1895/passages/basil-hexaemeron-1.2.toml` | Basil, Hexaemeron I.2 — **the exposition of Genesis 1:1** |
-| `.../artifacts/basil-hexaemeron-1.1-web-text-b1f7692f/` | tracked transcription, 2,789 bytes, 5 sense units |
-| `.../artifacts/basil-hexaemeron-1.2-web-text-0e2f2b33/` | tracked transcription, 2,904 bytes, 8 sense units |
+| `.../series-2-volume-8/editions/new-york-1895/passages/basil-hexaemeron-1.toml` | **Basil, Hexaemeron I complete** — all eleven sections, on Genesis 1:1 |
+| `.../artifacts/basil-hexaemeron-1-web-text-0823184f/` | tracked transcription, 26,685 bytes, 14 paragraph units |
 
-Both passages carry `states = ["cataloged", "acquired", "inspected"]`. They are
+The homily is stored as **one passage, not eleven**, because its natural extent
+under Rule 5 is the single lemma Genesis 1:1 — no part of it comments on a
+later verse, so splitting it by section would invent loci the text does not
+have. Two earlier section-level records covering only sections 1 and 2 were
+superseded by this one and removed.
+
+The passage carries `states = ["cataloged", "acquired", "inspected"]`. It is
 **not** `verified`: no facsimile of the 1895 printing was hashed or collated,
 so the wording rests on two agreeing web witnesses and not on the page.
-Promoting them to `verified` would be exactly the false claim that vocabulary
+Promoting it to `verified` would be exactly the false claim that vocabulary
 exists to prevent.
+
+Three divergences between the two witnesses were found, recorded on the
+artifact, and resolved as follows. In section 2 both read "and that was all was
+given up to chance" where the sense wants "and that all was given up to
+chance"; because **both** carry it, the doubled auxiliary belongs to the
+transcription lineage and is preserved rather than silently corrected. In
+section 5 the two disagree on where the quotation of Colossians 1:16 closes, and
+Wikisource's placement is followed. In sections 6 and 8 one response stopped
+short of the other, and in each case the shorter reading is a **prefix** of the
+longer — truncation, not variance — so the longer is taken. All three are open
+against the printed page.
 
 ### Already in the repository — the page lane should use these
 

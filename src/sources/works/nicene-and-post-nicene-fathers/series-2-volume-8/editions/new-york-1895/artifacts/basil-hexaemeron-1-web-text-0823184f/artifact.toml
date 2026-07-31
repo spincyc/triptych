@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1-web-text-0823184f"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The complete first Hexaemeron homily in Blomfield Jackson's Nicene and Post-Nicene Fathers English translation, which is in the United States public domain by date of publication. Jackson died in 1905 and Schaff in 1893, so the translation is also out of copyright in jurisdictions applying a life-plus-seventy term. No host's markup, formatting, pagination or annotation is reproduced, and neither the Wikisource page furniture nor the Christian Classics Ethereal Library edition apparatus enters these bytes."
+rights_jurisdiction = "United States"
+source_url = "https://en.wikisource.org/wiki/Nicene_and_Post-Nicene_Fathers:_Series_II/Volume_VIII/The_Hexaemeron/Homily_1"
+provenance = "Retrieved 2026-07-31 from two independent transcriptions of this printing and collated against each other section by section: English Wikisource, and the Christian Classics Ethereal Library at https://www.ccel.org/ccel/schaff/npnf208.viii.ii.html. Both witnesses report the homily as having eleven numbered sections and both were pulled across four requests each until all eleven were in hand. The running text of each section was written as one LF-terminated UTF-8 line per source paragraph, prefixed by a braced homily-and-section locator, preserving the translation's wording, archaic second person, spelling and punctuation, and omitting footnote markers, section numbering, headings and host navigation. Typographic apostrophes were normalised to the ASCII apostrophe so that one convention holds across the file. No transformation field is recorded because no parent artifact was hashed: neither witness was retained as exact bytes, so there is no reproducible transformation input, only two corroborating readings."
+retrieved = "2026-07-31"
+sha256 = "0823184fcf071d6fea67e26814f9fe286299918f16afff1d4b449a1c9e601a42"
+byte_size = 26685
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-8/editions/new-york-1895/artifacts/basil-hexaemeron-1-web-text-0823184f/basil-hexaemeron-homily-1.txt"
+indexable = true
+encoding = "utf-8"
+notes = "This is a web transcription, not a collation against the printed page: no facsimile of the 1895 printing was hashed or read, so the artifact records what two independent web witnesses of the printing agree on. Three divergences were found and are resolved here as stated. In section 2 both witnesses read 'and that was all was given up to chance' where the sense wants 'and that all was given up to chance'; because both carry it the doubled auxiliary belongs to the transcription lineage and is preserved rather than silently corrected. In section 5 Wikisource closes the quotation of Colossians 1:16 after 'powers' while the Christian Classics Ethereal Library runs it on to 'archangels'; Wikisource's placement is followed because it matches the end of the scriptural quotation. In section 6 the Christian Classics Ethereal Library response stopped one sentence earlier than Wikisource, and in section 8 the Wikisource response stopped several sentences earlier than the Christian Classics Ethereal Library; in each case the shorter reading is a prefix of the longer, which indicates a truncated response rather than a textual variant, so the longer reading is taken. All three should be settled against the printed page before this text is promoted beyond inspected."
