@@ -500,7 +500,67 @@ not_decided_here:
 - Whether a solemnity transferred from an earlier date occupies this one, except at
   the Annunciation's named seat.
 
+# What this calendar index does not carry, so that a date landing on one of them
+# says so instead of quietly showing the celebration underneath. Each window was
+# computed from the repository's own Easter over 2020-2120 rather than stated
+# from memory; each is movable, which is why nothing else here reports them —
+# the spine derives fixed dates and every gate below it agrees with the spine.
+known_absences:
+- what: Sollemnitas Sacratissimi Cordis Iesu
+  place: 3
+  when: the Friday after the second Sunday after Pentecost, Easter + 68 days
+  match: {from: 06-01, to: 07-02, weekday: friday}
+  locus: NUALC 59 place 3; Missale Romanum, proprium de tempore
+  blocks_result: true
+  effect: >-
+    A solemnity of the Lord at place 3 takes this day from the Ordinary Time
+    weekday. It is absent from this calendar index, so the winner shown below is
+    not the day's identity. Its date rule is also absent from
+    guidance/liturgy/calendar-computation.md, so adding the Mass alone would
+    leave it unreachable from any date.
+- what: Memoria Immaculati Cordis Beatae Mariae Virginis
+  place: 10
+  when: the Saturday following the Sacred Heart, Easter + 69 days
+  match: {from: 06-02, to: 07-03, weekday: saturday}
+  locus: NUALC 59 place 10; the 1998 notification
+  blocks_result: true
+  effect: >-
+    An obligatory memorial at place 10 takes this day from the Ordinary Time
+    weekday and from the Saturday memorial of the Blessed Virgin Mary. It is
+    absent from this calendar index. Where it coincides with another obligatory
+    memorial the 1998 notification makes both optional, which this file cannot
+    express while the celebration itself is missing.
+- what: Memoria Beatae Mariae Virginis Ecclesiae Matris
+  place: 10
+  when: the Monday after Pentecost, Easter + 50 days
+  match: {from: 05-14, to: 06-14, weekday: monday}
+  locus: NUALC 59 place 10; the notification of 24 March 2018
+  blocks_result: true
+  effect: >-
+    An obligatory memorial added universally in 2018, which the 2018
+    notification makes prevail over any other memorial of a saint or blessed on
+    the day. It is absent from this calendar index, so this date resolves to the
+    Ordinary Time weekday that resumes after Pentecost.
+- what: Missa Chrismatis
+  when: the morning of Holy Thursday, Easter - 3 days, subject to the book's
+    pastoral provision for another nearby day
+  match: {from: 03-22, to: 04-22, weekday: thursday}
+  locus: Missale Romanum, feria V hebdomadae sanctae
+  blocks_result: false
+  effect: >-
+    Absent here, and it is not settled that it belongs: this index is scoped to
+    the Sundays, the solemnities and the days of the Triduum, and the Chrism Mass
+    is none of the three, while the 1962 index in this repository does carry one.
+    It does not displace the day, so the winner shown below stands; what is
+    missing is a second Mass on it.
+
 unsettled:
+- what: whether the Chrism Mass belongs in an index scoped to Sundays, solemnities
+    and the Triduum
+  why: the 1962 index in this repository carries one and this one does not, and
+    nothing here decides which scope is right. Recorded as an absence above with
+    blocks_result false, because it adds a Mass to the day rather than taking the
+    day from anything.
 - what: an entry that carries several optional memorials under one key
   why: the calendar index in this repository joins them, so the page can say that more
     than one falls on the day but cannot list them separately or say which is which.
