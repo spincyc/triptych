@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Triptych — The Propers of the Mass</title>
+<title>The Propers of the Mass</title>
 <!-- The shared machinery first, then this page's own colour. Both are local;
      the page makes no external request of any kind. -->
 <link rel="stylesheet" href="../shared/browser-core.css">
@@ -15,20 +15,15 @@
 <header class="page-header">
   <h1><span class="page-mark" aria-hidden="true">℣</span>The Propers of the Mass</h1>
   <p class="lede">
-    Choose a missal, then a type of Mass, then the Mass itself, then a
-    translation. Each missal carries its own calendar: choosing one loads that
-    missal's structure and rebuilds the lists below it. Only the chapters the
-    chosen Mass actually cites are fetched, and each of them only once.
+    The full text of any Mass in either missal, in the translations this site
+    can publish. Each missal carries its own calendar, so choosing one rebuilds
+    everything below it.
   </p>
   <!-- The companion page answers the question this one cannot: not "what does
-       this Mass say" but "why is this the Mass today". It is a separate page
-       because it is a separate task, and it shares this page's machinery and
-       this page's stylesheet rather than a mode switch. -->
+       this Mass say" but "why is this the Mass today". -->
   <p class="lede">
-    To go the other way — from a date to the Mass, and to the rubric behind every
-    step of the choice — see <a href="day.html">how this day's Mass is
-    assembled</a>: what fell on the day, which of them took it, and which of the
-    rest survive as the second and third collects.
+    Going the other way — from a date to its Mass, with the rubric behind each
+    step — is <a href="day.html">how this day's Mass is assembled</a>.
   </p>
 </header>
 
@@ -101,14 +96,8 @@
 
 <footer class="page-footer">
   <p>
-    Nothing here is pre-rendered. Every Mass-and-translation pairing is
-    assembled in the browser out of shared chapter fragments, fetched once each
-    and cached for the rest of the session.
-  </p>
-  <p>
-    This page reads missals. The reading plan is a separate page with its own
-    address, deliberately: they are separate tasks, and the machinery they share
-    lives in <code>shared/browser-core.js</code> rather than in a mode switch.
+    Reading scripture straight through rather than by the day?
+    <a href="../scripture/">The reading plan</a> is a separate page.
   </p>
 </footer>
 

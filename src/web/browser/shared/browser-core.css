@@ -61,7 +61,18 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
-body {
+/* Published, these pages are handed to the reader inside the site's own
+   layout: its header, its navigation, its footer, its background, its width.
+   This stylesheet then owns only what is inside the reading area, which the
+   layout hands over as `main.page-browser`. Styling `body` unconditionally is
+   what used to draw a second, narrower, differently-coloured page inside the
+   site's own, and it is why the colour scheme appeared to stop at the edge of
+   the reading pages.
+
+   Opened straight from the repository the same file has no site layout around
+   it, and the page still has to render. The guard is the site header itself:
+   present, the site is dressing the page; absent, this stylesheet does. */
+body:not(:has(> .site-header)) {
   margin: 0 auto;
   padding: 2rem 1.25rem 4rem;
   max-width: 52rem;
@@ -73,6 +84,26 @@ body {
   font-size: 1rem;
   line-height: 1.55;
   min-height: 100vh;
+}
+
+/* The reading area inside the site's layout. The surfaces are mixed from the
+   section's own accent, which the layout sets from `.section-red` or
+   `.section-gold` in the site's stylesheet, so no page here restates a colour
+   the site already owns and none of them can drift from it. */
+.page-browser {
+  --page: color-mix(in srgb, var(--section-accent) 4%, var(--surface, #fbfaf7));
+  --panel: color-mix(in srgb, var(--section-accent) 2%, #fff);
+  /* Re-declared here rather than inherited from :root. A custom property whose
+     value is another var() is substituted where it is declared, so `--focus`
+     declared at :root resolves against the neutral fallback `--section-ink`
+     there and never against the section's. Declared here it resolves against
+     the section the layout actually set, and the focus ring is the section's
+     colour instead of grey. */
+  --focus: var(--section-ink);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 /* ---- Skip link and screen-reader helpers ---- */
@@ -115,6 +146,14 @@ body {
   margin-bottom: 1.5rem;
   padding-left: 0.9rem;
   border-left: 0.32rem solid var(--section-accent);
+}
+
+/* Inside the site's layout the reading area already carries the section's rule
+   down its left edge and across its top. A third bar 3rem inside the first is
+   furniture, not identity. */
+.page-browser .page-header {
+  padding-left: 0;
+  border-left: 0;
 }
 
 .page-header h1 {
@@ -401,7 +440,7 @@ body {
 }
 
 @media (max-width: 34rem) {
-  body { padding: 1.25rem 1rem 3rem; }
+  body:not(:has(> .site-header)) { padding: 1.25rem 1rem 3rem; }
   .controls { padding: 0.85rem; }
   .field-steps { flex: 1 1 100%; }
   .steps button { flex: 1 1 auto; }

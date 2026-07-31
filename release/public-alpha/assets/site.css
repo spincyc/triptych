@@ -253,6 +253,13 @@ nav a { color: var(--ink); text-decoration: none; }
 /* A catalog is scanned across its full width; a document is read down a
    column, so its page takes a measure of roughly 70 characters. */
 .page-shell.reading { max-width: 46rem; }
+
+/* The reading browsers. Wider than a page of prose because they carry a row of
+   controls above the text, narrower than the catalogs because what is under the
+   controls is still prose meant to be read. Everything inside them is styled by
+   shared/browser-core.css and the section stylesheet beside it; what belongs
+   here is only how the site frames them. */
+.page-shell.page-browser { max-width: 60rem; }
 .page-shell.reading table { display: block; width: max-content; max-width: 100%; overflow-x: auto; }
 
 h1, h2, h3, h4, h5, h6 { line-height: 1.2; text-wrap: balance; }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Triptych — How this day's Mass is assembled</title>
+<title>How this day's Mass is assembled</title>
 <!-- The shared machinery, then the liturgy section's colour, then what only
      this page renders. All three are local; the page makes no external request
      of any kind. `liturgy.css` is shared with the propers page deliberately:
@@ -19,12 +19,10 @@
 <header class="page-header">
   <h1><span class="page-mark" aria-hidden="true">℣</span>How this day's Mass is assembled</h1>
   <p class="lede">
-    Pick a date and a missal. The page works through the five decisions in
-    order — which days fall on the date, which of them takes it, what becomes
-    of the ones that lose, which Mass may be said, and what is then read out of
-    the book — and shows the numbered rubric behind every step. The second and
-    third collects are the point of the exercise: they are what is left of the
-    days that lost.
+    Pick a date and a missal, and see why that day's Mass is that day's Mass:
+    which days fell on the date, which one took it, and which of the rest
+    survive as the second and third collects — with the numbered rubric behind
+    every step.
   </p>
 </header>
 
@@ -82,15 +80,8 @@
 
 <footer class="page-footer">
   <p>
-    Nothing here is pre-computed. There is one rules file per missal and one
-    calendar file per year; the assembly for a date is derived in the browser
-    from the two of them. Pre-building an assembly for every day of every year
-    would be tens of thousands of stored objects, and every one of them would
-    go stale the moment a rule was corrected.
-  </p>
-  <p>
-    The propers themselves are read on <a href="index.html">the propers page</a>,
-    which is where a Mass is read rather than argued about.
+    To read the Mass itself rather than the reasoning behind it, see
+    <a href="index.html">the propers of the Mass</a>.
   </p>
 </footer>
 

@@ -148,10 +148,27 @@ tool.ROOT = sandbox
 # The page ships with the data it reads, so a sandbox carrying a data root
 # carries a browser too; without one the assembly refuses, which is the
 # invariant that keeps a corpus from going live with nothing to serve it.
+# A served page is a whole document, because the artifact renders it into the
+# site's layout rather than copying it.
+WHOLE_PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fixture</title>
+<link rel="stylesheet" href="../shared/browser-core.css">
+</head>
+<body>
+<a class="skip-link" href="#reading">Skip to the content</a>
+<main id="reading">fixture</main>
+<script src="../shared/browser-core.js"></script>
+</body>
+</html>
+"""
 for directory in tool.WEB_BROWSER_DIRECTORIES:
     page = sandbox / "src/web/browser" / directory / "index.html"
     page.parent.mkdir(parents=True, exist_ok=True)
-    page.write_text("fixture", encoding="utf-8")
+    page.write_text(WHOLE_PAGE, encoding="utf-8")
 data = sandbox / "src/web/data"
 write(
     data / "bibles.json",
@@ -179,7 +196,41 @@ assert not any("licensed" in path for path in files), sorted(files)
 
 site = sandbox / "site"
 root = tool.SITE_DATA_ROOT.as_posix()
-tool.assemble_web_data(site)
+tool.assemble_web_data(site, True, {})
+# The served pages are rendered into the site's chrome, not copied: a reader who
+# follows a link from the library must not arrive somewhere that looks like a
+# different site. Copying them is exactly how they went live without the header.
+for entrance in tool.WEB_BROWSER_ENTRANCES:
+    served = (site / entrance / "index.html").read_text(encoding="utf-8")
+    assert '<header class="site-header">' in served, served
+    assert '<link rel="stylesheet" href="../assets/site.css">' in served, served
+    assert '<link rel="stylesheet" href="../shared/browser-core.css">' in served, served
+    assert '<script src="../shared/browser-core.js"></script>' in served, served
+    assert "fixture" in served, served
+    # One skip link, the layout's, pointing at the layout's main element.
+    assert served.count('class="skip-link"') == 1, served
+# `shared` holds the machinery, not a page, so nothing is served from it.
+assert not (site / "shared/index.html").exists()
+
+# A page carrying markup the layout has no place for is refused rather than
+# silently stripped: a stylesheet dropped here reaches the reader as a page that
+# renders almost right.
+strayed = sandbox / "src/web/browser/liturgy/index.html"
+kept = strayed.read_text(encoding="utf-8")
+strayed.write_text(
+    kept.replace("<title>Fixture</title>", '<title>Fixture</title>\n<style>a{color:red}</style>'),
+    encoding="utf-8",
+)
+try:
+    tool.web_browser_pages() and tool.render_browser_page(
+        strayed, "liturgy/index.html", True, {}
+    )
+except tool.ReleaseError as exc:
+    assert "no place for" in str(exc), exc
+else:
+    raise AssertionError("a page carrying unplaceable head markup was accepted")
+strayed.write_text(kept, encoding="utf-8")
+
 assert (site / f"{root}/offered/chapters/Ps/24.json").is_file()
 assert not (site / f"{root}/licensed").exists()
 # The offered edition is Vulgate-numbered, so the Hebrew loci of the same

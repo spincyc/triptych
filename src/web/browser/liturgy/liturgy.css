@@ -8,46 +8,30 @@
  * two pages drift apart in colour. What only the assembly page renders lives in
  * `day.css`, which declares no colour of its own.
  *
- * The site gives every section a liturgical colour, and these pages are entered
- * from the liturgy section, which is RED. The light values below are the live
- * ones from the site's own stylesheet (.section-red), copied rather than
- * imported: these pages are standalone and make no external request of any
- * kind, not even to the site's CSS.
- *
- * The reading-plan page declares its own block of the same six variables in
- * its own file. They are deliberately not shared: one variable serving both
- * pages would have to change meaning to change either.
- *
- * Dark mode lightens the accent rather than dropping it — a section that loses
- * its colour after dark has lost the only thing that says which section it is.
- * The dark values are the same hue, lifted until they read against the dark
- * page; the ink stays the text colour and the accent stays the rule colour, so
- * every contrast pairing holds in both schemes.
- *
- * These are the liturgy section's colours from release/public-alpha/assets/
- * site.css. They are copied, not imported, because this page is standalone —
- * so retuning the section there must be carried here or the page and the
- * section it is entered from will disagree.
+ * The site gives every section a liturgical colour, and these pages are
+ * entered from the liturgy section, which is RED. Published, that colour is not
+ * declared here at all: the site's layout marks the reading area
+ * `section-toned section-red` and the values arrive from the site's own
+ * stylesheet. Retuning the section there now carries here by itself, which is
+ * the whole reason the copy that used to sit in this file is gone.
  * ======================================================================== */
 
-:root {
+/* Published, the section's colour arrives from the site's own stylesheet: the
+   layout puts `section-toned section-red` on the reading area and every
+   variable below it resolves there. Nothing is declared here.
+
+   Opened straight from the repository there is no site stylesheet, so the
+   block below supplies the same six values as a development fallback. It is a
+   fallback and not the source: if it ever disagrees with `.section-red` in
+   release/public-alpha/assets/site.css, that file is right. */
+body:not(:has(> .site-header)) {
   --section-accent: #b02419;
   --section-ink: #78140d;
   --section-wash: rgba(176, 36, 25, 0.16);
   --section-pale: #e1aca8;
   --section-row: #efd3d1;
   --section-line: #ce7770;
-  --focus: #78140d;
-  /* The shared stylesheet paints its surfaces from these, so a section that
-     set only its accent and ink left the page neutral grey and the colour did
-     not carry. Every surface is now tinted from the section's own hue. */
-  --page: #fbf6f6;
-  --panel: #fefdfd;
-  --ink: #2b1917;
-  --ink-soft: #634745;
-  --ink-faint: #91706e;
-  --notice: #8f2f24;
-  --notice-bg: #f8eae8;
+  --focus: var(--section-ink);
 }
 
 

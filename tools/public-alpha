@@ -457,12 +457,42 @@ def data_root_edition_ids(relative_paths: Iterable[str]) -> set[str]:
     return editions
 
 
+def web_browser_pages() -> dict[str, Path]:
+    """Map each served browser page to the repository HTML it is rendered from.
+
+    The pages are rendered through `layout.html` like every other page in the
+    artifact, rather than copied. Copying them is what left the reading pages
+    without the site's header, navigation, footer and stylesheet — a reader who
+    followed a link from the library arrived somewhere that did not look like
+    the same site, and no robots metadata reached them either.
+    """
+    if not web_data_manifest_path().is_file():
+        return {}
+    pages: dict[str, Path] = {}
+    for directory in WEB_BROWSER_ENTRANCES:
+        source = ROOT / WEB_BROWSER_ROOT_RELATIVE / directory
+        held = sorted(
+            path
+            for path in source.glob("*.html")
+            if path.is_file() and not path.is_symlink()
+        )
+        if not held:
+            raise ReleaseError(
+                "the browser holds no pages in "
+                f"{(WEB_BROWSER_ROOT_RELATIVE / directory).as_posix()}"
+            )
+        for page in held:
+            pages[f"{directory}/{page.name}"] = page
+    return pages
+
+
 def web_data_files() -> dict[str, Path]:
-    """Map every artifact data-root path to the repository file it copies.
+    """Map every copied artifact data-root path to the repository file it copies.
 
     One map, so build and verify cannot disagree about what the data root holds.
     Absent when the repository carries no generated data root, exactly as the
-    pictorial gallery is absent without its manifest.
+    pictorial gallery is absent without its manifest. The pages themselves are
+    not here: they are rendered, and `web_browser_pages` maps those.
     """
     if not web_data_manifest_path().is_file():
         return {}
@@ -482,6 +512,8 @@ def web_data_files() -> dict[str, Path]:
                 f"{(WEB_BROWSER_ROOT_RELATIVE / directory).as_posix()}"
             )
         for page in held:
+            if page.suffix == ".html":
+                continue
             files[f"{directory}/{page.name}"] = page
     data_root = ROOT / WEB_DATA_ROOT_RELATIVE
     for path in sorted(data_root.rglob("*")):
@@ -1457,6 +1489,7 @@ def expected_artifact_files(
     expected.update(included_document_pages(set(included)).values())
     expected.update(f"doc/{provider}/{leaf}.pdf" for provider, leaf in included)
     expected.update(web_data_files())
+    expected.update(web_browser_pages())
     expected.update(
         artifact_license_source_paths()
     )
@@ -1981,6 +2014,36 @@ def render_page(
         extensions=["tables", "sane_lists", "toc", "footnotes", "attr_list"],
         output_format="html5",
     ))
+    return wrap_in_layout(
+        source_relative,
+        output_relative,
+        page_classes(source_relative, output_relative),
+        page_title(markdown_text),
+        breadcrumb(source_relative, output_relative),
+        content,
+        preview,
+        authorization,
+    )
+
+
+def wrap_in_layout(
+    source_relative: str,
+    output_relative: str,
+    page_class: str,
+    title: str,
+    breadcrumb_html: str,
+    content: str,
+    preview: bool,
+    authorization: dict,
+    head_extra: str = "",
+    body_extra: str = "",
+) -> str:
+    """Put one page's content inside the site's chrome.
+
+    Every page a reader can reach comes through here, whichever way its content
+    was produced, so the header, navigation, footer, stylesheet and robots
+    metadata cannot differ between one page and the next.
+    """
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
     if preview:
         robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
@@ -2000,13 +2063,13 @@ def render_page(
     else:
         robots = '<meta name="robots" content="index, follow">'
         banner = ""
-    title = page_title(markdown_text)
     home_current, library_current, feedback_current = navigation_state(source_relative)
     replacements = {
-        "{{PAGE_CLASS}}": page_classes(source_relative, output_relative),
+        "{{PAGE_CLASS}}": page_class,
         "{{DOCUMENT_TITLE}}": html.escape(document_title(title)),
         "{{ROBOTS}}": robots,
         "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
+        "{{HEAD_EXTRA}}": head_extra,
         "{{HOME_PATH}}": relative_link(output_relative, "index.html"),
         "{{LIBRARY_PATH}}": relative_link(output_relative, "library.html"),
         "{{CONTRIBUTING_PATH}}": relative_link(output_relative, "contributing.html"),
@@ -2016,8 +2079,9 @@ def render_page(
         "{{HOME_CURRENT}}": home_current,
         "{{LIBRARY_CURRENT}}": library_current,
         "{{FEEDBACK_CURRENT}}": feedback_current,
-        "{{BREADCRUMB}}": breadcrumb(source_relative, output_relative),
+        "{{BREADCRUMB}}": breadcrumb_html,
         "{{CONTENT}}": content,
+        "{{BODY_EXTRA}}": body_extra,
     }
     for marker, replacement in replacements.items():
         template = template.replace(marker, replacement)
@@ -2026,6 +2090,106 @@ def render_page(
         raise ReleaseError(f"unresolved layout markers: {sorted(set(unresolved))!r}")
     reject_internal_reader_labels(source_relative, template)
     return template
+
+
+BROWSER_TITLE_RE = re.compile(r"<title>(.*?)</title>", re.DOTALL)
+BROWSER_HEAD_RE = re.compile(r"<head>(.*?)</head>", re.DOTALL)
+BROWSER_BODY_RE = re.compile(r"<body([^>]*)>(.*?)</body>", re.DOTALL)
+BROWSER_STYLESHEET_RE = re.compile(r'<link rel="stylesheet" href="[^"]+">')
+BROWSER_SCRIPT_RE = re.compile(r'<script src="[^"]+"></script>')
+BROWSER_SKIP_LINK_RE = re.compile(r'<a class="skip-link" href="[^"]+">.*?</a>\s*', re.DOTALL)
+BROWSER_BODY_CLASS_RE = re.compile(r'\bclass="([^"]*)"')
+# What a browser page's head may hold. Anything else is a page doing something
+# the layout has no place for, and is refused rather than dropped: a stylesheet
+# or a meta tag silently discarded here would reach the reader as a page that
+# renders almost right.
+BROWSER_HEAD_ALLOWED_RE = re.compile(
+    r"""\s*
+    (?: <!--.*?-->
+      | <meta\ charset="utf-8">
+      | <meta\ name="viewport"\ content="[^"]*">
+      | <title>.*?</title>
+      | <link\ rel="stylesheet"\ href="[^"]+">
+    )\s*""",
+    re.DOTALL | re.VERBOSE,
+)
+
+
+def browser_page_parts(source_path: Path, output_relative: str) -> dict:
+    """Take one standalone browser page apart into what the layout needs.
+
+    The page is authored as a whole document so it can be opened straight from
+    the repository during development. Published, it is the same content inside
+    the site's chrome. Refuse anything the split cannot account for.
+    """
+    label = source_path.relative_to(ROOT).as_posix()
+    text = source_path.read_text(encoding="utf-8")
+
+    title_match = BROWSER_TITLE_RE.search(text)
+    head_match = BROWSER_HEAD_RE.search(text)
+    body_match = BROWSER_BODY_RE.search(text)
+    if not (title_match and head_match and body_match):
+        raise ReleaseError(f"{label}: not a whole HTML document with a head, body and title")
+
+    head = head_match.group(1)
+    if BROWSER_HEAD_ALLOWED_RE.sub("", head).strip():
+        raise ReleaseError(
+            f"{label}: head carries markup the site layout has no place for; "
+            "the layout owns charset, viewport, title, robots and the site stylesheet"
+        )
+    stylesheets = BROWSER_STYLESHEET_RE.findall(head)
+    if not stylesheets:
+        raise ReleaseError(f"{label}: declares no stylesheet of its own")
+
+    body_attributes, body = body_match.group(1), body_match.group(2)
+    scripts = BROWSER_SCRIPT_RE.findall(body)
+    if not scripts:
+        raise ReleaseError(f"{label}: declares no script; the page cannot render without one")
+    content = BROWSER_SCRIPT_RE.sub("", body)
+    # The layout supplies its own skip link, to its own main element. Two of
+    # them puts the reader on a target that is no longer the top of the content.
+    content = BROWSER_SKIP_LINK_RE.sub("", content, count=1)
+
+    body_class = BROWSER_BODY_CLASS_RE.search(body_attributes)
+    classes = ["page-shell", "page-browser", "section-toned"]
+    classes.append(f"section-{BROWSER_SECTION_COLOURS[output_relative.split('/')[0]]}")
+    if body_class:
+        classes.extend(body_class.group(1).split())
+    return {
+        "title": title_match.group(1).strip(),
+        "head_extra": "".join(f"\n  {link}" for link in stylesheets),
+        "body_extra": "".join(f"\n  {script}" for script in scripts),
+        "content": content.strip("\n"),
+        "page_class": " ".join(classes),
+    }
+
+
+# The liturgy pages are entered from the site's red section and the reading
+# pages from its gold one. Naming the colour here rather than in each page's
+# stylesheet is what lets those stylesheets stop carrying a copy of the site's
+# palette that had to be re-copied every time the site was retuned.
+BROWSER_SECTION_COLOURS = {"liturgy": "red", "scripture": "gold"}
+
+
+def render_browser_page(
+    source_path: Path,
+    output_relative: str,
+    preview: bool,
+    authorization: dict,
+) -> str:
+    parts = browser_page_parts(source_path, output_relative)
+    return wrap_in_layout(
+        source_path.relative_to(ROOT).as_posix(),
+        output_relative,
+        parts["page_class"],
+        parts["title"],
+        "",
+        parts["content"],
+        preview,
+        authorization,
+        head_extra=parts["head_extra"],
+        body_extra=parts["body_extra"],
+    )
 
 
 def render_source_page(
@@ -2429,6 +2593,15 @@ def verify_output(
         ):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
 
+    for output_relative, source in sorted(web_browser_pages().items()):
+        html_path = output / output_relative
+        if html_path.is_file() and html_path.read_text(
+            encoding="utf-8", errors="replace"
+        ) != render_browser_page(
+            source, output_relative, preview, expected_authorization
+        ):
+            errors.append(f"{output_relative}: rendered page does not match its approved source")
+
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         gallery_path = output / PICTORIAL_GALLERY_OUTPUT
         expected_gallery = render_pictorial_gallery(preview, expected_authorization)
@@ -2551,12 +2724,19 @@ def verify_output(
         raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
 
 
-def assemble_web_data(output: Path) -> None:
+def assemble_web_data(output: Path, preview: bool, authorization: dict) -> None:
     """Assemble the reading pages, their shared machinery, and the corpus."""
     for destination_relative, source in sorted(web_data_files().items()):
         destination = output / destination_relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
+    for output_relative, source in sorted(web_browser_pages().items()):
+        destination = output / output_relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(
+            render_browser_page(source, output_relative, preview, authorization),
+            encoding="utf-8",
+        )
 
 
 def build_site(
@@ -2596,7 +2776,7 @@ def build_site(
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(card["source"], destination)
 
-    assemble_web_data(output)
+    assemble_web_data(output, preview, authorization)
 
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
