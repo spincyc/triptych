@@ -128,6 +128,15 @@ PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
 WEB_DATA_ROOT_RELATIVE = PurePosixPath("src/web/data")
 WEB_BROWSER_ROOT_RELATIVE = PurePosixPath("src/web/browser")
 BIBLE_SOURCE_ROOT_RELATIVE = PurePosixPath("src/sources/bibles")
+# Tracks of the abridged plans: one tier of one plan in one edition, typeset
+# from the tracked plan and the tracked verse text and installed as a reviewed
+# PDF. A track is not a publication record and deliberately has none: it has no
+# authored LaTeX source, no catalog row and no independent approval, because it
+# is derived on every build from sources this release already binds. It is
+# carried the way the reading pages themselves are carried, and it is served
+# beside them.
+READING_PDF_ROOT_RELATIVE = PurePosixPath("pdf/reading-plans")
+READING_PDF_STEM_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 # The corpus is served once, under a name meant for the reader rather than for
 # the data, and both reading pages resolve it with ../browse.
 SITE_DATA_ROOT = PurePosixPath("browse")
@@ -563,6 +572,45 @@ def data_root_edition_ids(relative_paths: Iterable[str]) -> set[str]:
     return editions
 
 
+def reading_plan_pdfs() -> dict[str, Path]:
+    """Every installed track, by the artifact path that serves it.
+
+    The tracks are enumerated from the installed tree, which is safe here for
+    the reason it is not safe for the verse fragments: a track is named for the
+    edition it is set in, and the name is checked against `bibles.json` — the
+    site's single decision about which editions it may serve. A volume of an
+    edition the manifest does not offer stops the build rather than reaching a
+    reader, and so does any other kind of file left under this tree.
+    """
+    root = ROOT / READING_PDF_ROOT_RELATIVE
+    if not root.is_dir():
+        return {}
+    stray = sorted(
+        path.relative_to(ROOT).as_posix()
+        for path in root.rglob("*")
+        if path.is_file() and path.suffix != ".pdf"
+    )
+    if stray:
+        raise ReleaseError(
+            f"{READING_PDF_ROOT_RELATIVE.as_posix()} must hold PDFs only: {stray!r}"
+        )
+    offered = offered_bible_ids()
+    found: dict[str, Path] = {}
+    for path in sorted(root.glob("*.pdf")):
+        if path.is_symlink() or not path.is_file():
+            continue
+        relative = path.relative_to(ROOT).as_posix()
+        if not READING_PDF_STEM_RE.fullmatch(path.stem):
+            raise ReleaseError(f"{relative}: unsafe track name")
+        if not any(path.stem.endswith(f"-{bible}") for bible in offered):
+            raise ReleaseError(
+                f"{relative}: names no edition bibles.json offers; a track may only "
+                "carry an edition this site is permitted to serve"
+            )
+        found[relative] = path
+    return found
+
+
 def web_browser_pages() -> dict[str, Path]:
     """Map each served browser page to the repository HTML it is rendered from.
 
@@ -742,11 +790,17 @@ def site_source_paths() -> set[str]:
     manifest = web_data_manifest_path()
     if manifest.is_file():
         browser.add(manifest.relative_to(ROOT).as_posix())
+    # The tracks are bound, where the fragments are not, because nothing else
+    # decides them: a fragment is a consequence of bibles.json, while a track is
+    # a whole published volume of scripture whose only gate is the file being
+    # here. Six hash lines, and a plan or a text that changes moves the
+    # authorization, which is what a change to published content should do.
     return (
         set(SITE_SOURCE_PATHS)
         | set(document_pages())
         | pictorial_gallery_source_paths()
         | browser
+        | set(reading_plan_pdfs())
     )
 
 
@@ -1637,6 +1691,7 @@ def expected_artifact_files(
         expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
     expected.update(f"pdf/{provider}/{leaf}.pdf" for provider, leaf in included)
+    expected.update(reading_plan_pdfs())
     expected.update(web_data_files())
     expected.update(web_browser_pages())
     expected.update(
@@ -1870,6 +1925,10 @@ def source_to_output(
         license_path = ROOT.joinpath(*resolved.parts)
         if license_path.is_file():
             destination = resolved_text
+    if destination is None and resolved_text in reading_plan_pdfs():
+        # A track keeps its repository path in the artifact, so a link written
+        # for the repository resolves unchanged once it is made relative.
+        destination = resolved_text
     if destination is None:
         pdf_match = re.fullmatch(r"pdf/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
         if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
@@ -2796,6 +2855,11 @@ def verify_output(
     included = included_publications(publications, preview)
     expected_authorization = artifact_authorization(manifest, included)
     expected_pdf_paths = {f"pdf/{provider}/{leaf}.pdf" for provider, leaf in included}
+    # The tracks are PDFs under pdf/ that belong to no publication record, so
+    # they are named here as well as in the file set: the publication check
+    # below is what proves no publication's PDF is missing, and it must not
+    # read a track as a publication that has escaped the manifest.
+    expected_pdf_paths |= set(reading_plan_pdfs())
     if not output.is_dir():
         raise ReleaseError(f"artifact does not exist: {output.relative_to(ROOT)}")
 
@@ -2900,6 +2964,10 @@ def verify_output(
         *[
             (ROOT / source_relative, output / source_relative)
             for source_relative in artifact_license_source_paths()
+        ],
+        *[
+            (source, output / destination_relative)
+            for destination_relative, source in sorted(reading_plan_pdfs().items())
         ],
     ]
     for source_path, artifact_path in static_sources:
@@ -3144,6 +3212,11 @@ def build_site(
     for provider, leaf in sorted(included):
         source = ROOT / "pdf" / provider / f"{leaf}.pdf"
         destination = output / "pdf" / provider / f"{leaf}.pdf"
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, destination)
+
+    for destination_relative, source in sorted(reading_plan_pdfs().items()):
+        destination = output / destination_relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
 
