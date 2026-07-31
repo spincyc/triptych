@@ -26,6 +26,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _projection import (  # noqa: E402
+    OVERRIDES,
+    ProjectionError,
+    alias_table,
+    divergence,
+    project,
+)
 from _psalms import (  # noqa: E402
     PSALMS,
     NumberingError,
@@ -67,14 +74,37 @@ EXAMPLES = {
                 "douay-rheims: 1601 passages -> src/sources/bibles/douay-rheims/index.yaml",
                 "  postconciliar: 948/950 references resolved (99.8%)",
                 "  roman-1962: 777/778 references resolved (99.9%)",
+                "  projection: 23 rules (merge 7, displaced 16)",
                 "  unresolved: 3",
             ),
+            "exit 0 and no output written. `projection` counts this edition's departures from "
+            "the canonical numbering, one rule a departure and nothing where it agrees, so a "
+            "rising total is an edition drifting from the others",
         ),
         Example(
             "tools/index-bible check --bible clementine-vulgate --json",
             (
-                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":950,\"resolved\":940},\"roman-1... [+145 chars]",
+                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":950,\"resolved\":940},\"roman-1... [+245 chars]",
             ),
+            "one key-sorted object; the elided part carries `projection` with a count per "
+            "override kind and `total`, which is the diffable form of the same summary",
+        ),
+        Example(
+            "tools/index-bible check --bible king-james-version --verbose",
+            (
+                "king-james-version: 1532 passages -> src/sources/bibles/king-james-version/index.yaml",
+                "  postconciliar: 907/950 references resolved (95.5%)",
+                "  roman-1962: 747/778 references resolved (96.0%)",
+                "  projection: 4313 rules (renumber 2697, merge 2, absent 4, displaced 16, unrecorded 1594)",
+                "  rule renumber Dan.13.1 -> Sus.1.1",
+                "  rule renumber Dan.13.10 -> Sus.1.10",
+                "  rule renumber Dan.13.11 -> Sus.1.11",
+                "  rule renumber Dan.13.12 -> Sus.1.12",
+                "... 4383 more lines",
+            ),
+            "--verbose prints every rule and every unresolved citation. A rule whose target "
+            "reads `(refused)` says where the text is not: this edition does not carry it, or "
+            "no correspondence has been established",
         ),
     ),
     "build": (
@@ -84,6 +114,7 @@ EXAMPLES = {
                 "douay-rheims: 1601 passages -> src/sources/bibles/douay-rheims/index.yaml",
                 "  postconciliar: 948/950 references resolved (99.8%)",
                 "  roman-1962: 777/778 references resolved (99.9%)",
+                "  projection: 23 rules (merge 7, displaced 16)",
                 "  unresolved: 3",
             ),
             "read-only first: `check` rebuilds in memory and reports the same drift, writing nothing",
@@ -94,9 +125,12 @@ EXAMPLES = {
                 "douay-rheims: 1601 passages -> build/example-bibles/douay-rheims/index.yaml",
                 "  postconciliar: 948/950 references resolved (99.8%)",
                 "  roman-1962: 777/778 references resolved (99.9%)",
+                "  projection: 23 rules (merge 7, displaced 16)",
                 "  unresolved: 3",
             ),
-            "WRITES an index. --bible-root here is untracked; the default writes tracked src/sources/bibles",
+            "WRITES an index and one JSON fragment a chapter, and refuses with exit 2 if this "
+            "edition's projection cannot be derived. --bible-root here is untracked; the "
+            "default writes tracked src/sources/bibles",
         ),
     ),
 }
@@ -368,9 +402,7 @@ def load_verses(artifacts: Path) -> dict[tuple[str, int, int], str]:
     return verses
 
 
-def load_aliases(
-    artifacts: Path,
-) -> dict[tuple[str, int, int], tuple[str, int, int] | None]:
+def load_aliases(artifacts: Path):
     """The locus a citation names, and the verse of this edition that carries it.
 
     Two things are recorded here. A verse this edition merged away resolves to
@@ -381,19 +413,14 @@ def load_aliases(
     canon is shaped differently — a Vulgate citation of Daniel 3:29 means the
     Prayer of Azarias, which this edition prints as a separate book, while its
     own Daniel 3:29 is Nabuchodonosor's decree and is real text at real numbers.
+
+    Read through `_projection` rather than parsed here, so that the rules this
+    resolver follows and the rules the edition's projection reports are the same
+    rules. They were two parsers of one file, and this one ignored the `kind`
+    column, so a kind with no projection meaning resolved here as a plain merge
+    while the projection refused to describe it at all.
     """
-
-    def locus(value: str) -> tuple[str, int, int]:
-        book, chapter, verse = value.rsplit(".", 2)
-        return book, int(chapter), int(verse)
-
-    rows = read_tsv(sole(artifacts, "verse-aliases", "verse-aliases.tsv"))
-    return {
-        locus(row["cited_locus"]): (
-            locus(row["resolves_to"]) if row["resolves_to"].strip() else None
-        )
-        for row in rows
-    }
+    return alias_table(artifacts.parent)
 
 
 class Bible:
@@ -1053,6 +1080,35 @@ def serialize(document: dict) -> str:
     return text
 
 
+def projection_of(name: str, artifacts: Path) -> dict:
+    """This edition's distance from the canon, derived, never named by hand.
+
+    Deriving it here rather than reporting a stored number is the whole of the
+    check: a projection that cannot be derived — an alias kind with no meaning,
+    a numbering the concordance cannot reach, a psalm concordance that has moved
+    — stops the build with the reason, instead of an edition quietly resolving
+    through rules nothing can describe.
+
+    Every count comes from the rules themselves. None of these numbers is
+    written down anywhere, which is the point: the first version of the
+    derivation reported a plausible sixteen-that-was-three uniformly across
+    every edition, and a stored figure would have agreed with it.
+    """
+    rows = project(artifacts.parent, str(EDITIONS[name]["numbering"]))
+    return {
+        "counts": divergence(rows),
+        "rules": [
+            {
+                "cited_locus": row.cited_locus,
+                "resolves_to": row.resolves_to,
+                "kind": row.kind,
+                "note": row.note,
+            }
+            for row in rows
+        ],
+    }
+
+
 def build(name: str, calendar_root: Path, artifacts: Path) -> dict:
     bible = Bible(artifacts)
     tool = sibling("mass-propers")
@@ -1066,6 +1122,7 @@ def build(name: str, calendar_root: Path, artifacts: Path) -> dict:
     )
     return {
         **built,
+        "projection": projection_of(name, artifacts),
         "text": serialize(document_for(name, built)),
         "fragments": fragments_for(bible),
     }
@@ -1081,11 +1138,19 @@ def artifacts_for(name: str, arguments: argparse.Namespace) -> Path:
 
 
 def summary(name: str, built: dict, path: Path, arguments: argparse.Namespace) -> dict:
+    projection = built["projection"]
     return {
         "bible": name,
         "calendars": built["calendars"],
         "passages": len(built["passages"]),
         "path": str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path),
+        # The counts always, the rules only when asked: the counts are the
+        # diffable line a reader watches, and the King James has 4313 rules.
+        "projection": (
+            {**projection["counts"], "rules": projection["rules"]}
+            if arguments.verbose
+            else projection["counts"]
+        ),
         "unresolved": built["unresolved"] if arguments.verbose else len(built["unresolved"]),
         "status": "ok",
     }
@@ -1193,6 +1258,15 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         resolved, cited = counts["resolved"], counts["cited"]
         share = 100.0 * resolved / cited if cited else 0.0
         print(f"  {calendar}: {resolved}/{cited} references resolved ({share:.1f}%)")
+    projection = payload["projection"]
+    # Identity writes no rule, so the total is the distance from the canon and
+    # not the size of the edition. Kinds that fired are named; kinds that did
+    # not are left out rather than printed as zeros.
+    kinds = ", ".join(f"{kind} {projection[kind]}" for kind in OVERRIDES if projection[kind])
+    print(f"  projection: {projection['total']} rules ({kinds or 'none'})")
+    for rule in projection.get("rules", ()):
+        target = rule["resolves_to"] or "(refused)"
+        print(f"  rule {rule['kind']} {rule['cited_locus']} -> {target}")
     rows = payload["unresolved"]
     if isinstance(rows, int):
         print(f"  unresolved: {rows}")
@@ -1218,7 +1292,9 @@ def main(argv: list[str] | None = None) -> int:
         "--format", choices=("text", "json"), default="text", help="output form"
     )
     shared.add_argument(
-        "--verbose", action="store_true", help="list every citation that did not resolve"
+        "--verbose",
+        action="store_true",
+        help="list every citation that did not resolve, and every projection rule",
     )
     shared.add_argument(
         "--out", default="src/web/data", help="where `manifest` writes bibles.json"
@@ -1258,7 +1334,13 @@ def main(argv: list[str] | None = None) -> int:
         # rather than rewriting a tracked file.
         default_verb="check",
         dependency_message="install PyYAML (requirements-tools.txt)",
-        mapped_errors={KeyError: ("not-found", 3), ValueError: ("input", 2)},
+        # A projection that will not derive is bad tracked data, not a defect in
+        # this tool: report it as an input failure rather than as an internal one.
+        mapped_errors={
+            KeyError: ("not-found", 3),
+            ProjectionError: ("input", 2),
+            ValueError: ("input", 2),
+        },
     )
 
 

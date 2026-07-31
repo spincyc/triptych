@@ -14,6 +14,14 @@ psalm concordance through `_psalms`, the deuterocanon concordance through
 Nothing is hand-typed beside them, which is the rule the psalm concordance's own
 history exists to enforce.
 
+`tools/index-bible` reads its alias rules through `alias_table` here, so the
+rules the resolver follows and the rules a projection reports are one set read by
+one parser; `index-bible check` derives the whole projection and refuses the
+edition if it will not derive. What is not routed through here is the psalter,
+and §8.0 records why: that conversion already happens a step earlier, over ranges
+rather than verses, and applying it twice would land on real text some way from
+the words cited.
+
 The six override kinds are the vocabulary of §8.0. Five of them say where the
 text is; `displaced` says only that the boundary moved and deliberately does not
 say where to, because no source this project can reach models that and a guess
@@ -26,9 +34,6 @@ from pathlib import Path
 from typing import NamedTuple
 
 import _psalms
-
-ROOT = Path(__file__).resolve().parent.parent
-WORKS = ROOT / "src/sources/works"
 
 # The system a projection projects *into*. Vulgate, because both tracked
 # calendars cite in it, most tracked editions declare it, and the psalm
@@ -65,6 +70,14 @@ class Row(NamedTuple):
     resolves_to: str
     kind: str
     note: str
+
+
+class Locus(NamedTuple):
+    """A book token and a point inside it, as an edition's own text is keyed."""
+
+    token: str
+    chapter: int
+    verse: int
 
 
 class ProjectionError(RuntimeError):
@@ -111,6 +124,43 @@ def alias_rows(edition_root: Path) -> list[Row]:
     return rows
 
 
+def point(value: str, where: str) -> Locus:
+    """`Ps.115.10` as the resolver addresses it, or a refusal naming the file."""
+    try:
+        token, chapter, verse = value.rsplit(".", 2)
+        return Locus(token, int(chapter), int(verse))
+    except ValueError as exc:
+        raise ProjectionError(f"{where}: {value!r} is not a book.chapter.verse locus") from exc
+
+
+def alias_table(edition_root: Path) -> dict[Locus, Locus | None]:
+    """This edition's alias rules keyed the way a resolver asks for them.
+
+    The same rows `alias_rows` returns, addressed by locus instead of listed: a
+    cited locus maps to the locus of this edition that carries it, or to None
+    where the row is a refusal. It exists so that the projection and the
+    resolver read one table through one parser. They read it through two before,
+    and the resolver's ignored the `kind` column entirely, so a kind nobody had
+    given a projection meaning still resolved there as an ordinary merge — one
+    table, two answers, and no way to see the disagreement.
+
+    An edition with no alias artifact is refused here although `alias_rows`
+    tolerates it. The projection of an edition that records no departures is
+    genuinely empty; a resolver's is not, because an absent table and a
+    forgotten one read exactly alike, which is the reason `knox-bible` writes an
+    empty one rather than none.
+    """
+    if _artifact(edition_root, "verse-aliases", "verse-aliases.tsv") is None:
+        raise ProjectionError(f"{edition_root}: no verse-aliases artifact to resolve through")
+    where = str(edition_root)
+    return {
+        point(row.cited_locus, where): (
+            point(row.resolves_to, where) if row.resolves_to else None
+        )
+        for row in alias_rows(edition_root)
+    }
+
+
 def psalm_rows(numbering: str) -> list[Row]:
     """Psalm divergences between this edition's numbering and the canonical one.
 
@@ -148,14 +198,19 @@ def _non_uniform_psalms() -> list[int]:
     produced `displaced=3` for every edition on the first run — a plausible
     number, uniform across editions, and wrong, which is this repository's
     signature defect arriving in new code. The count is 16 and it is derived.
+
+    Where the concordance lives is `_psalms`' answer and is asked of it, not
+    restated: a second spelling of that path is the same one-table-two-copies
+    fault the concordance itself exists to prevent, and it would fail here while
+    `_psalms` went on converting from the file it found.
     """
-    path = _artifact(
-        WORKS / "english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581",
-        "psalm-numbering",
-        "psalm-numbering.tsv",
-    )
-    if path is None:
-        raise ProjectionError("the psalm concordance is not where the projection expects it")
+    found = sorted(_psalms.CONCORDANCE_ROOT.glob(_psalms.CONCORDANCE_GLOB))
+    if len(found) != 1:
+        raise ProjectionError(
+            f"expected one psalm concordance under {_psalms.CONCORDANCE_ROOT}, "
+            f"found {len(found)}"
+        )
+    path = found[0]
     flagged: set[int] = set()
     with path.open(encoding="utf-8", newline="") as handle:
         for record in csv.DictReader(handle, delimiter="\t"):

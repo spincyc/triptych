@@ -1365,6 +1365,69 @@ or with a refusal carrying its reason; the text is read from the edition's own
 tracked verses, unaltered. No tool needs to know a numbering system again, and
 the editions on disk are still the editions that were published.
 
+#### What is built, and what is deliberately not
+
+**Built, 31 July 2026.** `scripts/_projection.py` derives the rules;
+`tools/index-bible` consumes them. Three things changed, and one did not.
+
+`Bible.aliases` is now `_projection.alias_table`, so the resolver and the
+projection read one file through one parser. They read it through two before,
+and the resolver's ignored the `kind` column entirely: a kind nobody had given a
+projection meaning still resolved there as an ordinary merge, while the
+projection refused to describe it at all. One table, two answers, and nothing
+that could show the disagreement. An unmapped kind now stops the build with the
+file and line, exit 2.
+
+`index-bible check` and `index-bible build` derive the whole projection and fail
+if it will not derive, so the gate rides the verb that already guards each
+edition. The counts print, go into the JSON payload key-sorted, and are
+therefore diffable; `--verbose` lists every rule. Nothing about the built index
+changed — every edition's `index.yaml` and every chapter fragment is byte-for-byte
+what it was, which is what proves the seam is a seam and not a rewrite.
+`tools/tests/test_projection.py` runs the derivation over the whole registry, so
+an edition nobody happened to rebuild is still checked.
+
+Measured, and the reason the number is worth reporting:
+
+| Edition | Numbering | Rules | Composition |
+|---|---|---|---|
+| Clementine Vulgate | vulgate | **16** | displaced 16 |
+| Douay-Rheims (Challoner) | vulgate | **23** | merge 7, displaced 16 |
+| Douay-Rheims (American 1899) | vulgate | **17** | absent 1, displaced 16 |
+| Catholic Public Domain Version | vulgate | **521** | absent 505, displaced 16 |
+| World English, Catholic Edition | hebrew | **4193** | renumber 2508, absent 7, displaced 16, unrecorded 1662 |
+| King James with Apocrypha | hebrew | **4313** | renumber 2697, merge 2, absent 4, displaced 16, unrecorded 1594 |
+| Revised Version with Apocrypha | hebrew | **4313** | renumber 2696, merge 2, absent 7, displaced 16, unrecorded 1592 |
+
+The last two rows are the caution this table exists to carry. **Two editions
+totalling the same is not evidence of anything**, in either direction: the King
+James and the Revised Version agree at 4313 and disagree inside it. A check
+resting on distinctness would pass on a bug and fail on the truth. What is
+asserted instead is that each total decomposes into the three derivations that
+produced it — which is what the `displaced=3` defect would have failed, because
+it made one part identical for everyone.
+
+**The psalter half is deliberately not plumbed.** A Hebrew-numbered edition's
+projection holds ~2500 `renumber` rows, and `index-bible` already renumbers
+psalms — in `citation()`, through `_psalms.convert_range`, before the alias
+table is consulted at all. Feeding the projection into `Bible.carrier` as well
+would apply the same conversion twice, and the second application would land on
+real text some way from the words cited: this document's own failure, committed
+by the machinery built to prevent it. The two also do different work. The
+projection is verse-to-verse; `convert_range` splits a *range* where the psalter
+divides, because Hebrew 116:8-12 is Vulgate 114:8-9 plus 115:10-12 and a
+verse-keyed table cannot say so. Unifying them means giving the projection a
+range-valued resolve and moving the title-unnumbering step (`english_verse`)
+behind it as well — a rewrite of the resolution path, not a seam, and it must
+land with the §8.5 refusal contract rather than before it.
+
+**No verb of its own, for a reason that is not design.** A projection emitter
+belongs at `index-bible projection`, per §8.7. Adding one requires editing the
+`usage` field of `tmt.json`, which `tools/tests/test_tool_registry.py` checks
+against each tool's `--help`; that file is registry-held and was held by a
+concurrent lane. The report therefore rides `check` and `build`, which needed no
+registry change. Move it to its own verb when the registry is free.
+
 ### 8.1 `verse-inventory.tsv` — per edition, fully derived
 
 One row per chapter, generated from the same `verse-text-*` artifacts the index
