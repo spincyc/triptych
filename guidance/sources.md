@@ -183,6 +183,21 @@ or served only in fragments — record the exact bound reached and why, and mark
 the artifact's completeness explicitly. A bounded retrieval, declared, is a
 usable source. A bounded retrieval, undeclared, is a false one.
 
+**Source text must never route through a model.** Retrieval fetches and retains
+whole byte streams, hashes them, and seeks within them locally. A model in the
+retrieval path does not merely risk truncating a document; it will silently
+rewrite one. Demonstrated here on 2026-07-31: asked for a verbatim text, one
+route returned Basil's *Hexaemeron* exactly and, from the same host under the
+same instruction, returned a **paraphrase** of Gregory of Nyssa. A paraphrase
+presented as a father's words, under his name, is the worst failure this library
+can produce — worse than an empty page, because the reader has no way to see it.
+
+The same route also truncated a 7.2 MB file to its front matter and refused a
+whole public-domain homily as too long while serving the same homily three
+sections at a time. Truncation there was detectable only by fetching twice and
+comparing prefixes. None of these are visible in the output: each returns
+well-formed text of the right kind.
+
 Retrieval and redistribution are separate acts, and this rule governs only the
 first. Retrieve in full; then let the rights record decide the disposition. A
 work that may be read and not republished is `remote` or `restricted` below —
