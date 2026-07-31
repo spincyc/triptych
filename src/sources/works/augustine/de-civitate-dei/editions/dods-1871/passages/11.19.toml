@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.11.19"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+artifact_sha256 = "5aa1e8ef6d07980146bdbe11426095da959cd9e217c7b76f0fcbda6c95cea349"
+locus = "11.19"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter body was inspected at artifact lines 18145-18180, under the heading 'What, seemingly, we are to understand by the words, \\\"God divided the light from the darkness\\\"'. Augustine reads the division of light from darkness as the separation of the holy from the unclean angels, then distinguishes that light from the luminaries of the fourth day. The heading occupies lines 18145-18146."
+physical_line_ranges = [[18145, 18180]]
+text = "To me it does not seem incongruous with the working of God, if we understand that the angels were created when that first light was made, and that a separation was made between the holy and the unclean angels, when, as is said, \"God divided the light from the darkness; and God called the light Day, and the darkness He called Night.\" For He alone could make this discrimination, who was able also, before they fell, to foreknow that they would fall, and that, being deprived of the light of truth, they would abide in the darkness of pride."
+transcription_segments = [
+  { line = 18157, text = "To me it does not seem incongruous with" },
+  { line = 18158, text = "the working of God, if we understand that the angels were created" },
+  { line = 18159, text = "when that first light was made, and that a separation was made" },
+  { line = 18160, text = "between the holy and the unclean angels, when, as is said, \"God" },
+  { line = 18161, text = "divided the light from the darkness; and God called the light Day," },
+  { line = 18162, text = "and the darkness He called Night.\" For He alone could make this" },
+  { line = 18163, text = "discrimination, who was able also, before they fell, to foreknow that" },
+  { line = 18164, text = "they would fall, and that, being deprived of the light of truth, they" },
+  { line = 18165, text = "would abide in the darkness of pride." },
+]
+notes = "The recorded text is the exact whitespace join of artifact lines 18157-18165, opening mid-line at 'To me' and closing at 'darkness of pride.' The chapter's later appeal to Genesis 1:14-18, at lines 18166-18174, is a contrast drawn against the reading and is not part of the recorded extent."
+verified_on = "2026-07-31"
