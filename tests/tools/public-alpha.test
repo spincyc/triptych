@@ -148,11 +148,10 @@ tool.ROOT = sandbox
 # The page ships with the data it reads, so a sandbox carrying a data root
 # carries a browser too; without one the assembly refuses, which is the
 # invariant that keeps a corpus from going live with nothing to serve it.
-for directory, names in tool.WEB_BROWSER_DIRECTORIES.items():
-    for name in names:
-        page = sandbox / "src/web/browser" / directory / name
-        page.parent.mkdir(parents=True, exist_ok=True)
-        page.write_text("fixture", encoding="utf-8")
+for directory in tool.WEB_BROWSER_DIRECTORIES:
+    page = sandbox / "src/web/browser" / directory / "index.html"
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text("fixture", encoding="utf-8")
 data = sandbox / "src/web/data"
 write(
     data / "bibles.json",

@@ -50,11 +50,11 @@ SITE_DATA_ROOT = PurePosixPath("browse")
 # belong under liturgy and the reading plan under scripture; the parts neither
 # may drift on live once, in shared. The fixture beside them is a development
 # aid and is not published.
-WEB_BROWSER_DIRECTORIES = {
-    "shared": ("browser-core.css", "browser-core.js"),
-    "liturgy": ("index.html", "liturgy.css", "liturgy.js"),
-    "scripture": ("index.html", "scripture.css", "scripture.js"),
-}
+WEB_BROWSER_DIRECTORIES = ("shared", "liturgy", "scripture")
+# Everything a reading directory holds is served. Naming the files instead made
+# the artifact refuse to build the moment a page gained or renamed one, which
+# says nothing about whether the page is publishable.
+WEB_BROWSER_SUFFIXES = (".html", ".css", ".js")
 # The two a reader is sent to; shared carries no page of its own.
 WEB_BROWSER_ENTRANCES = ("liturgy", "scripture")
 # Fragments stay beside the edition that owns them, where index-bible checks
@@ -463,15 +463,20 @@ def web_data_files() -> dict[str, Path]:
     files: dict[str, Path] = {}
     # The pages ship with the data they read; without them the artifact carries a
     # corpus nothing serves, which is how the data root first went live alone.
-    for directory, names in WEB_BROWSER_DIRECTORIES.items():
-        for name in names:
-            page = ROOT / WEB_BROWSER_ROOT_RELATIVE / directory / name
-            if not page.is_file():
-                raise ReleaseError(
-                    "the browser is missing "
-                    f"{(WEB_BROWSER_ROOT_RELATIVE / directory / name).as_posix()}"
-                )
-            files[f"{directory}/{name}"] = page
+    for directory in WEB_BROWSER_DIRECTORIES:
+        source = ROOT / WEB_BROWSER_ROOT_RELATIVE / directory
+        held = sorted(
+            path
+            for path in source.glob("*")
+            if path.is_file() and not path.is_symlink() and path.suffix in WEB_BROWSER_SUFFIXES
+        )
+        if not held:
+            raise ReleaseError(
+                "the browser holds no pages in "
+                f"{(WEB_BROWSER_ROOT_RELATIVE / directory).as_posix()}"
+            )
+        for page in held:
+            files[f"{directory}/{page.name}"] = page
     data_root = ROOT / WEB_DATA_ROOT_RELATIVE
     for path in sorted(data_root.rglob("*")):
         if path.is_symlink() or not path.is_file():
