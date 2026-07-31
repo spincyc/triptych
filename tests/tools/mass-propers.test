@@ -68,8 +68,10 @@ if ! cmp -s first.txt second.txt; then
 	exit 1
 fi
 count="$(wc -l <first.txt | tr -d ' ')"
-if [ "$count" -ne 334 ]; then
-	echo "expected 334 masses in the 1962 calendar, got $count" >&2
+# A floor, not an exact count: the temporal cycle is still being filled in, so
+# this guards against losing masses without breaking every time one is added.
+if [ "$count" -lt 334 ]; then
+	echo "expected at least 334 masses in the 1962 calendar, got $count" >&2
 	exit 1
 fi
 if ! grep -q 'advent-1' first.txt; then
@@ -226,7 +228,8 @@ refused = [
     citation
     for mass in postconciliar["masses"]
     for proper in mass["propers"]
-    for rows in [proper["citations"], *proper["cycles"].values()]
+    for rows in [proper["citations"],
+                 *(cycle["citations"] for cycle in proper["cycles"].values())]
     for citation in rows
     if citation["unresolved"]
 ]

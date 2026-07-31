@@ -22,6 +22,7 @@ from _psalms import (  # noqa: E402
     convert_range,
     convert_reference,
 )
+from _loci import range_to_loci  # noqa: E402
 from _tooling import print_json, run_verb_cli  # noqa: E402
 
 DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
@@ -115,14 +116,31 @@ def find_mass(root: Path, calendar: str, key: str) -> dict:
 
 def scripture_entries(mass: dict):
     """Yield every verse entry a mass carries, cycle readings included."""
+    for entry, _ in numbered_entries(mass, None):
+        yield entry
+
+
+def numbered_entries(mass: dict, default: str | None):
+    """Yield (entry, numbering) for every citation the mass makes.
+
+    A calendar declares one psalm numbering, but a single book need not keep to
+    it: the postconciliar Missal's antiphons reproduce the number printed in the
+    Missal while its responsorial psalms take the Lectionary's, which is what
+    the recovered citation_convention says and why eleven antiphons resolved to
+    verses that do not exist. A proper may therefore declare its own, and its
+    cycles may differ again; what it does not declare it inherits.
+    """
     for _, proper in propers_of(mass):
-        owners = [proper] + [
-            owner for owner in (proper.get("cycles") or {}).values() if isinstance(owner, dict)
+        inherited = proper.get("psalm_numbering") or default
+        owners = [(proper, inherited)] + [
+            (owner, owner.get("psalm_numbering") or inherited)
+            for owner in (proper.get("cycles") or {}).values()
+            if isinstance(owner, dict)
         ]
-        for owner in owners:
+        for owner, numbering in owners:
             for entry in owner.get("verses") or []:
                 if isinstance(entry, dict) and entry.get("ref"):
-                    yield entry
+                    yield entry, numbering
 
 
 def locus_of(entry: dict) -> tuple[int | None, int | None]:
@@ -207,14 +225,7 @@ def spans_in(entry: dict, source: str, target: str) -> list[dict]:
             continue
         converted, _ = convert_range(book, span.get("begin") or {}, span.get("end"), source, target)
         for piece in converted:
-            begin, end = piece.get("begin") or {}, piece.get("end") or {}
-            loci.append(
-                {
-                    "chapter": begin.get("chapter"),
-                    "first": begin.get("verse"),
-                    "last": end.get("verse"),
-                }
-            )
+            loci.extend(range_to_loci(piece.get("begin") or {}, piece.get("end") or {}))
     return loci
 
 
@@ -268,8 +279,11 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
             # A cycle-varying proper reads differently in years A, B and C, so
             # each year's citations are kept apart rather than merged into one
             # list the browser could not tell apart.
+            # A cycle may vary in kind as well as in text: an acclamation
+            # composed one year and scriptural the next, so each year carries
+            # both its citations and its own words.
             cycles = {
-                year: cited(owner)
+                year: (cited(owner), owner)
                 for year, owner in (proper.get("cycles") or {}).items()
                 if isinstance(owner, dict)
             }
@@ -281,8 +295,17 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     "form": form,
                     "incipit": proper.get("incipit"),
                     "source": proper.get("source"),
+                    # A composed proper is an oration, not a citation: its words
+                    # are the proper. Carrying only the incipit left the page
+                    # naming a Collect it could not show.
+                    "text": proper.get("text"),
+                    "translations": proper.get("translations"),
                     "citations": cited(proper),
-                    "cycles": {year: rows for year, rows in cycles.items() if rows},
+                    "cycles": {
+                        year: {"citations": rows, "text": owner.get("text")}
+                        for year, (rows, owner) in cycles.items()
+                        if rows or owner.get("text")
+                    },
                 }
             )
         masses.append(
@@ -327,7 +350,10 @@ def run_structure(arguments: argparse.Namespace) -> dict:
             citation
             for mass in built["masses"]
             for proper in mass["propers"]
-            for rows in [proper["citations"], *proper["cycles"].values()]
+            for rows in [
+                proper["citations"],
+                *(cycle["citations"] for cycle in proper["cycles"].values()),
+            ]
             for citation in rows
         ]
         counts[name] = {"masses": len(built["masses"]), "citations": len(cited)}

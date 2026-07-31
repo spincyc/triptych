@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _psalms import PSALMS, SYSTEMS, NumberingError, convert_range  # noqa: E402
+from _loci import range_to_loci  # noqa: E402
 from _tooling import print_json, run_verb_cli  # noqa: E402
 
 DEFAULT_ROOT = ROOT / "src" / "sources" / "reading-plans"
@@ -166,13 +167,8 @@ def reading_structure(reading: dict, source: str, tokens: dict) -> dict:
                 begin = (span or {}).get("begin") or {}
                 end = (span or {}).get("end") or begin
                 for piece in convert_range(book, begin, end, source, target)[0]:
-                    head, tail = piece.get("begin") or {}, piece.get("end") or {}
-                    loci.append(
-                        {
-                            "chapter": head.get("chapter"),
-                            "first": head.get("verse"),
-                            "last": tail.get("verse"),
-                        }
+                    loci.extend(
+                        range_to_loci(piece.get("begin") or {}, piece.get("end") or {})
                     )
         except NumberingError as error:
             structure["loci"] = {}

@@ -344,6 +344,79 @@ def convert_range(
     return pieces, caveats
 
 
+# The English convention is not a third numbering system: it numbers the psalms
+# exactly as the Hebrew does and differs only in printing the inscription
+# unnumbered, so an English Bible's verse numbers run one or two lower than the
+# Hebrew ones through the body of most psalms. The concordance records that
+# offset in its own columns, and records where it does not hold, so the
+# correspondence is read from there rather than assumed to be uniform.
+ENGLISH_UNIFORM = "yes"
+
+
+@lru_cache(maxsize=1)
+def _english() -> tuple[dict[tuple[int, int], int | None], frozenset[int]]:
+    """The English verse each Hebrew run opens at, and the psalms that refuse.
+
+    Keyed by the Hebrew chapter and the first verse of a run, so the runs
+    themselves stay owned by the validated Hebrew segmentation and this table
+    adds only the English column to it. A `None` marks a run English Bibles
+    leave unnumbered — the inscription. A psalm the concordance flags as not
+    uniformly offset is collected separately and is not converted at all: the
+    two conventions divide the body of those psalms differently, and an offset
+    taken from the head of the psalm would be wrong further down.
+    """
+    found = sorted(CONCORDANCE_ROOT.glob(CONCORDANCE_GLOB))
+    if len(found) != 1:
+        raise PsalterUnavailable(
+            f"expected one psalm concordance under {CONCORDANCE_ROOT}, found {len(found)}"
+        )
+    opens: dict[tuple[int, int], int | None] = {}
+    divided: set[int] = set()
+    with found[0].open(encoding="utf-8", newline="") as handle:
+        for line, row in enumerate(csv.DictReader(handle, delimiter="\t"), start=2):
+            chapter = int(row["hebrew_psalm"])
+            hebrew = _bounds(row["hebrew_verses"])
+            if hebrew is None:
+                raise PsalterUnavailable(f"{found[0]}:{line}: a psalm row without a Hebrew range")
+            english = _bounds(row["english_verses"])
+            if english is not None and english[1] - english[0] != hebrew[1] - hebrew[0]:
+                raise PsalterUnavailable(
+                    f"{found[0]}:{line}: the Hebrew and English runs are different lengths"
+                )
+            if row["english_offset_uniform"].strip() != ENGLISH_UNIFORM:
+                divided.add(chapter)
+            opens[(chapter, hebrew[0])] = None if english is None else english[0]
+    return opens, frozenset(divided)
+
+
+def english_verse(chapter: int, verse: int) -> tuple[int | None, str]:
+    """The verse an English Bible prints for a Hebrew-numbered psalm verse.
+
+    Returns the verse and an empty problem, or `None` and the reason no verse
+    can be named. Refusing is the point: an edition that leaves the inscription
+    unnumbered has no verse at all for the Hebrew numbering's first verse, and
+    the fifteen psalms the concordance flags as not uniformly offset divide
+    their bodies differently as well. Returning whatever number the head of the
+    psalm suggests would land on real text that is not the text cited.
+    """
+    opens, divided = _english()
+    if chapter in divided:
+        return None, (
+            f"English Bibles divide Psalm {chapter} differently from the Hebrew "
+            "numbering, and no verse-for-verse correspondence is recorded for it"
+        )
+    for segment in _segments(chapter, "hebrew"):
+        if segment.first <= verse <= segment.last:
+            start = opens.get((chapter, segment.first))
+            if start is None:
+                return None, (
+                    f"Hebrew Psalm {chapter}:{verse} is the inscription, which English "
+                    "Bibles print unnumbered"
+                )
+            return start + (verse - segment.first), ""
+    raise NumberingError(f"hebrew Psalm {chapter}:{verse} is outside the psalm")
+
+
 def psalm_extent(chapter: int, system: str) -> tuple[int, int] | None:
     """The first and last verse Psalm `chapter` has in `system`.
 
