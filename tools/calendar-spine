@@ -72,7 +72,8 @@ MARIAN = (
     "lourdes", "fatima", "loreto", "maternitatis", "visitatione", "septem dolorum",
     "sorrows", "queenship", "assumption",
 )
-# A day within the octave is a seasonal celebration for the fixed-calendar spine.
+# A day within the octave is a seasonal celebration for the fixed-calendar spine
+# unless the edition prints a celebration of its own after a colon.
 OCTAVE_DAY = re.compile(r"^\w+\s+day\s+within\s+the\s+octave\b", re.IGNORECASE)
 VIGIL_OF = re.compile(r"^vigil\s+of\s+(?:the\s+)?(.*)$", re.IGNORECASE)
 # A word boundary after a literal period never matches before a space, so these
@@ -101,9 +102,19 @@ def classify(title: str) -> str:
     Lady, so Saint Joachim and Saint Joseph, Spouse of the Blessed Virgin Mary
     are saints' feasts. Matching is whole-word, so "S. Dominici" is not read as
     a feast of the Lord.
+
+    Within an octave the edition's punctuation carries the distinction: a colon
+    introduces the day's own celebration, a semicolon a mere commemoration.
     """
     head = re.sub(r"^comm\.\s*", "", title.strip(), flags=re.IGNORECASE)
     if OCTAVE_DAY.match(head):
+        # "Second day within the octave: S. Stephani" is St Stephen's feast set
+        # within the octave; "Fifth day within the octave; comm. S. Thomae" is
+        # the octave day itself, so the semicolon clause is cut away first.
+        principal = head.split(";")[0]
+        _, colon, celebration = principal.partition(":")
+        if colon and celebration.strip():
+            return classify(celebration.strip())
         return "seasonal"
     # A vigil belongs to the celebration it precedes.
     vigil = VIGIL_OF.match(head.split(";")[0])

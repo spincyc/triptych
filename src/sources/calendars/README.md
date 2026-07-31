@@ -142,6 +142,48 @@ A postconciliar entry can therefore cite Psalm 26 for its entrance antiphon
 and Psalm 27 for its responsorial psalm. That is the books' own inconsistency,
 not the file's.
 
+### Numbering divergences outside the psalter
+
+The psalter converts between numberings through a tracked verse-level
+concordance, and `scripts/_psalms.py` owns it. Nothing else can: the
+postconciliar Lectionary cites the Nova Vulgata, no witness of that
+versification is tracked here, and every bible in this library follows the
+Vulgate division. Where the two divide a book differently — Joel, Malachi, and
+single chapters of Isaiah and Micah — the reference does not fail. It resolves,
+to different words. `Joel 3:1-5` returned the valley of Josaphat instead of the
+outpoured spirit, in Latin and English alike, and appeared in no error count.
+
+A calendar therefore records the correspondence itself, per citation, in a
+top-level `citation_divergences` list beside `open_collation_items`:
+
+```yaml
+citation_divergences:
+- book: Isaiah
+  chapters: [9, 64]            # omit where the chapter counts themselves differ
+  divergence: the Vulgate opens chapter 9 one verse earlier...
+  citations:
+    "Isaiah 9:5": "Isaiah 9:6"          # the Child born to us, not the spoils
+    "Isaiah 2:1-5": "Isaiah 2:1-5"      # stated even where nothing moves
+```
+
+The left side is the citation as this calendar prints it; the right side is the
+reference addressing the same text in Vulgate numbering, parsed by
+`tools/tpt citations`, so the two cannot drift apart. A correspondence that
+holds unchanged is written out rather than omitted: inside a divergent locus,
+silence is not evidence that anyone checked.
+
+`tools/tpt index-bible` validates the list against the citations actually made
+before it indexes anything, and fails the build on a resolution for a reference
+no longer cited, one landing in another book, one addressing no text in an
+edition holding that book, or a declared chapter nothing reaches. A citation
+reaching a divergent locus with no correspondence recorded is refused: left out
+of every index and reported unresolved. That is deliberate. A missing passage
+is a question; a plausible wrong one is an answer, and this defect is what
+answering wrongly looks like.
+
+These entries resolve text. They do not settle the collation question of which
+numbering the file should print, which stays an `open_collation_items` entry.
+
 ## Validating
 
 ```sh

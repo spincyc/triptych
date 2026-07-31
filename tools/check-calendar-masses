@@ -12,6 +12,8 @@ import json
 import re
 import subprocess
 import sys
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
 # Shared CLI helpers live outside tools/ so that tmt's registry scan,
 # which requires every file in tools/ to be a registered tool, stays clean.
@@ -27,6 +29,16 @@ TRANSLATION_RIGHTS = {"public-domain", "licensed", "project-created"}
 # Vulgate and Hebrew psalm numbering diverge across most of the psalter,
 # so a reference is only resolvable against a bible in the same system.
 PSALM_NUMBERING = {"vulgate", "hebrew"}
+# A calendar may carry a ledger of the psalm loci that breach its own
+# declaration while the antiphons holding them wait to be collated; the file
+# that carries one states what it is and what empties it.
+EXCEPTIONS = "psalm_numbering_exceptions"
+# Every psalm-bound complaint opens on the locus it refused (see
+# `_psalms.validate_psalm`), which is what the ledger is keyed by. Matching the
+# locus rather than the whole sentence keeps the ledger readable and survives a
+# reworded message.
+PSALM_TROUBLE = re.compile(r": (Psalm \d+(?::\d+)?) (?:exceeds|precedes|is outside)\b")
+PSALM_LOCUS = re.compile(r"Psalm (\d+)(?::(\d+))?$")
 
 REQUIRED_HEADER = (
     "calendar",
@@ -325,11 +337,88 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
         for path in paths
     }
     problems.extend(citation_problems(root, calendar))
+    problems.extend(spine_problems(paths))
+    problems, excepted = apply_psalm_exceptions(paths, problems)
     return {
+        "excepted": excepted,
         "files": files,
         "problems": problems,
         "status": "error" if problems else "ok",
     }
+
+
+def calendar_spine():
+    """Load the sibling tool that owns the spine rather than reparsing it.
+
+    The spine is derived from the calendar-reference publications, which is a
+    different source from the mass indexes; restating that derivation here is
+    how the two would come to disagree about what a calendar contains.
+    """
+    path = Path(__file__).resolve().parent / "calendar-spine"
+    loader = SourceFileLoader("_calendar_spine", str(path))
+    spec = spec_from_loader(loader.name, loader)
+    if spec is None:  # pragma: no cover - a broken checkout, not a code path
+        raise ValueError(f"cannot load {path}")
+    module = module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+def spine_problems(paths: list[Path]) -> list[str]:
+    """Every celebration the spine carries must have a mass, filed as it says.
+
+    The spine is the identity and ordering source for the sanctoral, so a date
+    it lists and the propers do not is a hole, and a date the two file
+    differently is a disagreement about what kind of celebration it is. Nothing
+    compared them before, which is how three days of the Christmas octave came
+    to sit in the spine and in no section at all.
+
+    Only calendars the spine knows are checked; a calendar it has no reference
+    publication for is out of its scope, not in breach of it.
+    """
+    import yaml
+
+    try:
+        tool = calendar_spine()
+    except (OSError, ValueError) as error:
+        return [f"cannot load the calendar spine: {error}"]
+    problems: list[str] = []
+    for path in paths:
+        name = path.parent.name
+        if name not in tool.SOURCES:
+            continue
+        try:
+            entries = tool.spine(name)
+        except (OSError, ValueError) as error:
+            problems.append(f"{path}: cannot derive the spine: {error}")
+            continue
+        try:
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, yaml.YAMLError):
+            continue  # already reported by check_file
+        if not isinstance(document, dict):
+            continue
+        filed: dict[str, str] = {}
+        for section in (document.get("sections") or {}).values():
+            if not isinstance(section, dict):
+                continue
+            kind = section.get("kind")
+            for mass in section.get("masses") or []:
+                if isinstance(mass, dict) and mass.get("registry") is not None:
+                    filed[str(mass["registry"])] = str(kind)
+        for entry in entries:
+            registry = str(entry["registry"])
+            if registry not in filed:
+                problems.append(
+                    f"{path}: the spine carries {registry} ({entry['title']}) "
+                    "and no section has a mass for it"
+                )
+            elif filed[registry] != entry["kind"]:
+                problems.append(
+                    f"{path}: {registry} ({entry['title']}) is filed "
+                    f"{filed[registry]} but the spine classifies it {entry['kind']}"
+                )
+    return problems
 
 
 def citation_problems(root: Path, calendar: str | None) -> list[str]:
@@ -353,6 +442,101 @@ def citation_problems(root: Path, calendar: str | None) -> list[str]:
     if payload.get("code"):
         return [f"{tool}: {payload.get('error')}"]
     return list(payload.get("problems") or [])
+
+
+def psalm_exceptions(path: Path, problems: list[str]) -> dict[str, str]:
+    """Read one calendar's ledger of psalm loci excused from its numbering.
+
+    The ledger names each locus and where it is cited, so a reader can see what
+    is owed without running anything. It is deliberately spelled out one verse
+    at a time: a rule of the form "allow anything in Psalm 118" would absorb the
+    next mistyped reference in that psalm along with the known ones.
+    """
+    import yaml
+
+    try:
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except (OSError, yaml.YAMLError):
+        return {}  # already reported by check_file
+    if not isinstance(document, dict):
+        return {}
+    payload = document.get(EXCEPTIONS)
+    if payload is None:
+        return {}
+    if not isinstance(payload, list) or not payload:
+        problems.append(f"{path}: {EXCEPTIONS} must be a nonempty list, or absent")
+        return {}
+    listed: dict[str, str] = {}
+    for index, entry in enumerate(payload):
+        where = f"{path}: {EXCEPTIONS}[{index}]"
+        if not isinstance(entry, dict):
+            problems.append(f"{where}: entry is not a mapping")
+            continue
+        psalm = entry.get("psalm")
+        if not isinstance(psalm, int):
+            problems.append(f"{where}: psalm must be the cited psalm's number")
+            psalm = None
+        divergence = entry.get("divergence")
+        if not isinstance(divergence, str) or not divergence.strip():
+            problems.append(f"{where}: divergence must say how the systems differ here")
+        loci = entry.get("loci")
+        if not isinstance(loci, dict) or not loci:
+            problems.append(f"{where}: loci must be a nonempty mapping")
+            continue
+        for locus, cited in loci.items():
+            found = PSALM_LOCUS.fullmatch(locus) if isinstance(locus, str) else None
+            if found is None:
+                problems.append(f"{where}: {locus!r} is not a Psalm chapter:verse locus")
+                continue
+            if psalm is not None and int(found.group(1)) != psalm:
+                problems.append(f"{where}: {locus} does not belong to Psalm {psalm}")
+                continue
+            if not isinstance(cited, str) or not cited.strip():
+                problems.append(f"{where}: {locus} must name the proper that cites it")
+                continue
+            if locus in listed:
+                problems.append(f"{path}: {EXCEPTIONS} lists {locus} twice")
+            listed[locus] = cited
+    return listed
+
+
+def apply_psalm_exceptions(
+    paths: list[Path], problems: list[str]
+) -> tuple[list[str], list[str]]:
+    """Set aside the psalm-bound problems a calendar's ledger already owns.
+
+    The ledger keeps the gate shut while the data defect it records is still
+    open, and it is self-cleaning in both directions: a psalm-bound problem at
+    an unlisted locus still fails, so a new leak cannot slip in behind the known
+    ones, and a listed locus that no longer produces a problem fails too, so the
+    ledger empties itself as the antiphons are corrected rather than rotting
+    into a permission nobody remembers granting.
+    """
+    kept: list[str] = []
+    listed = {str(path): psalm_exceptions(path, kept) for path in paths}
+    listed = {name: entries for name, entries in listed.items() if entries}
+    excepted: list[str] = []
+    met: dict[str, set[str]] = {}
+    for problem in problems:
+        found = PSALM_TROUBLE.search(problem)
+        owner = None
+        if found:
+            owner = next(
+                (name for name in listed if problem.startswith(f"{name}: ")), None
+            )
+        if owner is None or found.group(1) not in listed[owner]:
+            kept.append(problem)
+            continue
+        met.setdefault(owner, set()).add(found.group(1))
+        excepted.append(problem)
+    for name, entries in listed.items():
+        for locus in entries:
+            if locus not in met.get(name, ()):
+                kept.append(
+                    f"{name}: {EXCEPTIONS} lists {locus}, which no longer breaches "
+                    "this calendar's numbering; delete the entry"
+                )
+    return kept, excepted
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -387,6 +571,10 @@ def main(argv: list[str] | None = None) -> int:
         if problems is None:
             print("calendar-mass error: invalid checker payload", file=sys.stderr)
             return 70
+        # An excepted problem is still reported: it is a defect that is owed,
+        # not one that has been settled.
+        for excepted in payload.get("excepted") or []:
+            print(f"calendar-mass excepted: {excepted}", file=sys.stderr)
         for problem in problems:
             print(f"calendar-mass error: {problem}", file=sys.stderr)
         for path, counts in payload.get("files", {}).items():

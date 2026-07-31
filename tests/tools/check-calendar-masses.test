@@ -452,6 +452,172 @@ if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	exit 1
 fi
 
+# A psalm reference is measured against the psalter its calendar declares, not
+# only against the six psalms that divide between the systems. Psalm 118:137 is
+# a real Vulgate verse and an impossible Hebrew one, so the same citation must
+# be accepted under one declaration and refused under the other.
+numbered() {
+	rm -rf src/sources/calendars/test
+	mkdir -p src/sources/calendars/test
+	{
+		cat <<YAML
+schema: triptych-calendar-masses/v1
+edition: test edition
+calendar: test
+series: test series
+ordering: test ordering
+registry: test registry
+psalm_numbering: $1
+citation_convention: test convention
+orthography: test orthography
+verification: unverified test fixture
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
+  - key: only
+    name: Only
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm $2"]}
+YAML
+	} >src/sources/calendars/test/propers.yaml
+	encode
+}
+
+numbered vulgate "118:137"
+if ! "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "Psalm 118:137 is a real Vulgate verse and should be accepted" >&2
+	exit 1
+fi
+numbered hebrew "118:137"
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for Psalm 118:137 in a Hebrew-numbered calendar" >&2
+	exit 1
+fi
+
+# Hebrew 10 ends at 18: it is the second half of Vulgate 9, which runs to 39.
+# Taking the host psalm's ceiling here is the error the derived table removed.
+numbered hebrew "10:19"
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for Psalm 10:19 in a Hebrew-numbered calendar" >&2
+	exit 1
+fi
+numbered vulgate "9:39"
+if ! "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "Psalm 9:39 is the last verse of Vulgate 9 and should be accepted" >&2
+	exit 1
+fi
+
+# A calendar may carry a ledger of the psalm loci that breach its declaration
+# while the antiphons holding them wait to be corrected. The ledger is written
+# after encoding, because encoding rewrites the file it reads.
+ledger() {
+	rm -rf src/sources/calendars/test
+	mkdir -p src/sources/calendars/test
+	{
+		cat <<YAML
+schema: triptych-calendar-masses/v1
+edition: test edition
+calendar: test
+series: test series
+ordering: test ordering
+registry: test registry
+psalm_numbering: hebrew
+citation_convention: test convention
+orthography: test orthography
+verification: unverified test fixture
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
+  - key: only
+    name: Only
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: [$1]}
+YAML
+	} >src/sources/calendars/test/propers.yaml
+	encode
+	cat >>src/sources/calendars/test/propers.yaml
+}
+
+# A listed locus is reported and not failed: the defect is owed, not settled.
+ledger '"Psalm 118:137"' <<'YAML'
+psalm_numbering_exceptions:
+- psalm: 118
+  divergence: Vulgate 118 is Hebrew 119, which runs to 176
+  loci:
+    "Psalm 118:137": only/Introit
+YAML
+if ! out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "a listed psalm locus should not fail the gate: $out" >&2
+	exit 1
+fi
+case "$out" in
+*"excepted"*"Psalm 118:137"*) ;;
+*) echo "an excepted locus must still be reported, got: $out" >&2; exit 1 ;;
+esac
+
+# A breach the ledger does not list still fails, so a new leak cannot slip in
+# behind the known ones.
+ledger '"Psalm 118:137", "Psalm 15:11"' <<'YAML'
+psalm_numbering_exceptions:
+- psalm: 118
+  divergence: Vulgate 118 is Hebrew 119, which runs to 176
+  loci:
+    "Psalm 118:137": only/Introit
+YAML
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a psalm breach the ledger does not list" >&2
+	exit 1
+fi
+
+# A listed locus that no longer breaches fails too, so the ledger empties itself
+# as the antiphons are corrected instead of rotting into a standing permission.
+ledger '"Psalm 1:1"' <<'YAML'
+psalm_numbering_exceptions:
+- psalm: 118
+  divergence: Vulgate 118 is Hebrew 119, which runs to 176
+  loci:
+    "Psalm 118:137": only/Introit
+YAML
+if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "expected failure for a ledger entry that no longer breaches" >&2
+	exit 1
+fi
+case "$out" in
+*"no longer breaches"*) ;;
+*) echo "expected a stale-entry problem, got: $out" >&2; exit 1 ;;
+esac
+
+# A malformed ledger is a failure of its own: an entry that names no locus
+# excuses nothing and hides what it was for.
+ledger '"Psalm 118:137"' <<'YAML'
+psalm_numbering_exceptions:
+- psalm: 118
+  divergence: Vulgate 118 is Hebrew 119, which runs to 176
+YAML
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a ledger entry carrying no loci" >&2
+	exit 1
+fi
+
+# Spine coverage applies only to calendars the spine has a reference
+# publication for. This fixture calendar is named "test", so it is out of the
+# spine's scope rather than in breach of it: every check above passed while it
+# carried no sanctoral date at all, which would be impossible if an unknown
+# calendar were measured against a spine it has no entries in.
+numbered vulgate "1:1"
+if ! "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "a calendar the spine does not know must not be failed for coverage" >&2
+	exit 1
+fi
+
 # A translation carries its own rights basis; a licensed one names its source
 # and its required notice, and languages may not repeat within a proper.
 translated() {

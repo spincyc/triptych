@@ -65,9 +65,7 @@ kind_on() {
 for probe in "roman-1962 02-02 marian" "roman-1962 03-25 marian" \
 	"postconciliar 02-02 christological" "postconciliar 03-25 christological" \
 	"roman-1962 08-15 marian" "roman-1962 08-14 marian" \
-	"roman-1962 12-30 seasonal" "roman-1962 12-29 seasonal" \
-	"roman-1962 12-28 seasonal" "roman-1962 12-27 seasonal" \
-	"roman-1962 12-26 seasonal" \
+	"roman-1962 12-30 seasonal" \
 	"roman-1962 09-14 christological" "postconciliar 09-14 christological"; do
 	set -- $probe
 	got="$(kind_on "$1" "$2")"
@@ -76,6 +74,28 @@ for probe in "roman-1962 02-02 marian" "roman-1962 03-25 marian" \
 		exit 1
 	fi
 done
+
+# Within the Christmas octave the edition's punctuation decides: a colon
+# introduces the day's own celebration (Stephen, John, the Innocents), a
+# semicolon only a commemoration, so the octave day itself stays seasonal.
+for probe in "roman-1962 12-26 saintly" "roman-1962 12-27 saintly" \
+	"roman-1962 12-28 saintly" \
+	"roman-1962 12-29 seasonal" "roman-1962 12-31 seasonal"; do
+	set -- $probe
+	got="$(kind_on "$1" "$2")"
+	if [ "$got" != "$3" ]; then
+		echo "$1 $2: expected $3, got ${got:-nothing}" >&2
+		exit 1
+	fi
+done
+
+# Only the three colon-introduced days leave the seasonal kind; the other
+# octave days must not follow them.
+seasonal="$(run_tool --calendar roman-1962 --kind seasonal 2>/dev/null | wc -l | tr -d ' ')"
+if [ "$seasonal" -ne 3 ]; then
+	echo "expected 3 seasonal 1962 entries, got $seasonal" >&2
+	exit 1
+fi
 
 # A saint's feast that names Our Lady stays a saint's feast, and a saint whose
 # name merely contains "Domini" is not read as a feast of the Lord.
