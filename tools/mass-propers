@@ -114,6 +114,50 @@ def find_mass(root: Path, calendar: str, key: str) -> dict:
     raise KeyError(f"{calendar}: no mass with key {key!r}")
 
 
+# A translation is someone's expression, and tracking one is not the same as
+# being allowed to publish it. Only these bases may reach the public artifact;
+# `licensed` is tracked deliberately — the schema carries the notice a licensor
+# requires — but it is withheld unless a grant is recorded, which is the same
+# line the Knox bible sits on.
+PUBLISHABLE_RIGHTS = ("public-domain", "project-created")
+
+
+def publishable_translations(proper: dict):
+    """The translations a proper may carry into the public artifact.
+
+    The structure file feeds the browser and the browser is the published site,
+    so a translation that reaches this function reaches the world. Copying every
+    translation through regardless of its `rights` would put a licensed text on
+    the site as a side effect of an ordinary build, silently and with no step at
+    which anyone decided to publish it. A missing basis is treated as withheld
+    rather than as permission: an unstated right is not a granted one.
+    """
+    held = proper.get("translations") or []
+    kept = [
+        translation
+        for translation in held
+        if isinstance(translation, dict)
+        and translation.get("rights") in PUBLISHABLE_RIGHTS
+    ]
+    return kept or None
+
+
+def withheld_translations(mass: dict):
+    """Every translation the structure pass refuses to publish, for reporting.
+
+    Withholding silently would be the same defect in a quieter coat: the
+    operator needs to see that the corpus holds English the site is not showing.
+    """
+    for proper in mass.get("propers") or []:
+        for translation in proper.get("translations") or []:
+            if not isinstance(translation, dict):
+                continue
+            if translation.get("rights") not in PUBLISHABLE_RIGHTS:
+                yield proper.get("name"), translation.get("lang"), translation.get(
+                    "rights"
+                )
+
+
 def scripture_entries(mass: dict):
     """Yield every verse entry a mass carries, cycle readings included."""
     for entry, _ in numbered_entries(mass, None):
@@ -299,7 +343,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     # are the proper. Carrying only the incipit left the page
                     # naming a Collect it could not show.
                     "text": proper.get("text"),
-                    "translations": proper.get("translations"),
+                    "translations": publishable_translations(proper),
                     "citations": cited(proper),
                     "cycles": {
                         year: {"citations": rows, "text": owner.get("text")}
@@ -333,9 +377,20 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     tokens = book_tokens()
     names = [arguments.calendar] if arguments.calendar else calendars(root)
     out = Path(arguments.out)
-    written, counts, refused = [], {}, []
+    written, counts, refused, withheld = [], {}, [], []
     for name in names:
         built = calendar_structure(root, name, tokens)
+        # Counted from the source, before the structure pass drops them: the
+        # structure file is what the site serves, so anything filtered out of it
+        # cannot be counted from it afterwards.
+        document = load_calendar(root, name)
+        for section in (document.get("sections") or {}).values():
+            for mass in section.get("masses") or []:
+                for proper_name, lang, rights in withheld_translations(mass):
+                    withheld.append(
+                        f"{name} {mass.get('key')}/{proper_name}: {lang} withheld "
+                        f"({rights or 'no rights basis stated'})"
+                    )
         # `--out` is the data root the page is served from, so both generators
         # take the same one: the manifest lands at its head and the structure
         # files under `structure/`.
@@ -364,6 +419,10 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         "written": written,
         "calendars": counts,
         "refused": refused if arguments.verbose else len(refused),
+        # A translation the corpus holds and the site does not show. Reported
+        # every time, not only when verbose: withholding text silently is the
+        # same defect as publishing it silently, read from the other side.
+        "withheld": withheld if arguments.verbose else len(withheld),
         "status": "ok",
     }
 
@@ -541,6 +600,12 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"{calendar}: {counts['masses']} masses, {counts['citations']} citations")
             for path in payload["written"]:
                 print(f"  -> {path}")
+            held = payload["withheld"]
+            if isinstance(held, list):
+                for row in held:
+                    print(f"  {row}")
+            elif held:
+                print(f"  withheld from publication: {held}")
             refused = payload["refused"]
             if isinstance(refused, list):
                 for row in refused:
