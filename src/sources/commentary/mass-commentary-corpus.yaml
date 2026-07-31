@@ -6,10 +6,10 @@ numbering_note: 'Psalm loci are vulgate numbering, not Hebrew, though the book n
 discovery_sha256: sha256:94781a95a84973deff1cbbd35522793f033cf82d500cc0386239d73d73e44694
 max_results_per_passage: 20
 max_results_per_mass: 20
-mass_count: 195
-covered_mass_count: 195
+mass_count: 196
+covered_mass_count: 196
 unresolved_passage_count: 44
-chapter_matched_passage_count: 1543
+chapter_matched_passage_count: 1547
 chapter_matched_passages:
 - 1 Chronicles 29:12
 - 1 Corinthians 10:1-10:5
@@ -704,6 +704,7 @@ chapter_matched_passages:
 - Luke 2:33-2:40
 - Luke 2:41-2:52
 - Luke 2:42-2:52
+- Luke 2:48-2:49
 - Luke 2:51
 - Luke 3:1-3:6
 - Luke 3:10-3:18
@@ -1338,6 +1339,7 @@ chapter_matched_passages:
 - Psalms 70:8; 70:23
 - Psalms 71:1-71:2; 71:7-71:8; 71:10-71:11; 71:12-71:13
 - Psalms 71:1-71:2; 71:7-71:8; 71:12-71:13; 71:17
+- Psalms 71:18; 71:3
 - Psalms 72:1-72:3
 - Psalms 72:19
 - Psalms 72:20
@@ -1460,6 +1462,7 @@ chapter_matched_passages:
 - Psalms 97:1; 97:2-97:3a; 97:3b-97:4; 97:5-97:6
 - Psalms 97:3
 - Psalms 97:5-97:6; 97:7-97:8; 97:9
+- Psalms 99:1
 - Psalms 99:1-99:2
 - Psalms 99:1-99:2; 99:3; 99:5
 - Psalms 9:10-9:11
@@ -1488,6 +1491,7 @@ chapter_matched_passages:
 - Romans 11:13-11:15; 11:29-11:32
 - Romans 11:33-11:36
 - Romans 12:1-12:2
+- Romans 12:1-12:5
 - Romans 12:16-12:21
 - Romans 12:6-12:16
 - Romans 13:8-13:10
@@ -5353,9 +5357,15 @@ passages:
   - postconciliar::holy-family
   has_commentary: true
 - passage: Luke 2:42-2:52
-  mass_count: 1
+  mass_count: 2
   masses:
   - roman-1962::holy-family
+  - roman-1962::mass-of-the-first-sunday-after-epiphany
+  has_commentary: true
+- passage: Luke 2:48-2:49
+  mass_count: 1
+  masses:
+  - roman-1962::mass-of-the-first-sunday-after-epiphany
   has_commentary: true
 - passage: Luke 2:51
   mass_count: 1
@@ -8894,6 +8904,11 @@ passages:
   masses:
   - postconciliar::advent-2
   has_commentary: true
+- passage: Psalms 71:18; 71:3
+  mass_count: 1
+  masses:
+  - roman-1962::mass-of-the-first-sunday-after-epiphany
+  has_commentary: true
 - passage: Psalms 72:1-72:3
   mass_count: 1
   masses:
@@ -9592,10 +9607,16 @@ passages:
   masses:
   - postconciliar::ot-33
   has_commentary: true
+- passage: Psalms 99:1
+  mass_count: 1
+  masses:
+  - roman-1962::mass-of-the-first-sunday-after-epiphany
+  has_commentary: true
 - passage: Psalms 99:1-99:2
-  mass_count: 2
+  mass_count: 3
   masses:
   - roman-1962::lent-4-monday
+  - roman-1962::mass-of-the-first-sunday-after-epiphany
   - roman-1962::quinquagesima
   has_commentary: true
 - passage: Psalms 99:1-99:2; 99:3; 99:5
@@ -9738,6 +9759,11 @@ passages:
   mass_count: 1
   masses:
   - postconciliar::ot-22
+  has_commentary: true
+- passage: Romans 12:1-12:5
+  mass_count: 1
+  masses:
+  - roman-1962::mass-of-the-first-sunday-after-epiphany
   has_commentary: true
 - passage: Romans 12:16-12:21
   mass_count: 2
@@ -46226,6 +46252,237 @@ masses:
     - Matthew 28:2; 28:5-28:6
     - Matthew 28:7
   passage_count: 8
+- calendar: roman-1962
+  mass_key: mass-of-the-first-sunday-after-epiphany
+  mass_name: Mass of the First Sunday after the Epiphany
+  mass_kind: seasonal
+  date: epiphanytide
+  source_category: base
+  works:
+  - work_id: null
+    author: Augustine of Hippo
+    title: Enarrationes in Psalmos
+    date: '430'
+    role: doctor
+    confidence: 1.0
+    score: 4.0
+    passages:
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Albert the Great
+    title: Super Lucam
+    date: '1280'
+    role: doctor
+    confidence: 1.0
+    score: 2.0
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+  - work_id: null
+    author: Cassiodorus
+    title: Expositio Psalmorum
+    date: '585'
+    role: saintly
+    confidence: 1.0
+    score: 2.0
+    passages:
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: saintly
+    confidence: 1.0
+    score: 1.5536
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+    - Romans 12:1-12:5
+  - work_id: null
+    author: Nicholas of Lyra
+    title: Postilla litteralis super totam Bibliam
+    date: '1349'
+    role: saintly
+    confidence: 1.0
+    score: 1.4889
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+    - Romans 12:1-12:5
+  - work_id: null
+    author: Cornelius a Lapide
+    title: Commentaria in Scripturam Sacram
+    date: '1637'
+    role: saintly
+    confidence: 1.0
+    score: 1.4
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+    - Romans 12:1-12:5
+  - work_id: null
+    author: Hugh of Saint-Cher
+    title: Postillae in universa Biblia
+    date: '1263'
+    role: saintly
+    confidence: 1.0
+    score: 1.2361
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+    - Romans 12:1-12:5
+  - work_id: null
+    author: Ambrose of Milan
+    title: Expositio Evangelii secundum Lucam
+    date: '397'
+    role: doctor
+    confidence: 1.0
+    score: 1.0
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+  - work_id: null
+    author: Peter Lombard
+    title: Commentarium in Psalmos
+    date: '1160'
+    role: saintly
+    confidence: 1.0
+    score: 0.75
+    passages:
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Bede the Venerable
+    title: In Lucae evangelium expositio
+    date: '735'
+    role: doctor
+    confidence: 1.0
+    score: 0.6667
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+  - work_id: null
+    author: Robert Bellarmine
+    title: Explanatio in Psalmos
+    date: '1621'
+    role: doctor
+    confidence: 1.0
+    score: 0.6286
+    passages:
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Theodoret of Cyrus
+    title: Interpretatio in Psalmos
+    date: '460'
+    role: church-father
+    confidence: 1.0
+    score: 0.5417
+    passages:
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Bonaventure
+    title: Commentarius in Evangelium S. Lucae
+    date: '1274'
+    role: doctor
+    confidence: 1.0
+    score: 0.5
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+  - work_id: null
+    author: John Chrysostom
+    title: Homiliae in epistulam ad Romanos
+    date: '407'
+    role: church-father
+    confidence: 1.0
+    score: 0.5
+    passages:
+    - Romans 12:1-12:5
+  - work_id: null
+    author: Albert the Great
+    title: Commentarii in Psalmos
+    date: '1280'
+    role: doctor
+    confidence: 0.6667
+    score: 0.4444
+    passages:
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Walafrid Strabo
+    title: Glossa Ordinaria
+    date: '849'
+    role: saintly
+    confidence: 0.3333
+    score: 0.4133
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Jerome
+    title: Commentarioli in Psalmos
+    date: '420'
+    role: doctor
+    confidence: 0.6667
+    score: 0.3769
+    passages:
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Cyril of Alexandria
+    title: Commentarius in Lucam
+    date: '444'
+    role: doctor
+    confidence: 1.0
+    score: 0.3333
+    passages:
+    - Luke 2:42-2:52
+    - Luke 2:48-2:49
+  - work_id: null
+    author: Euthymius Zigabenus
+    title: Commentarius in Psalterium
+    date: '1122'
+    role: saintly
+    confidence: 0.3333
+    score: 0.3333
+    passages:
+    - Psalms 71:18; 71:3
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  - work_id: null
+    author: Athanasius of Alexandria
+    title: Expositiones in Psalmos
+    date: '373'
+    role: doctor
+    confidence: 0.3333
+    score: 0.2727
+    passages:
+    - Psalms 99:1
+    - Psalms 99:1-99:2
+  passage_count: 6
 - calendar: roman-1962
   mass_key: mass-of-the-first-sunday-after-pentecost
   mass_name: Mass of the First Sunday after Pentecost

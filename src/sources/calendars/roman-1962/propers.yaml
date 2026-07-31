@@ -169,14 +169,23 @@ open_collation_items:
   days, the Litaniae maiores et minores, the Vigils of the Ascension and of
   Pentecost, the September Ember Days - is already a separately printed
   formulary in this file and is not a fourth-class feria
-- chasing RGMR 299 turned up a formulary this file does not carry. At printed
+- chasing RGMR 299 turned up a formulary this file did not carry. At printed
   p. 40 the Missal prints MISSA DOMINICAE PRIMAE post Epiphaniam, Introit In
   excelso throno, under the rubric Haec Missa dicenda est diebus ferialibus huius
   hebdomadae, because the Holy Family occupies that Sunday. It is the exact twin
-  of mass-of-the-first-sunday-after-pentecost, which this file does carry and
+  of mass-of-the-first-sunday-after-pentecost, which this file already carried and
   which src/sources/calendars/roman-1962/rubrics.yaml classifies as an
-  alternative-formulary; there is no epiphany-1 key here to match it. Nothing was
-  added, because the formulary was not transcribed
+  alternative-formulary. It is now the entry mass-of-the-first-sunday-after-epiphany,
+  named after the twin rather than epiphany-1 because it is not a Sunday of the
+  cycle and the key_matches rule for those Sundays would have swept an epiphany-1
+  into row 15. Its formulary was transcribed from the facsimile and visually
+  collated, so it is not a placeholder
+- the same Secret and Postcommunion, Oblatum tibi Domine and Supplices te rogamus,
+  stand at sexagesima, which holds them as an unverified model-generated lead. The
+  Postcommunions agree word for word. The Secrets do not. Sexagesima reads
+  sacrificium, vivificet where the facsimile prints sacrificium vivificet at printed
+  p. 41. One comma, and the entry outside this collation was not touched; settle
+  which is right when the Sunday leads are collated
 - the Commemoratio septem Dolorum B. Mariae Virg. on the Friday after Passion
   Sunday has no entry, and the commemoration model landed on 2026-07-31 does not
   reach it. That model is dated - each of the 104 entries of rank Comm. carries a
@@ -199,15 +208,15 @@ open_collation_items:
   because the Missal prints them in the Proprium de Tempore and each is placed by
   the liturgical year rather than a civil date; by kind they are christological,
   and which section should hold them is open
-- five formularies the Missal carries are still absent from this file, namely
+- four formularies the Missal carries are still absent from this file, namely
   D. N. Iesu Christi Regis (last Sunday of October, I classis), Sanctissimi
   Nominis Iesu, the
   Mass for the days within the Octave of the Nativity that 12-29, 12-30 and 12-31
   use, which the collation above identifies as Diebus infra octavam Nativitatis
-  Domini, II classis, printed pp. 28-29, the Missa dominicae primae post
-  Epiphaniam of printed p. 40, and the Commemoratio septem Dolorum B. Mariae
-  Virg. of printed pp. 499-501. All five are movable or shared and none is in the
-  fixed-date spine, which is why nothing reports them
+  Domini, II classis, printed pp. 28-29, and the Commemoratio septem Dolorum
+  B. Mariae Virg. of printed pp. 499-501. The fifth, the Missa dominicae primae
+  post Epiphaniam of printed p. 40, is now carried. All four are movable or shared
+  and none is in the fixed-date spine, which is why nothing reports them
 sections:
   seasonal:
     kind: seasonal
@@ -1235,6 +1244,114 @@ sections:
           Familiae tuae exempla jugiter imitari: ut in hora mortis nostrae,
           occurrente gloriosa Virgine Matre tua cum beato Joseph; per te in
           aeterna tabernacula recipi mereamur: Qui vivis et regnas...
+    - key: mass-of-the-first-sunday-after-epiphany
+      name: Mass of the First Sunday after the Epiphany
+      registry: '1962-T-mass-of-the-first-sunday-after-epiphany'
+      season: epiphanytide
+      notes: 'The Missal prints this formulary at printed p. 40 headed MISSA DOMINICAE
+        PRIMAE post Epiphaniam, under the rubric Haec Missa dicenda est diebus ferialibus
+        huius hebdomadae, because the Holy Family occupies the Sunday itself. The rubric
+        at printed p. 39 states the rest: De dominica I post Epiphaniam suo die nihil fit,
+        sed eius locum tenet festum Sanctae Familiae Iesu, Mariae, Ioseph, cum omnibus
+        iuribus et privilegiis dominicae, and then, Diebus ferialibus a 7 ad 12 ianuarii
+        ante dominicam I post Epiphaniam occurrentibus, dicitur Missa de festo Epiphaniae;
+        post eandem dominicam vero Missa de eadem dominica In excelso throno, ut infra 40.
+        So the ferias before that Sunday take the Mass of the Epiphany and the ferias after
+        it take this one. It is the twin of mass-of-the-first-sunday-after-pentecost, and
+        registry 44 is the Holy Family''s, so this entry carries a synthetic id like the
+        twin. Read and visually collated 2026-07-31 against the CMAA facsimile of the 1962
+        typica named in this file''s open collation items, printed pp. 40-42, digital
+        pp. 121-123, items 273 to 282. The Introit antiphon carries no printed scriptural
+        reference; only its psalm verse does. Three rubrics printed inside the formulary are
+        not recorded here: the Gloria is said when the Mass is used on a feria of
+        Epiphanytide and not when it is used after 13 January, the Credo is not said, and
+        the preface is of the Epiphany within that season and otherwise the common preface.'
+      propers:
+      - name: Introit
+        incipit: In excelso throno vidi sedere virum
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 99, verse: 1}
+            end: {chapter: 99, verse: 1}
+          ref: Psalm 99:1
+      - name: Collect
+        incipit: Vota, quaesumus, Domine
+        source: composed
+        text: |
+          Vota, quaesumus, Domine, supplicantis populi caelesti pietate
+          prosequere: ut et, quae agenda sunt, videant, et ad implenda, quae
+          viderint, convalescant. Per Dominum.
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: Romans
+          ranges:
+          - begin: {chapter: 12, verse: 1}
+            end: {chapter: 12, verse: 5}
+          ref: Romans 12:1-5
+      - name: Gradual
+        incipit: Benedictus Dominus Deus Israel
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 71, verse: 18}
+            end: {chapter: 71, verse: 18}
+          - begin: {chapter: 71, verse: 3}
+            end: {chapter: 71, verse: 3}
+          ref: Psalm 71:18, 3
+      - name: Alleluia
+        incipit: Jubilate Deo, omnis terra
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 99, verse: 1}
+            end: {chapter: 99, verse: 1}
+          ref: Psalm 99:1
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 2, verse: 42}
+            end: {chapter: 2, verse: 52}
+          ref: Luke 2:42-52
+      - name: Offertory
+        incipit: 'Jubilate Deo, omnis terra, servite Domino in laetitia: intrate in conspectu
+          ejus'
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 99, verse: 1}
+            end: {chapter: 99, verse: 2}
+          ref: Psalm 99:1-2
+      - name: Secret
+        incipit: Oblatum tibi, Domine
+        source: composed
+        text: |
+          Oblatum tibi, Domine, sacrificium vivificet nos semper et muniat. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate...
+      - name: Communion
+        incipit: Fili, quid fecisti nobis sic
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 2, verse: 48}
+            end: {chapter: 2, verse: 49}
+          ref: Luke 2:48-49
+      - name: Postcommunion
+        incipit: Supplices te rogamus
+        source: composed
+        text: |
+          Supplices te rogamus, omnipotens Deus: ut, quos tuis reficis
+          sacramentis, tibi etiam placitis moribus dignanter deservire
+          concedas. Per Dominum nostrum.
     - key: epiphany-2
       name: Second Sunday after the Epiphany
       registry: '45'

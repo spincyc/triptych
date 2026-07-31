@@ -427,6 +427,13 @@ def build_1962(ending: int, known: set[str]) -> Year:
     first_after = sunday_after(epiphany)
     count = (a.septuagesima - first_after).days // 7
     year.put(first_after, "holy-family", "the first Sunday after 6 January")
+    year.put(
+        first_after,
+        "mass-of-the-first-sunday-after-epiphany",
+        "the first Sunday after 6 January; the Missal's own formulary for that "
+        "Sunday, whose slot the Holy Family occupies, printed for the ferias "
+        "of the week that follows it",
+    )
     for n in range(2, count + 1):
         year.put(
             first_after + timedelta(days=7 * (n - 1)),

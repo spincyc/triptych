@@ -221,21 +221,21 @@ Counted from the files by `check-calendar-masses` and `citations check`, which
 are the authority; these figures are restated here and go stale, so re-run them
 before trusting the table.
 
-| Index | Masses | Propers | Encoded passages | Placeholder-only masses |
-| --- | --- | --- | --- | --- |
-| `roman-1962/propers.yaml` | 457 | 1461 | 1108 | 335 |
-| `postconciliar/propers.yaml` | 265 | 1023 | 1082 | 202 |
+| Index | Masses | Propers | Encoded passages | Placeholder-only masses | Propers in seasonal | Propers inside `forms` |
+| --- | --- | --- | --- | --- | --- | --- |
+| `roman-1962/propers.yaml` | 460 | 1475 | 1115 | 337 | 1141 | 97 |
+| `postconciliar/propers.yaml` | 268 | 1031 | 1082 | 205 | 824 | 117 |
 
-The proper counts include those nested inside `forms`: 94 of the 1962's and 108
-of the postconciliar's belong to a form rather than to a mass directly, so a
-count that reads `propers` alone lands 94 and 108 short.
+The proper counts include those nested inside `forms`, so a count that reads
+`propers` alone lands short by the last column.
 
-**Most of what is here is a name, not a formulary.** 477 of the 662 masses
-carry nothing but a placeholder proper — they establish that the mass exists and
-where it falls, and record nothing of what is said at it. The seasonal sections
-hold the substance: 1035 of the 1962's propers and 713 of the postconciliar's.
-Coverage is therefore wide and shallow by design, and a reader who sees a mass
-listed should not infer its texts are here.
+**Most of what is here is a name, not a formulary.** The placeholder-only column
+is most of both indexes: those masses establish that the mass exists and where it
+falls, and record nothing of what is said at it. The seasonal sections hold the
+substance. Coverage is therefore wide and shallow by design, and a reader who
+sees a mass listed should not infer its texts are here. The prose here states no
+figure the table does not: the two disagreed for four commits, because a lane
+refreshed the table and left three older totals standing beside it.
 
 `check-calendar-masses` enforces that every mass matches a spine entry and that
 no key repeats. It exits 0 on both indexes, so coverage is exact and
