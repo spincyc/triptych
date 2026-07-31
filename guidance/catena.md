@@ -36,11 +36,26 @@ word "commentary", and the page must render exactly one of them.
 | --- | --- | --- | --- |
 | **L1 attribution** | *Chrysostom commented here* | `src/sources/commentary/passage-commentary-index.yaml` | agreement across independent model runs |
 | **L2 holding** | *we possess this work, in this edition, under this licence* | the source library | an artifact on disk |
-| **L3 fragment** | *these words, by this author, on this locus* | nowhere | the text itself |
+| **L3 fragment** | *these words, by this author, on this locus* | the source library's `passage` records | the text itself |
 
 L1 exists and is large: **497 rows, 61 books, 341 distinct works, 86 authors**
-[verified]. L3 is empty, and no field in any tracked commentary schema can hold
-the text of a fragment [verified].
+[verified].
+
+L3 also exists, which an earlier draft of this study got wrong and is worth
+correcting in place rather than quietly. No field anywhere in
+`src/sources/commentary/` can hold the text of a fragment — that much is right
+[verified], and it is by design, because the harvest produces an acquisition
+list. But the **source library's `passage` record has held third-party prose all
+along**: `text`, `transcription_segments`, `physical_line_ranges`, `artifact_id`,
+`artifact_sha256`, `states`, `context`, `verified_on`. There are **1,227 such
+records**, and four of them are already patristic commentary [verified] — among
+them Augustine on John 20:8 and three homilies of Chrysostom on John, each
+carrying its text, its transcription segments, a `states` list running
+`cataloged → acquired → inspected → verified`, and a verification date. Fifteen
+volumes of Schaff's *Nicene and Post-Nicene Fathers* are tracked works.
+
+So the catena does not need a fragment container invented for it. It needs the
+container it already has to be pointed at scripture, which is §7.
 
 The gap between L1 and L3 is not a matter of degree. `docs/reading-and-commentary.md`
 already states what L1 is: *"The harvest produces an **acquisition list** — which
@@ -235,29 +250,85 @@ acquisition round, not be discovered during it.
 
 ---
 
-## 7. What a fragment record has to hold
+## 7. The missing edge, which is the only new thing
 
-Draft, to be settled against the source library's existing artifact conventions
-rather than invented beside them:
+A `passage` record already carries the text, the provenance, the rights and the
+review state. What it does not carry is **what scripture the text is about**.
 
-| Field | Why |
+Look at the `locus` on the Augustine record [verified]:
+
+```
+locus = "Augustine, In Iohannis Evangelium Tractatus CXX.9"
+```
+
+That is an address in the *commentary's* own work — tractate 120, section 9 —
+not in scripture. `context` says what the passage is about, in prose. So nothing
+can answer *"every passage record commenting on Genesis 1"*, and that question is
+the entire machinery of a catena.
+
+> **Rule 10.** The new thing is one typed, validated edge from a fragment to a
+> **canonical scripture extent**. Not a prose field, not a free-text list. It
+> carries the extent in `CANONICAL` numbering (Rule 3) at the fragment's natural
+> reach (Rule 5).
+
+Everything else the earlier draft proposed as a schema is already provided:
+
+| Need | Already provided by |
 | --- | --- |
-| canonical extent | the anchor, in `CANONICAL` numbering (Rule 3) |
-| work | a reference into `work-aliases.yaml`, not a title string (Rule 8) |
-| author | derived from the work, not stored twice |
-| date of text | for ordering, distinct from the claimed author's dates (Rule 7) |
-| edition | which artifact this text came from — carries the licence (Rule 9) |
-| language | the fragment's own; a translation is a separate fragment of the same work |
-| locator | page or section in the source edition, so a reader can check it |
-| text | the fragment itself |
+| the text | `passage.text`, `passage.transcription_segments` |
+| the locator | `passage.locus`, `physical_line_ranges`, `artifact_page_ranges` |
+| the edition, and so the licence | `passage.edition_id` → `artifact.toml`'s `rights_status`, `rights_basis`, `rights_jurisdiction` |
+| language | `edition.language` |
+| provenance and review state | `states`, `verified_on`, `artifact_sha256` |
+| **the scripture it comments on** | **nothing — Rule 10** |
 
-Two consequences fall out of the table. A translation is **not** a field on a
-fragment; it is another fragment of the same work in another language, with its
-own edition and its own licence — which is what lets the Greek be publishable
-while a modern English rendering is not. And the author is derived rather than
-stored, because an author stored beside a work reference is a second copy that
-can disagree with the first, which is the failure mode this repository has hit
-enough times to have a standing rule against.
+One point from the earlier draft survives unchanged and matters: a translation is
+**not** a field on a fragment. It is a separate fragment of the same work in
+another language, with its own edition and its own licence — which is exactly
+what lets a father's Greek be publishable while a modern English rendering of him
+is not. The source library already models this, because an edition carries the
+language and the artifact carries the rights.
+
+### Three prerequisites the survey turned up
+
+- **No structure file enumerates the canon** [verified]. Every existing coverage
+  is citation-driven — the bible index covers what the calendars cite, the
+  propers structure covers the propers, the readings structure covers 454
+  chapters in 31 books. A catena over *every* chapter needs a whole-canon
+  enumeration. The material is there — `book-index.tsv` gives 73 books and 1,334
+  chapters, and chapter fragments exist on disk for all of them — but no tool
+  writes it.
+- **`work_id` is null on every entry** of both the discovery index and the mass
+  corpus [verified], so no harvested lead links to a source-library work record;
+  deduplication falls back to the string `"author | title"`. The commentary
+  README says this reconciliation should exist. It has not been done, and Rule 8
+  depends on it.
+- **Editing an existing `artifact.toml` cascades a review obligation.** Its
+  fingerprint feeds every segment, passage and corpus above it, and 101 tracked
+  binding files carry pins. This is deliberate policy, not a bug. New records are
+  cheap; edits to old ones are not.
+
+### And the page is largely already written
+
+`src/web/browser/shared/browser-core.js` already provides the chapter cache, the
+translation selector, `renderLocus`, `renderCitation`, `recastLoci` — which
+prints *"…in this edition's vulgate numbering"* rather than leaving a reader to
+doubt — a render token that discards an overtaken selection, and four named
+failure renderings. The proven way to feed new data through it is the adapter in
+`plan-model.js`, which rewraps a reading as a citation-shaped object so the shared
+renderer serves it unchanged. A catena needs that adapter, not a front end.
+
+Two constraints from that file's own header bind the catena and rule out the
+obvious shortcut:
+
+> file counts must be **additive, never multiplicative** — adding a translation
+> adds that translation's fragments and changes nothing else;
+>
+> the join belongs **at read time** in the browser: do not turn this into static
+> pages, do not inline verse text into the structure files, and do not build a
+> per-pair cache on disk.
+
+A catena that pre-rendered chapter × translation × fragment-set would break both.
 
 ---
 
@@ -276,8 +347,10 @@ start ahead of them.
    is right.
 4. A licence survey of the candidate text sources, with the licence established
    by fetching the licence, not by reputation.
-5. A fragment schema landed in the source library, with a validator, before the
-   first fragment is written — not after several thousand.
+5. The scripture edge of Rule 10, with a validator, before the first fragment is
+   written — not after several thousand. Not a schema: the container exists.
+6. `work_id` reconciled between the harvest's leads and the source library's work
+   records, without which Rule 8 cannot be checked at all.
 
 ## 9. Prior art
 
