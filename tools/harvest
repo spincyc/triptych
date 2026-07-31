@@ -27,6 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _commentary import chapter_loci  # noqa: E402
 from _tooling import print_json, run_verb_cli  # noqa: E402
 
 LEDGER = ROOT / "src" / "sources" / "commentary" / "harvest-ledger.yaml"
@@ -51,6 +52,15 @@ CUTOFF_YEAR = 1900
 # already recorded: whether a particular writer is venerated is a fact about
 # that person, and asserting it wrongly in either direction is worse than
 # leaving the existing coarse tag visible for what it is.
+# The loci are addressed in Vulgate psalm numbering while the book names are
+# modern, and the two conventions do not announce themselves. Anything that
+# hands this worklist to a reader must say so.
+NUMBERING = "vulgate"
+NUMBERING_NOTE = (
+    "Psalm numbers here are Vulgate, not Hebrew, though the book names are "
+    "modern: Psalms 24 is Ad te levavi. Every other book is numbered as it is "
+    "printed."
+)
 ROLES = (
     "church-father",
     "saint",
@@ -153,25 +163,10 @@ def _ledger_runs(ledger: dict) -> list[dict]:
     return [r for r in (ledger.get("runs") or []) if isinstance(r, dict)]
 
 
-def _chapter_loci(passage: str) -> list[str]:
-    """Split a reference into one locus per chapter, never wider.
-
-    A query may cover at most a single chapter: grouping across chapters drops
-    works that comment on only one of them. Isaiah 63:16-64:7 is therefore two
-    queries, not one, which costs more queries and loses nothing.
-    """
-    import re
-
-    match = re.match(r"^(.*?)\s+(\d.*)$", passage.strip())
-    if not match:
-        return [passage]
-    book, tail = match.group(1), match.group(2)
-    chapters: list[str] = []
-    for chapter in re.findall(r"(\d+):", tail) or re.findall(r"^(\d+)$", tail):
-        locus = f"{book} {chapter}"
-        if locus not in chapters:
-            chapters.append(locus)
-    return chapters or [passage]
+# One implementation, in scripts/_commentary.py, because the corpus that reads
+# this harvest must split references exactly the same way or the two key spaces
+# silently fail to meet.
+_chapter_loci = chapter_loci
 
 
 def run_plan(arguments: argparse.Namespace) -> dict:
@@ -202,6 +197,17 @@ def run_plan(arguments: argparse.Namespace) -> dict:
         "pending": len(pending),
         "cutoff_year": CUTOFF_YEAR,
         "roles": list(ROLES),
+        # The worklist prints modern book names beside Vulgate psalm numbers, so
+        # a reader sees "1 Samuel 16" next to "Psalms 24" and has every reason
+        # to read the 24 as Hebrew. It is not: Psalm 24 here is Ad te levavi.
+        # Of three independent harvest agents given this list, two derived the
+        # numbering correctly by checking incipits and one inferred Hebrew from
+        # the book names and hedged its ranges to be safe under either. The
+        # hedge saved that run's data; the next reader may not hedge, so the
+        # list now says which system it is instead of leaving it to be worked
+        # out.
+        "numbering": NUMBERING,
+        "numbering_note": NUMBERING_NOTE,
         "passages": [{"passage": p, "runs": seen[p]} for p in pending],
     }
 
@@ -889,6 +895,7 @@ def main(argv: list[str] | None = None) -> int:
             for entry in payload["passages"]:
                 print(f"{entry['runs']}\t{entry['passage']}")
             print(
+                f"# {payload['numbering_note']}\n"
                 f"# {payload['pending']} of {payload['total']} passages below "
                 f"{payload['target_runs']} runs",
                 file=sys.stderr,
