@@ -50,9 +50,21 @@
     </select>
   </div>
 
+  <!-- Two controls, because a Mass is built out of two kinds of text and only
+       one of them is scripture. The bible governs what is quoted; the orations
+       control governs what was composed — collects, secrets, postcommunions.
+       Choosing a bible cannot put the collects into English, and a reader who
+       is not told that reads it as a broken dropdown. -->
   <div class="field">
-    <label for="bible-select">Translation</label>
+    <label for="bible-select">Scripture</label>
     <select id="bible-select" name="bible" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="orations-select">Orations</label>
+    <select id="orations-select" name="orations" disabled>
       <option>Loading…</option>
     </select>
   </div>

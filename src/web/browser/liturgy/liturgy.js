@@ -63,13 +63,13 @@
    * --------------------------------------------------------------------- */
 
   // Types in the order a missal is read in, not the order they were declared.
-  const KIND_SEQUENCE = ['seasonal', 'christological', 'marian', 'saintly'];
+  const KIND_SEQUENCE = ['seasonal', 'christological', 'marian', 'sanctoral'];
 
   const KIND_LABELS = {
     seasonal: 'Seasonal',
     christological: 'Christological',
     marian: 'Marian',
-    saintly: 'Saintly'
+    sanctoral: 'Sanctoral'
   };
 
   const MONTHS = [
@@ -161,8 +161,30 @@
     kinds: [],
     kind: null,
     masses: [],
-    massKey: null
+    massKey: null,
+    // The language the composed propers are asked for. SOURCE_LANGUAGE means
+    // "as the missal prints them", which is the only setting guaranteed to
+    // have a text behind it for every proper.
+    orations: null,
+    orationLanguages: []
   };
+
+  // The missals hold their orations in Latin; a translation is an addition to
+  // that, never a replacement of it.
+  const SOURCE_LANGUAGE = 'la';
+  const LANGUAGE_NAMES = {
+    la: 'Latin',
+    en: 'English',
+    fr: 'French',
+    de: 'German',
+    es: 'Spanish',
+    it: 'Italian',
+    pl: 'Polish'
+  };
+
+  function languageName(code) {
+    return LANGUAGE_NAMES[code] || String(code || '').toUpperCase();
+  }
 
   /* ------------------------------------------------------------------------
    * Elements
@@ -172,6 +194,7 @@
   const typeSelect = document.getElementById('type-select');
   const massSelect = document.getElementById('mass-select');
   const bibleSelect = document.getElementById('bible-select');
+  const orationsSelect = document.getElementById('orations-select');
   const prevButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
   const reading = document.getElementById('reading');
@@ -293,6 +316,85 @@
     return state.masses.find((mass) => mass.key === state.massKey) || null;
   }
 
+  /**
+   * Every language this missal can render its composed propers in, with how
+   * much of the missal each one actually reaches.
+   *
+   * The coverage is counted rather than assumed. A translation set that reaches
+   * a tenth of the orations is a legitimate state here — the rights position
+   * differs sharply between the two missals and partial coverage is expected to
+   * be permanent, not temporary — so the reader is owed the figure instead of a
+   * dropdown that implies completeness.
+   */
+  function orationLanguagesOf(structure) {
+    let composed = 0;
+    const held = new Map();
+    for (const mass of (structure && structure.masses) || []) {
+      for (const proper of mass.propers || []) {
+        if (!proper.text) continue;
+        composed += 1;
+        for (const translation of proper.translations || []) {
+          if (!translation || !translation.lang || !translation.text) continue;
+          held.set(translation.lang, (held.get(translation.lang) || 0) + 1);
+        }
+      }
+    }
+    const languages = [{ lang: SOURCE_LANGUAGE, held: composed, composed: composed }];
+    for (const lang of Array.from(held.keys()).sort()) {
+      languages.push({ lang: lang, held: held.get(lang), composed: composed });
+    }
+    return languages;
+  }
+
+  function fillOrationsSelect() {
+    T.fillSelect(orationsSelect, state.orationLanguages.map((entry) => ({
+      value: entry.lang,
+      // The source language needs no coverage figure: it is what the missal
+      // prints, so it is complete by definition. Every other entry states how
+      // far it reaches, because none of them reaches everywhere.
+      label: entry.lang === SOURCE_LANGUAGE
+        ? languageName(entry.lang) + ', as printed'
+        : languageName(entry.lang) + ' — ' + entry.held + ' of ' + entry.composed,
+      title: entry.lang
+    })));
+    orationsSelect.disabled = state.orationLanguages.length < 2;
+    if (state.orations) orationsSelect.value = state.orations;
+  }
+
+  /**
+   * The composed text to show, and what to say about it.
+   *
+   * A proper with no translation in the chosen language is the ordinary case,
+   * not an error — but it must not silently fall back to Latin and let the
+   * reader believe they are looking at the English they asked for. The absence
+   * is stated where the text would have been.
+   */
+  function orationFor(proper) {
+    const wanted = state.orations || SOURCE_LANGUAGE;
+    if (wanted === SOURCE_LANGUAGE) {
+      return { text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null };
+    }
+    const found = (proper.translations || []).find(
+      (translation) => translation && translation.lang === wanted && translation.text
+    );
+    if (found) {
+      return {
+        text: found.text,
+        lang: wanted,
+        missing: false,
+        source: found.source_id || found.source || null,
+        notice: found.notice || null
+      };
+    }
+    return {
+      text: proper.text,
+      lang: SOURCE_LANGUAGE,
+      missing: true,
+      wanted: wanted,
+      source: null
+    };
+  }
+
   function massIndex() {
     return state.masses.findIndex((mass) => mass.key === state.massKey);
   }
@@ -302,6 +404,7 @@
     if (state.kind) typeSelect.value = state.kind;
     if (state.massKey) massSelect.value = state.massKey;
     if (state.bibleId) bibleSelect.value = state.bibleId;
+    if (state.orations) orationsSelect.value = state.orations;
 
     const index = massIndex();
     prevButton.disabled = index <= 0;
@@ -313,7 +416,9 @@
       ['missal', state.missalId],
       ['type', state.kind],
       ['mass', state.massKey],
-      ['bible', state.bibleId]
+      ['bible', state.bibleId],
+      // Only when it is not the default, so an ordinary link stays short.
+      ['orations', state.orations === SOURCE_LANGUAGE ? null : state.orations]
     ]);
   }
 
@@ -372,14 +477,36 @@
     // and quietly. It is not a failure: the corpus indexes these propers by
     // their opening words and does not hold their bodies.
     if (proper.text) {
+      const oration = orationFor(proper);
       const composed = T.el('p', 'composed');
-      composed.appendChild(
-        T.el('span', 'composed-label', 'Composed text — not scripture')
-      );
-      composed.appendChild(document.createTextNode(proper.text));
-      // The structure file names no language for it, so none is asserted here.
-      if (proper.language) composed.lang = proper.language;
+      const label = oration.missing
+        ? 'Composed text — not scripture · ' + languageName(SOURCE_LANGUAGE)
+        : 'Composed text — not scripture' +
+          (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang));
+      composed.appendChild(T.el('span', 'composed-label', label));
+      composed.appendChild(document.createTextNode(oration.text));
+      composed.lang = oration.lang;
       section.appendChild(composed);
+
+      // Said where the English would have been, not in a footnote: a reader who
+      // asked for English and was handed Latin needs to know that at the text.
+      if (oration.missing) {
+        section.appendChild(
+          T.el('p', 'composed-note',
+            'No ' + languageName(oration.wanted) + ' translation is recorded for ' +
+            'this proper. The Latin the missal prints is shown instead.')
+        );
+      }
+      // Whose English it is. A translation is someone's expression, and the
+      // reader is entitled to know whose before weighing it.
+      if (oration.source) {
+        section.appendChild(
+          T.el('p', 'composed-note', 'Translation: ' + oration.source)
+        );
+      }
+      if (oration.notice) {
+        section.appendChild(T.el('p', 'composed-note', oration.notice));
+      }
     } else if (proper.incipit && proper.source === 'composed') {
       section.appendChild(
         T.el('p', 'composed-note',
@@ -578,6 +705,17 @@
       fillMissalSelect();
     }
 
+    // Which languages the orations can be read in is a property of the missal,
+    // not of the site: the two differ, and a language offered for one may be
+    // absent from the other. A selection that the new missal cannot honour
+    // falls back to what it prints rather than silently showing Latin under an
+    // English label.
+    state.orationLanguages = orationLanguagesOf(loaded.file);
+    if (!state.orationLanguages.some((entry) => entry.lang === state.orations)) {
+      state.orations = SOURCE_LANGUAGE;
+    }
+    fillOrationsSelect();
+
     state.kinds = groupByKind(loaded.file.masses || []);
     if (!state.kinds.length) {
       T.fillSelect(typeSelect, []);
@@ -747,6 +885,9 @@
     T.fillBibleSelect(bibleSelect, state.bibles);
 
     const hash = T.readHash();
+    // Settled before the first missal loads, so the first render already
+    // honours it; setMissal drops it if that missal cannot offer it.
+    state.orations = hash.get('orations') || SOURCE_LANGUAGE;
     const wantedBible = hash.get('bible');
     state.bibleId = state.bibles.some((bible) => bible.id === wantedBible)
       ? wantedBible
@@ -791,6 +932,11 @@
     select(null, bibleSelect.value, { moveFocus: false });
   });
 
+  orationsSelect.addEventListener('change', () => {
+    state.orations = orationsSelect.value;
+    select(null, null, { moveFocus: false });
+  });
+
   prevButton.addEventListener('click', () => step(-1, { moveFocus: true }));
   nextButton.addEventListener('click', () => step(1, { moveFocus: true }));
 
@@ -799,6 +945,11 @@
   T.onArrowStep((delta) => step(delta, { moveFocus: false }));
 
   T.onHashChange((hash) => {
+    const wantedOrations = hash.get('orations') || SOURCE_LANGUAGE;
+    if (state.orationLanguages.some((entry) => entry.lang === wantedOrations)) {
+      state.orations = wantedOrations;
+    }
+
     const wantedBible = hash.get('bible');
     if (state.bibles.some((bible) => bible.id === wantedBible)) {
       state.bibleId = wantedBible;
