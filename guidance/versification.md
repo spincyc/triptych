@@ -1185,6 +1185,76 @@ Two further asks for whoever owns `index-bible`:
 Four artifacts and six gates. Each is derived from tracked data or validated
 against it on load; none is a hand-typed table that nothing checks.
 
+> **Superseded in shape, 31 July 2026, by §8.0 below.** The four artifacts here
+> remain the right *content*. What changed is where they live and what they cost:
+> the maintainer settled that each edition gets a projection into one canonical
+> shape, that the projection **references the edition rather than copying it**,
+> and that it stores an override only where the edition actually diverges. Read
+> §8.0 first; §8.1–§8.7 then describe what each artifact holds.
+
+### 8.0 Projections — reference the source, override the divergence
+
+The problem this solves is the one that keeps recurring: every tool that touches
+a citation has to know every edition's numbering, so the knowledge is spread
+across the tools instead of held in one place, and a tool that forgets is not
+wrong loudly — it returns a plausible verse.
+
+The obvious fix is to normalise each harvested bible into one numbering at
+ingest. **Do not do that.** It is lossy exactly where this project is careful.
+Renumbering discards the edition's own numbering, which is the evidence: after
+it, "what does this edition print at Psalm 115:10" has no answer, and that
+question is load-bearing for chant incipits, for the Clementine's departure, and
+for the King James Apocrypha. It also cannot work. Normalising needs a total
+verse-level map, which is precisely what does not exist; the boundary-displaced
+psalms have no numbering to change at all, only text divisions; and Tobit,
+Judith and Ecclesiasticus in the Greek-division editions are different texts
+rather than different numberings, so no renumbering reaches them. Finally,
+`typeset-bible` publishes each edition as its own volume under its own rights
+notice, and a normalised text would falsify that notice.
+
+**A projection is a set of rules, not a set of verses.** The default rule is
+identity: this edition's Psalm 4:3 *is* canonical Psalm 4:3, and no row is
+written. A row appears only where the edition diverges, and it says which kind
+of divergence:
+
+| Override | Means | Example |
+| --- | --- | --- |
+| `renumber` | The same text under different numbers | Vulgate 115:10 is canonical 116:10 |
+| `merge` | The edition joins what the canon divides | the Douay's 1 Thess 4:17 carries 4:18 |
+| `split` | The edition divides what the canon joins | needs a subverse address; the concordance's fixed-length row cannot hold it |
+| `absent` | The edition does not carry it | Vulgate Esther 11–16 against the Hebrew-numbered editions |
+| `displaced` | Numbers agree, the text boundary does not | recorded, never resolved — see §8.5 |
+| `unrecorded` | Known to diverge, correspondence not established | a refusal that carries its reason |
+
+Three consequences follow, and they are the reasons for the shape.
+
+**The projection's size measures the edition's divergence.** A near-canonical
+edition projects in a few rows. That number is worth reporting: it is the honest
+answer to "how far is this edition from the others", and today nothing computes
+it.
+
+**Refusals stay countable.** Normalising at ingest resolves a divergence
+silently and permanently. A projection makes each one a row that can be listed,
+counted, and gated on. `displaced` in particular is a category this project can
+now name and could not before, because it is the one thing an external standard
+does not model — TVTMS's `StartDifferent` exists for it and is used three times
+in that whole file, never in the Psalms.
+
+**It is derived, and a test says so.** The projection is generated from the
+tracked concordance, each edition's `verse-aliases.tsv` and its `book-index.tsv`
+— all of which already exist and are already validated. Nothing is hand-typed
+beside them. The pattern is the one §3.1 records from `biblelib`: a derived
+artefact regenerated and asserted byte-identical by a test. This repository
+already applies it one layer up, in `src/web/data/structure/`, where every
+citation is resolved into both numbering systems so that no numbering logic
+ships to the browser at all.
+
+Resolution then has one shape everywhere. A caller asks for a canonical
+reference; the projection answers with a locus in the edition's own numbering,
+or with a refusal carrying its reason; the text is read from the edition's own
+tracked verses, unaltered. No tool needs to know a numbering system again, and
+the editions on disk are still the editions that were published.
+
 ### 8.1 `verse-inventory.tsv` — per edition, fully derived
 
 One row per chapter, generated from the same `verse-text-*` artifacts the index
