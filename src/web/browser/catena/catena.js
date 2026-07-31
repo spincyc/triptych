@@ -180,7 +180,11 @@
     const heading = T.el(
       'h2',
       'section-heading',
-      held.length === 1 ? 'One fragment held here' : held.length + ' fragments held here'
+      held.length === 0
+        ? 'Commentary held here'
+        : held.length === 1
+          ? 'One fragment held here'
+          : held.length + ' fragments held here'
     );
     container.appendChild(heading);
     if (!held.length) {
@@ -265,20 +269,25 @@
     const forEdition = ((file && file.refusals) || {})[bible.id] || [];
     const here = forEdition.filter((row) => Number(row.chapter) === Number(chapter));
     if (!here.length) return;
+    // The projection's own note is a clause, not a sentence, so it is set into
+    // one here rather than printed as though it were prose. Nothing is added
+    // to what it says.
+    const note = String(here[0].note || '').replace(/\s+$/, '');
+    const sentence = note ? note.charAt(0).toUpperCase() + note.slice(1) + '.' : '';
     const node = T.el('p', 'refusal');
     node.appendChild(T.el('strong', null, 'Boundary not established. '));
     node.appendChild(
       document.createTextNode(
-        'The fragments below are anchored to ' +
+        sentence +
+          ' Commentary on ' +
           book.name +
           ' ' +
           chapter +
-          ' in Vulgate numbering. ' +
-          here[0].note +
-          ' This page will not guess where it moves to in ' +
+          ' is anchored in Vulgate numbering, and this page will not guess ' +
+          'where the boundary moves to in ' +
           bible.label +
-          ', so the extents above are canonical and the verse numbers you are ' +
-          'reading may not correspond.'
+          '. The verse numbers you are reading correspond; the divisions of ' +
+          'the text may not.'
       )
     );
     container.appendChild(node);
@@ -325,10 +334,14 @@
 
     const leads = ((file && file.leads) || {})[String(chapter)] || [];
     T.clear(tally);
-    tally.appendChild(T.el('b', null, String(count)));
+    tally.appendChild(T.el('b', null, count === 0 ? 'Nothing' : String(count)));
     tally.appendChild(
       document.createTextNode(
-        (count === 1 ? ' fragment held' : ' fragments held') +
+        (count === 0
+          ? ' held here'
+          : count === 1
+            ? ' fragment held'
+            : ' fragments held') +
           (leads.length ? ' · ' + leads.length + ' works not yet acquired' : '')
       )
     );
