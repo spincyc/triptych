@@ -328,6 +328,19 @@
       "stage": "draft",
       "usage": "tpt <tool> [<tool args>...] | tpt {list,tools,run,help,path}"
     },
+    "typeset-bible": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Typeset a publishable bible edition's complete text as two-column TeX.",
+      "requires": [
+        "index-bible"
+      ],
+      "stage": "draft",
+      "usage": "typeset-bible {list,check,render} [--bible ID] [--source-root DIR] [--out DIR]"
+    },
     "web-edition": {
       "idempotent": true,
       "json": false,

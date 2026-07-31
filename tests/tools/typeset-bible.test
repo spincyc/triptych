@@ -1,0 +1,190 @@
+#!/bin/sh
+# Test for `tools/tpt typeset-bible`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="typeset-bible"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+# The publishable set comes from the registered edition table. Knox is on disk
+# beside the others and must never appear as something to typeset.
+run_tool list --format ids >ids.txt
+for want in douay-rheims clementine-vulgate king-james-version revised-version-1895; do
+	if ! grep -qx "$want" ids.txt; then
+		echo "$want is publishable but was not offered" >&2
+		exit 1
+	fi
+done
+if grep -qx knox ids.txt; then
+	echo "a licensed edition was offered for typesetting" >&2
+	exit 1
+fi
+if ! run_tool list | grep -q "refused (not publishable): knox"; then
+	echo "the licensed edition was not reported as refused" >&2
+	exit 1
+fi
+
+# A licensed edition is refused by name, and nothing is created for it.
+status=0
+run_tool render --bible knox --out "$sandbox/licensed" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "typesetting a licensed edition should exit 2, got $status" >&2
+	exit 1
+fi
+if [ -e "$sandbox/licensed" ]; then
+	echo "a refused edition must not create an output directory" >&2
+	exit 1
+fi
+if find "$sandbox" -iname '*knox*' | grep -q .; then
+	echo "a refused edition left output behind" >&2
+	exit 1
+fi
+
+# An unregistered edition is refused by name rather than half-rendered.
+status=0
+run_tool render --bible no-such-bible --out "$sandbox/none" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 3 ]; then
+	echo "an unknown edition should exit 3, got $status" >&2
+	exit 1
+fi
+if [ -e "$sandbox/none" ]; then
+	echo "an unknown edition must not create an output directory" >&2
+	exit 1
+fi
+
+# A render is a build artifact: it may not be written into a source tree.
+status=0
+run_tool render --bible douay-rheims --out "$repo/doc/bibles" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "rendering into a tracked tree should exit 2, got $status" >&2
+	exit 1
+fi
+if [ -e "$repo/doc/bibles" ]; then
+	echo "a refused destination was created anyway" >&2
+	exit 1
+fi
+
+# The render is deterministic, and an unchanged edition is not rewritten.
+run_tool render --bible douay-rheims --out "$sandbox/one" >/dev/null
+run_tool render --bible douay-rheims --out "$sandbox/two" >/dev/null
+if ! cmp -s "$sandbox/one/douay-rheims.tex" "$sandbox/two/douay-rheims.tex"; then
+	echo "render output is not byte-stable across runs" >&2
+	exit 1
+fi
+if ! run_tool render --bible douay-rheims --out "$sandbox/one" | grep -q unchanged; then
+	echo "an unchanged edition was rewritten" >&2
+	exit 1
+fi
+
+# It is the complete text, set in two columns, not the cited fragments.
+douay="$sandbox/one/douay-rheims.tex"
+if ! grep -q '^\\documentclass\[10pt,twocolumn\]{article}$' "$douay"; then
+	echo "the render is not set in two columns" >&2
+	exit 1
+fi
+books="$(grep -c '^\\bookstart' "$douay")"
+if [ "$books" -ne 73 ]; then
+	echo "expected the 73 books of this edition, found $books" >&2
+	exit 1
+fi
+verses="$(grep -c '^\\vn{' "$douay")"
+if [ "$verses" -lt 35000 ]; then
+	echo "expected the whole text, found only $verses verses" >&2
+	exit 1
+fi
+# First verse and last, so neither end of the edition is quietly missing.
+if ! grep -q 'In the beginning God created heaven, and earth' "$douay"; then
+	echo "the first verse of the edition is missing" >&2
+	exit 1
+fi
+if ! grep -q 'The grace of our Lord Jesus Christ be with you all' "$douay"; then
+	echo "the last verse of the edition is missing" >&2
+	exit 1
+fi
+
+# Each edition carries its own rights notice, from its own artifact records.
+# The Douay-Rheims is out of copyright by age; the King James is not free in
+# the United Kingdom, and saying only "public domain" for it would be false.
+if grep -q 'United Kingdom' "$douay"; then
+	echo "the Douay-Rheims render carries another edition's rights exception" >&2
+	exit 1
+fi
+if ! grep -q 'out of copyright everywhere by age' "$douay"; then
+	echo "the Douay-Rheims render does not state its own rights basis" >&2
+	exit 1
+fi
+run_tool render --bible king-james-version --out "$sandbox/one" >/dev/null
+kjv="$sandbox/one/king-james-version.tex"
+for want in 'Jurisdiction.} United States' 'letters patent' 'United Kingdom'; do
+	if ! grep -q "$want" "$kjv"; then
+		echo "the King James render does not state $want" >&2
+		exit 1
+	fi
+done
+
+# A character these fonts cannot set is replaced in view and disclosed, never
+# dropped: the King James prints the Hebrew alphabet through Psalm 119.
+if ! grep -q 'Typesetting note' "$kjv"; then
+	echo "the substitutions were not disclosed" >&2
+	exit 1
+fi
+if ! grep -q 'Hebrew beth' "$kjv"; then
+	echo "a Hebrew letter was dropped rather than replaced" >&2
+	exit 1
+fi
+
+# Book identity comes from the book index, never from file position. A verse
+# file holding another book's text is refused rather than filed under the wrong
+# name, which is the defect that once put Ezekiel's text under Sirach.
+mkdir -p works
+cp -R "$repo/src/sources/works/english-college-of-douay" works/
+edition="works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581"
+run_tool render --bible douay-rheims --source-root "$sandbox/works" \
+	--out "$sandbox/copy" >/dev/null
+sirach="$(echo "$edition"/artifacts/verse-text-26-ecclesiasticus-*/26-ecclesiasticus.tsv)"
+ezechiel="$(echo "$edition"/artifacts/verse-text-31-ezechiel-*/31-ezechiel.tsv)"
+cp "$ezechiel" "$sirach"
+status=0
+run_tool render --bible douay-rheims --source-root "$sandbox/works" \
+	--out "$sandbox/swapped" >swapped.txt 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a verse file holding another book should exit 2, got $status" >&2
+	exit 1
+fi
+if ! grep -q "carries book 'Ezech', but the book index registers this file as 'Ecclus'" \
+	swapped.txt; then
+	echo "the mismatch was not reported against the book index" >&2
+	cat swapped.txt >&2
+	exit 1
+fi
+
+# Machine form is one key-sorted object and reports what it proved.
+run_tool check --bible douay-rheims --format json >one.json
+run_tool check --bible douay-rheims --format json >two.json
+if ! cmp -s one.json two.json; then
+	echo "json output is not byte-stable across runs" >&2
+	exit 1
+fi
+for want in '"digest"' '"rights_jurisdiction"' '"rights_status"' '"verses"' '"knox"'; do
+	if ! grep -q "$want" one.json; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+
+if run_tool list --format nonesuch >/dev/null 2>&1; then
+	echo "expected failure for an unknown format" >&2
+	exit 1
+fi
+
+echo ok

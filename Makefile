@@ -106,6 +106,12 @@ RESEARCH_STALENESS_TOOL := tools/tpt research-staleness
 SOURCE_LIBRARY_TOOL := tools/tpt source-library
 SOURCE_INVENTORY_TOOL := tools/tpt source-inventory
 SOURCE_FAMILY_MIGRATION_TOOL := tools/tpt source-family-migration
+# Complete-text bible editions. These are build artifacts, not publications:
+# they are generated from the tracked verse text of the source library and are
+# never installed into doc/.
+BIBLE_TYPESET_TOOL := tools/tpt typeset-bible
+BIBLE_TYPESET_IMPL := tools/typeset-bible
+BIBLE_BUILD_ROOT := build/bibles
 
 COMMON_SOURCES := $(shell find src/common -type f 2>/dev/null | sort)
 ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
@@ -209,7 +215,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	add-publication doc review-doc install-doc check check-tests \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness explain-staleness rebaseline-doc \
-	FORCE_METADATA_VERIFICATION
+	bibles bible review-bible check-bibles \
+	FORCE_METADATA_VERIFICATION FORCE_BIBLE_RENDER
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
 
@@ -415,6 +422,10 @@ help:
 		'make refresh-release-bindings [ADOPT=1]  Refresh shared site-authorization inputs; publication hashes are generated' \
 		'make approve-release NOTE="..."  Record a dated supplement with the operator instruction, then refresh' \
 		'make add-publication ID=<leaf> CATALOG=<page> [PROVIDER=<p>] [STATUS=hold]  Add an independent alpha record' \
+		'make bibles   Typeset every publishable bible edition complete into build/bibles' \
+		'make bible BIBLE=<edition>  Typeset one publishable edition complete' \
+		'make review-bible BIBLE=<edition>  Typeset one edition and raster it for page review' \
+		'make check-bibles  Prove every publishable edition can be set, writing nothing' \
 		'make check    Run every repository policy check' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-tests  Run the complete script unit-test suite' \
@@ -902,6 +913,56 @@ $(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata $(BUILD_ROOT)/.metadata/
 		fi; \
 		mv -f -- "$$temporary" "$$destination"; \
 		trap - 0 1 2 15
+
+# Complete-text bible editions.
+#
+# Which editions exist is asked of `typeset-bible list`, which reads the
+# publishable flag from the registered edition table, and never of a directory
+# listing: the source library also holds a licensed edition that must not be
+# typeset. A rendered edition is a reproducible artifact and stays in build/.
+bibles:
+	@set -eu; \
+		editions=$$($(PYTHON) $(BIBLE_TYPESET_TOOL) list --format ids); \
+		[ -n "$$editions" ] || { echo 'No publishable bible edition is registered' >&2; exit 1; }; \
+		for edition in $$editions; do \
+			$(MAKE) --no-print-directory '$(BIBLE_BUILD_ROOT)/'"$$edition"'.pdf'; \
+		done
+
+bible:
+	@if [ -z '$(BIBLE)' ]; then \
+		echo 'bible requires BIBLE=<edition id from `tools/tpt typeset-bible list`>' >&2; \
+		exit 1; \
+	fi
+	@$(MAKE) --no-print-directory '$(BIBLE_BUILD_ROOT)/$(BIBLE).pdf'
+
+review-bible: bible
+	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(BIBLE_BUILD_ROOT)/$(BIBLE).pdf'
+
+check-bibles:
+	@$(PYTHON) $(BIBLE_TYPESET_TOOL) check
+
+FORCE_BIBLE_RENDER:
+
+# Keep the rendered TeX: it is the compiler's input and the diffable record of
+# what was set, and Make would otherwise delete it as a chained intermediate
+# and recompile the whole edition on the next run.
+.PRECIOUS: $(BIBLE_BUILD_ROOT)/%.tex
+
+# The render is deterministic and rewrites the TeX only when its bytes change,
+# so asking every time cannot recompile an unchanged thousand-page edition.
+$(BIBLE_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
+	@$(PYTHON) $(BIBLE_TYPESET_TOOL) render --bible '$*' --out '$(BIBLE_BUILD_ROOT)'
+
+# Two passes: the list of books carries the page each book begins on.
+$(BIBLE_BUILD_ROOT)/%.pdf: $(BIBLE_BUILD_ROOT)/%.tex | check-tools
+	$(PDFLATEX) -interaction=nonstopmode -halt-on-error \
+		-output-directory='$(BIBLE_BUILD_ROOT)' '$<'
+	$(PDFLATEX) -interaction=nonstopmode -halt-on-error \
+		-output-directory='$(BIBLE_BUILD_ROOT)' '$<'
+	@if grep -q 'undefined references' '$(BIBLE_BUILD_ROOT)/$*.log'; then \
+		echo 'Undefined references remain after two passes: $*' >&2; \
+		exit 1; \
+	fi
 
 check-tools:
 	@command -v $(PDFLATEX) >/dev/null || { echo "Missing $(PDFLATEX)"; exit 1; }

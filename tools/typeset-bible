@@ -1,0 +1,855 @@
+#!/usr/bin/env python3
+"""Typeset a publishable bible edition's complete text as two-column TeX.
+
+The indexed bible `index-bible` builds is a citation index: its key space is
+the references the calendars actually make. This tool answers the other
+question — the whole book, in reading order — by walking one edition's tracked
+per-book verse files and emitting a two-column TeX source for `pdflatex`.
+
+Three facts are never guessed here.
+
+*Which editions may be typeset* comes from `index-bible`'s `EDITIONS` table and
+nothing else. A directory listing under `src/sources/works/` also shows
+editions this repository may not republish, and an edition whose entry says
+`publishable: false` is refused by name before any output path is created.
+
+*Which book a file holds* comes from the edition's own `book-index.tsv`: the
+`file` column names the verse file and the `token` column names the book, and
+every row of that file must carry that token. Mapping books by the position of
+their artifact directory is the defect that once filed Ezekiel's text under
+Sirach, and the token check makes that unrepresentable rather than unlikely.
+
+*What the text may be redistributed under* comes from the artifact records of
+the very files being set, so each edition's PDF states its own basis and its
+own jurisdiction. Two of these editions are public domain in the United States
+and everywhere outside the United Kingdom only, and one blanket "public domain"
+across all of them would be false for those two.
+
+The rendered TeX is deterministic and is written only when its bytes change, so
+an unchanged edition does not force a rebuild of a thousand-page PDF.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import hashlib
+import sys
+import tomllib
+from functools import lru_cache
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import print_json, run_verb_cli  # noqa: E402
+
+SOURCE_ROOT = ROOT / "src" / "sources" / "works"
+DEFAULT_OUT = ROOT / "build" / "bibles"
+
+# Where a rendered edition may be written. `build/` is the only tree in this
+# repository that holds reproducible artifacts; `doc/`, `web/` and `src/` hold
+# reviewed or authoritative ones, and a whole-bible render is neither.
+WRITABLE_ROOT = ROOT / "build"
+
+# Headings for the divisions a book index declares. The value is the edition's
+# own word for the division, so an edition that prints an Apocrypha says so and
+# is not silently folded into the Old Testament.
+TESTAMENTS = {
+    "old": "The Old Testament",
+    "new": "The New Testament",
+    "apocrypha": "The Apocrypha",
+    "septuagint": "The Septuagint Books",
+}
+
+# TeX's own metacharacters. The text is scripture and carries no markup, so
+# every one of these is a literal character that must survive as printed.
+TEX_SPECIALS = {
+    "\\": r"\textbackslash{}",
+    "&": r"\&",
+    "%": r"\%",
+    "$": r"\$",
+    "#": r"\#",
+    "_": r"\_",
+    "{": r"\{",
+    "}": r"\}",
+    "~": r"\textasciitilde{}",
+    "^": r"\textasciicircum{}",
+}
+
+# Punctuation the sources write as Unicode and TeX sets from its own ligatures.
+# Passing these through as bytes would also work under inputenc; converting them
+# keeps the quotation marks and dashes correctly shaped in the T1 fonts.
+TEX_PUNCTUATION = {
+    "\u2018": "`",
+    "\u2019": "'",
+    "\u201c": "``",
+    "\u201d": "''",
+    "\u2013": "--",
+    "\u2014": "---",
+    "\u2026": r"\ldots{}",
+}
+
+# Letters the T1 encoding sets directly. Everything outside this set, the ASCII
+# printables and the tables above is refused rather than dropped: a character
+# this toolchain cannot set is a fact about the render, and silently deleting it
+# would take words out of scripture without saying so.
+TEX_LETTERS = (
+    "\u00c0\u00c1\u00c2\u00c3\u00c4\u00c5\u00c6\u00c7\u00c8\u00c9\u00ca\u00cb"
+    "\u00cc\u00cd\u00ce\u00cf\u00d1\u00d2\u00d3\u00d4\u00d5\u00d6\u00d8\u00d9"
+    "\u00da\u00db\u00dc\u00dd\u00df"
+    "\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u00e6\u00e7\u00e8\u00e9\u00ea\u00eb"
+    "\u00ec\u00ed\u00ee\u00ef\u00f1\u00f2\u00f3\u00f4\u00f5\u00f6\u00f8\u00f9"
+    "\u00fa\u00fb\u00fc\u00fd\u00ff\u0152\u0153"
+)
+
+# The Hebrew alphabet, which pdfLaTeX with these fonts cannot set at all. It
+# occurs in exactly one place in this library: the acrostic headings of the
+# stanzas of Psalm 119 in the King James Version, where the edition prints the
+# letter and then names it. The letter is replaced by a bracketed name rather
+# than dropped, and every substitution made is counted and disclosed on the
+# edition's own title page.
+HEBREW_LETTERS = {
+    "\u05d0": "aleph",
+    "\u05d1": "beth",
+    "\u05d2": "gimel",
+    "\u05d3": "daleth",
+    "\u05d4": "he",
+    "\u05d5": "vau",
+    "\u05d6": "zain",
+    "\u05d7": "cheth",
+    "\u05d8": "teth",
+    "\u05d9": "jod",
+    "\u05da": "final kaph",
+    "\u05db": "kaph",
+    "\u05dc": "lamed",
+    "\u05dd": "final mem",
+    "\u05de": "mem",
+    "\u05df": "final nun",
+    "\u05e0": "nun",
+    "\u05e1": "samech",
+    "\u05e2": "ain",
+    "\u05e3": "final pe",
+    "\u05e4": "pe",
+    "\u05e5": "final tsadi",
+    "\u05e6": "tsadi",
+    "\u05e7": "koph",
+    "\u05e8": "resh",
+    "\u05e9": "schin",
+    "\u05ea": "tau",
+}
+
+
+def sibling(name: str):
+    """Load a sibling tool as a module rather than restating what it decides.
+
+    `index-bible` owns the registry of editions and, with it, the single
+    `publishable` flag that keeps a licensed text out of a public artifact. A
+    second copy of that table here is exactly how a tool comes to typeset a
+    bible the repository may not republish.
+    """
+    path = ROOT / "tools" / name
+    loader = SourceFileLoader(f"_{name.replace('-', '_')}", str(path))
+    spec = spec_from_loader(loader.name, loader)
+    if spec is None:  # pragma: no cover - a broken checkout, not a code path
+        raise ValueError(f"cannot load {path}")
+    module = module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+@lru_cache(maxsize=1)
+def registry() -> dict[str, dict[str, object]]:
+    return sibling("index-bible").EDITIONS
+
+
+def publishable(registered: dict[str, dict[str, object]]) -> list[str]:
+    """Every edition this repository may republish, in the registry's order."""
+    return [
+        name
+        for name in sorted(registered, key=lambda key: (int(registered[key]["rank"]), key))
+        if registered[name].get("publishable") is True
+    ]
+
+
+def entry(registered: dict[str, dict[str, object]], name: str) -> dict[str, object]:
+    """One edition's registry entry, refusing an unknown or a licensed one."""
+    if name not in registered:
+        raise KeyError(f"no registered bible edition {name!r}")
+    found = registered[name]
+    if found.get("publishable") is not True:
+        raise ValueError(
+            f"{name} is registered {found.get('rights')} and publishable is not true; "
+            "it must not be typeset or written anywhere"
+        )
+    return found
+
+
+def read_tsv(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle, delimiter="\t"))
+
+
+class Book:
+    """One book of one edition, identified by the edition's own book index."""
+
+    def __init__(self, row: dict[str, str], path: Path) -> None:
+        self.ordinal = int(row["ordinal"])
+        self.token = row["token"]
+        self.testament = row["testament"]
+        self.path = path
+        # The edition's own printed title where it records one, and the
+        # Douay-Rheims title otherwise. Neither is invented: both are columns of
+        # the tracked book index.
+        self.title = (
+            row.get("edition_title")
+            or row.get("kjv_title")
+            or row.get("douay_title")
+            or row.get("modern_name")
+            or self.token
+        )
+        self.name = row.get("modern_name") or self.title
+        self.declared_chapters = int(row["chapters"]) if row.get("chapters") else None
+        self.declared_verses = int(row["verses"]) if row.get("verses") else None
+        self.verses: list[tuple[int, int, str]] = []
+
+    def load(self) -> None:
+        """Read the verse file, refusing text that is not this book's text."""
+        for number, row in enumerate(read_tsv(self.path), start=2):
+            token = row["book"]
+            if token != self.token:
+                raise ValueError(
+                    f"{self.path.name} line {number} carries book {token!r}, but the "
+                    f"book index registers this file as {self.token!r}"
+                )
+            self.verses.append((int(row["chapter"]), int(row["verse"]), row["text"]))
+        if not self.verses:
+            raise ValueError(f"{self.path.name} holds no verses")
+        chapters = len({chapter for chapter, _, _ in self.verses})
+        if self.declared_chapters is not None and chapters != self.declared_chapters:
+            raise ValueError(
+                f"{self.token}: the book index declares {self.declared_chapters} "
+                f"chapters and the verse file holds {chapters}"
+            )
+        if self.declared_verses is not None and len(self.verses) != self.declared_verses:
+            raise ValueError(
+                f"{self.token}: the book index declares {self.declared_verses} "
+                f"verses and the verse file holds {len(self.verses)}"
+            )
+
+
+class Edition:
+    """One publishable edition: its books, its rights, and its own record."""
+
+    def __init__(self, name: str, registered: dict[str, object], source_root: Path) -> None:
+        self.id = name
+        self.label = str(registered["label"])
+        self.edition = str(registered["edition"])
+        self.source_id = str(registered["source_id"])
+        self.language = str(registered["language"])
+        self.numbering = str(registered["numbering"])
+        self.psalter = str(registered["psalter"])
+        self.artifacts = source_root / str(registered["artifacts"])
+        if not self.artifacts.is_dir():
+            raise ValueError(f"{name}: no artifact directory at {self.artifacts}")
+        self.record = self._edition_record()
+        self.books = self._books()
+        self.rights = self._rights()
+
+    def _edition_record(self) -> dict[str, object]:
+        path = self.artifacts.parent / "edition.toml"
+        if not path.is_file():
+            raise ValueError(f"{self.id}: no edition record at {path}")
+        return tomllib.loads(path.read_text(encoding="utf-8"))
+
+    def _books(self) -> list[Book]:
+        index = sorted(self.artifacts.glob("book-index-*/book-index.tsv"))
+        if len(index) != 1:
+            raise ValueError(
+                f"{self.id}: expected exactly one book index under {self.artifacts}, "
+                f"found {len(index)}"
+            )
+        books: list[Book] = []
+        for row in read_tsv(index[0]):
+            # Identity by the declared file name, never by the position of an
+            # artifact directory in a listing.
+            found = sorted(self.artifacts.glob(f"verse-text-*/{row['file']}"))
+            if len(found) != 1:
+                raise ValueError(
+                    f"{self.id}: the book index registers {row['file']} for "
+                    f"{row['token']}, and {len(found)} such files exist"
+                )
+            books.append(Book(row, found[0]))
+        if not books:
+            raise ValueError(f"{self.id}: the book index registers no books")
+        ordinals = [book.ordinal for book in books]
+        if ordinals != sorted(ordinals) or len(set(ordinals)) != len(ordinals):
+            raise ValueError(f"{self.id}: the book index ordinals are not a strict order")
+        return books
+
+    def _rights(self) -> dict[str, str]:
+        """The rights the edition's own verse artifacts record, or a refusal.
+
+        Every verse artifact of one edition must state the same status, basis
+        and jurisdiction. A disagreement is not something to average out: it
+        means the artifacts no longer describe one redistributable text, and the
+        notice this PDF would print could not be true of all of it.
+        """
+        found: dict[tuple[str, str, str], list[str]] = {}
+        for book in self.books:
+            record = book.path.parent / "artifact.toml"
+            if not record.is_file():
+                raise ValueError(f"{self.id}: no artifact record at {record}")
+            data = tomllib.loads(record.read_text(encoding="utf-8"))
+            missing = [
+                field
+                for field in ("rights_status", "rights_basis", "rights_jurisdiction")
+                if not data.get(field)
+            ]
+            if missing:
+                raise ValueError(
+                    f"{self.id}: {record.parent.name} records no {', '.join(missing)}"
+                )
+            key = (
+                str(data["rights_status"]),
+                str(data["rights_jurisdiction"]),
+                str(data["rights_basis"]),
+            )
+            found.setdefault(key, []).append(book.token)
+        if len(found) != 1:
+            raise ValueError(
+                f"{self.id}: its verse artifacts record {len(found)} different rights "
+                "statements; one edition cannot carry one notice until they agree"
+            )
+        status, jurisdiction, basis = next(iter(found))
+        return {"status": status, "jurisdiction": jurisdiction, "basis": basis}
+
+    def location(self) -> str:
+        """The artifact directory as the PDF should name it.
+
+        Repository-relative where the text came from this checkout, and the
+        given path otherwise, so a render from a source root elsewhere does not
+        claim to have come from the tracked one.
+        """
+        artifacts = self.artifacts.resolve()
+        if artifacts.is_relative_to(ROOT):
+            return str(artifacts.relative_to(ROOT))
+        return str(artifacts)
+
+    def load(self) -> None:
+        for book in self.books:
+            book.load()
+
+    def digest(self) -> str:
+        """A digest over the verse rows actually set, in the order set."""
+        running = hashlib.sha256()
+        for book in self.books:
+            for chapter, verse, text in book.verses:
+                running.update(f"{book.token}\t{chapter}\t{verse}\t{text}\n".encode())
+        return running.hexdigest()
+
+
+class Substitutions:
+    """Characters this toolchain cannot set, counted so they can be disclosed."""
+
+    def __init__(self) -> None:
+        self.counts: dict[str, int] = {}
+
+    def record(self, character: str) -> None:
+        self.counts[character] = self.counts.get(character, 0) + 1
+
+    def rows(self) -> list[dict[str, object]]:
+        return [
+            {
+                "character": character,
+                "codepoint": f"U+{ord(character):04X}",
+                "count": count,
+                "replacement": f"[Hebrew {HEBREW_LETTERS[character]}]",
+            }
+            for character, count in sorted(self.counts.items())
+        ]
+
+
+def tex(text: str, where: str, substitutions: Substitutions | None = None) -> str:
+    """One string of source text as TeX, refusing anything it cannot set."""
+    out: list[str] = []
+    for character in text:
+        if character in TEX_SPECIALS:
+            out.append(TEX_SPECIALS[character])
+        elif character in TEX_PUNCTUATION:
+            out.append(TEX_PUNCTUATION[character])
+        elif 0x20 <= ord(character) <= 0x7E or character in TEX_LETTERS:
+            out.append(character)
+        elif character in HEBREW_LETTERS:
+            if substitutions is None:
+                raise ValueError(
+                    f"{where}: U+{ord(character):04X} cannot be set in this context"
+                )
+            substitutions.record(character)
+            out.append(f"[Hebrew {HEBREW_LETTERS[character]}]")
+        else:
+            raise ValueError(
+                f"{where}: U+{ord(character):04X} has no typesetting rule; refusing "
+                "rather than dropping a character of the text"
+            )
+    rendered = "".join(out)
+    # Text opening with a bracket would be read as an optional argument to
+    # whatever macro precedes it.
+    return "{[}" + rendered[1:] if rendered.startswith("[") else rendered
+
+
+def tex_path(path: str, where: str) -> str:
+    """A path set in a typewriter face, breakable where a path may break.
+
+    TeX does not hyphenate a typewriter word, and a source path is longer than
+    a column, so the break points have to be given explicitly or the line runs
+    into the margin.
+    """
+    rendered = tex(path, where)
+    for separator in ("/", "-"):
+        rendered = rendered.replace(separator, separator + r"\allowbreak{}")
+    return r"\texttt{%s}" % rendered
+
+
+def pdf_string(text: str) -> str:
+    """A document-information string for `\\pdfescapestring`.
+
+    pdfTeX escapes the PDF string itself, so the parentheses in an edition's
+    title survive; what must go are the characters TeX would read as markup
+    before pdfTeX ever sees them.
+    """
+    plain = "".join(character if 0x20 <= ord(character) <= 0x7E else " " for character in text)
+    for character in "\\{}#$&%^_~":
+        plain = plain.replace(character, " ")
+    return " ".join(plain.split())
+
+
+PREAMBLE = r"""% Generated by tools/typeset-bible. Do not edit: edit the tool.
+\documentclass[10pt,twocolumn]{article}
+\usepackage[letterpaper,top=0.75in,bottom=0.85in,left=0.6in,right=0.6in,
+  columnsep=16pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{needspace}
+
+% Build-clock state is not document source: an unchanged edition must produce
+% the same bytes on every host.
+\pdfinfoomitdate=1
+\pdftrailerid{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\clubpenalty=10000
+\widowpenalty=10000
+\raggedbottom
+\sloppy
+
+\pagestyle{myheadings}
+
+% A verse number rides above the line it opens, as a printed bible sets it.
+\newcommand{\vn}[1]{\textsuperscript{\bfseries #1}\,\ignorespaces}
+
+% A book opens with its own printed title and takes over the running head.
+\newcommand{\bookstart}[2]{%
+  \par\addvspace{1.1\baselineskip}%
+  \Needspace*{5\baselineskip}%
+  \markright{#2}%
+  {\centering\bfseries\large #1\par}%
+  \addvspace{0.5\baselineskip}%
+  \par}
+
+% A division of the canon that the edition's own book index declares.
+\newcommand{\divisionstart}[1]{%
+  \par\addvspace{1.4\baselineskip}%
+  \Needspace*{6\baselineskip}%
+  {\centering\scshape\large #1\par}%
+  \addvspace{0.4\baselineskip}%
+  \par}
+
+% A chapter runs on as one paragraph, opened by its number.
+\newcommand{\chapterstart}[2]{%
+  \par\addvspace{0.45\baselineskip}%
+  \markright{#2}%
+  \noindent{\bfseries\large #1}\hspace{0.45em}\ignorespaces}
+
+\newcommand{\bookline}[3]{%
+  \noindent\textbf{#1}\hspace{0.4em}#2\dotfill\pageref{#3}\par}
+"""
+
+
+def render_tex(edition: Edition, generator: str) -> tuple[str, dict[str, object]]:
+    """The complete two-column TeX source for one edition, and its counts."""
+    substitutions = Substitutions()
+    label = tex(edition.label, f"{edition.id} label")
+    title = tex(edition.edition, f"{edition.id} edition")
+    lines: list[str] = [PREAMBLE]
+    lines.append(
+        "\\pdfinfo{/Title (\\pdfescapestring{%s})"
+        " /Subject (\\pdfescapestring{%s})"
+        " /Creator (\\pdfescapestring{%s})}"
+        % (
+            pdf_string(edition.edition),
+            pdf_string(f"Complete text of {edition.label}"),
+            pdf_string(generator),
+        )
+    )
+    lines.append(r"\begin{document}")
+
+    # Title page: what this is, where the text came from, and the rights that
+    # govern this edition and no other.
+    record = edition.record
+    lines.append(r"\onecolumn")
+    lines.append(r"\thispagestyle{empty}")
+    lines.append(r"\begin{center}")
+    lines.append(r"{\LARGE\bfseries %s\par}" % label)
+    lines.append(r"\vspace{0.8em}")
+    lines.append(r"{\large %s\par}" % title)
+    lines.append(r"\vspace{0.4em}")
+    lines.append(r"{\itshape The complete text of this edition\par}")
+    lines.append(r"\end{center}")
+    lines.append(r"\vspace{1.5em}")
+    lines.append(r"\subsection*{This edition}")
+    for name, value in (
+        ("Registered as", edition.id),
+        ("Source record", edition.source_id),
+        ("Publication", str(record.get("publication", ""))),
+        ("Date", str(record.get("date", ""))),
+        ("Language", edition.language),
+        ("Chapter and verse numbering", edition.numbering),
+        ("Psalter", edition.psalter),
+    ):
+        if not value:
+            continue
+        lines.append(
+            r"\noindent\textbf{%s.} %s\par\vspace{0.35em}"
+            % (tex(name, "field name"), tex(value, f"{edition.id} {name}"))
+        )
+
+    lines.append(r"\subsection*{Rights}")
+    lines.append(
+        r"\noindent\textbf{Status.} %s\par\vspace{0.35em}"
+        % tex(edition.rights["status"], f"{edition.id} rights status")
+    )
+    lines.append(
+        r"\noindent\textbf{Jurisdiction.} %s\par\vspace{0.35em}"
+        % tex(edition.rights["jurisdiction"], f"{edition.id} rights jurisdiction")
+    )
+    lines.append(
+        r"\noindent\textbf{Basis.} %s\par\vspace{0.35em}"
+        % tex(edition.rights["basis"], f"{edition.id} rights basis")
+    )
+    lines.append(
+        r"\noindent\small This notice states the rights of this edition alone, quoted "
+        r"from the tracked artifact records of the very verse files set here. It does "
+        r"not extend to any other edition.\par\vspace{0.35em}\normalsize"
+    )
+    lines.append(r"\subsection*{How this was made}")
+    lines.append(
+        r"\noindent The text is the tracked per-book verse files of this edition under "
+        r"%s. Each book is identified by that edition's own "
+        r"\texttt{book-index.tsv}, and every row of a verse file must carry the book "
+        r"token the index registers for it. Nothing was retrieved, corrected or "
+        r"supplied while typesetting; the chapter and verse numbers are the edition's "
+        r"own.\par\vspace{0.35em}"
+        % tex_path(edition.location(), "artifact path")
+    )
+    counts: dict[str, object] = {
+        "books": len(edition.books),
+        "chapters": sum(
+            len({chapter for chapter, _, _ in book.verses}) for book in edition.books
+        ),
+        "verses": sum(len(book.verses) for book in edition.books),
+    }
+
+    # The body is built before the front matter is finished, because the
+    # typesetting note can only name substitutions once they have been counted.
+    body: list[str] = []
+    contents: list[str] = []
+    division = None
+    for book in edition.books:
+        if book.testament != division:
+            division = book.testament
+            heading = TESTAMENTS.get(division, division.replace("-", " ").title())
+            body.append(r"\divisionstart{%s}" % tex(heading, "division"))
+            contents.append(
+                r"\vspace{0.5em}\noindent\textsc{%s}\par\vspace{0.25em}"
+                % tex(heading, "division")
+            )
+        anchor = f"bk:{book.ordinal}"
+        body.append(
+            r"\bookstart{%s}{%s}"
+            % (
+                tex(book.title, f"{book.token} title"),
+                tex(book.name, f"{book.token} name"),
+            )
+        )
+        body.append(r"\label{%s}" % anchor)
+        contents.append(
+            r"\bookline{%s}{%s}{%s}"
+            % (
+                tex(book.token, f"{book.token} token"),
+                tex(book.title, f"{book.token} title"),
+                anchor,
+            )
+        )
+        chapter = None
+        for number, verse, text in book.verses:
+            rendered = tex(text, f"{book.token} {number}:{verse}", substitutions)
+            if number != chapter:
+                chapter = number
+                body.append("")
+                body.append(
+                    r"\chapterstart{%s}{%s %s}"
+                    % (number, tex(book.name, f"{book.token} name"), number)
+                )
+            body.append(r"\vn{%s}%s" % (verse, rendered))
+        body.append("")
+
+    substituted = substitutions.rows()
+    if substituted:
+        lines.append(r"\subsection*{Typesetting note}")
+        lines.append(
+            r"\noindent This edition prints characters these fonts cannot set. They "
+            r"are replaced, not dropped, and every replacement is listed here:"
+            r"\par\vspace{0.35em}"
+        )
+        for row in substituted:
+            lines.append(
+                r"\noindent %s, replaced by \texttt{%s}: %d occurrence%s."
+                r"\par\vspace{0.2em}"
+                % (
+                    row["codepoint"],
+                    tex(str(row["replacement"]), "replacement"),
+                    row["count"],
+                    "" if row["count"] == 1 else "s",
+                )
+            )
+
+    lines.append(r"\subsection*{Extent}")
+    lines.append(
+        r"\noindent %d books, %d chapters and %d verses.\par\vspace{0.35em}"
+        % (counts["books"], counts["chapters"], counts["verses"])
+    )
+    lines.append(
+        r"\noindent\small Digest of the verse rows set, in the order set (SHA-256): "
+        r"\texttt{%s}\par\normalsize" % edition.digest()
+    )
+    lines.append(r"\clearpage")
+    lines.append(r"\twocolumn")
+    lines.append(r"\section*{The books of this edition}")
+    lines.extend(contents)
+    lines.append(r"\clearpage")
+    lines.extend(body)
+
+    # Colophon: the repository's own boundary, which the rights notice on the
+    # title page qualifies for this text and never replaces.
+    lines.append(r"\par\addvspace{1.2\baselineskip}")
+    lines.append(
+        r"\noindent\small\textbf{Colophon.} Generated by %s from the tracked sources "
+        r"of the Triptych repository. Project-created content is licensed CC BY 4.0 "
+        r"and the reusable infrastructure MIT; see \texttt{LICENSE} and "
+        r"\texttt{THIRD\_PARTY.md}. The scripture text set here is not project-owned "
+        r"expression: its rights are stated on the title page.\par\normalsize"
+        % tex(generator, "generator")
+    )
+    lines.append(r"\end{document}")
+    counts["substitutions"] = substituted
+    return "\n".join(lines) + "\n", counts
+
+
+def destination(out: Path) -> Path:
+    """Refuse an output directory that would put a build artifact in a source tree."""
+    resolved = out.resolve()
+    if resolved.is_relative_to(ROOT) and not resolved.is_relative_to(WRITABLE_ROOT):
+        raise ValueError(
+            f"{resolved} is inside this repository but not under {WRITABLE_ROOT}; "
+            "a rendered bible is a build artifact"
+        )
+    return resolved
+
+
+def write(path: Path, content: str) -> bool:
+    """Write only when the bytes change, so an unchanged edition rebuilds nothing."""
+    encoded = content.encode("utf-8")
+    if path.exists() and path.read_bytes() == encoded:
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f"{path.name}.tmp")
+    temporary.write_bytes(encoded)
+    temporary.replace(path)
+    return True
+
+
+def selected(arguments: argparse.Namespace) -> list[str]:
+    registered = registry()
+    if arguments.bible:
+        entry(registered, arguments.bible)
+        return [arguments.bible]
+    return publishable(registered)
+
+
+def load(name: str, source_root: Path) -> Edition:
+    edition = Edition(name, entry(registry(), name), source_root)
+    edition.load()
+    return edition
+
+
+GENERATOR = "tools/typeset-bible"
+
+
+def run_list(arguments: argparse.Namespace) -> dict[str, object]:
+    registered = registry()
+    names = publishable(registered)
+    return {
+        "editions": [
+            {
+                "id": name,
+                "label": str(registered[name]["label"]),
+                "rights": str(registered[name]["rights"]),
+            }
+            for name in names
+        ],
+        "refused": sorted(set(registered) - set(names)),
+        "status": "ok",
+    }
+
+
+def run_check(arguments: argparse.Namespace) -> dict[str, object]:
+    """Prove every selected edition can be set, without writing anything."""
+    registered = registry()
+    source_root = Path(arguments.source_root)
+    editions: list[dict[str, object]] = []
+    for name in selected(arguments):
+        edition = load(name, source_root)
+        _, counts = render_tex(edition, GENERATOR)
+        editions.append(
+            {
+                "id": name,
+                "books": counts["books"],
+                "chapters": counts["chapters"],
+                "digest": edition.digest(),
+                "rights_jurisdiction": edition.rights["jurisdiction"],
+                "rights_status": edition.rights["status"],
+                "substitutions": counts["substitutions"],
+                "verses": counts["verses"],
+            }
+        )
+    return {
+        "editions": editions,
+        "refused": sorted(set(registered) - set(publishable(registered))),
+        "status": "ok",
+    }
+
+
+def run_render(arguments: argparse.Namespace) -> dict[str, object]:
+    source_root = Path(arguments.source_root)
+    # The output directory is resolved before an edition is loaded, and the
+    # edition is refused before the directory is created, so a refused edition
+    # leaves nothing behind at all.
+    out = destination(Path(arguments.out))
+    written: list[dict[str, object]] = []
+    for name in selected(arguments):
+        edition = load(name, source_root)
+        content, counts = render_tex(edition, GENERATOR)
+        target = out / f"{name}.tex"
+        changed = write(target, content)
+        written.append(
+            {
+                "id": name,
+                "books": counts["books"],
+                "changed": changed,
+                "chapters": counts["chapters"],
+                "path": str(target),
+                "substitutions": counts["substitutions"],
+                "verses": counts["verses"],
+            }
+        )
+    return {"rendered": written, "status": "ok"}
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("typeset-bible error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    rows = list(payload.get("editions") or []) + list(payload.get("rendered") or [])
+    if arguments.format == "ids":
+        for row in rows:
+            print(row["id"])
+        return 0
+    for row in payload.get("editions") or []:
+        if "verses" in row:
+            print(
+                f"{row['id']}: {row['books']} books, {row['chapters']} chapters, "
+                f"{row['verses']} verses "
+                f"({row['rights_status']}, {row['rights_jurisdiction']})"
+            )
+        else:
+            print(f"{row['id']}: {row['label']} ({row['rights']})")
+        for substitution in row.get("substitutions") or []:
+            print(
+                f"  substituted {substitution['codepoint']} "
+                f"-> {substitution['replacement']} x{substitution['count']}"
+            )
+    for row in payload.get("rendered") or []:
+        state = "written" if row["changed"] else "unchanged"
+        print(
+            f"{row['id']}: {state} {row['path']} "
+            f"({row['books']} books, {row['verses']} verses)"
+        )
+        for substitution in row.get("substitutions") or []:
+            print(
+                f"  substituted {substitution['codepoint']} "
+                f"-> {substitution['replacement']} x{substitution['count']}"
+            )
+    for name in payload.get("refused") or []:
+        print(f"refused (not publishable): {name}")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument(
+        "--bible", default=None, help="one edition id; the default is every publishable one"
+    )
+    shared.add_argument(
+        "--source-root", default=str(SOURCE_ROOT), help="source library works root"
+    )
+    shared.add_argument("--out", default=str(DEFAULT_OUT), help="where `render` writes TeX")
+    shared.add_argument(
+        "--format", choices=("text", "json", "ids"), default="text", help="output form"
+    )
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    parser = argparse.ArgumentParser(
+        prog="typeset-bible",
+        description="Typeset a publishable bible edition's complete text as two-column TeX.",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+    sub.add_parser("list", help="the editions that may be typeset", parents=[shared])
+    sub.add_parser("check", help="prove an edition can be set, writing nothing", parents=[shared])
+    sub.add_parser("render", help="write the two-column TeX source", parents=[shared])
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"list": run_list, "check": run_check, "render": run_render},
+        renderer=render,
+        prefix="typeset-bible",
+        argv=argv,
+        # The read-only verb is the default: a bare invocation reports what may
+        # be typeset rather than writing a thousand pages of TeX.
+        default_verb="list",
+        mapped_errors={KeyError: ("not-found", 3), ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
