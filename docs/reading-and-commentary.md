@@ -25,7 +25,7 @@ recomputed from the repository's own tracked files — where a figure disagreed
 with what the files claim about themselves, the measurement is given and the
 disagreement said out loud. The recompute commands, the invariants, and the
 failure modes are in
-[`guidance/reading-plan-for-agents.md`](../guidance/reading-plan-for-agents.md).
+[`guidance/reading-plan-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/reading-plan-for-agents.md).
 
 ---
 
@@ -429,4 +429,4 @@ readers have learned to distrust.
 `src/sources/commentary/harvest-ledger.yaml`,
 `src/sources/commentary/README.md`, `tools/reading-plan`, `tools/harvest`.
 Verification commands, invariants and failure modes:
-[`guidance/reading-plan-for-agents.md`](../guidance/reading-plan-for-agents.md).*
+[`guidance/reading-plan-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/reading-plan-for-agents.md).*

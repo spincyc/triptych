@@ -70,6 +70,12 @@ PAGE_MAP = {
     "CONTRIBUTING.md": "contributing.html",
     "LICENSE": "license.html",
     "THIRD_PARTY.md": "third-party.html",
+    # The studies behind the library: what the sources are and how they
+    # disagree. They render through the same pipeline as the catalog pages, so
+    # they carry the site's chrome rather than arriving as bare markdown.
+    "docs/bibles.md": "docs/bibles.html",
+    "docs/the-mass.md": "docs/the-mass.html",
+    "docs/reading-and-commentary.md": "docs/reading-and-commentary.html",
     "library/biographies.md": "library/biographies.html",
     "library/catholic-exorcism.md": "library/catholic-exorcism.html",
     "library/curriculums.md": "library/curriculums.html",

@@ -19,7 +19,7 @@ This document explains what a proper is, how the two missals differ, and how
 this repository stores them. The headings alone give the shape; the prose under
 each gives the detail. Every number in it was counted from the repository's own
 files, and the commands that count them are in
-[`guidance/propers-for-agents.md`](../guidance/propers-for-agents.md).
+[`guidance/propers-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/propers-for-agents.md).
 
 ---
 
@@ -197,7 +197,7 @@ one, and none ever should.
 
 ## The calendar arithmetic, and its hard limit
 
-[`guidance/liturgy/calendar-computation.md`](../guidance/liturgy/calendar-computation.md)
+[`guidance/liturgy/calendar-computation.md`](https://github.com/spincyc/triptych/blob/main/guidance/liturgy/calendar-computation.md)
 is the single authoritative statement of the arithmetic. Nothing else in the
 repository may restate it; everything else references it.
 
@@ -301,7 +301,7 @@ composed proper with `verses` fails.
 
 `registry` is the identity in the owning registry document. The 1962 temporal
 Sundays carry the numbers `01`–`52` from
-[`guidance/liturgy/roman-1962-propers.md`](../guidance/liturgy/roman-1962-propers.md),
+[`guidance/liturgy/roman-1962-propers.md`](https://github.com/spincyc/triptych/blob/main/guidance/liturgy/roman-1962-propers.md),
 with `46R`–`49R` for the resumed Epiphany Sundays and `T01`–`T03` for the
 Triduum; the postconciliar Sundays carry `pc-s01`–`pc-s60` and `pc-t01`–`pc-t03`;
 fixed-date entries carry a date-derived id such as `1962-12-29` or `pc-01-02`.
