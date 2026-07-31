@@ -1,0 +1,1030 @@
+# Page collation of the 63 seasonal entries the calendar read out of an OCR
+# text layer. This file records what the facsimile says; it does not change
+# propers.yaml.
+
+collation_schema = 1
+record_type = "calendar-proper-citation-collation"
+calendar = "roman-1962"
+section = "seasonal"
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-07-31"
+
+scope = """
+The 63 seasonal entries added to `propers.yaml` for the temporal days the
+Missal keeps and the file did not - the three Advent Ember Days; Ash Wednesday
+and the three days after it; every feria of Lent weeks 1-4 with the Lenten
+Ember Days; the ferias of Passion week and Holy Week to Wednesday; the Chrism
+Mass; the Easter octave; the Rogation Mass; the Vigil of the Ascension, the
+Ascension and the Vigil of Pentecost; the Whitsun octave with its Ember Days;
+the Mass of the First Sunday after Pentecost; Corpus Christi; the Sacred Heart;
+and the September Ember Days.
+
+The set was not taken from the file's own prose. It was derived as the
+difference between the seasonal mass keys at ca03d9ad^ (62) and at ca03d9ad
+(125), which is exactly 63 keys, and every one of them is still present at
+HEAD. Each entry carries only its scripture-bearing propers; its orations and
+composed chants were never transcribed, so nothing here collates an oration.
+Four of the 63 carry two forms - a longer and a shorter Mass - and both forms
+of each were read.
+
+Across the 63 entries the recorded propers hold 490 citation loci. Every one
+was compared against the printed page.
+"""
+
+witness = """
+CMAA-hosted facsimile of the 1962 Vatican editio typica, artifact
+`artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf`,
+sha256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a,
+82,815,941 bytes, 1,088 PDF pages. The artifact record declares the payload
+remote; a copy already present under untracked `build/` was hashed and matched
+that digest before any reading was taken from it, so this collation rests on
+the exact bytes the repository pins.
+
+`printed_page` is the page number the 1962 book prints; `pdf_page` is the page
+of that PDF. Throughout the Proprium de Tempore the offset is constant:
+pdf_page = printed_page + 81. That relation was not assumed - it was read off
+the printed folios visible on the rendered pages.
+"""
+
+method = """
+The pages holding the 63 formularies were rasterized at 200 dpi in greyscale
+and read as images. No OCR text layer was allowed to supply a reading: the text
+layer is the very witness under audit, and the two would not have been
+independent. The PDF's text layer was used only to locate a formulary's pages
+before rendering.
+
+Only what the page prints was collated: the mass heading, the printed rank
+(`I classis` and the rest), the printed part labels, and the scriptural
+reference printed beside each part. Nothing was changed on the strength of
+plausibility. Where the recorded form and the printed form differ only in
+notation - `Ps. 18, 6 et 7` against a recorded range 6-7, or `Ps. 24, 17, 18
+et 1-4` against `Psalm 24:17-18, 1-4` - the locus is confirmed, because the
+two denote the same verses. The book's `i` for the file's `j` and the file's
+English book names for the book's Latin abbreviations are declared conversions
+in `propers.yaml` and are likewise not defects.
+"""
+
+findings = """
+468 of the 490 loci are confirmed as printed. 22 are wrong, and all 22 are of
+one kind: the page prints a reference the file does not carry. 21 are an
+Introit or blessing antiphon whose printed psalm verse - the `Ps. ibid., N`
+that follows the antiphon's own reference - was dropped, so the entry records
+the antiphon alone. The 22nd is Ember Saturday of Lent, whose Third Gradual the
+book gives as `Ps. 89, 13 et 1` and the file records as `Psalm 89:13`.
+
+Not one citation that the file does record was found to be misread. The defect
+is uniformly omission, not corruption, which is consistent with a text layer
+that lost small italic figures rather than one that garbled them.
+
+The file already suspected this class: its open collation items say that "an
+Introit's psalm verse was recorded only where the scan showed its printed verse
+numbers, so a new Introit carrying one passage is not evidence that the Missal
+appoints no psalm verse there". That warning is now answered for these 63
+entries - the Missal does appoint one at all 21 places, and the page names it.
+
+The file also contradicts itself at two of the 22, which is how the defect
+could have been caught without the facsimile. `Convertere, Domine,
+aliquantulum` is recorded as `Psalm 89:13, 1` at Ember Friday of September and
+at Ember Saturday of September, and as `Psalm 89:13` at Ember Saturday of Lent;
+the page prints `Ps. 89, 13 et 1` at all three. The Introit `Miserere mihi,
+Domine, quoniam tribulor` carries its psalm verse at Saturday of Passion week
+and not at Friday of Passion week; the page prints it at both.
+
+Three entries are confirmed with a qualification, recorded in `qualified`
+below. Nothing else in the 63 was disturbed.
+"""
+
+qualified = """
+easter-thursday, Introit psalm verse (printed p. 336, pdf p. 417). The Missal
+prints `Ps. 79, 1` over the words `Cantate Domino canticum novum: quia
+mirabilia fecit`, which are Psalm 97:1 and not Psalm 79:1. The file records
+`Psalm 97:1` and its open collation items say "the scan reads the Introit psalm
+verse as Ps. 79, 1". The page confirms that this is not a scanning artefact:
+the book itself prints `Ps. 79, 1`. So the file's recorded value is a
+deliberate emendation of the printed reference, and the note should say the
+Missal prints it rather than that the scan reads it. Left as recorded, because
+correcting the entry to the printed `Psalm 79:1` would point the reader at
+verses the antiphon does not quote.
+
+rogation-mass (printed pp. 347-349, pdf pp. 428-430). The file records no rank.
+The book prints no `classis` line under this heading either, so the absence is
+right; but the rubric on printed p. 348 does say the Mass is celebrated
+`tamquam votiva II classis`, which a rank field could carry.
+
+vigil-of-the-ascension, Alleluia (printed p. 350, pdf p. 431). The Missal
+prints two Alleluia verses here. The first, `Surrexit Christus, et illuxit
+nobis`, carries no reference; the second, `Exivi a Patre`, is referenced
+`Ioann. 16, 28`. The entry takes its incipit from the first verse and its
+citation from the second. Both readings are as printed, but the pairing is the
+file's and not the book's.
+"""
+
+applying = """
+Nothing here has been applied. The 22 corrections belong in
+`src/sources/calendars/roman-1962/propers.yaml`, which another lane held open
+while this collation ran - at the time of writing its working copy does not
+parse - so this file states the printed reading and leaves the edit to the
+owner of that path. `should_read` gives the full `ref` string each proper's
+`verses` list should produce once the missing citation is added; the omitted
+reference is always a second entry in that list, never a change to the one
+already there.
+
+When they are applied, the corresponding open collation item in `propers.yaml`
+- the one warning that an Introit's psalm verse was recorded only where the
+scan showed its numbers - can be narrowed to the entries outside these 63,
+and the note on easter-thursday can be restated as above.
+"""
+[[masses]]
+key = "advent-ember-wednesday"
+printed_pages = "5-7"
+pdf_pages = "86-88"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 8
+loci_corrected = 0
+
+[[masses]]
+key = "advent-ember-friday"
+printed_pages = "7-8"
+pdf_pages = "88-89"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "advent-ember-saturday"
+printed_pages = "8-14"
+pdf_pages = "89-95"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 24
+loci_corrected = 0
+
+[[masses]]
+key = "ash-wednesday"
+printed_pages = "55-59"
+pdf_pages = "136-140"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 12
+loci_corrected = 1
+
+[[masses]]
+key = "thursday-after-ash-wednesday"
+printed_pages = "59-60"
+pdf_pages = "140-141"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "friday-after-ash-wednesday"
+printed_pages = "60-62"
+pdf_pages = "141-143"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "saturday-after-ash-wednesday"
+printed_pages = "62-63"
+pdf_pages = "143-144"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "lent-1-monday"
+printed_pages = "65-67"
+pdf_pages = "146-148"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "lent-1-tuesday"
+printed_pages = "67-68"
+pdf_pages = "148-149"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "lent-1-ember-wednesday"
+printed_pages = "68-70"
+pdf_pages = "149-151"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 8
+loci_corrected = 1
+
+[[masses]]
+key = "lent-1-thursday"
+printed_pages = "70-71"
+pdf_pages = "151-152"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "lent-1-ember-friday"
+printed_pages = "71-73"
+pdf_pages = "152-154"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "lent-1-ember-saturday"
+printed_pages = "73-79"
+pdf_pages = "154-160"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 24
+loci_corrected = 1
+
+[[masses]]
+key = "lent-2-monday"
+printed_pages = "80-82"
+pdf_pages = "161-163"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "lent-2-tuesday"
+printed_pages = "82-83"
+pdf_pages = "163-164"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "lent-2-wednesday"
+printed_pages = "83-85"
+pdf_pages = "164-166"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "lent-2-thursday"
+printed_pages = "85-86"
+pdf_pages = "166-167"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "lent-2-friday"
+printed_pages = "86-88"
+pdf_pages = "167-169"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "lent-2-saturday"
+printed_pages = "88-91"
+pdf_pages = "169-172"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "lent-3-monday"
+printed_pages = "93-95"
+pdf_pages = "174-176"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "lent-3-tuesday"
+printed_pages = "95-96"
+pdf_pages = "176-177"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "lent-3-wednesday"
+printed_pages = "96-98"
+pdf_pages = "177-179"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "lent-3-thursday"
+printed_pages = "98-99"
+pdf_pages = "179-180"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "lent-3-friday"
+printed_pages = "99-101"
+pdf_pages = "180-182"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "lent-3-saturday"
+printed_pages = "101-104"
+pdf_pages = "182-185"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "lent-4-monday"
+printed_pages = "106-108"
+pdf_pages = "187-189"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "lent-4-tuesday"
+printed_pages = "108-109"
+pdf_pages = "189-190"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "lent-4-wednesday"
+printed_pages = "109-112"
+pdf_pages = "190-193"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 9
+loci_corrected = 0
+
+[[masses]]
+key = "lent-4-thursday"
+printed_pages = "112-114"
+pdf_pages = "193-195"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "lent-4-friday"
+printed_pages = "114-116"
+pdf_pages = "195-197"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "lent-4-saturday"
+printed_pages = "116-118"
+pdf_pages = "197-199"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "passion-monday"
+printed_pages = "119-121"
+pdf_pages = "200-202"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "passion-tuesday"
+printed_pages = "121-122"
+pdf_pages = "202-203"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 6
+loci_corrected = 1
+
+[[masses]]
+key = "passion-wednesday"
+printed_pages = "122-124"
+pdf_pages = "203-205"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "passion-thursday"
+printed_pages = "124-126"
+pdf_pages = "205-207"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "passion-friday"
+printed_pages = "126-127"
+pdf_pages = "207-208"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "passion-saturday"
+printed_pages = "127-130"
+pdf_pages = "208-211"
+rank_recorded = "III"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "holy-monday"
+printed_pages = "141-143"
+pdf_pages = "222-224"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 7
+loci_corrected = 1
+
+[[masses]]
+key = "holy-tuesday"
+printed_pages = "143-147"
+pdf_pages = "224-228"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "holy-wednesday"
+printed_pages = "147-152"
+pdf_pages = "228-233"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 8
+loci_corrected = 0
+
+[[masses]]
+key = "chrism-mass"
+printed_pages = "152-155"
+pdf_pages = "233-236"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "easter-monday"
+printed_pages = "331-333"
+pdf_pages = "412-414"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "easter-tuesday"
+printed_pages = "333-334"
+pdf_pages = "414-415"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "easter-wednesday"
+printed_pages = "334-336"
+pdf_pages = "415-417"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "easter-thursday"
+printed_pages = "336-338"
+pdf_pages = "417-419"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; qualified"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "easter-friday"
+printed_pages = "338-339"
+pdf_pages = "419-420"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "easter-saturday"
+printed_pages = "339-341"
+pdf_pages = "420-422"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "rogation-mass"
+printed_pages = "347-349"
+pdf_pages = "428-430"
+rank_recorded = ""
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; qualified"
+loci = 8
+loci_corrected = 0
+
+[[masses]]
+key = "vigil-of-the-ascension"
+printed_pages = "349-351"
+pdf_pages = "430-432"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed; qualified"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "ascension"
+printed_pages = "351-353"
+pdf_pages = "432-434"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "vigil-of-pentecost"
+printed_pages = "354-356"
+pdf_pages = "435-437"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "pentecost-monday"
+printed_pages = "358-360"
+pdf_pages = "439-441"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "pentecost-tuesday"
+printed_pages = "360-361"
+pdf_pages = "441-442"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "pentecost-ember-wednesday"
+printed_pages = "361-363"
+pdf_pages = "442-444"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "pentecost-thursday"
+printed_pages = "363-365"
+pdf_pages = "444-446"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "pentecost-ember-friday"
+printed_pages = "365-366"
+pdf_pages = "446-447"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "pentecost-ember-saturday"
+printed_pages = "366-372"
+pdf_pages = "447-453"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 22
+loci_corrected = 0
+
+[[masses]]
+key = "mass-of-the-first-sunday-after-pentecost"
+printed_pages = "373-375"
+pdf_pages = "454-456"
+rank_recorded = ""
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "corpus-christi"
+printed_pages = "375-377"
+pdf_pages = "456-458"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "sacred-heart"
+printed_pages = "379-380"
+pdf_pages = "460-461"
+rank_recorded = "I"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 7
+loci_corrected = 0
+
+[[masses]]
+key = "september-ember-wednesday"
+printed_pages = "400-402"
+pdf_pages = "481-483"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "corrected"
+loci = 8
+loci_corrected = 1
+
+[[masses]]
+key = "september-ember-friday"
+printed_pages = "402-403"
+pdf_pages = "483-484"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 6
+loci_corrected = 0
+
+[[masses]]
+key = "september-ember-saturday"
+printed_pages = "403-410"
+pdf_pages = "484-491"
+rank_recorded = "II"
+collated = "page-image, 2026-07-31"
+collation_result = "confirmed"
+loci = 24
+loci_corrected = 0
+
+[[corrections]]
+mass = "ash-wednesday"
+form = ""
+proper = "Antiphon at the Blessing of Ashes"
+printed_page = "55"
+pdf_page = 136
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 2"
+printed_resolved = "Psalm 68:2"
+recorded = "Psalm 68:17"
+should_read = "Psalm 68:17; Psalm 68:2"
+
+[[corrections]]
+mass = "lent-1-ember-wednesday"
+form = ""
+proper = "Introit"
+printed_page = "68"
+pdf_page = 149
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 1-2"
+printed_resolved = "Psalm 24:1-2"
+recorded = "Psalm 24:6, 3, 22"
+should_read = "Psalm 24:6, 3, 22; Psalm 24:1-2"
+
+[[corrections]]
+mass = "lent-1-thursday"
+form = ""
+proper = "Introit"
+printed_page = "70"
+pdf_page = 151
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 1"
+printed_resolved = "Psalm 95:1"
+recorded = "Psalm 95:6"
+should_read = "Psalm 95:6; Psalm 95:1"
+
+[[corrections]]
+mass = "lent-1-ember-saturday"
+form = "Longer form (forma missae longior)"
+proper = "Third Gradual"
+printed_page = "75"
+pdf_page = 156
+defect = "the second verse of the printed reference is not recorded"
+printed_reference = "Ps. 89, 13 et 1"
+printed_resolved = "Psalm 89:13, 1"
+recorded = "Psalm 89:13"
+should_read = "Psalm 89:13, 1"
+
+[[corrections]]
+mass = "lent-2-monday"
+form = ""
+proper = "Introit"
+printed_page = "80"
+pdf_page = 161
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 1"
+printed_resolved = "Psalm 25:1"
+recorded = "Psalm 25:11-12"
+should_read = "Psalm 25:11-12; Psalm 25:1"
+
+[[corrections]]
+mass = "lent-2-tuesday"
+form = ""
+proper = "Introit"
+printed_page = "82"
+pdf_page = 163
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 1"
+printed_resolved = "Psalm 26:1"
+recorded = "Psalm 26:8-9"
+should_read = "Psalm 26:8-9; Psalm 26:1"
+
+[[corrections]]
+mass = "lent-2-thursday"
+form = ""
+proper = "Introit"
+printed_page = "85"
+pdf_page = 166
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 4"
+printed_resolved = "Psalm 69:4"
+recorded = "Psalm 69:2-3"
+should_read = "Psalm 69:2-3; Psalm 69:4"
+
+[[corrections]]
+mass = "lent-2-saturday"
+form = ""
+proper = "Introit"
+printed_page = "88"
+pdf_page = 169
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 2"
+printed_resolved = "Psalm 18:2"
+recorded = "Psalm 18:8"
+should_read = "Psalm 18:8; Psalm 18:2"
+
+[[corrections]]
+mass = "lent-3-monday"
+form = ""
+proper = "Introit"
+printed_page = "93"
+pdf_page = 174
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 2"
+printed_resolved = "Psalm 55:2"
+recorded = "Psalm 55:5"
+should_read = "Psalm 55:5; Psalm 55:2"
+
+[[corrections]]
+mass = "lent-3-tuesday"
+form = ""
+proper = "Introit"
+printed_page = "95"
+pdf_page = 176
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 1"
+printed_resolved = "Psalm 16:1"
+recorded = "Psalm 16:6, 8"
+should_read = "Psalm 16:6, 8; Psalm 16:1"
+
+[[corrections]]
+mass = "lent-3-wednesday"
+form = ""
+proper = "Introit"
+printed_page = "96"
+pdf_page = 177
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 2"
+printed_resolved = "Psalm 30:2"
+recorded = "Psalm 30:7-8"
+should_read = "Psalm 30:7-8; Psalm 30:2"
+
+[[corrections]]
+mass = "lent-3-friday"
+form = ""
+proper = "Introit"
+printed_page = "99"
+pdf_page = 180
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 1"
+printed_resolved = "Psalm 85:1"
+recorded = "Psalm 85:17"
+should_read = "Psalm 85:17; Psalm 85:1"
+
+[[corrections]]
+mass = "lent-3-saturday"
+form = ""
+proper = "Introit"
+printed_page = "101"
+pdf_page = 182
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 4"
+printed_resolved = "Psalm 5:4"
+recorded = "Psalm 5:2-3"
+should_read = "Psalm 5:2-3; Psalm 5:4"
+
+[[corrections]]
+mass = "lent-4-tuesday"
+form = ""
+proper = "Introit"
+printed_page = "108"
+pdf_page = 189
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 3-4"
+printed_resolved = "Psalm 54:3-4"
+recorded = "Psalm 54:2-3"
+should_read = "Psalm 54:2-3; Psalm 54:3-4"
+
+[[corrections]]
+mass = "lent-4-thursday"
+form = ""
+proper = "Introit"
+printed_page = "112"
+pdf_page = 193
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 1"
+printed_resolved = "Psalm 104:1"
+recorded = "Psalm 104:3-4"
+should_read = "Psalm 104:3-4; Psalm 104:1"
+
+[[corrections]]
+mass = "lent-4-friday"
+form = ""
+proper = "Introit"
+printed_page = "114"
+pdf_page = 195
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 2"
+printed_resolved = "Psalm 18:2"
+recorded = "Psalm 18:15"
+should_read = "Psalm 18:15; Psalm 18:2"
+
+[[corrections]]
+mass = "passion-monday"
+form = ""
+proper = "Introit"
+printed_page = "119"
+pdf_page = 200
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 3"
+printed_resolved = "Psalm 55:3"
+recorded = "Psalm 55:2"
+should_read = "Psalm 55:2; Psalm 55:3"
+
+[[corrections]]
+mass = "passion-tuesday"
+form = ""
+proper = "Introit"
+printed_page = "121"
+pdf_page = 202
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 1"
+printed_resolved = "Psalm 26:1"
+recorded = "Psalm 26:14"
+should_read = "Psalm 26:14; Psalm 26:1"
+
+[[corrections]]
+mass = "passion-wednesday"
+form = ""
+proper = "Introit"
+printed_page = "122"
+pdf_page = 203
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 2-3"
+printed_resolved = "Psalm 17:2-3"
+recorded = "Psalm 17:48-49"
+should_read = "Psalm 17:48-49; Psalm 17:2-3"
+
+[[corrections]]
+mass = "passion-friday"
+form = ""
+proper = "Introit"
+printed_page = "126"
+pdf_page = 207
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 2"
+printed_resolved = "Psalm 30:2"
+recorded = "Psalm 30:10, 16, 18"
+should_read = "Psalm 30:10, 16, 18; Psalm 30:2"
+
+[[corrections]]
+mass = "holy-monday"
+form = ""
+proper = "Introit"
+printed_page = "141"
+pdf_page = 222
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 3"
+printed_resolved = "Psalm 34:3"
+recorded = "Psalm 34:1-2"
+should_read = "Psalm 34:1-2; Psalm 34:3"
+
+[[corrections]]
+mass = "september-ember-wednesday"
+form = ""
+proper = "Introit"
+printed_page = "400"
+pdf_page = 481
+defect = "the printed psalm verse of the antiphon is not recorded"
+printed_reference = "Ps. ibid., 6"
+printed_resolved = "Psalm 80:6"
+recorded = "Psalm 80:2-5"
+should_read = "Psalm 80:2-5; Psalm 80:6"
+
