@@ -104,6 +104,123 @@ if [ "$before" != "$(run_tool --ledger ledger.yaml propers --json 2>/dev/null)" 
 	exit 1
 fi
 
+# Promoting reports what it wrote in every output form. The text renderer once
+# iterated a count as if it were the list of works, so a text-mode promote
+# crashed -- after writing the index, leaving the operator no report of it.
+run_tool --ledger ledger.yaml --index index.yaml promote --audited-on 2026-07-30 >promote.txt
+if ! grep -q 'status: promoted' promote.txt; then
+	echo "a text-mode promote must report what it did" >&2
+	exit 1
+fi
+if [ ! -s index.yaml ]; then
+	echo "promote should have written the index" >&2
+	exit 1
+fi
+run_tool --ledger ledger.yaml --index index.yaml --json promote --audited-on 2026-07-30 >/dev/null
+run_tool --ledger ledger.yaml --index index.yaml --format yaml promote --audited-on 2026-07-30 >/dev/null
+
+# And it writes only once it can report: a render that cannot complete must
+# leave nothing behind, because a tool that writes then fails tells an operator
+# nothing about what landed. /dev/full fails every write to it.
+rm -f unwritten.yaml
+if [ -w /dev/full ]; then
+	run_tool --ledger ledger.yaml --index unwritten.yaml promote --audited-on 2026-07-30 \
+		>/dev/full 2>/dev/null && true
+	if [ -e unwritten.yaml ]; then
+		echo "a promote whose report failed must not leave an index behind" >&2
+		exit 1
+	fi
+fi
+
+# A dry run never writes.
+rm -f none.yaml
+run_tool --ledger ledger.yaml --index none.yaml promote --audited-on 2026-07-30 --dry-run >/dev/null
+if [ -e none.yaml ]; then
+	echo "--dry-run must not write the index" >&2
+	exit 1
+fi
+
+# Concurrent records must not lose runs. Each verb loads, mutates and dumps the
+# whole ledger, so unserialised they overwrite each other and both report
+# success; the ledger was seen falling from six runs to three that way.
+rm -f concurrent.yaml concurrent.yaml.lock
+i=1
+while [ "$i" -le 8 ]; do
+	write_run "c$i.yaml" "Concurrent $i" "''"
+	i=$((i + 1))
+done
+i=1
+while [ "$i" -le 8 ]; do
+	run_tool --ledger concurrent.yaml record --results "c$i.yaml" --model test \
+		--audited-on 2026-07-30 >/dev/null &
+	i=$((i + 1))
+done
+wait
+recorded="$(grep -c 'run_id:' concurrent.yaml)"
+if [ "$recorded" -ne 8 ]; then
+	echo "eight concurrent records should leave eight runs, got $recorded" >&2
+	exit 1
+fi
+
+# Recorded evidence is the one thing this tool cannot rebuild, so a write that
+# would leave fewer runs than the file holds is refused rather than done.
+if "${PYTHON:-python3}" - "$repo" concurrent.yaml >/dev/null 2>&1 <<'PY'
+import sys
+from pathlib import Path
+from importlib.machinery import SourceFileLoader
+harvest = SourceFileLoader("harvest", f"{sys.argv[1]}/tools/harvest").load_module()
+path = Path(sys.argv[2])
+harvest._dump_ledger(path, {"schema": "x", "runs": harvest._ledger_runs(harvest._load(path))[:2]})
+PY
+then
+	echo "expected a shrinking ledger write to be refused" >&2
+	exit 1
+fi
+if [ "$(grep -c 'run_id:' concurrent.yaml)" -ne 8 ]; then
+	echo "a refused write must leave the ledger untouched" >&2
+	exit 1
+fi
+
+# The work-alias table decides which titles name one work. It is derived from
+# the aliases the runs asserted, and validated: one title reaching two groups is
+# the failure it exists to prevent.
+run_tool --ledger ledger.yaml --alias-table aliases.yaml aliases --rebuild \
+	--audited-on 2026-07-30 --json >/dev/null
+if ! grep -q 'expositions on the psalms' aliases.yaml; then
+	echo "the derived table should group the two names the runs equated" >&2
+	exit 1
+fi
+run_tool --ledger ledger.yaml --alias-table aliases.yaml aliases --json 2>/dev/null \
+	| grep -q '"status":"current"'
+
+cat >split.yaml <<'YAML'
+schema: triptych-commentary-work-aliases/v1
+groups:
+- author: Augustine of Hippo
+  work: Enarrationes in Psalmos
+  titles: [enarrationes in psalmos, expositions on the psalms]
+- author: Augustine of Hippo
+  work: De civitate Dei
+  titles: [de civitate dei, expositions on the psalms]
+YAML
+if run_tool --ledger ledger.yaml --alias-table split.yaml promote --audited-on 2026-07-30 \
+	>/dev/null 2>&1; then
+	echo "a title mapping into two groups must be refused" >&2
+	exit 1
+fi
+
+# A run asserting an alias the table has not accounted for ages it, and promote
+# stops rather than promoting a work identity nobody has looked at.
+write_run three.yaml 'Enarrationes in Psalmos' "'Commentary on the Psalms'"
+run_tool --ledger ledger.yaml record --results three.yaml --model test --audited-on 2026-07-31 >/dev/null
+run_tool --ledger ledger.yaml --alias-table aliases.yaml aliases --json 2>/dev/null \
+	| grep -q '"status":"stale"'
+if run_tool --ledger ledger.yaml --alias-table aliases.yaml --index index.yaml \
+	promote --audited-on 2026-07-31 >/dev/null 2>&1; then
+	echo "promoting against a table the ledger outgrew must be refused" >&2
+	exit 1
+fi
+
 for bad in "plan" "record --results one.yaml --model test" "propers --top notanumber"; do
 	# shellcheck disable=SC2086
 	if run_tool $bad >/dev/null 2>&1; then

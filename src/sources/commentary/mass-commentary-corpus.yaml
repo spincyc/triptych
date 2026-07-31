@@ -1,0 +1,7833 @@
+schema: triptych-missal-commentary-corpus/v1
+status: ok
+discovery_sha256: sha256:ca0836bbdfc31ea3826d35e325dc9657dfeb61197ce5f082addf71d47cf188b9
+max_results_per_passage: 20
+max_results_per_mass: 20
+mass_count: 128
+covered_mass_count: 0
+unresolved_passage_count: 1296
+unconvertible_references:
+- mass: postconciliar::ascension:Vigil Mass
+  ref: Psalm 67:33, 35
+  reason: hebrew Psalm 67:33 is outside the psalm
+- mass: postconciliar::christ-the-king
+  ref: Psalm 28:10-11
+  reason: hebrew Psalm 28:10 is outside the psalm
+- mass: postconciliar::ot-22
+  ref: Psalm 30:20
+  reason: hebrew Psalm 30:20 is outside the psalm
+- mass: postconciliar::ot-23
+  ref: Psalm 118:137, 124
+  reason: hebrew Psalm 118:137 is outside the psalm
+- mass: postconciliar::ot-26
+  ref: Psalm 118:49-50
+  reason: hebrew Psalm 118:49 is outside the psalm
+- mass: postconciliar::ot-29
+  ref: Psalm 32:18-19
+  reason: hebrew Psalm 32:18 is outside the psalm
+- mass: postconciliar::ot-31
+  ref: Psalm 15:11
+  reason: hebrew Psalm 15:11 is outside the psalm
+- mass: postconciliar::ot-33
+  ref: Psalm 72:28
+  reason: hebrew Psalm 72:28 is outside the psalm
+- mass: postconciliar::ot-6
+  ref: Psalm 77:29-30
+  reason: hebrew Psalm 77:29 is outside the psalm
+- mass: postconciliar::ot-8
+  ref: Psalm 17:19-20
+  reason: hebrew Psalm 17:19 is outside the psalm
+- mass: postconciliar::ot-9
+  ref: Psalm 24:16, 18
+  reason: hebrew Psalm 24:16 is outside the psalm
+passages:
+- passage: 1 Chronicles 29:12
+  mass_count: 1
+  masses:
+  - postconciliar::epiphany:Mass during the Day
+  has_commentary: false
+- passage: 1 Corinthians 10:1-10:5
+  mass_count: 1
+  masses:
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: 1 Corinthians 10:1-10:6; 10:10-10:12
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: 1 Corinthians 10:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: 1 Corinthians 10:16-10:17
+  mass_count: 1
+  masses:
+  - postconciliar::corpus-christi
+  has_commentary: false
+- passage: 1 Corinthians 10:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: 1 Corinthians 10:31-11:1
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: 1 Corinthians 10:6-10:13
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-9
+  has_commentary: false
+- passage: 1 Corinthians 11:20-11:32
+  mass_count: 1
+  masses:
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: 1 Corinthians 11:23-11:26
+  mass_count: 2
+  masses:
+  - postconciliar::corpus-christi
+  - postconciliar::mass-of-the-lords-supper
+  has_commentary: false
+- passage: 1 Corinthians 11:24-11:25
+  mass_count: 2
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: 1 Corinthians 12:12-12:30
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: 1 Corinthians 12:2-12:11
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: 1 Corinthians 12:31-13:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: 1 Corinthians 12:3b-12:7; 12:12-12:13
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: 1 Corinthians 12:4-12:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: 1 Corinthians 13:1-13:13
+  mass_count: 1
+  masses:
+  - roman-1962::quinquagesima
+  has_commentary: false
+- passage: 1 Corinthians 13:13
+  mass_count: 2
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: 1 Corinthians 15:1-15:10
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-11
+  has_commentary: false
+- passage: 1 Corinthians 15:1-15:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: 1 Corinthians 15:12; 15:16-15:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: 1 Corinthians 15:20-15:26; 15:28
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: 1 Corinthians 15:45-15:49
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: 1 Corinthians 15:54-15:58
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: 1 Corinthians 1:1-1:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: 1 Corinthians 1:10-1:13; 1:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: 1 Corinthians 1:22-1:25
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: 1 Corinthians 1:26-1:31
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: 1 Corinthians 1:3-1:9
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: 1 Corinthians 1:4-1:8
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-18
+  has_commentary: false
+- passage: 1 Corinthians 2:1-2:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: 1 Corinthians 2:6-2:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: 1 Corinthians 3:16-3:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: 1 Corinthians 4:1-4:5
+  mass_count: 2
+  masses:
+  - postconciliar::ot-8
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: 1 Corinthians 5:7
+  mass_count: 1
+  masses:
+  - roman-1962::easter-sunday
+  has_commentary: false
+- passage: 1 Corinthians 5:7-5:8
+  mass_count: 3
+  masses:
+  - postconciliar::easter-sunday
+  - postconciliar::easter-vigil
+  - roman-1962::easter-sunday
+  has_commentary: false
+- passage: 1 Corinthians 5:7b-5:8a
+  mass_count: 1
+  masses:
+  - postconciliar::easter-sunday
+  has_commentary: false
+- passage: 1 Corinthians 6:13c-6:15a; 6:17-6:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: 1 Corinthians 7:29-7:31
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: 1 Corinthians 7:32-7:35
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: 1 Corinthians 9:16-9:19; 9:22-9:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: 1 Corinthians 9:24-9:27
+  mass_count: 1
+  masses:
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: 1 John 2:1-2:5a
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: 1 John 2:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: 1 John 3:1-3:2
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: 1 John 3:13-3:18
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-2
+  has_commentary: false
+- passage: 1 John 3:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: 1 John 3:18-3:24
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: 1 John 3:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: 1 John 4:10b
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: 1 John 4:11-4:16
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: 1 John 4:12
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: 1 John 4:16
+  mass_count: 2
+  masses:
+  - postconciliar::ot-10
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: 1 John 4:7-4:10
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: 1 John 5:1-5:6
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: 1 John 5:1-5:9
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: 1 John 5:4-5:10
+  mass_count: 1
+  masses:
+  - roman-1962::low-sunday
+  has_commentary: false
+- passage: 1 Kings 17:10-17:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: 1 Kings 17:17-17:24
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: 1 Kings 19:16b; 19:19-19:21
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: 1 Kings 19:4-19:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: 1 Kings 19:9a; 19:11-19:13a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: 1 Kings 3:5; 3:7-3:12
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: 1 Kings 8:41-8:43
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: 1 Peter 1:17-1:21
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: 1 Peter 1:25
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: 1 Peter 1:3-1:9
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: 1 Peter 2:11-2:19
+  mass_count: 1
+  masses:
+  - roman-1962::easter-3
+  has_commentary: false
+- passage: 1 Peter 2:2
+  mass_count: 2
+  masses:
+  - postconciliar::easter-2
+  - roman-1962::low-sunday
+  has_commentary: false
+- passage: 1 Peter 2:20b-2:25
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: 1 Peter 2:21-2:25
+  mass_count: 1
+  masses:
+  - roman-1962::easter-2
+  has_commentary: false
+- passage: 1 Peter 2:4-2:9
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: 1 Peter 2:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: 1 Peter 3:15-3:18
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: 1 Peter 3:18-3:22
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: 1 Peter 3:8-3:15
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-5
+  has_commentary: false
+- passage: 1 Peter 4:13-4:16
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: 1 Peter 4:7-4:11
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: 1 Peter 5:6-5:11
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: 1 Samuel 16:1b; 16:6-16:7; 16:10-16:13a
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: 1 Samuel 26:2; 26:7-26:9; 26:12-26:13; 26:22-26:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: 1 Samuel 3:3b-3:10; 3:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: 1 Samuel 3:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: 1 Thessalonians 1:1-1:5b
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: 1 Thessalonians 1:2-1:10
+  mass_count: 2
+  masses:
+  - roman-1962::epiphany-6
+  - roman-1962::resumed-epiphany-6
+  has_commentary: false
+- passage: 1 Thessalonians 1:5c-1:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: 1 Thessalonians 2:7b-2:9; 2:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: 1 Thessalonians 3:12-4:2
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: 1 Thessalonians 4:1-4:7
+  mass_count: 1
+  masses:
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: 1 Thessalonians 4:13-4:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: 1 Thessalonians 5:1-5:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: 1 Thessalonians 5:16-5:24
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: 1 Thessalonians 5:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: 1 Timothy 1:12-1:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: 1 Timothy 2:1-2:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: 1 Timothy 3:16
+  mass_count: 1
+  masses:
+  - postconciliar::second-sunday-after-nativity
+  has_commentary: false
+- passage: 1 Timothy 6:11-6:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: 2 Chronicles 36:14-36:16; 36:19-36:23
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: 2 Corinthians 11:19-11:33
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: 2 Corinthians 12:1-12:9
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: 2 Corinthians 12:7-12:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: 2 Corinthians 13:11-13:13
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: 2 Corinthians 1:18-1:22
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: 2 Corinthians 3:1b-3:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: 2 Corinthians 3:4-3:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-12
+  has_commentary: false
+- passage: 2 Corinthians 4:13-5:1
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: 2 Corinthians 4:6-4:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: 2 Corinthians 5:14-5:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: 2 Corinthians 5:17-5:21
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: 2 Corinthians 5:19
+  mass_count: 3
+  masses:
+  - postconciliar::ot-23
+  - postconciliar::ot-24
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: 2 Corinthians 5:6-5:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: 2 Corinthians 6:1-6:10
+  mass_count: 1
+  masses:
+  - roman-1962::lent-1
+  has_commentary: false
+- passage: 2 Corinthians 8:7; 8:9; 8:13-8:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: 2 Corinthians 8:9
+  mass_count: 2
+  masses:
+  - postconciliar::ot-25
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: 2 Kings 4:42-4:44
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: 2 Kings 4:8-4:11; 4:14-4:16a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: 2 Kings 5:14-5:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: 2 Maccabees 7:1-7:2; 7:9-7:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: 2 Peter 3:8-3:14
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: 2 Samuel 12:7-12:10; 12:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: 2 Samuel 5:1-5:3
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: 2 Samuel 7:1-7:5; 7:8b-7:12; 7:14a; 7:16
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: 2 Thessalonians 1:11-2:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: 2 Thessalonians 2:14
+  mass_count: 2
+  masses:
+  - postconciliar::ot-2
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: 2 Thessalonians 2:16-3:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: 2 Thessalonians 3:7-3:12
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: 2 Timothy 1:10
+  mass_count: 2
+  masses:
+  - postconciliar::ot-13
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: 2 Timothy 1:6-1:8; 1:13-1:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: 2 Timothy 1:8b-1:10
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: 2 Timothy 2:8-2:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: 2 Timothy 3:14-4:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: 2 Timothy 4:6-4:8; 4:16-4:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: 4 Esdras 2:36-2:37
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: Acts 10:25-10:26; 10:34-10:35; 10:44-10:48
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: Acts 10:34-10:38
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Acts 10:34a; 10:37-10:43
+  mass_count: 1
+  masses:
+  - postconciliar::easter-sunday
+  has_commentary: false
+- passage: Acts 13:14; 13:43-13:52
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: Acts 13:16-13:17; 13:22-13:25
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Vigil Mass
+  has_commentary: false
+- passage: Acts 14:21-14:27
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: Acts 15:1-15:2; 15:22-15:29
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: Acts 16:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Acts 16:14b
+  mass_count: 1
+  masses:
+  - postconciliar::holy-family
+  has_commentary: false
+- passage: Acts 1:1-1:11
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Acts 1:11
+  mass_count: 1
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  has_commentary: false
+- passage: Acts 1:12-1:14
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: Acts 1:15-1:17; 1:20a; 1:20c-1:26
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: Acts 2:1-2:11
+  mass_count: 2
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  - roman-1962::pentecost
+  has_commentary: false
+- passage: Acts 2:11
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: Acts 2:14; 2:22-2:33
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Acts 2:14a; 2:36-2:41
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: Acts 2:2; 2:4
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost
+  has_commentary: false
+- passage: Acts 2:4
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: Acts 2:42-2:47
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: Acts 3:13-3:15; 3:17-3:19
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Acts 4:32-4:35
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: Acts 4:8-4:12
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: Acts 5:12-5:16
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: Acts 5:27-5:32; 5:40b-5:41
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Acts 6:1-6:7
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: Acts 7:55-7:60
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: Acts 8:5-8:8; 8:14-8:17
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: Acts 9:26-9:31
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: Amos 6:1a; 6:4-6:7
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Amos 7:12-7:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Amos 8:4-8:7
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Baruch 3:38
+  mass_count: 1
+  masses:
+  - postconciliar::holy-family
+  has_commentary: false
+- passage: Baruch 3:9-3:15; 3:32-4:4
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Baruch 4:36
+  mass_count: 2
+  masses:
+  - postconciliar::advent-2
+  - roman-1962::advent-2
+  has_commentary: false
+- passage: Baruch 5:1-5:9
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Baruch 5:5
+  mass_count: 3
+  masses:
+  - postconciliar::advent-2
+  - postconciliar::epiphany:Vigil Mass
+  - roman-1962::advent-2
+  has_commentary: false
+- passage: Colossians 1:12-1:20
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Colossians 1:15-1:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Colossians 1:24-1:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Colossians 1:9-1:14
+  mass_count: 1
+  masses:
+  - roman-1962::last-sunday-after-pentecost
+  has_commentary: false
+- passage: Colossians 2:12-2:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Colossians 3:1-3:4
+  mass_count: 2
+  masses:
+  - postconciliar::easter-sunday
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Colossians 3:1-3:5; 3:9-3:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Colossians 3:12-3:17
+  mass_count: 3
+  masses:
+  - roman-1962::epiphany-5
+  - roman-1962::holy-family
+  - roman-1962::resumed-epiphany-5
+  has_commentary: false
+- passage: Colossians 3:12-3:21
+  mass_count: 1
+  masses:
+  - postconciliar::holy-family
+  has_commentary: false
+- passage: Colossians 3:15a; 3:16a
+  mass_count: 2
+  masses:
+  - postconciliar::holy-family
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Daniel 12:1-12:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Daniel 3:29
+  mass_count: 2
+  masses:
+  - postconciliar::ot-26
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: Daniel 3:30
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Daniel 3:31
+  mass_count: 2
+  masses:
+  - postconciliar::ot-26
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: Daniel 3:35
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: Daniel 3:40
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-7
+  has_commentary: false
+- passage: Daniel 3:42
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Daniel 3:43
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Daniel 3:52
+  mass_count: 1
+  masses:
+  - roman-1962::trinity
+  has_commentary: false
+- passage: Daniel 3:52; 3:53; 3:54; 3:55; 3:56
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Daniel 3:55-3:56
+  mass_count: 1
+  masses:
+  - roman-1962::trinity
+  has_commentary: false
+- passage: Daniel 3:77
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Daniel 7:13-7:14
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Daniel 9:17-9:19
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Deuteronomy 11:18; 11:26-11:28; 11:32
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Deuteronomy 18:15-18:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Deuteronomy 26:4-26:10
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Deuteronomy 30:10-30:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Deuteronomy 31:22-31:30
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Deuteronomy 32:1-32:4
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Deuteronomy 4:1-4:2; 4:6-4:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Deuteronomy 4:32-4:34; 4:39-4:40
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Deuteronomy 5:12-5:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Deuteronomy 6:2-6:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Deuteronomy 8:2-8:3; 8:14b-8:16a
+  mass_count: 1
+  masses:
+  - postconciliar::corpus-christi
+  has_commentary: false
+- passage: Ecclesiastes 1:2; 2:21-2:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Ephesians 1:17-1:18
+  mass_count: 3
+  masses:
+  - postconciliar::ot-15
+  - postconciliar::ot-22
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Ephesians 1:17-1:23
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Ephesians 1:3-1:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Ephesians 1:3-1:6; 1:15-1:18
+  mass_count: 1
+  masses:
+  - postconciliar::second-sunday-after-nativity
+  has_commentary: false
+- passage: Ephesians 2:13-2:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Ephesians 2:4-2:10
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Ephesians 3:13-3:21
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-16
+  has_commentary: false
+- passage: Ephesians 3:2-3:3; 3:5-3:6
+  mass_count: 2
+  masses:
+  - postconciliar::epiphany:Mass during the Day
+  - postconciliar::epiphany:Vigil Mass
+  has_commentary: false
+- passage: Ephesians 4:1-4:13
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Ephesians 4:1-4:6
+  mass_count: 2
+  masses:
+  - postconciliar::ot-17
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Ephesians 4:17; 4:20-4:24
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Ephesians 4:23-4:28
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-19
+  has_commentary: false
+- passage: Ephesians 4:30-5:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Ephesians 5:1-5:9
+  mass_count: 1
+  masses:
+  - roman-1962::lent-3
+  has_commentary: false
+- passage: Ephesians 5:15-5:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Ephesians 5:15-5:21
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: Ephesians 5:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Ephesians 5:21-5:32
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Ephesians 5:8-5:14
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Ephesians 6:10-6:17
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Esther 13:9-13:11
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Esther 14:12-14:13
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-22
+  has_commentary: false
+- passage: Esther 4:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Exodus 12:1-12:11
+  mass_count: 1
+  masses:
+  - roman-1962::good-friday
+  has_commentary: false
+- passage: Exodus 12:1-12:8; 12:11-12:14
+  mass_count: 1
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  has_commentary: false
+- passage: Exodus 14:15-15:1
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Exodus 14:24-14:31; 15:1
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Exodus 15:1-15:2
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Exodus 15:1-15:2; 15:3-15:4; 15:5-15:6; 15:17-15:18
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Exodus 16:2-16:4; 16:12-16:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Exodus 16:6-16:7
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Vigil Mass
+  has_commentary: false
+- passage: Exodus 17:3-17:7
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Exodus 17:8-17:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Exodus 19:2-19:6a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Exodus 19:3-19:8a; 19:16-19:20b
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: Exodus 20:1-20:17
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Exodus 22:20-22:26
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Exodus 24:3-24:8
+  mass_count: 1
+  masses:
+  - postconciliar::corpus-christi
+  has_commentary: false
+- passage: Exodus 24:4-24:5
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-18
+  has_commentary: false
+- passage: Exodus 32:11; 32:13; 32:14
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-12
+  has_commentary: false
+- passage: Exodus 32:7-32:11; 32:13-32:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Exodus 34:4b-34:6; 34:8-34:9
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Exodus 3:1-3:8a; 3:13-3:15
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Ezekiel 17:22-17:24
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Ezekiel 18:25-18:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Ezekiel 2:2-2:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Ezekiel 33:7-33:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Ezekiel 34:11-34:12; 34:15-34:17
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Ezekiel 36:16-36:17a; 36:18-36:28
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Ezekiel 36:23-36:26
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Ezekiel 37:1-37:14
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: Ezekiel 37:12-37:14
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Ezekiel 47:1-47:2; 47:9
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Galatians 1:1-1:2; 1:6-1:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Galatians 1:11-1:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Galatians 2:16; 2:19-2:21
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Galatians 3:16-3:22
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Galatians 3:26-3:29
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Galatians 4:1-4:7
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-within-octave-of-nativity
+  has_commentary: false
+- passage: Galatians 4:22-4:31
+  mass_count: 1
+  masses:
+  - roman-1962::lent-4
+  has_commentary: false
+- passage: Galatians 4:4-4:7
+  mass_count: 1
+  masses:
+  - postconciliar::mary-mother-of-god
+  has_commentary: false
+- passage: Galatians 4:6
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Galatians 5:16-5:24
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-14
+  has_commentary: false
+- passage: Galatians 5:16-5:25
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: Galatians 5:1; 5:13-5:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Galatians 5:25-6:10
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-15
+  has_commentary: false
+- passage: Galatians 6:14
+  mass_count: 3
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - postconciliar::ot-24
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: Galatians 6:14-6:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Genesis 11:1-11:9
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: Genesis 12:1-12:4a
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Genesis 14:18-14:20
+  mass_count: 1
+  masses:
+  - postconciliar::corpus-christi
+  has_commentary: false
+- passage: Genesis 15:5-15:12; 15:17-15:18
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Genesis 18:1-18:10a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Genesis 18:20-18:32
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Genesis 1:1-1:31; 2:1-2:2
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Genesis 1:1-2:2
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Genesis 22:1-22:18
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Genesis 22:1-22:2; 22:9a; 22:10-22:13; 22:15-22:18
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Genesis 2:18-2:24
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Genesis 2:7-2:9; 3:1-3:7
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Genesis 3:6
+  mass_count: 1
+  masses:
+  - postconciliar::good-friday
+  has_commentary: false
+- passage: Genesis 3:9-3:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Genesis 9:8-9:15
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Habakkuk 1:2-1:3; 2:2-2:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Habakkuk 3:2-3:3
+  mass_count: 1
+  masses:
+  - roman-1962::good-friday
+  has_commentary: false
+- passage: Hebrews 10:11-10:14; 10:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Hebrews 10:12
+  mass_count: 1
+  masses:
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Hebrews 10:5-10:10
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Hebrews 11:1-11:2; 11:8-11:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Hebrews 12:1-12:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Hebrews 12:18-12:19; 12:22-12:24a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Hebrews 12:5-12:7; 12:11-12:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Hebrews 13:8
+  mass_count: 1
+  masses:
+  - postconciliar::mary-mother-of-god
+  has_commentary: false
+- passage: Hebrews 1:1-1:2
+  mass_count: 2
+  masses:
+  - postconciliar::holy-family
+  - postconciliar::mary-mother-of-god
+  has_commentary: false
+- passage: Hebrews 1:1-1:6
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Day
+  has_commentary: false
+- passage: Hebrews 2:9-2:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Hebrews 4:12
+  mass_count: 2
+  masses:
+  - postconciliar::ot-29
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Hebrews 4:12-4:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Hebrews 4:14-4:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Hebrews 4:14-4:16; 5:7-5:9
+  mass_count: 1
+  masses:
+  - postconciliar::good-friday
+  has_commentary: false
+- passage: Hebrews 5:1-5:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Hebrews 5:7-5:9
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Hebrews 7:23-7:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Hebrews 9:11-9:15
+  mass_count: 2
+  masses:
+  - postconciliar::corpus-christi
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Hebrews 9:24-9:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Hebrews 9:24-9:28; 10:19-10:23
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Hosea 2:16b; 2:17b; 2:21-2:22
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Hosea 6:1-6:6
+  mass_count: 1
+  masses:
+  - roman-1962::good-friday
+  has_commentary: false
+- passage: Hosea 6:3-6:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Isaiah 11:1-11:10
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Isaiah 12:2-12:3; 12:4; 12:5-12:6
+  mass_count: 3
+  masses:
+  - postconciliar::advent-3
+  - postconciliar::baptism-of-the-lord
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Isaiah 22:19-22:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Isaiah 25:6-25:10a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Isaiah 2:1-2:5
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: Isaiah 30:19
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Isaiah 30:30
+  mass_count: 2
+  masses:
+  - postconciliar::advent-2
+  - roman-1962::advent-2
+  has_commentary: false
+- passage: Isaiah 35:1-35:6a; 35:10
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: Isaiah 35:4
+  mass_count: 2
+  masses:
+  - postconciliar::advent-3
+  - roman-1962::advent-3
+  has_commentary: false
+- passage: Isaiah 35:4-35:7a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Isaiah 40:1-40:5; 40:9-40:11
+  mass_count: 2
+  masses:
+  - postconciliar::advent-2
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Isaiah 40:5
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Vigil Mass
+  has_commentary: false
+- passage: Isaiah 42:1-42:4; 42:6-42:7
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Isaiah 43:16-43:21
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Isaiah 43:18-43:19; 43:21-43:22; 43:24b-43:25
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: Isaiah 45:15
+  mass_count: 1
+  masses:
+  - roman-1962::holy-family
+  has_commentary: false
+- passage: Isaiah 45:1; 45:4-45:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Isaiah 45:8
+  mass_count: 2
+  masses:
+  - postconciliar::advent-4
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: Isaiah 48:20
+  mass_count: 2
+  masses:
+  - postconciliar::easter-6
+  - roman-1962::easter-5
+  has_commentary: false
+- passage: Isaiah 49:14-49:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Isaiah 49:3; 49:5-49:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: Isaiah 4:2-4:6
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Isaiah 50:4-50:7
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Isaiah 50:4-50:9a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Isaiah 52:13-53:12
+  mass_count: 1
+  masses:
+  - postconciliar::good-friday
+  has_commentary: false
+- passage: Isaiah 52:7-52:10
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Day
+  has_commentary: false
+- passage: Isaiah 53:10-53:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Isaiah 54:5-54:14
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Isaiah 55:1-55:11
+  mass_count: 2
+  masses:
+  - postconciliar::baptism-of-the-lord
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Isaiah 55:1-55:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Isaiah 55:10-55:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Isaiah 55:6-55:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Isaiah 56:1; 56:6-56:7
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Isaiah 58:7-58:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Isaiah 5:1-5:2
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Isaiah 5:1-5:7
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Isaiah 5:4
+  mass_count: 1
+  masses:
+  - roman-1962::good-friday
+  has_commentary: false
+- passage: Isaiah 60:1-60:6
+  mass_count: 2
+  masses:
+  - postconciliar::epiphany:Mass during the Day
+  - postconciliar::epiphany:Vigil Mass
+  has_commentary: false
+- passage: Isaiah 61:1
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: Isaiah 61:1-61:2a; 61:10-61:11
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: Isaiah 62:1-62:5
+  mass_count: 2
+  masses:
+  - postconciliar::nativity:Vigil Mass
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: Isaiah 62:11-62:12
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass at Dawn
+  has_commentary: false
+- passage: Isaiah 63:16b-63:17; 63:19b; 64:2-64:7
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: Isaiah 66:10-66:11
+  mass_count: 2
+  masses:
+  - postconciliar::lent-4
+  - roman-1962::lent-4
+  has_commentary: false
+- passage: Isaiah 66:10-66:14c
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Isaiah 66:18-66:21
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Isaiah 6:1-6:2a; 6:3-6:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Isaiah 7:10-7:14
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Isaiah 7:14
+  mass_count: 2
+  masses:
+  - postconciliar::advent-4
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: Isaiah 8:23-9:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Isaiah 9:1
+  mass_count: 2
+  masses:
+  - postconciliar::mary-mother-of-god
+  - postconciliar::nativity:Mass at Dawn
+  has_commentary: false
+- passage: Isaiah 9:1-9:6
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Night
+  has_commentary: false
+- passage: Isaiah 9:5
+  mass_count: 3
+  masses:
+  - postconciliar::mary-mother-of-god
+  - postconciliar::nativity:Mass at Dawn
+  - postconciliar::nativity:Mass during the Day
+  has_commentary: false
+- passage: James 1:17-1:18; 1:21b-1:22; 1:27
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: James 1:17-1:21
+  mass_count: 1
+  masses:
+  - roman-1962::easter-4
+  has_commentary: false
+- passage: James 1:18
+  mass_count: 2
+  masses:
+  - postconciliar::ot-22
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: James 1:22-1:27
+  mass_count: 1
+  masses:
+  - roman-1962::easter-5
+  has_commentary: false
+- passage: James 2:1-2:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: James 2:14-2:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: James 3:16-4:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: James 5:1-5:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: James 5:7-5:10
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: Jeremiah 17:5-17:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Jeremiah 1:4-1:5; 1:17-1:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Jeremiah 20:10-20:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Jeremiah 20:7-20:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Jeremiah 23:1-23:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Jeremiah 29:11-29:12; 29:14
+  mass_count: 2
+  masses:
+  - roman-1962::last-sunday-after-pentecost
+  - roman-1962::pentecost-23
+  has_commentary: false
+- passage: Jeremiah 29:11; 29:12; 29:14
+  mass_count: 5
+  masses:
+  - postconciliar::ot-33
+  - roman-1962::resumed-epiphany-3
+  - roman-1962::resumed-epiphany-4
+  - roman-1962::resumed-epiphany-5
+  - roman-1962::resumed-epiphany-6
+  has_commentary: false
+- passage: Jeremiah 31:31-31:34
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Jeremiah 31:7-31:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Jeremiah 33:14-33:16
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: Jeremiah 38:4-38:6; 38:8-38:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Job 1:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Job 1:12
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Job 2:6-2:7
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Job 38:1; 38:8-38:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Job 7:1-7:4; 7:6-7:7
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Joel 2:12-2:13
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Joel 3:1-3:5
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: John 10:1-10:10
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: John 10:11-10:16
+  mass_count: 1
+  masses:
+  - roman-1962::easter-2
+  has_commentary: false
+- passage: John 10:11-10:18
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: John 10:11; 10:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: John 10:14
+  mass_count: 3
+  masses:
+  - postconciliar::easter-4
+  - postconciliar::ot-25
+  - roman-1962::easter-2
+  has_commentary: false
+- passage: John 10:27
+  mass_count: 4
+  masses:
+  - postconciliar::ot-12
+  - postconciliar::ot-16
+  - postconciliar::ot-20
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: John 10:27-10:30
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: John 11:1-11:45
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: John 11:25a; 11:26
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: John 11:26
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: John 11:27
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: John 12:12
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: John 12:1; 12:12-12:13
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: John 12:20-12:33
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: John 12:24-12:25
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: John 12:26
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: John 12:31b-12:32
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: John 13:1-13:15
+  mass_count: 2
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 13:12-13:13; 13:15
+  mass_count: 2
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 13:14
+  mass_count: 2
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 13:31-13:33a; 13:34-13:35
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: John 13:34
+  mass_count: 5
+  masses:
+  - postconciliar::easter-5
+  - postconciliar::mass-of-the-lords-supper
+  - postconciliar::ot-24
+  - postconciliar::ot-7
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 13:35
+  mass_count: 2
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 13:4-13:5; 13:15
+  mass_count: 2
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 13:6
+  mass_count: 1
+  masses:
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 13:6-13:8
+  mass_count: 2
+  masses:
+  - postconciliar::mass-of-the-lords-supper
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 13:7
+  mass_count: 1
+  masses:
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: John 14:1-14:12
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: John 14:15-14:16
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: John 14:15-14:16; 14:23b-14:26
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: John 14:15-14:21
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: John 14:18
+  mass_count: 2
+  masses:
+  - postconciliar::easter-7
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: John 14:23
+  mass_count: 3
+  masses:
+  - postconciliar::easter-6
+  - postconciliar::ot-30
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: John 14:23-14:29
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: John 14:23-14:31
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost
+  has_commentary: false
+- passage: John 14:6
+  mass_count: 2
+  masses:
+  - postconciliar::easter-5
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: John 15:1-15:8
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: John 15:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: John 15:1; 15:5
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: John 15:26-15:27
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: John 15:26-15:27; 16:12-16:15
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: John 15:26b; 15:27a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: John 15:4a; 15:5b
+  mass_count: 2
+  masses:
+  - postconciliar::easter-5
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: John 15:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: John 15:9-15:17
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: John 16:1-16:4
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: John 16:12-16:15
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: John 16:16
+  mass_count: 1
+  masses:
+  - roman-1962::easter-3
+  has_commentary: false
+- passage: John 16:16-16:22
+  mass_count: 1
+  masses:
+  - roman-1962::easter-3
+  has_commentary: false
+- passage: John 16:23-16:30
+  mass_count: 1
+  masses:
+  - roman-1962::easter-5
+  has_commentary: false
+- passage: John 16:28
+  mass_count: 1
+  masses:
+  - roman-1962::easter-5
+  has_commentary: false
+- passage: John 16:5-16:14
+  mass_count: 1
+  masses:
+  - roman-1962::easter-4
+  has_commentary: false
+- passage: John 16:8
+  mass_count: 1
+  masses:
+  - roman-1962::easter-4
+  has_commentary: false
+- passage: John 17:1-17:11a
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: John 17:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: John 17:11b-17:19
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: John 17:12-17:13; 17:15
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: John 17:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: John 17:17b; 17:17a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: John 17:20-17:21
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: John 17:20-17:26
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: John 17:22
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: John 18:1-19:42
+  mass_count: 2
+  masses:
+  - postconciliar::good-friday
+  - roman-1962::good-friday
+  has_commentary: false
+- passage: John 18:33b-18:37
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: John 19:29; 19:34
+  mass_count: 1
+  masses:
+  - postconciliar::good-friday
+  has_commentary: false
+- passage: John 1:1-1:18
+  mass_count: 2
+  masses:
+  - postconciliar::nativity:Mass during the Day
+  - postconciliar::second-sunday-after-nativity
+  has_commentary: false
+- passage: John 1:12
+  mass_count: 1
+  masses:
+  - postconciliar::second-sunday-after-nativity
+  has_commentary: false
+- passage: John 1:14
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Night
+  has_commentary: false
+- passage: John 1:14a; 1:12a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: John 1:19-1:28
+  mass_count: 1
+  masses:
+  - roman-1962::advent-3
+  has_commentary: false
+- passage: John 1:29
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: John 1:29-1:34
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: John 1:32
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: John 1:34
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: John 1:35-1:42
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: John 1:41; 1:17b
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: John 1:6-1:8; 1:19-1:28
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: John 20:1-20:9
+  mass_count: 1
+  masses:
+  - postconciliar::easter-sunday
+  has_commentary: false
+- passage: John 20:19-20:23
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: John 20:19-20:31
+  mass_count: 2
+  masses:
+  - postconciliar::easter-2
+  - roman-1962::low-sunday
+  has_commentary: false
+- passage: John 20:26
+  mass_count: 1
+  masses:
+  - roman-1962::low-sunday
+  has_commentary: false
+- passage: John 20:27
+  mass_count: 2
+  masses:
+  - postconciliar::easter-2
+  - roman-1962::low-sunday
+  has_commentary: false
+- passage: John 20:29
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: John 21:1-21:19
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: John 21:12-21:13
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: John 2:1-2:11
+  mass_count: 2
+  masses:
+  - postconciliar::ot-2
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: John 2:10-2:11
+  mass_count: 1
+  masses:
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: John 2:13-2:25
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: John 2:7
+  mass_count: 1
+  masses:
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: John 2:8
+  mass_count: 1
+  masses:
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: John 2:9
+  mass_count: 1
+  masses:
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: John 3:14-3:21
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: John 3:16
+  mass_count: 5
+  masses:
+  - postconciliar::lent-3
+  - postconciliar::lent-4
+  - postconciliar::ot-31
+  - postconciliar::ot-6
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: John 3:16-3:18
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: John 4:13-4:14
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: John 4:42; 4:15
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: John 4:46-4:53
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: John 4:5-4:42
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: John 6:1-6:15
+  mass_count: 2
+  masses:
+  - postconciliar::ot-17
+  - roman-1962::lent-4
+  has_commentary: false
+- passage: John 6:24-6:35
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: John 6:35
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: John 6:41-6:51
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: John 6:51
+  mass_count: 2
+  masses:
+  - postconciliar::corpus-christi
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: John 6:51-6:52
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: John 6:51-6:58
+  mass_count: 2
+  masses:
+  - postconciliar::corpus-christi
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: John 6:52
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-15
+  has_commentary: false
+- passage: John 6:55
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: John 6:56
+  mass_count: 2
+  masses:
+  - postconciliar::ot-15
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: John 6:57
+  mass_count: 2
+  masses:
+  - postconciliar::corpus-christi
+  - roman-1962::pentecost-9
+  has_commentary: false
+- passage: John 6:58
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: John 6:60-6:69
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: John 6:63c
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: John 6:63c; 6:68c
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: John 6:68c
+  mass_count: 2
+  masses:
+  - postconciliar::ot-13
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: John 7:37
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: John 7:37-7:39
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: John 8:1-8:11
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: John 8:10-8:11
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: John 8:12
+  mass_count: 4
+  masses:
+  - postconciliar::lent-4
+  - postconciliar::ot-23
+  - postconciliar::ot-3
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: John 8:46-8:59
+  mass_count: 1
+  masses:
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: John 9:1-9:41
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: John 9:11; 9:38
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Jonah 3:1-3:5; 3:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Joshua 24:1-24:2a; 24:15-24:17; 24:18b
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Joshua 5:9a; 5:10-5:12
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Lamentations 3:25
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Leviticus 13:1-13:2; 13:44-13:46
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Leviticus 19:1-19:2; 19:17-19:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: Luke 10:1-10:12; 10:17-10:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Luke 10:23-10:37
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-12
+  has_commentary: false
+- passage: Luke 10:25-10:37
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Luke 10:38-10:42
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Luke 11:1-11:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Luke 11:14-11:28
+  mass_count: 1
+  masses:
+  - roman-1962::lent-3
+  has_commentary: false
+- passage: Luke 12:13-12:21
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Luke 12:32-12:48
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Luke 12:49-12:53
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Luke 13:1-13:9
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Luke 13:22-13:30
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Luke 14:1-14:11
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-16
+  has_commentary: false
+- passage: Luke 14:16-14:24
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-2
+  has_commentary: false
+- passage: Luke 14:1; 14:7-14:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Luke 14:25-14:33
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Luke 15:1-15:10
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: Luke 15:1-15:32
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Luke 15:1-15:3; 15:11-15:32
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Luke 15:10
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: Luke 15:18
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Luke 15:32
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Luke 16:1-16:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Luke 16:1-16:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Luke 16:19-16:31
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Luke 17:11-17:19
+  mass_count: 2
+  masses:
+  - postconciliar::ot-28
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Luke 17:5-17:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Luke 18:1-18:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Luke 18:31-18:43
+  mass_count: 1
+  masses:
+  - roman-1962::quinquagesima
+  has_commentary: false
+- passage: Luke 18:9-18:14
+  mass_count: 2
+  masses:
+  - postconciliar::ot-30
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: Luke 19:1-19:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Luke 19:28-19:40
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Luke 19:37-19:38
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Luke 19:41-19:47
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-9
+  has_commentary: false
+- passage: Luke 1:1-1:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Luke 1:26-1:38
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Luke 1:28
+  mass_count: 1
+  masses:
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: Luke 1:33
+  mass_count: 2
+  masses:
+  - postconciliar::mary-mother-of-god
+  - postconciliar::nativity:Mass at Dawn
+  has_commentary: false
+- passage: Luke 1:38
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Luke 1:39-1:45
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Luke 1:42
+  mass_count: 1
+  masses:
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: Luke 1:46-1:48; 1:49-1:50; 1:53-1:54
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: Luke 1:68-1:79
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Luke 20:27-20:38
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Luke 21:25-21:28; 21:34-21:36
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: Luke 21:25-21:33
+  mass_count: 1
+  masses:
+  - roman-1962::advent-1
+  has_commentary: false
+- passage: Luke 21:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Luke 21:36
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Luke 21:5-21:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Luke 22:14-23:56
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Luke 23:35-23:43
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Luke 24:1-24:12
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Luke 24:13-24:35
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Luke 24:32
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Luke 24:34
+  mass_count: 1
+  masses:
+  - postconciliar::easter-sunday
+  has_commentary: false
+- passage: Luke 24:35
+  mass_count: 3
+  masses:
+  - postconciliar::easter-3
+  - postconciliar::ot-32
+  - roman-1962::easter-2
+  has_commentary: false
+- passage: Luke 24:35-24:48
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Luke 24:46
+  mass_count: 1
+  masses:
+  - roman-1962::easter-3
+  has_commentary: false
+- passage: Luke 24:46-24:47
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Luke 24:46-24:53
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Luke 2:1-2:14
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Night
+  has_commentary: false
+- passage: Luke 2:10-2:11
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Night
+  has_commentary: false
+- passage: Luke 2:14
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass at Dawn
+  has_commentary: false
+- passage: Luke 2:15-2:20
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass at Dawn
+  has_commentary: false
+- passage: Luke 2:16
+  mass_count: 1
+  masses:
+  - postconciliar::holy-family
+  has_commentary: false
+- passage: Luke 2:16-2:21
+  mass_count: 1
+  masses:
+  - postconciliar::mary-mother-of-god
+  has_commentary: false
+- passage: Luke 2:22
+  mass_count: 1
+  masses:
+  - roman-1962::holy-family
+  has_commentary: false
+- passage: Luke 2:22-2:40
+  mass_count: 1
+  masses:
+  - postconciliar::holy-family
+  has_commentary: false
+- passage: Luke 2:33-2:40
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-within-octave-of-nativity
+  has_commentary: false
+- passage: Luke 2:41-2:52
+  mass_count: 1
+  masses:
+  - postconciliar::holy-family
+  has_commentary: false
+- passage: Luke 2:42-2:52
+  mass_count: 1
+  masses:
+  - roman-1962::holy-family
+  has_commentary: false
+- passage: Luke 2:51
+  mass_count: 1
+  masses:
+  - roman-1962::holy-family
+  has_commentary: false
+- passage: Luke 3:1-3:6
+  mass_count: 2
+  masses:
+  - postconciliar::advent-2
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: Luke 3:10-3:18
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: Luke 3:15-3:16; 3:21-3:22
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Luke 3:16
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Luke 3:4
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Luke 3:6
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Luke 4:1-4:13
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Luke 4:14-4:21
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Luke 4:18
+  mass_count: 5
+  masses:
+  - postconciliar::ot-10
+  - postconciliar::ot-14
+  - postconciliar::ot-3
+  - postconciliar::ot-4
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: Luke 4:21-4:30
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Luke 4:22
+  mass_count: 4
+  masses:
+  - roman-1962::epiphany-3
+  - roman-1962::epiphany-4
+  - roman-1962::epiphany-5
+  - roman-1962::epiphany-6
+  has_commentary: false
+- passage: Luke 5:1-5:11
+  mass_count: 2
+  masses:
+  - postconciliar::ot-5
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Luke 6:17; 6:20-6:26
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Luke 6:23ab
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Luke 6:27-6:38
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: Luke 6:39-6:45
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Luke 7:1-7:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Luke 7:11-7:16
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-15
+  has_commentary: false
+- passage: Luke 7:11-7:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Luke 7:16
+  mass_count: 4
+  masses:
+  - postconciliar::ot-10
+  - postconciliar::ot-12
+  - postconciliar::ot-17
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Luke 7:36-8:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Luke 8:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Luke 8:4-8:15
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Luke 9:11b-9:17
+  mass_count: 1
+  masses:
+  - postconciliar::corpus-christi
+  has_commentary: false
+- passage: Luke 9:18-9:24
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Luke 9:28b-9:36
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Luke 9:51-9:62
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Malachi 1:14b-2:2b; 2:8-2:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Malachi 3:1
+  mass_count: 1
+  masses:
+  - postconciliar::epiphany:Mass during the Day
+  has_commentary: false
+- passage: Malachi 3:19-3:20a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Mark 10:17-10:30
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Mark 10:2-10:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Mark 10:35-10:45
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Mark 10:45
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Mark 10:46-10:52
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Mark 11:1-11:10
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Mark 11:23-11:24
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Mark 11:23; 11:24
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Mark 11:24
+  mass_count: 6
+  masses:
+  - roman-1962::last-sunday-after-pentecost
+  - roman-1962::pentecost-23
+  - roman-1962::resumed-epiphany-3
+  - roman-1962::resumed-epiphany-4
+  - roman-1962::resumed-epiphany-5
+  - roman-1962::resumed-epiphany-6
+  has_commentary: false
+- passage: Mark 11:9b; 11:10a
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Mark 12:28b-12:34
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Mark 12:38-12:44
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Mark 13:24-13:32
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Mark 13:33-13:37
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: Mark 14:1-15:47
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Mark 14:12-14:16; 14:22-14:26
+  mass_count: 1
+  masses:
+  - postconciliar::corpus-christi
+  has_commentary: false
+- passage: Mark 16:1-16:7
+  mass_count: 2
+  masses:
+  - postconciliar::easter-vigil
+  - roman-1962::easter-sunday
+  has_commentary: false
+- passage: Mark 16:15-16:20
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Mark 16:2
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Mark 1:1-1:8
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Mark 1:12-1:15
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Mark 1:14-1:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Mark 1:15
+  mass_count: 2
+  masses:
+  - postconciliar::ot-11
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Mark 1:21-1:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Mark 1:29-1:39
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Mark 1:40-1:45
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Mark 1:7-1:11
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Mark 2:1-2:12
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: Mark 2:18-2:22
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Mark 2:23-3:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Mark 3:20-3:35
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Mark 4:26-4:34
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Mark 4:35-4:41
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Mark 5:21-5:43
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Mark 6:1-6:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Mark 6:30-6:34
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Mark 6:7-6:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Mark 7:1-7:8; 7:14-7:15; 7:21-7:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Mark 7:31-7:37
+  mass_count: 2
+  masses:
+  - postconciliar::ot-23
+  - roman-1962::pentecost-11
+  has_commentary: false
+- passage: Mark 8:1-8:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-6
+  has_commentary: false
+- passage: Mark 8:27-8:35
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Mark 9:2-9:10
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Mark 9:30-9:37
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Mark 9:38-9:43; 9:45; 9:47-9:48
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Mark 9:7
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Matthew 10:26-10:33
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Matthew 10:37-10:42
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Matthew 11:2-11:10
+  mass_count: 1
+  masses:
+  - roman-1962::advent-2
+  has_commentary: false
+- passage: Matthew 11:2-11:11
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: Matthew 11:25
+  mass_count: 4
+  masses:
+  - postconciliar::ot-14
+  - postconciliar::ot-16
+  - postconciliar::ot-17
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Matthew 11:25-11:30
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Matthew 11:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Matthew 11:29
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Matthew 13:1-13:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Matthew 13:24-13:30
+  mass_count: 2
+  masses:
+  - roman-1962::epiphany-5
+  - roman-1962::resumed-epiphany-5
+  has_commentary: false
+- passage: Matthew 13:24-13:43
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Matthew 13:31-13:35
+  mass_count: 2
+  masses:
+  - roman-1962::epiphany-6
+  - roman-1962::resumed-epiphany-6
+  has_commentary: false
+- passage: Matthew 13:44-13:52
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Matthew 14:13-14:21
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Matthew 14:22-14:33
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Matthew 15:21-15:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Matthew 16:13-16:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Matthew 16:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Matthew 16:21-16:27
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Matthew 17:1-17:9
+  mass_count: 2
+  masses:
+  - postconciliar::lent-2
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: Matthew 17:5
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Matthew 18:15-18:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Matthew 18:21-18:35
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Matthew 18:23-18:35
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Matthew 1:1-1:25
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Vigil Mass
+  has_commentary: false
+- passage: Matthew 1:18-1:24
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Matthew 1:23
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Matthew 20:1-20:16
+  mass_count: 1
+  masses:
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: Matthew 20:1-20:16a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Matthew 21:1-21:11
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Matthew 21:1-21:9
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Matthew 21:28-21:32
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Matthew 21:33-21:43
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Matthew 21:8-21:9
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Matthew 21:9
+  mass_count: 2
+  masses:
+  - postconciliar::palm-sunday
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Matthew 22:1-22:14
+  mass_count: 2
+  masses:
+  - postconciliar::ot-28
+  - roman-1962::pentecost-19
+  has_commentary: false
+- passage: Matthew 22:15-22:21
+  mass_count: 2
+  masses:
+  - postconciliar::ot-29
+  - roman-1962::pentecost-22
+  has_commentary: false
+- passage: Matthew 22:34-22:40
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Matthew 22:34-22:46
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Matthew 23:1-23:12
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Matthew 23:9b; 23:10b
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Matthew 24:15-24:35
+  mass_count: 1
+  masses:
+  - roman-1962::last-sunday-after-pentecost
+  has_commentary: false
+- passage: Matthew 24:37-24:44
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: Matthew 24:42a; 24:44
+  mass_count: 2
+  masses:
+  - postconciliar::ot-19
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Matthew 25:1-25:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Matthew 25:14-25:30
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Matthew 25:31-25:46
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Matthew 26:14-27:66
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Matthew 26:36-26:75
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Matthew 26:42
+  mass_count: 2
+  masses:
+  - postconciliar::palm-sunday
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Matthew 27:1-27:60
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Matthew 28:1-28:10
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Matthew 28:1-28:7
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Matthew 28:16-28:20
+  mass_count: 3
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Matthew 28:18-28:20
+  mass_count: 1
+  masses:
+  - roman-1962::trinity
+  has_commentary: false
+- passage: Matthew 28:19; 28:20
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Matthew 28:20
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Matthew 28:2; 28:5-28:6
+  mass_count: 1
+  masses:
+  - roman-1962::low-sunday
+  has_commentary: false
+- passage: Matthew 28:7
+  mass_count: 1
+  masses:
+  - roman-1962::low-sunday
+  has_commentary: false
+- passage: Matthew 2:1-2:12
+  mass_count: 2
+  masses:
+  - postconciliar::epiphany:Mass during the Day
+  - postconciliar::epiphany:Vigil Mass
+  has_commentary: false
+- passage: Matthew 2:13-2:15; 2:19-2:23
+  mass_count: 1
+  masses:
+  - postconciliar::holy-family
+  has_commentary: false
+- passage: Matthew 2:2
+  mass_count: 2
+  masses:
+  - postconciliar::epiphany:Mass during the Day
+  - postconciliar::epiphany:Vigil Mass
+  has_commentary: false
+- passage: Matthew 2:20
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-within-octave-of-nativity
+  has_commentary: false
+- passage: Matthew 3:1-3:12
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Matthew 3:13-3:17
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Matthew 3:16-3:17
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Matthew 4:1-4:11
+  mass_count: 2
+  masses:
+  - postconciliar::lent-1
+  - roman-1962::lent-1
+  has_commentary: false
+- passage: Matthew 4:12-4:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Matthew 4:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Matthew 4:17
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Matthew 4:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Matthew 4:23
+  mass_count: 3
+  masses:
+  - postconciliar::ot-20
+  - postconciliar::ot-23
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Matthew 4:4
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Matthew 4:4b
+  mass_count: 2
+  masses:
+  - postconciliar::lent-1
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Matthew 5:1-5:12a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Matthew 5:12a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Matthew 5:13-5:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Matthew 5:17-5:37
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Matthew 5:20-5:24
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-5
+  has_commentary: false
+- passage: Matthew 5:3
+  mass_count: 3
+  masses:
+  - postconciliar::ot-18
+  - postconciliar::ot-28
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Matthew 5:3-5:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Matthew 5:38-5:48
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: Matthew 5:5-5:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Matthew 5:7-5:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Matthew 5:9-5:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Matthew 6:24-6:33
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-14
+  has_commentary: false
+- passage: Matthew 6:24-6:34
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Matthew 6:33
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-14
+  has_commentary: false
+- passage: Matthew 7:15-7:21
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-7
+  has_commentary: false
+- passage: Matthew 7:21-7:27
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Matthew 8:1-8:13
+  mass_count: 2
+  masses:
+  - roman-1962::epiphany-3
+  - roman-1962::resumed-epiphany-3
+  has_commentary: false
+- passage: Matthew 8:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Matthew 8:23-8:27
+  mass_count: 2
+  masses:
+  - roman-1962::epiphany-4
+  - roman-1962::resumed-epiphany-4
+  has_commentary: false
+- passage: Matthew 9:1-9:8
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-18
+  has_commentary: false
+- passage: Matthew 9:18-9:26
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-23
+  has_commentary: false
+- passage: Matthew 9:36-10:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Matthew 9:9-9:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Micah 5:1-5:4a
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Micah 6:3-6:4
+  mass_count: 2
+  masses:
+  - postconciliar::good-friday
+  - roman-1962::good-friday
+  has_commentary: false
+- passage: Nehemiah 8:2-8:4a; 8:5-8:6; 8:8-8:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Numbers 11:25-11:29
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Numbers 6:22-6:27
+  mass_count: 1
+  masses:
+  - postconciliar::mary-mother-of-god
+  has_commentary: false
+- passage: Philemon 1:9-1:10; 1:12-1:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Philippians 1:20c-1:24; 1:27a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Philippians 1:4-1:6; 1:8-1:11
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Philippians 1:6-1:11
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-22
+  has_commentary: false
+- passage: Philippians 2:1-2:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Philippians 2:15-2:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Philippians 2:15d; 2:16a
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Philippians 2:5-2:11
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Philippians 2:6-2:11
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Philippians 2:8-2:9
+  mass_count: 3
+  masses:
+  - postconciliar::good-friday
+  - postconciliar::palm-sunday
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: Philippians 3:17-4:1
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Philippians 3:17-4:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-23
+  has_commentary: false
+- passage: Philippians 3:8-3:14
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Philippians 4:12-4:14; 4:19-4:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Philippians 4:4-4:5
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+- passage: Philippians 4:4-4:6
+  mass_count: 1
+  masses:
+  - roman-1962::advent-3
+  has_commentary: false
+- passage: Philippians 4:4-4:7
+  mass_count: 2
+  masses:
+  - postconciliar::advent-3
+  - roman-1962::advent-3
+  has_commentary: false
+- passage: Philippians 4:6-4:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Proverbs 23:24-23:25
+  mass_count: 1
+  masses:
+  - roman-1962::holy-family
+  has_commentary: false
+- passage: Proverbs 31:10-31:13; 31:19-31:20; 31:30-31:31
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Proverbs 3:9-3:10
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-11
+  has_commentary: false
+- passage: Proverbs 8:22-8:31
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Proverbs 9:1-9:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Psalms 101:1
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Psalms 101:16
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-18
+  has_commentary: false
+- passage: Psalms 101:16-101:17
+  mass_count: 5
+  masses:
+  - roman-1962::epiphany-3
+  - roman-1962::epiphany-4
+  - roman-1962::epiphany-5
+  - roman-1962::epiphany-6
+  - roman-1962::pentecost-16
+  has_commentary: false
+- passage: Psalms 101:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Psalms 102:1-102:2; 102:11-102:12; 102:19-102:20
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: Psalms 102:1-102:2; 102:3-102:4; 102:6-102:7; 102:8; 102:11
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Psalms 102:1-102:2; 102:3-102:4; 102:8; 102:10; 102:12-102:13
+  mass_count: 2
+  masses:
+  - postconciliar::ot-7
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Psalms 102:1-102:2; 102:3-102:4; 102:9-102:10; 102:11-102:12
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Psalms 102:13-102:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Psalms 102:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Psalms 103:1-103:2; 103:24; 103:35; 103:27-103:28; 103:29-103:30
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: Psalms 103:1-103:2; 103:3-103:4; 103:24-103:25; 103:27-103:28; 103:29-103:30
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Psalms 103:1-103:2; 103:5-103:6; 103:10; 103:12; 103:13-103:14; 103:24; 103:35
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Psalms 103:13-103:15
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-12
+  has_commentary: false
+- passage: Psalms 103:1; 103:24; 103:29-103:30; 103:31; 103:34
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: Psalms 103:3-103:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Psalms 103:30
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost
+  has_commentary: false
+- passage: Psalms 104:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-19
+  has_commentary: false
+- passage: Psalms 105:1-105:4
+  mass_count: 1
+  masses:
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: Psalms 105:47
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Psalms 106:20-106:21
+  mass_count: 1
+  masses:
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: Psalms 106:23-106:24; 106:25-106:26; 106:28-106:29; 106:30-106:31
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Psalms 106:8-106:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Psalms 107:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: Psalms 109:1; 109:2; 109:3; 109:4
+  mass_count: 1
+  masses:
+  - postconciliar::corpus-christi
+  has_commentary: false
+- passage: Psalms 110:4-110:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Psalms 110:9
+  mass_count: 1
+  masses:
+  - roman-1962::easter-3
+  has_commentary: false
+- passage: Psalms 111:4-111:5; 111:6-111:7; 111:8-111:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Psalms 112:1-112:2; 112:4-112:6; 112:7-112:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Psalms 113:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Psalms 113:11
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-22
+  has_commentary: false
+- passage: Psalms 114:1-114:2; 114:3-114:4; 114:5-114:6; 114:8-114:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Psalms 115:10; 115:15; 115:16-115:17; 115:18-115:19
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Psalms 115:12-115:13; 115:15-115:16; 115:17-115:18
+  mass_count: 2
+  masses:
+  - postconciliar::corpus-christi
+  - postconciliar::mass-of-the-lords-supper
+  has_commentary: false
+- passage: Psalms 116:1-116:2
+  mass_count: 2
+  masses:
+  - postconciliar::ot-9
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Psalms 116:1; 116:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Psalms 117:1
+  mass_count: 2
+  masses:
+  - roman-1962::easter-sunday
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Psalms 117:1-117:2; 117:16-117:17; 117:22-117:23
+  mass_count: 2
+  masses:
+  - postconciliar::easter-sunday
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Psalms 117:16
+  mass_count: 1
+  masses:
+  - roman-1962::easter-4
+  has_commentary: false
+- passage: Psalms 117:16-117:17
+  mass_count: 5
+  masses:
+  - roman-1962::epiphany-3
+  - roman-1962::epiphany-4
+  - roman-1962::epiphany-5
+  - roman-1962::epiphany-6
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: Psalms 117:1; 117:8-117:9; 117:21-117:23; 117:26; 117:21; 117:29
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: Psalms 117:2-117:4; 117:13-117:15; 117:22-117:24
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: Psalms 117:24
+  mass_count: 1
+  masses:
+  - roman-1962::easter-sunday
+  has_commentary: false
+- passage: Psalms 117:4-117:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Psalms 117:8-117:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-14
+  has_commentary: false
+- passage: Psalms 118:1
+  mass_count: 4
+  masses:
+  - roman-1962::mass-of-the-lords-supper
+  - roman-1962::pentecost-17
+  - roman-1962::pentecost-20
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Psalms 118:1-118:2; 118:4-118:5; 118:17-118:18; 118:33-118:34
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Psalms 118:107
+  mass_count: 1
+  masses:
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Psalms 118:12-118:13
+  mass_count: 1
+  masses:
+  - roman-1962::quinquagesima
+  has_commentary: false
+- passage: Psalms 118:124
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Psalms 118:135
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Psalms 118:137
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Psalms 118:17
+  mass_count: 1
+  masses:
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Psalms 118:4-118:5
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-19
+  has_commentary: false
+- passage: Psalms 118:47-118:48
+  mass_count: 1
+  masses:
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: Psalms 118:49-118:50
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: Psalms 118:57; 118:72; 118:76-118:77; 118:127-118:128; 118:129-118:130
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Psalms 118:81; 118:84; 118:86
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Psalms 119:1-119:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-2
+  has_commentary: false
+- passage: Psalms 11:6
+  mass_count: 2
+  masses:
+  - postconciliar::ot-7
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Psalms 120:1-120:2; 120:3-120:4; 120:5-120:6; 120:7-120:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Psalms 121:1
+  mass_count: 3
+  masses:
+  - roman-1962::advent-2
+  - roman-1962::lent-4
+  - roman-1962::pentecost-18
+  has_commentary: false
+- passage: Psalms 121:1-121:2; 121:3-121:4; 121:4-121:5; 121:6-121:7; 121:8-121:9
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: Psalms 121:1-121:2; 121:3-121:4a; 121:4b-121:5
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Psalms 121:1; 121:7
+  mass_count: 1
+  masses:
+  - roman-1962::lent-4
+  has_commentary: false
+- passage: Psalms 121:3-121:4
+  mass_count: 2
+  masses:
+  - postconciliar::lent-4
+  - roman-1962::lent-4
+  has_commentary: false
+- passage: Psalms 121:7
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-18
+  has_commentary: false
+- passage: Psalms 122:1-122:2a; 122:2bc; 122:3-122:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Psalms 122:1-122:3
+  mass_count: 1
+  masses:
+  - roman-1962::lent-3
+  has_commentary: false
+- passage: Psalms 124:1-124:2
+  mass_count: 1
+  masses:
+  - roman-1962::lent-4
+  has_commentary: false
+- passage: Psalms 125:1-125:2; 125:2-125:3; 125:4-125:5; 125:6
+  mass_count: 2
+  masses:
+  - postconciliar::advent-2
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Psalms 125:1-125:2a; 125:2b-125:3; 125:4-125:5; 125:6
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Psalms 127:1-127:2; 127:3; 127:4-127:5
+  mass_count: 2
+  masses:
+  - postconciliar::holy-family
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Psalms 127:1-127:2; 127:3; 127:4-127:5; 127:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Psalms 128:1-128:4
+  mass_count: 1
+  masses:
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Psalms 128:3-128:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Psalms 128:7
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Psalms 129:1-129:2
+  mass_count: 7
+  masses:
+  - roman-1962::last-sunday-after-pentecost
+  - roman-1962::pentecost-22
+  - roman-1962::pentecost-23
+  - roman-1962::resumed-epiphany-3
+  - roman-1962::resumed-epiphany-4
+  - roman-1962::resumed-epiphany-5
+  - roman-1962::resumed-epiphany-6
+  has_commentary: false
+- passage: Psalms 129:1-129:2; 129:3-129:4; 129:5-129:6; 129:7-129:8
+  mass_count: 2
+  masses:
+  - postconciliar::lent-5
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Psalms 129:1-129:4
+  mass_count: 1
+  masses:
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: Psalms 129:3-129:4
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-22
+  has_commentary: false
+- passage: Psalms 129:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 12:4-12:5
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Psalms 12:6
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-2
+  has_commentary: false
+- passage: Psalms 130:1; 130:2; 130:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Psalms 132:1-132:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-22
+  has_commentary: false
+- passage: Psalms 134:3; 134:6
+  mass_count: 1
+  masses:
+  - roman-1962::lent-4
+  has_commentary: false
+- passage: Psalms 136:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: Psalms 136:1-136:2; 136:3; 136:4-136:5; 136:6
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Psalms 137:1-137:2; 137:2-137:3; 137:4-137:5; 137:7-137:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Psalms 137:1-137:2a; 137:2b-137:3; 137:6-137:7a; 137:7b-137:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Psalms 137:1-137:2a; 137:2b-137:3; 137:6; 137:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Psalms 137:7
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-19
+  has_commentary: false
+- passage: Psalms 138:1-138:2
+  mass_count: 1
+  masses:
+  - roman-1962::easter-sunday
+  has_commentary: false
+- passage: Psalms 138:18; 138:5-138:6
+  mass_count: 2
+  masses:
+  - postconciliar::easter-sunday
+  - roman-1962::easter-sunday
+  has_commentary: false
+- passage: Psalms 139:2-139:10; 139:14
+  mass_count: 1
+  masses:
+  - roman-1962::good-friday
+  has_commentary: false
+- passage: Psalms 140:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-19
+  has_commentary: false
+- passage: Psalms 142:9-142:10
+  mass_count: 1
+  masses:
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Psalms 143:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Psalms 144:1-144:2; 144:8-144:9; 144:10-144:11; 144:13-144:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Psalms 144:1-144:2; 144:8-144:9; 144:10-144:11; 144:13; 144:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Psalms 144:10-144:11; 144:15-144:16; 144:17-144:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Psalms 144:15-144:16
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-20
+  has_commentary: false
+- passage: Psalms 144:18
+  mass_count: 1
+  masses:
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: Psalms 144:2-144:3; 144:8-144:9; 144:17-144:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Psalms 144:21
+  mass_count: 1
+  masses:
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: Psalms 144:8-144:9; 144:10-144:11; 144:12-144:13
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: Psalms 144:8-144:9; 144:15-144:16; 144:17-144:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Psalms 145:2
+  mass_count: 1
+  masses:
+  - roman-1962::easter-3
+  has_commentary: false
+- passage: Psalms 145:6-145:7; 145:8-145:9; 145:9-145:10
+  mass_count: 2
+  masses:
+  - postconciliar::advent-3
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Psalms 145:6c-145:7; 145:8-145:9a; 145:9b-145:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Psalms 145:7; 145:8-145:9; 145:9-145:10
+  mass_count: 2
+  masses:
+  - postconciliar::ot-26
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Psalms 146:1-146:2; 146:3-146:4; 146:5-146:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Psalms 147
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 147:12
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 147:12-147:13; 147:14-147:15; 147:19-147:20
+  mass_count: 2
+  masses:
+  - postconciliar::corpus-christi
+  - postconciliar::second-sunday-after-nativity
+  has_commentary: false
+- passage: Psalms 147:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 148:2
+  mass_count: 1
+  masses:
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: Psalms 14:2-14:3a; 14:3b-14:4; 14:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Psalms 14:2-14:3a; 14:3b-14:4a; 14:4b-14:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Psalms 150
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Psalms 15:1-15:2; 15:5; 15:7-15:8; 15:9-15:10; 15:11
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Psalms 15:1-15:2a; 15:5; 15:7-15:8; 15:9-15:10; 15:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Psalms 15:5; 15:8; 15:9-15:10; 15:11
+  mass_count: 2
+  masses:
+  - postconciliar::easter-vigil
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Psalms 15:6
+  mass_count: 2
+  masses:
+  - postconciliar::ot-29
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Psalms 15:7-15:8
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-5
+  has_commentary: false
+- passage: Psalms 15:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Psalms 16:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Psalms 16:1; 16:5-16:6; 16:8; 16:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Psalms 16:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: Psalms 16:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Psalms 16:5
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost-6
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 16:6
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-22
+  has_commentary: false
+- passage: Psalms 16:6-16:7
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost-6
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 16:8
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: Psalms 17:19-17:20
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-2
+  has_commentary: false
+- passage: Psalms 17:2-17:3
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost-2
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: Psalms 17:2-17:3; 17:3-17:4; 17:47; 17:51
+  mass_count: 2
+  masses:
+  - postconciliar::ot-30
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Psalms 17:28
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Psalms 17:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Psalms 17:32
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Psalms 17:48-17:49
+  mass_count: 1
+  masses:
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Psalms 17:5-17:7
+  mass_count: 1
+  masses:
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: Psalms 18:2
+  mass_count: 1
+  masses:
+  - roman-1962::advent-4
+  has_commentary: false
+- passage: Psalms 18:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Psalms 18:8; 18:10; 18:12-18:13; 18:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-26
+  has_commentary: false
+- passage: Psalms 18:8; 18:9; 18:10; 18:11
+  mass_count: 2
+  masses:
+  - postconciliar::easter-vigil
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Psalms 18:8; 18:9; 18:10; 18:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Psalms 18:9-18:12
+  mass_count: 2
+  masses:
+  - roman-1962::lent-3
+  - roman-1962::pentecost-9
+  has_commentary: false
+- passage: Psalms 1:1-1:2; 1:3; 1:4; 1:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Psalms 20:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-5
+  has_commentary: false
+- passage: Psalms 21
+  mass_count: 2
+  masses:
+  - postconciliar::good-friday
+  - roman-1962::good-friday
+  has_commentary: false
+- passage: Psalms 21:1-21:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Psalms 21:2
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 21:2-21:9; 21:18-21:19; 21:22; 21:24; 21:32
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 21:20; 21:22
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 21:26-21:27; 21:28; 21:30; 21:31-21:32
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: Psalms 21:8-21:9; 21:17-21:18; 21:19-21:20; 21:23-21:24
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Psalms 22:1-22:2a; 22:2b-22:3; 22:5; 22:6
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Psalms 22:1-22:3a; 22:3b-22:4; 22:5; 22:6
+  mass_count: 4
+  masses:
+  - postconciliar::easter-4
+  - postconciliar::lent-4
+  - postconciliar::ot-16
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Psalms 22:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: Psalms 23:1-23:2; 23:3-23:4; 23:5-23:6
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Psalms 23:1-23:2; 23:7-23:10
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 23:9-23:10
+  mass_count: 1
+  masses:
+  - postconciliar::palm-sunday
+  has_commentary: false
+- passage: Psalms 24:1-24:2
+  mass_count: 3
+  masses:
+  - roman-1962::lent-2
+  - roman-1962::lent-3
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: Psalms 24:1-24:3
+  mass_count: 3
+  masses:
+  - postconciliar::advent-1
+  - roman-1962::advent-1
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: Psalms 24:15-24:16
+  mass_count: 2
+  masses:
+  - postconciliar::lent-3
+  - roman-1962::lent-3
+  has_commentary: false
+- passage: Psalms 24:16; 24:18
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: Psalms 24:17-24:18
+  mass_count: 1
+  masses:
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: Psalms 24:22
+  mass_count: 1
+  masses:
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: Psalms 24:3
+  mass_count: 2
+  masses:
+  - roman-1962::advent-1
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: Psalms 24:4
+  mass_count: 1
+  masses:
+  - roman-1962::advent-1
+  has_commentary: false
+- passage: Psalms 24:4-24:5; 24:6-24:7; 24:8-24:9
+  mass_count: 3
+  masses:
+  - postconciliar::lent-1
+  - postconciliar::ot-26
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Psalms 24:4-24:5; 24:8-24:9; 24:10; 24:14
+  mass_count: 1
+  masses:
+  - postconciliar::advent-1
+  has_commentary: false
+- passage: Psalms 24:6
+  mass_count: 1
+  masses:
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: Psalms 24:6; 24:2; 24:22
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Psalms 25:1-25:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Psalms 25:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Psalms 25:7-25:9
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: Psalms 25:7; 25:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Psalms 26:1
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost-5
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: Psalms 26:1-26:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Psalms 26:1; 26:4; 26:13-26:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Psalms 26:1; 26:4; 26:7-26:8
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: Psalms 26:1; 26:7-26:8a; 26:8b-26:9; 26:13-26:14
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Psalms 26:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Psalms 26:4
+  mass_count: 2
+  masses:
+  - roman-1962::holy-family
+  - roman-1962::pentecost-5
+  has_commentary: false
+- passage: Psalms 26:6
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-6
+  has_commentary: false
+- passage: Psalms 26:7-26:9
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: Psalms 26:7; 26:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-5
+  has_commentary: false
+- passage: Psalms 26:8-26:9
+  mass_count: 2
+  masses:
+  - postconciliar::lent-2
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Psalms 27:1
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost-11
+  - roman-1962::pentecost-6
+  has_commentary: false
+- passage: Psalms 27:7
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-11
+  has_commentary: false
+- passage: Psalms 27:8-27:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-6
+  has_commentary: false
+- passage: Psalms 28:1-28:2; 28:3-28:4; 28:3; 28:9-28:10
+  mass_count: 1
+  masses:
+  - postconciliar::baptism-of-the-lord
+  has_commentary: false
+- passage: Psalms 29:2-29:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-11
+  has_commentary: false
+- passage: Psalms 29:2; 29:4; 29:5-29:6; 29:11-29:12; 29:13
+  mass_count: 2
+  masses:
+  - postconciliar::easter-3
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Psalms 29:2; 29:4; 29:5-29:6; 29:11-29:12a; 29:13b
+  mass_count: 2
+  masses:
+  - postconciliar::ot-10
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Psalms 29:3-29:4
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Psalms 2:7
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Night
+  has_commentary: false
+- passage: Psalms 30:15-30:16
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Psalms 30:17-30:18
+  mass_count: 2
+  masses:
+  - postconciliar::ot-4
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: Psalms 30:2
+  mass_count: 1
+  masses:
+  - roman-1962::quinquagesima
+  has_commentary: false
+- passage: Psalms 30:2-30:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-6
+  has_commentary: false
+- passage: Psalms 30:2-30:3a; 30:3b-30:4; 30:17; 30:25
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Psalms 30:2; 30:6; 30:12-30:13; 30:15-30:16; 30:17; 30:25
+  mass_count: 1
+  masses:
+  - postconciliar::good-friday
+  has_commentary: false
+- passage: Psalms 30:3
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost-7
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Psalms 30:3-30:4
+  mass_count: 1
+  masses:
+  - roman-1962::quinquagesima
+  has_commentary: false
+- passage: Psalms 31:1-31:2; 31:5; 31:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Psalms 31:1-31:2; 31:5; 31:7; 31:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Psalms 32:1
+  mass_count: 1
+  masses:
+  - roman-1962::easter-2
+  has_commentary: false
+- passage: Psalms 32:1-32:2; 32:4-32:5; 32:18-32:19
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: Psalms 32:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Psalms 32:12
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Psalms 32:1; 32:12; 32:18-32:19; 32:20-32:22
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 32:4-32:5; 32:18-32:19; 32:20; 32:22
+  mass_count: 2
+  masses:
+  - postconciliar::lent-2
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Psalms 32:4-32:5; 32:6; 32:9; 32:18-32:19; 32:20; 32:22
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Psalms 32:5-32:6
+  mass_count: 2
+  masses:
+  - postconciliar::easter-4
+  - roman-1962::easter-2
+  has_commentary: false
+- passage: Psalms 32:6
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Psalms 33:12
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-7
+  has_commentary: false
+- passage: Psalms 33:2-33:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-12
+  has_commentary: false
+- passage: Psalms 33:2-33:3; 33:10-33:11; 33:12-33:13; 33:14-33:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Psalms 33:2-33:3; 33:16-33:17; 33:18-33:19; 33:20-33:21; 33:22-33:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Psalms 33:2-33:3; 33:17-33:18; 33:19; 33:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Psalms 33:2-33:3; 33:4-33:5; 33:6-33:7
+  mass_count: 1
+  masses:
+  - postconciliar::lent-4
+  has_commentary: false
+- passage: Psalms 33:2-33:3; 33:4-33:5; 33:6-33:7; 33:8-33:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 33:6
+  mass_count: 2
+  masses:
+  - postconciliar::ot-3
+  - roman-1962::pentecost-7
+  has_commentary: false
+- passage: Psalms 33:8-33:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-14
+  has_commentary: false
+- passage: Psalms 33:9
+  mass_count: 2
+  masses:
+  - postconciliar::ot-14
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Psalms 34:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Psalms 36:22-36:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Psalms 39:14-39:15
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-16
+  has_commentary: false
+- passage: Psalms 39:2-39:4
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-15
+  has_commentary: false
+- passage: Psalms 39:2; 39:3; 39:4; 39:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Psalms 39:2; 39:4; 39:7-39:8; 39:8-39:9; 39:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: Psalms 40:2-40:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Psalms 40:2-40:3; 40:4-40:5; 40:13-40:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: Psalms 41:2-41:4
+  mass_count: 1
+  masses:
+  - roman-1962::easter-vigil
+  has_commentary: false
+- passage: Psalms 41:3; 41:5
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Psalms 42:1-42:2
+  mass_count: 2
+  masses:
+  - postconciliar::lent-5
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Psalms 42:3
+  mass_count: 1
+  masses:
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Psalms 42:3; 42:4
+  mass_count: 1
+  masses:
+  - postconciliar::easter-vigil
+  has_commentary: false
+- passage: Psalms 42:4
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 43:2
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 43:23-43:26
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 43:8-43:9
+  mass_count: 6
+  masses:
+  - roman-1962::last-sunday-after-pentecost
+  - roman-1962::pentecost-23
+  - roman-1962::resumed-epiphany-3
+  - roman-1962::resumed-epiphany-4
+  - roman-1962::resumed-epiphany-5
+  - roman-1962::resumed-epiphany-6
+  has_commentary: false
+- passage: Psalms 44:2
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-within-octave-of-nativity
+  has_commentary: false
+- passage: Psalms 44:3
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-within-octave-of-nativity
+  has_commentary: false
+- passage: Psalms 45:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Psalms 46
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 46:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-7
+  has_commentary: false
+- passage: Psalms 46:2-46:3; 46:6-46:7; 46:8-46:9
+  mass_count: 2
+  masses:
+  - postconciliar::ascension:Mass during the Day
+  - postconciliar::ascension:Vigil Mass
+  has_commentary: false
+- passage: Psalms 46:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-7
+  has_commentary: false
+- passage: Psalms 46:6
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: Psalms 46:9
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-after-ascension
+  has_commentary: false
+- passage: Psalms 47:10-47:11
+  mass_count: 2
+  masses:
+  - postconciliar::ot-14
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Psalms 47:2
+  mass_count: 2
+  masses:
+  - roman-1962::mass-of-the-lords-supper
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Psalms 48:2
+  mass_count: 1
+  masses:
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: Psalms 49:1; 49:8; 49:12-49:13; 49:14-49:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Psalms 49:2-49:3
+  mass_count: 1
+  masses:
+  - roman-1962::advent-2
+  has_commentary: false
+- passage: Psalms 49:5
+  mass_count: 1
+  masses:
+  - roman-1962::advent-2
+  has_commentary: false
+- passage: Psalms 4:2; 4:4; 4:7-4:9
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Psalms 50:21
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: Psalms 50:3-50:4; 50:12-50:13; 50:14-50:15
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Psalms 50:3-50:4; 50:12-50:13; 50:17; 50:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Psalms 50:3-50:4; 50:5-50:6; 50:12-50:13; 50:14; 50:17
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Psalms 53:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-9
+  has_commentary: false
+- passage: Psalms 53:3-53:4; 53:5; 53:6-53:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Psalms 53:6-53:7
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-9
+  has_commentary: false
+- passage: Psalms 53:6; 53:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Psalms 54:17-54:20; 54:23
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: Psalms 54:17; 54:19
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: Psalms 54:2-54:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: Psalms 54:23
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: Psalms 58:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-9
+  has_commentary: false
+- passage: Psalms 59:4
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 59:6
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 5:2-5:4
+  mass_count: 1
+  masses:
+  - roman-1962::lent-2
+  has_commentary: false
+- passage: Psalms 61:2-61:3; 61:6-61:7; 61:8-61:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Psalms 62:2; 62:3-62:4; 62:5-62:6; 62:7-62:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Psalms 62:2; 62:3-62:4; 62:5-62:6; 62:8-62:9
+  mass_count: 2
+  masses:
+  - postconciliar::ot-12
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Psalms 62:2; 62:5
+  mass_count: 1
+  masses:
+  - roman-1962::easter-2
+  has_commentary: false
+- passage: Psalms 64:10; 64:11; 64:12-64:13; 64:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Psalms 64:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-10
+  has_commentary: false
+- passage: Psalms 65:1-65:2
+  mass_count: 4
+  masses:
+  - postconciliar::easter-3
+  - roman-1962::easter-3
+  - roman-1962::easter-5
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: Psalms 65:1-65:2; 65:16
+  mass_count: 1
+  masses:
+  - roman-1962::easter-4
+  has_commentary: false
+- passage: Psalms 65:1-65:3; 65:4-65:5; 65:6-65:7; 65:16; 65:20
+  mass_count: 2
+  masses:
+  - postconciliar::easter-6
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Psalms 65:16
+  mass_count: 1
+  masses:
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: Psalms 65:3
+  mass_count: 1
+  masses:
+  - roman-1962::easter-3
+  has_commentary: false
+- passage: Psalms 65:4
+  mass_count: 2
+  masses:
+  - postconciliar::ot-2
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: Psalms 65:8-65:9; 65:20
+  mass_count: 1
+  masses:
+  - roman-1962::easter-5
+  has_commentary: false
+- passage: Psalms 66:2
+  mass_count: 3
+  masses:
+  - postconciliar::good-friday
+  - roman-1962::good-friday
+  - roman-1962::mass-of-the-lords-supper
+  has_commentary: false
+- passage: Psalms 66:2-66:3; 66:5; 66:6; 66:8
+  mass_count: 3
+  masses:
+  - postconciliar::easter-6
+  - postconciliar::mary-mother-of-god
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Psalms 67:2
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost
+  - roman-1962::pentecost-11
+  has_commentary: false
+- passage: Psalms 67:29-67:30
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost
+  has_commentary: false
+- passage: Psalms 67:4-67:5; 67:6-67:7; 67:10-67:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Psalms 67:6-67:7; 67:36
+  mass_count: 2
+  masses:
+  - postconciliar::ot-17
+  - roman-1962::pentecost-11
+  has_commentary: false
+- passage: Psalms 68:14; 68:17; 68:30-68:31; 68:33-68:34; 68:36a; 68:37
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Psalms 68:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Psalms 68:21-68:22
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 68:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Psalms 68:8-68:10; 68:14; 68:17; 68:33-68:35
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Psalms 69:2-69:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-12
+  has_commentary: false
+- passage: Psalms 69:4
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-12
+  has_commentary: false
+- passage: Psalms 6:5
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-2
+  has_commentary: false
+- passage: Psalms 70:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Psalms 70:1-70:2; 70:3-70:4; 70:5-70:6; 70:15; 70:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Psalms 70:16-70:18
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-16
+  has_commentary: false
+- passage: Psalms 71:1-71:2; 71:7-71:8; 71:10-71:11; 71:12-71:13
+  mass_count: 2
+  masses:
+  - postconciliar::epiphany:Mass during the Day
+  - postconciliar::epiphany:Vigil Mass
+  has_commentary: false
+- passage: Psalms 71:1-71:2; 71:7-71:8; 71:12-71:13; 71:17
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Psalms 72:1-72:3
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 72:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 72:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 72:22
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 72:23
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 72:24
+  mass_count: 1
+  masses:
+  - roman-1962::palm-sunday
+  has_commentary: false
+- passage: Psalms 73:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Psalms 73:19
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Psalms 73:20
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Psalms 73:22
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Psalms 73:23
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Psalms 75:12-75:13
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-17
+  has_commentary: false
+- passage: Psalms 75:9-75:10
+  mass_count: 1
+  masses:
+  - roman-1962::easter-sunday
+  has_commentary: false
+- passage: Psalms 76:15-76:16
+  mass_count: 1
+  masses:
+  - roman-1962::quinquagesima
+  has_commentary: false
+- passage: Psalms 77:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-19
+  has_commentary: false
+- passage: Psalms 77:29-77:30
+  mass_count: 1
+  masses:
+  - roman-1962::quinquagesima
+  has_commentary: false
+- passage: Psalms 77:3-77:4; 77:23-77:24; 77:25; 77:54
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Psalms 78:10
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Psalms 78:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Psalms 79:17
+  mass_count: 1
+  masses:
+  - postconciliar::corpus-christi
+  has_commentary: false
+- passage: Psalms 79:2
+  mass_count: 2
+  masses:
+  - roman-1962::advent-2
+  - roman-1962::advent-3
+  has_commentary: false
+- passage: Psalms 79:2-79:3
+  mass_count: 1
+  masses:
+  - roman-1962::advent-3
+  has_commentary: false
+- passage: Psalms 79:2-79:3; 79:15-79:16; 79:18-79:19
+  mass_count: 2
+  masses:
+  - postconciliar::advent-1
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Psalms 79:3
+  mass_count: 1
+  masses:
+  - roman-1962::advent-3
+  has_commentary: false
+- passage: Psalms 79:9; 79:12; 79:13-79:14; 79:15-79:16; 79:19-79:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Psalms 7:12
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: Psalms 7:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-2
+  has_commentary: false
+- passage: Psalms 80:2
+  mass_count: 1
+  masses:
+  - roman-1962::low-sunday
+  has_commentary: false
+- passage: Psalms 80:2-80:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-11
+  has_commentary: false
+- passage: Psalms 80:3-80:4; 80:5-80:6; 80:7-80:8; 80:10-80:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Psalms 82:10-82:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Psalms 82:14
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 82:19
+  mass_count: 1
+  masses:
+  - roman-1962::sexagesima
+  has_commentary: false
+- passage: Psalms 83:10
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-5
+  has_commentary: false
+- passage: Psalms 83:10-83:11
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-14
+  has_commentary: false
+- passage: Psalms 83:2-83:3
+  mass_count: 2
+  masses:
+  - roman-1962::holy-family
+  - roman-1962::pentecost-14
+  has_commentary: false
+- passage: Psalms 83:4-83:5
+  mass_count: 3
+  masses:
+  - postconciliar::lent-3
+  - postconciliar::ot-15
+  - roman-1962::lent-3
+  has_commentary: false
+- passage: Psalms 83:5
+  mass_count: 1
+  masses:
+  - roman-1962::holy-family
+  has_commentary: false
+- passage: Psalms 83:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-5
+  has_commentary: false
+- passage: Psalms 84:1-84:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-21
+  has_commentary: false
+- passage: Psalms 84:13
+  mass_count: 2
+  masses:
+  - postconciliar::advent-1
+  - roman-1962::advent-1
+  has_commentary: false
+- passage: Psalms 84:2
+  mass_count: 8
+  masses:
+  - roman-1962::advent-3
+  - roman-1962::last-sunday-after-pentecost
+  - roman-1962::mass-of-the-lords-supper
+  - roman-1962::pentecost-23
+  - roman-1962::resumed-epiphany-3
+  - roman-1962::resumed-epiphany-4
+  - roman-1962::resumed-epiphany-5
+  - roman-1962::resumed-epiphany-6
+  has_commentary: false
+- passage: Psalms 84:3; 84:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Psalms 84:7-84:8
+  mass_count: 1
+  masses:
+  - roman-1962::advent-2
+  has_commentary: false
+- passage: Psalms 84:8
+  mass_count: 2
+  masses:
+  - postconciliar::advent-1
+  - roman-1962::advent-1
+  has_commentary: false
+- passage: Psalms 84:9-84:10; 84:11-84:12; 84:13-84:14
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Psalms 84:9ab-84:10; 84:11-84:12; 84:13-84:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Psalms 84:9ab; 84:10; 84:11-84:12; 84:13-84:14
+  mass_count: 1
+  masses:
+  - postconciliar::ot-15
+  has_commentary: false
+- passage: Psalms 85:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-16
+  has_commentary: false
+- passage: Psalms 85:1-85:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-15
+  has_commentary: false
+- passage: Psalms 85:3; 85:5
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-16
+  has_commentary: false
+- passage: Psalms 85:4
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-15
+  has_commentary: false
+- passage: Psalms 85:5-85:6; 85:9-85:10; 85:15-85:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Psalms 86:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Psalms 87:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-12
+  has_commentary: false
+- passage: Psalms 88:2-88:3; 88:16-88:17; 88:18-88:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Psalms 88:2-88:3; 88:4-88:5; 88:27; 88:29
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Psalms 88:4-88:5; 88:16-88:17; 88:27; 88:29
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Vigil Mass
+  has_commentary: false
+- passage: Psalms 89:1
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost-13
+  - roman-1962::pentecost-6
+  has_commentary: false
+- passage: Psalms 89:1-89:2
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-21
+  has_commentary: false
+- passage: Psalms 89:12-89:13; 89:14-89:15; 89:16-89:17
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Psalms 89:13
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-6
+  has_commentary: false
+- passage: Psalms 89:3-89:4; 89:5-89:6; 89:12-89:13; 89:14; 89:17
+  mass_count: 2
+  masses:
+  - postconciliar::ot-18
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Psalms 8:2
+  mass_count: 2
+  masses:
+  - roman-1962::pentecost-9
+  - roman-1962::trinity
+  has_commentary: false
+- passage: Psalms 8:4-8:5; 8:6-8:7; 8:8-8:9
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Psalms 90:1
+  mass_count: 1
+  masses:
+  - roman-1962::lent-1
+  has_commentary: false
+- passage: Psalms 90:1-90:2; 90:10-90:11; 90:12-90:13; 90:14-90:15
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Psalms 90:1-90:7; 90:11-90:16
+  mass_count: 1
+  masses:
+  - roman-1962::lent-1
+  has_commentary: false
+- passage: Psalms 90:11-90:12
+  mass_count: 1
+  masses:
+  - roman-1962::lent-1
+  has_commentary: false
+- passage: Psalms 90:15-90:16
+  mass_count: 2
+  masses:
+  - postconciliar::lent-1
+  - roman-1962::lent-1
+  has_commentary: false
+- passage: Psalms 90:4
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Psalms 90:4-90:5
+  mass_count: 1
+  masses:
+  - roman-1962::lent-1
+  has_commentary: false
+- passage: Psalms 91:2
+  mass_count: 1
+  masses:
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: Psalms 91:2-91:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-15
+  has_commentary: false
+- passage: Psalms 91:2-91:3; 91:13-91:14; 91:15-91:16
+  mass_count: 2
+  masses:
+  - postconciliar::ot-11
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Psalms 92:1
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-within-octave-of-nativity
+  has_commentary: false
+- passage: Psalms 92:1-92:2
+  mass_count: 1
+  masses:
+  - roman-1962::sunday-within-octave-of-nativity
+  has_commentary: false
+- passage: Psalms 92:1a; 92:1b-92:2; 92:5
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Psalms 94:1
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-14
+  has_commentary: false
+- passage: Psalms 94:1-94:2; 94:6-94:7; 94:7-94:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Psalms 94:1-94:2; 94:6-94:7; 94:8-94:9
+  mass_count: 2
+  masses:
+  - postconciliar::lent-3
+  - postconciliar::ot-27
+  has_commentary: false
+- passage: Psalms 94:1-94:2; 94:6-94:7b; 94:7c-94:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Psalms 94:3
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-15
+  has_commentary: false
+- passage: Psalms 94:6-94:7
+  mass_count: 1
+  masses:
+  - postconciliar::ot-5
+  has_commentary: false
+- passage: Psalms 95:1
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Psalms 95:1-95:2; 95:2-95:3; 95:7-95:8; 95:9-95:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-2
+  has_commentary: false
+- passage: Psalms 95:1-95:2a; 95:2b-95:3; 95:11-95:12; 95:13
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Night
+  has_commentary: false
+- passage: Psalms 95:1; 95:3; 95:4-95:5; 95:7-95:8; 95:9-95:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-29
+  has_commentary: false
+- passage: Psalms 95:2
+  mass_count: 1
+  masses:
+  - roman-1962::easter-5
+  has_commentary: false
+- passage: Psalms 95:6
+  mass_count: 1
+  masses:
+  - postconciliar::ot-3
+  has_commentary: false
+- passage: Psalms 95:8-95:9
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-18
+  has_commentary: false
+- passage: Psalms 96:1
+  mass_count: 4
+  masses:
+  - roman-1962::epiphany-3
+  - roman-1962::epiphany-4
+  - roman-1962::epiphany-5
+  - roman-1962::epiphany-6
+  has_commentary: false
+- passage: Psalms 96:1-96:2; 96:6-96:7; 96:9
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: Psalms 96:1; 96:6; 96:11-96:12
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass at Dawn
+  has_commentary: false
+- passage: Psalms 96:7-96:8
+  mass_count: 4
+  masses:
+  - roman-1962::epiphany-3
+  - roman-1962::epiphany-4
+  - roman-1962::epiphany-5
+  - roman-1962::epiphany-6
+  has_commentary: false
+- passage: Psalms 97:1
+  mass_count: 2
+  masses:
+  - roman-1962::easter-4
+  - roman-1962::pentecost-16
+  has_commentary: false
+- passage: Psalms 97:1-97:2
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: Psalms 97:1; 97:2
+  mass_count: 1
+  masses:
+  - roman-1962::easter-4
+  has_commentary: false
+- passage: Psalms 97:1; 97:2-97:3; 97:3-97:4
+  mass_count: 2
+  masses:
+  - postconciliar::easter-6
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Psalms 97:1; 97:2-97:3a; 97:3b-97:4; 97:5-97:6
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Day
+  has_commentary: false
+- passage: Psalms 97:3
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass during the Day
+  has_commentary: false
+- passage: Psalms 97:5-97:6; 97:7-97:8; 97:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-33
+  has_commentary: false
+- passage: Psalms 99:1-99:2
+  mass_count: 1
+  masses:
+  - roman-1962::quinquagesima
+  has_commentary: false
+- passage: Psalms 99:1-99:2; 99:3; 99:5
+  mass_count: 2
+  masses:
+  - postconciliar::easter-4
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Psalms 9:10-9:11
+  mass_count: 1
+  masses:
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: Psalms 9:11-9:13
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-3
+  has_commentary: false
+- passage: Psalms 9:19-9:20
+  mass_count: 1
+  masses:
+  - roman-1962::septuagesima
+  has_commentary: false
+- passage: Psalms 9:2
+  mass_count: 1
+  masses:
+  - roman-1962::passion-sunday
+  has_commentary: false
+- passage: Psalms 9:2-9:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-7
+  has_commentary: false
+- passage: Psalms 9:20
+  mass_count: 1
+  masses:
+  - roman-1962::lent-3
+  has_commentary: false
+- passage: Psalms 9:4
+  mass_count: 1
+  masses:
+  - roman-1962::lent-3
+  has_commentary: false
+- passage: Psalms 9:5; 9:10
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Revelation 1:5-1:8
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Revelation 1:5a; 1:6b
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Revelation 1:6
+  mass_count: 2
+  masses:
+  - postconciliar::christ-the-king
+  - postconciliar::easter-sunday
+  has_commentary: false
+- passage: Revelation 1:8
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Revelation 1:9-1:11a; 1:12-1:13; 1:17-1:19
+  mass_count: 1
+  masses:
+  - postconciliar::easter-2
+  has_commentary: false
+- passage: Revelation 21:1-21:5a
+  mass_count: 1
+  masses:
+  - postconciliar::easter-5
+  has_commentary: false
+- passage: Revelation 21:10-21:14; 21:22-21:23
+  mass_count: 1
+  masses:
+  - postconciliar::easter-6
+  has_commentary: false
+- passage: Revelation 21:23
+  mass_count: 1
+  masses:
+  - postconciliar::epiphany:Vigil Mass
+  has_commentary: false
+- passage: Revelation 22:12-22:14; 22:16-22:17; 22:20
+  mass_count: 1
+  masses:
+  - postconciliar::easter-7
+  has_commentary: false
+- passage: Revelation 3:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Revelation 5:11-5:14
+  mass_count: 1
+  masses:
+  - postconciliar::easter-3
+  has_commentary: false
+- passage: Revelation 5:12
+  mass_count: 1
+  masses:
+  - postconciliar::christ-the-king
+  has_commentary: false
+- passage: Revelation 7:9; 7:14b-7:17
+  mass_count: 1
+  masses:
+  - postconciliar::easter-4
+  has_commentary: false
+- passage: Romans 10:8-10:13
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Romans 11:13-11:15; 11:29-11:32
+  mass_count: 1
+  masses:
+  - postconciliar::ot-20
+  has_commentary: false
+- passage: Romans 11:33-11:36
+  mass_count: 2
+  masses:
+  - postconciliar::ot-21
+  - roman-1962::trinity
+  has_commentary: false
+- passage: Romans 12:1-12:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Romans 12:16-12:21
+  mass_count: 2
+  masses:
+  - roman-1962::epiphany-3
+  - roman-1962::resumed-epiphany-3
+  has_commentary: false
+- passage: Romans 12:6-12:16
+  mass_count: 1
+  masses:
+  - roman-1962::epiphany-2
+  has_commentary: false
+- passage: Romans 13:11-13:14
+  mass_count: 2
+  masses:
+  - postconciliar::advent-1
+  - roman-1962::advent-1
+  has_commentary: false
+- passage: Romans 13:8-13:10
+  mass_count: 3
+  masses:
+  - postconciliar::ot-23
+  - roman-1962::epiphany-4
+  - roman-1962::resumed-epiphany-4
+  has_commentary: false
+- passage: Romans 14:7-14:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Romans 15:4-15:13
+  mass_count: 1
+  masses:
+  - roman-1962::advent-2
+  has_commentary: false
+- passage: Romans 15:4-15:9
+  mass_count: 1
+  masses:
+  - postconciliar::advent-2
+  has_commentary: false
+- passage: Romans 16:25-16:27
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Romans 1:1-1:7
+  mass_count: 1
+  masses:
+  - postconciliar::advent-4
+  has_commentary: false
+- passage: Romans 3:21-3:25; 3:28
+  mass_count: 1
+  masses:
+  - postconciliar::ot-9
+  has_commentary: false
+- passage: Romans 4:18-4:25
+  mass_count: 1
+  masses:
+  - postconciliar::ot-10
+  has_commentary: false
+- passage: Romans 5:1-5:2; 5:5-5:8
+  mass_count: 1
+  masses:
+  - postconciliar::lent-3
+  has_commentary: false
+- passage: Romans 5:1-5:5
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Romans 5:12-5:15
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Romans 5:12-5:19
+  mass_count: 1
+  masses:
+  - postconciliar::lent-1
+  has_commentary: false
+- passage: Romans 5:5
+  mass_count: 2
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: Romans 5:6-5:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-11
+  has_commentary: false
+- passage: Romans 6:19-6:23
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-7
+  has_commentary: false
+- passage: Romans 6:3-6:11
+  mass_count: 2
+  masses:
+  - postconciliar::easter-vigil
+  - roman-1962::pentecost-6
+  has_commentary: false
+- passage: Romans 6:3-6:4; 6:8-6:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Romans 6:9
+  mass_count: 1
+  masses:
+  - roman-1962::easter-4
+  has_commentary: false
+- passage: Romans 8:11
+  mass_count: 2
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: Romans 8:12-8:17
+  mass_count: 1
+  masses:
+  - roman-1962::pentecost-8
+  has_commentary: false
+- passage: Romans 8:14-8:17
+  mass_count: 1
+  masses:
+  - postconciliar::most-holy-trinity
+  has_commentary: false
+- passage: Romans 8:15bc
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Romans 8:18-8:23
+  mass_count: 2
+  masses:
+  - postconciliar::ot-15
+  - roman-1962::pentecost-4
+  has_commentary: false
+- passage: Romans 8:22-8:27
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Vigil Mass
+  has_commentary: false
+- passage: Romans 8:26-8:27
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Romans 8:28-8:30
+  mass_count: 1
+  masses:
+  - postconciliar::ot-17
+  has_commentary: false
+- passage: Romans 8:31b-8:34
+  mass_count: 1
+  masses:
+  - postconciliar::lent-2
+  has_commentary: false
+- passage: Romans 8:35; 8:37-8:39
+  mass_count: 1
+  masses:
+  - postconciliar::ot-18
+  has_commentary: false
+- passage: Romans 8:8-8:11
+  mass_count: 1
+  masses:
+  - postconciliar::lent-5
+  has_commentary: false
+- passage: Romans 8:8-8:17
+  mass_count: 1
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  has_commentary: false
+- passage: Romans 8:9; 8:11-8:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Romans 9:1-9:5
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Sirach 15:16-15:21
+  mass_count: 1
+  masses:
+  - postconciliar::ot-6
+  has_commentary: false
+- passage: Sirach 24:1-24:4; 24:12-24:16
+  mass_count: 1
+  masses:
+  - postconciliar::second-sunday-after-nativity
+  has_commentary: false
+- passage: Sirach 27:30-28:7
+  mass_count: 1
+  masses:
+  - postconciliar::ot-24
+  has_commentary: false
+- passage: Sirach 27:5-27:8
+  mass_count: 1
+  masses:
+  - postconciliar::ot-8
+  has_commentary: false
+- passage: Sirach 35:12-35:14; 35:16-35:18
+  mass_count: 1
+  masses:
+  - postconciliar::ot-30
+  has_commentary: false
+- passage: Sirach 36:18
+  mass_count: 2
+  masses:
+  - postconciliar::ot-24
+  - roman-1962::pentecost-18
+  has_commentary: false
+- passage: Sirach 3:17-3:18; 3:20; 3:28-3:29
+  mass_count: 1
+  masses:
+  - postconciliar::ot-22
+  has_commentary: false
+- passage: Sirach 3:2-3:6; 3:12-3:14
+  mass_count: 1
+  masses:
+  - postconciliar::holy-family
+  has_commentary: false
+- passage: Titus 2:11-2:14
+  mass_count: 2
+  masses:
+  - postconciliar::baptism-of-the-lord
+  - postconciliar::nativity:Mass during the Night
+  has_commentary: false
+- passage: Titus 3:4-3:7
+  mass_count: 2
+  masses:
+  - postconciliar::baptism-of-the-lord
+  - postconciliar::nativity:Mass at Dawn
+  has_commentary: false
+- passage: Tobit 12:6
+  mass_count: 1
+  masses:
+  - roman-1962::trinity
+  has_commentary: false
+- passage: Wisdom 11:22-12:2
+  mass_count: 1
+  masses:
+  - postconciliar::ot-31
+  has_commentary: false
+- passage: Wisdom 12:13; 12:16-12:19
+  mass_count: 1
+  masses:
+  - postconciliar::ot-16
+  has_commentary: false
+- passage: Wisdom 16:20
+  mass_count: 2
+  masses:
+  - postconciliar::ot-18
+  - roman-1962::pentecost-13
+  has_commentary: false
+- passage: Wisdom 18:14-18:15
+  mass_count: 2
+  masses:
+  - postconciliar::second-sunday-after-nativity
+  - roman-1962::sunday-within-octave-of-nativity
+  has_commentary: false
+- passage: Wisdom 18:6-18:9
+  mass_count: 1
+  masses:
+  - postconciliar::ot-19
+  has_commentary: false
+- passage: Wisdom 1:13-1:15; 2:23-2:24
+  mass_count: 1
+  masses:
+  - postconciliar::ot-13
+  has_commentary: false
+- passage: Wisdom 1:7
+  mass_count: 2
+  masses:
+  - postconciliar::pentecost:Mass during the Day
+  - roman-1962::pentecost
+  has_commentary: false
+- passage: Wisdom 2:12; 2:17-2:20
+  mass_count: 1
+  masses:
+  - postconciliar::ot-25
+  has_commentary: false
+- passage: Wisdom 6:12-6:16
+  mass_count: 1
+  masses:
+  - postconciliar::ot-32
+  has_commentary: false
+- passage: Wisdom 7:7-7:11
+  mass_count: 1
+  masses:
+  - postconciliar::ot-28
+  has_commentary: false
+- passage: Wisdom 9:13-9:18b
+  mass_count: 1
+  masses:
+  - postconciliar::ot-23
+  has_commentary: false
+- passage: Zechariah 12:10-12:11; 13:1
+  mass_count: 1
+  masses:
+  - postconciliar::ot-12
+  has_commentary: false
+- passage: Zechariah 9:9
+  mass_count: 1
+  masses:
+  - postconciliar::nativity:Mass at Dawn
+  has_commentary: false
+- passage: Zechariah 9:9-9:10
+  mass_count: 1
+  masses:
+  - postconciliar::ot-14
+  has_commentary: false
+- passage: Zephaniah 2:3
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Zephaniah 3:12-3:13
+  mass_count: 1
+  masses:
+  - postconciliar::ot-4
+  has_commentary: false
+- passage: Zephaniah 3:14-3:18a
+  mass_count: 1
+  masses:
+  - postconciliar::advent-3
+  has_commentary: false
+masses:
+- calendar: postconciliar
+  mass_key: advent-1
+  mass_name: First Sunday of Advent
+  mass_kind: seasonal
+  date: advent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: advent-2
+  mass_name: Second Sunday of Advent
+  mass_kind: seasonal
+  date: advent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: advent-3
+  mass_name: Third Sunday of Advent
+  mass_kind: seasonal
+  date: advent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: advent-4
+  mass_name: Fourth Sunday of Advent
+  mass_kind: seasonal
+  date: advent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ascension:Mass during the Day
+  mass_name: The Ascension of the Lord (Mass during the Day)
+  mass_kind: seasonal
+  date: easter
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ascension:Vigil Mass
+  mass_name: The Ascension of the Lord (Vigil Mass)
+  mass_kind: seasonal
+  date: easter
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: baptism-of-the-lord
+  mass_name: The Baptism of the Lord
+  mass_kind: seasonal
+  date: christmas
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: christ-the-king
+  mass_name: Our Lord Jesus Christ, King of the Universe
+  mass_kind: seasonal
+  date: solemnities-of-the-lord
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: corpus-christi
+  mass_name: The Most Holy Body and Blood of Christ
+  mass_kind: seasonal
+  date: solemnities-of-the-lord
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: easter-2
+  mass_name: Second Sunday of Easter (Divine Mercy Sunday)
+  mass_kind: seasonal
+  date: easter
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: easter-3
+  mass_name: Third Sunday of Easter
+  mass_kind: seasonal
+  date: easter
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: easter-4
+  mass_name: Fourth Sunday of Easter
+  mass_kind: seasonal
+  date: easter
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: easter-5
+  mass_name: Fifth Sunday of Easter
+  mass_kind: seasonal
+  date: easter
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: easter-6
+  mass_name: Sixth Sunday of Easter
+  mass_kind: seasonal
+  date: easter
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: easter-7
+  mass_name: Seventh Sunday of Easter
+  mass_kind: seasonal
+  date: easter
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: easter-sunday
+  mass_name: Easter Sunday of the Resurrection of the Lord
+  mass_kind: seasonal
+  date: easter
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: easter-vigil
+  mass_name: The Easter Vigil in the Holy Night
+  mass_kind: seasonal
+  date: triduum
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: epiphany:Mass during the Day
+  mass_name: The Epiphany of the Lord (Mass during the Day)
+  mass_kind: seasonal
+  date: christmas
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: epiphany:Vigil Mass
+  mass_name: The Epiphany of the Lord (Vigil Mass)
+  mass_kind: seasonal
+  date: christmas
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: good-friday
+  mass_name: Celebration of the Lord's Passion
+  mass_kind: seasonal
+  date: triduum
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: holy-family
+  mass_name: The Holy Family of Jesus, Mary, and Joseph
+  mass_kind: seasonal
+  date: christmas
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: lent-1
+  mass_name: First Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: lent-2
+  mass_name: Second Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: lent-3
+  mass_name: Third Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: lent-4
+  mass_name: Fourth Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: lent-5
+  mass_name: Fifth Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: mary-mother-of-god
+  mass_name: Solemnity of Mary, the Holy Mother of God
+  mass_kind: seasonal
+  date: christmas
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: mass-of-the-lords-supper
+  mass_name: Evening Mass of the Lord's Supper
+  mass_kind: seasonal
+  date: triduum
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: most-holy-trinity
+  mass_name: The Most Holy Trinity
+  mass_kind: seasonal
+  date: solemnities-of-the-lord
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: nativity:Mass at Dawn
+  mass_name: The Nativity of the Lord (Mass at Dawn)
+  mass_kind: seasonal
+  date: christmas
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: nativity:Mass during the Day
+  mass_name: The Nativity of the Lord (Mass during the Day)
+  mass_kind: seasonal
+  date: christmas
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: nativity:Mass during the Night
+  mass_name: The Nativity of the Lord (Mass during the Night)
+  mass_kind: seasonal
+  date: christmas
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: nativity:Vigil Mass
+  mass_name: The Nativity of the Lord (Vigil Mass)
+  mass_kind: seasonal
+  date: christmas
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-10
+  mass_name: Tenth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-11
+  mass_name: Eleventh Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-12
+  mass_name: Twelfth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-13
+  mass_name: Thirteenth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-14
+  mass_name: Fourteenth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-15
+  mass_name: Fifteenth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-16
+  mass_name: Sixteenth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-17
+  mass_name: Seventeenth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-18
+  mass_name: Eighteenth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-19
+  mass_name: Nineteenth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-2
+  mass_name: Second Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-20
+  mass_name: Twentieth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-21
+  mass_name: Twenty-first Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-22
+  mass_name: Twenty-second Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-23
+  mass_name: Twenty-third Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-24
+  mass_name: Twenty-fourth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-25
+  mass_name: Twenty-fifth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-26
+  mass_name: Twenty-sixth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-27
+  mass_name: Twenty-seventh Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-28
+  mass_name: Twenty-eighth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-29
+  mass_name: Twenty-ninth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-3
+  mass_name: Third Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-30
+  mass_name: Thirtieth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-31
+  mass_name: Thirty-first Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-32
+  mass_name: Thirty-second Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-33
+  mass_name: Thirty-third Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-4
+  mass_name: Fourth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-5
+  mass_name: Fifth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-6
+  mass_name: Sixth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-7
+  mass_name: Seventh Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-8
+  mass_name: Eighth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: ot-9
+  mass_name: Ninth Sunday in Ordinary Time
+  mass_kind: seasonal
+  date: ordinary-time
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: palm-sunday
+  mass_name: Palm Sunday of the Passion of the Lord
+  mass_kind: seasonal
+  date: holy-week
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: pentecost:Mass during the Day
+  mass_name: Pentecost Sunday (Mass during the Day)
+  mass_kind: seasonal
+  date: easter
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: pentecost:Vigil Mass
+  mass_name: Pentecost Sunday (Vigil Mass)
+  mass_kind: seasonal
+  date: easter
+  source_category: form
+  works: []
+  passage_count: 0
+- calendar: postconciliar
+  mass_key: second-sunday-after-nativity
+  mass_name: Second Sunday after the Nativity
+  mass_kind: seasonal
+  date: christmas
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: advent-1
+  mass_name: First Sunday of Advent
+  mass_kind: seasonal
+  date: advent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: advent-2
+  mass_name: Second Sunday of Advent
+  mass_kind: seasonal
+  date: advent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: advent-3
+  mass_name: Third Sunday of Advent
+  mass_kind: seasonal
+  date: advent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: advent-4
+  mass_name: Fourth Sunday of Advent
+  mass_kind: seasonal
+  date: advent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: easter-2
+  mass_name: Second Sunday after Easter
+  mass_kind: seasonal
+  date: paschaltide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: easter-3
+  mass_name: Third Sunday after Easter
+  mass_kind: seasonal
+  date: paschaltide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: easter-4
+  mass_name: Fourth Sunday after Easter
+  mass_kind: seasonal
+  date: paschaltide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: easter-5
+  mass_name: Fifth Sunday after Easter
+  mass_kind: seasonal
+  date: paschaltide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: easter-sunday
+  mass_name: Easter Sunday
+  mass_kind: seasonal
+  date: paschaltide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: easter-vigil
+  mass_name: Easter Vigil
+  mass_kind: seasonal
+  date: triduum
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: epiphany-2
+  mass_name: Second Sunday after the Epiphany
+  mass_kind: seasonal
+  date: epiphanytide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: epiphany-3
+  mass_name: Third Sunday after the Epiphany
+  mass_kind: seasonal
+  date: epiphanytide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: epiphany-4
+  mass_name: Fourth Sunday after the Epiphany
+  mass_kind: seasonal
+  date: epiphanytide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: epiphany-5
+  mass_name: Fifth Sunday after the Epiphany
+  mass_kind: seasonal
+  date: epiphanytide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: epiphany-6
+  mass_name: Sixth Sunday after the Epiphany
+  mass_kind: seasonal
+  date: epiphanytide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: good-friday
+  mass_name: Solemn Liturgical Action of the Passion and Death of the Lord
+  mass_kind: seasonal
+  date: triduum
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: holy-family
+  mass_name: First Sunday after the Epiphany (Feast of the Holy Family)
+  mass_kind: seasonal
+  date: epiphanytide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: last-sunday-after-pentecost
+  mass_name: Twenty-fourth and Last Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: lent-1
+  mass_name: First Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: lent-2
+  mass_name: Second Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: lent-3
+  mass_name: Third Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: lent-4
+  mass_name: Fourth Sunday of Lent
+  mass_kind: seasonal
+  date: lent
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: low-sunday
+  mass_name: Low Sunday (Dominica in albis)
+  mass_kind: seasonal
+  date: paschaltide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: mass-of-the-lords-supper
+  mass_name: Mass of the Lord's Supper
+  mass_kind: seasonal
+  date: triduum
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: palm-sunday
+  mass_name: Second Sunday of the Passion (Palm Sunday)
+  mass_kind: seasonal
+  date: passiontide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: passion-sunday
+  mass_name: First Sunday of the Passion
+  mass_kind: seasonal
+  date: passiontide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost
+  mass_name: Pentecost Sunday (Whitsunday)
+  mass_kind: seasonal
+  date: paschaltide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-10
+  mass_name: Tenth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-11
+  mass_name: Eleventh Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-12
+  mass_name: Twelfth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-13
+  mass_name: Thirteenth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-14
+  mass_name: Fourteenth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-15
+  mass_name: Fifteenth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-16
+  mass_name: Sixteenth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-17
+  mass_name: Seventeenth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-18
+  mass_name: Eighteenth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-19
+  mass_name: Nineteenth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-2
+  mass_name: Second Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-20
+  mass_name: Twentieth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-21
+  mass_name: Twenty-first Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-22
+  mass_name: Twenty-second Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-23
+  mass_name: Twenty-third Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-3
+  mass_name: Third Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-4
+  mass_name: Fourth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-5
+  mass_name: Fifth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-6
+  mass_name: Sixth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-7
+  mass_name: Seventh Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-8
+  mass_name: Eighth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: pentecost-9
+  mass_name: Ninth Sunday after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: quinquagesima
+  mass_name: Quinquagesima Sunday
+  mass_kind: seasonal
+  date: septuagesima
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: resumed-epiphany-3
+  mass_name: Third Sunday after the Epiphany, resumed after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: resumed-epiphany-4
+  mass_name: Fourth Sunday after the Epiphany, resumed after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: resumed-epiphany-5
+  mass_name: Fifth Sunday after the Epiphany, resumed after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: resumed-epiphany-6
+  mass_name: Sixth Sunday after the Epiphany, resumed after Pentecost
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: septuagesima
+  mass_name: Septuagesima Sunday
+  mass_kind: seasonal
+  date: septuagesima
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: sexagesima
+  mass_name: Sexagesima Sunday
+  mass_kind: seasonal
+  date: septuagesima
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: sunday-after-ascension
+  mass_name: Sunday after the Ascension
+  mass_kind: seasonal
+  date: paschaltide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: sunday-within-octave-of-nativity
+  mass_name: Sunday within the Octave of the Nativity
+  mass_kind: seasonal
+  date: christmastide
+  source_category: base
+  works: []
+  passage_count: 0
+- calendar: roman-1962
+  mass_key: trinity
+  mass_name: Trinity Sunday (First Sunday after Pentecost)
+  mass_kind: seasonal
+  date: after-pentecost
+  source_category: base
+  works: []
+  passage_count: 0
+corpus: []

@@ -1,0 +1,4421 @@
+# Which commentary titles name one work.
+#
+# Derived by `tools/tpt harvest aliases --rebuild` from the alias claims the
+# harvest runs themselves made, not hand-typed: `groups` is the connected
+# components of the "these names are the same work" graph, per author, and is
+# regenerated whole. `review` is the part that cannot be derived, because
+# whether a group is one work is a judgement about the works; each entry
+# carries the reason it was made. Loading validates that no title reaches two
+# groups, that no name declared ambiguous still groups a work, and that no
+# chain of aliases has re-joined works declared distinct.
+#
+# `evidence_sha256` covers the alias claims alone, so recording a run that
+# asserts a new alias ages the table and `harvest promote` refuses until the
+# new grouping has been looked at.
+schema: triptych-commentary-work-aliases/v1
+derived_on: '2026-07-31'
+evidence_sha256: bb809fddb489dd97fac958823d23bead753a4558c221dd1db677d99fc6a84832
+review:
+  ambiguous_titles:
+  - author: Peter Lombard
+    title: Magna Glossatura
+    reason: 'Names both the Psalms gloss and the Collectanea on Paul, which are two works.
+      Two of the three runs offered it as an alias of each, so it joined Commentarium in Psalmos
+      (374 uses) to Collectanea in omnes divi Pauli epistolas (111) under one identity. Corroboration
+      would not have caught it: both runs were right about the name and wrong about what it
+      picks out.'
+  not_aliases:
+  - author: Jerome
+    titles:
+    - Commentarioli in Psalmos
+    - Tractatus in Psalmos
+    reason: 'Two Jerome works on the psalter, not one: the Commentarioli are brief scholia
+      (CCSL 72) and the Tractatus are homilies (CCSL 78). Asserted by one run of three; the
+      other two kept them apart.'
+  - author: Jerome
+    titles:
+    - Commentarioli in Psalmos
+    - Tractatus sive Homiliae in Psalmos
+    reason: The same claim under the Tractatus's fuller title.
+  - author: Jerome
+    titles:
+    - Commentarioli in Psalmos
+    - Homilies on the Psalms
+    reason: The same claim in English. The homilies are the Tractatus, so this name belongs
+      to that work rather than to the Commentarioli.
+  - author: Jerome
+    titles:
+    - Commentarioli in Psalmos
+    - Tractatus in librum Psalmorum
+    reason: The same claim under a second of the Tractatus's titles.
+  also_aliases:
+  - author: Jerome
+    titles:
+    - Tractatus in Psalmos
+    - Tractatus in librum Psalmorum
+    reason: One title is the other's fuller form. It reached its group only through the denied
+      Commentarioli edge, and would otherwise stand alone on 10 uses.
+groups:
+- author: Albert the Great
+  work: Commentarii in Psalmos
+  uses: 205
+  attested_by: 3
+  titles:
+  - commentarii in psalmos
+  - commentary on the psalms
+  - enarrationes in psalmos
+  - in psalmos davidicos expositio
+  - postilla super psalmos
+  - postilla super psalterium
+  - super psalmos
+  - super psalterium
+- author: Albert the Great
+  work: Postilla super Isaiam
+  uses: 85
+  attested_by: 3
+  titles:
+  - commentarii in isaiam
+  - commentary on isaiah
+  - enarrationes in isaiam
+  - in isaiam prophetam
+  - in isaiam prophetam commentarius
+  - postilla super isaiam
+  - super isaiam
+- author: Albert the Great
+  work: Super Lucam
+  uses: 74
+  attested_by: 3
+  titles:
+  - commentarii in evangelium lucae
+  - commentarii in lucam
+  - commentary on luke
+  - commentary on the gospel of luke
+  - enarrationes in evangelium lucae
+  - enarrationes in lucam
+  - expositio in lucam
+  - postilla super lucam
+  - super lucam
+- author: Albert the Great
+  work: Super Matthaeum
+  uses: 69
+  attested_by: 3
+  titles:
+  - commentarii in evangelium matthaei
+  - commentarii in matthaeum
+  - commentary on matthew
+  - commentary on the gospel of matthew
+  - enarrationes in evangelium matthaei
+  - enarrationes in matthaeum
+  - postilla super matthaeum
+  - super matthaeum
+- author: Albert the Great
+  work: Super Iohannem
+  uses: 53
+  attested_by: 3
+  titles:
+  - commentarii in evangelium ioannis
+  - commentarii in ioannem
+  - commentary on john
+  - commentary on the gospel of john
+  - enarrationes in evangelium ioannis
+  - enarrationes in ioannem
+  - enarrationes in iohannem
+  - postilla super ioannem
+  - super ioannem
+  - super iohannem
+- author: Albert the Great
+  work: Super Marcum
+  uses: 43
+  attested_by: 3
+  titles:
+  - commentarii in evangelium marci
+  - commentarii in marcum
+  - commentary on mark
+  - commentary on the gospel of mark
+  - enarrationes in evangelium marci
+  - enarrationes in marcum
+  - postilla super marcum
+  - super marcum
+- author: Albert the Great
+  work: Super XII prophetas minores
+  uses: 21
+  attested_by: 2
+  titles:
+  - commentarii in prophetas minores
+  - commentary on amos
+  - commentary on habakkuk
+  - commentary on hosea
+  - commentary on joel
+  - commentary on jonah
+  - commentary on malachi
+  - commentary on micah
+  - commentary on zechariah
+  - commentary on zephaniah
+  - enarrationes in abacuc
+  - enarrationes in amos
+  - enarrationes in duodecim prophetas minores
+  - enarrationes in ioel
+  - enarrationes in malachiam
+  - enarrationes in osee
+  - enarrationes in zachariam
+  - in duodecim prophetas minores
+  - postilla super abacuc
+  - postilla super amos
+  - postilla super habacuc
+  - postilla super ioel
+  - postilla super ionam
+  - postilla super malachiam
+  - postilla super michaeam
+  - postilla super osee
+  - postilla super sophoniam
+  - postilla super zachariam
+  - super xii prophetas minores
+- author: Albert the Great
+  work: Postilla super Ieremiam
+  uses: 15
+  attested_by: 2
+  titles:
+  - commentarii in ieremiam
+  - commentary on jeremiah
+  - enarrationes in ieremiam
+  - in ieremiam prophetam
+  - in ieremiam prophetam commentarius
+  - postilla super ieremiam
+- author: Albert the Great
+  work: Postilla super Ezechielem
+  uses: 13
+  attested_by: 2
+  titles:
+  - commentarii in ezechielem
+  - commentary on ezekiel
+  - enarrationes in ezechielem
+  - in ezechielem prophetam
+  - postilla super ezechielem
+  - super ezechielem
+- author: Albert the Great
+  work: Commentarii in xii prophetas minores
+  uses: 12
+  attested_by: 1
+  titles:
+  - commentarii in xii prophetas minores
+  - postilla super prophetas minores
+- author: Albert the Great
+  work: Commentarii in Iob
+  uses: 11
+  attested_by: 3
+  titles:
+  - commentarii in iob
+  - commentary on job
+  - expositio in librum iob
+  - in iob commentarius
+  - postilla super iob
+  - super iob
+- author: Albert the Great
+  work: Commentarii in Danielem
+  uses: 10
+  attested_by: 3
+  titles:
+  - commentarii in danielem
+  - commentary on daniel
+  - enarrationes in danielem
+  - in danielem prophetam
+  - in danielem prophetam expositio
+  - postilla super danielem
+  - super danielem
+- author: Albert the Great
+  work: Enarrationes in XII prophetas minores
+  uses: 9
+  attested_by: 1
+  titles:
+  - commentary on the twelve minor prophets
+  - enarrationes in xii prophetas minores
+- author: Albert the Great
+  work: Commentarii in Amos prophetam
+  uses: 6
+  attested_by: 1
+  titles:
+  - commentarii in amos prophetam
+  - commentarii in duodecim prophetas minores
+  - commentarii in habacuc prophetam
+  - commentarii in malachiam prophetam
+  - commentarii in michaeam prophetam
+  - commentarii in sophoniam prophetam
+  - commentarii in zachariam prophetam
+  - postilla super xii prophetas minores
+- author: Albert the Great
+  work: Commentarii in Baruch
+  uses: 6
+  attested_by: 3
+  titles:
+  - commentarii in baruch
+  - commentary on baruch
+  - enarrationes in baruch
+  - in baruch commentarius
+  - in baruch prophetam
+  - postilla super baruch
+  - super baruch
+- author: Albert the Great
+  work: Enarrationes in Apocalypsim
+  uses: 2
+  attested_by: 1
+  titles:
+  - enarrationes in apocalypsim
+  - super apocalypsim
+- author: Albert the Great
+  work: Postilla super Threnos
+  uses: 2
+  attested_by: 2
+  titles:
+  - commentarii in threnos
+  - commentary on lamentations
+  - postilla super threnos
+- author: Alcuin of York
+  work: Commentaria in S. Ioannis Evangelium
+  uses: 39
+  attested_by: 3
+  titles:
+  - commentaria in s. ioannis evangelium
+  - commentaria in sancti ioannis evangelium
+  - commentaria in sancti iohannis evangelium
+  - commentariorum in ioannem libri septem
+  - commentary on the gospel of john
+  - expositio in evangelium ioannis
+  - expositio in ioannem
+  - in ioannis evangelium commentariorum libri vii
+- author: Alcuin of York
+  work: Interrogationes et responsiones in Genesim
+  uses: 13
+  attested_by: 3
+  titles:
+  - in genesim quaestiones
+  - interrogationes et responsiones in genesim
+  - quaestiones in genesim
+- author: Alcuin of York
+  work: Expositio in Psalmos poenitentiales, in Psalmum CXVIII et in Psalmos graduales
+  uses: 11
+  attested_by: 1
+  titles:
+  - commentary on the penitential and gradual psalms
+  - enarrationes in psalmos
+  - expositio in psalmos paenitentiales, in psalmum cxviii et psalmos graduales
+  - expositio in psalmos poenitentiales
+  - expositio in psalmos poenitentiales, in psalmum cxviii et in psalmos graduales
+  - expositio in septem psalmos poenitentiales
+  - in psalmos graduales expositio
+- author: Alcuin of York
+  work: Interrogationes et responsiones in Genesin
+  uses: 4
+  attested_by: 1
+  titles:
+  - interrogationes et responsiones in genesin
+  - questions and answers on genesis
+- author: Alcuin of York
+  work: Commentaria super Ecclesiasten
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentaria super ecclesiasten
+  - expositio in ecclesiasten
+- author: Ambrose Autpert
+  work: Expositio in Apocalypsin
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentary on the apocalypse
+  - expositio in apocalypsin
+  - expositionis in apocalypsin libri x
+  - in apocalypsin libri decem
+  - in apocalypsin libri x
+- author: Ambrose of Milan
+  work: Expositio Evangelii secundum Lucam
+  uses: 75
+  attested_by: 3
+  titles:
+  - commentary on luke
+  - commentary on the gospel of luke
+  - expositio evangelii secundum lucam
+  - expositio in lucam
+  - exposition of the gospel of luke
+  - exposition of the holy gospel according to saint luke
+  - expositionis evangelii secundum lucam libri x
+  - in lucam libri decem
+  - tractatus in lucam
+- author: Ambrose of Milan
+  work: Explanatio Psalmorum XII
+  uses: 24
+  attested_by: 3
+  titles:
+  - commentary on twelve psalms
+  - enarrationes in xii psalmos davidicos
+  - explanatio psalmorum xii
+  - explanatio super psalmos duodecim
+  - explanatio super psalmos xii
+  - explanation of twelve psalms
+- author: Ambrose of Milan
+  work: De Abraham
+  uses: 14
+  attested_by: 3
+  titles:
+  - de abraham
+  - de abraham libri duo
+  - on abraham
+- author: Ambrose of Milan
+  work: De paradiso
+  uses: 5
+  attested_by: 3
+  titles:
+  - de paradiso
+  - liber de paradiso
+  - on paradise
+- author: Ambrose of Milan
+  work: Apologia prophetae David
+  uses: 4
+  attested_by: 3
+  titles:
+  - apologia david
+  - apologia david ad theodosium augustum
+  - apologia prophetae david
+  - apologia prophetae david ad theodosium augustum
+  - de apologia prophetae david
+  - the apology of david
+  - the apology of the prophet david
+  - the prophet david's apology
+- author: Ambrose of Milan
+  work: Expositio Psalmi CXVIII
+  uses: 4
+  attested_by: 3
+  titles:
+  - commentary on psalm 118
+  - enarratio in psalmum cxviii
+  - expositio in psalmum cxviii
+  - expositio in psalmum david cxviii
+  - expositio psalmi cxviii
+  - exposition of psalm 118
+- author: Ambrose of Milan
+  work: Hexameron
+  uses: 4
+  attested_by: 3
+  titles:
+  - exameron
+  - hexaemeron
+  - hexaemeron libri sex
+  - hexameron
+  - hexameron libri sex
+  - homilies on the six days
+  - six days of creation
+- author: Ambrose of Milan
+  work: De Elia et ieiunio
+  uses: 3
+  attested_by: 2
+  titles:
+  - de elia et ieiunio
+  - on elijah and fasting
+- author: Ambrose of Milan
+  work: De Noe et arca
+  uses: 3
+  attested_by: 3
+  titles:
+  - de noe
+  - de noe et arca
+  - liber de noe et arca
+  - on noah and the ark
+- author: Ambrose of Milan
+  work: De Iacob et vita beata
+  uses: 1
+  attested_by: 1
+  titles:
+  - de iacob et vita beata
+  - on jacob and the happy life
+- author: Ambrosiaster
+  work: Commentarius in xiii epistulas Paulinas
+  uses: 24
+  attested_by: 1
+  titles:
+  - commentaria in epistolas b. pauli
+  - commentarius in epistulas paulinas
+  - commentarius in xiii epistulas paulinas
+- author: Andrew of Caesarea
+  work: Commentarius in Apocalypsin
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentarius in apocalypsin
+  - commentary on revelation
+  - commentary on the apocalypse
+  - in apocalypsin commentarius
+- author: Angelomus of Luxeuil
+  work: Enarrationes in libros Regum
+  uses: 12
+  attested_by: 1
+  titles:
+  - commentarius in libros regum
+  - enarrationes in libros regum
+- author: Arator
+  work: De actibus apostolorum
+  uses: 5
+  attested_by: 1
+  titles:
+  - de actibus apostolorum
+  - historia apostolica
+- author: Arnobius the Younger
+  work: Commentarii in Psalmos
+  uses: 41
+  attested_by: 1
+  titles:
+  - commentarii in psalmos
+  - expositiunculae in psalmos
+- author: Athanasius of Alexandria
+  work: Expositiones in Psalmos
+  uses: 87
+  attested_by: 1
+  titles:
+  - commentary on the psalms
+  - expositio in psalmos
+  - expositiones in psalmos
+  - in psalmos expositiones
+  - interpretatio psalmorum
+- author: Athanasius of Alexandria
+  work: Orationes contra Arianos
+  uses: 1
+  attested_by: 1
+  titles:
+  - discourses against the arians
+  - orationes contra arianos
+- author: Augustine of Hippo
+  work: Enarrationes in Psalmos
+  uses: 384
+  attested_by: 3
+  titles:
+  - commentarii in psalmos
+  - commentary on the psalms
+  - enarrationes in psalmos
+  - enarrationes in psalmos cl
+  - enarrationes in psalmos davidis
+  - enarrations on the psalms
+  - expositio in psalmos
+  - expositions of the psalms
+  - expositions on the book of psalms
+  - expositions on the psalms
+  - sermones in psalmos
+- author: Augustine of Hippo
+  work: Quaestiones in Heptateuchum
+  uses: 111
+  attested_by: 3
+  titles:
+  - locutiones in heptateuchum
+  - locutionum et quaestionum in heptateuchum libri septem
+  - locutionum in heptateuchum libri
+  - quaestiones in deuteronomium
+  - quaestiones in exodum
+  - quaestiones in genesim
+  - quaestiones in heptateuchum
+  - quaestiones in heptateuchum, liber i
+  - quaestiones in heptateuchum, liber ii
+  - quaestiones in heptateuchum, liber iii
+  - quaestiones in heptateuchum, liber v
+  - quaestiones in heptateuchum, liber vi
+  - quaestiones in iesum nave
+  - quaestiones in iosue
+  - quaestiones in leviticum
+  - quaestiones in numeros
+  - quaestionum in heptateuchum libri septem
+  - questions on deuteronomy
+  - questions on exodus
+  - questions on genesis
+  - questions on joshua
+  - questions on leviticus
+  - questions on numbers
+  - questions on the heptateuch
+- author: Augustine of Hippo
+  work: In Iohannis evangelium tractatus CXXIV
+  uses: 60
+  attested_by: 3
+  titles:
+  - homilies on the gospel of john
+  - in ioannis evangelium tractatus
+  - in iohannis evangelium tractatus cxxiv
+  - lectures on the gospel of john
+  - tractates on the gospel of john
+  - tractatus in evangelium ioannis
+  - tractatus in ioannem
+  - tractatus in iohannem
+- author: Augustine of Hippo
+  work: De consensu evangelistarum
+  uses: 37
+  attested_by: 3
+  titles:
+  - de consensu evangelistarum
+  - de consensu evangelistarum libri quattuor
+  - harmony of the gospels
+  - on the harmony of the gospels
+  - the harmony of the evangelists
+- author: Augustine of Hippo
+  work: Expositio quarundam propositionum ex epistula ad Romanos
+  uses: 27
+  attested_by: 3
+  titles:
+  - commentary on statements in the letter to the romans
+  - expositio lxxxiv propositionum epistulae ad romanos
+  - expositio propositionum ex epistola ad romanos
+  - expositio quarumdam propositionum ex epistola ad romanos
+  - expositio quarumdam propositionum ex epistula ad romanos
+  - expositio quarundam propositionum ex epistola ad romanos
+  - expositio quarundam propositionum ex epistula ad romanos
+  - exposition of certain propositions from the epistle to the romans
+  - propositions from the epistle to the romans
+- author: Augustine of Hippo
+  work: Quaestiones evangeliorum
+  uses: 24
+  attested_by: 3
+  titles:
+  - quaestiones evangeliorum
+  - quaestiones xvii in matthaeum
+  - quaestionum evangeliorum libri duo
+  - questions on the gospels
+- author: Augustine of Hippo
+  work: Expositio epistulae ad Galatas
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentary on galatians
+  - commentary on the epistle to the galatians
+  - epistulae ad galatas expositionis liber unus
+  - expositio epistolae ad galatas liber unus
+  - expositio epistulae ad galatas
+  - expositio in epistulam ad galatas
+  - exposition of the epistle to the galatians
+- author: Augustine of Hippo
+  work: In epistolam Iohannis ad Parthos tractatus decem
+  uses: 12
+  attested_by: 3
+  titles:
+  - homilies on the first epistle of john
+  - in epistolam ioannis ad parthos
+  - in epistolam ioannis ad parthos tractatus decem
+  - in epistolam ioannis tractatus
+  - in epistolam ioannis tractatus x
+  - in epistolam iohannis ad parthos tractatus decem
+  - in epistulam ioannis ad parthos tractatus decem
+  - in epistulam iohannis ad parthos tractatus decem
+  - ten homilies on the first epistle of john
+  - tractates on the first epistle of john
+  - tractatus in epistolam ioannis ad parthos
+  - tractatus in epistulam ioannis ad parthos
+- author: Augustine of Hippo
+  work: De Genesi ad litteram
+  uses: 9
+  attested_by: 3
+  titles:
+  - de genesi ad litteram
+  - de genesi ad litteram libri duodecim
+  - on the literal interpretation of genesis
+  - the literal meaning of genesis
+- author: Augustine of Hippo
+  work: De Genesi contra Manichaeos
+  uses: 9
+  attested_by: 3
+  titles:
+  - de genesi adversus manichaeos
+  - de genesi contra manichaeos
+  - on genesis against the manichees
+- author: Augustine of Hippo
+  work: De sermone Domini in monte
+  uses: 9
+  attested_by: 3
+  titles:
+  - commentarius in sermonem domini in monte
+  - commentary on the lord's sermon on the mount
+  - commentary on the sermon on the mount
+  - de sermone domini in monte
+  - de sermone domini in monte libri duo
+  - on the lord's sermon on the mount
+  - on the sermon on the mount
+  - the lord's sermon on the mount
+  - the sermon on the mount
+- author: Augustine of Hippo
+  work: De civitate Dei
+  uses: 6
+  attested_by: 1
+  titles:
+  - de civitate dei
+  - de civitate dei contra paganos
+  - the city of god
+- author: Augustine of Hippo
+  work: Epistulae ad Romanos inchoata expositio
+  uses: 2
+  attested_by: 1
+  titles:
+  - epistulae ad romanos inchoata expositio
+  - inchoata expositio epistulae ad romanos
+  - unfinished commentary on the epistle to the romans
+- author: Basil the Great
+  work: Homiliae in Psalmos
+  uses: 35
+  attested_by: 3
+  titles:
+  - enarrationes in psalmos
+  - homiliae in psalmos
+  - homiliae super psalmos
+  - homilies on the psalms
+  - in psalmos homiliae
+- author: Basil the Great
+  work: Enarratio in prophetam Isaiam
+  uses: 17
+  attested_by: 2
+  titles:
+  - commentarius in isaiam prophetam
+  - commentary on isaiah
+  - enarratio in prophetam isaiam
+  - in isaiam prophetam commentarius
+- author: Basil the Great
+  work: Homiliae in Hexaemeron
+  uses: 3
+  attested_by: 3
+  titles:
+  - hexaemeron
+  - homiliae in hexaemeron
+  - homilies on the hexaemeron
+  - in hexaemeron homiliae ix
+  - nine homilies on the hexaemeron
+  - on the six days
+- author: Beatus of Liebana
+  work: Commentarius in Apocalypsin
+  uses: 8
+  attested_by: 2
+  titles:
+  - commentaria in apocalypsin
+  - commentarius in apocalypsin
+  - commentary on the apocalypse
+  - in apocalypsin libri duodecim
+- author: Bede
+  work: In Lucae Evangelium expositio
+  uses: 9
+  attested_by: 1
+  titles:
+  - commentary on the gospel of luke
+  - expositio in lucam
+  - in lucae evangelium expositio
+  - in lucae evangelium expositionis libri sex
+  - in lucam
+- author: Bede
+  work: In Marci evangelium expositio
+  uses: 6
+  attested_by: 1
+  titles:
+  - commentary on the gospel of mark
+  - expositio in marcum
+  - in marci evangelium expositio
+  - in marci evangelium expositionis libri quattuor
+  - in marcum
+- author: Bede
+  work: Expositio Actuum Apostolorum
+  uses: 4
+  attested_by: 1
+  titles:
+  - commentary on the acts of the apostles
+  - expositio actuum apostolorum
+  - expositio super acta apostolorum
+  - in actus apostolorum expositio
+  - retractatio in actus apostolorum
+- author: Bede
+  work: In epistolas septem catholicas
+  uses: 4
+  attested_by: 1
+  titles:
+  - commentary on the seven catholic epistles
+  - expositio super epistolas catholicas
+  - in epistolas septem catholicas
+  - in epistulas vii catholicas
+- author: Bede
+  work: In principium Genesis
+  uses: 4
+  attested_by: 1
+  titles:
+  - commentary on genesis
+  - expositio in genesim
+  - hexaemeron
+  - in principium genesis
+  - libri quatuor in principium genesis
+- author: Bede
+  work: Expositio Apocalypseos
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentary on revelation
+  - commentary on the apocalypse
+  - explanatio apocalypsis
+  - expositio apocalypseos
+  - in apocalypsin
+- author: Bede
+  work: De tabernaculo
+  uses: 1
+  attested_by: 1
+  titles:
+  - de tabernaculo
+  - de tabernaculo et vasis eius ac vestibus sacerdotum
+  - de tabernaculo libri tres
+  - on the tabernacle
+- author: Bede
+  work: In Canticum Habacuc
+  uses: 1
+  attested_by: 1
+  titles:
+  - expositio in canticum habacuc prophetae
+  - in canticum abacuc allegorica expositio
+  - in canticum habacuc
+  - on the canticle of habakkuk
+- author: Bede
+  work: In primam partem Samuhelis
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentary on first samuel
+  - in primam partem samuhelis
+  - in primam partem samuhelis libri quattuor
+  - in samuelem prophetam allegorica expositio
+- author: Bede
+  work: In Proverbia Salomonis
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentary on proverbs
+  - expositio in proverbia
+  - in proverbia salomonis
+  - in proverbia salomonis libri tres
+- author: Bede the Venerable
+  work: In Lucae evangelium expositio
+  uses: 66
+  attested_by: 3
+  titles:
+  - commentary on luke
+  - commentary on the gospel of luke
+  - expositio in lucam
+  - in lucae evangelium expositio
+  - in lucae evangelium expositio libri vi
+  - in lucam
+  - in lucam libri sex
+- author: Bede the Venerable
+  work: In Marci evangelium expositio
+  uses: 42
+  attested_by: 3
+  titles:
+  - commentary on mark
+  - commentary on the gospel of mark
+  - expositio in marcum
+  - in marci evangelium expositio
+  - in marci evangelium expositio libri iv
+  - in marcum
+- author: Bede the Venerable
+  work: In epistolas septem catholicas
+  uses: 41
+  attested_by: 3
+  titles:
+  - commentary on the epistle of james
+  - commentary on the first epistle of john
+  - commentary on the first epistle of peter
+  - commentary on the seven catholic epistles
+  - expositio super epistolas catholicas
+  - in epistolas septem catholicas
+  - in epistulam i ioannis
+  - in epistulam i iohannis
+  - in epistulam i petri
+  - in epistulam iacobi
+  - in epistulas septem catholicas
+  - super epistolas catholicas expositio
+- author: Bede the Venerable
+  work: Expositio Actuum Apostolorum
+  uses: 38
+  attested_by: 3
+  titles:
+  - commentary on the acts of the apostles
+  - expositio actuum apostolorum
+  - in actus apostolorum expositio
+  - retractatio in actus apostolorum
+- author: Bede the Venerable
+  work: In principium Genesis
+  uses: 23
+  attested_by: 3
+  titles:
+  - commentary on genesis
+  - hexaemeron
+  - in genesim
+  - in principium genesis
+  - in principium genesis libri quattuor
+  - in principium genesis usque ad nativitatem isaac
+  - libri quattuor in principium genesis
+  - libri quatuor in principium genesis
+  - libri quatuor in principium genesis usque ad nativitatem isaac
+  - on genesis
+- author: Bede the Venerable
+  work: In Regum librum XXX quaestiones
+  uses: 17
+  attested_by: 3
+  titles:
+  - in regum librum xxx quaestiones
+  - quaestiones xxx in libros regum
+  - thirty questions on the book of kings
+- author: Bede the Venerable
+  work: Expositio Apocalypseos
+  uses: 16
+  attested_by: 3
+  titles:
+  - commentary on revelation
+  - commentary on the apocalypse
+  - explanatio apocalypsis
+  - expositio apocalypseos
+  - expositio in apocalypsin
+  - in apocalypsin
+  - in apocalypsin ioannis expositio
+- author: Bede the Venerable
+  work: In Proverbia Salomonis
+  uses: 14
+  attested_by: 3
+  titles:
+  - commentary on proverbs
+  - expositio in proverbia
+  - expositio in proverbia salomonis
+  - in prouerbia salomonis libri tres
+  - in proverbia salomonis
+  - in proverbia salomonis libri tres
+  - on the proverbs of solomon
+- author: Bede the Venerable
+  work: In primam partem Samuhelis
+  uses: 7
+  attested_by: 3
+  titles:
+  - commentary on 1 samuel
+  - commentary on first samuel
+  - expositio in librum primum samuhelis
+  - in i samuhelem
+  - in primam partem samuelis libri iv
+  - in primam partem samuhelis
+  - in primam partem samuhelis libri iv
+  - in primam partem samuhelis libri quattuor
+  - in samuelem prophetam allegorica expositio
+  - on first samuel
+  - on the first part of samuel
+- author: Bede the Venerable
+  work: In Ezram et Neemiam
+  uses: 3
+  attested_by: 3
+  titles:
+  - commentary on ezra and nehemiah
+  - in esdram et nehemiam
+  - in ezram et neemiam
+  - in ezram et neemiam libri tres
+  - in ezram et neemiam prophetas allegorica expositio
+  - on ezra and nehemiah
+- author: Bede the Venerable
+  work: In librum beati patris Tobiae
+  uses: 3
+  attested_by: 3
+  titles:
+  - allegorica interpretatio in librum tobiae
+  - commentary on tobit
+  - in librum beati patris tobiae
+  - in librum tobiae allegorica interpretatio
+  - in tobiam
+  - on tobit
+- author: Bede the Venerable
+  work: De tabernaculo
+  uses: 2
+  attested_by: 2
+  titles:
+  - de tabernaculo
+  - de tabernaculo et vasis eius ac vestibus sacerdotum
+  - on the tabernacle
+- author: Bede the Venerable
+  work: De templo
+  uses: 1
+  attested_by: 1
+  titles:
+  - de templo
+  - de templo salomonis
+  - on the temple
+- author: Bernard of Clairvaux
+  work: Homiliae super 'Missus est'
+  uses: 1
+  attested_by: 1
+  titles:
+  - homiliae super 'missus est'
+  - homilies in praise of the virgin mother
+  - super missus est homiliae quatuor
+- author: Bonaventure
+  work: Commentarius in Evangelium S. Lucae
+  uses: 75
+  attested_by: 3
+  titles:
+  - commentarius in evangelium lucae
+  - commentarius in evangelium s. lucae
+  - commentarius in evangelium sancti lucae
+  - commentary on the gospel of luke
+  - expositio in evangelium lucae
+  - expositio in lucam
+  - in evangelium s. lucae expositio
+  - in lucam commentarius
+- author: Bonaventure
+  work: Commentarius in Evangelium S. Ioannis
+  uses: 39
+  attested_by: 3
+  titles:
+  - commentarius in evangelium ioannis
+  - commentarius in evangelium s. ioannis
+  - commentarius in evangelium sancti iohannis
+  - commentary on the gospel of john
+  - expositio in ioannem
+  - in evangelium s. ioannis expositio
+  - in ioannem commentarius
+- author: Bonaventure
+  work: Commentarius in librum Sapientiae
+  uses: 24
+  attested_by: 3
+  titles:
+  - commentarius in librum sapientiae
+  - commentary on the book of wisdom
+  - expositio in librum sapientiae
+  - in sapientiam expositio
+- author: Bonaventure
+  work: Commentarius in Ecclesiasten
+  uses: 6
+  attested_by: 3
+  titles:
+  - commentarius in ecclesiasten
+  - commentarius in librum ecclesiastae
+  - commentary on ecclesiastes
+  - expositio in ecclesiasten
+  - in ecclesiasten expositio
+  - in librum ecclesiastes
+- author: Bruno of Segni
+  work: Commentaria in Matthaeum
+  uses: 17
+  attested_by: 2
+  titles:
+  - commentaria in matthaeum
+  - commentarius in evangelium matthaei
+  - commentary on matthew
+  - expositio in matthaeum
+- author: Bruno of Segni
+  work: Commentaria in Lucam
+  uses: 8
+  attested_by: 1
+  titles:
+  - commentaria in lucam
+  - commentary on luke
+  - expositio in lucam
+- author: Bruno of Segni
+  work: Commentaria in Iohannem
+  uses: 7
+  attested_by: 1
+  titles:
+  - commentaria in iohannem
+  - commentary on john
+  - expositio in ioannem
+- author: Bruno of Segni
+  work: Expositio in Apocalypsim
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentaria in apocalypsin
+  - commentary on the apocalypse
+  - expositio in apocalypsim
+- author: Bruno the Carthusian
+  work: Expositio in Psalmos
+  uses: 123
+  attested_by: 2
+  titles:
+  - commentary on the psalms
+  - expositio in psalmos
+  - expositio in psalterium
+- author: Bruno the Carthusian
+  work: Expositio in epistolas Pauli
+  uses: 27
+  attested_by: 1
+  titles:
+  - commentaria in omnes epistolas pauli
+  - expositio in epistolas pauli
+  - expositio in omnes epistolas pauli
+- author: Caesarius of Arles
+  work: Expositio in Apocalypsim
+  uses: 2
+  attested_by: 1
+  titles:
+  - expositio in apocalypsim
+  - homiliae in apocalypsim
+- author: Cassiodorus
+  work: Expositio Psalmorum
+  uses: 384
+  attested_by: 3
+  titles:
+  - commentarius in psalterium
+  - commentary on the psalms
+  - explanation of the psalms
+  - expositio in omnes psalmos
+  - expositio in psalmos
+  - expositio in psalterium
+  - expositio psalmorum
+- author: Chromatius of Aquileia
+  work: Tractatus in Matthaeum
+  uses: 31
+  attested_by: 3
+  titles:
+  - commentarius in matthaeum
+  - commentary on matthew
+  - sermons and tractates on matthew
+  - tractates on matthew
+  - tractatus in evangelium matthaei
+  - tractatus in matthaeum
+- author: Clement of Alexandria
+  work: Adumbrationes in epistolas canonicas
+  uses: 8
+  attested_by: 2
+  titles:
+  - adumbrationes in epistolas canonicas
+  - adumbrationes in epistolas catholicas
+  - comments on the catholic epistles
+  - hypotyposeis
+  - outlines on the catholic epistles
+- author: Cornelius a Lapide
+  work: Commentaria in Scripturam Sacram
+  uses: 1100
+  attested_by: 3
+  titles:
+  - commentaria in acta apostolorum
+  - commentaria in acta apostolorum, epistolas canonicas et apocalypsin
+  - commentaria in apocalypsin
+  - commentaria in duodecim prophetas minores
+  - commentaria in ecclesiasticum
+  - commentaria in ecclesiasticum et sapientiam
+  - commentaria in epistolas canonicas
+  - commentaria in esdram, nehemiam, tobiam, iudith, esther et machabaeos
+  - commentaria in ieremiam, threnos et baruch
+  - commentaria in iosue, iudicum, ruth, iv libros regum et ii paralipomenon
+  - commentaria in omnes divi pauli epistolas
+  - commentaria in pentateuchum mosis
+  - commentaria in proverbia salomonis
+  - commentaria in quatuor evangelia
+  - 'commentaria in quatuor evangelia: in ioannem'
+  - 'commentaria in quatuor evangelia: in lucam'
+  - 'commentaria in quatuor evangelia: in marcum'
+  - 'commentaria in quatuor evangelia: in matthaeum'
+  - commentaria in quatuor prophetas maiores
+  - commentaria in sacram scripturam
+  - commentaria in scripturam sacram
+  - commentarii in sacram scripturam
+  - commentarii in scripturam sacram
+  - commentarius in actus apostolorum
+  - commentarius in amos
+  - commentarius in apocalypsim
+  - commentarius in baruch
+  - commentarius in danielem
+  - commentarius in deuteronomium
+  - commentarius in ecclesiasten
+  - commentarius in ecclesiasticum
+  - commentarius in epistolam ad colossenses
+  - commentarius in epistolam ad ephesios
+  - commentarius in epistolam ad galatas
+  - commentarius in epistolam ad hebraeos
+  - commentarius in epistolam ad philippenses
+  - commentarius in epistolam ad romanos
+  - commentarius in epistolam ad titum
+  - commentarius in epistolam iacobi
+  - commentarius in epistolam primam ad corinthios
+  - commentarius in epistolam primam ad thessalonicenses
+  - commentarius in epistolam primam ad timotheum
+  - commentarius in epistolam primam ioannis
+  - commentarius in epistolam primam petri
+  - commentarius in epistolam secundam ad corinthios
+  - commentarius in epistolam secundam ad thessalonicenses
+  - commentarius in epistolam secundam ad timotheum
+  - commentarius in esther
+  - commentarius in exodum
+  - commentarius in ezechielem
+  - commentarius in genesim
+  - commentarius in habacuc
+  - commentarius in ieremiam
+  - commentarius in ioannem
+  - commentarius in ioel
+  - commentarius in ionam
+  - commentarius in iosue
+  - commentarius in isaiam
+  - commentarius in leviticum
+  - commentarius in librum esther
+  - commentarius in librum primum paralipomenon
+  - commentarius in librum primum regum
+  - commentarius in librum sapientiae
+  - commentarius in librum secundum machabaeorum
+  - commentarius in librum secundum paralipomenon
+  - commentarius in librum secundum regum
+  - commentarius in librum tertium regum
+  - commentarius in lucam
+  - commentarius in malachiam
+  - commentarius in marcum
+  - commentarius in matthaeum
+  - commentarius in michaeam
+  - commentarius in numeros
+  - commentarius in osee
+  - commentarius in primam epistolam ad corinthios
+  - commentarius in primam epistolam ad thessalonicenses
+  - commentarius in primam epistolam ad timotheum
+  - commentarius in primam epistolam ioannis
+  - commentarius in primam epistolam petri
+  - commentarius in primum librum regum
+  - commentarius in proverbia
+  - commentarius in quartum librum regum
+  - commentarius in sapientiam
+  - commentarius in secundam epistolam ad corinthios
+  - commentarius in secundam epistolam ad thessalonicenses
+  - commentarius in secundam epistolam ad timotheum
+  - commentarius in secundam epistolam petri
+  - commentarius in secundum librum regum
+  - commentarius in sophoniam
+  - commentarius in tertium librum regum
+  - commentarius in threnos
+  - commentarius in zachariam
+  - commentary on 1 chronicles
+  - commentary on 1 corinthians
+  - commentary on 1 john
+  - commentary on 1 kings
+  - commentary on 1 peter
+  - commentary on 1 samuel
+  - commentary on 1 thessalonians
+  - commentary on 1 timothy
+  - commentary on 2 chronicles
+  - commentary on 2 corinthians
+  - commentary on 2 maccabees
+  - commentary on 2 samuel
+  - commentary on 2 thessalonians
+  - commentary on 2 timothy
+  - commentary on acts
+  - commentary on amos
+  - commentary on baruch
+  - commentary on colossians
+  - commentary on daniel
+  - commentary on deuteronomy
+  - commentary on ecclesiastes
+  - commentary on ephesians
+  - commentary on esther
+  - commentary on exodus
+  - commentary on ezekiel
+  - commentary on galatians
+  - commentary on genesis
+  - commentary on habakkuk
+  - commentary on hebrews
+  - commentary on hosea
+  - commentary on isaiah
+  - commentary on james
+  - commentary on jeremiah
+  - commentary on joel
+  - commentary on john
+  - commentary on jonah
+  - commentary on lamentations
+  - commentary on luke
+  - commentary on malachi
+  - commentary on mark
+  - commentary on matthew
+  - commentary on micah
+  - commentary on numbers
+  - commentary on philippians
+  - commentary on proverbs
+  - commentary on revelation
+  - commentary on romans
+  - commentary on sirach
+  - commentary on titus
+  - commentary on wisdom
+  - commentary on zechariah
+  - commentary on zephaniah
+  - the great commentary
+  - the great commentary of cornelius a lapide
+- author: Cyprian of Carthage
+  work: De dominica oratione
+  uses: 1
+  attested_by: 1
+  titles:
+  - de dominica oratione
+  - on the lord's prayer
+- author: Cyril of Alexandria
+  work: Commentarius in Isaiam
+  uses: 96
+  attested_by: 3
+  titles:
+  - commentarius in isaiam
+  - commentarius in isaiam prophetam
+  - commentary on isaiah
+  - explanatio in isaiam prophetam
+  - in isaiam commentarius
+  - in isaiam prophetam
+  - in isaiam prophetam commentarius
+- author: Cyril of Alexandria
+  work: Commentarius in Lucam
+  uses: 75
+  attested_by: 3
+  titles:
+  - commentarii in lucam
+  - commentarius in lucam
+  - commentary on luke
+  - commentary on the gospel of luke
+  - explanatio in lucae evangelium
+  - homiliae in lucam
+  - homilies on the gospel of luke
+  - in lucam homiliae
+- author: Cyril of Alexandria
+  work: Commentarius in xii prophetas minores
+  uses: 63
+  attested_by: 3
+  titles:
+  - commentarius in abacuc
+  - commentarius in amos
+  - commentarius in amos prophetam
+  - commentarius in duodecim prophetas minores
+  - commentarius in habacuc
+  - commentarius in habacuc prophetam
+  - commentarius in ioel
+  - commentarius in ionam
+  - commentarius in malachiam
+  - commentarius in malachiam prophetam
+  - commentarius in michaeam
+  - commentarius in michaeam prophetam
+  - commentarius in osee
+  - commentarius in sophoniam
+  - commentarius in sophoniam prophetam
+  - commentarius in xii prophetas minores
+  - commentarius in zachariam
+  - commentarius in zachariam prophetam
+  - commentary on amos
+  - commentary on habakkuk
+  - commentary on hosea
+  - commentary on joel
+  - commentary on jonah
+  - commentary on malachi
+  - commentary on micah
+  - commentary on the twelve prophets
+  - commentary on zechariah
+  - commentary on zephaniah
+  - explanatio in amos
+  - explanatio in duodecim prophetas minores
+  - explanatio in habacuc
+  - explanatio in ioel
+  - explanatio in ionam
+  - explanatio in malachiam
+  - explanatio in michaeam
+  - explanatio in osee
+  - explanatio in sophoniam
+  - explanatio in zachariam
+  - in amos explanatio
+  - in duodecim prophetas
+  - in duodecim prophetas minores
+  - in habacuc explanatio
+  - in malachiam explanatio
+  - in michaeam explanatio
+  - in sophoniam explanatio
+  - in xii prophetas minores
+  - in zachariam explanatio
+- author: Cyril of Alexandria
+  work: Glaphyra in Pentateuchum
+  uses: 61
+  attested_by: 3
+  titles:
+  - elegant comments on exodus
+  - elegant comments on genesis
+  - elegant comments on the pentateuch
+  - glaphyra
+  - glaphyra in deuteronomium
+  - glaphyra in exodum
+  - glaphyra in genesim
+  - glaphyra in numeros
+  - glaphyra in pentateuchum
+  - glaphyra on exodus
+  - glaphyra on genesis
+  - glaphyrorum in exodum libri
+  - glaphyrorum in exodum libri tres
+  - glaphyrorum in genesim libri septem
+  - glaphyrorum in numeros liber
+  - glaphyrorum in pentateuchum libri
+- author: Cyril of Alexandria
+  work: Commentarius in Ioannem
+  uses: 59
+  attested_by: 3
+  titles:
+  - commentarii in ioannem
+  - commentarius in ioannem
+  - commentarius in iohannem
+  - commentary on the gospel of john
+  - explanatio in evangelium ioannis
+  - explanatio in ioannem
+  - expositio in ioannem
+  - in ioannis evangelium
+  - in ioannis evangelium commentarii
+- author: Denis the Carthusian
+  work: Enarrationes in universam Bibliam
+  uses: 996
+  attested_by: 3
+  titles:
+  - commentaria in actus apostolorum
+  - commentaria in amos
+  - commentaria in apocalypsim
+  - commentaria in baruch
+  - commentaria in danielem
+  - commentaria in deuteronomium
+  - commentaria in ecclesiasticum
+  - commentaria in epistolam ad colossenses
+  - commentaria in epistolam ad ephesios
+  - commentaria in epistolam ad galatas
+  - commentaria in epistolam ad hebraeos
+  - commentaria in epistolam ad philippenses
+  - commentaria in epistolam ad romanos
+  - commentaria in epistolam ad titum
+  - commentaria in epistolam iacobi
+  - commentaria in esther
+  - commentaria in exodum
+  - commentaria in ezechielem
+  - commentaria in genesim
+  - commentaria in habacuc
+  - commentaria in ieremiam
+  - commentaria in ioannem
+  - commentaria in iob
+  - commentaria in iosue
+  - commentaria in isaiam
+  - commentaria in leviticum
+  - commentaria in lucam
+  - commentaria in malachiam
+  - commentaria in marcum
+  - commentaria in matthaeum
+  - commentaria in michaeam
+  - commentaria in numeros
+  - commentaria in omnes libros bibliorum
+  - commentaria in omnes libros sacrae scripturae
+  - commentaria in primam epistolam ad corinthios
+  - commentaria in primam epistolam ad thessalonicenses
+  - commentaria in primam epistolam ad timotheum
+  - commentaria in primam epistolam ioannis
+  - commentaria in primam epistolam petri
+  - commentaria in primum librum regum
+  - commentaria in proverbia
+  - commentaria in psalmos
+  - commentaria in quartum librum regum
+  - commentaria in sacram scripturam
+  - commentaria in sapientiam
+  - commentaria in secundam epistolam ad corinthios
+  - commentaria in secundam epistolam ad thessalonicenses
+  - commentaria in secundam epistolam ad timotheum
+  - commentaria in secundam epistolam petri
+  - commentaria in secundum librum regum
+  - commentaria in sophoniam
+  - commentaria in tertium librum regum
+  - commentaria in universam sacram scripturam
+  - commentaria in zachariam
+  - commentary on 1 chronicles
+  - commentary on 1 corinthians
+  - commentary on 1 john
+  - commentary on 1 kings
+  - commentary on 1 peter
+  - commentary on 1 samuel
+  - commentary on 1 thessalonians
+  - commentary on 1 timothy
+  - commentary on 2 chronicles
+  - commentary on 2 corinthians
+  - commentary on 2 maccabees
+  - commentary on 2 samuel
+  - commentary on 2 thessalonians
+  - commentary on 2 timothy
+  - commentary on acts
+  - commentary on amos
+  - commentary on baruch
+  - commentary on colossians
+  - commentary on daniel
+  - commentary on deuteronomy
+  - commentary on ecclesiastes
+  - commentary on ephesians
+  - commentary on esther
+  - commentary on exodus
+  - commentary on ezekiel
+  - commentary on galatians
+  - commentary on genesis
+  - commentary on habakkuk
+  - commentary on hebrews
+  - commentary on hosea
+  - commentary on isaiah
+  - commentary on james
+  - commentary on jeremiah
+  - commentary on job
+  - commentary on joel
+  - commentary on john
+  - commentary on jonah
+  - commentary on lamentations
+  - commentary on luke
+  - commentary on malachi
+  - commentary on mark
+  - commentary on matthew
+  - commentary on micah
+  - commentary on numbers
+  - commentary on philippians
+  - commentary on proverbs
+  - commentary on psalms
+  - commentary on revelation
+  - commentary on romans
+  - commentary on sirach
+  - commentary on titus
+  - commentary on wisdom
+  - commentary on zechariah
+  - commentary on zephaniah
+  - dionysius cartusianus, enarrationes
+  - enarratio in abacuc
+  - enarratio in acta apostolorum
+  - enarratio in actus apostolorum
+  - enarratio in amos
+  - enarratio in apocalypsim
+  - enarratio in apocalypsin
+  - enarratio in baruch
+  - enarratio in danielem
+  - enarratio in deuteronomium
+  - enarratio in ecclesiasten
+  - enarratio in ecclesiasticum
+  - enarratio in epistolam ad colossenses
+  - enarratio in epistolam ad ephesios
+  - enarratio in epistolam ad galatas
+  - enarratio in epistolam ad hebraeos
+  - enarratio in epistolam ad philemonem
+  - enarratio in epistolam ad philippenses
+  - enarratio in epistolam ad romanos
+  - enarratio in epistolam ad titum
+  - enarratio in epistolam i ad corinthios
+  - enarratio in epistolam i ad thessalonicenses
+  - enarratio in epistolam i ad timotheum
+  - enarratio in epistolam iacobi
+  - enarratio in epistolam ii ad corinthios
+  - enarratio in epistolam ii ad thessalonicenses
+  - enarratio in epistolam ii ad timotheum
+  - enarratio in epistolam primam ad corinthios
+  - enarratio in epistolam primam ad thessalonicenses
+  - enarratio in epistolam primam ad timotheum
+  - enarratio in epistolam primam ioannis
+  - enarratio in epistolam primam petri
+  - enarratio in epistolam secundam ad corinthios
+  - enarratio in epistolam secundam ad thessalonicenses
+  - enarratio in epistolam secundam ad timotheum
+  - enarratio in epistulam iacobi
+  - enarratio in epistulam primam ioannis
+  - enarratio in epistulam primam petri
+  - enarratio in esther
+  - enarratio in evangelium secundum ioannem
+  - enarratio in evangelium secundum lucam
+  - enarratio in evangelium secundum marcum
+  - enarratio in evangelium secundum matthaeum
+  - enarratio in exodum
+  - enarratio in ezechielem
+  - enarratio in genesim
+  - enarratio in habacuc
+  - enarratio in ieremiam
+  - enarratio in ioannem
+  - enarratio in iob
+  - enarratio in ioel
+  - enarratio in ionam
+  - enarratio in iosue
+  - enarratio in isaiam
+  - enarratio in leviticum
+  - enarratio in librum esther
+  - enarratio in librum iob
+  - enarratio in librum nehemiae
+  - enarratio in librum primum paralipomenon
+  - enarratio in librum primum regum
+  - enarratio in librum quartum regum
+  - enarratio in librum sapientiae
+  - enarratio in librum secundum machabaeorum
+  - enarratio in librum secundum paralipomenon
+  - enarratio in librum secundum regum
+  - enarratio in librum tertium regum
+  - enarratio in librum tobiae
+  - enarratio in lucam
+  - enarratio in malachiam
+  - enarratio in marcum
+  - enarratio in matthaeum
+  - enarratio in michaeam
+  - enarratio in numeros
+  - enarratio in osee
+  - enarratio in primam epistolam ioannis
+  - enarratio in primam epistolam petri
+  - enarratio in primum librum regum
+  - enarratio in proverbia
+  - enarratio in psalmos
+  - enarratio in quartum librum regum
+  - enarratio in sapientiam
+  - enarratio in secundam epistolam petri
+  - enarratio in secundum librum regum
+  - enarratio in sophoniam
+  - enarratio in tertium librum regum
+  - enarratio in threnos
+  - enarratio in zachariam
+  - enarrationes in actus apostolorum
+  - enarrationes in amos
+  - enarrationes in apocalypsim
+  - enarrationes in baruch
+  - enarrationes in danielem
+  - enarrationes in davidicum psalterium
+  - enarrationes in deuteronomium
+  - enarrationes in ecclesiasten
+  - enarrationes in ecclesiasticum
+  - enarrationes in epistolam ad colossenses
+  - enarrationes in epistolam ad ephesios
+  - enarrationes in epistolam ad galatas
+  - enarrationes in epistolam ad hebraeos
+  - enarrationes in epistolam ad philippenses
+  - enarrationes in epistolam ad romanos
+  - enarrationes in epistolam ad titum
+  - enarrationes in epistolam iacobi
+  - enarrationes in epistolam primam ad corinthios
+  - enarrationes in epistolam primam ad thessalonicenses
+  - enarrationes in epistolam primam ad timotheum
+  - enarrationes in epistolam primam ioannis
+  - enarrationes in epistolam primam petri
+  - enarrationes in epistolam secundam ad corinthios
+  - enarrationes in epistolam secundam ad thessalonicenses
+  - enarrationes in epistolam secundam ad timotheum
+  - enarrationes in exodum
+  - enarrationes in ezechielem
+  - enarrationes in genesim
+  - enarrationes in habacuc
+  - enarrationes in ieremiam
+  - enarrationes in ioannem
+  - enarrationes in iob
+  - enarrationes in ioel
+  - enarrationes in ionam
+  - enarrationes in isaiam
+  - enarrationes in librum esther
+  - enarrationes in librum primum paralipomenon
+  - enarrationes in librum primum regum
+  - enarrationes in librum sapientiae
+  - enarrationes in librum secundum machabaeorum
+  - enarrationes in librum secundum paralipomenon
+  - enarrationes in librum secundum regum
+  - enarrationes in librum tertium regum
+  - enarrationes in lucam
+  - enarrationes in malachiam
+  - enarrationes in marcum
+  - enarrationes in matthaeum
+  - enarrationes in michaeam
+  - enarrationes in numeros
+  - enarrationes in osee
+  - enarrationes in proverbia
+  - enarrationes in psalmos
+  - enarrationes in sophoniam
+  - enarrationes in threnos
+  - enarrationes in universam bibliam
+  - enarrationes in universam sacram scripturam
+  - enarrationes in universos libros sacrae scripturae
+  - enarrationes in zachariam
+  - expositio in actus apostolorum
+  - expositio in amos
+  - expositio in apocalypsim
+  - expositio in baruch
+  - expositio in danielem
+  - expositio in deuteronomium
+  - expositio in ecclesiasticum
+  - expositio in epistolam ad colossenses
+  - expositio in epistolam ad ephesios
+  - expositio in epistolam ad galatas
+  - expositio in epistolam ad hebraeos
+  - expositio in epistolam ad philippenses
+  - expositio in epistolam ad romanos
+  - expositio in epistolam ad titum
+  - expositio in epistolam iacobi
+  - expositio in esther
+  - expositio in exodum
+  - expositio in ezechielem
+  - expositio in genesim
+  - expositio in habacuc
+  - expositio in ieremiam
+  - expositio in ioannem
+  - expositio in iob
+  - expositio in iosue
+  - expositio in isaiam
+  - expositio in leviticum
+  - expositio in lucam
+  - expositio in malachiam
+  - expositio in marcum
+  - expositio in matthaeum
+  - expositio in michaeam
+  - expositio in numeros
+  - expositio in primam epistolam ad corinthios
+  - expositio in primam epistolam ad thessalonicenses
+  - expositio in primam epistolam ad timotheum
+  - expositio in primam epistolam ioannis
+  - expositio in primam epistolam petri
+  - expositio in primum librum regum
+  - expositio in proverbia
+  - expositio in psalmos
+  - expositio in quartum librum regum
+  - expositio in sapientiam
+  - expositio in secundam epistolam ad corinthios
+  - expositio in secundam epistolam ad thessalonicenses
+  - expositio in secundam epistolam ad timotheum
+  - expositio in secundam epistolam petri
+  - expositio in secundum librum regum
+  - expositio in sophoniam
+  - expositio in tertium librum regum
+  - expositio in zachariam
+  - opera omnia in sacram scripturam
+- author: Denis the Carthusian
+  work: Enarrationes in omnes libros sacrae Scripturae
+  uses: 489
+  attested_by: 2
+  titles:
+  - commentaria in universam bibliam
+  - enarrationes in omnes libros bibliae
+  - enarrationes in omnes libros sacrae scripturae
+  - enarrationes in sacram scripturam
+  - enarrationes in vetus et novum testamentum
+  - enarrationes piae ac eruditae in libros sacrae scripturae
+- author: Didymus the Blind
+  work: In epistolas catholicas brevis enarratio
+  uses: 25
+  attested_by: 3
+  titles:
+  - brief commentary on the catholic epistles
+  - commentary on the catholic epistles
+  - enarratio in epistolas canonicas
+  - in epistolas canonicas brevis enarratio
+  - in epistolas catholicas brevis enarratio
+  - in epistulas catholicas brevis enarratio
+- author: Didymus the Blind
+  work: Commentarius in Zachariam
+  uses: 5
+  attested_by: 3
+  titles:
+  - commentarii in zachariam
+  - commentarii in zachariam libri quinque
+  - commentarius in zachariam
+  - commentary on zechariah
+  - in zachariam
+- author: Didymus the Blind
+  work: Commentarii in Iob
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentarii in iob
+  - commentary on job
+- author: Didymus the Blind
+  work: Commentarii in Ecclesiasten
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentarii in ecclesiasten
+  - commentary on ecclesiastes
+- author: Ephrem the Syrian
+  work: Commentarius in Genesim
+  uses: 24
+  attested_by: 3
+  titles:
+  - commentarius in genesim
+  - commentary on genesis
+  - commentary on the book of genesis
+  - explanation of genesis
+  - in genesim commentarii
+  - in genesim commentarius
+- author: Ephrem the Syrian
+  work: Commentary on Exodus
+  uses: 16
+  attested_by: 3
+  titles:
+  - commentarius in exodum
+  - commentary on exodus
+  - explanation of exodus
+  - in exodum commentarius
+- author: Ephrem the Syrian
+  work: Commentarii in Genesim et in Exodum
+  uses: 7
+  attested_by: 1
+  titles:
+  - commentarii in genesim et in exodum
+  - commentary on genesis and exodus
+- author: Eusebius of Caesarea
+  work: Commentarius in Isaiam
+  uses: 96
+  attested_by: 3
+  titles:
+  - commentarius in isaiam
+  - commentary on isaiah
+  - in isaiam commentaria
+  - in isaiam prophetam commentaria
+  - in isaiam prophetam commentarius
+- author: Euthymius Zigabenus
+  work: Commentarius in Psalterium
+  uses: 133
+  attested_by: 1
+  titles:
+  - commentarius in psalmos
+  - commentarius in psalterium
+  - expositio in psalmos
+- author: Euthymius Zigabenus
+  work: Commentarius in quatuor Evangelia
+  uses: 59
+  attested_by: 1
+  titles:
+  - commentarius in matthaeum, marcum, lucam et ioannem
+  - commentarius in quatuor evangelia
+  - enarrationes in quatuor evangelia
+- author: Gregory of Nazianzus
+  work: Oratio XV in Machabaeos
+  uses: 1
+  attested_by: 1
+  titles:
+  - in maccabaeorum laudem
+  - oratio xv in machabaeos
+  - 'oration 15: on the maccabees'
+- author: Gregory of Nazianzus
+  work: 'Oratio XV: In Maccabaeorum laudem'
+  uses: 1
+  attested_by: 1
+  titles:
+  - in machabaeorum laudem
+  - 'oratio xv: in maccabaeorum laudem'
+  - oration 15, in praise of the maccabees
+- author: Gregory of Nazianzus
+  work: 'Oratio XV: In Machabaeorum laudem'
+  uses: 1
+  attested_by: 1
+  titles:
+  - in machabaeos
+  - on the maccabees
+  - 'oratio xv: in machabaeorum laudem'
+  - oration 15, on the maccabees
+- author: Gregory of Nyssa
+  work: De vita Moysis
+  uses: 33
+  attested_by: 3
+  titles:
+  - de vita mosis
+  - de vita moysis
+  - de vita moysis legislatoris
+  - in vitam moysis
+  - life of moses
+  - the life of moses
+  - vita moysis
+- author: Gregory of Nyssa
+  work: Homiliae in Ecclesiasten
+  uses: 6
+  attested_by: 3
+  titles:
+  - homiliae in ecclesiasten
+  - homilies on ecclesiastes
+  - in ecclesiasten homiliae octo
+  - in ecclesiasten homiliae viii
+- author: Gregory of Nyssa
+  work: Apologia in Hexaemeron
+  uses: 3
+  attested_by: 3
+  titles:
+  - apologetic treatise on the hexaemeron
+  - apologia in hexaemeron
+  - explanatory discourse on the hexaemeron
+  - explicatio apologetica in hexaemeron
+  - in hexaemeron
+  - in hexaemeron explicatio apologetica
+  - on the six days of creation
+- author: Gregory of Nyssa
+  work: De beatitudinibus
+  uses: 1
+  attested_by: 1
+  titles:
+  - de beatitudinibus
+  - homilies on the beatitudes
+  - orationes viii de beatitudinibus
+- author: Gregory of Nyssa
+  work: De oratione dominica
+  uses: 1
+  attested_by: 1
+  titles:
+  - de oratione dominica
+  - five homilies on the lord's prayer
+  - homilies on the lord's prayer
+- author: Gregory Thaumaturgus
+  work: Metaphrasis in Ecclesiasten
+  uses: 3
+  attested_by: 3
+  titles:
+  - in ecclesiasten metaphrasis
+  - metaphrasis in ecclesiasten
+  - paraphrase of ecclesiastes
+  - paraphrasis in ecclesiasten
+- author: Gregory the Great
+  work: Homiliae in Evangelia
+  uses: 59
+  attested_by: 3
+  titles:
+  - forty gospel homilies
+  - homiliae in evangelia
+  - homiliae xl in evangelia
+  - homiliarum in evangelia libri duo
+  - homilies on the gospels
+  - xl homiliarum in evangelia libri duo
+- author: Gregory the Great
+  work: Moralia in Iob
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentary on job
+  - expositio in librum iob
+  - magna moralia
+  - moral reflections on job
+  - moralia in iob
+  - moralia sive expositio in iob
+  - moralium libri xxxv
+  - morals on the book of job
+- author: Gregory the Great
+  work: Expositio in librum primum Regum
+  uses: 4
+  attested_by: 3
+  titles:
+  - commentary on first kings
+  - commentary on first samuel
+  - expositio in librum i regum
+  - expositio in librum primum regum
+  - expositiones in librum primum regum
+  - in i regum expositio
+  - in i regum expositionum libri vi
+  - in librum primum regum expositio
+  - in librum primum regum expositiones
+- author: Gregory the Great
+  work: Expositio in septem psalmos paenitentiales
+  uses: 3
+  attested_by: 1
+  titles:
+  - commentary on the seven penitential psalms
+  - expositio in septem psalmos paenitentiales
+  - expositio super psalmos poenitentiales
+  - in septem psalmos poenitentiales expositio
+- author: Gregory the Great
+  work: Homiliae in Hiezechihelem prophetam
+  uses: 3
+  attested_by: 3
+  titles:
+  - homiliae in ezechielem
+  - homiliae in ezechielem prophetam
+  - homiliae in hiezechihelem prophetam
+  - homiliarum in ezechielem libri duo
+  - homilies on ezekiel
+- author: Haimo of Auxerre
+  work: Commentarium in Isaiam
+  uses: 10
+  attested_by: 1
+  titles:
+  - commentarium in isaiam
+  - expositio in isaiam
+  - haymo of halberstadt, commentarium in isaiam
+- author: Haimo of Auxerre
+  work: Enarratio in duodecim prophetas minores
+  uses: 9
+  attested_by: 1
+  titles:
+  - enarratio in duodecim prophetas minores
+  - haymo of halberstadt, enarratio in duodecim prophetas minores
+- author: Haimo of Auxerre
+  work: Expositio in Apocalypsin
+  uses: 2
+  attested_by: 1
+  titles:
+  - expositio in apocalypsin
+  - haymo of halberstadt, expositio in apocalypsin
+- author: Haimo of Halberstadt
+  work: Expositio in omnes epistolas sancti Pauli
+  uses: 27
+  attested_by: 1
+  titles:
+  - enarratio in d. pauli epistolas
+  - expositio in omnes epistolas sancti pauli
+- author: Haimo of Halberstadt
+  work: Commentarius in Isaiam
+  uses: 11
+  attested_by: 1
+  titles:
+  - commentariorum in isaiam libri tres
+  - commentarius in isaiam
+- author: Haymo of Halberstadt
+  work: Expositio in omnes S. Pauli Epistolas
+  uses: 85
+  attested_by: 2
+  titles:
+  - commentaria in epistolas pauli
+  - enarratio in epistolas pauli
+  - expositio in epistolam ad colossenses
+  - expositio in epistolam ad ephesios
+  - expositio in epistolam ad galatas
+  - expositio in epistolam ad hebraeos
+  - expositio in epistolam ad philippenses
+  - expositio in epistolam ad romanos
+  - expositio in epistolam ad titum
+  - expositio in epistolam i ad corinthios
+  - expositio in epistolam i ad thessalonicenses
+  - expositio in epistolam i ad timotheum
+  - expositio in epistolam ii ad corinthios
+  - expositio in epistolam ii ad thessalonicenses
+  - expositio in epistolam ii ad timotheum
+  - expositio in omnes epistolas pauli
+  - expositio in omnes epistolas sancti pauli
+  - expositio in omnes s. pauli epistolas
+  - in divi pauli epistolas expositio
+- author: Haymo of Halberstadt
+  work: Commentaria in Isaiam
+  uses: 33
+  attested_by: 2
+  titles:
+  - commentaria in isaiam
+  - commentarium in isaiam
+  - commentary on isaiah
+  - enarratio in isaiam
+  - expositio in isaiam prophetam
+  - in isaiam libri tres
+  - in isaiam prophetam libri tres
+- author: Haymo of Halberstadt
+  work: Enarratio in duodecim prophetas minores
+  uses: 18
+  attested_by: 2
+  titles:
+  - commentaria in prophetas minores
+  - commentary on amos
+  - commentary on habakkuk
+  - commentary on hosea
+  - commentary on joel
+  - commentary on malachi
+  - commentary on zechariah
+  - enarratio in abacuc
+  - enarratio in amos
+  - enarratio in amos prophetam
+  - enarratio in duodecim prophetas minores
+  - enarratio in habacuc prophetam
+  - enarratio in ioel
+  - enarratio in malachiam
+  - enarratio in malachiam prophetam
+  - enarratio in michaeam prophetam
+  - enarratio in osee
+  - enarratio in sophoniam prophetam
+  - enarratio in zachariam
+  - enarratio in zachariam prophetam
+  - in duodecim prophetas minores
+- author: Haymo of Halberstadt
+  work: Expositio in Apocalypsin
+  uses: 4
+  attested_by: 1
+  titles:
+  - commentaria in apocalypsin
+  - commentary on the apocalypse
+  - expositio in apocalypsin
+  - in apocalypsin libri septem
+- author: Hesychius of Jerusalem
+  work: Commentarius in Leviticum
+  uses: 4
+  attested_by: 2
+  titles:
+  - commentarius in leviticum
+  - commentary on leviticus
+  - in leviticum libri septem
+- author: Hilary of Poitiers
+  work: Tractatus super Psalmos
+  uses: 133
+  attested_by: 3
+  titles:
+  - commentarius in psalmos
+  - commentary on the psalms
+  - homilies on the psalms
+  - tractatus in psalmos
+  - tractatus mysteriorum in psalmos
+  - tractatus super psalmos
+- author: Hilary of Poitiers
+  work: Commentarius in Matthaeum
+  uses: 79
+  attested_by: 3
+  titles:
+  - commentarius in matthaeum
+  - commentary on matthew
+  - in evangelium matthaei commentarius
+  - in matthaeum commentarius
+  - tractatus in evangelium matthaei
+  - tractatus in matthaeum
+- author: Hippolytus of Rome
+  work: Commentarium in Danielem
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentarium in danielem
+  - commentarius in danielem
+  - commentary on daniel
+  - in danielem
+  - in danielem commentaria
+  - scholia in danielem
+  - scholia on daniel
+- author: Hugh of Saint Victor
+  work: Homiliae in Ecclesiasten
+  uses: 2
+  attested_by: 1
+  titles:
+  - homiliae in ecclesiasten
+  - in salomonis ecclesiasten homiliae xix
+- author: Hugh of Saint-Cher
+  work: Postillae in universa Biblia
+  uses: 1144
+  attested_by: 3
+  titles:
+  - hugo de sancto caro, postillae
+  - opera omnia in universum vetus et novum testamentum
+  - postilla in actus apostolorum
+  - postilla in amos
+  - postilla in apocalypsim
+  - postilla in baruch
+  - postilla in danielem
+  - postilla in deuteronomium
+  - postilla in ecclesiasticum
+  - postilla in epistolam ad colossenses
+  - postilla in epistolam ad ephesios
+  - postilla in epistolam ad galatas
+  - postilla in epistolam ad hebraeos
+  - postilla in epistolam ad philippenses
+  - postilla in epistolam ad romanos
+  - postilla in epistolam ad titum
+  - postilla in epistolam iacobi
+  - postilla in esther
+  - postilla in exodum
+  - postilla in ezechielem
+  - postilla in genesim
+  - postilla in habacuc
+  - postilla in ieremiam
+  - postilla in ioannem
+  - postilla in iob
+  - postilla in iosue
+  - postilla in isaiam
+  - postilla in leviticum
+  - postilla in lucam
+  - postilla in malachiam
+  - postilla in marcum
+  - postilla in matthaeum
+  - postilla in michaeam
+  - postilla in numeros
+  - postilla in primam epistolam ad corinthios
+  - postilla in primam epistolam ad thessalonicenses
+  - postilla in primam epistolam ad timotheum
+  - postilla in primam epistolam ioannis
+  - postilla in primam epistolam petri
+  - postilla in primum librum regum
+  - postilla in proverbia
+  - postilla in psalmos
+  - postilla in quartum librum regum
+  - postilla in sapientiam
+  - postilla in secundam epistolam ad corinthios
+  - postilla in secundam epistolam ad thessalonicenses
+  - postilla in secundam epistolam ad timotheum
+  - postilla in secundam epistolam petri
+  - postilla in secundum librum regum
+  - postilla in sophoniam
+  - postilla in tertium librum regum
+  - postilla in zachariam
+  - postilla super totam bibliam
+  - postillae in universa biblia
+  - postillae in universa biblia iuxta quadruplicem sensum
+  - postils on the whole bible
+- author: Hugh of Saint-Victor
+  work: Homiliae in Ecclesiasten
+  uses: 1
+  attested_by: 1
+  titles:
+  - homiliae in ecclesiasten
+  - homilies on ecclesiastes
+  - in salomonis ecclesiasten homiliae xix
+- author: Hugh of Saint-Victor
+  work: Homiliae XIX in Ecclesiasten
+  uses: 1
+  attested_by: 1
+  titles:
+  - homiliae xix in ecclesiasten
+  - in salomonis ecclesiasten homiliae
+- author: Hugh of St. Victor
+  work: Homiliae in Ecclesiasten
+  uses: 2
+  attested_by: 1
+  titles:
+  - expositio in ecclesiasten
+  - homiliae in ecclesiasten
+  - homilies on ecclesiastes
+  - in salomonis ecclesiasten homiliae xix
+- author: Isidore of Seville
+  work: Quaestiones in Vetus Testamentum
+  uses: 131
+  attested_by: 3
+  titles:
+  - allegoriae quaedam sacrae scripturae
+  - commentary on the old testament
+  - expositio in vetus testamentum
+  - in deuteronomium expositio
+  - in exodum expositio
+  - in genesim expositio
+  - in leviticum expositio
+  - in libros veteris ac novi testamenti prooemia
+  - in librum iosue expositio
+  - in numeros expositio
+  - in primum librum regum expositio
+  - in quartum librum regum expositio
+  - in secundum librum regum expositio
+  - in tertium librum regum expositio
+  - mysticorum expositiones sacramentorum
+  - mysticorum expositiones sacramentorum seu quaestiones in vetus testamentum
+  - quaestiones in deuteronomium
+  - quaestiones in exodum
+  - quaestiones in genesim
+  - quaestiones in iosue
+  - quaestiones in leviticum
+  - quaestiones in libros regum
+  - quaestiones in librum primum regum
+  - quaestiones in librum secundum regum
+  - quaestiones in librum tertium regum
+  - quaestiones in numeros
+  - quaestiones in vetus testamentum
+  - questions on the old testament
+- author: Jerome
+  work: Commentarioli in Psalmos
+  uses: 208
+  attested_by: 3
+  titles:
+  - commentaries on the psalms
+  - commentarii in psalmos
+  - commentarioli in psalmos
+  - commentarioli in psalterium
+  - commentariolus in psalmos
+  - short notes on the psalms
+- author: Jerome
+  work: Commentariorum in Isaiam libri XVIII
+  uses: 96
+  attested_by: 3
+  titles:
+  - commentarii in esaiam
+  - commentarii in isaiam
+  - commentarii in isaiam prophetam
+  - commentariorum in esaiam libri xviii
+  - commentariorum in isaiam libri xviii
+  - commentary on isaiah
+  - explanatio in isaiam prophetam
+  - in esaiam
+  - in esaiam commentarii
+  - in esaiam libri xviii
+- author: Jerome
+  work: Commentariorum in Matthaeum Libri IV
+  uses: 80
+  attested_by: 3
+  titles:
+  - commentarii in evangelium matthaei
+  - commentarii in matthaeum
+  - commentariorum in matheum libri iv
+  - commentariorum in matthaeum libri iv
+  - commentary on matthew
+  - expositio in evangelium matthaei
+  - expositio in matthaeum
+  - in matthaeum
+  - in matthaeum commentarii
+  - in matthaeum libri quattuor
+- author: Jerome
+  work: Tractatus in Psalmos
+  uses: 69
+  attested_by: 1
+  titles:
+  - breviarium in psalmos
+  - commentary on the psalms
+  - homilies on the psalms
+  - tractatus in librum psalmorum
+  - tractatus in psalmos
+  - tractatus lix in psalmos
+  - tractatus sive homiliae in psalmos
+- author: Jerome
+  work: Commentarii in prophetas minores
+  uses: 63
+  attested_by: 3
+  titles:
+  - commentaries on the twelve prophets
+  - commentarii in abacuc
+  - commentarii in abacuc prophetam
+  - commentarii in amos
+  - commentarii in amos prophetam
+  - commentarii in ioel
+  - commentarii in ioel prophetam
+  - commentarii in ioelem prophetam
+  - commentarii in malachiam
+  - commentarii in malachiam prophetam
+  - commentarii in michaeam
+  - commentarii in michaeam prophetam
+  - commentarii in osee
+  - commentarii in osee prophetam
+  - commentarii in prophetas minores
+  - commentarii in sophoniam
+  - commentarii in sophoniam prophetam
+  - commentarii in zachariam
+  - commentarii in zachariam prophetam
+  - commentariorum in abacuc prophetam libri ii
+  - commentariorum in amos prophetam libri iii
+  - commentariorum in osee prophetam libri iii
+  - commentariorum in prophetas minores libri
+  - commentariorum in zachariam prophetam libri iii
+  - commentarius in abacuc prophetam
+  - commentarius in amos prophetam
+  - commentarius in habacuc prophetam
+  - commentarius in ioel prophetam
+  - commentarius in ioelem prophetam
+  - commentarius in ionam
+  - commentarius in ionam prophetam
+  - commentarius in malachiam
+  - commentarius in malachiam prophetam
+  - commentarius in michaeam prophetam
+  - commentarius in osee prophetam
+  - commentarius in sophoniam
+  - commentarius in sophoniam prophetam
+  - commentarius in zachariam prophetam
+  - commentary on amos
+  - commentary on habakkuk
+  - commentary on hosea
+  - commentary on joel
+  - commentary on jonah
+  - commentary on malachi
+  - commentary on micah
+  - commentary on zechariah
+  - commentary on zephaniah
+  - in abacuc
+  - in amos
+  - in amos prophetam explanatio
+  - in duodecim prophetas
+  - in habacuc
+  - in habacuc prophetam explanatio
+  - in ioel
+  - in ioel prophetam explanatio
+  - in ionam
+  - in ionam prophetam explanatio
+  - in malachiam
+  - in malachiam prophetam explanatio
+  - in michaeam
+  - in michaeam prophetam explanatio
+  - in osee
+  - in osee prophetam explanatio
+  - in sophoniam
+  - in sophoniam prophetam explanatio
+  - in zachariam
+  - in zachariam prophetam explanatio
+- author: Jerome
+  work: Commentarii in Hiezechielem
+  uses: 24
+  attested_by: 3
+  titles:
+  - commentarii in ezechielem
+  - commentarii in hiezechielem
+  - commentariorum in ezechielem libri quatuordecim
+  - commentariorum in ezechielem libri xiv
+  - commentariorum in hiezechielem libri xiv
+  - commentary on ezekiel
+  - in hiezechielem
+  - in hiezechielem libri xiv
+  - in hiezechielem prophetam
+- author: Jerome
+  work: Liber quaestionum hebraicarum in Genesim
+  uses: 20
+  attested_by: 3
+  titles:
+  - hebrew questions on genesis
+  - liber hebraicarum quaestionum in genesim
+  - liber quaestionum hebraicarum in genesim
+  - quaestiones hebraicae in genesim
+- author: Jerome
+  work: Commentarii in Epistulam ad Ephesios
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentarii in epistulam ad ephesios
+  - commentarii in epistulam pauli ad ephesios
+  - commentariorum in epistulam ad ephesios libri iii
+  - commentariorum in epistulam ad ephesios libri tres
+  - commentary on ephesians
+  - in epistolam ad ephesios
+  - in epistulam ad ephesios libri tres
+  - in epistulam pauli ad ephesios
+- author: Jerome
+  work: Commentarii in Epistulam ad Galatas
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentarii in epistulam ad galatas
+  - commentarii in epistulam pauli ad galatas
+  - commentariorum in epistulam ad galatas libri iii
+  - commentariorum in epistulam ad galatas libri tres
+  - commentarius in epistolam ad galatas
+  - commentary on galatians
+  - in epistolam ad galatas
+  - in epistulam ad galatas libri tres
+  - in epistulam pauli ad galatas
+- author: Jerome
+  work: Commentarii in Hieremiam
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentarii in hieremiam
+  - commentarii in hieremiam prophetam
+  - commentarii in ieremiam
+  - commentariorum in hieremiam libri vi
+  - commentariorum in ieremiam libri vi
+  - commentary on jeremiah
+  - in hieremiam libri vi
+  - in hieremiam prophetam
+  - in hieremiam prophetam libri sex
+  - in hieremiam prophetam libri vi
+  - in ieremiam prophetam
+- author: Jerome
+  work: Commentarii in Danielem
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentarii in danielem
+  - commentariorum in danielem liber
+  - commentariorum in danielem libri iii
+  - commentary on daniel
+  - explanatio in danielem
+  - in danielem prophetam
+- author: Jerome
+  work: Commentarius in Ecclesiasten
+  uses: 6
+  attested_by: 3
+  titles:
+  - commentarii in ecclesiasten
+  - commentarius in ecclesiasten
+  - commentarius in ecclesiasten liber unus
+  - commentary on ecclesiastes
+  - in ecclesiasten
+  - in ecclesiasten commentarius
+- author: Jerome
+  work: Commentarius in epistulam ad Titum
+  uses: 6
+  attested_by: 3
+  titles:
+  - commentarii in epistulam ad titum
+  - commentarii in epistulam pauli ad titum
+  - commentarius in epistulam ad titum
+  - commentary on titus
+  - in epistolam ad titum
+  - in epistulam ad titum
+  - in epistulam pauli ad titum
+- author: Jerome
+  work: Commentarius in epistulam ad Philemonem
+  uses: 3
+  attested_by: 2
+  titles:
+  - commentarius in epistulam ad philemonem
+  - commentary on philemon
+  - in epistulam ad philemonem liber unus
+- author: Jerome
+  work: Tractatus in Marci evangelium
+  uses: 3
+  attested_by: 1
+  titles:
+  - homilies on the gospel of mark
+  - tractatus in marci evangelium
+- author: Joachim of Fiore
+  work: Expositio in Apocalypsim
+  uses: 4
+  attested_by: 1
+  titles:
+  - expositio in apocalypsim
+  - expositio super apocalypsim
+- author: John Chrysostom
+  work: Expositiones in Psalmos
+  uses: 149
+  attested_by: 3
+  titles:
+  - commentarius in psalmos
+  - commentary on the psalms
+  - expositio in psalmos
+  - expositiones in psalmos
+  - homiliae in psalmos
+  - homilies on the psalms
+  - in psalmos expositio
+  - in psalmos homiliae
+- author: John Chrysostom
+  work: Homiliae in Matthaeum
+  uses: 81
+  attested_by: 3
+  titles:
+  - commentarius in matthaeum
+  - commentary on matthew
+  - homiliae in matthaeum
+  - homilies on the gospel of matthew
+  - homilies on the gospel of saint matthew
+  - in matthaeum homiliae xc
+- author: John Chrysostom
+  work: Homiliae in Ioannem
+  uses: 60
+  attested_by: 3
+  titles:
+  - commentarius in ioannem
+  - commentary on john
+  - homiliae in ioannem
+  - homiliae in iohannem
+  - homilies on the gospel of john
+  - homilies on the gospel of saint john
+  - in ioannem homiliae lxxxviii
+  - in iohannem homiliae lxxxviii
+- author: John Chrysostom
+  work: Homiliae in epistulam ad Romanos
+  uses: 45
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ad romanos
+  - commentary on romans
+  - homiliae in epistolam ad romanos
+  - homiliae in epistulam ad romanos
+  - homilies on romans
+  - homilies on the epistle ad romanos
+  - homilies on the epistle to the romans
+  - in epistolam ad romanos homiliae
+  - in epistulam ad romanos homiliae
+  - in epistulam ad romanos homiliae xxxii
+- author: John Chrysostom
+  work: Homiliae in Acta Apostolorum
+  uses: 42
+  attested_by: 3
+  titles:
+  - commentarius in acta apostolorum
+  - commentary on acts
+  - homiliae in acta apostolorum
+  - homilies on the acts of the apostles
+  - in acta apostolorum homiliae lv
+- author: John Chrysostom
+  work: Homiliae in epistulam i ad Corinthios
+  uses: 39
+  attested_by: 3
+  titles:
+  - commentarius in epistulam i ad corinthios
+  - commentary on 1 corinthians
+  - homiliae in epistolam primam ad corinthios
+  - homiliae in epistulam i ad corinthios
+  - homiliae in epistulam primam ad corinthios
+  - homilies on 1 corinthians
+  - homilies on first corinthians
+  - homilies on the epistle i ad corinthios
+  - homilies on the first epistle to the corinthians
+  - in epistolam primam ad corinthios homiliae
+  - in epistulam i ad corinthios homiliae
+  - in epistulam i ad corinthios homiliae xliv
+- author: John Chrysostom
+  work: Homiliae in epistulam ad Hebraeos
+  uses: 30
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ad hebraeos
+  - commentary on hebrews
+  - homiliae in epistolam ad hebraeos
+  - homiliae in epistulam ad hebraeos
+  - homilies on hebrews
+  - homilies on the epistle ad hebraeos
+  - homilies on the epistle to the hebrews
+  - in epistolam ad hebraeos homiliae
+  - in epistulam ad hebraeos homiliae
+  - in epistulam ad hebraeos homiliae xxxiv
+- author: John Chrysostom
+  work: Homiliae in Genesim
+  uses: 30
+  attested_by: 3
+  titles:
+  - commentary on genesis
+  - homiliae in genesim
+  - homilies on genesis
+  - in genesim homiliae lxvii
+  - sermones in genesim
+  - sixty-seven homilies on genesis
+- author: John Chrysostom
+  work: Homiliae in Epistulam II ad Corinthios
+  uses: 27
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ii ad corinthios
+  - commentary on 2 corinthians
+  - homiliae in epistolam secundam ad corinthios
+  - homiliae in epistulam ii ad corinthios
+  - homiliae in epistulam secundam ad corinthios
+  - homilies on 2 corinthians
+  - homilies on second corinthians
+  - homilies on the epistle ii ad corinthios
+  - homilies on the second epistle to the corinthians
+  - in epistolam secundam ad corinthios homiliae
+  - in epistulam ii ad corinthios homiliae
+  - in epistulam ii ad corinthios homiliae xxx
+- author: John Chrysostom
+  work: Commentarius in Isaiam
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentarius in isaiam
+  - commentary on isaiah
+  - commentary on isaiah 1-8
+  - in isaiam prophetam
+  - in isaiam prophetam interpretatio
+  - interpretatio in isaiam prophetam
+- author: John Chrysostom
+  work: Homiliae in Epistulam ad Ephesios
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ad ephesios
+  - commentary on ephesians
+  - homiliae in epistolam ad ephesios
+  - homiliae in epistulam ad ephesios
+  - homilies on ephesians
+  - homilies on the epistle ad ephesios
+  - homilies on the epistle to the ephesians
+  - in epistolam ad ephesios homiliae
+  - in epistulam ad ephesios homiliae
+  - in epistulam ad ephesios homiliae xxiv
+- author: John Chrysostom
+  work: Commentarius in epistulam ad Galatas
+  uses: 16
+  attested_by: 2
+  titles:
+  - commentarius in epistulam ad galatas
+  - commentary on galatians
+  - commentary on the epistle to the galatians
+  - homilies on galatians
+  - in epistulam ad galatas commentarius
+  - interpretatio epistulae ad galatas
+- author: John Chrysostom
+  work: Homiliae in epistulam i ad Thessalonicenses
+  uses: 15
+  attested_by: 3
+  titles:
+  - commentarius in epistulam i ad thessalonicenses
+  - commentary on 1 thessalonians
+  - homiliae in epistolam primam ad thessalonicenses
+  - homiliae in epistulam i ad thessalonicenses
+  - homiliae in epistulam primam ad thessalonicenses
+  - homilies on 1 thessalonians
+  - homilies on first thessalonians
+  - homilies on the epistle i ad thessalonicenses
+  - homilies on the first epistle to the thessalonians
+  - in epistolam primam ad thessalonicenses homiliae
+  - in epistulam i ad thessalonicenses homiliae
+  - in epistulam i ad thessalonicenses homiliae xi
+- author: John Chrysostom
+  work: Homiliae in epistulam ad Philippenses
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ad philippenses
+  - commentary on philippians
+  - homiliae in epistolam ad philippenses
+  - homiliae in epistulam ad philippenses
+  - homilies on philippians
+  - homilies on the epistle ad philippenses
+  - homilies on the epistle to the philippians
+  - in epistolam ad philippenses homiliae
+  - in epistulam ad philippenses homiliae
+  - in epistulam ad philippenses homiliae xv
+- author: John Chrysostom
+  work: Homiliae in epistulam i ad Timotheum
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentarius in epistulam i ad timotheum
+  - commentary on 1 timothy
+  - homiliae in epistolam primam ad timotheum
+  - homiliae in epistulam i ad timotheum
+  - homiliae in epistulam primam ad timotheum
+  - homilies on 1 timothy
+  - homilies on first timothy
+  - homilies on the epistle i ad timotheum
+  - homilies on the first epistle to timothy
+  - in epistolam primam ad timotheum homiliae
+  - in epistulam i ad timotheum homiliae
+  - in epistulam i ad timotheum homiliae xviii
+- author: John Chrysostom
+  work: Homiliae in epistulam ii ad Timotheum
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ii ad timotheum
+  - commentary on 2 timothy
+  - homiliae in epistolam secundam ad timotheum
+  - homiliae in epistulam ii ad timotheum
+  - homiliae in epistulam secundam ad timotheum
+  - homilies on 2 timothy
+  - homilies on second timothy
+  - homilies on the epistle ii ad timotheum
+  - homilies on the second epistle to timothy
+  - in epistolam secundam ad timotheum homiliae
+  - in epistulam ii ad timotheum homiliae
+  - in epistulam ii ad timotheum homiliae x
+- author: John Chrysostom
+  work: Commentarius in Iob
+  uses: 11
+  attested_by: 3
+  titles:
+  - commentarius in iob
+  - commentary on job
+  - fragmenta in beatum iob
+  - fragmenta in iob
+  - in beatum iob
+  - in iob
+  - in iob commentarius
+- author: John Chrysostom
+  work: Homiliae in epistulam ad Colossenses
+  uses: 9
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ad colossenses
+  - commentary on colossians
+  - homiliae in epistolam ad colossenses
+  - homiliae in epistulam ad colossenses
+  - homilies on colossians
+  - homilies on the epistle ad colossenses
+  - homilies on the epistle to the colossians
+  - in epistolam ad colossenses homiliae
+  - in epistulam ad colossenses homiliae
+  - in epistulam ad colossenses homiliae xii
+- author: John Chrysostom
+  work: Homiliae in epistulam ii ad Thessalonicenses
+  uses: 9
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ii ad thessalonicenses
+  - commentary on 2 thessalonians
+  - homiliae in epistolam secundam ad thessalonicenses
+  - homiliae in epistulam ii ad thessalonicenses
+  - homiliae in epistulam secundam ad thessalonicenses
+  - homilies on 2 thessalonians
+  - homilies on second thessalonians
+  - homilies on the epistle ii ad thessalonicenses
+  - homilies on the second epistle to the thessalonians
+  - in epistolam secundam ad thessalonicenses homiliae
+  - in epistulam ii ad thessalonicenses homiliae
+  - in epistulam ii ad thessalonicenses homiliae v
+- author: John Chrysostom
+  work: Homiliae in epistulam ad Titum
+  uses: 6
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ad titum
+  - homiliae in epistolam ad titum
+  - homiliae in epistulam ad titum
+  - homilies on the epistle ad titum
+  - homilies on the epistle to titus
+  - homilies on titus
+  - in epistolam ad titum homiliae
+  - in epistulam ad titum homiliae
+- author: John Chrysostom
+  work: Homiliae de Maccabeis
+  uses: 3
+  attested_by: 3
+  titles:
+  - de maccabeis homiliae
+  - de machabaeis homiliae
+  - de sanctis maccabaeis
+  - homiliae de maccabeis
+  - homiliae in macchabaeos
+  - homiliae in machabaeos
+  - homilies on the maccabees
+  - in sanctos maccabaeos homiliae
+- author: John Chrysostom
+  work: Homiliae in epistulam ad Philemonem
+  uses: 3
+  attested_by: 2
+  titles:
+  - commentary on philemon
+  - homiliae in epistulam ad philemonem
+  - homilies on philemon
+  - in epistulam ad philemonem homiliae iii
+- author: John Chrysostom
+  work: 'Homiliae in illud: Vidi Dominum'
+  uses: 3
+  attested_by: 3
+  titles:
+  - de seraphim
+  - 'homiliae in illud: vidi dominum'
+  - homilies on isaiah 6
+  - in illud vidi dominum homiliae vi
+  - in illud, vidi dominum (homiliae in oziam)
+- author: John Chrysostom
+  work: Homiliae in Epistulam ad Galatas
+  uses: 2
+  attested_by: 1
+  titles:
+  - homiliae in epistulam ad galatas
+  - homilies on the epistle ad galatas
+- author: John Chrysostom
+  work: De Davide et Saule homiliae tres
+  uses: 1
+  attested_by: 1
+  titles:
+  - de davide et saule homiliae tres
+  - homilies on david and saul
+- author: John Chrysostom
+  work: Interpretatio in Danielem prophetam
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentary on daniel
+  - in danielem prophetam commentarius
+  - interpretatio in danielem prophetam
+- author: Juan Maldonado
+  work: Commentarii in quatuor Evangelistas
+  uses: 173
+  attested_by: 3
+  titles:
+  - commentarii in quatuor evangelia
+  - commentarii in quatuor evangelistas
+  - 'commentarii in quatuor evangelistas: in ioannem'
+  - 'commentarii in quatuor evangelistas: in lucam'
+  - 'commentarii in quatuor evangelistas: in marcum'
+  - 'commentarii in quatuor evangelistas: in matthaeum'
+  - commentarius in ioannem
+  - commentarius in lucam
+  - commentarius in marcum
+  - commentarius in matthaeum
+  - commentary on the four gospels
+  - commentary on the gospel of john
+  - commentary on the gospel of luke
+  - commentary on the gospel of mark
+  - commentary on the gospel of matthew
+  - commentary on the holy gospels
+  - in ioannem commentarius
+  - in lucam commentarius
+  - in marcum commentarius
+  - in matthaeum commentarius
+  - maldonatus, commentarii in evangelia
+  - maldonatus, commentarii in quatuor evangelia
+  - maldonatus, commentary on the four gospels
+- author: Leo the Great
+  work: Sermones de Passione Domini
+  uses: 1
+  attested_by: 1
+  titles:
+  - sermones de passione domini
+  - sermons on the lord's passion
+- author: Marius Victorinus
+  work: Commentarii in epistulam ad Ephesios
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentarii in epistulam ad ephesios
+  - in epistolam pauli ad ephesios
+- author: Marius Victorinus
+  work: Commentarii in epistulam ad Galatas
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentarii in epistulam ad galatas
+  - in epistolam pauli ad galatas
+- author: Marius Victorinus
+  work: Commentarii in epistulam ad Philippenses
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentarii in epistulam ad philippenses
+  - in epistolam pauli ad philippenses
+- author: Melito of Sardis
+  work: Peri Pascha
+  uses: 1
+  attested_by: 1
+  titles:
+  - homilia in pascha
+  - on the pasch
+  - peri pascha
+- author: Nicholas of Lyra
+  work: Postilla litteralis super totam Bibliam
+  uses: 1477
+  attested_by: 3
+  titles:
+  - biblia sacra cum glossa ordinaria et postilla nicolai lyrani
+  - glossa ordinaria cum postilla nicolai de lyra
+  - postilla litteralis et moralis
+  - postilla litteralis on 1 chronicles
+  - postilla litteralis on 1 corinthians
+  - postilla litteralis on 1 john
+  - postilla litteralis on 1 kings
+  - postilla litteralis on 1 peter
+  - postilla litteralis on 1 samuel
+  - postilla litteralis on 1 thessalonians
+  - postilla litteralis on 1 timothy
+  - postilla litteralis on 2 chronicles
+  - postilla litteralis on 2 corinthians
+  - postilla litteralis on 2 maccabees
+  - postilla litteralis on 2 samuel
+  - postilla litteralis on 2 thessalonians
+  - postilla litteralis on 2 timothy
+  - postilla litteralis on acts
+  - postilla litteralis on amos
+  - postilla litteralis on baruch
+  - postilla litteralis on colossians
+  - postilla litteralis on daniel
+  - postilla litteralis on deuteronomy
+  - postilla litteralis on ecclesiastes
+  - postilla litteralis on ephesians
+  - postilla litteralis on esther
+  - postilla litteralis on exodus
+  - postilla litteralis on ezekiel
+  - postilla litteralis on galatians
+  - postilla litteralis on genesis
+  - postilla litteralis on habakkuk
+  - postilla litteralis on hebrews
+  - postilla litteralis on hosea
+  - postilla litteralis on isaiah
+  - postilla litteralis on james
+  - postilla litteralis on jeremiah
+  - postilla litteralis on job
+  - postilla litteralis on joel
+  - postilla litteralis on john
+  - postilla litteralis on jonah
+  - postilla litteralis on lamentations
+  - postilla litteralis on luke
+  - postilla litteralis on malachi
+  - postilla litteralis on mark
+  - postilla litteralis on matthew
+  - postilla litteralis on micah
+  - postilla litteralis on numbers
+  - postilla litteralis on philippians
+  - postilla litteralis on proverbs
+  - postilla litteralis on psalms
+  - postilla litteralis on revelation
+  - postilla litteralis on romans
+  - postilla litteralis on sirach
+  - postilla litteralis on titus
+  - postilla litteralis on wisdom
+  - postilla litteralis on zechariah
+  - postilla litteralis on zephaniah
+  - postilla litteralis super totam bibliam
+  - postilla super actus apostolorum
+  - postilla super amos
+  - postilla super apocalypsim
+  - postilla super baruch
+  - postilla super danielem
+  - postilla super deuteronomium
+  - postilla super ecclesiasten
+  - postilla super ecclesiasticum
+  - postilla super epistolam ad colossenses
+  - postilla super epistolam ad ephesios
+  - postilla super epistolam ad galatas
+  - postilla super epistolam ad hebraeos
+  - postilla super epistolam ad philippenses
+  - postilla super epistolam ad romanos
+  - postilla super epistolam ad titum
+  - postilla super epistolam iacobi
+  - postilla super epistolam primam ad corinthios
+  - postilla super epistolam primam ad thessalonicenses
+  - postilla super epistolam primam ad timotheum
+  - postilla super epistolam primam ioannis
+  - postilla super epistolam primam petri
+  - postilla super epistolam secundam ad corinthios
+  - postilla super epistolam secundam ad thessalonicenses
+  - postilla super epistolam secundam ad timotheum
+  - postilla super esther
+  - postilla super exodum
+  - postilla super ezechielem
+  - postilla super genesim
+  - postilla super habacuc
+  - postilla super ieremiam
+  - postilla super ioannem
+  - postilla super iob
+  - postilla super ioel
+  - postilla super ionam
+  - postilla super iosue
+  - postilla super isaiam
+  - postilla super leviticum
+  - postilla super librum esther
+  - postilla super librum primum paralipomenon
+  - postilla super librum primum regum
+  - postilla super librum sapientiae
+  - postilla super librum secundum machabaeorum
+  - postilla super librum secundum paralipomenon
+  - postilla super librum secundum regum
+  - postilla super librum tertium regum
+  - postilla super lucam
+  - postilla super malachiam
+  - postilla super marcum
+  - postilla super matthaeum
+  - postilla super michaeam
+  - postilla super numeros
+  - postilla super osee
+  - postilla super primam epistolam ad corinthios
+  - postilla super primam epistolam ad thessalonicenses
+  - postilla super primam epistolam ad timotheum
+  - postilla super primam epistolam ioannis
+  - postilla super primam epistolam petri
+  - postilla super primum librum regum
+  - postilla super proverbia
+  - postilla super psalmos
+  - postilla super quartum librum regum
+  - postilla super sapientiam
+  - postilla super secundam epistolam ad corinthios
+  - postilla super secundam epistolam ad thessalonicenses
+  - postilla super secundam epistolam ad timotheum
+  - postilla super secundam epistolam petri
+  - postilla super secundum librum regum
+  - postilla super sophoniam
+  - postilla super tertium librum regum
+  - postilla super threnos
+  - postilla super totam bibliam
+  - postilla super zachariam
+  - postillae perpetuae in universam s. scripturam
+  - postillae perpetuae in universam sacram scripturam
+  - postils on the whole bible
+- author: Origen
+  work: Commentarii in Epistulam ad Romanos
+  uses: 44
+  attested_by: 3
+  titles:
+  - commentarii in epistulam ad romanos
+  - commentary on romans
+  - commentary on the epistle to the romans
+  - explanatio in epistulam pauli ad romanos
+  - explanationum in epistulam ad romanos
+  - in epistolam ad romanos explanationum libri
+  - in epistulam ad romanos commentariorum libri x
+  - in epistulam ad romanos explanationum libri x
+- author: Origen
+  work: Commentarium in Matthaeum
+  uses: 43
+  attested_by: 3
+  titles:
+  - commentaria in matthaeum
+  - commentarii in evangelium matthaei
+  - commentarii series in matthaeum
+  - commentariorum series in matthaeum
+  - commentarium in evangelium matthaei
+  - commentarium in matthaeum
+  - commentarium series in evangelium matthaei
+  - commentary on matthew
+  - commentary on the gospel of matthew
+  - in matthaeum commentariorum libri
+  - in matthaeum commentariorum series
+  - matthew commentary series
+  - vetus interpretatio commentariorum in matthaeum
+- author: Origen
+  work: Homiliae in Exodum
+  uses: 20
+  attested_by: 3
+  titles:
+  - homiliae in exodum
+  - homilies on exodus
+  - in exodum homiliae xiii
+- author: Origen
+  work: Homiliae in Lucam
+  uses: 19
+  attested_by: 3
+  titles:
+  - commentary on luke
+  - homiliae in evangelium lucae
+  - homiliae in lucam
+  - homilies on luke
+  - homilies on the gospel of luke
+  - in lucam homiliae xxxix
+- author: Origen
+  work: Commentarii in evangelium Ioannis
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentaria in ioannem
+  - commentarii in evangelium ioannis
+  - commentarii in iohannem
+  - commentarium in evangelium ioannis
+  - commentarium in iohannem
+  - commentary on the gospel of john
+  - in ioannem commentarii
+  - in ioannem commentariorum libri
+- author: Origen
+  work: Homiliae in Genesim
+  uses: 18
+  attested_by: 3
+  titles:
+  - homiliae in genesim
+  - homilies on genesis
+  - in genesim homiliae xvi
+- author: Origen
+  work: Homiliae in Ieremiam
+  uses: 9
+  attested_by: 3
+  titles:
+  - homiliae in ieremiam
+  - homilies on jeremiah
+  - in ieremiam homiliae
+- author: Origen
+  work: Homiliae in Iesu Nave
+  uses: 6
+  attested_by: 3
+  titles:
+  - homiliae in iesu nave
+  - homiliae in iosue
+  - homiliae in librum iosue
+  - homilies on jesus son of nave
+  - homilies on joshua
+  - in iesu nave homiliae xxvi
+  - in librum iesu nave homiliae xxvi
+- author: Origen
+  work: Homiliae in Numeros
+  uses: 5
+  attested_by: 3
+  titles:
+  - homiliae in numeros
+  - homilies on numbers
+  - in numeros homiliae xxviii
+- author: Origen
+  work: Fragmenta in epistulam i ad Corinthios
+  uses: 4
+  attested_by: 1
+  titles:
+  - catena fragments on 1 corinthians
+  - commentarii in epistulam i ad corinthios
+  - fragmenta in epistulam i ad corinthios
+- author: Origen
+  work: Homiliae in Ezechielem
+  uses: 3
+  attested_by: 3
+  titles:
+  - homiliae in ezechielem
+  - homilies on ezekiel
+  - in ezechielem homiliae xiv
+- author: Origen
+  work: Homiliae in Isaiam
+  uses: 3
+  attested_by: 1
+  titles:
+  - homiliae in isaiam
+  - homilies on isaiah
+  - in esaiam homiliae
+  - in isaiam homiliae ix
+- author: Origen
+  work: Homiliae in Leviticum
+  uses: 3
+  attested_by: 3
+  titles:
+  - homiliae in leviticum
+  - homilies on leviticus
+  - in leviticum homiliae xvi
+- author: Paschasius Radbertus
+  work: Expositio in Matheo libri XII
+  uses: 69
+  attested_by: 3
+  titles:
+  - commentaria in matthaeum
+  - commentarius in matthaeum
+  - commentary on matthew
+  - commentary on the gospel of matthew
+  - expositio in evangelium matthaei
+  - expositio in matheo libri xii
+  - expositio in matthaeum
+  - in matthaeum libri duodecim
+  - in matthaeum libri xii
+- author: Paschasius Radbertus
+  work: Expositio in Matheo
+  uses: 9
+  attested_by: 1
+  titles:
+  - expositio in matheo
+  - expositio in matthaeum libri xii
+- author: Paschasius Radbertus
+  work: Expositio in Lamentationes Hieremiae
+  uses: 3
+  attested_by: 3
+  titles:
+  - commentary on the lamentations of jeremiah
+  - expositio in lamentationes hieremiae
+  - expositio in threnos
+  - in threnos hieremiae
+  - in threnos sive lamentationes hieremiae libri quinque
+- author: Peter Lombard
+  work: Commentarium in Psalmos
+  uses: 379
+  attested_by: 3
+  titles:
+  - commentaria in psalmos
+  - commentaria in psalmos davidicos
+  - commentarium in psalmos
+  - commentarium in psalmos davidicos
+  - commentarius in psalmos davidicos
+  - glossa in psalmos
+  - glossa in psalterium
+  - glossa magna in psalmos
+  - glossa magna in psalterium
+  - in totum psalterium commentarii
+  - magna glossatura in psalmos
+  - magna glossatura on the psalms
+  - magna glossatura super psalterium
+- author: Peter Lombard
+  work: Collectanea in omnes divi Pauli epistolas
+  uses: 225
+  attested_by: 3
+  titles:
+  - collectanea in epistolam ad colossenses
+  - collectanea in epistolam ad ephesios
+  - collectanea in epistolam ad galatas
+  - collectanea in epistolam ad hebraeos
+  - collectanea in epistolam ad philippenses
+  - collectanea in epistolam ad romanos
+  - collectanea in epistolam ad titum
+  - collectanea in epistolam i ad corinthios
+  - collectanea in epistolam i ad thessalonicenses
+  - collectanea in epistolam i ad timotheum
+  - collectanea in epistolam ii ad corinthios
+  - collectanea in epistolam ii ad thessalonicenses
+  - collectanea in epistolam ii ad timotheum
+  - collectanea in epistolas pauli
+  - collectanea in omnes d. pauli apostoli epistulas
+  - collectanea in omnes divi pauli apostoli epistolas
+  - collectanea in omnes divi pauli epistolas
+  - collectanea in omnes pauli apostoli epistolas
+  - collectanea in omnes pauli apostoli epistulas
+  - commentarius in epistolas pauli
+  - commentary on the pauline epistles
+  - glossa in epistolas pauli
+  - magna glossatura in epistolas pauli
+  - magna glossatura on the pauline epistles
+- author: Philip the Presbyter
+  work: Commentarii in librum Iob
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentarii in librum iob
+  - expositio in iob
+- author: Philip the Priest
+  work: Commentarii in librum Iob
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentarii in librum iob
+  - expositio in iob
+- author: Primasius of Hadrumetum
+  work: Commentarius in Apocalypsin
+  uses: 10
+  attested_by: 3
+  titles:
+  - commentarium super apocalypsim
+  - commentarius in apocalypsin
+  - commentary on the apocalypse
+  - in apocalypsin libri quinque
+- author: Procopius of Gaza
+  work: Commentarii in Octateuchum
+  uses: 35
+  attested_by: 1
+  titles:
+  - catena in octateuchum
+  - commentarii in genesim, exodum, leviticum, numeros, deuteronomium
+  - commentarii in octateuchum
+- author: Procopius of Gaza
+  work: Commentarii in Isaiam
+  uses: 32
+  attested_by: 1
+  titles:
+  - catena in isaiam
+  - commentarii in isaiam
+- author: Procopius of Gaza
+  work: Commentarii in libros Regum et Paralipomenon
+  uses: 6
+  attested_by: 1
+  titles:
+  - catena in libros regum et paralipomenon
+  - commentarii in libros regum et paralipomenon
+- author: Procopius of Gaza
+  work: Commentarii in Proverbia
+  uses: 3
+  attested_by: 1
+  titles:
+  - catena in proverbia
+  - commentarii in proverbia
+- author: Prosper of Aquitaine
+  work: Expositio Psalmorum C-CL
+  uses: 83
+  attested_by: 3
+  titles:
+  - commentary on psalms 100-150
+  - commentary on the psalms
+  - expositio in psalmos
+  - expositio in psalmos c-cl
+  - expositio in psalmos ci-cl
+  - expositio psalmorum
+  - expositio psalmorum a centesimo usque ad centesimum quinquagesimum
+  - expositio psalmorum c-cl
+  - exposition of psalms 100-150
+- author: Rabanus Maurus
+  work: Enarrationes in epistolas beati Pauli
+  uses: 115
+  attested_by: 3
+  titles:
+  - commentaria in epistolas sancti pauli
+  - enarratio in epistolam ad colossenses
+  - enarratio in epistolam ad ephesios
+  - enarratio in epistolam ad galatas
+  - enarratio in epistolam ad hebraeos
+  - enarratio in epistolam ad philippenses
+  - enarratio in epistolam ad romanos
+  - enarratio in epistolam ad titum
+  - enarratio in epistolam i ad corinthios
+  - enarratio in epistolam i ad thessalonicenses
+  - enarratio in epistolam i ad timotheum
+  - enarratio in epistolam ii ad corinthios
+  - enarratio in epistolam ii ad thessalonicenses
+  - enarratio in epistolam ii ad timotheum
+  - enarrationes in epistolas b. pauli
+  - enarrationes in epistolas beati pauli
+  - expositio in epistolas pauli
+- author: Rabanus Maurus
+  work: Commentariorum in Matthaeum libri VIII
+  uses: 78
+  attested_by: 3
+  titles:
+  - commentaria in matthaeum
+  - commentariorum in matthaeum libri octo
+  - commentariorum in matthaeum libri viii
+  - commentary on matthew
+  - commentary on the gospel of matthew
+  - expositio in matthaeum
+- author: Rabanus Maurus
+  work: Commentaria in Exodum
+  uses: 36
+  attested_by: 3
+  titles:
+  - commentaria in exodum
+  - commentariorum in exodum libri quattuor
+  - commentariorum in exodum libri quatuor
+  - commentary on exodus
+  - expositio in exodum
+- author: Rabanus Maurus
+  work: Commentaria in libros IV Regum
+  uses: 36
+  attested_by: 3
+  titles:
+  - commentaria in libros iv regum
+  - commentaria in libros regum
+  - commentariorum in libros iv regum libri quattuor
+  - commentariorum in libros iv regum libri quatuor
+  - commentariorum in libros regum libri quatuor
+  - commentary on the books of kings
+  - commentary on the four books of kings
+  - expositio in libros regum
+- author: Rabanus Maurus
+  work: Commentaria in Genesim
+  uses: 27
+  attested_by: 3
+  titles:
+  - commentaria in genesim
+  - commentariorum in genesim libri quattuor
+  - commentariorum in genesim libri quatuor
+  - commentary on genesis
+  - expositio in genesim
+- author: Rabanus Maurus
+  work: Commentaria in librum Sapientiae
+  uses: 27
+  attested_by: 3
+  titles:
+  - commentaria in librum sapientiae
+  - commentariorum in librum sapientiae libri tres
+  - commentary on the book of wisdom
+  - commentary on wisdom
+  - expositio in librum sapientiae
+  - in librum sapientiae libri tres
+- author: Rabanus Maurus
+  work: Commentaria in Ezechielem
+  uses: 24
+  attested_by: 3
+  titles:
+  - commentaria in ezechielem
+  - commentariorum in ezechielem libri viginti
+  - commentariorum in ezechielem libri xx
+  - commentary on ezekiel
+  - expositio in ezechielem
+  - expositio super ezechielem
+  - in ezechielem libri viginti
+  - in ezechielem prophetam libri viginti
+- author: Rabanus Maurus
+  work: Expositio super Ieremiam
+  uses: 24
+  attested_by: 3
+  titles:
+  - commentaria in ieremiam
+  - commentariorum in ieremiam libri xx
+  - commentary on jeremiah
+  - expositio super ieremiam
+  - expositio super ieremiam prophetam
+  - expositionis super ieremiam prophetam libri viginti
+  - expositionum super ieremiam libri viginti
+  - in hieremiam prophetam libri viginti
+  - in ieremiam prophetam libri viginti
+- author: Rabanus Maurus
+  work: Enarrationes in librum Deuteronomii
+  uses: 22
+  attested_by: 3
+  titles:
+  - commentaria in deuteronomium
+  - commentary on deuteronomy
+  - enarratio super deuteronomium
+  - enarrationes in librum deuteronomii
+  - enarrationes super deuteronomium
+  - enarrationis super deuteronomium libri quatuor
+  - enarrationum super deuteronomium libri iv
+  - enarrationum super deuteronomium libri quattuor
+  - expositio in deuteronomium
+- author: Rabanus Maurus
+  work: Commentaria in Ecclesiasticum
+  uses: 21
+  attested_by: 3
+  titles:
+  - commentaria in ecclesiasticum
+  - commentariorum in ecclesiasticum libri decem
+  - commentary on ecclesiasticus
+  - commentary on sirach
+  - expositio in ecclesiasticum
+  - expositio in librum ecclesiasticum
+  - in ecclesiasticum libri decem
+- author: Rabanus Maurus
+  work: Expositio in Proverbia Salomonis
+  uses: 8
+  attested_by: 3
+  titles:
+  - commentaria in proverbia
+  - commentaria in proverbia salomonis
+  - commentary on proverbs
+  - expositio in proverbia salomonis
+  - in proverbia salomonis libri tres
+- author: Rabanus Maurus
+  work: Expositio in librum Esther
+  uses: 7
+  attested_by: 3
+  titles:
+  - commentaria in librum esther
+  - commentary on esther
+  - expositio in esther
+  - expositio in librum esther
+  - expositio in librum iudith et esther
+- author: Rabanus Maurus
+  work: Enarrationes in librum Numerorum
+  uses: 6
+  attested_by: 3
+  titles:
+  - commentaria in numeros
+  - commentariorum in numeros libri quatuor
+  - commentary on numbers
+  - enarrationes in librum numerorum
+  - enarrationum in librum numerorum libri quattuor
+  - enarrationum in librum numerorum libri quatuor
+  - expositio in librum numerorum
+- author: Rabanus Maurus
+  work: Expositiones in Leviticum
+  uses: 6
+  attested_by: 3
+  titles:
+  - commentaria in leviticum
+  - commentariorum in leviticum libri septem
+  - commentary on leviticus
+  - expositiones in leviticum
+  - expositiones in leviticum libri septem
+  - expositionum in leviticum libri septem
+- author: Rabanus Maurus
+  work: Commentaria in librum Iosue
+  uses: 4
+  attested_by: 2
+  titles:
+  - commentaria in librum iosue
+  - commentariorum in librum iosue libri tres
+  - commentary on joshua
+  - expositio in iosue
+- author: Rabanus Maurus
+  work: Commentaria in Paralipomenon
+  uses: 4
+  attested_by: 2
+  titles:
+  - commentaria in libros paralipomenon
+  - commentaria in paralipomenon
+  - commentary on chronicles
+  - expositio in paralipomena
+  - in paralipomena libri quattuor
+- author: Rabanus Maurus
+  work: Enarrationes in Deuteronomium
+  uses: 4
+  attested_by: 1
+  titles:
+  - commentariorum in deuteronomium libri quatuor
+  - enarrationes in deuteronomium
+- author: Rabanus Maurus
+  work: Commentaria in libros Machabaeorum
+  uses: 3
+  attested_by: 3
+  titles:
+  - commentaria in libros machabaeorum
+  - commentariorum in libros machabaeorum libri duo
+  - commentary on the books of maccabees
+  - expositio in libros machabaeorum
+- author: Rabanus Maurus
+  work: Commentaria in libros II Paralipomenon
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentaria in libros ii paralipomenon
+  - commentariorum in paralipomenon libri quatuor
+- author: Richard of Saint Victor
+  work: In Apocalypsim Ioannis
+  uses: 8
+  attested_by: 2
+  titles:
+  - explicatio in apocalypsim ioannis
+  - in apocalypsim ioannis
+  - in apocalypsim iohannis
+- author: Richard of Saint Victor
+  work: In visionem Ezechielis
+  uses: 1
+  attested_by: 1
+  titles:
+  - de visione ezechielis
+  - in visionem ezechielis
+- author: Richard of Saint-Victor
+  work: In Apocalypsim Ioannis libri septem
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentary on the apocalypse
+  - in apocalypsim ioannis libri septem
+- author: Richard of Saint-Victor
+  work: In visionem Ezechielis
+  uses: 1
+  attested_by: 1
+  titles:
+  - de templo ezechielis
+  - expositio difficultatum ... in visione ezechielis
+  - in visionem ezechielis
+- author: Richard of St. Victor
+  work: In Apocalypsim Ioannis
+  uses: 4
+  attested_by: 1
+  titles:
+  - commentary on the apocalypse
+  - explicatio in apocalypsim ioannis
+  - expositio in apocalypsim
+  - in apocalypsim ioannis
+  - in apocalypsim libri septem
+- author: Richard of St. Victor
+  work: In visionem Ezechielis
+  uses: 1
+  attested_by: 1
+  titles:
+  - de templo ezechielis
+  - expositio in visionem ezechielis
+  - in ezechielem
+  - in visionem ezechielis
+- author: Richard Rolle
+  work: English Psalter
+  uses: 41
+  attested_by: 1
+  titles:
+  - commentary on the psalms
+  - english psalter
+  - latin psalter commentary
+  - the psalter, or psalms of david, with a commentary
+- author: Robert Bellarmine
+  work: Explanatio in Psalmos
+  uses: 384
+  attested_by: 3
+  titles:
+  - a commentary on the book of psalms
+  - commentary on the psalms
+  - explanatio in omnes psalmos
+  - explanatio in psalmos
+  - explanatio in psalmos davidicos
+  - explanatio in psalmos davidis
+  - explanation of the psalms
+  - in omnes psalmos dilucida explanatio
+  - in omnes psalmos dilucida expositio
+- author: Robert Holcot
+  work: Super libros Sapientiae
+  uses: 9
+  attested_by: 1
+  titles:
+  - in librum sapientiae praelectiones
+  - lectiones super librum sapientiae
+  - super libros sapientiae
+  - super sapientiam salomonis
+- author: Rupert of Deutz
+  work: Commentaria in Evangelium sancti Iohannis
+  uses: 60
+  attested_by: 3
+  titles:
+  - commentaria in evangelium sancti ioannis
+  - commentaria in evangelium sancti iohannis
+  - commentariorum in ioannem libri xiv
+  - commentary on the gospel of john
+  - expositio in ioannem
+  - in ioannem commentariorum libri xiv
+  - in ioannis evangelium commentarii
+  - in ioannis evangelium commentariorum libri xiv
+  - in iohannem commentariorum libri xiv
+  - in iohannem libri xiv
+  - in iohannis evangelium commentariorum libri xiv
+- author: Rupert of Deutz
+  work: De sancta Trinitate et operibus eius
+  uses: 43
+  attested_by: 3
+  titles:
+  - commentaria in exodum
+  - commentaria in genesim
+  - commentary on genesis
+  - commentary on the pentateuch
+  - de operibus sanctae trinitatis
+  - 'de operibus sanctae trinitatis: in exodum'
+  - 'de operibus sanctae trinitatis: in genesim'
+  - de sancta trinitate et operibus eius
+  - 'de sancta trinitate et operibus eius: in exodum'
+  - 'de sancta trinitate et operibus eius: in genesim'
+  - de trinitate et operibus eius
+  - in exodum
+  - in exodum commentariorum libri iv
+  - in genesim
+  - in genesim commentariorum libri ix
+  - on the holy trinity and its works
+- author: Rupert of Deutz
+  work: In duodecim prophetas minores commentarii
+  uses: 30
+  attested_by: 3
+  titles:
+  - commentaria in duodecim prophetas minores
+  - commentarius in abacuc
+  - commentarius in amos
+  - commentarius in ioel
+  - commentarius in malachiam
+  - commentarius in osee
+  - commentarius in zachariam
+  - commentary on amos
+  - commentary on habakkuk
+  - commentary on hosea
+  - commentary on joel
+  - commentary on malachi
+  - commentary on the minor prophets
+  - commentary on zechariah
+  - in duodecim prophetas minores commentarii
+  - in xii prophetas minores
+  - in xii prophetas minores commentarii
+- author: Rupert of Deutz
+  work: Commentaria in Apocalypsim
+  uses: 14
+  attested_by: 3
+  titles:
+  - commentaria in apocalypsim
+  - commentaria in apocalypsim libri xii
+  - commentarium in apocalypsim
+  - commentary on the apocalypse
+  - expositio in apocalypsin
+  - in apocalypsim ioannis libri xii
+  - in apocalypsim iohannis
+  - in apocalypsim iohannis libri xii
+- author: Rupert of Deutz
+  work: In duodecim prophetas minores commentaria
+  uses: 9
+  attested_by: 1
+  titles:
+  - commentarii in duodecim prophetas minores
+  - in duodecim prophetas minores commentaria
+- author: Rupert of Deutz
+  work: In XII prophetas minores commentaria
+  uses: 9
+  attested_by: 1
+  titles:
+  - commentary on the twelve minor prophets
+  - in xii prophetas minores commentaria
+- author: Rupert of Deutz
+  work: Commentaria in Apocalypsim Iohannis
+  uses: 2
+  attested_by: 1
+  titles:
+  - commentaria in apocalypsim iohannis
+  - in apocalypsim libri xii
+- author: Theodoret of Cyrus
+  work: Interpretatio in Psalmos
+  uses: 384
+  attested_by: 3
+  titles:
+  - commentarius in psalmos
+  - commentary on the psalms
+  - explanatio in psalmos
+  - expositio in psalmos
+  - interpretatio in centum quinquaginta psalmos
+  - interpretatio in psalmorum librum
+  - interpretatio in psalmos
+  - interpretatio in psalmos davidis
+  - interpretatio psalmorum
+- author: Theodoret of Cyrus
+  work: Interpretatio in xiv epistulas sancti Pauli
+  uses: 254
+  attested_by: 3
+  titles:
+  - commentarius in epistulam ad colossenses
+  - commentarius in epistulam ad ephesios
+  - commentarius in epistulam ad galatas
+  - commentarius in epistulam ad hebraeos
+  - commentarius in epistulam ad philippenses
+  - commentarius in epistulam ad romanos
+  - commentarius in epistulam ad titum
+  - commentarius in epistulam i ad corinthios
+  - commentarius in epistulam i ad thessalonicenses
+  - commentarius in epistulam i ad timotheum
+  - commentarius in epistulam ii ad corinthios
+  - commentarius in epistulam ii ad thessalonicenses
+  - commentarius in epistulam ii ad timotheum
+  - commentarius in epistulas pauli
+  - commentary on 1 corinthians
+  - commentary on 1 thessalonians
+  - commentary on 1 timothy
+  - commentary on 2 corinthians
+  - commentary on 2 thessalonians
+  - commentary on 2 timothy
+  - commentary on colossians
+  - commentary on ephesians
+  - commentary on galatians
+  - commentary on hebrews
+  - commentary on philemon
+  - commentary on philippians
+  - commentary on romans
+  - commentary on the fourteen epistles of saint paul
+  - commentary on the letters of saint paul
+  - commentary on the letters of st paul
+  - commentary on titus
+  - interpretatio epistolarum pauli
+  - interpretatio epistulae ad colossenses
+  - interpretatio epistulae ad ephesios
+  - interpretatio epistulae ad galatas
+  - interpretatio epistulae ad hebraeos
+  - interpretatio epistulae ad philemonem
+  - interpretatio epistulae ad philippenses
+  - interpretatio epistulae ad romanos
+  - interpretatio epistulae ad titum
+  - interpretatio epistulae i ad corinthios
+  - interpretatio epistulae i ad thessalonicenses
+  - interpretatio epistulae i ad timotheum
+  - interpretatio epistulae ii ad corinthios
+  - interpretatio epistulae ii ad thessalonicenses
+  - interpretatio epistulae ii ad timotheum
+  - interpretatio epistulae primae ad corinthios
+  - interpretatio epistulae primae ad thessalonicenses
+  - interpretatio epistulae primae ad timotheum
+  - interpretatio epistulae secundae ad corinthios
+  - interpretatio epistulae secundae ad thessalonicenses
+  - interpretatio epistulae secundae ad timotheum
+  - interpretatio in quattuordecim epistolas s. pauli
+  - interpretatio in quatuordecim epistulas sancti pauli
+  - interpretatio in xiv epistulas sancti pauli
+  - interpretatio quattuordecim epistularum sancti pauli
+- author: Theodoret of Cyrus
+  work: Quaestiones in Octateuchum
+  uses: 149
+  attested_by: 3
+  titles:
+  - interpretatio in libros regnorum
+  - interpretatio in octateuchum
+  - interpretatio in paralipomena
+  - interrogationes in exodum
+  - interrogationes in genesim
+  - quaestiones in deuteronomium
+  - quaestiones in exodum
+  - quaestiones in genesim
+  - quaestiones in genesim et in reliquos libros
+  - quaestiones in genesim, exodum, leviticum, numeros, deuteronomium, iesum nave, iudices
+    et ruth
+  - quaestiones in genesim, exodum, leviticum, numeros, deuteronomium, iosue, iudices, ruth
+  - quaestiones in iosue
+  - quaestiones in leviticum
+  - quaestiones in libros paralipomenon
+  - quaestiones in libros regnorum
+  - quaestiones in libros regnorum et paralipomenon
+  - quaestiones in libros regum
+  - quaestiones in libros regum et paralipomenon
+  - quaestiones in numeros
+  - quaestiones in octateuchum
+  - quaestiones in primum librum regum
+  - quaestiones in quartum librum regum
+  - quaestiones in secundum librum regum
+  - quaestiones in tertium librum regum
+  - questions on chronicles
+  - questions on deuteronomy
+  - questions on exodus
+  - questions on genesis
+  - questions on joshua
+  - questions on kings and chronicles
+  - questions on leviticus
+  - questions on numbers
+  - questions on the books of kings
+  - questions on the books of kings and chronicles
+  - questions on the octateuch
+- author: Theodoret of Cyrus
+  work: Commentarius in Isaiam
+  uses: 96
+  attested_by: 3
+  titles:
+  - commentarius in isaiam
+  - commentary on isaiah
+  - explanatio in isaiam prophetam
+  - in isaiam interpretatio
+  - in isaiam prophetam
+  - in isaiam prophetam interpretatio
+  - interpretatio in isaiam
+- author: Theodoret of Cyrus
+  work: Interpretatio in xii prophetas minores
+  uses: 63
+  attested_by: 3
+  titles:
+  - commentarius in duodecim prophetas minores
+  - commentarius in xii prophetas minores
+  - commentary on amos
+  - commentary on habakkuk
+  - commentary on hosea
+  - commentary on joel
+  - commentary on jonah
+  - commentary on malachi
+  - commentary on micah
+  - commentary on the twelve prophets
+  - commentary on zechariah
+  - commentary on zephaniah
+  - in amos interpretatio
+  - in duodecim prophetas minores interpretatio
+  - in habacuc interpretatio
+  - in malachiam interpretatio
+  - in michaeam interpretatio
+  - in sophoniam interpretatio
+  - in zachariam interpretatio
+  - interpretatio in abacuc
+  - interpretatio in amos
+  - interpretatio in amos prophetam
+  - interpretatio in duodecim prophetas minores
+  - interpretatio in habacuc
+  - interpretatio in habacuc prophetam
+  - interpretatio in ioel
+  - interpretatio in ionam
+  - interpretatio in malachiam
+  - interpretatio in malachiam prophetam
+  - interpretatio in michaeam
+  - interpretatio in michaeam prophetam
+  - interpretatio in osee
+  - interpretatio in sophoniam
+  - interpretatio in sophoniam prophetam
+  - interpretatio in xii prophetas minores
+  - interpretatio in zachariam
+  - interpretatio in zachariam prophetam
+- author: Theodoret of Cyrus
+  work: Commentarius in Ieremiam
+  uses: 35
+  attested_by: 3
+  titles:
+  - commentarius in baruch
+  - commentarius in ieremiam
+  - commentarius in ieremiam prophetam
+  - commentarius in ieremiam, baruch et lamentationes
+  - commentary on baruch
+  - commentary on jeremiah
+  - commentary on jeremiah, baruch and lamentations
+  - in baruch
+  - in ieremiam et baruch interpretatio
+  - in ieremiam interpretatio
+  - in ieremiam prophetam interpretatio
+  - in ieremiam, baruch et threnos
+  - interpretatio in baruch
+  - interpretatio in ieremiam
+  - interpretatio in ieremiam, baruch et lamentationes
+- author: Theodoret of Cyrus
+  work: Commentarius in Ezechielem
+  uses: 24
+  attested_by: 3
+  titles:
+  - commentarius in ezechielem
+  - commentary on ezekiel
+  - explanatio in ezechielem prophetam
+  - in ezechielem prophetam interpretatio
+  - interpretatio in ezechielem
+- author: Theodoret of Cyrus
+  work: Commentarius in Danielem
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentarius in danielem
+  - commentarius in visiones danielis prophetae
+  - commentary on daniel
+  - explanatio in danielem prophetam
+  - in danielem prophetam interpretatio
+  - interpretatio in danielem
+- author: Theodoret of Cyrus
+  work: In Lamentationes Ieremiae
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentary on lamentations
+  - in lamentationes ieremiae
+  - in threnos interpretatio
+  - interpretatio in threnos
+- author: Theophylact of Ohrid
+  work: Expositio in epistulam ad Romanos
+  uses: 140
+  attested_by: 2
+  titles:
+  - commentarius in epistulas sancti pauli
+  - commentary on 1 corinthians
+  - commentary on 1 thessalonians
+  - commentary on 1 timothy
+  - commentary on 2 corinthians
+  - commentary on 2 thessalonians
+  - commentary on 2 timothy
+  - commentary on colossians
+  - commentary on ephesians
+  - commentary on galatians
+  - commentary on hebrews
+  - commentary on philemon
+  - commentary on philippians
+  - commentary on romans
+  - commentary on titus
+  - enarratio in epistulam ad colossenses
+  - enarratio in epistulam ad ephesios
+  - enarratio in epistulam ad galatas
+  - enarratio in epistulam ad hebraeos
+  - enarratio in epistulam ad philemonem
+  - enarratio in epistulam ad philippenses
+  - enarratio in epistulam ad romanos
+  - enarratio in epistulam ad titum
+  - enarratio in epistulam i ad corinthios
+  - enarratio in epistulam i ad thessalonicenses
+  - enarratio in epistulam i ad timotheum
+  - enarratio in epistulam ii ad corinthios
+  - enarratio in epistulam ii ad thessalonicenses
+  - enarratio in epistulam ii ad timotheum
+  - explanation of the epistle to the colossians
+  - explanation of the epistle to the ephesians
+  - explanation of the epistle to the galatians
+  - explanation of the epistle to the hebrews
+  - explanation of the epistle to the philippians
+  - explanation of the epistle to the romans
+  - explanation of the epistle to titus
+  - explanation of the first epistle to the corinthians
+  - explanation of the first epistle to the thessalonians
+  - explanation of the first epistle to timothy
+  - explanation of the second epistle to the corinthians
+  - explanation of the second epistle to the thessalonians
+  - explanation of the second epistle to timothy
+  - expositio in epistolam ad colossenses
+  - expositio in epistolam ad ephesios
+  - expositio in epistolam ad galatas
+  - expositio in epistolam ad hebraeos
+  - expositio in epistolam ad philippenses
+  - expositio in epistolam ad romanos
+  - expositio in epistolam ad titum
+  - expositio in epistolam primam ad corinthios
+  - expositio in epistolam primam ad thessalonicenses
+  - expositio in epistolam primam ad timotheum
+  - expositio in epistolam secundam ad corinthios
+  - expositio in epistolam secundam ad thessalonicenses
+  - expositio in epistolam secundam ad timotheum
+  - expositio in epistulam ad colossenses
+  - expositio in epistulam ad ephesios
+  - expositio in epistulam ad galatas
+  - expositio in epistulam ad hebraeos
+  - expositio in epistulam ad philemonem
+  - expositio in epistulam ad philippenses
+  - expositio in epistulam ad romanos
+  - expositio in epistulam ad titum
+  - expositio in epistulam i ad corinthios
+  - expositio in epistulam i ad thessalonicenses
+  - expositio in epistulam i ad timotheum
+  - expositio in epistulam ii ad corinthios
+  - expositio in epistulam ii ad thessalonicenses
+  - expositio in epistulam ii ad timotheum
+- author: Theophylact of Ohrid
+  work: Enarratio in Evangelium Lucae
+  uses: 67
+  attested_by: 3
+  titles:
+  - commentarius in evangelium lucae
+  - commentarius in evangelium sancti lucae
+  - commentary on luke
+  - commentary on the gospel of luke
+  - enarratio in evangelium lucae
+  - explanation of the gospel of luke
+  - expositio in lucam
+- author: Theophylact of Ohrid
+  work: Expositio in epistolas sancti Pauli
+  uses: 57
+  attested_by: 1
+  titles:
+  - commentary on the epistles of saint paul
+  - commentary on the epistles of st paul
+  - expositio in epistolas sancti pauli
+- author: Theophylact of Ohrid
+  work: Enarratio in evangelium Ioannis
+  uses: 53
+  attested_by: 3
+  titles:
+  - commentarius in evangelium ioannis
+  - commentarius in evangelium sancti ioannis
+  - commentary on john
+  - commentary on the gospel of john
+  - enarratio in evangelium ioannis
+  - enarratio in evangelium iohannis
+  - explanation of the gospel of john
+  - expositio in ioannem
+- author: Theophylact of Ohrid
+  work: Enarratio in Evangelium Matthaei
+  uses: 52
+  attested_by: 2
+  titles:
+  - commentarius in evangelium matthaei
+  - commentarius in evangelium sancti matthaei
+  - commentary on matthew
+  - commentary on the gospel of matthew
+  - enarratio in evangelium matthaei
+  - explanation of the gospel of matthew
+  - expositio in matthaeum
+- author: Theophylact of Ohrid
+  work: Enarratio in Evangelium Marci
+  uses: 43
+  attested_by: 3
+  titles:
+  - commentarius in evangelium marci
+  - commentarius in evangelium sancti marci
+  - commentary on mark
+  - commentary on the gospel of mark
+  - enarratio in evangelium marci
+  - explanation of the gospel of mark
+  - expositio in marcum
+- author: Theophylact of Ohrid
+  work: Expositio in Acta Apostolorum
+  uses: 37
+  attested_by: 3
+  titles:
+  - commentarius in acta apostolorum
+  - commentary on the acts of the apostles
+  - enarratio in acta apostolorum
+  - explanation of the acts of the apostles
+  - expositio in acta apostolorum
+- author: Theophylact of Ohrid
+  work: Expositio in Epistolas S. Pauli
+  uses: 29
+  attested_by: 1
+  titles:
+  - commentarius in epistolas pauli
+  - expositio in epistolas s. pauli
+- author: Theophylact of Ohrid
+  work: Expositio in epistolas catholicas
+  uses: 26
+  attested_by: 2
+  titles:
+  - commentarius in epistolas catholicas
+  - commentary on the catholic epistles
+  - enarratio in epistolam iacobi
+  - enarratio in epistolas catholicas
+  - enarratio in primam epistolam ioannis
+  - enarratio in primam epistolam petri
+  - enarratio in secundam epistolam petri
+  - explanation of the catholic epistles
+  - expositio in epistolam iacobi
+  - expositio in epistolas catholicas
+  - expositio in primam epistolam ioannis
+  - expositio in primam epistolam petri
+  - expositio in secundam epistolam petri
+- author: Theophylact of Ohrid
+  work: Expositio in epistulam Iacobi
+  uses: 9
+  attested_by: 2
+  titles:
+  - commentarius in epistulas catholicas
+  - commentary on 1 john
+  - commentary on 1 peter
+  - commentary on james
+  - enarratio in epistulam catholicam i ioannis
+  - enarratio in epistulam catholicam i petri
+  - enarratio in epistulam catholicam iacobi
+  - expositio in epistulam i ioannis
+  - expositio in epistulam i petri
+  - expositio in epistulam iacobi
+- author: Theophylact of Ohrid
+  work: Commentarius in prophetas minores
+  uses: 6
+  attested_by: 1
+  titles:
+  - commentarius in prophetas minores
+  - commentary on hosea, habakkuk, jonah, nahum and micah
+- author: Theophylact of Ohrid
+  work: Expositio in prophetas minores
+  uses: 2
+  attested_by: 1
+  titles:
+  - enarratio in habacuc
+  - enarratio in michaeam
+  - expositio in prophetas minores
+- author: Thomas Aquinas
+  work: Catena aurea in quatuor Evangelia
+  uses: 245
+  attested_by: 3
+  titles:
+  - catena aurea
+  - catena aurea in ioannem
+  - catena aurea in iohannem
+  - catena aurea in lucam
+  - catena aurea in marcum
+  - catena aurea in matthaeum
+  - catena aurea in quattuor evangelia
+  - catena aurea in quatuor evangelia
+  - expositio continua in ioannem
+  - expositio continua in lucam
+  - expositio continua in marcum
+  - expositio continua in matthaeum
+  - expositio continua in matthaeum, marcum, lucam et ioannem
+  - expositio continua in quatuor evangelia
+  - expositio continua super quattuor evangelia
+  - expositio continua super quatuor evangelistas
+  - glossa continua super evangelia
+  - golden chain
+  - golden chain on john
+  - golden chain on luke
+  - golden chain on mark
+  - golden chain on matthew
+  - the golden chain
+- author: Thomas Aquinas
+  work: Super Epistolam ad Romanos lectura
+  uses: 242
+  attested_by: 3
+  titles:
+  - commentary on 1 corinthians
+  - commentary on 1 thessalonians
+  - commentary on 1 timothy
+  - commentary on 2 corinthians
+  - commentary on 2 thessalonians
+  - commentary on 2 timothy
+  - commentary on colossians
+  - commentary on ephesians
+  - commentary on galatians
+  - commentary on hebrews
+  - commentary on philemon
+  - commentary on philippians
+  - commentary on romans
+  - commentary on the epistle to the colossians
+  - commentary on the epistle to the ephesians
+  - commentary on the epistle to the galatians
+  - commentary on the epistle to the hebrews
+  - commentary on the epistle to the philippians
+  - commentary on the epistle to the romans
+  - commentary on the epistle to titus
+  - commentary on the first epistle to the corinthians
+  - commentary on the first epistle to the thessalonians
+  - commentary on the first epistle to timothy
+  - commentary on the first letter to the corinthians
+  - commentary on the first letter to the thessalonians
+  - commentary on the first letter to timothy
+  - commentary on the letter to the colossians
+  - commentary on the letter to the ephesians
+  - commentary on the letter to the galatians
+  - commentary on the letter to the hebrews
+  - commentary on the letter to the philippians
+  - commentary on the letter to the romans
+  - commentary on the letter to titus
+  - commentary on the letters of st paul
+  - commentary on the second epistle to the corinthians
+  - commentary on the second epistle to the thessalonians
+  - commentary on the second epistle to timothy
+  - commentary on the second letter to the corinthians
+  - commentary on the second letter to the thessalonians
+  - commentary on the second letter to timothy
+  - commentary on titus
+  - expositio et lectura super epistolas pauli apostoli
+  - expositio in epistolam ad colossenses
+  - expositio in epistolam ad ephesios
+  - expositio in epistolam ad galatas
+  - expositio in epistolam ad hebraeos
+  - expositio in epistolam ad philippenses
+  - expositio in epistolam ad romanos
+  - expositio in epistolam ad titum
+  - expositio in epistolam i ad corinthios
+  - expositio in epistolam i ad thessalonicenses
+  - expositio in epistolam i ad timotheum
+  - expositio in epistolam ii ad corinthios
+  - expositio in epistolam ii ad thessalonicenses
+  - expositio in epistolam ii ad timotheum
+  - expositio in omnes s. pauli epistolas
+  - expositio in omnes sancti pauli apostoli epistolas
+  - in epistolam ad colossenses expositio
+  - in epistolam ad ephesios expositio
+  - in epistolam ad galatas expositio
+  - in epistolam ad hebraeos expositio
+  - in epistolam ad philemonem expositio
+  - in epistolam ad philippenses expositio
+  - in epistolam ad romanos expositio
+  - in epistolam ad titum expositio
+  - in epistolam i ad corinthios expositio
+  - in epistolam i ad thessalonicenses expositio
+  - in epistolam i ad timotheum expositio
+  - in epistolam ii ad corinthios expositio
+  - in epistolam ii ad thessalonicenses expositio
+  - in epistolam ii ad timotheum expositio
+  - in epistolam primam ad corinthios expositio
+  - in epistolam primam ad thessalonicenses expositio
+  - in epistolam primam ad timotheum expositio
+  - in epistolam secundam ad corinthios expositio
+  - in epistolam secundam ad thessalonicenses expositio
+  - in epistolam secundam ad timotheum expositio
+  - in omnes s. pauli apostoli epistolas commentaria
+  - lectura super epistolam ad colossenses
+  - lectura super epistolam ad ephesios
+  - lectura super epistolam ad galatas
+  - lectura super epistolam ad hebraeos
+  - lectura super epistolam ad philippenses
+  - lectura super epistolam ad romanos
+  - lectura super epistolam ad titum
+  - lectura super epistolam i ad corinthios
+  - lectura super epistolam i ad thessalonicenses
+  - lectura super epistolam i ad timotheum
+  - lectura super epistolam ii ad corinthios
+  - lectura super epistolam ii ad thessalonicenses
+  - lectura super epistolam ii ad timotheum
+  - super colossenses
+  - super ephesios
+  - super epistolam ad colossenses lectura
+  - super epistolam ad ephesios lectura
+  - super epistolam ad galatas lectura
+  - super epistolam ad hebraeos lectura
+  - super epistolam ad philemonem lectura
+  - super epistolam ad philippenses lectura
+  - super epistolam ad romanos lectura
+  - super epistolam ad titum lectura
+  - super epistolam i ad corinthios lectura
+  - super epistolam i ad thessalonicenses lectura
+  - super epistolam i ad timotheum lectura
+  - super epistolam ii ad corinthios lectura
+  - super epistolam ii ad thessalonicenses lectura
+  - super epistolam ii ad timotheum lectura
+  - super epistolam primam ad corinthios lectura
+  - super epistolam primam ad thessalonicenses lectura
+  - super epistolam primam ad timotheum lectura
+  - super epistolam secundam ad corinthios lectura
+  - super epistolam secundam ad thessalonicenses lectura
+  - super epistolam secundam ad timotheum lectura
+  - super galatas
+  - super hebraeos
+  - super i corinthios
+  - super i epistolam ad corinthios lectura
+  - super i epistolam ad thessalonicenses lectura
+  - super i epistolam ad timotheum lectura
+  - super i thessalonicenses
+  - super i timotheum
+  - super ii corinthios
+  - super ii epistolam ad corinthios lectura
+  - super ii epistolam ad thessalonicenses lectura
+  - super ii epistolam ad timotheum lectura
+  - super ii thessalonicenses
+  - super ii timotheum
+  - super philemonem
+  - super philippenses
+  - super primam epistolam ad corinthios lectura
+  - super primam epistolam ad thessalonicenses lectura
+  - super primam epistolam ad timotheum lectura
+  - super romanos
+  - super secundam epistolam ad corinthios lectura
+  - super secundam epistolam ad thessalonicenses lectura
+  - super secundam epistolam ad timotheum lectura
+- author: Thomas Aquinas
+  work: Postilla super Psalmos
+  uses: 146
+  attested_by: 3
+  titles:
+  - commentary on the psalms
+  - expositio in psalmos
+  - expositio in psalmos davidis
+  - expositio super psalmos
+  - in psalmos davidis expositio
+  - lectura super psalmos
+  - postilla super psalmos
+  - postilla super psalterium
+  - super psalmos
+- author: Thomas Aquinas
+  work: Expositio super Isaiam ad litteram
+  uses: 96
+  attested_by: 3
+  titles:
+  - commentary on isaiah
+  - expositio in isaiam
+  - expositio super isaiam ad litteram
+  - in isaiam prophetam expositio
+  - lectura super isaiam
+  - literal commentary on isaiah
+  - postilla super isaiam
+  - super isaiam
+- author: Thomas Aquinas
+  work: Super Evangelium S. Matthaei lectura
+  uses: 78
+  attested_by: 3
+  titles:
+  - commentary on matthew
+  - commentary on the gospel of matthew
+  - expositio in evangelium matthaei
+  - expositio in matthaeum
+  - in matthaeum evangelistam expositio
+  - in matthaeum expositio
+  - lectura super matthaeum
+  - super evangelium s. matthaei lectura
+  - super evangelium sancti matthaei lectura
+  - super matthaeum
+- author: Thomas Aquinas
+  work: Super Evangelium S. Ioannis lectura
+  uses: 60
+  attested_by: 3
+  titles:
+  - commentary on the gospel of john
+  - expositio in evangelium ioannis
+  - expositio in ioannem
+  - in ioannem evangelistam expositio
+  - in ioannem expositio
+  - lectura super ioannem
+  - super evangelium s. ioannis lectura
+  - super evangelium sancti ioannis lectura
+  - super evangelium sancti iohannis lectura
+  - super ioannem
+- author: Thomas Aquinas
+  work: Expositio super Iob ad litteram
+  uses: 12
+  attested_by: 3
+  titles:
+  - commentary on job
+  - commentary on the book of job
+  - expositio in iob
+  - expositio in librum beati iob
+  - expositio super iob ad litteram
+  - in iob
+  - in iob expositio
+  - literal exposition on job
+  - postilla super iob
+  - the literal exposition on job
+- author: Thomas Aquinas
+  work: In Ieremiam prophetam expositio
+  uses: 11
+  attested_by: 3
+  titles:
+  - commentary on jeremiah
+  - expositio super ieremiam prophetam
+  - in ieremiam prophetam expositio
+  - postilla super ieremiam
+  - super ieremiam
+- author: Thomas Aquinas
+  work: Super Epistolam ad Corinthios I lectura
+  uses: 5
+  attested_by: 1
+  titles:
+  - expositio in epistolam ad corinthios i
+  - lectura super epistolam ad corinthios i
+  - super epistolam ad corinthios i lectura
+- author: Thomas Aquinas
+  work: Super Epistolam ad Corinthios II lectura
+  uses: 3
+  attested_by: 1
+  titles:
+  - expositio in epistolam ad corinthios ii
+  - lectura super epistolam ad corinthios ii
+  - super epistolam ad corinthios ii lectura
+- author: Thomas Aquinas
+  work: Collationes in decem praeceptis
+  uses: 2
+  attested_by: 2
+  titles:
+  - collationes in decem praeceptis
+  - de decem praeceptis
+  - explanation of the ten commandments
+- author: Thomas Aquinas
+  work: Super Epistolam ad Thessalonicenses I lectura
+  uses: 2
+  attested_by: 1
+  titles:
+  - expositio in epistolam ad thessalonicenses i
+  - lectura super epistolam ad thessalonicenses i
+  - super epistolam ad thessalonicenses i lectura
+- author: Thomas Aquinas
+  work: In Threnos Ieremiae expositio
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentary on lamentations
+  - expositio super threnos
+  - in threnos ieremiae expositio
+  - postilla super threnos
+- author: Thomas Aquinas
+  work: Super Epistolam ad Thessalonicenses II lectura
+  uses: 1
+  attested_by: 1
+  titles:
+  - expositio in epistolam ad thessalonicenses ii
+  - lectura super epistolam ad thessalonicenses ii
+  - super epistolam ad thessalonicenses ii lectura
+- author: Thomas Aquinas
+  work: Super Epistolam ad Timotheum I lectura
+  uses: 1
+  attested_by: 1
+  titles:
+  - expositio in epistolam ad timotheum i
+  - lectura super epistolam ad timotheum i
+  - super epistolam ad timotheum i lectura
+- author: Thomas Aquinas
+  work: Super Epistolam ad Timotheum II lectura
+  uses: 1
+  attested_by: 1
+  titles:
+  - expositio in epistolam ad timotheum ii
+  - lectura super epistolam ad timotheum ii
+  - super epistolam ad timotheum ii lectura
+- author: Victorinus of Pettau
+  work: Commentarius in Apocalypsin
+  uses: 18
+  attested_by: 3
+  titles:
+  - commentarii in apocalypsim
+  - commentarii in apocalypsim ioannis
+  - commentarii in apocalypsin
+  - commentarius in apocalypsim
+  - commentarius in apocalypsin
+  - commentary on revelation
+  - commentary on the apocalypse
+  - commentary on the book of revelation
+  - in apocalypsin ioannis
+  - scholia in apocalypsin
+  - scholia in apocalypsin beati ioannis
+- author: Walafrid Strabo
+  work: Glossa Ordinaria
+  uses: 248
+  attested_by: 1
+  titles:
+  - biblia latina cum glossa ordinaria
+  - glossa ordinaria
+  - glossa ordinaria in universa biblia
+- author: Willem Hessels van Est
+  work: In omnes divi Pauli epistolas commentarii
+  uses: 118
+  attested_by: 2
+  titles:
+  - commentary on the epistles of saint paul
+  - estius
+  - estius, commentarii in epistolas apostolicas
+  - in omnes divi pauli epistolas commentaria
+  - in omnes divi pauli epistolas commentarii
+  - in omnes pauli epistolas item in catholicas commentarii
+- author: Willem Hessels van Est
+  work: In canonicas apostolorum epistolas commentarii
+  uses: 4
+  attested_by: 1
+  titles:
+  - commentarii in epistolas catholicas
+  - in canonicas apostolorum epistolas commentarii
+- author: William Estius
+  work: In omnes divi Pauli epistolas commentarii
+  uses: 29
+  attested_by: 1
+  titles:
+  - absolutissima in omnes beati pauli epistolas commentaria
+  - commentarii in epistolas apostolicas
+  - in epistolam ad colossenses commentarius
+  - in epistolam ad ephesios commentarius
+  - in epistolam ad galatas commentarius
+  - in epistolam ad hebraeos commentarius
+  - in epistolam ad philippenses commentarius
+  - in epistolam ad romanos commentarius
+  - in epistolam ad titum commentarius
+  - in epistolam i ad corinthios commentarius
+  - in epistolam i ad thessalonicenses commentarius
+  - in epistolam i ad timotheum commentarius
+  - in epistolam ii ad corinthios commentarius
+  - in epistolam ii ad thessalonicenses commentarius
+  - in epistolam ii ad timotheum commentarius
+  - in omnes divi pauli epistolas commentarii
+- author: William Estius
+  work: In omnes canonicas apostolorum epistolas commentarii
+  uses: 6
+  attested_by: 1
+  titles:
+  - commentarii in epistolas catholicas
+  - in omnes canonicas apostolorum epistolas commentarii
+  - in septem epistolas canonicas commentarius

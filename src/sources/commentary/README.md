@@ -10,7 +10,9 @@ of works the vault should acquire.
 | --- | --- | --- | --- |
 | Lookup | `tools/tpt commentary-work-index discover` | `passage-commentary-index.yaml` | works for one passage |
 | Union | `tools/tpt commentary-work-index build-corpus` | the index plus `../calendars/*/propers.yaml` | `mass-commentary-corpus.yaml` |
-| Harvest | not yet built | a passage | candidate works, appended to the index |
+| Harvest | `tools/tpt harvest {plan,record}` | a passage | one run's candidates, into `harvest-ledger.yaml` |
+| Identity | `tools/tpt harvest aliases` | the ledger | `work-aliases.yaml` |
+| Promote | `tools/tpt harvest promote` | the ledger and the alias table | `passage-commentary-index.yaml` |
 
 Only the harvest stage consults a model. Everything downstream reads the
 tracked index, so the chain reproduces exactly from a given index: two runs of
@@ -82,6 +84,44 @@ harvester therefore records what it is:
   identify themselves for review.
 - Carry the author's death year as a field so the pre-1900 rule is checkable.
   A cutoff that lives only in a prompt cannot be verified afterwards.
+
+## Work identity
+
+Confidence here is agreement across independent runs, so it is only worth what
+work identity is worth: two runs naming one commentary differently look like
+disagreement, and the work splits into fragments each scoring below what it
+earned. Measured across three 491-locus runs, attributions corroborated by two
+or more runs were 35.3% on author and title as written against 78.3% on author
+alone — a 43-point gap that was naming, not disagreement about who commented.
+
+`work-aliases.yaml` closes it, and `harvest promote` will not run without it.
+The table is derived, not hand-typed: `harvest aliases --rebuild` takes the
+alias claims the runs themselves made, treats each as an edge between two
+names, and groups each author's names into connected components. On the same
+three runs that lifts corroboration to 70.7%, and of the 5095 loci where the
+runs agree on the author, 5004 now also agree on the work.
+
+What cannot be derived is whether a group is one work, so the table carries a
+`review` block and each entry states its reason:
+
+- `ambiguous_titles` drops a name that denotes two of its author's works.
+  Closure alone merged Peter Lombard's psalm gloss with his Pauline
+  *Collectanea*, because "Magna Glossatura" names both and two of the three
+  runs offered it as an alias of each. Corroboration would not have caught
+  that: both runs were right about the name and wrong about what it picks out.
+- `not_aliases` denies a join the works do not support. Jerome's
+  *Commentarioli in Psalmos* and *Tractatus in Psalmos* are two works, not one.
+- `also_aliases` adds a join no run happened to assert, needed where denying an
+  edge orphans a name that reached its group only through it.
+
+Loading validates that no title reaches two groups, that no name declared
+ambiguous still groups a work, and that no chain of aliases has re-joined works
+declared distinct. `evidence_sha256` covers the alias claims alone, so
+recording a run that asserts a new alias ages the table and `promote` refuses
+until the new grouping has been looked at. A merge is invisible once promoted
+and cannot be undone from the index, so nothing is merged on resemblance.
+
+## Review
 
 Nothing enters the source library on a harvest alone. Candidates are reviewed
 into the vault under `../../../guidance/sources.md`, the way a `trace-scan`

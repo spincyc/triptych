@@ -9,6 +9,7 @@ model identity and date are recorded alongside what it said.
 
   plan     passages still needing harvest, as a worklist
   record   one run's results into the ledger, validated
+  aliases  derive the tracked work-alias table from the ledger, validated
   promote  the ledger into the discovery index, confidence = appearances / runs
 """
 from __future__ import annotations
@@ -16,8 +17,11 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import sys
+import tempfile
 from collections import defaultdict
+from contextlib import contextmanager
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,8 +31,10 @@ from _tooling import print_json, run_verb_cli  # noqa: E402
 
 LEDGER = ROOT / "src" / "sources" / "commentary" / "harvest-ledger.yaml"
 INDEX = ROOT / "src" / "sources" / "commentary" / "passage-commentary-index.yaml"
+ALIASES = ROOT / "src" / "sources" / "commentary" / "work-aliases.yaml"
 SCHEMA = "triptych-commentary-harvest/v1"
 INDEX_SCHEMA = "triptych-commentary-work-index/v1"
+ALIAS_SCHEMA = "triptych-commentary-work-aliases/v1"
 # Works whose author died after this are outside the harvest.
 CUTOFF_YEAR = 1900
 ROLES = ("church-father", "saint", "saintly", "pope", "doctor")
@@ -42,14 +48,84 @@ def _load(path: Path) -> dict:
     return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 
+def _umask() -> int:
+    current = os.umask(0)
+    os.umask(current)
+    return current
+
+
+def _write_atomic(path: Path, text: str) -> None:
+    """Replace the file in one step, so a reader never sees a partial write.
+
+    A write straight to the destination truncates it first, and a crash or a
+    concurrent reader in that window sees a file that is neither the old
+    content nor the new. Writing a sibling and renaming makes the swap atomic
+    within the directory, which is all any reader here needs.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    handle, temporary = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.", suffix=".tmp")
+    try:
+        with os.fdopen(handle, "w", encoding="utf-8") as stream:
+            stream.write(text)
+            stream.flush()
+            os.fsync(stream.fileno())
+        # mkstemp is private by construction; a tracked file is not.
+        os.chmod(temporary, path.stat().st_mode & 0o7777 if path.exists() else 0o644 & ~_umask())
+        os.replace(temporary, path)
+    except BaseException:
+        Path(temporary).unlink(missing_ok=True)
+        raise
+
+
 def _dump(path: Path, payload: dict) -> None:
     import yaml
 
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
+    _write_atomic(
+        path,
         yaml.safe_dump(payload, sort_keys=False, allow_unicode=True, width=88),
-        encoding="utf-8",
     )
+
+
+@contextmanager
+def _locked(path: Path):
+    """Hold an exclusive lock over one file's read-modify-write cycle.
+
+    Every mutating verb loads the whole ledger, changes it and dumps it back.
+    Two of those interleaving lose whichever run was recorded first: it was
+    observed live, the ledger falling from six runs to three and back. The
+    lock makes the second writer read the first writer's result rather than
+    overwrite it.
+    """
+    try:
+        import fcntl
+    except ImportError:  # pragma: no cover - not a platform this repo builds on
+        yield
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    guard = path.with_name(path.name + ".lock")
+    with open(guard, "w", encoding="utf-8") as handle:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+
+
+def _dump_ledger(path: Path, ledger: dict, *, allow_shrink: bool = False) -> None:
+    """Write the ledger, refusing to drop runs unless that is asked for.
+
+    Recorded evidence is the only thing this tool cannot reconstruct, so a
+    write that ends with fewer runs than the file already holds is treated as
+    a defect until an operator says otherwise.
+    """
+    before = len(_ledger_runs(_load(path)))
+    now = len(_ledger_runs(ledger))
+    if now < before and not allow_shrink:
+        raise ValueError(
+            f"{path}: writing {now} runs over {before} would drop recorded evidence; "
+            "pass --allow-shrink if that is intended"
+        )
+    _dump(path, ledger)
 
 
 def _ledger_runs(ledger: dict) -> list[dict]:
@@ -155,32 +231,314 @@ def run_record(arguments: argparse.Namespace) -> dict:
     if problems:
         raise ValueError("; ".join(problems[:6]) + (f"; +{len(problems) - 6} more" if len(problems) > 6 else ""))
 
-    ledger = _load(Path(getattr(arguments, 'ledger', LEDGER))) or {"schema": SCHEMA, "runs": []}
     digest = hashlib.sha256(
         json.dumps(cleaned, sort_keys=True, ensure_ascii=False).encode()
     ).hexdigest()
     run_id = f"{arguments.audited_on}-{arguments.model}-{digest[:8]}"
-    runs = _ledger_runs(ledger)
-    if any(r.get("run_id") == run_id for r in runs):
-        return {"status": "already recorded", "run_id": run_id, "runs": len(runs)}
-    runs.append(
-        {
-            "run_id": run_id,
-            "model": arguments.model,
-            "audited_on": arguments.audited_on,
-            "passage_count": len(cleaned),
-            "passages": cleaned,
-        }
-    )
-    ledger["schema"] = SCHEMA
-    ledger["runs"] = sorted(runs, key=lambda r: r["run_id"])
-    _dump(Path(getattr(arguments, 'ledger', LEDGER)), ledger)
+    path = Path(getattr(arguments, 'ledger', LEDGER))
+    # The load, the duplicate check and the write are one critical section:
+    # split apart, two concurrent records each write a ledger missing the
+    # other's run, and both report success.
+    with _locked(path):
+        ledger = _load(path) or {"schema": SCHEMA, "runs": []}
+        runs = _ledger_runs(ledger)
+        if any(r.get("run_id") == run_id for r in runs):
+            return {"status": "already recorded", "run_id": run_id, "runs": len(runs)}
+        runs.append(
+            {
+                "run_id": run_id,
+                "model": arguments.model,
+                "audited_on": arguments.audited_on,
+                "passage_count": len(cleaned),
+                "passages": cleaned,
+            }
+        )
+        ledger["schema"] = SCHEMA
+        ledger["runs"] = sorted(runs, key=lambda r: r["run_id"])
+        _dump_ledger(path, ledger, allow_shrink=getattr(arguments, "allow_shrink", False))
     return {"status": "recorded", "run_id": run_id, "passages": len(cleaned), "runs": len(ledger["runs"])}
+
+
+def _fold(value: object) -> str:
+    return str(value or "").casefold().strip()
 
 
 def _titles(work: dict) -> list[str]:
     names = [work.get("title", "")] + list(work.get("aliases") or [])
     return [str(n).casefold().strip() for n in names if str(n).strip()]
+
+
+# --- work identity -----------------------------------------------------------
+#
+# Two runs naming one commentary differently split it in the index, and each
+# fragment then scores below what the work earned. Matching on author alone
+# corroborates 78% of attributions where matching on author and title as
+# written corroborates 35%: the 43-point gap is naming, not disagreement about
+# who commented.
+#
+# The runs already assert the aliases. Treating every asserted name as an edge
+# between names and taking connected components per author derives the
+# groupings from the evidence rather than from a hand-typed list, which is the
+# same discipline the psalm concordance follows. What cannot be derived is
+# whether a group is one work: closure alone merged Peter Lombard's psalm gloss
+# with his Pauline Collectanea, because "Magna Glossatura" names both, and two
+# runs asserted it of each. So the closure is tracked, reviewed and validated,
+# and the review's corrections live beside it as data with a reason attached.
+
+
+def _alias_evidence(runs: list[dict]) -> tuple[dict, dict, dict]:
+    """Every alias a run asserted, and how often each name was used as a title.
+
+    Returned as edges keyed (author, name, name) with the runs asserting them,
+    so how well attested a grouping is stays visible rather than being averaged
+    away into a yes.
+    """
+    edges: dict[tuple[str, str, str], set[str]] = defaultdict(set)
+    used: dict[tuple[str, str], int] = defaultdict(int)
+    spelling: dict[tuple[str, str], str] = {}
+    for run in runs:
+        run_id = str(run.get("run_id") or "")
+        for works in (run.get("passages") or {}).values():
+            for work in works:
+                author, title = _fold(work.get("author")), _fold(work.get("title"))
+                if not author or not title:
+                    continue
+                used[(author, title)] += 1
+                spelling.setdefault((author, ""), str(work.get("author")).strip())
+                spelling.setdefault((author, title), str(work.get("title")).strip())
+                for alias in work.get("aliases") or []:
+                    name = _fold(alias)
+                    if not name or name == title:
+                        continue
+                    spelling.setdefault((author, name), str(alias).strip())
+                    edges[(author, *sorted((title, name)))].add(run_id)
+    return edges, used, spelling
+
+
+def _evidence_digest(edges: dict) -> str:
+    """A digest of the alias claims alone, so only a new claim ages the table."""
+    return hashlib.sha256(
+        json.dumps(sorted(list(k) for k in edges), ensure_ascii=False).encode()
+    ).hexdigest()
+
+
+def _review_rules(review: dict) -> tuple[set, set, set]:
+    """The reviewer's corrections: names that mean two works, and denied or
+    asserted joins. Each carries a reason in the table; none is inferable."""
+    ambiguous = {
+        (_fold(e.get("author")), _fold(e.get("title")))
+        for e in (review.get("ambiguous_titles") or [])
+    }
+    def pairs(field: str) -> set:
+        out = set()
+        for entry in review.get(field) or []:
+            names = [_fold(t) for t in entry.get("titles") or []]
+            if len(names) != 2 or not all(names):
+                raise ValueError(f"review.{field}: each entry needs exactly two titles")
+            out.add((_fold(entry.get("author")), *sorted(names)))
+        return out
+    return ambiguous, pairs("not_aliases"), pairs("also_aliases")
+
+
+def _derive_groups(runs: list[dict], review: dict) -> tuple[list[dict], str]:
+    """Connected components of the asserted-alias graph, per author."""
+    edges, used, spelling = _alias_evidence(runs)
+    ambiguous, denied, asserted = _review_rules(review)
+    linked: dict[tuple[str, str], set[str]] = defaultdict(set)
+    parent: dict[tuple[str, str], tuple[str, str]] = {}
+
+    def find(node):
+        parent.setdefault(node, node)
+        while parent[node] != node:
+            parent[node] = parent[parent[node]]
+            node = parent[node]
+        return node
+
+    def union(left, right):
+        left, right = find(left), find(right)
+        if left != right:
+            parent[left] = right
+
+    for (author, one, two), asserting in list(edges.items()) + [(k, set()) for k in asserted]:
+        find((author, one))
+        find((author, two))
+        if (author, one) in ambiguous or (author, two) in ambiguous:
+            continue
+        if (author, one, two) in denied:
+            continue
+        union((author, one), (author, two))
+        linked[(author, one, two)] |= asserting
+    for key in used:
+        find(key)
+
+    members: dict[tuple[str, str], list[tuple[str, str]]] = defaultdict(list)
+    for node in list(parent):
+        members[find(node)].append(node)
+    groups = []
+    for names in members.values():
+        if len(names) < 2:
+            continue  # a name with no alias groups nothing
+        author = names[0][0]
+        titles = sorted(t for _, t in names)
+        best = max(titles, key=lambda t: (used.get((author, t), 0), -len(t), t))
+        runs_seen = {r for k, v in linked.items() if k[0] == author and set(titles) & {k[1], k[2]} for r in v}
+        groups.append(
+            {
+                "author": spelling.get((author, ""), author),
+                "work": spelling.get((author, best), best),
+                "uses": sum(used.get((author, t), 0) for t in titles),
+                "attested_by": len(runs_seen),
+                "titles": titles,
+            }
+        )
+    groups.sort(key=lambda g: (g["author"].casefold(), -g["uses"], g["work"].casefold()))
+    return groups, _evidence_digest(edges)
+
+
+def _alias_registry(path: Path, runs: list[dict]) -> dict:
+    """Load the tracked table, validated, and report whether it still fits.
+
+    Validation refuses a table where one title maps into two groups: that is
+    the failure the table exists to prevent, and a table that permitted it
+    would resolve successfully and wrongly.
+    """
+    document = _load(path)
+    if not document:
+        return {"present": False, "registry": {}, "display": {}, "stale": False, "groups": 0}
+    if document.get("schema") != ALIAS_SCHEMA:
+        raise ValueError(f"{path}: schema must be {ALIAS_SCHEMA}, got {document.get('schema')!r}")
+    registry: dict[tuple[str, str], tuple[str, str]] = {}
+    display: dict[tuple[str, str], tuple[str, str]] = {}
+    for index, group in enumerate(document.get("groups") or []):
+        where = f"{path}: groups[{index}]"
+        author = _fold(group.get("author"))
+        work = str(group.get("work") or "").strip()
+        titles = [_fold(t) for t in group.get("titles") or []]
+        if not author or not work:
+            raise ValueError(f"{where}: author and work are required")
+        if len(titles) < 2 or not all(titles):
+            raise ValueError(f"{where}: a group needs at least two non-empty titles")
+        if _fold(work) not in titles:
+            raise ValueError(f"{where}: the canonical work {work!r} is not among its own titles")
+        canonical = (author, _fold(work))
+        display[canonical] = (str(group.get("author")).strip(), work)
+        for title in titles:
+            previous = registry.get((author, title))
+            if previous is not None and previous != canonical:
+                raise ValueError(
+                    f"{where}: {author}: title {title!r} maps into two groups "
+                    f"({previous[1]!r} and {canonical[1]!r}); one title is one work"
+                )
+            registry[(author, title)] = canonical
+    ambiguous, denied, _ = _review_rules(document.get("review") or {})
+    for author, title in sorted(ambiguous):
+        if (author, title) in registry:
+            raise ValueError(
+                f"{path}: {author}: {title!r} is declared ambiguous but still groups a work"
+            )
+    for author, one, two in sorted(denied):
+        left, right = registry.get((author, one)), registry.get((author, two))
+        if left is not None and left == right:
+            raise ValueError(
+                f"{path}: {author}: {one!r} and {two!r} are declared distinct works but "
+                f"a chain of aliases still joins them under {left[1]!r}"
+            )
+    return {
+        "present": True,
+        "registry": registry,
+        "display": display,
+        "groups": len(document.get("groups") or []),
+        "stale": document.get("evidence_sha256") != _evidence_digest(_alias_evidence(runs)[0]),
+        "review": document.get("review") or {},
+    }
+
+
+def _alias_path(arguments: argparse.Namespace) -> Path:
+    """The alias table beside the ledger it was derived from.
+
+    A table describes one ledger's alias claims, so it follows `--ledger`
+    rather than staying pinned to the tracked one; pointed at a scratch ledger
+    the tool reads that ledger's table, not the repository's.
+    """
+    chosen = getattr(arguments, "alias_table", None)
+    if chosen:
+        return Path(chosen)
+    ledger = Path(getattr(arguments, "ledger", LEDGER))
+    return ledger.parent / ALIASES.name if ledger != LEDGER else ALIASES
+
+
+def _seed_registry(
+    arguments: argparse.Namespace, runs: list[dict], *, require: bool = False
+) -> tuple[dict, dict]:
+    """The alias registry `_key` starts from, refusing a table the ledger outgrew.
+
+    Also returns the name each group is reported under, so a work is named the
+    same way everywhere rather than however the first run to mention it did.
+    """
+    table = _alias_registry(_alias_path(arguments), runs)
+    if table["present"] and table["stale"] and require:
+        raise ValueError(
+            "the work-alias table no longer covers the ledger's alias claims; "
+            "rebuild it with `harvest aliases --rebuild` and review the diff before promoting"
+        )
+    return dict(table["registry"]), dict(table["display"])
+
+
+def run_aliases(arguments: argparse.Namespace) -> dict:
+    """Derive the work-alias table from the ledger, or check the tracked one."""
+    path = _alias_path(arguments)
+    runs = _ledger_runs(_load(Path(getattr(arguments, "ledger", LEDGER))))
+    if not runs:
+        raise ValueError("the harvest ledger holds no runs")
+    existing = _load(path)
+    review = existing.get("review") or {}
+    groups, digest = _derive_groups(runs, review)
+    if not arguments.rebuild:
+        table = _alias_registry(path, runs)
+        return {
+            "status": "stale" if (table["present"] and table["stale"]) else
+                      ("absent" if not table["present"] else "current"),
+            "tracked_groups": table["groups"],
+            "derived_groups": len(groups),
+            "titles": len(table["registry"]),
+            "reviewed": sum(len(v) for v in (review or {}).values() if isinstance(v, list)),
+        }
+    import yaml
+
+    document = {
+        "schema": ALIAS_SCHEMA,
+        "derived_on": arguments.audited_on,
+        "evidence_sha256": digest,
+        "review": review or {"ambiguous_titles": [], "not_aliases": [], "also_aliases": []},
+        "groups": groups,
+    }
+    _write_atomic(path, _ALIAS_HEADER + yaml.safe_dump(
+        document, sort_keys=False, allow_unicode=True, width=88))
+    _alias_registry(path, runs)  # refuse to leave an invalid table on disk
+    return {
+        "status": "rebuilt",
+        "groups": len(groups),
+        "titles": sum(len(g["titles"]) for g in groups),
+        "reviewed": sum(len(v) for v in (review or {}).values() if isinstance(v, list)),
+    }
+
+
+_ALIAS_HEADER = """\
+# Which commentary titles name one work.
+#
+# Derived by `tools/tpt harvest aliases --rebuild` from the alias claims the
+# harvest runs themselves made, not hand-typed: `groups` is the connected
+# components of the "these names are the same work" graph, per author, and is
+# regenerated whole. `review` is the part that cannot be derived, because
+# whether a group is one work is a judgement about the works; each entry
+# carries the reason it was made. Loading validates that no title reaches two
+# groups, that no name declared ambiguous still groups a work, and that no
+# chain of aliases has re-joined works declared distinct.
+#
+# `evidence_sha256` covers the alias claims alone, so recording a run that
+# asserts a new alias ages the table and `harvest promote` refuses until the
+# new grouping has been looked at.
+"""
 
 
 def _key(work: dict, registry: dict[tuple[str, str], tuple[str, str]] | None = None):
@@ -189,6 +547,11 @@ def _key(work: dict, registry: dict[tuple[str, str], tuple[str, str]] | None = N
     Three runs named one Aquinas work two ways and it split in the corpus,
     each fragment scoring below what the work earned, so a title alias is
     matched as readily as the title itself.
+
+    The registry is seeded from the reviewed alias table, which decides every
+    grouping the ledger has evidence for. What it does not know it learns from
+    the run in hand, which is first-come and so depends on the order the ledger
+    is walked; the table exists to leave nothing for that path to decide.
     """
     author = str(work.get("author", "")).casefold().strip()
     if registry is not None:
@@ -207,14 +570,15 @@ def run_promote(arguments: argparse.Namespace) -> dict:
     runs = _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER))))
     if not runs:
         raise ValueError("the harvest ledger holds no runs")
-    aliases: dict[tuple[str, str], tuple[str, str]] = {}
+    aliases, naming = _seed_registry(arguments, runs, require=True)
     seen: dict[str, dict[tuple[str, str], dict]] = defaultdict(dict)
     counts: dict[str, int] = defaultdict(int)
     for run in runs:
         for passage, works in (run.get("passages") or {}).items():
             counts[passage] += 1
             for work in works:
-                entry = seen[passage].setdefault(_key(work, aliases), {"work": work, "appearances": 0})
+                key = _key(work, aliases)
+                entry = seen[passage].setdefault(key, {"work": work, "key": key, "appearances": 0})
                 entry["appearances"] += 1
     payload = []
     for passage in sorted(seen):
@@ -225,11 +589,14 @@ def run_promote(arguments: argparse.Namespace) -> dict:
             if confidence < arguments.min_confidence:
                 continue
             work = entry["work"]
+            # Report the group's name, not whichever of its names the first run
+            # to mention it happened to use.
+            author, title = naming.get(entry["key"], (work["author"], work["title"]))
             works.append(
                 {
                     **({"work_id": work["work_id"]} if work.get("work_id") else {}),
-                    "author": work["author"],
-                    "title": work["title"],
+                    "author": author,
+                    "title": title,
                     "date": str(work.get("death_year") or ""),
                     "role": work["role"],
                     "confidence": confidence,
@@ -246,13 +613,18 @@ def run_promote(arguments: argparse.Namespace) -> dict:
         "min_confidence": arguments.min_confidence,
         "passages": payload,
     }
-    if not arguments.dry_run:
-        _dump(Path(getattr(arguments, 'index', INDEX)), index)
+    target = Path(getattr(arguments, 'index', INDEX))
     return {
         "status": "promoted" if not arguments.dry_run else "dry-run",
         "passages": len(payload),
         "runs": len(runs),
         "works": sum(len(p["works"]) for p in payload),
+        "distinct_works": len({(w["author"], w["title"]) for p in payload for w in p["works"]}),
+        "index": str(target),
+        # Deferred so the index lands only once the run can also be reported.
+        # Writing first left a text-mode promote having written the file and
+        # exited non-zero, which tells an operator nothing about what landed.
+        **({} if arguments.dry_run else {"_commit": lambda: _dump(target, index)}),
     }
 
 
@@ -286,10 +658,11 @@ def run_harvest(arguments: argparse.Namespace) -> dict:
     asking per mass would consult the model repeatedly for the same text.
     """
     passages = _mass_passages(arguments.missal, arguments.mass)
-    aliases: dict[tuple[str, str], tuple[str, str]] = {}
+    ledger_runs = _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER))))
+    aliases, naming = _seed_registry(arguments, ledger_runs)
     runs_for: dict[str, int] = defaultdict(int)
     works_for: dict[str, dict] = defaultdict(dict)
-    for run in _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER)))):
+    for run in ledger_runs:
         for passage, works in (run.get("passages") or {}).items():
             if passage not in passages:
                 continue
@@ -306,9 +679,12 @@ def run_harvest(arguments: argparse.Namespace) -> dict:
             sorted(works_for[passage].values(), key=lambda e: -e["n"])
         ):
             work = entry["work"]
+            key = _key(work, aliases)
+            author, title = naming.get(key, (work["author"], work["title"]))
             slot = ranked.setdefault(
-                _key(work, aliases),
-                {**work, "score": 0.0, "confidence": 0.0, "passages": []},
+                key,
+                {**work, "author": author, "title": title,
+                 "score": 0.0, "confidence": 0.0, "passages": []},
             )
             slot["score"] += 1.0 / (rank + 1)
             slot["confidence"] = max(slot["confidence"], round(entry["n"] / total, 4))
@@ -340,7 +716,7 @@ def run_propers(arguments: argparse.Namespace) -> dict:
     runs = _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER))))
     if not runs:
         raise ValueError("the harvest ledger holds no runs; harvest some masses first")
-    aliases: dict[tuple[str, str], tuple[str, str]] = {}
+    aliases, naming = _seed_registry(arguments, runs)
     per_passage: dict[str, dict] = defaultdict(dict)
     counts: dict[str, int] = defaultdict(int)
     for run in runs:
@@ -358,9 +734,10 @@ def run_propers(arguments: argparse.Namespace) -> dict:
         total = counts[passage]
         for key, entry in entries.items():
             work = entry["work"]
+            author, title = naming.get(key, (work["author"], work["title"]))
             slot = collated.setdefault(key, {
                 **({"work_id": work["work_id"]} if work.get("work_id") else {}),
-                "author": work["author"], "title": work["title"], "role": work["role"],
+                "author": author, "title": title, "role": work["role"],
                 "death_year": work["death_year"],
                 **({"aliases": work["aliases"]} if work.get("aliases") else {}),
                 "score": 0.0, "confidence": 0.0,
@@ -395,6 +772,8 @@ def main(argv: list[str] | None = None) -> int:
     # a value given before the verb, so leave it unset and fall back.
     shared.add_argument("--ledger", default=argparse.SUPPRESS, help="harvest ledger path")
     shared.add_argument("--index", default=argparse.SUPPRESS, help="discovery index path")
+    shared.add_argument("--alias-table", default=argparse.SUPPRESS,
+                        help="tracked work-alias table path")
     shared.add_argument(
         "--src-list-only", action="store_true", default=argparse.SUPPRESS,
         help="just the works to extract, without scores or passage detail",
@@ -425,6 +804,16 @@ def main(argv: list[str] | None = None) -> int:
     record.add_argument("--results", required=True)
     record.add_argument("--model", required=True, help="the model that produced them")
     record.add_argument("--audited-on", required=True, help="ISO date of the run")
+    record.add_argument(
+        "--allow-shrink", action="store_true",
+        help="permit a write that leaves the ledger holding fewer runs than it does now",
+    )
+
+    alias = sub.add_parser(
+        "aliases", help="derive or check the tracked work-alias table", parents=[shared]
+    )
+    alias.add_argument("--rebuild", action="store_true", help="rederive and write the table")
+    alias.add_argument("--audited-on", default="", help="ISO date to stamp a rebuild with")
 
     harvest = sub.add_parser(
         "harvest", help="one mass's ranked works", parents=[shared]
@@ -439,11 +828,11 @@ def main(argv: list[str] | None = None) -> int:
     promote.add_argument("--min-confidence", type=float, default=0.0)
     promote.add_argument("--dry-run", action="store_true")
 
-    def render(payload: object, arguments: argparse.Namespace) -> int:
-        if not isinstance(payload, dict):
-            print("harvest error: invalid payload", file=sys.stderr)
-            return 70
-        if getattr(arguments, "src_list_only", False) and "works" in payload:
+    def emit(payload: dict, arguments: argparse.Namespace) -> int:
+        # `works` is a list of works for the collating verbs and a count for
+        # promote, so every branch below tests the shape rather than the name.
+        listed = isinstance(payload.get("works"), list)
+        if getattr(arguments, "src_list_only", False) and listed:
             payload = {
                 "works": [
                     {k: w[k] for k in ("work_id", "author", "title", "role", "death_year") if k in w}
@@ -459,7 +848,7 @@ def main(argv: list[str] | None = None) -> int:
 
             print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True, width=88).rstrip())
             return 0
-        if "works" in payload:
+        if listed:
             for work in payload["works"]:
                 bits = [f"{work['author']} — {work['title']}"]
                 if "confidence" in work:
@@ -488,10 +877,32 @@ def main(argv: list[str] | None = None) -> int:
             print(f"{key}: {value}")
         return 0
 
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        """Render first, then let the verb commit what it rendered.
+
+        A verb that wrote its output file before returning left a failed
+        render having already changed the tree, and the operator with no
+        report of what changed. Anything a verb defers here lands only once
+        the run can also be described.
+        """
+        if not isinstance(payload, dict):
+            print("harvest error: invalid payload", file=sys.stderr)
+            return 70
+        commit = payload.pop("_commit", None)
+        status = emit(payload, arguments)
+        if commit is not None:
+            # Buffered output fails at interpreter exit, long after a commit
+            # here would have run, so the report is not reported until it is
+            # actually out.
+            sys.stdout.flush()
+            if status == 0:
+                commit()
+        return status
+
     return run_verb_cli(
         parser=parser,
         handlers={"plan": run_plan, "record": run_record, "promote": run_promote,
-                  "harvest": run_harvest, "propers": run_propers},
+                  "harvest": run_harvest, "propers": run_propers, "aliases": run_aliases},
         renderer=render,
         prefix="harvest",
         argv=argv,
