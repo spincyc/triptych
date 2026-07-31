@@ -44,24 +44,6 @@
   --notice-bg: #f8eae8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --section-accent: #db7e76;
-    --section-ink: #e7b3af;
-    --section-wash: rgba(224, 130, 118, 0.12);
-    --section-pale: #733732;
-    --section-row: #321c1a;
-    --section-line: #61332f;
-    --focus: #db7e76;
-    --page: #190e0d;
-    --panel: #251716;
-    --ink: #ebe1e0;
-    --ink-soft: #bfa8a6;
-    --ink-faint: #9b807d;
-    --notice: #f0a9a0;
-    --notice-bg: #2e1a18;
-  }
-}
 
 /* ---- What only this page renders ---- */
 

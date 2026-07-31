@@ -21,7 +21,11 @@
  * ======================================================================== */
 
 :root {
-  color-scheme: light dark;
+  /* The site these pages hang off declares `only light`, so a dark-mode
+     override here would make a browser page black while the landing page it
+     was reached from stayed cream. The section palettes below are the theme;
+     they are not conditioned on the reader's system preference. */
+  color-scheme: only light;
 
   --page: #fbfaf7;
   --panel: #ffffff;
@@ -52,20 +56,6 @@
   --measure: 65ch;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page: #14130f;
-    --panel: #1c1b17;
-    --ink: #ece7dd;
-    --ink-soft: #b9b2a6;
-    /* 4.85:1 on --panel and 4.15:1 on a toned row before; 5.25:1 and 4.49:1
-       now, so the faint text clears the threshold on every surface it lands on
-       after dark as well as before it. */
-    --ink-faint: #948d82;
-    --notice: #f0a9a0;
-    --notice-bg: #2c1d1b;
-  }
-}
 
 *, *::before, *::after { box-sizing: border-box; }
 
