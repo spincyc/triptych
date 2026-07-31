@@ -18,6 +18,93 @@ if sys.version_info < (3, 11):
     raise SystemExit("source-inventory requires Python 3.11 or newer")
 
 import tomllib
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/source-inventory check",
+            (
+                "source-inventory valid: publications=133 source_surface_files=1963 owners=11",
+            ),
+        ),
+        Example(
+            "tools/source-inventory --root . check",
+            (
+                "source-inventory valid: publications=133 source_surface_files=1963 owners=11",
+            ),
+            "--root belongs before the verb: it selects the repository the inventory describes",
+        ),
+    ),
+    "bootstrap": (
+        Example(
+            "tools/source-inventory bootstrap build/example-inventory.toml --audited-on 2026-07-31",
+            (
+            ),
+            "WRITES the named file. The output path is a positional argument, so a scratch path keeps the tracked inventory untouched",
+        ),
+        Example(
+            "tools/source-inventory bootstrap build/example-inventory.toml --audited-on 2026-07-31 --provider claude",
+            (
+            ),
+            "WRITES the named file, one provider only",
+        ),
+    ),
+    "bootstrap-classification-review": (
+        Example(
+            "tools/source-inventory bootstrap-classification-review build/example-review.toml --audited-on 2026-07-31",
+            (
+            ),
+            "WRITES the named file",
+        ),
+        Example(
+            "tools/source-inventory bootstrap-classification-review build/example-review.toml --audited-on 2026-07-31 --provider gpt",
+            (
+            ),
+            "WRITES the named file, one provider only",
+        ),
+    ),
+    "classify": (
+        Example(
+            "tools/source-inventory check",
+            (
+                "source-inventory valid: publications=133 source_surface_files=1963 owners=11",
+            ),
+            "read-only first: `check` reports the inventory `classify` reads",
+        ),
+        Example(
+            "tools/source-inventory classify",
+            (
+            ),
+            "exit 0 and silence is the pass: classify reads the tracked inventory and the tracked review and says nothing when they agree",
+        ),
+    ),
+    "refresh": (
+        Example(
+            "tools/source-inventory check",
+            (
+                "source-inventory valid: publications=133 source_surface_files=1963 owners=11",
+            ),
+            "read-only first: `check` says whether a refresh would change anything",
+        ),
+        Example(
+            "tools/source-inventory refresh build/example-inventory.toml --audited-on 2026-07-31",
+            (
+                "source-inventory error: <repo>/src/sources/inventories/classification-review-v1.toml: reviewed publication set must match either t... [+60 chars]",
+            ),
+            "refused: a refresh must start from a reviewed set that matches either the prior inventory or the current tree. WRITES the named inventory when it does; with no positional argument it rewrites the tracked one",
+        ),
+    ),
+}
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1108,27 +1195,43 @@ def _rooted(root: Path, value: Path) -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
+    examples_live_on_the_verbs(parser, "source-inventory")
     subparsers = parser.add_subparsers(dest="command", required=True)
     provider_default = os.environ.get("PROVIDER", DEFAULT_PROVIDER)
-    check = subparsers.add_parser("check")
+    check = with_examples(
+        subparsers.add_parser("check"),
+        EXAMPLES["check"],
+    )
     check.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
     check.add_argument(
         "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
     )
-    bootstrap = subparsers.add_parser("bootstrap")
+    bootstrap = with_examples(
+        subparsers.add_parser("bootstrap"),
+        EXAMPLES["bootstrap"],
+    )
     bootstrap.add_argument("output", type=Path)
     bootstrap.add_argument("--audited-on", required=True)
     bootstrap.add_argument("--provider", default=provider_default)
-    review_bootstrap = subparsers.add_parser("bootstrap-classification-review")
+    review_bootstrap = with_examples(
+        subparsers.add_parser("bootstrap-classification-review"),
+        EXAMPLES["bootstrap-classification-review"],
+    )
     review_bootstrap.add_argument("output", type=Path)
     review_bootstrap.add_argument("--audited-on", required=True)
     review_bootstrap.add_argument("--provider", default=provider_default)
-    classify = subparsers.add_parser("classify")
+    classify = with_examples(
+        subparsers.add_parser("classify"),
+        EXAMPLES["classify"],
+    )
     classify.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
     classify.add_argument(
         "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
     )
-    refresh = subparsers.add_parser("refresh")
+    refresh = with_examples(
+        subparsers.add_parser("refresh"),
+        EXAMPLES["refresh"],
+    )
     refresh.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
     refresh.add_argument(
         "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW

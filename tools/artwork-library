@@ -14,6 +14,94 @@ import tomllib
 import zlib
 from dataclasses import dataclass
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "identify": (
+        Example(
+            "tools/artwork-library identify src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png",
+            (
+                "sha256 = \"3e7bc1bd6be0daee995952adb90bfcaf9ab7df8701800283a1e85263ff733759\"",
+                "width = 750",
+                "height = 500",
+                "depth = 8",
+                "mode = \"grayscale-alpha\"",
+            ),
+        ),
+        Example(
+            "tools/artwork-library identify build/example-art.png",
+            (
+                "sha256 = \"09e63eece56ca8a0959e2b29fc717f777223cb1cf3f616f1b7d9834186423dc7\"",
+                "width = 750",
+                "height = 500",
+                "depth = 8",
+                "mode = \"grayscale\"",
+            ),
+            "the same fields for a normalized asset, ready to paste into a manifest",
+        ),
+    ),
+    "normalize": (
+        Example(
+            "tools/artwork-library identify src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png",
+            (
+                "sha256 = \"3e7bc1bd6be0daee995952adb90bfcaf9ab7df8701800283a1e85263ff733759\"",
+                "width = 750",
+                "height = 500",
+                "depth = 8",
+                "mode = \"grayscale-alpha\"",
+            ),
+            "read-only first: what the source asset is before normalization",
+        ),
+        Example(
+            "tools/artwork-library normalize src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png build/example-art.png",
+            (
+                "build/example-art.png: 750x500, 8-bit grayscale, sha256=09e63eece56ca8a0959e2b29fc717f777223cb1cf3f616f1b7d9834186423dc7",
+            ),
+            "WRITES the destination PNG named on the command line",
+        ),
+    ),
+    "check": (
+        Example(
+            "tools/artwork-library check src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml",
+            (
+                "ERROR: file-epistle-book-isolated-alpha: publishing PNG must not embed a color profile",
+                "ERROR: file-gospel-book-isolated-alpha: publishing PNG must not embed a color profile",
+                "ERROR: file-prepared-chalice-formation-alpha: publishing PNG must not embed a color profile",
+            ),
+        ),
+        Example(
+            "tools/artwork-library check src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/artwork-manifest.example.toml",
+            (
+                "ERROR: src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/artwork-manifest.example.toml: expected ... [+34 chars]",
+            ),
+            "a manifest with no assets is refused rather than passed as vacuously valid",
+        ),
+    ),
+    "check-pdf": (
+        Example(
+            "tools/artwork-library check-pdf build/core-last-20.pdf",
+            (
+                "PDF artwork audit passed: build/core-last-20.pdf (0 review trigger(s))",
+            ),
+        ),
+        Example(
+            "tools/artwork-library check-pdf --strict-review-triggers build/core-last-20.pdf",
+            (
+                "PDF artwork audit passed: build/core-last-20.pdf (0 review trigger(s))",
+            ),
+            "--strict-review-triggers makes an effective resolution above 450 dpi a failure",
+        ),
+    ),
+}
 
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 ALLOWED_COLOR_TYPES = {0: "grayscale", 4: "grayscale-alpha"}
@@ -466,16 +554,29 @@ def audit_pdf(path: Path) -> tuple[list[str], list[str]]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    examples_live_on_the_verbs(parser, "artwork-library")
     commands = parser.add_subparsers(dest="command", required=True)
-    check = commands.add_parser("check", help="validate assets against a TOML manifest")
+    check = with_examples(
+        commands.add_parser("check", help="validate assets against a TOML manifest"),
+        EXAMPLES["check"],
+    )
     check.add_argument("manifest", type=Path)
-    normal = commands.add_parser("normalize", help="write a normalized publishing PNG")
+    normal = with_examples(
+        commands.add_parser("normalize", help="write a normalized publishing PNG"),
+        EXAMPLES["normalize"],
+    )
     normal.add_argument("source", type=Path)
     normal.add_argument("destination", type=Path)
-    identify = commands.add_parser("identify", help="print manifest-ready PNG fields")
+    identify = with_examples(
+        commands.add_parser("identify", help="print manifest-ready PNG fields"),
+        EXAMPLES["identify"],
+    )
     identify.add_argument("asset", type=Path)
-    pdf_check = commands.add_parser(
-        "check-pdf", help="audit embedded publishing-raster effective resolution"
+    pdf_check = with_examples(
+        commands.add_parser(
+            "check-pdf", help="audit embedded publishing-raster effective resolution"
+        ),
+        EXAMPLES["check-pdf"],
     )
     pdf_check.add_argument("pdf", type=Path)
     pdf_check.add_argument(

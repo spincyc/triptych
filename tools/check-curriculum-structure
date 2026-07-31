@@ -12,6 +12,30 @@ from dataclasses import dataclass
 from pathlib import Path
 from statistics import median
 from typing import Sequence
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/check-curriculum-structure --curriculum-root src/gpt/curriculums/ecclesiastical-latin --sources-only",
+            (
+            ),
+            "exit 0 and silence is the pass: --sources-only audits the authoritative sources and says nothing when they hold",
+        ),
+        Example(
+            "tools/check-curriculum-structure --curriculum-root src/gpt/curriculums/no-such-curriculum --sources-only",
+            (
+                "curriculum structure error (curriculum sources): cannot read src/gpt/curriculums/no-such-curricu... [+136 chars]",
+            ),
+            "a root that holds no curriculum is refused rather than passed as empty",
+        ),
+    ),
+}
 
 
 CURRICULUM_PREFIX = "curriculums/ecclesiastical-latin/"
@@ -2421,6 +2445,7 @@ def _parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = _parser()
+    with_examples(parser, EXAMPLES[""])
     arguments = parser.parse_args(argv)
     rendered_arguments = (arguments.document, arguments.toc, arguments.out, arguments.pdf)
     if arguments.sources_only:

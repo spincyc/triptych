@@ -14,6 +14,30 @@ import re
 import sys
 import tomllib
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/render-sanctuary-dictionary --schema src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/inventory-schema.toml --selections src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/edition-selections.toml --artwork-manifest src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml --records src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects --output build/example-sanctuary",
+            (
+            ),
+            "WRITES one TeX view per edition below --output. Exit 0 and silence is the pass",
+        ),
+        Example(
+            "tools/render-sanctuary-dictionary --schema src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/inventory-schema.toml --selections src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/edition-selections.toml --artwork-manifest src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml --records build/example-empty-objects --output build/example-sanctuary",
+            (
+                "dictionary generation error: build/example-empty-objects: no object TOML files found",
+            ),
+            "a records directory holding no object fixtures is refused rather than rendered as an empty dictionary",
+        ),
+    ),
+}
 
 OBJECT_KEYS = {
     "schema_version", "id", "workflow_state", "preferred_english_name",
@@ -1237,6 +1261,7 @@ def main() -> int:
     parser.add_argument("--artwork-manifest", type=Path, required=True)
     parser.add_argument("--records", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    with_examples(parser, EXAMPLES[""])
     args = parser.parse_args()
     try:
         schema, selections, manifest = load(args.schema), load(args.selections), load(args.artwork_manifest)

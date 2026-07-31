@@ -11,6 +11,30 @@ import subprocess
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/check-generation-metadata",
+            (
+                "Generation metadata valid: 127 canonical record(s), 6 inherited record(s).",
+            ),
+        ),
+        Example(
+            "tools/check-generation-metadata --provider claude",
+            (
+                "Generation metadata valid: 45 canonical record(s), 0 inherited record(s).",
+            ),
+            "one provider's leaves only",
+        ),
+    ),
+}
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -360,6 +384,7 @@ def main() -> int:
         metavar=("DOCUMENT", "PDF"),
         help="also compare one rendered PDF with its structured source record",
     )
+    with_examples(parser, EXAMPLES[""])
     args = parser.parse_args()
     source_root = ROOT / "src" / args.provider
 

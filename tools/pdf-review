@@ -25,6 +25,32 @@ import tempfile
 import threading
 import time
 import uuid
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/pdf-review --explain",
+            (
+                "pdf-review: host-available=94.73 GiB, cgroup-headroom=unknown, effective=94.73 GiB, reserve=1.00 GiB, per-worker=1.00 GiB, cpu-cap=24, jobs=... [+2 chars]",
+            ),
+            "read-only first: --explain prints the memory and CPU plan and renders nothing",
+        ),
+        Example(
+            "tools/pdf-review --output build/example-review build/core-last-20.pdf",
+            (
+                "pdf-review: host-available=94.73 GiB, cgroup-headroom=unknown, effective=94.73 GiB, reserve=1.00 GiB, per-worker=1.00 Gi... [+21 chars]",
+                "<repo>/build/core-last-20.pdf -> <repo>/build/example-review/build/core-last-20",
+            ),
+            "WRITES page rasters and a contact sheet below --output; the default is build/pdf-review",
+        ),
+    ),
+}
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1620,6 +1646,7 @@ def parse_arguments(argv: list[str]) -> argparse.Namespace:
         ),
     )
     parser.add_argument("pdf", nargs="*", help="PDFs to rasterize")
+    with_examples(parser, EXAMPLES[""])
     arguments = parser.parse_args(argv)
     if arguments.changed_to and not arguments.changed_from:
         parser.error("--changed-to requires --changed-from")

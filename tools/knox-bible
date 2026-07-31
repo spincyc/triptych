@@ -33,7 +33,79 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _tooling import print_json, run_verb_cli  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "plan": (
+        Example(
+            "tools/knox-bible plan --root build/knox",
+            (
+                "knox-bible: <repo>/build/knox is inside <repo>; the Knox text is licensed and must not be tracked. Choose a root outside the repository.",
+            ),
+            "exit 2. This refusal is the point of the tool: no --root inside this checkout is ever accepted, which is what keeps the licensed Knox text out of the repository and off the site",
+        ),
+        Example(
+            "tools/knox-bible plan --root build/knox --json",
+            (
+                "{\"code\":\"input\",\"error\":\"<repo>/build/knox is inside <repo>; the Knox text is licensed and must not be tracked. Choose a root outside the repository.\"... [+24 chars]",
+            ),
+            "exit 2, same refusal in the JSON contract",
+        ),
+    ),
+    "fetch": (
+        Example(
+            "tools/knox-bible fetch --root build/knox",
+            (
+                "knox-bible: <repo>/build/knox is inside <repo>; the Knox text is licensed and must not be tracked. Choose a root outside the repository.",
+            ),
+            "exit 2. The only invocation that can be shown here",
+        ),
+    ),
+    "build": (
+        Example(
+            "tools/knox-bible build --root build/knox",
+            (
+                "knox-bible: <repo>/build/knox is inside <repo>; the Knox text is licensed and must not be tracked. Choose a root outside the repository.",
+            ),
+            "exit 2. The root check runs before anything is read",
+        ),
+        Example(
+            "tools/knox-bible build --root . --json",
+            (
+                "{\"code\":\"input\",\"error\":\"<repo> is inside <repo>; the Knox text is licensed and must not be tracked. Choose a root outside the repository.\",\"status\":\"... [+13 chars]",
+            ),
+            "exit 2, same refusal in the JSON contract",
+        ),
+    ),
+}
+
+# What the transcripts above cannot show, and why. Every verb needs a --root
+# outside this checkout, and the only machine that can supply one is not this
+# one; plan and fetch additionally reach the publisher over the network. An
+# invented transcript would be worse than this paragraph.
+UNAVAILABLE = {
+    "plan": (
+        "plan requests each book's page from the publisher's site, so it needs "
+        "both the network and a --root outside this checkout. Only the refusal "
+        "can be run here."
+    ),
+    "fetch": (
+        "fetch retrieves every chapter the plan lists from the publisher's "
+        "site — the one registered tool that reaches the network — and it needs "
+        "a --root outside this checkout. Only the refusal can be run here."
+    ),
+    "build": (
+        "build reads no network, but it parses a cache that only a --root "
+        "outside this checkout can hold. Only the refusal can be run here."
+    ),
+}
 
 SITE = "https://catholicbible.online"
 # Identifies the project rather than impersonating a browser, so the operator
@@ -378,10 +450,23 @@ def main(argv: list[str] | None = None) -> int:
         description="Retrieve the Knox Bible into source-library artifacts.",
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "knox-bible")
     sub = parser.add_subparsers(dest="command")
-    sub.add_parser("plan", help="learn the books and their chapter counts", parents=[shared])
-    sub.add_parser("fetch", help="retrieve every chapter the plan lists", parents=[shared])
-    sub.add_parser("build", help="parse the cache into artifacts", parents=[shared])
+    with_examples(
+        sub.add_parser("plan", help="learn the books and their chapter counts", parents=[shared]),
+        EXAMPLES["plan"],
+        unavailable=UNAVAILABLE["plan"],
+    )
+    with_examples(
+        sub.add_parser("fetch", help="retrieve every chapter the plan lists", parents=[shared]),
+        EXAMPLES["fetch"],
+        unavailable=UNAVAILABLE["fetch"],
+    )
+    with_examples(
+        sub.add_parser("build", help="parse the cache into artifacts", parents=[shared]),
+        EXAMPLES["build"],
+        unavailable=UNAVAILABLE["build"],
+    )
 
     return run_verb_cli(
         parser=parser,

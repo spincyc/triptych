@@ -10,6 +10,30 @@ import struct
 import sys
 import tomllib
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/check-roman-sanctuary-artwork",
+            (
+                "Roman sanctuary artwork manifest valid; 0 held object-link notice(s).",
+            ),
+        ),
+        Example(
+            "tools/check-roman-sanctuary-artwork --root src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary",
+            (
+                "Roman sanctuary artwork manifest valid; 0 held object-link notice(s).",
+            ),
+            "the default root, named explicitly",
+        ),
+    ),
+}
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -609,6 +633,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=DEFAULT_OWNER,
                         help="dictionary owner root")
+    with_examples(parser, EXAMPLES[""])
     args = parser.parse_args()
     owner = args.root.resolve()
     failures, notices = validate(owner)

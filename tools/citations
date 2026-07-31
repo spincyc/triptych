@@ -32,7 +32,71 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _calendars import partition
 from _psalms import PSALMS, validate_psalm
-from _tooling import print_json, run_verb_cli
+from _tooling import (
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "parse": (
+        Example(
+            "tools/citations parse 'Psalm 24:1-3'",
+            (
+                "book\tPsalms",
+                "range\t{'chapter': 24, 'verse': 1}\t{'chapter': 24, 'verse': 3}",
+                "ref\tPsalm 24:1-3",
+            ),
+        ),
+        Example(
+            "tools/citations parse --json 'Isaias 7:14'",
+            (
+                "{\"passage\":{\"book\":\"Isaiah\",\"ranges\":[{\"begin\":{\"chapter\":7,\"verse\":14},\"end\":{\"chapter\":7,\"vers... [+50 chars]",
+            ),
+        ),
+    ),
+    "encode": (
+        Example(
+            "tools/citations encode --root build/example-cal",
+            (
+                "build/example-cal/postconciliar/propers.yaml\t1082 already_encoded\t0 encoded",
+                "build/example-cal/roman-1962/propers.yaml\t1108 already_encoded\t0 encoded",
+            ),
+            "WRITES. --root here is an untracked copy; with no --root this rewrites the tracked src/sources/calendars YAML in place",
+        ),
+        Example(
+            "tools/citations encode --root build/example-cal --json",
+            (
+                "{\"files\":{\"build/example-cal/postconciliar/propers.yaml\":{\"already_encoded\":1082,\"encoded\":0},\"b... [+114 chars]",
+            ),
+            "WRITES. Rerun on the same tree: everything is already encoded, so nothing changes",
+        ),
+    ),
+    "check": (
+        Example(
+            "tools/citations check",
+            (
+                "citation error: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance ... [+74 chars]",
+                "citation error: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance ... [+72 chars]",
+                "citation error: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance ... [+74 chars]",
+                "citation error: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance ... [+72 chars]",
+                "... 25 more lines",
+                "src/sources/calendars/roman-1962/propers.yaml\t47 books\t1108 passages",
+            ),
+            "exit 1: the tracked postconciliar propers really do cite verses past the end of their hebrew-numbered psalms, and check refuses rather than clamping",
+        ),
+        Example(
+            "tools/citations check --json",
+            (
+                "{\"files\":{\"src/sources/calendars/postconciliar/propers.yaml\":{\"books\":61,\"passages\":1082},\"src/s... [+4178 chars]",
+            ),
+            "exit 1, every problem in one payload",
+        ),
+    ),
+}
 
 DEFAULT_ROOT = Path("src/sources/calendars")
 
@@ -486,18 +550,25 @@ def main(argv: list[str] | None = None) -> int:
         description="Encode and validate scripture citations in the calendar mass indexes.",
         parents=[json_flags],
     )
+    examples_live_on_the_verbs(parser, "citations")
     sub = parser.add_subparsers(dest="command", required=True)
-    parse_command = sub.add_parser(
-        "parse",
-        help="encode one citation string",
-        parents=[json_flags],
+    parse_command = with_examples(
+        sub.add_parser(
+            "parse",
+            help="encode one citation string",
+            parents=[json_flags],
+        ),
+        EXAMPLES["parse"],
     )
     parse_command.add_argument("citation")
     for name, help_text in (
         ("encode", "rewrite bare citation strings as passages, in place"),
         ("check", "validate every encoded passage"),
     ):
-        action = sub.add_parser(name, help=help_text, parents=[json_flags])
+        action = with_examples(
+            sub.add_parser(name, help=help_text, parents=[json_flags]),
+            EXAMPLES[name],
+        )
         action.add_argument("--root", type=Path, default=DEFAULT_ROOT)
 
     def dispatch(arguments: argparse.Namespace):

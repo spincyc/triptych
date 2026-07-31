@@ -188,7 +188,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     for name in ("traditional-latin-mass.md", "novus-ordo-liturgy.md"):
       text = (ROOT / "library" / name).read_text()
       calendar = text.split("## Sunday Propers Calendar", 1)[1]
-      for target in re.findall(r"\]\((\.\./doc/[^)]+\.pdf)\)", calendar):
+      for target in re.findall(r"\]\((\.\./pdf/[^)]+\.pdf)\)", calendar):
         if "m01-nuptial-mass.pdf" not in target:
           self.assertTrue(
             target.endswith("-synthesis.pdf")
@@ -202,9 +202,9 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     for proper_id in range(15, 23):
       row = re.search(rf"^\| {proper_id} \|.*$", traditional, re.MULTILINE)
       self.assertIsNotNone(row)
-      self.assertIn("../doc/gpt/", row.group())
+      self.assertIn("../pdf/gpt/", row.group())
       if proper_id == 22:
-        self.assertIn("../doc/claude/", row.group())
+        self.assertIn("../pdf/claude/", row.group())
         self.assertIn("../web/claude/", row.group())
       else:
         self.assertTrue(row.group().endswith("| Planned |"))
@@ -216,9 +216,9 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         rf"^\| \*\*PC-S{proper_id} ·.*$", postconciliar, re.MULTILINE
       )
       self.assertIsNotNone(row)
-      self.assertIn("../doc/gpt/", row.group())
+      self.assertIn("../pdf/gpt/", row.group())
       if proper_id == 40:
-        self.assertIn("../doc/claude/", row.group())
+        self.assertIn("../pdf/claude/", row.group())
 
 
 if __name__ == "__main__":

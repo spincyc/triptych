@@ -62,58 +62,82 @@ from _tooling import (  # noqa: E402
 EXAMPLES = {
     "day": (
         Example(
-            "tools/tpt calendar-days day --date 2026-12-25",
+            "tools/calendar-days day --date 2026-12-25",
             (
-                "calendar-days: name 'calendar' is not defined",
+                "2026-12-25",
+                "  postconciliar: christmas, liturgical year 2027",
+                "    Lectionary B / I",
+                "    nativity: The Nativity of the Lord",
+                "    nativity-lord: The Nativity of the Lord",
+                "    unranked: more than one candidate, and no precedence is stated",
+                "  roman-1962: christmastide, liturgical year 2027",
+                "    nativitate-domini-octave: In Nativitate Domini, with octave",
+                "... 1 more line",
             ),
         ),
         Example(
-            "tools/tpt calendar-days day --date 2026-04-05 --calendar roman-1962",
+            "tools/calendar-days day --date 2026-04-05 --calendar roman-1962",
             (
-                "calendar-days: name 'calendar' is not defined",
+                "2026-04-05",
+                "  roman-1962: paschaltide, liturgical year 2026",
+                "    easter-sunday: Easter Sunday",
+                "    s-vincentii-ferrerii-confessoris: S. Vincentii Ferrerii Confessoris",
+                "    unranked: more than one candidate, and no precedence is stated",
+                "  Computed, not celebrated. Every date here is derived from the arithmetic in guidance/liturgy/c... [+333 chars]",
             ),
         ),
     ),
     "check": (
         Example(
-            "tools/tpt calendar-days check",
+            "tools/calendar-days check",
             (
-                "calendar-days: name 'calendar' is not defined",
+                "postconciliar: 6735 placements",
+                "roman-1962: 12667 placements",
+                "checked against the worked tables in guidance/liturgy/calendar-computation.md",
             ),
         ),
         Example(
-            "tools/tpt calendar-days check --json",
+            "tools/calendar-days check --json",
             (
-                "{\"code\":\"internal\",\"error\":\"name 'calendar' is not defined\",\"status\":\"error\",\"v\":1}",
+                "{\"calendars\":{\"postconciliar\":{\"placements\":6735,\"rules_without_a_mass\":[]},\"roman-1962\":{\"place... [+241 chars]",
             ),
         ),
     ),
     "coverage": (
         Example(
-            "tools/tpt calendar-days coverage --calendar roman-1962 --first 2026 --last 2026",
+            "tools/calendar-days coverage --calendar roman-1962 --first 2026 --last 2026",
             (
-                "calendar-days: name 'calendar' is not defined",
+                "roman-1962: 2026-2026",
+                "  dates 365: 316 resolve to a mass, 49 to nothing, 124 carry unranked candidates",
+                "  masses 459: 454 reachable, 5 never placed",
+                "    no mass, advent: 8",
+                "    no mass, after-pentecost: 23",
+                "    no mass, christmastide: 2",
+                "... 8 more lines",
             ),
         ),
         Example(
-            "tools/tpt calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json",
+            "tools/calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json",
             (
-                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_resolved\":228,\"dates_unresolved\":137... [+1352 chars]",
+                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_resolved\":229,\"dates_unresolved\":136... [+751 chars]",
             ),
         ),
     ),
     "structure": (
         Example(
-            "tools/tpt calendar-days check",
+            "tools/calendar-days check",
             (
-                "calendar-days: name 'calendar' is not defined",
+                "postconciliar: 6735 placements",
+                "roman-1962: 12667 placements",
+                "checked against the worked tables in guidance/liturgy/calendar-computation.md",
             ),
             "read-only first: `check` verifies the same computation `structure` writes out",
         ),
         Example(
-            "tools/tpt calendar-days structure --out build/example-days --first 2026 --last 2026",
+            "tools/calendar-days structure --out build/example-days --first 2026 --last 2026",
             (
-                "calendar-days: name 'calendar' is not defined",
+                "wrote 3 files for 2026-2026",
+                "  -> build/example-days/structure/calendar/index.json",
             ),
             "WRITES one file per date. --out here is untracked; the default writes tracked src/web/data",
         ),

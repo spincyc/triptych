@@ -20,7 +20,31 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _calendars import partition
-from _tooling import print_json, run_verb_cli
+from _tooling import (
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/check-calendar-masses check --calendar roman-1962",
+            (
+                "src/sources/calendars/roman-1962/propers.yaml\t459 masses\t1465 propers",
+            ),
+        ),
+        Example(
+            "tools/check-calendar-masses check --json",
+            (
+                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance An... [+4466 chars]",
+            ),
+        ),
+    ),
+}
 
 DEFAULT_ROOT = Path("src/sources/calendars")
 SCHEMA = "triptych-calendar-masses/v1"
@@ -582,8 +606,12 @@ def main(argv: list[str] | None = None) -> int:
         ),
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "check-calendar-masses")
     sub = parser.add_subparsers(dest="command")
-    sub.add_parser("check", help="validate all calendars and propers", parents=[shared])
+    with_examples(
+        sub.add_parser("check", help="validate all calendars and propers", parents=[shared]),
+        EXAMPLES["check"],
+    )
 
     def dispatch(arguments):
         return run(arguments.root, arguments.calendar)

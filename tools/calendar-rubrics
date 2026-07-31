@@ -50,7 +50,72 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _tooling import print_json, run_verb_cli  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/calendar-rubrics check --out build/example-web",
+            (
+                "postconciliar: 268 masses classified over 12 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
+                "roman-1962: 459 masses classified over 28 bases and 28 rows, 10 implied-day rules, 6 questions l... [+8 chars]",
+                "solved cases: 15 of 15 verified against the browser's model",
+            ),
+            "check compares --out's already-written browser files against the sources, so it reports a stale --out as a failure; this one was pointed at a freshly written untracked copy",
+        ),
+        Example(
+            "tools/calendar-rubrics check --out build/example-web --json",
+            (
+                "{\"calendars\":[{\"bases\":12,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":268,... [+210 chars]",
+            ),
+        ),
+    ),
+    "assign": (
+        Example(
+            "tools/calendar-rubrics assign --calendar roman-1962",
+            (
+                "roman-1962: 459 masses",
+                "  advent-1: row 6 \u2014 row-6-sunday",
+                "  advent-2: row 6 \u2014 row-6-sunday",
+                "  advent-3: row 6 \u2014 row-6-sunday",
+                "  advent-4: row 6 \u2014 row-6-sunday",
+                "... 455 more lines",
+            ),
+        ),
+        Example(
+            "tools/calendar-rubrics assign --calendar postconciliar --json",
+            (
+                "{\"assignments\":[{\"calendar\":\"postconciliar\",\"masses\":[{\"basis\":\"place-2-great-day\",\"key\":\"advent... [+35869 chars]",
+            ),
+        ),
+    ),
+    "structure": (
+        Example(
+            "tools/calendar-rubrics check --out build/example-web",
+            (
+                "postconciliar: 268 masses classified over 12 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
+                "roman-1962: 459 masses classified over 28 bases and 28 rows, 10 implied-day rules, 6 questions l... [+8 chars]",
+                "solved cases: 15 of 15 verified against the browser's model",
+            ),
+            "read-only first: `check` validates the sources and reports whether --out is already current",
+        ),
+        Example(
+            "tools/calendar-rubrics structure --out build/example-web",
+            (
+                "wrote 3 files",
+                "  -> build/example-web/structure/rubrics/index.json",
+            ),
+            "WRITES the browser's rubrics files. --out here is untracked; the default writes tracked src/web/data",
+        ),
+    ),
+}
 
 DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
 DEFAULT_DATA = ROOT / "src" / "web" / "data"
@@ -740,10 +805,20 @@ def main(argv: list[str] | None = None) -> int:
         description="Validate the rubrical precedence sources and emit them for the browser.",
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "calendar-rubrics")
     sub = parser.add_subparsers(dest="command")
-    sub.add_parser("check", help="validate the sources and run the solved cases", parents=[shared])
-    sub.add_parser("structure", help="write the browser's rubrics files", parents=[shared])
-    sub.add_parser("assign", help="report what each mass was classified as", parents=[shared])
+    with_examples(
+        sub.add_parser("check", help="validate the sources and run the solved cases", parents=[shared]),
+        EXAMPLES["check"],
+    )
+    with_examples(
+        sub.add_parser("structure", help="write the browser's rubrics files", parents=[shared]),
+        EXAMPLES["structure"],
+    )
+    with_examples(
+        sub.add_parser("assign", help="report what each mass was classified as", parents=[shared]),
+        EXAMPLES["assign"],
+    )
 
     return run_verb_cli(
         parser=parser,

@@ -3,10 +3,18 @@
 Every failure here has shipped at least once. The Makefile invoked a tool by
 its filename rather than its registry id, the registry advertised a tool with
 no implementation, and a tool body moved without its callers.
+
+Two of these guard what `--help` says rather than what a tool does. Both exist
+because the failure they catch is the one this repository treats as worse than
+a crash: help text that looks right and is wrong. A verb with no worked example
+sends a reader to run the command twice to find out what it did, and a tool
+that no `--list` group claims disappears from the only listing a reader reads.
 """
 
 from __future__ import annotations
 
+import importlib.machinery
+import importlib.util
 import json
 import os
 import re
@@ -23,10 +31,38 @@ LAUNCHER = ROOT / "tools" / "tpt"
 COMPANION_SUFFIXES = (".md", ".test")
 # tmt's registry validator caps the field.
 PURPOSE_LIMIT = 80
+# scripts/_tooling.py owns the heading; asserting on it here rather than on
+# prose means a reworded example cannot silently stop being checked.
+EXAMPLES_HEADING = "examples (real output, captured; counts move with the sources):"
+INVOCATION = re.compile(r"^\s+\$ \S", re.M)
+NO_EXAMPLE = "no runnable example:"
+VERBS = re.compile(r"positional arguments:\n\s+\{([a-z0-9,\-]+)\}")
+MINIMUM_EXAMPLES = 2
 
 
 def registry() -> dict[str, dict]:
     return json.loads(MANIFEST.read_text(encoding="utf-8"))["tools"]
+
+
+def help_text(*argv: str) -> str:
+    result = subprocess.run(
+        [str(LAUNCHER), *argv, "--help"], capture_output=True, text=True, cwd=ROOT,
+    )
+    if result.returncode != 0:
+        raise AssertionError(f"{' '.join(argv)} --help failed: {result.stderr}")
+    return result.stdout
+
+
+def verbs_of(text: str) -> list[str]:
+    found = VERBS.search(text)
+    return found.group(1).split(",") if found else []
+
+
+def section_of(text: str) -> str:
+    head, marker, tail = text.partition(EXAMPLES_HEADING)
+    if not marker:
+        raise AssertionError(f"no examples section:\n{text}")
+    return tail
 
 
 class ToolRegistryTests(unittest.TestCase):
@@ -135,6 +171,273 @@ class ToolRegistryTests(unittest.TestCase):
                 )
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(Path(result.stdout.strip()), TOOLS / name)
+
+
+class WorkedExampleTests(unittest.TestCase):
+    """Every verb shows what it prints, so nobody has to run it twice.
+
+    The rule is two invocations per verb. The single exception is a verb no
+    machine here can run — a licensed root, a network fetch — which must say so
+    in the help rather than show an invented transcript; that is what the
+    `no runnable example:` line is, and it buys the verb one example instead of
+    two, never zero.
+    """
+
+    def sections(self, name: str) -> list[tuple[str, str]]:
+        """(label, examples section) for everything this tool must document.
+
+        A verb declared with argparse subparsers owns a help page and so a
+        section of its own. `public-alpha` declares its four instead as one
+        positional choice, which argparse gives no per-verb help at all; there
+        the whole set shares the top-level section, and the floor rises to
+        match rather than the rule quietly not applying.
+        """
+        top = help_text(name)
+        verbs = verbs_of(top)
+        if not verbs:
+            return [(name, section_of(top))]
+        own = [(f"{name} {verb}", help_text(name, verb)) for verb in verbs]
+        if all(text == top for _, text in own):
+            return [(f"{name} (all {len(verbs)} verbs share one help page)",
+                     section_of(top), len(verbs))]  # type: ignore[list-item]
+        return [(label, section_of(text)) for label, text in own]
+
+    def test_every_verb_shows_at_least_two_real_invocations(self) -> None:
+        for name in registry():
+            for entry in self.sections(name):
+                label, section = entry[0], entry[1]
+                multiplier = entry[2] if len(entry) > 2 else 1
+                with self.subTest(target=label):
+                    shown = len(INVOCATION.findall(section))
+                    floor = 1 if NO_EXAMPLE in section else MINIMUM_EXAMPLES
+                    self.assertGreaterEqual(
+                        shown, floor * multiplier,
+                        f"{label}: {shown} example(s); the rule is "
+                        f"{MINIMUM_EXAMPLES} a verb, or one beside a "
+                        f"{NO_EXAMPLE!r} line",
+                    )
+
+    def test_a_verb_bearing_tool_points_at_its_verbs(self) -> None:
+        """The top-level help of a verb-bearing tool must not be a dead end."""
+        for name in registry():
+            top = help_text(name)
+            verbs = verbs_of(top)
+            if not verbs or all(help_text(name, verb) == top for verb in verbs):
+                continue
+            with self.subTest(tool=name):
+                self.assertIn("<verb> --help", section_of(top))
+
+    def test_every_shown_invocation_names_its_own_tool(self) -> None:
+        """A pasted transcript from the wrong tool is the defect to catch."""
+        for name in registry():
+            for entry in self.sections(name):
+                for line in entry[1].splitlines():
+                    stripped = line.strip()
+                    if not stripped.startswith("$ "):
+                        continue
+                    with self.subTest(tool=name, command=stripped):
+                        self.assertIn(name, stripped)
+
+    def test_a_shared_help_page_still_names_every_verb(self) -> None:
+        """No verb may hide behind its siblings' transcripts."""
+        for name in registry():
+            top = help_text(name)
+            verbs = verbs_of(top)
+            if not verbs or any(help_text(name, verb) != top for verb in verbs):
+                continue
+            section = section_of(top)
+            for verb in verbs:
+                with self.subTest(tool=name, verb=verb):
+                    self.assertIn(f"{name} {verb}", section)
+
+
+class ListingGroupTests(unittest.TestCase):
+    """`tpt --list` groups by purpose, and the grouping cannot drift.
+
+    tmt validates registry entries against a closed key set, so tmt.json cannot
+    carry a `group` field; the table lives in tools/tpt instead. Nothing but
+    these assertions and `tpt --check` keeps the two in step.
+    """
+
+    def listing(self, *extra: str) -> subprocess.CompletedProcess:
+        return subprocess.run(
+            [str(LAUNCHER), "--list", *extra], capture_output=True, text=True, cwd=ROOT,
+        )
+
+    def test_every_registered_tool_lands_in_exactly_one_group(self) -> None:
+        result = self.listing("--json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        rows = json.loads(result.stdout)
+        self.assertEqual({row["name"] for row in rows}, set(registry()))
+        for row in rows:
+            with self.subTest(tool=row["name"]):
+                self.assertIsNotNone(
+                    row["group"], f"{row['name']}: add it to GROUPS in tools/tpt"
+                )
+
+    def test_the_listing_prints_groups_rather_than_one_flat_column(self) -> None:
+        result = self.listing()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        groups = {
+            row["group"] for row in json.loads(self.listing("--json").stdout)
+        }
+        self.assertGreater(len(groups), 1, "a single group is not a grouping")
+        for group in groups:
+            with self.subTest(group=group):
+                self.assertIn(f"{group}:", result.stdout)
+        self.assertNotIn("ungrouped", result.stdout)
+
+    def test_the_acquisition_group_states_where_its_output_may_not_go(self) -> None:
+        """Its whole reason for being named is that its output stays outside."""
+        result = self.listing()
+        section = result.stdout.split("acquisition:", 1)
+        self.assertEqual(len(section), 2, "no acquisition group in the listing")
+        note = section[1].split("\n\n", 1)[0]
+        self.assertIn("never enters the repository", " ".join(note.split()))
+
+    def test_the_launcher_check_fails_on_a_tool_no_group_claims(self) -> None:
+        """The guard has to fail on a real gap, not merely exist."""
+        loader = importlib.machinery.SourceFileLoader("tpt_launcher", str(LAUNCHER))
+        spec = importlib.util.spec_from_loader(loader.name, loader)
+        launcher = importlib.util.module_from_spec(spec)
+        loader.exec_module(launcher)
+        problems = launcher.check_groups({**registry(), "brand-new-tool": {}})
+        self.assertTrue(
+            any("brand-new-tool" in problem for problem in problems),
+            f"an ungrouped tool passed the check: {problems}",
+        )
+        self.assertEqual(launcher.check_groups(registry()), [])
+
+
+class ReachTests(unittest.TestCase):
+    """What a tool reaches is declared, and the declaration is checked.
+
+    Exactly one registered tool opens a socket and none call a model. That is
+    the property a reader is being asked to trust before running anything, and
+    a convention alone would not keep it: a tool that grows a `urlopen` and
+    forgets its declaration has to fail here, or the listing starts lying.
+
+    The patterns are deliberately crude. A body that mentions `urlopen` in a
+    string it never calls will fail this test, and the fix is to declare the
+    reach or stop mentioning it — which is the right trade when the alternative
+    is a silent network call.
+    """
+
+    NETWORK_CALLS = re.compile(
+        r"\b("
+        r"urlopen|urllib\.request|urllib\.error"
+        r"|requests\.(?:get|post|put|patch|delete|head|request|Session)"
+        r"|httpx\.|aiohttp\.|http\.client|socket\.(?:socket|create_connection)"
+        r"|ftplib|smtplib|telnetlib|paramiko"
+        r")"
+    )
+    MODEL_CALLS = re.compile(
+        r"\b("
+        r"anthropic|openai|Anthropic\(|OpenAI\("
+        r"|messages\.create|chat\.completions|generate_content"
+        r"|ollama|litellm|langchain"
+        r")",
+        re.I,
+    )
+
+    def declarations(self) -> dict[str, str]:
+        rows = json.loads(subprocess.run(
+            [str(LAUNCHER), "--list", "--json"], capture_output=True, text=True, cwd=ROOT,
+        ).stdout)
+        return {row["name"]: row["reaches"] for row in rows}
+
+    def body(self, name: str) -> str:
+        """The tool's own code, without full-line comments or its transcripts.
+
+        A captured example prints what a tool did, and prose explains why; a
+        call is neither. Scanning them would make an accurate warning about the
+        network read as a network call.
+        """
+        text = (TOOLS / name).read_text(encoding="utf-8", errors="replace")
+        head, marker, tail = text.partition("\nEXAMPLES = {")
+        if marker:
+            text = head + tail.partition("\n}\n")[2]
+        return "\n".join(
+            line for line in text.splitlines() if not line.lstrip().startswith("#")
+        )
+
+    def test_every_tool_declares_what_it_reaches(self) -> None:
+        declared = self.declarations()
+        self.assertEqual(set(declared), set(registry()))
+        for name, reach in declared.items():
+            with self.subTest(tool=name):
+                self.assertIn(reach, ("network", "model", "nothing"))
+
+    def test_a_tool_that_opens_a_socket_declares_the_network(self) -> None:
+        declared = self.declarations()
+        for name in registry():
+            with self.subTest(tool=name):
+                found = self.NETWORK_CALLS.search(self.body(name))
+                if declared[name] == "network":
+                    self.assertIsNotNone(
+                        found,
+                        f"{name} declares the network but makes no call; "
+                        "declare 'nothing' instead",
+                    )
+                else:
+                    self.assertIsNone(
+                        found,
+                        f"{name} reaches the network via {found.group(0) if found else ''!r} "
+                        "but does not declare it; set REACHES in scripts/_tooling.py",
+                    )
+
+    def test_a_tool_that_calls_a_model_declares_it(self) -> None:
+        declared = self.declarations()
+        for name in registry():
+            with self.subTest(tool=name):
+                found = self.MODEL_CALLS.search(self.body(name))
+                if declared[name] == "model":
+                    self.assertIsNotNone(found, f"{name} declares a model but calls none")
+                else:
+                    self.assertIsNone(
+                        found,
+                        f"{name} calls a model via {found.group(0) if found else ''!r} "
+                        "but does not declare it; set REACHES in scripts/_tooling.py",
+                    )
+
+    def test_exactly_one_tool_reaches_outside_and_the_listing_says_so(self) -> None:
+        """The measured fact, and the sentence a reader is shown, must agree."""
+        declared = self.declarations()
+        outward = sorted(n for n, r in declared.items() if r != "nothing")
+        self.assertEqual(outward, ["knox-bible"], "the reach story has changed")
+        listing = subprocess.run(
+            [str(LAUNCHER), "--list"], capture_output=True, text=True, cwd=ROOT,
+        ).stdout
+        self.assertIn("reaches the network: knox-bible", listing)
+        self.assertIn(
+            "No other registered tool reaches the network or calls a model", listing
+        )
+
+    def test_the_acquisition_group_claims_the_only_outward_tool(self) -> None:
+        rows = {
+            row["name"]: row for row in json.loads(subprocess.run(
+                [str(LAUNCHER), "--list", "--json"],
+                capture_output=True, text=True, cwd=ROOT,
+            ).stdout)
+        }
+        for name, row in rows.items():
+            with self.subTest(tool=name):
+                if row["reaches"] != "nothing":
+                    self.assertEqual(row["group"], "acquisition")
+
+    def test_harvest_says_it_records_a_model_run_rather_than_making_one(self) -> None:
+        """Its name reads as though it calls one; the help has to correct that.
+
+        `record` carries it too, because that is the verb holding --model, and
+        a reader who jumps straight to it never sees the tool's own preamble.
+        """
+        for argv, wanted in (
+            (("harvest",), "This tool never calls a model."),
+            (("harvest", "record"), "Nothing here calls a model or opens a socket."),
+        ):
+            with self.subTest(target=" ".join(argv)):
+                flattened = " ".join(help_text(*argv).split())
+                self.assertIn(wanted, flattened)
 
 
 class ToolSmokeTests(unittest.TestCase):

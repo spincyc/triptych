@@ -19,6 +19,111 @@ import re
 import sys
 import zoneinfo
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "status": (
+        Example(
+            "tools/release-bindings status",
+            (
+                "exact: 0 stale binding(s)",
+            ),
+        ),
+        Example(
+            "tools/release-bindings status --help",
+            (
+                "usage: release-bindings status [-h]",
+                "",
+                "options:",
+                "  -h, --help  show this help message and exit",
+                "... 11 more lines",
+            ),
+            "status takes no arguments",
+        ),
+    ),
+    "refresh": (
+        Example(
+            "tools/release-bindings status",
+            (
+                "exact: 0 stale binding(s)",
+            ),
+            "read-only first: `status` counts what `refresh` would rewrite",
+        ),
+        Example(
+            "tools/release-bindings refresh",
+            (
+                "refreshed site tools/public-alpha",
+                "refreshed rights tables release/rights/public-alpha-2026-07-15.md",
+                "refreshed rights_record_sha256",
+                "... 1 more line",
+            ),
+            "WRITES release/ when a binding is stale. This run had nothing to change, which is why it was safe to capture",
+        ),
+    ),
+    "migrate-publications": (
+        Example(
+            "tools/release-bindings status",
+            (
+                "exact: 0 stale binding(s)",
+            ),
+            "read-only first",
+        ),
+        Example(
+            "tools/release-bindings migrate-publications",
+            (
+                "migrated 0 publication record(s)",
+            ),
+            "WRITES release/publications when a record is in an older shape. This run had nothing to migrate",
+        ),
+    ),
+    "approve": (
+        Example(
+            "tools/release-bindings approve",
+            (
+                "usage: release-bindings approve [-h] --note NOTE [--timezone TIMEZONE]",
+                "release-bindings approve: error: the following arguments are required: --note",
+            ),
+            "exit 2: an approval must carry its note, so the tool refuses rather than recording an unexplained one",
+        ),
+    ),
+    "add-publication": (
+        Example(
+            "tools/release-bindings add-publication --provider nope --id articles/faith/x --catalog faith",
+            (
+                "release-bindings error: provider 'nope' is not declared in the manifest",
+            ),
+            "an undeclared provider is refused before anything is written",
+        ),
+        Example(
+            "tools/release-bindings add-publication --provider claude --id articles/faith/at-the-end-of-every-why --catalog faith",
+            (
+                "release-bindings error: publication record already exists: release/publications/claude/articles/faith/at-the-end-of-ever... [+10 chars]",
+            ),
+            "an existing record is refused rather than overwritten. WRITES release/publications only for a leaf that has none",
+        ),
+    ),
+}
+
+# `approve` records a dated authorization into the tracked release records.
+# There is no scratch target for it and no dry run, so the only invocation that
+# can be captured is the refusal. Saying that is better than showing a
+# transcript nobody produced.
+UNAVAILABLE = {
+    "approve": (
+        "a successful approve writes a dated authorization into release/, which "
+        "cannot be captured without recording a real approval. Only the refusal "
+        "is shown."
+    ),
+}
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "release" / "public-alpha.json"
@@ -307,20 +412,37 @@ def report_status(manifest: dict) -> int:
 
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(prog="release-bindings")
+    examples_live_on_the_verbs(parser, "release-bindings")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    refresh_parser = subparsers.add_parser("refresh")
+    refresh_parser = with_examples(
+        subparsers.add_parser("refresh"),
+        EXAMPLES["refresh"],
+    )
     refresh_parser.add_argument(
         "--adopt-new-site-sources",
         dest="adopt",
         action="store_true",
         help="reconcile the recorded inputs with the renderer's recognized set",
     )
-    subparsers.add_parser("status")
-    subparsers.add_parser("migrate-publications")
-    approve_parser = subparsers.add_parser("approve")
+    with_examples(
+        subparsers.add_parser("status"),
+        EXAMPLES["status"],
+    )
+    with_examples(
+        subparsers.add_parser("migrate-publications"),
+        EXAMPLES["migrate-publications"],
+    )
+    approve_parser = with_examples(
+        subparsers.add_parser("approve"),
+        EXAMPLES["approve"],
+        unavailable=UNAVAILABLE["approve"],
+    )
     approve_parser.add_argument("--note", required=True)
     approve_parser.add_argument("--timezone", default="America/Chicago")
-    add_parser = subparsers.add_parser("add-publication")
+    add_parser = with_examples(
+        subparsers.add_parser("add-publication"),
+        EXAMPLES["add-publication"],
+    )
     add_parser.add_argument("--provider", required=True)
     add_parser.add_argument("--id", dest="leaf", required=True)
     add_parser.add_argument("--catalog", required=True)

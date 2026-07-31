@@ -21,6 +21,64 @@ if sys.version_info < (3, 11):
     raise SystemExit("source-family-migration requires Python 3.11 or newer")
 
 import tomllib
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/source-family-migration check",
+            (
+                "source-family-migration valid: families=362 review_units=144 screened=0 pending=144 trace_records=4041 atomic_citation_coverage=fa... [+3 chars]",
+            ),
+        ),
+        Example(
+            "tools/source-family-migration --root . check",
+            (
+                "source-family-migration valid: families=362 review_units=144 screened=0 pending=144 trace_records=4041 atomic_citation_coverage=fa... [+3 chars]",
+            ),
+            "--root belongs before the verb",
+        ),
+    ),
+    "bootstrap": (
+        Example(
+            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31",
+            (
+            ),
+            "WRITES the named file; the output path is positional, so a scratch path keeps the tracked ledger untouched",
+        ),
+        Example(
+            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31",
+            (
+                "source-family-migration error: <repo>/build/example-migration.toml: already exists; use refresh",
+            ),
+            "the same command again: bootstrap refuses an existing ledger rather than overwriting a reviewed one",
+        ),
+    ),
+    "refresh": (
+        Example(
+            "tools/source-family-migration check",
+            (
+                "source-family-migration valid: families=362 review_units=144 screened=0 pending=144 trace_records=4041 atomic_citation_coverage=fa... [+3 chars]",
+            ),
+            "read-only first: `check` says what state a refresh would start from",
+        ),
+        Example(
+            "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-07-31",
+            (
+            ),
+            "WRITES the named ledger. With no positional argument it rewrites the tracked one",
+        ),
+    ),
+}
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1092,18 +1150,28 @@ def _source_library_errors(root: Path) -> list[str]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
+    examples_live_on_the_verbs(parser, "source-family-migration")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    check = subparsers.add_parser("check")
+    check = with_examples(
+        subparsers.add_parser("check"),
+        EXAMPLES["check"],
+    )
     check.add_argument("ledger", nargs="?", type=Path, default=DEFAULT_LEDGER)
     check.add_argument("--require-family-screened", action="store_true")
-    bootstrap = subparsers.add_parser("bootstrap")
+    bootstrap = with_examples(
+        subparsers.add_parser("bootstrap"),
+        EXAMPLES["bootstrap"],
+    )
     bootstrap.add_argument("output", type=Path)
     bootstrap.add_argument("--audited-on", required=True)
     bootstrap.add_argument("--inventory", type=Path, default=DEFAULT_INVENTORY)
     bootstrap.add_argument(
         "--classification-review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
     )
-    refresh = subparsers.add_parser("refresh")
+    refresh = with_examples(
+        subparsers.add_parser("refresh"),
+        EXAMPLES["refresh"],
+    )
     refresh.add_argument("ledger", nargs="?", type=Path, default=DEFAULT_LEDGER)
     refresh.add_argument("--audited-on", required=True)
     refresh.add_argument("--accept-canonical-catalog", action="store_true")

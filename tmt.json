@@ -164,7 +164,7 @@
         "commentary-work-index"
       ],
       "stage": "draft",
-      "usage": "harvest {propers,plan,record,aliases,promote} | harvest <missal> <mass> [--top N]"
+      "usage": "harvest {propers,plan,record,aliases,harvest,promote} | harvest harvest <missal> <mass> [--top N]"
     },
     "index-bible": {
       "idempotent": true,
@@ -326,7 +326,7 @@
       "purpose": "Unified launcher for Triptych tools and tool discovery commands.",
       "requires": [],
       "stage": "draft",
-      "usage": "tpt <tool> [<tool args>...] | tpt {list,tools,run,help,path}"
+      "usage": "tpt <tool> [<tool args>...] | tpt {--list,--info,--path,--check} [--json]"
     },
     "typeset-bible": {
       "idempotent": true,

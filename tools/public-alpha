@@ -24,10 +24,85 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from _tooling import Example, with_examples  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    with_examples,
+)
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
+    "check": (
+        Example(
+            "tools/public-alpha check",
+            (
+                "public-alpha policy valid: 186 publications (186 alpha, 0 hold)",
+                "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
+            ),
+        ),
+        Example(
+            "tools/public-alpha check --preview",
+            (
+                "--preview is not meaningful with check",
+            ),
+            "refused: --preview selects a publication set, and check gates the policy rather than a set",
+        ),
+    ),
+    "prepare": (
+        Example(
+            "tools/public-alpha prepare",
+            (
+                "{",
+                "  \"approval_conferred\": false,",
+                "  \"notice\": \"PREPARATION ONLY \u2014 NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
+                "  \"pdfs\": [",
+                "    {",
+                "... 2257 more lines",
+            ),
+            "prepare prints a candidate hash inventory only; it records no approval and changes no release file",
+        ),
+        Example(
+            "tools/public-alpha check",
+            (
+                "public-alpha policy valid: 186 publications (186 alpha, 0 hold)",
+                "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
+            ),
+            "read the policy first: `check` is the gate `prepare` reports against",
+        ),
+    ),
+    "build": (
+        Example(
+            "tools/public-alpha check",
+            (
+                "public-alpha policy valid: 186 publications (186 alpha, 0 hold)",
+                "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
+            ),
+            "read-only first: `check` validates the policy `build` renders from",
+        ),
+        Example(
+            "tools/public-alpha build --preview",
+            (
+                "built build/public-alpha/preview; not verified \u2014 run tools/public-alpha verify --preview before publication",
+            ),
+            "WRITES build/public-alpha/preview. Without --preview it writes build/public-alpha/site, the set that goes to Pages",
+        ),
+    ),
+    "verify": (
+        Example(
+            "tools/public-alpha verify --preview",
+            (
+                "verified build/public-alpha/preview",
+            ),
+            "verifies the tree `build --preview` wrote. Without --preview it verifies build/public-alpha/site, the set that goes to Pages",
+        ),
+        Example(
+            "tools/public-alpha verify --preview --deployment-target github-pages",
+            (
+                "--deployment-target is valid only for public artifact verification",
+            ),
+            "refused: a deployment target is a property of the public artifact, so it cannot be asked of the private preview",
+        ),
+    ),
 }
 
 
@@ -2909,6 +2984,7 @@ def main() -> int:
         choices=("github-pages",),
         help="with verify, reject conditions the named deployment target cannot enforce",
     )
+    with_examples(parser, tuple(e for verb in EXAMPLES for e in EXAMPLES[verb]))
     args = parser.parse_args()
     try:
         manifest = load_manifest()

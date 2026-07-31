@@ -1925,7 +1925,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/shared/browser-core.css` | `29db72050383b2a7b983e0dfd45b1d2ba721a3929d7b7f8071c0c64662cf2566` |
 | `src/web/browser/shared/browser-core.js` | `a3cb86c68a3803f0a650379d1a2906a2fccf5f8f3b2a73f007a3f0cf2e5704a6` |
 | `src/web/data/bibles.json` | `2833103696cfde54ee1266c7d74909beb433a7951f216c423858868b9d4001d6` |
-| `tools/public-alpha` | `22be8825cbb680263efb36e65c2a00af899f49801dd4c2181c56410af2fcab81` |
+| `tools/public-alpha` | `b70c0178f6060f2c108d414b3bb0ef72e8430d5cedaa92683d50c8ca4d9326d1` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `4d97a8a50671d69dac75bd40ba84646439bbc3c9426db541f17b63002e0a204e` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `5142fc621475233a8843f98ca10e49e22bc63adc6cd001044335b5f9e1634482` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `6b86977adffdece0e49c43803db515040f30e115d68ba382d8e9658b14fc3569` |

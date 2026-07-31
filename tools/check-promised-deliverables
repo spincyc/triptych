@@ -8,6 +8,30 @@ import subprocess
 import sys
 import tomllib
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/check-promised-deliverables",
+            (
+                "Promised-deliverable ledger valid: 14 tracked, 9 complete.",
+            ),
+        ),
+        Example(
+            "tools/check-promised-deliverables --ledger promised-deliverables.toml",
+            (
+                "Promised-deliverable ledger valid: 14 tracked, 9 complete.",
+            ),
+            "the same ledger named explicitly; --ledger is how a candidate file is checked before it replaces the tracked one",
+        ),
+    ),
+}
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -173,6 +197,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ledger", type=Path, default=DEFAULT_LEDGER)
     parser.add_argument("--require-complete", action="append", default=[])
+    with_examples(parser, EXAMPLES[""])
     args = parser.parse_args()
     errors = validate(args.ledger.resolve(), set(args.require_complete))
     if errors:

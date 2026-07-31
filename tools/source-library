@@ -21,6 +21,104 @@ if sys.version_info < (3, 11):
     raise SystemExit("source-library requires Python 3.11 or newer")
 
 import tomllib
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "validate": (
+        Example(
+            "tools/source-library validate",
+            (
+                "source-library valid: artifact=1391 corpus=4 edition=623 passage=1227 segment=62 work=466 bindin... [+7 chars]",
+            ),
+        ),
+        Example(
+            "tools/source-library validate --help",
+            (
+                "usage: source-library validate [-h]",
+                "",
+                "options:",
+                "  -h, --help  show this help message and exit",
+                "... 11 more lines",
+            ),
+            "validate takes no arguments: it is the whole library or nothing",
+        ),
+    ),
+    "fingerprint": (
+        Example(
+            "tools/source-library fingerprint work.ambrose.de-mysteriis",
+            (
+                "sha256:f028086439899293037453e690250c66666f5ea9c134aa06bb2c955411647b99",
+            ),
+        ),
+        Example(
+            "tools/source-library fingerprint corpus.augustine.de-civitate-dei.dods-1871-complete",
+            (
+                "sha256:55d516351ef3a83dc4c25437754e5ecba0ef192517a4c2b92009d531f95eb7d2",
+            ),
+            "the fingerprint covers the record and everything it names, so it moves when a member artifact does",
+        ),
+    ),
+    "uses": (
+        Example(
+            "tools/source-library uses work.ambrose.de-mysteriis",
+            (
+                "articles/scripture/john-6-bread-from-heaven\tpassage.ambrose.de-mysteriis.english-npnf2-10-1896.47-49\t47-49\treception\tcat... [+116 chars]",
+                "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordi... [+302 chars]",
+            ),
+        ),
+        Example(
+            "tools/source-library uses work.ambrose.de-mysteriis --format json",
+            (
+                "[",
+                "... 31 more lines",
+            ),
+        ),
+    ),
+    "impact": (
+        Example(
+            "tools/source-library impact work.ambrose.de-mysteriis",
+            (
+                "document\tarticles/scripture/john-6-bread-from-heaven\treception\tpassage.ambrose.de-mysteriis.english-npnf2-10-1896.47-49\t... [+125 chars]",
+                "document\tliturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunda... [+311 chars]",
+                "source\tartifact.ambrose.de-mysteriis.english-npnf2-10-1896.newadvent-3405-d02cdd8b\tartifact\t\t\t\tsrc/sources/works/ambrose... [+92 chars]",
+                "... 2 more lines",
+            ),
+        ),
+        Example(
+            "tools/source-library impact work.ambrose.de-mysteriis --format json",
+            (
+                "[",
+                "... 51 more lines",
+            ),
+        ),
+    ),
+    "search": (
+        Example(
+            "tools/source-library search corpus.augustine.de-civitate-dei.dods-1871-complete Rome --count",
+            (
+                "247",
+            ),
+        ),
+        Example(
+            "tools/source-library search corpus.augustine.de-civitate-dei.dods-1871-complete Rome",
+            (
+                "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf\t77\t      world, and especially the sack of Rome by the Goth... [+123 chars]",
+                "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf\t91\t  The external calamities of Rome,                      ... [+125 chars]",
+                "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf\t96\t  That empire was given to Rome not by the gods, but by ... [+126 chars]",
+                "... 244 more lines",
+            ),
+        ),
+    ),
+}
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -2421,32 +2519,48 @@ def command_search(args: argparse.Namespace) -> int:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", default=str(ROOT), help=argparse.SUPPRESS)
+    examples_live_on_the_verbs(parser, "source-library")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    validate = subparsers.add_parser("validate", help="validate registered source records and bindings")
+    validate = with_examples(
+        subparsers.add_parser("validate", help="validate registered source records and bindings"),
+        EXAMPLES["validate"],
+    )
     validate.set_defaults(function=command_validate)
 
-    fingerprint = subparsers.add_parser(
-        "fingerprint", help="print the canonical review fingerprint for a source"
+    fingerprint = with_examples(
+        subparsers.add_parser(
+            "fingerprint", help="print the canonical review fingerprint for a source"
+        ),
+        EXAMPLES["fingerprint"],
     )
     fingerprint.add_argument("source_id")
     fingerprint.set_defaults(function=command_fingerprint)
 
-    uses = subparsers.add_parser("uses", help="list publications bound to a source or its descendants")
+    uses = with_examples(
+        subparsers.add_parser("uses", help="list publications bound to a source or its descendants"),
+        EXAMPLES["uses"],
+    )
     uses.add_argument("source_id")
     uses.add_argument("--locus")
     uses.add_argument("--format", choices=("tsv", "json"), default="tsv")
     uses.set_defaults(function=command_uses)
 
-    impact = subparsers.add_parser("impact", help="list source records and publications affected by a source")
+    impact = with_examples(
+        subparsers.add_parser("impact", help="list source records and publications affected by a source"),
+        EXAMPLES["impact"],
+    )
     impact.add_argument("source_id")
     impact.add_argument("--locus")
     impact.add_argument("--format", choices=("tsv", "json"), default="tsv")
     impact.set_defaults(function=command_impact)
 
-    search = subparsers.add_parser(
-        "search",
-        help="search physical lines in registered tracked UTF-8 artifacts",
+    search = with_examples(
+        subparsers.add_parser(
+            "search",
+            help="search physical lines in registered tracked UTF-8 artifacts",
+        ),
+        EXAMPLES["search"],
     )
     search.add_argument("source_id")
     search.add_argument("query")

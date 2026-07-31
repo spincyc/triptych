@@ -28,7 +28,137 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _commentary import chapter_loci  # noqa: E402
-from _tooling import print_json, run_verb_cli  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "propers": (
+        Example(
+            "tools/harvest propers --top 3",
+            (
+                "# 3 works across 497 passages, 6 runs",
+                "  430  Augustine of Hippo \u2014 Enarrationes in Psalmos  conf 1.00  128 passages",
+                "  1471  Denis the Carthusian \u2014 Enarrationes in universam Bibliam  conf 1.00  495 passages",
+                "  1349  Nicholas of Lyra \u2014 Postilla litteralis super totam Bibliam  conf 1.00  497 passages",
+            ),
+        ),
+        Example(
+            "tools/harvest propers --top 2 --format json",
+            (
+                "{\"harvest_runs\":6,\"passages_harvested\":497,\"v\":1,\"works\":[{\"author\":\"Augustine of Hippo\",\"confid... [+8074 chars]",
+            ),
+        ),
+    ),
+    "harvest": (
+        Example(
+            "tools/harvest harvest roman-1962 advent-1 --top 3",
+            (
+                "  430  Augustine of Hippo \u2014 Enarrationes in Psalmos  conf 1.00",
+                "  585  Cassiodorus \u2014 Expositio Psalmorum  conf 1.00",
+                "  458  Theodoret of Cyrus \u2014 Interpretatio in Psalmos  conf 1.00",
+            ),
+        ),
+        Example(
+            "tools/harvest harvest postconciliar advent-1 --top 2 --src-list-only",
+            (
+                "  430  Augustine of Hippo \u2014 Enarrationes in Psalmos",
+                "  585  Cassiodorus \u2014 Expositio Psalmorum",
+            ),
+        ),
+    ),
+    "plan": (
+        Example(
+            "tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml --limit 3",
+            (
+                "# Psalm numbers here are Vulgate, not Hebrew, though the book names are modern: Psalms 24 is Ad ... [+57 chars]",
+                "# 3 of 1596 passages below 3 runs",
+                "0\t1 Chronicles 29:12",
+                "0\t1 Corinthians 10:1-10:5",
+                "0\t1 Corinthians 10:1-10:6; 10:10-10:12",
+            ),
+        ),
+        Example(
+            "tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml --limit 2 --by-chapter --format json",
+            (
+                "{\"cutoff_year\":1900,\"numbering\":\"vulgate\",\"numbering_note\":\"Psalm numbers here are Vulgate, not ... [+328 chars]",
+            ),
+        ),
+    ),
+    "aliases": (
+        Example(
+            "tools/harvest aliases",
+            (
+                "derived_groups: 300",
+                "reviewed: 6",
+                "status: current",
+                "titles: 2862",
+                "tracked_groups: 300",
+            ),
+            "read-only: compares the derived grouping with the tracked table",
+        ),
+        Example(
+            "tools/harvest aliases --rebuild --alias-table build/example-harvest/aliases.yaml --audited-on 2026-07-31",
+            (
+                "groups: 300",
+                "reviewed: 6",
+                "status: rebuilt",
+                "titles: 2862",
+            ),
+            "WRITES the alias table. --alias-table here is an untracked copy; the default rewrites tracked src/sources/commentary/work-aliases.yaml",
+        ),
+    ),
+    "record": (
+        Example(
+            "tools/harvest record --ledger build/example-harvest/ledger.yaml --results build/example-results.yaml --model claude-opus-5 --audited-on 2026-07-31",
+            (
+                "passages: 1",
+                "run_id: 2026-07-31-claude-opus-5-7216751d",
+                "runs: 7",
+                "status: recorded",
+            ),
+            "WRITES the ledger. --ledger here is an untracked copy; the default appends to tracked src/sources/commentary/harvest-ledger.yaml",
+        ),
+        Example(
+            "tools/harvest record --ledger build/example-harvest/ledger.yaml --results build/example-results.yaml --model claude-opus-5 --audited-on 2026-07-31 --format json",
+            (
+                "{\"run_id\":\"2026-07-31-claude-opus-5-7216751d\",\"runs\":7,\"status\":\"already recorded\",\"v\":1}",
+            ),
+            "WRITES the ledger. The run_id is the model, the date and a digest of the results, so recording the same file twice is a no-op",
+        ),
+    ),
+    "promote": (
+        Example(
+            "tools/harvest promote --audited-on 2026-07-31 --dry-run --index src/sources/commentary/passage-commentary-index.yaml",
+            (
+                "distinct_works: 341",
+                "index: src/sources/commentary/passage-commentary-index.yaml",
+                "passages: 497",
+                "runs: 6",
+                "status: dry-run",
+                "works: 7297",
+            ),
+            "read-only first: --dry-run reports what promotion would write and writes nothing",
+        ),
+        Example(
+            "tools/harvest promote --audited-on 2026-07-31 --index build/example-discovery.yaml",
+            (
+                "distinct_works: 341",
+                "index: build/example-discovery.yaml",
+                "passages: 497",
+                "runs: 6",
+                "status: promoted",
+                "works: 7297",
+            ),
+            "WRITES the discovery index. --index here is untracked; the default rewrites tracked src/sources/commentary/passage-commentary-index.yaml",
+        ),
+    ),
+}
 
 LEDGER = ROOT / "src" / "sources" / "commentary" / "harvest-ledger.yaml"
 INDEX = ROOT / "src" / "sources" / "commentary" / "passage-commentary-index.yaml"
@@ -807,18 +937,32 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser = argparse.ArgumentParser(
         prog="harvest",
-        description="Plan, record and promote model-harvested commentary candidates.",
+        description=(
+            "Plan, record and promote model-harvested commentary candidates.\n"
+            "\n"
+            "This tool never calls a model. The harvest is run outside it and\n"
+            "brought back; `record --model NAME --audited-on DATE` ingests one\n"
+            "run and stamps it with the model identity and date it was told. It\n"            "is the ledger, not the caller, and it reaches nothing outside this\n"
+            "machine."
+        ),
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "harvest")
     sub = parser.add_subparsers(dest="command")
 
-    propers = sub.add_parser(
-        "propers", help="one collated list across every harvested proper", parents=[shared]
+    propers = with_examples(
+        sub.add_parser(
+            "propers", help="one collated list across every harvested proper", parents=[shared]
+        ),
+        EXAMPLES["propers"],
     )
     propers.add_argument("--top", type=int, default=0, help="cap the list; 0 is all")
     propers.add_argument("--min-confidence", type=float, default=0.0)
 
-    plan = sub.add_parser("plan", help="passages still needing harvest", parents=[shared])
+    plan = with_examples(
+        sub.add_parser("plan", help="passages still needing harvest", parents=[shared]),
+        EXAMPLES["plan"],
+    )
     plan.add_argument("--corpus", required=True, help="corpus emitted by commentary-work-index")
     plan.add_argument("--runs", type=int, default=3, help="target runs per passage")
     plan.add_argument("--limit", type=int, default=0, help="cap the worklist")
@@ -827,7 +971,23 @@ def main(argv: list[str] | None = None) -> int:
         help="one locus per chapter, never wider; more queries, no drops",
     )
 
-    record = sub.add_parser("record", help="ingest one run's results", parents=[shared])
+    record = with_examples(
+        sub.add_parser(
+            "record",
+            help="ingest one run's results",
+            description=(
+                "Ingest one run's results into the dated ledger.\n"
+                "\n"
+                "The run happened elsewhere. --model and --audited-on are what\n"
+                "you were told about it, recorded rather than discovered, and the\n"
+                "run id is those two plus a digest of the results — so recording\n"
+                "the same file twice is a no-op. Nothing here calls a model or\n"
+                "opens a socket."
+            ),
+            parents=[shared],
+        ),
+        EXAMPLES["record"],
+    )
     record.add_argument("--results", required=True)
     record.add_argument("--model", required=True, help="the model that produced them")
     record.add_argument("--audited-on", required=True, help="ISO date of the run")
@@ -836,21 +996,30 @@ def main(argv: list[str] | None = None) -> int:
         help="permit a write that leaves the ledger holding fewer runs than it does now",
     )
 
-    alias = sub.add_parser(
-        "aliases", help="derive or check the tracked work-alias table", parents=[shared]
+    alias = with_examples(
+        sub.add_parser(
+            "aliases", help="derive or check the tracked work-alias table", parents=[shared]
+        ),
+        EXAMPLES["aliases"],
     )
     alias.add_argument("--rebuild", action="store_true", help="rederive and write the table")
     alias.add_argument("--audited-on", default="", help="ISO date to stamp a rebuild with")
 
-    harvest = sub.add_parser(
-        "harvest", help="one mass's ranked works", parents=[shared]
+    harvest = with_examples(
+        sub.add_parser(
+            "harvest", help="one mass's ranked works", parents=[shared]
+        ),
+        EXAMPLES["harvest"],
     )
     harvest.add_argument("missal")
     harvest.add_argument("mass")
     harvest.add_argument("--runs", type=int, default=3)
     harvest.add_argument("--top", type=int, default=20)
 
-    promote = sub.add_parser("promote", help="write the discovery index", parents=[shared])
+    promote = with_examples(
+        sub.add_parser("promote", help="write the discovery index", parents=[shared]),
+        EXAMPLES["promote"],
+    )
     promote.add_argument("--audited-on", required=True)
     promote.add_argument("--min-confidence", type=float, default=0.0)
     promote.add_argument("--dry-run", action="store_true")

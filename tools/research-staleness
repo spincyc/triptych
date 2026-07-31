@@ -16,6 +16,91 @@ import hashlib
 import sys
 import tomllib
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "status": (
+        Example(
+            "tools/research-staleness status",
+            (
+                "stale claude articles/faith/four-last-things-01-death",
+                "stale claude articles/faith/four-last-things-02-judgment",
+                "stale claude articles/faith/four-last-things-03-hell",
+                "stale claude articles/faith/four-last-things-04-heaven",
+                "... 21 more lines",
+            ),
+        ),
+        Example(
+            "tools/research-staleness status --provider claude",
+            (
+                "stale claude articles/faith/four-last-things-01-death",
+                "stale claude articles/faith/four-last-things-02-judgment",
+                "stale claude articles/faith/four-last-things-03-hell",
+                "... 9 more lines",
+            ),
+        ),
+    ),
+    "explain": (
+        Example(
+            "tools/research-staleness explain claude articles/faith/four-last-things-01-death",
+            (
+                "new input src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/book-index-fcad78c2/arti... [+9 chars]",
+                "new input src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/ebible-usfm-d8c02326/art... [+10 chars]",
+                "new input src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-aliases-52634891/a... [+12 chars]",
+                "... 153 more lines",
+            ),
+        ),
+        Example(
+            "tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass",
+            (
+                "new input src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/book-ind... [+25 chars]",
+                "new input src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/ebible-u... [+26 chars]",
+                "new input src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-al... [+28 chars]",
+                "... 76 more lines",
+            ),
+        ),
+    ),
+    "bootstrap": (
+        Example(
+            "tools/research-staleness bootstrap",
+            (
+                "research-staleness error: ledger already exists; use rebaseline",
+            ),
+            "bootstrap refuses once the ledger exists, which is the only invocation that can be run against a repository that already has one",
+        ),
+    ),
+    "rebaseline": (
+        Example(
+            "tools/research-staleness rebaseline",
+            (
+                "research-staleness error: rebaseline requires --provider with --id, or --all",
+            ),
+            "a rebaseline must name what it is rebaselining; it refuses rather than guessing",
+        ),
+    ),
+}
+
+# Both of these rewrite the tracked staleness ledger and take no output path,
+# so neither has a runnable form in a repository that already has one.
+UNAVAILABLE = {
+    "bootstrap": (
+        "a successful bootstrap writes the tracked staleness ledger, and this "
+        "repository already has one, so only the refusal can be shown."
+    ),
+    "rebaseline": (
+        "a successful rebaseline rewrites the tracked staleness ledger in place "
+        "and takes no output path, so only the refusal can be shown."
+    ),
+}
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "src" / "sources" / "inventories" / "research-staleness-v1.toml"
@@ -291,14 +376,29 @@ def cmd_rebaseline(provider: str | None, leaf: str | None, everything: bool) -> 
 
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(prog="research-staleness")
+    examples_live_on_the_verbs(parser, "research-staleness")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    subparsers.add_parser("bootstrap")
-    status_parser = subparsers.add_parser("status")
+    with_examples(
+        subparsers.add_parser("bootstrap"),
+        EXAMPLES["bootstrap"],
+        unavailable=UNAVAILABLE["bootstrap"],
+    )
+    status_parser = with_examples(
+        subparsers.add_parser("status"),
+        EXAMPLES["status"],
+    )
     status_parser.add_argument("--provider", choices=PROVIDERS)
-    explain_parser = subparsers.add_parser("explain")
+    explain_parser = with_examples(
+        subparsers.add_parser("explain"),
+        EXAMPLES["explain"],
+    )
     explain_parser.add_argument("provider", choices=PROVIDERS)
     explain_parser.add_argument("leaf")
-    rebaseline_parser = subparsers.add_parser("rebaseline")
+    rebaseline_parser = with_examples(
+        subparsers.add_parser("rebaseline"),
+        EXAMPLES["rebaseline"],
+        unavailable=UNAVAILABLE["rebaseline"],
+    )
     rebaseline_parser.add_argument("--provider", choices=PROVIDERS)
     rebaseline_parser.add_argument("--id", dest="leaf")
     rebaseline_parser.add_argument("--all", action="store_true")

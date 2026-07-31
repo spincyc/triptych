@@ -33,7 +33,73 @@ from _psalms import (  # noqa: E402
     convert_reference,
     english_verse,
 )
-from _tooling import print_json, run_verb_cli  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "manifest": (
+        Example(
+            "tools/index-bible manifest --out build/example-index",
+            (
+                "offered: douay-rheims, douay-rheims-american-1899, clementine-vulgate, catholic-public-domain-ve... [+112 chars]",
+                "withheld as unpublishable: knox",
+            ),
+            "WRITES bibles.json. --out here is untracked; the default writes tracked src/web/data",
+        ),
+        Example(
+            "tools/index-bible manifest --out build/example-index --json",
+            (
+                "{\"bible\":\"manifest\",\"offered\":[\"douay-rheims\",\"douay-rheims-american-1899\",\"clementine-vulgate\",... [+206 chars]",
+            ),
+            "WRITES bibles.json",
+        ),
+    ),
+    "check": (
+        Example(
+            "tools/index-bible check --bible douay-rheims",
+            (
+                "douay-rheims: 1601 passages -> src/sources/bibles/douay-rheims/index.yaml",
+                "  postconciliar: 948/950 references resolved (99.8%)",
+                "  roman-1962: 777/778 references resolved (99.9%)",
+                "  unresolved: 3",
+            ),
+        ),
+        Example(
+            "tools/index-bible check --bible clementine-vulgate --json",
+            (
+                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":950,\"resolved\":940},\"roman-1... [+145 chars]",
+            ),
+        ),
+    ),
+    "build": (
+        Example(
+            "tools/index-bible check --bible douay-rheims",
+            (
+                "douay-rheims: 1601 passages -> src/sources/bibles/douay-rheims/index.yaml",
+                "  postconciliar: 948/950 references resolved (99.8%)",
+                "  roman-1962: 777/778 references resolved (99.9%)",
+                "  unresolved: 3",
+            ),
+            "read-only first: `check` rebuilds in memory and reports the same drift, writing nothing",
+        ),
+        Example(
+            "tools/index-bible build --bible douay-rheims --bible-root build/example-bibles",
+            (
+                "douay-rheims: 1601 passages -> build/example-bibles/douay-rheims/index.yaml",
+                "  postconciliar: 948/950 references resolved (99.8%)",
+                "  roman-1962: 777/778 references resolved (99.9%)",
+                "  unresolved: 3",
+            ),
+            "WRITES an index. --bible-root here is untracked; the default writes tracked src/sources/bibles",
+        ),
+    ),
+}
 
 DEFAULT_CALENDAR_ROOT = ROOT / "src" / "sources" / "calendars"
 DEFAULT_BIBLE_ROOT = ROOT / "src" / "sources" / "bibles"
@@ -1165,11 +1231,21 @@ def main(argv: list[str] | None = None) -> int:
         description="Build an indexed bible from the source library's tracked verse text.",
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "index-bible")
     sub = parser.add_subparsers(dest="command")
-    sub.add_parser("build", help="write the index", parents=[shared])
-    sub.add_parser("check", help="rebuild in memory and report drift", parents=[shared])
-    sub.add_parser(
-        "manifest", help="list the editions a public page may offer", parents=[shared]
+    with_examples(
+        sub.add_parser("build", help="write the index", parents=[shared]),
+        EXAMPLES["build"],
+    )
+    with_examples(
+        sub.add_parser("check", help="rebuild in memory and report drift", parents=[shared]),
+        EXAMPLES["check"],
+    )
+    with_examples(
+        sub.add_parser(
+            "manifest", help="list the editions a public page may offer", parents=[shared]
+        ),
+        EXAMPLES["manifest"],
     )
 
     return run_verb_cli(

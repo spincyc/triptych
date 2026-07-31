@@ -22,13 +22,116 @@ import json
 import os
 import subprocess
 import sys
+import textwrap
 from pathlib import Path
 
 SELF = Path(__file__).resolve()
 ROOT = SELF.parents[1]
 MANIFEST = ROOT / "tmt.json"
 TOOLS = ROOT / "tools"
+sys.path.insert(0, str(ROOT / "scripts"))
 
+from _tooling import (  # noqa: E402
+    GROUPS,
+    GROUP_OF,
+    MODEL,
+    NETWORK,
+    NOTHING,
+    REACHES,
+    REACH_LABEL,
+    Example,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "--list": (
+        Example(
+            "tools/tpt --list",
+            (
+                "acquisition:",
+                "  Retrieval from outside the project. This is the only group that reaches",
+                "  outside your machine at all, and no tool in any other group makes a network",
+                "  call or calls a model. What these write never enters the repository either:",
+                "... 54 more lines",
+            ),
+        ),
+        Example(
+            "tools/tpt --list --json",
+            (
+                "[{\"group\": \"artwork\", \"mutates\": true, \"name... [+7494 chars]",
+            ),
+            "one object a tool, each carrying the group its listing section came from",
+        ),
+    ),
+    "--info": (
+        Example(
+            "tools/tpt --info tpt",
+            (
+                "name: tpt",
+                "group: launcher",
+                "reaches: nothing",
+                "purpose: Unified launcher for Triptych tools and tool discovery commands.",
+                "usage: tpt <tool> [<tool args>...] | tpt {--list,--info,--path,--check} [--json]",
+                "path: <repo>/tools/tpt",
+                "... 1 more line",
+            ),
+        ),
+        Example(
+            "tools/tpt --info tpt --json",
+            (
+                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+221 chars]",
+            ),
+        ),
+    ),
+    "--path": (
+        Example(
+            "tools/tpt --path tpt",
+            (
+                "<repo>/tools/tpt",
+            ),
+        ),
+        Example(
+            "tools/tpt --path no-such-tool",
+            (
+                "tpt: unknown tool: no-such-tool",
+            ),
+            "exit 2",
+        ),
+    ),
+    "--check": (
+        Example(
+            "tools/tpt --check",
+            (
+                "registry ok: 29 tools",
+            ),
+        ),
+        Example(
+            "tools/tpt --check --json",
+            (
+                "registry ok: 29 tools",
+            ),
+            "--check reports in text either way; it is a gate, not a query",
+        ),
+    ),
+    "<tool>": (
+        Example(
+            "tools/tpt tpt --path tpt",
+            (
+                "<repo>/tools/tpt",
+            ),
+            "anything after the tool id is that tool's own argv, untouched \u2014 here the launcher dispatching to itself",
+        ),
+        Example(
+            "tools/tpt no-such-tool",
+            (
+                "tpt: unknown tool: no-such-tool",
+                "... 1 more line",
+            ),
+            "exit 2; the elided line lists every registered id",
+        ),
+    ),
+}
 
 
 ToolRecord = dict[str, object]
@@ -80,8 +183,10 @@ def list_tools(registry: Registry, *, as_json: bool) -> int:
     if as_json:
         payload = [
             {
+                "group": GROUP_OF.get(name),
                 "name": name,
                 "purpose": record.get("purpose"),
+                "reaches": REACHES.get(name),
                 "usage": record.get("usage"),
                 "mutates": record.get("mutates"),
             }
@@ -93,9 +198,59 @@ def list_tools(registry: Registry, *, as_json: bool) -> int:
         print("(no tools registered)")
         return 0
     width = max(len(name) for name in registry) + 2
-    for name, record in registry.items():
-        print(f"{name:{width}}{record.get('purpose', '')}")
+
+    def row(name: str) -> None:
+        reach = REACH_LABEL.get(REACHES.get(name, NOTHING), "")
+        mark = f"  [{reach}]" if reach else ""
+        print(f"  {name:{width}}{registry[name].get('purpose', '')}{mark}")
+
+    first = True
+    for group, note, names in GROUPS:
+        present = [name for name in names if name in registry]
+        if not present:
+            continue
+        if not first:
+            print()
+        first = False
+        print(f"{group}:")
+        for line in textwrap.wrap(note, width=78, initial_indent="  ",
+                                  subsequent_indent="  "):
+            print(line)
+        for name in present:
+            row(name)
+    ungrouped = [name for name in registry if name not in GROUP_OF]
+    if ungrouped:
+        # Never silently drop a tool from the listing: a reader who cannot see
+        # it cannot run it.
+        print()
+        print("ungrouped (add it to GROUPS in scripts/_tooling.py):")
+        for name in ungrouped:
+            row(name)
+    # The question a reader asks before running anything unfamiliar is whether
+    # it spends something outside their machine, so answer it for the whole
+    # list rather than leaving it to be inferred from the absence of a mark.
+    print()
+    print(reach_summary(registry))
     return 0
+
+
+def reach_summary(registry: Registry) -> str:
+    """One sentence naming every tool that reaches outside, or saying none do."""
+    outward = {
+        kind: sorted(n for n in registry if REACHES.get(n) == kind)
+        for kind in (NETWORK, MODEL)
+    }
+    parts = [
+        f"{REACH_LABEL[kind]}: {', '.join(names)}"
+        for kind, names in outward.items()
+        if names
+    ]
+    if not parts:
+        return "No registered tool reaches the network or calls a model."
+    return (
+        "; ".join(parts)
+        + ". No other registered tool reaches the network or calls a model."
+    )
 
 
 def show_tool_info(registry: Registry, name: str, *, as_json: bool) -> int:
@@ -106,6 +261,8 @@ def show_tool_info(registry: Registry, name: str, *, as_json: bool) -> int:
                          sort_keys=True, ensure_ascii=False))
         return 0
     print(f"name: {name}")
+    print(f"group: {GROUP_OF.get(name, '(none)')}")
+    print(f"reaches: {REACHES.get(name, '(undeclared)')}")
     for field in ("purpose", "usage"):
         if field in record:
             print(f"{field}: {record[field]}")
@@ -127,6 +284,63 @@ def run_tool(registry: Registry, name: str, tool_args: list[str]) -> int:
     return 128 - code if code < 0 else code
 
 
+def check_groups(registry: Registry) -> list[str]:
+    """The grouping table and the registry must name the same tools.
+
+    tmt.json cannot carry the group itself, so nothing but this check keeps
+    the two in step. A new tool that no group claims would otherwise appear
+    only in a trailing "ungrouped" block that nobody reads.
+    """
+    problems: list[str] = []
+    seen: dict[str, str] = {}
+    for group, note, names in GROUPS:
+        if not note.strip():
+            problems.append(f"group {group}: has no note saying what it holds")
+        for name in names:
+            if name in seen:
+                problems.append(
+                    f"{name}: claimed by both {seen[name]!r} and {group!r}"
+                )
+            seen[name] = group
+            if name not in registry:
+                problems.append(f"{name}: grouped under {group!r} but not registered")
+    for name in registry:
+        if name not in seen:
+            problems.append(
+                f"{name}: registered but in no group "
+                "(see GROUPS in scripts/_tooling.py)"
+            )
+    problems.extend(check_reaches(registry))
+    return problems
+
+
+def check_reaches(registry: Registry) -> list[str]:
+    """Every registered tool must say whether it reaches outside the machine.
+
+    Undeclared is not the same as `nothing`, and a reader deciding whether to
+    run something cannot tell the two apart from a listing. The declaration's
+    truth is checked against each tool's source in
+    tools/tests/test_tool_registry.py; this only checks that one exists.
+    """
+    known = set(REACH_LABEL)
+    problems = [
+        f"{name}: undeclared reach (see REACHES in scripts/_tooling.py)"
+        for name in registry
+        if name not in REACHES
+    ]
+    problems += [
+        f"{name}: reach {REACHES[name]!r} is not one of: {', '.join(sorted(known))}"
+        for name in registry
+        if name in REACHES and REACHES[name] not in known
+    ]
+    problems += [
+        f"{name}: declares a reach but is not registered"
+        for name in REACHES
+        if name not in registry
+    ]
+    return problems
+
+
 def check_registry(registry: Registry) -> int:
     """Registry and filesystem must agree; the launcher can say so itself."""
     problems: list[str] = []
@@ -141,6 +355,7 @@ def check_registry(registry: Registry) -> int:
             continue
         if path.name not in registry:
             problems.append(f"{path.name}: implementation has no registry entry")
+    problems.extend(check_groups(registry))
     for problem in problems:
         print(f"tpt: {problem}", file=sys.stderr)
     if problems:
@@ -161,7 +376,12 @@ def build_parser() -> argparse.ArgumentParser:
     what.add_argument("--check", action="store_true",
                       help="verify the registry matches the filesystem")
     parser.add_argument("--json", action="store_true", help="emit JSON output")
-    return parser
+    # tpt's modes are options rather than subcommands, so there is no per-verb
+    # help to hang examples on; they all belong here.
+    return with_examples(
+        parser,
+        tuple(example for mode in EXAMPLES for example in EXAMPLES[mode]),
+    )
 
 
 def dispatch(registry: Registry, raw: list[str]) -> int:

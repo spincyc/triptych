@@ -43,7 +43,80 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _tooling import print_json, run_verb_cli  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "list": (
+        Example(
+            "tools/typeset-bible list",
+            (
+                "douay-rheims: Douay-Rheims (Challoner) (public-domain)",
+                "douay-rheims-american-1899: Douay-Rheims (American 1899) (public-domain)",
+                "clementine-vulgate: Clementine Vulgate (Latin) (public-domain)",
+                "catholic-public-domain-version: Catholic Public Domain Version (public-domain)",
+                "... 4 more lines",
+            ),
+        ),
+        Example(
+            "tools/typeset-bible list --format ids",
+            (
+                "douay-rheims",
+                "douay-rheims-american-1899",
+                "clementine-vulgate",
+                "catholic-public-domain-version",
+                "world-english-bible-catholic",
+                "king-james-version",
+                "revised-version-1895",
+            ),
+        ),
+    ),
+    "check": (
+        Example(
+            "tools/typeset-bible check --bible clementine-vulgate",
+            (
+                "clementine-vulgate: 73 books, 1334 chapters, 35809 verses (public-domain, United States)",
+                "refused (not publishable): knox",
+            ),
+        ),
+        Example(
+            "tools/typeset-bible check --bible douay-rheims --json",
+            (
+                "{\"editions\":[{\"books\":73,\"chapters\":1334,\"digest\":\"71f47b8ea22178f377341d02120dcdadd8daac3a91bc3... [+186 chars]",
+            ),
+        ),
+    ),
+    "render": (
+        Example(
+            "tools/typeset-bible check --bible clementine-vulgate",
+            (
+                "clementine-vulgate: 73 books, 1334 chapters, 35809 verses (public-domain, United States)",
+                "refused (not publishable): knox",
+            ),
+            "read-only first: `check` proves the edition can be set and writes nothing",
+        ),
+        Example(
+            "tools/typeset-bible render --bible clementine-vulgate --out build/example-typeset",
+            (
+                "clementine-vulgate: unchanged <repo>/build/example-typeset/clementine-vulgate.tex (73 books, 358... [+10 chars]",
+            ),
+            "WRITES TeX. --out here is untracked; the default is build/bibles",
+        ),
+        Example(
+            "tools/typeset-bible render --bible king-james-version --out build/example-typeset --json",
+            (
+                "{\"rendered\":[{\"books\":80,\"changed\":false,\"chapters\":1362,\"id\":\"king-james-version\",\"path\":\"<repo... [+1761 chars]",
+            ),
+            "WRITES TeX",
+        ),
+    ),
+}
 
 SOURCE_ROOT = ROOT / "src" / "sources" / "works"
 DEFAULT_OUT = ROOT / "build" / "bibles"
@@ -833,10 +906,20 @@ def main(argv: list[str] | None = None) -> int:
         description="Typeset a publishable bible edition's complete text as two-column TeX.",
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "typeset-bible")
     sub = parser.add_subparsers(dest="command")
-    sub.add_parser("list", help="the editions that may be typeset", parents=[shared])
-    sub.add_parser("check", help="prove an edition can be set, writing nothing", parents=[shared])
-    sub.add_parser("render", help="write the two-column TeX source", parents=[shared])
+    with_examples(
+        sub.add_parser("list", help="the editions that may be typeset", parents=[shared]),
+        EXAMPLES["list"],
+    )
+    with_examples(
+        sub.add_parser("check", help="prove an edition can be set, writing nothing", parents=[shared]),
+        EXAMPLES["check"],
+    )
+    with_examples(
+        sub.add_parser("render", help="write the two-column TeX source", parents=[shared]),
+        EXAMPLES["render"],
+    )
 
     return run_verb_cli(
         parser=parser,

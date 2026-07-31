@@ -26,7 +26,50 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from _psalms import PSALMS, SYSTEMS, NumberingError, convert_range  # noqa: E402
 from _loci import range_to_loci  # noqa: E402
-from _tooling import print_json, run_verb_cli  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured, never composed. Regenerate by rerunning the commands below.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/reading-plan check",
+            (
+                "narrative-spine: 357 readings",
+            ),
+        ),
+        Example(
+            "tools/reading-plan check --json",
+            (
+                "{\"plans\":{\"narrative-spine\":357},\"problems\":[],\"status\":\"ok\",\"v\":1}",
+            ),
+        ),
+    ),
+    "structure": (
+        Example(
+            "tools/reading-plan structure --out build/example-reading",
+            (
+                "narrative-spine: 357 readings",
+                "  -> build/example-reading/structure/readings/narrative-spine.json",
+                "  refused: 0",
+            ),
+            "WRITES. --out here is untracked; the default writes the tracked src/web/data",
+        ),
+        Example(
+            "tools/reading-plan structure --out build/example-reading --verbose",
+            (
+                "narrative-spine: 357 readings",
+                "  -> build/example-reading/structure/readings/narrative-spine.json",
+            ),
+            "WRITES. --verbose names each refused reading instead of counting them",
+        ),
+    ),
+}
 
 DEFAULT_ROOT = ROOT / "src" / "sources" / "reading-plans"
 SCHEMA = "triptych-reading-plan/v1"
@@ -287,9 +330,18 @@ def main(argv: list[str] | None = None) -> int:
         description="Validate the abridged reading plans and emit their browser structure.",
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "reading-plan")
     sub = parser.add_subparsers(dest="command")
-    sub.add_parser("check", help="validate every plan", parents=[shared])
-    sub.add_parser("structure", help="write the browser's reading structure", parents=[shared])
+    with_examples(
+        sub.add_parser("check", help="validate every plan", parents=[shared]),
+        EXAMPLES["check"],
+    )
+    with_examples(
+        sub.add_parser(
+            "structure", help="write the browser's reading structure", parents=[shared]
+        ),
+        EXAMPLES["structure"],
+    )
 
     return run_verb_cli(
         parser=parser,

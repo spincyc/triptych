@@ -35,7 +35,65 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _commentary import chapter_loci
 from _psalms import PSALMS, NumberingError, convert_point
-from _tooling import print_json, run_verb_cli
+from _tooling import (
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "discover": (
+        Example(
+            "tools/commentary-work-index discover --passage 'John 3:16' --max-results 3",
+            (
+                "passage: John 3:16",
+                "   1. Albert the Great \u2014 Super Iohannem (1280)",
+                "      role: doctor",
+                "      matched on the chapter, not the verses cited: John 3",
+                "   2. Alcuin of York \u2014 Commentaria in S. Ioannis Evangelium (804)",
+                "      role: saintly",
+                "      matched on the chapter, not the verses cited: John 3",
+                "   3. Augustine of Hippo \u2014 In Iohannis evangelium tractatus CXXIV (430)",
+                "      role: church-father",
+                "      matched on the chapter, not the verses cited: John 3",
+            ),
+        ),
+        Example(
+            "tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json",
+            (
+                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+401 chars]",
+            ),
+        ),
+    ),
+    "build-corpus": (
+        Example(
+            "tools/commentary-work-index discover --passage 'John 3:16' --max-results 2",
+            (
+                "passage: John 3:16",
+                "   1. Albert the Great \u2014 Super Iohannem (1280)",
+                "      role: doctor",
+                "      matched on the chapter, not the verses cited: John 3",
+                "... 3 more lines",
+            ),
+            "read-only first: `discover` is the per-passage lookup `build-corpus` aggregates",
+        ),
+        Example(
+            "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
+            (
+                "masses: 126 covered of 126",
+                "total works in union corpus: 124",
+                "unresolved passages: 44",
+                "",
+                "roman-1962::advent-1 [seasonal] -> 20 works",
+                "... 20 more lines",
+            ),
+            "WRITES a corpus. --output here is untracked; the default writes tracked src/sources/commentary/mass-commentary-corpus.yaml",
+        ),
+    ),
+}
 
 SCHEMA_DISCOVERY = "triptych-commentary-work-index/v1"
 SCHEMA_CORPUS = "triptych-missal-commentary-corpus/v1"
@@ -993,12 +1051,16 @@ def main(argv: list[str] | None = None) -> int:
     # Keep --format for explicit choice while still supporting --yaml/--json.
     shared.add_argument("--format", dest="explicit_format", choices=("text", "json", "yaml"))
 
+    examples_live_on_the_verbs(parser, "commentary-work-index")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    discover = sub.add_parser(
-        "discover",
-        help="List mapped works for one or more passages.",
-        parents=[shared],
+    discover = with_examples(
+        sub.add_parser(
+            "discover",
+            help="List mapped works for one or more passages.",
+            parents=[shared],
+        ),
+        EXAMPLES["discover"],
     )
     discover.add_argument("--passage", action="append", default=[], help="Passage input")
     discover.add_argument(
@@ -1027,8 +1089,11 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
 
-    build = sub.add_parser(
-        "build-corpus", help="Build corpus coverage across all masses.", parents=[shared]
+    build = with_examples(
+        sub.add_parser(
+            "build-corpus", help="Build corpus coverage across all masses.", parents=[shared]
+        ),
+        EXAMPLES["build-corpus"],
     )
     build.add_argument(
         "--root",

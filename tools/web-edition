@@ -9,6 +9,32 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/web-edition --provider claude --output build/example-web-edition articles/faith/at-the-end-of-every-why",
+            (
+                "build/example-web-edition/claude/articles/faith/at-the-end-of-every-why.md",
+            ),
+            "WRITES one Markdown file per leaf. --output here is untracked; the default is build/web",
+        ),
+        Example(
+            "tools/web-edition --provider claude --output build/example-web-edition articles/faith/no-such-leaf",
+            (
+                "web-edition: claude/articles/faith/no-such-leaf",
+                "no such document: <repo>/src/claude/articles/faith/no-such-leaf/main.tex",
+            ),
+            "an unknown leaf id is refused",
+        ),
+    ),
+}
 
 ROOT = Path(__file__).resolve().parents[1]
 SHIM = Path(__file__).resolve().parents[1] / "scripts" / "web-shim.tex"
@@ -518,6 +544,7 @@ def main() -> int:
         default=OUT,
         help="write below this directory instead of build/web/",
     )
+    with_examples(parser, EXAMPLES[""])
     arguments = parser.parse_args()
     root = SRC / arguments.provider
     if arguments.all:

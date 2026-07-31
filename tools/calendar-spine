@@ -26,7 +26,35 @@ from pathlib import Path
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from _tooling import print_json, run_verb_cli
+from _tooling import (
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "derive": (
+        Example(
+            "tools/calendar-spine derive --calendar roman-1962 --kind marian",
+            (
+                "# roman-1962: 17 entries (17 marian)",
+                "roman-1962\t02-02\tmarian\t1962-02-02\tII\tpurificatione-beatae-mariae-virginis\tIn Purificatione Beat... [+18 chars]",
+                "roman-1962\t02-11\tmarian\t1962-02-11\tIII\tapparitione-beatae-mariae-virginis-immaculatae\tIn Apparit... [+39 chars]",
+                "roman-1962\t03-25\tmarian\t1962-03-25\tI\tannuntiatio-beatae-mariae-virginis\tAnnuntiatio Beatae Maria... [+10 chars]",
+                "... 14 more lines",
+            ),
+        ),
+        Example(
+            "tools/calendar-spine derive --calendar postconciliar --kind christological --json",
+            (
+                "{\"calendars\":{\"postconciliar\":[{\"date\":\"01-03\",\"day\":3,\"key\":\"most-holy-name-jesus\",\"kind\":\"chri... [+1160 chars]",
+            ),
+        ),
+    ),
+}
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = {
@@ -264,8 +292,12 @@ def main(argv: list[str] | None = None) -> int:
         ),
         parents=[shared],
     )
+    examples_live_on_the_verbs(parser, "calendar-spine")
     sub = parser.add_subparsers(dest="command")
-    sub.add_parser("derive", help="derive the date-ordered sanctoral spine", parents=[shared])
+    with_examples(
+        sub.add_parser("derive", help="derive the date-ordered sanctoral spine", parents=[shared]),
+        EXAMPLES["derive"],
+    )
 
     def dispatch(arguments):
         return run(arguments.calendar, arguments.kind)
