@@ -55,6 +55,44 @@ review:
     - Tractatus in librum Psalmorum
     reason: One title is the other's fuller form. It reached its group only through the denied
       Commentarioli edge, and would otherwise stand alone on 10 uses.
+  canonical_titles:
+  - author: Thomas Aquinas
+    instead_of: Super Epistolam ad Romanos lectura
+    title: Super Epistolas S. Pauli lectura
+    reason: 'One work over ten epistles, named after the first of them. Derivation takes the
+      most-used title and Romans is what the missals quote, so 242 uses across the Pauline
+      corpus were filed under the Romans lectura. The collected commentary is printed as Super
+      epistolas S. Pauli lectura (Marietti, ed. R. Cai, 8th revised edition, Turin-Rome 1953,
+      2 vols), which is the title taken here. The grouping is not in question: the runs themselves
+      assert Expositio in omnes S. Pauli epistolas as one of its names.'
+  - author: Theophylact of Ohrid
+    instead_of: Expositio in epistulam ad Romanos
+    title: In omnes D. Pauli apostoli epistolas enarrationes
+    reason: 'The same defect as the Aquinas entry, on the same corpus: 140 uses over the ten
+      epistles named after Romans. The standard Latin form is Lonicerus''s version, Theophylacti
+      Bulgariae archiepiscopi in omnes D. Pauli apostoli epistolas enarrationes (Cologne,
+      Cervicornus 1532, and the reprints behind Migne PG 124-125). Migne''s own short heading,
+      Expositio in epistolas S. Pauli, is not used here: two other Theophylact groups already
+      carry that name, and one title may not reach two groups.'
+  - author: Theophylact of Ohrid
+    instead_of: Expositio in epistulam Iacobi
+    title: Commentarius in epistulas catholicas
+    reason: 'Nine uses over James, 1 Peter and 1 John under the name of James alone, which
+      the check does not reach: the words that would prove it, petri and ioannis, are used
+      too narrowly to qualify as book names, so this one was found by measuring the promoted
+      index rather than by the gate. Migne''s heading, Expositio in epistolas catholicas,
+      is already another Theophylact group''s canonical title, so this group takes the whole-naming
+      title it already holds.'
+  - author: Albert the Great
+    instead_of: Commentarii in Amos prophetam
+    title: Commentarii in duodecim prophetas minores
+    reason: 'A group spanning six of the minor prophets, named after Amos, which the check
+      turned up beside the two Pauline groups. Borgnet prints the work as Enarrationes in
+      XII prophetas minores (Opera omnia XIX, Paris: Vives 1892); that exact name is already
+      the canonical title of another of Albert''s groups, so this one takes the whole-naming
+      title it already holds. Albert''s minor prophets stand in four separate groups because
+      no run asserted the aliases that would join them — a grouping question, left for review,
+      not settled by renaming.'
 groups:
 - author: Albert the Great
   work: Commentarii in Psalmos
@@ -230,19 +268,6 @@ groups:
   - commentary on the twelve minor prophets
   - enarrationes in xii prophetas minores
 - author: Albert the Great
-  work: Commentarii in Amos prophetam
-  uses: 6
-  attested_by: 1
-  titles:
-  - commentarii in amos prophetam
-  - commentarii in duodecim prophetas minores
-  - commentarii in habacuc prophetam
-  - commentarii in malachiam prophetam
-  - commentarii in michaeam prophetam
-  - commentarii in sophoniam prophetam
-  - commentarii in zachariam prophetam
-  - postilla super xii prophetas minores
-- author: Albert the Great
   work: Commentarii in Baruch
   uses: 6
   attested_by: 3
@@ -254,6 +279,19 @@ groups:
   - in baruch prophetam
   - postilla super baruch
   - super baruch
+- author: Albert the Great
+  work: Commentarii in duodecim prophetas minores
+  uses: 6
+  attested_by: 1
+  titles:
+  - commentarii in amos prophetam
+  - commentarii in duodecim prophetas minores
+  - commentarii in habacuc prophetam
+  - commentarii in malachiam prophetam
+  - commentarii in michaeam prophetam
+  - commentarii in sophoniam prophetam
+  - commentarii in zachariam prophetam
+  - postilla super xii prophetas minores
 - author: Albert the Great
   work: Enarrationes in Apocalypsim
   uses: 2
@@ -3837,7 +3875,7 @@ groups:
   - in threnos interpretatio
   - interpretatio in threnos
 - author: Theophylact of Ohrid
-  work: Expositio in epistulam ad Romanos
+  work: In omnes D. Pauli apostoli epistolas enarrationes
   uses: 140
   attested_by: 2
   titles:
@@ -3910,6 +3948,7 @@ groups:
   - expositio in epistulam ii ad corinthios
   - expositio in epistulam ii ad thessalonicenses
   - expositio in epistulam ii ad timotheum
+  - in omnes d. pauli apostoli epistolas enarrationes
 - author: Theophylact of Ohrid
   work: Enarratio in Evangelium Lucae
   uses: 67
@@ -4003,7 +4042,7 @@ groups:
   - expositio in primam epistolam petri
   - expositio in secundam epistolam petri
 - author: Theophylact of Ohrid
-  work: Expositio in epistulam Iacobi
+  work: Commentarius in epistulas catholicas
   uses: 9
   attested_by: 2
   titles:
@@ -4061,7 +4100,7 @@ groups:
   - golden chain on matthew
   - the golden chain
 - author: Thomas Aquinas
-  work: Super Epistolam ad Romanos lectura
+  work: Super Epistolas S. Pauli lectura
   uses: 242
   attested_by: 3
   titles:
@@ -4178,6 +4217,7 @@ groups:
   - super epistolam secundam ad corinthios lectura
   - super epistolam secundam ad thessalonicenses lectura
   - super epistolam secundam ad timotheum lectura
+  - super epistolas s. pauli lectura
   - super galatas
   - super hebraeos
   - super i corinthios

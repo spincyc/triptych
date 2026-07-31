@@ -171,10 +171,22 @@ What cannot be derived is whether a group is one work, so the table carries a
   *Commentarioli in Psalmos* and *Tractatus in Psalmos* are two works, not one.
 - `also_aliases` adds a join no run happened to assert, needed where denying an
   edge orphans a name that reached its group only through it.
+- `canonical_titles` names a group by the whole work rather than by the part.
+  Derivation takes the most-used title, so Aquinas's one commentary over ten
+  Pauline epistles was named *Super Epistolam ad Romanos lectura* — Romans is
+  what the missals quote. An entry gives the author, a title the group holds
+  (`instead_of`) and the name to use, and is refused if no group holds that
+  title, so an override cannot go on looking honoured after the grouping moves.
 
 Loading validates that no title reaches two groups, that no name declared
-ambiguous still groups a work, and that no chain of aliases has re-joined works
-declared distinct. `evidence_sha256` covers the alias claims alone, so
+ambiguous still groups a work, that no chain of aliases has re-joined works
+declared distinct, and that no group's canonical title names a book its own
+other names do not share. That last is `guidance/catena.md` Rule 8, and the
+words that count as book names are derived from the ledger — an attribution
+already ties a title to a locus, and a locus already names its book — so a
+genre word like *explanatio*, which heads titles on the Psalms, the Apocalypse
+and John, does not qualify. The check is sound where it is incomplete: a word
+it cannot prove is a book name is never read as one. `evidence_sha256` covers the alias claims alone, so
 recording a run that asserts a new alias ages the table and `promote` refuses
 until the new grouping has been looked at. A merge is invisible once promoted
 and cannot be undone from the index, so nothing is merged on resemblance.

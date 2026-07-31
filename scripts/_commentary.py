@@ -15,6 +15,14 @@ from __future__ import annotations
 
 import re
 
+_REFERENCE = re.compile(r"^(.*?)\s+(\d.*)$")
+
+
+def book_of(locus: str) -> str:
+    """The book a locus names, without its chapter or verses."""
+    match = _REFERENCE.match(locus.strip())
+    return match.group(1) if match else locus.strip()
+
 
 def chapter_loci(passage: str) -> list[str]:
     """Split a reference into one locus per chapter, never wider.
@@ -23,7 +31,7 @@ def chapter_loci(passage: str) -> list[str]:
     works that comment on only one of them. Isaiah 63:16-64:7 is therefore two
     loci, not one, which costs more queries and loses nothing.
     """
-    match = re.match(r"^(.*?)\s+(\d.*)$", passage.strip())
+    match = _REFERENCE.match(passage.strip())
     if not match:
         return [passage]
     book, tail = match.group(1), match.group(2)

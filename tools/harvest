@@ -25,6 +25,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -37,7 +38,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _commentary import chapter_loci  # noqa: E402
+from _commentary import book_of, chapter_loci  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -886,6 +887,149 @@ def _review_rules(review: dict) -> tuple[set, set, set]:
     return ambiguous, pairs("not_aliases"), pairs("also_aliases")
 
 
+def _reviewed_names(review: dict) -> dict[tuple[str, str], str]:
+    """The name a reviewer settled on a group, keyed by a title the group holds.
+
+    Derivation picks the most-used title, which names the part when the part is
+    what the propers cite: Aquinas's Pauline commentary is one work over ten
+    epistles and drew its name from Romans because Romans is what the missals
+    quote. Which name covers a work is a cataloguing judgement, so it lives
+    here beside the other judgements rather than in the derivation.
+    """
+    chosen: dict[tuple[str, str], str] = {}
+    for entry in review.get("canonical_titles") or []:
+        author = _fold(entry.get("author"))
+        member = _fold(entry.get("instead_of"))
+        title = str(entry.get("title") or "").strip()
+        if not author or not member or not title:
+            raise ValueError(
+                "review.canonical_titles: each entry needs author, instead_of and title"
+            )
+        if (author, member) in chosen:
+            raise ValueError(
+                f"review.canonical_titles: {author}: {member!r} is named twice"
+            )
+        chosen[(author, member)] = title
+    return chosen
+
+
+def _name_groups(groups: list[dict], review: dict) -> None:
+    """Rename each reviewed group in place, refusing an entry that hits none.
+
+    An override keyed on a title the grouping no longer holds would stop
+    applying the moment the alias graph moved, and stop silently — the group
+    would go back to being named after a tenth of itself with the review entry
+    still sitting there looking honoured.
+    """
+    chosen = _reviewed_names(review)
+    used: dict[tuple[str, str], str] = {}
+    for group in groups:
+        author = _fold(group["author"])
+        for (reviewed_author, member), title in chosen.items():
+            if reviewed_author != author or member not in group["titles"]:
+                continue
+            if (reviewed_author, member) in used:
+                raise ValueError(
+                    f"review.canonical_titles: {author}: {member!r} matches two groups"
+                )
+            used[(reviewed_author, member)] = title
+            group["work"] = title
+            if _fold(title) not in group["titles"]:
+                # The reviewed name has to be one of the group's own titles or
+                # the table will not validate, and it should be: a later run
+                # offering it must land in this group and not start another.
+                group["titles"] = sorted(group["titles"] + [_fold(title)])
+    missing = sorted(set(chosen) - set(used))
+    if missing:
+        raise ValueError(
+            "review.canonical_titles: no group holds "
+            + "; ".join(f"{author}: {title!r}" for author, title in missing)
+        )
+
+
+# --- Rule 8: a title that names the work, not one book of it ------------------
+#
+# The catena prints the author and the title above every fragment, which turns
+# a wrong name from an invisible defect into a rendered one. A group named after
+# one book of the ten it spans would have its other nine acquired, filed and
+# displayed under the name of the first.
+#
+# Detection needs to know which words in a title name a book, and that is
+# derived from the ledger rather than typed out: an attribution already ties a
+# title to a locus, and a locus already names its book.
+
+_WORDS = re.compile(r"[a-z]+")
+# A word has to clear all three to count, because volume alone does not
+# distinguish a book name from a genre word: `explanatio` sits on 418 psalm
+# attributions and would pass a share test, while heading titles on the
+# Apocalypse and on John as well.
+_BOOK_WORD_TITLES = 3
+_BOOK_WORD_AUTHORS = 2
+
+
+def _book_words(runs: list[dict]) -> dict[str, str]:
+    """Title words that name exactly one book of scripture, from the evidence.
+
+    A word qualifies when every attributed title carrying it landed on the same
+    book, at least `_BOOK_WORD_AUTHORS` authors use it, and at least
+    `_BOOK_WORD_TITLES` distinct titles do. Anything short of that is not
+    consulted, so the check is sound where it is incomplete: it never invents a
+    book a title does not name.
+    """
+    books: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for run in runs:
+        for locus, works in (run.get("passages") or {}).items():
+            book = book_of(locus)
+            for work in works:
+                books[(_fold(work.get("author")), _fold(work.get("title")))].add(book)
+    named: dict[str, set[str]] = defaultdict(set)
+    authors: dict[str, set[str]] = defaultdict(set)
+    titles: dict[str, set[str]] = defaultdict(set)
+    for (author, title), reached in books.items():
+        for word in set(_WORDS.findall(title)):
+            named[word] |= reached
+            authors[word].add(author)
+            titles[word].add(title)
+    return {
+        word: next(iter(reached))
+        for word, reached in sorted(named.items())
+        if len(reached) == 1
+        and len(authors[word]) >= _BOOK_WORD_AUTHORS
+        and len(titles[word]) >= _BOOK_WORD_TITLES
+    }
+
+
+def _books_named(title: str, words: dict[str, str]) -> set[str]:
+    return {words[word] for word in _WORDS.findall(title) if word in words}
+
+
+def _check_titles_cover_the_work(
+    groups: list[dict], runs: list[dict], where: str
+) -> None:
+    """Refuse a group whose canonical title names a book its own names do not share.
+
+    Rule 8 of `guidance/catena.md`. A sibling title that names no book at all is
+    passed over rather than counted against the canonical one: the derivation
+    above knows only the words it could prove, and an unproved word must not
+    read as a contradiction.
+    """
+    words = _book_words(runs)
+    for group in groups:
+        canonical = _books_named(_fold(group.get("work")), words)
+        if not canonical:
+            continue
+        for title in group.get("titles") or []:
+            named = _books_named(_fold(title), words)
+            if named and not (named & canonical):
+                raise ValueError(
+                    f"{where}: {group.get('author')}: the canonical title "
+                    f"{group.get('work')!r} names {', '.join(sorted(canonical))} "
+                    f"while {title!r}, one of its own names, names "
+                    f"{', '.join(sorted(named))}; one work is named by the whole, "
+                    "not by a part — settle it in review.canonical_titles"
+                )
+
+
 def _derive_groups(runs: list[dict], review: dict) -> tuple[list[dict], str]:
     """Connected components of the asserted-alias graph, per author."""
     edges, used, spelling = _alias_evidence(runs)
@@ -937,6 +1081,7 @@ def _derive_groups(runs: list[dict], review: dict) -> tuple[list[dict], str]:
                 "titles": titles,
             }
         )
+    _name_groups(groups, review)
     groups.sort(key=lambda g: (g["author"].casefold(), -g["uses"], g["work"].casefold()))
     return groups, _evidence_digest(edges)
 
@@ -976,6 +1121,7 @@ def _alias_registry(path: Path, runs: list[dict]) -> dict:
                     f"({previous[1]!r} and {canonical[1]!r}); one title is one work"
                 )
             registry[(author, title)] = canonical
+    _check_titles_cover_the_work(document.get("groups") or [], runs, str(path))
     ambiguous, denied, _ = _review_rules(document.get("review") or {})
     for author, title in sorted(ambiguous):
         if (author, title) in registry:
@@ -1078,8 +1224,9 @@ _ALIAS_HEADER = """\
 # regenerated whole. `review` is the part that cannot be derived, because
 # whether a group is one work is a judgement about the works; each entry
 # carries the reason it was made. Loading validates that no title reaches two
-# groups, that no name declared ambiguous still groups a work, and that no
-# chain of aliases has re-joined works declared distinct.
+# groups, that no name declared ambiguous still groups a work, that no chain of
+# aliases has re-joined works declared distinct, and that no group's canonical
+# title names a book its own other names do not share.
 #
 # `evidence_sha256` covers the alias claims alone, so recording a run that
 # asserts a new alias ages the table and `harvest promote` refuses until the
