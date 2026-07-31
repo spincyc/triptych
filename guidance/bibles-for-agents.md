@@ -290,7 +290,38 @@ long because they were derived, not remembered.
   to Cambridge, Oxford and Collins. Every artifact records
   `rights_jurisdiction = "United States"` and names the exception in
   `rights_basis`. Do not simplify this to "public domain".
-- **`licensed` — Knox.** © Westminster Diocese, not redistributable.
+- **`licensed` — Knox. Under copyright in the United States until 2039 at the
+  earliest; the US renewals were found and are recorded below.** Do not re-run
+  this research. On 31 July 2026 the question was asked whether a translation
+  whose author died in 1957 could already be public domain, and it was settled
+  from the primary record rather than by reasoning:
+
+  | Work | Original | Renewal | Claimant | US copyright until |
+  |---|---|---|---|---|
+  | New Testament | A184908, 25 Oct 1944 | **R525394**, 13 Mar 1972 | Sheed & Ward, Inc. | 31 Dec 2039 |
+  | Old Testament vol. 1, Genesis–Esther | A29371, 5 Nov 1948 | **R646862**, 5 Nov 1976 | Sheed, Andrews and McMeel | 31 Dec 2043 |
+
+  Both are printed in the *Catalog of Copyright Entries* — the first at 3rd
+  series vol. 26 part 1 no. 1 p. 1728, the second at vol. 30 part 1 no. 2
+  p. 3284 — and each was confirmed in two independent renderings of that record.
+  This is positive evidence of renewal, not an absence of evidence.
+
+  Three consequences. **Sheed & Ward published it in New York**, so it is
+  probably a United States work and the URAA analysis that would apply to a
+  purely British work does not govern; it does not matter, because the renewals
+  make the term 95 years from publication either way. **The territoriality
+  argument does not rescue it**: it is public domain in life+50 countries such
+  as Canada and New Zealand, and enters the public domain in the United Kingdom,
+  the EU and Australia on 1 January 2028, but this project publishes from the
+  United States, where it is protected for another thirteen years. That is the
+  mirror image of the King James position above, and the reason the same
+  jurisdiction note cannot do the same work here. **Two items were not found
+  renewed** — Old Testament vol. 2 (1950) and *The Psalms: A New Translation*
+  (1947) — but that is an absence of evidence in a corpus where simultaneity of
+  publication was not established, so it settles nothing and must not be acted
+  on.
+
+- © Westminster Diocese, not redistributable.
   `tools/knox-bible` refuses any destination inside this repository; its index
   goes outside too via `mass-propers --bible-root <path>`; `publishable: false`
   keeps it out of the public artifact. Never commit its artifacts, never add it
