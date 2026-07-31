@@ -3,7 +3,7 @@
 Normalized YAML indexes of Roman-rite mass formularies and their ordered
 propers, one directory per calendar and one file per deterministic series.
 Each calendar has one `propers.yaml` whose `sections` map is the single
-canonical mass list, labeled by kind (`christological`, `marian`, `saintly`,
+canonical mass list, labeled by kind (`christological`, `marian`, `sanctoral`,
 `seasonal`). There is no other copy: a top-level `masses` key duplicates the
 list and `check-calendar-masses` rejects it.
 `guidance/sources.md` owns the contract; this file records what is here and how
@@ -12,9 +12,9 @@ to read it.
 ```text
 src/sources/calendars/
   roman-1962/
-    propers.yaml        # consolidated sanctoral propers (marian/christological/saintly)
+    propers.yaml        # consolidated sanctoral propers (marian/christological/sanctoral)
   postconciliar/
-    propers.yaml        # consolidated sanctoral propers (marian/christological/saintly)
+    propers.yaml        # consolidated sanctoral propers (marian/christological/sanctoral)
 ```
 
 ## What an index is

@@ -2,7 +2,7 @@ schema: triptych-calendar-masses/v1
 edition: Missale Romanum, editio typica tertia 2008, reimpressio emendata 2008
 calendar: postconciliar
 series: deterministic fixed-date feast masses
-ordering: sections in christological, marian, saintly, seasonal order;
+ordering: sections in christological, marian, sanctoral, seasonal order;
   dated masses in civil date order within their kind, seasonal masses in
   liturgical-year order
 registry: guidance/liturgy/postconciliar-propers-registry.md (calendar-spine filtered
@@ -13,7 +13,7 @@ citation_convention: Lectionary readings and antiphons preserve the numbering in
 orthography: 2002 missal Latin (j for i, ae/oe digraphs, no accent marks)
 verification: two tiers; the seasonal section carries unverified model-generated
   leads whose every citation and text requires collation against the controlling
-  edition before any evidentiary reuse, and the marian, christological and saintly
+  edition before any evidentiary reuse, and the marian, christological and sanctoral
   sections remain a placeholder skeleton pending formula migration
 conventions:
 - cycle-varying elements carry a cycles mapping keyed A, B, C
@@ -13782,8 +13782,8 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
-  saintly:
-    kind: saintly
+  sanctoral:
+    kind: sanctoral
     label: Saints
     masses:
     - key: saints-basil-great-gregory-nazianzen-bishops
@@ -13792,7 +13792,7 @@ sections:
       registry: pc-01-02
       date: 01-02
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13804,7 +13804,7 @@ sections:
       registry: pc-01-07
       date: 01-07
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13816,7 +13816,7 @@ sections:
       registry: pc-01-13
       date: 01-13
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13828,7 +13828,7 @@ sections:
       registry: pc-01-17
       date: 01-17
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13840,7 +13840,7 @@ sections:
       registry: pc-01-20
       date: 01-20
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13852,7 +13852,7 @@ sections:
       registry: pc-01-21
       date: 01-21
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13864,7 +13864,7 @@ sections:
       registry: pc-01-22
       date: 01-22
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13876,7 +13876,7 @@ sections:
       registry: pc-01-24
       date: 01-24
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13888,7 +13888,7 @@ sections:
       registry: pc-01-25
       date: 01-25
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13900,7 +13900,7 @@ sections:
       registry: pc-01-26
       date: 01-26
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13912,7 +13912,7 @@ sections:
       registry: pc-01-27
       date: 01-27
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13924,7 +13924,7 @@ sections:
       registry: pc-01-28
       date: 01-28
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13936,7 +13936,7 @@ sections:
       registry: pc-01-31
       date: 01-31
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13948,7 +13948,7 @@ sections:
       registry: pc-02-03
       date: 02-03
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13960,7 +13960,7 @@ sections:
       registry: pc-02-05
       date: 02-05
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13972,7 +13972,7 @@ sections:
       registry: pc-02-06
       date: 02-06
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13984,7 +13984,7 @@ sections:
       registry: pc-02-08
       date: 02-08
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -13996,7 +13996,7 @@ sections:
       registry: pc-02-10
       date: 02-10
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14008,7 +14008,7 @@ sections:
       registry: pc-02-14
       date: 02-14
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14020,7 +14020,7 @@ sections:
       registry: pc-02-17
       date: 02-17
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14032,7 +14032,7 @@ sections:
       registry: pc-02-21
       date: 02-21
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14044,7 +14044,7 @@ sections:
       registry: pc-02-22
       date: 02-22
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14056,7 +14056,7 @@ sections:
       registry: pc-02-23
       date: 02-23
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14068,7 +14068,7 @@ sections:
       registry: pc-02-27
       date: 02-27
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14080,7 +14080,7 @@ sections:
       registry: pc-03-04
       date: 03-04
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14092,7 +14092,7 @@ sections:
       registry: pc-03-07
       date: 03-07
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14104,7 +14104,7 @@ sections:
       registry: pc-03-08
       date: 03-08
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14116,7 +14116,7 @@ sections:
       registry: pc-03-09
       date: 03-09
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14128,7 +14128,7 @@ sections:
       registry: pc-03-17
       date: 03-17
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14140,7 +14140,7 @@ sections:
       registry: pc-03-18
       date: 03-18
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14152,7 +14152,7 @@ sections:
       registry: pc-03-19
       date: 03-19
       rank: Solemnity
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14164,7 +14164,7 @@ sections:
       registry: pc-03-23
       date: 03-23
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14176,7 +14176,7 @@ sections:
       registry: pc-04-02
       date: 04-02
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14188,7 +14188,7 @@ sections:
       registry: pc-04-04
       date: 04-04
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14200,7 +14200,7 @@ sections:
       registry: pc-04-05
       date: 04-05
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14212,7 +14212,7 @@ sections:
       registry: pc-04-07
       date: 04-07
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14224,7 +14224,7 @@ sections:
       registry: pc-04-11
       date: 04-11
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14236,7 +14236,7 @@ sections:
       registry: pc-04-13
       date: 04-13
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14248,7 +14248,7 @@ sections:
       registry: pc-04-21
       date: 04-21
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14260,7 +14260,7 @@ sections:
       registry: pc-04-23
       date: 04-23
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14272,7 +14272,7 @@ sections:
       registry: pc-04-24
       date: 04-24
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14284,7 +14284,7 @@ sections:
       registry: pc-04-25
       date: 04-25
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14297,7 +14297,7 @@ sections:
       registry: pc-04-28
       date: 04-28
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14309,7 +14309,7 @@ sections:
       registry: pc-04-29
       date: 04-29
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14321,7 +14321,7 @@ sections:
       registry: pc-04-30
       date: 04-30
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14333,7 +14333,7 @@ sections:
       registry: pc-05-01
       date: 05-01
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14345,7 +14345,7 @@ sections:
       registry: pc-05-02
       date: 05-02
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14357,7 +14357,7 @@ sections:
       registry: pc-05-03
       date: 05-03
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14369,7 +14369,7 @@ sections:
       registry: pc-05-10
       date: 05-10
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14381,7 +14381,7 @@ sections:
       registry: pc-05-12
       date: 05-12
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14393,7 +14393,7 @@ sections:
       registry: pc-05-14
       date: 05-14
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14405,7 +14405,7 @@ sections:
       registry: pc-05-18
       date: 05-18
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14417,7 +14417,7 @@ sections:
       registry: pc-05-20
       date: 05-20
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14429,7 +14429,7 @@ sections:
       registry: pc-05-21
       date: 05-21
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14441,7 +14441,7 @@ sections:
       registry: pc-05-22
       date: 05-22
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14454,7 +14454,7 @@ sections:
       registry: pc-05-25
       date: 05-25
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14466,7 +14466,7 @@ sections:
       registry: pc-05-26
       date: 05-26
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14478,7 +14478,7 @@ sections:
       registry: pc-05-27
       date: 05-27
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14490,7 +14490,7 @@ sections:
       registry: pc-05-29
       date: 05-29
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14502,7 +14502,7 @@ sections:
       registry: pc-06-01
       date: 06-01
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14514,7 +14514,7 @@ sections:
       registry: pc-06-02
       date: 06-02
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14526,7 +14526,7 @@ sections:
       registry: pc-06-03
       date: 06-03
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14538,7 +14538,7 @@ sections:
       registry: pc-06-05
       date: 06-05
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14550,7 +14550,7 @@ sections:
       registry: pc-06-06
       date: 06-06
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14562,7 +14562,7 @@ sections:
       registry: pc-06-09
       date: 06-09
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14574,7 +14574,7 @@ sections:
       registry: pc-06-11
       date: 06-11
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14586,7 +14586,7 @@ sections:
       registry: pc-06-13
       date: 06-13
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14598,7 +14598,7 @@ sections:
       registry: pc-06-19
       date: 06-19
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14610,7 +14610,7 @@ sections:
       registry: pc-06-21
       date: 06-21
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14623,7 +14623,7 @@ sections:
       registry: pc-06-22
       date: 06-22
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14635,7 +14635,7 @@ sections:
       registry: pc-06-24
       date: 06-24
       rank: Solemnity
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14647,7 +14647,7 @@ sections:
       registry: pc-06-27
       date: 06-27
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14659,7 +14659,7 @@ sections:
       registry: pc-06-28
       date: 06-28
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14671,7 +14671,7 @@ sections:
       registry: pc-06-29
       date: 06-29
       rank: Solemnity
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14683,7 +14683,7 @@ sections:
       registry: pc-06-30
       date: 06-30
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14695,7 +14695,7 @@ sections:
       registry: pc-07-03
       date: 07-03
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14707,7 +14707,7 @@ sections:
       registry: pc-07-04
       date: 07-04
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14719,7 +14719,7 @@ sections:
       registry: pc-07-05
       date: 07-05
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14731,7 +14731,7 @@ sections:
       registry: pc-07-06
       date: 07-06
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14743,7 +14743,7 @@ sections:
       registry: pc-07-09
       date: 07-09
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14755,7 +14755,7 @@ sections:
       registry: pc-07-11
       date: 07-11
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14767,7 +14767,7 @@ sections:
       registry: pc-07-13
       date: 07-13
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14779,7 +14779,7 @@ sections:
       registry: pc-07-14
       date: 07-14
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14791,7 +14791,7 @@ sections:
       registry: pc-07-15
       date: 07-15
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14803,7 +14803,7 @@ sections:
       registry: pc-07-20
       date: 07-20
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14815,7 +14815,7 @@ sections:
       registry: pc-07-21
       date: 07-21
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14827,7 +14827,7 @@ sections:
       registry: pc-07-22
       date: 07-22
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14839,7 +14839,7 @@ sections:
       registry: pc-07-23
       date: 07-23
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14851,7 +14851,7 @@ sections:
       registry: pc-07-24
       date: 07-24
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14863,7 +14863,7 @@ sections:
       registry: pc-07-25
       date: 07-25
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14875,7 +14875,7 @@ sections:
       registry: pc-07-26
       date: 07-26
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14887,7 +14887,7 @@ sections:
       registry: pc-07-29
       date: 07-29
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14899,7 +14899,7 @@ sections:
       registry: pc-07-30
       date: 07-30
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14911,7 +14911,7 @@ sections:
       registry: pc-07-31
       date: 07-31
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14923,7 +14923,7 @@ sections:
       registry: pc-08-01
       date: 08-01
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14935,7 +14935,7 @@ sections:
       registry: pc-08-02
       date: 08-02
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14947,7 +14947,7 @@ sections:
       registry: pc-08-04
       date: 08-04
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14959,7 +14959,7 @@ sections:
       registry: pc-08-05
       date: 08-05
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14971,7 +14971,7 @@ sections:
       registry: pc-08-07
       date: 08-07
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14983,7 +14983,7 @@ sections:
       registry: pc-08-08
       date: 08-08
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -14995,7 +14995,7 @@ sections:
       registry: pc-08-09
       date: 08-09
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15007,7 +15007,7 @@ sections:
       registry: pc-08-10
       date: 08-10
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15019,7 +15019,7 @@ sections:
       registry: pc-08-11
       date: 08-11
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15031,7 +15031,7 @@ sections:
       registry: pc-08-12
       date: 08-12
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15043,7 +15043,7 @@ sections:
       registry: pc-08-13
       date: 08-13
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15055,7 +15055,7 @@ sections:
       registry: pc-08-14
       date: 08-14
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15067,7 +15067,7 @@ sections:
       registry: pc-08-16
       date: 08-16
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15079,7 +15079,7 @@ sections:
       registry: pc-08-19
       date: 08-19
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15091,7 +15091,7 @@ sections:
       registry: pc-08-20
       date: 08-20
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15103,7 +15103,7 @@ sections:
       registry: pc-08-21
       date: 08-21
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15115,7 +15115,7 @@ sections:
       registry: pc-08-23
       date: 08-23
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15127,7 +15127,7 @@ sections:
       registry: pc-08-24
       date: 08-24
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15139,7 +15139,7 @@ sections:
       registry: pc-08-25
       date: 08-25
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15151,7 +15151,7 @@ sections:
       registry: pc-08-27
       date: 08-27
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15163,7 +15163,7 @@ sections:
       registry: pc-08-28
       date: 08-28
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15175,7 +15175,7 @@ sections:
       registry: pc-08-29
       date: 08-29
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15187,7 +15187,7 @@ sections:
       registry: pc-09-03
       date: 09-03
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15199,7 +15199,7 @@ sections:
       registry: pc-09-05
       date: 09-05
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15211,7 +15211,7 @@ sections:
       registry: pc-09-09
       date: 09-09
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15223,7 +15223,7 @@ sections:
       registry: pc-09-12
       date: 09-12
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15235,7 +15235,7 @@ sections:
       registry: pc-09-13
       date: 09-13
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15247,7 +15247,7 @@ sections:
       registry: pc-09-16
       date: 09-16
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15260,7 +15260,7 @@ sections:
       registry: pc-09-17
       date: 09-17
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15272,7 +15272,7 @@ sections:
       registry: pc-09-19
       date: 09-19
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15285,7 +15285,7 @@ sections:
       registry: pc-09-20
       date: 09-20
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15297,7 +15297,7 @@ sections:
       registry: pc-09-21
       date: 09-21
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15309,7 +15309,7 @@ sections:
       registry: pc-09-23
       date: 09-23
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15321,7 +15321,7 @@ sections:
       registry: pc-09-26
       date: 09-26
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15333,7 +15333,7 @@ sections:
       registry: pc-09-27
       date: 09-27
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15345,7 +15345,7 @@ sections:
       registry: pc-09-28
       date: 09-28
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15357,7 +15357,7 @@ sections:
       registry: pc-09-29
       date: 09-29
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15369,7 +15369,7 @@ sections:
       registry: pc-09-30
       date: 09-30
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15381,7 +15381,7 @@ sections:
       registry: pc-10-01
       date: 10-01
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15393,7 +15393,7 @@ sections:
       registry: pc-10-02
       date: 10-02
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15405,7 +15405,7 @@ sections:
       registry: pc-10-04
       date: 10-04
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15417,7 +15417,7 @@ sections:
       registry: pc-10-05
       date: 10-05
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15429,7 +15429,7 @@ sections:
       registry: pc-10-06
       date: 10-06
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15442,7 +15442,7 @@ sections:
       registry: pc-10-09
       date: 10-09
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15454,7 +15454,7 @@ sections:
       registry: pc-10-11
       date: 10-11
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15466,7 +15466,7 @@ sections:
       registry: pc-10-14
       date: 10-14
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15478,7 +15478,7 @@ sections:
       registry: pc-10-15
       date: 10-15
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15490,7 +15490,7 @@ sections:
       registry: pc-10-16
       date: 10-16
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15502,7 +15502,7 @@ sections:
       registry: pc-10-17
       date: 10-17
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15514,7 +15514,7 @@ sections:
       registry: pc-10-18
       date: 10-18
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15527,7 +15527,7 @@ sections:
       registry: pc-10-19
       date: 10-19
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15539,7 +15539,7 @@ sections:
       registry: pc-10-22
       date: 10-22
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15551,7 +15551,7 @@ sections:
       registry: pc-10-23
       date: 10-23
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15563,7 +15563,7 @@ sections:
       registry: pc-10-24
       date: 10-24
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15575,7 +15575,7 @@ sections:
       registry: pc-10-28
       date: 10-28
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15587,7 +15587,7 @@ sections:
       registry: pc-11-01
       date: 11-01
       rank: Solemnity
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15599,7 +15599,7 @@ sections:
       registry: pc-11-02
       date: 11-02
       rank: All Souls commemoration
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15611,7 +15611,7 @@ sections:
       registry: pc-11-03
       date: 11-03
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15623,7 +15623,7 @@ sections:
       registry: pc-11-04
       date: 11-04
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15635,7 +15635,7 @@ sections:
       registry: pc-11-09
       date: 11-09
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15647,7 +15647,7 @@ sections:
       registry: pc-11-10
       date: 11-10
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15659,7 +15659,7 @@ sections:
       registry: pc-11-11
       date: 11-11
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15671,7 +15671,7 @@ sections:
       registry: pc-11-12
       date: 11-12
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15683,7 +15683,7 @@ sections:
       registry: pc-11-15
       date: 11-15
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15695,7 +15695,7 @@ sections:
       registry: pc-11-16
       date: 11-16
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15707,7 +15707,7 @@ sections:
       registry: pc-11-17
       date: 11-17
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15719,7 +15719,7 @@ sections:
       registry: pc-11-18
       date: 11-18
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15731,7 +15731,7 @@ sections:
       registry: pc-11-22
       date: 11-22
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15743,7 +15743,7 @@ sections:
       registry: pc-11-23
       date: 11-23
       rank: Optional memorials
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15755,7 +15755,7 @@ sections:
       registry: pc-11-24
       date: 11-24
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15767,7 +15767,7 @@ sections:
       registry: pc-11-25
       date: 11-25
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15779,7 +15779,7 @@ sections:
       registry: pc-11-30
       date: 11-30
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15791,7 +15791,7 @@ sections:
       registry: pc-12-03
       date: 12-03
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15803,7 +15803,7 @@ sections:
       registry: pc-12-04
       date: 12-04
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15815,7 +15815,7 @@ sections:
       registry: pc-12-06
       date: 12-06
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15827,7 +15827,7 @@ sections:
       registry: pc-12-07
       date: 12-07
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15839,7 +15839,7 @@ sections:
       registry: pc-12-09
       date: 12-09
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15851,7 +15851,7 @@ sections:
       registry: pc-12-11
       date: 12-11
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15863,7 +15863,7 @@ sections:
       registry: pc-12-13
       date: 12-13
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15875,7 +15875,7 @@ sections:
       registry: pc-12-14
       date: 12-14
       rank: Memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15887,7 +15887,7 @@ sections:
       registry: pc-12-21
       date: 12-21
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15899,7 +15899,7 @@ sections:
       registry: pc-12-23
       date: 12-23
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15911,7 +15911,7 @@ sections:
       registry: pc-12-26
       date: 12-26
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15923,7 +15923,7 @@ sections:
       registry: pc-12-27
       date: 12-27
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15935,7 +15935,7 @@ sections:
       registry: pc-12-28
       date: 12-28
       rank: Feast
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15947,7 +15947,7 @@ sections:
       registry: pc-12-29
       date: 12-29
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -15959,7 +15959,7 @@ sections:
       registry: pc-12-31
       date: 12-31
       rank: Optional memorial
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed

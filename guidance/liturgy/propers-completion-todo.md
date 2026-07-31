@@ -13,11 +13,11 @@ Only the `seasonal` section of each calendar carries real propers.
 | roman-1962 | seasonal | 59 | 59 | 0 |
 | roman-1962 | christological | 8 | 0 | 8 |
 | roman-1962 | marian | 17 | 0 | 17 |
-| roman-1962 | saintly | 247 | 0 | 247 |
+| roman-1962 | sanctoral | 247 | 0 | 247 |
 | postconciliar | seasonal | 63 | 63 | 0 |
 | postconciliar | christological | 7 | 0 | 7 |
 | postconciliar | marian | 14 | 0 | 14 |
-| postconciliar | saintly | 181 | 0 | 181 |
+| postconciliar | sanctoral | 181 | 0 | 181 |
 
 474 masses hold exactly one placeholder proper each. None is partial, so there
 is no cheap half-finished tier. Every placeholder does carry usable `key`,
@@ -53,7 +53,7 @@ orations to another day's Mass rather than masses in their own right.
 
 **Three days are missing entirely.** `1962-12-29`, `1962-12-30` and
 `1962-12-31`, the fifth through seventh within the Octave of the Nativity, are
-in the spine and in no section. Dec 26, 27 and 28 exist but sit under `saintly`
+in the spine and in no section. Dec 26, 27 and 28 exist but sit under `sanctoral`
 while `calendar-spine` classifies them `seasonal`. Nothing compares the spine
 against the propers, which is why both slipped.
 

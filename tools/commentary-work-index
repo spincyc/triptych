@@ -74,6 +74,8 @@ DEFAULT_DISCOVERY_PATH = Path("src/sources/commentary/passage-commentary-index.y
 DEFAULT_CORPUS_PATH = Path("src/sources/commentary/mass-commentary-corpus.yaml")
 DEFAULT_CALENDARS = ("roman-1962", "postconciliar")
 
+# An author's role, not a calendar cycle: "saintly" here describes a revered
+# writer, and does not become "sanctoral" with the mass kinds.
 SOURCE_ROLES = {
     "church-father": "church-father",
     "saint": "saint",
@@ -341,7 +343,7 @@ def _category_for_kind(kind: object) -> str:
     if normalized == "temporal":
         return "seasonal"
     if normalized == "saints":
-        return "saintly"
+        return "sanctoral"
     return normalized
 
 

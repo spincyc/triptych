@@ -78,8 +78,8 @@ done
 # Within the Christmas octave the edition's punctuation decides: a colon
 # introduces the day's own celebration (Stephen, John, the Innocents), a
 # semicolon only a commemoration, so the octave day itself stays seasonal.
-for probe in "roman-1962 12-26 saintly" "roman-1962 12-27 saintly" \
-	"roman-1962 12-28 saintly" \
+for probe in "roman-1962 12-26 sanctoral" "roman-1962 12-27 sanctoral" \
+	"roman-1962 12-28 sanctoral" \
 	"roman-1962 12-29 seasonal" "roman-1962 12-31 seasonal"; do
 	set -- $probe
 	got="$(kind_on "$1" "$2")"
@@ -99,10 +99,10 @@ fi
 
 # A saint's feast that names Our Lady stays a saint's feast, and a saint whose
 # name merely contains "Domini" is not read as a feast of the Lord.
-for probe in "roman-1962 03-19 saintly" "roman-1962 08-16 saintly" \
-	"roman-1962 07-26 saintly" "roman-1962 08-04 saintly" \
-	"postconciliar 03-19 saintly" "postconciliar 07-26 saintly" \
-	"postconciliar 08-08 saintly"; do
+for probe in "roman-1962 03-19 sanctoral" "roman-1962 08-16 sanctoral" \
+	"roman-1962 07-26 sanctoral" "roman-1962 08-04 sanctoral" \
+	"postconciliar 03-19 sanctoral" "postconciliar 07-26 sanctoral" \
+	"postconciliar 08-08 sanctoral"; do
 	set -- $probe
 	got="$(kind_on "$1" "$2")"
 	if [ "$got" != "$3" ]; then

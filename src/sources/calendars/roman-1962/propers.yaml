@@ -2,7 +2,7 @@ schema: triptych-calendar-masses/v1
 edition: Missale Romanum, editio typica 1962
 calendar: roman-1962
 series: deterministic fixed-date feast masses
-ordering: sections in christological, marian, saintly, seasonal order;
+ordering: sections in christological, marian, sanctoral, seasonal order;
   dated masses in civil date order within their kind, seasonal masses in
   liturgical-year order
 registry: guidance/liturgy/roman-1962-propers.md (calendar-spine filtered by kind)
@@ -12,7 +12,7 @@ citation_convention: Vulgate book names and Vulgate psalm numbering as printed i
 orthography: 1962 missal Latin (j retained, ae/oe digraphs, no accent marks)
 verification: two tiers; the seasonal section carries unverified model-generated
   leads whose every citation and text requires collation against the controlling
-  edition before any evidentiary reuse, and the marian, christological and saintly
+  edition before any evidentiary reuse, and the marian, christological and sanctoral
   sections remain a placeholder skeleton pending formula migration
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
@@ -7228,8 +7228,8 @@ sections:
         text: 'This entry is a placeholder pending formula migration and source verification.
 
           '
-  saintly:
-    kind: saintly
+  sanctoral:
+    kind: sanctoral
     label: Saints
     masses:
     - key: comm-s-telesphori-papae-martyris
@@ -7237,7 +7237,7 @@ sections:
       registry: '1962-01-05'
       date: 01-05
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7249,7 +7249,7 @@ sections:
       registry: '1962-01-11'
       date: 01-11
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7262,7 +7262,7 @@ sections:
       registry: '1962-01-14'
       date: 01-14
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7274,7 +7274,7 @@ sections:
       registry: '1962-01-15'
       date: 01-15
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7286,7 +7286,7 @@ sections:
       registry: '1962-01-16'
       date: 01-16
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7298,7 +7298,7 @@ sections:
       registry: '1962-01-17'
       date: 01-17
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7310,7 +7310,7 @@ sections:
       registry: '1962-01-18'
       date: 01-18
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7323,7 +7323,7 @@ sections:
       registry: '1962-01-19'
       date: 01-19
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7335,7 +7335,7 @@ sections:
       registry: '1962-01-20'
       date: 01-20
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7347,7 +7347,7 @@ sections:
       registry: '1962-01-21'
       date: 01-21
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7359,7 +7359,7 @@ sections:
       registry: '1962-01-22'
       date: 01-22
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7372,7 +7372,7 @@ sections:
       registry: '1962-01-23'
       date: 01-23
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7384,7 +7384,7 @@ sections:
       registry: '1962-01-24'
       date: 01-24
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7396,7 +7396,7 @@ sections:
       registry: '1962-01-25'
       date: 01-25
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7408,7 +7408,7 @@ sections:
       registry: '1962-01-26'
       date: 01-26
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7420,7 +7420,7 @@ sections:
       registry: '1962-01-27'
       date: 01-27
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7432,7 +7432,7 @@ sections:
       registry: '1962-01-28'
       date: 01-28
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7444,7 +7444,7 @@ sections:
       registry: '1962-01-29'
       date: 01-29
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7456,7 +7456,7 @@ sections:
       registry: '1962-01-30'
       date: 01-30
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7468,7 +7468,7 @@ sections:
       registry: '1962-01-31'
       date: 01-31
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7480,7 +7480,7 @@ sections:
       registry: '1962-02-01'
       date: 02-01
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7492,7 +7492,7 @@ sections:
       registry: '1962-02-03'
       date: 02-03
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7504,7 +7504,7 @@ sections:
       registry: '1962-02-04'
       date: 02-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7516,7 +7516,7 @@ sections:
       registry: '1962-02-05'
       date: 02-05
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7528,7 +7528,7 @@ sections:
       registry: '1962-02-06'
       date: 02-06
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7540,7 +7540,7 @@ sections:
       registry: '1962-02-07'
       date: 02-07
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7552,7 +7552,7 @@ sections:
       registry: '1962-02-08'
       date: 02-08
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7565,7 +7565,7 @@ sections:
       registry: '1962-02-09'
       date: 02-09
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7577,7 +7577,7 @@ sections:
       registry: '1962-02-10'
       date: 02-10
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7589,7 +7589,7 @@ sections:
       registry: '1962-02-12'
       date: 02-12
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7601,7 +7601,7 @@ sections:
       registry: '1962-02-14'
       date: 02-14
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7613,7 +7613,7 @@ sections:
       registry: '1962-02-15'
       date: 02-15
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7625,7 +7625,7 @@ sections:
       registry: '1962-02-18'
       date: 02-18
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7637,7 +7637,7 @@ sections:
       registry: '1962-02-22'
       date: 02-22
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7649,7 +7649,7 @@ sections:
       registry: '1962-02-23'
       date: 02-23
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7661,7 +7661,7 @@ sections:
       registry: '1962-02-24'
       date: 02-24
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7673,7 +7673,7 @@ sections:
       registry: '1962-02-27'
       date: 02-27
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7685,7 +7685,7 @@ sections:
       registry: '1962-03-04'
       date: 03-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7697,7 +7697,7 @@ sections:
       registry: '1962-03-06'
       date: 03-06
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7709,7 +7709,7 @@ sections:
       registry: '1962-03-07'
       date: 03-07
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7721,7 +7721,7 @@ sections:
       registry: '1962-03-08'
       date: 03-08
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7733,7 +7733,7 @@ sections:
       registry: '1962-03-09'
       date: 03-09
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7745,7 +7745,7 @@ sections:
       registry: '1962-03-10'
       date: 03-10
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7757,7 +7757,7 @@ sections:
       registry: '1962-03-12'
       date: 03-12
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7769,7 +7769,7 @@ sections:
       registry: '1962-03-17'
       date: 03-17
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7781,7 +7781,7 @@ sections:
       registry: '1962-03-18'
       date: 03-18
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7794,7 +7794,7 @@ sections:
       registry: '1962-03-19'
       date: 03-19
       rank: I
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7806,7 +7806,7 @@ sections:
       registry: '1962-03-21'
       date: 03-21
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7818,7 +7818,7 @@ sections:
       registry: '1962-03-24'
       date: 03-24
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7830,7 +7830,7 @@ sections:
       registry: '1962-03-27'
       date: 03-27
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7842,7 +7842,7 @@ sections:
       registry: '1962-03-28'
       date: 03-28
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7854,7 +7854,7 @@ sections:
       registry: '1962-04-02'
       date: 04-02
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7866,7 +7866,7 @@ sections:
       registry: '1962-04-04'
       date: 04-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7878,7 +7878,7 @@ sections:
       registry: '1962-04-05'
       date: 04-05
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7890,7 +7890,7 @@ sections:
       registry: '1962-04-11'
       date: 04-11
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7902,7 +7902,7 @@ sections:
       registry: '1962-04-13'
       date: 04-13
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7914,7 +7914,7 @@ sections:
       registry: '1962-04-14'
       date: 04-14
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7926,7 +7926,7 @@ sections:
       registry: '1962-04-17'
       date: 04-17
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7938,7 +7938,7 @@ sections:
       registry: '1962-04-21'
       date: 04-21
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7950,7 +7950,7 @@ sections:
       registry: '1962-04-22'
       date: 04-22
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7962,7 +7962,7 @@ sections:
       registry: '1962-04-23'
       date: 04-23
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7974,7 +7974,7 @@ sections:
       registry: '1962-04-24'
       date: 04-24
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7986,7 +7986,7 @@ sections:
       registry: '1962-04-25'
       date: 04-25
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -7998,7 +7998,7 @@ sections:
       registry: '1962-04-26'
       date: 04-26
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8010,7 +8010,7 @@ sections:
       registry: '1962-04-27'
       date: 04-27
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8022,7 +8022,7 @@ sections:
       registry: '1962-04-28'
       date: 04-28
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8034,7 +8034,7 @@ sections:
       registry: '1962-04-29'
       date: 04-29
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8046,7 +8046,7 @@ sections:
       registry: '1962-04-30'
       date: 04-30
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8058,7 +8058,7 @@ sections:
       registry: '1962-05-01'
       date: 05-01
       rank: I
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8070,7 +8070,7 @@ sections:
       registry: '1962-05-02'
       date: 05-02
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8083,7 +8083,7 @@ sections:
       registry: '1962-05-03'
       date: 05-03
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8095,7 +8095,7 @@ sections:
       registry: '1962-05-04'
       date: 05-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8107,7 +8107,7 @@ sections:
       registry: '1962-05-05'
       date: 05-05
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8119,7 +8119,7 @@ sections:
       registry: '1962-05-07'
       date: 05-07
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8131,7 +8131,7 @@ sections:
       registry: '1962-05-09'
       date: 05-09
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8143,7 +8143,7 @@ sections:
       registry: '1962-05-10'
       date: 05-10
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8155,7 +8155,7 @@ sections:
       registry: '1962-05-11'
       date: 05-11
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8167,7 +8167,7 @@ sections:
       registry: '1962-05-12'
       date: 05-12
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8179,7 +8179,7 @@ sections:
       registry: '1962-05-13'
       date: 05-13
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8191,7 +8191,7 @@ sections:
       registry: '1962-05-14'
       date: 05-14
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8203,7 +8203,7 @@ sections:
       registry: '1962-05-15'
       date: 05-15
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8215,7 +8215,7 @@ sections:
       registry: '1962-05-16'
       date: 05-16
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8227,7 +8227,7 @@ sections:
       registry: '1962-05-17'
       date: 05-17
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8239,7 +8239,7 @@ sections:
       registry: '1962-05-18'
       date: 05-18
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8251,7 +8251,7 @@ sections:
       registry: '1962-05-19'
       date: 05-19
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8263,7 +8263,7 @@ sections:
       registry: '1962-05-20'
       date: 05-20
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8275,7 +8275,7 @@ sections:
       registry: '1962-05-25'
       date: 05-25
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8287,7 +8287,7 @@ sections:
       registry: '1962-05-26'
       date: 05-26
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8300,7 +8300,7 @@ sections:
       registry: '1962-05-27'
       date: 05-27
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8312,7 +8312,7 @@ sections:
       registry: '1962-05-28'
       date: 05-28
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8324,7 +8324,7 @@ sections:
       registry: '1962-05-29'
       date: 05-29
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8336,7 +8336,7 @@ sections:
       registry: '1962-05-30'
       date: 05-30
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8348,7 +8348,7 @@ sections:
       registry: '1962-06-01'
       date: 06-01
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8360,7 +8360,7 @@ sections:
       registry: '1962-06-02'
       date: 06-02
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8372,7 +8372,7 @@ sections:
       registry: '1962-06-04'
       date: 06-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8384,7 +8384,7 @@ sections:
       registry: '1962-06-05'
       date: 06-05
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8396,7 +8396,7 @@ sections:
       registry: '1962-06-06'
       date: 06-06
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8408,7 +8408,7 @@ sections:
       registry: '1962-06-09'
       date: 06-09
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8420,7 +8420,7 @@ sections:
       registry: '1962-06-10'
       date: 06-10
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8432,7 +8432,7 @@ sections:
       registry: '1962-06-11'
       date: 06-11
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8445,7 +8445,7 @@ sections:
       registry: '1962-06-12'
       date: 06-12
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8457,7 +8457,7 @@ sections:
       registry: '1962-06-13'
       date: 06-13
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8469,7 +8469,7 @@ sections:
       registry: '1962-06-14'
       date: 06-14
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8481,7 +8481,7 @@ sections:
       registry: '1962-06-15'
       date: 06-15
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8493,7 +8493,7 @@ sections:
       registry: '1962-06-17'
       date: 06-17
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8506,7 +8506,7 @@ sections:
       registry: '1962-06-18'
       date: 06-18
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8518,7 +8518,7 @@ sections:
       registry: '1962-06-19'
       date: 06-19
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8530,7 +8530,7 @@ sections:
       registry: '1962-06-20'
       date: 06-20
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8542,7 +8542,7 @@ sections:
       registry: '1962-06-21'
       date: 06-21
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8554,7 +8554,7 @@ sections:
       registry: '1962-06-22'
       date: 06-22
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8566,7 +8566,7 @@ sections:
       registry: '1962-06-23'
       date: 06-23
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8578,7 +8578,7 @@ sections:
       registry: '1962-06-24'
       date: 06-24
       rank: I
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8590,7 +8590,7 @@ sections:
       registry: '1962-06-25'
       date: 06-25
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8602,7 +8602,7 @@ sections:
       registry: '1962-06-26'
       date: 06-26
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8614,7 +8614,7 @@ sections:
       registry: '1962-06-28'
       date: 06-28
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8626,7 +8626,7 @@ sections:
       registry: '1962-06-29'
       date: 06-29
       rank: I
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8638,7 +8638,7 @@ sections:
       registry: '1962-06-30'
       date: 06-30
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8650,7 +8650,7 @@ sections:
       registry: '1962-07-03'
       date: 07-03
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8662,7 +8662,7 @@ sections:
       registry: '1962-07-05'
       date: 07-05
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8674,7 +8674,7 @@ sections:
       registry: '1962-07-07'
       date: 07-07
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8686,7 +8686,7 @@ sections:
       registry: '1962-07-08'
       date: 07-08
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8698,7 +8698,7 @@ sections:
       registry: '1962-07-10'
       date: 07-10
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8710,7 +8710,7 @@ sections:
       registry: '1962-07-11'
       date: 07-11
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8722,7 +8722,7 @@ sections:
       registry: '1962-07-12'
       date: 07-12
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8734,7 +8734,7 @@ sections:
       registry: '1962-07-14'
       date: 07-14
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8746,7 +8746,7 @@ sections:
       registry: '1962-07-15'
       date: 07-15
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8758,7 +8758,7 @@ sections:
       registry: '1962-07-17'
       date: 07-17
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8771,7 +8771,7 @@ sections:
       registry: '1962-07-18'
       date: 07-18
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8783,7 +8783,7 @@ sections:
       registry: '1962-07-19'
       date: 07-19
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8795,7 +8795,7 @@ sections:
       registry: '1962-07-20'
       date: 07-20
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8808,7 +8808,7 @@ sections:
       registry: '1962-07-21'
       date: 07-21
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8820,7 +8820,7 @@ sections:
       registry: '1962-07-22'
       date: 07-22
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8832,7 +8832,7 @@ sections:
       registry: '1962-07-23'
       date: 07-23
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8844,7 +8844,7 @@ sections:
       registry: '1962-07-24'
       date: 07-24
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8856,7 +8856,7 @@ sections:
       registry: '1962-07-25'
       date: 07-25
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8868,7 +8868,7 @@ sections:
       registry: '1962-07-26'
       date: 07-26
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8880,7 +8880,7 @@ sections:
       registry: '1962-07-27'
       date: 07-27
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8893,7 +8893,7 @@ sections:
       registry: '1962-07-28'
       date: 07-28
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8906,7 +8906,7 @@ sections:
       registry: '1962-07-29'
       date: 07-29
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8918,7 +8918,7 @@ sections:
       registry: '1962-07-30'
       date: 07-30
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8930,7 +8930,7 @@ sections:
       registry: '1962-07-31'
       date: 07-31
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8942,7 +8942,7 @@ sections:
       registry: '1962-08-01'
       date: 08-01
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8955,7 +8955,7 @@ sections:
       registry: '1962-08-02'
       date: 08-02
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8967,7 +8967,7 @@ sections:
       registry: '1962-08-04'
       date: 08-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8979,7 +8979,7 @@ sections:
       registry: '1962-08-05'
       date: 08-05
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -8991,7 +8991,7 @@ sections:
       registry: '1962-08-07'
       date: 08-07
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9004,7 +9004,7 @@ sections:
       registry: '1962-08-08'
       date: 08-08
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9016,7 +9016,7 @@ sections:
       registry: '1962-08-09'
       date: 08-09
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9028,7 +9028,7 @@ sections:
       registry: '1962-08-10'
       date: 08-10
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9040,7 +9040,7 @@ sections:
       registry: '1962-08-11'
       date: 08-11
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9052,7 +9052,7 @@ sections:
       registry: '1962-08-12'
       date: 08-12
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9064,7 +9064,7 @@ sections:
       registry: '1962-08-13'
       date: 08-13
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9076,7 +9076,7 @@ sections:
       registry: '1962-08-16'
       date: 08-16
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9088,7 +9088,7 @@ sections:
       registry: '1962-08-17'
       date: 08-17
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9100,7 +9100,7 @@ sections:
       registry: '1962-08-18'
       date: 08-18
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9112,7 +9112,7 @@ sections:
       registry: '1962-08-19'
       date: 08-19
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9124,7 +9124,7 @@ sections:
       registry: '1962-08-20'
       date: 08-20
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9136,7 +9136,7 @@ sections:
       registry: '1962-08-21'
       date: 08-21
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9148,7 +9148,7 @@ sections:
       registry: '1962-08-23'
       date: 08-23
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9160,7 +9160,7 @@ sections:
       registry: '1962-08-24'
       date: 08-24
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9172,7 +9172,7 @@ sections:
       registry: '1962-08-25'
       date: 08-25
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9184,7 +9184,7 @@ sections:
       registry: '1962-08-26'
       date: 08-26
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9196,7 +9196,7 @@ sections:
       registry: '1962-08-27'
       date: 08-27
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9209,7 +9209,7 @@ sections:
       registry: '1962-08-28'
       date: 08-28
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9221,7 +9221,7 @@ sections:
       registry: '1962-08-29'
       date: 08-29
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9233,7 +9233,7 @@ sections:
       registry: '1962-08-30'
       date: 08-30
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9245,7 +9245,7 @@ sections:
       registry: '1962-08-31'
       date: 08-31
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9257,7 +9257,7 @@ sections:
       registry: '1962-09-01'
       date: 09-01
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9269,7 +9269,7 @@ sections:
       registry: '1962-09-02'
       date: 09-02
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9281,7 +9281,7 @@ sections:
       registry: '1962-09-03'
       date: 09-03
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9293,7 +9293,7 @@ sections:
       registry: '1962-09-05'
       date: 09-05
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9305,7 +9305,7 @@ sections:
       registry: '1962-09-09'
       date: 09-09
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9317,7 +9317,7 @@ sections:
       registry: '1962-09-10'
       date: 09-10
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9329,7 +9329,7 @@ sections:
       registry: '1962-09-11'
       date: 09-11
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9342,7 +9342,7 @@ sections:
       registry: '1962-09-16'
       date: 09-16
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9354,7 +9354,7 @@ sections:
       registry: '1962-09-17'
       date: 09-17
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9366,7 +9366,7 @@ sections:
       registry: '1962-09-18'
       date: 09-18
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9378,7 +9378,7 @@ sections:
       registry: '1962-09-19'
       date: 09-19
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9390,7 +9390,7 @@ sections:
       registry: '1962-09-20'
       date: 09-20
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9402,7 +9402,7 @@ sections:
       registry: '1962-09-21'
       date: 09-21
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9415,7 +9415,7 @@ sections:
       registry: '1962-09-22'
       date: 09-22
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9427,7 +9427,7 @@ sections:
       registry: '1962-09-23'
       date: 09-23
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9439,7 +9439,7 @@ sections:
       registry: '1962-09-26'
       date: 09-26
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9451,7 +9451,7 @@ sections:
       registry: '1962-09-27'
       date: 09-27
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9463,7 +9463,7 @@ sections:
       registry: '1962-09-28'
       date: 09-28
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9475,7 +9475,7 @@ sections:
       registry: '1962-09-29'
       date: 09-29
       rank: I
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9487,7 +9487,7 @@ sections:
       registry: '1962-09-30'
       date: 09-30
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9499,7 +9499,7 @@ sections:
       registry: '1962-10-01'
       date: 10-01
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9511,7 +9511,7 @@ sections:
       registry: '1962-10-02'
       date: 10-02
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9523,7 +9523,7 @@ sections:
       registry: '1962-10-03'
       date: 10-03
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9535,7 +9535,7 @@ sections:
       registry: '1962-10-04'
       date: 10-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9547,7 +9547,7 @@ sections:
       registry: '1962-10-05'
       date: 10-05
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9559,7 +9559,7 @@ sections:
       registry: '1962-10-06'
       date: 10-06
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9571,7 +9571,7 @@ sections:
       registry: '1962-10-08'
       date: 10-08
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9584,7 +9584,7 @@ sections:
       registry: '1962-10-09'
       date: 10-09
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9596,7 +9596,7 @@ sections:
       registry: '1962-10-10'
       date: 10-10
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9608,7 +9608,7 @@ sections:
       registry: '1962-10-13'
       date: 10-13
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9620,7 +9620,7 @@ sections:
       registry: '1962-10-14'
       date: 10-14
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9632,7 +9632,7 @@ sections:
       registry: '1962-10-15'
       date: 10-15
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9644,7 +9644,7 @@ sections:
       registry: '1962-10-16'
       date: 10-16
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9656,7 +9656,7 @@ sections:
       registry: '1962-10-17'
       date: 10-17
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9668,7 +9668,7 @@ sections:
       registry: '1962-10-18'
       date: 10-18
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9680,7 +9680,7 @@ sections:
       registry: '1962-10-19'
       date: 10-19
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9692,7 +9692,7 @@ sections:
       registry: '1962-10-20'
       date: 10-20
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9705,7 +9705,7 @@ sections:
       registry: '1962-10-21'
       date: 10-21
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9717,7 +9717,7 @@ sections:
       registry: '1962-10-23'
       date: 10-23
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9729,7 +9729,7 @@ sections:
       registry: '1962-10-24'
       date: 10-24
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9741,7 +9741,7 @@ sections:
       registry: '1962-10-25'
       date: 10-25
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9753,7 +9753,7 @@ sections:
       registry: '1962-10-26'
       date: 10-26
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9765,7 +9765,7 @@ sections:
       registry: '1962-10-28'
       date: 10-28
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9777,7 +9777,7 @@ sections:
       registry: '1962-11-01'
       date: 11-01
       rank: I
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9789,7 +9789,7 @@ sections:
       registry: '1962-11-02'
       date: 11-02
       rank: I
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9801,7 +9801,7 @@ sections:
       registry: '1962-11-04'
       date: 11-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9813,7 +9813,7 @@ sections:
       registry: '1962-11-08'
       date: 11-08
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9825,7 +9825,7 @@ sections:
       registry: '1962-11-09'
       date: 11-09
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9838,7 +9838,7 @@ sections:
       registry: '1962-11-10'
       date: 11-10
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9850,7 +9850,7 @@ sections:
       registry: '1962-11-11'
       date: 11-11
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9862,7 +9862,7 @@ sections:
       registry: '1962-11-12'
       date: 11-12
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9874,7 +9874,7 @@ sections:
       registry: '1962-11-13'
       date: 11-13
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9886,7 +9886,7 @@ sections:
       registry: '1962-11-14'
       date: 11-14
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9898,7 +9898,7 @@ sections:
       registry: '1962-11-15'
       date: 11-15
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9910,7 +9910,7 @@ sections:
       registry: '1962-11-16'
       date: 11-16
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9922,7 +9922,7 @@ sections:
       registry: '1962-11-17'
       date: 11-17
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9934,7 +9934,7 @@ sections:
       registry: '1962-11-18'
       date: 11-18
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9946,7 +9946,7 @@ sections:
       registry: '1962-11-19'
       date: 11-19
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9958,7 +9958,7 @@ sections:
       registry: '1962-11-20'
       date: 11-20
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9970,7 +9970,7 @@ sections:
       registry: '1962-11-22'
       date: 11-22
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9982,7 +9982,7 @@ sections:
       registry: '1962-11-23'
       date: 11-23
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -9995,7 +9995,7 @@ sections:
       registry: '1962-11-24'
       date: 11-24
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10007,7 +10007,7 @@ sections:
       registry: '1962-11-25'
       date: 11-25
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10019,7 +10019,7 @@ sections:
       registry: '1962-11-26'
       date: 11-26
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10031,7 +10031,7 @@ sections:
       registry: '1962-11-29'
       date: 11-29
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10043,7 +10043,7 @@ sections:
       registry: '1962-11-30'
       date: 11-30
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10055,7 +10055,7 @@ sections:
       registry: '1962-12-02'
       date: 12-02
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10067,7 +10067,7 @@ sections:
       registry: '1962-12-03'
       date: 12-03
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10080,7 +10080,7 @@ sections:
       registry: '1962-12-04'
       date: 12-04
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10092,7 +10092,7 @@ sections:
       registry: '1962-12-05'
       date: 12-05
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10104,7 +10104,7 @@ sections:
       registry: '1962-12-06'
       date: 12-06
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10116,7 +10116,7 @@ sections:
       registry: '1962-12-07'
       date: 12-07
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10128,7 +10128,7 @@ sections:
       registry: '1962-12-10'
       date: 12-10
       rank: Comm.
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10140,7 +10140,7 @@ sections:
       registry: '1962-12-11'
       date: 12-11
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10152,7 +10152,7 @@ sections:
       registry: '1962-12-13'
       date: 12-13
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10164,7 +10164,7 @@ sections:
       registry: '1962-12-16'
       date: 12-16
       rank: III
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10176,7 +10176,7 @@ sections:
       registry: '1962-12-21'
       date: 12-21
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10188,7 +10188,7 @@ sections:
       registry: '1962-12-26'
       date: 12-26
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10200,7 +10200,7 @@ sections:
       registry: '1962-12-27'
       date: 12-27
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed
@@ -10212,7 +10212,7 @@ sections:
       registry: '1962-12-28'
       date: 12-28
       rank: II
-      kind: saintly
+      kind: sanctoral
       propers:
       - name: Placeholder
         source: composed

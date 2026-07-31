@@ -6,7 +6,7 @@ Usage: calendar-spine [derive] [--calendar NAME] [--kind KIND]
 Parses the verified calendar-reference publications — the 1962 sanctorale
 sections and the postconciliar general-calendar section — into one date-ordered
 list per calendar, each entry classified as marian, christological, seasonal, or
-saintly.
+sanctoral.
 The spine is the identity and ordering source for the sanctoral mass indexes
 under src/sources/calendars; it carries no propers.
 
@@ -41,7 +41,7 @@ SOURCES = {
         ("50-general-calendar.tex",),
     ),
 }
-KINDS = ("christological", "marian", "saintly", "seasonal")
+KINDS = ("christological", "marian", "sanctoral", "seasonal")
 
 MONTHS = (
     "January", "February", "March", "April", "May", "June",
@@ -121,7 +121,7 @@ def classify(title: str) -> str:
     if vigil and vigil.group(1).strip():
         return classify(vigil.group(1).strip())
     if PERSON_HEAD.match(head):
-        return "saintly"
+        return "sanctoral"
     folded = fold(head)
 
     def has(tokens: tuple[str, ...]) -> bool:
@@ -134,7 +134,7 @@ def classify(title: str) -> str:
         return "marian"
     if has(LORD):
         return "christological"
-    return "saintly"
+    return "sanctoral"
 
 
 def make_key(title: str, used: set[str]) -> str:
