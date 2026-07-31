@@ -6,6 +6,14 @@ the references the calendars actually make. This tool answers the other
 question — the whole book, in reading order — by walking one edition's tracked
 per-book verse files and emitting a two-column TeX source for `pdflatex`.
 
+It sets two kinds of volume from that one machinery. An *edition* volume is a
+whole bible. A *plan* volume is one tier of one tracked abridged plan in one
+edition: the same verse text, cut to the passages the plan appoints and carrying
+the plan's own periods, titles and notes. The second is the reason the psalter
+apparatus is here at all — a plan cites in one numbering and an edition prints
+another, and a citation that resolves successfully and wrongly is the defect
+this repository is built to refuse.
+
 Three facts are never guessed here.
 
 *Which editions may be typeset* comes from `index-bible`'s `EDITIONS` table and
@@ -25,6 +33,14 @@ own jurisdiction. Two of these editions are public domain in the United States
 and everywhere outside the United Kingdom only, and one blanket "public domain"
 across all of them would be false for those two.
 
+*Where a cited passage stands in this edition* is decided by the two moves
+`index-bible` makes and by nothing else: the psalm concordance renumbers the
+citation into the edition's system, and an edition that prints psalm
+inscriptions without a verse number shifts it again. Both refuse rather than
+guess, and a refusal is printed in the volume, listed in its front matter and
+counted on the command line. A plan volume that quietly dropped a reading, or
+quietly kept the cited number, would be the failure this apparatus exists for.
+
 The rendered TeX is deterministic and is written only when its bytes change, so
 an unchanged edition does not force a rebuild of a thousand-page PDF.
 """
@@ -43,6 +59,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _psalms import NumberingError, PSALMS, convert_range  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -76,6 +93,18 @@ EXAMPLES = {
                 "revised-version-1895",
             ),
         ),
+        Example(
+            "tools/typeset-bible list --plan narrative-spine --format ids",
+            (
+                "narrative-spine-overview-douay-rheims",
+                "narrative-spine-overview-king-james-version",
+                "narrative-spine-narrative-douay-rheims",
+                "narrative-spine-narrative-king-james-version",
+                "narrative-spine-year-douay-rheims",
+                "narrative-spine-year-king-james-version",
+            ),
+            "the volumes of one abridged plan: every tier in every issued edition",
+        ),
     ),
     "check": (
         Example(
@@ -90,6 +119,15 @@ EXAMPLES = {
             (
                 "{\"editions\":[{\"books\":73,\"chapters\":1334,\"digest\":\"71f47b8ea22178f377341d02120dcdadd8daac3a91bc3... [+186 chars]",
             ),
+        ),
+        Example(
+            "tools/typeset-bible check --volume narrative-spine-overview-king-james-version --verbose",
+            (
+                "narrative-spine-overview-king-james-version: 36 readings, 43 chapters, 1142 verses, 1 refused (pu... [+31 chars]",
+                "  refused 263 The desolation of the sanctuary (1 Maccabees 1:1-67): 1Mach 1:65 is past 1Mach 1:64, ... [+126 chars]",
+                "refused (not publishable): knox",
+            ),
+            "a refused reading is named, never dropped: this edition ends that chapter a verse earlier",
         ),
     ),
     "render": (
@@ -109,17 +147,37 @@ EXAMPLES = {
             "WRITES TeX. --out here is untracked; the default is build/bibles",
         ),
         Example(
-            "tools/typeset-bible render --bible king-james-version --out build/example-typeset --json",
+            "tools/typeset-bible render --volume narrative-spine-overview-douay-rheims --out build/example-typeset",
             (
-                "{\"rendered\":[{\"books\":80,\"changed\":false,\"chapters\":1362,\"id\":\"king-james-version\",\"path\":\"<repo... [+1761 chars]",
+                "narrative-spine-overview-douay-rheims: written <repo>/build/example-typeset/narrative-spine-overv... [+31 chars]",
+                "  narrative-spine-overview-douay-rheims: 36 readings, 44 chapters, 1210 verses, 0 refused (public-d... [+22 chars]",
             ),
-            "WRITES TeX",
+            "WRITES TeX for one tier of one plan in one edition",
         ),
     ),
 }
 
 SOURCE_ROOT = ROOT / "src" / "sources" / "works"
 DEFAULT_OUT = ROOT / "build" / "bibles"
+
+# The tracked abridged plans. Each is a curated sequence of passages in one
+# declared numbering, and its readings nest: every reading carries the tier at
+# which it first appears and appears at no other, so a tier is read by taking
+# every reading at that tier or above, in order. `Plan` asserts that against the
+# counts each tier declares rather than trusting the arithmetic.
+#
+# The plan file's own validation is owned by its tool, not restated here; the
+# Makefile runs that check before a volume is set. What this tool adds is the
+# question that tool does not ask: does this edition actually carry the passage.
+PLAN_ROOT = ROOT / "src" / "sources" / "reading-plans"
+
+# The editions a plan volume is issued in. Two, deliberately, and they are the
+# two that stand on opposite sides of the psalter's numbering divide: the
+# Douay-Rheims prints the Vulgate numbering the plans cite in, and the King
+# James prints the Hebrew one, with psalm inscriptions unnumbered on top of
+# that. Setting both is what makes the conversion visible rather than notional.
+# Every id here must be publishable, which `entry` enforces by name.
+PLAN_EDITIONS = ("douay-rheims", "king-james-version")
 
 # Where a rendered edition may be written. `build/` is the only tree in this
 # repository that holds reproducible artifacts; `pdf/`, `web/` and `src/` hold
@@ -233,8 +291,22 @@ def sibling(name: str):
 
 
 @lru_cache(maxsize=1)
+def indexer():
+    """`index-bible` as a module: the edition registry and the resolver both.
+
+    A plan volume needs more than the registry. It needs `Bible`, which reads a
+    cited locus through the edition's own verse-alias table and refuses instead
+    of returning whatever the edition happens to print at those numbers, and
+    `unnumber_titles`, which moves a Hebrew-numbered psalm range onto an edition
+    that gives the inscription no verse number of its own. Both already decide
+    this for the site; a second implementation here would be a second answer.
+    """
+    return sibling("index-bible")
+
+
+@lru_cache(maxsize=1)
 def registry() -> dict[str, dict[str, object]]:
-    return sibling("index-bible").EDITIONS
+    return indexer().EDITIONS
 
 
 def publishable(registered: dict[str, dict[str, object]]) -> list[str]:
@@ -323,6 +395,10 @@ class Edition:
         self.language = str(registered["language"])
         self.numbering = str(registered["numbering"])
         self.psalter = str(registered["psalter"])
+        # Whether this edition gives a psalm's inscription a verse number of its
+        # own. Not a second numbering system, and the reason a plan volume in
+        # this edition may still have to move a range that already converted.
+        self.psalm_titles = str(registered["psalm_titles"])
         self.artifacts = source_root / str(registered["artifacts"])
         if not self.artifacts.is_dir():
             raise ValueError(f"{name}: no artifact directory at {self.artifacts}")
@@ -398,6 +474,21 @@ class Edition:
         status, jurisdiction, basis = next(iter(found))
         return {"status": status, "jurisdiction": jurisdiction, "basis": basis}
 
+    def name_of(self, token: str) -> str:
+        """This edition's modern name for a book, by its own token.
+
+        The modern name and not the printed title, because the reference it
+        writes stands beside the plan's own citation and the two are meant to be
+        compared: `Psalms 22:1-6` against `Psalms 23:1-6` shows the numbering
+        moving, where `The Book of Psalms` would put a difference of wording in
+        the way of a difference of number. Where the book itself changes — a
+        Vulgate Daniel 14 carried as Bel — the modern name says so plainly.
+        """
+        for book in self.books:
+            if book.token == token:
+                return book.name
+        return token
+
     def location(self) -> str:
         """The artifact directory as the PDF should name it.
 
@@ -420,6 +511,347 @@ class Edition:
         for book in self.books:
             for chapter, verse, text in book.verses:
                 running.update(f"{book.token}\t{chapter}\t{verse}\t{text}\n".encode())
+        return running.hexdigest()
+
+
+class Plan:
+    """One tracked abridged plan: its prose, its nesting tiers, and its readings.
+
+    The tiers are read in the order the file declares them, deepest last, and
+    each one's `readings` count is the *cumulative* number a reader of that tier
+    sees. That is asserted here rather than assumed, because the failure it
+    guards is silent: a volume that printed only the readings tagged exactly
+    `overview` while calling itself the Overview tier would look entirely
+    correct and would be a third of the readings short.
+    """
+
+    def __init__(self, path: Path) -> None:
+        import yaml
+
+        self.id = path.stem
+        self.path = path
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(document, dict):
+            raise ValueError(f"{path}: top level must be a mapping")
+        self.document = document
+        self.title = str(document.get("title") or self.id)
+        self.canon = str(document.get("canon") or "")
+        self.numbering = str(document.get("numbering") or "")
+        self.omissions = str(document.get("omissions") or "")
+        tiers = document.get("tiers")
+        if not isinstance(tiers, dict) or not tiers:
+            raise ValueError(f"{path}: declares no tiers")
+        self.tiers = tiers
+        self.order = list(tiers)
+        self.periods = [
+            period for period in (document.get("periods") or []) if isinstance(period, dict)
+        ]
+        self.readings = [
+            (period, reading)
+            for period in self.periods
+            for reading in (period.get("readings") or [])
+            if isinstance(reading, dict)
+        ]
+        self._check()
+
+    @property
+    def name(self) -> str:
+        """The plan's own short name: what a title page and a spine carry."""
+        return self.title.split(":", 1)[0].strip()
+
+    @property
+    def subtitle(self) -> str:
+        _, _, rest = self.title.partition(":")
+        return rest.strip()
+
+    def _check(self) -> None:
+        if not self.readings:
+            raise ValueError(f"{self.path}: carries no readings")
+        numbers = [reading.get("order") for _, reading in self.readings]
+        if numbers != list(range(1, len(numbers) + 1)):
+            raise ValueError(
+                f"{self.path}: reading order must run 1..{len(numbers)} "
+                "without gaps or repeats"
+            )
+        for _, reading in self.readings:
+            tier = reading.get("tier")
+            if tier not in self.tiers:
+                raise ValueError(
+                    f"{self.path}: reading {reading.get('order')} claims "
+                    f"undeclared tier {tier!r}"
+                )
+        for tier in self.order:
+            declared = (self.tiers[tier] or {}).get("readings")
+            found = len(self.at(tier))
+            if declared is not None and int(declared) != found:
+                raise ValueError(
+                    f"{self.path}: tier {tier!r} declares {declared} readings and "
+                    f"nests {found}; the tiers no longer agree with the readings"
+                )
+
+    def depth(self, tier: str) -> int:
+        if tier not in self.tiers:
+            raise KeyError(f"{self.id} declares no tier {tier!r}; known: {self.order}")
+        return self.order.index(tier)
+
+    def at(self, tier: str) -> list[tuple[dict, dict]]:
+        """Every reading of this tier, which is every reading at it or above."""
+        limit = self.depth(tier)
+        return [
+            pair
+            for pair in self.readings
+            if self.depth(str(pair[1].get("tier"))) <= limit
+        ]
+
+    def label(self, tier: str) -> str:
+        return str((self.tiers[tier] or {}).get("label") or tier.title())
+
+    def description(self, tier: str) -> str:
+        return str((self.tiers[tier] or {}).get("description") or "")
+
+
+def plans(root: Path) -> list[Plan]:
+    found = sorted(Path(root).glob("*.yaml"))
+    if not found:
+        raise ValueError(f"no abridged plan under {root}")
+    return [Plan(path) for path in found]
+
+
+def volume_id(plan: Plan, tier: str, bible: str) -> str:
+    return f"{plan.id}-{tier}-{bible}"
+
+
+def volumes(plan: Plan) -> list[tuple[str, str]]:
+    """Every (tier, edition) this plan is issued in, in reading-depth order."""
+    return [(tier, bible) for tier in plan.order for bible in PLAN_EDITIONS]
+
+
+def reference(book: str, ranges: list) -> str:
+    """One passage as a citation reads: `Genesis 1:1-2:2`, `Exodus 14:15-15:1`."""
+    parts: list[str] = []
+    for span in ranges:
+        begin = (span or {}).get("begin") or {}
+        end = (span or {}).get("end") or begin
+        first, opening = begin.get("chapter"), begin.get("verse")
+        last, closing = end.get("chapter", first), end.get("verse")
+        if first == last:
+            if opening == closing:
+                parts.append(f"{first}:{opening}")
+            else:
+                parts.append(f"{first}:{opening}-{closing}")
+        else:
+            parts.append(f"{first}:{opening}-{last}:{closing}")
+    return f"{book} {'; '.join(parts)}"
+
+
+def numbered_span(bible, token: str, span: dict) -> tuple[list[tuple[str, int, int, str]], str]:
+    """The verses one range names, each at the locus this edition prints it under.
+
+    `Bible.span` asks exactly this question and answers it in words alone,
+    because an index stores passages and a passage has no verse numbers in it.
+    A printed volume does. So the walk is repeated here to keep the numbers —
+    and, because a second walk is how two answers start to differ, every range
+    is checked against `Bible.span`'s own answer in `resolve` before it is set.
+
+    The locus kept is the *carrier*: where this edition actually holds the
+    words, which is not always where the citation looked for them. A Vulgate
+    citation of Daniel 14:1 is carried by the King James at Bel 1:2, and
+    printing a 1 beside it under a heading reading Daniel would be this
+    edition's text under another tradition's numbers — the same silent
+    mislabelling the psalter apparatus exists to refuse, one book along.
+    """
+    begin = span.get("begin") or {}
+    end = span.get("end") or begin
+    first = begin.get("chapter")
+    if first is None:
+        return [], "range has no chapter"
+    last = end.get("chapter", first)
+    found: list[tuple[str, int, int, str]] = []
+    carried: tuple = ()
+    for chapter in range(int(first), int(last) + 1):
+        bounds = bible.chapters.get((token, chapter))
+        if bounds is None:
+            # The edition prints no chapter of that number, which its alias
+            # table may still account for: this is how a Vulgate citation of
+            # Daniel 13 or Esther 15 reaches the books a Greek-numbered edition
+            # prints them as. `Bible.span` resolves it the same way.
+            recorded = sorted(
+                verse
+                for (held, held_chapter, verse) in bible.aliases
+                if held == token and held_chapter == chapter
+            )
+            if not recorded:
+                return [], f"{token} has no chapter {chapter}"
+            bounds = (recorded[0], recorded[-1])
+        base, bound = bounds
+        low = begin.get("verse") if chapter == int(first) else None
+        high = end.get("verse") if chapter == int(last) else None
+        low = base if low is None else int(low)
+        high = bound if high is None else int(high)
+        for verse in range(low, high + 1):
+            here = bible.carrier(token, chapter, verse)
+            if here is None:
+                return [], bible.refusal(token, chapter, verse, bounds)
+            if here == carried:
+                # A range naming both a merged verse and the verse it was
+                # merged into reaches the same words twice; print them once.
+                continue
+            carried = here
+            found.append((here[0], int(here[1]), int(here[2]), bible.verses[here]))
+    return found, ""
+
+
+def resolve(plan: Plan, reading: dict, edition: Edition, bible) -> dict[str, object]:
+    """Where this reading's passage stands in this edition, or why it does not.
+
+    Two moves and no third, both taken from `index-bible` so that a volume and
+    the site cannot disagree about a verse. The psalm concordance renumbers the
+    citation into the edition's system; then an edition that leaves a psalm's
+    inscription unnumbered shifts the range again. Each refuses rather than
+    guessing, and a refusal is carried out of here as data.
+    """
+    module = indexer()
+    book = str(reading.get("book") or "")
+    ranges = [span for span in (reading.get("ranges") or []) if isinstance(span, dict)]
+    resolved = {
+        "order": int(reading.get("order")),
+        "tier": str(reading.get("tier")),
+        "title": str(reading.get("title") or ""),
+        "book": book,
+        "note": str(reading.get("note") or "").strip(),
+        "cited": reference(book, ranges),
+        "here": "",
+        "verses": [],
+        "refused": "",
+    }
+    token = bible.token(book)
+    if token is None:
+        resolved["refused"] = f"no book named {book!r} in this edition"
+        return resolved
+    if not ranges:
+        resolved["refused"] = "the reading names no range"
+        return resolved
+    if book == PSALMS and plan.numbering != edition.numbering:
+        moved: list[dict] = []
+        try:
+            for span in ranges:
+                pieces, _ = convert_range(
+                    book, span.get("begin") or {}, span.get("end"),
+                    plan.numbering, edition.numbering,
+                )
+                moved.extend(pieces)
+        except NumberingError as error:
+            resolved["refused"] = str(error)
+            return resolved
+        ranges = moved
+    if book == PSALMS and edition.psalm_titles == module.UNNUMBERED_TITLES:
+        try:
+            ranges, problem = module.unnumber_titles(ranges)
+        except NumberingError as error:
+            resolved["refused"] = str(error)
+            return resolved
+        if problem:
+            resolved["refused"] = problem
+            return resolved
+    verses: list[tuple[str, int, int, str]] = []
+    for span in ranges:
+        found, problem = numbered_span(bible, token, span)
+        if problem:
+            resolved["refused"] = problem
+            return resolved
+        # The two walks must agree. If they ever stop agreeing, the numbers
+        # printed beside the words would be the ones that were wrong.
+        words, trouble, _, _ = bible.span(token, span)
+        if trouble or [text for _, _, _, text in found] != words:
+            raise ValueError(
+                f"{resolved['cited']}: this tool and index-bible disagree about "
+                f"which verses that range names ({trouble or 'differing text'})"
+            )
+        verses.extend(found)
+    resolved["verses"] = verses
+    resolved["token"] = token
+    here = carried_reference(edition, verses)
+    resolved["here"] = "" if here == resolved["cited"] else here
+    return resolved
+
+
+def carried_reference(edition: Edition, verses: list) -> str:
+    """Where this edition holds the passage, in its own books and its own numbers.
+
+    Written as runs rather than as one span, because a citation can reach into
+    more than one of this edition's books: a Vulgate Daniel 13-14 is Susanna and
+    then Bel, and a single opening and closing locus would name a range that
+    runs through a book the passage never touches.
+    """
+    runs: list[tuple[str, int, int, int, int]] = []
+    for token, chapter, verse, _ in verses:
+        if runs and runs[-1][0] == token:
+            first_token, first_chapter, first_verse, _, _ = runs[-1]
+            runs[-1] = (first_token, first_chapter, first_verse, chapter, verse)
+        else:
+            runs.append((token, chapter, verse, chapter, verse))
+    return "; ".join(
+        reference(
+            edition.name_of(token),
+            [
+                {
+                    "begin": {"chapter": first_chapter, "verse": first_verse},
+                    "end": {"chapter": last_chapter, "verse": last_verse},
+                }
+            ],
+        )
+        for token, first_chapter, first_verse, last_chapter, last_verse in runs
+    )
+
+
+class Volume:
+    """One tier of one plan in one edition: what a single PDF holds."""
+
+    def __init__(self, plan: Plan, tier: str, name: str, source_root: Path) -> None:
+        self.plan = plan
+        self.tier = tier
+        self.id = volume_id(plan, tier, name)
+        self.edition = Edition(name, entry(registry(), name), source_root)
+        self.bible = indexer().Bible(self.edition.artifacts)
+        self.periods: list[tuple[dict, list[dict]]] = []
+        held = plan.at(tier)
+        for period in plan.periods:
+            wanted = [
+                resolve(plan, reading, self.edition, self.bible)
+                for holder, reading in held
+                if holder is period
+            ]
+            if wanted:
+                self.periods.append((period, wanted))
+        self.readings = [row for _, rows in self.periods for row in rows]
+        if len(self.readings) != len(held):
+            raise ValueError(f"{self.id}: readings were lost between the plan and the volume")
+
+    @property
+    def refused(self) -> list[dict[str, object]]:
+        return [row for row in self.readings if row["refused"]]
+
+    def counts(self) -> dict[str, object]:
+        verses = sum(len(row["verses"]) for row in self.readings)
+        chapters = {
+            (token, chapter)
+            for row in self.readings
+            for token, chapter, _, _ in row["verses"]
+        }
+        return {
+            "readings": len(self.readings),
+            "refused": len(self.refused),
+            "chapters": len(chapters),
+            "verses": verses,
+        }
+
+    def digest(self) -> str:
+        """A digest over the verse rows actually set, in the order set."""
+        running = hashlib.sha256()
+        for row in self.readings:
+            running.update(f"{row['order']}\t{row['cited']}\t{row['refused']}\n".encode())
+            for token, chapter, verse, text in row["verses"]:
+                running.update(f"{token}\t{chapter}\t{verse}\t{text}\n".encode())
         return running.hexdigest()
 
 
@@ -552,6 +984,316 @@ PREAMBLE = r"""% Generated by tools/typeset-bible. Do not edit: edit the tool.
 \newcommand{\bookline}[3]{%
   \noindent\textbf{#1}\hspace{0.4em}#2\dotfill\pageref{#3}\par}
 """
+
+# Macros a plan volume needs and a whole bible does not. Kept apart so that an
+# edition volume's preamble still declares only what it uses.
+PLAN_PREAMBLE = r"""
+% One of the plan's periods: the span of the story a group of readings covers.
+\newcommand{\periodstart}[1]{%
+  \par\addvspace{1.4\baselineskip}%
+  \Needspace*{8\baselineskip}%
+  {\centering\scshape\large #1\par}%
+  \addvspace{0.4\baselineskip}%
+  \par}
+
+% One reading: its place in the sequence and the plan's own title for it.
+\newcommand{\readingstart}[2]{%
+  \par\addvspace{1.0\baselineskip}%
+  \Needspace*{5\baselineskip}%
+  \markright{#1. #2}%
+  \noindent{\bfseries #1.\hspace{0.4em}#2}\par
+  \addvspace{0.15\baselineskip}%
+  \par}
+
+% The reference, as the plan cites it and as this edition carries it.
+\newcommand{\citeline}[1]{%
+  \noindent{\small\itshape #1}\par\addvspace{0.25\baselineskip}}
+
+% The plan's own note on a reading, and the plan's prose generally.
+\newcommand{\notepara}[1]{%
+  \par{\small #1\par}\addvspace{0.25\baselineskip}}
+
+% A reading this edition cannot address. It is set in view, where the reading
+% would have been, because a passage silently missing from a volume is
+% indistinguishable from a passage the plan never appointed.
+\newcommand{\refusalpara}[1]{%
+  \par\noindent{\small\bfseries This edition does not carry this reading.}\par
+  \noindent{\small #1\par}\addvspace{0.25\baselineskip}}
+
+\newcommand{\readingline}[4]{%
+  \noindent\textbf{#1}\hspace{0.4em}#2\dotfill\pageref{#4}\par
+  \noindent\hspace{1.2em}{\small\itshape #3}\par\addvspace{0.15em}}
+"""
+
+
+def prose(text: str, where: str) -> list[str]:
+    """A block of the plan's own prose as TeX paragraphs.
+
+    The plan writes its long fields as YAML block scalars, where a blank line
+    opens a paragraph and a leading indent marks a nested list. Both are kept:
+    the omissions account in particular is an argument with structure, and
+    flattening it would make the plan's statement of its own cost read as one
+    undifferentiated wall.
+    """
+    lines: list[str] = []
+    for block in text.strip().split("\n\n"):
+        if not block.strip():
+            continue
+        indented = block.startswith((" ", "\t"))
+        body = " ".join(part.strip() for part in block.splitlines() if part.strip())
+        rendered = tex(body, where)
+        if indented:
+            lines.append(r"\par\noindent\hspace{1.2em}\begin{minipage}{\dimexpr\linewidth-1.2em}")
+            lines.append(rendered)
+            lines.append(r"\end{minipage}\par\addvspace{0.35em}")
+        else:
+            lines.append(r"\par %s\par\addvspace{0.35em}" % rendered)
+    return lines
+
+
+def render_plan_tex(volume: Volume, generator: str) -> tuple[str, dict[str, object]]:
+    """The complete two-column TeX source for one plan volume, and its counts."""
+    plan, edition = volume.plan, volume.edition
+    substitutions = Substitutions()
+    where = volume.id
+    label = plan.label(volume.tier)
+    lines: list[str] = [PREAMBLE, PLAN_PREAMBLE]
+    heading = f"{plan.name}: the {label} track"
+    lines.append(
+        "\\pdfinfo{/Title (\\pdfescapestring{%s})"
+        " /Subject (\\pdfescapestring{%s})"
+        " /Creator (\\pdfescapestring{%s})}"
+        % (
+            pdf_string(f"{heading} ({edition.label})"),
+            pdf_string(f"{plan.title}, {label} track, in {edition.label}"),
+            pdf_string(generator),
+        )
+    )
+    lines.append(r"\begin{document}")
+
+    counts = volume.counts()
+    lines.append(r"\onecolumn")
+    lines.append(r"\thispagestyle{empty}")
+    lines.append(r"\begin{center}")
+    lines.append(r"{\LARGE\bfseries %s\par}" % tex(plan.name, where))
+    if plan.subtitle:
+        lines.append(r"\vspace{0.6em}")
+        lines.append(r"{\large %s\par}" % tex(plan.subtitle, where))
+    lines.append(r"\vspace{0.8em}")
+    lines.append(r"{\Large %s\par}" % tex(f"The {label} track", where))
+    lines.append(r"\vspace{0.4em}")
+    lines.append(r"{\large %s\par}" % tex(edition.label, where))
+    lines.append(r"\end{center}")
+    lines.append(r"\vspace{1.2em}")
+
+    lines.append(r"\subsection*{This track}")
+    lines.extend(prose(plan.description(volume.tier), f"{where} tier"))
+    lines.append(
+        r"\noindent\textbf{Extent.} %d readings, %d chapters and %d verses of this "
+        r"edition.\par\vspace{0.35em}"
+        % (counts["readings"], counts["chapters"], counts["verses"])
+    )
+
+    lines.append(r"\subsection*{This edition}")
+    for name, value in (
+        ("Registered as", edition.id),
+        ("Source record", edition.source_id),
+        ("Publication", str(edition.record.get("publication", ""))),
+        ("Date", str(edition.record.get("date", ""))),
+        ("Language", edition.language),
+        ("Chapter and verse numbering", edition.numbering),
+        ("Psalter", edition.psalter),
+        ("Psalm inscriptions", edition.psalm_titles),
+    ):
+        if not value:
+            continue
+        lines.append(
+            r"\noindent\textbf{%s.} %s\par\vspace{0.35em}"
+            % (tex(name, "field name"), tex(str(value), f"{where} {name}"))
+        )
+
+    lines.append(r"\subsection*{Rights}")
+    for name in ("status", "jurisdiction", "basis"):
+        lines.append(
+            r"\noindent\textbf{%s.} %s\par\vspace{0.35em}"
+            % (name.title(), tex(edition.rights[name], f"{where} rights {name}"))
+        )
+    lines.append(
+        r"\noindent\small This notice states the rights of this edition alone, quoted "
+        r"from the tracked artifact records of the very verse files set here. It does "
+        r"not extend to any other edition. The plan itself, its periods, its titles "
+        r"and its notes are project-created content; see the colophon."
+        r"\par\vspace{0.35em}\normalsize"
+    )
+
+    lines.append(r"\subsection*{How this was made}")
+    lines.append(
+        r"\noindent The sequence is %s, read at its %s tier. The tiers nest: every "
+        r"reading carries the tier at which it first appears and appears at no other, "
+        r"so a tier is read by taking every reading at that tier or above, in order. "
+        r"The text is the tracked per-book verse files of this edition under %s. "
+        r"Nothing was retrieved, corrected or supplied while typesetting."
+        r"\par\vspace{0.35em}"
+        % (
+            tex_path(plan_location(plan), "plan path"),
+            tex(volume.tier, "tier"),
+            tex_path(edition.location(), "artifact path"),
+        )
+    )
+    lines.append(
+        r"\noindent\textbf{Numbering.} The plan cites in %s numbering and this edition "
+        r"prints %s. Where the two differ a reading is converted through the tracked "
+        r"verse-level psalm concordance, and the reference this edition carries is "
+        r"printed beside the one the plan cites. Where no correspondence is recorded "
+        r"the reading is refused and says so, because a psalm reference that resolves "
+        r"to a real verse of the wrong psalm cannot be told from a correct one."
+        r"\par\vspace{0.35em}"
+        % (
+            tex(plan.numbering, "plan numbering"),
+            tex(edition.numbering, "edition numbering"),
+        )
+    )
+
+    refused = volume.refused
+    lines.append(r"\subsection*{What this edition cannot carry}")
+    if not refused:
+        lines.append(
+            r"\noindent Every reading of this track resolves in this edition."
+            r"\par\vspace{0.35em}"
+        )
+    else:
+        lines.append(
+            r"\noindent %d of the %d readings of this track are refused here, and each "
+            r"is refused in view at the place it would have stood. A refusal is a "
+            r"result: it names a passage this edition divides or numbers differently, "
+            r"and no text is offered in its place.\par\vspace{0.5em}"
+            % (len(refused), counts["readings"])
+        )
+        for row in refused:
+            lines.append(
+                r"\noindent\small\textbf{%d. %s} (%s) --- %s\par\vspace{0.3em}\normalsize"
+                % (
+                    row["order"],
+                    tex(str(row["title"]), where),
+                    tex(str(row["cited"]), where),
+                    tex(str(row["refused"]), where),
+                )
+            )
+
+    # The body is built before the front matter closes, because the extent and
+    # the substitution note can only be stated once the verses have been set.
+    body: list[str] = []
+    contents: list[str] = []
+    for period, rows in volume.periods:
+        period_label = str(period.get("label") or period.get("key") or "")
+        body.append(r"\periodstart{%s}" % tex(period_label, f"{where} period"))
+        for line in prose(str(period.get("summary") or ""), f"{where} period summary"):
+            body.append(line)
+        contents.append(
+            r"\vspace{0.5em}\noindent\textsc{%s}\par\vspace{0.25em}"
+            % tex(period_label, f"{where} period")
+        )
+        for row in rows:
+            anchor = "rd:%d" % row["order"]
+            body.append(
+                r"\readingstart{%d}{%s}"
+                % (row["order"], tex(str(row["title"]), where))
+            )
+            body.append(r"\label{%s}" % anchor)
+            cited = str(row["cited"])
+            here = str(row["here"])
+            body.append(
+                r"\citeline{%s}"
+                % tex(cited if not here else f"{cited} \u2014 here {here}", where)
+            )
+            if row["note"]:
+                for line in prose(str(row["note"]), f"{where} note"):
+                    body.append(line)
+            if row["refused"]:
+                body.append(r"\refusalpara{%s}" % tex(str(row["refused"]), where))
+            else:
+                opened = None
+                for token, number, verse, text in row["verses"]:
+                    rendered = tex(text, f"{where} {token} {number}:{verse}", substitutions)
+                    if (token, number) != opened:
+                        opened = (token, number)
+                        body.append("")
+                        body.append(
+                            r"\chapterstart{%s}{%s}"
+                            % (number, tex(str(row["title"]), where))
+                        )
+                    body.append(r"\vn{%s}%s" % (verse, rendered))
+            body.append("")
+            contents.append(
+                r"\readingline{%d}{%s}{%s}{%s}"
+                % (
+                    row["order"],
+                    tex(str(row["title"]), where),
+                    tex(cited, where),
+                    anchor,
+                )
+            )
+
+    substituted = substitutions.rows()
+    if substituted:
+        lines.append(r"\subsection*{Typesetting note}")
+        lines.append(
+            r"\noindent This track prints characters these fonts cannot set. They are "
+            r"replaced, not dropped, and every replacement is listed here:"
+            r"\par\vspace{0.35em}"
+        )
+        for row in substituted:
+            lines.append(
+                r"\noindent %s, replaced by \texttt{%s}: %d occurrence%s."
+                r"\par\vspace{0.2em}"
+                % (
+                    row["codepoint"],
+                    tex(str(row["replacement"]), "replacement"),
+                    row["count"],
+                    "" if row["count"] == 1 else "s",
+                )
+            )
+
+    lines.append(
+        r"\noindent\small Digest of the verse rows set, in the order set (SHA-256): "
+        r"\texttt{%s}\par\normalsize" % volume.digest()
+    )
+
+    if plan.omissions:
+        lines.append(r"\clearpage")
+        lines.append(r"\subsection*{What this plan does not read}")
+        lines.append(
+            r"\noindent This account belongs at the front and not in a footnote. An "
+            r"abridgement is defined by what it drops.\par\vspace{0.5em}"
+        )
+        lines.extend(prose(plan.omissions, f"{where} omissions"))
+
+    lines.append(r"\clearpage")
+    lines.append(r"\twocolumn")
+    lines.append(r"\section*{The readings of this track}")
+    lines.extend(contents)
+    lines.append(r"\clearpage")
+    lines.extend(body)
+
+    lines.append(r"\par\addvspace{1.2\baselineskip}")
+    lines.append(
+        r"\noindent\small\textbf{Colophon.} Generated by %s from the tracked sources "
+        r"of the Triptych repository. Project-created content, the plan among it, is "
+        r"licensed CC BY 4.0 and the reusable infrastructure MIT; see \texttt{LICENSE} "
+        r"and \texttt{THIRD\_PARTY.md}. The scripture text set here is not "
+        r"project-owned expression: its rights are stated on the title page."
+        r"\par\normalsize"
+        % tex(generator, "generator")
+    )
+    lines.append(r"\end{document}")
+    counts["substitutions"] = substituted
+    return "\n".join(lines) + "\n", counts
+
+
+def plan_location(plan: Plan) -> str:
+    """The plan file as the PDF should name it, repository-relative where it is."""
+    path = plan.path.resolve()
+    return str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
 
 
 def render_tex(edition: Edition, generator: str) -> tuple[str, dict[str, object]]:
@@ -771,11 +1513,101 @@ def load(name: str, source_root: Path) -> Edition:
     return edition
 
 
+def chosen(arguments: argparse.Namespace) -> list[tuple[Plan, str, str]]:
+    """Which plan volumes this invocation names, or none for edition mode.
+
+    A volume is named by one id — plan, tier and edition run together — because
+    that id is also its file name, and a Make rule that has the file name has to
+    be able to ask for exactly that volume without taking the id apart. Taking
+    it apart is not safe anyway: every part of it may carry a hyphen. It is
+    matched against the volumes the plans actually declare instead.
+    """
+    if not (arguments.plan or arguments.volume):
+        return []
+    available = [
+        (plan, tier, bible)
+        for plan in plans(Path(arguments.plan_root))
+        for tier, bible in volumes(plan)
+    ]
+    if arguments.volume:
+        found = [row for row in available if volume_id(*row) == arguments.volume]
+        if not found:
+            raise KeyError(
+                f"no plan volume {arguments.volume!r}; known: "
+                + ", ".join(sorted(volume_id(*row) for row in available))
+            )
+        return found
+    wanted = [row for row in available if row[0].id == arguments.plan]
+    if not wanted:
+        raise KeyError(
+            f"no abridged plan {arguments.plan!r}; known: "
+            + ", ".join(sorted({plan.id for plan, _, _ in available}))
+        )
+    if arguments.bible:
+        entry(registry(), arguments.bible)
+        wanted = [row for row in wanted if row[2] == arguments.bible]
+    return wanted
+
+
+def volume_row(
+    plan: Plan, tier: str, name: str, source_root: Path
+) -> tuple[Volume, dict[str, object]]:
+    volume = Volume(plan, tier, name, source_root)
+    _, counts = render_plan_tex(volume, GENERATOR)
+    return volume, counts
+
+
+def summarise(volume: Volume, counts: dict[str, object], arguments) -> dict[str, object]:
+    return {
+        "id": volume.id,
+        "bible": volume.edition.id,
+        "chapters": counts["chapters"],
+        "digest": volume.digest(),
+        "plan": volume.plan.id,
+        "readings": counts["readings"],
+        "refused": (
+            [
+                {
+                    "order": row["order"],
+                    "reason": row["refused"],
+                    "reference": row["cited"],
+                    "title": row["title"],
+                }
+                for row in volume.refused
+            ]
+            if arguments.verbose
+            else counts["refused"]
+        ),
+        "rights_jurisdiction": volume.edition.rights["jurisdiction"],
+        "rights_status": volume.edition.rights["status"],
+        "substitutions": counts["substitutions"],
+        "tier": volume.tier,
+        "verses": counts["verses"],
+    }
+
+
 GENERATOR = "tools/typeset-bible"
 
 
 def run_list(arguments: argparse.Namespace) -> dict[str, object]:
     registered = registry()
+    if arguments.plan or arguments.volume:
+        return {
+            "volumes": [
+                {
+                    "id": volume_id(plan, tier, name),
+                    "bible": name,
+                    "label": str(registered[name]["label"]),
+                    "plan": plan.id,
+                    "readings": len(plan.at(tier)),
+                    "tier": tier,
+                    "track": plan.label(tier),
+                }
+                for plan, tier, name in chosen(arguments)
+            ],
+            "refused": sorted(set(registered) - set(publishable(registered))),
+            "status": "ok",
+        }
     names = publishable(registered)
     return {
         "editions": [
@@ -792,9 +1624,19 @@ def run_list(arguments: argparse.Namespace) -> dict[str, object]:
 
 
 def run_check(arguments: argparse.Namespace) -> dict[str, object]:
-    """Prove every selected edition can be set, without writing anything."""
+    """Prove every selected volume can be set, without writing anything."""
     registered = registry()
     source_root = Path(arguments.source_root)
+    wanted = chosen(arguments)
+    if wanted:
+        return {
+            "volumes": [
+                summarise(*volume_row(plan, tier, name, source_root), arguments)
+                for plan, tier, name in wanted
+            ],
+            "refused": sorted(set(registered) - set(publishable(registered))),
+            "status": "ok",
+        }
     editions: list[dict[str, object]] = []
     for name in selected(arguments):
         edition = load(name, source_root)
@@ -825,6 +1667,20 @@ def run_render(arguments: argparse.Namespace) -> dict[str, object]:
     # leaves nothing behind at all.
     out = destination(Path(arguments.out))
     written: list[dict[str, object]] = []
+    wanted = chosen(arguments)
+    if wanted:
+        for plan, tier, name in wanted:
+            volume = Volume(plan, tier, name, source_root)
+            content, counts = render_plan_tex(volume, GENERATOR)
+            target = out / f"{volume.id}.tex"
+            written.append(
+                {
+                    **summarise(volume, counts, arguments),
+                    "changed": write(target, content),
+                    "path": str(target),
+                }
+            )
+        return {"rendered": written, "status": "ok"}
     for name in selected(arguments):
         edition = load(name, source_root)
         content, counts = render_tex(edition, GENERATOR)
@@ -851,11 +1707,17 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
     if arguments.json or arguments.format == "json":
         print_json(payload)
         return 0
-    rows = list(payload.get("editions") or []) + list(payload.get("rendered") or [])
+    rows = (
+        list(payload.get("editions") or [])
+        + list(payload.get("volumes") or [])
+        + list(payload.get("rendered") or [])
+    )
     if arguments.format == "ids":
         for row in rows:
             print(row["id"])
         return 0
+    for row in payload.get("volumes") or []:
+        print_volume(row)
     for row in payload.get("editions") or []:
         if "verses" in row:
             print(
@@ -872,6 +1734,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             )
     for row in payload.get("rendered") or []:
         state = "written" if row["changed"] else "unchanged"
+        if "readings" in row:
+            print(f"{row['id']}: {state} {row['path']}")
+            print_volume(row, indent="  ")
+            continue
         print(
             f"{row['id']}: {state} {row['path']} "
             f"({row['books']} books, {row['verses']} verses)"
@@ -886,15 +1752,61 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
     return 0
 
 
+def print_volume(row: dict, indent: str = "") -> None:
+    """One plan volume, with its refusals named rather than only counted.
+
+    The count leads because a track that refuses nothing should say so in one
+    line. Where there are refusals they are the part worth reading: each names a
+    passage this edition divides or numbers differently, and the whole point of
+    printing them is that nobody should have to notice a missing reading.
+    """
+    refused = row.get("refused")
+    tally = len(refused) if isinstance(refused, list) else refused
+    if "label" in row and "readings" in row and "verses" not in row:
+        print(
+            f"{indent}{row['id']}: {row['track']} track of {row['plan']}, "
+            f"{row['readings']} readings ({row['label']})"
+        )
+        return
+    print(
+        f"{indent}{row['id']}: {row['readings']} readings, {row['chapters']} chapters, "
+        f"{row['verses']} verses, {tally} refused "
+        f"({row['rights_status']}, {row['rights_jurisdiction']})"
+    )
+    if isinstance(refused, list):
+        for entry_row in refused:
+            print(
+                f"{indent}  refused {entry_row['order']} "
+                f"{entry_row['title']} ({entry_row['reference']}): {entry_row['reason']}"
+            )
+    for substitution in row.get("substitutions") or []:
+        print(
+            f"{indent}  substituted {substitution['codepoint']} "
+            f"-> {substitution['replacement']} x{substitution['count']}"
+        )
+
+
 def main(argv: list[str] | None = None) -> int:
     shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument(
         "--bible", default=None, help="one edition id; the default is every publishable one"
     )
     shared.add_argument(
+        "--plan", default=None, help="one abridged plan id; sets its volumes instead of a bible"
+    )
+    shared.add_argument(
+        "--volume", default=None, help="one plan volume id, as `list --plan ID --format ids` prints"
+    )
+    shared.add_argument(
+        "--plan-root", default=str(PLAN_ROOT), help="directory of tracked abridged plans"
+    )
+    shared.add_argument(
         "--source-root", default=str(SOURCE_ROOT), help="source library works root"
     )
     shared.add_argument("--out", default=str(DEFAULT_OUT), help="where `render` writes TeX")
+    shared.add_argument(
+        "--verbose", action="store_true", help="name every refused reading instead of counting"
+    )
     shared.add_argument(
         "--format", choices=("text", "json", "ids"), default="text", help="output form"
     )
@@ -930,6 +1842,7 @@ def main(argv: list[str] | None = None) -> int:
         # The read-only verb is the default: a bare invocation reports what may
         # be typeset rather than writing a thousand pages of TeX.
         default_verb="list",
+        dependency_message="install PyYAML (requirements-tools.txt) to set a plan volume",
         mapped_errors={KeyError: ("not-found", 3), ValueError: ("input", 2)},
     )
 

@@ -400,7 +400,7 @@
     periods.appendChild(contentsList(view));
     content.appendChild(periods);
 
-    document.title = view.label + ' track — The Reading Plan — Triptych';
+    document.title = view.label + ' track — The Story of Salvation — Triptych';
     T.statusLine(
       'The ' + view.label + ' track: ' + figuresLine(view) + ', in ' +
       view.periods.length + ' periods.'

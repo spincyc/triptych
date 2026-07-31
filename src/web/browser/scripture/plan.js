@@ -201,7 +201,7 @@
 
     lede.textContent = plan.plan
       ? String(plan.plan)
-      : 'An abridged reading of salvation history, at three depths.';
+      : 'An abridged reading of the story of salvation, at three depths.';
 
     const tracks = section('tracks', 'Three tracks, one story');
     tracks.appendChild(T.el('p', 'plan-lead',
@@ -265,7 +265,7 @@
     content.appendChild(text);
 
     content.setAttribute('aria-busy', 'false');
-    document.title = 'The Reading Plan — Triptych';
+    document.title = 'The Story of Salvation — Triptych';
     T.statusLine(
       'The reading plan, in ' + views.length + ' tracks: ' +
       views.map((view) => view.label + ', ' + view.count).join('; ') + '.'

@@ -112,6 +112,16 @@ SOURCE_FAMILY_MIGRATION_TOOL := tools/tpt source-family-migration
 BIBLE_TYPESET_TOOL := tools/tpt typeset-bible
 BIBLE_TYPESET_IMPL := tools/typeset-bible
 BIBLE_BUILD_ROOT := build/bibles
+# Tracks of a tracked abridged plan: one tier of the plan in one edition, set
+# from the same verse text and the same typesetter as a whole bible. Unlike a
+# whole bible these are installed, because a track carries the plan's own
+# periods, titles and notes and is a publication of this project.
+READING_PLAN_TOOL := tools/tpt reading-plan
+READING_BUILD_ROOT := build/reading-plans
+READING_PDF_ROOT := pdf/reading-plans
+# The one tracked plan. `typeset-bible list --plan $(PLAN) --format ids` names
+# its volumes; nothing here restates how many there are or what they cover.
+PLAN ?= narrative-spine
 
 COMMON_SOURCES := $(shell find src/common -type f 2>/dev/null | sort)
 ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
@@ -216,6 +226,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
 	bibles bible review-bible check-bibles \
+	tracks track review-track check-tracks check-plan-sources reading-structure \
 	FORCE_METADATA_VERIFICATION FORCE_BIBLE_RENDER
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
@@ -426,6 +437,11 @@ help:
 		'make bible BIBLE=<edition>  Typeset one publishable edition complete' \
 		'make review-bible BIBLE=<edition>  Typeset one edition and raster it for page review' \
 		'make check-bibles  Prove every publishable edition can be set, writing nothing' \
+		'make tracks [PLAN=<plan>]  Typeset and install every track of the abridged plan' \
+		'make track VOLUME=<id>  Typeset and install one track' \
+		'make review-track VOLUME=<id>  Typeset one track and raster it for page review' \
+		'make check-tracks [PLAN=<plan>]  Prove every track can be set and is installed current' \
+		'make reading-structure  Rewrite the browser structure of every abridged plan' \
 		'make check    Run every repository policy check' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-tests  Run the complete script unit-test suite' \
@@ -987,6 +1003,107 @@ $(BIBLE_BUILD_ROOT)/%.pdf: $(BIBLE_BUILD_ROOT)/%.tex | check-tools
 		echo 'Undefined references remain after two passes: $*' >&2; \
 		exit 1; \
 	fi
+
+# Tracks of the abridged plan.
+#
+# Six volumes today: three tiers in two editions. Which they are is asked of
+# `typeset-bible list --plan`, which reads the tiers from the plan file and the
+# editions from the registered edition table, so neither the count nor the
+# publishable flag is restated here.
+#
+# A track is installed into pdf/ and a whole bible is not. The difference is
+# what the artifact carries: a whole bible is the source library's own text
+# reset, while a track carries this project's plan — its periods, its titles,
+# its notes and its account of what it leaves out — around that text.
+tracks: check-plan-sources
+	@set -eu; \
+		volumes=$$($(PYTHON) $(BIBLE_TYPESET_TOOL) list --plan '$(PLAN)' --format ids); \
+		[ -n "$$volumes" ] || { echo 'No track is declared for plan $(PLAN)' >&2; exit 1; }; \
+		for volume in $$volumes; do \
+			$(MAKE) --no-print-directory '$(READING_PDF_ROOT)/'"$$volume"'.pdf'; \
+		done
+
+track:
+	@if [ -z '$(VOLUME)' ]; then \
+		echo 'track requires VOLUME=<id from `tools/tpt typeset-bible list --plan $(PLAN) --format ids`>' >&2; \
+		exit 1; \
+	fi
+	@$(MAKE) --no-print-directory '$(READING_PDF_ROOT)/$(VOLUME).pdf'
+
+# The installed volume is what a reader downloads, so that is what is rastered.
+review-track: track
+	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(READING_PDF_ROOT)/$(VOLUME).pdf'
+
+# Two questions, both of which must hold before a track may be published: that
+# every volume still resolves against its edition, and that the installed PDF
+# is the one the current sources produce. The second is what stops a plan edit
+# from reaching the site through a stale artifact.
+check-tracks: check-plan-sources
+	@$(PYTHON) $(BIBLE_TYPESET_TOOL) check --plan '$(PLAN)' --verbose
+	@set -eu; \
+		volumes=$$($(PYTHON) $(BIBLE_TYPESET_TOOL) list --plan '$(PLAN)' --format ids); \
+		for volume in $$volumes; do \
+			installed='$(READING_PDF_ROOT)/'"$$volume"'.pdf'; \
+			[ -f "$$installed" ] || { echo "Track is not installed: $$volume; run make tracks" >&2; exit 1; }; \
+		done; \
+		$(MAKE) --no-print-directory tracks; \
+		if ! git diff --quiet -- '$(READING_PDF_ROOT)'; then \
+			echo 'Installed tracks are stale; run make tracks and commit them' >&2; \
+			exit 1; \
+		fi
+
+# The plan file is validated by the tool that owns it before a single verse of
+# it is set. A track built from a plan that does not validate would be a
+# publication of unchecked references.
+check-plan-sources:
+	@$(PYTHON) $(READING_PLAN_TOOL) check
+
+# The browser's structure of every abridged plan, rewritten from the plan
+# sources. Tracked under src/web/data and served as the site's reading data.
+reading-structure:
+	@$(PYTHON) $(READING_PLAN_TOOL) structure
+
+$(READING_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
+	@$(PYTHON) $(BIBLE_TYPESET_TOOL) render --volume '$*' --out '$(READING_BUILD_ROOT)'
+
+# Both are kept: the TeX is the compiler's input and the diffable record of
+# what was set, and the built PDF is what `review-track` rasters. Make would
+# otherwise delete each as a chained intermediate and recompile the volume.
+.PRECIOUS: $(READING_BUILD_ROOT)/%.tex $(READING_BUILD_ROOT)/%.pdf
+
+# The list of readings carries the page each reading begins on, and a list
+# twenty pages long moves the pages it is naming, so two passes do not always
+# settle a track of three hundred pages. Run until LaTeX stops asking, and fail
+# rather than install a volume whose contents point at the wrong pages.
+$(READING_BUILD_ROOT)/%.pdf: $(READING_BUILD_ROOT)/%.tex | check-tools
+	@set -eu; \
+		log='$(READING_BUILD_ROOT)/$*.log'; \
+		pass=0; \
+		while [ "$$pass" -lt 5 ]; do \
+			pass=$$((pass + 1)); \
+			$(PDFLATEX) -interaction=nonstopmode -halt-on-error \
+				-output-directory='$(READING_BUILD_ROOT)' '$<' >/dev/null; \
+			if ! grep -q 'Rerun to get cross-references right' "$$log" \
+				&& ! grep -q 'undefined references' "$$log" \
+				&& [ "$$pass" -ge 2 ]; then \
+				echo "set $* in $$pass passes"; \
+				exit 0; \
+			fi; \
+		done; \
+		echo "References did not settle in $$pass passes: $*" >&2; \
+		exit 1
+
+# Installed only when the bytes differ, so a rebuild that changed nothing does
+# not show up as a modified tracked artifact.
+$(READING_PDF_ROOT)/%.pdf: $(READING_BUILD_ROOT)/%.pdf
+	@set -eu; \
+		mkdir -p '$(@D)'; \
+		if cmp -s '$<' '$@' 2>/dev/null; then \
+			echo "unchanged $@"; \
+		else \
+			$(INSTALL) -m 0644 -- '$<' '$@'; \
+			echo "installed $@"; \
+		fi
 
 check-tools:
 	@command -v $(PDFLATEX) >/dev/null || { echo "Missing $(PDFLATEX)"; exit 1; }

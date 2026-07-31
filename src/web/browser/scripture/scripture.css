@@ -694,6 +694,46 @@ a:hover { text-decoration-thickness: 2px; }
 
 .facts dd { margin: 0; color: var(--ink-soft); }
 
+/* ---- Print editions ---- */
+
+.downloads {
+  margin: 2.5rem 0 0;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid var(--section-pale);
+}
+
+.downloads h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.05rem;
+  color: var(--section-ink);
+}
+
+.download-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.download-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+}
+
+.download-track {
+  flex: 0 0 6rem;
+  font-weight: 600;
+  color: var(--section-ink);
+}
+
+.download-note {
+  margin: 0.9rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
 /* ---- Narrow screens ---- */
 
 @media (max-width: 34rem) {
