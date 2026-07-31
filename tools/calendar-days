@@ -28,10 +28,13 @@ no general table of liturgical days, so a date that carries a fixed-date feast
 and a temporal day carries both, unranked. An honest list beats a confident
 wrong pick.
 
-*A day is placed only where the guidance fixes it.* The Ember Days of Advent and
-September, the Rogation Mass and the Sacred Heart have masses in the 1962 index
-and no rule in the guidance that fixes their date, so this tool leaves them
-unplaced and `coverage` says so. Inventing the rule would be worse than the gap.
+*A day is placed only where the guidance fixes it.* Nothing here dates a mass
+that the guidance leaves undated; `coverage` reports such a mass as never placed
+and says why. Inventing the rule would be worse than the gap. The Ember Days of
+Advent and September, the two Litanies and the Sacred Heart were exactly that
+gap until the guidance grew its "Ember Days, Litanies and the Sacred Heart"
+section, and they are placed here only because that section now states their
+anchors and their loci.
 """
 from __future__ import annotations
 
@@ -106,17 +109,16 @@ FIXED_DATE_RULE = "the calendar's own index pins this mass to this month and day
 # Masses whose day the guidance does not fix. Never placed; reported by
 # `coverage` with the reason. A mass that is never placed and is absent from
 # this map is reported with a generic reason instead, so an index that grows a
-# new mass surfaces rather than silently vanishing.
-UNPLACEABLE = {
-    ("roman-1962", "advent-ember-wednesday"): "the Advent Ember Days are not dated in " + GUIDANCE,
-    ("roman-1962", "advent-ember-friday"): "the Advent Ember Days are not dated in " + GUIDANCE,
-    ("roman-1962", "advent-ember-saturday"): "the Advent Ember Days are not dated in " + GUIDANCE,
-    ("roman-1962", "september-ember-wednesday"): "the September Ember Days are not dated in " + GUIDANCE,
-    ("roman-1962", "september-ember-friday"): "the September Ember Days are not dated in " + GUIDANCE,
-    ("roman-1962", "september-ember-saturday"): "the September Ember Days are not dated in " + GUIDANCE,
-    ("roman-1962", "rogation-mass"): "neither the greater nor the lesser Litanies are dated in " + GUIDANCE,
-    ("roman-1962", "sacred-heart"): "no offset from Easter is given for the Sacred Heart in " + GUIDANCE,
-}
+# new mass surfaces rather than silently vanishing. The map is empty because the
+# guidance now dates every mass both calendars carry; it is kept because the
+# next mass added to an index without a rule must be reported, not hidden.
+UNPLACEABLE: dict[tuple[str, str], str] = {}
+
+# The Ember weeks, from the one sentence in the guidance's Ember table: the
+# Wednesday, Friday and Saturday after the Sunday each week is named from. The
+# offsets are from that Sunday, so the same three numbers serve all four weeks
+# and no week restates them.
+EMBER_DAYS = ((3, "wednesday"), (5, "friday"), (6, "saturday"))
 
 # A date-pinned mass that is also the subject of a territorial transfer. The
 # postconciliar index carries the Epiphany twice, once in the seasonal section
@@ -156,6 +158,14 @@ def sunday_on_or_before(when: date) -> date:
 def sunday_after(when: date) -> date:
     """The first Sunday strictly after `when`."""
     return when + timedelta(days=7 - (when.weekday() + 1) % 7)
+
+
+def nth_sunday_of_month(civil_year: int, month: int, nth: int) -> date:
+    """General rubric 19 as the guidance states it: the first Sunday of a month
+    is the one occurring first in it, that is falling from the first to the
+    seventh day, and the rest are counted from there."""
+    first = date(civil_year, month, 1)
+    return first + timedelta(days=(6 - first.weekday()) % 7 + 7 * (nth - 1))
 
 
 def first_sunday_of_advent(civil_year: int) -> date:
@@ -280,14 +290,23 @@ def build_1962(ending: int, known: set[str]) -> Year:
     a = year.anchors
     easter = a.easter
 
-    # Advent. The guidance fixes the boundary and nothing else in the season:
-    # the Ember Days of Advent have no stated date and stay unplaced.
     year.put(a.begins, "advent-1", "the fourth Sunday before 25 December")
     for n in (2, 3, 4):
         year.put(
             a.begins + timedelta(days=7 * (n - 1)),
             f"advent-{n}",
             f"First Sunday of Advent +{7 * (n - 1)}",
+        )
+
+    # The Ember Days of Advent follow the Third Sunday of Advent, which hangs
+    # from the Advent boundary and not from Easter, so there is no offset from
+    # Easter to write and the guidance states none.
+    advent_3 = a.begins + timedelta(days=14)
+    for offset, name in EMBER_DAYS:
+        year.put(
+            advent_3 + timedelta(days=offset),
+            f"advent-ember-{name}",
+            f"Third Sunday of Advent +{offset}",
         )
 
     # The Sunday within the octave of the Nativity. When 25 December is itself a
@@ -368,6 +387,30 @@ def build_1962(ending: int, known: set[str]) -> Year:
             f"Easter +{7 + 7 * (n - 1)}",
         )
 
+    # The two Litanies share one formulary, `in Litaniis maioribus et minoribus`,
+    # so the same mass is placed on all four days. The greater Litanies keep a
+    # civil date; general rubric 80 states its own transfer condition and its own
+    # replacement day, which is why this transfer is computed where a territorial
+    # one never is. The lesser Litanies are the three days before the Ascension;
+    # rubric 87's faculty to move them is a local decision and is not computed.
+    litania_maior = date(ending, 4, 25)
+    if litania_maior in (easter, easter + timedelta(days=1)):
+        year.put(
+            easter + timedelta(days=2),
+            "rogation-mass",
+            "the greater Litanies: 25 April falls on Easter Sunday or Easter "
+            "Monday, so they keep the following Tuesday, which is Easter +2",
+        )
+    else:
+        year.put(litania_maior, "rogation-mass", "the greater Litanies: 25 April")
+    for offset, name in ((36, "Monday"), (37, "Tuesday"), (38, "Wednesday")):
+        year.put(
+            easter + timedelta(days=offset),
+            "rogation-mass",
+            f"the lesser Litanies: {name} before the Ascension, Easter +{offset}; "
+            "a transfer by the local Ordinary is not computed",
+        )
+
     thursday_form, sunday_form = TERRITORIAL_OPTIONS["ascension"]
     year.put(easter + timedelta(days=38), "vigil-of-the-ascension", "Easter +38", thursday_form)
     year.put(a.ascension_thursday, "ascension", "Easter +39", thursday_form)
@@ -399,6 +442,22 @@ def build_1962(ending: int, known: set[str]) -> Year:
     corpus_thursday, corpus_sunday = TERRITORIAL_OPTIONS["corpus-christi"]
     year.put(a.corpus_christi_thursday, "corpus-christi", "Easter +60", corpus_thursday)
     year.put(a.corpus_christi_sunday, "corpus-christi", "Easter +63", corpus_sunday)
+    year.put(
+        easter + timedelta(days=68),
+        "sacred-heart",
+        "Easter +68, the Friday after the second Sunday after Pentecost",
+    )
+
+    # The Ember Days of September follow the third Sunday of September, reckoned
+    # by general rubric 19. This is a Sunday of the civil month, not an offset
+    # from Easter, so it is computed on its own anchor.
+    september_3 = nth_sunday_of_month(ending, 9, 3)
+    for offset, name in EMBER_DAYS:
+        year.put(
+            september_3 + timedelta(days=offset),
+            f"september-ember-{name}",
+            f"third Sunday of September +{offset}",
+        )
 
     resumed = max(after - 24, 0)
     for slot in range(2, min(23, after - 1) + 1):
@@ -937,6 +996,30 @@ WORKED_SLOTS_2008 = {
     "2008-11-09": "resumed-epiphany-5",
     "2008-11-16": "resumed-epiphany-6",
 }
+# The windows the guidance's Ember and Litany section states outright, checked
+# by (month, day) across the whole span rather than by date, since dates sort by
+# year and would collapse a five-week window to a three-day one.
+WORKED_WINDOWS = {
+    "advent-ember-wednesday": ((12, 14), (12, 20)),
+    "advent-ember-friday": ((12, 16), (12, 22)),
+    "advent-ember-saturday": ((12, 17), (12, 23)),
+    "september-ember-wednesday": ((9, 18), (9, 24)),
+    "september-ember-friday": ((9, 20), (9, 26)),
+    "september-ember-saturday": ((9, 21), (9, 27)),
+    "sacred-heart": ((6, 1), (7, 2)),
+}
+# Each mass's day of the week, which no rule above states as a weekday and every
+# one of them implies. A rule that drifted off its weekday would still produce a
+# plausible-looking window.
+WORKED_WEEKDAYS = {
+    "advent-ember-wednesday": 2,
+    "advent-ember-friday": 4,
+    "advent-ember-saturday": 5,
+    "september-ember-wednesday": 2,
+    "september-ember-friday": 4,
+    "september-ember-saturday": 5,
+    "sacred-heart": 4,
+}
 # Independent spot checks named in the task, not taken from the guidance tables.
 SPOT_CHECKS = {
     "ash-wednesday-2026": ("2026-02-18", lambda: gregorian_easter(2026) - timedelta(days=46)),
@@ -1062,6 +1145,40 @@ def check_1962(known: set[str]) -> list[str]:
             problems.append(
                 f"2008: the guidance's nominal slot map puts {key} on {stamp}, computed {held}"
             )
+    # The Ember, Litany and Sacred Heart windows, over the span this tool emits.
+    seen: dict[str, list[date]] = {}
+    litanies: dict[int, list[date]] = {}
+    for ending in range(FIRST_YEAR, LAST_YEAR + 1):
+        for when, entries in build_1962(ending, known).placements.items():
+            for entry in entries:
+                if entry["key"] in WORKED_WINDOWS:
+                    seen.setdefault(entry["key"], []).append(when)
+                elif entry["key"] == "rogation-mass":
+                    litanies.setdefault(ending, []).append(when)
+    for key, (low, high) in sorted(WORKED_WINDOWS.items()):
+        days = seen.get(key) or []
+        if not days:
+            problems.append(f"{key}: the guidance states a window and nothing was placed")
+            continue
+        got = (min((d.month, d.day) for d in days), max((d.month, d.day) for d in days))
+        if got != (low, high):
+            problems.append(f"{key}: guidance window {(low, high)}, computed {got}")
+        off = sorted({d.weekday() for d in days} - {WORKED_WEEKDAYS[key]})
+        if off:
+            problems.append(f"{key}: falls on weekday {off}, not {WORKED_WEEKDAYS[key]}")
+    # Four Litany days a year: 25 April or its stated replacement, and the three
+    # days before the Ascension. The guidance says the transfer lands on Easter +2.
+    for ending, days in sorted(litanies.items()):
+        easter = gregorian_easter(ending)
+        want = {easter + timedelta(days=n) for n in (36, 37, 38)}
+        april = date(ending, 4, 25)
+        want.add(easter + timedelta(days=2) if april in (easter, easter + timedelta(days=1)) else april)
+        if set(days) != want:
+            problems.append(
+                f"{ending}: the Litany days are {sorted(d.isoformat() for d in want)}, "
+                f"computed {sorted(d.isoformat() for d in days)}"
+            )
+
     # The guidance's stated invariants over its own field of validity.
     for ending in range(GUIDANCE_SPAN[0], GUIDANCE_SPAN[1] + 1):
         facts = build_1962(ending, known).facts
@@ -1126,7 +1243,7 @@ def run_check(arguments: argparse.Namespace) -> dict:
         "calendars": seen,
         "checked": {
             "advent_agreement_span": list(GUIDANCE_SPAN),
-            "worked_1962_rows": len(WORKED_1962) + len(WORKED_SLOTS_2008),
+            "worked_1962_rows": len(WORKED_1962) + len(WORKED_SLOTS_2008) + len(WORKED_WINDOWS),
             "worked_anchor_rows": len(WORKED_ANCHORS) + len(SPOT_CHECKS),
             "worked_cycle_rows": len(WORKED_INTERVALS) + len(WORKED_PAIRS) + len(WORKED_SERIES),
             "worked_ordinary_time_rows": len(WORKED_ORDINARY),

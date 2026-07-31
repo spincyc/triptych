@@ -147,6 +147,39 @@ for year in older["liturgical_years"]:
     assert facts["surplus"] in (0, 1), facts
 # The Epiphany is not transferred in this calendar, and the file says why.
 assert "not computed" in older["territorial"]["epiphany"]["transferred_sunday_form"]
+
+# The Ember Days, the two Litanies and the Sacred Heart, on the anchors the
+# guidance states. Easter 2026 is 5 April; the Advent Ember Days of December
+# 2026 belong to the liturgical year the same civil-year file also carries.
+older_keys = {stamp: {c["key"] for c in row} for stamp, row in older["days"].items()}
+for stamp, key in (
+    # The greater Litanies keep 25 April; the lesser are the three days before
+    # the Ascension, and one formulary serves all four.
+    ("2026-04-25", "rogation-mass"),
+    ("2026-05-11", "rogation-mass"),
+    ("2026-05-12", "rogation-mass"),
+    ("2026-05-13", "rogation-mass"),
+    ("2026-06-12", "sacred-heart"),
+    # After the third Sunday of September, which in 2026 is 20 September.
+    ("2026-09-23", "september-ember-wednesday"),
+    ("2026-09-25", "september-ember-friday"),
+    ("2026-09-26", "september-ember-saturday"),
+    # After the Third Sunday of Advent, which in 2026 is 13 December.
+    ("2026-12-16", "advent-ember-wednesday"),
+    ("2026-12-18", "advent-ember-friday"),
+    ("2026-12-19", "advent-ember-saturday"),
+):
+    assert key in older_keys.get(stamp, set()), (stamp, key, older_keys.get(stamp))
+# Each Ember and Litany mass stands on exactly the days computed for it and on
+# no others, so a rule that also fired somewhere else would fail here.
+for key, want in (
+    ("rogation-mass", {"2026-04-25", "2026-05-11", "2026-05-12", "2026-05-13"}),
+    ("sacred-heart", {"2026-06-12"}),
+    ("september-ember-wednesday", {"2026-09-23"}),
+    ("advent-ember-saturday", {"2026-12-19"}),
+):
+    got = {stamp for stamp, keys in older_keys.items() if key in keys}
+    assert got == want, (key, sorted(got), sorted(want))
 PY
 
 # A year in which 25 December is a Sunday has no Sunday within the octave, and
@@ -195,10 +228,23 @@ for name, row in rows.items():
     # A mass the guidance cannot date is reported with the reason, never placed.
     for mass in row["masses_never_placed"]:
         assert mass["why"], mass
-older = rows["roman-1962"]
-unplaced = {mass["key"] for mass in older["masses_never_placed"]}
-assert "september-ember-wednesday" in unplaced, sorted(unplaced)
-assert "rogation-mass" in unplaced, sorted(unplaced)
+PY
+
+# Over the whole emitted span every mass in both indexes is reachable. A mass
+# that validates, is in the calendar and no date can reach is the defect this
+# gate exists to catch, so the number is asserted at zero rather than watched.
+run_tool coverage --format json >"$sandbox/span.json"
+python3 - "$sandbox/span.json" <<'PY'
+import json, sys
+
+payload = json.load(open(sys.argv[1], encoding="utf-8"))
+for row in payload["coverage"]:
+    never = row["masses_never_placed"]
+    assert not never, (row["calendar"], sorted(mass["key"] for mass in never))
+    assert row["masses_placed"] == row["masses"], row
+    # The reason field still has to work: it is what reports the next mass
+    # someone adds to an index the guidance cannot date.
+    assert isinstance(never, list)
 PY
 
 # An empty calendar root is an error rather than a silent success.
