@@ -22,11 +22,11 @@ worth less than an empty page:
 * an extent in any numbering but `_projection.CANONICAL`, which is the whole of
   Rule 3 — a fragment stored against a bare "Psalm 9:22" is anchored to nothing;
 * a fragment whose work-alias group reaches books its canonical title does not
-  name, which is Rule 8 and TASK-100. `guidance/catena.md` reports two such
-  groups; measured here there are four. Aquinas and Theophylact are the two it
-  names, and beside them stand Albert the Great's commentary on the Twelve
-  Minor Prophets filed under *Commentarii in Amos prophetam* and Theodoret's
-  Jeremiah-Baruch-Lamentations filed under *Commentarius in Ieremiam*;
+  name, which is Rule 8 and TASK-100. `guidance/catena.md` records two such
+  groups, Aquinas's and Theophylact's Pauline commentaries; both were fixed by a
+  re-promoted harvest while this was being written, and one the design never
+  recorded survives — Theodoret's commentary covers Jeremiah, Baruch and
+  Lamentations and is filed under *Commentarius in Ieremiam*;
 * a fragment whose passage record reaches, through its edition, a work that is
   not the work the fragment claims. That is not pedantry: the NPNF volumes are
   tracked as anthologies whose `responsible` is Philip Schaff, so a label
@@ -79,6 +79,9 @@ FRAGMENT_FIELDS = {
     "extent",
     "basis",
 }
+# Optional, and required exactly when the passage's edition belongs to another
+# work. See `_passage_errors`.
+OPTIONAL_FRAGMENT_FIELDS = {"constituent_of"}
 EXTENT_FIELDS = {
     "token",
     "first_chapter",
@@ -410,6 +413,16 @@ class Sources(NamedTuple):
     passages: dict[str, dict[str, Any]]
 
 
+_SOURCES_CACHE: dict[Path, "Sources"] = {}
+
+
+def _sources_cache(root: Path) -> "Sources":
+    """The source records, read once per root, for the same reason as above."""
+    if root not in _SOURCES_CACHE:
+        _SOURCES_CACHE[root] = load_sources(root)
+    return _SOURCES_CACHE[root]
+
+
 def load_sources(root: Path = ROOT) -> Sources:
     return Sources(
         works=_records(root, "works/*/*/work.toml"),
@@ -434,6 +447,32 @@ def load_edges(root: Path = ROOT) -> dict[str, Any]:
             f"{EDGES_RELATIVE}: declares schema {data.get('schema')!r}, expected {SCHEMA!r}"
         )
     return data
+
+
+def _author_equivalences(
+    data: dict[str, Any], where: str, errors: list[str]
+) -> dict[str, str]:
+    """Declared source-library-name to harvest-name equivalences.
+
+    Two naming conventions meet at this edge and some people are named
+    differently in each. Matching them by resemblance is how two people become
+    one, so each equivalence is a row with a reason, and an undeclared
+    disagreement stays an error.
+    """
+    pairs: dict[str, str] = {}
+    for ordinal, entry in enumerate(data.get("author_aliases") or (), start=1):
+        label = f"{where}: author_aliases[{ordinal}]"
+        if not isinstance(entry, dict) or set(entry) != {
+            "source_library",
+            "harvest",
+            "reason",
+        }:
+            errors.append(f"{label} needs source_library, harvest and reason")
+            continue
+        if not str(entry.get("reason") or "").strip():
+            errors.append(f"{label} needs a reason")
+        pairs[str(entry["source_library"])] = str(entry["harvest"])
+    return pairs
 
 
 def _extent(value: Any) -> Extent | None:
@@ -466,6 +505,7 @@ def validate(root: Path = ROOT) -> list[str]:
 
     sources = load_sources(root)
     forms = book_forms(root)
+    equivalent = _author_equivalences(data, where, errors)
     groups = {
         (str(group.get("author")), str(group.get("work"))): group
         for group in _load_yaml(root / ALIASES_RELATIVE).get("groups") or []
@@ -483,7 +523,7 @@ def validate(root: Path = ROOT) -> list[str]:
         if not isinstance(fragment, dict):
             errors.append(f"{label} must be a mapping")
             continue
-        unknown = sorted(set(fragment) - FRAGMENT_FIELDS)
+        unknown = sorted(set(fragment) - FRAGMENT_FIELDS - OPTIONAL_FRAGMENT_FIELDS)
         missing = sorted(FRAGMENT_FIELDS - set(fragment))
         if unknown:
             errors.append(f"{label} has unknown fields: {', '.join(unknown)}")
@@ -540,7 +580,7 @@ def validate(root: Path = ROOT) -> list[str]:
                     f"in {ALIASES_RELATIVE.as_posix()}"
                 )
             else:
-                if author and key[0] != author:
+                if author and key[0] != author and equivalent.get(author) != key[0]:
                     errors.append(
                         f"{label}: {work_id} is by {author!r} and the alias group is "
                         f"by {key[0]!r}; the two identity spaces disagree"
@@ -552,7 +592,7 @@ def validate(root: Path = ROOT) -> list[str]:
                         f"check because {reason} (Rule 8, TASK-100)"
                     )
 
-        errors.extend(_passage_errors(sources, label, passage_id, work_id))
+        errors.extend(_passage_errors(sources, label, passage_id, work_id, fragment))
 
     errors.extend(_blocked_errors(sources, data, where, seen))
     errors.extend(_solved_case_errors(data, where, seen))
@@ -575,11 +615,22 @@ def _blocked_errors(
         if not isinstance(entry, dict) or set(entry) != {
             "passage_ids",
             "work_alias",
+            "numbering",
+            "extent",
             "reason",
             "fix",
         }:
-            errors.append(f"{label} needs passage_ids, work_alias, reason and fix")
+            errors.append(
+                f"{label} needs passage_ids, work_alias, numbering, extent, reason and fix"
+            )
             continue
+        # A blocked entry is placed by the same rules as a rendered one, so the
+        # page can say "held here and not renderable" under the right chapter
+        # rather than under the whole book.
+        if entry.get("numbering") != _projection.CANONICAL:
+            errors.append(f"{label} declares numbering that is not {_projection.CANONICAL!r}")
+        if _extent(entry.get("extent")) is None:
+            errors.append(f"{label} extent needs exactly {', '.join(sorted(EXTENT_FIELDS))}")
         for field in ("reason", "fix"):
             if not str(entry.get(field) or "").strip():
                 errors.append(f"{label} needs a {field}")
@@ -634,7 +685,11 @@ def _extent_errors(
 
 
 def _passage_errors(
-    sources: Sources, label: str, passage_id: str, work_id: str
+    sources: Sources,
+    label: str,
+    passage_id: str,
+    work_id: str,
+    fragment: dict[str, Any] | None = None,
 ) -> list[str]:
     errors: list[str] = []
     passage = sources.passages.get(passage_id)
@@ -658,10 +713,39 @@ def _passage_errors(
         return errors
     reached = str(edition.get("work_id") or "")
     if reached != work_id:
-        errors.append(
-            f"{label} claims {work_id} but its edition belongs to {reached}; a label "
-            f"derived from the container would name the wrong author"
-        )
+        # The passage sits inside an anthology. That is the ordinary shape of a
+        # patristic translation — Basil's Hexaemeron is printed inside NPNF
+        # 2-8 — and refusing it outright would refuse most of the corpus. What
+        # may not happen is deriving the label from the container, because the
+        # container's `responsible` is its editors: NPNF 2-8's is "Philip
+        # Schaff and Henry Wace", and a page taking the author from there would
+        # publish Schaff as the author of Basil.
+        #
+        # So the relationship is declared instead of inferred. The fragment
+        # names the container it is printed in, the container must actually be
+        # an anthology, and the author still comes from the work record the
+        # fragment names. A mismatch that is not declared, or a declaration
+        # against something that is not a container, is still an error.
+        declared = str((fragment or {}).get("constituent_of") or "")
+        container_work = sources.works.get(reached) or {}
+        kind = str(container_work.get("work_type") or "")
+        if not declared:
+            errors.append(
+                f"{label} claims {work_id} but its edition belongs to {reached}; "
+                f"declare constituent_of = {edition_id!r} if it is printed inside a "
+                f"container, because a label derived from the container would name "
+                f"the wrong author"
+            )
+        elif declared != edition_id:
+            errors.append(
+                f"{label} declares constituent_of {declared}, but the passage's "
+                f"edition is {edition_id}"
+            )
+        elif "anthology" not in kind and "collection" not in kind:
+            errors.append(
+                f"{label} declares constituent_of {declared}, whose work {reached} "
+                f"is {kind!r} and not a container"
+            )
     if not str(edition.get("language") or "").strip():
         errors.append(f"{label}: {edition_id} declares no language")
 
@@ -719,7 +803,7 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
     so that a tie and a missing year both sort the same way on every build.
     """
     data = load_edges(root)
-    sources = load_sources(root)
+    sources = _sources_cache(root)
     rows: list[dict[str, Any]] = []
     for fragment in data.get("fragments") or ():
         extent = _extent(fragment.get("extent"))
@@ -744,6 +828,20 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
                 "translators": list(edition.get("translators") or ()),
                 "locator": str(passage.get("locus") or ""),
                 "rights": str(artifact.get("rights_status") or ""),
+                # Shown truthfully or not at all. `inspected` means someone read
+                # it; `verified` means it was collated against the controlling
+                # witness. Two agreeing web transcriptions are the first and not
+                # the second, and a page that printed them alike would be
+                # claiming a check nobody performed.
+                "review": (
+                    "verified" if "verified" in (passage.get("states") or ())
+                    else "inspected" if "inspected" in (passage.get("states") or ())
+                    else "acquired"
+                ),
+                # The container a fragment is printed inside, where it is not
+                # printed under its own work's edition. Named so the source line
+                # can say where a reader would actually find it.
+                "container": str((fragment.get("constituent_of") or "")),
                 "basis": str(fragment.get("basis") or ""),
                 "text": str(passage.get("text") or ""),
                 "extent": {
@@ -766,6 +864,21 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
     return rows
 
 
+_INDEX_CACHE: dict[Path, Any] = {}
+
+
+def _commentary_index(root: Path) -> Any:
+    """The harvested index, read once per root.
+
+    It is a megabyte of YAML and the canon has seventy-three books; reading it
+    per book turned one derivation into seventy-three and took the emit past two
+    minutes.
+    """
+    if root not in _INDEX_CACHE:
+        _INDEX_CACHE[root] = _load_yaml(root / INDEX_RELATIVE)
+    return _INDEX_CACHE[root]
+
+
 def leads_for_book(root: Path, token: str, name: str) -> dict[str, list[dict[str, str]]]:
     """L1 rows for a book, keyed by chapter, with the confidence removed.
 
@@ -775,7 +888,7 @@ def leads_for_book(root: Path, token: str, name: str) -> dict[str, list[dict[str
     there. Dropping the column at generation is the same guard `bibles.json`
     uses against a licensed edition: a page cannot show what it was never sent.
     """
-    index = _load_yaml(root / INDEX_RELATIVE)
+    index = _commentary_index(root)
     prefix = f"{name} "
     leads: dict[str, list[dict[str, str]]] = {}
     for entry in index.get("passages") or ():
@@ -803,6 +916,104 @@ def leads_for_book(root: Path, token: str, name: str) -> dict[str, list[dict[str
     return leads
 
 
+def offered_editions(root: Path) -> list[dict[str, str]]:
+    """The publishable editions and the numbering each declares."""
+    editions = []
+    for path in sorted((root / BIBLES_RELATIVE).glob("*/index.yaml")):
+        index = _load_yaml(path)
+        if not index.get("publishable"):
+            continue
+        editions.append(
+            {
+                "id": path.parent.name,
+                "numbering": str(index.get("numbering") or ""),
+                "psalter": str(index.get("psalter") or ""),
+            }
+        )
+    return editions
+
+
+def refusals_for_book(root: Path, token: str) -> dict[str, list[dict[str, Any]]]:
+    """Where the projection declines to place a canonical locus in an edition.
+
+    Rule 4: where the projection refuses, the page refuses. It must not fall
+    back to the same verse number, which is the wrong answer wearing the right
+    one's clothes. The refusals are computed here and shipped as data because
+    `guidance/web-data.md` keeps numbering logic out of the browser entirely —
+    the page reads a list, it does not resolve anything.
+
+    Genesis reaches no refusal, and that is not a reason to leave the path
+    untested: the psalter is where they live. Sixteen psalms are recorded
+    `displaced`, their verse numbers corresponding while their bodies divide
+    elsewhere, and the projection deliberately declines to say where the
+    boundary moves because no source this project can reach models it.
+    """
+    refusals: dict[str, list[dict[str, Any]]] = {}
+    for edition in offered_editions(root):
+        rows: list[dict[str, Any]] = []
+        if token == "Ps":
+            for row in _projection.displaced_psalms():
+                rows.append(
+                    {
+                        "chapter": int(row.cited_locus.split(".")[1]),
+                        "verse": None,
+                        "kind": row.kind,
+                        "note": row.note,
+                    }
+                )
+            if edition["numbering"] != _projection.CANONICAL:
+                for row in _projection.psalm_rows(edition["numbering"]):
+                    if row.kind != "unrecorded":
+                        continue
+                    _, chapter, verse = row.cited_locus.split(".")
+                    rows.append(
+                        {
+                            "chapter": int(chapter),
+                            "verse": int(verse),
+                            "kind": row.kind,
+                            "note": row.note,
+                        }
+                    )
+        if rows:
+            refusals[edition["id"]] = sorted(
+                rows, key=lambda row: (row["chapter"], row["verse"] or 0, row["kind"])
+            )
+    return refusals
+
+
+def blocked_for_book(root: Path, token: str) -> list[dict[str, Any]]:
+    """Held fragments a book carries that may not render, with the reason.
+
+    The label here comes from the harvest identity rather than from a work
+    record, which is the whole reason the entry is blocked: there is no work
+    record to derive an author from. That is safe only because nothing in this
+    list is a text — an entry states that a fragment exists and is withheld,
+    and states why.
+    """
+    data = load_edges(root)
+    rows: list[dict[str, Any]] = []
+    for entry in data.get("blocked") or ():
+        extent = _extent(entry.get("extent"))
+        if extent is None or extent.token != token:
+            continue
+        alias = entry.get("work_alias") or {}
+        rows.append(
+            {
+                "author": str(alias.get("author") or ""),
+                "work": str(alias.get("work") or ""),
+                "reason": str(entry.get("reason") or ""),
+                "extent": {
+                    "token": extent.token,
+                    "first_chapter": extent.first_chapter,
+                    "first_verse": extent.first_verse,
+                    "last_chapter": extent.last_chapter,
+                    "last_verse": extent.last_verse,
+                },
+            }
+        )
+    return rows
+
+
 def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
     """Write what the browser fetches: one file per book, and one index.
 
@@ -821,7 +1032,8 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
     for book in books:
         rows = fragments_for_book(root, book["token"])
         leads = leads_for_book(root, book["token"], book["name"])
-        if not rows and not leads:
+        held_back = blocked_for_book(root, book["token"])
+        if not rows and not leads and not held_back:
             continue
         path = directory / f"{book['token']}.json"
         path.write_text(
@@ -833,6 +1045,8 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
                     "numbering": _projection.CANONICAL,
                     "fragments": rows,
                     "leads": leads,
+                    "refusals": refusals_for_book(root, book["token"]),
+                    "blocked": held_back,
                 },
                 ensure_ascii=False,
                 indent=1,

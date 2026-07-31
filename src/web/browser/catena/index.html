@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The catena</title>
+<!-- The shared machinery first, then this section's colour. Both are local;
+     the page makes no external request of any kind. -->
+<link rel="stylesheet" href="../shared/browser-core.css">
+<link rel="stylesheet" href="catena.css">
+</head>
+<body class="catena-page">
+<a class="skip-link" href="#reading">Skip to the chapter</a>
+
+<!-- The reference is the fact and it is the whole header. What a catena is,
+     and what this page does not yet hold, are in the footer. -->
+<header class="page-header">
+  <h1>
+    <span class="page-mark" aria-hidden="true">§</span>
+    <span id="reference">Loading…</span>
+    <span class="reference-book" id="reference-book"></span>
+  </h1>
+  <p class="tally" id="tally"></p>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="controls" class="controls" aria-labelledby="controls-heading">
+  <h2 id="controls-heading" class="visually-hidden">Choose a book, a chapter and a translation</h2>
+
+  <div class="field">
+    <label for="book-select">Book</label>
+    <select id="book-select" name="book" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="chapter-select">Chapter</label>
+    <select id="chapter-select" name="chapter" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="bible-select">Translation</label>
+    <select id="bible-select" name="bible" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-steps">
+    <span class="field-legend" id="step-legend">Chapter</span>
+    <div class="steps" role="group" aria-labelledby="step-legend">
+      <button type="button" id="prev-button" disabled>
+        <span aria-hidden="true">←</span> Previous
+      </button>
+      <button type="button" id="next-button" disabled>
+        Next <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- Not a live region: replacing it would read a whole chapter aloud on every
+     change. The shared script announces a one-line summary instead. -->
+<main id="reading" class="reading" tabindex="-1" aria-busy="true">
+  <p class="placeholder">Loading the chapter…</p>
+</main>
+
+<footer class="page-footer">
+  <p>
+    A <em>catena</em> is a chain of excerpted comment running beside the text.
+    This page shows only commentary this project actually holds: a work believed
+    to comment here but not yet acquired is listed separately, under its own
+    heading, and never beside an excerpt. Fragments are stored at the extent
+    their author addressed and the chapter view is derived from that, so a
+    fragment reaching across a chapter boundary appears under both chapters at
+    its full extent rather than being cut at the seam.
+  </p>
+  <p>
+    <a href="../scripture/">The Story of Salvation</a> ·
+    <a href="../liturgy/">The propers of the Mass</a>
+  </p>
+</footer>
+
+<script src="../shared/browser-core.js"></script>
+<script src="catena-model.js"></script>
+<script src="catena.js"></script>
+</body>
+</html>

@@ -327,13 +327,58 @@ class IdentityTests(CatenaFixture):
               - hexaemeron
             """
         )
+        self.write(
+            "src/sources/works/basil/hexaemeron/work.toml",
+            """
+            schema = 1
+            record_type = "work"
+            id = "work.basil.hexaemeron"
+            title = "Homiliae in Hexaemeron"
+            responsible = "Basil the Great"
+            work_type = "patristic-homily-series"
+            """,
+        )
         self.write_edges(
             passage_id="passage.npnf.volume-8.new-york-1895.basil-1.2",
-            work_id="work.npnf.volume-8",
+            work_id="work.basil.hexaemeron",
             work_alias={"author": "Basil the Great", "work": "Homiliae in Hexaemeron"},
         )
         joined = " ".join(self.errors())
-        self.assertIn("the two identity spaces disagree", joined)
+        # Undeclared, the container mismatch is an error naming the fix.
+        self.assertIn("declare constituent_of", joined)
+
+        # Declared, the fragment renders and the author still comes from the
+        # work record rather than from the anthology's editors.
+        self.write_edges(
+            passage_id="passage.npnf.volume-8.new-york-1895.basil-1.2",
+            work_id="work.basil.hexaemeron",
+            work_alias={"author": "Basil the Great", "work": "Homiliae in Hexaemeron"},
+            constituent_of="edition.npnf.volume-8.new-york-1895",
+        )
+        self.assertEqual(self.errors(), [])
+        rows = _catena.fragments_for_book(self.root, "Gen")
+        self.assertEqual(rows[0]["author"], "Basil the Great")
+        self.assertEqual(
+            rows[0]["container"], "edition.npnf.volume-8.new-york-1895"
+        )
+
+    def test_a_constituent_declaration_must_name_a_real_container(self) -> None:
+        """The declaration may not be used to wave through an ordinary mismatch."""
+        self.write(
+            "src/sources/works/other/thing/work.toml",
+            """
+            schema = 1
+            record_type = "work"
+            id = "work.other.thing"
+            title = "Something Else"
+            responsible = "Someone"
+            work_type = "patristic-treatise"
+            """,
+        )
+        self.write_edges(work_id="work.other.thing", constituent_of=
+                         "edition.augustine.de-civitate-dei.dods-1871")
+        joined = " ".join(self.errors())
+        self.assertIn("and not a container", joined)
 
 
 class RightsTests(CatenaFixture):
@@ -392,16 +437,32 @@ class RightsTests(CatenaFixture):
 class TitleCoverageTests(unittest.TestCase):
     """Rule 8, measured against the repository's own alias table."""
 
-    def test_the_four_groups_whose_title_names_less_than_they_reach(self) -> None:
+    def test_the_group_whose_title_still_names_less_than_it_reaches(self) -> None:
+        """One residual failure, and it is not one guidance/catena.md records.
+
+        The design named two: Aquinas's and Theophylact's Pauline commentaries,
+        each grouped correctly and each named after Romans. Both were fixed
+        while this check was being written — the harvest was re-promoted and
+        their canonical titles now name the whole Pauline corpus. Theodoret's
+        remains: his commentary covers Jeremiah, Baruch and Lamentations and is
+        filed under *Commentarius in Ieremiam*, so a catena would render his
+        comment on Baruch under a title naming Jeremiah.
+        """
         failures = {(author, work) for author, work, _ in _catena.failing_groups(ROOT)}
-        self.assertIn(("Thomas Aquinas", "Super Epistolam ad Romanos lectura"), failures)
-        self.assertIn(
-            ("Theophylact of Ohrid", "Expositio in epistulam ad Romanos"), failures
-        )
-        # Two more than guidance/catena.md records, both real.
-        self.assertIn(("Albert the Great", "Commentarii in Amos prophetam"), failures)
         self.assertIn(("Theodoret of Cyrus", "Commentarius in Ieremiam"), failures)
-        self.assertEqual(len(failures), 4)
+        self.assertEqual(len(failures), 1)
+
+    def test_the_pauline_groups_the_design_named_now_pass(self) -> None:
+        forms = _catena.book_forms(ROOT)
+        import yaml
+
+        groups = yaml.safe_load(
+            (ROOT / _catena.ALIASES_RELATIVE).read_text(encoding="utf-8")
+        )["groups"]
+        for group in groups:
+            if group["author"] in ("Thomas Aquinas", "Theophylact of Ohrid"):
+                if "Pauli" in group["work"]:
+                    self.assertEqual(_catena.title_covers_group(group, forms), "")
 
     def test_every_declared_book_form_names_a_real_token(self) -> None:
         self.assertEqual(_catena.undeclared_form_tokens(ROOT), [])
@@ -505,6 +566,14 @@ class BlockedTests(CatenaFixture):
                 "work_alias": {
                     "author": "Augustine of Hippo",
                     "work": "De civitate Dei",
+                },
+                "numbering": "vulgate",
+                "extent": {
+                    "token": "Gen",
+                    "first_chapter": 1,
+                    "first_verse": 3,
+                    "last_chapter": 1,
+                    "last_verse": 5,
                 },
                 "reason": "A reason.",
                 "fix": "A fix.",

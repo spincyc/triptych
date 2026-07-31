@@ -32,10 +32,42 @@
 # The author is derived and never stored: it is the `responsible` of the
 # work record `work_id` names. `work_alias.author` is half of the key into
 # `work-aliases.yaml`, not a second copy, and the two must agree.
+# The two identity spaces name some people differently, and where they do the
+# equivalence is declared and reasoned rather than matched by resemblance. The
+# source library names a person as its work records do; the harvest names them
+# as the runs did. Neither is wrong and a validator cannot tell "Basil the
+# Great" from "Basil of Caesarea" without being told.
+author_aliases:
+- source_library: Basil of Caesarea
+  harvest: Basil the Great
+  reason: One person. The library names bishops by see and the harvest took the
+    epithet the runs used. Both name the Cappadocian who died in 379.
+
 schema: triptych-commentary-fragment-loci/v1
 updated: '2026-07-31'
 numbering: vulgate
 fragments:
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1
+  work_id: work.basil-of-caesarea.homiliae-in-hexaemeron
+  work_alias:
+    author: Basil the Great
+    work: Homiliae in Hexaemeron
+  constituent_of: edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895
+  text_date: 378
+  text_date_basis: Delivered at Caesarea in Lent 378, two years before Basil's death.
+    The date is the homilies' delivery, not the 1895 translation that carries them.
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 1
+    last_chapter: 1
+    last_verse: 1
+  basis: The first homily is the proem and the exposition of "In the beginning God
+    made the heaven and the earth", which it quotes and expounds at length. It reaches
+    no further verse. The series as a whole stops at Genesis 1:26 and the ninth homily
+    breaks off before the creation of man, so nothing here may be extended past that.
+
 - passage_id: passage.augustine.de-civitate-dei.dods-1871.11.6
   work_id: work.augustine.de-civitate-dei
   work_alias:
@@ -95,30 +127,6 @@ fragments:
     of the angels. That is Genesis 1:4-5. The chapter's later appeal to the luminaries
     of the fourth day is a contrast drawn against the reading and is not expounded.
 
-# Fragments that are held and still may not render, with the reason and the
-# fix. A refusal recorded here is data a reader and a maintainer can both see;
-# a fragment quietly missing from the list above would be indistinguishable
-# from one nobody ever acquired.
-blocked:
-- passage_ids:
-  - passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1.1
-  - passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1.2
-  work_alias:
-    author: Basil the Great
-    work: Homiliae in Hexaemeron
-  reason: The passages hang off edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895,
-    whose work is the anthology and whose responsible is "Philip Schaff and Henry Wace".
-    The author is derived from the work a fragment names, so rendering these would
-    print Schaff and Wace as the author of Basil's Hexaemeron. There is no work record
-    for the Hexaemeron at all, so there is nothing truthful to derive from.
-  fix: Register work.basil-of-caesarea.homiliae-in-hexaemeron with responsible "Basil
-    of Caesarea", give it edition.basil-of-caesarea.homiliae-in-hexaemeron.english-npnf2-8-1895
-    as work.ambrose.de-mysteriis already does for its NPNF translation, and repoint
-    the two passages' edition_id at it. Alternatively keep the anthology edition and
-    add a schema version 2 segment under a Basil edition naming the container artifact,
-    which guidance/sources.md provides for exactly this. The first is the idiom this
-    library already uses for a single father's work inside NPNF.
-
 # The cases the chapter derivation is replayed against. The derivation itself
 # lives once, in `src/web/browser/catena/catena-model.js`, because the browser
 # is what performs it; `catena check` runs that same file under node against
@@ -129,6 +137,7 @@ solved_chapters:
 - token: Gen
   chapter: 1
   passage_ids:
+  - passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1
   - passage.augustine.de-civitate-dei.dods-1871.11.6
   - passage.augustine.de-civitate-dei.dods-1871.11.7
   - passage.augustine.de-civitate-dei.dods-1871.11.19

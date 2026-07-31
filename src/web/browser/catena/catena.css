@@ -1,0 +1,306 @@
+/* ===========================================================================
+ * The catena — the commentary section's colour, and the chain's furniture
+ * ===========================================================================
+ *
+ * One page loads this: index.html, a chapter with every held commentary
+ * fragment beneath it.
+ *
+ * The site gives every section a colour; liturgy is red and scripture is gold,
+ * so commentary is VIOLET. Published, the values arrive from the site's own
+ * stylesheet the way the other sections' do; the block below is a development
+ * fallback for the file opened straight from the repository.
+ *
+ * THE VIOLET ACCENT IS NOT A TEXT COLOUR. --section-ink (#5b4088) measures
+ * 8.3:1 on white and is what carries text; --section-accent is for rules,
+ * markers and fills, where contrast is visibility rather than legibility.
+ *
+ * FACTS FIRST. The maintainer's standing direction for the site is that the
+ * page opens on what it is showing and everything else goes below. So the
+ * header is a reference and three controls, the chapter follows, the chain
+ * follows that, and every word explaining what a catena is sits in the footer.
+ * Nothing here is styled to be read before the text it is about.
+ *
+ * A FRAGMENT MUST NEVER LOOK LIKE A LEAD, AND A LEAD MUST NEVER LOOK LIKE A
+ * FRAGMENT. That is Rule 1 of the design and it is enforced visually as well
+ * as structurally: an excerpt is set in the serif at reading size inside a
+ * panel; a lead is a line in a plain list, in the sans, at 0.85rem, with no
+ * panel, no rule and no accent. The two cannot be confused at a glance, which
+ * is the only moment that matters.
+ * ======================================================================== */
+
+body:not(:has(> .site-header)) {
+  --section-accent: #7d5cb8;
+  --section-ink: #5b4088;
+  --section-wash: rgba(125, 92, 184, 0.14);
+  --section-pale: #d6c9ec;
+  --section-row: #efe9f8;
+  --section-line: #bda8dd;
+  --focus: var(--section-ink);
+}
+
+/* ---------------------------------------------------------------------------
+ * The header: a reference, not a masthead
+ * ------------------------------------------------------------------------ */
+
+.catena-page .page-header h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+}
+
+/* The chapter reference is the fact; the book it belongs to is context. */
+.catena-page .page-header .reference-book {
+  font-size: 0.62em;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* One line under the reference, and it is a count, not a description. */
+.tally {
+  margin: 0.35rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+
+.tally b {
+  font-weight: 600;
+  color: var(--section-ink);
+}
+
+/* ---------------------------------------------------------------------------
+ * The chapter
+ * ------------------------------------------------------------------------ */
+
+.chapter {
+  max-width: var(--measure);
+  margin: 0 0 2.5rem;
+}
+
+/* Verses run on as prose rather than one to a line: the chapter is here to be
+   read, and a stack of thirty-one short lines is a concordance, not a text. */
+.chapter .passage {
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * The chain
+ * ------------------------------------------------------------------------ */
+
+.chain {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: var(--measure);
+}
+
+.section-heading {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--section-pale);
+}
+
+.fragment {
+  background: var(--panel);
+  border: 1px solid var(--section-pale);
+  border-left: 0.3rem solid var(--section-accent);
+  border-radius: 0 3px 3px 0;
+  padding: 1rem 1.15rem;
+  margin: 0 0 1.1rem;
+}
+
+/* Author, work and extent, on one line where there is room. The date sits at
+   the end because the chain is already in date order: it confirms the position
+   rather than announcing it. */
+.fragment-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.55rem;
+  margin-bottom: 0.6rem;
+}
+
+.fragment-author {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--section-ink);
+}
+
+.fragment-work {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.fragment-date {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* The extent is the fragment's own claim about what it is about, so it is
+   always present and always the full extent, even under a chapter it only
+   reaches into. */
+.fragment-extent {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  flex-basis: 100%;
+}
+
+.fragment-extent .spans {
+  color: var(--section-ink);
+  font-weight: 600;
+}
+
+.fragment-text {
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  line-height: 1.62;
+  margin: 0;
+}
+
+/* Where the fragment came from and how to check it. Below the text, quiet, and
+   never above it. */
+.fragment-source {
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+  margin: 0.7rem 0 0;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--section-wash);
+}
+
+.fragment-source .sep::before {
+  content: "·";
+  margin: 0 0.4rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * The two things that are not fragments
+ *
+ * Both live below the chain and neither is allowed a panel, a left rule, an
+ * accent or the serif. A reader scrolling past must be unable to mistake
+ * either for an excerpt.
+ * ------------------------------------------------------------------------ */
+
+.aside {
+  max-width: var(--measure);
+  margin: 2.5rem 0 0;
+}
+
+.aside .section-heading {
+  color: var(--ink-faint);
+  border-bottom-color: var(--section-wash);
+}
+
+.aside-note {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  margin: 0 0 0.8rem;
+  line-height: 1.5;
+}
+
+.lead-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.lead {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin: 0 0 0.45rem;
+  break-inside: avoid;
+}
+
+.lead .lead-work {
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+/* A held fragment that may not render. It states its reason where a reader can
+   see it, because a fragment silently absent is indistinguishable from one
+   nobody ever acquired. */
+.blocked {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  border: 1px dashed var(--section-pale);
+  border-radius: 3px;
+  padding: 0.8rem 0.95rem;
+  margin: 0 0 0.8rem;
+}
+
+.blocked b {
+  color: var(--ink);
+}
+
+.blocked .why {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--ink-faint);
+}
+
+/* A refusal the projection made, rendered as a refusal. */
+.refusal {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--notice);
+  background: var(--notice-bg);
+  border-radius: 3px;
+  padding: 0.7rem 0.9rem;
+  margin: 0 0 1.2rem;
+  max-width: var(--measure);
+}
+
+/* ---------------------------------------------------------------------------
+ * Narrow
+ *
+ * A phone is about 20rem of usable width. The date leaves the head line rather
+ * than squeezing the author, the leads drop to one column, and the panels lose
+ * the padding that only ever bought margin.
+ * ------------------------------------------------------------------------ */
+
+@media (max-width: 32rem) {
+  .fragment {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .fragment-date {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+
+  .fragment-text {
+    font-size: 1rem;
+  }
+
+  .lead-list {
+    columns: 1;
+  }
+
+  .catena-page .page-header h1 {
+    gap: 0.15rem 0.6rem;
+  }
+}
