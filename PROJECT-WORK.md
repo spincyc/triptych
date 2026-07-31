@@ -416,6 +416,31 @@ move release hash records and every smoke-test filename together.
 
 ## Reconciliation history
 
+- 2026-07-31: Twenty-two commits, none pushed. **Site shape.** The landing page
+  became the library and its prose moved to `ABOUT.md`, which still opens
+  "Don't Panic"; the separate Library page was retired as a second name for the
+  same thing. The four reading pages were being copied into the artifact rather
+  than rendered, so they alone carried no Triptych header, navigation, footer or
+  robots metadata — they now render through `layout.html` like the other 131,
+  and all 135 were audited. Two hand-copied duplicates of the site's section
+  palette were deleted with that change. `doc/` became `pdf/`, so `src`, `pdf`
+  and `web` read as the three forms of every publication.
+  **Calendars.** Sixty commemorations folded into 1962 feast names became
+  entries of their own, and `check-calendar-masses` now refuses the pattern;
+  five absent celebrations were authored and three refused for want of a
+  witness; eight masses that existed and no date could reach were dated. Both
+  calendars are wholly reachable, 459 of 459 and 268 of 268.
+  **Scripture.** Every publishable bible now typesets as a two-column volume
+  carrying its own rights notice. 926 of 2190 propers citations were missing the
+  commentary index, 888 of them because the lookup preferred "Psalm" over the
+  parsed "Psalms". The Knox copyright question was settled from the primary
+  record: the US registrations were renewed, R525394 and R646862, so it is
+  protected until 2039 and 2043.
+  **Policy.** The maintainer withdrew the research-conduct rule, the
+  family-screening requirement and the six-concern alpha assessment, and
+  suspended research staleness. Nothing was rebaselined and no paper was
+  touched, because a cleared flag would have asserted a review that did not
+  happen.
 - 2026-07-31: Retired `PROJECT-HANDOFF-2026-07-30.md`. Every task in its "where
   to pick up" section had landed and its opening line, "nothing is committed,"
   had stopped being true. The two facts it held that no other artifact did — that
