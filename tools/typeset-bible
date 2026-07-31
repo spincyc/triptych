@@ -96,12 +96,12 @@ EXAMPLES = {
         Example(
             "tools/typeset-bible list --plan narrative-spine --format ids",
             (
-                "narrative-spine-overview-douay-rheims",
-                "narrative-spine-overview-king-james-version",
-                "narrative-spine-narrative-douay-rheims",
-                "narrative-spine-narrative-king-james-version",
-                "narrative-spine-year-douay-rheims",
-                "narrative-spine-year-king-james-version",
+                "narrative-spine-landmarks-douay-rheims",
+                "narrative-spine-landmarks-king-james-version",
+                "narrative-spine-story-douay-rheims",
+                "narrative-spine-story-king-james-version",
+                "narrative-spine-full-account-douay-rheims",
+                "narrative-spine-full-account-king-james-version",
             ),
             "the volumes of one abridged plan: every tier in every issued edition",
         ),
@@ -121,9 +121,9 @@ EXAMPLES = {
             ),
         ),
         Example(
-            "tools/typeset-bible check --volume narrative-spine-overview-king-james-version --verbose",
+            "tools/typeset-bible check --volume narrative-spine-landmarks-king-james-version --verbose",
             (
-                "narrative-spine-overview-king-james-version: 36 readings, 43 chapters, 1142 verses, 1 refused (pu... [+31 chars]",
+                "narrative-spine-landmarks-king-james-version: 36 readings, 43 chapters, 1142 verses, 1 refused (pu... [+31 chars]",
                 "  refused 263 The desolation of the sanctuary (1 Maccabees 1:1-67): 1Mach 1:65 is past 1Mach 1:64, ... [+126 chars]",
                 "refused (not publishable): knox",
             ),
@@ -147,10 +147,10 @@ EXAMPLES = {
             "WRITES TeX. --out here is untracked; the default is build/bibles",
         ),
         Example(
-            "tools/typeset-bible render --volume narrative-spine-overview-douay-rheims --out build/example-typeset",
+            "tools/typeset-bible render --volume narrative-spine-landmarks-douay-rheims --out build/example-typeset",
             (
-                "narrative-spine-overview-douay-rheims: written <repo>/build/example-typeset/narrative-spine-overv... [+31 chars]",
-                "  narrative-spine-overview-douay-rheims: 36 readings, 44 chapters, 1210 verses, 0 refused (public-d... [+22 chars]",
+                "narrative-spine-landmarks-douay-rheims: written <repo>/build/example-typeset/narrative-spine-overv... [+31 chars]",
+                "  narrative-spine-landmarks-douay-rheims: 36 readings, 44 chapters, 1210 verses, 0 refused (public-d... [+22 chars]",
             ),
             "WRITES TeX for one tier of one plan in one edition",
         ),
@@ -521,7 +521,7 @@ class Plan:
     each one's `readings` count is the *cumulative* number a reader of that tier
     sees. That is asserted here rather than assumed, because the failure it
     guards is silent: a volume that printed only the readings tagged exactly
-    `overview` while calling itself the Overview tier would look entirely
+    `landmarks` while calling itself the Landmarks tier would look entirely
     correct and would be a third of the readings short.
     """
 

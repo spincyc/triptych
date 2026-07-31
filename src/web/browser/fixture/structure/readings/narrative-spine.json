@@ -1,21 +1,21 @@
 {
  "schema": "triptych-reading-structure/v1",
- "plan": "Salvation History — fixture excerpt (three periods of twelve, plus diagnostics)",
+ "plan": "The Story of Salvation — fixture excerpt (three periods of twelve, plus diagnostics)",
  "canon": "catholic-73",
  "numbering": "vulgate",
  "tiers": {
-  "overview": {
-   "label": "Overview",
+  "landmarks": {
+   "label": "Landmarks",
    "readings": 10,
    "description": "Fixture excerpt. 10 readings at this tier, counted the same way the published plan counts: every reading marked at this tier and at every tier above it."
   },
-  "narrative": {
-   "label": "Narrative",
+  "story": {
+   "label": "The Story",
    "readings": 15,
    "description": "Fixture excerpt. 15 readings at this tier, counted the same way the published plan counts: every reading marked at this tier and at every tier above it."
   },
-  "year": {
-   "label": "Year",
+  "full-account": {
+   "label": "The Full Account",
    "readings": 25,
    "description": "Fixture excerpt. 25 readings at this tier, counted the same way the published plan counts: every reading marked at this tier and at every tier above it."
   }
@@ -29,7 +29,7 @@
    "readings": [
     {
      "order": 1,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "Creation",
      "book": "Genesis",
      "token": "Gen",
@@ -54,7 +54,7 @@
     },
     {
      "order": 2,
-     "tier": "year",
+     "tier": "full-account",
      "title": "The seventh day and the garden",
      "book": "Genesis",
      "token": "Gen",
@@ -79,7 +79,7 @@
     },
     {
      "order": 3,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "The fall",
      "book": "Genesis",
      "token": "Gen",
@@ -104,7 +104,7 @@
     },
     {
      "order": 4,
-     "tier": "narrative",
+     "tier": "story",
      "title": "Cain and Abel",
      "book": "Genesis",
      "token": "Gen",
@@ -129,7 +129,7 @@
     },
     {
      "order": 5,
-     "tier": "year",
+     "tier": "full-account",
      "title": "The sons of Cain, and calling on the name of the Lord",
      "book": "Genesis",
      "token": "Gen",
@@ -154,7 +154,7 @@
     },
     {
      "order": 6,
-     "tier": "year",
+     "tier": "full-account",
      "title": "The sons of God and the daughters of men",
      "book": "Genesis",
      "token": "Gen",
@@ -179,7 +179,7 @@
     },
     {
      "order": 7,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "The flood",
      "book": "Genesis",
      "token": "Gen",
@@ -204,7 +204,7 @@
     },
     {
      "order": 8,
-     "tier": "narrative",
+     "tier": "story",
      "title": "The covenant with Noe",
      "book": "Genesis",
      "token": "Gen",
@@ -229,7 +229,7 @@
     },
     {
      "order": 9,
-     "tier": "narrative",
+     "tier": "story",
      "title": "Babel",
      "book": "Genesis",
      "token": "Gen",
@@ -254,7 +254,7 @@
     },
     {
      "order": 10,
-     "tier": "year",
+     "tier": "full-account",
      "title": "From Sem to Abram",
      "book": "Genesis",
      "token": "Gen",
@@ -279,7 +279,7 @@
     },
     {
      "order": 11,
-     "tier": "year",
+     "tier": "full-account",
      "title": "Psalm 8",
      "book": "Psalms",
      "token": "Ps",
@@ -304,7 +304,7 @@
     },
     {
      "order": 12,
-     "tier": "year",
+     "tier": "full-account",
      "title": "Psalm 103, the hymn of creation",
      "book": "Psalms",
      "token": "Ps",
@@ -336,7 +336,7 @@
    "readings": [
     {
      "order": 282,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "The Annunciation and the Nativity",
      "book": "Luke",
      "token": "Luke",
@@ -371,7 +371,7 @@
     },
     {
      "order": 283,
-     "tier": "narrative",
+     "tier": "story",
      "title": "The Visitation, and the Magnificat",
      "book": "Luke",
      "token": "Luke",
@@ -396,7 +396,7 @@
     },
     {
      "order": 291,
-     "tier": "year",
+     "tier": "full-account",
      "title": "The beginning of the gospel",
      "book": "Mark",
      "token": "Mark",
@@ -421,7 +421,7 @@
     },
     {
      "order": 328,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "The resurrection, and the road to Emmaus",
      "book": "Luke",
      "token": "Luke",
@@ -446,7 +446,7 @@
     },
     {
      "order": 329,
-     "tier": "year",
+     "tier": "full-account",
      "title": "The empty tomb, and the ending of St. Mark",
      "book": "Mark",
      "token": "Mark",
@@ -478,7 +478,7 @@
    "readings": [
     {
      "order": 333,
-     "tier": "narrative",
+     "tier": "story",
      "title": "The Ascension, and the choosing of Matthias",
      "book": "Acts",
      "token": "Acts",
@@ -503,7 +503,7 @@
     },
     {
      "order": 334,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "Pentecost",
      "book": "Acts",
      "token": "Acts",
@@ -528,7 +528,7 @@
     },
     {
      "order": 356,
-     "tier": "year",
+     "tier": "full-account",
      "title": "Psalm 117",
      "book": "Psalms",
      "token": "Ps",
@@ -553,7 +553,7 @@
     },
     {
      "order": 357,
-     "tier": "year",
+     "tier": "full-account",
      "title": "A new heaven and a new earth",
      "book": "Revelation",
      "token": "Apoc",
@@ -585,7 +585,7 @@
    "readings": [
     {
      "order": 9001,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "Diagnostic: unresolved reading",
      "book": "Psalms",
      "token": "Ps",
@@ -595,7 +595,7 @@
     },
     {
      "order": 9002,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "Diagnostic: missing fragment",
      "book": "Tobias",
      "token": "Tob",
@@ -620,7 +620,7 @@
     },
     {
      "order": 9003,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "Diagnostic: numbering absent",
      "book": "Psalms",
      "token": "Ps",
@@ -638,7 +638,7 @@
     },
     {
      "order": 9004,
-     "tier": "overview",
+     "tier": "landmarks",
      "title": "Diagnostic: verses absent from the fragment",
      "book": "Genesis",
      "token": "Gen",

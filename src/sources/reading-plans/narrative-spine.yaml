@@ -3,21 +3,21 @@ title: 'The Story of Salvation: an abridged reading of the whole arc in order'
 canon: catholic-73
 numbering: vulgate
 tiers:
-  overview:
+  landmarks:
     readings: 36
-    label: Overview
+    label: Landmarks
     description: |
       Thirty-six sittings, two to four in each period: the hinge readings, without which the arc does not stand. 1,210 verses, 3.4 per cent of the Bible. It is deliberately jumpy - a skeleton, not yet a story.
 
       The three tiers nest. Every reading carries the tier at which it first appears, and no reading appears twice, so a tier is read by taking every reading marked at that tier or above, in order. The lower tiers therefore fill the gaps between the higher ones rather than restating them, and no passage is read twice in one pass.
-  narrative:
+  story:
     readings: 111
-    label: Narrative
+    label: The Story
     description: |
       The story told continuously: 111 readings, the 36 above plus 75 more, at 3,675 verses or 10.3 per cent of the Bible. Adds the connecting episodes, so that cause and consequence hold from Genesis 12 to Acts 28. Confined to the consensus narrative spine, and to it alone: at this tier the plan reads no prophet, no psalm, no gospel but St. Luke, and none of the narrative deuterocanon but 1 Machabees.
-  year:
+  full-account:
     readings: 357
-    label: Year
+    label: The Full Account
     description: |
       The full spine at about a chapter to a reading: 357 readings, 13,867 verses, 38.7 per cent of the Bible, touching 454 chapters in 31 books. Adds to the narrative tier the three remaining gospels where they give what St. Luke does not; the narrative deuterocanon - Daniel, Esther, Tobias, Judith and 2 Machabees 6-7; and the non-narrative passages the story is unintelligible without: the messianic prophecies of Isaias, the new covenant of Jeremias, the shepherd and the dry bones of Ezechiel, and sixteen psalms. At roughly a reading a day it runs a year with eight days to spare.
 omissions: |
@@ -30,7 +30,7 @@ omissions: |
   the epistles are of that kind.
 
   At its fullest tier this plan reads 13,867 verses, 38.7 per cent of the Bible.
-  The narrative tier reads 3,675 verses, 10.3 per cent. The overview tier reads
+  The story tier reads 3,675 verses, 10.3 per cent. The landmarks tier reads
   1,210 verses, 3.4 per cent.
 
   The reduction does not come from cutting genealogies and law codes. Those are
@@ -93,7 +93,7 @@ precedents: |
   arrangement, and BibleProject's reading plans. The agreement was measured, not
   transcribed: the overlap is a fact about those schemes, and facts about a work
   are not the work. It comes to 334 chapters, about 30.7 per cent of the Bible by
-  verse, and it is the spine of the overview and narrative tiers here. No scheme's
+  verse, and it is the spine of the landmarks and story tiers here. No scheme's
   chapter list, sequence, division into readings, reading titles, notes or
   commentary has been copied, and none was consulted while the readings below were
   divided, ordered or titled. All four are protected compilations and remain so.
@@ -145,7 +145,7 @@ periods:
       From the creation to the scattering at Babel: the world God made, the fault that broke it, and the first covenant made with a remnant. Genesis 5 and 10, which are genealogies, are passed over; Genesis 11:10-32 is kept because it is the bridge to Abram.
     readings:
       - order: 1
-        tier: overview
+        tier: landmarks
         title: Creation
         book: Genesis
         ranges:
@@ -153,7 +153,7 @@ periods:
         note: |
           The first lesson of the Easter Vigil. The Vigil's own abridgement of salvation history governs this plan: every one of its lessons is read at some tier.
       - order: 2
-        tier: year
+        tier: full-account
         title: The seventh day and the garden
         book: Genesis
         ranges:
@@ -161,7 +161,7 @@ periods:
         note: |
           The sabbath blessing, and the second account, in which man is placed in the garden and given the woman.
       - order: 3
-        tier: overview
+        tier: landmarks
         title: The fall
         book: Genesis
         ranges:
@@ -169,13 +169,13 @@ periods:
         note: |
           The protoevangelium at 3:15 is the seed of everything the plan afterwards follows.
       - order: 4
-        tier: narrative
+        tier: story
         title: Cain and Abel
         book: Genesis
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 16}}
       - order: 5
-        tier: year
+        tier: full-account
         title: 'The sons of Cain, and calling on the name of the Lord'
         book: Genesis
         ranges:
@@ -183,13 +183,13 @@ periods:
         note: |
           Kept, against the general omission of genealogies, because it divides the two lines from which the flood narrative proceeds.
       - order: 6
-        tier: year
+        tier: full-account
         title: The sons of God and the daughters of men
         book: Genesis
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 6, verse: 4}}
       - order: 7
-        tier: overview
+        tier: landmarks
         title: The flood
         book: Genesis
         ranges:
@@ -197,7 +197,7 @@ periods:
         note: |
           Read as one unit: the corruption, the ark, the deluge and its abating.
       - order: 8
-        tier: narrative
+        tier: story
         title: The covenant with Noe
         book: Genesis
         ranges:
@@ -205,13 +205,13 @@ periods:
         note: |
           The first covenant of the plan; the bow set in the cloud.
       - order: 9
-        tier: narrative
+        tier: story
         title: Babel
         book: Genesis
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 9}}
       - order: 10
-        tier: year
+        tier: full-account
         title: From Sem to Abram
         book: Genesis
         ranges:
@@ -219,7 +219,7 @@ periods:
         note: |
           The one genealogy retained in this period, because without it the call of Abram has no ancestry.
       - order: 11
-        tier: year
+        tier: full-account
         title: Psalm 8
         book: Psalms
         ranges:
@@ -227,7 +227,7 @@ periods:
         note: |
           Vulgate numbering, which is this plan's throughout; here the Vulgate and the Hebrew agree.
       - order: 12
-        tier: year
+        tier: full-account
         title: 'Psalm 103, the hymn of creation'
         book: Psalms
         ranges:
@@ -240,7 +240,7 @@ periods:
       Genesis 12-50, less chapter 36: the promise given to Abraham, carried through Isaac and Jacob, and preserved in Egypt through Joseph. The genealogy of Esau (36), the genealogy of Nachor (22:20-24) and the generations of Ismael (25:12-18) are passed over.
     readings:
       - order: 13
-        tier: overview
+        tier: landmarks
         title: The call of Abram
         book: Genesis
         ranges:
@@ -248,19 +248,19 @@ periods:
         note: |
           The promise on which the rest of the Old Testament depends.
       - order: 14
-        tier: year
+        tier: full-account
         title: Abram in Egypt
         book: Genesis
         ranges:
           - {begin: {chapter: 12, verse: 10}, end: {chapter: 12, verse: 20}}
       - order: 15
-        tier: year
+        tier: full-account
         title: Abram and Lot part
         book: Genesis
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 13, verse: 18}}
       - order: 16
-        tier: year
+        tier: full-account
         title: 'Melchisedech, and the rescue of Lot'
         book: Genesis
         ranges:
@@ -268,7 +268,7 @@ periods:
         note: |
           Melchisedech's bread and wine is read again in the Canon of the Mass and in Hebrews; the epistle is not in this plan.
       - order: 17
-        tier: narrative
+        tier: story
         title: The covenant of the divided victims
         book: Genesis
         ranges:
@@ -276,37 +276,37 @@ periods:
         note: |
           "He believed God, and it was reputed to him unto justice."
       - order: 18
-        tier: year
+        tier: full-account
         title: Agar and Ismael
         book: Genesis
         ranges:
           - {begin: {chapter: 16, verse: 1}, end: {chapter: 16, verse: 16}}
       - order: 19
-        tier: year
+        tier: full-account
         title: 'Circumcision, and the new names'
         book: Genesis
         ranges:
           - {begin: {chapter: 17, verse: 1}, end: {chapter: 17, verse: 27}}
       - order: 20
-        tier: narrative
+        tier: story
         title: 'The three at Mambre, and the plea for Sodom'
         book: Genesis
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 18, verse: 33}}
       - order: 21
-        tier: year
+        tier: full-account
         title: 'Sodom destroyed; Abraham and Abimelech'
         book: Genesis
         ranges:
           - {begin: {chapter: 19, verse: 1}, end: {chapter: 20, verse: 18}}
       - order: 22
-        tier: year
+        tier: full-account
         title: 'The birth of Isaac; Agar cast out'
         book: Genesis
         ranges:
           - {begin: {chapter: 21, verse: 1}, end: {chapter: 21, verse: 34}}
       - order: 23
-        tier: overview
+        tier: landmarks
         title: The binding of Isaac
         book: Genesis
         ranges:
@@ -314,7 +314,7 @@ periods:
         note: |
           The second lesson of the Easter Vigil, read to its Vigil terminus at verse 18; the genealogy of Nachor that follows is omitted.
       - order: 24
-        tier: year
+        tier: full-account
         title: 'The death of Sara, and the cave of Machpelah'
         book: Genesis
         ranges:
@@ -322,13 +322,13 @@ periods:
         note: |
           The only land Abraham ever owns in the country promised to him is a grave.
       - order: 25
-        tier: year
+        tier: full-account
         title: A wife for Isaac
         book: Genesis
         ranges:
           - {begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 67}}
       - order: 26
-        tier: year
+        tier: full-account
         title: The death of Abraham
         book: Genesis
         ranges:
@@ -336,49 +336,49 @@ periods:
         note: |
           25:12-18, the generations of Ismael, is omitted.
       - order: 27
-        tier: year
+        tier: full-account
         title: 'Esau and Jacob; the birthright sold'
         book: Genesis
         ranges:
           - {begin: {chapter: 25, verse: 19}, end: {chapter: 25, verse: 34}}
       - order: 28
-        tier: year
+        tier: full-account
         title: 'Isaac at Gerara, and the wells'
         book: Genesis
         ranges:
           - {begin: {chapter: 26, verse: 1}, end: {chapter: 26, verse: 35}}
       - order: 29
-        tier: narrative
+        tier: story
         title: The stolen blessing
         book: Genesis
         ranges:
           - {begin: {chapter: 27, verse: 1}, end: {chapter: 27, verse: 46}}
       - order: 30
-        tier: year
+        tier: full-account
         title: Jacob sent into Mesopotamia
         book: Genesis
         ranges:
           - {begin: {chapter: 28, verse: 1}, end: {chapter: 28, verse: 9}}
       - order: 31
-        tier: narrative
+        tier: story
         title: 'Jacob''s ladder at Bethel'
         book: Genesis
         ranges:
           - {begin: {chapter: 28, verse: 10}, end: {chapter: 28, verse: 22}}
       - order: 32
-        tier: year
+        tier: full-account
         title: Lia and Rachel
         book: Genesis
         ranges:
           - {begin: {chapter: 29, verse: 1}, end: {chapter: 29, verse: 35}}
       - order: 33
-        tier: year
+        tier: full-account
         title: 'The sons of Jacob, and the flight from Laban'
         book: Genesis
         ranges:
           - {begin: {chapter: 30, verse: 1}, end: {chapter: 31, verse: 55}}
       - order: 34
-        tier: narrative
+        tier: story
         title: Jacob wrestles until daybreak
         book: Genesis
         ranges:
@@ -386,13 +386,13 @@ periods:
         note: |
           The name Israel is given here.
       - order: 35
-        tier: year
+        tier: full-account
         title: 'Reconciliation, and the men of Sichem'
         book: Genesis
         ranges:
           - {begin: {chapter: 33, verse: 1}, end: {chapter: 34, verse: 31}}
       - order: 36
-        tier: year
+        tier: full-account
         title: 'Bethel confirmed; the death of Rachel'
         book: Genesis
         ranges:
@@ -400,13 +400,13 @@ periods:
         note: |
           Genesis 36, the generations of Esau, is omitted.
       - order: 37
-        tier: narrative
+        tier: story
         title: Joseph sold by his brethren
         book: Genesis
         ranges:
           - {begin: {chapter: 37, verse: 1}, end: {chapter: 37, verse: 36}}
       - order: 38
-        tier: year
+        tier: full-account
         title: Juda and Thamar
         book: Genesis
         ranges:
@@ -414,25 +414,25 @@ periods:
         note: |
           Retained because Phares stands in the genealogy of Christ that closes the book of Ruth and opens St. Matthew.
       - order: 39
-        tier: year
+        tier: full-account
         title: Joseph and the wife of Putiphar
         book: Genesis
         ranges:
           - {begin: {chapter: 39, verse: 1}, end: {chapter: 39, verse: 23}}
       - order: 40
-        tier: year
+        tier: full-account
         title: The dreams of the butler and the baker
         book: Genesis
         ranges:
           - {begin: {chapter: 40, verse: 1}, end: {chapter: 40, verse: 23}}
       - order: 41
-        tier: year
+        tier: full-account
         title: 'Pharao''s dreams; Joseph exalted'
         book: Genesis
         ranges:
           - {begin: {chapter: 41, verse: 1}, end: {chapter: 41, verse: 57}}
       - order: 42
-        tier: year
+        tier: full-account
         title: The brethren come down into Egypt
         book: Genesis
         ranges:
@@ -440,31 +440,31 @@ periods:
         note: |
           Three journeys read as one: the first descent, Benjamin, and the cup in the sack.
       - order: 43
-        tier: overview
+        tier: landmarks
         title: Joseph makes himself known
         book: Genesis
         ranges:
           - {begin: {chapter: 45, verse: 1}, end: {chapter: 45, verse: 15}}
       - order: 44
-        tier: year
+        tier: full-account
         title: Pharao invites Jacob
         book: Genesis
         ranges:
           - {begin: {chapter: 45, verse: 16}, end: {chapter: 45, verse: 28}}
       - order: 45
-        tier: year
+        tier: full-account
         title: Jacob goes down into Egypt
         book: Genesis
         ranges:
           - {begin: {chapter: 46, verse: 1}, end: {chapter: 47, verse: 31}}
       - order: 46
-        tier: year
+        tier: full-account
         title: Ephraim set before Manasses
         book: Genesis
         ranges:
           - {begin: {chapter: 48, verse: 1}, end: {chapter: 48, verse: 22}}
       - order: 47
-        tier: narrative
+        tier: story
         title: The blessing of Jacob
         book: Genesis
         ranges:
@@ -472,7 +472,7 @@ periods:
         note: |
           "The sceptre shall not be taken away from Juda" (49:10).
       - order: 48
-        tier: narrative
+        tier: story
         title: The death of Jacob and of Joseph
         book: Genesis
         ranges:
@@ -485,19 +485,19 @@ periods:
       Exodus 1-24 and 32-34: bondage, the passover, the sea, and the covenant at Sinai. The tabernacle specifications (25-31) and their execution (35-40) are passed over; they are description, not narrative, and the second is largely a repetition of the first.
     readings:
       - order: 49
-        tier: narrative
+        tier: story
         title: Israel in bondage
         book: Exodus
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 22}}
       - order: 50
-        tier: narrative
+        tier: story
         title: 'The birth of Moses, and his flight'
         book: Exodus
         ranges:
           - {begin: {chapter: 2, verse: 1}, end: {chapter: 2, verse: 25}}
       - order: 51
-        tier: overview
+        tier: landmarks
         title: The burning bush
         book: Exodus
         ranges:
@@ -505,19 +505,19 @@ periods:
         note: |
           "I AM WHO AM." The divine name is given here.
       - order: 52
-        tier: year
+        tier: full-account
         title: Moses returns into Egypt
         book: Exodus
         ranges:
           - {begin: {chapter: 4, verse: 18}, end: {chapter: 4, verse: 31}}
       - order: 53
-        tier: year
+        tier: full-account
         title: Bricks without straw
         book: Exodus
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 5, verse: 23}}
       - order: 54
-        tier: year
+        tier: full-account
         title: The promise renewed
         book: Exodus
         ranges:
@@ -525,43 +525,43 @@ periods:
         note: |
           6:14-30, the genealogy of Levi, is omitted.
       - order: 55
-        tier: year
+        tier: full-account
         title: 'The rod, the blood, the frogs and the flies'
         book: Exodus
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 8, verse: 32}}
       - order: 56
-        tier: year
+        tier: full-account
         title: 'Murrain, hail, locusts and darkness'
         book: Exodus
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 10, verse: 29}}
       - order: 57
-        tier: year
+        tier: full-account
         title: The last plague foretold
         book: Exodus
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 10}}
       - order: 58
-        tier: overview
+        tier: landmarks
         title: 'The passover, and the going out'
         book: Exodus
         ranges:
           - {begin: {chapter: 12, verse: 1}, end: {chapter: 12, verse: 42}}
       - order: 59
-        tier: year
+        tier: full-account
         title: The law of the passover and of the firstborn
         book: Exodus
         ranges:
           - {begin: {chapter: 12, verse: 43}, end: {chapter: 13, verse: 16}}
       - order: 60
-        tier: year
+        tier: full-account
         title: 'The pillar of cloud; Israel at the sea'
         book: Exodus
         ranges:
           - {begin: {chapter: 13, verse: 17}, end: {chapter: 14, verse: 14}}
       - order: 61
-        tier: overview
+        tier: landmarks
         title: The crossing of the sea
         book: Exodus
         ranges:
@@ -569,37 +569,37 @@ periods:
         note: |
           The third lesson of the Easter Vigil, whose range this reading reproduces exactly, ending as the Vigil does at the opening of the canticle.
       - order: 62
-        tier: year
+        tier: full-account
         title: 'The canticle of Moses, and the bitter waters'
         book: Exodus
         ranges:
           - {begin: {chapter: 15, verse: 2}, end: {chapter: 15, verse: 27}}
       - order: 63
-        tier: narrative
+        tier: story
         title: The manna and the quails
         book: Exodus
         ranges:
           - {begin: {chapter: 16, verse: 1}, end: {chapter: 16, verse: 36}}
       - order: 64
-        tier: year
+        tier: full-account
         title: 'Water from the rock; Amalec'
         book: Exodus
         ranges:
           - {begin: {chapter: 17, verse: 1}, end: {chapter: 17, verse: 16}}
       - order: 65
-        tier: year
+        tier: full-account
         title: The counsel of Jethro
         book: Exodus
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 18, verse: 27}}
       - order: 66
-        tier: narrative
+        tier: story
         title: Israel at the mountain
         book: Exodus
         ranges:
           - {begin: {chapter: 19, verse: 1}, end: {chapter: 19, verse: 25}}
       - order: 67
-        tier: overview
+        tier: landmarks
         title: The Decalogue
         book: Exodus
         ranges:
@@ -607,7 +607,7 @@ periods:
         note: |
           Kept at the highest tier although it is law and not narrative: the covenant it states is the standard against which every later collapse in this plan is measured.
       - order: 68
-        tier: year
+        tier: full-account
         title: The book of the covenant
         book: Exodus
         ranges:
@@ -615,7 +615,7 @@ periods:
         note: |
           The one law code this plan reads, and only because it stands inside the Sinai narrative.
       - order: 69
-        tier: narrative
+        tier: story
         title: The blood of the covenant
         book: Exodus
         ranges:
@@ -623,19 +623,19 @@ periods:
         note: |
           Exodus 25-31, the tabernacle specifications, are omitted here.
       - order: 70
-        tier: narrative
+        tier: story
         title: The golden calf
         book: Exodus
         ranges:
           - {begin: {chapter: 32, verse: 1}, end: {chapter: 32, verse: 35}}
       - order: 71
-        tier: year
+        tier: full-account
         title: '"Shew me thy glory"'
         book: Exodus
         ranges:
           - {begin: {chapter: 33, verse: 1}, end: {chapter: 33, verse: 23}}
       - order: 72
-        tier: narrative
+        tier: story
         title: 'The covenant renewed; the shining face'
         book: Exodus
         ranges:
@@ -648,25 +648,25 @@ periods:
       Numbers 10-14, 16-17, 20-25, 27 and 31-33, with Deuteronomy 1-11 and 29-34. The Deuteronomic law code (12-26) is passed over, as is Leviticus entire and Numbers 1-9 and 26-30 apart from chapter 27: censuses, offerings and cultic ordinance.
     readings:
       - order: 73
-        tier: year
+        tier: full-account
         title: The cloud lifts
         book: Numbers
         ranges:
           - {begin: {chapter: 10, verse: 1}, end: {chapter: 10, verse: 36}}
       - order: 74
-        tier: narrative
+        tier: story
         title: 'The quails, and the seventy elders'
         book: Numbers
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 34}}
       - order: 75
-        tier: year
+        tier: full-account
         title: Mary and Aaron murmur
         book: Numbers
         ranges:
           - {begin: {chapter: 12, verse: 1}, end: {chapter: 12, verse: 15}}
       - order: 76
-        tier: overview
+        tier: landmarks
         title: 'The spies, and the refusal of the land'
         book: Numbers
         ranges:
@@ -674,25 +674,25 @@ periods:
         note: |
           The forty years in the desert begin here; every later reading in this period is its consequence.
       - order: 77
-        tier: narrative
+        tier: story
         title: The rebellion of Core
         book: Numbers
         ranges:
           - {begin: {chapter: 16, verse: 1}, end: {chapter: 16, verse: 50}}
       - order: 78
-        tier: year
+        tier: full-account
         title: The rod of Aaron that blossomed
         book: Numbers
         ranges:
           - {begin: {chapter: 17, verse: 1}, end: {chapter: 17, verse: 13}}
       - order: 79
-        tier: narrative
+        tier: story
         title: 'Meriba; the death of Aaron'
         book: Numbers
         ranges:
           - {begin: {chapter: 20, verse: 1}, end: {chapter: 20, verse: 30}}
       - order: 80
-        tier: narrative
+        tier: story
         title: The brazen serpent
         book: Numbers
         ranges:
@@ -700,31 +700,31 @@ periods:
         note: |
           Read again in St. John 3:14, which this plan also reads.
       - order: 81
-        tier: year
+        tier: full-account
         title: Balaam
         book: Numbers
         ranges:
           - {begin: {chapter: 22, verse: 1}, end: {chapter: 23, verse: 30}}
       - order: 82
-        tier: year
+        tier: full-account
         title: '"A star shall rise out of Jacob"'
         book: Numbers
         ranges:
           - {begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 25}}
       - order: 83
-        tier: year
+        tier: full-account
         title: 'Beelphegor, and the zeal of Phinees'
         book: Numbers
         ranges:
           - {begin: {chapter: 25, verse: 1}, end: {chapter: 25, verse: 18}}
       - order: 84
-        tier: year
+        tier: full-account
         title: 'The daughters of Salphaad; Josue appointed'
         book: Numbers
         ranges:
           - {begin: {chapter: 27, verse: 1}, end: {chapter: 27, verse: 23}}
       - order: 85
-        tier: year
+        tier: full-account
         title: 'Madian, the land beyond Jordan, and the stations of the journey'
         book: Numbers
         ranges:
@@ -732,19 +732,19 @@ periods:
         note: |
           Chapter 33 is an itinerary rather than a narrative, kept because it is the desert generation's whole record.
       - order: 86
-        tier: year
+        tier: full-account
         title: Moses recalls the way from Horeb
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 3, verse: 29}}
       - order: 87
-        tier: year
+        tier: full-account
         title: '"Ask of the days of old"'
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 49}}
       - order: 88
-        tier: narrative
+        tier: story
         title: The Decalogue rehearsed
         book: Deuteronomy
         ranges:
@@ -752,7 +752,7 @@ periods:
         note: |
           The second of the two statements of the Decalogue this plan reads.
       - order: 89
-        tier: overview
+        tier: landmarks
         title: '"Hear, O Israel"'
         book: Deuteronomy
         ranges:
@@ -760,13 +760,13 @@ periods:
         note: |
           The Shema, and the first commandment as Christ cites it. Deuteronomy 12-26, the law code, is omitted after chapter 11.
       - order: 90
-        tier: year
+        tier: full-account
         title: A people chosen and holy
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 7, verse: 26}}
       - order: 91
-        tier: year
+        tier: full-account
         title: '"Not in bread alone"'
         book: Deuteronomy
         ranges:
@@ -774,55 +774,55 @@ periods:
         note: |
           Cited in the temptation of Christ, read later in this plan.
       - order: 92
-        tier: year
+        tier: full-account
         title: '"Not for thy justices"; the circumcision of the heart'
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 10, verse: 22}}
       - order: 93
-        tier: year
+        tier: full-account
         title: The blessing and the curse
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 32}}
       - order: 94
-        tier: year
+        tier: full-account
         title: The covenant in the land of Moab
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 29, verse: 1}, end: {chapter: 29, verse: 29}}
       - order: 95
-        tier: year
+        tier: full-account
         title: '"Life and death, blessing and cursing"'
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 30, verse: 1}, end: {chapter: 30, verse: 20}}
       - order: 96
-        tier: year
+        tier: full-account
         title: 'Josue commissioned; the law entrusted'
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 31, verse: 1}, end: {chapter: 31, verse: 30}}
       - order: 97
-        tier: narrative
+        tier: story
         title: The canticle of Moses
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 32, verse: 1}, end: {chapter: 32, verse: 52}}
       - order: 98
-        tier: year
+        tier: full-account
         title: The blessing of the tribes
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 33, verse: 1}, end: {chapter: 33, verse: 29}}
       - order: 99
-        tier: overview
+        tier: landmarks
         title: The death of Moses
         book: Deuteronomy
         ranges:
           - {begin: {chapter: 34, verse: 1}, end: {chapter: 34, verse: 12}}
       - order: 100
-        tier: year
+        tier: full-account
         title: Psalm 94
         book: Psalms
         ranges:
@@ -830,7 +830,7 @@ periods:
         note: |
           Vulgate 94 = Hebrew 95: "Harden not your hearts, as in the provocation." The desert generation judged in a psalm.
       - order: 101
-        tier: year
+        tier: full-account
         title: Psalm 105
         book: Psalms
         ranges:
@@ -843,13 +843,13 @@ periods:
       Josue 1-11 and 23-24, Judges 1-16, and Ruth. The allotment of the tribal territories (Josue 12-22) is passed over as a survey document, and Judges 17-21, the appendix, is left aside as outside the line of the story.
     readings:
       - order: 102
-        tier: narrative
+        tier: story
         title: The commission of Josue
         book: Joshua
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 18}}
       - order: 103
-        tier: year
+        tier: full-account
         title: Rahab and the spies
         book: Joshua
         ranges:
@@ -857,43 +857,43 @@ periods:
         note: |
           Rahab stands in the genealogy of Christ; the plan reads her here and there only.
       - order: 104
-        tier: narrative
+        tier: story
         title: The crossing of the Jordan
         book: Joshua
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 17}}
       - order: 105
-        tier: year
+        tier: full-account
         title: 'The twelve stones; the pasch at Galgal'
         book: Joshua
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 5, verse: 16}}
       - order: 106
-        tier: overview
+        tier: landmarks
         title: The fall of Jericho
         book: Joshua
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 6, verse: 27}}
       - order: 107
-        tier: year
+        tier: full-account
         title: 'Achan''s theft, and the defeat at Hai'
         book: Joshua
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 7, verse: 26}}
       - order: 108
-        tier: year
+        tier: full-account
         title: 'Hai taken; the stratagem of the Gabaonites'
         book: Joshua
         ranges:
           - {begin: {chapter: 8, verse: 1}, end: {chapter: 9, verse: 27}}
       - order: 109
-        tier: year
+        tier: full-account
         title: 'The five kings; the sun stayed'
         book: Joshua
         ranges:
           - {begin: {chapter: 10, verse: 1}, end: {chapter: 10, verse: 43}}
       - order: 110
-        tier: year
+        tier: full-account
         title: The northern kings
         book: Joshua
         ranges:
@@ -901,25 +901,25 @@ periods:
         note: |
           Josue 12-22, the lists of conquered kings and the tribal allotments, are omitted here.
       - order: 111
-        tier: year
+        tier: full-account
         title: The last charge of Josue
         book: Joshua
         ranges:
           - {begin: {chapter: 23, verse: 1}, end: {chapter: 23, verse: 16}}
       - order: 112
-        tier: narrative
+        tier: story
         title: The covenant at Sichem
         book: Joshua
         ranges:
           - {begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 33}}
       - order: 113
-        tier: year
+        tier: full-account
         title: What the tribes failed to drive out
         book: Judges
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 36}}
       - order: 114
-        tier: narrative
+        tier: story
         title: The pattern of the judges
         book: Judges
         ranges:
@@ -927,67 +927,67 @@ periods:
         note: |
           The interpretative key to the whole book: they forsook the Lord, he delivered them up, they cried, he raised a judge.
       - order: 115
-        tier: year
+        tier: full-account
         title: 'Othoniel, Aod and Samgar'
         book: Judges
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 31}}
       - order: 116
-        tier: year
+        tier: full-account
         title: Debbora and Barac
         book: Judges
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 24}}
       - order: 117
-        tier: year
+        tier: full-account
         title: The canticle of Debbora
         book: Judges
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 5, verse: 32}}
       - order: 118
-        tier: narrative
+        tier: story
         title: The call of Gedeon
         book: Judges
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 6, verse: 40}}
       - order: 119
-        tier: overview
+        tier: landmarks
         title: Gedeon and the three hundred
         book: Judges
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 7, verse: 25}}
       - order: 120
-        tier: year
+        tier: full-account
         title: 'Gedeon''s victory, and the ephod'
         book: Judges
         ranges:
           - {begin: {chapter: 8, verse: 1}, end: {chapter: 8, verse: 35}}
       - order: 121
-        tier: year
+        tier: full-account
         title: 'Abimelech, and the parable of the trees'
         book: Judges
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 10, verse: 18}}
       - order: 122
-        tier: year
+        tier: full-account
         title: 'Jephte, his vow, and Ephraim'
         book: Judges
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 12, verse: 15}}
       - order: 123
-        tier: year
+        tier: full-account
         title: The birth of Samson
         book: Judges
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 13, verse: 25}}
       - order: 124
-        tier: year
+        tier: full-account
         title: 'The riddle, the foxes and the jawbone'
         book: Judges
         ranges:
           - {begin: {chapter: 14, verse: 1}, end: {chapter: 15, verse: 20}}
       - order: 125
-        tier: narrative
+        tier: story
         title: Samson and Dalila
         book: Judges
         ranges:
@@ -995,25 +995,25 @@ periods:
         note: |
           Judges 17-21, the appendix of Michas and the outrage at Gabaa, is omitted.
       - order: 126
-        tier: narrative
+        tier: story
         title: '"Thy people shall be my people"'
         book: Ruth
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 22}}
       - order: 127
-        tier: year
+        tier: full-account
         title: Ruth gleans in the field of Booz
         book: Ruth
         ranges:
           - {begin: {chapter: 2, verse: 1}, end: {chapter: 2, verse: 23}}
       - order: 128
-        tier: year
+        tier: full-account
         title: Ruth at the threshing floor
         book: Ruth
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 18}}
       - order: 129
-        tier: overview
+        tier: landmarks
         title: Booz redeems Ruth
         book: Ruth
         ranges:
@@ -1021,7 +1021,7 @@ periods:
         note: |
           The book ends in a genealogy, and it is the one genealogy no abridgement can cut: Phares, Booz, Obed, Isai, David.
       - order: 130
-        tier: year
+        tier: full-account
         title: Psalm 77
         book: Psalms
         ranges:
@@ -1034,7 +1034,7 @@ periods:
       1 and 2 Samuel entire. The Douay-Rheims prints these as the First and Second Books of Kings; this plan uses the modern names, so that Douay 3 and 4 Kings appear in the next period as 1 and 2 Kings. 1 and 2 Paralipomenon (Chronicles) are passed over as a second telling of the same reigns.
     readings:
       - order: 131
-        tier: narrative
+        tier: story
         title: 'Anna, and the birth of Samuel'
         book: 1 Samuel
         ranges:
@@ -1042,7 +1042,7 @@ periods:
         note: |
           Douay-Rheims title: the First Book of Samuel, otherwise called the First Book of Kings.
       - order: 132
-        tier: year
+        tier: full-account
         title: 'The canticle of Anna; the sons of Heli'
         book: 1 Samuel
         ranges:
@@ -1050,31 +1050,31 @@ periods:
         note: |
           The Magnificat answers this canticle; both are read in this plan.
       - order: 133
-        tier: narrative
+        tier: story
         title: The call of Samuel
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 21}}
       - order: 134
-        tier: year
+        tier: full-account
         title: 'The ark taken; the glory departed'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 22}}
       - order: 135
-        tier: year
+        tier: full-account
         title: 'The ark among the Philistines, and its return'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 6, verse: 21}}
       - order: 136
-        tier: year
+        tier: full-account
         title: Samuel judges Israel at Masphath
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 7, verse: 17}}
       - order: 137
-        tier: overview
+        tier: landmarks
         title: '"Give us a king"'
         book: 1 Samuel
         ranges:
@@ -1082,31 +1082,31 @@ periods:
         note: |
           The kingdom is granted as a concession; every later reading in this period is coloured by that.
       - order: 138
-        tier: year
+        tier: full-account
         title: 'Saul sought, anointed, and acclaimed'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 10, verse: 27}}
       - order: 139
-        tier: year
+        tier: full-account
         title: 'Jabes Galaad delivered; the farewell of Samuel'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 12, verse: 25}}
       - order: 140
-        tier: year
+        tier: full-account
         title: 'Saul''s unlawful sacrifice'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 13, verse: 23}}
       - order: 141
-        tier: year
+        tier: full-account
         title: 'Jonathan at Machmas; the rash oath'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 14, verse: 1}, end: {chapter: 14, verse: 52}}
       - order: 142
-        tier: narrative
+        tier: story
         title: Saul rejected
         book: 1 Samuel
         ranges:
@@ -1114,31 +1114,31 @@ periods:
         note: |
           "Obedience is better than sacrifices" (15:22).
       - order: 143
-        tier: overview
+        tier: landmarks
         title: David anointed
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 16, verse: 1}, end: {chapter: 16, verse: 23}}
       - order: 144
-        tier: narrative
+        tier: story
         title: David and Goliath
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 17, verse: 1}, end: {chapter: 17, verse: 58}}
       - order: 145
-        tier: year
+        tier: full-account
         title: 'Jonathan''s friendship, and Saul''s envy'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 18, verse: 30}}
       - order: 146
-        tier: year
+        tier: full-account
         title: 'Michol''s stratagem; the covenant with Jonathan'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 19, verse: 1}, end: {chapter: 20, verse: 43}}
       - order: 147
-        tier: year
+        tier: full-account
         title: 'The loaves of proposition; the priests of Nobe'
         book: 1 Samuel
         ranges:
@@ -1146,43 +1146,43 @@ periods:
         note: |
           Christ cites the loaves of proposition against the Pharisees; that passage is read in this plan.
       - order: 148
-        tier: year
+        tier: full-account
         title: David in the wilderness of Ziph
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 23, verse: 1}, end: {chapter: 23, verse: 28}}
       - order: 149
-        tier: year
+        tier: full-account
         title: David spares Saul in the cave
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 23}}
       - order: 150
-        tier: year
+        tier: full-account
         title: 'Nabal and Abigail; Saul spared again'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 25, verse: 1}, end: {chapter: 26, verse: 25}}
       - order: 151
-        tier: year
+        tier: full-account
         title: 'David among the Philistines; the witch of Endor'
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 27, verse: 1}, end: {chapter: 28, verse: 25}}
       - order: 152
-        tier: year
+        tier: full-account
         title: Siceleg burned and recovered
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 29, verse: 1}, end: {chapter: 30, verse: 31}}
       - order: 153
-        tier: narrative
+        tier: story
         title: The death of Saul on Gelboe
         book: 1 Samuel
         ranges:
           - {begin: {chapter: 31, verse: 1}, end: {chapter: 31, verse: 13}}
       - order: 154
-        tier: year
+        tier: full-account
         title: The lament for Saul and Jonathan
         book: 2 Samuel
         ranges:
@@ -1190,25 +1190,25 @@ periods:
         note: |
           Douay-Rheims title: the Second Book of Samuel, otherwise called the Second Book of Kings.
       - order: 155
-        tier: year
+        tier: full-account
         title: 'Hebron, Abner, and the murder of Isboseth'
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 2, verse: 1}, end: {chapter: 4, verse: 12}}
       - order: 156
-        tier: narrative
+        tier: story
         title: 'King over all Israel; Jerusalem taken'
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 5, verse: 25}}
       - order: 157
-        tier: year
+        tier: full-account
         title: The ark brought up
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 6, verse: 23}}
       - order: 158
-        tier: overview
+        tier: landmarks
         title: '"Thy house shall be faithful for ever"'
         book: 2 Samuel
         ranges:
@@ -1216,25 +1216,25 @@ periods:
         note: |
           The Davidic covenant. The angel's words at the Annunciation, read later in this plan, are its direct answer.
       - order: 159
-        tier: year
+        tier: full-account
         title: 'The wars of David; kindness to Miphiboseth'
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 8, verse: 1}, end: {chapter: 10, verse: 19}}
       - order: 160
-        tier: narrative
+        tier: story
         title: David and Bethsabee
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 27}}
       - order: 161
-        tier: narrative
+        tier: story
         title: 'Nathan''s parable'
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 12, verse: 1}, end: {chapter: 12, verse: 31}}
       - order: 162
-        tier: year
+        tier: full-account
         title: Psalm 50
         book: Psalms
         ranges:
@@ -1242,43 +1242,43 @@ periods:
         note: |
           Vulgate 50 = Hebrew 51, the Miserere, inscribed to this episode and read here for that reason.
       - order: 163
-        tier: year
+        tier: full-account
         title: 'Amnon and Thamar; Absalom recalled'
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 14, verse: 33}}
       - order: 164
-        tier: narrative
+        tier: story
         title: The revolt of Absalom
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 15, verse: 1}, end: {chapter: 15, verse: 37}}
       - order: 165
-        tier: year
+        tier: full-account
         title: 'Semei, Achitophel and Chusai'
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 16, verse: 1}, end: {chapter: 17, verse: 29}}
       - order: 166
-        tier: narrative
+        tier: story
         title: The death of Absalom
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 18, verse: 33}}
       - order: 167
-        tier: year
+        tier: full-account
         title: 'The return, and the revolt of Seba'
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 19, verse: 1}, end: {chapter: 20, verse: 26}}
       - order: 168
-        tier: year
+        tier: full-account
         title: 'The famine, the song, and the last words of David'
         book: 2 Samuel
         ranges:
           - {begin: {chapter: 21, verse: 1}, end: {chapter: 23, verse: 39}}
       - order: 169
-        tier: year
+        tier: full-account
         title: 'The census, the plague, and the threshing floor'
         book: 2 Samuel
         ranges:
@@ -1286,7 +1286,7 @@ periods:
         note: |
           The threshing floor of Areuna is where the temple will stand.
       - order: 170
-        tier: year
+        tier: full-account
         title: Psalm 22
         book: Psalms
         ranges:
@@ -1294,7 +1294,7 @@ periods:
         note: |
           Vulgate 22 = Hebrew 23, "The Lord ruleth me." The numbering convention of this plan in one line: the shepherd psalm is 22, not 23.
       - order: 171
-        tier: year
+        tier: full-account
         title: Psalm 88
         book: Psalms
         ranges:
@@ -1307,7 +1307,7 @@ periods:
       1 Kings entire and 2 Kings 1-17 - in the Douay-Rheims, the Third Book of Kings and the Fourth as far as the fall of Samaria. The period runs from Solomon to the deportation of the northern tribes. Isaias 7, 9 and 11 are read here, at the reign of Achaz to whom the first of them was spoken.
     readings:
       - order: 172
-        tier: year
+        tier: full-account
         title: 'Adonias; the anointing of Solomon; David''s charge'
         book: 1 Kings
         ranges:
@@ -1315,13 +1315,13 @@ periods:
         note: |
           TRAP: this is Douay 3 Kings. Every modern 1 Kings citation in this period is Douay 3 Kings.
       - order: 173
-        tier: narrative
+        tier: story
         title: 'The gift of wisdom, and the two mothers'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 28}}
       - order: 174
-        tier: year
+        tier: full-account
         title: Psalm 71
         book: Psalms
         ranges:
@@ -1329,67 +1329,67 @@ periods:
         note: |
           Vulgate 71 = Hebrew 72, inscribed "a psalm on Solomon": the king's son, and a reign of peace to the ends of the earth.
       - order: 175
-        tier: year
+        tier: full-account
         title: 'The glory of the reign; preparation for the temple'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 5, verse: 18}}
       - order: 176
-        tier: year
+        tier: full-account
         title: The temple built and furnished
         book: 1 Kings
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 7, verse: 51}}
       - order: 177
-        tier: year
+        tier: full-account
         title: The dedication of the temple
         book: 1 Kings
         ranges:
           - {begin: {chapter: 8, verse: 1}, end: {chapter: 8, verse: 66}}
       - order: 178
-        tier: year
+        tier: full-account
         title: 'The second appearing, the condition, and the queen of Saba'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 10, verse: 29}}
       - order: 179
-        tier: narrative
+        tier: story
         title: 'Solomon''s wives, and the sentence'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 43}}
       - order: 180
-        tier: overview
+        tier: landmarks
         title: The kingdom torn in two
         book: 1 Kings
         ranges:
           - {begin: {chapter: 12, verse: 1}, end: {chapter: 12, verse: 33}}
       - order: 181
-        tier: year
+        tier: full-account
         title: 'The man of God out of Juda; Jeroboam condemned'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 14, verse: 31}}
       - order: 182
-        tier: year
+        tier: full-account
         title: 'The dynasties of Israel; Achab and Jezabel'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 15, verse: 1}, end: {chapter: 16, verse: 34}}
       - order: 183
-        tier: narrative
+        tier: story
         title: 'Elias, the drought, and the widow of Sarephta'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 17, verse: 1}, end: {chapter: 17, verse: 24}}
       - order: 184
-        tier: overview
+        tier: landmarks
         title: Elias on Carmel
         book: 1 Kings
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 18, verse: 46}}
       - order: 185
-        tier: narrative
+        tier: story
         title: The whistling of a gentle air
         book: 1 Kings
         ranges:
@@ -1397,25 +1397,25 @@ periods:
         note: |
           Horeb again, and the call of Eliseus.
       - order: 186
-        tier: year
+        tier: full-account
         title: The Syrian wars
         book: 1 Kings
         ranges:
           - {begin: {chapter: 20, verse: 1}, end: {chapter: 20, verse: 43}}
       - order: 187
-        tier: narrative
+        tier: story
         title: 'Naboth''s vineyard'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 21, verse: 1}, end: {chapter: 21, verse: 29}}
       - order: 188
-        tier: year
+        tier: full-account
         title: 'Micheas the prophet; the death of Achab'
         book: 1 Kings
         ranges:
           - {begin: {chapter: 22, verse: 1}, end: {chapter: 22, verse: 54}}
       - order: 189
-        tier: year
+        tier: full-account
         title: 'Ochozias, and the fire from heaven'
         book: 2 Kings
         ranges:
@@ -1423,25 +1423,25 @@ periods:
         note: |
           TRAP: this is Douay 4 Kings.
       - order: 190
-        tier: narrative
+        tier: story
         title: 'Elias taken up; the mantle of Eliseus'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 2, verse: 1}, end: {chapter: 2, verse: 25}}
       - order: 191
-        tier: year
+        tier: full-account
         title: The campaign against Moab
         book: 2 Kings
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 27}}
       - order: 192
-        tier: year
+        tier: full-account
         title: 'The widow''s oil, and the Sunamitess'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 44}}
       - order: 193
-        tier: year
+        tier: full-account
         title: Naaman the Syrian
         book: 2 Kings
         ranges:
@@ -1449,43 +1449,43 @@ periods:
         note: |
           Cited by Christ at Nazareth, read later in this plan.
       - order: 194
-        tier: year
+        tier: full-account
         title: 'The floating iron; the blinded army; the siege lifted'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 7, verse: 20}}
       - order: 195
-        tier: year
+        tier: full-account
         title: 'Hazael, and the anointing of Jehu'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 8, verse: 1}, end: {chapter: 9, verse: 37}}
       - order: 196
-        tier: year
+        tier: full-account
         title: The house of Achab destroyed
         book: 2 Kings
         ranges:
           - {begin: {chapter: 10, verse: 1}, end: {chapter: 10, verse: 36}}
       - order: 197
-        tier: year
+        tier: full-account
         title: 'Athalia, the boy king Joas, and the temple repaired'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 12, verse: 21}}
       - order: 198
-        tier: year
+        tier: full-account
         title: 'Joachaz, Joas, the death of Eliseus, and Amasias'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 14, verse: 29}}
       - order: 199
-        tier: year
+        tier: full-account
         title: 'The kings hasten to the end; Achaz and the altar of Damascus'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 15, verse: 1}, end: {chapter: 16, verse: 20}}
       - order: 200
-        tier: year
+        tier: full-account
         title: Emmanuel promised to Achaz
         book: Isaiah
         ranges:
@@ -1493,19 +1493,19 @@ periods:
         note: |
           Read at the reign in which it was spoken. One of four passages of Isaias in this plan; the remaining sixty-two chapters are not read.
       - order: 201
-        tier: year
+        tier: full-account
         title: '"A child is born to us"'
         book: Isaiah
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 9, verse: 7}}
       - order: 202
-        tier: year
+        tier: full-account
         title: '"A rod out of the root of Jesse"'
         book: Isaiah
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 10}}
       - order: 203
-        tier: overview
+        tier: landmarks
         title: The fall of Samaria
         book: 2 Kings
         ranges:
@@ -1518,43 +1518,43 @@ periods:
       2 Kings 18-25: Juda alone, from Ezechias to the burning of the temple, with the prophetic and deuterocanonical material the exile requires. Ezechias and Josias stand here rather than in the Divided Kingdom because their reigns are the last reprieve before the deportation, and the book treats them so.
     readings:
       - order: 204
-        tier: narrative
+        tier: story
         title: 'Ezechias reforms; Sennacherib invades'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 18, verse: 37}}
       - order: 205
-        tier: overview
+        tier: landmarks
         title: The angel of the Lord before Jerusalem
         book: 2 Kings
         ranges:
           - {begin: {chapter: 19, verse: 1}, end: {chapter: 19, verse: 37}}
       - order: 206
-        tier: year
+        tier: full-account
         title: 'The envoys of Babylon; Manasses fills Jerusalem with blood'
         book: 2 Kings
         ranges:
           - {begin: {chapter: 20, verse: 1}, end: {chapter: 21, verse: 26}}
       - order: 207
-        tier: narrative
+        tier: story
         title: The book of the law found
         book: 2 Kings
         ranges:
           - {begin: {chapter: 22, verse: 1}, end: {chapter: 22, verse: 20}}
       - order: 208
-        tier: overview
+        tier: landmarks
         title: The reform and the death of Josias
         book: 2 Kings
         ranges:
           - {begin: {chapter: 23, verse: 1}, end: {chapter: 23, verse: 37}}
       - order: 209
-        tier: narrative
+        tier: story
         title: The first deportation
         book: 2 Kings
         ranges:
           - {begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 20}}
       - order: 210
-        tier: overview
+        tier: landmarks
         title: The fall of Jerusalem
         book: 2 Kings
         ranges:
@@ -1562,7 +1562,7 @@ periods:
         note: |
           The temple is burned. The lowest point of the plan, and the ground of everything the prophets afterwards say.
       - order: 211
-        tier: year
+        tier: full-account
         title: 'Jeremias: the burnt roll, and the cistern'
         book: Jeremiah
         ranges:
@@ -1571,7 +1571,7 @@ periods:
         note: |
           Two of the three passages of Jeremias in this plan; the prophecy entire is not read.
       - order: 212
-        tier: year
+        tier: full-account
         title: The new covenant
         book: Jeremiah
         ranges:
@@ -1579,13 +1579,13 @@ periods:
         note: |
           Read out of book order, after the fall it interprets. Cited at the Last Supper, and in Hebrews, which this plan does not read.
       - order: 213
-        tier: year
+        tier: full-account
         title: The suffering servant
         book: Isaiah
         ranges:
           - {begin: {chapter: 52, verse: 13}, end: {chapter: 53, verse: 12}}
       - order: 214
-        tier: year
+        tier: full-account
         title: '"Thy Maker shall rule over thee"'
         book: Isaiah
         ranges:
@@ -1593,7 +1593,7 @@ periods:
         note: |
           A lesson of the Easter Vigil, whose range this reading reproduces exactly.
       - order: 215
-        tier: year
+        tier: full-account
         title: '"All you that thirst, come to the waters"'
         book: Isaiah
         ranges:
@@ -1601,7 +1601,7 @@ periods:
         note: |
           A lesson of the Easter Vigil, whose range this reading reproduces exactly.
       - order: 216
-        tier: year
+        tier: full-account
         title: '"Hear, O Israel, the commandments of life"'
         book: Baruch
         ranges:
@@ -1610,7 +1610,7 @@ periods:
         note: |
           A lesson of the Easter Vigil, read in the Vigil's own two parts: 3:9-15 and 3:32-4:4. Baruch is deuterocanonical and stands in the 73-book canon this plan follows.
       - order: 217
-        tier: year
+        tier: full-account
         title: The shepherds of Israel
         book: Ezekiel
         ranges:
@@ -1618,7 +1618,7 @@ periods:
         note: |
           The one shepherd promised here is claimed in St. John 10, read later in this plan.
       - order: 218
-        tier: year
+        tier: full-account
         title: '"A new heart, and a new spirit"'
         book: Ezekiel
         ranges:
@@ -1626,19 +1626,19 @@ periods:
         note: |
           A lesson of the Easter Vigil, whose range this reading reproduces exactly.
       - order: 219
-        tier: year
+        tier: full-account
         title: The dry bones
         book: Ezekiel
         ranges:
           - {begin: {chapter: 37, verse: 1}, end: {chapter: 37, verse: 14}}
       - order: 220
-        tier: year
+        tier: full-account
         title: '"The mercies of the Lord that we are not consumed"'
         book: Lamentations
         ranges:
           - {begin: {chapter: 3, verse: 19}, end: {chapter: 3, verse: 33}}
       - order: 221
-        tier: year
+        tier: full-account
         title: Psalm 136
         book: Psalms
         ranges:
@@ -1646,13 +1646,13 @@ periods:
         note: |
           Vulgate 136 = Hebrew 137: "Upon the rivers of Babylon."
       - order: 222
-        tier: year
+        tier: full-account
         title: 'Daniel and his companions at the king''s table'
         book: Daniel
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 21}}
       - order: 223
-        tier: year
+        tier: full-account
         title: The dream of the statue
         book: Daniel
         ranges:
@@ -1660,7 +1660,7 @@ periods:
         note: |
           The stone cut without hands, which becomes a mountain.
       - order: 224
-        tier: year
+        tier: full-account
         title: 'The furnace, and the canticle of the three children'
         book: Daniel
         ranges:
@@ -1668,13 +1668,13 @@ periods:
         note: |
           The canticle stands inline at 3:24-90 in the Vulgate; modern versions print it separately or omit it.
       - order: 225
-        tier: year
+        tier: full-account
         title: 'The madness of Nabuchodonosor; the writing on the wall'
         book: Daniel
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 5, verse: 31}}
       - order: 226
-        tier: year
+        tier: full-account
         title: 'The lions'' den'
         book: Daniel
         ranges:
@@ -1682,7 +1682,7 @@ periods:
         note: |
           Daniel 7-12, the visions, are not read.
       - order: 227
-        tier: year
+        tier: full-account
         title: Susanna
         book: Daniel
         ranges:
@@ -1690,7 +1690,7 @@ periods:
         note: |
           Vulgate chapter 13; modern versions print it as an addition.
       - order: 228
-        tier: year
+        tier: full-account
         title: Bel and the dragon
         book: Daniel
         ranges:
@@ -1698,7 +1698,7 @@ periods:
         note: |
           Vulgate chapter 14.
       - order: 229
-        tier: year
+        tier: full-account
         title: 'Tobias in exile, and his blindness'
         book: Tobit
         ranges:
@@ -1706,31 +1706,31 @@ periods:
         note: |
           The Douay-Rheims follows the Vulgate text of Tobias, whose chapter and verse division differs from the Greek used by most modern versions; these references will not always transfer to a modern Bible.
       - order: 230
-        tier: year
+        tier: full-account
         title: Two prayers heard in one hour
         book: Tobit
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 25}}
       - order: 231
-        tier: year
+        tier: full-account
         title: 'The charge to the son, and the guide'
         book: Tobit
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 5, verse: 28}}
       - order: 232
-        tier: year
+        tier: full-account
         title: 'The fish, and the house of Raguel'
         book: Tobit
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 7, verse: 20}}
       - order: 233
-        tier: year
+        tier: full-account
         title: 'The marriage, the return, and Raphael made known'
         book: Tobit
         ranges:
           - {begin: {chapter: 8, verse: 1}, end: {chapter: 12, verse: 22}}
       - order: 234
-        tier: year
+        tier: full-account
         title: 'The canticle of Tobias, and his death'
         book: Tobit
         ranges:
@@ -1741,7 +1741,7 @@ periods:
       Esdras (Ezra) and Nehemias entire but for their registers, with Esther and Judith. The Douay-Rheims prints the first two as the First and Second Books of Esdras. Esdras 2, Nehemias 3 and Nehemias 7 are lists of names and are passed over on the same rule that omits Genesis 5, 10 and 36.
     readings:
       - order: 235
-        tier: overview
+        tier: landmarks
         title: The decree of Cyrus
         book: Ezra
         ranges:
@@ -1749,37 +1749,37 @@ periods:
         note: |
           Douay-Rheims title: the First Book of Esdras. Esdras 2, the register of those who returned, is omitted.
       - order: 236
-        tier: narrative
+        tier: story
         title: 'The altar, and the foundation laid'
         book: Ezra
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 13}}
       - order: 237
-        tier: year
+        tier: full-account
         title: The work stopped
         book: Ezra
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 24}}
       - order: 238
-        tier: narrative
+        tier: story
         title: The temple finished and dedicated
         book: Ezra
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 6, verse: 22}}
       - order: 239
-        tier: year
+        tier: full-account
         title: Esdras comes up from Babylon
         book: Ezra
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 8, verse: 36}}
       - order: 240
-        tier: year
+        tier: full-account
         title: 'The prayer of Esdras, and the separation'
         book: Ezra
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 10, verse: 44}}
       - order: 241
-        tier: narrative
+        tier: story
         title: Nehemias hears of the ruined walls
         book: Nehemiah
         ranges:
@@ -1787,7 +1787,7 @@ periods:
         note: |
           Douay-Rheims title: the Book of Nehemias, which is called the Second of Esdras.
       - order: 242
-        tier: narrative
+        tier: story
         title: 'The night ride, and the king''s leave'
         book: Nehemiah
         ranges:
@@ -1795,13 +1795,13 @@ periods:
         note: |
           Nehemias 3, the register of the builders, is omitted.
       - order: 243
-        tier: year
+        tier: full-account
         title: 'Sword and trowel; the usury of the nobles'
         book: Nehemiah
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 5, verse: 19}}
       - order: 244
-        tier: year
+        tier: full-account
         title: 'The wall finished in fifty-two days'
         book: Nehemiah
         ranges:
@@ -1809,7 +1809,7 @@ periods:
         note: |
           Nehemias 7, the census of the returned, is omitted.
       - order: 245
-        tier: overview
+        tier: landmarks
         title: Esdras reads the law
         book: Nehemiah
         ranges:
@@ -1817,7 +1817,7 @@ periods:
         note: |
           "The joy of the Lord is our strength." The people hear the law they had lost, and the restored community is constituted around it.
       - order: 246
-        tier: narrative
+        tier: story
         title: The great confession
         book: Nehemiah
         ranges:
@@ -1825,19 +1825,19 @@ periods:
         note: |
           The whole of salvation history to this point, recited by the people themselves - the nearest thing in scripture to this plan's own table of contents.
       - order: 247
-        tier: year
+        tier: full-account
         title: 'The covenant subscribed; Jerusalem repeopled'
         book: Nehemiah
         ranges:
           - {begin: {chapter: 10, verse: 1}, end: {chapter: 11, verse: 36}}
       - order: 248
-        tier: year
+        tier: full-account
         title: The dedication of the wall
         book: Nehemiah
         ranges:
           - {begin: {chapter: 12, verse: 1}, end: {chapter: 12, verse: 46}}
       - order: 249
-        tier: year
+        tier: full-account
         title: The last reforms of Nehemias
         book: Nehemiah
         ranges:
@@ -1845,37 +1845,37 @@ periods:
         note: |
           Aggeus, Zacharias and Malachias belong to this period and are not read.
       - order: 250
-        tier: year
+        tier: full-account
         title: 'Vasthi deposed; Esther made queen'
         book: Esther
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 2, verse: 23}}
       - order: 251
-        tier: year
+        tier: full-account
         title: 'The decree of Aman; "who knoweth whether thou art come for such a time"'
         book: Esther
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 4, verse: 17}}
       - order: 252
-        tier: year
+        tier: full-account
         title: 'Esther before the king; the night without sleep'
         book: Esther
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 6, verse: 14}}
       - order: 253
-        tier: year
+        tier: full-account
         title: 'Aman hanged; the decree reversed'
         book: Esther
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 8, verse: 17}}
       - order: 254
-        tier: year
+        tier: full-account
         title: The feast of Phurim
         book: Esther
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 10, verse: 3}}
       - order: 255
-        tier: year
+        tier: full-account
         title: The Vulgate additions to Esther
         book: Esther
         ranges:
@@ -1883,7 +1883,7 @@ periods:
         note: |
           St. Jerome removed these portions from their Greek places and set them at the end of the book; the Douay-Rheims prints them so. Modern versions print them inline or as Greek Esther A-F, so these references do not transfer.
       - order: 256
-        tier: year
+        tier: full-account
         title: Nabuchodonosor and Holofernes
         book: Judith
         ranges:
@@ -1891,37 +1891,37 @@ periods:
         note: |
           The Vulgate division of Judith differs from the Greek; as with Tobias, these references do not transfer to a modern Bible unchanged.
       - order: 257
-        tier: year
+        tier: full-account
         title: 'Israel prepares; the warning of Achior'
         book: Judith
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 6, verse: 21}}
       - order: 258
-        tier: year
+        tier: full-account
         title: The siege of Bethulia
         book: Judith
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 7, verse: 25}}
       - order: 259
-        tier: year
+        tier: full-account
         title: The counsel and the prayer of Judith
         book: Judith
         ranges:
           - {begin: {chapter: 8, verse: 1}, end: {chapter: 9, verse: 19}}
       - order: 260
-        tier: year
+        tier: full-account
         title: Judith in the camp
         book: Judith
         ranges:
           - {begin: {chapter: 10, verse: 1}, end: {chapter: 13, verse: 31}}
       - order: 261
-        tier: year
+        tier: full-account
         title: 'The rout, and the canticle of Judith'
         book: Judith
         ranges:
           - {begin: {chapter: 14, verse: 1}, end: {chapter: 16, verse: 31}}
       - order: 262
-        tier: year
+        tier: full-account
         title: Psalm 125
         book: Psalms
         ranges:
@@ -1934,7 +1934,7 @@ periods:
       1 Machabees entire, with the two martyr chapters of 2 Machabees. Both books are deuterocanonical and belong to the 73-book canon; an abridgement built on a 66-book canon has no period here at all, and the centuries before Christ go silent.
     readings:
       - order: 263
-        tier: overview
+        tier: landmarks
         title: The desolation of the sanctuary
         book: 1 Maccabees
         ranges:
@@ -1942,25 +1942,25 @@ periods:
         note: |
           The Greek kingdoms, and the abomination set upon the altar. Deuterocanonical.
       - order: 264
-        tier: narrative
+        tier: story
         title: 'Mathathias, and the beginning of the revolt'
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 2, verse: 1}, end: {chapter: 2, verse: 70}}
       - order: 265
-        tier: narrative
+        tier: story
         title: Judas Machabeus takes the lead
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 60}}
       - order: 266
-        tier: year
+        tier: full-account
         title: Emmaus and Bethsura
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 35}}
       - order: 267
-        tier: overview
+        tier: landmarks
         title: The sanctuary cleansed
         book: 1 Maccabees
         ranges:
@@ -1968,79 +1968,79 @@ periods:
         note: |
           The dedication kept afterwards as a feast, and named in St. John 10:22, which this plan reads.
       - order: 268
-        tier: year
+        tier: full-account
         title: The campaigns round about
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 5, verse: 68}}
       - order: 269
-        tier: year
+        tier: full-account
         title: 'The death of Antiochus; Eleazar and the elephant'
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 6, verse: 63}}
       - order: 270
-        tier: year
+        tier: full-account
         title: Nicanor
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 7, verse: 50}}
       - order: 271
-        tier: year
+        tier: full-account
         title: The league with the Romans
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 8, verse: 1}, end: {chapter: 8, verse: 32}}
       - order: 272
-        tier: narrative
+        tier: story
         title: 'The death of Judas; Jonathan succeeds'
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 9, verse: 73}}
       - order: 273
-        tier: year
+        tier: full-account
         title: Jonathan made high priest
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 10, verse: 1}, end: {chapter: 10, verse: 89}}
       - order: 274
-        tier: year
+        tier: full-account
         title: The shifting kings of Syria
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 74}}
       - order: 275
-        tier: year
+        tier: full-account
         title: 'Jonathan''s embassies, and his capture'
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 12, verse: 1}, end: {chapter: 12, verse: 54}}
       - order: 276
-        tier: narrative
+        tier: story
         title: 'Simon, and the freedom of Israel'
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 13, verse: 54}}
       - order: 277
-        tier: year
+        tier: full-account
         title: The praise of Simon
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 14, verse: 1}, end: {chapter: 14, verse: 49}}
       - order: 278
-        tier: year
+        tier: full-account
         title: 'Antiochus turns; the death of Simon'
         book: 1 Maccabees
         ranges:
           - {begin: {chapter: 15, verse: 1}, end: {chapter: 16, verse: 24}}
       - order: 279
-        tier: year
+        tier: full-account
         title: The martyrdom of Eleazar
         book: 2 Maccabees
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 6, verse: 31}}
       - order: 280
-        tier: year
+        tier: full-account
         title: The mother and her seven sons
         book: 2 Maccabees
         ranges:
@@ -2053,13 +2053,13 @@ periods:
       St. Luke entire is the spine of this period: it is the gospel written as a continuous narrative, and it carries the infancy, the journey to Jerusalem, and the resurrection appearances. St. Matthew, St. Mark and St. John enter at the year tier only, and only where they give what St. Luke does not.
     readings:
       - order: 281
-        tier: year
+        tier: full-account
         title: Zachary in the temple
         book: Luke
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 25}}
       - order: 282
-        tier: overview
+        tier: landmarks
         title: The Annunciation and the Nativity
         book: Luke
         ranges:
@@ -2068,7 +2068,7 @@ periods:
         note: |
           Read as one sitting from two places in St. Luke. The angel's promise of a throne and a kingdom without end answers 2 Samuel 7, read earlier in this plan.
       - order: 283
-        tier: narrative
+        tier: story
         title: 'The Visitation, and the Magnificat'
         book: Luke
         ranges:
@@ -2076,19 +2076,19 @@ periods:
         note: |
           The canticle answers Anna's in 1 Samuel 2.
       - order: 284
-        tier: year
+        tier: full-account
         title: 'The birth of John, and the Benedictus'
         book: Luke
         ranges:
           - {begin: {chapter: 1, verse: 57}, end: {chapter: 1, verse: 80}}
       - order: 285
-        tier: narrative
+        tier: story
         title: 'The presentation, and the finding in the temple'
         book: Luke
         ranges:
           - {begin: {chapter: 2, verse: 21}, end: {chapter: 2, verse: 52}}
       - order: 286
-        tier: year
+        tier: full-account
         title: 'The genealogy according to St. Matthew'
         book: Matthew
         ranges:
@@ -2096,19 +2096,19 @@ periods:
         note: |
           The one New Testament genealogy this plan reads: it gathers Abraham, David, Thamar, Rahab, Ruth and the exile, all read above.
       - order: 287
-        tier: year
+        tier: full-account
         title: 'The magi, and the flight into Egypt'
         book: Matthew
         ranges:
           - {begin: {chapter: 2, verse: 1}, end: {chapter: 2, verse: 23}}
       - order: 288
-        tier: narrative
+        tier: story
         title: 'John the Baptist, and the baptism of Christ'
         book: Luke
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 38}}
       - order: 289
-        tier: narrative
+        tier: story
         title: The temptation
         book: Luke
         ranges:
@@ -2116,7 +2116,7 @@ periods:
         note: |
           Christ answers out of Deuteronomy 6 and 8, both read in this plan.
       - order: 290
-        tier: narrative
+        tier: story
         title: '"This day is fulfilled this scripture"'
         book: Luke
         ranges:
@@ -2124,25 +2124,25 @@ periods:
         note: |
           Nazareth. The widow of Sarephta and Naaman, cited here, were read in the Divided Kingdom.
       - order: 291
-        tier: year
+        tier: full-account
         title: The beginning of the gospel
         book: Mark
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 20}}
       - order: 292
-        tier: year
+        tier: full-account
         title: The prologue
         book: John
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 18}}
       - order: 293
-        tier: year
+        tier: full-account
         title: '"Behold the Lamb of God"'
         book: John
         ranges:
           - {begin: {chapter: 1, verse: 19}, end: {chapter: 1, verse: 51}}
       - order: 294
-        tier: year
+        tier: full-account
         title: 'Cana, the temple, and Nicodemus'
         book: John
         ranges:
@@ -2150,62 +2150,62 @@ periods:
         note: |
           "As Moses lifted up the serpent in the desert" - Numbers 21, read in the Desert Wanderings.
       - order: 295
-        tier: year
+        tier: full-account
         title: The woman at the well
         book: John
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 54}}
       - order: 296
-        tier: year
+        tier: full-account
         title: 'The first disciples; the leper and the paralytic'
         book: Luke
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 5, verse: 39}}
       - order: 297
-        tier: year
+        tier: full-account
         title: 'The twelve, and the sermon on the plain'
         book: Luke
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 6, verse: 49}}
       - order: 298
-        tier: year
+        tier: full-account
         title: The beatitudes
         book: Matthew
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 5, verse: 48}}
       - order: 299
-        tier: year
+        tier: full-account
         title: 'The Our Father, and the two ways'
         book: Matthew
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 7, verse: 29}}
       - order: 300
-        tier: year
+        tier: full-account
         title: 'The centurion, the widow of Naim, the sinful woman, the sower and Jairus'
         book: Luke
         ranges:
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 8, verse: 56}}
       - order: 301
-        tier: year
+        tier: full-account
         title: 'The storm, the Gerasene, Jairus, and what defiles a man'
         book: Mark
         ranges:
           - {begin: {chapter: 4, verse: 35}, end: {chapter: 5, verse: 43}}
           - {begin: {chapter: 7, verse: 1}, end: {chapter: 7, verse: 23}}
       - order: 302
-        tier: year
+        tier: full-account
         title: 'The mission of the twelve, and the loaves'
         book: Luke
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 9, verse: 17}}
       - order: 303
-        tier: year
+        tier: full-account
         title: The bread of life
         book: John
         ranges:
           - {begin: {chapter: 6, verse: 1}, end: {chapter: 6, verse: 72}}
       - order: 304
-        tier: overview
+        tier: landmarks
         title: 'The confession of Peter, and the Transfiguration'
         book: Luke
         ranges:
@@ -2213,79 +2213,79 @@ periods:
         note: |
           Moses and Elias, read in this plan at Sinai and at Carmel, stand with him.
       - order: 305
-        tier: year
+        tier: full-account
         title: '"Thou art Peter"'
         book: Matthew
         ranges:
           - {begin: {chapter: 16, verse: 13}, end: {chapter: 16, verse: 28}}
       - order: 306
-        tier: year
+        tier: full-account
         title: 'Blind Bartimeus, and the ransom for many'
         book: Mark
         ranges:
           - {begin: {chapter: 10, verse: 32}, end: {chapter: 10, verse: 52}}
       - order: 307
-        tier: year
+        tier: full-account
         title: The road to Jerusalem
         book: Luke
         ranges:
           - {begin: {chapter: 9, verse: 37}, end: {chapter: 9, verse: 62}}
       - order: 308
-        tier: narrative
+        tier: story
         title: 'The seventy-two, the good Samaritan, Martha and Mary'
         book: Luke
         ranges:
           - {begin: {chapter: 10, verse: 1}, end: {chapter: 10, verse: 42}}
       - order: 309
-        tier: year
+        tier: full-account
         title: 'The Our Father, the strong man, and "fear not, little flock"'
         book: Luke
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 12, verse: 59}}
       - order: 310
-        tier: year
+        tier: full-account
         title: 'The narrow gate, the lament over Jerusalem, and the great supper'
         book: Luke
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 14, verse: 35}}
       - order: 311
-        tier: narrative
+        tier: story
         title: 'The lost sheep, the lost groat, the prodigal son'
         book: Luke
         ranges:
           - {begin: {chapter: 15, verse: 1}, end: {chapter: 15, verse: 32}}
       - order: 312
-        tier: year
+        tier: full-account
         title: 'Dives and Lazarus; the ten lepers'
         book: Luke
         ranges:
           - {begin: {chapter: 16, verse: 1}, end: {chapter: 17, verse: 37}}
       - order: 313
-        tier: year
+        tier: full-account
         title: 'The widow, the publican, and the rich ruler'
         book: Luke
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 18, verse: 43}}
       - order: 314
-        tier: year
+        tier: full-account
         title: The parables of the kingdom
         book: Matthew
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 13, verse: 58}}
       - order: 315
-        tier: year
+        tier: full-account
         title: 'The church, and forgiveness without number'
         book: Matthew
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 18, verse: 35}}
       - order: 316
-        tier: year
+        tier: full-account
         title: '"I am the light of the world"; the man born blind'
         book: John
         ranges:
           - {begin: {chapter: 8, verse: 12}, end: {chapter: 9, verse: 41}}
       - order: 317
-        tier: year
+        tier: full-account
         title: The good shepherd
         book: John
         ranges:
@@ -2293,55 +2293,55 @@ periods:
         note: |
           Answers Ezechiel 34, read in the Exile.
       - order: 318
-        tier: year
+        tier: full-account
         title: Lazarus
         book: John
         ranges:
           - {begin: {chapter: 11, verse: 1}, end: {chapter: 11, verse: 56}}
       - order: 319
-        tier: narrative
+        tier: story
         title: 'Zacheus, and the entry into Jerusalem'
         book: Luke
         ranges:
           - {begin: {chapter: 19, verse: 1}, end: {chapter: 19, verse: 48}}
       - order: 320
-        tier: year
+        tier: full-account
         title: 'The temple disputes, and the discourse on the end'
         book: Luke
         ranges:
           - {begin: {chapter: 20, verse: 1}, end: {chapter: 21, verse: 38}}
       - order: 321
-        tier: year
+        tier: full-account
         title: The last judgment
         book: Matthew
         ranges:
           - {begin: {chapter: 25, verse: 1}, end: {chapter: 25, verse: 46}}
       - order: 322
-        tier: year
+        tier: full-account
         title: The washing of the feet
         book: John
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 13, verse: 38}}
       - order: 323
-        tier: year
+        tier: full-account
         title: 'The last discourse, and the priestly prayer'
         book: John
         ranges:
           - {begin: {chapter: 14, verse: 1}, end: {chapter: 17, verse: 26}}
       - order: 324
-        tier: narrative
+        tier: story
         title: 'The supper, Gethsemani, and the arrest'
         book: Luke
         ranges:
           - {begin: {chapter: 22, verse: 1}, end: {chapter: 22, verse: 71}}
       - order: 325
-        tier: overview
+        tier: landmarks
         title: The Passion
         book: Luke
         ranges:
           - {begin: {chapter: 23, verse: 1}, end: {chapter: 23, verse: 56}}
       - order: 326
-        tier: year
+        tier: full-account
         title: Psalm 21
         book: Psalms
         ranges:
@@ -2349,37 +2349,37 @@ periods:
         note: |
           Vulgate 21 = Hebrew 22: "O God my God, look upon me: why hast thou forsaken me?" - the psalm Christ speaks from the cross.
       - order: 327
-        tier: year
+        tier: full-account
         title: The pierced side
         book: John
         ranges:
           - {begin: {chapter: 19, verse: 25}, end: {chapter: 19, verse: 37}}
       - order: 328
-        tier: overview
+        tier: landmarks
         title: 'The resurrection, and the road to Emmaus'
         book: Luke
         ranges:
           - {begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 53}}
       - order: 329
-        tier: year
+        tier: full-account
         title: 'The empty tomb, and the ending of St. Mark'
         book: Mark
         ranges:
           - {begin: {chapter: 16, verse: 1}, end: {chapter: 16, verse: 20}}
       - order: 330
-        tier: year
+        tier: full-account
         title: 'The risen Lord, and the charge to Peter'
         book: John
         ranges:
           - {begin: {chapter: 20, verse: 1}, end: {chapter: 21, verse: 25}}
       - order: 331
-        tier: year
+        tier: full-account
         title: The great commission
         book: Matthew
         ranges:
           - {begin: {chapter: 28, verse: 16}, end: {chapter: 28, verse: 20}}
       - order: 332
-        tier: year
+        tier: full-account
         title: Psalm 109
         book: Psalms
         ranges:
@@ -2392,13 +2392,13 @@ periods:
       The Acts of the Apostles entire, from the Ascension to Rome, with three psalms the apostles preach from, and one passage of the Apocalypse to close the arc opened in Genesis 1. The epistles are not read; see the omissions.
     readings:
       - order: 333
-        tier: narrative
+        tier: story
         title: 'The Ascension, and the choosing of Matthias'
         book: Acts
         ranges:
           - {begin: {chapter: 1, verse: 1}, end: {chapter: 1, verse: 26}}
       - order: 334
-        tier: overview
+        tier: landmarks
         title: Pentecost
         book: Acts
         ranges:
@@ -2406,7 +2406,7 @@ periods:
         note: |
           Babel, read in the Early World, is answered here. St. Peter preaches from Joel and from Psalms 15 and 109.
       - order: 335
-        tier: year
+        tier: full-account
         title: Psalm 15
         book: Psalms
         ranges:
@@ -2414,19 +2414,19 @@ periods:
         note: |
           Vulgate 15 = Hebrew 16: "Thou wilt not leave my soul in hell" - quoted in Acts 2.
       - order: 336
-        tier: year
+        tier: full-account
         title: The lame man at the Beautiful gate
         book: Acts
         ranges:
           - {begin: {chapter: 3, verse: 1}, end: {chapter: 3, verse: 26}}
       - order: 337
-        tier: narrative
+        tier: story
         title: Peter and John before the council
         book: Acts
         ranges:
           - {begin: {chapter: 4, verse: 1}, end: {chapter: 4, verse: 37}}
       - order: 338
-        tier: year
+        tier: full-account
         title: Psalm 2
         book: Psalms
         ranges:
@@ -2434,13 +2434,13 @@ periods:
         note: |
           Vulgate 2 = Hebrew 2: "Why have the Gentiles raged" - prayed by the Church in Acts 4.
       - order: 339
-        tier: year
+        tier: full-account
         title: 'Ananias and Saphira; the apostles imprisoned'
         book: Acts
         ranges:
           - {begin: {chapter: 5, verse: 1}, end: {chapter: 5, verse: 42}}
       - order: 340
-        tier: narrative
+        tier: story
         title: Stephen
         book: Acts
         ranges:
@@ -2448,7 +2448,7 @@ periods:
         note: |
           Stephen's speech is the salvation history of this plan, told in one breath before his death.
       - order: 341
-        tier: year
+        tier: full-account
         title: 'Philip in Samaria, and on the road to Gaza'
         book: Acts
         ranges:
@@ -2456,85 +2456,85 @@ periods:
         note: |
           The eunuch is reading Isaias 53, which this plan reads in the Exile.
       - order: 342
-        tier: overview
+        tier: landmarks
         title: The conversion of Saul
         book: Acts
         ranges:
           - {begin: {chapter: 9, verse: 1}, end: {chapter: 9, verse: 31}}
       - order: 343
-        tier: overview
+        tier: landmarks
         title: 'Cornelius, and the door opened to the Gentiles'
         book: Acts
         ranges:
           - {begin: {chapter: 9, verse: 32}, end: {chapter: 11, verse: 18}}
       - order: 344
-        tier: year
+        tier: full-account
         title: 'Antioch; Herod; the deliverance of Peter'
         book: Acts
         ranges:
           - {begin: {chapter: 11, verse: 19}, end: {chapter: 12, verse: 25}}
       - order: 345
-        tier: narrative
+        tier: story
         title: The first mission
         book: Acts
         ranges:
           - {begin: {chapter: 13, verse: 1}, end: {chapter: 13, verse: 52}}
       - order: 346
-        tier: year
+        tier: full-account
         title: Lystra and Derbe
         book: Acts
         ranges:
           - {begin: {chapter: 14, verse: 1}, end: {chapter: 14, verse: 27}}
       - order: 347
-        tier: narrative
+        tier: story
         title: The council of Jerusalem
         book: Acts
         ranges:
           - {begin: {chapter: 15, verse: 1}, end: {chapter: 15, verse: 41}}
       - order: 348
-        tier: narrative
+        tier: story
         title: 'Macedonia: Lydia, and the jailer'
         book: Acts
         ranges:
           - {begin: {chapter: 16, verse: 1}, end: {chapter: 16, verse: 40}}
       - order: 349
-        tier: year
+        tier: full-account
         title: 'Athens, and the unknown God'
         book: Acts
         ranges:
           - {begin: {chapter: 17, verse: 1}, end: {chapter: 17, verse: 34}}
       - order: 350
-        tier: year
+        tier: full-account
         title: Corinth and Ephesus
         book: Acts
         ranges:
           - {begin: {chapter: 18, verse: 1}, end: {chapter: 19, verse: 40}}
       - order: 351
-        tier: year
+        tier: full-account
         title: The farewell at Miletus
         book: Acts
         ranges:
           - {begin: {chapter: 20, verse: 1}, end: {chapter: 20, verse: 38}}
       - order: 352
-        tier: year
+        tier: full-account
         title: 'Jerusalem, the arrest, the defence, and the plot'
         book: Acts
         ranges:
           - {begin: {chapter: 21, verse: 1}, end: {chapter: 23, verse: 35}}
       - order: 353
-        tier: year
+        tier: full-account
         title: 'Felix, Festus, the appeal to Caesar, and Agrippa'
         book: Acts
         ranges:
           - {begin: {chapter: 24, verse: 1}, end: {chapter: 26, verse: 32}}
       - order: 354
-        tier: year
+        tier: full-account
         title: The shipwreck
         book: Acts
         ranges:
           - {begin: {chapter: 27, verse: 1}, end: {chapter: 27, verse: 44}}
       - order: 355
-        tier: narrative
+        tier: story
         title: Rome
         book: Acts
         ranges:
@@ -2542,7 +2542,7 @@ periods:
         note: |
           "Preaching the kingdom of God... without prohibition." The book stops rather than ends, and so does the period.
       - order: 356
-        tier: year
+        tier: full-account
         title: Psalm 117
         book: Psalms
         ranges:
@@ -2550,7 +2550,7 @@ periods:
         note: |
           Vulgate 117 = Hebrew 118: "The stone which the builders rejected" - quoted by Christ and by St. Peter before the council.
       - order: 357
-        tier: year
+        tier: full-account
         title: A new heaven and a new earth
         book: Revelation
         ranges:

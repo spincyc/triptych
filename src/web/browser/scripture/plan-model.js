@@ -14,14 +14,14 @@
  * fetches scripture: the chapter cache, the loci and the four failure
  * renderings are the shared machinery's and are used, never re-implemented.
  *
- * TIERS ARE CUMULATIVE, AND THE DIRECTION MATTERS. `overview` is the smallest
+ * TIERS ARE CUMULATIVE, AND THE DIRECTION MATTERS. `landmarks` is the smallest
  * set and `year` is everything; each reading is marked with the tier at which
  * it FIRST appears, and appears in no other. So a track means every reading
- * marked at its tier AND at every tier above it — overview at the narrative
- * track, overview and narrative at the year track — in `order` sequence.
+ * marked at its tier AND at every tier above it — landmarks at the story
+ * track, landmarks and story at the full-account track — in `order` sequence.
  *
  * Getting this backwards inverts the plan without erroring: the reader asks for
- * the 36-reading overview and is handed the 357-reading year, or asks for the
+ * the 36-reading landmarks track and is handed the 357-reading full account, or asks for the
  * year and is handed the skeleton. Both look like a working plan. Hence the
  * explicit sequence below, ranked smallest-first, and the check that the count
  * computed here matches the count the plan's own `tiers` block declares.
@@ -35,7 +35,7 @@ window.ScripturePlan = (function () {
   const PLAN = T.params.get('plan') || 'narrative-spine';
   const PLAN_PATH = 'structure/readings/' + PLAN + '.json';
 
-  const TIER_SEQUENCE = ['overview', 'narrative', 'year'];
+  const TIER_SEQUENCE = ['landmarks', 'story', 'full-account'];
 
   /**
    * Where a tier sits in the nesting, smallest first.
@@ -360,9 +360,9 @@ window.ScripturePlan = (function () {
       canon: 'catholic-73',
       numbering: 'vulgate',
       tiers: {
-        overview: { label: 'Overview', readings: 5, description: 'The fallback\'s smallest set.' },
-        narrative: { label: 'Narrative', readings: 6, description: 'The overview, plus one.' },
-        year: { label: 'Year', readings: 7, description: 'Everything this fallback holds.' }
+        landmarks: { label: 'Landmarks', readings: 5, description: 'The fallback\'s smallest set.' },
+        story: { label: 'The Story', readings: 6, description: 'The landmarks, plus one.' },
+        'full-account': { label: 'The Full Account', readings: 7, description: 'Everything this fallback holds.' }
       },
       omissions:
         'This is the pages\' built-in fallback, not a reading plan. It holds ' +
@@ -377,7 +377,7 @@ window.ScripturePlan = (function () {
           readings: [
             {
               order: 1,
-              tier: 'overview',
+              tier: 'landmarks',
               title: 'Creation',
               book: 'Genesis',
               token: 'Gen',
@@ -390,7 +390,7 @@ window.ScripturePlan = (function () {
             },
             {
               order: 2,
-              tier: 'narrative',
+              tier: 'story',
               title: 'Lifting up the soul',
               book: 'Psalms',
               token: 'Ps',
@@ -403,7 +403,7 @@ window.ScripturePlan = (function () {
             },
             {
               order: 3,
-              tier: 'year',
+              tier: 'full-account',
               title: 'The night is passed',
               book: 'Romans',
               token: 'Rom',
@@ -426,7 +426,7 @@ window.ScripturePlan = (function () {
           readings: [
             {
               order: 9001,
-              tier: 'overview',
+              tier: 'landmarks',
               title: 'Diagnostic: unresolved reading',
               book: 'Psalms',
               token: 'Ps',
@@ -436,7 +436,7 @@ window.ScripturePlan = (function () {
             },
             {
               order: 9002,
-              tier: 'overview',
+              tier: 'landmarks',
               title: 'Diagnostic: missing fragment',
               book: 'Tobias',
               token: 'Tob',
@@ -449,7 +449,7 @@ window.ScripturePlan = (function () {
             },
             {
               order: 9003,
-              tier: 'overview',
+              tier: 'landmarks',
               title: 'Diagnostic: numbering absent',
               book: 'Psalms',
               token: 'Ps',
@@ -459,7 +459,7 @@ window.ScripturePlan = (function () {
             },
             {
               order: 9004,
-              tier: 'overview',
+              tier: 'landmarks',
               title: 'Diagnostic: verses absent from the fragment',
               book: 'Genesis',
               token: 'Gen',
