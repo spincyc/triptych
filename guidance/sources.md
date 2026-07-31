@@ -162,6 +162,33 @@ publicly reachable, pursue proportionate public primary, official, library,
 catalog, and critical-edition alternatives and record the unresolved access
 and evidence boundary rather than inventing a check.
 
+**Retrieve whole documents.** When a document is retrieved at all, retrieve the
+entire document. Never pull a fragment where the whole is pullable: not the one
+chapter a question needs, not the first page of a paginated view, not the prefix
+of a bulk file that a reader truncated. If a source offers a complete download
+beside a per-section view, take the complete one.
+
+The reason is that a partial retrieval and a short document are
+indistinguishable afterwards. A file that stops at Psalm 27 looks exactly like a
+file about Psalms 1–27, and a claim measured against it reads as a claim about
+the whole. That is this library's governing failure — a source that resolves
+successfully and wrongly — arriving through the retrieval rather than through the
+citation. It has already happened here: a check against an external versification
+standard truncated at Psalm 27, so a statement about a 5.8 MB file rested on a
+fifth of it. The lane labelled its finding corroboration rather than proof, which
+was right, but the retrieval should not have stopped.
+
+Where the whole genuinely cannot be had — paywalled beyond a point, rate-limited,
+or served only in fragments — record the exact bound reached and why, and mark
+the artifact's completeness explicitly. A bounded retrieval, declared, is a
+usable source. A bounded retrieval, undeclared, is a false one.
+
+Retrieval and redistribution are separate acts, and this rule governs only the
+first. Retrieve in full; then let the rights record decide the disposition. A
+work that may be read and not republished is `remote` or `restricted` below —
+and it is now the whole of that work whose hash and bounds are recorded, rather
+than an arbitrary slice of it.
+
 Use these storage dispositions:
 
 - **tracked** — the exact artifact is lawful to distribute from the repository,
