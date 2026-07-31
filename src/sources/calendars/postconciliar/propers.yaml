@@ -34,23 +34,29 @@ open_collation_items:
 - proper prefaces and the Oratio super populum are recorded inconsistently across
   seasons; decide whether either belongs in this index at all
 - all entries in this file are placeholders pending source-backed completion
-- an audit of every non-Psalm citation against the tracked Douay text found a
-  further 23 that still resolve to the wrong verses, in Exodus 22, Hosea 2 and 6,
-  Esther 4, Wisdom 6 and 11, Sirach 3, 27 and 35, Mark 9, John 6, and Acts 14;
-  each needs a citation_divergences entry once its numbering is settled. Two of
-  those groups do not come from the Nova Vulgata at all — the Sirach and Wisdom
-  refs follow the Greek that the US Lectionary numbers, and several John 6
-  antiphons are already Clementine-numbered and correct while the John 6 readings
-  beside them are not. Settle which system each ref speaks before correcting it
-- a citation naming a verse beyond the end of a chapter is silently clamped
-  rather than reported, because `index-bible` derives a chapter's bounds from
-  the verses the edition prints; `Mark 4:41`, `1 Thessalonians 4:18` and
-  `Acts 7:60` are each dropped this way and each happens to lose no text,
-  because the verse the Vulgate merged them into carries it. The remedy is a
-  `merged-verse` row in the edition's own verse-aliases artifact rather than an
-  entry below, because the two Vulgate editions disagree here — the Douay ends
-  1 Thessalonians 4 at verse 17 and the Clementine at 18 — so this is a property
-  of an edition and cannot be recorded once for all of them
+- the non-Psalm citations that resolved to the wrong verses are now settled under
+  citation_divergences, which grew from four books to twelve. Two things fell out
+  of settling them and are not defects of this file. Sirach 15:16-21, 24:1-4 and
+  27:5-8 turned out to be in the Vulgate's own numbering and needed no
+  correction, so this file's Sirach citations are known to mix two systems; and
+  the John 6 and Sirach loci are therefore `unrecorded` for a Greek-numbered
+  edition, which cannot be served by one ruling while the mixture stands.
+  Normalizing those citations onto one system would let both become `as-cited`
+  and would return about twenty references to the English indexes
+- 2 Thessalonians 2:14 and 2:16-3:5 still resolve to the wrong verses in the
+  tracked Douay e-texts and in the Catholic Public Domain Version, and
+  1 Thessalonians 4:13-18 goes unresolved in the Douay. This is not a numbering
+  divergence and no entry below can fix it, because those e-texts join two verses
+  that the Clementine prints separately — the Douay's 1 Thessalonians 4:11 is the
+  Clementine's 4:11-12 and its 2 Thessalonians 2:11 is the Clementine's 2:11-12 —
+  so their whole chapter tails stand one number low. The remedy is `merged-verse`
+  rows in each of those editions' own verse-aliases artifacts, which is where the
+  Douay already records Amos 9:15 against exactly this
+- the ot-4 Communion Antiphon (Beati pauperes spiritu) cites Matthew 5:3-4 and the
+  Easter Vigil canticle cites Matthew 5:5-6, where the Vulgate and the Nova
+  Vulgata exchange the meek and those who mourn. Both resolve to real beatitudes
+  either way and the recorded incipit is too short to tell which was meant, so
+  neither is corrected here; settle them against the printed antiphon
 # The psalm loci this file carries that its own numbering cannot hold. The
 # calendar declares Hebrew numbering, and eleven antiphons reproduce the number
 # their missal prints, which is the Vulgate's across most of the psalter; the
@@ -148,16 +154,37 @@ psalm_numbering_exceptions:
 # than resolved: it is left out of every index and reported, because a plausible
 # wrong verse is worse than a missing one. See `tools/index-bible`, which
 # validates these entries against the citations actually made before it indexes.
+#
+# Every resolution below is written in the numbering the Vulgate prints, because
+# that is the text each was read out of. `numbering` then rules, once per book,
+# on every other numbering an indexed edition may be in, because the answer is
+# not the same for every book and neither answer is safe as a default:
+#
+#   resolved   that numbering divides the book as the Vulgate does, so the
+#              resolution below is the correction it needs too. The English
+#              Bibles keep the Vulgate's division in the prophets and in
+#              Exodus and Hosea, where only the Hebrew differs.
+#   as-cited   that numbering divides the book as this calendar cites it, so
+#              the citation already names the verses it means and must be left
+#              exactly as it stands. Correcting it onto the Vulgate would be
+#              the same silent mis-resolution in the other direction.
+#   unrecorded neither holds, or this file's citations for the book do not all
+#              speak one system, so no single answer can be right for such an
+#              edition. It refuses there and the citation goes unindexed.
 citation_divergences:
 - book: Joel
   divergence: the Nova Vulgata divides Joel into four chapters where the Vulgate has
     three; Nova Vulgata 3 is Vulgate 2:28-32 and Nova Vulgata 4 is Vulgate 3
+  numbering:
+    hebrew: resolved
   citations:
     "Joel 2:12-13": "Joel 2:12-13"
     "Joel 3:1-5": "Joel 2:28-32"
 - book: Malachi
   divergence: the Vulgate divides Malachi into four chapters where the Nova Vulgata
     has three; Nova Vulgata 3:19-24 is Vulgate 4:1-6
+  numbering:
+    hebrew: resolved
   citations:
     "Malachi 1:14b-2:2b, 8-10": "Malachi 1:14b-2:2b, 8-10"
     "Malachi 3:1": "Malachi 3:1"
@@ -168,6 +195,8 @@ citation_divergences:
     and chapter 64 one verse later, so Nova Vulgata 8:23 is Vulgate 9:1, the rest
     of chapter 9 runs one verse ahead, Nova Vulgata 63:19b is Vulgate 64:1, and the
     rest of chapter 64 runs one verse behind
+  numbering:
+    hebrew: resolved
   citations:
     "Isaiah 8:23-9:3": "Isaiah 9:1-4"
     "Isaiah 9:1": "Isaiah 9:2"
@@ -179,8 +208,117 @@ citation_divergences:
   divergence: the Vulgate opens chapter 5 one verse earlier than the Nova Vulgata,
     so Nova Vulgata 4:14 is Vulgate 5:1 and the rest of chapter 5 runs one verse
     ahead
+  numbering:
+    hebrew: resolved
   citations:
     "Micah 5:1-4a": "Micah 5:2-5a"
+- book: Acts
+  chapters: [7, 14]
+  divergence: the Vulgate joins the two verses of Stephen's vision into one, so its
+    chapter 7 ends at 59 where the Greek ends at 60 and everything from 7:56 stands
+    one verse lower; and it joins Acts 14:6-7, so from 14:20 its chapter 14 runs one
+    verse behind and ends at 27 where the Greek ends at 28
+  numbering:
+    hebrew: as-cited
+  citations:
+    "Acts 7:55-60": "Acts 7:55-59"
+    "Acts 14:21-27": "Acts 14:20-26"
+- book: Esther
+  chapters: [4]
+  divergence: the Nova Vulgata keeps the Greek additions where the Greek has them
+    and numbers Mardochai's prayer at 4:17, while the Vulgate gathers the additions
+    into chapters 10-16 and prints that prayer at 13:8-18; the Vulgate's own Esther
+    4:17 is Mardochai going away to do as Esther asked, which is what this antiphon
+    was resolving to
+  numbering:
+    hebrew: unrecorded
+  citations:
+    "Esther 4:17": "Esther 13:9-11"
+- book: Exodus
+  chapters: [22]
+  divergence: the Nova Vulgata numbers Exodus 22 from the Hebrew, which opens the
+    chapter at the Vulgate's 21:37, so Nova Vulgata 22:n is Vulgate 22:n+1 through
+    the chapter
+  numbering:
+    hebrew: resolved
+  citations:
+    "Exodus 22:20-26": "Exodus 22:21-27"
+- book: Hosea
+  chapters: [2]
+  divergence: the Nova Vulgata numbers Hosea from the Hebrew, which carries the
+    Vulgate's 1:10-11 into chapter 2, so Nova Vulgata 2:n is Vulgate 2:n-2 through
+    the chapter
+  numbering:
+    hebrew: resolved
+  citations:
+    "Hosea 2:16b, 17b, 21-22": "Hosea 2:14b, 15b, 19-20"
+- book: John
+  chapters: [6]
+  divergence: the Vulgate divides John 6:51 in two, so from 6:52 its numbering runs
+    one verse ahead of the Greek to the end of the chapter and the chapter ends at
+    72 where the Greek ends at 71. This section's John 6 citations do not all speak
+    one system, which is why several resolve to themselves. The Communion antiphons
+    reproduce the number the Vulgate prints and are already right, while the
+    readings and Gospel acclamations beside them carry the Lectionary's
+  numbering:
+    hebrew: unrecorded
+  citations:
+    "John 6:1-15": "John 6:1-15"
+    "John 6:24-35": "John 6:24-35"
+    "John 6:35": "John 6:35"
+    "John 6:41-51": "John 6:41-52"
+    "John 6:51": "John 6:51-52"
+    "John 6:51-52": "John 6:51-52"
+    "John 6:51-58": "John 6:51-59"
+    "John 6:55": "John 6:55"
+    "John 6:56": "John 6:57"
+    "John 6:57": "John 6:57"
+    "John 6:58": "John 6:58"
+    "John 6:60-69": "John 6:61-70"
+    "John 6:63c": "John 6:64c"
+    "John 6:63c, 68c": "John 6:64c, 69"
+    "John 6:68c": "John 6:69"
+- book: Mark
+  chapters: [4, 9]
+  divergence: the Vulgate joins Mark 4:40-41 into one verse, so its chapter 4 ends
+    at 40 where the Greek ends at 41; and it opens chapter 9 at the Transfiguration,
+    which the Greek numbers 9:2, so its whole chapter 9 runs one verse behind and
+    ends at 49 where the Greek ends at 50
+  numbering:
+    hebrew: as-cited
+  citations:
+    "Mark 4:26-34": "Mark 4:26-34"
+    "Mark 4:35-41": "Mark 4:35-40"
+    "Mark 9:2-10": "Mark 9:1-9"
+    "Mark 9:7": "Mark 9:6"
+    "Mark 9:30-37": "Mark 9:29-36"
+    "Mark 9:38-43, 45, 47-48": "Mark 9:37-42, 44, 46-47"
+- book: Sirach
+  chapters: [3, 27, 28, 35]
+  divergence: the Vulgate carries verses the Greek does not, so its numbering runs
+    ahead of the Greek by one in chapter 3, by one in chapter 27 rising to three
+    across 27-28, and by up to four in chapter 35. This section's Sirach citations
+    do not all speak one system. 27:5-8 is already the number the Vulgate prints and
+    resolves to itself, and the rest carry the Greek numbering the US Lectionary
+    uses. 15:16-21 is the Vulgate's own numbering and is therefore not listed here
+  numbering:
+    hebrew: unrecorded
+  citations:
+    "Sirach 3:2-6, 12-14": "Sirach 3:3-7, 14-17a"
+    "Sirach 3:17-18, 20, 28-29": "Sirach 3:19-21, 30-31"
+    "Sirach 27:5-8": "Sirach 27:5-8"
+    "Sirach 27:30-28:7": "Sirach 27:33-28:9"
+    "Sirach 35:12-14, 16-18": "Sirach 35:15b-17, 20-22"
+- book: Wisdom
+  chapters: [6, 11]
+  divergence: the Vulgate carries a verse the Greek does not at the head of both
+    passages, so Greek 6:n is Vulgate 6:n+1 from 6:12 and Greek 11:n is Vulgate
+    11:n+1 from 11:22, to the end of chapter 11
+  numbering:
+    hebrew: as-cited
+  citations:
+    "Wisdom 6:12-16": "Wisdom 6:13-17"
+    "Wisdom 11:22-12:2": "Wisdom 11:23-12:2"
 sections:
   seasonal:
     kind: seasonal

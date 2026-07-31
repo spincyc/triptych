@@ -161,6 +161,8 @@ citation_divergences:
 - book: Isaiah
   chapters: [9, 64]            # omit where the chapter counts themselves differ
   divergence: the Vulgate opens chapter 9 one verse earlier...
+  numbering:
+    hebrew: resolved           # see below; every other numbering must be ruled on
   citations:
     "Isaiah 9:5": "Isaiah 9:6"          # the Child born to us, not the spoils
     "Isaiah 2:1-5": "Isaiah 2:1-5"      # stated even where nothing moves
@@ -172,14 +174,28 @@ reference addressing the same text in Vulgate numbering, parsed by
 holds unchanged is written out rather than omitted: inside a divergent locus,
 silence is not evidence that anyone checked.
 
+Every resolution is written in Vulgate numbering, because that is the text each
+was read out of. Not every indexed edition is in that numbering, and the answer
+is not the same for every book: the English Bibles keep the Vulgate's division
+in the prophets, where only the Hebrew differs, but follow the Greek through the
+New Testament and the deuterocanon, where a Lectionary citation already stands
+where it belongs. `numbering` therefore rules, per locus, on every other
+numbering an indexed edition is in — one of `resolved` (that numbering divides
+the book as the Vulgate does, so the resolution corrects it too), `as-cited`
+(it divides the book as this calendar cites it, so the citation is left exactly
+as it stands), or `unrecorded` (neither is established, or this file's citations
+for the book do not all speak one system, so the citation refuses there). There
+is no default: whichever it were would be applied silently to the books nobody
+had thought about yet, and the two live answers are opposites.
+
 `tools/tpt index-bible` validates the list against the citations actually made
 before it indexes anything, and fails the build on a resolution for a reference
 no longer cited, one landing in another book, one addressing no text in an
-edition holding that book, or a declared chapter nothing reaches. A citation
-reaching a divergent locus with no correspondence recorded is refused: left out
-of every index and reported unresolved. That is deliberate. A missing passage
-is a question; a plausible wrong one is an answer, and this defect is what
-answering wrongly looks like.
+edition holding that book and using the resolution, a declared chapter nothing
+reaches, or a numbering left unruled. A citation reaching a divergent locus with
+no correspondence recorded is refused: left out of every index and reported
+unresolved. That is deliberate. A missing passage is a question; a plausible
+wrong one is an answer, and this defect is what answering wrongly looks like.
 
 These entries resolve text. They do not settle the collation question of which
 numbering the file should print, which stays an `open_collation_items` entry.
