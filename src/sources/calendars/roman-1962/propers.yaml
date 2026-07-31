@@ -57,6 +57,24 @@ open_collation_items:
   Evangelistae. Neither is a commemoration, the reference prints no comm. there,
   so this is not the same defect and nothing was split; the rank II the entry
   carries is the Evangelist's
+- D. N. Iesu Christi Regis and Sanctissimi Nominis Iesu are the two feasts RG 17
+  assigns perpetually to a Sunday that the temporal registry gives no ordinal.
+  guidance/liturgy/roman-1962-propers.md reserves the F series for exactly this
+  case and enumerates no F identity, so both were given the synthetic
+  1962-T-<key> id this file already uses for its undated temporal entries rather
+  than an F number nothing here fixes; settle the scheme at collation
+- the fifth, sixth and seventh days within the octave of the Nativity are three
+  dated entries, as the calendar prints them. Whether the Missal gives them one
+  shared formulary, and what it is, was not established, because no witness
+  tracked here says so; the shared Mass is therefore absent rather than guessed
+- the Office of Our Lady on Saturday has no entry. Its rubrical place is settled
+  (RG 78, RG 79, RG 91 row 27, and RGMR 515 b, which says its Mass exists and may
+  be sung) and src/sources/calendars/roman-1962/rubrics.yaml already constitutes
+  the day from it, but it falls on any Saturday carrying a fourth-class feria,
+  which this file's own implied rules place in five different seasons, and the
+  schema admits exactly one season on an undated entry. Its seasonal formularies
+  were also not read. Both must be settled before an entry can be written that
+  is not partly invented
 - all entries in this file are placeholders pending source-backed completion
 - 63 seasonal entries were added for the temporal days the Missal keeps and this
   file did not, namely the three Advent Ember Days; Ash Wednesday and the three days
@@ -1005,6 +1023,22 @@ sections:
       date: 12-31
       rank: II
       kind: seasonal
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: most-holy-name-of-jesus
+      name: Sanctissimi Nominis Iesu
+      registry: '1962-T-most-holy-name-of-jesus'
+      season: christmastide
+      rank: II
+      notes: RG 17 a assigns this feast perpetually to the Sunday falling from 2 to 5
+        January, and to 2 January in a year in which no Sunday falls there; the calendar
+        prints it as a notice at the foot of January rather than against a numeral, so
+        it carries no fixed date and a synthetic registry id. Nothing of its formulary
+        has been read.
       propers:
       - name: Placeholder
         source: composed
@@ -11850,6 +11884,21 @@ sections:
           Quaesumus, omnipotens Deus: ut, quos divina tribuis participatione
           gaudere, humanis non sinas subjacere periculis. Per Dominum nostrum
           Jesum Christum...
+    - key: christ-the-king
+      name: D. N. Iesu Christi Regis
+      registry: '1962-T-christ-the-king'
+      season: after-pentecost
+      rank: I
+      notes: RG 17 d assigns this feast perpetually to the last Sunday of October, which
+        always falls between 25 and 31 October; the calendar prints it as a notice at
+        the foot of October rather than against a numeral, so it carries no fixed date
+        and a synthetic registry id. Nothing of its formulary has been read.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: resumed-epiphany-3
       name: Third Sunday after the Epiphany, resumed after Pentecost
       registry: 46R
@@ -12641,15 +12690,33 @@ sections:
       date: 12-25
       rank: I
       kind: christological
-      notes: The second Mass, in aurora, carries a commemoration of S. Anastasia Martyr
-        that the Missal prints inside that formulary; it is not an entry the calendar
-        inscribes on the date and has no dated entry of its own here.
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
+      notes: RGMR 518 b names the three Masses of Christmas, and the Missal prints a
+        formulary for each. The second, in aurora, carries a commemoration of S. Anastasia
+        Martyr printed inside that formulary; it is not an entry the calendar inscribes
+        on the date and has no dated entry of its own here. Nothing of any of the three
+        formularies has been read.
+      forms:
+      - name: Ad primam Missam in nocte
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
 
-          '
+            '
+      - name: Ad secundam Missam in aurora
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
+
+            '
+      - name: Ad tertiam Missam in die
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
+
+            '
   sanctoral:
     kind: sanctoral
     label: Saints

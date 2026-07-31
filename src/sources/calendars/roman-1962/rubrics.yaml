@@ -470,7 +470,9 @@ assignment:
 - {basis: row-1-sunday, keys: [easter-sunday, pentecost]}
 - {basis: row-1-nativity, keys: [nativitate-domini-octave]}
 - {basis: row-3-feast-of-the-lord, keys: [epiphania-domini, ascension, trinity, corpus-christi,
-      sacred-heart]}
+      sacred-heart, christ-the-king], note: 'RG 91 row 3 names six feasts, and these are
+    they; RG 17 d assigns Christ the King perpetually to the last Sunday of October, where
+    it takes the Sunday''s place.'}
 - {basis: row-4-our-lady, keys: [conceptione-immaculata-beatae-mariae-virginis, assumptione-beatae-mariae-virginis]}
 - {basis: row-5-nativity-vigil-and-octave-day, keys: [vigil-nativity-lord, octava-nativitatis-domini]}
 - {basis: row-6-sunday, keys: [advent-1, advent-2, advent-3, advent-4, lent-1, lent-2,
@@ -485,6 +487,11 @@ assignment:
     b assigns the Holy Family perpetually to the Sunday within the octave of the Epiphany,
     where it takes the Sunday''s place "cum omnibus iuribus et privilegiis; de dominica,
     proinde, nulla fit commemoratio"'}
+- {basis: row-14-second-class-feast-of-the-lord, keys: [most-holy-name-of-jesus], note: 'RG
+    17 a assigns the Most Holy Name of Jesus perpetually to the Sunday falling from 2 to
+    5 January, and to 2 January where no Sunday falls there. It is a second-class feast
+    of the Lord, so it sits at row 14 and not at row 16, which row 91 confines to second-class
+    feasts that are not of the Lord.'}
 - {basis: row-14-second-class-feast-of-the-lord, keys: [purificatione-beatae-mariae-virginis],
   note: the Missal's own rubric at 2 February holds the Purification "tamquam festum
     Domini", which is why it sits at row 14 and not at row 16; RGMR 484 a and 495 follow
@@ -630,33 +637,15 @@ saturday_office:
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
 # Celebrations the Missal carries that this calendar index does not, with the
-# dates they would occupy. Without this block the derivation is not merely
-# incomplete on those dates, it is wrong: the last Sunday of October would be
-# handed to a numbered Sunday after Pentecost that Christ the King displaces.
-# The index's own notes record the absences; these entries date them.
+# dates they would occupy. Both entries this block held - D. N. Iesu Christi
+# Regis and Sanctissimi Nominis Iesu - are now masses in the index and are
+# classified in `assignment` above, so the block is empty. It is kept rather
+# than deleted because it is the only place a movable absence can be declared:
+# the spine derives fixed dates, so nothing below it reports one. A declared
+# absence that is no longer absent is as false as an undeclared one, so an
+# entry here is deleted in the same change that adds the mass.
 # ---------------------------------------------------------------------------
-known_absences:
-- what: D. N. Iesu Christi Regis
-  row: 3
-  when: the last Sunday of October, which always falls between 25 and 31 October
-  match: {from: 10-25, to: 10-31, weekday: sunday}
-  locus: RG 17 d; RG 91 row 3
-  blocks_result: true
-  effect: >-
-    A first-class feast of the Lord at row 3 would take this day from any Sunday
-    after Pentecost. It is absent from this calendar index, so the winner shown
-    below is not the day's identity.
-- what: Sanctissimi Nominis Iesu
-  row: 16
-  when: the Sunday falling between 2 and 5 January
-  match: {from: 01-02, to: 01-05, weekday: sunday}
-  locus: RG 17 a
-  blocks_result: true
-  effect: >-
-    RG 17 a assigns the Most Holy Name of Jesus perpetually to this Sunday, where
-    it takes the Sunday's place. It is absent from this calendar index, so this
-    date carries no day at all here. Where no Sunday falls between 2 and 5
-    January the feast is kept on 2 January, which this file does not date.
+known_absences: []
 
 impediment:
   outcomes: [omission, commemoration, transfer, reposition]

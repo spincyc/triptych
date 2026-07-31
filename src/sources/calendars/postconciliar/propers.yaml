@@ -33,6 +33,27 @@ open_collation_items:
   was preferred; confirm against the approved edition actually in use
 - proper prefaces and the Oratio super populum are recorded inconsistently across
   seasons; decide whether either belongs in this index at all
+- the three celebrations the General Roman Calendar inscribes by rule rather than
+  by date and this file now carries - the Most Sacred Heart of Jesus, the
+  Immaculate Heart of the Blessed Virgin Mary, and the Blessed Virgin Mary,
+  Mother of the Church - have no id in
+  guidance/liturgy/postconciliar-propers-registry.md. That registry's PC-S spine
+  is the Sunday production order and expressly excludes the Sacred Heart; its
+  PC-R series is declared exhaustive for fixed-date replacements and these are
+  not fixed-date; and it requires a registry revision naming exact keys, slugs,
+  positions and counts before a new identity. Whether that requirement binds this
+  calendar index at all, as against a publication leaf, is itself unsettled. Each
+  therefore carries a synthetic pc-T-<key> id formed on the 1962 index's own
+  1962-T-<key> pattern, and none of the three should be read as claiming a
+  registry identity; settle the scheme with the registry's owner
+- the Chrism Mass is still absent, and src/sources/calendars/postconciliar/rubrics.yaml
+  still declares that absence. Nothing tracked here settles whether a Mass that
+  is neither a Sunday nor a solemnity nor a day of the Triduum belongs in this
+  index, and the 1962 index in this repository carries one while this one does
+  not; it was left rather than resolved by preference
+- whether the three celebrations inscribed by rule belong under seasonal, as
+  they are filed, or under christological and marian, is the same question the
+  1962 index records for its own movable feasts of the Lord
 - all entries in this file are placeholders pending source-backed completion
 - the non-Psalm citations that resolved to the wrong verses are now settled under
   citation_divergences, which grew from four books to twelve. Two things fell out
@@ -6674,6 +6695,23 @@ sections:
             quam dedisti, ut Spiritus Sancti vigeat semper munus infusum, et
             ad aeternae redemptionis augmentum spiritalis esca proficiat.
             Per Christum.
+    - key: blessed-virgin-mary-mother-church
+      name: The Blessed Virgin Mary, Mother of the Church
+      registry: pc-T-blessed-virgin-mary-mother-church
+      season: ordinary-time
+      rank: Memorial
+      notes: An obligatory memorial added to the General Roman Calendar after the 2002
+        printing and inscribed on the Monday after Pentecost, Easter plus 50 days, so
+        it always falls on the first weekday of the resumed Ordinary Time. It appears
+        in no month of the printed calendar, which is why it carries a synthetic registry
+        id rather than one of the postconciliar registry's own. Nothing of its formulary
+        has been read.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: ot-2
       name: Second Sunday in Ordinary Time
       registry: pc-s26
@@ -13495,6 +13533,39 @@ sections:
           praefigurat. Qui vivis et regnas in saecula saeculorum.
         notes: The Missal directs that a procession with the Blessed Sacrament fittingly follow
           this prayer, the concluding rites being omitted.
+    - key: most-sacred-heart-jesus
+      name: The Most Sacred Heart of Jesus
+      registry: pc-T-most-sacred-heart-jesus
+      season: solemnities-of-the-lord
+      rank: Solemnity
+      notes: A solemnity inscribed in the General Roman Calendar by rule and not by date,
+        as Feria VI post dominicam secundam post Pentecosten, Easter plus 68 days, and
+        printed as a prose line at the end of June. It is not part of the postconciliar
+        registry's Sunday spine, which is why it carries a synthetic registry id. Nothing
+        of its formulary has been read.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+    - key: immaculate-heart-blessed-virgin-mary
+      name: The Immaculate Heart of the Blessed Virgin Mary
+      registry: pc-T-immaculate-heart-blessed-virgin-mary
+      season: ordinary-time
+      rank: Memorial
+      notes: An obligatory memorial inscribed in the General Roman Calendar by rule and
+        not by date, as Sabbato post dominicam secundam post Pentecosten, Easter plus
+        69 days, and printed as a prose line at the end of June. The notification of 8
+        December 1998, protocol 2671/98/L, governs its meeting with another obligatory
+        memorial and is reported here rather than read. Nothing of its formulary has been
+        read.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
     - key: christ-the-king
       name: Our Lord Jesus Christ, King of the Universe
       registry: pc-s60
@@ -13741,12 +13812,23 @@ sections:
       date: 08-15
       rank: Solemnity
       kind: marian
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
+      notes: The Missal prints distinct Vigil and Day formularies, which the postconciliar
+        proper registry fixes as the two targets of PC-R05. Neither has been read.
+      forms:
+      - name: Vigil Mass
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
 
-          '
+            '
+      - name: Mass during the Day
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
+
+            '
     - key: queenship-blessed-virgin-mary
       name: The Queenship of the Blessed Virgin Mary
       registry: pc-08-22
@@ -14785,12 +14867,23 @@ sections:
       date: 06-24
       rank: Solemnity
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
+      notes: The Missal prints distinct Vigil and Day formularies, which the postconciliar
+        proper registry fixes as the two targets of PC-R02. Neither has been read.
+      forms:
+      - name: Vigil Mass
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
 
-          '
+            '
+      - name: Mass during the Day
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
+
+            '
     - key: saint-cyril-alexandria-bishop-doctor-church
       name: Saint Cyril of Alexandria, Bishop and Doctor of the Church
       registry: pc-06-27
@@ -14821,12 +14914,23 @@ sections:
       date: 06-29
       rank: Solemnity
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
+      notes: The Missal prints distinct Vigil and Day formularies, which the postconciliar
+        proper registry fixes as the two targets of PC-R03. Neither has been read.
+      forms:
+      - name: Vigil Mass
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
 
-          '
+            '
+      - name: Mass during the Day
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
+
+            '
     - key: first-martyrs-holy-roman-church
       name: The First Martyrs of the Holy Roman Church
       registry: pc-06-30
@@ -15749,12 +15853,33 @@ sections:
       date: 11-02
       rank: All Souls commemoration
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
+      notes: The Missal prints three distinct formularies for this day, which the postconciliar
+        proper registry fixes as the three FORMULARY targets of PC-R08. The numbering
+        identifies the printed formularies only and prescribes no order of celebration,
+        no intention and no pairing with a reading branch. None of the three has been
+        read.
+      forms:
+      - name: First formulary
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
 
-          '
+            '
+      - name: Second formulary
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
+
+            '
+      - name: Third formulary
+        propers:
+        - name: Placeholder
+          source: composed
+          text: 'This entry is a placeholder pending formula migration and source verification.
+
+            '
     - key: saint-martin-porres-religious
       name: Saint Martin de Porres, Religious
       registry: pc-11-03
