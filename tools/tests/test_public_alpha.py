@@ -52,6 +52,8 @@ class PublicAlphaTest(unittest.TestCase):
             "LICENSES/MIT.txt",
             "release/public-alpha/layout.html",
             "release/public-alpha/assets/site.css",
+            "release/public-alpha/assets/social-card.png",
+            "release/public-alpha/assets/icon.png",
             "requirements-public-alpha.txt",
             "tools/public-alpha",
         }
@@ -68,8 +70,22 @@ class PublicAlphaTest(unittest.TestCase):
             "library/ecclesiastical-latin.md",
             b"# Ecclesiastical Latin\n\n[Return to Curriculums](curriculums.md)\n",
         )
-        self.write("release/public-alpha/layout.html", b"{{CONTENT}}\n")
+        # The stub carries the head markers as well as the content, because the
+        # link-preview metadata is verified in the built artifact: a layout that
+        # renders no head would let every page pass for want of a place to fail.
+        self.write(
+            "release/public-alpha/layout.html",
+            b'{{ROBOTS}}<link rel="apple-touch-icon" href="{{ICON_PATH}}">'
+            b"{{SOCIAL}}{{CONTENT}}\n",
+        )
         self.write("release/public-alpha/assets/site.css", b"body {}\n")
+        # The real card and icon, because the link-preview metadata reads their
+        # own dimensions out of them rather than restating a size beside them.
+        for asset in ("assets/social-card.png", "assets/icon.png"):
+            self.write(
+                f"release/public-alpha/{asset}",
+                (REPOSITORY_ROOT / "release/public-alpha" / asset).read_bytes(),
+            )
         self.write("requirements-public-alpha.txt", b"Markdown==3.10.2\n")
         self.write("tools/public-alpha", b"test generator\n")
         self.write("release/rights/approval.md", b"stale approval record\n")
@@ -145,6 +161,102 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertNotIn("Give feedback", layout)
         self.assertIn("{{HOME_CURRENT}}", layout)
         self.assertIn("{{BREADCRUMB}}", layout)
+
+    def render_browser_head(self, output_relative: str) -> str:
+        source = REPOSITORY_ROOT / "src/web/browser" / output_relative
+        tool = load_tool()
+        page = tool.render_browser_page(source, output_relative, False, {})
+        return page.split("</head>")[0]
+
+    def test_every_browser_page_carries_its_own_link_preview(self) -> None:
+        """A shared preview is barely better than none, so each page states itself."""
+        tool = load_tool()
+        seen: dict[str, set[str]] = {"og:title": set(), "og:url": set()}
+        for output_relative, source in sorted(tool.web_browser_pages().items()):
+            head = tool.render_browser_page(source, output_relative, False, {}).split(
+                "</head>"
+            )[0]
+            properties = dict(tool.SOCIAL_PROPERTY_RE.findall(head))
+            names = dict(tool.SOCIAL_NAME_RE.findall(head))
+            for required in ("og:type", "og:site_name", "og:title", "og:description",
+                             "og:url", "og:image", "og:image:width", "og:image:height"):
+                self.assertIn(required, properties, f"{output_relative} lacks {required}")
+            self.assertEqual(names["twitter:card"], "summary_large_image")
+            self.assertEqual(names["description"], properties["og:description"])
+            # Apple's TN3156: the site name belongs in og:site_name, not in the
+            # title, or the preview reads as the site repeated.
+            self.assertEqual(properties["og:site_name"], tool.SITE_NAME)
+            self.assertNotIn(f"· {tool.SITE_NAME}", properties["og:title"])
+            self.assertEqual(
+                properties["og:url"], f"{tool.SITE_ORIGIN}/{output_relative}"
+            )
+            self.assertTrue(properties["og:image"].startswith("https://"))
+            seen["og:title"].add(properties["og:title"])
+            seen["og:url"].add(properties["og:url"])
+        self.assertEqual(len(seen["og:title"]), len(tool.web_browser_pages()))
+        self.assertEqual(len(seen["og:url"]), len(tool.web_browser_pages()))
+
+    def test_link_preview_description_is_the_page_lede_not_a_second_copy(self) -> None:
+        tool = load_tool()
+        head = self.render_browser_head("liturgy/index.html")
+        lede = tool.LEDE_RE.search(
+            (REPOSITORY_ROOT / "src/web/browser/liturgy/index.html").read_text(
+                encoding="utf-8"
+            )
+        )
+        expected = " ".join(tool.MARKUP_RE.sub("", lede.group(1)).split())
+        self.assertIn(f'content="{expected}"', head)
+
+    def test_link_preview_prefers_a_declared_description_over_a_placeholder(
+        self,
+    ) -> None:
+        tool = load_tool()
+        placeholder = '<p class="lede">Loading the plan…</p>'
+        self.assertEqual(
+            tool.social_description(placeholder, ""), tool.SITE_DESCRIPTION
+        )
+        self.assertEqual(
+            tool.social_description(placeholder, "What this page is."),
+            "What this page is.",
+        )
+        # A lede that says something is used verbatim; a later paragraph on a
+        # page that already has a lede never stands in for it.
+        stated = (
+            '<p class="lede">The full text of any Mass in either missal, in the '
+            "translations this site can publish.</p><p>Something else entirely "
+            "that is quite long enough to pass the floor on its own.</p>"
+        )
+        self.assertTrue(tool.social_description(stated, "").startswith("The full text"))
+
+    def test_link_preview_image_meets_apples_stated_minimums(self) -> None:
+        tool = load_tool()
+        width, height = tool.png_dimensions(
+            REPOSITORY_ROOT / "release/public-alpha" / tool.SOCIAL_CARD_RELATIVE
+        )
+        self.assertGreaterEqual(width, tool.PREVIEW_IMAGE_MINIMUM_WIDTH)
+        self.assertGreater(height, 0)
+        side, other = tool.png_dimensions(
+            REPOSITORY_ROOT / "release/public-alpha" / tool.SITE_ICON_RELATIVE
+        )
+        self.assertEqual(side, other)
+        self.assertGreaterEqual(side, tool.PREVIEW_ICON_MINIMUM_SIDE)
+
+    def test_no_index_artifact_does_not_advertise_the_public_site(self) -> None:
+        tool = load_tool()
+        source = REPOSITORY_ROOT / "src/web/browser/liturgy/index.html"
+        page = tool.render_browser_page(source, "liturgy/index.html", True, {})
+        self.assertNotIn("og:url", page)
+        self.assertNotIn(tool.SITE_ORIGIN, page)
+        # It still describes itself, for a reader and for the tab.
+        self.assertIn('<meta name="description"', page)
+
+    def test_layout_carries_the_preview_icon_and_social_markers(self) -> None:
+        layout = (REPOSITORY_ROOT / "release/public-alpha/layout.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("{{SOCIAL}}", layout)
+        self.assertIn('rel="apple-touch-icon"', layout)
+        self.assertIn("{{ICON_PATH}}", layout)
 
     def test_home_browser_title_is_not_duplicated(self) -> None:
         self.assertEqual(self.tool.document_title("Triptych"), "Triptych")
@@ -1276,6 +1388,8 @@ class PublicAlphaTest(unittest.TestCase):
         with mock.patch.object(self.tool, "render_source_page", return_value=page):
             with mock.patch.object(
                 self.tool, "verify_catalog_reachability", return_value=[]
+            ), mock.patch.object(
+                self.tool, "verify_link_previews", return_value=[]
             ):
                 output = self.tool.build_site(self.manifest, publications, preview=False)
                 self.tool.verify_output(self.manifest, publications, output, preview=False)
@@ -1284,6 +1398,8 @@ class PublicAlphaTest(unittest.TestCase):
         with mock.patch.object(self.tool, "render_source_page", return_value=leaked):
             with mock.patch.object(
                 self.tool, "verify_catalog_reachability", return_value=[]
+            ), mock.patch.object(
+                self.tool, "verify_link_previews", return_value=[]
             ):
                 output = self.tool.build_site(self.manifest, publications, preview=False)
                 with self.assertRaises(self.tool.ReleaseError) as failure:

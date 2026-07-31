@@ -533,10 +533,20 @@ a.footnote-backref { text-decoration: none; }
 }
 
 @media (max-width: 760px) {
-  .site-header { grid-template-columns: auto 1fr; }
-  nav { grid-column: 1 / -1; flex-wrap: wrap; padding-top: 0.35rem; border-top: 1px solid var(--line); }
+  .site-header { grid-template-columns: auto 1fr; padding-block: 1rem 0.5rem; }
+  nav { grid-column: 1 / -1; flex-wrap: wrap; border-top: 1px solid var(--line); }
+  /* The primary navigation is the most-tapped thing on the site and these
+     links were bare text about 24px tall. 2.75rem is 44px, the smallest target
+     Apple's interface guidelines will call reliable. The height is spent on the
+     touch box, not on chrome: the header's own padding gives most of it back. */
+  nav a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .site-footer a { display: inline-block; padding-block: 0.35rem; }
   .page-shell { margin-top: 0; border-left: 0; border-right: 0; border-radius: 0; box-shadow: none; }
   table { display: block; overflow-x: auto; }
+  /* A long unbreakable run — a URL in the third-party notices, a query string
+     in a worked example — otherwise widens the document and sets every line of
+     prose scrolling sideways. */
+  body { overflow-wrap: break-word; }
 }
 
 @media (prefers-reduced-motion: reduce) {

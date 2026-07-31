@@ -61,6 +61,13 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
+/* A phone is roughly 20rem of usable width, and one long unbreakable run — a
+   URL, a query string, a Latin compound — is enough to widen the whole document
+   and leave every line of prose scrolling sideways. Breaking inside a word is
+   ugly; a page the reader has to pan is worse, and only the run that cannot fit
+   is broken. */
+body { overflow-wrap: break-word; }
+
 /* Published, these pages are handed to the reader inside the site's own
    layout: its header, its navigation, its footer, its background, its width.
    This stylesheet then owns only what is inside the reading area, which the
@@ -83,7 +90,12 @@ body:not(:has(> .site-header)) {
   font-family: var(--sans);
   font-size: 1rem;
   line-height: 1.55;
+  /* `100vh` on iOS is the viewport with the browser chrome retracted, so a page
+     sized to it is always taller than what the reader can see and always
+     scrolls a little. `100svh` is the smallest visible height; the `100vh`
+     above it is the fallback for anything that does not know the unit. */
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 /* The reading area inside the site's layout. The surfaces are mixed from the
@@ -231,8 +243,23 @@ body:not(:has(> .site-header)) {
   color: var(--section-ink);
 }
 
-.field select {
+/* Every control the reader touches, sized once.
+ *
+ * Two numbers matter on a phone and neither is decorative. 2.75rem is 44px,
+ * the smallest target Apple's interface guidelines will call reliable; a
+ * `select` padded to 0.5rem measured about 37px, which is a miss waiting to
+ * happen on a page whose whole purpose is choosing between things. And a form
+ * control under 16px makes iOS Safari zoom the page on focus and leave it
+ * zoomed, so `font: inherit` is load-bearing: it takes the 1rem set above, and
+ * no control here may quietly set itself smaller.
+ *
+ * `input` is styled with `select` although no page in this repository styles a
+ * bare input: a page that adds one otherwise gets Safari's own 13.3px default
+ * and the zoom with it, and the defect arrives in a page rather than here. */
+.field select,
+.field input {
   width: 100%;
+  min-height: 2.75rem;
   padding: 0.5rem 0.6rem;
   font: inherit;
   color: var(--ink);
@@ -250,6 +277,7 @@ body:not(:has(> .site-header)) {
 .steps { display: flex; gap: 0.5rem; }
 
 .steps button {
+  min-height: 2.75rem;
   padding: 0.5rem 0.9rem;
   font: inherit;
   color: var(--ink);
@@ -441,9 +469,29 @@ body:not(:has(> .site-header)) {
 
 @media (max-width: 34rem) {
   body:not(:has(> .site-header)) { padding: 1.25rem 1rem 3rem; }
-  .controls { padding: 0.85rem; }
+
+  /* The controls already span the full width of a phone, so the card drawn
+     around them is a border the reading measure pays for twice over and a
+     second frame inside the site's own. The accent rule stays, because that is
+     the identity; the box was the furniture. */
+  .controls {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding: 0.85rem 0 0;
+    border: 0;
+    border-top: 0.2rem solid var(--section-accent);
+    border-radius: 0;
+    background: none;
+  }
+
   .field-steps { flex: 1 1 100%; }
   .steps button { flex: 1 1 auto; }
+
+  /* A title set for a wide column costs three lines of a narrow one before the
+     reader reaches anything the page is actually for. */
+  .page-header { margin-bottom: 1.25rem; }
+  .page-header h1 { font-size: 1.55rem; }
+  .entry-title { font-size: 1.35rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
