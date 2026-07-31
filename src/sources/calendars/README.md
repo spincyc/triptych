@@ -1,20 +1,20 @@
 # Calendar Mass Indexes
 
 Normalized YAML indexes of Roman-rite mass formularies and their ordered
-propers, one directory per calendar and one file per deterministic series.
-Each calendar has one `propers.yaml` whose `sections` map is the single
-canonical mass list, labeled by kind (`christological`, `marian`, `sanctoral`,
-`seasonal`). There is no other copy: a top-level `masses` key duplicates the
-list and `check-calendar-masses` rejects it.
+propers, one directory per calendar and one `propers.yaml` in each. That file's
+`sections` map is the single canonical mass list, labeled by kind
+(`christological`, `marian`, `sanctoral`, `seasonal`). There is no other copy: a
+top-level `masses` key duplicates the list and `check-calendar-masses` rejects
+it.
 `guidance/sources.md` owns the contract; this file records what is here and how
 to read it.
 
 ```text
 src/sources/calendars/
   roman-1962/
-    propers.yaml        # consolidated sanctoral propers (marian/christological/sanctoral)
-  postconciliar/
-    propers.yaml        # consolidated sanctoral propers (marian/christological/sanctoral)
+    propers.yaml        # every mass of the calendar: seasonal, marian,
+  postconciliar/        # christological and sanctoral alike
+    propers.yaml
 ```
 
 ## What an index is
@@ -201,12 +201,27 @@ owns the canon. Both run inside `make check` and need PyYAML
 
 ## Current contents
 
-| Index | Masses | Propers | Encoded passages |
-| --- | --- | --- | --- |
-| `roman-1962/propers.yaml` | 59 | 636 | 548 |
-| `postconciliar/propers.yaml` | 63 | 821 | 1082 |
+Counted from the files by `check-calendar-masses` and `citations check`, which
+are the authority; these figures are restated here and go stale, so re-run them
+before trusting the table.
 
-The 1962 index covers the 59-item seasonal spine, the four resumed Epiphany
-Sundays, and `T01`-`T03`. The postconciliar index covers `PC-S01`-`PC-S60` and
-`PC-T01`-`PC-T03`, with the Nativity, Epiphany, Ascension, and Pentecost
-carrying `forms`. Registry coverage in both is exact and duplicate-free.
+| Index | Masses | Propers | Encoded passages | Placeholder-only masses |
+| --- | --- | --- | --- | --- |
+| `roman-1962/propers.yaml` | 397 | 1401 | 1108 | 275 |
+| `postconciliar/propers.yaml` | 265 | 1023 | 1082 | 202 |
+
+The proper counts include those nested inside `forms`: 94 of the 1962's and 108
+of the postconciliar's belong to a form rather than to a mass directly, so a
+count that reads `propers` alone lands 94 and 108 short.
+
+**Most of what is here is a name, not a formulary.** 477 of the 662 masses
+carry nothing but a placeholder proper — they establish that the mass exists and
+where it falls, and record nothing of what is said at it. The seasonal sections
+hold the substance: 1035 of the 1962's propers and 713 of the postconciliar's.
+Coverage is therefore wide and shallow by design, and a reader who sees a mass
+listed should not infer its texts are here.
+
+`check-calendar-masses` enforces that every mass matches a spine entry and that
+no key repeats. It exits 0 on both indexes, so coverage is exact and
+duplicate-free as of that run — which is a statement about the check, not a
+standing property of the files.

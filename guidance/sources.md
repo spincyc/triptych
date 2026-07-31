@@ -100,7 +100,9 @@ src/sources/
 
 `calendars/` holds the normalized YAML indexes of mass formularies and their
 ordered propers, one directory per calendar (`roman-1962`, `postconciliar`)
-and one file per deterministic series. Each file declares the
+and one `propers.yaml` in each, whose `sections` map holds every mass of that
+calendar — seasonal, marian, christological and sanctoral alike. Each file
+declares the
 `triptych-calendar-masses/v1` schema, the controlling edition, its ordering
 rule, the registry that owns its identities, its citation and orthography
 conventions, and its verification state. `tools/tpt check-calendar-masses`
