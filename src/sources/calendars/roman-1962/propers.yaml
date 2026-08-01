@@ -161,6 +161,23 @@ open_collation_items:
   line and mapped onto this file's mass keys, because a pointer resolving to the
   wrong Common would give a saint a whole Mass that is not his, and it would
   resolve cleanly and look right
+- that refusal was tested again on 2026-08-01, now that the Commons those
+  pointers would land on exist, and it stands. Both witnesses print the lines and
+  print them richly - the CMAA facsimile's text layer carries 180 occurrences of
+  de Communi in its Proprium Sanctorum and the Benziger scan 171, and each names
+  the Common, the Mass within it by its printed loco N, and the Commune's own
+  bracketed page, so which formulary is meant is rarely in doubt. What is in
+  doubt is which saint. A pass over the Benziger text recovered 153 candidates
+  and attributed a date to every one, which looked like a complete answer and was
+  not - the date came from the nearest preceding DIE N MENSIS heading, and the
+  scan loses enough of those headings that eleven consecutive candidates fell
+  under 21 December. A pointer carrying the right Common and the wrong saint is
+  the exact defect the paragraph above refuses, and a run reporting a date for
+  every candidate while doing it is worse than one reporting none. Nothing was
+  landed. What is now known and was not is that the Common each line names is
+  machine-readable from two independent scans; what remains is to key the lines
+  to the day headings by page and position rather than by proximity in a linear
+  text, and to collate the result
 - the two forms of a Common are two masses here, the second taking the first and
   replacing only the propers that differ, because a mass printed in forms cannot
   carry takes_from and a form cannot reference its sibling. Where a Common prints
