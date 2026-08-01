@@ -4,6 +4,10 @@
 
 This repository contains **Triptych: AI Driven Studies in Catholic Faith, Worship, and Law** (`triptych`), a source-first collection of liturgical, theological, and canonical study documents.
 
+`guidance/the-shape.md` states the few ideas the rest of this guidance keeps
+applying, and the incidents that produced them. It governs nothing on its own and
+is the shortest way to understand why the rules below are shaped as they are.
+
 Read these files before changing document content, structure, or build behavior:
 
 1. `README.md` for the landing page, which is also the catalog index, `ABOUT.md` for the consumer overview, and the section pages under `library/` for publication listings and supporting records.
