@@ -5,6 +5,26 @@ implemented by `tools/tpt research-staleness` and the tracked ledger
 `src/sources/inventories/research-staleness-v1.toml`; the evaluative half
 is provider work that this profile defines.
 
+## Suspended, 31 July 2026
+
+**Nothing is flagged stale until the tooling settles, and everything below
+describes a workflow nothing currently triggers.** `make check-staleness` prints
+the suspension and reports no editions. The raw signal is still available from
+`make measure-staleness` (and `tools/tpt research-staleness status`) for looking
+at rather than acting on; `make explain-staleness DOC=<leaf> [PROVIDER=]` names
+the changed inputs for one leaf.
+
+The signal is not merely noisy: it measures library growth rather than
+dependency. A paper on the virtues reported 156 changed inputs, every one a
+Clementine verse table it does not bind. The tooling under these papers has
+further to go, so a baseline taken now would be taken against a moving one.
+
+It was suspended rather than rebaselined on purpose, and the distinction is the
+point: rebaselining writes down that the research **was** re-read against the
+changed inputs, which is a review that did not happen. Suspension says the true
+thing — measurement has stopped. The papers are left exactly as they are, and
+one full pass back through the research happens when the tooling has matured.
+
 ## Staleness
 
 A paper's research inputs are:
@@ -16,7 +36,8 @@ A paper's research inputs are:
    `source-bindings.toml` binds.
 
 When any input changes — by any provider — every provider's edition of
-that leaf is stale. `make check-staleness` reports stale editions;
+that leaf is stale. `make measure-staleness` reports stale editions while the
+suspension stands;
 `tools/tpt research-staleness explain <provider> <leaf>` names the exact
 changed inputs. Staleness is a flag for re-evaluation, not a judgment
 that the paper is wrong, and it never blocks builds or release checks on

@@ -10,9 +10,9 @@ Authority order: `guidance/sources.md` owns the source contract;
 harvest contract; this file owns nothing — it points at the owners and states
 what breaks.
 
-All figures below were recomputed on 2026-07-31 against
-`narrative-spine.yaml` `sha256:5008d353…` and `harvest-ledger.yaml`
-`sha256:9ed0293a…`. Every figure names the command that produces it. Recompute
+All figures below were recomputed on 2026-08-01 against
+`narrative-spine.yaml` `sha256:60d16a28…` and `harvest-ledger.yaml`
+`sha256:84bb33ec…`. Every figure names the command that produces it. Recompute
 before quoting; do not trust a number in prose over a number you measured.
 
 ---
@@ -41,7 +41,7 @@ Invoke through `tools/tpt`, never the implementation path directly.
 periods[]      key (stable, opaque), label (display only), summary, readings[]
 readings[]     order (global 1..N), tier, title, book, ranges[], note?
 ranges[]       {begin: {chapter, verse}, end: {chapter, verse}}   end defaults to begin
-tiers          {overview|narrative|year: {readings: <cumulative int>, label, description}}
+tiers          {landmarks|story|full-account: {readings: <cumulative int>, label, description}}
 ```
 
 - `numbering: vulgate`. `canon: catholic-73`.
@@ -79,7 +79,7 @@ tools/tpt reading-plan check --format json
 | Quantity | Value |
 | --- | --- |
 | Readings / periods / books / chapters touched | 357 / 12 / 31 / 454 |
-| Entering each tier (overview, narrative, year) | 36, 75, 246 |
+| Entering each tier (landmarks, story, full-account) | 36, 75, 246 |
 | Cumulative tier totals | 36, 111, 357 |
 | Verses per tier | 1,210 / 3,675 / 13,867 |
 | Share of canon per tier | 3.38% / 10.26% / 38.73% |
@@ -114,8 +114,8 @@ def cells(r):
     return out
 print("canon verses", total)
 seen, dup = set(), 0
-for i, name in enumerate(("overview", "narrative", "year")):
-    want = set(("overview", "narrative", "year")[:i+1])
+for i, name in enumerate(("landmarks", "story", "full-account")):
+    want = set(("landmarks", "story", "full-account")[:i+1])
     sel = set().union(*(cells(r) for r in readings if r["tier"] in want))
     n = sum(1 for r in readings if r["tier"] in want)
     ch = {(t, c) for (t, c, _) in sel}
@@ -213,7 +213,7 @@ explicitly after any edit to the plan or the tool.
 | Worklist of loci short of target runs | `harvest plan --corpus … --by-chapter` | guessed |
 | Asking the model | `harvest ask --corpus … --runs 3` | any other tool or verb |
 | Which model a run is stamped with | the answer, via `harvest ask` | asserted about it |
-| Ingesting one run | `harvest record --model --audited-on` | hand-editing the ledger |
+| Ingesting one run | `harvest record --results --model --audited-on` | hand-editing the ledger |
 | Confidence | `harvest promote` — appearances ÷ runs | a score from the model |
 | The passage→works lookup | `passage-commentary-index.yaml` | written by hand |
 | Entry to the source library | human review under `guidance/sources.md` | a harvest alone |

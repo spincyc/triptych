@@ -59,8 +59,17 @@ A proper requires `name` and a `source`, unless it carries `takes_from`:
 | `composed` | `text` | `verses` |
 | `mixed` | both | — |
 
-Optional on a proper: `incipit`, `notes`, `translations`, `psalm_numbering`,
-`cycles`.
+Optional on a proper: `incipit`, `notes`, `psalm_numbering`, `cycles`.
+
+**The English is not in `propers.yaml`.** No proper in either calendar carries a
+`translations` key; the schema allows one and nothing uses it. Translations live
+in sidecar overlays merged at check time —
+`src/sources/inventories/<calendar>-proper-translations-v1.toml`, found by
+`OVERLAY_DIR`/`OVERLAY_SUFFIX` in `tools/check-calendar-masses` — keyed
+`(lang, source_id)`, and selected by `mass-propers --witness` and `--lang`. The
+rule that produced this: every validation rule had been written against a
+`propers.yaml` key no calendar used, while the file the site actually serves
+went unvalidated. Look in the overlay before concluding a text is missing.
 
 `cycles` is keyed `A`/`B`/`C` and excludes top-level `verses` and `text`. Where
 cycles differ in kind, `source` moves inside each cycle; otherwise it stays on
@@ -125,7 +134,7 @@ Assume more of the same kind exist.
 | A citation resolving to the **wrong words** across a book-division divergence | It resolves. `Joel 3:1-5` returned the valley of Josaphat, not the outpoured spirit, and appeared in no error count. | Now caught: `citation_divergences` is validated by `index-bible`, which refuses an unrecorded citation reaching a divergent locus. |
 | A psalm verse **beyond the end of its psalm** under the file's declared numbering | The bounds check once held ceilings for six psalms only, so `Psalm 118:137` passed although Hebrew 118 ends at 29. | Now caught: every psalm is bounded from the tracked verse-level concordance. Eleven loci remain, ledgered. |
 | A celebration in the **spine and in no section** | The two artifacts had different histories and nothing compared them. Three Christmas octave days sat in the gap. | Now caught: `spine_problems` in `check-calendar-masses`. |
-| A verse **past the end of a chapter** | `index-bible` derives a chapter's bounds from the verses the edition prints, so it clamps rather than reports. `Mark 4:41`, `1 Thessalonians 4:18`, `Acts 7:60` are each dropped this way. | Open. The remedy is a `merged-verse` row in the edition's verse-aliases artifact, because the Douay and Clementine disagree here. |
+| A verse **past the end of a chapter** | `index-bible` derives a chapter's bounds from the verses the edition prints, so it clamps rather than reports. `Mark 4:41`, `1 Thessalonians 4:18` and `Acts 7:60` were each dropped this way. | Partly closed: `Mark 4:41` and `Acts 7:60` now resolve and only `1 Thessalonians 4:18` still reports. The remedy is a `merged-verse` row in the edition's verse-aliases artifact, because the Douay and Clementine disagree here. |
 | **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their orations are still placeholders. |
 | The **book's identity** retyped in a second file | `edition` sat in `propers.yaml` and again in `rubrics.yaml`, in both calendars — four hand-typed copies of two strings, with nothing comparing them. They agreed; nothing made them agree. | Now caught: the mass index owns `edition` and `edition_short`, `calendar-rubrics` reads both from it, and `_calendars.restated_identity` refuses a companion that carries either — whether or not its value matches. |
 | One formulary **retyped under a second mass** | The schema could not say "this mass takes that text", so a day the Missal carries by a pointer had to be carried by a copy, and nothing compared the copies. The four resumed Sundays after the Epiphany held one set of orations twice and disagreed in five ways — `caelestis`/`coelestis`, `Caelestibus`/`Coelestibus`, `caelestibus`/`coelestibus`, one Introit citation encoded as a contiguous range against three discrete verses, and a dozen truncated incipits. The English was duplicated with it, twelve sidecar rows for four orations. | Now expressible: `takes_from` on a mass or a proper, resolved once by `_calendars.resolve_propers` for both the validator and the browser. The four Sundays now reference `epiphany-3`..`-6` and `pentecost-23` under RGMR 298. **Not yet caught** — nothing detects a formulary retyped where a reference would do. |
@@ -290,9 +299,10 @@ so addressed verses that do not exist. State as of 2026-07-31:
 The eleven: `ascension`/Vigil Mass, `ot-6`, `ot-8`, `ot-9`, `ot-22`, `ot-23`,
 `ot-26`, `ot-29`, `ot-31`, `ot-33`, `christ-the-king`.
 
-Two references cannot resolve for upstream reasons: `4 Esdras 2:36-37` (not among
-the Douay-Rheims' 73 books) and `Malachi 3:19-20a` (Hebrew numbering where the
-Vulgate prints Malachi 4:1-6). Only psalms convert between systems.
+Two references cannot resolve: `4 Esdras 2:36-37` (not among the Douay-Rheims'
+73 books) and `1 Thessalonians 4:18` (past the last verse this edition prints in
+that chapter). `Malachi 3:19-20a` used to be a third and now resolves. Only
+psalms convert between systems.
 
 ## Octave-day classification
 
