@@ -37,7 +37,9 @@ into one module that `check-generation-metadata` and `public-alpha` now share.
 
 ## Anything with an inherent order sorts in that order in a directory listing
 
-That sentence is the whole of the path convention. A listing of the corpus
+That sentence is the whole of the path convention, and `guidance/sources.md`
+settles it repository-wide along with its two limits; what follows is its
+application to the canon. A listing of the corpus
 should read as the Bible reads, not as a filing cabinet.
 
     structure/catena/01-gen/001.json          Genesis 1

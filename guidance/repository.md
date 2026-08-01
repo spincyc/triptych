@@ -95,7 +95,22 @@ The same mirroring applies to every provider branch.
 
 A document leaf ID such as `articles/faith/ontological-vertigo` may exist under more than one provider. Each provider edition is an independent work on the same scope: it keeps its own research records, its own sections, and its own generation metadata, and reuses no text across providers. Publication identity is provider-qualified — the provider plus the leaf ID.
 
-Use lowercase kebab-case slugs. Stable identifiers are namespaced by their profiles and are not interchangeable across collections or editions. Numbered series use their profile's ordering rules; a number is not a claim of importance.
+Use lowercase kebab-case slugs. Stable identifiers are namespaced by their profiles and are not interchangeable across collections or editions. A number is not a claim of importance.
+
+**Anything with an inherent order sorts in that order in a directory listing.**
+A path component carrying an ordered thing is prefixed with what orders it,
+zero-padded to a stated width — canon position for a book of scripture, date for
+an edition, a witness or an act. A listing is the first index anyone reads, and
+one arriving alphabetically when its subject is chronological or canonical makes
+a reader reconstruct the order in their head every time.
+
+`guidance/sources.md` settles that rule and its two limits — a path is not an
+identity, and the prefix is *derived* from the record rather than typed beside
+it. Its applications live with their subtrees and are not restated here:
+`guidance/web-data.md` for canon position and chapter padding, derived in
+`scripts/_canon.py`; `guidance/act-histories.md` §13 for act and witness dates.
+A profile fixes the series order within a collection; it does not decide whether
+an ordered thing sorts.
 
 ## Shared sources and records
 
