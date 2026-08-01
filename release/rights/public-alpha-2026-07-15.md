@@ -1711,7 +1711,7 @@ release attachment, announcement, or promotion.
 | `THIRD_PARTY.md` | `3930df7ae096296c5bb73b333f77f86ac459b2cf59d82e74fab057d948fd8021` |
 | `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
-| `docs/the-mass.md` | `6c46b1c6ff7c1d37fe6e0d5bed7f33e0e8c3ff38a4f93e8957d4c1d717e4a317` |
+| `docs/the-mass.md` | `7d41556b8ebf08be4a50a96b76f5ad8b7e92a019dcb34aa9e5371612ff55930e` |
 | `library/biographies.md` | `c2de5d8013c126500ec283334fd3311fb907c826e3a3a800145d575347be21ab` |
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
