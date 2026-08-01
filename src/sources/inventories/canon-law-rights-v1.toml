@@ -1,0 +1,587 @@
+# The rights position on the texts of canon law, settled once so that it is not
+# settled again.
+#
+# This file is the canon-law counterpart of liturgical-english-rights-v1.toml
+# and is written to the same pattern: the question, the answer, the reasoning,
+# the limits, and the evidence each rests on. It exists because a lane building
+# an act-keyed history of the Codex has to know, before it transcribes a single
+# canon, which canons it may publish -- and because this project has already
+# paid once for reaching that answer three times in three places without writing
+# down the citations.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. Where it states a proposition of law it states the
+# jurisdiction, and the jurisdiction throughout is the United States.
+#
+# THE SHORT FORM, for anyone who reads no further:
+#
+#   1917 Code, Latin        PUBLISHABLE. Published at Rome in 1918, and a
+#                           foreign publication before 1931 is in the United
+#                           States public domain unconditionally.
+#   1983 Code, Latin        WITHHELD. A work of the Holy See, and the Holy See
+#                           legislates copyright over the texts of its own laws
+#                           and official acts by name.
+#   CCEO 1990, Latin        WITHHELD, on the same ground, and its own delivery
+#                           carries a Libreria Editrice Vaticana notice.
+#   the amending acts       WITHHELD, on the same ground.
+#   English translations    WITHHELD. No publisher's grant was located, and the
+#                           two Creative Commons transcriptions that exist do
+#                           not reach either current code.
+#
+# Withheld is not silent. Every canon whose text may not be printed here stands
+# in the record with its number, its place, the acts that changed it, and a
+# stated reason in place of its words. See canon-law-acts-v1.toml.
+
+rights_schema = 1
+record_type = "canon-law-rights"
+recorded_on = "2026-08-01"
+jurisdiction = "United States"
+
+holding = """
+The Latin of the 1917 Pio-Benedictine Code may be published here and is. The
+Latin of the 1983 Code, of the 1990 Code of Canons of the Eastern Churches, and
+of the acts amending them may not, and translating them afresh does not escape
+that, because the underlying text is claimed. The standard English translations
+are separately encumbered and no grant over any of them was located. So this
+project publishes the 1917 text, carries the later codes' canons by identity --
+number, place, the acts that touched them, the dates -- and writes an absence
+with its reason where the words would stand.
+
+The instrument that settles the second half is not the one this project reached
+for first. Liturgiam authenticam n. 111, which settled the liturgical question,
+is about liturgical books and does not reach a code of canon law. The right
+instrument is Vatican City State Law N. CXCVII of 1 September 2017, whose
+article 2 applies copyright to the texts of laws and official acts of the Holy
+See in terms.
+"""
+
+# ---------------------------------------------------------------------------
+
+[the_1917_code]
+question = "May the Latin text of the 1917 Code be published here?"
+answer = "Yes. It is in the public domain in the United States."
+reasoning = """
+The Code was promulgated by Benedict XV's apostolic constitution Providentissima
+Mater Ecclesia, dated in the book itself Datum Romae apud S. Petrum die festo
+Pentecostes anno millesimo nongentesimo decimo septimo, and printed at Rome by
+the Vatican Polyglot Press. The copy this project reads is the 1918 printing
+with Cardinal Gasparri's fontes, digitized from the University of Illinois
+exemplar as Internet Archive item codexiuriscanoni00cath.
+
+A work first published outside the United States before 1931 is in the United
+States public domain, with no conditions attached. The Copyright Office states
+the domestic form of the rule -- "all works published in the United States
+before January 1, 1931, are in the public domain" (Circular 15a) -- and the
+Cornell Copyright Information Center's chart, in its row for works first
+published outside the United States by foreign nationals, gives Date of
+Publication "Before 1931", Conditions "None", Term "In the public domain".
+
+Restoration under 17 U.S.C. 104A cannot revive it. The section restores a work
+only "for the remainder of the term of copyright that the work would have
+otherwise been granted in the United States if the work never entered the public
+domain", and for a 1918 publication that counterfactual term -- ninety-five
+years from publication -- expired at the end of 2013.
+
+Nothing later reaches back onto it. 17 U.S.C. 103(b) provides that copyright in
+a derivative work "extends only to the material contributed by the author of
+such work, as distinguished from the preexisting material employed in the work,
+and does not imply any exclusive right in the preexisting material". So neither
+a modern reprint, nor a modern translation, nor a website's transcription
+acquires anything in the 1918 Latin.
+"""
+limits = """
+One live question, and it is circuit-specific rather than academic. The Cornell
+chart's first special case records that in the Ninth Circuit -- Alaska, Arizona,
+California, Hawaii, Idaho, Montana, Nevada, Oregon and Washington, with Guam and
+the Northern Mariana Islands -- a work published between 1 July 1909 and 1978 in
+a language other than English, without subsequent republication with a copyright
+notice, is treated as unpublished until a United States-compliant publication
+occurred. The authority is Twin Books v. Walt Disney Co. (9th Cir. 1996), which
+concluded that "publication without a copyright notice in a foreign country did
+not put the work in the public domain in the United States".
+
+The 1918 Vatican Polyglot printing is exactly a non-English foreign publication.
+WHETHER IT BEARS A UNITED STATES-COMPLIANT NOTICE HAS NOT BEEN CHECKED. No
+title-page or colophon leaf of the scan has been acquired and read for one. That
+check is cheap and it has not been done; it is recorded here as an open item
+rather than assumed either way.
+
+A second, smaller thing. Five artifact manifests in this repository state the
+threshold as "before 1930". That was right when written and is not wrong now --
+1918 is before both -- but the threshold moves forward every first of January,
+and the sources now read 1931. A record that hard-codes a moving threshold will
+drift; the manifests should cite the rule rather than a year.
+"""
+source_ids = [
+  "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.archive-ocr-text",
+  "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.leaf-85-image",
+  "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.leaf-693-image",
+]
+unregistered_sources = [
+  "cornell-public-domain-chart-2026",
+  "us-copyright-office-circular-15a",
+  "us-code-title-17-chapter-1",
+]
+
+# ---------------------------------------------------------------------------
+
+[liturgiam_authenticam_does_not_reach_it]
+question = "Does Liturgiam authenticam n. 111, which settled the liturgical question, settle this one?"
+answer = "No, and reaching for it would have been a reference that resolved successfully and wrongly."
+reasoning = """
+n. 111 reads, in the passage this repository has already verified: "As regards
+the liturgical books of the Roman Rite promulgated in an editio typica either
+before or after the Second Vatican Council by decree of the Congregations
+competent at the time, the Apostolic See, through the Administratio Patrimonii
+or, in its name and by its mandate, through the Libreria Editrice Vaticana,
+possesses and reserves to itself the right of ownership commonly known as
+'copyright'."
+
+Three things in that sentence exclude a code of canon law.
+
+Its subject is LITURGICAL BOOKS, and n. 110 lists the books in view and names
+the Missale Romanum first. A code is not among them.
+
+Its trigger is promulgation IN AN EDITIO TYPICA BY DECREE OF A CONGREGATION. The
+1983 Code was promulgated by an apostolic constitution of the Roman Pontiff,
+Sacrae disciplinae leges of 25 January 1983; the Eastern Code by Sacri canones
+of 18 October 1990. Neither is a Congregation's decree and neither book is an
+editio typica in that sense.
+
+And its instrument type is an instruction of a Congregation, which states what
+the Apostolic See claims and directs how its officers are to act. It is not an
+adjudication, as the liturgical record already says of it.
+
+Recorded at length because the argument from analogy is the obvious one, it
+produces the right answer for the wrong reason, and a right answer resting on a
+wrong instrument is the failure guidance/the-shape.md section 1 is about. The
+correct instrument is below, and it is stronger.
+"""
+source_ids = [
+  "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.111",
+]
+
+# ---------------------------------------------------------------------------
+
+[the_1983_code_and_the_cceo]
+question = "May the Latin of the 1983 Code, the CCEO, or the acts amending them be published here?"
+answer = "No. The Holy See legislates copyright over the texts of its own laws by name."
+reasoning = """
+Vatican City State Law N. CXCVII, promulgated 1 September 2017 and in force from
+1 October 2017, is the governing claim. Article 1 adopts the law in force in
+Italy for copyright, so far as not contrary to divine law, to the general
+principles of canon law or to the Lateran Pacts. Then, in terms:
+
+  Art. 2 -- "Le norme relative alla protezione e alla gestione del diritto di
+  autore si applicano anche ai testi delle leggi e degli atti ufficiali
+  pubblicati, in qualunque forma, dalla Santa Sede e dallo Stato della Citta del
+  Vaticano."
+
+  Art. 5 §1 -- "Spetta alla Santa Sede ed allo Stato della Citta del Vaticano il
+  diritto di autore sulle opere create o pubblicate sotto il loro nome o
+  realizzate per loro conto."
+
+  Art. 5 §2 -- for the purposes of the law the Holy See means, besides the Roman
+  Pontiff, the Dicasteries and Organisms of the Roman Curia and the institutions
+  connected with it.
+
+  Art. 5 §4 -- the term of the exclusive rights of economic exploitation is
+  seventy years from the year of first publication.
+
+That is a copyright claim over the text of a law, made by the legislator, and it
+names the very class this lane wants to publish. Many jurisdictions place their
+own statutes outside copyright; article 2 exists precisely to say that this one
+does not.
+
+The claim is enforceable in the United States on ordinary principles. The Holy
+See acceded to the Berne Convention on 19 July 1935, in force 12 September 1935
+-- WIPO's contracting-party table and the Copyright Office's own Circular 38a
+agree on both dates, and Circular 38a lists the party as "Holy See" with no
+separate Vatican City State entry. A work first published under its authority is
+therefore a work of a treaty party, and the 1983 and 1990 codes and every act
+amending them are twentieth- and twenty-first-century works. A translation is a
+derivative work, and the right to prepare one is among those reserved.
+
+The web deliveries are separately restricted. The vatican.va Terms of Use, which
+every modern document page links as Legal Notes, say the portal and its contents
+are owned by the Dicastery for Communication; that access "is intended for
+personal and non-profit use only"; that "the reproduction and collection of
+Contents for reasons other than personal use is expressly prohibited in the
+absence of prior authorization issued in writing"; and that the contents "are
+protected by the copyright regulations in force in the State of Vatican City and
+by international copyright regulations". This is the basis the repository's
+existing artifact manifests for the 1983 Code already record, and it is
+unchanged.
+"""
+what_the_pages_themselves_say = """
+Checked page by page, because a notice is evidence and its absence is not.
+
+  CCEO, Latin index -- carries "© Copyright 1990 - Libreria Editrice Vaticana".
+  Sacrae disciplinae leges, Latin -- carries "© Copyright 1983 - Libreria
+    Editrice Vaticana".
+  Mitis Iudex Dominus Iesus, Latin -- carries only the site footer, "Copyright ©
+    Dicasterium pro Communicatione".
+  Pascite gregem Dei, Latin -- the same.
+  The 1983 Code's own Latin and English delivery pages -- NO copyright line at
+    all, in the index or in the text pages.
+
+The absence of a line on the Code's own pages proves nothing in either
+direction. A copyright notice has not been a condition of protection in the
+United States for works published on or after 1 March 1989, and article 2 of
+Law N. CXCVII does not condition its claim on a notice. The pages were read so
+that this record rests on what they say rather than on what a reader expects
+them to say.
+"""
+limits = """
+What was quoted of Law N. CXCVII is WIPO Lex's HTML rendering of the law, not
+the promulgated text in the Supplement to the Acta Apostolicae Sedis. The
+Vatican State site's laws page returns 404 and WIPO's own PDF link is a signed
+URL that redirected. The prior Law N. CXXXII of 19 March 2011 was not fetched,
+and nothing here establishes whether article 2 operates on a text published in
+1917 -- which does not matter, because the 1917 answer rests on United States
+term, not on Vatican law, and a Vatican statute does not fix a United States
+term in any event.
+
+And the position stated here is the position this project acts on, not a
+prediction of how a court would rule. This project has not tested the claim and
+does not propose to.
+"""
+source_ids = [
+  "artifact.world-intellectual-property-organization.wipo-lex-berne-contracting-parties.web-2026-08-01.contracting-parties-html",
+  "artifact.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.vatican-liber1-html",
+  "artifact.catholic-church.codex-iuris-canonici-1983.english-vatican-web-codex-2026-07-25.vatican-cann1-6-html",
+]
+unregistered_sources = [
+  "vatican-city-state-law-cxcvii-2017",
+  "vatican-va-legal-notes-2026-08-01",
+  "us-copyright-office-circular-38a",
+  "cceo-latin-index-delivery-2026-08-01",
+  "sacrae-disciplinae-leges-latin-delivery-2026-08-01",
+]
+
+# ---------------------------------------------------------------------------
+
+[the_english_translations]
+question = "May the standard English translations be reproduced?"
+answer = "No, and the reason is weaker than one would like: no publisher's notice could be read at all."
+reasoning = """
+Three translations are in view: the Canon Law Society of America's Latin-English
+edition of the 1983 Code and its Latin-English edition of the CCEO; the Canon
+Law Society of Great Britain and Ireland's; and Edward Peters's translation of
+the 1917 Code, published by Ignatius Press in 2001.
+
+Each rests on a text this project may not publish, except Peters's, which rests
+on one it may. Peters's translation is nonetheless a derivative work of a
+public-domain original, and 17 U.S.C. 103(b) protects what its author
+contributed. A 2001 United States publication is protected for ninety-five years
+from publication. Age is not a route here and will not be a route in any
+reader's lifetime.
+
+WHAT COULD NOT BE ESTABLISHED, and it is stated as a failure rather than dressed
+as a finding. Not one of the three publishers' own copyright or permissions
+statements could be read. The Canon Law Society of America's site returns HTTP
+403 behind a Cloudflare interstitial on every attempt, and the Wayback Machine
+holds no snapshot of a copyright or permissions page; its archived store and
+product pages carry no notice. The British and Irish society's site is at
+canonlawsociety.org -- canonlawsociety.org.uk does not resolve and clsgbi.org
+times out -- and its publications page covers only Canon Law Abstracts and its
+newsletter, saying nothing about rights in any translation. Ignatius Press's
+product page for the Peters translation carries the ISBN and the author and no
+copyright notice for the work.
+
+So the refusal to publish rests on the ordinary operation of copyright over a
+recent commercially published book, and NOT on any licence term this project has
+read. If someone later reaches those notices, this section should be rewritten
+with them.
+"""
+a_further_unknown = """
+The English served from vatican.va at /archive/cod-iuris-canonici/eng/ names no
+translator and carries no notice. Which translation it is cannot be established
+from the delivery. The repository's family ledger already records it as an
+unofficial aid whose translator the pages do not name, and that remains the
+position.
+"""
+unregistered_sources = [
+  "clsa-store-wayback-2025",
+  "canon-law-society-gb-ireland-web-2026-08-01",
+  "ignatius-press-pio-benedictine-product-2026-08-01",
+]
+
+# ---------------------------------------------------------------------------
+
+[free_grants]
+question = "Is there any free grant or open licence over a Latin or English text of either Code?"
+answer = "None that reaches the 1983 Code or the CCEO. Two exist over the 1917 Code, and neither is needed."
+examined = """
+Five hosts were examined.
+
+IntraText carries the 1917 Code in Latin and the CCEO in English, both under a
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 licence stated on its
+terms page: attribution to the IntraText Digital Library, no commercial use, and
+share-alike on anything built from it. Two problems. NonCommercial and
+ShareAlike are not compatible with this project's CC BY 4.0 outputs. And the
+English CCEO is the Divinum Officium case again, exactly as the liturgical
+rights record describes it: the host asserts a Creative Commons licence over a
+translation whose source it records as "Printed version 1992" and whose owner it
+does not name, with "Printed source: Not available". A licence on a host is not
+evidence that the text inside it was the host's to license. It is not relied on.
+
+Latin Wikisource carries the 1917 Code under Creative Commons
+Attribution-ShareAlike. It is genuinely the 1917 Code -- its header gives the
+year 1918 and it indexes Books I to V -- and a search of that site for the
+Codex returns the 1917 Code and its books and a separate Eastern code, with the
+1983 Code not among the results. The grant is real and adds nothing: the
+underlying text is already public domain, so ShareAlike would impose an
+obligation on this project in exchange for a permission it does not need.
+
+canonlaw.info serves the complete Latin of both the 1917 and the 1983 Codes.
+Its footer claims "Original Materials © Edward N. Peters" -- a claim over the
+site's own material, expressly not over the Latin, and not a grant to anyone.
+It is not a route to the 1983 text.
+
+The Gregorian University's iuscangreg.it is a link directory that points back at
+vatican.va and hosts nothing of its own to grant.
+
+vatican.va grants nothing: see the Terms of Use above.
+
+So for the 1917 Code the cleanest route is the one this repository already owns
+-- the Internet Archive scan of the 1918 Vatican Polyglot printing, registered
+as edition.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918 --
+and for the 1983 Code and the CCEO there is no route at all.
+"""
+unregistered_sources = [
+  "intratext-copyright-terms-2026-08-01",
+  "intratext-cic-1917-latin-2026-08-01",
+  "latin-wikisource-codex-iuris-canonici-2026-08-01",
+]
+
+# ---------------------------------------------------------------------------
+
+[what_is_published]
+question = "What does this project actually publish, and what does it write instead where it may not?"
+answer = "The 1917 Latin; for everything later, the canon's identity and a stated absence."
+what_is_published = """
+For the 1917 Code: the Latin text of the canons this lane has read, each
+carrying whether it was read from a page image or only from the Internet Archive
+optical-character-recognition text layer, and the date of any collation.
+
+For the 1983 Code, the CCEO and the amending acts: the canon's number, the
+paragraph where an act touched one, the division of the code it stands in, every
+act that established or changed it with that act's date and citation, and the
+authentic interpretations recorded against it. All of those are facts about the
+law rather than the law's words.
+
+Division titles are handled deliberately. For the 1917 Code, which is public
+domain, a division carries the Latin rubric as the book prints it. For the 1983
+Code and the CCEO, a division carries its bare designation -- Liber IV -- and a
+description of its subject written by this project in English. The Code's own
+rubrics are not reproduced. This is more conservative than it needs to be and
+costs nothing.
+"""
+what_is_written_instead = """
+Never a blank and never a quiet omission. A canon whose text is withheld renders
+in the emitted repository as
+
+    can. 1671
+    [text withheld: <the reason, in one sentence, from this record>]
+    text established by: <the act that established the text being withheld>
+
+so that a reader sees three things at once: which canon it is, that the absence
+is a rights position and not ignorance, and which act's words are the ones being
+withheld. The third line is what makes an act that substituted twenty-one
+canons show a twenty-one-line diff instead of an empty one, and it is derived
+from the act that applied the departure rather than typed beside it.
+
+A unit whose words were never read renders with an empty second line instead. A
+renderer that showed those two alike would report a rights position as
+ignorance, which guidance/the-shape.md section 4 forbids.
+"""
+seeking_a_licence = """
+The route exists and only the project owner may take it. A request would go to
+the Libreria Editrice Vaticana and to the Dicastery for Communication, whose
+Terms of Use name written authorisation as the mechanism and give
+spc@spc.va as the contact. It would have to state the extent sought, the medium,
+whether anything is sold, and the notice carried. No agent may make such a
+request: it is a representation about who is asking and what they will do.
+
+And, as the liturgical record says of the same situation, a licence to reproduce
+is not a licence to publish, and this lane's machinery is not ready for the
+second. `withheld` is a first-class field and there is no state meaning
+"tracked, licensed, and publishable". Build that before writing any licensed
+canon into this record.
+"""
+
+# ---------------------------------------------------------------------------
+#
+# The sources this record rests on that are NOT yet registered in the source
+# library, with the bytes identified so that any of them can be checked or
+# registered later. They are listed rather than registered for the reason
+# guidance/act-histories.md section 9 gives for this whole lane: creating
+# canonical manifests blocks `source-family-migration refresh` and levies a
+# re-review on every family with canonical ids, which a lane that has not yet
+# settled its shape should not impose. Registration is the next step, not this
+# one.
+
+[[unregistered_source]]
+id = "vatican-city-state-law-cxcvii-2017"
+label = "Vatican City State, Law N. CXCVII on the protection of copyright, 1 September 2017"
+delivery = "WIPO Lex legislation record 22802, which embeds the complete Italian text"
+source_url = "https://www.wipo.int/wipolex/en/legislation/details/22802"
+sha256 = "84ab04faf3d71ac8cf7a213143759267370610ee83ea2f5bc113b41021d95526"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = """
+Articles 2 and 5 are quoted above from this rendering. The promulgated text in
+the Supplement to the Acta Apostolicae Sedis was not obtained: the Vatican State
+site's laws page is 404 and WIPO's PDF link is a signed URL that redirected back
+to the record.
+"""
+
+[[unregistered_source]]
+id = "vatican-va-legal-notes-2026-08-01"
+label = "vatican.va Terms of Use (Legal Notes), English"
+source_url = "https://www.vatican.va/content/vatican/en/legal-notes.html"
+sha256 = "9e8cf7a430f15a035cdb90eb590a1facd24f588ad8a522a18e2015e93c7e8517"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = """
+The page named in the liturgical era of this project,
+https://www.vatican.va/various/copyright/index_en.htm, is now HTTP 404 and the
+Internet Archive holds NO snapshot of it. Whether it ever existed cannot be
+shown. This is the live instrument and it is reached from the Legal Notes link
+in the footer of every modern document page.
+"""
+
+[[unregistered_source]]
+id = "cornell-public-domain-chart-2026"
+label = "Peter B. Hirtle, Copyright Term and the Public Domain in the United States, updated 1 January 2026"
+source_url = "https://guides.library.cornell.edu/copyright/publicdomain"
+sha256 = "500c083ed0c32d3f211ad62ebf41eff3e7fa9f0a498e9e39f215cd59affb72d8"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = """
+Licensed CC BY 4.0 by its author. Carries the foreign-publication row relied on
+above and the Ninth Circuit special case in the limits. Note an inconsistency
+inside the source itself: the chart row reads "Before 1931" while footnote 12's
+prose still reads "Foreign works published after 1928". The row was updated and
+the footnote was not.
+"""
+
+[[unregistered_source]]
+id = "us-copyright-office-circular-15a"
+label = "United States Copyright Office, Circular 15a, Duration of Copyright"
+source_url = "https://www.copyright.gov/circs/circ15a.pdf"
+sha256 = "6ff3c5612e1cd56469b3eb7d35eba7fd3374843d82744c63ab909225f53b7aef"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+
+[[unregistered_source]]
+id = "us-copyright-office-circular-38a"
+label = "United States Copyright Office, Circular 38a, International Copyright Relations of the United States"
+source_url = "https://www.copyright.gov/circs/circ38a.pdf"
+sha256 = "08d5011f453d6c5f6789e7007e863e6146edab7f06af3ea126b4fb44c191100b"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = """
+Lists the party as Holy See: Berne (Paris) 12 September 1935; UCC Geneva
+5 October 1955; Phonograms 18 July 1977; UCC Paris 6 May 1980. There is no
+separate Vatican City State entry. For a United States record this is a better
+citation than WIPO's, because it is the forum's own copyright authority.
+"""
+
+[[unregistered_source]]
+id = "us-code-title-17-chapter-1"
+label = "17 U.S.C. chapter 1, as served by the Copyright Office"
+source_url = "https://www.copyright.gov/title17/92chap1.html"
+sha256 = "97999d678e2877c8142da81a0dce819b210e9f92aa5a405d130bf2f2e50c7d75"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = "Sections 103(b) and 104A(a)(1)(B) and (h)(6)(B) are quoted above."
+
+[[unregistered_source]]
+id = "cceo-latin-index-delivery-2026-08-01"
+label = "Codex Canonum Ecclesiarum Orientalium, Latin index delivery, vatican.va"
+source_url = "https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_index-codex-can-eccl-orient.html"
+sha256 = "bc362bc51635226178b41d006bffbfa54bac0bffd18fefc678321a30352b9f19"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = "Carries '© Copyright 1990 - Libreria Editrice Vaticana' beside the AAS citation."
+
+[[unregistered_source]]
+id = "sacrae-disciplinae-leges-latin-delivery-2026-08-01"
+label = "Sacrae disciplinae leges, Latin delivery, vatican.va"
+source_url = "https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html"
+sha256 = "b02fd63066c9678e6d47892c2a45e06694251235dc40aac6dfd9a127c3c162e5"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = "Carries '© Copyright 1983 - Libreria Editrice Vaticana'."
+
+[[unregistered_source]]
+id = "intratext-copyright-terms-2026-08-01"
+label = "IntraText Digital Library, copyright terms"
+source_url = "https://www.intratext.com/info/copyENG.htm"
+sha256 = "087d8f883dedfb837cb8174360a1c781e06418ebcd95cbc44d2b927a53c89049"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+
+[[unregistered_source]]
+id = "intratext-cic-1917-latin-2026-08-01"
+label = "IntraText, Codex iuris canonici (1917), Latin transcription"
+source_url = "https://www.intratext.com/IXT/LAT0813/"
+sha256 = "fc36c872746563eca807b5729b14f204f31f6d9a00887e958e3c6549ab66260c"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = "Records 'Printed source: Not available'. Not used as a witness for any wording."
+
+[[unregistered_source]]
+id = "latin-wikisource-codex-iuris-canonici-2026-08-01"
+label = "Latin Wikisource, Codex Iuris Canonici (the 1917 Code)"
+source_url = "https://la.wikisource.org/wiki/Codex_Iuris_Canonici"
+sha256 = "e7da6e5882510235962f8106c9c009f59033f89cd1264d7f580c9b1de68e37e7"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+
+[[unregistered_source]]
+id = "clsa-store-wayback-2025"
+label = "Canon Law Society of America store, Wayback snapshot of 16 April 2025"
+source_url = "http://web.archive.org/web/20250416152802/https://clsa.org/store/"
+sha256 = "e1a582a06173682a6177ead9dac9c03695199530f48e09dad1443a3a4aa3bf76"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = """
+The live site returns HTTP 403 behind a Cloudflare interstitial on every
+attempt. This snapshot lists the Latin-English editions of both codes and
+carries no copyright or permissions statement.
+"""
+
+[[unregistered_source]]
+id = "canon-law-society-gb-ireland-web-2026-08-01"
+label = "Canon Law Society of Great Britain and Ireland, canonlawsociety.org"
+source_url = "https://canonlawsociety.org/"
+sha256 = "5667cbcc3c98682a407eb4828450b523be9085b5259a79fb4ffa2dca1d01e546"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = "canonlawsociety.org.uk does not resolve and clsgbi.org timed out."
+
+[[unregistered_source]]
+id = "ignatius-press-pio-benedictine-product-2026-08-01"
+label = "Ignatius Press, The 1917 Pio-Benedictine Code of Canon Law, product page"
+source_url = "https://ignatius.com/the-1917-pio-benedictine-code-of-canon-law-npbch/"
+sha256 = "2c9a9c9ffea25f3057a61cbcec121ba418c3237ec4cb306397a78b3a4adbd484"
+retrieved = "2026-08-01"
+read_from = "delivery-text"
+note = "Carries ISBN 9780898708318 and the translator's name; no copyright notice for the work."
+
+open_items = """
+1. READ THE 1918 PRINTING'S TITLE PAGE AND COLOPHON for a United States
+   copyright notice. It settles the Ninth Circuit question in the limits above
+   and costs two leaf images from a scan this repository already identifies.
+2. REGISTER the fourteen sources above in the source library, or decide
+   deliberately that a rights record cites rather than registers. Either is
+   defensible; the present state is the first by default rather than by choice.
+3. RESTATE the "before 1930" threshold in the five 1917 artifact manifests as
+   the rule rather than as a year, since the year moves annually.
+4. REACH one publisher's actual notice for the English translations. The refusal
+   above is correct on ordinary principles and rests on no licence term anyone
+   here has read, which is weaker than this project's usual standard.
+"""
