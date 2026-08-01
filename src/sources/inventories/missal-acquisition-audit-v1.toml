@@ -454,6 +454,46 @@ A. Card. Medina Estevez Praefectus` and `+Franciscus Pius Tamburrino
 Archiepiscopus a Secretis`.
 """
 
+[[acts]]
+id = "inter-multiplices-gravesque-curas-1924"
+date = "1924-12-08"
+authority = "Pius XI"
+instrument = "Bull Inter multiplices gravesque curas"
+effect = "Approves the revised Missale Bracarense for the archdiocese of Braga."
+also_in_acts_file = false
+evidence = "verified"
+read_here = """
+Read here in the 1924 Braga missal's own front matter, in the whole OCR text
+layer fetched for the purpose. Dateline: `Datum Romae apud S. Petrum, anno
+millesimo nongentesimo vicesimo quarto, sexto Idus Decembris, in festo
+Immaculatae Conceptionis B. M. Virginis, praecipuae Lusitaniae Patronae,
+Pontificatus Nostri anno tertio` -- 8 December 1924. Subscribed `A. Card. VICO,
+Ep. Portuen. et S. Rufinae` and `Maurus Rigal, Canc. Ap. Tabularii Praefectus`.
+The incipit is supplied by the decree below, which names the bull.
+"""
+
+[[acts]]
+id = "decretum-missalis-bracarensis-1924"
+date = "1924-12-09"
+authority = "Sacred Congregation of Rites"
+instrument = "Decree declaring the Vatican edition of the Missale Bracarense typical"
+effect = "Makes the 1924 Braga edition the typical edition of that use, to which later printings must conform."
+also_in_acts_file = false
+evidence = "verified"
+read_here = """
+Read here in the same front matter. Operative clause: `Vaticana hujus Missalis
+editio pro typica habenda est`, with later printings `omnino conformandae erunt,
+ita ut in iis nihil immutare fas sit`. Dateline `Die 9 Decembris 1924`,
+subscribed `A. Card. VICO, Ep. Portuen. et S. Rufinae, S. R. C. Praefectus` and
+`Alexander Verde, S. R. C. Secretarius`. OCR damage reproduced as found.
+
+THESE ARE THE SAME TWO SIGNATORIES AS THE ROMAN TYPICAL EDITION OF 1920, whose
+decree this audit also read at the bytes: Cardinal Vico as Prefect and Alexander
+Verde as Secretary, in the same offices, four years apart. One congregation, one
+pair of officials, declaring typical editions for the Roman line and for a
+diocesan use alike. This is why the `latin-uses` group note had to be corrected.
+"""
+
 # --- Books ------------------------------------------------------------------
 #
 # Every row here is a WITNESS. `station = false` on all of them, by the rule in
@@ -1167,12 +1207,37 @@ evidence = "verified"
 # then records that it holds no witness for any of them, calling the branch
 # `honestly empty`. THIS GROUP IS WHAT FILLS IT.
 #
-# One structural finding governs the whole group and is stated once here rather
-# than repeated on every row. THESE LINES HAVE THEIR OWN PROMULGATING ACTS, and
-# those acts are not papal. They are decrees of a general chapter and orders of
-# a master general, a prior general or an abbot -- and, unlike the Roman line,
-# the act is very often printed ON THE TITLE PAGE, in the `iussu editum` clause.
-# Three read here at the bytes:
+# One structural finding governs the whole group, and it had to be CORRECTED
+# once during the audit, so it is stated in its corrected form with the error
+# left visible.
+#
+# THESE LINES HAVE THEIR OWN PROMULGATING ACTS. The first version of this note
+# went on to say that those acts `are not papal -- they are decrees of a general
+# chapter and orders of a master general, a prior general or an abbot`. THAT IS
+# TRUE OF THE ORDERS AND FALSE OF THE DIOCESAN USES, and the counter-example is
+# in this file: the Braga missal of 1924 was promulgated by a BULL OF PIUS XI of
+# 8 December 1924 and declared typical by a decree of the SACRED CONGREGATION OF
+# RITES of 9 December 1924 -- signed by Cardinal Vico and Alexander Verde, THE
+# SAME TWO MEN who signed the Roman typical edition's decree of 25 July 1920.
+# Both were read here at the bytes.
+#
+# So the corrected statement is two-part:
+#
+#   THE ORDERS  legislate for themselves. The act is a general chapter decree or
+#               a superior's order, and it is very often printed ON THE TITLE
+#               PAGE in the `iussu editum` clause.
+#   THE DIOCESAN USES  have their typical editions declared by ROME, through the
+#               same congregation and sometimes the same officials as the Roman
+#               line. Braga is the proved case; Sarum, having no modern typical
+#               edition at all, is not a counter-example but a different
+#               situation again.
+#
+# The generalisation was made from three order missals and then applied to a
+# group that also contains diocesan uses. It is exactly the failure this project
+# keeps meeting -- a claim that was true of what had been read and was written as
+# though it were true of the class.
+#
+# The three order instruments, read here at the bytes, which remain correct:
 #
 #   Carthusian 1679  `ex ordinatione capituli Generalis. Anno Domini
 #                    M.D.CLXXVII. Celebrati sub R. P. D. Innocentio le Masson
@@ -1208,7 +1273,7 @@ aliases_tried = [
 aliases_that_hit = ["missale praedicatorum", "Missale S. Ordinis Praedicatorum"]
 aliases_that_failed = "`missale dominicanum` returns zero on the Internet Archive, and `dominican rite missal` returns two irrelevant items. The Latin genitive `praedicatorum` is the only reliable key [verified]."
 rights = "mixed"
-rights_basis = "Pre-1930 printings clear; the 1933, 1939 and 1965 editions are modern official books of the order and no rights basis for them is established."
+rights_basis = "Pre-1931 printings clear; the 1933, 1939 and 1965 editions are modern official books of the order and no rights basis for them is established."
 may_publish_text = "mixed"
 may_publish_note = "Yes for the pre-1931 printings. No for 1933, 1939 and 1965."
 digitisation = """
@@ -1257,7 +1322,7 @@ aliases_tried = [
 ]
 aliases_that_hit = ["missale carmelitarum", "missale monte carmelo"]
 rights = "mixed"
-rights_basis = "Pre-1930 printings clear. The 1935 typical edition and the 1953 lay hand missal are modern and no rights basis is established for either; the 1953 book is a Typis Polyglottis Vaticanis imprint, which puts it squarely in the post-1929 Holy See class."
+rights_basis = "Pre-1931 printings clear. The 1935 typical edition and the 1953 lay hand missal are modern and no rights basis is established for either; the 1953 book is a Typis Polyglottis Vaticanis imprint, which puts it squarely in the post-1929 Holy See class."
 may_publish_text = "mixed"
 may_publish_note = "Yes for the pre-1931 printings. No for the 1935 typical edition or the 1953 hand missal."
 digitisation = """
@@ -1381,7 +1446,7 @@ aliases_tried = [
 aliases_that_hit = ["Missale Praemonstratense", "praemonstrat"]
 aliases_that_failed = "`missale praemonstratensis` (genitive) returns zero on the Internet Archive; `norbertine missal` returns zero [verified]. The adjectival `Praemonstratense` is the key."
 rights = "mixed"
-rights_basis = "Pre-1930 printings clear. The 1936 edition's Internet Archive items carry NO publisher, NO date field and NO copyright statement [verified], so nothing is established about it in either direction."
+rights_basis = "Pre-1931 printings clear. The 1936 edition's Internet Archive items carry NO publisher, NO date field and NO copyright statement [verified], so nothing is established about it in either direction."
 may_publish_text = "mixed"
 may_publish_note = "Yes for the c.1510, 1530 and 1578 printings. Unresolved for 1936, whose metadata establishes nothing either way."
 digitisation = """
@@ -1476,24 +1541,81 @@ descends_from_act = "quo-primum-1570 exempting clause"
 aliases_tried = ["Missale Ambrosianum", "Messale Ambrosiano", "rito ambrosiano", "Milan missal"]
 aliases_that_hit = ["Missale Ambrosianum", "Messale Ambrosiano"]
 rights = "mixed"
-rights_basis = "Pre-1930 printings clear. The 1981 Latin edition is modern and no rights basis is established."
+rights_basis = """
+Pre-1931 printings clear. The 1981 Latin edition prints `(c) 1981 Centro
+Ambrosiano di Documentazione e di Studi Religiosi` [reported from its own OCR],
+and the Internet Archive copy is an unofficial upload carrying no licence, so it
+is presumptively infringing. The 2024 second edition carries an explicit and
+quotable reservation; see `the_2024_edition`.
+"""
 may_publish_text = "mixed"
-may_publish_note = "Yes for the 1499, 1640 and 1712 printings. No for the 1981 Latin edition."
+may_publish_note = "Yes for the 1475, 1499, 1640, 1712 and 1913 printings. No for 1981 or 2024."
 digitisation = """
-- 1499 -- https://archive.org/details/OEXV698 -- 394 images, CC public-domain mark [verified]
+- 1475, THE EDITIO PRINCEPS, Milan: Antonius Zarotus for Marcus Roma, 23 March 1475 (ISTC im00644100) -- Vatican Library Inc.III.420 at https://digi.vatlib.it/view/Inc.III.420 -- reported 445 canvases [reported]
+- 1499 -- https://archive.org/details/OEXV698 -- 394 images, CC public-domain mark [verified]. Reported IMPERFECT, wanting two leaves.
+- 1913, `Missale Ambrosianum duplex (proprium de tempore), editt. puteobonellianae et typicae (1751-1902), cum critico commentario`, ed. A. Ratti and M. Magistretti -- https://gallica.bnf.fr/ark:/12148/bpt6k15031331 -- `domaine public` by Gallica's own record [verified]. A COLLATION of the 1751 and 1902 editions by the future Pius XI, and the key scholarly instrument for this rite.
+- 2024 second Italian edition -- twelve official PDFs, free to read; see `the_2024_edition`
 - 1640 Milan, Sirtori and the heirs of Ponzio and Piccaglia, `impress. archiep.` -- https://archive.org/details/bub_gb_6ApfhlfCMksC -- 772 images, PDF 78,039,485 bytes, CC public-domain mark, National Central Library of Rome [verified]
 - 1712 -- Bavarian State Library item 10869665bsb, 625 images [verified via the Internet Archive index]
 - 1981 Latin -- https://archive.org/details/MA1981 -- PDF 435,984,048 bytes [verified]; a second item missaleambrosian0000vari, 1,388 images, is ACCESS-RESTRICTED [verified]
 - 1954/1955 Italian hand missal -- messale-ambrosiano-quotidiano-1954_202603, CC public-domain mark applied by an uploader [verified]
 """
 retrievable = "whole"
+promulgating_acts = """
+Reported from the 1981 edition's own front matter and NOT verified here
+[reported]: a Sacred Congregation for Divine Worship confirmation Prot. n.
+2347/74 `Mediolanensis` of 30 November 1974, signed Card. Knox and A. Bugnini;
+Cardinal Colombo's promulgating decree of 11 April 1976, obligatory from 14
+November 1976; and Cardinal Martini's decree for the printed Latin edition of
+8 September 1981.
+
+For 2024 the decree was published as a signed PDF and is citable: Dicastery for
+Divine Worship decree `Mediolanensis Ecclesia` of 7 December 2023 granting the
+recognitio; promulgated by Archbishop Delpini on 28 March 2024, Prot. Gen. n.
+00822/24; in force from 17 November 2024 [reported].
+"""
+the_2024_edition = """
+THE SHARPEST RIGHTS CONTRAST IN THE AUDIT, and it runs opposite to everything
+else here.
+
+The Archdiocese of Milan publishes THE WHOLE of the 2024 second edition as
+twelve free PDFs at https://www.chiesadimilano.it/messale-ambrosiano,
+introduced `Riportiamo qui i files PDF per la consultazione, lo studio e la
+preghiera personale`. Four were probed here and all return HTTP 200 with
+application/pdf: Premesse e praenotanda 734,522 bytes, Mistero dell'Incarnazione
+1,561,391 bytes, Proprio dei santi 2,973,271 bytes, Appendici e indici 923,052
+bytes [verified].
+
+The same page carries an explicit reservation, read here in full [verified]:
+
+  Tutti i diritti d'autore relativi alla seconda edizione italiana del Messale
+  Ambrosiano, comprese le immagini che corredano l'opera, sono riservati
+  all'editore ITL - Impresa Tecnoeditoriale Lombarda srl a socio unico (c) 2024.
+  E' vietata l'utilizzazione, la riproduzione, l'elaborazione, la diffusione e
+  la stampa anche parziale senza autorizzazione scritta dell'editore, essendo
+  consentita esclusivamente la consultazione on-line per uso personale e senza
+  finalita di lucro
+
+FREE TO READ IN FULL, EXPLICITLY NOT FREE TO REPUBLISH -- reproduction,
+adaptation, distribution and even partial printing forbidden without written
+permission, only personal non-profit online consultation allowed.
+
+This is the cleanest illustration in the file of the audit's governing
+distinction. `retrievable = "whole"` and `may_publish_text = "no"` are not in
+tension, and a project that collapsed them would either wrongly refuse to read
+this book or wrongly reprint it. Note also that the publisher is a diocesan
+company, ITL, not Libreria Editrice Vaticana: the Ambrosian books are not Holy
+See imprints and their rights do not follow the Roman rows.
+"""
 already_in_repo = "A single Ambrosian formulary is already registered: work.archdiocese-of-milan.dominica-i-post-epiphaniam-formulary [recorded]. So the rite is present in the source library at the scale of one Mass."
-priority = 2
+priority = 1
 priority_basis = """
-High. It is the largest surviving non-Roman Latin rite, it is a living rite with
-a post-conciliar edition, its early printings are whole and publishable, and this
-repository already holds one formulary of it -- so the identity work is partly
-done and the gap between one formulary and a rite is visible.
+Raised from moderate to highest of the uses. It is the largest surviving
+non-Roman Latin rite; its editio princeps, three later printings and a critical
+collation are whole and publishable; its 1913 duplex was edited by the future
+Pius XI; its CURRENT official edition is readable in full today, which is true
+of no other living rite in this file, the Roman line included; and this
+repository already holds one formulary of it.
 """
 evidence = "verified"
 
@@ -1522,19 +1644,43 @@ rights_basis = "The 1755 and 1862 printings are clear. The modern Missale Hispan
 may_publish_text = "mixed"
 may_publish_note = "Yes for the 1755 Lesley and 1862 Migne printings. No for the modern Missale Hispano-Mozarabicum."
 digitisation = """
+- 1500, THE CISNEROS EDITIO PRINCEPS, `Missale mixtum secundum regulam beati
+  Isidori dictum mozarabes`, ed. Alfonso Ortiz, Toledo: Peter Hagembach for
+  Melchior Gorricio, 9 January 1500 (ISTC im00732000) -- BnF Arsenal copy at
+  https://gallica.bnf.fr/ark:/12148/bpt6k8728875t -- 992 image views, `domaine
+  public / public domain` by Gallica's own record [verified]. A second copy is
+  reported at the Biblioteca Digital Hispanica, BNE INC/0015 [reported, host
+  unreachable from here].
 - 1755, Alexander Lesley's edition, `Missale mixtum secundum regulam Beati Isidori dictum Mozarabes` -- https://archive.org/details/missalemixtumse00leslgoog -- 408 images, PDF 28,715,021 bytes, marked NOT_IN_COPYRIGHT, New York Public Library copy [verified]
+- 1804, Lorenzana's `Missale Gothicum ... in usum Mozarabum`, Rome: Fulgonius -- Bavarian State Library bsb10869679, reported 854 canvases [reported]
 - 1862, Migne, `Liturgia Mozarabica secundum regulam beati Isidori ... prior continet: Missale mixtum praefatione, notis et appendicibus ab Alexandro Lesleo ornatum; posterior: Breviarium Gothicum opera Fr. Ant. Lorenzana recognitum` -- https://archive.org/details/liturgiamozarab01churgoog -- 685 images, PDF 59,175,281 bytes, OCR 4,622,815 bytes, marked NOT_IN_COPYRIGHT, Harvard copy [verified]. This is the Patrologia Latina delivery of the rite.
-- The MODERN Missale Hispano-Mozarabicum: NOT LOCATED. A search for title:(hispano AND mozarabicum) returns zero on the Internet Archive [verified].
+- The MODERN Missale Hispano-Mozarabicum: NOT LOCATED. A search for title:(hispano AND mozarabicum) returns zero on the Internet Archive [verified], and no complete official text was found online, free or paid [reported].
 """
 retrievable = "whole"
-note = """
-The 1500 Cisneros editio princeps was not located. What is held instead is the
-eighteenth-century Lesley edition and Migne's nineteenth-century reprint of it,
-both whole and both publishable -- which is a good position for a rite whose
-first printing is a rare incunable.
+corrected = """
+THIS ROW SAID THE 1500 CISNEROS EDITIO PRINCEPS `was not located` AND WAS
+WRONG, for the same reason as the Lyon row: the search behind it was an
+Internet Archive search, and the book is at the Bibliotheque nationale de
+France. See `[[corrections]]` `not-located-verdicts`.
+"""
+modern_edition_acts = """
+The modern rite's instruments are reported in detail from transcriptions on a
+now-defunct enthusiast site, recoverable only through the Wayback Machine, and
+NONE was verified here [reported]: a Congregation for Divine Worship decree
+Prot. n. 203/86 `Hispaniae dioecesium` of 17 July 1988 confirming texts ad
+interim; a Spanish Episcopal Conference decree of 8 January 1990; and a
+Congregation decree Prot. CD. 763/92 of 23 January 1994. Volume I is reported
+as Toledo 1991, ISBN 84-7129-413-3, published by the Spanish Episcopal
+Conference with the Archdiocese of Toledo.
+
+THE COPYRIGHT HOLDER IS GENUINELY UNRECORDED. No rights line was found on any
+Toledo, Episcopal Conference or Vatican page; settling it needs the printed
+volumes' copyright pages [reported]. A caution attaches: an attribution of a
+1988 decree to Cardinal Gonzalez Martin appears to be a confusion with the
+Congregation's decree of that year, and is not asserted here.
 """
 priority = 3
-priority_basis = "Moderate. Two whole publishable witnesses exist and are easy to acquire; the modern living edition is neither located nor clear, so the rite can be represented historically but not currently."
+priority_basis = "Moderate. Three whole publishable witnesses now exist, including the editio princeps; the modern living edition is neither located nor rights-established, so the rite can be represented historically but not currently."
 evidence = "verified"
 
 [[books]]
@@ -1550,15 +1696,44 @@ aliases_that_hit = ["bracarense"]
 rights = "public-domain-us-pre-1931"
 rights_basis = "1924 printing, before the 1931 line. It is an archdiocesan book rather than a Holy See imprint, so the post-1929 Holy See class does not reach it even had it been later."
 may_publish_text = "yes"
-digitisation = "https://archive.org/details/missale-bracarense-1924 -- PDF 176,021,172 bytes, OCR text layer 3,210,801 bytes [verified]. Related: `O rito bracarense` (1906) at oritobracarense00serr, 148 images, and a 1931 `Cerimonial da Missa Cantada segundo o Rito Bracarense` [verified]."
+digitisation = """
+- 1924 typical edition -- https://archive.org/details/missale-bracarense-1924 -- PDF 176,021,172 bytes, OCR text layer 3,210,801 bytes [verified]. Uploader-supplied item with no licence field.
+- 1558, `Missale juxta usum & ordinem Almae Bracarensis Ecclesiae Hispaniarum Primatis` -- https://gallica.bnf.fr/ark:/12148/bpt6k993722f -- `domaine public` by Gallica's own record [verified]
+- 1538, Lisbon: Germao Galharde, Biblioteca Nacional de Portugal RES-1633-A -- https://purl.pt/14877 [reported]
+- 1498, the earliest printed Braga missal, ISTC im00652000, Lisbon 20 June 1498: four copies recorded, NO digital facsimile located [reported]
+- Related: `O rito bracarense` (1906) at oritobracarense00serr, 148 images, and a 1931 `Cerimonial da Missa Cantada segundo o Rito Bracarense` [verified]
+"""
 retrievable = "whole"
-act_lead = """
-The Internet Archive record's creator field names `Pio XI, Arquidiocese de
-Braga, D. Manuel Vieira de Matos` [verified] -- which points at an act of
-Pius XI and the archbishop of Braga behind the 1924 edition. The instrument
-itself was NOT read and is `unrecorded`; this is a lead, and a good one,
-because the book is whole and publishable and its front matter is the obvious
-place to look.
+promulgating_acts = """
+NO LONGER A LEAD. Both instruments were READ HERE in the 1924 book's own front
+matter, in the whole OCR text layer fetched for the purpose [verified].
+
+1. THE BULL. Pius XI, incipit `Inter multiplices gravesque curas` (named in the
+   decree below), dateline: `Datum Romae apud S. Petrum, anno millesimo
+   nongentesimo vicesimo quarto, sexto Idus Decembris, in festo Immaculatae
+   Conceptionis B. M. Virginis, praecipuae Lusitaniae Patronae, Pontificatus
+   Nostri anno tertio` -- 8 DECEMBER 1924. Subscribed `A. Card. VICO, Ep.
+   Portuen. et S. Rufinae` and `Maurus Rigal, Canc. Ap. Tabularii Praefectus`.
+
+2. THE DECREE THAT MAKES IT TYPICAL. Sacred Congregation of Rites, `Die 9
+   Decembris 1924`, operative clause `Vaticana hujus Missalis editio pro typica
+   habenda est`, with future printings `omnino conformandae erunt, ita ut in iis
+   nihil immutare fas sit`. Subscribed `A. Card. VICO, Ep. Portuen. et S.
+   Rufinae, S. R. C. Praefectus` and `Alexander Verde, S. R. C. Secretarius`.
+   OCR damage reproduced as found.
+
+THE SIGNATORIES ARE THE SAME TWO MEN WHO SIGNED THE ROMAN TYPICAL EDITION OF
+1920, and this audit read both decrees itself. The 1920 Roman decree is
+subscribed `A. Card. Vico, Ep. Portuen. et S. Rufinae, S. R. C. Praefectus` and
+`Alexander Verde, S. R. C. Secretarius` [verified]; the 1924 Braga decree by the
+same two, in the same offices, four years later. See the group note above for
+why that matters: it refutes the generalisation that the uses are governed by
+local authority.
+"""
+optional_status_lead = """
+A Portuguese encyclopaedia article reports that the Braga rite became optional
+from 18 November 1971 [reported]. The underlying instrument is `unrecorded` and
+the claim rests on one tertiary source; it is not asserted here.
 """
 priority = 1
 priority_basis = """
@@ -1588,26 +1763,56 @@ aliases_tried = [
   "missale lyon",
   "rit lyonnais",
 ]
-aliases_that_hit = []
+aliases_that_hit = ["missale ad usum ecclesie Lugdunensis", "missale secundum ritum ecclesie Lugdunensis"]
 rights = "public-domain-us-pre-1931"
-rights_basis = "Would apply to any pre-1931 printing, if one is found."
+rights_basis = "The located printings are 1503 and 1530, and Gallica states `domaine public / public domain` in its own record for each [verified]."
 may_publish_text = "yes"
-digitisation = "NOT LOCATED"
-retrievable = "not-located"
-bound_reached = """
-EXACT BOUND: seven alias forms were tried against the Internet Archive
-advanced-search API and every one returned zero missals [verified]. The place
-name in Latin does return Lyonnais BREVIARIES of 1693 and 1775 and much other
-Lyon material, so the index is not empty of the diocese -- it is empty of its
-missal under these names.
+digitisation = """
+- 1503, `Missale ad usum ecclesie Lugdunensis`, BnF Res. B-28974 --
+  https://gallica.bnf.fr/ark:/12148/bpt6k8708528k -- 452 image views [verified]
+- 1530, `Missale secundum ritum ecclesie Lugdunensis novissima impressum`, BnF
+  Res. B-27670 -- https://gallica.bnf.fr/ark:/12148/bpt6k8708345d -- 430 image
+  views [verified]
+- 1846, `Missale sanctae Lugdunensis ecclesiae, primae Galliarum sedis`, Lyon:
+  Pelagaud, Google Books Z2MJSChL19cC, reported full view [reported, not
+  verified here]
+- 1868, `Missale Romano-Lugdunense`, Google Books HKL8jt_Pp5cC [reported]
+- The 1904 (Coullie) and 1956 (Gerlier) editions: NOT LOCATED anywhere.
+"""
+retrievable = "whole"
+corrected = """
+THIS ROW SAID `not-located` AND WAS WRONG, and the way it was wrong is the same
+way the 1962 act record was wrong. See `[[corrections]]` entry
+`not-located-verdicts`.
 
-This is the one use in the group with no located witness at all. The negative is
-bounded to one repository and seven names, and the next attempt should be a
-French library rather than another query, since the Carthusian row proves that
-Gallica holds what the Internet Archive does not.
+The bounded negative it rested on was true and remains true: seven alias forms
+against the Internet Archive advanced-search API, every one returning zero
+missals [verified]. What was false was the VERDICT FIELD. `retrievable =
+"not-located"` reads as a claim about the world, and the evidence underneath it
+was a claim about one repository.
+
+Two Lyon missals are at the Bibliotheque nationale de France, both whole, both
+public domain by Gallica's own statement, and both found by the method this file
+had ALREADY WRITTEN DOWN one row above -- the Carthusian entry says in terms
+that the next attempt should be a French library rather than another query. The
+file contained its own remedy and the row did not apply it.
+"""
+open_conflict = """
+Two catalogue disagreements are recorded rather than resolved. Google Books
+dates one Lyon printing 1520 where Usuarium dates the same printer and the same
+Lyon municipal-library shelfmark 1530; and a second Google Books item is
+reported as preview-only although Usuarium links it as a reading copy
+[reported]. Neither was checked here.
+"""
+promulgating_acts = """
+UNRECORDED, and weakly evidenced. A French-language encyclopaedia article
+attributes editions to Cardinal de Bonald in 1866, Cardinal Coullie in 1904 and
+Cardinal Gerlier in 1956, the last called the final typical edition of the Lyon
+missal [reported]. NO decree text, protocol number or exact date was found for
+any of the three, and none is asserted here.
 """
 priority = 2
-priority_basis = "High as WORK, not as acquisition. It is the only completely unrepresented use, and the Carthusian result gives a specific, tested method for reaching it."
+priority_basis = "High, and now for the opposite reason. It is no longer unrepresented: two whole publishable printings exist. What remains missing is its modern typical editions and every one of its promulgating instruments."
 evidence = "verified"
 
 [[books]]
@@ -1690,9 +1895,13 @@ missal audit would produce a list that is wrong in all four:
    the Roman act vocabulary to them would be an assertion, not a finding.
 3. THE LANGUAGES ARE NOT LATIN. Retrieval, search and OCR quality all change,
    and this project's raw-line search is a literal one.
-4. THE COUNT IS NOT ESTABLISHED HERE. The number of sui iuris Churches is a
-   sourceable fact and it was not sourced in this pass, so it is not stated.
-   Recording it as `unrecorded` is the whole point.
+4. THE COUNT IS REPORTED AND NOT VERIFIED. A research pass reports TWENTY-THREE
+   sui iuris Eastern Catholic Churches, grouped into five liturgical traditions
+   -- Alexandrian, Armenian, Byzantine, East Syriac, West Syriac -- and notes
+   that the figure is sometimes given as twenty-four depending on whether the
+   Latin Church is counted, with the canonical enumeration ultimately resting on
+   the Annuario Pontificio, which was NOT reached [reported]. The number is
+   recorded as a lead. It is not `verified` and must not be printed as settled.
 
 SCOPE IT SEPARATELY. The right first deliverable is not an inventory but a
 single sourced page establishing the list of Churches, the name of the principal
@@ -1700,6 +1909,27 @@ eucharistic book in each tradition, and the promulgating authority -- and only
 then a search.
 """
 do_not = "Do not extend this file to cover them. A Roman-shaped row about an Eastern book is a reference that will resolve successfully and wrongly."
+starting_points = """
+Reported, not verified, and worth having so the separate track does not start
+from nothing [reported]:
+
+- THE PROMULGATING AUTHORITY IS ONE BODY. The Dicastery for the Eastern
+  Churches, whose competence is set out in Praedicate Evangelium arts. 82-87,
+  and whose own page cites CCEO can. 657 to the effect that all liturgical texts
+  to be published are always submitted to its recognitio or approval.
+- THE BOOK NAMES DIFFER BY TRADITION, which is the first reason a missal-shaped
+  search fails. Byzantine: the Divine Liturgy of St John Chrysostom or of St
+  Basil, carried in the Hieratikon, the Sluzhebnik, the Archieratikon, within
+  the Great Euchologion. East Syriac: the Holy Qurbana, the book being the
+  Taksa. West Syriac and Maronite: the Qurbono. Armenian: the Patarag.
+  Alexandrian: the Coptic and Ge'ez Qeddase. Several of these names could not be
+  tied to a source in that pass and are themselves marked unrecorded there.
+- ONE OFFICIAL HOLY SEE PUBLICATION IS ALREADY ONLINE: the Instruction for
+  Applying the Liturgical Prescriptions of the Code of Canons of the Eastern
+  Churches, Vatican City 1996, on the Dicastery's own site.
+- NO INDIVIDUAL CHURCH'S OFFICIAL SERVICE BOOK was verified as available online.
+  Treat every one as unrecorded until checked.
+"""
 priority = "separate track"
 
 # --- Corrections to records already in this repository ----------------------
@@ -1926,6 +2156,102 @@ not adopt another lane's uncommitted work. Reconcile before either is relied on.
 status = "recorded, not applied"
 
 [[corrections]]
+id = "not-located-verdicts"
+severity = "high"
+target = "three rows of THIS FILE, as first written: missale-lugdunense, missale-mozarabicum, missale-bracarense"
+target_says = """
+`missale-lugdunense`: `retrievable = "not-located"`, `digitisation = "NOT
+LOCATED"`, described as `the one use in the group with no located witness at
+all`. `missale-mozarabicum`: `The 1500 Cisneros editio princeps was not
+located.` `missale-bracarense`: the promulgating instrument `was NOT read and is
+unrecorded`.
+"""
+finding = """
+ALL THREE WERE WRONG, AND THEY WERE WRONG IN THE SAME WAY THIS FILE HAD ALREADY
+DIAGNOSED IN SOMEBODY ELSE'S RECORD.
+
+- THE LYON MISSAL IS AT THE BIBLIOTHEQUE NATIONALE DE FRANCE. `Missale ad usum
+  ecclesie Lugdunensis`, 1503, 452 image views; `Missale secundum ritum ecclesie
+  Lugdunensis novissima impressum`, 1530, 430 image views. Both whole, both
+  stated `domaine public / public domain` in Gallica's own records [verified].
+- THE CISNEROS EDITIO PRINCEPS IS THERE TOO. `Missale mixtum secundum regulam
+  beati Isidori dictum mozarabes`, 1500, 992 image views, public domain
+  [verified].
+- THE BRAGA INSTRUMENTS ARE PRINTED IN THE BOOK THE ROW ALREADY POINTED AT. A
+  bull of Pius XI of 8 December 1924 and a Sacred Congregation of Rites decree
+  of 9 December 1924 declaring the edition typical, both legible in the OCR text
+  layer of the very item the row cited as whole and fetchable [verified].
+
+The searches underneath the two negatives were honest and remain true: seven
+alias forms for Lyon against the Internet Archive, all returning zero missals;
+`hispano AND mozarabicum` returning zero. WHAT FAILED WAS THE VERDICT FIELD.
+`retrievable = "not-located"` is a claim about the world; the evidence supporting
+it was a claim about one repository.
+
+That is precisely the fault this same file records against
+`roman-holy-week-acts-v1.toml` at `[[corrections]]` entry `1962-instrument`:
+`act_citation = "not-found"` reading as a claim about the repository when the
+search behind it covered seven text layers. THE AUDIT DIAGNOSED THE DEFECT IN
+ANOTHER LANE'S RECORD AND THEN COMMITTED IT THREE TIMES IN ITS OWN, IN THE SAME
+SITTING.
+
+The Braga case is worse than the other two, because nothing external was needed:
+the instrument was inside a document the row itself described as whole,
+publishable and already fetched. The row wrote `unrecorded` about the contents of
+a book it had not opened, while linking to it.
+
+And the file contained its own remedy. The Carthusian row says in terms that
+when the Internet Archive returns nothing the next attempt should be a French
+library, `since the Carthusian row proves that Gallica holds what the Internet
+Archive does not` -- and the Lyon row, two entries later, recorded a negative
+without trying one.
+"""
+consequences = """
+- All three rows corrected, each carrying a `corrected` field naming the error
+  rather than quietly reading as though it had always been right.
+- Two acts added for Braga.
+- The `latin-uses` group note corrected: see `[[corrections]]`
+  `uses-acts-generalisation`.
+- A RULE FOR THE NEXT PASS, which is the part worth keeping. A `not-located`
+  verdict must name the repositories searched, not only the aliases. An alias
+  list without a host list is half a bound, and half a bound reads as a whole
+  one. The three rows now say which catalogue was searched as well as under what
+  names.
+"""
+status = "applied on 2026-08-01"
+
+[[corrections]]
+id = "uses-acts-generalisation"
+severity = "medium"
+target = "the `latin-uses` group note in this file, as first written"
+target_says = """
+`THESE LINES HAVE THEIR OWN PROMULGATING ACTS, and those acts are not papal.
+They are decrees of a general chapter and orders of a master general, a prior
+general or an abbot.`
+"""
+finding = """
+TRUE OF THE ORDERS, FALSE OF THE DIOCESAN USES, and the counter-example was
+sitting in the same group.
+
+The Braga missal of 1924 was approved by a BULL OF PIUS XI and declared typical
+by a decree of the SACRED CONGREGATION OF RITES -- signed by Cardinal Vico and
+Alexander Verde, the same two officials who signed the Roman typical edition's
+decree of 25 July 1920. Both decrees were read here at the bytes.
+
+So the diocesan uses do not legislate their own typical editions. Rome does,
+through the same congregation and sometimes the same men as the Roman line. The
+generalisation was drawn from three ORDER missals -- Dominican, Carmelite,
+Carthusian -- and then written as though it held for a group that also contains
+Braga, Lyon, Sarum, the Ambrosian and the Mozarabic.
+
+It is the ordinary shape of the error this project exists to catch: a claim true
+of what had been read, written as though true of the class, and fluent enough
+that nothing in the sentence signals the jump.
+"""
+consequences = "Group note rewritten as a two-part statement, with the superseded version quoted inside it so the correction is legible rather than invisible."
+status = "applied on 2026-08-01"
+
+[[corrections]]
 id = "lt-hist-public-domain-assumption"
 severity = "medium"
 target = "the sibling corpus at ~/git/lt-hist, which supplied the OCR this project's act history reads"
@@ -1971,7 +2297,7 @@ status = "recorded"
 # the tables, the tables are right.
 
 [counts]
-acts_recorded = 12
+acts_recorded = 14
 books_recorded = 31
 books_that_are_stations = 0
 books_group_latin_uses = 10
@@ -1979,10 +2305,10 @@ books_group_pre_tridentine = 2
 books_group_roman_line = 19
 typical_editions = 19
 witnesses_not_typical = 12
-retrievable_whole = 22
+retrievable_whole = 23
 retrievable_bounded = 2
 retrievable_restricted = 1
-retrievable_not_located = 6
+retrievable_not_located = 5
 may_publish_yes = 14
 may_publish_no = 9
 may_publish_mixed = 6
@@ -1992,8 +2318,8 @@ rights_holy_see_post_1929 = 7
 rights_mixed = 6
 rights_unresolved = 3
 rights_third_party_copyright = 1
-priority_1 = 5
-priority_2 = 9
+priority_1 = 6
+priority_2 = 8
 priority_3 = 8
 priority_4 = 3
 priority_5 = 6
@@ -2004,10 +2330,19 @@ model's central rule -- the station is the act, never the book -- expressed as a
 number that must stay at zero. If a later edit sets `station = true` on any book
 row, this count moves and the rule has been broken visibly rather than quietly.
 
-`retrievable_whole = 22` of 31 is the audit's most encouraging figure and its
-most misleading one, so read it with `may_publish_yes = 14`. Two thirds of these
-books can be READ in full today; fewer than half may be PUBLISHED from. The gap
-is almost entirely the twentieth century.
+`retrievable_whole = 23` of 31 is the audit's most encouraging figure and its
+most misleading one, so read it with `may_publish_yes = 14`. Nearly three
+quarters of these books can be READ in full today; fewer than half may be
+PUBLISHED from. The gap is almost entirely the twentieth century.
+
+`retrievable_not_located` FELL FROM 6 TO 5 DURING THE AUDIT, AND NOT BECAUSE
+ANYTHING NEW WAS PUBLISHED. Two rows had been written `not-located` on the
+strength of an Internet Archive search alone, and the books were at the
+Bibliotheque nationale de France the whole time. The count moved because the
+audit was corrected, not because the world changed, and `[[corrections]]`
+`not-located-verdicts` records what that cost. Treat every remaining
+`not-located` as provisional on the same ground: each one now names the
+catalogue searched, and none of them names every catalogue there is.
 """
 
 # --- Recommended acquisition order ------------------------------------------
@@ -2060,11 +2395,18 @@ misattributes 1975's changes to 2002. Cite-only. `missale-romanum-1975-typica-al
 """
 
 step_5 = """
-THE FIRST USE, AND IT SHOULD BE BRAGA OR SARUM. The exempt-uses line has been a
-root with nothing after it since it was drawn. Braga 1924 is whole, publishable
-and twentieth-century; Sarum has two whole publishable scholarly editions, one
-of them a genuine critical edition from manuscripts. Either converts the empty
-branch into a real one at low cost. `missale-bracarense`, `missale-sarum`.
+THE FIRST USE, AND IT SHOULD NOW BE BRAGA. Revised during the audit. The
+exempt-uses line has been a root with nothing after it since it was drawn, and
+Braga is the cheapest thing that ends that, because it is the only row in the
+file where BOTH the book and its promulgating acts are in hand and publishable:
+a whole 1924 typical edition, pre-1931 and therefore printable, and two
+instruments -- a bull of Pius XI of 8 December 1924 and a Congregation of Rites
+decree of 9 December 1924 -- now read at the bytes and recorded in `[[acts]]`.
+
+A complete station-plus-witness pair for a non-Roman use is exactly what the
+empty branch needs, and nothing else in this file offers one.
+`missale-bracarense`. Sarum remains the best CRITICAL text and the Ambrosian is
+now the highest-priority rite; both follow.
 """
 
 step_6 = """

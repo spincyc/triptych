@@ -1,9 +1,12 @@
 # Missals: what to acquire, in what order, and what may be printed
 
 An acquisition audit of the Roman Missal and the Latin uses in communion with
-Rome, made on 2026-08-01. Thirty-one books and twelve acts were identified,
+Rome, made on 2026-08-01. Thirty-one books and fourteen acts were identified,
 their rights settled or explicitly left open, and a retrieval route recorded for
 each. Nothing was acquired.
+
+**Seven corrections are recorded, and three of them are to this audit's own
+rows.** That is the most useful thing in the file and §3 is about it.
 
 **This document owns no rules.** `act-histories.md` settles that the station is
 the act and never the book; `recensions.md` settles the departure model;
@@ -139,17 +142,81 @@ failures are the useful part: `missale dominicanum` returns zero and
 because the vernacular place name is not in those titles; `norbertine missal`
 returns zero.
 
-## 4. The uses have their own acts, and they are cheaper to cite than Rome's
+### And then the audit made the same mistake three times
+
+The first draft of this file recorded the Lyon missal as `not-located` — *the one
+use in the group with no located witness at all* — and the 1500 Cisneros
+Mozarabic editio princeps as *not located*, and the Braga promulgating instrument
+as `unrecorded`.
+
+All three were wrong. **The Lyon missal is at the Bibliothèque nationale de
+France** (1503, 452 views; 1530, 430 views), **so is the Cisneros** (992 views),
+all three public domain by Gallica's own records [verified]. And the **Braga
+instruments are printed inside the book the row already linked to**: a bull of
+Pius XI of 8 December 1924 and a Congregation of Rites decree of 9 December 1924,
+both legible in the OCR text layer of the very item the row called whole and
+fetchable [verified].
+
+The searches underneath the negatives were honest and remain true. **What failed
+was the verdict field.** `retrievable = "not-located"` is a claim about the
+world; the evidence supporting it was a claim about one repository.
+
+That is exactly the fault this same document records against the act history in
+§1 — `not-found` reading as a claim about the tree when the search behind it
+covered seven text layers. **The audit diagnosed the defect in another lane's
+record and then committed it three times in its own, in the same sitting.** The
+Braga case is the worst: nothing external was needed, because the instrument was
+inside a document the row itself described as already fetched. It wrote
+`unrecorded` about the contents of a book it had not opened, while linking to it.
+
+Worse still, the file contained its own remedy and did not apply it. The
+Carthusian row says in terms that when the Internet Archive returns nothing the
+next attempt should be a French library — and the Lyon row, two entries later,
+recorded a negative without trying one.
+
+> **The rule this yields.** A `not-located` verdict must name **the repositories
+> searched**, not only the aliases. An alias list without a host list is half a
+> bound, and half a bound reads as a whole one.
+
+## 4. The orders legislate for themselves; the diocesan uses do not
 
 The exempting clause of *Quo primum* creates the parallel line, and the existing
 act history draws that fork and then records that it holds no witness for any of
 them, calling the branch *honestly empty*.
 
 The audit's structural surprise is that filling it is **easier** than the Roman
-line, not harder. These lines are governed by decrees of a general chapter and
-orders of a master general, prior general or abbot — and the instrument is very
-often printed **on the title page**, in the *iussu editum* clause, so a catalogue
-record carries it. Three read without opening a book [verified]:
+line, not harder — but the first version of this section overstated it, and the
+correction is the more interesting half.
+
+**What was written first:** *these lines have their own promulgating acts, and
+those acts are not papal — they are decrees of a general chapter and orders of a
+master general, a prior general or an abbot.*
+
+**That is true of the orders and false of the diocesan uses**, and the
+counter-example was in the same group. The Braga missal of 1924 was approved by a
+**bull of Pius XI** and declared typical by a decree of the **Sacred Congregation
+of Rites** — signed by **Cardinal Vico and Alexander Verde, the same two men who
+signed the Roman typical edition's decree of 25 July 1920**. This audit read both
+decrees at the bytes. One congregation, one pair of officials, declaring typical
+editions for the Roman line and for a diocesan use four years apart.
+
+So the corrected statement is two-part:
+
+| | who declares the typical edition |
+| --- | --- |
+| **The orders** | themselves — a general chapter decree or a superior's order, very often printed **on the title page** in the *iussu editum* clause |
+| **The diocesan uses** | **Rome**, through the same congregation and sometimes the same officials as the Roman line |
+
+(Sarum is neither: having no modern typical edition at all, it is a different
+situation again, not a counter-example.)
+
+The generalisation was drawn from three order missals and written as though it
+held for a group that also contains Braga, Lyon, Sarum, the Ambrosian and the
+Mozarabic. It is the ordinary shape of the error this project exists to catch: a
+claim true of what had been read, stated as true of the class, fluent enough that
+nothing in the sentence signals the jump.
+
+The three **order** instruments, read at the bytes, which remain correct: [verified]
 
 - **Carthusian 1679** — *ex ordinatione capituli Generalis. Anno Domini
   M.D.CLXXVII. Celebrati sub R. P. D. Innocentio le Masson Priore Cartusiae ac
@@ -162,18 +229,16 @@ record carries it. Three read without opening a book [verified]:
 
 A datable, attributable, citable station, obtained from a catalogue field.
 
-Two further results worth naming. The **Carmelite** claim to the rite of the Holy
-Sepulchre is not a modern gloss: the 1574 title page reads *…de Monte Carmelo, ad
-normam, et consuetudinem Hierosolymitanae Ecclesiae* [verified]. And the
-**Lyonnais** use is the one member of the group with no located witness at all —
-seven alias forms, all zero [verified] — which is a bounded negative and a
-specific next step, since the Carthusian result proves French libraries hold what
-the Internet Archive does not.
+One further result worth naming: the **Carmelite** claim to the rite of the Holy
+Sepulchre is not a modern gloss. The 1574 title page reads *…de Monte Carmelo, ad
+normam, et consuetudinem Hierosolymitanae Ecclesiae* [verified].
 
 ## 5. Rights: two thirds readable, fewer than half printable
 
-Twenty-two of thirty-one books are retrievable whole; fourteen may be published
-from. The gap is almost entirely the twentieth century.
+Twenty-three of thirty-one books are retrievable whole; fourteen may be published
+from. The gap is almost entirely the twentieth century. (That first figure rose
+from 22 during the audit — not because anything was published, but because two
+`not-located` verdicts were wrong. See §3.)
 
 **The frame this audit began with was wrong in two places, and both came in with
 the brief rather than from a source.** A dedicated rights pass could source
@@ -222,6 +287,29 @@ the churn was worth it:
 
 A rights position resting on a book's own claim is better evidence than one
 resting on a treaty date nobody could cite.
+
+### The cleanest case in the file runs the other way: Milan
+
+The Archdiocese of Milan publishes **the whole of the 2024 second edition of the
+Ambrosian Missal** as twelve free PDFs, introduced *Riportiamo qui i files PDF
+per la consultazione, lo studio e la preghiera personale*. Four were probed here
+and all return HTTP 200 [verified]. And the same page carries an explicit
+reservation [verified]:
+
+> *Tutti i diritti d'autore … sono riservati all'editore ITL - Impresa
+> Tecnoeditoriale Lombarda srl a socio unico (© 2024). È vietata l'utilizzazione,
+> la riproduzione, l'elaborazione, la diffusione e la stampa anche parziale senza
+> autorizzazione scritta dell'editore, essendo consentita esclusivamente la
+> consultazione on-line per uso personale e senza finalità di lucro*
+
+**Free to read in full; explicitly not free to republish** — even partial
+printing forbidden without written permission. This is the cleanest illustration
+in the audit that `retrievable = whole` and `may_publish_text = no` are **not in
+tension**. A project that collapsed the two would either wrongly refuse to read
+this book or wrongly reprint it.
+
+Note also that the publisher is a diocesan company, not LEV: the Ambrosian books
+are not Holy See imprints and their rights do not follow the Roman rows.
 
 **Retrieval and publication are separate acts** and the audit keeps them apart
 throughout, as `sources.md` requires. A book may be `retrievable = "whole"` and
@@ -323,10 +411,14 @@ is still in force — which is why this list is short.
    with no whole witness anywhere — what exists is the Ordo Missae alone, three
    orders of magnitude too small. A 1970-to-2002 diff that skips it will
    misattribute 1975's changes to 2002.
-5. **The first use — Braga or Sarum.** Braga 1924 is whole, publishable and
-   twentieth-century; Sarum has two whole publishable scholarly editions, one a
-   critical edition from three manuscripts. Either converts the empty branch into
-   a real one.
+5. **The first use — now Braga, revised during the audit.** It is the only row in
+   the file where **both the book and its promulgating acts are in hand and
+   publishable**: a whole 1924 typical edition, pre-1931 and therefore printable,
+   plus a bull and a Congregation decree now read at the bytes. A complete
+   station-plus-witness pair for a non-Roman use is exactly what the empty branch
+   needs, and nothing else here offers one. Sarum remains the best *critical*
+   text; the **Ambrosian**, raised to top priority among the uses, is the largest
+   rite and the only living one readable in full today.
 6. **The Rome 1570 editio princeps, or an explicit refusal.** The 1570 station
    hangs on a witness this repository's own record calls unchecked, and two
    passes have now failed to find the Rome printing.
@@ -393,8 +485,22 @@ silence someone will fill:
    about how those instruments are shaped, dated or published, so applying the
    Roman act vocabulary to them would be an assertion, not a finding.
 3. **The languages are not Latin**, and this project's raw-line search is literal.
-4. **The count of sui iuris Churches is not stated here**, because it was not
-   sourced in this pass. `unrecorded` is the point.
+4. **The count is reported, not verified.** A research pass reports **23** sui
+   iuris Churches in five traditions — Alexandrian, Armenian, Byzantine, East
+   Syriac, West Syriac — and notes the figure is sometimes given as 24 depending
+   on whether the Latin Church is counted, with the canonical enumeration resting
+   on the *Annuario Pontificio*, which was not reached [reported]. Recorded as a
+   lead. **Not to be printed as settled.**
+
+Starting points for the separate track, all reported and none verified: the
+promulgating authority is a single body, the **Dicastery for the Eastern
+Churches** (*Praedicate Evangelium* arts. 82–87), whose own page cites **CCEO
+can. 657** to the effect that all liturgical texts to be published are submitted
+to its *recognitio* or approval. The book names differ by tradition — Hieratikon,
+Sluzhebnik, Euchologion (Byzantine); Taksa for the Holy Qurbana (East Syriac);
+Qurbono (West Syriac and Maronite); Patarag (Armenian); Qeddase (Alexandrian) —
+which is the first reason a missal-shaped search fails. **No individual Church's
+official service book was verified as available online.**
 
 The right first deliverable is not an inventory but a single sourced page fixing
 the list of Churches, the principal eucharistic book in each tradition, and the
