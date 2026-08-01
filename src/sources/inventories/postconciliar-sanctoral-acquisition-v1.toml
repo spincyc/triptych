@@ -149,6 +149,21 @@ lane proved — read the Ordo's page images, encode with `tools/citations`,
 convert psalms with `scripts/_psalms` — is the route that would clear them, at
 roughly one artifact page per two celebrations.
 """
+cleared = """
+CLEARED, 1 August 2026, by exactly that route. 845 of the seasonal section's
+1,058 references were read over 79 artifact pages of the Ordo lectionum, 731
+confirming the lead and 114 correcting it; the 213 that remain are the antiphons
+the Missal prints and the Ordo does not, plus two Vigils for which the Ordo prints
+no distinct formulary and one verse it prints without a reference. The rate this
+record estimated held: one artifact page per two celebrations for the sanctoral,
+and about one per Sunday for the temporal, where three cycles share a page.
+
+See src/sources/inventories/postconciliar-seasonal-collation-v1.toml, which also
+records the finding that made the psalms convertible at all — the Ordo prints its
+responsorial psalms in Vulgate numbering, which this record flagged under
+`[collation].numbering_finding` and which is now settled in
+guidance/versification.md with the pages it was read at.
+"""
 
 # ---------------------------------------------------------------------------
 # The works. `surveyed` means this lane retrieved bytes or read the
@@ -794,7 +809,12 @@ translations inventory's 219 unserved entries are all seasonal too. Anyone
 extending the route to the sanctoral should measure the ancestor coverage
 first; this lane expects it to be low and did not measure it.
 """
-the_seasonal_citations = "See `the_seasonal_leads`. 1,059 book-references stand unread."
+the_seasonal_citations = """
+Closed on 2026-08-01; see `the_seasonal_leads.cleared`. What is left of it is the
+seasonal ANTIPHONS, 188 references, which joins `the_antiphons` above: the same
+book, the same route, one lane covering both the sanctoral's roughly 180
+celebrations and the seasonal's 66.
+"""
 the_next_lane = """
 Two things, and the cheaper one first.
 
