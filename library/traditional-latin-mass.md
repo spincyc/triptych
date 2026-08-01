@@ -1,8 +1,8 @@
-# Traditional Latin Mass: 1962 Roman Rite
+# The 1962 Roman Rite
 
 [Return to Liturgy](liturgy.md)
 
-Studies of the books and calendar in force in 1962.
+Studies of the books and calendar in force in 1962. These are widely called the *Traditional Latin Mass* or the *Extraordinary Form*; this library names them by their own titles and dates.
 
 On this page: [Core and reference works](#core-and-reference-works) ·
 [Altar server guides](#altar-server-guides) ·

@@ -37,6 +37,22 @@ Three practical consequences, each of which has already decided a question here:
   are not used to label a thing in the apparatus, because a control a reader
   cannot argue with should not take a side. Name a book by its own title and
   date: "1962 Missal", "Postconciliar Missal".
+
+  The rule governs what the apparatus **calls** a thing: headings, titles,
+  labels, controls, and prose in our own voice. It does not forbid *reporting*
+  that a term is in use — "these books are widely called the *Novus Ordo*" is
+  documenting what is, which the paragraph above requires. Two `library/` pages
+  carried the polemical terms as their headings while the portal that links them
+  already used the neutral names; on 2026-08-01 the headings were corrected to
+  match the portal and each page now names the common term once as usage.
+
+  **Their filenames were not changed, and that is the rule's limit.**
+  `library/novus-ordo-liturgy.md` and `library/traditional-latin-mass.md` are
+  published URLs, bound by hash into the release record and named by some thirty
+  publication records. A path already published is a reference other people
+  hold, and breaking it to satisfy a naming rule trades a label nobody misreads
+  for a 404 — which this repository did to Catena Omnia the same day and had to
+  undo. A path is not a claim; a heading is. Rename the heading.
 - **A structural choice is not an editorial one.** The pre-1955 book is the base
   of `recensions.md` because it came first and a descendant cannot derive its
   ancestor. That is chronology, and it implies nothing about merit.

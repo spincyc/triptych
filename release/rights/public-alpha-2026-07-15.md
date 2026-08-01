@@ -1724,10 +1724,10 @@ release attachment, announcement, or promotion.
 | `library/law-and-church-discipline.md` | `23c168cb77e2efd6735778a57500f1b1b287f785c1bc7baf57a461dd96a7a744` |
 | `library/liturgy.md` | `ceddcd0f3e4c3c164917299ad7fc4fcedea6552d835687f55747787dc338a334` |
 | `library/mariology.md` | `e36b29d4a452ffc5ca4e333d1c6bc88e3a88efb0f4e75b2a1a64d23943d93803` |
-| `library/novus-ordo-liturgy.md` | `321a067afb5d8b4531cc0faba1dfc34d52a93070b702208f5a7fad3dbd545bcc` |
+| `library/novus-ordo-liturgy.md` | `1ee4283e83bb4971ef934e7da646b6fc23dde4992e877ea9d88e3ffc4a4a65cd` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
-| `library/traditional-latin-mass.md` | `93d8604dead2f604eb8c95fbceeb7ff8937e065668cea943ed0d683b29f5c6c8` |
+| `library/traditional-latin-mass.md` | `11683ff4c4ac3212be6fb8089cfe467789df6ac0ce195797a2da5db0870f0c24` |
 | `pdf/reading-plans/narrative-spine-full-account-douay-rheims.pdf` | `cfd84b8ea305e3e4d033209964f982720e853b9419604c6a9f12770d53e7d117` |
 | `pdf/reading-plans/narrative-spine-full-account-king-james-version.pdf` | `746e90d1e15ed79f31eaf2283461bcd7007a0513faae2501522dcf914bbe31d4` |
 | `pdf/reading-plans/narrative-spine-landmarks-douay-rheims.pdf` | `f63fdea277cf4a259885ab174520264b80e685d4d647a24ff27591ef8a008259` |

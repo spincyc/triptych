@@ -1,8 +1,8 @@
-# Novus Ordo: Postconciliar Roman Rite
+# The Postconciliar Roman Rite
 
 [Return to Liturgy](liturgy.md)
 
-Edition-specific studies of the postconciliar Roman Rite, distinct from the 1962 books. Each entry identifies its books, language, territory, cycle, and date where applicable.
+Edition-specific studies of the postconciliar Roman Rite, distinct from the 1962 books. Each entry identifies its books, language, territory, cycle, and date where applicable. These books are widely called the *Novus Ordo*; this library names them by their own titles and dates.
 
 On this page: [Core and reference works](#core-and-reference-works) ·
 [Sunday propers calendar](#sunday-propers-calendar)
