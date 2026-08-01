@@ -101,7 +101,9 @@ editions or says `Planned`.
 
 These edition-specific celebrations are planned separately from the Sunday
 spine. The Evening Mass of the Lord's Supper and the Celebration of the
-Lord's Passion each use one cycle-invariant plan.
+Lord's Passion each use one cycle-invariant plan. Easter Vigil coverage is
+already included with Easter Sunday, so it is shown here for completeness
+rather than counted as another planned work.
 
 | Celebration | Status |
 | --- | --- |

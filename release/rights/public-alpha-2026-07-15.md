@@ -1724,7 +1724,7 @@ release attachment, announcement, or promotion.
 | `library/law-and-church-discipline.md` | `23c168cb77e2efd6735778a57500f1b1b287f785c1bc7baf57a461dd96a7a744` |
 | `library/liturgy.md` | `ceddcd0f3e4c3c164917299ad7fc4fcedea6552d835687f55747787dc338a334` |
 | `library/mariology.md` | `e36b29d4a452ffc5ca4e333d1c6bc88e3a88efb0f4e75b2a1a64d23943d93803` |
-| `library/novus-ordo-liturgy.md` | `6996d7623a36bf669f6aa832ed016c98be3834a518b73068beebf11b0ca03817` |
+| `library/novus-ordo-liturgy.md` | `321a067afb5d8b4531cc0faba1dfc34d52a93070b702208f5a7fad3dbd545bcc` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `93d8604dead2f604eb8c95fbceeb7ff8937e065668cea943ed0d683b29f5c6c8` |

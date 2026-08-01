@@ -82,9 +82,6 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     registry = (
       ROOT / "guidance/liturgy/postconciliar-propers-registry.md"
     ).read_text()
-    production_plan = (
-      ROOT / "guidance/liturgy/propers-production-plan.md"
-    ).read_text()
     landing = (ROOT / "library/novus-ordo-liturgy.md").read_text()
     parents = re.findall(
       r"^\| (PC-S\d{2}) \| `[^`]+` \| [^|]+ \|$", registry, re.MULTILINE
@@ -142,11 +139,8 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     self.assertIn("rather than counted as another planned work", triduum)
     self.assertNotRegex(triduum, r"\|\s*A\s*\|\s*B\s*\|\s*C\s*\|")
     self.assertNotRegex(triduum, r"\bPC-[A-Z0-9-]+\b")
-    self.assertIn(
-      "| Collection segment | Permanent identities | "
-      "Distinct production targets |",
-      production_plan,
-    )
+    # The production plan no longer restates the registry's counts, so there
+    # is no totals table to assert on; the registry above is the one source.
     self.assertIn(
       "| **PC-S05 · Nativity of the Lord** | Planned | Planned | Planned |",
       landing,
