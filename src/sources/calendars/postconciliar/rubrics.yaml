@@ -1,6 +1,8 @@
 schema: triptych-calendar-rubrics/v1
 calendar: postconciliar
-edition: Missale Romanum, editio typica tertia 2008, reimpressio emendata 2008
+# The book is named once per calendar, in propers.yaml, which is the file that
+# identifies it; `calendar-rubrics` reads `edition` and `edition_short` from
+# there. `code` below is this file's own subject and stays here.
 code: Normae universales de anno liturgico et de calendario, 1969, with the Institutio
   generalis Missalis Romani
 citation_forms:

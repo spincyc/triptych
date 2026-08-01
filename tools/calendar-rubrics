@@ -136,11 +136,12 @@ ADVISORY = (
 
 # The fields a rubrics source must carry before anything is emitted from it.
 # Listed rather than inferred, so a source that quietly loses its provenance
-# block fails instead of shipping unattributed rules.
+# block fails instead of shipping unattributed rules. `edition` is absent on
+# purpose: the book's identity is read from the mass index beside this file, and
+# `_calendars.restated_identity` refuses a source that writes it out again.
 REQUIRED_TOP = (
     "schema",
     "calendar",
-    "edition",
     "code",
     "advisory",
     "derived_from",
@@ -630,11 +631,18 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
         for key, row in assigned.items():
             if row["name"] != masses[key]["name"]:
                 problems.append(f"{where}: the name recorded for {key} disagrees with the calendar index")
-        # The short name of the book, taken from the mass index that owns it and
-        # not restated in this source. `edition` is already carried in both
-        # files of a calendar directory, which is one copy too many; the name a
-        # control shows will not be a second instance of that.
-        document["edition_short"] = _calendars.edition_short(root, name)
+        # The book this calendar's masses are printed in, taken from the mass
+        # index that identifies it and not restated in this source. Both names
+        # travel the same way: `edition` for the record, `edition_short` for the
+        # control that has room for one line.
+        for field in _calendars.INDEX_OWNED:
+            document[field] = _calendars.index_header(root, name, field)
+        if not document.get("edition"):
+            problems.append(
+                f"{where}: {name}/{_calendars.MASS_INDEX} declares no edition, so there "
+                "is no book to name; this file derives it and states none of its own"
+            )
+        problems.extend(_calendars.restated_identity(root, name))
         sources[name] = document
         built.append(document_for(document, assigned, basis_index))
     return built, problems, sources

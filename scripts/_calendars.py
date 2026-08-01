@@ -13,6 +13,12 @@ schema names a kind another tool owns is skipped and *reported as skipped*; a
 file whose schema is recognised by nobody is a hard failure. Silently ignoring
 an unclassifiable file would be worse than the noisy failure it replaces --- a
 mass index with a mistyped schema string would simply stop being checked.
+
+It owns the other half of that seam too: which header fields a companion may
+*not* carry. A calendar directory describes one book, and the mass index is the
+file that identifies it. A companion that retypes the identity is a second copy
+with nothing comparing it to the first, which is what `restated_identity`
+refuses.
 """
 from __future__ import annotations
 
@@ -20,6 +26,7 @@ import re
 from pathlib import Path
 
 MASS_INDEX_SCHEMA = "triptych-calendar-masses/v1"
+MASS_INDEX = "propers.yaml"
 
 # Every other schema that legitimately sits in a calendar directory, with the
 # tool that validates it. Adding a kind of calendar source means adding a line
@@ -28,10 +35,31 @@ COMPANION_SCHEMAS = {
     "triptych-calendar-rubrics/v1": "calendar-rubrics",
 }
 
+# The identity of the book a calendar's masses are printed in. Both fields
+# belong to the mass index, because that is the file that transcribes the book;
+# a companion source in the same directory names the same book but is not what
+# identifies it, and reads these from the index instead of writing them out
+# again. `restated_identity` refuses the second copy.
+#
+# `edition` identifies the printing bibliographically. `edition_short` is the
+# name a reader would say — "1962 Missal" — because a select control has room
+# for one of them and a reader has patience for one of them, and it is not the
+# sixty-eight characters of "Missale Romanum, editio typica tertia 2008,
+# reimpressio emendata 2008".
+INDEX_OWNED = ("edition", "edition_short")
+
 # A YAML top-level key sits at column zero, which is what makes this cheap scan
 # equivalent to a parse for the one field it wants.
 SCHEMA_LINE = re.compile(r"^schema:[ \t]*(?:['\"])?([^'\"\s#]+)", re.MULTILINE)
-EDITION_SHORT_LINE = re.compile(r"^edition_short:[ \t]*(.+?)[ \t]*$", re.MULTILINE)
+_HEADER_LINES: dict[str, re.Pattern[str]] = {}
+
+
+def _header_line(field: str) -> re.Pattern[str]:
+    if field not in _HEADER_LINES:
+        _HEADER_LINES[field] = re.compile(
+            rf"^{re.escape(field)}:[ \t]*(.+?)[ \t]*$", re.MULTILINE
+        )
+    return _HEADER_LINES[field]
 
 
 def declared_schema(path: Path) -> str | None:
@@ -44,27 +72,19 @@ def declared_schema(path: Path) -> str | None:
     return found.group(1) if found else None
 
 
-def edition_short(root: Path, calendar: str) -> str | None:
-    """The short name of the book a calendar's masses are printed in.
-
-    The name a reader would say — "1962 Missal" — as against the bibliographic
-    `edition` that identifies the printing. A select control has room for one of
-    them and a reader has patience for one of them, and it is not the sixty-eight
-    characters of "Missale Romanum, editio typica tertia 2008, reimpressio
-    emendata 2008".
-
-    It is read from the mass index, which is the file that names the book, and
-    from nowhere else. Two tools emit it to the browser and neither keeps a copy:
-    a short name pasted into a second source is the restatement that drifts, and
-    `edition` is already carried twice in this directory for want of one owner.
-    """
-    path = root / calendar / "propers.yaml"
+def header(path: Path, field: str) -> str | None:
+    """A one-line top-level scalar a calendar source declares, or None."""
     try:
         text = path.read_text(encoding="utf-8")
     except OSError:
         return None
-    found = EDITION_SHORT_LINE.search(text)
+    found = _header_line(field).search(text)
     return found.group(1).strip("'\"") if found else None
+
+
+def index_header(root: Path, calendar: str, field: str) -> str | None:
+    """A header field read from the calendar's mass index and nowhere else."""
+    return header(root / calendar / MASS_INDEX, field)
 
 
 def partition(root: Path, calendar: str | None = None) -> tuple[list[Path], list[dict], list[str]]:
@@ -105,3 +125,43 @@ def partition(root: Path, calendar: str | None = None) -> tuple[list[Path], list
             )
 
     return indexes, companions, problems
+
+
+def restated_identity(root: Path, calendar: str | None = None) -> list[str]:
+    """Every companion source that writes out an identity the index owns.
+
+    `edition` sat hand-typed in both files of both calendar directories — four
+    copies of two strings, with nothing in the repository comparing them. They
+    happened to agree; nothing made them agree. This same repository has held
+    one census in three copies that all disagreed, and a README restating four
+    totals its own table gave differently, so agreement between hand-typed
+    copies is a fact about a moment and not a property of the data.
+
+    So a companion carrying one of these fields fails here whether or not its
+    value matches. The disagreement is the symptom; the second copy is the
+    defect, and it is the only thing a check can catch before the drift.
+    """
+    problems: list[str] = []
+    _, companions, _ = partition(root, calendar)
+    for companion in companions:
+        path = Path(companion["path"])
+        index = root / path.parent.name / MASS_INDEX
+        for field in INDEX_OWNED:
+            found = header(path, field)
+            if found is None:
+                continue
+            owned = header(index, field)
+            if found == owned:
+                problems.append(
+                    f"{path}: restates {field} {found!r}, which {index} owns and "
+                    f"{companion['owner']} reads from there. Delete the line: a copy "
+                    "that agrees today is a disagreement that has not happened yet."
+                )
+            else:
+                problems.append(
+                    f"{path}: declares {field} {found!r} while {index} declares "
+                    f"{owned!r}. Two files claim a different book for the same "
+                    f"calendar; the mass index is the owner, and {companion['owner']} "
+                    "reads it from there. Delete the line."
+                )
+    return problems

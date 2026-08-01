@@ -19,7 +19,7 @@ from pathlib import Path
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from _calendars import partition
+from _calendars import partition, restated_identity
 from _tooling import (
     Example,
     examples_live_on_the_verbs,
@@ -469,6 +469,10 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     problems.extend(citation_problems(root, calendar))
     problems.extend(spine_problems(paths))
     problems.extend(overlay_problems(paths))
+    # The index names the book; a companion beside it must not name it again.
+    # `edition` was hand-typed in both files of both calendar directories, four
+    # copies of two strings, and nothing here compared them.
+    problems.extend(restated_identity(root, calendar))
     # Reported here and once: the cache is populated only if some translation
     # actually asked for it, so a calendar with none never raises it at all.
     unreadable = (_SOURCE_IDS or (None, None))[1]

@@ -1,6 +1,8 @@
 schema: triptych-calendar-rubrics/v1
 calendar: roman-1962
-edition: Missale Romanum, editio typica 1962
+# The book is named once per calendar, in propers.yaml, which is the file that
+# identifies it; `calendar-rubrics` reads `edition` and `edition_short` from
+# there. `code` below is this file's own subject and stays here.
 code: Codex rubricarum, 25 July 1960, as printed in the 1962 Missale Romanum
 citation_forms:
   RG: Rubricae generales, nn. 1-137, in the 1962 Missal's front matter

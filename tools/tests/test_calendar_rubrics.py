@@ -18,7 +18,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _calendars import COMPANION_SCHEMAS, MASS_INDEX_SCHEMA, partition  # noqa: E402
+from _calendars import (  # noqa: E402
+    COMPANION_SCHEMAS,
+    INDEX_OWNED,
+    MASS_INDEX_SCHEMA,
+    index_header,
+    partition,
+    restated_identity,
+)
 
 CALENDARS = ROOT / "src" / "sources" / "calendars"
 TOOL = ROOT / "tools" / "calendar-rubrics"
@@ -68,6 +75,69 @@ class DiscoveryTests(unittest.TestCase):
         self.assertIn("triptych-calendar-rubrics/v1", COMPANION_SCHEMAS)
 
 
+class IdentityTests(unittest.TestCase):
+    """One book per calendar directory, named in one file.
+
+    `edition` was hand-typed in `propers.yaml` and again in `rubrics.yaml`, in
+    both calendars: four copies of two strings that nothing compared. They
+    agreed when they were finally read, which is the whole difficulty — a census
+    kept the same way in this repository was found in three copies that all
+    disagreed, and by then the wrong number had been served for months.
+    """
+
+    def restatement(self, held: str, line: str) -> list[str]:
+        room = Path(held) / "roman-1962"
+        room.mkdir()
+        (room / "propers.yaml").write_text(
+            f"schema: {MASS_INDEX_SCHEMA}\n"
+            "edition: Missale Romanum, editio typica 1962\n"
+            "edition_short: 1962 Missal\n",
+            encoding="utf-8",
+        )
+        (room / "rubrics.yaml").write_text(
+            "schema: triptych-calendar-rubrics/v1\ncalendar: roman-1962\n" + line,
+            encoding="utf-8",
+        )
+        return restated_identity(Path(held))
+
+    def test_the_real_tree_names_each_book_once(self) -> None:
+        self.assertEqual(restated_identity(CALENDARS), [])
+
+    def test_the_index_still_carries_both_names(self) -> None:
+        for name in ("roman-1962", "postconciliar"):
+            for field in INDEX_OWNED:
+                self.assertTrue(
+                    index_header(CALENDARS, name, field),
+                    f"{name}: the mass index declares no {field}, and nothing else may",
+                )
+
+    def test_a_restatement_that_agrees_is_still_refused(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as held:
+            problems = self.restatement(held, "edition: Missale Romanum, editio typica 1962\n")
+        self.assertEqual(len(problems), 1, problems)
+        self.assertIn("rubrics.yaml", problems[0])
+        self.assertIn("restates edition", problems[0])
+
+    def test_two_files_claiming_different_editions_fail_and_name_both(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as held:
+            problems = self.restatement(held, "edition: Missale Romanum, editio typica 1961\n")
+        self.assertEqual(len(problems), 1, problems)
+        self.assertIn("editio typica 1961", problems[0])
+        self.assertIn("editio typica 1962", problems[0])
+
+    def test_the_short_name_has_one_home_too(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as held:
+            problems = self.restatement(held, "edition_short: 1962 Missal\n")
+        self.assertEqual(len(problems), 1, problems)
+        self.assertIn("restates edition_short", problems[0])
+
+
 class LayerTests(unittest.TestCase):
     """The emitted layer, and the storage claim the design rests on."""
 
@@ -101,6 +171,12 @@ class LayerTests(unittest.TestCase):
                 if basis.get("row") is None:
                     continue
                 self.assertIn(basis["row"], rows, f"{name}: {basis['id']} names a row that is not in the table")
+
+    def test_the_emitted_layer_carries_the_book_the_index_names(self) -> None:
+        index = json.loads((DATA / "index.json").read_text(encoding="utf-8"))
+        for row in index["calendars"]:
+            for field in INDEX_OWNED:
+                self.assertEqual(row[field], index_header(CALENDARS, row["calendar"], field))
 
     def test_the_layer_states_precedence_where_the_day_files_refuse_to(self) -> None:
         index = json.loads((DATA / "index.json").read_text(encoding="utf-8"))
