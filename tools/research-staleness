@@ -32,20 +32,20 @@ EXAMPLES = {
         Example(
             "tools/research-staleness status",
             (
+                "stale claude articles/faith/at-the-end-of-every-why",
                 "stale claude articles/faith/four-last-things-01-death",
                 "stale claude articles/faith/four-last-things-02-judgment",
                 "stale claude articles/faith/four-last-things-03-hell",
-                "stale claude articles/faith/four-last-things-04-heaven",
-                "... 21 more lines",
+                "... 47 more lines",
             ),
         ),
         Example(
             "tools/research-staleness status --provider claude",
             (
+                "stale claude articles/faith/at-the-end-of-every-why",
                 "stale claude articles/faith/four-last-things-01-death",
                 "stale claude articles/faith/four-last-things-02-judgment",
-                "stale claude articles/faith/four-last-things-03-hell",
-                "... 9 more lines",
+                "... 14 more lines",
             ),
         ),
     ),
@@ -53,19 +53,19 @@ EXAMPLES = {
         Example(
             "tools/research-staleness explain claude articles/faith/four-last-things-01-death",
             (
-                "new input src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/book-index-fcad78c2/arti... [+9 chars]",
-                "new input src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/ebible-usfm-d8c02326/art... [+10 chars]",
-                "new input src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-aliases-52634891/a... [+12 chars]",
-                "... 153 more lines",
+                "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.19.toml",
+                "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.6.toml",
+                "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.7.toml",
+                "... 156 more lines",
             ),
         ),
         Example(
             "tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass",
             (
-                "new input src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/book-ind... [+25 chars]",
-                "new input src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/ebible-u... [+26 chars]",
-                "new input src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-al... [+28 chars]",
-                "... 76 more lines",
+                "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.19.toml",
+                "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.6.toml",
+                "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.7.toml",
+                "... 79 more lines",
             ),
         ),
     ),

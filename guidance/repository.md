@@ -150,6 +150,14 @@ shell smoke test, and every registered id must have one.
 Register a new tool with `tmt new <id>`. `make check` runs `tmt check`, which
 must stay green; it is skipped, not failed, where `tmt` is not installed.
 
+Every verb's help ends in two captured invocations, and they are held to real
+runs: `make check` runs `make check-examples`, which replays each recorded
+invocation and compares it line for line, so a transcript changes by
+`make recapture-examples` and never by hand. An invocation that must not be
+replayed — one that reaches a model or the network, or writes tracked release
+state — is named with its reason in `scripts/replay_examples.py`, as is every
+transcript already known to be stale; all of them are printed on each run.
+
 ## Build and review contract
 
 The normal lifecycle is:

@@ -44,6 +44,14 @@ from _tooling import (  # noqa: E402
 )
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
+#
+# The listing's transcript stops one line earlier than it could: the next line
+# names a sibling tool, and tmt reads a bare sibling id anywhere in a tool body
+# as an undeclared dependency, so showing it fails `tmt check` with
+#
+#     FAIL tpt: uses sibling 'knox-bible' without declaring it in requires
+#
+# Where to cut is the author's, and `make recapture-examples` keeps it.
 EXAMPLES = {
     "--list": (
         Example(
@@ -52,14 +60,13 @@ EXAMPLES = {
                 "acquisition:",
                 "  Retrieval from outside the project. This is the only group that reaches",
                 "  outside your machine at all, and no tool in any other group makes a network",
-                "  call or calls a model. What these write never enters the repository either:",
-                "... 54 more lines",
+                "... 56 more lines",
             ),
         ),
         Example(
             "tools/tpt --list --json",
             (
-                "[{\"group\": \"artwork\", \"mutates\": true, \"name... [+7494 chars]",
+                "[{\"group\": \"artwork\", \"mutates\": true, \"name... [+7516 chars]",
             ),
             "one object a tool, each carrying the group its listing section came from",
         ),
@@ -80,7 +87,7 @@ EXAMPLES = {
         Example(
             "tools/tpt --info tpt --json",
             (
-                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+221 chars]",
+                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+237 chars]",
             ),
         ),
     ),

@@ -224,6 +224,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	verify-public-site verify-public-preview \
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
+	check-examples recapture-examples \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
 	bibles bible review-bible check-bibles \
@@ -673,7 +674,22 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
-	check-calendar-masses check-calendar-rubrics check-propers-census
+	check-calendar-masses check-calendar-rubrics check-propers-census \
+	check-examples
+
+# Every tool's help ends in transcripts headed "real output, captured", and
+# until this target existed nothing ran one: the registry test counted lines
+# beginning with a "$$ " prompt. This runs each captured invocation and holds
+# the transcript to what it prints. It is in `check` rather than behind a flag
+# because an example nobody replays is the defect it exists to catch; it takes
+# about two minutes, which is the price of the claim.
+check-examples:
+	@$(PYTHON) scripts/replay_examples.py
+
+# The only way a transcript should ever change: re-run the invocation and write
+# down what it printed, keeping the elisions the author chose.
+recapture-examples:
+	@$(PYTHON) scripts/replay_examples.py --recapture
 
 # tmt.json indexes the repo's tools; invoke them through tpt.
 # tools dispatch through tmt entries to their implementation under tools/.

@@ -182,6 +182,12 @@ class WorkedExampleTests(unittest.TestCase):
     in the help rather than show an invented transcript; that is what the
     `no runnable example:` line is, and it buys the verb one example instead of
     two, never zero.
+
+    These count invocations; they say nothing about whether a transcript is
+    still what the tool prints. That is scripts/replay_examples.py, which runs
+    every captured invocation and compares it line for line — `make
+    check-examples`, which `make check` runs. Until it existed, two transcripts
+    had been wrong for weeks with everything here green.
     """
 
     def sections(self, name: str) -> list[tuple[str, str]]:
