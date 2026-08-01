@@ -37,8 +37,8 @@ misidentification in §3.
 ## 1. The finding that cost something: the 1962 decree was never missing
 
 `roman-holy-week-acts-v1.toml` recorded the 1962 typical edition's promulgating
-instrument as `act_citation = "not-found"`. `act-histories.md` §7.2 called it
-*the tracer's least comfortable result and the one most worth arguing with*, and
+instrument as `act_citation = "not-found"`. `act-histories.md` §7.2 kept the node
+anyway — a flagged gap a reader can see, rather than a node never drawn — and
 §10 set *find or refuse the 1962 promulgating decree* as the second next step.
 
 It is at page 2 of the Vatican typical edition, in the CMAA facsimile **this

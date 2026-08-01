@@ -145,7 +145,11 @@ Everything else under `tools/` is either a subdirectory, which `tmt` ignores,
 or a `.md`/`.test` companion. Shared library code and tool data live in
 `scripts/`; a bare file in `tools/` without a registry entry fails the gate.
 Python tests live in `tools/tests/`; `tests/tools/<id>.test` holds each tool's
-shell smoke test, and every registered id must have one.
+shell smoke test, and every registered id must have one. Nothing enforces that
+today — `tmt check` counts the registry, not the smoke tests — and three ids
+are missing one as of 2026-08-01: `act-history`, `mass-ordinary`, `mass-today`.
+A rule stated as enforced and checked by nothing is the apparatus committing the
+defect it exists to catch.
 
 Register a new tool with `tmt new <id>`. `make check` runs `tmt check`, which
 must stay green; it is skipped, not failed, where `tmt` is not installed.
@@ -238,12 +242,14 @@ For a move, preserve history and update imports, dependencies, internal links, c
 
 ## Public navigation and catalog
 
-`README.md` is a terse reader landing page, not a catalog or maintainer guide.
-It begins with `Don't Panic!`, explains AI and authority limits in ordinary
-language, links the seven durable library portals, states the reuse boundary,
-and explains the name.
+`README.md` is a terse reader landing page and the section index — not a
+per-publication catalog and not a maintainer guide. It links the seven durable
+library portals, the browser entry points, and the `docs/` accounts of how the
+work was built. `ABOUT.md` is the consumer overview: it begins with
+`Don't Panic!` and explains AI and authority limits, the reuse boundary, and the
+name in ordinary language.
 
-`README.md` is both the landing page and the section index. Each installed publication has exactly one
+Each installed publication has exactly one
 owning catalog under `library/`. The root landing tables expose exactly seven
 reader portals, in this order and with these muted liturgical-color identities:
 white `Faith`, gold `Scripture`, red `Liturgy`, green `History`, violet
@@ -278,7 +284,7 @@ narrowly scoped child landing when readers materially benefit from direct
 format links, a safety or reliance boundary, and section-level web navigation.
 That child owns the publication entry and stable publication marker. Its
 section landing links to the child without repeating the PDF or web links.
-README and LIBRARY may feature the child outside their section tables when the
+`README.md` may feature the child outside its section tables when the
 maintainer has expressly requested landing-page visibility. Keep a review
 edition's status and material completion shortfall conspicuous on the child
 page; navigation must never imply that an interim edition fulfills the

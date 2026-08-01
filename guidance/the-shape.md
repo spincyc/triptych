@@ -83,7 +83,10 @@ If a gap cannot be represented, it will be filled — silently, plausibly, and b
 whatever is nearest to hand.
 
 So absence is written down, always with its reason: `absent: icel` on a
-postconciliar text nobody may publish; `latin-not-transcribed` on 195 elements
+postconciliar text two bodies have not agreed this project may publish —
+`missals.md` reads ICEL's conditional permission against the USCCB's refusal and
+finds a conflict, not a prohibition, which is why the reason is named rather
+than assumed; `latin-not-transcribed` on 195 elements
 held whole in English; `untranslated` on three orations whose witness answers
 neither Latin form; `via_unrepresented` on a connector whose descent crosses an
 edition this project does not carry; `unresolved` on a facsimile's rights. A

@@ -94,8 +94,12 @@ src/sources/
       segments/<segment>.toml
       passages/<passage>.toml
   corpora/<corpus>.toml
-  calendars/<calendar>/<series>.yaml
+  calendars/<calendar>/propers.yaml        # every mass of that calendar
+  calendars/<calendar>/rubrics.yaml        # the companion rubric registry
   inventories/
+  bibles/
+  commentary/
+  reading-plans/
 ```
 
 `calendars/` holds the normalized YAML indexes of mass formularies and their
@@ -119,7 +123,8 @@ divergence.
 
 Sunday and Triduum series are ordered by the liturgical year from the First
 Sunday of Advent. Sanctoral series — Marian, Christological, and saints'
-feasts — are ordered by calendar date from 1 January, each in its own file.
+feasts — are ordered by calendar date from 1 January. All of them are sections
+of the calendar's single `propers.yaml`, never separate files.
 Neither ordering asserts rank, precedence, or the occurrence schedule of any
 civil year.
 

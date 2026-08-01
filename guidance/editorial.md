@@ -113,8 +113,11 @@ Do not invent a fact, quotation, citation, source search, verification event, co
 Prefer primary, official, edition-identified, stable sources. OCR, searchable transcriptions, aggregations, quotation sites, and secondary citations are finding aids until the underlying witness is checked. Cite enough edition/version and locus information to reproduce the claim; record stable links and access dates where online evidence matters.
 
 When an external source is registered for repository-wide reuse, follow
-`guidance/sources.md`. Cataloging, acquiring, indexing, searching, inspecting,
-and verifying are distinct states. Full-work availability never implies that a
+`guidance/sources.md`, which owns the evidence states and their exact names —
+cataloged, acquired, indexable, searched, inspected, verified — and reserves and
+rejects `indexed`. Those are machine-readable source-library states; the five
+editorial classes above are prose distinctions, and the two vocabularies share
+the word "verified" without sharing its meaning. Full-work availability never implies that a
 publication examined the whole work, and a reusable source note never replaces
 the publication's claim-level judgment.
 
