@@ -180,49 +180,27 @@
    is the whole request. `Response` is left neutral: it names a position in a
    dialogue and not a person, and colouring it like a speaker would assert who
    makes it, which the book does not always say. */
+/* Who is speaking, said once and quietly.
+   This was a bordered, uppercase, letterspaced pill, repeated at every change
+   of speaker through the whole Mass — three boxes to a dialogue. A missal does
+   not box its speakers, and the reader is following prayers, not labels. It is
+   now one small italic word in the margin colour, styled identically whoever
+   is speaking, so a change of speaker is legible without competing with the
+   words it introduces. */
 .speaker-tag {
-  display: inline-block;
-  margin-right: 0.35rem;
-  padding: 0.02rem 0.32rem;
+  margin-right: 0.4rem;
   font-family: var(--sans);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  vertical-align: 0.08em;
+  font-size: 0.68rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
   white-space: nowrap;
-  color: var(--ink-soft);
-  border: 1px solid var(--section-row);
-  border-radius: 3px;
+  color: var(--ink-faint);
 }
 
 /* A turn that begins mid-line needs air before it or it reads as part of the
    clause that just ended. */
 .speaker-tag + .speaker-tag,
-.composed .speaker-tag:not(:first-child) { margin-left: 0.3rem; }
-
-.speaker-tag.is-priest {
-  color: var(--section-ink);
-  border-color: var(--section-ink);
-}
-
-.speaker-tag.is-server,
-.speaker-tag.is-all {
-  color: var(--ink-soft);
-  background: var(--section-row);
-  border-color: var(--section-row);
-}
-
-/* A choice the RUBRICS create — the book says the Mass may be either of two.
-   Deliberately not styled like `.day-warning`: that box says the page has no
-   answer, and this control says the book has two. Making them look alike would
-   tell a reader that a permission is a failure. */
-.mass-choice {
-  margin: 0.5rem 0 0.2rem;
-  padding: 0.5rem 0.7rem;
-  background: var(--section-row);
-  border-radius: 4px;
-}
+.composed .speaker-tag:not(:first-child) { margin-left: 0.35rem; }
 
 .mass-choice-field {
   display: flex;

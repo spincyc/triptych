@@ -1022,7 +1022,11 @@
       const leading = first && source.slice(0, start).trim() === '';
       first = false;
       if (leading && opening) { at = start + found[2].length; continue; }
-      if (start > at) fragment.appendChild(document.createTextNode(source.slice(at, start)));
+      // Genuine V./R. marks inside the words still become ℣/℟. Returning
+      // early to `T.versicled` for unspoken kinds only meant a prayer, a form
+      // or a dialogue never reached it, and every versicle the book prints
+      // inside one lost its glyph.
+      if (start > at) fragment.appendChild(T.versicled(source.slice(at, start)));
       fragment.appendChild(speakerTag(word, word === 'Priest' ? 'priest' : null));
       at = start + found[2].length;
     }
@@ -1030,7 +1034,7 @@
     // place it opened every turn with a double space.
     const rest = source.slice(at);
     const tail = at === 0 ? rest : rest.replace(/^[ \t]+/, '');
-    if (tail) fragment.appendChild(document.createTextNode(tail));
+    if (tail) fragment.appendChild(T.versicled(tail));
     return fragment;
   }
 
