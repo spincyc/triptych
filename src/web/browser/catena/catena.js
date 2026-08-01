@@ -51,6 +51,10 @@
   let index = null;
   let bibles = [];
   const bookFiles = new Map();
+  // Authors the reader has switched OFF, held across chapters. Storing the
+  // exclusions rather than the inclusions is what lets an author who does not
+  // comment on the next chapter stay off rather than reappear checked.
+  const hiddenAuthors = new Set();
 
   /* ------------------------------------------------------------------------
    * Data
@@ -206,33 +210,114 @@
 
   function renderChain(container, file, book, chapter) {
     const held = file ? M.fragmentsOnChapter(file.fragments || [], chapter) : [];
-    const heading = T.el(
-      'h2',
-      'section-heading',
+    const headingText =
       held.length === 0
         ? 'Commentary held here'
         : held.length === 1
           ? 'One fragment held here'
-          : held.length + ' fragments held here'
-    );
+          : held.length + ' fragments held here';
+    const heading = T.el('h2', 'section-heading', headingText);
     container.appendChild(heading);
     if (!held.length) {
       // Rule 1: a chapter with no fragments shows no fragments, and says so
       // plainly rather than showing something else in their place.
       container.appendChild(
-        T.el(
-          'p',
-          'aside-note',
-          'No commentary on this chapter is held yet.'
-        )
+        T.el('p', 'aside-note', 'No commentary on this chapter is held yet.')
       );
       return 0;
     }
-    const list = T.el('ul', 'chain');
+
+    // Grouped by author, in the order the chain already runs, which is oldest
+    // first. Insertion order is the grouping order, so the tree inherits the
+    // chronology rather than re-deriving it — and a second sort here could
+    // silently disagree with the model's.
+    const groups = [];
+    const byAuthor = new Map();
     for (const fragment of held) {
-      list.appendChild(renderFragment(fragment, book.name));
+      let group = byAuthor.get(fragment.author);
+      if (!group) {
+        group = { author: fragment.author, date: fragment.date, fragments: [] };
+        byAuthor.set(fragment.author, group);
+        groups.push(group);
+      }
+      group.fragments.push(fragment);
     }
+
+    const list = T.el('ul', 'chain');
+    const rendered = [];
+    for (const group of groups) {
+      const item = T.el('li', 'author');
+      const node = document.createElement('details');
+      node.className = 'author-body';
+
+      const summary = document.createElement('summary');
+      summary.className = 'author-head';
+      summary.appendChild(T.el('span', 'author-name', group.author));
+      if (group.date !== null && group.date !== undefined) {
+        summary.appendChild(T.el('span', 'author-date', String(group.date)));
+      }
+      summary.appendChild(
+        T.el(
+          'span',
+          'author-count',
+          group.fragments.length === 1
+            ? '1 fragment'
+            : group.fragments.length + ' fragments'
+        )
+      );
+      node.appendChild(summary);
+
+      const inner = T.el('ul', 'author-fragments');
+      for (const fragment of group.fragments) {
+        inner.appendChild(renderFragment(fragment, book.name));
+      }
+      node.appendChild(inner);
+      item.appendChild(node);
+      list.appendChild(item);
+      rendered.push({ author: group.author, item: item, count: group.fragments.length });
+    }
+
+    // Who may be read. The set holds the DESELECTED authors, so turning one off
+    // keeps him off while paging through chapters, and an author who simply
+    // does not comment on the next chapter does not come back switched on.
+    // Hiding rows rather than rebuilding is what keeps an opened node open.
+    function applyFilter() {
+      let shown = 0;
+      for (const row of rendered) {
+        const on = !hiddenAuthors.has(row.author);
+        row.item.hidden = !on;
+        if (on) shown += row.count;
+      }
+      // The heading counts what is HELD; this says what is shown, and only when
+      // the two differ. A filtered chain reporting a smaller total as the total
+      // would misstate the corpus.
+      heading.textContent =
+        shown === held.length ? headingText : headingText + ' \u2014 ' + shown + ' shown';
+    }
+
+    if (rendered.length > 1) {
+      const filter = T.el('div', 'author-filter');
+      filter.setAttribute('role', 'group');
+      filter.setAttribute('aria-label', 'Authors shown');
+      for (const row of rendered) {
+        const label = T.el('label', 'author-toggle');
+        const box = document.createElement('input');
+        box.type = 'checkbox';
+        box.checked = !hiddenAuthors.has(row.author);
+        box.addEventListener('change', () => {
+          if (box.checked) hiddenAuthors.delete(row.author);
+          else hiddenAuthors.add(row.author);
+          applyFilter();
+        });
+        label.appendChild(box);
+        label.appendChild(document.createTextNode(row.author));
+        filter.appendChild(label);
+      }
+      container.appendChild(filter);
+    }
+
     container.appendChild(list);
+    applyFilter();
     return held.length;
   }
 
