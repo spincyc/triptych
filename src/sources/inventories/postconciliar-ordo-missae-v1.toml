@@ -33,11 +33,23 @@ artifact registered at \
 artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en.
 """
 
+slots_derived_from = """
+Where each proper of the day stands inside this frame is read from the same \
+collated study as the order of the elements, and each slot's locus is the \
+Missal's own numbering of the element it is anchored to. No facsimile of the \
+editio typica is held here, so unlike the 1962 frame these placements rest on \
+that study and on the Missal's numbering rather than on pages this project has \
+opened; the numbering is nonetheless the Missal's own statement of the order, \
+and every slot below anchors to an element whose number this file already \
+carries.
+"""
+
 not_decided_here = [
   "Which Eucharistic Prayer a priest should use. The Missal offers four and the choice is his; the option this file marks default is simply the first the Missal prints.",
   "Whether the Latin editio typica may be republished. The question is open and unstarted; until it is settled this file carries incipits and no Latin text.",
   "Whether the ecumenical text may lawfully be used in the liturgy anywhere. The grant recorded here is a copyright licence and nothing else; an imprimatur is not a copyright licence and a copyright licence is not liturgical approval.",
   "The Prefaces, of which the Missal prints fifty; they are proper to the day and belong to the propers layer, not to the invariant frame.",
+  "Where a proper stands that this file does not seat. The Sequence, the chants of the Paschal Triduum and the whole of the Good Friday liturgy are left unplaced; a page reading this file must show them in the Missal's own order beside the proper they follow rather than invent a seat for them.",
 ]
 
 # ---------------------------------------------------------------- witnesses
@@ -530,6 +542,90 @@ kind = "rubric"
 name = "The veneration of the altar and departure"
 missal_number = "nn. 145-146"
 note = "Omitted where another liturgical action follows immediately."
+
+# ---------------------------------------------------------------- slots
+#
+# A seat in this frame for a proper of the day, named the same way as in the
+# 1962 inventory: one element of the Ordinary, whether the proper stands before
+# or after it, the proper names it receives, and a locus.
+#
+# Almost every element these slots anchor to carries no text at all --- the
+# approved English is ICEL's and the Latin is the editio typica's --- and that
+# changes nothing here. An element that names its absence is still an element,
+# and it still marks the place. The Collect below is the plainest case: the
+# element says the prayer is withheld and why, and the day's Collect, whose
+# Latin this project does hold, is seated immediately after it. A reader sees
+# what is withheld and what is not, at the moment each falls due.
+
+[[slots]]
+key = "antiphona-ad-introitum"
+after = "ritus-initiales/introitus"
+propers = ["Entrance Antiphon", "Entrance Antiphon (alternative)"]
+locus = "Ordo Missae n. 1"
+
+[[slots]]
+key = "collecta"
+after = "ritus-initiales/collecta"
+propers = ["Collect"]
+locus = "Ordo Missae n. 9"
+
+[[slots]]
+key = "lectio-prima"
+after = "liturgia-verbi/lectio-prima"
+propers = ["First Reading"]
+locus = "Ordo Missae n. 10"
+
+[[slots]]
+key = "psalmus-responsorius"
+after = "liturgia-verbi/psalmus-responsorius"
+propers = ["Responsorial Psalm"]
+locus = "Ordo Missae n. 11"
+
+[[slots]]
+key = "lectio-secunda"
+after = "liturgia-verbi/lectio-secunda"
+propers = ["Second Reading"]
+locus = "Ordo Missae n. 12"
+
+# The Sequence is deliberately absent from this slot. The Missal sings it
+# before the Alleluia, and the propers layer already prints it there, so a
+# proper that rides with the reading before it lands in the right place; naming
+# it here would seat it after the acclamation and be wrong.
+[[slots]]
+key = "acclamatio-ante-evangelium"
+after = "liturgia-verbi/acclamatio-ante-evangelium"
+propers = ["Gospel Acclamation", "Verse Before the Gospel"]
+locus = "Ordo Missae n. 13"
+
+[[slots]]
+key = "evangelium"
+after = "liturgia-verbi/evangelium"
+propers = ["Gospel"]
+locus = "Ordo Missae nn. 14-16"
+
+[[slots]]
+key = "super-oblata"
+after = "praeparatio-donorum/super-oblata"
+propers = ["Prayer over the Offerings"]
+locus = "Ordo Missae n. 30"
+
+[[slots]]
+key = "antiphona-ad-communionem"
+after = "ritus-communionis/communio"
+propers = ["Communion Antiphon", "Communion Antiphon (alternative)"]
+locus = "Ordo Missae nn. 133-136"
+
+[[slots]]
+key = "post-communionem"
+after = "ritus-communionis/post-communionem"
+propers = ["Prayer after Communion"]
+locus = "Ordo Missae n. 139"
+
+[[slots]]
+key = "super-populum"
+before = "ritus-conclusionis/benedictio"
+propers = ["Prayer over the People"]
+locus = "Ordo Missae nn. 141-143"
 
 # ---------------------------------------------------------------- variants
 

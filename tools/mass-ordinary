@@ -62,6 +62,29 @@ unique by construction and stays readable.
 *It does not rank the Eucharistic Prayers.* The postconciliar Missal prints
 four and the priest chooses; the default is the first the Missal itself prints,
 which is the only order this project can state without preferring one prayer.
+
+Slots: where a proper of the day sits in the frame
+--------------------------------------------------
+The Ordinary is the frame and the propers are poured into it, and *where* each
+proper is poured is liturgical fact --- the same fact for every page that ever
+draws this frame. So it is declared in the inventory, beside the elements it
+seats propers among, and never worked out by a renderer. A slot names one
+element, whether the proper stands `before` or `after` it, the proper names it
+receives, and the `locus` in the missal that puts it there.
+
+Three things are checked here rather than trusted. A slot's anchor must be an
+element this file really emits, so renaming an element breaks the build instead
+of silently unseating a proper. A proper name may be claimed by one slot only,
+because two claims are an ambiguity a page would have to resolve by guessing.
+And the slots must run forward through the elements in the order they are
+declared, which makes the file's own order readable as the order of the rite
+and catches a slot moved without its neighbours.
+
+What is NOT declared is as deliberate as what is. A proper the missal does not
+place --- an Ember Saturday's later chants, the whole of Good Friday --- gets no
+slot, and a page must show it in the missal's own order rather than seat it
+somewhere plausible. That is the refusal this layer owes: a seat invented for a
+proper resolves cleanly, reads correctly, and is wrong.
 """
 from __future__ import annotations
 
@@ -91,8 +114,8 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants; 9 elements translated, 39 absent",
-                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants; 195 elements translated, 0 absent",
+                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
+                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
             "check reads the inventories, joins the artifacts, and reports whether --out is already current; it writes nothing",
@@ -100,7 +123,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --calendar roman-1962 --json",
             (
-                "{\"calendars\":[{\"absent\":0,\"calendar\":\"roman-1962\",\"elements\":195,\"sections\":6,\"stale\":false,\"tr... [+60 chars]",
+                "{\"calendars\":[{\"absent\":0,\"calendar\":\"roman-1962\",\"elements\":195,\"sections\":6,\"slots\":9,\"stale\"... [+70 chars]",
             ),
         ),
     ),
@@ -1097,8 +1120,8 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants; 9 elements translated, 39 absent",
-                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants; 195 elements translated, 0 absent",
+                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
+                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
             "read-only first: `check` validates the inventories and reports whether --out is current",
@@ -1106,8 +1129,8 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants; 9 elements translated, 39 absent",
-                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants; 195 elements translated, 0 absent",
+                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
+                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "wrote 3 files",
                 "  -> build/example-ordinary/structure/ordinary/index.json",
             ),
@@ -1140,6 +1163,7 @@ LIBRARY_RIGHTS = {
 
 REQUIRED_TOP = ("schema", "calendar", "title", "advisory", "derived_from", "sections")
 ELEMENT_KINDS = ("heading", "rubric", "prayer", "form", "dialogue")
+SLOT_SIDES = ("before", "after")
 
 
 class SourceError(ValueError):
@@ -1287,6 +1311,94 @@ def variant_table(source: dict, name: str) -> tuple[list[dict], dict[str, str]]:
             options[identifier] = group
         groups.append(dict(entry))
     return groups, options
+
+
+def slot_table(source: dict, sections: list[dict], name: str) -> list[dict]:
+    """Where the day's propers sit in this frame, checked against the elements.
+
+    Every check below exists because the failure it catches is silent. An
+    anchor that no longer names an element would drop a proper off the page
+    with nothing raised; two slots claiming one proper name would leave a page
+    to choose, and it would choose consistently and possibly wrongly; and slots
+    that run backwards against the elements would put the Gospel before the
+    Epistle while every file still validated.
+    """
+    order = {}
+    variant_of = {}
+    for section in sections:
+        for element in section["elements"]:
+            order[element["key"]] = len(order)
+            variant_of[element["key"]] = element["variant"]
+
+    held: list[dict] = []
+    claimed: dict[str, str] = {}
+    seen: set[str] = set()
+    reached = -1
+    for entry in source.get("slots") or []:
+        key = entry.get("key")
+        if not isinstance(key, str) or not key:
+            raise SourceError(f"{name}: a slot has no key")
+        if key in seen:
+            raise SourceError(f"{name}: slot {key} is declared twice")
+        seen.add(key)
+        sides = [one for one in SLOT_SIDES if entry.get(one)]
+        if len(sides) != 1:
+            raise SourceError(
+                f"{name}: slot {key} must name exactly one of "
+                f"{' or '.join(SLOT_SIDES)}, not {len(sides)}"
+            )
+        side = sides[0]
+        anchor = entry[side]
+        if anchor not in order:
+            raise SourceError(f"{name}: slot {key} anchors to {anchor!r}, which is no element of this file")
+        if variant_of[anchor] is not None:
+            raise SourceError(
+                f"{name}: slot {key} anchors to {anchor!r}, which shows only under "
+                f"option {variant_of[anchor]!r}; a seat that disappears with a choice "
+                "of prayer would drop the proper it holds"
+            )
+        propers = entry.get("propers") or []
+        if not propers:
+            raise SourceError(f"{name}: slot {key} receives no proper")
+        for proper in propers:
+            if not isinstance(proper, str) or not proper:
+                raise SourceError(f"{name}: slot {key} names an empty proper")
+            if proper in claimed:
+                raise SourceError(
+                    f"{name}: slots {claimed[proper]} and {key} both claim the "
+                    f"proper {proper!r}; one proper has one seat"
+                )
+            claimed[proper] = key
+        if not entry.get("locus"):
+            raise SourceError(
+                f"{name}: slot {key} cites no locus; a placement nobody can look up "
+                "is a placement nobody can refute"
+            )
+        # An `after` seats the proper one place further on than a `before` on
+        # the same element, which is what makes two slots on neighbouring
+        # elements resolve to one position without either being ambiguous.
+        at = order[anchor] + (1 if side == "after" else 0)
+        if at < reached:
+            raise SourceError(
+                f"{name}: slot {key} sits before the slot declared above it; "
+                "the slots are the order of the rite and must run forward"
+            )
+        reached = at
+        held.append(
+            {
+                "key": key,
+                "anchor": anchor,
+                "where": side,
+                "propers": list(propers),
+                "locus": entry["locus"],
+            }
+        )
+    if held and not source.get("slots_derived_from"):
+        raise SourceError(
+            f"{name}: slots are declared and slots_derived_from is not; a placement "
+            "must say which book it was read from"
+        )
+    return held
 
 
 # --------------------------------------------------------------- elements
@@ -1509,6 +1621,8 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
             seen.add(element["key"])
         sections.append({"key": key, "name": section.get("name") or key, "elements": elements})
 
+    slots = slot_table(source, sections, name)
+
     held: dict[str, int] = {}
     absent_counts: dict[str, int] = {}
     for section in sections:
@@ -1543,8 +1657,10 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "title": source["title"],
         "advisory": source["advisory"],
         "derived_from": source["derived_from"],
+        "slots_derived_from": source.get("slots_derived_from") or None,
         "absences": [absences[key] | {"count": absent_counts.get(key, 0)} for key in sorted(absences)],
         "variants": variants,
+        "slots": slots,
         "translations": manifest,
         "sections": sections,
     }
@@ -1562,6 +1678,7 @@ def index_file(built: list[dict]) -> dict:
                 "title": one["title"],
                 "elements": sum(len(section["elements"]) for section in one["sections"]),
                 "variants": [entry["group"] for entry in one["variants"]],
+                "slots": len(one["slots"]),
             }
             for one in built
         ],
@@ -1611,6 +1728,7 @@ def summarise(one: dict, stale: bool | None) -> dict:
         "elements": sum(len(section["elements"]) for section in one["sections"]),
         "witnesses": len(one["translations"]),
         "variants": len(one["variants"]),
+        "slots": len(one["slots"]),
         "translated": translated,
         "absent": absent,
         "stale": stale,
@@ -1754,8 +1872,8 @@ def render(payload: dict, arguments: argparse.Namespace) -> int:
         print(
             f"{row['calendar']}: {row['sections']} sections, {row['elements']} elements, "
             f"{row['witnesses']} witness{'' if row['witnesses'] == 1 else 'es'}, "
-            f"{row['variants']} variants; {row['translated']} elements translated, "
-            f"{row['absent']} absent"
+            f"{row['variants']} variants, {row['slots']} slots; "
+            f"{row['translated']} elements translated, {row['absent']} absent"
         )
     if "written" in payload:
         print(f"wrote {len(payload['written'])} files")

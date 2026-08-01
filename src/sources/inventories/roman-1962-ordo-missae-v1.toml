@@ -27,10 +27,21 @@ speaker, page or wording is restated in this file: it names the artifacts and \
 the order they stand in, and the artifacts carry the words and the hashes.
 """
 
+slots_derived_from = """
+Where each proper of the day stands inside this frame is read from the 1962 \
+typical edition itself - the Ritus servandus in celebratione Missae and the \
+Ordo Missae - and not from the 1861 witness whose words the elements carry. \
+Each slot names the paragraph of the Ritus servandus that states the place. \
+The two books agree on the order of these nine positions, which is why the \
+anchors below are 1861 elements and the loci are 1962 rubrics; where they did \
+not agree, no slot would be declared.
+"""
+
 not_decided_here = [
   "What the 1962 typical edition prints. This is an 1861 witness to the same rite, not a transcription of the 1962 altar book, and the two are not collated element by element.",
   "Which of the ten proper Prefaces a given day takes. That is the propers layer's question, and this file carries the Prefaces as the book prints them without appointing any.",
   "Anything about how the rite is performed. The rubrics transcribed here are the book's own, in its own words, and are evidence of what it printed in 1861 and of nothing else.",
+  "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1962 book states the position in terms; the oration super populum of the Lenten ferias, the chants of an Ember Saturday after the first, and the whole of Good Friday and the paschal Vigil are left unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
 ]
 
 # ---------------------------------------------------------------- witnesses
@@ -99,3 +110,85 @@ name = "The Ablutions and the Last Gospel"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 absent_latin = "latin-not-transcribed"
+
+# ---------------------------------------------------------------- slots
+#
+# A slot is a seat in this frame for a proper of the day. It names one element
+# of the Ordinary and whether the proper stands before or after it, the proper
+# names it receives, and the rubric of the 1962 book that puts it there.
+#
+# This is DATA and not a renderer's rule, for the reason everything else in
+# this file is: where a proper sits inside the Ordinary is liturgical fact, it
+# is the same fact for every page that ever draws this frame, and a fact
+# expressed as code in one page is a fact no other reader of these files can
+# check. The `locus` is what makes a placement falsifiable: it names the
+# paragraph, and anyone with the facsimile can say whether it is right.
+#
+# The slots are declared in the order the rite runs, and the generator refuses
+# a file whose slots run backwards against the elements they anchor to. So the
+# order below is not decoration: it is checked against the artifacts.
+
+[[slots]]
+key = "introitus"
+after = "praeparatio/rubrica-benedictio-incensi-et-introitus"
+propers = ["Introit"]
+locus = "Ritus servandus IV, 2"
+
+[[slots]]
+key = "collecta"
+before = "oblatio/rubrica-post-collectam"
+propers = ["Collect"]
+locus = "Ritus servandus V, 1"
+
+# One rubric names the Epistle and the chants that follow it in one breath, so
+# the two slots that carry them share its locus. `Lesson` sits here on the
+# authority of Ritus servandus V, 4, which says the Lectio is read exactly as
+# the Epistle is; `First Lesson` opens an Ember Saturday, whose remaining
+# lessons and chants ride with the chant that precedes them.
+[[slots]]
+key = "epistola"
+after = "oblatio/rubrica-epistola"
+propers = ["Epistle", "Lesson", "First Lesson"]
+locus = "Ritus servandus VI, 1; V, 4 for the Lectio"
+
+[[slots]]
+key = "graduale"
+before = "oblatio/rubrica-munda-cor-meum"
+propers = ["Gradual", "First Gradual", "Alleluia", "First Alleluia", "Tract"]
+locus = "Ritus servandus VI, 1"
+
+[[slots]]
+key = "evangelium"
+after = "oblatio/rubrica-evangelium-proprium"
+propers = [
+  "Gospel",
+  "Passion according to Matthew",
+  "Passion according to Mark",
+  "Passion according to Luke",
+  "Passion according to John",
+]
+locus = "Ritus servandus VI, 2"
+
+[[slots]]
+key = "offertorium"
+after = "oblatio/rubrica-offertorium"
+propers = ["Offertory"]
+locus = "Ritus servandus VII, 1"
+
+[[slots]]
+key = "secreta"
+before = "oblatio/rubrica-secreta"
+propers = ["Secret"]
+locus = "Ritus servandus VII, 7"
+
+[[slots]]
+key = "communio"
+after = "conclusio/rubrica-communio"
+propers = ["Communion"]
+locus = "Ritus servandus XI, 1"
+
+[[slots]]
+key = "postcommunio"
+before = "conclusio/rubrica-postcommunio-secunda"
+propers = ["Postcommunion"]
+locus = "Ritus servandus XI, 1"

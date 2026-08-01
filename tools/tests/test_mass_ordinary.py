@@ -26,6 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "src" / "web" / "data" / "structure" / "ordinary"
+PROPERS = ROOT / "src" / "web" / "data" / "structure" / "propers"
 DAY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "day.js"
 TOOL = ROOT / "tools" / "mass-ordinary"
 
@@ -112,6 +113,73 @@ class OrdinaryStructure(unittest.TestCase):
     def test_the_index_names_every_calendar(self) -> None:
         listed = {row["calendar"] for row in load("index")["calendars"]}
         self.assertEqual(listed, set(self.files))
+
+
+class OrdinarySlots(unittest.TestCase):
+    """Where a proper of the day sits in the frame.
+
+    These hold the declaration, not the page. A seat that resolves to nothing,
+    a proper claimed by two seats, or seats that run backwards would each put a
+    prayer somewhere plausible and wrong without anything failing.
+    """
+
+    def setUp(self) -> None:
+        if not DATA.is_dir():
+            self.skipTest("no ordinary layer written; run `tools/tpt mass-ordinary structure`")
+        self.files = {row: load(row) for row in ("roman-1962", "postconciliar")}
+
+    def test_every_seat_names_an_element_the_frame_shows(self) -> None:
+        for name, file in self.files.items():
+            keys = {element["key"]: element for element in elements(file)}
+            for slot in file["slots"]:
+                self.assertIn(slot["anchor"], keys, f"{name}: seat {slot['key']}")
+                self.assertIsNone(
+                    keys[slot["anchor"]]["variant"],
+                    f"{name}: seat {slot['key']} would vanish with a choice of prayer",
+                )
+                self.assertIn(slot["where"], ("before", "after"), f"{name}: {slot['key']}")
+
+    def test_a_proper_has_one_seat(self) -> None:
+        for name, file in self.files.items():
+            claimed = [proper for slot in file["slots"] for proper in slot["propers"]]
+            self.assertEqual(len(claimed), len(set(claimed)), name)
+
+    def test_the_seats_run_forward_through_the_frame(self) -> None:
+        """The file's order is the order of the rite, and is checked to be."""
+        for name, file in self.files.items():
+            order = {element["key"]: index for index, element in enumerate(elements(file))}
+            reached = -1
+            for slot in file["slots"]:
+                at = order[slot["anchor"]] + (1 if slot["where"] == "after" else 0)
+                self.assertGreaterEqual(at, reached, f"{name}: seat {slot['key']} runs backwards")
+                reached = at
+
+    def test_a_seat_says_which_rubric_puts_it_there(self) -> None:
+        for name, file in self.files.items():
+            if not file["slots"]:
+                continue
+            self.assertTrue(file["slots_derived_from"],
+                            f"{name}: seats are declared and no book is named for them")
+            for slot in file["slots"]:
+                self.assertTrue(slot["locus"], f"{name}: seat {slot['key']} cites nothing")
+
+    def test_the_seats_name_propers_the_corpus_actually_carries(self) -> None:
+        """A seat for a proper name no mass uses is a seat that never fills.
+
+        Not a rights or a truth question — a spelling one, and exactly the kind
+        that resolves successfully and does nothing.
+        """
+        for name, file in self.files.items():
+            path = PROPERS / (name + ".json")
+            if not path.is_file():
+                self.skipTest("no propers layer written")
+            corpus = json.loads(path.read_text(encoding="utf-8"))
+            used = {proper.get("name")
+                    for mass in corpus.get("masses", [])
+                    for proper in mass.get("propers", [])}
+            for slot in file["slots"]:
+                for proper in slot["propers"]:
+                    self.assertIn(proper, used, f"{name}: seat {slot['key']} awaits {proper!r}")
 
 
 class OrdinaryTool(unittest.TestCase):
