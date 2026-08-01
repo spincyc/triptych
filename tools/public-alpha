@@ -144,13 +144,16 @@ SITE_DATA_ROOT = PurePosixPath("browse")
 # belong under liturgy and the reading plan under scripture; the parts neither
 # may drift on live once, in shared. The fixture beside them is a development
 # aid and is not published.
-WEB_BROWSER_DIRECTORIES = ("shared", "liturgy", "scripture", "catena")
+# The reading pages a reader is sent to; `shared` carries no page of its own.
+WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history")
+# Derived, never restated. These were two hand-kept lists, and adding a section
+# to one and not the other shipped a page whose stylesheet and script were left
+# out of the artifact — the build passed and the link check caught it.
+WEB_BROWSER_DIRECTORIES = ("shared",) + WEB_BROWSER_ENTRANCES
 # Everything a reading directory holds is served. Naming the files instead made
 # the artifact refuse to build the moment a page gained or renamed one, which
 # says nothing about whether the page is publishable.
 WEB_BROWSER_SUFFIXES = (".html", ".css", ".js")
-# The two a reader is sent to; shared carries no page of its own.
-WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history")
 # Fragments stay beside the edition that owns them, where index-bible checks
 # them for staleness and orphans; copying them into src/web/data as well would
 # put the same verse text in the tree twice.
