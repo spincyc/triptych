@@ -435,6 +435,14 @@ them moved for reasons worth reading [verified, 2026-08-01]:
 | — stated by the recension | 1 | 1 |
 | — inherited from the base | 490 | 489 |
 | Dates in 2026 resolving to a mass | 316 of 365 | 316 of 365 |
+| — reaching a formulary with real text | not measured | **235** |
+| — reaching only placeholder formularies | not measured | 81 |
+
+**The 81 are the base's, not the recension's.** 167 of the base's 490 masses
+carry a single `Placeholder` proper — mostly third-class saints whose Masses come
+from the Commune and have not been written out — and the recension inherits every
+one of them. Nothing a recension does can improve that number, and it is recorded
+here so that `316 dates resolve` is not read as `316 dates can be served`.
 
 **The served count fell while the departure count rose**, and that pairing is the
 projection working. The sixth row is an `absent`, so it removes a mass rather
