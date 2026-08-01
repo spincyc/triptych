@@ -90,7 +90,7 @@ The Holy Name is the only rule in this file whose result is not always the same 
 
 ### The three postconciliar movables
 
-The Universal Norms fix no dates; these three are assigned in the Missal's own temporal cycle, and the repository's tracked postconciliar calendar reference carries all three at `src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/50-movable.tex` lines 56, 63 and 65, corroborated at that publication's `research/calendar-inventory.md` lines 66, 70 and 71.
+The Universal Norms fix no dates; these three are assigned in the Missal's own temporal cycle, and the repository's tracked postconciliar calendar reference carries all three at `src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/40-temporale.tex` lines 43, 44 and 39, corroborated at that publication's `research/calendar-inventory.md` lines 46, 47 and 42 (rows T34, T35 and T30). Line numbers follow the table below, not the files' own order.
 
 | Celebration | Rule | Latin | Window, 2020–2120 |
 | --- | --- | --- | --- |
