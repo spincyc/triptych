@@ -192,6 +192,36 @@
           : []
       });
     }
+    // RGMR 299 gives most ferias the preceding Sunday's Mass rather than one of
+    // their own, and the year file records which Mass that is under
+    // `ferial_formulary`. Nothing here read it, so on the 238 dates of 2026
+    // that carry one, the page had either a commemoration alone or nothing at
+    // all to show where the missal appoints a whole formulary. A commemoration
+    // is said within a Mass, never instead of one, so a date whose only entries
+    // are commemorations still needs the Mass it borrows.
+    const holdsAMass = collapsed.some(
+      (one) => !(one.basis && one.basis.nature === 'commemoration')
+    );
+    if (!holdsAMass) {
+      for (const row of ((year.ferial_formulary || {})[isoDate] || [])) {
+        const found = classify(rubrics, row.key);
+        collapsed.push({
+          id: row.key,
+          key: row.key,
+          name: found.name || row.key,
+          known: found.known,
+          basis: found.basis,
+          row: found.basis.row,
+          source: 'ferial',
+          borrowed: true,
+          rule: (year.rules || [])[row.rule] || null,
+          territorial: row.territorial || null,
+          certain: found.basis.certain !== false,
+          alsoInscribedAs: []
+        });
+      }
+    }
+
     return { candidates: collapsed, folded: folded };
   }
 
