@@ -533,39 +533,58 @@ Where a reception cannot be shown like that, this file draws no merge, and
 `act-history check` refuses any act with more than one parent that does not carry
 this field.
 """
-citation = "Sacred Congregation of Rites, Novo rubricarum corpore, 1962, promulgating the typical edition. THE INSTRUMENT'S TEXT WAS NOT READ HERE; the title is taken from the sibling research recorded in guidance/time-machine.md section 4, which also records that it is not in Acta Apostolicae Sedis 54."
-act_citation = "not-found"
+citation = "Sacred Congregation of Rites, Novo rubricarum corpore, 23 June 1962, printed in the front matter of the Vatican typical edition, at page 2 of the CMAA facsimile registered as artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf."
+act_citation = "cited-externally"
 act_citation_note = """
-This station fails the rule the rest of the file keeps, and it is kept anyway,
-flagged, for a reason that is itself a finding. The 1962 witness contains no
-decree of approbation of a 1962 typical edition, no Quo primum, and only three
-occurrences of the word DECRETUM in 136,068 lines, all belonging to the 1960
-documents. Its authority pages are the 1960 pair and a New York imprimatur.
+CORRECTED 2026-08-01. This station carried `act_citation = "not-found"` from the
+day it was drawn until the missal acquisition audit read the decree. The
+correction, and why the error was made, are both worth keeping.
 
-So: an edition certainly was promulgated -- both parent acts order their content
-into the typical editions of the Missal, and a book exists that carries both --
-but the instrument was not found here and is not asserted from memory. Dropping
-the station would leave the two reforms on branches that never join, which is
-false in the other direction and is the error `parallel stays parallel` exists to
-prevent in reverse. So the node stands and says plainly that its act is missing.
-A reader can see the gap; a reader cannot see a node that was never drawn.
+THE DECREE EXISTS AND HAS NOW BEEN READ, at page 2 of the Vatican typical
+edition, in the exact facsimile this repository already had registered. Opening,
+with the OCR damage of that text layer reproduced (`rubricanim`, `i960`):
 
-The instrument now has a name it did not have when this station was first drawn.
-guidance/time-machine.md section 4 records, from separate research, that the 1962
-decree is `Novo rubricarum corpore` and that it is not in Acta Apostolicae Sedis
-54 -- which explains why searching an AAS volume and a missal scan for it found
-nothing. Naming it does not promote the station: no text of it has been read
-here, so `act_citation` stays `not-found` and will stay there until someone reads
-the decree rather than a report of it.
+  DECRETUM
+  Novo rubricanim corpore, a Summo Pontifice Ioanne XXIII, Motu proprio
+  << Rubricarum instructum >> diei 23 iulii anno i960 approbato posteroque die
+  a Sacra Rituum Congregatione promulgato, vix fieri non potuit quin eadem
+  Sacra Rituum Congregatio novam Missalis romani editionem, ad dictum
+  rubricarum codicem plane accommodatam, pararet.
+
+Operative clause: `hinc est quod praesens Vaticana Missalis romani editio uti
+<< typica >> declaratur`. Dateline: `Romae, ex aedibus Sacrae Rituum
+Congregationis, die 23 iunii 1962`, subscribed `A. M. Card. LARRAONA, S. R. C.
+Praefectus` and `Henricus Dante, S. R. C. a secretis`.
+
+So the incipit `Novo rubricarum corpore`, which this file expressly declined to
+promote because it was known only from a report, is now read from the book.
+
+WHY THE ERROR WAS MADE, because it is instructive and not careless. This
+tracer's corpus is seven Internet Archive OCR text layers, and its 1962 witness
+is the BENZIGER printing, which carries a New York imprimatur and not the
+Vatican decree. The statement `only three occurrences of DECRETUM in 136,068
+lines` was true of that scan. What was false was recording the result in a field
+that reads as a claim about the repository -- because the repository held the
+decree, in a passage record dated 2026-07-25, six days before this file was
+written:
+`passage.catholic-church.missale-romanum.vatican-typica-1962.decretum-sacrae-rituum-congregationis-1962`,
+states `verified`, locus `front matter, artifact PDF p. 2`.
+
+Two records of one fact, in one tree, never compared. guidance/the-shape.md
+section 2. `act_citation` is `cited-externally` rather than `cited-in-corpus`
+because the decree stands in the Vatican typical edition, which is not a witness
+of this file's corpus; the corpus is unchanged and its own negative result
+stands as reported.
 """
 attested_in = ["benziger-iuxta-typicam-1962"]
 read_from = "ocr-only"
 locus = "benziger-iuxta-typicam-1962 OCR, Holy Week at lines 34462-43654"
 date_note = """
-The day is not established. The corpus that supplied the scan records only the
-year, and no decree of approbation was located in the scan's front matter, whose
-OCR is decorative noise for its first hundred lines. The date used for ordering
-is a conventional one and is marked here rather than passed off as read.
+CORRECTED 2026-08-01. The day IS established, and was already right: 23 June
+1962 is printed in the decree's own dateline, read at the facsimile. This note
+previously said the day was not established and that the date was a conventional
+one chosen for ordering -- which was true of what this file's corpus could show
+and false of the book. The value did not move; only the claim about it did.
 """
 effect = "Carries the 1955 reform into the typical edition."
 effect_established = true

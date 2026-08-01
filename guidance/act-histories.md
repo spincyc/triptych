@@ -588,8 +588,39 @@ here, `act_citation` stays `not-found`, and it stays there until someone reads
 the decree rather than a report of one. Naming a document and reading it are
 different acts, and the encoding keeps them apart.
 
-This remains the tracer's least comfortable result and the one most worth
-arguing with.
+> ### CORRECTION, 2026-08-01: the decree was in the repository the whole time
+>
+> The paragraph above is left standing because it records what the tracer knew.
+> It is now wrong, and the way it was wrong is worth more than the finding.
+>
+> The missal acquisition audit read the decree at page 2 of the Vatican typical
+> edition — in the CMAA facsimile **this repository already had registered**,
+> whose SHA-256 the audit recomputed and matched. It begins *Novo rubricarum
+> corpore, a Summo Pontifice Ioanne XXIII, Motu proprio « Rubricarum instructum »
+> diei 23 iulii anno 1960 approbato posteroque die a Sacra Rituum Congregatione
+> promulgato…*, declares the edition typical in terms — *hinc est quod praesens
+> Vaticana Missalis romani editio uti « typica » declaratur* — and is dated
+> *Romae, ex aedibus Sacrae Rituum Congregationis, die 23 iunii 1962*, subscribed
+> by Cardinal Larraona and Enrico Dante [verified].
+>
+> Worse: a passage record asserting exactly this, `states = [… "verified"]`,
+> `verified_on = "2026-07-25"`, existed **six days before this tracer ran**.
+>
+> The tracer was not careless. It searched its own corpus, and its 1962 witness
+> is the Benziger printing, which carries a New York imprimatur and no Vatican
+> decree. *Only three occurrences of `DECRETUM` in 136,068 lines* is a true
+> statement about that scan. The error was recording a corpus result in a field
+> that reads as a claim about the repository — and §1 of `the-shape.md` is
+> precisely about references that resolve successfully and wrongly.
+>
+> `act_citation` is now `cited-externally`; `date_note` no longer calls the day
+> conventional, because the day is printed in the dateline. The corpus and its
+> negative result are unchanged.
+>
+> **The lesson is not "search harder".** It is that a tracer bounded to a corpus
+> must say so in the field it writes, not only in the prose beside it. A reader
+> of `act_citation = "not-found"` cannot see that "not found" meant "not in
+> these seven text layers".
 
 ### 7.3 A famous change has no instrument, and therefore no station
 
@@ -707,8 +738,13 @@ So, in order:
    minimum. The tracer's `read_from` field is already there to be upgraded from
    `ocr-only` to `page-image`, and `check` already refuses a `page-image` claim
    without a collation date.
-2. **Find or refuse the 1962 promulgating decree.** One flagged station is
-   tolerable; a habit of them is not.
+2. ~~**Find or refuse the 1962 promulgating decree.**~~ **DONE, 2026-08-01, and
+   it was never missing.** It stands at page 2 of the Vatican typical edition,
+   in a facsimile this repository already held, and a passage record had already
+   asserted it six days before this tracer ran. See the correction box in §7.2.
+   The replacement task is narrower and harder: **make a corpus-bounded negative
+   look like one in the field that records it**, so that `not-found` cannot again
+   be read as a claim about the tree.
 3. **Settle the pre-1955 branch question.** Either an act permitting the older
    Holy Week's continued use is citable, in which case the branch is drawn, or
    it is not, in which case the current silence is correct and should be
