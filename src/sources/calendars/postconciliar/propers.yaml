@@ -12,10 +12,16 @@ psalm_numbering: hebrew
 citation_convention: Lectionary readings and antiphons preserve the numbering in the
   controlling missal
 orthography: 2002 missal Latin (j for i, ae/oe digraphs, no accent marks)
-verification: two tiers; the seasonal section carries unverified model-generated
-  leads whose every citation and text requires collation against the controlling
-  edition before any evidentiary reuse, and the marian, christological and sanctoral
-  sections remain a placeholder skeleton pending formula migration
+verification: 'three tiers now, and the third is the only one that has been read.
+  The seasonal section carries unverified model-generated leads - 533 propers
+  holding 1059 book-references - whose every citation and text requires collation
+  against the controlling edition before any evidentiary reuse. The marian, the
+  christological and most of the sanctoral remain a placeholder skeleton pending
+  formula migration. Six sanctoral masses are neither, and their Lectionary
+  citations were read at 200 dpi in the page images of the Ordo lectionum Missae
+  1981; each says on its own notes which artifact page it was read at. A citation
+  carrying such a note has been read; every other citation in this file has not,
+  and the difference is the whole of what verification means here'
 conventions:
 - cycle-varying elements carry a cycles mapping keyed A, B, C
 - celebrations with several Mass formularies use forms instead of propers
@@ -79,7 +85,29 @@ open_collation_items:
 - whether the three celebrations inscribed by rule belong under seasonal, as
   they are filed, or under christological and marian, is the same question the
   1962 index records for its own movable feasts of the Lord
-- all entries in this file are placeholders pending source-backed completion
+- 'the line that stood here read ''all entries in this file are placeholders
+  pending source-backed completion'', and it was not true when it was written and
+  is less true now. Measured on 2026-08-01, of 268 masses, 199 hold nothing but a
+  placeholder proper, 63 hold seasonal text that is a model-generated lead, and 6
+  hold sanctoral Lectionary citations read at page images. Three states, not one,
+  and a reader told they are all the same state cannot tell the read six from the
+  unread sixty-three. The counts are derived and move; what is fixed is that this
+  file holds three kinds of entry and each says which it is - a placeholder by its
+  proper''s name, a read citation by its mass''s notes, and a lead by carrying
+  neither'
+- the antiphons and orations of the sanctoral are absent, and the reason is
+  recorded once in src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml
+  rather than repeated on 199 masses. Fourteen witnesses were named and twelve
+  surveyed; the two that may lawfully be republished carry none of the three
+  things wanted. A Lectionary or antiphon CITATION may be published where the
+  words may not, which is the ruling that ought to be applied to the rest of this
+  file and has so far been applied to six masses
+- the Ordo lectionum Missae 1981 prints its responsorial psalms in Vulgate
+  numbering, read in its own page images on 2026-08-01. guidance/versification.md
+  states that the Ordo cites in Nova Vulgata numbering and that the Nova Vulgata
+  numbers psalms Hebrew-first. Both cannot be right about this book. The six
+  masses landed here convert by scripts/_psalms and say so; anyone collating the
+  seasonal section must settle the question before trusting either convention
 - the non-Psalm citations that resolved to the wrong verses are now settled under
   citation_divergences, which grew from four books to twelve. Two things fell out
   of settling them and are not defects of this file. Sirach 15:16-21, 24:1-4 and

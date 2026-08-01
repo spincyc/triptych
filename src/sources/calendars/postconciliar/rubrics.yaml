@@ -283,6 +283,17 @@ assignment:
 # solemnities and the days of the Triduum, so on most weekdays the day that a
 # memorial is measured against has no key at all. These rules constitute it from
 # the season the year file already computed.
+#
+# Constituting a day and appointing its Mass are two different acts, and the
+# distance between them was invisible until it was measured: over 2026 these
+# rules constitute 136 dates that reach no mass key at all. `appointed_mass` on
+# each rule now says what the books appoint on that day and whether this
+# repository can reach it, so a page can tell a reader why a day it has named
+# shows no formulary. The two answers are not the same answer, which is the
+# point of recording them per rule rather than once: on ten of the eleven the
+# Missal prints a proper Mass this index has not transcribed, and on the
+# eleventh it prints none at all and the day takes another day's.
+# `mass_category.constituted_days` holds the census.
 # ---------------------------------------------------------------------------
 implied:
 - id: ash-wednesday
@@ -291,18 +302,51 @@ implied:
   on_anchor: ash_wednesday
   basis: place-2-privileged-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 a presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 a; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: lent-weekday
   label: a weekday of Lent
   season: lent
   weekday_only: true
   basis: place-9-privileged-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 a presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 a; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: holy-week-weekday
   label: a weekday of Holy Week
   season: holy-week
   weekday_only: true
   basis: place-2-privileged-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 a presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 a; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: holy-thursday
   label: Thursday of Holy Week
   season: triduum
@@ -312,6 +356,17 @@ implied:
   note: The weekdays of Holy Week to Thursday inclusive are place 2; the Triduum at
     place 1 begins with the evening Mass of the Lord's Supper, which the index carries
     as its own key.
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 a presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 a; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: easter-octave-weekday
   label: a weekday within the Octave of Easter
   season: easter
@@ -320,12 +375,34 @@ implied:
   weekday_only: true
   basis: place-2-privileged-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 b presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 b; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: easter-weekday
   label: a weekday of Easter Time
   season: easter
   weekday_only: true
   basis: place-13-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 b presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 b; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: advent-weekday-late
   label: a weekday of Advent from 17 to 24 December
   season: advent
@@ -334,6 +411,17 @@ implied:
   weekday_only: true
   basis: place-9-privileged-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 a presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 a; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: advent-weekday-early
   label: a weekday of Advent before 17 December
   season: advent
@@ -341,6 +429,17 @@ implied:
   weekday_only: true
   basis: place-13-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 b presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 b; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: christmas-octave-weekday
   label: a day within the Octave of the Nativity
   season: christmas
@@ -349,18 +448,64 @@ implied:
   weekday_only: true
   basis: place-9-privileged-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 a presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 a; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: christmas-weekday
   label: a weekday of Christmas Time
   season: christmas
   weekday_only: true
   basis: place-13-weekday
   certain: true
+  appointed_mass:
+    what: 'The Missal prints a proper formulary for this day in the Proper of
+      Time, and IGMR 355 b presupposes it by directing that the Mass be of the
+      occurring liturgical day.'
+    locus: IGMR 355 b; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.355
+    carried: false
+    why_not: 'This index carries the Sundays, the solemnities and the days of the
+      Triduum, so the day is constituted here and its formulary is not transcribed.
+      The gap is the Missal''s Proper of Time, not a rubric this repository has not
+      read.'
 - id: ordinary-time-weekday
   label: a weekday in Ordinary Time
   season: ordinary-time
   weekday_only: true
   basis: place-13-weekday
   certain: true
+  appointed_mass:
+    what: 'The one kind of day the reformed Missal prints no formulary for.
+      IGMR 363 gives the orations of the preceding Sunday, and beside them the
+      orations of another Sunday in Ordinary Time or one of the prayers for various
+      needs; from those Masses the collect alone may always be taken. IGMR 355 c
+      widens the choice further to an occurring optional memorial, a saint in the
+      Martyrology, a Mass for various needs or a votive Mass. The readings are the
+      ferial Lectionary''s own, IGMR 358, and are not the preceding Sunday''s.'
+    locus: IGMR 363; IGMR 355 c; IGMR 358
+    evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.363
+    carried: false
+    why_not: 'This index carries every Sunday in Ordinary Time, so the formulary
+      IGMR 363 names as the base IS held - but it is held under a key that varies
+      with the date, and nothing emits which Sunday governs which weekday for this
+      calendar. tools/calendar-days has the machinery and refuses to run it here,
+      on a comment reading "nothing there points a weekday at the preceding Sunday".
+      IGMR 363, registered and read at the bytes, says praeter orationes dominicae
+      praecedentis - besides the orations of the preceding Sunday - so something
+      does. Emitting a ferial_formulary block for this calendar would close 72 of
+      the 136 keyless dates of 2026 at one stroke; it is a change to a tool shared
+      with the 1962 calendar and is not made from this source alone.'
+    would_be_a_mass_choice: 'Once a base is emitted, the two alternatives IGMR 363
+      states are a mass_choices entry and not a collision: the rubric orders them,
+      the preceding Sunday first.'
 saturday_office:
   locus: NUALC 15
   latin: In sabbatis "per annum", in quibus non occurrat memoria obligatoria, fieri
@@ -495,6 +640,46 @@ mass_category:
     cause, and where the choice lies between a memorial of the general calendar
     and one of a diocesan or religious calendar, other things being equal the
     particular memorial is to be preferred.
+  constituted_days:
+    what: >-
+      A day this file constitutes and no formulary reaches. It is a different
+      thing from a placeholder Mass and must not be counted with one: a
+      placeholder has a formulary appointed and its text untranscribed, while
+      these have no formulary appointed at all. Each implied rule above now
+      carries `appointed_mass` saying which of the two it is.
+    measured_over: '2026, through the browser''s own model at
+      src/web/browser/liturgy/assembly-model.js, one derivation per civil date'
+    measured_on: '2026-08-01'
+    dates_in_the_year: 365
+    dates_reaching_a_mass_key: 229
+    dates_constituted_with_no_mass_key: 136
+    dates_reaching_no_liturgical_day_at_all: 0
+    by_rule:
+    - {rule: ordinary-time-weekday, dates: 72}
+    - {rule: lent-weekday, dates: 22}
+    - {rule: easter-weekday, dates: 19}
+    - {rule: advent-weekday-early, dates: 5}
+    - {rule: advent-weekday-late, dates: 5}
+    - {rule: christmas-weekday, dates: 4}
+    - {rule: easter-octave-weekday, dates: 4}
+    - {rule: holy-week-weekday, dates: 3}
+    - {rule: ash-wednesday, dates: 1}
+    - {rule: christmas-octave-weekday, dates: 1}
+    - {rule: holy-thursday, dates: 0}
+    splits_two_ways: >-
+      Sixty-four of the 136 fall under a rule whose day the Missal prints a
+      proper Mass for, and closing them means transcribing the Proper of Time's
+      weekdays into the index - a transcription, not a rule. Seventy-two fall
+      under ordinary-time-weekday, where the Missal prints nothing and IGMR 363
+      points the day at the preceding Sunday, whose formulary this index already
+      holds; closing those means emitting which Sunday governs which weekday,
+      which is one rule and no new text. The larger half of the gap is the
+      cheaper half, and it was not visible until the census was taken.
+    not_a_precedence_question: >-
+      None of this changes which celebration wins on a date. A day with no
+      formulary still competes, still ranks and still displaces or is displaced;
+      what it cannot do is show a reader any words. Nothing above is emitted into
+      the ranking.
 
 not_decided_here:
 - The national, diocesan, religious and church calendars laid over the General Roman
