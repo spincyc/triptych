@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Code, Canon by Canon</title>
+<meta name="description" content="Look up a canon of the Code of Canon Law by its citation, read what it says, what it said before, and which act changed it.">
+<!-- The shared machinery first, then this section's colour. Both are local;
+     the page makes no external request of any kind. -->
+<link rel="stylesheet" href="../shared/browser-core.css">
+<link rel="stylesheet" href="law.css">
+</head>
+<body class="law-page">
+<a class="skip-link" href="#canon">Skip to the canon</a>
+
+<header class="page-header">
+  <h1><span class="page-mark" aria-hidden="true">§</span>The Code, Canon by Canon</h1>
+  <p class="lede">
+    A canon lawyer arrives with a citation, not with a date. So the canon is the
+    entrance here: type <em>c. 1095</em> and this page shows that canon, where it
+    sits in the Code, every act that touched it, and the text on both sides of
+    each change. The acts are the second axis — open one and see everything it
+    reached, from a single canon to the whole of a Book.
+  </p>
+  <p class="tally" id="tally"></p>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="lookup" class="controls" aria-labelledby="lookup-heading">
+  <h2 id="lookup-heading" class="visually-hidden">Look up a canon</h2>
+
+  <div class="field field-wide">
+    <label for="citation-input">Canon</label>
+    <input id="citation-input" name="canon" type="search" autocomplete="off"
+           placeholder="c. 1095, can. 1095 §2, or 1095" disabled>
+  </div>
+
+  <div class="field">
+    <label for="line-select">Body of law</label>
+    <select id="line-select" name="line" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-action">
+    <button type="submit" class="submit">Look it up</button>
+  </div>
+</form>
+
+<!-- Not a live region. Replacing it would read a canon's whole history aloud on
+     every lookup; the one-line spoken summary says what arrived instead. -->
+<main id="canon" class="canon" tabindex="-1" aria-busy="true">
+  <p class="placeholder">Loading the record…</p>
+</main>
+
+<section id="structure" class="panel" hidden>
+  <h2 class="panel-title">The structure of the Code</h2>
+  <p class="panel-note">
+    Books, Parts, Titles and Chapters, as the record places each canon — which is
+    how the Code is used and how it is cited. Nothing here is worked out from the
+    shape of an identifier; where the record places a canon nowhere, it stands
+    apart and says so.
+  </p>
+  <p class="panel-controls">
+    <button type="button" id="structure-button" class="link-button">
+      Load the structure of the Code
+    </button>
+  </p>
+  <div id="structure-view"></div>
+</section>
+
+<section id="acts" class="panel" hidden>
+  <h2 class="panel-title">The acts, and what each one reached</h2>
+  <p class="panel-note">
+    Every act this record carries, oldest first, with its extent beside it.
+    <em>Pascite gregem Dei</em> rewrote the whole of a Book and a later
+    rescript may touch a single paragraph; the counts say which is which before
+    you open anything.
+  </p>
+  <div id="acts-view"></div>
+  <aside id="station" class="detail" hidden></aside>
+</section>
+
+<section id="bodies" class="panel" hidden>
+  <h2 class="panel-title">The bodies of law, and no map between them</h2>
+  <p class="panel-note">
+    Where this record carries more than one Code, they are separate lines and
+    they number independently. This page joins no canon of one to a canon of
+    another: any such correspondence is a scholarly claim, and it is shown with
+    its source or it is not shown.
+  </p>
+  <div id="bodies-view"></div>
+</section>
+
+<section id="extent" class="panel" hidden>
+  <h2 class="panel-title">What this record claims</h2>
+  <p class="panel-note">
+    Written by the record itself, not by this page. Silence in it is silence
+    because nothing was established, never because a canon was checked and found
+    unchanged.
+  </p>
+  <pre class="extent" id="extent-view"></pre>
+</section>
+
+<footer class="page-footer">
+  <p>
+    <strong>The words are often not here, and that is a stated position.</strong>
+    The 1917 Code is in the public domain and its text may be shown. The Latin of
+    the 1983 Code is a work of the Holy See later than 1929 and is protected, as
+    are the standard English translations, and this project holds no licence for
+    either. So for many canons this page carries the citation, the place in the
+    structure, the acts that touched it and the dates — and, in place of the
+    words, the reason they are withheld. A canon whose words nobody here has read
+    is a different thing again and is said differently: an unread canon is not a
+    withheld one, and neither is a canon that did not change.
+  </p>
+  <p>
+    A station is normally the act — a constitution, a motu proprio, a decree, a
+    rescript — and never a printing, because two printings of one canon differ
+    constantly and no act stands behind those differences. Where a witness
+    survives and no act has been located, the station is <em>printed</em> rather
+    than <em>promulgated</em>, and that is a weaker claim about evidence, not a
+    smaller change. What an act changed is computed once, by the generator that
+    writes this record, and read here; this page diffs nothing itself.
+  </p>
+  <p>
+    <strong>A citation is a link.</strong> Opening a canon writes it into the
+    address bar — <code>#canon=1095</code>, with <code>#unit=</code> beside it
+    for the exact row — so the URL you copy is the citation you would have
+    written anyway.
+  </p>
+  <p>
+    Everything here is closed until you open it, and that is what it costs to
+    read. The page arrives with the acts and their counts and no canon at all;
+    the index of every canon arrives the first time you look one up; a canon's
+    history arrives when you open it, and the law as it stood arrives only if you
+    ask. The consequence is worth knowing: your browser's own find-in-page
+    reaches only what you have opened.
+  </p>
+  <p>
+    <a href="../history/">How the Missal Changed</a> ·
+    <a href="../sources/">The Source Library</a> ·
+    <a href="../liturgy/">The propers of the Mass</a> ·
+    <a href="../catena/">Catena Omnia</a> ·
+    <a href="../texts/">Every Document</a>
+  </p>
+</footer>
+
+<script src="../shared/browser-core.js"></script>
+<script src="code-model.js"></script>
+<script src="law.js"></script>
+</body>
+</html>
