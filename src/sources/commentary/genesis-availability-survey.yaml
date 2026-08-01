@@ -1,7 +1,7 @@
 schema: triptych-genesis-availability-survey/v1
 updated: '2026-08-01'
-question: for each work the promoted index names on Genesis 1-50, is there a reachable text, and may
-  it be redistributed
+question: for each work the promoted index names on Genesis 1-50, is there a reachable text, and may it
+  be redistributed
 driven_by: src/sources/commentary/genesis-work-aliases.yaml
 probe: scripts/_availability.py then scripts/_reachability.py; neither consults a model
 method_note: 'Every query was issued from the recorded aliases and from nothing else, so a name absent
@@ -11,8 +11,8 @@ method_note: 'Every query was issued from the recorded aliases and from nothing 
 bound_note: '`reachable: text` means at least one Internet Archive item whose title overlaps the work''s
   aliases carries a machine-readable text layer. It is an UPPER BOUND on reachability and not a confirmed
   holding: it does not establish that the item is this work, nor that it is the volume containing Genesis.
-  Three of the highest-ranked were checked by fetching the bytes and two of those three fall inside
-  this gap - see `verified_by_fetching_bytes`. Every other row is a lead until its bytes are pulled.'
+  Three of the highest-ranked were checked by fetching the bytes and two of those three fall inside this
+  gap - see `verified_by_fetching_bytes`. Every other row is a lead until its bytes are pulled.'
 totals:
   index_names_on_genesis: 84
   distinct_works: 66
@@ -25,52 +25,80 @@ totals:
   works_with_an_affirmative_public_rights_basis: 34
   works_with_candidates_but_no_text_layer: 4
   works_with_no_candidate_at_all: 5
-  works_landed_as_holdings: 3
-  fragments_landed: 10
+  works_landed_as_holdings: 5
+  fragments_landed: 44
+  fragments_landed_english: 23
+  fragments_landed_latin: 21
+  fragments_landed_greek: 0
 landed:
 - work: Basil of Caesarea, Homiliae in Hexaemeron
   fragments: 9
   extent: Genesis 1:1 to 1:26
   language: en
+  edition: NPNF second series volume 8, New York 1895, tr. Blomfield Jackson
   note: Landed by the pilot lane from Wikisource NPNF 2-8; not re-acquired here.
+- work: Basil of Caesarea, Homiliae in Hexaemeron
+  fragments: 9
+  extent: Genesis 1:1 to 1:26
+  language: la
+  edition: Metaphrasis Latina Hexaemeri, Eustathius, Migne PL 53, Paris 1847
+  note: 'Landed by THIS lane. The ancient Latin version of Basil, made for the deaconess Syncletica about
+    440, and the form in which the Hexaemeron reached the West — Bede''s own preface names it. Registered
+    as a SECOND EDITION of the same work, never as a second text on one edition, so the page can offer
+    a reader Basil in either language. Its nine books answer the nine homilies, and the correspondence
+    was checked from the Latin''s own lemmata rather than assumed from the numbering: LIBER IV is titled
+    De congregatione aquarum, VII quotes Ejiciant aquae reptilia, IX closes on Faciamus hominem.'
+- work: Augustine of Hippo, De Genesi ad litteram
+  fragments: 12
+  extent: Genesis 1:1 to 3:24
+  language: la
+  edition: Patrologia Latina 34, Paris 1841
+  note: 'Landed by THIS lane, all twelve books. Each book''s extent is the Maurist argument Migne prints
+    at its head, quoted in the fragment''s basis, EXCEPT books X and XI-XII: book X''s argument names
+    no verse of Genesis and book XII''s names none either, and both are anchored by this project''s stated
+    inference rather than by the printing. Held in Latin ONLY: the first complete English is J. H. Taylor''s
+    of 1982 and is in copyright.'
 - work: Gregory of Nyssa, De hominis opificio
   fragments: 1
   extent: Genesis 1:26 to 1:27
   language: en
+  edition: NPNF second series volume 5, New York 1893
   note: Landed by the pilot lane; one passage holding the whole thirty-chapter treatise.
-- work: Martin Luther, Enarrationes in Genesin
-  fragments: 0
-  extent: Genesis 1 to 9
-  language: en
-  note: 'Landed by THIS lane as a holding (work, edition, four artifacts) and deliberately not yet as
-    fragments. Lenker''s 1904 translation, both volumes whole, 1.68 MB of tracked keyed English. No
-    fragment is written until the catena structure is split: src/web/data/structure/catena/Gen.json
-    is already 606 KB for one chapter''s worth of fragments and the browser fetches it per book. See
-    size_finding.'
 - work: Augustine of Hippo, De civitate Dei
   fragments: 3
   extent: Genesis 1
   language: en
+  edition: Dods, Edinburgh 1871
   note: Landed by another lane before this one; counted here because it renders in the Genesis catena.
+- work: Martin Luther, Enarrationes in Genesin
+  fragments: 10
+  extent: Genesis 1:2 to 9:29
+  language: en
+  edition: Lenker, Minneapolis 1904 and 1910, two volumes
+  note: 'Registered as a holding by the previous lane with ZERO fragments because the catena file could
+    not carry them; the fragments land here now that it is split. Each is bounded by the lemmata Lenker''s
+    printing actually prints, so Genesis 1 stops at verse 30 and Genesis 3 at verse 23. Genesis 4 stands
+    as two fragments because the two volumes divide the chapter inside it and the printed parts overlap
+    at verses 8 to 14; the overlap is left standing rather than trimmed. Held in English only, and only
+    to Genesis 9: the rest of Luther''s course reaches English solely in the copyrighted American Edition.'
 verified_by_fetching_bytes:
 - work: Nicholas of Lyra, Postilla litteralis super totam Bibliam
   index_rank: 1st, 50/50 chapters, confidence 1.00
   prior_claim: no machine-readable text in any language
   finding: CONFIRMED for Genesis.
-  evidence: Two Internet Archive items carry a text layer. postillasupertot00nich is 7,781 bytes of
-    blackletter incunabulum OCR scoring 0.06 on the Latin function-word measure against 0.24 for a Migne
-    scan, and it covers Proverbs, Ecclesiastes and Canticles, not Genesis. Item5.5_25 is 3,322 bytes
-    of a Digital Scriptorium catalogue card for a single cropped leaf with zero images available. Neither
-    is a text and neither is Genesis.
+  evidence: Two Internet Archive items carry a text layer. postillasupertot00nich is 7,781 bytes of blackletter
+    incunabulum OCR scoring 0.06 on the Latin function-word measure against 0.24 for a Migne scan, and
+    it covers Proverbs, Ecclesiastes and Canticles, not Genesis. Item5.5_25 is 3,322 bytes of a Digital
+    Scriptorium catalogue card for a single cropped leaf with zero images available. Neither is a text
+    and neither is Genesis.
 - work: Hugh of Saint-Cher, Postillae in universa Biblia
   index_rank: joint 1st by confidence, 44/50 chapters
   prior_claim: no machine-readable text in any language
   finding: OVERTURNED as to the work, CONFIRMED as to Genesis.
-  evidence: 'The Lyons Opera omnia IS digitised with a usable Latin text layer: bub_gb_xXJxILOIgIIC
-    (1669) is 8.17 MB scoring 0.138 Latin, Public Domain Mark 1.0. But the four items held are tomus
-    secundus (the Psalter), tomus quartus (Isaiah and Jeremiah) and tomus sextus twice (the Gospels).
-    Tomus primus, which holds Genesis, is not among them. The work is reachable; its Genesis volume
-    is not.'
+  evidence: 'The Lyons Opera omnia IS digitised with a usable Latin text layer: bub_gb_xXJxILOIgIIC (1669)
+    is 8.17 MB scoring 0.138 Latin, Public Domain Mark 1.0. But the four items held are tomus secundus
+    (the Psalter), tomus quartus (Isaiah and Jeremiah) and tomus sextus twice (the Gospels). Tomus primus,
+    which holds Genesis, is not among them. The work is reachable; its Genesis volume is not.'
 - work: Denis the Carthusian, Enarrationes in Genesim
   index_rank: 3rd, 50/50 chapters
   prior_claim: no machine-readable text in any language
@@ -83,10 +111,10 @@ verified_by_fetching_bytes:
   prior_claim: the hashed Migne PL 34 OCR is unreachable by the retrieval route
   finding: OVERTURNED.
   evidence: patrologiae_cursus_completus_lat_vol_034_djvu.txt is 4.6 MB and downloads whole with curl
-    in under a minute, scoring 0.245 on the Latin measure. The pilot's finding that it 'truncates to
-    its front matter' was a property of the model-mediated route, not of the file. Its OCR is still
-    roughly one corrupted word in eight, so it remains a finding aid and not publishable text - but
-    it is reachable, and the two statements are different.
+    in under a minute, scoring 0.245 on the Latin measure. The pilot's finding that it 'truncates to its
+    front matter' was a property of the model-mediated route, not of the file. Its OCR is still roughly
+    one corrupted word in eight, so it remains a finding aid and not publishable text - but it is reachable,
+    and the two statements are different.
 size_finding:
   measured_on: '2026-08-01'
   file: src/web/data/structure/catena/Gen.json
@@ -99,23 +127,41 @@ size_finding:
   chapters_those_fragments_touch: 1
   problem: All thirteen fragments sit on Genesis 1, and the browser fetches the whole book file to render
     any of the fifty chapters. A reader on Genesis 40 downloads 606 KB to be shown nothing. Luther alone,
-    now held, is 1.68 MB of text; wiring it in unsplit would make Gen.json 2.3 MB, and the 84 works
-    of the index would make it tens of megabytes.
+    now held, is 1.68 MB of text; wiring it in unsplit would make Gen.json 2.3 MB, and the 84 works of
+    the index would make it tens of megabytes.
   proposed_split: 'Keep <Token>.json as a spine holding token, name, chapters, numbering, leads, refusals,
-    blocked, and each fragment''s METADATA only - id, work, author, date, extent, edition, language,
-    rights, locator. Move each fragment''s `text` to its own file, catena/text/<passage_id>.json, fetched
-    only when a chapter the fragment touches is displayed. Measured effect on Genesis today: the spine
-    is about 135 KB against 606 KB now, so chapters 2 to 50 fetch 22 per cent of what they fetch today,
-    and chapter 1 fetches the spine plus only the texts it actually renders. This keeps both constraints
-    browser-core.js sets: counts stay ADDITIVE, because one fragment is one file and a translation of
-    a fragment is another fragment and so another file, and the join stays at READ TIME in the browser.
-    Per-chapter text files were rejected: a fragment spanning chapters would be written into each, which
-    is the multiplication that header forbids and which Rule 6 forbids for a second reason - it would
-    split words written about one chapter into another.'
-  status: PROPOSED, not implemented. No fragment was landed that would make Gen.json larger.
+    blocked, and each fragment''s METADATA only - id, work, author, date, extent, edition, language, rights,
+    locator. Move each fragment''s `text` to its own file, catena/text/<passage_id>.json, fetched only
+    when a chapter the fragment touches is displayed. Measured effect on Genesis today: the spine is about
+    135 KB against 606 KB now, so chapters 2 to 50 fetch 22 per cent of what they fetch today, and chapter
+    1 fetches the spine plus only the texts it actually renders. This keeps both constraints browser-core.js
+    sets: counts stay ADDITIVE, because one fragment is one file and a translation of a fragment is another
+    fragment and so another file, and the join stays at READ TIME in the browser. Per-chapter text files
+    were rejected: a fragment spanning chapters would be written into each, which is the multiplication
+    that header forbids and which Rule 6 forbids for a second reason - it would split words written about
+    one chapter into another.'
+  status: IMPLEMENTED 2026-08-01, and in a stronger form than proposed. See guidance/web-data.md.
+  implemented:
+    layout: structure/catena/<NN-book>/<chapter>.json is the chapter spine and carries no prose; structure/catena/text/<passage_id>.json
+      is one fragment, stored once and fetched when the reader opens it. Paths are lowercase, numbered
+      by the canon so a listing reads as the Bible, and zero-padded so they sort.
+    why_two_addressings: Addressed BY chapter a spanning fragment is NAMED under both chapters, which
+      is what the page promises; storing its TEXT by chapter would WRITE it into both, which is the multiplication
+      browser-core.js forbids and which Rule 6 forbids a second time. So the spine is chapter-addressed
+      and the payload is content-addressed.
+    before_bytes_any_chapter: 605923
+    after_bytes_genesis_40: 2745
+    after_median_chapter_spine: 2965
+    after_worst_chapter_spine: 26148
+    after_bytes_to_open_one_fragment_median: 43835
+    after_bytes_to_open_one_fragment_worst: 286251
+    note: Measured after 31 further fragments landed, so the after-figures are against a corpus more than
+      three times the size of the one that produced the 606 KB. A chapter with nothing at all now has
+      a file only because every Genesis chapter carries leads; a chapter with neither would have none,
+      and index.json says which chapters have one.
 rights_note: 'Of 327 catalogue candidates examined, the ones carrying a text layer split into an affirmative
-  public-domain or Creative Commons statement and a majority carrying NO rights field at all. 34 of
-  66 works have at least one text-bearing item with an affirmative basis. The rest are not ''in copyright''
+  public-domain or Creative Commons statement and a majority carrying NO rights field at all. 34 of 66
+  works have at least one text-bearing item with an affirmative basis. The rest are not ''in copyright''
   and are not ''free'': they are unresolved, and guidance/sources.md forbids tracking on an unresolved
   basis however old the author.'
 works:
@@ -202,8 +248,8 @@ works:
     rights: public-domain
     text_bytes: 253663
   - identifier: bub_gb_pOk_H0LuEqEC
-    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
-      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum, Georgii
+      Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
     year: '1596'
     rights: public-domain
     text_bytes: 298098
@@ -333,8 +379,8 @@ works:
   wikisource_hits: 36
   best_candidates:
   - identifier: bub_gb__GaHCFPFt_UC
-    title: 'De benedictionibus patriarcharum electa sacra commentario litterali & morali illustrata
-      auctore Didaco de Celada Monteladensi è Societate Iesu, .. '
+    title: 'De benedictionibus patriarcharum electa sacra commentario litterali & morali illustrata auctore
+      Didaco de Celada Monteladensi è Societate Iesu, .. '
     year: '1657'
     rights: public-domain
     text_bytes: 4216028
@@ -344,8 +390,8 @@ works:
     rights: unresolved
     text_bytes: 145866
   - identifier: sanctiambrosiio02petsgoog
-    title: De Iacob ; De Ioseph ; De patriarchis ; De fuga saeculi ; De interpellatione Iob et David
-      ; De apologia David ; Apologia David altera ; De Helia et ieiunio ; De
+    title: De Iacob ; De Ioseph ; De patriarchis ; De fuga saeculi ; De interpellatione Iob et David ;
+      De apologia David ; Apologia David altera ; De Helia et ieiunio ; De
     year: '1896'
     rights: unresolved
     text_bytes: 1275938
@@ -360,8 +406,8 @@ works:
   wikisource_hits: 25
   best_candidates:
   - identifier: bub_gb_pOk_H0LuEqEC
-    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
-      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum, Georgii
+      Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
     year: '1596'
     rights: public-domain
     text_bytes: 298098
@@ -401,8 +447,8 @@ works:
     rights: public-domain
     text_bytes: 1518685
   - identifier: bub_gb_4PB6AYgdZe4C
-    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
-      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67. vna
+      cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
     year: '1614'
     rights: public-domain
     text_bytes: 1621779
@@ -528,8 +574,8 @@ works:
     rights: public-domain
     text_bytes: 1936
   - identifier: bub_gb_pOk_H0LuEqEC
-    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
-      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum, Georgii
+      Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
     year: '1596'
     rights: public-domain
     text_bytes: 298098
@@ -549,14 +595,14 @@ works:
   wikisource_hits: 49
   best_candidates:
   - identifier: bub_gb_pOk_H0LuEqEC
-    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
-      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum, Georgii
+      Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
     year: '1596'
     rights: public-domain
     text_bytes: 298098
   - identifier: bub_gb_4PB6AYgdZe4C
-    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
-      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67. vna
+      cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
     year: '1614'
     rights: public-domain
     text_bytes: 1621779
@@ -625,8 +671,8 @@ works:
     rights: public-domain
     text_bytes: 7195178
   - identifier: ARes04111
-    title: 'Commentaria in Pentateuchum Mosi : hoc est, in quinque primos bibliorum libros : Quibus
-      iuxta M. Sanctis Pagnini ... interpretationem, Hebraica veritas ...'
+    title: 'Commentaria in Pentateuchum Mosi : hoc est, in quinque primos bibliorum libros : Quibus iuxta
+      M. Sanctis Pagnini ... interpretationem, Hebraica veritas ...'
     year: '1588'
     rights: public-domain
     text_bytes: 4530936
@@ -651,8 +697,8 @@ works:
     rights: unresolved
     text_bytes: 776410
   - identifier: bim_eighteenth-century_two-sermons-on-genesis-x_eyre-john_1758
-    title: Two sermons on Genesis XIX 27 and 28 preached at Bedington Sunday 12th and Friday 17th of
-      February 1758. By John Eyre ...  1758
+    title: Two sermons on Genesis XIX 27 and 28 preached at Bedington Sunday 12th and Friday 17th of February
+      1758. By John Eyre ...  1758
     year: '1758'
     rights: unresolved
     text_bytes: 69052
@@ -750,8 +796,8 @@ works:
     rights: public-domain
     text_bytes: 547432
   - identifier: bub_gb_4PB6AYgdZe4C
-    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
-      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67. vna
+      cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
     year: '1614'
     rights: public-domain
     text_bytes: 1621779
@@ -771,8 +817,8 @@ works:
   wikisource_hits: 30
   best_candidates:
   - identifier: holybiblecontai02clargoog
-    title: 'The holy Bible : containing the Old and New Testaments, the text carefully printed from
-      the most correct copies of the present authorized translation, including'
+    title: 'The holy Bible : containing the Old and New Testaments, the text carefully printed from the
+      most correct copies of the present authorized translation, including'
     year: '1837'
     rights: unresolved
     text_bytes: 5852506
@@ -955,8 +1001,8 @@ works:
   wikisource_hits: 38
   best_candidates:
   - identifier: bub_gb_pOk_H0LuEqEC
-    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
-      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum, Georgii
+      Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
     year: '1596'
     rights: public-domain
     text_bytes: 298098
@@ -1052,8 +1098,8 @@ works:
   wikisource_hits: 35
   best_candidates:
   - identifier: bub_gb_4PB6AYgdZe4C
-    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
-      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67. vna
+      cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
     year: '1614'
     rights: public-domain
     text_bytes: 1621779
@@ -1130,14 +1176,14 @@ works:
     rights: unresolved
     text_bytes: 3783186
   - identifier: cu31924092342777
-    title: 'A commentary on the Holy Scriptures: critical, doctrinal, and homiletical, with special
-      reference to ministers and students'
+    title: 'A commentary on the Holy Scriptures: critical, doctrinal, and homiletical, with special reference
+      to ministers and students'
     year: '1866'
     rights: unresolved
     text_bytes: 4825864
   - identifier: cu31924092344302
-    title: 'A commentary on the Holy Scriptures: critical, doctrinal, and homiletical, with special
-      reference to ministers and students'
+    title: 'A commentary on the Holy Scriptures: critical, doctrinal, and homiletical, with special reference
+      to ministers and students'
     year: '1866'
     rights: unresolved
     text_bytes: 4223733
@@ -1252,8 +1298,8 @@ works:
   wikisource_hits: 32
   best_candidates:
   - identifier: bub_gb_4PB6AYgdZe4C
-    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
-      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67. vna
+      cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
     year: '1614'
     rights: public-domain
     text_bytes: 1621779
@@ -1367,8 +1413,8 @@ works:
     rights: public-domain
     text_bytes: 6522982
   - identifier: bub_gb_4PB6AYgdZe4C
-    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
-      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67. vna
+      cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
     year: '1614'
     rights: public-domain
     text_bytes: 1621779
@@ -1388,8 +1434,8 @@ works:
     rights: public-domain
     text_bytes: 1753755
   - identifier: bub_gb_4PB6AYgdZe4C
-    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
-      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67. vna
+      cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
     year: '1614'
     rights: public-domain
     text_bytes: 1621779
@@ -1415,8 +1461,8 @@ works:
     rights: public-domain
     text_bytes: 5614414
   - identifier: bub_gb__GaHCFPFt_UC
-    title: 'De benedictionibus patriarcharum electa sacra commentario litterali & morali illustrata
-      auctore Didaco de Celada Monteladensi è Societate Iesu, .. '
+    title: 'De benedictionibus patriarcharum electa sacra commentario litterali & morali illustrata auctore
+      Didaco de Celada Monteladensi è Societate Iesu, .. '
     year: '1657'
     rights: public-domain
     text_bytes: 4216028
@@ -1442,14 +1488,14 @@ works:
     rights: public-domain
     text_bytes: 5000806
   - identifier: ARes044062
-    title: Ruperti Abbatis Tuitiensis, uiri undecunque doctissimi, summique inter ueteres theologi,
-      Libri XLII. de operibus Sanctae Trinitatis
+    title: Ruperti Abbatis Tuitiensis, uiri undecunque doctissimi, summique inter ueteres theologi, Libri
+      XLII. de operibus Sanctae Trinitatis
     year: '1578'
     rights: public-domain
     text_bytes: 1500344
   - identifier: ARes16113
-    title: 'Ruperti abbatis Tuitiensis ... Libri XLII de operibus Sanctae Trinitatis... : tres primi
-      commentariorum libri, Patri in diuinis attribuuntur triginta sub inde, '
+    title: 'Ruperti abbatis Tuitiensis ... Libri XLII de operibus Sanctae Trinitatis... : tres primi commentariorum
+      libri, Patri in diuinis attribuuntur triginta sub inde, '
     year: '1565'
     rights: public-domain
     text_bytes: 3867978
@@ -1547,8 +1593,8 @@ works:
   wikisource_hits: 27
   best_candidates:
   - identifier: jbc.bj.uj.edu.pl.NDIGORP020203
-    title: 'Biblia Latina (Novum Testamentum: Matth.-Io.) cum prologis et Pseudo-Walafridi Strabonis
-      aliorumque glossa ordinaria et interlineari'
+    title: 'Biblia Latina (Novum Testamentum: Matth.-Io.) cum prologis et Pseudo-Walafridi Strabonis aliorumque
+      glossa ordinaria et interlineari'
     year: '1401-05-20'
     rights: stated
     text_bytes: 549717
@@ -1587,3 +1633,138 @@ works:
     year: '1765'
     rights: unresolved
     text_bytes: 2771750
+languages_held:
+  question: in which languages is each landed work held, and in which is it not
+  rule: A translation is a separate EDITION of the same work with its own artifact and its own rights,
+    never a second text on one edition. That is what lets a father's Greek be publishable while a modern
+    English of him is not, and it is what the commentary-language selector on the page reads.
+  basil-hexaemeron:
+    held:
+    - en
+    - la
+    not_held:
+    - grc
+    greek_note: The Greek original is NOT held. Latin Wikisource and English Wikisource both carry the
+      work; Greek Wikisource does not — searched under Ἑξαήμερον, Εἰς τὴν Ἑξαήμερον, Βασίλειος and Γένεσιν,
+      4 queries, no patristic Hexaemeron among the results. The Open Greek and Latin First1KGreek corpus,
+      which is CC BY-SA 4.0 and would be a usable basis, carries no tlg2040 directory at all. Migne PG
+      29 is on the Internet Archive but its polytonic OCR is not usable text. So the Greek is reachable
+      in facsimile and not in transcription, which is a different statement from unavailable.
+  augustine-de-genesi-ad-litteram:
+    held:
+    - la
+    not_held:
+    - en
+    english_note: No public-domain English exists. The first complete translation is J. H. Taylor's, Ancient
+      Christian Writers 41 to 42, 1982, in copyright until 2078 in a life-plus-seventy jurisdiction. This
+      is the finding the pilot's licence survey made across the board and it is not a gap more effort
+      closes.
+  augustine-de-civitate-dei:
+    held:
+    - en
+    not_held:
+    - la
+    latin_note: The Latin of PL 41 was not pursued in this lane. It is on Latin Wikisource under Patrologia
+      Latina/41 and is the same Corpus Corporum keyed corpus as the two Latin works landed here, so it
+      is a short step and is recorded as one.
+  gregory-de-hominis-opificio:
+    held:
+    - en
+    not_held:
+    - grc
+    - la
+    note: Neither the Greek nor the Latin was pursued. The same Greek difficulty as Basil applies.
+  luther-lectures-on-genesis:
+    held:
+    - en
+    not_held:
+    - la
+    - de
+    note: The lectures were delivered and printed in Latin, and the Weimar edition's Latin is the scholarly
+      text; no public-domain digital Latin of it was located in this lane and none was searched for beyond
+      the alias table.
+latin_corpus_finding:
+  measured_on: '2026-08-01'
+  overturns: guidance/catena.md's finding that 'the unencumbered Latin is OCR wreckage and the clean Latin
+    is encumbered', which measured Migne PL 34's Internet Archive text layer at roughly one corrupted
+    word in eight and concluded that for the Latin-only works 'the cost is transcription, not download'.
+  finding: 'TRUE OF THE SCAN, FALSE OF THE VOLUME. Latin Wikisource carries the University of Zurich''s
+    Corpus Corporum TEI encodings of Migne, keyed rather than scanned, republished under a CC BY-SA 4.0
+    markup licence over a public-domain 1841-1849 printing. The text is therefore both clean AND unencumbered,
+    and no transcription project is needed for these works: they download whole through Special:Export
+    in one request.'
+  licence_route: Latin Wikisource states its contributor licence through its own API (action=query&meta=siteinfo&siprop=rightsinfo)
+    as Creative Commons Attribution-Share Alike 4.0. That response was fetched and hashed BEFORE any payload
+    was kept, which is the order guidance/sources.md requires.
+  transformation: scripts/migne_transcribe.py, a declared and re-runnable transformation. It removes the
+    wiki templates whole by counting braces, the Patrologia Latina navigation line, the Corpus Corporum
+    encoding note, categories, footnotes, tags and headings, and Migne's inline column markers; it consults
+    no model and reaches no network.
+  also_reachable_not_yet_landed:
+  - work: Ambrose of Milan, Hexameron
+    page: Hexaemeron/I to /VI on la.wikisource
+    revisions: 267618, 225563, 225564, 225567, 225572, 225570
+    source: Migne PL 14
+    bytes: 386266
+  - work: Bede, In principium Genesis
+    page: Hexaemeron (Beda)
+    revision: 267515
+    source: Migne PL 91
+    bytes: 488380
+  - work: Jerome, Liber quaestionum hebraicarum in Genesim
+    page: Quaestiones Hebraicae in Genesim (Hieronymus)
+    revision: 253468
+    source: Migne PL 23
+    bytes: 143311
+    note: This one is already keyed to Genesis verses by the transcribers, with per-verse anchors, so
+      its fragments could be finer than a book.
+  - work: Alcuin of York, Interrogationes et responsiones in Genesim
+    page: Interrogationes et responsiones in Genesin
+    revision: 264808
+    source: Migne PL 100
+    bytes: 150243
+  - work: Angelomus of Luxeuil, Commentarius in Genesim
+    page: Commentarius in Genesin (Angelomus Luxovensis)
+    revision: 263973
+    source: Migne PL 115
+    bytes: 397492
+  - work: Remigius of Auxerre, Commentarius in Genesim
+    page: Commentarius in Genesim (Remigius Antissiodorensis)
+    revision: 263972
+    source: Migne PL 131
+    bytes: 229561
+  retrieved_whole_and_hashed: All six were retrieved in one Special:Export request together with the two
+    landed works, 2,035,058 bytes, sha256 b32b189628e77b2f11378c8e68dbd27742b58aec3a4c7f89b7fbc2312bde42ef,
+    on 2026-08-01. They are NOT landed because each still needs its scriptural extents determined from
+    its own text, which is editorial work and not retrieval. The bytes are reachable and the route is
+    proven; what remains is reading them.
+greek_finding:
+  question: is any Greek Genesis commentary reachable as transcribed text under an affirmative rights
+    basis
+  aliases_tried:
+  - Ἑξαήμερον
+  - Εἰς τὴν Ἑξαήμερον
+  - Γένεσιν
+  - κατασκευῆς ἀνθρώπου
+  - Βασίλειος
+  - tlg2040 (Basil)
+  - tlg2062 (Chrysostom)
+  - tlg2017 (Gregory of Nyssa)
+  - tlg4089 (Theodoret)
+  routes_examined:
+  - route: Greek Wikisource
+    finding: no patristic commentary on Genesis. The Hexaemeron searches return Cosmas Indicopleustes,
+      Eusebius and Philo, and the Basil results are the Books of Kingdoms and a funeral oration.
+  - route: OpenGreekAndLatin/First1KGreek (CC BY-SA 4.0)
+    finding: 312 author directories and none of tlg2040, tlg2062 or tlg2017. tlg4089 (Theodoret) is present
+      but holds only tlg003 and tlg004, not the Quaestiones in Octateuchum.
+  - route: Patristic Text Archive (CC BY 4.0)
+    finding: pta0001 IS Severian of Gabala, whose In cosmogoniam homiliae sex the index names on Genesis,
+      and the archive carries In Genesim sermo 1 and 2, De sacrificiis Caini, De serpente homilia, Quomodo
+      animam acceperit Adamus, In Noe et filios eius and Homilia de Noe et de arca. This is a real and
+      licensed Greek route on Genesis and it was found but NOT landed in this lane.
+  - route: Migne PG on the Internet Archive
+    finding: facsimiles exist; the polytonic OCR is not usable text, which is the same finding the Latin
+      scans gave and which the keyed corpora answered for Latin.
+  conclusion: 'ZERO Greek fragments are held. That is a bounded negative: the Patristic Text Archive is
+    the route that would close it and it is identified, licensed and unpursued rather than absent.'
