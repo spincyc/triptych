@@ -289,3 +289,36 @@
   outline: 2px solid var(--focus);
   outline-offset: 1px;
 }
+
+/* ---------------------------------------------------------------------------
+ * The reasoning, on request
+ *
+ * Off by default. The page is the missal opened to a date; the rubrical account
+ * is an annotation on it, and a reader who wants the Mass should not have to
+ * read past the explanation to reach it. Hidden by a class on the body rather
+ * than removed from the DOM, so turning it on costs no re-render.
+ * ------------------------------------------------------------------------ */
+
+.margin { display: none; }
+
+.shows-why .margin { display: block; }
+
+/* Wide, the annotated text gives up its margin column when nothing is in it,
+   so the Mass sets to the full measure rather than against an empty gutter. */
+@media (min-width: 60rem) {
+  body:not(.shows-why) .annotated {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.field-check label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.field-check input { min-width: 1rem; min-height: 1rem; }

@@ -67,13 +67,15 @@
     bibleId: null,
     structure: null,
     orations: null,
-    orationLanguages: []
+    orationLanguages: [],
+    why: false
   };
 
   const dateInput = document.getElementById('date-input');
   const missalSelect = document.getElementById('missal-select');
   const bibleSelect = document.getElementById('bible-select');
   const orationsSelect = document.getElementById('orations-select');
+  const whyToggle = document.getElementById('why-toggle');
   const prevButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
   const todayButton = document.getElementById('today-button');
@@ -565,6 +567,15 @@
     if (state.missalId) missalSelect.value = state.missalId;
     if (state.bibleId) bibleSelect.value = state.bibleId;
     if (state.orations) orationsSelect.value = state.orations;
+    whyToggle.checked = state.why;
+    applyWhy();
+  }
+
+  // The margins stay in the DOM and are hidden by a class rather than removed,
+  // so toggling costs no re-render and a reader turning them back on lands on
+  // the same page rather than a rebuilt one.
+  function applyWhy() {
+    document.body.classList.toggle('shows-why', state.why);
   }
 
   function writeHash() {
@@ -572,7 +583,8 @@
       ['date', state.date],
       ['missal', state.missalId],
       ['bible', state.bibleId],
-      ['orations', state.orations === T.SOURCE_LANGUAGE ? null : state.orations]
+      ['orations', state.orations === T.SOURCE_LANGUAGE ? null : state.orations],
+      ['why', state.why ? '1' : null]
     ]);
   }
 
@@ -737,6 +749,7 @@
     state.bibleId = state.bibles.some((one) => one.id === wantedBible)
       ? wantedBible
       : state.bibles[0].id;
+    state.why = hash.get('why') === '1';
     state.date = validDate(hash.get('date')) ? hash.get('date') : todayISO();
     const wantedMissal = hash.get('missal');
     state.missalId = missals.some((one) => one.id === wantedMissal) ? wantedMissal : missals[0].id;
@@ -752,6 +765,12 @@
 
   dateInput.addEventListener('change', () => {
     if (validDate(dateInput.value)) select(dateInput.value, null, { moveFocus: false });
+  });
+
+  whyToggle.addEventListener('change', () => {
+    state.why = whyToggle.checked;
+    applyWhy();
+    writeHash();
   });
 
   missalSelect.addEventListener('change', () => {
