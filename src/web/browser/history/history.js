@@ -267,8 +267,8 @@
    * second slice should be reachable by asking for it rather than by editing a
    * page. Everything below reads the file the slice names; nothing here knows
    * what is in it. */
-  const SLICE = new URLSearchParams(window.location.search).get('slice') ||
-    'roman-holy-week';
+  const ASKED = new URLSearchParams(window.location.search).get('slice');
+  const SLICE = /^[a-z0-9][a-z0-9-]*$/.test(ASKED || '') ? ASKED : 'roman-holy-week';
   const ROOT = 'structure/act-history/' + SLICE;
   const NS = 'http://www.w3.org/2000/svg';
 
@@ -727,12 +727,16 @@
     }
     if (!(payload.masses || []).length && !(payload.units || []).length &&
         !(payload.unestablished || []).length) {
+      const held = (totals.standing || 0) + ' units stand after it.';
       host.appendChild(T.el('p', 'detail-weak',
-        'This act moved nothing in this slice. It keeps its station because an ' +
-        'authority acted: a history keyed on diffs would have dropped it, and a ' +
-        'history keyed on acts records that the authority spoke and this part of ' +
-        'the book did not move. ' + (totals.standing || 0) +
-        ' units stand after it.'));
+        M.kindOf(station, kindsStated) === M.PROMULGATED
+          ? 'This act moved nothing in this slice. It keeps its station because ' +
+            'an authority acted: a history keyed on diffs would have dropped it, ' +
+            'and a history keyed on acts records that the authority spoke and ' +
+            'this part of the book did not move. ' + held
+          : 'Nothing in this slice differs from what stood before. The book is ' +
+            'here because it survives, and this part of it reads as the last one ' +
+            'did. ' + held));
     }
   }
 
