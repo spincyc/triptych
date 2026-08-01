@@ -320,23 +320,23 @@ the calendars, and nothing else on this page states a figure it gives.
 | postconciliar | seasonal | 66 | 824 | 3 |
 | postconciliar | christological | 7 | 7 | 7 |
 | postconciliar | marian | 14 | 15 | 14 |
-| postconciliar | sanctoral | 181 | 213 | 175 |
+| postconciliar | sanctoral | 181 | 233 | 169 |
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 490 | 268 |
-| Propers | 6 | 2298 | 1059 |
-| — named `Placeholder` | 6 | 140 | 202 |
+| Propers | 6 | 2298 | 1079 |
+| — named `Placeholder` | 6 | 140 | 196 |
 | — inside a `forms` block | 0 | 97 | 133 |
 | — carrying a `cycles` mapping | 0 | 0 | 252 |
-| Masses holding only placeholders | 6 | 138 | 199 |
+| Masses holding only placeholders | 6 | 138 | 193 |
 | Masses taking a formulary from another entry | 0 | 56 | 0 |
 | Propers taking their text from another entry | 0 | 40 | 0 |
-| Propers that are not placeholders | 0 | 2158 | 857 |
-| — of those, scripture-bearing | 0 | 1807 | 584 |
-| Encoded passages | 0 | 2102 | 1119 |
+| Propers that are not placeholders | 0 | 2158 | 883 |
+| — of those, scripture-bearing | 0 | 1807 | 610 |
+| Encoded passages | 0 | 2102 | 1145 |
 | Distinct books cited | 0 | 55 | 61 |
-| Distinct slot names | 1 | 119 | 86 |
+| Distinct slot names | 1 | 119 | 87 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

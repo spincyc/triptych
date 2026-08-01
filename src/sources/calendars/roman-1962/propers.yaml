@@ -241,6 +241,29 @@ open_collation_items:
   antiphon Salus populi ego sum, only for its psalm verse
 - the 1962 books have no octave of the Ascension, of Corpus Christi, or of the
   Epiphany, and no Vigil of the Epiphany; nothing was added for them
+- 'the days this calendar constitutes from a rule rather than from an entry were
+  censused over 2026 on 2026-08-01, because "a day with no mass key" had been read as a
+  gap and most of it is not one. 84 dates of that year are won by a celebration carrying
+  no mass key of its own. 80 of them reach a formulary all the same - 68 by the RGMR 299
+  borrowing that `ferial_formulary` records, and 12 by the Office of Our Lady on
+  Saturday, which is not a feria at all but row 27 and takes one of the five Missae de
+  S. Maria in sabbato by season. Keylessness is therefore not the defect; it is how this
+  schema says a day is constituted and its Mass named elsewhere'
+- 'what that census does leave is four date-options in 2026 that reach no formulary by
+  any route, and they are two different things. 5 January is a declared refusal and is
+  right - the Most Holy Name occupies the Sunday those ferias follow, so RGMR 299''s
+  Mass of the preceding Sunday is a Mass this index does not carry, and borrowing the
+  feast''s own would decide by preference what no rubric decides. The other three, 14,
+  21 and 22 May, appear only inside the `ascension-transferred-to-sunday` territorial
+  option and never in the Thursday option, where all three resolve. The cause is stated
+  in `tools/calendar-days`, which ties the Missal''s nine-day Ascension window at
+  printed p. 352 to the Thursday form and refuses to tag it otherwise, on the ground
+  that the Missal states that rubric from the Ascension''s own day. Under a transfer the
+  question is whether the window moves with the feast or stays with the Thursday, and
+  the 1962 books answer it nowhere, because the transfer is an indult and not a rubric
+  of theirs. Nothing was changed - an unstated case answered by preference is the defect
+  this file exists to refuse, and the three dates are recorded here so the question can
+  be put to a witness rather than to a program'
 - no feria of Advent outside the Ember Days, and no fourth-class feria of
   Septuagesima, of Epiphanytide, of Paschaltide or of the season after Pentecost,
   has a Mass formulary of its own, so the absence of such entries from this file

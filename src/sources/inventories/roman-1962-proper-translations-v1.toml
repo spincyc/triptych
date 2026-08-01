@@ -415,6 +415,35 @@ absence recorded against a witness is a claim about a reader until someone has
 looked at the page.
 """
 
+untranslated_reach = """
+Measured 2026-08-01. The 27 `untranslated` rows are 27 propers, but they are not
+27 days: a Common's oration is served at every day that takes that Common, so the
+cost of a missing English is recorded once per row and felt once per day.
+
+On 2026-08-01 a sibling pass landed 36 sanctoral pointers into the Commune
+Sanctorum, and that multiplied the reach without adding a row. 20 entries of the
+calendar now resolve to a Common carrying an oration this file has no English
+for:
+
+  14 entries -> commune-summorum-pontificum      (9 orations without English)
+   4 entries -> commune-doctorum-pontificis      (2 orations without English)
+   1 entry   -> commune-doctorum-non-pontificis  (1 oration without English)
+   1 entry   -> commune-dedicationis-ecclesiae   (4 orations without English)
+
+Nothing was composed to close them and nothing should be. The reason on each row
+holds, and for the largest of them it is stronger than `not found`: both
+witnesses are the same Philadelphia hand missal in two printings, 1843 and 1861,
+so the Common of Supreme Pontiffs is not a Common either book could have carried.
+What those rows record is the limit of the witness, not the limit of the search.
+Closing them needs a further public-domain English witness registered under
+`guidance/sources.md`, which is not this file's work to do.
+
+What a reader sees meanwhile is the Latin the missal prints, under the notice the
+browser puts at the text saying no English is recorded for that proper. That is
+the designed behaviour and not a defect; it is recorded here so that the number
+of days it reaches is known rather than guessed.
+"""
+
 [[sources]]
 id = "cummiskey-1861"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
