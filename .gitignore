@@ -1,3 +1,8 @@
 /build/
 __pycache__/
 *.py[cod]
+
+# flock guards beside the files they protect. Deliberately not removed after
+# unlocking: unlinking would let two processes create separate inodes and each
+# believe it holds the lock. `tools/harvest` makes one beside its ledger.
+*.lock
