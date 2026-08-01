@@ -13806,15 +13806,33 @@ sections:
     - key: missa-de-s-maria-in-sabbato-1
       name: 'Missa de S. Maria in sabbato I: Tempore Adventus'
       registry: 1962-C-s-maria-in-sabbato-1
-      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [43]-[44]
-        at marginal nos. 4490, 4496, 4498, transcribed 2026-08-01 from the CMAA facsimile
-        of the controlling edition and corroborated against the text layer of an independent
-        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
-        not settle between them was read off the facsimile page image. The Introit, readings,
-        chants and Communion antiphon of this Mass are not transcribed, as they are not
-        for the 63 seasonal entries this file already carries in that state. An entry
-        that takes this Mass therefore takes its orations and nothing else.
+      notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [43]-[44]. The three
+        orations, at marginal nos. 4490, 4496 and 4498, were transcribed 2026-08-01 from
+        the CMAA facsimile of the controlling edition and corroborated against the text
+        layer of an independent scan of the 1962 Benziger editio iuxta typicam; every
+        reading the two scans did not settle between them was read off the facsimile page
+        image. The scripture-bearing propers were added 2026-08-01 from the page image
+        of the same facsimile at digital p. 851, read in bands delimited by the page''s
+        full-width lines with each word assigned to a column by its own x. This Mass
+        prints no chant that lacks a scriptural reference, so nothing of it is now
+        untranscribed.'
       propers:
+      - name: Introit
+        incipit: 'Rorate, caeli, desuper'
+        source: scripture
+        notes: 'Printed p. [43], no. 4489. The antiphon is Isai. 45, 8 and the psalm verse
+          Ps. 84, 2, both references printed.'
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 45, verse: 8}
+            end: {chapter: 45, verse: 8}
+          ref: 'Isaiah 45:8'
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 84, verse: 2}
+            end: {chapter: 84, verse: 2}
+          ref: 'Psalm 84:2'
       - name: Collect
         incipit: Deus, qui de
         source: composed
@@ -13824,6 +13842,58 @@ sections:
           carnem suscipere voluisti: praesta supplicibus tuis; ut, qui vere eam
           Genetricem Dei credimus, ejus apud te intercessionibus adjuvemur. Per
           eundem Dominum.
+      - name: Lesson
+        source: scripture
+        notes: Printed p. [43], no. 4491, headed Lectio Isaiae Prophetae.
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 7, verse: 10}
+            end: {chapter: 7, verse: 15}
+          ref: 'Isaiah 7:10-15'
+      - name: Gradual
+        incipit: 'Tollite portas, principes, vestras'
+        source: scripture
+        notes: 'Printed p. [43], no. 4492. Ps. 23, 7, with the verse printed Ibid., 3-4.'
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 23, verse: 7}
+            end: {chapter: 23, verse: 7}
+          - begin: {chapter: 23, verse: 3}
+            end: {chapter: 23, verse: 4}
+          ref: 'Psalm 23:7, 3-4'
+      - name: Alleluia
+        incipit: 'Ave, Maria, gratia plena'
+        source: scripture
+        notes: 'Printed p. [43], no. 4493, verse referenced Luc. 1, 28.'
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 1, verse: 28}
+            end: {chapter: 1, verse: 28}
+          ref: 'Luke 1:28'
+      - name: Gospel
+        source: scripture
+        notes: Printed p. [43], no. 4494, headed Sequentia sancti Evangelii secundum Lucam.
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 1, verse: 26}
+            end: {chapter: 1, verse: 38}
+          ref: 'Luke 1:26-38'
+      - name: Offertory
+        incipit: 'Ave, Maria, gratia plena'
+        source: scripture
+        notes: 'Printed p. [44], no. 4495, referenced Luc. 1, 28 et 42.'
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 1, verse: 28}
+            end: {chapter: 1, verse: 28}
+          - begin: {chapter: 1, verse: 42}
+            end: {chapter: 1, verse: 42}
+          ref: 'Luke 1:28, 42'
       - name: Secret
         incipit: In mentibus nostris
         source: composed
@@ -13834,6 +13904,16 @@ sections:
           salutiferae resurrectionis potentiam, ad aeternam mereamur pervenire
           laetitiam. Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui
           tecum vivit et regnat in unitate.
+      - name: Communion
+        incipit: Ecce Virgo concipiet
+        source: scripture
+        notes: 'Printed p. [44], no. 4497, referenced Isai. 7, 14.'
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 7, verse: 14}
+            end: {chapter: 7, verse: 14}
+          ref: 'Isaiah 7:14'
       - name: Postcommunion
         incipit: Gratiam tuam, quaesumus
         source: composed
@@ -13846,15 +13926,37 @@ sections:
     - key: missa-de-s-maria-in-sabbato-2
       name: 'Missa de S. Maria in sabbato II: a Nativitate Domini usque ad Purificationem'
       registry: 1962-C-s-maria-in-sabbato-2
-      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [44]-[45]
-        at marginal nos. 4500, 4507, 4509, transcribed 2026-08-01 from the CMAA facsimile
-        of the controlling edition and corroborated against the text layer of an independent
-        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
-        not settle between them was read off the facsimile page image. The Introit, readings,
-        chants and Communion antiphon of this Mass are not transcribed, as they are not
-        for the 63 seasonal entries this file already carries in that state. An entry
-        that takes this Mass therefore takes its orations and nothing else.
+      notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [44]-[45]. The three
+        orations, at marginal nos. 4500, 4507 and 4509, were transcribed 2026-08-01 from
+        the CMAA facsimile of the controlling edition and corroborated against the text
+        layer of an independent scan of the 1962 Benziger editio iuxta typicam; every
+        reading the two scans did not settle between them was read off the facsimile page
+        image. The scripture-bearing propers were added 2026-08-01 from the page images
+        of the same facsimile at digital pp. 852-853. Four chants of this Mass are still
+        untranscribed, and each is a chant for which the Missal prints no scriptural
+        reference at all: the Alleluia Post partum (no. 4503), the Tract Gaude Maria Virgo
+        said after Septuagesima in place of the Alleluia (no. 4504), the Offertory Felix
+        namque es (no. 4506) and the Communion Beata viscera (no. 4508). They are
+        appointed, not absent.'
       propers:
+      - name: Introit
+        incipit: Vultum tuum deprecabuntur
+        source: scripture
+        notes: 'Printed p. [44], no. 4499. The antiphon is Ps. 44, 13, 15 et 16 and the
+          psalm verse Ps. ibid., 2, whose antecedent is the same psalm.'
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 44, verse: 13}
+            end: {chapter: 44, verse: 13}
+          - begin: {chapter: 44, verse: 15}
+            end: {chapter: 44, verse: 16}
+          ref: 'Psalm 44:13, 15-16'
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 44, verse: 2}
+            end: {chapter: 44, verse: 2}
+          ref: 'Psalm 44:2'
       - name: Collect
         incipit: Deus, qui salutis
         source: composed
@@ -13865,6 +13967,37 @@ sections:
           intercedere sentiamus, per quam meruimus auctorem vitae suscipere,
           Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
           in unitate.
+      - name: Epistle
+        source: scripture
+        notes: Printed p. [44], no. 4501, headed Lectio Epistolae beati Pauli Apostoli
+          ad Titum.
+        verses:
+        - book: Titus
+          ranges:
+          - begin: {chapter: 3, verse: 4}
+            end: {chapter: 3, verse: 7}
+          ref: 'Titus 3:4-7'
+      - name: Gradual
+        incipit: Speciosus forma prae filiis hominum
+        source: scripture
+        notes: 'Printed p. [44], no. 4502. Ps. 44, 3, with the verse printed Ibid., 2.'
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 44, verse: 3}
+            end: {chapter: 44, verse: 3}
+          - begin: {chapter: 44, verse: 2}
+            end: {chapter: 44, verse: 2}
+          ref: 'Psalm 44:3, 2'
+      - name: Gospel
+        source: scripture
+        notes: Printed p. [45], no. 4505, headed Sequentia sancti Evangelii secundum Lucam.
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 2, verse: 15}
+            end: {chapter: 2, verse: 20}
+          ref: 'Luke 2:15-20'
       - name: Secret
         incipit: Tua, Domine, propitiatione
         source: composed
@@ -13885,15 +14018,33 @@ sections:
       name: 'Missa de S. Maria in sabbato III: a die 3 februarii usque ad feriam IV Hebdomadae
         sanctae'
       registry: 1962-C-s-maria-in-sabbato-3
-      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [45]-[46]
-        at marginal nos. 4511, 4518, 4520, transcribed 2026-08-01 from the CMAA facsimile
-        of the controlling edition and corroborated against the text layer of an independent
-        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
-        not settle between them was read off the facsimile page image. The Introit, readings,
-        chants and Communion antiphon of this Mass are not transcribed, as they are not
-        for the 63 seasonal entries this file already carries in that state. An entry
-        that takes this Mass therefore takes its orations and nothing else.
+      notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [45]-[46]. The three
+        orations, at marginal nos. 4511, 4518 and 4520, were transcribed 2026-08-01 from
+        the CMAA facsimile of the controlling edition and corroborated against the text
+        layer of an independent scan of the 1962 Benziger editio iuxta typicam; every
+        reading the two scans did not settle between them was read off the facsimile page
+        image. The scripture-bearing propers were added 2026-08-01 from the page images
+        of the same facsimile at digital pp. 853-854. Where a scriptural reference would
+        stand over this Mass''s Introit antiphon the Missal prints the word Sedulius, so
+        the antiphon Salve sancta parens is the poet''s and not scripture; only its psalm
+        verse is recorded as scripture, which is the shape lent-3-thursday already uses.
+        Five chants are still untranscribed, and the Missal prints no scriptural reference
+        for any of them: the Gradual Benedicta et venerabilis es (no. 4513), the Alleluia
+        Virga Iesse floruit (no. 4514), the Tract Gaude Maria Virgo said after Septuagesima
+        in place of the Alleluia (no. 4515), the Offertory Felix namque es (no. 4517) and
+        the Communion Beata viscera (no. 4519). They are appointed, not absent.'
       propers:
+      - name: Introit
+        incipit: 'Salve, sancta parens'
+        source: scripture
+        notes: 'Printed p. [45], no. 4510. The Missal heads the antiphon Sedulius rather
+          than with a scriptural reference; the psalm verse is printed Ps. 44, 2.'
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 44, verse: 2}
+            end: {chapter: 44, verse: 2}
+          ref: 'Psalm 44:2'
       - name: Collect
         takes_from:
           mass: commune-festorum-bmv
@@ -13903,6 +14054,24 @@ sections:
             written once in this file, where the Commune first sets it, and referenced
             from every later printing: two copies of one prayer are two readings waiting
             to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Lesson
+        source: scripture
+        notes: Printed p. [45], no. 4512, headed Lectio libri Sapientiae.
+        verses:
+        - book: Sirach
+          ranges:
+          - begin: {chapter: 24, verse: 14}
+            end: {chapter: 24, verse: 16}
+          ref: 'Sirach 24:14-16'
+      - name: Gospel
+        source: scripture
+        notes: Printed p. [46], no. 4516, headed Sequentia sancti Evangelii secundum Lucam.
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 11, verse: 27}
+            end: {chapter: 11, verse: 28}
+          ref: 'Luke 11:27-28'
       - name: Secret
         takes_from:
           mass: missa-de-s-maria-in-sabbato-2
@@ -13923,15 +14092,32 @@ sections:
     - key: missa-de-s-maria-in-sabbato-4
       name: 'Missa de S. Maria in sabbato IV: tempore paschali'
       registry: 1962-C-s-maria-in-sabbato-4
-      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [46]-[47]
-        at marginal nos. 4522, 4527, 4529, transcribed 2026-08-01 from the CMAA facsimile
-        of the controlling edition and corroborated against the text layer of an independent
-        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
-        not settle between them was read off the facsimile page image. The Introit, readings,
-        chants and Communion antiphon of this Mass are not transcribed, as they are not
-        for the 63 seasonal entries this file already carries in that state. An entry
-        that takes this Mass therefore takes its orations and nothing else.
+      notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [46]-[47]. The three
+        orations, at marginal nos. 4522, 4527 and 4529, were transcribed 2026-08-01 from
+        the CMAA facsimile of the controlling edition and corroborated against the text
+        layer of an independent scan of the 1962 Benziger editio iuxta typicam; every
+        reading the two scans did not settle between them was read off the facsimile page
+        image. The scripture-bearing propers were added 2026-08-01 from the page images
+        of the same facsimile at digital pp. 854-855. As in Masses III and V, the Missal
+        heads this Introit''s antiphon Sedulius rather than with a scriptural reference,
+        so only its psalm verse is recorded as scripture. This Mass prints no Gradual and
+        no Tract, Paschaltide taking the Alleluia in their place. Two chants are still
+        untranscribed and neither carries a scriptural reference: the Offertory Beata es
+        Virgo Maria (no. 4526) and the Communion Beata viscera (no. 4528). They are
+        appointed, not absent.'
       propers:
+      - name: Introit
+        incipit: 'Salve, sancta parens'
+        source: scripture
+        notes: 'Printed p. [46], no. 4521. The Missal heads the antiphon Sedulius rather
+          than with a scriptural reference; the psalm verse is printed Ps. 44, 2. The
+          antiphon carries its own alleluias in this season.'
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 44, verse: 2}
+            end: {chapter: 44, verse: 2}
+          ref: 'Psalm 44:2'
       - name: Collect
         incipit: Concede nos famulos
         source: composed
@@ -13941,6 +14127,36 @@ sections:
           corporis sanitate gaudere: et, gloriosa beatae Mariae semper Virginis
           intercessione, a praesenti liberari tristitia, et aeterna perfrui
           laetitia. Per Dominum.
+      - name: Lesson
+        source: scripture
+        notes: Printed p. [46], no. 4523, headed Lectio libri Sapientiae.
+        verses:
+        - book: Sirach
+          ranges:
+          - begin: {chapter: 24, verse: 14}
+            end: {chapter: 24, verse: 16}
+          ref: 'Sirach 24:14-16'
+      - name: Alleluia
+        incipit: Virga Iesse floruit
+        source: scripture
+        notes: 'Printed p. [47], no. 4524. The Missal prints two verses under one Alleluia
+          here. Only the second carries a reference, Luc. 1, 28; the first, Virga Iesse
+          floruit, has none, and it is the incipit because it is printed first.'
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 1, verse: 28}
+            end: {chapter: 1, verse: 28}
+          ref: 'Luke 1:28'
+      - name: Gospel
+        source: scripture
+        notes: Printed p. [47], no. 4525, headed Sequentia sancti Evangelii secundum Ioannem.
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 19, verse: 25}
+            end: {chapter: 19, verse: 27}
+          ref: 'John 19:25-27'
       - name: Secret
         takes_from:
           mass: missa-de-s-maria-in-sabbato-2
@@ -13962,15 +14178,33 @@ sections:
       name: 'Missa de S. Maria in sabbato V: a festo Ss. Trinitatis usque ad sabbatum
         ante dominicam I Adventus'
       registry: 1962-C-s-maria-in-sabbato-5
-      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [47]-[48]
-        at marginal nos. 4531, 4537, 4539, transcribed 2026-08-01 from the CMAA facsimile
-        of the controlling edition and corroborated against the text layer of an independent
-        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
-        not settle between them was read off the facsimile page image. The Introit, readings,
-        chants and Communion antiphon of this Mass are not transcribed, as they are not
-        for the 63 seasonal entries this file already carries in that state. An entry
-        that takes this Mass therefore takes its orations and nothing else.
+      notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [47]-[48]. The three
+        orations, at marginal nos. 4531, 4537 and 4539, were transcribed 2026-08-01 from
+        the CMAA facsimile of the controlling edition and corroborated against the text
+        layer of an independent scan of the 1962 Benziger editio iuxta typicam; every
+        reading the two scans did not settle between them was read off the facsimile page
+        image. The scripture-bearing propers were added 2026-08-01 from the page images
+        of the same facsimile at digital pp. 855-856. As in Masses III and IV, the Missal
+        heads this Introit''s antiphon Sedulius rather than with a scriptural reference,
+        so only its psalm verse is recorded as scripture. This is the Mass the Office of
+        Our Lady on Saturday takes for most of the year, from Trinity Sunday to the
+        Saturday before the First Sunday of Advent, so it is the one a reader is likeliest
+        to reach. Three chants are still untranscribed and none carries a scriptural
+        reference: the Gradual Benedicta et venerabilis es (no. 4533), the Alleluia Post
+        partum (no. 4534) and the Communion Beata viscera (no. 4538). They are appointed,
+        not absent.'
       propers:
+      - name: Introit
+        incipit: 'Salve, sancta parens'
+        source: scripture
+        notes: 'Printed p. [47], no. 4530. The Missal heads the antiphon Sedulius rather
+          than with a scriptural reference; the psalm verse is printed Ps. 44, 2.'
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 44, verse: 2}
+            end: {chapter: 44, verse: 2}
+          ref: 'Psalm 44:2'
       - name: Collect
         takes_from:
           mass: commune-festorum-bmv
@@ -13980,6 +14214,36 @@ sections:
             written once in this file, where the Commune first sets it, and referenced
             from every later printing: two copies of one prayer are two readings waiting
             to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Lesson
+        source: scripture
+        notes: Printed p. [47], no. 4532, headed Lectio libri Sapientiae.
+        verses:
+        - book: Sirach
+          ranges:
+          - begin: {chapter: 24, verse: 14}
+            end: {chapter: 24, verse: 16}
+          ref: 'Sirach 24:14-16'
+      - name: Gospel
+        source: scripture
+        notes: Printed p. [48], no. 4535, headed Sequentia sancti Evangelii secundum Lucam.
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 11, verse: 27}
+            end: {chapter: 11, verse: 28}
+          ref: 'Luke 11:27-28'
+      - name: Offertory
+        incipit: 'Ave, Maria, gratia plena'
+        source: scripture
+        notes: 'Printed p. [48], no. 4536, referenced Luc. 1, 28, et 42.'
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 1, verse: 28}
+            end: {chapter: 1, verse: 28}
+          - begin: {chapter: 1, verse: 42}
+            end: {chapter: 1, verse: 42}
+          ref: 'Luke 1:28, 42'
       - name: Secret
         takes_from:
           mass: commune-festorum-bmv
