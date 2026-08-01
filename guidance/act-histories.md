@@ -1,15 +1,33 @@
-# Act histories: a tracer through Holy Week, 1570 to 1962
+# Act histories: the Latin missal as a history of acts
 
 A liturgical history rendered as a Git repository, where the shape of the graph
-is the finding. This is the report on a tracer built on 2026-07-31: what it
-proved, what it broke, and what it cost.
+is the finding.
 
-**This document owns no rules.** `time-machine.md` settles them — no station
-without an act, parallel stays parallel, the diff is the acceptance test — and
+**Part one** is the report on a tracer through Holy Week, 1570 to 1962, built on
+2026-07-31: what it proved, what it broke, and what it cost. **Part two**, from
+section 11, is the wider slice built on 2026-08-01 -- 1484 to 2023, seventeen
+lines, the uses and the order rites beside the Roman one -- and the amendments it
+required to the rule part one is built on. Part one is not edited to match it.
+
+**Part one owns no rules; part two owns three.** `time-machine.md` settles the
+rest — no station without an act, parallel stays parallel, the diff is the
+acceptance test — and part two settles, on the maintainer's ruling of
+2026-08-01, the `promulgated`/`printed` station vocabulary (§11), what an edge
+must declare it rests on (§12), and the date-prefixed path convention (§13).
+
+**One of those amends a rule this document does not own, and the tension is on
+the record rather than resolved here.** `time-machine.md` Rule 1 is *no station
+without an act*, and §11 admits a printing as a station where no act has been
+located. The reason behind Rule 1 is unchanged and §11 restates it; what changed
+is that refusing a surviving book was found to be its own kind of silence.
+`time-machine.md` is not this lane's surface and is not edited from here, so it
+still states the unamended rule. Whoever reconciles them should read §11 first.
+
 `recensions.md` settles the departure model, a base and its departures with
-identity writing no row. Those two propose; this one measures. Everything below
-was built and run, and where a ruling left a question open under test, the
-result is here rather than in the document that asked it.
+identity writing no row, and that model is untouched by anything in part two.
+Those two propose; this one measures. Everything below was built and run, and
+where a ruling left a question open under test, the result is here rather than
+in the document that asked it.
 
 ## Evidence conventions
 
@@ -755,3 +773,262 @@ So, in order:
 Not, in any order: enlarging the corpus, adding more editions, or drawing more
 edges. The tracer's finding is that the edges are the expensive part and the
 scans are the weak part, and neither gets better by adding books.
+
+---
+
+# Part two: the wider slice, 1484 to 2023
+
+Written 2026-08-01, on top of everything above. Part one is a report on twelve
+acts of one week and is left exactly as it stood; nothing in it is edited to
+match what follows, because a report that quietly grows to fit a later finding
+stops being evidence of what was known when.
+
+The wider slice is `src/sources/inventories/latin-missal-acts-v1.toml`. It
+**extends** the Holy Week file rather than copying it, and adds fifty-nine
+stations on seventeen lines: the Tridentine acts that stand before Quo primum,
+the Roman line down to the emended reprint of 2008, the acts governing which
+missal may be used, the Ordinary of the Mass as base units, and fifteen lines
+for the uses and the order rites.
+
+| | |
+| --- | --- |
+| stations | 59 — 33 promulgated, 26 printed |
+| lines | 17, of which 15 begin at a root |
+| edges | act-states-it 23, use-continuity 12, line-order 8, book-states-it 2 |
+| witnesses | 41 |
+| base units | 53 — the 38 of Holy Week and 16 of the Ordo Missae, less one |
+| repositories searched | Internet Archive, Bavarian State Library; Gallica unreachable |
+
+## 11. The rule is amended, and the amendment is narrow
+
+**A printing may be a station.** §1 of part one says the station is the act and
+never the book, and gives the reason: two printings of one prayer differ
+constantly with no act behind the difference, so a history keyed on books
+publishes scanner artefacts as liturgical change. That reason is unchanged and
+this document still holds it. What the unamended rule could not do is carry a
+missal for which no act has been located, and before Trent that is most of them.
+Refusing them is not neutrality — it is a record silent about books that exist.
+
+So every station declares which kind it is, and these are the settled words:
+
+| `station_kind` | what it says |
+| --- | --- |
+| `promulgated` | an act stands behind it and its instrument is cited |
+| `printed` | a missal survives and **no act is claimed** |
+
+Four things keep the exception narrow, and `act-history check` enforces all
+four:
+
+- A `printed` station **may not name an instrument**. If an act was located, the
+  station is promulgated.
+- Its `act_citation` must be `none-claimed`, a value only it may use.
+  **`none-claimed` is not `not-found`**: not-found means an instrument is
+  believed to exist and nobody has read it, and the 1971 emended reprint is
+  exactly that; none-claimed means no instrument is asserted at all.
+- It must name the `printing` it stands on, and that must be a declared witness.
+- It must say in `distinct_edition_basis` why it is a **distinct edition** and
+  not a reprint or a rescan of one already carried. Two Internet Archive items
+  of one printing are one witness and one station; four such mirrors are
+  recorded on their witness rows in the wider slice rather than given stations.
+
+**It reads as the weaker claim everywhere, including where it is cheapest to
+hide it.** The commit subject begins `[printed]`, because the subject is the
+only part of a commit `git log --oneline` and a GitHub commit list show, and a
+weaker station that reads identically to a stronger one in the one view
+everybody uses is a claim laundered by a renderer. The body then carries five
+lines saying what is not being asserted.
+
+**The two cases part one caught would still be caught.** The 1862 Pustet and the
+1962 Benziger are printings *conformed to a typical edition* — an act stands
+behind each — so they remain witnesses and are not eligible to be stations at
+all. The amendment reaches only books for which nothing was found.
+
+## 12. Every edge declares what it rests on
+
+The danger the old rule guarded against has moved from the stations to the
+edges, and is guarded there. A chain of printings ordered by date is not a chain
+of descent, so `parent_kind` is required on every edge and is ordered by
+strength:
+
+| `parent_kind` | what the edge asserts |
+| --- | --- |
+| `act-states-it` | an instrument's text draws the edge — its own, or a later act reciting both in order |
+| `book-states-it` | a title page or colophon names what the book follows |
+| `attributed` | a scholarly attribution, cited to its source; never a bare inference |
+| `use-continuity` | two **printings** declare the same use and this is their order. **It does not assert that the later was set from the earlier.** Requires `use_declared` |
+| `line-order` | two **acts** stand on one line in this order and nothing in either names the other |
+
+**Where descent is unknown the station is a root, and many roots is the honest
+shape.** Fifteen of the seventeen lines begin at one. A single trunk joining the
+pre-Tridentine printings would read better and would be a fabrication.
+
+Two edges are worth reading as specimens. `quo-primum-1570` **is no longer a
+root**: the bull's own opening recites the Tridentine decree committing the
+missal to the Pope, so an `act-states-it` edge runs from Session XXV of 1563 —
+and part one's root basis is kept and printed under *why this was formerly a
+root*, not deleted. And the 1561 Venice printing on the pre-Tridentine line was
+printed by Giovanni Varisco, **the same man who printed the 1570 Venice
+edition** — a fact recorded on the witness row and drawn as no edge at all,
+because nothing about the Tridentine missal descends through a Venetian press.
+
+## 13. Paths sort in the order the thing has
+
+`acts/` and `witnesses/` are directories a reader browses on GitHub, and a
+listing of a history that reads alphabetically hides the one property a history
+has. Every per-act and per-witness path takes its date as a prefix:
+
+```
+acts/1562-09-17-tridentinum-sessio-xxii.txt
+acts/1570-07-14-quo-primum.txt
+witnesses/1862-pustet.txt
+witnesses/1970-missale-romanum-typica.txt
+```
+
+This is the convention `guidance/sources.md` settles for scripture — lowercase
+paths, the ordering fact as a zero-padded prefix — keyed on date instead of canon
+position. Three boundaries, and they are the whole of it:
+
+1. **The prefix is derived**, in one function, from the date already in the
+   record, and is never typed beside it. Two copies of one fact are a prediction
+   that they will differ.
+2. **A path is not an identity.** The eight witness ids inherited from part one
+   are not renamed: several are also edition ids under `src/sources/works`, and
+   re-keying a record so a listing sorts would break that alignment to fix a
+   filename. Their paths are prefixed all the same, because the prefix comes
+   from `printed` and not from the id. New ids in the wider slice do lead with
+   their year, and `sorted_name` is idempotent, so nothing is prefixed twice.
+3. **No date is invented so that a name will sort.** `date` is written to the
+   precision the record has — `1497` for a book dated only by its year, `1971`
+   for a reprint whose leaf gives no month — and `date_precision` is **derived**
+   from it, with `check` refusing a stated precision that disagrees. Twenty-nine
+   stations carry year-only dates and not one has a fabricated day.
+
+The derived fragment names are published on the map spine as `station_path` and
+`state_path`, so the page reads a name rather than building one.
+
+## 14. Commonality, computed, and the two ways to read it wrong
+
+This is the reason the Git shape earns its keep. *What did Sarum and Rome share
+before they diverged* is not a question anyone should answer by writing a table
+— a hand-written table beside a derived one is a second source of truth, and
+this project has already been bitten by exactly that. It is a merge-base query.
+
+`act-history commonality [LINE LINE]` answers it, and **proves its own answer**:
+the shared base is derived from the act graph, `git merge-base --all` is then run
+on the emitted repository, and the verb *raises* if the two disagree rather than
+reporting. The same derivation is written to the map spine as `commonality`.
+
+Two halves, and they must not be run together:
+
+**The shared base is about ACTS.** Measured [verified]:
+
+```
+$ act-history commonality --source ...latin-missal-acts-v1.toml typica usus-antiquior
+typica / usus-antiquior
+  shared base : editio-typica-1962
+  units       : 27 identical, 3 differing, 0 only in typica, 11 only in usus-antiquior
+
+$ act-history commonality --source ...latin-missal-acts-v1.toml sarum typica
+sarum / typica
+  shared base : NONE: no act stands behind both
+```
+
+The first is a real answer: the two lines part at the 1962 typical edition, and
+eleven units of the Ordinary stand on the older line and not on the newer, with
+three more differing — the whole postconciliar divergence this slice carries,
+computed rather than asserted. The second is **also** a real answer. Sarum and
+Rome share no act in this record because none was located, and the graph says so
+by drawing no edge.
+
+**The divergence is about TEXT**, and here the reading runs the other way. Two
+lines with no shared act may still hold the same prayer, and agreement without an
+edge is the most interesting thing this shape can show: inheritance older than
+anything the record carries. **The wider slice cannot show it yet.** No unit of
+any use has been read, so every use line's tree is empty and the verb reports
+zero units in common with everything — a statement about what has been
+transcribed and about nothing else. A reader who took it for a statement about
+the rites would have it exactly backwards, and the slice says so in its own
+`commonality_reading` block.
+
+## 15. What the wider pull measured
+
+**A count is not a corpus.** `title:(missale) AND year:[1450 TO 1570]` returns
+215 Internet Archive items [verified]. A large share are single-leaf photographs
+of *one* manuscript, catalogued one folio to an item; another large share are
+EEBO microfilm reels. One of those reels is in the slice and carries its own
+measurement: 415 images, **127,736 bytes of text layer** — about 300 bytes a
+page, against ten times that for the fresh scans beside it.
+
+**A negative belongs to a repository and to a spelling.** The missal acquisition
+audit recorded that no Carthusian missal is on the Internet Archive under
+`cartusiense`, `cartusiensis`, `cartusianum` or `chartreux`. True, and too
+strong: `carthusiense`, the same word with an h, returns a whole 1620 printing
+[verified]. The audit had written that lesson two paragraphs earlier — about a
+different catalogue. **An alias set must be applied to every repository
+searched, not to the one where it was discovered.**
+
+**A whole-file search is a search for a typesetting decision unless it is
+normalised.** The 1970 typical edition prints `Oráte, fratres`; a literal search
+for `Orate, fratres` returns zero and the prayer is on the page. Every negative
+in the wider slice was run through a normalisation that strips diacritics, folds
+the ae and oe ligatures and lowercases. **Any negative in this project taken
+with a literal search should be re-run before it is believed.**
+
+**And a hit is not the unit.** Two searches in the wider slice returned exactly
+one hit that was not the thing looked for, and both are recorded on their rows:
+`iudica me deus et discerne` is in the 1970 book as an *entrance antiphon* for a
+Sunday, not as the psalm at the foot of the altar; `suscipe sancte pater` is
+there in the *Exsultet*, not as the Offertory prayer. A count-only search would
+have reported both units as surviving. This is §1 of `the-shape.md` in its
+smallest form.
+
+**The drop capital is where OCR damage falls, and it is the worst place for it.**
+The Ordo Missae is set in large type with rubricated initials, and the scanner
+loses them: `"Pv eus, qui humanae` is *Deus*, `a&te, fratres` is *Orate*, `1n
+principio` is *In principio*, `T av&bo` is *Lavabo*. An incipit is by definition
+the first words of a prayer, so damage concentrated on initials is damage aimed
+at exactly the thing an incipit is. The wider slice reproduces them as the scan
+gives them, because correcting them would hide the measurement.
+
+**Rights decide what may be copied, and a departure need not copy anything.**
+The 1970 typical edition may be read here and may not be published. Every one of
+the twelve departures recorded against it is therefore an *absence established
+by search* or a slot whose new words are **withheld** — and `withheld` is a
+first-class field, printed in the tree as `[incipit withheld: ...]`, because a
+prayer whose words were never read and a prayer whose words may not be printed
+must not render alike.
+
+## 16. What is still open
+
+1. **No unit of any use is read.** Fifteen lines carry stations, witnesses and
+   descent, and no liturgy. Until that changes, `commonality` can report acts
+   between rites and cannot report text. The first use to read is **Braga**: it
+   is the only one where the book and both its promulgating instruments are in
+   hand and publishable.
+2. **Gallica was unreachable from this run**, and four rows the acquisition
+   audit verified there the same day are carried as `[recorded]`. The Lyonnais
+   line rests entirely on that, and is carried rather than dropped because
+   dropping a use on a network failure is the error that audit had already
+   corrected once.
+3. **The reading vocabulary has no value for a born-digital delivery.** Summorum
+   Pontificum and Traditionis custodes were fetched from vatican.va and their
+   SHA-256 matched the artifacts this repository registered a week earlier,
+   exactly — a stronger reading than any OCR in either slice — and both had to
+   record `ocr-only`, because `page-image | ocr-only | not-read` has no better
+   term. Flagged rather than fixed: adding a value changes a vocabulary two
+   files share.
+4. **The Munda cor meum is `unrecorded` and should not stay so.** The 1962
+   witness prints it as a cross-reference at the place it was read, so its words
+   were never read there, and it cannot be compared with the 1970 text that
+   plainly survives. The fix is to read it where the book actually prints it.
+5. **Part one's item 4 still stands**: move the encoding beside the calendars as
+   a companion schema. It is now more work and more overdue.
+
+And part one's closing warning is **withdrawn in one respect and upheld in the
+other**. It said: *not, in any order: enlarging the corpus, adding more editions,
+or drawing more edges.* The corpus was enlarged and the edges were drawn, on the
+maintainer's ruling, and the warning was right about which half is expensive:
+the books were cheap and the edges cost the whole of the work. Every one of the
+fifty-nine stations took a search; every one of the thirty-three edges took a
+sentence somebody had written down, and where no such sentence existed the
+station is a root.
