@@ -635,7 +635,12 @@ def _ask_worklist(arguments: argparse.Namespace) -> list[str]:
     """What to ask about: `plan`'s answer, never a second implementation of it."""
     chosen = list(dict.fromkeys(getattr(arguments, "passage", None) or []))
     if chosen:
-        return chosen
+        # --limit caps the worklist, and a worklist named on the command line is
+        # still a worklist. Ignoring the flag here let `--passage A --passage B
+        # --limit 1` ask about both and report a cap it had not applied, which
+        # is a small instance of the failure this tool exists to refuse: an
+        # answer that looks like the one requested and is not.
+        return chosen[: arguments.limit] if arguments.limit else chosen
     if not arguments.corpus:
         raise ValueError("--corpus or --passage is required; ask what plan says is missing")
     planned = run_plan(
