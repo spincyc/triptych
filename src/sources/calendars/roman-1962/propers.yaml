@@ -12,20 +12,24 @@ psalm_numbering: vulgate
 citation_convention: Vulgate book names and Vulgate psalm numbering as printed in
   the 1962 Missal
 orthography: 1962 missal Latin (j retained, ae/oe digraphs, no accent marks)
-verification: three tiers; the seasonal Sundays, the Triduum and Palm Sunday carry
+verification: four tiers; the seasonal Sundays, the Triduum and Palm Sunday carry
   unverified model-generated leads whose every citation and text requires collation
   against the controlling edition before any evidentiary reuse; the seasonal ferias,
   vigils, Ember Days and movable feasts of the Lord added afterwards carry only their
   scripture-bearing propers, read from an OCR text layer of that edition and equally
-  uncollated; the marian, christological and sanctoral sections remain a
-  placeholder skeleton pending formula migration, one sanctoral entry excepted;
-  and the common section now carries every Commune the Missal prints, orations
+  uncollated; the common section carries every Commune the Missal prints, orations
   only, read from the embedded text layer of the CMAA facsimile of the
   controlling edition, corroborated against an independent scan of the 1962
   Benziger editio iuxta typicam, and read on the facsimile page image wherever
-  the two scans did not settle a reading between them. That is two machine
-  readings plus a page reading where they disagreed, and it is not a page
-  collation of the whole Commune
+  the two scans did not settle a reading between them - two machine readings
+  plus a page reading where they disagreed, which is not a page collation of
+  the whole Commune; and the sanctoral, marian and christological entries that
+  carry propers hold only their scripture-bearing slots, whose citations were
+  read from the same facsimile's text layer in column order on 2026-08-01, each
+  attached to its day by the printed saint's name rather than by position, and
+  each then measured against the text it points to in the tracked Clementine.
+  No image was read for any of them. Every remaining entry in those three
+  sections is still a placeholder skeleton
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
   doxology is not repeated per entry
@@ -295,6 +299,43 @@ open_collation_items:
   B. Mariae Virg. of printed pp. 499-501. The fifth, the Missa dominicae primae
   post Epiphaniam of printed p. 40, is now carried. All four are movable or shared
   and none is in the fixed-date spine, which is why nothing reports them
+- the sanctoral, marian and christological scripture citations added on
+  2026-08-01 were recovered mechanically from the CMAA facsimile's own text
+  layer, read in column order and in bands delimited by the full-width lines,
+  which is what makes the attribution safe - the earlier linear pass over the
+  same book lost its day headings and put eleven consecutive candidates under
+  21 December. 308 printed Die N mensis headings were read; 298 were attached
+  to an entry of this file by matching the printed saint's name against the
+  entry's name, and 10 were refused because the OCR of the heading left no name
+  to match. The date sequence was checked for monotonicity through the book and
+  exactly one heading fell out of order, S. Caeciliae read as 12 November for
+  22 November; it is among the ten refused. 149 masses received 883
+  scripture-bearing propers carrying 984 citations. Nothing here was read from
+  a page image and nothing has been visually collated; the confidence is that
+  of the 63 seasonal entries already in this file and no higher
+- every citation added in that pass was measured against the text it points to -
+  resolved in the tracked Clementine and compared word for word with the OCR of
+  the page it was read from, on the reasoning that the Missal prints the
+  antiphon or the reading on the same page as its reference, so a right
+  citation overlaps its own page and a wrong one does not. The median overlap
+  is 0.825. Two citations were dropped outright - the Communion of In
+  Conversione S. Pauli, printed Mt. 19, 28 et 29 and read Mt. 19, 2, which
+  scanned as a reference and shared no word with the page; and the Introit of
+  S. Ioannis Leonardi, printed Eccli. 42, 15-16 and read Eccl., which put
+  Sirach 42 into a book of twelve chapters. Both slots are therefore absent
+  rather than wrong. A further 16 citations were refused before validation, 14
+  of them an Introit psalm verse printed Ps. ibid. with no antecedent citation
+  on the page, and 2 outside this repository's canon
+- 84 of those 984 citations overlap their own page by less than half. Most are
+  short antiphons that quote loosely, but two classes are real and neither is
+  corrected here. The Missal's Eccli. 44, 16 - the Gradual Ecce sacerdos
+  magnus, appointed on ten days - reaches Enoch placuit Deo in the tracked
+  Clementine, so the Missal's Sirach numbering and this edition's disagree
+  across chapter 44. And Ps. 115, 16-17 and Ps. 115, 15 address verses beyond
+  the tracked Clementine's Psalm 115, which ends at 10, because the Missal's
+  Gallican psalter numbers that psalm continuously with 113B. Both are
+  divergences between witnesses, not misreadings, and settling them needs a
+  citation_divergences ruling this file does not yet carry
 sections:
   seasonal:
     kind: seasonal
