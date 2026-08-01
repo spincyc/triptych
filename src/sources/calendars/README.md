@@ -144,6 +144,62 @@ citation it cannot encode without guessing rather than writing a wrong range.
   each cycle; otherwise it stays on the proper.
 - `notes` records a structural fact — a conditional element, an appointed
   alternative, a long and short form — in one short sentence.
+- `takes_from` says where a text is printed instead of printing it again. See
+  the next section.
+
+## A mass may say where its text is printed
+
+The books do this constantly. A fourth-class feria takes the preceding Sunday's
+Mass (RGMR 299). A Sunday after the Epiphany resumed after Pentecost takes the
+Twenty-third Sunday's chants over its own orations, Epistle and Gospel (RGMR
+298). A third-class saint takes a whole Mass from the *Commune Sanctorum* and
+supplies only a Collect. Until `takes_from` existed the only way to carry such a
+day was to retype the text beside itself, and the copies drift: the four resumed
+Sundays after the Epiphany held the same orations twice and the two copies had
+already disagreed at `caelestis` against `coelestis`, at `Caelestibus` against
+`Coelestibus`, and over whether one citation was a contiguous range or three
+discrete verses.
+
+`takes_from` is a mapping. On a mass it takes `mass`, optionally `form`,
+`citation` and `note`; on a proper it also takes `proper`, defaulting to the
+referring proper's own name. `mass` names a key in **the same file** — a
+reference never crosses calendars, because the two books print different prayers
+under the same names. `citation` records the edition's own printed pointer, which
+is the evidence that the reference is the book's and not the reader's.
+
+```yaml
+- key: resumed-epiphany-5
+  name: Fifth Sunday after the Epiphany, resumed after Pentecost
+  registry: 48R
+  season: after-pentecost
+  takes_from: {mass: epiphany-5, citation: RGMR 298}
+  propers:                       # replacements, matched on `name`
+  - name: Introit
+    takes_from: {mass: pentecost-23, citation: RGMR 298}
+```
+
+- A mass carrying `takes_from` starts from the referenced formulary, then
+  applies its own `propers` as replacements matched on `name`. That is what a
+  third-class saint is: the Mass of the Common, with the Collect of the saint.
+  A local proper the referenced formulary does not print is appended rather than
+  dropped.
+- A mass carrying `takes_from` may not also carry `forms`; a reference into a
+  mass that *is* printed in forms must name which form.
+- A proper carrying `takes_from` carries nothing else — no `source`, `text`,
+  `verses`, `cycles`, `incipit` or `translations`. All of those come from the
+  resolved proper, and a second copy here is the restatement the key removes.
+- References may chain. A cycle, a self-reference, a missing mass and a missing
+  proper are each refused by `check-calendar-masses`.
+- The resolution is `resolve_propers` in `scripts/_calendars.py`, read by the
+  validator and by `mass-propers` alike, so the reference the gate accepts and
+  the reference the site resolves cannot come apart. Nothing is ever copied into
+  the file; correcting the Common corrects every mass that takes it.
+- `mass-propers` looks a borrowed proper's `translations` up under the mass that
+  **prints** it, so an English oration is recorded once and served at every mass
+  the Missal appoints it on.
+- The census counts what each file *carries*, so a mass that takes a formulary
+  lowers the proper count. Its two `taking` rows count what the calendar
+  *appoints* from elsewhere. Neither shape is a placeholder.
 
 Propers stand in the order the edition appoints them, not in a fixed template,
 so Tracts, Sequences, palm-rite antiphons, the Improperia, the Exsultet, the

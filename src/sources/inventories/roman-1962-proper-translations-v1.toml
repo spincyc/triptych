@@ -30,14 +30,14 @@ distinguished from one nobody looked at, and so that a page can say that no
 English is recorded rather than showing Latin as though it were the answer.
 """
 verification = """
-Partly collated. Of the 162 entries, 108 carry `printed_page`, `ia_leaf`,
+Partly collated. Of the 151 entries, 100 carry `printed_page`, `ia_leaf`,
 `collated` and `collation_result`: those were read against the page images of
 Internet Archive item romanmissaltran00churgoog, the same 1861 printing this
 file quotes, at
 `https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg`
-on 2026-07-31. 65 were confirmed as printed, 41 were corrected against the
+on 2026-07-31. 59 were confirmed as printed, 39 were corrected against the
 page, and 2 were recorded from the page in propers this file had declared the
-witness does not print. The remaining 54 entries carry no such keys: they have
+witness does not print. The remaining 51 entries carry no such keys: they have
 still been read out of an optical-character-recognition text layer and
 collated against nothing, and must be treated as unverified.
 
@@ -57,7 +57,7 @@ propers this file had recorded as absent from the witness. That sampling is
 not biased at all -- it is the whole of a stratum -- and within it three of
 seven entries were corrected and two absences were refuted. Nine orations is
 too few to rate, and the stratum was selected for having no evidence, so
-nothing about the other 153 follows from it.
+nothing about the other 142 follows from it.
 
 The alignment of each oration to its mass was settled by reading the English
 against the Latin the calendar carries. That is a judgement and not a
@@ -204,26 +204,25 @@ repository carries. The honest total is small and worth stating plainly,
 because it is easy to read the corrections above as the end of the problem
 rather than as the result of having looked at two thirds of one file.
 
-The repository serves English for exactly 162 non-scriptural propers, all of
-them here. `src/web/data/structure/propers/roman-1962.json` carries 1,465
-propers, of which 561 are non-scriptural, and 162 of those 561 hold a
-`translations` array - 54 collects, 55 secrets, 53 postcommunions. Every one
-comes from this file: `tools/mass-propers` builds the browser's data by
-overlaying this inventory onto propers.yaml and reads no other translation
-source. The postconciliar calendar carries 498 non-scriptural propers and no
+The repository serves English for 151 non-scriptural propers, all of them
+here - 50 collects, 51 secrets, 50 postcommunions. Every one comes from this
+file: `tools/mass-propers` builds the browser's data by overlaying this
+inventory onto propers.yaml and reads no other translation source. The
+browser's data serves each of them at every mass that takes it, which is
+more days than there are entries. The postconciliar calendar carries 498 non-scriptural propers and no
 English at all, by the ICEL rights decision recorded in
 `postconciliar-proper-translations-v1.toml`, so no unverified English is being
 served there. Outside the two calendars the only other English orations in the
 tree are quotations of the sibling artifact through passage records, not an
 independent rendering.
 
-Of the 162:
+Of the 151:
 
-  108  read against the 1861 page images on 2026-07-31 - 65 confirmed,
-       41 corrected, and 2 recorded from the page in propers this file had
+  100  read against the 1861 page images on 2026-07-31 - 59 confirmed,
+       39 corrected, and 2 recorded from the page in propers this file had
        declared the witness does not print. These carry `collated` and
        `collation_result`.
-   54  never seen on a page, but matched byte for byte by the independent
+   51  never seen on a page, but matched byte for byte by the independent
        temporal-orations-en transcription of the same book. These carry
        `detector = "sibling-agrees"`.
     0  never seen on a page and with no sibling row at all.
@@ -232,9 +231,23 @@ The detector field is the disagreement test of `sibling_transcription` above,
 run over the whole file and recorded rather than left to be re-derived. It
 came back with no open disagreements, which is the expected result: the
 collation settled all 45 of them. What it does establish is the shape of what
-remains. The 54 are backed by two independent readings of one book that agree,
+remains. The 51 are backed by two independent readings of one book that agree,
 and where those two agreed the page vindicated them 54 times out of 54 - good
 evidence, and not the same thing as having looked.
+
+**Eleven entries and one `untranslated` row removed, 2026-07-31.** They were
+the four resumed Sundays after the Epiphany, which held the same three
+orations this file already carried under `epiphany-3` through `epiphany-6`.
+They were duplicates of the worst kind - the same English recorded twice
+because the same Latin was recorded twice - and one had already drifted from
+its twin, `resumed-epiphany-4`'s Collect carrying the incipit `Deus, qui nos,
+in tantis periculis` where `epiphany-4` carried `Deus, qui nos`. The calendar
+now says in data what RGMR 298 says in print, that those Sundays take the
+Mass of the Sunday after the Epiphany they resume, and `mass-propers` looks a
+borrowed proper's translation up under the mass that prints it. So the English
+is served at eight masses from four entries rather than at eight masses from
+eight, and the count above fell by eleven while nothing a reader sees was
+lost.
 
 **Corrected in place, 2026-07-31.** This census first reported a third
 category, 7 entries that had "no evidence of any kind":
@@ -2966,217 +2979,6 @@ We beseech thee, O Almighty God, that thou wouldst not leave exposed to the dang
 """
 
 [[entries]]
-mass = "resumed-epiphany-3"
-form = ""
-proper = "Collect"
-incipit = "Omnipotens sempiterne Deus"
-witness = "cummiskey-1861"
-printed_page = "98"
-ia_leaf = 108
-collated = "page-image, 2026-07-31"
-collation_result = "corrected"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-O almighty and eternal God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-3"
-form = ""
-proper = "Secret"
-incipit = "Haec hostia, Domine"
-witness = "cummiskey-1861"
-detector = "sibling-agrees"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-May this offering, O Lord, we beseech thee, cleanse away our sins: and sanctify the bodies and souls of thy servants, to prepare them for worthily celebrating this sacrifice. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-3"
-form = ""
-proper = "Postcommunion"
-incipit = "Quos tantis, Domine"
-witness = "cummiskey-1861"
-detector = "sibling-agrees"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-We beseech thee, O Lord, that we, to whom thou vouchsafest the use of these great mysteries, may be made truly worthy to receive the benefits thereof. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-4"
-form = ""
-proper = "Collect"
-incipit = "Deus, qui nos, in tantis periculis"
-witness = "cummiskey-1861"
-detector = "sibling-agrees"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-O God, who knowest that thro’ human frailty we are not able to subsist amidst so many dangers, grant us health of soul and body; that whatsoever we suffer for our sins, we may overcome by thy assistance. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-4"
-form = ""
-proper = "Secret"
-incipit = "Concede, quaesumus, omnipotens Deus"
-witness = "cummiskey-1861"
-printed_page = "101"
-ia_leaf = 111
-collated = "page-image, 2026-07-31"
-collation_result = "confirmed"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Grant, we beseech thee, O Almighty God, that the offering of this sacrifice may always cleanse our frailty from all evil, and be a protection to us. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-4"
-form = ""
-proper = "Postcommunion"
-incipit = "Munera tua nos, Deus"
-witness = "cummiskey-1861"
-printed_page = "101"
-ia_leaf = 111
-collated = "page-image, 2026-07-31"
-collation_result = "confirmed"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-May thy gifts, which we have partaken of, O God, detach us from all earthly pleasures, and ever refresh and strengthen us with heavenly food. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-5"
-form = ""
-proper = "Collect"
-incipit = "Familiam tuam"
-witness = "cummiskey-1861"
-printed_page = "101"
-ia_leaf = 111
-collated = "page-image, 2026-07-31"
-collation_result = "confirmed"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Preserve, we beseech thee, O Lord, thy family by thy constant mercy, that we, who confide solely in the support of thy heavenly grace, may be always defended by thy protection. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-5"
-form = ""
-proper = "Secret"
-incipit = "Hostias tibi, Domine"
-witness = "cummiskey-1861"
-printed_page = "102"
-ia_leaf = 112
-collated = "page-image, 2026-07-31"
-collation_result = "confirmed"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-We offer thee, O Lord, this sacrifice of propitiation: that thou wouldst mercifully forgive us our sins, and guide our tottering hearts. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-5"
-form = ""
-proper = "Postcommunion"
-incipit = "Quaesumus, omnipotens Deus"
-witness = "cummiskey-1861"
-printed_page = "102"
-ia_leaf = 112
-collated = "page-image, 2026-07-31"
-collation_result = "corrected"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-We beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-6"
-form = ""
-proper = "Collect"
-incipit = "Praesta, quaesumus, omnipotens Deus"
-witness = "cummiskey-1861"
-printed_page = "102"
-ia_leaf = 112
-collated = "page-image, 2026-07-31"
-collation_result = "confirmed"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Grant, we beseech thee, O Almighty God, that being always intent upon what is reasonable and just, we may, both in word and deed, perform what is acceptable to thee. Thro'.
-"""
-
-[[entries]]
-mass = "resumed-epiphany-6"
-form = ""
-proper = "Secret"
-incipit = "Haec nos oblatio, Deus"
-witness = "cummiskey-1861"
-printed_page = "104"
-ia_leaf = 114
-collated = "page-image, 2026-07-31"
-collation_result = "confirmed"
-witness_note = "the book prints this formulary once, among the Sundays after the Epiphany; the Missal appoints the same one again after Pentecost"
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-May this oblation, O God, we beseech thee, cleanse, renew, govern and protect us.
-"""
-
-[[entries]]
 mass = "last-sunday-after-pentecost"
 form = ""
 proper = "Collect"
@@ -3299,8 +3101,3 @@ form = ""
 proper = "Collect"
 reason = "no oration answering this proper was found in the witness"
 
-[[untranslated]]
-mass = "resumed-epiphany-6"
-form = ""
-proper = "Postcommunion"
-reason = "the witness prints it, but the text layer breaks off mid-clause"

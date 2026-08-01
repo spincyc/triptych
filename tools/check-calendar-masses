@@ -19,7 +19,14 @@ from pathlib import Path
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from _calendars import partition, restated_identity
+from _calendars import (
+    REFERENCE_EXCLUDES,
+    REFERENCE_FIELDS,
+    TAKES_FROM,
+    partition,
+    resolve_propers,
+    restated_identity,
+)
 from _tooling import (
     Example,
     examples_live_on_the_verbs,
@@ -100,6 +107,29 @@ DATE_RE = re.compile(r"^(\d{2})-(\d{2})$")
 FOLDED_COMMEMORATION = re.compile(r"\bcomm\.", re.IGNORECASE)
 
 
+def check_reference(
+    where: str, reference: object, problems: list[str], *, on_proper: bool
+) -> None:
+    """Shape only; `resolve_propers` owns whether the reference actually lands."""
+    if not isinstance(reference, dict):
+        problems.append(f"{where}: {TAKES_FROM} must be a mapping")
+        return
+    unknown = sorted(set(reference) - set(REFERENCE_FIELDS))
+    if unknown:
+        problems.append(
+            f"{where}: {TAKES_FROM} carries unknown field(s) {', '.join(unknown)}; "
+            f"it takes {', '.join(REFERENCE_FIELDS)}"
+        )
+    target = reference.get("mass")
+    if not isinstance(target, str) or not target:
+        problems.append(f"{where}: {TAKES_FROM} needs the key of the mass it takes from")
+    if not on_proper and "proper" in reference:
+        problems.append(
+            f"{where}: {TAKES_FROM} on a mass takes the whole formulary; name a "
+            "single proper on the proper that takes it"
+        )
+
+
 def check_proper(where: str, proper: object, problems: list[str]) -> None:
     if not isinstance(proper, dict):
         problems.append(f"{where}: proper is not a mapping")
@@ -109,6 +139,18 @@ def check_proper(where: str, proper: object, problems: list[str]) -> None:
         problems.append(f"{where}: proper has no name")
         return
     where = f"{where}/{name}"
+    if TAKES_FROM in proper:
+        # A proper that names where its text is printed holds none of its own.
+        # Its incipit and translations come from the resolved proper too, so a
+        # second copy of either here is the restatement the key exists to stop.
+        carried = [field for field in REFERENCE_EXCLUDES if field in proper]
+        if carried:
+            problems.append(
+                f"{where}: a proper taking its text from elsewhere must not also "
+                f"carry {', '.join(carried)}"
+            )
+        check_reference(where, proper[TAKES_FROM], problems, on_proper=True)
+        return
     source = proper.get("source")
     cycles = proper.get("cycles")
     # A cycle-varying proper may differ in kind between cycles — an acclamation
@@ -362,16 +404,31 @@ def check_entry(entry: object, index: int, problems: list[str]) -> str | None:
             problems.append(f"{where}: a dated entry needs the edition's printed rank")
     has_propers = "propers" in entry
     has_forms = "forms" in entry
-    if has_propers == has_forms:
-        problems.append(f"{where}: exactly one of propers or forms is required")
-    elif has_propers:
+    takes_from = TAKES_FROM in entry
+    if takes_from:
+        # A mass that takes another formulary may still print propers of its
+        # own: that is what a third-class saint is - the Mass of the Common
+        # with a Collect of the saint - and it is the whole point of the key.
+        # Forms are the one thing it cannot also carry, because a mass printed
+        # in forms is a mass with more than one formulary and the reference
+        # would not say which of them the borrowing applies to.
+        check_reference(where, entry[TAKES_FROM], problems, on_proper=False)
+        if has_forms:
+            problems.append(
+                f"{where}: a mass taking another formulary must not also carry forms"
+            )
+    elif has_propers == has_forms:
+        problems.append(
+            f"{where}: exactly one of propers, forms or {TAKES_FROM} is required"
+        )
+    if has_propers:
         propers = entry["propers"]
         if not isinstance(propers, list) or not propers:
             problems.append(f"{where}: propers must be a nonempty list")
         else:
             for proper in propers:
                 check_proper(where, proper, problems)
-    else:
+    if has_forms:
         forms = entry["forms"]
         if not isinstance(forms, list) or not forms:
             problems.append(f"{where}: forms must be a nonempty list")
@@ -446,6 +503,13 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
     duplicates = sorted({key for key in keys if keys.count(key) > 1})
     if duplicates:
         problems.append(f"{path}: duplicate mass keys: {', '.join(duplicates)}")
+    # Shape is not landing. `check_entry` proves a reference is well formed;
+    # only resolving it proves the mass, form and proper it names exist and
+    # that the chain terminates. Both this check and the browser's structure
+    # read that from `resolve_propers`, so neither can drift from the other.
+    for entry in masses:
+        _, trouble = resolve_propers(document, entry)
+        problems.extend(f"{path}: {problem}" for problem in dict.fromkeys(trouble))
     return {
         "masses": len(masses),
         "propers": sum(count_propers(entry) for entry in masses),

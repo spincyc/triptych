@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import _calendars  # noqa: E402
 from _psalms import (  # noqa: E402
     PSALMS,
     SYSTEMS,
@@ -116,9 +117,9 @@ EXAMPLES = {
                 "",
                 "| Calendar | Section | Masses | Propers | Masses holding only placeholders |",
                 "| --- | --- | ---: | ---: | ---: |",
-                "| roman-1962 | seasonal | 128 | 1141 | 5 |",
+                "| roman-1962 | seasonal | 128 | 1121 | 5 |",
                 "| roman-1962 | christological | 8 | 10 | 8 |",
-                "... 40 more lines",
+                "... 47 more lines",
             ),
             "prints the block and writes nothing; two tables, then the keys each row counts by",
         ),
@@ -186,6 +187,25 @@ def propers_of(mass: dict) -> list[tuple[str, dict]]:
     return out
 
 
+def appointed_propers(document: dict, mass: dict) -> list[tuple[str, dict, dict | None]]:
+    """The propers a mass actually appoints, references followed.
+
+    `propers_of` reads what the entry *carries*; this reads what the day *uses*.
+    They differ wherever the Missal prints a pointer instead of a formulary — a
+    feria taking the preceding Sunday, a saint taking a Mass of the Common — and
+    keeping the two verbs apart is what lets the census count the file honestly
+    while the reader is shown the Mass.
+
+    The derivation lives in `scripts/_calendars.py` and is shared with
+    the calendar-mass check, so a reference the browser resolves and a reference
+    the gate accepts cannot come apart.
+    """
+    entries, problems = _calendars.resolve_propers(document, mass)
+    if problems:
+        raise ValueError("; ".join(dict.fromkeys(problems)))
+    return entries
+
+
 def load_bible(name: str, root: Path) -> dict:
     """Resolve an indexed bible, keyed by the citations-encoded passage."""
     import yaml
@@ -219,6 +239,11 @@ def find_mass(root: Path, calendar: str, key: str) -> dict:
                 "psalm_numbering": document.get("psalm_numbering"),
                 "kind": mass.get("kind") or kind,
                 "mass": mass,
+                # The document, so a caller can resolve what the entry only
+                # points at. It is popped before the payload is serialised: the
+                # entry stays exactly as the file records it, and `--format
+                # yaml` stays a view of the source rather than of a resolution.
+                "_document": document,
             }
     raise KeyError(f"{calendar}: no mass with key {key!r}")
 
@@ -552,8 +577,19 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
     masses = []
     for kind, mass in masses_of(document):
         propers = []
-        for form, proper in propers_of(mass):
-            key = (mass.get("key"), form or "", proper.get("name"))
+        for form, proper, taken_from in appointed_propers(document, mass):
+            # A borrowed proper is looked up under the mass that prints it. The
+            # English of a Collect belongs to the Collect, not to each day the
+            # Missal appoints it on, and keying on the borrowing day would want
+            # the same oration recorded once per day - which is the hand-typed
+            # restatement this reference exists to remove. Twelve such rows sat
+            # in the 1962 sidecar for the four resumed Sundays after the
+            # Epiphany, and one of them had already drifted from its twin.
+            key = (
+                (taken_from["mass"], taken_from["form"] or "", taken_from["proper"])
+                if taken_from
+                else (mass.get("key"), form or "", proper.get("name"))
+            )
             recorded = overlay.get(key)
             # An entry whose proper no longer opens with the incipit it was
             # derived against is stale, and merging it on the strength of the
@@ -612,6 +648,12 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                         for year, (rows, owner) in cycles.items()
                         if rows or owner.get("text")
                     },
+                    # Where the Missal prints this text, when it is not printed
+                    # here. A page that showed a borrowed Collect as though the
+                    # day printed it would be asserting something the book does
+                    # not, so the provenance travels with the text and a reader
+                    # can see that the words are the Common's.
+                    "taken_from": taken_from or None,
                 }
             )
         masses.append(
@@ -630,6 +672,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                 # second derivation standing beside this one, free to disagree.
                 "date": mass.get("date"),
                 "registry": mass.get("registry"),
+                # The formulary this mass takes whole, where it takes one. The
+                # per-proper `taken_from` says the same thing slot by slot; this
+                # says it once, which is what a heading needs.
+                "takes_from": mass.get(_calendars.TAKES_FROM) or None,
                 "propers": propers,
             }
         )
@@ -779,7 +825,13 @@ CENSUS_KEYS = (
     "**Encoded passages** and **distinct books** are `tools/citations check`'s "
     "own counts, one passage per encoded citation entry and books counted distinct "
     "within a file. **Distinct slot names** counts distinct proper `name` values, "
-    "with `Placeholder` among them."
+    "with `Placeholder` among them. The two **taking** rows count the entries "
+    "that name where their text is printed instead of printing it — a feria "
+    "taking the preceding Sunday, a saint taking a Mass of the Common. Such an "
+    "entry holds few propers or none, so it lowers the proper count while "
+    "raising what the calendar can actually show: every row above counts what a "
+    "file **carries**, and these two count what it **appoints** from elsewhere. "
+    "Neither is a placeholder."
 )
 
 
@@ -847,6 +899,20 @@ def census_of(document: dict) -> dict:
             1 for proper in substantive if proper_sources(proper) & SCRIPTURE_BEARING
         ),
         "slot_names": len({str(proper.get("name") or "") for _, proper in every}),
+        # A mass that names the formulary it takes carries few propers or none,
+        # so the rows above would report it as emptier than a placeholder. It is
+        # the opposite: it is the one shape in this file that resolves to a
+        # whole Mass. Counted separately so neither reading can be taken for the
+        # other.
+        "masses_taking_a_formulary": sum(
+            1 for _, mass in masses_of(document) if mass.get(_calendars.TAKES_FROM)
+        ),
+        "propers_taken_by_reference": sum(
+            1
+            for _, mass in masses_of(document)
+            for _, proper in propers_of(mass)
+            if _calendars.TAKES_FROM in proper
+        ),
     }
 
 
@@ -896,6 +962,8 @@ CENSUS_MEASURES = (
     ("— inside a `forms` block", "propers_in_forms"),
     ("— carrying a `cycles` mapping", "cycle_propers"),
     ("Masses holding only placeholders", "placeholder_only_masses"),
+    ("Masses taking a formulary from another entry", "masses_taking_a_formulary"),
+    ("Propers taking their text from another entry", "propers_taken_by_reference"),
     ("Propers that are not placeholders", "substantive_propers"),
     ("— of those, scripture-bearing", "scripture_bearing_propers"),
     ("Encoded passages", "passages"),
@@ -974,6 +1042,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
     if not arguments.mass:
         raise ValueError("--mass is required")
     payload = find_mass(Path(arguments.root), arguments.calendar, arguments.mass)
+    arguments.appointed = appointed_propers(payload.pop("_document"), payload["mass"])
     # Resolve here so a missing bible or an unusable numbering fails before rendering.
     arguments.resolved_bible = (
         resolve_passages(payload, load_bible(arguments.bible, Path(arguments.bible_root)))
@@ -1015,9 +1084,15 @@ def wrap(text: str, indent: str) -> list[str]:
 
 
 def render_reading(
-    payload: dict, lang: str, resolved: dict, witness: str | None = None
+    payload: dict,
+    lang: str,
+    resolved: dict,
+    witness: str | None = None,
+    appointed: list[tuple[str, dict, dict | None]] | None = None,
 ) -> int:
     mass = payload["mass"]
+    if appointed is None:
+        appointed = [(form, proper, None) for form, proper in propers_of(mass)]
     print(mass.get("name") or mass.get("key") or "(unnamed)")
     subtitle = " · ".join(
         str(part)
@@ -1027,12 +1102,24 @@ def render_reading(
     if subtitle:
         print(subtitle)
     print("=" * WIDTH)
-    for form, proper in propers_of(mass):
+    reference = mass.get(_calendars.TAKES_FROM)
+    if reference:
+        printed = str(reference.get("citation") or "").strip()
+        print(
+            f"Takes the Mass of {reference.get('mass')}"
+            + (f", form {reference['form']}" if reference.get("form") else "")
+            + (f" ({printed})" if printed else "")
+        )
+    for form, proper, taken_from in appointed:
         heading = str(proper.get("name") or "(unnamed proper)")
         if form:
             heading = f"{heading} [{form}]"
         print(f"\n{heading}")
         print("-" * len(heading))
+        if taken_from:
+            print(f"  (from {taken_from['mass']}"
+                  + (f", {taken_from['proper']}" if taken_from.get("proper") else "")
+                  + ")")
         for entry in proper.get("verses") or []:
             if isinstance(entry, dict) and entry.get("ref"):
                 # The missal's own citation stands; a conversion is shown beside it.
@@ -1244,6 +1331,7 @@ def main(argv: list[str] | None = None) -> int:
             arguments.lang,
             getattr(arguments, "resolved_bible", {}),
             arguments.witness,
+            getattr(arguments, "appointed", None),
         )
 
     return run_verb_cli(

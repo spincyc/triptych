@@ -12111,394 +12111,102 @@ sections:
       name: Third Sunday after the Epiphany, resumed after Pentecost
       registry: 46R
       season: after-pentecost
-      notes: The chants (Introit, Gradual, Alleluia, Offertory, Communion) are those of the Twenty-third
-        Sunday after Pentecost.
+      notes: RGMR 298 appoints this Mass. Its Introit, Gradual, Alleluia with its
+        verse, Offertory and Communion are those of the Twenty-third Sunday after
+        Pentecost, and its orations, Epistle and Gospel are those of the Sunday
+        after the Epiphany it resumes. Both are taken by reference rather than
+        retyped. While they were retyped the copies drifted - the two copies of
+        the Epiphany Sunday's orations disagreed at caelestis against coelestis
+        and Caelestibus against Coelestibus, and the two copies of the
+        Twenty-third Sunday's Introit encoded one citation as a contiguous range
+        and the other as three discrete verses.
+      takes_from: {mass: epiphany-3, citation: RGMR 298}
       propers:
       - name: Introit
-        incipit: Dicit Dominus
-        source: scripture
-        verses:
-        - book: Jeremiah
-          ranges:
-          - begin: {chapter: 29, verse: 11}
-            end: {chapter: 29, verse: 11}
-          - begin: {chapter: 29, verse: 12}
-            end: {chapter: 29, verse: 12}
-          - begin: {chapter: 29, verse: 14}
-            end: {chapter: 29, verse: 14}
-          ref: Jeremiah 29:11, 12, 14
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 84, verse: 2}
-            end: {chapter: 84, verse: 2}
-          ref: Psalm 84:2
-      - name: Collect
-        incipit: Omnipotens sempiterne Deus
-        source: composed
-        text: |
-          Omnipotens sempiterne Deus, infirmitatem nostram propitius respice:
-          atque, ad protegendum nos, dexteram tuae majestatis extende. Per
-          Dominum nostrum Jesum Christum...
-      - name: Epistle
-        source: scripture
-        verses:
-        - book: Romans
-          ranges:
-          - begin: {chapter: 12, verse: 16}
-            end: {chapter: 12, verse: 21}
-          ref: Romans 12:16-21
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Gradual
-        incipit: Liberasti nos, Domine
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 43, verse: 8}
-            end: {chapter: 43, verse: 9}
-          ref: Psalm 43:8-9
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Alleluia
-        incipit: De profundis clamavi
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 129, verse: 1}
-            end: {chapter: 129, verse: 2}
-          ref: Psalm 129:1-2
-      - name: Gospel
-        source: scripture
-        verses:
-        - book: Matthew
-          ranges:
-          - begin: {chapter: 8, verse: 1}
-            end: {chapter: 8, verse: 13}
-          ref: Matthew 8:1-13
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Offertory
-        incipit: De profundis clamavi
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 129, verse: 1}
-            end: {chapter: 129, verse: 2}
-          ref: Psalm 129:1-2
-      - name: Secret
-        incipit: Haec hostia, Domine
-        source: composed
-        text: |
-          Haec hostia, Domine, quaesumus, emundet nostra delicta: et, ad
-          sacrificium celebrandum, subditorum tibi corpora mentesque
-          sanctificet. Per Dominum nostrum Jesum Christum...
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Communion
-        incipit: Amen dico vobis, quidquid orantes
-        source: scripture
-        verses:
-        - book: Mark
-          ranges:
-          - begin: {chapter: 11, verse: 24}
-            end: {chapter: 11, verse: 24}
-          ref: Mark 11:24
-      - name: Postcommunion
-        incipit: Quos tantis, Domine
-        source: composed
-        text: |
-          Quos tantis, Domine, largiris uti mysteriis: quaesumus; ut effectibus
-          nos eorum veraciter aptare digneris. Per Dominum nostrum Jesum
-          Christum...
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
     - key: resumed-epiphany-4
       name: Fourth Sunday after the Epiphany, resumed after Pentecost
       registry: 47R
       season: after-pentecost
-      notes: The chants (Introit, Gradual, Alleluia, Offertory, Communion) are those of the Twenty-third
-        Sunday after Pentecost.
+      notes: RGMR 298 appoints this Mass. Its Introit, Gradual, Alleluia with its
+        verse, Offertory and Communion are those of the Twenty-third Sunday after
+        Pentecost, and its orations, Epistle and Gospel are those of the Sunday
+        after the Epiphany it resumes. Both are taken by reference rather than
+        retyped. While they were retyped the copies drifted - the two copies of
+        the Epiphany Sunday's orations disagreed at caelestis against coelestis
+        and Caelestibus against Coelestibus, and the two copies of the
+        Twenty-third Sunday's Introit encoded one citation as a contiguous range
+        and the other as three discrete verses.
+      takes_from: {mass: epiphany-4, citation: RGMR 298}
       propers:
       - name: Introit
-        incipit: Dicit Dominus
-        source: scripture
-        verses:
-        - book: Jeremiah
-          ranges:
-          - begin: {chapter: 29, verse: 11}
-            end: {chapter: 29, verse: 11}
-          - begin: {chapter: 29, verse: 12}
-            end: {chapter: 29, verse: 12}
-          - begin: {chapter: 29, verse: 14}
-            end: {chapter: 29, verse: 14}
-          ref: Jeremiah 29:11, 12, 14
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 84, verse: 2}
-            end: {chapter: 84, verse: 2}
-          ref: Psalm 84:2
-      - name: Collect
-        incipit: Deus, qui nos, in tantis periculis
-        source: composed
-        text: |
-          Deus, qui nos, in tantis periculis constitutos, pro humana scis
-          fragilitate non posse subsistere: da nobis salutem mentis et corporis;
-          ut ea, quae pro peccatis nostris patimur, te adjuvante vincamus. Per
-          Dominum nostrum Jesum Christum...
-      - name: Epistle
-        source: scripture
-        verses:
-        - book: Romans
-          ranges:
-          - begin: {chapter: 13, verse: 8}
-            end: {chapter: 13, verse: 10}
-          ref: Romans 13:8-10
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Gradual
-        incipit: Liberasti nos, Domine
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 43, verse: 8}
-            end: {chapter: 43, verse: 9}
-          ref: Psalm 43:8-9
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Alleluia
-        incipit: De profundis clamavi
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 129, verse: 1}
-            end: {chapter: 129, verse: 2}
-          ref: Psalm 129:1-2
-      - name: Gospel
-        source: scripture
-        verses:
-        - book: Matthew
-          ranges:
-          - begin: {chapter: 8, verse: 23}
-            end: {chapter: 8, verse: 27}
-          ref: Matthew 8:23-27
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Offertory
-        incipit: De profundis clamavi
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 129, verse: 1}
-            end: {chapter: 129, verse: 2}
-          ref: Psalm 129:1-2
-      - name: Secret
-        incipit: Concede, quaesumus, omnipotens Deus
-        source: composed
-        text: |
-          Concede, quaesumus, omnipotens Deus: ut hujus sacrificii munus oblatum
-          fragilitatem nostram ab omni malo purget semper et muniat. Per Dominum
-          nostrum Jesum Christum...
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Communion
-        incipit: Amen dico vobis, quidquid orantes
-        source: scripture
-        verses:
-        - book: Mark
-          ranges:
-          - begin: {chapter: 11, verse: 24}
-            end: {chapter: 11, verse: 24}
-          ref: Mark 11:24
-      - name: Postcommunion
-        incipit: Munera tua nos, Deus
-        source: composed
-        text: |
-          Munera tua nos, Deus, a delectationibus terrenis expediant: et
-          coelestibus semper instaurent alimentis. Per Dominum nostrum Jesum
-          Christum...
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
     - key: resumed-epiphany-5
       name: Fifth Sunday after the Epiphany, resumed after Pentecost
       registry: 48R
       season: after-pentecost
-      notes: The chants (Introit, Gradual, Alleluia, Offertory, Communion) are those of the Twenty-third
-        Sunday after Pentecost.
+      notes: RGMR 298 appoints this Mass. Its Introit, Gradual, Alleluia with its
+        verse, Offertory and Communion are those of the Twenty-third Sunday after
+        Pentecost, and its orations, Epistle and Gospel are those of the Sunday
+        after the Epiphany it resumes. Both are taken by reference rather than
+        retyped. While they were retyped the copies drifted - the two copies of
+        the Epiphany Sunday's orations disagreed at caelestis against coelestis
+        and Caelestibus against Coelestibus, and the two copies of the
+        Twenty-third Sunday's Introit encoded one citation as a contiguous range
+        and the other as three discrete verses.
+      takes_from: {mass: epiphany-5, citation: RGMR 298}
       propers:
       - name: Introit
-        incipit: Dicit Dominus
-        source: scripture
-        verses:
-        - book: Jeremiah
-          ranges:
-          - begin: {chapter: 29, verse: 11}
-            end: {chapter: 29, verse: 11}
-          - begin: {chapter: 29, verse: 12}
-            end: {chapter: 29, verse: 12}
-          - begin: {chapter: 29, verse: 14}
-            end: {chapter: 29, verse: 14}
-          ref: Jeremiah 29:11, 12, 14
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 84, verse: 2}
-            end: {chapter: 84, verse: 2}
-          ref: Psalm 84:2
-      - name: Collect
-        incipit: Familiam tuam
-        source: composed
-        text: |
-          Familiam tuam, quaesumus, Domine, continua pietate custodi: ut, quae
-          in sola spe gratiae coelestis innititur, tua semper protectione
-          muniatur. Per Dominum nostrum Jesum Christum...
-      - name: Epistle
-        source: scripture
-        verses:
-        - book: Colossians
-          ranges:
-          - begin: {chapter: 3, verse: 12}
-            end: {chapter: 3, verse: 17}
-          ref: Colossians 3:12-17
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Gradual
-        incipit: Liberasti nos, Domine
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 43, verse: 8}
-            end: {chapter: 43, verse: 9}
-          ref: Psalm 43:8-9
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Alleluia
-        incipit: De profundis clamavi
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 129, verse: 1}
-            end: {chapter: 129, verse: 2}
-          ref: Psalm 129:1-2
-      - name: Gospel
-        source: scripture
-        verses:
-        - book: Matthew
-          ranges:
-          - begin: {chapter: 13, verse: 24}
-            end: {chapter: 13, verse: 30}
-          ref: Matthew 13:24-30
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Offertory
-        incipit: De profundis clamavi
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 129, verse: 1}
-            end: {chapter: 129, verse: 2}
-          ref: Psalm 129:1-2
-      - name: Secret
-        incipit: Hostias tibi, Domine
-        source: composed
-        text: |
-          Hostias tibi, Domine, placationis offerimus: ut et delicta nostra
-          miseratus absolvas, et nutantia corda tu dirigas. Per Dominum nostrum
-          Jesum Christum...
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Communion
-        incipit: Amen dico vobis, quidquid orantes
-        source: scripture
-        verses:
-        - book: Mark
-          ranges:
-          - begin: {chapter: 11, verse: 24}
-            end: {chapter: 11, verse: 24}
-          ref: Mark 11:24
-      - name: Postcommunion
-        incipit: Quaesumus, omnipotens Deus
-        source: composed
-        text: |
-          Quaesumus, omnipotens Deus: ut illius salutaris capiamus effectum,
-          cujus per haec mysteria pignus accepimus. Per Dominum nostrum Jesum
-          Christum...
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
     - key: resumed-epiphany-6
       name: Sixth Sunday after the Epiphany, resumed after Pentecost
       registry: 49R
       season: after-pentecost
-      notes: The chants (Introit, Gradual, Alleluia, Offertory, Communion) are those of the Twenty-third
-        Sunday after Pentecost.
+      notes: RGMR 298 appoints this Mass. Its Introit, Gradual, Alleluia with its
+        verse, Offertory and Communion are those of the Twenty-third Sunday after
+        Pentecost, and its orations, Epistle and Gospel are those of the Sunday
+        after the Epiphany it resumes. Both are taken by reference rather than
+        retyped. While they were retyped the copies drifted - the two copies of
+        the Epiphany Sunday's orations disagreed at caelestis against coelestis
+        and Caelestibus against Coelestibus, and the two copies of the
+        Twenty-third Sunday's Introit encoded one citation as a contiguous range
+        and the other as three discrete verses.
+      takes_from: {mass: epiphany-6, citation: RGMR 298}
       propers:
       - name: Introit
-        incipit: Dicit Dominus
-        source: scripture
-        verses:
-        - book: Jeremiah
-          ranges:
-          - begin: {chapter: 29, verse: 11}
-            end: {chapter: 29, verse: 11}
-          - begin: {chapter: 29, verse: 12}
-            end: {chapter: 29, verse: 12}
-          - begin: {chapter: 29, verse: 14}
-            end: {chapter: 29, verse: 14}
-          ref: Jeremiah 29:11, 12, 14
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 84, verse: 2}
-            end: {chapter: 84, verse: 2}
-          ref: Psalm 84:2
-      - name: Collect
-        incipit: Praesta, quaesumus, omnipotens Deus
-        source: composed
-        text: |
-          Praesta, quaesumus, omnipotens Deus: ut, semper rationabilia
-          meditantes, quae tibi sunt placita, et dictis exsequamur et factis.
-          Per Dominum nostrum Jesum Christum...
-      - name: Epistle
-        source: scripture
-        verses:
-        - book: 1 Thessalonians
-          ranges:
-          - begin: {chapter: 1, verse: 2}
-            end: {chapter: 1, verse: 10}
-          ref: 1 Thessalonians 1:2-10
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Gradual
-        incipit: Liberasti nos, Domine
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 43, verse: 8}
-            end: {chapter: 43, verse: 9}
-          ref: Psalm 43:8-9
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Alleluia
-        incipit: De profundis clamavi
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 129, verse: 1}
-            end: {chapter: 129, verse: 2}
-          ref: Psalm 129:1-2
-      - name: Gospel
-        source: scripture
-        verses:
-        - book: Matthew
-          ranges:
-          - begin: {chapter: 13, verse: 31}
-            end: {chapter: 13, verse: 35}
-          ref: Matthew 13:31-35
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Offertory
-        incipit: De profundis clamavi
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 129, verse: 1}
-            end: {chapter: 129, verse: 2}
-          ref: Psalm 129:1-2
-      - name: Secret
-        incipit: Haec nos oblatio, Deus
-        source: composed
-        text: |
-          Haec nos oblatio, Deus, mundet, quaesumus, et renovet, gubernet et
-          protegat. Per Dominum nostrum Jesum Christum...
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
       - name: Communion
-        incipit: Amen dico vobis, quidquid orantes
-        source: scripture
-        verses:
-        - book: Mark
-          ranges:
-          - begin: {chapter: 11, verse: 24}
-            end: {chapter: 11, verse: 24}
-          ref: Mark 11:24
-      - name: Postcommunion
-        incipit: Coelestibus, Domine, pasti
-        source: composed
-        text: |
-          Coelestibus, Domine, pasti deliciis: quaesumus; ut semper eadem, per
-          quae veraciter vivimus, appetamus. Per Dominum nostrum Jesum
-          Christum...
+        takes_from: {mass: pentecost-23, citation: RGMR 298}
     - key: last-sunday-after-pentecost
       name: Twenty-fourth and Last Sunday after Pentecost
       registry: '38'

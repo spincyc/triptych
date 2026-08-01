@@ -35,9 +35,18 @@ A mass requires `key`, `name`, `registry`. `registry` is always a **quoted
 string** — `'39'`, never `39`. It may carry `date`, `rank`, `season`, `kind`,
 `notes`; an entry carrying `date` must **also** carry a valid `kind` and the
 edition's printed `rank`. It carries **either** `propers` **or** `forms`, never
-both — `exactly one of propers or forms is required`.
+both — `exactly one of propers, forms or takes_from is required` — unless it
+carries `takes_from`, which may stand alone or beside `propers` but never beside
+`forms`.
 
-A proper requires `name` and a `source`:
+`takes_from` says where a text is printed instead of printing it again, and is
+the only sanctioned way to carry a mass that takes another's formulary. On a
+mass: `mass` (a key in the **same file**), optional `form`, `citation`, `note`.
+On a proper, also `proper`, defaulting to its own name; a proper carrying it
+carries nothing else. A mass's own `propers` replace the borrowed ones by
+`name`. `src/sources/calendars/README.md` owns the full rule.
+
+A proper requires `name` and a `source`, unless it carries `takes_from`:
 
 | `source` | carries | must not carry |
 | --- | --- | --- |
@@ -114,6 +123,7 @@ Assume more of the same kind exist.
 | A verse **past the end of a chapter** | `index-bible` derives a chapter's bounds from the verses the edition prints, so it clamps rather than reports. `Mark 4:41`, `1 Thessalonians 4:18`, `Acts 7:60` are each dropped this way. | Open. The remedy is a `merged-verse` row in the edition's verse-aliases artifact, because the Douay and Clementine disagree here. |
 | **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their orations are still placeholders. |
 | The **book's identity** retyped in a second file | `edition` sat in `propers.yaml` and again in `rubrics.yaml`, in both calendars — four hand-typed copies of two strings, with nothing comparing them. They agreed; nothing made them agree. | Now caught: the mass index owns `edition` and `edition_short`, `calendar-rubrics` reads both from it, and `_calendars.restated_identity` refuses a companion that carries either — whether or not its value matches. |
+| One formulary **retyped under a second mass** | The schema could not say "this mass takes that text", so a day the Missal carries by a pointer had to be carried by a copy, and nothing compared the copies. The four resumed Sundays after the Epiphany held one set of orations twice and disagreed in five ways — `caelestis`/`coelestis`, `Caelestibus`/`Coelestibus`, `caelestibus`/`coelestibus`, one Introit citation encoded as a contiguous range against three discrete verses, and a dozen truncated incipits. The English was duplicated with it, twelve sidecar rows for four orations. | Now expressible: `takes_from` on a mass or a proper, resolved once by `_calendars.resolve_propers` for both the validator and the browser. The four Sundays now reference `epiphany-3`..`-6` and `pentecost-23` under RGMR 298. **Not yet caught** — nothing detects a formulary retyped where a reference would do. |
 | Any **stale count table** | One census of these files existed in three retyped copies, and all three disagreed; the 1962 sanctoral section read 247 in a document that called itself current and 307 in the file. | Now caught for the two documents that carry the derived block — this one and `docs/the-mass.md` — by `mass-propers census --check`, which `make check-propers-census` runs. `src/sources/calendars/README.md` and `guidance/liturgy/propers-completion-todo.md` still carry hand-typed tables. Open. |
 
 ## Tool ownership
@@ -180,7 +190,7 @@ carries the identical block.
 
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
-| roman-1962 | seasonal | 128 | 1141 | 5 |
+| roman-1962 | seasonal | 128 | 1121 | 5 |
 | roman-1962 | christological | 8 | 10 | 8 |
 | roman-1962 | marian | 17 | 17 | 17 |
 | roman-1962 | sanctoral | 307 | 307 | 307 |
@@ -192,14 +202,16 @@ carries the identical block.
 | Measure | roman-1962 | postconciliar |
 | --- | ---: | ---: |
 | Masses | 460 | 268 |
-| Propers | 1475 | 1031 |
+| Propers | 1455 | 1031 |
 | — named `Placeholder` | 339 | 210 |
 | — inside a `forms` block | 97 | 117 |
 | — carrying a `cycles` mapping | 0 | 252 |
 | Masses holding only placeholders | 337 | 205 |
-| Propers that are not placeholders | 1136 | 821 |
-| — of those, scripture-bearing | 922 | 548 |
-| Encoded passages | 1115 | 1082 |
+| Masses taking a formulary from another entry | 4 | 0 |
+| Propers taking their text from another entry | 20 | 0 |
+| Propers that are not placeholders | 1116 | 821 |
+| — of those, scripture-bearing | 894 | 548 |
+| Encoded passages | 1083 | 1082 |
 | Distinct books cited | 47 | 61 |
 | Distinct slot names | 88 | 86 |
 
@@ -219,7 +231,12 @@ placeholders sit inside a `forms` block. **Scripture-bearing** means a
 passages** and **distinct books** are `tools/citations check`'s own counts,
 one passage per encoded citation entry and books counted distinct within a
 file. **Distinct slot names** counts distinct proper `name` values, with
-`Placeholder` among them.
+`Placeholder` among them. The two **taking** rows count the entries that name
+where their text is printed instead of printing it — a feria taking the
+preceding Sunday, a saint taking a Mass of the Common. Such an entry holds few
+propers or none, so it lowers the proper count while raising what the calendar
+can actually show: every row above counts what a file **carries**, and these
+two count what it **appoints** from elsewhere. Neither is a placeholder.
 
 <!-- census:end -->
 

@@ -311,7 +311,7 @@ the calendars, and nothing else on this page states a figure it gives.
 
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
-| roman-1962 | seasonal | 128 | 1141 | 5 |
+| roman-1962 | seasonal | 128 | 1121 | 5 |
 | roman-1962 | christological | 8 | 10 | 8 |
 | roman-1962 | marian | 17 | 17 | 17 |
 | roman-1962 | sanctoral | 307 | 307 | 307 |
@@ -323,14 +323,16 @@ the calendars, and nothing else on this page states a figure it gives.
 | Measure | roman-1962 | postconciliar |
 | --- | ---: | ---: |
 | Masses | 460 | 268 |
-| Propers | 1475 | 1031 |
+| Propers | 1455 | 1031 |
 | — named `Placeholder` | 339 | 210 |
 | — inside a `forms` block | 97 | 117 |
 | — carrying a `cycles` mapping | 0 | 252 |
 | Masses holding only placeholders | 337 | 205 |
-| Propers that are not placeholders | 1136 | 821 |
-| — of those, scripture-bearing | 922 | 548 |
-| Encoded passages | 1115 | 1082 |
+| Masses taking a formulary from another entry | 4 | 0 |
+| Propers taking their text from another entry | 20 | 0 |
+| Propers that are not placeholders | 1116 | 821 |
+| — of those, scripture-bearing | 894 | 548 |
+| Encoded passages | 1083 | 1082 |
 | Distinct books cited | 47 | 61 |
 | Distinct slot names | 88 | 86 |
 
@@ -350,7 +352,12 @@ placeholders sit inside a `forms` block. **Scripture-bearing** means a
 passages** and **distinct books** are `tools/citations check`'s own counts,
 one passage per encoded citation entry and books counted distinct within a
 file. **Distinct slot names** counts distinct proper `name` values, with
-`Placeholder` among them.
+`Placeholder` among them. The two **taking** rows count the entries that name
+where their text is printed instead of printing it — a feria taking the
+preceding Sunday, a saint taking a Mass of the Common. Such an entry holds few
+propers or none, so it lowers the proper count while raising what the calendar
+can actually show: every row above counts what a file **carries**, and these
+two count what it **appoints** from elsewhere. Neither is a placeholder.
 
 <!-- census:end -->
 
