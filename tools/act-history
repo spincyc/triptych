@@ -184,8 +184,10 @@ UNIT_ID = re.compile(r"^[a-z0-9]+(?:[-.][a-z0-9]+)*$")
 
 class Vocabulary:
     def __init__(self, name, group_table, group_word, group_fields, group_always,
-                 unit_word, unit_plural, withheld_label, unit_carries_establishing_act):
+                 unit_word, unit_plural, withheld_label, unit_carries_establishing_act,
+                 default_book):
         self.name = name
+        self.default_book = default_book
         self.group_table = group_table
         self.group_word = group_word
         self.group_fields = group_fields
@@ -207,6 +209,11 @@ VOCABULARIES = {
         unit_plural="units",
         withheld_label="incipit withheld",
         unit_carries_establishing_act=False,
+        # `holy-week` because that is where the first slice put everything and a
+        # default that moved existing paths would rewrite a history nobody
+        # changed. A slice carrying more than one part of the missal sets `book`
+        # on each Mass.
+        default_book="holy-week",
     ),
     "law": Vocabulary(
         name="law",
@@ -218,6 +225,11 @@ VOCABULARIES = {
         unit_plural="canons",
         withheld_label="text withheld",
         unit_carries_establishing_act=True,
+        # A canon is not liturgy and must not land under `holy-week`, which is
+        # what it did until a law slice was emitted and read. A division that
+        # names its own `book` overrides this; the canon-law slice names the
+        # code, so a path reads `cic-1983/<division>/can-1671.txt`.
+        default_book="canons",
     ),
 }
 DEFAULT_VOCABULARY = "liturgy"
@@ -551,12 +563,6 @@ def topological(acts: dict[str, dict]) -> list[str]:
 # trees.
 
 
-# The top directory a mass stands in. It defaults to `holy-week` because that
-# is where the first slice put everything and a default that moved existing
-# paths would rewrite a history nobody changed. A slice carrying more than one
-# part of the missal sets `book` on each mass.
-DEFAULT_BOOK = "holy-week"
-
 # Everything a station writes that is NOT liturgy. `commonality` compares two
 # lines' liturgies, and comparing their act records instead would report that
 # two rites differ because two decrees have different names.
@@ -763,7 +769,7 @@ class State:
             mass = self.masses.get(mass_id)
             if mass is None:
                 raise Problem(f"unit stands in mass {mass_id!r}, which no act has introduced")
-            book = mass.get("book") or DEFAULT_BOOK
+            book = mass.get("book") or self.vocab.default_book
             out[f"{book}/{mass_id}/{self.vocab.group_word}.txt"] = group_body(mass, self.vocab)
             ordered = sorted(units, key=lambda unit: (unit["order"], unit["slot"]))
             out[f"{book}/{mass_id}/order.txt"] = order_body([unit["slot"] for unit in ordered])
@@ -1067,6 +1073,7 @@ def render_act(act: dict) -> str:
                          ("amends", "why this row was amended"),
                          ("reception_basis", "why these parents converge"),
                          ("act_citation_note", "on the missing instrument"),
+                         ("act_citation_scope", "what was searched, and where not-found stops"),
                          ("quotation", "quoted"), ("parent_quotation", "quoted for the edge"),
                          ("effect", "effect"), ("effect_note", "on that effect")):
         if act.get(field):
@@ -1176,7 +1183,7 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
         for mass in masses_by_act.get(act_id, []):
             state.masses[mass["id"]] = {
                 **{field: mass.get(field, "") for field in vocab.group_fields},
-                "book": mass.get("book") or DEFAULT_BOOK,
+                "book": mass.get("book") or vocab.default_book,
             }
         for unit in units_by_act.get(act_id, []):
             state.units[unit["id"]] = {
@@ -1265,6 +1272,22 @@ def check(data: dict) -> dict:
         if act.get("act_citation") == "not-found" and not act.get("act_citation_note"):
             problems.append(
                 f"act {act_id}: a station whose instrument was not found must say so at length"
+            )
+        # guidance/act-histories.md section 10, item 2, and the correction box in
+        # section 7.2 that produced it. `not-found` once meant "not in these seven
+        # text layers" and read as a claim about the repository, and the decree it
+        # denied was registered here the whole time. A negative belongs to the
+        # corpus it was taken in, so the field that records it says which.
+        if act.get("act_citation") == "not-found" and not act.get("act_citation_scope"):
+            problems.append(
+                f"act {act_id}: `not-found` is a result of a search and must name what was "
+                "searched, in `act_citation_scope`; a bare not-found reads as a claim about "
+                "the tree rather than about a corpus"
+            )
+        if act.get("act_citation_scope") and act.get("act_citation") != "not-found":
+            problems.append(
+                f"act {act_id}: `act_citation_scope` records the bound on a not-found search "
+                "and this station's instrument is not not-found"
             )
         # The narrow exception, held narrow. A `printed` station claims no act,
         # so it must name the printing it stands on and say why that printing is
@@ -1435,6 +1458,18 @@ def check(data: dict) -> dict:
         raise Problem("\n".join(problems))
 
     order, states, kinds_used = build(data)
+    # Build the tree of every state, and throw the result away. `build` computes
+    # what each act left; only `State.tree` lays it out as paths, and only there
+    # is it found that a unit stands in a container no act on its line has
+    # introduced -- which is what happens when a container declares no `at` and
+    # silently defaults to the first station in the whole graph, on another line.
+    # Leaving that to `emit` meant `check` said ok about a slice that could not
+    # be written.
+    for act_id in order:
+        try:
+            states[act_id].tree()
+        except Problem as problem:
+            raise Problem(f"{act_id}: {problem}") from None
     counted: dict[str, int] = {}
     for kinds in kinds_used.values():
         for kind in kinds:
@@ -2167,7 +2202,8 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
         edges = {
             field: (act.get(field) or "").strip()
             for field in ("root_basis", "parent_basis", "reception_basis",
-                          "via_unrepresented_basis", "printing_basis", "act_citation_note")
+                          "via_unrepresented_basis", "printing_basis", "act_citation_note",
+                          "act_citation_scope")
             if act.get(field)
         }
         write_json(root / slice_id / "station" / f"{name}.json", {**sets[act_id], "edges": edges})

@@ -786,6 +786,21 @@ act is missing.
 The date is `1971` with `date_precision = "year"`, which is what the leaf gives.
 No day is invented to make it sort.
 """
+act_citation_scope = """
+ADDED 2026-08-01, when `check` began requiring a not-found to name what was
+searched (guidance/act-histories.md section 10, item 2). The bound is stated
+from what this record can support and no more.
+
+Searched: THIS REPOSITORY'S OWN SOURCE LIBRARY, for `reimpressio`, which returns
+fifteen files. They are this slice, four other inventories, one calendar, the
+2008 Variationes work and its Notitiae edition, a segment record of the 2002
+typical edition, and a work record for the 2008 NOTICE of the emended reprint --
+that is, records ABOUT the reprint and none of the reprint's own instrument.
+
+NOT searched: the Acta Apostolicae Sedis for 1971, Notitiae for 1971, and the
+front matter of any 1971 printing. Not found here means not in the tree and not
+in the witnesses this slice declares. It is not a statement about any archive.
+"""
 citation = "Missale Romanum, editio typica tertia, 2002, printing-history leaf: `Reimpressio emendata, 1971`."
 attested_in = ["2002-missale-romanum-typica-tertia"]
 read_from = "ocr-only"
@@ -945,6 +960,27 @@ So the act is named, dated and twice attested by later instruments, and its own
 text has not been read. `not-found` is exactly that state, and it is not
 `none-claimed`: an instrument is claimed here and is missing, which is a
 different thing from a printing for which no instrument is claimed at all.
+"""
+act_citation_scope = """
+ADDED 2026-08-01, and THE SEARCH IT RECORDS FOUND SOMETHING. This is section
+7.2's correction happening a second time, caught this time by the rule that
+correction produced.
+
+Searched: THIS REPOSITORY'S OWN SOURCE LIBRARY, for `quattuor abhinc annos`,
+case-insensitively. Four files answer. Two are inventories, one is the Ecclesia
+Dei passage record this note already cites -- and the fourth is
+src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-76-1984/edition.toml,
+whose own notes read that the complete 1984 volume `carries the Congregation for
+Divine Worship's letter of 3 October 1984 on the use of the Roman Missal of 1962
+(Quattuor abhinc annos) at pp. 1088-1089`. That edition has a registered OCR PDF
+artifact beneath it.
+
+SO THE INSTRUMENT IS AT NAMED PAGES OF A VOLUME THIS REPOSITORY ALREADY HOLDS,
+and `not-found` here means not in the missal corpus this slice reads. The value
+is left as it stands because promoting it is a claim that somebody READ the
+letter, and nobody has; naming a document and reading it are different acts. The
+next lane to touch this station should open pages 1088-1089 of that artifact,
+and the station should then become `cited-in-corpus`.
 """
 citation = "Sacred Congregation for Divine Worship, Quattuor abhinc annos, 3 October 1984, as named in Summorum Pontificum and in the footnotes of Ecclesia Dei."
 attested_in = []
