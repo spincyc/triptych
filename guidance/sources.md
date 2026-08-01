@@ -69,6 +69,23 @@ Keep the following objects distinct:
   corpus was used, searched, or retained as a lead at stated loci and in a
   stated role. Bindings belong beside the publication's research records.
 
+**A derivative and a projection are different edges.** `derived_from` means
+these bytes were transformed into those bytes — an OCR of a scan, a
+normalisation of a transcription — and stays inside one edition, because that is
+what a derivative is. `projected_from` names *testimony*: the witnesses a rule
+was applied over to infer something the edition does not carry itself. It
+crosses editions by construction and must, since a projection drawn only from
+the edition it describes would have nothing to draw on.
+
+The Douay-Rheims carries no paragraph marks — zero pilcrows in 5.8 MB — so its
+paragraphing is projected from the King James and the World English Bible, which
+are other editions necessarily. Recording those under `derived_from` would claim
+the projection was made out of the Douay-Rheims's own bytes; pointing it instead
+at something in-edition that did not produce it would make the record lie in
+order to satisfy a check. A projection with no stated witnesses is
+unfalsifiable, so the field may not be empty, and each entry must be an artifact
+this library holds.
+
 Stable IDs are lowercase, machine-readable, and independent of URLs, mutable
 titles, filesystem moves, and provider names. A changed URL does not create a
 new work. Materially changed bytes do create a new artifact identity; a changed

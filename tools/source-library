@@ -222,6 +222,7 @@ ALLOWED_FIELDS_V1 = {
         "byte_size",
         "path",
         "derived_from",
+        "projected_from",
         "transformation",
         "support_artifacts",
         "encoding",
@@ -544,6 +545,7 @@ def _validate_strings(library: Library, record: Record) -> None:
         "translators",
         "states",
         "members",
+        "projected_from",
     }
     for field in sorted(scalar_fields & set(data)):
         if not _is_string(data[field]):
@@ -1053,6 +1055,39 @@ def _validate_relationships(library: Library) -> None:
                     record.path,
                     f"{field} must match enclosing {expected_parent} {enclosing.record_id}",
                 )
+        # `projected_from` names testimony, not source material, and so is the
+        # one artifact edge that crosses an edition on purpose.
+        #
+        # `derived_from` means these bytes were transformed into those bytes —
+        # an OCR of a scan, a normalisation of a transcription — and stays
+        # inside one edition because that is what a derivative is. A projection
+        # is the opposite shape: the Douay-Rheims carries no paragraph marks of
+        # its own, and its projected breaks are inferred from the King James and
+        # the World English Bible, which are other editions by construction.
+        # Recording those under `derived_from` would have made the record claim
+        # the projection was made out of the Douay-Rheims's own bytes, and
+        # pointing it at something in-edition that did not produce it would have
+        # made the record lie in order to satisfy a check.
+        #
+        # A projection with no stated witnesses is unfalsifiable, so the field
+        # may not be empty, and every entry must be an artifact this library
+        # holds.
+        for witness in record.data.get("projected_from") or []:
+            if record.record_type != "artifact":
+                library.error(record.path, "projected_from belongs to an artifact record")
+                break
+            target = library.records.get(witness)
+            if target is None:
+                library.error(record.path, f"projected_from names no such record: {witness}")
+            elif target.record_type != "artifact":
+                library.error(record.path, "projected_from must reference artifact records")
+        if record.record_type == "artifact" and "projected_from" in record.data:
+            if not record.data.get("projected_from"):
+                library.error(
+                    record.path,
+                    "projected_from must name at least one witness; a projection "
+                    "whose witnesses are unstated cannot be checked",
+                )
         if record.record_type == "artifact" and _is_string(record.data.get("derived_from")):
             target = library.records.get(record.data["derived_from"])
             if target is not None and target.record_type != "artifact":
@@ -1441,8 +1476,12 @@ def _validate_artifacts(library: Library) -> None:
             library.error(record.path, f"{rights} artifact requires rights_jurisdiction")
         if _is_string(data.get("derived_from")) and not _is_string(data.get("transformation")):
             library.error(record.path, "derived artifact requires transformation provenance")
-        if "transformation" in data and not _is_string(data.get("derived_from")):
-            library.error(record.path, "transformation requires derived_from")
+        # A projection is made by a stated rule over its witnesses, so it
+        # carries a transformation for the same reason a derivative does.
+        if "transformation" in data and not (
+            _is_string(data.get("derived_from")) or data.get("projected_from")
+        ):
+            library.error(record.path, "transformation requires derived_from or projected_from")
         if data.get("indexable") is True:
             if storage != "tracked" or not _is_searchable_media(data.get("media_type")):
                 library.error(record.path, "indexable artifact must be tracked searchable text")
@@ -1459,10 +1498,11 @@ def _validate_artifacts(library: Library) -> None:
             if not any(
                 _is_string(data.get(field))
                 for field in ("source_url", "provenance", "derived_from")
-            ):
+            ) and not data.get("projected_from"):
                 library.error(
                     record.path,
-                    "tracked artifact requires source_url, provenance, or derived_from",
+                    "tracked artifact requires source_url, provenance, derived_from "
+                    "or projected_from",
                 )
             if not _is_iso_date(data.get("retrieved")):
                 library.error(record.path, "tracked artifact requires retrieved ISO date")
