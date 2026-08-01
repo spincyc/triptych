@@ -1707,7 +1707,7 @@ release attachment, announcement, or promotion.
 | `LICENSE` | `49e30162cadcc57d93ca6027b750ab11bcfd012e76e4da2dbb0219d9aa1652f7` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
-| `README.md` | `1a60ce85f6bbdccb405e1bac7c21981a2e478212bfbb5b43215f99b5bb1643e3` |
+| `README.md` | `9c9635a72660cf8e403e87ea2dc719f8c978b9e3db256388ab1a62a84d8857ed` |
 | `THIRD_PARTY.md` | `6893b8e68c12706bd2f155b3049be7f69d32ac80e1ede1692516b3f98ec07a0a` |
 | `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
@@ -1920,10 +1920,10 @@ release attachment, announcement, or promotion.
 | `src/web/browser/catena/catena-model.js` | `b766ff4f92474eaaa212ad4503b416186fe173211749ce0ae392da6ca1040217` |
 | `src/web/browser/catena/catena.css` | `293964787600ed0c4016a328bbbacb3f592cbb1dcfec80c3d9104ca747609931` |
 | `src/web/browser/catena/catena.js` | `6a4dd39db6fc1a9ef939d0701cf6470be69a1d63a7048d7e4e334864eab1eef8` |
-| `src/web/browser/catena/index.html` | `cfb22d5c57a16c349199bb227185d9dcde073b8ba4ecccd5566107f057303d1a` |
-| `src/web/browser/liturgy/assembly-model.js` | `60893d9b2ed13a82329d74afa479af34e8d47f94795a7228adc24f6a7700bfaa` |
-| `src/web/browser/liturgy/day.css` | `d7469c7749d99f13a55328a9511daa19042dd84460173cd70ae7d45262442cf7` |
-| `src/web/browser/liturgy/day.html` | `a6dec0bcb522ad9c922c95c72ea32857b734e444b996da06af6fae35e2cd0117` |
+| `src/web/browser/catena/index.html` | `281ec034c83d7097915b2c8163ec950e6ee0623bd69bf82b020b88f1710ebee2` |
+| `src/web/browser/liturgy/assembly-model.js` | `1a677e24ae5a644dc5e2bcc93adac046e54e459e67c2ba0a158984397e4727aa` |
+| `src/web/browser/liturgy/day.css` | `4e8e959972c547b438c0b4e1b321f4c3861bdd5beb626c3dd617d4057c23bae8` |
+| `src/web/browser/liturgy/day.html` | `facc74d07aad50cab58d93a87fa784f4a3e0ae986ba8cf6a88c6e0d2a41aa18a` |
 | `src/web/browser/liturgy/day.js` | `39b468990cbbe853e43dbd9eccf56999f43688352f854d19a4cee9964559264f` |
 | `src/web/browser/liturgy/index.html` | `5cb46ae77ae8152142f1ccf863ce383d5253215d14cbcc3ff21b9193eaba24aa` |
 | `src/web/browser/liturgy/liturgy.css` | `f942d07d7b9d06900a9d9dd2f9e341a8631805cb6a595fcb4c9f9f4ebac4d3c7` |
