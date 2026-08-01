@@ -489,8 +489,17 @@ def _ask_schema() -> dict:
                     "additionalProperties": False,
                     "required": ["author", "title", "role", "death_year"],
                     "properties": {
-                        "author": {"type": "string"},
-                        "title": {"type": "string"},
+                        # minLength, because `_check_work` refuses a blank and a
+                        # bare "string" does not. The gap was not theoretical:
+                        # the whole-canon audit of 2026-08-01 returned an author
+                        # with an empty title on Sirach, the answer validated,
+                        # and `record` then refused the entire run of 72 books
+                        # for it. A schema that lets through what record rejects
+                        # spends a query to produce something unusable, which is
+                        # what this function's own docstring says it exists to
+                        # prevent.
+                        "author": {"type": "string", "minLength": 1},
+                        "title": {"type": "string", "minLength": 1},
                         "role": {"type": "string", "enum": list(ROLES)},
                         "death_year": {"type": "integer"},
                         "aliases": {"type": "array", "items": {"type": "string"}},

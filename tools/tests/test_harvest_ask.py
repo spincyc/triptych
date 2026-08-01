@@ -93,6 +93,32 @@ class DryRunTests(unittest.TestCase):
         # And the schema is what the CLI will actually be handed.
         json.dumps(schema)
 
+    def test_the_schema_refuses_every_blank_that_record_refuses(self) -> None:
+        """The docstring's promise, asserted against `_check_work` itself.
+
+        `_ask_schema` says it is "derived from what `record` will accept", and
+        for the roles it is. For the string fields it was not: a bare
+        `{"type": "string"}` admits `""` while `_check_work` refuses it, so an
+        answer could validate at ask time and be refused at record time. The
+        whole-canon audit of 2026-08-01 hit exactly that — one empty title on
+        Sirach cost the recording of all seventy-two books in that run.
+        """
+        item = harvest._ask_schema()["properties"]["works"]["items"]
+        blank = {"author": "", "title": "", "role": "church-father", "death_year": 400}
+        refused: list[str] = []
+        harvest._check_work(blank, "where", refused)
+        for field in ("author", "title"):
+            with self.subTest(field=field):
+                self.assertTrue(
+                    any(f"{field} is required" in problem for problem in refused),
+                    "record refuses a blank here",
+                )
+                self.assertEqual(
+                    item["properties"][field].get("minLength"),
+                    1,
+                    "so the ask schema must refuse it too",
+                )
+
 
 class ModelIdentityTests(unittest.TestCase):
     """The stamp comes from the answer or the run stops. Never from the request."""
