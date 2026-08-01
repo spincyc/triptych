@@ -243,7 +243,8 @@
     function year(date) {
       return String(date || '').slice(0, 4);
     }
-      return {
+
+    return {
         PROMULGATED: PROMULGATED,
         PRINTED: PRINTED,
         UNSTATED: UNSTATED,
@@ -256,6 +257,11 @@
         year: year
       };
   }());
+
+  /* ------------------------------------------------------------------------
+   * Where the map and its fragments live
+   * --------------------------------------------------------------------- */
+
   const SLICE = 'roman-holy-week';
   const ROOT = 'structure/act-history/' + SLICE;
   const NS = 'http://www.w3.org/2000/svg';
@@ -504,31 +510,40 @@
     return null;
   }
 
-  function value(text, missing) {
+  /* Three states, never two. Words present; words this record never read; and
+   * words that exist and may not be printed here. A renderer that showed the
+   * last two alike would tell a reader nobody had looked, which is false, or
+   * that the prayer was blank, which is worse. */
+  function value(text, missing, withheld) {
     if (text) return T.el('span', 'value', text);
-    const node = T.el('span', 'value value-absent', missing);
-    return node;
+    if (withheld) {
+      return T.el('span', 'value value-absent', 'withheld here: ' + withheld);
+    }
+    return T.el('span', 'value value-absent', missing);
   }
 
   const FIELD_NAMES = {
     mass: 'liturgy', slot: 'place', name: 'heading', incipit: 'incipit',
-    text: 'text', order: 'order', title: 'title', day: 'day', hour: 'hour'
+    text: 'text', order: 'order', title: 'title', day: 'day', hour: 'hour',
+    withheld: 'withheld because'
   };
 
-  function fieldRow(field, before, after) {
+  function fieldRow(field, before, after, wasSide, nowSide) {
     const row = T.el('div', 'field');
     row.appendChild(T.el('span', 'field-name', FIELD_NAMES[field] || field));
     const pair = T.el('div', 'field-pair');
     const long = field === 'text' || field === 'incipit';
     const missing = long
-      ? 'the tracer does not carry these words'
+      ? 'this record does not carry these words'
       : 'not established';
+    const shown = function (raw, side) {
+      const text = raw === undefined || raw === null ? '' : String(raw);
+      return value(text, missing, long ? (side || {}).withheld : '');
+    };
     const was = T.el('div', 'field-side field-before');
-    was.appendChild(value(before === undefined || before === null || before === ''
-      ? '' : String(before), missing));
+    was.appendChild(shown(before, wasSide));
     const now = T.el('div', 'field-side field-after');
-    now.appendChild(value(after === undefined || after === null || after === ''
-      ? '' : String(after), missing));
+    now.appendChild(shown(after, nowSide));
     pair.appendChild(was);
     pair.appendChild(T.el('div', 'field-arrow', '→'));
     pair.appendChild(now);
@@ -581,7 +596,7 @@
 
     if (row.state === 'changed') {
       (row.fields || []).forEach(function (field) {
-        card.appendChild(fieldRow(field, before[field], after[field]));
+        card.appendChild(fieldRow(field, before[field], after[field], before, after));
       });
       if (!(row.fields || []).length) {
         card.appendChild(T.el('p', 'detail-weak',
@@ -611,7 +626,8 @@
   function standing(side) {
     const wrap = T.el('div', 'standing');
     const line = T.el('p', 'standing-incipit');
-    line.appendChild(value(side.incipit || '', 'the tracer does not carry these words'));
+    line.appendChild(value(side.incipit || '',
+      'this record does not carry these words', side.withheld));
     wrap.appendChild(line);
     if (side.text) wrap.appendChild(T.el('p', 'standing-text', side.text));
     return wrap;
@@ -743,7 +759,8 @@
         row.appendChild(head);
         const line = T.el('p', 'held-incipit');
         line.appendChild(value(unit.incipit || '',
-          'the tracer read this unit’s heading and not its words'));
+          'this record read the heading of this unit and not its words',
+          unit.withheld));
         row.appendChild(line);
         if (unit.text) row.appendChild(T.el('p', 'held-text', unit.text));
         const link = T.el('button', 'link-button', 'Follow this prayer');
@@ -887,7 +904,8 @@
         stop.date + ' · ' + (stop.instrument || 'instrument not carried here')));
       if (stop.state === 'changed') {
         (stop.fields || []).forEach(function (field) {
-          card.appendChild(fieldRow(field, (stop.before || {})[field], (stop.after || {})[field]));
+          card.appendChild(fieldRow(field, (stop.before || {})[field],
+            (stop.after || {})[field], stop.before, stop.after));
         });
       } else {
         card.appendChild(standing(stop.state === 'gone' ? (stop.before || {}) : (stop.after || {})));

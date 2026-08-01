@@ -800,8 +800,11 @@
     }
 
     // The Latin incipit earns its place only where the words are not shown: it
-    // is then the sole thing identifying which prayer this is.
-    if (!held && element.latin_incipit) {
+    // is then the sole thing identifying which prayer this is. And only where
+    // it is not already the heading: an element the artifact names by its own
+    // incipit carries one string in both fields, and printing it twice says the
+    // same thing twice under two settings.
+    if (!held && element.latin_incipit && element.latin_incipit !== element.name) {
       const incipit = T.el('p', 'proper-incipit', element.latin_incipit);
       incipit.lang = 'la';
       section.appendChild(incipit);
