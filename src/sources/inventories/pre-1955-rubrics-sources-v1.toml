@@ -82,6 +82,25 @@ one, or nowhere. Nothing in that inventory is changed here.
 Every locus in this file therefore carries the sha256 of the bytes it was read
 from, and a locus without one should be treated as unreproducible rather than as
 wrong.
+
+THE DRIFT WAS MEASURED, AND IT IS NOT AN OFFSET. Four loci the recension cites
+against the 1920 witness were looked for in the 2026-08-01 bytes [verified]:
+
+  cited   found   drift   passage
+   9614    9710    +96    Rubricae generales XV, De hora celebrandi Missam
+  31875   31808     -67   the Palm Sunday heading, IN PALMIS
+  35401   35197    -204   the Good Friday heading, IN PARASCEVE
+  37276   36815    -461   Holy Saturday, `Dicta Nona in Choro`
+
+The drift changes sign and grows through the book, so no single constant
+converts the old addresses to the new ones and none should be computed. Each
+locus has to be re-read.
+
+WHAT THIS DOES NOT MEAN. Every one of the four passages IS THERE, and each says
+what the record citing it says it says. The recension's bases are sound; their
+addresses are stale. That distinction is the whole content of this note, and a
+reader who follows a stale locus, lands on an unrelated page, and concludes the
+claim was invented would have it exactly backwards.
 """
 
 # ---------------------------------------------------------------------------

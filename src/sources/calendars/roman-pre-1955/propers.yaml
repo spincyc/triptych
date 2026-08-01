@@ -176,6 +176,14 @@ open_collation_items:
   inventory here; the divergence is recorded so that a reader who follows one of
   its loci and lands on the wrong page knows why. Every locus THIS file states
   carries the sha256 of the bytes it was read from.
+
+  FOUR OF THIS FILE'S OWN 1920 LOCI WERE CHECKED AGAINST THE NEW BYTES AND ALL
+  FOUR PASSAGES ARE THERE, at drifts of +96, -67, -204 and -461 lines
+  [src/sources/inventories/pre-1955-rubrics-sources-v1.toml, `derivative_hazard`].
+  The drift changes sign and grows through the book, so no constant converts the
+  old addresses and none should be computed. The bases below are sound and their
+  addresses are stale, which is a smaller problem than it looks and a different
+  one from the problem it looks like.
 - The four rows below name their liturgies as the pre-1955 books head them.
   Whether `key` should also move — `easter-vigil` is a 1962 name for a service
   the pre-1955 book prints as Sabbato Sancto — is left alone deliberately, because
