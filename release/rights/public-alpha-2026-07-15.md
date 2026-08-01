@@ -1925,8 +1925,8 @@ release attachment, announcement, or promotion.
 | `src/web/browser/history/history.js` | `6997649cfca908a52c8f4be00ec915017237c0a9e282054e0727adf65685c353` |
 | `src/web/browser/history/index.html` | `c7f05747ff39cd86bb20e146661706ad487ebe6d93c9a210875951bd41f7a5fb` |
 | `src/web/browser/liturgy/assembly-model.js` | `de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789` |
-| `src/web/browser/liturgy/day.css` | `735fb0a283c6caf51febb958f6f98e07e46ff3b69aa193a0538e701b99b5b2cf` |
-| `src/web/browser/liturgy/day.html` | `51c023eb9db50af1fa613d0467db1e43ff6c7553319b1b9868b0c496d56c61e1` |
+| `src/web/browser/liturgy/day.css` | `2248dc20c8dd57070ee44dd3edb76a360fec8ec9c530d301d6511287ff80f6af` |
+| `src/web/browser/liturgy/day.html` | `228f0f9e2161e7ed90944e8aee5812c1401bb32df0ba705f3ac2c87e39c56c3d` |
 | `src/web/browser/liturgy/day.js` | `a27cd408a3d7678ee8e7067526a215df7db35e92fcb530161904c31afae078ad` |
 | `src/web/browser/liturgy/index.html` | `85fef6563dac3f8a066c50e4458f13cd8f16a867ce66459959d52781fa81cc96` |
 | `src/web/browser/liturgy/liturgy.css` | `a8d2af04ae3fc0af91fec2234816bdffb6daaf2fb61cb772f898bb8342cee4cd` |

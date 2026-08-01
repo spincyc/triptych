@@ -58,31 +58,37 @@
     </select>
   </div>
 
-  <!-- Off unless asked for: this page is the missal opened to a date, and how
-       each proper was arrived at is an annotation on it. The choice rides in the
-       hash like every other control, so a reader can send someone the page with
-       the resolution already showing. The id and the hash key stay `why`: they
-       are internal, they remain accurate, and renaming them would break a URL
-       somebody has already sent. -->
-  <div class="field field-check">
-    <label for="why-toggle">
-      <input type="checkbox" id="why-toggle" name="why">
-      Propers resolution
-    </label>
-  </div>
+  <!-- The optional layers, in one control instead of three loose checkboxes
+       that grew the control bar past the Mass it sits above. A `details` rather
+       than a `select`, because a reader is turning several things on at once
+       and a native multi-select cannot show a check per option; it also works
+       with no script at all. Each id and hash key is unchanged — `why`,
+       `ordinary`, `rubrics` — because they are internal, they remain accurate,
+       and renaming one would break a URL somebody has already sent.
 
-  <!-- Off unless asked for: the page's first duty is the Mass appointed for the
-       date, and the Ordinary is a second document. Turned on, it is not
-       appended — it becomes the frame, and the day's propers are set into it at
-       the places their missal declares, so the page reads down the Mass in the
-       order it is said. It is fetched only when it is asked for, so a reader
-       who never wants it never pays for it. -->
-  <div class="field field-check">
-    <label for="ordinary-toggle">
-      <input type="checkbox" id="ordinary-toggle" name="ordinary">
-      Ordinary
-    </label>
-  </div>
+       `why` is off: this page is the missal opened to a date, and how each
+       proper was arrived at is an annotation on it. `ordinary` is off and, when
+       on, is not appended but becomes the frame the day's propers are set into,
+       and it is fetched only when asked for. `rubrics` is ON, because a missal
+       prints what the priest does and a page opening without them would open
+       showing less than the book. -->
+  <details class="field field-options" id="options-field">
+    <summary>Show</summary>
+    <div class="options-list">
+      <label for="why-toggle">
+        <input type="checkbox" id="why-toggle" name="why">
+        Why
+      </label>
+      <label for="ordinary-toggle">
+        <input type="checkbox" id="ordinary-toggle" name="ordinary">
+        Ordinary
+      </label>
+      <label for="rubrics-toggle" id="rubrics-field" hidden>
+        <input type="checkbox" id="rubrics-toggle" name="rubrics" checked>
+        Rubrics
+      </label>
+    </div>
+  </details>
 
   <!-- The Ordinary's own language, hidden until the Ordinary is showing. It is
        a third text control beside Scripture and Orations, and a separate one,
@@ -95,18 +101,6 @@
   <div class="field" id="ordinary-lang-field" hidden>
     <label for="ordinary-lang-select">Ordinary</label>
     <select id="ordinary-lang-select" name="ordinary-lang"></select>
-  </div>
-
-  <!-- On unless turned off, and hidden until the Ordinary is showing. The
-       rubrics are what the priest does, and a missal prints them: they are how
-       a reader following along knows where the Mass has got to, and a page
-       that opened without them would open showing less than the book. Turning
-       them off is for a reader who wants the words only. -->
-  <div class="field field-check" id="rubrics-field" hidden>
-    <label for="rubrics-toggle">
-      <input type="checkbox" id="rubrics-toggle" name="rubrics" checked>
-      Rubrics
-    </label>
   </div>
 
   <!-- Postconciliar only, and hidden until the Ordinary is showing. The 1962

@@ -379,6 +379,63 @@
   }
 }
 
+/* The optional layers, folded into one control.
+   Three loose checkboxes made the control bar taller than the first prayer
+   under it, which is backwards on a page whose whole point is the Mass. The
+   summary is the closed state and reads as one field like the selects beside
+   it; the checks appear only when a reader goes looking for them. */
+.field-options > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.3rem 0.55rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  border: 1px solid var(--section-line);
+  border-radius: 4px;
+  background: var(--panel);
+  white-space: nowrap;
+}
+
+.field-options > summary::-webkit-details-marker { display: none; }
+
+.field-options > summary::after {
+  content: ' \25BE';
+  color: var(--ink-faint);
+}
+
+.field-options[open] > summary::after { content: ' \25B4'; }
+
+.options-list {
+  position: absolute;
+  z-index: 5;
+  margin-top: 0.3rem;
+  padding: 0.5rem 0.7rem;
+  display: grid;
+  gap: 0.35rem;
+  border: 1px solid var(--section-line);
+  border-radius: 4px;
+  background: var(--panel);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.options-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.options-list input { min-width: 1rem; min-height: 1rem; }
+
+/* On a narrow screen a floating panel can leave the viewport, so it sits in
+   the flow instead. */
+@media (max-width: 32rem) {
+  .options-list { position: static; box-shadow: none; }
+}
+
 .field-check label {
   display: inline-flex;
   align-items: center;
