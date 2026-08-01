@@ -116,64 +116,81 @@ def _terms(group: dict[str, Any]) -> list[tuple[str, str]]:
     return pairs
 
 
-def probe(group: dict[str, Any]) -> dict[str, Any]:
+def _plan(group: dict[str, Any]) -> list[tuple[str, str, Any]]:
+    """Every query this group will issue, named, before any of them runs.
+
+    Built as data rather than as control flow so the survey can report what it
+    tried even for a group whose every query failed, and so the recorded
+    `aliases_tried` cannot drift from what was actually sent.
+    """
     authors = group.get("author_aliases") or []
     titles = group.get("title_aliases") or []
-    tried: list[str] = []
-    archive: list[dict[str, Any]] = []
-    seen: set[str] = set()
+    plan: list[tuple[str, str, Any]] = []
 
     for author, title in _terms(group)[:8]:
-        query = f'creator:("{author}") AND title:("{title}")'
-        tried.append(query)
-        for doc in internet_archive(query, rows=4):
-            key = str(doc.get("identifier"))
-            if key not in seen:
-                seen.add(key)
-                archive.append(doc)
-        time.sleep(PAUSE)
-
+        plan.append(("ia", f'creator:("{author}") AND title:("{title}")', 4))
     # Title alone, because a catalogue's creator field is frequently a printer,
     # an editor or "Migne, J.-P." rather than the author of the work.
     for title in titles[:4]:
-        query = f'title:("{title}")'
-        tried.append(query)
-        for doc in internet_archive(query, rows=4):
-            key = str(doc.get("identifier"))
-            if key not in seen:
-                seen.add(key)
-                archive.append(doc)
-        time.sleep(PAUSE)
+        plan.append(("ia", f'title:("{title}")', 4))
 
     migne = group.get("migne")
-    if migne and migne != "none" and not str(migne).startswith("none"):
-        for volume in re.findall(r"(P[LG])\s*(\d+)", str(migne)):
-            series, number = volume
-            query = f'"patrologia" AND "{series.lower()}" AND {number}'
-            tried.append(query)
-            for doc in internet_archive(query, rows=3):
-                key = str(doc.get("identifier"))
-                if key not in seen:
-                    seen.add(key)
-                    archive.append(doc)
-            time.sleep(PAUSE)
+    if migne and not str(migne).startswith("none"):
+        for series, number in re.findall(r"(P[LG])\s*(\d+)", str(migne)):
+            plan.append(("ia", f'"patrologia" AND "{series.lower()}" AND {number}', 3))
 
-    wiki: list[dict[str, Any]] = []
     for language in ("en", "la", "el"):
         for title in titles[:3]:
-            tried.append(f"{language}.wikisource:{title}")
-            wiki.extend(wikisource(title, language))
-            time.sleep(PAUSE)
+            plan.append(("ws", title, language))
     for author in authors[:2]:
-        tried.append(f"en.wikisource:{author}")
-        wiki.extend(wikisource(author, "en"))
-        time.sleep(PAUSE)
+        plan.append(("ws", author, "en"))
 
+    for term in titles[:2] + authors[:1]:
+        plan.append(("pg", term, None))
+    return plan
+
+
+def probe(group: dict[str, Any], workers: int = 10) -> dict[str, Any]:
+    """Issue the whole plan at once and fold the answers.
+
+    Serially this took five minutes a group against the Internet Archive's
+    search endpoint, which answers in about eleven seconds; sixty-six groups
+    would have been five and a half hours of waiting on a socket. The queries
+    are independent, so they are issued together. Nothing about what is asked
+    changes.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    plan = _plan(group)
+
+    def run(item: tuple[str, str, Any]) -> tuple[str, str, Any]:
+        kind, term, extra = item
+        if kind == "ia":
+            return kind, term, internet_archive(term, rows=extra)
+        if kind == "ws":
+            return kind, f"{extra}.wikisource:{term}", wikisource(term, extra)
+        return kind, f"gutenberg:{term}", gutenberg(term)
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        answered = list(pool.map(run, plan))
+
+    tried: list[str] = []
+    archive: list[dict[str, Any]] = []
+    wiki: list[dict[str, Any]] = []
     guten: list[dict[str, Any]] = []
-    for term in (titles[:2] + authors[:1]):
-        tried.append(f"gutenberg:{term}")
-        guten.extend(gutenberg(term))
-        time.sleep(PAUSE)
+    seen: set[str] = set()
+    for kind, label, hits in answered:
+        tried.append(label)
+        if kind == "ia":
+            for doc in hits:
+                key = str(doc.get("identifier"))
+                if key != "None" and key not in seen:
+                    seen.add(key)
+                    archive.append(doc)
+        elif kind == "ws":
+            wiki.extend(hit for hit in hits if hit.get("title"))
+        else:
+            guten.extend(hits)
 
     return {
         "id": group.get("id"),
@@ -181,7 +198,7 @@ def probe(group: dict[str, Any]) -> dict[str, Any]:
         "aliases_tried": tried,
         "alias_count": len(set(tried)),
         "internet_archive": archive,
-        "wikisource": [w for w in wiki if w.get("title")],
+        "wikisource": wiki,
         "gutenberg": guten,
     }
 
@@ -191,6 +208,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--aliases", default=str(ALIASES))
     parser.add_argument("--out", required=True)
     parser.add_argument("--only", action="append", help="probe only these group ids")
+    parser.add_argument("--groups", type=int, default=3, help="groups probed at once")
     arguments = parser.parse_args(argv)
 
     try:
@@ -206,11 +224,17 @@ def main(argv: list[str] | None = None) -> int:
 
     out = Path(arguments.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    surveyed = []
-    for index, group in enumerate(groups, 1):
-        print(f"{index}/{len(groups)} {group['id']}", file=sys.stderr, flush=True)
-        surveyed.append(probe(group))
-        out.write_text(json.dumps(surveyed, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    from concurrent.futures import ThreadPoolExecutor
+
+    surveyed: list[dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=arguments.groups) as pool:
+        for done, result in enumerate(pool.map(probe, groups), 1):
+            print(f"{done}/{len(groups)} {result['id']}", file=sys.stderr, flush=True)
+            surveyed.append(result)
+            out.write_text(
+                json.dumps(surveyed, ensure_ascii=False, indent=1), encoding="utf-8"
+            )
     print(f"surveyed {len(surveyed)} groups -> {out}", file=sys.stderr)
     return 0
 
