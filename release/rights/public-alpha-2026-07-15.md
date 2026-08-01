@@ -1924,7 +1924,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/assembly-model.js` | `60893d9b2ed13a82329d74afa479af34e8d47f94795a7228adc24f6a7700bfaa` |
 | `src/web/browser/liturgy/day.css` | `b1c0f7d7d2f11367233581183ba5e6e3b9025e1ea09433f4d3db56f41231e0fd` |
 | `src/web/browser/liturgy/day.html` | `cc5ce12fb90913bb5ce259dccf2de57fcba8c2dbf4de60e2fd70f3732f2156de` |
-| `src/web/browser/liturgy/day.js` | `7db45058cdd31009344b003fad761c03cc923ba6bda58e563ce82e7c0bb24c88` |
+| `src/web/browser/liturgy/day.js` | `0f1d7526d7c506f9e49ffce11556bd5e7c224e88a685ec8977f693b2f2b894ba` |
 | `src/web/browser/liturgy/index.html` | `5cb46ae77ae8152142f1ccf863ce383d5253215d14cbcc3ff21b9193eaba24aa` |
 | `src/web/browser/liturgy/liturgy.css` | `f942d07d7b9d06900a9d9dd2f9e341a8631805cb6a595fcb4c9f9f4ebac4d3c7` |
 | `src/web/browser/liturgy/liturgy.js` | `7283e6e1b0308ac159b37324dcc9edb118defe291b1fc875769f6f44c1cf5d1a` |
@@ -1937,7 +1937,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/shared/browser-core.css` | `4c6047565286e121f09fdc7475200e7525107647f2ce3adaac6bcd9946a48598` |
 | `src/web/browser/shared/browser-core.js` | `aaec1b0707ae207a76334c05300041b7e9b615fccb7900e1c13e92d0a8ebd17e` |
 | `src/web/data/bibles.json` | `2833103696cfde54ee1266c7d74909beb433a7951f216c423858868b9d4001d6` |
-| `tools/public-alpha` | `95dda6cb84d66db9f414fcc78c01bb16408038a831a2bd9f7978d1abf4ea8afd` |
+| `tools/public-alpha` | `d4932d80e9b76f24789c06b1ad7fe0cbbe353db8b808b40657e9a1643dfe1211` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `4d97a8a50671d69dac75bd40ba84646439bbc3c9426db541f17b63002e0a204e` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `5142fc621475233a8843f98ca10e49e22bc63adc6cd001044335b5f9e1634482` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `6b86977adffdece0e49c43803db515040f30e115d68ba382d8e9658b14fc3569` |
