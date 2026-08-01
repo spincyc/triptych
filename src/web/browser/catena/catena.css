@@ -158,14 +158,22 @@ body:not(:has(> .site-header)) {
   margin-top: 0;
 }
 
-/* A break this project PROJECTED, marked apart from one the edition prints.
-   The two are different claims and the page must not render them alike: the
-   marker is quiet enough not to interrupt reading and present enough that a
-   reader can see which divisions are ours. */
-.passage-paragraph.projected {
-  border-left: 2px solid var(--section-pale);
+/* Every paragraph reserves the same margin, whether or not anything is drawn
+   in it. Indenting only the projected ones made a chapter with both kinds sit
+   at two different left edges, which reads as broken rather than as a
+   distinction — the reader sees ragged text long before they wonder what the
+   rule means. */
+.passage-paragraph {
+  border-left: 2px solid transparent;
   padding-left: 0.7rem;
   margin-left: -0.9rem;
+}
+
+/* A break this project PROJECTED, marked apart from one the edition prints.
+   The two are different claims and the page must not render them alike, but
+   the difference is the rule alone: the text does not move. */
+.passage-paragraph.projected {
+  border-left-color: var(--section-pale);
 }
 
 /* What the divisions are owed to, in words, below the text. */

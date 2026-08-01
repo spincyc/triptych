@@ -89,7 +89,6 @@
   const chapterSelect = document.getElementById('chapter-select');
   const bibleSelect = document.getElementById('bible-select');
   const languageSelect = document.getElementById('language-select');
-  const paragraphToggle = document.getElementById('paragraph-toggle');
   const previousButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
 
@@ -105,7 +104,12 @@
   // is what lets it be turned off, and turned off the chapter renders exactly as
   // it did before the layer existed.
   let paragraphs = null;
-  let paragraphsWanted = true;
+  // Always on, and not a control. Where a chapter divides, that is how the
+  // chapter reads; offering it as a preference invited a reader to turn off
+  // the edition's own paragraphing. The opt-out that does exist is the
+  // typesetter's `--no-paragraphs`, which is for reviewing an edition
+  // mechanically rather than reading it.
+  const paragraphsWanted = true;
   // Authors the reader has switched OFF, held across chapters. Storing the
   // exclusions rather than the inclusions is what lets an author who does not
   // comment on the next chapter stay off rather than reappear checked.
@@ -764,7 +768,6 @@
       ['chapter', String(chapter)],
       ['bible', bible.id],
       ['language', languageSelect.value],
-      ['paragraphs', paragraphsWanted ? '' : 'off']
     ]);
     updateSteps();
   }
@@ -864,8 +867,6 @@
     }
 
     if (hash.get('language')) languageSelect.value = hash.get('language');
-    paragraphsWanted = hash.get('paragraphs') !== 'off';
-    paragraphToggle.checked = paragraphsWanted;
 
     bookSelect.disabled = false;
     chapterSelect.disabled = false;
@@ -878,10 +879,6 @@
     chapterSelect.addEventListener('change', render);
     bibleSelect.addEventListener('change', render);
     languageSelect.addEventListener('change', render);
-    paragraphToggle.addEventListener('change', () => {
-      paragraphsWanted = paragraphToggle.checked;
-      render();
-    });
     previousButton.addEventListener('click', () => step(-1));
     nextButton.addEventListener('click', () => step(1));
     T.onArrowStep(step);
@@ -890,8 +887,6 @@
       fillChapters(bookSelect.value, next.get('chapter') || 1);
       if (next.get('bible')) bibleSelect.value = next.get('bible');
       languageSelect.value = next.get('language') || '';
-      paragraphsWanted = next.get('paragraphs') !== 'off';
-      paragraphToggle.checked = paragraphsWanted;
       render();
     });
 
