@@ -103,7 +103,25 @@
       verse.appendChild(document.createTextNode(result.verses[String(number)] + ' '));
       passage.appendChild(verse);
     }
-    section.appendChild(passage);
+    // Collapsible like the fragments, but OPEN by default: the chapter is what
+    // the page is about, and the commentary is what is read against it. A
+    // reader closes it to compare several fathers without the text between.
+    const holder = document.createElement('details');
+    holder.className = 'chapter-body';
+    holder.open = true;
+    const head = document.createElement('summary');
+    head.className = 'chapter-head';
+    head.appendChild(
+      T.el('span', 'chapter-name', book.name + ' ' + chapter)
+    );
+    head.appendChild(
+      T.el('span', 'chapter-count', T.plural
+        ? T.plural(numbers.length, 'verse')
+        : numbers.length + ' verses')
+    );
+    holder.appendChild(head);
+    holder.appendChild(passage);
+    section.appendChild(holder);
     container.appendChild(section);
   }
 
