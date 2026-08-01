@@ -977,8 +977,19 @@ def _render(data: dict[str, Any]) -> str:
                 f"canonical_ids = {_toml_array(family['canonical_ids'])}",
                 f"trace_patterns = {_toml_array(family['trace_patterns'])}",
                 f"reviewed_on = {_toml_string(family['reviewed_on'])}",
-                f"notes = {_toml_string(family['notes'])}",
             ]
+            # CARRIED, never recomputed. The stored value records what the
+            # review covered; recomputing it on write would make it always
+            # equal the current membership, so a family whose ids had been
+            # edited would report itself reviewed and the guard would never
+            # fire. Omitted when absent, which the acceptance path reads as
+            # "unknown, therefore moved".
+            + (
+                [f"membership_snapshot = {_toml_string(family['membership_snapshot'])}"]
+                if family.get("membership_snapshot")
+                else []
+            )
+            + [f"notes = {_toml_string(family['notes'])}"]
         )
     for unit in data["review_units"]:
         lines.extend(
