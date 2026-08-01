@@ -560,10 +560,18 @@ def translation_overlay(calendar: str) -> tuple[dict, set, list]:
     # Read rather than restated: the label and the caution are already written
     # here, beside the rights basis they qualify, and a second copy in this tool
     # would be free to disagree with them.
+    #
+    # A row keyed to the empty id is the project's own work, which names no
+    # source because it is its own witness. That row has to be reachable: a
+    # project-created translation is *published*, and until it could carry a
+    # caution the one witness a reader most needs warning about -- new English
+    # for a prayer whose approved English is someone else's -- was the only one
+    # served with no warning at all. Requiring the key to be present rather than
+    # truthy is what admits it.
     witnesses = {
-        str(row.get("source_id")): row
+        str(row.get("source_id") or ""): row
         for row in document.get("sources") or []
-        if isinstance(row, dict) and row.get("source_id")
+        if isinstance(row, dict) and "source_id" in row
     }
     return overlay, untranslated, stale, witnesses
 

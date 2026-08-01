@@ -351,6 +351,18 @@ and no existing fragment is touched.
 3. `mass-propers structure` to rewrite the structure files. The witness
    manifest and every translation's order fall out of that one pass.
 
+The project's own translations are the one witness that names no `source_id`,
+because the project is its own witness and a language holds at most one of
+those. They still need a manifest row, and they need it more than any other
+witness does: a `project-created` translation is *published*, and until its row
+could be reached the only English on the site with no source behind it was also
+the only English served with no caution. So the sidecar's `sources` table takes
+a row keyed `source_id = ""`, and `mass-propers` reads it exactly as it reads a
+named witness — the label it prints and the caution it renders come from that
+row and are not invented by the tool. The postconciliar calendar has one:
+70 orations of new English, labelled as the project's, cautioned as unreviewed
+and non-liturgical.
+
 `check-calendar-masses` refuses a `source_id` that resolves to no record in the
 source library, in the propers and in the sidecar alike. An id that names
 nothing is worse than none at all: it reads as provenance and answers nothing.

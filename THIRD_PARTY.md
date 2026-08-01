@@ -66,15 +66,24 @@ In particular:
   `src/sources/calendars/**/propers.yaml` are recorded per proper with their
   own `rights` basis and, where licensed, the notice their licensor requires.
   The English translation of *The Roman Missal*, third edition, is copyright
-  the International Commission on English in the Liturgy Corporation and is
-  carried under permission granted to this project; it is not relicensed and
-  is not offered under CC BY 4.0. **No such permission is recorded anywhere in
-  this repository and no ICEL text is in fact carried.** Every other statement
-  in the tree says the permission has not been obtained, and
-  `src/sources/inventories/postconciliar-proper-translations-v1.toml` records
-  that finding and the reasons for it. Until the grant is produced, treat the
-  preceding sentence as an illustration of the schema and not as a rights
-  record, and carry no ICEL text on the strength of it; and
+  the International Commission on English in the Liturgy Corporation. **This
+  project has no permission for it, none is recorded anywhere in this
+  repository, and no ICEL text is carried here in whole or in part.** The
+  rights position, with its citations, is settled once in
+  `src/sources/inventories/liturgical-english-rights-v1.toml`; do not carry
+  ICEL text on the strength of anything short of a written grant, and read
+  that record's `seeking_a_licence` before writing one in even if a grant
+  arrives, because this repository cannot yet express a text that is licensed
+  and not publishable; and
+- the English orations recorded in
+  `src/sources/inventories/postconciliar-proper-translations-v1.toml` are this
+  project's own work, offered under CC BY 4.0 with the project's authorship
+  identified at the point of use. They translate prayers of the ancient Roman
+  sacramentaries — the Veronense, the Old Gelasian, the Hadrianum — which are
+  out of copyright everywhere, and each entry names its witness and states
+  every difference between that witness and the Missal's own text. They are not
+  an approved liturgical translation, they are not derived from ICEL's, and
+  nothing in them may be used for recitation; and
 - the English orations recorded in
   `src/sources/inventories/roman-1962-proper-translations-v1.toml`, and the
   transcription of the same book vendored at
