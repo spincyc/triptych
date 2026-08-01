@@ -358,3 +358,171 @@ which is the right way round.
 > **Rule 6.** A recension is offered to a reader only where it can be served.
 > The absence of a rubrics source is not a gap to be filled from the base; it is
 > the reason the calendar is not yet in the selector.
+
+---
+
+## 9. One derivation, and the tool that was not using it
+
+Added 2026-08-01, after section 8, in the same spirit: what section 8 recorded as
+built turned out to be built in four places out of five.
+
+### 9.1 The shape, stated once
+
+A recension calendar is a `propers.yaml` like any other, distinguished by two
+header fields and by the fact that its `masses` are **departures** rather than
+entries. `text_from` names the calendar it inherits from; `stands_before` names
+the act it stands before. Every row states one primary `departure` from the
+closed vocabulary of §3, may carry further kinds under `also`, and must state a
+`basis`.
+
+Everything downstream then reads **one function**:
+
+```
+_calendars.load_document(root, calendar, effective=True)
+```
+
+which returns the base with the departures applied, every entry stamped with how
+the recension reached it. `effective=False` returns the file as written, and is
+what a census counts — because the size of a recension is the size of its diff.
+
+| Reader | What it takes | Whether it knows what a recension is |
+| --- | --- | ---: |
+| `check-calendar-masses` | the file as written, plus `recension_problems` | yes, and only to refuse a bad row |
+| `mass-propers` | `load_document` | no |
+| `calendar-days` | `load_document`, plus `temporal_base` for the year builder | only for the builder |
+| `calendar-rubrics` | `load_document` | no |
+| `assembly-model.js` | the emitted year file and rubrics file | **no, and it never will** |
+
+The last row is the one that matters. `assembly-model.js` takes a date, a
+calendar year file and a rubrics file, asserts no rule of its own, and is run
+both by the page and by `calendar-rubrics check` against the solved cases. It
+cannot learn a second way to resolve a day, because it is downstream of the
+derivation and not a party to it. A recension reaches the browser as a calendar
+like any other or it does not reach it at all.
+
+### 9.2 Where it was not true, and how that was found
+
+`calendar-rubrics` parsed `propers.yaml` itself, with `yaml.safe_load`, in
+`load_masses` and `all_formularies` [verified]. For the two non-recension
+calendars that route and `load_document` return the same object, which is why
+nothing caught it.
+
+For a recension they differ by the whole book. `roman-pre-1955` states six rows
+and serves 490 masses, so rubrics read the short way would have classified **six
+days and been silent about four hundred and eighty-four**, while the browser
+served all of them — a second way to resolve a day, disagreeing with the first,
+in the layer that decides which day wins. Both functions now go through
+`load_document`, and `tools/tests/test_recensions.py` holds the seam with three
+cases, one of which asserts that a calendar which is nobody's recension is read
+exactly as before.
+
+> **Rule 7.** Every tool that serves or checks a day reads the calendar through
+> the one derivation. A tool that parses `propers.yaml` itself is correct for
+> every calendar that is not a recension, and that is precisely why the defect
+> survives review.
+
+### 9.3 The measurements, re-derived
+
+Section 8.1's figures moved, and are restated rather than edited, because two of
+them moved for reasons worth reading [verified, 2026-08-01]:
+
+| Measure | 8.1 | now |
+| --- | ---: | ---: |
+| `roman-1962` masses | 490 | 490 |
+| `roman-pre-1955` departure rows | 5 | **6** |
+| Departures as a share of the base's masses | 1.02 % | **1.22 %** |
+| Masses the recension serves | 491 | **490** |
+| — stated by the recension | 1 | 1 |
+| — inherited from the base | 490 | 489 |
+| Dates in 2026 resolving to a mass | 316 of 365 | 316 of 365 |
+
+**The served count fell while the departure count rose**, and that pairing is the
+projection working. The sixth row is an `absent`, so it removes a mass rather
+than adding one: the recension now states more and serves less. A projection
+whose row count and whose output count moved together would not be a projection.
+
+The six rows carry six further kinds under `also`, so **twelve departure claims
+in six rows** — three `moved`, one `renamed`, one `added` and one `absent` as
+primaries, and two `reslotted`, two `renamed`, one `replaced` and one
+`unrecorded` beneath them.
+
+### 9.4 The direction, verified rather than assumed
+
+Section 8.2 argued the direction from a table. Re-derived at the unit level from
+`roman-holy-week-acts-v1.toml` [verified]:
+
+| | Units |
+| --- | ---: |
+| Modelled in the pre-1955 state | **38** |
+| Gone at the 1955 reform (`absent`) | 20 |
+| Surviving into the reformed books | 18 |
+| Appearing only at 1962 (`added`) | 1 |
+| **Post-reform side, total** | **19** |
+
+**The pre-1955 Triduum is exactly twice the size of what follows it, 38 units
+against 19, and the ledger runs 20 losses to 1 gain.** Per liturgy: Palm Sunday
+18 units to 7, Holy Saturday 16 to 7, Good Friday 3 to 4, Holy Thursday 1 to 1.
+
+So expressing the pre-1955 state as departures *from* 1962 would make **20 of 21
+unit-level rows `added`** — 95 %. That is not a recension of 1962; it is the
+older book retyped under a heading that denies it. The maintainer's ruling and
+the arithmetic agree, and the arithmetic is now the reason.
+
+### 9.5 An open question closing the right way
+
+The recension refused to write `absent` for the Chrism Mass, although a separate
+Chrism Mass being a creation of the 1955 Order is widely understood, because
+nothing in this repository established it. On 2026-08-01 both pre-1955 witnesses
+were fetched whole and read: each prints exactly one `Introitus` between the Holy
+Thursday and Good Friday headings, neither prints `Chrismatis` anywhere in Holy
+Week, and the 1920 book prints its own rubric *Triduo sequenti prohibentur omnes
+Missae privatae* immediately before the day [verified]. The row is now `absent`
+with that reading as its basis.
+
+**It was right for the same reason it had been left open.** The question stood
+for one day and cost one fetch, and the answer that arrived was the one everybody
+expected — which is exactly the case where writing it down early is cheapest and
+most corrosive, because nothing afterwards records that it was never checked.
+What the delay bought is a basis that cites two books instead of a consensus.
+
+The same fetch produced a second finding the recension had no reason to expect:
+the two pre-1955 witnesses **disagree** about *De hora celebrandi Missam*, the
+1920 typical edition allowing Mass `ab aurora usque ad meridiem` and the 1942
+Benziger `ab una hora ante auroram usque ad unam horam post meridiem`
+[verified]. The Easter Vigil row argues from that rubric. Its conclusion stands
+— one hour after noon is still not the night — and its reasoning is now narrowed
+to the printing that carries it. §5 said `pre-1955` names a boundary and not an
+edition; this is the first time that has cost something.
+
+### 9.6 The rubrics, and what the books said about them
+
+Section 8.4 said the pre-1955 rubrics `must be sourced` and left it there. They
+were looked for, and the result is a finding rather than a search report:
+**the pre-1955 Missal declines the question in its own general rubrics.** Before
+title I it prints *Missa quotidie dicitur secundum Ordinem Officii*, and title VI
+prints *In dicendis Missis servetur Ordo Breviarii de Translatione Festorum
+Duplicium* — both verified in both witnesses.
+
+The Mass follows the order of the Office; when a feast is impeded, the Breviary
+governs. So a pre-1955 `rubrics.yaml` **cannot be built from a missal witness**,
+and missals are the only pre-1955 witnesses this repository holds. The 1962
+calendar's rubrics source could be built from a missal only because the 1960 code
+is reprinted at the front of the 1962 typical edition; before 1960 there was no
+such code to reprint.
+
+This is not a gap a closer reading would close, and it sharpens Rule 6 rather
+than weakening it: the missing book is now named, and
+`src/sources/inventories/pre-1955-rubrics-sources-v1.toml` records the reading,
+the two witnesses at their sha256, the rights on each, and what is wanted in the
+order that settles the most. Its headline count is
+`rubrics_sources_this_record_makes_writable = 0`, written as a number so that it
+cannot be read past.
+
+One further consequence, which is a fact about the tooling and not about the
+rite: `calendar-rubrics.check_precedence` refuses `precedence.stated: false` with
+*this file exists to state it*, and requires rows numbering 1..N. Whether the
+pre-1955 order is printed anywhere as a numbered table — as against being
+recoverable only from prose about occurrence, translation and commemoration — is
+**unrecorded**. If it is not, that is a finding about the rite, and the tool
+would have to learn the difference before an honest source could be written.
+Nobody should discover that while writing the file.
