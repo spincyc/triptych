@@ -898,6 +898,15 @@ def leads_for_book(root: Path, token: str, name: str) -> dict[str, list[dict[str
         rest = passage[len(prefix):]
         if not rest.isdigit():
             continue
+        # A row that declares its own numbering is declaring a DIFFERENT one:
+        # the index carries a file-level system and marks only the exceptions.
+        # Three such rows exist — Joel 3, Esther 4 and Isaiah 8 — reached only
+        # by Lectionary-numbered citations that mean Vulgate Joel 2:28-32,
+        # Esther 13:9-11 and Isaiah 9:1-4. Serving them under a Vulgate chapter
+        # of the same number attaches real commentary to text it was never about,
+        # which is Rule 3's failure wearing a chapter number instead of a verse.
+        if entry.get("numbering"):
+            continue
         works = []
         for work in entry.get("works") or ():
             works.append(
