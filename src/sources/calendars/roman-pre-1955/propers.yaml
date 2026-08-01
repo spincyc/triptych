@@ -11,12 +11,14 @@ calendar: roman-pre-1955
 # mechanism is `scripts/_calendars.py`, and `tools/tpt check-calendar-masses`
 # refuses a departure that names a mass the base does not hold.
 #
-# The file is five rows long. That is not a stub: under a projection the shared
+# The file is six rows long. That is not a stub: under a projection the shared
 # remainder of the year expresses no departure, which is to say NO ROWS AT ALL,
 # and the size of this file is therefore a measurement of how far the pre-1955
-# book sits from the 1962 one in the part anyone has established. Every row
-# below is one of the four liturgies guidance/recensions.md section 7 named as
-# the place to start.
+# book sits from the 1962 one in the part anyone has established. Five rows are
+# the liturgies guidance/recensions.md section 7 named as the place to start; the
+# sixth is the Chrism Mass, which was carried as an open question until the
+# witnesses were read on 2026-08-01 and is the first row here established by
+# reading a pre-1955 book rather than by reading an act.
 
 # --- the two relations, which are not the same claim -------------------------
 #
@@ -78,9 +80,11 @@ verification: |
 
 extent: |
   Four liturgies: Palm Sunday, Thursday, Friday and Saturday of Holy Week, plus
-  the blessing of palms that precedes the first of them. This file claims nothing
-  about any other day, about the Ordinary, about the Canon, about the Office, or
-  about the octaves and vigils the 1955 simplification of the rubrics removed.
+  the blessing of palms that precedes the first of them and the Chrism Mass that
+  the reform gave the second of them and the pre-1955 books do not print. This
+  file claims nothing about any other day, about the Ordinary, about the Canon,
+  about the Office, or about the octaves and vigils the 1955 simplification of
+  the rubrics removed.
 
   THE RUBRICS ARE NOT CLAIMED AND THIS DIRECTORY DELIBERATELY SHIPS NO
   `rubrics.yaml`. The 1962 precedence table answers to the 1960 Codex rubricarum;
@@ -136,18 +140,42 @@ open_collation_items:
   rubrical and this file ships no rubrics source. The absence is on the record
   rather than left for a reader to infer from a short file.
 - >-
-  THE CHRISM MASS IS SERVED ON HOLY THURSDAY UNDER THIS RECENSION AND PROBABLY
-  SHOULD NOT BE. `calendar-days` places the base's `chrism-mass` on 2026-04-02
-  beside the Mass of the Lord's Supper, and a separate Chrism Mass is widely
-  understood to be a creation of the 1955 restored Order rather than something
-  the pre-1955 book prints. No row is written for it, because NOTHING IN THIS
-  REPOSITORY ESTABLISHES IT: the act history's four masses are Palm Sunday,
-  Thursday, Friday and Saturday, and it records no unit and no departure for a
-  Chrism Mass in either direction. Writing `absent` here on the strength of what
-  is widely understood would be a 1955 calendar reconstructed by undoing 1962,
-  which is a reference that resolves successfully and wrongly. It is recorded as
-  a question so that the next reader checks the 1920 witness for a Missa
-  Chrismatis instead of finding the page already confident.
+  THE CHRISM MASS QUESTION IS CLOSED, AND HOW IT CLOSED IS THE POINT. This file
+  carried it as an open question rather than writing `absent`, because a separate
+  Chrism Mass being `widely understood` to be a 1955 creation is not evidence,
+  and a row written on that basis would have been a 1955 calendar reconstructed
+  by undoing 1962. On 2026-08-01 the two pre-1955 witnesses were fetched whole
+  and read, each prints exactly one Mass on Holy Thursday, and the departure is
+  now stated with that reading as its basis. The question stood open for one day
+  and cost one fetch; had it been answered from what is widely understood, it
+  would have been right for the wrong reason and nothing would have recorded the
+  difference.
+- >-
+  THE TWO PRE-1955 WITNESSES DISAGREE ABOUT THE HOUR RUBRIC, AND THIS FILE'S
+  LARGEST DEPARTURE RESTS ON IT. The `easter-vigil` row below argues from the
+  general rubric De hora celebrandi Missam, which the 1920 typical edition prints
+  as `Missa privata saltem post Matutinum et Laudes quacumque hora ab aurora
+  usque ad meridiem dici potest` [MissaleRomanum1920_djvu.txt 9710-9713]. The
+  1942 Benziger prints the SAME title with a WIDER window - `ab una hora ante
+  auroram usque ad unam horam post meridiem` [ia-djvu-ocr-724a04fa 5248-5250] -
+  which is the measure of canon 821 of the 1917 Code rather than the older
+  rubric. So `the pre-1955 book allows Mass only from dawn to noon` is true of
+  the 1920 printing and NOT of every pre-1955 printing, and this file says so
+  rather than letting one witness stand for a whole state of the rite. The
+  conclusion the row draws is untouched, because one hour after noon is still
+  not the night the reform moved the Vigil to; the reasoning is narrowed, and the
+  narrowing is recorded because the next reader would otherwise inherit the
+  stronger claim.
+- >-
+  LOCI IN THIS FILE ARE PINNED TO BYTES, BECAUSE INTERNET ARCHIVE DERIVATIVES ARE
+  REGENERATED. `src/sources/inventories/roman-holy-week-acts-v1.toml` records the
+  1920 witness as `MissaleRomanum1920_djvu.txt, 123278 lines, 2918085 bytes`. The
+  copy fetched on 2026-08-01 from the same item is 119621 lines and 2932349
+  bytes, so every line number pinned against the older derivative resolves
+  somewhere else in the newer one, or nowhere. Nothing has been changed in that
+  inventory here; the divergence is recorded so that a reader who follows one of
+  its loci and lands on the wrong page knows why. Every locus THIS file states
+  carries the sha256 of the bytes it was read from.
 - The four rows below name their liturgies as the pre-1955 books head them.
   Whether `key` should also move — `easter-vigil` is a 1962 name for a service
   the pre-1955 book prints as Sabbato Sancto — is left alone deliberately, because
@@ -222,6 +250,63 @@ sections:
           only pre-1955 readings this project holds are OCR, at a measured error
           rate of 38 corrections in 99 orations, and are graded as a discovery
           aid rather than a witness to wording.
+
+    - key: chrism-mass
+      name: Missa Chrismatis
+      registry: 1962-T-chrism-mass
+      season: holy-week
+      departure: absent
+      basis: >-
+        SETTLED ON 2026-08-01 BY READING THE WITNESSES, having been carried as an
+        open question because nothing in this repository established it. Both
+        pre-1955 witnesses were fetched whole and read locally, and each prints
+        EXACTLY ONE MASS ON HOLY THURSDAY.
+
+        In the 1920 typical edition the day is headed `Feria V IN CCENA DOMINI`,
+        `Statio ad S. Joannem in Laterano - duplex I classis`, and the span from
+        that heading to the heading `FERIA VI IN PARASCEVE` contains ONE
+        `Introitus`, `Gal. 6, 14`, `Nos autem gloriari`
+        [MissaleRomanum1920_djvu.txt 34612-35196, the single Introit at 34620,
+        the next day's heading at 35197; sha256
+        eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a,
+        119621 lines, 2932349 bytes, fetched 2026-08-01]. Immediately BEFORE the
+        heading the book prints its own rubric `Triduo sequenti prohibentur omnes
+        Missae privatae` [same file 34607-34608], which forbids the other Masses
+        rather than merely omitting them.
+
+        The 1942 Benziger editio IV iuxta typicam Vaticanam agrees exactly - one
+        Introit, the same one, in the span from `FERIA QUINTA IN COENA DOMINI` to
+        `FERIA SEXTA IN PARASCEVE` [artifact
+        artifact.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947.ia-djvu-ocr-724a04fa,
+        32721-33444, the single Introit at 32730; the fetched bytes hash to the
+        sha256 that artifact record already carries, so this reading is against
+        the exact object the source library registers].
+
+        Neither witness prints the string `Chrismatis` anywhere in Holy Week. The
+        eight occurrences of it in the 1920 witness and the eight in the 1942 one
+        are the infusion of chrism into the font at the Easter Vigil and the
+        appended rites of baptism and confirmation, and none is a Mass.
+
+        WHAT THIS DOES NOT SAY. It is a statement about THE MISSAL and about
+        nothing else. In the pre-1955 rite the oils are blessed by a bishop
+        within the one Mass of the Lord's Supper, by a rite the Pontificale
+        Romanum carries and the Missal does not; neither witness prints a word
+        about the oils on this day. This repository holds no pre-1955 Pontificale
+        read for that rite, so the recension says the Missal prints no Chrism Mass
+        and says NOTHING about the blessing of the oils.
+
+        WHY OCR IS ADMISSIBLE HERE AND NOT FOR WORDING. This file transcribes no
+        text and this row states none. The claim is that a heading and an Introit
+        occur once in a span of some six hundred lines, which is a structural
+        fact that survives character-level OCR error; the 38-in-99 correction rate
+        this file's `verification` records is a rate of WORD errors, and a second
+        Mass formulary cannot be spelt away.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: |
+          Nothing is served for this key under this recension. The base's Chrism
+          Mass is removed from the day, which is the whole content of the row.
 
     - key: mass-of-the-lords-supper
       name: Feria V in Coena Domini

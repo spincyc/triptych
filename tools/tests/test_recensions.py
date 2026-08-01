@@ -382,11 +382,20 @@ class TrackedRecensionTest(unittest.TestCase):
             {
                 "palm-sunday",
                 "blessing-of-palms",
+                "chrism-mass",
                 "mass-of-the-lords-supper",
                 "good-friday",
                 "easter-vigil",
             },
         )
+
+    def test_the_chrism_mass_is_not_served_under_this_recension(self):
+        """The pre-1955 books print one Mass on Holy Thursday; `absent` removes it."""
+        served = _calendars.mass_index(_calendars.load_document(self.root, "roman-pre-1955"))
+        self.assertNotIn("chrism-mass", served)
+        self.assertIn("mass-of-the-lords-supper", served)
+        base = _calendars.mass_index(_calendars.load_document(self.root, "roman-1962"))
+        self.assertIn("chrism-mass", base)
 
     def test_it_carries_no_transcribed_text(self):
         """No source text routes through this file; every proper is a placeholder."""
