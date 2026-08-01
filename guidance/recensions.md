@@ -1,8 +1,25 @@
-# Recensions: one missal that is mostly another missal
+# Recensions: the missal, and what was done to it afterwards
 
 A design study for carrying more than one state of the same rite — the Roman
-Missal before the Holy Week reform of 1955 alongside the 1962 typical edition —
-without holding two copies of the eighty-seven per cent they share.
+Missal as it stood before the Holy Week reform of 1955, and the 1962 typical
+edition as a revision applied on top of it — without holding two copies of the
+eighty-seven per cent they share.
+
+**The base is the pre-1955 book.** That is the maintainer's ruling of
+2026-07-31, and it is the direction the rite actually ran: the older book is not
+a variant of the newer one, and deriving an ancestor from its descendant would
+invert the history the whole apparatus exists to keep straight. A third state —
+the reformed Holy Week of 1956 to 1960 — then sits between them rather than
+having to be squeezed alongside.
+
+It is also an editorial position, and this study states it as one rather than
+smuggling it in as a technical necessity: the maintainer holds that what the 1962
+book did to the missal is among the things this project exists to document. The
+structural argument above stands on its own without that; the reader should know
+both are present, and that the repository elsewhere declines partisan naming —
+it settled on "1962 Missal" and "Postconciliar Missal" precisely to avoid taking
+that side in a control a reader cannot argue with. A design document may hold a
+position. A dropdown may not.
 
 **Nothing here has been built.** It is written now, before any data moves,
 because the shape is cheap to choose and expensive to change once a second
@@ -73,6 +90,39 @@ the largest such copy in the tree.
 
 > **Rule 2.** A recension is stored as its **departures from a base**, never as a
 > second copy of the base.
+
+### The text we hold was read from the newer book, and that does not have to move
+
+Making the pre-1955 book the base raises an obvious objection: all 1,378 propers
+now in the tree were transcribed from the 1962 typical edition and collated
+against it, and relabelling them as though they had been read from a pre-reform
+printing would be a false provenance claim — the exact defect class this
+repository spends its effort catching.
+
+The objection dissolves once **attestation is separated from residence**. A text
+lives once, in the base. What witnesses attest it is a separate fact, recorded
+per witness, and one text may be attested by many books — which is the ordinary
+case, since the whole point is that most of the missal did not change.
+
+So a proper in the base carries the witnesses that have actually been read for
+it, and today most of them will say *1962 typical edition, collated* and nothing
+else. **That is a true statement, not a false one.** It says the text stands in
+the base because the rite had it before 1955, and that the only printing anyone
+here has checked it against is the 1962 one.
+
+Three consequences make this the practical shape as well as the honest one:
+
+- **The base can be declared now, with nothing transcribed.** Populating it is
+  not a precondition; it is the work.
+- **Transcribing a pre-1955 witness ADDS attestation** where the text agrees and
+  **creates a departure** where it does not. Neither rewrites what is there.
+- **A reader can always be told what was checked.** "Attested in both printings"
+  and "attested only in the 1962 printing" are different claims, and a page that
+  cannot tell them apart is claiming the stronger one for free.
+
+> **Rule 2a.** A text resides in the base. Its witnesses are recorded per
+> witness, and a text attested by only one printing says so. No transcription is
+> ever re-attributed to a book nobody read it from.
 
 ---
 
@@ -157,6 +207,11 @@ the first time someone asks about the middle one.
 
 ## 6. What must be true before any data moves
 
+0. **Per-witness attestation on every proper, before anything is renamed.** This
+   is Rule 2a and it comes first, because it is what lets the base be declared
+   without moving a single transcription. Until a proper can say which printings
+   have been read for it, declaring the pre-1955 book the base would make the
+   tree assert a provenance nobody established.
 1. The departure vocabulary of §3, with a validator, before the first row is
    written — the lesson `catena.md` records from the same position.
 2. A check that fails when a recension's base does not exist, and when a
