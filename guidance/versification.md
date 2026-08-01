@@ -665,8 +665,9 @@ number anywhere.
 
 Confirmed across the Sunday lectionary **[verified]**, reading artifact pages
 59-61 (printed 5-7, Advent 1-3) and 99-102 (printed 45-48, Ordinary Time 2-4).
-Every responsorial psalm on those seven pages, with the response the Ordo
-prints beside it:
+Every distinct responsorial psalm on those seven pages other than the three
+already tabulated for page 100 above, with the response the Ordo prints beside
+it:
 
 | Printed | ℞ | Hebrew |
 |---|---|---|
@@ -682,8 +683,9 @@ prints beside it:
 | `Ps 94` | *Utinam hodie vocem Domini audiatis* | 95 |
 | `Ps 70` | *Os meum annuntiabit salutare tuum, Domine* | 71 |
 
-Thirteen responsorial psalms over seven pages, counting the two repeated by
-*Ut supra*. Every one is one lower than the Hebrew, which is the Vulgate
+Eleven here and three above: thirteen distinct psalms over seven pages, filling
+sixteen responsorial-psalm slots once the two the Ordo repeats by *Ut supra* are
+counted. Every one is one lower than the Hebrew, which is the Vulgate
 correspondence across 10-112 and 116-145, and none is dual-numbered.
 
 A third convention belongs on this record, because it shows the book knows
