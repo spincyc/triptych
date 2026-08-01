@@ -21,11 +21,9 @@ authors, its extent, and when it was last revised — open
 
 ## Read in the browser
 
-**[Today’s Missal](liturgy/day.html)** — the Mass appointed for today, in both
-missals, with the rubric behind each choice.
-
-| Then | |
+| Page | What it shows |
 | --- | --- |
+| **[Today’s Missal](liturgy/day.html)** | **The Mass appointed for today, in both missals, with the rubric behind each choice.** |
 | [The Propers of the Mass](liturgy/) | Any Mass, either missal. |
 | [The Story of Salvation](scripture/) | The abridged reading plan, at three depths. |
 | [Catena Omnia](catena/) | A chapter, and the commentary held on it, oldest first. |

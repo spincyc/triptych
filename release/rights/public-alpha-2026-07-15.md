@@ -1707,7 +1707,7 @@ release attachment, announcement, or promotion.
 | `LICENSE` | `49e30162cadcc57d93ca6027b750ab11bcfd012e76e4da2dbb0219d9aa1652f7` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
-| `README.md` | `2ea92440a199fdaa2a0992800f3c3e2adecb3a2857d6ba24d36b9c0df8c68286` |
+| `README.md` | `58d3bc0be209bb075e71c14d21c47398bc39ae68b1ab91ce4cb9912205739bca` |
 | `THIRD_PARTY.md` | `3930df7ae096296c5bb73b333f77f86ac459b2cf59d82e74fab057d948fd8021` |
 | `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
