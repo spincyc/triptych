@@ -173,18 +173,55 @@ the Internet Archive does not.
 ## 5. Rights: two thirds readable, fewer than half printable
 
 Twenty-two of thirty-one books are retrievable whole; fourteen may be published
-from. The gap is almost entirely the twentieth century, and the rule dividing
-them is the 1929 line.
+from. The gap is almost entirely the twentieth century.
 
-The strongest rights evidence in the audit is not an argument about treaties. It
-is the book's own claim, on the leaf after the title page of the 2002 typical
-edition [verified]:
+**The frame this audit began with was wrong in two places, and both came in with
+the brief rather than from a source.** A dedicated rights pass could source
+neither half of "post-1929 works of the Holy See are protected in the US;
+pre-1929 printings are generally clear":
 
-> *« Copyright » apud Administrationem Patrimonii Sedis Apostolicae in Civitate
-> Vaticana / Venditio operis fit cura Librariae Editricis Vaticanae*
+- **The line is before 1931, not before 1930.** Cornell's chart, current as of
+  1 January 2026, gives for works first published abroad: *Before 1931 | None |
+  In the public domain* [verified]. Nothing in the audit turned on the year —
+  the latest row claiming the rule is a 1924 printing — but the frame was
+  stating a rule it had not checked, which is the same defect whether or not it
+  bites. It also means **this file goes stale every January**.
+- **1929 is not a US watershed for the Holy See; 1935 is.** US Copyright Office
+  Circular 38a lists the Holy See's US copyright relations in full, earliest
+  *Berne (Paris) Sept. 12, 1935*, with no bilateral date and no WTO entry
+  [verified]. No Copyright Office, court, or published analysis making
+  11 February 1929 a boundary could be found. The date is real in Vatican law —
+  the Lateran Pacts, cited in Law CXCVII art. 1 — and its migration into a US
+  copyright rule is **unrecorded**.
 
-The Holy See asserting copyright in the altar book, in the altar book. That
-settles every postconciliar row as **cite-only** without further reasoning.
+The replacement reasons are stronger than the ones they displace, which is why
+the churn was worth it:
+
+- **The altar book's own printed claim**, on the leaf after the title page of
+  the 2002 typical edition [verified]:
+
+  > *« Copyright » apud Administrationem Patrimonii Sedis Apostolicae in
+  > Civitate Vaticana / Venditio operis fit cura Librariae Editricis Vaticanae*
+
+  Note what this actually says. The holder of record is **APSA** — the
+  Administration of the Patrimony of the Apostolic See — with **LEV as sales
+  agent only**, not as owner. That sits awkwardly beside the Secretariat of
+  State decree of 31 May 2005 vesting in LEV *every moral copyright and all the
+  exclusive financial rights … over all the deeds and documents through which
+  the Supreme Pontiff exercises his own Magisterium* [sourced]. Nothing located
+  reconciles them; recorded as an open tension.
+- **Vatican Law N. CXCVII (2017), art. 2**, which extends copyright to *the
+  texts of the laws and official acts published, in whatever form, by the Holy
+  See*, with a seventy-year term under art. 5 [sourced]. This is the opposite of
+  the US government-edicts rule, and it is why "it is an official act, therefore
+  free" fails here.
+- **URAA restoration**, 17 U.S.C. §104A, effective 1 January 1996 for Berne
+  members, running generally 95 years from publication [sourced]. This is the
+  mechanism that actually protects twentieth-century Holy See printings in the
+  US.
+
+A rights position resting on a book's own claim is better evidence than one
+resting on a treaty date nobody could cite.
 
 **Retrieval and publication are separate acts** and the audit keeps them apart
 throughout, as `sources.md` requires. A book may be `retrievable = "whole"` and
@@ -193,19 +230,60 @@ identity and route is correct; printing a line of it is not.
 
 Three rights positions were left explicitly open rather than resolved:
 
-- **The CMAA 1962 facsimile.** Three hosts serve byte-identical copies —
-  82,815,941 bytes each, the first matching the registered SHA-256 [verified] —
-  and they carry three different rights labels, one of them a CC BY-NC-ND applied
-  at an Internet Archive item. An uploader-applied licence is an assertion by
-  whoever filled in the field, not a grant; and no licence on a scan can enlarge
-  what may be done with the Holy See's text inside it. The recommendation is that
-  `unresolved` **stands**, and that the open question be answered *the licence
-  confers nothing* rather than left open.
+- **The CMAA 1962 facsimile — now answerable.** Four things were established.
+  The **hosting page carries no rights notice at all**: 54,516 bytes fetched and
+  searched for `copyright`, `©`, `creative commons`, `public domain` and `all
+  rights` — every one returns **zero** [verified]. The **facsimile itself carries
+  no copyright notice**, across all 54,807 extracted lines [sourced]. The **CC
+  BY-NC-ND was applied by a private individual** — uploader
+  `m.kusnjacic@gmail.com`, in a personal collection, describing the book as taken
+  from a Croatian website — while the same item credits the CMAA as *creator*
+  [verified]. And **at least nine Internet Archive items of this book contradict
+  each other**: two CC BY-NC-ND, two CC public-domain mark, five no licence,
+  including the one that is explicitly the CMAA file re-uploaded [sourced].
+
+  Under *Bridgeman* there is no new copyright in the scan for anyone to license,
+  and the Internet Archive states it *does not make guarantees as to the
+  copyright status of items on archive.org* [sourced]. So `unresolved` on the
+  artifact **stands and is correct** — it records the absence of affirmative
+  permission — but the open question about the licence can be **closed with a
+  reason**: it is an assertion by someone who is neither rights holder nor
+  scanner, over bytes carrying no new copyright, hosted by a body that publishes
+  no notice. It confers nothing.
 - **The 1942 Benziger** carries its own US copyright line and no renewal search
   is recorded.
 - **The 1936 Premonstratensian** has Internet Archive metadata with no publisher,
   no date field and no copyright statement [verified] — nothing established in
   either direction, which is a different thing from being free.
+
+### `absent: icel` is right, and its stated reason is not quite
+
+`the-shape.md` §4 gives `absent: icel` as its example of an absence carrying a
+reason: *a postconciliar text nobody may publish*. **That reason is too strong as
+stated**, and an absence must carry a true reason or it is doing the same job as
+a silence.
+
+ICEL's own published policy contains a standing conditional permission: approved,
+recognised and promulgated ICEL texts *may be reproduced in a non-commercial site
+… on the global computer network commonly known as the Internet without obtaining
+written or oral permission*, subject to five conditions — no access fee, the
+acknowledgment on first and last pages, texts followed exactly, and ICEL
+reserving the right to terminate [sourced]. The USCCB points the other way:
+*with the exception of … single daily collects from the Roman Missal, no
+permission will be given for the publication of liturgical texts on the Internet
+at this time* [sourced].
+
+So the position is **a conflict between two bodies**, not a prohibition. The
+operational answer is unchanged — a conditional permission with five conditions
+and a termination clause is not a basis for a library to print from, and the
+USCCB directly contradicts it — but the recorded reason should be *the two bodies
+that would have to agree do not*, rather than *nobody may*.
+
+> **Check before acting.** Another lane was working this exact ground
+> concurrently on 2026-08-01, with uncommitted records for ICEL publication
+> policies and WIPO Berne contracting parties. That work is not cited here
+> because it was not committed, and this audit does not adopt another lane's
+> uncommitted files. Reconcile before either is relied on.
 
 ### A rights conclusion that must not travel
 

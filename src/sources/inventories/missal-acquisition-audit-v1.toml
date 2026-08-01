@@ -72,24 +72,87 @@ recorded separately throughout. guidance/sources.md is explicit: retrieval and
 redistribution are separate acts, and the rights record decides the disposition
 after the retrieval, not before it.
 
-The frame this audit applies, stated so a later reader can disagree with it
-knowingly rather than inherit it silently:
+THE FRAME THIS AUDIT STARTED WITH WAS WRONG IN TWO PLACES, AND THE CORRECTED
+ONE IS BELOW. The brief this audit answers supplied the premise `post-1929 works
+of the Holy See are protected in the US; pre-1929 printings are generally
+clear`. A dedicated rights pass could source NEITHER HALF of that sentence. What
+replaced it is sourced line by line. See `[[corrections]]` entry
+`rights-frame-premise` for what changed and why it matters.
 
-- A printing published before 1 January 1930 is treated as clear in the United
-  States. Every pre-1930 row below rests on this.
-- A work of the Holy See published after 1929 is treated as protected in the
-  United States and is CITE-ONLY here. The 2002 typical edition prints its own
-  claim on the leaf after its title page, read at the bytes [verified]:
-  `" Copyright " apud Administrationem Patrimonii Sedis Apostolicae in Civitate
-  Vaticana / Venditio operis fit cura Librariae Editricis Vaticanae`. That is
-  the Holy See asserting copyright in the altar book in the book itself, and it
-  settles the postconciliar rows without needing an argument about treaties.
-- A digitisation of a public-domain book does not by itself carry a rights
-  statement for the digitisation. Where an uploader has applied a licence to
-  bytes they did not create, the licence is recorded as an uploader assertion
-  and is not treated as a grant. See `open_items`, the CMAA facsimile.
+- **The US public-domain line is BEFORE 1931, not before 1930.** Cornell's
+  `Copyright Term and the Public Domain in the United States`, in its revision
+  current as of 1 January 2026, gives for works first published abroad by
+  foreign nationals: `Before 1931 | None | In the public domain`
+  [verified at https://guides.library.cornell.edu/copyright/publicdomain].
+  Every `public-domain-us-pre-1931` row rests on this. The line moves each
+  January and this file will go stale; that is a property of the rule, not a
+  defect in the row.
+- **1929 IS NOT A SOURCED WATERSHED FOR THE HOLY SEE, and 1935 is.** US
+  Copyright Office Circular 38a lists the Holy See's copyright relations with
+  the United States in full as `Berne (Paris) Sept. 12, 1935; UCC Geneva Oct. 5,
+  1955; Phonograms July 18, 1977; UCC Paris May 6, 1980` [verified at
+  https://www.copyright.gov/circs/circ38a.pdf]. There is NO bilateral-treaty
+  date and no WTO entry. So the Holy See had no US copyright relation of any
+  kind before 12 September 1935, and 11 February 1929 appears in none of it.
+  The 1929 date is real in Vatican law -- it is the date of the Lateran Pacts,
+  cited in Vatican Law CXCVII art. 1 -- but nothing sourced here makes it a US
+  copyright boundary. Recorded as `unrecorded` rather than repeated.
+- **The Holy See asserts copyright in its own official acts, by statute.**
+  Vatican Law N. CXCVII of 1 September 2017, art. 2: `Le norme relative alla
+  protezione e alla gestione del diritto di autore si applicano anche ai testi
+  delle leggi e degli atti ufficiali pubblicati, in qualunque forma, dalla Santa
+  Sede e dallo Stato della Citta del Vaticano.` Art. 5 sets the term at seventy
+  years from first publication [sourced:
+  https://www.wipo.int/wipolex/en/legislation/details/22802]. This is the
+  opposite of the US government-edicts rule and it is why an argument from
+  `it is an official act, therefore free` fails here.
+- **The altar book's own claim is the operative one, and it names APSA.** The
+  2002 typical edition prints on the leaf after its title page, read at the
+  bytes [verified]: `" Copyright " apud Administrationem Patrimonii Sedis
+  Apostolicae in Civitate Vaticana / Venditio operis fit cura Librariae
+  Editricis Vaticanae`. So the holder of record for the Missal is the
+  ADMINISTRATION OF THE PATRIMONY OF THE APOSTOLIC SEE, with Libreria Editrice
+  Vaticana as SALES AGENT only -- not, as is usually assumed, LEV as owner.
+  This sits awkwardly beside the Secretariat of State decree of 31 May 2005
+  vesting in LEV `every moral copyright and all the exclusive financial rights
+  ... over all the deeds and documents through which the Supreme Pontiff
+  exercises his own Magisterium` [sourced:
+  https://www.vatican.va/roman_curia/secretariat_state/2005/documents/rc_seg-st_20050531_decreto-lev_en.html].
+  Nothing located reconciles the two. Recorded as an open tension, not resolved.
+- **URAA restoration applies and its date is 1 January 1996.** 17 U.S.C. 104A
+  restored US copyright in foreign works that had fallen into the US public
+  domain for failure of formalities, effective 1 January 1996 for Berne and WTO
+  members, for the remainder of a term generally running 95 years from first
+  publication [sourced: https://www.copyright.gov/circs/circ38b.pdf]. This is
+  the mechanism that matters for twentieth-century Holy See printings, and it
+  is a stronger and better-sourced reason for CITE-ONLY than the 1929 story it
+  replaces.
+- **A digitisation of a public-domain book creates no new US copyright.**
+  `Bridgeman Art Library v. Corel Corp.`, 36 F. Supp. 2d 191 (S.D.N.Y. 1999):
+  slavish photographic reproduction lacks originality [sourced]. The Internet
+  Archive disclaims any determination of its own -- `The Internet Archive does
+  not make guarantees as to the copyright status of items on archive.org`
+  [sourced: https://help.archive.org/help/rights/] -- and HathiTrust states of
+  Google-digitised public-domain works that `There are no restrictions on use of
+  text transcribed from the images` [sourced:
+  https://www.hathitrust.org/the-collection/search-access/access-use-policy/].
+  So an uploader-applied licence is an ASSERTION BY WHOEVER FILLED IN THE FIELD
+  and is never treated here as a grant. See `[[corrections]]`
+  `cmaa-facsimile-licence`, where that abstraction is made concrete.
 
-`rights` takes one of: `public-domain-us-pre-1930`, `holy-see-post-1929`,
+`rights` takes one of: `public-domain-us-pre-1931`, `holy-see-post-1929`,
+`third-party-copyright`, `unresolved`, `mixed`.
+`may_publish_text` is the operative field and is `yes`, `no`, `mixed`, or
+`unresolved`. A row may be freely readable and still `may_publish_text = "no"`.
+
+The value `holy-see-post-1929` is RETAINED AS A LABEL for continuity with the
+brief and with sibling records, but it now means `a modern liturgical book of
+the Holy See, protected in the United States by URAA restoration and by the
+Holy See's own asserted rights`. The year in the label is not the reason. A
+later pass may rename it; renaming it here would break the one cross-reference
+it has without improving what it means.
+
+`rights` takes one of: `public-domain-us-pre-1931`, `holy-see-post-1929`,
 `third-party-copyright`, `unresolved`.
 `may_publish_text` is the operative field and is `yes`, `no`, or `unresolved`.
 A row may be freely readable and still `may_publish_text = "no"`.
@@ -425,7 +488,7 @@ aliases_tried = [
   "missale romanum incunabulum",
 ]
 aliases_that_hit = ["Missale Romanum Mediolani 1474", "Lippe"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "Volume 1 printed London 1899, volume 2 printed 1907; both before 1930. One Internet Archive copy of volume 2 additionally carries possible-copyright-status NOT_IN_COPYRIGHT [verified]."
 may_publish_text = "yes"
 digitisation = "https://archive.org/details/missaleromanumme01cath (vol. 1, 1899, 554 images); https://archive.org/details/missaleromanumme02cath (vol. 2, 494 images); https://archive.org/details/missaleromanumm00churgoog (vol. 33, 1907, 469 images)"
@@ -484,7 +547,7 @@ aliases_tried = [
   "Faletti Varisco",
 ]
 aliases_that_hit = ["Missale Romanum 1570", "Messale Tridentino di San Pio V"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1570 printing."
 may_publish_text = "yes"
 digitisation = "NOT LOCATED as the Rome printing. See retrievable_basis."
@@ -520,7 +583,7 @@ attests_act = "quo-primum-1570"
 attests_kind = "printing of the promulgation year"
 aliases_tried = ["Missale Romanum 1570", "Varisco", "Faletti"]
 aliases_that_hit = ["Missale Romanum 1570"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1570 printing. The Internet Archive item additionally carries a CC public-domain mark and is contributed by the National Central Library of Rome [verified]."
 may_publish_text = "yes"
 digitisation = "https://archive.org/details/bub_gb_adC-aRGza70C -- 648 images, PDF 53,471,306 bytes, OCR text layer 1,333,548 bytes [verified]"
@@ -564,7 +627,7 @@ aliases_tried = [
   "Missale Romanum ex typographia Vaticana",
 ]
 aliases_that_hit = ["Missale Romanum 1604"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1604 printing; the Internet Archive item carries a CC public-domain mark and is contributed by the National Central Library of Rome [verified]."
 may_publish_text = "yes"
 digitisation = "https://archive.org/details/bub_gb_aaPpAuHRY9IC -- 702 images, PDF 78,504,620 bytes, OCR text layer 2,025,007 bytes [verified]"
@@ -599,7 +662,7 @@ aliases_tried = [
   "missale romanum 1630..1645",
 ]
 aliases_that_hit = []
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1634 printing, if one is found."
 may_publish_text = "yes"
 digitisation = "NOT LOCATED"
@@ -628,7 +691,7 @@ attests_act = "si-quid-est-1634"
 attests_kind = "title-page-statement"
 aliases_tried = ["Missale Romanum Pustet", "Missale Romanum Ratisbonae", "Missale Romanum 1862"]
 aliases_that_hit = ["Missale Romanum 1862"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1862 printing; CC public-domain mark, New York Public Library copy digitised by Google [verified]."
 may_publish_text = "yes"
 digitisation = "https://archive.org/details/bub_gb_E7sPAAAAIAAJ -- 922 images, PDF 102,880,787 bytes [verified]"
@@ -662,7 +725,7 @@ attests_act = "editio-typica-1884"
 attests_kind = "title-page-statement"
 aliases_tried = ["Missale Romanum Leonis XIII", "Missale Romanum Tornaci", "missale romanum 1880..1901"]
 aliases_that_hit = ["missale romanum 1880..1901"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1889 printing."
 may_publish_text = "yes"
 digitisation = "https://archive.org/details/missaleromanumex1889cath -- 1,010 images, PDF 134,269,422 bytes, OCR text layer 2,849,045 bytes [verified]"
@@ -675,7 +738,7 @@ it ties it by title page rather than by decree. It is therefore the first place
 to look for the 1884 instrument, which is `unrecorded`.
 """
 priority = 1
-priority_basis = "Highest of the pre-1930 rows, because it is the cheapest route to the audit's largest gap: the 1884 typical edition has no instrument on record, this book claims Leo XIII's authority on its face, and its whole text layer is already fetchable."
+priority_basis = "Highest of the pre-1931 rows, because it is the cheapest route to the audit's largest gap: the 1884 typical edition has no instrument on record, this book claims Leo XIII's authority on its face, and its whole text layer is already fetchable."
 evidence = "verified"
 
 [[books]]
@@ -689,7 +752,7 @@ attests_act = "editio-typica-1884"
 attests_kind = "conformity-declaration"
 aliases_tried = ["Missale Romanum Pustet 1894", "missale romanum 1880..1901"]
 aliases_that_hit = ["missale romanum 1880..1901"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1894 printing; the Internet Archive item carries possible-copyright-status NOT_IN_COPYRIGHT, Harvard copy digitised by Google [verified]."
 may_publish_text = "yes"
 digitisation = "https://archive.org/details/missaleromanume01churgoog -- 1,137 images, PDF 58,921,656 bytes, OCR text layer 2,441,281 bytes [verified]"
@@ -721,7 +784,7 @@ aliases_tried = [
   "missale romanum typica",
 ]
 aliases_that_hit = []
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1900 printing, if one is found."
 may_publish_text = "yes"
 digitisation = "NOT LOCATED"
@@ -751,9 +814,9 @@ attests_act = "editio-typica-1920"
 attests_kind = "decree-printed-in-book"
 aliases_tried = ["Missale Romanum 1920", "Missale Romanum Benedictus XV", "Missale Romanum Benedetto XV"]
 aliases_that_hit = ["Missale Romanum Benedetto XV"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = """
-1920 printing, before the 1930 line. WEAKER THAN THE OTHER PRE-1930 ROWS and
+1920 printing, before the 1931 line. WEAKER THAN THE OTHER PRE-1931 ROWS and
 the weakness is on the record: the Internet Archive item carries NO licence
 field and no copyright-status field [verified], so the basis is the printing
 date alone. The existing act-history witness row already flags this [recorded].
@@ -779,7 +842,7 @@ attests_kind = "conformity-declaration"
 aliases_tried = ["Missale Romanum 1947", "Missale Romanum Benziger", "missale romanum iuxta typicam"]
 aliases_that_hit = ["Missale Romanum 1947"]
 rights = "unresolved"
-rights_basis = "Its own copyright line reads 1942 and 1944 [recorded]. A 1942 US copyright is not cleared by the pre-1930 rule, and no renewal search is recorded. Already registered in this repository with the printing year of the scanned copy unestablished."
+rights_basis = "Its own copyright line reads 1942 and 1944 [recorded]. A 1942 US copyright is not cleared by the pre-1931 rule, and no renewal search is recorded. Already registered in this repository with the printing year of the scanned copy unestablished."
 may_publish_text = "unresolved"
 digitisation = "Internet Archive item missale-romanum-1947; registered at edition.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947 [recorded]"
 retrievable = "whole"
@@ -1067,7 +1130,22 @@ attests_act = "de-editione-typica-tertia-2000"
 aliases_tried = ["Roman Missal Third Edition", "ICEL Roman Missal"]
 aliases_that_hit = ["Roman Missal Third Edition"]
 rights = "third-party-copyright"
-rights_basis = "The English translation is ICEL's. This repository already treats postconciliar English as unpublishable and marks it `absent: icel` [recorded: guidance/the-shape.md section 4]."
+rights_basis = """
+The English translation is ICEL's, and ICEL's required acknowledgment form dates
+it 2010 rather than 2011: `The English translation of The Roman Missal (c) 2010,
+International Commission on English in the Liturgy Corporation. All rights
+reserved.` [sourced: https://icelweb.org/copyright.htm]. This repository treats
+postconciliar English as unpublishable and marks it `absent: icel`.
+
+THE POSITION IS A CONFLICT, NOT A FLAT PROHIBITION, and the row says so because
+the reason attached to an absence has to be true. ICEL publishes a standing
+conditional permission for non-commercial internet reproduction of approved
+texts without prior permission; the USCCB states that `no permission will be
+given for the publication of liturgical texts on the Internet at this time`.
+See `[[corrections]]` entry `icel-internet-clause` for both quotations and their
+sources. The operational answer is unchanged -- do not publish -- but it rests
+on the disagreement rather than on a prohibition nobody issued.
+"""
 may_publish_text = "no"
 digitisation = "https://archive.org/details/Roman-Missal-Third-Edition -- PDF 56,408,992 bytes, OCR text layer 1,992,477 bytes [verified]"
 retrievable = "whole"
@@ -1132,7 +1210,7 @@ aliases_that_failed = "`missale dominicanum` returns zero on the Internet Archiv
 rights = "mixed"
 rights_basis = "Pre-1930 printings clear; the 1933, 1939 and 1965 editions are modern official books of the order and no rights basis for them is established."
 may_publish_text = "mixed"
-may_publish_note = "Yes for the pre-1930 printings. No for 1933, 1939 and 1965."
+may_publish_note = "Yes for the pre-1931 printings. No for 1933, 1939 and 1965."
 digitisation = """
 EARLY, whole, and clear:
 - 1550 Venice, heirs of Lucantonio Giunta -- https://archive.org/details/bub_gb_FqVWqqFkUDsC (608 images) and a second copy https://archive.org/details/ARes12420 (610 images) [verified]
@@ -1181,7 +1259,7 @@ aliases_that_hit = ["missale carmelitarum", "missale monte carmelo"]
 rights = "mixed"
 rights_basis = "Pre-1930 printings clear. The 1935 typical edition and the 1953 lay hand missal are modern and no rights basis is established for either; the 1953 book is a Typis Polyglottis Vaticanis imprint, which puts it squarely in the post-1929 Holy See class."
 may_publish_text = "mixed"
-may_publish_note = "Yes for the pre-1930 printings. No for the 1935 typical edition or the 1953 hand missal."
+may_publish_note = "Yes for the pre-1931 printings. No for the 1935 typical edition or the 1953 hand missal."
 digitisation = """
 - 1574 Venice, apud Iuntas -- https://archive.org/details/ARes10417 -- 653 images, PDF 82,736,407 bytes, CC public-domain mark, University of Seville [verified]
 - 1621 Venice, apud Iuntas -- https://archive.org/details/bub_gb_PUEgJFAvalgC -- 628 images, PDF 69,366,657 bytes, CC public-domain mark, National Central Library of Rome [verified]
@@ -1255,7 +1333,7 @@ The absence was an absence in one repository under one spelling. Recording it
 without the second and third attempts would have been false.
 """
 rights = "mixed"
-rights_basis = "The pre-1930 printings are clear and Gallica states `domaine public / public domain` in its own record for each [verified]. The 1981 Missale Cartusiense is a modern official edition and no rights basis is established."
+rights_basis = "The pre-1931 printings are clear and Gallica states `domaine public / public domain` in its own record for each [verified]. The 1981 Missale Cartusiense is a modern official edition and no rights basis is established."
 may_publish_text = "mixed"
 may_publish_note = "Yes for the 1496, 1517, 1541 and 1679 printings. No for the 1981 edition."
 digitisation = """
@@ -1352,8 +1430,8 @@ Paris and London printers supplying the English market from about 1494 to 1557 -
 so no printing here can be a typical edition, and any row that called one that
 would be inventing an authority.
 """
-rights = "public-domain-us-pre-1930"
-rights_basis = "All the editions below are pre-1930. The 1916 Legg is additionally marked NOT_IN_COPYRIGHT at the Internet Archive [verified]. The 1969 Gregg reprint of Dickinson is NOT covered and must not be used as a substitute."
+rights = "public-domain-us-pre-1931"
+rights_basis = "All the editions below are pre-1931. The 1916 Legg is additionally marked NOT_IN_COPYRIGHT at the Internet Archive [verified]. The 1969 Gregg reprint of Dickinson is NOT covered and must not be used as a substitute."
 may_publish_text = "yes"
 digitisation = """
 - 1497 Rouen, Martin Morin for Jean Richard -- https://archive.org/details/missalesecundumv00cath -- 540 images, PDF 41,087,043 bytes, CC public-domain mark, Boston Public Library copy with a full provenance chain in the record [verified]. THE BEST EARLY SARUM SCAN FOUND.
@@ -1469,8 +1547,8 @@ label = "Missale Bracarense -- the rite of Braga"
 descends_from_act = "quo-primum-1570 exempting clause"
 aliases_tried = ["Missale Bracarense", "bracarensis", "rito bracarense", "Braga missal", "missal de Braga"]
 aliases_that_hit = ["bracarense"]
-rights = "public-domain-us-pre-1930"
-rights_basis = "1924 printing, before the 1930 line. It is an archdiocesan book rather than a Holy See imprint, so the post-1929 Holy See class does not reach it even had it been later."
+rights = "public-domain-us-pre-1931"
+rights_basis = "1924 printing, before the 1931 line. It is an archdiocesan book rather than a Holy See imprint, so the post-1929 Holy See class does not reach it even had it been later."
 may_publish_text = "yes"
 digitisation = "https://archive.org/details/missale-bracarense-1924 -- PDF 176,021,172 bytes, OCR text layer 3,210,801 bytes [verified]. Related: `O rito bracarense` (1906) at oritobracarense00serr, 148 images, and a 1931 `Cerimonial da Missa Cantada segundo o Rito Bracarense` [verified]."
 retrievable = "whole"
@@ -1511,8 +1589,8 @@ aliases_tried = [
   "rit lyonnais",
 ]
 aliases_that_hit = []
-rights = "public-domain-us-pre-1930"
-rights_basis = "Would apply to any pre-1930 printing, if one is found."
+rights = "public-domain-us-pre-1931"
+rights_basis = "Would apply to any pre-1931 printing, if one is found."
 may_publish_text = "yes"
 digitisation = "NOT LOCATED"
 retrievable = "not-located"
@@ -1542,7 +1620,7 @@ label = "Missale Romanum Slavonico idiomate -- the Glagolitic Roman Missal"
 descends_from_act = "quo-primum-1570 exempting clause, and later papal concession"
 aliases_tried = ["Missale Romanum Slavonico idiomate", "glagolitic missal", "missale romanum slavonic"]
 aliases_that_hit = ["missale romanum slavonico"]
-rights = "public-domain-us-pre-1930"
+rights = "public-domain-us-pre-1931"
 rights_basis = "1893 printing."
 may_publish_text = "yes"
 digitisation = "https://archive.org/details/missale-romanum-slavonico-idiomate-1893 -- PDF 1,323,591,298 bytes, OCR text layer 3,920,683 bytes, CC public-domain mark, publisher EX TYPOGRAPHIA POLYGLOTTA [verified]"
@@ -1689,35 +1767,163 @@ severity = "medium"
 target = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf, rights_status unresolved"
 target_says = "`rights_status = \"unresolved\"`, on the ground that no artifact-level statement establishing redistribution rights was located."
 finding = """
-The audit did not close the question and did SHARPEN it, which is the useful
-outcome. Three hosts serve what are demonstrably the same bytes, and they
-disagree:
+THE QUESTION IS NOW ANSWERABLE, and the answer is that the licence confers
+nothing. Four things were established, each at the bytes or at the API.
 
-  host                                          bytes         licence asserted
-  media.musicasacra.com/pdf/missale62.pdf       82,815,941    none on the file
-  archive.org/details/missale_romanum-1962      82,815,941    CC BY-NC-ND 3.0
-  archive.org/details/missale-romanum-1962-...  82,815,941    none
+1. THE HOSTING PAGE CARRIES NO RIGHTS NOTICE AT ALL. The CMAA post that
+   publishes the facsimile was fetched whole -- 54,516 bytes -- and searched for
+   `copyright`, the copyright sign, `creative commons`, `public domain` and
+   `all rights`. EVERY ONE RETURNS ZERO [verified:
+   https://musicasacra.com/2007/10/04/missale-romanum-1962/]. The post's entire
+   body is a sentence saying the Missal is online, hosted by the CMAA, thanks to
+   a gift from Fr Robert Skeris. So the scanner asserts nothing.
 
-All three sizes are identical and the first matches the registered SHA-256
-exactly [verified]. So ONE artifact carries three different rights labels
-depending on where it is fetched from.
+2. THE FACSIMILE ITSELF CARRIES NO COPYRIGHT NOTICE. The rights pass extracted
+   all 54,807 lines of its text layer and found no copyright statement anywhere;
+   the scan begins at the 1962 decree with no title-page imprint or colophon
+   captured [sourced]. The one hit for `proprietas` is inside the Preface of the
+   Trinity.
 
-Two observations that bear on TASK-114:
+3. THE CC BY-NC-ND WAS APPLIED BY A PRIVATE INDIVIDUAL RE-UPLOADING A THIRD
+   PARTY'S SCAN. The Internet Archive item `missale_romanum-1962` reports
+   `uploader: m.kusnjacic@gmail.com`, sits in that uploader's personal
+   collection `milankusnjacicarchive`, and its description says in Croatian that
+   the book was taken from a named website, linked through the Wayback Machine
+   [verified at the metadata API]. Its `creator` field names the CMAA -- so the
+   item credits the SCANNER while a DIFFERENT PERSON supplies the licence. The
+   uploader is neither the rights holder nor the scanner.
 
-- The CC BY-NC-ND is applied at an Internet Archive item whose `creator` field
-  names the Church Music Association of America. That names the SCANNER, not
-  necessarily the uploader, and an uploader-applied licence is an assertion by
-  whoever filled in the field, not a grant by a rights holder.
-- Whatever the digitisation's status, the UNDERLYING BOOK is a 1962 typical
-  edition of the Holy See. A licence on a scan cannot enlarge what may be done
-  with the text inside it.
+4. AT LEAST NINE ITEMS OF THIS BOOK EXIST AND THEIR LABELS CONTRADICT EACH
+   OTHER: two carry CC BY-NC-ND, two carry the CC public-domain mark, and five
+   carry no licence -- including the one that is explicitly the CMAA file
+   re-uploaded [sourced]. Byte sizes where checked are identical, 82,815,941,
+   and the first matches the registered SHA-256 exactly [verified]. ONE artifact
+   therefore carries at least three different rights labels depending on where
+   it is fetched from, and none traces to a statement by the CMAA or by any
+   Vatican body.
 
-So the licence does not resolve `unresolved`, and a lane that treated it as
-permission would be relying on a stranger's dropdown for a rights claim about
-the Holy See's book.
+Two further points settle it. A digitisation of a public-domain book creates no
+new US copyright under `Bridgeman`, so there is nothing for an uploader to
+license in the first place; and the Internet Archive itself states that it
+`does not make guarantees as to the copyright status of items on archive.org`
+and that licences are supplied by whoever uploaded the item [sourced, both in
+`rights_frame` above].
+
+And whatever the scan's status, THE UNDERLYING BOOK is a 1962 typical edition of
+the Holy See. No licence on a scan can enlarge what may be done with the text
+inside it.
 """
-consequences = "None applied. The recommendation is that `unresolved` STANDS, and that TASK-114 be answered `the CC BY-NC-ND is an uploader assertion on a third-party scan and confers nothing` rather than left open."
-status = "recommendation only; no record changed"
+consequences = """
+No record changed: `rights_status = "unresolved"` on the artifact is CORRECT and
+should stand, because the audit found no affirmative permission -- which is what
+`unresolved` records.
+
+The open question about the uploader-applied CC BY-NC-ND can now be CLOSED with
+a reason rather than left open: the licence is an assertion by a private
+uploader who is neither the rights holder nor the scanner, over bytes that carry
+no new copyright to license, hosted by a body that publishes no rights notice
+and disclaims determination. It confers nothing, and a lane that treated it as
+permission would be resting a claim about the Holy See's altar book on a
+stranger's dropdown.
+"""
+status = "question answered with reasons; artifact record deliberately unchanged"
+
+[[corrections]]
+id = "rights-frame-premise"
+severity = "high"
+target = "the premise this audit was given, and the first version of `rights_frame` in this file, which adopted it"
+target_says = """
+`post-1929 works of the Holy See are protected in the US; pre-1929 printings are
+generally clear`, with the US public-domain line placed at `before 1 January
+1930`.
+"""
+finding = """
+NEITHER HALF COULD BE SOURCED, and both are wrong in ways that matter.
+
+- THE LINE IS BEFORE 1931, NOT BEFORE 1930. Cornell's chart, in its revision
+  current as of 1 January 2026, reads `Before 1931 | None | In the public
+  domain` for works first published abroad [verified]. The audit was one year
+  behind. Nothing in this file actually turned on the difference -- the latest
+  row claiming the rule is a 1924 printing -- but the frame was stating a rule
+  it had not checked, which is the same defect whether or not it bites.
+
+- 1929 IS NOT A US COPYRIGHT WATERSHED FOR THE HOLY SEE. US Copyright Office
+  Circular 38a lists the Holy See's US copyright relations in full, and the
+  earliest is `Berne (Paris) Sept. 12, 1935` [verified]. There is no bilateral
+  date and no WTO entry. A dedicated pass could find no US Copyright Office,
+  court, or published analysis making 11 February 1929 a boundary for these
+  works. The date is real in Vatican law -- the Lateran Pacts, cited in Vatican
+  Law CXCVII art. 1 -- and its migration into a US copyright rule is
+  `unrecorded`.
+
+The replacement reasons are STRONGER than the ones they displace, which is why
+this is worth the churn rather than a quibble: URAA restoration under 17 U.S.C.
+104A, effective 1 January 1996 for Berne members, running 95 years from
+publication; the Holy See's own statutory claim over its official acts under
+Vatican Law CXCVII arts. 2 and 5; and, best of all, the altar book's own printed
+copyright line naming APSA. A rights position resting on a book's own claim is
+better evidence than one resting on a treaty date nobody could cite.
+"""
+consequences = """
+- `rights_frame` rewritten with a source for every clause.
+- The enum `public-domain-us-pre-1930` renamed to `public-domain-us-pre-1931`
+  across all rows, and the prose that said `pre-1930` corrected with it.
+- `holy-see-post-1929` RETAINED as a label, with an explicit note that the year
+  in the name is no longer the reason. Renaming it would break its one
+  cross-reference without improving its meaning.
+- A standing caution: the pre-1931 line MOVES EVERY JANUARY. This file will go
+  stale on 1 January 2027 and the staleness is in the rule, not in the rows.
+"""
+status = "applied on 2026-08-01"
+
+[[corrections]]
+id = "icel-internet-clause"
+severity = "medium"
+target = "this project's standing treatment of postconciliar English as simply unpublishable, recorded as `absent: icel`"
+target_says = "guidance/the-shape.md section 4 gives `absent: icel` as its example of an absence with a reason: `a postconciliar text nobody may publish`."
+finding = """
+`NOBODY MAY PUBLISH` IS TOO STRONG AS STATED, AND THE REAL POSITION IS A
+CONFLICT BETWEEN TWO BODIES rather than a single prohibition.
+
+ICEL's own published policy contains a standing blanket permission for the
+internet. `Publication Policies of the International Commission on English in
+the Liturgy`, under `Use of ICEL Materials on Global Computer Networks`
+[sourced: https://icelweb.org/PubPolicy.PDF, and the summary at
+https://icelweb.org/copyright.htm]: approved, recognised and promulgated ICEL
+texts `may be reproduced in a non-commercial site ... on the global computer
+network commonly known as the Internet WITHOUT OBTAINING WRITTEN OR ORAL
+PERMISSION`, subject to conditions -- no access fee, the copyright
+acknowledgment on first and last pages, the texts followed exactly, and ICEL
+reserving the right to terminate or modify.
+
+The USCCB's policy points the other way. `Policy on Electronic Copyrights`
+[sourced: https://www.usccb.org/committees/divine-worship/policies]: `With the
+exception of publication permission for single daily collects from the Roman
+Missal, no permission will be given for the publication of liturgical texts on
+the Internet at this time.`
+
+So one body publishes a conditional standing permission and the other says
+permission will not be given. This audit does not resolve which governs a given
+text in a given territory, and it must not: that is a rights judgement for the
+maintainer, not a finding.
+"""
+consequences = """
+None applied, and deliberately so. `absent: icel` remains the right operational
+default -- a conditional permission with five conditions and a termination
+clause is not a basis for a library to print from, and the USCCB position
+directly contradicts it.
+
+What changes is the REASON RECORDED. `nobody may publish` is not what the
+sources say; `the two bodies that would have to agree do not` is. An absence
+must carry a true reason, and this one carried a slightly false one.
+
+NOTE, AND CHECK BEFORE ACTING: another lane appears to be working this exact
+ground concurrently -- uncommitted records for ICEL publication policies and for
+WIPO Berne contracting parties were present in the tree on 2026-08-01. That
+lane's file is not cited here because it was not committed and this audit does
+not adopt another lane's uncommitted work. Reconcile before either is relied on.
+"""
+status = "recorded, not applied"
 
 [[corrections]]
 id = "lt-hist-public-domain-assumption"
@@ -1781,7 +1987,7 @@ may_publish_yes = 14
 may_publish_no = 9
 may_publish_mixed = 6
 may_publish_unresolved = 2
-rights_public_domain_us_pre_1930 = 14
+rights_public_domain_us_pre_1931 = 14
 rights_holy_see_post_1929 = 7
 rights_mixed = 6
 rights_unresolved = 3
@@ -1834,7 +2040,7 @@ finding an open copy rather than downloading one. `ordo-hebdomadae-sanctae-1956`
 step_2 = """
 THE 1900 TYPICAL EDITION. It is the single `via_unrepresented` edge in the whole
 Holy Week graph -- the one place the record admits it crosses a station it does
-not hold. It is pre-1930 and therefore publishable, and the 1920 decree naming
+not hold. It is pre-1931 and therefore publishable, and the 1920 decree naming
 it as parent has been read here, so the target is exactly identified.
 `missale-romanum-1900-typica`.
 """
