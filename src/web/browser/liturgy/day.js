@@ -40,6 +40,17 @@
  *
  *   ?data=<root>        where the corpus lives (default ../browse)
  *   #date=<YYYY-MM-DD>&missal=<id>&bible=<id>&orations=<lang>
+ *     &ordinary=1&ordinary-lang=<lang>&rubrics=0&why=1
+ *
+ * Four controls govern the frame, and each of them reads a declaration rather
+ * than holding one. `ordinary-lang` offers the languages the Ordinary's own
+ * file declares, including one it holds no word of, because choosing an empty
+ * language is how a reader is shown, at every element, the reason it is empty.
+ * `rubrics` paints or does not paint the priest's actions, and never removes
+ * them, because they are the elements the propers are seated against. The
+ * Eucharistic Prayer comes from the file's `variants`. And `why` puts the
+ * whole apparatus — the rubrical account, the transcriber's notes, how the
+ * frame was derived — into the margin, off the page the Mass is read from.
  * ======================================================================== */
 
 'use strict';
@@ -69,6 +80,16 @@
   // what it becomes is decided in `openMargins` rather than left to reflow.
   const WIDE = '(min-width: 60rem)';
 
+  // The Mass reads as one document, so its headings run as one ladder. The date
+  // is h2, a Mass is h3, a division of the Ordinary — "The Priest at the Foot
+  // of the Altar" — is h4, and every part said is h5, whether it is an element
+  // of the frame or a proper of the day. Those two are the same kind of thing
+  // to a reader moving by headings; set at h4 and h3 respectively, which is
+  // what they were, the page said the Introit outranked the division it stands
+  // in and that the Introit and the division were peers.
+  const DIVISION_HEADING = 'h4';
+  const PART_HEADING = 'h5';
+
   const state = {
     missals: [],
     missalId: null,
@@ -86,6 +107,17 @@
     // class the way the margins are.
     ordinary: false,
     ordinaryIndex: [],
+    // The language the Ordinary is read in, held as the reader asked for it
+    // rather than as the file offers it: the hash is read before any Ordinary
+    // is fetched, so it is resolved against the file in `chosenLanguage`.
+    ordinaryLang: null,
+    // The rubrics of the Ordinary — what the priest does. ON, because a missal
+    // prints them and they are how a reader following along knows where the
+    // Mass has got to; a page that opened without them would open showing less
+    // than the book it is standing in for. Named `showRubrics` because
+    // `state.rubrics` above is the rules of precedence, which are a different
+    // thing entirely.
+    showRubrics: true,
     // group id -> chosen option id, so a missal that grows a second choice
     // needs a row in its inventory and no line here.
     variants: {}
@@ -97,6 +129,10 @@
   const orationsSelect = document.getElementById('orations-select');
   const whyToggle = document.getElementById('why-toggle');
   const ordinaryToggle = document.getElementById('ordinary-toggle');
+  const ordinaryLangField = document.getElementById('ordinary-lang-field');
+  const ordinaryLangSelect = document.getElementById('ordinary-lang-select');
+  const rubricsField = document.getElementById('rubrics-field');
+  const rubricsToggle = document.getElementById('rubrics-toggle');
   const variantField = document.getElementById('variant-field');
   const variantLabel = document.getElementById('variant-label');
   const variantSelect = document.getElementById('variant-select');
@@ -527,11 +563,17 @@
       ? (structure.masses || []).find((one) => one.key === branch.winner.key)
       : null;
 
-    /** One proper of the day, with whatever the margin has to say beside it. */
-    function renderMassProper(proper, seat) {
+    /**
+     * One proper of the day, with whatever the margin has to say beside it.
+     *
+     * `level` is the heading it sets at: h3 standing alone, and h5 inside the
+     * Ordinary, where the divisions of the rite stand above it.
+     */
+    function renderMassProper(proper, seat, level) {
       const body = T.renderProper(proper, bible, fragments, {
         numbering: (structure && structure.numbering) || null,
         orations: state.orations,
+        heading: level || 'h3',
         cycle: cycleKeyFor(
           proper, (derived.liturgicalYear && derived.liturgicalYear.lectionary) || null)
       });
@@ -646,26 +688,98 @@
     return (file.translations || []).find((one) => one.source_id === sourceId) || null;
   }
 
+  /** The languages this Ordinary speaks of, as its own file declares them. */
+  function languagesOf(file) {
+    return (file && file.languages) || [];
+  }
+
+  /** How many elements this frame carries, as its own file counts them. */
+  function frameSize(file) {
+    const first = languagesOf(file)[0];
+    return first ? first.elements : 0;
+  }
+
+  /**
+   * The language the Ordinary is read in.
+   *
+   * The reader's choice where the file offers it, and otherwise the first
+   * language the file actually holds anything in — never simply the first
+   * declared, which for a missal whose English is withheld would open the page
+   * on a language it has not one word of.
+   */
+  function chosenLanguage(file) {
+    const offered = languagesOf(file);
+    return offered.find((one) => one.lang === state.ordinaryLang) ||
+      offered.find((one) => one.held > 0) || offered[0] || null;
+  }
+
+  /**
+   * How an element names the reason it is silent.
+   *
+   * The reason itself is stated once, in the preamble, with how many elements
+   * it covers; here the element names it and no more. Printing the reason in
+   * full at every element put a 700-character paragraph on the page 39 times
+   * over the postconciliar frame, and would have put a 400-character one there
+   * 195 times the moment a reader asked the 1962 Ordinary for its Latin. The
+   * key is the handle this whole project withholds under — `absent: icel` —
+   * and it is the thing a reader can carry back to the account above.
+   */
   function absenceWord(file, key) {
+    if (!key) {
+      return 'This Ordinary holds none here and records no reason, which is a ' +
+        'defect in its source rather than a silence about the rite.';
+    }
     const found = (file.absences || []).find((one) => one.key === key);
-    return found ? found.what : key;
+    return found
+      ? 'Withheld under “' + key + '”, which is stated above.'
+      : 'Withheld under “' + key + '”.';
+  }
+
+  /**
+   * The heading an element gets, or none.
+   *
+   * A rubric and a section head are printed matter and not prayers with names:
+   * they carry no `name`, and the page used to fall back to the last segment
+   * of the storage key, so `rubrica-sacerdos-ad-pedes-altaris` stood over the
+   * priest's words as though the book had printed it. It did not. An element
+   * with nothing to be called is set without a title, exactly as the missal
+   * sets it, and its page or number rides with the text instead.
+   */
+  function elementHeading(element) {
+    if (!element.name) return null;
+    const heading = T.el(PART_HEADING, 'proper-name', element.name);
+    if (element.speaker) heading.appendChild(T.el('span', 'proper-form', element.speaker));
+    if (element.locus) heading.appendChild(T.el('span', 'proper-ref', element.locus));
+    return heading;
   }
 
   function renderElement(element, file) {
-    const section = T.el('section', 'proper ordinary-element');
+    // The kind rides on the class, because how a missal sets an element is
+    // decided by what kind of thing it is: a rubric in italic, a head across
+    // the measure, a prayer in the reading face. Who says it is on the heading,
+    // where the reader is looking when they want to know.
+    const section = T.el('section', 'proper ordinary-element is-' + element.kind);
 
-    const heading = T.el('h4', 'proper-name', element.name || element.key.split('/').pop());
-    if (element.speaker) heading.appendChild(T.el('span', 'proper-form', element.speaker));
-    if (element.locus) heading.appendChild(T.el('span', 'proper-ref', element.locus));
-    section.appendChild(heading);
+    const heading = elementHeading(element);
+    if (heading) section.appendChild(heading);
 
-    const held = (element.translations || [])[0] || null;
+    const language = chosenLanguage(file);
+    const translations = element.translations || [];
+    const held = language
+      ? translations.find((one) => one.lang === language.lang) || null
+      : null;
     if (held) {
-      const body = T.el('p', 'composed');
-      body.appendChild(T.el('span', 'composed-label',
-        element.kind === 'rubric' ? 'Rubric — the book’s own words'
-          : 'Composed text — not scripture'));
-      body.appendChild(document.createTextNode(held.text));
+      // No label above the words. "Composed text — not scripture" is true of
+      // every element of an Ordinary, so saying it 195 times said nothing 194
+      // of those times; what distinguishes a rubric from a prayer here is how
+      // it is set, which is what distinguishes them in the book.
+      const body = T.el('p', element.kind === 'heading' ? 'ordinary-head' : 'composed');
+      if (!heading && element.locus) {
+        body.appendChild(T.el('span', 'ordinary-locus', element.locus));
+      }
+      // ℣ and ℟ are set here and nowhere upstream: the artifacts hold what the
+      // book prints, and the book prints "R." for want of the sort.
+      body.appendChild(T.versicled(held.text));
       body.lang = held.lang;
       section.appendChild(body);
 
@@ -693,12 +807,22 @@
       section.appendChild(incipit);
     }
 
-    const absent = element.absent || {};
-    if (absent.english) {
-      section.appendChild(T.notice('its English. ' + absenceWord(file, absent.english)));
-    }
-    if (absent.latin && !held) {
-      section.appendChild(T.notice('its Latin. ' + absenceWord(file, absent.latin)));
+    // Which languages this element does not answer, and under what reason.
+    //
+    // The one the reader asked for is always said, so a chosen language that
+    // is empty here can never be silently empty — which is the whole of the
+    // postconciliar case, where 39 of 48 elements are withheld under ICEL. The
+    // others are said only where the element holds nothing in any language at
+    // all; there the reader is looking at an incipit and is owed the entire
+    // account of why, and everywhere else the count stands in the preamble
+    // rather than under 195 elements that do have their words.
+    const anywhere = translations.length > 0;
+    for (const one of languagesOf(file)) {
+      if (translations.some((row) => row.lang === one.lang)) continue;
+      if (anywhere && (!language || one.lang !== language.lang)) continue;
+      section.appendChild(T.notice(
+        'its ' + T.languageName(one.lang) + '. ' +
+        absenceWord(file, (element.absent || {})[one.absent])));
     }
     // The note is the transcriber's apparatus — which capital is a drop, where
     // the Latin column prints a cross, which leaf a reading came from. It is
@@ -717,42 +841,71 @@
    * It is the same file for every branch on the date, so saying it per branch
    * would say it twice about one thing. It stands above the Masses because it
    * governs all of them.
+   *
+   * Two kinds of thing were mixed here and are now separated, because a reader
+   * opening the page to follow the Mass met about three thousand characters
+   * before a word of any prayer. What the reader must see is the standing —
+   * what this book is, whose English it is, on what condition, and what is
+   * withheld and how much of it. How the file was arrived at is apparatus: it
+   * goes in the margin with the rest of the reasoning, where the same toggle
+   * governs it as governs everything else of that kind.
    */
   function ordinaryPreamble(file) {
-    const wrapper = T.el('section', 'ordinary-preamble');
-    wrapper.appendChild(T.el('h3', 'mass-name', file.title));
-    wrapper.appendChild(T.el('p', 'entry-meta',
-      [file.edition_short || file.edition, 'the frame the day’s propers are set into']
-        .filter(Boolean).join(' · ')));
-    wrapper.appendChild(T.el('p', 'row-meta', file.advisory));
+    const body = T.el('div', 'mass-head');
+    body.appendChild(T.el('h3', 'mass-name', file.title));
 
-    // Named once, here, rather than under every element it supplied.
-    const named = (file.translations || []).filter((one) => one.label);
-    if (named.length) {
-      wrapper.appendChild(T.el('p', 'row-meta',
-        (named.length === 1 ? 'Translation: ' : 'Translations: ') +
-        named.map((one) => one.label).join('; ')));
+    const language = chosenLanguage(file);
+    body.appendChild(T.el('p', 'entry-meta', [
+      file.edition_short || file.edition,
+      'the frame the day’s propers are set into',
+      language ? 'read in ' + T.languageName(language.lang) : null
+    ].filter(Boolean).join(' · ')));
+
+    body.appendChild(T.el('p', 'row-meta', file.advisory));
+
+    // One line per witness, carrying its label and the caution it travels
+    // under. The label used to be printed twice — once as "Translation: …" and
+    // again at the head of its own caution — which is one fact in two places
+    // and the first step towards two facts.
+    for (const witness of file.translations || []) {
+      if (!witness.label) continue;
+      body.appendChild(T.el('p', 'row-meta',
+        witness.label + (witness.caution ? ' — ' + witness.caution : '')));
     }
 
-    for (const witness of file.translations || []) {
-      if (witness.caution) {
-        wrapper.appendChild(T.el('p', 'row-meta', witness.label + ' — ' + witness.caution));
-      }
+    // What this Ordinary withholds, said once, with how many elements each
+    // reason covers. Every element that is silent names one of these, so the
+    // account is on the page exactly once and every silence points at it.
+    for (const absence of file.absences || []) {
+      const line = T.el('p', 'row-meta ordinary-absence');
+      line.appendChild(T.el('span', 'ordinary-absence-key', absence.key));
+      line.appendChild(document.createTextNode(
+        absence.count + ' of ' + frameSize(file) + ' elements. ' + absence.what));
+      body.appendChild(line);
     }
 
     const group = variantGroupOf(file);
     const chosen = group && chosenOption(file, group);
     if (group && chosen) {
-      wrapper.appendChild(T.el('p', 'row-meta',
+      body.appendChild(T.el('p', 'row-meta',
         group.name + ': ' + chosen.name + '. ' + group.what));
     }
 
+    const wrapper = T.el('section', 'ordinary-preamble');
+    wrapper.appendChild(annotated(body, ordinaryMargin(file)));
+    return wrapper;
+  }
+
+  /** How this frame was arrived at: apparatus, and behind the same toggle. */
+  function ordinaryMargin(file) {
+    const node = margin('Ordinary resolution');
+    if (file.derived_from) node.appendChild(T.el('p', 'margin-why', file.derived_from));
     // Where the seats came from. A page that sets one book's propers into
     // another book's frame owes the reader that sentence.
     if (file.slots_derived_from) {
-      wrapper.appendChild(T.el('p', 'row-meta', file.slots_derived_from));
+      node.appendChild(T.el('p', 'margin-why', file.slots_derived_from));
     }
-    return wrapper;
+    return node;
   }
 
   /**
@@ -842,8 +995,14 @@
     const shown = shownElements(file);
     const placed = seatPropers(propers, seats(file, shown));
 
+    // Inside the frame a proper of the day is a part of the Mass beside the
+    // parts that never change, so it sets at the same level as they do. It
+    // needs no class of its own to be found: inside this frame an annotated
+    // block IS a proper of the day, the elements being sections beside it.
     const pour = (held) => {
-      for (const row of held) wrapper.appendChild(renderMassProper(row.proper, row.seat));
+      for (const row of held) {
+        wrapper.appendChild(renderMassProper(row.proper, row.seat, PART_HEADING));
+      }
     };
 
     if (placed.before.length) {
@@ -857,7 +1016,8 @@
     for (let index = 0; index < shown.length; index += 1) {
       if (shown[index].section !== current) {
         current = shown[index].section;
-        wrapper.appendChild(T.el('h3', 'mass-subheading', current.name));
+        wrapper.appendChild(T.el(DIVISION_HEADING, 'mass-subheading ordinary-division',
+          current.name));
       }
       pour(placed.buckets.get(index) || []);
       wrapper.appendChild(renderElement(shown[index].element, file));
@@ -887,6 +1047,34 @@
     })));
     orationsSelect.disabled = state.orationLanguages.length < 2;
     if (state.orations) orationsSelect.value = state.orations;
+  }
+
+  /**
+   * The Ordinary's language control, filled from the Ordinary's own file.
+   *
+   * A language nothing is held in is still offered, and says so in its label.
+   * That is not an oversight: the postconciliar frame holds nine elements of
+   * forty-eight and the Latin of neither missal is here at all, and choosing an
+   * empty language is how a reader sees, element by element and at the place
+   * each falls due, under what recorded reason it is empty. A control that
+   * hid them would leave the reader to conclude the texts do not exist.
+   */
+  function fillOrdinaryLanguageSelect(file) {
+    const offered = languagesOf(file);
+    if (!state.ordinary || offered.length < 2) {
+      ordinaryLangField.hidden = true;
+      return;
+    }
+    T.fillSelect(ordinaryLangSelect, offered.map((one) => ({
+      value: one.lang,
+      label: T.languageName(one.lang) + (one.held
+        ? ' — ' + one.held + ' of ' + one.elements
+        : ' — none held'),
+      title: one.lang
+    })));
+    const chosen = chosenLanguage(file);
+    if (chosen) ordinaryLangSelect.value = chosen.lang;
+    ordinaryLangField.hidden = false;
   }
 
   /**
@@ -920,7 +1108,9 @@
     if (state.orations) orationsSelect.value = state.orations;
     whyToggle.checked = state.why;
     ordinaryToggle.checked = state.ordinary;
+    rubricsToggle.checked = state.showRubrics;
     applyWhy();
+    applyRubrics();
   }
 
   // The margins stay in the DOM and are hidden by a class rather than removed,
@@ -930,6 +1120,28 @@
     document.body.classList.toggle('shows-why', state.why);
   }
 
+  /**
+   * The priest's actions, shown or hidden.
+   *
+   * By a class on the body, for the same reason the margins are, and for one
+   * more that matters here: the rubrics are what the slots are anchored to.
+   * `praeparatio/rubrica-benedictio-incensi-et-introitus` is the element the
+   * Introit is seated after. Filtering the rubrics out of the frame before it
+   * was seated would take those anchors with them and unseat the propers they
+   * carry — the Mass would still render, in a plausible and wrong order. So
+   * they are seated first and hidden afterwards, and hiding is only ever a
+   * matter of what is painted.
+   *
+   * The class marks the DEPARTURE and not the default, unlike `shows-why`,
+   * because the defaults are opposite: the reasoning is off until asked for and
+   * the rubrics are on until turned off. A class meaning "show" with a default
+   * of shown would have hidden the priest's actions in the moment before this
+   * ran, and on any page where it never ran at all.
+   */
+  function applyRubrics() {
+    document.body.classList.toggle('hides-rubrics', !state.showRubrics);
+  }
+
   function writeHash() {
     const pairs = [
       ['date', state.date],
@@ -937,7 +1149,11 @@
       ['bible', state.bibleId],
       ['orations', state.orations === T.SOURCE_LANGUAGE ? null : state.orations],
       ['why', state.why ? '1' : null],
-      ['ordinary', state.ordinary ? '1' : null]
+      ['ordinary', state.ordinary ? '1' : null],
+      ['ordinary-lang', state.ordinaryLang],
+      // Only when turned off: the hash carries departures from the page as it
+      // opens, and the rubrics are on as it opens.
+      ['rubrics', state.showRubrics ? null : '0']
     ];
     // Keyed by the group's own id, so a second choice in some later missal
     // rides in the hash without a line being added here.
@@ -1037,7 +1253,10 @@
     // Mass is drawn inside it. Where there is no frame the Masses render as
     // they always did — a missing Ordinary withholds nothing but itself.
     const frame = ordinary && ordinary.ok ? ordinary.value : null;
+    fillOrdinaryLanguageSelect(frame);
     fillVariantSelect(frame);
+    // The rubrics belong to the frame, so the control for them appears with it.
+    rubricsField.hidden = !frame;
     if (frame) {
       reading.appendChild(ordinaryPreamble(frame));
     } else if (ordinary) {
@@ -1147,6 +1366,11 @@
       : state.bibles[0].id;
     state.why = hash.get('why') === '1';
     state.ordinary = hash.get('ordinary') === '1';
+    // A language asked for is taken as asked and checked when the Ordinary
+    // arrives: no Ordinary has been fetched yet, and the set of languages is
+    // the file's to state, not this function's to assume.
+    state.ordinaryLang = hash.get('ordinary-lang') || null;
+    state.showRubrics = hash.get('rubrics') !== '0';
     for (const row of state.ordinaryIndex) {
       for (const group of row.variants || []) {
         const wanted = hash.get(group);
@@ -1179,6 +1403,21 @@
   ordinaryToggle.addEventListener('change', () => {
     state.ordinary = ordinaryToggle.checked;
     select(null, null, { moveFocus: false });
+  });
+
+  // A re-render, because the words themselves change: which text an element
+  // holds, and what it says where it holds none, are both settled at build.
+  ordinaryLangSelect.addEventListener('change', () => {
+    state.ordinaryLang = ordinaryLangSelect.value;
+    select(null, null, { moveFocus: false });
+  });
+
+  // No re-render: the rubrics stay in the DOM, still anchoring the seats, and
+  // only stop being painted.
+  rubricsToggle.addEventListener('change', () => {
+    state.showRubrics = rubricsToggle.checked;
+    applyRubrics();
+    writeHash();
   });
 
   variantSelect.addEventListener('change', () => {
@@ -1236,6 +1475,8 @@
       state.orations = wantedOrations;
     }
     state.ordinary = hash.get('ordinary') === '1';
+    state.ordinaryLang = hash.get('ordinary-lang') || null;
+    state.showRubrics = hash.get('rubrics') !== '0';
     for (const row of state.ordinaryIndex) {
       for (const group of row.variants || []) {
         const wanted = hash.get(group);

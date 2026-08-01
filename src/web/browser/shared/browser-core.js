@@ -1110,6 +1110,78 @@ window.Triptych = (function () {
       : languageName(entry.lang) + ' — ' + entry.held + ' of ' + entry.composed;
   }
 
+  /* ------------------------------------------------------------------------
+   * ℣ and ℟
+   *
+   * The versicle and the response have their own marks, and a book with no
+   * sort for them prints "V." and "R." instead. The artifacts hold what the
+   * book prints, and they are the things that carry the hashes, so THE
+   * SUBSTITUTION IS MADE HERE, at the moment of setting, and never in the
+   * record. Nothing upstream is edited to suit a stylesheet.
+   *
+   * THE RULE IS DELIBERATELY NARROW, BECAUSE THE WIDE ONE IS WRONG. Every
+   * single "V." in the 1861 Ordinary — all four of them — is the V of
+   * "the B. V. M.", the Blessed Virgin Mary, and not one is a versicle;
+   * "P. Com." is a Post Communion. A blanket replacement would have set all
+   * four as ℣, produced something that reads correctly, and been wrong every
+   * time. So a letter is a mark only where it OPENS A CLAUSE — at the start of
+   * the text, or after sentence or clause punctuation — and never where the
+   * token in front of it is itself a single letter and a point, which is what
+   * an initial in a name looks like.
+   *
+   * "P." IS LEFT EXACTLY AS THE BOOK PRINTS IT, and that is not an oversight
+   * either. It marks the priest and not the versicle, and the two part company:
+   * at the server's Misereatur the 1861 book prints "R. May Almighty God be
+   * merciful to thee … P. Amen.", where the priest's line IS the response.
+   * Setting every "P." as ℣ would have made the respondent the versicler at
+   * that place and at every other place like it. There is no glyph for "the
+   * priest", so there is nothing here to substitute, and the book stands.
+   * --------------------------------------------------------------------- */
+
+  const VERSICLE_MARKS = { V: '℣', R: '℟' };
+  const VERSICLE_NAMES = { V: 'Versicle.', R: 'Response.' };
+
+  const VERSICLE_CANDIDATE = /([VR])\.(?=\s|$)/g;
+  // Start of text; after sentence or clause punctuation; at the head of a line,
+  // whatever ended the one above — liturgical verse is set a colon to the line
+  // and most lines end in no punctuation at all; and just inside a bracket,
+  // which is how the Exsultet prints the dialogue a deacon may omit.
+  const OPENS_A_CLAUSE = /(^|[.;:,!?)\]"'’”—-]\s+|\n\s*|[([]\s*)$/;
+  const AN_INITIAL_BEFORE = /(^|[\s(])[A-Za-z]\.\s+$/;
+
+  /** One mark, named for a reader who cannot see it. */
+  function versicleMark(letter) {
+    const node = el('span', 'vr-mark');
+    // ℣ and ℟ are announced as nothing at all by most screen readers, and as
+    // "V" and "R" by the rest, so the word is given beside the glyph and the
+    // glyph is taken away from the reading.
+    const glyph = el('span', 'vr-glyph', VERSICLE_MARKS[letter]);
+    glyph.setAttribute('aria-hidden', 'true');
+    node.appendChild(glyph);
+    node.appendChild(el('span', 'visually-hidden', VERSICLE_NAMES[letter]));
+    return node;
+  }
+
+  /** A text with its versicle and response marks set, as a fragment. */
+  function versicled(text) {
+    const fragment = document.createDocumentFragment();
+    const source = text === null || text === undefined ? '' : String(text);
+    let at = 0;
+    let found;
+    VERSICLE_CANDIDATE.lastIndex = 0;
+    while ((found = VERSICLE_CANDIDATE.exec(source)) !== null) {
+      const before = source.slice(0, found.index);
+      if (!OPENS_A_CLAUSE.test(before) || AN_INITIAL_BEFORE.test(before)) continue;
+      if (found.index > at) {
+        fragment.appendChild(document.createTextNode(source.slice(at, found.index)));
+      }
+      fragment.appendChild(versicleMark(found[1]));
+      at = found.index + found[0].length;
+    }
+    if (at < source.length) fragment.appendChild(document.createTextNode(source.slice(at)));
+    return fragment;
+  }
+
   /**
    * The composed text to show, and what to say about it.
    *
@@ -1149,13 +1221,22 @@ window.Triptych = (function () {
    *
    *   options.numbering  the numbering the structure file's references are in
    *   options.orations   the language the composed propers are asked for
+   *   options.heading    the level this proper's name sets at, default h3
+   *
+   * The level is an option because a proper is a top-level thing on the propers
+   * page and a part of the Mass inside the Ordinary's frame, where the sections
+   * of the rite stand above it. A page that set every heading at h3 whatever it
+   * was nested in would tell a reader moving by headings that the Introit and
+   * "The Priest at the Foot of the Altar" are peers, which they are not.
    */
   function renderProper(proper, bible, fragments, options) {
     const held = options || {};
     const numbering = held.numbering || null;
+    const level = held.heading || 'h3';
+    const under = 'h' + Math.min(6, Number(String(level).slice(1) || 3) + 1);
     const section = el('section', 'proper');
 
-    const heading = el('h3', 'proper-name', proper.name || 'Proper');
+    const heading = el(level, 'proper-name', proper.name || 'Proper');
     // "Vigil Mass", "Mass at Dawn" — the form this proper belongs to, where a
     // day carries more than one.
     if (proper.form) heading.appendChild(el('span', 'proper-form', proper.form));
@@ -1188,7 +1269,7 @@ window.Triptych = (function () {
         : 'Composed text — not scripture' +
           (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang));
       composed.appendChild(el('span', 'composed-label', label));
-      composed.appendChild(document.createTextNode(oration.text));
+      composed.appendChild(versicled(oration.text));
       composed.lang = oration.lang;
       section.appendChild(composed);
 
@@ -1237,11 +1318,11 @@ window.Triptych = (function () {
     for (const key of cycleKeys) {
       const cycle = cycleOf(proper, key);
       const block = el('div', 'cycle');
-      block.appendChild(el('h4', 'cycle-name', cycleLabel(key)));
+      block.appendChild(el(under, 'cycle-name', cycleLabel(key)));
       if (cycle.text) {
         const composed = el('p', 'composed');
         composed.appendChild(el('span', 'composed-label', 'Composed text — not scripture'));
-        composed.appendChild(document.createTextNode(cycle.text));
+        composed.appendChild(versicled(cycle.text));
         composed.lang = SOURCE_LANGUAGE;
         block.appendChild(composed);
       }
@@ -1321,6 +1402,7 @@ window.Triptych = (function () {
     orationLanguagesOf: orationLanguagesOf,
     orationLanguageLabel: orationLanguageLabel,
     orationFor: orationFor,
+    versicled: versicled,
     renderProper: renderProper,
     uncompiledNote: uncompiledNote,
 

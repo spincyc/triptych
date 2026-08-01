@@ -303,34 +303,150 @@
 
 
 /* ---------------------------------------------------------------------------
- * The Ordinary, on request
+ * The Ordinary, on request — and then the page is the Mass
  *
- * It sets no text of its own: an element of the Ordinary is a composed prayer
- * and is set by `.composed` in browser-core.css, exactly as a Collect is on the
- * propers page. What is owned here are the two things the Ordinary has that no
- * proper has — a licence condition that must travel with the words it licenses,
- * and, with the propers poured into it, the job of staying visibly the frame.
+ * The body text is still browser-core's: a prayer of the Ordinary is set by
+ * `.composed`, exactly as a Collect is on the propers page, and a reader moving
+ * between the two pages must not find the prayers have changed size on the way.
+ *
+ * What is set here is the ARRANGEMENT, which is the whole of reading like the
+ * Mass rather than like two documents concatenated. A missal distinguishes an
+ * instruction from a prayer by setting it in italic, marks the divisions of the
+ * rite, and rules nothing that is ordinary. This does the same three things, and
+ * one more that only a page can do: it rules what belongs to THIS day, so that
+ * the one distinction a follow-along missal must never blur — the words said
+ * every day against the words said today — is the loudest thing on the page.
  * ------------------------------------------------------------------------ */
-
-.ordinary-element { margin-bottom: 0.9rem; }
 
 .ordinary-preamble { margin-bottom: 1.6rem; }
 
-/* The day's own text, inside the frame.
- *
- * The one thing a follow-along missal must never blur is which words are said
- * every day and which belong to this day, so the propers keep the section's own
- * rule and the frame around them is set back from it. Nothing is hidden and
- * nothing is dimmed to the point of being hard to read: the distinction is
- * position and weight of rule, which survives being printed in black and white.
- */
-.ordinary-frame .annotated-text > .proper {
-  border-left-color: var(--section-line);
-  border-left-width: 3px;
+/* The reason a text is withheld, said once for the page with how far it
+   reaches. Every element that is silent names one of these and no more; the
+   account belongs in one place, and 39 copies of it were 38 too many. */
+.ordinary-absence { margin-top: 0.5rem; }
+
+.ordinary-absence-key {
+  margin-right: 0.5em;
+  padding: 0.02rem 0.35rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--section-ink);
+  background: var(--section-row);
+  border-radius: 3px;
 }
 
+/* ---- The frame ----------------------------------------------------------
+   Plain. An element of the Ordinary is the ordinary case — 195 of them in the
+   1962 frame — and a rule beside every one of them is a rule beside everything,
+   which distinguishes nothing and reads as 195 quotations. */
+
 .ordinary-frame > .ordinary-element {
-  border-left-color: var(--section-row);
+  margin: 0 0 0.9rem;
+  padding-left: 0;
+  border-left: none;
+}
+
+.ordinary-element .composed { margin-top: 0.15rem; }
+
+/* The divisions of the rite: the Foot of the Altar, the Lessons, the Canon.
+   These are the landmarks a reader following along steers by, so they get the
+   air and the rule that everything else has given up. Set in capitals, which is
+   allowed here and not below: a division's name is this project's own editorial
+   label for a stretch of the book, whereas the head below it is words the book
+   itself printed. */
+.ordinary-division {
+  margin: 2.4rem 0 1.1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--section-pale);
+  font-size: 0.84rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ordinary-frame > .ordinary-division:first-child { margin-top: 0.5rem; }
+
+/* A rubric is an instruction and not a prayer, and every missal ever printed
+   says so by setting it in italic. Following that is not decoration: it is what
+   lets a reader tell at a glance whether the words in front of them are to be
+   said or to be done. */
+.ordinary-element.is-rubric .composed {
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.62;
+  color: var(--ink-soft);
+}
+
+/* A head the book itself prints across the measure — "GLORIA IN EXCELSIS.",
+   "Psalm xlii." — set as the book sets it and never re-cased: some are capitals
+   in the transcription and some are not, and forcing either would be this page
+   editing the printing it is quoting. */
+.ordinary-head {
+  margin: 1.7rem 0 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--section-ink);
+  text-align: center;
+}
+
+/* The page or number an element stands at, where the element has no name to
+   hang it on. Quiet, and never selected with the text: it is the missal's
+   foliation, not a word of the Mass. */
+.ordinary-locus {
+  margin-right: 0.55em;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  user-select: none;
+}
+
+/* An absence inside the frame is the ordinary case on the postconciliar side —
+   39 of 48 — so it is compact. It keeps the notice colour: it is not furniture,
+   and a reader must not stop seeing it. */
+.ordinary-element .notice {
+  margin-top: 0.3rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* ---- The priest's actions, on request -----------------------------------
+   Hidden by a class, never filtered out of the frame. The rubrics are the
+   elements the day's propers are anchored to — the Introit is seated after
+   `rubrica-benedictio-incensi-et-introitus` — so removing them would take the
+   seats with them and pour the Mass out in a plausible and wrong order. They
+   are seated first and painted second, and this only stops the painting.
+
+   The class marks the departure, not the default: the rubrics are shown, so it
+   is hiding them that has to be asked for and said. Written the other way round
+   the priest's actions would be missing from any page that had not yet run its
+   script, which is the opposite of what a missal does. */
+
+.hides-rubrics .ordinary-frame > .ordinary-element.is-rubric { display: none; }
+
+/* ---- The day's own text, inside the frame -------------------------------
+   The rule belongs here and nowhere else on the page. Everything around it is
+   the Mass of every day; this is the Mass of THIS day, and a reader who has
+   lost their place should be able to find the next proper without reading. The
+   distinction is position, rule and weight, all of which survive being printed
+   in black and white — nothing here depends on colour alone. The name is left
+   in the section's ink and NOT set in the accent: browser-core.css says why in
+   terms, and it is right — at this size the accent of some sections has too
+   little contrast on white to be read as text.
+
+   No class is needed to find them. Inside the frame an annotated block IS a
+   proper of the day: the elements of the Ordinary are sections beside it. */
+
+.ordinary-frame > .annotated { margin: 1.5rem 0; }
+
+.ordinary-frame > .annotated .annotated-text > .proper {
+  margin: 0;
+  border-left-width: 3px;
+  border-left-color: var(--section-accent);
 }
 
 /* Said where the frame stops fitting, and only there: before the Ordinary for a

@@ -395,7 +395,8 @@
       when.textContent = M.year(station.date);
       const count = svg('text', { x: x, y: y + 48, class: 'station-count' });
       const moved = magnitude(station);
-      count.textContent = moved ? moved + ' changed' : 'nothing changed';
+      const verb = kind === M.PROMULGATED ? 'changed' : 'differ';
+      count.textContent = moved ? moved + ' ' + verb : 'nothing ' + verb + 's';
       group.appendChild(name);
       group.appendChild(when);
       group.appendChild(count);
@@ -416,9 +417,20 @@
     map.setAttribute('aria-busy', 'false');
   }
 
+  /* What the count under a station means depends on what kind of station it is.
+   * At a promulgated station an authority changed the book, and `changed` is
+   * the right word. At a printed one nobody has located an act, so the count is
+   * a difference between what two books hold and no more than that. Printing
+   * the same word over both would launder the weaker claim into the stronger. */
   function changeSummary(station) {
     const changed = station.changed;
     if (!changed) return 'what it changed is not carried in this file';
+    if (M.kindOf(station, kindsStated) !== M.PROMULGATED) {
+      const moved = magnitude(station);
+      if (!moved) return 'nothing in this slice differs from what stood before';
+      return moved + (moved === 1 ? ' difference' : ' differences') +
+        ' from what stood before, with no act behind them';
+    }
     const parts = [];
     if (changed.units_entered) parts.push(changed.units_entered + ' entered');
     if (changed.units_gone) parts.push(changed.units_gone + ' gone');
@@ -636,6 +648,20 @@
     const totals = payload.totals || {};
     host.appendChild(T.el('p', 'detail-summary', changeSummary(station) + '.'));
 
+    // A printed station's diff is a difference between two books, and this
+    // project's own measurement of that is unsparing: a comparison of two text
+    // layers is worth nothing on its own as evidence about the printings, and
+    // is worth something only where an act stands behind it. So the caveat is
+    // printed above the differences rather than left for a reader to supply.
+    if (M.kindOf(station, kindsStated) !== M.PROMULGATED) {
+      host.appendChild(T.el('p', 'detail-weak',
+        'No act has been located for this station, so nothing below was ordered ' +
+        'by anybody as far as this record knows. What is shown is how this book ' +
+        'differs from the one before it — a difference between printings, which ' +
+        'is a far weaker thing than a change an authority made, and is not ' +
+        'evidence that anyone decided it.'));
+    }
+
     const edges = payload.edges || {};
     const named = Object.keys(EDGE_WORDS).filter(function (key) { return edges[key]; });
     if (named.length) {
@@ -694,6 +720,12 @@
     host.appendChild(T.el('p', 'detail-summary',
       totals.units + ' units across ' + totals.masses +
       ' liturgies, as this record holds them after ' + payload.title + '.'));
+    if (payload.station_kind && payload.station_kind !== M.PROMULGATED) {
+      host.appendChild(T.el('p', 'detail-weak',
+        'This is what the surviving book prints at this point. No act stands ' +
+        'behind it in this record, so it is a state witnessed and not a state ' +
+        'ordered.'));
+    }
     (payload.masses || []).forEach(function (mass) {
       const block = T.el('section', 'mass');
       block.appendChild(T.el('h4', 'mass-title', mass.title || mass.mass));

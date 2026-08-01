@@ -264,6 +264,20 @@ exactly what a reader needs to be able to see. An element that carries neither
 text nor a stated reason is a hard failure: a silent gap is the one thing this
 layer must never emit.
 
+**Languages are declared, and one of them holds nothing.** Each file carries a
+`languages` block naming every language the layer speaks of, the side of
+`absent` that records why each is missing, and how many of the file's elements
+each reaches. It is the schema's table and not a missal's, so it is stated once
+in `mass-ordinary` rather than twice in the two inventories that would each
+repeat the same two rows. The browser's language control is filled from it, and
+offers a language nothing is held in — the Latin of both missals — because
+choosing an empty language is how a reader is shown, at every element and at
+the place it falls due, under which recorded reason it is empty. Reading the
+reason by ISO code against the side-names is the mistake this replaced: `show
+--lang la` found nothing under `la`, fell through to the English side, and
+reported the postconciliar Latin as withheld under ICEL. That is a real reason,
+for the other text, printed under this one.
+
 **A third rights state.** `mass-propers` publishes `public-domain` and
 `project-created` and withholds the rest, which is two states. The ELLC
 ecumenical common texts are a third — under copyright, licensed for free use,

@@ -94,6 +94,29 @@ body:not(:has(> .site-header)) {
   color: var(--ink-faint);
 }
 
+/* ---- ℣ and ℟ ------------------------------------------------------------
+   The versicle and the response, set as the marks a missal sets them as. The
+   substitution is made in the renderer and never in the record: the artifacts
+   hold what the book printed, which is "V." and "R." for want of the sort.
+
+   Kept a shade back from the words and not selectable, for the same reason the
+   verse numbers are: it is a mark saying who says the line, not part of the
+   line. The glyph is hidden from assistive technology and the word is given
+   beside it, because ℣ and ℟ are announced as nothing at all by most screen
+   readers and as bare letters by the rest. */
+.vr-mark {
+  margin-right: 0.15em;
+  color: var(--section-ink);
+  user-select: none;
+}
+
+.vr-glyph {
+  font-family: var(--serif);
+  font-size: 1.02em;
+  font-weight: 600;
+  line-height: 1;
+}
+
 /* A day the calendar keeps whose propers this repository has not transcribed.
    One line for the Mass, on both pages, and deliberately not a box: 337 of the
    1962 missal's 460 masses are in this state, and at that density anything with

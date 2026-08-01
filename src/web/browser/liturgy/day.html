@@ -84,6 +84,31 @@
     </label>
   </div>
 
+  <!-- The Ordinary's own language, hidden until the Ordinary is showing. It is
+       a third text control beside Scripture and Orations, and a separate one,
+       because the Ordinary is a separate book from the day's propers and its
+       rights position is not theirs: the 1861 English is public domain entire
+       and the postconciliar English is ICEL's and withheld. The languages are
+       the ones the Ordinary's own file declares, each with how far it reaches;
+       a language nothing is held in is still offered, because choosing it is
+       how a reader sees, element by element, under what reason it is empty. -->
+  <div class="field" id="ordinary-lang-field" hidden>
+    <label for="ordinary-lang-select">Ordinary</label>
+    <select id="ordinary-lang-select" name="ordinary-lang"></select>
+  </div>
+
+  <!-- On unless turned off, and hidden until the Ordinary is showing. The
+       rubrics are what the priest does, and a missal prints them: they are how
+       a reader following along knows where the Mass has got to, and a page
+       that opened without them would open showing less than the book. Turning
+       them off is for a reader who wants the words only. -->
+  <div class="field field-check" id="rubrics-field" hidden>
+    <label for="rubrics-toggle">
+      <input type="checkbox" id="rubrics-toggle" name="rubrics" checked>
+      The priest’s actions
+    </label>
+  </div>
+
   <!-- Postconciliar only, and hidden until the Ordinary is showing. The 1962
        Missal has one Canon and no choice to offer, so this control appears when
        the chosen missal's Ordinary declares a variant group and not otherwise;
@@ -128,10 +153,13 @@
     own order rather than given a place this page invented for it.
   </p>
   <p>
-    Where a missal's English cannot be published, each element of the frame says
-    which of its two texts is missing and under what recorded reason, rather than
-    going quiet. That does not stop it holding a place: the postconciliar Collect
-    is withheld under licence and the day's Collect is still set down after it.
+    Choose the language the Ordinary is read in, and choose whether the priest's
+    actions are shown. Where a missal has nothing in the language asked for, each
+    element of the frame still holds its place and names the recorded reason it
+    is silent — the reason itself is stated once, above the Mass, with how many
+    elements it covers. That does not stop an element holding a place: the
+    postconciliar Collect is withheld under licence and the day's Collect is
+    still set down after it.
   </p>
   <p>
     To choose a Mass rather than a date, see

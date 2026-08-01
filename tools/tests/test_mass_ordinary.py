@@ -110,6 +110,38 @@ class OrdinaryStructure(unittest.TestCase):
         self.assertTrue(prayer["absent"]["english"])
         self.assertIn("NOT THE CANON OF THE 1962 MISSAL", (prayer["note"] or "").upper())
 
+    def test_every_language_names_the_side_that_records_its_absence(self) -> None:
+        """A language on offer must be able to say why it is empty.
+
+        The page offers the reader every language declared here, including ones
+        no word of which is held, because choosing an empty language is how the
+        reason for the emptiness becomes visible. That only works if the join
+        holds: each language names one side of `absent`, every element carries
+        exactly those sides, and a language holding nothing carries a reason on
+        every element rather than on most of them.
+        """
+        for name, file in self.files.items():
+            langs = [one["lang"] for one in file["languages"]]
+            self.assertEqual(len(langs), len(set(langs)), name)
+            sides = {one["absent"] for one in file["languages"]}
+            self.assertEqual(len(sides), len(langs), f"{name}: two languages share a side")
+            for element in elements(file):
+                self.assertEqual(set(element["absent"]), sides, f"{name}: {element['key']}")
+            for one in file["languages"]:
+                held = sum(1 for element in elements(file)
+                           for translation in (element["translations"] or [])
+                           if translation["lang"] == one["lang"])
+                self.assertEqual(one["held"], held, f"{name}: {one['lang']} miscounted")
+                for element in elements(file):
+                    if any(row["lang"] == one["lang"]
+                           for row in (element["translations"] or [])):
+                        continue
+                    self.assertTrue(
+                        element["absent"][one["absent"]],
+                        f"{name}: {element['key']} is silent in {one['lang']} "
+                        "and names no reason",
+                    )
+
     def test_the_index_names_every_calendar(self) -> None:
         listed = {row["calendar"] for row in load("index")["calendars"]}
         self.assertEqual(listed, set(self.files))
@@ -276,6 +308,68 @@ class OrdinaryPage(unittest.TestCase):
         self.assertEqual(report["postconciliar_collect"],
                          ["ritus-initiales/collecta", "Collect"])
 
+    def test_a_language_nobody_holds_is_offered_and_says_why(self) -> None:
+        """The control's whole purpose, and the failure it must not have.
+
+        Neither missal's Latin is here, and both are still offered: a reader who
+        asks for the Latin must be told at every element under which recorded
+        reason it is silent, not handed a page that has quietly gone blank. The
+        two reasons are different reasons and must not be interchangeable —
+        `latin-not-transcribed` is work nobody has done and `editio-typica` is a
+        rights question nobody has settled.
+        """
+        report = self.run_harness()
+        self.assertEqual(
+            [one["lang"] for one in report["languages"]["postconciliar"]], ["en", "la"])
+        self.assertEqual(
+            [one["held"] for one in report["languages"]["postconciliar"]], [9, 0])
+        self.assertEqual([one["held"] for one in report["languages"]["roman-1962"]], [195, 0])
+
+        pater = report["kyrie_in_each"]
+        self.assertIn("Our Father in heaven", pater["en"])
+        self.assertNotIn("Our Father in heaven", pater["la"])
+        self.assertIn("Not shown: its Latin.", pater["la"])
+        self.assertIn("editio-typica", pater["la"])
+
+        canon = report["te_igitur_in_each"]
+        self.assertIn("WE therefore, humbly pray", canon["en"])
+        self.assertNotIn("WE therefore, humbly pray", canon["la"])
+        self.assertIn("Not shown: its Latin.", canon["la"])
+        self.assertIn("latin-not-transcribed", canon["la"])
+        self.assertNotIn("editio-typica", canon["la"])
+
+    def test_the_reason_is_stated_once_and_referred_to_after_that(self) -> None:
+        """Two copies of a reason are two reasons waiting to disagree.
+
+        Printed in full at every element it covers, the 1861 Latin reason ran to
+        195 copies of the same 400 characters the moment a reader asked for the
+        Latin. It is stated in the preamble, with how far it reaches, and the
+        elements name it.
+        """
+        report = self.run_harness()
+        preamble = report["preamble_1962"]
+        self.assertIn("latin-not-transcribed", preamble)
+        self.assertIn("195 of 195 elements", preamble)
+        self.assertIn("transcribed the English column only", preamble)
+        self.assertNotIn("transcribed the English column only",
+                         report["te_igitur_in_each"]["la"])
+
+    def test_the_versicle_marks_are_set_and_a_name_is_not(self) -> None:
+        """℣ and ℟ where the book means them, and nowhere else.
+
+        Every "V." in the 1861 Ordinary — all four — is the V of "the B. V. M.",
+        the Blessed Virgin Mary. A blanket substitution would have set all four
+        as versicles and read perfectly. This holds both halves: the marks that
+        are marks, and the initial that is not.
+        """
+        report = self.run_harness()
+        self.assertIn("℟", report["versicles_1861"])
+        self.assertIn("Response.", report["versicles_1861"],
+                      "the mark is named for a reader who cannot see it")
+        self.assertNotIn("R. And with thy spirit", report["versicles_1861"])
+        self.assertIn("B. V. M.", report["virgin_1861"])
+        self.assertNotIn("℣", report["virgin_1861"])
+
     def run_harness(self) -> dict:
         run = subprocess.run(
             ["node", "-e", HARNESS],
@@ -285,11 +379,17 @@ class OrdinaryPage(unittest.TestCase):
 
 
 # A DOM small enough to write here and faithful enough to prove the join.
+#
+# The shared machinery is the REAL browser-core.js and not a second stub of it.
+# What is being held is the join, the filtering and the setting, and every one
+# of those runs partly in code both pages share: a stub of `notice` or of
+# `versicled` would pass while the page they actually load did something else.
+# Only the things that reach the network or the URL are replaced.
 HARNESS = r"""
 const fs = require('fs');
 function node(tag) {
   return { tagName: tag, className: '', textContent: '', lang: null, hidden: false,
-    children: [], attrs: {},
+    children: [], attrs: {}, style: {},
     appendChild(c) { this.children.push(c); return c; },
     setAttribute(k, v) { this.attrs[k] = v; },
     querySelectorAll() { return []; }, addEventListener() {},
@@ -298,23 +398,22 @@ function node(tag) {
 }
 const ids = {};
 global.document = { createElement: node, createTextNode: (t) => ({ data: t, text: () => t }),
+  createDocumentFragment: () => node('#fragment'),
   getElementById: (id) => (ids[id] = ids[id] || node('div')),
-  body: { classList: { toggle() {} } }, addEventListener() {} };
-global.window = {
-  Triptych: {
-    el(t, c, x) { const n = node(t); n.className = c || ''; n.textContent = x || ''; return n; },
-    notice(x) { const n = node('p'); n.textContent = 'Not shown: ' + x; return n; },
-    fillSelect(s, i) { s.filled = i; }, loadJSON: async () => ({}),
-    readHash: () => new Map(), writeHash() {}, onHashChange() {}, onArrowStep() {},
-    loadBibles: async () => ({ ok: false, message: 'stub' }), fillBibleSelect() {},
-    setInlineNotice() {}, fail() {}, SOURCE_LANGUAGE: 'la', dataRoot: '',
-    dataPath: (p) => p, titleCase: (s) => s,
-    isPlaceholder: (p) => Boolean(p) && p.name === 'Placeholder' },
-  MassAssembly: { derive: () => ({}) }, matchMedia: null, addEventListener() {} };
+  body: { classList: { toggle() {} }, appendChild() {} }, addEventListener() {} };
+global.window = { location: { search: '' }, addEventListener() {},
+  MassAssembly: { derive: () => ({}) }, matchMedia: null };
+
+eval(fs.readFileSync('src/web/browser/shared/browser-core.js', 'utf8'));
+global.window.Triptych = Object.assign({}, global.window.Triptych, {
+  fillSelect(s, i) { s.filled = i; }, loadJSON: async () => ({}),
+  readHash: () => new Map(), writeHash() {}, onHashChange() {}, onArrowStep() {},
+  loadBibles: async () => ({ ok: false, message: 'stub' }), fillBibleSelect() {},
+  setInlineNotice() {}, fail() {}, statusLine() {} });
 
 let src = fs.readFileSync('src/web/browser/liturgy/day.js', 'utf8');
 src = src.replace('  start();',
-  '  global.__probe = { renderElement, elementShows, state, ' +
+  '  global.__probe = { renderElement, elementShows, state, ordinaryPreamble, ' +
   'seats, seatPropers, shownElements };');
 eval(src);
 const P = global.__probe;
@@ -362,9 +461,31 @@ const nativity = pour(pc, 'postconciliar', 'nativity');
 const collect = pour(pc, 'postconciliar', 'easter-sunday').order;
 const seat = collect.indexOf('ritus-initiales/collecta');
 
+/* The same element read in each language the file declares, which is what the
+   language control offers. Nothing is re-derived here: the languages come from
+   the file, and the page is asked for each of them in turn. */
+function inEach(file, key) {
+  const element = all(file).find((e) => e.key === key);
+  const out = {};
+  for (const one of file.languages) {
+    P.state.ordinaryLang = one.lang;
+    out[one.lang] = P.renderElement(element, file).text();
+  }
+  P.state.ordinaryLang = null;
+  return out;
+}
+
 process.stdout.write(JSON.stringify({
   shown_by_default: byDefault,
   shown_when_third_chosen: whenThird,
+  languages: { postconciliar: pc.languages, 'roman-1962': tlm.languages },
+  kyrie_in_each: inEach(pc, 'ritus-communionis/pater-noster'),
+  te_igitur_in_each: inEach(tlm, 'canon/te-igitur'),
+  preamble_1962: P.ordinaryPreamble(tlm).text(),
+  versicles_1861: P.renderElement(
+    all(tlm).find((e) => e.key === 'praeparatio/dominus-vobiscum'), tlm).text(),
+  virgin_1861: P.renderElement(
+    all(tlm).find((e) => e.key === 'oblatio/rubrica-collecta-concede'), tlm).text(),
   kyrie: P.renderElement(all(pc).find((e) => e.key.endsWith('/kyrie')), pc).text(),
   prayer_one: P.renderElement(eps.find((e) => e.variant === 'ep-i'), pc).text(),
   te_igitur_1861: P.renderElement(all(tlm).find((e) => e.key === 'canon/te-igitur'), tlm).text(),

@@ -1165,9 +1165,37 @@ REQUIRED_TOP = ("schema", "calendar", "title", "advisory", "derived_from", "sect
 ELEMENT_KINDS = ("heading", "rubric", "prayer", "form", "dialogue")
 SLOT_SIDES = ("before", "after")
 
+# The languages an Ordinary is held in, and for each the side of `absent` that
+# records why it is missing.
+#
+# This is the schema's own table and not any one missal's, which is why it sits
+# here and not in the inventories: both files declare `absent_english` and
+# `absent_latin` on their sections, and stating the same two rows twice in TOML
+# would be two copies of one fact. Every reader goes through it. It replaced
+# a bare `("english", "latin")` walked by the element builder while `show
+# --lang` looked the reason up by ISO code against those same side-names, found
+# nothing, and fell back to the English one --- so `--lang la` reported the
+# postconciliar Latin as withheld under ICEL, which is the English reason for
+# the other text. That resolved, printed, and was wrong.
+LANGUAGES = (
+    {"lang": "en", "absent": "english"},
+    {"lang": "la", "absent": "latin"},
+)
+
+ABSENT_SIDES = tuple(one["absent"] for one in LANGUAGES)
+
 
 class SourceError(ValueError):
     """An ordinary source that cannot be trusted to emit anything."""
+
+
+def language_row(lang: str) -> dict:
+    """The declared language `lang`, or a refusal naming what is on offer."""
+    for one in LANGUAGES:
+        if one["lang"] == lang:
+            return one
+    offered = ", ".join(one["lang"] for one in LANGUAGES)
+    raise SourceError(f"no language {lang!r} in this layer; it holds {offered}")
 
 
 # --------------------------------------------------------------- reading
@@ -1414,7 +1442,7 @@ def absent_pair(holder: dict, fallback: dict, absences: dict, key: str, name: st
     to make visible.
     """
     out = {}
-    for side in ("english", "latin"):
+    for side in ABSENT_SIDES:
         field = "absent_" + side
         reason = holder.get(field, fallback.get(field))
         if reason is not None and reason not in absences:
@@ -1623,12 +1651,15 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
 
     slots = slot_table(source, sections, name)
 
+    total = sum(len(section["elements"]) for section in sections)
     held: dict[str, int] = {}
+    by_lang: dict[str, int] = {}
     absent_counts: dict[str, int] = {}
     for section in sections:
         for element in section["elements"]:
             for translation in element["translations"] or []:
                 held[translation["source_id"]] = held.get(translation["source_id"], 0) + 1
+                by_lang[translation["lang"]] = by_lang.get(translation["lang"], 0) + 1
             for reason in element["absent"].values():
                 if reason:
                     absent_counts[reason] = absent_counts.get(reason, 0) + 1
@@ -1659,6 +1690,16 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "derived_from": source["derived_from"],
         "slots_derived_from": source.get("slots_derived_from") or None,
         "absences": [absences[key] | {"count": absent_counts.get(key, 0)} for key in sorted(absences)],
+        # Every language this layer speaks of, whether or not this missal holds
+        # a word of it, each carrying how many of its elements are reached and
+        # which side of `absent` says why the rest are not. A page offering a
+        # choice of language reads this: it is how the choice can include a
+        # language that is entirely withheld and still say, at every element,
+        # under what recorded reason.
+        "languages": [
+            one | {"held": by_lang.get(one["lang"], 0), "elements": total}
+            for one in LANGUAGES
+        ],
         "variants": variants,
         "slots": slots,
         "translations": manifest,
@@ -1781,6 +1822,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
 
 
 def render_ordinary(built: list[dict], lang: str, verbose: bool) -> int:
+    side = language_row(lang)["absent"]
     for one in built:
         print(one["title"])
         print(f"  {one['edition']}" if one.get("edition") else "")
@@ -1805,7 +1847,12 @@ def render_ordinary(built: list[dict], lang: str, verbose: bool) -> int:
                     for line in wrap_text(held[0]["text"], "    "):
                         print(line)
                     continue
-                reason = element["absent"].get(lang) or element["absent"].get("english")
+                # The reason for the language actually asked for. Reading it by
+                # ISO code against the side-named keys found nothing and fell
+                # through to the English one, so `--lang la` reported the
+                # postconciliar Latin withheld under ICEL --- a real reason,
+                # for the other text, printed under this one.
+                reason = element["absent"].get(side)
                 if not named:
                     print(f"\n  [{element['kind']}]")
                 print(f"    [absent: {reason or 'not held'}]")
@@ -1895,7 +1942,10 @@ def main(argv: list[str] | None = None) -> int:
     shared.add_argument("--calendar", default=None, help="limit to one calendar")
     shared.add_argument("--format", choices=("text", "yaml", "json"), default="text")
     shared.add_argument(
-        "--lang", default="en", help="`show`: which language to print (default: en)"
+        "--lang",
+        default="en",
+        choices=[one["lang"] for one in LANGUAGES],
+        help="`show`: which language to print (default: en)",
     )
     shared.add_argument("--verbose", action="store_true", help="list every file written")
     shared.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")

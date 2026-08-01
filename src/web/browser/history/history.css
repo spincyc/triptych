@@ -7,9 +7,12 @@
   --weak-accent: #a98d6f;
 }
 
-.lede {
-  margin: 0.4rem 0 0.6rem;
-  max-width: 46rem;
+/* `.lede` is the shared rule; only the line beneath it is this page's. */
+.tally {
+  margin: 0.5rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
 }
 
 .map {
@@ -259,6 +262,21 @@
   color: var(--ink-faint);
   border-bottom: 1px solid var(--section-line);
   padding-bottom: 0.25rem;
+}
+
+.edge-title {
+  margin: 0.7rem 0 0.15rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.edge-basis {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  white-space: pre-wrap;
 }
 
 /* --- One change --------------------------------------------------------- */
