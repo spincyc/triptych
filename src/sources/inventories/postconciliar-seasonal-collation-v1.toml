@@ -115,9 +115,156 @@ Ordo responsorial psalm needs no acquisition at all.
 
 [counts]
 counts_note = """
-Measured, not estimated. `references_before` is the count the index's own
-verification header declared and this lane re-derived from the file before
-touching it.
+Measured, not estimated, and re-derived from the file rather than carried in
+prose. `references_before` is the figure the index's own verification header
+declared, which this lane re-derived before touching anything and found exact.
+
+`references_after` is one lower because two citations became one: the Twenty-first
+Sunday's year-B Gospel acclamation was stored as two passages, John 6:63c and
+John 6:68c, and the Ordo prints one, `Cf. Io 6, 63c. 68c`.
+
+Recompute the read/unread split with:
+  python3 -c 'import yaml;d=yaml.safe_load(open("src/sources/calendars/postconciliar/propers.yaml"));
+  s=d["sections"]["seasonal"]["masses"];print(sum(1 for m in s if "artifact page" in m.get("notes","")))'
 """
 scripture_propers_before = 533
 references_before = 1059
+references_after = 1058
+masses_collated = 63
+masses_in_the_seasonal_section = 66
+artifact_pages_read = 79
+slots_collated = 839
+references_read = 845
+references_confirmed = 731
+references_corrected = 114
+references_still_unread = 213
+
+[corrections]
+what = "What the 114 corrections were, classified by comparing the parsed structures."
+part_letters_restored = 63
+verse_selection_differed = 49
+passages_merged = 1
+part_letters_note = """
+Sixty-three corrections changed nothing but a part-verse letter the lead had
+dropped: `Romans 13:11-14` where the Ordo prints `Rom 13, 11-14a`, `Psalm 25:4-5`
+where it prints `Ps 24, 4bc-5ab`. These are not cosmetic. A responsorial psalm's
+part letters are how the cantor knows where the strophe begins and ends, and the
+file's own `open_collation_items` had this open as "settle one notation at
+collation" since before the leads were written.
+"""
+verse_selection_note = """
+Forty-nine changed which verses are appointed. The pattern is one thing and it is
+worth naming: **the leads reproduce the United States Lectionary, not the Ordo.**
+Where the two books differ the file carried the American reading, well formed and
+cleanly resolving.
+
+  First Sunday of Advent, year A. The Ordo appoints Ps 121, 1-2. 4-5. 6-7. 8-9;
+  the lead had Psalm 122:1-2, 3-4, 4-5, 6-7, 8-9, which is the US Lectionary's
+  five-strophe selection with a segment the Ordo does not appoint.
+
+  Third Sunday of Advent, year A. The Ordo appoints Ps 145, 7. 8-9a. 9bc-10; the
+  lead had Psalm 146:6-7, 8-9, 9-10, the NAB numbering of a different span.
+
+  Fourth Sunday of Easter, year B. The lead read Psalm 118:1, 8-9, 21-23, 26, 21,
+  29 - verse 21 twice, which is not a citation any book prints. The Ordo prints
+  Ps 117, 1 et 8-9. 21-23. 26 et 28cd et 29.
+
+  The Baptism of the Lord. The lead gave the Alleluia at Mark 9:7; the Ordo prints
+  Cf. Mc 9, 6. Both resolve to the voice from the cloud, one through a divergence
+  row and one directly, which is exactly how a wrong citation survives review.
+
+  Sirach, five times. The Ordo prints the Latin number and glosses the Greek in
+  parentheses; the leads carried the Greek at three of the five and the Latin at
+  two, so the file mixed two systems inside one book. All five now carry what the
+  book prints.
+"""
+zero_would_have_been_suspicious = """
+Stated because the reader asked for it. 114 corrections in 845 read references is
+13.5%, and a rate of zero would have been a claim that recall reproduced a
+600-page Latin book exactly, which is not a thing that happens. The rate is also
+not evenly spread: it is near zero on books, chapters and verse ranges of the
+readings, which recall gets right because they are widely reproduced, and high on
+the responsorial psalms, whose strophe divisions and part letters differ book by
+book and are exactly what recall cannot supply.
+"""
+
+[what_remains]
+unread = 213
+antiphons = 188
+antiphons_note = """
+The Entrance and Communion Antiphons, the seven Washing of Feet antiphons, the
+Good Friday psalm during Communion, the Palm Sunday antiphon at the commemoration
+and the Easter Vigil's acclamation after the blessing of the font. All are printed
+in the Missal and none in the Ordo, so this witness cannot reach them and they are
+recorded as still being leads on each Mass's own notes. They are the next lane and
+they are bounded: the Missale Romanum 2002 is already registered, and
+`the_citation_question` covers an antiphon's scripture reference exactly as it
+covers a reading's.
+"""
+vigils = 15
+vigils_note = """
+The Epiphany and the Ascension carry a Vigil Mass form in this file, and the Ordo
+prints one formulary for each celebration - n. 20 and n. 58 - with no distinct
+Vigil readings. Rather than assert that the Vigil takes the day's readings, which
+would be an inference and not a reading, the day form was landed and the Vigil
+form left as a lead. This is the Nativity of Saint John the Baptist lesson run the
+other way: do not give two formularies where the book gives one, any more than one
+where it gives two.
+"""
+one_verse = 1
+one_verse_note = """
+The Second Sunday of Lent's verse before the Gospel. The Ordo prints the text -
+`In splendenti nube, paterna vox audita est` - with NO scripture reference at all,
+at n. 25, artifact page 74. The file's lead says Matthew 17:5. That may well be
+where the words come from, but the book does not say so, and this lane records
+what the book prints.
+"""
+
+[structural_findings]
+what = "Places where the file's SHAPE, not its numbers, departs from the book."
+ad_libitum_folded_into_cycles = """
+The Holy Family, the Baptism of the Lord, the Ascension and Pentecost each print,
+in the Ordo, one main formulary plus an `Ad libitum, pro anno B` and/or
+`pro anno C` set of alternatives. This file folds those alternatives into an A/B/C
+`cycles` mapping, as though the book appointed them by year. It does not. At the
+Baptism, n. 21, the first reading is Isaiah 42:1-4, 6-7 in ALL THREE years, the
+psalm is Ps 28 in all three and the second reading is Acts 10:34-38 in all three;
+Isaiah 55 and Isaiah 40 are optional alternatives offered in years B and C. Only
+the Gospel varies by year there, and the Ordo says so by lettering it A, B, C.
+The same holds for the Holy Family's Alleluia, for the Ascension's second reading
+(n. 58, `Ad libitum, pro annis B et C`) and for Pentecost's second reading and
+Gospel (n. 63).
+
+Every one of those citations was read and every one is right. What is wrong is the
+claim the structure makes about them. They were landed where the file put them and
+the divergence is recorded here rather than silently restructured, because
+restructuring is a decision about what this index means by `cycles`, and that
+decision belongs to whoever owns the schema.
+"""
+slots_the_file_lacks = """
+Two Sundays carry no Gospel Acclamation proper at all although the Ordo prints
+one: the Third Sunday of Easter (n. 46, `Cf. Lc 24, 32`) and the Fifteenth Sunday
+in Ordinary Time (n. 103, `Semen est verbum Dei`, printed without a reference).
+Adding a proper is a structural edit and was not made here.
+"""
+lent_slot_names = """
+The First to Third Sundays of Lent name the slot `Verse Before the Gospel` and the
+Fourth and Fifth name it `Gospel Acclamation`. The Ordo heads all five the same
+way, `V ANTE Ev.`, because Lent has no Alleluia. The inconsistency is this file's,
+it is cosmetic, and it is recorded rather than fixed for the same reason as above.
+"""
+
+[method_notes]
+rate = """
+The sanctoral lane measured roughly one artifact page per two celebrations. The
+temporal is denser: 79 pages carried 63 celebrations and 839 slots, because a
+Sunday's three cycles usually sit on one page. Per reference the two are not
+comparable at all - the sanctoral's twelve Masses yielded 60 citations from five
+pages, and the temporal's 63 yielded 845 from 79.
+"""
+what_was_not_done = """
+Said plainly, because a record that reports only what it did is describing the
+smaller thing. The Ordo's weekday lectionary (Pars II, from artifact page 153) was
+not opened; this file carries no weekday Mass. The Communia at nn. 702-742 were
+not opened; this file carries no Common. The Missal was not opened at all.
+"""
