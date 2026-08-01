@@ -207,6 +207,19 @@
       "stage": "draft",
       "usage": "knox-bible {plan,fetch,build} --root DIR [--pace SECONDS] [--limit N] [--verbose]"
     },
+    "mass-ordinary": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Assemble the Ordinary of the Mass for the browser, under its rights.",
+      "requires": [
+        "source-library"
+      ],
+      "stage": "draft",
+      "usage": "mass-ordinary {check,structure,coverage,show} [--calendar NAME] [--lang CODE] [--root DIR] [--out DIR] [--format {text,yaml,json}]"
+    },
     "mass-propers": {
       "idempotent": true,
       "json": true,
@@ -219,6 +232,21 @@
       ],
       "stage": "draft",
       "usage": "mass-propers [--root DIR] [--calendar NAME] [--mass KEY] {show,list,structure,census} [--format {text,yaml,json}] [--out DIR] [--write|--check]"
+    },
+    "mass-today": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Print the Mass appointed for a date, with its propers and Ordinary.",
+      "requires": [
+        "calendar-days",
+        "mass-ordinary",
+        "mass-propers"
+      ],
+      "stage": "draft",
+      "usage": "mass-today show [--date ISO] [--calendar NAME] [--ordinary] [--why] [--format {text,yaml,json}]"
     },
     "pdf-review": {
       "idempotent": true,

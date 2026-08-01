@@ -1,0 +1,349 @@
+#!/usr/bin/env python3
+"""Print the Mass appointed for a date: its propers, and on request its Ordinary.
+
+This tool derives nothing itself. It resolves the date with `calendar-days`,
+the propers with `mass-propers` and the Ordinary with `mass-ordinary`, each
+invoked as a command and read back as JSON, so that what a reader sees here
+and what the browser renders come from the same three derivations rather than
+from a fourth restatement of the same rules.
+
+Two refusals are load-bearing, and both are inherited rather than invented.
+
+The first is precedence. This project states no general table of it, so a date
+carrying more than one candidate Mass is reported as carrying more than one,
+in the order the calendar lists them and under a heading that says no
+precedence is stated. Picking the first and calling it today's Mass would be a
+reference that resolves successfully and wrongly, which is the defect this
+repository is most careful about.
+
+The second is the placeholder. A great many sanctoral Masses currently hold a
+single entry whose text announces that it is pending, and printing that under
+the heading `Collect` would present scaffolding as liturgy. Placeholders are
+counted and named as placeholders, never rendered as the prayer they stand in
+for.
+"""
+
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import json
+import subprocess
+import sys
+import textwrap
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+TOOLS = ROOT / "tools"
+WIDTH = 88
+
+# The text every placeholder entry carries; matched on its opening rather than
+# in full so that a reworded placeholder is still recognised as one.
+PLACEHOLDER = "This entry is a placeholder"
+
+PRECEDENCE = (
+    "no precedence is stated: this calendar lists every candidate for the "
+    "date and does not choose among them"
+)
+
+EXAMPLES = {
+    "show": (
+        Example(
+            "tools/mass-today show --date 2026-11-29 --calendar roman-1962",
+            (
+                "2026-11-29",
+                "",
+                "roman-1962 — advent",
+                "  2 candidates; no precedence is stated: this calendar lists every "
+                "candidate for the date and does not choose among them",
+                "",
+                "  First Sunday of Advent",
+                "",
+                "    Introit — Psalm 24:1-3; Psalm 24:4",
+                "      Ad te levavi…",
+                "",
+                "    Collect",
+                "      Excita, quaesumus, Domine, potentiam tuam, et veni: ut ab imminentibus peccatorum",
+                "      nostrorum periculis, te mereamur protegente eripi, te liberante salvari: Qui",
+                "      vivis...",
+                "",
+                "    Epistle — Romans 13:11-14",
+                "... 24 more lines",
+            ),
+            "read-only; with no --date it resolves today. Two Masses fall on this "
+            "date and both are listed",
+        ),
+        Example(
+            "tools/mass-today show --date 2026-07-31 --calendar roman-1962",
+            (
+                "2026-07-31",
+                "",
+                "roman-1962 — after-pentecost",
+                "",
+                "  S. Ignatii Confessoris (III)",
+                "",
+                "    1 placeholder: this Mass's text is not yet transcribed",
+            ),
+            "a Mass whose text is not yet transcribed says so; the placeholder is "
+            "never printed as the prayer",
+        ),
+    ),
+}
+
+
+class Refused(RuntimeError):
+    """A sibling tool exited non-zero, or returned something unreadable."""
+
+
+def invoke(tool: str, argv: list[str]) -> dict:
+    """Run a sibling tool and read its JSON back.
+
+    The tools are composed as commands rather than imported so that anything
+    this prints can be reproduced by running the same commands by hand.
+    """
+    command = [sys.executable, str(TOOLS / tool), *argv, "--json"]
+    done = subprocess.run(command, capture_output=True, text=True)
+    if done.returncode != 0:
+        detail = (done.stderr or done.stdout or "").strip().splitlines()
+        raise Refused(
+            f"{tool} {' '.join(argv)} exited {done.returncode}: "
+            f"{detail[-1] if detail else ''}"
+        )
+    try:
+        return json.loads(done.stdout)
+    except json.JSONDecodeError as error:
+        raise Refused(f"{tool} did not return JSON: {error}") from error
+
+
+def is_placeholder(proper: dict) -> bool:
+    return str(proper.get("text") or "").lstrip().startswith(PLACEHOLDER)
+
+
+def propers_of(calendar: str, key: str, arguments: argparse.Namespace) -> dict:
+    """One Mass's propers, with placeholders separated from real text."""
+    argv = ["show", "--calendar", calendar, "--mass", key]
+    for flag in ("bible", "lang", "witness"):
+        value = getattr(arguments, flag, None)
+        if value:
+            argv += [f"--{flag}", str(value)]
+    try:
+        payload = invoke("mass-propers", argv)
+    except Refused as error:
+        return {"refused": str(error), "propers": [], "placeholders": 0}
+    mass = payload.get("mass") or {}
+    entries = [p for p in (mass.get("propers") or []) if isinstance(p, dict)]
+    return {
+        "propers": [p for p in entries if not is_placeholder(p)],
+        "placeholders": sum(1 for p in entries if is_placeholder(p)),
+        "rank": mass.get("rank"),
+        "edition": payload.get("edition"),
+    }
+
+
+def run_show(arguments: argparse.Namespace) -> dict:
+    when = arguments.date or dt.date.today().isoformat()
+    try:
+        dt.date.fromisoformat(when)
+    except ValueError as error:
+        raise ValueError(f"--date must be an ISO date, not {when!r}") from error
+
+    resolved = invoke("calendar-days", ["day", "--date", when])
+    days = []
+    for day in resolved.get("days") or []:
+        if arguments.calendar and day.get("calendar") != arguments.calendar:
+            continue
+        candidates = [c for c in (day.get("candidates") or []) if isinstance(c, dict)]
+        masses = []
+        for candidate in candidates:
+            entry = dict(candidate)
+            entry.update(propers_of(day["calendar"], candidate["key"], arguments))
+            masses.append(entry)
+        row = {
+            "calendar": day.get("calendar"),
+            "season": day.get("season"),
+            "week": day.get("week"),
+            "ranked": day.get("ranked"),
+            "masses": masses,
+        }
+        if arguments.why:
+            row["why"] = {
+                "lectionary": day.get("lectionary"),
+                "unresolved": day.get("unresolved"),
+                "ferial_formulary": day.get("ferial_formulary"),
+                "precedence": None if day.get("ranked") else PRECEDENCE,
+            }
+        if arguments.ordinary:
+            argv = [
+                "show",
+                "--calendar",
+                str(day["calendar"]),
+                "--lang",
+                arguments.lang or "en",
+            ]
+            try:
+                row["ordinary"] = (invoke("mass-ordinary", argv).get("ordinary") or [None])[0]
+            except Refused as error:
+                row["ordinary"] = {"refused": str(error)}
+        days.append(row)
+
+    return {
+        "date": when,
+        "days": days,
+        "advisory": resolved.get("advisory"),
+    }
+
+
+def wrap(text: str, indent: str) -> list[str]:
+    out: list[str] = []
+    for paragraph in str(text).strip().split("\n\n"):
+        block = " ".join(paragraph.split())
+        if block:
+            out.extend(textwrap.wrap(block, WIDTH - len(indent)))
+            out.append("")
+    return [indent + line if line else "" for line in (out[:-1] or out)]
+
+
+def render_ordinary(one: dict, lang: str) -> None:
+    if "refused" in one:
+        print(f"  ordinary unavailable: {one['refused']}")
+        return
+    print(f"\n  {one.get('title') or 'The Ordinary'}")
+    for section in one.get("sections") or []:
+        print(f"\n  {section['name']}")
+        for element in section.get("elements") or []:
+            held = [t for t in (element.get("translations") or []) if t.get("lang") == lang]
+            named = element.get("name") or element.get("latin_incipit")
+            if not held:
+                if named:
+                    reason = (element.get("absent") or {}).get("english")
+                    print(f"    {named} [absent: {reason or 'not held'}]")
+                continue
+            if named:
+                print(f"\n    {named}")
+            for line in wrap(held[0]["text"], "      "):
+                print(line)
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("mass-today error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    if arguments.format == "yaml":
+        import yaml
+
+        print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
+        return 0
+
+    print(payload["date"])
+    for day in payload["days"]:
+        head = f"\n{day['calendar']}"
+        if day.get("season"):
+            head += f" — {day['season']}"
+            if day.get("week"):
+                head += f", week {day['week']}"
+        print(head)
+        if not day["masses"]:
+            print("  no mass is written for this day")
+        if day["masses"] and not day.get("ranked"):
+            print(f"  {len(day['masses'])} candidates; {PRECEDENCE}")
+        for mass in day["masses"]:
+            rank = f" ({mass['rank']})" if mass.get("rank") else ""
+            print(f"\n  {mass.get('name') or mass['key']}{rank}")
+            if arguments.why and mass.get("rule"):
+                print(f"    why: {mass['rule']}")
+            if mass.get("refused"):
+                print(f"    refused: {mass['refused']}")
+            for proper in mass["propers"]:
+                # A scripture proper carries its reference rather than its
+                # words: printing the name alone would show an empty slot
+                # where the Missal prints a lesson.
+                refs = [
+                    str(one.get("ref"))
+                    for one in (proper.get("verses") or [])
+                    if isinstance(one, dict) and one.get("ref")
+                ]
+                head = proper.get("name") or "proper"
+                if refs:
+                    head += f" — {'; '.join(refs)}"
+                print(f"\n    {head}")
+                if proper.get("incipit") and not proper.get("text"):
+                    print(f"      {proper['incipit']}…")
+                if proper.get("text"):
+                    for line in wrap(proper["text"], "      "):
+                        print(line)
+            if mass["placeholders"]:
+                count = mass["placeholders"]
+                print(
+                    f"\n    {count} placeholder{'' if count == 1 else 's'}: "
+                    "this Mass's text is not yet transcribed"
+                )
+        if arguments.why and day.get("why"):
+            for note in day["why"].get("unresolved") or []:
+                print(f"\n  unresolved: {note}")
+        if arguments.ordinary and day.get("ordinary"):
+            render_ordinary(day["ordinary"], arguments.lang or "en")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--date", help="the civil date to resolve (default: today)")
+    shared.add_argument("--calendar", help="limit to one calendar, e.g. roman-1962")
+    shared.add_argument(
+        "--ordinary",
+        action="store_true",
+        help="print the Ordinary alongside the propers",
+    )
+    shared.add_argument(
+        "--why",
+        action="store_true",
+        help="print the rule that placed each Mass, and what stayed unresolved",
+    )
+    shared.add_argument(
+        "--format", choices=("text", "yaml", "json"), default="text", help="output form"
+    )
+    shared.add_argument("--bible", help="indexed bible to resolve scripture refs against")
+    shared.add_argument("--lang", default="en", help="language to print (default: en)")
+    shared.add_argument("--witness", help="show only this translation's source_id")
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    parser = argparse.ArgumentParser(
+        prog="mass-today",
+        description="Print the Mass appointed for a date, with its propers and Ordinary.",
+        parents=[shared],
+    )
+    examples_live_on_the_verbs(parser, "mass-today")
+    sub = parser.add_subparsers(dest="command")
+    with_examples(
+        sub.add_parser("show", help="print the Mass appointed for a date", parents=[shared]),
+        EXAMPLES["show"],
+    )
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"show": run_show},
+        renderer=render,
+        prefix="mass-today",
+        argv=argv,
+        default_verb="show",
+        dependency_message="install PyYAML (requirements-tools.txt)",
+        mapped_errors={Refused: ("input", 2), ValueError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

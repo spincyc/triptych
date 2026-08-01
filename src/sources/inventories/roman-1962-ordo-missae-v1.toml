@@ -1,0 +1,101 @@
+schema = "triptych-ordo-missae/v1"
+calendar = "roman-1962"
+title = "The Ordinary of the Mass"
+
+advisory = """
+A pre-1955 lay hand missal's Ordinary, and never a book to celebrate from. \
+The English here is the anonymous translation an 1861 Philadelphia printing \
+made for the laity to follow the Mass with; it is not an approved liturgical \
+translation, it was never an altar book, and nothing in it may be used for \
+recitation. It is carried under the 1962 Missal because the Ordinary is \
+substantially the same rite, but it is a witness to the discipline in force \
+before the 1955 and 1960 reforms, and it differs from the 1962 typical edition \
+in orthography and in some rubrics. Where it prints something the 1962 Ordo \
+Missae does not - a second collect, a second secret, devotions at the Gospel - \
+the element says so in its own place. The Latin of each element is given only \
+by its incipit; this project has transcribed the book's English column and not \
+its facing Latin one.
+"""
+
+derived_from = """
+Every element is read from a tab-separated artifact under \
+edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861, one row \
+per printed block, transcribed visually from page images of the facsimile \
+registered as that edition's ia-scan-pdf artifact at 640 dpi with doubtful \
+characters re-read at 1600 dpi. Nothing about an element's order, kind, \
+speaker, page or wording is restated in this file: it names the artifacts and \
+the order they stand in, and the artifacts carry the words and the hashes.
+"""
+
+not_decided_here = [
+  "What the 1962 typical edition prints. This is an 1861 witness to the same rite, not a transcription of the 1962 altar book, and the two are not collated element by element.",
+  "Which of the ten proper Prefaces a given day takes. That is the propers layer's question, and this file carries the Prefaces as the book prints them without appointing any.",
+  "Anything about how the rite is performed. The rubrics transcribed here are the book's own, in its own words, and are evidence of what it printed in 1861 and of nothing else.",
+]
+
+# ---------------------------------------------------------------- witnesses
+
+[[witnesses]]
+id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+lang = "en"
+label = "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)"
+rights = "public-domain"
+caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics and its seasonal second orations are not those of 1962, and its spelling is its own. Nothing here may be used for recitation."
+artifacts = [
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
+]
+
+# ---------------------------------------------------------------- absences
+
+[[absences]]
+key = "latin-not-transcribed"
+what = "The 1861 book prints Latin and English in facing columns and this project has transcribed the English column only. Each element therefore carries the opening words of its facing Latin as an incipit, which identifies the prayer, and no more. The Latin is not withheld for any rights reason - this printing is public domain entire - and transcribing it is ordinary future work rather than a closed question."
+
+# ---------------------------------------------------------------- sections
+
+[[sections]]
+key = "praeparatio"
+name = "The Priest at the Foot of the Altar"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en"
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+absent_latin = "latin-not-transcribed"
+
+[[sections]]
+key = "oblatio"
+name = "The Lessons and the Offertory"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en"
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+absent_latin = "latin-not-transcribed"
+
+[[sections]]
+key = "praefatio"
+name = "The Prefaces"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+absent_latin = "latin-not-transcribed"
+
+[[sections]]
+key = "canon"
+name = "The Canon of the Mass"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+absent_latin = "latin-not-transcribed"
+
+[[sections]]
+key = "communio"
+name = "The Communion"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en"
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+absent_latin = "latin-not-transcribed"
+
+[[sections]]
+key = "conclusio"
+name = "The Ablutions and the Last Gospel"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en"
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+absent_latin = "latin-not-transcribed"
