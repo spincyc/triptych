@@ -30,16 +30,19 @@ distinguished from one nobody looked at, and so that a page can say that no
 English is recorded rather than showing Latin as though it were the answer.
 """
 verification = """
-Partly collated. Of the 151 entries, 100 carry `printed_page`, `ia_leaf`,
+Partly collated. Of the 153 entries, 100 carry `printed_page`, `ia_leaf`,
 `collated` and `collation_result`: those were read against the page images of
 Internet Archive item romanmissaltran00churgoog, the same 1861 printing this
 file quotes, at
 `https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg`
 on 2026-07-31. 59 were confirmed as printed, 39 were corrected against the
 page, and 2 were recorded from the page in propers this file had declared the
-witness does not print. The remaining 51 entries carry no such keys: they have
+witness does not print. The remaining 53 entries carry no such keys: they have
 still been read out of an optical-character-recognition text layer and
-collated against nothing, and must be treated as unverified.
+collated against nothing, and must be treated as unverified. 51 of those 53 are
+matched by the sibling transcription of the same printing; the last 2 are the
+first entries here taken from the witness's Common of Saints, and they are
+matched instead by a second Philadelphia printing of the same translation.
 
 The collation ran in two passes on that day. The first 99 were not chosen at
 random. They are every entry that disagreed with the project's independent
@@ -204,8 +207,8 @@ repository carries. The honest total is small and worth stating plainly,
 because it is easy to read the corrections above as the end of the problem
 rather than as the result of having looked at two thirds of one file.
 
-The repository serves English for 151 non-scriptural propers, all of them
-here - 50 collects, 51 secrets, 50 postcommunions. Every one comes from this
+The repository serves English for 153 non-scriptural propers, all of them
+here - 51 collects, 51 secrets, 51 postcommunions. Every one comes from this
 file: `tools/mass-propers` builds the browser's data by overlaying this
 inventory onto propers.yaml and reads no other translation source. The
 browser's data serves each of them at every mass that takes it, which is
@@ -216,16 +219,48 @@ served there. Outside the two calendars the only other English orations in the
 tree are quotations of the sibling artifact through passage records, not an
 independent rendering.
 
-Of the 151:
+Of the 153:
 
   100  read against the 1861 page images on 2026-07-31 - 59 confirmed,
        39 corrected, and 2 recorded from the page in propers this file had
        declared the witness does not print. These carry `collated` and
        `collation_result`.
+    2  never seen on a page, but matched word for word against a second
+       Philadelphia printing of the same translation, the 1843 of Internet
+       Archive item romanmissaltran00englgoog. These carry
+       `detector = "second-printing-agrees"`.
    51  never seen on a page, but matched byte for byte by the independent
        temporal-orations-en transcription of the same book. These carry
        `detector = "sibling-agrees"`.
-    0  never seen on a page and with no sibling row at all.
+    0  never seen on a page and with no second reading of any kind.
+
+**The witness's sanctoral was reached for the first time on 2026-07-31.** Every
+entry above it in this file renders a temporal oration, because the temporal is
+all anyone had looked at. The 1861 book is not confined to the temporal. It
+prints a Common of Saints in English from p. 459, as fourteen numbered Masses -
+its MASS XII, In medio, is the Mass of Doctors at p. 486 - and a Proper of
+Saints from p. 495. Its own front matter says so at p. 5, referring the reader
+to "the Common of Saints, commencing at p. 459" and to "the Proper of Saints".
+The 1843 printing carries both as well, at the same numbering, which means the
+byte-level detector this file has wanted for the sanctoral already exists and
+needs nothing new acquired.
+
+So the premise that project-created English would be needed for the Commons is
+false, at least for this Common: a public-domain witness this repository already
+tracks prints it, in the same `Blessed N.` form the Latin uses. **No oration in
+this file is a project-created translation. The count is zero, and it is zero
+because a witness was found, not because none was attempted.**
+
+Two limits were measured rather than assumed, and both matter to whoever
+continues. The first is that the 1861 Common of Saints is a *pre-1955* Common:
+where the 1962 typica prints two forms of a Secret or a Postcommunion, the
+witness prints one, and its one English does not always answer either Latin.
+Three propers of the Commune Doctorum are recorded `untranslated` for exactly
+that reason, and the reason is written into each row. The second is that the
+1861 Proper of Saints does not print every day the 1962 calendar keeps: it has
+no entry for S. Hilarii at 14 January, which is why that mass carries Latin and
+no English. How much of the 1962 sanctoral the witness does reach has not been
+counted.
 
 The detector field is the disagreement test of `sibling_transcription` above,
 run over the whole file and recorded rather than left to be re-derived. It
@@ -3028,6 +3063,58 @@ source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 text = """
 Grant, we beseech thee, O Lord, that whatever vice our souls are subject to may be cured by the virtue of the sacrament we have received. Thro'.
 """
+
+[[entries]]
+mass = "commune-doctorum-pontificis"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui populo tuo"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+witness_note = "The 1861 book prints the Common of Saints in English from p. 459, and the Mass of Doctors is its MASS XII, In medio, at p. 486. The Latin of this Collect is the same in both forms of the 1962 Commune Doctorum, and the witness prints one Collect, so the alignment is not in question. Read out of the text layer of Internet Archive item romanmissaltran00churgoog and matched word for word against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at its p. 486 -- two independent scans of two independent printings, which is the byte-level detector this file has wanted. No page image was opened."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who didst give Blessed N. to thy people for a minister of eternal salvation: grant we beseech thee, that he who was the instructor of our life here on earth, may become our intercessor in heaven. Thro'.
+"""
+
+[[entries]]
+mass = "commune-doctorum-non-pontificis"
+form = ""
+proper = "Postcommunion"
+incipit = "Ut nobis, Domine"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+witness_note = "The witness prints one Postcommunion where the 1962 typica prints two, and its wording answers the second - thy Confessor and great Doctor against beatus N. Confessor tuus et Doctor egregius. It is therefore attached to the non Pontifice form only. The Pontifex form, beatus N. Pontifex tuus, has no English here; see the untranslated rows. Same two scans, agreeing word for word, and no page image opened."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Let blessed N. O Lord, thy Confessor and great Doctor, become our advocate, that this thy holy sacrifice may procure our salvation. Thro'
+"""
+
+[[untranslated]]
+mass = "commune-doctorum-pontificis"
+form = ""
+proper = "Secret"
+reason = "the witness prints one Secret for the Mass of Doctors and renders it `the pious prayers of thy holy servant N.`, which answers neither of the two Latin forms the 1962 typica prints -- Sancti N. Pontificis tui atque Doctoris and Sancti N. Confessoris tui atque Doctoris. The 1861 book is a pre-1955 witness to a different Latin here, and attaching its one English to either form would be a guess that reads perfectly"
+
+[[untranslated]]
+mass = "commune-doctorum-non-pontificis"
+form = ""
+proper = "Secret"
+reason = "the same one Secret, and the same reason. See the row above"
+
+[[untranslated]]
+mass = "commune-doctorum-pontificis"
+form = ""
+proper = "Postcommunion"
+reason = "the witness prints one Postcommunion and it names a Confessor, which answers the non Pontifice form; nothing here renders beatus N. Pontifex tuus et Doctor egregius"
 
 [[untranslated]]
 mass = "holy-family"
