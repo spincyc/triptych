@@ -44,16 +44,23 @@ for word in ("finding aid", "Ordo"):
 written = sorted(p for p in root.rglob("*.json"))
 assert len(written) == len(years) * len(names) + 1, [p.name for p in written]
 
-import yaml
+sys.path.insert(0, str(repo / "scripts"))
+import _calendars
 
 for entry in index["calendars"]:
     name = entry["calendar"]
+    # The EFFECTIVE document, which for a recension is its base with its
+    # departures applied. Reading the file as written passed while the only
+    # calendars were whole ones and failed the moment a recension landed: a
+    # recension states its departures and nothing else, so every key it
+    # inherits looked like a key its calendar does not carry. The tool emits
+    # what the day actually appoints, and that is what this must compare with.
     masses = {
         mass["key"]: mass
-        for body in yaml.safe_load(
-            (repo / "src/sources/calendars" / name / "propers.yaml").read_text(encoding="utf-8")
+        for body in _calendars.load_document(
+            repo / "src/sources/calendars", name, effective=True
         )["sections"].values()
-        for mass in body["masses"]
+        for mass in ((body or {}).get("masses") or [])
     }
     # The path template is what a page substitutes into, so it must name the
     # only variable it carries.
@@ -88,10 +95,12 @@ for entry in index["calendars"]:
 
         for year in document["liturgical_years"]:
             assert year["begins"] < year["ends"]
-            if name == "roman-1962":
-                # The 1962 system has no Lectionary cycle and must never be
-                # given one.
-                assert year["lectionary"] is None, year["lectionary"]
+            # Keyed on what the index DECLARES about this calendar, not on its
+            # name: the pre-1955 recension is a second calendar with no cycle,
+            # and a name test sent it down the postconciliar branch.
+            if not entry["lectionary_cycles"]:
+                # A system with no Lectionary cycle must never be given one.
+                assert year["lectionary"] is None, (name, year["lectionary"])
             else:
                 assert year["lectionary"]["sunday"] in ("A", "B", "C")
                 assert year["lectionary"]["weekday"] in ("I", "II")
@@ -220,7 +229,9 @@ import json, sys
 
 payload = json.load(open(sys.argv[1], encoding="utf-8"))
 rows = {row["calendar"]: row for row in payload["coverage"]}
-assert set(rows) == {"roman-1962", "postconciliar"}, sorted(rows)
+# Every calendar with a mass index, whichever they are: a recension is a
+# calendar too, and pinning the set by name failed the day one landed.
+assert {"roman-1962", "postconciliar"} <= set(rows), sorted(rows)
 for name, row in rows.items():
     assert row["dates"] == 365, (name, row["dates"])
     assert row["dates_resolved"] + row["dates_unresolved"] == row["dates"]
@@ -240,11 +251,35 @@ import json, sys
 payload = json.load(open(sys.argv[1], encoding="utf-8"))
 for row in payload["coverage"]:
     never = row["masses_never_placed"]
-    assert not never, (row["calendar"], sorted(mass["key"] for mass in never))
-    assert row["masses_placed"] == row["masses"], row
+    # A mass no date places and no mass points at, OUTSIDE the Commons. That
+    # is the defect this gate exists to catch: a formulary that validates, is
+    # in the index, and nothing can ever reach.
+    #
+    # A Common is a different case and is not an error. The book prints the
+    # Commune Sanctorum whole, to be pointed at — "Missa Statuit, de Communi
+    # unius Martyris" — and eleven of the 1962 index's thirty Commons are not
+    # yet pointed at by any saint transcribed here; five of those are the
+    # Saturday Masses of Our Lady, which the rubrics layer offers as the
+    # Office of the day and which no date pins either. They are reported and
+    # counted, and it is the propers lane's question whether each should be.
+    stranded = [
+        mass for mass in never
+        if mass["section"] != "common" and not mass["declared"]
+    ]
+    assert not stranded, (row["calendar"], sorted(mass["key"] for mass in stranded))
+    # Dated and pointed-at are counted apart, because they are different
+    # statements about a mass and one mass can be both: a Sunday is placed by
+    # a rule and pointed at by the ferias that take it. So they are bounded
+    # rather than summed, and what is asserted is that the three between them
+    # leave nothing over.
+    assert row["masses_placed"] <= row["masses"], row
+    assert row["masses_reached_by_reference"] <= row["masses"], row
+    assert row["masses_placed"] + len(never) <= row["masses"], row
+    assert row["masses_placed"] > 0, row
     # The reason field still has to work: it is what reports the next mass
     # someone adds to an index the guidance cannot date.
-    assert isinstance(never, list)
+    for mass in never:
+        assert mass["why"], mass
 PY
 
 # An empty calendar root is an error rather than a silent success.

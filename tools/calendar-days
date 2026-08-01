@@ -121,7 +121,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json",
             (
-                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":136,\"dates_... [+821 chars]",
+                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":136,\"dates_... [+904 chars]",
             ),
         ),
     ),
@@ -216,7 +216,21 @@ FIXED_DATE_RULE = "the calendar's own index pins this mass to this month and day
 # new mass surfaces rather than silently vanishing. The map is empty because the
 # guidance now dates every mass both calendars carry; it is kept because the
 # next mass added to an index without a rule must be reported, not hidden.
-UNPLACEABLE: dict[tuple[str, str], str] = {}
+# A mass this arithmetic cannot date, with the reason, keyed by (calendar,
+# mass key). The coverage gate asserts that every mass an index carries is
+# either placed by a rule, pointed at by one that is, or DECLARED here: an
+# undeclared mass nothing can reach is a formulary that validates, sits in the
+# calendar, and is unreachable — the defect that gate exists to catch. A
+# declaration is a statement someone made, so each carries its own reason and
+# none is a restatement of anything derivable.
+UNPLACEABLE: dict[tuple[str, str], str] = {
+    ("roman-pre-1955", "blessing-of-palms"): (
+        "the pre-1955 blessing and procession of palms is a service of Palm "
+        "Sunday and not a Mass with a day of its own; this layer computes the "
+        "date and not the hour, so the day is placed by `palm-sunday` and "
+        "nothing places this separately"
+    ),
+}
 
 # The Ember weeks, from the one sentence in the guidance's Ember table: the
 # Wednesday, Friday and Saturday after the Sunday each week is named from. The
@@ -1196,6 +1210,20 @@ def load_calendar(root: Path, name: str) -> dict:
                 "section": section,
                 "rank": mass.get("rank"),
                 "date": mass.get("date"),
+                # Every mass this one points at, its own `takes_from` and each
+                # of its propers'. A Common is never pinned to a date and is
+                # reached only along these edges; without them the coverage
+                # gate reported all twenty-five Commons and the five Saturday
+                # Marian Masses as masses nothing can reach, which is the
+                # opposite of true.
+                "takes": sorted(
+                    {
+                        str((_calendars.reference_of(node) or {}).get("mass"))
+                        for node in (mass, *(mass.get("propers") or []))
+                        if isinstance(node, dict)
+                        and (_calendars.reference_of(node) or {}).get("mass")
+                    }
+                ),
             }
     if not masses:
         raise ValueError(f"{path}: carries no masses")
@@ -1486,6 +1514,22 @@ def coverage_of(index: dict, first: int, last: int) -> dict:
                 unranked += 1
             when += timedelta(days=1)
 
+    # What a date reaches is not all a calendar reaches. A Common is written to
+    # be pointed at — "Missa Statuit, de Communi unius Martyris" — and no rule
+    # fixes it to a day, so a gate that asked only "did some date place this"
+    # reported the whole Commune Sanctorum as unreachable. Reachability is
+    # therefore the closure of the placed masses over their own `takes_from`
+    # edges: derived from the index, so a Common that stops being pointed at
+    # reappears here instead of sitting in a hand-written exemption list.
+    reached: set[str] = set()
+    frontier = [key for key in placed if key in masses]
+    while frontier:
+        key = frontier.pop()
+        for target in masses[key]["takes"]:
+            if target in masses and target not in reached:
+                reached.add(target)
+                frontier.append(target)
+
     never = [
         {
             "key": key,
@@ -1494,9 +1538,12 @@ def coverage_of(index: dict, first: int, last: int) -> dict:
             "why": UNPLACEABLE.get(
                 (name, key), "no rule in " + GUIDANCE + " fixes a date for this mass"
             ),
+            # Whether that reason was declared for this mass, or is the
+            # default sentence standing in for one nobody has written.
+            "declared": (name, key) in UNPLACEABLE,
         }
         for key, mass in sorted(masses.items())
-        if key not in placed
+        if key not in placed and key not in reached
     ]
     return {
         "calendar": index["calendar"],
@@ -1514,6 +1561,11 @@ def coverage_of(index: dict, first: int, last: int) -> dict:
         "masses": len(masses),
         "masses_never_placed": never,
         "masses_placed": len(placed),
+        # Reached, but never by a date: the Commons and anything else a dated
+        # mass points at. Counted rather than folded into `masses_placed`,
+        # because "a rule fixes a date for this" and "something in the book
+        # sends the reader here" are two different statements.
+        "masses_reached_by_reference": len(reached),
         "span": {"first": first, "last": last},
     }
 
