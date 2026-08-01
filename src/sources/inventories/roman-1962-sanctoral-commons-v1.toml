@@ -83,20 +83,107 @@ serve the Common's `beati N.` under the saint's name, in place of the prayer the
 book prints for him. That is the same defect in a smaller costume, so the rows
 are held.
 
-  85 rows  the day prints orations of its own
+  84 rows  the day prints orations of its own
   12 rows  the day carries several pointers, or one under a seasonal condition
            this schema cannot express (`Tempore paschali ... Extra tempus
            paschale ...`)
    2 rows  the day could not be attached to an entry, or its rubric was not
            recognised
-  36 rows  nothing blocks them but that no one has read the page image yet
-  13 rows  landed, four of them with the day's own Collect transcribed from the
+   0 rows  nothing blocks them but that no one has read the page image
+  50 rows  landed, six of them with the day's own orations transcribed from the
            same image
 
-The 36 are the cheapest remaining work in this file: each is a page image, a
-reading, and a two-line reference, and one image often settles two or three
-days. The 85 are the next cheapest, and each is one Collect or three orations
-off a page this file already names.
+The 36 that were blocked on nothing but an unread page are all read and all
+landed, and one of the 85 went with them: 08-09 S. Romani, whose two proper
+orations were transcribed off a page this pass had opened for another reason.
+The remaining 84 are now the cheapest work, and each is one Collect or three
+orations off a page this file already names.
+"""
+
+second_image_pass = """
+All 36 were read on 2026-08-01 and all 36 are landed, over 34 page images and
+six continuation leaves. Each page was rendered at 140 dpi from the tracked PDF
+and read beside a geometric extraction of the same page -- every word assigned
+to a column by its own x, each page read in bands delimited by its full-width
+lines -- so each row rests on two readings that had to agree.
+
+WHAT THE IMAGE SETTLED AND THE TEXT LAYER COULD NOT. Not one of the 36 pointers
+carries a qualifier: every one ends at the bracket with a full stop. And not one
+oration on any of the 36 days is marked P. Every oration a day of this set
+prints is marked C, of the Common, with the saint's name merely supplied. So all
+36 take the whole Mass and none of them holds a prayer of its own, which is why
+all 36 land as a reference and nothing else.
+
+That the absence is an absence, and not a scan losing a line, is settled on the
+same pages: neighbouring days print the qualifier plainly and legibly. 09-29
+reads `de Communi Doctorum [22], cum orationibus ut infra:`, 07-21 `praeter
+orationem sequentem:`, 08-18 `cum orationibus et Evangelio ut infra:`, 08-31
+`praeter orationem sequentem:`, 11-13 `praeter orationem sequentem:`. Twelve
+such contrasts were read, on eleven of the 34 pages.
+
+WHICH SET, WHERE THE COMMON HAS TWO. 04-04 S. Isidori and 04-21 S. Anselmi both
+point at `de Communi Doctorum [22]`, which is the bracket that gave S. Bedae the
+wrong Secret before anyone read his page. Both are marked C 1 on the Secret and
+the Postcommunion, and set 1 is pro Doctore Pontifice; both were bishops, so
+both take commune-doctorum-pontificis, and the numeral says so rather than the
+bracket. The Collect of each is marked with a bare C, because the Commune
+Doctorum prints one Collect and two sets of the other two orations.
+
+A CHECK THAT DID NOT HAVE TO PASS. 12-16 and 02-03 land on the same Common,
+unius Martyris II loco, and the Missal prints all three of their orations out in
+full under each day. The two printings agree word for word with each other and
+with the Common's own text once `beati N.` is read for the saint's name. A
+pointer naming the wrong Common would not have produced that agreement. The same
+test passes at 11-26, whose commemoration Collect the Missal prints in full
+inside another day's Mass, and which is the Collect of commune-unius-martyris-1
+word for word.
+
+Six days needed a second leaf, their orations running over the page: 12-16,
+05-30, 07-11, 07-27, 03-21 and 10-21. An oration that begins on the last line of
+a page is exactly what a reading of one page at a time loses.
+
+TWO DEFECTS THIS PASS FOUND IN OTHER WORK. 09-01 and 11-26 were not bare
+placeholders when the landing reached them: each carried a full set of scripture
+citations that the page proves is not that day's. Both came from the pass that
+gave 149 saints' Masses their citations off this book's text layer, and both
+failed the same way -- it matched a day heading and then took the propers
+printed after it, without stopping at the heading that stood between. At 09-01
+the intervening heading was `Eodem die 1 septembris / Ss. duodecim Fratrum
+Martyrum`, whose whole Mass S. Aegidius was holding; those propers are now on
+the Twelve Brothers, where the Missal prints them. At 11-26 there was no next
+day at all: that heading is the last of the Proprium Sanctorum, and what follows
+it over the leaf is the Commune Sanctorum, so S. Petrus Alexandrinus was holding
+the opening of `Commune unius aut plurium Summorum Pontificum` -- Introit `Io.
+21, 15-17 Si diligis me` and the six propers after it. Those are removed and not
+moved, because the Commune's own scripture propers need their own reading.
+
+Both were found only because a landing tried to write where they sat, so the
+class was then hunted rather than waited for. 29 dates carry the shape the
+failure leaves -- a scripture-bearing entry beside a placeholder-only sibling on
+the same date -- and 9 of those carried it in what looked like the suspicious
+direction, the scripture on the COMMEMORATION while the day's third-class feast
+held nothing. All nine pages were read.
+
+EIGHT OF THE NINE ARE THE BOOK'S OWN LAYOUT AND NOT A DEFECT. At 01-28, 06-12,
+06-18, 06-19, 07-21, 08-08, 08-30 and 09-22 the Missal really does print the
+scripture propers under the commemoration's own `Eodem die` heading while the
+third-class feast beside it takes its Mass from a Common. 06-18 is the clean
+specimen, both halves on one page: `S. Ephraem Syri ... III classis / Missa In
+medio, de Communi Doctorum [22], praeter orationem sequentem:` with no propers at
+all, against `Ss. Marci et Marcelliani ... Commemoratio` with Introit, Oration
+and Epistle. A commemoration outranking its feast in printed matter is normal
+here and is not evidence of anything.
+
+THE NINTH WAS REAL. At 08-09 the propers belong to the third-class Vigil of
+S. Laurentius, which held only a placeholder, and the Gospel `Mt. 16, 24-27` and
+Communion `Mt. 16, 24` sat on comm-s-romani-martyris. S. Romanus has no Mass on
+that leaf at all, only a commemoration inside the Vigil's. Both are moved, the
+Vigil now carries its whole scripture-bearing Mass off printed pp. 620-621, and
+S. Romanus's own pointer is landed with the two orations marked P.
+
+So the count is three misattributions found and fixed, out of 149 masses that
+pass gave citations to, and the 29-date shape is not by itself a detector: it
+was right twice in eleven tries.
 """
 
 [[divergences]]
@@ -224,8 +311,7 @@ printed_common = "Virginum II loco"
 printed_bracket = 30
 common_mass = "commune-virginum-2"
 mass = "comm-s-emerentianae-virginis-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "01-28"
@@ -269,8 +355,7 @@ printed_common = "Virginum I loco"
 printed_bracket = 28
 common_mass = "commune-virginum-1"
 mass = "s-martinae-virginis-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "02-03"
@@ -284,8 +369,7 @@ printed_common = "unius Martyris II loco"
 printed_bracket = 5
 common_mass = "commune-unius-martyris-2"
 mass = "comm-s-blasii-episcopi-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "02-04"
@@ -371,8 +455,7 @@ printed_common = "Virginura I loco"
 printed_bracket = 28
 common_mass = "commune-virginum-1"
 mass = "comm-s-apolloniae-virginis-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "02-10"
@@ -431,8 +514,7 @@ printed_common = "unius Martyris I loco"
 printed_bracket = 4
 common_mass = "commune-unius-martyris-1"
 mass = "comm-s-simeonis-episcopi-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "02-23"
@@ -476,8 +558,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-lucii-i-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "03-06"
@@ -551,8 +632,7 @@ printed_common = "Abbatum"
 printed_bracket = 27
 common_mass = "commune-abbatum"
 mass = "s-benedicti-abbatis"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "04-04"
@@ -566,8 +646,7 @@ printed_common = "Doctorum"
 printed_bracket = 22
 common_mass = "commune-doctorum-pontificis"
 mass = "s-isidori-episcopi-confessoris-ecclesiae-doctoris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "04-05"
@@ -641,8 +720,7 @@ printed_common = "Doctorum"
 printed_bracket = 22
 common_mass = "commune-doctorum-pontificis"
 mass = "s-anselmi-episcopi-confessoris-ecclesiae-doctoris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "04-22"
@@ -656,8 +734,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "ss-soteris-caii-paparum-martyrum"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "04-24"
@@ -686,8 +763,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "ss-cleti-marcellini-paparum-martyrum"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "04-27"
@@ -896,8 +972,7 @@ printed_common = "Virginum III loco"
 printed_bracket = 32
 common_mass = "commune-virginum-3"
 mass = "comm-s-pudentianae-virginis"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "05-25"
@@ -998,8 +1073,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-felicis-i-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "05-31"
@@ -1013,8 +1087,7 @@ printed_common = "Virginum IV loco"
 printed_bracket = 33
 common_mass = "commune-virginum-4"
 mass = "comm-s-petronillae-virginis"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "06-01"
@@ -1133,8 +1206,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-silverii-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "06-25"
@@ -1178,8 +1250,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-pii-i-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "07-12"
@@ -1208,8 +1279,7 @@ printed_common = "Virginum II loco"
 printed_bracket = 30
 common_mass = "commune-virginum-2"
 mass = "comm-s-margaritae-virginis-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "07-21"
@@ -1266,8 +1336,7 @@ printed_common = "unius Martyris III loco"
 printed_bracket = 6
 common_mass = "commune-unius-martyris-3"
 mass = "comm-s-christophori-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "07-27"
@@ -1281,8 +1350,7 @@ printed_common = "unius MartyrisIVloco"
 printed_bracket = 8
 common_mass = "commune-unius-martyris-4"
 mass = "comm-s-pantaleonis-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "07-29"
@@ -1311,8 +1379,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-stephani-i-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "08-05"
@@ -1340,8 +1407,7 @@ printed_common = "unius Martyris IV loco"
 printed_bracket = 8
 common_mass = "commune-unius-martyris-4"
 mass = "comm-s-romani-martyris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "08-12"
@@ -1355,8 +1421,7 @@ printed_common = "Virginum III loco"
 printed_bracket = 32
 common_mass = "commune-virginum-3"
 mass = "s-clarae-virginis"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "08-13"
@@ -1385,8 +1450,7 @@ printed_common = "Confessoris non Pontificis I loco"
 printed_bracket = 24
 common_mass = "commune-confessoris-non-pontificis-1"
 mass = "s-hyacinthi-confessoris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "08-18"
@@ -1550,8 +1614,7 @@ printed_common = "Abbatum"
 printed_bracket = 27
 common_mass = "commune-abbatum"
 mass = "comm-s-aegidii-abbatis"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "09-05"
@@ -1565,8 +1628,7 @@ printed_common = "Confessoris Pontificis I loco"
 printed_bracket = 19
 common_mass = "commune-confessoris-pontificis-1"
 mass = "s-laurentii-iustiniani-episcopi-confessoris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "09-08"
@@ -1580,8 +1642,7 @@ printed_common = "unius Martyris III loco"
 printed_bracket = 6
 common_mass = "commune-unius-martyris-3"
 mass = "comm-s-hadriani-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "09-09"
@@ -1610,8 +1671,7 @@ printed_common = "Confessoris non Pontificis II loco"
 printed_bracket = 25
 common_mass = "commune-confessoris-non-pontificis-2"
 mass = "s-nicolai-tolentino-confessoris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "09-11"
@@ -1670,8 +1730,7 @@ printed_common = "plurimorum Marty rum II loco"
 printed_bracket = 11
 common_mass = "commune-plurimorum-martyrum-2"
 mass = "comm-ss-eustachii-sociorum-martyrum"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "09-22"
@@ -1700,8 +1759,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "s-lini-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "09-23"
@@ -1790,8 +1848,7 @@ printed_common = "Confessoris Pontificis I loco"
 printed_bracket = 19
 common_mass = "commune-confessoris-pontificis-1"
 mass = "comm-s-remigii-episcopi-confessoris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "10-05"
@@ -1835,8 +1892,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-marci-papae-confessoris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "10-08"
@@ -1925,8 +1981,7 @@ printed_common = "Abbatum"
 printed_bracket = 27
 common_mass = "commune-abbatum"
 mass = "comm-s-hilarionis-abbatis"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "10-21"
@@ -2045,8 +2100,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "s-martini-i-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "11-13"
@@ -2237,8 +2291,7 @@ printed_common = "unius Martyris I loco"
 printed_bracket = 4
 common_mass = "commune-unius-martyris-1"
 mass = "comm-s-petri-alexandrini-episcopi-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "11-29"
@@ -2281,8 +2334,7 @@ printed_common = "Virginum I loco"
 printed_bracket = 28
 common_mass = "commune-virginum-1"
 mass = "comm-s-barbarae-virginis-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "12-05"
@@ -2311,8 +2363,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-melchiadis-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "12-16"
@@ -2326,5 +2377,4 @@ printed_common = "unius Martyris II loco"
 printed_bracket = 5
 common_mass = "commune-unius-martyris-2"
 mass = "s-eusebii-episcopi-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
