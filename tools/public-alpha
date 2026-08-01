@@ -2569,7 +2569,24 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
 # pages from its gold one. Naming the colour here rather than in each page's
 # stylesheet is what lets those stylesheets stop carrying a copy of the site's
 # palette that had to be re-copied every time the site was retuned.
-BROWSER_SECTION_COLOURS = {"liturgy": "red", "scripture": "gold", "catena": "violet"}
+BROWSER_SECTION_COLOURS = {
+    "liturgy": "red",
+    "scripture": "gold",
+    "catena": "violet",
+    "history": "green",
+}
+
+# An entrance with no colour raised KeyError deep inside the build, and only in
+# CI: `check-public-alpha` validates the policy and never renders a page, so a
+# page could be authorized and unbuildable at the same time. The two lists are
+# compared here, at import, where every invocation of this tool pays for it.
+_UNCOLOURED = [name for name in WEB_BROWSER_ENTRANCES if name not in BROWSER_SECTION_COLOURS]
+if _UNCOLOURED:
+    raise SystemExit(
+        "public-alpha: browser entrance(s) with no section colour: "
+        + ", ".join(_UNCOLOURED)
+        + "; add them to BROWSER_SECTION_COLOURS"
+    )
 
 
 def render_browser_page(
