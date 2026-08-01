@@ -21,8 +21,8 @@ Choose a section, open a PDF, and read. New here? Start with
 
 - **[The Propers of the Mass](liturgy/)** — any Mass in either missal, in the
   translations this site can publish.
-- **[Why this Mass today](liturgy/day.html)** — from a date to its
-  Mass, with the rubric behind each step.
+- **[Today’s Missal](liturgy/day.html)** — the Mass appointed for a date, with
+  the rubric behind each choice in the margin.
 - **[The Story of Salvation](scripture/)** — the abridged reading plan, at three
   depths.
 - **[The Catena](catena/)** — a chapter, and the commentary this site holds on
