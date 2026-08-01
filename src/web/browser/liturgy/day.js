@@ -251,7 +251,7 @@
   };
 
   function massMargin(branch, rubrics, derived) {
-    const node = margin('Why this Mass');
+    const node = margin('Propers resolution');
 
     if (branch.winner) {
       const took = T.el('p', 'margin-lead');

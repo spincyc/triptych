@@ -215,7 +215,7 @@
     content.setAttribute('aria-busy', 'false');
     document.title = 'The Story of Salvation — Triptych';
     T.statusLine(
-      'The reading plan, in ' + views.length + ' tracks: ' +
+      'The Story of Salvation, in ' + views.length + ' tracks: ' +
       views.map((view) => view.label + ', ' + view.count).join('; ') + '.'
     );
   }
