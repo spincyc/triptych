@@ -149,7 +149,7 @@ SITE_DATA_ROOT = PurePosixPath("browse")
 # may drift on live once, in shared. The fixture beside them is a development
 # aid and is not published.
 # The reading pages a reader is sent to; `shared` carries no page of its own.
-WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history", "texts", "sources")
+WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history", "texts", "sources", "law")
 # Derived, never restated. These were two hand-kept lists, and adding a section
 # to one and not the other shipped a page whose stylesheet and script were left
 # out of the artifact — the build passed and the link check caught it.
@@ -2583,6 +2583,14 @@ BROWSER_SECTION_COLOURS = {
     # ground of the section that carries other people's words rather than the
     # project's, and that must more often identify a text than reproduce it.
     "sources": "white",
+    # The Code takes black, and takes it KNOWINGLY BESIDE THE CATALOGUE rather
+    # than picking an unused colour. `liturgical_section` above already routes
+    # library/law-and-church-discipline.md and /articles/canon-law/ to black, so
+    # a canon-law reading page in any other colour would be this site holding
+    # two answers to what colour its canon law is. The marks are § and ¶, which
+    # are the marks of a code before they are the marks of a catalogue. Values
+    # here are not required to be distinct; only the presence of one is.
+    "law": "black",
 }
 
 # An entrance with no colour raised KeyError deep inside the build, and only in
