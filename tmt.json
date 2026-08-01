@@ -55,7 +55,9 @@
       "purpose": "Validate the normalized YAML mass-proper indexes under src/sources/calendars.",
       "requires": [
         "calendar-spine",
-        "citations"
+        "citations",
+        "mass-propers",
+        "source-library"
       ],
       "stage": "draft",
       "usage": "check-calendar-masses [check] [--root DIR] [--calendar NAME]"
