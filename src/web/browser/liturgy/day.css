@@ -247,29 +247,7 @@
    It sits after the Mass, not before the controls: a reader who has the day's
    Mass on the screen is the reader who needs telling what it is worth. */
 
-.standing-warning {
-  margin: 2.5rem 0 0;
-  padding: 0.9rem 1.1rem;
-  background: var(--notice-bg);
-  border: 1px solid var(--section-line);
-  border-left: 0.32rem solid var(--notice);
-  border-radius: 4px;
-}
-
-.standing-warning h2 {
-  margin: 0 0 0.35rem;
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--notice);
-}
-
-.standing-warning p { margin: 0; font-size: 0.92rem; }
-
 /* The warning and the footer are one closing block, not two separated ones. */
-.standing-warning + .page-footer { margin-top: 1.5rem; }
 
 
 /* ---- The date field ----------------------------------------------------- */

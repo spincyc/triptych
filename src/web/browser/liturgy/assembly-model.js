@@ -466,7 +466,11 @@
       // which the source declares and deliberately never applies.
       const stated = (rubrics.overrides || []).filter((one) => one.stated_only);
       unsettled.push({
-        what: tied.map((one) => one.id).join(' and '),
+        // The NAME, not the id. A mass key is `ss-septem-fratrum-martyrum-ac-ss`,
+        // and this is the one place the model put one into a sentence the page
+        // prints — so a tied day rendered what read as corrupted text in the
+        // margin. Every other candidate here is named; this was the outlier.
+        what: tied.map((one) => one.name || one.id).join(' and '),
         why:
           'both stand at ' + placeWord(rubrics) + ' ' + best.row +
           ', and the table orders within a row by a property — movable before fixed, ' +
