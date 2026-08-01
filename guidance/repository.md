@@ -417,6 +417,25 @@ source is already public; a failed workflow does not retract it and must be
 diagnosed and corrected in a later coherent checkpoint. Keep uncleared
 experiments and `hold` material off public refs.
 
+**Several agents share one working copy, and therefore one git index.** `git add`
+stages into that shared index, and a bare `git commit` commits all of it —
+including whatever a sibling staged a second earlier. Always name the paths:
+
+```sh
+git commit -m "..." -- <path> [<path> ...]   # or: git commit --only <paths>
+```
+
+Check `git status --short` before and `git show HEAD --stat` after. Rebind the
+release record the same way, `make refresh-release-bindings ONLY="<paths>"`,
+never `ADOPT=1` while others are working.
+
+On 2026-08-01 a one-file guidance edit committed with a bare `git commit`
+carried another lane's staged deletions — 62 files, 49,029 lines of the
+catena's browser structure — into a push, publishing a deletion before its
+replacement existed; Catena Omnia returned 404 on the live site until the
+replacement landed. Two other lanes had work swept into each other's commits
+the same day, and one such commit is pushed and no longer safely fixable.
+
 Every AI-assisted commit has a concise result-oriented subject and a terse body headed `AI summary:` — one or two sentences naming the material change and the verification performed. Do not claim unperformed checks or include private reasoning, narration, or machine-local state. The same terseness governs code comments: state only what the code cannot say itself.
 
 Use new commits for ordinary corrections, source substitutions, renewed verification, and reorganizations. Do not amend, filter, force-update, or otherwise rewrite published history unless the user expressly requests and coordinates that consequence.

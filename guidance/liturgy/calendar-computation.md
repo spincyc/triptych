@@ -40,7 +40,7 @@ These belong to the 1962 calendar, and they get their own tables here because th
 
 ### The four Ember weeks
 
-The 1960 code names the Ember Days in four places and never dates them: general rubric 24 b makes the Ember ferias of Advent, of Lent and of September second-class ferias, rubric 109 d makes the September commemoration privileged, and rubrics 127–128 except the September days from green. The Ember Days of Pentecost are named in none of those lists because rubric 66 has already made every day within that octave first class. The tracked rubric registry carries the same rows at `src/sources/calendars/roman-1962/rubrics.yaml` lines 96–97 and 759.
+The 1960 code names the Ember Days in four places and never dates them: general rubric 24 b makes the Ember ferias of Advent, of Lent and of September second-class ferias, rubric 109 d makes the September commemoration privileged, and rubrics 127–128 except the September days from green. The Ember Days of Pentecost are named in none of those lists because rubric 66 has already made every day within that octave first class. The tracked rubric registry carries the same rows at `src/sources/calendars/roman-1962/rubrics.yaml` lines 98–99 and 756.
 
 The date rule is not in the code but in the Missal's own front matter, in the note *De anno et eius partibus*. The repository's tracked 1962 calendar reference quotes it at `src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/30-vigils-octaves-ember-rogation.tex` lines 121–133: "Quatuor Tempora celebrantur quarta et sexta feria ac sabbato post tertiam dominicam Adventus, post primam dominicam Quadragesimae, post dominicam Pentecostes, post dominicam tertiam septembris" — the Ember Days are celebrated on the Wednesday, Friday and Saturday after the Third Sunday of Advent, after the First Sunday of Lent, after Pentecost Sunday, and after the third Sunday of September. The same four positions are given at `src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/40-temporale.tex` line 66, which agrees on Advent, Lent and Pentecost and diverges on September; that divergence is recorded below.
 
@@ -90,7 +90,7 @@ The Holy Name is the only rule in this file whose result is not always the same 
 
 ### The three postconciliar movables
 
-The Universal Norms fix no dates; these three are assigned in the Missal's own temporal cycle, and the repository's tracked postconciliar calendar reference carries all three at `src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/40-temporale.tex` lines 43, 44 and 39, corroborated at that publication's `research/calendar-inventory.md` lines 46, 47 and 42 (rows T34, T35 and T30). Line numbers follow the table below, not the files' own order.
+The Universal Norms fix no dates; these three are assigned in the Missal's own temporal cycle, and the repository's tracked postconciliar calendar reference carries all three at `src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/50-movable.tex` lines 56, 63 and 65, corroborated at that publication's `research/calendar-inventory.md` lines 66, 70 and 71.
 
 | Celebration | Rule | Latin | Window, 2020–2120 |
 | --- | --- | --- | --- |

@@ -7,6 +7,10 @@ rubricarum* as incorporated into the Missal, the general rubrics, *Ritus
 servandus*, and the edition's formularies. Present authorization to use the book
 is a separate, mutable question unless deliberately researched and dated.
 
+Every calendar arithmetic rule this profile relies on — movable anchors, the
+resumed-Sunday mechanism, and the fixed-date windows — is owned by
+`guidance/liturgy/calendar-computation.md`. Reference it; never restate it here.
+
 ## Governing priorities
 
 1. Determine the liturgical day and calendar before choosing a Mass.

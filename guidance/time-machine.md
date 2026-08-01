@@ -538,7 +538,7 @@ preserved — 1600-02-29 Tuesday becomes 11600-02-29 Tuesday. The true year is t
 printed year less 10,000.
 
 > **Rule 8.** The shifted date is a storage artefact of git, never a fact. The
-> real date rides in an `Act-Date:` trailer, and that trailer is the only date
+> real date rides in an `Act-date:` trailer, and that trailer is the only date
 > any viewer reads.
 
 ### Byte-identical regeneration is achievable, and was measured
