@@ -73,6 +73,7 @@ SCRATCH: dict[str, tuple[str, ...]] = {
     "calendar-rubrics": ("build/example-web",),
     "citations": ("build/example-cal",),
     "commentary-work-index": ("build/example-corpus.yaml",),
+    "document-library": ("build/example-catalogue",),
     "harvest": ("build/example-harvest", "build/example-discovery.yaml"),
     "index-bible": ("build/example-index", "build/example-bibles"),
     "mass-propers": ("build/example-propers",),

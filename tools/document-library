@@ -1,0 +1,852 @@
+#!/usr/bin/env python3
+"""Catalogue every document the corpus holds, and emit it for the browser.
+
+Seven catalog pages and twelve collection pages between them link every PDF
+this project builds, and none of them answers the questions a reader actually
+arrives with: how long is it, when was it last revised, which model wrote it,
+can I read it without downloading anything. Those facts are in the tree — in a
+preamble, a provenance ledger, an eligibility record and a release record, one
+of each per document — and until this tool existed nothing gathered them.
+
+    check      every derived title is the one the built PDF carries
+    list       the corpus, filtered, as text or YAML or JSON
+    show       one document's complete record
+    structure  write the catalogue the reading page fetches
+
+The derivation is scripts/_corpus.py and lives there rather than here, because
+the release builder and the provenance gate read parts of it too — `make
+check-public-alpha` and `make check-metadata` — and a second walk of the same
+records is a second answer waiting to differ from the first. This file decides
+only what a catalogue row looks like.
+
+Nothing here is scraped in the browser. The page fetches one generated file and
+renders it; a page that walked the corpus itself would be a fifth reader of the
+same records, running somewhere no check can reach it.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _corpus import (  # noqa: E402
+    FULL,
+    PROVIDERS,
+    CorpusError,
+    Document,
+    documents,
+    read_pdf,
+)
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+# Captured, never composed. Regenerate with `make recapture-examples`.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/document-library check",
+            (
+                "133 works, 178 documents, 186 issues, 5675 pages.",
+                "  titles derived from source and confirmed against the built PDF: 186",
+                "  titles the sources do not state: 0",
+                "  issues with no PDF installed: 0",
+                "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
+            ),
+        ),
+        Example(
+            "tools/document-library check --provider claude",
+            (
+                "45 works, 45 documents, 47 issues, 1437 pages.",
+                "  titles derived from source and confirmed against the built PDF: 47",
+                "  titles the sources do not state: 0",
+                "  issues with no PDF installed: 0",
+                "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
+            ),
+            "one edition's leaves only",
+        ),
+    ),
+    "list": (
+        Example(
+            "tools/document-library list --section biographies --provider claude",
+            (
+                "claude  biographies/origen                     18pp  2026-07-24  eligible     Origen: Man of Adamant, Trial of the Church",
+                "claude  biographies/saint-augustine-of-hippo   22pp  2026-07-25  eligible     Saint Augustine of Hippo: The Restless Heart",
+                "claude  biographies/saint-jerome               18pp  2026-07-25  eligible     Saint Jerome: Doctor of the Sacred Page",
+                "claude  biographies/saint-paul                 28pp  2026-07-25  eligible     Saint Paul: The Least of the Apostles",
+                "claude  biographies/saint-peter                39pp  2026-07-26  eligible     Saint Peter: The Fisherman and the Keys",
+                "claude  biographies/saint-robert-bellarmine    29pp  2026-07-25  eligible     Saint Robert Bellarmine: The Disputer of This Age",
+                "claude  biographies/saint-thomas-aquinas       18pp  2026-07-25  eligible     Saint Thomas Aquinas: The Common Doctor",
+                "claude  biographies/tertullian                 28pp  2026-07-25  eligible     Tertullian: Father of Latin Theology, Enemy of Compromise",
+                "8 works, 8 documents, 8 issues, 200 pages.",
+            ),
+        ),
+        Example(
+            "tools/document-library list --author claude-fable-5 --sort pages",
+            (
+                "... 24 more lines",
+            ),
+            "every document one model contributed to, longest last",
+        ),
+    ),
+    "show": (
+        Example(
+            "tools/document-library show --document articles/faith/ontological-vertigo --provider claude",
+            (
+                "claude  articles/faith/ontological-vertigo",
+                "  title      Ontological Vertigo",
+                "             from src/claude/articles/faith/ontological-vertigo/main.tex",
+                "  subject    A discursive essay on the reflexive apprehension of asymmetric ontological dependence: received being, present conservation, and the fork of recoil or consent. The Creature Before God, Part I",
+                "  section    articles",
+                "  catalog    library/faith.md",
+                "  revised    2026-07-26T02:03:00Z",
+                "  web        eligible, reviewed 2026-07-25 -> web/claude/articles/faith/ontological-vertigo.html",
+                "  full       31pp  alpha  perpetual-public-repository-2026",
+                "             pdf/claude/articles/faith/ontological-vertigo.pdf",
+                "  authorship 1 contribution",
+                "    claude-opus-5[1m]",
+                "      qualifiers  unexposed: reasoning-effort and sampling configuration",
+                "      runtime     Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision",
+                "1 work, 1 document, 1 issue, 31 pages.",
+            ),
+        ),
+        Example(
+            "tools/document-library show --document theology/sacraments-at-a-glance --provider gpt",
+            (
+                "... 15 more lines",
+            ),
+            "a document that inherits its provenance: the pointer is printed, never the copy",
+        ),
+    ),
+    "structure": (
+        Example(
+            "tools/document-library structure --out build/example-catalogue",
+            (
+                "133 works, 178 documents, 186 issues, 5675 pages.",
+                "  -> build/example-catalogue/structure/documents/corpus.json",
+            ),
+            "WRITES. --out here is untracked; the default writes the tracked src/web/data",
+        ),
+        Example(
+            "tools/document-library structure --check",
+            (
+                "133 works, 178 documents, 186 issues, 5675 pages.",
+                "  src/web/data/structure/documents/corpus.json is current",
+            ),
+            "writes nothing; refuses when the tracked catalogue has drifted from the sources",
+        ),
+    ),
+}
+
+SCHEMA = "triptych-document-catalogue/v1"
+STRUCTURE_RELATIVE = Path("structure") / "documents" / "corpus.json"
+DEFAULT_OUT = "src/web/data"
+# The page's own derivation — what a choice selects, what a document is called,
+# and in what order. It exists once, in the browser, because the browser is
+# what performs it; re-deriving it here in Python would be the second copy this
+# repository keeps being bitten by. `check` runs that file instead.
+BROWSER_MODEL = Path("src/web/browser/texts/catalogue-model.js")
+
+# The two editions, named as ABOUT.md names them: "one by GPT and one by
+# Claude". The label is here and nowhere else, so a page cannot invent a third
+# spelling of an edition the repository already calls something.
+PROVIDER_LABELS = {"claude": "Claude", "gpt": "GPT"}
+
+# What the catalogue is, printed inside the catalogue, so that a consumer that
+# has the file has the caution that belongs with it.
+ADVISORY = (
+    "Derived from each document's own sources and from the PDF it builds. "
+    "Titles are evaluated out of the preamble and confirmed against the built "
+    "PDF; a document whose sources state no title is carried with the reason "
+    "in place of one and is never given an invented name."
+)
+
+SORTS = ("leaf", "title", "pages", "revised")
+
+
+def _title_of(document: Document) -> str | None:
+    for issue in document.issues:
+        if issue.kind == FULL:
+            return issue.title.text
+    return None
+
+
+def _sort_key(sort: str):
+    if sort == "title":
+        return lambda document: ((_title_of(document) or "").lower(), document.leaf)
+    if sort == "pages":
+        return lambda document: (document.pages or 0, document.leaf)
+    if sort == "revised":
+        return lambda document: (document.provenance.revised, document.leaf)
+    return lambda document: (document.leaf, document.provider)
+
+
+def resolved_models(document: Document, by_key: dict[tuple[str, str], Document]) -> tuple[str, ...]:
+    """Every model that contributed, following an inheritance pointer once.
+
+    Six documents are set from a sibling's sources and record a pointer to it
+    instead of a copy of its ledger. Resolving the pointer here, in the one pass
+    that reads both, is what lets every consumer — the `--author` filter, the
+    catalogue, the page's dropdown — ask a document which models wrote it
+    without any of them re-implementing the hop.
+    """
+    if document.provenance.inherits is None:
+        return document.models
+    inherited = by_key.get((document.provider, document.provenance.inherits))
+    return inherited.models if inherited is not None else ()
+
+
+def selected(arguments: argparse.Namespace) -> tuple[tuple[Document, ...], dict]:
+    """Read the corpus and narrow it to what the invocation asked for."""
+    providers = (arguments.provider,) if arguments.provider else PROVIDERS
+    found = documents(providers=providers, extents=not getattr(arguments, "brief", False))
+    by_key = {document.key: document for document in found}
+    rows = list(found)
+    if getattr(arguments, "document", None):
+        rows = [row for row in rows if row.leaf == arguments.document]
+        if not rows:
+            raise CorpusError(f"no document with leaf {arguments.document!r}")
+    if getattr(arguments, "section", None):
+        rows = [row for row in rows if row.section == arguments.section]
+    if getattr(arguments, "eligibility", None):
+        rows = [row for row in rows if row.eligibility == arguments.eligibility]
+    if getattr(arguments, "author", None):
+        rows = [row for row in rows if arguments.author in resolved_models(row, by_key)]
+        if not rows:
+            raise CorpusError(
+                f"no document names {arguments.author!r} among its contributions"
+            )
+    rows.sort(key=_sort_key(getattr(arguments, "sort", "leaf") or "leaf"))
+    return tuple(rows), by_key
+
+
+def tally(rows: tuple[Document, ...]) -> dict:
+    """How much there is: works, documents, issues, and pages.
+
+    Pages are counted across documents and not across issues. A synthesis
+    edition is the same document set a second time with parts left out, so
+    adding its extent to the total would count the pages it shares with the
+    full issue twice and report a corpus larger than the one that exists. The
+    browser's own model counts it the same way, and `check` runs that model and
+    holds the two to each other — which is how this was found, at 5,757 pages
+    against a real 5,675.
+    """
+    return {
+        "works": len({row.leaf for row in rows}),
+        "documents": len(rows),
+        "issues": sum(len(row.issues) for row in rows),
+        "pages": sum(row.pages or 0 for row in rows),
+    }
+
+
+# --- check -----------------------------------------------------------------
+
+
+def run_check(arguments: argparse.Namespace) -> dict:
+    """Compare every derived title and subject with the PDF that was built.
+
+    This is the whole gate, and it is the only kind that would have caught the
+    defect this tool was most likely to ship: a title that resolves, reads
+    correctly, and names the document something it is not. A regex over
+    `main.tex` produced exactly that for thirty-four documents — plausible
+    short titles, none of them what the PDF prints — and nothing but a
+    comparison against the built artifact distinguished them from the hundred
+    and fifty-two it got right.
+    """
+    rows, by_key = selected(arguments)
+    confirmed, unconfirmed, unrecorded, unbuilt = 0, [], [], []
+    for row in rows:
+        for issue in row.issues:
+            if issue.title.absent:
+                unrecorded.append(f"{row.provider} {issue.stem}: {issue.title.absent}")
+            if issue.pdf is None:
+                unbuilt.append(f"{row.provider} {issue.stem}: {issue.pdf_absent}")
+                continue
+            metadata = read_pdf(ROOT / issue.pdf)
+            if issue.title.text is not None and metadata.title != issue.title.text:
+                unconfirmed.append(
+                    f"{issue.pdf}: source states {issue.title.text!r}, "
+                    f"the PDF carries {metadata.title!r}"
+                )
+            elif (metadata.subject or None) != issue.title.subject:
+                unconfirmed.append(
+                    f"{issue.pdf}: source states subject {issue.title.subject!r}, "
+                    f"the PDF carries {metadata.subject!r}"
+                )
+            elif issue.title.text is not None:
+                confirmed += 1
+    if unconfirmed:
+        raise CorpusError("; ".join(unconfirmed[:3]) + _and_more(unconfirmed, 3))
+
+    replayed, skipped = replay_browser_model(catalogue(rows, by_key))
+    if replayed:
+        raise CorpusError("; ".join(replayed[:3]) + _and_more(replayed, 3))
+    return {
+        **tally(rows),
+        "confirmed": confirmed,
+        "unrecorded": unrecorded,
+        "unbuilt": unbuilt,
+        "replayed": skipped or BROWSER_MODEL.as_posix(),
+        "status": "ok",
+    }
+
+
+def _and_more(items: list[str], shown: int) -> str:
+    return f" (and {len(items) - shown} more)" if len(items) > shown else ""
+
+
+# --- the page's own derivation, replayed ------------------------------------
+#
+# The catalogue states four summaries — how much there is, and how much of it
+# each edition, each model and each section accounts for — and the page derives
+# the same four out of the works array every time a control moves. Two
+# derivations of one count is the pairing this repository has been bitten by, so
+# rather than trusting them to agree this runs the browser's own file under node
+# and compares. A control that offers a model no document will match, or a total
+# that disagrees with the rows under it, fails here instead of on the site.
+
+HARNESS = """
+const fs = require('fs');
+const source = fs.readFileSync(process.argv[1], 'utf8');
+const holder = { exports: {} };
+new Function('module', 'exports', source)(holder, holder.exports);
+const model = holder.exports;
+const catalogue = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+const works = catalogue.works || [];
+
+function count(state) {
+  return model.tally(model.narrow(works, Object.assign(
+    { author: '', edition: '', section: '', reading: '', sort: 'section', find: '' },
+    state
+  )));
+}
+
+const answer = {
+  whole: count({}),
+  providers: {},
+  models: {},
+  sections: {},
+  orders: {}
+};
+for (const provider of catalogue.providers || []) {
+  answer.providers[provider.id] = count({ edition: provider.id }).documents;
+}
+for (const one of catalogue.models || []) {
+  answer.models[one.id] = count({ author: one.id }).documents;
+}
+for (const section of catalogue.sections || []) {
+  answer.sections[section.id] = count({ section: section.id }).works;
+}
+// Every ordering must be a permutation of the same set: a sort that dropped or
+// duplicated a work would show a different corpus depending on the control.
+const everything = model.narrow(works, {
+  author: '', edition: '', section: '', reading: '', sort: 'section', find: ''
+});
+for (const sort of ['section', 'title', 'revised', 'pages']) {
+  const ordered = model.order(everything.slice(), sort);
+  answer.orders[sort] = ordered.map(function (row) { return row.work.leaf; }).sort();
+}
+process.stdout.write(JSON.stringify(answer));
+"""
+
+
+def replay_browser_model(built: dict) -> tuple[list[str], str]:
+    """Run the page's model over the catalogue and hold it to the summaries."""
+    model = ROOT / BROWSER_MODEL
+    if not model.is_file():
+        return ([f"{BROWSER_MODEL.as_posix()}: not found"], "")
+    scratch = ROOT / "build" / "document-library-replay.json"
+    scratch.parent.mkdir(parents=True, exist_ok=True)
+    scratch.write_text(_serialise(built), encoding="utf-8")
+    try:
+        completed = subprocess.run(
+            ["node", "-e", HARNESS, str(model), str(scratch)],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except FileNotFoundError:
+        return ([], "node is not installed; the page's own derivation was not replayed")
+    finally:
+        scratch.unlink(missing_ok=True)
+    if completed.returncode != 0:
+        return ([f"the page's derivation failed: {completed.stderr.strip()}"], "")
+
+    answer = json.loads(completed.stdout)
+    problems: list[str] = []
+    for field in ("works", "documents", "pages"):
+        if answer["whole"][field] != built["counted"][field]:
+            problems.append(
+                f"the page counts {answer['whole'][field]} {field} where the "
+                f"catalogue states {built['counted'][field]}"
+            )
+    if answer["whole"]["unrecorded"] != built["counted"]["titles_unrecorded"]:
+        problems.append(
+            f"the page counts {answer['whole']['unrecorded']} unrecorded titles "
+            f"where the catalogue states {built['counted']['titles_unrecorded']}"
+        )
+    for kind, key, rows in (
+        ("providers", "documents", built["providers"]),
+        ("models", "documents", built["models"]),
+        ("sections", "works", built["sections"]),
+    ):
+        for row in rows:
+            selected_count = answer[kind].get(row["id"])
+            if selected_count != row[key]:
+                problems.append(
+                    f"choosing {row['id']!r} selects {selected_count} {key} where "
+                    f"the catalogue offers it as {row[key]}"
+                )
+    whole = sorted(work["leaf"] for work in built["works"])
+    for sort, leaves in answer["orders"].items():
+        if leaves != whole:
+            problems.append(f"ordering by {sort} does not return every work exactly once")
+    return (problems, "")
+
+
+# --- list and show ---------------------------------------------------------
+
+
+def run_list(arguments: argparse.Namespace) -> dict:
+    rows, by_key = selected(arguments)
+    return {
+        **tally(rows),
+        "documents_listed": [_row_record(row, by_key) for row in rows],
+        "status": "ok",
+    }
+
+
+def _row_record(document: Document, by_key: dict[tuple[str, str], Document]) -> dict:
+    return {
+        "provider": document.provider,
+        "leaf": document.leaf,
+        "section": document.section,
+        "title": _title_of(document),
+        "title_absent": next(
+            (issue.title.absent for issue in document.issues if issue.kind == FULL), None
+        ),
+        "pages": document.pages,
+        "revised": document.provenance.revised,
+        "eligibility": document.eligibility,
+        "models": list(resolved_models(document, by_key)),
+    }
+
+
+def run_show(arguments: argparse.Namespace) -> dict:
+    rows, by_key = selected(arguments)
+    return {
+        **tally(rows),
+        "documents_shown": [_full_record(row, by_key) for row in rows],
+        "status": "ok",
+    }
+
+
+def _full_record(document: Document, by_key: dict[tuple[str, str], Document]) -> dict:
+    return {
+        **_row_record(document, by_key),
+        "catalog": document.catalog,
+        "reviewed": document.reviewed,
+        "basis": document.basis,
+        "rationale": document.rationale,
+        "blocking_constructs": list(document.blocking_constructs),
+        "web": document.web_page,
+        "inherits": document.provenance.inherits,
+        "contributions": [
+            {
+                "model": contribution.model,
+                "qualifiers": contribution.qualifiers,
+                "runtime": contribution.runtime,
+            }
+            for contribution in document.provenance.contributions
+        ],
+        "issues": [
+            {
+                "kind": issue.kind,
+                "title": issue.title.text,
+                "title_absent": issue.title.absent,
+                "title_source": issue.title.source,
+                "title_template": issue.title.template,
+                "subject": issue.title.subject,
+                "pages": issue.pages,
+                "pdf": issue.pdf,
+                "pdf_absent": issue.pdf_absent,
+                "status": issue.status,
+                "authorization": issue.authorization,
+            }
+            for issue in document.issues
+        ],
+    }
+
+
+# --- structure -------------------------------------------------------------
+
+
+def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) -> dict:
+    """One provider's edition of a work, as the page reads it.
+
+    The full issue's title, subject, extent and PDF sit on the edition itself; a
+    synthesis edition is carried under `also`, writing only the fields on which
+    it departs from the full issue. Restating the fields it shares would put the
+    same status in two places on the same object, and the two would be free to
+    disagree the moment one of them was corrected.
+    """
+    whole = next(issue for issue in document.issues if issue.kind == FULL)
+    also = []
+    for issue in document.issues:
+        if issue.kind == FULL:
+            continue
+        entry = {"kind": issue.kind, "pages": issue.pages, "pdf": issue.pdf}
+        if issue.pdf_absent:
+            entry["pdf_absent"] = issue.pdf_absent
+        for field, mine, theirs in (
+            ("title", issue.title.text, whole.title.text),
+            ("subject", issue.title.subject, whole.title.subject),
+            ("status", issue.status, whole.status),
+            ("authorization", issue.authorization, whole.authorization),
+        ):
+            if mine != theirs:
+                entry[field] = mine
+        also.append(entry)
+
+    record = {
+        "provider": document.provider,
+        "title": whole.title.text,
+        "subject": whole.title.subject,
+        "title_source": whole.title.source,
+        "pages": whole.pages,
+        "pdf": whole.pdf,
+        "revised": document.provenance.revised,
+        "eligibility": document.eligibility,
+        "reviewed": document.reviewed,
+        "status": whole.status,
+        "authorization": whole.authorization,
+        # The resolved projection of the ledger below, or of the ledger this
+        # document points at. Written once, by the pass that reads both, so the
+        # page never resolves authorship itself and its dropdown cannot offer a
+        # model no document will match.
+        "models": list(resolved_models(document, by_key)),
+    }
+    # Absence is written where it happens, with its reason, and only there.
+    if whole.title.absent:
+        record["title_absent"] = whole.title.absent
+    if whole.title.template:
+        record["title_template"] = whole.title.template
+    if whole.pdf_absent:
+        record["pdf_absent"] = whole.pdf_absent
+    if document.web_page:
+        record["web"] = document.web_page
+    if document.basis:
+        record["basis"] = document.basis
+    if document.rationale:
+        record["rationale"] = document.rationale
+    if document.blocking_constructs:
+        record["blocking_constructs"] = list(document.blocking_constructs)
+    if document.provenance.inherits:
+        record["inherits"] = document.provenance.inherits
+    else:
+        record["contributions"] = [
+            {
+                "model": contribution.model,
+                "qualifiers": contribution.qualifiers,
+                "runtime": contribution.runtime,
+            }
+            for contribution in document.provenance.contributions
+        ]
+    if also:
+        record["also"] = also
+    return record
+
+
+def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document]) -> dict:
+    """The whole corpus, keyed by work, as one object the page fetches once."""
+    works: dict[str, dict] = {}
+    for document in rows:
+        work = works.setdefault(
+            document.leaf,
+            {
+                "leaf": document.leaf,
+                "section": document.section,
+                "catalog": document.catalog,
+                # The site path of the collection page that carries this work.
+                # Computed here so the page does not have to know how a
+                # repository markdown path becomes a rendered one.
+                "catalog_page": (
+                    document.catalog[: -len(".md")] + ".html"
+                    if document.catalog and document.catalog.endswith(".md")
+                    else None
+                ),
+                "editions": [],
+            },
+        )
+        work["editions"].append(edition_record(document, by_key))
+
+    ordered = [works[leaf] for leaf in sorted(works)]
+    for work in ordered:
+        work["editions"].sort(key=lambda edition: edition["provider"])
+
+    models: dict[str, int] = {}
+    for work in ordered:
+        for edition in work["editions"]:
+            for model in edition["models"]:
+                models[model] = models.get(model, 0) + 1
+    sections: dict[str, int] = {}
+    for work in ordered:
+        sections[work["section"]] = sections.get(work["section"], 0) + 1
+    providers: dict[str, int] = {}
+    for work in ordered:
+        for edition in work["editions"]:
+            providers[edition["provider"]] = providers.get(edition["provider"], 0) + 1
+
+    counted = tally(rows)
+    counted["titles_unrecorded"] = sum(
+        1
+        for work in ordered
+        for edition in work["editions"]
+        if edition.get("title_absent")
+    )
+    return {
+        "schema": SCHEMA,
+        "advisory": ADVISORY,
+        "counted": counted,
+        "providers": [
+            {"id": name, "label": PROVIDER_LABELS.get(name, name), "documents": count}
+            for name, count in sorted(providers.items())
+        ],
+        # Sorted by how much of the corpus each model touched, so the control a
+        # reader is offered opens on the models that actually wrote it.
+        "models": [
+            {"id": name, "documents": count}
+            for name, count in sorted(models.items(), key=lambda row: (-row[1], row[0]))
+        ],
+        "sections": [
+            {"id": name, "works": count} for name, count in sorted(sections.items())
+        ],
+        "works": ordered,
+    }
+
+
+def _serialise(payload: dict) -> str:
+    return json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=1) + "\n"
+
+
+def run_structure(arguments: argparse.Namespace) -> dict:
+    rows, by_key = selected(arguments)
+    built = catalogue(rows, by_key)
+    target = Path(arguments.out) / STRUCTURE_RELATIVE
+    serialised = _serialise(built)
+    if arguments.check:
+        if not target.is_file():
+            raise CorpusError(f"{target} does not exist; run `document-library structure`")
+        if target.read_text(encoding="utf-8") != serialised:
+            raise CorpusError(
+                f"{target} has drifted from the sources; "
+                "run `document-library structure` and commit the result"
+            )
+        return {**built["counted"], "current": str(target), "status": "ok"}
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(serialised, encoding="utf-8")
+    return {**built["counted"], "written": str(target), "status": "ok"}
+
+
+# --- rendering -------------------------------------------------------------
+
+
+def _plural(count: int, noun: str) -> str:
+    return f"{count} {noun}" if count == 1 else f"{count} {noun}s"
+
+
+def _print_row(record: dict, width: int) -> None:
+    # A leaf that is unrecorded shows its path in place of a name, so a
+    # document with no stated title is still identified rather than blank.
+    name = record["title"] or f"[title unrecorded: {record['leaf']}]"
+    extent = f"{record['pages']}pp" if record["pages"] is not None else "--"
+    print(
+        f"{record['provider']:<7} {record['leaf']:<{width}} {extent:>6}  "
+        f"{record['revised'][:10]}  {record['eligibility']:<12} {name}"
+    )
+
+
+def _print_full(record: dict) -> None:
+    print(f"{record['provider']}  {record['leaf']}")
+    whole = next(issue for issue in record["issues"] if issue["kind"] == FULL)
+    if whole["title"]:
+        print(f"  title      {whole['title']}")
+        print(f"             from {whole['title_source']}")
+        if whole["title_template"]:
+            print(f"             composed as {whole['title_template']}")
+    else:
+        print(f"  title      unrecorded: {whole['title_absent']}")
+    if whole["subject"]:
+        print(f"  subject    {whole['subject']}")
+    print(f"  section    {record['section']}")
+    print(f"  catalog    {record['catalog']}")
+    print(f"  revised    {record['revised']}")
+    web = record["web"] or "not rendered"
+    print(f"  web        {record['eligibility']}, reviewed {record['reviewed']} -> {web}")
+    if record["basis"]:
+        print(f"             basis {record['basis']}: {record['rationale']}")
+    if record["blocking_constructs"]:
+        print(f"             blocked by {', '.join(record['blocking_constructs'])}")
+    for issue in record["issues"]:
+        extent = f"{issue['pages']}pp" if issue["pages"] is not None else "--"
+        print(f"  {issue['kind']:<10}{extent:>5}  {issue['status']}  {issue['authorization']}")
+        print(f"             {issue['pdf'] or issue['pdf_absent']}")
+        if issue["kind"] != FULL and issue["title"]:
+            print(f"             titled {issue['title']}")
+    if record["inherits"]:
+        print(f"  authorship inherited from {record['inherits']}")
+        print(f"             its ledger is not copied here; read that document's record")
+        return
+    count = len(record["contributions"])
+    print(f"  authorship {count} contribution{'' if count == 1 else 's'}")
+    for contribution in record["contributions"]:
+        print(f"    {contribution['model']}")
+        print(f"      qualifiers  {contribution['qualifiers']}")
+        print(f"      runtime     {contribution['runtime']}")
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("document-library error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    if arguments.format == "yaml":
+        import yaml
+
+        print(
+            yaml.safe_dump(payload, allow_unicode=True, sort_keys=True, width=100).rstrip()
+        )
+        return 0
+
+    listed = payload.get("documents_listed") or ()
+    width = max((len(record["leaf"]) for record in listed), default=0)
+    for record in listed:
+        _print_row(record, width)
+    for index, record in enumerate(payload.get("documents_shown") or ()):
+        if index:
+            print()
+        _print_full(record)
+
+    print(
+        ", ".join(
+            _plural(payload[field], noun)
+            for field, noun in (
+                ("works", "work"),
+                ("documents", "document"),
+                ("issues", "issue"),
+                ("pages", "page"),
+            )
+        )
+        + "."
+    )
+    if "confirmed" in payload:
+        print(
+            "  titles derived from source and confirmed against the built PDF: "
+            f"{payload['confirmed']}"
+        )
+        print(f"  titles the sources do not state: {len(payload['unrecorded'])}")
+        for line in payload["unrecorded"]:
+            print(f"    {line}")
+        print(f"  issues with no PDF installed: {len(payload['unbuilt'])}")
+        for line in payload["unbuilt"]:
+            print(f"    {line}")
+        print(f"  the page's own derivation, replayed: {payload['replayed']}")
+    if payload.get("written"):
+        print(f"  -> {payload['written']}")
+    if payload.get("current"):
+        print(f"  {payload['current']} is current")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--provider", choices=PROVIDERS, help="one edition's leaves only")
+    shared.add_argument("--document", help="one leaf, as it is written under src/<provider>")
+    shared.add_argument("--section", help="one top-level section: articles, liturgy, ...")
+    shared.add_argument(
+        "--eligibility",
+        choices=("eligible", "conditional", "ineligible"),
+        help="only documents whose browser-edition record declares this",
+    )
+    shared.add_argument(
+        "--author", help="only documents a given model contributed to, by model id"
+    )
+    shared.add_argument("--sort", choices=SORTS, default="leaf")
+    shared.add_argument("--format", choices=("text", "yaml", "json"), default="text")
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    shared.add_argument("--out", default=DEFAULT_OUT, help="where `structure` writes")
+    shared.add_argument(
+        "--check",
+        action="store_true",
+        help="`structure`: prove the tracked catalogue matches the sources, and write nothing",
+    )
+    shared.add_argument(
+        "--brief",
+        action="store_true",
+        help="skip the pdfinfo pass; names and authorship without any extent",
+    )
+
+    parser = argparse.ArgumentParser(
+        prog="document-library",
+        description="Catalogue every document the corpus holds, with authorship and extent.",
+        parents=[shared],
+    )
+    examples_live_on_the_verbs(parser, "document-library")
+    sub = parser.add_subparsers(dest="command")
+    with_examples(
+        sub.add_parser(
+            "check",
+            help="confirm every derived title against the PDF that was built",
+            parents=[shared],
+        ),
+        EXAMPLES["check"],
+    )
+    with_examples(
+        sub.add_parser("list", help="one line per document", parents=[shared]),
+        EXAMPLES["list"],
+    )
+    with_examples(
+        sub.add_parser("show", help="one document's complete record", parents=[shared]),
+        EXAMPLES["show"],
+    )
+    with_examples(
+        sub.add_parser(
+            "structure", help="write the catalogue the reading page fetches", parents=[shared]
+        ),
+        EXAMPLES["structure"],
+    )
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={
+            "check": run_check,
+            "list": run_list,
+            "show": run_show,
+            "structure": run_structure,
+        },
+        renderer=render,
+        prefix="document-library",
+        argv=argv,
+        default_verb="check",
+        dependency_message="install PyYAML (requirements-tools.txt) for --format yaml",
+        mapped_errors={CorpusError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

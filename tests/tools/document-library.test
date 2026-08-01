@@ -1,0 +1,200 @@
+#!/bin/sh
+# Test for `tools/tpt document-library`: exit 0 = pass (the stable gate).
+# The tool reads the corpus and the PDFs it builds and writes only where --out
+# points, so every invocation here runs against the repository itself and its
+# one writing verb is aimed at a sandbox.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="document-library"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# Every derived title is confirmed against the PDF that was built from it, and
+# the page's own model is replayed against the summaries the catalogue offers.
+summary="$(run_tool check | head -1)"
+case "$summary" in
+*" works, "*" documents, "*" issues, "*" pages.") ;;
+*)
+	echo "unexpected summary line: $summary" >&2
+	exit 1
+	;;
+esac
+
+counts="$(printf '%s\n' "$summary" | tr -dc '0-9 ')"
+set -- $counts
+works="$1"
+docs="$2"
+issues="$3"
+pages="$4"
+
+# One document a leaf, at least one issue a document, and a work is never more
+# than its editions: a summary that collapsed would be caught by all three.
+leaves="$(find "$repo/src/claude" "$repo/src/gpt" -name main.tex | wc -l | tr -d ' ')"
+if [ "$docs" -ne "$leaves" ]; then
+	echo "counted $docs documents against $leaves leaves with a main.tex" >&2
+	exit 1
+fi
+if [ "$issues" -lt "$docs" ] || [ "$works" -gt "$docs" ] || [ "$pages" -lt "$docs" ]; then
+	echo "implausible counts: $summary" >&2
+	exit 1
+fi
+
+# Every issue's title was confirmed, and nothing went unrecorded or unbuilt
+# without being counted as such.
+run_tool check | grep -q "confirmed against the built PDF: $issues" || {
+	echo "not every issue's title was confirmed against its PDF" >&2
+	exit 1
+}
+for line in "titles the sources do not state" "issues with no PDF installed"; do
+	run_tool check | grep -q "$line" || {
+		echo "check does not report: $line" >&2
+		exit 1
+	}
+done
+
+# `structure` writes the catalogue the reading page fetches, and only there.
+run_tool structure --out "$sandbox/data" >/dev/null
+catalogue="$sandbox/data/structure/documents/corpus.json"
+if [ ! -f "$catalogue" ]; then
+	echo "structure wrote no catalogue" >&2
+	exit 1
+fi
+
+python3 - "$catalogue" "$works" "$docs" <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+assert document["schema"] == "triptych-document-catalogue/v1", document["schema"]
+assert document["advisory"], "the catalogue states no caution about itself"
+
+works = document["works"]
+assert len(works) == int(sys.argv[2]), (len(works), sys.argv[2])
+editions = [edition for work in works for edition in work["editions"]]
+assert len(editions) == int(sys.argv[3]), (len(editions), sys.argv[3])
+
+# Every offered choice selects something. A control whose option matches no
+# document is a control that lies about what the corpus holds.
+for kind, field in (("providers", "documents"), ("models", "documents"),
+                    ("sections", "works")):
+    assert document[kind], kind
+    for row in document[kind]:
+        assert row[field] > 0, (kind, row)
+
+offered = {row["id"] for row in document["models"]}
+sections = {row["id"] for row in document["sections"]}
+for work in works:
+    assert work["section"] in sections, work["leaf"]
+    for edition in work["editions"]:
+        # Exactly one of a title and a stated reason for its absence.
+        assert bool(edition.get("title")) != bool(edition.get("title_absent")), edition
+        if edition.get("title"):
+            assert edition["title_source"], edition["leaf"] if "leaf" in edition else work
+        # Authorship is either a ledger or a pointer at one, never both and
+        # never neither, and every model it names is offered by the control.
+        assert ("contributions" in edition) != ("inherits" in edition), work["leaf"]
+        for model in edition["models"]:
+            assert model in offered, (work["leaf"], model)
+
+# The counted summary is what the rows amount to.
+counted = document["counted"]
+assert counted["works"] == len(works)
+assert counted["documents"] == len(editions)
+assert counted["pages"] == sum(e["pages"] or 0 for e in editions)
+assert counted["titles_unrecorded"] == sum(
+    1 for e in editions if e.get("title_absent")
+)
+PY
+
+# The same sources produce the same bytes: a catalogue that moved without the
+# corpus moving would make every drift check meaningless.
+run_tool structure --out "$sandbox/again" >/dev/null
+if ! cmp -s "$catalogue" "$sandbox/again/structure/documents/corpus.json"; then
+	echo "structure is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# The tracked catalogue is what the sources produce now.
+run_tool structure --check >/dev/null
+
+# `list` is one line a document, and narrowing narrows it.
+whole="$(run_tool list | wc -l | tr -d ' ')"
+claude="$(run_tool list --provider claude | wc -l | tr -d ' ')"
+if [ "$whole" -ne "$((docs + 1))" ]; then
+	echo "list printed $whole lines for $docs documents and one summary" >&2
+	exit 1
+fi
+if [ "$claude" -ge "$whole" ]; then
+	echo "--provider claude did not narrow the listing" >&2
+	exit 1
+fi
+
+# Machine forms carry the same rows.
+run_tool list --provider claude --format json >"$sandbox/one.json"
+for want in '"documents_listed"' '"status"' '"models"'; do
+	if ! grep -q "$want" "$sandbox/one.json"; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+run_tool list --provider claude --format yaml >"$sandbox/one.yaml"
+if ! grep -q '^documents_listed:' "$sandbox/one.yaml"; then
+	echo "yaml payload is missing documents_listed" >&2
+	exit 1
+fi
+
+# `show` prints one document's whole record, authorship included.
+one="$(run_tool show --document biographies/origen --provider claude)"
+for want in "title" "catalog" "revised" "authorship"; do
+	if ! printf '%s\n' "$one" | grep -q "  $want"; then
+		echo "show omits $want" >&2
+		exit 1
+	fi
+done
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $*" >&2
+		exit 1
+	fi
+}
+
+# A refusal is a first-class answer: a filter that matches nothing says so
+# rather than printing an empty list under a confident summary.
+reject list --document nonesuch/leaf
+reject list --author no-such-model
+reject --provider nonesuch
+reject list --format nonesuch
+reject list --eligibility nonesuch
+
+# A tracked catalogue that has drifted from the sources is refused.
+mkdir -p "$sandbox/stale/structure/documents"
+printf '{}\n' >"$sandbox/stale/structure/documents/corpus.json"
+status=0
+run_tool structure --check --out "$sandbox/stale" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a drifted catalogue should exit 2, got $status" >&2
+	exit 1
+fi
+
+# ...and so is one that is not there at all.
+status=0
+run_tool structure --check --out "$sandbox/absent" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a missing catalogue should exit 2, got $status" >&2
+	exit 1
+fi
+if [ -e "$sandbox/absent" ]; then
+	echo "a refused --check must not create an output directory" >&2
+	exit 1
+fi
+
+echo ok

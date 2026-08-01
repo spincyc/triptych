@@ -165,6 +165,17 @@
       "stage": "draft",
       "usage": "commentary-work-index {discover,build-corpus}"
     },
+    "document-library": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Catalogue every document the corpus holds, with authorship and extent.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "document-library {check,list,show,structure} [--provider NAME] [--author MODEL] [--section NAME] [--eligibility NAME] [--document ID] [--sort {leaf,title,pages,revised}] [--format {text,yaml,json}] [--out DIR] [--check] [--brief]"
+    },
     "harvest": {
       "idempotent": true,
       "json": true,

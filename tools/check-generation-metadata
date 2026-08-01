@@ -15,6 +15,17 @@ from pathlib import Path
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+# The three provenance declarations and the comment-stripping that makes them
+# meaningful are read by the catalogue as well as enforced here. They live in
+# scripts/_corpus.py so that the gate and the reader cannot come to disagree
+# about what a contribution record is.
+from _corpus import (  # noqa: E402
+    CONTRIBUTION_RE,
+    INHERITANCE_RE,
+    REVISION_RE,
+    Contribution,
+    active_tex,
+)
 from _tooling import Example, with_examples  # noqa: E402
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
@@ -38,16 +49,6 @@ EXAMPLES = {
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REVISION_RE = re.compile(
-    r"^\\AIDocumentRevisionTimestamp\{([^{}]+)\}\s*$", re.MULTILINE
-)
-CONTRIBUTION_RE = re.compile(
-    r"^\\AIModelContribution\{([^{}]+)\}\{([^{}]+)\}\{([^{}]+)\}\s*$",
-    re.MULTILINE,
-)
-INHERITANCE_RE = re.compile(
-    r"^\\AIInheritedGenerationMetadata\{([^{}]+)\}\s*$", re.MULTILINE
-)
 LEGACY_LABEL_RE = re.compile(
     r"\\textbf\{(?:Generated|Last revised(?: \(UTC\))?|Model|Agent/runtime):\}",
     re.IGNORECASE,
@@ -103,22 +104,10 @@ REQUIRED_RUNTIME_PATTERNS = {
 
 
 @dataclass(frozen=True)
-class Contribution:
-    model: str
-    qualifiers: str
-    runtime: str
-
-
-@dataclass(frozen=True)
 class Record:
     revision_timestamp: str
     contributions: tuple[Contribution, ...]
     inheritance: str | None
-
-
-def active_tex(text: str) -> str:
-    """Remove TeX comments so commented declarations cannot satisfy the gate."""
-    return "\n".join(re.sub(r"(?<!\\)%.*$", "", line) for line in text.splitlines())
 
 
 def parse_record(path: Path) -> Record:
