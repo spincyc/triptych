@@ -1919,7 +1919,7 @@ release attachment, announcement, or promotion.
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/tunicle.toml` | `c5783b74f453bf7206f001f79c4a30a2c2b5a46e0f14307340267843d1027520` |
 | `src/web/browser/catena/catena-model.js` | `b766ff4f92474eaaa212ad4503b416186fe173211749ce0ae392da6ca1040217` |
 | `src/web/browser/catena/catena.css` | `293964787600ed0c4016a328bbbacb3f592cbb1dcfec80c3d9104ca747609931` |
-| `src/web/browser/catena/catena.js` | `6a4dd39db6fc1a9ef939d0701cf6470be69a1d63a7048d7e4e334864eab1eef8` |
+| `src/web/browser/catena/catena.js` | `a2d19a7499dba2a811662dc3389a94019cb4a197d35622729b10991ee20aafb6` |
 | `src/web/browser/catena/index.html` | `281ec034c83d7097915b2c8163ec950e6ee0623bd69bf82b020b88f1710ebee2` |
 | `src/web/browser/liturgy/assembly-model.js` | `1a677e24ae5a644dc5e2bcc93adac046e54e459e67c2ba0a158984397e4727aa` |
 | `src/web/browser/liturgy/day.css` | `4e8e959972c547b438c0b4e1b321f4c3861bdd5beb626c3dd617d4057c23bae8` |
@@ -1934,7 +1934,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/scripture/scripture.css` | `82029c32635d9924d6de1eb256a70f4aa7f984964a27a8ae4fde4222070654e7` |
 | `src/web/browser/scripture/track.html` | `2df43c4b52b4c0ccdddc559c10ca79ac2ee565bc0976a55632b11ad1f9943674` |
 | `src/web/browser/scripture/track.js` | `1c84a1dfeae747288d2dd910a9c8bf6a52ff1abdfa28c3db14f8184c4623cc1b` |
-| `src/web/browser/shared/browser-core.css` | `4c6047565286e121f09fdc7475200e7525107647f2ce3adaac6bcd9946a48598` |
+| `src/web/browser/shared/browser-core.css` | `99fd1497f2f617ed2b601100bed77504bc31fe57e82dfc5161deecebd57c0436` |
 | `src/web/browser/shared/browser-core.js` | `aaec1b0707ae207a76334c05300041b7e9b615fccb7900e1c13e92d0a8ebd17e` |
 | `src/web/data/bibles.json` | `2833103696cfde54ee1266c7d74909beb433a7951f216c423858868b9d4001d6` |
 | `tools/public-alpha` | `d4932d80e9b76f24789c06b1ad7fe0cbbe353db8b808b40657e9a1643dfe1211` |
