@@ -1,0 +1,812 @@
+#!/usr/bin/env python3
+"""Build a liturgical slice's act-keyed history as a Git repository.
+
+Usage: act-history {check,graph,emit} [--source PATH] [--out DIR] [--json]
+
+The station is the act, never the book. Every commit is a promulgation, a
+revision, a reform, a rubrical code or a documented exemption, and carries the
+instrument it cites; a printing is a witness and hangs beneath the history in
+`witnesses/`. That is what keeps a scanner out of the record: two printings of
+one prayer differ constantly and no act stands behind those differences, so none
+of them can become a commit.
+
+Three things this does that a linear generator cannot, and the third is the one
+the shape exists for:
+
+  MULTIPLE PARENTS   an act may apply a decree to a text, and both are parents.
+                     A merge is a claim that a reception happened, so `check`
+                     refuses any act with two parents that does not cite one.
+  MULTIPLE BRANCHES  one ref per line. Lines never rejoin: no act may name
+                     parents on two different lines, and nothing here can draw
+                     a merge across them.
+  PARALLEL STAYS PARALLEL  a fork is born at an act. Where a line's other side
+                     has no witness in the corpus, the branch is a root and
+                     nothing more, and its emptiness is the record.
+
+Commit dates are the acts' own dates, shifted forward ten thousand years. That
+is not cosmetic and not inherited thoughtlessly: git 2.55 rejects a negative
+timestamp outright -- `git fsck --strict` reports `badDate` and every date
+format prints empty -- so a true 1570 date cannot be stored in a way any tool
+will show. A shift small enough to look plausible would be read as a real date;
+11570 cannot be mistaken for anything. The true date is in the tree, in the
+commit message, and in an `Act-date` trailer, so nothing depends on the stamp.
+"""
+from __future__ import annotations
+
+import argparse
+import re
+import subprocess
+import sys
+import tomllib
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import (
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_SOURCE = ROOT / "src/sources/inventories/roman-holy-week-acts-v1.toml"
+DEFAULT_OUT = ROOT / "build/act-history/roman-holy-week"
+SCHEMA_KEY = "acts_schema"
+SCHEMA_VERSION = 1
+
+# guidance/recensions.md section 3. A departure that is not one of these is a
+# departure nobody agreed the meaning of.
+DEPARTURE_KINDS = ("absent", "added", "replaced", "renamed", "moved", "reslotted", "unrecorded")
+
+# guidance/sources.md separates availability from review. This file's ceiling is
+# `inspected` and the values below say which of the two ways a reading was got.
+READINGS = ("page-image", "ocr-only", "not-read")
+
+SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+UNIT_ID = re.compile(r"^[a-z0-9]+(?:[-.][a-z0-9]+)*$")
+
+IDENTITY = "Roman Holy Week tracer <act-history@triptych.invalid>"
+YEAR_SHIFT = 10000
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/act-history check",
+            (
+                "ok: 9 acts, 2 lines, 9 witnesses, 4 masses, 34 base units, 30 departures",
+                "departure kinds used: absent 12, added 4, moved 1, renamed 3, replaced 2, reslotted 1, unrecorded 7",
+            ),
+        ),
+    ),
+    "graph": (
+        Example(
+            "tools/act-history graph",
+            (
+                "typica            quo-primum-1570                 1570-07-14  root",
+                "exempt-uses       quo-primum-exemption-1570       1570-07-14  <- quo-primum-1570",
+                "typica            cum-sanctissimum-1604           1604-07-07  <- quo-primum-1570",
+                "... 6 more lines",
+            ),
+        ),
+    ),
+    "emit": (
+        Example(
+            "tools/act-history emit --out build/act-history/roman-holy-week",
+            (
+                "wrote 9 commits on 2 branches to build/act-history/roman-holy-week",
+            ),
+            note="writes an untracked Git repository under build/; rerunning replaces it",
+        ),
+    ),
+}
+
+
+class Problem(Exception):
+    pass
+
+
+# --- Loading ----------------------------------------------------------------
+
+
+def load(source: Path) -> dict:
+    if not source.exists():
+        raise Problem(f"no source at {source}")
+    data = tomllib.loads(source.read_text(encoding="utf-8"))
+    if data.get(SCHEMA_KEY) != SCHEMA_VERSION:
+        raise Problem(f"{source}: {SCHEMA_KEY} must be {SCHEMA_VERSION}")
+    return data
+
+
+def indexed(rows: list[dict], key: str, what: str) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for row in rows:
+        identifier = row.get(key)
+        if not identifier:
+            raise Problem(f"{what}: a row has no {key}")
+        if identifier in out:
+            raise Problem(f"{what}: duplicate {key} {identifier!r}")
+        out[identifier] = row
+    return out
+
+
+def topological(acts: dict[str, dict]) -> list[str]:
+    """Acts in an order where every parent precedes its children.
+
+    Ties break on (date, id) so the output is byte-stable and so a reader sees
+    the history in the order it happened rather than in the order it was typed.
+    """
+    remaining = dict(acts)
+    placed: list[str] = []
+    done: set[str] = set()
+    while remaining:
+        ready = sorted(
+            (identifier for identifier, act in remaining.items()
+             if all(parent in done for parent in act.get("parents", []))),
+            key=lambda identifier: (acts[identifier].get("date", ""), identifier),
+        )
+        if not ready:
+            raise Problem("acts: parent cycle or missing parent among " + ", ".join(sorted(remaining)))
+        for identifier in ready:
+            placed.append(identifier)
+            done.add(identifier)
+            del remaining[identifier]
+    return placed
+
+
+# --- The state a station leaves ---------------------------------------------
+#
+# A state is a flat map from repository path to bytes. Keeping it flat is what
+# lets a reslot be an ordinary key move, and what lets the three-way merge below
+# be a comparison of two dictionaries against a third rather than a walk of two
+# trees.
+
+
+def unit_path(mass: str, slot: str) -> str:
+    return f"holy-week/{mass}/{slot}.txt"
+
+
+def unit_body(name: str, incipit: str, text: str) -> str:
+    """What a unit's file holds.
+
+    The incipit and the text, and nothing else. Provenance deliberately stays
+    out: a unit file that carried its own witness list would make every
+    re-reading of a scan show up as a change to the liturgy, which is the exact
+    confusion this tool exists to prevent. The slot is the path and the name is
+    the first line, so a reslot with unchanged words is a pure rename and git's
+    own similarity detection finds it without being told.
+    """
+    lines = [name, incipit]
+    if text:
+        lines.extend(["", text.strip()])
+    return "\n".join(lines) + "\n"
+
+
+def mass_body(mass: dict) -> str:
+    lines = [f"title: {mass['title']}", f"day: {mass['day']}"]
+    hour = mass.get("hour", "")
+    lines.append(f"hour: {hour}" if hour else "hour: not established")
+    return "\n".join(lines) + "\n"
+
+
+def order_body(paths: list[str]) -> str:
+    return "".join(f"{path}\n" for path in paths)
+
+
+class State:
+    """The liturgy as one act left it, plus the record files of that station."""
+
+    def __init__(self) -> None:
+        self.units: dict[str, dict] = {}   # unit id -> {mass, slot, name, incipit, text, order}
+        self.masses: dict[str, dict] = {}  # mass id -> {title, day, hour}
+        self.files: dict[str, str] = {}    # extra tracked paths (acts/, witnesses/, gaps/, README)
+
+    def copy(self) -> "State":
+        other = State()
+        other.units = {key: dict(value) for key, value in self.units.items()}
+        other.masses = {key: dict(value) for key, value in self.masses.items()}
+        other.files = dict(self.files)
+        return other
+
+    def tree(self) -> dict[str, str]:
+        out = dict(self.files)
+        by_mass: dict[str, list[dict]] = {}
+        for unit in self.units.values():
+            by_mass.setdefault(unit["mass"], []).append(unit)
+        for mass_id, units in by_mass.items():
+            mass = self.masses.get(mass_id)
+            if mass is None:
+                raise Problem(f"unit stands in mass {mass_id!r}, which no act has introduced")
+            out[f"holy-week/{mass_id}/mass.txt"] = mass_body(mass)
+            ordered = sorted(units, key=lambda unit: (unit["order"], unit["slot"]))
+            out[f"holy-week/{mass_id}/order.txt"] = order_body([unit["slot"] for unit in ordered])
+            for unit in ordered:
+                out[unit_path(mass_id, unit["slot"])] = unit_body(
+                    unit["name"], unit["incipit"], unit.get("text", "")
+                )
+        return out
+
+
+def merge(parents: list[State], ancestor: State, act_id: str) -> State:
+    """Three-way merge of the states two parents left.
+
+    A merge commit asserts that a reception happened. Where the parents changed
+    the same thing to two different values, no reception can be read off the
+    record, so this refuses rather than choosing. Silently preferring one side
+    is how a synthesis nobody performed gets drawn.
+    """
+    if not parents:
+        return State()
+    if len(parents) == 1:
+        return parents[0].copy()
+    merged = ancestor.copy()
+    for field in ("units", "masses", "files"):
+        base = getattr(ancestor, field)
+        keys = set(base)
+        for parent in parents:
+            keys |= set(getattr(parent, field))
+        out = getattr(merged, field)
+        out.clear()
+        for key in sorted(keys):
+            original = base.get(key)
+            proposals = [getattr(parent, field).get(key) for parent in parents]
+            changed = [value for value in proposals if value != original]
+            if not changed:
+                if original is not None:
+                    out[key] = original
+                continue
+            first = changed[0]
+            if any(value != first for value in changed[1:]):
+                raise Problem(
+                    f"{act_id}: its parents leave {field[:-1]} {key!r} in two different states; "
+                    "a merge here would assert a synthesis the record does not show"
+                )
+            if first is not None:
+                out[key] = first
+    return merged
+
+
+def common_ancestor(act_id: str, acts: dict[str, dict], states: dict[str, State]) -> State:
+    """The state every parent of ``act_id`` inherits from.
+
+    Walks each parent's ancestry and takes the latest act all of them reach. A
+    slice with no common ancestor merges against nothing, which is the right
+    answer for two independent roots and would be a conflict machine for
+    anything else -- so `check` refuses that case separately.
+    """
+    parents = acts[act_id].get("parents", [])
+    reach: list[set[str]] = []
+    for parent in parents:
+        seen: set[str] = set()
+        pending = [parent]
+        while pending:
+            current = pending.pop()
+            if current in seen:
+                continue
+            seen.add(current)
+            pending.extend(acts[current].get("parents", []))
+        reach.append(seen)
+    shared = set.intersection(*reach) if reach else set()
+    if not shared:
+        return State()
+    latest = max(shared, key=lambda identifier: (acts[identifier].get("date", ""), identifier))
+    return states[latest]
+
+
+# --- Applying an act's departures --------------------------------------------
+
+
+def apply_departures(state: State, act_id: str, departures: list[dict]) -> list[str]:
+    """Apply one act's departures, and report the kinds it used."""
+    used: list[str] = []
+    for departure in sorted(departures, key=lambda row: (row.get("kind", ""), row.get("unit") or row.get("mass") or "")):
+        kind = departure.get("kind")
+        used.append(kind)
+        target = departure.get("unit")
+        mass_target = departure.get("mass")
+        if kind == "absent":
+            if target not in state.units:
+                raise Problem(f"{act_id}: absent names unit {target!r}, which the inherited state does not hold")
+            del state.units[target]
+        elif kind == "added":
+            if target in state.units:
+                raise Problem(f"{act_id}: added names unit {target!r}, which already stands")
+            state.units[target] = {
+                "mass": departure["to_mass"],
+                "slot": departure["to_slot"],
+                "name": departure["name"],
+                "incipit": departure.get("incipit", ""),
+                "text": departure.get("text", ""),
+                "order": departure["order"],
+            }
+        elif kind == "replaced":
+            if target not in state.units:
+                raise Problem(f"{act_id}: replaced names unit {target!r}, which the inherited state does not hold")
+            unit = state.units[target]
+            before = dict(unit)
+            for field in ("incipit", "text", "name"):
+                if field in departure:
+                    unit[field] = departure[field]
+            if unit == before:
+                raise Problem(f"{act_id}: replaced on {target!r} changes nothing; identity writes no row")
+        elif kind == "renamed":
+            if mass_target is not None:
+                if mass_target not in state.masses:
+                    raise Problem(f"{act_id}: renamed names mass {mass_target!r}, which the inherited state does not hold")
+                if state.masses[mass_target]["title"] == departure["title"]:
+                    raise Problem(f"{act_id}: renamed on mass {mass_target!r} changes nothing")
+                state.masses[mass_target]["title"] = departure["title"]
+            else:
+                if target not in state.units:
+                    raise Problem(f"{act_id}: renamed names unit {target!r}, which the inherited state does not hold")
+                if state.units[target]["name"] == departure["name"]:
+                    raise Problem(f"{act_id}: renamed on unit {target!r} changes nothing")
+                state.units[target]["name"] = departure["name"]
+        elif kind == "moved":
+            if mass_target not in state.masses:
+                raise Problem(f"{act_id}: moved names mass {mass_target!r}, which the inherited state does not hold")
+            mass = state.masses[mass_target]
+            before = dict(mass)
+            for field in ("day", "hour"):
+                if field in departure:
+                    mass[field] = departure[field]
+            if mass == before:
+                raise Problem(f"{act_id}: moved on mass {mass_target!r} changes nothing")
+        elif kind == "reslotted":
+            if target not in state.units:
+                raise Problem(f"{act_id}: reslotted names unit {target!r}, which the inherited state does not hold")
+            unit = state.units[target]
+            if departure.get("to_mass", unit["mass"]) == unit["mass"] and departure.get("to_slot", unit["slot"]) == unit["slot"]:
+                raise Problem(f"{act_id}: reslotted on {target!r} moves it nowhere")
+            unit["mass"] = departure.get("to_mass", unit["mass"])
+            unit["slot"] = departure.get("to_slot", unit["slot"])
+            if "name" in departure:
+                unit["name"] = departure["name"]
+            if "order" in departure:
+                unit["order"] = departure["order"]
+        elif kind == "unrecorded":
+            # Resolves to nothing, by guidance/recensions.md Rule 3. It is on the
+            # record so that a reader is told the state is not established, and
+            # it deliberately does not fall back to the inherited state.
+            pass
+        else:
+            raise Problem(f"{act_id}: unknown departure kind {kind!r}")
+    return used
+
+
+def render_act(act: dict) -> str:
+    lines = [
+        act["title"],
+        "",
+        f"instrument: {act['instrument']}",
+        f"authority:  {act['authority']}",
+        f"date:       {act['date']} ({act.get('date_precision', 'day')})",
+        f"kind:       {act['kind']}",
+        f"line:       {act['line']}",
+        f"citation:   {act['citation']}",
+        f"read from:  {act.get('read_from', 'not-read')}",
+    ]
+    if act.get("locus"):
+        lines.append(f"locus:      {act['locus']}")
+    if act.get("dateline"):
+        lines.extend(["", "dateline as printed:", act["dateline"].strip()])
+    for field, label in (("root_basis", "why this is a root"), ("parent_basis", "why this edge"),
+                         ("reception_basis", "why these parents converge"),
+                         ("quotation", "quoted"), ("parent_quotation", "quoted for the edge"),
+                         ("effect", "effect"), ("effect_note", "on that effect")):
+        if act.get(field):
+            lines.extend(["", f"{label}:", act[field].strip()])
+    lines.append("")
+    lines.append(f"effect established: {'yes' if act.get('effect_established') else 'not established'}")
+    return "\n".join(lines) + "\n"
+
+
+def render_witness(witness: dict) -> str:
+    lines = [
+        witness["label"],
+        "",
+        f"language:   {witness['language']}",
+        f"printed:    {witness['printed']}",
+        f"attests:    {witness['attests']} ({witness.get('attests_kind', 'unstated')})",
+        f"read from:  {witness['read_from']}",
+        f"rights:     {witness['rights']}",
+    ]
+    if witness.get("ocr_artifact"):
+        lines.append(f"artifact:   {witness['ocr_artifact']}")
+    for field, label in (("attests_basis", "why it attests that act"),
+                         ("not_a_station", "why it is not a station"),
+                         ("rights_basis", "rights basis"),
+                         ("units_read_note", "what was read"),
+                         ("related_record", "related record")):
+        if witness.get(field):
+            lines.extend(["", f"{label}:", witness[field].strip()])
+    return "\n".join(lines) + "\n"
+
+
+def render_readme(data: dict, line: dict) -> str:
+    return (
+        f"# {data['slice']}: {line['label']}\n\n"
+        "A generated repository. It is a build artifact like a PDF: regenerate it and\n"
+        "every hash changes. The record is the source encoding it was built from,\n"
+        "src/sources/inventories/roman-holy-week-acts-v1.toml in the Triptych repository.\n\n"
+        "Every commit is an ACT -- a promulgation, revision, reform, rubrical code or\n"
+        "exemption -- and cites its instrument. A printing is not an act: printings are\n"
+        "witnesses, under witnesses/, and hang beneath the history. A difference between\n"
+        "two printings with no act behind it is a difference between witnesses or an\n"
+        "error of a scanner, and never appears as a commit.\n\n"
+        "Commit dates are the acts' dates shifted forward ten thousand years, because\n"
+        "git rejects a pre-1970 timestamp outright. The true date is in each commit's\n"
+        "Act-date trailer and in acts/.\n\n"
+        f"{line['note'].strip()}\n"
+    )
+
+
+# --- Building the history ----------------------------------------------------
+
+
+def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]]:
+    acts = indexed(data.get("acts", []), "id", "acts")
+    lines = indexed(data.get("lines", []), "id", "lines")
+    witnesses = indexed(data.get("witnesses", []), "id", "witnesses")
+    order = topological(acts)
+
+    departures_by_act: dict[str, list[dict]] = {}
+    for departure in data.get("departures", []):
+        departures_by_act.setdefault(departure.get("act", ""), []).append(departure)
+    units_by_act: dict[str, list[dict]] = {}
+    for unit in data.get("units", []):
+        units_by_act.setdefault(unit.get("at", order[0]), []).append(unit)
+    masses_by_act: dict[str, list[dict]] = {}
+    for mass in data.get("masses", []):
+        masses_by_act.setdefault(mass.get("at", order[0]), []).append(mass)
+    witnesses_by_act: dict[str, list[dict]] = {}
+    for identifier, witness in witnesses.items():
+        witnesses_by_act.setdefault(witness.get("attests", ""), []).append(witness)
+
+    states: dict[str, State] = {}
+    kinds_used: dict[str, list[str]] = {}
+    for act_id in order:
+        act = acts[act_id]
+        parents = act.get("parents", [])
+        for parent in parents:
+            if parent not in acts:
+                raise Problem(f"{act_id}: names parent {parent!r}, which is not an act")
+            if acts[parent]["line"] != act["line"] and len(parents) > 1:
+                raise Problem(f"{act_id}: merges across lines; lines never rejoin")
+        state = merge([states[parent] for parent in parents], common_ancestor(act_id, acts, states), act_id)
+        for mass in masses_by_act.get(act_id, []):
+            state.masses[mass["id"]] = {"title": mass["title"], "day": mass["day"], "hour": mass.get("hour", "")}
+        for unit in units_by_act.get(act_id, []):
+            state.units[unit["id"]] = {
+                "mass": unit["mass"], "slot": unit["slot"], "name": unit["name"],
+                "incipit": unit.get("incipit", ""), "text": unit.get("text", ""),
+                "order": unit["order"],
+            }
+        kinds_used[act_id] = apply_departures(state, act_id, departures_by_act.get(act_id, []))
+        state.files[f"acts/{act_id}.txt"] = render_act(act)
+        for witness in sorted(witnesses_by_act.get(act_id, []), key=lambda row: row["id"]):
+            state.files[f"witnesses/{witness['id']}.txt"] = render_witness(witness)
+        if act.get("via_unrepresented"):
+            state.files[f"gaps/{act_id}.txt"] = (
+                "Stations between this act and its parent that this record does not hold:\n\n"
+                + "".join(f"  - {item}\n" for item in act["via_unrepresented"])
+                + "\nThe edge below this commit therefore means 'descends from', not\n"
+                "'immediately follows'.\n"
+                + ("\n" + act["via_unrepresented_basis"].strip() + "\n" if act.get("via_unrepresented_basis") else "")
+            )
+        if not parents:
+            state.files["README.md"] = render_readme(data, lines[act["line"]])
+        states[act_id] = state
+    return order, states, kinds_used
+
+
+# --- Checking ----------------------------------------------------------------
+
+
+def check(data: dict) -> dict:
+    problems: list[str] = []
+    acts = indexed(data.get("acts", []), "id", "acts")
+    lines = indexed(data.get("lines", []), "id", "lines")
+    witnesses = indexed(data.get("witnesses", []), "id", "witnesses")
+
+    for act_id, act in sorted(acts.items()):
+        if not SLUG.match(act_id):
+            problems.append(f"act {act_id!r}: id is not a slug")
+        for field in ("line", "kind", "date", "authority", "instrument", "title", "citation"):
+            if not act.get(field):
+                problems.append(f"act {act_id}: missing {field}")
+        if act.get("line") not in lines:
+            problems.append(f"act {act_id}: line {act.get('line')!r} is not declared")
+        if act.get("read_from") not in READINGS:
+            problems.append(f"act {act_id}: read_from must be one of {READINGS}")
+        parents = act.get("parents", [])
+        if not parents and not act.get("root_basis"):
+            problems.append(f"act {act_id}: a root must say why the record starts here")
+        if parents and not act.get("parent_basis"):
+            problems.append(f"act {act_id}: an edge is a claim of descent and must cite its basis")
+        if len(parents) > 1 and not act.get("reception_basis"):
+            problems.append(
+                f"act {act_id}: more than one parent asserts a reception; cite it or draw no merge"
+            )
+        if "effect_established" not in act:
+            problems.append(f"act {act_id}: must say whether its effect is established")
+
+    for witness_id, witness in sorted(witnesses.items()):
+        for field in ("label", "language", "printed", "attests", "attests_basis", "read_from", "rights", "rights_basis"):
+            if not witness.get(field):
+                problems.append(f"witness {witness_id}: missing {field}")
+        if witness.get("read_from") not in READINGS:
+            problems.append(f"witness {witness_id}: read_from must be one of {READINGS}")
+        attests = witness.get("attests")
+        if attests not in acts and attests != "unestablished":
+            problems.append(f"witness {witness_id}: attests {attests!r}, which is not an act")
+
+    masses = indexed(data.get("masses", []), "id", "masses")
+    for mass_id, mass in sorted(masses.items()):
+        if not SLUG.match(mass_id):
+            problems.append(f"mass {mass_id!r}: id is not a slug")
+        for field in ("title", "day"):
+            if not mass.get(field):
+                problems.append(f"mass {mass_id}: missing {field}")
+
+    units = indexed(data.get("units", []), "id", "units")
+    for unit_id, unit in sorted(units.items()):
+        if not UNIT_ID.match(unit_id):
+            problems.append(f"unit {unit_id!r}: id is not a dotted slug")
+        for field in ("mass", "slot", "name", "order"):
+            if unit.get(field) in (None, ""):
+                problems.append(f"unit {unit_id}: missing {field}")
+        if unit.get("mass") not in masses:
+            problems.append(f"unit {unit_id}: mass {unit.get('mass')!r} is not declared")
+        if not SLUG.match(str(unit.get("slot", ""))):
+            problems.append(f"unit {unit_id}: slot is not a slug")
+        if unit.get("read_from") not in READINGS:
+            problems.append(f"unit {unit_id}: read_from must be one of {READINGS}")
+        if unit.get("read_from") == "page-image" and not unit.get("collated"):
+            problems.append(f"unit {unit_id}: claims a page image without a collation date")
+
+    departures = data.get("departures", [])
+    for index, departure in enumerate(departures):
+        where = f"departure {index}"
+        if departure.get("act") not in acts:
+            problems.append(f"{where}: act {departure.get('act')!r} is not an act")
+        if departure.get("kind") not in DEPARTURE_KINDS:
+            problems.append(f"{where}: kind must be one of {DEPARTURE_KINDS}")
+        if not departure.get("basis"):
+            problems.append(f"{where}: a departure must cite its basis")
+        if departure.get("kind") == "unrecorded" and not departure.get("note"):
+            problems.append(f"{where}: unrecorded must say what is not established")
+        if departure.get("kind") == "reslotted" and not (departure.get("to_mass") or departure.get("to_slot")):
+            problems.append(f"{where}: reslotted must say where to")
+
+    if problems:
+        raise Problem("\n".join(problems))
+
+    order, states, kinds_used = build(data)
+    counted: dict[str, int] = {}
+    for kinds in kinds_used.values():
+        for kind in kinds:
+            counted[kind] = counted.get(kind, 0) + 1
+    return {
+        "acts": len(acts),
+        "base_units": len(units),
+        "departure_kinds": counted,
+        "departures": len(departures),
+        "lines": len(lines),
+        "masses": len(masses),
+        "order": order,
+        "status": "ok",
+        "witnesses": len(witnesses),
+    }
+
+
+# --- Emitting ----------------------------------------------------------------
+
+
+def days_from_civil(year: int, month: int, day: int) -> int:
+    """Days since 1970-01-01, proleptic Gregorian, for years Python cannot hold.
+
+    `datetime` stops at 9999 and every act here lands past that once shifted, so
+    the arithmetic is done directly. Howard Hinnant's civil-from-days, the same
+    routine the corpus this drew on uses.
+    """
+    year -= month <= 2
+    era = (year if year >= 0 else year - 399) // 400
+    year_of_era = year - era * 400
+    month_prime = month - 3 if month > 2 else month + 9
+    day_of_year = (153 * month_prime + 2) // 5 + day - 1
+    day_of_era = year_of_era * 365 + year_of_era // 4 - year_of_era // 100 + day_of_year
+    return era * 146097 + day_of_era - 719468
+
+
+def stamp(date: str) -> str:
+    year, month, day = (int(part) for part in date.split("-"))
+    return f"{days_from_civil(year + YEAR_SHIFT, month, day) * 86400 + 12 * 3600} +0000"
+
+
+def git(repo: Path, *args: str, stdin: str | None = None) -> str:
+    result = subprocess.run(
+        ["git", *args], cwd=repo, input=stdin, text=True, capture_output=True, check=True
+    )
+    return result.stdout.strip()
+
+
+def write_tree(repo: Path, files: dict[str, str]) -> str:
+    """Build a tree object from a flat path map, without touching a work tree.
+
+    Going through the index would need a checkout and would make the result
+    depend on the filesystem; `mktree` from the bottom up keeps the emit
+    deterministic and lets an empty directory simply not exist.
+    """
+    nested: dict = {}
+    for path, body in sorted(files.items()):
+        parts = path.split("/")
+        here = nested
+        for part in parts[:-1]:
+            here = here.setdefault(part, {})
+        here[parts[-1]] = git(repo, "hash-object", "-w", "--stdin", stdin=body)
+
+    def tree_of(level: dict) -> str:
+        entries = []
+        for name, value in sorted(level.items()):
+            if isinstance(value, dict):
+                entries.append(f"040000 tree {tree_of(value)}\t{name}")
+            else:
+                entries.append(f"100644 blob {value}\t{name}")
+        return git(repo, "mktree", stdin="\n".join(entries) + "\n")
+
+    return tree_of(nested)
+
+
+def commit_message(act: dict, kinds: list[str]) -> str:
+    body = [act["title"], ""]
+    effect = act.get("effect", "").strip()
+    if effect:
+        body.extend([effect, ""])
+    body.append(f"Act: {act['instrument']}")
+    body.append(f"Act-date: {act['date']}")
+    body.append(f"Authority: {act['authority']}")
+    body.append(f"Line: {act['line']}")
+    body.append(f"Citation: {act['citation']}")
+    if act.get("parents"):
+        body.append("Descends-from: " + ", ".join(act["parents"]))
+    if act.get("via_unrepresented"):
+        body.append("Via-unrepresented: " + ", ".join(act["via_unrepresented"]))
+    body.append("Effect-established: " + ("yes" if act.get("effect_established") else "not established"))
+    if kinds:
+        counted: dict[str, int] = {}
+        for kind in kinds:
+            counted[kind] = counted.get(kind, 0) + 1
+        body.append("Departures: " + ", ".join(f"{kind} {count}" for kind, count in sorted(counted.items())))
+    else:
+        body.append("Departures: none in this slice")
+    body.append("Timestamp-shift: +10000 years; git refuses a pre-1970 date")
+    return "\n".join(body) + "\n"
+
+
+def emit(data: dict, out: Path) -> dict:
+    order, states, kinds_used = build(data)
+    acts = indexed(data.get("acts", []), "id", "acts")
+    if out.exists():
+        subprocess.run(["rm", "-rf", str(out)], check=True)
+    out.mkdir(parents=True)
+    git(out, "init", "--quiet", "--bare")
+
+    commits: dict[str, str] = {}
+    for act_id in order:
+        act = acts[act_id]
+        tree = write_tree(out, states[act_id].tree())
+        header = [f"tree {tree}"]
+        header.extend(f"parent {commits[parent]}" for parent in act.get("parents", []))
+        timestamp = stamp(act["date"])
+        header.extend([f"author {IDENTITY} {timestamp}", f"committer {IDENTITY} {timestamp}", ""])
+        raw = "\n".join(header) + "\n" + commit_message(act, kinds_used[act_id])
+        # `git commit-tree` parses the date through git's own reader, which
+        # rejects anything it cannot render; writing the object directly is the
+        # only route for a shifted stamp, and is what the corpus this drew on does.
+        commits[act_id] = git(out, "hash-object", "--literally", "-t", "commit", "-w", "--stdin", stdin=raw)
+        git(out, "update-ref", f"refs/tags/act/{act_id}", commits[act_id])
+
+    tips: dict[str, str] = {}
+    for act_id in order:
+        tips[acts[act_id]["line"]] = commits[act_id]
+    for line, commit in sorted(tips.items()):
+        git(out, "update-ref", f"refs/heads/{line}", commit)
+    git(out, "symbolic-ref", "HEAD", f"refs/heads/{acts[order[0]]['line']}")
+    return {
+        "branches": sorted(tips),
+        "commits": len(order),
+        "out": str(out),
+        "status": "ok",
+        "tags": len(order),
+    }
+
+
+def graph(data: dict) -> dict:
+    order, _, kinds_used = build(data)
+    acts = indexed(data.get("acts", []), "id", "acts")
+    rows = []
+    for act_id in order:
+        act = acts[act_id]
+        rows.append({
+            "act": act_id,
+            "date": act["date"],
+            "departures": sorted(set(kinds_used[act_id])),
+            "line": act["line"],
+            "parents": act.get("parents", []),
+            "via_unrepresented": act.get("via_unrepresented", []),
+        })
+    return {"rows": rows, "status": "ok"}
+
+
+# --- CLI ---------------------------------------------------------------------
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    assert isinstance(payload, dict)
+    if getattr(arguments, "json", False):
+        print_json(payload)
+        return 0
+    verb = arguments.command
+    if verb == "check":
+        kinds = payload["departure_kinds"]
+        print(
+            f"ok: {payload['acts']} acts, {payload['lines']} lines, {payload['witnesses']} witnesses, "
+            f"{payload['masses']} masses, {payload['base_units']} base units, {payload['departures']} departures"
+        )
+        print("departure kinds used: " + (", ".join(f"{kind} {count}" for kind, count in sorted(kinds.items())) or "none"))
+    elif verb == "graph":
+        for row in payload["rows"]:
+            edge = "root" if not row["parents"] else "<- " + ", ".join(row["parents"])
+            if row["via_unrepresented"]:
+                edge += " (via unrepresented: " + ", ".join(row["via_unrepresented"]) + ")"
+            marks = " [" + ",".join(row["departures"]) + "]" if row["departures"] else ""
+            print(f"{row['line']:<17} {row['act']:<31} {row['date']}  {edge}{marks}")
+    else:
+        print(f"wrote {payload['commits']} commits on {len(payload['branches'])} branches to {payload['out']}")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = examples_live_on_the_verbs(
+        argparse.ArgumentParser(prog="act-history", description=__doc__.splitlines()[0]),
+        "tools/act-history",
+    )
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
+    shared.add_argument("--json", action="store_true")
+    subparsers = parser.add_subparsers(dest="command")
+    for verb, help_text in (
+        ("check", "validate the act history and its departures"),
+        ("graph", "print the act graph in topological order"),
+        ("emit", "write the Git repository"),
+    ):
+        sub = subparsers.add_parser(verb, help=help_text, parents=[shared])
+        if verb == "emit":
+            sub.add_argument("--out", type=Path, default=DEFAULT_OUT)
+        with_examples(sub, EXAMPLES[verb])
+
+    def run(arguments: argparse.Namespace) -> object:
+        data = load(arguments.source)
+        if arguments.command == "check":
+            return check(data)
+        if arguments.command == "graph":
+            return graph(data)
+        check(data)
+        return emit(data, arguments.out)
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={verb: run for verb in ("check", "graph", "emit")},
+        renderer=render,
+        prefix="act-history",
+        argv=argv,
+        default_verb="check",
+        mapped_errors={Problem: ("invalid-history", 1)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

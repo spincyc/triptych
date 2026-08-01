@@ -1,0 +1,638 @@
+# The Roman Holy Week as a history of acts, 1570-1962.
+#
+# A tracer. It carries four liturgies of one week across the acts that changed
+# them, and nothing else. Everything the missal does in the other fifty-one
+# weeks is outside it and is not asserted here in any direction.
+#
+# This file sits in inventories/ for the reason the translations sidecar beside
+# it gives: `check-calendar-masses` reads every .yaml under src/sources/calendars
+# as a mass index, `scripts/_calendars.py` makes an unrecognised schema in a
+# calendar directory a hard failure, and `source-library validate` rejects any
+# file under src/sources outside its own schema except .md and .toml under
+# inventories/. A new calendar directory would also be discovered by
+# calendar-days, calendar-rubrics, the census, the harvest corpus and the
+# browser's missal control, none of which this tracer is ready to answer to.
+# When the shape is settled its home is a calendar-scoped companion schema
+# registered in COMPANION_SCHEMAS.
+
+acts_schema = 1
+record_type = "liturgical-act-history"
+slice = "roman-holy-week"
+recorded_on = "2026-07-31"
+
+model = """
+The station is the ACT, not the book. Every commit in the history this file
+generates is a promulgation, a revision, a reform, a rubrical code, or a
+documented exemption, and each one cites its instrument. A printing is not an
+act: it is a WITNESS, and it hangs beneath the history rather than standing in
+it. That single rule is what keeps a scanner out of the record. Two printings of
+one text differ constantly -- in spelling, in setting, in what the optical
+character recognition made of a broken letter -- and none of those differences
+has an act behind it, so none of them can become a commit. What the reader sees
+change is what an authority changed.
+
+Two things are kept apart throughout, because they have different lifetimes.
+The ACT is fixed: its date, its author, its instrument and its text do not move
+once cited. What is UNDERSTOOD to have changed is a historical judgement, is
+revisable, and is contested for some acts. A revision of the second must never
+move a station of the first, so effects are recorded per act in `effect` and
+`effect_established`, never folded into the act's identity.
+
+The base is the state left by the earliest act this tracer represents, and each
+later act records only its DEPARTURES from the state it inherits. An act that
+changed nothing in Holy Week writes no row and still gets its station:
+`divino-afflatu-1911` is here for exactly that reason. The departure vocabulary
+is the one guidance/recensions.md section 3 fixes -- absent, added, replaced,
+renamed, moved, reslotted, unrecorded -- and this file exercises all seven.
+"""
+
+evidence = """
+Nothing in this file has been read against a page image. Every quotation, line
+number and reading below comes from Internet Archive DjVu optical-character-
+recognition text layers of public-domain scans, which are a discovery aid and
+not a witness to wording. Each unit and each act therefore carries `read_from`,
+whose only values here are `ocr-only` and `not-read`; no row claims
+`page-image`, and `inspected` in the sense of guidance/sources.md is the ceiling
+reached, never `verified`.
+
+That matters more here than usual. On 2026-07-31 this repository collated 99
+orations that had been taken from an OCR text layer of a single 1861 printing
+against the page images of that same printing, and corrected 38 of them --
+`Lard` for `Lord`, `tliese` for `these`, a comma where the page prints a full
+stop. A difference between two OCR texts is therefore worth nothing on its own
+as evidence about the books. It is worth something only where an act stands
+behind it, which is why the act rule above is the whole design and not a
+convention.
+
+OCR damage is reproduced exactly in every quotation, including obvious errors
+(`coDsnetudine`, `(fucentos`, `Gabbato`). Correcting a quotation to make a
+difference look cleaner would destroy the only signal that tells a reading from
+a reading of a scan.
+"""
+
+extent = """
+Four liturgies: Palm Sunday, Thursday, Friday and Saturday of Holy Week. Within
+them this tracer claims only the units it lists. It says nothing about the
+Ordinary, the Canon, the chants' notation, the ceremonies not reduced to a text
+unit here, the Office, or Monday, Tuesday and Wednesday of Holy Week. Silence in
+this file is silence because nothing was established, never because the state
+was checked and found unchanged: guidance/recensions.md Rule 4.
+"""
+
+open_items = """
+- The instrument that removed `perfidis` and `perfidiam` from the Good Friday
+  prayer for the Jews is not cited here. The change is visible between the
+  witnesses, and it is commonly attributed to John XXIII in 1959, but no
+  instrument for it was found in this corpus and none is asserted from memory.
+  It is recorded as a departure of kind `unrecorded` against the act it cannot
+  be attached to, and it must not be moved onto `editio-typica-1962` merely
+  because that is the first witness in which the words are gone.
+- The typical edition of 1900 stands between `si-quid-est-1634` and
+  `editio-typica-1920` and is not represented: the 1920 decree says its text was
+  drawn from it. The edge is drawn with `via_unrepresented` set, so the history
+  says "descends from" and not "immediately follows".
+- No act is cited here that let the pre-1955 Holy Week continue in use after
+  25 March 1956. The tracer therefore draws no such branch. The absence is a
+  statement about this corpus and this search, not about history.
+- The 1570 and 1604 witnesses were not read for any unit below. Their Holy Week
+  is locatable in the OCR but its two-column scans interleave, so unit-level
+  reading needs the page images.
+"""
+
+# --- Lines ------------------------------------------------------------------
+#
+# A line is a sequence of acts that stayed together. Lines never rejoin: where
+# two of them run side by side, they run side by side to the end of the record,
+# and no act here joins one to another. A branch is born at an act, never at an
+# observation that two books differ.
+
+[[lines]]
+id = "typica"
+label = "Roman typical editions"
+note = "The line Quo primum established and every act that revised it."
+
+[[lines]]
+id = "exempt-uses"
+label = "Uses exempted by Quo primum"
+note = """
+Quo primum did not abolish every other use. It excepted those whose institution
+was approved by the Apostolic See or whose custom had been kept above two hundred
+years, and said of them in terms that it took their manner of celebrating away by
+no means. Those uses -- among them the Ambrosian, the Lyonese, and the uses of
+the Dominicans, Carmelites and Carthusians -- kept their own Holy Week and never
+returned to this line. This tracer holds no witness for any of them, so the line
+has its birth act and nothing after it. An empty branch that is honestly empty
+is the point: the fork is in the record because an act put it there, and its
+emptiness measures what this corpus holds, not what happened.
+"""
+
+# --- Acts -------------------------------------------------------------------
+
+[[acts]]
+id = "quo-primum-1570"
+line = "typica"
+kind = "promulgation"
+date = "1570-07-14"
+date_precision = "day"
+authority = "Pius V"
+instrument = "Apostolic constitution Quo primum tempore"
+title = "Quo primum promulgates the Missale Romanum"
+parents = []
+root_basis = """
+The earliest act this tracer represents. It is not the beginning of the Roman
+Mass and is not offered as one: what stands before it -- the pre-Tridentine
+curial missal, the 1474 Milan printing, the diocesan uses out of which the
+Tridentine commission worked -- is a live question this tracer takes no position
+on and draws no edge into. A root here means "this record starts here", not
+"nothing preceded it".
+"""
+citation = "Pius V, Quo primum tempore, 14 July 1570, printed in the front matter of the witnesses below."
+attested_in = ["pustet-1862", "missale-romanum-1920"]
+read_from = "ocr-only"
+locus = "pustet-1862 OCR lines 155-283; missale-romanum-1920 OCR lines 80-230"
+dateline = "Datum Romae apud S. Petrum, anno Incarnationis Dominicae millesimo quingentesimo, septuagesimo, pridie Idus Julii, Pontificatus nostri anno quinto."
+promulgation_note = "Posted at the doors of St Peter's and of the Apostolic Chancery on 29 July 1570, per the subscription printed after the bull in pustet-1862 (OCR lines 276-282)."
+effect = "Establishes the state this tracer treats as its base."
+effect_established = true
+
+[[acts]]
+id = "quo-primum-exemption-1570"
+line = "exempt-uses"
+kind = "exemption"
+date = "1570-07-14"
+date_precision = "day"
+authority = "Pius V"
+instrument = "Apostolic constitution Quo primum tempore, exempting clause"
+title = "Quo primum excepts the uses above two hundred years old"
+parents = ["quo-primum-1570"]
+parent_basis = """
+The same instrument, on the same day. The clause is drawn as a separate station
+because it is what makes the other uses a line rather than an absence, and
+because everything on that line descends from the exception and not from the
+general command.
+"""
+citation = "Pius V, Quo primum tempore, 14 July 1570, exempting clause."
+attested_in = ["pustet-1862"]
+read_from = "ocr-only"
+locus = "pustet-1862 OCR lines 189-198, 231"
+quotation = """
+nisi  ab  ipsa  prima  institutione  a  Sede  Aoostolica  apj)robata,  vel
+coDsnetudine,  q^uae,  vel  ipsa  institutio  super  (fucentos  annos  Missarura
+celebrandarum  ra  eisdem  Ecclesiis  assidue  observata  sit:  a  quibus,  ut
+[...]
+praefatam  celebrandi  constitutionem,  vel  consuetudinem  nequacpiam  aufe-
+rimus
+"""
+quotation_note = """
+Reproduced with its OCR damage. The elision spans a page break in the scan, at
+which the running signature and a Google digitisation stamp intervene.
+"""
+effect = """
+Creates the parallel lines. Nothing in this tracer attaches to it, because no
+witness to any exempted use is in this corpus.
+"""
+effect_established = true
+
+[[acts]]
+id = "cum-sanctissimum-1604"
+line = "typica"
+kind = "revision"
+date = "1604-07-07"
+date_precision = "day"
+authority = "Clement VIII"
+instrument = "Apostolic constitution Cum sanctissimum Eucharistiae sacramentum"
+title = "Clement VIII issues the emended Missal"
+parents = ["quo-primum-1570"]
+parent_basis = """
+The bull says so itself: it recites that Pius V had the Missale Romanum restored
+by decree of the Council of Trent and printed at Rome, that printers' and others'
+rashness had since let errors into the books, and that it therefore emends what
+Pius V issued. The edge is the act's own account of what it is revising.
+"""
+parent_quotation = """
+tum  in  primis  fel.  rec.
+Pius  Paia  Quintus  Missale  Roraanum  ex  Decreto  Sac.  Concilii  Triden-
+tini  ad  veterem,  et  emendatiorem  normam  restitui,  Romaeque  imprimi
+curavit.
+"""
+citation = "Clement VIII, Cum sanctissimum Eucharistiae sacramentum, 7 July 1604."
+attested_in = ["pustet-1862"]
+read_from = "ocr-only"
+locus = "pustet-1862 OCR lines 286-406"
+dateline = "Datum Romae apud S. Marcum sub Annulo Piscatoris die vii. Julii M.DC.IV. Pontificatus nostri Anno xiii."
+effect = "No departure in this slice has been established for it."
+effect_established = false
+effect_note = """
+Not a claim that it changed nothing in Holy Week. The 1604 witness in this
+corpus is a two-column scan whose OCR interleaves the columns, so its Holy Week
+could not be read unit by unit; the question is open, not answered.
+"""
+
+[[acts]]
+id = "si-quid-est-1634"
+line = "typica"
+kind = "revision"
+date = "1634-09-02"
+date_precision = "day"
+authority = "Urban VIII"
+instrument = "Apostolic constitution Si quid est in rebus humanis"
+title = "Urban VIII issues the further emended Missal"
+parents = ["cum-sanctissimum-1604"]
+parent_basis = """
+The bull names both predecessors and says it follows in their steps: the manner
+and prayers of celebrating which Pius V and Clement VIII had most diligently
+revised and restored, it ordered examined again and anything corrupted by the
+course of time restored. The edge to Clement VIII is the nearer of the two it
+names; Pius V is reached through him.
+"""
+parent_quotation = """
+Summi  Pontifices  praedecessores  no-
+stri  Pius  V.  et  Clemens  VIII.  diiigentissime  recognosci  atque  instaurari
+curaverunt;  Nos  quoque  eorum  vestigiis  inhaerentes,  iterum  examinari,
+et  si  quid  forte  in  iis  assiduus  (quod  plerumque  contin^it)  temporis  cur-
+sus  corruperit,  restitui  jusserimus.
+"""
+citation = "Urban VIII, Si quid est in rebus humanis, 2 September 1634."
+attested_in = ["pustet-1862"]
+read_from = "ocr-only"
+locus = "pustet-1862 OCR lines 409-447"
+dateline = "die Secunda Septembris M.DC.XXXIV. Pontificatus nostri anno duodecimo."
+effect = "No departure in this slice has been established for it."
+effect_established = false
+effect_note = "The witnesses this tracer read for units are 1862, 1920 and 1962; none of them separates the 1604 state from the 1634 state."
+
+[[acts]]
+id = "divino-afflatu-1911"
+line = "typica"
+kind = "reform"
+date = "1911-11-01"
+date_precision = "day"
+authority = "Pius X"
+instrument = "Apostolic constitution Divino afflatu"
+title = "Divino afflatu orders the new arrangement of the Psalter"
+parents = ["si-quid-est-1634"]
+parent_basis = """
+Named as one of the two norms the 1920 edition was made to, in the decree of
+approbation printed at the head of that edition: `ad normam Bullae Divino
+afflatu et Motu Proprio Abhinc duos annos et subsequentium hujus Sacrae
+Congregationis Decretorum`. The edge to the preceding revision is the line's
+own order; see `via_unrepresented` on `editio-typica-1920` for what is missing
+between them.
+"""
+citation = "Pius X, Divino afflatu, 1 November 1911, cited by name in the 1920 decree of approbation."
+attested_in = ["missale-romanum-1920"]
+read_from = "ocr-only"
+locus = "missale-romanum-1920 OCR lines 18-19 (citation only; the constitution's own text is not in this corpus)"
+effect = "No departure in this slice."
+effect_established = true
+effect_note = """
+This station exists precisely to write no row. The act is citable, dated and
+named by the edition it governs; its reach is the Office and the calendar, and
+Holy Week's formularies are not among the things it moved. A history keyed on
+diffs would have dropped it. A history keyed on acts keeps it, and the empty
+commit is the record saying that an authority acted and this slice did not move.
+"""
+
+[[acts]]
+id = "abhinc-duos-annos-1913"
+line = "typica"
+kind = "reform"
+date = "1913-10-23"
+date_precision = "day"
+authority = "Pius X"
+instrument = "Motu proprio Abhinc duos annos"
+title = "Abhinc duos annos orders the calendar's revision"
+parents = ["divino-afflatu-1911"]
+parent_basis = "Named beside Divino afflatu in the same clause of the 1920 decree of approbation, and dated after it."
+citation = "Pius X, Abhinc duos annos, 23 October 1913, cited by name in the 1920 decree of approbation."
+attested_in = ["missale-romanum-1920"]
+read_from = "ocr-only"
+locus = "missale-romanum-1920 OCR lines 19-20 (citation only)"
+effect = "No departure in this slice."
+effect_established = true
+effect_note = "Second of the two stations that write no row; see divino-afflatu-1911."
+
+[[acts]]
+id = "editio-typica-1920"
+line = "typica"
+kind = "promulgation"
+date = "1920-07-25"
+date_precision = "day"
+authority = "Benedict XV, through the Sacred Congregation of Rites"
+instrument = "Decretum approbationis editionis typicae Vaticanae"
+title = "The Vatican typical edition of 1920 is approved"
+parents = ["abhinc-duos-annos-1913"]
+parent_basis = """
+The decree printed at the head of the edition states what it was made from and
+to: the Pontifical Commission instituted by Pius X on 2 July 1911, having
+prepared the typical edition of the Breviary approved 25 March 1914 to the norm
+of Divino afflatu and Abhinc duos annos, turned the same norms on the Missal.
+The edge therefore runs through the two acts it names, and not through any
+printing that happens to fall between 1634 and 1920.
+"""
+parent_quotation = """
+ad  normam  Bullae  Divino
+afflatu  et  Motu  Proprio  Abhinc  duos  an-
+nos  et  subsequentium  hujus  Sacrae  Con-
+gregationis  Decretorum,  concinnandam
+curavit
+"""
+via_unrepresented = ["typical edition of 1900"]
+via_unrepresented_basis = """
+The same decree says the text was drawn from the other typical edition, that of
+1900: `In qua editione, ex altera typica anni 1900 deprompta, illud tantum
+innovatum est, quod ex recentibus praescriptionibus liturgicis et ex additionibus
+et variationibus, in Breviario typico inductis, consequeretur.` That edition is
+not in this corpus and no act promulgating it is cited here, so the edge from the
+1634 revision down to 1920 crosses at least one station this record does not
+hold. It is drawn as descent, not as succession.
+
+The quotation also bounds the 1920 edition's own reach, and is why this act
+carries so few departures: it says that the only thing made new was what followed
+from the recent liturgical prescriptions and from the additions and variations
+introduced in the typical Breviary.
+"""
+citation = "Sacred Congregation of Rites, Decretum approbationis editionis typicae Vaticanae, printed at the head of the 1920 Missale Romanum; the corpus records the promulgation as 25 July 1920."
+attested_in = ["missale-romanum-1920"]
+read_from = "ocr-only"
+locus = "missale-romanum-1920 OCR lines 7-60"
+date_note = """
+The day is taken from the corpus record that supplied the scan, not from a
+dateline read in the decree itself. The decree's own subscription was not
+legible in the OCR examined, so the date is `sourced` at one remove and should be
+confirmed against the page before it is relied on.
+"""
+effect = "No departure in this slice has been established for it."
+effect_established = false
+effect_note = """
+The decree's own account -- that the only innovation was what followed from
+recent prescriptions and from the Breviary's additions -- makes a Holy Week
+departure unlikely, but unlikely is not established, and nothing here was read
+unit by unit against the 1862 state to prove it. This act therefore stands with
+its Holy Week effect open rather than asserted empty.
+"""
+
+[[acts]]
+id = "maxima-redemptionis-1955"
+line = "typica"
+kind = "reform"
+date = "1955-11-16"
+date_precision = "day"
+authority = "Pius XII, through the Sacred Congregation of Rites"
+instrument = "Decree Maxima redemptionis nostrae mysteria"
+title = "Maxima redemptionis restores the order of Holy Week"
+parents = ["editio-typica-1920"]
+parent_basis = """
+The state the decree reformed is the one the 1920 typical edition carried; that
+is the book in use when it was issued, and the departures below are measured
+against it. The decree is not a revision of a printing but of the rite the
+printings held.
+"""
+citation = "Sacred Congregation of Rites, Maxima redemptionis nostrae mysteria, 16 November 1955, in Acta Apostolicae Sedis 47 (1955), with the accompanying Instruction."
+attested_in = ["aas-47-1955"]
+read_from = "ocr-only"
+locus = "aas-47-1955 OCR lines 51723-51945 (decree) and 51946-52847 (instruction)"
+effect = "The largest set of departures in this slice: see the departures keyed to this act."
+effect_established = true
+effect_note = """
+The individual departures below are separately marked. That the decree restored
+the Holy Week order is not in question; which units it touched, in what way, is
+read here from witnesses on either side of it and not from the decree's own text,
+except where a departure quotes the decree.
+"""
+
+[[acts]]
+id = "rubricarum-instructum-1960"
+line = "typica"
+kind = "rubrical-code"
+date = "1960-07-25"
+date_precision = "day"
+authority = "John XXIII"
+instrument = "Motu proprio Rubricarum instructum, promulgating the Codex rubricarum"
+title = "Rubricarum instructum promulgates the new code of rubrics"
+parents = ["editio-typica-1920"]
+parent_basis = """
+The code applies to the rite the 1920 typical edition carried. It is drawn from
+that act rather than from the 1955 reform because it is a separate instrument
+addressing the rubrics generally, and because drawing it below the reform would
+say the reform is among the things it revises, which is not established here.
+The two converge at the 1962 edition, which is where they were in fact composed.
+"""
+citation = "John XXIII, Rubricarum instructum, 25 July 1960."
+attested_in = []
+read_from = "not-read"
+locus = ""
+date_note = """
+Not attested in this corpus. The identification and the date are the ordinary
+bibliographic ones and were not read from any artifact here. This act's citation
+is therefore weaker than every other act in this file, and it is here because
+the 1962 edition cannot be described without it. Confirm against the Acta before
+any evidentiary use.
+"""
+effect = "No departure in this slice has been established for it."
+effect_established = false
+effect_note = "Its reach is the general rubrics and the calendar. Whether any Holy Week unit here moved by it was not established."
+
+[[acts]]
+id = "editio-typica-1962"
+line = "typica"
+kind = "promulgation"
+date = "1962-06-23"
+date_precision = "day"
+authority = "John XXIII, through the Sacred Congregation of Rites"
+instrument = "Typical edition of the Missale Romanum of 1962"
+title = "The 1962 typical edition carries the reform and the new code"
+parents = ["maxima-redemptionis-1955", "rubricarum-instructum-1960"]
+parent_basis = """
+Two lines of descent, both on the same line of the rite: the reformed Holy Week
+of 1955 and the code of rubrics of 1960. Neither alone accounts for the book.
+"""
+reception_basis = """
+The merge is drawn because the reception is visible in the book itself and not
+inferred from the fact that both acts precede it. The 1962 witness prints the
+reformed titles and the reformed order -- `Feria VI in Passione et Morte Domini`
+where the earlier books print `Feria VI in Parasceve`, a Vigil where they print a
+Saturday morning Mass -- and its front matter and general rubrics answer to the
+1960 code. Where a reception cannot be shown like that, this file draws no merge:
+that rule is enforced by `act-history check`, which refuses any act with more
+than one parent that does not carry this field.
+"""
+citation = "Missale Romanum, typical edition of 1962. The corpus records the edition as of 1962; the promulgating decree was not found in the scan examined."
+attested_in = ["missale-romanum-1962"]
+read_from = "ocr-only"
+locus = "missale-romanum-1962 OCR, Holy Week at lines 34462-43654"
+date_note = """
+The day is not established. The corpus that supplied the scan records only the
+year, and no decree of approbation was located in the scan's front matter, whose
+OCR is decorative noise for its first hundred lines. The date used for ordering
+is a conventional one and is marked here rather than passed off as read.
+"""
+effect = "Carries the 1955 reform into the typical edition."
+effect_established = true
+
+# --- Witnesses --------------------------------------------------------------
+#
+# A printing, a scan, a transcription. A witness attests a state; it is not a
+# station and can never be one. Where the state it attests cannot be established
+# the edge is left undrawn and `attests` says `unestablished`; where it can be
+# fixed only by the printing's date, `attests_kind` says `date-bound` and the
+# weakness is on the record instead of being hidden behind a confident edge.
+
+[[witnesses]]
+id = "missale-romanum-1570"
+label = "Missale Romanum, Rome 1570"
+language = "la"
+printed = "1570"
+attests = "quo-primum-1570"
+attests_kind = "item-identification"
+attests_basis = """
+The Internet Archive item identifies itself as the 1570 Missal of Pius V. The
+identification was not checked against the book's own title page, whose OCR in
+this scan is not legible enough to read. Treat the attribution as the item's
+claim.
+"""
+read_from = "ocr-only"
+ocr_artifact = "MissaleRomanum1570_djvu.txt, 84442 lines, 1636559 bytes"
+rights = "public-domain"
+rights_basis = "Pre-1900 printing; the Internet Archive item is marked public domain. The Google digitisation layer's own rights are unresolved and no bytes of it are retained here."
+units_read = 0
+units_read_note = "Holy Week is locatable at roughly OCR lines 24000-32200 but the blackletter and long-s OCR was not read unit by unit."
+
+[[witnesses]]
+id = "missale-romanum-1604"
+label = "Missale Romanum, 1604"
+language = "la"
+printed = "1604"
+attests = "cum-sanctissimum-1604"
+attests_kind = "item-identification"
+attests_basis = "The Internet Archive item identifies itself as the Missal as revised under Clement VIII. Not checked against the title page."
+read_from = "ocr-only"
+ocr_artifact = "MissaleRomanum1604_djvu.txt, 63204 lines, 2025007 bytes"
+rights = "public-domain"
+rights_basis = "Pre-1900 printing marked public domain at the Internet Archive."
+units_read = 0
+units_read_note = "Two-column scan whose OCR interleaves the columns; Holy Week at roughly lines 23300-30100 is not in liturgical order in the text layer."
+
+[[witnesses]]
+id = "pustet-1862"
+label = "Missale Romanum, Ratisbon: Friedrich Pustet, 1862"
+language = "la"
+printed = "1862"
+attests = "si-quid-est-1634"
+attests_kind = "title-page-statement"
+attests_basis = """
+The title page states the descent itself: MISSALE ROMANUM EX DECRETO
+SACROSANCTI CONCILII TRIDENTINI RESTITUTUM, S. PII V. PONTIFICIS MAXIMI JUSSU
+EDITUM, CLEMENTIS VIII. ET URBANI VIII. AUCTORITATE RECOGNITUM. The latest
+authority it names is Urban VIII, so this is a printing of the state that act
+left, with the additamenta its own title page advertises.
+"""
+not_a_station = """
+This book is a PRINTING, not a promulgation. Its title page says CUM
+APPROBATIONE SACRORUM RITUUM CONGREGATIONIS -- approval to print, from the
+Congregation of Rites, not an act revising the rite -- and the two decrees it
+prints at the front, both of 1862, concern a proper Mass of the Japanese Martyrs
+and a Mass of Blessed John Leonardi for particular places, neither of which is
+in this slice. Chaining it into the history between 1634 and 1920 would assert
+that the Roman Holy Week descends through a Ratisbon commercial edition. It does
+not. This is the case the act rule exists to catch.
+"""
+read_from = "ocr-only"
+ocr_artifact = "MissaleRomanum1862_djvu.txt, 108905 lines, 2503914 bytes"
+rights = "public-domain"
+rights_basis = "1862 printing; the Internet Archive item is a Google digitisation of a public-domain book. No bytes of the digitisation are retained here."
+
+[[witnesses]]
+id = "roman-missal-laity-1806"
+label = "The Roman Missal for the Use of the Laity, London: P. Keating, 1806"
+language = "en"
+printed = "1806"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = """
+The book names no Latin exemplar. Its front matter is a publisher's
+introduction explaining how to use a missal, and a search of it for an
+approbation, an imprimatur, a licence, a permissu, or the Vicars Apostolic
+returns nothing. So the edge rests on the printing's date alone: 1806 falls
+after the 1634 revision and before the 1911 reform, and the state it can be
+translating is that one. This is the weakest edge in the file and it is labelled
+as such. It is drawn only because a date bound is a real bound; it asserts
+nothing about which printing was on the translator's desk.
+"""
+not_a_station = """
+A lay translation is not an act. Nothing in this book changes the missal, and no
+decree, edict or approbation for it was found. It attaches beneath the history
+as a witness in another language, and the history draws no English line.
+"""
+read_from = "ocr-only"
+ocr_artifact = "RomanMissal1806_djvu.txt, 36485 lines, 1463916 bytes"
+rights = "public-domain"
+rights_basis = "1806 printing, long out of copyright; the Internet Archive item is marked public domain."
+
+[[witnesses]]
+id = "cummiskey-1843"
+label = "The Roman Missal translated into the English language for the use of the laity, Philadelphia: Eugene Cummiskey, 1843"
+language = "en"
+printed = "1843"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = "As for the 1806: the book states no Latin exemplar, and the edge is a date bound and nothing more."
+not_a_station = """
+Its title page carries a civil copyright registration -- `Entered according to
+the Act of Congress, in the year 1843, by EUGENE CUMMISKEY, in the Clerk's
+Office of the District Court for the Eastern District of Pennsylvania` -- which
+is an act, dated, by a named party, in a named jurisdiction, and is not an act
+about the rite. The historical explanation prefixed to it is by John England,
+late Bishop of Charleston, and is an author's name on a prefixed treatise, not
+an approbation of the translation. No approbation was found in the book.
+"""
+read_from = "ocr-only"
+ocr_artifact = "TheRomanMissal1843_djvu.txt, 46030 lines, 1721622 bytes"
+rights = "public-domain"
+rights_basis = "1843 printing, long out of copyright; the Internet Archive item is a Google digitisation of a public-domain book."
+related_record = """
+This repository already holds 162 English orations read from the 1861 Cummiskey
+printing, in src/sources/inventories/roman-1962-proper-translations-v1.toml, of
+which 108 have been collated against that printing's page images. The 1843 and
+the 1861 are different printings by the same publisher and must not be conflated;
+nothing collated for the 1861 is transferred here.
+"""
+
+[[witnesses]]
+id = "missale-romanum-1920"
+label = "Missale Romanum, editio typica vaticana, 1920"
+language = "la"
+printed = "1920"
+attests = "editio-typica-1920"
+attests_kind = "decree-printed-in-book"
+attests_basis = "The book prints its own DECRETUM APPROBATIONIS EDITIONIS TYPICAE VATICANAE at its head, which is the act it attests."
+read_from = "ocr-only"
+ocr_artifact = "MissaleRomanum1920_djvu.txt, 123278 lines, 2918085 bytes"
+rights = "public-domain"
+rights_basis = "1920 printing. The corpus this came from records it as treated as public domain in the United States, and notes that the Internet Archive item carries no licence field. That is a weaker basis than the pre-1900 printings above and is recorded as it stands."
+
+[[witnesses]]
+id = "missale-romanum-1962"
+label = "Missale Romanum, 1962"
+language = "la"
+printed = "1962"
+attests = "editio-typica-1962"
+attests_kind = "item-identification"
+attests_basis = "The Internet Archive item identifies itself as the 1962 Missale Romanum, and its Holy Week prints the reformed titles and order."
+read_from = "ocr-only"
+ocr_artifact = "MissaleRomanum1962_djvu.txt, 136068 lines, 2788999 bytes"
+rights = "public-domain"
+rights_basis = "The Internet Archive item is marked with the Public Domain Mark. The corpus this came from records the OCR quality as imperfect."
+
+[[witnesses]]
+id = "aas-47-1955"
+label = "Acta Apostolicae Sedis, vol. 47 (1955)"
+language = "la"
+printed = "1955"
+attests = "maxima-redemptionis-1955"
+attests_kind = "official-gazette"
+attests_basis = "The official gazette in which the decree was promulgated, and the strongest witness in this file: an act published in the Acta is that act's own publication and not a later printing of it."
+read_from = "ocr-only"
+ocr_artifact = "AAS-47-1955_djvu.txt, 65401 lines, 2200324 bytes"
+rights = "public-domain"
+rights_basis = "Recorded in the corpus this came from as a public-domain Internet Archive item. Rights in the Acta are not further examined here."

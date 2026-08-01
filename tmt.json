@@ -1,5 +1,16 @@
 {
   "tools": {
+    "act-history": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Build a liturgical slice's act-keyed history as a Git repository.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "act-history {check,graph,emit} [--source PATH] [--out DIR] [--json]"
+    },
     "artwork-library": {
       "idempotent": true,
       "json": false,

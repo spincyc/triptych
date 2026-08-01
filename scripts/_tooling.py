@@ -75,6 +75,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         "The liturgical calendars, their precedence rules, and the masses "
         "they carry.",
         (
+            "act-history",
             "calendar-days",
             "calendar-rubrics",
             "calendar-spine",
@@ -158,6 +159,7 @@ MODEL = "model"
 NOTHING = "nothing"
 
 REACHES: dict[str, str] = {
+    "act-history": NOTHING,
     "artwork-library": NOTHING,
     "calendar-days": NOTHING,
     "calendar-rubrics": NOTHING,
