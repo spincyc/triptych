@@ -80,10 +80,71 @@ body:not(:has(> .site-header)) {
   margin: 0 0 2.5rem;
 }
 
-/* Verses run on as prose rather than one to a line: the chapter is here to be
-   read, and a stack of thirty-one short lines is a concordance, not a text. */
-.chapter .passage {
+/* The chapter is the page's primary text and was being set bare while every
+   fragment sat in a panel, which inverted the emphasis: the commentary looked
+   finished and the scripture looked like a caption. It gets the panel, and the
+   larger one. */
+.chapter-body {
+  background: var(--panel);
+  border: 1px solid var(--section-pale);
+  border-top: 0.2rem solid var(--section-accent);
+  border-radius: 0 0 3px 3px;
+  padding: 1.15rem 1.4rem 1.35rem;
+}
+
+.chapter-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.2rem 0.8rem;
+  cursor: pointer;
+  list-style: none;
   margin: 0;
+}
+
+.chapter-head::-webkit-details-marker { display: none; }
+
+.chapter-name {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--section-ink);
+}
+
+.chapter-count {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted, var(--section-ink));
+}
+
+.chapter-head:focus-visible {
+  outline: 2px solid var(--section-accent);
+  outline-offset: 3px;
+}
+
+/* Verses run on as prose rather than one to a line: the chapter is here to be
+   read, and a stack of thirty-one short lines is a concordance, not a text.
+   The rule above the text separates it from the summary without a border that
+   would box a closed chapter for no reason. */
+.chapter-body[open] > .passage {
+  margin: 0.9rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--section-pale);
+}
+
+/* A shade larger than the shared setting, because on this page the chapter is
+   read against the commentary rather than on its own. */
+.chapter .passage {
+  font-size: 1.13rem;
+  line-height: 1.9;
+}
+
+.chapter .passage::first-letter {
+  font-size: 1.5em;
+  line-height: 1;
 }
 
 /* ---------------------------------------------------------------------------

@@ -115,9 +115,11 @@
       T.el('span', 'chapter-name', book.name + ' ' + chapter)
     );
     head.appendChild(
-      T.el('span', 'chapter-count', T.plural
-        ? T.plural(numbers.length, 'verse')
-        : numbers.length + ' verses')
+      T.el(
+        'span',
+        'chapter-count',
+        numbers.length + (numbers.length === 1 ? ' verse' : ' verses')
+      )
     );
     holder.appendChild(head);
     holder.appendChild(passage);
