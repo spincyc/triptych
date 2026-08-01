@@ -14866,12 +14866,57 @@ sections:
       date: 06-21
       rank: Memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 346, printed page 292, n.
+        583. The Ordo heads it De Communi sanctorum virorum [pro religiosis], and this
+        repository carries no Common, so the heading is recorded and not resolved. The
+        Ordo prints its responsorial psalms in Vulgate numbering; they are converted
+        here by scripts/_psalms from the tracked verse concordance, because this file
+        declares psalm_numbering hebrew. Nothing else of this Mass has been read: the
+        Entrance and Communion Antiphons and the three orations are printed in the
+        Missal, not in the Ordo, and are absent because no witness to them is on disk
+        that this project may publish - see
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 1 John
+          ranges:
+          - begin: {chapter: 5, verse: 1}
+            end: {chapter: 5, verse: 5}
+          ref: 1 John 5:1-5
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 16, verse: 1}
+            end: {chapter: 16, verse: 2, part: a}
+          - begin: {chapter: 16, verse: 5}
+            end: {chapter: 16, verse: 5}
+          - begin: {chapter: 16, verse: 7}
+            end: {chapter: 16, verse: 8}
+          - begin: {chapter: 16, verse: 11}
+            end: {chapter: 16, verse: 11}
+          ref: Psalm 16:1-2a, 5, 7-8, 11
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 13, verse: 34}
+            end: {chapter: 13, verse: 34}
+          ref: John 13:34
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 22, verse: 34}
+            end: {chapter: 22, verse: 40}
+          ref: Matthew 22:34-40
     - key: saint-paulinus-nola-bishop
       name: Saint Paulinus of Nola, Bishop; Saints John Fisher, Bishop, and Thomas
         More, Martyrs
@@ -14891,82 +14936,404 @@ sections:
       date: 06-24
       rank: Solemnity
       kind: sanctoral
-      notes: The Missal prints distinct Vigil and Day formularies, which the postconciliar
-        proper registry fixes as the two targets of PC-R02. Neither has been read.
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact pages 346-347, printed pages
+        292-293, n. 586 and 587. The two forms carry different readings, and a witness
+        that gives them the same readings is wrong about one of them. The Ordo prints
+        its responsorial psalms in Vulgate numbering; they are converted here by
+        scripts/_psalms from the tracked verse concordance, because this file declares
+        psalm_numbering hebrew. Nothing else of this Mass has been read: the Entrance
+        and Communion Antiphons and the three orations are printed in the Missal, not in
+        the Ordo, and are absent because no witness to them is on disk that this project
+        may publish - see
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       forms:
       - name: Vigil Mass
         propers:
-        - name: Placeholder
-          source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Jeremiah
+            ranges:
+            - begin: {chapter: 1, verse: 4}
+              end: {chapter: 1, verse: 10}
+            ref: Jeremiah 1:4-10
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 71, verse: 1}
+              end: {chapter: 71, verse: 2}
+            - begin: {chapter: 71, verse: 3}
+              end: {chapter: 71, verse: 4, part: a}
+            - begin: {chapter: 71, verse: 5}
+              end: {chapter: 71, verse: 6, part: ab}
+            - begin: {chapter: 71, verse: 15, part: ab}
+              end: {chapter: 71, verse: 15, part: ab}
+            - begin: {chapter: 71, verse: 17}
+              end: {chapter: 71, verse: 17}
+            ref: Psalm 71:1-2, 3-4a, 5-6ab, 15ab, 17
+        - name: Second Reading
+          source: scripture
+          verses:
+          - book: 1 Peter
+            ranges:
+            - begin: {chapter: 1, verse: 8}
+              end: {chapter: 1, verse: 12}
+            ref: 1 Peter 1:8-12
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 1, verse: 7}
+              end: {chapter: 1, verse: 7}
+            ref: John 1:7
+          - book: Luke
+            ranges:
+            - begin: {chapter: 1, verse: 17}
+              end: {chapter: 1, verse: 17}
+            ref: Luke 1:17
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 1, verse: 5}
+              end: {chapter: 1, verse: 17}
+            ref: Luke 1:5-17
       - name: Mass during the Day
         propers:
-        - name: Placeholder
-          source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin: {chapter: 49, verse: 1}
+              end: {chapter: 49, verse: 6}
+            ref: Isaiah 49:1-6
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 139, verse: 1}
+              end: {chapter: 139, verse: 3}
+            - begin: {chapter: 139, verse: 13}
+              end: {chapter: 139, verse: 14, part: ab}
+            - begin: {chapter: 139, verse: 14, part: c}
+              end: {chapter: 139, verse: 15}
+            ref: Psalm 139:1-3, 13-14ab, 14c-15
+        - name: Second Reading
+          source: scripture
+          verses:
+          - book: Acts
+            ranges:
+            - begin: {chapter: 13, verse: 22}
+              end: {chapter: 13, verse: 26}
+            ref: Acts 13:22-26
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 1, verse: 76}
+              end: {chapter: 1, verse: 76}
+            ref: Luke 1:76
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 1, verse: 57}
+              end: {chapter: 1, verse: 66}
+            - begin: {chapter: 1, verse: 80}
+              end: {chapter: 1, verse: 80}
+            ref: Luke 1:57-66, 80
     - key: saint-cyril-alexandria-bishop-doctor-church
       name: Saint Cyril of Alexandria, Bishop and Doctor of the Church
       registry: pc-06-27
       date: 06-27
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 347, printed page 293, n.
+        588. The Ordo heads it De Communi pastorum vel doctorum Ecclesiae, and this
+        repository carries no Common, so the heading is recorded and not resolved. The
+        Ordo prints its responsorial psalms in Vulgate numbering; they are converted
+        here by scripts/_psalms from the tracked verse concordance, because this file
+        declares psalm_numbering hebrew. Nothing else of this Mass has been read: the
+        Entrance and Communion Antiphons and the three orations are printed in the
+        Missal, not in the Ordo, and are absent because no witness to them is on disk
+        that this project may publish - see
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 2 Timothy
+          ranges:
+          - begin: {chapter: 4, verse: 1}
+            end: {chapter: 4, verse: 5}
+          ref: 2 Timothy 4:1-5
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 89, verse: 2}
+            end: {chapter: 89, verse: 3}
+          - begin: {chapter: 89, verse: 4}
+            end: {chapter: 89, verse: 5}
+          - begin: {chapter: 89, verse: 21}
+            end: {chapter: 89, verse: 22}
+          - begin: {chapter: 89, verse: 25}
+            end: {chapter: 89, verse: 25}
+          - begin: {chapter: 89, verse: 27}
+            end: {chapter: 89, verse: 27}
+          ref: Psalm 89:2-3, 4-5, 21-22, 25, 27
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 16}
+            end: {chapter: 5, verse: 16}
+          ref: Matthew 5:16
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 13}
+            end: {chapter: 5, verse: 19}
+          ref: Matthew 5:13-19
     - key: saint-irenaeus-bishop-martyr-doctor-church
       name: Saint Irenaeus, Bishop, Martyr, and Doctor of the Church
       registry: pc-06-28
       date: 06-28
       rank: Memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 347, printed page 293, n.
+        589. The Ordo heads it De Communi martyrum vel doctorum Ecclesiae, and this
+        repository carries no Common, so the heading is recorded and not resolved. The
+        Ordo prints its responsorial psalms in Vulgate numbering; they are converted
+        here by scripts/_psalms from the tracked verse concordance, because this file
+        declares psalm_numbering hebrew. Nothing else of this Mass has been read: the
+        Entrance and Communion Antiphons and the three orations are printed in the
+        Missal, not in the Ordo, and are absent because no witness to them is on disk
+        that this project may publish - see
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 2 Timothy
+          ranges:
+          - begin: {chapter: 2, verse: 22, part: b}
+            end: {chapter: 2, verse: 26}
+          ref: 2 Timothy 2:22b-26
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 37, verse: 3}
+            end: {chapter: 37, verse: 4}
+          - begin: {chapter: 37, verse: 5}
+            end: {chapter: 37, verse: 6}
+          - begin: {chapter: 37, verse: 30}
+            end: {chapter: 37, verse: 31}
+          ref: Psalm 37:3-4, 5-6, 30-31
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 9, part: b}
+            end: {chapter: 15, verse: 9, part: b}
+          - begin: {chapter: 15, verse: 5, part: b}
+            end: {chapter: 15, verse: 5, part: b}
+          ref: John 15:9b, 5b
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 17, verse: 20}
+            end: {chapter: 17, verse: 26}
+          ref: John 17:20-26
     - key: saints-peter-paul-apostles
       name: Saints Peter and Paul, Apostles
       registry: pc-06-29
       date: 06-29
       rank: Solemnity
       kind: sanctoral
-      notes: The Missal prints distinct Vigil and Day formularies, which the postconciliar
-        proper registry fixes as the two targets of PC-R03. Neither has been read.
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact pages 347-348, printed pages
+        293-294, n. 590 and 591. The Ordo prints its responsorial psalms in Vulgate
+        numbering; they are converted here by scripts/_psalms from the tracked verse
+        concordance, because this file declares psalm_numbering hebrew. Nothing else of
+        this Mass has been read: the Entrance and Communion Antiphons and the three
+        orations are printed in the Missal, not in the Ordo, and are absent because no
+        witness to them is on disk that this project may publish - see
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       forms:
       - name: Vigil Mass
         propers:
-        - name: Placeholder
-          source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Acts
+            ranges:
+            - begin: {chapter: 3, verse: 1}
+              end: {chapter: 3, verse: 10}
+            ref: Acts 3:1-10
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 19, verse: 2}
+              end: {chapter: 19, verse: 3}
+            - begin: {chapter: 19, verse: 4}
+              end: {chapter: 19, verse: 5}
+            ref: Psalm 19:2-3, 4-5
+        - name: Second Reading
+          source: scripture
+          verses:
+          - book: Galatians
+            ranges:
+            - begin: {chapter: 1, verse: 11}
+              end: {chapter: 1, verse: 20}
+            ref: Galatians 1:11-20
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 21, verse: 17, part: d}
+              end: {chapter: 21, verse: 17, part: d}
+            ref: John 21:17d
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 21, verse: 15}
+              end: {chapter: 21, verse: 19}
+            ref: John 21:15-19
       - name: Mass during the Day
         propers:
-        - name: Placeholder
-          source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Acts
+            ranges:
+            - begin: {chapter: 12, verse: 1}
+              end: {chapter: 12, verse: 11}
+            ref: Acts 12:1-11
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 34, verse: 2}
+              end: {chapter: 34, verse: 3}
+            - begin: {chapter: 34, verse: 4}
+              end: {chapter: 34, verse: 5}
+            - begin: {chapter: 34, verse: 6}
+              end: {chapter: 34, verse: 7}
+            - begin: {chapter: 34, verse: 8}
+              end: {chapter: 34, verse: 9}
+            ref: Psalm 34:2-3, 4-5, 6-7, 8-9
+        - name: Second Reading
+          source: scripture
+          verses:
+          - book: 2 Timothy
+            ranges:
+            - begin: {chapter: 4, verse: 6}
+              end: {chapter: 4, verse: 8}
+            - begin: {chapter: 4, verse: 17}
+              end: {chapter: 4, verse: 18}
+            ref: 2 Timothy 4:6-8, 17-18
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 16, verse: 18}
+              end: {chapter: 16, verse: 18}
+            ref: Matthew 16:18
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 16, verse: 13}
+              end: {chapter: 16, verse: 19}
+            ref: Matthew 16:13-19
     - key: first-martyrs-holy-roman-church
       name: The First Martyrs of the Holy Roman Church
       registry: pc-06-30
       date: 06-30
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 348, printed page 294, n.
+        592. The Ordo heads it De Communi martyrum, and this repository carries no
+        Common, so the heading is recorded and not resolved. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by
+        scripts/_psalms from the tracked verse concordance, because this file declares
+        psalm_numbering hebrew. Nothing else of this Mass has been read: the Entrance
+        and Communion Antiphons and the three orations are printed in the Missal, not in
+        the Ordo, and are absent because no witness to them is on disk that this project
+        may publish - see
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Romans
+          ranges:
+          - begin: {chapter: 8, verse: 31, part: b}
+            end: {chapter: 8, verse: 39}
+          ref: Romans 8:31b-39
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 124, verse: 2}
+            end: {chapter: 124, verse: 3}
+          - begin: {chapter: 124, verse: 4}
+            end: {chapter: 124, verse: 5}
+          - begin: {chapter: 124, verse: 7, part: b}
+            end: {chapter: 124, verse: 8}
+          ref: Psalm 124:2-3, 4-5, 7b-8
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 10}
+            end: {chapter: 5, verse: 10}
+          ref: Matthew 5:10
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 24, verse: 4}
+            end: {chapter: 24, verse: 13}
+          ref: Matthew 24:4-13
     - key: saint-thomas-apostle
       name: Saint Thomas, Apostle
       registry: pc-07-03

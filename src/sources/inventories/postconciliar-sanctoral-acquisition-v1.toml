@@ -1,0 +1,763 @@
+# What may be acquired for the postconciliar sanctoral, and what it is worth.
+#
+# The postconciliar calendar index carries 268 Masses. Its whole sanctoral —
+# every saint's day, every Marian and Christological feast — was a placeholder
+# skeleton, because the Missal's Latin and the approved English are both
+# encumbered and no witness to the antiphons and readings was on disk. An
+# earlier lane wrote that acquiring one "is a lane of its own; I did not start
+# it rather than guess at citations". This is that lane's record.
+#
+# It is an acquisition SURVEY with a bounded landing. It names the candidate
+# witnesses, says what each actually contains, says what may lawfully be
+# republished from it, and lands only what was collated against page images. It
+# is not legal advice; where it states a proposition of law it states the
+# jurisdiction, and the jurisdiction throughout is the United States.
+#
+# The rights position on the TEXT of the postconciliar orations is settled in
+# src/sources/inventories/liturgical-english-rights-v1.toml and is not reopened
+# here. What that record does not answer, and what blocks the sanctoral, is a
+# different question: whether a CITATION may be published where the words may
+# not. `the_citation_question` below answers it.
+
+acquisition_schema = 1
+record_type = "calendar-sanctoral-acquisition"
+calendar = "postconciliar"
+target = "src/sources/calendars/postconciliar/propers.yaml"
+recorded_on = "2026-08-01"
+jurisdiction = "United States"
+
+the_gap = """
+Measured against the index on 2026-08-01, before this lane: 205 of 268 Masses
+held nothing but a placeholder proper, and 210 propers were named
+`Placeholder`. All 181 sanctoral Masses, all 14 Marian and all 7 Christological
+were placeholders; the 3 seasonal ones are the Chrism-adjacent gaps recorded in
+rubrics.yaml. Sixty-three Masses, every one of them seasonal, carried real
+text.
+
+What is missing from a sanctoral Mass is four things, and they come from three
+different books:
+
+  the two antiphons        the Missal, Proprium de Sanctis or a Common
+  the three orations       the Missal, Proprium de Sanctis or a Common
+  the Lectionary readings  the Ordo lectionum Missae, Proprium de Sanctis
+  which Common it takes    both books say it, and they need not agree
+
+Only the third is reachable, and only as a citation. That is the finding this
+record exists to state.
+"""
+
+# ---------------------------------------------------------------------------
+
+[the_citation_question]
+question = "The words of a Lectionary may not be republished here. May the citation?"
+answer = "A citation, yes. A transcription of the book's whole table, not on this record's evidence."
+reasoning = """
+This matters because a scripture proper in this repository holds NO TEXT. It
+holds a book, a range of verses and a printed reference, and the words are
+resolved at render time from the repository's own public-domain bibles. The
+`Entrance Antiphon` of the Eleventh Sunday in Ordinary Time is stored as
+`Psalm 26:7, 9` and nothing else. So the question is not whether the Lectionary
+may be reprinted — it plainly may not — but whether the pointer may be carried.
+
+A citation identifies a passage. It is a fact about which verses these are, and
+under United States law facts are not copyrightable however much labour found
+them. A compilation of facts is protected, but only in the compiler's own
+original selection, coordination and arrangement, and the protection does not
+extend to the facts themselves. Which pericope is appointed on which day is
+also a fact of a second kind: it is what a promulgated ecclesiastical norm
+provides, and reporting the content of a norm is reporting a fact about it.
+
+The limit is real and is stated rather than argued away. The choice of
+pericopes across the whole Ordo lectionum IS a selection, and it is original;
+it was made by the Consilium and promulgated by the Apostolic See. Transcribing
+that table entire — 600 pages of it, in order, as a table — would take the
+selection and not merely the facts, and this record does not claim a right to
+do it. What this repository does instead is carry, for each celebration it
+already holds by identity, the citation appointed for that celebration, beside
+its own calendar's own arrangement, resolving the words from bibles nobody
+holds a right in. That is a per-celebration fact in this project's own
+structure, not a reproduction of the book's table.
+
+It should be said plainly which parts of this are firm and which are judgement.
+That facts are not copyrightable is firm. That a lectionary's selection is
+original is firm and is conceded here rather than contested. Where the line
+falls between the two — how many citations, in what arrangement, before a
+per-celebration fact becomes the book's table — is judgement, and it is this
+project's own, made conservatively.
+"""
+what_follows_operationally = """
+1. A citation may be carried; the reading's TEXT may not be taken from the
+   Lectionary, and is never stored here at all.
+2. The Lectionary's own pericope TITLES — the italic Latin phrases the Ordo
+   prints in guillemets after each citation — are the compilers' composition
+   and are not carried. Neither is the psalm response.
+3. The witness and the exact page a citation was read at travel with it, on the
+   Mass, so that a later reader can go back to the bytes.
+4. Nothing is carried that was not read. A citation recalled rather than read
+   is the failure this repository is built to prevent, and the index's own
+   header already confesses to 1,059 of them; see `the_seasonal_leads`.
+"""
+evidence = "recorded"
+evidence_note = """
+The propositions of law above are this project's reading and were not verified
+against a witness in this repository. No case report or section of the United
+States Code was read here. `liturgical-english-rights-v1.toml` was read in
+full, and Liturgiam authenticam n. 111 is registered as a passage there. Anyone
+relying on this should read the authorities rather than this paragraph.
+"""
+corroboration = """
+One body that owns liturgical copyright has said the same thing in writing, and
+it is worth recording because this project reached its position independently.
+A page in the `westhong/catholic-daily-readings` repository records an exchange
+dated 2026-04-20 with Mary Sperry, Associate Director for Copyright and
+Permissions at the United States Conference of Catholic Bishops, and quotes her
+reply: "No permission is needed for using the reading citations and the names of
+the various feast days. However, the information posted on the USCCB website
+presents the liturgical calendar for the United States. The calendars of other
+countries can and do differ. Permission is not granted to serve the NABRE text.
+That text is not approved for liturgical use... As you are based in Canada, you
+should seek permission from your local episcopal conference."
+
+The distinction is exactly this record's: the citations are free, the words are
+not.
+
+What this is NOT. It is a third party's transcript of an email, retrieved by
+this lane on 2026-08-01 from
+raw.githubusercontent.com/westhong/catholic-daily-readings/HEAD/wiki/Copyright-Correspondence.md
+(4,241 bytes, sha256 2b6e8a954ba73cf5...), and read there. The original
+correspondence has not been seen, the reply was given to somebody else about
+their project, the USCCB speaks for neither the Holy See nor ICEL, and a
+permissions office's view is not an adjudication. It corroborates; it does not
+establish, and nothing here rests on it.
+"""
+
+[the_seasonal_leads]
+what = "A prior defect this record did not create and does not cure."
+finding = """
+The index's own `verification` header says the seasonal section "carries
+unverified model-generated leads whose every citation and text requires
+collation against the controlling edition before any evidentiary reuse". That
+is 533 scripture-sourced propers holding 1,059 book-references, none of them
+read at a witness. `guidance/sources.md` forbids source text routing through a
+model in terms, and a citation produced by recall is the same defect wearing
+the costume of a number.
+
+This lane did not touch them. It is recorded here because an acquisition record
+that reports the sanctoral gap while passing over 1,059 unread seasonal
+citations would be describing the smaller of the two problems. The route this
+lane proved — read the Ordo's page images, encode with `tools/citations`,
+convert psalms with `scripts/_psalms` — is the route that would clear them, at
+roughly one artifact page per two celebrations.
+"""
+
+# ---------------------------------------------------------------------------
+# The works. `surveyed` means this lane retrieved bytes or read the
+# distributor's own terms; it never means the work was collated.
+# `redistributable` means this repository could lawfully republish the exact
+# bytes. `landed` means payload from it was written into the calendar index.
+# ---------------------------------------------------------------------------
+
+[[works]]
+id = "ordo-lectionum-missae-1981-latin"
+label = "Ordo lectionum Missae, editio typica altera, 1981"
+what_it_carries = """
+The Proprium de Sanctis at nn. 515-707, one numbered entry per celebration,
+each giving the Common it is taken from where it takes one, and the First
+Reading, Responsorial Psalm, Alleluia verse and Gospel with cross-reference
+numbers into the Communia. It is the primary witness for everything this lane
+needed except the antiphons and the orations.
+"""
+already_registered = true
+registered_as = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+surveyed = true
+survey_method = """
+The whole 21,487,058-byte PDF was retrieved over HTTPS from the Internet
+Archive item OLM1981 with curl on 2026-08-01. Its SHA-256 is
+ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d, which matches
+the already-registered artifact exactly, so no new artifact identity arises.
+The Adobe Paper Capture text layer was extracted locally as a finding aid to
+locate the Proprium de Sanctis; every citation actually used was then read in
+page images rendered at 200 dpi. Artifact page N is printed page N-54 through
+the Proprium de Sanctis.
+"""
+rights = "holy-see-post-1929"
+may_publish_text = "no"
+redistributable = false
+rights_basis = """
+A page-image scan of a 1981 Vatican liturgical book whose publisher asserts
+copyright; the registered artifact is `storage = restricted` on that ground and
+this lane did not disturb it. Lawful project access is reading, not
+redistribution. No payload from it is in the repository and none may be. What
+was taken is citations, under `the_citation_question`.
+"""
+landed = true
+landed_what = """
+The Lectionary citations of six celebrations, read at 200 dpi on artifact pages
+346-348 (printed 292-294), nn. 583 and 586-592. See `[landed]` below.
+"""
+
+[[works]]
+id = "ordo-lectionum-missae-english-liturgy-office"
+label = "Ordo lectionum Missae, Praenotanda, English, Liturgy Office of England and Wales"
+what_it_carries = "The Prologue and the numbered Praenotanda only. No table of readings."
+already_registered = true
+registered_as = "artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13"
+surveyed = true
+survey_method = "Read from its registered artifact manifest; not refetched, because the manifest records its extent and the extent excludes what this lane needs."
+rights = "unresolved"
+may_publish_text = "no"
+redistributable = false
+rights_basis = "The registered manifest records that no statement establishing repository redistribution was located for this file or the approved English it carries."
+landed = false
+why_not = "It carries no sanctoral formulary at all. Named and dismissed on extent, not on rights."
+
+[[works]]
+id = "missale-romanum-2002-typica-tertia"
+label = "Missale Romanum, editio typica tertia, 2002"
+what_it_carries = """
+The Proprium de Sanctis with the antiphons and orations of every celebration,
+and the Commons. It is the ONLY witness on disk to the two things this lane
+could not land, and it may not be published from.
+"""
+already_registered = true
+registered_as = "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+surveyed = true
+survey_method = "Identity read from the registered edition and from missal-acquisition-audit-v1.toml, which fetched the whole 828-page book and hash-matched it. Not refetched here."
+rights = "holy-see-post-1929"
+may_publish_text = "no"
+redistributable = false
+rights_basis = "The copyright leaf names the Administratio Patrimonii Sedis Apostolicae. Registered `storage = restricted`."
+landed = false
+why_not = """
+An antiphon of the postconciliar sanctoral is often not scripture at the point
+where it could be cited: the Missal prints a text, and where that text is
+scriptural the Missal gives a reference beside it, but where it is not, the
+words are the only thing there is, and the words may not be published. Reading
+the book to recover the SCRIPTURAL antiphons' references is a real and lawful
+route and is the largest single piece of work this record hands on. It was not
+begun here, because doing it half way and stopping would leave a sanctoral in
+which some antiphons are present and the reader cannot tell why the rest are
+not.
+"""
+
+[[works]]
+id = "missale-romanum-1970-typica"
+label = "Missale Romanum, editio typica, 1970"
+what_it_carries = "A whole-book OCR text layer including the Proprium de Sanctis, held remotely at the Internet Archive."
+already_registered = false
+surveyed = true
+survey_method = "Identity and extent read from missal-acquisition-audit-v1.toml, which fetched the whole 1,130,868-byte text layer and checked it to the Index Generalis. Not refetched here."
+rights = "holy-see-post-1929"
+may_publish_text = "no"
+redistributable = false
+rights_basis = "Same claim as the 2002 book. The audit further records that a sibling corpus imported this text under a public-domain assumption that is not this project's and must not travel with the bytes."
+landed = false
+why_not = "It witnesses the 1970 state, not the 2002 typical edition this calendar declares, and it may not be published from either."
+
+[[works]]
+id = "roman-missal-english-2011"
+label = "The Roman Missal, third edition, English, ICEL 2010/2011"
+what_it_carries = "The whole sanctoral in the approved English."
+already_registered = false
+surveyed = true
+survey_method = "Rights read in ICEL's own published policies, registered as work.international-commission-on-english-in-the-liturgy.publication-policies."
+rights = "third-party-copyright"
+may_publish_text = "no"
+redistributable = false
+rights_basis = "Settled in liturgical-english-rights-v1.toml. ICEL's one royalty-free class is a one-off congregational reprint, which a permanent website fails on its face."
+landed = false
+
+[[works]]
+id = "lectionary-for-mass-us"
+label = "Lectionary for Mass, United States, 1998/2001"
+what_it_carries = "The sanctoral readings in the approved English, in NAB numbering."
+already_registered = false
+surveyed = false
+rights = "third-party-copyright"
+may_publish_text = "no"
+redistributable = false
+rights_basis = """
+A conference translation under Liturgiam authenticam n. 117, with the
+Confraternity of Christian Doctrine holding the NAB text under it. Not
+surveyed: no route was pursued, because the rights answer is the same as the
+Missal's and because its citations are in NAB numbering, which would introduce
+a third numbering system into a file that already carries two.
+"""
+landed = false
+
+[[works]]
+id = "litcal-liturgical-calendar-api"
+label = "Liturgical Calendar API (LitCal), John Romano D'Orazio and contributors"
+url = "https://github.com/Liturgical-Calendar/LiturgicalCalendarAPI"
+what_it_carries = """
+The single most promising find of this survey, and the one that had to be
+refused. Under `jsondata/sourcedata/rite/roman/` it ships:
+  lectionary/sanctorum/{la,en,it,fr,nl,hr}.json  - 210 sanctoral celebrations,
+      each with first_reading, responsorial_psalm, gospel_acclamation, gospel
+      and where applicable second_reading, as CITATIONS with no reading text;
+      four entries nest per-form sub-objects (vigil/day, or three schemas)
+  missals/propriumdesanctis_1970/propriumdesanctis_1970.json - 187 sanctoral
+      entries with month, day, event_key, grade, `common`, calendar and color;
+      21 distinct Common values over 106 entries that take one, and `Proper` on
+      the other 75
+  missals/propriumdesanctis_2002/ and _2008/ - the later editions' departures
+It maps almost one to one onto the 202 sanctoral, Marian and Christological
+placeholders in this calendar. It carries no antiphons.
+"""
+already_registered = false
+surveyed = true
+survey_method = """
+Five files retrieved whole with curl from raw.githubusercontent.com at HEAD on
+2026-08-01 and hashed: sanctorum/la.json (38,418 bytes,
+9b7d8da8594b12f7...), propriumdesanctis_1970.json (51,570 bytes,
+26af3c71fb362f63...), its i18n/la.json (12,018 bytes), LICENSE (11,357 bytes)
+and the PropriumDeSanctis schema (3,393 bytes). Structure counted locally with
+python. Eight formularies were then collated against the Ordo lectionum page
+images; see `[collation]`.
+"""
+rights = "unresolved"
+may_publish_text = "n/a - it carries no liturgical text"
+redistributable = false
+rights_basis = """
+GitHub reports the repository as Apache-2.0 and a full Apache-2.0 LICENSE is
+present, but its `{yyyy} {name of copyright owner}` fields are the unfilled
+boilerplate and there is no NOTICE file (the path 404s). Nothing in the
+repository scopes the licence over the JSON data as distinct from the PHP code,
+and the README says the data "is based on official sources", listing the five
+editions of the Roman Missal and magisterial documents — that is, it is derived
+from books whose publisher claims copyright, and the project makes no
+representation that the underlying content was theirs to license. The README
+does not list the Ordo lectionum Missae among its sources at all, although it
+ships a lectionary tree; the provenance of the sanctoral citations is therefore
+unstated by the compiler.
+
+This repository has been here before and recorded the lesson:
+missal-acquisition-audit-v1.toml, rejecting Divinum Officium, says "An MIT
+licence on a repository is not evidence that the text inside it was the
+repository's to license." The same applies, and the same verdict follows.
+"""
+accuracy_verdict = "refused"
+accuracy_basis = "See `[collation]`. Two of eight formularies collated against the primary witness diverge, one of them wholly."
+landed = false
+why_not = """
+Refused on accuracy, not only on rights. The rights question could have been
+put to the maintainer; the accuracy question is settled by the bytes. Note that
+a lane is free to use it as a LEAD — as an index of which celebrations have
+proper readings, so that the Ordo's pages are opened in the right order — and
+that is what its value is.
+"""
+
+[[works]]
+id = "tamil-catholic-lectionary"
+label = "Tamil Catholic Lectionary, Jayarathina Madharasan-Chevuru"
+url = "https://github.com/jayarathina/Tamil-Catholic-Lectionary"
+what_it_carries = """
+The most complete open answer to the gap, and the one to pursue next.
+`MySQL/liturgy_lectionary_table_readings__list.sql` (203,150 bytes) is a
+three-column table of 4,000 rows over 1,185 day identifiers. Rows of `type = 9`
+carry the Common a celebration takes: 191 of them, 179 on General Roman
+Calendar sanctoral days, over the Lectionary's own sevenfold division -
+`_Church`, `_Mary`, `_Martyr`, `_Pastor`, `_Doctor`, `_Virgin`, `_Saint` - with
+the alternatives encoded as the rubrics state them (`_Martyr or _Pastor`) and
+sub-selection as `_Pastor~6`. The seven Commons carry 295 reading options
+between them, structured by slot with alternatives and short forms. 204 of the
+231 sanctoral days carry proper citations, 152 of them beside a Common pointer,
+which is the correct real-world shape - a proper Gospel with the rest from the
+Common. No antiphons.
+"""
+already_registered = false
+surveyed = true
+survey_method = """
+Surveyed by a delegated read-only lane using curl on whole files, with sizes
+and digests retained; its structural counts are reported as given and were not
+re-derived here. The LICENSE was refetched and read first-hand by this lane on
+2026-08-01 (1,210 bytes, sha256 88d9b4eb60579c19...).
+"""
+rights = "public-domain-dedication-by-the-compiler"
+may_publish_text = "n/a - it carries no liturgical text"
+redistributable = false
+rights_basis = """
+The LICENSE is the Unlicense, an unconditional dedication of the author's work
+to the public domain, and it is the cleanest grant found anywhere in this
+survey. It is nonetheless not a basis for redistribution here, for the reason
+that governs this whole class: the author can dedicate his own work and cannot
+dedicate the compilation he keyed it from. Nothing in the repository states
+where the citation table came from; it was evidently taken from a printed Tamil
+lectionary published under the Indian conference's copyright. Under
+`the_citation_question` a citation may be published whatever its licence, so the
+grant matters less than it looks - what matters is whether the citations are
+RIGHT.
+"""
+accuracy_verdict = "unresolved"
+accuracy_basis = """
+Two risks, one of them declared by the author. The README says the verse
+divisions follow the official Tamil lectionary and that the English and Tamil
+lectionaries divide verses differently - so a sub-verse letter such as `14b`
+may not be the Latin Ordo's. Book names are Tamil abbreviations and are
+mechanically mappable. Nothing has been collated against the Ordo lectionum,
+which is the check that decided the LitCal question and is the check this one
+needs.
+"""
+landed = false
+why_not = """
+Not collated. It is the strongest candidate and the natural next lane: 179
+Common pointers and 204 sanctoral reading sets, against a primary witness this
+repository can already open at page images. Collating a sample of it against
+the Ordo would settle it in an afternoon, and the verse-subdivision risk is
+precisely what such a sample would measure.
+"""
+
+[[works]]
+id = "romcal"
+label = "romcal"
+url = "https://github.com/romcal/romcal"
+what_it_carries = """
+`rites/roman1969/src/calendars/general-roman/index.ts` holds 220 General Roman
+Calendar entries with no duplicate keys, of which 139 carry a `commonsDef` over
+18 distinct Commons and 81 carry `Common.None`. No antiphons and no Lectionary
+citations anywhere in the repository.
+"""
+already_registered = false
+surveyed = true
+survey_method = "Repository metadata read from the GitHub API by this lane on 2026-08-01: MIT, 11,665 KB. Data tree surveyed by a delegated read-only lane using curl."
+rights = "unresolved"
+may_publish_text = "n/a - it carries no liturgical text"
+redistributable = false
+rights_basis = """
+Bare MIT over "the Software", with no mention of data. The data itself settles
+the question against the licence: 208 of the 220 entries carry a source comment
+reading `mr_la_2008_ed3` - the 2008 emended third typical edition of the
+Missale Romanum - and the README says the calendar entries are "pulled from the
+missal and official sources" and that "the accuracy of all calendars might not
+be ensured". A project that records in its own data that it transcribed a Holy
+See copyright book is not thereby licensing that book.
+"""
+landed = false
+why_not = """
+Its value is as a SECOND OPINION, not as a source. Two independent
+transcriptions of a saint's Common disagreeing is a signal worth catching, and
+romcal is the only other transcription of the Commons this survey found. Use it
+that way and never as the licence basis.
+"""
+
+[[works]]
+id = "calendarium-romanum"
+label = "calendarium-romanum, Jakub Pavlik"
+url = "https://github.com/igneus/calendarium-romanum"
+what_it_carries = """
+Nothing this lane needs, and it says so itself: the README limits the project's
+scope to "liturgical calendar in a narrow sense" and states that it "doesn't
+provide functionality specific for individual liturgical books". Its data files
+carry day, rank, colour, identifier and title, with no field for a Common, an
+antiphon or a reading. Its `liturgical_law/` directory does carry the Latin of
+the 1969 and 2002 Universal Norms, the Ordo lectionum praenotanda and seven CDW
+decrees as a literate test suite; that is law, not propers.
+"""
+already_registered = false
+surveyed = true
+survey_method = "README refetched and read first-hand by this lane on 2026-08-01 (24,476 bytes, sha256 a02c52fb284fd475...); data tree surveyed by a delegated read-only lane."
+rights = "lgpl-3.0-or-mit"
+redistributable = true
+rights_basis = """
+GitHub reports no licence because there is no LICENSE file, and this lane
+initially recorded that as "no licence, so not redistributable". That was
+wrong, and the correction is recorded rather than quietly applied: the licence
+IS stated, twice - README section License reads "dual licensed: freely choose
+between GNU/LGPL 3 and MIT", and the gemspec carries
+`s.licenses = ['LGPL-3.0', 'MIT']`. A licence-detection tool's silence is not a
+licence's absence, which is the same defect as everything else in this file
+wearing another costume.
+
+One hygiene note for anyone who does take it: `data/universal-en.txt` carries a
+front-matter comment naming the English Wikipedia "General Roman Calendar"
+article as its source, which is CC BY-SA and is being redistributed under
+LGPL/MIT without attribution.
+"""
+landed = false
+why_not = "Redistributable and empty of what is wanted. It is named here so that the next lane does not survey it again."
+
+[[works]]
+id = "westhong-catholic-daily-readings"
+label = "catholic-daily-readings, West Wong"
+url = "https://github.com/westhong/catholic-daily-readings"
+what_it_carries = """
+`data/lectionary/readings.json` (1,582,805 bytes): 1,799 records over 1,763
+dates from 2023-01-01 to 2027-10-31, citation-only by design with no scripture
+text, 1,798 of them carrying a Lectionary number. Its `wiki/` also holds the
+USCCB correspondence quoted under `the_citation_question`.
+"""
+already_registered = false
+surveyed = true
+survey_method = "Surveyed by a delegated read-only lane using curl. The copyright-correspondence page was refetched and read first-hand by this lane on 2026-08-01."
+rights = "unresolved"
+redistributable = false
+rights_basis = "No LICENSE file. MIT is claimed only in prose on a wiki page. A claim in prose is not a grant."
+accuracy_verdict = "refused"
+accuracy_basis = """
+The shape is wrong and the provenance is worse. It is DATE-keyed, not
+celebration-keyed, so it records only the Mass actually celebrated on a date in
+a year: 1,737 of 1,763 dates hold exactly one record, which means an optional
+memorial that was superseded has no entry at all. This calendar is keyed by
+celebration and needs every formulary, superseded or not. It is also the United
+States calendar. And the repository ships a 1.86 MB `hallucination-db.json` and
+an 866 KB hallucination log, being a running record of an automated job
+re-checking entries against the live source and finding stored citations
+truncated or invented - the data passed through a generative phase before its
+scrape-verification. Reviewed, not authoritative.
+"""
+landed = false
+
+[[works]]
+id = "graduale-romanum-digital-editions"
+label = "Digital editions of the Graduale Romanum 1974 and the Graduale Simplex"
+what_it_carries = "The sung Propers, including the sanctoral Introits and Communions that are the antiphons this lane could not reach."
+already_registered = false
+surveyed = true
+survey_method = "Surveyed by a delegated read-only lane using curl over the Internet Archive metadata API, GregoBase, CMAA and four GitHub repositories."
+rights = "third-party-copyright"
+may_publish_text = "no"
+redistributable = false
+rights_basis = """
+No lawfully redistributable digital edition was located, and the near misses
+say why. The Church Music Association of America publishes a United States
+Copyright Office letter of 4 October 2006 reporting no renewal for the 1953
+Graduale and the 1952 Liber usualis, which is why it may host those; the letter
+says nothing about the 1974 Graduale Romanum, a separate later work still in
+term. The Internet Archive's 1974 Desclee copy is access-restricted with no
+licence. GregoBase releases its own transcriptions under CC0 and its maintainer
+states plainly that he has no permission from Solesmes for the scans he hosts
+and relies on a forum "general consensus" that the melodies rather than the
+books are free - which is a position, not a licence - and it attests only 43
+Introits and 37 Communions as appearing in the 1974 Graduale in any case. One
+GitHub repository mirrors full scans of the Graduale, the Gregorian Missal and
+the Ordo cantus Missae with no licence file at all; it is an apparent
+infringing mirror and this project must not touch it. A Portuguese adaptation
+of the Graduale Simplex asserts CC BY-SA 4.0 over two encumbered upstreams.
+"""
+landed = false
+
+[[works]]
+id = "gregorien-info"
+label = "Gregorianisches Repertoire, gregorien.info, Universitat Tubingen"
+url = "https://gregorien.info/"
+what_it_carries = """
+On its own description, the only resource found that has the SHAPE the antiphon
+gap needs: 10,164 Latin chants, 5,459 links from chant texts to 65 biblical
+books, and per chant an indication of its liturgical place in the postconciliar
+calendar. That is a day-to-chant-to-scripture-citation graph over the reformed
+calendar.
+"""
+already_registered = false
+surveyed = false
+survey_method = """
+Attempted by a delegated read-only lane on 2026-08-01. Two pages were retrieved
+and the host then refused connections across six retries, so neither the
+imprint nor a sanctoral calendar page could be read and no rights statement was
+found. Recorded as ATTEMPTED AND NOT COMPLETED rather than as absent.
+"""
+rights = "unresolved"
+redistributable = false
+rights_basis = "No licence statement was located, and an unlicensed academic database is all rights reserved by default."
+landed = false
+why_not = """
+Unresolved rights, and two substantive caveats even if they resolved. These are
+Graduale antiphons, which for many memorials are not the Missal's own Entrance
+and Communion antiphons; and most of this calendar's placeholders are memorials
+with no proper Graduale chant, which take the Common there too. Worth one more
+attempt; not worth a plan.
+"""
+
+[[works]]
+id = "wikimedia-general-roman-calendar"
+label = "Wikipedia and Wikisource, General Roman Calendar and lectionary pages"
+what_it_carries = "Dates, titles and ranks. Nothing else."
+already_registered = false
+surveyed = true
+survey_method = """
+Raw wikitext of the English Wikipedia article pulled through the MediaWiki API
+by a delegated read-only lane (45,297 bytes): zero matches for `antiphon`,
+`Common of`, `lectionar` or `Introit`. Wikisource searched under two queries;
+its top hits are the 1913 Catholic Encyclopedia and the 1911 Britannica, and
+nothing postconciliar exists there.
+"""
+rights = "cc-by-sa-4.0"
+redistributable = true
+rights_basis = "CC BY-SA 4.0, which would require share-alike on any derived work - a real cost, and moot here."
+landed = false
+why_not = "Redistributable and carries none of the three things wanted. Named so the next lane does not survey it again."
+
+# ---------------------------------------------------------------------------
+# The collation that decided it.
+# ---------------------------------------------------------------------------
+
+[collation]
+what = "Eight sanctoral formularies, read in the Ordo lectionum page images and compared with LitCal."
+method = """
+Artifact pages 346-348 of internet-archive-scan-pdf-ed4bc14e (printed pages
+292-294) were rendered at 200 dpi and read. They carry nn. 583-592 without a
+break, so the sample is a contiguous stretch of the book rather than a choice
+of convenient entries, and it spans every shape the Proprium de Sanctis has: a
+memorial taking a Common, a memorial with proper readings, a solemnity with
+distinct Vigil and Day formularies, and a celebration this calendar does not
+carry.
+"""
+sample = 8
+divergences = 2
+divergence_1 = """
+DECISIVE. At the Nativity of Saint John the Baptist, the Ordo prints n. 586 Ad
+Missam in Vigilia and n. 587 Ad Missam in die with entirely different readings.
+LitCal's `NativityJohnBaptist` gives its `vigil` and its `day` objects
+byte-identical values, and the values are the Vigil's. On the Solemnity itself
+it therefore serves the Vigil Mass's four readings. A page that took it would
+resolve cleanly, print four well-formed citations, and be wrong about the whole
+Mass of a solemnity of the General Roman Calendar.
+"""
+divergence_2 = """
+At Saints John Fisher and Thomas More the Ordo prints the Alleluia verse at
+Mt 5, 10 (n. 717,1); LitCal gives Luke 9:24. This one is not necessarily an
+error — a later national lectionary may appoint differently — but LitCal
+declares no edition for its lectionary data at all, so the divergence cannot
+even be attributed, which is itself the finding.
+"""
+numbering_finding = """
+A third class, systematic rather than per-entry. The Ordo lectionum 1981 prints
+its responsorial psalms in VULGATE numbering — Ps 70, Ps 138, Ps 88, Ps 36,
+Ps 18, Ps 33, Ps 15, Ps 123 across this sample, verified in the page images.
+LitCal silently converts some to Hebrew (Psalmo 16, 40, 71, 126) and renders
+others in a dual form (Psalmo 88 (89), 36 (37), 18 (19)), with nothing saying
+which convention an entry follows. That is exactly the disease this calendar
+already records under `open_collation_items` and pays for with 28 declared
+`psalm_numbering_exceptions`, and importing 210 more entries of it would have
+multiplied it.
+
+Worth recording against `guidance/versification.md`, which states that the Ordo
+lectionum cites in Nova Vulgata numbering and that the Nova Vulgata numbers
+psalms Hebrew-first. Whatever is true of the Nova Vulgata, the 1981 Ordo's own
+printed pages do not follow it for the responsorial psalms, and this lane read
+them.
+"""
+verdict = """
+A compilation with a two-in-eight substantive divergence rate from the primary
+witness on a contiguous sample, whose provenance its own maintainers do not
+state, is a lead and not a witness. It is not landed. The lesson is the one the
+repository already holds at guidance/the-shape.md section 5: a pointer that
+resolves to the wrong formulary gives a saint a Mass that is not his, resolves
+cleanly, and looks right.
+"""
+
+# ---------------------------------------------------------------------------
+
+[landed]
+what = "Six Masses, eight formularies, thirty-four Lectionary citations."
+masses = [
+  "saint-aloysius-gonzaga-religious",
+  "nativity-saint-john-baptist",
+  "saint-cyril-alexandria-bishop-doctor-church",
+  "saint-irenaeus-bishop-martyr-doctor-church",
+  "saints-peter-paul-apostles",
+  "first-martyrs-holy-roman-church",
+]
+witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+loci = "artifact pages 346-348, printed pages 292-294, nn. 583 and 586-592"
+how = """
+Every passage was encoded by `tools/citations`'s own `parse_citation`, and
+every responsorial psalm was converted from the Ordo's printed Vulgate number
+by `scripts/_psalms`, which derives from the tracked verse-level concordance
+rather than restating a correspondence table. Nothing in the landed payload is
+a hand-typed structure. `make check-calendar-masses` passes and adds no new
+psalm-numbering exception, which independently confirms that all eight
+converted psalms resolve inside their Hebrew chapters.
+"""
+what_is_absent_and_why = """
+Each of the six Masses carries a `notes` line saying, in terms, that its
+Entrance and Communion Antiphons and its three orations are printed in the
+Missal and not in the Ordo, and are absent because no witness to them is on
+disk that this project may publish. Where the Ordo heads a celebration
+`De Communi ...`, the heading is recorded in the same note and NOT resolved
+into a `takes_from`, because this calendar carries no Common as a Mass and a
+pointer to a Common that does not exist would resolve to nothing.
+"""
+not_landed_from_the_same_pages = """
+n. 584, Saint Paulinus of Nola, and n. 585, Saints John Fisher and Thomas More,
+were read on the same pages and were NOT landed. This calendar joins both under
+one key, `saint-paulinus-nola-bishop`, rank `Optional memorials`, because 22
+June carries more than one optional memorial and the index does not separate
+them. Writing one saint's readings onto a key that stands for several would
+attribute them to all of them. The joined-key problem is already recorded in
+rubrics.yaml under `unsettled`; this is a second consequence of it.
+"""
+
+[counts]
+counts_note = """
+Derived from the [[works]] table, not typed beside it. If these disagree with
+the table, the table is right. Recompute with:
+  python3 -c 'import tomllib;d=tomllib.load(open("src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml","rb"));w=d["works"];print(len(w),sum(1 for x in w if x["surveyed"]),sum(1 for x in w if x["redistributable"]),sum(1 for x in w if x["landed"]))'
+"""
+works_named = 14
+works_surveyed = 12
+works_redistributable = 2
+works_landed = 1
+redistributable_note = """
+Two of fourteen, and neither carries anything wanted: `calendarium-romanum`
+under LGPL-3.0-or-MIT and the Wikimedia calendar pages under CC BY-SA. Every
+witness that carries a sanctoral antiphon, oration, Common pointer or Lectionary
+citation is either encumbered or unlicensed. That is the survey's central
+finding, and it is why the landing rests on `the_citation_question` rather than
+on anybody's grant.
+"""
+
+placeholder_masses_before = 205
+placeholder_masses_after = 199
+placeholder_propers_before = 210
+placeholder_propers_after = 202
+
+[open_items]
+the_antiphons = """
+The largest remaining piece, and it is bounded. The scriptural Entrance and
+Communion antiphons of the sanctoral are citable under
+`the_citation_question` exactly as the readings are, and the Missale Romanum
+2002 is already registered and on disk. The work is to read its Proprium de
+Sanctis at page images and record, per celebration, the antiphon's scripture
+reference where it has one and the fact that it has none where it has not. That
+is roughly 180 celebrations over the Missal's sanctoral pages. Nothing in the
+rights position blocks it.
+"""
+the_commons = """
+This calendar carries no Common of Saints as a Mass, so the 106 sanctoral
+entries that take one have nowhere to point. Adding the Communia as Masses is a
+prerequisite for `takes_from`, and it is the same acquisition problem one level
+down: the Ordo gives the Communia's readings at nn. 702-742 and the Missal
+gives their antiphons and orations. Until they exist, a `De Communi` heading is
+recorded in prose and not resolved, which is what this lane did.
+"""
+the_orations = """
+Not reachable by the ancient-source route for most of the sanctoral. That route
+works because the reform restored many temporal orations verbatim from
+sacramentaries out of copyright; the sanctoral of the reformed calendar
+includes a great many saints canonised after those books were written, whose
+orations were composed in the twentieth century and have no ancient ancestor at
+all. The 70 orations already served are all seasonal, and the postconciliar
+translations inventory's 219 unserved entries are all seasonal too. Anyone
+extending the route to the sanctoral should measure the ancestor coverage
+first; this lane expects it to be low and did not measure it.
+"""
+the_seasonal_citations = "See `the_seasonal_leads`. 1,059 book-references stand unread."
+the_next_lane = """
+Collate `tamil-catholic-lectionary` against the Ordo lectionum page images, the
+way `[collation]` did for LitCal, and on a sample chosen the same way — a
+contiguous stretch of the book rather than convenient entries. Two questions
+decide it: do its Common pointers agree with the Ordo's `De Communi` headings,
+and do its verse subdivisions agree with the Ordo's, given that its author warns
+they follow the Tamil lectionary's divisions. If it survives, it supplies 179
+Common pointers and 204 sanctoral reading sets at one stroke, and romcal is the
+independent second opinion on the Commons.
+"""
+already_cleared = """
+Do not re-survey these; they were named, opened and found empty of what is
+wanted: `calendarium-romanum`, the Wikimedia calendar pages, Universalis,
+Evangelizo, Corpus Christi Watershed, Cantus Index and its medieval-manuscript
+federation, Divinum Officium (pre-1962 only), and the several romcal-wrapping
+API repositories. GregoBase is CC0 over its own transcriptions and attests only
+43 Introits and 37 Communions as appearing in the 1974 Graduale, which is a
+rounding error against a sanctoral.
+"""
