@@ -1,4 +1,4 @@
-# Recensions: the missal, and what was done to it afterwards
+# Recensions: one rite, held in more than one state
 
 A design study for carrying more than one state of the same rite — the Roman
 Missal as it stood before the Holy Week reform of 1955, and the 1962 typical
@@ -12,14 +12,9 @@ invert the history the whole apparatus exists to keep straight. A third state �
 the reformed Holy Week of 1956 to 1960 — then sits between them rather than
 having to be squeezed alongside.
 
-It is also an editorial position, and this study states it as one rather than
-smuggling it in as a technical necessity: the maintainer holds that what the 1962
-book did to the missal is among the things this project exists to document. The
-structural argument above stands on its own without that; the reader should know
-both are present, and that the repository elsewhere declines partisan naming —
-it settled on "1962 Missal" and "Postconciliar Missal" precisely to avoid taking
-that side in a control a reader cannot argue with. A design document may hold a
-position. A dropdown may not.
+The base is chosen on that ground and on no other. It is a claim about which
+book came first, not about which is better, and this document takes no position
+on the second question — see `editorial.md`, "No side in what is described".
 
 **Nothing here has been built.** It is written now, before any data moves,
 because the shape is cheap to choose and expensive to change once a second

@@ -14,6 +14,36 @@ A genre profile may add stricter requirements but may not weaken this standard. 
 
 These publications aid study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice.
 
+## No side in what is described
+
+The library documents what was and what is. Where the Church has spoken, the act
+stands as it stands: this project records it, dates it, cites it, and does not
+grade it. It carries no position on whether a reform was an improvement, whether
+one recension is preferable to another, or which of two lawful uses a reader
+should prefer — and it does not arrive at one by implication, through the order
+things are listed in, the adjectives attached to them, or the terms chosen to
+name them.
+
+This is a constraint on the writing, not a reticence about the facts. Say plainly
+what a revision changed, what it removed, what it left, and what was said about
+it at the time, with the sources. A reader who wants to judge is owed the
+evidence to judge with; they are not owed our judgement wearing the costume of a
+finding.
+
+Three practical consequences, each of which has already decided a question here:
+
+- **Naming is where partisanship enters first.** Terms in live polemical use —
+  "Novus Ordo", "Traditional Latin Mass", "Extraordinary Form", "Ordinary Form" —
+  are not used to label a thing in the apparatus, because a control a reader
+  cannot argue with should not take a side. Name a book by its own title and
+  date: "1962 Missal", "Postconciliar Missal".
+- **A structural choice is not an editorial one.** The pre-1955 book is the base
+  of `recensions.md` because it came first and a descendant cannot derive its
+  ancestor. That is chronology, and it implies nothing about merit.
+- **Where the sources disagree, carry the disagreement.** Preserving it is
+  already required above; the point here is that a dispute is not resolved by
+  choosing the side the writer finds congenial and omitting the other.
+
 Public-alpha publication has six concerns: source integrity, rights and lawful
 distribution, safety, reproducibility and artifact identity, mechanical
 validity, and basic visual usability. A publication that satisfies those
