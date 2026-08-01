@@ -100,6 +100,7 @@ WEB_EDITION_CHECKER := tools/tpt check-web-edition
 WEB_EDITION_TOOL := tools/tpt web-edition
 CURRICULUM_STRUCTURE_CHECKER := tools/tpt check-curriculum-structure
 PDF_REVIEW_TOOL := tools/tpt pdf-review
+DOCUMENT_LIBRARY_TOOL := tools/tpt document-library
 PUBLIC_ALPHA_TOOL := tools/tpt public-alpha
 RELEASE_BINDINGS_TOOL := tools/tpt release-bindings
 RESEARCH_STALENESS_TOOL := tools/tpt research-staleness
@@ -219,6 +220,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-curriculum-sources \
 	check-curriculum-structure \
+	check-document-catalogue document-catalogue \
 	public-site public-preview \
 	dependencies-arch install-dependencies-arch \
 	verify-public-site verify-public-preview \
@@ -426,6 +428,8 @@ help:
 		'make web-editions  Generate Markdown for every eligible leaf of $$PROVIDER' \
 		'make install-web-editions  Publish reviewed Markdown into the tracked web/ tree' \
 		'make check-web-editions-current  Prove every tracked web edition matches current sources' \
+		'make check-document-catalogue  Confirm each derived title against its PDF and the catalogue against the sources' \
+		'make document-catalogue  Rewrite the browser catalogue of every document' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
@@ -433,7 +437,7 @@ help:
 		'make verify-public-preview  Recheck the existing private preview artifact' \
 		'make verify-public-site  Recheck the existing public artifact' \
 		'make check-release-bindings  Report stale shared site and authorization-record bindings' \
-		'make refresh-release-bindings [ADOPT=1]  Refresh shared site-authorization inputs; publication hashes are generated' \
+		'make refresh-release-bindings [ADOPT=1] [ONLY="path ..."]  Refresh shared site-authorization inputs; ONLY restricts it to your own paths' \
 		'make approve-release NOTE="..."  Record a dated supplement with the operator instruction, then refresh' \
 		'make add-publication ID=<leaf> CATALOG=<page> [PROVIDER=<p>] [STATUS=hold]  Add an independent alpha record' \
 		'make bibles   Typeset every publishable bible edition complete into build/bibles' \
@@ -467,6 +471,16 @@ check-web-editions:
 
 check-proper-components:
 	@$(PYTHON) $(PROPER_COMPONENT_CHECKER) --provider $(PROVIDER)
+
+# Two claims, and the second is the one worth having. `check` re-derives every
+# document's title out of its own preamble and holds it against the title the
+# built PDF actually carries, because a catalogue's characteristic failure is a
+# name that resolves and resolves wrongly. `structure --check` then proves the
+# tracked catalogue is what those sources produce now, so a document added or
+# retitled without regenerating it cannot reach the site as a stale row.
+check-document-catalogue:
+	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) check
+	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure --check
 
 # Generation is tier one: reproducible Markdown for review, never installed here.
 web-editions:
@@ -538,9 +552,14 @@ verify-public-site:
 check-release-bindings:
 	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) status
 
+# ONLY="path [path ...]" re-records just those paths and carries every other
+# entry forward. Use it whenever anything else is uncommitted in the tree: an
+# unfiltered refresh signs the authorization for whatever a sibling happens to
+# have mid-flight, and the authorization means someone reviewed those bytes.
 refresh-release-bindings:
 	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) refresh \
-		$(if $(ADOPT),--adopt-new-site-sources,)
+		$(if $(ADOPT),--adopt-new-site-sources,) \
+		$(foreach path,$(ONLY),--only $(path))
 
 approve-release:
 	@if [ -z '$(NOTE)' ]; then \
@@ -672,7 +691,7 @@ rebaseline-doc:
 
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
 check: check-metadata check-web-editions check-web-editions-current \
-	check-proper-components \
+	check-proper-components check-document-catalogue \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
 	check-calendar-masses check-calendar-rubrics check-propers-census \
@@ -1112,6 +1131,12 @@ check-plan-sources:
 # sources. Tracked under src/web/data and served as the site's reading data.
 reading-structure:
 	@$(PYTHON) $(READING_PLAN_TOOL) structure
+
+# The catalogue of every document, rewritten from the documents' own sources
+# and from the PDFs they build. Tracked under src/web/data and served to the
+# `texts` reading page, which reads it and walks nothing itself.
+document-catalogue:
+	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure
 
 $(READING_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
 	@$(PYTHON) $(BIBLE_TYPESET_TOOL) render --volume '$*' --out '$(READING_BUILD_ROOT)'

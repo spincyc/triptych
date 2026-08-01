@@ -315,7 +315,11 @@ def describe(divergence: Divergence) -> str:
     return f"recorded {divergence.recorded}, {detail}"
 
 
-def compute_site_hashes(authorization: dict, adopt: bool = False) -> dict[str, str]:
+def compute_site_hashes(
+    authorization: dict,
+    adopt: bool = False,
+    only: list[str] | None = None,
+) -> dict[str, str]:
     site_sources = recorded_site_sources(authorization)
     # Refresh re-derives the recorded inputs only; adoption reconciles the
     # record with the set the renderer currently recognizes.
@@ -325,6 +329,23 @@ def compute_site_hashes(authorization: dict, adopt: bool = False) -> dict[str, s
         path = ROOT / source
         if not path.is_file():
             raise BindingError(f"site source missing: {source}")
+        # `--only` re-records the named paths and carries every other entry
+        # forward at the value it already held.
+        #
+        # Without it this is all-or-nothing, and in a tree where more than one
+        # agent is at work that is not a preference but a fault: adopting your
+        # own changed page also adopts whatever half-finished file a sibling
+        # happens to have on disk. An authorization is a statement that someone
+        # reviewed those bytes, so signing for bytes you have not read is the
+        # one thing it must not be able to do by accident.
+        if only is not None and not any(
+            source == path_only or source.startswith(path_only.rstrip("/") + "/")
+            for path_only in only
+        ):
+            held = site_sources.get(source)
+            if held is not None:
+                hashes[source] = held
+                continue
         hashes[source] = sha256_file(path)
     return hashes
 
@@ -343,7 +364,7 @@ def rewrite_table(text: str, header: str, label: str, rows: list[tuple[str, str]
     return pattern.sub(lambda _: replacement, text, count=1)
 
 
-def refresh(manifest: dict, adopt: bool = False) -> list[str]:
+def refresh(manifest: dict, adopt: bool = False, only: list[str] | None = None) -> list[str]:
     changes: list[str] = []
     authorization = single_authorization(manifest)
     record_path = rights_record_path(authorization)
@@ -357,14 +378,18 @@ def refresh(manifest: dict, adopt: bool = False) -> list[str]:
         for divergence in site_source_divergences(authorization)
         if divergence.kind == "stale"
     }
-    site_hashes = compute_site_hashes(authorization, adopt)
+    site_hashes = compute_site_hashes(authorization, adopt, only)
     recorded = authorization["site_sources"]
     for source in sorted(set(site_hashes) - set(recorded)):
         changes.append(f"adopted site {source}")
     for source in sorted(set(recorded) - set(site_hashes)):
         changes.append(f"retired site {source}")
+    # Report what actually moved, not what diverged. Under `--only` a source
+    # can be stale and deliberately carried forward, and announcing it as
+    # refreshed would describe a write that did not happen.
     for source in sorted(diverged & set(site_hashes) & set(recorded)):
-        changes.append(f"site {source}")
+        if site_hashes[source] != recorded[source]:
+            changes.append(f"site {source}")
     authorization["site_sources"] = dict(sorted(site_hashes.items()))
 
     text = record_path.read_text(encoding="utf-8")
@@ -555,6 +580,15 @@ def main(argv: list[str]) -> int:
         action="store_true",
         help="reconcile the recorded inputs with the renderer's recognized set",
     )
+    refresh_parser.add_argument(
+        "--only",
+        action="append",
+        metavar="PATH",
+        help="re-record only this repository path (repeatable; a directory "
+        "covers what is under it). Every other entry keeps the value it "
+        "already held, so adopting your own work cannot sign for someone "
+        "else's unreviewed bytes",
+    )
     with_examples(
         subparsers.add_parser("status"),
         EXAMPLES["status"],
@@ -582,7 +616,7 @@ def main(argv: list[str]) -> int:
     try:
         manifest = load_manifest()
         if args.command == "refresh":
-            changes = refresh(manifest, args.adopt)
+            changes = refresh(manifest, args.adopt, args.only)
             for change in changes:
                 print(f"refreshed {change}")
             print(f"release bindings exact: {len(changes)} change(s)")
