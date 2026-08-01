@@ -74,8 +74,8 @@ precedence:
       Sunday'}
   - {row: 7, class: I, label: 'The first-class ferias not named above: Ash Wednesday
       and Monday, Tuesday and Wednesday of Holy Week'}
-  - {row: 8, class: I, label: The Commemoration of All the Faithful Departed, which
-      nevertheless yields to an occurring Sunday, note: 'The only row of the table
+  - {row: 8, class: I, label: 'The Commemoration of All the Faithful Departed, which
+      nevertheless yields to an occurring Sunday', note: 'The only row of the table
       that carries its own defeat: quae tamen locum cedit dominicae occurrenti. RG
       16 b says the same from the Sunday''s side.'}
   - {row: 9, class: I, label: The vigil of Pentecost}
@@ -464,8 +464,8 @@ assignment:
     cathedral on the morning of Maundy Thursday: a second Mass of the same liturgical
     day'}
 - {basis: alternative-formulary, keys: [mass-of-the-first-sunday-after-pentecost],
-  note: the Missal's own formulary for the first Sunday after Pentecost, whose slot
-    Trinity Sunday occupies}
+  note: 'the Missal''s own formulary for the first Sunday after Pentecost, whose slot
+    Trinity Sunday occupies'}
 - {basis: alternative-formulary, keys: [mass-of-the-first-sunday-after-epiphany], note: 'the
     Missal''s own formulary for the first Sunday after the Epiphany, whose slot the Holy
     Family occupies. Printed p. 39 - De dominica I post Epiphaniam suo die nihil fit, sed
@@ -501,9 +501,9 @@ assignment:
     of the Lord, so it sits at row 14 and not at row 16, which row 91 confines to second-class
     feasts that are not of the Lord.'}
 - {basis: row-14-second-class-feast-of-the-lord, keys: [purificatione-beatae-mariae-virginis],
-  note: the Missal's own rubric at 2 February holds the Purification "tamquam festum
+  note: 'the Missal''s own rubric at 2 February holds the Purification "tamquam festum
     Domini", which is why it sits at row 14 and not at row 16; RGMR 484 a and 495 follow
-    it}
+    it'}
 - {basis: row-15-sunday, keys: [sunday-within-octave-of-nativity, last-sunday-after-pentecost]}
 - {basis: row-15-sunday, key_matches: '^(epiphany|easter|pentecost|resumed-epiphany)-\d+$'}
 - {basis: row-15-sunday, keys: [septuagesima, sexagesima, quinquagesima, sunday-after-ascension]}
@@ -866,8 +866,8 @@ orations:
   tracked_by:
   - {slot: Secret, locus: RGMR 480-481, what: 'as many as there were orations at the
       beginning of Mass, in the same order and with the same conclusions'}
-  - {slot: Postcommunion, locus: RGMR 505, what: eodem numero, modo et ordine ac orationes
-      in principio Missae}
+  - {slot: Postcommunion, locus: RGMR 505, what: 'eodem numero, modo et ordine ac orationes
+      in principio Missae'}
   prayer_over_the_people:
     locus: RGMR 506
     what: Added after the last postcommunion in Masses OF the ferias of Lent and Passiontide,
@@ -901,7 +901,7 @@ mass_category:
   not_tested:
   - {category: festive Mass, locus: RGMR 301-303}
   - {category: votive Mass, locus: 'RGMR 306-309, 314-317, 326, 328, 341, 384-387'}
-  - {category: First Thursday, First Friday and First Saturday votives, locus: RGMR
+  - {category: 'First Thursday, First Friday and First Saturday votives', locus: RGMR
       385}
   - {category: Requiem and funeral Mass, locus: 'RGMR 391-423'}
   - {category: ritual and nuptial Mass, locus: 'RGMR 378-382, 447-448'}
