@@ -86,6 +86,45 @@ order to satisfy a check. A projection with no stated witnesses is
 unfalsifiable, so the field may not be empty, and each entry must be an artifact
 this library holds.
 
+### Which date belongs to which object
+
+A work and an edition each have a date, and they are dates of different events.
+The identity model above kept them distinct without ever saying so, and the
+silence produced the divergence it was bound to.
+
+- **A work's date is when it was written.** A work is composed once. Augustine's
+  *De Genesi ad litteram* is c. 401–415. It is not 1841.
+- **An edition's date is when that edition was printed or translated**, because
+  that is the event an edition *is*. 1841 is Migne's. This is also the date the
+  edition's path is prefixed with under "Ownership and paths" below — a path to
+  a printing is about the printing.
+- **Bible translations are the exception, and it is deliberate.** For them the
+  translation is the thing: the Douay-Rheims is a 1582–1610 work and the King
+  James a 1611 one, dated by the act of translating. Dating them to the
+  composition of Genesis would be absurd, and no other class of work is dated
+  this way.
+- **A composition date that is a range or disputed is recorded as a range with
+  its basis**; one that is unknown is recorded unknown. Absence is data and has
+  somewhere to live.
+
+**A composition date is never inferred from a printing date.** That inference is
+the defect of [the shape](the-shape.md) §1 in its exact form — a date that
+resolves successfully and wrongly — and it is silent, because the wrong century
+is a well-formed integer.
+
+The consequence for consumers is the reason this matters. Anything ordering or
+filtering by *when this was written* reads the **work's** date; anything asking
+*which printing is this* reads the **edition's**. The catena's chain is ordered
+oldest first, so reading the printing date puts a Reformation commentary ahead
+of a Father.
+
+The divergence, as found: `work.toml` for *De Genesi ad litteram* carries **no
+date field at all** — no work record in the library does — its Migne edition
+carries `date = "1841"`, and the catena renders the work at 415 from
+`text_date` in `src/sources/commentary/fragment-loci.yaml`, restated once per
+fragment. One work, two dates, in two subsystems, with nothing reconciling them,
+and the library holding neither.
+
 Stable IDs are lowercase, machine-readable, and independent of URLs, mutable
 titles, filesystem moves, and provider names. A changed URL does not create a
 new work. Materially changed bytes do create a new artifact identity; a changed
