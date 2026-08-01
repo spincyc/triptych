@@ -42,6 +42,47 @@ Observed slot counts: 1962 is 10 for an ordinary Sunday, 9 in Paschaltide;
 postconciliar is 10 as a base and 11 typically, because the data always carries
 a Gospel Acclamation and 34 of 54 masses carry a second Communion Antiphon.
 
+## The Commons, and what changed on 2026-07-31
+
+The scope note above says the plan "sidesteps the Commons question, which is
+oration-side". It cannot be sidestepped: it is why the 1962 sanctoral is 307
+placeholders. In that book a third-class saint ordinarily takes the **whole
+Mass** from the *Commune Sanctorum* and prints only his own orations, so the
+sanctoral is not 307 formularies to transcribe — it is thirteen Commons plus a
+pointer per day, and the pointer is printed in the book, in lines of the form
+`Missa In medio, de Communi Doctorum [22]`.
+
+Three things landed that day, and the order matters because none of the rest
+was possible without the first:
+
+1. **`takes_from`**, on a mass or on a proper — the schema had no way to say
+   "this mass takes that text", which is the same missing mechanism behind the
+   feria that takes the preceding Sunday and the sequence appointed across a
+   span. `src/sources/calendars/README.md` owns the rule; nothing is copied,
+   and `_calendars.resolve_propers` is the single derivation.
+2. **A `common` section**, holding masses placed by use rather than by the
+   year, with the *Commune Doctorum* transcribed into it and S. Hilarii at
+   01-14 taking it under the Missal's own pointer.
+3. **The 1861 witness's own Common of Saints**, which nobody had opened. It
+   prints the Commons and a Proper of Saints in English, and the 1843 printing
+   of the same translation prints them too, so the sanctoral has the same
+   two-scan detector the temporal has.
+
+What is left, in the order it should be done:
+
+- **Twelve Commons.** Named with their printed page ranges in the 1962 file's
+  `open_collation_items`. Each is a transcription job of the shape the
+  Commune Doctorum entry demonstrates.
+- **The sanctoral pointers.** A first mechanical pass over an independent 1962
+  scan recovered 109 of them keyed by date heading. Do not land that pass until
+  it is corroborated against the CMAA facsimile and mapped onto this file's
+  mass keys: a pointer resolving to the wrong Common gives a saint a whole Mass
+  that is not his, and it resolves cleanly and looks right.
+- **The days' own orations**, which the Missal prints under each date with the
+  saint's name supplied. These are transcription, not derivation — the schema
+  performs no name substitution, and inventing one would be worse than typing
+  the text the book prints.
+
 ## Known defects
 
 **1962 commemorations are not modelled.** They exist only as prose inside the
