@@ -1,0 +1,1589 @@
+schema: triptych-genesis-availability-survey/v1
+updated: '2026-08-01'
+question: for each work the promoted index names on Genesis 1-50, is there a reachable text, and may
+  it be redistributed
+driven_by: src/sources/commentary/genesis-work-aliases.yaml
+probe: scripts/_availability.py then scripts/_reachability.py; neither consults a model
+method_note: 'Every query was issued from the recorded aliases and from nothing else, so a name absent
+  from the alias table was not tried. Rights were read per item from the item''s own metadata and never
+  inferred from the author''s dates: an item with no licenceurl and no rights field is recorded `unresolved`,
+  which is not the same as free and not the same as in copyright.'
+bound_note: '`reachable: text` means at least one Internet Archive item whose title overlaps the work''s
+  aliases carries a machine-readable text layer. It is an UPPER BOUND on reachability and not a confirmed
+  holding: it does not establish that the item is this work, nor that it is the volume containing Genesis.
+  Three of the highest-ranked were checked by fetching the bytes and two of those three fall inside
+  this gap - see `verified_by_fetching_bytes`. Every other row is a lead until its bytes are pulled.'
+totals:
+  index_names_on_genesis: 84
+  distinct_works: 66
+  attributions: 1298
+  works_surveyed: 66
+  works_surveyed_before_this_lane: 10
+  alias_queries_issued: 1746
+  catalogue_candidates_examined: 327
+  works_with_reachable_text_upper_bound: 57
+  works_with_an_affirmative_public_rights_basis: 34
+  works_with_candidates_but_no_text_layer: 4
+  works_with_no_candidate_at_all: 5
+  works_landed_as_holdings: 3
+  fragments_landed: 10
+landed:
+- work: Basil of Caesarea, Homiliae in Hexaemeron
+  fragments: 9
+  extent: Genesis 1:1 to 1:26
+  language: en
+  note: Landed by the pilot lane from Wikisource NPNF 2-8; not re-acquired here.
+- work: Gregory of Nyssa, De hominis opificio
+  fragments: 1
+  extent: Genesis 1:26 to 1:27
+  language: en
+  note: Landed by the pilot lane; one passage holding the whole thirty-chapter treatise.
+- work: Martin Luther, Enarrationes in Genesin
+  fragments: 0
+  extent: Genesis 1 to 9
+  language: en
+  note: 'Landed by THIS lane as a holding (work, edition, four artifacts) and deliberately not yet as
+    fragments. Lenker''s 1904 translation, both volumes whole, 1.68 MB of tracked keyed English. No
+    fragment is written until the catena structure is split: src/web/data/structure/catena/Gen.json
+    is already 606 KB for one chapter''s worth of fragments and the browser fetches it per book. See
+    size_finding.'
+- work: Augustine of Hippo, De civitate Dei
+  fragments: 3
+  extent: Genesis 1
+  language: en
+  note: Landed by another lane before this one; counted here because it renders in the Genesis catena.
+verified_by_fetching_bytes:
+- work: Nicholas of Lyra, Postilla litteralis super totam Bibliam
+  index_rank: 1st, 50/50 chapters, confidence 1.00
+  prior_claim: no machine-readable text in any language
+  finding: CONFIRMED for Genesis.
+  evidence: Two Internet Archive items carry a text layer. postillasupertot00nich is 7,781 bytes of
+    blackletter incunabulum OCR scoring 0.06 on the Latin function-word measure against 0.24 for a Migne
+    scan, and it covers Proverbs, Ecclesiastes and Canticles, not Genesis. Item5.5_25 is 3,322 bytes
+    of a Digital Scriptorium catalogue card for a single cropped leaf with zero images available. Neither
+    is a text and neither is Genesis.
+- work: Hugh of Saint-Cher, Postillae in universa Biblia
+  index_rank: joint 1st by confidence, 44/50 chapters
+  prior_claim: no machine-readable text in any language
+  finding: OVERTURNED as to the work, CONFIRMED as to Genesis.
+  evidence: 'The Lyons Opera omnia IS digitised with a usable Latin text layer: bub_gb_xXJxILOIgIIC
+    (1669) is 8.17 MB scoring 0.138 Latin, Public Domain Mark 1.0. But the four items held are tomus
+    secundus (the Psalter), tomus quartus (Isaiah and Jeremiah) and tomus sextus twice (the Gospels).
+    Tomus primus, which holds Genesis, is not among them. The work is reachable; its Genesis volume
+    is not.'
+- work: Denis the Carthusian, Enarrationes in Genesim
+  index_rank: 3rd, 50/50 chapters
+  prior_claim: no machine-readable text in any language
+  finding: OVERTURNED as to the work, CONFIRMED as to Genesis.
+  evidence: 'The 1896-1935 Montreuil Opera omnia is digitised with a good Latin text layer: doctorisecstati01denigoog
+    is 2.71 MB scoring 0.262 Latin. But the tomes on the Archive run t.19 to t.25, which are the later
+    volumes; volume 1, the Enarratio in Genesim, is not among them. Rights on these items are unresolved:
+    no licenceurl and no rights field, so they could not be tracked even if the right volume were there.'
+- work: Augustine of Hippo, De Genesi ad litteram
+  prior_claim: the hashed Migne PL 34 OCR is unreachable by the retrieval route
+  finding: OVERTURNED.
+  evidence: patrologiae_cursus_completus_lat_vol_034_djvu.txt is 4.6 MB and downloads whole with curl
+    in under a minute, scoring 0.245 on the Latin measure. The pilot's finding that it 'truncates to
+    its front matter' was a property of the model-mediated route, not of the file. Its OCR is still
+    roughly one corrupted word in eight, so it remains a finding aid and not publishable text - but
+    it is reachable, and the two statements are different.
+size_finding:
+  measured_on: '2026-08-01'
+  file: src/web/data/structure/catena/Gen.json
+  total_bytes: 605923
+  fragments_bytes: 459992
+  leads_bytes: 119218
+  fragment_metadata_only_bytes: 15590
+  largest_single_fragment_bytes: 204430
+  fragments_held: 13
+  chapters_those_fragments_touch: 1
+  problem: All thirteen fragments sit on Genesis 1, and the browser fetches the whole book file to render
+    any of the fifty chapters. A reader on Genesis 40 downloads 606 KB to be shown nothing. Luther alone,
+    now held, is 1.68 MB of text; wiring it in unsplit would make Gen.json 2.3 MB, and the 84 works
+    of the index would make it tens of megabytes.
+  proposed_split: 'Keep <Token>.json as a spine holding token, name, chapters, numbering, leads, refusals,
+    blocked, and each fragment''s METADATA only - id, work, author, date, extent, edition, language,
+    rights, locator. Move each fragment''s `text` to its own file, catena/text/<passage_id>.json, fetched
+    only when a chapter the fragment touches is displayed. Measured effect on Genesis today: the spine
+    is about 135 KB against 606 KB now, so chapters 2 to 50 fetch 22 per cent of what they fetch today,
+    and chapter 1 fetches the spine plus only the texts it actually renders. This keeps both constraints
+    browser-core.js sets: counts stay ADDITIVE, because one fragment is one file and a translation of
+    a fragment is another fragment and so another file, and the join stays at READ TIME in the browser.
+    Per-chapter text files were rejected: a fragment spanning chapters would be written into each, which
+    is the multiplication that header forbids and which Rule 6 forbids for a second reason - it would
+    split words written about one chapter into another.'
+  status: PROPOSED, not implemented. No fragment was landed that would make Gen.json larger.
+rights_note: 'Of 327 catalogue candidates examined, the ones carrying a text layer split into an affirmative
+  public-domain or Creative Commons statement and a majority carrying NO rights field at all. 34 of
+  66 works have at least one text-bearing item with an affirmative basis. The rest are not ''in copyright''
+  and are not ''free'': they are unresolved, and guidance/sources.md forbids tracking on an unresolved
+  basis however old the author.'
+works:
+- id: alcuin-interrogationes
+  work: Alcuin of York, Interrogationes et responsiones in Genesim
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 5
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 1
+  wikisource_hits: 35
+  best_candidates:
+  - identifier: proaugustinoresp00pros
+    title: '[Pro Augustino responsiones ad capitula obiectionum Vincenianarum and two other tracts]'
+    year: '1475'
+    rights: public-domain
+    text_bytes: 104020
+  - identifier: questionsanswers00philuoft
+    title: Questions and answers on Genesis
+    year: '1953'
+    rights: unresolved
+    text_bytes: 1284109
+  - identifier: philo0001unse_x2f9
+    title: Questions and answers on Genesis
+    year: '1953'
+    rights: unresolved
+    text_bytes: 1173908
+- id: ambrose-abraham
+  work: Ambrose of Milan, De Abraham
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: images-only
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 47
+  best_candidates: []
+- id: ambrose-cain
+  work: Ambrose of Milan, De Cain et Abel
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 1
+  wikisource_hits: 42
+  best_candidates:
+  - identifier: csel-32-1
+    title: AMBROSE OF MILAN. Exameron. De paradiso. De Cain et Abel. De Noe. De Abraham. De Isaac. De
+      bono mortis
+    year: '1897'
+    rights: public-domain
+    text_bytes: 1835589
+  - identifier: leslmentsbabylo00boisgoog
+    title: Les éléments babyloniens de la légende de Caïn et Abel
+    year: '1909'
+    rights: unresolved
+    text_bytes: 19421
+  - identifier: MarstonMS153_47
+    title: Marston MS 153, De paradiso, De Cain et Abel, etc.
+    year: 1125 - 1150
+    rights: stated
+    text_bytes: 3045
+- id: ambrose-hexameron
+  work: Ambrose of Milan, Hexameron
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 3
+  wikisource_hits: 0
+  best_candidates:
+  - identifier: csel-32-1
+    title: AMBROSE OF MILAN. Exameron. De paradiso. De Cain et Abel. De Noe. De Abraham. De Isaac. De
+      bono mortis
+    year: '1897'
+    rights: public-domain
+    text_bytes: 1835589
+  - identifier: bub_gb_ky_LTNDTq-EC
+    title: Hexameron Magni Basilii per Ioannem Argyropolum e greco in latinum conuersum
+    year: '1515'
+    rights: public-domain
+    text_bytes: 253663
+  - identifier: bub_gb_pOk_H0LuEqEC
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
+      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    year: '1596'
+    rights: public-domain
+    text_bytes: 298098
+- id: ambrose-iacob
+  work: Ambrose of Milan, De Iacob et vita beata
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 2
+  reachable: text
+  items_with_text: 1
+  items_with_public_rights: 0
+  wikisource_hits: 35
+  best_candidates:
+  - identifier: patrologia-latina_1-221
+    title: Patrologia Latina vol. 1-221
+    year: '1865'
+    rights: unresolved
+    text_bytes: 8121607
+- id: ambrose-ioseph
+  work: Ambrose of Milan, De Ioseph
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 3
+  wikisource_hits: 46
+  best_candidates:
+  - identifier: bub_gb_ZnRvml7xhNAC
+    title: Comedia diletttosa  raccolta nel Vecchio Testamento. Nuouamente ristampata, nella quale si
+      ragiona de Iacob, et de Ioseph, composta dal magnifico caualiero & do
+    year: '1547'
+    rights: public-domain
+    text_bytes: 174493
+  - identifier: A11309411
+    title: Augmentos graciosos de Ioseph
+    year: '1753'
+    rights: public-domain
+    text_bytes: 73741
+  - identifier: A11314313
+    title: 'Alegación en fuero y derecho del doctor Pedro Ioseph Ordoñez, en defensa del ... Orencio
+      Luis Çamora ..., sobre las nulidades de la denunciacion que ha dado '
+    year: '1652'
+    rights: public-domain
+    text_bytes: 58332
+- id: ambrose-isaac
+  work: Ambrose of Milan, De Isaac vel anima
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 6
+  reachable: text
+  items_with_text: 2
+  items_with_public_rights: 1
+  wikisource_hits: 39
+  best_candidates:
+  - identifier: jacob-de-castro-sarmento
+    title: Jacob de Castro Sarmento (Bragança, 6 de maio de 1690[1] — Londres, 14 de setembro de 1762)
+      foi um médico português do século XVIII. Pioneiro na introdução em P
+    year: null
+    rights: public-domain
+    text_bytes: 13041
+  - identifier: patrologia-latina_1-221
+    title: Patrologia Latina vol. 1-221
+    year: '1865'
+    rights: unresolved
+    text_bytes: 8121607
+- id: ambrose-noe
+  work: Ambrose of Milan, De Noe et arca
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 0
+  wikisource_hits: 40
+  best_candidates:
+  - identifier: noahark0000holl
+    title: Noah and the ark
+    year: '1983'
+    rights: unresolved
+    text_bytes: 11140
+  - identifier: storyofnoahark0000mcca_j0s7
+    title: The story of Noah and the ark
+    year: '2001'
+    rights: unresolved
+    text_bytes: 9039
+  - identifier: noaharktoas00toas
+    title: Noah and the ark
+    year: '1995'
+    rights: unresolved
+    text_bytes: 6479
+- id: ambrose-paradiso
+  work: Ambrose of Milan, De paradiso
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 4
+  items_with_public_rights: 3
+  wikisource_hits: 40
+  best_candidates:
+  - identifier: csel-32-1
+    title: AMBROSE OF MILAN. Exameron. De paradiso. De Cain et Abel. De Noe. De Abraham. De Isaac. De
+      bono mortis
+    year: '1897'
+    rights: public-domain
+    text_bytes: 1835589
+  - identifier: bub_gb_Gqg2JbZVxWYC
+    title: 'De paradiso contra Burnetum '
+    year: '1738'
+    rights: public-domain
+    text_bytes: 915711
+  - identifier: bub_gb_yP1GaelQdjcC
+    title: De Paradiso commentarius; scriptus ante annos propre septingentos à Mose BarCepha Syro ...
+      Inuenies lector in hoc commentario ... plurimos etiam peregrinos scri
+    year: '1569'
+    rights: public-domain
+    text_bytes: 465486
+- id: ambrose-patriarchis
+  work: Ambrose of Milan, De patriarchis
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 1
+  wikisource_hits: 36
+  best_candidates:
+  - identifier: bub_gb__GaHCFPFt_UC
+    title: 'De benedictionibus patriarcharum electa sacra commentario litterali & morali illustrata
+      auctore Didaco de Celada Monteladensi è Societate Iesu, .. '
+    year: '1657'
+    rights: public-domain
+    text_bytes: 4216028
+  - identifier: 10971398bsb
+    title: De Patriarchis
+    year: '1792'
+    rights: unresolved
+    text_bytes: 145866
+  - identifier: sanctiambrosiio02petsgoog
+    title: De Iacob ; De Ioseph ; De patriarchis ; De fuga saeculi ; De interpellatione Iob et David
+      ; De apologia David ; Apologia David altera ; De Helia et ieiunio ; De
+    year: '1896'
+    rights: unresolved
+    text_bytes: 1275938
+- id: anastasius-hexaemeron
+  work: Anastasius of Sinai, Hexaemeron
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 4
+  reachable: text
+  items_with_text: 2
+  items_with_public_rights: 1
+  wikisource_hits: 25
+  best_candidates:
+  - identifier: bub_gb_pOk_H0LuEqEC
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
+      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    year: '1596'
+    rights: public-domain
+    text_bytes: 298098
+  - identifier: dashexaemerondes0000oane
+    title: Das Hexaemeron des Exarchen Johannes
+    year: '1958'
+    rights: unresolved
+    text_bytes: 1673369
+- id: andrew-victor-heptateuch
+  work: Andrew of Saint Victor, Expositio super Heptateuchum
+  index_names: 2
+  aliases_searched: 26
+  candidates_examined: 0
+  reachable: no-candidate
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 26
+  best_candidates: []
+- id: angelomus-genesis
+  work: Angelomus of Luxeuil, Commentarius in Genesim
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 6
+  reachable: text
+  items_with_text: 6
+  items_with_public_rights: 3
+  wikisource_hits: 29
+  best_candidates:
+  - identifier: hummelauer-commentarius-in-genesim
+    title: Commentarius in Genesim
+    year: '1895'
+    rights: public-domain
+    text_bytes: 1753755
+  - identifier: bub_gb_Ebml22i8MzoC
+    title: 'Commentarii in Genesim, et in libros Regum. Reliquos eiusdem libros uersa pagina indicabit '
+    year: '1564'
+    rights: public-domain
+    text_bytes: 1518685
+  - identifier: bub_gb_4PB6AYgdZe4C
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
+      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    year: '1614'
+    rights: public-domain
+    text_bytes: 1621779
+- id: augustine-civitate
+  work: Augustine of Hippo, De civitate Dei
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 0
+  wikisource_hits: 41
+  best_candidates:
+  - identifier: san-agustin-de-civitate-dei-contra-paganos-la-ciudad-de-dios
+    title: San Agustin De Civitate Dei Contra Paganos ♦ La Ciudad De Dios
+    year: null
+    rights: unresolved
+    text_bytes: 5218249
+  - identifier: IA41552708_0050
+    title: 'La Cité de Dieu: Essai d''une Introduction à l''Ouvrage de S. Augustine'
+    year: '1869-05-07'
+    rights: unresolved
+    text_bytes: 101871
+  - identifier: cityofgoddecivit0000augu_q1x6
+    title: The city of God (De civitate Dei)
+    year: '1909'
+    rights: unresolved
+    text_bytes: 1121602
+- id: augustine-gen-imperfectus
+  work: Augustine of Hippo, De Genesi ad litteram imperfectus liber
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 1
+  reachable: images-only
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 27
+  best_candidates: []
+- id: augustine-gen-litteram
+  work: Augustine of Hippo, De Genesi ad litteram
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 6
+  reachable: text
+  items_with_text: 4
+  items_with_public_rights: 0
+  wikisource_hits: 31
+  best_candidates:
+  - identifier: jbc.bj.uj.edu.pl.NDIGORP039582
+    title: De Trinitate libri XV;De diversis questionibus octoginta tribus;De genesi ad litteram libri
+      duodecim
+    year: '1350-04-23'
+    rights: stated
+    text_bytes: 544740
+  - identifier: augustineevoluti00wood
+    title: Augustine and evolution, a study in the saint's De genesi ad litteram and De trinitate
+    year: '1924'
+    rights: unresolved
+    text_bytes: 225524
+  - identifier: bwb_C0-AVW-734
+    title: 'Augustine and Evolution: A Study in the Saint''s De Genesi Ad Litteram and De Trinitate '
+    year: '1924'
+    rights: unresolved
+    text_bytes: 224962
+- id: augustine-gen-manichaeos
+  work: Augustine of Hippo, De Genesi contra Manichaeos
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 5
+  reachable: text
+  items_with_text: 4
+  items_with_public_rights: 1
+  wikisource_hits: 34
+  best_candidates:
+  - identifier: saint_augustin_de_la_genese_au_sens_litteral_ouvrage_inacheve_ebook_gratuit
+    title: De La Genèse Au Sens Littéral Ouvrage Inachevé. De La Genèse Contre les Manichéens
+    year: '1866'
+    rights: creative-commons
+    text_bytes: 207770
+  - identifier: OnGenesisAugustineSt.TeskeRoland5059
+    title: St. Augustine on Genesis against the Manichees
+    year: null
+    rights: unresolved
+    text_bytes: 443900
+  - identifier: degenesicontrama0000augu
+    title: 'De Genesi contra Manichaeos '
+    year: '1998'
+    rights: unresolved
+    text_bytes: 350303
+- id: augustine-locutionum
+  work: Augustine of Hippo, Locutionum in Heptateuchum libri septem
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 1
+  reachable: images-only
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 25
+  best_candidates: []
+- id: augustine-quaestiones-hept
+  work: Augustine of Hippo, Quaestiones in Heptateuchum
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 1
+  reachable: images-only
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 28
+  best_candidates: []
+- id: basil-hexaemeron
+  work: Basil of Caesarea, Homiliae in Hexaemeron
+  index_names: 2
+  aliases_searched: 27
+  candidates_examined: 7
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 3
+  wikisource_hits: 50
+  best_candidates:
+  - identifier: hexaemeron_1107_librivox
+    title: The Hexaemeron
+    year: '2011'
+    rights: public-domain
+    text_bytes: 1936
+  - identifier: bub_gb_pOk_H0LuEqEC
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
+      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    year: '1596'
+    rights: public-domain
+    text_bytes: 298098
+  - identifier: narrative.structure
+    title: The Narrative Structure of the Hexaemeron
+    year: '2024'
+    rights: creative-commons
+    text_bytes: 97977
+- id: bede-genesis
+  work: Bede, In principium Genesis
+  index_names: 2
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 6
+  items_with_public_rights: 3
+  wikisource_hits: 49
+  best_candidates:
+  - identifier: bub_gb_pOk_H0LuEqEC
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
+      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    year: '1596'
+    rights: public-domain
+    text_bytes: 298098
+  - identifier: bub_gb_4PB6AYgdZe4C
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
+      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    year: '1614'
+    rights: public-domain
+    text_bytes: 1621779
+  - identifier: hummelauer-commentarius-in-genesim
+    title: Commentarius in Genesim
+    year: '1895'
+    rights: public-domain
+    text_bytes: 1753755
+- id: bonaventure-hexaemeron
+  work: Bonaventure, Collationes in Hexaemeron
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 2
+  reachable: text
+  items_with_text: 2
+  items_with_public_rights: 2
+  wikisource_hits: 23
+  best_candidates:
+  - identifier: A335113
+    title: 'Opuscula plurima (61), (Collationes in Hexaemeron, etc. (I);(Epistola continens XXV memorialia,
+      etc. / [Praec.] Octavianus De Martinis: Oratio in vitam et merit'
+    year: '1495'
+    rights: public-domain
+    text_bytes: 3331693
+  - identifier: A335112
+    title: 'Opuscula plurima (61), (Collationes in Hexaemeron, etc. (I);(Epistola continens XXV memorialia,
+      etc. / [Praec.] Octavianus De Martinis: Oratio in vitam et merit'
+    year: '1495'
+    rights: public-domain
+    text_bytes: 3396177
+- id: bonfrerius-pentateuch
+  work: Jacobus Bonfrerius, Pentateuchus Moysis commentario illustratus
+  index_names: 1
+  aliases_searched: 25
+  candidates_examined: 1
+  reachable: text
+  items_with_text: 1
+  items_with_public_rights: 1
+  wikisource_hits: 18
+  best_candidates:
+  - identifier: bub_gb_RdTiILPvUBgC
+    title: R. Isaaci Abarbanelis Lusitani doctissimus, diuque à Christianis aeque ac Judaeis desideratus
+      Commentarius in Pentateuchum Mosis ...
+    year: '1710'
+    rights: public-domain
+    text_bytes: 7441984
+- id: bruno-segni-pentateuch
+  work: Bruno of Segni, Expositio in Pentateuchum
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 4
+  reachable: text
+  items_with_text: 4
+  items_with_public_rights: 3
+  wikisource_hits: 29
+  best_candidates:
+  - identifier: bub_gb_fnp3-yl4rGEC
+    title: 'Expositio in Genesim iuxta quadruplicem sacre scripture sensum, literalem scilicet, moralem,
+      allegoricum, et anagogicum, authore fratre Guillelmo Pepino .. '
+    year: '1528'
+    rights: public-domain
+    text_bytes: 2618785
+  - identifier: bub_gb_DEzDctVJ9HgC
+    title: Commentaria in Pentateuchum Mosis. Auctore r.p. Cornelio Cornelii a Lapide ..
+    year: '1700'
+    rights: public-domain
+    text_bytes: 7195178
+  - identifier: ARes04111
+    title: 'Commentaria in Pentateuchum Mosi : hoc est, in quinque primos bibliorum libros : Quibus
+      iuxta M. Sanctis Pagnini ... interpretationem, Hebraica veritas ...'
+    year: '1588'
+    rights: public-domain
+    text_bytes: 4530936
+- id: caesarius-sermons
+  work: Caesarius of Arles, Sermones in Genesim
+  index_names: 1
+  aliases_searched: 28
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 0
+  wikisource_hits: 38
+  best_candidates:
+  - identifier: sermonsongenesis0000haro
+    title: Sermons on Genesis
+    year: '1958-01-01'
+    rights: unresolved
+    text_bytes: 444744
+  - identifier: sermonsongenesis0000paul
+    title: Sermons on Genesis
+    year: '2005'
+    rights: unresolved
+    text_bytes: 776410
+  - identifier: bim_eighteenth-century_two-sermons-on-genesis-x_eyre-john_1758
+    title: Two sermons on Genesis XIX 27 and 28 preached at Bedington Sunday 12th and Friday 17th of
+      February 1758. By John Eyre ...  1758
+    year: '1758'
+    rights: unresolved
+    text_bytes: 69052
+- id: cajetan-pentateuch
+  work: Thomas Cajetan, Commentarii in Pentateuchum
+  index_names: 5
+  aliases_searched: 26
+  candidates_examined: 4
+  reachable: text
+  items_with_text: 4
+  items_with_public_rights: 1
+  wikisource_hits: 34
+  best_candidates:
+  - identifier: lewis_e_035
+    title: Biblical commentary on the Pentateuch (Exodus, Leviticus, Numbers)
+    year: '1220'
+    rights: public-domain
+    text_bytes: 916777
+  - identifier: LewisE035_4
+    title: Lewis E 035, Biblical commentary on the Pentateuch (Exodus 26 - Numbers)
+    year: 1200 - 1250
+    rights: stated
+    text_bytes: 2129
+  - identifier: commentaryonpent00gerl
+    title: Commentary on the Pentateuch
+    year: '1860'
+    rights: unresolved
+    text_bytes: 1584798
+- id: calmet-commentaire
+  work: Augustin Calmet, Commentaire littéral sur tous les livres de l'Ancien et du Nouveau Testament
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 7
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 7
+  wikisource_hits: 16
+  best_candidates:
+  - identifier: 01-genese
+    title: Commentaire litteral sur tous les livres de l'Ancien et du Nouveau Testament. Par le r.p.d.
+      Augustin Calmet .. La Genèse
+    year: '1707'
+    rights: public-domain
+    text_bytes: 2846262
+  - identifier: bub_gb_hV6YASQu1E8C
+    title: Commentaire litteral sur tous les livres de l'Ancien et du Nouveau Testament. Par le r.p.d.
+      Augustin Calmet .. Les trois premiers livres des Rois
+    year: '1711'
+    rights: public-domain
+    text_bytes: 2075079
+  - identifier: bub_gb_xhMecUzEn1IC
+    title: Commentaire litteral sur tous les livres de l'Ancien et du Nouveau Testament. Par le r.p.d.
+      Augustin Calmet .. Ezechiel, et Daniel
+    year: '1715'
+    rights: public-domain
+    text_bytes: 2679874
+- id: calvin-genesis
+  work: John Calvin, Commentarius in Genesin
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 4
+  reachable: text
+  items_with_text: 3
+  items_with_public_rights: 0
+  wikisource_hits: 25
+  best_candidates:
+  - identifier: bwb_S0-AVH-730_1
+    title: Commentary On Genesis
+    year: '1868'
+    rights: unresolved
+    text_bytes: 962585
+  - identifier: criticalexegetic0000unse_g5u6
+    title: a critical and exegetical commentary on genesis
+    year: '1917'
+    rights: unresolved
+    text_bytes: 1768974
+  - identifier: commentaryongene0000stig
+    title: A commentary on Genesis
+    year: '1976'
+    rights: unresolved
+    text_bytes: 1469194
+- id: chrysostom-gen
+  work: John Chrysostom, Homiliae in Genesim
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 7
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 2
+  wikisource_hits: 27
+  best_candidates:
+  - identifier: saint-john-chrysostom-homilies-on-genesis-1-17
+    title: Saint John Chrysostom Homilies On Genesis 1 17
+    year: '2010'
+    rights: public-domain
+    text_bytes: 547432
+  - identifier: bub_gb_4PB6AYgdZe4C
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
+      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    year: '1614'
+    rights: public-domain
+    text_bytes: 1621779
+  - identifier: homilies-on-genesis-st-john-chrysostom-v-2f
+    title: Homilies On Genesis St John Chrysostom
+    year: null
+    rights: unresolved
+    text_bytes: 1073472
+- id: clarke-commentary
+  work: Adam Clarke, The Holy Bible with a Commentary and Critical Notes
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 0
+  wikisource_hits: 30
+  best_candidates:
+  - identifier: holybiblecontai02clargoog
+    title: 'The holy Bible : containing the Old and New Testaments, the text carefully printed from
+      the most correct copies of the present authorized translation, including'
+    year: '1837'
+    rights: unresolved
+    text_bytes: 5852506
+  - identifier: holybiblecontai01clar
+    title: 'The Holy Bible, containing the Old and New Testaments : Authorized translations, including
+      the marginal readings and parallel texts, with a commentary and criti'
+    year: '1843'
+    rights: unresolved
+    text_bytes: 5869271
+  - identifier: holybiblecontai184603clar
+    title: 'The Holy Bible, containing the Old and New Testaments : Authorized translations, including
+      the marginal readings and parallel texts, with a commentary and criti'
+    year: '1846'
+    rights: unresolved
+    text_bytes: 5880334
+- id: cyril-glaphyra
+  work: Cyril of Alexandria, Glaphyra in Pentateuchum
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 0
+  reachable: no-candidate
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 19
+  best_candidates: []
+- id: denis-carthusian
+  work: Denis the Carthusian, Enarrationes in Genesim
+  index_names: 2
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 6
+  items_with_public_rights: 0
+  wikisource_hits: 17
+  best_candidates:
+  - identifier: doctorisecstati02unkngoog
+    title: Doctoris ecstatici D. Dionysii Cartusiani Opera omnia
+    year: '1908'
+    rights: unresolved
+    text_bytes: 2827332
+  - identifier: operaomniainunu18deni
+    title: 'Opera omnia in unum corpus digesta ad fidem editionum Coloniensium : cura et labore monachorum
+      sacri ordinis Cartusiensis, favente pont. max. Leone XIII'
+    year: '1896'
+    rights: unresolved
+    text_bytes: 2304855
+  - identifier: operaomniainunum04deni
+    title: 'Opera omnia in unum corpus digesta ad fidem editionum Coloniensium : cura et labore monachorum
+      sacri ordinis Cartusiensis, favente pont. max. Leone XIII'
+    year: '1896'
+    rights: unresolved
+    text_bytes: 3337332
+- id: didymus-gen
+  work: Didymus the Blind, Commentary on Genesis
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 0
+  wikisource_hits: 18
+  best_candidates:
+  - identifier: commentaryongene0000didy
+    title: 'Commentary on Genesis '
+    year: '2016'
+    rights: unresolved
+    text_bytes: 545100
+  - identifier: bwb_S0-AVH-730_1
+    title: Commentary On Genesis
+    year: '1868'
+    rights: unresolved
+    text_bytes: 962585
+  - identifier: criticalexegetic0000unse_g5u6
+    title: a critical and exegetical commentary on genesis
+    year: '1917'
+    rights: unresolved
+    text_bytes: 1768974
+- id: ephrem-gen
+  work: Ephrem the Syrian, Commentarii in Genesim
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 6
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 1
+  wikisource_hits: 34
+  best_candidates:
+  - identifier: hummelauer-commentarius-in-genesim
+    title: Commentarius in Genesim
+    year: '1895'
+    rights: public-domain
+    text_bytes: 1753755
+  - identifier: commentariusinge0011fran
+    title: Commentarius in Genesim
+    year: '1895'
+    rights: unresolved
+    text_bytes: 1772299
+  - identifier: bwb_S0-AVH-730_1
+    title: Commentary On Genesis
+    year: '1868'
+    rights: unresolved
+    text_bytes: 962585
+- id: gill-exposition
+  work: John Gill, An Exposition of the Old Testament
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 0
+  wikisource_hits: 30
+  best_candidates:
+  - identifier: revelation-john-gills-exposition-of-the-entire-bible-verse-by-verse
+    title: Revelation John Gill's Exposition Of The Entire Bible Verse By Verse
+    year: '2023-05-14'
+    rights: unresolved
+    text_bytes: 1282378
+  - identifier: revelation-11-john-gills-exposition-of-the-entire-bible-verse-by-verse
+    title: Revelation 11 John Gill's Exposition Of The Entire Bible Verse By Verse
+    year: '2023-05-01'
+    rights: unresolved
+    text_bytes: 91907
+  - identifier: bim_eighteenth-century_an-exposition-of-the-old_1765_1
+    title: 'An exposition of the Old Testament, ... Vol. IV. Containing, Psalms, the latter part, Proverbs,
+      Ecclesiastes, and Song of Solomon. By John Gill, D.D.  1765: Vol'
+    year: '1765'
+    rights: unresolved
+    text_bytes: 6033634
+- id: gregory-nyssa-hexaemeron
+  work: Gregory of Nyssa, Apologia in Hexaemeron
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 4
+  reachable: text
+  items_with_text: 4
+  items_with_public_rights: 2
+  wikisource_hits: 42
+  best_candidates:
+  - identifier: A335113
+    title: 'Opuscula plurima (61), (Collationes in Hexaemeron, etc. (I);(Epistola continens XXV memorialia,
+      etc. / [Praec.] Octavianus De Martinis: Oratio in vitam et merit'
+    year: '1495'
+    rights: public-domain
+    text_bytes: 3331693
+  - identifier: A335112
+    title: 'Opuscula plurima (61), (Collationes in Hexaemeron, etc. (I);(Epistola continens XXV memorialia,
+      etc. / [Praec.] Octavianus De Martinis: Oratio in vitam et merit'
+    year: '1495'
+    rights: public-domain
+    text_bytes: 3396177
+  - identifier: specimenquaesti00wegngoog
+    title: 'Specimen quaestionum exegeticarum in hexaemeron creationis: Genes. cap. I ...'
+    year: '1689'
+    rights: unresolved
+    text_bytes: 118757
+- id: gregory-nyssa-hominis
+  work: Gregory of Nyssa, De hominis opificio
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 1
+  reachable: text
+  items_with_text: 1
+  items_with_public_rights: 0
+  wikisource_hits: 38
+  best_candidates:
+  - identifier: b3035982x
+    title: Hominem haut commodo dici microcosmum dissertatione publica ad Genes. I. 26 & ex eo Gregorii
+      Nysseni Duas orationes in h.l. ejusdemq[ue] Libr. de opificio homin
+    year: '1716'
+    rights: stated
+    text_bytes: 78221
+- id: grosseteste-hexaemeron
+  work: Robert Grosseteste, Hexaemeron
+  index_names: 1
+  aliases_searched: 25
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 1
+  wikisource_hits: 38
+  best_candidates:
+  - identifier: bub_gb_pOk_H0LuEqEC
+    title: Hexaēmeron ētoi Kosmourgia, Geōrgiou tou Pisidou ... Opus sex dierum seu mundi opificum,
+      Georgii Pisidae ... Eiusdem Senarii de vanitate vitae. Omnia Græce edit
+    year: '1596'
+    rights: public-domain
+    text_bytes: 298098
+  - identifier: 101659967.nlm.nih.gov
+    title: Science and the Bible. II. With further remarks on "The six days of creation" of Prof. Tayler
+      Lewis
+    year: '1856'
+    rights: unresolved
+    text_bytes: 70204
+  - identifier: lessonsforyoung00gausgoog
+    title: Lessons for the young on the six days of Creation
+    year: '1860'
+    rights: unresolved
+    text_bytes: 299460
+- id: haydock-commentary
+  work: George Leo Haydock, Douay-Rheims with Haydock Commentary
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 2
+  reachable: text
+  items_with_text: 2
+  items_with_public_rights: 1
+  wikisource_hits: 19
+  best_candidates:
+  - identifier: haydocks-bible
+    title: Haydock's Douay-Rheims Bible
+    year: null
+    rights: public-domain
+    text_bytes: 12876832
+  - identifier: douay-rheims-bible-with-haydock-commentary-complete
+    title: DOUAY RHEIMS BIBLE WITH HAYDOCK COMMENTARY - Complete
+    year: null
+    rights: unresolved
+    text_bytes: 14700545
+- id: hippolytus-benedictions
+  work: Hippolytus of Rome, On the Blessings of Isaac and Jacob
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 0
+  reachable: no-candidate
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 21
+  best_candidates: []
+- id: hugh-cher-postillae
+  work: Hugh of Saint-Cher, Postillae in universa Biblia
+  index_names: 2
+  aliases_searched: 26
+  candidates_examined: 3
+  reachable: text
+  items_with_text: 3
+  items_with_public_rights: 0
+  wikisource_hits: 20
+  best_candidates:
+  - identifier: postillasupertot00nich
+    title: '[Postilla super totam bibliam : Parabolas, Ecclesiastes, Cantica canticorum. Prophetae minores]'
+    year: '1471'
+    rights: unresolved
+    text_bytes: 8158
+  - identifier: postillasupertot00nich_0
+    title: '[Postilla super totam bibliam : Parabolas, Ecclesiastes, Cantica canticorum. Prophetae minores]'
+    year: '1471'
+    rights: unresolved
+    text_bytes: 9247
+  - identifier: Item5.5_25
+    title: Item 5.5, Postilla super totam Bibliam
+    year: 1440 - 1460
+    rights: stated
+    text_bytes: 3324
+- id: hugh-victor-adnotationes
+  work: Hugh of Saint Victor, Adnotationes elucidatoriae in Pentateuchon
+  index_names: 2
+  aliases_searched: 27
+  candidates_examined: 1
+  reachable: text
+  items_with_text: 1
+  items_with_public_rights: 0
+  wikisource_hits: 15
+  best_candidates:
+  - identifier: patrologia-latina_1-221
+    title: Patrologia Latina vol. 1-221
+    year: '1865'
+    rights: unresolved
+    text_bytes: 8121607
+- id: isidore-quaestiones
+  work: Isidore of Seville, Quaestiones in Vetus Testamentum
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 1
+  wikisource_hits: 35
+  best_candidates:
+  - identifier: bub_gb_4PB6AYgdZe4C
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
+      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    year: '1614'
+    rights: public-domain
+    text_bytes: 1621779
+  - identifier: PlimptonMS063_20
+    title: Plimpton MS 063, Quaestiones in vetus testamentum...
+    year: 1140 - 1160
+    rights: stated
+    text_bytes: 3043
+  - identifier: BeineckeMS775_47
+    title: Beinecke MS 775, Quaestiones in vetus testamentum.
+    year: 1150 - 1200
+    rights: stated
+    text_bytes: 1157
+- id: jerome-quaestiones
+  work: Jerome, Liber quaestionum hebraicarum in Genesim
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 3
+  reachable: text
+  items_with_text: 2
+  items_with_public_rights: 0
+  wikisource_hits: 31
+  best_candidates:
+  - identifier: jeromegreekschol0000kame
+    title: 'Jerome, Greek scholarship, and the Hebrew Bible : a study of the Quaestiones hebraicae in
+      Genesim '
+    year: '1993'
+    rights: unresolved
+    text_bytes: 606253
+  - identifier: quaestionesingen0000phil
+    title: 'Quaestiones in Genesim et in Exodum : fragmenta Graeca'
+    year: '1978'
+    rights: unresolved
+    text_bytes: 616427
+- id: keil-pentateuch
+  work: Carl Friedrich Keil, Biblical Commentary on the Old Testament — The Pentateuch
+  index_names: 2
+  aliases_searched: 26
+  candidates_examined: 5
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 0
+  wikisource_hits: 19
+  best_candidates:
+  - identifier: biblischercommen0000keil_t2q3
+    title: Biblischer Commentar über das Alte Testament
+    year: '1866'
+    rights: unresolved
+    text_bytes: 2056248
+  - identifier: biblischercommen0005keil
+    title: Biblischer Commentar über das Alte Testament
+    year: '1866'
+    rights: unresolved
+    text_bytes: 2111409
+  - identifier: biblischercommen0000keil_s7a7
+    title: Biblischer Commentar über das Alte Testament
+    year: '1866'
+    rights: unresolved
+    text_bytes: 1728591
+- id: lange-genesis
+  work: Johann Peter Lange, Commentary on the Holy Scriptures — Genesis
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 5
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 0
+  wikisource_hits: 27
+  best_candidates:
+  - identifier: containinggenera0000john
+    title: 'Containing a General Introduction and the Gospel According to Matthew (A Commentary on the
+      Holy Scriptures: Critical, Doctrinal and Homiletical, With Special Re'
+    year: '1905'
+    rights: unresolved
+    text_bytes: 3783186
+  - identifier: cu31924092342777
+    title: 'A commentary on the Holy Scriptures: critical, doctrinal, and homiletical, with special
+      reference to ministers and students'
+    year: '1866'
+    rights: unresolved
+    text_bytes: 4825864
+  - identifier: cu31924092344302
+    title: 'A commentary on the Holy Scriptures: critical, doctrinal, and homiletical, with special
+      reference to ministers and students'
+    year: '1866'
+    rights: unresolved
+    text_bytes: 4223733
+- id: lapide-pentateuch
+  work: Cornelius a Lapide, Commentaria in Pentateuchum (in Genesim)
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 1
+  wikisource_hits: 27
+  best_candidates:
+  - identifier: bub_gb_DEzDctVJ9HgC
+    title: Commentaria in Pentateuchum Mosis. Auctore r.p. Cornelio Cornelii a Lapide ..
+    year: '1700'
+    rights: public-domain
+    text_bytes: 7195178
+  - identifier: greatcommentaryo0000unse_l0q9
+    title: The great commentary of cornelius a lapide S Luke's Gospel
+    year: '1887'
+    rights: unresolved
+    text_bytes: 1229062
+  - identifier: greatcommentaryo04lapiuoft
+    title: The great commentary of Cornelius à Lapide
+    year: '1908'
+    rights: unresolved
+    text_bytes: 1413431
+- id: luther-genesis
+  work: Martin Luther, Lectures on Genesis
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 1
+  reachable: text
+  items_with_text: 1
+  items_with_public_rights: 0
+  wikisource_hits: 26
+  best_candidates:
+  - identifier: abramlectureson00kellgoog
+    title: Abram, lectures on Genesis 12-25, by W.K.
+    year: '1875'
+    rights: unresolved
+    text_bytes: 252935
+- id: lyra-postilla
+  work: Nicholas of Lyra, Postilla litteralis super totam Bibliam
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 3
+  reachable: text
+  items_with_text: 3
+  items_with_public_rights: 0
+  wikisource_hits: 15
+  best_candidates:
+  - identifier: postillasupertot00nich
+    title: '[Postilla super totam bibliam : Parabolas, Ecclesiastes, Cantica canticorum. Prophetae minores]'
+    year: '1471'
+    rights: unresolved
+    text_bytes: 8158
+  - identifier: postillasupertot00nich_0
+    title: '[Postilla super totam bibliam : Parabolas, Ecclesiastes, Cantica canticorum. Prophetae minores]'
+    year: '1471'
+    rights: unresolved
+    text_bytes: 9247
+  - identifier: Item5.5_25
+    title: Item 5.5, Postilla super totam Bibliam
+    year: 1440 - 1460
+    rights: stated
+    text_bytes: 3324
+- id: matthew-henry-exposition
+  work: Matthew Henry, An Exposition of the Old and New Testament
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 1
+  wikisource_hits: 30
+  best_candidates:
+  - identifier: AnExpositionOfTheOldAndNewTestamentWithPracticalRemarksAnd
+    title: 'An exposition of the Old and New Testament : with practical remarks and observations'
+    year: '1860'
+    rights: public-domain
+    text_bytes: 8635645
+  - identifier: matthewhenryscom0000matt
+    title: 'Matthew Henry''s Commentary on the Whole Bible: Vol. I, Genesis to Deuteronomy'
+    year: '1970-01-01'
+    rights: unresolved
+    text_bytes: 5051651
+  - identifier: bwb_P8-AVI-131
+    title: Matthew Henry's Commentary on the Whole Bible (6 Volume Set)
+    year: '1958-01-01'
+    rights: unresolved
+    text_bytes: 7247217
+- id: menochio-brevis
+  work: Giovanni Stefano Menochio, Brevis explicatio sensus litteralis totius Sacrae Scripturae
+  index_names: 1
+  aliases_searched: 25
+  candidates_examined: 0
+  reachable: no-candidate
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 14
+  best_candidates: []
+- id: origen-hom-gen
+  work: Origen, Homiliae in Genesim
+  index_names: 2
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 2
+  wikisource_hits: 32
+  best_candidates:
+  - identifier: bub_gb_4PB6AYgdZe4C
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
+      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    year: '1614'
+    rights: public-domain
+    text_bytes: 1621779
+  - identifier: saint-john-chrysostom-homilies-on-genesis-1-17
+    title: Saint John Chrysostom Homilies On Genesis 1 17
+    year: '2010'
+    rights: public-domain
+    text_bytes: 547432
+  - identifier: NYPLMA148_41
+    title: NYPL MA 148, Homiliae in Genesim, Exodum et Leviticum...
+    year: 1400 - 1425
+    rights: stated
+    text_bytes: 2721
+- id: pererius-genesis
+  work: Benedict Pererius, Commentariorum et disputationum in Genesim tomi quatuor
+  index_names: 4
+  aliases_searched: 26
+  candidates_examined: 1
+  reachable: text
+  items_with_text: 1
+  items_with_public_rights: 1
+  wikisource_hits: 14
+  best_candidates:
+  - identifier: bub_gb_gXqrIomkU7kC
+    title: Benedicti Pererii Valentini e Societate Iesu ... Prior quartus tomus commentariorum & disputationum
+      in Genesim ...  Romæ ex typographia Aloysij Zannetti, 158915
+    year: '1595'
+    rights: public-domain
+    text_bytes: 2976633
+- id: peter-comestor-historia
+  work: Peter Comestor, Historia Scholastica
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 1
+  wikisource_hits: 34
+  best_candidates:
+  - identifier: bub_gb_uUZfsY581hwC
+    title: 'Historia Scholastica. Petrus Comestor. Eruditissimi viri magistri Petri Comestoris excellens
+      opus quod Historia Scholastica inscribitur, magnam sacre scripture '
+    year: '1543'
+    rights: public-domain
+    text_bytes: 2079779
+  - identifier: NYPLMA003_41
+    title: NYPL MA 003, Historia scholastica...
+    year: 1200 - 1299
+    rights: stated
+    text_bytes: 2441
+  - identifier: images_Ricketts193_40
+    title: Ricketts 193, Historia Scholastica...
+    year: null
+    rights: unresolved
+    text_bytes: 1962
+- id: poole-annotations
+  work: Matthew Poole, Annotations upon the Holy Bible
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 1
+  wikisource_hits: 25
+  best_candidates:
+  - identifier: dutch-annotations
+    title: The Dutch Annotations upon the Whole Bible, Statenvertaling
+    year: '1657'
+    rights: public-domain
+    text_bytes: 13435509
+  - identifier: in.ernet.dli.2015.96153
+    title: Annotations Upon The Holy Bible  Vol. 1
+    year: '1861'
+    rights: unresolved
+    text_bytes: 6534908
+  - identifier: bim_early-english-books-1641-1700_pious-annotations-upon-_diodate-giovanni_1643
+    title: Pious annotations, upon the Holy Bible ...  1643
+    year: '1643'
+    rights: unresolved
+    text_bytes: 4579219
+- id: procopius-octateuch
+  work: Procopius of Gaza, Commentarii in Octateuchum
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 0
+  reachable: no-candidate
+  items_with_text: 0
+  items_with_public_rights: 0
+  wikisource_hits: 19
+  best_candidates: []
+- id: rabanus-genesis
+  work: Rabanus Maurus, Commentaria in Genesim
+  index_names: 2
+  aliases_searched: 27
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 4
+  wikisource_hits: 31
+  best_candidates:
+  - identifier: bub_gb_hIQoZc7mM2oC
+    title: Francisci Sylvii ... Commentarii in totam primam partem S. Thomae Aquinatis doctoris angelici
+      et communis, tomus primus sextus Tomus sextus complectens ejus Com
+    year: '1726'
+    rights: public-domain
+    text_bytes: 4893085
+  - identifier: ARes06104
+    title: 'Alphonsi Tostati Hispani Episcopi Abulensis ... Commentaria in Genesim : mendis nunc sanè
+      quàm plurimis diligenter expurgata : cum indice copiosissimo ...'
+    year: '1596'
+    rights: public-domain
+    text_bytes: 6522982
+  - identifier: bub_gb_4PB6AYgdZe4C
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
+      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    year: '1614'
+    rights: public-domain
+    text_bytes: 1621779
+- id: remigius-genesis
+  work: Remigius of Auxerre, Commentarius in Genesim
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 5
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 2
+  wikisource_hits: 29
+  best_candidates:
+  - identifier: hummelauer-commentarius-in-genesim
+    title: Commentarius in Genesim
+    year: '1895'
+    rights: public-domain
+    text_bytes: 1753755
+  - identifier: bub_gb_4PB6AYgdZe4C
+    title: Sancti Patris nostri Ioannis Chrysostomi ... Constantinopolitani Homiliae in Genesim 67.
+      vna cum alijs 18. de diuersis ex eadem Genesi & libro 1. regum locis
+    year: '1614'
+    rights: public-domain
+    text_bytes: 1621779
+  - identifier: commentariusinge0011fran
+    title: Commentarius in Genesim
+    year: '1895'
+    rights: unresolved
+    text_bytes: 1772299
+- id: rufinus-benedictionibus
+  work: Rufinus of Aquileia, De benedictionibus patriarcharum
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 5
+  reachable: text
+  items_with_text: 4
+  items_with_public_rights: 3
+  wikisource_hits: 34
+  best_candidates:
+  - identifier: bub_gb_MDv-Q_CWFvgC
+    title: D. Gabrielis A Costa doct. theologi, ... Commentaria quinque in totidem libros veteris testamenti
+      1. In cap. 49. Genes. de benedictionibus duodecim Patriarcharu
+    year: '1641'
+    rights: public-domain
+    text_bytes: 5614414
+  - identifier: bub_gb__GaHCFPFt_UC
+    title: 'De benedictionibus patriarcharum electa sacra commentario litterali & morali illustrata
+      auctore Didaco de Celada Monteladensi è Societate Iesu, .. '
+    year: '1657'
+    rights: public-domain
+    text_bytes: 4216028
+  - identifier: petrilongobardi1535collectanea
+    title: In omnes D. Pauli Apost. Epistolas Collectanea
+    year: 1535-12
+    rights: public-domain
+    text_bytes: 2536856
+- id: rupert-trinitate
+  work: Rupert of Deutz, De sancta Trinitate et operibus eius
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 7
+  reachable: text
+  items_with_text: 6
+  items_with_public_rights: 5
+  wikisource_hits: 28
+  best_candidates:
+  - identifier: bub_gb_b0xMX1QNV4IC
+    title: 'Ruperti abbatis Tuitiensis, ... Libri 42. De operibus sanctae Trinitatis, cum luculentissimis
+      capitulorum argumentis, cunctisque scripturarum locis, nunc demum '
+    year: '1565'
+    rights: public-domain
+    text_bytes: 5000806
+  - identifier: ARes044062
+    title: Ruperti Abbatis Tuitiensis, uiri undecunque doctissimi, summique inter ueteres theologi,
+      Libri XLII. de operibus Sanctae Trinitatis
+    year: '1578'
+    rights: public-domain
+    text_bytes: 1500344
+  - identifier: ARes16113
+    title: 'Ruperti abbatis Tuitiensis ... Libri XLII de operibus Sanctae Trinitatis... : tres primi
+      commentariorum libri, Patri in diuinis attribuuntur triginta sub inde, '
+    year: '1565'
+    rights: public-domain
+    text_bytes: 3867978
+- id: severian-cosmogonia
+  work: Severian of Gabala, In cosmogoniam homiliae sex
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 1
+  reachable: text
+  items_with_text: 1
+  items_with_public_rights: 0
+  wikisource_hits: 20
+  best_candidates:
+  - identifier: pg-116
+    title: PG 116
+    year: null
+    rights: unresolved
+    text_bytes: 3962181
+- id: theodoret-quaestiones
+  work: Theodoret of Cyrus, Quaestiones in Octateuchum
+  index_names: 1
+  aliases_searched: 27
+  candidates_examined: 3
+  reachable: text
+  items_with_text: 3
+  items_with_public_rights: 0
+  wikisource_hits: 31
+  best_candidates:
+  - identifier: quaestionesingen0000phil
+    title: 'Quaestiones in Genesim et in Exodum : fragmenta Graeca'
+    year: '1978'
+    rights: unresolved
+    text_bytes: 616427
+  - identifier: the-questions-on-the-octateuch-volume-i-on-genesis-and-exodus-9780813214986-9780813214993_compress
+    title: The Questions on the Octateuch On Genesis and Exodus Volume I
+    year: '2007'
+    rights: unresolved
+    text_bytes: 815760
+  - identifier: questionsonoctat0001theo
+    title: 'The questions on the Octateuch '
+    year: '2007'
+    rights: unresolved
+    text_bytes: 986870
+- id: tirinus-scriptura
+  work: Jacobus Tirinus, Commentarius in Sacram Scripturam
+  index_names: 1
+  aliases_searched: 25
+  candidates_examined: 1
+  reachable: text
+  items_with_text: 1
+  items_with_public_rights: 0
+  wikisource_hits: 21
+  best_candidates:
+  - identifier: 10327451bsb
+    title: Commentarius in vetus et novum Testamentum tomis duobus comprehensus
+    year: '1645'
+    rights: unresolved
+    text_bytes: 9647133
+- id: tostado-genesis
+  work: Alonso Tostado, Commentaria in Genesim
+  index_names: 2
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 7
+  items_with_public_rights: 7
+  wikisource_hits: 39
+  best_candidates:
+  - identifier: bub_gb_3Dj3WyxOFYYC
+    title: Alphonsi Tostati Hispani, episcopi Abulensis Opera omnia, quotquot in Scripturae sacrae expositionem
+      & alia, adhuc extare inuenta sunt. .. Alphonsi Tostati Hisp
+    year: '1596'
+    rights: public-domain
+    text_bytes: 4216152
+  - identifier: bub_gb_GqMnlzVCmA4C
+    title: Alphonsi Tostati Hispani, episcopi Abulensis Opera omnia, quotquot in Scripturae sacrae expositionem
+      & alia, adhuc extare inuenta sunt. .. Alphonsi Tostati Hisp
+    year: '1596'
+    rights: public-domain
+    text_bytes: 3350924
+  - identifier: bub_gb_SId8ayPt288C
+    title: Alphonsi Tostati Hispani, episcopi Abulensis Opera omnia, quotquot in Scripturae sacrae expositionem
+      & alia, adhuc extare inuenta sunt. .. Alphonsi Tostati Hisp
+    year: '1596'
+    rights: public-domain
+    text_bytes: 5581387
+- id: walafrid-glossa
+  work: Glossa ordinaria (indexed under Walafrid Strabo)
+  index_names: 2
+  aliases_searched: 27
+  candidates_examined: 5
+  reachable: text
+  items_with_text: 5
+  items_with_public_rights: 0
+  wikisource_hits: 27
+  best_candidates:
+  - identifier: jbc.bj.uj.edu.pl.NDIGORP020203
+    title: 'Biblia Latina (Novum Testamentum: Matth.-Io.) cum prologis et Pseudo-Walafridi Strabonis
+      aliorumque glossa ordinaria et interlineari'
+    year: '1401-05-20'
+    rights: stated
+    text_bytes: 549717
+  - identifier: bibliorumsacroru01strauoft
+    title: Bibliorum sacrorum cum glossa ordinaria
+    year: '1603'
+    rights: unresolved
+    text_bytes: 8123518
+  - identifier: jbc.bj.uj.edu.pl.NDIGORP000796
+    title: Codex cum glossa ordinaria Accursii
+    year: null
+    rights: stated
+    text_bytes: 2658275
+- id: wesley-notes
+  work: John Wesley, Explanatory Notes upon the Old Testament
+  index_names: 1
+  aliases_searched: 26
+  candidates_examined: 8
+  reachable: text
+  items_with_text: 8
+  items_with_public_rights: 0
+  wikisource_hits: 30
+  best_candidates:
+  - identifier: bim_eighteenth-century_explanatory-notes-upon-t_1765_1
+    title: 'Explanatory notes upon the Old Testament. By John Wesley, ...  1765: Vol 1'
+    year: '1765'
+    rights: unresolved
+    text_bytes: 2873290
+  - identifier: bim_eighteenth-century_explanatory-notes-upon-t_1765_2
+    title: 'Explanatory notes upon the Old Testament. By John Wesley, ...  1765: Vol 2'
+    year: '1765'
+    rights: unresolved
+    text_bytes: 2808748
+  - identifier: bim_eighteenth-century_explanatory-notes-upon-t_1765_3
+    title: 'Explanatory notes upon the Old Testament. By John Wesley, ...  1765: Vol 3'
+    year: '1765'
+    rights: unresolved
+    text_bytes: 2771750
