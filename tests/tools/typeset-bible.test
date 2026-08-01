@@ -134,7 +134,7 @@ done
 
 # A character these fonts cannot set is replaced in view and disclosed, never
 # dropped: the King James prints the Hebrew alphabet through Psalm 119.
-if ! grep -q 'Typesetting note' "$kjv"; then
+if ! grep -q 'Characters these fonts cannot set' "$kjv"; then
 	echo "the substitutions were not disclosed" >&2
 	exit 1
 fi
@@ -142,6 +142,64 @@ if ! grep -q 'Hebrew beth' "$kjv"; then
 	echo "a Hebrew letter was dropped rather than replaced" >&2
 	exit 1
 fi
+
+# The apparatus moved to the back and must not have thinned on the way. The
+# rights notice is the one that matters: it is the thing a reader relies on, and
+# a notice that lost its scope sentence while being moved would still read like
+# a rights notice.
+for want in '\\section\*{Appendices}' 'A. This edition' 'B. Rights' \
+	'C. How this was made' 'rights of this edition alone' \
+	'does not extend to any other edition'; do
+	if ! grep -q "$want" "$kjv"; then
+		echo "the appendices do not carry $want" >&2
+		exit 1
+	fi
+done
+# Nothing of the apparatus may stand between the title and the text.
+if [ "$(grep -n '\\section\*{Appendices}' "$kjv" | cut -d: -f1)" \
+	-lt "$(grep -n '^\\bookstart' "$kjv" | head -1 | cut -d: -f1)" ]; then
+	echo "the appendices stand before the text they are an appendix to" >&2
+	exit 1
+fi
+
+# Paragraph breaks are a projection, and the switch that removes it must give
+# back the stored text exactly. A mechanical review depends on that being a
+# real return and not an approximation of one.
+run_tool render --bible king-james-version --out "$sandbox/plain" \
+	--no-paragraphs >/dev/null
+plain="$sandbox/plain/king-james-version.tex"
+if grep -q '^\\parbreak$' "$plain"; then
+	echo "--no-paragraphs still set paragraph breaks" >&2
+	exit 1
+fi
+if ! grep -q 'Paragraphs.} None' "$plain"; then
+	echo "a volume set without paragraphs did not say so" >&2
+	exit 1
+fi
+breaks="$(grep -c '^\\parbreak$' "$kjv")"
+if [ "$breaks" -lt 1000 ]; then
+	echo "expected the King James paragraph breaks, found only $breaks" >&2
+	exit 1
+fi
+# Removing the projection must change the paragraphing and nothing else. Every
+# verse of the edition must still be set, in the same order, with the same text.
+grep '^\\vn{' "$kjv" >with.txt
+grep '^\\vn{' "$plain" >without.txt
+if ! cmp -s with.txt without.txt; then
+	echo "--no-paragraphs changed the verse text, not only the paragraphing" >&2
+	exit 1
+fi
+# Every break traces to the tracked tables. The King James is the one edition
+# whose own printing supplies some of them, and the two sources are counted
+# apart so that a transcriber's paragraphing cannot be credited to the printers
+# of 1769.
+for want in 'printed.} This edition' 'projected.} No paragraph mark survives' \
+	'2,970 pilcrows' 'Acts 20:36'; do
+	if ! grep -q "$want" "$kjv"; then
+		echo "the paragraph note does not say $want" >&2
+		exit 1
+	fi
+done
 
 # Book identity comes from the book index, never from file position. A verse
 # file holding another book's text is refused rather than filed under the wrong

@@ -157,8 +157,10 @@ Their course-wide provenance and rights boundary are recorded in the adjacent
 
 ## Fonts and External Software
 
-Published PDFs embed Latin Modern font programs. The altar-server guides embed
-Libertinus Serif, Sans, and Mono font programs as used. Libertinus is supplied
+Published PDFs embed Latin Modern font programs. The altar-server guides and the
+reading-plan tracks embed Libertinus Serif, Sans, and Mono font programs as used;
+the tracks were reset in Libertinus on 1 August 2026, having been set in Latin
+Modern before. Libertinus is supplied
 by the Libertinus Project and is not relicensed under CC BY 4.0. The installed
 font metadata identifies SIL Open Font License 1.1; the `libertinus` TeX
 support files are supplied separately under the LaTeX Project Public License.
