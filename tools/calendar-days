@@ -170,8 +170,17 @@ PRECEDENCE_NOTE = (
     + ", so a date carrying more than one candidate lists them all unranked, "
     "temporal candidates before fixed-date ones. The `rank` a candidate carries is "
     "the rank its own calendar prints, not a computed ordering, and it does not "
-    "resolve the day. The competent Ordo decides which mass is said."
+    "resolve the day. The competent Ordo decides which mass is said. "
+    "`appointed` is the one exception, and it states no precedence either: a "
+    "commemoration is not a rival mass but a text said within the mass of the "
+    "day, so setting the commemorations aside reads what the index records "
+    "rather than ordering what it does not. Where more than one mass remains "
+    "after that, `appointed` is null."
 )
+
+# The ranks that mark a commemoration rather than a mass. Matched case-folded
+# and stripped, because the two calendars print the word differently.
+COMMEMORATION_RANKS = frozenset({"comm", "comm.", "commemoration"})
 
 TERRITORIAL_NOTE = (
     "Universal Norms 7 assigns these celebrations to a Sunday only where the "
@@ -1214,6 +1223,7 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
 
     days: dict[str, list[dict]] = {}
     ferial: dict[str, list[dict]] = {}
+    appointed: dict[str, str] = {}
     when = date(civil_year, 1, 1)
     stop = date(civil_year, 12, 31)
     while when <= stop:
@@ -1224,6 +1234,14 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
                 | ({"territorial": entry["territorial"]} if entry.get("territorial") else {})
                 for entry in found
             ]
+            # Only where the day carries more than one entry is there anything
+            # to settle, and only the commemorations settle it. A date absent
+            # from this map has either one mass or two the calendar does not
+            # choose between.
+            if len(found) > 1:
+                settled = appointed_of(found)
+                if settled:
+                    appointed[when.isoformat()] = settled
         borrowed = owner.ferial.get(when)
         if borrowed:
             ferial[when.isoformat()] = [
@@ -1236,6 +1254,7 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
     name = index["directory"]
     document = {
         "advisory": ADVISORY,
+        "appointed": appointed,
         "calendar": index["calendar"],
         "civil_year": civil_year,
         "days": days,
@@ -1863,6 +1882,10 @@ def run_day(arguments: argparse.Namespace) -> dict:
                     for entry in owner.ferial.get(when) or []
                 ],
                 "lectionary": summary["lectionary"],
+                "appointed": appointed_of(candidates),
+                "commemorations": [
+                    entry["key"] for entry in candidates if is_commemoration(entry)
+                ],
                 "ranked": len(candidates) <= 1,
                 "season": owner.season_of(when),
                 "unresolved": owner.unresolved,
@@ -1871,6 +1894,23 @@ def run_day(arguments: argparse.Namespace) -> dict:
             }
         )
     return {"advisory": ADVISORY, "date": when.isoformat(), "days": found, "status": "ok"}
+
+
+def is_commemoration(entry: dict) -> bool:
+    return str(entry.get("rank") or "").strip().lower() in COMMEMORATION_RANKS
+
+
+def appointed_of(candidates: list[dict]) -> str | None:
+    """The mass that occurs, where the calendar's own records settle it.
+
+    This is not a precedence computation and must never become one. A
+    commemoration is not a candidate for the day's mass: it is a collect,
+    secret and postcommunion added to whatever mass is said. Excluding them
+    therefore reads the index rather than ranking it, and where two masses
+    still stand this returns None and the caller shows both.
+    """
+    masses = [entry for entry in candidates if not is_commemoration(entry)]
+    return str(masses[0]["key"]) if len(masses) == 1 else None
 
 
 def render(payload: object, arguments: argparse.Namespace) -> int:

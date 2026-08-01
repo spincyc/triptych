@@ -173,6 +173,8 @@ def run_show(arguments: argparse.Namespace) -> dict:
             "season": day.get("season"),
             "week": day.get("week"),
             "ranked": day.get("ranked"),
+            "appointed": day.get("appointed"),
+            "commemorations": day.get("commemorations") or [],
             "masses": masses,
         }
         if arguments.why:
@@ -257,11 +259,25 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print(head)
         if not day["masses"]:
             print("  no mass is written for this day")
-        if day["masses"] and not day.get("ranked"):
-            print(f"  {len(day['masses'])} candidates; {PRECEDENCE}")
-        for mass in day["masses"]:
+        appointed = day.get("appointed")
+        commemorated = set(day.get("commemorations") or [])
+        # Where the commemorations alone settle the day, lead with the mass
+        # that is said and mark the rest for what they are. Where two masses
+        # remain, say so rather than choosing between them.
+        if day["masses"] and not appointed and not day.get("ranked"):
+            print(f"  {len(day['masses'])} masses; {PRECEDENCE}")
+        ordered = sorted(
+            day["masses"],
+            key=lambda m: (m["key"] != appointed, m["key"] in commemorated),
+        )
+        for mass in ordered:
             rank = f" ({mass['rank']})" if mass.get("rank") else ""
-            print(f"\n  {mass.get('name') or mass['key']}{rank}")
+            mark = ""
+            if mass["key"] in commemorated:
+                mark = "  — commemorated within the mass above"
+            elif appointed and mass["key"] != appointed:
+                mark = "  — also appointed here"
+            print(f"\n  {mass.get('name') or mass['key']}{rank}{mark}")
             if arguments.why and mass.get("rule"):
                 print(f"    why: {mass['rule']}")
             if mass.get("refused"):

@@ -56,7 +56,7 @@
  ],
  "guidance": "guidance/liturgy/calendar-computation.md",
  "precedence": {
-  "note": "No general table of precedence is stated in guidance/liturgy/calendar-computation.md, so a date carrying more than one candidate lists them all unranked, temporal candidates before fixed-date ones. The `rank` a candidate carries is the rank its own calendar prints, not a computed ordering, and it does not resolve the day. The competent Ordo decides which mass is said.",
+  "note": "No general table of precedence is stated in guidance/liturgy/calendar-computation.md, so a date carrying more than one candidate lists them all unranked, temporal candidates before fixed-date ones. The `rank` a candidate carries is the rank its own calendar prints, not a computed ordering, and it does not resolve the day. The competent Ordo decides which mass is said. `appointed` is the one exception, and it states no precedence either: a commemoration is not a rival mass but a text said within the mass of the day, so setting the commemorations aside reads what the index records rather than ordering what it does not. Where more than one mass remains after that, `appointed` is null.",
   "stated": false
  },
  "schema": "triptych-calendar-days/v1",
