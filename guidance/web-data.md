@@ -228,15 +228,69 @@ Each solved case may assert only fields the tool enumerates, so a misspelled
 field name is an error rather than a field nobody checked; the fields no case
 asserts are listed on every run.
 
+## The Ordinary layer
+
+`structure/ordinary/<calendar>.json`, written by `mass-ordinary structure`, is
+the unvarying frame the propers are set into. It is a layer of its own and not a
+mass, because a mass index entry needs a `registry` and either `propers` or
+`forms`, `calendar-spine` would read it as a celebration with no date, and
+`mass-propers census` would count it into totals two publications carry and make
+them lie. The postconciliar mass index says so of itself: *the invariant Ordinary
+is out of scope*.
+
+One file per calendar, none per year, and the same additive rule as everywhere
+else: a missal adds one file, a prayer adds a row, and adding either rewrites
+nothing.
+
+The source is two objects and only one of them holds words:
+
+- an **artifact** under the edition that prints them — a TSV, one physical line
+  per printed block, with a hash and a rights record; and
+- an **inventory**, `src/sources/inventories/<calendar>-ordo-missae-v1.toml`,
+  which holds the order of sections, the witnesses, and what is absent and why,
+  and never restates a line an artifact already carries.
+
+That split is not tidiness. The propers side learned it expensively: a hand-typed
+second copy of an artifact drifted from it at 45 loci, and every error the site
+was serving sat inside those 45.
+
+**Two absences, kept apart.** Each element records which of its two texts is
+missing and under which named reason, because the reasons are different and the
+difference is the point. On the postconciliar missal the English is absent
+because ICEL holds it and the Latin because no distribution basis for the
+*editio typica* is recorded here; on the 1962 missal the English is present and
+only the Latin is untranscribed. Collapsing both into one "missing" would hide
+exactly what a reader needs to be able to see. An element that carries neither
+text nor a stated reason is a hard failure: a silent gap is the one thing this
+layer must never emit.
+
+**A third rights state.** `mass-propers` publishes `public-domain` and
+`project-created` and withholds the rest, which is two states. The ELLC
+ecumenical common texts are a third — under copyright, licensed for free use,
+and carrying an acknowledgement the licence requires. `licensed-free` is that
+state, a witness declaring it must carry a nonempty `acknowledgement`, and the
+acknowledgement is emitted beside every text it covers. It renders at the point
+of use rather than once in a page footer, because a reader who copies a prayer
+out must carry the condition with it.
+
+**Variants are the celebrant's choice, not a filter.** Where a missal offers
+several forms of one element — the four postconciliar Eucharistic Prayers — the
+inventory declares a variant group and each element names its option. The 1962
+missal has one Canon and declares no group, so the control does not appear for
+it at all. Exactly one option is marked default, and the default is the order the
+book itself prints: any other basis would be this project preferring one prayer,
+which `guidance/editorial.md` forbids in an apparatus a reader cannot argue with.
+
 ## Assembling the site
 
-Five of the pieces are generated straight into the data root:
+Six of the pieces are generated straight into the data root:
 
 ```sh
 tools/tpt mass-propers  structure --out src/web/data  # structure/propers/*.json
 tools/tpt reading-plan  structure --out src/web/data  # structure/readings/*.json
 tools/tpt calendar-days structure --out src/web/data  # structure/calendar/**/*.json
 tools/tpt calendar-rubrics structure --out src/web/data  # structure/rubrics/*.json
+tools/tpt mass-ordinary structure --out src/web/data  # structure/ordinary/*.json
 tools/tpt index-bible   manifest  --out src/web/data  # bibles.json
 ```
 
