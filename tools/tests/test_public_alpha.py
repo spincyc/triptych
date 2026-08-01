@@ -1381,6 +1381,43 @@ class PublicAlphaTest(unittest.TestCase):
             str(failure.exception),
         )
 
+    def test_verifier_rejects_a_recognized_site_source_the_record_omits(
+        self,
+    ) -> None:
+        """Hashing the record alone reports exact over an input it never names."""
+        publications, output = self.build_verified_artifact()
+        del self.manifest["authorizations"]["test-authorization"]["site_sources"][
+            "tools/public-alpha"
+        ]
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+        message = str(failure.exception)
+        self.assertIn(
+            "site source tools/public-alpha is recognized by the renderer and "
+            "is not in the approved record",
+            message,
+        )
+        self.assertIn("make refresh-release-bindings ADOPT=1", message)
+
+    def test_verifier_rejects_a_recorded_site_source_nothing_renders(self) -> None:
+        """A hash attesting a file the release does not use is a false record."""
+        publications, output = self.build_verified_artifact()
+        self.write("notes/retired.md", b"retired\n")
+        self.manifest["authorizations"]["test-authorization"]["site_sources"][
+            "notes/retired.md"
+        ] = digest(b"retired\n")
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+        self.assertIn(
+            "site source notes/retired.md is recorded but the renderer no "
+            "longer reads it",
+            str(failure.exception),
+        )
+
     def test_verifier_rejects_copied_pdf_without_owning_catalog_link(self) -> None:
         self.authorize_current_inputs()
         publications = self.tool.validate_manifest(self.manifest)

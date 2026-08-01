@@ -19,6 +19,7 @@ import re
 import sys
 import zoneinfo
 from pathlib import Path
+from typing import NamedTuple
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -42,7 +43,10 @@ EXAMPLES = {
             ),
             "exit 1, ending `stale: 19 stale binding(s)`: every recorded site "
             "source is hashed and compared, and each divergence names the "
-            "recorded and the actual digest. `refresh` is what re-records them",
+            "recorded and the actual digest. The record is also differenced "
+            "against the renderer's recognized set both ways, so an input "
+            "nobody recorded prints `unrecorded` and an entry nothing renders "
+            "prints `unrecognized`. `refresh` is what re-records them",
         ),
         Example(
             "tools/release-bindings status --help",
@@ -245,23 +249,70 @@ def recorded_site_sources(authorization: dict) -> dict[str, str]:
 # divergence exactly as a changed byte is: the record names something the
 # release cannot supply.
 ABSENT = "<no such file>"
+# A recognized input the record never mentions, and so the one thing an
+# exactness-only check cannot see: there is no entry to hash.
+UNRECORDED = "<not in the record>"
 
 
-def site_source_divergences(authorization: dict) -> list[tuple[str, str, str]]:
-    """Every recorded site binding whose file is not what the record says.
+class Divergence(NamedTuple):
+    """One disagreement: kind is stale, missing, unrecorded, or unrecognized."""
 
-    The one comparison in this tool. ``status`` reports it and ``refresh``
-    rewrites from it; a second copy would drift from this one, and the drift
-    would be invisible because both would still print a number.
+    kind: str
+    source: str
+    recorded: str
+    actual: str
+
+
+def site_source_divergences(authorization: dict) -> list[Divergence]:
+    """Every way the site record fails to describe the renderer's inputs.
+
+    The one comparison in this tool. ``status`` reports it, ``refresh``
+    rewrites from it, and ``approve`` refuses on it; a second copy would drift
+    from this one, and the drift would be invisible because all of them would
+    still print a number.
+
+    Three kinds, not one. Hashing the recorded entries answers only whether
+    what is written down is current; the recognized set is differenced against
+    the record in both directions so that an input nobody recorded and an entry
+    nothing renders are divergences too. Only exactness was compared until
+    2026-07-31, and twelve recognized inputs — the icon, the social card, the
+    six installed reading tracks and the whole catena page — sat outside the
+    authorization under a green line the whole time.
     """
     recorded = recorded_site_sources(authorization)
-    divergences: list[tuple[str, str, str]] = []
+    recognized = recognized_site_sources()
+    divergences: list[Divergence] = []
     for source in sorted(recorded):
         path = ROOT / source
         actual = sha256_file(path) if path.is_file() else ABSENT
-        if actual != recorded[source]:
-            divergences.append((source, recorded[source], actual))
-    return divergences
+        if source not in recognized:
+            divergences.append(
+                Divergence("unrecognized", source, recorded[source], actual)
+            )
+        elif actual != recorded[source]:
+            kind = "missing" if actual == ABSENT else "stale"
+            divergences.append(Divergence(kind, source, recorded[source], actual))
+    for source in sorted(recognized - set(recorded)):
+        path = ROOT / source
+        actual = sha256_file(path) if path.is_file() else ABSENT
+        divergences.append(Divergence("unrecorded", source, UNRECORDED, actual))
+    return sorted(divergences, key=lambda divergence: divergence.source)
+
+
+def describe(divergence: Divergence) -> str:
+    """One line's right-hand side, naming what the record says and what is."""
+    if divergence.kind == "unrecorded":
+        return (
+            f"nothing recorded, actual {divergence.actual}; "
+            "`make refresh-release-bindings ADOPT=1` adopts it"
+        )
+    if divergence.kind == "unrecognized":
+        return (
+            f"recorded {divergence.recorded}, the renderer no longer reads it; "
+            "`make refresh-release-bindings ADOPT=1` retires it"
+        )
+    detail = "no such file" if divergence.actual == ABSENT else f"actual {divergence.actual}"
+    return f"recorded {divergence.recorded}, {detail}"
 
 
 def compute_site_hashes(authorization: dict, adopt: bool = False) -> dict[str, str]:
@@ -298,8 +349,14 @@ def refresh(manifest: dict, adopt: bool = False) -> list[str]:
     record_path = rights_record_path(authorization)
 
     # Read the divergences before rewriting the record they are measured
-    # against; `status` reports this same list without writing anything.
-    diverged = {source for source, _, _ in site_source_divergences(authorization)}
+    # against; `status` reports this same list without writing anything. Only
+    # the stale kind names a rewritten hash: the set differences are reported
+    # below as adoptions and retirements, from the same comparison.
+    diverged = {
+        divergence.source
+        for divergence in site_source_divergences(authorization)
+        if divergence.kind == "stale"
+    }
     site_hashes = compute_site_hashes(authorization, adopt)
     recorded = authorization["site_sources"]
     for source in sorted(set(site_hashes) - set(recorded)):
@@ -332,6 +389,25 @@ def approve(manifest: dict, note: str, timezone_name: str) -> None:
         raise BindingError("approve requires a non-empty operator instruction note")
     authorization = single_authorization(manifest)
     record_path = rights_record_path(authorization)
+    # The supplement below says the approval binds every recognized
+    # artifact-affecting input at its current bytes. That is a claim about the
+    # record's completeness and currency, so it is computed here instead of
+    # asserted: an approval written over a record that omits a recognized input
+    # attests a coverage nobody established, and until this refusal existed the
+    # sentence was written while nothing had ever called
+    # `recognized_site_sources`.
+    divergences = site_source_divergences(authorization)
+    if divergences:
+        named = ", ".join(divergence.source for divergence in divergences[:5])
+        more = "" if len(divergences) <= 5 else f", and {len(divergences) - 5} more"
+        raise BindingError(
+            f"refusing to approve: {len(divergences)} site-source divergence(s) "
+            f"({named}{more}). An approval states that every recognized "
+            "artifact-affecting input is inventoried at its current bytes; run "
+            "`make check-release-bindings` for the full list and "
+            "`make refresh-release-bindings ADOPT=1` to settle the record first"
+        )
+    site_sources = recorded_site_sources(authorization)
     zone = zoneinfo.ZoneInfo(timezone_name)
     now = datetime.datetime.now(tz=zone).replace(microsecond=0)
     counts = {"release": 0, "review": 0, "hold": 0}
@@ -349,8 +425,10 @@ def approve(manifest: dict, note: str, timezone_name: str) -> None:
         "`no-project-initiated-promotion`.\n\n"
         f"The approval binds all {counts['release']} exact installed release\n"
         f"PDF snapshots, all {counts['review']} conspicuously labelled public-alpha\n"
-        "review snapshots, and every exact recognized artifact-affecting\n"
-        "reader-site input inventoried below at their current bytes. It is an\n"
+        f"review snapshots, and all {len(site_sources)} exact recognized\n"
+        "artifact-affecting reader-site inputs inventoried below, which were\n"
+        "compared against the renderer's recognized set and their current\n"
+        "bytes before this approval was recorded. It is an\n"
         "exact-byte distribution clearance only: it does not represent\n"
         "completion of any outstanding work-specific rights, source,\n"
         "collation, specialist, or ecclesiastical review, and no imprimatur,\n"
@@ -441,20 +519,19 @@ def migrate_publications(manifest: dict) -> int:
 def report_status(manifest: dict) -> int:
     stale = 0
     authorization = single_authorization(manifest)
-    # Site sources are compared here, against their bytes, because nothing else
-    # does it. Publication PDF hashes are genuinely generated into the artifact
-    # and are not recorded here, but this comment used to say the same of the
-    # site sources and drop them from the report. It was wrong twice: the
-    # renderer's policy check proves an entry is a well-formed hash naming a
-    # file that exists, never that the two correspond, and `refresh` maintains
-    # these entries and the artifact publishes them, so they are live records
-    # rather than migration history. Between 2026-07-27 and this change the
-    # comparison existed only inside `refresh`, which meant the drift could be
-    # seen only by performing the write that a lane mid-flight must not do.
-    for source, recorded, actual in site_source_divergences(authorization):
-        detail = "no such file" if actual == ABSENT else f"actual {actual}"
-        label = "missing" if actual == ABSENT else "stale"
-        print(f"{label} site source {source}: recorded {recorded}, {detail}")
+    # Site sources are compared here, against their bytes and against the set
+    # the renderer recognizes, because nothing else does it. Publication PDF
+    # hashes are genuinely generated into the artifact and are not recorded
+    # here, but this comment used to say the same of the site sources and drop
+    # them from the report. It was wrong twice: the renderer's policy check
+    # proves an entry is a well-formed hash naming a file that exists, never
+    # that the two correspond, and `refresh` maintains these entries and the
+    # artifact publishes them, so they are live records rather than migration
+    # history. Between 2026-07-27 and 2026-07-31 the comparison existed only
+    # inside `refresh`, which meant the drift could be seen only by performing
+    # the write that a lane mid-flight must not do.
+    for divergence in site_source_divergences(authorization):
+        print(f"{divergence.kind} site source {divergence.source}: {describe(divergence)}")
         stale += 1
     record_path = rights_record_path(authorization)
     if authorization.get("rights_record_sha256") != sha256_file(record_path):

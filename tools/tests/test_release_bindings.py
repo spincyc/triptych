@@ -118,6 +118,12 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
         self.tool.ROOT = self.root
         self.tool.MANIFEST = self.manifest_path
+        # The renderer's recognized set is the second half of the comparison,
+        # so every test declares it rather than inheriting the real site's.
+        self.recognize({"README.md"})
+
+    def recognize(self, sources):
+        self.tool.recognized_site_sources = lambda: set(sources)
 
     def read_manifest(self):
         return json.loads(self.manifest_path.read_text())
@@ -210,6 +216,40 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertIn("no such file", lines[0])
         self.assertIn("stale: 1 stale binding(s)", lines[-1])
 
+    def test_status_fails_on_a_recognized_source_the_record_omits(self):
+        """The defect: a source never recorded is invisible to a record walk."""
+        self.tool.refresh(self.tool.load_manifest())
+        self.assertEqual(0, self.capture_status()[0])
+
+        icon = self.root / "assets/icon.png"
+        icon.parent.mkdir(parents=True)
+        icon.write_bytes(b"icon v1")
+        self.recognize({"README.md", "assets/icon.png"})
+        code, lines = self.capture_status()
+
+        self.assertEqual(1, code)
+        self.assertIn("unrecorded site source assets/icon.png", lines[0])
+        self.assertIn(sha(b"icon v1"), lines[0])
+        self.assertIn("ADOPT=1", lines[0])
+        self.assertIn("stale: 1 stale binding(s)", lines[-1])
+
+        self.tool.refresh(self.tool.load_manifest(), adopt=True)
+        self.assertEqual(0, self.capture_status()[0])
+
+    def test_status_fails_on_a_recorded_source_no_longer_recognized(self):
+        """A retired file leaves a hash attesting something nothing renders."""
+        self.tool.refresh(self.tool.load_manifest())
+        self.assertEqual(0, self.capture_status()[0])
+
+        self.recognize(set())
+        code, lines = self.capture_status()
+
+        self.assertEqual(1, code)
+        self.assertIn("unrecognized site source README.md", lines[0])
+        self.assertIn(sha(b"readme v1"), lines[0])
+        self.assertIn("no longer reads it", lines[0])
+        self.assertIn("stale: 1 stale binding(s)", lines[-1])
+
     def test_status_passes_and_reports_exact_on_a_settled_tree(self):
         self.tool.refresh(self.tool.load_manifest())
 
@@ -224,8 +264,8 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.readme.write_bytes(b"readme v2")
 
         reported = {
-            source
-            for source, _, _ in self.tool.site_source_divergences(
+            divergence.source
+            for divergence in self.tool.site_source_divergences(
                 self.tool.single_authorization(self.tool.load_manifest())
             )
         }
@@ -251,7 +291,7 @@ class ReleaseBindingsTests(unittest.TestCase):
         page = self.root / "web/gpt/articles/example.md"
         page.parent.mkdir(parents=True)
         page.write_bytes(b"web edition v1")
-        self.tool.recognized_site_sources = lambda: {"web/gpt/articles/example.md"}
+        self.recognize({"web/gpt/articles/example.md"})
 
         changes = self.tool.refresh(self.tool.load_manifest(), adopt=True)
 
@@ -263,7 +303,7 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
 
     def test_refresh_without_adoption_keeps_the_recorded_input_set(self):
-        self.tool.recognized_site_sources = lambda: {"web/gpt/articles/example.md"}
+        self.recognize({"web/gpt/articles/example.md"})
 
         self.tool.refresh(self.tool.load_manifest())
 
@@ -353,6 +393,34 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertIn("Supplemental exact-current-snapshot clearance", record_text)
         self.assertNotIn(sha(b"claude pdf v3"), record_text)
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
+
+    def test_approve_states_the_inventory_size_it_verified(self):
+        self.tool.refresh(self.tool.load_manifest())
+
+        self.tool.approve(
+            self.tool.load_manifest(), "Approve the snapshot.", "America/Chicago"
+        )
+
+        self.assertIn("all 1 exact recognized", self.record.read_text())
+
+    def test_approve_refuses_an_inventory_that_omits_a_recognized_source(self):
+        """The claim is computed, not asserted: no completeness, no approval."""
+        self.tool.refresh(self.tool.load_manifest())
+        icon = self.root / "assets/icon.png"
+        icon.parent.mkdir(parents=True)
+        icon.write_bytes(b"icon v1")
+        self.recognize({"README.md", "assets/icon.png"})
+        before = self.record.read_text()
+
+        with self.assertRaises(self.tool.BindingError) as failure:
+            self.tool.approve(
+                self.tool.load_manifest(), "Approve the snapshot.", "America/Chicago"
+            )
+
+        message = str(failure.exception)
+        self.assertIn("assets/icon.png", message)
+        self.assertIn("refresh-release-bindings ADOPT=1", message)
+        self.assertEqual(before, self.record.read_text())
 
 
 if __name__ == "__main__":

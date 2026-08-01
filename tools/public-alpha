@@ -804,6 +804,23 @@ def site_source_paths() -> set[str]:
     )
 
 
+def site_source_inventory_gaps(
+    recorded: Iterable[str],
+) -> tuple[list[str], list[str]]:
+    """Compare a recorded site-source inventory with the recognized set.
+
+    Returns the recognized inputs the record omits and the recorded paths the
+    renderer no longer reads. Both directions are false attestations: an
+    unrecorded input reaches a reader with no approved hash behind it, and a
+    recorded path nothing renders leaves a hash attesting a file the release
+    does not use. A check that walks the record alone sees neither and reports
+    exact, which is how twelve recognized inputs stayed unbound.
+    """
+    recognized = site_source_paths()
+    held = set(recorded)
+    return sorted(recognized - held), sorted(held - recognized)
+
+
 def artifact_license_source_paths() -> list[str]:
     """Return the exact license inputs captured in the authorized source set."""
     return sorted(
@@ -2901,13 +2918,18 @@ REFRESH_BINDINGS_INSTRUCTION = (
 
 
 def site_source_binding_errors(manifest: dict) -> list[str]:
-    """Prove every approved site-source hash is the file's actual content.
+    """Prove the approved site-source inventory is complete and exact.
 
     Manifest validation proves an entry is a well-formed hash naming a file that
     exists; only this proves the two correspond. Verification owns the check
     because `artifact_manifest_data` republishes these hashes inside
     PUBLICATION-MANIFEST.json as an attestation about the files that built the
     artifact, and verification is the last gate before that is published.
+
+    Exactness alone is not the attestation: hashing only what is recorded
+    reports exact over an input the record never mentions. `site_source_paths`
+    is therefore differenced against the record in both directions here, so the
+    published inventory is proved complete as well as current.
     """
     errors: list[str] = []
     authorizations = manifest.get("authorizations")
@@ -2937,6 +2959,17 @@ def site_source_binding_errors(manifest: dict) -> list[str]:
                     f"{label} {source_relative} does not match its approved "
                     f"SHA-256: approved {approved_hash}, actual {actual_hash}"
                 )
+        unrecorded, unrecognized = site_source_inventory_gaps(site_sources)
+        for source_relative in unrecorded:
+            errors.append(
+                f"{label} {source_relative} is recognized by the renderer and "
+                "is not in the approved record"
+            )
+        for source_relative in unrecognized:
+            errors.append(
+                f"{label} {source_relative} is recorded but the renderer no "
+                "longer reads it"
+            )
     if errors:
         errors.append(REFRESH_BINDINGS_INSTRUCTION)
     return errors

@@ -37,7 +37,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 status_exit=0
 run_tool status >"$sandbox/status.txt" || status_exit=$?
 summary_line="$(tail -1 "$sandbox/status.txt")"
-divergences="$(grep -c '^\(stale\|missing\) ' "$sandbox/status.txt" || true)"
+divergences="$(grep -c '^\(stale\|missing\|unrecorded\|unrecognized\) ' "$sandbox/status.txt" || true)"
 case "$summary_line" in
 "exact: 0 stale binding(s)")
 	if [ "$status_exit" -ne 0 ]; then
@@ -73,15 +73,32 @@ esac
 # defect this replaced, because a `status` that compares nothing reports nothing
 # and exits 0 in perfect self-agreement.  Only a second, separate derivation
 # catches a comparison that has stopped happening.
+#
+# The oracle counts the recognized set against the record in both directions as
+# well, because the same self-agreement hid the second half: a check that walks
+# the recorded entries alone reports exact while twelve recognized inputs sit
+# outside the authorization.  The recognized set can only come from the
+# renderer, so the oracle asks it for the set and then does its own arithmetic.
 expected="$(python3 - <<'PY'
-import hashlib, json, pathlib
+import hashlib, importlib.machinery, importlib.util, json, pathlib
+
+loader = importlib.machinery.SourceFileLoader("oracle_public_alpha", "tools/public-alpha")
+spec = importlib.util.spec_from_loader(loader.name, loader)
+renderer = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(renderer)
+recognized = set(renderer.site_source_paths())
+
 manifest = json.loads(pathlib.Path("release/public-alpha.json").read_text(encoding="utf-8"))
 count = 0
 for authorization in manifest.get("authorizations", {}).values():
-    for source, recorded in authorization.get("site_sources", {}).items():
+    site_sources = authorization.get("site_sources", {})
+    for source, recorded in site_sources.items():
         path = pathlib.Path(source)
-        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != recorded:
+        if source not in recognized:
             count += 1
+        elif not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != recorded:
+            count += 1
+    count += len(recognized - set(site_sources))
     record = pathlib.Path(authorization["rights_record"])
     if hashlib.sha256(record.read_bytes()).hexdigest() != authorization["rights_record_sha256"]:
         count += 1
