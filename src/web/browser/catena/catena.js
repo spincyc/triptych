@@ -107,12 +107,13 @@
       verse.appendChild(document.createTextNode(result.verses[String(number)] + ' '));
       passage.appendChild(verse);
     }
-    // Collapsible like the fragments, but OPEN by default: the chapter is what
-    // the page is about, and the commentary is what is read against it. A
-    // reader closes it to compare several fathers without the text between.
+    // Closed like everything else. The maintainer's direction is that the page
+    // opens as an index of what is here — the chapter, who comments on it, what
+    // is not yet acquired — and a reader opens what they want. An earlier pass
+    // kept this open on the theory that the chapter is the point; it made the
+    // page open on a wall of text with the chain pushed below the fold.
     const holder = document.createElement('details');
     holder.className = 'chapter-body';
-    holder.open = true;
     const head = document.createElement('summary');
     head.className = 'chapter-head';
     head.appendChild(

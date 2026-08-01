@@ -51,13 +51,19 @@
 
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
     Georgia, "Times New Roman", serif;
-  /* Running scripture is set in its own face, not the page's. The Palatino
-     family above is generous on the body and wide on the em — handsome for a
-     heading and tiring for thirty verses. Charter was drawn for economy at
-     text sizes: narrower, shorter extenders, and it holds its colour at a
-     smaller size, so the same measure carries more words without crowding.
-     Source Serif and Literata are the Android and Chrome fallbacks; Charter
-     ships on Apple platforms. Georgia remains the floor. */
+  /* Running scripture is set in its own face, not the page's. A grotesque was
+     asked for and a grotesque is what this is: Helvetica and Arial first, with
+     Liberation and Nimbus covering Linux, so the same shapes land wherever the
+     page opens. `--sans` above is deliberately NOT reused — it leads with
+     `system-ui`, which is whatever the operating system dresses its menus in,
+     and scripture should not change face with the platform. */
+  --scripture: "Helvetica Neue", Helvetica, Arial, "Liberation Sans",
+    "Nimbus Sans", "Segoe UI", Roboto, sans-serif;
+
+  /* Commentary keeps the serif, which is now a distinction and not an
+     accident: on the catena page the scripture and the fathers commenting on
+     it are set in different faces, so a reader can tell them apart before
+     reading a word. */
   --serif-text: Charter, "Bitstream Charter", "Source Serif 4",
     "Source Serif Pro", Literata, Cambria, Georgia, serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
@@ -405,9 +411,9 @@ body:not(:has(> .site-header)) {
    superscript rather than from the whole column. */
 .passage {
   margin: 0 0 0.75rem;
-  font-family: var(--serif-text);
-  font-size: 0.96rem;
-  line-height: 1.5;
+  font-family: var(--scripture);
+  font-size: 0.94rem;
+  line-height: 1.55;
   hyphens: auto;
 }
 
