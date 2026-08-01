@@ -10,11 +10,15 @@ running beside the text — and this is not a reproduction of Aquinas's
 gospels and a work this project may later carry as a source. Where the two could
 be confused, the work wins the name and the page takes another.
 
-**Nothing here has been built.** The commentary texts do not exist in this
-repository and are not expected to until a later acquisition round. This study
-exists so that the addressing, granularity and storage decisions are settled
-*before* acquisition, because they are the decisions that are expensive to
-revisit once several thousand fragments have landed under the wrong key.
+This began as a design study written before anything was built, so that the
+addressing, granularity and storage decisions would be settled *before*
+acquisition — those being the decisions that are expensive to revisit once
+several thousand fragments have landed under the wrong key. That worked, and the
+study has since been overtaken by its own subject: the page is live at `/catena/`,
+the edge exists, and a Genesis pilot has put four fragments through the whole
+apparatus. Where the study first got a figure or a rule wrong, the correction is
+made **in place and marked**, because a design document that quietly agrees with
+whatever was built is no longer evidence of anything.
 
 ## Evidence conventions
 
@@ -38,8 +42,8 @@ word "commentary", and the page must render exactly one of them.
 | **L2 holding** | *we possess this work, in this edition, under this licence* | the source library | an artifact on disk |
 | **L3 fragment** | *these words, by this author, on this locus* | the source library's `passage` records | the text itself |
 
-L1 exists and is large: **497 rows, 61 books, 341 distinct works, 86 authors**
-[verified].
+L1 exists and is large: **490 rows, 61 books, 341 distinct works, 86 authors**,
+across 7,203 entries [verified].
 
 L3 also exists, which an earlier draft of this study got wrong and is worth
 correcting in place rather than quietly. No field anywhere in
@@ -129,26 +133,28 @@ source this project can reach models it.
 The page is chapter-shaped. That is a fact about the page and it must not become
 a fact about the storage.
 
-**The index already carries two granularities, and they disagree** [verified].
-Of its 497 rows, 490 are chapter-keyed and 7 are verse-or-range-keyed survivors
-of the early pilot runs — `Luke 21:25-21:33`, `Romans 13:11-13:14`,
-`Psalms 24:1-24:3`, `Psalms 24:3`, `Psalms 24:4`, `Psalms 84:8`, `Psalms 84:13`,
-all of them First Sunday of Advent propers. The arithmetic reconciles: 491
-harvested chapter loci, less `4 Esdras 2` which all three passes correctly
-returned empty, gives 490.
+**Settled by TASK-101; recorded here because the reasoning outlived the defect.**
+The index once carried two granularities that disagreed: of 497 rows, 490 were
+chapter-keyed and 7 were verse-or-range survivors of the early pilot runs, all of
+them First Sunday of Advent propers. They were not duplicates — `Luke 21:25-21:33`
+carried 27 works of which 14 appeared on no chapter row — so the index answered
+the same question two ways and the answers differed, both looking complete.
 
-They are not duplicates. `Psalms 24:4` carries 19 works of which **7 appear on no
-chapter row**; `Romans 13:11-13:14` carries 22 of which **13** do not;
-`Luke 21:25-21:33` carries 27 of which **14** do not [verified]. So the index
-answers the same question two ways and the answers differ. A consumer keyed on
-chapters loses those works silently; a consumer keyed on the pilot loci sees a
-different corpus for the same text. Both look complete.
+It now holds **490 chapter rows and 7,203 work entries** [verified], and the fold
+lost nothing: 7,203 = 7,203, with all 42 works that had sat only on a pilot row
+now on their chapter rows.
 
-`docs/reading-and-commentary.md` listed four things that had to happen before
-promotion, in order, and the third was *"reconcile the two locus granularities
-the ledger carries […] so promotion would currently emit 497 passages where 491
-were harvested."* Promotion ran anyway. This is TASK-101 and it blocks the
-catena, whose entire promise is *every* commentary on this chapter.
+The ruling corrected a misreading of this very document, which is worth keeping.
+Rule 5 below says *store the natural extent* — but Rule 5 governs **fragments**,
+and §3 draws that line itself: fragments are not asked for, they are held. The
+discovery index is **L1**, an acquisition list built from asking, and its natural
+extent *is* the chapter, because "which works comment on Luke 21" is the whole of
+what was asked and answered. A verse-range key asserted something the harvest
+never learned — that those works address verses 25–33 specifically — which is
+this repository's named worst failure wearing a finer address.
+
+So: the index stores the chapter and derives everything finer. Fragments store
+their extent. The two layers take opposite defaults, for the same reason.
 
 > **Rule 5.** A fragment is stored at its **natural extent** — the range the
 > commentator actually addressed — and the chapter view is **derived**. One
@@ -201,24 +207,34 @@ came from. That is the first time this project will have rendered a work title
 beside a passage, and it converts a currently invisible defect into a visible
 one.
 
-Of the 300 groups in `work-aliases.yaml`, exactly two have a canonical title
-naming fewer books than the group spans [verified]:
+**Settled by TASK-100.** This study first reported *two* groups whose canonical
+title named fewer books than the group spans — Aquinas and Theophylact, both
+labelled *ad Romanos*, against 148 index rows naming the wrong book, 61 at
+confidence 1.0. Both figures were low. The check written to enforce Rule 8 found
+**four** groups, and the true count of mislabelled rows was **151**, of which 57
+sat at confidence 1.0 — all three independent runs agreeing, which does not make
+it right, because they share the bias. It is now 0.
 
-```
-Thomas Aquinas       => Super Epistolam ad Romanos lectura     spans 10 books
-Theophylact of Ohrid => Expositio in epistulam ad Romanos       spans 10 books
-```
+    Thomas Aquinas       => Super Epistolas S. Pauli lectura
+    Theophylact of Ohrid => In omnes D. Pauli apostoli epistolas enarrationes
+    Theophylact of Ohrid => Commentarius in epistulas catholicas
+    Albert the Great     => Commentarii in duodecim prophetas minores
 
-Both groupings are *correct* — each author really did comment across the Pauline
-corpus as one work. The name chosen for the group says Romans. Downstream, the
-index carries **148 rows whose recorded title names a book other than the
-passage's, 61 of them at confidence 1.0** [verified] — all three independent runs
-agreed, which does not make it right, because they share the bias.
+The groupings were correct throughout; only the names were wrong, which is why
+this was a cataloguing decision and not a data problem — as the four-item list in
+`docs/reading-and-commentary.md` predicted when it asked whether a per-book
+commentary is named by the whole or by the part.
 
-This was anticipated. The same four-item list in `docs/reading-and-commentary.md`
-names it: *"settle whether a per-book commentary is named by the whole or by the
-part, which is a cataloguing decision rather than a data problem."* It is the one
-item still open, and it is TASK-100.
+Two lessons the correction leaves behind. A hand-written detector reported the
+smaller number because it recognised only the Latin book-names it had been given;
+the landed check derives its vocabulary from the ledger instead — a word counts as
+a book name only if every attributed title carrying it landed on one book, at
+least two authors use it, and at least three distinct titles do. That yields 45
+words and correctly refuses genre words: *explanatio* heads 418 psalm attributions
+and still fails, because it also heads titles on the Apocalypse and on John. And
+the check is **sound where incomplete**: an unproved word is never read as a book
+name, so it under-reports rather than inventing. One of the four was found by
+measurement rather than by the check, which is what that trade-off costs.
 
 > **Rule 8.** No fragment renders until its work's canonical title covers the
 > work's actual extent. The check is cheap: a group's canonical title must not
@@ -334,23 +350,39 @@ A catena that pre-rendered chapter × translation × fragment-set would break bo
 
 ## 8. What must be true before acquisition begins
 
-In order. The first three are open tasks and the acquisition round should not
-start ahead of them.
+Most of this list is now discharged. It is kept in order, with what settled each,
+because a checklist that only ever grows teaches nothing.
 
-1. **TASK-101** — one locus granularity in the index, the other derived.
-   Acquiring against an index that answers two ways files the corpus two ways.
-2. **TASK-100** — canonical titles that cover their works' extent. The
-   acquisition list is keyed by work identity; a work named after one tenth of
-   itself will be acquired as one tenth of itself.
-3. **TASK-95** — the projection consumed by something. The catena is the natural
-   consumer, and a projection nothing has exercised is a projection nobody knows
-   is right.
-4. A licence survey of the candidate text sources, with the licence established
-   by fetching the licence, not by reputation.
-5. The scripture edge of Rule 10, with a validator, before the first fragment is
-   written — not after several thousand. Not a schema: the container exists.
-6. `work_id` reconciled between the harvest's leads and the source library's work
-   records, without which Rule 8 cannot be checked at all.
+1. ~~**TASK-101** — one locus granularity.~~ **Done.** The index stores the
+   chapter and derives everything finer; see §3.
+2. ~~**TASK-100** — canonical titles that cover their works' extent.~~ **Done.**
+   Four groups renamed, 151 mislabelled rows to 0; see §5.
+3. ~~**TASK-95** — the projection consumed by something.~~ **Done.** One parser
+   for `verse-aliases.tsv` instead of two, and an edition that will not project
+   now fails the build rather than resolving quietly.
+4. ~~A licence survey of the candidate text sources.~~ **Done, and it is the
+   hardest finding of the pilot.** Of ten target works on Genesis, **two** have a
+   public-domain English text and eight do not; all ten have public-domain Latin
+   or Greek. The English translations that exist are 20th- and 21st-century, the
+   earliest expiring 2052. This is not a gap more effort closes.
+5. ~~The scripture edge of Rule 10, with a validator.~~ **Done.** It lives in
+   `src/sources/commentary/fragment-loci.yaml`, *beside* the passage records
+   rather than inside them, because a field added to a passage would move its
+   `source_fingerprint` and hand a review obligation to every pinned binding
+   above it.
+6. **`work_id` reconciled** between the harvest's leads and the source library's
+   work records. Still open, and now the only item ahead of acquisition.
+
+Two things the pilot added to this list that the study did not anticipate:
+
+7. **Retrieval must not route source text through a model.** Demonstrated, not
+   feared: asked for a verbatim text, one route returned Basil exactly and, from
+   the same host under the same instruction, a **paraphrase** of Gregory of
+   Nyssa. See `guidance/sources.md`.
+8. **The unencumbered Latin is OCR wreckage and the clean Latin is encumbered.**
+   Migne PL 34's Internet Archive text layer corrupts roughly one word in eight.
+   For the eight Latin-only works the cost is transcription, not download — which
+   is a different project from acquisition and should be planned as one.
 
 ## 9. Prior art
 
