@@ -8,18 +8,11 @@
 }
 
 /* Six controls will not fit one line on a phone and must not be forced to.
-   The shared .controls already wraps; this only keeps each field usable once
-   it has wrapped. */
-.texts-page .controls {
-  align-items: end;
-}
-
+   The shared `.controls` already wraps and already sets `align-items: end`;
+   the shared `.field input` already spans its field. Only the narrowing is
+   this page's. */
 .texts-page .field {
   flex: 1 1 12rem;
-}
-
-.texts-page .field input[type="search"] {
-  width: 100%;
 }
 
 /* --- The list ---------------------------------------------------------- */
@@ -36,13 +29,7 @@
   grid-column: 1 / -1;
 }
 
-.work {
-  border: 1px solid var(--section-line, #cfcfcf);
-  border-top: 0.2rem solid var(--section-accent, #484d57);
-  border-radius: 0.2rem;
-  padding: 0.85rem 1rem 1rem;
-  background: var(--panel, #fff);
-}
+/* The card a work sits in is shared with the source library. */
 
 .work-head {
   display: flex;
@@ -54,7 +41,7 @@
 }
 
 .work-section {
-  color: var(--section-ink, #2f333a);
+  color: var(--section-ink);
   font-variant: small-caps;
   letter-spacing: 0.06em;
   font-weight: 700;
@@ -79,7 +66,7 @@
 .edition + .edition {
   margin-top: 0.9rem;
   padding-top: 0.9rem;
-  border-top: 1px dotted var(--section-line, #cfcfcf);
+  border-top: 1px dotted var(--section-line);
 }
 
 .edition-head {
@@ -94,8 +81,8 @@
   flex: 0 0 auto;
   padding: 0.05rem 0.4rem;
   border-radius: 0.15rem;
-  background: var(--section-pale, #cfd1d3);
-  color: var(--section-ink, #2f333a);
+  background: var(--section-pale);
+  color: var(--section-ink);
   font-size: 0.72rem;
   font-variant: small-caps;
   letter-spacing: 0.06em;
@@ -117,12 +104,12 @@
 
 .edition-title:hover,
 .edition-title:focus-visible {
-  color: var(--section-ink, #2f333a);
+  color: var(--section-ink);
   text-decoration: underline;
 }
 
 .edition-title[aria-expanded="true"] {
-  color: var(--section-ink, #2f333a);
+  color: var(--section-ink);
   text-decoration: underline;
 }
 
@@ -151,15 +138,15 @@
 
 .pill {
   padding: 0.05rem 0.4rem;
-  border: 1px solid var(--section-line, #cfcfcf);
+  border: 1px solid var(--section-line);
   border-radius: 0.8rem;
   font-size: 0.72rem;
   white-space: nowrap;
 }
 
 .pill-model {
-  border-color: var(--section-accent, #484d57);
-  color: var(--section-ink, #2f333a);
+  border-color: var(--section-accent);
+  color: var(--section-ink);
 }
 
 /* Something the record does not state. It is shown, and it is shown as a gap
@@ -192,24 +179,34 @@
   font-size: 0.82rem;
 }
 
-/* --- The detail panel --------------------------------------------------- */
+/* --- The detail panel ---------------------------------------------------
+   A NAME COLLISION, NOT A SHARED COMPONENT. `shared/browser-core.css` also has
+   a `.detail`: the record panel the history and law pages draw, white, with a
+   rule across its top. This one is the card that opens beside the catalogue —
+   toned, with a rule down its left edge, and closable. Every declaration of
+   the shared rule is restated below deliberately, so that the shared one
+   cannot reach this page. The right fix is a rename in `texts.js`, which is a
+   change to the markup and so is not made here. */
 
 .detail {
   position: relative;
   margin: 0 0 1.5rem;
   padding: 1rem 1.2rem 1.2rem;
-  border: 1px solid var(--section-line, #cfcfcf);
-  border-left: 0.25rem solid var(--section-accent, #484d57);
+  border: 1px solid var(--section-line);
+  border-left: 0.25rem solid var(--section-accent);
   border-radius: 0.2rem;
-  background: var(--section-row, #e9eaeb);
+  background: var(--section-row);
 }
 
 .detail[hidden] {
   display: none;
 }
 
+/* Set in the page's own face, not the serif the shared panel title takes: this
+   is the head of a catalogue card, and it sits among sans-set apparatus. */
 .detail-title {
   margin: 0;
+  font-family: var(--sans);
   font-size: 1.15rem;
   padding-right: 5rem;
 }
@@ -225,9 +222,9 @@
   top: 0.9rem;
   right: 1.1rem;
   padding: 0.2rem 0.6rem;
-  border: 1px solid var(--section-line, #cfcfcf);
+  border: 1px solid var(--section-line);
   border-radius: 0.15rem;
-  background: var(--panel, #fff);
+  background: var(--panel);
   color: inherit;
   font: inherit;
   font-size: 0.78rem;
@@ -235,7 +232,7 @@
 }
 
 .detail-close:hover {
-  border-color: var(--section-accent, #484d57);
+  border-color: var(--section-accent);
 }
 
 .detail-heading {
@@ -243,7 +240,7 @@
   font-size: 0.78rem;
   font-variant: small-caps;
   letter-spacing: 0.08em;
-  color: var(--section-ink, #2f333a);
+  color: var(--section-ink);
 }
 
 .detail-line {
@@ -271,7 +268,7 @@
 .contribution {
   margin: 0.5rem 0 0;
   padding-left: 0.75rem;
-  border-left: 2px solid var(--section-line, #cfcfcf);
+  border-left: 2px solid var(--section-line);
 }
 
 .contribution-model {

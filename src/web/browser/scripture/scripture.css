@@ -16,28 +16,14 @@
  * --section-ink (#7e5802: 6.39:1 on white, 6.13:1 on the page, 5.10:1 on the
  * toned row it is used against); --section-accent is for rules, borders,
  * markers and fills, where contrast is a matter of visibility rather than
- * legibility.
+ * legibility. Those figures are measured on the values `site.css` ships, which
+ * is now the only place they are written; nothing here restates them.
  *
  * LEGIBILITY GOVERNS. The scripture is the point and the apparatus is not:
  * every measure is capped at --measure, the passage keeps the shared file's
  * generous leading, and nothing in the apparatus is set larger or darker than
  * the verse it sits beside.
  * ======================================================================== */
-
-/* A development fallback for the file opened straight from the repository,
-   where there is no site stylesheet to arrive from. It is a fallback and not
-   the source: if it ever disagrees with `.section-gold` in
-   release/public-alpha/assets/site.css, that file is right. */
-body:not(:has(> .site-header)) {
-  --section-accent: #b07c07;
-  --section-ink: #7e5802;
-  --section-wash: rgba(176, 124, 7, 0.16);
-  --section-pale: #e1cda1;
-  --section-row: #efe5cd;
-  --section-line: #ceae65;
-  --focus: var(--section-ink);
-}
-
 
 /* ---- Links ---- */
 

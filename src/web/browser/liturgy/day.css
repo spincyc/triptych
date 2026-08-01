@@ -443,17 +443,10 @@
   .options-list { position: static; box-shadow: none; }
 }
 
-.field-check label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  min-height: 2.75rem;
-  cursor: pointer;
-}
-
-.field-check input { min-width: 1rem; min-height: 1rem; }
+/* A `.field-check` block stood here and one stood in `catena.css`, and neither
+   page emits the class: the checkboxes on this page are inside `.options-list`
+   above. The one page that does emit it is the source library, and the rule is
+   in `shared/browser-core.css` beside the rest of the control bar. */
 
 
 /* ---------------------------------------------------------------------------

@@ -9,18 +9,16 @@
    The one derived value this page needs is a weaker ink, for everything that is
    a weaker claim: a station with no act behind it, a canon whose words are not
    here, a note about what the record does not hold. It is mixed from the
-   section's own accent rather than picked. */
+   section's own accent rather than picked.
+
+   This page and the history page draw the same record panel, and drew it
+   twice. The panel, its title and note, the term-and-value list, the act card
+   and its kind-pill, the basis, the marker, the fold, the held unit and the
+   link-button are all in `shared/browser-core.css` now. What is below is the
+   canon — which only this page shows — and this page's departures. */
 
 .law-page {
   --weak-accent: color-mix(in srgb, var(--section-accent) 55%, var(--surface, #fbfaf7));
-}
-
-/* `.lede` is the shared rule; only the line beneath it is this page's. */
-.tally {
-  margin: 0.5rem 0 0;
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  color: var(--ink-faint);
 }
 
 .field-wide { flex: 3 1 18rem; }
@@ -197,50 +195,13 @@
   text-transform: none;
 }
 
-/* --- Panels ------------------------------------------------------------- */
-
-.detail,
-.panel {
-  margin: 0 0 2rem;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--section-line);
-  border-top: 4px solid var(--section-accent);
-  border-radius: 8px;
-  background: var(--panel);
-}
-
-.detail-title,
-.panel-title {
-  margin: 0 0 0.6rem;
-  font-family: var(--serif);
-  font-size: 1.2rem;
-}
-
-.panel-note {
-  margin: 0 0 0.7rem;
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-}
-
-.panel-controls {
-  margin: 0 0 1rem;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-}
+/* --- Panels -------------------------------------------------------------
+   The panel and its heads are shared. One block inside it is this page's only
+   departure: the history page calls the same thing `.detail-section` and sets
+   1.4rem, and the two names are one component that wants a rename in the
+   markup before it can be one class. */
 
 .panel-block { margin-top: 1.5rem; }
-
-.block-title {
-  margin: 0 0 0.6rem;
-  font-family: var(--sans);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  border-bottom: 1px solid var(--section-line);
-  padding-bottom: 0.25rem;
-}
 
 .block-subtitle {
   margin: 1rem 0 0.4rem;
@@ -256,84 +217,13 @@
   color: var(--ink-soft);
 }
 
-.detail-list {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.3rem 1rem;
-  margin: 0;
-}
-
-.detail-list dt {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  align-self: baseline;
-}
-
-.detail-list dd { margin: 0; }
-
-.detail-summary {
-  margin: 0.8rem 0 0;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.edge-title {
-  margin: 0.7rem 0 0.15rem;
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.edge-basis {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  white-space: pre-wrap;
-}
-
-/* --- One act's touch on one canon, through time ------------------------ */
-
-.stop {
-  margin: 0 0 0.9rem;
-  padding: 0.65rem 0.8rem;
-  border: 1px solid var(--section-line);
-  border-left: 4px solid var(--weak-accent);
-  border-radius: 5px;
-}
+/* --- One act's touch on one canon, through time ------------------------
+   The card, its head and its kind-pill are shared with the history page's
+   change card. What is this page's is which kinds of touch it can report. */
 
 .stop-gone { border-left-color: #9d3a2f; }
 .stop-entered { border-left-color: #3f6b46; }
 .stop-changed { border-left-color: var(--section-accent); }
-
-.stop-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem;
-  margin: 0 0 0.2rem;
-  font-family: var(--serif);
-  font-size: 1.02rem;
-}
-
-.stop-kinds,
-.touched-kinds {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  border: 1px solid var(--section-line);
-  border-radius: 999px;
-  padding: 0.05rem 0.5rem;
-}
 
 .stop-meta {
   margin: 0 0 0.55rem;
@@ -371,38 +261,6 @@
 
 .stop-was { border-left: 2px solid var(--section-line); padding-left: 0.6rem; }
 .stop-now { border-left: 2px solid var(--section-accent); padding-left: 0.6rem; }
-
-.basis {
-  margin: 0.6rem 0 0;
-  border-top: 1px dotted var(--section-line);
-  padding-top: 0.45rem;
-}
-
-.basis-entry {
-  margin: 0.35rem 0 0;
-  font-size: 0.83rem;
-  color: var(--ink-soft);
-  white-space: pre-wrap;
-}
-
-.basis-kind {
-  font-family: var(--sans);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.marker {
-  margin: 0.4rem 0 0;
-  padding: 0.5rem 0.6rem;
-  background: rgba(0, 0, 0, 0.035);
-  border-radius: 4px;
-  font-size: 0.78rem;
-  white-space: pre-wrap;
-  overflow-x: auto;
-}
 
 /* --- A correspondence claim, with its source --------------------------- */
 
@@ -592,42 +450,18 @@
 
 .touched-division { margin: 0 0 0.6rem; }
 
-/* --- The law as it stood ------------------------------------------------ */
-
-.fold {
-  margin-top: 1.3rem;
-  border-top: 1px solid var(--section-line);
-  padding-top: 0.6rem;
-}
-
-.fold-summary {
-  cursor: pointer;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.fold-body { margin-top: 0.8rem; }
+/* --- The law as it stood ------------------------------------------------
+   The fold and the held unit are shared; the division they hang under is this
+   page's, because only the Code is divided into books and titles. */
 
 .held-division { margin: 0 0 1.4rem; }
 
-.held {
-  margin: 0 0 0.7rem;
-  padding-left: 0.75rem;
-  border-left: 2px solid var(--section-line);
-}
+/* A unit is named by its citation, which runs longer than the missal's slot
+   names, so it takes the larger of the two sizes. The rest of the head is the
+   shared rule. */
+.held-name { font-size: 0.85rem; }
 
-.held-name {
-  margin: 0 0 0.15rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: baseline;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
+/* The unit's own name beside its citation: words of the Code, so the serif. */
 .held-slot {
   font-family: var(--serif);
   font-size: 0.85rem;
@@ -661,34 +495,12 @@
   overflow-x: auto;
 }
 
-/* --- A button that reads as a link -------------------------------------- */
-
-.link-button {
-  display: inline;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--section-accent);
-  font: inherit;
-  font-size: 0.84rem;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  cursor: pointer;
-}
-
-.link-button:hover,
-.link-button:focus { text-decoration-thickness: 2px; }
-
+/* The link-button is shared. In a list it is one row among many rather than an
+   action after a paragraph, so it gives up the space above it. */
 .division-canons .link-button,
 .lookup-choices .link-button { margin-top: 0; }
 
 @media (max-width: 40rem) {
-  .detail-list {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
-  }
-  .detail-list dd { margin-bottom: 0.5rem; }
   .stop-pair { grid-template-columns: 1fr; }
   .canon-paragraph { grid-template-columns: 1fr; }
   .canon-citation { font-size: 1.4rem; }

@@ -1,18 +1,24 @@
 /* How the Missal changed. The map is wide by nature, so it scrolls inside its
-   own box and the page body never does. */
+   own box and the page body never does.
 
+   Everything this page shares with the law page — the station panel, the
+   term-and-value list, the change card, the basis, the marker, the fold, the
+   held text, the link-button — is in `shared/browser-core.css` now. What is
+   below is the map, which only this page draws, and this page's departures.
+
+   THE COLOUR BELOW IS NOT THE SECTION'S, AND THAT IS NOT A FALLBACK. Every
+   other page's palette arrives from the site's layout; this block overrides
+   `--section-accent` unconditionally, so published, the map and the panel
+   rules are brown while the headings and links stay the green the site gives
+   the history section. It has shipped that way and it is left alone here,
+   because this is a refactor: choosing between the brown and the green is a
+   design decision and it wants a maintainer, not a stylesheet cleanup. When it
+   is made, the answer is one line — either delete this block or add
+   `--section-ink` and its siblings beside it. */
 .history-page {
   --section-accent: #7a5230;
   --section-line: #d9c9b6;
   --weak-accent: #a98d6f;
-}
-
-/* `.lede` is the shared rule; only the line beneath it is this page's. */
-.tally {
-  margin: 0.5rem 0 0;
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  color: var(--ink-faint);
 }
 
 .map {
@@ -169,153 +175,46 @@
   border-top: 4px dashed var(--section-accent);
 }
 
-/* --- The station panel ------------------------------------------------- */
-
-.detail,
-.panel {
-  margin: 0 0 2rem;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--section-line);
-  border-top: 4px solid var(--section-accent);
-  border-radius: 8px;
-  background: var(--panel);
-}
-
-.detail-title,
-.panel-title {
-  margin: 0 0 0.6rem;
-  font-family: var(--serif);
-  font-size: 1.2rem;
-}
-
-.panel-note {
-  margin: 0 0 0.7rem;
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-}
-
-.panel-controls {
-  margin: 0 0 1rem;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-}
+/* --- The station panel -------------------------------------------------
+   The panel, its title, its note and the term-and-value list are shared. Only
+   this page puts a select in the control line. */
 
 .panel-controls select {
   margin-left: 0.5rem;
   max-width: min(100%, 34rem);
 }
 
-.detail-list {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.3rem 1rem;
-  margin: 0;
-}
-
-.detail-list dt {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  align-self: baseline;
-}
-
-.detail-list dd {
-  margin: 0;
-}
-
 .detail-departures,
 .detail-gap,
-.detail-weak,
-.detail-summary {
+.detail-weak {
   margin: 0.8rem 0 0;
   font-size: 0.92rem;
   color: var(--ink-soft);
 }
 
+/* A gap in the descent, and a claim the record makes weakly. Both are drawn
+   with the weak rule rather than with a colour alone, so the distinction
+   survives being printed in black and white. */
 .detail-gap,
 .detail-weak {
   border-left: 3px solid var(--weak-accent);
   padding-left: 0.7rem;
 }
 
-.detail-summary {
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
+/* One block inside the panel. The law page calls the same thing
+   `.panel-block`; its heading is shared under both names. */
 .detail-section {
   margin-top: 1.4rem;
 }
 
-.detail-section-title {
-  margin: 0 0 0.6rem;
-  font-family: var(--sans);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  border-bottom: 1px solid var(--section-line);
-  padding-bottom: 0.25rem;
-}
-
-.edge-title {
-  margin: 0.7rem 0 0.15rem;
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.edge-basis {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  white-space: pre-wrap;
-}
-
-/* --- One change --------------------------------------------------------- */
-
-.change,
-.stop {
-  margin: 0 0 0.9rem;
-  padding: 0.65rem 0.8rem;
-  border: 1px solid var(--section-line);
-  border-left: 4px solid var(--weak-accent);
-  border-radius: 5px;
-}
+/* --- One change ---------------------------------------------------------
+   The card, its head and its kind-pill are shared. What is this page's is
+   which kinds of change it can report, and the colour of each. */
 
 .change-gone { border-left-color: #9d3a2f; }
 .change-entered { border-left-color: #3f6b46; }
 .change-changed { border-left-color: #7a5230; }
 .change-unestablished { border-left-color: #6a6a6a; }
-
-.change-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem;
-  margin: 0 0 0.2rem;
-  font-family: var(--serif);
-  font-size: 1.02rem;
-}
-
-.change-kinds {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  border: 1px solid var(--section-line);
-  border-radius: 999px;
-  padding: 0.05rem 0.5rem;
-}
 
 .change-where {
   margin: 0 0 0.55rem;
@@ -325,6 +224,19 @@
   word-break: break-word;
 }
 
+/* ONE NAME, TWO COMPONENTS. `.field` in `shared/browser-core.css` is a control
+   in the bar above a reading page: a label over a select, sized for a thumb.
+   `.field` here is a line of one change — a name, an old value, an arrow and a
+   new value — and this page has no control bar at all. The two have nothing in
+   common but the word, and this file re-declares `display` and `gap` over the
+   shared rule, so what renders is this one and the leftovers
+   (`flex-direction`, `flex`, `min-width`) are inert on a grid that is not a
+   flex item.
+   It renders correctly by luck rather than by construction, and the fix is a
+   rename — `.change-field` — which is a change to `history.js` and so is not
+   made here. Said out loud rather than left for the next reader to rediscover:
+   `.field-name`, `.field-pair`, `.field-arrow` and `.field-before` below all
+   belong to THIS component and none of them to the control bar. */
 .field {
   display: grid;
   grid-template-columns: 5.5rem 1fr;
@@ -376,28 +288,6 @@
   text-decoration: none !important;
 }
 
-.basis {
-  margin: 0.6rem 0 0;
-  border-top: 1px dotted var(--section-line);
-  padding-top: 0.45rem;
-}
-
-.basis-entry {
-  margin: 0.35rem 0 0;
-  font-size: 0.83rem;
-  color: var(--ink-soft);
-  white-space: pre-wrap;
-}
-
-.basis-kind {
-  font-family: var(--sans);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
 .standing {
   margin: 0.2rem 0 0;
 }
@@ -415,34 +305,9 @@
   white-space: pre-wrap;
 }
 
-.marker {
-  margin: 0.4rem 0 0;
-  padding: 0.5rem 0.6rem;
-  background: rgba(0, 0, 0, 0.035);
-  border-radius: 4px;
-  font-size: 0.78rem;
-  white-space: pre-wrap;
-  overflow-x: auto;
-}
-
-/* --- The state as it stood --------------------------------------------- */
-
-.fold {
-  margin-top: 1.3rem;
-  border-top: 1px solid var(--section-line);
-  padding-top: 0.6rem;
-}
-
-.fold-summary {
-  cursor: pointer;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.fold-body {
-  margin-top: 0.8rem;
-}
+/* --- The state as it stood ---------------------------------------------
+   The fold and the held text are shared; the Mass they are held under is this
+   page's, because only the missal has Masses. */
 
 .mass {
   margin: 0 0 1.4rem;
@@ -460,23 +325,12 @@
   color: var(--ink-soft);
 }
 
-.held {
-  margin: 0 0 0.7rem;
-  padding-left: 0.75rem;
-  border-left: 2px solid var(--section-line);
-}
+/* A prayer's name is a slot name and runs short, so it is set a shade smaller
+   than the law page's citation. The rest of the head is the shared rule. */
+.held-name { font-size: 0.82rem; }
 
-.held-name {
-  margin: 0 0 0.15rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: baseline;
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
+/* Which slot of the Mass held it, in the mono face: this is the record's own
+   key, not a word of the prayer. */
 .held-slot {
   font-family: var(--mono, monospace);
   font-size: 0.7rem;
@@ -534,35 +388,10 @@
   color: var(--ink-faint);
 }
 
-/* --- A button that reads as a link -------------------------------------- */
-
-.link-button {
-  display: inline;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--section-accent);
-  font: inherit;
-  font-size: 0.84rem;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  cursor: pointer;
-}
-
-.link-button:hover,
-.link-button:focus {
-  text-decoration-thickness: 2px;
-}
-
+/* A change is a before and an after side by side. Under about 40rem there is
+   no room for two columns, so the pair stacks and the arrow that pointed
+   across the gap points down the page instead. */
 @media (max-width: 40rem) {
-  .detail-list {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
-  }
-  .detail-list dd {
-    margin-bottom: 0.5rem;
-  }
   .field {
     grid-template-columns: 1fr;
   }

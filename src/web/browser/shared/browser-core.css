@@ -2,12 +2,11 @@
  * Triptych browser — shared stylesheet
  * ===========================================================================
  *
- * The structure, typography and failure styling both reading pages share. It
+ * The structure, typography and furniture every reading page shares. It
  * carries no colour identity of its own: the section palette arrives in the
- * six variables below, and each page declares its own block of them in its own
- * stylesheet — liturgy the red of the site's liturgy section, scripture the
- * gold of the scripture section. Sharing one palette variable between the two
- * pages would mean changing its meaning to change either.
+ * six variables below, and the site's layout sets them from the section a page
+ * is entered through — liturgy the red of the site's liturgy section,
+ * scripture the gold of the scripture section.
  *
  *   --section-accent   rules, labels, markers, the page's line of identity
  *   --section-ink      headings and links: the accent darkened to read as text
@@ -16,8 +15,43 @@
  *   --section-row      the tint of a toned block or a selected row
  *   --section-line     the border of a toned block
  *
- * A page that loads this file and declares nothing still renders: the
- * fallbacks below are neutral, not invisible.
+ * WHERE THE PALETTE COMES FROM, AND WHY NO PAGE HERE RESTATES IT
+ *
+ * The values are declared once, in `release/public-alpha/assets/site.css`, as
+ * `.section-red`, `.section-gold` and their six siblings. Which class a
+ * reading page is dressed in is declared once, in `BROWSER_SECTION_COLOURS` in
+ * `tools/public-alpha`. Published, the layout puts `section-toned
+ * section-<colour>` on the reading area and the variables resolve there.
+ *
+ * Five page stylesheets used to carry a second copy of six values apiece,
+ * guarded by `body:not(:has(> .site-header))`, so that a file opened straight
+ * from the repository would not be colourless. Two of the five had already
+ * drifted:
+ *
+ *   - `catena.css` declared a violet (#7d5cb8 / #5b4088) that is not the
+ *     `.section-violet` the site ships (#5a3f96 / #3e2b6b) — and its own
+ *     comment cited a contrast ratio, 8.3:1, measured on a colour no reader
+ *     has ever seen.
+ *   - `history.css` declared `--section-accent: #7a5230` with no guard at all,
+ *     so it overrides the site's green ON THE PUBLISHED PAGE, leaving the map
+ *     brown and the headings green. That one is left exactly as it was: it is
+ *     a live disagreement about what colour the history section is, and
+ *     settling it is a design decision, not a refactor.
+ *
+ * The fallbacks are gone. Three options were open. DERIVING BOTH FROM ONE
+ * SOURCE is the rule this project follows everywhere else and is the one thing
+ * CSS cannot do here: `site.css` is loaded by every page of the site and this
+ * file only by the nine reading pages, so there is no file both already read,
+ * and making one would mean changing what the build copies. PROVING THE
+ * FALLBACK AGREES in a check is sound, and belongs in `tools/`. DROPPING THE
+ * FALLBACK is what was done, and it is better than a proof for a reason worth
+ * stating: a fallback that is approximately right is a fluent wrong answer —
+ * the exact failure `guidance/the-shape.md` §1 is about — and catena's went
+ * unnoticed for precisely that reason. The neutral palette below announces
+ * itself as not-the-theme, so nobody can mistake a repository page for a
+ * published one. The cost is real and accepted: opened straight from the
+ * repository, a reading page renders in neutral grey. To see a page in its
+ * section's colour, build the site.
  * ======================================================================== */
 
 :root {
@@ -40,7 +74,10 @@
   --notice: #7a2f2f;
   --notice-bg: #f8ecea;
 
-  /* Neutral fallbacks; every page overrides all six. */
+  /* The palette a page wears when nothing has dressed it — which now means
+     exactly one case: a file opened straight from the repository, outside the
+     site's layout. Neutral, not invisible, and deliberately not any section's
+     colour. See the note at the head of this file. */
   --section-accent: #6a635a;
   --section-ink: #453f38;
   --section-wash: rgba(106, 99, 90, 0.12);
@@ -204,6 +241,18 @@ body:not(:has(> .site-header)) {
   color: var(--ink-soft);
 }
 
+/* The count under the lede: what the page holds, in figures. Five pages emit
+   it — catena, history, law, sources, texts — and three of them styled it
+   privately while two forgot to, so the same line read as small grey apparatus
+   on three pages and as body prose on two. One rule, and the catena page's
+   tighter margin is its own departure below. */
+.tally {
+  margin: 0.5rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
 /* ---- Banner ---- */
 
 .banner {
@@ -286,6 +335,21 @@ body:not(:has(> .site-header)) {
 .field select:hover:not(:disabled) { border-color: var(--section-accent); }
 
 .field select:disabled { opacity: 0.6; }
+
+/* A control that is a question rather than a filter: "only what can be read
+   here". The box and its name are one target, and the pair sits on the
+   baseline with the selects rather than stacking a label above a checkbox.
+   Three files carried a version of this and only one page emits the class;
+   the other two were styling markup that does not exist. */
+.field-check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* The label beside a checkbox is a name, not a field heading, so it drops the
+   uppercase weight `.field label` gives the labels above the selects. */
+.field-check label { font-weight: 400; }
 
 .field-steps { flex: 0 0 auto; }
 
@@ -466,6 +530,272 @@ body:not(:has(> .site-header)) {
 
 .notice strong { font-weight: 700; }
 
+/* ===========================================================================
+ * The record panel
+ * ===========================================================================
+ *
+ * The history page and the law page ask the same question in the same shape:
+ * here is one act, or one station, and here is what it did, and here is what
+ * the record rests on. Every rule in this section stood twice, once in
+ * `history.css` and once in `law.css`, and the copies had already begun to
+ * part — one panel at 1.4rem and its twin at 1.5rem.
+ *
+ * TWO NAMES FOR ONE COMPONENT ARE WRITTEN AS ONE SELECTOR LIST. The two pages
+ * call the same card `.change` and `.stop`, and the same block heading
+ * `.detail-section-title` and `.block-title`. Renaming a class is a change to
+ * the markup, which this refactor does not make; the honest thing a stylesheet
+ * can do is state the rule once and name both. The rename is the right next
+ * step and belongs in a commit that moves the HTML and the JavaScript with it.
+ * ======================================================================== */
+
+/* The panel itself. `texts.css` also has a `.detail`, and it is a DIFFERENT
+   component — a record card the reader opens beside the catalogue, toned
+   rather than white. It restates every declaration below and therefore renders
+   unchanged; it is a name collision and not a shared component, and it is the
+   second reason a rename is owed. */
+.detail,
+.panel {
+  margin: 0 0 2rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--section-line);
+  border-top: 4px solid var(--section-accent);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.detail-title,
+.panel-title {
+  margin: 0 0 0.6rem;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+
+.panel-note {
+  margin: 0 0 0.7rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.panel-controls {
+  margin: 0 0 1rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+/* A heading over one block inside a panel. */
+.detail-section-title,
+.block-title {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--section-line);
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* What the record states about one thing, as term and value. */
+.detail-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1rem;
+  margin: 0;
+}
+
+.detail-list dt {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  align-self: baseline;
+}
+
+.detail-list dd { margin: 0; }
+
+.detail-summary {
+  margin: 0.8rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.edge-title {
+  margin: 0.7rem 0 0.15rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.edge-basis {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  white-space: pre-wrap;
+}
+
+/* ---- One change, or one act's touch on one canon ----
+   The left edge is the kind of change, and each page names the kinds it can
+   report; the card itself is one thing and is drawn here.
+
+   `--weak-accent` is the page's, deliberately: it is the colour of a weaker
+   claim about evidence, and the two pages reach it differently — the law page
+   mixes it from the section's accent, the history page names it outright
+   because that page's accent is not the section's either. It is NOT declared
+   at `:root` here: a custom property whose value is another `var()` resolves
+   where it is declared, so a `:root` derivation would freeze the neutral
+   accent and never follow the section, exactly as `--focus` does above. */
+
+.change,
+.stop {
+  margin: 0 0 0.9rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--section-line);
+  border-left: 4px solid var(--weak-accent);
+  border-radius: 5px;
+}
+
+.change-head,
+.stop-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0 0 0.2rem;
+  font-family: var(--serif);
+  font-size: 1.02rem;
+}
+
+.change-kinds,
+.stop-kinds,
+.touched-kinds {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border: 1px solid var(--section-line);
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+}
+
+/* ---- What the record rests on ----
+   Below the change and quieter than it: this is the project's ground for the
+   claim above, not the claim. */
+
+.basis {
+  margin: 0.6rem 0 0;
+  border-top: 1px dotted var(--section-line);
+  padding-top: 0.45rem;
+}
+
+.basis-entry {
+  margin: 0.35rem 0 0;
+  font-size: 0.83rem;
+  color: var(--ink-soft);
+  white-space: pre-wrap;
+}
+
+.basis-kind {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* A machine-readable locator, printed verbatim. It scrolls in its own box
+   rather than widening the page. */
+.marker {
+  margin: 0.4rem 0 0;
+  padding: 0.5rem 0.6rem;
+  background: rgba(0, 0, 0, 0.035);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* ---- The state as it stood ----
+   A fold, because the state is context for the change above it and not the
+   answer the reader came for. */
+
+.fold {
+  margin-top: 1.3rem;
+  border-top: 1px solid var(--section-line);
+  padding-top: 0.6rem;
+}
+
+.fold-summary {
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fold-body { margin-top: 0.8rem; }
+
+/* One thing the book or the Code held at that moment. */
+.held {
+  margin: 0 0 0.7rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--section-line);
+}
+
+/* The size is each page's own: the missal holds prayers under slot names and
+   the Code holds units under citations, and the two are not the same length of
+   line. Everything else about the head is one rule. */
+.held-name {
+  margin: 0 0 0.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-family: var(--sans);
+  font-weight: 700;
+}
+
+/* ---- A button that reads as a link ----
+   Used where the action is navigation within the page and a button would
+   claim more than it does. It is a `button` in the markup, because it is one:
+   nothing here fakes a link with an anchor that goes nowhere. */
+
+.link-button {
+  display: inline;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--section-accent);
+  font: inherit;
+  font-size: 0.84rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.link-button:hover,
+.link-button:focus { text-decoration-thickness: 2px; }
+
+/* ---- A work, on a page that lists works ----
+   The catalogue and the source library draw the same card, and drew it twice.
+   The top rule is the section's; the border is the section's line. */
+
+.work {
+  border: 1px solid var(--section-line);
+  border-top: 0.2rem solid var(--section-accent);
+  border-radius: 0.2rem;
+  padding: 0.85rem 1rem 1rem;
+  background: var(--panel);
+}
+
 /* ---- Footer ---- */
 
 .page-footer {
@@ -511,6 +841,18 @@ body:not(:has(> .site-header)) {
   .page-header { margin-bottom: 1.25rem; }
   .page-header h1 { font-size: 1.55rem; }
   .entry-title { font-size: 1.35rem; }
+}
+
+/* A term-and-value grid needs two columns to be a grid. Under about 40rem
+   there is room for one, so the value goes under its term and the pairs are
+   separated by space instead of by a column. */
+@media (max-width: 40rem) {
+  .detail-list {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  .detail-list dd { margin-bottom: 0.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -6,13 +6,23 @@
  * fragment beneath it.
  *
  * The site gives every section a colour; liturgy is red and scripture is gold,
- * so commentary is VIOLET. Published, the values arrive from the site's own
- * stylesheet the way the other sections' do; the block below is a development
- * fallback for the file opened straight from the repository.
+ * so commentary is VIOLET. That colour is declared once, as `.section-violet`
+ * in `release/public-alpha/assets/site.css`, and this file does not restate
+ * it. The development fallback that used to sit here declared #7d5cb8 against
+ * the #5a3f96 the site actually ships — it had drifted, and nobody noticed
+ * because a slightly wrong violet still looks like violet. See the note at the
+ * head of `shared/browser-core.css` for the reasoning and what was given up.
  *
- * THE VIOLET ACCENT IS NOT A TEXT COLOUR. --section-ink (#5b4088) measures
- * 8.3:1 on white and is what carries text; --section-accent is for rules,
- * markers and fills, where contrast is visibility rather than legibility.
+ * TEXT IS SET IN --section-ink, NEVER IN --section-accent. The shipped ink,
+ * #3e2b6b, measures 11.91:1 on white and 10.95:1 on the site's surface. The
+ * rule holds across the site rather than for this section alone: the gold
+ * section's accent is 3.66:1 and fails outright, so a page that sets text in
+ * whichever variable happens to look right is a page that reads correctly here
+ * and illegibly there. The accent is for rules, markers and fills.
+ *
+ * The figure this comment used to give, 8.3:1, is right — for #5b4088, the
+ * colour the deleted fallback declared. It was a true measurement of a page
+ * nobody has ever been served, which is the whole hazard of a second copy.
  *
  * FACTS FIRST. The maintainer's standing direction for the site is that the
  * page opens on what it is showing and everything else goes below. So the
@@ -27,16 +37,6 @@
  * panel, no rule and no accent. The two cannot be confused at a glance, which
  * is the only moment that matters.
  * ======================================================================== */
-
-body:not(:has(> .site-header)) {
-  --section-accent: #7d5cb8;
-  --section-ink: #5b4088;
-  --section-wash: rgba(125, 92, 184, 0.14);
-  --section-pale: #d6c9ec;
-  --section-row: #efe9f8;
-  --section-line: #bda8dd;
-  --focus: var(--section-ink);
-}
 
 /* ---------------------------------------------------------------------------
  * The header: a reference, not a masthead
@@ -65,12 +65,12 @@ body:not(:has(> .site-header)) {
   color: var(--ink-faint);
 }
 
-/* One line under the reference, and it is a count, not a description. */
+/* One line under the reference, and it is a count, not a description. The
+   shared rule sets it; here it sits under a two-line header rather than under
+   a lede, so it takes a shade less air above it and a shade more size. */
 .tally {
   margin: 0.35rem 0 0;
-  font-family: var(--sans);
   font-size: 0.85rem;
-  color: var(--ink-faint);
 }
 
 .tally b {
@@ -186,18 +186,6 @@ body:not(:has(> .site-header)) {
   padding-top: 0.55rem;
   border-top: 1px solid var(--section-wash);
   max-width: var(--measure);
-}
-
-/* A checkbox in the control row, aligned with the labelled selects beside it. */
-.field-check {
-  align-self: end;
-}
-
-.field-check label {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  cursor: pointer;
 }
 
 /* ---------------------------------------------------------------------------

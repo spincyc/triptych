@@ -9,30 +9,18 @@
  * `day.css`, which declares no colour of its own.
  *
  * The site gives every section a liturgical colour, and these pages are
- * entered from the liturgy section, which is RED. Published, that colour is not
- * declared here at all: the site's layout marks the reading area
- * `section-toned section-red` and the values arrive from the site's own
- * stylesheet. Retuning the section there now carries here by itself, which is
- * the whole reason the copy that used to sit in this file is gone.
+ * entered from the liturgy section, which is RED. That colour is not declared
+ * here at all: it is `.section-red` in `release/public-alpha/assets/site.css`,
+ * the layout marks the reading area `section-toned section-red`, and the
+ * values arrive from there. Retuning the section carries here by itself.
+ *
+ * A development fallback repeating the same six values used to sit below. It
+ * happened to agree; the catena page's did not. Six values that agree today
+ * are a prediction that they will disagree tomorrow, so it is gone, and a
+ * page opened straight from the repository renders in the neutral palette
+ * `shared/browser-core.css` declares. That file's header says why, and what it
+ * cost.
  * ======================================================================== */
-
-/* Published, the section's colour arrives from the site's own stylesheet: the
-   layout puts `section-toned section-red` on the reading area and every
-   variable below it resolves there. Nothing is declared here.
-
-   Opened straight from the repository there is no site stylesheet, so the
-   block below supplies the same six values as a development fallback. It is a
-   fallback and not the source: if it ever disagrees with `.section-red` in
-   release/public-alpha/assets/site.css, that file is right. */
-body:not(:has(> .site-header)) {
-  --section-accent: #b02419;
-  --section-ink: #78140d;
-  --section-wash: rgba(176, 36, 25, 0.16);
-  --section-pale: #e1aca8;
-  --section-row: #efd3d1;
-  --section-line: #ce7770;
-  --focus: var(--section-ink);
-}
 
 
 /* ---- What only this page renders ---- */
