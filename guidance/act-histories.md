@@ -41,7 +41,7 @@ in the document that asked it.
 | | |
 | --- | --- |
 | source encoding | `src/sources/inventories/roman-holy-week-acts-v1.toml` |
-| generator | `tools/act-history` (`check`, `graph`, `emit`) |
+| generator | `tools/act-history` (`check`, `graph`, `structure`, `commonality`, `emit`) |
 | generated repository | `build/act-history/roman-holy-week`, untracked |
 | corpus read | seven Internet Archive OCR text layers at `~/git/lt-hist` |
 | size | 12 acts, 2 lines, 8 witnesses, 4 masses, 38 base units, 42 departures |

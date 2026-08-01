@@ -267,12 +267,12 @@ work           author, title, role, death_year, aliases[]?, work_id?
 
 ```sh
 tools/tpt harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml \
-  --by-chapter --json          # → total 491, pending 0, cutoff_year 1900
+  --by-chapter --json          # → total 525, pending 0, cutoff_year 1900
 tools/tpt harvest promote --audited-on <date> --dry-run --json
 ```
 
-The 491 loci are the ones both missals' propers cite. The corpus is wider —
-1,596 passages, of which roughly 1,583 have never been asked about. Read the
+The 525 loci are the ones both missals' propers cite. The corpus is wider —
+1,600 passages, of which 1,591 are chapter-matched. Read the
 scale before starting: `ask --dry-run` reports the query count, and it is one
 query per passage per run.
 
@@ -283,7 +283,11 @@ tools/tpt harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yam
   --by-chapter --runs 3 --limit 20    # then record each results file it names
 ```
 
-| Quantity | Value |
+These figures were measured after the first six runs and are kept because the
+corroboration analysis below rests on them. **The ledger now holds 13 runs**;
+re-derive rather than quoting the table.
+
+| Quantity, as at 6 runs | Value |
 | --- | --- |
 | Runs in ledger | 6 |
 | Pilot runs (2026-07-30, 7 verse-range loci) | 3 |
@@ -294,6 +298,8 @@ tools/tpt harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yam
 | Corpus references collapsing to those 491 loci | 1,296 across 128 masses |
 | Distinct (locus, author) | 6,511 |
 | Distinct (locus, author, title) | 10,293 |
+
+The corpus itself has since grown to **196 masses, all covered**.
 
 ### The corroboration measurement
 
@@ -358,11 +364,16 @@ passes. It is harvested because both missals cite 4 Esdras 2:36–37 (Introit /
 Entrance Antiphon, Tuesday within the Octave of Pentecost). 4 Esdras is not
 among the Douay index's 73 books. An empty list here is correct; do not "fix" it.
 
-### Promotion is blocked
+### Promotion happened
 
-`passage-commentary-index.yaml` is a stub (`passages: []`). Do not promote yet.
+**This section said promotion was blocked and the index was a stub
+(`passages: []`). Both have since been overtaken.** The index now holds **562
+passages carrying 9,083 work entries** — 579 distinct author-and-title pairs,
+184 authors, 61 books — promoted from 13 runs [verified 2026-08-01]. The
+reasoning below is kept because it is why the alias table exists, and because
+the splitting it describes is still what the confidence figures mean.
 
-A dry-run promotion today writes **9,034 works across 497 passages** from 6 runs.
+Promotion from 6 runs would have written 9,034 works across 497 passages.
 Because only 35.3% of (author, title) pairs corroborate, a large share of those
 entries are one work split across two titles, each fragment scoring 0.33 or 0.67
 instead of the 1.0 the work earned. Splitting also demotes both halves below
@@ -372,10 +383,13 @@ four of the top fifteen slots** under four titles.
 
 Open tasks, in order:
 
-1. Populate a **work-identity registry** reconciling candidates to the `work.*`
-   identities `tools/source-library` already uses. The mechanism exists —
-   `work_id` and `aliases` are accepted at `record`, and `_key` collapses aliases
-   onto a canonical key — the alias data is simply absent.
+1. ~~Populate a **work-identity registry**~~ — **the alias half is done.**
+   `src/sources/commentary/work-aliases.yaml` is tracked and derived by
+   `tools/tpt harvest aliases --rebuild`, with `genesis-work-aliases.yaml`
+   beside it. What remains is the reconciliation to the `work.*` identities
+   `tools/source-library` uses: **`work_id` is still null on all 9,083 entries**
+   [verified], so deduplication still falls back to the string
+   `"author | title"`. That is the open item, not the alias data.
 2. Decide the **whole-versus-part titling rule** for per-book commentaries and
    apply it as aliases.
 3. Reconcile the **two locus granularities**: three pilot runs use verse-range

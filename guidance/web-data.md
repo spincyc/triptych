@@ -6,7 +6,9 @@ names, and puts them together in the browser.
 
 Pre-rendering is the thing to avoid, and it is worth being explicit about why.
 A propers browser offers a mass and a translation. Rendering those combinations
-ahead of time is 596 masses times however many translations, and adding a
+ahead of time is every mass times however many translations — 1,248 mass pages
+across the three calendars as this is written, and the figure only grows — and
+adding a
 translation would rewrite every page. The same trap sits one level down: a
 fragment set keyed by mass and translation would be just as combinatorial. So
 the rule is that **file counts must be additive, never multiplicative**. Adding
@@ -141,10 +143,14 @@ edition's paragraphs. It is the same distinction the missal map draws between
 `promulgated` and `printed`, for the same reason: a weaker claim must read as
 one.
 
-**The layer is opt-out.** `?paragraphs=off` renders the chapter exactly as it
-rendered before the layer existed and asks for none of these files, because a
-mechanical review of an edition must be able to see the edition and not this
-project's reading of it.
+**The layer is not a reader control, and the `?paragraphs=off` query this
+document once described was withdrawn on 2026-08-01.** Where a chapter divides
+is how the chapter reads; offering that as a preference invited a reader to
+switch off the edition's own paragraphing, which is the edition's, not a
+setting. The opt-out that genuinely exists is the typesetter's
+`--no-paragraphs`, for reviewing an edition mechanically rather than reading
+it — a mechanical review must be able to see the edition and not this project's
+reading of it, and that is the need the withdrawn query was actually serving.
 
 **It is emitted from the wrong place, on purpose and temporarily.** Where an
 edition opens a paragraph is a property of that edition and belongs beside its
@@ -438,7 +444,8 @@ which `guidance/editorial.md` forbids in an apparatus a reader cannot argue with
 
 ## Assembling the site
 
-Six of the pieces are generated straight into the data root:
+Ten of the pieces are generated straight into the data root, one per directory
+under `structure/` plus the bible manifest:
 
 ```sh
 tools/tpt mass-propers  structure --out src/web/data  # structure/propers/*.json
@@ -446,8 +453,17 @@ tools/tpt reading-plan  structure --out src/web/data  # structure/readings/*.jso
 tools/tpt calendar-days structure --out src/web/data  # structure/calendar/**/*.json
 tools/tpt calendar-rubrics structure --out src/web/data  # structure/rubrics/*.json
 tools/tpt mass-ordinary structure --out src/web/data  # structure/ordinary/*.json
+tools/tpt act-history   structure                     # structure/act-history/*.json
 tools/tpt index-bible   manifest  --out src/web/data  # bibles.json
+make document-catalogue                               # structure/documents/*.json
+make source-projection                                # structure/sources/*.json
+python3 scripts/_catena.py structure                  # structure/catena/**/*.json
+python3 scripts/_catena.py paragraphs                 # structure/paragraphs/**
 ```
+
+Check the directory listing against this block rather than the reverse: each
+name under `src/web/data/structure/` has exactly one writer, and a directory
+with no line here is a writer nobody recorded.
 
 The fragments are the exception, and deliberately so. They live beside the
 edition that owns them, at `src/sources/bibles/<edition>/chapters/`, because

@@ -15,8 +15,8 @@ addressing, granularity and storage decisions would be settled *before*
 acquisition — those being the decisions that are expensive to revisit once
 several thousand fragments have landed under the wrong key. That worked, and the
 study has since been overtaken by its own subject: the page is live at `/catena/`,
-the edge exists, and a Genesis pilot has put four fragments through the whole
-apparatus. Where the study first got a figure or a rule wrong, the correction is
+the edge exists, and a Genesis pilot has put 44 fragments through the whole
+apparatus, 23 English and 21 Latin, over six solved chapters. Where the study first got a figure or a rule wrong, the correction is
 made **in place and marked**, because a design document that quietly agrees with
 whatever was built is no longer evidence of anything.
 
@@ -42,8 +42,10 @@ word "commentary", and the page must render exactly one of them.
 | **L2 holding** | *we possess this work, in this edition, under this licence* | the source library | an artifact on disk |
 | **L3 fragment** | *these words, by this author, on this locus* | the source library's `passage` records | the text itself |
 
-L1 exists and is large: **490 rows, 61 books, 341 distinct works, 86 authors**,
-across 7,203 entries [verified].
+L1 exists and is large: **562 rows, 61 books, 579 distinct works, 184 authors**,
+across 9,083 entries, from 13 harvest runs [verified 2026-08-01]. Re-derive it
+from `passage-commentary-index.yaml` rather than quoting this line; it moves
+with every run.
 
 L3 also exists, which an earlier draft of this study got wrong and is worth
 correcting in place rather than quietly. No field anywhere in
@@ -51,7 +53,7 @@ correcting in place rather than quietly. No field anywhere in
 [verified], and it is by design, because the harvest produces an acquisition
 list. But the **source library's `passage` record has held third-party prose all
 along**: `text`, `transcription_segments`, `physical_line_ranges`, `artifact_id`,
-`artifact_sha256`, `states`, `context`, `verified_on`. There are **1,227 such
+`artifact_sha256`, `states`, `context`, `verified_on`. There are **1,274 such
 records**, and four of them are already patristic commentary [verified] — among
 them Augustine on John 20:8 and three homilies of Chrysostom on John, each
 carrying its text, its transcription segments, a `states` list running
@@ -307,13 +309,16 @@ language and the artifact carries the rights.
 
 ### Three prerequisites the survey turned up
 
-- **No structure file enumerates the canon** [verified]. Every existing coverage
-  is citation-driven — the bible index covers what the calendars cite, the
-  propers structure covers the propers, the readings structure covers 454
-  chapters in 31 books. A catena over *every* chapter needs a whole-canon
-  enumeration. The material is there — `book-index.tsv` gives 73 books and 1,334
-  chapters, and chapter fragments exist on disk for all of them — but no tool
-  writes it.
+- ~~**No structure file enumerates the canon.**~~ **Done.** It was true when
+  written: every coverage was citation-driven — the bible index covers what the
+  calendars cite, the propers structure covers the propers, the readings
+  structure covers 454 chapters in 31 books — and a catena over *every* chapter
+  needs a whole-canon enumeration that no tool wrote. `scripts/_catena.py canon`
+  now prints it and `structure` writes it, so
+  `src/web/data/structure/catena/index.json` carries all 73 books with their
+  chapter counts, tokens and paths [verified]. The prerequisite is recorded
+  rather than deleted because it is why the enumeration is derived in one place
+  instead of typed into the browser.
 - **`work_id` is null on every entry** of both the discovery index and the mass
   corpus [verified], so no harvested lead links to a source-library work record;
   deduplication falls back to the string `"author | title"`. The commentary
@@ -361,10 +366,15 @@ because a checklist that only ever grows teaches nothing.
    for `verse-aliases.tsv` instead of two, and an edition that will not project
    now fails the build rather than resolving quietly.
 4. ~~A licence survey of the candidate text sources.~~ **Done, and it is the
-   hardest finding of the pilot.** Of ten target works on Genesis, **two** have a
-   public-domain English text and eight do not; all ten have public-domain Latin
-   or Greek. The English translations that exist are 20th- and 21st-century, the
-   earliest expiring 2052. This is not a gap more effort closes.
+   hardest finding of the pilot.** The first pass covered ten target works on
+   Genesis and found two with a public-domain English text. The survey has since
+   been widened to all **66 distinct works** the index names on Genesis, from
+   1,746 alias queries over 327 catalogue candidates: **34** carry an affirmative
+   public rights basis, **57** have reachable text at the upper bound, four have
+   candidates but no text layer, and five have no candidate at all [verified,
+   `genesis-availability-survey.yaml`]. The finding survived the widening — the
+   English translations that exist are 20th- and 21st-century, the earliest
+   expiring 2052. This is not a gap more effort closes.
 5. ~~The scripture edge of Rule 10, with a validator.~~ **Done.** It lives in
    `src/sources/commentary/fragment-loci.yaml`, *beside* the passage records
    rather than inside them, because a field added to a passage would move its
@@ -381,7 +391,7 @@ Two things the pilot added to this list that the study did not anticipate:
    Nyssa. See `guidance/sources.md`.
 8. **The unencumbered Latin is OCR wreckage and the clean Latin is encumbered.**
    Migne PL 34's Internet Archive text layer corrupts roughly one word in eight.
-   For the eight Latin-only works the cost is transcription, not download — which
+   For every work reachable only in Latin the cost is transcription, not download — which
    is a different project from acquisition and should be planned as one.
 
 ## 9. Prior art
