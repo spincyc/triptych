@@ -83,7 +83,6 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "check-proper-components",
             "mass-ordinary",
             "mass-propers",
-            "mass-today",
         ),
     ),
     (
@@ -180,7 +179,6 @@ REACHES: dict[str, str] = {
     "knox-bible": NETWORK,
     "mass-ordinary": NOTHING,
     "mass-propers": NOTHING,
-    "mass-today": NOTHING,
     "pdf-review": NOTHING,
     "public-alpha": NOTHING,
     "reading-plan": NOTHING,
