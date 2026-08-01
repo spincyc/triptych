@@ -155,6 +155,19 @@
 
 .canon-withheld strong { font-weight: 700; }
 
+/* The same statement made about a responsum rather than about a canon, and
+   drawn the same way for the same reason: a reader must not read a rights
+   position as an absence. */
+.interpretation-withheld {
+  margin: 0.35rem 0 0;
+  padding: 0.4rem 0.55rem;
+  border-left: 3px solid var(--section-accent);
+  background: var(--section-wash);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+
 /* Words nobody here has read. A different claim from the one above, and drawn
    differently so the two can never be mistaken for each other. */
 .canon-unread {

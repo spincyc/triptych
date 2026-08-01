@@ -264,13 +264,33 @@
   function interpretationNode(row) {
     const card = T.el('article', 'interpretation');
     card.appendChild(T.el('p', 'interpretation-force', C.forceWords(row.force)));
+    if (row.papal_act) {
+      card.appendChild(T.el('p', 'interpretation-cite', C.papalActWords(row.papal_act)));
+    }
+    // Three states again, and the labels keep them apart. The Latin of a
+    // modern responsum is an official act of the Holy See and may not be
+    // printed here, so what stands in its place is this record's own English
+    // account of the question and the answer — under headings that say so, and
+    // never under `Dubium`, which a reader would take for the words.
+    if (row.withheld) {
+      card.appendChild(T.el('p', 'interpretation-withheld',
+        'The words of this responsum are not printed here: ' + row.withheld));
+    }
     if (row.dubium) {
       card.appendChild(T.el('h5', 'interpretation-label', 'Dubium'));
       card.appendChild(T.el('p', 'interpretation-text', row.dubium));
+    } else if (row.question) {
+      card.appendChild(T.el('h5', 'interpretation-label',
+        'The question asked, in this record’s words'));
+      card.appendChild(T.el('p', 'interpretation-text', row.question));
     }
     if (row.responsum) {
       card.appendChild(T.el('h5', 'interpretation-label', 'Responsum'));
       card.appendChild(T.el('p', 'interpretation-text', row.responsum));
+    } else if (row.answer) {
+      card.appendChild(T.el('h5', 'interpretation-label',
+        'The answer given, in this record’s words'));
+      card.appendChild(T.el('p', 'interpretation-text', row.answer));
     }
     if (row.citation) card.appendChild(T.el('p', 'interpretation-cite', row.citation));
     if (row.basis) card.appendChild(T.el('p', 'interpretation-cite', row.basis));

@@ -442,6 +442,29 @@ window.TriptychCode = (function () {
     return FORCE_WORDS[force] || FORCE_WORDS.unstated;
   }
 
+  /* How the Pope disposed of the decision, which is NOT its force and must
+   * never be shown as one. Under c. 16 §2 an interpretation that merely
+   * declares needs no promulgation and one that restricts, extends or explains
+   * a doubt does — so an order to PROMULGATE bears on the question and an order
+   * to PUBLISH does not settle it. The record carries the formula because it is
+   * the only evidence its sources hold, and neither the record nor this page
+   * turns it into a species. */
+
+  const PAPAL_ACT_WORDS = {
+    'publicari-iussit':
+      'The Pope, informed of the decision, ordered it published.',
+    'confirmavit-et-promulgari-iussit':
+      'The Pope confirmed the decision and ordered it promulgated.',
+    'publici-iuris-fieri-iussit':
+      'The Pope ordered the decision made public, with no audience recorded.',
+    unstated:
+      'The record does not state how the Pope disposed of this decision.'
+  };
+
+  function papalActWords(act) {
+    return PAPAL_ACT_WORDS[act] || PAPAL_ACT_WORDS.unstated;
+  }
+
   function isInterpretation(stop) {
     // Boolean, not the field itself: a stop that is a change carries no
     // `interpretation`, so the bare `||` returned `undefined` and a caller
@@ -487,6 +510,7 @@ window.TriptychCode = (function () {
     editionsOf: editionsOf,
 
     forceWords: forceWords,
+    papalActWords: papalActWords,
     isInterpretation: isInterpretation
   };
 }());

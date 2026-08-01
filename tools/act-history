@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
-"""Build a liturgical slice's act-keyed history as a Git repository.
+"""Build a slice's act-keyed history as a Git repository.
 
 Usage: act-history {check,graph,structure,commonality,emit} [--source PATH]
+
+Two kinds of slice, one shape. A missal's units are prayers standing in a Mass;
+a code's units are canons standing in a division of the code. Everything else --
+the station is an act, the parents declare what they rest on, lines never
+rejoin, commonality is computed -- is the same for both, so a slice declares its
+`vocabulary` and nothing else changes. See VOCABULARIES below.
 
 The station is normally the act, never the book. A commit is a promulgation, a
 revision, a reform, a rubrical code or a documented exemption, and carries the
@@ -80,6 +86,35 @@ SCHEMA_VERSION = 1
 # departure nobody agreed the meaning of.
 DEPARTURE_KINDS = ("absent", "added", "replaced", "renamed", "moved", "reslotted", "unrecorded")
 
+# What an authentic interpretation does to the canon it interprets. These are
+# the Code's own four, not a vocabulary invented here: 1917 c. 17 §2 divides an
+# interpretation given by way of law into one that merely DECLARES words certain
+# in themselves, which needs no promulgation and is retroactive, and one that
+# RESTRICTS the law, EXTENDS it, or EXPLAINS a doubtful one, which is not
+# retroactive and must be promulgated. 1983 c. 16 §2 keeps the division. The
+# consequence is a date, so the kind must be recorded rather than averaged into
+# `an interpretation was given`.
+INTERPRETATION_FORCES = ("declarative", "restrictive", "extensive", "explaining-a-doubt", "unstated")
+
+# How the Pope disposed of the decision, as the published record states it,
+# reduced to a controlled value so that it can be counted and compared.
+#
+# THIS IS NOT A FORCE AND MUST NEVER BE READ AS ONE. Under 1983 c. 16 §2 an
+# interpretation that merely declares words certain in themselves needs no
+# promulgation, while one that restricts, extends or explains a doubtful law
+# does -- so a formula saying the Pope ORDERED IT PROMULGATED bears on the
+# question and a formula saying he ORDERED IT PUBLISHED does not settle it. The
+# sources name the species nowhere, and turning the formula into a species here
+# would be this record deciding a point of canon law, which is precisely what it
+# must not do. So the formula is carried as evidence and `force` stays
+# `unstated` until somebody reads a source that says otherwise.
+PAPAL_ACTS = (
+    "publicari-iussit",                 # ...eas publicari iussit
+    "confirmavit-et-promulgari-iussit",  # ...eam confirmavit et promulgari iussit
+    "publici-iuris-fieri-iussit",       # ...eam publici iuris fieri iussit
+    "unstated",
+)
+
 # guidance/sources.md separates availability from review. This file's ceiling is
 # `inspected` and the values below say which of the two ways a reading was got.
 READINGS = ("page-image", "ocr-only", "not-read")
@@ -120,6 +155,86 @@ PARENT_KINDS = ("act-states-it", "book-states-it", "attributed", "use-continuity
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UNIT_ID = re.compile(r"^[a-z0-9]+(?:[-.][a-z0-9]+)*$")
 
+# --- What a slice is a history OF --------------------------------------------
+#
+# The shape does not change between a missal and a code. Stations are acts,
+# units are the addressable things acts move, a container holds units, and the
+# diff of a station is the acceptance test. What changes is the words, and the
+# words matter: a page that called a title of the Code a `mass` would be the
+# defect guidance/the-shape.md section 1 is about -- a reference that resolves
+# successfully and wrongly.
+#
+# So a slice declares one `vocabulary`, and it decides four things and no
+# others: the TOML table containers stand in, the key those containers take in
+# the emitted fragments, what a container carries, and how a unit's file reads.
+# Nothing else in this tool branches on it.
+#
+# `law` differs from `liturgy` in one further way, and it is the whole reason
+# the distinction is worth having. A canon of the 1983 Code is a text this
+# project may not publish (see the rights record), so its unit file carries the
+# canon's identity and a stated absence rather than its words. A file that said
+# only "withheld" would then read the same before and after an act that
+# substituted the canon, and a station that substituted twenty-one canons would
+# show an empty diff. So where the text is withheld, a law unit also carries the
+# act that established the text being withheld -- which is not provenance about
+# a reading but the legal state itself, and is exactly how a lawyer cites a
+# canon: c. 1671 *as substituted by* Mitis Iudex. It is DERIVED from the act
+# that applied the departure, never typed beside it.
+
+
+class Vocabulary:
+    def __init__(self, name, group_table, group_word, group_fields, group_always,
+                 unit_word, unit_plural, withheld_label, unit_carries_establishing_act):
+        self.name = name
+        self.group_table = group_table
+        self.group_word = group_word
+        self.group_fields = group_fields
+        self.group_always = group_always
+        self.unit_word = unit_word
+        self.unit_plural = unit_plural
+        self.withheld_label = withheld_label
+        self.unit_carries_establishing_act = unit_carries_establishing_act
+
+
+VOCABULARIES = {
+    "liturgy": Vocabulary(
+        name="liturgy",
+        group_table="masses",
+        group_word="mass",
+        group_fields=("title", "day", "hour"),
+        group_always=("title", "day", "hour"),
+        unit_word="unit",
+        unit_plural="units",
+        withheld_label="incipit withheld",
+        unit_carries_establishing_act=False,
+    ),
+    "law": Vocabulary(
+        name="law",
+        group_table="divisions",
+        group_word="division",
+        group_fields=("title", "designation", "note"),
+        group_always=("title", "designation"),
+        unit_word="canon",
+        unit_plural="canons",
+        withheld_label="text withheld",
+        unit_carries_establishing_act=True,
+    ),
+}
+DEFAULT_VOCABULARY = "liturgy"
+
+
+def vocabulary_of(data: dict) -> Vocabulary:
+    name = str(data.get("vocabulary") or DEFAULT_VOCABULARY)
+    if name not in VOCABULARIES:
+        raise Problem(f"vocabulary must be one of {tuple(sorted(VOCABULARIES))}, not {name!r}")
+    return VOCABULARIES[name]
+
+
+# Who the commits are by. One fixed identity per slice, because a per-commit
+# author would be a claim about who did the work of an act, and the only honest
+# author of a generated history is the record that generated it. A slice may
+# name its own; the default is the one the first slice emitted under, and is
+# left alone so that re-emitting it produces the same hashes it always did.
 IDENTITY = "Roman Holy Week tracer <act-history@triptych.invalid>"
 YEAR_SHIFT = 10000
 
@@ -176,9 +291,11 @@ class Problem(Exception):
 
 # Tables whose rows carry an identity, and can therefore be amended by a file
 # that extends another. `departures` is not among them: it has no identity, so
-# an extending file only ever adds departures.
+# an extending file only ever adds departures. Neither is `interpretations`: an
+# interpretation is an event, and a second one on the same canon is a second
+# row rather than a correction of the first.
 KEYED_TABLES = ("lines", "acts", "witnesses", "masses", "units")
-APPENDED_TABLES = ("departures",)
+APPENDED_TABLES = ("departures", "interpretations")
 
 
 def load(source: Path) -> dict:
@@ -207,12 +324,154 @@ def _load(source: Path, seen: list[Path]) -> dict:
     data = tomllib.loads(source.read_text(encoding="utf-8"))
     if data.get(SCHEMA_KEY) != SCHEMA_VERSION:
         raise Problem(f"{source}: {SCHEMA_KEY} must be {SCHEMA_VERSION}")
+    normalise(data, source)
+    resolve_withholdings(data, source)
     extends = data.pop("extends", None)
     if not extends:
         data["extends_chain"] = [source.name]
         return data
     base = _load(source.parent / extends, [*seen, source])
     return overlay(base, data, source)
+
+
+# --- One number, typed once ---------------------------------------------------
+#
+# A canon's number is the fact that orders it, names it, and identifies it. It
+# is written ONCE, as an integer, and its unit id, its file name and its
+# position are derived here. Typing `id = "cic17-c-1012-1"` beside `canon =
+# 1012` would be two copies of one fact, which guidance/the-shape.md section 2
+# says is a prediction that they will differ; this project has already been bitten
+# by exactly that in a lookup table it had to delete.
+#
+# The file name is the number ZERO-PADDED, so that a listing of a book of the
+# Code reads as the Code reads rather than as an alphabet -- `can-0006` before
+# `can-1012`, where `c-6` would sort after it. Four digits carry every canon of
+# the three codes in view: the 1917 Code ends at 2414, the 1983 at 1752, the
+# Eastern Code at 1546. The id keeps the number unpadded, because `c. 1012` is
+# how a lawyer says it and an id is read by people.
+
+CANON_PAD = 4
+PARAGRAPH_PAD = 2
+
+
+def canon_identity(row: dict, where: str) -> dict:
+    """`code = "cic17", canon = 1012, paragraph = 1` -> id, slot, order, name."""
+    code = str(row.get("code") or "").strip()
+    if not code:
+        raise Problem(f"{where}: a canon row must name the `code` it stands in")
+    if not SLUG.match(code):
+        raise Problem(f"{where}: code {code!r} is not a slug")
+    try:
+        canon = int(row["canon"])
+    except (KeyError, TypeError, ValueError):
+        raise Problem(f"{where}: a canon row must carry `canon` as a whole number") from None
+    paragraph = row.get("paragraph")
+    if paragraph is not None:
+        try:
+            paragraph = int(paragraph)
+        except (TypeError, ValueError):
+            raise Problem(f"{where}: `paragraph` must be a whole number") from None
+    tail = f"-{paragraph}" if paragraph is not None else ""
+    padded = f"-{paragraph:0{PARAGRAPH_PAD}d}" if paragraph is not None else ""
+    return {
+        "id": f"{code}-c-{canon}{tail}",
+        "slot": f"can-{canon:0{CANON_PAD}d}{padded}",
+        "order": canon * 100 + (paragraph or 0),
+        "name": f"can. {canon}" + (f" §{paragraph}" if paragraph is not None else ""),
+    }
+
+
+def normalise(data: dict, source: Path) -> None:
+    """Put one file's own tables into the shape the rest of the tool reads.
+
+    Two things, and both are done per file before any `extends` overlay, so that
+    an extending file's rows carry ids by the time they are matched against the
+    base's.
+
+    The container table is renamed to the internal one. A code's containers are
+    `[[divisions]]` and a missal's are `[[masses]]`, and calling a title of the
+    Code a mass in the source would be a lie told for the convenience of a
+    dictionary key. Internally there is one table, because the code that walks
+    it is identical.
+
+    A law slice's canon rows are given their derived identity. A row that states
+    its `id` outright keeps it -- an id is sometimes a thing with a history, and
+    this only fills in what was not written.
+    """
+    vocabulary = str(data.get("vocabulary") or DEFAULT_VOCABULARY)
+    if vocabulary not in VOCABULARIES:
+        raise Problem(f"{source.name}: vocabulary must be one of {tuple(sorted(VOCABULARIES))}")
+    vocab = VOCABULARIES[vocabulary]
+    if vocab.group_table != "masses":
+        if "masses" in data:
+            raise Problem(
+                f"{source.name}: a {vocab.name} slice keeps its containers in "
+                f"[[{vocab.group_table}]], not [[masses]]"
+            )
+        if vocab.group_table in data:
+            data["masses"] = data.pop(vocab.group_table)
+    if vocabulary != "law":
+        for row in data.get("units", []):
+            if "canon" in row:
+                raise Problem(
+                    f"{source.name}: a unit carries `canon` but the slice's vocabulary is "
+                    f"{vocabulary!r}; canon numbering belongs to a law slice"
+                )
+        return
+    for index, row in enumerate(data.get("units", [])):
+        if "canon" in row:
+            derived = canon_identity(row, f"{source.name}: unit {index}")
+            for field, value in derived.items():
+                row.setdefault(field, value)
+            if not row.get("mass"):
+                if not row.get("division"):
+                    raise Problem(
+                        f"{source.name}: unit {row['id']} names no `division` of the code to stand in"
+                    )
+                row["mass"] = row.pop("division")
+    for index, row in enumerate(data.get("departures", [])):
+        # `division` is the law slice's word for the container, and only the
+        # word: internally there is one container table and one key, so nothing
+        # downstream has to ask which vocabulary it is reading.
+        for stated, internal in (("division", "mass"), ("to_division", "to_mass")):
+            if row.get(stated):
+                row[internal] = row.pop(stated)
+        if "canon" in row:
+            derived = canon_identity(row, f"{source.name}: departure {index}")
+            row.setdefault("unit", derived["id"])
+            row.setdefault("name", derived["name"])
+            if row.get("kind") in ("added", "reslotted"):
+                row.setdefault("to_slot", derived["slot"])
+                row.setdefault("order", derived["order"])
+    for index, row in enumerate(data.get("interpretations", [])):
+        if "canon" in row:
+            row.setdefault("unit", canon_identity(row, f"{source.name}: interpretation {index}")["id"])
+
+
+def resolve_withholdings(data: dict, source: Path) -> None:
+    """Let a row name the reason its text is withheld instead of restating it.
+
+    A slice that may publish none of a code's text writes `withheld` on every
+    one of its canons, and the reason is one sentence about one rights position.
+    Typing that sentence two hundred times is two hundred chances for it to
+    drift, so the slice states it once in [withheld] and a row names the key.
+    An unknown key is refused rather than passed through: a reason that reads as
+    a key is exactly the absence that would print as a reason.
+    """
+    reasons = data.get("withheld") or {}
+    if not isinstance(reasons, dict):
+        raise Problem(f"{source.name}: [withheld] must be a table of reason keys")
+    for table in ("units", "departures", "interpretations"):
+        for row in data.get(table, []):
+            key = row.get("withheld")
+            if not key or not isinstance(key, str):
+                continue
+            if key in reasons:
+                row["withheld"] = str(reasons[key]).strip()
+            elif SLUG.match(key):
+                raise Problem(
+                    f"{source.name}: withheld = {key!r} names no reason in [withheld]"
+                )
 
 
 def overlay(base: dict, extension: dict, source: Path) -> dict:
@@ -301,7 +560,7 @@ DEFAULT_BOOK = "holy-week"
 # Everything a station writes that is NOT liturgy. `commonality` compares two
 # lines' liturgies, and comparing their act records instead would report that
 # two rites differ because two decrees have different names.
-RECORD_PREFIXES = ("acts/", "witnesses/", "gaps/", "unestablished/")
+RECORD_PREFIXES = ("acts/", "witnesses/", "gaps/", "unestablished/", "interpretations/")
 
 # --- Paths sort in the order the thing has ----------------------------------
 #
@@ -386,7 +645,7 @@ def ventilate(text: str) -> list[str]:
     return [part for part in (piece.strip() for piece in CLAUSE_END.split(flowed)) if part]
 
 
-def unit_body(name: str, incipit: str, text: str, withheld: str = "") -> str:
+def unit_body(unit: dict, vocab: Vocabulary) -> str:
     """What a unit's file holds.
 
     The name, the incipit and the text, and nothing else. Provenance
@@ -395,22 +654,36 @@ def unit_body(name: str, incipit: str, text: str, withheld: str = "") -> str:
     the exact confusion this tool exists to prevent. The slot is the path, so a
     reslot with unchanged words is a rename and git's own similarity detection
     finds it without being told.
+
+    The one addition is a law slice's withheld text, and it is not provenance:
+    which act established the text of a canon is the canon's legal state, and
+    where the words may not be printed it is the only state the file can carry.
+    See VOCABULARIES.
     """
     # An empty incipit and a WITHHELD incipit are two different claims, and a
     # renderer that showed them alike would tell a reader the words were never
     # read when in fact they may not be printed here. guidance/the-shape.md
     # section 4: the gap has to survive contact with the renderer.
-    lines = [name, incipit if incipit else (f"[incipit withheld: {withheld}]" if withheld else "")]
+    incipit, text = unit.get("incipit", ""), unit.get("text", "")
+    withheld = unit.get("withheld", "")
+    lines = [unit["name"], incipit if incipit else (f"[{vocab.withheld_label}: {withheld}]" if withheld else "")]
+    if withheld and not incipit and vocab.unit_carries_establishing_act and unit.get("established_at"):
+        lines.append(f"text established by: {unit['established_at']}")
     if text:
         lines.append("")
         lines.extend(ventilate(text))
     return "\n".join(lines) + "\n"
 
 
-def mass_body(mass: dict) -> str:
-    lines = [f"title: {mass['title']}", f"day: {mass['day']}"]
-    hour = mass.get("hour", "")
-    lines.append(f"hour: {hour}" if hour else "hour: not established")
+def group_body(group: dict, vocab: Vocabulary) -> str:
+    """What a Mass's or a division's header holds: its own fields, in order."""
+    lines = []
+    for field in vocab.group_fields:
+        value = group.get(field, "")
+        if value:
+            lines.append(f"{field}: {value}")
+        elif field in vocab.group_always:
+            lines.append(f"{field}: not established")
     return "\n".join(lines) + "\n"
 
 
@@ -418,16 +691,64 @@ def order_body(paths: list[str]) -> str:
     return "".join(f"{path}\n" for path in paths)
 
 
+# --- Where a container stands inside another ---------------------------------
+#
+# A Mass stands nowhere; a title of the Code stands inside a Part inside a Book,
+# and that is how a canon is cited and how a lawyer navigates. So a container may
+# declare `within`, naming the container it stands in, and the chain from the
+# outermost down to its own is DERIVED here from those single links. Typing the
+# chain on every canon would be the restatement guidance/the-shape.md section 2
+# forbids: two hundred canons carrying a copy of `Liber VII > Pars III > Titulus
+# I` is two hundred chances for one of them to disagree with the Book.
+#
+# The chain is written into the record ONLY where a slice declares any `within`
+# at all. A slice that names one container per unit has a one-level structure,
+# and that flatness is the honest picture of what it holds rather than something
+# to be padded out.
+
+
+def ancestry(groups: dict[str, dict], group_id: str) -> list[str]:
+    """The containers `group_id` stands in, outermost first, itself last."""
+    chain: list[str] = []
+    seen: set[str] = set()
+    current: str | None = group_id
+    while current:
+        if current in seen:
+            raise Problem("within: " + " -> ".join([*chain, current]) + " is a cycle")
+        seen.add(current)
+        chain.append(current)
+        current = groups.get(current, {}).get("within")
+    return list(reversed(chain))
+
+
+def nests(groups: dict[str, dict]) -> bool:
+    return any(group.get("within") for group in groups.values())
+
+
+def chain_of(groups: dict[str, dict], group_id: str, vocab: Vocabulary) -> list[dict]:
+    """One container's ancestry as the page reads it: id, designation, title."""
+    if not nests(groups) or group_id not in groups:
+        return []
+    return [
+        {
+            "id": step,
+            **{field: groups[step].get(field, "") for field in vocab.group_always},
+        }
+        for step in ancestry(groups, group_id)
+    ]
+
+
 class State:
     """The liturgy as one act left it, plus the record files of that station."""
 
-    def __init__(self) -> None:
+    def __init__(self, vocab: Vocabulary) -> None:
+        self.vocab = vocab
         self.units: dict[str, dict] = {}   # unit id -> {mass, slot, name, incipit, text, order}
-        self.masses: dict[str, dict] = {}  # mass id -> {title, day, hour}
+        self.masses: dict[str, dict] = {}  # container id -> its own fields
         self.files: dict[str, str] = {}    # extra tracked paths (acts/, witnesses/, gaps/, README)
 
     def copy(self) -> "State":
-        other = State()
+        other = State(self.vocab)
         other.units = {key: dict(value) for key, value in self.units.items()}
         other.masses = {key: dict(value) for key, value in self.masses.items()}
         other.files = dict(self.files)
@@ -443,13 +764,11 @@ class State:
             if mass is None:
                 raise Problem(f"unit stands in mass {mass_id!r}, which no act has introduced")
             book = mass.get("book") or DEFAULT_BOOK
-            out[f"{book}/{mass_id}/mass.txt"] = mass_body(mass)
+            out[f"{book}/{mass_id}/{self.vocab.group_word}.txt"] = group_body(mass, self.vocab)
             ordered = sorted(units, key=lambda unit: (unit["order"], unit["slot"]))
             out[f"{book}/{mass_id}/order.txt"] = order_body([unit["slot"] for unit in ordered])
             for unit in ordered:
-                out[unit_path(book, mass_id, unit["slot"])] = unit_body(
-                    unit["name"], unit["incipit"], unit.get("text", ""), unit.get("withheld", "")
-                )
+                out[unit_path(book, mass_id, unit["slot"])] = unit_body(unit, self.vocab)
         return out
 
 
@@ -462,7 +781,7 @@ def merge(parents: list[State], ancestor: State, act_id: str) -> State:
     is how a synthesis nobody performed gets drawn.
     """
     if not parents:
-        return State()
+        return ancestor.copy()
     if len(parents) == 1:
         return parents[0].copy()
     merged = ancestor.copy()
@@ -492,7 +811,7 @@ def merge(parents: list[State], ancestor: State, act_id: str) -> State:
     return merged
 
 
-def common_ancestor(act_id: str, acts: dict[str, dict], states: dict[str, State]) -> State:
+def common_ancestor(act_id: str, acts: dict[str, dict], states: dict[str, State], vocab: Vocabulary) -> State:
     """The state every parent of ``act_id`` inherits from.
 
     Walks each parent's ancestry and takes the latest act all of them reach. A
@@ -514,12 +833,23 @@ def common_ancestor(act_id: str, acts: dict[str, dict], states: dict[str, State]
         reach.append(seen)
     shared = set.intersection(*reach) if reach else set()
     if not shared:
-        return State()
+        return State(vocab)
     latest = max(shared, key=lambda identifier: (acts[identifier].get("date", ""), identifier))
     return states[latest]
 
 
 # --- Applying an act's departures --------------------------------------------
+
+
+def established(state: State, unit_id: str, act_id: str) -> None:
+    """Record which act established this unit's text, where that is carried.
+
+    Only a law slice carries it, and only where the words are withheld -- see
+    VOCABULARIES for why. Derived from the act applying the departure, so the
+    field cannot drift from the station it names.
+    """
+    if state.vocab.unit_carries_establishing_act:
+        state.units[unit_id]["established_at"] = act_id
 
 
 def apply_departures(state: State, act_id: str, departures: list[dict]) -> list[str]:
@@ -546,16 +876,24 @@ def apply_departures(state: State, act_id: str, departures: list[dict]) -> list[
                 "order": departure["order"],
                 "withheld": departure.get("withheld", ""),
             }
+            established(state, target, act_id)
         elif kind == "replaced":
             if target not in state.units:
                 raise Problem(f"{act_id}: replaced names unit {target!r}, which the inherited state does not hold")
             unit = state.units[target]
-            before = dict(unit)
+            words = lambda row: {key: value for key, value in row.items() if key != "established_at"}
+            before = words(unit)
             for field in ("incipit", "text", "name", "withheld"):
                 if field in departure:
                     unit[field] = departure[field]
-            if unit == before:
+            # Identity writes no row -- except where the words are withheld. An
+            # act that substitutes a canon this project may not print changes
+            # the establishing act and nothing else the file can show, and
+            # refusing that row would leave the record unable to say that the
+            # canon was substituted at all.
+            if words(unit) == before and not (state.vocab.unit_carries_establishing_act and unit.get("withheld")):
                 raise Problem(f"{act_id}: replaced on {target!r} changes nothing; identity writes no row")
+            established(state, target, act_id)
         elif kind == "renamed":
             if mass_target is not None:
                 if mass_target not in state.masses:
@@ -612,6 +950,77 @@ def apply_departures(state: State, act_id: str, departures: list[dict]) -> list[
     return used
 
 
+# --- An interpretation is not a departure ------------------------------------
+#
+# The Pontifical Council (now Dicastery) for Legislative Texts answers doubts
+# about the Code, and its answer settles what a canon MEANS without altering a
+# syllable of what it says. That is a real act, by a competent authority, with a
+# date and an Acta citation, and under the Code itself an authentic
+# interpretation given by way of law has the force of the law it interprets --
+# 1917 c. 17 §2, whose words this record carries, and 1983 c. 16 §2 in the same
+# terms.
+#
+# THE DECISION, and it is the one the brief asked to be argued rather than
+# assumed. An interpretation is a STATION and is NOT a departure. It is a
+# station because an authority acted, on a date, citing an instrument, which is
+# the whole test this history applies. It is not a departure because every
+# departure kind in guidance/recensions.md section 3 -- absent, added, replaced,
+# renamed, moved, reslotted, unrecorded -- is a claim about the TEXT, and an
+# interpretation makes no such claim. Recording one as `replaced` would put
+# words in the legislator's mouth; recording it as `added` would invent a canon;
+# recording it as `unrecorded` would say the state is unknown when it is
+# precisely known and newly clarified.
+#
+# So it writes its own file, beside the canon and never inside it, and the
+# canon's own file is untouched -- which is the correct diff, because the canon
+# did not change. `interpretations/` joins RECORD_PREFIXES for the same reason
+# `acts/` is there: `commonality` compares what two lines' LAW says, and two
+# codes do not differ because one has been asked more questions.
+#
+# The cost is stated rather than hidden: `git log --follow` on a canon's file
+# will not show its interpretations, because nothing in that file moved. A
+# reader wanting both asks for both paths, and the browser fragments carry the
+# interpretations on the unit's own history so the page does not have to.
+
+INTERPRETATION_HEADER = """\
+{unit}: authentic interpretations
+
+An authentic interpretation changes what this canon MEANS and not one word of
+what it SAYS. The canon's own file is therefore untouched by every entry below;
+that is the record working, not the record missing something. An interpretation
+given by way of law has the force of the law it interprets.
+"""
+
+
+def interpretation_block(act: dict, row: dict) -> str:
+    lines = [
+        "",
+        f"{act['date']}  {act['title']}",
+        f"  force:     {row.get('force', 'unstated')}",
+    ]
+    if row.get("papal_act"):
+        lines.append(f"  papal act: {row['papal_act']}")
+    if row.get("withheld"):
+        lines.append(f"  [words withheld: {row['withheld']}]")
+    for field, label in (("dubium", "dubium"), ("responsum", "responsum"),
+                         ("question", "question asked"), ("answer", "answer given"),
+                         ("citation", "citation"), ("basis", "basis"), ("note", "note")):
+        value = (row.get(field) or "").strip()
+        if value:
+            lines.append(f"  {label + ':':<11}" + value.replace("\n", "\n" + " " * 13))
+    lines.append(f"  read from: {row.get('read_from', 'not-read')}")
+    return "\n".join(lines) + "\n"
+
+
+def apply_interpretations(state: State, acts: dict[str, dict], act_id: str, rows: list[dict]) -> None:
+    for row in sorted(rows, key=lambda row: str(row.get("unit"))):
+        unit = str(row.get("unit"))
+        path = f"interpretations/{unit}.txt"
+        if path not in state.files:
+            state.files[path] = INTERPRETATION_HEADER.format(unit=unit)
+        state.files[path] += interpretation_block(acts[act_id], row)
+
+
 PRINTED_WARNING = """\
 THIS STATION IS A PRINTING, AND THAT IS A WEAKER CLAIM.
 No act has been located for it. It stands here because the book survives and
@@ -644,6 +1053,8 @@ def render_act(act: dict) -> str:
     ])
     if act.get("parent_kind"):
         lines.append(f"edge:       {act['parent_kind']}")
+    if act.get("same_instrument_as"):
+        lines.append(f"also at:    {act['same_instrument_as']} (one instrument, two bodies of law)")
     if act.get("locus"):
         lines.append(f"locus:      {act['locus']}")
     if act.get("dateline"):
@@ -725,6 +1136,7 @@ def render_readme(data: dict, line: dict) -> str:
 
 
 def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]]:
+    vocab = vocabulary_of(data)
     acts = indexed(data.get("acts", []), "id", "acts")
     lines = indexed(data.get("lines", []), "id", "lines")
     witnesses = indexed(data.get("witnesses", []), "id", "witnesses")
@@ -742,6 +1154,9 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
     witnesses_by_act: dict[str, list[dict]] = {}
     for identifier, witness in witnesses.items():
         witnesses_by_act.setdefault(witness.get("attests", ""), []).append(witness)
+    interpretations_by_act: dict[str, list[dict]] = {}
+    for row in data.get("interpretations", []):
+        interpretations_by_act.setdefault(row.get("act", ""), []).append(row)
 
     states: dict[str, State] = {}
     kinds_used: dict[str, list[str]] = {}
@@ -753,10 +1168,14 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
                 raise Problem(f"{act_id}: names parent {parent!r}, which is not an act")
             if acts[parent]["line"] != act["line"] and len(parents) > 1:
                 raise Problem(f"{act_id}: merges across lines; lines never rejoin")
-        state = merge([states[parent] for parent in parents], common_ancestor(act_id, acts, states), act_id)
+        state = merge(
+            [states[parent] for parent in parents],
+            common_ancestor(act_id, acts, states, vocab),
+            act_id,
+        )
         for mass in masses_by_act.get(act_id, []):
             state.masses[mass["id"]] = {
-                "title": mass["title"], "day": mass["day"], "hour": mass.get("hour", ""),
+                **{field: mass.get(field, "") for field in vocab.group_fields},
                 "book": mass.get("book") or DEFAULT_BOOK,
             }
         for unit in units_by_act.get(act_id, []):
@@ -765,7 +1184,9 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
                 "incipit": unit.get("incipit", ""), "text": unit.get("text", ""),
                 "order": unit["order"], "withheld": unit.get("withheld", ""),
             }
+            established(state, unit["id"], act_id)
         kinds_used[act_id] = apply_departures(state, act_id, departures_by_act.get(act_id, []))
+        apply_interpretations(state, acts, act_id, interpretations_by_act.get(act_id, []))
         state.files[act_file(act)] = render_act(act)
         for witness in sorted(witnesses_by_act.get(act_id, []), key=lambda row: row["id"]):
             state.files[witness_file(witness)] = render_witness(witness)
@@ -788,6 +1209,7 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
 
 def check(data: dict) -> dict:
     problems: list[str] = []
+    vocab = vocabulary_of(data)
     acts = indexed(data.get("acts", []), "id", "acts")
     lines = indexed(data.get("lines", []), "id", "lines")
     witnesses = indexed(data.get("witnesses", []), "id", "witnesses")
@@ -874,6 +1296,35 @@ def check(data: dict) -> dict:
             )
         elif act.get("printing"):
             problems.append(f"act {act_id}: `printing` belongs to a printed station")
+        # One instrument, two bodies of law. Ad tuendam fidem amends the Latin
+        # Code and the Eastern Code in one document, and the two Codes are two
+        # lines whose states cannot fork through one commit -- so the instrument
+        # stands as two stations. That is a restatement, and a restatement is a
+        # prediction that the two copies will differ
+        # (guidance/the-shape.md section 2), so the pair is DECLARED and the
+        # facts about the instrument are checked to agree rather than trusted.
+        twin = act.get("same_instrument_as")
+        if twin:
+            if twin not in acts:
+                problems.append(f"act {act_id}: same_instrument_as names {twin!r}, which is not an act")
+            elif acts[twin].get("same_instrument_as") != act_id:
+                problems.append(
+                    f"act {act_id}: says it is the same instrument as {twin!r}, and {twin!r} does "
+                    "not say so back; one instrument standing as two stations must be declared "
+                    "from both sides"
+                )
+            elif acts[twin].get("line") == act.get("line"):
+                problems.append(
+                    f"act {act_id}: stands on the same line as {twin!r}; one instrument is split "
+                    "into two stations only because two bodies of law are two lines"
+                )
+            else:
+                for field in ("instrument", "authority", "date", "citation"):
+                    if act.get(field) != acts[twin].get(field):
+                        problems.append(
+                            f"act {act_id}: and {twin!r} are declared one instrument and their "
+                            f"{field} disagrees: {act.get(field)!r} against {acts[twin].get(field)!r}"
+                        )
 
     for witness_id, witness in sorted(witnesses.items()):
         for field in ("label", "language", "printed", "attests", "attests_basis", "read_from", "rights", "rights_basis"):
@@ -885,13 +1336,24 @@ def check(data: dict) -> dict:
         if attests not in acts and attests != "unestablished":
             problems.append(f"witness {witness_id}: attests {attests!r}, which is not an act")
 
-    masses = indexed(data.get("masses", []), "id", "masses")
+    masses = indexed(data.get("masses", []), "id", vocab.group_table)
     for mass_id, mass in sorted(masses.items()):
         if not SLUG.match(mass_id):
-            problems.append(f"mass {mass_id!r}: id is not a slug")
-        for field in ("title", "day"):
+            problems.append(f"{vocab.group_word} {mass_id!r}: id is not a slug")
+        for field in vocab.group_always:
             if not mass.get(field):
-                problems.append(f"mass {mass_id}: missing {field}")
+                problems.append(f"{vocab.group_word} {mass_id}: missing {field}")
+        within = mass.get("within")
+        if within and within not in masses:
+            problems.append(
+                f"{vocab.group_word} {mass_id}: within names {within!r}, which is not a declared "
+                f"{vocab.group_word}"
+            )
+        elif within:
+            try:
+                ancestry(masses, mass_id)
+            except Problem as problem:
+                problems.append(f"{vocab.group_word} {mass_id}: {problem}")
 
     units = indexed(data.get("units", []), "id", "units")
     for unit_id, unit in sorted(units.items()):
@@ -901,7 +1363,9 @@ def check(data: dict) -> dict:
             if unit.get(field) in (None, ""):
                 problems.append(f"unit {unit_id}: missing {field}")
         if unit.get("mass") not in masses:
-            problems.append(f"unit {unit_id}: mass {unit.get('mass')!r} is not declared")
+            problems.append(
+                f"unit {unit_id}: {vocab.group_word} {unit.get('mass')!r} is not declared"
+            )
         if not SLUG.match(str(unit.get("slot", ""))):
             problems.append(f"unit {unit_id}: slot is not a slug")
         if unit.get("read_from") not in READINGS:
@@ -922,6 +1386,50 @@ def check(data: dict) -> dict:
             problems.append(f"{where}: unrecorded must say what is not established")
         if departure.get("kind") == "reslotted" and not (departure.get("to_mass") or departure.get("to_slot")):
             problems.append(f"{where}: reslotted must say where to")
+
+    # An interpretation asserts that an authority answered a doubt about a
+    # named canon. Each half of that has to be there: the act, the canon, the
+    # doubt, the answer, and where it is printed. Without the citation it is a
+    # recollection, and a recollection of a responsum is the one thing this
+    # record must never carry.
+    for index, row in enumerate(data.get("interpretations", [])):
+        where = f"interpretation {index}"
+        if row.get("act") not in acts:
+            problems.append(f"{where}: act {row.get('act')!r} is not an act")
+        if row.get("unit") not in units:
+            problems.append(f"{where}: unit {row.get('unit')!r} is not a unit")
+        for field in ("citation", "basis"):
+            if not row.get(field):
+                problems.append(f"{where}: missing {field}")
+        # The words of a responsum are an official act of the Holy See, and this
+        # project may not print the modern ones (see the canon-law rights
+        # record). So an interpretation carries EITHER the dubium and the
+        # responsum as they stand, OR a stated withholding and this project's
+        # own English statement of what was asked and what was answered -- which
+        # is a fact about the law, not the law's words. Never a blank, and never
+        # English standing in a field a reader would take for the Latin.
+        if row.get("withheld"):
+            for field in ("question", "answer"):
+                if not row.get(field):
+                    problems.append(
+                        f"{where}: its words are withheld, so it must say in `{field}` what was "
+                        "asked and what was answered, in this project's own words"
+                    )
+            for field in ("dubium", "responsum"):
+                if row.get(field):
+                    problems.append(
+                        f"{where}: carries `{field}` and also withholds its words; one or the other"
+                    )
+        else:
+            for field in ("dubium", "responsum"):
+                if not row.get(field):
+                    problems.append(f"{where}: missing {field}")
+        if row.get("read_from") not in READINGS:
+            problems.append(f"{where}: read_from must be one of {READINGS}")
+        if row.get("force") not in INTERPRETATION_FORCES:
+            problems.append(f"{where}: force must be one of {INTERPRETATION_FORCES}")
+        if row.get("papal_act") is not None and row.get("papal_act") not in PAPAL_ACTS:
+            problems.append(f"{where}: papal_act must be one of {PAPAL_ACTS}")
 
     if problems:
         raise Problem("\n".join(problems))
@@ -946,12 +1454,20 @@ def check(data: dict) -> dict:
         "departures": len(departures),
         "edge_kinds": edges,
         "extends_chain": data.get("extends_chain", []),
+        "groups": len(masses),
+        "group_plural": vocab.group_table,
+        "group_word": vocab.group_word,
+        "interpretations": len(data.get("interpretations", [])),
         "lines": len(lines),
         "masses": len(masses),
         "order": order,
         "roots": sorted(act_id for act_id, act in acts.items() if not act.get("parents")),
         "station_kinds": stations,
         "status": "ok",
+        "unit_plural": vocab.unit_plural,
+        "unit_word": vocab.unit_word,
+        "vocabulary": vocab.name,
+        "withheld_units": sum(1 for unit in units.values() if unit.get("withheld")),
         "witnesses": len(witnesses),
     }
 
@@ -1107,7 +1623,8 @@ def emit(data: dict, out: Path) -> dict:
         header = [f"tree {tree}"]
         header.extend(f"parent {commits[parent]}" for parent in act.get("parents", []))
         timestamp = stamp(act["date"])
-        header.extend([f"author {IDENTITY} {timestamp}", f"committer {IDENTITY} {timestamp}", ""])
+        identity = str(data.get("identity") or IDENTITY)
+        header.extend([f"author {identity} {timestamp}", f"committer {identity} {timestamp}", ""])
         raw = "\n".join(header) + "\n" + commit_message(act, kinds_used[act_id])
         # `git commit-tree` parses the date through git's own reader, which
         # rejects anything it cannot render; writing the object directly is the
@@ -1346,8 +1863,13 @@ def commonality(data: dict, repo: Path, wanted: tuple[str, str] | None) -> dict:
 # and a page that could not tell them apart would report a rights position as
 # ignorance. It is carried to the fragments so the page can say which it is.
 UNIT_FIELDS = ("mass", "slot", "name", "incipit", "text", "order", "withheld")
-MASS_FIELDS = ("title", "day", "hour")
+LAW_UNIT_FIELDS = UNIT_FIELDS + ("established_at",)
 UNESTABLISHED = "unestablished/"
+INTERPRETATIONS = "interpretations/"
+
+
+def unit_fields(vocab: Vocabulary) -> tuple[str, ...]:
+    return LAW_UNIT_FIELDS if vocab.unit_carries_establishing_act else UNIT_FIELDS
 
 
 def side(row: dict | None, fields: tuple[str, ...]) -> dict | None:
@@ -1387,19 +1909,26 @@ def inherited(act_id: str, acts: dict[str, dict], states: dict[str, State]) -> S
     same order, so a merge that refuses there refuses here.
     """
     parents = acts[act_id].get("parents", [])
-    return merge([states[parent] for parent in parents], common_ancestor(act_id, acts, states), act_id)
+    return merge(
+        [states[parent] for parent in parents],
+        common_ancestor(act_id, acts, states, states[act_id].vocab),
+        act_id,
+    )
 
 
-def markers(state: State) -> dict[str, str]:
+def markers(state: State, prefix: str = UNESTABLISHED) -> dict[str, str]:
     return {
-        path[len(UNESTABLISHED):-len(".txt")]: text
+        path[len(prefix):-len(".txt")]: text
         for path, text in state.files.items()
-        if path.startswith(UNESTABLISHED)
+        if path.startswith(prefix)
     }
 
 
-def change_set(act_id: str, before: State, after: State, departures: list[dict]) -> dict:
-    """Everything one act moved, keyed by the unit or mass it moved."""
+def change_set(act_id: str, before: State, after: State, departures: list[dict],
+               interpretations: list[dict]) -> dict:
+    """Everything one act moved, keyed by the unit or container it moved."""
+    vocab = after.vocab
+    fields = unit_fields(vocab)
     by_unit: dict[str, list[dict]] = {}
     by_mass: dict[str, list[dict]] = {}
     for departure in departures:
@@ -1422,9 +1951,9 @@ def change_set(act_id: str, before: State, after: State, departures: list[dict])
             "unit": unit_id,
             "state": "entered" if was is None else ("gone" if now is None else "changed"),
             "kinds": sorted({departure.get("kind") for departure in recorded}),
-            "fields": differing(was, now, UNIT_FIELDS),
-            "before": side(was, UNIT_FIELDS),
-            "after": side(now, UNIT_FIELDS),
+            "fields": differing(was, now, fields),
+            "before": side(was, fields),
+            "after": side(now, fields),
             "cited": cited(recorded),
             # Rule 3 of guidance/recensions.md, carried to the page: a unit an
             # act left unestablished prints its marker rather than falling back
@@ -1440,12 +1969,12 @@ def change_set(act_id: str, before: State, after: State, departures: list[dict])
         if was == now and not recorded:
             continue
         masses.append({
-            "mass": mass_id,
+            vocab.group_word: mass_id,
             "state": "entered" if was is None else ("gone" if now is None else "changed"),
             "kinds": sorted({departure.get("kind") for departure in recorded}),
-            "fields": differing(was, now, MASS_FIELDS),
-            "before": side(was, MASS_FIELDS),
-            "after": side(now, MASS_FIELDS),
+            "fields": differing(was, now, vocab.group_fields),
+            "before": side(was, vocab.group_fields),
+            "after": side(now, vocab.group_fields),
             "cited": cited(recorded),
         })
 
@@ -1455,54 +1984,85 @@ def change_set(act_id: str, before: State, after: State, departures: list[dict])
         if was_marked.get(unit_id) != text and unit_id not in by_unit
     ]
 
-    return {
+    payload = {
         "act": act_id,
         "units": units,
-        "masses": masses,
+        vocab.group_table: masses,
         "unestablished": orphaned,
         "totals": {
             "units_entered": sum(1 for row in units if row["state"] == "entered"),
             "units_gone": sum(1 for row in units if row["state"] == "gone"),
             "units_changed": sum(1 for row in units if row["state"] == "changed"),
-            "masses_touched": len(masses),
+            f"{vocab.group_table}_touched": len(masses),
             "unestablished": sum(1 for row in units if row["marker"]) + len(orphaned),
             "standing": len(after.units),
         },
     }
+    # Written only where there are any, so a slice that knows nothing of
+    # authentic interpretations emits exactly the bytes it emitted before this
+    # field existed. An interpretation is carried whole, because a reader
+    # deciding what a canon means needs the doubt and the answer, not a count.
+    if interpretations:
+        payload["interpretations"] = [
+            {
+                "unit": row.get("unit"),
+                "force": row.get("force"),
+                "papal_act": row.get("papal_act") or "",
+                "withheld": (row.get("withheld") or "").strip(),
+                "question": (row.get("question") or "").strip(),
+                "answer": (row.get("answer") or "").strip(),
+                "dubium": (row.get("dubium") or "").strip(),
+                "responsum": (row.get("responsum") or "").strip(),
+                "citation": (row.get("citation") or "").strip(),
+                "basis": (row.get("basis") or "").strip(),
+                "note": (row.get("note") or "").strip(),
+                "read_from": row.get("read_from"),
+            }
+            for row in sorted(interpretations, key=lambda row: str(row.get("unit")))
+        ]
+        payload["totals"]["interpretations"] = len(interpretations)
+    return payload
 
 
 def standing(act_id: str, act: dict, state: State) -> dict:
-    """The liturgy as it stood when that act had done its work.
+    """The text as it stood when that act had done its work.
 
-    A reader arriving at a station wants to read the missal, not only the delta,
-    and a mass that holds no unit is printed with none rather than dropped: an
-    empty mass is this record saying it carries nothing there.
+    A reader arriving at a station wants to read the book, not only the delta,
+    and a container that holds no unit is printed with none rather than dropped:
+    an empty Mass, or an empty title of the Code, is this record saying it
+    carries nothing there.
     """
+    vocab = state.vocab
+    fields = unit_fields(vocab)
     held: dict[str, list[dict]] = {}
     for unit_id, unit in state.units.items():
-        held.setdefault(unit["mass"], []).append({"unit": unit_id, **side(unit, UNIT_FIELDS)})
+        held.setdefault(unit["mass"], []).append({"unit": unit_id, **side(unit, fields)})
     masses = []
     for mass_id in sorted(set(state.masses) | set(held)):
         mass = state.masses.get(mass_id) or {}
         masses.append({
-            "mass": mass_id,
-            "title": mass.get("title", ""),
-            "day": mass.get("day", ""),
-            "hour": mass.get("hour", ""),
+            vocab.group_word: mass_id,
+            **{field: mass.get(field, "") for field in vocab.group_fields},
             "units": sorted(held.get(mass_id, []), key=lambda row: (row["order"], row["slot"])),
         })
-    return {
+    payload = {
         "act": act_id,
         "date": str(act.get("date")),
         "title": act.get("title"),
         "line": act.get("line"),
         "station_kind": act.get("station_kind"),
-        "masses": masses,
+        vocab.group_table: masses,
         "unestablished": [
             {"unit": unit_id, "marker": text} for unit_id, text in sorted(markers(state).items())
         ],
-        "totals": {"masses": len(masses), "units": len(state.units)},
+        "totals": {vocab.group_table: len(masses), "units": len(state.units)},
     }
+    interpreted = markers(state, INTERPRETATIONS)
+    if interpreted:
+        payload["interpretations"] = [
+            {"unit": unit_id, "record": text} for unit_id, text in sorted(interpreted.items())
+        ]
+    return payload
 
 
 def unit_histories(order: list[str], acts: dict[str, dict], sets: dict[str, dict]) -> dict[str, dict]:
@@ -1524,6 +2084,28 @@ def unit_histories(order: list[str], acts: dict[str, dict], sets: dict[str, dict
                 "station_kind": act.get("station_kind"),
                 "instrument": act.get("instrument"),
                 **{key: row[key] for key in ("state", "kinds", "fields", "before", "after", "cited", "marker")},
+            })
+        # An interpretation is a stop in a canon's life and not a change to its
+        # text, so it joins the history with no departure kind, no before and no
+        # after. A page that drew it as a change would say the legislator
+        # rewrote a canon nobody rewrote.
+        for row in sets[act_id].get("interpretations", []):
+            history = histories.setdefault(row["unit"], {"unit": row["unit"], "stations": []})
+            history["stations"].append({
+                "act": act_id,
+                "date": str(act.get("date")),
+                "title": act.get("title"),
+                "line": act.get("line"),
+                "station_kind": act.get("station_kind"),
+                "instrument": act.get("instrument"),
+                "state": "interpreted",
+                "kinds": [],
+                "fields": [],
+                "before": None,
+                "after": None,
+                "cited": [],
+                "marker": None,
+                "interpretation": row,
             })
     for history in histories.values():
         stops = history["stations"]
@@ -1559,6 +2141,9 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
     departures_by_act: dict[str, list[dict]] = {}
     for departure in data.get("departures", []):
         departures_by_act.setdefault(departure.get("act", ""), []).append(departure)
+    interpretations_by_act: dict[str, list[dict]] = {}
+    for row in data.get("interpretations", []):
+        interpretations_by_act.setdefault(row.get("act", ""), []).append(row)
 
     sets = {
         act_id: change_set(
@@ -1566,6 +2151,7 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
             inherited(act_id, acts, states),
             states[act_id],
             departures_by_act.get(act_id, []),
+            interpretations_by_act.get(act_id, []),
         )
         for act_id in order
     }
@@ -1588,21 +2174,43 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
         write_json(root / slice_id / "state" / f"{name}.json", standing(act_id, act, states[act_id]))
     for unit_id, history in sorted(histories.items()):
         write_json(root / slice_id / "unit" / f"{unit_id}.json", history)
+    vocab = vocabulary_of(data)
+    groups = indexed(data.get("masses", []), "id", vocab.group_table)
+    index = []
+    for _, history in sorted(histories.items()):
+        row = {
+            "unit": history["unit"],
+            "name": history["name"],
+            "mass": history["mass"],
+            "slot": history["slot"],
+            "entered_at": history["entered_at"],
+            "left_at": history["left_at"],
+            "standing": history["standing"],
+            "stations": len(history["stations"]),
+            "path": f"{slice_id}/unit/{history['unit']}.json",
+            # Which line the unit belongs to, DERIVED from the act that first
+            # carried it rather than typed on the unit. Two codes number
+            # independently, so a page that could not tell which body of law a
+            # canon 1012 belongs to would gather two different canons into one.
+            "line": history["stations"][0]["line"],
+        }
+        chain = chain_of(groups, history["mass"], vocab)
+        if chain:
+            row["divisions"] = chain
+        index.append(row)
     write_json(root / slice_id / "units.json", {
         "slice": slice_id,
-        "units": [
+        "units": index,
+        # The containers themselves, so a reader of the index can be shown
+        # `Liber VII` and its subject rather than a slug. Written beside the
+        # units because the index is the one file a lookup always costs.
+        vocab.group_table: [
             {
-                "unit": history["unit"],
-                "name": history["name"],
-                "mass": history["mass"],
-                "slot": history["slot"],
-                "entered_at": history["entered_at"],
-                "left_at": history["left_at"],
-                "standing": history["standing"],
-                "stations": len(history["stations"]),
-                "path": f"{slice_id}/unit/{history['unit']}.json",
+                vocab.group_word: group_id,
+                **{field: group.get(field, "") for field in vocab.group_fields},
+                **({"within": group["within"]} if group.get("within") else {}),
             }
-            for _, history in sorted(histories.items())
+            for group_id, group in sorted(groups.items())
         ],
     })
     return {act_id: sets[act_id]["totals"] for act_id in order}
@@ -1649,6 +2257,7 @@ def structure(data: dict, out: Path) -> dict:
                 "station_kind": act.get("station_kind"),
                 "parent_kind": act.get("parent_kind"),
                 "printing": act.get("printing"),
+                "same_instrument_as": act.get("same_instrument_as"),
                 "act_citation": act.get("act_citation"),
                 "citation": act.get("citation"),
                 "effect": act.get("effect"),
@@ -1660,9 +2269,19 @@ def structure(data: dict, out: Path) -> dict:
                 "state_path": f"{slice_id}/state/{sorted_name(str(act['date']), act['id'])}.json",
             }
         )
+    vocab = vocabulary_of(data)
     payload = {
         "schema": "triptych-act-map/v1",
         "slice": slice_id,
+        # Declared, so a page reads the fragments in the words the slice keeps
+        # them in rather than assuming a missal. `group_key` is the key a state
+        # fragment's containers stand under and `unit_word` is what one unit is
+        # called; a page that finds neither is reading a slice it was not
+        # written for and should say so instead of drawing an empty map.
+        "vocabulary": vocab.name,
+        "group_key": vocab.group_table,
+        "group_word": vocab.group_word,
+        "unit_word": vocab.unit_word,
         "extent": data.get("extent"),
         "lines": data.get("lines"),
         "stations": stations,
@@ -1693,8 +2312,13 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         kinds = payload["departure_kinds"]
         print(
             f"ok: {payload['acts']} acts, {payload['lines']} lines, {payload['witnesses']} witnesses, "
-            f"{payload['masses']} masses, {payload['base_units']} base units, {payload['departures']} departures"
+            f"{payload['groups']} {payload['group_plural']}, {payload['base_units']} base "
+            f"{payload['unit_plural']}, {payload['departures']} departures"
         )
+        if payload.get("interpretations"):
+            print(f"authentic interpretations: {payload['interpretations']}")
+        if payload.get("withheld_units"):
+            print(f"{payload['unit_word']}s whose text is withheld: {payload['withheld_units']}")
         print("stations: " + ", ".join(f"{kind} {count}" for kind, count in sorted(payload["station_kinds"].items()))
               + f"; {len(payload['roots'])} roots")
         if payload["edge_kinds"]:

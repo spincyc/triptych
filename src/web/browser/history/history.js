@@ -71,42 +71,18 @@
     /* ------------------------------------------------------------------------
      * Two kinds of station
      *
-     *   promulgated  an act stands behind it and its instrument is cited
-     *   printed      a missal survives and no act has been located
-     *
-     * The difference is one of EVIDENCE, not of importance, and it is READ, never
-     * inferred. Working it out from whether an instrument string happens to be
-     * present is the guess this whole apparatus exists to prevent: a station
-     * whose act is merely unread would come out looking like a station whose act
-     * is not claimed at all, and the two are different claims.
-     *
-     * One allowance, and it is about the schema rather than about any station.
-     * A file written before the distinction existed carries the field nowhere,
-     * and every station in such a file is an act by the generator's own rule --
-     * `act-history check` refuses a station without one. So a file that names the
-     * field NOWHERE is read as all-promulgated; a file that names it ANYWHERE is
-     * read literally, and a station missing it there is `unstated` and says so.
+     * `promulgated` against `printed` is a statement about EVIDENCE, it is read
+     * and never inferred, and the rule now lives in the shared machinery
+     * because a second page reads it too. This page names it and keeps its own
+     * copy of nothing.
      * --------------------------------------------------------------------- */
 
-    const PROMULGATED = 'promulgated';
-    const PRINTED = 'printed';
-    const UNSTATED = 'unstated';
-
-    function statedKind(station) {
-      const value = station && (station.station_kind || station.station);
-      return typeof value === 'string' && value ? value : null;
-    }
-
-    /** Does this file speak the two-kinds vocabulary at all? */
-    function kindsAreStated(stations) {
-      return (stations || []).some(function (station) { return statedKind(station) !== null; });
-    }
-
-    function kindOf(station, stated) {
-      const value = statedKind(station);
-      if (value) return value;
-      return stated ? UNSTATED : PROMULGATED;
-    }
+    const KIND = T.stationKind;
+    const PROMULGATED = KIND.PROMULGATED;
+    const PRINTED = KIND.PRINTED;
+    const UNSTATED = KIND.UNSTATED;
+    const kindsAreStated = KIND.stated;
+    const kindOf = KIND.of;
 
     /* ------------------------------------------------------------------------
      * Lanes

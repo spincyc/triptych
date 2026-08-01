@@ -310,6 +310,54 @@ window.Triptych = (function () {
   }
 
   /* ------------------------------------------------------------------------
+   * Two kinds of station, in every act-keyed record
+   *
+   *   promulgated  an act stands behind it and its instrument is cited
+   *   printed      a witness survives and no act has been located
+   *
+   * The difference is one of EVIDENCE, not of importance, and it is READ, never
+   * inferred. Working it out from whether an instrument string happens to be
+   * present is the guess the whole apparatus exists to prevent: a station whose
+   * act is merely unread would come out looking like a station whose act is not
+   * claimed at all, and the two are different claims.
+   *
+   * One allowance, and it is about the schema rather than about any station. A
+   * file written before the distinction existed carries the field nowhere, and
+   * every station in such a file is an act by the generator's own rule —
+   * `act-history check` refuses a station without one. So a file that names the
+   * field NOWHERE is read as all-promulgated; a file that names it ANYWHERE is
+   * read literally, and a station missing it there is `unstated` and says so.
+   *
+   * It lives here because more than one page now reads it, and a rule about
+   * evidence that each page kept its own copy of would be free to drift into
+   * two answers about the same station.
+   * --------------------------------------------------------------------- */
+
+  const PROMULGATED = 'promulgated';
+  const PRINTED = 'printed';
+  const UNSTATED = 'unstated';
+
+  function statedKind(station) {
+    const value = station && (station.station_kind || station.station);
+    return typeof value === 'string' && value ? value : null;
+  }
+
+  const stationKind = {
+    PROMULGATED: PROMULGATED,
+    PRINTED: PRINTED,
+    UNSTATED: UNSTATED,
+
+    /** Does this file speak the two-kinds vocabulary at all? */
+    stated: function (stations) {
+      return (stations || []).some((station) => statedKind(station) !== null);
+    },
+
+    of: function (station, stated) {
+      return statedKind(station) || (stated ? UNSTATED : PROMULGATED);
+    }
+  };
+
+  /* ------------------------------------------------------------------------
    * Selects
    *
    * Options are emitted in the order given and never re-sorted here: the
@@ -1417,6 +1465,9 @@ window.Triptych = (function () {
     fail: fail,
     titleCase: titleCase,
     fillSelect: fillSelect,
+
+    // act-keyed records, shared by every page that draws one
+    stationKind: stationKind,
 
     // sequencing
     beginRender: beginRender,
