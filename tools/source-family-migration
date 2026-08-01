@@ -481,6 +481,18 @@ def _ledger_snapshot(data: dict[str, Any]) -> str:
     return _hash_payload(payload)
 
 
+def membership_snapshot(canonical_ids: list[str]) -> str:
+    """A fingerprint of exactly which sources a family claims.
+
+    `reviewed_on` says when a family was last reviewed; this says WHAT was
+    reviewed. Without it the only way to prove a family's membership had been
+    looked at was to demand it be re-reviewed today, which is why accepting one
+    new source used to require re-dating every review in the ledger.
+    """
+    joined = "\n".join(sorted(canonical_ids))
+    return "sha256:" + hashlib.sha256(joined.encode("utf-8")).hexdigest()
+
+
 def _family_screening_snapshot(families: list[dict[str, Any]]) -> str:
     fields = (
         "id",
@@ -524,6 +536,7 @@ def _validate_family(
         "canonical_ids",
         "trace_patterns",
         "reviewed_on",
+        "membership_snapshot",
         "notes",
     }
     if not isinstance(family, dict) or set(family) != expected:
@@ -1349,10 +1362,19 @@ def main() -> int:
                 ]
             )
             return 1
+        # Only a family whose MEMBERSHIP has moved needs re-reviewing. This
+        # used to demand `reviewed_on == audited_on` of every family carrying
+        # canonical ids, so admitting one new source asserted a fresh review of
+        # all 369 — a claim nobody could make truthfully, which meant the gate
+        # went red the moment the library grew and stayed red. A family whose
+        # recorded fingerprint still matches what it claims was reviewed then,
+        # and that review stands.
         stale_family_reviews = sorted(
             family["id"]
             for family in old["families"]
             if family["canonical_ids"]
+            and family["membership_snapshot"]
+            != membership_snapshot(family["canonical_ids"])
             and family["reviewed_on"] != args.audited_on
         )
         if stale_family_reviews:
