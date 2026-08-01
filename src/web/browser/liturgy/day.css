@@ -324,7 +324,7 @@
  * nothing is dimmed to the point of being hard to read: the distinction is
  * position and weight of rule, which survives being printed in black and white.
  */
-.ordinary-frame > .proper:not(.ordinary-element) {
+.ordinary-frame .annotated-text > .proper {
   border-left-color: var(--section-line);
   border-left-width: 3px;
 }

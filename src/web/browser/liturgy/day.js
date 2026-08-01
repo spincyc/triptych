@@ -838,7 +838,7 @@
 
   /** The frame, with the day's propers set into it. */
   function renderFrame(file, propers, renderMassProper) {
-    const wrapper = T.el('section', 'ordinary ordinary-frame');
+    const wrapper = T.el('section', 'ordinary-frame');
     const shown = shownElements(file);
     const placed = seatPropers(propers, seats(file, shown));
 
