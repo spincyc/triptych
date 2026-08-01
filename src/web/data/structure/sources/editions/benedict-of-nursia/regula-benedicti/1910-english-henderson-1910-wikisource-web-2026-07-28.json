@@ -1,0 +1,74 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-page",
+   "byte_size": 169022,
+   "id": "artifact.benedict-of-nursia.regula-benedicti.english-henderson-1910-wikisource-web-2026-07-28.wikisource-html",
+   "media_type": "text/html",
+   "notes": "Exact bytes inspected but not retained. Web transcription, not facsimile.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "Henderson's 1910 translation is public domain in the United States. Contemporary Wikimedia delivery markup is not retained or redistributed.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://en.wikisource.org/wiki/Select_Historical_Documents_of_the_Middle_Ages/Book_III/The_Rule_of_St._Benedict",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1910",
+  "editors": [],
+  "id": "edition.benedict-of-nursia.regula-benedicti.english-henderson-1910-wikisource-web-2026-07-28",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "Public-domain English translation in a dated Wikimedia transcription. It is not a current critical Latin edition.",
+  "publication": "Ernest F. Henderson, Select Historical Documents of the Middle Ages (London: George Bell and Sons, 1910); English Wikisource transcription",
+  "title": "The Rule of St. Benedict",
+  "translators": [
+   "Ernest F. Henderson"
+  ],
+  "year": 1910
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.benedict-of-nursia.regula-benedicti.english-henderson-1910-wikisource-web-2026-07-28.wikisource-html",
+   "artifact_type": "web-page",
+   "context": "Chapter 7 was inspected for its twelvefold treatment of humility. Near the twelfth degree it invokes the Gospel publican's lowered gaze and self-accusation as an interior and bodily pattern under divine judgment. The Rule embeds posture within a sustained discipline of humility and does not teach that posture by itself validates prayer.",
+   "id": "passage.benedict-of-nursia.regula-benedicti.english-henderson-1910-wikisource-web-2026-07-28.7",
+   "locus": "7",
+   "media_type": "text/html",
+   "notes": "The Henderson transcription compresses parts of the chapter; the bounded publican passage and its immediate setting were inspected.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "Henderson's 1910 translation is public domain in the United States. Contemporary Wikimedia delivery markup is not retained or redistributed.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://en.wikisource.org/wiki/Select_Historical_Documents_of_the_Middle_Ages/Book_III/The_Rule_of_St._Benedict",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-28",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Rule of Saint Benedict"
+  ],
+  "author": "Benedict of Nursia",
+  "category": "monastic-rule",
+  "description": "The monastic rule attributed to Benedict of Nursia. A locus is the chapter number.",
+  "id": "work.benedict-of-nursia.regula-benedicti",
+  "languages": [
+   "la"
+  ],
+  "title": "Regula Benedicti"
+ }
+}

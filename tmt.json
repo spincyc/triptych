@@ -369,6 +369,19 @@
       "stage": "draft",
       "usage": "source-library {validate,fingerprint,uses,impact,search}"
     },
+    "source-reader": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Project the source library for reading, under its own rights records.",
+      "requires": [
+        "source-library"
+      ],
+      "stage": "draft",
+      "usage": "source-reader {check,list,show,structure} [--author A] [--language L] [--rights R] [--out DIR] [--check] [--json]"
+    },
     "tpt": {
       "idempotent": true,
       "json": true,

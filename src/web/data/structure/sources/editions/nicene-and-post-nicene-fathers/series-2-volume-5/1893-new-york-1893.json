@@ -1,0 +1,93 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-transcription",
+   "byte_size": 207962,
+   "id": "artifact.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio-web-text-b09a66d1",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "A transcription of a web witness of the 1893 printing, not a collation against the printed page, so no passage taken from it rises above inspected. One bound is worth recording because it was nearly missed: Wikisource's own contents page for this treatise lists thirty chapter pages and stops, while a thirty-first page exists and carries the printing's chapter XXX. A retrieval driven by that contents list would have produced a file that stopped one chapter early and would have looked exactly like a complete one. The page list was therefore probed past the end of the contents until a page genuinely did not exist, and the export holds all thirty-one chapter pages.",
+   "page_count": null,
+   "retrieved": "2026-07-31",
+   "rights": "public-domain",
+   "rights_basis": "The complete text of Gregory of Nyssa's De hominis opificio in Henry Austin Wilson's Nicene and Post-Nicene Fathers English translation, published New York 1893 and in the United States public domain by date of publication. Wilson died in 1927 and Schaff in 1893, so the translation is also out of copyright in jurisdictions applying a life-plus-seventy term. No host's markup, formatting, pagination, footnotes or annotation is reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "wiki-export-xml",
+   "byte_size": 301636,
+   "id": "artifact.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio-wikisource-export-d693d15a",
+   "media_type": "application/xml",
+   "notes": "Recorded remote rather than tracked: these bytes carry the Wikisource contributors' own markup under CC BY-SA, and the repository redistributes only the public-domain printed translation extracted from them. The hash is kept so that the tracked derivative below names a transformation input that is exactly identified, which a bare URL would not be.",
+   "page_count": null,
+   "retrieved": "2026-07-31",
+   "rights": "public-domain",
+   "rights_basis": "The Nicene and Post-Nicene Fathers English translation printed in this volume is in the United States public domain by date of publication, and its translators and editors died before 1930, so it is also out of copyright in jurisdictions applying a life-plus-seventy term. The bytes here are the wiki source of an English Wikisource transcription of that printing, retrieved whole in one Special:Export request. English Wikisource contributions are licensed CC BY-SA 4.0, which is a condition on the contributors' markup rather than on the printed translation beneath it; the exact bytes are therefore recorded and hashed but not retained here, and only the printed translation reaches the tracked derivative, stripped of every template, link, footnote and heading the contributors added.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://en.wikisource.org/wiki/Special:Export",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1893",
+  "editors": [
+   "Philip Schaff",
+   "Henry Wace"
+  ],
+  "id": "edition.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "Catalog-level record created 2026-07-26 from the volume identity as republished at CCEL and mirrored at New Advent, whose page for On the Soul and the Resurrection names Moore as translator and this volume as source. The American printing is public domain. No exact artifact has been registered; publications consulting web transcriptions record their own access routes and limits locally.",
+  "publication": "New York: Christian Literature Company, 1893",
+  "title": "NPNF Second Series, Volume V: Gregory of Nyssa, Dogmatic Treatises, etc.",
+  "translators": [
+   "William Moore",
+   "Henry Austin Wilson"
+  ],
+  "year": 1893
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio-web-text-b09a66d1",
+   "artifact_type": "web-transcription",
+   "context": "The whole of Gregory of Nyssa's treatise on the making of man: the dedicatory letter to his brother Peter, the printing's table of chapter headings, and all thirty chapters. Written about 379 to supply what Basil's Hexaemeron left undone, the Hexaemeron having broken off before the creation of man. The volume editors' own note on the treatise stands at line 1 of the artifact and is deliberately outside this passage, because it is Schaff's and Wilson's and not Gregory's.",
+   "id": "passage.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio",
+   "locus": "Gregory of Nyssa, De hominis opificio, prologue and I-XXX",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-07-31 for the Genesis catena from the hashed Wikisource export of the 1893 printing, fetched and transcribed without a model anywhere in the path. This is one of only two works on Genesis in the pilot's list of ten with a public-domain English text, and the one the pilot could not land because the route it had returned a paraphrase. States stop at inspected: the wording rests on one web witness of the printing and no facsimile has been hashed or collated.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The complete text of Gregory of Nyssa's De hominis opificio in Henry Austin Wilson's Nicene and Post-Nicene Fathers English translation, published New York 1893 and in the United States public domain by date of publication. Wilson died in 1927 and Schaff in 1893, so the translation is also out of copyright in jurisdictions applying a life-plus-seventy term. No host's markup, formatting, pagination, footnotes or annotation is reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio.json",
+   "verified_on": null,
+   "words": 36450
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Gregory of Nyssa: Dogmatic Treatises, etc.",
+   "NPNF2, volume 5"
+  ],
+  "author": "Philip Schaff and Henry Wace",
+  "category": "patristic-translation-anthology",
+  "description": "The fifth volume of the second series of the Nicene and Post-Nicene Fathers translation anthology, containing the dogmatic and ascetic treatises of Gregory of Nyssa in English, including On the Soul and the Resurrection, On the Making of Man, the Great Catechism, and Against Eunomius, with the volume editors' prolegomena. Its container identity remains distinct from Gregory's own works printed within it.",
+  "id": "work.nicene-and-post-nicene-fathers.series-2-volume-5",
+  "languages": [
+   "en"
+  ],
+  "title": "A Select Library of Nicene and Post-Nicene Fathers, Second Series, Volume V"
+ }
+}

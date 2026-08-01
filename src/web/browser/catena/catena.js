@@ -447,6 +447,17 @@
       source.appendChild(T.el('span', 'sep'));
       source.appendChild(T.el('span', 'state', fragment.review + ', not collated'));
     }
+    // An excerpt is worth more when its context is a click away. The source
+    // library reads the whole edition this fragment was cut from, and the
+    // passage id is the only thing needed to reach the right place in it: that
+    // page looks the id up in what its own generator wrote, rather than being
+    // handed a path this page would have to compose and keep in step.
+    if (fragment.id) {
+      source.appendChild(T.el('span', 'sep'));
+      const whole = T.el('a', 'fragment-whole', 'Read the whole work');
+      whole.href = '../sources/#passage=' + encodeURIComponent(fragment.id);
+      source.appendChild(whole);
+    }
     details.appendChild(source);
     item.appendChild(details);
     return item;

@@ -1,0 +1,93 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 851,
+   "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9-checked-text-7af5dcbd",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of the Nicene and Post-Nicene Fathers English translation, which is in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 74403644,
+   "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.ia-facsimile-pdf-5d162561",
+   "media_type": "application/pdf",
+   "notes": "604 PDF pages. Printed page 436 is PDF page 448. The Internet Archive record gives the imprint as New York: The Christian Literature Co. and the series dates as 1886-90; the existing edition record for this volume names the 1888 printing, and this facsimile is registered against it as the copy actually read. Sections 7 to 9 of Tractate CXX stand on printed page 436 above the heading of Tractate CXXI, and the page's running head names Tractate CXXI because that tractate begins on the page.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "The underlying work is in the United States public domain by date of publication. The Internet Archive delivers a scan of a public-domain printing; no new copyright is claimed here over the scan, and the bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/selectlibraryofn07auguuoft/selectlibraryofn07auguuoft.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1888",
+  "editors": [
+   "Philip Schaff"
+  ],
+  "id": "edition.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "Catalog-level record created 2026-07-25 from the volume identity as republished at CCEL and mirrored at New Advent. The American printing is public domain. No exact artifact has been registered; publications consulting web transcriptions record their own access routes and limits locally.",
+  "publication": "Buffalo: Christian Literature Publishing Company, 1888",
+  "title": "NPNF First Series, Volume VII: St. Augustin: Homilies on the Gospel of John, Homilies on the First Epistle of John, Soliloquies",
+  "translators": [
+   "John Gibb",
+   "James Innes"
+  ],
+  "year": 1888
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9-checked-text-7af5dcbd",
+   "artifact_type": "checked-transcription",
+   "context": "Augustine's refusal of the reading that the beloved disciple believed in the Resurrection, read on printed page 436 rendered from the hashed facsimile. Sections 7 and 8 of the same tractate, including Augustine's declining to expound the cloths, and the heading of Tractate CXXI lower on the same page, were read with it so that the passage boundary is explicit.",
+   "id": "passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9",
+   "locus": "Augustine, In Iohannis Evangelium Tractatus CXX.9",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This translation renders the Vulgate's separatim involutum in unum locum at John 20:7, quoted in section 8 on the same page, as folded up in one place by itself; that rendering is a translator's choice and is recorded here because consuming publications discuss how the English word folded entered discussion of this verse.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of the Nicene and Post-Nicene Fathers English translation, which is in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9.json",
+   "verified_on": "2026-07-25",
+   "words": 156
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "St. Augustin: Homilies on the Gospel of John, Homilies on the First Epistle of John, Soliloquies",
+   "NPNF1, volume 7"
+  ],
+  "author": "Philip Schaff",
+  "category": "patristic-translation-anthology",
+  "description": "The seventh volume of the first series of the Nicene and Post-Nicene Fathers translation anthology, containing John Gibb and James Innes's English translation of Augustine's Tractates on the Gospel of John together with the Homilies on the First Epistle of John and the Soliloquies. Its container identity remains distinct from Augustine's works and the translated editions printed within it.",
+  "id": "work.nicene-and-post-nicene-fathers.series-1-volume-7",
+  "languages": [
+   "en"
+  ],
+  "title": "A Select Library of the Nicene and Post-Nicene Fathers of the Christian Church, First Series, Volume VII"
+ }
+}

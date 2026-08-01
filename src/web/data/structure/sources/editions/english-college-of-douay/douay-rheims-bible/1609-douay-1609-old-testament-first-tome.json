@@ -1,0 +1,53 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 3691052,
+   "id": "artifact.english-college-of-douay.douay-rheims-bible.douay-1609-old-testament-first-tome.ia-djvu-ocr-1c0612dd",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Optical character recognition of blackletter-adjacent early modern type with u/v and i/j interchange, long s, and heavy marginal apparatus interleaved with the text column. The marginal notes are frequently broken across the running text. It is a finding aid: the presence or absence of a note on a verse is legible from it, and the scriptural wording is legible with care, but no reading taken from it is verified.",
+   "page_count": null,
+   "retrieved": "2026-07-26",
+   "rights": "public-domain",
+   "rights_basis": "A 1609 English printing, out of copyright by age. The Internet Archive text layer is a mechanical derivative of a scan of a public-domain book and carries no separate creative claim asserted by the host.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/holiebiblefaithf01engl/holiebiblefaithf01engl_djvu.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1609",
+  "editors": [],
+  "id": "edition.english-college-of-douay.douay-rheims-bible.douay-1609-old-testament-first-tome",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The first of the two volumes of the original Douay Old Testament, containing Genesis through Job together with the chapter arguments, marginal notes, and the annotations printed after each chapter or group of chapters. It is a separate physical and editorial unit from the second tome of 1610, which is registered under its own edition record, and its wording differs from Challoner's revision. No complete text of this volume is retained in the repository.",
+  "publication": "Doway: Laurence Kellam, 1609",
+  "title": "The Holie Bible faithfully translated into English out of the authentical Latin, the first tome",
+  "translators": [
+   "Gregory Martin",
+   "Thomas Worthington"
+  ],
+  "year": 1609
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Douay-Rheims Bible",
+   "Douay Bible",
+   "Rheims-Douay Bible",
+   "Douay-Rheims-Challoner Bible",
+   "Douay Version"
+  ],
+  "author": "English College at Douay and Rheims; Gregory Martin, principal translator",
+  "category": "biblical-translation",
+  "description": "The English Catholic Bible translated from the Latin Vulgate by the English College in exile: the New Testament published at Rheims in 1582 and the Old Testament at Douay in 1609 and 1610, revised by Bishop Richard Challoner between 1749 and 1752. It is the English counterpart of the Clementine Vulgate the 1962 Missal prints. Edition records must keep the original Douay and Rheims text, Challoner's revision, the 1899 and 1914 American printings, and later electronic transcriptions apart, because their wording and in places their versification differ. A locus is BookToken.chapter.verse, optionally with a closing verse or chapter.verse after a hyphen, as in Ps.53.6-7, 1Cor.10.6-13, or Dan.3.49-51. The 73 book tokens, the modern names and 1962 Missal abbreviations they answer to, and the naming traps are registered in the book index of each electronic edition. Chapter and verse numbers are always the Vulgate ones the Missal cites, never modern Hebrew ones: Psalm numbers follow the Septuagint and Vulgate series, so Ps 53 here is Ps 54 in a modern Bible, and Douay 1 and 2 Kings are modern 1 and 2 Samuel. The psalm-numbering and verse-alias tables registered with the text carry the exhaustive conversions.",
+  "id": "work.english-college-of-douay.douay-rheims-bible",
+  "languages": [
+   "en"
+  ],
+  "title": "The Holy Bible, Douay-Rheims"
+ }
+}

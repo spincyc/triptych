@@ -1,0 +1,47 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-gazette-volume-pdf",
+   "byte_size": 4983675,
+   "id": "artifact.holy-see.acta-apostolicae-sedis.volume-57-1965.vatican-ocr-pdf-bd6d813d",
+   "media_type": "application/pdf",
+   "notes": "The PDF contains an ABBYY FineReader 9.0 OCR layer, but it is a restricted nonretained artifact and is not registered as indexable text. Boundary pages were inspected for Lumen gentium (pp. 5-71), its Notificationes and Nota explicativa praevia (pp. 72-75), Orientalium Ecclesiarum (pp. 76-89), the Decree's separate vacatio-legis Notificatio on p. 89, and Unitatis redintegratio (pp. 90-112); a new issue and the Acta Pauli PP. VI begin on p. 113. Exact bytes are identified but not retained.",
+   "page_count": 1094,
+   "retrieved": "2026-07-23",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-23 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-57-1965-ocr.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1965",
+  "editors": [
+   "Holy See"
+  ],
+  "id": "edition.holy-see.acta-apostolicae-sedis.volume-57-1965",
+  "jurisdiction": null,
+  "language": "mul",
+  "notes": "The complete 1965 official-gazette volume. Its separately modeled constituent acts retain their own work and edition identities while pointing back to the exact volume artifact through bounded segments.",
+  "publication": "Acta Apostolicae Sedis 57 (1965)",
+  "title": "Acta Apostolicae Sedis, volume 57",
+  "translators": [],
+  "year": 1965
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "AAS",
+   "Acta Apostolicae Sedis: Commentarium Officiale"
+  ],
+  "author": "Holy See",
+  "category": "official-gazette",
+  "description": "The official gazette of the Holy See. Annual-volume editions and exact delivery artifacts remain container identities distinct from the constitutions, decrees, notifications, rescripts, and other acts printed within them.",
+  "id": "work.holy-see.acta-apostolicae-sedis",
+  "languages": [],
+  "title": "Acta Apostolicae Sedis"
+ }
+}

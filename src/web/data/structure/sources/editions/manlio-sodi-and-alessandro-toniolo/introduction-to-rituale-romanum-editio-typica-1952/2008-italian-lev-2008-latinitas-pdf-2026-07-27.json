@@ -1,0 +1,87 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "publisher-introduction-pdf",
+   "byte_size": 168166,
+   "id": "artifact.manlio-sodi-and-alessandro-toniolo.introduction-to-rituale-romanum-editio-typica-1952.italian-lev-2008-latinitas-pdf-2026-07-27.latinitas-pdf-0d554564",
+   "media_type": "application/pdf",
+   "notes": "Ten-page PDF containing the introduction's pp. V-XIV. Exact bytes were inspected in run-owned temporary storage and were not retained.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "restricted",
+   "rights_basis": "The modern Libreria Editrice Vaticana introduction is copyrighted; public delivery supplies no permission to redistribute the exact PDF.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.latinitas.it/trento_pub/MLP2.pdf",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "catalog-json",
+   "byte_size": 2087,
+   "id": "artifact.manlio-sodi-and-alessandro-toniolo.introduction-to-rituale-romanum-editio-typica-1952.italian-lev-2008-latinitas-pdf-2026-07-27.open-library-edition-json-ae6cad4e",
+   "media_type": "application/json",
+   "notes": "Catalog aid only. Open Library edition OL50130683M identifies the 2008 LEV anastatic edition, ISBN 9788820980702, xiii plus 970 pages, and reports that no public scan or full text is attached. It witnesses no liturgical wording or internal boundary.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "restricted",
+   "rights_basis": "Open Library's public API response is used remotely as mutable catalog metadata; no redistribution basis for the exact response was needed or asserted.",
+   "rights_jurisdiction": null,
+   "source_url": "https://openlibrary.org/works/OL37171598W/editions.json?limit=50",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2008",
+  "editors": [
+   "Manlio Sodi",
+   "Alessandro Toniolo"
+  ],
+  "id": "edition.manlio-sodi-and-alessandro-toniolo.introduction-to-rituale-romanum-editio-typica-1952.italian-lev-2008-latinitas-pdf-2026-07-27",
+  "jurisdiction": null,
+  "language": "it",
+  "notes": "Introduction, pp. V-XIV, to Monumenta Liturgica Piana 2. The full protected anastatic facsimile was not publicly available and was not inspected.",
+  "publication": "Libreria Editrice Vaticana, 2008; exact public Latinitas PDF state retrieved 2026-07-27",
+  "title": "Rituale Romanum: Editio typica 1952 — Introduzione",
+  "translators": [],
+  "year": 2008
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.manlio-sodi-and-alessandro-toniolo.introduction-to-rituale-romanum-editio-typica-1952.italian-lev-2008-latinitas-pdf-2026-07-27.latinitas-pdf-0d554564",
+   "artifact_type": "publisher-introduction-pdf",
+   "context": "Pages VII-IX identify the 1952 book as the sixth typical edition after 1614, describe Cum denuo as signed by the Sacred Congregation of Rites' pro-prefect on 25 January 1952, describe the book's twelve-title architecture, and identify title XII as De exorcizandis obsessis a Daemonio. These are the editors' statements about the anastatic source, not direct inspection of the complete 1952 book or decree.",
+   "id": "passage.manlio-sodi-and-alessandro-toniolo.introduction-to-rituale-romanum-editio-typica-1952.italian-lev-2008-latinitas-pdf-2026-07-27.edition-identity-and-architecture",
+   "locus": "vii",
+   "media_type": "application/pdf",
+   "notes": "No internal title-XII chapter division, formula, wording, operational sequence, actual use, or current authorization is controlled here.",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_basis": "The modern Libreria Editrice Vaticana introduction is copyrighted; public delivery supplies no permission to redistribute the exact PDF.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://www.latinitas.it/trento_pub/MLP2.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-07-27",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Manlio Sodi and Alessandro Toniolo",
+  "category": "scholarly-introduction",
+  "description": "Scholarly introduction to the 2008 Libreria Editrice Vaticana anastatic edition. It is a finding aid to the reproduced 1952 book, not the 1952 typical edition itself.",
+  "id": "work.manlio-sodi-and-alessandro-toniolo.introduction-to-rituale-romanum-editio-typica-1952",
+  "languages": [
+   "it"
+  ],
+  "title": "Introduction to Rituale Romanum: Editio typica 1952"
+ }
+}

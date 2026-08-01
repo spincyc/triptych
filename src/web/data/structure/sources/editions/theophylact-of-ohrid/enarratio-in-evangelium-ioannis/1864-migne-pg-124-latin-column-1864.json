@@ -1,0 +1,129 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 3544388,
+   "id": "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730",
+   "media_type": "text/plain",
+   "notes": "Uncorrected optical character recognition of a bilingual Greek and Latin page. The Latin column is largely legible; the Greek column is heavily corrupted by the recognition of a polytonic Greek face and must not be quoted from this artifact.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "Migne's 1864 volume is in the United States public domain by date of publication. The Internet Archive optical character recognition of a public-domain printing is delivered without a copyright claim asserted over it here. The retrieved bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1864_124/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1864_124_djvu.txt",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 696,
+   "id": "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-anti-theft-checked-text-bdc9929f",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Migne's 1864 Latin translation, which is in the United States public domain by date of publication. It repairs evident character-level recognition damage and contains no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 499,
+   "id": "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-credidit-checked-text-6a55059a",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Migne's 1864 Latin translation, which is in the United States public domain by date of publication. It repairs evident character-level recognition damage and contains no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1864",
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "Registered as the Latin column of Migne's bilingual printing, not as Theophylact's Greek. The commentary on John 20 stands at columns 289 to 292. This record is registered against the Internet Archive optical character recognition of the volume, which reproduces the Latin column far more reliably than the Greek; the Greek column was not collated for this record and no claim about its exact wording is made here.",
+  "publication": "Paris: J.-P. Migne, Patrologiae Cursus Completus, Series Graeca, tomus 124, 1864",
+  "title": "Enarratio in Evangelium Ioannis, Migne's facing Latin column in Patrologia Graeca 124",
+  "translators": [],
+  "year": 1864
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-anti-theft-checked-text-bdc9929f",
+   "artifact_type": "checked-transcription",
+   "context": "Theophylact's reproduction of Chrysostom's anti-theft argument, read in the retrieved optical character recognition at Migne's columns 289 and 290. Registered at an inspection ceiling rather than as verified: the transcription repairs obvious character-level recognition damage in the Latin column and has not been checked against a page image or against the Greek.",
+   "id": "passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-anti-theft",
+   "locus": "20",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Four readings repair evident recognition damage in the source file: habuissent for hahuissent, deponendi for depanendj, bitumine for bilu:nine, and insumpsisset for a mangled string. Migne's quotation marks around the scriptural lemmas are omitted. This is Migne's Latin translation, not Theophylact's Greek.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Migne's 1864 Latin translation, which is in the United States public domain by date of publication. It repairs evident character-level recognition damage and contains no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-anti-theft.json",
+   "verified_on": null,
+   "words": 94
+  },
+  {
+   "artifact_id": "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-credidit-checked-text-6a55059a",
+   "artifact_type": "checked-transcription",
+   "context": "Theophylact on he saw and believed, read in the retrieved optical character recognition at Migne's columns 291 and 292. Registered at an inspection ceiling for the same reasons as the companion passage under this edition.",
+   "id": "passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-credidit",
+   "locus": "20",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Repairs: Mariae twice for the file's Marie, and dicenti for icenti. Migne's quotation marks around the scriptural lemmas are omitted. This is Migne's Latin translation, not Theophylact's Greek.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Migne's 1864 Latin translation, which is in the United States public domain by date of publication. It repairs evident character-level recognition damage and contains no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-credidit.json",
+   "verified_on": null,
+   "words": 62
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentary on the Gospel of John",
+   "Expositio in Ioannem"
+  ],
+  "author": "Theophylact of Ohrid",
+  "category": "patristic-commentary",
+  "description": "Theophylact's commentary on the Fourth Gospel, written in the late eleventh or early twelfth century and largely an epitome of Chrysostom. On John 20 it reproduces Chrysostom's argument that the disposition of the cloths tells against theft, and then reads he saw and believed with Augustine, as belief that the body had been stolen. A locus is the Gospel chapter commented on. Migne's Patrologia Graeca 124 prints the Greek with a facing Latin translation; the modern English translation is under copyright and is not registered here.",
+  "id": "work.theophylact-of-ohrid.enarratio-in-evangelium-ioannis",
+  "languages": [
+   "grc",
+   "la"
+  ],
+  "title": "Enarratio in Evangelium Ioannis"
+ }
+}

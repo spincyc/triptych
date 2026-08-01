@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan",
+   "byte_size": 29385153,
+   "id": "artifact.flavius-philostratus.life-of-apollonius-of-tyana.english-conybeare-loeb-1912-volume-1.internet-archive-pdf",
+   "media_type": "application/pdf",
+   "notes": "Complete 618-page PDF acquired and inspected. Printed pp. 390–392 (PDF pages 412–414) were rendered and visually checked, including the chapter-20 opening and chapter-21 boundary.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "public-domain",
+   "rights_basis": "The 1912 edition is public domain in the United States. No scan bytes are redistributed by Triptych.",
+   "rights_jurisdiction": "US",
+   "source_url": "https://archive.org/download/lifeofapollonius01phil/lifeofapollonius01phil.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1912",
+  "editors": [],
+  "id": "edition.flavius-philostratus.life-of-apollonius-of-tyana.english-conybeare-loeb-1912-volume-1",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The volume identity, facing Greek and English text, book IV chapter 20 boundary, and printed pp. 390–392 were checked in the Internet Archive item lifeofapollonius01phil. No modern Greek critical-text collation was performed.",
+  "publication": "Edited and translated by F. C. Conybeare, London: William Heinemann; New York: Macmillan, 1912",
+  "title": "The Life of Apollonius of Tyana, volume 1",
+  "translators": [],
+  "year": 1912
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.flavius-philostratus.life-of-apollonius-of-tyana.english-conybeare-loeb-1912-volume-1.internet-archive-pdf",
+   "artifact_type": "scan",
+   "context": "Printed pp. 390–392 (PDF pages 412–414) were visually inspected through the chapter-21 boundary. Philostratus narrates Apollonius identifying a demon as the cause of a youth's conduct, addressing it, demanding departure and a visible sign, and the youth's subsequent changed behavior. This verifies Conybeare's dated translation of a literary-biographical episode, not the event, diagnosis, causation, efficacy, historicity of the sign, standard practice, payment, an operational sequence, dependence on or influence upon Christian texts, or continuity with Christian ritual.",
+   "id": "passage.flavius-philostratus.life-of-apollonius-of-tyana.english-conybeare-loeb-1912-volume-1.4.20",
+   "locus": "4.20",
+   "media_type": "application/pdf",
+   "notes": "No commands or procedural formula are transcribed. The work was written well after the narrated setting, and source criticism of Philostratus's account remains a separate research question.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The 1912 edition is public domain in the United States. No scan bytes are redistributed by Triptych.",
+   "rights_jurisdiction": "US",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/lifeofapollonius01phil/lifeofapollonius01phil.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-27",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Vita Apollonii",
+   "Ta es ton Tyanea Apollonion"
+  ],
+  "author": "Flavius Philostratus",
+  "category": "ancient-biography",
+  "description": "Philostratus's third-century literary biography of Apollonius of Tyana.",
+  "id": "work.flavius-philostratus.life-of-apollonius-of-tyana",
+  "languages": [
+   "grc"
+  ],
+  "title": "Life of Apollonius of Tyana"
+ }
+}

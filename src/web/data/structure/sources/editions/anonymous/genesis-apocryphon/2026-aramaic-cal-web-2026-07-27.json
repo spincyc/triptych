@@ -1,0 +1,74 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "webpage",
+   "byte_size": 41500,
+   "id": "artifact.anonymous.genesis-apocryphon.aramaic-cal-web-2026-07-27.column-20-html",
+   "media_type": "text/html",
+   "notes": "Exact HTML response acquired and inspected. It identifies 1QapGen column 20 and presents lines 20.01–20.34 word by word, including explicit alternate-reading markup.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "unresolved",
+   "rights_basis": "CAL publicly delivers the scholarly transcription for reading and lexical analysis, but no redistribution license for the page text was identified. No bytes are redistributed by Triptych.",
+   "rights_jurisdiction": null,
+   "source_url": "https://cal.huc.edu/get_a_chapter.php?file=44404&sub=20&cset=H&clen=5",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-27",
+  "editors": [],
+  "id": "edition.anonymous.genesis-apocryphon.aramaic-cal-web-2026-07-27",
+  "jurisdiction": null,
+  "language": "arc",
+  "notes": "CAL identifies its base as Avigad and Yadin's 1956 editio princeps, with later additions and revisions described in its file-information record. The exact dated delivery controls CAL's Aramaic transcription and line boundaries, not manuscript images, an English translation, or independent adjudication of restorations and alternate readings.",
+  "publication": "Comprehensive Aramaic Lexicon, Hebrew Union College, public web text acquired 2026-07-27",
+  "title": "1QapGen Column 20",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.anonymous.genesis-apocryphon.aramaic-cal-web-2026-07-27.column-20-html",
+   "artifact_type": "webpage",
+   "context": "CAL lines 20.14–29 were inspected in their full column context. The exact Aramaic transcription places Abram's petition, an afflicting spirit, failed healers, a request for prayer, restoration of Sarai, prayer, laying on of a hand, rebuke of the evil spirit, and recovery within one continuous retelling. This controls CAL's line sequence and readable lexical architecture, not a translation, manuscript-image collation, reconstructed lacunae, efficacy, representative practice, direct Gospel dependence, Christian ritual, diagnosis, or operational instruction.",
+   "id": "passage.anonymous.genesis-apocryphon.aramaic-cal-web-2026-07-27.20.14-29",
+   "locus": "20.14-29",
+   "media_type": "text/html",
+   "notes": "No formula or procedure is transcribed. CAL marks uncertainty and alternate readings inline; those features remain part of the edition rather than being silently harmonized.",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_basis": "CAL publicly delivers the scholarly transcription for reading and lexical analysis, but no redistribution license for the page text was identified. No bytes are redistributed by Triptych.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://cal.huc.edu/get_a_chapter.php?file=44404&sub=20&cset=H&clen=5",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-27",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "1Q20",
+   "1QapGen",
+   "1Q Genesis Apocryphon"
+  ],
+  "author": "Anonymous",
+  "category": "second-temple-parabiblical-text",
+  "description": "An Aramaic Second Temple retelling and expansion of Genesis preserved in a fragmentary Cave 1 scroll. Edition records must distinguish manuscript transcription, reconstruction, translation, and commentary; the work identity does not imply that disputed readings or restorations are settled.",
+  "id": "work.anonymous.genesis-apocryphon",
+  "languages": [
+   "arc"
+  ],
+  "title": "Genesis Apocryphon"
+ }
+}

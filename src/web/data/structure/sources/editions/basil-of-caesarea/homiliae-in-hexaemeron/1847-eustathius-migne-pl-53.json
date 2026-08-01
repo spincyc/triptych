@@ -1,0 +1,290 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-transcription",
+   "byte_size": 226980,
+   "id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Keyed text, not OCR. guidance/catena.md recorded that \"the unencumbered Latin is OCR wreckage and the clean Latin is encumbered\", measuring Migne PL 34's Internet Archive text layer at roughly one corrupted word in eight. That holds of the scan and not of this corpus: Latin Wikisource carries the University of Zurich's Corpus Corporum TEI encodings of Migne, keyed rather than scanned, under a stated CC BY-SA 4.0 markup licence over a public-domain printing. This is a transcription of a web witness of the 1847 printing and not a collation against the printed column, so no passage taken from it rises above inspected.",
+   "page_count": null,
+   "retrieved": "2026-08-01",
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "wiki-export-xml",
+   "byte_size": 230983,
+   "id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-wikisource-export-25821064",
+   "media_type": "application/xml",
+   "notes": "The page carries the Corpus Corporum encoding note, which records that the file was encoded in TEI XML for the University of Zurich's Corpus Corporum project by Ph. Roelli in 2013 from Migne's Patrologia Latina tomus 53. That is the encoder's statement about the file and is not part of Migne; the transformation below removes it.",
+   "page_count": null,
+   "retrieved": "2026-08-01",
+   "rights": "public-domain",
+   "rights_basis": "Eustathius's Latin version is of the fifth century and Migne's printing is of 1847, so the text beneath these bytes is in the public domain everywhere. The bytes themselves are the wiki source of a Latin Wikisource transcription, and Latin Wikisource contributions are licensed CC BY-SA 4.0 — a condition on the contributors' markup rather than on Migne's text under it. The exact bytes are therefore hashed and recorded but not retained here, and only the printed Latin reaches the tracked derivative, stripped of every template, link, heading and column marker the contributors and the encoder added.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/wiki/Special:Export",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1847",
+  "editors": [],
+  "id": "edition.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The ancient Latin version of Basil's nine Hexaemeron homilies, made by Eustathius at the request of the deaconess Syncletica about 440, and the form in which the work reached the Latin West: Bede's own preface names Basil \"quem Eustathius interpres de Graeco fecit esse Latinum\" among the three fathers he follows. It is a separate EDITION of Basil's work and not a separate work, and not a second text on one edition. Nine books answering the nine homilies, preceded by Eustathius's dedicatory letter, which is part of the version and not of Basil. The printing is Migne's of 1847; the translation is of the fifth century and its translator died in antiquity, so nothing here is in copyright anywhere.",
+  "publication": "Patrologia Latina, tomus 53, Paris: J.-P. Migne, 1847, coll. 867-966",
+  "title": "Metaphrasis Latina Hexaemeri, the Latin version of Eustathius",
+  "translators": [
+   "Eustathius Afer"
+  ],
+  "year": 1847
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the I book of Eustathius's Latin version, answering Basil's I homily, as Migne prints it in Patrologia Latina 53. Its lemma is \"In principio fecit Deus coelum et terram\", which the book quotes at its head and expounds throughout. The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-1",
+   "locus": "1",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-1.json",
+   "verified_on": null,
+   "words": 3592
+  },
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the II book of Eustathius's Latin version, answering Basil's II homily, as Migne prints it in Patrologia Latina 53. The book opens by recalling the morning's discourse and turns to \"terra autem erat invisibilis et incomposita\", quoting \"Fiat lux\" and running to the division of light from darkness. The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-2",
+   "locus": "2",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-2.json",
+   "verified_on": null,
+   "words": 3460
+  },
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the III book of Eustathius's Latin version, answering Basil's III homily, as Migne prints it in Patrologia Latina 53. The book opens by saying that the works of the first day have been recounted, and expounds the firmament set in the midst of the waters. The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-3",
+   "locus": "3",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-3.json",
+   "verified_on": null,
+   "words": 3632
+  },
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the IV book of Eustathius's Latin version, answering Basil's IV homily, as Migne prints it in Patrologia Latina 53. Its printed title is \"De congregatione aquarum, et apparitione aridae disputatio\", which is the third day's first work. The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-4",
+   "locus": "4",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-4.json",
+   "verified_on": null,
+   "words": 2392
+  },
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the V book of Eustathius's Latin version, answering Basil's V homily, as Migne prints it in Patrologia Latina 53. Its printed title is \"De herba seu lignis disputatio\", and the book quotes \"Germinet terra herbam pabuli, seminans semen secundum genus\" at its head. The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-5",
+   "locus": "5",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-5.json",
+   "verified_on": null,
+   "words": 3405
+  },
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the VI book of Eustathius's Latin version, answering Basil's VI homily, as Migne prints it in Patrologia Latina 53. The book expounds the making of the luminaries, quoting \"Fiant luminaria in firmamento coeli\". The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-6",
+   "locus": "6",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-6.json",
+   "verified_on": null,
+   "words": 4823
+  },
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the VII book of Eustathius's Latin version, answering Basil's VII homily, as Migne prints it in Patrologia Latina 53. The book quotes \"Et dixit Deus: Ejiciant aquae reptilia animarum vivarum, et volatilia volantia sub firmamento coeli\" at its head. The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-7",
+   "locus": "7",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-7.json",
+   "verified_on": null,
+   "words": 2737
+  },
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the VIII book of Eustathius's Latin version, answering Basil's VIII homily, as Migne prints it in Patrologia Latina 53. The book takes up the water creatures again and passes to \"Et dixit Deus: Ejiciat terra animam secundum genus\", so it reaches from the fifth day into the sixth. The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-8",
+   "locus": "8",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-8.json",
+   "verified_on": null,
+   "words": 3466
+  },
+  {
+   "artifact_id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
+   "artifact_type": "web-transcription",
+   "context": "The whole of the IX book of Eustathius's Latin version, answering Basil's IX homily, as Migne prints it in Patrologia Latina 53. The book returns to the land animals and closes on \"Faciamus hominem ad imaginem et similitudinem nostram\". The printing subdivides no book, so the book stands here as the paragraphs the printing gives it and no finer division is claimed.",
+   "id": "passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-9",
+   "locus": "9",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export of Migne PL 53, fetched and transcribed without a model anywhere in the path. This is the same work as the NPNF English already held under the Nicene and Post-Nicene Fathers volume, in another edition and another language, and the two are registered as two editions of one work rather than as one edition carrying two texts. Inspected, not collated against Migne's printed column.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-9.json",
+   "verified_on": null,
+   "words": 3217
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Hexaemeron",
+   "The Hexaemeron",
+   "Nine Homilies on the Hexaemeron"
+  ],
+  "author": "Basil of Caesarea",
+  "category": "patristic-homily-series",
+  "description": "Basil's nine Lenten homilies on the six days of creation, delivered at Caesarea in 378. A locus is the homily and, where needed, its numbered section. The series expounds Genesis 1:1 to 1:26 and stops there: the ninth homily breaks off before the creation of man, and the work has no extent past that verse. The record exists so that a fragment translated inside a Nicene and Post-Nicene Fathers volume can name Basil as its author rather than the volume's editors.",
+  "id": "work.basil-of-caesarea.homiliae-in-hexaemeron",
+  "languages": [
+   "grc"
+  ],
+  "title": "Homiliae in Hexaemeron"
+ }
+}

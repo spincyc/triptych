@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-page",
+   "byte_size": 11305,
+   "id": "artifact.augustine.sermo-115.latin-augustinus-it-web-2026-07-28.augustinus-it-discorso-150-0b5c99c2",
+   "media_type": "text/html",
+   "notes": "HTML, not a facsimile. Sections are explicitly anchored and numbered in the running text.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "unresolved",
+   "rights_basis": "Augustine's ancient Latin is public domain. The site states no license for its markup or editorial presentation, so the exact response is not redistributed.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.augustinus.it/latino/discorsi/discorso_150_testo.htm",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-28",
+  "editors": [],
+  "id": "edition.augustine.sermo-115.latin-augustinus-it-web-2026-07-28",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "A dated Latin web delivery, not a critical edition. The page uses internal file number 150 while its heading and sermon concordance identify modern Sermo 115 and older New Testament Sermon 65.",
+  "publication": "Dated web state of the Latin text published at augustinus.it, consulted 2026-07-28",
+  "title": "Sermo CXV, Latin text as delivered by augustinus.it",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.augustine.sermo-115.latin-augustinus-it-web-2026-07-28.augustinus-it-discorso-150-0b5c99c2",
+   "artifact_type": "web-page",
+   "context": "Sections 2-3 were read in the complete Latin sermon. Section 2 contrasts the Pharisee's self-praise and insult with the publican's confession and pardon; section 3 argues that even the Pharisee's thanksgiving is proud because he seeks no further gift, then applies the parable against presumption on one's own strength.",
+   "id": "passage.augustine.sermo-115.latin-augustinus-it-web-2026-07-28.115.2-3",
+   "locus": "115.2-3",
+   "media_type": "text/html",
+   "notes": "The source page's internal file number 150 is not a sermon locus. This is modern Sermo 115, the same work numbered Sermon 65 in the older English New Testament series.",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_basis": "Augustine's ancient Latin is public domain. The site states no license for its markup or editorial presentation, so the exact response is not redistributed.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://www.augustinus.it/latino/discorsi/discorso_150_testo.htm",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-28",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Sermon 115",
+   "Sermon 65 on the New Testament"
+  ],
+  "author": "Augustine of Hippo",
+  "category": "patristic-sermon",
+  "description": "Augustine's sermon on Luke 18:9-14 and 18:15-17. Modern sermon numbering calls it Sermo 115; the older English New Testament series calls the same work Sermon 65.",
+  "id": "work.augustine.sermo-115",
+  "languages": [
+   "la"
+  ],
+  "title": "Sermo CXV"
+ }
+}

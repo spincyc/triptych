@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 89918,
+   "id": "artifact.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.vatican-html-a0e7f540",
+   "media_type": "text/html",
+   "notes": "The archive URL, https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html, and https://www.vatican.va/content/dam/wss/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html returned byte-identical 89918-byte responses with this SHA-256 on 2026-07-23. This artifact owns that one byte identity; the alias routes are not duplicated. The response contains Latin articles 1-130, the appended declaration on revision of the calendar, the promulgation formula, a subscription block, the Vacatio legis notice, and source notes. Exact bytes are identified but not retained.",
+   "page_count": null,
+   "retrieved": "2026-07-23",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-23 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See",
+  "date": "2026-07-23",
+  "editors": [],
+  "id": "edition.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23",
+  "jurisdiction": "Universal Catholic Church",
+  "language": "la",
+  "notes": "A dated Vatican delivery state of the Latin Constitution. The registered response contains articles 1-130, the appended declaration on revision of the calendar, the promulgation formula, a subscription block, the Vacatio legis notice, and source notes.",
+  "publication": "Holy See Latin web presentation of Sacrosanctum Concilium, retrieved 2026-07-23",
+  "title": "Sacrosanctum Concilium — Vatican Latin web state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.vatican-html-a0e7f540",
+   "artifact_type": "official-html",
+   "context": "The complete Latin article 2 was inspected together with its source note 1. The note explicitly identifies the liturgical quotation as the Missale Romanum super oblata for the Ninth Sunday after Pentecost (dominica IX post Pentecosten).",
+   "id": "passage.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.2",
+   "locus": "2",
+   "media_type": "text/html",
+   "notes": "Verification is bounded to the official dated web delivery, the complete article, and its identified source note; it is not a cross-language critical collation. The restricted HTML was not retained, so no central transcription or replayable physical-line locator is claimed.",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-23 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-07-23",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Constitutio de Sacra Liturgia",
+   "Constitution on the Sacred Liturgy"
+  ],
+  "author": "Second Vatican Council",
+  "category": "conciliar-constitution",
+  "description": "The Second Vatican Council's Constitution on the Sacred Liturgy, solemnly promulgated by Pope Paul VI on 4 December 1963. It comprises articles 1-130 and the appended declaration on revision of the calendar; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations.",
+  "id": "work.second-vatican-council.sacrosanctum-concilium",
+  "languages": [
+   "la"
+  ],
+  "title": "Sacrosanctum Concilium"
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 156429,
+   "id": "artifact.second-vatican-council.ad-gentes.latin-vatican-web-2026-07-24.vatican-html-e2a7e4b2",
+   "media_type": "text/html",
+   "notes": "The content-delivery route https://www.vatican.va/content/dam/wss/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651207_ad-gentes_lt.html returned a byte-identical 156429-byte response with this SHA-256 on 2026-07-24; the press route returned HTTP 404 and is not recorded as an alias. The response contains the complete numbered Latin body and consolidated notes; after article 42 it duplicates the promulgation formula, gives the date and papal signature, and appends only a partial shared subscription block ending with Cardinal Callori di Vignale. Known delivery defects include article 41's «sunti illi laici», note 102's AAS 51 (1919) for 1959, note 135's Princeps Pastorum link mislabeled Lumen gentium, and note 165's AAS 28 (1926) for volume 18. This records known source-local defects without claiming an exhaustive diplomatic collation. Exact bytes are identified but not retained.",
+   "page_count": null,
+   "retrieved": "2026-07-24",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651207_ad-gentes_lt.html",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See",
+  "date": "2026-07-24",
+  "editors": [],
+  "id": "edition.second-vatican-council.ad-gentes.latin-vatican-web-2026-07-24",
+  "jurisdiction": "Universal Catholic Church",
+  "language": "la",
+  "notes": "A dated Vatican delivery state of the Latin Decree. The registered response contains articles 1-42, a duplicated promulgation formula, date, papal signature, an incomplete shared subscription block ending with Cardinal Callori di Vignale, and consolidated source notes. The bounded numbered body remains distinct from that appended apparatus.",
+  "publication": "Holy See Latin web presentation of Ad gentes, retrieved 2026-07-24",
+  "title": "Ad gentes — Vatican Latin web state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.second-vatican-council.ad-gentes.latin-vatican-web-2026-07-24.vatican-html-e2a7e4b2",
+   "artifact_type": "official-html",
+   "context": "The complete numbered Latin body was inspected as one bounded witness, from article 1's preface through article 42's conclusion immediately before the duplicated promulgation apparatus.",
+   "id": "passage.second-vatican-council.ad-gentes.latin-vatican-web-2026-07-24.1-42",
+   "locus": "1-42",
+   "media_type": "text/html",
+   "notes": "Verification establishes the official dated delivery and complete uninterrupted numbered extent. It excludes the duplicated promulgation formula and incomplete subscription block, is not a word-for-word critical collation, and does not imply publication-level use.",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651207_ad-gentes_lt.html",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-07-24",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Decretum de activitate missionali Ecclesiae",
+   "Decree on the Mission Activity of the Church"
+  ],
+  "author": "Second Vatican Council",
+  "category": "decree",
+  "description": "The Second Vatican Council's Decree on the Mission Activity of the Church, solemnly promulgated by Pope Paul VI on 7 December 1965. It comprises numbered articles 1-42; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations.",
+  "id": "work.second-vatican-council.ad-gentes",
+  "languages": [
+   "la"
+  ],
+  "title": "Ad gentes"
+ }
+}

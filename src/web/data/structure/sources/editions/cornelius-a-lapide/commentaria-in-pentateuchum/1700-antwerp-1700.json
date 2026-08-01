@@ -1,0 +1,61 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 1723,
+   "id": "artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.gen-15-notes-checked-text-ea514bf7",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Retained because these notes are the decisive Catholic witness on the hour: a Lapide infers night at verse 5 from the command itself, and eight columns later explains the deep sleep of verse 12 by a full day's labour, without reconciling the two. The transcription is from a text layer and its reliability is bounded by that; the chapter number in his citation of Augustine is not legible with confidence and is not reproduced.",
+   "page_count": null,
+   "retrieved": "2026-07-26",
+   "rights": "public-domain",
+   "rights_basis": "Eight short Latin sentences from a 1700 printing that is out of copyright by age. The header block and the bracketed verse locators are Triptych editorial description; Triptych claims no exclusive right in the source wording.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 7195178,
+   "id": "artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.ia-djvu-ocr-d1f91f40",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Optical character recognition of a folio in old orthography. Long s is frequently read as f, the ae ligature as z, and marginal keywords are interleaved with the text. It is a finding aid; a quotation taken from it is a quotation of the text layer and not of the page unless separately collated, and no such collation has been performed.",
+   "page_count": null,
+   "retrieved": "2026-07-26",
+   "rights": "public-domain",
+   "rights_basis": "A 1700 Latin printing, out of copyright by age. The Internet Archive text layer is a mechanical derivative of a scan of a public-domain book and carries no separate creative claim asserted by the host.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bub_gb_DEzDctVJ9HgC/bub_gb_DEzDctVJ9HgC_djvu.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1700",
+  "editors": [],
+  "id": "edition.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The exact printing behind the Internet Archive digitization used here. Its title page names Cornelius a Lapide as author and gives the year 1700; the imprint could not be read from the text layer, so the place and printer are left unclaimed rather than guessed. The text is in the old orthography, with long s and with ae and oe ligatures. Keep this printing distinct from the nineteenth-century Vives edition and from the partial English translations of a Lapide, none of which was consulted.",
+  "publication": "A 1700 folio printing digitized by Google from a European library copy; the printer and place are not legible in the digitization consulted",
+  "title": "Commentaria in Pentateuchum Mosis, a 1700 folio printing",
+  "translators": [],
+  "year": 1700
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentary on the Pentateuch",
+   "Commentarius in Genesim"
+  ],
+  "author": "Cornelius Cornelii a Lapide, S.J.",
+  "category": "biblical-commentary",
+  "description": "The Flemish Jesuit Cornelius a Lapide's Latin commentary on the five books of Moses, first published in 1616 and reprinted throughout the seventeenth and eighteenth centuries. It is a compilation as much as a commentary: a Lapide collects Fathers, scholastics, rabbis, and contemporary Catholic exegetes on each lemma, frequently at second hand through Pererius, and his reports of those authorities are evidence about him rather than about them. A locus is BookToken.chapter.verse.",
+  "id": "work.cornelius-a-lapide.commentaria-in-pentateuchum",
+  "languages": [
+   "la"
+  ],
+  "title": "Commentaria in Pentateuchum Mosis"
+ }
+}

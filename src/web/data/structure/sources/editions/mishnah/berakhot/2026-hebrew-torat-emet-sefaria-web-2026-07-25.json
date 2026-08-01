@@ -1,0 +1,88 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 240,
+   "id": "artifact.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.8.3-checked-text-ba4b564d",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This single mishnah of the ancient Hebrew text is in the public domain, and Sefaria records the licence of the Torat Emet version delivering it as public domain.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "structured-text",
+   "byte_size": 14507,
+   "id": "artifact.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.sefaria-api-mishnah-berakhot-8-5e499e8f",
+   "media_type": "application/json",
+   "notes": "JavaScript Object Notation, not a facsimile. The Hebrew is unpointed except for the vowel pointing carried by the Torat Emet text.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "Sefaria records the licence of the Torat Emet 357 Hebrew text as public domain. The underlying Mishnah is ancient. The retrieved response bytes are not redistributed from this repository; only the transcription of one ruling is retained.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.sefaria.org/api/v3/texts/Mishnah_Berakhot.8?version=hebrew%7CTorat%20Emet%20357",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [],
+  "id": "edition.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25",
+  "jurisdiction": null,
+  "language": "he",
+  "notes": "A dated delivery state retrieved through Sefaria's public text application programming interface, not a printed edition. The exact response bytes are hashed; Sefaria may change its delivery at any time. Sefaria records the licence of this Hebrew version as public domain and gives its source as the Torat Emet freeware distribution.",
+  "publication": "Dated web state of the Torat Emet 357 Hebrew text delivered by Sefaria, consulted 2026-07-25",
+  "title": "Mishnah Berakhot, Torat Emet 357 Hebrew text as delivered by Sefaria",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.8.3-checked-text-ba4b564d",
+   "artifact_type": "checked-transcription",
+   "context": "The whole of Mishnah Berakhot 8:3, read in the retrieved response with the other seven mishnayot of the chapter in view so that the ruling's place in a list of Shammai and Hillel disputes about the meal is explicit. Registered as the only ancient rabbinic ruling about a cloth used at table.",
+   "id": "passage.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.8.3",
+   "locus": "8.3",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Hebrew script with Torat Emet vowel pointing. Consuming publications that carry no Hebrew face transliterate this ruling and label the transliteration as such. In transliteration it reads: Beth Shammai omerim, meqanne'ah yadav ba-mappah u-mannihah al ha-shulhan. U-Veth Hillel omerim, al ha-keseth.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This single mishnah of the ancient Hebrew text is in the public domain, and Sefaria records the licence of the Torat Emet version delivering it as public domain.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.8.3.json",
+   "verified_on": "2026-07-25",
+   "words": 14
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Mishnah Berachot",
+   "Tractate Berakhot"
+  ],
+  "author": "Rabbinic sages (tannaitic redaction)",
+  "category": "rabbinic-tractate",
+  "description": "The opening tractate of the Mishnah, on the recitation of the Shema, the Amidah, and blessings, including in chapter 8 a list of disputes between the House of Shammai and the House of Hillel about the conduct of a meal. The third of those disputes, at 8:3, is the only ancient rabbinic ruling about a cloth used at table: it concerns where a damp hand-towel may be laid so that it does not transmit ritual impurity. A locus is chapter.mishnah.",
+  "id": "work.mishnah.berakhot",
+  "languages": [
+   "he"
+  ],
+  "title": "Mishnah Berakhot"
+ }
+}

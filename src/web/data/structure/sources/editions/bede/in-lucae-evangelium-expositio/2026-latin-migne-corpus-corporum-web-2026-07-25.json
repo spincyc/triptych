@@ -1,0 +1,88 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 675,
+   "id": "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12-checked-text-391b109b",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Bede's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 973336,
+   "id": "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca",
+   "media_type": "text/plain",
+   "notes": "Wikitext of all six books in one file, with Migne column markers embedded. Not a facsimile.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Bede is ancient and in the public domain, and Migne's Patrologia Latina 92 is in the United States public domain by date of publication. The Corpus Corporum transcription reproduced at la.wikisource.org is published there under that site's free-content terms. Only short clauses are quoted by consuming publications, and the retrieved bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/w/index.php?title=In_Evangelium_S._Lucae_(Beda)&action=raw",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [],
+  "id": "edition.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "A dated delivery state of a transcription of Migne, not a critical edition. The file was checked for the automated Italian spelling corruption that affects some other files on the same site and was clean. Consumers needing a critical text must use the relevant Corpus Christianorum edition, which was not consulted. The transcription embeds Migne's column numbers in the form (0625B), which is how columns are cited from it. No page image of Patrologia Latina 92 at these columns was reachable: the Internet Archive scan of that volume that was located contains only the Matthew and Mark commentaries.",
+  "publication": "Dated web state of the Corpus Corporum transcription of Migne, Patrologia Latina 92, reproduced at la.wikisource.org and consulted 2026-07-25",
+  "title": "In Lucae evangelium expositio, Migne's Latin as transcribed by Corpus Corporum",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12-checked-text-391b109b",
+   "artifact_type": "checked-transcription",
+   "context": "Bede's harmonizing note on Luke 24:12, read in the retrieved file at the embedded Migne column markers 0625A and 0625B, with the preceding remark on the disciples' slowness to believe and the following note on Emmaus in view. Registered as the earliest witness located that notices the Luke and John difference at this point and works at it, and as a material negative: Bede reconciles the seeing and says nothing of the believing or of theft.",
+   "id": "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12",
+   "locus": "Lc.24.12",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The transcription's parenthetical reference (Luc. XXIV) and the column marker (0625B), both of which fall inside this passage in the delivered file, are apparatus of the transcription and of Migne and are omitted. The repeated word ingressum in the last line stands in the delivered text and is reproduced as delivered.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Bede's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12.json",
+   "verified_on": "2026-07-25",
+   "words": 88
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentary on the Gospel of Luke",
+   "Expositio in Lucam"
+  ],
+  "author": "Bede the Venerable",
+  "category": "patristic-commentary",
+  "description": "Bede's commentary on Luke in six books, completed about 715 and dedicated to Acca of Hexham. Book VI covers the passion and resurrection narratives, including a harmonizing note on Luke 24:12 that reconciles Luke's and John's accounts of who looked into the tomb. Edition records keep Migne's Latin, dated web deliveries of it, and modern translations apart; the modern English translation is under copyright and is not registered here.",
+  "id": "work.bede.in-lucae-evangelium-expositio",
+  "languages": [
+   "la"
+  ],
+  "title": "In Lucae evangelium expositio"
+ }
+}

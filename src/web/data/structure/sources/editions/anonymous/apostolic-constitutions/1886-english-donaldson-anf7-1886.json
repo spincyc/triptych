@@ -1,0 +1,79 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan",
+   "byte_size": 54711638,
+   "id": "artifact.anonymous.apostolic-constitutions.english-donaldson-anf7-1886.internet-archive-robarts-pdf",
+   "media_type": "application/pdf",
+   "notes": "Complete PDF acquired and hashed. Printed p. 493 (PDF page 505) was visually inspected.",
+   "page_count": 610,
+   "retrieved": "2026-07-27",
+   "rights": "public-domain",
+   "rights_basis": "The 1886 Buffalo volume is public domain in the United States; Internet Archive records the item as not in copyright in the United States. No scan bytes are redistributed by Triptych.",
+   "rights_jurisdiction": "US",
+   "source_url": "https://archive.org/download/antenicenefather07robeuoft/antenicenefather07robeuoft.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1886",
+  "editors": [
+   "Alexander Roberts",
+   "James Donaldson",
+   "A. Cleveland Coxe"
+  ],
+  "id": "edition.anonymous.apostolic-constitutions.english-donaldson-anf7-1886",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "Historical English translation aid. It is not a critical Greek edition and does not replace direct inspection of Funk's Greek page image.",
+  "publication": "Translated by James Donaldson, edited by Alexander Roberts and James Donaldson, American edition revised by A. Cleveland Coxe (Buffalo: Christian Literature Publishing Company, 1886)",
+  "title": "Constitutions of the Holy Apostles in The Ante-Nicene Fathers, volume VII",
+  "translators": [
+   "James Donaldson"
+  ],
+  "year": 1886
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.anonymous.apostolic-constitutions.english-donaldson-anf7-1886.internet-archive-robarts-pdf",
+   "artifact_type": "scan",
+   "context": "Printed p. 493 was inspected directly as a page image. Donaldson's historical English rendering confirms the reader/exorcist contrast and the sequence of categories not ordained qua category, while its note records a Coptic variant at VIII.26.3. It is used only as a translation aid to the Greek control and does not establish original wording, universal practice, frequency, office continuity, direct descent, or current law.",
+   "id": "passage.anonymous.apostolic-constitutions.english-donaldson-anf7-1886.8.22-26",
+   "locus": "8.26",
+   "media_type": "application/pdf",
+   "notes": null,
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The 1886 Buffalo volume is public domain in the United States; Internet Archive records the item as not in copyright in the United States. No scan bytes are redistributed by Triptych.",
+   "rights_jurisdiction": "US",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/antenicenefather07robeuoft/antenicenefather07robeuoft.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-27",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Apostolic Constitutions",
+   "Constitutions of the Holy Apostles"
+  ],
+  "author": "Anonymous compiler",
+  "category": "late-antique-church-order",
+  "description": "A late-antique church-order compilation written pseudonymously in apostolic voices. Its prescriptions witness the compiler's setting and reception, not first-century apostolic authorship or universal law.",
+  "id": "work.anonymous.apostolic-constitutions",
+  "languages": [
+   "grc"
+  ],
+  "title": "Constitutiones Apostolorum"
+ }
+}

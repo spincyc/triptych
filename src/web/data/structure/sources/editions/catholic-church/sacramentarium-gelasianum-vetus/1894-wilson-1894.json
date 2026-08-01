@@ -1,0 +1,63 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 1098845,
+   "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "37086 LF-delimited physical lines. A second optical text layer of the same printing, held so that the two readings can be compared: where two independent scans of one book agree, a reading is far more likely to be the book's, and where they disagree the disagreement is itself the detector.",
+   "page_count": null,
+   "retrieved": "2026-08-01",
+   "rights": "unresolved",
+   "rights_basis": "The underlying printing is in the public domain in the United States by publication date. The exact bytes registered here are an Internet Archive DjVuTXT optical-character-recognition derivative of that printing, and no distribution grant was established for the derivative itself or for the digitiser's own front matter where the file carries it. Triptych therefore records the exact remote bytes and their digest, retains no payload, and quotes from the underlying edition only what a locus needs.",
+   "rights_jurisdiction": null,
+   "source_url": "https://archive.org/download/gelasiansacrame00wilsgoog/gelasiansacrame00wilsgoog_djvu.txt",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 1147494,
+   "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-libersacramentorum",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "47554 LF-delimited physical lines. Uncorrected optical character recognition; it locates and identifies prayers and does not control wording.",
+   "page_count": null,
+   "retrieved": "2026-08-01",
+   "rights": "unresolved",
+   "rights_basis": "The underlying printing is in the public domain in the United States by publication date. The exact bytes registered here are an Internet Archive DjVuTXT optical-character-recognition derivative of that printing, and no distribution grant was established for the derivative itself or for the digitiser's own front matter where the file carries it. Triptych therefore records the exact remote bytes and their digest, retains no payload, and quotes from the underlying edition only what a locus needs.",
+   "rights_jurisdiction": null,
+   "source_url": "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae_djvu.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1894",
+  "editors": [],
+  "id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "Wilson expands the manuscript's contractions, so his text compares directly with a modern missal's orthography. The printed page carries marginal sigla (R. S., Gerb., Pam., Men., Bml.) between the words of the prayers; an optical text layer interleaves those sigla with the Latin and they must be recognised as intrusions rather than readings.",
+  "publication": "Oxford: at the Clarendon Press, 1894. Edited by Henry Austin Wilson from Vatican, Reg. lat. 316, with the readings of the eighth-century Gelasians in the margins and apparatus.",
+  "title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
+  "translators": [],
+  "year": 1894
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Sacramentarium Gelasianum Vetus",
+   "Old Gelasian Sacramentary",
+   "Gelasian Sacramentary",
+   "Codex Vaticanus Reginensis latinus 316"
+  ],
+  "author": "Catholic Church",
+  "category": "sacramentary",
+  "description": "The oldest surviving ordered Roman sacramentary, in three books, copied in Gaul about the middle of the eighth century from a Roman book of the seventh. Its attribution to Gelasius I is traditional and not maintained. It is the principal witness for a large part of the Roman oration repertory that the twentieth-century reform drew on.",
+  "id": "work.catholic-church.sacramentarium-gelasianum-vetus",
+  "languages": [
+   "la"
+  ],
+  "title": "Liber sacramentorum Romanae aeclesiae ordinis anni circuli"
+ }
+}

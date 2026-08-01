@@ -1,0 +1,88 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 660,
+   "id": "artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9-checked-text-84752351",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Augustine's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 11331,
+   "id": "artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.augustinus-it-omelia-120-f479c788",
+   "media_type": "text/html",
+   "notes": "HTML, not a facsimile. Sections are numbered in the running text. No page image of any printing was consulted for this edition.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "unresolved",
+   "rights_basis": "The underlying Latin of Augustine is ancient and in the public domain. The page retrieved carries no licence statement, so the rights status of the site's own markup and presentation is unresolved. The retrieved bytes are not redistributed from this repository, and only short clauses of the ancient Latin are quoted.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.augustinus.it/latino/commento_vsg/omelia_120_testo.htm",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [],
+  "id": "edition.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "A dated delivery state, not a critical edition. The site presents the Latin alongside an Italian translation and does not identify its Latin exemplar on the page consulted. Its wording matches the Latin behind the Nicene and Post-Nicene Fathers English at the section read here; orthographic accidentals differ from Migne, which prints Joannem and adjunxit where this delivery prints Ioannem and adiunxit. Consumers needing a critical Latin text must use the Corpus Christianorum edition of Radbodus Willems, which was not consulted.",
+  "publication": "Dated web state of the Latin text published at augustinus.it, consulted 2026-07-25",
+  "title": "In Iohannis Evangelium Tractatus, Latin text as delivered by augustinus.it",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9-checked-text-84752351",
+   "artifact_type": "checked-transcription",
+   "context": "The Latin of Augustine's refutation, read in the retrieved page with sections 8 and 10 in view. Registered as the Latin control for the Nicene and Post-Nicene Fathers English of the same section.",
+   "id": "passage.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9",
+   "locus": "120.9",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Section 8 of the same tractate, read on the same page, contains Putamusne nihil ista significant? Nequaquam hoc putaverim, and the statement that inquiry into such details belongs to those who have leisure; those clauses are not transcribed here.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Augustine's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9.json",
+   "verified_on": "2026-07-25",
+   "words": 93
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Tractates on the Gospel of John",
+   "Homilies on the Gospel of John"
+  ],
+  "author": "Augustine of Hippo",
+  "category": "patristic-homily-collection",
+  "description": "Augustine's one hundred and twenty-four tractates on the Gospel of John. Tractate CXX covers John 19:31 to 20:9 and Tractate CXXI takes up John 20:10. A locus is tractate.section. Edition records keep the Latin recensions, the printed translations, and dated web deliveries apart.",
+  "id": "work.augustine.in-iohannis-evangelium-tractatus",
+  "languages": [
+   "la"
+  ],
+  "title": "In Iohannis Evangelium Tractatus CXXIV"
+ }
+}

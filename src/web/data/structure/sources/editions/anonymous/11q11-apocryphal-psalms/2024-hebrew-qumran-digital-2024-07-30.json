@@ -1,0 +1,74 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "webpage",
+   "byte_size": 78783,
+   "id": "artifact.anonymous.11q11-apocryphal-psalms.hebrew-qumran-digital-2024-07-30.complete-html",
+   "media_type": "text/html",
+   "notes": "Exact complete HTML response acquired and inspected. It presents preliminary fragments and columns 1–6 with explicit breaks, uncertainty, corrections, and alternate readings.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "licensed",
+   "rights_basis": "The page identifies © 2022 DFG project 465277421 Qumran-Digital: Text und Lexikon and licenses the transcription CC-BY-SA 4.0. No bytes are redistributed by Triptych.",
+   "rights_jurisdiction": null,
+   "source_url": "https://lexicon.qumran-digital.org/transcriptions/11Q11/2024-07-30/index.html",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2024-07-30",
+  "editors": [],
+  "id": "edition.anonymous.11q11-apocryphal-psalms.hebrew-qumran-digital-2024-07-30",
+  "jurisdiction": null,
+  "language": "he",
+  "notes": "Qumran-Digital states that the CC-BY-SA 4.0 transcription was supplied by DFG project 465277421 on the basis of a Göttingen Qumran-Wörterbuch predecessor text derived from a Martin Abegg precursor. The exact dated page controls its Hebrew transcription, explicit lacunae, corrections, and alternate readings, not manuscript images, an English translation, the DJD 23 apparatus, or independent adjudication of reconstruction and column sequence.",
+  "publication": "Qumran-Digital: Text und Lexikon, version 2024-07-30",
+  "title": "11Q11 transcription",
+  "translators": [],
+  "year": 2024
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.anonymous.11q11-apocryphal-psalms.hebrew-qumran-digital-2024-07-30.complete-html",
+   "artifact_type": "webpage",
+   "context": "Column 5 lines 4–14 were inspected in the complete transcription with breaks, uncertainty, and alternate readings intact. The bounded Hebrew sequence marks a Davidic attribution, frames the item as protective speech associated with the divine name, addresses a hostile nocturnal figure, contrasts darkness and light, and invokes confinement away from the righteous. This verifies the Qumran-Digital textual architecture, not a complete formula, translation, manuscript-image collation, DJD apparatus, reconstructed missing words, performance setting, community ownership, efficacy, ordinary practice, diagnosis, influence, continuity, equivalence with Christian exorcism, or operational instruction.",
+   "id": "passage.anonymous.11q11-apocryphal-psalms.hebrew-qumran-digital-2024-07-30.5.4-14",
+   "locus": "5.4-14",
+   "media_type": "text/html",
+   "notes": "No address, formula, or procedure is transcribed. The exact witness remains fragmentary and does not authorize combining adjacent columns into one certain operational sequence.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "licensed",
+   "rights_basis": "The page identifies © 2022 DFG project 465277421 Qumran-Digital: Text und Lexikon and licenses the transcription CC-BY-SA 4.0. No bytes are redistributed by Triptych.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://lexicon.qumran-digital.org/transcriptions/11Q11/2024-07-30/index.html",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-27",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "11Q11",
+   "11QapocrPs",
+   "11Q Apocryphal Psalms"
+  ],
+  "author": "Anonymous",
+  "category": "second-temple-psalm-collection",
+  "description": "A fragmentary Hebrew collection of apocryphal psalmic materials from Cave 11. Edition records must preserve column, line, fragment, lacuna, attribution, and reconstruction boundaries; the manuscript identity does not establish a single original occasion or complete ritual sequence.",
+  "id": "work.anonymous.11q11-apocryphal-psalms",
+  "languages": [
+   "he"
+  ],
+  "title": "11Q11 Apocryphal Psalms"
+ }
+}

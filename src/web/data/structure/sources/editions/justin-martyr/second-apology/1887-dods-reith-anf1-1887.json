@@ -1,0 +1,66 @@
+{
+ "artifacts": [],
+ "edition": {
+  "authority": null,
+  "date": "1887",
+  "editors": [
+   "Alexander Roberts",
+   "James Donaldson",
+   "A. Cleveland Coxe"
+  ],
+  "id": "edition.justin-martyr.second-apology.dods-reith-anf1-1887",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The constituent text follows the same Dods-Reith translation attribution as the adjacent First Apology. This record controls the conventionally divided Second Apology in the exact retained anthology OCR; it does not resolve the disputed literary relation between the two apologies.",
+  "publication": "In The Ante-Nicene Fathers, volume 1, pp. 188-193 (Buffalo: Christian Literature Publishing Company, 1887)",
+  "title": "The Second Apology of Justin",
+  "translators": [
+   "Marcus Dods",
+   "George Reith"
+  ],
+  "year": 1887
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-djvu-ocr-12cdc519",
+   "artifact_type": "ocr-text",
+   "context": "The complete numbered chapter was inspected in the exact raw OCR and collated against the exact facsimile at printed p. 190 (artifact SHA-256 b50e358eebf85f06794c4dba16777eb6d27a35688a6c7a828b46c9d2190be8cc). Justin appeals to what he presents as observable Christian expulsion of demons in Jesus Christ's name and contrasts it with other exorcists, incantations, and drugs. This controls Justin's apologetic claim, not its outcome or frequency.",
+   "id": "passage.justin-martyr.second-apology.dods-reith-anf1-1887.6.ocr",
+   "locus": "6",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The exact OCR is a locating witness with recognition defects, not a corrected transcription or original-language control. Verification establishes the edition, chapter boundary, and claim against the visible facsimile, not original Greek wording. The publication paraphrases the claim and does not reproduce the wording.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The underlying Buffalo 1887 volume and its 1885-noticed text are public domain in the United States, and Internet Archive records the item as NOT_IN_COPYRIGHT in that region. This exact uncorrected OCR is an automated transcription of the public-domain scan with no identified new editorial contribution; Triptych retains it as a locating and bounded-search representation, not as textual control.",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.justin-martyr.second-apology.dods-reith-anf1-1887.ia-djvu-ocr-12cdc519",
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/antenicenefathers01robe/antenicenefathers01robe_djvu.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.justin-martyr.second-apology.dods-reith-anf1-1887.6.ocr.json",
+   "verified_on": "2026-07-27",
+   "words": 280
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "The Second Apology",
+   "Second Apology of Justin for the Christians"
+  ],
+  "author": "Justin Martyr",
+  "category": "patristic-apology",
+  "description": "The shorter apology transmitted under Justin's name, addressed to the Roman senate, conventionally divided into fifteen chapters. Its relation to the First Apology is disputed among editors, some treating it as an appendix to that work rather than an independent piece, and the chapter order differs between the principal manuscript and some modern editions.",
+  "id": "work.justin-martyr.second-apology",
+  "languages": [
+   "grc"
+  ],
+  "title": "Apologia secunda"
+ }
+}

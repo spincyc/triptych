@@ -1,0 +1,381 @@
+/* The source library. Two surfaces on one page: a scanning surface for finding
+   a work, and a reading surface for reading one. They want opposite measures —
+   the finder wants every column the viewport affords, the reader wants a single
+   narrow one — so each sets its own and neither inherits the other's.
+
+   No colour is declared here: the section palette arrives from the site
+   stylesheet, which the build selects by entrance. */
+
+/* --- The controls ------------------------------------------------------- */
+
+/* Eight controls will not fit one line on a phone and must not be forced to.
+   The shared .controls already wraps; this only keeps each field usable once it
+   has wrapped. */
+.sources-page .controls {
+  align-items: end;
+}
+
+.sources-page .field {
+  flex: 1 1 12rem;
+}
+
+.sources-page .field input[type="search"] {
+  width: 100%;
+}
+
+/* The one control that is a question rather than a filter: "only what can be
+   read here". It sits on the baseline with the selects rather than above them. */
+.sources-page .field-check {
+  flex: 0 1 auto;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sources-page .field-check label {
+  font-weight: 400;
+}
+
+/* --- The finder --------------------------------------------------------- */
+
+.finder {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  align-items: start;
+}
+
+.finder > .placeholder,
+.finder > .error {
+  grid-column: 1 / -1;
+}
+
+.finder[hidden] { display: none; }
+
+.work {
+  border: 1px solid var(--section-line, #cfcfcf);
+  border-top: 0.2rem solid var(--section-accent, #484d57);
+  border-radius: 0.2rem;
+  padding: 0.85rem 1rem 1rem;
+  background: var(--panel, #fff);
+}
+
+.work-title {
+  margin: 0 0 0.2rem;
+  font-size: 1.02rem;
+  line-height: 1.25;
+  color: var(--section-ink);
+}
+
+.work-author {
+  margin: 0 0 0.3rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.work-kind {
+  margin: 0 0 0.4rem;
+  font-size: 0.76rem;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+}
+
+/* The aliases a work is also catalogued under. Quiet, because they are not the
+   name — but present, because a reader searching for one of them needs to see
+   that this is the record they found. */
+.work-aliases {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  opacity: 0.78;
+  line-height: 1.4;
+}
+
+.edition-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.edition {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.edition-open {
+  flex: 1 1 auto;
+  text-align: left;
+  font: inherit;
+  font-size: 0.84rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--section-pale, #ddd);
+  border-radius: 0.2rem;
+  background: var(--section-row, #f2f2f2);
+  color: inherit;
+  cursor: pointer;
+}
+
+.edition-open:hover,
+.edition-open:focus-visible {
+  border-color: var(--section-accent);
+}
+
+/* An edition holding nothing readable says so on the row, before it is opened.
+   A control that looks identical whether or not it leads to text is a control
+   that misleads by omission. */
+.edition-withheld {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  opacity: 0.72;
+}
+
+/* --- The reader --------------------------------------------------------- */
+
+.reader[hidden] { display: none; }
+
+.reader {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.back {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 0.3rem 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--section-pale, #ddd);
+  border-radius: 0.2rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.reader-head {
+  border-bottom: 1px solid var(--section-line, #cfcfcf);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.reader-title {
+  margin: 0 0 0.15rem;
+  color: var(--section-ink);
+}
+
+.reader-author {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.reader-edition {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+.reader-facts {
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.reader-publication {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.78;
+  line-height: 1.45;
+}
+
+/* --- Stepping through the passages -------------------------------------- */
+
+.passage-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--section-line, #cfcfcf);
+  border-radius: 0.2rem;
+  background: var(--section-row, #f2f2f2);
+}
+
+.passage-nav .field {
+  flex: 1 1 14rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.passage-nav select {
+  width: 100%;
+  font: inherit;
+  font-size: 0.84rem;
+}
+
+.step {
+  font: inherit;
+  font-size: 0.84rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--section-pale, #ddd);
+  border-radius: 0.2rem;
+  background: var(--panel, #fff);
+  color: inherit;
+  cursor: pointer;
+}
+
+.step:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.passage-count {
+  flex: 1 0 100%;
+  margin: 0;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+}
+
+/* --- One passage -------------------------------------------------------- */
+
+.passage-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.passage-locus {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--section-ink);
+}
+
+/* cataloged, acquired, inspected, verified. Cumulative only where the record
+   actually establishes each one, so the list is printed as the record has it
+   and never summarised into a single word. */
+.passage-states {
+  font-size: 0.72rem;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+}
+
+.passage-context {
+  margin: 0 0 1rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--section-pale, #ddd);
+  opacity: 0.9;
+}
+
+.passage-text {
+  margin: 1rem 0;
+  line-height: 1.62;
+}
+
+.passage-paragraph {
+  margin: 0 0 0.85rem;
+}
+
+/* The licence, at the point of use. It sits ABOVE the words it covers and is
+   marked strongly enough to be copied with them: a reader who takes the passage
+   away has to take the condition too, and a page footer does not travel with a
+   selection. */
+.acknowledgement {
+  margin: 0 0 0.9rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  border: 1px solid var(--section-line, #cfcfcf);
+  border-left: 0.3rem solid var(--section-accent, #484d57);
+  border-radius: 0.2rem;
+  background: var(--section-wash, rgba(0, 0, 0, 0.04));
+}
+
+.passage-source {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 1rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--section-pale, #ddd);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  opacity: 0.85;
+}
+
+.source-facts {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.source-url {
+  overflow-wrap: anywhere;
+}
+
+.passage-notes {
+  margin: 0.7rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+/* --- The apparatus, collapsed ------------------------------------------- */
+
+.apparatus {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--section-pale, #ddd);
+  padding-top: 0.7rem;
+  font-size: 0.8rem;
+}
+
+.apparatus summary {
+  cursor: pointer;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--section-ink);
+}
+
+.artifact-list {
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.artifact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--section-pale, #ddd);
+  line-height: 1.45;
+}
+
+.artifact-type,
+.artifact-rights {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.artifact-storage,
+.artifact-basis {
+  opacity: 0.82;
+}

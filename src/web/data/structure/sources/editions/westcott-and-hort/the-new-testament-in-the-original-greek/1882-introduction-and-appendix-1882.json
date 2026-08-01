@@ -1,0 +1,92 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 470,
+   "id": "artifact.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12-checked-text-45e0adce",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of a printed work in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 30940981,
+   "id": "artifact.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.ia-facsimile-pdf-ffe74e10",
+   "media_type": "application/pdf",
+   "notes": "556 PDF pages. Appendix page 71 is PDF page 433.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "The underlying work is in the United States public domain by date of publication. The Internet Archive delivers a scan of a public-domain printing; no new copyright is claimed here over the scan, and the bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/newtestamentinor82west/newtestamentinor82west.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1882",
+  "editors": [
+   "Brooke Foss Westcott",
+   "Fenton John Anthony Hort"
+  ],
+  "id": "edition.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The Appendix carries its own pagination, restarting at 1; the note on Luke xxiv 12 stands at Appendix page 71 under the running head NOTES ON SELECT READINGS.",
+  "publication": "Cambridge and London: Macmillan and Co., 1882",
+  "title": "The New Testament in the Original Greek: Introduction and Appendix",
+  "translators": [],
+  "year": 1882
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12-checked-text-45e0adce",
+   "artifact_type": "checked-transcription",
+   "context": "The editors' note excluding Luke 24:12, read on Appendix page 71 rendered from the hashed facsimile at 400 dots per inch, with the notes on Luke xxiv 6 and xxiv 13 above and below it so that the passage boundary is explicit.",
+   "id": "passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12",
+   "locus": "Appendix, Notes on Select Readings, Luke xxiv 12",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The bracketed Greek lemma and the two Greek words in the third line are set in Greek type in the printing and are given here in transliteration; the transliteration is not a translation. The sigla are the editors' own and are reproduced as printed. Their citations of Marcion and Eusebius are reported, not independently checked.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of a printed work in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12.json",
+   "verified_on": "2026-07-25",
+   "words": 76
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Westcott and Hort",
+   "The New Testament in the Original Greek: Introduction and Appendix"
+  ],
+  "author": "Brooke Foss Westcott and Fenton John Anthony Hort",
+  "category": "critical-edition",
+  "description": "The critical Greek New Testament of Westcott and Hort, published in 1881, with the companion Introduction and Appendix of 1882. The Appendix's Notes on Select Readings sets out the editors' reasoning on individual variants, including the series of what they called Western non-interpolations in Luke 24, of which Luke 24:12 is the fifth. Their exclusion of that verse is a minority position today.",
+  "id": "work.westcott-and-hort.the-new-testament-in-the-original-greek",
+  "languages": [
+   "grc",
+   "en"
+  ],
+  "title": "The New Testament in the Original Greek"
+ }
+}

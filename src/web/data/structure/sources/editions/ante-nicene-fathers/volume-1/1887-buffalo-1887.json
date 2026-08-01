@@ -1,0 +1,79 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 3551901,
+   "id": "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-djvu-ocr-12cdc519",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Exact raw OCR bytes for the whole anthology: 86,853 LF-delimited physical lines with recognition errors and layout noise. This artifact is a discovery aid tied to the facsimile, not an independent textual witness or corrected transcription.",
+   "page_count": null,
+   "retrieved": "2026-07-23",
+   "rights": "public-domain",
+   "rights_basis": "The underlying Buffalo 1887 volume and its 1885-noticed text are public domain in the United States, and Internet Archive records the item as NOT_IN_COPYRIGHT in that region. This exact uncorrected OCR is an automated transcription of the public-domain scan with no identified new editorial contribution; Triptych retains it as a locating and bounded-search representation, not as textual control.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/antenicenefathers01robe/antenicenefathers01robe_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 58025655,
+   "id": "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-facsimile-pdf-b50e358e",
+   "media_type": "application/pdf",
+   "notes": "The title and copyright leaves, Irenaeus translation attribution, constituent boundaries, and the passage pages registered under the constituent edition were visually checked. The PDF is not a critical edition and the whole volume was not inspected page by page.",
+   "page_count": 628,
+   "retrieved": "2026-07-23",
+   "rights": "public-domain",
+   "rights_basis": "The scanned title and copyright leaves identify a Buffalo 1887 publication with an 1885 copyright notice, both expired in the United States. Internet Archive item metadata records possible-copyright-status NOT_IN_COPYRIGHT for the United States based on the visible 1885 notice. This exact mechanically produced facsimile contributes no identified new editorial expression; it remains remote because its 58,025,655-byte size is disproportionate to the present repository need.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/antenicenefathers01robe/antenicenefathers01robe.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "page-number-map",
+   "byte_size": 106256,
+   "id": "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-page-number-map-8ab2289d",
+   "media_type": "application/json",
+   "notes": "The map has 628 page entries. Relevant correspondences include printed p. 315 to leaf 335 / PDF p. 333; printed pp. 477-479 to leaves 497-499 / PDF pp. 495-497; printed pp. 482-486 to leaves 502-506 / PDF pp. 500-504; and printed p. 567 to leaf 587 / PDF p. 585. The present schema treats this as an auxiliary artifact rather than a segment controller or dependency.",
+   "page_count": null,
+   "retrieved": "2026-07-23",
+   "rights": "public-domain",
+   "rights_basis": "This automated factual pagination metadata describes a public-domain United States volume whose Internet Archive item is recorded as NOT_IN_COPYRIGHT in that region. No original editorial expression is identified in the generated map; Triptych retains the exact bytes to make printed-page and artifact-page correspondence reusable.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/antenicenefathers01robe/antenicenefathers01robe_page_numbers.json",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1887",
+  "editors": [
+   "Alexander Roberts",
+   "James Donaldson",
+   "A. Cleveland Coxe"
+  ],
+  "id": "edition.ante-nicene-fathers.volume-1.buffalo-1887",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The title leaf prints 1887; the following leaf prints copyright 1885. Coxe's American prefaces and bracketed notes are editorial matter, not text by the patristic authors represented in the volume.",
+  "publication": "American reprint of the Edinburgh edition, revised and chronologically arranged with brief prefaces and occasional notes (Buffalo: Christian Literature Publishing Company, 1887)",
+  "title": "The Ante-Nicene Fathers, Volume I: The Apostolic Fathers, Justin Martyr, and Irenaeus",
+  "translators": [],
+  "year": 1887
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "The Apostolic Fathers, Justin Martyr, and Irenaeus",
+   "ANF, volume 1"
+  ],
+  "author": "Alexander Roberts, James Donaldson, and A. Cleveland Coxe",
+  "category": "patristic-translation-anthology",
+  "description": "The first volume of the American Ante-Nicene Fathers translation anthology, edited from the Edinburgh series and revised and rearranged by A. Cleveland Coxe. Its container identity remains distinct from the patristic works and translated editions printed within it.",
+  "id": "work.ante-nicene-fathers.volume-1",
+  "languages": [
+   "en"
+  ],
+  "title": "The Ante-Nicene Fathers, Volume I"
+ }
+}

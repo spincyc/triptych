@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-gazette-volume-pdf",
+   "byte_size": 5026614,
+   "id": "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d",
+   "media_type": "application/pdf",
+   "notes": "The scan carries an optical text layer whose readings are a discovery aid only; the cited pages were read in rendered page images at 400 dpi. Printed p. 599 was read that way: the fourth resumption case of n. 18 is printed there as 'et XVII, quae inscribitur VI', an arithmetically impossible ordinal that the 1962 Missale Romanum prints as 'XXVII'. The volume's own Corrigenda notice records only a correction to p. 179 and does not reach p. 599. Exact bytes are identified but not retained.",
+   "page_count": 1132,
+   "retrieved": "2026-07-25",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-25 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established, so the exact bytes are identified and not retained.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1960",
+  "editors": [
+   "Holy See"
+  ],
+  "id": "edition.holy-see.acta-apostolicae-sedis.volume-52-1960",
+  "jurisdiction": null,
+  "language": "mul",
+  "notes": "The complete 1960 volume. Its number 10 of 15 August 1960 carries John XXIII's motu proprio Rubricarum instructum (pp. 593-595), the Sacred Congregation of Rites' general decree promulgating the new code of rubrics (p. 596), and the complete Latin text of the Rubricae Breviarii et Missalis Romani with the accompanying Variationes (pp. 597-740).",
+  "publication": "Acta Apostolicae Sedis 52",
+  "title": "Acta Apostolicae Sedis, volume 52",
+  "translators": [],
+  "year": 1960
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d",
+   "artifact_type": "official-gazette-volume-pdf",
+   "context": "Printed p. 595 carries the close of the motu proprio Rubricarum instructum with its dating clause, 'Datum Romae, apud S. Petrum, die 25 mensis Iulii, anno 1960, Pontificatus Nostri secundo', over the subscription IOANNES PP. XXIII. Printed p. 596 carries the Sacred Congregation of Rites' general decree promulgating the new code, which describes the motu proprio as given 'die 25 iulii huius anni', orders the code inserted in new editions of the Breviary and Missal and observed from 1 January 1961, and is dated 'Ex aedibus S. Rituum Congregationis, die 26 iulii anni 1960'.",
+   "id": "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.p-595-596",
+   "locus": "p-595-596",
+   "media_type": "application/pdf",
+   "notes": "Read in the rendered text of the volume's optical layer at the identified pages; the artifact is restricted and no bytes are retained. These two dates are the control against which the 1962 Missal's own promulgating decree, which gives 23 July 1960, was found discrepant.",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-25 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established, so the exact bytes are identified and not retained.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-07-26",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "AAS",
+   "Acta Apostolicae Sedis: Commentarium Officiale"
+  ],
+  "author": "Holy See",
+  "category": "official-gazette",
+  "description": "The official gazette of the Holy See. Annual-volume editions and exact delivery artifacts remain container identities distinct from the constitutions, decrees, notifications, rescripts, and other acts printed within them.",
+  "id": "work.holy-see.acta-apostolicae-sedis",
+  "languages": [],
+  "title": "Acta Apostolicae Sedis"
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "collection-metadata-json",
+   "byte_size": 886,
+   "id": "artifact.metropolitan-museum-of-art.faldstool-193332.met-collection-record-2024-03-29.met-api-json-a3a5f5e3",
+   "media_type": "application/json",
+   "notes": "The record supplies identity, date, brass-and-iron medium, overall dimensions, public-domain status, and the image URL. It supports one exemplar only.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 193332 isPublicDomain true and releases its collection data under its Open Access policy.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/193332",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "museum-object-photograph",
+   "byte_size": 1900277,
+   "id": "artifact.metropolitan-museum-of-art.faldstool-193332.met-collection-record-2024-03-29.met-open-access-image-b685d21e",
+   "media_type": "image/jpeg",
+   "notes": "The 3210 by 4000 pixel image was visually inspected. It shows a backless rectangular ceremonial seat with a cushioned textile sling and fringe, low corner rails and finials, and a brass-and-iron frame. It must not be generalized into a universal folding mechanism, silhouette, textile treatment, or material rule.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 193332 public domain and makes this image available through its Open Access collection record.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://images.metmuseum.org/CRDImages/es/original/34761.jpg",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2024-03-29",
+  "editors": [
+   "The Metropolitan Museum of Art"
+  ],
+  "id": "edition.metropolitan-museum-of-art.faldstool-193332.met-collection-record-2024-03-29",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The date is the API payload's metadataDate. The catalog identifies the object, material, date, overall dimensions, and public-domain image.",
+  "publication": "The Metropolitan Museum of Art Collection API",
+  "title": "The Metropolitan Museum of Art collection record for Faldstool, object 193332",
+  "translators": [],
+  "year": 2024
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "The Metropolitan Museum of Art",
+  "category": "museum-object",
+  "description": "The Metropolitan Museum of Art's cataloged Italian faldstool, dated to the early seventeenth century. It is a material-culture exemplar of one historical object, not a normative specification for every Roman pontifical faldstool.",
+  "id": "work.metropolitan-museum-of-art.faldstool-193332",
+  "languages": [
+   "en"
+  ],
+  "title": "Faldstool (The Metropolitan Museum of Art, accession 16.154.11a, b)"
+ }
+}

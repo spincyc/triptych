@@ -1,0 +1,66 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "raw-ocr",
+   "byte_size": 6780976,
+   "id": "artifact.english-college-of-douay.douay-rheims-bible.murphy-1914.internet-archive-ocr-text",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Uncorrected machine OCR with frequent character errors; it was used only to read printed verse numbers, running heads, and note wording, never as a witness to spelling or punctuation. It shows Psalm 9 printed as verses 1-21 followed by a series numbered 1-18 under the head \"Psalm 10 according to the Hebrews\", Psalm 113 restarting at 1 after verse 8, Psalm 115 numbered 10-19, Psalm 147 numbered 12-20, and no verse number at Genesis 5:32, 2 Kings 13:39, or Amos 9:15.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "Published in the United States in 1914 without a subsisting copyright term; the Internet Archive distributes the item without a rights restriction. Only the identity and location are recorded here.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/holybibletransla00balt/holybibletransla00balt_djvu.txt",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "page-image-scan",
+   "byte_size": null,
+   "id": "artifact.english-college-of-douay.douay-rheims-bible.murphy-1914.internet-archive-page-images",
+   "media_type": "application/pdf",
+   "notes": "Not retained: 194 MB of page images duplicating a stable public delivery route.",
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "Published in the United States in 1914 without a subsisting copyright term; the Internet Archive distributes the item without a rights restriction. Only the identity and location are recorded here.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/holybibletransla00balt/holybibletransla00balt.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1914",
+  "editors": [
+   "Richard Challoner"
+  ],
+  "id": "edition.english-college-of-douay.douay-rheims-bible.murphy-1914",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "A John Murphy Company printing of the Challoner text, published with the approbation of James Cardinal Gibbons, Archbishop of Baltimore. It is registered as a print control for the electronic Challoner edition: its versification, chapter arguments, Latin psalm incipits, and notes were consulted to decide how the electronic text should be read. It is not the exemplar of that e-text, which Project Gutenberg does not identify.",
+  "publication": "Baltimore: John Murphy Company, 1914",
+  "title": "The Holy Bible translated from the Latin Vulgate ... with annotations, references, and an historical and chronological table",
+  "translators": [],
+  "year": 1914
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Douay-Rheims Bible",
+   "Douay Bible",
+   "Rheims-Douay Bible",
+   "Douay-Rheims-Challoner Bible",
+   "Douay Version"
+  ],
+  "author": "English College at Douay and Rheims; Gregory Martin, principal translator",
+  "category": "biblical-translation",
+  "description": "The English Catholic Bible translated from the Latin Vulgate by the English College in exile: the New Testament published at Rheims in 1582 and the Old Testament at Douay in 1609 and 1610, revised by Bishop Richard Challoner between 1749 and 1752. It is the English counterpart of the Clementine Vulgate the 1962 Missal prints. Edition records must keep the original Douay and Rheims text, Challoner's revision, the 1899 and 1914 American printings, and later electronic transcriptions apart, because their wording and in places their versification differ. A locus is BookToken.chapter.verse, optionally with a closing verse or chapter.verse after a hyphen, as in Ps.53.6-7, 1Cor.10.6-13, or Dan.3.49-51. The 73 book tokens, the modern names and 1962 Missal abbreviations they answer to, and the naming traps are registered in the book index of each electronic edition. Chapter and verse numbers are always the Vulgate ones the Missal cites, never modern Hebrew ones: Psalm numbers follow the Septuagint and Vulgate series, so Ps 53 here is Ps 54 in a modern Bible, and Douay 1 and 2 Kings are modern 1 and 2 Samuel. The psalm-numbering and verse-alias tables registered with the text carry the exhaustive conversions.",
+  "id": "work.english-college-of-douay.douay-rheims-bible",
+  "languages": [
+   "en"
+  ],
+  "title": "The Holy Bible, Douay-Rheims"
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 46303,
+   "id": "artifact.second-vatican-council.dei-verbum.latin-vatican-web-2026-07-23.vatican-html-164f55e1",
+   "media_type": "text/html",
+   "notes": "The content-delivery route https://www.vatican.va/content/dam/wss/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_lt.html returned a byte-identical 46303-byte response with this SHA-256 on 2026-07-23; the corresponding press.vatican.va route returned HTTP 404 and is not an alias. The response contains the complete Latin Constitution, promulgation and subscriptions, the distinct appended Notificatio, and consolidated source notes. Exact bytes are identified but not retained.",
+   "page_count": null,
+   "retrieved": "2026-07-23",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-23 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_lt.html",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See",
+  "date": "2026-07-23",
+  "editors": [],
+  "id": "edition.second-vatican-council.dei-verbum.latin-vatican-web-2026-07-23",
+  "jurisdiction": "Universal Catholic Church",
+  "language": "la",
+  "notes": "A dated Vatican delivery state of the Latin Constitution. The single registered response contains articles 1-26, the promulgation formula and subscriptions, the separately titled Notificatio concerning the schema's theological qualification, and consolidated source notes.",
+  "publication": "Holy See Latin web presentation of Dei Verbum, retrieved 2026-07-23",
+  "title": "Dei Verbum — Vatican Latin web state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Constitutio dogmatica de divina revelatione",
+   "Dogmatic Constitution on Divine Revelation"
+  ],
+  "author": "Second Vatican Council",
+  "category": "dogmatic-constitution",
+  "description": "The Second Vatican Council's Dogmatic Constitution on Divine Revelation, solemnly promulgated by Pope Paul VI on 18 November 1965. It comprises numbered articles 1-26; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations.",
+  "id": "work.second-vatican-council.dei-verbum",
+  "languages": [
+   "la"
+  ],
+  "title": "Dei Verbum"
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 80802,
+   "id": "artifact.second-vatican-council.christus-dominus.latin-vatican-web-2026-07-24.vatican-html-4c5ee9b7",
+   "media_type": "text/html",
+   "notes": "The complete Latin delivery is identified but its restricted bytes are not retained.",
+   "page_count": null,
+   "retrieved": "2026-07-24",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, did not establish repository redistribution permission.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_christus-dominus_lt.html",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See",
+  "date": "2026-07-24",
+  "editors": [],
+  "id": "edition.second-vatican-council.christus-dominus.latin-vatican-web-2026-07-24",
+  "jurisdiction": "Universal Catholic Church",
+  "language": "la",
+  "notes": "A dated Vatican delivery state containing the complete unnumbered preface, articles 1-44, conclusion, promulgation apparatus, an incomplete subscription block, and source notes.",
+  "publication": "Holy See Latin web presentation of Christus Dominus, retrieved 2026-07-24",
+  "title": "Christus Dominus — Vatican Latin web state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.second-vatican-council.christus-dominus.latin-vatican-web-2026-07-24.vatican-html-4c5ee9b7",
+   "artifact_type": "official-html",
+   "context": "The complete numbered Latin body, articles 1-44, was inspected as one bounded witness.",
+   "id": "passage.second-vatican-council.christus-dominus.latin-vatican-web-2026-07-24.1-44",
+   "locus": "1-44",
+   "media_type": "text/html",
+   "notes": "The unnumbered preface, conclusion, promulgation and subscription apparatus, and notes remain outside this passage.",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, did not establish repository redistribution permission.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_christus-dominus_lt.html",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-07-24",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Decretum de pastorali Episcoporum munere in Ecclesia",
+   "Decree on Bishops’ Pastoral Office"
+  ],
+  "author": "Second Vatican Council",
+  "category": "decree",
+  "description": "The Second Vatican Council's Decree on Bishops’ Pastoral Office, solemnly promulgated by Pope Paul VI on 28 October 1965. It comprises an unnumbered preface and numbered articles 1-44; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations.",
+  "id": "work.second-vatican-council.christus-dominus",
+  "languages": [
+   "la"
+  ],
+  "title": "Christus Dominus"
+ }
+}

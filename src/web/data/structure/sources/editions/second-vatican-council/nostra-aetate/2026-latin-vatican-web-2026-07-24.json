@@ -1,0 +1,47 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 23616,
+   "id": "artifact.second-vatican-council.nostra-aetate.latin-vatican-web-2026-07-24.vatican-html-1c8cae66",
+   "media_type": "text/html",
+   "notes": "The content-delivery route https://www.vatican.va/content/dam/wss/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_lt.html returned a byte-identical 23616-byte response with this SHA-256 on 2026-07-24; the press route returned HTTP 404 and is not recorded as an alias. The response contains the complete numbered Latin body, promulgation formula, date, and papal signature. It then appends the distinct Vacatio legis pro decretis promulgatis in sessione VII and a shared subscription block that stops at Alexander Toki, omitting the remaining named subscriptions, continuation notice, and notarial attestations printed on Acta p. 701. Article 4 delivers «rami oleastri Genti» where the Acta prints «rami oleastri Gentium»; note 5 delivers «Gregorios VII» where the Acta prints «Gregorius VII»; and the final displayed subscription gives «ALEXANDER TOKI» where the Acta prints «ALEXANDER TOKIC». These appended materials and source-local defects are not part of the bounded articles 1-5. Exact bytes are identified but not retained.",
+   "page_count": null,
+   "retrieved": "2026-07-24",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_lt.html",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See",
+  "date": "2026-07-24",
+  "editors": [],
+  "id": "edition.second-vatican-council.nostra-aetate.latin-vatican-web-2026-07-24",
+  "jurisdiction": "Universal Catholic Church",
+  "language": "la",
+  "notes": "A dated Vatican delivery state of the Latin Declaration. The registered response contains articles 1-5, the promulgation formula, date, and papal signature, followed by a distinct session-VII vacatio-legis notice and an incomplete shared subscription block. The complete Acta apparatus and the declaration's bounded numbered body remain distinct.",
+  "publication": "Holy See Latin web presentation of Nostra aetate, retrieved 2026-07-24",
+  "title": "Nostra aetate — Vatican Latin web state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Declaratio de Ecclesiae Habitudine ad Religiones Non-Christianas",
+   "Declaration on the Relation of the Church to Non-Christian Religions"
+  ],
+  "author": "Second Vatican Council",
+  "category": "declaration",
+  "description": "The Second Vatican Council's Declaration on the Relation of the Church to Non-Christian Religions, solemnly promulgated by Pope Paul VI on 28 October 1965. Its numbered articles 1-5 address humanity's common origin and end, the Church's relation to non-Christian religions, Muslims, the Jewish people, antisemitism, and discrimination.",
+  "id": "work.second-vatican-council.nostra-aetate",
+  "languages": [
+   "la"
+  ],
+  "title": "Nostra aetate"
+ }
+}

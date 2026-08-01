@@ -1,0 +1,87 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 292,
+   "id": "artifact.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal-checked-text-2e9b50d8",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "Sefaria records this English version's licence as CC0, a public-domain dedication. The underlying Mishnah is ancient.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "structured-text",
+   "byte_size": 11440,
+   "id": "artifact.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.sefaria-api-mishnah-sanhedrin-6-1-1eb360bc",
+   "media_type": "application/json",
+   "notes": "JavaScript Object Notation, not a facsimile.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "Sefaria records the licence of the Sefaria Community Translation as CC0, a public-domain dedication. The underlying Mishnah is ancient. The retrieved response bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.sefaria.org/api/v3/texts/Mishnah_Sanhedrin.6.1?version=english%7CSefaria%20Community%20Translation",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [],
+  "id": "edition.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "A dated delivery state retrieved through Sefaria's public text application programming interface, not a printed edition. The exact response bytes are hashed; Sefaria may change its delivery at any time. Sefaria records the licence of this English version as CC0. It is a community translation, not a scholarly edition, and is registered as an identified working witness only; the Hebrew of the same mishnah was read alongside it in the public-domain Torat Emet text.",
+  "publication": "Dated web state of the Sefaria Community Translation, consulted 2026-07-25",
+  "title": "Mishnah Sanhedrin, Sefaria Community Translation",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal-checked-text-2e9b50d8",
+   "artifact_type": "checked-transcription",
+   "context": "The sudarin signal, read in the retrieved response for the whole mishnah, with the public-domain Torat Emet Hebrew of the same mishnah read alongside it. Registered as a positive control on the negative search reported by consuming publications: the rabbinic corpus does record a sudar used as a deliberate signal, and its sense is judicial, not domestic.",
+   "id": "passage.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal",
+   "locus": "6.1",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The word rendered scarf is ha-sudarin, the same word Greek borrowed as soudarion and Latin as sudarium. The Hebrew of the clause reads, in transliteration, ehad omed al petah beth din veha-sudarin beyado, and hallaz meniph ba-sudarin veha-sus rats u-ma'amido. The bracketed supplement is the translator's.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Sefaria records this English version's licence as CC0, a public-domain dedication. The underlying Mishnah is ancient.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal.json",
+   "verified_on": "2026-07-25",
+   "words": 52
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Tractate Sanhedrin"
+  ],
+  "author": "Rabbinic sages (tannaitic redaction)",
+  "category": "rabbinic-tractate",
+  "description": "The Mishnah's tractate on courts and capital procedure. At 6:1 it describes the procession to a stoning and the arrangement by which an argument for acquittal could still be heard: a man stands at the court door with the sudarin in his hand and waves it, and a horseman posted within sight rides to halt the execution. This is the one attested ancient Jewish use of a sudar as a deliberate signal. A locus is chapter.mishnah.",
+  "id": "work.mishnah.sanhedrin",
+  "languages": [
+   "he"
+  ],
+  "title": "Mishnah Sanhedrin"
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 21131,
+   "id": "artifact.first-vatican-council.pastor-aeternus.latin-vatican-web-2026-07-24.vatican-html-032a5f65",
+   "media_type": "text/html",
+   "notes": "The complete Latin delivery is identified but its restricted bytes are not retained.",
+   "page_count": null,
+   "retrieved": "2026-07-24",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, did not establish repository redistribution permission.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See",
+  "date": "2026-07-24",
+  "editors": [],
+  "id": "edition.first-vatican-council.pastor-aeternus.latin-vatican-web-2026-07-24",
+  "jurisdiction": "Universal Catholic Church",
+  "language": "la",
+  "notes": "A dated Vatican delivery state containing the proem, four chapters, their concluding definitions and anathemas, promulgation formula, and subscriptions.",
+  "publication": "Holy See Latin web presentation of Pastor aeternus, retrieved 2026-07-24",
+  "title": "Pastor aeternus — Vatican Latin web state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.first-vatican-council.pastor-aeternus.latin-vatican-web-2026-07-24.vatican-html-032a5f65",
+   "artifact_type": "official-html",
+   "context": "The complete official Latin web delivery, including the proem, chapters 1-4, definitions, anathemas, and promulgation apparatus.",
+   "id": "passage.first-vatican-council.pastor-aeternus.latin-vatican-web-2026-07-24.complete-text",
+   "locus": "complete-text",
+   "media_type": "text/html",
+   "notes": "The complete delivery was structurally inspected; no diplomatic collation against a printed conciliar-act witness is claimed.",
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, did not establish repository redistribution permission.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "restricted",
+   "verified_on": "2026-07-24",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Constitutio dogmatica prima de Ecclesia Christi",
+   "First Dogmatic Constitution on the Church of Christ"
+  ],
+  "author": "First Vatican Council",
+  "category": "dogmatic-constitution",
+  "description": "The First Vatican Council's First Dogmatic Constitution on the Church of Christ, solemnly promulgated by Pope Pius IX on 18 July 1870, comprising a proem, four chapters, and canons on Roman primacy and papal infallibility.",
+  "id": "work.first-vatican-council.pastor-aeternus",
+  "languages": [
+   "la"
+  ],
+  "title": "Pastor aeternus"
+ }
+}

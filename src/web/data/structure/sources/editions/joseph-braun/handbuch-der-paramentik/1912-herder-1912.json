@@ -1,0 +1,69 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 22468051,
+   "id": "artifact.joseph-braun.handbuch-der-paramentik.herder-1912.internet-archive-pdf-a6af9191",
+   "media_type": "application/pdf",
+   "notes": "The scan has an OCR layer useful for navigation. OCR does not control exact wording. Wikimedia Commons file page: https://commons.wikimedia.org/wiki/File:Handbuch_der_Paramentik_(IA_handbuchderparam00braurich).pdf",
+   "page_count": 314,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The 1912 German work is public domain in the United States and its author, Joseph Braun, died in 1947, more than 70 years ago. Wikimedia Commons marks this Internet Archive scan public domain; Triptych records the exact remote object and retains no payload.",
+   "rights_jurisdiction": "United States and Germany",
+   "source_url": "https://archive.org/download/handbuchderparam00braurich/handbuchderparam00braurich.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": "Joseph Braun, S.J.",
+  "date": "1912",
+  "editors": [],
+  "id": "edition.joseph-braun.handbuch-der-paramentik.herder-1912",
+  "jurisdiction": null,
+  "language": "de",
+  "notes": "The title page identifies Braun, the publisher, and the year. This first edition is a material-culture and historical witness, not an official liturgical book. Claims about the 1962-horizon ceremony remain controlled by the governing Roman books.",
+  "publication": "Freiburg im Breisgau: Herdersche Verlagshandlung, 1912",
+  "title": "Handbuch der Paramentik",
+  "translators": [],
+  "year": 1912
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.joseph-braun.handbuch-der-paramentik.herder-1912.internet-archive-pdf-a6af9191",
+   "artifact_type": "scan-pdf",
+   "context": "Braun describes the contemporary gremial as a cloth about 80 centimetres square spread over a seated bishop's lap. He distinguishes the silk pontifical-Mass gremial from washable linen lap-cloths used for distributions and anointments, explains their protective function, and surveys the gremial's history.",
+   "id": "passage.joseph-braun.handbuch-der-paramentik.herder-1912.pages-265-266-gremiale",
+   "locus": "pages-265-266",
+   "media_type": "application/pdf",
+   "notes": "Both printed pages were inspected in the exact scan. This passage supports approximate square dimensions, lap placement, the silk-versus-linen functional distinction, and the absence of any need to depict fastening ties. Its historical synthesis does not establish the official ceremonial moments independently of the Caeremoniale Episcoporum.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The 1912 German work is public domain in the United States and its author, Joseph Braun, died in 1947, more than 70 years ago. Wikimedia Commons marks this Internet Archive scan public domain; Triptych records the exact remote object and retains no payload.",
+   "rights_jurisdiction": "United States and Germany",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/handbuchderparam00braurich/handbuchderparam00braurich.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "remote",
+   "verified_on": null,
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Joseph Braun, S.J.",
+  "category": "material-culture-study",
+  "description": "A historical handbook of Roman liturgical textiles and vesture, including their contemporary construction, use, and material history. It can control morphology and historical practice, but not supersede an edition-identified liturgical book.",
+  "id": "work.joseph-braun.handbuch-der-paramentik",
+  "languages": [
+   "de"
+  ],
+  "title": "Handbuch der Paramentik"
+ }
+}

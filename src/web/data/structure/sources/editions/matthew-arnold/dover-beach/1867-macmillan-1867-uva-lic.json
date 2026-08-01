@@ -1,0 +1,74 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "tei-xml",
+   "byte_size": 13614,
+   "id": "artifact.matthew-arnold.dover-beach.macmillan-1867-uva-lic.uva-lic-tei-a58b6b0d",
+   "media_type": "application/tei+xml; charset=utf-8",
+   "notes": "The TEI contains relative facsimile references to page images that are not required to read the transcribed passage and are not retained. The checked passage was inspected and verified in this identified first-edition transcription; no claim of independent facsimile collation is made.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "licensed",
+   "rights_basis": "The artifact's publication statement licenses the Literature in Context digital edition under Creative Commons Attribution-ShareAlike 4.0. Arnold died in 1888 and the underlying 1867 text is public domain in the United States by publication date.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1867",
+  "editors": [
+   "Literature in Context, University of Virginia"
+  ],
+  "id": "edition.matthew-arnold.dover-beach.macmillan-1867-uva-lic",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The digital edition identifies and transcribes the 1867 first edition and retains its page breaks. This record does not imply that its editorial annotation establishes a biblical source for Arnold's language.",
+  "publication": "London: Macmillan and Co., 1867, pp. 112–114; digital transcription by Literature in Context, University of Virginia",
+  "title": "Dover Beach in New Poems, first edition, as transcribed by Literature in Context",
+  "translators": [],
+  "year": 1867
+ },
+ "passages": [
+  {
+   "acknowledgement": "The artifact's publication statement licenses the Literature in Context digital edition under Creative Commons Attribution-ShareAlike 4.0. Arnold died in 1888 and the underlying 1867 text is public domain in the United States by publication date.",
+   "artifact_id": "artifact.matthew-arnold.dover-beach.macmillan-1867-uva-lic.uva-lic-tei-a58b6b0d",
+   "artifact_type": "tei-xml",
+   "context": "The complete final stanza, read with the preceding Sea of Faith stanza in the identified first-edition transcription. Lines 29–34 move from a plea that two lovers remain true to an accumulating neither/nor catalogue in which the world lacks love and consolation. The form and context support describing a strong structural and verbal echo or inversion of Romans 8:38–39; they do not establish conscious authorial dependence, quotation, or Arnold's intended biblical source.",
+   "id": "passage.matthew-arnold.dover-beach.macmillan-1867-uva-lic.lines-29-37",
+   "locus": "lines-29-37",
+   "media_type": "application/tei+xml; charset=utf-8",
+   "notes": "The text preserves the TEI transcription's wording and punctuation while joining verse lines with spaces. Any consumer should distinguish the observable echo from a claim about Arnold's conscious borrowing.",
+   "readable": true,
+   "rights": "licensed",
+   "rights_basis": "The artifact's publication statement licenses the Literature in Context digital edition under Creative Commons Attribution-ShareAlike 4.0. Arnold died in 1888 and the underlying 1867 text is public domain in the United States by publication date.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": "https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.matthew-arnold.dover-beach.macmillan-1867-uva-lic.lines-29-37.json",
+   "verified_on": "2026-07-28",
+   "words": 68
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Matthew Arnold",
+  "category": "poem",
+  "description": "Matthew Arnold's lyric first published in New Poems (1867). Its final stanza turns from the retreating Sea of Faith to a plea for fidelity between lovers and a catalogue of what the apparently beautiful world lacks.",
+  "id": "work.matthew-arnold.dover-beach",
+  "languages": [
+   "en"
+  ],
+  "title": "Dover Beach"
+ }
+}

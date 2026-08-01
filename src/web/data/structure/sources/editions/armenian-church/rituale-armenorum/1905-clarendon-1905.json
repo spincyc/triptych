@@ -1,0 +1,76 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 1675449,
+   "id": "artifact.armenian-church.rituale-armenorum.clarendon-1905.ia-ocr-209ee7c8",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "OCR finding aid checked against visible printed pagination and editorial notes; no formula is reproduced in the publication.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "Published in 1905; public domain in the United States. The Internet Archive text layer is a mechanical derivative used as a finding aid.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/ritualearmenorum00cony/ritualearmenorum00cony_djvu.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1905",
+  "editors": [
+   "Frederick Cornwallis Conybeare",
+   "Arthur John Maclean"
+  ],
+  "id": "edition.armenian-church.rituale-armenorum.clarendon-1905",
+  "jurisdiction": null,
+  "language": "en-hy-grc-syr",
+  "notes": "The bounded Armenian baptismal translation principally identifies Barberini Oriental vii.44 and Vienna Mechitarist codex 68 and reports variation or omission in other witnesses.",
+  "publication": "Oxford: Clarendon Press",
+  "title": "Rituale Armenorum",
+  "translators": [],
+  "year": 1905
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.armenian-church.rituale-armenorum.clarendon-1905.ia-ocr-209ee7c8",
+   "artifact_type": "ocr-text",
+   "context": "Manuscript-aware catechumenal and baptismal architecture, recipient, and renunciation/profession boundary only. No formula, operational action, composite Armenian rite, frequency, efficacy, or present Armenian Apostolic or Catholic law.",
+   "id": "passage.armenian-church.rituale-armenorum.clarendon-1905.armenian-baptism-pages-86-93",
+   "locus": "printed pages 86-93",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "Published in 1905; public domain in the United States. The Internet Archive text layer is a mechanical derivative used as a finding aid.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/ritualearmenorum00cony/ritualearmenorum00cony_djvu.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-28",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Armenian Church manuscript tradition; Frederick Cornwallis Conybeare, editor and translator",
+  "category": "liturgical-edition",
+  "description": "Conybeare's edition and translation of Armenian sacramental and breviary rites with additional Greek and East-Syriac material. Its manuscript identifications and variants control bounded historical claims; the title does not establish one exhaustive or current Armenian ritual.",
+  "id": "work.armenian-church.rituale-armenorum",
+  "languages": [
+   "hy",
+   "en",
+   "grc",
+   "syr"
+  ],
+  "title": "Rituale Armenorum"
+ }
+}

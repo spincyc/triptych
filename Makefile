@@ -101,6 +101,7 @@ WEB_EDITION_TOOL := tools/tpt web-edition
 CURRICULUM_STRUCTURE_CHECKER := tools/tpt check-curriculum-structure
 PDF_REVIEW_TOOL := tools/tpt pdf-review
 DOCUMENT_LIBRARY_TOOL := tools/tpt document-library
+SOURCE_READER_TOOL := tools/tpt source-reader
 PUBLIC_ALPHA_TOOL := tools/tpt public-alpha
 RELEASE_BINDINGS_TOOL := tools/tpt release-bindings
 RESEARCH_STALENESS_TOOL := tools/tpt research-staleness
@@ -219,7 +220,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-promised-deliverables \
 	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-curriculum-sources \
-	check-curriculum-structure \
+	check-curriculum-structure check-source-reader source-projection \
 	check-document-catalogue document-catalogue \
 	public-site public-preview \
 	dependencies-arch install-dependencies-arch \
@@ -430,6 +431,8 @@ help:
 		'make check-web-editions-current  Prove every tracked web edition matches current sources' \
 		'make check-document-catalogue  Confirm each derived title against its PDF and the catalogue against the sources' \
 		'make document-catalogue  Rewrite the browser catalogue of every document' \
+		'make source-projection  Rewrite the browser reading of the source library' \
+		'make check-source-reader  Prove no withheld source text is served, and no reading is stale' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
@@ -481,6 +484,18 @@ check-proper-components:
 check-document-catalogue:
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) check
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure --check
+
+# Two claims again, and the first is the one that governs. `check` proves that
+# no passage the rights records withhold carries any text in what is emitted,
+# that every withheld passage states its reason, and that a licensed text never
+# reaches the page without the acknowledgement its licence requires. It then
+# replays the browser's own narrowing against the spine's facet counts.
+# `structure --check` proves the tracked projection is what the records produce
+# now, so a source record added, corrected or withdrawn without regenerating it
+# cannot reach the site as a stale reading.
+check-source-reader:
+	@$(PYTHON) $(SOURCE_READER_TOOL) check
+	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
 
 # Generation is tier one: reproducible Markdown for review, never installed here.
 web-editions:
@@ -691,7 +706,7 @@ rebaseline-doc:
 
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
 check: check-metadata check-web-editions check-web-editions-current \
-	check-proper-components check-document-catalogue \
+	check-proper-components check-document-catalogue check-source-reader \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
 	check-calendar-masses check-calendar-rubrics check-propers-census \
@@ -1137,6 +1152,12 @@ reading-structure:
 # `texts` reading page, which reads it and walks nothing itself.
 document-catalogue:
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure
+
+# The reading projection of the source library, rewritten from the work,
+# edition, artifact, segment and passage records. Tracked under src/web/data and
+# served to the `sources` reading page, which reads it and walks nothing itself.
+source-projection:
+	@$(PYTHON) $(SOURCE_READER_TOOL) structure
 
 $(READING_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
 	@$(PYTHON) $(BIBLE_TYPESET_TOOL) render --volume '$*' --out '$(READING_BUILD_ROOT)'

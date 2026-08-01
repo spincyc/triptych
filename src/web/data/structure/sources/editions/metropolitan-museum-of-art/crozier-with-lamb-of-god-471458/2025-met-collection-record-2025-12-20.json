@@ -1,0 +1,85 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "collection-metadata-json",
+   "byte_size": 2065,
+   "id": "artifact.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458.met-collection-record-2025-12-20.met-api-json-04047b4f",
+   "media_type": "application/json",
+   "notes": "The record supplies identity, date, material, overall dimensions, public-domain status, and five image URLs. Its collection note says the object was made in threaded sections and that a possible fourth section is lost. It supports one exemplar only.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 471458 isPublicDomain true and releases its collection data under its Open Access policy.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/471458",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "museum-object-photograph",
+   "byte_size": 4497188,
+   "id": "artifact.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458.met-collection-record-2025-12-20.met-open-access-full-object-image-af19bc81",
+   "media_type": "image/jpeg",
+   "notes": "The 1792 by 4685 pixel image was visually inspected. It shows the complete surviving crozier in frontal profile: a volute and decorated head, socket, long sectional shaft, and foot. The museum's square mounting plate is display hardware and must not be copied as part of the liturgical object.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 471458 public domain and makes this image available through its Open Access collection record.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://images.metmuseum.org/CRDImages/cl/original/cdi53-63-4.jpg",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2025-12-20",
+  "editors": [
+   "The Metropolitan Museum of Art"
+  ],
+  "id": "edition.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458.met-collection-record-2025-12-20",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The date is the API payload's metadataDate. The catalog identifies the complete object, material, date, overall dimensions, and sectional construction; the associated full-object photograph was inspected separately.",
+  "publication": "The Metropolitan Museum of Art Collection API",
+  "title": "The Metropolitan Museum of Art collection record for Crozier with Lamb of God, object 471458",
+  "translators": [],
+  "year": 2025
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458.met-collection-record-2025-12-20.met-api-json-04047b4f",
+   "artifact_type": "collection-metadata-json",
+   "context": "The museum identifies a North Italian crozier dated circa 1360–1400, made of bone with paint and gold, measuring 154.9 by 24.3 by 6.2 cm overall. Its collection note describes threaded sectional construction and possible loss of a fourth section.",
+   "id": "passage.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458.met-collection-record-2025-12-20.object-identity-and-morphology",
+   "locus": "object-471458.identity-dimensions-construction",
+   "media_type": "application/json",
+   "notes": "Use only as a dated morphology exemplar. It does not establish prescribed 1962 material, ornament, dimensions, symbolism, or shaft segmentation.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 471458 isPublicDomain true and releases its collection data under its Open Access policy.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/471458",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "remote",
+   "verified_on": null,
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "The Metropolitan Museum of Art",
+  "category": "museum-object",
+  "description": "The Metropolitan Museum of Art's cataloged North Italian crozier, dated circa 1360–1400. It is a complete material-culture exemplar of a crook, socket, and sectional shaft, not a normative specification for every Roman pastoral staff.",
+  "id": "work.metropolitan-museum-of-art.crozier-with-lamb-of-god-471458",
+  "languages": [
+   "en"
+  ],
+  "title": "Crozier with Lamb of God (The Metropolitan Museum of Art, accession 53.63.4)"
+ }
+}

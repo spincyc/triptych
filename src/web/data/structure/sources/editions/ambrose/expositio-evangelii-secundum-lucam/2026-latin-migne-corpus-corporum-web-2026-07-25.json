@@ -1,0 +1,88 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 111883,
+   "id": "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.wikisource-liber-x-2868e872",
+   "media_type": "text/plain",
+   "notes": "Wikitext of book X only. Not a facsimile. The word-stem counts recorded against the passage registered under this artifact were taken over these exact bytes: linteam- zero, sudari- zero, cucurr- zero, and no lemma of the form Vers. 12 anywhere in the book.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Ambrose is ancient and in the public domain, and Migne's Patrologia Latina 15 is in the United States public domain by date of publication. The Corpus Corporum transcription reproduced at la.wikisource.org is published there under that site's free-content terms. Only short clauses are quoted by consuming publications, and the retrieved bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/w/index.php?title=Expositio_Evangelii_secundum_Lucam_(Ambrosius)/10&action=raw",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 227,
+   "id": "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.x.179-checked-text-d176ce42",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Ambrose's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [],
+  "id": "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "A dated delivery state of a transcription of Migne, not a critical edition. The file was checked for the automated Italian spelling corruption that affects some other files on the same site and was clean. Consumers needing a critical text must use the relevant Corpus Christianorum edition, which was not consulted. Migne's 1845 and 1887 printings of Patrologia Latina 15 carry different column numbers for the same text and must be distinguished when columns are cited.",
+  "publication": "Dated web state of the Corpus Corporum transcription of Migne, Patrologia Latina 15, reproduced at la.wikisource.org and consulted 2026-07-25",
+  "title": "Expositio evangelii secundum Lucam, Migne's Latin as transcribed by Corpus Corporum",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.x.179-checked-text-d176ce42",
+   "artifact_type": "checked-transcription",
+   "context": "Ambrose's statement that Peter could not have doubted and that John believed on seeing the tomb empty of the body, read in the retrieved file under its lemma on Luke 24:37 and 45, with sections 178 and 180 in view. Registered together with the material negative established over the same bytes: book X has no lemma on Luke 24:12, its verse headings running 23:49, 23:50, 23:53, 23:55 and then jumping to 24:25, and the word-stems linteam-, sudari- and cucurr- do not occur in the book at all.",
+   "id": "passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.x.179",
+   "locus": "10.179",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The parenthetical reference (Joan. XX, 8) inside the second sentence is Migne's apparatus and is omitted. The stem counts are counts over a transcription, not over page images, and an editorial or transcription omission cannot be excluded; consuming publications state the negative with that limit.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Ambrose's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.x.179.json",
+   "verified_on": "2026-07-25",
+   "words": 27
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentary on the Gospel of Luke",
+   "Exposition of the Gospel of Luke"
+  ],
+  "author": "Ambrose of Milan",
+  "category": "patristic-commentary",
+  "description": "Ambrose's exposition of Luke in ten books, from about 389. Book X covers the passion and resurrection. The book has no lemma on Luke 24:12 and never mentions the burial cloths at the empty tomb; it does treat the theft allegation, on the different ground of the Jews' own testimony, and it asserts at section 179 that Peter could not have doubted. A locus is book.section or the book number alone.",
+  "id": "work.ambrose.expositio-evangelii-secundum-lucam",
+  "languages": [
+   "la"
+  ],
+  "title": "Expositio evangelii secundum Lucam"
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 993,
+   "id": "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4-checked-text-06d5c96f",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Gregory's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 451,
+   "id": "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.5-checked-text-1a54e049",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Gregory's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 19463,
+   "id": "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.wikisource-homilia-22-dd3091f4",
+   "media_type": "text/plain",
+   "notes": "Wikitext, not a facsimile; the file opens with a template block before the homily rubric. Checked for the automated Italian spelling corruption affecting other files on the same site: zero occurrences of the marker strings.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "The Latin of Gregory is ancient and in the public domain, and Migne's Patrologia Latina 76 is in the United States public domain by date of publication. The Corpus Corporum transcription reproduced at la.wikisource.org is published there under that site's free-content terms. Only short clauses are quoted by consuming publications, and the retrieved bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/w/index.php?title=Homiliarum_in_Evangelia/XXII&action=raw",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [],
+  "id": "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "A dated delivery state of a transcription of Migne, not a critical edition. The file was checked for the automated Italian spelling corruption that affects some other files on the same site and was clean. Consumers needing a critical text must use the relevant Corpus Christianorum edition, which was not consulted. Migne prints the Maurist column numbers inline as well as his own, and the two must not be confused.",
+  "publication": "Dated web state of the Corpus Corporum transcription of Migne, Patrologia Latina 76, reproduced at la.wikisource.org and consulted 2026-07-25",
+  "title": "Homiliae in Evangelia, Migne's Latin as transcribed by Corpus Corporum",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4-checked-text-06d5c96f",
+   "artifact_type": "checked-transcription",
+   "context": "Gregory's allegorical exposition of the head-cloth: separate because the Godhead is set apart from our knowledge, wrapped up because a wrapped cloth shows neither beginning nor end, in one place because God is not in division of minds, and named a sudarium because it signifies the labor of God. Read in the retrieved file. Registered because consuming publications report that Gregory expounds the arrangement at length without any argument from theft.",
+   "id": "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4",
+   "locus": "22.3-4",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Migne's inline scriptural references, including (I Cor. XI, 3) after Paulo attestante, are his apparatus and are omitted from the transcription.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Gregory's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4.json",
+   "verified_on": "2026-07-25",
+   "words": 135
+  },
+  {
+   "artifact_id": "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.5-checked-text-1a54e049",
+   "artifact_type": "checked-transcription",
+   "context": "Gregory's answer to the question what the beloved disciple believed, read in the retrieved file with sections 3 and 4 in view and with the homily's rubric naming the occasion and the lection. Registered as the witness that Gregory follows Augustine on John 20:8 and adds a reason of his own.",
+   "id": "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.5",
+   "locus": "22.5",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The homily's rubric reads: HOMILIA XXII. Habita ad populum in basilica beati Joannis, quae appellatur Constantiniana, Sabbato post Pascha. LECTIO S. EVANG. SEC. JOAN. XX, 1-9.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces a few sentences of Gregory's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.5.json",
+   "verified_on": "2026-07-25",
+   "words": 60
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Homilies on the Gospels",
+   "Forty Gospel Homilies"
+  ],
+  "author": "Gregory the Great",
+  "category": "patristic-homily-collection",
+  "description": "Gregory's forty homilies on the Gospels, preached at Rome about 590 to 592 and issued in two books. Homily XXII, preached in the Lateran basilica on the Saturday after Easter, takes John 20:1-9 as its lection and expounds the burial cloths allegorically. A locus is homily.section or the homily number alone.",
+  "id": "work.gregory-the-great.homiliae-in-evangelia",
+  "languages": [
+   "la"
+  ],
+  "title": "Homiliae in Evangelia"
+ }
+}

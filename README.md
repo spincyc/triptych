@@ -29,6 +29,7 @@ authors, its extent, and when it was last revised — open
 | [Catena Omnia](catena/) | A chapter, and the commentary held on it, oldest first. |
 | [How the Missal Changed](history/) | Every change to the Missal, the act that ordered it, and the text on both sides. |
 | [Every Document](texts/) | The whole corpus, filtered by author, edition or section. |
+| [The Source Library](sources/) | The works this project reads from, passage by passage — and, where a text may not be served here, the reason. |
 
 ## How this was built
 

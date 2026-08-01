@@ -1,0 +1,75 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "content-html",
+   "byte_size": 172800,
+   "id": "artifact.josephus.antiquitates-judaicae.whiston-1737-penelope-book-1-web-2026-07-27.book-1-html",
+   "media_type": "text/html",
+   "notes": "Complete Book I web page. Wording claims are bounded to Whiston's translation and this exact delivery.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "restricted",
+   "rights_basis": "Whiston's 1737 translation is public domain in the United States, but no repository-redistribution license was established for the exact Penelope HTML markup. The acquired bytes are therefore not retained.",
+   "rights_jurisdiction": null,
+   "source_url": "https://penelope.uchicago.edu/josephus/ant-1.html",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-27",
+  "editors": [],
+  "id": "edition.josephus.antiquitates-judaicae.whiston-1737-penelope-book-1-web-2026-07-27",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "Whiston's English is public domain in the United States. This edition follows Whiston's book-chapter-section divisions; the Genesis 15 retelling is I.10.3.",
+  "publication": "William Whiston, trans., The Genuine Works of Flavius Josephus (London, 1737), Book I, in the University of Chicago Penelope transcription retrieved 2026-07-27",
+  "title": "The Antiquities of the Jews, Book I, Whiston translation — Penelope web state",
+  "translators": [
+   "William Whiston"
+  ],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.josephus.antiquitates-judaicae.whiston-1737-penelope-book-1-web-2026-07-27.book-1-html",
+   "artifact_type": "content-html",
+   "context": "Whiston I.10.3 abridges Genesis 15: it retains the promise that Abram's posterity will be as numerous as the stars and immediately reports the commanded sacrifice, but omits the command to look outside or upward and the chapter's setting, sunset, darkness, and concluding temporal formula.",
+   "id": "passage.josephus.antiquitates-judaicae.whiston-1737-penelope-book-1-web-2026-07-27.book-1-chapter-10-section-3",
+   "locus": "1.10.3",
+   "media_type": "text/html",
+   "notes": null,
+   "readable": false,
+   "reason": "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+   "rights": "restricted",
+   "rights_basis": "Whiston's 1737 translation is public domain in the United States, but no repository-redistribution license was established for the exact Penelope HTML markup. The acquired bytes are therefore not retained.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://penelope.uchicago.edu/josephus/ant-1.html",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-27",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Antiquities of the Jews",
+   "Jewish Antiquities"
+  ],
+  "author": "Flavius Josephus",
+  "category": "ancient-history",
+  "description": "Josephus's twenty-book history of the Jewish people, completed c. 93/94 CE. Book 12 retells the Letter of Aristeas's account of the Greek translation of the Law under Ptolemy II. Loci use book with Whiston chapter or chapter.section numbering; consumers state which numbering they follow.",
+  "id": "work.josephus.antiquitates-judaicae",
+  "languages": [
+   "grc"
+  ],
+  "title": "Antiquitates Judaicae"
+ }
+}

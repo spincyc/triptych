@@ -1,0 +1,60 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "collection-metadata-json",
+   "byte_size": 2103,
+   "id": "artifact.metropolitan-museum-of-art.cruet-467483.met-collection-record-2026-05-20.met-api-json-be82540f",
+   "media_type": "application/json",
+   "notes": "Identifies accession 32.100.218 as a German cruet dated 1518, records dimensions, and links the Open Access image. Metadata establishes identity and dimensions, not a universal altar-cruet form.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 467483 isPublicDomain true and releases its collection data under its Open Access policy.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/467483",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "museum-object-image",
+   "byte_size": 520503,
+   "id": "artifact.metropolitan-museum-of-art.cruet-467483.met-collection-record-2026-05-20.met-open-access-image-09637ee4",
+   "media_type": "image/jpeg",
+   "notes": "JPEG, 1594 by 2464 pixels. Shows one lidded, handled, footed exemplar. Its lid, ornament, metal, and silhouette are not generalized into the project artwork.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 467483 isPublicDomain true and supplies the image through its Open Access image service.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://images.metmuseum.org/CRDImages/md/original/sf32-100-218s1.jpg",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-05-20",
+  "editors": [
+   "The Metropolitan Museum of Art"
+  ],
+  "id": "edition.metropolitan-museum-of-art.cruet-467483.met-collection-record-2026-05-20",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The date is the API payload's metadataDate. The catalog identifies one German cruet dated 1518 and gives overall dimensions of 16.7 by 7.8 by 6.8 cm.",
+  "publication": "The Metropolitan Museum of Art Collection API and Open Access image",
+  "title": "The Metropolitan Museum of Art collection record for Cruet, object 467483",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "The Metropolitan Museum of Art",
+  "category": "museum-object",
+  "description": "The Metropolitan Museum of Art's cataloged German silver and gilded-silver cruet dated 1518. It is one material-culture exemplar, not a normative Roman specification.",
+  "id": "work.metropolitan-museum-of-art.cruet-467483",
+  "languages": [
+   "en"
+  ],
+  "title": "Cruet (The Metropolitan Museum of Art, accession 32.100.218)"
+ }
+}

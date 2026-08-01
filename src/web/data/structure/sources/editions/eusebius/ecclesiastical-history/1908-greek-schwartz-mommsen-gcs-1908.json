@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "page-scan-pdf",
+   "byte_size": 41820304,
+   "id": "artifact.eusebius.ecclesiastical-history.greek-schwartz-mommsen-gcs-1908.internet-archive-pdf",
+   "media_type": "application/pdf",
+   "notes": "Artifact page 122 contains printed page 618 and 6.43.11. Exact bytes are not retained because the complete scan is 42 MB and remains publicly downloadable. UB Wuppertal independently catalogs its 1908 small edition with a Public Domain Mark 1.0.",
+   "page_count": 548,
+   "retrieved": "2026-07-27",
+   "rights": "public-domain",
+   "rights_basis": "The 1908 Leipzig printing is in the public domain in the United States by date of publication. The Internet Archive scan is a faithful mechanical reproduction.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/p2eusebiuswerke02euse/p2eusebiuswerke02euse.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1908",
+  "editors": [
+   "Eduard Schwartz",
+   "Theodor Mommsen"
+  ],
+  "id": "edition.eusebius.ecclesiastical-history.greek-schwartz-mommsen-gcs-1908",
+  "jurisdiction": null,
+  "language": "grc",
+  "notes": "Greek text edited by Schwartz with Mommsen's edition of Rufinus. This public-domain edition supplies an exact original-language control for 6.43.11, but it is an old critical edition and does not replace the later unchanged reprint's updated framing or fresh manuscript collation.",
+  "publication": "Leipzig: J. C. Hinrichs, 1908; Die griechischen christlichen Schriftsteller der ersten drei Jahrhunderte",
+  "title": "Eusebius Werke, volume 2, part 2: Die Kirchengeschichte, Bücher VI–X",
+  "translators": [],
+  "year": 1908
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.eusebius.ecclesiastical-history.greek-schwartz-mommsen-gcs-1908.internet-archive-pdf",
+   "artifact_type": "page-scan-pdf",
+   "context": "Printed page 618 was visually inspected. Eusebius quotes Cornelius's single combined total of fifty-two for exorcists, readers, and door-keepers; it supplies neither a separate exorcist count nor proof that the role was continuous or functionally identical with later major exorcism.",
+   "id": "passage.eusebius.ecclesiastical-history.greek-schwartz-mommsen-gcs-1908.6.43.11",
+   "locus": "6.43.11",
+   "media_type": "application/pdf",
+   "notes": "Old critical Greek control with Rufinus facing; not a fresh manuscript collation.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The 1908 Leipzig printing is in the public domain in the United States by date of publication. The Internet Archive scan is a faithful mechanical reproduction.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/p2eusebiuswerke02euse/p2eusebiuswerke02euse.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-27",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Eusebius of Caesarea",
+  "category": "ancient-history",
+  "description": "Eusebius's ecclesiastical history.",
+  "id": "work.eusebius.ecclesiastical-history",
+  "languages": [
+   "grc"
+  ],
+  "title": "Historia ecclesiastica"
+ }
+}

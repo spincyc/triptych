@@ -1,0 +1,85 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "collection-metadata-json",
+   "byte_size": 1521,
+   "id": "artifact.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29.met-api-json-0f6aacd5",
+   "media_type": "application/json",
+   "notes": "The record supplies identity, approximate date, material, overall dimensions, public-domain status, and a full-object image URL. It supports one exemplar only.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 227306 isPublicDomain true and releases its collection data under its Open Access policy.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/227306",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "museum-object-photograph",
+   "byte_size": 1386840,
+   "id": "artifact.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29.met-open-access-full-object-image-f742bead",
+   "media_type": "image/jpeg",
+   "notes": "The 1185 by 2809 pixel image was visually inspected. It shows one face of the stiffened pointed body and the paired long hanging lappets with fringe. Its floral decoration is object-specific and must not be copied as a normative design.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 227306 public domain and makes this image available through its Open Access collection record.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://images.metmuseum.org/CRDImages/es/original/141379.jpg",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2021-06-29",
+  "editors": [
+   "The Metropolitan Museum of Art"
+  ],
+  "id": "edition.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The date is the API payload's metadataDate. The catalog identifies the object, approximate date, material, dimensions, and public-domain image; the full-object photograph was inspected separately.",
+  "publication": "The Metropolitan Museum of Art Collection API",
+  "title": "The Metropolitan Museum of Art collection record for Mitre, object 227306",
+  "translators": [],
+  "year": 2021
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29.met-api-json-0f6aacd5",
+   "artifact_type": "collection-metadata-json",
+   "context": "The museum identifies a mitre dated circa 1830, made of silk and metal thread, measuring 41.3 cm high by 33.7 cm wide. The linked public-domain photograph shows one pointed face and two long hanging lappets.",
+   "id": "passage.metropolitan-museum-of-art.mitre-227306.met-collection-record-2021-06-29.object-identity-and-morphology",
+   "locus": "object-227306.identity-dimensions-material",
+   "media_type": "application/json",
+   "notes": "Use only as a dated morphology exemplar. It does not establish whether the object belongs to the ceremonial's precious or gold-cloth category, and it does not establish prescribed 1962 dimensions, ornament, profile, color, or symbolism.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The Metropolitan Museum of Art marks object 227306 isPublicDomain true and releases its collection data under its Open Access policy.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/227306",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "remote",
+   "verified_on": null,
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "The Metropolitan Museum of Art",
+  "category": "museum-object",
+  "description": "The Metropolitan Museum of Art's cataloged mitre dated circa 1830. It is a material-culture exemplar of the two-panel body and paired hanging lappets, not evidence for a universal Roman profile, a 1962 ceremonial category, or prescribed ornament.",
+  "id": "work.metropolitan-museum-of-art.mitre-227306",
+  "languages": [
+   "en"
+  ],
+  "title": "Mitre (The Metropolitan Museum of Art, accession 48.77.2)"
+ }
+}

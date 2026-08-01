@@ -1,0 +1,87 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-page",
+   "byte_size": 14117,
+   "id": "artifact.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.lacuscurtius-mantele-5fecd505",
+   "media_type": "text/html",
+   "notes": "A web transcription, not a facsimile. The transcription embeds JavaScript tooltip code around some of its classical citations; that code is markup and is not part of the article.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "The 1875 edition is in the United States public domain by date of publication. LacusCurtius publishes this transcription of public-domain reference works. Only short clauses are quoted by consuming publications, and the retrieved bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Mantele.html",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 614,
+   "id": "artifact.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele-checked-text-591b04f4",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces three sentences of the 1875 edition, which is in the United States public domain by date of publication. It contains no markup belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [
+   "William Smith"
+  ],
+  "id": "edition.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "A dated delivery state of a transcription of the 1875 London edition. No printed volume was consulted for this record.",
+  "publication": "Dated web state of Bill Thayer's LacusCurtius transcription of the 1875 edition, consulted 2026-07-25",
+  "title": "A Dictionary of Greek and Roman Antiquities, 1875 edition, LacusCurtius transcription",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele-checked-text-591b04f4",
+   "artifact_type": "checked-transcription",
+   "context": "The article's account of napkins at Greek and Roman meals, read in the retrieved transcription in full. Registered as a material negative as well as a positive: the article covers the materials, sizes, uses and even the wearing of napkins as head-dress, and records no signalling function of any kind at table.",
+   "id": "passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele",
+   "locus": "Mantele",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The article's Greek equivalents and its parenthetical classical citations, including Xen. Cyrop. I.3 51, Quintil. I.5 57, Hor. Sat. II.4.81 and II.8.63, and Martial XII.29 and XIV.138, are omitted from the transcription and were not checked at those loci.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces three sentences of the 1875 edition, which is in the United States public domain by date of publication. It contains no markup belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele.json",
+   "verified_on": "2026-07-25",
+   "words": 105
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "William Smith, editor",
+  "category": "reference-dictionary",
+  "description": "The standard nineteenth-century English dictionary of classical realia. Its article Mantele describes the napkins used at Greek and Roman meals, including the mappa that guests brought with them to the table, and records no signalling function for any of them. Registered as an identified working authority on Greco-Roman dining, not as modern scholarship. Loci are article headwords.",
+  "id": "work.william-smith.dictionary-of-greek-and-roman-antiquities",
+  "languages": [
+   "en"
+  ],
+  "title": "A Dictionary of Greek and Roman Antiquities"
+ }
+}

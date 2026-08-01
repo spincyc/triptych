@@ -1,0 +1,1431 @@
+#!/usr/bin/env python3
+"""Walk the source library and emit what a reader needs to read it.
+
+`tools/source-library` validates some four hundred and eighty works, six hundred
+editions and well over a thousand passages, and until this tool existed none of
+it could be read. A passage record holds a checked transcription, its locus, its
+evidence states and the exact artifact that controls it; the only way to see one
+was to open a TOML file and know which one to open. Every count below is stated
+as a proportion rather than a figure, because the corpus grows weekly and a
+number written into prose here would be wrong within the month; `check` prints
+the current ones.
+
+    check      nothing withheld is emitted, and the page's derivation replayed
+    list       the corpus, filtered by author, language, category or rights
+    show       one work or edition in full, with every passage it carries
+    structure  write the spine, the per-edition files and the text payloads
+
+THE RIGHTS RULE IS THE WHOLE OF THIS TOOL, so it is stated once, here, and
+every verb reads it from `reading_of` below rather than deciding for itself.
+
+    A passage may be read here only when the artifact that controls it carries
+    an affirmative recorded distribution basis AND is stored `tracked`.
+
+Both halves are read from the record and neither is inferred from the bytes.
+`guidance/sources.md` is explicit that "`tracked` requires an affirmative
+recorded distribution basis; online availability and successful download are
+insufficient" — so the presence of a file on disk decides nothing, and an
+artifact whose rights are `restricted` or `unresolved` is refused even when its
+bytes are sitting in the tree. That refusal reaches the large majority of the
+corpus — roughly nine passages in ten — which is the honest answer for a body of
+material this much of which is under copyright or has never had its rights
+settled. A reader is owed that proportion plainly rather than a page that looks
+complete.
+
+A REFUSAL IS PUBLISHED, NEVER HIDDEN. Every passage the rule withholds is still
+listed, still named by its locus, still carries its editorial context and its
+evidence states, and states in place of the text which of the reasons below
+applies and what the record says about it. A blank where a text would be is
+indistinguishable from a text that is empty; a quiet omission is worse, because
+the reader cannot tell that anything is missing at all.
+
+WHAT COUNTS AS TEXT is narrower than "bytes we may distribute", and the second
+rule is why. Only two things are set as prose:
+
+  * a passage's own `text` — a transcription the record carries, which
+    `source-library` has already validated segment by segment against the
+    hash-pinned bytes it claims to reproduce; and
+  * the physical lines of a `text/plain` artifact, where the passage bounds them
+    with `physical_line_ranges`.
+
+Several dozen passages are bounded into `text/tab-separated-values` artifacts
+and are NOT read here, though the rights would allow it. A TSV row is a structured
+record — key, slot, incipit, two page numbers, then the words — and setting one
+as prose would print its keys and its pagination as though they were part of the
+prayer. The propers browser reads those artifacts through the schema they
+actually have, which is where that content belongs; this tool says so instead of
+approximating it.
+
+The library is read through `tools/source-library`, which is the one reader of
+these records and the thing that validates them. A second walk of the same TOML
+would be a second answer waiting to differ from the first — this repository has
+already paid for that, with two copies of the same propers that diverged in five
+ways before anything compared them. This file decides only what a reader sees.
+
+Nothing is scraped in the browser. The page fetches what `structure` writes.
+"""
+from __future__ import annotations
+
+import argparse
+import importlib.machinery
+import importlib.util
+import json
+import re
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+from typing import Any, Iterable
+
+ROOT = Path(__file__).resolve().parents[1]
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+
+class ReaderError(ValueError):
+    """The corpus cannot be projected for reading as asked."""
+
+
+# --- the one reader of the source records ----------------------------------
+#
+# source-library owns loading and validating this graph. Importing it is what
+# keeps there being one walk of the TOML rather than two; it is declared in
+# `requires` in tmt.json for the same reason. A hyphenated filename with no
+# suffix is not importable by name, so it is loaded by path — and registered in
+# sys.modules first, because its dataclasses resolve their annotations through
+# the module they were defined in and get None if it is not there.
+
+_LIBRARY_MODULE = "triptych_source_library"
+
+
+def source_library():
+    """The sibling tool, imported once."""
+    held = sys.modules.get(_LIBRARY_MODULE)
+    if held is not None:
+        return held
+    path = ROOT / "tools" / "source-library"
+    if not path.is_file():
+        raise ReaderError(f"{path} is missing; source-reader reads the library through it")
+    loader = importlib.machinery.SourceFileLoader(_LIBRARY_MODULE, str(path))
+    spec = importlib.util.spec_from_loader(_LIBRARY_MODULE, loader)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[_LIBRARY_MODULE] = module
+    loader.exec_module(module)
+    return module
+
+
+# --- the rights rule -------------------------------------------------------
+#
+# Read from the records. `source-library` owns the vocabulary — RIGHTS_STATUSES
+# and STORAGE_DISPOSITIONS are its constants — and the two sets below are the
+# subsets this tool will serve from. They are named here rather than inlined at
+# each test so that a rights position is stated in one place and can be argued
+# with in one place.
+
+# An affirmative recorded distribution basis. `restricted` is lawful project
+# access that does not include redistribution, and `unresolved` is a rights
+# question nobody has answered; neither is a basis for publishing anything.
+DISTRIBUTABLE_RIGHTS = ("public-domain", "licensed", "project-created")
+
+# A licence is a permission with conditions attached, and the condition this
+# corpus carries is attribution: the CC-BY and CC-BY-SA artifacts name the
+# person whose work is being reused. So a licensed text renders its
+# `rights_basis` BESIDE the words, at the point of use, and never once in a page
+# footer — a reader who copies a passage out has to carry the condition with it.
+ATTRIBUTION_REQUIRED = ("licensed",)
+
+# What may be set as prose. See the module docstring: a TSV row is a structured
+# record and a JPEG is a photograph, and neither becomes a reading by being
+# lawful to distribute.
+PROSE_MEDIA_PREFIX = "text/plain"
+
+SCHEMA = "triptych-source-reader/v1"
+DEFAULT_OUT = "src/web/data"
+STRUCTURE_RELATIVE = Path("structure") / "sources"
+INDEX_NAME = "index.json"
+EDITION_DIRECTORY = "editions"
+TEXT_DIRECTORY = "text"
+
+# The page's own derivation — what a choice selects, what a record is called,
+# and in what order. It exists once, in the browser, because the browser is what
+# performs it. `check` runs that file under node rather than re-deriving it here
+# in Python, which would be the second copy this repository keeps being bitten
+# by.
+BROWSER_MODEL = Path("src/web/browser/sources/reader-model.js")
+
+# A file name reaches a URL the browser builds, so an id that would leave the
+# data root is refused rather than trusted. Record ids are already lowercase and
+# dotted by the library's own ID_PATTERN; this is the second check.
+SAFE_ID = re.compile(r"[a-z0-9][a-z0-9._-]*\Z")
+
+YEAR = re.compile(r"(\d{4})")
+
+ADVISORY = (
+    "Derived from the source library's own work, edition, artifact, segment and "
+    "passage records. A passage is readable here only where the artifact that "
+    "controls it records an affirmative distribution basis and is stored in the "
+    "repository; every other passage is listed with the reason its text is not "
+    "shown. Rights are read from the records and never inferred from whether "
+    "bytes happen to be on disk."
+)
+
+SORTS = ("author", "title", "date", "readable")
+
+
+# --- reading one passage ---------------------------------------------------
+
+
+def _controller(library, passage: dict) -> tuple[Any, str | None]:
+    """The one artifact that controls a passage, directly or through a segment.
+
+    A version 2 passage chooses exactly one controller. Where that choice is a
+    segment, the artifact is the segment's — which may belong to another work
+    entirely, because a constituent inside an anthology is witnessed by the
+    container's bytes. The segment id is returned with it so a reader can see
+    that the evidence came in through a container rather than directly.
+    """
+    segment_id = passage.get("segment_id")
+    if isinstance(segment_id, str) and segment_id:
+        segment = library.records.get(segment_id)
+        if segment is None:
+            return None, segment_id
+        artifact_id = segment.data.get("artifact_id")
+        record = library.records.get(str(artifact_id or ""))
+        return (record.data if record is not None else None), segment_id
+    record = library.records.get(str(passage.get("artifact_id") or ""))
+    return (record.data if record is not None else None), None
+
+
+def _payload_lines(library, artifact: dict) -> list[str] | None:
+    """The physical lines of a tracked payload, or None when there are none."""
+    value = artifact.get("path")
+    if not isinstance(value, str) or not value:
+        return None
+    path = library.root / value
+    try:
+        if not path.is_file():
+            return None
+        return path.read_text(encoding="utf-8").split("\n")
+    except (OSError, UnicodeError):
+        return None
+
+
+def reading_of(library, passage: dict) -> dict:
+    """May this passage be read here, and if not, why not.
+
+    THE ONE PLACE THE RIGHTS RULE IS APPLIED. Every verb calls this; none of
+    them repeats the test. The refusals are ordered from the most general to the
+    most particular so that a reader is told the governing reason rather than an
+    incidental one — an artifact that is both `restricted` and remote is refused
+    for its rights, which is the fact that would still hold if the bytes were
+    fetched tomorrow.
+    """
+    artifact, segment_id = _controller(library, passage)
+    if artifact is None:
+        return {
+            "readable": False,
+            "withheld": "uncontrolled",
+            "reason": (
+                "No artifact record controls this passage, so nothing identifies "
+                "the bytes its text would come from."
+            ),
+            "segment_id": segment_id,
+        }
+
+    rights = str(artifact.get("rights_status") or "")
+    storage = str(artifact.get("storage") or "")
+    basis = str(artifact.get("rights_basis") or "")
+    common = {
+        "segment_id": segment_id,
+        "artifact_id": artifact.get("id"),
+        "artifact_type": artifact.get("artifact_type"),
+        "media_type": artifact.get("media_type"),
+        "rights": rights,
+        "rights_basis": basis,
+        "rights_jurisdiction": artifact.get("rights_jurisdiction"),
+        "storage": storage,
+        "source_url": artifact.get("source_url"),
+    }
+
+    if rights not in DISTRIBUTABLE_RIGHTS:
+        stated = {
+            "restricted": (
+                "The rights record states that lawful project access to this "
+                "artifact does not include redistribution from this repository."
+            ),
+            "unresolved": (
+                "The rights position for this artifact has not been settled, and "
+                "an unsettled question is not a permission."
+            ),
+        }.get(rights, f"This artifact records its rights as {rights!r}, which is not a basis for publishing it here.")
+        return {**common, "readable": False, "withheld": "rights", "reason": stated}
+
+    if storage != "tracked":
+        stated = {
+            "remote": (
+                "The exact bytes are not retained in this repository; the record "
+                "keeps their retrieval location, hash and rights instead."
+            ),
+            "restricted": (
+                "The bytes may not enter this repository, so there is nothing "
+                "here to set."
+            ),
+            "unavailable": (
+                "The record identifies an expected or previously consulted "
+                "object whose exact bytes cannot presently be obtained."
+            ),
+        }.get(storage, f"This artifact is stored {storage!r}, so its bytes are not here to read.")
+        return {**common, "readable": False, "withheld": "storage", "reason": stated}
+
+    text = passage.get("text")
+    if isinstance(text, str) and text.strip():
+        return {
+            **common,
+            "readable": True,
+            "source": "transcription",
+            "text": text,
+        }
+
+    ranges = passage.get("physical_line_ranges")
+    media = str(artifact.get("media_type") or "")
+    if isinstance(ranges, list) and ranges:
+        if not media.startswith(PROSE_MEDIA_PREFIX):
+            return {
+                **common,
+                "readable": False,
+                "withheld": "not-prose",
+                "reason": (
+                    f"This passage is bounded into a {media.split(';')[0]} artifact "
+                    "and records no transcription of its own. Setting a structured "
+                    "row as prose would print its keys and pagination as though "
+                    "they were part of the text, so it is not read here."
+                ),
+            }
+        lines = _payload_lines(library, artifact)
+        if lines is None:
+            return {
+                **common,
+                "readable": False,
+                "withheld": "no-payload",
+                "reason": (
+                    "The artifact is tracked but its payload could not be read "
+                    "from the path the record states."
+                ),
+            }
+        held: list[str] = []
+        for start, end in ranges:
+            if end > len(lines):
+                return {
+                    **common,
+                    "readable": False,
+                    "withheld": "no-payload",
+                    "reason": (
+                        f"The passage bounds lines {start}-{end} of an artifact "
+                        f"that holds {len(lines)}."
+                    ),
+                }
+            held.extend(lines[start - 1 : end])
+        return {
+            **common,
+            "readable": True,
+            "source": "physical-lines",
+            "text": "\n".join(held),
+        }
+
+    return {
+        **common,
+        "readable": False,
+        "withheld": "no-transcription",
+        "reason": (
+            "This passage records neither a transcription nor line bounds, so "
+            "the corpus identifies where it is without holding its words."
+        ),
+    }
+
+
+# --- the corpus, as works and editions -------------------------------------
+
+
+def _natural(value: str) -> tuple:
+    """Sort key that reads 11.6 before 11.19 rather than after it.
+
+    A locus is not a string and it is not a number. `De civitate Dei` XI.6 and
+    XI.19 sort the wrong way round under either, and a corpus whose passages
+    come back out of order is one a reader cannot step through.
+    """
+    parts = re.split(r"(\d+)", value or "")
+    return tuple((1, int(part)) if part.isdigit() else (0, part) for part in parts)
+
+
+def _year_of(edition: dict) -> int | None:
+    found = YEAR.search(str(edition.get("date") or ""))
+    return int(found.group(1)) if found else None
+
+
+def work_directory(library, work_id: str) -> str:
+    """Where one work's editions are written: `<namespace>/<work>/`.
+
+    Written into the spine by the generator, and followed by the browser, so
+    that the page never composes a path out of parts. The catena settled the
+    same thing the same way — its `index.json` writes each book's directory and
+    the padding its chapters take, rather than making every consumer know the
+    convention by heart.
+    """
+    record = library.records[work_id]
+    relative = record.path.parent.relative_to(library.source_root / "works")
+    return f"{EDITION_DIRECTORY}/{relative.as_posix()}/"
+
+
+def edition_stem(library, edition: dict) -> str:
+    """One edition's file name, under the path conventions.
+
+    ANYTHING WITH AN INHERENT ORDER SORTS IN THAT ORDER IN A LISTING, and an
+    edition is ordered by its date. So the file takes its year as a prefix and
+    a listing of a work's editions comes out chronologically instead of
+    alphabetically.
+
+    The year is DERIVED from the record's own `date` and never typed beside it:
+    a prefix hand-written next to the field it restates is a second source of
+    truth, and only one of the two will be read. Several tracked edition
+    directories carry their date as a suffix — `dods-1871` — and two carry none
+    at all, so this is the first listing of them that is actually chronological.
+    It is a derived browser path and not a rename: no record is re-keyed, no
+    citation moves, and the ids are untouched.
+
+    An undated edition sorts after every dated one rather than to the front: an
+    absent date is a gap, and a gap must not be promoted to the head of a
+    listing by an accident of collation.
+    """
+    leaf = library.records[edition["id"]].path.parent.name
+    year = _year_of(edition)
+    return f"{year:04d}-{leaf}.json" if year is not None else f"undated-{leaf}.json"
+
+
+def corpus(library) -> list[dict]:
+    """Every work, with its editions and their passages, in one pass.
+
+    Ownership is traversed the way `guidance/sources.md` requires: a passage
+    belongs to the work reached through its EDITION, never through the artifact
+    that controls it. The difference is not pedantic. The NPNF volumes are
+    tracked as anthologies whose `responsible` is their editors, so a passage of
+    Basil filed under its container would be published with Philip Schaff's name
+    on it.
+    """
+    records = library.records
+    works: dict[str, dict] = {}
+    for record in records.values():
+        if record.record_type != "work":
+            continue
+        data = record.data
+        works[record.record_id] = {
+            "id": record.record_id,
+            "title": data.get("title"),
+            "author": data.get("responsible"),
+            "category": data.get("work_type"),
+            "languages": list(data.get("languages") or ()),
+            "alternate_titles": list(data.get("alternate_titles") or ()),
+            "description": data.get("description"),
+            "editions": [],
+        }
+
+    artifacts_by_edition: dict[str, list[dict]] = {}
+    for record in records.values():
+        if record.record_type != "artifact":
+            continue
+        artifacts_by_edition.setdefault(str(record.data.get("edition_id") or ""), []).append(
+            record.data
+        )
+
+    passages_by_edition: dict[str, list[dict]] = {}
+    for record in records.values():
+        if record.record_type != "passage":
+            continue
+        passages_by_edition.setdefault(str(record.data.get("edition_id") or ""), []).append(
+            record.data
+        )
+
+    for record in records.values():
+        if record.record_type != "edition":
+            continue
+        data = record.data
+        work = works.get(str(data.get("work_id") or ""))
+        if work is None:
+            # A dangling edition is a validation failure that source-library
+            # reports; it is not this tool's to resolve, and inventing a work to
+            # hang it under would hide it.
+            continue
+        passages = []
+        for passage in passages_by_edition.get(record.record_id, ()):
+            passages.append({**passage, "reading": reading_of(library, passage)})
+        passages.sort(key=lambda one: _natural(str(one.get("locus") or "")))
+        artifacts = sorted(
+            artifacts_by_edition.get(record.record_id, ()),
+            key=lambda one: str(one.get("id") or ""),
+        )
+        work["editions"].append(
+            {
+                "id": record.record_id,
+                "title": data.get("title"),
+                "language": data.get("language"),
+                "date": data.get("date"),
+                "year": _year_of(data),
+                "publication": data.get("publication"),
+                "editors": list(data.get("editors") or ()),
+                "translators": list(data.get("translators") or ()),
+                "authority": data.get("authority"),
+                "jurisdiction": data.get("jurisdiction"),
+                "notes": data.get("notes"),
+                "directory": work_directory(library, work["id"]),
+                "file": edition_stem(library, data),
+                "artifacts": artifacts,
+                "passages": passages,
+            }
+        )
+
+    ordered = sorted(
+        works.values(),
+        key=lambda work: (str(work["author"] or "~"), str(work["title"] or ""), work["id"]),
+    )
+    for work in ordered:
+        # Chronological, and an undated edition last. The same rule the file
+        # names carry, applied to the order the page shows them in, so the
+        # listing and the directory agree.
+        work["editions"].sort(
+            key=lambda one: (one["year"] is None, one["year"] or 0, one["id"])
+        )
+    return ordered
+
+
+def _readable_count(edition: dict) -> int:
+    return sum(1 for passage in edition["passages"] if passage["reading"]["readable"])
+
+
+def tally(works: Iterable[dict]) -> dict:
+    works = list(works)
+    editions = [edition for work in works for edition in work["editions"]]
+    passages = [passage for edition in editions for passage in edition["passages"]]
+    return {
+        "works": len(works),
+        "editions": len(editions),
+        "artifacts": sum(len(edition["artifacts"]) for edition in editions),
+        "passages": len(passages),
+        "readable": sum(1 for passage in passages if passage["reading"]["readable"]),
+    }
+
+
+# --- selection -------------------------------------------------------------
+
+
+# A work with no edition still has to be matchable against the Find box, so the
+# work-level half of the haystack is built against this stand-in rather than
+# against a special case that would be free to search different fields.
+_NO_EDITION: dict = {
+    "title": None,
+    "publication": None,
+    "date": None,
+    "editors": (),
+    "translators": (),
+}
+
+
+def _haystack(work: dict, edition: dict) -> str:
+    return " ".join(
+        str(part or "")
+        for part in (
+            work["title"],
+            work["author"],
+            work["category"],
+            " ".join(work["alternate_titles"]),
+            work["description"],
+            edition["title"],
+            edition["publication"],
+            edition["date"],
+            " ".join(edition["editors"]),
+            " ".join(edition["translators"]),
+        )
+    ).lower()
+
+
+def selected(library, arguments: argparse.Namespace) -> list[dict]:
+    """Narrow the corpus to what the invocation asked for.
+
+    Filters hide EDITIONS rather than works, and a work disappears only when
+    none of its editions survives. Asking for Latin otherwise leaves an English
+    translation standing beside the Latin that matched, and the count then says
+    the corpus holds Latin it does not.
+    """
+    works = corpus(library)
+    kept: list[dict] = []
+    find = (getattr(arguments, "find", None) or "").lower()
+    # Does any control ask a question only an edition can answer? Eight works
+    # carry no edition record at all — their translations are witnessed inside
+    # an anthology owned by another work — and dropping them from every listing
+    # would be a false absence for records this corpus genuinely holds. So they
+    # survive the work-level controls and are dropped by the edition-level ones.
+    # `reader-model.js` decides this identically, and `check` replays it.
+    edition_scoped = any(
+        getattr(arguments, name, None)
+        for name in ("edition", "language", "rights")
+    ) or bool(getattr(arguments, "readable", False))
+    for work in works:
+        if getattr(arguments, "work", None) and work["id"] != arguments.work:
+            continue
+        if getattr(arguments, "author", None) and work["author"] != arguments.author:
+            continue
+        if getattr(arguments, "category", None) and work["category"] != arguments.category:
+            continue
+        editions = []
+        for edition in work["editions"]:
+            if getattr(arguments, "edition", None) and edition["id"] != arguments.edition:
+                continue
+            if getattr(arguments, "language", None) and edition["language"] != arguments.language:
+                continue
+            if getattr(arguments, "rights", None):
+                held = {
+                    passage["reading"].get("rights")
+                    for passage in edition["passages"]
+                } | {str(one.get("rights_status") or "") for one in edition["artifacts"]}
+                if arguments.rights not in held:
+                    continue
+            if getattr(arguments, "readable", False) and not _readable_count(edition):
+                continue
+            if find and find not in _haystack(work, edition):
+                continue
+            editions.append(edition)
+        if editions:
+            kept.append({**work, "editions": editions})
+        elif not work["editions"] and not edition_scoped and (
+            not find or find in _haystack(work, _NO_EDITION)
+        ):
+            kept.append({**work, "editions": []})
+
+    if getattr(arguments, "work", None) and not kept:
+        raise ReaderError(f"no work with id {arguments.work!r}")
+    if getattr(arguments, "edition", None) and not kept:
+        raise ReaderError(f"no edition with id {arguments.edition!r}")
+    if getattr(arguments, "author", None) and not kept:
+        raise ReaderError(f"no work names {arguments.author!r} as responsible")
+
+    sort = getattr(arguments, "sort", "author") or "author"
+    if sort == "title":
+        kept.sort(key=lambda work: (str(work["title"] or "").lower(), work["id"]))
+    elif sort == "date":
+        kept.sort(
+            key=lambda work: (
+                min((one["year"] is None, one["year"] or 0) for one in work["editions"]),
+                work["id"],
+            )
+        )
+    elif sort == "readable":
+        kept.sort(
+            key=lambda work: (
+                -sum(_readable_count(one) for one in work["editions"]),
+                work["id"],
+            )
+        )
+    return kept
+
+
+# --- facets ----------------------------------------------------------------
+
+
+def _century(year: int) -> int:
+    return (year // 100) * 100
+
+
+def _century_label(start: int) -> str:
+    if start < 0:
+        return f"{abs(start) // 100 + 1}th century BC"
+    ordinal = start // 100 + 1
+    suffix = "th" if 11 <= ordinal % 100 <= 13 else {1: "st", 2: "nd", 3: "rd"}.get(
+        ordinal % 10, "th"
+    )
+    return f"{ordinal}{suffix} century"
+
+
+def facets(works: list[dict]) -> dict:
+    """Every control the page offers, counted off the records that fill it.
+
+    Nothing here is hand-listed. A dropdown built from a table beside the data
+    can offer a value nothing matches, and `check` replays the page's own
+    narrowing against these counts precisely so that one cannot.
+    """
+    authors: dict[str, int] = {}
+    categories: dict[str, int] = {}
+    languages: dict[str, int] = {}
+    rights: dict[str, int] = {}
+    periods: dict[int, int] = {}
+    for work in works:
+        if work["author"]:
+            authors[work["author"]] = authors.get(work["author"], 0) + 1
+        if work["category"]:
+            categories[work["category"]] = categories.get(work["category"], 0) + 1
+        for edition in work["editions"]:
+            if edition["language"]:
+                languages[edition["language"]] = languages.get(edition["language"], 0) + 1
+            if edition["year"] is not None:
+                start = _century(edition["year"])
+                periods[start] = periods.get(start, 0) + 1
+            for artifact in edition["artifacts"]:
+                status = str(artifact.get("rights_status") or "")
+                if status:
+                    rights[status] = rights.get(status, 0) + 1
+    return {
+        # By name, because a reader looking for Augustine looks under A.
+        "authors": [
+            {"id": name, "works": count} for name, count in sorted(authors.items())
+        ],
+        # By how much of the corpus each reaches, so the control opens on the
+        # kinds of thing the library actually holds.
+        "categories": [
+            {"id": name, "works": count}
+            for name, count in sorted(categories.items(), key=lambda row: (-row[1], row[0]))
+        ],
+        "languages": [
+            {"id": name, "editions": count}
+            for name, count in sorted(languages.items(), key=lambda row: (-row[1], row[0]))
+        ],
+        "rights": [
+            {"id": name, "artifacts": count}
+            for name, count in sorted(rights.items(), key=lambda row: (-row[1], row[0]))
+        ],
+        # Chronological, which is the only order a period control may come in.
+        "periods": [
+            {"id": str(start), "label": _century_label(start), "editions": periods[start]}
+            for start in sorted(periods)
+        ],
+    }
+
+
+# --- structure -------------------------------------------------------------
+
+
+def _serialise(payload: Any) -> str:
+    return json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=1) + "\n"
+
+
+def spine(works: list[dict], counted: dict) -> dict:
+    """What the page fetches first: enough to search on, and nothing to read.
+
+    NO PROSE AND NO APPARATUS. A work's description, an edition's publication
+    facts, its artifacts and every one of its passages sit in the edition's own
+    file, and the words sit in a file per passage. A corpus of 1,241 passages
+    shipped as one document would make every reader pay for all of it to look at
+    any of it — the failure the catena measured at 605,923 bytes to render a
+    chapter that held nothing.
+    """
+    rows = []
+    for work in works:
+        rows.append(
+            {
+                "id": work["id"],
+                "title": work["title"],
+                "author": work["author"],
+                "category": work["category"],
+                "languages": work["languages"],
+                "alternate_titles": work["alternate_titles"],
+                # The directory sits on the work and the file name on the
+                # edition, so the long shared prefix is written once per work
+                # instead of once per edition. That is 78 KB of this file's
+                # first draft, spent restating the same path 634 times.
+                "directory": work["editions"][0]["directory"] if work["editions"] else None,
+                "editions": [
+                    {
+                        "id": edition["id"],
+                        "language": edition["language"],
+                        "date": edition["date"],
+                        "year": edition["year"],
+                        "file": edition["file"],
+                        "passages": len(edition["passages"]),
+                        "readable": _readable_count(edition),
+                        "rights": sorted(
+                            {
+                                str(one.get("rights_status") or "")
+                                for one in edition["artifacts"]
+                                if one.get("rights_status")
+                            }
+                        ),
+                    }
+                    for edition in work["editions"]
+                ],
+            }
+        )
+    return {
+        "schema": SCHEMA,
+        "advisory": ADVISORY,
+        "counted": counted,
+        "facets": facets(works),
+        # Where the two payload layers live. The page joins these to the
+        # `directory` and `file` above rather than knowing the layout itself.
+        "root": f"{STRUCTURE_RELATIVE.as_posix()}/",
+        "texts": f"{STRUCTURE_RELATIVE.as_posix()}/{TEXT_DIRECTORY}/",
+        "works": rows,
+    }
+
+
+def edition_payload(work: dict, edition: dict) -> dict:
+    """One edition in full, with every passage and no words.
+
+    The work's own record is carried here rather than in the spine, so that a
+    reader who opens an edition gets its whole context in the one fetch they
+    have already paid for, and the spine stays small enough to search in.
+    """
+    passages = []
+    for passage in edition["passages"]:
+        reading = passage["reading"]
+        row = {
+            "id": passage.get("id"),
+            "locus": passage.get("locus"),
+            "states": list(passage.get("states") or ()),
+            "context": passage.get("context"),
+            "notes": passage.get("notes"),
+            "verified_on": passage.get("verified_on"),
+            "readable": reading["readable"],
+            "artifact_id": reading.get("artifact_id"),
+            "artifact_type": reading.get("artifact_type"),
+            "media_type": reading.get("media_type"),
+            "rights": reading.get("rights"),
+            "rights_basis": reading.get("rights_basis"),
+            "rights_jurisdiction": reading.get("rights_jurisdiction"),
+            "storage": reading.get("storage"),
+            "source_url": reading.get("source_url"),
+            "segment_id": reading.get("segment_id"),
+        }
+        if reading["readable"]:
+            row["source"] = reading["source"]
+            row["words"] = len(str(reading["text"]).split())
+            row["text_path"] = (
+                f"{STRUCTURE_RELATIVE.as_posix()}/{TEXT_DIRECTORY}/{passage['id']}.json"
+            )
+            # The condition travels with the text it covers. A licensed artifact
+            # names the person whose work is being reused, and that name renders
+            # beside the words rather than in a footer a copied paragraph leaves
+            # behind.
+            if reading.get("rights") in ATTRIBUTION_REQUIRED:
+                row["acknowledgement"] = reading.get("rights_basis")
+        else:
+            row["withheld"] = reading["withheld"]
+            row["reason"] = reading["reason"]
+        passages.append(row)
+
+    return {
+        "schema": SCHEMA,
+        "work": {
+            "id": work["id"],
+            "title": work["title"],
+            "author": work["author"],
+            "category": work["category"],
+            "languages": work["languages"],
+            "alternate_titles": work["alternate_titles"],
+            "description": work["description"],
+        },
+        "edition": {
+            key: edition[key]
+            for key in (
+                "id",
+                "title",
+                "language",
+                "date",
+                "year",
+                "publication",
+                "editors",
+                "translators",
+                "authority",
+                "jurisdiction",
+                "notes",
+            )
+        },
+        "artifacts": [
+            {
+                "id": one.get("id"),
+                "artifact_type": one.get("artifact_type"),
+                "media_type": one.get("media_type"),
+                "rights": one.get("rights_status"),
+                "rights_basis": one.get("rights_basis"),
+                "rights_jurisdiction": one.get("rights_jurisdiction"),
+                "storage": one.get("storage"),
+                "source_url": one.get("source_url"),
+                "retrieved": one.get("retrieved"),
+                "byte_size": one.get("byte_size"),
+                "page_count": one.get("page_count"),
+                "notes": one.get("notes"),
+            }
+            for one in edition["artifacts"]
+        ],
+        "passages": passages,
+    }
+
+
+def run_structure(arguments: argparse.Namespace) -> dict:
+    library = load(arguments)
+    works = corpus(library)
+    counted = tally(works)
+    built = spine(works, counted)
+
+    files: dict[str, str] = {INDEX_NAME: _serialise(built)}
+    for work in works:
+        for edition in work["editions"]:
+            where = edition["directory"] + edition["file"]
+            files[where] = _serialise(edition_payload(work, edition))
+            for passage in edition["passages"]:
+                reading = passage["reading"]
+                if not reading["readable"]:
+                    continue
+                identifier = str(passage.get("id") or "")
+                if not SAFE_ID.fullmatch(identifier):
+                    raise ReaderError(f"passage id is not safe as a filename: {identifier!r}")
+                files[f"{TEXT_DIRECTORY}/{identifier}.json"] = _serialise(
+                    {
+                        "id": identifier,
+                        "locus": passage.get("locus"),
+                        "source": reading["source"],
+                        "language": edition["language"],
+                        "text": reading["text"],
+                        "artifact_id": reading.get("artifact_id"),
+                        "artifact_type": reading.get("artifact_type"),
+                        "rights": reading.get("rights"),
+                        "rights_basis": reading.get("rights_basis"),
+                        # Where this passage is read in context. Written by the
+                        # generator so that a link arriving from the catena with
+                        # nothing but a passage id can reach the whole edition
+                        # in one further fetch, without the page deriving an
+                        # edition out of the shape of an id. An id's spelling is
+                        # not a route, and treating it as one is how a renamed
+                        # record becomes a broken link nothing notices.
+                        "edition_id": edition["id"],
+                        "edition_path": f"{STRUCTURE_RELATIVE.as_posix()}/{where}",
+                        "work_id": work["id"],
+                    }
+                )
+
+    target = Path(arguments.out) / STRUCTURE_RELATIVE
+    if arguments.check:
+        held = _existing(target)
+        drifted = sorted(
+            name for name in set(files) | set(held) if files.get(name) != held.get(name)
+        )
+        if drifted:
+            raise ReaderError(
+                f"{target} has drifted from the sources at "
+                + ", ".join(drifted[:3])
+                + (f" (and {len(drifted) - 3} more)" if len(drifted) > 3 else "")
+                + "; run `source-reader structure` and commit the result"
+            )
+        return {**counted, "files": len(files), "current": str(target), "status": "ok"}
+
+    # This pass owns the directory and removes what it did not write. A file
+    # left behind after the record that produced it stopped being derived is the
+    # failure that looks like success: the page never asks for it, so nothing
+    # ever notices it is wrong.
+    if target.exists():
+        shutil.rmtree(target)
+    for name, body in files.items():
+        path = target / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(body, encoding="utf-8")
+    return {**counted, "files": len(files), "written": str(target), "status": "ok"}
+
+
+def _existing(target: Path) -> dict[str, str]:
+    if not target.is_dir():
+        return {}
+    return {
+        path.relative_to(target).as_posix(): path.read_text(encoding="utf-8")
+        for path in target.rglob("*.json")
+        if path.is_file()
+    }
+
+
+# --- check -----------------------------------------------------------------
+
+
+def run_check(arguments: argparse.Namespace) -> dict:
+    """Prove that nothing the records withhold is emitted, and replay the page.
+
+    THIS IS THE GATE THAT MATTERS, and it is not the one that looks obvious. The
+    transcriptions are already held to their bytes by `source-library`, segment
+    by segment, so re-checking them here would be a second answer to a settled
+    question. What nothing checked until now is the direction of the leak: that
+    the projection this tool writes carries no text for any record whose rights
+    refuse it. A rights rule enforced only where it is written is a rights rule
+    with no evidence behind it, and the failure it guards against — a restricted
+    text served under a permissive neighbour's basis — is invisible in the
+    output, because a paragraph that should not be there reads exactly like one
+    that should.
+    """
+    library = load(arguments)
+    works = corpus(library)
+    counted = tally(works)
+
+    leaked: list[str] = []
+    unexplained: list[str] = []
+    unattributed: list[str] = []
+    for work in works:
+        for edition in work["editions"]:
+            payload = edition_payload(work, edition)
+            for row in payload["passages"]:
+                if row["readable"]:
+                    if row.get("rights") not in DISTRIBUTABLE_RIGHTS:
+                        leaked.append(f"{row['id']}: readable under rights {row.get('rights')!r}")
+                    if row.get("storage") != "tracked":
+                        leaked.append(f"{row['id']}: readable from {row.get('storage')!r} storage")
+                    if row.get("rights") in ATTRIBUTION_REQUIRED and not row.get(
+                        "acknowledgement"
+                    ):
+                        unattributed.append(f"{row['id']}: licensed with no acknowledgement")
+                    continue
+                if not str(row.get("reason") or "").strip():
+                    unexplained.append(f"{row['id']}: withheld with no stated reason")
+    if leaked:
+        raise ReaderError("; ".join(leaked[:3]) + _and_more(leaked, 3))
+    if unattributed:
+        raise ReaderError("; ".join(unattributed[:3]) + _and_more(unattributed, 3))
+    if unexplained:
+        raise ReaderError("; ".join(unexplained[:3]) + _and_more(unexplained, 3))
+
+    replayed, skipped = replay_browser_model(spine(works, counted))
+    if replayed:
+        raise ReaderError("; ".join(replayed[:3]) + _and_more(replayed, 3))
+
+    return {
+        **counted,
+        "withheld": counted["passages"] - counted["readable"],
+        "library_errors": list(library.errors),
+        "replayed": skipped or BROWSER_MODEL.as_posix(),
+        "status": "ok",
+    }
+
+
+def _and_more(items: list[str], shown: int) -> str:
+    return f" (and {len(items) - shown} more)" if len(items) > shown else ""
+
+
+# --- the page's own derivation, replayed ------------------------------------
+#
+# The spine states five facet counts and a corpus total, and the page derives
+# the same numbers out of the works array every time a control moves. Two
+# derivations of one count is the pairing this repository has been bitten by, so
+# rather than trusting them to agree this runs the browser's own file under node
+# and compares. A control that offers an author no work will match, or a total
+# that disagrees with the rows under it, fails here instead of on the site.
+
+HARNESS = """
+const fs = require('fs');
+const source = fs.readFileSync(process.argv[1], 'utf8');
+const holder = { exports: {} };
+new Function('module', 'exports', source)(holder, holder.exports);
+const model = holder.exports;
+const spine = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+const works = spine.works || [];
+
+function count(state) {
+  return model.tally(model.narrow(works, Object.assign(model.blank(), state)));
+}
+
+const answer = {
+  whole: count({}),
+  authors: {},
+  categories: {},
+  languages: {},
+  periods: {},
+  orders: {}
+};
+for (const one of (spine.facets || {}).authors || []) {
+  answer.authors[one.id] = count({ author: one.id }).works;
+}
+for (const one of (spine.facets || {}).categories || []) {
+  answer.categories[one.id] = count({ category: one.id }).works;
+}
+for (const one of (spine.facets || {}).languages || []) {
+  answer.languages[one.id] = count({ language: one.id }).editions;
+}
+for (const one of (spine.facets || {}).periods || []) {
+  answer.periods[one.id] = count({ period: one.id }).editions;
+}
+// Every ordering must be a permutation of the same set: a sort that dropped or
+// duplicated a work would show a different corpus depending on the control.
+const everything = model.narrow(works, model.blank());
+for (const sort of ['author', 'title', 'date', 'readable']) {
+  answer.orders[sort] = model.order(everything.slice(), sort)
+    .map(function (row) { return row.work.id; }).sort();
+}
+process.stdout.write(JSON.stringify(answer));
+"""
+
+
+def replay_browser_model(built: dict) -> tuple[list[str], str]:
+    """Run the page's model over the spine and hold it to the facet counts."""
+    model = ROOT / BROWSER_MODEL
+    if not model.is_file():
+        return ([f"{BROWSER_MODEL.as_posix()}: not found"], "")
+    scratch = ROOT / "build" / "source-reader-replay.json"
+    scratch.parent.mkdir(parents=True, exist_ok=True)
+    scratch.write_text(_serialise(built), encoding="utf-8")
+    try:
+        completed = subprocess.run(
+            ["node", "-e", HARNESS, str(model), str(scratch)],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except FileNotFoundError:
+        return ([], "node is not installed; the page's own derivation was not replayed")
+    finally:
+        scratch.unlink(missing_ok=True)
+    if completed.returncode != 0:
+        return ([f"the page's derivation failed: {completed.stderr.strip()}"], "")
+
+    answer = json.loads(completed.stdout)
+    problems: list[str] = []
+    for field in ("works", "editions", "passages", "readable"):
+        if answer["whole"][field] != built["counted"][field]:
+            problems.append(
+                f"the page counts {answer['whole'][field]} {field} where the "
+                f"spine states {built['counted'][field]}"
+            )
+    for kind, key in (
+        ("authors", "works"),
+        ("categories", "works"),
+        ("languages", "editions"),
+        ("periods", "editions"),
+    ):
+        for row in built["facets"][kind]:
+            chosen = answer[kind].get(row["id"])
+            if chosen != row[key]:
+                problems.append(
+                    f"choosing {row['id']!r} selects {chosen} {key} where the "
+                    f"spine offers it as {row[key]}"
+                )
+    whole = sorted(work["id"] for work in built["works"])
+    for sort, ids in answer["orders"].items():
+        if ids != whole:
+            problems.append(f"ordering by {sort} does not return every work exactly once")
+    return (problems, "")
+
+
+# --- list and show ---------------------------------------------------------
+
+
+def run_list(arguments: argparse.Namespace) -> dict:
+    library = load(arguments)
+    works = selected(library, arguments)
+    return {
+        **tally(works),
+        "works_listed": [
+            {
+                "id": work["id"],
+                "title": work["title"],
+                "author": work["author"],
+                "category": work["category"],
+                "editions": [
+                    {
+                        "id": edition["id"],
+                        "title": edition["title"],
+                        "language": edition["language"],
+                        "date": edition["date"],
+                        "passages": len(edition["passages"]),
+                        "readable": _readable_count(edition),
+                    }
+                    for edition in work["editions"]
+                ],
+            }
+            for work in works
+        ],
+        "status": "ok",
+    }
+
+
+def run_show(arguments: argparse.Namespace) -> dict:
+    library = load(arguments)
+    works = selected(library, arguments)
+    return {
+        **tally(works),
+        "works_shown": [
+            {**edition_payload(work, edition), "work_id": work["id"]}
+            for work in works
+            for edition in work["editions"]
+        ],
+        "status": "ok",
+    }
+
+
+def load(arguments: argparse.Namespace):
+    library = source_library().load_library(
+        ROOT, check_binding_fingerprints=False
+    )
+    if getattr(arguments, "strict", False) and library.errors:
+        raise ReaderError(
+            "the source library does not validate: " + library.errors[0]
+        )
+    return library
+
+
+# --- rendering -------------------------------------------------------------
+
+
+def _plural(count: int, noun: str) -> str:
+    return f"{count} {noun}" if count == 1 else f"{count} {noun}s"
+
+
+def _print_work(record: dict, width: int) -> None:
+    for index, edition in enumerate(record["editions"]):
+        name = record["title"] if index == 0 else ""
+        held = (
+            f"{edition['readable']}/{edition['passages']}"
+            if edition["passages"]
+            else "--"
+        )
+        print(
+            f"{(record['author'] or '')[:24]:<24} {name[:width]:<{width}} "
+            f"{(edition['date'] or '')[:10]:<10} {edition['language'] or '':<6} "
+            f"{held:>7}  {edition['id']}"
+        )
+
+
+def _print_edition(record: dict) -> None:
+    work = record["work"]
+    edition = record["edition"]
+    print(f"{work['author'] or '(no author recorded)'}  —  {work['title']}")
+    print(f"  work       {work['id']}")
+    print(f"  category   {work['category']}")
+    if work["alternate_titles"]:
+        print(f"  also       {'; '.join(work['alternate_titles'])}")
+    print(f"  edition    {edition['title']}")
+    print(f"             {edition['id']}")
+    print(f"  language   {edition['language']}    date {edition['date']}")
+    if edition["translators"]:
+        print(f"  translated {', '.join(edition['translators'])}")
+    if edition["editors"]:
+        print(f"  edited     {', '.join(edition['editors'])}")
+    print(f"  artifacts  {len(record['artifacts'])}")
+    for artifact in record["artifacts"]:
+        print(
+            f"    {artifact['rights']:<15} {artifact['storage']:<11} "
+            f"{artifact['media_type']}"
+        )
+    readable = sum(1 for one in record["passages"] if one["readable"])
+    print(f"  passages   {readable} of {len(record['passages'])} readable here")
+    for passage in record["passages"]:
+        if passage["readable"]:
+            mark = f"{passage['words']} words"
+            print(f"    {passage['locus']:<28} {mark:>12}  {passage['source']}")
+        else:
+            print(f"    {passage['locus']:<28} {'not shown':>12}  {passage['withheld']}")
+            print(f"      {passage['reason']}")
+
+
+def render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        print("source-reader error: invalid payload", file=sys.stderr)
+        return 70
+    if arguments.json or arguments.format == "json":
+        print_json(payload)
+        return 0
+    if arguments.format == "yaml":
+        import yaml
+
+        print(
+            yaml.safe_dump(payload, allow_unicode=True, sort_keys=True, width=100).rstrip()
+        )
+        return 0
+
+    listed = payload.get("works_listed") or ()
+    width = min(46, max((len(str(one["title"] or "")) for one in listed), default=0))
+    for record in listed:
+        _print_work(record, width)
+    for index, record in enumerate(payload.get("works_shown") or ()):
+        if index:
+            print()
+        _print_edition(record)
+
+    print(
+        ", ".join(
+            _plural(payload[field], noun)
+            for field, noun in (
+                ("works", "work"),
+                ("editions", "edition"),
+                ("artifacts", "artifact"),
+                ("passages", "passage"),
+            )
+        )
+        + f"; {payload['readable']} readable here."
+    )
+    if "withheld" in payload:
+        print(f"  passages the rights records withhold: {payload['withheld']}")
+        print(f"  every one of them listed with its reason: yes")
+        for line in payload.get("library_errors") or ():
+            print(f"  the library reports: {line}")
+        print(f"  the page's own derivation, replayed: {payload['replayed']}")
+    if payload.get("written"):
+        print(f"  -> {payload['written']} ({payload['files']} files)")
+    if payload.get("current"):
+        print(f"  {payload['current']} is current ({payload['files']} files)")
+    return 0
+
+
+# Captured, never composed. Regenerate with `make recapture-examples`.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/tpt source-reader check",
+            (
+                "479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.",
+                "  passages the rights records withhold: 1121",
+                "  every one of them listed with its reason: yes",
+                "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
+            ),
+        ),
+        Example(
+            "tools/tpt source-reader check --rights licensed",
+            (
+                "... 4 more lines",
+            ),
+            "the licensed artifacts alone: each readable one must carry its acknowledgement",
+        ),
+    ),
+    "list": (
+        Example(
+            "tools/tpt source-reader list --author 'Augustine of Hippo'",
+            (
+                "Augustine of Hippo       De Genesi ad litteram                  1841       la       12/12  edition.augustine.de-genesi-ad-litteram.migne-pl-34",
+                "... 8 more lines",
+            ),
+        ),
+        Example(
+            "tools/tpt source-reader list --language grc --sort date",
+            (
+                "... 12 more lines",
+            ),
+            "the Greek editions, earliest first",
+        ),
+    ),
+    "show": (
+        Example(
+            "tools/tpt source-reader show --edition edition.matthew-arnold.dover-beach.macmillan-1867-uva-lic",
+            (
+                "... 12 more lines",
+            ),
+            "a licensed edition: the acknowledgement its licence requires travels with the text",
+        ),
+        Example(
+            "tools/tpt source-reader show --edition edition.augustine.de-civitate-dei.dods-1871",
+            (
+                "... 36 more lines",
+            ),
+        ),
+    ),
+    "structure": (
+        Example(
+            "tools/tpt source-reader structure --out build/example-sources",
+            (
+                "479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.",
+                "  -> build/example-sources/structure/sources (780 files)",
+            ),
+            "WRITES. --out here is untracked; the default writes the tracked src/web/data",
+        ),
+        Example(
+            "tools/tpt source-reader structure --check",
+            (
+                "479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.",
+                "  src/web/data/structure/sources is current (780 files)",
+            ),
+            "writes nothing; refuses when the tracked projection has drifted from the records",
+        ),
+    ),
+}
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--work", help="one work, by record id")
+    shared.add_argument("--edition", help="one edition, by record id")
+    shared.add_argument("--author", help="one work's responsible creator or body, exactly")
+    shared.add_argument("--language", help="one edition language code as the records state it")
+    shared.add_argument("--category", help="one work_type as the records state it")
+    shared.add_argument(
+        "--rights",
+        help="only records touching this rights status: public-domain, licensed, ...",
+    )
+    shared.add_argument(
+        "--readable",
+        action="store_true",
+        help="only editions carrying at least one passage that may be read here",
+    )
+    shared.add_argument("--find", help="match title, author, publication, editors or notes")
+    shared.add_argument("--sort", choices=SORTS, default="author")
+    shared.add_argument("--format", choices=("text", "yaml", "json"), default="text")
+    shared.add_argument(
+        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
+    )
+    shared.add_argument("--out", default=DEFAULT_OUT, help="where `structure` writes")
+    shared.add_argument(
+        "--check",
+        action="store_true",
+        help="`structure`: prove the tracked projection matches the records, and write nothing",
+    )
+    shared.add_argument(
+        "--strict",
+        action="store_true",
+        help="refuse to run at all while the source library reports any validation error",
+    )
+
+    parser = argparse.ArgumentParser(
+        prog="source-reader",
+        description="Read the source corpus: search it, and step through a work passage by passage.",
+        parents=[shared],
+    )
+    examples_live_on_the_verbs(parser, "source-reader")
+    sub = parser.add_subparsers(dest="command")
+    with_examples(
+        sub.add_parser(
+            "check",
+            help="prove nothing the rights records withhold is emitted",
+            parents=[shared],
+        ),
+        EXAMPLES["check"],
+    )
+    with_examples(
+        sub.add_parser("list", help="one line per edition", parents=[shared]),
+        EXAMPLES["list"],
+    )
+    with_examples(
+        sub.add_parser(
+            "show", help="one edition in full, with every passage", parents=[shared]
+        ),
+        EXAMPLES["show"],
+    )
+    with_examples(
+        sub.add_parser(
+            "structure", help="write what the reading page fetches", parents=[shared]
+        ),
+        EXAMPLES["structure"],
+    )
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={
+            "check": run_check,
+            "list": run_list,
+            "show": run_show,
+            "structure": run_structure,
+        },
+        renderer=render,
+        prefix="source-reader",
+        argv=argv,
+        default_verb="check",
+        dependency_message="install PyYAML (requirements-tools.txt) for --format yaml",
+        mapped_errors={ReaderError: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

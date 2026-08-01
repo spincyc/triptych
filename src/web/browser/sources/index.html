@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Source Library</title>
+<meta name="description" content="Search the source corpus by author, title, language, period and rights, then read a work passage by passage.">
+<!-- The shared machinery first, then this section's colour. Both are local;
+     the page makes no external request of any kind. -->
+<link rel="stylesheet" href="../shared/browser-core.css">
+<link rel="stylesheet" href="sources.css">
+</head>
+<body class="sources-page">
+<a class="skip-link" href="#reading">Skip to the corpus</a>
+
+<header class="page-header">
+  <h1><span class="page-mark" aria-hidden="true">☧</span>The Source Library</h1>
+  <p class="lede">
+    Every work, edition, artifact and passage the project has identified — the
+    Greek, the Latin and the English of a thing kept apart, because they are
+    three editions and not one text. Search it, open a work, and step through it
+    passage by passage. Where a passage may be read here it is set in full;
+    where it may not, it is still listed, and the reason is given in place of
+    the words. Nothing on this page is written by hand:
+    <code>tools/tpt source-reader</code> is what generates it.
+  </p>
+  <p class="tally" id="tally"></p>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="controls" class="controls" aria-labelledby="controls-heading">
+  <h2 id="controls-heading" class="visually-hidden">Narrow the corpus</h2>
+
+  <div class="field">
+    <label for="author-select">Author</label>
+    <select id="author-select" name="author" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="category-select">Kind</label>
+    <select id="category-select" name="category" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="language-select">Language</label>
+    <select id="language-select" name="language" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="period-select">Period</label>
+    <select id="period-select" name="period" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="rights-select">Rights</label>
+    <select id="rights-select" name="rights" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="sort-select">Order</label>
+    <select id="sort-select" name="sort" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="find-input">Find</label>
+    <input id="find-input" name="find" type="search" autocomplete="off"
+           placeholder="title, author, alias or id" disabled>
+  </div>
+
+  <div class="field field-check">
+    <input id="readable-input" name="readable" type="checkbox" disabled>
+    <label for="readable-input">Only what can be read here</label>
+  </div>
+</form>
+
+<!-- Not a live region: replacing it would read the whole corpus aloud on every
+     change. The shared script announces a one-line summary instead. -->
+<main id="reading" class="reading" tabindex="-1" aria-busy="true">
+  <div id="finder" class="finder">
+    <p class="placeholder">Loading the corpus…</p>
+  </div>
+  <div id="reader" class="reader" hidden></div>
+</main>
+
+<footer class="page-footer">
+  <p>
+    A <strong>work</strong> is the intellectual thing — a treatise, a homily, a
+    decree. An <strong>edition</strong> is one materially identified form of it
+    whose wording or authority can differ from another's, so a Greek original,
+    Migne's Latin and a public-domain English translation are three editions and
+    never one work with three texts. An <strong>artifact</strong> is the exact
+    bytes that were acquired, with their hash and their rights. A
+    <strong>passage</strong> is an addressable place in an edition, controlled by
+    exactly one artifact. Nothing here flattens those four into one.
+  </p>
+  <p>
+    <strong>Rights are read from the records, never from the disk.</strong> A
+    passage is set here only where the artifact controlling it records an
+    affirmative distribution basis and is stored in the repository. Most of this
+    corpus fails that test — it is under copyright, or its rights have never been
+    settled — and those passages are listed with the reason rather than quietly
+    dropped. A record you cannot read here is still a record you can find, cite
+    and follow to its source.
+  </p>
+  <!-- The caution the corpus carries about itself, written here from the file
+       rather than repeated in this page. The generator states it once and every
+       consumer of the file gets it; a second copy in this markup would be free
+       to disagree with the one the data carries. -->
+  <p class="advisory" id="advisory"></p>
+  <p>
+    <a href="../liturgy/day.html">Today’s Missal</a> ·
+    <a href="../liturgy/">The propers of the Mass</a> ·
+    <a href="../scripture/">The Story of Salvation</a> ·
+    <a href="../catena/">Catena Omnia</a> ·
+    <a href="../history/">How the Missal Changed</a> ·
+    <a href="../texts/">Every Document</a>
+  </p>
+</footer>
+
+<script src="../shared/browser-core.js"></script>
+<script src="reader-model.js"></script>
+<script src="sources.js"></script>
+</body>
+</html>

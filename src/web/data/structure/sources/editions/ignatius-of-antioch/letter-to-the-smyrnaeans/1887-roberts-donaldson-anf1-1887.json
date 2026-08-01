@@ -1,0 +1,65 @@
+{
+ "artifacts": [],
+ "edition": {
+  "authority": null,
+  "date": "1887",
+  "editors": [
+   "Alexander Roberts",
+   "James Donaldson",
+   "A. Cleveland Coxe"
+  ],
+  "id": "edition.ignatius-of-antioch.letter-to-the-smyrnaeans.roberts-donaldson-anf1-1887",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The volume prints the shorter middle-recension translation and the expanded long-recension translation in parallel columns. Publication uses must identify which column controls a claim.",
+  "publication": "In The Ante-Nicene Fathers, volume 1, pp. 86-92 (Buffalo: Christian Literature Publishing Company, 1887)",
+  "title": "The Epistle of Ignatius to the Smyrnaeans",
+  "translators": [
+   "Alexander Roberts",
+   "James Donaldson"
+  ],
+  "year": 1887
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-djvu-ocr-12cdc519",
+   "artifact_type": "ocr-text",
+   "context": "The shorter-recension column was inspected under chapter VII. It says that the opponents abstain from Eucharist and prayer because they do not confess the Eucharist to be the flesh of Jesus Christ that suffered for sins and was raised by the Father; it then counsels separation from their teaching. The interleaved long-recension expansion is not used.",
+   "id": "passage.ignatius-of-antioch.letter-to-the-smyrnaeans.roberts-donaldson-anf1-1887.7.short-recension",
+   "locus": "7",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The exact OCR and identified 1887 edition control attribution and bounded sense, not a critical Greek text. The passage is not a direct commentary on John 6.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The underlying Buffalo 1887 volume and its 1885-noticed text are public domain in the United States, and Internet Archive records the item as NOT_IN_COPYRIGHT in that region. This exact uncorrected OCR is an automated transcription of the public-domain scan with no identified new editorial contribution; Triptych retains it as a locating and bounded-search representation, not as textual control.",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.ignatius-of-antioch.letter-to-the-smyrnaeans.roberts-donaldson-anf1-1887.anf1-ocr-12cdc519",
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/antenicenefathers01robe/antenicenefathers01robe_djvu.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.ignatius-of-antioch.letter-to-the-smyrnaeans.roberts-donaldson-anf1-1887.7.short-recension.json",
+   "verified_on": null,
+   "words": 195
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Epistle to the Smyrnaeans",
+   "Ad Smyrnaeos"
+  ],
+  "author": "Ignatius of Antioch",
+  "category": "patristic-letter",
+  "description": "Ignatius's letter to the church at Smyrna. Edition records must distinguish the middle-recension text from the expanded long recension transmitted beside it in some older collections.",
+  "id": "work.ignatius-of-antioch.letter-to-the-smyrnaeans",
+  "languages": [
+   "grc"
+  ],
+  "title": "Letter to the Smyrnaeans"
+ }
+}

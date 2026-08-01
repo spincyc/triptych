@@ -1,0 +1,90 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile",
+   "byte_size": 11026232,
+   "id": "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2",
+   "media_type": "application/pdf",
+   "notes": "The PDF has 539 pages. Printed page 271 is PDF page 292 and Internet Archive leaf n303. Its embedded text layer was used only as a locating aid; the passage record was checked against a page rendering.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The English volume was published in 1900 and is in the United States public domain by publication date. Guéranger died in 1875 and the named translator, Laurence Shepherd, died in 1885. The Internet Archive/Google scan is a mechanical facsimile of that public-domain printing; no separate creative copyright claim is relied upon.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/V11TheLiturgicalYear/V11TheLiturgicalYear.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 363,
+   "id": "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.vol-xi-p-271-checked-text",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces two sentences from a United States public-domain volume published in 1900. It was manually collated against a page rendering from the hashed Internet Archive facsimile and contains no host markup.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1900",
+  "editors": [],
+  "id": "edition.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "Second edition. The title page identifies this as Time after Pentecost, volume II; it is volume XI in the complete English series. The registered facsimile is Internet Archive item V11TheLiturgicalYear, digitized from a Google Books scan.",
+  "publication": "Dublin: James Duffy and Co., 1900",
+  "title": "The Liturgical Year: Time after Pentecost, Volume II",
+  "translators": [
+   "Dom Laurence Shepherd"
+  ],
+  "year": 1900
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.vol-xi-p-271-checked-text",
+   "artifact_type": "checked-transcription",
+   "context": "Guéranger's direct theological reception of the Tenth Sunday after Pentecost Postcommunion, printed immediately after the Communion antiphon and immediately before the Latin and English Postcommunion on page 271. Read from PDF page 292 rendered at 160 dpi and visually checked against the hashed facsimile. It attributes sacramental repair and the preservation and increase of spiritual treasure to continuing divine aid; it does not establish the prayer's lexical meaning, authorship, date, or original calendar assignment.",
+   "id": "passage.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.vol-xi-p-271",
+   "locus": "vol-xi-p-271",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Printed p. 271; Internet Archive leaf n303. Transcription preserves the printing's wording and punctuation but regularizes line-end word division. This passage is lawful to quote as public-domain text; consumers should keep Guéranger's fuller theology attributed to him.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces two sentences from a United States public-domain volume published in 1900. It was manually collated against a page rendering from the hashed Internet Archive facsimile and contains no host markup.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.vol-xi-p-271.json",
+   "verified_on": "2026-07-28",
+   "words": 64
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "L'Année liturgique"
+  ],
+  "author": "Prosper Guéranger",
+  "category": "liturgical-commentary",
+  "description": "Guéranger's historical and theological commentary on the cycle of the Roman liturgical year. English editions translate the original French work; their interpretive comments are reception witnesses rather than promulgating liturgical sources.",
+  "id": "work.prosper-gueranger.the-liturgical-year",
+  "languages": [
+   "fr",
+   "en"
+  ],
+  "title": "The Liturgical Year"
+ }
+}

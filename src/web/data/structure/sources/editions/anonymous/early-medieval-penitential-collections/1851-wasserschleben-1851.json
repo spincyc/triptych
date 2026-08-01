@@ -1,0 +1,74 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan",
+   "byte_size": 59838797,
+   "id": "artifact.anonymous.early-medieval-penitential-collections.wasserschleben-1851.ia-pdf-17e29bfa",
+   "media_type": "application/pdf",
+   "notes": "Remote because the complete 756-page scan is disproportionate to the bounded passages used. Printed pp. 158-159 and 211-212 were directly inspected; OCR was only a finding aid.",
+   "page_count": null,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The medieval texts and 1851 edition are public domain by age.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/diebussordnungen00wass/diebussordnungen00wass.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1851",
+  "editors": [
+   "Hermann Joseph Wasserschleben"
+  ],
+  "id": "edition.anonymous.early-medieval-penitential-collections.wasserschleben-1851",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "Latin penitential texts with German introduction and manuscript apparatus. This historical edition is used for exact printed items and its visible variant notes, not as a single uniform medieval code.",
+  "publication": "Halle: C. Graeger",
+  "title": "Die Bussordnungen der abendländischen Kirche",
+  "translators": [],
+  "year": 1851
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.anonymous.early-medieval-penitential-collections.wasserschleben-1851.ia-pdf-17e29bfa",
+   "artifact_type": "scan",
+   "context": "Capitula Dacheriana c. 151, pp. 158-159, and the related Anglo-Saxon penitential unit X, De vexatis a diabulo, sections 1-5, pp. 211-212, directly inspected together with the printed apparatus.",
+   "id": "passage.anonymous.early-medieval-penitential-collections.wasserschleben-1851.dacheriana-151-and-anglo-saxon-x",
+   "locus": "dacheriana-c-151",
+   "media_type": "application/pdf",
+   "notes": "The unit differentiates circumstances affecting prayer and commemoration and separates permitted materials from incantation; the apparatus records variant titles and omissions, including limited manuscript support for section 5. No prevalence, diagnosis, enforcement, or uniform-code claim.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The medieval texts and 1851 edition are public domain by age.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/diebussordnungen00wass/diebussordnungen00wass.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-28",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Bussordnungen der abendländischen Kirche"
+  ],
+  "author": "Anonymous and attributed compilers",
+  "category": "medieval-penitential-compilation",
+  "description": "A work-level container for the discrete penitential materials printed with manuscript apparatus by Wasserschleben. Attribution, numbering, and manuscript presence remain item-specific.",
+  "id": "work.anonymous.early-medieval-penitential-collections",
+  "languages": [
+   "la"
+  ],
+  "title": "Early medieval penitential collections"
+ }
+}

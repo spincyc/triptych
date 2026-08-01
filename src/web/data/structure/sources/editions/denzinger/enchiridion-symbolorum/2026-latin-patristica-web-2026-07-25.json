@@ -1,0 +1,47 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "content-html",
+   "byte_size": 2333435,
+   "id": "artifact.denzinger.enchiridion-symbolorum.latin-patristica-web-2026-07-25.patristica-latin-html",
+   "media_type": "text/html",
+   "notes": "Single-page Latin Enchiridion with revised (DS) numbers beside the older (DB) numbers. It carries, among much else, Lateran IV Firmiter at DS 801, the Second Council of Lyons on the lot of the dead at DS 856-859, Benedictus Deus at DS 1000-1002, the Florentine Laetentur caeli at DS 1304-1306, Trent session VI canon 30 at DS 1580, and the Tridentine decree on purgatory at DS 1820. Some non-ASCII characters in the French section headings are mis-encoded in the delivered bytes. Restricted bytes not retained.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "restricted",
+   "rights_basis": "The patristica.net presentation supplies no redistribution grant for these exact bytes, and the compilation's modern apparatus and numbering are editorial work of successive Denzinger editors. The ancient and medieval documents transcribed within it are themselves public domain.",
+   "rights_jurisdiction": null,
+   "source_url": "https://patristica.net/denzinger/enchiridion-symbolorum.html",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [],
+  "id": "edition.denzinger.enchiridion-symbolorum.latin-patristica-web-2026-07-25",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "A dated web transcription of the Latin compilation printing the revised (DS) marginal numbers beside the older (DB) numbers. The page does not identify the exact print edition transcribed, so it serves as a finding aid and convenient Latin witness whose readings consumers corroborate against the underlying public-domain documents; its editorial query marks (for example 'eam (eum?)' at DS 503) are reproduced or noted rather than silently resolved.",
+  "publication": "patristica.net web presentation of the Latin Enchiridion symbolorum with the revised numbering printed in parallel with the older numbering, retrieved 2026-07-25",
+  "title": "Enchiridion symbolorum, Latin with dual numbering — patristica.net web state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Denzinger",
+   "The Sources of Catholic Dogma"
+  ],
+  "author": "Heinrich Denzinger and successive editors",
+  "category": "doctrinal-compilation",
+  "description": "Denzinger's standard numbered compilation of creeds, conciliar definitions, and magisterial documents, repeatedly re-edited since 1854. Loci are marginal numbers: the older numbering (through the 30th edition, cited as DB) and the revised Schoenmetzer/Huenermann numbering (from the 32nd edition, cited as DS or DH) differ, and edition records identify which system a witness uses. The compilation is a finding aid to its underlying documents, not a substitute witness for them.",
+  "id": "work.denzinger.enchiridion-symbolorum",
+  "languages": [
+   "la"
+  ],
+  "title": "Enchiridion symbolorum, definitionum et declarationum de rebus fidei et morum"
+ }
+}

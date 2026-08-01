@@ -1,0 +1,47 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-periodical-volume-pdf",
+   "byte_size": 3679255,
+   "id": "artifact.holy-see.acta-sanctae-sedis.volume-6-1870-1871.vatican-ocr-pdf-7e480931",
+   "media_type": "application/pdf",
+   "notes": "The PDF contains an ABBYY FineReader 9.0 OCR layer, but it is a restricted nonretained artifact and is not registered as indexable text. The Postquam Dei munere constituent and its adjacent boundaries on artifact pp. 65-67 were inspected. Exact bytes are identified but not retained.",
+   "page_count": 776,
+   "retrieved": "2026-07-24",
+   "rights": "restricted",
+   "rights_basis": "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, did not establish repository redistribution permission.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-06-1870-71-ocr.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1870-1871",
+  "editors": [
+   "Pietro Avanzini"
+  ],
+  "id": "edition.holy-see.acta-sanctae-sedis.volume-6-1870-1871",
+  "jurisdiction": null,
+  "language": "mul",
+  "notes": "The complete sixth volume. Separately modeled constituent acts retain their own work and edition identities while pointing to the exact volume artifact through bounded segments.",
+  "publication": "Acta Sanctae Sedis 6 (1870-1871)",
+  "title": "Acta Sanctae Sedis, volume 6",
+  "translators": [],
+  "year": 1870
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "ASS",
+   "Acta Sanctae Sedis in compendium opportune redacta"
+  ],
+  "author": "Holy See",
+  "category": "official-periodical",
+  "description": "The Holy See periodical that preceded Acta Apostolicae Sedis. Volume editions and exact delivery artifacts remain container identities distinct from the papal acts and other documents printed within them.",
+  "id": "work.holy-see.acta-sanctae-sedis",
+  "languages": [],
+  "title": "Acta Sanctae Sedis"
+ }
+}

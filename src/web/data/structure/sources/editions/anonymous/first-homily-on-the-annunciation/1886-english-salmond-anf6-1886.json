@@ -1,0 +1,78 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-page",
+   "byte_size": 20544,
+   "id": "artifact.anonymous.first-homily-on-the-annunciation.english-salmond-anf6-1886.newadvent-06091-3c7d413b",
+   "media_type": "text/html",
+   "notes": "The New Advent breadcrumb labels the page with Gregory's traditional attribution, while the ANF source hierarchy places it under 'Dubious or Spurious Writings.' Work identity follows the latter caution.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "public-domain",
+   "rights_basis": "The 1886 ANF English translation is in the United States public domain by date of publication. New Advent's present-day HTML is not retained, and its markup is not included in the public-domain claim.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.newadvent.org/fathers/06091.htm",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1886",
+  "editors": [
+   "Alexander Roberts",
+   "James Donaldson",
+   "A. Cleveland Coxe"
+  ],
+  "id": "edition.anonymous.first-homily-on-the-annunciation.english-salmond-anf6-1886",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "ANF prints the text within Gregory Thaumaturgus's 'Dubious or Spurious Writings' under the grouping 'Four Homilies.' The edition-level ascription is transmission history, not accepted authorship.",
+  "publication": "Ante-Nicene Fathers, volume 6, Buffalo: Christian Literature Publishing Co., 1886",
+  "title": "The First Homily: On the Annunciation to the Holy Virgin Mary",
+  "translators": [
+   "S. D. F. Salmond"
+  ],
+  "year": 1886
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.anonymous.first-homily-on-the-annunciation.english-salmond-anf6-1886.newadvent-06091-3c7d413b",
+   "artifact_type": "web-page",
+   "context": "The final paragraph was read together with the homily's title and the ANF editorial placement. It contrasts the one wrapped in swaddling clothes with the creator clothed in light, describes the manger for dumb brutes and the feeding-board for cattle, and calls Christ heavenly Bread providing spiritual sustenance. The wording is verified in Salmond's English, but author and date are not; it may be cited only as anonymous or pseudo-Gregorian transmission.",
+   "id": "passage.anonymous.first-homily-on-the-annunciation.english-salmond-anf6-1886.manger-and-heavenly-bread",
+   "locus": "1",
+   "media_type": "text/html",
+   "notes": "No manuscript, Greek text, CPG identification, or modern critical attribution was controlled. The record therefore deliberately makes no date claim beyond the 1886 English edition.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The 1886 ANF English translation is in the United States public domain by date of publication. New Advent's present-day HTML is not retained, and its markup is not included in the public-domain claim.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://www.newadvent.org/fathers/06091.htm",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-27",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "First of the Four Homilies attributed to Gregory Thaumaturgus"
+  ],
+  "author": "Anonymous",
+  "category": "pseudonymous-patristic-homily",
+  "description": "The first of four homilies transmitted and printed under Gregory Thaumaturgus's name but placed by the Ante-Nicene Fathers editors among his dubious or spurious writings. The repository records the work as anonymous and does not use it as secure evidence for Gregory or for a third-century date.",
+  "id": "work.anonymous.first-homily-on-the-annunciation",
+  "languages": [
+   "grc"
+  ],
+  "title": "First Homily on the Annunciation to the Holy Virgin Mary"
+ }
+}

@@ -1,0 +1,222 @@
+#!/bin/sh
+# Test for `tools/tpt source-reader`: exit 0 = pass (the stable gate).
+# The tool reads the source library and writes only where --out points, so every
+# invocation here runs against the repository itself and its one writing verb is
+# aimed at a sandbox.
+#
+# THE ASSERTIONS THAT MATTER ARE THE RIGHTS ONES. This tool's characteristic
+# failure is not a crash: it is a text that is served correctly, reads
+# correctly, and should never have left the repository. Nothing about the output
+# looks wrong when that happens, so it is checked here rather than trusted.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="source-reader"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# No withheld record carries text, every refusal states its reason, every
+# licensed text carries its acknowledgement, and the page's own narrowing is
+# replayed against the spine's facet counts.
+summary="$(run_tool check | head -1)"
+case "$summary" in
+*" works, "*" editions, "*" artifacts, "*" passages; "*" readable here.") ;;
+*)
+	echo "unexpected summary line: $summary" >&2
+	exit 1
+	;;
+esac
+
+run_tool check | grep -q "every one of them listed with its reason: yes" || {
+	echo "check does not assert that every withheld passage states a reason" >&2
+	exit 1
+}
+run_tool check | grep -q "the page's own derivation, replayed" || {
+	echo "check does not report the browser model replay" >&2
+	exit 1
+}
+
+# `structure` writes what the reading page fetches, and only there.
+run_tool structure --out "$sandbox/data" >/dev/null
+root="$sandbox/data/structure/sources"
+if [ ! -f "$root/index.json" ]; then
+	echo "structure wrote no spine" >&2
+	exit 1
+fi
+
+python3 - "$root" <<'PY'
+import json, pathlib, sys
+
+root = pathlib.Path(sys.argv[1])
+spine = json.loads((root / "index.json").read_text(encoding="utf-8"))
+assert spine["schema"] == "triptych-source-reader/v1", spine["schema"]
+assert spine["advisory"], "the projection states no caution about itself"
+
+# ---- The rights gate, end to end ----------------------------------------
+#
+# Not that the page hides a withheld text — that the words were never written
+# into the served tree at all. A page bug cannot publish what was never sent.
+readable, withheld = set(), set()
+served_rights = set()
+for path in (root / "editions").rglob("*.json"):
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    for row in payload["passages"]:
+        if row["readable"]:
+            readable.add(row["id"])
+            served_rights.add(row["rights"])
+            # A served passage names where its text is and how long it runs, so
+            # a reader chooses what to open knowing the length of the reading.
+            assert row["text_path"], row["id"]
+            assert row["words"] > 0, row["id"]
+            assert row["storage"] == "tracked", (row["id"], row["storage"])
+            # A licence is a permission with a condition. The condition is
+            # carried with the text it covers, not left in a page footer.
+            if row["rights"] == "licensed":
+                assert row.get("acknowledgement"), row["id"]
+        else:
+            withheld.add(row["id"])
+            # Absence with its reason. Never a blank, never a quiet omission.
+            assert str(row.get("reason") or "").strip(), row["id"]
+            assert str(row.get("withheld") or "").strip(), row["id"]
+            assert "text_path" not in row, row["id"]
+            assert "words" not in row, row["id"]
+
+# Nothing outside the recorded distribution bases was ever served.
+assert served_rights <= {"public-domain", "licensed", "project-created"}, served_rights
+
+texts = root / "text"
+written = {path.stem for path in texts.glob("*.json")} if texts.is_dir() else set()
+assert written & withheld == set(), sorted(written & withheld)[:3]
+assert written == readable, sorted(written ^ readable)[:3]
+
+# A corpus this size must not ship as one file. The spine lists and the payload
+# is fetched when asked for, so the spine carries no prose at all.
+for work in spine["works"]:
+    assert "description" not in work, work["id"]
+    for edition in work["editions"]:
+        assert "text" not in edition, edition["id"]
+
+# Every offered choice selects something. A control whose option matches no
+# record is a control that lies about what the corpus holds.
+for kind, field in (("authors", "works"), ("categories", "works"),
+                    ("languages", "editions"), ("rights", "artifacts"),
+                    ("periods", "editions")):
+    assert spine["facets"][kind], kind
+    for row in spine["facets"][kind]:
+        assert row[field] > 0, (kind, row)
+
+# Every edition the spine names has a file where the spine says it is: the page
+# follows what the generator wrote and composes no path of its own.
+for work in spine["works"]:
+    for edition in work["editions"]:
+        where = root.parent.parent / (spine["root"] + work["directory"] + edition["file"])
+        assert where.is_file(), str(where)
+
+# Anything with an inherent order sorts in that order in a listing: an edition
+# file takes its year as a prefix, so a directory listing reads chronologically.
+for path in (root / "editions").rglob("*.json"):
+    stem = path.stem.split("-", 1)[0]
+    assert stem.isdigit() or stem == "undated", path.name
+
+# The route Catena Omnia follows is written by the generator, not composed from
+# the shape of an id.
+known = {e["id"] for w in spine["works"] for e in w["editions"]}
+for path in (texts.glob("*.json") if texts.is_dir() else ()):
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert payload["edition_id"] in known, payload["id"]
+    assert payload["edition_path"], payload["id"]
+    assert payload["text"].strip(), payload["id"]
+
+counted = spine["counted"]
+assert counted["works"] == len(spine["works"]), counted
+assert counted["readable"] == len(readable), (counted["readable"], len(readable))
+PY
+
+# The same records produce the same bytes: a projection that moved without the
+# corpus moving would make every drift check meaningless.
+run_tool structure --out "$sandbox/again" >/dev/null
+if ! diff -r "$root" "$sandbox/again/structure/sources" >/dev/null; then
+	echo "structure is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# The tracked projection is what the records produce now.
+run_tool structure --check >/dev/null
+
+# `list` narrows, and narrowing narrows.
+whole="$(run_tool list | wc -l | tr -d ' ')"
+latin="$(run_tool list --language la | wc -l | tr -d ' ')"
+if [ "$latin" -ge "$whole" ]; then
+	echo "--language la did not narrow the listing" >&2
+	exit 1
+fi
+
+# Machine forms carry the same rows.
+run_tool list --language la --format json >"$sandbox/one.json"
+for want in '"works_listed"' '"status"' '"readable"'; do
+	if ! grep -q "$want" "$sandbox/one.json"; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+run_tool list --language la --format yaml >"$sandbox/one.yaml"
+if ! grep -q '^works_listed:' "$sandbox/one.yaml"; then
+	echo "yaml payload is missing works_listed" >&2
+	exit 1
+fi
+
+# `show` prints one edition's whole record, its artifacts and its passages.
+one="$(run_tool show --edition edition.augustine.de-civitate-dei.dods-1871)"
+for want in "work" "edition" "language" "artifacts" "passages"; do
+	if ! printf '%s\n' "$one" | grep -q "  $want"; then
+		echo "show omits $want" >&2
+		exit 1
+	fi
+done
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $*" >&2
+		exit 1
+	fi
+}
+
+# A refusal is a first-class answer: a filter that matches nothing says so
+# rather than printing an empty list under a confident summary.
+reject list --work nonesuch
+reject list --edition nonesuch
+reject list --author "No Such Person"
+reject list --format nonesuch
+reject list --sort nonesuch
+
+# A tracked projection that has drifted from the records is refused.
+mkdir -p "$sandbox/stale/structure/sources"
+printf '{}\n' >"$sandbox/stale/structure/sources/index.json"
+status=0
+run_tool structure --check --out "$sandbox/stale" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a drifted projection should exit 2, got $status" >&2
+	exit 1
+fi
+
+# ...and so is one that is not there at all.
+status=0
+run_tool structure --check --out "$sandbox/absent" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a missing projection should exit 2, got $status" >&2
+	exit 1
+fi
+if [ -e "$sandbox/absent" ]; then
+	echo "a refused --check must not create an output directory" >&2
+	exit 1
+fi
+
+echo ok

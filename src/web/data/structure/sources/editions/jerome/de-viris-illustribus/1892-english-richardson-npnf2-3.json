@@ -1,0 +1,90 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 331,
+   "id": "artifact.jerome.de-viris-illustribus.english-richardson-npnf2-3.ch-2-gospel-of-the-hebrews-checked-text-f0f92de5",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces one sentence of Richardson's 1892 translation, which is in the United States public domain by date of publication. It contains no markup belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 154108,
+   "id": "artifact.jerome.de-viris-illustribus.english-richardson-npnf2-3.newadvent-2708-85587778",
+   "media_type": "text/html",
+   "notes": "A web transcription, not a facsimile. New Advent's own scriptural hyperlinks and editorial styling are markup and are not part of the translated text.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "Richardson's 1892 translation is in the United States public domain by date of publication. New Advent publishes a transcription of it. Only short clauses are quoted by consuming publications, and the retrieved bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.newadvent.org/fathers/2708.htm",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1892",
+  "editors": [],
+  "id": "edition.jerome.de-viris-illustribus.english-richardson-npnf2-3",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "Registered from the New Advent transcription of this public-domain translation, consulted 2026-07-25. No printed volume was consulted for this record.",
+  "publication": "In A Select Library of Nicene and Post-Nicene Fathers of the Christian Church, second series, volume 3 (New York: Christian Literature Co., 1892)",
+  "title": "Lives of Illustrious Men, English translation in the Nicene and Post-Nicene Fathers",
+  "translators": [
+   "Ernest Cushing Richardson"
+  ],
+  "year": 1892
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.jerome.de-viris-illustribus.english-richardson-npnf2-3.ch-2-gospel-of-the-hebrews-checked-text-f0f92de5",
+   "artifact_type": "checked-transcription",
+   "context": "Jerome's quotation of the Gospel according to the Hebrews, read in the retrieved transcription with the surrounding account of James's death and burial in view. Registered as a second-century tradition that knew the burial wrappings had been left behind and accounted for them narratively rather than evidentially.",
+   "id": "passage.jerome.de-viris-illustribus.english-richardson-npnf2-3.ch-2-gospel-of-the-hebrews",
+   "locus": "2",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The sentence continues in the source with the parenthesis about James's oath and then the bread narrative; the transcription stops at the clause bearing on the grave clothes.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces one sentence of Richardson's 1892 translation, which is in the United States public domain by date of publication. It contains no markup belonging to the site from which the text was retrieved.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.jerome.de-viris-illustribus.english-richardson-npnf2-3.ch-2-gospel-of-the-hebrews.json",
+   "verified_on": "2026-07-25",
+   "words": 59
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "On Illustrious Men",
+   "Lives of Illustrious Men"
+  ],
+  "author": "Jerome",
+  "category": "patristic-catalogue",
+  "description": "Jerome's catalogue of Christian writers, completed about 393. Chapter 2, on James the brother of the Lord, quotes the lost Gospel according to the Hebrews, which said that the risen Lord gave his grave clothes to the servant of the priest before appearing to James. A locus is the chapter number.",
+  "id": "work.jerome.de-viris-illustribus",
+  "languages": [
+   "la"
+  ],
+  "title": "De viris illustribus"
+ }
+}

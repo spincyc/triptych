@@ -1,0 +1,89 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 4455950,
+   "id": "artifact.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.gutenberg-pg10-0204adae",
+   "media_type": "text/plain",
+   "notes": "Plain text with chapter and verse numbers inline in the form 20:7 and verses wrapped across physical lines; verse boundaries do not coincide with physical lines.",
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "The 1611 Authorized Version is in the United States public domain by date. Project Gutenberg distributes this electronic text as a public-domain work. The retrieved bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.gutenberg.org/cache/epub/10/pg10.txt",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 128,
+   "id": "artifact.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.jn-20.7-checked-text-ed7aa3b8",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-07-25",
+   "rights": "public-domain",
+   "rights_basis": "This single verse of the 1611 Authorized Version is in the public domain.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-07-25",
+  "editors": [],
+  "id": "edition.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "A dated delivery state of an electronic transcription of the Authorized Version, not a critical edition and not identified with any particular printing. Registered only as a witness to the received English wording of John 20:7.",
+  "publication": "Project Gutenberg electronic edition, eBook 10, consulted 2026-07-25",
+  "title": "The King James Version of the Bible, Project Gutenberg eBook 10",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.jn-20.7-checked-text-ed7aa3b8",
+   "artifact_type": "checked-transcription",
+   "context": "Read in the retrieved file with John 20:5 to 20:10 in view. Registered for one narrow purpose: to establish that the version which supplies the English word napkin renders the participle as wrapped together and not as folded.",
+   "id": "passage.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.jn-20.7",
+   "locus": "John.20.7",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This single verse of the 1611 Authorized Version is in the public domain.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.jn-20.7.json",
+   "verified_on": "2026-07-25",
+   "words": 22
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "King James Version",
+   "Authorized Version",
+   "KJV"
+  ],
+  "author": "The translators appointed under James I of England",
+  "category": "biblical-translation",
+  "description": "The English translation completed in 1611 under royal authority. Registered here for a single narrow purpose: it is the source of the English word napkin at John 20:7, and its rendering of the participle there is wrapped together, not folded. It carries no authority in the publications that cite it and is not a Catholic translation.",
+  "id": "work.church-of-england.authorized-version-of-the-bible",
+  "languages": [
+   "en"
+  ],
+  "title": "The Holy Bible, Authorized (King James) Version"
+ }
+}

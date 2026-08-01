@@ -1,0 +1,70 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan-excerpt",
+   "byte_size": 10724280,
+   "id": "artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.erara-volume-1-pages-1-50-pdf",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": 51,
+   "retrieved": "2026-07-28",
+   "rights": "public-domain",
+   "rights_basis": "The 1777–1779 edition is public domain in the United States; the library scan is recorded remotely and not redistributed.",
+   "rights_jurisdiction": "US",
+   "source_url": "https://www.e-rara.ch/download/pdf/14805899.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1777-1779",
+  "editors": [],
+  "id": "edition.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The exact Zentralbibliothek Zürich e-rara scan excerpt was acquired and inspected.",
+  "publication": "Sankt Blasien, 1777–1779",
+  "title": "Monumenta veteris liturgiae Alemannicae",
+  "translators": [],
+  "year": 1777
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.erara-volume-1-pages-1-50-pdf",
+   "artifact_type": "scan-excerpt",
+   "context": "Printed p. 18, Dominica I post Theophaniam, Postcommunion: 'Quaesumus Dne Deus noster, ut quos divinis reparare non desinis Sacramentis, tuis non destituas benignus auxiliis, per Dnm.'",
+   "id": "passage.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.volume-1-page-18",
+   "locus": "volume-1-page-18",
+   "media_type": "application/pdf",
+   "notes": "This establishes the prayer's Alemannic assignment here, not the origin or reason for that assignment.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The 1777–1779 edition is public domain in the United States; the library scan is recorded remotely and not redistributed.",
+   "rights_jurisdiction": "US",
+   "segment_id": null,
+   "source_url": "https://www.e-rara.ch/download/pdf/14805899.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-07-28",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Martin Gerbert",
+  "category": "liturgical-source-collection",
+  "description": "Gerbert's eighteenth-century collection of Alemannic liturgical witnesses.",
+  "id": "work.martin-gerbert.monumenta-veteris-liturgiae-alemannicae",
+  "languages": [
+   "la"
+  ],
+  "title": "Monumenta veteris liturgiae Alemannicae"
+ }
+}

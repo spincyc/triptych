@@ -95,6 +95,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "source-family-migration",
             "source-inventory",
             "source-library",
+            "source-reader",
         ),
     ),
     (
@@ -192,6 +193,7 @@ REACHES: dict[str, str] = {
     "source-family-migration": NOTHING,
     "source-inventory": NOTHING,
     "source-library": NOTHING,
+    "source-reader": NOTHING,
     "tpt": NOTHING,
     "typeset-bible": NOTHING,
     "web-edition": NOTHING,

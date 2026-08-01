@@ -1,0 +1,114 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 426,
+   "id": "artifact.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.selected-mollis-transcription",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The selection is deliberately contrastive and minimal: one sexual-classification use of mollis and one endurance/weakness use of mollities. It is not a concordance of the collection.",
+   "page_count": null,
+   "retrieved": "2026-07-27",
+   "rights": "public-domain",
+   "rights_basis": "Two short Latin excerpts from an 1851 public-domain edition. The descriptive line prefixes are Triptych editorial metadata; Triptych claims no exclusive right in the source wording.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 66444541,
+   "id": "artifact.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.wikimedia-ia-scan",
+   "media_type": "application/pdf",
+   "notes": "The PDF page number is 24 greater than the printed page number at both selected loci: printed p. 185 is artifact p. 209, and printed p. 340 is artifact p. 364.",
+   "page_count": 762,
+   "retrieved": "2026-07-27",
+   "rights": "public-domain",
+   "rights_basis": "The 1851 German publication and the underlying historical texts are public domain by age; the host identifies the scan as derived from Internet Archive page images and asserts no separate creative rights in the mechanical facsimile.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Die_bussordnungen_der_abendl%C3%A4ndischen_kirche_%28IA_diebussordnungen00cath%29.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1851",
+  "editors": [],
+  "id": "edition.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851",
+  "jurisdiction": null,
+  "language": "de-la",
+  "notes": "The selected passages are evidence for contrasting historical uses of mollis or mollities inside named penitential materials printed in this collection. They do not establish a single stable definition, continuous legal rule, or universal discipline.",
+  "publication": "Halle: Ch. Graeger, 1851; public-domain Internet Archive scan mirrored by Wikimedia Commons",
+  "title": "Die Bussordnungen der abendländischen Kirche — Halle, 1851",
+  "translators": [],
+  "year": 1851
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.selected-mollis-transcription",
+   "artifact_type": "checked-transcription",
+   "context": "Theodorus, Poenitentiale, II, De fornicatione, section 6, printed p. 185 (artifact p. 209). The sentence assigns tariffs and uses mollis inside a sexual classification. It must not be converted into a claim about modern identity categories.",
+   "id": "passage.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.theodorus-ii-de-fornicatione-6",
+   "locus": "printed-page-185",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Wasserschleben's adjacent editorial footnote compares the tariff with the adulteress tariff elsewhere; that footnote is not part of the checked passage text.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Two short Latin excerpts from an 1851 public-domain edition. The descriptive line prefixes are Triptych editorial metadata; Triptych claims no exclusive right in the source wording.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.theodorus-ii-de-fornicatione-6.json",
+   "verified_on": "2026-07-27",
+   "words": 8
+  },
+  {
+   "artifact_id": "artifact.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.selected-mollis-transcription",
+   "artifact_type": "checked-transcription",
+   "context": "An Anglo-Saxon penitential compilation, canon 60, printed p. 340 (artifact p. 364). Here mollities is paired with infirmity as inability to bear an assigned fast or austerity, and the text permits commutation.",
+   "id": "passage.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.anglo-saxon-compilation-c-60",
+   "locus": "printed-page-340",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This nonsexual endurance sense is registered specifically to prevent silent harmonization with the sexual-classification uses elsewhere in the same edited collection.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Two short Latin excerpts from an 1851 public-domain edition. The descriptive line prefixes are Triptych editorial metadata; Triptych claims no exclusive right in the source wording.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche.halle-graeger-1851.anglo-saxon-compilation-c-60.json",
+   "verified_on": "2026-07-27",
+   "words": 28
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Die Bußordnungen der abendländischen Kirche nebst einer rechtsgeschichtlichen Einleitung"
+  ],
+  "author": "Friedrich Wilhelm Hermann Wasserschleben, editor",
+  "category": "edited-source-collection",
+  "description": "Wasserschleben's 1851 collection of Latin western penitential texts with a German historical introduction and editorial apparatus. The collection preserves heterogeneous and sometimes composite witnesses; its readings must be attributed to the named penitential and exact locus rather than treated as one universal canonical code.",
+  "id": "work.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche",
+  "languages": [
+   "de",
+   "la"
+  ],
+  "title": "Die Bussordnungen der abendländischen Kirche"
+ }
+}
